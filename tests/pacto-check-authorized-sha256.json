@@ -1,0 +1,8 @@
+{
+  "purpose": "User-requested PACTO manual Checar and removal of selected status/count block, 2026-10-24. Historical baselines retained.",
+  "sha256": {
+    "collection-ui.mjs": "a9671e3d1ffd04bcbb80d17b3a5044767d401dee46d9887b6b3305fc75c55012",
+    "style.css": "5e8f0cf6f414cff955133d094c88d92c66b0b117a9b14d1386239c76d082301e",
+    "pacto-check.mjs": "8b78b4f17c48b771133c6d3b0806b444096d961625091ec0ae93115cb23b038a"
+  }
+}

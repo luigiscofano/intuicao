@@ -61,7 +61,7 @@ test('PRUMO support keyboard, second finger rollback and right context suppressi
  click(free);assert.equal(state().assignments[free],0);const historyCount=history().past.length;drag(free,end,{button:2});event('contextmenu',end,{button:2});assert.equal(history().past.length,historyCount+1);$('c-direct-undo').click();assert.equal(state().assignments[free],0);
 });
 test('PACTO focus, longpress and local palette pointer do not add accidental edits',()=>{
- start('pacto',1);const free=level.clues.findIndex(v=>v<0),before=state();keypress(free,'ArrowDown');assert.match($('c-details').textContent,new RegExp('L'+(Math.floor((free+level.cols)/level.cols)+1)+'C'+(free%level.cols+1)));
+ start('pacto',1);const free=level.clues.findIndex(v=>v<0),before=state();keypress(free,'ArrowDown');assert.match(document.activeElement.attrs['aria-label'],new RegExp('L'+(Math.floor((free+level.cols)/level.cols)+1)+'C'+(free%level.cols+1)));assert.equal($('c-details').hidden,true);assert.equal($('c-details').textContent,'');
  event('pointerdown',free,{pointerType:'touch'});flush();event('pointerup',free,{pointerType:'touch'});event('click',free);assert.deepEqual(state(),before);assert.equal($('c-local-palette').hidden,false);
  const button=$('c-local-palette').querySelector('[data-local-candidate="2"]');button.dispatch('pointerdown');button.dispatch('pointerup');button.click();assert.deepEqual(state().candidates[free],[2]);assert.equal($('c-local-palette').hidden,false);
 });

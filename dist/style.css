@@ -234,3 +234,12 @@ button.action-hint:hover{background:#e4dcf1;border-color:#9c85bb}
 .board-navigation:has(> .collection-board-wrap):has(> .level-arrow){max-width:796px;margin:24px auto 0}
 .board-navigation:has(> .level-arrow)> .collection-board-wrap{margin-top:0}
 @media(max-width:560px){.board-navigation:has(> .collection-board-wrap):has(> .level-arrow){margin-top:15px}}
+
+/* PACTO: manual reference check; input and rule-validation remain independent. */
+.pacto-check-controls{display:flex;flex-wrap:wrap;justify-content:center;align-items:center;gap:.65rem;margin:.8rem 0}
+.pacto-check-controls .pacto-check-status{flex-basis:100%;text-align:center;margin:.2rem 0;color:var(--ink)}
+.pacto-check-ring{position:absolute;inset:-4px;border:3px solid #548361;border-radius:inherit;box-shadow:0 0 0 4px #54836126;pointer-events:none;z-index:4}
+@media(prefers-reduced-motion:no-preference){
+ .pacto-check-controls .pacto-check-status,.pacto-check-ring{animation:pacto-check-window 10s linear both;animation-delay:var(--pacto-check-offset,0ms)}
+ @keyframes pacto-check-window{0%{opacity:0}3%,97%{opacity:1}100%{opacity:0}}
+}

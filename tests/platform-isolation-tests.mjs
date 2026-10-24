@@ -2,6 +2,7 @@ import assert from 'node:assert/strict';
 import fs from 'node:fs';
 import crypto from 'node:crypto';
 const baseline=JSON.parse(fs.readFileSync(new URL('./platform-baseline-sha256.json',import.meta.url)));
+const pactoApproved=JSON.parse(fs.readFileSync(new URL('./pacto-check-authorized-sha256.json',import.meta.url))).sha256;
 const endlessApproved=JSON.parse(fs.readFileSync(new URL('./endless-authorized-sha256.json',import.meta.url))).sha256;
 const approved=JSON.parse(fs.readFileSync(new URL('./level-shortcuts-authorized-sha256.json',import.meta.url))).sha256;
 const copyChanges=JSON.parse(fs.readFileSync(new URL('./home-copy-authorized-changes.json',import.meta.url))).changes;
@@ -27,7 +28,7 @@ for(const [name,hash] of Object.entries(baseline)){
   }
   bytes=Buffer.from(html.replace('<link rel="stylesheet" href="platform.css">',''));
  }
- assert.equal(sha(bytes),endlessApproved[name]??approved[name]??hash,`Protected original file modified: ${name}`);
+ assert.equal(sha(bytes),pactoApproved[name]??endlessApproved[name]??approved[name]??hash,`Protected original file modified: ${name}`);
 }
 const fullCSS=fs.readFileSync(new URL('../dist/platform.css',import.meta.url),'utf8').replace(/\/\*[\s\S]*?\*\//g,'');
 // User explicitly expanded leaves to all six games on 2026-10-24.
@@ -53,4 +54,4 @@ assert.ok(css.includes('pointer-events:none'),'Leaves must not intercept input')
 assert.ok(css.includes('position:fixed;inset:0'),'Leaf layer is out of normal flow');
 assert.ok(css.includes('overflow:hidden;pointer-events:none;user-select:none;contain:strict'),'Only the ornamental layer clips its overflow');
 assert.ok(!css.includes('platform-leaf-drift'),'Old menu leaves removed to avoid duplication');
-console.log(`PASS Endless app/collection exact authorized hashes; ${Object.keys(baseline).length-Object.keys(approved).length} original files byte-identical; ${Object.keys(approved).length} interface exceptions match their active separately recorded hashes (Endless overrides only app/collection); ${selectors.length} style blocks retain explicit platform roots. Exact authorized home-copy edits and the inert leaf-layer insertion are reversed for comparison. Original retro baseline is unchanged. Browser computed-style/geometry comparison remains separate.`);
+console.log(`PASS PACTO/Endless exact authorized hashes; ${Object.keys(baseline).length-Object.keys(approved).length} original files byte-identical; ${Object.keys(approved).length} interface exceptions match their active separately recorded hashes (Endless overrides only app/collection); ${selectors.length} style blocks retain explicit platform roots. Exact authorized home-copy edits and the inert leaf-layer insertion are reversed for comparison. Original retro baseline is unchanged. Browser computed-style/geometry comparison remains separate.`);
