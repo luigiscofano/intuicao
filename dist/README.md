@@ -131,3 +131,12 @@ O botão “Ocultar opções avançadas” recolhe os ajustes precisos; “Mostr
 Portais mantêm formato, pares, cores e rotação, com centros translúcidos claros e aros sutis. Paredes têm acabamento sólido discreto; sua geometria de colisão não mudou.
 
 Verificação: dez suítes, 33.162 verificações; painel e notas dos 300 níveis em DOM simulado. Imagens SVG dos níveis 41 e 100 inspecionadas. Layout responsivo, cliques e movimento real em navegador permanecem sem validação nesta execução.
+
+
+## Rotas com viradas amplas — 24/10/2026
+
+Os 100 níveis de Reflexos foram redesenhados. A mediana da mudança de direção passou de 34° para 90°; 451 das 485 reflexões (93%) ficam entre 45° e 135°, nenhuma abaixo de 20°. Rotas resolvidas são distintas, com corredores, retornos, zigue-zagues e portais que redistribuem destinos. Paredes impedem atalhos; nenhum nível vence sem espelhos. Qualquer solução física válida continua aceita, não apenas a testemunha documentada.
+
+A introdução de mecânicas nos níveis 21, 41, 61, 81 e 91 permanece. A dificuldade é organizada por conceitos e consolidação, não por aumento obrigatório de espelhos em toda fase. Folga real mínima fonte/alça: 62 unidades; centros de espelhos: 112. Alvos mantêm raio de tolerância 22.
+
+Onze suítes: 35.738 verificações aprovadas, incluindo as 100 soluções em precisão de 0,1°, regressões dos 300 desafios e DOM simulado. Seis mapas resolvidos inspecionados em SVG estático. Não houve teste interativo em navegador nesta revisão. Os números de seções anteriores são históricos. Detalhes e tabela completa: documentacao/REFLEXOS-E-OBSTACULOS.md.
