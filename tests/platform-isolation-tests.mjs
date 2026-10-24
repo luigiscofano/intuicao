@@ -3,10 +3,20 @@ import fs from 'node:fs';
 import crypto from 'node:crypto';
 const baseline=JSON.parse(fs.readFileSync(new URL('./platform-baseline-sha256.json',import.meta.url)));
 const approved=JSON.parse(fs.readFileSync(new URL('./level-shortcuts-authorized-sha256.json',import.meta.url))).sha256;
+const copyChanges=JSON.parse(fs.readFileSync(new URL('./home-copy-authorized-changes.json',import.meta.url))).changes;
 const sha=s=>crypto.createHash('sha256').update(s).digest('hex');
 for(const [name,hash] of Object.entries(baseline)){
  let bytes=fs.readFileSync(new URL('../dist/'+name,import.meta.url));
- if(name==='index.html')bytes=Buffer.from(bytes.toString().replace('<link rel="stylesheet" href="platform.css">',''));
+ if(name==='index.html'){
+  let html=bytes.toString();
+  // Reverse only the exact authorized copy edits, preserving historical hashes.
+  for(const {before,after} of copyChanges){
+   assert.equal(html.split(after).length-1,1,'Authorized replacement must occur exactly once');
+   assert.ok(!html.includes(before),'Removed copy must not remain');
+   html=html.replace(after,before);
+  }
+  bytes=Buffer.from(html.replace('<link rel="stylesheet" href="platform.css">',''));
+ }
  assert.equal(sha(bytes),approved[name]??hash,`Protected original file modified: ${name}`);
 }
 const fullCSS=fs.readFileSync(new URL('../dist/platform.css',import.meta.url),'utf8').replace(/\/\*[\s\S]*?\*\//g,'');
@@ -32,4 +42,4 @@ for(const [,raw,body] of selectors){
 assert.ok(fullCSS.includes('@media(prefers-reduced-motion:reduce)'),'Reduced-motion opt-out required');
 assert.ok(!css.includes('quiet-garden.svg'),'Landscape no longer displayed');
 assert.ok(css.includes('pointer-events:none'),'Leaves must not intercept input');
-console.log(`PASS ${Object.keys(baseline).length-Object.keys(approved).length} original files byte-identical; ${Object.keys(approved).length} explicit shortcut/navigation changes match their separately recorded hashes; ${selectors.length} style blocks retain explicit platform roots. Original retro baseline is unchanged. Browser computed-style/geometry comparison remains separate.`);
+console.log(`PASS ${Object.keys(baseline).length-Object.keys(approved).length} original files byte-identical; ${Object.keys(approved).length} explicit shortcut/navigation changes match their separately recorded hashes; ${selectors.length} style blocks retain explicit platform roots. Three exact authorized home-copy edits are reversed for comparison. Original retro baseline is unchanged. Browser computed-style/geometry comparison remains separate.`);

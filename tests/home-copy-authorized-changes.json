@@ -1,0 +1,17 @@
+{
+  "authorization": "2026-10-24: remover somente os textos identificados nas três imagens e inserir frase sobre experimentação, criatividade e aprendizado. Baselines históricos preservados.",
+  "changes": [
+    {
+      "before": "<p class=\"eyebrow\">APRENDA COM AS MÃOS. ENTENDA COM OS OLHOS.</p><h1>",
+      "after": "<h1>"
+    },
+    {
+      "before": "<p>Encontre caminhos para a luz, divida formas e descubra conexões.<br class=\"desktop\"> Seis jogos. 900 desafios e um duelo para jogar junto.</p>",
+      "after": "<p>Aprender é experimentar. Criar é descobrir novos caminhos.</p>"
+    },
+    {
+      "before": "<p>Referência educativa produzida com IA · CS50x 2026<br>Sem cadastro, sem dados enviados, sem pontuação competitiva.</p></footer>",
+      "after": "</footer>"
+    }
+  ]
+}
