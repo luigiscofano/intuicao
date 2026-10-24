@@ -21,7 +21,7 @@ Corte certo tem um modo básico com apenas deslocamento na direção indicada, d
 
 Uma resposta errada ou incompleta dispara o efeito breve de derrota. Após três erros no nível, “Ver gabarito” monta uma solução padrão e aguarda confirmação; a conclusão é identificada como assistida. O gabarito do Corte respeita a restrição do modo básico. Vitória usa borda verde, zoom suave e PARABÉNS; derrota usa tremor leve, borda vermelha e blur de 300 ms. Movimento reduzido é respeitado.
 
-ELO conecta peças automaticamente, preserva cores das regiões fixas e oferece “Marcar células bloqueadas”. PRUMO cresce em cinco patamares de 40 níveis: 4×4, 4×5, 5×5, 5×6 e 6×6; nunca diminui nem ultrapassa 10×10. PACTO marca contradições comprovadas com hachuras vermelhas, sem consultar o gabarito e sem contar tentativa durante a edição.
+ELO conecta peças automaticamente, preserva cores das regiões fixas e oferece “Marcar células bloqueadas”. PRUMO cresce em cinco patamares de 40 níveis: 4×4, 4×5, 5×5, 5×6 e 6×6; nunca diminui nem ultrapassa 10×10. PACTO usa hachuras vermelhas apenas para erros explícitos no estado atual: grupos com mais de dois iguais conectados, casas sem parceiro e sem vizinho vazio, ou cotas incorretas em uma linha/coluna já completa. Pares válidos, casas ainda com possibilidade de parceiro e contradições que exigem deduções não são hachurados. A edição não consulta o gabarito nem conta tentativa; a confirmação continua verificando todas as regras.
 
 ## Executar a cópia baixada
 
@@ -45,6 +45,7 @@ A campanha tem 200 níveis em 20 capítulos, com IDs novos light-v3. Soluções 
 - [Validação final de Reflexos](QA-REFLEXOS-V3.md)
 - [Coleção lógica e regras](EXPANSAO.md)
 - [Gabaritos e resultados](GABARITOS.md)
+- [PACTO: hachuras somente para erros explícitos](QA-PACTO-HACHURAS.md)
 - [Corte v2: controles e geometria (registro histórico)](CORTE-V2-E-CATALOGO-800.md)
 - [Catálogo atual e retirada de jogos](CATALOGO-ATUAL.md)
 - [Registro histórico de validação da expansão](VALIDACAO-EXPANSAO.md)

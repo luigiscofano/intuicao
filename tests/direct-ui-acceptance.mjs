@@ -97,5 +97,42 @@ test('Visual revision removes only viewport buttons and preserves collapsible ru
   $('c-rules-panel').open=true;$('c-rules-panel').ontoggle();$('c-advanced-toggle').click();assert.ok(Object.hasOwn($('c-rules-panel').attrs,'open'),'open rules survive rerender');
  }
 });
+test('PACTO live hatching ignores inferred contradictions and survives undo/redo/reload',()=>{
+ start('pacto',0);$('c-reset').click();
+ const beforeAttempts=store.get('intuicao.answers.v1');
+ keypress(10,'3');assert.equal(state().values[10],1);assert.notEqual(state().values[10],level.solution[10]);
+ assert.equal($('c-board').querySelectorAll('.cell-conflict').length,0);
+ assert.equal($('c-live-errors').hidden,true);
+ assert.equal(store.get('intuicao.answers.v1'),beforeAttempts,'Editing never counts an attempt');
+ $('c-direct-undo').click();assert.equal(state().values[10],-1);
+ $('c-direct-redo').click();assert.equal(state().values[10],1);
+ assert.equal($('c-board').querySelectorAll('.cell-conflict').length,0);
+ $('c-back').click();host.querySelector('[data-new-level="0"]').click();
+ assert.equal(state().values[10],1);assert.equal($('c-board').querySelectorAll('.cell-conflict').length,0);
+ assert.notEqual($('c-motion').dataset.outcome,'win');
+ $('c-confirm').click();assert.equal($('c-motion').dataset.outcome,'loss');
+ assert.equal($('c-board').querySelectorAll('.cell-conflict').length,0,'Confirmation does not turn deductions into live hatching');
+});
+test('PACTO explicit trio still hatches and clearing it removes the warning',()=>{
+ start('pacto',0);$('c-reset').click();
+ const triple=Array.from({length:64},(_,i)=>[i,i+1,i+2]).find(cells=>cells[0]%8<6&&cells.every(i=>level.clues[i]<0));
+ assert.ok(triple);for(const i of triple)keypress(i,'1');
+ for(const i of triple){assert.ok(cell(i).matches('.cell-conflict'));assert.equal(cell(i).attrs['aria-invalid'],'true');}
+ assert.equal($('c-live-errors').hidden,false);
+ $('c-reset').click();assert.equal($('c-board').querySelectorAll('.cell-conflict').length,0);
+});
+test('PACTO final confirmation uses rules, not the stored answer key',()=>{
+ start('pacto',0);$('c-reset').click();
+ const solution=level.solution;
+ try{
+  level.solution=solution.map(v=>(v+1)%4);
+  const keys=['1','3','2','4'];
+  for(let i=0;i<64;i++)if(level.clues[i]<0)keypress(i,keys[solution[i]]);
+  assert.deepEqual(state().values,solution);
+  assert.equal($('c-board').querySelectorAll('.cell-conflict').length,0);
+  assert.notEqual($('c-motion').dataset.outcome,'win','Completion alone must not trigger victory');
+  $('c-confirm').click();assert.equal($('c-motion').dataset.outcome,'win');
+ }finally{level.solution=solution;}
+});
 let failed=0;for(const [name,run] of tests){try{run();console.log('PASS',name);}catch(error){failed++;console.error('FAIL',name,error.stack);}}
 console.log(`${tests.length-failed}/${tests.length} integrated UI suites passed (deterministic event simulation, not browser/device QA).`);if(failed)process.exitCode=1;

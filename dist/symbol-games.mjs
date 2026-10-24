@@ -23,7 +23,12 @@ function initial(level,values){const m=model(level),v=values===undefined?level.c
 function propagate(m,d,trace=null){const queue=m.constraints.map((_,i)=>i),queued=new Set(queue);let q=0;while(q<queue.length){const ci=queue[q++];queued.delete(ci);const c=m.constraints[ci],len=c.cells.length,support=Array(len).fill(0),t=c.table;let alive=0;outer:for(let off=0;off<t.length;off+=len){for(let j=0;j<len;j++)if(!(d[c.cells[j]]&(1<<t[off+j])))continue outer;alive++;for(let j=0;j<len;j++)support[j]|=1<<t[off+j];}if(!alive)return {ok:false,constraint:ci};const before=trace?c.cells.map(cell=>({cell,candidates:vals(d[cell])})):null;for(let j=0;j<len;j++){const cell=c.cells[j],old=d[cell],next=old&support[j];if(next!==old){d[cell]=next;if(trace)trace.push({kind:c.kind,label:c.label,cells:c.cells.slice(),cell,before:vals(old),after:vals(next),premises:before});for(const x of m.linked[cell])if(!queued.has(x)){queue.push(x);queued.add(x);}}}}
  return {ok:true};}
 export function symbolCandidates(level,values=level.clues){const s=initial(level,values);if(s.error)return Array.from({length:level.clues.length},()=>[]);if(!propagate(s.m,s.d).ok)return s.d.map(()=>[]);return s.d.map(vals);}
-export function validateSymbols(level,values=level.clues){
+// A confirmação e as dicas mantêm a análise completa das regras.
+export function validateSymbols(level,values=level.clues){return validateSymbolState(level,values,false);}
+// Na edição, só hachuramos erros visíveis agora, sem antecipar deduções.
+// Um estado sem hachuras não é uma garantia de que terá solução.
+export function validateSymbolEditing(level,values=level.clues){return validateSymbolState(level,values,true);}
+function validateSymbolState(level,values,editing){
  let s;try{s=initial(level,values);}catch(e){return {complete:false,valid:false,violations:[{kind:'format',text:e.message,cells:[]}],pending:[]};}
  const violations=[],pending=[];
  if(s.error)return {complete:false,valid:false,violations:[{kind:'input',text:s.error,cells:s.cell===undefined?[]:[s.cell]}],pending};
@@ -31,6 +36,8 @@ export function validateSymbols(level,values=level.clues){
  for(const c of m.constraints){
   const a=c.cells.map(i=>values[i]),blanks=a.filter(v=>v<0).length;
   if(c.kind==='quota'){
+   // A cota só vira aviso visual quando a linha ou coluna está completa.
+   if(editing&&blanks>0)continue;
    for(let v=0;v<m.k;v++){
     const count=a.filter(x=>x===v).length;
     // A quota is a line-wide rule, so even its empty cells belong to the error.
@@ -54,7 +61,7 @@ export function validateSymbols(level,values=level.clues){
  // GAC may prove a contradiction through interacting rules, without looking
  // at any answer key. Surviving propagation is not a global-solvability claim.
  // On complete boards the direct checks above already cover every rule.
- if(!complete&&!violations.length){const result=propagate(m,s.d);if(!result.ok){const c=m.constraints[result.constraint];violations.push({kind:'impossible',text:`As escolhas deixam ${c.label} sem combinação possível.`,cells:c.cells.slice()});}}
+ if(!editing&&!complete&&!violations.length){const result=propagate(m,s.d);if(!result.ok){const c=m.constraints[result.constraint];violations.push({kind:'impossible',text:`As escolhas deixam ${c.label} sem combinação possível.`,cells:c.cells.slice()});}}
  if(!complete)pending.push({kind:'empty',cells:values.flatMap((v,i)=>v<0?[i]:[]),text:'Há casas por preencher.'});
  return {complete,valid:violations.length===0,violations,pending};
 }
