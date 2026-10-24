@@ -1,5 +1,5 @@
 // Atraso apenas do feedback de edição; não interfere nas regras ou tentativas.
-export const PACTO_ERROR_DELAY=3000;
+export const PACTO_ERROR_DELAY=2000;
 export const PACTO_ERROR_FADE=300;
 export function createPactoFeedback(onChange,clock=globalThis){
  const entries=new Map(),now=()=>clock.Date.now();

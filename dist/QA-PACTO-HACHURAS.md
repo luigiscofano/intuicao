@@ -23,10 +23,10 @@ Os testes de interface usam DOM simulado. Esta verificação não é uma sessão
 
 ## Atraso e entrada suave das hachuras
 
-Na edição, cada conflito explícito espera 3 segundos antes de aparecer. O aviso textual e os atributos de conflito acessíveis aguardam o mesmo prazo. Se o erro for corrigido antes, o aviso é descartado. Confirmar resposta mantém a avaliação e o resultado imediatos.
+Na edição, cada conflito explícito espera 2 segundos antes de aparecer. O aviso textual e os atributos de conflito acessíveis aguardam o mesmo prazo. Se o erro for corrigido antes, o aviso é descartado. Confirmar resposta mantém a avaliação e o resultado imediatos.
 
 Apenas a camada de hachuras entra suavemente em 300 ms. O padrão, as cores e a largura originais não mudaram; a célula e seu símbolo não desaparecem. Com movimento reduzido, não há fade, mas o atraso continua.
 
 Rerenders de controles não reiniciam o prazo nem o fade. Novos conflitos têm seu próprio prazo. Reinício confirmado, troca de nível/jogo, saída, desfazer/refazer e aplicação do gabarito não deixam callbacks antigos aparecerem sobre o novo estado.
 
-`node tests/pacto-feedback-tests.mjs` verifica os limites de 2999/3000 ms com relógio simulado, cancelamentos, callbacks obsoletos, conflitos novos, confirmação imediata, ARIA/texto, progresso do fade e preservação do CSS. A verificação visual continua sendo estrutural/DOM simulado, não uma sessão em navegador real.
+`node tests/pacto-feedback-tests.mjs` verifica os limites de 1999/2000 ms com relógio simulado, cancelamentos, callbacks obsoletos, conflitos novos, confirmação imediata, ARIA/texto, progresso do fade e preservação do CSS. A verificação visual continua sendo estrutural/DOM simulado, não uma sessão em navegador real.
