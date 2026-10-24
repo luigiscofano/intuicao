@@ -23,7 +23,7 @@ body > footer :is(p,small){color:#555344}
 /* Menu-only treatment. :has observes existing state; no script, new state,
    event handler, route, focus operation or storage access is introduced. */
 :where(body:not(:has(.lab:not([hidden]), #collection:not([hidden]) > .collection-lab))) > header{padding-top:24px;padding-bottom:24px}
-:where(body:not(:has(.lab:not([hidden]), #collection:not([hidden]) > .collection-lab))) > header .brand{font-family:"Intuicao Pixel",monospace;font-size:32px;font-weight:400;letter-spacing:0;line-height:1.4}
+:where(body:not(:has(.lab:not([hidden]), #collection:not([hidden]) > .collection-lab))) > header .brand{display:inline-flex;align-items:center;font-family:"Intuicao Pixel",monospace;font-size:32px;font-weight:400;letter-spacing:0;line-height:1.4}
 :where(body:not(:has(.lab:not([hidden]), #collection:not([hidden]) > .collection-lab))) > header .brand-icon{font-size:0;transform:none;width:28px;height:28px;margin-right:10px;vertical-align:-2px;background:url("platform-assets/leaf.svg") center/28px 28px no-repeat;image-rendering:pixelated}
 :where(body:not(:has(.lab:not([hidden]), #collection:not([hidden]) > .collection-lab))) > header .tag{font-family:"Intuicao Pixel",monospace;font-size:12px;letter-spacing:0;line-height:1.5}
 :where(body:not(:has(.lab:not([hidden]), #collection:not([hidden]) > .collection-lab))) > header .doc-link{border:1px solid #c4b89b;border-radius:2px;padding:8px 12px;background:#fff8e5;box-shadow:2px 2px #d2c6a9}
