@@ -170,7 +170,7 @@ function editor(){
   html=`<label for="selected">Elemento selecionado</label><select id="selected">${state.objects.map((o,i)=>o.type==='mirror'||free?`<option value="${i}">${o.type==='mirror'?'Espelho':'Parede'} ${i+1}</option>`:'').join('')}${free?'<option value="target">Alvo</option>':''}</select>`;
   const o=selected==='target'?state.target:state.objects[selected];
   if(free)html+=field('objectX','Posição horizontal',30,770,1,o.x)+field('objectY','Posição vertical',30,430,1,o.y);
-  if(selected!=='target'){html+=field('angle','Ângulo do elemento',-90,90,.1,o.angle,'°');if(free)html+=field('length','Comprimento',40,220,5,o.length);}
+  if(selected!=='target'){html+=field('angle','Ângulo do elemento',-90,90,.1,o.angle,'°');if(free)html+=field('length','Comprimento',40,220,.1,o.length);}
   if(free)html+=field('sourceAngle','Direção da fonte',-180,180,1,state.sourceAngle,'°')+`<div class="inline-buttons"><button id="add">+ Espelho</button><button id="wall">+ Parede</button><button id="remove" ${selected==='target'?'disabled':''}>Remover</button></div>`;
 
  }
@@ -191,7 +191,7 @@ function editor(){
  if($('family')){$('family').value=state.family;$('family').onchange=e=>{invalidate();state.family=e.target.value;editor();draw();};}
  document.querySelectorAll('#editor [data-bind], #level-notes [data-bind]').forEach(el=>el.addEventListener('input',()=>{if(el.value!==''&&el.validity.valid)change(el.dataset.bind,Number(el.value));}));
  if($('add'))$('add').onclick=()=>{invalidate();
-  if(game==='light'&&state.objects.length<24){state.objects.push({type:'mirror',x:400,y:200,length:130,angle:0});selected=state.objects.length-1;}editor();draw();
+  if(game==='light'&&state.objects.length<24){state.objects.push({type:'mirror',x:400,y:200,length:156,angle:0});selected=state.objects.length-1;}editor();draw();
  };
  if($('wall'))$('wall').onclick=()=>{invalidate();if(state.objects.length<24){state.objects.push({type:'wall',x:500,y:260,length:120,angle:90});selected=state.objects.length-1;}editor();draw();};
  if($('remove'))$('remove').onclick=()=>{invalidate();const list=state.objects;if(list.length>1&&selected!=='target'){list.splice(selected,1);selected=Math.min(selected,list.length-1);placementMessage='';editor();draw();}};
@@ -235,8 +235,10 @@ function draw(){
   svg+=portalSVG(state.portals??[],performance.now()/1000);
   svg+=lightEndpointsSVG(state,free,{firedSourceIndices:lightFired,busy:phase==='animating',complete:phase==='result'});
   state.objects.map((o,i)=>({o,i})).sort((a,b)=>(a.o.type==='wall'?0:1)-(b.o.type==='wall'?0:1)).forEach(({o,i})=>{const s=segment(o);
+   // A alça fica sobre o vidro, na posição confortável anterior; a superfície usa o comprimento inteiro.
+   const grip=o.type==='mirror'?segment({...o,length:Math.min(o.length,104)}).b:s.b;
    if(o.type==='wall'){svg+=`<g ${free?`data-item="${i}" tabindex="0" role="button" class="handle"`:''} aria-label="Parede sólida"><polygon points="${points(wallPolygon(o))}" class="light-wall-body"/><path d="M${s.a.x},${s.a.y} L${s.b.x},${s.b.y}" class="light-wall-inset"/></g>`;return;}
-   svg+=`<g data-item="${i}" tabindex="0" role="button" class="handle" aria-label="Espelho ${i+1}, ${o.angle} graus">${line(s.a,s.b,'stroke="transparent" stroke-width="30"')}${line(s.a,s.b,'class="mirror-frame"')}${line(s.a,s.b,'class="mirror-glass"')}${line(s.a,s.b,'stroke="#ffffff" stroke-width="1" stroke-dasharray="18 9"')}<circle cx="${o.x}" cy="${o.y}" r="${selected===i?6:3}" fill="${selected===i?'#c76b42':'#fffefa'}"/><text x="${o.x+10}" y="${o.y-10}" font-size="11">${i+1}</text><circle data-rotate="${i}" cx="${s.b.x}" cy="${s.b.y}" r="14" fill="#fffefa" stroke="#c76b42" stroke-width="1.5"/><text x="${s.b.x}" y="${s.b.y+4}" text-anchor="middle" pointer-events="none" font-size="14">↻</text></g>`;
+   svg+=`<g data-item="${i}" tabindex="0" role="button" class="handle" aria-label="Espelho ${i+1}, ${o.angle} graus">${line(s.a,s.b,'stroke="transparent" stroke-width="30"')}${line(s.a,s.b,'class="mirror-frame"')}${line(s.a,s.b,'class="mirror-glass"')}${line(s.a,s.b,'stroke="#ffffff" stroke-width="1" stroke-dasharray="18 9"')}<circle cx="${o.x}" cy="${o.y}" r="${selected===i?6:3}" fill="${selected===i?'#c76b42':'#fffefa'}"/><text x="${o.x+10}" y="${o.y-10}" font-size="11">${i+1}</text><circle data-rotate="${i}" cx="${grip.x}" cy="${grip.y}" r="14" fill="#fffefa" stroke="#c76b42" stroke-width="1.5"/><text x="${grip.x}" y="${grip.y+4}" text-anchor="middle" pointer-events="none" font-size="14">↻</text></g>`;
   });
   const message=r.status==='target'?'Todos os alvos alcançados, sem cruzamentos!':r.status==='collision'?`Colisão entre ${r.collisions[0].colors.map(beamName).join(' e ')}. Separe as trajetórias; o ponto está marcado.`:'Algum raio não alcançou seu alvo. Reveja espelhos, paredes e cores dos portais.';
   status('Alvos',`${r.rays.filter(v=>v.status==='target').length} / ${lightScene(state).sources.length}`,message,r.status==='target');

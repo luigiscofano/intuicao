@@ -1,4 +1,4 @@
-// Rotas com mudanças de direção expressivas; soluções e métricas verificadas nos testes.
+// Espelhos ampliados em 20%; alças e ajustes locais preservam os caminhos certificados.
 export const lightLevels = [
   {
     "name": "Um raio, novos caminhos 1",
@@ -29,14 +29,14 @@ export const lightLevels = [
         "type": "mirror",
         "x": 260,
         "y": 350,
-        "length": 104,
+        "length": 124.8,
         "angle": -21
       },
       {
         "type": "mirror",
         "x": 260,
         "y": 100,
-        "length": 104,
+        "length": 124.8,
         "angle": -69
       },
       {
@@ -97,14 +97,14 @@ export const lightLevels = [
         "type": "mirror",
         "x": 260,
         "y": 90,
-        "length": 104,
+        "length": 124.8,
         "angle": 53.5
       },
       {
         "type": "mirror",
         "x": 520,
         "y": 350,
-        "length": 104,
+        "length": 124.8,
         "angle": -8.5
       }
     ],
@@ -154,21 +154,21 @@ export const lightLevels = [
         "type": "mirror",
         "x": 230,
         "y": 370,
-        "length": 104,
+        "length": 124.8,
         "angle": 30.303326452629726
       },
       {
         "type": "mirror",
         "x": 420,
         "y": 100,
-        "length": 104,
+        "length": 124.8,
         "angle": -41.10679208138902
       },
       {
         "type": "mirror",
         "x": 640,
         "y": 350,
-        "length": 104,
+        "length": 124.8,
         "angle": 37.228896936285764
       },
       {
@@ -230,28 +230,28 @@ export const lightLevels = [
         "type": "mirror",
         "x": 650,
         "y": 70,
-        "length": 104,
+        "length": 124.8,
         "angle": 90
       },
       {
         "type": "mirror",
         "x": 650,
         "y": 230,
-        "length": 104,
+        "length": 124.8,
         "angle": -90
       },
       {
         "type": "mirror",
         "x": 220,
         "y": 230,
-        "length": 104,
+        "length": 124.8,
         "angle": 0
       },
       {
         "type": "mirror",
         "x": 220,
         "y": 380,
-        "length": 104,
+        "length": 124.8,
         "angle": 0
       },
       {
@@ -314,28 +314,28 @@ export const lightLevels = [
         "type": "mirror",
         "x": 240,
         "y": 350,
-        "length": 104,
+        "length": 124.8,
         "angle": 7
       },
       {
         "type": "mirror",
         "x": 240,
         "y": 100,
-        "length": 104,
+        "length": 124.8,
         "angle": 83
       },
       {
         "type": "mirror",
         "x": 600,
         "y": 100,
-        "length": 104,
+        "length": 124.8,
         "angle": -83
       },
       {
         "type": "mirror",
         "x": 600,
         "y": 350,
-        "length": 104,
+        "length": 124.8,
         "angle": -7
       },
       {
@@ -398,35 +398,35 @@ export const lightLevels = [
         "type": "mirror",
         "x": 400,
         "y": 260,
-        "length": 104,
+        "length": 124.8,
         "angle": -21
       },
       {
         "type": "mirror",
         "x": 650,
         "y": 260,
-        "length": 104,
+        "length": 124.8,
         "angle": -69
       },
       {
         "type": "mirror",
         "x": 650,
         "y": 90,
-        "length": 104,
+        "length": 124.8,
         "angle": 69
       },
       {
         "type": "mirror",
         "x": 150,
         "y": 90,
-        "length": 104,
+        "length": 124.8,
         "angle": -69
       },
       {
         "type": "mirror",
         "x": 150,
         "y": 360,
-        "length": 104,
+        "length": 124.8,
         "angle": -21
       },
       {
@@ -490,21 +490,21 @@ export const lightLevels = [
         "type": "mirror",
         "x": 580,
         "y": 240,
-        "length": 104,
+        "length": 124.8,
         "angle": 28.019826433455904
       },
       {
         "type": "mirror",
         "x": 370,
         "y": 80,
-        "length": 104,
+        "length": 124.8,
         "angle": -34.848025861008296
       },
       {
         "type": "mirror",
         "x": 150,
         "y": 300,
-        "length": 104,
+        "length": 124.8,
         "angle": 35.06505117707799
       },
       {
@@ -566,21 +566,21 @@ export const lightLevels = [
         "type": "mirror",
         "x": 620,
         "y": 170,
-        "length": 104,
+        "length": 124.8,
         "angle": 48.229987963732775
       },
       {
         "type": "mirror",
         "x": 420,
         "y": 350,
-        "length": 104,
+        "length": 124.8,
         "angle": -35.90903658395462
       },
       {
         "type": "mirror",
         "x": 180,
         "y": 100,
-        "length": 104,
+        "length": 124.8,
         "angle": 61.0845696639537
       },
       {
@@ -642,28 +642,28 @@ export const lightLevels = [
         "type": "mirror",
         "x": 550,
         "y": 230,
-        "length": 104,
+        "length": 124.8,
         "angle": 24.949546226893887
       },
       {
         "type": "mirror",
         "x": 360,
         "y": 390,
-        "length": 104,
+        "length": 124.8,
         "angle": -46.39847963411441
       },
       {
         "type": "mirror",
         "x": 150,
         "y": 230,
-        "length": 104,
+        "length": 124.8,
         "angle": -71.3480258610083
       },
       {
         "type": "mirror",
         "x": 150,
         "y": 70,
-        "length": 104,
+        "length": 124.8,
         "angle": 0
       },
       {
@@ -726,28 +726,28 @@ export const lightLevels = [
         "type": "mirror",
         "x": 540,
         "y": 80,
-        "length": 104,
+        "length": 124.8,
         "angle": 7
       },
       {
         "type": "mirror",
         "x": 540,
         "y": 350,
-        "length": 104,
+        "length": 124.8,
         "angle": 83
       },
       {
         "type": "mirror",
         "x": 270,
         "y": 350,
-        "length": 104,
+        "length": 124.8,
         "angle": -83
       },
       {
         "type": "mirror",
         "x": 270,
         "y": 100,
-        "length": 104,
+        "length": 124.8,
         "angle": -7
       },
       {
@@ -810,28 +810,28 @@ export const lightLevels = [
         "type": "mirror",
         "x": 240,
         "y": 80,
-        "length": 104,
+        "length": 124.8,
         "angle": 69
       },
       {
         "type": "mirror",
         "x": 240,
         "y": 240,
-        "length": 104,
+        "length": 124.8,
         "angle": 21
       },
       {
         "type": "mirror",
         "x": 500,
         "y": 240,
-        "length": 104,
+        "length": 124.8,
         "angle": 69
       },
       {
         "type": "mirror",
         "x": 500,
         "y": 380,
-        "length": 104,
+        "length": 124.8,
         "angle": 21
       },
       {
@@ -894,28 +894,28 @@ export const lightLevels = [
         "type": "mirror",
         "x": 550,
         "y": 80,
-        "length": 104,
+        "length": 124.8,
         "angle": -14
       },
       {
         "type": "mirror",
         "x": 550,
         "y": 240,
-        "length": 104,
+        "length": 124.8,
         "angle": -76
       },
       {
         "type": "mirror",
         "x": 260,
         "y": 240,
-        "length": 104,
+        "length": 124.8,
         "angle": -14
       },
       {
         "type": "mirror",
         "x": 260,
         "y": 380,
-        "length": 104,
+        "length": 124.8,
         "angle": -76
       }
     ],
@@ -967,35 +967,35 @@ export const lightLevels = [
         "type": "mirror",
         "x": 400,
         "y": 260,
-        "length": 104,
+        "length": 124.8,
         "angle": -7
       },
       {
         "type": "mirror",
         "x": 660,
         "y": 260,
-        "length": 104,
+        "length": 124.8,
         "angle": -83
       },
       {
         "type": "mirror",
         "x": 660,
         "y": 90,
-        "length": 104,
+        "length": 124.8,
         "angle": 83
       },
       {
         "type": "mirror",
         "x": 150,
         "y": 90,
-        "length": 104,
+        "length": 124.8,
         "angle": -83
       },
       {
         "type": "mirror",
         "x": 150,
         "y": 380,
-        "length": 104,
+        "length": 124.8,
         "angle": -7
       },
       {
@@ -1059,28 +1059,28 @@ export const lightLevels = [
         "type": "mirror",
         "x": 250,
         "y": 90,
-        "length": 104,
+        "length": 124.8,
         "angle": 90
       },
       {
         "type": "mirror",
         "x": 250,
         "y": 370,
-        "length": 104,
+        "length": 124.8,
         "angle": 0
       },
       {
         "type": "mirror",
         "x": 560,
         "y": 370,
-        "length": 104,
+        "length": 124.8,
         "angle": 0
       },
       {
         "type": "mirror",
         "x": 560,
         "y": 200,
-        "length": 104,
+        "length": 124.8,
         "angle": -90
       },
       {
@@ -1143,28 +1143,28 @@ export const lightLevels = [
         "type": "mirror",
         "x": 550,
         "y": 370,
-        "length": 104,
+        "length": 124.8,
         "angle": -83
       },
       {
         "type": "mirror",
         "x": 550,
         "y": 90,
-        "length": 104,
+        "length": 124.8,
         "angle": -7
       },
       {
         "type": "mirror",
         "x": 230,
         "y": 90,
-        "length": 104,
+        "length": 124.8,
         "angle": 7
       },
       {
         "type": "mirror",
         "x": 230,
         "y": 260,
-        "length": 104,
+        "length": 124.8,
         "angle": 83
       },
       {
@@ -1227,28 +1227,28 @@ export const lightLevels = [
         "type": "mirror",
         "x": 250,
         "y": 90,
-        "length": 104,
+        "length": 124.8,
         "angle": 69
       },
       {
         "type": "mirror",
         "x": 250,
         "y": 370,
-        "length": 104,
+        "length": 124.8,
         "angle": 21
       },
       {
         "type": "mirror",
         "x": 570,
         "y": 370,
-        "length": 104,
+        "length": 124.8,
         "angle": -21
       },
       {
         "type": "mirror",
         "x": 570,
         "y": 200,
-        "length": 104,
+        "length": 124.8,
         "angle": -69
       },
       {
@@ -1311,35 +1311,35 @@ export const lightLevels = [
         "type": "mirror",
         "x": 560,
         "y": 80,
-        "length": 104,
+        "length": 124.8,
         "angle": -14
       },
       {
         "type": "mirror",
         "x": 560,
         "y": 360,
-        "length": 104,
+        "length": 124.8,
         "angle": -76
       },
       {
         "type": "mirror",
         "x": 360,
         "y": 360,
-        "length": 104,
+        "length": 124.8,
         "angle": 76
       },
       {
         "type": "mirror",
         "x": 360,
         "y": 150,
-        "length": 104,
+        "length": 124.8,
         "angle": 14
       },
       {
         "type": "mirror",
         "x": 100,
         "y": 150,
-        "length": 104,
+        "length": 124.8,
         "angle": -14
       },
       {
@@ -1347,7 +1347,7 @@ export const lightLevels = [
         "x": 420,
         "y": 240,
         "angle": 243.43494882292202,
-        "length": 110,
+        "length": 90,
         "width": 12,
         "purpose": "Bloqueia o atalho fonte–alvo; a luz precisa contornar pela sequência de viradas."
       }
@@ -1403,35 +1403,35 @@ export const lightLevels = [
         "type": "mirror",
         "x": 570,
         "y": 370,
-        "length": 104,
+        "length": 124.8,
         "angle": 83
       },
       {
         "type": "mirror",
         "x": 570,
         "y": 100,
-        "length": 104,
+        "length": 124.8,
         "angle": 7
       },
       {
         "type": "mirror",
         "x": 340,
         "y": 100,
-        "length": 104,
+        "length": 124.8,
         "angle": -7
       },
       {
         "type": "mirror",
         "x": 340,
         "y": 300,
-        "length": 104,
+        "length": 124.8,
         "angle": -83
       },
       {
         "type": "mirror",
         "x": 100,
         "y": 300,
-        "length": 104,
+        "length": 124.8,
         "angle": 83
       },
       {
@@ -1495,28 +1495,28 @@ export const lightLevels = [
         "type": "mirror",
         "x": 570,
         "y": 230,
-        "length": 104,
+        "length": 124.8,
         "angle": 0
       },
       {
         "type": "mirror",
         "x": 570,
         "y": 380,
-        "length": 104,
+        "length": 124.8,
         "angle": -90
       },
       {
         "type": "mirror",
         "x": 270,
         "y": 380,
-        "length": 104,
+        "length": 124.8,
         "angle": 90
       },
       {
         "type": "mirror",
         "x": 270,
         "y": 90,
-        "length": 104,
+        "length": 124.8,
         "angle": 0
       },
       {
@@ -1579,35 +1579,35 @@ export const lightLevels = [
         "type": "mirror",
         "x": 400,
         "y": 200,
-        "length": 104,
+        "length": 124.8,
         "angle": -83
       },
       {
         "type": "mirror",
         "x": 640,
         "y": 200,
-        "length": 104,
+        "length": 124.8,
         "angle": -7
       },
       {
         "type": "mirror",
         "x": 640,
         "y": 370,
-        "length": 104,
+        "length": 124.8,
         "angle": 7
       },
       {
         "type": "mirror",
         "x": 150,
         "y": 370,
-        "length": 104,
+        "length": 124.8,
         "angle": -7
       },
       {
         "type": "mirror",
         "x": 150,
         "y": 100,
-        "length": 104,
+        "length": 124.8,
         "angle": -83
       },
       {
@@ -1683,28 +1683,28 @@ export const lightLevels = [
         "type": "mirror",
         "x": 130,
         "y": 200,
-        "length": 104,
+        "length": 124.8,
         "angle": 84.12821858176463
       },
       {
         "type": "mirror",
         "x": 310,
         "y": 305,
-        "length": 104,
+        "length": 124.8,
         "angle": 36.128218581764635
       },
       {
         "type": "mirror",
         "x": 490,
         "y": 305,
-        "length": 104,
+        "length": 124.8,
         "angle": 53.871781418235365
       },
       {
         "type": "mirror",
         "x": 670,
         "y": 200,
-        "length": 104,
+        "length": 124.8,
         "angle": 5.871781418235365
       },
       {
@@ -1779,42 +1779,42 @@ export const lightLevels = [
         "type": "mirror",
         "x": 570,
         "y": 174,
-        "length": 104,
+        "length": 124.8,
         "angle": 48.009674994913226
       },
       {
         "type": "mirror",
         "x": 410,
         "y": 66,
-        "length": 104,
+        "length": 124.8,
         "angle": -31
       },
       {
         "type": "mirror",
         "x": 250,
         "y": 174,
-        "length": 104,
+        "length": 124.8,
         "angle": 26.810827917239422
       },
       {
         "type": "mirror",
         "x": 570,
         "y": 394,
-        "length": 104,
+        "length": 124.8,
         "angle": -13.990325005086774
       },
       {
         "type": "mirror",
         "x": 410,
         "y": 286,
-        "length": 104,
+        "length": 124.8,
         "angle": 31
       },
       {
         "type": "mirror",
         "x": 250,
         "y": 394,
-        "length": 104,
+        "length": 124.8,
         "angle": -35.18917208276058
       },
       {
@@ -1900,28 +1900,28 @@ export const lightLevels = [
         "type": "mirror",
         "x": 650,
         "y": 380,
-        "length": 104,
+        "length": 124.8,
         "angle": -7
       },
       {
         "type": "mirror",
         "x": 650,
         "y": 110,
-        "length": 104,
+        "length": 124.8,
         "angle": 7
       },
       {
         "type": "mirror",
         "x": 320,
         "y": 310,
-        "length": 104,
+        "length": 124.8,
         "angle": -7
       },
       {
         "type": "mirror",
         "x": 320,
         "y": 190,
-        "length": 104,
+        "length": 124.8,
         "angle": -83
       },
       {
@@ -1996,42 +1996,42 @@ export const lightLevels = [
         "type": "mirror",
         "x": 560,
         "y": 174,
-        "length": 104,
+        "length": 124.8,
         "angle": 62.87694362721837
       },
       {
         "type": "mirror",
         "x": 410,
         "y": 66,
-        "length": 104,
+        "length": 124.8,
         "angle": -45
       },
       {
         "type": "mirror",
         "x": 260,
         "y": 174,
-        "length": 104,
-        "angle": 39.464208296918
+        "length": 124.8,
+        "angle": 41.964208296918
       },
       {
         "type": "mirror",
         "x": 560,
         "y": 394,
-        "length": 104,
+        "length": 124.8,
         "angle": -27.123056372781633
       },
       {
         "type": "mirror",
         "x": 410,
         "y": 286,
-        "length": 104,
+        "length": 124.8,
         "angle": 45
       },
       {
         "type": "mirror",
         "x": 260,
         "y": 394,
-        "length": 104,
+        "length": 124.8,
         "angle": -50.535791703082
       },
       {
@@ -2117,42 +2117,42 @@ export const lightLevels = [
         "type": "mirror",
         "x": 130,
         "y": 210,
-        "length": 104,
+        "length": 124.8,
         "angle": -83
       },
       {
         "type": "mirror",
         "x": 310,
         "y": 210,
-        "length": 104,
+        "length": 124.8,
         "angle": -7
       },
       {
         "type": "mirror",
         "x": 310,
         "y": 370,
-        "length": 104,
+        "length": 124.8,
         "angle": -2.9276071846605163
       },
       {
         "type": "mirror",
         "x": 490,
         "y": 210,
-        "length": 104,
+        "length": 124.8,
         "angle": -7
       },
       {
         "type": "mirror",
         "x": 670,
         "y": 210,
-        "length": 104,
+        "length": 124.8,
         "angle": -83
       },
       {
         "type": "mirror",
         "x": 670,
         "y": 370,
-        "length": 104,
+        "length": 124.8,
         "angle": 73.07239281533948
       },
       {
@@ -2238,28 +2238,28 @@ export const lightLevels = [
         "type": "mirror",
         "x": 640,
         "y": 80,
-        "length": 104,
+        "length": 124.8,
         "angle": 69
       },
       {
         "type": "mirror",
         "x": 640,
         "y": 370,
-        "length": 104,
+        "length": 124.8,
         "angle": -69
       },
       {
         "type": "mirror",
         "x": 320,
         "y": 150,
-        "length": 104,
+        "length": 124.8,
         "angle": 69
       },
       {
         "type": "mirror",
         "x": 320,
         "y": 270,
-        "length": 104,
+        "length": 124.8,
         "angle": 21
       },
       {
@@ -2334,28 +2334,28 @@ export const lightLevels = [
         "type": "mirror",
         "x": 670,
         "y": 305,
-        "length": 104,
+        "length": 124.8,
         "angle": 1.128218581764628
       },
       {
         "type": "mirror",
         "x": 490,
         "y": 200,
-        "length": 104,
+        "length": 124.8,
         "angle": -60.87178141823537
       },
       {
         "type": "mirror",
         "x": 310,
         "y": 200,
-        "length": 104,
+        "length": 124.8,
         "angle": -29.128218581764628
       },
       {
         "type": "mirror",
         "x": 130,
         "y": 305,
-        "length": 104,
+        "length": 124.8,
         "angle": 88.87178141823537
       },
       {
@@ -2430,56 +2430,56 @@ export const lightLevels = [
         "type": "mirror",
         "x": 240,
         "y": 174,
-        "length": 104,
+        "length": 124.8,
         "angle": 18.140620314222556
       },
       {
         "type": "mirror",
         "x": 370,
         "y": 66,
-        "length": 104,
+        "length": 124.8,
         "angle": -38
       },
       {
         "type": "mirror",
         "x": 500,
         "y": 174,
-        "length": 104,
+        "length": 124.8,
         "angle": 38
       },
       {
         "type": "mirror",
         "x": 630,
         "y": 66,
-        "length": 104,
+        "length": 124.8,
         "angle": -39.519500944462166
       },
       {
         "type": "mirror",
         "x": 240,
         "y": 394,
-        "length": 104,
+        "length": 124.8,
         "angle": 18.140620314222556
       },
       {
         "type": "mirror",
         "x": 370,
         "y": 286,
-        "length": 104,
+        "length": 124.8,
         "angle": -38
       },
       {
         "type": "mirror",
         "x": 500,
         "y": 394,
-        "length": 104,
+        "length": 124.8,
         "angle": 38
       },
       {
         "type": "mirror",
         "x": 630,
         "y": 286,
-        "length": 104,
+        "length": 124.8,
         "angle": -39.519500944462166
       },
       {
@@ -2567,28 +2567,28 @@ export const lightLevels = [
         "type": "mirror",
         "x": 150,
         "y": 380,
-        "length": 104,
+        "length": 124.8,
         "angle": 90
       },
       {
         "type": "mirror",
         "x": 150,
         "y": 110,
-        "length": 104,
+        "length": 124.8,
         "angle": -90
       },
       {
         "type": "mirror",
         "x": 480,
         "y": 310,
-        "length": 104,
+        "length": 124.8,
         "angle": 90
       },
       {
         "type": "mirror",
         "x": 480,
         "y": 190,
-        "length": 104,
+        "length": 124.8,
         "angle": 0
       },
       {
@@ -2663,56 +2663,56 @@ export const lightLevels = [
         "type": "mirror",
         "x": 230,
         "y": 174,
-        "length": 104,
+        "length": 124.8,
         "angle": 32.67009587295495
       },
       {
         "type": "mirror",
         "x": 365,
         "y": 66,
-        "length": 104,
+        "length": 124.8,
         "angle": -52
       },
       {
         "type": "mirror",
         "x": 500,
         "y": 174,
-        "length": 104,
+        "length": 124.8,
         "angle": 52
       },
       {
         "type": "mirror",
         "x": 635,
         "y": 66,
-        "length": 104,
+        "length": 124.8,
         "angle": -52.50609380699123
       },
       {
         "type": "mirror",
         "x": 230,
         "y": 394,
-        "length": 104,
+        "length": 124.8,
         "angle": 32.67009587295495
       },
       {
         "type": "mirror",
         "x": 365,
         "y": 286,
-        "length": 104,
+        "length": 124.8,
         "angle": -52
       },
       {
         "type": "mirror",
         "x": 500,
         "y": 394,
-        "length": 104,
+        "length": 124.8,
         "angle": 52
       },
       {
         "type": "mirror",
         "x": 635,
         "y": 286,
-        "length": 104,
+        "length": 124.8,
         "angle": -52.50609380699123
       },
       {
@@ -2800,42 +2800,42 @@ export const lightLevels = [
         "type": "mirror",
         "x": 230,
         "y": 174,
-        "length": 104,
+        "length": 124.8,
         "angle": 6.9903250050867705
       },
       {
         "type": "mirror",
         "x": 390,
         "y": 66,
-        "length": 104,
+        "length": 124.8,
         "angle": -24
       },
       {
         "type": "mirror",
         "x": 550,
         "y": 174,
-        "length": 104,
+        "length": 124.8,
         "angle": 28.18917208276059
       },
       {
         "type": "mirror",
         "x": 230,
         "y": 394,
-        "length": 104,
+        "length": 124.8,
         "angle": -41.009674994913226
       },
       {
         "type": "mirror",
         "x": 390,
         "y": 286,
-        "length": 104,
+        "length": 124.8,
         "angle": 24
       },
       {
         "type": "mirror",
         "x": 550,
         "y": 394,
-        "length": 104,
+        "length": 124.8,
         "angle": -19.81082791723941
       },
       {
@@ -2921,29 +2921,29 @@ export const lightLevels = [
         "type": "mirror",
         "x": 130,
         "y": 205,
-        "length": 104,
+        "length": 124.8,
         "angle": -88.28521719258075
       },
       {
         "type": "mirror",
         "x": 310,
         "y": 315,
-        "length": 104,
+        "length": 124.8,
         "angle": 29.71478280741926
       },
       {
         "type": "mirror",
         "x": 490,
         "y": 315,
-        "length": 104,
+        "length": 124.8,
         "angle": 60.28521719258074
       },
       {
         "type": "mirror",
         "x": 670,
         "y": 205,
-        "length": 104,
-        "angle": -1.7147828074192617
+        "length": 124.8,
+        "angle": 1.785217192580717
       },
       {
         "type": "wall",
@@ -3017,28 +3017,28 @@ export const lightLevels = [
         "type": "mirror",
         "x": 160,
         "y": 80,
-        "length": 104,
+        "length": 124.8,
         "angle": -7
       },
       {
         "type": "mirror",
         "x": 160,
         "y": 370,
-        "length": 104,
+        "length": 124.8,
         "angle": 7
       },
       {
         "type": "mirror",
         "x": 480,
         "y": 150,
-        "length": 104,
+        "length": 124.8,
         "angle": -7
       },
       {
         "type": "mirror",
         "x": 480,
         "y": 270,
-        "length": 104,
+        "length": 124.8,
         "angle": -83
       },
       {
@@ -3113,56 +3113,56 @@ export const lightLevels = [
         "type": "mirror",
         "x": 570,
         "y": 174,
-        "length": 104,
+        "length": 124.8,
         "angle": 64.85937968577743
       },
       {
         "type": "mirror",
         "x": 440,
         "y": 66,
-        "length": 104,
+        "length": 124.8,
         "angle": -45
       },
       {
         "type": "mirror",
         "x": 310,
         "y": 174,
-        "length": 104,
+        "length": 124.8,
         "angle": 45
       },
       {
         "type": "mirror",
         "x": 180,
         "y": 66,
-        "length": 104,
+        "length": 124.8,
         "angle": -42.57451453132019
       },
       {
         "type": "mirror",
         "x": 570,
         "y": 394,
-        "length": 104,
+        "length": 124.8,
         "angle": 64.85937968577743
       },
       {
         "type": "mirror",
         "x": 440,
         "y": 286,
-        "length": 104,
+        "length": 124.8,
         "angle": -45
       },
       {
         "type": "mirror",
         "x": 310,
         "y": 394,
-        "length": 104,
+        "length": 124.8,
         "angle": 45
       },
       {
         "type": "mirror",
         "x": 180,
         "y": 286,
-        "length": 104,
+        "length": 124.8,
         "angle": -42.57451453132019
       },
       {
@@ -3250,56 +3250,56 @@ export const lightLevels = [
         "type": "mirror",
         "x": 230,
         "y": 174,
-        "length": 104,
+        "length": 124.8,
         "angle": 32.14062031422256
       },
       {
         "type": "mirror",
         "x": 360,
         "y": 66,
-        "length": 104,
+        "length": 124.8,
         "angle": -52
       },
       {
         "type": "mirror",
         "x": 490,
         "y": 174,
-        "length": 104,
+        "length": 124.8,
         "angle": 52
       },
       {
         "type": "mirror",
         "x": 620,
         "y": 66,
-        "length": 104,
+        "length": 124.8,
         "angle": -54.425485468679824
       },
       {
         "type": "mirror",
         "x": 230,
         "y": 394,
-        "length": 104,
+        "length": 124.8,
         "angle": 32.14062031422256
       },
       {
         "type": "mirror",
         "x": 360,
         "y": 286,
-        "length": 104,
+        "length": 124.8,
         "angle": -52
       },
       {
         "type": "mirror",
         "x": 490,
         "y": 394,
-        "length": 104,
+        "length": 124.8,
         "angle": 52
       },
       {
         "type": "mirror",
         "x": 620,
         "y": 286,
-        "length": 104,
+        "length": 124.8,
         "angle": -54.425485468679824
       },
       {
@@ -3387,28 +3387,28 @@ export const lightLevels = [
         "type": "mirror",
         "x": 130,
         "y": 250,
-        "length": 104,
+        "length": 124.8,
         "angle": -37.28702856728626
       },
       {
         "type": "mirror",
         "x": 310,
         "y": 135,
-        "length": 104,
+        "length": 124.8,
         "angle": -85.28702856728626
       },
       {
         "type": "mirror",
         "x": 490,
         "y": 135,
-        "length": 104,
+        "length": 124.8,
         "angle": -4.7129714327137435
       },
       {
         "type": "mirror",
         "x": 670,
         "y": 250,
-        "length": 104,
+        "length": 124.8,
         "angle": -52.71297143271374
       },
       {
@@ -3483,56 +3483,56 @@ export const lightLevels = [
         "type": "mirror",
         "x": 560,
         "y": 174,
-        "length": 104,
+        "length": 124.8,
         "angle": 50.85937968577743
       },
       {
         "type": "mirror",
         "x": 430,
         "y": 66,
-        "length": 104,
+        "length": 124.8,
         "angle": -31
       },
       {
         "type": "mirror",
         "x": 300,
         "y": 174,
-        "length": 104,
+        "length": 124.8,
         "angle": 31
       },
       {
         "type": "mirror",
         "x": 170,
         "y": 66,
-        "length": 104,
+        "length": 124.8,
         "angle": -29.480499055537834
       },
       {
         "type": "mirror",
         "x": 560,
         "y": 394,
-        "length": 104,
+        "length": 124.8,
         "angle": 50.85937968577743
       },
       {
         "type": "mirror",
         "x": 430,
         "y": 286,
-        "length": 104,
+        "length": 124.8,
         "angle": -31
       },
       {
         "type": "mirror",
         "x": 300,
         "y": 394,
-        "length": 104,
+        "length": 124.8,
         "angle": 31
       },
       {
         "type": "mirror",
         "x": 170,
         "y": 286,
-        "length": 104,
+        "length": 124.8,
         "angle": -29.480499055537834
       },
       {
@@ -3620,28 +3620,28 @@ export const lightLevels = [
         "type": "mirror",
         "x": 670,
         "y": 315,
-        "length": 104,
+        "length": 124.8,
         "angle": 8.714782807419255
       },
       {
         "type": "mirror",
         "x": 490,
         "y": 205,
-        "length": 104,
+        "length": 124.8,
         "angle": -67.28521719258075
       },
       {
         "type": "mirror",
         "x": 310,
         "y": 205,
-        "length": 104,
+        "length": 124.8,
         "angle": -22.714782807419255
       },
       {
         "type": "mirror",
         "x": 130,
         "y": 315,
-        "length": 104,
+        "length": 124.8,
         "angle": 81.28521719258075
       },
       {
@@ -3716,42 +3716,42 @@ export const lightLevels = [
         "type": "mirror",
         "x": 240,
         "y": 286,
-        "length": 104,
+        "length": 124.8,
         "angle": 62.876943627218374
       },
       {
         "type": "mirror",
         "x": 390,
         "y": 394,
-        "length": 104,
+        "length": 124.8,
         "angle": -45
       },
       {
         "type": "mirror",
         "x": 540,
         "y": 286,
-        "length": 104,
-        "angle": 39.464208296918
+        "length": 124.8,
+        "angle": 41.964208296918
       },
       {
         "type": "mirror",
         "x": 240,
         "y": 66,
-        "length": 104,
+        "length": 124.8,
         "angle": -27.123056372781626
       },
       {
         "type": "mirror",
         "x": 390,
         "y": 174,
-        "length": 104,
+        "length": 124.8,
         "angle": 45
       },
       {
         "type": "mirror",
         "x": 540,
         "y": 66,
-        "length": 104,
+        "length": 124.8,
         "angle": -50.535791703082
       },
       {
@@ -3837,28 +3837,28 @@ export const lightLevels = [
         "type": "mirror",
         "x": 670,
         "y": 200,
-        "length": 104,
+        "length": 124.8,
         "angle": -8.128218581764628
       },
       {
         "type": "mirror",
         "x": 490,
         "y": 305,
-        "length": 104,
+        "length": 124.8,
         "angle": 67.87178141823537
       },
       {
         "type": "mirror",
         "x": 310,
         "y": 305,
-        "length": 104,
+        "length": 124.8,
         "angle": 22.128218581764628
       },
       {
         "type": "mirror",
         "x": 130,
         "y": 200,
-        "length": 104,
+        "length": 124.8,
         "angle": -81.87178141823537
       },
       {
@@ -3940,14 +3940,14 @@ export const lightLevels = [
         "type": "mirror",
         "x": 250,
         "y": 200,
-        "length": 104,
-        "angle": 69
+        "length": 124.8,
+        "angle": 54.5
       },
       {
         "type": "mirror",
         "x": 550,
         "y": 330,
-        "length": 104,
+        "length": 124.8,
         "angle": 21
       },
       {
@@ -4027,15 +4027,15 @@ export const lightLevels = [
         "type": "mirror",
         "x": 555,
         "y": 220,
-        "length": 104,
+        "length": 124.8,
         "angle": -14
       },
       {
         "type": "mirror",
         "x": 245,
         "y": 220,
-        "length": 104,
-        "angle": -76
+        "length": 124.8,
+        "angle": -63.5
       },
       {
         "type": "wall",
@@ -4114,14 +4114,14 @@ export const lightLevels = [
         "type": "mirror",
         "x": 240,
         "y": 260,
-        "length": 104,
+        "length": 124.8,
         "angle": -7
       },
       {
         "type": "mirror",
         "x": 560,
         "y": 260,
-        "length": 104,
+        "length": 124.8,
         "angle": -83
       },
       {
@@ -4219,14 +4219,14 @@ export const lightLevels = [
         "type": "mirror",
         "x": 550,
         "y": 220,
-        "length": 104,
+        "length": 124.8,
         "angle": 0
       },
       {
         "type": "mirror",
         "x": 250,
         "y": 340,
-        "length": 104,
+        "length": 124.8,
         "angle": -90
       },
       {
@@ -4316,28 +4316,28 @@ export const lightLevels = [
         "type": "mirror",
         "x": 300,
         "y": 80,
-        "length": 104,
+        "length": 124.8,
         "angle": -83
       },
       {
         "type": "mirror",
         "x": 300,
         "y": 240,
-        "length": 104,
+        "length": 124.8,
         "angle": -7
       },
       {
         "type": "mirror",
         "x": 700,
         "y": 100,
-        "length": 104,
+        "length": 124.8,
         "angle": -83
       },
       {
         "type": "mirror",
         "x": 700,
         "y": 350,
-        "length": 104,
+        "length": 124.8,
         "angle": 83
       },
       {
@@ -4419,14 +4419,14 @@ export const lightLevels = [
         "type": "mirror",
         "x": 560,
         "y": 260,
-        "length": 104,
-        "angle": 69
+        "length": 124.8,
+        "angle": 54.5
       },
       {
         "type": "mirror",
         "x": 240,
         "y": 130,
-        "length": 104,
+        "length": 124.8,
         "angle": 21
       },
       {
@@ -4506,14 +4506,14 @@ export const lightLevels = [
         "type": "mirror",
         "x": 250,
         "y": 220,
-        "length": 104,
+        "length": 124.8,
         "angle": 76
       },
       {
         "type": "mirror",
         "x": 550,
         "y": 220,
-        "length": 104,
+        "length": 124.8,
         "angle": 14
       },
       {
@@ -4593,14 +4593,14 @@ export const lightLevels = [
         "type": "mirror",
         "x": 555,
         "y": 200,
-        "length": 104,
+        "length": 124.8,
         "angle": -7
       },
       {
         "type": "mirror",
         "x": 245,
         "y": 200,
-        "length": 104,
+        "length": 124.8,
         "angle": -83
       },
       {
@@ -4698,14 +4698,14 @@ export const lightLevels = [
         "type": "mirror",
         "x": 240,
         "y": 240,
-        "length": 104,
+        "length": 124.8,
         "angle": 0
       },
       {
         "type": "mirror",
         "x": 560,
         "y": 120,
-        "length": 104,
+        "length": 124.8,
         "angle": -90
       },
       {
@@ -4795,28 +4795,28 @@ export const lightLevels = [
         "type": "mirror",
         "x": 500,
         "y": 80,
-        "length": 104,
+        "length": 124.8,
         "angle": 7
       },
       {
         "type": "mirror",
         "x": 500,
         "y": 240,
-        "length": 104,
+        "length": 124.8,
         "angle": 83
       },
       {
         "type": "mirror",
         "x": 100,
         "y": 100,
-        "length": 104,
+        "length": 124.8,
         "angle": 7
       },
       {
         "type": "mirror",
         "x": 100,
         "y": 350,
-        "length": 104,
+        "length": 124.8,
         "angle": -7
       },
       {
@@ -4928,28 +4928,28 @@ export const lightLevels = [
         "type": "mirror",
         "x": 130,
         "y": 200,
-        "length": 104,
-        "angle": 69
+        "length": 124.8,
+        "angle": 54.5
       },
       {
         "type": "mirror",
         "x": 670,
         "y": 330,
-        "length": 104,
+        "length": 124.8,
         "angle": 21
       },
       {
         "type": "mirror",
         "x": 470,
         "y": 200,
-        "length": 104,
-        "angle": 69
+        "length": 124.8,
+        "angle": 54.5
       },
       {
         "type": "mirror",
         "x": 330,
         "y": 330,
-        "length": 104,
+        "length": 124.8,
         "angle": 21
       },
       {
@@ -5070,28 +5070,28 @@ export const lightLevels = [
         "type": "mirror",
         "x": 126,
         "y": 200,
-        "length": 104,
+        "length": 124.8,
         "angle": 76
       },
       {
         "type": "mirror",
         "x": 334,
         "y": 200,
-        "length": 104,
+        "length": 124.8,
         "angle": 14
       },
       {
         "type": "mirror",
         "x": 466,
         "y": 200,
-        "length": 104,
+        "length": 124.8,
         "angle": 76
       },
       {
         "type": "mirror",
         "x": 674,
         "y": 200,
-        "length": 104,
+        "length": 124.8,
         "angle": 14
       },
       {
@@ -5212,28 +5212,28 @@ export const lightLevels = [
         "type": "mirror",
         "x": 122,
         "y": 260,
-        "length": 104,
+        "length": 124.8,
         "angle": -7
       },
       {
         "type": "mirror",
         "x": 338,
         "y": 260,
-        "length": 104,
+        "length": 124.8,
         "angle": -83
       },
       {
         "type": "mirror",
         "x": 462,
         "y": 260,
-        "length": 104,
+        "length": 124.8,
         "angle": -7
       },
       {
         "type": "mirror",
         "x": 678,
         "y": 260,
-        "length": 104,
+        "length": 124.8,
         "angle": -83
       },
       {
@@ -5390,28 +5390,28 @@ export const lightLevels = [
         "type": "mirror",
         "x": 330,
         "y": 220,
-        "length": 104,
+        "length": 124.8,
         "angle": 0
       },
       {
         "type": "mirror",
         "x": 470,
         "y": 340,
-        "length": 104,
+        "length": 124.8,
         "angle": -90
       },
       {
         "type": "mirror",
         "x": 670,
         "y": 220,
-        "length": 104,
+        "length": 124.8,
         "angle": 0
       },
       {
         "type": "mirror",
         "x": 130,
         "y": 340,
-        "length": 104,
+        "length": 124.8,
         "angle": -90
       },
       {
@@ -5542,28 +5542,28 @@ export const lightLevels = [
         "type": "mirror",
         "x": 126,
         "y": 200,
-        "length": 104,
-        "angle": -83
+        "length": 124.8,
+        "angle": -54.5
       },
       {
         "type": "mirror",
         "x": 674,
         "y": 330,
-        "length": 104,
+        "length": 124.8,
         "angle": -7
       },
       {
         "type": "mirror",
         "x": 466,
         "y": 200,
-        "length": 104,
-        "angle": -83
+        "length": 124.8,
+        "angle": -54.5
       },
       {
         "type": "mirror",
         "x": 334,
         "y": 330,
-        "length": 104,
+        "length": 124.8,
         "angle": -7
       },
       {
@@ -5684,28 +5684,28 @@ export const lightLevels = [
         "type": "mirror",
         "x": 678,
         "y": 260,
-        "length": 104,
-        "angle": 69
+        "length": 124.8,
+        "angle": 54.5
       },
       {
         "type": "mirror",
         "x": 122,
         "y": 130,
-        "length": 104,
+        "length": 124.8,
         "angle": 21
       },
       {
         "type": "mirror",
         "x": 338,
         "y": 260,
-        "length": 104,
-        "angle": 69
+        "length": 124.8,
+        "angle": 54.5
       },
       {
         "type": "mirror",
         "x": 462,
         "y": 130,
-        "length": 104,
+        "length": 124.8,
         "angle": 21
       },
       {
@@ -5826,28 +5826,28 @@ export const lightLevels = [
         "type": "mirror",
         "x": 470,
         "y": 220,
-        "length": 104,
+        "length": 124.8,
         "angle": 76
       },
       {
         "type": "mirror",
         "x": 670,
         "y": 220,
-        "length": 104,
+        "length": 124.8,
         "angle": 14
       },
       {
         "type": "mirror",
         "x": 130,
         "y": 220,
-        "length": 104,
+        "length": 124.8,
         "angle": 76
       },
       {
         "type": "mirror",
         "x": 330,
         "y": 220,
-        "length": 104,
+        "length": 124.8,
         "angle": 14
       },
       {
@@ -6004,28 +6004,28 @@ export const lightLevels = [
         "type": "mirror",
         "x": 466,
         "y": 220,
-        "length": 104,
-        "angle": 83
+        "length": 124.8,
+        "angle": 62
       },
       {
         "type": "mirror",
         "x": 334,
         "y": 340,
-        "length": 104,
+        "length": 124.8,
         "angle": 7
       },
       {
         "type": "mirror",
         "x": 126,
         "y": 220,
-        "length": 104,
+        "length": 124.8,
         "angle": 83
       },
       {
         "type": "mirror",
         "x": 674,
         "y": 340,
-        "length": 104,
+        "length": 124.8,
         "angle": 7
       },
       {
@@ -6192,28 +6192,28 @@ export const lightLevels = [
         "type": "mirror",
         "x": 462,
         "y": 240,
-        "length": 104,
+        "length": 124.8,
         "angle": 0
       },
       {
         "type": "mirror",
         "x": 338,
         "y": 120,
-        "length": 104,
+        "length": 124.8,
         "angle": -90
       },
       {
         "type": "mirror",
         "x": 122,
         "y": 240,
-        "length": 104,
+        "length": 124.8,
         "angle": 0
       },
       {
         "type": "mirror",
         "x": 678,
         "y": 120,
-        "length": 104,
+        "length": 124.8,
         "angle": -90
       },
       {
@@ -6344,42 +6344,42 @@ export const lightLevels = [
         "type": "mirror",
         "x": 670,
         "y": 180,
-        "length": 104,
+        "length": 124.8,
         "angle": 7
       },
       {
         "type": "mirror",
         "x": 470,
         "y": 180,
-        "length": 104,
+        "length": 124.8,
         "angle": 83
       },
       {
         "type": "mirror",
         "x": 330,
         "y": 390,
-        "length": 104,
+        "length": 124.8,
         "angle": 7
       },
       {
         "type": "mirror",
         "x": 330,
         "y": 180,
-        "length": 104,
+        "length": 124.8,
         "angle": 83
       },
       {
         "type": "mirror",
         "x": 130,
         "y": 180,
-        "length": 104,
+        "length": 124.8,
         "angle": 7
       },
       {
         "type": "mirror",
         "x": 670,
         "y": 390,
-        "length": 104,
+        "length": 124.8,
         "angle": 83
       },
       {
@@ -6516,28 +6516,28 @@ export const lightLevels = [
         "type": "mirror",
         "x": 130,
         "y": 200,
-        "length": 104,
-        "angle": 69
+        "length": 124.8,
+        "angle": 54.5
       },
       {
         "type": "mirror",
         "x": 670,
         "y": 330,
-        "length": 104,
+        "length": 124.8,
         "angle": 21
       },
       {
         "type": "mirror",
         "x": 470,
         "y": 200,
-        "length": 104,
-        "angle": 69
+        "length": 124.8,
+        "angle": 54.5
       },
       {
         "type": "mirror",
         "x": 330,
         "y": 330,
-        "length": 104,
+        "length": 124.8,
         "angle": 21
       },
       {
@@ -6666,28 +6666,28 @@ export const lightLevels = [
         "type": "mirror",
         "x": 126,
         "y": 200,
-        "length": 104,
+        "length": 124.8,
         "angle": 76
       },
       {
         "type": "mirror",
         "x": 334,
         "y": 200,
-        "length": 104,
+        "length": 124.8,
         "angle": 14
       },
       {
         "type": "mirror",
         "x": 466,
         "y": 200,
-        "length": 104,
+        "length": 124.8,
         "angle": 76
       },
       {
         "type": "mirror",
         "x": 674,
         "y": 200,
-        "length": 104,
+        "length": 124.8,
         "angle": 14
       },
       {
@@ -6816,28 +6816,28 @@ export const lightLevels = [
         "type": "mirror",
         "x": 122,
         "y": 260,
-        "length": 104,
+        "length": 124.8,
         "angle": -7
       },
       {
         "type": "mirror",
         "x": 338,
         "y": 260,
-        "length": 104,
+        "length": 124.8,
         "angle": -83
       },
       {
         "type": "mirror",
         "x": 462,
         "y": 260,
-        "length": 104,
+        "length": 124.8,
         "angle": -7
       },
       {
         "type": "mirror",
         "x": 678,
         "y": 260,
-        "length": 104,
+        "length": 124.8,
         "angle": -83
       },
       {
@@ -7010,28 +7010,28 @@ export const lightLevels = [
         "type": "mirror",
         "x": 330,
         "y": 220,
-        "length": 104,
+        "length": 124.8,
         "angle": 0
       },
       {
         "type": "mirror",
         "x": 470,
         "y": 340,
-        "length": 104,
+        "length": 124.8,
         "angle": -90
       },
       {
         "type": "mirror",
         "x": 670,
         "y": 220,
-        "length": 104,
+        "length": 124.8,
         "angle": 0
       },
       {
         "type": "mirror",
         "x": 130,
         "y": 340,
-        "length": 104,
+        "length": 124.8,
         "angle": -90
       },
       {
@@ -7156,28 +7156,28 @@ export const lightLevels = [
         "type": "mirror",
         "x": 126,
         "y": 200,
-        "length": 104,
-        "angle": -83
+        "length": 124.8,
+        "angle": -54.5
       },
       {
         "type": "mirror",
         "x": 674,
         "y": 330,
-        "length": 104,
+        "length": 124.8,
         "angle": -7
       },
       {
         "type": "mirror",
         "x": 466,
         "y": 200,
-        "length": 104,
-        "angle": -83
+        "length": 124.8,
+        "angle": -54.5
       },
       {
         "type": "mirror",
         "x": 334,
         "y": 330,
-        "length": 104,
+        "length": 124.8,
         "angle": -7
       },
       {
@@ -7306,28 +7306,28 @@ export const lightLevels = [
         "type": "mirror",
         "x": 678,
         "y": 260,
-        "length": 104,
-        "angle": 69
+        "length": 124.8,
+        "angle": 54.5
       },
       {
         "type": "mirror",
         "x": 122,
         "y": 130,
-        "length": 104,
+        "length": 124.8,
         "angle": 21
       },
       {
         "type": "mirror",
         "x": 338,
         "y": 260,
-        "length": 104,
-        "angle": 69
+        "length": 124.8,
+        "angle": 54.5
       },
       {
         "type": "mirror",
         "x": 462,
         "y": 130,
-        "length": 104,
+        "length": 124.8,
         "angle": 21
       },
       {
@@ -7456,28 +7456,28 @@ export const lightLevels = [
         "type": "mirror",
         "x": 470,
         "y": 220,
-        "length": 104,
+        "length": 124.8,
         "angle": 76
       },
       {
         "type": "mirror",
         "x": 670,
         "y": 220,
-        "length": 104,
+        "length": 124.8,
         "angle": 14
       },
       {
         "type": "mirror",
         "x": 130,
         "y": 220,
-        "length": 104,
+        "length": 124.8,
         "angle": 76
       },
       {
         "type": "mirror",
         "x": 330,
         "y": 220,
-        "length": 104,
+        "length": 124.8,
         "angle": 14
       },
       {
@@ -7650,28 +7650,28 @@ export const lightLevels = [
         "type": "mirror",
         "x": 466,
         "y": 220,
-        "length": 104,
+        "length": 124.8,
         "angle": 83
       },
       {
         "type": "mirror",
         "x": 334,
         "y": 340,
-        "length": 104,
+        "length": 124.8,
         "angle": 7
       },
       {
         "type": "mirror",
         "x": 126,
         "y": 220,
-        "length": 104,
+        "length": 124.8,
         "angle": 83
       },
       {
         "type": "mirror",
         "x": 674,
         "y": 340,
-        "length": 104,
+        "length": 124.8,
         "angle": 7
       },
       {
@@ -7836,28 +7836,28 @@ export const lightLevels = [
         "type": "mirror",
         "x": 462,
         "y": 240,
-        "length": 104,
+        "length": 124.8,
         "angle": 0
       },
       {
         "type": "mirror",
         "x": 338,
         "y": 120,
-        "length": 104,
+        "length": 124.8,
         "angle": -90
       },
       {
         "type": "mirror",
         "x": 122,
         "y": 240,
-        "length": 104,
+        "length": 124.8,
         "angle": 0
       },
       {
         "type": "mirror",
         "x": 678,
         "y": 120,
-        "length": 104,
+        "length": 124.8,
         "angle": -90
       },
       {
@@ -7986,42 +7986,42 @@ export const lightLevels = [
         "type": "mirror",
         "x": 670,
         "y": 180,
-        "length": 104,
+        "length": 124.8,
         "angle": 7
       },
       {
         "type": "mirror",
         "x": 470,
         "y": 180,
-        "length": 104,
+        "length": 124.8,
         "angle": 83
       },
       {
         "type": "mirror",
         "x": 330,
         "y": 390,
-        "length": 104,
+        "length": 124.8,
         "angle": 7
       },
       {
         "type": "mirror",
         "x": 330,
         "y": 180,
-        "length": 104,
+        "length": 124.8,
         "angle": 83
       },
       {
         "type": "mirror",
         "x": 130,
         "y": 180,
-        "length": 104,
+        "length": 124.8,
         "angle": 7
       },
       {
         "type": "mirror",
         "x": 670,
         "y": 390,
-        "length": 104,
+        "length": 124.8,
         "angle": 83
       },
       {
@@ -8152,28 +8152,28 @@ export const lightLevels = [
         "type": "mirror",
         "x": 130,
         "y": 200,
-        "length": 104,
-        "angle": 69
+        "length": 124.8,
+        "angle": 54.5
       },
       {
         "type": "mirror",
         "x": 670,
         "y": 330,
-        "length": 104,
+        "length": 124.8,
         "angle": 21
       },
       {
         "type": "mirror",
         "x": 470,
         "y": 200,
-        "length": 104,
-        "angle": 69
+        "length": 124.8,
+        "angle": 54.5
       },
       {
         "type": "mirror",
         "x": 330,
         "y": 330,
-        "length": 104,
+        "length": 124.8,
         "angle": 21
       },
       {
@@ -8346,28 +8346,28 @@ export const lightLevels = [
         "type": "mirror",
         "x": 334,
         "y": 220,
-        "length": 104,
+        "length": 124.8,
         "angle": -14
       },
       {
         "type": "mirror",
         "x": 466,
         "y": 340,
-        "length": 104,
+        "length": 124.8,
         "angle": -76
       },
       {
         "type": "mirror",
         "x": 674,
         "y": 220,
-        "length": 104,
+        "length": 124.8,
         "angle": -14
       },
       {
         "type": "mirror",
         "x": 126,
         "y": 340,
-        "length": 104,
+        "length": 124.8,
         "angle": -76
       },
       {
@@ -8492,28 +8492,28 @@ export const lightLevels = [
         "type": "mirror",
         "x": 122,
         "y": 260,
-        "length": 104,
+        "length": 124.8,
         "angle": -7
       },
       {
         "type": "mirror",
         "x": 338,
         "y": 260,
-        "length": 104,
+        "length": 124.8,
         "angle": -83
       },
       {
         "type": "mirror",
         "x": 462,
         "y": 260,
-        "length": 104,
+        "length": 124.8,
         "angle": -7
       },
       {
         "type": "mirror",
         "x": 678,
         "y": 260,
-        "length": 104,
+        "length": 124.8,
         "angle": -83
       },
       {
@@ -8642,29 +8642,29 @@ export const lightLevels = [
         "type": "mirror",
         "x": 330,
         "y": 220,
-        "length": 104,
+        "length": 124.8,
         "angle": 0
       },
       {
         "type": "mirror",
         "x": 130,
         "y": 220,
-        "length": 104,
-        "angle": -90
+        "length": 124.8,
+        "angle": -63.5
       },
       {
         "type": "mirror",
         "x": 670,
         "y": 220,
-        "length": 104,
+        "length": 124.8,
         "angle": 0
       },
       {
         "type": "mirror",
         "x": 470,
         "y": 220,
-        "length": 104,
-        "angle": -90
+        "length": 124.8,
+        "angle": -63.5
       },
       {
         "type": "wall",
@@ -8792,28 +8792,28 @@ export const lightLevels = [
         "type": "mirror",
         "x": 126,
         "y": 200,
-        "length": 104,
-        "angle": -83
+        "length": 124.8,
+        "angle": -54.5
       },
       {
         "type": "mirror",
         "x": 674,
         "y": 330,
-        "length": 104,
+        "length": 124.8,
         "angle": -7
       },
       {
         "type": "mirror",
         "x": 466,
         "y": 200,
-        "length": 104,
-        "angle": -83
+        "length": 124.8,
+        "angle": -54.5
       },
       {
         "type": "mirror",
         "x": 334,
         "y": 330,
-        "length": 104,
+        "length": 124.8,
         "angle": -7
       },
       {
@@ -8942,29 +8942,29 @@ export const lightLevels = [
         "type": "mirror",
         "x": 462,
         "y": 240,
-        "length": 104,
+        "length": 124.8,
         "angle": -21
       },
       {
         "type": "mirror",
         "x": 678,
         "y": 240,
-        "length": 104,
-        "angle": -69
+        "length": 124.8,
+        "angle": -63.5
       },
       {
         "type": "mirror",
         "x": 122,
         "y": 240,
-        "length": 104,
+        "length": 124.8,
         "angle": -21
       },
       {
         "type": "mirror",
         "x": 338,
         "y": 240,
-        "length": 104,
-        "angle": -69
+        "length": 124.8,
+        "angle": -63.5
       },
       {
         "type": "wall",
@@ -9088,28 +9088,28 @@ export const lightLevels = [
         "type": "mirror",
         "x": 470,
         "y": 220,
-        "length": 104,
+        "length": 124.8,
         "angle": 76
       },
       {
         "type": "mirror",
         "x": 670,
         "y": 220,
-        "length": 104,
+        "length": 124.8,
         "angle": 14
       },
       {
         "type": "mirror",
         "x": 130,
         "y": 220,
-        "length": 104,
+        "length": 124.8,
         "angle": 76
       },
       {
         "type": "mirror",
         "x": 330,
         "y": 220,
-        "length": 104,
+        "length": 124.8,
         "angle": 14
       },
       {
@@ -9238,42 +9238,42 @@ export const lightLevels = [
         "type": "mirror",
         "x": 674,
         "y": 180,
-        "length": 104,
+        "length": 124.8,
         "angle": -7
       },
       {
         "type": "mirror",
         "x": 466,
         "y": 180,
-        "length": 104,
+        "length": 124.8,
         "angle": -83
       },
       {
         "type": "mirror",
         "x": 334,
         "y": 390,
-        "length": 104,
+        "length": 124.8,
         "angle": -7
       },
       {
         "type": "mirror",
         "x": 334,
         "y": 180,
-        "length": 104,
+        "length": 124.8,
         "angle": -83
       },
       {
         "type": "mirror",
         "x": 126,
         "y": 180,
-        "length": 104,
+        "length": 124.8,
         "angle": -7
       },
       {
         "type": "mirror",
         "x": 674,
         "y": 390,
-        "length": 104,
+        "length": 124.8,
         "angle": -83
       },
       {
@@ -9448,28 +9448,28 @@ export const lightLevels = [
         "type": "mirror",
         "x": 462,
         "y": 240,
-        "length": 104,
+        "length": 124.8,
         "angle": 0
       },
       {
         "type": "mirror",
         "x": 338,
         "y": 120,
-        "length": 104,
+        "length": 124.8,
         "angle": -90
       },
       {
         "type": "mirror",
         "x": 122,
         "y": 240,
-        "length": 104,
+        "length": 124.8,
         "angle": 0
       },
       {
         "type": "mirror",
         "x": 678,
         "y": 120,
-        "length": 104,
+        "length": 124.8,
         "angle": -90
       },
       {
@@ -9598,28 +9598,28 @@ export const lightLevels = [
         "type": "mirror",
         "x": 670,
         "y": 200,
-        "length": 104,
+        "length": 124.8,
         "angle": 7
       },
       {
         "type": "mirror",
         "x": 470,
         "y": 200,
-        "length": 104,
+        "length": 124.8,
         "angle": 83
       },
       {
         "type": "mirror",
         "x": 330,
         "y": 200,
-        "length": 104,
+        "length": 124.8,
         "angle": 7
       },
       {
         "type": "mirror",
         "x": 130,
         "y": 200,
-        "length": 104,
+        "length": 124.8,
         "angle": 83
       },
       {
@@ -9715,42 +9715,42 @@ export const lightLevels = [
         "type": "mirror",
         "x": 75,
         "y": 200,
-        "length": 104,
+        "length": 124.8,
         "angle": 89.59296258285482
       },
       {
         "type": "mirror",
         "x": 195,
         "y": 305,
-        "length": 104,
+        "length": 124.8,
         "angle": 41.592962582854824
       },
       {
         "type": "mirror",
         "x": 340,
         "y": 305,
-        "length": 104,
+        "length": 124.8,
         "angle": 48.407037417145176
       },
       {
         "type": "mirror",
         "x": 460,
         "y": 200,
-        "length": 104,
+        "length": 124.8,
         "angle": 0.4070374171451725
       },
       {
         "type": "mirror",
         "x": 605,
         "y": 200,
-        "length": 104,
+        "length": 124.8,
         "angle": 89.59296258285482
       },
       {
         "type": "mirror",
         "x": 725,
         "y": 305,
-        "length": 104,
+        "length": 124.8,
         "angle": 41.592962582854824
       }
     ],
@@ -9828,63 +9828,63 @@ export const lightLevels = [
         "type": "mirror",
         "x": 570,
         "y": 164,
-        "length": 104,
+        "length": 124.8,
         "angle": 46.74373468210699
       },
       {
         "type": "mirror",
         "x": 410,
         "y": 66,
-        "length": 104,
+        "length": 124.8,
         "angle": -31
       },
       {
         "type": "mirror",
         "x": 250,
         "y": 164,
-        "length": 104,
+        "length": 124.8,
         "angle": 27.02416579078276
       },
       {
         "type": "mirror",
         "x": 570,
         "y": 279,
-        "length": 104,
+        "length": 124.8,
         "angle": -15.25626531789301
       },
       {
         "type": "mirror",
         "x": 410,
         "y": 181,
-        "length": 104,
+        "length": 124.8,
         "angle": 31
       },
       {
         "type": "mirror",
         "x": 250,
         "y": 279,
-        "length": 104,
+        "length": 124.8,
         "angle": -34.97583420921724
       },
       {
         "type": "mirror",
         "x": 570,
         "y": 394,
-        "length": 104,
+        "length": 124.8,
         "angle": 46.74373468210699
       },
       {
         "type": "mirror",
         "x": 410,
         "y": 296,
-        "length": 104,
+        "length": 124.8,
         "angle": -31
       },
       {
         "type": "mirror",
         "x": 250,
         "y": 394,
-        "length": 104,
+        "length": 124.8,
         "angle": 27.02416579078276
       }
     ],
@@ -9965,42 +9965,42 @@ export const lightLevels = [
         "type": "mirror",
         "x": 75,
         "y": 250,
-        "length": 104,
+        "length": 124.8,
         "angle": -28.890562382434354
       },
       {
         "type": "mirror",
         "x": 195,
         "y": 135,
-        "length": 104,
+        "length": 124.8,
         "angle": 75.10943761756565
       },
       {
         "type": "mirror",
         "x": 340,
         "y": 135,
-        "length": 104,
+        "length": 124.8,
         "angle": 14.89056238243435
       },
       {
         "type": "mirror",
         "x": 460,
         "y": 250,
-        "length": 104,
+        "length": 124.8,
         "angle": -61.109437617565646
       },
       {
         "type": "mirror",
         "x": 605,
         "y": 250,
-        "length": 104,
+        "length": 124.8,
         "angle": -28.890562382434354
       },
       {
         "type": "mirror",
         "x": 725,
         "y": 135,
-        "length": 104,
+        "length": 124.8,
         "angle": 75.10943761756565
       }
     ],
@@ -10078,63 +10078,63 @@ export const lightLevels = [
         "type": "mirror",
         "x": 560,
         "y": 164,
-        "length": 104,
+        "length": 124.8,
         "angle": 61.57896194233612
       },
       {
         "type": "mirror",
         "x": 410,
         "y": 66,
-        "length": 104,
+        "length": 124.8,
         "angle": -45
       },
       {
         "type": "mirror",
         "x": 260,
         "y": 164,
-        "length": 104,
+        "length": 124.8,
         "angle": 39.73962548300884
       },
       {
         "type": "mirror",
         "x": 560,
         "y": 279,
-        "length": 104,
+        "length": 124.8,
         "angle": -28.42103805766388
       },
       {
         "type": "mirror",
         "x": 410,
         "y": 181,
-        "length": 104,
+        "length": 124.8,
         "angle": 45
       },
       {
         "type": "mirror",
         "x": 260,
         "y": 279,
-        "length": 104,
+        "length": 124.8,
         "angle": -50.26037451699116
       },
       {
         "type": "mirror",
         "x": 560,
         "y": 394,
-        "length": 104,
+        "length": 124.8,
         "angle": 61.57896194233612
       },
       {
         "type": "mirror",
         "x": 410,
         "y": 296,
-        "length": 104,
+        "length": 124.8,
         "angle": -45
       },
       {
         "type": "mirror",
         "x": 260,
         "y": 394,
-        "length": 104,
+        "length": 124.8,
         "angle": 39.73962548300884
       }
     ],
@@ -10215,42 +10215,42 @@ export const lightLevels = [
         "type": "mirror",
         "x": 75,
         "y": 205,
-        "length": 104,
+        "length": 124.8,
         "angle": -61.744776460999574
       },
       {
         "type": "mirror",
         "x": 195,
         "y": 315,
-        "length": 104,
+        "length": 124.8,
         "angle": 14.255223539000426
       },
       {
         "type": "mirror",
         "x": 340,
         "y": 315,
-        "length": 104,
+        "length": 124.8,
         "angle": 75.74477646099957
       },
       {
         "type": "mirror",
         "x": 460,
         "y": 205,
-        "length": 104,
+        "length": 124.8,
         "angle": -28.255223539000426
       },
       {
         "type": "mirror",
         "x": 605,
         "y": 205,
-        "length": 104,
+        "length": 124.8,
         "angle": -61.744776460999574
       },
       {
         "type": "mirror",
         "x": 725,
         "y": 315,
-        "length": 104,
+        "length": 124.8,
         "angle": 14.255223539000426
       }
     ],
@@ -10328,84 +10328,84 @@ export const lightLevels = [
         "type": "mirror",
         "x": 230,
         "y": 296,
-        "length": 104,
+        "length": 124.8,
         "angle": 42.50533661680156
       },
       {
         "type": "mirror",
         "x": 360,
         "y": 394,
-        "length": 104,
+        "length": 124.8,
         "angle": -24
       },
       {
         "type": "mirror",
         "x": 490,
         "y": 296,
-        "length": 104,
+        "length": 124.8,
         "angle": 24
       },
       {
         "type": "mirror",
         "x": 620,
         "y": 394,
-        "length": 104,
+        "length": 124.8,
         "angle": -21.646388907392065
       },
       {
         "type": "mirror",
         "x": 230,
         "y": 181,
-        "length": 104,
+        "length": 124.8,
         "angle": 42.50533661680156
       },
       {
         "type": "mirror",
         "x": 360,
         "y": 279,
-        "length": 104,
+        "length": 124.8,
         "angle": -24
       },
       {
         "type": "mirror",
         "x": 490,
         "y": 181,
-        "length": 104,
+        "length": 124.8,
         "angle": 24
       },
       {
         "type": "mirror",
         "x": 620,
         "y": 279,
-        "length": 104,
+        "length": 124.8,
         "angle": -21.646388907392065
       },
       {
         "type": "mirror",
         "x": 230,
         "y": 66,
-        "length": 104,
+        "length": 124.8,
         "angle": 42.50533661680156
       },
       {
         "type": "mirror",
         "x": 360,
         "y": 164,
-        "length": 104,
+        "length": 124.8,
         "angle": -24
       },
       {
         "type": "mirror",
         "x": 490,
         "y": 66,
-        "length": 104,
+        "length": 124.8,
         "angle": 24
       },
       {
         "type": "mirror",
         "x": 620,
         "y": 164,
-        "length": 104,
+        "length": 124.8,
         "angle": -21.646388907392065
       },
       {
@@ -10500,42 +10500,42 @@ export const lightLevels = [
         "type": "mirror",
         "x": 725,
         "y": 305,
-        "length": 104,
+        "length": 124.8,
         "angle": 6.592962582854824
       },
       {
         "type": "mirror",
         "x": 605,
         "y": 200,
-        "length": 104,
+        "length": 124.8,
         "angle": -55.407037417145176
       },
       {
         "type": "mirror",
         "x": 460,
         "y": 200,
-        "length": 104,
+        "length": 124.8,
         "angle": -34.592962582854824
       },
       {
         "type": "mirror",
         "x": 340,
         "y": 305,
-        "length": 104,
+        "length": 124.8,
         "angle": 83.40703741714518
       },
       {
         "type": "mirror",
         "x": 195,
         "y": 305,
-        "length": 104,
+        "length": 124.8,
         "angle": 6.592962582854824
       },
       {
         "type": "mirror",
         "x": 75,
         "y": 200,
-        "length": 104,
+        "length": 124.8,
         "angle": -55.407037417145176
       }
     ],
@@ -10613,84 +10613,84 @@ export const lightLevels = [
         "type": "mirror",
         "x": 240,
         "y": 164,
-        "length": 104,
+        "length": 124.8,
         "angle": 19.494663383198446
       },
       {
         "type": "mirror",
         "x": 370,
         "y": 66,
-        "length": 104,
+        "length": 124.8,
         "angle": -38
       },
       {
         "type": "mirror",
         "x": 500,
         "y": 164,
-        "length": 104,
+        "length": 124.8,
         "angle": 38
       },
       {
         "type": "mirror",
         "x": 630,
         "y": 66,
-        "length": 104,
+        "length": 124.8,
         "angle": -39.47870218167408
       },
       {
         "type": "mirror",
         "x": 240,
         "y": 279,
-        "length": 104,
+        "length": 124.8,
         "angle": 19.494663383198446
       },
       {
         "type": "mirror",
         "x": 370,
         "y": 181,
-        "length": 104,
+        "length": 124.8,
         "angle": -38
       },
       {
         "type": "mirror",
         "x": 500,
         "y": 279,
-        "length": 104,
+        "length": 124.8,
         "angle": 38
       },
       {
         "type": "mirror",
         "x": 630,
         "y": 181,
-        "length": 104,
+        "length": 124.8,
         "angle": -39.47870218167408
       },
       {
         "type": "mirror",
         "x": 240,
         "y": 394,
-        "length": 104,
+        "length": 124.8,
         "angle": 19.494663383198446
       },
       {
         "type": "mirror",
         "x": 370,
         "y": 296,
-        "length": 104,
+        "length": 124.8,
         "angle": -38
       },
       {
         "type": "mirror",
         "x": 500,
         "y": 394,
-        "length": 104,
+        "length": 124.8,
         "angle": 38
       },
       {
         "type": "mirror",
         "x": 630,
         "y": 296,
-        "length": 104,
+        "length": 124.8,
         "angle": -39.47870218167408
       },
       {
@@ -10785,42 +10785,42 @@ export const lightLevels = [
         "type": "mirror",
         "x": 725,
         "y": 135,
-        "length": 104,
+        "length": 124.8,
         "angle": 68.10943761756566
       },
       {
         "type": "mirror",
         "x": 605,
         "y": 250,
-        "length": 104,
+        "length": 124.8,
         "angle": -21.89056238243434
       },
       {
         "type": "mirror",
         "x": 460,
         "y": 250,
-        "length": 104,
+        "length": 124.8,
         "angle": -68.10943761756566
       },
       {
         "type": "mirror",
         "x": 340,
         "y": 135,
-        "length": 104,
+        "length": 124.8,
         "angle": 21.89056238243434
       },
       {
         "type": "mirror",
         "x": 195,
         "y": 135,
-        "length": 104,
+        "length": 124.8,
         "angle": 68.10943761756566
       },
       {
         "type": "mirror",
         "x": 75,
         "y": 250,
-        "length": 104,
+        "length": 124.8,
         "angle": -21.89056238243434
       }
     ],
@@ -10898,84 +10898,84 @@ export const lightLevels = [
         "type": "mirror",
         "x": 230,
         "y": 164,
-        "length": 104,
+        "length": 124.8,
         "angle": 34.01156485644533
       },
       {
         "type": "mirror",
         "x": 365,
         "y": 66,
-        "length": 104,
+        "length": 124.8,
         "angle": -52
       },
       {
         "type": "mirror",
         "x": 500,
         "y": 164,
-        "length": 104,
+        "length": 124.8,
         "angle": 52
       },
       {
         "type": "mirror",
         "x": 635,
         "y": 66,
-        "length": 104,
+        "length": 124.8,
         "angle": -52.492425044275336
       },
       {
         "type": "mirror",
         "x": 230,
         "y": 279,
-        "length": 104,
+        "length": 124.8,
         "angle": 34.01156485644533
       },
       {
         "type": "mirror",
         "x": 365,
         "y": 181,
-        "length": 104,
+        "length": 124.8,
         "angle": -52
       },
       {
         "type": "mirror",
         "x": 500,
         "y": 279,
-        "length": 104,
+        "length": 124.8,
         "angle": 52
       },
       {
         "type": "mirror",
         "x": 635,
         "y": 181,
-        "length": 104,
+        "length": 124.8,
         "angle": -52.492425044275336
       },
       {
         "type": "mirror",
         "x": 230,
         "y": 394,
-        "length": 104,
+        "length": 124.8,
         "angle": 34.01156485644533
       },
       {
         "type": "mirror",
         "x": 365,
         "y": 296,
-        "length": 104,
+        "length": 124.8,
         "angle": -52
       },
       {
         "type": "mirror",
         "x": 500,
         "y": 394,
-        "length": 104,
+        "length": 124.8,
         "angle": 52
       },
       {
         "type": "mirror",
         "x": 635,
         "y": 296,
-        "length": 104,
+        "length": 124.8,
         "angle": -52.492425044275336
       },
       {
@@ -11137,42 +11137,42 @@ export const lightLevels = [
         "type": "mirror",
         "x": 79,
         "y": 200,
-        "length": 104,
-        "angle": 69
+        "length": 124.8,
+        "angle": 54.5
       },
       {
         "type": "mirror",
         "x": 456,
         "y": 330,
-        "length": 104,
+        "length": 124.8,
         "angle": 21
       },
       {
         "type": "mirror",
         "x": 344,
         "y": 200,
-        "length": 104,
-        "angle": 69
+        "length": 124.8,
+        "angle": 54.5
       },
       {
         "type": "mirror",
         "x": 721,
         "y": 330,
-        "length": 104,
+        "length": 124.8,
         "angle": 21
       },
       {
         "type": "mirror",
         "x": 609,
         "y": 200,
-        "length": 104,
-        "angle": 69
+        "length": 124.8,
+        "angle": 54.5
       },
       {
         "type": "mirror",
         "x": 191,
         "y": 330,
-        "length": 104,
+        "length": 124.8,
         "angle": 21
       },
       {
@@ -11352,43 +11352,43 @@ export const lightLevels = [
         "type": "mirror",
         "x": 195,
         "y": 220,
-        "length": 104,
+        "length": 124.8,
         "angle": -14
       },
       {
         "type": "mirror",
         "x": 75,
         "y": 220,
-        "length": 104,
-        "angle": -76
+        "length": 124.8,
+        "angle": -63.5
       },
       {
         "type": "mirror",
         "x": 460,
         "y": 220,
-        "length": 104,
+        "length": 124.8,
         "angle": -14
       },
       {
         "type": "mirror",
         "x": 340,
         "y": 220,
-        "length": 104,
-        "angle": -76
+        "length": 124.8,
+        "angle": -63.5
       },
       {
         "type": "mirror",
         "x": 725,
         "y": 220,
-        "length": 104,
+        "length": 124.8,
         "angle": -14
       },
       {
         "type": "mirror",
         "x": 605,
         "y": 220,
-        "length": 104,
-        "angle": -76
+        "length": 124.8,
+        "angle": -63.5
       },
       {
         "type": "wall",
@@ -11557,42 +11557,42 @@ export const lightLevels = [
         "type": "mirror",
         "x": 71,
         "y": 260,
-        "length": 104,
+        "length": 124.8,
         "angle": -7
       },
       {
         "type": "mirror",
         "x": 199,
         "y": 260,
-        "length": 104,
+        "length": 124.8,
         "angle": -83
       },
       {
         "type": "mirror",
         "x": 336,
         "y": 260,
-        "length": 104,
+        "length": 124.8,
         "angle": -7
       },
       {
         "type": "mirror",
         "x": 464,
         "y": 260,
-        "length": 104,
+        "length": 124.8,
         "angle": -83
       },
       {
         "type": "mirror",
         "x": 601,
         "y": 260,
-        "length": 104,
+        "length": 124.8,
         "angle": -7
       },
       {
         "type": "mirror",
         "x": 729,
         "y": 260,
-        "length": 104,
+        "length": 124.8,
         "angle": -83
       },
       {
@@ -11832,42 +11832,42 @@ export const lightLevels = [
         "type": "mirror",
         "x": 191,
         "y": 220,
-        "length": 104,
+        "length": 124.8,
         "angle": 0
       },
       {
         "type": "mirror",
         "x": 344,
         "y": 340,
-        "length": 104,
+        "length": 124.8,
         "angle": -90
       },
       {
         "type": "mirror",
         "x": 456,
         "y": 220,
-        "length": 104,
+        "length": 124.8,
         "angle": 0
       },
       {
         "type": "mirror",
         "x": 609,
         "y": 340,
-        "length": 104,
+        "length": 124.8,
         "angle": -90
       },
       {
         "type": "mirror",
         "x": 721,
         "y": 220,
-        "length": 104,
+        "length": 124.8,
         "angle": 0
       },
       {
         "type": "mirror",
         "x": 79,
         "y": 340,
-        "length": 104,
+        "length": 124.8,
         "angle": -90
       },
       {
@@ -12047,63 +12047,63 @@ export const lightLevels = [
         "type": "mirror",
         "x": 75,
         "y": 180,
-        "length": 104,
+        "length": 124.8,
         "angle": -83
       },
       {
         "type": "mirror",
         "x": 195,
         "y": 180,
-        "length": 104,
+        "length": 124.8,
         "angle": -7
       },
       {
         "type": "mirror",
         "x": 340,
         "y": 390,
-        "length": 104,
+        "length": 124.8,
         "angle": -83
       },
       {
         "type": "mirror",
         "x": 340,
         "y": 180,
-        "length": 104,
+        "length": 124.8,
         "angle": -7
       },
       {
         "type": "mirror",
         "x": 460,
         "y": 180,
-        "length": 104,
+        "length": 124.8,
         "angle": -83
       },
       {
         "type": "mirror",
         "x": 605,
         "y": 390,
-        "length": 104,
+        "length": 124.8,
         "angle": -7
       },
       {
         "type": "mirror",
         "x": 605,
         "y": 180,
-        "length": 104,
+        "length": 124.8,
         "angle": -83
       },
       {
         "type": "mirror",
         "x": 725,
         "y": 180,
-        "length": 104,
+        "length": 124.8,
         "angle": -7
       },
       {
         "type": "mirror",
         "x": 75,
         "y": 390,
-        "length": 104,
+        "length": 124.8,
         "angle": -83
       },
       {
@@ -12280,42 +12280,42 @@ export const lightLevels = [
         "type": "mirror",
         "x": 729,
         "y": 260,
-        "length": 104,
-        "angle": 69
+        "length": 124.8,
+        "angle": 54.5
       },
       {
         "type": "mirror",
         "x": 336,
         "y": 130,
-        "length": 104,
+        "length": 124.8,
         "angle": 21
       },
       {
         "type": "mirror",
         "x": 464,
         "y": 260,
-        "length": 104,
-        "angle": 69
+        "length": 124.8,
+        "angle": 54.5
       },
       {
         "type": "mirror",
         "x": 71,
         "y": 130,
-        "length": 104,
+        "length": 124.8,
         "angle": 21
       },
       {
         "type": "mirror",
         "x": 199,
         "y": 260,
-        "length": 104,
-        "angle": 69
+        "length": 124.8,
+        "angle": 54.5
       },
       {
         "type": "mirror",
         "x": 601,
         "y": 130,
-        "length": 104,
+        "length": 124.8,
         "angle": 21
       },
       {
@@ -12485,42 +12485,42 @@ export const lightLevels = [
         "type": "mirror",
         "x": 721,
         "y": 200,
-        "length": 104,
+        "length": 124.8,
         "angle": -14
       },
       {
         "type": "mirror",
         "x": 609,
         "y": 200,
-        "length": 104,
+        "length": 124.8,
         "angle": -76
       },
       {
         "type": "mirror",
         "x": 456,
         "y": 200,
-        "length": 104,
+        "length": 124.8,
         "angle": -14
       },
       {
         "type": "mirror",
         "x": 344,
         "y": 200,
-        "length": 104,
+        "length": 124.8,
         "angle": -76
       },
       {
         "type": "mirror",
         "x": 191,
         "y": 200,
-        "length": 104,
+        "length": 124.8,
         "angle": -14
       },
       {
         "type": "mirror",
         "x": 79,
         "y": 200,
-        "length": 104,
+        "length": 124.8,
         "angle": -76
       },
       {
@@ -12700,42 +12700,42 @@ export const lightLevels = [
         "type": "mirror",
         "x": 725,
         "y": 200,
-        "length": 104,
+        "length": 124.8,
         "angle": -7
       },
       {
         "type": "mirror",
         "x": 605,
         "y": 200,
-        "length": 104,
+        "length": 124.8,
         "angle": -83
       },
       {
         "type": "mirror",
         "x": 460,
         "y": 200,
-        "length": 104,
+        "length": 124.8,
         "angle": -7
       },
       {
         "type": "mirror",
         "x": 340,
         "y": 200,
-        "length": 104,
+        "length": 124.8,
         "angle": -83
       },
       {
         "type": "mirror",
         "x": 195,
         "y": 200,
-        "length": 104,
+        "length": 124.8,
         "angle": -7
       },
       {
         "type": "mirror",
         "x": 75,
         "y": 200,
-        "length": 104,
+        "length": 124.8,
         "angle": -83
       },
       {
@@ -12975,42 +12975,42 @@ export const lightLevels = [
         "type": "mirror",
         "x": 601,
         "y": 240,
-        "length": 104,
+        "length": 124.8,
         "angle": 0
       },
       {
         "type": "mirror",
         "x": 464,
         "y": 120,
-        "length": 104,
+        "length": 124.8,
         "angle": -90
       },
       {
         "type": "mirror",
         "x": 336,
         "y": 240,
-        "length": 104,
+        "length": 124.8,
         "angle": 0
       },
       {
         "type": "mirror",
         "x": 199,
         "y": 120,
-        "length": 104,
+        "length": 124.8,
         "angle": -90
       },
       {
         "type": "mirror",
         "x": 71,
         "y": 240,
-        "length": 104,
+        "length": 124.8,
         "angle": 0
       },
       {
         "type": "mirror",
         "x": 729,
         "y": 120,
-        "length": 104,
+        "length": 124.8,
         "angle": -90
       },
       {
@@ -13250,42 +13250,42 @@ export const lightLevels = [
         "type": "mirror",
         "x": 609,
         "y": 220,
-        "length": 104,
+        "length": 124.8,
         "angle": -83
       },
       {
         "type": "mirror",
         "x": 456,
         "y": 340,
-        "length": 104,
+        "length": 124.8,
         "angle": -7
       },
       {
         "type": "mirror",
         "x": 344,
         "y": 220,
-        "length": 104,
+        "length": 124.8,
         "angle": -83
       },
       {
         "type": "mirror",
         "x": 191,
         "y": 340,
-        "length": 104,
+        "length": 124.8,
         "angle": -7
       },
       {
         "type": "mirror",
         "x": 79,
         "y": 220,
-        "length": 104,
+        "length": 124.8,
         "angle": -83
       },
       {
         "type": "mirror",
         "x": 721,
         "y": 340,
-        "length": 104,
+        "length": 124.8,
         "angle": -7
       },
       {
