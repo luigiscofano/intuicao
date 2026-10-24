@@ -11,11 +11,14 @@ const identityChanges=JSON.parse(fs.readFileSync(new URL('./curiosity-brand-auth
 const canopyChange=JSON.parse(fs.readFileSync(new URL('./document-canopy-authorized-change.json',import.meta.url)));
 const incidenceChange=JSON.parse(fs.readFileSync(new URL('./leaf-incidence-authorized-change.json',import.meta.url)));
 const growthChange=JSON.parse(fs.readFileSync(new URL('./growing-piles-authorized-change.json',import.meta.url)));
+const speedChange=JSON.parse(fs.readFileSync(new URL('./leaf-speed-authorized-change.json',import.meta.url)));
 const sha=s=>crypto.createHash('sha256').update(s).digest('hex');
 for(const [name,hash] of Object.entries(baseline)){
  let bytes=fs.readFileSync(new URL('../dist/'+name,import.meta.url));
  if(name==='index.html'){
   let html=bytes.toString();
+  assert.equal(html.split(speedChange.html_after).length-1,1,'Exact moderate leaf incidence increase');
+  html=html.replace(speedChange.html_after,speedChange.html_before);
   assert.equal(html.split(growthChange.html_after).length-1,1,'Exact persistent ornamental pile spans');
   html=html.replace(growthChange.html_after,growthChange.html_before);
   assert.equal(html.split(incidenceChange.html_after).length-1,1,'Exact approved higher incidence');
@@ -49,7 +52,15 @@ for(const [name,hash] of Object.entries(baseline)){
 }
 const fullCanopyChange=JSON.parse(fs.readFileSync(new URL('./fullwidth-canopy-authorized-change.json',import.meta.url)));
 const variedChange=JSON.parse(fs.readFileSync(new URL('./varied-foliage-authorized-change.json',import.meta.url)));
-const growingPlatformSource=fs.readFileSync(new URL('../dist/platform.css',import.meta.url),'utf8');
+const edgeChange=JSON.parse(fs.readFileSync(new URL('./canopy-edge-authorized-change.json',import.meta.url)));
+const edgePlatformSource=fs.readFileSync(new URL('../dist/platform.css',import.meta.url),'utf8');
+const speedPlatformSource=edgePlatformSource.replace(edgeChange.after,edgeChange.before);
+assert.equal(sha(speedPlatformSource),edgeChange.prior_css_sha256,'Only canopy edge URL changed');
+const edgeSVG=fs.readFileSync(new URL('../dist/platform-assets/'+edgeChange.after,import.meta.url),'utf8');
+assert.equal(sha(edgeSVG.replace(edgeChange.svg_addition,'')),edgeChange.prior_svg_sha256,'Whole canopy body preserved');
+assert.equal(speedPlatformSource.split(speedChange.css_after).length-1,1,'Exact requested speed variation');
+const growingPlatformSource=speedPlatformSource.replace(speedChange.css_after,speedChange.css_before).replace(speedChange.comment_after,speedChange.comment_before);
+assert.equal(sha(growingPlatformSource),speedChange.prior_css_sha256,'Canopy and piles unchanged');
 assert.equal(growingPlatformSource.split(growthChange.css_after).length-1,1,'Exact approved finite pile growth');
 const actualPlatformSource=growingPlatformSource.replace(growthChange.css_after,growthChange.css_before).replace(growthChange.asset_after,growthChange.asset_before);
 assert.equal(sha(actualPlatformSource),growthChange.prior_css_sha256,'All earlier CSS including falling leaves unchanged');
