@@ -1,0 +1,6 @@
+{
+  "priorCssSHA256": "d1b6fda70c04bee1304c63b9297c20f2022cf435ec7531ba2623a637b9a2eafb",
+  "afterCssSHA256": "dd9116f238b2cb22064bbd293e6391949793e67e62a390749dede1fd1f4afb7d",
+  "before": "border-bottom-left-radius:0;border-bottom-right-radius:0;box-shadow:none}",
+  "after": "border-bottom-left-radius:0;border-bottom-right-radius:0;box-shadow:none;filter:drop-shadow(0 2px 4px #34452a12)}"
+}

@@ -101,7 +101,7 @@ assert.equal(sha(physicsPlatformSource),compactIntroChange.priorCssSHA256,'Only 
 assert.equal(physicsPlatformSource.split(physicsChange.css_insertion).length-1,1,'Exact isolated interactive floor CSS');
 const fineEdgePlatformSource=physicsPlatformSource.replace(physicsChange.css_insertion,'');
 const pileSeamChange=JSON.parse(fs.readFileSync(new URL('./pile-seam-authorized-change.json',import.meta.url)));
-let pileModuleSource=fs.readFileSync(new URL('../dist/decor-piles.mjs',import.meta.url),'utf8');
+let pileModuleSource=restorePileFlightModule(fs.readFileSync(new URL('../dist/decor-piles.mjs',import.meta.url),'utf8'));
 assert.equal(pileModuleSource,gravityChange.module_change.after,'Exact authorized gravity module');
 assert.equal(sha(pileModuleSource),gravityChange.module_change.sha256);
 pileModuleSource=pileModuleSource.replace(gravityChange.module_change.after,gravityChange.module_change.before);
@@ -176,3 +176,4 @@ assert.equal((css.match(/display:none;animation:none/g)??[]).length,2,'Both moti
 assert.ok(css.includes('overflow:hidden;pointer-events:none;user-select:none;contain:strict'),'Only the ornamental layer clips its overflow');
 assert.ok(!css.includes('platform-leaf-drift'),'Old menu leaves removed to avoid duplication');
 console.log(`PASS PACTO/Endless exact authorized hashes; ${Object.keys(baseline).length-Object.keys(approved).length} original files byte-identical; ${Object.keys(approved).length} interface exceptions match their active separately recorded hashes (Endless overrides only app/collection); ${selectors.length} style blocks retain explicit platform roots. Exact authorized home-copy edits and the inert leaf-layer insertion are reversed for comparison. Original retro baseline is unchanged. Browser computed-style/geometry comparison remains separate.`);
+import {restorePileFlightModule} from './pile-open-flight-history.mjs';

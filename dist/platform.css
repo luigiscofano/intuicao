@@ -39,7 +39,7 @@ body > footer .brand-dot{color:#997838}
 :where(body:not(:has(.lab:not([hidden]), #collection:not([hidden]) > .collection-lab))) > header .brand-icon{font-size:0;transform:none;width:28px;height:28px;margin-right:10px;vertical-align:-2px;background:url("platform-assets/leaf-seal.svg") center/28px 28px no-repeat}
 :where(body:not(:has(.lab:not([hidden]), #collection:not([hidden]) > .collection-lab))) > header .tag{font-family:"Courier New",monospace;font-size:10px;letter-spacing:1.6px;line-height:1.5}
 :where(body:not(:has(.lab:not([hidden]), #collection:not([hidden]) > .collection-lab))) > header .doc-link{border:1px solid #bec9b6;border-radius:3px;padding:8px 12px;background:transparent;box-shadow:none}
-:where(body:not(:has(.lab:not([hidden]), #collection:not([hidden]) > .collection-lab))) #main > .intro{position:relative;isolation:isolate;padding:32px 0 30px;min-height:260px;background:none}
+:where(body:not(:has(.lab:not([hidden]), #collection:not([hidden]) > .collection-lab))) #main > .intro{position:relative;isolation:isolate;padding:32px 0 30px 20px;min-height:260px;background:none}
 :where(body:not(:has(.lab:not([hidden]), #collection:not([hidden]) > .collection-lab))) #main > .intro::before{content:"";position:absolute;inset:8px -24px 0;background:#fafbf7 url("platform-assets/paper-marks.svg") repeat;border:1px solid #dce3d6;border-radius:12px;box-shadow:inset 0 0 0 4px #ffffff80,0 0 0 4px #fafbf755;z-index:-2;pointer-events:none}
 :where(body:not(:has(.lab:not([hidden]), #collection:not([hidden]) > .collection-lab))) #main > .intro .eyebrow{max-width:80%;font-family:"Courier New",monospace;font-size:10px;letter-spacing:1.7px;margin-bottom:20px}
 :where(body:not(:has(.lab:not([hidden]), #collection:not([hidden]) > .collection-lab))) #main > .intro h1{font-family:Georgia,"Times New Roman",serif;font-size:68px;font-weight:400;line-height:1.08;letter-spacing:-2.6px;max-width:100%;margin:0 0 16px}
@@ -89,7 +89,7 @@ body > footer .brand-dot{color:#997838}
  :where(body:not(:has(.lab:not([hidden]), #collection:not([hidden]) > .collection-lab))) > header .brand{font-size:31px}
  :where(body:not(:has(.lab:not([hidden]), #collection:not([hidden]) > .collection-lab))) > header .brand-icon{width:22px;height:22px;background-size:22px;margin-right:5px}
  :where(body:not(:has(.lab:not([hidden]), #collection:not([hidden]) > .collection-lab))) > header .doc-link{font-size:10px;padding:7px 8px}
- :where(body:not(:has(.lab:not([hidden]), #collection:not([hidden]) > .collection-lab))) #main > .intro{padding:24px 4px 24px;min-height:0}
+ :where(body:not(:has(.lab:not([hidden]), #collection:not([hidden]) > .collection-lab))) #main > .intro{padding:24px 4px 24px 12px;min-height:0}
  :where(body:not(:has(.lab:not([hidden]), #collection:not([hidden]) > .collection-lab))) #main > .intro::before{inset:6px -8px 0;border-radius:9px}
  :where(body:not(:has(.lab:not([hidden]), #collection:not([hidden]) > .collection-lab))) #main > .intro :is(h1,.eyebrow,p:last-child){max-width:100%}
  :where(body:not(:has(.lab:not([hidden]), #collection:not([hidden]) > .collection-lab))) #main > .intro h1{font-size:46px;letter-spacing:-1.8px;line-height:1.1}
@@ -194,7 +194,7 @@ body > .platform-leaf-layer > .platform-pile:nth-of-type(12){background-image:ur
 /* Interactive floor replaces, never duplicates, the existing static leaf art. */
 body > .platform-leaf-layer.platform-piles-interactive::after{visibility:hidden}
 body > .platform-leaf-layer.platform-piles-interactive > .platform-pile{visibility:hidden}
-body > .platform-leaf-layer > .platform-pile-surface{position:absolute;bottom:0;left:0;width:100%;height:112px;overflow:hidden;pointer-events:none;user-select:none;shape-rendering:crispEdges}
+body > .platform-leaf-layer > .platform-pile-surface{position:absolute;bottom:0;left:0;width:100%;height:112px;overflow:visible;pointer-events:none;user-select:none;shape-rendering:crispEdges}
 @media(max-width:760px){body > .platform-leaf-layer > .platform-pile-surface{height:84px}}
 
 /* Header-only tree frame: curved gutter trunks connect to the existing canopy.
@@ -207,7 +207,7 @@ body > header::before{content:"";position:absolute;inset:-28px 0 -1px;pointer-ev
 
 /* Continuous tree perimeter. Replace the former closed rectangles and detached
    accents with tangent joins; decorations never change the content box. */
-:is(#selection, #collection > .level-screen){position:relative;--frame-flare:max(38px,calc((100vw - 1280px)/2 + 28px));background:#fff;border-bottom-color:transparent;border-bottom-left-radius:0;border-bottom-right-radius:0;box-shadow:none}
+:is(#selection, #collection > .level-screen){position:relative;--frame-flare:max(38px,calc((100vw - 1280px)/2 + 28px));background:#fff;border-bottom-color:transparent;border-bottom-left-radius:0;border-bottom-right-radius:0;box-shadow:none;filter:drop-shadow(0 2px 4px #34452a12)}
 :is(#selection, #collection > .level-screen)::before{content:none}
 body:has(#selection:not([hidden]), #collection:not([hidden]) > .level-screen) > footer{position:relative;z-index:1;background:transparent;border-top-color:transparent;border-bottom-color:transparent;box-shadow:none}
 :is(#selection, #collection > .level-screen)::after{content:"";position:absolute;left:calc(-1 * var(--frame-flare) - .5px);width:calc(100% + 2 * var(--frame-flare) + 1px);bottom:-246px;height:247px;pointer-events:none;user-select:none;background:url("platform-assets/continuous-root-left.svg") left/var(--frame-flare) 100% no-repeat,url("platform-assets/continuous-root-right.svg") right/var(--frame-flare) 100% no-repeat,linear-gradient(#fff,#fff) center/calc(100% - 2 * var(--frame-flare)) 100% no-repeat}

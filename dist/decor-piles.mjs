@@ -39,7 +39,7 @@ export function stepParticle(p,dt,field){
   const drag=Math.exp(-1.25*h);p.vx*=drag;p.vy=(p.vy+300*h)*drag;
   const nx=clamp(x+p.vx*h,2,Math.max(2,(p.width??1200)-2));if(nx!==x+p.vx*h)p.vx=0;
   let ny=y+p.vy*h;const floor=field?.support(nx,y,p)??p.floor;
-  if(ny<2){ny=2;p.vy=Math.max(0,p.vy)*.1;}
+  // Airborne leaves may rise above the floor strip; gravity brings them back.
   if(p.vy>=0&&ny>=floor){ny=floor;p.vx*=Math.exp(-16*h);p.spin=(p.spin||0)*Math.exp(-12*h);p.vy=p.vy>45?-p.vy*.08:0;p.contact=(p.contact||0)+h;}else p.contact=0;
   p.dx=nx-p.restX;p.dy=ny-p.restY;p.angle=(p.angle||0)+(p.spin||0)*h;p.spin=(p.spin||0)*Math.exp(-1.8*h);
   if(p.contact>.08&&Math.abs(p.vx)<2&&Math.abs(p.vy)<2&&Math.abs(p.spin)<3){p.vx=p.vy=p.spin=0;p.active=false;break;}
@@ -50,7 +50,7 @@ export function stepParticle(p,dt,field){
 export function reconcileParticle(old,p,oldWidth,oldHeight,newWidth,newHeight){
  if(!old?.moved)return p;const sx=newWidth/oldWidth,sy=newHeight/oldHeight;
  p.dx=clamp((old.restX+old.dx)*sx,2,newWidth-2)-p.restX;
- p.dy=clamp((old.restY+old.dy)*sy,2,newHeight-4)-p.restY;
+ p.dy=Math.min((old.restY+old.dy)*sy,newHeight-4)-p.restY;
  p.vx=old.vx*sx;p.vy=old.vy*sy;p.angle=old.angle;p.spin=old.spin;p.moved=true;p.active=old.active;p.pausedMotion=old.pausedMotion;p.contact=old.contact;return p;
 }
 export function createPileDecoration({document:doc=globalThis.document,window:win=globalThis.window}={}){

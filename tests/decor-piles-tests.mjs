@@ -15,7 +15,7 @@ assert.ok(Math.abs(fast.vy)>Math.abs(slow.vy));assert.ok(Math.abs(fast.vx)>Math.
 const far=particle();assert.equal(disturb(far,{x:1000,y:0,speed:1000},100),false);assert.equal(far.active,false);
 for(let i=0;i<100;i++)disturb(fast,{x:1500,y:0,speed:1500},0);assert.ok(Math.abs(fast.vx)<=260&&Math.abs(fast.vy)<=260);
 let minY=80;for(let i=0;i<1200;i++){stepParticle(fast,1/120);minY=Math.min(minY,fast.restY+fast.dy);}
-assert.ok(minY<75,'Fast swipe lifts real leaves');assert.ok(minY>=2);assert.equal(fast.active,false);assert.ok(fast.dx>15,'New landing position remains displaced');assert.equal(fast.restY+fast.dy,108,'Ground contact, no hovering');
+assert.ok(minY<75,'Fast swipe lifts real leaves without imposing a floor-strip ceiling');assert.equal(fast.active,false);assert.ok(fast.dx>15,'New landing position remains displaced');assert.equal(fast.restY+fast.dy,108,'Ground contact, no hovering');
 const landed={...fast};for(let i=0;i<1000;i++)stepParticle(fast,1/60);assert.deepEqual(fast,landed,'Sleeping leaf stays at new landing position');
 for(let i=0;i<600;i++)stepParticle(slow,1/60);assert.equal(slow.active,false);assert.ok(slow.dx>0&&slow.dx<fast.dx,'Gentle motion produces small permanent displacement');
 const oldLanding=fast.dx;disturb(fast,{x:-600,y:0,speed:600},0);for(let i=0;i<1000;i++)stepParticle(fast,1/120);assert.notEqual(fast.dx,oldLanding,'Repeated local wake creates another landing');

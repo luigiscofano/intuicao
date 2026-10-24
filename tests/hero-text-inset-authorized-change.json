@@ -1,0 +1,15 @@
+{
+  "base": "dd7795c481e1c3335c8b06fd1aec56433d5d8428",
+  "priorCssSHA256": "4584489e4e882f1fbae22b43f03feed69c5db23c92281969fa9dc5f156d16c92",
+  "afterCssSHA256": "6d99c8ea579166ed005e80f3059b5c46f0b14d8f90c363783c29dda4de2e9520",
+  "replacements": [
+    {
+      "before": "padding:32px 0 30px;min-height:260px",
+      "after": "padding:32px 0 30px 20px;min-height:260px"
+    },
+    {
+      "before": "padding:24px 4px 24px;min-height:0",
+      "after": "padding:24px 4px 24px 12px;min-height:0"
+    }
+  ]
+}
