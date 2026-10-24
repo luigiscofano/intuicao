@@ -6,7 +6,7 @@ const captions={balance:['Os torques se encontraram.','Ajuste os pesos e tente n
 export function celebrationMarkup(){
  const word=[...'PARABÉNS!'];
  const letters=word.map((letter,i)=>{const x=90+i*40,t=(i-4)/4;return `<text x="${x}" y="${76+14*t*t}" transform="rotate(${t*9} ${x} ${76+14*t*t})">${letter}</text>`;}).join('');
- const stars=[[46,61,5],[111,34,3],[184,28,4],[308,29,3],[387,37,4],[453,66,5],[134,111,3],[365,110,3]];
+ const stars=[[46,61,8],[111,34,5],[184,28,6],[308,29,5],[387,37,6],[453,66,8],[134,111,5],[365,110,5]];
  const sparkles=stars.map(([x,y,r],i)=>`<path class="victory-sparkle" style="--spark-delay:${i*25}ms" d="M${x-r} ${y} Q${x} ${y} ${x} ${y-r} Q${x} ${y} ${x+r} ${y} Q${x} ${y} ${x} ${y+r} Q${x} ${y} ${x-r} ${y}Z"/>`).join('');
  return `<div class="victory-celebration" aria-hidden="true"><svg viewBox="0 0 500 140" focusable="false"><title>PARABÉNS!</title><g class="victory-word">${letters}</g><g>${sparkles}</g></svg></div>`;
 }

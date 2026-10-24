@@ -84,7 +84,7 @@ svg .cut-grip:focus{outline:none;stroke:none}
 .result-success .victory-celebration{display:block}
 .victory-celebration svg{overflow:visible;filter:drop-shadow(0 2px 8px #fffefa)}
 .victory-word text{text-anchor:middle;fill:#386b45;font-size:38px;font-weight:800;letter-spacing:0;paint-order:stroke;stroke:#fffefa;stroke-width:5px;stroke-linejoin:round}
-.victory-sparkle{fill:#bda04c;stroke:#fffefa;stroke-width:1px;transform-box:fill-box;transform-origin:center}
+.victory-sparkle{fill:#b39439;stroke:none;transform-box:fill-box;transform-origin:center}
 @media(prefers-reduced-motion:no-preference){
  .experiment.result-success #scene{transform-origin:center;animation:victory-zoom 1.1s ease-in-out}
  .result-success .victory-celebration{animation:victory-arrive 1.1s ease-out both}
