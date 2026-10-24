@@ -131,9 +131,14 @@ body > footer .brand-dot{color:#997838}
    sibling clips itself and follows dynamic document height without JS. */
 body:has(> .platform-leaf-layer){position:relative}
 body > .platform-leaf-layer{position:absolute;inset:0;z-index:3;overflow:hidden;pointer-events:none;user-select:none;contain:strict;container-type:size}
-body > .platform-leaf-layer::before,body > .platform-leaf-layer::after{content:"";position:absolute;top:0;width:38%;max-width:420px;height:22px;pointer-events:none;background:url("platform-assets/tree-canopy.svg") left top/100% 22px no-repeat;opacity:.62}
-body > .platform-leaf-layer::before{left:0}
-body > .platform-leaf-layer::after{right:0;background-position:right top;opacity:.42}
+/* Only the canopy adopts pixel art. The added header border reserves space
+   without changing text, game widths, or the approved leaf motion rules. */
+body > header{border-top:88px solid #fafbf7}
+body > .platform-leaf-layer::before{content:"";position:absolute;top:0;left:0;width:100%;height:88px;pointer-events:none;background:url("platform-assets/tree-canopy-pixel.svg") center top/960px 88px repeat-x;image-rendering:pixelated;opacity:.82}
+@media(max-width:760px){
+ body > header{border-top-width:64px}
+ body > .platform-leaf-layer::before{height:64px;background-size:720px 66px}
+}
 body > .platform-leaf-layer > .platform-leaf{position:absolute;top:-48px;width:22px;height:30px;pointer-events:none;background:url("platform-assets/leaf-sage.svg") center/contain no-repeat;opacity:.32;animation:platform-leaf-fall 140s linear infinite}
 body > .platform-leaf-layer > .platform-leaf:nth-child(1){left:3%;width:16px;height:22px;opacity:.28;animation-duration:130s;animation-delay:-14s}
 body > .platform-leaf-layer > .platform-leaf:nth-child(2){left:20%;width:32px;height:38px;opacity:.18;background-image:url("platform-assets/leaf-honey.svg");animation-duration:165s;animation-delay:-96s}
@@ -142,13 +147,17 @@ body > .platform-leaf-layer > .platform-leaf:nth-child(4){left:56%;width:14px;he
 body > .platform-leaf-layer > .platform-leaf:nth-child(5){left:74%;width:38px;height:46px;opacity:.2;background-image:url("platform-assets/leaf-clay.svg");animation-duration:180s;animation-delay:-30s}
 body > .platform-leaf-layer > .platform-leaf:nth-child(6){left:92%;width:24px;height:29px;opacity:.38;background-image:url("platform-assets/leaf-honey.svg");animation-duration:145s;animation-delay:-110s}
 /* A quieter distant plane follows the viewport; six foreground leaves stay
-   anchored to the document. Ten leaves total, no cursor/scroll event listeners. */
+   anchored to the document. Fourteen leaves total, no cursor/scroll event listeners. */
 body > .platform-leaf-foreground{position:fixed;inset:0;z-index:3;overflow:hidden;pointer-events:none;user-select:none;contain:strict;container-type:size}
 body > .platform-leaf-foreground > .platform-leaf{position:absolute;top:-48px;pointer-events:none;width:14px;height:19px;opacity:.18;background:url("platform-assets/leaf-sage.svg") center/contain no-repeat;animation:platform-leaf-fall 35s linear infinite}
-body > .platform-leaf-foreground > .platform-leaf:nth-child(1){left:7%;animation-delay:-8s}
-body > .platform-leaf-foreground > .platform-leaf:nth-child(2){left:33%;width:22px;height:28px;opacity:.22;background-image:url("platform-assets/leaf-honey.svg");animation-duration:40s;animation-delay:-26s}
-body > .platform-leaf-foreground > .platform-leaf:nth-child(3){left:66%;width:16px;height:22px;opacity:.3;background-image:url("platform-assets/leaf-clay.svg");animation-duration:30s;animation-delay:-15s}
-body > .platform-leaf-foreground > .platform-leaf:nth-child(4){left:91%;width:24px;height:30px;opacity:.15;animation-duration:38s;animation-delay:-33s}
+body > .platform-leaf-foreground > .platform-leaf:nth-child(1){left:6%;animation-delay:-4s}
+body > .platform-leaf-foreground > .platform-leaf:nth-child(2){left:18%;width:22px;height:28px;opacity:.22;background-image:url("platform-assets/leaf-honey.svg");animation-duration:40s;animation-delay:-10s}
+body > .platform-leaf-foreground > .platform-leaf:nth-child(3){left:30%;width:16px;height:22px;opacity:.3;background-image:url("platform-assets/leaf-clay.svg");animation-duration:30s;animation-delay:-11s}
+body > .platform-leaf-foreground > .platform-leaf:nth-child(4){left:42%;width:24px;height:30px;opacity:.15;animation-duration:38s;animation-delay:-18s}
+body > .platform-leaf-foreground > .platform-leaf:nth-child(5){left:55%;animation-duration:37s;animation-delay:-22s}
+body > .platform-leaf-foreground > .platform-leaf:nth-child(6){left:67%;width:22px;height:28px;opacity:.22;background-image:url("platform-assets/leaf-honey.svg");animation-duration:32s;animation-delay:-23s}
+body > .platform-leaf-foreground > .platform-leaf:nth-child(7){left:80%;width:16px;height:22px;opacity:.3;background-image:url("platform-assets/leaf-clay.svg");animation-duration:39s;animation-delay:-32s}
+body > .platform-leaf-foreground > .platform-leaf:nth-child(8){left:93%;width:24px;height:30px;opacity:.15;animation-duration:34s;animation-delay:-30s}
 @keyframes platform-leaf-fall{
  0%{transform:translate3d(0,-48px,0) rotate(-25deg)}
  25%{transform:translate3d(-12px,calc(25cqh - 12px),0) rotate(20deg)}

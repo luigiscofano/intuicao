@@ -9,11 +9,14 @@ const copyChanges=JSON.parse(fs.readFileSync(new URL('./home-copy-authorized-cha
 const leafChange=JSON.parse(fs.readFileSync(new URL('./leaf-layer-authorized-change.json',import.meta.url)));
 const identityChanges=JSON.parse(fs.readFileSync(new URL('./curiosity-brand-authorized-changes.json',import.meta.url)));
 const canopyChange=JSON.parse(fs.readFileSync(new URL('./document-canopy-authorized-change.json',import.meta.url)));
+const incidenceChange=JSON.parse(fs.readFileSync(new URL('./leaf-incidence-authorized-change.json',import.meta.url)));
 const sha=s=>crypto.createHash('sha256').update(s).digest('hex');
 for(const [name,hash] of Object.entries(baseline)){
  let bytes=fs.readFileSync(new URL('../dist/'+name,import.meta.url));
  if(name==='index.html'){
   let html=bytes.toString();
+  assert.equal(html.split(incidenceChange.html_after).length-1,1,'Exact approved higher incidence');
+  html=html.replace(incidenceChange.html_after,incidenceChange.html_before);
   assert.equal(html.split(canopyChange.html_after).length-1,1,'Exact approved mixed decoration');
   assert.equal((canopyChange.html_after.match(/<span class="platform-leaf"><\/span>/g)??[]).length,10,'Ten leaves total across both planes');
   assert.equal((canopyChange.html_after.match(/aria-hidden="true" inert/g)??[]).length,2,'Both planes inert and hidden from accessibility');
@@ -41,7 +44,12 @@ for(const [name,hash] of Object.entries(baseline)){
  }
  assert.equal(sha(bytes),pactoApproved[name]??endlessApproved[name]??approved[name]??hash,`Protected original file modified: ${name}`);
 }
-const platformSource=fs.readFileSync(new URL('../dist/platform.css',import.meta.url),'utf8');
+const fullCanopyChange=JSON.parse(fs.readFileSync(new URL('./fullwidth-canopy-authorized-change.json',import.meta.url)));
+const currentPlatformSource=fs.readFileSync(new URL('../dist/platform.css',import.meta.url),'utf8');
+assert.equal(currentPlatformSource.split(fullCanopyChange.after).length-1,1,'Exact authorized full-width canopy and header space');
+for(const [name,hash] of Object.entries(fullCanopyChange.leaf_asset_sha256)) assert.equal(sha(fs.readFileSync(new URL('../dist/platform-assets/'+name,import.meta.url))),hash,'Falling leaf artwork unchanged');
+assert.equal(currentPlatformSource.split(incidenceChange.css_after).length-1,1,'Exact approved incidence rules');
+const platformSource=currentPlatformSource.replace(fullCanopyChange.after,fullCanopyChange.before).replace(incidenceChange.css_after,incidenceChange.css_before).replace(incidenceChange.comment_after,incidenceChange.comment_before);
 assert.equal(platformSource.split(identityChanges.platform_css_insertion).length-1,1);
 assert.equal(platformSource.split(canopyChange.after).length-1,1,'Exact authorized document decoration');
 assert.equal(sha(platformSource.replace(canopyChange.after,canopyChange.before).replace(identityChanges.platform_css_insertion,'')),identityChanges.platform_css_before_sha256,'Only approved brand rules added to platform CSS');
@@ -70,7 +78,8 @@ assert.ok(css.includes('pointer-events:none'),'Leaves must not intercept input')
 assert.ok(css.includes('position:absolute;inset:0'),'Document leaf layer is out of normal flow');
 assert.ok(css.includes('position:fixed;inset:0'),'Distant plane follows viewport');
 assert.ok(fullCSS.includes('100cqh'),'Motion follows each decorative containing block');
-assert.ok(css.includes('height:22px'),'Canopies stay above logo');
+assert.ok(css.includes('height:88px')&&css.includes('border-top:88px solid #fafbf7'),'Canopy has equal reserved header space');
+assert.ok(css.includes('border-top-width:64px')&&css.includes('height:64px'),'Compact mobile canopy and matching reserved space');
 assert.equal((css.match(/display:none;animation:none/g)??[]).length,2,'Both motion planes disabled for reduced motion');
 assert.ok(css.includes('overflow:hidden;pointer-events:none;user-select:none;contain:strict'),'Only the ornamental layer clips its overflow');
 assert.ok(!css.includes('platform-leaf-drift'),'Old menu leaves removed to avoid duplication');

@@ -1,0 +1,10 @@
+{
+  "authorization": "2026-10-24 Sentinel_5c5f400874f481919b80c084c36e2564 explicitly requests larger pixel-art tree crowns across the full horizontal ceiling and permits shifting header text downward. Only canopy CSS/asset and header space change; all falling-leaf rules/timings and game scripts stay unchanged.",
+  "before": "body > .platform-leaf-layer::before,body > .platform-leaf-layer::after{content:\"\";position:absolute;top:0;width:38%;max-width:420px;height:22px;pointer-events:none;background:url(\"platform-assets/tree-canopy.svg\") left top/100% 22px no-repeat;opacity:.62}\nbody > .platform-leaf-layer::before{left:0}\nbody > .platform-leaf-layer::after{right:0;background-position:right top;opacity:.42}\n",
+  "after": "/* Only the canopy adopts pixel art. The added header border reserves space\n   without changing text, game widths, or the approved leaf motion rules. */\nbody > header{border-top:88px solid #fafbf7}\nbody > .platform-leaf-layer::before{content:\"\";position:absolute;top:0;left:0;width:100%;height:88px;pointer-events:none;background:url(\"platform-assets/tree-canopy-pixel.svg\") center top/960px 88px repeat-x;image-rendering:pixelated;opacity:.82}\n@media(max-width:760px){\n body > header{border-top-width:64px}\n body > .platform-leaf-layer::before{height:64px;background-size:720px 66px}\n}\n",
+  "leaf_asset_sha256": {
+    "leaf-sage.svg": "e11a9be7b5fe4897737082c28af3105ecb837e076dad89ab4c4def17cfca5e24",
+    "leaf-clay.svg": "3f32557c3a6db1e04b99a9d9488e56407ba64e2a8e2db1a89c28881e1b73ba7c",
+    "leaf-honey.svg": "237cb11e348821e01beb1702869d88bfeab91c8b24ade953e12518189cd619ae"
+  }
+}
