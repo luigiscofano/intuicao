@@ -1,15 +1,15 @@
 /* Intuição · folhas e descobertas.
-   Revision 2: owner-requested lighter surfaces, no landscape, compact rounded
-   levels, external frames and occasional decorative pastel leaves.
-   Added presentation only. Original style.css and all game code are unchanged.
+   Revision 3: owner-requested editorial retro, not a dominant pixel interface.
+   Local serif titles, utilitarian menus, fine printed rules and pale paper.
+   Compact levels and occasional pastel leaves remain; games are unchanged.
+   Added presentation only. Functional changes authorized separately are preserved.
    SAFE ROOTS: direct header/footer, #main > .intro/.games, #selection,
    #collection > .level-screen. Never style body/main/collection or game roots.
    While a game is open, retain ALL original shell metrics, so its page position
    and responsive dimensions remain exact. New typography/layout only in menus. */
-@font-face{font-family:"Intuicao Pixel";src:url("platform-assets/intuicao-pixel.woff") format("woff");font-style:normal;font-weight:100 900;font-display:swap}
 
 /* Metric-neutral shell finish, including while playing. No inherited game styles. */
-body > header{background:#fafbf7;border-color:#d4ddd0;box-shadow:inset 0 -3px #edf1e8;color:#3b342e}
+body > header{background:#fafbf7;border-color:#d4ddd0;box-shadow:inset 0 -1px #edf1e8;color:#3b342e}
 body > header .brand-icon{color:#71865b}
 body > header .brand-dot{color:#997838}
 body > header :is(.tag,.doc-link){color:#5a604c}
@@ -25,39 +25,39 @@ body > footer :is(p,small){color:#555344}
 /* Menu-only treatment. :has observes existing state; no script, new state,
    event handler, route, focus operation or storage access is introduced. */
 :where(body:not(:has(.lab:not([hidden]), #collection:not([hidden]) > .collection-lab))) > header{padding-top:24px;padding-bottom:24px}
-:where(body:not(:has(.lab:not([hidden]), #collection:not([hidden]) > .collection-lab))) > header .brand{display:inline-flex;align-items:center;font-family:"Intuicao Pixel",monospace;font-size:32px;font-weight:400;letter-spacing:0;line-height:1.4}
-:where(body:not(:has(.lab:not([hidden]), #collection:not([hidden]) > .collection-lab))) > header .brand-icon{font-size:0;transform:none;width:28px;height:28px;margin-right:10px;vertical-align:-2px;background:url("platform-assets/leaf.svg") center/28px 28px no-repeat;image-rendering:pixelated}
-:where(body:not(:has(.lab:not([hidden]), #collection:not([hidden]) > .collection-lab))) > header .tag{font-family:"Intuicao Pixel",monospace;font-size:12px;letter-spacing:0;line-height:1.5}
-:where(body:not(:has(.lab:not([hidden]), #collection:not([hidden]) > .collection-lab))) > header .doc-link{border:1px solid #bec9b6;border-radius:2px;padding:8px 12px;background:#ffffff;box-shadow:2px 2px #d4ddd0}
-:where(body:not(:has(.lab:not([hidden]), #collection:not([hidden]) > .collection-lab))) #main > .intro{position:relative;isolation:isolate;padding:42px 0 38px;min-height:300px;background:none}
-:where(body:not(:has(.lab:not([hidden]), #collection:not([hidden]) > .collection-lab))) #main > .intro::before{content:"";position:absolute;inset:0 -40px;background:#fafbf7;z-index:-2;pointer-events:none}
-:where(body:not(:has(.lab:not([hidden]), #collection:not([hidden]) > .collection-lab))) #main > .intro .eyebrow{max-width:80%;font-size:9px;letter-spacing:1.3px;margin-bottom:20px}
-:where(body:not(:has(.lab:not([hidden]), #collection:not([hidden]) > .collection-lab))) #main > .intro h1{font-family:"Intuicao Pixel",monospace;font-size:40px;font-weight:400;line-height:1.42;letter-spacing:-1px;max-width:100%;margin:0 0 14px}
-:where(body:not(:has(.lab:not([hidden]), #collection:not([hidden]) > .collection-lab))) #main > .intro h1 em{font-family:inherit;font-style:normal;font-weight:400;text-shadow:2px 2px #e0e8d9}
-:where(body:not(:has(.lab:not([hidden]), #collection:not([hidden]) > .collection-lab))) #main > .intro > p:last-child{font-size:13px;max-width:100%;line-height:1.8;margin-bottom:0}
+:where(body:not(:has(.lab:not([hidden]), #collection:not([hidden]) > .collection-lab))) > header .brand{display:inline-flex;align-items:center;font-family:Georgia,"Times New Roman",serif;font-size:38px;font-style:italic;font-weight:700;letter-spacing:-1.7px;line-height:1.25}
+:where(body:not(:has(.lab:not([hidden]), #collection:not([hidden]) > .collection-lab))) > header .brand-icon{font-size:0;transform:none;width:28px;height:28px;margin-right:10px;vertical-align:-2px;background:url("platform-assets/leaf-seal.svg") center/28px 28px no-repeat}
+:where(body:not(:has(.lab:not([hidden]), #collection:not([hidden]) > .collection-lab))) > header .tag{font-family:"Courier New",monospace;font-size:10px;letter-spacing:1.6px;line-height:1.5}
+:where(body:not(:has(.lab:not([hidden]), #collection:not([hidden]) > .collection-lab))) > header .doc-link{border:1px solid #bec9b6;border-radius:3px;padding:8px 12px;background:transparent;box-shadow:none}
+:where(body:not(:has(.lab:not([hidden]), #collection:not([hidden]) > .collection-lab))) #main > .intro{position:relative;isolation:isolate;padding:46px 0 40px;min-height:318px;background:none}
+:where(body:not(:has(.lab:not([hidden]), #collection:not([hidden]) > .collection-lab))) #main > .intro::before{content:"";position:absolute;inset:0 -40px;background:#fafbf7 url("platform-assets/paper-marks.svg") repeat;z-index:-2;pointer-events:none}
+:where(body:not(:has(.lab:not([hidden]), #collection:not([hidden]) > .collection-lab))) #main > .intro .eyebrow{max-width:80%;font-family:"Courier New",monospace;font-size:10px;letter-spacing:1.7px;margin-bottom:20px}
+:where(body:not(:has(.lab:not([hidden]), #collection:not([hidden]) > .collection-lab))) #main > .intro h1{font-family:Georgia,"Times New Roman",serif;font-size:68px;font-weight:400;line-height:1.08;letter-spacing:-2.6px;max-width:100%;margin:0 0 24px}
+:where(body:not(:has(.lab:not([hidden]), #collection:not([hidden]) > .collection-lab))) #main > .intro h1 em{font-family:inherit;font-style:italic;font-weight:400;text-shadow:none;text-decoration:underline;text-decoration-color:#a6b49b;text-decoration-thickness:1px;text-underline-offset:8px}
+:where(body:not(:has(.lab:not([hidden]), #collection:not([hidden]) > .collection-lab))) #main > .intro > p:last-child{font-size:14px;max-width:100%;line-height:1.8;margin-bottom:0}
 :where(body:not(:has(.lab:not([hidden]), #collection:not([hidden]) > .collection-lab))) #main > .games{gap:12px;margin-top:24px;margin-bottom:28px}
-:where(body:not(:has(.lab:not([hidden]), #collection:not([hidden]) > .collection-lab))) #main > .games > button{font-family:"Intuicao Pixel",monospace;font-size:20px;line-height:1.5;letter-spacing:0;font-weight:400;border-radius:3px;border-width:2px;padding:14px 18px;position:relative}
-:where(body:not(:has(.lab:not([hidden]), #collection:not([hidden]) > .collection-lab))) #main > .games > button > span{font-size:12px;opacity:1;color:#666950;vertical-align:2px;margin-right:10px}
+:where(body:not(:has(.lab:not([hidden]), #collection:not([hidden]) > .collection-lab))) #main > .games > button{font-family:system-ui,-apple-system,"Segoe UI",sans-serif;font-size:16px;line-height:1.5;letter-spacing:.2px;font-weight:600;border-radius:5px;border-width:1px;padding:16px 18px;position:relative}
+:where(body:not(:has(.lab:not([hidden]), #collection:not([hidden]) > .collection-lab))) #main > .games > button > span{font-family:"Courier New",monospace;font-size:11px;font-weight:400;opacity:1;color:#666950;vertical-align:1px;margin-right:12px}
 :where(body:not(:has(.lab:not([hidden]), #collection:not([hidden]) > .collection-lab))) #main > .games > button[aria-pressed=true] > span{color:#d3ddb5}
 :where(body:not(:has(.lab:not([hidden]), #collection:not([hidden]) > .collection-lab))) #main > .games > button small{font-family:system-ui,sans-serif;font-size:11px;line-height:1.6;opacity:1;margin-left:28px;color:#62634f}
 :where(body:not(:has(.lab:not([hidden]), #collection:not([hidden]) > .collection-lab))) #main > .games > button[aria-pressed=true] small{color:#e2e6ce}
-:where(body:not(:has(.lab:not([hidden]), #collection:not([hidden]) > .collection-lab))) #main > .games > button[aria-pressed=true]::after{content:"";position:absolute;top:17px;right:14px;width:6px;height:6px;background:#ddd3a6;box-shadow:0 6px #ddd3a6,-6px 0 #ddd3a6}
-:where(body:not(:has(.lab:not([hidden]), #collection:not([hidden]) > .collection-lab))) > footer > span{font-family:"Intuicao Pixel",monospace;font-size:22px;letter-spacing:0;font-weight:400}
+:where(body:not(:has(.lab:not([hidden]), #collection:not([hidden]) > .collection-lab))) #main > .games > button[aria-pressed=true]::after{content:"";position:absolute;top:17px;right:14px;width:5px;height:5px;border-radius:50%;background:#ddd3a6;box-shadow:none}
+:where(body:not(:has(.lab:not([hidden]), #collection:not([hidden]) > .collection-lab))) > footer > span{font-family:Georgia,"Times New Roman",serif;font-size:26px;font-style:italic;letter-spacing:-.5px;font-weight:700}
 
 /* Two explicit selection roots. .collection-lab can never match these. */
-:is(#selection, #collection > .level-screen){background:#fafbf7;border:2px solid #b3c1a8;border-radius:3px;padding:28px;box-shadow:inset 0 0 0 3px #ffffff,4px 4px #dbe3d5;color:#3b342e;margin-bottom:34px}
-:is(#selection, #collection > .level-screen) .eyebrow{color:#405e49;font-size:9px;letter-spacing:1.4px}
-:is(#selection, #collection > .level-screen) h2{font-family:"Intuicao Pixel",monospace;font-weight:400;font-size:30px;line-height:1.5;letter-spacing:0;color:#405e49}
+:is(#selection, #collection > .level-screen){background:#fafbf7;border:1px solid #b3c1a8;border-radius:7px;padding:30px;box-shadow:0 3px #e7ebe2;color:#3b342e;margin-bottom:34px}
+:is(#selection, #collection > .level-screen) .eyebrow{color:#405e49;font-family:"Courier New",monospace;font-size:10px;letter-spacing:1.6px}
+:is(#selection, #collection > .level-screen) h2{font-family:Georgia,"Times New Roman",serif;font-weight:400;font-size:35px;line-height:1.3;letter-spacing:-.7px;color:#405e49}
 :is(#selection, #collection > .level-screen) > p:not(.eyebrow){font-size:14px;line-height:1.75;max-width:880px;color:#585644}
-:is(#selection, #collection > .level-screen) .stage-heading{font-family:"Intuicao Pixel",monospace;font-size:20px;line-height:1.5;font-weight:400;letter-spacing:0;border-bottom:2px solid #dbe3d5;padding-bottom:8px;color:#405e49}
-:is(#selection, #collection > .level-screen) :is(button,select,.file-button){border:2px solid #b3c1a8;border-radius:2px;background:#ffffff;color:#3b342e;box-shadow:inset 0 2px #ffffff,0 2px #d4ddd0}
-:is(#selection, #collection > .level-screen) :is(button,select,.file-button):not(.level-tile){font-family:"Intuicao Pixel",monospace;font-size:15px;line-height:1.6;font-weight:400;min-height:44px}
-:is(#selection, #collection > .level-screen) .primary{background:#405e49;color:#ffffff;border-color:#405e49;box-shadow:inset 0 2px #71865b,0 2px #354b3a}
+:is(#selection, #collection > .level-screen) .stage-heading{font-family:"Courier New",monospace;font-size:14px;line-height:1.6;font-weight:600;letter-spacing:.4px;border-bottom:1px solid #cbd4c3;padding-bottom:10px;color:#405e49}
+:is(#selection, #collection > .level-screen) :is(button,select,.file-button){border:1px solid #b3c1a8;border-radius:5px;background:#ffffff;color:#3b342e;box-shadow:0 2px #e3e9dd}
+:is(#selection, #collection > .level-screen) :is(button,select,.file-button):not(.level-tile){font-family:system-ui,-apple-system,"Segoe UI",sans-serif;font-size:12px;line-height:1.6;font-weight:600;min-height:44px}
+:is(#selection, #collection > .level-screen) .primary{background:#405e49;color:#ffffff;border-color:#405e49;box-shadow:0 2px #354b3a}
 :is(#selection, #collection > .level-screen) .level-group{grid-template-columns:repeat(auto-fill,minmax(68px,1fr));gap:8px;margin:14px 0 22px}
-:is(#selection, #collection > .level-screen) .level-tile{border-radius:24%;min-height:64px;padding:5px;background:#f3f6ef;border-color:#c0cbb7;color:#3b342e;gap:4px;box-shadow:inset 2px 2px #ffffff,inset -2px -2px #dfe7d8,0 3px #d4ddd0}
-:is(#selection, #collection > .level-screen) .level-tile > span{font-family:"Intuicao Pixel",monospace;font-size:22px;line-height:1.25;font-weight:400}
+:is(#selection, #collection > .level-screen) .level-tile{border-radius:24%;min-height:64px;padding:5px;background:#f3f6ef;border-color:#c0cbb7;color:#3b342e;gap:4px;box-shadow:0 2px #dfe7d8}
+:is(#selection, #collection > .level-screen) .level-tile > span{font-family:"Courier New",monospace;font-size:22px;line-height:1.25;font-weight:400}
 :is(#selection, #collection > .level-screen) .level-tile > small{font-family:system-ui,sans-serif;font-size:10px;line-height:1.5;color:#62604c}
-:is(#selection, #collection > .level-screen) .level-tile.done{background:#e1ecda;border-color:#71865b;box-shadow:inset 2px 2px #f4f8ee,inset -2px -2px #c5d8b9,0 3px #cbdac1}
+:is(#selection, #collection > .level-screen) .level-tile.done{background:#e1ecda;border-color:#71865b;box-shadow:0 2px #cbdac1}
 :is(#selection, #collection > .level-screen) .level-tile.done > small{color:#405e49}
 :is(#selection, #collection > .level-screen) .level-tile[aria-current=true]{outline:2px solid #997838;outline-offset:2px}
 :is(#selection, #collection > .level-screen) .duel-maps > button{background:#f3f6ef}
@@ -72,42 +72,42 @@ body > footer :is(p,small){color:#555344}
 :is(#selection, #collection > .level-screen) button:disabled{opacity:.45}
 
 @media(max-width:1050px){
- :where(body:not(:has(.lab:not([hidden]), #collection:not([hidden]) > .collection-lab))) #main > .intro h1{font-size:34px}
+ :where(body:not(:has(.lab:not([hidden]), #collection:not([hidden]) > .collection-lab))) #main > .intro h1{font-size:58px}
 }
 @media(max-width:760px){
  :where(body:not(:has(.lab:not([hidden]), #collection:not([hidden]) > .collection-lab))) > header{padding:18px 20px}
- :where(body:not(:has(.lab:not([hidden]), #collection:not([hidden]) > .collection-lab))) > header .brand{font-size:26px}
+ :where(body:not(:has(.lab:not([hidden]), #collection:not([hidden]) > .collection-lab))) > header .brand{font-size:31px}
  :where(body:not(:has(.lab:not([hidden]), #collection:not([hidden]) > .collection-lab))) > header .brand-icon{width:22px;height:22px;background-size:22px;margin-right:5px}
  :where(body:not(:has(.lab:not([hidden]), #collection:not([hidden]) > .collection-lab))) > header .doc-link{font-size:10px;padding:7px 8px}
  :where(body:not(:has(.lab:not([hidden]), #collection:not([hidden]) > .collection-lab))) #main > .intro{padding:28px 4px 26px;min-height:0}
  :where(body:not(:has(.lab:not([hidden]), #collection:not([hidden]) > .collection-lab))) #main > .intro::before{inset:0 -16px}
  :where(body:not(:has(.lab:not([hidden]), #collection:not([hidden]) > .collection-lab))) #main > .intro :is(h1,.eyebrow,p:last-child){max-width:100%}
- :where(body:not(:has(.lab:not([hidden]), #collection:not([hidden]) > .collection-lab))) #main > .intro h1{font-size:32px;letter-spacing:-.5px;line-height:1.45}
- :where(body:not(:has(.lab:not([hidden]), #collection:not([hidden]) > .collection-lab))) #main > .intro .eyebrow{font-size:8px;letter-spacing:1px;margin-bottom:14px}
+ :where(body:not(:has(.lab:not([hidden]), #collection:not([hidden]) > .collection-lab))) #main > .intro h1{font-size:46px;letter-spacing:-1.8px;line-height:1.1}
+ :where(body:not(:has(.lab:not([hidden]), #collection:not([hidden]) > .collection-lab))) #main > .intro .eyebrow{font-size:9px;letter-spacing:1px;margin-bottom:18px}
  :where(body:not(:has(.lab:not([hidden]), #collection:not([hidden]) > .collection-lab))) #main > .intro > p:last-child{font-size:12px}
  :where(body:not(:has(.lab:not([hidden]), #collection:not([hidden]) > .collection-lab))) #main > .games{grid-template-columns:repeat(2,minmax(0,1fr));gap:10px;margin-top:20px;margin-bottom:24px}
- :where(body:not(:has(.lab:not([hidden]), #collection:not([hidden]) > .collection-lab))) #main > .games > button{font-size:17px;padding:12px;line-height:1.6}
+ :where(body:not(:has(.lab:not([hidden]), #collection:not([hidden]) > .collection-lab))) #main > .games > button{font-size:14px;padding:14px 12px;line-height:1.5}
  :where(body:not(:has(.lab:not([hidden]), #collection:not([hidden]) > .collection-lab))) #main > .games > button > span{font-size:11px;display:block;margin-bottom:2px}
  :where(body:not(:has(.lab:not([hidden]), #collection:not([hidden]) > .collection-lab))) #main > .games > button small{font-size:10px;margin:3px 0 0}
- :is(#selection, #collection > .level-screen){padding:18px 14px;box-shadow:inset 0 0 0 2px #ffffff,3px 3px #dbe3d5}
- :is(#selection, #collection > .level-screen) h2{font-size:24px}
+ :is(#selection, #collection > .level-screen){padding:22px 14px;box-shadow:0 3px #e7ebe2}
+ :is(#selection, #collection > .level-screen) h2{font-size:28px}
  :is(#selection, #collection > .level-screen) > p:not(.eyebrow){font-size:13px}
- :is(#selection, #collection > .level-screen) .stage-heading{font-size:18px}
+ :is(#selection, #collection > .level-screen) .stage-heading{font-size:13px}
  :is(#selection, #collection > .level-screen) .level-group{grid-template-columns:repeat(4,minmax(0,1fr));gap:6px}
  :is(#selection, #collection > .level-screen) .level-tile > span{font-size:20px}
  :is(#selection, #collection > .level-screen) .level-tile > small{font-size:9px}
 }
 @media(max-width:370px){
  :where(body:not(:has(.lab:not([hidden]), #collection:not([hidden]) > .collection-lab))) #main > .intro{padding-bottom:26px}
- :where(body:not(:has(.lab:not([hidden]), #collection:not([hidden]) > .collection-lab))) #main > .intro h1{font-size:28px}
+ :where(body:not(:has(.lab:not([hidden]), #collection:not([hidden]) > .collection-lab))) #main > .intro h1{font-size:39px}
  :where(body:not(:has(.lab:not([hidden]), #collection:not([hidden]) > .collection-lab))) > header{gap:10px;padding:16px}
 }
 
 /* Delicate inner frames, platform only. They do not consume layout space. */
-#main > .games > button{box-shadow:inset 0 0 0 3px #fafbf7,inset 0 0 0 4px #dce5d4,0 3px #d4ddd0}
-#main > .games > button[aria-pressed=true]{box-shadow:inset 0 0 0 3px #405e49,inset 0 0 0 4px #91a780,0 3px #303f32}
-:is(#selection, #collection > .level-screen){box-shadow:inset 0 0 0 4px #ffffff,inset 0 0 0 5px #dce5d4,4px 4px #e1e7dc}
-:is(#selection, #collection > .level-screen) .duel-maps > button{box-shadow:inset 0 0 0 3px #fafbf7,inset 0 0 0 4px #dce5d4,0 3px #d4ddd0}
+#main > .games > button{box-shadow:inset 0 -2px #e8ede3,0 1px #dce4d4}
+#main > .games > button[aria-pressed=true]{box-shadow:inset 0 -2px #314d39,0 1px #303f32}
+:is(#selection, #collection > .level-screen){box-shadow:inset 0 0 0 5px #fafbf7,inset 0 0 0 6px #e5eadd,0 3px #e3e9dd}
+:is(#selection, #collection > .level-screen) .duel-maps > button{box-shadow:inset 0 -2px #e8ede3,0 1px #dce4d4}
 /* Original pixel leaves. Only three independent decorations. Empty generated
    content is not spoken, accepts no pointer events, and never exists in games.
    All animations target only these leaves, never a container or game surface. */
