@@ -20,4 +20,6 @@ for(const viewport of [320,375,390,760,761,1024,1280,1430,1920,2560]){
  assert.ok(panelLeft-flare>=0,viewport+' curves remain inside viewport');
  assert.ok(flare>0);
 }
+assert.match(m.css_insertion,/::after\{bottom:-240px;height:240px\}/,'Desktop roots stay within 34px gap plus 212px footer');
+assert.match(m.css_insertion,/::after\{bottom:-196px;height:196px\}/,'Compact roots stay inside mobile footer reservation');
 console.log('PASS exact isolated selection curves, 1px non-scaling strokes, preserved shell/header/styles, inert decoration, structural gutter fit at 320–2560px. Visual browser/mobile QA separate.');

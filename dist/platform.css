@@ -211,7 +211,7 @@ body > header::before{content:"";position:absolute;inset:-28px 0 -1px;pointer-ev
 :is(#selection, #collection > .level-screen)::before,
 :is(#selection, #collection > .level-screen)::after{content:"";position:absolute;left:calc(-1 * var(--frame-flare));width:calc(100% + 2 * var(--frame-flare));pointer-events:none;user-select:none;background:url("platform-assets/content-frame-curve-left.svg") left/var(--frame-flare) 100% no-repeat,url("platform-assets/content-frame-curve-right.svg") right/var(--frame-flare) 100% no-repeat}
 :is(#selection, #collection > .level-screen)::before{top:-62px;height:62px;transform:rotate(180deg)}
-:is(#selection, #collection > .level-screen)::after{bottom:-260px;height:260px}
+:is(#selection, #collection > .level-screen)::after{bottom:-240px;height:240px}
 @media(max-width:760px){
  :is(#selection, #collection > .level-screen){--frame-flare:14px}
  :is(#selection, #collection > .level-screen)::before{top:-28px;height:28px}
