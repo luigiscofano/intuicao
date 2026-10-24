@@ -36,4 +36,5 @@ for(const w of [320,390,760,761,1024,1280,1430,1920,2560]){
 assert.match(m.css_after,/body:has\(#selection:not\(\[hidden\]\), #collection:not\(\[hidden\]\) > \.level-screen\) > footer/,'Footer paint changes apply only to selections');
 assert.match(m.css_after,/bottom:-246px;height:247px/);
 assert.match(m.css_after,/bottom:-202px;height:203px/);
+assert.match(m.css_after,/border-top-color:transparent;border-bottom-color:transparent/,'Footer reservations cannot mask roots');
 console.log('PASS exact reconstruction, removed closed junction borders, 1px tangent-aligned continuous centerlines and white interior; structural fit at 320–2560px. Visual join screenshots still required.');
