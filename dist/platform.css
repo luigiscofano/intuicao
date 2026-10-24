@@ -207,16 +207,17 @@ body > header::before{content:"";position:absolute;inset:-28px 0 -1px;pointer-ev
 
 /* Continuous tree perimeter. Replace the former closed rectangles and detached
    accents with tangent joins; decorations never change the content box. */
-:is(#selection, #collection > .level-screen){position:relative;--frame-flare:max(38px,calc((100vw - 1280px)/2 + 28px));border-bottom-color:transparent;border-bottom-left-radius:0;border-bottom-right-radius:0;box-shadow:none}
+:is(#selection, #collection > .level-screen){position:relative;--frame-flare:max(38px,calc((100vw - 1280px)/2 + 28px));background:#fff;border-bottom-color:transparent;border-bottom-left-radius:0;border-bottom-right-radius:0;box-shadow:none}
 :is(#selection, #collection > .level-screen)::before{content:none}
-:is(#selection, #collection > .level-screen)::after{content:"";position:absolute;left:calc(-1 * var(--frame-flare) - .5px);width:calc(100% + 2 * var(--frame-flare) + 1px);bottom:-240px;height:241px;pointer-events:none;user-select:none;background:url("platform-assets/continuous-root-left.svg") left/var(--frame-flare) 100% no-repeat,url("platform-assets/continuous-root-right.svg") right/var(--frame-flare) 100% no-repeat}
+body:has(#selection:not([hidden]), #collection:not([hidden]) > .level-screen) > footer{position:relative;z-index:1;background:transparent;border-top-color:transparent;box-shadow:none}
+:is(#selection, #collection > .level-screen)::after{content:"";position:absolute;left:calc(-1 * var(--frame-flare) - .5px);width:calc(100% + 2 * var(--frame-flare) + 1px);bottom:-246px;height:247px;pointer-events:none;user-select:none;background:url("platform-assets/continuous-root-left.svg") left/var(--frame-flare) 100% no-repeat,url("platform-assets/continuous-root-right.svg") right/var(--frame-flare) 100% no-repeat,linear-gradient(#fff,#fff) center/calc(100% - 2 * var(--frame-flare)) 100% no-repeat}
 
 :where(body:not(:has(.lab:not([hidden]), #collection:not([hidden]) > .collection-lab))) #main > .intro{--hero-flare:max(14px,calc((100vw - 1280px)/2 + 4px))}
 :where(body:not(:has(.lab:not([hidden]), #collection:not([hidden]) > .collection-lab))) #main > .intro::before{inset:69px -24.5px 0;background:#fff;border:1px solid #b3c1a8;border-top:0;border-radius:0 0 12px 12px;box-shadow:none}
 :where(body:not(:has(.lab:not([hidden]), #collection:not([hidden]) > .collection-lab))) #main > .intro::after{content:"";position:absolute;top:8px;left:calc(-24px - var(--hero-flare));width:calc(100% + 48px + 2 * var(--hero-flare));height:62px;background:url("platform-assets/continuous-crown-left.svg") left/var(--hero-flare) 100% no-repeat,url("platform-assets/continuous-crown-right.svg") right/var(--hero-flare) 100% no-repeat,linear-gradient(#fff,#fff) center/calc(100% - 2 * var(--hero-flare)) 100% no-repeat;pointer-events:none;user-select:none;z-index:-1}
 @media(max-width:760px){
  :is(#selection, #collection > .level-screen){--frame-flare:14px}
- :is(#selection, #collection > .level-screen)::after{bottom:-196px;height:197px}
+ :is(#selection, #collection > .level-screen)::after{bottom:-202px;height:203px}
  :where(body:not(:has(.lab:not([hidden]), #collection:not([hidden]) > .collection-lab))) #main > .intro{--hero-flare:6px}
  :where(body:not(:has(.lab:not([hidden]), #collection:not([hidden]) > .collection-lab))) #main > .intro::before{inset:33px -8.5px 0;border-radius:0 0 9px 9px}
  :where(body:not(:has(.lab:not([hidden]), #collection:not([hidden]) > .collection-lab))) #main > .intro::after{top:6px;left:calc(-8px - var(--hero-flare));width:calc(100% + 16px + 2 * var(--hero-flare));height:28px}

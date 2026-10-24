@@ -13,7 +13,7 @@ assert.ok(!css.includes('/* Move the upper branches'),'No old closed-rectangle o
 assert.match(m.css_after,/border-bottom-color:transparent;border-bottom-left-radius:0;border-bottom-right-radius:0;box-shadow:none/);
 assert.match(m.css_after,/inset:69px -24\.5px 0;background:#fff;border:1px solid #b3c1a8;border-top:0/);
 assert.match(m.css_after,/linear-gradient\(#fff,#fff\)/);
-assert.ok(!/padding:|margin:|body > header|body > footer|platform-leaf/.test(m.css_after));
+assert.ok(!/padding:|margin:|body > header|platform-leaf/.test(m.css_after));
 for(const a of m.assets){
  const svg=read('../dist/platform-assets/'+a.file);
  assert.equal(sha(svg),a.sha256);assert.match(svg,/stroke-width="1"/);assert.match(svg,/vector-effect="non-scaling-stroke"/);
@@ -33,4 +33,7 @@ for(const w of [320,390,760,761,1024,1280,1430,1920,2560]){
  assert.ok(panelEdge-rootFlare-.5>=0);
  assert.equal((mobile?6:8)+(mobile?28:62)-(mobile?33:69),1,'Crown overlaps straight side by one pixel');
 }
+assert.match(m.css_after,/body:has\(#selection:not\(\[hidden\]\), #collection:not\(\[hidden\]\) > \.level-screen\) > footer/,'Footer paint changes apply only to selections');
+assert.match(m.css_after,/bottom:-246px;height:247px/);
+assert.match(m.css_after,/bottom:-202px;height:203px/);
 console.log('PASS exact reconstruction, removed closed junction borders, 1px tangent-aligned continuous centerlines and white interior; structural fit at 320–2560px. Visual join screenshots still required.');
