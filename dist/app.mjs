@@ -1,3 +1,5 @@
+import {traceLightWorld,lightScene} from './light-world.mjs';
+import {worldRaysSVG,portalSVG,lightEndpointsSVG,beamName} from './light-world-render.mjs';
 import {createResultMotion} from './result-motion.mjs';
 import {lightRaysSVG} from './light-render.mjs';
 import {layout,moveBlock,movable,editBlock,legal} from './balance.mjs';
@@ -13,8 +15,8 @@ let game='balance',free=false,level=0,state={},selected=0,drag=null;
 const completed=new Set();const lastLevel={balance:null,light:null,cut:null};
 function showSelection(){placementMessage='';pendingSlot=null;invalidate();drag=null;document.querySelector('.lab').hidden=true;$('selection').hidden=false;document.querySelectorAll('[data-game]').forEach(b=>b.setAttribute('aria-pressed',String(b.dataset.game===game)));$('selection-title').textContent={balance:'Equilíbrio · 100 níveis',light:'Reflexos · 100 níveis',cut:'Corte certo · 100 níveis'}[game];let html='';for(let k=0;k<catalogue[game].length;k+=10){if(game==='light')html+=`<h3 class="stage-heading">${catalogue.light[k].stage} · ${catalogue.light[k].stageName}</h3>`;if(game==='cut')html+=`<h3 class="stage-heading">${['1 · Retas e proporções','2 · Parábolas','3 · Ondas senoidais','4 · Curvas em S','5 · Síntese e restrições','6 · Translação por eixos e diagonais','7 · Entradas opostas e rotação','8 · Forma ajustável','9 · Curvas em S no espaço','10 · Síntese de transformações'][k/10]}</h3>`;html+='<div class="level-group">'+catalogue[game].slice(k,k+10).map((l,j)=>{const i=k+j,done=completed.has(game+i),current=lastLevel[game]===i;return `<button class="level-tile ${done?'done':''}" data-level="${i}" aria-current="${current}" aria-label="Nível ${i+1}: ${l.name}${done?', concluído':''}${current?', atual':''}"><span>${i+1}</span><small>${done?'✓ concluído':current?'atual':'explorar'}</small></button>`;}).join('')+'</div>';}$('level-grid').innerHTML=html;$('level-grid').querySelectorAll('[data-level]').forEach(b=>b.onclick=()=>{level=Number(b.dataset.level);free=false;start();});$('selection-title').focus();}
 
-let phase='editing',evaluation=null,frame=0,animationToken=0,revealed=[];
-function invalidate(){resultMotion.clear();cancelAnimationFrame(frame);animationToken++;phase='editing';evaluation=null;revealed=[];scene.setAttribute('aria-busy','false');}
+let phase='editing',evaluation=null,frame=0,animationToken=0,revealed=[],lightDistance=0;
+function invalidate(){resultMotion.clear();cancelAnimationFrame(frame);animationToken++;phase='editing';evaluation=null;revealed=[];lightDistance=0;scene.setAttribute('aria-busy','false');}
 function finishResult(){
  phase='result';scene.setAttribute('aria-busy','false');draw();
  const success=game==='balance'?Math.abs(evaluation.torque)<=1.18:game==='light'?evaluation.ray.status==='target':cutSuccess(evaluation.cut.ratio*100,state.target);
@@ -25,13 +27,12 @@ function confirmAnswer(){
  resultMotion.clear();cancelAnimationFrame(frame);const token=++animationToken;
  const snapshot=structuredClone(state);evaluation={snapshot};
  if(game!=='light'){if(game==='balance')evaluation.torque=torque(snapshot.weights);else evaluation.cut=curvedCut(shapePolygon(snapshot.shape),snapshot);finishResult();return;}
- const a=snapshot.sourceAngle*Math.PI/180;
- evaluation.ray=traceRay({x:70,y:350},{x:Math.cos(a),y:Math.sin(a)},snapshot.objects,snapshot.target);
- const pts=evaluation.ray.points,total=pts.slice(1).reduce((sum,b,i)=>sum+Math.hypot(b.x-pts[i].x,b.y-pts[i].y),0);
- phase='animating';scene.setAttribute('aria-busy','true');revealed=[pts[0]];draw();
- if(matchMedia('(prefers-reduced-motion: reduce)').matches){revealed=pts;finishResult();return;}
+ evaluation.ray=traceLightWorld(snapshot);
+ const total=evaluation.ray.totalDistance;
+ phase='animating';scene.setAttribute('aria-busy','true');lightDistance=0;draw();
+ if(matchMedia('(prefers-reduced-motion: reduce)').matches){lightDistance=Infinity;finishResult();return;}
  const began=performance.now();
- function tick(now){if(token!==animationToken||phase!=='animating')return;const distance=(now-began)*.5;revealed=pathAtDistance(pts,distance);if(distance>=total){finishResult();return;}draw();frame=requestAnimationFrame(tick);}
+ function tick(now){if(token!==animationToken||phase!=='animating')return;lightDistance=(now-began)*.5;if(lightDistance>=total){finishResult();return;}draw();frame=requestAnimationFrame(tick);}
  frame=requestAnimationFrame(tick);
 }
 const titles={balance:['01','Tudo tem seu ponto de equilíbrio.'],light:['02','Encontre um caminho para a luz.'],cut:['03','Um corte. Duas novas perspectivas.']};
@@ -59,7 +60,7 @@ const field=(key,label,min,max,step,value,unit='',disabled=false)=>`<div class="
 function start(){
  placementMessage='';pendingSlot=null;invalidate();drag=null;$('selection').hidden=true;document.querySelector('.lab').hidden=false;if(!free)lastLevel[game]=level; selected=0; const l=catalogue[game][level];
  if(game==='balance'){state={weights:structuredClone(l.weights)};selected=state.weights.findIndex(w=>!w.fixed);if(free)state.weights.forEach(w=>w.fixed=false);}
- if(game==='light'){state={objects:structuredClone(l.objects),target:{...l.target,radius:22},sourceAngle:l.sourceAngle??0};}
+ if(game==='light'){state={objects:structuredClone(l.objects),target:{...l.target,radius:22},sourceAngle:l.sourceAngle??0,...(!free?{sources:structuredClone(l.sources),targets:structuredClone(l.targets),portals:structuredClone(l.portals??[])}:{})};selected=state.objects.findIndex(o=>o.type==='mirror');}
  if(game==='cut')state={shape:l.shape,target:l.target,angle:l.angle??0,offset:l.initialOffset??80,family:l.family,amplitude:l.amplitude,frequency:l.frequency,centerX:l.centerX??400,centerY:l.centerY??230,holes:free?[]:structuredClone(l.holes??[])};
  $('hint-text').textContent=''; render();$('game-title').setAttribute('tabindex','-1');$('game-title').focus();
 }
@@ -70,13 +71,13 @@ function render(){
  $('scene-title').textContent=titles[game][1];$('scene-desc').textContent='Use os controles rotulados abaixo ou ao lado. Arraste os elementos ajustáveis; o teclado também funciona nos controles.';
  $('level').innerHTML=catalogue[game].map((l,i)=>`<option value="${i}">${i+1}. ${l.name}</option>`).join('');$('level').value=level;$('level').disabled=free;
  $('stage-label').textContent=free?'SEU ESPAÇO PARA EXPERIMENTAR':`DESAFIO ${String(level+1).padStart(2,'0')} / ${String(catalogue[game].length).padStart(2,'0')}`;
- $('mission').textContent=game==='balance'?(free?'Explore blocos retangulares e triangulares. Mesma posição empilha; só o topo pode sair. Triângulos não sustentam blocos.':'Mova os blocos livres para equilibrar. F/FIXO identifica os imóveis. Mesma posição empilha. Só o topo pode sair; triângulos não sustentam blocos. Arraste e solte em uma das nove posições. Altura máxima: 200 unidades.') : game==='light'?(free?'Crie um caminho com espelhos, paredes e um alvo.':'Arraste a alça circular para girar cada espelho. Depois de preparar, confirme para disparar. Alguns espelhos são distrações. Acerte o disco verde (raio de tolerância: 22 unidades). Posições e paredes são fixas.'):(free?'Escolha uma forma, uma meta e experimente seu corte.':`Deixe ${state.target}% da área no lado roxo. Tolerância: ±3 pontos percentuais, incluindo o limite.`);
+ $('mission').textContent=game==='balance'?(free?'Explore blocos retangulares e triangulares. Mesma posição empilha; só o topo pode sair. Triângulos não sustentam blocos.':'Mova os blocos livres para equilibrar. F/FIXO identifica os imóveis. Mesma posição empilha. Só o topo pode sair; triângulos não sustentam blocos. Arraste e solte em uma das nove posições. Altura máxima: 200 unidades.') : game==='light'?(free?'Crie um caminho com espelhos, paredes e um alvo.':'Gire os espelhos e confirme para disparar. Cada cor deve alcançar seu próprio alvo, sem cruzar outra cor. Os símbolos também identificam cada par. Alvos aceitam 22 unidades de tolerância; espelhos e paredes têm posições fixas.'):(free?'Escolha uma forma, uma meta e experimente seu corte.':`Deixe ${state.target}% da área no lado roxo. Tolerância: ±3 pontos percentuais, incluindo o limite.`);
  if(game==='light'&&!free)$('mission').textContent+=' '+(lightLevels[level].wallPurpose??[]).join(' ');
  if(game==='cut'&&!free)$('mission').textContent+=` Entrada: ${cutLevels[level].entry??'orientação indicada'}. Liberados: ${Object.entries({x:'horizontal',y:'vertical',rotate:'rotação',amplitude:'amplitude',frequency:'frequência',offset:'deslocamento normal'}).filter(([key])=>allowed(key)).map(([,label])=>label).join(', ')}. Os outros controles estão bloqueados.`;
  if(game==='cut')$('mission').textContent+=` Corte: ${state.family}. ${state.family==='Reta'?'':`Amplitude ${state.amplitude}${state.family==='Seno'?`; frequência ${state.frequency}`:''}.`}`;
  if(game==='cut'&&state.holes.length)$('mission').textContent+=` ${state.holes.length} espaço(s) vazio(s): não pertencem à área. Divida apenas a parte preenchida.`;
  $('hint').hidden=free;$('next').hidden=free;
- const texts={balance:'O torque é massa × gravidade × distância horizontal ao apoio. À direita ele é positivo (sentido horário); à esquerda, negativo. O painel mostra a soma em N·m. O equilíbrio é aceito até 1,18 N·m de diferença. A inclinação da viga é uma indicação visual do torque calculado na posição horizontal, não uma simulação dinâmica de movimento ou queda. O apoio está no centro; não há atrito.',light:'A cada trecho, o raio encontra a superfície mais próxima. Paredes são retângulos sólidos com espessura real e absorvem a luz; espelhos refletem segundo d′ = d − 2(d·n)n. O disco verde inteiro aceita o raio: raio geométrico de 22 unidades do palco. A primeira entrada no disco precisa estar antes da próxima superfície; uma parede vence o empate. O traçado para em 12 reflexões, sem loop infinito. Os ângulos são medidos em coordenadas de tela, com y para baixo. A normal pontilhada é perpendicular ao espelho no ponto de impacto. As setas indicam a direção de propagação. As bordas são paredes. Evite sobrepor objetos: paredes têm prioridade em empates.',cut:'Retas usam recorte exato. Curvas são gráficos sem autointerseção, aproximados por segmentos de passo máximo 1; cada faixa é recortada geometricamente. Um limite de segunda derivada controla o erro de área, muito menor que a margem de jogo. O contorno roxo é calculado pelas interseções reais da linha com as arestas; sua área usa a fórmula do cadarço. A proporção exibida é área roxa útil ÷ área total útil. Buracos são subtraídos de ambas: espaços vazios nunca contam, mesmo quando atravessados pela curva. O ângulo controla a normal da linha: 0° produz um corte vertical. Deslocamento positivo aumenta a região roxa. Não usamos contagem de pixels. Acerto: erro absoluto de até 3 pontos percentuais, incluindo os dois limites; isso não é 3% relativo à meta.'};
+ const texts={balance:'O torque é massa × gravidade × distância horizontal ao apoio. À direita ele é positivo (sentido horário); à esquerda, negativo. O painel mostra a soma em N·m. O equilíbrio é aceito até 1,18 N·m de diferença. A inclinação da viga é uma indicação visual do torque calculado na posição horizontal, não uma simulação dinâmica de movimento ou queda. O apoio está no centro; não há atrito.',light:'A cada trecho, o raio encontra a superfície mais próxima. Paredes são retângulos sólidos com espessura real e absorvem a luz; espelhos refletem segundo d′ = d − 2(d·n)n. O disco da mesma cor aceita o raio: raio geométrico de 22 unidades do palco. A primeira entrada no disco precisa estar antes da próxima superfície; uma parede vence o empate. Cada raio para em 12 reflexões ou 40 eventos, sem loop infinito. Portais mantêm a direção e pulam para o par; o salto não é um segmento físico. Cores diferentes não podem cruzar nem tocar trajetórias. Portais seletivos bloqueiam cores não permitidas. Os ângulos são medidos em coordenadas de tela, com y para baixo. A normal pontilhada é perpendicular ao espelho no ponto de impacto. As setas indicam a direção de propagação. As bordas são paredes. Evite sobrepor objetos: paredes têm prioridade em empates.',cut:'Retas usam recorte exato. Curvas são gráficos sem autointerseção, aproximados por segmentos de passo máximo 1; cada faixa é recortada geometricamente. Um limite de segunda derivada controla o erro de área, muito menor que a margem de jogo. O contorno roxo é calculado pelas interseções reais da linha com as arestas; sua área usa a fórmula do cadarço. A proporção exibida é área roxa útil ÷ área total útil. Buracos são subtraídos de ambas: espaços vazios nunca contam, mesmo quando atravessados pela curva. O ângulo controla a normal da linha: 0° produz um corte vertical. Deslocamento positivo aumenta a região roxa. Não usamos contagem de pixels. Acerto: erro absoluto de até 3 pontos percentuais, incluindo os dois limites; isso não é 3% relativo à meta.'};
  $('explanation').textContent=texts[game];editor();draw();
 }
 function editor(){
@@ -92,7 +93,8 @@ function editor(){
   const o=selected==='target'?state.target:state.objects[selected];
   if(free)html+=field('objectX','Posição horizontal',30,770,1,o.x)+field('objectY','Posição vertical',30,430,1,o.y);
   if(selected!=='target'){html+=field('angle','Ângulo do elemento',-90,90,.1,o.angle,'°');if(free)html+=field('length','Comprimento',40,220,5,o.length);}
-  if(free)html+=field('sourceAngle','Direção da fonte',-80,80,1,state.sourceAngle,'°')+`<div class="inline-buttons"><button id="add">+ Espelho</button><button id="wall">+ Parede</button><button id="remove" ${selected==='target'?'disabled':''}>Remover</button></div>`;
+  if(free)html+=field('sourceAngle','Direção da fonte',-180,180,1,state.sourceAngle,'°')+`<div class="inline-buttons"><button id="add">+ Espelho</button><button id="wall">+ Parede</button><button id="remove" ${selected==='target'?'disabled':''}>Remover</button></div>`;
+  if(!free){const l=lightLevels[level];if(l.tutorial)html+=`<div class="light-note" role="note"><strong>Nova ideia</strong>${l.tutorial}</div>`;if(state.portals?.length)html+='<div class="light-note"><strong>Como usar os portais</strong>Portais com a mesma letra formam um par. A luz entra em um e sai do outro mantendo a direção. Branco aceita todas as cores; os símbolos coloridos indicam as cores permitidas. Uma cor não permitida é bloqueada. O salto entre portais não cruza outros raios.</div>';if(state.sources?.length>1)html+='<div class="light-note"><strong>Caminhos separados</strong>Cada raio deve chegar ao alvo da mesma cor e símbolo. Cruzar ou encostar na trajetória de outra cor é colisão, mesmo que cheguem em momentos diferentes.</div>';} 
  }
  if(game==='cut'){
   html=cutControlGuide();
@@ -145,16 +147,18 @@ function draw(){
   status('Torque resultante',fmt(t)+' N·m',ok?'Em equilíbrio. Os torques se compensam.':t>0?'O lado direito tem mais torque.':'O lado esquerdo tem mais torque.',ok);
  }
  if(game==='light'){
-  const r=evaluation?.ray??{points:[],bounces:0,status:'pending'};
-  const visible=phase==='animating'?revealed:r.points;
-  if(phase!=='editing')svg+=lightRaysSVG(r,visible);
-  svg+=`<g transform="rotate(${state.sourceAngle} 70 350)" aria-label="Fonte, direção ${state.sourceAngle} graus"><path d="M77 341 L92 350 L77 359 Z" fill="#25372e"/><circle cx="70" cy="350" r="15" fill="#25372e"/><circle cx="70" cy="350" r="5" fill="#f5ca6a"/></g>`;
+  const r=evaluation?.ray??{rays:[],collisions:[],bounces:0,status:'pending'};
+  if(phase!=='editing')svg+=worldRaysSVG(r,phase==='animating'?lightDistance:Infinity,phase==='result');
+  svg+=portalSVG(state.portals??[],performance.now()/1000);
+  svg+=lightEndpointsSVG(state,free);
   state.objects.map((o,i)=>({o,i})).sort((a,b)=>(a.o.type==='wall'?0:1)-(b.o.type==='wall'?0:1)).forEach(({o,i})=>{const s=segment(o);
    if(o.type==='wall'){svg+=`<g ${free?`data-item="${i}" tabindex="0" role="button" class="handle"`:''} aria-label="Parede sólida"><polygon points="${points(wallPolygon(o))}" fill="#526054"/><path d="M${s.a.x},${s.a.y} L${s.b.x},${s.b.y}" stroke="#778276" stroke-width="1" stroke-dasharray="18 3"/></g>`;return;}
    svg+=`<g data-item="${i}" tabindex="0" role="button" class="handle" aria-label="Espelho ${i+1}, ${o.angle} graus">${line(s.a,s.b,'stroke="transparent" stroke-width="30"')}${line(s.a,s.b,'class="mirror-frame"')}${line(s.a,s.b,'class="mirror-glass"')}${line(s.a,s.b,'stroke="#ffffff" stroke-width="1" stroke-dasharray="18 9"')}<circle cx="${o.x}" cy="${o.y}" r="${selected===i?6:3}" fill="${selected===i?'#c76b42':'#fffefa'}"/><text x="${o.x+10}" y="${o.y-10}" font-size="11">${i+1}</text><circle data-rotate="${i}" cx="${s.b.x}" cy="${s.b.y}" r="14" fill="#fffefa" stroke="#c76b42" stroke-width="1.5"/><text x="${s.b.x}" y="${s.b.y+4}" text-anchor="middle" pointer-events="none" font-size="14">↻</text></g>`;
   });
-  svg+=`<g data-item="target" class="handle" tabindex="0" role="button" aria-label="Alvo"><circle cx="${state.target.x}" cy="${state.target.y}" r="${state.target.radius}" fill="#dce9bb" stroke="#486c4d" stroke-width="2"/><circle cx="${state.target.x}" cy="${state.target.y}" r="15" fill="none" stroke="#486c4d" stroke-width="2"/><circle cx="${state.target.x}" cy="${state.target.y}" r="5" fill="#486c4d"/></g>`;
-  status('Reflexões',String(r.bounces)+' / 12',r.status==='target'?'Alvo alcançado. Caminho encontrado!':r.status==='limit'?'Limite de reflexões. Abra uma saída.':'O raio parou em uma parede ou borda.',r.status==='target');
+  const message=r.status==='target'?'Todos os alvos alcançados, sem cruzamentos!':r.status==='collision'?`Colisão entre ${r.collisions[0].colors.map(beamName).join(' e ')}. Separe as trajetórias; o ponto está marcado.`:'Algum raio não alcançou seu alvo. Reveja espelhos, paredes e cores dos portais.';
+  status('Alvos',`${r.rays.filter(v=>v.status==='target').length} / ${lightScene(state).sources.length}`,message,r.status==='target');
+  if(phase==='result'&&r.status==='collision')$('feedback').classList.remove('sr-only');
+
  }
  if(game==='cut'){
   const poly=shapePolygon(state.shape),shapePath=[poly,...state.holes].map(r=>'M'+r.map(v=>`${v.x},${v.y}`).join(' L')+' Z').join(' '),c=phase==='result'?evaluation.cut:curvedCut(poly,state),p={x:state.centerX+c.n.x*state.offset,y:state.centerY+c.n.y*state.offset},v={x:-c.n.y*900,y:c.n.x*900};

@@ -1,10512 +1,12443 @@
-// Catálogo do projeto implementado com assistência de IA.
-// Soluções são testemunhas reproduzíveis; não são mostradas durante o jogo.
+// Catálogo com rotas-testemunha: geração e validação documentadas nos testes.
 export const lightLevels = [
   {
-    "name": "Primeiros desvios 1",
-    "hint": "Gire o espelho para conduzir a luz ao alvo. Confirme para testar.",
-    "sourceAngle": 0,
-    "family": "zigue-zague",
-    "target": {
-      "x": 570,
-      "y": 90,
-      "radius": 22
-    },
-    "objects": [
-      {
-        "type": "mirror",
-        "x": 290,
-        "y": 350,
-        "length": 120,
-        "angle": 2.5605481983307214
-      }
-    ],
-    "solution": [
-      -21.439451801669275
-    ],
-    "requiredBounces": 1,
+    "name": "Um raio, novos caminhos 1",
+    "hint": "Planeje os trajetos antes de girar os espelhos. Cada cor tem seu próprio destino.",
     "stage": 1,
-    "stageName": "Primeiros desvios",
+    "stageName": "Um raio, novos caminhos",
     "difficulty": 1,
-    "wallPurpose": [],
-    "decoyCount": 0
-  },
-  {
-    "name": "Primeiros desvios 2",
-    "hint": "Gire o espelho para conduzir a luz ao alvo. Confirme para testar.",
-    "sourceAngle": 0,
-    "family": "zigue-zague",
-    "target": {
-      "x": 581,
-      "y": 112,
-      "radius": 22
-    },
+    "family": "sala-0",
+    "sources": [
+      {
+        "x": 60,
+        "y": 350,
+        "angle": 0,
+        "color": "gold"
+      }
+    ],
+    "targets": [
+      {
+        "x": 730,
+        "y": 100,
+        "radius": 22,
+        "color": "gold"
+      }
+    ],
+    "portals": [],
     "objects": [
       {
         "type": "mirror",
-        "x": 304,
+        "x": 260,
         "y": 350,
-        "length": 120,
-        "angle": 5.665318966444389
+        "length": 104,
+        "angle": -25
+      },
+      {
+        "type": "mirror",
+        "x": 260,
+        "y": 100,
+        "length": 104,
+        "angle": -65
       }
     ],
     "solution": [
-      -20.334681033555615
+      -45,
+      -45
     ],
-    "requiredBounces": 1,
+    "sourceAngle": 0,
+    "target": {
+      "x": 730,
+      "y": 100,
+      "radius": 22,
+      "color": "gold"
+    },
+    "requiredBounces": 2,
+    "wallPurpose": [],
+    "decoyCount": 0,
+    "tutorial": "Gire os espelhos e confirme. O raio deve alcançar seu alvo; as paredes absorvem a luz.",
+    "rules": "Leve a luz ao alvo."
+  },
+  {
+    "name": "Um raio, novos caminhos 2",
+    "hint": "Planeje os trajetos antes de girar os espelhos. Cada cor tem seu próprio destino.",
     "stage": 1,
-    "stageName": "Primeiros desvios",
+    "stageName": "Um raio, novos caminhos",
     "difficulty": 2,
-    "wallPurpose": [],
-    "decoyCount": 0
-  },
-  {
-    "name": "Primeiros desvios 3",
-    "hint": "Gire o espelho para conduzir a luz ao alvo. Confirme para testar.",
-    "sourceAngle": 0,
-    "family": "zigue-zague",
-    "target": {
-      "x": 592,
-      "y": 134,
-      "radius": 22
-    },
+    "family": "sala-1",
+    "sources": [
+      {
+        "x": 740,
+        "y": 90,
+        "angle": 180,
+        "color": "gold"
+      }
+    ],
+    "targets": [
+      {
+        "x": 70,
+        "y": 350,
+        "radius": 22,
+        "color": "gold"
+      }
+    ],
+    "portals": [],
     "objects": [
       {
         "type": "mirror",
-        "x": 318,
+        "x": 540,
+        "y": 90,
+        "length": 104,
+        "angle": 4.5
+      },
+      {
+        "type": "mirror",
+        "x": 280,
         "y": 350,
-        "length": 120,
-        "angle": 8.875269731089489
+        "length": 104,
+        "angle": -49.5
       }
     ],
     "solution": [
-      -19.124730268910515
+      -22.5,
+      -22.5
     ],
-    "requiredBounces": 1,
+    "sourceAngle": 180,
+    "target": {
+      "x": 70,
+      "y": 350,
+      "radius": 22,
+      "color": "gold"
+    },
+    "requiredBounces": 2,
+    "wallPurpose": [],
+    "decoyCount": 0,
+    "tutorial": "",
+    "rules": "Leve a luz ao alvo."
+  },
+  {
+    "name": "Um raio, novos caminhos 3",
+    "hint": "Planeje os trajetos antes de girar os espelhos. Cada cor tem seu próprio destino.",
     "stage": 1,
-    "stageName": "Primeiros desvios",
+    "stageName": "Um raio, novos caminhos",
     "difficulty": 3,
-    "wallPurpose": [],
-    "decoyCount": 0
-  },
-  {
-    "name": "Primeiros desvios 4",
-    "hint": "Gire o espelho para conduzir a luz ao alvo. Confirme para testar.",
-    "sourceAngle": 0,
-    "family": "zigue-zague",
-    "target": {
-      "x": 603,
-      "y": 156,
-      "radius": 22
-    },
+    "family": "sala-2",
+    "sources": [
+      {
+        "x": 60,
+        "y": 230,
+        "angle": 39.472459848343824,
+        "color": "gold"
+      }
+    ],
+    "targets": [
+      {
+        "x": 740,
+        "y": 230,
+        "radius": 22,
+        "color": "gold"
+      }
+    ],
+    "portals": [],
     "objects": [
       {
         "type": "mirror",
-        "x": 332,
+        "x": 230,
+        "y": 370,
+        "length": 104,
+        "angle": 26.303326452629726
+      },
+      {
+        "type": "mirror",
+        "x": 420,
+        "y": 100,
+        "length": 104,
+        "angle": -37.10679208138902
+      },
+      {
+        "type": "mirror",
+        "x": 640,
         "y": 350,
-        "length": 120,
-        "angle": 12.201184250890321
+        "length": 104,
+        "angle": 33.228896936285764
       }
     ],
     "solution": [
-      -17.79881574910967
+      -7.696673547370274,
+      -3.106792081389017,
+      -0.7711030637142358
     ],
-    "requiredBounces": 1,
+    "sourceAngle": 39.472459848343824,
+    "target": {
+      "x": 740,
+      "y": 230,
+      "radius": 22,
+      "color": "gold"
+    },
+    "requiredBounces": 3,
+    "wallPurpose": [],
+    "decoyCount": 0,
+    "tutorial": "",
+    "rules": "Leve a luz ao alvo."
+  },
+  {
+    "name": "Um raio, novos caminhos 4",
+    "hint": "Planeje os trajetos antes de girar os espelhos. Cada cor tem seu próprio destino.",
     "stage": 1,
-    "stageName": "Primeiros desvios",
+    "stageName": "Um raio, novos caminhos",
     "difficulty": 4,
-    "wallPurpose": [],
-    "decoyCount": 0
-  },
-  {
-    "name": "Primeiros desvios 5",
-    "hint": "Gire o espelho para conduzir a luz ao alvo. Confirme para testar.",
-    "sourceAngle": -42.17019240711285,
-    "family": "entrada-diagonal",
-    "target": {
-      "x": 614,
-      "y": 178,
-      "radius": 22
-    },
-    "objects": [
-      {
-        "type": "mirror",
-        "x": 346,
-        "y": 100,
-        "length": 120,
-        "angle": 19.028584318201325
-      }
-    ],
-    "solution": [
-      -12.971415681798677
-    ],
-    "requiredBounces": 1,
-    "stage": 1,
-    "stageName": "Primeiros desvios",
-    "difficulty": 5,
-    "wallPurpose": [],
-    "decoyCount": 0
-  },
-  {
-    "name": "Primeiros desvios 6",
-    "hint": "Gire o espelho para conduzir a luz ao alvo. Confirme para testar.",
-    "sourceAngle": -39.01940047523655,
-    "family": "entrada-diagonal",
-    "target": {
-      "x": 625,
-      "y": 90,
-      "radius": 22
-    },
-    "objects": [
-      {
-        "type": "mirror",
-        "x": 360,
-        "y": 115,
-        "length": 120,
-        "angle": 11.795643882395012
-      }
-    ],
-    "solution": [
-      -22.20435611760498
-    ],
-    "requiredBounces": 1,
-    "stage": 1,
-    "stageName": "Primeiros desvios",
-    "difficulty": 6,
-    "wallPurpose": [],
-    "decoyCount": 0
-  },
-  {
-    "name": "Primeiros desvios 7",
-    "hint": "Gire o espelho para conduzir a luz ao alvo. Confirme para testar.",
-    "sourceAngle": 0,
-    "family": "serpentina",
-    "target": {
-      "x": 636,
-      "y": 280,
-      "radius": 22
-    },
-    "objects": [
-      {
-        "type": "mirror",
-        "x": 150,
-        "y": 350,
-        "length": 120,
-        "angle": 31.901944356237664
-      }
-    ],
-    "solution": [
-      -4.098055643762344
-    ],
-    "requiredBounces": 1,
-    "stage": 1,
-    "stageName": "Primeiros desvios",
-    "difficulty": 7,
-    "wallPurpose": [],
-    "decoyCount": 0
-  },
-  {
-    "name": "Primeiros desvios 8",
-    "hint": "Gire o espelho para conduzir a luz ao alvo. Confirme para testar.",
-    "sourceAngle": 0,
-    "family": "serpentina",
-    "target": {
-      "x": 647,
-      "y": 280,
-      "radius": 22
-    },
-    "objects": [
-      {
-        "type": "mirror",
-        "x": 150,
-        "y": 350,
-        "length": 120,
-        "angle": 33.991453463172334
-      }
-    ],
-    "solution": [
-      -4.008546536827664
-    ],
-    "requiredBounces": 1,
-    "stage": 1,
-    "stageName": "Primeiros desvios",
-    "difficulty": 8,
-    "wallPurpose": [],
-    "decoyCount": 0
-  },
-  {
-    "name": "Primeiros desvios 9",
-    "hint": "Gire o espelho para conduzir a luz ao alvo. Confirme para testar.",
-    "sourceAngle": 0,
-    "family": "serpentina-obliqua",
-    "target": {
-      "x": 658,
-      "y": 280,
-      "radius": 22
-    },
-    "objects": [
-      {
-        "type": "mirror",
-        "x": 150,
-        "y": 350,
-        "length": 120,
-        "angle": 36.07716001429027
-      }
-    ],
-    "solution": [
-      -3.9228399857097265
-    ],
-    "requiredBounces": 1,
-    "stage": 1,
-    "stageName": "Primeiros desvios",
-    "difficulty": 9,
-    "wallPurpose": [],
-    "decoyCount": 0
-  },
-  {
-    "name": "Primeiros desvios 10",
-    "hint": "Gire o espelho para conduzir a luz ao alvo. Confirme para testar.",
-    "sourceAngle": 0,
-    "family": "serpentina-obliqua",
-    "target": {
-      "x": 669,
-      "y": 280,
-      "radius": 22
-    },
-    "objects": [
-      {
-        "type": "mirror",
-        "x": 150,
-        "y": 350,
-        "length": 120,
-        "angle": 38.159299840708115
-      }
-    ],
-    "solution": [
-      -3.8407001592918952
-    ],
-    "requiredBounces": 1,
-    "stage": 1,
-    "stageName": "Primeiros desvios",
-    "difficulty": 10,
-    "wallPurpose": [],
-    "decoyCount": 0
-  },
-  {
-    "name": "Portas de luz 1",
-    "hint": "Observe as divisórias e suas aberturas. Planeje a rota antes de confirmar; nem todos os espelhos precisam ser usados.",
-    "sourceAngle": 0,
-    "family": "zigue-zague",
-    "target": {
-      "x": 570,
-      "y": 90,
-      "radius": 22
-    },
-    "objects": [
-      {
-        "type": "mirror",
-        "x": 290,
-        "y": 350,
-        "length": 120,
-        "angle": 2.5605481983307214
-      },
-      {
-        "type": "wall",
-        "x": 500,
-        "y": 49.75,
-        "length": 99.5,
-        "angle": 90,
-        "width": 12
-      },
-      {
-        "type": "wall",
-        "x": 500,
-        "y": 335.25,
-        "length": 249.5,
-        "angle": 90,
-        "width": 12
-      }
-    ],
-    "solution": [
-      -21.439451801669275
-    ],
-    "requiredBounces": 1,
-    "stage": 2,
-    "stageName": "Portas de luz",
-    "difficulty": 11,
-    "wallPurpose": [
-      "Divisória do alvo com abertura: bloqueia atalhos e exige alinhar o último trecho."
-    ],
-    "decoyCount": 0
-  },
-  {
-    "name": "Portas de luz 2",
-    "hint": "Observe as divisórias e suas aberturas. Planeje a rota antes de confirmar; nem todos os espelhos precisam ser usados.",
-    "sourceAngle": 0,
-    "family": "zigue-zague",
-    "target": {
-      "x": 581,
-      "y": 112,
-      "radius": 22
-    },
-    "objects": [
-      {
-        "type": "mirror",
-        "x": 304,
-        "y": 350,
-        "length": 120,
-        "angle": 5.665318966444389
-      },
-      {
-        "type": "wall",
-        "x": 500,
-        "y": 63.17283393501805,
-        "length": 126.3456678700361,
-        "angle": 90,
-        "width": 12
-      },
-      {
-        "type": "wall",
-        "x": 500,
-        "y": 348.42283393501805,
-        "length": 223.1543321299639,
-        "angle": 90,
-        "width": 12
-      }
-    ],
-    "solution": [
-      -20.334681033555615
-    ],
-    "requiredBounces": 1,
-    "stage": 2,
-    "stageName": "Portas de luz",
-    "difficulty": 12,
-    "wallPurpose": [
-      "Divisória do alvo com abertura: bloqueia atalhos e exige alinhar o último trecho."
-    ],
-    "decoyCount": 0
-  },
-  {
-    "name": "Portas de luz 3",
-    "hint": "Observe as divisórias e suas aberturas. Planeje a rota antes de confirmar; nem todos os espelhos precisam ser usados.",
-    "sourceAngle": 0,
-    "family": "zigue-zague",
-    "target": {
-      "x": 592,
-      "y": 134,
-      "radius": 22
-    },
-    "objects": [
-      {
-        "type": "mirror",
-        "x": 318,
-        "y": 350,
-        "length": 120,
-        "angle": 8.875269731089489
-      },
-      {
-        "type": "wall",
-        "x": 500,
-        "y": 75.76277372262774,
-        "length": 151.52554744525548,
-        "angle": 90,
-        "width": 12
-      },
-      {
-        "type": "wall",
-        "x": 500,
-        "y": 360.76277372262774,
-        "length": 198.47445255474452,
-        "angle": 90,
-        "width": 12
-      }
-    ],
-    "solution": [
-      -19.124730268910515
-    ],
-    "requiredBounces": 1,
-    "stage": 2,
-    "stageName": "Portas de luz",
-    "difficulty": 13,
-    "wallPurpose": [
-      "Divisória do alvo com abertura: bloqueia atalhos e exige alinhar o último trecho."
-    ],
-    "decoyCount": 0
-  },
-  {
-    "name": "Portas de luz 4",
-    "hint": "Observe as divisórias e suas aberturas. Planeje a rota antes de confirmar; nem todos os espelhos precisam ser usados.",
-    "sourceAngle": 0,
-    "family": "zigue-zague",
-    "target": {
-      "x": 603,
-      "y": 156,
-      "radius": 22
-    },
-    "objects": [
-      {
-        "type": "mirror",
-        "x": 332,
-        "y": 350,
-        "length": 120,
-        "angle": 12.201184250890321
-      },
-      {
-        "type": "wall",
-        "x": 500,
-        "y": 87.49215867158671,
-        "length": 174.98431734317342,
-        "angle": 90,
-        "width": 12
-      },
-      {
-        "type": "wall",
-        "x": 500,
-        "y": 372.2421586715867,
-        "length": 175.51568265682658,
-        "angle": 90,
-        "width": 12
-      }
-    ],
-    "solution": [
-      -17.79881574910967
-    ],
-    "requiredBounces": 1,
-    "stage": 2,
-    "stageName": "Portas de luz",
-    "difficulty": 14,
-    "wallPurpose": [
-      "Divisória do alvo com abertura: bloqueia atalhos e exige alinhar o último trecho."
-    ],
-    "decoyCount": 0
-  },
-  {
-    "name": "Portas de luz 5",
-    "hint": "Observe as divisórias e suas aberturas. Planeje a rota antes de confirmar; nem todos os espelhos precisam ser usados.",
-    "sourceAngle": -42.17019240711285,
-    "family": "entrada-diagonal",
-    "target": {
-      "x": 614,
-      "y": 178,
-      "radius": 22
-    },
-    "objects": [
-      {
-        "type": "mirror",
-        "x": 346,
-        "y": 100,
-        "length": 120,
-        "angle": 19.028584318201325
-      },
-      {
-        "type": "wall",
-        "x": 500,
-        "y": 45.160447761194035,
-        "length": 90.32089552238807,
-        "angle": 90,
-        "width": 12
-      },
-      {
-        "type": "wall",
-        "x": 500,
-        "y": 329.66044776119406,
-        "length": 260.67910447761193,
-        "angle": 90,
-        "width": 12
-      }
-    ],
-    "solution": [
-      -12.971415681798677
-    ],
-    "requiredBounces": 1,
-    "stage": 2,
-    "stageName": "Portas de luz",
-    "difficulty": 15,
-    "wallPurpose": [
-      "Divisória do alvo com abertura: bloqueia atalhos e exige alinhar o último trecho."
-    ],
-    "decoyCount": 0
-  },
-  {
-    "name": "Portas de luz 6",
-    "hint": "Observe as divisórias e suas aberturas. Planeje a rota antes de confirmar; nem todos os espelhos precisam ser usados.",
-    "sourceAngle": -39.01940047523655,
-    "family": "entrada-diagonal",
-    "target": {
-      "x": 625,
-      "y": 90,
-      "radius": 22
-    },
-    "objects": [
-      {
-        "type": "mirror",
-        "x": 360,
-        "y": 115,
-        "length": 120,
-        "angle": 11.795643882395012
-      },
-      {
-        "type": "wall",
-        "x": 500,
-        "y": 23.77122641509434,
-        "length": 47.54245283018868,
-        "angle": 90,
-        "width": 12
-      },
-      {
-        "type": "wall",
-        "x": 500,
-        "y": 308.02122641509436,
-        "length": 303.95754716981133,
-        "angle": 90,
-        "width": 12
-      }
-    ],
-    "solution": [
-      -22.20435611760498
-    ],
-    "requiredBounces": 1,
-    "stage": 2,
-    "stageName": "Portas de luz",
-    "difficulty": 16,
-    "wallPurpose": [
-      "Divisória do alvo com abertura: bloqueia atalhos e exige alinhar o último trecho."
-    ],
-    "decoyCount": 0
-  },
-  {
-    "name": "Portas de luz 7",
-    "hint": "Observe as divisórias e suas aberturas. Planeje a rota antes de confirmar; nem todos os espelhos precisam ser usados.",
-    "sourceAngle": 0,
-    "family": "serpentina",
-    "target": {
-      "x": 636,
-      "y": 280,
-      "radius": 22
-    },
-    "objects": [
-      {
-        "type": "mirror",
-        "x": 150,
-        "y": 350,
-        "length": 120,
-        "angle": 31.901944356237664
-      },
-      {
-        "type": "wall",
-        "x": 500,
-        "y": 122.79423868312756,
-        "length": 245.58847736625512,
-        "angle": 90,
-        "width": 12
-      },
-      {
-        "type": "wall",
-        "x": 500,
-        "y": 406.79423868312756,
-        "length": 106.41152263374488,
-        "angle": 90,
-        "width": 12
-      }
-    ],
-    "solution": [
-      -4.098055643762344
-    ],
-    "requiredBounces": 1,
-    "stage": 2,
-    "stageName": "Portas de luz",
-    "difficulty": 17,
-    "wallPurpose": [
-      "Divisória do alvo com abertura: bloqueia atalhos e exige alinhar o último trecho."
-    ],
-    "decoyCount": 0
-  },
-  {
-    "name": "Portas de luz 8",
-    "hint": "Observe as divisórias e suas aberturas. Planeje a rota antes de confirmar; nem todos os espelhos precisam ser usados.",
-    "sourceAngle": 0,
-    "family": "serpentina",
-    "target": {
-      "x": 647,
-      "y": 280,
-      "radius": 22
-    },
-    "objects": [
-      {
-        "type": "mirror",
-        "x": 150,
-        "y": 350,
-        "length": 120,
-        "angle": 33.991453463172334
-      },
-      {
-        "type": "wall",
-        "x": 500,
-        "y": 123.47711267605635,
-        "length": 246.9542253521127,
-        "angle": 90,
-        "width": 12
-      },
-      {
-        "type": "wall",
-        "x": 500,
-        "y": 407.2271126760563,
-        "length": 105.5457746478873,
-        "angle": 90,
-        "width": 12
-      }
-    ],
-    "solution": [
-      -4.008546536827664
-    ],
-    "requiredBounces": 1,
-    "stage": 2,
-    "stageName": "Portas de luz",
-    "difficulty": 18,
-    "wallPurpose": [
-      "Divisória do alvo com abertura: bloqueia atalhos e exige alinhar o último trecho."
-    ],
-    "decoyCount": 0
-  },
-  {
-    "name": "Portas de luz 9",
-    "hint": "Observe as divisórias e suas aberturas. Planeje a rota antes de confirmar; nem todos os espelhos precisam ser usados.",
-    "sourceAngle": 0,
-    "family": "serpentina-obliqua",
-    "target": {
-      "x": 658,
-      "y": 280,
-      "radius": 22
-    },
-    "objects": [
-      {
-        "type": "mirror",
-        "x": 150,
-        "y": 350,
-        "length": 120,
-        "angle": 36.07716001429027
-      },
-      {
-        "type": "wall",
-        "x": 500,
-        "y": 124.13582677165354,
-        "length": 248.27165354330708,
-        "angle": 90,
-        "width": 12
-      },
-      {
-        "type": "wall",
-        "x": 500,
-        "y": 407.63582677165357,
-        "length": 104.72834645669292,
-        "angle": 90,
-        "width": 12
-      }
-    ],
-    "solution": [
-      -3.9228399857097265
-    ],
-    "requiredBounces": 1,
-    "stage": 2,
-    "stageName": "Portas de luz",
-    "difficulty": 19,
-    "wallPurpose": [
-      "Divisória do alvo com abertura: bloqueia atalhos e exige alinhar o último trecho."
-    ],
-    "decoyCount": 0
-  },
-  {
-    "name": "Portas de luz 10",
-    "hint": "Observe as divisórias e suas aberturas. Planeje a rota antes de confirmar; nem todos os espelhos precisam ser usados.",
-    "sourceAngle": 0,
-    "family": "serpentina-obliqua",
-    "target": {
-      "x": 669,
-      "y": 280,
-      "radius": 22
-    },
-    "objects": [
-      {
-        "type": "mirror",
-        "x": 150,
-        "y": 350,
-        "length": 120,
-        "angle": 38.159299840708115
-      },
-      {
-        "type": "wall",
-        "x": 500,
-        "y": 124.77191714836223,
-        "length": 249.54383429672447,
-        "angle": 90,
-        "width": 12
-      },
-      {
-        "type": "wall",
-        "x": 500,
-        "y": 408.02191714836226,
-        "length": 103.95616570327553,
-        "angle": 90,
-        "width": 12
-      }
-    ],
-    "solution": [
-      -3.8407001592918952
-    ],
-    "requiredBounces": 1,
-    "stage": 2,
-    "stageName": "Portas de luz",
-    "difficulty": 20,
-    "wallPurpose": [
-      "Divisória do alvo com abertura: bloqueia atalhos e exige alinhar o último trecho."
-    ],
-    "decoyCount": 0
-  },
-  {
-    "name": "Duas mudanças 1",
-    "hint": "Observe as divisórias e suas aberturas. Planeje a rota antes de confirmar; nem todos os espelhos precisam ser usados.",
-    "sourceAngle": 0,
-    "family": "zigue-zague",
-    "target": {
-      "x": 750,
-      "y": 330,
-      "radius": 22
-    },
-    "objects": [
-      {
-        "type": "mirror",
-        "x": 170,
-        "y": 350,
-        "length": 120,
-        "angle": 9.327169000331963
-      },
-      {
-        "type": "mirror",
-        "x": 620,
-        "y": 97,
-        "length": 120,
-        "angle": 48.74772305177686
-      },
-      {
-        "type": "wall",
-        "x": 710,
-        "y": 102.65384615384616,
-        "length": 205.30769230769232,
-        "angle": 90,
-        "width": 12
-      },
-      {
-        "type": "wall",
-        "x": 710,
-        "y": 385.6538461538462,
-        "length": 148.69230769230768,
-        "angle": 90,
-        "width": 12
-      }
-    ],
-    "solution": [
-      -14.672830999668031,
-      15.74772305177685
-    ],
-    "requiredBounces": 2,
-    "stage": 3,
-    "stageName": "Duas mudanças",
-    "difficulty": 21,
-    "wallPurpose": [
-      "Divisória do alvo com abertura: bloqueia atalhos e exige alinhar o último trecho."
-    ],
-    "decoyCount": 0
-  },
-  {
-    "name": "Duas mudanças 2",
-    "hint": "Observe as divisórias e suas aberturas. Planeje a rota antes de confirmar; nem todos os espelhos precisam ser usados.",
-    "sourceAngle": 0,
-    "family": "zigue-zague",
-    "target": {
-      "x": 750,
-      "y": 311,
-      "radius": 22
-    },
-    "objects": [
-      {
-        "type": "mirror",
-        "x": 179,
-        "y": 350,
-        "length": 120,
-        "angle": 11.37360879611849
-      },
-      {
-        "type": "mirror",
-        "x": 620,
-        "y": 103,
-        "length": 120,
-        "angle": 49.370917192076746
-      },
-      {
-        "type": "wall",
-        "x": 710,
-        "y": 97.125,
-        "length": 194.25,
-        "angle": 90,
-        "width": 12
-      },
-      {
-        "type": "wall",
-        "x": 710,
-        "y": 379.875,
-        "length": 160.25,
-        "angle": 90,
-        "width": 12
-      }
-    ],
-    "solution": [
-      -14.626391203881514,
-      14.370917192076739
-    ],
-    "requiredBounces": 2,
-    "stage": 3,
-    "stageName": "Duas mudanças",
-    "difficulty": 22,
-    "wallPurpose": [
-      "Divisória do alvo com abertura: bloqueia atalhos e exige alinhar o último trecho."
-    ],
-    "decoyCount": 0
-  },
-  {
-    "name": "Duas mudanças 3",
-    "hint": "Observe as divisórias e suas aberturas. Planeje a rota antes de confirmar; nem todos os espelhos precisam ser usados.",
-    "sourceAngle": 0,
-    "family": "zigue-zague",
-    "target": {
-      "x": 750,
-      "y": 292,
-      "radius": 22
-    },
-    "objects": [
-      {
-        "type": "mirror",
-        "x": 188,
-        "y": 350,
-        "length": 120,
-        "angle": 13.422073418863448
-      },
-      {
-        "type": "mirror",
-        "x": 620,
-        "y": 109,
-        "length": 120,
-        "angle": 49.72741325341019
-      },
-      {
-        "type": "wall",
-        "x": 710,
-        "y": 91.59615384615384,
-        "length": 183.19230769230768,
-        "angle": 90,
-        "width": 12
-      },
-      {
-        "type": "wall",
-        "x": 710,
-        "y": 374.0961538461538,
-        "length": 171.80769230769232,
-        "angle": 90,
-        "width": 12
-      }
-    ],
-    "solution": [
-      -14.57792658113655,
-      12.72741325341018
-    ],
-    "requiredBounces": 2,
-    "stage": 3,
-    "stageName": "Duas mudanças",
-    "difficulty": 23,
-    "wallPurpose": [
-      "Divisória do alvo com abertura: bloqueia atalhos e exige alinhar o último trecho."
-    ],
-    "decoyCount": 0
-  },
-  {
-    "name": "Duas mudanças 4",
-    "hint": "Observe as divisórias e suas aberturas. Planeje a rota antes de confirmar; nem todos os espelhos precisam ser usados.",
-    "sourceAngle": 0,
-    "family": "zigue-zague",
-    "target": {
-      "x": 750,
-      "y": 273,
-      "radius": 22
-    },
-    "objects": [
-      {
-        "type": "mirror",
-        "x": 197,
-        "y": 350,
-        "length": 120,
-        "angle": 15.472697950461423
-      },
-      {
-        "type": "mirror",
-        "x": 620,
-        "y": 115,
-        "length": 120,
-        "angle": 49.749183466979844
-      },
-      {
-        "type": "wall",
-        "x": 710,
-        "y": 86.0673076923077,
-        "length": 172.1346153846154,
-        "angle": 90,
-        "width": 12
-      },
-      {
-        "type": "wall",
-        "x": 710,
-        "y": 368.3173076923077,
-        "length": 183.36538461538464,
-        "angle": 90,
-        "width": 12
-      }
-    ],
-    "solution": [
-      -14.527302049538573,
-      10.749183466979826
-    ],
-    "requiredBounces": 2,
-    "stage": 3,
-    "stageName": "Duas mudanças",
-    "difficulty": 24,
-    "wallPurpose": [
-      "Divisória do alvo com abertura: bloqueia atalhos e exige alinhar o último trecho."
-    ],
-    "decoyCount": 0
-  },
-  {
-    "name": "Duas mudanças 5",
-    "hint": "Observe as divisórias e suas aberturas. Planeje a rota antes de confirmar; nem todos os espelhos precisam ser usados.",
-    "sourceAngle": -68.19859051364818,
-    "family": "entrada-diagonal",
-    "target": {
-      "x": 750,
-      "y": 254,
-      "radius": 22
-    },
-    "objects": [
-      {
-        "type": "mirror",
-        "x": 170,
-        "y": 100,
-        "length": 120,
-        "angle": 12.428006792714484
-      },
-      {
-        "type": "mirror",
-        "x": 620,
-        "y": 350,
-        "length": 120,
-        "angle": 37.30508117124502
-      },
-      {
-        "type": "wall",
-        "x": 710,
-        "y": 115.76923076923077,
-        "length": 231.53846153846155,
-        "angle": 90,
-        "width": 12
-      },
-      {
-        "type": "wall",
-        "x": 710,
-        "y": 397.7692307692308,
-        "length": 124.46153846153845,
-        "angle": 90,
-        "width": 12
-      }
-    ],
-    "solution": [
-      -19.571993207285516,
-      -3.694918828754982
-    ],
-    "requiredBounces": 2,
-    "stage": 3,
-    "stageName": "Duas mudanças",
-    "difficulty": 25,
-    "wallPurpose": [
-      "Divisória do alvo com abertura: bloqueia atalhos e exige alinhar o último trecho."
-    ],
-    "decoyCount": 0
-  },
-  {
-    "name": "Duas mudanças 6",
-    "hint": "Observe as divisórias e suas aberturas. Planeje a rota antes de confirmar; nem todos os espelhos precisam ser usados.",
-    "sourceAngle": -65.11672516845553,
-    "family": "entrada-diagonal",
-    "target": {
-      "x": 750,
-      "y": 330,
-      "radius": 22
-    },
-    "objects": [
-      {
-        "type": "mirror",
-        "x": 179,
-        "y": 115,
-        "length": 120,
-        "angle": 15.467763913045758
-      },
-      {
-        "type": "mirror",
-        "x": 620,
-        "y": 350,
-        "length": 120,
-        "angle": 52.65304536599592
-      },
-      {
-        "type": "wall",
-        "x": 710,
-        "y": 142.20192307692307,
-        "length": 284.40384615384613,
-        "angle": 90,
-        "width": 12
-      },
-      {
-        "type": "wall",
-        "x": 710,
-        "y": 423.9519230769231,
-        "length": 72.09615384615387,
-        "angle": 90,
-        "width": 12
-      }
-    ],
-    "solution": [
-      -18.53223608695424,
-      9.65304536599592
-    ],
-    "requiredBounces": 2,
-    "stage": 3,
-    "stageName": "Duas mudanças",
-    "difficulty": 26,
-    "wallPurpose": [
-      "Divisória do alvo com abertura: bloqueia atalhos e exige alinhar o último trecho."
-    ],
-    "decoyCount": 0
-  },
-  {
-    "name": "Duas mudanças 7",
-    "hint": "Observe as divisórias e suas aberturas. Planeje a rota antes de confirmar; nem todos os espelhos precisam ser usados.",
-    "sourceAngle": 0,
-    "family": "serpentina",
-    "target": {
-      "x": 750,
-      "y": 170,
-      "radius": 22
-    },
-    "objects": [
-      {
-        "type": "mirror",
-        "x": 150,
-        "y": 350,
-        "length": 120,
-        "angle": -9
-      },
-      {
-        "type": "mirror",
-        "x": 150,
-        "y": 100,
-        "length": 120,
-        "angle": 3.327212523003297
-      },
-      {
-        "type": "wall",
-        "x": 710,
-        "y": 56.91666666666666,
-        "length": 113.83333333333331,
-        "angle": 90,
-        "width": 12
-      },
-      {
-        "type": "wall",
-        "x": 710,
-        "y": 338.41666666666663,
-        "length": 243.16666666666669,
-        "angle": 90,
-        "width": 12
-      },
-      {
-        "type": "wall",
-        "x": 225,
-        "y": 30.375,
-        "length": 60.75,
-        "angle": 90,
-        "width": 12
-      },
-      {
-        "type": "wall",
-        "x": 225,
-        "y": 308.375,
-        "length": 303.25,
-        "angle": 90,
-        "width": 12
-      }
-    ],
-    "solution": [
-      -45,
-      -41.6727874769967
-    ],
-    "requiredBounces": 2,
-    "stage": 3,
-    "stageName": "Duas mudanças",
-    "difficulty": 27,
-    "wallPurpose": [
-      "Divisória do alvo com abertura: bloqueia atalhos e exige alinhar o último trecho.",
-      "Parede entre colunas: bloqueia o atalho e obriga a passagem pela sala superior."
-    ],
-    "decoyCount": 0
-  },
-  {
-    "name": "Duas mudanças 8",
-    "hint": "Observe as divisórias e suas aberturas. Planeje a rota antes de confirmar; nem todos os espelhos precisam ser usados.",
-    "sourceAngle": 0,
-    "family": "serpentina",
-    "target": {
-      "x": 750,
-      "y": 186,
-      "radius": 22
-    },
-    "objects": [
-      {
-        "type": "mirror",
-        "x": 150,
-        "y": 350,
-        "length": 120,
-        "angle": -7
-      },
-      {
-        "type": "mirror",
-        "x": 150,
-        "y": 116,
-        "length": 120,
-        "angle": 5.327212523003297
-      },
-      {
-        "type": "wall",
-        "x": 710,
-        "y": 65.04166666666666,
-        "length": 130.08333333333331,
-        "angle": 90,
-        "width": 12
-      },
-      {
-        "type": "wall",
-        "x": 710,
-        "y": 346.29166666666663,
-        "length": 227.41666666666669,
-        "angle": 90,
-        "width": 12
-      },
-      {
-        "type": "wall",
-        "x": 225,
-        "y": 38.375,
-        "length": 76.75,
-        "angle": 90,
-        "width": 12
-      },
-      {
-        "type": "wall",
-        "x": 225,
-        "y": 316.375,
-        "length": 287.25,
-        "angle": 90,
-        "width": 12
-      }
-    ],
-    "solution": [
-      -45,
-      -41.6727874769967
-    ],
-    "requiredBounces": 2,
-    "stage": 3,
-    "stageName": "Duas mudanças",
-    "difficulty": 28,
-    "wallPurpose": [
-      "Divisória do alvo com abertura: bloqueia atalhos e exige alinhar o último trecho.",
-      "Parede entre colunas: bloqueia o atalho e obriga a passagem pela sala superior."
-    ],
-    "decoyCount": 0
-  },
-  {
-    "name": "Duas mudanças 9",
-    "hint": "Observe as divisórias e suas aberturas. Planeje a rota antes de confirmar; nem todos os espelhos precisam ser usados.",
-    "sourceAngle": 0,
-    "family": "serpentina-obliqua",
-    "target": {
-      "x": 750,
-      "y": 170,
-      "radius": 22
-    },
-    "objects": [
-      {
-        "type": "mirror",
-        "x": 150,
-        "y": 350,
-        "length": 120,
-        "angle": -2.48546320910728
-      },
-      {
-        "type": "mirror",
-        "x": 172,
-        "y": 100,
-        "length": 120,
-        "angle": 9.967189940189655
-      },
-      {
-        "type": "wall",
-        "x": 710,
-        "y": 57.07785467128028,
-        "length": 114.15570934256056,
-        "angle": 90,
-        "width": 12
-      },
-      {
-        "type": "wall",
-        "x": 710,
-        "y": 338.0778546712803,
-        "length": 243.84429065743944,
-        "angle": 90,
-        "width": 12
-      },
-      {
-        "type": "wall",
-        "x": 225,
-        "y": 29.209342560553637,
-        "length": 58.41868512110727,
-        "angle": 90,
-        "width": 12
-      },
-      {
-        "type": "wall",
-        "x": 225,
-        "y": 307.20934256055364,
-        "length": 305.5813148788927,
-        "angle": 90,
-        "width": 12
-      }
-    ],
-    "solution": [
-      -42.48546320910727,
-      -39.03281005981035
-    ],
-    "requiredBounces": 2,
-    "stage": 3,
-    "stageName": "Duas mudanças",
-    "difficulty": 29,
-    "wallPurpose": [
-      "Divisória do alvo com abertura: bloqueia atalhos e exige alinhar o último trecho.",
-      "Parede entre colunas: bloqueia o atalho e obriga a passagem pela sala superior."
-    ],
-    "decoyCount": 0
-  },
-  {
-    "name": "Duas mudanças 10",
-    "hint": "Observe as divisórias e suas aberturas. Planeje a rota antes de confirmar; nem todos os espelhos precisam ser usados.",
-    "sourceAngle": 0,
-    "family": "serpentina-obliqua",
-    "target": {
-      "x": 750,
-      "y": 186,
-      "radius": 22
-    },
-    "objects": [
-      {
-        "type": "mirror",
-        "x": 150,
-        "y": 350,
-        "length": 120,
-        "angle": -0.3145026522321359
-      },
-      {
-        "type": "mirror",
-        "x": 172,
-        "y": 116,
-        "length": 120,
-        "angle": 12.138150497064785
-      },
-      {
-        "type": "wall",
-        "x": 710,
-        "y": 65.20285467128028,
-        "length": 130.40570934256056,
-        "angle": 90,
-        "width": 12
-      },
-      {
-        "type": "wall",
-        "x": 710,
-        "y": 345.9528546712803,
-        "length": 228.09429065743944,
-        "angle": 90,
-        "width": 12
-      },
-      {
-        "type": "wall",
-        "x": 225,
-        "y": 37.20934256055364,
-        "length": 74.41868512110727,
-        "angle": 90,
-        "width": 12
-      },
-      {
-        "type": "wall",
-        "x": 225,
-        "y": 315.20934256055364,
-        "length": 289.5813148788927,
-        "angle": 90,
-        "width": 12
-      }
-    ],
-    "solution": [
-      -42.31450265223214,
-      -38.861849502935215
-    ],
-    "requiredBounces": 2,
-    "stage": 3,
-    "stageName": "Duas mudanças",
-    "difficulty": 30,
-    "wallPurpose": [
-      "Divisória do alvo com abertura: bloqueia atalhos e exige alinhar o último trecho.",
-      "Parede entre colunas: bloqueia o atalho e obriga a passagem pela sala superior."
-    ],
-    "decoyCount": 0
-  },
-  {
-    "name": "Rotas diagonais 1",
-    "hint": "Observe as divisórias e suas aberturas. Planeje a rota antes de confirmar; nem todos os espelhos precisam ser usados.",
-    "sourceAngle": 0,
-    "family": "zigue-zague",
-    "target": {
-      "x": 750,
-      "y": 330,
-      "radius": 22
-    },
-    "objects": [
-      {
-        "type": "mirror",
-        "x": 170,
-        "y": 350,
-        "length": 120,
-        "angle": 9.327169000331963
-      },
-      {
-        "type": "mirror",
-        "x": 620,
-        "y": 97,
-        "length": 120,
-        "angle": 48.74772305177686
-      },
-      {
-        "type": "wall",
-        "x": 710,
-        "y": 103.90384615384616,
-        "length": 207.80769230769232,
-        "angle": 90,
-        "width": 12
-      },
-      {
-        "type": "wall",
-        "x": 710,
-        "y": 384.4038461538462,
-        "length": 151.19230769230768,
-        "angle": 90,
-        "width": 12
-      },
-      {
-        "type": "mirror",
-        "x": 80,
-        "y": 80,
-        "length": 120,
-        "angle": 0
-      }
-    ],
-    "solution": [
-      -14.672830999668031,
-      15.74772305177685,
-      0
-    ],
-    "requiredBounces": 2,
-    "stage": 4,
-    "stageName": "Rotas diagonais",
-    "difficulty": 31,
-    "wallPurpose": [
-      "Divisória do alvo com abertura: bloqueia atalhos e exige alinhar o último trecho."
-    ],
-    "decoyCount": 1
-  },
-  {
-    "name": "Rotas diagonais 2",
-    "hint": "Observe as divisórias e suas aberturas. Planeje a rota antes de confirmar; nem todos os espelhos precisam ser usados.",
-    "sourceAngle": 0,
-    "family": "zigue-zague",
-    "target": {
-      "x": 750,
-      "y": 311,
-      "radius": 22
-    },
-    "objects": [
-      {
-        "type": "mirror",
-        "x": 179,
-        "y": 350,
-        "length": 120,
-        "angle": 11.37360879611849
-      },
-      {
-        "type": "mirror",
-        "x": 620,
-        "y": 103,
-        "length": 120,
-        "angle": 49.370917192076746
-      },
-      {
-        "type": "wall",
-        "x": 710,
-        "y": 98.375,
-        "length": 196.75,
-        "angle": 90,
-        "width": 12
-      },
-      {
-        "type": "wall",
-        "x": 710,
-        "y": 378.625,
-        "length": 162.75,
-        "angle": 90,
-        "width": 12
-      },
-      {
-        "type": "mirror",
-        "x": 80,
-        "y": 80,
-        "length": 120,
-        "angle": 0
-      }
-    ],
-    "solution": [
-      -14.626391203881514,
-      14.370917192076739,
-      0
-    ],
-    "requiredBounces": 2,
-    "stage": 4,
-    "stageName": "Rotas diagonais",
-    "difficulty": 32,
-    "wallPurpose": [
-      "Divisória do alvo com abertura: bloqueia atalhos e exige alinhar o último trecho."
-    ],
-    "decoyCount": 1
-  },
-  {
-    "name": "Rotas diagonais 3",
-    "hint": "Observe as divisórias e suas aberturas. Planeje a rota antes de confirmar; nem todos os espelhos precisam ser usados.",
-    "sourceAngle": 0,
-    "family": "zigue-zague",
-    "target": {
-      "x": 750,
-      "y": 292,
-      "radius": 22
-    },
-    "objects": [
-      {
-        "type": "mirror",
-        "x": 188,
-        "y": 350,
-        "length": 120,
-        "angle": 13.422073418863448
-      },
-      {
-        "type": "mirror",
-        "x": 620,
-        "y": 109,
-        "length": 120,
-        "angle": 49.72741325341019
-      },
-      {
-        "type": "wall",
-        "x": 710,
-        "y": 92.84615384615384,
-        "length": 185.69230769230768,
-        "angle": 90,
-        "width": 12
-      },
-      {
-        "type": "wall",
-        "x": 710,
-        "y": 372.8461538461538,
-        "length": 174.30769230769232,
-        "angle": 90,
-        "width": 12
-      },
-      {
-        "type": "mirror",
-        "x": 80,
-        "y": 80,
-        "length": 120,
-        "angle": 0
-      }
-    ],
-    "solution": [
-      -14.57792658113655,
-      12.72741325341018,
-      0
-    ],
-    "requiredBounces": 2,
-    "stage": 4,
-    "stageName": "Rotas diagonais",
-    "difficulty": 33,
-    "wallPurpose": [
-      "Divisória do alvo com abertura: bloqueia atalhos e exige alinhar o último trecho."
-    ],
-    "decoyCount": 1
-  },
-  {
-    "name": "Rotas diagonais 4",
-    "hint": "Observe as divisórias e suas aberturas. Planeje a rota antes de confirmar; nem todos os espelhos precisam ser usados.",
-    "sourceAngle": 0,
-    "family": "zigue-zague",
-    "target": {
-      "x": 750,
-      "y": 273,
-      "radius": 22
-    },
-    "objects": [
-      {
-        "type": "mirror",
-        "x": 197,
-        "y": 350,
-        "length": 120,
-        "angle": 15.472697950461423
-      },
-      {
-        "type": "mirror",
-        "x": 620,
-        "y": 115,
-        "length": 120,
-        "angle": 49.749183466979844
-      },
-      {
-        "type": "wall",
-        "x": 710,
-        "y": 87.3173076923077,
-        "length": 174.6346153846154,
-        "angle": 90,
-        "width": 12
-      },
-      {
-        "type": "wall",
-        "x": 710,
-        "y": 367.0673076923077,
-        "length": 185.86538461538464,
-        "angle": 90,
-        "width": 12
-      },
-      {
-        "type": "mirror",
-        "x": 80,
-        "y": 80,
-        "length": 120,
-        "angle": 0
-      }
-    ],
-    "solution": [
-      -14.527302049538573,
-      10.749183466979826,
-      0
-    ],
-    "requiredBounces": 2,
-    "stage": 4,
-    "stageName": "Rotas diagonais",
-    "difficulty": 34,
-    "wallPurpose": [
-      "Divisória do alvo com abertura: bloqueia atalhos e exige alinhar o último trecho."
-    ],
-    "decoyCount": 1
-  },
-  {
-    "name": "Rotas diagonais 5",
-    "hint": "Observe as divisórias e suas aberturas. Planeje a rota antes de confirmar; nem todos os espelhos precisam ser usados.",
-    "sourceAngle": -68.19859051364818,
-    "family": "entrada-diagonal",
-    "target": {
-      "x": 750,
-      "y": 254,
-      "radius": 22
-    },
-    "objects": [
-      {
-        "type": "mirror",
-        "x": 170,
-        "y": 100,
-        "length": 120,
-        "angle": 12.428006792714484
-      },
-      {
-        "type": "mirror",
-        "x": 620,
-        "y": 350,
-        "length": 120,
-        "angle": 37.30508117124502
-      },
-      {
-        "type": "wall",
-        "x": 710,
-        "y": 117.01923076923077,
-        "length": 234.03846153846155,
-        "angle": 90,
-        "width": 12
-      },
-      {
-        "type": "wall",
-        "x": 710,
-        "y": 396.5192307692308,
-        "length": 126.96153846153845,
-        "angle": 90,
-        "width": 12
-      },
-      {
-        "type": "mirror",
-        "x": 80,
-        "y": 80,
-        "length": 120,
-        "angle": 0
-      }
-    ],
-    "solution": [
-      -19.571993207285516,
-      -3.694918828754982,
-      0
-    ],
-    "requiredBounces": 2,
-    "stage": 4,
-    "stageName": "Rotas diagonais",
-    "difficulty": 35,
-    "wallPurpose": [
-      "Divisória do alvo com abertura: bloqueia atalhos e exige alinhar o último trecho."
-    ],
-    "decoyCount": 1
-  },
-  {
-    "name": "Rotas diagonais 6",
-    "hint": "Observe as divisórias e suas aberturas. Planeje a rota antes de confirmar; nem todos os espelhos precisam ser usados.",
-    "sourceAngle": -65.11672516845553,
-    "family": "entrada-diagonal",
-    "target": {
-      "x": 750,
-      "y": 330,
-      "radius": 22
-    },
-    "objects": [
-      {
-        "type": "mirror",
-        "x": 179,
-        "y": 115,
-        "length": 120,
-        "angle": 15.467763913045758
-      },
-      {
-        "type": "mirror",
-        "x": 620,
-        "y": 350,
-        "length": 120,
-        "angle": 52.65304536599592
-      },
-      {
-        "type": "wall",
-        "x": 710,
-        "y": 143.45192307692307,
-        "length": 286.90384615384613,
-        "angle": 90,
-        "width": 12
-      },
-      {
-        "type": "wall",
-        "x": 710,
-        "y": 422.7019230769231,
-        "length": 74.59615384615387,
-        "angle": 90,
-        "width": 12
-      },
-      {
-        "type": "mirror",
-        "x": 80,
-        "y": 80,
-        "length": 120,
-        "angle": 0
-      }
-    ],
-    "solution": [
-      -18.53223608695424,
-      9.65304536599592,
-      0
-    ],
-    "requiredBounces": 2,
-    "stage": 4,
-    "stageName": "Rotas diagonais",
-    "difficulty": 36,
-    "wallPurpose": [
-      "Divisória do alvo com abertura: bloqueia atalhos e exige alinhar o último trecho."
-    ],
-    "decoyCount": 1
-  },
-  {
-    "name": "Rotas diagonais 7",
-    "hint": "Observe as divisórias e suas aberturas. Planeje a rota antes de confirmar; nem todos os espelhos precisam ser usados.",
-    "sourceAngle": 0,
-    "family": "serpentina",
-    "target": {
-      "x": 750,
-      "y": 170,
-      "radius": 22
-    },
-    "objects": [
-      {
-        "type": "mirror",
-        "x": 150,
-        "y": 350,
-        "length": 120,
-        "angle": -9
-      },
-      {
-        "type": "mirror",
-        "x": 150,
-        "y": 100,
-        "length": 120,
-        "angle": 3.327212523003297
-      },
-      {
-        "type": "wall",
-        "x": 710,
-        "y": 58.16666666666666,
-        "length": 116.33333333333331,
-        "angle": 90,
-        "width": 12
-      },
-      {
-        "type": "wall",
-        "x": 710,
-        "y": 337.16666666666663,
-        "length": 245.66666666666669,
-        "angle": 90,
-        "width": 12
-      },
-      {
-        "type": "wall",
-        "x": 225,
-        "y": 30.375,
-        "length": 60.75,
-        "angle": 90,
-        "width": 12
-      },
-      {
-        "type": "wall",
-        "x": 225,
-        "y": 308.375,
-        "length": 303.25,
-        "angle": 90,
-        "width": 12
-      },
-      {
-        "type": "mirror",
-        "x": 80,
-        "y": 80,
-        "length": 120,
-        "angle": 0
-      }
-    ],
-    "solution": [
-      -45,
-      -41.6727874769967,
-      0
-    ],
-    "requiredBounces": 2,
-    "stage": 4,
-    "stageName": "Rotas diagonais",
-    "difficulty": 37,
-    "wallPurpose": [
-      "Divisória do alvo com abertura: bloqueia atalhos e exige alinhar o último trecho.",
-      "Parede entre colunas: bloqueia o atalho e obriga a passagem pela sala superior."
-    ],
-    "decoyCount": 1
-  },
-  {
-    "name": "Rotas diagonais 8",
-    "hint": "Observe as divisórias e suas aberturas. Planeje a rota antes de confirmar; nem todos os espelhos precisam ser usados.",
-    "sourceAngle": 0,
-    "family": "serpentina",
-    "target": {
-      "x": 750,
-      "y": 186,
-      "radius": 22
-    },
-    "objects": [
-      {
-        "type": "mirror",
-        "x": 150,
-        "y": 350,
-        "length": 120,
-        "angle": -7
-      },
-      {
-        "type": "mirror",
-        "x": 150,
-        "y": 116,
-        "length": 120,
-        "angle": 5.327212523003297
-      },
-      {
-        "type": "wall",
-        "x": 710,
-        "y": 66.29166666666666,
-        "length": 132.58333333333331,
-        "angle": 90,
-        "width": 12
-      },
-      {
-        "type": "wall",
-        "x": 710,
-        "y": 345.04166666666663,
-        "length": 229.91666666666669,
-        "angle": 90,
-        "width": 12
-      },
-      {
-        "type": "wall",
-        "x": 225,
-        "y": 38.375,
-        "length": 76.75,
-        "angle": 90,
-        "width": 12
-      },
-      {
-        "type": "wall",
-        "x": 225,
-        "y": 316.375,
-        "length": 287.25,
-        "angle": 90,
-        "width": 12
-      },
-      {
-        "type": "mirror",
-        "x": 80,
-        "y": 80,
-        "length": 120,
-        "angle": 0
-      }
-    ],
-    "solution": [
-      -45,
-      -41.6727874769967,
-      0
-    ],
-    "requiredBounces": 2,
-    "stage": 4,
-    "stageName": "Rotas diagonais",
-    "difficulty": 38,
-    "wallPurpose": [
-      "Divisória do alvo com abertura: bloqueia atalhos e exige alinhar o último trecho.",
-      "Parede entre colunas: bloqueia o atalho e obriga a passagem pela sala superior."
-    ],
-    "decoyCount": 1
-  },
-  {
-    "name": "Rotas diagonais 9",
-    "hint": "Observe as divisórias e suas aberturas. Planeje a rota antes de confirmar; nem todos os espelhos precisam ser usados.",
-    "sourceAngle": 0,
-    "family": "serpentina-obliqua",
-    "target": {
-      "x": 750,
-      "y": 170,
-      "radius": 22
-    },
-    "objects": [
-      {
-        "type": "mirror",
-        "x": 150,
-        "y": 350,
-        "length": 120,
-        "angle": -2.48546320910728
-      },
-      {
-        "type": "mirror",
-        "x": 172,
-        "y": 100,
-        "length": 120,
-        "angle": 9.967189940189655
-      },
-      {
-        "type": "wall",
-        "x": 710,
-        "y": 58.32785467128028,
-        "length": 116.65570934256056,
-        "angle": 90,
-        "width": 12
-      },
-      {
-        "type": "wall",
-        "x": 710,
-        "y": 336.8278546712803,
-        "length": 246.34429065743944,
-        "angle": 90,
-        "width": 12
-      },
-      {
-        "type": "wall",
-        "x": 225,
-        "y": 29.209342560553637,
-        "length": 58.41868512110727,
-        "angle": 90,
-        "width": 12
-      },
-      {
-        "type": "wall",
-        "x": 225,
-        "y": 307.20934256055364,
-        "length": 305.5813148788927,
-        "angle": 90,
-        "width": 12
-      },
-      {
-        "type": "mirror",
-        "x": 80,
-        "y": 80,
-        "length": 120,
-        "angle": 0
-      }
-    ],
-    "solution": [
-      -42.48546320910727,
-      -39.03281005981035,
-      0
-    ],
-    "requiredBounces": 2,
-    "stage": 4,
-    "stageName": "Rotas diagonais",
-    "difficulty": 39,
-    "wallPurpose": [
-      "Divisória do alvo com abertura: bloqueia atalhos e exige alinhar o último trecho.",
-      "Parede entre colunas: bloqueia o atalho e obriga a passagem pela sala superior."
-    ],
-    "decoyCount": 1
-  },
-  {
-    "name": "Rotas diagonais 10",
-    "hint": "Observe as divisórias e suas aberturas. Planeje a rota antes de confirmar; nem todos os espelhos precisam ser usados.",
-    "sourceAngle": 0,
-    "family": "serpentina-obliqua",
-    "target": {
-      "x": 750,
-      "y": 186,
-      "radius": 22
-    },
-    "objects": [
-      {
-        "type": "mirror",
-        "x": 150,
-        "y": 350,
-        "length": 120,
-        "angle": -0.3145026522321359
-      },
-      {
-        "type": "mirror",
-        "x": 172,
-        "y": 116,
-        "length": 120,
-        "angle": 12.138150497064785
-      },
-      {
-        "type": "wall",
-        "x": 710,
-        "y": 66.45285467128028,
-        "length": 132.90570934256056,
-        "angle": 90,
-        "width": 12
-      },
-      {
-        "type": "wall",
-        "x": 710,
-        "y": 344.7028546712803,
-        "length": 230.59429065743944,
-        "angle": 90,
-        "width": 12
-      },
-      {
-        "type": "wall",
-        "x": 225,
-        "y": 37.20934256055364,
-        "length": 74.41868512110727,
-        "angle": 90,
-        "width": 12
-      },
-      {
-        "type": "wall",
-        "x": 225,
-        "y": 315.20934256055364,
-        "length": 289.5813148788927,
-        "angle": 90,
-        "width": 12
-      },
-      {
-        "type": "mirror",
-        "x": 80,
-        "y": 80,
-        "length": 120,
-        "angle": 0
-      }
-    ],
-    "solution": [
-      -42.31450265223214,
-      -38.861849502935215,
-      0
-    ],
-    "requiredBounces": 2,
-    "stage": 4,
-    "stageName": "Rotas diagonais",
-    "difficulty": 40,
-    "wallPurpose": [
-      "Divisória do alvo com abertura: bloqueia atalhos e exige alinhar o último trecho.",
-      "Parede entre colunas: bloqueia o atalho e obriga a passagem pela sala superior."
-    ],
-    "decoyCount": 1
-  },
-  {
-    "name": "Três decisões 1",
-    "hint": "Observe as divisórias e suas aberturas. Planeje a rota antes de confirmar; nem todos os espelhos precisam ser usados.",
-    "sourceAngle": 0,
-    "family": "zigue-zague",
-    "target": {
-      "x": 750,
-      "y": 90,
-      "radius": 22
-    },
-    "objects": [
-      {
-        "type": "mirror",
-        "x": 170,
-        "y": 350,
-        "length": 120,
-        "angle": -0.17620362355154384
-      },
-      {
-        "type": "mirror",
-        "x": 395,
-        "y": 97,
-        "length": 120,
-        "angle": 33
-      },
-      {
-        "type": "mirror",
-        "x": 620,
-        "y": 350,
-        "length": 120,
-        "angle": 34.458729212090546
-      },
-      {
-        "type": "wall",
-        "x": 710,
-        "y": 61,
-        "length": 122,
-        "angle": 90,
-        "width": 12
-      },
-      {
-        "type": "wall",
-        "x": 710,
-        "y": 339,
-        "length": 242,
-        "angle": 90,
-        "width": 12
-      },
-      {
-        "type": "wall",
-        "x": 125.8596837944664,
-        "y": 230,
-        "length": 251.7193675889328,
-        "angle": 0,
-        "width": 12
-      },
-      {
-        "type": "wall",
-        "x": 395,
-        "y": 230,
-        "length": 186.56126482213443,
-        "angle": 0,
-        "width": 12
-      },
-      {
-        "type": "wall",
-        "x": 596.6403162055336,
-        "y": 230,
-        "length": 116.71936758893276,
-        "angle": 0,
-        "width": 12
-      },
-      {
-        "type": "mirror",
-        "x": 80,
-        "y": 80,
-        "length": 120,
-        "angle": 0
-      }
-    ],
-    "solution": [
-      -24.176203623551537,
-      0,
-      -7.541270787909457,
-      0
-    ],
-    "requiredBounces": 3,
-    "stage": 5,
-    "stageName": "Três decisões",
-    "difficulty": 41,
-    "wallPurpose": [
-      "Divisória do alvo com abertura: bloqueia atalhos e exige alinhar o último trecho.",
-      "Divisória central com passagens: impede cruzar entre as salas fora das aberturas."
-    ],
-    "decoyCount": 1
-  },
-  {
-    "name": "Três decisões 2",
-    "hint": "Observe as divisórias e suas aberturas. Planeje a rota antes de confirmar; nem todos os espelhos precisam ser usados.",
-    "sourceAngle": 0,
-    "family": "zigue-zague",
-    "target": {
-      "x": 750,
-      "y": 108,
-      "radius": 22
-    },
-    "objects": [
-      {
-        "type": "mirror",
-        "x": 179,
-        "y": 350,
-        "length": 120,
-        "angle": 1.8778448360826019
-      },
-      {
-        "type": "mirror",
-        "x": 399.5,
-        "y": 103,
-        "length": 120,
-        "angle": 35.39705353191607
-      },
-      {
-        "type": "mirror",
-        "x": 620,
-        "y": 357,
-        "length": 120,
-        "angle": 37.30347722305258
-      },
-      {
-        "type": "wall",
-        "x": 710,
-        "y": 68.4326923076923,
-        "length": 136.8653846153846,
-        "angle": 90,
-        "width": 12
-      },
-      {
-        "type": "wall",
-        "x": 710,
-        "y": 346.1826923076923,
-        "length": 227.6346153846154,
-        "angle": 90,
-        "width": 12
-      },
-      {
-        "type": "wall",
-        "x": 130.56275303643724,
-        "y": 230,
-        "length": 261.1255060728745,
-        "angle": 0,
-        "width": 12
-      },
-      {
-        "type": "wall",
-        "x": 397.93775303643724,
-        "y": 230,
-        "length": 173.6244939271255,
-        "angle": 0,
-        "width": 12
-      },
-      {
-        "type": "wall",
-        "x": 598.0276104417671,
-        "y": 230,
-        "length": 126.55522088353416,
-        "angle": 0,
-        "width": 12
-      },
-      {
-        "type": "mirror",
-        "x": 80,
-        "y": 80,
-        "length": 120,
-        "angle": 0
-      }
-    ],
-    "solution": [
-      -24.122155163917395,
-      0.3970535319160683,
-      -6.696522776947414,
-      0
-    ],
-    "requiredBounces": 3,
-    "stage": 5,
-    "stageName": "Três decisões",
-    "difficulty": 42,
-    "wallPurpose": [
-      "Divisória do alvo com abertura: bloqueia atalhos e exige alinhar o último trecho.",
-      "Divisória central com passagens: impede cruzar entre as salas fora das aberturas."
-    ],
-    "decoyCount": 1
-  },
-  {
-    "name": "Três decisões 3",
-    "hint": "Observe as divisórias e suas aberturas. Planeje a rota antes de confirmar; nem todos os espelhos precisam ser usados.",
-    "sourceAngle": 0,
-    "family": "zigue-zague",
-    "target": {
-      "x": 750,
-      "y": 126,
-      "radius": 22
-    },
-    "objects": [
-      {
-        "type": "mirror",
-        "x": 188,
-        "y": 350,
-        "length": 120,
-        "angle": 3.934389288653989
-      },
-      {
-        "type": "mirror",
-        "x": 404,
-        "y": 109,
-        "length": 120,
-        "angle": 37.80110845394172
-      },
-      {
-        "type": "mirror",
-        "x": 620,
-        "y": 364,
-        "length": 120,
-        "angle": 40.18881061477913
-      },
-      {
-        "type": "wall",
-        "x": 710,
-        "y": 75.86538461538461,
-        "length": 151.73076923076923,
-        "angle": 90,
-        "width": 12
-      },
-      {
-        "type": "wall",
-        "x": 710,
-        "y": 353.36538461538464,
-        "length": 213.26923076923077,
-        "angle": 90,
-        "width": 12
-      },
-      {
-        "type": "wall",
-        "x": 135.2759336099585,
-        "y": 230,
-        "length": 270.551867219917,
-        "angle": 0,
-        "width": 12
-      },
-      {
-        "type": "wall",
-        "x": 401.02299243348796,
-        "y": 230,
-        "length": 160.9422504271418,
-        "angle": 0,
-        "width": 12
-      },
-      {
-        "type": "wall",
-        "x": 599.8436974789915,
-        "y": 230,
-        "length": 136.69915966386554,
-        "angle": 0,
-        "width": 12
-      },
-      {
-        "type": "mirror",
-        "x": 80,
-        "y": 80,
-        "length": 120,
-        "angle": 0
-      }
-    ],
-    "solution": [
-      -24.065610711346018,
-      0.8011084539417271,
-      -5.811189385220874,
-      0
-    ],
-    "requiredBounces": 3,
-    "stage": 5,
-    "stageName": "Três decisões",
-    "difficulty": 43,
-    "wallPurpose": [
-      "Divisória do alvo com abertura: bloqueia atalhos e exige alinhar o último trecho.",
-      "Divisória central com passagens: impede cruzar entre as salas fora das aberturas."
-    ],
-    "decoyCount": 1
-  },
-  {
-    "name": "Três decisões 4",
-    "hint": "Observe as divisórias e suas aberturas. Planeje a rota antes de confirmar; nem todos os espelhos precisam ser usados.",
-    "sourceAngle": 0,
-    "family": "zigue-zague",
-    "target": {
-      "x": 750,
-      "y": 144,
-      "radius": 22
-    },
-    "objects": [
-      {
-        "type": "mirror",
-        "x": 197,
-        "y": 350,
-        "length": 120,
-        "angle": 5.993606247908332
-      },
-      {
-        "type": "mirror",
-        "x": 408.5,
-        "y": 115,
-        "length": 120,
-        "angle": 40.212326349630644
-      },
-      {
-        "type": "mirror",
-        "x": 620,
-        "y": 371,
-        "length": 120,
-        "angle": 43.118328015408025
-      },
-      {
-        "type": "wall",
-        "x": 710,
-        "y": 83.29807692307692,
-        "length": 166.59615384615384,
-        "angle": 90,
-        "width": 12
-      },
-      {
-        "type": "wall",
-        "x": 710,
-        "y": 360.5480769230769,
-        "length": 198.9038461538462,
-        "angle": 90,
-        "width": 12
-      },
-      {
-        "type": "wall",
-        "x": 140,
-        "y": 230,
-        "length": 280,
-        "angle": 0,
-        "width": 12
-      },
-      {
-        "type": "wall",
-        "x": 404.2548828125,
-        "y": 230,
-        "length": 148.509765625,
-        "angle": 0,
-        "width": 12
-      },
-      {
-        "type": "wall",
-        "x": 602.1293321517071,
-        "y": 230,
-        "length": 147.2391330534141,
-        "angle": 0,
-        "width": 12
-      },
-      {
-        "type": "mirror",
-        "x": 80,
-        "y": 80,
-        "length": 120,
-        "angle": 0
-      }
-    ],
-    "solution": [
-      -24.006393752091668,
-      1.2123263496306307,
-      -4.881671984591968,
-      0
-    ],
-    "requiredBounces": 3,
-    "stage": 5,
-    "stageName": "Três decisões",
-    "difficulty": 44,
-    "wallPurpose": [
-      "Divisória do alvo com abertura: bloqueia atalhos e exige alinhar o último trecho.",
-      "Divisória central com passagens: impede cruzar entre as salas fora das aberturas."
-    ],
-    "decoyCount": 1
-  },
-  {
-    "name": "Três decisões 5",
-    "hint": "Observe as divisórias e suas aberturas. Planeje a rota antes de confirmar; nem todos os espelhos precisam ser usados.",
-    "sourceAngle": -68.19859051364818,
-    "family": "entrada-diagonal",
-    "target": {
-      "x": 750,
-      "y": 162,
-      "radius": 22
-    },
-    "objects": [
-      {
-        "type": "mirror",
-        "x": 170,
-        "y": 100,
-        "length": 120,
-        "angle": 21.907098495267576
-      },
-      {
-        "type": "mirror",
-        "x": 395,
-        "y": 350,
-        "length": 120,
-        "angle": 41
-      },
-      {
-        "type": "mirror",
-        "x": 620,
-        "y": 100,
-        "length": 120,
-        "angle": 38.742381994577215
-      },
-      {
-        "type": "wall",
-        "x": 710,
-        "y": 47.96153846153845,
-        "length": 95.9230769230769,
-        "angle": 90,
-        "width": 12
-      },
-      {
-        "type": "wall",
-        "x": 710,
-        "y": 324.96153846153845,
-        "length": 270.0769230769231,
-        "angle": 90,
-        "width": 12
-      },
-      {
-        "type": "wall",
-        "x": 46.5,
-        "y": 230,
-        "length": 93,
-        "angle": 0,
-        "width": 12
-      },
-      {
-        "type": "wall",
-        "x": 202.5,
-        "y": 230,
-        "length": 119,
-        "angle": 0,
-        "width": 12
-      },
-      {
-        "type": "wall",
-        "x": 395,
-        "y": 230,
-        "length": 166,
-        "angle": 0,
-        "width": 12
-      },
-      {
-        "type": "wall",
-        "x": 604,
-        "y": 230,
-        "length": 152,
-        "angle": 0,
-        "width": 12
-      },
-      {
-        "type": "mirror",
-        "x": 80,
-        "y": 80,
-        "length": 120,
-        "angle": 0
-      }
-    ],
-    "solution": [
-      -10.09290150473242,
-      0,
-      -11.257618005422776,
-      0
-    ],
-    "requiredBounces": 3,
-    "stage": 5,
-    "stageName": "Três decisões",
-    "difficulty": 45,
-    "wallPurpose": [
-      "Divisória do alvo com abertura: bloqueia atalhos e exige alinhar o último trecho.",
-      "Divisória central com passagens: impede cruzar entre as salas fora das aberturas."
-    ],
-    "decoyCount": 1
-  },
-  {
-    "name": "Três decisões 6",
-    "hint": "Observe as divisórias e suas aberturas. Planeje a rota antes de confirmar; nem todos os espelhos precisam ser usados.",
-    "sourceAngle": -65.11672516845553,
-    "family": "entrada-diagonal",
-    "target": {
-      "x": 750,
-      "y": 90,
-      "radius": 22
-    },
-    "objects": [
-      {
-        "type": "mirror",
-        "x": 179,
-        "y": 115,
-        "length": 120,
-        "angle": 24.85328214351904
-      },
-      {
-        "type": "mirror",
-        "x": 399.5,
-        "y": 350,
-        "length": 120,
-        "angle": 43
-      },
-      {
-        "type": "mirror",
-        "x": 620,
-        "y": 115,
-        "length": 120,
-        "angle": 23.14559174492382
-      },
-      {
-        "type": "wall",
-        "x": 710,
-        "y": 25.471153846153847,
-        "length": 50.94230769230769,
-        "angle": 90,
-        "width": 12
-      },
-      {
-        "type": "wall",
-        "x": 710,
-        "y": 302.2211538461538,
-        "length": 315.5576923076923,
-        "angle": 90,
-        "width": 12
-      },
-      {
-        "type": "wall",
-        "x": 50.329787234042556,
-        "y": 230,
-        "length": 100.65957446808511,
-        "angle": 0,
-        "width": 12
-      },
-      {
-        "type": "wall",
-        "x": 206.28191489361703,
-        "y": 230,
-        "length": 111.24468085106383,
-        "angle": 0,
-        "width": 12
-      },
-      {
-        "type": "wall",
-        "x": 399.5,
-        "y": 230,
-        "length": 175.19148936170217,
-        "angle": 0,
-        "width": 12
-      },
-      {
-        "type": "wall",
-        "x": 608.5478723404256,
-        "y": 230,
-        "length": 142.9042553191489,
-        "angle": 0,
-        "width": 12
-      },
-      {
-        "type": "mirror",
-        "x": 80,
-        "y": 80,
-        "length": 120,
-        "angle": 0
-      }
-    ],
-    "solution": [
-      -9.146717856480953,
-      0,
-      -28.854408255076187,
-      0
-    ],
-    "requiredBounces": 3,
-    "stage": 5,
-    "stageName": "Três decisões",
-    "difficulty": 46,
-    "wallPurpose": [
-      "Divisória do alvo com abertura: bloqueia atalhos e exige alinhar o último trecho.",
-      "Divisória central com passagens: impede cruzar entre as salas fora das aberturas."
-    ],
-    "decoyCount": 1
-  },
-  {
-    "name": "Três decisões 7",
-    "hint": "Observe as divisórias e suas aberturas. Planeje a rota antes de confirmar; nem todos os espelhos precisam ser usados.",
-    "sourceAngle": 0,
-    "family": "serpentina",
-    "target": {
-      "x": 750,
-      "y": 170,
-      "radius": 22
-    },
-    "objects": [
-      {
-        "type": "mirror",
-        "x": 150,
-        "y": 350,
-        "length": 120,
-        "angle": -9
-      },
-      {
-        "type": "mirror",
-        "x": 150,
-        "y": 100,
-        "length": 120,
-        "angle": 0
-      },
-      {
-        "type": "mirror",
-        "x": 300,
-        "y": 100,
-        "length": 120,
-        "angle": 58.42090728009583
-      },
-      {
-        "type": "wall",
-        "x": 710,
-        "y": 58.638888888888886,
-        "length": 117.27777777777777,
-        "angle": 90,
-        "width": 12
-      },
-      {
-        "type": "wall",
-        "x": 710,
-        "y": 335.1388888888889,
-        "length": 249.72222222222223,
-        "angle": 90,
-        "width": 12
-      },
-      {
-        "type": "wall",
-        "x": 225,
-        "y": 26,
-        "length": 52,
-        "angle": 90,
-        "width": 12
-      },
-      {
-        "type": "wall",
-        "x": 225,
-        "y": 304,
-        "length": 312,
-        "angle": 90,
-        "width": 12
-      },
-      {
-        "type": "wall",
-        "x": 62.5,
-        "y": 230,
-        "length": 125,
-        "angle": 0,
-        "width": 12
-      },
-      {
-        "type": "wall",
-        "x": 427.5,
-        "y": 230,
-        "length": 505,
-        "angle": 0,
-        "width": 12
-      },
-      {
-        "type": "mirror",
-        "x": 80,
-        "y": 80,
-        "length": 120,
-        "angle": 0
-      }
-    ],
-    "solution": [
-      -45,
-      -45,
-      4.420907280095837,
-      0
-    ],
-    "requiredBounces": 3,
-    "stage": 5,
-    "stageName": "Três decisões",
-    "difficulty": 47,
-    "wallPurpose": [
-      "Divisória do alvo com abertura: bloqueia atalhos e exige alinhar o último trecho.",
-      "Parede entre colunas: bloqueia o atalho e obriga a passagem pela sala superior.",
-      "Divisória central com passagens: impede cruzar entre as salas fora das aberturas."
-    ],
-    "decoyCount": 1
-  },
-  {
-    "name": "Três decisões 8",
-    "hint": "Observe as divisórias e suas aberturas. Planeje a rota antes de confirmar; nem todos os espelhos precisam ser usados.",
-    "sourceAngle": 0,
-    "family": "serpentina",
-    "target": {
-      "x": 750,
-      "y": 186,
-      "radius": 22
-    },
-    "objects": [
-      {
-        "type": "mirror",
-        "x": 150,
-        "y": 350,
-        "length": 120,
-        "angle": -7
-      },
-      {
-        "type": "mirror",
-        "x": 150,
-        "y": 116,
-        "length": 120,
-        "angle": 2
-      },
-      {
-        "type": "mirror",
-        "x": 300,
-        "y": 116,
-        "length": 120,
-        "angle": 60.42090728009583
-      },
-      {
-        "type": "wall",
-        "x": 710,
-        "y": 66.76388888888889,
-        "length": 133.52777777777777,
-        "angle": 90,
-        "width": 12
-      },
-      {
-        "type": "wall",
-        "x": 710,
-        "y": 343.0138888888889,
-        "length": 233.97222222222223,
-        "angle": 90,
-        "width": 12
-      },
-      {
-        "type": "wall",
-        "x": 225,
-        "y": 34,
-        "length": 68,
-        "angle": 90,
-        "width": 12
-      },
-      {
-        "type": "wall",
-        "x": 225,
-        "y": 312,
-        "length": 296,
-        "angle": 90,
-        "width": 12
-      },
-      {
-        "type": "wall",
-        "x": 62.5,
-        "y": 230,
-        "length": 125,
-        "angle": 0,
-        "width": 12
-      },
-      {
-        "type": "wall",
-        "x": 427.5,
-        "y": 230,
-        "length": 505,
-        "angle": 0,
-        "width": 12
-      },
-      {
-        "type": "mirror",
-        "x": 80,
-        "y": 80,
-        "length": 120,
-        "angle": 0
-      }
-    ],
-    "solution": [
-      -45,
-      -45,
-      4.420907280095837,
-      0
-    ],
-    "requiredBounces": 3,
-    "stage": 5,
-    "stageName": "Três decisões",
-    "difficulty": 48,
-    "wallPurpose": [
-      "Divisória do alvo com abertura: bloqueia atalhos e exige alinhar o último trecho.",
-      "Parede entre colunas: bloqueia o atalho e obriga a passagem pela sala superior.",
-      "Divisória central com passagens: impede cruzar entre as salas fora das aberturas."
-    ],
-    "decoyCount": 1
-  },
-  {
-    "name": "Três decisões 9",
-    "hint": "Observe as divisórias e suas aberturas. Planeje a rota antes de confirmar; nem todos os espelhos precisam ser usados.",
-    "sourceAngle": 0,
-    "family": "serpentina-obliqua",
-    "target": {
-      "x": 750,
-      "y": 170,
-      "radius": 22
-    },
-    "objects": [
-      {
-        "type": "mirror",
-        "x": 150,
-        "y": 350,
-        "length": 120,
-        "angle": -2.48546320910728
-      },
-      {
-        "type": "mirror",
-        "x": 172,
-        "y": 100,
-        "length": 120,
-        "angle": 6.51453679089272
-      },
-      {
-        "type": "mirror",
-        "x": 300,
-        "y": 100,
-        "length": 120,
-        "angle": 62.42090728009583
-      },
-      {
-        "type": "wall",
-        "x": 710,
-        "y": 58.888888888888886,
-        "length": 117.77777777777777,
-        "angle": 90,
-        "width": 12
-      },
-      {
-        "type": "wall",
-        "x": 710,
-        "y": 334.8888888888889,
-        "length": 250.22222222222223,
-        "angle": 90,
-        "width": 12
-      },
-      {
-        "type": "wall",
-        "x": 225,
-        "y": 26,
-        "length": 52,
-        "angle": 90,
-        "width": 12
-      },
-      {
-        "type": "wall",
-        "x": 225,
-        "y": 304,
-        "length": 312,
-        "angle": 90,
-        "width": 12
-      },
-      {
-        "type": "wall",
-        "x": 67.78,
-        "y": 230,
-        "length": 135.56,
-        "angle": 0,
-        "width": 12
-      },
-      {
-        "type": "wall",
-        "x": 432.78,
-        "y": 230,
-        "length": 494.44,
-        "angle": 0,
-        "width": 12
-      },
-      {
-        "type": "mirror",
-        "x": 80,
-        "y": 80,
-        "length": 120,
-        "angle": 0
-      }
-    ],
-    "solution": [
-      -42.48546320910727,
-      -42.48546320910727,
-      4.420907280095837,
-      0
-    ],
-    "requiredBounces": 3,
-    "stage": 5,
-    "stageName": "Três decisões",
-    "difficulty": 49,
-    "wallPurpose": [
-      "Divisória do alvo com abertura: bloqueia atalhos e exige alinhar o último trecho.",
-      "Parede entre colunas: bloqueia o atalho e obriga a passagem pela sala superior.",
-      "Divisória central com passagens: impede cruzar entre as salas fora das aberturas."
-    ],
-    "decoyCount": 1
-  },
-  {
-    "name": "Três decisões 10",
-    "hint": "Observe as divisórias e suas aberturas. Planeje a rota antes de confirmar; nem todos os espelhos precisam ser usados.",
-    "sourceAngle": 0,
-    "family": "serpentina-obliqua",
-    "target": {
-      "x": 750,
-      "y": 186,
-      "radius": 22
-    },
-    "objects": [
-      {
-        "type": "mirror",
-        "x": 150,
-        "y": 350,
-        "length": 120,
-        "angle": -0.3145026522321359
-      },
-      {
-        "type": "mirror",
-        "x": 172,
-        "y": 116,
-        "length": 120,
-        "angle": 8.685497347767864
-      },
-      {
-        "type": "mirror",
-        "x": 300,
-        "y": 116,
-        "length": 120,
-        "angle": 64.42090728009583
-      },
-      {
-        "type": "wall",
-        "x": 710,
-        "y": 67.01388888888889,
-        "length": 134.02777777777777,
-        "angle": 90,
-        "width": 12
-      },
-      {
-        "type": "wall",
-        "x": 710,
-        "y": 342.7638888888889,
-        "length": 234.47222222222223,
-        "angle": 90,
-        "width": 12
-      },
-      {
-        "type": "wall",
-        "x": 225,
-        "y": 34,
-        "length": 68,
-        "angle": 90,
-        "width": 12
-      },
-      {
-        "type": "wall",
-        "x": 225,
-        "y": 312,
-        "length": 296,
-        "angle": 90,
-        "width": 12
-      },
-      {
-        "type": "wall",
-        "x": 68.14102564102564,
-        "y": 230,
-        "length": 136.28205128205127,
-        "angle": 0,
-        "width": 12
-      },
-      {
-        "type": "wall",
-        "x": 433.14102564102564,
-        "y": 230,
-        "length": 493.71794871794873,
-        "angle": 0,
-        "width": 12
-      },
-      {
-        "type": "mirror",
-        "x": 80,
-        "y": 80,
-        "length": 120,
-        "angle": 0
-      }
-    ],
-    "solution": [
-      -42.31450265223214,
-      -42.31450265223214,
-      4.420907280095837,
-      0
-    ],
-    "requiredBounces": 3,
-    "stage": 5,
-    "stageName": "Três decisões",
-    "difficulty": 50,
-    "wallPurpose": [
-      "Divisória do alvo com abertura: bloqueia atalhos e exige alinhar o último trecho.",
-      "Parede entre colunas: bloqueia o atalho e obriga a passagem pela sala superior.",
-      "Divisória central com passagens: impede cruzar entre as salas fora das aberturas."
-    ],
-    "decoyCount": 1
-  },
-  {
-    "name": "Quatro espelhos 1",
-    "hint": "Observe as divisórias e suas aberturas. Planeje a rota antes de confirmar; nem todos os espelhos precisam ser usados.",
-    "sourceAngle": 0,
-    "family": "zigue-zague",
-    "target": {
-      "x": 750,
-      "y": 330,
-      "radius": 22
-    },
-    "objects": [
-      {
-        "type": "mirror",
-        "x": 170,
-        "y": 350,
-        "length": 120,
-        "angle": -5.668459133962301
-      },
-      {
-        "type": "mirror",
-        "x": 320,
-        "y": 97,
-        "length": 120,
-        "angle": 33
-      },
-      {
-        "type": "mirror",
-        "x": 470,
-        "y": 350,
-        "length": 120,
-        "angle": 41.901231593692216
-      },
-      {
-        "type": "mirror",
-        "x": 620,
-        "y": 95,
-        "length": 120,
-        "angle": 51.75727485599651
-      },
-      {
-        "type": "wall",
-        "x": 710,
-        "y": 106.09615384615384,
-        "length": 212.19230769230768,
-        "angle": 90,
-        "width": 12
-      },
-      {
-        "type": "wall",
-        "x": 710,
-        "y": 381.5961538461538,
-        "length": 156.80769230769232,
-        "angle": 90,
-        "width": 12
-      },
-      {
-        "type": "wall",
-        "x": 108.07312252964427,
-        "y": 230,
-        "length": 216.14624505928853,
-        "angle": 0,
-        "width": 12
-      },
-      {
-        "type": "wall",
-        "x": 320,
-        "y": 230,
-        "length": 107.707509881423,
-        "angle": 0,
-        "width": 12
-      },
-      {
-        "type": "wall",
-        "x": 469.7209951174146,
-        "y": 230,
-        "length": 91.73448035340618,
-        "angle": 0,
-        "width": 12
-      },
-      {
-        "type": "wall",
-        "x": 617.6345431789737,
-        "y": 230,
-        "length": 104.0926157697121,
-        "angle": 0,
-        "width": 12
-      },
-      {
-        "type": "mirror",
-        "x": 80,
-        "y": 80,
-        "length": 120,
-        "angle": 0
-      }
-    ],
-    "solution": [
-      -29.668459133962298,
-      0,
-      -0.09876840630776859,
-      0.7572748559965298,
-      0
-    ],
-    "requiredBounces": 4,
-    "stage": 6,
-    "stageName": "Quatro espelhos",
-    "difficulty": 51,
-    "wallPurpose": [
-      "Divisória do alvo com abertura: bloqueia atalhos e exige alinhar o último trecho.",
-      "Divisória central com passagens: impede cruzar entre as salas fora das aberturas."
-    ],
-    "decoyCount": 1
-  },
-  {
-    "name": "Quatro espelhos 2",
-    "hint": "Observe as divisórias e suas aberturas. Planeje a rota antes de confirmar; nem todos os espelhos precisam ser usados.",
-    "sourceAngle": 0,
-    "family": "zigue-zague",
-    "target": {
-      "x": 750,
-      "y": 311,
-      "radius": 22
-    },
-    "objects": [
-      {
-        "type": "mirror",
-        "x": 179,
-        "y": 350,
-        "length": 120,
-        "angle": -3.6206793737238883
-      },
-      {
-        "type": "mirror",
-        "x": 326,
-        "y": 103,
-        "length": 120,
-        "angle": 35.34947557411044
-      },
-      {
-        "type": "mirror",
-        "x": 473,
-        "y": 357,
-        "length": 120,
-        "angle": 43.90278015010912
-      },
-      {
-        "type": "mirror",
-        "x": 620,
-        "y": 101,
-        "length": 120,
-        "angle": 52.05288515986837
-      },
-      {
-        "type": "wall",
-        "x": 710,
-        "y": 100.5673076923077,
-        "length": 201.1346153846154,
-        "angle": 90,
-        "width": 12
-      },
-      {
-        "type": "wall",
-        "x": 710,
-        "y": 375.8173076923077,
-        "length": 168.36538461538464,
-        "angle": 90,
-        "width": 12
-      },
-      {
-        "type": "wall",
-        "x": 112.7085020242915,
-        "y": 230,
-        "length": 225.417004048583,
-        "angle": 0,
-        "width": 12
-      },
-      {
-        "type": "wall",
-        "x": 324.95850202429153,
-        "y": 230,
-        "length": 99.08299595141699,
-        "angle": 0,
-        "width": 12
-      },
-      {
-        "type": "wall",
-        "x": 472.712890625,
-        "y": 230,
-        "length": 96.42578125,
-        "angle": 0,
-        "width": 12
-      },
-      {
-        "type": "wall",
-        "x": 622.8914620535714,
-        "y": 230,
-        "length": 103.93136160714289,
-        "angle": 0,
-        "width": 12
-      },
-      {
-        "type": "mirror",
-        "x": 80,
-        "y": 80,
-        "length": 120,
-        "angle": 0
-      }
-    ],
-    "solution": [
-      -29.620679373723892,
-      0.34947557411044544,
-      -0.09721984989088062,
-      -0.9471148401316161,
-      0
-    ],
-    "requiredBounces": 4,
-    "stage": 6,
-    "stageName": "Quatro espelhos",
-    "difficulty": 52,
-    "wallPurpose": [
-      "Divisória do alvo com abertura: bloqueia atalhos e exige alinhar o último trecho.",
-      "Divisória central com passagens: impede cruzar entre as salas fora das aberturas."
-    ],
-    "decoyCount": 1
-  },
-  {
-    "name": "Quatro espelhos 3",
-    "hint": "Observe as divisórias e suas aberturas. Planeje a rota antes de confirmar; nem todos os espelhos precisam ser usados.",
-    "sourceAngle": 0,
-    "family": "zigue-zague",
-    "target": {
-      "x": 750,
-      "y": 292,
-      "radius": 22
-    },
-    "objects": [
-      {
-        "type": "mirror",
-        "x": 188,
-        "y": 350,
-        "length": 120,
-        "angle": -1.5706223894647167
-      },
-      {
-        "type": "mirror",
-        "x": 332,
-        "y": 109,
-        "length": 120,
-        "angle": 37.702541247074805
-      },
-      {
-        "type": "mirror",
-        "x": 476,
-        "y": 364,
-        "length": 120,
-        "angle": 45.90436459991321
-      },
-      {
-        "type": "mirror",
-        "x": 620,
-        "y": 107,
-        "length": 120,
-        "angle": 52.083292569860646
-      },
-      {
-        "type": "wall",
-        "x": 710,
-        "y": 95.03846153846153,
-        "length": 190.07692307692307,
-        "angle": 90,
-        "width": 12
-      },
-      {
-        "type": "wall",
-        "x": 710,
-        "y": 370.03846153846155,
-        "length": 179.9230769230769,
-        "angle": 90,
-        "width": 12
-      },
-      {
-        "type": "wall",
-        "x": 117.35062240663899,
-        "y": 230,
-        "length": 234.70124481327798,
-        "angle": 0,
-        "width": 12
-      },
-      {
-        "type": "wall",
-        "x": 330.0153282889919,
-        "y": 230,
-        "length": 90.62816695142789,
-        "angle": 0,
-        "width": 12
-      },
-      {
-        "type": "wall",
-        "x": 475.70556191348135,
-        "y": 230,
-        "length": 100.7523002975509,
-        "angle": 0,
-        "width": 12
-      },
-      {
-        "type": "wall",
-        "x": 628.7570722473446,
-        "y": 230,
-        "length": 105.35072037017562,
-        "angle": 0,
-        "width": 12
-      },
-      {
-        "type": "mirror",
-        "x": 80,
-        "y": 80,
-        "length": 120,
-        "angle": 0
-      }
-    ],
-    "solution": [
-      -29.570622389464717,
-      0.7025412470748021,
-      -0.0956354000867864,
-      -2.91670743013937,
-      0
-    ],
-    "requiredBounces": 4,
-    "stage": 6,
-    "stageName": "Quatro espelhos",
-    "difficulty": 53,
-    "wallPurpose": [
-      "Divisória do alvo com abertura: bloqueia atalhos e exige alinhar o último trecho.",
-      "Divisória central com passagens: impede cruzar entre as salas fora das aberturas."
-    ],
-    "decoyCount": 1
-  },
-  {
-    "name": "Quatro espelhos 4",
-    "hint": "Observe as divisórias e suas aberturas. Planeje a rota antes de confirmar; nem todos os espelhos precisam ser usados.",
-    "sourceAngle": 0,
-    "family": "zigue-zague",
-    "target": {
-      "x": 750,
-      "y": 273,
-      "radius": 22
-    },
-    "objects": [
-      {
-        "type": "mirror",
-        "x": 197,
-        "y": 350,
-        "length": 120,
-        "angle": 0.48187826603674466
-      },
-      {
-        "type": "mirror",
-        "x": 338,
-        "y": 115,
-        "length": 120,
-        "angle": 40.05930382817439
-      },
-      {
-        "type": "mirror",
-        "x": 479,
-        "y": 371,
-        "length": 120,
-        "angle": 47.90598429041671
-      },
-      {
-        "type": "mirror",
-        "x": 620,
-        "y": 113,
-        "length": 120,
-        "angle": 51.781629285164314
-      },
-      {
-        "type": "wall",
-        "x": 710,
-        "y": 89.50961538461539,
-        "length": 179.01923076923077,
-        "angle": 90,
-        "width": 12
-      },
-      {
-        "type": "wall",
-        "x": 710,
-        "y": 364.25961538461536,
-        "length": 191.48076923076923,
-        "angle": 90,
-        "width": 12
-      },
-      {
-        "type": "wall",
-        "x": 122,
-        "y": 230,
-        "length": 244,
-        "angle": 0,
-        "width": 12
-      },
-      {
-        "type": "wall",
-        "x": 335.169921875,
-        "y": 230,
-        "length": 82.33984375,
-        "angle": 0,
-        "width": 12
-      },
-      {
-        "type": "wall",
-        "x": 478.69899164244185,
-        "y": 230,
-        "length": 104.71829578488371,
-        "angle": 0,
-        "width": 12
-      },
-      {
-        "type": "wall",
-        "x": 635.5603197674418,
-        "y": 230,
-        "length": 109.00436046511629,
-        "angle": 0,
-        "width": 12
-      },
-      {
-        "type": "mirror",
-        "x": 80,
-        "y": 80,
-        "length": 120,
-        "angle": 0
-      }
-    ],
-    "solution": [
-      -29.51812173396325,
-      1.0593038281744063,
-      -0.09401570958328255,
-      -5.21837071483569,
-      0
-    ],
-    "requiredBounces": 4,
-    "stage": 6,
-    "stageName": "Quatro espelhos",
-    "difficulty": 54,
-    "wallPurpose": [
-      "Divisória do alvo com abertura: bloqueia atalhos e exige alinhar o último trecho.",
-      "Divisória central com passagens: impede cruzar entre as salas fora das aberturas."
-    ],
-    "decoyCount": 1
-  },
-  {
-    "name": "Quatro espelhos 5",
-    "hint": "Observe as divisórias e suas aberturas. Planeje a rota antes de confirmar; nem todos os espelhos precisam ser usados.",
-    "sourceAngle": -68.19859051364818,
-    "family": "entrada-diagonal",
-    "target": {
-      "x": 750,
-      "y": 254,
-      "radius": 22
-    },
-    "objects": [
-      {
-        "type": "mirror",
-        "x": 170,
-        "y": 100,
-        "length": 120,
-        "angle": 27.418826477139163
-      },
-      {
-        "type": "mirror",
-        "x": 320,
-        "y": 350,
-        "length": 120,
-        "angle": 41
-      },
-      {
-        "type": "mirror",
-        "x": 470,
-        "y": 100,
-        "length": 120,
-        "angle": 50
-      },
-      {
-        "type": "mirror",
-        "x": 620,
-        "y": 350,
-        "length": 120,
-        "angle": 70.29590085566969
-      },
-      {
-        "type": "wall",
-        "x": 710,
-        "y": 119.51923076923077,
-        "length": 239.03846153846155,
-        "angle": 90,
-        "width": 12
-      },
-      {
-        "type": "wall",
-        "x": 710,
-        "y": 394.0192307692308,
-        "length": 131.96153846153845,
-        "angle": 90,
-        "width": 12
-      },
-      {
-        "type": "wall",
-        "x": 46.5,
-        "y": 230,
-        "length": 93,
-        "angle": 0,
-        "width": 12
-      },
-      {
-        "type": "wall",
-        "x": 183,
-        "y": 230,
-        "length": 80,
-        "angle": 0,
-        "width": 12
-      },
-      {
-        "type": "wall",
-        "x": 320,
-        "y": 230,
-        "length": 94,
-        "angle": 0,
-        "width": 12
-      },
-      {
-        "type": "wall",
-        "x": 470,
-        "y": 230,
-        "length": 106,
-        "angle": 0,
-        "width": 12
-      },
-      {
-        "type": "wall",
-        "x": 626.5,
-        "y": 230,
-        "length": 107,
-        "angle": 0,
-        "width": 12
-      },
-      {
-        "type": "mirror",
-        "x": 80,
-        "y": 80,
-        "length": 120,
-        "angle": 0
-      }
-    ],
-    "solution": [
-      -4.581173522860846,
-      0,
-      0,
-      11.295900855669688,
-      0
-    ],
-    "requiredBounces": 4,
-    "stage": 6,
-    "stageName": "Quatro espelhos",
-    "difficulty": 55,
-    "wallPurpose": [
-      "Divisória do alvo com abertura: bloqueia atalhos e exige alinhar o último trecho.",
-      "Divisória central com passagens: impede cruzar entre as salas fora das aberturas."
-    ],
-    "decoyCount": 1
-  },
-  {
-    "name": "Quatro espelhos 6",
-    "hint": "Observe as divisórias e suas aberturas. Planeje a rota antes de confirmar; nem todos os espelhos precisam ser usados.",
-    "sourceAngle": -65.11672516845553,
-    "family": "entrada-diagonal",
-    "target": {
-      "x": 750,
-      "y": 330,
-      "radius": 22
-    },
-    "objects": [
-      {
-        "type": "mirror",
-        "x": 179,
-        "y": 115,
-        "length": 120,
-        "angle": 30.42799059629641
-      },
-      {
-        "type": "mirror",
-        "x": 326,
-        "y": 350,
-        "length": 120,
-        "angle": 43
-      },
-      {
-        "type": "mirror",
-        "x": 473,
-        "y": 115,
-        "length": 120,
-        "angle": 52
-      },
-      {
-        "type": "mirror",
-        "x": 620,
-        "y": 350,
-        "length": 120,
-        "angle": 85.61327204924658
-      },
-      {
-        "type": "wall",
-        "x": 710,
-        "y": 145.95192307692307,
-        "length": 291.90384615384613,
-        "angle": 90,
-        "width": 12
-      },
-      {
-        "type": "wall",
-        "x": 710,
-        "y": 420.2019230769231,
-        "length": 79.59615384615387,
-        "angle": 90,
-        "width": 12
-      },
-      {
-        "type": "wall",
-        "x": 50.329787234042556,
-        "y": 230,
-        "length": 100.65957446808511,
-        "angle": 0,
-        "width": 12
-      },
-      {
-        "type": "wall",
-        "x": 188.29787234042553,
-        "y": 230,
-        "length": 75.27659574468083,
-        "angle": 0,
-        "width": 12
-      },
-      {
-        "type": "wall",
-        "x": 326,
-        "y": 230,
-        "length": 100.12765957446811,
-        "angle": 0,
-        "width": 12
-      },
-      {
-        "type": "wall",
-        "x": 473,
-        "y": 230,
-        "length": 93.87234042553195,
-        "angle": 0,
-        "width": 12
-      },
-      {
-        "type": "wall",
-        "x": 624.968085106383,
-        "y": 230,
-        "length": 110.063829787234,
-        "angle": 0,
-        "width": 12
-      },
-      {
-        "type": "mirror",
-        "x": 80,
-        "y": 80,
-        "length": 120,
-        "angle": 0
-      }
-    ],
-    "solution": [
-      -3.5720094037035803,
-      0,
-      0,
-      24.61327204924658,
-      0
-    ],
-    "requiredBounces": 4,
-    "stage": 6,
-    "stageName": "Quatro espelhos",
-    "difficulty": 56,
-    "wallPurpose": [
-      "Divisória do alvo com abertura: bloqueia atalhos e exige alinhar o último trecho.",
-      "Divisória central com passagens: impede cruzar entre as salas fora das aberturas."
-    ],
-    "decoyCount": 1
-  },
-  {
-    "name": "Quatro espelhos 7",
-    "hint": "Observe as divisórias e suas aberturas. Planeje a rota antes de confirmar; nem todos os espelhos precisam ser usados.",
-    "sourceAngle": 0,
-    "family": "serpentina",
-    "target": {
-      "x": 750,
-      "y": 280,
-      "radius": 22
-    },
-    "objects": [
-      {
-        "type": "mirror",
-        "x": 150,
-        "y": 350,
-        "length": 120,
-        "angle": -9
-      },
-      {
-        "type": "mirror",
-        "x": 150,
-        "y": 100,
-        "length": 120,
-        "angle": 0
-      },
-      {
-        "type": "mirror",
-        "x": 300,
-        "y": 100,
-        "length": 120,
-        "angle": -81
-      },
-      {
-        "type": "mirror",
-        "x": 300,
-        "y": 350,
-        "length": 120,
-        "angle": -76.42090728009583
-      },
-      {
-        "type": "wall",
-        "x": 710,
-        "y": 121.11111111111111,
-        "length": 242.22222222222223,
-        "angle": 90,
-        "width": 12
-      },
-      {
-        "type": "wall",
-        "x": 710,
-        "y": 395.1111111111111,
-        "length": 129.77777777777777,
-        "angle": 90,
-        "width": 12
-      },
-      {
-        "type": "wall",
-        "x": 225,
-        "y": 26,
-        "length": 52,
-        "angle": 90,
-        "width": 12
-      },
-      {
-        "type": "wall",
-        "x": 225,
-        "y": 304,
-        "length": 312,
-        "angle": 90,
-        "width": 12
-      },
-      {
-        "type": "wall",
-        "x": 62.5,
-        "y": 230,
-        "length": 125,
-        "angle": 0,
-        "width": 12
-      },
-      {
-        "type": "wall",
-        "x": 225,
-        "y": 230,
-        "length": 100,
-        "angle": 0,
-        "width": 12
-      },
-      {
-        "type": "wall",
-        "x": 502.5,
-        "y": 230,
-        "length": 355,
-        "angle": 0,
-        "width": 12
-      },
-      {
-        "type": "mirror",
-        "x": 80,
-        "y": 80,
-        "length": 120,
-        "angle": 0
-      }
-    ],
-    "solution": [
-      -45,
-      -45,
-      45,
-      40.57909271990416,
-      0
-    ],
-    "requiredBounces": 4,
-    "stage": 6,
-    "stageName": "Quatro espelhos",
-    "difficulty": 57,
-    "wallPurpose": [
-      "Divisória do alvo com abertura: bloqueia atalhos e exige alinhar o último trecho.",
-      "Parede entre colunas: bloqueia o atalho e obriga a passagem pela sala superior.",
-      "Divisória central com passagens: impede cruzar entre as salas fora das aberturas."
-    ],
-    "decoyCount": 1
-  },
-  {
-    "name": "Quatro espelhos 8",
-    "hint": "Observe as divisórias e suas aberturas. Planeje a rota antes de confirmar; nem todos os espelhos precisam ser usados.",
-    "sourceAngle": 0,
-    "family": "serpentina",
-    "target": {
-      "x": 750,
-      "y": 280,
-      "radius": 22
-    },
-    "objects": [
-      {
-        "type": "mirror",
-        "x": 150,
-        "y": 350,
-        "length": 120,
-        "angle": -7
-      },
-      {
-        "type": "mirror",
-        "x": 150,
-        "y": 116,
-        "length": 120,
-        "angle": 2
-      },
-      {
-        "type": "mirror",
-        "x": 300,
-        "y": 116,
-        "length": 120,
-        "angle": -79
-      },
-      {
-        "type": "mirror",
-        "x": 300,
-        "y": 350,
-        "length": 120,
-        "angle": -74.42090728009583
-      },
-      {
-        "type": "wall",
-        "x": 710,
-        "y": 121.23611111111111,
-        "length": 242.47222222222223,
-        "angle": 90,
-        "width": 12
-      },
-      {
-        "type": "wall",
-        "x": 710,
-        "y": 394.9861111111111,
-        "length": 130.02777777777777,
-        "angle": 90,
-        "width": 12
-      },
-      {
-        "type": "wall",
-        "x": 225,
-        "y": 34,
-        "length": 68,
-        "angle": 90,
-        "width": 12
-      },
-      {
-        "type": "wall",
-        "x": 225,
-        "y": 312,
-        "length": 296,
-        "angle": 90,
-        "width": 12
-      },
-      {
-        "type": "wall",
-        "x": 62.5,
-        "y": 230,
-        "length": 125,
-        "angle": 0,
-        "width": 12
-      },
-      {
-        "type": "wall",
-        "x": 225,
-        "y": 230,
-        "length": 100,
-        "angle": 0,
-        "width": 12
-      },
-      {
-        "type": "wall",
-        "x": 502.5,
-        "y": 230,
-        "length": 355,
-        "angle": 0,
-        "width": 12
-      },
-      {
-        "type": "mirror",
-        "x": 80,
-        "y": 80,
-        "length": 120,
-        "angle": 0
-      }
-    ],
-    "solution": [
-      -45,
-      -45,
-      45,
-      40.57909271990416,
-      0
-    ],
-    "requiredBounces": 4,
-    "stage": 6,
-    "stageName": "Quatro espelhos",
-    "difficulty": 58,
-    "wallPurpose": [
-      "Divisória do alvo com abertura: bloqueia atalhos e exige alinhar o último trecho.",
-      "Parede entre colunas: bloqueia o atalho e obriga a passagem pela sala superior.",
-      "Divisória central com passagens: impede cruzar entre as salas fora das aberturas."
-    ],
-    "decoyCount": 1
-  },
-  {
-    "name": "Quatro espelhos 9",
-    "hint": "Observe as divisórias e suas aberturas. Planeje a rota antes de confirmar; nem todos os espelhos precisam ser usados.",
-    "sourceAngle": 0,
-    "family": "serpentina-obliqua",
-    "target": {
-      "x": 750,
-      "y": 280,
-      "radius": 22
-    },
-    "objects": [
-      {
-        "type": "mirror",
-        "x": 150,
-        "y": 350,
-        "length": 120,
-        "angle": -2.48546320910728
-      },
-      {
-        "type": "mirror",
-        "x": 172,
-        "y": 100,
-        "length": 120,
-        "angle": 6.51453679089272
-      },
-      {
-        "type": "mirror",
-        "x": 300,
-        "y": 100,
-        "length": 120,
-        "angle": -79.51453679089272
-      },
-      {
-        "type": "mirror",
-        "x": 322,
-        "y": 350,
-        "length": 120,
-        "angle": -75.15882055772482
-      },
-      {
-        "type": "wall",
-        "x": 710,
-        "y": 121.52102803738319,
-        "length": 243.04205607476638,
-        "angle": 90,
-        "width": 12
-      },
-      {
-        "type": "wall",
-        "x": 710,
-        "y": 395.0210280373832,
-        "length": 129.95794392523362,
-        "angle": 90,
-        "width": 12
-      },
-      {
-        "type": "wall",
-        "x": 225,
-        "y": 26,
-        "length": 52,
-        "angle": 90,
-        "width": 12
-      },
-      {
-        "type": "wall",
-        "x": 225,
-        "y": 304,
-        "length": 312,
-        "angle": 90,
-        "width": 12
-      },
-      {
-        "type": "wall",
-        "x": 67.78,
-        "y": 230,
-        "length": 135.56,
-        "angle": 0,
-        "width": 12
-      },
-      {
-        "type": "wall",
-        "x": 236,
-        "y": 230,
-        "length": 100.88,
-        "angle": 0,
-        "width": 12
-      },
-      {
-        "type": "wall",
-        "x": 508.22,
-        "y": 230,
-        "length": 343.56,
-        "angle": 0,
-        "width": 12
-      },
-      {
-        "type": "mirror",
-        "x": 80,
-        "y": 80,
-        "length": 120,
-        "angle": 0
-      }
-    ],
-    "solution": [
-      -42.48546320910727,
-      -42.48546320910727,
-      42.48546320910727,
-      37.84117944227517,
-      0
-    ],
-    "requiredBounces": 4,
-    "stage": 6,
-    "stageName": "Quatro espelhos",
-    "difficulty": 59,
-    "wallPurpose": [
-      "Divisória do alvo com abertura: bloqueia atalhos e exige alinhar o último trecho.",
-      "Parede entre colunas: bloqueia o atalho e obriga a passagem pela sala superior.",
-      "Divisória central com passagens: impede cruzar entre as salas fora das aberturas."
-    ],
-    "decoyCount": 1
-  },
-  {
-    "name": "Quatro espelhos 10",
-    "hint": "Observe as divisórias e suas aberturas. Planeje a rota antes de confirmar; nem todos os espelhos precisam ser usados.",
-    "sourceAngle": 0,
-    "family": "serpentina-obliqua",
-    "target": {
-      "x": 750,
-      "y": 280,
-      "radius": 22
-    },
-    "objects": [
-      {
-        "type": "mirror",
-        "x": 150,
-        "y": 350,
-        "length": 120,
-        "angle": -0.3145026522321359
-      },
-      {
-        "type": "mirror",
-        "x": 172,
-        "y": 116,
-        "length": 120,
-        "angle": 8.685497347767864
-      },
-      {
-        "type": "mirror",
-        "x": 300,
-        "y": 116,
-        "length": 120,
-        "angle": -77.68549734776786
-      },
-      {
-        "type": "mirror",
-        "x": 322,
-        "y": 350,
-        "length": 120,
-        "angle": -73.32978111459997
-      },
-      {
-        "type": "wall",
-        "x": 710,
-        "y": 121.64602803738319,
-        "length": 243.29205607476638,
-        "angle": 90,
-        "width": 12
-      },
-      {
-        "type": "wall",
-        "x": 710,
-        "y": 394.8960280373832,
-        "length": 130.20794392523362,
-        "angle": 90,
-        "width": 12
-      },
-      {
-        "type": "wall",
-        "x": 225,
-        "y": 34,
-        "length": 68,
-        "angle": 90,
-        "width": 12
-      },
-      {
-        "type": "wall",
-        "x": 225,
-        "y": 312,
-        "length": 296,
-        "angle": 90,
-        "width": 12
-      },
-      {
-        "type": "wall",
-        "x": 68.14102564102564,
-        "y": 230,
-        "length": 136.28205128205127,
-        "angle": 0,
-        "width": 12
-      },
-      {
-        "type": "wall",
-        "x": 236,
-        "y": 230,
-        "length": 99.43589743589746,
-        "angle": 0,
-        "width": 12
-      },
-      {
-        "type": "wall",
-        "x": 507.85897435897436,
-        "y": 230,
-        "length": 344.28205128205127,
-        "angle": 0,
-        "width": 12
-      },
-      {
-        "type": "mirror",
-        "x": 80,
-        "y": 80,
-        "length": 120,
-        "angle": 0
-      }
-    ],
-    "solution": [
-      -42.31450265223214,
-      -42.31450265223214,
-      42.31450265223214,
-      37.67021888540004,
-      0
-    ],
-    "requiredBounces": 4,
-    "stage": 6,
-    "stageName": "Quatro espelhos",
-    "difficulty": 60,
-    "wallPurpose": [
-      "Divisória do alvo com abertura: bloqueia atalhos e exige alinhar o último trecho.",
-      "Parede entre colunas: bloqueia o atalho e obriga a passagem pela sala superior.",
-      "Divisória central com passagens: impede cruzar entre as salas fora das aberturas."
-    ],
-    "decoyCount": 1
-  },
-  {
-    "name": "Caminhos alternados 1",
-    "hint": "Observe as divisórias e suas aberturas. Planeje a rota antes de confirmar; nem todos os espelhos precisam ser usados.",
-    "sourceAngle": 0,
-    "family": "zigue-zague",
-    "target": {
-      "x": 750,
-      "y": 90,
-      "radius": 22
-    },
-    "objects": [
-      {
-        "type": "mirror",
-        "x": 170,
-        "y": 350,
-        "length": 120,
-        "angle": -9.013502874383903
-      },
-      {
-        "type": "mirror",
-        "x": 282.5,
-        "y": 97,
-        "length": 120,
-        "angle": 33
-      },
-      {
-        "type": "mirror",
-        "x": 395,
-        "y": 350,
-        "length": 120,
-        "angle": 41.91647463361278
-      },
-      {
-        "type": "mirror",
-        "x": 507.5,
-        "y": 95,
-        "length": 120,
-        "angle": 51
-      },
-      {
-        "type": "mirror",
-        "x": 620,
-        "y": 350,
-        "length": 120,
-        "angle": 61.37955382931014
-      },
-      {
-        "type": "wall",
-        "x": 710,
-        "y": 63.5,
-        "length": 127,
-        "angle": 90,
-        "width": 12
-      },
-      {
-        "type": "wall",
-        "x": 710,
-        "y": 336.5,
-        "length": 247,
-        "angle": 90,
-        "width": 12
-      },
-      {
-        "type": "wall",
-        "x": 99.1798418972332,
-        "y": 230,
-        "length": 198.3596837944664,
-        "angle": 0,
-        "width": 12
-      },
-      {
-        "type": "wall",
-        "x": 282.5,
-        "y": 230,
-        "length": 68.28063241106722,
-        "angle": 0,
-        "width": 12
-      },
-      {
-        "type": "wall",
-        "x": 394.7907463380609,
-        "y": 230,
-        "length": 56.30086026505461,
-        "angle": 0,
-        "width": 12
-      },
-      {
-        "type": "wall",
-        "x": 507.5,
-        "y": 230,
-        "length": 69.11764705882348,
-        "angle": 0,
-        "width": 12
-      },
-      {
-        "type": "wall",
-        "x": 623.5294117647059,
-        "y": 230,
-        "length": 62.94117647058829,
-        "angle": 0,
-        "width": 12
-      },
-      {
-        "type": "mirror",
-        "x": 80,
-        "y": 80,
-        "length": 120,
-        "angle": 0
-      }
-    ],
-    "solution": [
-      -33.0135028743839,
-      0,
-      -0.08352536638723947,
-      0,
-      1.379553829310143,
-      0
-    ],
-    "requiredBounces": 5,
-    "stage": 7,
-    "stageName": "Caminhos alternados",
-    "difficulty": 61,
-    "wallPurpose": [
-      "Divisória do alvo com abertura: bloqueia atalhos e exige alinhar o último trecho.",
-      "Divisória central com passagens: impede cruzar entre as salas fora das aberturas."
-    ],
-    "decoyCount": 1
-  },
-  {
-    "name": "Caminhos alternados 2",
-    "hint": "Observe as divisórias e suas aberturas. Planeje a rota antes de confirmar; nem todos os espelhos precisam ser usados.",
-    "sourceAngle": 0,
-    "family": "zigue-zague",
-    "target": {
-      "x": 750,
-      "y": 108,
-      "radius": 22
-    },
-    "objects": [
-      {
-        "type": "mirror",
-        "x": 179,
-        "y": 350,
-        "length": 120,
-        "angle": -6.973052273907328
-      },
-      {
-        "type": "mirror",
-        "x": 289.25,
-        "y": 103,
-        "length": 120,
-        "angle": 35.295197254199834
-      },
-      {
-        "type": "mirror",
-        "x": 399.5,
-        "y": 357,
-        "length": 120,
-        "angle": 43.918153417522035
-      },
-      {
-        "type": "mirror",
-        "x": 509.75,
-        "y": 101,
-        "length": 120,
-        "angle": 53
-      },
-      {
-        "type": "mirror",
-        "x": 620,
-        "y": 357,
-        "length": 120,
-        "angle": 64.13436463780425
-      },
-      {
-        "type": "wall",
-        "x": 710,
-        "y": 70.9326923076923,
-        "length": 141.8653846153846,
-        "angle": 90,
-        "width": 12
-      },
-      {
-        "type": "wall",
-        "x": 710,
-        "y": 343.6826923076923,
-        "length": 232.6346153846154,
-        "angle": 90,
-        "width": 12
-      },
-      {
-        "type": "wall",
-        "x": 103.78137651821862,
-        "y": 230,
-        "length": 207.56275303643724,
-        "angle": 0,
-        "width": 12
-      },
-      {
-        "type": "wall",
-        "x": 288.4688765182186,
-        "y": 230,
-        "length": 61.81224696356276,
-        "angle": 0,
-        "width": 12
-      },
-      {
-        "type": "wall",
-        "x": 399.28466796875,
-        "y": 230,
-        "length": 59.8193359375,
-        "angle": 0,
-        "width": 12
-      },
-      {
-        "type": "wall",
-        "x": 509.75,
-        "y": 230,
-        "length": 61.111328125,
-        "angle": 0,
-        "width": 12
-      },
-      {
-        "type": "wall",
-        "x": 625.8054424730171,
-        "y": 230,
-        "length": 70.99955682103416,
-        "angle": 0,
-        "width": 12
-      },
-      {
-        "type": "mirror",
-        "x": 80,
-        "y": 80,
-        "length": 120,
-        "angle": 0
-      }
-    ],
-    "solution": [
-      -32.97305227390733,
-      0.2951972541998326,
-      -0.08184658247796459,
-      0,
-      2.134364637804248,
-      0
-    ],
-    "requiredBounces": 5,
-    "stage": 7,
-    "stageName": "Caminhos alternados",
-    "difficulty": 62,
-    "wallPurpose": [
-      "Divisória do alvo com abertura: bloqueia atalhos e exige alinhar o último trecho.",
-      "Divisória central com passagens: impede cruzar entre as salas fora das aberturas."
-    ],
-    "decoyCount": 1
-  },
-  {
-    "name": "Caminhos alternados 3",
-    "hint": "Observe as divisórias e suas aberturas. Planeje a rota antes de confirmar; nem todos os espelhos precisam ser usados.",
-    "sourceAngle": 0,
-    "family": "zigue-zague",
-    "target": {
-      "x": 750,
-      "y": 126,
-      "radius": 22
-    },
-    "objects": [
-      {
-        "type": "mirror",
-        "x": 188,
-        "y": 350,
-        "length": 120,
-        "angle": -4.930642327262177
-      },
-      {
-        "type": "mirror",
-        "x": 296,
-        "y": 109,
-        "length": 120,
-        "angle": 37.59231440392358
-      },
-      {
-        "type": "mirror",
-        "x": 404,
-        "y": 364,
-        "length": 120,
-        "angle": 45.91984445342763
-      },
-      {
-        "type": "mirror",
-        "x": 512,
-        "y": 107,
-        "length": 120,
-        "angle": 55
-      },
-      {
-        "type": "mirror",
-        "x": 620,
-        "y": 364,
-        "length": 120,
-        "angle": 66.92520372724951
-      },
-      {
-        "type": "wall",
-        "x": 710,
-        "y": 78.36538461538461,
-        "length": 156.73076923076923,
-        "angle": 90,
-        "width": 12
-      },
-      {
-        "type": "wall",
-        "x": 710,
-        "y": 350.86538461538464,
-        "length": 218.26923076923077,
-        "angle": 90,
-        "width": 12
-      },
-      {
-        "type": "wall",
-        "x": 108.38796680497926,
-        "y": 230,
-        "length": 216.7759336099585,
-        "angle": 0,
-        "width": 12
-      },
-      {
-        "type": "wall",
-        "x": 294.511496216744,
-        "y": 230,
-        "length": 55.47112521357087,
-        "angle": 0,
-        "width": 12
-      },
-      {
-        "type": "wall",
-        "x": 403.77917143511104,
-        "y": 230,
-        "length": 63.06422522316319,
-        "angle": 0,
-        "width": 12
-      },
-      {
-        "type": "wall",
-        "x": 512,
-        "y": 230,
-        "length": 53.37743190661473,
-        "angle": 0,
-        "width": 12
-      },
-      {
-        "type": "wall",
-        "x": 628.4409966321159,
-        "y": 230,
-        "length": 79.50456135761704,
-        "angle": 0,
-        "width": 12
-      },
-      {
-        "type": "mirror",
-        "x": 80,
-        "y": 80,
-        "length": 120,
-        "angle": 0
-      }
-    ],
-    "solution": [
-      -32.930642327262184,
-      0.5923144039235737,
-      -0.08015554657236863,
-      0,
-      2.9252037272495084,
-      0
-    ],
-    "requiredBounces": 5,
-    "stage": 7,
-    "stageName": "Caminhos alternados",
-    "difficulty": 63,
-    "wallPurpose": [
-      "Divisória do alvo com abertura: bloqueia atalhos e exige alinhar o último trecho.",
-      "Divisória central com passagens: impede cruzar entre as salas fora das aberturas."
-    ],
-    "decoyCount": 1
-  },
-  {
-    "name": "Caminhos alternados 4",
-    "hint": "Observe as divisórias e suas aberturas. Planeje a rota antes de confirmar; nem todos os espelhos precisam ser usados.",
-    "sourceAngle": 0,
-    "family": "zigue-zague",
-    "target": {
-      "x": 750,
-      "y": 144,
-      "radius": 22
-    },
-    "objects": [
-      {
-        "type": "mirror",
-        "x": 197,
-        "y": 350,
-        "length": 120,
-        "angle": -2.8861273410229273
-      },
-      {
-        "type": "mirror",
-        "x": 302.75,
-        "y": 115,
-        "length": 120,
-        "angle": 39.891456898701875
-      },
-      {
-        "type": "mirror",
-        "x": 408.5,
-        "y": 371,
-        "length": 120,
-        "angle": 47.9215469353816
-      },
-      {
-        "type": "mirror",
-        "x": 514.25,
-        "y": 113,
-        "length": 120,
-        "angle": 57
-      },
-      {
-        "type": "mirror",
-        "x": 620,
-        "y": 371,
-        "length": 120,
-        "angle": 69.75564521802892
-      },
-      {
-        "type": "wall",
-        "x": 710,
-        "y": 85.79807692307692,
-        "length": 171.59615384615384,
-        "angle": 90,
-        "width": 12
-      },
-      {
-        "type": "wall",
-        "x": 710,
-        "y": 358.0480769230769,
-        "length": 203.9038461538462,
-        "angle": 90,
-        "width": 12
-      },
-      {
-        "type": "wall",
-        "x": 113,
-        "y": 230,
-        "length": 226,
-        "angle": 0,
-        "width": 12
-      },
-      {
-        "type": "wall",
-        "x": 300.62744140625,
-        "y": 230,
-        "length": 49.2548828125,
-        "angle": 0,
-        "width": 12
-      },
-      {
-        "type": "wall",
-        "x": 408.2742437318314,
-        "y": 230,
-        "length": 66.03872183866281,
-        "angle": 0,
-        "width": 12
-      },
-      {
-        "type": "wall",
-        "x": 514.25,
-        "y": 230,
-        "length": 45.91279069767438,
-        "angle": 0,
-        "width": 12
-      },
-      {
-        "type": "wall",
-        "x": 631.4776470136256,
-        "y": 230,
-        "length": 88.5425033295769,
-        "angle": 0,
-        "width": 12
-      },
-      {
-        "type": "mirror",
-        "x": 80,
-        "y": 80,
-        "length": 120,
-        "angle": 0
-      }
-    ],
-    "solution": [
-      -32.88612734102292,
-      0.8914568987018684,
-      -0.07845306461839692,
-      0,
-      3.755645218028922,
-      0
-    ],
-    "requiredBounces": 5,
-    "stage": 7,
-    "stageName": "Caminhos alternados",
-    "difficulty": 64,
-    "wallPurpose": [
-      "Divisória do alvo com abertura: bloqueia atalhos e exige alinhar o último trecho.",
-      "Divisória central com passagens: impede cruzar entre as salas fora das aberturas."
-    ],
-    "decoyCount": 1
-  },
-  {
-    "name": "Caminhos alternados 5",
-    "hint": "Observe as divisórias e suas aberturas. Planeje a rota antes de confirmar; nem todos os espelhos precisam ser usados.",
-    "sourceAngle": -68.19859051364818,
-    "family": "entrada-diagonal",
-    "target": {
-      "x": 750,
-      "y": 162,
-      "radius": 22
-    },
-    "objects": [
-      {
-        "type": "mirror",
-        "x": 170,
-        "y": 100,
-        "length": 120,
-        "angle": 30.78683208419882
-      },
-      {
-        "type": "mirror",
-        "x": 282.5,
-        "y": 350,
-        "length": 120,
-        "angle": 41
-      },
-      {
-        "type": "mirror",
-        "x": 395,
-        "y": 100,
-        "length": 120,
-        "angle": 50
-      },
-      {
-        "type": "mirror",
-        "x": 507.5,
-        "y": 350,
-        "length": 120,
-        "angle": 59
-      },
-      {
-        "type": "mirror",
-        "x": 620,
-        "y": 100,
-        "length": 120,
-        "angle": 47.862648405645984
-      },
-      {
-        "type": "wall",
-        "x": 710,
-        "y": 50.46153846153845,
-        "length": 100.9230769230769,
-        "angle": 90,
-        "width": 12
-      },
-      {
-        "type": "wall",
-        "x": 710,
-        "y": 322.46153846153845,
-        "length": 275.0769230769231,
-        "angle": 90,
-        "width": 12
-      },
-      {
-        "type": "wall",
-        "x": 46.5,
-        "y": 230,
-        "length": 93,
-        "angle": 0,
-        "width": 12
-      },
-      {
-        "type": "wall",
-        "x": 173.25,
-        "y": 230,
-        "length": 60.5,
-        "angle": 0,
-        "width": 12
-      },
-      {
-        "type": "wall",
-        "x": 282.5,
-        "y": 230,
-        "length": 58,
-        "angle": 0,
-        "width": 12
-      },
-      {
-        "type": "wall",
-        "x": 395,
-        "y": 230,
-        "length": 67,
-        "angle": 0,
-        "width": 12
-      },
-      {
-        "type": "wall",
-        "x": 507.5,
-        "y": 230,
-        "length": 58,
-        "angle": 0,
-        "width": 12
-      },
-      {
-        "type": "wall",
-        "x": 633.25,
-        "y": 230,
-        "length": 93.5,
-        "angle": 0,
-        "width": 12
-      },
-      {
-        "type": "mirror",
-        "x": 80,
-        "y": 80,
-        "length": 120,
-        "angle": 0
-      }
-    ],
-    "solution": [
-      -1.2131679158011783,
-      0,
-      0,
-      0,
-      -20.137351594354016,
-      0
-    ],
-    "requiredBounces": 5,
-    "stage": 7,
-    "stageName": "Caminhos alternados",
-    "difficulty": 65,
-    "wallPurpose": [
-      "Divisória do alvo com abertura: bloqueia atalhos e exige alinhar o último trecho.",
-      "Divisória central com passagens: impede cruzar entre as salas fora das aberturas."
-    ],
-    "decoyCount": 1
-  },
-  {
-    "name": "Caminhos alternados 6",
-    "hint": "Observe as divisórias e suas aberturas. Planeje a rota antes de confirmar; nem todos os espelhos precisam ser usados.",
-    "sourceAngle": -65.11672516845553,
-    "family": "entrada-diagonal",
-    "target": {
-      "x": 750,
-      "y": 90,
-      "radius": 22
-    },
-    "objects": [
-      {
-        "type": "mirror",
-        "x": 179,
-        "y": 115,
-        "length": 120,
-        "angle": 33.87485153926697
-      },
-      {
-        "type": "mirror",
-        "x": 289.25,
-        "y": 350,
-        "length": 120,
-        "angle": 43
-      },
-      {
-        "type": "mirror",
-        "x": 399.5,
-        "y": 115,
-        "length": 120,
-        "angle": 52
-      },
-      {
-        "type": "mirror",
-        "x": 509.75,
-        "y": 350,
-        "length": 120,
-        "angle": 61
-      },
-      {
-        "type": "mirror",
-        "x": 620,
-        "y": 115,
-        "length": 120,
-        "angle": 32.1240223491759
-      },
-      {
-        "type": "wall",
-        "x": 710,
-        "y": 27.971153846153847,
-        "length": 55.94230769230769,
-        "angle": 90,
-        "width": 12
-      },
-      {
-        "type": "wall",
-        "x": 710,
-        "y": 299.7211538461538,
-        "length": 320.5576923076923,
-        "angle": 90,
-        "width": 12
-      },
-      {
-        "type": "wall",
-        "x": 50.329787234042556,
-        "y": 230,
-        "length": 100.65957446808511,
-        "angle": 0,
-        "width": 12
-      },
-      {
-        "type": "wall",
-        "x": 179.30585106382978,
-        "y": 230,
-        "length": 57.29255319148936,
-        "angle": 0,
-        "width": 12
-      },
-      {
-        "type": "wall",
-        "x": 289.25,
-        "y": 230,
-        "length": 62.59574468085111,
-        "angle": 0,
-        "width": 12
-      },
-      {
-        "type": "wall",
-        "x": 399.5,
-        "y": 230,
-        "length": 57.90425531914889,
-        "angle": 0,
-        "width": 12
-      },
-      {
-        "type": "wall",
-        "x": 509.75,
-        "y": 230,
-        "length": 62.59574468085111,
-        "angle": 0,
-        "width": 12
-      },
-      {
-        "type": "wall",
-        "x": 635.5239361702128,
-        "y": 230,
-        "length": 88.95212765957444,
-        "angle": 0,
-        "width": 12
-      },
-      {
-        "type": "mirror",
-        "x": 80,
-        "y": 80,
-        "length": 120,
-        "angle": 0
-      }
-    ],
-    "solution": [
-      -0.12514846073303504,
-      0,
-      0,
-      0,
-      -37.8759776508241,
-      0
-    ],
-    "requiredBounces": 5,
-    "stage": 7,
-    "stageName": "Caminhos alternados",
-    "difficulty": 66,
-    "wallPurpose": [
-      "Divisória do alvo com abertura: bloqueia atalhos e exige alinhar o último trecho.",
-      "Divisória central com passagens: impede cruzar entre as salas fora das aberturas."
-    ],
-    "decoyCount": 1
-  },
-  {
-    "name": "Caminhos alternados 7",
-    "hint": "Observe as divisórias e suas aberturas. Planeje a rota antes de confirmar; nem todos os espelhos precisam ser usados.",
-    "sourceAngle": 0,
-    "family": "serpentina",
-    "target": {
-      "x": 750,
-      "y": 280,
-      "radius": 22
-    },
-    "objects": [
-      {
-        "type": "mirror",
-        "x": 150,
-        "y": 350,
-        "length": 120,
-        "angle": -9
-      },
-      {
-        "type": "mirror",
-        "x": 150,
-        "y": 100,
-        "length": 120,
-        "angle": 0
-      },
-      {
-        "type": "mirror",
-        "x": 300,
-        "y": 100,
-        "length": 120,
-        "angle": -81
-      },
-      {
-        "type": "mirror",
-        "x": 300,
-        "y": 350,
-        "length": 120,
-        "angle": -72
-      },
-      {
-        "type": "mirror",
-        "x": 450,
-        "y": 350,
-        "length": 120,
-        "angle": 65.43298884680183
-      },
-      {
-        "type": "wall",
-        "x": 710,
-        "y": 123.91666666666666,
-        "length": 247.83333333333331,
-        "angle": 90,
-        "width": 12
-      },
-      {
-        "type": "wall",
-        "x": 710,
-        "y": 395.41666666666663,
-        "length": 129.16666666666669,
-        "angle": 90,
-        "width": 12
-      },
-      {
-        "type": "wall",
-        "x": 225,
-        "y": 26,
-        "length": 52,
-        "angle": 90,
-        "width": 12
-      },
-      {
-        "type": "wall",
-        "x": 225,
-        "y": 304,
-        "length": 312,
-        "angle": 90,
-        "width": 12
-      },
-      {
-        "type": "wall",
-        "x": 62.5,
-        "y": 230,
-        "length": 125,
-        "angle": 0,
-        "width": 12
-      },
-      {
-        "type": "wall",
-        "x": 225,
-        "y": 230,
-        "length": 100,
-        "angle": 0,
-        "width": 12
-      },
-      {
-        "type": "wall",
-        "x": 502.5,
-        "y": 230,
-        "length": 355,
-        "angle": 0,
-        "width": 12
-      },
-      {
-        "type": "mirror",
-        "x": 80,
-        "y": 80,
-        "length": 120,
-        "angle": 0
-      }
-    ],
-    "solution": [
-      -45,
-      -45,
-      45,
-      45,
-      -6.567011153198162,
-      0
-    ],
-    "requiredBounces": 5,
-    "stage": 7,
-    "stageName": "Caminhos alternados",
-    "difficulty": 67,
-    "wallPurpose": [
-      "Divisória do alvo com abertura: bloqueia atalhos e exige alinhar o último trecho.",
-      "Parede entre colunas: bloqueia o atalho e obriga a passagem pela sala superior.",
-      "Divisória central com passagens: impede cruzar entre as salas fora das aberturas."
-    ],
-    "decoyCount": 1
-  },
-  {
-    "name": "Caminhos alternados 8",
-    "hint": "Observe as divisórias e suas aberturas. Planeje a rota antes de confirmar; nem todos os espelhos precisam ser usados.",
-    "sourceAngle": 0,
-    "family": "serpentina",
-    "target": {
-      "x": 750,
-      "y": 280,
-      "radius": 22
-    },
-    "objects": [
-      {
-        "type": "mirror",
-        "x": 150,
-        "y": 350,
-        "length": 120,
-        "angle": -7
-      },
-      {
-        "type": "mirror",
-        "x": 150,
-        "y": 116,
-        "length": 120,
-        "angle": 2
-      },
-      {
-        "type": "mirror",
-        "x": 300,
-        "y": 116,
-        "length": 120,
-        "angle": -79
-      },
-      {
-        "type": "mirror",
-        "x": 300,
-        "y": 350,
-        "length": 120,
-        "angle": -70
-      },
-      {
-        "type": "mirror",
-        "x": 450,
-        "y": 350,
-        "length": 120,
-        "angle": 67.43298884680183
-      },
-      {
-        "type": "wall",
-        "x": 710,
-        "y": 124.04166666666666,
-        "length": 248.08333333333331,
-        "angle": 90,
-        "width": 12
-      },
-      {
-        "type": "wall",
-        "x": 710,
-        "y": 395.29166666666663,
-        "length": 129.41666666666669,
-        "angle": 90,
-        "width": 12
-      },
-      {
-        "type": "wall",
-        "x": 225,
-        "y": 34,
-        "length": 68,
-        "angle": 90,
-        "width": 12
-      },
-      {
-        "type": "wall",
-        "x": 225,
-        "y": 312,
-        "length": 296,
-        "angle": 90,
-        "width": 12
-      },
-      {
-        "type": "wall",
-        "x": 62.5,
-        "y": 230,
-        "length": 125,
-        "angle": 0,
-        "width": 12
-      },
-      {
-        "type": "wall",
-        "x": 225,
-        "y": 230,
-        "length": 100,
-        "angle": 0,
-        "width": 12
-      },
-      {
-        "type": "wall",
-        "x": 502.5,
-        "y": 230,
-        "length": 355,
-        "angle": 0,
-        "width": 12
-      },
-      {
-        "type": "mirror",
-        "x": 80,
-        "y": 80,
-        "length": 120,
-        "angle": 0
-      }
-    ],
-    "solution": [
-      -45,
-      -45,
-      45,
-      45,
-      -6.567011153198162,
-      0
-    ],
-    "requiredBounces": 5,
-    "stage": 7,
-    "stageName": "Caminhos alternados",
-    "difficulty": 68,
-    "wallPurpose": [
-      "Divisória do alvo com abertura: bloqueia atalhos e exige alinhar o último trecho.",
-      "Parede entre colunas: bloqueia o atalho e obriga a passagem pela sala superior.",
-      "Divisória central com passagens: impede cruzar entre as salas fora das aberturas."
-    ],
-    "decoyCount": 1
-  },
-  {
-    "name": "Caminhos alternados 9",
-    "hint": "Observe as divisórias e suas aberturas. Planeje a rota antes de confirmar; nem todos os espelhos precisam ser usados.",
-    "sourceAngle": 0,
-    "family": "serpentina-obliqua",
-    "target": {
-      "x": 750,
-      "y": 280,
-      "radius": 22
-    },
-    "objects": [
-      {
-        "type": "mirror",
-        "x": 150,
-        "y": 350,
-        "length": 120,
-        "angle": -2.48546320910728
-      },
-      {
-        "type": "mirror",
-        "x": 172,
-        "y": 100,
-        "length": 120,
-        "angle": 6.51453679089272
-      },
-      {
-        "type": "mirror",
-        "x": 300,
-        "y": 100,
-        "length": 120,
-        "angle": -79.51453679089272
-      },
-      {
-        "type": "mirror",
-        "x": 322,
-        "y": 350,
-        "length": 120,
-        "angle": -70.51453679089272
-      },
-      {
-        "type": "mirror",
-        "x": 450,
-        "y": 350,
-        "length": 120,
-        "angle": 69.43298884680183
-      },
-      {
-        "type": "wall",
-        "x": 710,
-        "y": 124.16666666666666,
-        "length": 248.33333333333331,
-        "angle": 90,
-        "width": 12
-      },
-      {
-        "type": "wall",
-        "x": 710,
-        "y": 395.16666666666663,
-        "length": 129.66666666666669,
-        "angle": 90,
-        "width": 12
-      },
-      {
-        "type": "wall",
-        "x": 225,
-        "y": 26,
-        "length": 52,
-        "angle": 90,
-        "width": 12
-      },
-      {
-        "type": "wall",
-        "x": 225,
-        "y": 304,
-        "length": 312,
-        "angle": 90,
-        "width": 12
-      },
-      {
-        "type": "wall",
-        "x": 67.78,
-        "y": 230,
-        "length": 135.56,
-        "angle": 0,
-        "width": 12
-      },
-      {
-        "type": "wall",
-        "x": 236,
-        "y": 230,
-        "length": 100.88,
-        "angle": 0,
-        "width": 12
-      },
-      {
-        "type": "wall",
-        "x": 508.22,
-        "y": 230,
-        "length": 343.56,
-        "angle": 0,
-        "width": 12
-      },
-      {
-        "type": "mirror",
-        "x": 80,
-        "y": 80,
-        "length": 120,
-        "angle": 0
-      }
-    ],
-    "solution": [
-      -42.48546320910727,
-      -42.48546320910727,
-      42.48546320910727,
-      42.48546320910727,
-      -6.567011153198162,
-      0
-    ],
-    "requiredBounces": 5,
-    "stage": 7,
-    "stageName": "Caminhos alternados",
-    "difficulty": 69,
-    "wallPurpose": [
-      "Divisória do alvo com abertura: bloqueia atalhos e exige alinhar o último trecho.",
-      "Parede entre colunas: bloqueia o atalho e obriga a passagem pela sala superior.",
-      "Divisória central com passagens: impede cruzar entre as salas fora das aberturas."
-    ],
-    "decoyCount": 1
-  },
-  {
-    "name": "Caminhos alternados 10",
-    "hint": "Observe as divisórias e suas aberturas. Planeje a rota antes de confirmar; nem todos os espelhos precisam ser usados.",
-    "sourceAngle": 0,
-    "family": "serpentina-obliqua",
-    "target": {
-      "x": 750,
-      "y": 280,
-      "radius": 22
-    },
-    "objects": [
-      {
-        "type": "mirror",
-        "x": 150,
-        "y": 350,
-        "length": 120,
-        "angle": -0.3145026522321359
-      },
-      {
-        "type": "mirror",
-        "x": 172,
-        "y": 116,
-        "length": 120,
-        "angle": 8.685497347767864
-      },
-      {
-        "type": "mirror",
-        "x": 300,
-        "y": 116,
-        "length": 120,
-        "angle": -77.68549734776786
-      },
-      {
-        "type": "mirror",
-        "x": 322,
-        "y": 350,
-        "length": 120,
-        "angle": -68.68549734776786
-      },
-      {
-        "type": "mirror",
-        "x": 450,
-        "y": 350,
-        "length": 120,
-        "angle": 71.43298884680183
-      },
-      {
-        "type": "wall",
-        "x": 710,
-        "y": 124.29166666666666,
-        "length": 248.58333333333331,
-        "angle": 90,
-        "width": 12
-      },
-      {
-        "type": "wall",
-        "x": 710,
-        "y": 395.04166666666663,
-        "length": 129.91666666666669,
-        "angle": 90,
-        "width": 12
-      },
-      {
-        "type": "wall",
-        "x": 225,
-        "y": 34,
-        "length": 68,
-        "angle": 90,
-        "width": 12
-      },
-      {
-        "type": "wall",
-        "x": 225,
-        "y": 312,
-        "length": 296,
-        "angle": 90,
-        "width": 12
-      },
-      {
-        "type": "wall",
-        "x": 68.14102564102564,
-        "y": 230,
-        "length": 136.28205128205127,
-        "angle": 0,
-        "width": 12
-      },
-      {
-        "type": "wall",
-        "x": 236,
-        "y": 230,
-        "length": 99.43589743589746,
-        "angle": 0,
-        "width": 12
-      },
-      {
-        "type": "wall",
-        "x": 507.85897435897436,
-        "y": 230,
-        "length": 344.28205128205127,
-        "angle": 0,
-        "width": 12
-      },
-      {
-        "type": "mirror",
-        "x": 80,
-        "y": 80,
-        "length": 120,
-        "angle": 0
-      }
-    ],
-    "solution": [
-      -42.31450265223214,
-      -42.31450265223214,
-      42.31450265223214,
-      42.31450265223214,
-      -6.567011153198162,
-      0
-    ],
-    "requiredBounces": 5,
-    "stage": 7,
-    "stageName": "Caminhos alternados",
-    "difficulty": 70,
-    "wallPurpose": [
-      "Divisória do alvo com abertura: bloqueia atalhos e exige alinhar o último trecho.",
-      "Parede entre colunas: bloqueia o atalho e obriga a passagem pela sala superior.",
-      "Divisória central com passagens: impede cruzar entre as salas fora das aberturas."
-    ],
-    "decoyCount": 1
-  },
-  {
-    "name": "Seis reflexões 1",
-    "hint": "Observe as divisórias e suas aberturas. Planeje a rota antes de confirmar; nem todos os espelhos precisam ser usados.",
-    "sourceAngle": 0,
-    "family": "zigue-zague",
-    "target": {
-      "x": 750,
-      "y": 330,
-      "radius": 22
-    },
-    "objects": [
-      {
-        "type": "mirror",
-        "x": 170,
-        "y": 350,
-        "length": 120,
-        "angle": -11.208969577656603
-      },
-      {
-        "type": "mirror",
-        "x": 260,
-        "y": 97,
-        "length": 120,
-        "angle": 33
-      },
-      {
-        "type": "mirror",
-        "x": 350,
-        "y": 350,
-        "length": 120,
-        "angle": 41.928986991744694
-      },
-      {
-        "type": "mirror",
-        "x": 440,
-        "y": 95,
-        "length": 120,
-        "angle": 51
-      },
-      {
-        "type": "mirror",
-        "x": 530,
-        "y": 350,
-        "length": 120,
-        "angle": 60.14302967367155
-      },
-      {
-        "type": "mirror",
-        "x": 620,
-        "y": 99,
-        "length": 120,
-        "angle": 64.17828295726963
-      },
-      {
-        "type": "wall",
-        "x": 710,
-        "y": 109.21153846153845,
-        "length": 218.4230769230769,
-        "angle": 90,
-        "width": 12
-      },
-      {
-        "type": "wall",
-        "x": 710,
-        "y": 379.71153846153845,
-        "length": 160.5769230769231,
-        "angle": 90,
-        "width": 12
-      },
-      {
-        "type": "wall",
-        "x": 93.84387351778656,
-        "y": 230,
-        "length": 187.68774703557312,
-        "angle": 0,
-        "width": 12
-      },
-      {
-        "type": "wall",
-        "x": 260,
-        "y": 230,
-        "length": 44.62450592885375,
-        "angle": 0,
-        "width": 12
-      },
-      {
-        "type": "wall",
-        "x": 349.83259707044874,
-        "y": 230,
-        "length": 35.04068821204373,
-        "angle": 0,
-        "width": 12
-      },
-      {
-        "type": "wall",
-        "x": 440,
-        "y": 230,
-        "length": 45.29411764705878,
-        "angle": 0,
-        "width": 12
-      },
-      {
-        "type": "wall",
-        "x": 530.3374736348723,
-        "y": 230,
-        "length": 35.380829622685724,
-        "angle": 0,
-        "width": 12
-      },
-      {
-        "type": "wall",
-        "x": 633.3754160845795,
-        "y": 230,
-        "length": 70.69505527672857,
-        "angle": 0,
-        "width": 12
-      },
-      {
-        "type": "mirror",
-        "x": 80,
-        "y": 80,
-        "length": 120,
-        "angle": 0
-      },
-      {
-        "type": "mirror",
-        "x": 720,
-        "y": 95,
-        "length": 120,
-        "angle": 90
-      }
-    ],
-    "solution": [
-      -35.20896957765661,
-      0,
-      -0.07101300825528829,
-      0,
-      0.14302967367156472,
-      -4.821717042730354,
-      0,
-      90
-    ],
-    "requiredBounces": 6,
-    "stage": 8,
-    "stageName": "Seis reflexões",
-    "difficulty": 71,
-    "wallPurpose": [
-      "Divisória do alvo com abertura: bloqueia atalhos e exige alinhar o último trecho.",
-      "Divisória central com passagens: impede cruzar entre as salas fora das aberturas."
-    ],
-    "decoyCount": 2
-  },
-  {
-    "name": "Seis reflexões 2",
-    "hint": "Observe as divisórias e suas aberturas. Planeje a rota antes de confirmar; nem todos os espelhos precisam ser usados.",
-    "sourceAngle": 0,
-    "family": "zigue-zague",
-    "target": {
-      "x": 750,
-      "y": 311,
-      "radius": 22
-    },
-    "objects": [
-      {
-        "type": "mirror",
-        "x": 179,
-        "y": 350,
-        "length": 120,
-        "angle": -9.174557470318376
-      },
-      {
-        "type": "mirror",
-        "x": 267.2,
-        "y": 103,
-        "length": 120,
-        "angle": 35.25081462655962
-      },
-      {
-        "type": "mirror",
-        "x": 355.4,
-        "y": 357,
-        "length": 120,
-        "angle": 43.93058718452937
-      },
-      {
-        "type": "mirror",
-        "x": 443.6,
-        "y": 101,
-        "length": 120,
-        "angle": 53
-      },
-      {
-        "type": "mirror",
-        "x": 531.8,
-        "y": 357,
-        "length": 120,
-        "angle": 62.139808021943
-      },
-      {
-        "type": "mirror",
-        "x": 620,
-        "y": 105,
-        "length": 120,
-        "angle": 64.5176678461608
-      },
-      {
-        "type": "wall",
-        "x": 710,
-        "y": 103.6826923076923,
-        "length": 207.3653846153846,
-        "angle": 90,
-        "width": 12
-      },
-      {
-        "type": "wall",
-        "x": 710,
-        "y": 373.9326923076923,
-        "length": 172.13461538461536,
-        "angle": 90,
-        "width": 12
-      },
-      {
-        "type": "wall",
-        "x": 98.4251012145749,
-        "y": 230,
-        "length": 196.8502024291498,
-        "angle": 0,
-        "width": 12
-      },
-      {
-        "type": "wall",
-        "x": 266.5751012145749,
-        "y": 230,
-        "length": 39.449797570850166,
-        "angle": 0,
-        "width": 12
-      },
-      {
-        "type": "wall",
-        "x": 355.22773437499995,
-        "y": 230,
-        "length": 37.85546875000006,
-        "angle": 0,
-        "width": 12
-      },
-      {
-        "type": "wall",
-        "x": 443.6,
-        "y": 230,
-        "length": 38.889062499999966,
-        "angle": 0,
-        "width": 12
-      },
-      {
-        "type": "wall",
-        "x": 532.147265625,
-        "y": 230,
-        "length": 38.20546875000002,
-        "angle": 0,
-        "width": 12
-      },
-      {
-        "type": "wall",
-        "x": 637.5667475728155,
-        "y": 230,
-        "length": 72.63349514563106,
-        "angle": 0,
-        "width": 12
-      },
-      {
-        "type": "mirror",
-        "x": 80,
-        "y": 80,
-        "length": 120,
-        "angle": 0
-      },
-      {
-        "type": "mirror",
-        "x": 720,
-        "y": 95,
-        "length": 120,
-        "angle": 90
-      }
-    ],
-    "solution": [
-      -35.17455747031838,
-      0.25081462655961545,
-      -0.06941281547063258,
-      0,
-      0.1398080219429998,
-      -6.482332153839208,
-      0,
-      90
-    ],
-    "requiredBounces": 6,
-    "stage": 8,
-    "stageName": "Seis reflexões",
-    "difficulty": 72,
-    "wallPurpose": [
-      "Divisória do alvo com abertura: bloqueia atalhos e exige alinhar o último trecho.",
-      "Divisória central com passagens: impede cruzar entre as salas fora das aberturas."
-    ],
-    "decoyCount": 2
-  },
-  {
-    "name": "Seis reflexões 3",
-    "hint": "Observe as divisórias e suas aberturas. Planeje a rota antes de confirmar; nem todos os espelhos precisam ser usados.",
-    "sourceAngle": 0,
-    "family": "zigue-zague",
-    "target": {
-      "x": 750,
-      "y": 292,
-      "radius": 22
-    },
-    "objects": [
-      {
-        "type": "mirror",
-        "x": 188,
-        "y": 350,
-        "length": 120,
-        "angle": -7.13846363342374
-      },
-      {
-        "type": "mirror",
-        "x": 274.4,
-        "y": 109,
-        "length": 120,
-        "angle": 37.50274158750085
-      },
-      {
-        "type": "mirror",
-        "x": 360.8,
-        "y": 364,
-        "length": 120,
-        "angle": 45.93218700251498
-      },
-      {
-        "type": "mirror",
-        "x": 447.2,
-        "y": 107,
-        "length": 120,
-        "angle": 55
-      },
-      {
-        "type": "mirror",
-        "x": 533.6,
-        "y": 364,
-        "length": 120,
-        "angle": 64.13658694289967
-      },
-      {
-        "type": "mirror",
-        "x": 620,
-        "y": 111,
-        "length": 120,
-        "angle": 64.58400936738224
-      },
-      {
-        "type": "wall",
-        "x": 710,
-        "y": 98.15384615384616,
-        "length": 196.30769230769232,
-        "angle": 90,
-        "width": 12
-      },
-      {
-        "type": "wall",
-        "x": 710,
-        "y": 368.1538461538462,
-        "length": 183.69230769230768,
-        "angle": 90,
-        "width": 12
-      },
-      {
-        "type": "wall",
-        "x": 103.0103734439834,
-        "y": 230,
-        "length": 206.0207468879668,
-        "angle": 0,
-        "width": 12
-      },
-      {
-        "type": "wall",
-        "x": 273.20919697339514,
-        "y": 230,
-        "length": 34.37690017085674,
-        "angle": 0,
-        "width": 12
-      },
-      {
-        "type": "wall",
-        "x": 360.6233371480888,
-        "y": 230,
-        "length": 40.4513801785306,
-        "angle": 0,
-        "width": 12
-      },
-      {
-        "type": "wall",
-        "x": 447.20000000000005,
-        "y": 230,
-        "length": 32.70194552529182,
-        "angle": 0,
-        "width": 12
-      },
-      {
-        "type": "wall",
-        "x": 533.9561187923902,
-        "y": 230,
-        "length": 40.810292059488575,
-        "angle": 0,
-        "width": 12
-      },
-      {
-        "type": "wall",
-        "x": 642.4154390409014,
-        "y": 230,
-        "length": 76.108348437534,
-        "angle": 0,
-        "width": 12
-      },
-      {
-        "type": "mirror",
-        "x": 80,
-        "y": 80,
-        "length": 120,
-        "angle": 0
-      },
-      {
-        "type": "mirror",
-        "x": 720,
-        "y": 95,
-        "length": 120,
-        "angle": 90
-      }
-    ],
-    "solution": [
-      -35.13846363342374,
-      0.502741587500846,
-      -0.0678129974850371,
-      0,
-      0.13658694289967607,
-      -8.415990632617758,
-      0,
-      90
-    ],
-    "requiredBounces": 6,
-    "stage": 8,
-    "stageName": "Seis reflexões",
-    "difficulty": 73,
-    "wallPurpose": [
-      "Divisória do alvo com abertura: bloqueia atalhos e exige alinhar o último trecho.",
-      "Divisória central com passagens: impede cruzar entre as salas fora das aberturas."
-    ],
-    "decoyCount": 2
-  },
-  {
-    "name": "Seis reflexões 4",
-    "hint": "Observe as divisórias e suas aberturas. Planeje a rota antes de confirmar; nem todos os espelhos precisam ser usados.",
-    "sourceAngle": 0,
-    "family": "zigue-zague",
-    "target": {
-      "x": 750,
-      "y": 273,
-      "radius": 22
-    },
-    "objects": [
-      {
-        "type": "mirror",
-        "x": 197,
-        "y": 350,
-        "length": 120,
-        "angle": -5.100561822737546
-      },
-      {
-        "type": "mirror",
-        "x": 281.6,
-        "y": 115,
-        "length": 120,
-        "angle": 39.75588496869514
-      },
-      {
-        "type": "mirror",
-        "x": 366.2,
-        "y": 371,
-        "length": 120,
-        "angle": 47.93378589275292
-      },
-      {
-        "type": "mirror",
-        "x": 450.8,
-        "y": 113,
-        "length": 120,
-        "angle": 57
-      },
-      {
-        "type": "mirror",
-        "x": 535.4,
-        "y": 371,
-        "length": 120,
-        "angle": 66.13336755932019
-      },
-      {
-        "type": "mirror",
-        "x": 620,
-        "y": 117,
-        "length": 120,
-        "angle": 64.30792111450779
-      },
-      {
-        "type": "wall",
-        "x": 710,
-        "y": 92.625,
-        "length": 185.25,
-        "angle": 90,
-        "width": 12
-      },
-      {
-        "type": "wall",
-        "x": 710,
-        "y": 362.375,
-        "length": 195.25,
-        "angle": 90,
-        "width": 12
-      },
-      {
-        "type": "wall",
-        "x": 107.60000000000001,
-        "y": 230,
-        "length": 215.20000000000002,
-        "angle": 0,
-        "width": 12
-      },
-      {
-        "type": "wall",
-        "x": 279.90195312500003,
-        "y": 230,
-        "length": 29.403906249999977,
-        "angle": 0,
-        "width": 12
-      },
-      {
-        "type": "wall",
-        "x": 366.01939498546517,
-        "y": 230,
-        "length": 42.830977470930236,
-        "angle": 0,
-        "width": 12
-      },
-      {
-        "type": "wall",
-        "x": 450.8,
-        "y": 230,
-        "length": 26.730232558139505,
-        "angle": 0,
-        "width": 12
-      },
-      {
-        "type": "wall",
-        "x": 535.764054202527,
-        "y": 230,
-        "length": 43.197875846914485,
-        "angle": 0,
-        "width": 12
-      },
-      {
-        "type": "wall",
-        "x": 648.2648293963255,
-        "y": 230,
-        "length": 81.80367454068244,
-        "angle": 0,
-        "width": 12
-      },
-      {
-        "type": "mirror",
-        "x": 80,
-        "y": 80,
-        "length": 120,
-        "angle": 0
-      },
-      {
-        "type": "mirror",
-        "x": 720,
-        "y": 95,
-        "length": 120,
-        "angle": 90
-      }
-    ],
-    "solution": [
-      -35.10056182273754,
-      0.7558849686951392,
-      -0.06621410724708346,
-      0,
-      0.13336755932018435,
-      -10.692078885492194,
-      0,
-      90
-    ],
-    "requiredBounces": 6,
-    "stage": 8,
-    "stageName": "Seis reflexões",
-    "difficulty": 74,
-    "wallPurpose": [
-      "Divisória do alvo com abertura: bloqueia atalhos e exige alinhar o último trecho.",
-      "Divisória central com passagens: impede cruzar entre as salas fora das aberturas."
-    ],
-    "decoyCount": 2
-  },
-  {
-    "name": "Seis reflexões 5",
-    "hint": "Observe as divisórias e suas aberturas. Planeje a rota antes de confirmar; nem todos os espelhos precisam ser usados.",
-    "sourceAngle": -68.19859051364818,
-    "family": "entrada-diagonal",
-    "target": {
-      "x": 750,
-      "y": 254,
-      "radius": 22
-    },
-    "objects": [
-      {
-        "type": "mirror",
-        "x": 170,
-        "y": 100,
-        "length": 120,
-        "angle": 33.001266565913454
-      },
-      {
-        "type": "mirror",
-        "x": 260,
-        "y": 350,
-        "length": 120,
-        "angle": 41
-      },
-      {
-        "type": "mirror",
-        "x": 350,
-        "y": 100,
-        "length": 120,
-        "angle": 50
-      },
-      {
-        "type": "mirror",
-        "x": 440,
-        "y": 350,
-        "length": 120,
-        "angle": 59
-      },
-      {
-        "type": "mirror",
-        "x": 530,
-        "y": 100,
-        "length": 120,
-        "angle": 68
-      },
-      {
-        "type": "mirror",
-        "x": 620,
-        "y": 350,
-        "length": 120,
-        "angle": -86.121659055556
-      },
-      {
-        "type": "wall",
-        "x": 710,
-        "y": 122.01923076923077,
-        "length": 244.03846153846155,
-        "angle": 90,
-        "width": 12
-      },
-      {
-        "type": "wall",
-        "x": 710,
-        "y": 391.5192307692308,
-        "length": 136.96153846153845,
-        "angle": 90,
-        "width": 12
-      },
-      {
-        "type": "wall",
-        "x": 46.5,
-        "y": 230,
-        "length": 93,
-        "angle": 0,
-        "width": 12
-      },
-      {
-        "type": "wall",
-        "x": 167.4,
-        "y": 230,
-        "length": 48.80000000000001,
-        "angle": 0,
-        "width": 12
-      },
-      {
-        "type": "wall",
-        "x": 260,
-        "y": 230,
-        "length": 36.39999999999998,
-        "angle": 0,
-        "width": 12
-      },
-      {
-        "type": "wall",
-        "x": 350,
-        "y": 230,
-        "length": 43.60000000000002,
-        "angle": 0,
-        "width": 12
-      },
-      {
-        "type": "wall",
-        "x": 440,
-        "y": 230,
-        "length": 36.39999999999998,
-        "angle": 0,
-        "width": 12
-      },
-      {
-        "type": "wall",
-        "x": 530,
-        "y": 230,
-        "length": 43.599999999999966,
-        "angle": 0,
-        "width": 12
-      },
-      {
-        "type": "wall",
-        "x": 640.9,
-        "y": 230,
-        "length": 78.20000000000005,
-        "angle": 0,
-        "width": 12
-      },
-      {
-        "type": "mirror",
-        "x": 80,
-        "y": 80,
-        "length": 120,
-        "angle": 0
-      },
-      {
-        "type": "mirror",
-        "x": 720,
-        "y": 95,
-        "length": 120,
-        "angle": 90
-      }
-    ],
-    "solution": [
-      1.0012665659134607,
-      0,
-      0,
-      0,
-      0,
-      16.878340944443988,
-      0,
-      90
-    ],
-    "requiredBounces": 6,
-    "stage": 8,
-    "stageName": "Seis reflexões",
-    "difficulty": 75,
-    "wallPurpose": [
-      "Divisória do alvo com abertura: bloqueia atalhos e exige alinhar o último trecho.",
-      "Divisória central com passagens: impede cruzar entre as salas fora das aberturas."
-    ],
-    "decoyCount": 2
-  },
-  {
-    "name": "Seis reflexões 6",
-    "hint": "Observe as divisórias e suas aberturas. Planeje a rota antes de confirmar; nem todos os espelhos precisam ser usados.",
-    "sourceAngle": -65.11672516845553,
-    "family": "entrada-diagonal",
-    "target": {
-      "x": 750,
-      "y": 330,
-      "radius": 22
-    },
-    "objects": [
-      {
-        "type": "mirror",
-        "x": 179,
-        "y": 115,
-        "length": 120,
-        "angle": 36.15559991583527
-      },
-      {
-        "type": "mirror",
-        "x": 267.2,
-        "y": 350,
-        "length": 120,
-        "angle": 43
-      },
-      {
-        "type": "mirror",
-        "x": 355.4,
-        "y": 115,
-        "length": 120,
-        "angle": 52
-      },
-      {
-        "type": "mirror",
-        "x": 443.6,
-        "y": 350,
-        "length": 120,
-        "angle": 61
-      },
-      {
-        "type": "mirror",
-        "x": 531.8,
-        "y": 115,
-        "length": 120,
-        "angle": 70
-      },
-      {
-        "type": "mirror",
-        "x": 620,
-        "y": 350,
-        "length": 120,
-        "angle": -70.65911863121457
-      },
-      {
-        "type": "wall",
-        "x": 710,
-        "y": 148.45192307692307,
-        "length": 296.90384615384613,
-        "angle": 90,
-        "width": 12
-      },
-      {
-        "type": "wall",
-        "x": 710,
-        "y": 417.7019230769231,
-        "length": 84.59615384615387,
-        "angle": 90,
-        "width": 12
-      },
-      {
-        "type": "wall",
-        "x": 50.329787234042556,
-        "y": 230,
-        "length": 100.65957446808511,
-        "angle": 0,
-        "width": 12
-      },
-      {
-        "type": "wall",
-        "x": 173.91063829787234,
-        "y": 230,
-        "length": 46.502127659574455,
-        "angle": 0,
-        "width": 12
-      },
-      {
-        "type": "wall",
-        "x": 267.2,
-        "y": 230,
-        "length": 40.076595744680844,
-        "angle": 0,
-        "width": 12
-      },
-      {
-        "type": "wall",
-        "x": 355.4,
-        "y": 230,
-        "length": 36.32340425531919,
-        "angle": 0,
-        "width": 12
-      },
-      {
-        "type": "wall",
-        "x": 443.6,
-        "y": 230,
-        "length": 40.076595744680844,
-        "angle": 0,
-        "width": 12
-      },
-      {
-        "type": "wall",
-        "x": 531.8,
-        "y": 230,
-        "length": 36.32340425531913,
-        "angle": 0,
-        "width": 12
-      },
-      {
-        "type": "wall",
-        "x": 639.9808510638297,
-        "y": 230,
-        "length": 80.03829787234042,
-        "angle": 0,
-        "width": 12
-      },
-      {
-        "type": "mirror",
-        "x": 80,
-        "y": 80,
-        "length": 120,
-        "angle": 0
-      },
-      {
-        "type": "mirror",
-        "x": 720,
-        "y": 95,
-        "length": 120,
-        "angle": 90
-      }
-    ],
-    "solution": [
-      2.1555999158352686,
-      0,
-      0,
-      -1.8102942237329447e-14,
-      -1.8102942237329447e-14,
-      30.34088136878543,
-      0,
-      90
-    ],
-    "requiredBounces": 6,
-    "stage": 8,
-    "stageName": "Seis reflexões",
-    "difficulty": 76,
-    "wallPurpose": [
-      "Divisória do alvo com abertura: bloqueia atalhos e exige alinhar o último trecho.",
-      "Divisória central com passagens: impede cruzar entre as salas fora das aberturas."
-    ],
-    "decoyCount": 2
-  },
-  {
-    "name": "Seis reflexões 7",
-    "hint": "Observe as divisórias e suas aberturas. Planeje a rota antes de confirmar; nem todos os espelhos precisam ser usados.",
-    "sourceAngle": 0,
-    "family": "serpentina",
-    "target": {
-      "x": 750,
-      "y": 170,
-      "radius": 22
-    },
-    "objects": [
-      {
-        "type": "mirror",
-        "x": 150,
-        "y": 350,
-        "length": 120,
-        "angle": -9
-      },
-      {
-        "type": "mirror",
-        "x": 150,
-        "y": 100,
-        "length": 120,
-        "angle": 0
-      },
-      {
-        "type": "mirror",
-        "x": 300,
-        "y": 100,
-        "length": 120,
-        "angle": -81
-      },
-      {
-        "type": "mirror",
-        "x": 300,
-        "y": 350,
-        "length": 120,
-        "angle": -72
-      },
-      {
-        "type": "mirror",
-        "x": 450,
-        "y": 350,
-        "length": 120,
-        "angle": 27
-      },
-      {
-        "type": "mirror",
-        "x": 450,
-        "y": 100,
-        "length": 120,
-        "angle": 42.567011153198166
-      },
-      {
-        "type": "wall",
-        "x": 710,
-        "y": 60.83333333333333,
-        "length": 121.66666666666666,
-        "angle": 90,
-        "width": 12
-      },
-      {
-        "type": "wall",
-        "x": 710,
-        "y": 329.8333333333333,
-        "length": 260.33333333333337,
-        "angle": 90,
-        "width": 12
-      },
-      {
-        "type": "wall",
-        "x": 225,
-        "y": 26,
-        "length": 52,
-        "angle": 90,
-        "width": 12
-      },
-      {
-        "type": "wall",
-        "x": 225,
-        "y": 304,
-        "length": 312,
-        "angle": 90,
-        "width": 12
-      },
-      {
-        "type": "wall",
-        "x": 62.5,
-        "y": 230,
-        "length": 125,
-        "angle": 0,
-        "width": 12
-      },
-      {
-        "type": "wall",
-        "x": 225,
-        "y": 230,
-        "length": 100,
-        "angle": 0,
-        "width": 12
-      },
-      {
-        "type": "wall",
-        "x": 375,
-        "y": 230,
-        "length": 100,
-        "angle": 0,
-        "width": 12
-      },
-      {
-        "type": "wall",
-        "x": 577.5,
-        "y": 230,
-        "length": 205,
-        "angle": 0,
-        "width": 12
-      },
-      {
-        "type": "mirror",
-        "x": 80,
-        "y": 80,
-        "length": 120,
-        "angle": 0
-      },
-      {
-        "type": "mirror",
-        "x": 720,
-        "y": 365,
-        "length": 120,
-        "angle": 90
-      }
-    ],
-    "solution": [
-      -45,
-      -45,
-      45,
-      45,
-      -45,
-      -38.43298884680184,
-      0,
-      90
-    ],
-    "requiredBounces": 6,
-    "stage": 8,
-    "stageName": "Seis reflexões",
-    "difficulty": 77,
-    "wallPurpose": [
-      "Divisória do alvo com abertura: bloqueia atalhos e exige alinhar o último trecho.",
-      "Parede entre colunas: bloqueia o atalho e obriga a passagem pela sala superior.",
-      "Divisória central com passagens: impede cruzar entre as salas fora das aberturas."
-    ],
-    "decoyCount": 2
-  },
-  {
-    "name": "Seis reflexões 8",
-    "hint": "Observe as divisórias e suas aberturas. Planeje a rota antes de confirmar; nem todos os espelhos precisam ser usados.",
-    "sourceAngle": 0,
-    "family": "serpentina",
-    "target": {
-      "x": 750,
-      "y": 186,
-      "radius": 22
-    },
-    "objects": [
-      {
-        "type": "mirror",
-        "x": 150,
-        "y": 350,
-        "length": 120,
-        "angle": -7
-      },
-      {
-        "type": "mirror",
-        "x": 150,
-        "y": 116,
-        "length": 120,
-        "angle": 2
-      },
-      {
-        "type": "mirror",
-        "x": 300,
-        "y": 116,
-        "length": 120,
-        "angle": -79
-      },
-      {
-        "type": "mirror",
-        "x": 300,
-        "y": 350,
-        "length": 120,
-        "angle": -70
-      },
-      {
-        "type": "mirror",
-        "x": 450,
-        "y": 350,
-        "length": 120,
-        "angle": 29
-      },
-      {
-        "type": "mirror",
-        "x": 450,
-        "y": 116,
-        "length": 120,
-        "angle": 44.567011153198166
-      },
-      {
-        "type": "wall",
-        "x": 710,
-        "y": 68.95833333333333,
-        "length": 137.91666666666666,
-        "angle": 90,
-        "width": 12
-      },
-      {
-        "type": "wall",
-        "x": 710,
-        "y": 337.7083333333333,
-        "length": 244.58333333333334,
-        "angle": 90,
-        "width": 12
-      },
-      {
-        "type": "wall",
-        "x": 225,
-        "y": 34,
-        "length": 68,
-        "angle": 90,
-        "width": 12
-      },
-      {
-        "type": "wall",
-        "x": 225,
-        "y": 312,
-        "length": 296,
-        "angle": 90,
-        "width": 12
-      },
-      {
-        "type": "wall",
-        "x": 62.5,
-        "y": 230,
-        "length": 125,
-        "angle": 0,
-        "width": 12
-      },
-      {
-        "type": "wall",
-        "x": 225,
-        "y": 230,
-        "length": 100,
-        "angle": 0,
-        "width": 12
-      },
-      {
-        "type": "wall",
-        "x": 375,
-        "y": 230,
-        "length": 100,
-        "angle": 0,
-        "width": 12
-      },
-      {
-        "type": "wall",
-        "x": 577.5,
-        "y": 230,
-        "length": 205,
-        "angle": 0,
-        "width": 12
-      },
-      {
-        "type": "mirror",
-        "x": 80,
-        "y": 80,
-        "length": 120,
-        "angle": 0
-      },
-      {
-        "type": "mirror",
-        "x": 720,
-        "y": 365,
-        "length": 120,
-        "angle": 90
-      }
-    ],
-    "solution": [
-      -45,
-      -45,
-      45,
-      45,
-      -45,
-      -38.43298884680184,
-      0,
-      90
-    ],
-    "requiredBounces": 6,
-    "stage": 8,
-    "stageName": "Seis reflexões",
-    "difficulty": 78,
-    "wallPurpose": [
-      "Divisória do alvo com abertura: bloqueia atalhos e exige alinhar o último trecho.",
-      "Parede entre colunas: bloqueia o atalho e obriga a passagem pela sala superior.",
-      "Divisória central com passagens: impede cruzar entre as salas fora das aberturas."
-    ],
-    "decoyCount": 2
-  },
-  {
-    "name": "Seis reflexões 9",
-    "hint": "Observe as divisórias e suas aberturas. Planeje a rota antes de confirmar; nem todos os espelhos precisam ser usados.",
-    "sourceAngle": 0,
-    "family": "serpentina-obliqua",
-    "target": {
-      "x": 750,
-      "y": 170,
-      "radius": 22
-    },
-    "objects": [
-      {
-        "type": "mirror",
-        "x": 150,
-        "y": 350,
-        "length": 120,
-        "angle": -2.48546320910728
-      },
-      {
-        "type": "mirror",
-        "x": 172,
-        "y": 100,
-        "length": 120,
-        "angle": 6.51453679089272
-      },
-      {
-        "type": "mirror",
-        "x": 300,
-        "y": 100,
-        "length": 120,
-        "angle": -79.51453679089272
-      },
-      {
-        "type": "mirror",
-        "x": 322,
-        "y": 350,
-        "length": 120,
-        "angle": -70.51453679089272
-      },
-      {
-        "type": "mirror",
-        "x": 450,
-        "y": 350,
-        "length": 120,
-        "angle": 33.51453679089272
-      },
-      {
-        "type": "mirror",
-        "x": 472,
-        "y": 100,
-        "length": 120,
-        "angle": 49.5811320653242
-      },
-      {
-        "type": "wall",
-        "x": 710,
-        "y": 60.71402877697841,
-        "length": 121.42805755395682,
-        "angle": 90,
-        "width": 12
-      },
-      {
-        "type": "wall",
-        "x": 710,
-        "y": 329.2140287769784,
-        "length": 261.5719424460432,
-        "angle": 90,
-        "width": 12
-      },
-      {
-        "type": "wall",
-        "x": 225,
-        "y": 26,
-        "length": 52,
-        "angle": 90,
-        "width": 12
-      },
-      {
-        "type": "wall",
-        "x": 225,
-        "y": 304,
-        "length": 312,
-        "angle": 90,
-        "width": 12
-      },
-      {
-        "type": "wall",
-        "x": 67.78,
-        "y": 230,
-        "length": 135.56,
-        "angle": 0,
-        "width": 12
-      },
-      {
-        "type": "wall",
-        "x": 236,
-        "y": 230,
-        "length": 100.88,
-        "angle": 0,
-        "width": 12
-      },
-      {
-        "type": "wall",
-        "x": 386,
-        "y": 230,
-        "length": 99.12,
-        "angle": 0,
-        "width": 12
-      },
-      {
-        "type": "wall",
-        "x": 582.78,
-        "y": 230,
-        "length": 194.44,
-        "angle": 0,
-        "width": 12
-      },
-      {
-        "type": "mirror",
-        "x": 80,
-        "y": 80,
-        "length": 120,
-        "angle": 0
-      },
-      {
-        "type": "mirror",
-        "x": 720,
-        "y": 365,
-        "length": 120,
-        "angle": 90
-      }
-    ],
-    "solution": [
-      -42.48546320910727,
-      -42.48546320910727,
-      42.48546320910727,
-      42.48546320910727,
-      -42.48546320910727,
-      -35.418867934675816,
-      0,
-      90
-    ],
-    "requiredBounces": 6,
-    "stage": 8,
-    "stageName": "Seis reflexões",
-    "difficulty": 79,
-    "wallPurpose": [
-      "Divisória do alvo com abertura: bloqueia atalhos e exige alinhar o último trecho.",
-      "Parede entre colunas: bloqueia o atalho e obriga a passagem pela sala superior.",
-      "Divisória central com passagens: impede cruzar entre as salas fora das aberturas."
-    ],
-    "decoyCount": 2
-  },
-  {
-    "name": "Seis reflexões 10",
-    "hint": "Observe as divisórias e suas aberturas. Planeje a rota antes de confirmar; nem todos os espelhos precisam ser usados.",
-    "sourceAngle": 0,
-    "family": "serpentina-obliqua",
-    "target": {
-      "x": 750,
-      "y": 186,
-      "radius": 22
-    },
-    "objects": [
-      {
-        "type": "mirror",
-        "x": 150,
-        "y": 350,
-        "length": 120,
-        "angle": -0.3145026522321359
-      },
-      {
-        "type": "mirror",
-        "x": 172,
-        "y": 116,
-        "length": 120,
-        "angle": 8.685497347767864
-      },
-      {
-        "type": "mirror",
-        "x": 300,
-        "y": 116,
-        "length": 120,
-        "angle": -77.68549734776786
-      },
-      {
-        "type": "mirror",
-        "x": 322,
-        "y": 350,
-        "length": 120,
-        "angle": -68.68549734776786
-      },
-      {
-        "type": "mirror",
-        "x": 450,
-        "y": 350,
-        "length": 120,
-        "angle": 35.685497347767864
-      },
-      {
-        "type": "mirror",
-        "x": 472,
-        "y": 116,
-        "length": 120,
-        "angle": 51.752092622199314
-      },
-      {
-        "type": "wall",
-        "x": 710,
-        "y": 68.83902877697841,
-        "length": 137.67805755395682,
-        "angle": 90,
-        "width": 12
-      },
-      {
-        "type": "wall",
-        "x": 710,
-        "y": 337.0890287769784,
-        "length": 245.82194244604318,
-        "angle": 90,
-        "width": 12
-      },
-      {
-        "type": "wall",
-        "x": 225,
-        "y": 34,
-        "length": 68,
-        "angle": 90,
-        "width": 12
-      },
-      {
-        "type": "wall",
-        "x": 225,
-        "y": 312,
-        "length": 296,
-        "angle": 90,
-        "width": 12
-      },
-      {
-        "type": "wall",
-        "x": 68.14102564102564,
-        "y": 230,
-        "length": 136.28205128205127,
-        "angle": 0,
-        "width": 12
-      },
-      {
-        "type": "wall",
-        "x": 236,
-        "y": 230,
-        "length": 99.43589743589746,
-        "angle": 0,
-        "width": 12
-      },
-      {
-        "type": "wall",
-        "x": 386,
-        "y": 230,
-        "length": 100.56410256410254,
-        "angle": 0,
-        "width": 12
-      },
-      {
-        "type": "wall",
-        "x": 583.1410256410256,
-        "y": 230,
-        "length": 193.71794871794873,
-        "angle": 0,
-        "width": 12
-      },
-      {
-        "type": "mirror",
-        "x": 80,
-        "y": 80,
-        "length": 120,
-        "angle": 0
-      },
-      {
-        "type": "mirror",
-        "x": 720,
-        "y": 365,
-        "length": 120,
-        "angle": 90
-      }
-    ],
-    "solution": [
-      -42.31450265223214,
-      -42.31450265223214,
-      42.31450265223214,
-      42.31450265223214,
-      -42.31450265223214,
-      -35.24790737780068,
-      0,
-      90
-    ],
-    "requiredBounces": 6,
-    "stage": 8,
-    "stageName": "Seis reflexões",
-    "difficulty": 80,
-    "wallPurpose": [
-      "Divisória do alvo com abertura: bloqueia atalhos e exige alinhar o último trecho.",
-      "Parede entre colunas: bloqueia o atalho e obriga a passagem pela sala superior.",
-      "Divisória central com passagens: impede cruzar entre as salas fora das aberturas."
-    ],
-    "decoyCount": 2
-  },
-  {
-    "name": "Sete reflexões 1",
-    "hint": "Observe as divisórias e suas aberturas. Planeje a rota antes de confirmar; nem todos os espelhos precisam ser usados.",
-    "sourceAngle": 0,
-    "family": "zigue-zague",
-    "target": {
-      "x": 750,
-      "y": 90,
-      "radius": 22
-    },
-    "objects": [
-      {
-        "type": "mirror",
-        "x": 140,
-        "y": 350,
-        "length": 120,
-        "angle": -12.055138039235715
-      },
-      {
-        "type": "mirror",
-        "x": 221.66666666666669,
-        "y": 97,
-        "length": 120,
-        "angle": 33
-      },
-      {
-        "type": "mirror",
-        "x": 303.33333333333337,
-        "y": 350,
-        "length": 120,
-        "angle": 41.93426728055704
-      },
-      {
-        "type": "mirror",
-        "x": 385,
-        "y": 95,
-        "length": 120,
-        "angle": 51
-      },
-      {
-        "type": "mirror",
-        "x": 466.6666666666667,
-        "y": 350,
-        "length": 120,
-        "angle": 60.132413407480215
-      },
-      {
-        "type": "mirror",
-        "x": 548.3333333333333,
-        "y": 99,
-        "length": 120,
-        "angle": 68.99999999999997
-      },
-      {
-        "type": "mirror",
-        "x": 630,
-        "y": 350,
-        "length": 120,
-        "angle": 81.37602763561438
-      },
-      {
-        "type": "wall",
-        "x": 710,
-        "y": 69.33333333333333,
-        "length": 138.66666666666666,
-        "angle": 90,
-        "width": 12
-      },
-      {
-        "type": "wall",
-        "x": 710,
-        "y": 337.3333333333333,
-        "length": 245.33333333333334,
-        "angle": 90,
-        "width": 12
-      },
-      {
-        "type": "wall",
-        "x": 76.86758893280633,
-        "y": 230,
-        "length": 153.73517786561266,
-        "angle": 0,
-        "width": 12
-      },
-      {
-        "type": "wall",
-        "x": 221.66666666666669,
-        "y": 230,
-        "length": 35.86297760210809,
-        "angle": 0,
-        "width": 12
-      },
-      {
-        "type": "wall",
-        "x": 303.18143067503684,
-        "y": 230,
-        "length": 27.16655041463224,
-        "angle": 0,
-        "width": 12
-      },
-      {
-        "type": "wall",
-        "x": 385,
-        "y": 230,
-        "length": 36.47058823529409,
-        "angle": 0,
-        "width": 12
-      },
-      {
-        "type": "wall",
-        "x": 466.9728927427545,
-        "y": 230,
-        "length": 27.47519725021482,
-        "angle": 0,
-        "width": 12
-      },
-      {
-        "type": "wall",
-        "x": 548.3333333333333,
-        "y": 230,
-        "length": 35.245683930942846,
-        "angle": 0,
-        "width": 12
-      },
-      {
-        "type": "wall",
-        "x": 638.17039534171,
-        "y": 230,
-        "length": 44.42844008581062,
-        "angle": 0,
-        "width": 12
-      },
-      {
-        "type": "mirror",
-        "x": 80,
-        "y": 80,
-        "length": 120,
-        "angle": 0
-      },
-      {
-        "type": "mirror",
-        "x": 720,
-        "y": 365,
-        "length": 120,
-        "angle": 90
-      }
-    ],
-    "solution": [
-      -36.05513803923572,
-      0,
-      -0.06573271944295062,
-      0,
-      0.13241340748020658,
-      -2.0559489325811182e-14,
-      3.376027635614389,
-      0,
-      90
-    ],
-    "requiredBounces": 7,
-    "stage": 9,
-    "stageName": "Sete reflexões",
-    "difficulty": 81,
-    "wallPurpose": [
-      "Divisória do alvo com abertura: bloqueia atalhos e exige alinhar o último trecho.",
-      "Divisória central com passagens: impede cruzar entre as salas fora das aberturas."
-    ],
-    "decoyCount": 2
-  },
-  {
-    "name": "Sete reflexões 2",
-    "hint": "Observe as divisórias e suas aberturas. Planeje a rota antes de confirmar; nem todos os espelhos precisam ser usados.",
-    "sourceAngle": 0,
-    "family": "zigue-zague",
-    "target": {
-      "x": 750,
-      "y": 108,
-      "radius": 22
-    },
-    "objects": [
-      {
-        "type": "mirror",
-        "x": 140,
-        "y": 350,
-        "length": 120,
-        "angle": -9.852171860784992
-      },
-      {
-        "type": "mirror",
-        "x": 221.66666666666669,
-        "y": 103,
-        "length": 120,
-        "angle": 35.235949810012116
-      },
-      {
-        "type": "mirror",
-        "x": 303.33333333333337,
-        "y": 357,
-        "length": 120,
-        "angle": 43.934733959739106
-      },
-      {
-        "type": "mirror",
-        "x": 385,
-        "y": 101,
-        "length": 120,
-        "angle": 53
-      },
-      {
-        "type": "mirror",
-        "x": 466.6666666666667,
-        "y": 357,
-        "length": 120,
-        "angle": 62.131470287371314
-      },
-      {
-        "type": "mirror",
-        "x": 548.3333333333333,
-        "y": 105,
-        "length": 120,
-        "angle": 70.99999999999997
-      },
-      {
-        "type": "mirror",
-        "x": 630,
-        "y": 357,
-        "length": 120,
-        "angle": 83.88727022445224
-      },
-      {
-        "type": "wall",
-        "x": 710,
-        "y": 76.625,
-        "length": 153.25,
-        "angle": 90,
-        "width": 12
-      },
-      {
-        "type": "wall",
-        "x": 710,
-        "y": 344.375,
-        "length": 231.25,
-        "angle": 90,
-        "width": 12
-      },
-      {
-        "type": "wall",
-        "x": 77.33805668016194,
-        "y": 230,
-        "length": 154.67611336032388,
-        "angle": 0,
-        "width": 12
-      },
-      {
-        "type": "wall",
-        "x": 221.08805668016194,
-        "y": 230,
-        "length": 32.82388663967612,
-        "angle": 0,
-        "width": 12
-      },
-      {
-        "type": "wall",
-        "x": 303.173828125,
-        "y": 230,
-        "length": 31.34765625,
-        "angle": 0,
-        "width": 12
-      },
-      {
-        "type": "wall",
-        "x": 385,
-        "y": 230,
-        "length": 32.3046875,
-        "angle": 0,
-        "width": 12
-      },
-      {
-        "type": "wall",
-        "x": 466.988208912037,
-        "y": 230,
-        "length": 31.67173032407402,
-        "angle": 0,
-        "width": 12
-      },
-      {
-        "type": "wall",
-        "x": 548.3333333333333,
-        "y": 230,
-        "length": 31.01851851851859,
-        "angle": 0,
-        "width": 12
-      },
-      {
-        "type": "wall",
-        "x": 640.0237059348506,
-        "y": 230,
-        "length": 52.362226684515804,
-        "angle": 0,
-        "width": 12
-      },
-      {
-        "type": "mirror",
-        "x": 80,
-        "y": 80,
-        "length": 120,
-        "angle": 0
-      },
-      {
-        "type": "mirror",
-        "x": 720,
-        "y": 365,
-        "length": 120,
-        "angle": 90
-      }
-    ],
-    "solution": [
-      -35.85217186078499,
-      0.23594981001211493,
-      -0.0652660402608874,
-      0,
-      0.13147028737132188,
-      -2.0633572567179938e-14,
-      3.8872702244522377,
-      0,
-      90
-    ],
-    "requiredBounces": 7,
-    "stage": 9,
-    "stageName": "Sete reflexões",
-    "difficulty": 82,
-    "wallPurpose": [
-      "Divisória do alvo com abertura: bloqueia atalhos e exige alinhar o último trecho.",
-      "Divisória central com passagens: impede cruzar entre as salas fora das aberturas."
-    ],
-    "decoyCount": 2
-  },
-  {
-    "name": "Sete reflexões 3",
-    "hint": "Observe as divisórias e suas aberturas. Planeje a rota antes de confirmar; nem todos os espelhos precisam ser usados.",
-    "sourceAngle": 0,
-    "family": "zigue-zague",
-    "target": {
-      "x": 750,
-      "y": 126,
-      "radius": 22
-    },
-    "objects": [
-      {
-        "type": "mirror",
-        "x": 140,
-        "y": 350,
-        "length": 120,
-        "angle": -7.640118030351829
-      },
-      {
-        "type": "mirror",
-        "x": 221.66666666666669,
-        "y": 109,
-        "length": 120,
-        "angle": 37.48075272832685
-      },
-      {
-        "type": "mirror",
-        "x": 303.33333333333337,
-        "y": 364,
-        "length": 120,
-        "angle": 45.93519585419244
-      },
-      {
-        "type": "mirror",
-        "x": 385,
-        "y": 107,
-        "length": 120,
-        "angle": 54.99999999999997
-      },
-      {
-        "type": "mirror",
-        "x": 466.6666666666667,
-        "y": 364,
-        "length": 120,
-        "angle": 64.13053686525046
-      },
-      {
-        "type": "mirror",
-        "x": 548.3333333333333,
-        "y": 111,
-        "length": 120,
-        "angle": 72.99999999999997
-      },
-      {
-        "type": "mirror",
-        "x": 630,
-        "y": 364,
-        "length": 120,
-        "angle": 86.43379712517398
-      },
-      {
-        "type": "wall",
-        "x": 710,
-        "y": 83.91666666666667,
-        "length": 167.83333333333334,
-        "angle": 90,
-        "width": 12
-      },
-      {
-        "type": "wall",
-        "x": 710,
-        "y": 351.4166666666667,
-        "length": 217.16666666666666,
-        "angle": 90,
-        "width": 12
-      },
-      {
-        "type": "wall",
-        "x": 77.83195020746888,
-        "y": 230,
-        "length": 155.66390041493776,
-        "angle": 0,
-        "width": 12
-      },
-      {
-        "type": "wall",
-        "x": 220.5411005342663,
-        "y": 230,
-        "length": 29.75440023865707,
-        "angle": 0,
-        "width": 12
-      },
-      {
-        "type": "wall",
-        "x": 303.1663487703772,
-        "y": 230,
-        "length": 35.49609623356474,
-        "angle": 0,
-        "width": 12
-      },
-      {
-        "type": "wall",
-        "x": 385,
-        "y": 230,
-        "length": 28.17120622568092,
-        "angle": 0,
-        "width": 12
-      },
-      {
-        "type": "wall",
-        "x": 467.00327586472065,
-        "y": 230,
-        "length": 35.835345503760266,
-        "angle": 0,
-        "width": 12
-      },
-      {
-        "type": "wall",
-        "x": 548.3333333333333,
-        "y": 230,
-        "length": 26.82476943346512,
-        "angle": 0,
-        "width": 12
-      },
-      {
-        "type": "wall",
-        "x": 642.1543716300749,
-        "y": 230,
-        "length": 60.81730716001812,
-        "angle": 0,
-        "width": 12
-      },
-      {
-        "type": "mirror",
-        "x": 80,
-        "y": 80,
-        "length": 120,
-        "angle": 0
-      },
-      {
-        "type": "mirror",
-        "x": 720,
-        "y": 365,
-        "length": 120,
-        "angle": 90
-      }
-    ],
-    "solution": [
-      -35.64011803035182,
-      0.48075272832685495,
-      -0.06480414580755357,
-      -2.1004402050222077e-14,
-      0.1305368652504625,
-      -2.0707683754825348e-14,
-      4.433797125173986,
-      0,
-      90
-    ],
-    "requiredBounces": 7,
-    "stage": 9,
-    "stageName": "Sete reflexões",
-    "difficulty": 83,
-    "wallPurpose": [
-      "Divisória do alvo com abertura: bloqueia atalhos e exige alinhar o último trecho.",
-      "Divisória central com passagens: impede cruzar entre as salas fora das aberturas."
-    ],
-    "decoyCount": 2
-  },
-  {
-    "name": "Sete reflexões 4",
-    "hint": "Observe as divisórias e suas aberturas. Planeje a rota antes de confirmar; nem todos os espelhos precisam ser usados.",
-    "sourceAngle": 0,
-    "family": "zigue-zague",
-    "target": {
-      "x": 750,
-      "y": 144,
-      "radius": 22
-    },
-    "objects": [
-      {
-        "type": "mirror",
-        "x": 140,
-        "y": 350,
-        "length": 120,
-        "angle": -5.418377112000783
-      },
-      {
-        "type": "mirror",
-        "x": 221.66666666666669,
-        "y": 115,
-        "length": 120,
-        "angle": 39.735010599057205
-      },
-      {
-        "type": "mirror",
-        "x": 303.33333333333337,
-        "y": 371,
-        "length": 120,
-        "angle": 47.93565302667483
-      },
-      {
-        "type": "mirror",
-        "x": 385,
-        "y": 113,
-        "length": 120,
-        "angle": 57
-      },
-      {
-        "type": "mirror",
-        "x": 466.6666666666667,
-        "y": 371,
-        "length": 120,
-        "angle": 66.12961301358604
-      },
-      {
-        "type": "mirror",
-        "x": 548.3333333333333,
-        "y": 117,
-        "length": 120,
-        "angle": 74.99999999999997
-      },
-      {
-        "type": "mirror",
-        "x": 630,
-        "y": 371,
-        "length": 120,
-        "angle": 89.01935616203522
-      },
-      {
-        "type": "wall",
-        "x": 710,
-        "y": 91.20833333333333,
-        "length": 182.41666666666666,
-        "angle": 90,
-        "width": 12
-      },
-      {
-        "type": "wall",
-        "x": 710,
-        "y": 358.4583333333333,
-        "length": 203.08333333333337,
-        "angle": 90,
-        "width": 12
-      },
-      {
-        "type": "wall",
-        "x": 78.35106382978724,
-        "y": 230,
-        "length": 156.70212765957447,
-        "angle": 0,
-        "width": 12
-      },
-      {
-        "type": "wall",
-        "x": 220.0274961214539,
-        "y": 230,
-        "length": 26.6507369237589,
-        "angle": 0,
-        "width": 12
-      },
-      {
-        "type": "wall",
-        "x": 303.1589904312016,
-        "y": 230,
-        "length": 39.612251695736404,
-        "angle": 0,
-        "width": 12
-      },
-      {
-        "type": "wall",
-        "x": 385,
-        "y": 230,
-        "length": 24.06976744186045,
-        "angle": 0,
-        "width": 12
-      },
-      {
-        "type": "wall",
-        "x": 467.0180980284441,
-        "y": 230,
-        "length": 39.96642861502778,
-        "angle": 0,
-        "width": 12
-      },
-      {
-        "type": "wall",
-        "x": 548.3333333333333,
-        "y": 230,
-        "length": 22.66404199475062,
-        "angle": 0,
-        "width": 12
-      },
-      {
-        "type": "wall",
-        "x": 644.6013996323147,
-        "y": 230,
-        "length": 69.87209060321209,
-        "angle": 0,
-        "width": 12
-      },
-      {
-        "type": "mirror",
-        "x": 80,
-        "y": 80,
-        "length": 120,
-        "angle": 0
-      },
-      {
-        "type": "mirror",
-        "x": 720,
-        "y": 365,
-        "length": 120,
-        "angle": 90
-      }
-    ],
-    "solution": [
-      -35.41837711200078,
-      0.7350105990571988,
-      -0.06434697332517057,
-      0,
-      0.12961301358603716,
-      -2.0781822589765212e-14,
-      5.019356162035219,
-      0,
-      90
-    ],
-    "requiredBounces": 7,
-    "stage": 9,
-    "stageName": "Sete reflexões",
-    "difficulty": 84,
-    "wallPurpose": [
-      "Divisória do alvo com abertura: bloqueia atalhos e exige alinhar o último trecho.",
-      "Divisória central com passagens: impede cruzar entre as salas fora das aberturas."
-    ],
-    "decoyCount": 2
-  },
-  {
-    "name": "Sete reflexões 5",
-    "hint": "Observe as divisórias e suas aberturas. Planeje a rota antes de confirmar; nem todos os espelhos precisam ser usados.",
-    "sourceAngle": -74.35775354279127,
-    "family": "entrada-diagonal",
-    "target": {
-      "x": 750,
-      "y": 162,
-      "radius": 22
-    },
-    "objects": [
-      {
-        "type": "mirror",
-        "x": 140,
-        "y": 100,
-        "length": 120,
-        "angle": 30.77587854425829
-      },
-      {
-        "type": "mirror",
-        "x": 221.66666666666669,
-        "y": 350,
-        "length": 120,
-        "angle": 41
-      },
-      {
-        "type": "mirror",
-        "x": 303.33333333333337,
-        "y": 100,
-        "length": 120,
-        "angle": 50
-      },
-      {
-        "type": "mirror",
-        "x": 385,
-        "y": 350,
-        "length": 120,
-        "angle": 59
-      },
-      {
-        "type": "mirror",
-        "x": 466.6666666666667,
-        "y": 100,
-        "length": 120,
-        "angle": 68.00000000000003
-      },
-      {
-        "type": "mirror",
-        "x": 548.3333333333333,
-        "y": 350,
-        "length": 120,
-        "angle": 77.00000000000006
-      },
-      {
-        "type": "mirror",
-        "x": 630,
-        "y": 100,
-        "length": 120,
-        "angle": 63.70719033501936
-      },
-      {
-        "type": "wall",
-        "x": 710,
-        "y": 52.16666666666667,
-        "length": 104.33333333333334,
-        "angle": 90,
-        "width": 12
-      },
-      {
-        "type": "wall",
-        "x": 710,
-        "y": 319.1666666666667,
-        "length": 281.66666666666663,
-        "angle": 90,
-        "width": 12
-      },
-      {
-        "type": "wall",
-        "x": 39.3,
-        "y": 230,
-        "length": 78.6,
-        "angle": 0,
-        "width": 12
-      },
-      {
-        "type": "wall",
-        "x": 143.03333333333333,
-        "y": 230,
-        "length": 28.866666666666674,
-        "angle": 0,
-        "width": 12
-      },
-      {
-        "type": "wall",
-        "x": 221.66666666666669,
-        "y": 230,
-        "length": 28.400000000000006,
-        "angle": 0,
-        "width": 12
-      },
-      {
-        "type": "wall",
-        "x": 303.33333333333337,
-        "y": 230,
-        "length": 34.93333333333334,
-        "angle": 0,
-        "width": 12
-      },
-      {
-        "type": "wall",
-        "x": 385,
-        "y": 230,
-        "length": 28.399999999999977,
-        "angle": 0,
-        "width": 12
-      },
-      {
-        "type": "wall",
-        "x": 466.66666666666663,
-        "y": 230,
-        "length": 34.93333333333334,
-        "angle": 0,
-        "width": 12
-      },
-      {
-        "type": "wall",
-        "x": 548.3333333333333,
-        "y": 230,
-        "length": 28.399999999999977,
-        "angle": 0,
-        "width": 12
-      },
-      {
-        "type": "wall",
-        "x": 646.2666666666667,
-        "y": 230,
-        "length": 67.4666666666667,
-        "angle": 0,
-        "width": 12
-      },
-      {
-        "type": "mirror",
-        "x": 80,
-        "y": 80,
-        "length": 120,
-        "angle": 0
-      },
-      {
-        "type": "mirror",
-        "x": 720,
-        "y": 365,
-        "length": 120,
-        "angle": 90
-      }
-    ],
-    "solution": [
-      -1.2241214557417124,
-      0,
-      0,
-      0,
-      2.0485434333912677e-14,
-      4.0970868667825354e-14,
-      -22.292809664980638,
-      0,
-      90
-    ],
-    "requiredBounces": 7,
-    "stage": 9,
-    "stageName": "Sete reflexões",
-    "difficulty": 85,
-    "wallPurpose": [
-      "Divisória do alvo com abertura: bloqueia atalhos e exige alinhar o último trecho.",
-      "Divisória central com passagens: impede cruzar entre as salas fora das aberturas."
-    ],
-    "decoyCount": 2
-  },
-  {
-    "name": "Sete reflexões 6",
-    "hint": "Observe as divisórias e suas aberturas. Planeje a rota antes de confirmar; nem todos os espelhos precisam ser usados.",
-    "sourceAngle": -73.4126614430726,
-    "family": "entrada-diagonal",
-    "target": {
-      "x": 750,
-      "y": 90,
-      "radius": 22
-    },
-    "objects": [
-      {
-        "type": "mirror",
-        "x": 140,
-        "y": 115,
-        "length": 120,
-        "angle": 32.71204639046448
-      },
-      {
-        "type": "mirror",
-        "x": 221.66666666666669,
-        "y": 350,
-        "length": 120,
-        "angle": 43
-      },
-      {
-        "type": "mirror",
-        "x": 303.33333333333337,
-        "y": 115,
-        "length": 120,
-        "angle": 52
-      },
-      {
-        "type": "mirror",
-        "x": 385,
-        "y": 350,
-        "length": 120,
-        "angle": 61
-      },
-      {
-        "type": "mirror",
-        "x": 466.6666666666667,
-        "y": 115,
-        "length": 120,
-        "angle": 70
-      },
-      {
-        "type": "mirror",
-        "x": 548.3333333333333,
-        "y": 350,
-        "length": 120,
-        "angle": 79
-      },
-      {
-        "type": "mirror",
-        "x": 630,
-        "y": 115,
-        "length": 120,
-        "angle": 46.697478421988876
-      },
-      {
-        "type": "wall",
-        "x": 710,
-        "y": 30.791666666666664,
-        "length": 61.58333333333333,
-        "angle": 90,
-        "width": 12
-      },
-      {
-        "type": "wall",
-        "x": 710,
-        "y": 297.54166666666663,
-        "length": 324.9166666666667,
-        "angle": 90,
-        "width": 12
-      },
-      {
-        "type": "wall",
-        "x": 40.37234042553192,
-        "y": 230,
-        "length": 80.74468085106383,
-        "angle": 0,
-        "width": 12
-      },
-      {
-        "type": "wall",
-        "x": 142.85460992907804,
-        "y": 230,
-        "length": 24.21985815602838,
-        "angle": 0,
-        "width": 12
-      },
-      {
-        "type": "wall",
-        "x": 221.66666666666669,
-        "y": 230,
-        "length": 33.40425531914897,
-        "angle": 0,
-        "width": 12
-      },
-      {
-        "type": "wall",
-        "x": 303.33333333333337,
-        "y": 230,
-        "length": 29.92907801418437,
-        "angle": 0,
-        "width": 12
-      },
-      {
-        "type": "wall",
-        "x": 385,
-        "y": 230,
-        "length": 33.40425531914889,
-        "angle": 0,
-        "width": 12
-      },
-      {
-        "type": "wall",
-        "x": 466.66666666666663,
-        "y": 230,
-        "length": 29.92907801418437,
-        "angle": 0,
-        "width": 12
-      },
-      {
-        "type": "wall",
-        "x": 548.3333333333333,
-        "y": 230,
-        "length": 33.404255319149,
-        "angle": 0,
-        "width": 12
-      },
-      {
-        "type": "wall",
-        "x": 647.5177304964539,
-        "y": 230,
-        "length": 64.96453900709218,
-        "angle": 0,
-        "width": 12
-      },
-      {
-        "type": "mirror",
-        "x": 80,
-        "y": 80,
-        "length": 120,
-        "angle": 0
-      },
-      {
-        "type": "mirror",
-        "x": 720,
-        "y": 365,
-        "length": 120,
-        "angle": 90
-      }
-    ],
-    "solution": [
-      -1.287953609535526,
-      0,
-      0,
-      0,
-      1.9378219331339396e-14,
-      1.937821933133939e-14,
-      -41.30252157801111,
-      0,
-      90
-    ],
-    "requiredBounces": 7,
-    "stage": 9,
-    "stageName": "Sete reflexões",
-    "difficulty": 86,
-    "wallPurpose": [
-      "Divisória do alvo com abertura: bloqueia atalhos e exige alinhar o último trecho.",
-      "Divisória central com passagens: impede cruzar entre as salas fora das aberturas."
-    ],
-    "decoyCount": 2
-  },
-  {
-    "name": "Sete reflexões 7",
-    "hint": "Observe as divisórias e suas aberturas. Planeje a rota antes de confirmar; nem todos os espelhos precisam ser usados.",
-    "sourceAngle": 0,
-    "family": "serpentina",
-    "target": {
-      "x": 750,
-      "y": 170,
-      "radius": 22
-    },
-    "objects": [
-      {
-        "type": "mirror",
-        "x": 150,
-        "y": 350,
-        "length": 120,
-        "angle": -9
-      },
-      {
-        "type": "mirror",
-        "x": 150,
-        "y": 100,
-        "length": 120,
-        "angle": 0
-      },
-      {
-        "type": "mirror",
-        "x": 300,
-        "y": 100,
-        "length": 120,
-        "angle": -81
-      },
-      {
-        "type": "mirror",
-        "x": 300,
-        "y": 350,
-        "length": 120,
-        "angle": -72
-      },
-      {
-        "type": "mirror",
-        "x": 450,
-        "y": 350,
-        "length": 120,
-        "angle": 27
-      },
-      {
-        "type": "mirror",
-        "x": 450,
-        "y": 100,
-        "length": 120,
-        "angle": 36
-      },
-      {
-        "type": "mirror",
-        "x": 600,
-        "y": 100,
-        "length": 120,
-        "angle": -77.49155326094998
-      },
-      {
-        "type": "wall",
-        "x": 710,
-        "y": 57.41666666666667,
-        "length": 114.83333333333334,
-        "angle": 90,
-        "width": 12
-      },
-      {
-        "type": "wall",
-        "x": 710,
-        "y": 323.9166666666667,
-        "length": 272.16666666666663,
-        "angle": 90,
-        "width": 12
-      },
-      {
-        "type": "wall",
-        "x": 225,
-        "y": 26,
-        "length": 52,
-        "angle": 90,
-        "width": 12
-      },
-      {
-        "type": "wall",
-        "x": 225,
-        "y": 304,
-        "length": 312,
-        "angle": 90,
-        "width": 12
-      },
-      {
-        "type": "wall",
-        "x": 62.5,
-        "y": 230,
-        "length": 125,
-        "angle": 0,
-        "width": 12
-      },
-      {
-        "type": "wall",
-        "x": 225,
-        "y": 230,
-        "length": 100,
-        "angle": 0,
-        "width": 12
-      },
-      {
-        "type": "wall",
-        "x": 375,
-        "y": 230,
-        "length": 100,
-        "angle": 0,
-        "width": 12
-      },
-      {
-        "type": "wall",
-        "x": 577.5,
-        "y": 230,
-        "length": 205,
-        "angle": 0,
-        "width": 12
-      },
-      {
-        "type": "mirror",
-        "x": 80,
-        "y": 80,
-        "length": 120,
-        "angle": 0
-      },
-      {
-        "type": "mirror",
-        "x": 720,
-        "y": 365,
-        "length": 120,
-        "angle": 90
-      }
-    ],
-    "solution": [
-      -45,
-      -45,
-      45,
-      45,
-      -45,
-      -45,
-      12.508446739050012,
-      0,
-      90
-    ],
-    "requiredBounces": 7,
-    "stage": 9,
-    "stageName": "Sete reflexões",
-    "difficulty": 87,
-    "wallPurpose": [
-      "Divisória do alvo com abertura: bloqueia atalhos e exige alinhar o último trecho.",
-      "Parede entre colunas: bloqueia o atalho e obriga a passagem pela sala superior.",
-      "Divisória central com passagens: impede cruzar entre as salas fora das aberturas."
-    ],
-    "decoyCount": 2
-  },
-  {
-    "name": "Sete reflexões 8",
-    "hint": "Observe as divisórias e suas aberturas. Planeje a rota antes de confirmar; nem todos os espelhos precisam ser usados.",
-    "sourceAngle": 0,
-    "family": "serpentina",
-    "target": {
-      "x": 750,
-      "y": 186,
-      "radius": 22
-    },
-    "objects": [
-      {
-        "type": "mirror",
-        "x": 150,
-        "y": 350,
-        "length": 120,
-        "angle": -7
-      },
-      {
-        "type": "mirror",
-        "x": 150,
-        "y": 116,
-        "length": 120,
-        "angle": 2
-      },
-      {
-        "type": "mirror",
-        "x": 300,
-        "y": 116,
-        "length": 120,
-        "angle": -79
-      },
-      {
-        "type": "mirror",
-        "x": 300,
-        "y": 350,
-        "length": 120,
-        "angle": -70
-      },
+    "family": "sala-3",
+    "sources": [
       {
-        "type": "mirror",
-        "x": 450,
-        "y": 350,
-        "length": 120,
-        "angle": 29
-      },
-      {
-        "type": "mirror",
-        "x": 450,
-        "y": 116,
-        "length": 120,
-        "angle": 38
-      },
-      {
-        "type": "mirror",
-        "x": 600,
-        "y": 116,
-        "length": 120,
-        "angle": -75.49155326094998
-      },
-      {
-        "type": "wall",
-        "x": 710,
-        "y": 65.54166666666667,
-        "length": 131.08333333333334,
-        "angle": 90,
-        "width": 12
-      },
-      {
-        "type": "wall",
-        "x": 710,
-        "y": 331.7916666666667,
-        "length": 256.41666666666663,
-        "angle": 90,
-        "width": 12
-      },
-      {
-        "type": "wall",
-        "x": 225,
-        "y": 34,
-        "length": 68,
-        "angle": 90,
-        "width": 12
-      },
-      {
-        "type": "wall",
-        "x": 225,
-        "y": 312,
-        "length": 296,
-        "angle": 90,
-        "width": 12
-      },
-      {
-        "type": "wall",
-        "x": 62.5,
-        "y": 230,
-        "length": 125,
-        "angle": 0,
-        "width": 12
-      },
-      {
-        "type": "wall",
-        "x": 225,
-        "y": 230,
-        "length": 100,
-        "angle": 0,
-        "width": 12
-      },
-      {
-        "type": "wall",
-        "x": 375,
-        "y": 230,
-        "length": 100,
-        "angle": 0,
-        "width": 12
-      },
-      {
-        "type": "wall",
-        "x": 577.5,
-        "y": 230,
-        "length": 205,
-        "angle": 0,
-        "width": 12
-      },
-      {
-        "type": "mirror",
-        "x": 80,
-        "y": 80,
-        "length": 120,
-        "angle": 0
-      },
-      {
-        "type": "mirror",
-        "x": 720,
-        "y": 365,
-        "length": 120,
-        "angle": 90
-      }
-    ],
-    "solution": [
-      -45,
-      -45,
-      45,
-      45,
-      -45,
-      -45,
-      12.508446739050012,
-      0,
-      90
-    ],
-    "requiredBounces": 7,
-    "stage": 9,
-    "stageName": "Sete reflexões",
-    "difficulty": 88,
-    "wallPurpose": [
-      "Divisória do alvo com abertura: bloqueia atalhos e exige alinhar o último trecho.",
-      "Parede entre colunas: bloqueia o atalho e obriga a passagem pela sala superior.",
-      "Divisória central com passagens: impede cruzar entre as salas fora das aberturas."
-    ],
-    "decoyCount": 2
-  },
-  {
-    "name": "Sete reflexões 9",
-    "hint": "Observe as divisórias e suas aberturas. Planeje a rota antes de confirmar; nem todos os espelhos precisam ser usados.",
-    "sourceAngle": 0,
-    "family": "serpentina-obliqua",
-    "target": {
-      "x": 750,
-      "y": 170,
-      "radius": 22
-    },
-    "objects": [
-      {
-        "type": "mirror",
-        "x": 150,
-        "y": 350,
-        "length": 120,
-        "angle": -2.48546320910728
-      },
-      {
-        "type": "mirror",
-        "x": 172,
-        "y": 100,
-        "length": 120,
-        "angle": 6.51453679089272
-      },
-      {
-        "type": "mirror",
-        "x": 300,
-        "y": 100,
-        "length": 120,
-        "angle": -79.51453679089272
-      },
-      {
-        "type": "mirror",
-        "x": 322,
-        "y": 350,
-        "length": 120,
-        "angle": -70.51453679089272
-      },
-      {
-        "type": "mirror",
-        "x": 450,
-        "y": 350,
-        "length": 120,
-        "angle": 33.51453679089272
-      },
-      {
-        "type": "mirror",
-        "x": 472,
-        "y": 100,
-        "length": 120,
-        "angle": 42.51453679089272
-      },
-      {
-        "type": "mirror",
-        "x": 600,
-        "y": 100,
-        "length": 120,
-        "angle": -73.49155326094998
-      },
-      {
-        "type": "wall",
-        "x": 710,
-        "y": 57.66666666666667,
-        "length": 115.33333333333334,
-        "angle": 90,
-        "width": 12
-      },
-      {
-        "type": "wall",
-        "x": 710,
-        "y": 323.6666666666667,
-        "length": 272.66666666666663,
-        "angle": 90,
-        "width": 12
-      },
-      {
-        "type": "wall",
-        "x": 225,
-        "y": 26,
-        "length": 52,
-        "angle": 90,
-        "width": 12
-      },
-      {
-        "type": "wall",
-        "x": 225,
-        "y": 304,
-        "length": 312,
-        "angle": 90,
-        "width": 12
-      },
-      {
-        "type": "wall",
-        "x": 67.78,
-        "y": 230,
-        "length": 135.56,
-        "angle": 0,
-        "width": 12
-      },
-      {
-        "type": "wall",
-        "x": 236,
-        "y": 230,
-        "length": 100.88,
-        "angle": 0,
-        "width": 12
-      },
-      {
-        "type": "wall",
-        "x": 386,
-        "y": 230,
-        "length": 99.12,
-        "angle": 0,
-        "width": 12
-      },
-      {
-        "type": "wall",
-        "x": 582.78,
-        "y": 230,
-        "length": 194.44,
-        "angle": 0,
-        "width": 12
-      },
-      {
-        "type": "mirror",
-        "x": 80,
-        "y": 80,
-        "length": 120,
-        "angle": 0
-      },
-      {
-        "type": "mirror",
-        "x": 720,
-        "y": 365,
-        "length": 120,
-        "angle": 90
-      }
-    ],
-    "solution": [
-      -42.48546320910727,
-      -42.48546320910727,
-      42.48546320910727,
-      42.48546320910727,
-      -42.48546320910727,
-      -42.48546320910727,
-      12.508446739050012,
-      0,
-      90
-    ],
-    "requiredBounces": 7,
-    "stage": 9,
-    "stageName": "Sete reflexões",
-    "difficulty": 89,
-    "wallPurpose": [
-      "Divisória do alvo com abertura: bloqueia atalhos e exige alinhar o último trecho.",
-      "Parede entre colunas: bloqueia o atalho e obriga a passagem pela sala superior.",
-      "Divisória central com passagens: impede cruzar entre as salas fora das aberturas."
-    ],
-    "decoyCount": 2
-  },
-  {
-    "name": "Sete reflexões 10",
-    "hint": "Observe as divisórias e suas aberturas. Planeje a rota antes de confirmar; nem todos os espelhos precisam ser usados.",
-    "sourceAngle": 0,
-    "family": "serpentina-obliqua",
-    "target": {
-      "x": 750,
-      "y": 186,
-      "radius": 22
-    },
-    "objects": [
-      {
-        "type": "mirror",
-        "x": 150,
-        "y": 350,
-        "length": 120,
-        "angle": -0.3145026522321359
-      },
-      {
-        "type": "mirror",
-        "x": 172,
-        "y": 116,
-        "length": 120,
-        "angle": 8.685497347767864
-      },
-      {
-        "type": "mirror",
-        "x": 300,
-        "y": 116,
-        "length": 120,
-        "angle": -77.68549734776786
-      },
-      {
-        "type": "mirror",
-        "x": 322,
-        "y": 350,
-        "length": 120,
-        "angle": -68.68549734776786
-      },
-      {
-        "type": "mirror",
-        "x": 450,
-        "y": 350,
-        "length": 120,
-        "angle": 35.685497347767864
-      },
-      {
-        "type": "mirror",
-        "x": 472,
-        "y": 116,
-        "length": 120,
-        "angle": 44.685497347767864
-      },
-      {
-        "type": "mirror",
-        "x": 600,
-        "y": 116,
-        "length": 120,
-        "angle": -71.49155326094998
-      },
-      {
-        "type": "wall",
-        "x": 710,
-        "y": 65.79166666666667,
-        "length": 131.58333333333334,
-        "angle": 90,
-        "width": 12
-      },
-      {
-        "type": "wall",
-        "x": 710,
-        "y": 331.5416666666667,
-        "length": 256.91666666666663,
-        "angle": 90,
-        "width": 12
-      },
-      {
-        "type": "wall",
-        "x": 225,
-        "y": 34,
-        "length": 68,
-        "angle": 90,
-        "width": 12
-      },
-      {
-        "type": "wall",
-        "x": 225,
-        "y": 312,
-        "length": 296,
-        "angle": 90,
-        "width": 12
-      },
-      {
-        "type": "wall",
-        "x": 68.14102564102564,
-        "y": 230,
-        "length": 136.28205128205127,
-        "angle": 0,
-        "width": 12
-      },
-      {
-        "type": "wall",
-        "x": 236,
-        "y": 230,
-        "length": 99.43589743589746,
-        "angle": 0,
-        "width": 12
-      },
-      {
-        "type": "wall",
-        "x": 386,
-        "y": 230,
-        "length": 100.56410256410254,
-        "angle": 0,
-        "width": 12
-      },
-      {
-        "type": "wall",
-        "x": 583.1410256410256,
-        "y": 230,
-        "length": 193.71794871794873,
-        "angle": 0,
-        "width": 12
-      },
-      {
-        "type": "mirror",
-        "x": 80,
-        "y": 80,
-        "length": 120,
-        "angle": 0
-      },
-      {
-        "type": "mirror",
-        "x": 720,
-        "y": 365,
-        "length": 120,
-        "angle": 90
-      }
-    ],
-    "solution": [
-      -42.31450265223214,
-      -42.31450265223214,
-      42.31450265223214,
-      42.31450265223214,
-      -42.31450265223214,
-      -42.31450265223214,
-      12.508446739050012,
-      0,
-      90
-    ],
-    "requiredBounces": 7,
-    "stage": 9,
-    "stageName": "Sete reflexões",
-    "difficulty": 90,
-    "wallPurpose": [
-      "Divisória do alvo com abertura: bloqueia atalhos e exige alinhar o último trecho.",
-      "Parede entre colunas: bloqueia o atalho e obriga a passagem pela sala superior.",
-      "Divisória central com passagens: impede cruzar entre as salas fora das aberturas."
-    ],
-    "decoyCount": 2
-  },
-  {
-    "name": "Laboratório final 1",
-    "hint": "Observe as divisórias e suas aberturas. Planeje a rota antes de confirmar; nem todos os espelhos precisam ser usados.",
-    "sourceAngle": 0,
-    "family": "zigue-zague",
-    "target": {
-      "x": 750,
-      "y": 330,
-      "radius": 22
-    },
-    "objects": [
-      {
-        "type": "mirror",
-        "x": 140,
-        "y": 350,
-        "length": 120,
-        "angle": -13.267153188235554
-      },
-      {
-        "type": "mirror",
-        "x": 210,
-        "y": 97,
-        "length": 120,
-        "angle": 33
-      },
-      {
-        "type": "mirror",
-        "x": 280,
-        "y": 350,
-        "length": 120,
-        "angle": 41.94222143444773
-      },
-      {
-        "type": "mirror",
-        "x": 350,
-        "y": 95,
-        "length": 120,
-        "angle": 51
-      },
-      {
-        "type": "mirror",
-        "x": 420,
-        "y": 350,
-        "length": 120,
-        "angle": 60.11641194370392
-      },
-      {
-        "type": "mirror",
-        "x": 490,
-        "y": 99,
-        "length": 120,
-        "angle": 69
-      },
-      {
-        "type": "mirror",
-        "x": 560,
-        "y": 350,
-        "length": 120,
-        "angle": 77.94136662184832
-      },
-      {
-        "type": "mirror",
-        "x": 630,
-        "y": 97,
-        "length": 120,
-        "angle": 81.10812721157379
-      },
-      {
-        "type": "wall",
-        "x": 710,
-        "y": 108.41666666666667,
-        "length": 216.83333333333334,
-        "angle": 90,
-        "width": 12
-      },
-      {
-        "type": "wall",
-        "x": 710,
-        "y": 373.9166666666667,
-        "length": 172.16666666666663,
-        "angle": 90,
-        "width": 12
-      },
-      {
-        "type": "wall",
-        "x": 74.100790513834,
-        "y": 230,
-        "length": 148.201581027668,
-        "angle": 0,
-        "width": 12
-      },
-      {
-        "type": "wall",
-        "x": 210,
-        "y": 230,
-        "length": 23.596837944664003,
-        "angle": 0,
-        "width": 12
-      },
-      {
-        "type": "wall",
-        "x": 350,
-        "y": 230,
-        "length": 24.117647058823536,
-        "angle": 0,
-        "width": 12
-      },
-      {
-        "type": "wall",
-        "x": 490,
-        "y": 230,
-        "length": 23.06772908366537,
-        "angle": 0,
-        "width": 12
-      },
-      {
-        "type": "wall",
-        "x": 645.8497175524606,
-        "y": 230,
-        "length": 55.29627304958524,
-        "angle": 0,
-        "width": 12
-      },
-      {
-        "type": "mirror",
-        "x": 80,
-        "y": 80,
-        "length": 120,
-        "angle": 0
-      },
-      {
-        "type": "mirror",
-        "x": 720,
-        "y": 95,
-        "length": 120,
-        "angle": 90
-      }
-    ],
-    "solution": [
-      -37.267153188235554,
-      0,
-      -0.057778565552251665,
-      0,
-      0.1164119437039189,
-      0,
-      -0.05863337815166729,
-      -5.8918727884261965,
-      0,
-      90
-    ],
-    "requiredBounces": 8,
-    "stage": 10,
-    "stageName": "Laboratório final",
-    "difficulty": 91,
-    "wallPurpose": [
-      "Divisória do alvo com abertura: bloqueia atalhos e exige alinhar o último trecho.",
-      "Divisória central com passagens: impede cruzar entre as salas fora das aberturas."
-    ],
-    "decoyCount": 2
-  },
-  {
-    "name": "Laboratório final 2",
-    "hint": "Observe as divisórias e suas aberturas. Planeje a rota antes de confirmar; nem todos os espelhos precisam ser usados.",
-    "sourceAngle": 0,
-    "family": "zigue-zague",
-    "target": {
-      "x": 750,
-      "y": 311,
-      "radius": 22
-    },
-    "objects": [
-      {
-        "type": "mirror",
-        "x": 140,
-        "y": 350,
-        "length": 120,
-        "angle": -11.088613651501703
-      },
-      {
-        "type": "mirror",
-        "x": 210,
-        "y": 103,
-        "length": 120,
-        "angle": 35.20753452817729
-      },
-      {
-        "type": "mirror",
-        "x": 280,
-        "y": 357,
-        "length": 120,
-        "angle": 43.94264202267186
-      },
-      {
-        "type": "mirror",
-        "x": 350,
-        "y": 101,
-        "length": 120,
-        "angle": 53
-      },
-      {
-        "type": "mirror",
-        "x": 420,
-        "y": 357,
-        "length": 120,
-        "angle": 62.11556165538423
-      },
-      {
-        "type": "mirror",
-        "x": 490,
-        "y": 105,
-        "length": 120,
-        "angle": 71
-      },
-      {
-        "type": "mirror",
-        "x": 560,
-        "y": 357,
-        "length": 120,
-        "angle": 79.94179632194388
-      },
-      {
-        "type": "mirror",
-        "x": 630,
-        "y": 103,
-        "length": 120,
-        "angle": 81.71303213589636
-      },
-      {
-        "type": "wall",
-        "x": 710,
-        "y": 103.20833333333333,
-        "length": 206.41666666666666,
-        "angle": 90,
-        "width": 12
-      },
-      {
-        "type": "wall",
-        "x": 710,
-        "y": 368.4583333333333,
-        "length": 183.08333333333337,
-        "angle": 90,
-        "width": 12
-      },
-      {
-        "type": "wall",
-        "x": 74.50404858299595,
-        "y": 230,
-        "length": 149.0080971659919,
-        "angle": 0,
-        "width": 12
-      },
-      {
-        "type": "wall",
-        "x": 209.50404858299595,
-        "y": 230,
-        "length": 20.9919028340081,
-        "angle": 0,
-        "width": 12
-      },
-      {
-        "type": "wall",
-        "x": 279.86328125,
-        "y": 230,
-        "length": 19.7265625,
-        "angle": 0,
-        "width": 12
-      },
-      {
-        "type": "wall",
-        "x": 350,
-        "y": 230,
-        "length": 20.546875,
-        "angle": 0,
-        "width": 12
-      },
-      {
-        "type": "wall",
-        "x": 420.2756076388889,
-        "y": 230,
-        "length": 20.00434027777777,
-        "angle": 0,
-        "width": 12
-      },
-      {
-        "type": "wall",
-        "x": 490,
-        "y": 230,
-        "length": 19.4444444444444,
-        "angle": 0,
-        "width": 12
-      },
-      {
-        "type": "wall",
-        "x": 559.8611111111111,
-        "y": 230,
-        "length": 20.27777777777783,
-        "angle": 0,
-        "width": 12
-      },
-      {
-        "type": "wall",
-        "x": 649.1346153846154,
-        "y": 230,
-        "length": 58.26923076923072,
-        "angle": 0,
-        "width": 12
-      },
-      {
-        "type": "mirror",
-        "x": 80,
-        "y": 80,
-        "length": 120,
-        "angle": 0
-      },
-      {
-        "type": "mirror",
-        "x": 720,
-        "y": 95,
-        "length": 120,
-        "angle": 90
-      }
-    ],
-    "solution": [
-      -37.088613651501696,
-      0.20753452817729454,
-      -0.057357977328133795,
-      0,
-      0.1155616553842456,
-      0,
-      -0.05820367805611188,
-      -7.286967864103639,
-      0,
-      90
-    ],
-    "requiredBounces": 8,
-    "stage": 10,
-    "stageName": "Laboratório final",
-    "difficulty": 92,
-    "wallPurpose": [
-      "Divisória do alvo com abertura: bloqueia atalhos e exige alinhar o último trecho.",
-      "Divisória central com passagens: impede cruzar entre as salas fora das aberturas."
-    ],
-    "decoyCount": 2
-  },
-  {
-    "name": "Laboratório final 3",
-    "hint": "Observe as divisórias e suas aberturas. Planeje a rota antes de confirmar; nem todos os espelhos precisam ser usados.",
-    "sourceAngle": 0,
-    "family": "zigue-zague",
-    "target": {
-      "x": 750,
-      "y": 292,
-      "radius": 22
-    },
-    "objects": [
-      {
-        "type": "mirror",
-        "x": 140,
-        "y": 350,
-        "length": 120,
-        "angle": -8.901860531576517
-      },
-      {
-        "type": "mirror",
-        "x": 210,
-        "y": 109,
-        "length": 120,
-        "angle": 37.42307122221126
-      },
-      {
-        "type": "mirror",
-        "x": 280,
-        "y": 364,
-        "length": 120,
-        "angle": 45.94305814887241
-      },
-      {
-        "type": "mirror",
-        "x": 350,
-        "y": 107,
-        "length": 120,
-        "angle": 55
-      },
-      {
-        "type": "mirror",
-        "x": 420,
-        "y": 364,
-        "length": 120,
-        "angle": 64.11472041667983
-      },
-      {
-        "type": "mirror",
-        "x": 490,
-        "y": 111,
-        "length": 120,
-        "angle": 73
-      },
-      {
-        "type": "mirror",
-        "x": 560,
-        "y": 364,
-        "length": 120,
-        "angle": 81.94222143444773
-      },
-      {
-        "type": "mirror",
-        "x": 630,
-        "y": 109,
-        "length": 120,
-        "angle": 82.04788495885617
-      },
-      {
-        "type": "wall",
-        "x": 710,
-        "y": 98,
-        "length": 196,
-        "angle": 90,
-        "width": 12
-      },
-      {
-        "type": "wall",
-        "x": 710,
-        "y": 363,
-        "length": 194,
-        "angle": 90,
-        "width": 12
-      },
-      {
-        "type": "wall",
-        "x": 74.92738589211618,
-        "y": 230,
-        "length": 149.85477178423236,
-        "angle": 0,
-        "width": 12
-      },
-      {
-        "type": "wall",
-        "x": 209.03522902937107,
-        "y": 230,
-        "length": 18.36091449027745,
-        "angle": 0,
-        "width": 12
-      },
-      {
-        "type": "wall",
-        "x": 279.856870374609,
-        "y": 230,
-        "length": 23.282368200198334,
-        "angle": 0,
-        "width": 12
-      },
-      {
-        "type": "wall",
-        "x": 420.28852216976054,
-        "y": 230,
-        "length": 23.57315328893742,
-        "angle": 0,
-        "width": 12
-      },
-      {
-        "type": "wall",
-        "x": 559.8546074556305,
-        "y": 230,
-        "length": 23.859412539719415,
-        "angle": 0,
-        "width": 12
-      },
-      {
-        "type": "wall",
-        "x": 653.0642880102861,
-        "y": 230,
-        "length": 62.559948569591825,
+        "x": 70,
+        "y": 70,
         "angle": 0,
-        "width": 12
-      },
-      {
-        "type": "mirror",
-        "x": 80,
-        "y": 80,
-        "length": 120,
-        "angle": 0
-      },
-      {
-        "type": "mirror",
-        "x": 720,
-        "y": 95,
-        "length": 120,
-        "angle": 90
+        "color": "gold"
       }
-    ],
-    "solution": [
-      -36.90186053157652,
-      0.423071222211264,
-      -0.05694185112758445,
-      0,
-      0.11472041667983612,
-      0,
-      -0.057778565552251665,
-      -8.952115041143815,
-      0,
-      90
     ],
-    "requiredBounces": 8,
-    "stage": 10,
-    "stageName": "Laboratório final",
-    "difficulty": 93,
-    "wallPurpose": [
-      "Divisória do alvo com abertura: bloqueia atalhos e exige alinhar o último trecho.",
-      "Divisória central com passagens: impede cruzar entre as salas fora das aberturas."
-    ],
-    "decoyCount": 2
-  },
-  {
-    "name": "Laboratório final 4",
-    "hint": "Observe as divisórias e suas aberturas. Planeje a rota antes de confirmar; nem todos os espelhos precisam ser usados.",
-    "sourceAngle": 0,
-    "family": "zigue-zague",
-    "target": {
-      "x": 750,
-      "y": 273,
-      "radius": 22
-    },
-    "objects": [
-      {
-        "type": "mirror",
-        "x": 140,
-        "y": 350,
-        "length": 120,
-        "angle": -6.70633072153629
-      },
-      {
-        "type": "mirror",
-        "x": 210,
-        "y": 115,
-        "length": 120,
-        "angle": 39.647175435470814
-      },
-      {
-        "type": "mirror",
-        "x": 280,
-        "y": 371,
-        "length": 120,
-        "angle": 47.94346987427019
-      },
-      {
-        "type": "mirror",
-        "x": 350,
-        "y": 113,
-        "length": 120,
-        "angle": 57
-      },
-      {
-        "type": "mirror",
-        "x": 420,
-        "y": 371,
-        "length": 120,
-        "angle": 66.11388810305792
-      },
-      {
-        "type": "mirror",
-        "x": 490,
-        "y": 117,
-        "length": 120,
-        "angle": 75
-      },
+    "targets": [
       {
-        "type": "mirror",
-        "x": 560,
-        "y": 371,
-        "length": 120,
-        "angle": 83.94264202267186
-      },
-      {
-        "type": "mirror",
-        "x": 630,
-        "y": 115,
-        "length": 120,
-        "angle": 82.03827360622557
-      },
-      {
-        "type": "wall",
-        "x": 710,
-        "y": 92.79166666666666,
-        "length": 185.58333333333331,
-        "angle": 90,
-        "width": 12
-      },
-      {
-        "type": "wall",
-        "x": 710,
-        "y": 357.54166666666663,
-        "length": 204.91666666666669,
-        "angle": 90,
-        "width": 12
-      },
-      {
-        "type": "wall",
-        "x": 75.37234042553192,
-        "y": 230,
-        "length": 150.74468085106383,
-        "angle": 0,
-        "width": 12
-      },
-      {
-        "type": "wall",
-        "x": 279.85056322674416,
-        "y": 230,
-        "length": 26.81050145348837,
-        "angle": 0,
-        "width": 12
-      },
-      {
-        "type": "wall",
-        "x": 420.3012268815235,
-        "y": 230,
-        "length": 27.11408167002378,
-        "angle": 0,
-        "width": 12
-      },
-      {
-        "type": "wall",
-        "x": 559.8482098917323,
-        "y": 230,
-        "length": 27.412955216535465,
-        "angle": 0,
-        "width": 12
-      },
-      {
-        "type": "wall",
-        "x": 657.9482298259494,
-        "y": 230,
-        "length": 68.7870846518988,
-        "angle": 0,
-        "width": 12
-      },
-      {
-        "type": "mirror",
-        "x": 80,
-        "y": 80,
-        "length": 120,
-        "angle": 0
-      },
-      {
-        "type": "mirror",
-        "x": 720,
-        "y": 95,
-        "length": 120,
-        "angle": 90
+        "x": 730,
+        "y": 380,
+        "radius": 22,
+        "color": "gold"
       }
-    ],
-    "solution": [
-      -36.7063307215363,
-      0.6471754354708129,
-      -0.056530125729789875,
-      0,
-      0.11388810305792359,
-      0,
-      -0.057357977328133795,
-      -10.961726393774414,
-      0,
-      90
     ],
-    "requiredBounces": 8,
-    "stage": 10,
-    "stageName": "Laboratório final",
-    "difficulty": 94,
-    "wallPurpose": [
-      "Divisória do alvo com abertura: bloqueia atalhos e exige alinhar o último trecho.",
-      "Divisória central com passagens: impede cruzar entre as salas fora das aberturas."
-    ],
-    "decoyCount": 2
-  },
-  {
-    "name": "Laboratório final 5",
-    "hint": "Observe as divisórias e suas aberturas. Planeje a rota antes de confirmar; nem todos os espelhos precisam ser usados.",
-    "sourceAngle": -74.35775354279127,
-    "family": "entrada-diagonal",
-    "target": {
-      "x": 750,
-      "y": 254,
-      "radius": 22
-    },
+    "portals": [],
     "objects": [
-      {
-        "type": "mirror",
-        "x": 140,
-        "y": 100,
-        "length": 120,
-        "angle": 32
-      },
-      {
-        "type": "mirror",
-        "x": 210,
-        "y": 350,
-        "length": 120,
-        "angle": 41
-      },
-      {
-        "type": "mirror",
-        "x": 280,
-        "y": 100,
-        "length": 120,
-        "angle": 50
-      },
-      {
-        "type": "mirror",
-        "x": 350,
-        "y": 350,
-        "length": 120,
-        "angle": 59
-      },
-      {
-        "type": "mirror",
-        "x": 420,
-        "y": 100,
-        "length": 120,
-        "angle": 68
-      },
-      {
-        "type": "mirror",
-        "x": 490,
-        "y": 350,
-        "length": 120,
-        "angle": 77
-      },
       {
         "type": "mirror",
-        "x": 560,
-        "y": 100,
-        "length": 120,
+        "x": 650,
+        "y": 70,
+        "length": 104,
         "angle": 86
       },
       {
         "type": "mirror",
-        "x": 630,
-        "y": 350,
-        "length": 120,
-        "angle": -67.1510273556494
-      },
-      {
-        "type": "wall",
-        "x": 710,
-        "y": 125.75,
-        "length": 251.5,
-        "angle": 90,
-        "width": 12
-      },
-      {
-        "type": "wall",
-        "x": 710,
-        "y": 390.25,
-        "length": 139.5,
-        "angle": 90,
-        "width": 12
-      },
-      {
-        "type": "wall",
-        "x": 39.3,
+        "x": 650,
         "y": 230,
-        "length": 78.6,
-        "angle": 0,
-        "width": 12
-      },
-      {
-        "type": "wall",
-        "x": 140,
-        "y": 230,
-        "length": 22.80000000000001,
-        "angle": 0,
-        "width": 12
-      },
-      {
-        "type": "wall",
-        "x": 280,
-        "y": 230,
-        "length": 22.799999999999955,
-        "angle": 0,
-        "width": 12
-      },
-      {
-        "type": "wall",
-        "x": 420,
-        "y": 230,
-        "length": 22.799999999999955,
-        "angle": 0,
-        "width": 12
-      },
-      {
-        "type": "wall",
-        "x": 560,
-        "y": 230,
-        "length": 22.799999999999955,
-        "angle": 0,
-        "width": 12
-      },
-      {
-        "type": "wall",
-        "x": 650.7,
-        "y": 230,
-        "length": 58.60000000000002,
-        "angle": 0,
-        "width": 12
+        "length": 104,
+        "angle": -86
       },
       {
         "type": "mirror",
-        "x": 80,
-        "y": 80,
-        "length": 120,
-        "angle": 0
+        "x": 220,
+        "y": 230,
+        "length": 104,
+        "angle": -4
       },
       {
         "type": "mirror",
-        "x": 720,
-        "y": 95,
-        "length": 120,
-        "angle": 90
+        "x": 220,
+        "y": 380,
+        "length": 104,
+        "angle": 4
       }
     ],
     "solution": [
-      0,
-      0,
-      0,
-      0,
-      0,
-      0,
-      0,
-      17.84897264435059,
-      0,
-      90
+      45,
+      -45,
+      -45,
+      45
     ],
-    "requiredBounces": 8,
-    "stage": 10,
-    "stageName": "Laboratório final",
-    "difficulty": 95,
-    "wallPurpose": [
-      "Divisória do alvo com abertura: bloqueia atalhos e exige alinhar o último trecho.",
-      "Divisória central com passagens: impede cruzar entre as salas fora das aberturas."
-    ],
-    "decoyCount": 2
-  },
-  {
-    "name": "Laboratório final 6",
-    "hint": "Observe as divisórias e suas aberturas. Planeje a rota antes de confirmar; nem todos os espelhos precisam ser usados.",
-    "sourceAngle": -73.4126614430726,
-    "family": "entrada-diagonal",
-    "target": {
-      "x": 750,
-      "y": 330,
-      "radius": 22
-    },
-    "objects": [
-      {
-        "type": "mirror",
-        "x": 140,
-        "y": 115,
-        "length": 120,
-        "angle": 34
-      },
-      {
-        "type": "mirror",
-        "x": 210,
-        "y": 350,
-        "length": 120,
-        "angle": 43
-      },
-      {
-        "type": "mirror",
-        "x": 280,
-        "y": 115,
-        "length": 120,
-        "angle": 52
-      },
-      {
-        "type": "mirror",
-        "x": 350,
-        "y": 350,
-        "length": 120,
-        "angle": 61
-      },
-      {
-        "type": "mirror",
-        "x": 420,
-        "y": 115,
-        "length": 120,
-        "angle": 70
-      },
-      {
-        "type": "mirror",
-        "x": 490,
-        "y": 350,
-        "length": 120,
-        "angle": 79
-      },
-      {
-        "type": "mirror",
-        "x": 560,
-        "y": 115,
-        "length": 120,
-        "angle": 88
-      },
-      {
-        "type": "mirror",
-        "x": 630,
-        "y": 350,
-        "length": 120,
-        "angle": -51.02483038247652
-      },
-      {
-        "type": "wall",
-        "x": 710,
-        "y": 151.20833333333334,
-        "length": 302.4166666666667,
-        "angle": 90,
-        "width": 12
-      },
-      {
-        "type": "wall",
-        "x": 710,
-        "y": 415.45833333333337,
-        "length": 89.08333333333331,
-        "angle": 90,
-        "width": 12
-      },
-      {
-        "type": "wall",
-        "x": 40.37234042553192,
-        "y": 230,
-        "length": 80.74468085106383,
-        "angle": 0,
-        "width": 12
-      },
-      {
-        "type": "wall",
-        "x": 140,
-        "y": 230,
-        "length": 18.510638297872333,
-        "angle": 0,
-        "width": 12
-      },
-      {
-        "type": "wall",
-        "x": 210,
-        "y": 230,
-        "length": 21.489361702127667,
-        "angle": 0,
-        "width": 12
-      },
-      {
-        "type": "wall",
-        "x": 280,
-        "y": 230,
-        "length": 18.510638297872333,
-        "angle": 0,
-        "width": 12
-      },
-      {
-        "type": "wall",
-        "x": 350,
-        "y": 230,
-        "length": 21.489361702127667,
-        "angle": 0,
-        "width": 12
-      },
-      {
-        "type": "wall",
-        "x": 420,
-        "y": 230,
-        "length": 18.510638297872333,
-        "angle": 0,
-        "width": 12
-      },
-      {
-        "type": "wall",
-        "x": 490,
-        "y": 230,
-        "length": 21.48936170212761,
-        "angle": 0,
-        "width": 12
-      },
-      {
-        "type": "wall",
-        "x": 560,
-        "y": 230,
-        "length": 18.510638297872447,
-        "angle": 0,
-        "width": 12
-      },
-      {
-        "type": "wall",
-        "x": 649.6276595744681,
-        "y": 230,
-        "length": 60.74468085106378,
-        "angle": 0,
-        "width": 12
-      },
-      {
-        "type": "mirror",
-        "x": 80,
-        "y": 80,
-        "length": 120,
-        "angle": 0
-      },
-      {
-        "type": "mirror",
-        "x": 720,
-        "y": 95,
-        "length": 120,
-        "angle": 90
-      }
-    ],
-    "solution": [
-      0,
-      0,
-      0,
-      0,
-      0,
-      0,
-      0,
-      31.975169617523484,
-      0,
-      90
-    ],
-    "requiredBounces": 8,
-    "stage": 10,
-    "stageName": "Laboratório final",
-    "difficulty": 96,
-    "wallPurpose": [
-      "Divisória do alvo com abertura: bloqueia atalhos e exige alinhar o último trecho.",
-      "Divisória central com passagens: impede cruzar entre as salas fora das aberturas."
-    ],
-    "decoyCount": 2
-  },
-  {
-    "name": "Laboratório final 7",
-    "hint": "Observe as divisórias e suas aberturas. Planeje a rota antes de confirmar; nem todos os espelhos precisam ser usados.",
     "sourceAngle": 0,
-    "family": "serpentina",
     "target": {
-      "x": 750,
-      "y": 280,
-      "radius": 22
+      "x": 730,
+      "y": 380,
+      "radius": 22,
+      "color": "gold"
     },
+    "requiredBounces": 4,
+    "wallPurpose": [],
+    "decoyCount": 0,
+    "tutorial": "",
+    "rules": "Leve a luz ao alvo."
+  },
+  {
+    "name": "Um raio, novos caminhos 5",
+    "hint": "Planeje os trajetos antes de girar os espelhos. Cada cor tem seu próprio destino.",
+    "stage": 1,
+    "stageName": "Um raio, novos caminhos",
+    "difficulty": 5,
+    "family": "sala-4",
+    "sources": [
+      {
+        "x": 740,
+        "y": 350,
+        "angle": 180,
+        "color": "gold"
+      }
+    ],
+    "targets": [
+      {
+        "x": 60,
+        "y": 390,
+        "radius": 22,
+        "color": "gold"
+      }
+    ],
+    "portals": [],
     "objects": [
       {
         "type": "mirror",
+        "x": 560,
+        "y": 350,
+        "length": 104,
+        "angle": 68.93893476894215
+      },
+      {
+        "type": "mirror",
+        "x": 270,
+        "y": 90,
+        "length": 104,
+        "angle": -52.56556820980512
+      },
+      {
+        "type": "mirror",
+        "x": 100,
+        "y": 300,
+        "length": 104,
+        "angle": -10.52325849145818
+      }
+    ],
+    "solution": [
+      20.938934768942147,
+      -4.565568209805122,
+      -58.52325849145818
+    ],
+    "sourceAngle": 180,
+    "target": {
+      "x": 60,
+      "y": 390,
+      "radius": 22,
+      "color": "gold"
+    },
+    "requiredBounces": 3,
+    "wallPurpose": [],
+    "decoyCount": 0,
+    "tutorial": "",
+    "rules": "Leve a luz ao alvo."
+  },
+  {
+    "name": "Um raio, novos caminhos 6",
+    "hint": "Planeje os trajetos antes de girar os espelhos. Cada cor tem seu próprio destino.",
+    "stage": 1,
+    "stageName": "Um raio, novos caminhos",
+    "difficulty": 6,
+    "family": "sala-5",
+    "sources": [
+      {
+        "x": 400,
+        "y": 430,
+        "angle": -90,
+        "color": "gold"
+      }
+    ],
+    "targets": [
+      {
+        "x": 750,
+        "y": 360,
+        "radius": 22,
+        "color": "gold"
+      }
+    ],
+    "portals": [],
+    "objects": [
+      {
+        "type": "mirror",
+        "x": 400,
+        "y": 290,
+        "length": 104,
+        "angle": 65
+      },
+      {
+        "type": "mirror",
+        "x": 150,
+        "y": 290,
+        "length": 104,
+        "angle": 25
+      },
+      {
+        "type": "mirror",
+        "x": 150,
+        "y": 110,
+        "length": 104,
+        "angle": -25
+      },
+      {
+        "type": "mirror",
+        "x": 650,
+        "y": 110,
+        "length": 104,
+        "angle": 25
+      },
+      {
+        "type": "mirror",
+        "x": 650,
+        "y": 360,
+        "length": 104,
+        "angle": 65
+      }
+    ],
+    "solution": [
+      45,
+      45,
+      -45,
+      45,
+      45
+    ],
+    "sourceAngle": -90,
+    "target": {
+      "x": 750,
+      "y": 360,
+      "radius": 22,
+      "color": "gold"
+    },
+    "requiredBounces": 5,
+    "wallPurpose": [],
+    "decoyCount": 0,
+    "tutorial": "",
+    "rules": "Leve a luz ao alvo."
+  },
+  {
+    "name": "Um raio, novos caminhos 7",
+    "hint": "Planeje os trajetos antes de girar os espelhos. Cada cor tem seu próprio destino.",
+    "stage": 1,
+    "stageName": "Um raio, novos caminhos",
+    "difficulty": 7,
+    "family": "sala-6",
+    "sources": [
+      {
+        "x": 50,
+        "y": 80,
+        "angle": 43.264295411071615,
+        "color": "gold"
+      }
+    ],
+    "targets": [
+      {
+        "x": 740,
+        "y": 180,
+        "radius": 22,
+        "color": "gold"
+      }
+    ],
+    "portals": [],
+    "objects": [
+      {
+        "type": "mirror",
+        "x": 220,
+        "y": 240,
+        "length": 104,
+        "angle": 29.980173566544096
+      },
+      {
+        "type": "mirror",
+        "x": 430,
+        "y": 80,
+        "length": 104,
+        "angle": -23.15197413899171
+      },
+      {
+        "type": "mirror",
+        "x": 650,
+        "y": 300,
+        "length": 104,
+        "angle": 22.93494882292201
+      }
+    ],
+    "solution": [
+      2.980173566544096,
+      3.8480258610082885,
+      -4.06505117707799
+    ],
+    "sourceAngle": 43.264295411071615,
+    "target": {
+      "x": 740,
+      "y": 180,
+      "radius": 22,
+      "color": "gold"
+    },
+    "requiredBounces": 3,
+    "wallPurpose": [],
+    "decoyCount": 0,
+    "tutorial": "",
+    "rules": "Leve a luz ao alvo."
+  },
+  {
+    "name": "Um raio, novos caminhos 8",
+    "hint": "Planeje os trajetos antes de girar os espelhos. Cada cor tem seu próprio destino.",
+    "stage": 1,
+    "stageName": "Um raio, novos caminhos",
+    "difficulty": 8,
+    "family": "sala-7",
+    "sources": [
+      {
+        "x": 740,
+        "y": 400,
+        "angle": -113.4985656759521,
+        "color": "gold"
+      }
+    ],
+    "targets": [
+      {
+        "x": 60,
+        "y": 100,
+        "radius": 22,
+        "color": "gold"
+      }
+    ],
+    "portals": [],
+    "objects": [
+      {
+        "type": "mirror",
+        "x": 640,
+        "y": 170,
+        "length": 104,
+        "angle": 47.606013730773775
+      },
+      {
+        "type": "mirror",
+        "x": 420,
+        "y": 350,
+        "length": 104,
+        "angle": -30.560133767296477
+      },
+      {
+        "type": "mirror",
+        "x": 180,
+        "y": 100,
+        "length": 104,
+        "angle": 57.0845696639537
+      }
+    ],
+    "solution": [
+      13.606013730773775,
+      3.4398662327035225,
+      23.0845696639537
+    ],
+    "sourceAngle": -113.4985656759521,
+    "target": {
+      "x": 60,
+      "y": 100,
+      "radius": 22,
+      "color": "gold"
+    },
+    "requiredBounces": 3,
+    "wallPurpose": [],
+    "decoyCount": 0,
+    "tutorial": "",
+    "rules": "Leve a luz ao alvo."
+  },
+  {
+    "name": "Um raio, novos caminhos 9",
+    "hint": "Planeje os trajetos antes de girar os espelhos. Cada cor tem seu próprio destino.",
+    "stage": 1,
+    "stageName": "Um raio, novos caminhos",
+    "difficulty": 9,
+    "family": "sala-8",
+    "sources": [
+      {
+        "x": 50,
+        "y": 230,
+        "angle": 0,
+        "color": "gold"
+      }
+    ],
+    "targets": [
+      {
+        "x": 750,
+        "y": 70,
+        "radius": 22,
+        "color": "gold"
+      }
+    ],
+    "portals": [],
+    "objects": [
+      {
+        "type": "mirror",
+        "x": 250,
+        "y": 230,
+        "length": 104,
+        "angle": 61.05045377310612
+      },
+      {
+        "type": "mirror",
+        "x": 440,
+        "y": 390,
+        "length": 104,
+        "angle": -39.60152036588559
+      },
+      {
+        "type": "mirror",
+        "x": 650,
+        "y": 230,
+        "length": 104,
+        "angle": -22.65197413899171
+      },
+      {
+        "type": "mirror",
+        "x": 650,
+        "y": 70,
+        "length": 104,
+        "angle": -86
+      }
+    ],
+    "solution": [
+      20.05045377310612,
+      1.398479634114409,
+      -63.65197413899171,
+      -45
+    ],
+    "sourceAngle": 0,
+    "target": {
+      "x": 750,
+      "y": 70,
+      "radius": 22,
+      "color": "gold"
+    },
+    "requiredBounces": 4,
+    "wallPurpose": [],
+    "decoyCount": 0,
+    "tutorial": "",
+    "rules": "Leve a luz ao alvo."
+  },
+  {
+    "name": "Um raio, novos caminhos 10",
+    "hint": "Planeje os trajetos antes de girar os espelhos. Cada cor tem seu próprio destino.",
+    "stage": 1,
+    "stageName": "Um raio, novos caminhos",
+    "difficulty": 10,
+    "family": "sala-9",
+    "sources": [
+      {
+        "x": 60,
+        "y": 80,
+        "angle": 47.72631099390627,
+        "color": "gold"
+      }
+    ],
+    "targets": [
+      {
+        "x": 742.6499947000159,
+        "y": 434.23999152002546,
+        "radius": 22,
+        "color": "gold"
+      }
+    ],
+    "portals": [],
+    "objects": [
+      {
+        "type": "mirror",
+        "x": 260,
+        "y": 300,
+        "length": 104,
+        "angle": 50.72631099390627
+      },
+      {
+        "type": "mirror",
+        "x": 480,
+        "y": 100,
+        "length": 104,
+        "angle": -44.15197413899171
+      },
+      {
+        "type": "mirror",
+        "x": 690,
+        "y": 350,
+        "length": 104,
+        "angle": -78.01782123998659
+      }
+    ],
+    "solution": [
+      2.7263109939062673,
+      3.8480258610082885,
+      53.98217876001341
+    ],
+    "sourceAngle": 47.72631099390627,
+    "target": {
+      "x": 742.6499947000159,
+      "y": 434.23999152002546,
+      "radius": 22,
+      "color": "gold"
+    },
+    "requiredBounces": 3,
+    "wallPurpose": [],
+    "decoyCount": 0,
+    "tutorial": "",
+    "rules": "Leve a luz ao alvo."
+  },
+  {
+    "name": "Desvios e salas 1",
+    "hint": "Planeje os trajetos antes de girar os espelhos. Cada cor tem seu próprio destino.",
+    "stage": 2,
+    "stageName": "Desvios e salas",
+    "difficulty": 11,
+    "family": "sala-0",
+    "sources": [
+      {
+        "x": 60,
+        "y": 350,
+        "angle": 0,
+        "color": "gold"
+      }
+    ],
+    "targets": [
+      {
+        "x": 740,
+        "y": 390,
+        "radius": 22,
+        "color": "gold"
+      }
+    ],
+    "portals": [],
+    "objects": [
+      {
+        "type": "mirror",
+        "x": 240,
+        "y": 350,
+        "length": 104,
+        "angle": 8.289861431751167
+      },
+      {
+        "type": "mirror",
+        "x": 428.3904260238817,
+        "y": 268.3970136420219,
+        "length": 104,
+        "angle": -61.877869537884294
+      },
+      {
+        "type": "mirror",
+        "x": 530,
+        "y": 90,
+        "length": 104,
+        "angle": 15.336772009111804
+      },
+      {
+        "type": "mirror",
+        "x": 700,
+        "y": 300,
+        "length": 104,
+        "angle": 38.52325849145818
+      },
+      {
+        "type": "wall",
+        "x": 366,
+        "y": 368,
+        "length": 52,
+        "angle": 90,
+        "width": 12,
+        "purpose": "Bloqueia a linha direta e exige desvio pelos espelhos."
+      }
+    ],
+    "solution": [
+      -11.710138568248833,
+      -41.877869537884294,
+      -4.6632279908881955,
+      58.52325849145818
+    ],
+    "sourceAngle": 0,
+    "target": {
+      "x": 740,
+      "y": 390,
+      "radius": 22,
+      "color": "gold"
+    },
+    "requiredBounces": 4,
+    "wallPurpose": [
+      "Bloqueia a linha direta e exige desvio pelos espelhos."
+    ],
+    "decoyCount": 0,
+    "tutorial": "",
+    "rules": "Leve a luz ao alvo."
+  },
+  {
+    "name": "Desvios e salas 2",
+    "hint": "Planeje os trajetos antes de girar os espelhos. Cada cor tem seu próprio destino.",
+    "stage": 2,
+    "stageName": "Desvios e salas",
+    "difficulty": 12,
+    "family": "sala-1",
+    "sources": [
+      {
+        "x": 400,
+        "y": 30,
+        "angle": 90,
+        "color": "gold"
+      }
+    ],
+    "targets": [
+      {
+        "x": 50,
+        "y": 100,
+        "radius": 22,
+        "color": "gold"
+      }
+    ],
+    "portals": [],
+    "objects": [
+      {
+        "type": "mirror",
+        "x": 400,
+        "y": 170,
+        "length": 104,
+        "angle": 72
+      },
+      {
+        "type": "mirror",
+        "x": 650,
+        "y": 170,
+        "length": 104,
+        "angle": 18
+      },
+      {
+        "type": "mirror",
+        "x": 650,
+        "y": 350,
+        "length": 104,
+        "angle": -20.85529656874982
+      },
+      {
+        "type": "mirror",
+        "x": 400,
+        "y": 375,
+        "length": 104,
+        "angle": -27
+      },
+      {
+        "type": "mirror",
         "x": 150,
         "y": 350,
-        "length": 120,
-        "angle": -9
+        "length": 104,
+        "angle": 74.85529656874982
       },
       {
         "type": "mirror",
         "x": 150,
         "y": 100,
-        "length": 120,
-        "angle": 0
+        "length": 104,
+        "angle": 18
+      },
+      {
+        "type": "wall",
+        "x": 295,
+        "y": 51,
+        "length": 64,
+        "angle": 0,
+        "width": 12,
+        "purpose": "Bloqueia a linha direta e exige desvio pelos espelhos."
+      }
+    ],
+    "solution": [
+      45,
+      45,
+      -47.85529656874982,
+      0,
+      47.85529656874982,
+      45
+    ],
+    "sourceAngle": 90,
+    "target": {
+      "x": 50,
+      "y": 100,
+      "radius": 22,
+      "color": "gold"
+    },
+    "requiredBounces": 6,
+    "wallPurpose": [
+      "Bloqueia a linha direta e exige desvio pelos espelhos."
+    ],
+    "decoyCount": 0,
+    "tutorial": "",
+    "rules": "Leve a luz ao alvo."
+  },
+  {
+    "name": "Desvios e salas 3",
+    "hint": "Planeje os trajetos antes de girar os espelhos. Cada cor tem seu próprio destino.",
+    "stage": 2,
+    "stageName": "Desvios e salas",
+    "difficulty": 13,
+    "family": "sala-2",
+    "sources": [
+      {
+        "x": 50,
+        "y": 380,
+        "angle": -43.264295411071615,
+        "color": "gold"
+      }
+    ],
+    "targets": [
+      {
+        "x": 740,
+        "y": 280,
+        "radius": 22,
+        "color": "gold"
+      }
+    ],
+    "portals": [],
+    "objects": [
+      {
+        "type": "mirror",
+        "x": 220,
+        "y": 220,
+        "length": 104,
+        "angle": 31.019826433455904
       },
       {
         "type": "mirror",
-        "x": 300,
+        "x": 430,
+        "y": 380,
+        "length": 104,
+        "angle": -49.18648568760292
+      },
+      {
+        "type": "mirror",
+        "x": 494.03805922287444,
+        "y": 224.0380592228744,
+        "length": 104,
+        "angle": -11
+      },
+      {
+        "type": "mirror",
+        "x": 650,
+        "y": 160,
+        "length": 104,
+        "angle": -18.59648899632738
+      },
+      {
+        "type": "wall",
+        "x": 257,
+        "y": 350,
+        "length": 76,
+        "angle": 90,
+        "width": 12,
+        "purpose": "Bloqueia a linha direta e exige desvio pelos espelhos."
+      }
+    ],
+    "solution": [
+      -2.980173566544096,
+      -15.186485687602918,
+      -45,
+      15.40351100367262
+    ],
+    "sourceAngle": -43.264295411071615,
+    "target": {
+      "x": 740,
+      "y": 280,
+      "radius": 22,
+      "color": "gold"
+    },
+    "requiredBounces": 4,
+    "wallPurpose": [
+      "Bloqueia a linha direta e exige desvio pelos espelhos."
+    ],
+    "decoyCount": 0,
+    "tutorial": "",
+    "rules": "Leve a luz ao alvo."
+  },
+  {
+    "name": "Desvios e salas 4",
+    "hint": "Planeje os trajetos antes de girar os espelhos. Cada cor tem seu próprio destino.",
+    "stage": 2,
+    "stageName": "Desvios e salas",
+    "difficulty": 14,
+    "family": "sala-3",
+    "sources": [
+      {
+        "x": 60,
+        "y": 400,
+        "angle": -66.5014343240479,
+        "color": "gold"
+      }
+    ],
+    "targets": [
+      {
+        "x": 740,
         "y": 100,
-        "length": 120,
-        "angle": -81
+        "radius": 22,
+        "color": "gold"
+      }
+    ],
+    "portals": [],
+    "objects": [
+      {
+        "type": "mirror",
+        "x": 160,
+        "y": 170,
+        "length": 104,
+        "angle": 27.393986269226225
       },
       {
         "type": "mirror",
-        "x": 300,
+        "x": 380,
         "y": 350,
-        "length": 120,
-        "angle": -72
+        "length": 104,
+        "angle": -34.15879449310294
       },
       {
         "type": "mirror",
-        "x": 450,
+        "x": 546.8901758670119,
+        "y": 270.0145688323314,
+        "length": 104,
+        "angle": -5.169139327907416
+      },
+      {
+        "type": "mirror",
+        "x": 620,
+        "y": 100,
+        "length": 104,
+        "angle": -74.36564140355429
+      }
+    ],
+    "solution": [
+      -13.606013730773775,
+      6.841205506897062,
+      -46.169139327907416,
+      -33.3656414035543
+    ],
+    "sourceAngle": -66.5014343240479,
+    "target": {
+      "x": 740,
+      "y": 100,
+      "radius": 22,
+      "color": "gold"
+    },
+    "requiredBounces": 4,
+    "wallPurpose": [],
+    "decoyCount": 0,
+    "tutorial": "",
+    "rules": "Leve a luz ao alvo."
+  },
+  {
+    "name": "Desvios e salas 5",
+    "hint": "Planeje os trajetos antes de girar os espelhos. Cada cor tem seu próprio destino.",
+    "stage": 2,
+    "stageName": "Desvios e salas",
+    "difficulty": 15,
+    "family": "sala-4",
+    "sources": [
+      {
+        "x": 750,
+        "y": 230,
+        "angle": 180,
+        "color": "gold"
+      }
+    ],
+    "targets": [
+      {
+        "x": 50,
+        "y": 390,
+        "radius": 22,
+        "color": "gold"
+      }
+    ],
+    "portals": [],
+    "objects": [
+      {
+        "type": "mirror",
+        "x": 550,
+        "y": 230,
+        "length": 104,
+        "angle": 68.05045377310611
+      },
+      {
+        "type": "mirror",
+        "x": 360,
+        "y": 70,
+        "length": 104,
+        "angle": -59.70957099643212
+      },
+      {
+        "type": "mirror",
+        "x": 294.39280899208563,
+        "y": 201.70306180211242,
+        "length": 104,
+        "angle": 10.696051722016591
+      },
+      {
+        "type": "mirror",
+        "x": 150,
+        "y": 230,
+        "length": 104,
+        "angle": 81.45607649155482
+      },
+      {
+        "type": "mirror",
+        "x": 150,
+        "y": 390,
+        "length": 104,
+        "angle": 3
+      },
+      {
+        "type": "wall",
+        "x": 435,
+        "y": 302,
+        "length": 64,
+        "angle": 90,
+        "width": 12,
+        "purpose": "Bloqueia a linha direta e exige desvio pelos espelhos."
+      }
+    ],
+    "solution": [
+      20.050453773106113,
+      -11.70957099643212,
+      -37.30394827798341,
+      -50.543923508445175,
+      -45
+    ],
+    "sourceAngle": 180,
+    "target": {
+      "x": 50,
+      "y": 390,
+      "radius": 22,
+      "color": "gold"
+    },
+    "requiredBounces": 5,
+    "wallPurpose": [
+      "Bloqueia a linha direta e exige desvio pelos espelhos."
+    ],
+    "decoyCount": 0,
+    "tutorial": "",
+    "rules": "Leve a luz ao alvo."
+  },
+  {
+    "name": "Desvios e salas 6",
+    "hint": "Planeje os trajetos antes de girar os espelhos. Cada cor tem seu próprio destino.",
+    "stage": 2,
+    "stageName": "Desvios e salas",
+    "difficulty": 16,
+    "family": "sala-5",
+    "sources": [
+      {
+        "x": 60,
+        "y": 380,
+        "angle": -47.72631099390627,
+        "color": "gold"
+      }
+    ],
+    "targets": [
+      {
+        "x": 742.6499947000159,
+        "y": 25.76000847997456,
+        "radius": 22,
+        "color": "gold"
+      }
+    ],
+    "portals": [],
+    "objects": [
+      {
+        "type": "mirror",
+        "x": 260,
+        "y": 160,
+        "length": 104,
+        "angle": 17.273689006093733
+      },
+      {
+        "type": "mirror",
+        "x": 480,
+        "y": 360,
+        "length": 104,
+        "angle": -34.70342177620413
+      },
+      {
+        "type": "mirror",
+        "x": 535.2291837886753,
+        "y": 193.19251438248722,
+        "length": 104,
+        "angle": -29.969740728110303
+      },
+      {
+        "type": "mirror",
+        "x": 690,
+        "y": 110,
+        "length": 104,
+        "angle": -63.126782844817555
+      }
+    ],
+    "solution": [
+      -2.7263109939062673,
+      -14.70342177620413,
+      -49.9697407281103,
+      -43.126782844817555
+    ],
+    "sourceAngle": -47.72631099390627,
+    "target": {
+      "x": 742.6499947000159,
+      "y": 25.76000847997456,
+      "radius": 22,
+      "color": "gold"
+    },
+    "requiredBounces": 4,
+    "wallPurpose": [],
+    "decoyCount": 0,
+    "tutorial": "",
+    "rules": "Leve a luz ao alvo."
+  },
+  {
+    "name": "Desvios e salas 7",
+    "hint": "Planeje os trajetos antes de girar os espelhos. Cada cor tem seu próprio destino.",
+    "stage": 2,
+    "stageName": "Desvios e salas",
+    "difficulty": 17,
+    "family": "sala-6",
+    "sources": [
+      {
+        "x": 60,
         "y": 350,
-        "length": 120,
+        "angle": 0,
+        "color": "gold"
+      }
+    ],
+    "targets": [
+      {
+        "x": 730,
+        "y": 100,
+        "radius": 22,
+        "color": "gold"
+      }
+    ],
+    "portals": [],
+    "objects": [
+      {
+        "type": "mirror",
+        "x": 260,
+        "y": 350,
+        "length": 104,
+        "angle": -18
+      },
+      {
+        "type": "mirror",
+        "x": 260,
+        "y": 100,
+        "length": 104,
+        "angle": -64.26939112977905
+      },
+      {
+        "type": "mirror",
+        "x": 495,
+        "y": 165,
+        "length": 104,
         "angle": 27
       },
       {
-        "type": "mirror",
-        "x": 450,
-        "y": 100,
-        "length": 120,
-        "angle": 36
-      },
-      {
-        "type": "mirror",
-        "x": 600,
-        "y": 100,
-        "length": 120,
-        "angle": -45
-      },
-      {
-        "type": "mirror",
-        "x": 600,
-        "y": 350,
-        "length": 120,
-        "angle": -48.508446739050015
-      },
-      {
         "type": "wall",
-        "x": 710,
-        "y": 132.33333333333334,
-        "length": 264.6666666666667,
-        "angle": 90,
-        "width": 12
-      },
-      {
-        "type": "wall",
-        "x": 710,
-        "y": 396.33333333333337,
-        "length": 127.33333333333331,
-        "angle": 90,
-        "width": 12
-      },
-      {
-        "type": "wall",
-        "x": 225,
-        "y": 26,
+        "x": 361.5,
+        "y": 237.5,
         "length": 52,
         "angle": 90,
-        "width": 12
-      },
-      {
-        "type": "wall",
-        "x": 225,
-        "y": 304,
-        "length": 312,
-        "angle": 90,
-        "width": 12
-      },
-      {
-        "type": "wall",
-        "x": 62.5,
-        "y": 230,
-        "length": 125,
-        "angle": 0,
-        "width": 12
-      },
-      {
-        "type": "wall",
-        "x": 225,
-        "y": 230,
-        "length": 100,
-        "angle": 0,
-        "width": 12
-      },
-      {
-        "type": "wall",
-        "x": 375,
-        "y": 230,
-        "length": 100,
-        "angle": 0,
-        "width": 12
-      },
-      {
-        "type": "wall",
-        "x": 525,
-        "y": 230,
-        "length": 100,
-        "angle": 0,
-        "width": 12
-      },
-      {
-        "type": "wall",
-        "x": 652.5,
-        "y": 230,
-        "length": 55,
-        "angle": 0,
-        "width": 12
-      },
-      {
-        "type": "mirror",
-        "x": 80,
-        "y": 80,
-        "length": 120,
-        "angle": 0
-      },
-      {
-        "type": "mirror",
-        "x": 720,
-        "y": 95,
-        "length": 120,
-        "angle": 90
+        "width": 12,
+        "purpose": "Bloqueia a linha direta e exige desvio pelos espelhos."
       }
     ],
     "solution": [
       -45,
-      -45,
-      45,
-      45,
-      -45,
-      -45,
-      45,
-      32.49155326094999,
-      0,
-      90
+      -37.26939112977905,
+      0
     ],
-    "requiredBounces": 8,
-    "stage": 10,
-    "stageName": "Laboratório final",
-    "difficulty": 97,
+    "sourceAngle": 0,
+    "target": {
+      "x": 730,
+      "y": 100,
+      "radius": 22,
+      "color": "gold"
+    },
+    "requiredBounces": 3,
     "wallPurpose": [
-      "Divisória do alvo com abertura: bloqueia atalhos e exige alinhar o último trecho.",
-      "Parede entre colunas: bloqueia o atalho e obriga a passagem pela sala superior.",
-      "Divisória central com passagens: impede cruzar entre as salas fora das aberturas."
+      "Bloqueia a linha direta e exige desvio pelos espelhos."
     ],
-    "decoyCount": 2
+    "decoyCount": 0,
+    "tutorial": "",
+    "rules": "Leve a luz ao alvo."
   },
   {
-    "name": "Laboratório final 8",
-    "hint": "Observe as divisórias e suas aberturas. Planeje a rota antes de confirmar; nem todos os espelhos precisam ser usados.",
-    "sourceAngle": 0,
-    "family": "serpentina",
-    "target": {
-      "x": 750,
-      "y": 280,
-      "radius": 22
-    },
+    "name": "Desvios e salas 8",
+    "hint": "Planeje os trajetos antes de girar os espelhos. Cada cor tem seu próprio destino.",
+    "stage": 2,
+    "stageName": "Desvios e salas",
+    "difficulty": 18,
+    "family": "sala-7",
+    "sources": [
+      {
+        "x": 740,
+        "y": 90,
+        "angle": 180,
+        "color": "gold"
+      }
+    ],
+    "targets": [
+      {
+        "x": 70,
+        "y": 350,
+        "radius": 22,
+        "color": "gold"
+      }
+    ],
+    "portals": [],
     "objects": [
       {
         "type": "mirror",
-        "x": 150,
-        "y": 350,
-        "length": 120,
-        "angle": -7
+        "x": 540,
+        "y": 90,
+        "length": 104,
+        "angle": 1.7643896827546541
       },
       {
         "type": "mirror",
-        "x": 150,
-        "y": 116,
-        "length": 120,
-        "angle": 2
-      },
-      {
-        "type": "mirror",
-        "x": 300,
-        "y": 116,
-        "length": 120,
+        "x": 455.96194077712556,
+        "y": 265.96194077712556,
+        "length": 104,
         "angle": -79
       },
       {
         "type": "mirror",
-        "x": 300,
+        "x": 280,
         "y": 350,
-        "length": 120,
-        "angle": -70
-      },
-      {
-        "type": "mirror",
-        "x": 450,
-        "y": 350,
-        "length": 120,
-        "angle": 29
-      },
-      {
-        "type": "mirror",
-        "x": 450,
-        "y": 116,
-        "length": 120,
-        "angle": 38
-      },
-      {
-        "type": "mirror",
-        "x": 600,
-        "y": 116,
-        "length": 120,
-        "angle": -43
-      },
-      {
-        "type": "mirror",
-        "x": 600,
-        "y": 350,
-        "length": 120,
-        "angle": -46.508446739050015
+        "length": 104,
+        "angle": 21.235610317245346
       },
       {
         "type": "wall",
-        "x": 710,
-        "y": 132.45833333333334,
-        "length": 264.9166666666667,
-        "angle": 90,
-        "width": 12
-      },
-      {
-        "type": "wall",
-        "x": 710,
-        "y": 396.20833333333337,
-        "length": 127.58333333333331,
-        "angle": 90,
-        "width": 12
-      },
-      {
-        "type": "wall",
-        "x": 225,
-        "y": 34,
-        "length": 68,
-        "angle": 90,
-        "width": 12
-      },
-      {
-        "type": "wall",
-        "x": 225,
-        "y": 312,
-        "length": 296,
-        "angle": 90,
-        "width": 12
-      },
-      {
-        "type": "wall",
-        "x": 62.5,
-        "y": 230,
-        "length": 125,
+        "x": 338,
+        "y": 246,
+        "length": 64,
         "angle": 0,
-        "width": 12
-      },
-      {
-        "type": "wall",
-        "x": 225,
-        "y": 230,
-        "length": 100,
-        "angle": 0,
-        "width": 12
-      },
-      {
-        "type": "wall",
-        "x": 375,
-        "y": 230,
-        "length": 100,
-        "angle": 0,
-        "width": 12
-      },
-      {
-        "type": "wall",
-        "x": 525,
-        "y": 230,
-        "length": 100,
-        "angle": 0,
-        "width": 12
-      },
-      {
-        "type": "wall",
-        "x": 652.5,
-        "y": 230,
-        "length": 55,
-        "angle": 0,
-        "width": 12
-      },
-      {
-        "type": "mirror",
-        "x": 80,
-        "y": 80,
-        "length": 120,
-        "angle": 0
-      },
-      {
-        "type": "mirror",
-        "x": 720,
-        "y": 95,
-        "length": 120,
-        "angle": 90
+        "width": 12,
+        "purpose": "Bloqueia a linha direta e exige desvio pelos espelhos."
       }
     ],
     "solution": [
+      -32.235610317245346,
       -45,
-      -45,
-      45,
-      45,
-      -45,
-      -45,
-      45,
-      32.49155326094999,
-      0,
-      90
+      -12.764389682754654
     ],
-    "requiredBounces": 8,
-    "stage": 10,
-    "stageName": "Laboratório final",
-    "difficulty": 98,
+    "sourceAngle": 180,
+    "target": {
+      "x": 70,
+      "y": 350,
+      "radius": 22,
+      "color": "gold"
+    },
+    "requiredBounces": 3,
     "wallPurpose": [
-      "Divisória do alvo com abertura: bloqueia atalhos e exige alinhar o último trecho.",
-      "Parede entre colunas: bloqueia o atalho e obriga a passagem pela sala superior.",
-      "Divisória central com passagens: impede cruzar entre as salas fora das aberturas."
+      "Bloqueia a linha direta e exige desvio pelos espelhos."
     ],
-    "decoyCount": 2
+    "decoyCount": 0,
+    "tutorial": "",
+    "rules": "Leve a luz ao alvo."
   },
   {
-    "name": "Laboratório final 9",
-    "hint": "Observe as divisórias e suas aberturas. Planeje a rota antes de confirmar; nem todos os espelhos precisam ser usados.",
-    "sourceAngle": 0,
-    "family": "serpentina-obliqua",
-    "target": {
-      "x": 750,
-      "y": 280,
-      "radius": 22
-    },
+    "name": "Desvios e salas 9",
+    "hint": "Planeje os trajetos antes de girar os espelhos. Cada cor tem seu próprio destino.",
+    "stage": 2,
+    "stageName": "Desvios e salas",
+    "difficulty": 19,
+    "family": "sala-8",
+    "sources": [
+      {
+        "x": 60,
+        "y": 230,
+        "angle": 39.472459848343824,
+        "color": "gold"
+      }
+    ],
+    "targets": [
+      {
+        "x": 740,
+        "y": 230,
+        "radius": 22,
+        "color": "gold"
+      }
+    ],
+    "portals": [],
     "objects": [
       {
         "type": "mirror",
-        "x": 150,
-        "y": 350,
-        "length": 120,
-        "angle": -2.48546320910728
+        "x": 230,
+        "y": 370,
+        "length": 104,
+        "angle": 33.303326452629726
       },
       {
         "type": "mirror",
-        "x": 172,
+        "x": 420,
         "y": 100,
-        "length": 120,
-        "angle": 6.51453679089272
+        "length": 104,
+        "angle": -54.768908659812325
       },
       {
         "type": "mirror",
-        "x": 300,
-        "y": 100,
-        "length": 120,
-        "angle": -79.51453679089272
+        "x": 578.7963785999791,
+        "y": 182.05918683201838,
+        "length": 104,
+        "angle": 89.65222278030635
       },
       {
         "type": "mirror",
-        "x": 322,
+        "x": 640,
         "y": 350,
-        "length": 120,
-        "angle": -70.51453679089272
+        "length": 104,
+        "angle": -31.108986485290924
+      },
+      {
+        "type": "wall",
+        "x": 468,
+        "y": 230,
+        "length": 76,
+        "angle": 90,
+        "width": 12,
+        "purpose": "Bloqueia a linha direta e exige desvio pelos espelhos."
+      }
+    ],
+    "solution": [
+      -7.696673547370274,
+      -13.768908659812325,
+      48.652222780306346,
+      9.891013514709076
+    ],
+    "sourceAngle": 39.472459848343824,
+    "target": {
+      "x": 740,
+      "y": 230,
+      "radius": 22,
+      "color": "gold"
+    },
+    "requiredBounces": 4,
+    "wallPurpose": [
+      "Bloqueia a linha direta e exige desvio pelos espelhos."
+    ],
+    "decoyCount": 0,
+    "tutorial": "",
+    "rules": "Leve a luz ao alvo."
+  },
+  {
+    "name": "Desvios e salas 10",
+    "hint": "Planeje os trajetos antes de girar os espelhos. Cada cor tem seu próprio destino.",
+    "stage": 2,
+    "stageName": "Desvios e salas",
+    "difficulty": 20,
+    "family": "sala-9",
+    "sources": [
+      {
+        "x": 70,
+        "y": 70,
+        "angle": 12.63336193527501,
+        "color": "gold"
+      }
+    ],
+    "targets": [
+      {
+        "x": 730,
+        "y": 380,
+        "radius": 22,
+        "color": "gold"
+      }
+    ],
+    "portals": [],
+    "objects": [
+      {
+        "type": "mirror",
+        "x": 360,
+        "y": 135,
+        "length": 104,
+        "angle": 48
       },
       {
         "type": "mirror",
-        "x": 450,
-        "y": 350,
-        "length": 120,
-        "angle": 33.51453679089272
+        "x": 650,
+        "y": 70,
+        "length": 104,
+        "angle": -9.316680967637502
       },
       {
         "type": "mirror",
-        "x": 472,
-        "y": 100,
-        "length": 120,
-        "angle": 42.51453679089272
+        "x": 650,
+        "y": 230,
+        "length": 104,
+        "angle": 3
+      },
+      {
+        "type": "mirror",
+        "x": 220,
+        "y": 230,
+        "length": 104,
+        "angle": 87
+      },
+      {
+        "type": "mirror",
+        "x": 220,
+        "y": 380,
+        "length": 104,
+        "angle": -87
+      }
+    ],
+    "solution": [
+      0,
+      38.6833190323625,
+      -45,
+      -45,
+      45
+    ],
+    "sourceAngle": 12.63336193527501,
+    "target": {
+      "x": 730,
+      "y": 380,
+      "radius": 22,
+      "color": "gold"
+    },
+    "requiredBounces": 5,
+    "wallPurpose": [],
+    "decoyCount": 0,
+    "tutorial": "",
+    "rules": "Leve a luz ao alvo."
+  },
+  {
+    "name": "Duas cores, dois destinos 1",
+    "hint": "Planeje os trajetos antes de girar os espelhos. Cada cor tem seu próprio destino.",
+    "stage": 3,
+    "stageName": "Duas cores, dois destinos",
+    "difficulty": 21,
+    "family": "faixas-0",
+    "sources": [
+      {
+        "x": 45,
+        "y": 166.4,
+        "angle": 0,
+        "color": "gold"
+      },
+      {
+        "x": 755,
+        "y": 386.4,
+        "angle": -149.09063473648712,
+        "color": "blue"
+      }
+    ],
+    "targets": [
+      {
+        "x": 755,
+        "y": 73.6,
+        "radius": 22,
+        "color": "gold"
+      },
+      {
+        "x": 45,
+        "y": 386.4,
+        "radius": 22,
+        "color": "blue"
+      }
+    ],
+    "portals": [],
+    "objects": [
+      {
+        "type": "mirror",
+        "x": 260,
+        "y": 166.4,
+        "length": 104,
+        "angle": 10.515982245547226
+      },
+      {
+        "type": "mirror",
+        "x": 530,
+        "y": 73.6,
+        "length": 104,
+        "angle": -29.484017754452772
       },
       {
         "type": "mirror",
         "x": 600,
-        "y": 100,
-        "length": 120,
-        "angle": -43.51453679089272
+        "y": 293.6,
+        "length": 104,
+        "angle": 24.019231856322236
       },
       {
         "type": "mirror",
-        "x": 622,
-        "y": 350,
-        "length": 120,
-        "angle": -48.85111003561022
+        "x": 380,
+        "y": 386.4,
+        "length": 104,
+        "angle": -19.51501898241621
+      },
+      {
+        "type": "mirror",
+        "x": 170,
+        "y": 293.6,
+        "length": 104,
+        "angle": 13.625335380534793
       },
       {
         "type": "wall",
-        "x": 710,
-        "y": 134.1875,
-        "length": 268.375,
-        "angle": 90,
-        "width": 12
-      },
-      {
-        "type": "wall",
-        "x": 710,
-        "y": 397.6875,
-        "length": 124.625,
-        "angle": 90,
-        "width": 12
-      },
-      {
-        "type": "wall",
-        "x": 225,
-        "y": 26,
+        "x": 542,
+        "y": 386.4,
         "length": 52,
         "angle": 90,
-        "width": 12
-      },
-      {
-        "type": "wall",
-        "x": 225,
-        "y": 304,
-        "length": 312,
-        "angle": 90,
-        "width": 12
-      },
-      {
-        "type": "wall",
-        "x": 67.78,
-        "y": 230,
-        "length": 135.56,
-        "angle": 0,
-        "width": 12
-      },
-      {
-        "type": "wall",
-        "x": 236,
-        "y": 230,
-        "length": 100.88,
-        "angle": 0,
-        "width": 12
-      },
-      {
-        "type": "wall",
-        "x": 386,
-        "y": 230,
-        "length": 99.12,
-        "angle": 0,
-        "width": 12
-      },
-      {
-        "type": "wall",
-        "x": 536,
-        "y": 230,
-        "length": 100.88000000000005,
-        "angle": 0,
-        "width": 12
-      },
-      {
-        "type": "wall",
-        "x": 658.22,
-        "y": 230,
-        "length": 43.559999999999945,
-        "angle": 0,
-        "width": 12
-      },
-      {
-        "type": "mirror",
-        "x": 80,
-        "y": 80,
-        "length": 120,
-        "angle": 0
-      },
-      {
-        "type": "mirror",
-        "x": 720,
-        "y": 95,
-        "length": 120,
-        "angle": 90
+        "width": 12,
+        "purpose": "Bloqueia a linha direta e exige desvio pelos espelhos."
       }
     ],
     "solution": [
-      -42.48546320910727,
-      -42.48546320910727,
-      42.48546320910727,
-      42.48546320910727,
-      -42.48546320910727,
-      -42.48546320910727,
-      42.48546320910727,
-      28.148889964389785,
-      0,
-      90
+      -9.484017754452774,
+      -9.484017754452774,
+      4.019231856322236,
+      0.48498101758379164,
+      -6.374664619465207
     ],
-    "requiredBounces": 8,
-    "stage": 10,
-    "stageName": "Laboratório final",
-    "difficulty": 99,
+    "sourceAngle": 0,
+    "target": {
+      "x": 755,
+      "y": 73.6,
+      "radius": 22,
+      "color": "gold"
+    },
+    "requiredBounces": 5,
     "wallPurpose": [
-      "Divisória do alvo com abertura: bloqueia atalhos e exige alinhar o último trecho.",
-      "Parede entre colunas: bloqueia o atalho e obriga a passagem pela sala superior.",
-      "Divisória central com passagens: impede cruzar entre as salas fora das aberturas."
+      "Bloqueia a linha direta e exige desvio pelos espelhos."
     ],
-    "decoyCount": 2
+    "decoyCount": 0,
+    "tutorial": "Nova regra: dois disparadores! Cada cor precisa alcançar seu próprio alvo. Trajetórias de cores diferentes não podem se cruzar, mesmo que a luz passe em instantes diferentes.",
+    "rules": "Cada cor no seu alvo, sem cruzar outras trajetórias."
   },
   {
-    "name": "Laboratório final 10",
-    "hint": "Observe as divisórias e suas aberturas. Planeje a rota antes de confirmar; nem todos os espelhos precisam ser usados.",
-    "sourceAngle": 0,
-    "family": "serpentina-obliqua",
-    "target": {
-      "x": 750,
-      "y": 280,
-      "radius": 22
-    },
+    "name": "Duas cores, dois destinos 2",
+    "hint": "Planeje os trajetos antes de girar os espelhos. Cada cor tem seu próprio destino.",
+    "stage": 3,
+    "stageName": "Duas cores, dois destinos",
+    "difficulty": 22,
+    "family": "faixas-1",
+    "sources": [
+      {
+        "x": 755,
+        "y": 73.6,
+        "angle": 166.44799399621763,
+        "color": "gold"
+      },
+      {
+        "x": 45,
+        "y": 316.8,
+        "angle": 14.202800497347916,
+        "color": "blue"
+      }
+    ],
+    "targets": [
+      {
+        "x": 45,
+        "y": 73.6,
+        "radius": 22,
+        "color": "gold"
+      },
+      {
+        "x": 755,
+        "y": 363.2,
+        "radius": 22,
+        "color": "blue"
+      }
+    ],
+    "portals": [],
     "objects": [
       {
         "type": "mirror",
+        "x": 370,
+        "y": 166.4,
+        "length": 104,
+        "angle": 28.192037891022622
+      },
+      {
+        "type": "mirror",
+        "x": 320,
+        "y": 386.4,
+        "length": 104,
+        "angle": -28.770935563854508
+      },
+      {
+        "type": "mirror",
+        "x": 610,
+        "y": 293.6,
+        "length": 104,
+        "angle": 30.948167099624172
+      },
+      {
+        "type": "wall",
+        "x": 435.5,
+        "y": 73.6,
+        "length": 64,
+        "angle": 0,
+        "width": 12,
+        "purpose": "Bloqueia a linha direta e exige desvio pelos espelhos."
+      }
+    ],
+    "solution": [
+      1.192037891022622,
+      -1.770935563854506,
+      3.9481670996241736
+    ],
+    "sourceAngle": 166.44799399621763,
+    "target": {
+      "x": 45,
+      "y": 73.6,
+      "radius": 22,
+      "color": "gold"
+    },
+    "requiredBounces": 3,
+    "wallPurpose": [
+      "Bloqueia a linha direta e exige desvio pelos espelhos."
+    ],
+    "decoyCount": 0,
+    "tutorial": "",
+    "rules": "Cada cor no seu alvo, sem cruzar outras trajetórias."
+  },
+  {
+    "name": "Duas cores, dois destinos 3",
+    "hint": "Planeje os trajetos antes de girar os espelhos. Cada cor tem seu próprio destino.",
+    "stage": 3,
+    "stageName": "Duas cores, dois destinos",
+    "difficulty": 23,
+    "family": "faixas-2",
+    "sources": [
+      {
+        "x": 45,
+        "y": 340,
+        "angle": 14.079958448899516,
+        "color": "gold"
+      },
+      {
+        "x": 755,
+        "y": 73.60000000000002,
+        "angle": 163.58485921626243,
+        "color": "blue"
+      }
+    ],
+    "targets": [
+      {
+        "x": 755,
+        "y": 340,
+        "radius": 22,
+        "color": "gold"
+      },
+      {
+        "x": 45,
+        "y": 73.60000000000002,
+        "radius": 22,
+        "color": "blue"
+      }
+    ],
+    "portals": [],
+    "objects": [
+      {
+        "type": "mirror",
+        "x": 230,
+        "y": 386.4,
+        "length": 104,
+        "angle": 30.470066820120934
+      },
+      {
+        "type": "mirror",
+        "x": 470,
+        "y": 293.6,
+        "length": 104,
+        "angle": -39.946400572958765
+      },
+      {
+        "type": "mirror",
+        "x": 440,
+        "y": 166.39999999999998,
+        "length": 104,
+        "angle": 32.40298691369878
+      },
+      {
+        "type": "wall",
+        "x": 329,
+        "y": 73.60000000000002,
+        "length": 76,
+        "angle": 90,
+        "width": 12,
+        "purpose": "Bloqueia a linha direta e exige desvio pelos espelhos."
+      }
+    ],
+    "solution": [
+      -3.529933179879067,
+      -5.946400572958765,
+      -1.5970130863012173
+    ],
+    "sourceAngle": 14.079958448899516,
+    "target": {
+      "x": 755,
+      "y": 340,
+      "radius": 22,
+      "color": "gold"
+    },
+    "requiredBounces": 3,
+    "wallPurpose": [
+      "Bloqueia a linha direta e exige desvio pelos espelhos."
+    ],
+    "decoyCount": 0,
+    "tutorial": "",
+    "rules": "Cada cor no seu alvo, sem cruzar outras trajetórias."
+  },
+  {
+    "name": "Duas cores, dois destinos 4",
+    "hint": "Planeje os trajetos antes de girar os espelhos. Cada cor tem seu próprio destino.",
+    "stage": 3,
+    "stageName": "Duas cores, dois destinos",
+    "difficulty": 24,
+    "family": "colunas-3",
+    "sources": [
+      {
+        "x": 286.1894736842105,
+        "y": 47.56944444444444,
+        "angle": 90,
+        "color": "gold"
+      },
+      {
+        "x": 513.8105263157895,
+        "y": 412.43055555555554,
+        "angle": -49.99156738343337,
+        "color": "blue"
+      }
+    ],
+    "targets": [
+      {
+        "x": 120.12631578947367,
+        "y": 412.43055555555554,
+        "radius": 22,
+        "color": "gold"
+      },
+      {
+        "x": 513.8105263157895,
+        "y": 47.56944444444444,
+        "radius": 22,
+        "color": "blue"
+      }
+    ],
+    "portals": [],
+    "objects": [
+      {
+        "type": "mirror",
+        "x": 286.1894736842105,
+        "y": 158.05555555555554,
+        "length": 104,
+        "angle": -23.93980815770638
+      },
+      {
+        "type": "mirror",
+        "x": 120.12631578947367,
+        "y": 296.80555555555554,
+        "length": 104,
+        "angle": 74.06019184229362
+      },
+      {
+        "type": "mirror",
+        "x": 679.8736842105262,
+        "y": 214.58333333333334,
+        "length": 104,
+        "angle": -51.414011732339475
+      },
+      {
+        "type": "wall",
+        "x": 513.8105263157895,
+        "y": 248.24305555555554,
+        "length": 52,
+        "angle": 0,
+        "width": 12,
+        "purpose": "Bloqueia a linha direta e exige desvio pelos espelhos."
+      }
+    ],
+    "solution": [
+      -64.93980815770638,
+      -64.93980815770638,
+      87.58598826766054
+    ],
+    "sourceAngle": 90,
+    "target": {
+      "x": 120.12631578947367,
+      "y": 412.43055555555554,
+      "radius": 22,
+      "color": "gold"
+    },
+    "requiredBounces": 3,
+    "wallPurpose": [
+      "Bloqueia a linha direta e exige desvio pelos espelhos."
+    ],
+    "decoyCount": 0,
+    "tutorial": "",
+    "rules": "Cada cor no seu alvo, sem cruzar outras trajetórias."
+  },
+  {
+    "name": "Duas cores, dois destinos 5",
+    "hint": "Planeje os trajetos antes de girar os espelhos. Cada cor tem seu próprio destino.",
+    "stage": 3,
+    "stageName": "Duas cores, dois destinos",
+    "difficulty": 25,
+    "family": "faixas-4",
+    "sources": [
+      {
+        "x": 755,
+        "y": 96.8,
+        "angle": 165.7971995026521,
+        "color": "gold"
+      },
+      {
+        "x": 45,
+        "y": 340,
+        "angle": 12.178448299644888,
+        "color": "blue"
+      }
+    ],
+    "targets": [
+      {
+        "x": 45,
+        "y": 143.2,
+        "radius": 22,
+        "color": "gold"
+      },
+      {
+        "x": 755,
+        "y": 386.4,
+        "radius": 22,
+        "color": "blue"
+      }
+    ],
+    "portals": [],
+    "objects": [
+      {
+        "type": "mirror",
+        "x": 480,
+        "y": 166.4,
+        "length": 104,
+        "angle": 49.77093556385451
+      },
+      {
+        "type": "mirror",
+        "x": 190,
+        "y": 73.6,
+        "length": 104,
+        "angle": -51.948167099624186
+      },
+      {
+        "type": "mirror",
+        "x": 260,
+        "y": 386.4,
+        "length": 104,
+        "angle": 45.494933471902385
+      },
+      {
+        "type": "mirror",
+        "x": 560,
+        "y": 293.6,
+        "length": 104,
+        "angle": -43.869462157944604
+      }
+    ],
+    "solution": [
+      1.7709355638545077,
+      -3.948167099624186,
+      -2.5050665280976148,
+      4.130537842055395
+    ],
+    "sourceAngle": 165.7971995026521,
+    "target": {
+      "x": 45,
+      "y": 143.2,
+      "radius": 22,
+      "color": "gold"
+    },
+    "requiredBounces": 4,
+    "wallPurpose": [],
+    "decoyCount": 0,
+    "tutorial": "",
+    "rules": "Cada cor no seu alvo, sem cruzar outras trajetórias."
+  },
+  {
+    "name": "Duas cores, dois destinos 6",
+    "hint": "Planeje os trajetos antes de girar os espelhos. Cada cor tem seu próprio destino.",
+    "stage": 3,
+    "stageName": "Duas cores, dois destinos",
+    "difficulty": 26,
+    "family": "faixas-5",
+    "sources": [
+      {
+        "x": 45,
+        "y": 293.6,
+        "angle": 16.415140783737574,
+        "color": "gold"
+      },
+      {
+        "x": 755,
+        "y": 166.39999999999998,
+        "angle": -158.45125290428405,
+        "color": "blue"
+      }
+    ],
+    "targets": [
+      {
+        "x": 755,
+        "y": 293.6,
+        "radius": 22,
+        "color": "gold"
+      },
+      {
+        "x": 45,
+        "y": 166.39999999999998,
+        "radius": 22,
+        "color": "blue"
+      }
+    ],
+    "portals": [],
+    "objects": [
+      {
+        "type": "mirror",
+        "x": 360,
+        "y": 386.4,
+        "length": 104,
+        "angle": 21.597013086301207
+      },
+      {
+        "type": "mirror",
+        "x": 520,
+        "y": 73.60000000000002,
+        "length": 104,
+        "angle": -14.92848279792993
+      },
+      {
+        "type": "mirror",
+        "x": 290,
+        "y": 120,
+        "length": 104,
+        "angle": 8.93509041765418
+      },
+      {
+        "type": "wall",
+        "x": 471,
+        "y": 293.6,
+        "length": 76,
+        "angle": 0,
+        "width": 12,
+        "purpose": "Bloqueia a linha direta e exige desvio pelos espelhos."
+      },
+      {
+        "type": "wall",
+        "x": 435.5,
+        "y": 166.39999999999998,
+        "length": 76,
+        "angle": 0,
+        "width": 12,
+        "purpose": "Bloqueia a linha direta e exige desvio pelos espelhos."
+      }
+    ],
+    "solution": [
+      1.5970130863012058,
+      5.071517202070069,
+      -11.06490958234582
+    ],
+    "sourceAngle": 16.415140783737574,
+    "target": {
+      "x": 755,
+      "y": 293.6,
+      "radius": 22,
+      "color": "gold"
+    },
+    "requiredBounces": 3,
+    "wallPurpose": [
+      "Bloqueia a linha direta e exige desvio pelos espelhos."
+    ],
+    "decoyCount": 0,
+    "tutorial": "",
+    "rules": "Cada cor no seu alvo, sem cruzar outras trajetórias."
+  },
+  {
+    "name": "Duas cores, dois destinos 7",
+    "hint": "Planeje os trajetos antes de girar os espelhos. Cada cor tem seu próprio destino.",
+    "stage": 3,
+    "stageName": "Duas cores, dois destinos",
+    "difficulty": 27,
+    "family": "faixas-6",
+    "sources": [
+      {
+        "x": 45,
+        "y": 73.6,
+        "angle": 0,
+        "color": "gold"
+      },
+      {
+        "x": 755,
+        "y": 386.4,
+        "angle": -165.15012518410518,
+        "color": "blue"
+      }
+    ],
+    "targets": [
+      {
+        "x": 755,
+        "y": 120,
+        "radius": 22,
+        "color": "gold"
+      },
+      {
+        "x": 45,
+        "y": 293.6,
+        "radius": 22,
+        "color": "blue"
+      }
+    ],
+    "portals": [],
+    "objects": [
+      {
+        "type": "mirror",
+        "x": 190,
+        "y": 73.6,
+        "length": 104,
+        "angle": 37.18246293869048
+      },
+      {
+        "type": "mirror",
+        "x": 440,
+        "y": 166.4,
+        "length": 104,
+        "angle": -28.737968854327523
+      },
+      {
+        "type": "mirror",
+        "x": 650,
+        "y": 73.6,
+        "length": 104,
+        "angle": 27
+      },
+      {
+        "type": "mirror",
+        "x": 580,
+        "y": 340,
+        "length": 104,
+        "angle": -14.317835388233107
+      },
+      {
+        "type": "mirror",
+        "x": 330,
+        "y": 293.6,
+        "length": 104,
+        "angle": 20.336795410801486
+      },
+      {
+        "type": "mirror",
+        "x": 120,
+        "y": 386.4,
+        "length": 104,
+        "angle": -13.392824249093735
+      }
+    ],
+    "solution": [
+      10.18246293869048,
+      -1.737968854327523,
+      0,
+      12.682164611766893,
+      -6.663204589198514,
+      13.607175750906265
+    ],
+    "sourceAngle": 0,
+    "target": {
+      "x": 755,
+      "y": 120,
+      "radius": 22,
+      "color": "gold"
+    },
+    "requiredBounces": 6,
+    "wallPurpose": [],
+    "decoyCount": 0,
+    "tutorial": "",
+    "rules": "Cada cor no seu alvo, sem cruzar outras trajetórias."
+  },
+  {
+    "name": "Duas cores, dois destinos 8",
+    "hint": "Planeje os trajetos antes de girar os espelhos. Cada cor tem seu próprio destino.",
+    "stage": 3,
+    "stageName": "Duas cores, dois destinos",
+    "difficulty": 28,
+    "family": "colunas-7",
+    "sources": [
+      {
+        "x": 513.8105263157895,
+        "y": 47.56944444444444,
+        "angle": 90,
+        "color": "gold"
+      },
+      {
+        "x": 286.1894736842105,
+        "y": 412.43055555555554,
+        "angle": -130.00843261656664,
+        "color": "blue"
+      }
+    ],
+    "targets": [
+      {
+        "x": 679.8736842105263,
+        "y": 412.43055555555554,
+        "radius": 22,
+        "color": "gold"
+      },
+      {
+        "x": 286.1894736842105,
+        "y": 47.56944444444444,
+        "radius": 22,
+        "color": "blue"
+      }
+    ],
+    "portals": [],
+    "objects": [
+      {
+        "type": "mirror",
+        "x": 513.8105263157895,
+        "y": 158.05555555555554,
+        "length": 104,
+        "angle": -81.0601918422936
+      },
+      {
+        "type": "mirror",
+        "x": 679.8736842105263,
+        "y": 296.80555555555554,
+        "length": 104,
+        "angle": 30.939808157706395
+      },
+      {
+        "type": "mirror",
+        "x": 120.12631578947378,
+        "y": 214.58333333333334,
+        "length": 104,
+        "angle": -53.585988267660554
+      },
+      {
+        "type": "wall",
+        "x": 286.1894736842105,
+        "y": 248.24305555555554,
+        "length": 64,
+        "angle": 0,
+        "width": 12,
+        "purpose": "Bloqueia a linha direta e exige desvio pelos espelhos."
+      }
+    ],
+    "solution": [
+      64.9398081577064,
+      64.9398081577064,
+      -87.58598826766055
+    ],
+    "sourceAngle": 90,
+    "target": {
+      "x": 679.8736842105263,
+      "y": 412.43055555555554,
+      "radius": 22,
+      "color": "gold"
+    },
+    "requiredBounces": 3,
+    "wallPurpose": [
+      "Bloqueia a linha direta e exige desvio pelos espelhos."
+    ],
+    "decoyCount": 0,
+    "tutorial": "",
+    "rules": "Cada cor no seu alvo, sem cruzar outras trajetórias."
+  },
+  {
+    "name": "Duas cores, dois destinos 9",
+    "hint": "Planeje os trajetos antes de girar os espelhos. Cada cor tem seu próprio destino.",
+    "stage": 3,
+    "stageName": "Duas cores, dois destinos",
+    "difficulty": 29,
+    "family": "faixas-8",
+    "sources": [
+      {
+        "x": 45,
+        "y": 386.4,
+        "angle": -21.54874709571596,
+        "color": "gold"
+      },
+      {
+        "x": 755,
+        "y": 166.39999999999998,
+        "angle": -166.44799399621766,
+        "color": "blue"
+      }
+    ],
+    "targets": [
+      {
+        "x": 755,
+        "y": 386.4,
+        "radius": 22,
+        "color": "gold"
+      },
+      {
+        "x": 45,
+        "y": 166.39999999999998,
+        "radius": 22,
+        "color": "blue"
+      }
+    ],
+    "portals": [],
+    "objects": [
+      {
+        "type": "mirror",
+        "x": 280,
+        "y": 293.6,
+        "length": 104,
+        "angle": 35.92848279792994
+      },
+      {
+        "type": "mirror",
+        "x": 510,
+        "y": 340,
+        "length": 104,
+        "angle": -29.935090417654145
+      },
+      {
+        "type": "mirror",
+        "x": 370,
+        "y": 73.60000000000002,
+        "length": 104,
+        "angle": 39.807962108977364
+      },
+      {
+        "type": "wall",
+        "x": 364.5,
+        "y": 386.4,
+        "length": 76,
+        "angle": 90,
+        "width": 12,
+        "purpose": "Bloqueia a linha direta e exige desvio pelos espelhos."
+      }
+    ],
+    "solution": [
+      -5.071517202070063,
+      11.064909582345855,
+      -1.1920378910226361
+    ],
+    "sourceAngle": -21.54874709571596,
+    "target": {
+      "x": 755,
+      "y": 386.4,
+      "radius": 22,
+      "color": "gold"
+    },
+    "requiredBounces": 3,
+    "wallPurpose": [
+      "Bloqueia a linha direta e exige desvio pelos espelhos."
+    ],
+    "decoyCount": 0,
+    "tutorial": "",
+    "rules": "Cada cor no seu alvo, sem cruzar outras trajetórias."
+  },
+  {
+    "name": "Duas cores, dois destinos 10",
+    "hint": "Planeje os trajetos antes de girar os espelhos. Cada cor tem seu próprio destino.",
+    "stage": 3,
+    "stageName": "Duas cores, dois destinos",
+    "difficulty": 30,
+    "family": "faixas-9",
+    "sources": [
+      {
+        "x": 45,
+        "y": 166.4,
+        "angle": -14.849874815894829,
+        "color": "gold"
+      },
+      {
+        "x": 755,
+        "y": 340,
+        "angle": -165.9200415511005,
+        "color": "blue"
+      }
+    ],
+    "targets": [
+      {
+        "x": 755,
+        "y": 73.6,
+        "radius": 22,
+        "color": "gold"
+      },
+      {
+        "x": 45,
+        "y": 340,
+        "radius": 22,
+        "color": "blue"
+      }
+    ],
+    "portals": [],
+    "objects": [
+      {
+        "type": "mirror",
+        "x": 220,
+        "y": 120,
+        "length": 104,
+        "angle": 35.317835388233085
+      },
+      {
+        "type": "mirror",
+        "x": 470,
+        "y": 73.6,
+        "length": 104,
+        "angle": -41.3367954108015
+      },
+      {
+        "type": "mirror",
+        "x": 680,
+        "y": 166.4,
+        "length": 104,
+        "angle": 34.39282424909372
+      },
+      {
+        "type": "mirror",
+        "x": 570,
+        "y": 293.6,
+        "length": 104,
+        "angle": -51.52993317987908
+      },
+      {
+        "type": "mirror",
+        "x": 330,
+        "y": 386.4,
+        "length": 104,
+        "angle": 42.05359942704122
+      }
+    ],
+    "solution": [
+      -12.682164611766915,
+      6.663204589198501,
+      -13.607175750906277,
+      -3.5299331798790803,
+      -5.94640057295878
+    ],
+    "sourceAngle": -14.849874815894829,
+    "target": {
+      "x": 755,
+      "y": 73.6,
+      "radius": 22,
+      "color": "gold"
+    },
+    "requiredBounces": 5,
+    "wallPurpose": [],
+    "decoyCount": 0,
+    "tutorial": "",
+    "rules": "Cada cor no seu alvo, sem cruzar outras trajetórias."
+  },
+  {
+    "name": "Caminhos independentes 1",
+    "hint": "Planeje os trajetos antes de girar os espelhos. Cada cor tem seu próprio destino.",
+    "stage": 4,
+    "stageName": "Caminhos independentes",
+    "difficulty": 31,
+    "family": "faixas-0",
+    "sources": [
+      {
+        "x": 45,
+        "y": 125,
+        "angle": -14.545202741174348,
+        "color": "gold"
+      },
+      {
+        "x": 755,
+        "y": 383,
+        "angle": -163.05077576617856,
+        "color": "blue"
+      }
+    ],
+    "targets": [
+      {
+        "x": 755,
+        "y": 125,
+        "radius": 22,
+        "color": "gold"
+      },
+      {
+        "x": 45,
+        "y": 383,
+        "radius": 22,
+        "color": "blue"
+      }
+    ],
+    "portals": [],
+    "objects": [
+      {
+        "type": "mirror",
+        "x": 230,
+        "y": 77,
+        "length": 104,
+        "angle": 23.628103372588733
+      },
+      {
+        "type": "mirror",
+        "x": 470,
+        "y": 173,
+        "length": 104,
+        "angle": -13.879343497267245
+      },
+      {
+        "type": "mirror",
+        "x": 440,
+        "y": 287,
+        "length": 104,
+        "angle": 21.64451082603688
+      },
+      {
+        "type": "wall",
+        "x": 329,
+        "y": 383,
+        "length": 52,
+        "angle": 90,
+        "width": 12,
+        "purpose": "Bloqueia a linha direta e exige desvio pelos espelhos."
+      }
+    ],
+    "solution": [
+      3.6281033725887317,
+      6.120656502732755,
+      1.6445108260368784
+    ],
+    "sourceAngle": -14.545202741174348,
+    "target": {
+      "x": 755,
+      "y": 125,
+      "radius": 22,
+      "color": "gold"
+    },
+    "requiredBounces": 3,
+    "wallPurpose": [
+      "Bloqueia a linha direta e exige desvio pelos espelhos."
+    ],
+    "decoyCount": 0,
+    "tutorial": "",
+    "rules": "Cada cor no seu alvo, sem cruzar outras trajetórias."
+  },
+  {
+    "name": "Caminhos independentes 2",
+    "hint": "Planeje os trajetos antes de girar os espelhos. Cada cor tem seu próprio destino.",
+    "stage": 4,
+    "stageName": "Caminhos independentes",
+    "difficulty": 32,
+    "family": "faixas-1",
+    "sources": [
+      {
+        "x": 755,
+        "y": 173,
+        "angle": -148.22779600255757,
+        "color": "gold"
+      },
+      {
+        "x": 45,
+        "y": 287,
+        "angle": 0,
+        "color": "blue"
+      }
+    ],
+    "targets": [
+      {
+        "x": 45,
+        "y": 173,
+        "radius": 22,
+        "color": "gold"
+      },
+      {
+        "x": 755,
+        "y": 335,
+        "radius": 22,
+        "color": "blue"
+      }
+    ],
+    "portals": [],
+    "objects": [
+      {
+        "type": "mirror",
+        "x": 600,
+        "y": 77,
+        "length": 104,
+        "angle": 31.09874889776492
+      },
+      {
+        "type": "mirror",
+        "x": 380,
+        "y": 173,
+        "length": 104,
+        "angle": -26.503767440655636
+      },
+      {
+        "type": "mirror",
+        "x": 170,
+        "y": 77,
+        "length": 104,
+        "angle": 20.521454353074773
+      },
+      {
+        "type": "mirror",
+        "x": 190,
+        "y": 287,
+        "length": 104,
+        "angle": -16.496605284614073
+      },
+      {
+        "type": "mirror",
+        "x": 440,
+        "y": 383,
+        "length": 104,
+        "angle": 25.219809055085268
+      },
+      {
+        "type": "mirror",
+        "x": 650,
+        "y": 287,
+        "length": 104,
+        "angle": -27
+      },
+      {
+        "type": "wall",
+        "x": 542,
+        "y": 173,
+        "length": 64,
+        "angle": 0,
+        "width": 12,
+        "purpose": "Bloqueia a linha direta e exige desvio pelos espelhos."
+      }
+    ],
+    "solution": [
+      4.098748897764921,
+      0.4962325593443637,
+      -6.478545646925227,
+      10.503394715385927,
+      -1.7801909449147324,
+      0
+    ],
+    "sourceAngle": -148.22779600255757,
+    "target": {
+      "x": 45,
+      "y": 173,
+      "radius": 22,
+      "color": "gold"
+    },
+    "requiredBounces": 6,
+    "wallPurpose": [
+      "Bloqueia a linha direta e exige desvio pelos espelhos."
+    ],
+    "decoyCount": 0,
+    "tutorial": "",
+    "rules": "Cada cor no seu alvo, sem cruzar outras trajetórias."
+  },
+  {
+    "name": "Caminhos independentes 3",
+    "hint": "Planeje os trajetos antes de girar os espelhos. Cada cor tem seu próprio destino.",
+    "stage": 4,
+    "stageName": "Caminhos independentes",
+    "difficulty": 33,
+    "family": "faixas-2",
+    "sources": [
+      {
+        "x": 45,
+        "y": 359,
+        "angle": -14.671750795901831,
+        "color": "gold"
+      },
+      {
+        "x": 755,
+        "y": 125,
+        "angle": -167.41477105894987,
+        "color": "blue"
+      }
+    ],
+    "targets": [
+      {
+        "x": 755,
+        "y": 311,
+        "radius": 22,
+        "color": "gold"
+      },
+      {
+        "x": 45,
+        "y": 77,
+        "radius": 22,
+        "color": "blue"
+      }
+    ],
+    "portals": [],
+    "objects": [
+      {
+        "type": "mirror",
+        "x": 320,
+        "y": 287,
+        "length": 104,
+        "angle": 35.82228669710572
+      },
+      {
+        "type": "mirror",
+        "x": 610,
+        "y": 383,
+        "length": 104,
+        "angle": -38.0452258777753
+      },
+      {
+        "type": "mirror",
+        "x": 540,
+        "y": 77,
+        "length": 104,
+        "angle": 31.420278657996604
+      },
+      {
+        "type": "mirror",
+        "x": 240,
+        "y": 173,
+        "length": 104,
+        "angle": -29.7666468036127
+      }
+    ],
+    "solution": [
+      1.8222866971057163,
+      -4.0452258777753,
+      -2.5797213420033955,
+      4.233353196387299
+    ],
+    "sourceAngle": -14.671750795901831,
+    "target": {
+      "x": 755,
+      "y": 311,
+      "radius": 22,
+      "color": "gold"
+    },
+    "requiredBounces": 4,
+    "wallPurpose": [],
+    "decoyCount": 0,
+    "tutorial": "",
+    "rules": "Cada cor no seu alvo, sem cruzar outras trajetórias."
+  },
+  {
+    "name": "Caminhos independentes 4",
+    "hint": "Planeje os trajetos antes de girar os espelhos. Cada cor tem seu próprio destino.",
+    "stage": 4,
+    "stageName": "Caminhos independentes",
+    "difficulty": 34,
+    "family": "colunas-3",
+    "sources": [
+      {
+        "x": 298,
+        "y": 47.56944444444444,
+        "angle": 90,
+        "color": "gold"
+      },
+      {
+        "x": 502,
+        "y": 412.43055555555554,
+        "angle": -51.48246274614196,
+        "color": "blue"
+      }
+    ],
+    "targets": [
+      {
+        "x": 126.21052631578948,
+        "y": 412.43055555555554,
+        "radius": 22,
+        "color": "gold"
+      },
+      {
+        "x": 502,
+        "y": 47.56944444444444,
+        "radius": 22,
+        "color": "blue"
+      }
+    ],
+    "portals": [],
+    "objects": [
+      {
+        "type": "mirror",
+        "x": 298,
+        "y": 176.04166666666666,
+        "length": 104,
+        "angle": -23.463465347774132
+      },
+      {
+        "type": "mirror",
+        "x": 126.21052631578948,
+        "y": 314.7916666666667,
+        "length": 104,
+        "angle": 74.53653465222587
+      },
+      {
+        "type": "mirror",
+        "x": 673.7894736842105,
+        "y": 196.59722222222223,
+        "length": 104,
+        "angle": -54.27037323670794
+      },
+      {
+        "type": "wall",
+        "x": 502,
+        "y": 248.24305555555554,
+        "length": 52,
+        "angle": 0,
+        "width": 12,
+        "purpose": "Bloqueia a linha direta e exige desvio pelos espelhos."
+      }
+    ],
+    "solution": [
+      -64.46346534777413,
+      -64.46346534777413,
+      84.72962676329206
+    ],
+    "sourceAngle": 90,
+    "target": {
+      "x": 126.21052631578948,
+      "y": 412.43055555555554,
+      "radius": 22,
+      "color": "gold"
+    },
+    "requiredBounces": 3,
+    "wallPurpose": [
+      "Bloqueia a linha direta e exige desvio pelos espelhos."
+    ],
+    "decoyCount": 0,
+    "tutorial": "",
+    "rules": "Cada cor no seu alvo, sem cruzar outras trajetórias."
+  },
+  {
+    "name": "Caminhos independentes 5",
+    "hint": "Planeje os trajetos antes de girar os espelhos. Cada cor tem seu próprio destino.",
+    "stage": 4,
+    "stageName": "Caminhos independentes",
+    "difficulty": 35,
+    "family": "faixas-4",
+    "sources": [
+      {
+        "x": 755,
+        "y": 77,
+        "angle": 180,
+        "color": "gold"
+      },
+      {
+        "x": 45,
+        "y": 383,
+        "angle": -15.338196140505357,
+        "color": "blue"
+      }
+    ],
+    "targets": [
+      {
+        "x": 45,
+        "y": 125,
+        "radius": 22,
+        "color": "gold"
+      },
+      {
+        "x": 755,
+        "y": 287,
+        "radius": 22,
+        "color": "blue"
+      }
+    ],
+    "portals": [],
+    "objects": [
+      {
+        "type": "mirror",
+        "x": 610,
+        "y": 77,
+        "length": 104,
+        "angle": 37.49660528461408
+      },
+      {
+        "type": "mirror",
+        "x": 360,
+        "y": 173,
+        "length": 104,
+        "angle": -46.219809055085264
+      },
+      {
+        "type": "mirror",
         "x": 150,
-        "y": 350,
-        "length": 120,
-        "angle": -0.3145026522321359
+        "y": 77,
+        "length": 104,
+        "angle": 48
       },
       {
         "type": "mirror",
-        "x": 172,
-        "y": 116,
-        "length": 120,
-        "angle": 8.685497347767864
+        "x": 220,
+        "y": 335,
+        "length": 104,
+        "angle": -61.10336074033703
       },
       {
         "type": "mirror",
-        "x": 300,
-        "y": 116,
-        "length": 120,
-        "angle": -77.68549734776786
+        "x": 470,
+        "y": 287,
+        "length": 104,
+        "angle": 54.84932299021631
       },
       {
         "type": "mirror",
-        "x": 322,
-        "y": 350,
-        "length": 120,
-        "angle": -68.68549734776786
+        "x": 680,
+        "y": 383,
+        "length": 104,
+        "angle": -61.71704811844701
+      }
+    ],
+    "solution": [
+      -10.503394715385923,
+      1.780190944914736,
+      0,
+      -13.103360740337031,
+      6.849322990216306,
+      -13.717048118447014
+    ],
+    "sourceAngle": 180,
+    "target": {
+      "x": 45,
+      "y": 125,
+      "radius": 22,
+      "color": "gold"
+    },
+    "requiredBounces": 6,
+    "wallPurpose": [],
+    "decoyCount": 0,
+    "tutorial": "",
+    "rules": "Cada cor no seu alvo, sem cruzar outras trajetórias."
+  },
+  {
+    "name": "Caminhos independentes 6",
+    "hint": "Planeje os trajetos antes de girar os espelhos. Cada cor tem seu próprio destino.",
+    "stage": 4,
+    "stageName": "Caminhos independentes",
+    "difficulty": 36,
+    "family": "faixas-5",
+    "sources": [
+      {
+        "x": 45,
+        "y": 335,
+        "angle": -12.585228941050154,
+        "color": "gold"
+      },
+      {
+        "x": 755,
+        "y": 77,
+        "angle": 180,
+        "color": "blue"
+      }
+    ],
+    "targets": [
+      {
+        "x": 755,
+        "y": 287,
+        "radius": 22,
+        "color": "gold"
+      },
+      {
+        "x": 45,
+        "y": 173,
+        "radius": 22,
+        "color": "blue"
+      }
+    ],
+    "portals": [],
+    "objects": [
+      {
+        "type": "mirror",
+        "x": 260,
+        "y": 287,
+        "length": 104,
+        "angle": 22.57972134200339
       },
       {
         "type": "mirror",
-        "x": 450,
-        "y": 350,
-        "length": 120,
-        "angle": 35.685497347767864
+        "x": 560,
+        "y": 383,
+        "length": 104,
+        "angle": -24.2333531963873
       },
       {
         "type": "mirror",
-        "x": 472,
-        "y": 116,
-        "length": 120,
-        "angle": 44.685497347767864
+        "x": 540,
+        "y": 77,
+        "length": 104,
+        "angle": 10.213437084794919
+      },
+      {
+        "type": "mirror",
+        "x": 270,
+        "y": 173,
+        "length": 104,
+        "angle": -29.78656291520508
+      }
+    ],
+    "solution": [
+      2.57972134200339,
+      -4.233353196387299,
+      -9.786562915205081,
+      -9.786562915205081
+    ],
+    "sourceAngle": -12.585228941050154,
+    "target": {
+      "x": 755,
+      "y": 287,
+      "radius": 22,
+      "color": "gold"
+    },
+    "requiredBounces": 4,
+    "wallPurpose": [],
+    "decoyCount": 0,
+    "tutorial": "",
+    "rules": "Cada cor no seu alvo, sem cruzar outras trajetórias."
+  },
+  {
+    "name": "Caminhos independentes 7",
+    "hint": "Planeje os trajetos antes de girar os espelhos. Cada cor tem seu próprio destino.",
+    "stage": 4,
+    "stageName": "Caminhos independentes",
+    "difficulty": 37,
+    "family": "faixas-6",
+    "sources": [
+      {
+        "x": 45,
+        "y": 77,
+        "angle": 22.220537193112886,
+        "color": "gold"
+      },
+      {
+        "x": 755,
+        "y": 287,
+        "angle": 165.99877839782988,
+        "color": "blue"
+      }
+    ],
+    "targets": [
+      {
+        "x": 755,
+        "y": 77,
+        "radius": 22,
+        "color": "gold"
+      },
+      {
+        "x": 45,
+        "y": 287,
+        "radius": 22,
+        "color": "blue"
+      }
+    ],
+    "portals": [],
+    "objects": [
+      {
+        "type": "mirror",
+        "x": 280,
+        "y": 173,
+        "length": 104,
+        "angle": 32.21617694700263
+      },
+      {
+        "type": "mirror",
+        "x": 510,
+        "y": 125,
+        "length": 104,
+        "angle": -38.43653729567498
+      },
+      {
+        "type": "mirror",
+        "x": 370,
+        "y": 383,
+        "length": 104,
+        "angle": 28.227554059931293
+      },
+      {
+        "type": "wall",
+        "x": 364.5,
+        "y": 77,
+        "length": 52,
+        "angle": 90,
+        "width": 12,
+        "purpose": "Bloqueia a linha direta e exige desvio pelos espelhos."
+      },
+      {
+        "type": "wall",
+        "x": 435.5,
+        "y": 287,
+        "length": 52,
+        "angle": 90,
+        "width": 12,
+        "purpose": "Bloqueia a linha direta e exige desvio pelos espelhos."
+      }
+    ],
+    "solution": [
+      5.216176947002633,
+      -11.436537295674984,
+      1.2275540599312933
+    ],
+    "sourceAngle": 22.220537193112886,
+    "target": {
+      "x": 755,
+      "y": 77,
+      "radius": 22,
+      "color": "gold"
+    },
+    "requiredBounces": 3,
+    "wallPurpose": [
+      "Bloqueia a linha direta e exige desvio pelos espelhos."
+    ],
+    "decoyCount": 0,
+    "tutorial": "",
+    "rules": "Cada cor no seu alvo, sem cruzar outras trajetórias."
+  },
+  {
+    "name": "Caminhos independentes 8",
+    "hint": "Planeje os trajetos antes de girar os espelhos. Cada cor tem seu próprio destino.",
+    "stage": 4,
+    "stageName": "Caminhos independentes",
+    "difficulty": 38,
+    "family": "colunas-7",
+    "sources": [
+      {
+        "x": 502,
+        "y": 47.56944444444444,
+        "angle": 90,
+        "color": "gold"
+      },
+      {
+        "x": 298,
+        "y": 412.43055555555554,
+        "angle": -128.51753725385802,
+        "color": "blue"
+      }
+    ],
+    "targets": [
+      {
+        "x": 673.7894736842105,
+        "y": 412.43055555555554,
+        "radius": 22,
+        "color": "gold"
+      },
+      {
+        "x": 298,
+        "y": 47.56944444444444,
+        "radius": 22,
+        "color": "blue"
+      }
+    ],
+    "portals": [],
+    "objects": [
+      {
+        "type": "mirror",
+        "x": 502,
+        "y": 176.04166666666666,
+        "length": 104,
+        "angle": -81.53653465222585
+      },
+      {
+        "type": "mirror",
+        "x": 673.7894736842105,
+        "y": 314.7916666666667,
+        "length": 104,
+        "angle": 30.463465347774147
+      },
+      {
+        "type": "mirror",
+        "x": 126.21052631578948,
+        "y": 196.59722222222223,
+        "length": 104,
+        "angle": -50.729626763292046
+      },
+      {
+        "type": "wall",
+        "x": 298,
+        "y": 248.24305555555554,
+        "length": 64,
+        "angle": 0,
+        "width": 12,
+        "purpose": "Bloqueia a linha direta e exige desvio pelos espelhos."
+      }
+    ],
+    "solution": [
+      64.46346534777415,
+      64.46346534777415,
+      -84.72962676329205
+    ],
+    "sourceAngle": 90,
+    "target": {
+      "x": 673.7894736842105,
+      "y": 412.43055555555554,
+      "radius": 22,
+      "color": "gold"
+    },
+    "requiredBounces": 3,
+    "wallPurpose": [
+      "Bloqueia a linha direta e exige desvio pelos espelhos."
+    ],
+    "decoyCount": 0,
+    "tutorial": "",
+    "rules": "Cada cor no seu alvo, sem cruzar outras trajetórias."
+  },
+  {
+    "name": "Caminhos independentes 9",
+    "hint": "Planeje os trajetos antes de girar os espelhos. Cada cor tem seu próprio destino.",
+    "stage": 4,
+    "stageName": "Caminhos independentes",
+    "difficulty": 39,
+    "family": "faixas-8",
+    "sources": [
+      {
+        "x": 45,
+        "y": 287,
+        "angle": 0,
+        "color": "gold"
+      },
+      {
+        "x": 755,
+        "y": 77,
+        "angle": 148.22779600255757,
+        "color": "blue"
+      }
+    ],
+    "targets": [
+      {
+        "x": 755,
+        "y": 383,
+        "radius": 22,
+        "color": "gold"
+      },
+      {
+        "x": 45,
+        "y": 77,
+        "radius": 22,
+        "color": "blue"
+      }
+    ],
+    "portals": [],
+    "objects": [
+      {
+        "type": "mirror",
+        "x": 260,
+        "y": 287,
+        "length": 104,
+        "angle": 50.786562915205096
+      },
+      {
+        "type": "mirror",
+        "x": 530,
+        "y": 383,
+        "length": 104,
+        "angle": -31.213437084794904
       },
       {
         "type": "mirror",
         "x": 600,
-        "y": 116,
-        "length": 120,
-        "angle": -41.685497347767864
+        "y": 173,
+        "length": 104,
+        "angle": 36.90125110223508
       },
       {
         "type": "mirror",
-        "x": 622,
-        "y": 350,
-        "length": 120,
-        "angle": -47.02207059248536
-      },
-      {
-        "type": "wall",
-        "x": 710,
-        "y": 134.3125,
-        "length": 268.625,
-        "angle": 90,
-        "width": 12
-      },
-      {
-        "type": "wall",
-        "x": 710,
-        "y": 397.5625,
-        "length": 124.875,
-        "angle": 90,
-        "width": 12
-      },
-      {
-        "type": "wall",
-        "x": 225,
-        "y": 34,
-        "length": 68,
-        "angle": 90,
-        "width": 12
-      },
-      {
-        "type": "wall",
-        "x": 225,
-        "y": 312,
-        "length": 296,
-        "angle": 90,
-        "width": 12
-      },
-      {
-        "type": "wall",
-        "x": 68.14102564102564,
-        "y": 230,
-        "length": 136.28205128205127,
-        "angle": 0,
-        "width": 12
-      },
-      {
-        "type": "wall",
-        "x": 236,
-        "y": 230,
-        "length": 99.43589743589746,
-        "angle": 0,
-        "width": 12
-      },
-      {
-        "type": "wall",
-        "x": 386,
-        "y": 230,
-        "length": 100.56410256410254,
-        "angle": 0,
-        "width": 12
-      },
-      {
-        "type": "wall",
-        "x": 536,
-        "y": 230,
-        "length": 99.43589743589746,
-        "angle": 0,
-        "width": 12
-      },
-      {
-        "type": "wall",
-        "x": 657.8589743589744,
-        "y": 230,
-        "length": 44.28205128205127,
-        "angle": 0,
-        "width": 12
+        "x": 380,
+        "y": 77,
+        "length": 104,
+        "angle": -41.496232559344364
       },
       {
         "type": "mirror",
-        "x": 80,
-        "y": 80,
-        "length": 120,
-        "angle": 0
-      },
-      {
-        "type": "mirror",
-        "x": 720,
-        "y": 95,
-        "length": 120,
-        "angle": 90
+        "x": 170,
+        "y": 173,
+        "length": 104,
+        "angle": 47.47854564692523
       }
     ],
     "solution": [
-      -42.31450265223214,
-      -42.31450265223214,
-      42.31450265223214,
-      42.31450265223214,
-      -42.31450265223214,
-      -42.31450265223214,
-      42.31450265223214,
-      27.977929407514647,
-      0,
-      90
+      9.786562915205097,
+      9.786562915205097,
+      -4.098748897764921,
+      -0.4962325593443637,
+      6.478545646925227
     ],
-    "requiredBounces": 8,
-    "stage": 10,
-    "stageName": "Laboratório final",
-    "difficulty": 100,
+    "sourceAngle": 0,
+    "target": {
+      "x": 755,
+      "y": 383,
+      "radius": 22,
+      "color": "gold"
+    },
+    "requiredBounces": 5,
+    "wallPurpose": [],
+    "decoyCount": 0,
+    "tutorial": "",
+    "rules": "Cada cor no seu alvo, sem cruzar outras trajetórias."
+  },
+  {
+    "name": "Caminhos independentes 10",
+    "hint": "Planeje os trajetos antes de girar os espelhos. Cada cor tem seu próprio destino.",
+    "stage": 4,
+    "stageName": "Caminhos independentes",
+    "difficulty": 40,
+    "family": "faixas-9",
+    "sources": [
+      {
+        "x": 45,
+        "y": 77,
+        "angle": 14.001221602170114,
+        "color": "gold"
+      },
+      {
+        "x": 755,
+        "y": 311,
+        "angle": 165.32824920409814,
+        "color": "blue"
+      }
+    ],
+    "targets": [
+      {
+        "x": 755,
+        "y": 77,
+        "radius": 22,
+        "color": "gold"
+      },
+      {
+        "x": 45,
+        "y": 359,
+        "radius": 22,
+        "color": "blue"
+      }
+    ],
+    "portals": [],
+    "objects": [
+      {
+        "type": "mirror",
+        "x": 430,
+        "y": 173,
+        "length": 104,
+        "angle": 46.77244594006871
+      },
+      {
+        "type": "mirror",
+        "x": 480,
+        "y": 383,
+        "length": 104,
+        "angle": -46.177713302894304
+      },
+      {
+        "type": "mirror",
+        "x": 190,
+        "y": 287,
+        "length": 104,
+        "angle": 43.95477412222469
+      },
+      {
+        "type": "wall",
+        "x": 364.5,
+        "y": 77,
+        "length": 52,
+        "angle": 0,
+        "width": 12,
+        "purpose": "Bloqueia a linha direta e exige desvio pelos espelhos."
+      }
+    ],
+    "solution": [
+      -1.2275540599312924,
+      1.822286697105696,
+      -4.045225877775309
+    ],
+    "sourceAngle": 14.001221602170114,
+    "target": {
+      "x": 755,
+      "y": 77,
+      "radius": 22,
+      "color": "gold"
+    },
+    "requiredBounces": 3,
     "wallPurpose": [
-      "Divisória do alvo com abertura: bloqueia atalhos e exige alinhar o último trecho.",
-      "Parede entre colunas: bloqueia o atalho e obriga a passagem pela sala superior.",
-      "Divisória central com passagens: impede cruzar entre as salas fora das aberturas."
+      "Bloqueia a linha direta e exige desvio pelos espelhos."
     ],
-    "decoyCount": 2
+    "decoyCount": 0,
+    "tutorial": "",
+    "rules": "Cada cor no seu alvo, sem cruzar outras trajetórias."
+  },
+  {
+    "name": "Primeiro portal branco 1",
+    "hint": "Siga a letra de cada par: a direção não muda no teleporte. Planeje cada cor sem cruzamentos.",
+    "stage": 5,
+    "stageName": "Primeiro portal branco",
+    "difficulty": 41,
+    "family": "portal-zigue-1",
+    "sources": [
+      {
+        "x": 30,
+        "y": 310.75,
+        "angle": 0,
+        "color": "gold"
+      }
+    ],
+    "targets": [
+      {
+        "x": 755,
+        "y": 181.55,
+        "radius": 22,
+        "color": "gold"
+      }
+    ],
+    "portals": [
+      {
+        "id": "A1",
+        "pairId": "A2",
+        "label": "A",
+        "x": 350,
+        "y": 149.25,
+        "radius": 15,
+        "colors": null
+      },
+      {
+        "id": "A2",
+        "pairId": "A1",
+        "label": "A",
+        "x": 470,
+        "y": 270.375,
+        "radius": 15,
+        "colors": null
+      }
+    ],
+    "objects": [
+      {
+        "type": "mirror",
+        "x": 130,
+        "y": 310.75,
+        "length": 104,
+        "angle": -6.693196946545218
+      },
+      {
+        "type": "mirror",
+        "x": 250,
+        "y": 149.25,
+        "length": 104,
+        "angle": -46.693196946545214
+      },
+      {
+        "type": "mirror",
+        "x": 610,
+        "y": 270.375,
+        "length": 104,
+        "angle": 4.25446948498867
+      },
+      {
+        "type": "wall",
+        "x": 410,
+        "y": 230,
+        "length": 350,
+        "angle": 90,
+        "width": 12,
+        "purpose": "Divisória: atravesse pelo par de portais."
+      }
+    ],
+    "solution": [
+      -26.693196946545218,
+      -26.693196946545218,
+      -15.74553051501133
+    ],
+    "sourceAngle": 0,
+    "target": {
+      "x": 755,
+      "y": 181.55,
+      "radius": 22,
+      "color": "gold"
+    },
+    "requiredBounces": 3,
+    "wallPurpose": [
+      "Divisória: atravesse pelo par de portais."
+    ],
+    "decoyCount": 0,
+    "tutorial": "Novidade: portais brancos. As duas bocas com a mesma letra formam um par: a luz entra em uma e sai na outra mantendo a direção. O salto entre bocas não é um raio visível e não conta como cruzamento. Branco aceita todas as cores.",
+    "rules": "Leve a luz ao alvo."
+  },
+  {
+    "name": "Primeiro portal branco 2",
+    "hint": "Siga a letra de cada par: a direção não muda no teleporte. Planeje cada cor sem cruzamentos.",
+    "stage": 5,
+    "stageName": "Primeiro portal branco",
+    "difficulty": 42,
+    "family": "portal-arco-1",
+    "sources": [
+      {
+        "x": 755,
+        "y": 146.875,
+        "angle": 131.0943008629279,
+        "color": "gold"
+      }
+    ],
+    "targets": [
+      {
+        "x": 45,
+        "y": 279.875,
+        "radius": 22,
+        "color": "gold"
+      }
+    ],
+    "portals": [
+      {
+        "id": "A1",
+        "pairId": "A2",
+        "label": "A",
+        "x": 450,
+        "y": 313.125,
+        "radius": 15,
+        "colors": null
+      },
+      {
+        "id": "A2",
+        "pairId": "A1",
+        "label": "A",
+        "x": 330,
+        "y": 188.4375,
+        "radius": 15,
+        "colors": null
+      }
+    ],
+    "objects": [
+      {
+        "type": "mirror",
+        "x": 610,
+        "y": 313.125,
+        "length": 104,
+        "angle": 2.5471504314639333
+      },
+      {
+        "type": "mirror",
+        "x": 185,
+        "y": 188.4375,
+        "length": 104,
+        "angle": -43.574778669424546
+      },
+      {
+        "type": "wall",
+        "x": 390,
+        "y": 230,
+        "length": 350,
+        "angle": 90,
+        "width": 12,
+        "purpose": "Divisória: atravesse pelo par de portais."
+      }
+    ],
+    "solution": [
+      -24.452849568536067,
+      -16.574778669424546
+    ],
+    "sourceAngle": 131.0943008629279,
+    "target": {
+      "x": 45,
+      "y": 279.875,
+      "radius": 22,
+      "color": "gold"
+    },
+    "requiredBounces": 2,
+    "wallPurpose": [
+      "Divisória: atravesse pelo par de portais."
+    ],
+    "decoyCount": 0,
+    "tutorial": "",
+    "rules": "Leve a luz ao alvo."
+  },
+  {
+    "name": "Primeiro portal branco 3",
+    "hint": "Siga a letra de cada par: a direção não muda no teleporte. Planeje cada cor sem cruzamentos.",
+    "stage": 5,
+    "stageName": "Primeiro portal branco",
+    "difficulty": 43,
+    "family": "portal-zigue-1",
+    "sources": [
+      {
+        "x": 45,
+        "y": 315.5,
+        "angle": 0,
+        "color": "gold"
+      }
+    ],
+    "targets": [
+      {
+        "x": 755,
+        "y": 315.5,
+        "radius": 22,
+        "color": "gold"
+      }
+    ],
+    "portals": [
+      {
+        "id": "A1",
+        "pairId": "A2",
+        "label": "A",
+        "x": 145,
+        "y": 315.5,
+        "radius": 15,
+        "colors": null
+      },
+      {
+        "id": "A2",
+        "pairId": "A1",
+        "label": "A",
+        "x": 300,
+        "y": 144.5,
+        "radius": 15,
+        "colors": null
+      }
+    ],
+    "objects": [
+      {
+        "type": "mirror",
+        "x": 470,
+        "y": 144.5,
+        "length": 104,
+        "angle": 58.37149414784356
+      },
+      {
+        "type": "mirror",
+        "x": 620,
+        "y": 315.5,
+        "length": 104,
+        "angle": -9.628505852156433
+      },
+      {
+        "type": "wall",
+        "x": 222.5,
+        "y": 230,
+        "length": 350,
+        "angle": 90,
+        "width": 12,
+        "purpose": "Divisória: atravesse pelo par de portais."
+      }
+    ],
+    "solution": [
+      24.371494147843567,
+      24.371494147843567
+    ],
+    "sourceAngle": 0,
+    "target": {
+      "x": 755,
+      "y": 315.5,
+      "radius": 22,
+      "color": "gold"
+    },
+    "requiredBounces": 2,
+    "wallPurpose": [
+      "Divisória: atravesse pelo par de portais."
+    ],
+    "decoyCount": 0,
+    "tutorial": "",
+    "rules": "Leve a luz ao alvo."
+  },
+  {
+    "name": "Primeiro portal branco 4",
+    "hint": "Siga a letra de cada par: a direção não muda no teleporte. Planeje cada cor sem cruzamentos.",
+    "stage": 5,
+    "stageName": "Primeiro portal branco",
+    "difficulty": 44,
+    "family": "portal-arco-1",
+    "sources": [
+      {
+        "x": 45,
+        "y": 317.875,
+        "angle": 0,
+        "color": "gold"
+      }
+    ],
+    "targets": [
+      {
+        "x": 755,
+        "y": 317.875,
+        "radius": 22,
+        "color": "gold"
+      }
+    ],
+    "portals": [
+      {
+        "id": "A1",
+        "pairId": "A2",
+        "label": "A",
+        "x": 420,
+        "y": 142.125,
+        "radius": 15,
+        "colors": null
+      },
+      {
+        "id": "A2",
+        "pairId": "A1",
+        "label": "A",
+        "x": 600,
+        "y": 317.875,
+        "radius": 15,
+        "colors": null
+      }
+    ],
+    "objects": [
+      {
+        "type": "mirror",
+        "x": 180,
+        "y": 317.875,
+        "length": 104,
+        "angle": 15.27016925669648
+      },
+      {
+        "type": "mirror",
+        "x": 320,
+        "y": 142.125,
+        "length": 104,
+        "angle": -66.72983074330352
+      },
+      {
+        "type": "wall",
+        "x": 510,
+        "y": 230,
+        "length": 350,
+        "angle": 90,
+        "width": 12,
+        "purpose": "Divisória: atravesse pelo par de portais."
+      }
+    ],
+    "solution": [
+      -25.72983074330352,
+      -25.72983074330352
+    ],
+    "sourceAngle": 0,
+    "target": {
+      "x": 755,
+      "y": 317.875,
+      "radius": 22,
+      "color": "gold"
+    },
+    "requiredBounces": 2,
+    "wallPurpose": [
+      "Divisória: atravesse pelo par de portais."
+    ],
+    "decoyCount": 0,
+    "tutorial": "",
+    "rules": "Leve a luz ao alvo."
+  },
+  {
+    "name": "Primeiro portal branco 5",
+    "hint": "Siga a letra de cada par: a direção não muda no teleporte. Planeje cada cor sem cruzamentos.",
+    "stage": 5,
+    "stageName": "Primeiro portal branco",
+    "difficulty": 45,
+    "family": "portal-zigue-1",
+    "sources": [
+      {
+        "x": 755,
+        "y": 139.75,
+        "angle": 180,
+        "color": "gold"
+      }
+    ],
+    "targets": [
+      {
+        "x": 45,
+        "y": 320.25,
+        "radius": 22,
+        "color": "gold"
+      }
+    ],
+    "portals": [
+      {
+        "id": "A1",
+        "pairId": "A2",
+        "label": "A",
+        "x": 670,
+        "y": 139.75,
+        "radius": 15,
+        "colors": null
+      },
+      {
+        "id": "A2",
+        "pairId": "A1",
+        "label": "A",
+        "x": 560,
+        "y": 320.25,
+        "radius": 15,
+        "colors": null
+      },
+      {
+        "id": "B1",
+        "pairId": "B2",
+        "label": "B",
+        "x": 200,
+        "y": 139.75,
+        "radius": 15,
+        "colors": null
+      },
+      {
+        "id": "B2",
+        "pairId": "B1",
+        "label": "B",
+        "x": 120,
+        "y": 320.25,
+        "radius": 15,
+        "colors": null
+      }
+    ],
+    "objects": [
+      {
+        "type": "mirror",
+        "x": 420,
+        "y": 320.25,
+        "length": 104,
+        "angle": 76.19162378546947
+      },
+      {
+        "type": "mirror",
+        "x": 300,
+        "y": 139.75,
+        "length": 104,
+        "angle": -19.808376214530526
+      },
+      {
+        "type": "wall",
+        "x": 615,
+        "y": 230,
+        "length": 350,
+        "angle": 90,
+        "width": 12,
+        "purpose": "Divisória: atravesse pelo par de portais."
+      },
+      {
+        "type": "wall",
+        "x": 160,
+        "y": 230,
+        "length": 350,
+        "angle": 90,
+        "width": 12,
+        "purpose": "Divisória: atravesse pelo par de portais."
+      }
+    ],
+    "solution": [
+      28.191623785469474,
+      28.191623785469474
+    ],
+    "sourceAngle": 180,
+    "target": {
+      "x": 45,
+      "y": 320.25,
+      "radius": 22,
+      "color": "gold"
+    },
+    "requiredBounces": 2,
+    "wallPurpose": [
+      "Divisória: atravesse pelo par de portais."
+    ],
+    "decoyCount": 0,
+    "tutorial": "",
+    "rules": "Leve a luz ao alvo."
+  },
+  {
+    "name": "Primeiro portal branco 6",
+    "hint": "Siga a letra de cada par: a direção não muda no teleporte. Planeje cada cor sem cruzamentos.",
+    "stage": 5,
+    "stageName": "Primeiro portal branco",
+    "difficulty": 46,
+    "family": "portal-arco-1",
+    "sources": [
+      {
+        "x": 30,
+        "y": 137.375,
+        "angle": 0,
+        "color": "gold"
+      }
+    ],
+    "targets": [
+      {
+        "x": 755,
+        "y": 285.575,
+        "radius": 22,
+        "color": "gold"
+      }
+    ],
+    "portals": [
+      {
+        "id": "A1",
+        "pairId": "A2",
+        "label": "A",
+        "x": 350,
+        "y": 322.625,
+        "radius": 15,
+        "colors": null
+      },
+      {
+        "id": "A2",
+        "pairId": "A1",
+        "label": "A",
+        "x": 470,
+        "y": 183.6875,
+        "radius": 15,
+        "colors": null
+      }
+    ],
+    "objects": [
+      {
+        "type": "mirror",
+        "x": 130,
+        "y": 137.375,
+        "length": 104,
+        "angle": 48.53295604110569
+      },
+      {
+        "type": "mirror",
+        "x": 250,
+        "y": 322.625,
+        "length": 104,
+        "angle": 8.532956041105688
+      },
+      {
+        "type": "mirror",
+        "x": 610,
+        "y": 183.6875,
+        "length": 104,
+        "angle": 37.54732750525274
+      },
+      {
+        "type": "wall",
+        "x": 410,
+        "y": 230,
+        "length": 350,
+        "angle": 90,
+        "width": 12,
+        "purpose": "Divisória: atravesse pelo par de portais."
+      }
+    ],
+    "solution": [
+      28.532956041105688,
+      28.532956041105688,
+      17.547327505252742
+    ],
+    "sourceAngle": 0,
+    "target": {
+      "x": 755,
+      "y": 285.575,
+      "radius": 22,
+      "color": "gold"
+    },
+    "requiredBounces": 3,
+    "wallPurpose": [
+      "Divisória: atravesse pelo par de portais."
+    ],
+    "decoyCount": 0,
+    "tutorial": "",
+    "rules": "Leve a luz ao alvo."
+  },
+  {
+    "name": "Primeiro portal branco 7",
+    "hint": "Siga a letra de cada par: a direção não muda no teleporte. Planeje cada cor sem cruzamentos.",
+    "stage": 5,
+    "stageName": "Primeiro portal branco",
+    "difficulty": 47,
+    "family": "portal-zigue-1",
+    "sources": [
+      {
+        "x": 45,
+        "y": 135,
+        "angle": 52.65065095535942,
+        "color": "gold"
+      }
+    ],
+    "targets": [
+      {
+        "x": 755,
+        "y": 287,
+        "radius": 22,
+        "color": "gold"
+      }
+    ],
+    "portals": [
+      {
+        "id": "A1",
+        "pairId": "A2",
+        "label": "A",
+        "x": 350,
+        "y": 325,
+        "radius": 15,
+        "colors": null
+      },
+      {
+        "id": "A2",
+        "pairId": "A1",
+        "label": "A",
+        "x": 470,
+        "y": 182.5,
+        "radius": 15,
+        "colors": null
+      }
+    ],
+    "objects": [
+      {
+        "type": "mirror",
+        "x": 190,
+        "y": 325,
+        "length": 104,
+        "angle": 53.32532547767971
+      },
+      {
+        "type": "mirror",
+        "x": 615,
+        "y": 182.5,
+        "length": 104,
+        "angle": -8.630644399047085
+      },
+      {
+        "type": "wall",
+        "x": 410,
+        "y": 230,
+        "length": 350,
+        "angle": 90,
+        "width": 12,
+        "purpose": "Divisória: atravesse pelo par de portais."
+      }
+    ],
+    "solution": [
+      26.32532547767971,
+      18.369355600952915
+    ],
+    "sourceAngle": 52.65065095535942,
+    "target": {
+      "x": 755,
+      "y": 287,
+      "radius": 22,
+      "color": "gold"
+    },
+    "requiredBounces": 2,
+    "wallPurpose": [
+      "Divisória: atravesse pelo par de portais."
+    ],
+    "decoyCount": 0,
+    "tutorial": "",
+    "rules": "Leve a luz ao alvo."
+  },
+  {
+    "name": "Primeiro portal branco 8",
+    "hint": "Siga a letra de cada par: a direção não muda no teleporte. Planeje cada cor sem cruzamentos.",
+    "stage": 5,
+    "stageName": "Primeiro portal branco",
+    "difficulty": 48,
+    "family": "portal-arco-1",
+    "sources": [
+      {
+        "x": 755,
+        "y": 132.625,
+        "angle": 180,
+        "color": "gold"
+      }
+    ],
+    "targets": [
+      {
+        "x": 45,
+        "y": 132.625,
+        "radius": 22,
+        "color": "gold"
+      }
+    ],
+    "portals": [
+      {
+        "id": "A1",
+        "pairId": "A2",
+        "label": "A",
+        "x": 655,
+        "y": 132.625,
+        "radius": 15,
+        "colors": null
+      },
+      {
+        "id": "A2",
+        "pairId": "A1",
+        "label": "A",
+        "x": 500,
+        "y": 327.375,
+        "radius": 15,
+        "colors": null
+      }
+    ],
+    "objects": [
+      {
+        "type": "mirror",
+        "x": 330,
+        "y": 327.375,
+        "length": 104,
+        "angle": 60.19794005795876
+      },
+      {
+        "type": "mirror",
+        "x": 180,
+        "y": 132.625,
+        "length": 104,
+        "angle": -7.8020599420412395
+      },
+      {
+        "type": "wall",
+        "x": 577.5,
+        "y": 230,
+        "length": 350,
+        "angle": 90,
+        "width": 12,
+        "purpose": "Divisória: atravesse pelo par de portais."
+      }
+    ],
+    "solution": [
+      26.19794005795876,
+      26.19794005795876
+    ],
+    "sourceAngle": 180,
+    "target": {
+      "x": 45,
+      "y": 132.625,
+      "radius": 22,
+      "color": "gold"
+    },
+    "requiredBounces": 2,
+    "wallPurpose": [
+      "Divisória: atravesse pelo par de portais."
+    ],
+    "decoyCount": 0,
+    "tutorial": "",
+    "rules": "Leve a luz ao alvo."
+  },
+  {
+    "name": "Primeiro portal branco 9",
+    "hint": "Siga a letra de cada par: a direção não muda no teleporte. Planeje cada cor sem cruzamentos.",
+    "stage": 5,
+    "stageName": "Primeiro portal branco",
+    "difficulty": 49,
+    "family": "portal-zigue-1",
+    "sources": [
+      {
+        "x": 45,
+        "y": 130.25,
+        "angle": 0,
+        "color": "gold"
+      }
+    ],
+    "targets": [
+      {
+        "x": 755,
+        "y": 130.25,
+        "radius": 22,
+        "color": "gold"
+      }
+    ],
+    "portals": [
+      {
+        "id": "A1",
+        "pairId": "A2",
+        "label": "A",
+        "x": 420,
+        "y": 329.75,
+        "radius": 15,
+        "colors": null
+      },
+      {
+        "id": "A2",
+        "pairId": "A1",
+        "label": "A",
+        "x": 600,
+        "y": 130.25,
+        "radius": 15,
+        "colors": null
+      }
+    ],
+    "objects": [
+      {
+        "type": "mirror",
+        "x": 180,
+        "y": 130.25,
+        "length": 104,
+        "angle": 68.47028651655651
+      },
+      {
+        "type": "mirror",
+        "x": 320,
+        "y": 329.75,
+        "length": 104,
+        "angle": -13.529713483443487
+      },
+      {
+        "type": "wall",
+        "x": 510,
+        "y": 230,
+        "length": 350,
+        "angle": 90,
+        "width": 12,
+        "purpose": "Divisória: atravesse pelo par de portais."
+      }
+    ],
+    "solution": [
+      27.470286516556513,
+      27.470286516556513
+    ],
+    "sourceAngle": 0,
+    "target": {
+      "x": 755,
+      "y": 130.25,
+      "radius": 22,
+      "color": "gold"
+    },
+    "requiredBounces": 2,
+    "wallPurpose": [
+      "Divisória: atravesse pelo par de portais."
+    ],
+    "decoyCount": 0,
+    "tutorial": "",
+    "rules": "Leve a luz ao alvo."
+  },
+  {
+    "name": "Primeiro portal branco 10",
+    "hint": "Siga a letra de cada par: a direção não muda no teleporte. Planeje cada cor sem cruzamentos.",
+    "stage": 5,
+    "stageName": "Primeiro portal branco",
+    "difficulty": 50,
+    "family": "portal-arco-1",
+    "sources": [
+      {
+        "x": 45,
+        "y": 127.875,
+        "angle": 0,
+        "color": "gold"
+      }
+    ],
+    "targets": [
+      {
+        "x": 755,
+        "y": 332.125,
+        "radius": 22,
+        "color": "gold"
+      }
+    ],
+    "portals": [
+      {
+        "id": "A1",
+        "pairId": "A2",
+        "label": "A",
+        "x": 130,
+        "y": 127.875,
+        "radius": 15,
+        "colors": null
+      },
+      {
+        "id": "A2",
+        "pairId": "A1",
+        "label": "A",
+        "x": 240,
+        "y": 332.125,
+        "radius": 15,
+        "colors": null
+      },
+      {
+        "id": "B1",
+        "pairId": "B2",
+        "label": "B",
+        "x": 600,
+        "y": 127.875,
+        "radius": 15,
+        "colors": null
+      },
+      {
+        "id": "B2",
+        "pairId": "B1",
+        "label": "B",
+        "x": 680,
+        "y": 332.125,
+        "radius": 15,
+        "colors": null
+      }
+    ],
+    "objects": [
+      {
+        "type": "mirror",
+        "x": 380,
+        "y": 332.125,
+        "length": 104,
+        "angle": 18.217443717142032
+      },
+      {
+        "type": "mirror",
+        "x": 500,
+        "y": 127.875,
+        "length": 104,
+        "angle": -77.78255628285797
+      },
+      {
+        "type": "wall",
+        "x": 185,
+        "y": 230,
+        "length": 350,
+        "angle": 90,
+        "width": 12,
+        "purpose": "Divisória: atravesse pelo par de portais."
+      },
+      {
+        "type": "wall",
+        "x": 640,
+        "y": 230,
+        "length": 350,
+        "angle": 90,
+        "width": 12,
+        "purpose": "Divisória: atravesse pelo par de portais."
+      }
+    ],
+    "solution": [
+      -29.782556282857968,
+      -29.782556282857968
+    ],
+    "sourceAngle": 0,
+    "target": {
+      "x": 755,
+      "y": 332.125,
+      "radius": 22,
+      "color": "gold"
+    },
+    "requiredBounces": 2,
+    "wallPurpose": [
+      "Divisória: atravesse pelo par de portais."
+    ],
+    "decoyCount": 0,
+    "tutorial": "",
+    "rules": "Leve a luz ao alvo."
+  },
+  {
+    "name": "Dois raios e passagens 1",
+    "hint": "Siga a letra de cada par: a direção não muda no teleporte. Planeje cada cor sem cruzamentos.",
+    "stage": 6,
+    "stageName": "Dois raios e passagens",
+    "difficulty": 51,
+    "family": "portal-zigue-2",
+    "sources": [
+      {
+        "x": 30,
+        "y": 159.95,
+        "angle": 0,
+        "color": "gold"
+      },
+      {
+        "x": 755,
+        "y": 300.05,
+        "angle": 151.14372018901014,
+        "color": "blue"
+      }
+    ],
+    "targets": [
+      {
+        "x": 755,
+        "y": 96.03,
+        "radius": 22,
+        "color": "gold"
+      },
+      {
+        "x": 45,
+        "y": 363.96999999999997,
+        "radius": 22,
+        "color": "blue"
+      }
+    ],
+    "portals": [
+      {
+        "id": "A1",
+        "pairId": "A2",
+        "label": "A",
+        "x": 350,
+        "y": 80.05000000000001,
+        "radius": 15,
+        "colors": null
+      },
+      {
+        "id": "A2",
+        "pairId": "A1",
+        "label": "A",
+        "x": 470,
+        "y": 139.975,
+        "radius": 15,
+        "colors": null
+      },
+      {
+        "id": "C1",
+        "pairId": "C2",
+        "label": "C",
+        "x": 450,
+        "y": 379.95,
+        "radius": 15,
+        "colors": null
+      },
+      {
+        "id": "C2",
+        "pairId": "C1",
+        "label": "C",
+        "x": 330,
+        "y": 320.025,
+        "radius": 15,
+        "colors": null
+      }
+    ],
+    "objects": [
+      {
+        "type": "mirror",
+        "x": 130,
+        "y": 159.95,
+        "length": 104,
+        "angle": 3.171500223106129
+      },
+      {
+        "type": "mirror",
+        "x": 250,
+        "y": 80.05000000000001,
+        "length": 104,
+        "angle": -36.82849977689387
+      },
+      {
+        "type": "mirror",
+        "x": 610,
+        "y": 139.975,
+        "length": 104,
+        "angle": 11.56978618215164
+      },
+      {
+        "type": "wall",
+        "x": 410,
+        "y": 120,
+        "length": 185,
+        "angle": 90,
+        "width": 12,
+        "purpose": "Divisória: atravesse pelo par de portais."
+      },
+      {
+        "type": "mirror",
+        "x": 610,
+        "y": 379.95,
+        "length": 104,
+        "angle": 5.57186009450507
+      },
+      {
+        "type": "mirror",
+        "x": 185,
+        "y": 320.025,
+        "length": 104,
+        "angle": -28.7133502697734
+      },
+      {
+        "type": "wall",
+        "x": 390,
+        "y": 340,
+        "length": 185,
+        "angle": 90,
+        "width": 12,
+        "purpose": "Divisória: atravesse pelo par de portais."
+      }
+    ],
+    "solution": [
+      -16.82849977689387,
+      -16.82849977689387,
+      -8.43021381784836,
+      -14.42813990549493,
+      -8.7133502697734
+    ],
+    "sourceAngle": 0,
+    "target": {
+      "x": 755,
+      "y": 96.03,
+      "radius": 22,
+      "color": "gold"
+    },
+    "requiredBounces": 5,
+    "wallPurpose": [
+      "Divisória: atravesse pelo par de portais."
+    ],
+    "decoyCount": 0,
+    "tutorial": "",
+    "rules": "Cada cor no seu alvo, sem cruzar outras trajetórias."
+  },
+  {
+    "name": "Dois raios e passagens 2",
+    "hint": "Siga a letra de cada par: a direção não muda no teleporte. Planeje cada cor sem cruzamentos.",
+    "stage": 6,
+    "stageName": "Dois raios e passagens",
+    "difficulty": 52,
+    "family": "portal-arco-2",
+    "sources": [
+      {
+        "x": 755,
+        "y": 78.875,
+        "angle": 150.43629894954879,
+        "color": "gold"
+      },
+      {
+        "x": 45,
+        "y": 298.875,
+        "angle": 0,
+        "color": "blue"
+      }
+    ],
+    "targets": [
+      {
+        "x": 45,
+        "y": 144.675,
+        "radius": 22,
+        "color": "gold"
+      },
+      {
+        "x": 755,
+        "y": 298.875,
+        "radius": 22,
+        "color": "blue"
+      }
+    ],
+    "portals": [
+      {
+        "id": "A1",
+        "pairId": "A2",
+        "label": "A",
+        "x": 450,
+        "y": 161.125,
+        "radius": 15,
+        "colors": null
+      },
+      {
+        "id": "A2",
+        "pairId": "A1",
+        "label": "A",
+        "x": 330,
+        "y": 99.4375,
+        "radius": 15,
+        "colors": null
+      },
+      {
+        "id": "C1",
+        "pairId": "C2",
+        "label": "C",
+        "x": 145,
+        "y": 298.875,
+        "radius": 15,
+        "colors": null
+      },
+      {
+        "id": "C2",
+        "pairId": "C1",
+        "label": "C",
+        "x": 300,
+        "y": 381.125,
+        "radius": 15,
+        "colors": null
+      }
+    ],
+    "objects": [
+      {
+        "type": "mirror",
+        "x": 610,
+        "y": 161.125,
+        "length": 104,
+        "angle": 12.218149474774407
+      },
+      {
+        "type": "mirror",
+        "x": 185,
+        "y": 99.4375,
+        "length": 104,
+        "angle": -35.95347086430314
+      },
+      {
+        "type": "wall",
+        "x": 390,
+        "y": 120,
+        "length": 185,
+        "angle": 90,
+        "width": 12,
+        "purpose": "Divisória: atravesse pelo par de portais."
+      },
+      {
+        "type": "mirror",
+        "x": 470,
+        "y": 381.125,
+        "length": 104,
+        "angle": -41.36871350622759
+      },
+      {
+        "type": "mirror",
+        "x": 620,
+        "y": 298.875,
+        "length": 104,
+        "angle": 12.631286493772404
+      },
+      {
+        "type": "wall",
+        "x": 222.5,
+        "y": 340,
+        "length": 185,
+        "angle": 90,
+        "width": 12,
+        "purpose": "Divisória: atravesse pelo par de portais."
+      }
+    ],
+    "solution": [
+      -14.781850525225593,
+      -8.953470864303142,
+      -14.368713506227596,
+      -14.368713506227596
+    ],
+    "sourceAngle": 150.43629894954879,
+    "target": {
+      "x": 45,
+      "y": 144.675,
+      "radius": 22,
+      "color": "gold"
+    },
+    "requiredBounces": 4,
+    "wallPurpose": [
+      "Divisória: atravesse pelo par de portais."
+    ],
+    "decoyCount": 0,
+    "tutorial": "",
+    "rules": "Cada cor no seu alvo, sem cruzar outras trajetórias."
+  },
+  {
+    "name": "Dois raios e passagens 3",
+    "hint": "Siga a letra de cada par: a direção não muda no teleporte. Planeje cada cor sem cruzamentos.",
+    "stage": 6,
+    "stageName": "Dois raios e passagens",
+    "difficulty": 53,
+    "family": "portal-zigue-2",
+    "sources": [
+      {
+        "x": 45,
+        "y": 382.3,
+        "angle": 0,
+        "color": "gold"
+      },
+      {
+        "x": 755,
+        "y": 77.69999999999999,
+        "angle": 180,
+        "color": "blue"
+      }
+    ],
+    "targets": [
+      {
+        "x": 755,
+        "y": 382.3,
+        "radius": 22,
+        "color": "gold"
+      },
+      {
+        "x": 45,
+        "y": 77.69999999999999,
+        "radius": 22,
+        "color": "blue"
+      }
+    ],
+    "portals": [
+      {
+        "id": "A1",
+        "pairId": "A2",
+        "label": "A",
+        "x": 145,
+        "y": 382.3,
+        "radius": 15,
+        "colors": null
+      },
+      {
+        "id": "A2",
+        "pairId": "A1",
+        "label": "A",
+        "x": 300,
+        "y": 297.7,
+        "radius": 15,
+        "colors": null
+      },
+      {
+        "id": "C1",
+        "pairId": "C2",
+        "label": "C",
+        "x": 380,
+        "y": 162.3,
+        "radius": 15,
+        "colors": null
+      },
+      {
+        "id": "C2",
+        "pairId": "C1",
+        "label": "C",
+        "x": 200,
+        "y": 77.69999999999999,
+        "radius": 15,
+        "colors": null
+      }
+    ],
+    "objects": [
+      {
+        "type": "mirror",
+        "x": 470,
+        "y": 297.7,
+        "length": 104,
+        "angle": 48.71149914077176
+      },
+      {
+        "type": "mirror",
+        "x": 620,
+        "y": 382.3,
+        "length": 104,
+        "angle": -19.288500859228243
+      },
+      {
+        "type": "wall",
+        "x": 222.5,
+        "y": 340,
+        "length": 185,
+        "angle": 90,
+        "width": 12,
+        "purpose": "Divisória: atravesse pelo par de portais."
+      },
+      {
+        "type": "mirror",
+        "x": 620,
+        "y": 77.69999999999999,
+        "length": 104,
+        "angle": -49.571984562805284
+      },
+      {
+        "type": "mirror",
+        "x": 480,
+        "y": 162.3,
+        "length": 104,
+        "angle": 18.428015437194716
+      },
+      {
+        "type": "wall",
+        "x": 290,
+        "y": 120,
+        "length": 185,
+        "angle": 90,
+        "width": 12,
+        "purpose": "Divisória: atravesse pelo par de portais."
+      }
+    ],
+    "solution": [
+      14.711499140771755,
+      14.711499140771755,
+      -15.571984562805284,
+      -15.571984562805284
+    ],
+    "sourceAngle": 0,
+    "target": {
+      "x": 755,
+      "y": 382.3,
+      "radius": 22,
+      "color": "gold"
+    },
+    "requiredBounces": 4,
+    "wallPurpose": [
+      "Divisória: atravesse pelo par de portais."
+    ],
+    "decoyCount": 0,
+    "tutorial": "",
+    "rules": "Cada cor no seu alvo, sem cruzar outras trajetórias."
+  },
+  {
+    "name": "Dois raios e passagens 4",
+    "hint": "Siga a letra de cada par: a direção não muda no teleporte. Planeje cada cor sem cruzamentos.",
+    "stage": 6,
+    "stageName": "Dois raios e passagens",
+    "difficulty": 54,
+    "family": "portal-arco-2",
+    "sources": [
+      {
+        "x": 45,
+        "y": 163.475,
+        "angle": 0,
+        "color": "gold"
+      },
+      {
+        "x": 755,
+        "y": 296.525,
+        "angle": 180,
+        "color": "blue"
+      }
+    ],
+    "targets": [
+      {
+        "x": 755,
+        "y": 163.475,
+        "radius": 22,
+        "color": "gold"
+      },
+      {
+        "x": 45,
+        "y": 383.475,
+        "radius": 22,
+        "color": "blue"
+      }
+    ],
+    "portals": [
+      {
+        "id": "A1",
+        "pairId": "A2",
+        "label": "A",
+        "x": 420,
+        "y": 76.525,
+        "radius": 15,
+        "colors": null
+      },
+      {
+        "id": "A2",
+        "pairId": "A1",
+        "label": "A",
+        "x": 600,
+        "y": 163.475,
+        "radius": 15,
+        "colors": null
+      },
+      {
+        "id": "C1",
+        "pairId": "C2",
+        "label": "C",
+        "x": 670,
+        "y": 296.525,
+        "radius": 15,
+        "colors": null
+      },
+      {
+        "id": "C2",
+        "pairId": "C1",
+        "label": "C",
+        "x": 560,
+        "y": 383.475,
+        "radius": 15,
+        "colors": null
+      },
+      {
+        "id": "D1",
+        "pairId": "D2",
+        "label": "D",
+        "x": 200,
+        "y": 296.525,
+        "radius": 15,
+        "colors": null
+      },
+      {
+        "id": "D2",
+        "pairId": "D1",
+        "label": "D",
+        "x": 120,
+        "y": 383.475,
+        "radius": 15,
+        "colors": null
+      }
+    ],
+    "objects": [
+      {
+        "type": "mirror",
+        "x": 180,
+        "y": 163.475,
+        "length": 104,
+        "angle": 25.078382767022678
+      },
+      {
+        "type": "mirror",
+        "x": 320,
+        "y": 76.525,
+        "length": 104,
+        "angle": -56.921617232977326
+      },
+      {
+        "type": "wall",
+        "x": 510,
+        "y": 120,
+        "length": 185,
+        "angle": 90,
+        "width": 12,
+        "purpose": "Divisória: atravesse pelo par de portais."
+      },
+      {
+        "type": "mirror",
+        "x": 420,
+        "y": 383.475,
+        "length": 104,
+        "angle": -23.03676969932981
+      },
+      {
+        "type": "mirror",
+        "x": 300,
+        "y": 296.525,
+        "length": 104,
+        "angle": 58.96323030067019
+      },
+      {
+        "type": "wall",
+        "x": 615,
+        "y": 340,
+        "length": 185,
+        "angle": 90,
+        "width": 12,
+        "purpose": "Divisória: atravesse pelo par de portais."
+      },
+      {
+        "type": "wall",
+        "x": 160,
+        "y": 340,
+        "length": 185,
+        "angle": 90,
+        "width": 12,
+        "purpose": "Divisória: atravesse pelo par de portais."
+      }
+    ],
+    "solution": [
+      -15.921617232977322,
+      -15.921617232977322,
+      17.96323030067019,
+      17.96323030067019
+    ],
+    "sourceAngle": 0,
+    "target": {
+      "x": 755,
+      "y": 163.475,
+      "radius": 22,
+      "color": "gold"
+    },
+    "requiredBounces": 4,
+    "wallPurpose": [
+      "Divisória: atravesse pelo par de portais."
+    ],
+    "decoyCount": 0,
+    "tutorial": "",
+    "rules": "Cada cor no seu alvo, sem cruzar outras trajetórias."
+  },
+  {
+    "name": "Dois raios e passagens 5",
+    "hint": "Siga a letra de cada par: a direção não muda no teleporte. Planeje cada cor sem cruzamentos.",
+    "stage": 6,
+    "stageName": "Dois raios e passagens",
+    "difficulty": 55,
+    "family": "portal-zigue-2",
+    "sources": [
+      {
+        "x": 755,
+        "y": 75.35,
+        "angle": 180,
+        "color": "gold"
+      },
+      {
+        "x": 30,
+        "y": 384.65,
+        "angle": 0,
+        "color": "blue"
+      }
+    ],
+    "targets": [
+      {
+        "x": 45,
+        "y": 164.65,
+        "radius": 22,
+        "color": "gold"
+      },
+      {
+        "x": 755,
+        "y": 313.21,
+        "radius": 22,
+        "color": "blue"
+      }
+    ],
+    "portals": [
+      {
+        "id": "A1",
+        "pairId": "A2",
+        "label": "A",
+        "x": 670,
+        "y": 75.35,
+        "radius": 15,
+        "colors": null
+      },
+      {
+        "id": "A2",
+        "pairId": "A1",
+        "label": "A",
+        "x": 560,
+        "y": 164.65,
+        "radius": 15,
+        "colors": null
+      },
+      {
+        "id": "B1",
+        "pairId": "B2",
+        "label": "B",
+        "x": 200,
+        "y": 75.35,
+        "radius": 15,
+        "colors": null
+      },
+      {
+        "id": "B2",
+        "pairId": "B1",
+        "label": "B",
+        "x": 120,
+        "y": 164.65,
+        "radius": 15,
+        "colors": null
+      },
+      {
+        "id": "C1",
+        "pairId": "C2",
+        "label": "C",
+        "x": 350,
+        "y": 295.35,
+        "radius": 15,
+        "colors": null
+      },
+      {
+        "id": "C2",
+        "pairId": "C1",
+        "label": "C",
+        "x": 470,
+        "y": 362.325,
+        "radius": 15,
+        "colors": null
+      }
+    ],
+    "objects": [
+      {
+        "type": "mirror",
+        "x": 420,
+        "y": 164.65,
+        "length": 104,
+        "angle": 66.3276968954491
+      },
+      {
+        "type": "mirror",
+        "x": 300,
+        "y": 75.35,
+        "length": 104,
+        "angle": -29.672303104550906
+      },
+      {
+        "type": "wall",
+        "x": 615,
+        "y": 120,
+        "length": 185,
+        "angle": 90,
+        "width": 12,
+        "purpose": "Divisória: atravesse pelo par de portais."
+      },
+      {
+        "type": "wall",
+        "x": 160,
+        "y": 120,
+        "length": 185,
+        "angle": 90,
+        "width": 12,
+        "purpose": "Divisória: atravesse pelo par de portais."
+      },
+      {
+        "type": "mirror",
+        "x": 130,
+        "y": 384.65,
+        "length": 104,
+        "angle": 29.672303104550917
+      },
+      {
+        "type": "mirror",
+        "x": 250,
+        "y": 295.35,
+        "length": 104,
+        "angle": -66.32769689544908
+      },
+      {
+        "type": "mirror",
+        "x": 610,
+        "y": 362.325,
+        "length": 104,
+        "angle": 38.64375943572194
+      },
+      {
+        "type": "wall",
+        "x": 410,
+        "y": 340,
+        "length": 185,
+        "angle": 90,
+        "width": 12,
+        "purpose": "Divisória: atravesse pelo par de portais."
+      }
+    ],
+    "solution": [
+      18.327696895449094,
+      18.327696895449094,
+      -18.327696895449083,
+      -18.327696895449083,
+      -9.356240564278062
+    ],
+    "sourceAngle": 180,
+    "target": {
+      "x": 45,
+      "y": 164.65,
+      "radius": 22,
+      "color": "gold"
+    },
+    "requiredBounces": 5,
+    "wallPurpose": [
+      "Divisória: atravesse pelo par de portais."
+    ],
+    "decoyCount": 0,
+    "tutorial": "",
+    "rules": "Cada cor no seu alvo, sem cruzar outras trajetórias."
+  },
+  {
+    "name": "Dois raios e passagens 6",
+    "hint": "Siga a letra de cada par: a direção não muda no teleporte. Planeje cada cor sem cruzamentos.",
+    "stage": 6,
+    "stageName": "Dois raios e passagens",
+    "difficulty": 56,
+    "family": "portal-arco-2",
+    "sources": [
+      {
+        "x": 30,
+        "y": 294.175,
+        "angle": 0,
+        "color": "gold"
+      },
+      {
+        "x": 755,
+        "y": 165.825,
+        "angle": -147.7042899753517,
+        "color": "blue"
+      }
+    ],
+    "targets": [
+      {
+        "x": 755,
+        "y": 367.495,
+        "radius": 22,
+        "color": "gold"
+      },
+      {
+        "x": 45,
+        "y": 92.505,
+        "radius": 22,
+        "color": "blue"
+      }
+    ],
+    "portals": [
+      {
+        "id": "A1",
+        "pairId": "A2",
+        "label": "A",
+        "x": 350,
+        "y": 385.825,
+        "radius": 15,
+        "colors": null
+      },
+      {
+        "id": "A2",
+        "pairId": "A1",
+        "label": "A",
+        "x": 470,
+        "y": 317.0875,
+        "radius": 15,
+        "colors": null
+      },
+      {
+        "id": "C1",
+        "pairId": "C2",
+        "label": "C",
+        "x": 450,
+        "y": 74.17500000000001,
+        "radius": 15,
+        "colors": null
+      },
+      {
+        "id": "C2",
+        "pairId": "C1",
+        "label": "C",
+        "x": 330,
+        "y": 142.91250000000002,
+        "radius": 15,
+        "colors": null
+      }
+    ],
+    "objects": [
+      {
+        "type": "mirror",
+        "x": 130,
+        "y": 294.175,
+        "length": 104,
+        "angle": 38.68539091275994
+      },
+      {
+        "type": "mirror",
+        "x": 250,
+        "y": 385.825,
+        "length": 104,
+        "angle": -1.3146090872400613
+      },
+      {
+        "type": "mirror",
+        "x": 610,
+        "y": 317.0875,
+        "length": 104,
+        "angle": 29.584695211309597
+      },
+      {
+        "type": "wall",
+        "x": 410,
+        "y": 340,
+        "length": 185,
+        "angle": 90,
+        "width": 12,
+        "purpose": "Divisória: atravesse pelo par de portais."
+      },
+      {
+        "type": "mirror",
+        "x": 610,
+        "y": 74.17500000000001,
+        "length": 104,
+        "angle": 36.14785501232414
+      },
+      {
+        "type": "mirror",
+        "x": 185,
+        "y": 142.91250000000002,
+        "length": 104,
+        "angle": -10.099203215994464
+      },
+      {
+        "type": "wall",
+        "x": 390,
+        "y": 120,
+        "length": 185,
+        "angle": 90,
+        "width": 12,
+        "purpose": "Divisória: atravesse pelo par de portais."
+      }
+    ],
+    "solution": [
+      18.68539091275994,
+      18.68539091275994,
+      9.584695211309597,
+      16.147855012324143,
+      9.900796784005536
+    ],
+    "sourceAngle": 0,
+    "target": {
+      "x": 755,
+      "y": 367.495,
+      "radius": 22,
+      "color": "gold"
+    },
+    "requiredBounces": 5,
+    "wallPurpose": [
+      "Divisória: atravesse pelo par de portais."
+    ],
+    "decoyCount": 0,
+    "tutorial": "",
+    "rules": "Cada cor no seu alvo, sem cruzar outras trajetórias."
+  },
+  {
+    "name": "Dois raios e passagens 7",
+    "hint": "Siga a letra de cada par: a direção não muda no teleporte. Planeje cada cor sem cruzamentos.",
+    "stage": 6,
+    "stageName": "Dois raios e passagens",
+    "difficulty": 57,
+    "family": "portal-zigue-2",
+    "sources": [
+      {
+        "x": 45,
+        "y": 73,
+        "angle": 32.95436761473421,
+        "color": "gold"
+      },
+      {
+        "x": 755,
+        "y": 293,
+        "angle": 180,
+        "color": "blue"
+      }
+    ],
+    "targets": [
+      {
+        "x": 755,
+        "y": 148.2,
+        "radius": 22,
+        "color": "gold"
+      },
+      {
+        "x": 45,
+        "y": 293,
+        "radius": 22,
+        "color": "blue"
+      }
+    ],
+    "portals": [
+      {
+        "id": "A1",
+        "pairId": "A2",
+        "label": "A",
+        "x": 350,
+        "y": 167,
+        "radius": 15,
+        "colors": null
+      },
+      {
+        "id": "A2",
+        "pairId": "A1",
+        "label": "A",
+        "x": 470,
+        "y": 96.5,
+        "radius": 15,
+        "colors": null
+      },
+      {
+        "id": "C1",
+        "pairId": "C2",
+        "label": "C",
+        "x": 655,
+        "y": 293,
+        "radius": 15,
+        "colors": null
+      },
+      {
+        "id": "C2",
+        "pairId": "C1",
+        "label": "C",
+        "x": 500,
+        "y": 387,
+        "radius": 15,
+        "colors": null
+      }
+    ],
+    "objects": [
+      {
+        "type": "mirror",
+        "x": 190,
+        "y": 167,
+        "length": 104,
+        "angle": 43.477183807367105
+      },
+      {
+        "type": "mirror",
+        "x": 615,
+        "y": 96.5,
+        "length": 104,
+        "angle": -16.865766077222837
+      },
+      {
+        "type": "wall",
+        "x": 410,
+        "y": 120,
+        "length": 185,
+        "angle": 90,
+        "width": 12,
+        "purpose": "Divisória: atravesse pelo par de portais."
+      },
+      {
+        "type": "mirror",
+        "x": 330,
+        "y": 387,
+        "length": 104,
+        "angle": -10.962999562352977
+      },
+      {
+        "type": "mirror",
+        "x": 180,
+        "y": 293,
+        "length": 104,
+        "angle": 43.03700043764702
+      },
+      {
+        "type": "wall",
+        "x": 577.5,
+        "y": 340,
+        "length": 185,
+        "angle": 90,
+        "width": 12,
+        "purpose": "Divisória: atravesse pelo par de portais."
+      }
+    ],
+    "solution": [
+      16.477183807367105,
+      10.134233922777161,
+      16.037000437647023,
+      16.037000437647023
+    ],
+    "sourceAngle": 32.95436761473421,
+    "target": {
+      "x": 755,
+      "y": 148.2,
+      "radius": 22,
+      "color": "gold"
+    },
+    "requiredBounces": 4,
+    "wallPurpose": [
+      "Divisória: atravesse pelo par de portais."
+    ],
+    "decoyCount": 0,
+    "tutorial": "",
+    "rules": "Cada cor no seu alvo, sem cruzar outras trajetórias."
+  },
+  {
+    "name": "Dois raios e passagens 8",
+    "hint": "Siga a letra de cada par: a direção não muda no teleporte. Planeje cada cor sem cruzamentos.",
+    "stage": 6,
+    "stageName": "Dois raios e passagens",
+    "difficulty": 58,
+    "family": "portal-arco-2",
+    "sources": [
+      {
+        "x": 755,
+        "y": 71.825,
+        "angle": 180,
+        "color": "gold"
+      },
+      {
+        "x": 45,
+        "y": 388.175,
+        "angle": 0,
+        "color": "blue"
+      }
+    ],
+    "targets": [
+      {
+        "x": 45,
+        "y": 71.825,
+        "radius": 22,
+        "color": "gold"
+      },
+      {
+        "x": 755,
+        "y": 388.175,
+        "radius": 22,
+        "color": "blue"
+      }
+    ],
+    "portals": [
+      {
+        "id": "A1",
+        "pairId": "A2",
+        "label": "A",
+        "x": 655,
+        "y": 71.825,
+        "radius": 15,
+        "colors": null
+      },
+      {
+        "id": "A2",
+        "pairId": "A1",
+        "label": "A",
+        "x": 500,
+        "y": 168.175,
+        "radius": 15,
+        "colors": null
+      },
+      {
+        "id": "C1",
+        "pairId": "C2",
+        "label": "C",
+        "x": 420,
+        "y": 291.825,
+        "radius": 15,
+        "colors": null
+      },
+      {
+        "id": "C2",
+        "pairId": "C1",
+        "label": "C",
+        "x": 600,
+        "y": 388.175,
+        "radius": 15,
+        "colors": null
+      }
+    ],
+    "objects": [
+      {
+        "type": "mirror",
+        "x": 330,
+        "y": 168.175,
+        "length": 104,
+        "angle": 50.35699261559189
+      },
+      {
+        "type": "mirror",
+        "x": 180,
+        "y": 71.825,
+        "length": 104,
+        "angle": -17.643007384408108
+      },
+      {
+        "type": "wall",
+        "x": 577.5,
+        "y": 120,
+        "length": 185,
+        "angle": 90,
+        "width": 12,
+        "purpose": "Divisória: atravesse pelo par de portais."
+      },
+      {
+        "type": "mirror",
+        "x": 180,
+        "y": 388.175,
+        "length": 104,
+        "angle": -51.26815201007537
+      },
+      {
+        "type": "mirror",
+        "x": 320,
+        "y": 291.825,
+        "length": 104,
+        "angle": 16.73184798992463
+      },
+      {
+        "type": "wall",
+        "x": 510,
+        "y": 340,
+        "length": 185,
+        "angle": 90,
+        "width": 12,
+        "purpose": "Divisória: atravesse pelo par de portais."
+      }
+    ],
+    "solution": [
+      16.356992615591892,
+      16.356992615591892,
+      -17.26815201007537,
+      -17.26815201007537
+    ],
+    "sourceAngle": 180,
+    "target": {
+      "x": 45,
+      "y": 71.825,
+      "radius": 22,
+      "color": "gold"
+    },
+    "requiredBounces": 4,
+    "wallPurpose": [
+      "Divisória: atravesse pelo par de portais."
+    ],
+    "decoyCount": 0,
+    "tutorial": "",
+    "rules": "Cada cor no seu alvo, sem cruzar outras trajetórias."
+  },
+  {
+    "name": "Dois raios e passagens 9",
+    "hint": "Siga a letra de cada par: a direção não muda no teleporte. Planeje cada cor sem cruzamentos.",
+    "stage": 6,
+    "stageName": "Dois raios e passagens",
+    "difficulty": 59,
+    "family": "portal-zigue-2",
+    "sources": [
+      {
+        "x": 45,
+        "y": 290.65,
+        "angle": 0,
+        "color": "gold"
+      },
+      {
+        "x": 755,
+        "y": 169.35000000000002,
+        "angle": 180,
+        "color": "blue"
+      }
+    ],
+    "targets": [
+      {
+        "x": 755,
+        "y": 290.65,
+        "radius": 22,
+        "color": "gold"
+      },
+      {
+        "x": 45,
+        "y": 70.64999999999998,
+        "radius": 22,
+        "color": "blue"
+      }
+    ],
+    "portals": [
+      {
+        "id": "A1",
+        "pairId": "A2",
+        "label": "A",
+        "x": 420,
+        "y": 389.35,
+        "radius": 15,
+        "colors": null
+      },
+      {
+        "id": "A2",
+        "pairId": "A1",
+        "label": "A",
+        "x": 600,
+        "y": 290.65,
+        "radius": 15,
+        "colors": null
+      },
+      {
+        "id": "C1",
+        "pairId": "C2",
+        "label": "C",
+        "x": 670,
+        "y": 169.35000000000002,
+        "radius": 15,
+        "colors": null
+      },
+      {
+        "id": "C2",
+        "pairId": "C1",
+        "label": "C",
+        "x": 560,
+        "y": 70.64999999999998,
+        "radius": 15,
+        "colors": null
+      },
+      {
+        "id": "D1",
+        "pairId": "D2",
+        "label": "D",
+        "x": 200,
+        "y": 169.35000000000002,
+        "radius": 15,
+        "colors": null
+      },
+      {
+        "id": "D2",
+        "pairId": "D1",
+        "label": "D",
+        "x": 120,
+        "y": 70.64999999999998,
+        "radius": 15,
+        "colors": null
+      }
+    ],
+    "objects": [
+      {
+        "type": "mirror",
+        "x": 180,
+        "y": 290.65,
+        "length": 104,
+        "angle": 58.59191831062313
+      },
+      {
+        "type": "mirror",
+        "x": 320,
+        "y": 389.35,
+        "length": 104,
+        "angle": -23.408081689376868
+      },
+      {
+        "type": "wall",
+        "x": 510,
+        "y": 340,
+        "length": 185,
+        "angle": 90,
+        "width": 12,
+        "purpose": "Divisória: atravesse pelo par de portais."
+      },
+      {
+        "type": "mirror",
+        "x": 420,
+        "y": 70.64999999999998,
+        "length": 104,
+        "angle": -60.71864837033016
+      },
+      {
+        "type": "mirror",
+        "x": 300,
+        "y": 169.35000000000002,
+        "length": 104,
+        "angle": 21.281351629669842
+      },
+      {
+        "type": "wall",
+        "x": 615,
+        "y": 120,
+        "length": 185,
+        "angle": 90,
+        "width": 12,
+        "purpose": "Divisória: atravesse pelo par de portais."
+      },
+      {
+        "type": "wall",
+        "x": 160,
+        "y": 120,
+        "length": 185,
+        "angle": 90,
+        "width": 12,
+        "purpose": "Divisória: atravesse pelo par de portais."
+      }
+    ],
+    "solution": [
+      17.591918310623132,
+      17.591918310623132,
+      -19.718648370330158,
+      -19.718648370330158
+    ],
+    "sourceAngle": 0,
+    "target": {
+      "x": 755,
+      "y": 290.65,
+      "radius": 22,
+      "color": "gold"
+    },
+    "requiredBounces": 4,
+    "wallPurpose": [
+      "Divisória: atravesse pelo par de portais."
+    ],
+    "decoyCount": 0,
+    "tutorial": "",
+    "rules": "Cada cor no seu alvo, sem cruzar outras trajetórias."
+  },
+  {
+    "name": "Dois raios e passagens 10",
+    "hint": "Siga a letra de cada par: a direção não muda no teleporte. Planeje cada cor sem cruzamentos.",
+    "stage": 6,
+    "stageName": "Dois raios e passagens",
+    "difficulty": 60,
+    "family": "portal-arco-2",
+    "sources": [
+      {
+        "x": 45,
+        "y": 69.475,
+        "angle": 0,
+        "color": "gold"
+      },
+      {
+        "x": 770,
+        "y": 390.525,
+        "angle": 180,
+        "color": "blue"
+      }
+    ],
+    "targets": [
+      {
+        "x": 755,
+        "y": 170.525,
+        "radius": 22,
+        "color": "gold"
+      },
+      {
+        "x": 45,
+        "y": 309.685,
+        "radius": 22,
+        "color": "blue"
+      }
+    ],
+    "portals": [
+      {
+        "id": "A1",
+        "pairId": "A2",
+        "label": "A",
+        "x": 130,
+        "y": 69.475,
+        "radius": 15,
+        "colors": null
+      },
+      {
+        "id": "A2",
+        "pairId": "A1",
+        "label": "A",
+        "x": 240,
+        "y": 170.525,
+        "radius": 15,
+        "colors": null
+      },
+      {
+        "id": "B1",
+        "pairId": "B2",
+        "label": "B",
+        "x": 600,
+        "y": 69.475,
+        "radius": 15,
+        "colors": null
+      },
+      {
+        "id": "B2",
+        "pairId": "B1",
+        "label": "B",
+        "x": 680,
+        "y": 170.525,
+        "radius": 15,
+        "colors": null
+      },
+      {
+        "id": "C1",
+        "pairId": "C2",
+        "label": "C",
+        "x": 450,
+        "y": 289.475,
+        "radius": 15,
+        "colors": null
+      },
+      {
+        "id": "C2",
+        "pairId": "C1",
+        "label": "C",
+        "x": 330,
+        "y": 365.2625,
+        "radius": 15,
+        "colors": null
+      }
+    ],
+    "objects": [
+      {
+        "type": "mirror",
+        "x": 380,
+        "y": 170.525,
+        "length": 104,
+        "angle": 27.949913809137712
+      },
+      {
+        "type": "mirror",
+        "x": 500,
+        "y": 69.475,
+        "length": 104,
+        "angle": -68.05008619086229
+      },
+      {
+        "type": "wall",
+        "x": 185,
+        "y": 120,
+        "length": 185,
+        "angle": 90,
+        "width": 12,
+        "purpose": "Divisória: atravesse pelo par de portais."
+      },
+      {
+        "type": "wall",
+        "x": 640,
+        "y": 120,
+        "length": 185,
+        "angle": 90,
+        "width": 12,
+        "purpose": "Divisória: atravesse pelo par de portais."
+      },
+      {
+        "type": "mirror",
+        "x": 670,
+        "y": 390.525,
+        "length": 104,
+        "angle": 68.05008619086229
+      },
+      {
+        "type": "mirror",
+        "x": 550,
+        "y": 289.475,
+        "length": 104,
+        "angle": -27.949913809137712
+      },
+      {
+        "type": "mirror",
+        "x": 190,
+        "y": 365.2625,
+        "length": 104,
+        "angle": 58.48574185221801
+      },
+      {
+        "type": "wall",
+        "x": 390,
+        "y": 340,
+        "length": 185,
+        "angle": 90,
+        "width": 12,
+        "purpose": "Divisória: atravesse pelo par de portais."
+      }
+    ],
+    "solution": [
+      -20.050086190862288,
+      -20.050086190862288,
+      20.050086190862288,
+      20.050086190862288,
+      10.485741852218013
+    ],
+    "sourceAngle": 0,
+    "target": {
+      "x": 755,
+      "y": 170.525,
+      "radius": 22,
+      "color": "gold"
+    },
+    "requiredBounces": 5,
+    "wallPurpose": [
+      "Divisória: atravesse pelo par de portais."
+    ],
+    "decoyCount": 0,
+    "tutorial": "",
+    "rules": "Cada cor no seu alvo, sem cruzar outras trajetórias."
+  },
+  {
+    "name": "Portais seletivos 1",
+    "hint": "Siga a letra de cada par: a direção não muda no teleporte. Planeje cada cor sem cruzamentos.",
+    "stage": 7,
+    "stageName": "Portais seletivos",
+    "difficulty": 61,
+    "family": "portal-zigue-2",
+    "sources": [
+      {
+        "x": 30,
+        "y": 159.95,
+        "angle": 0,
+        "color": "gold"
+      },
+      {
+        "x": 755,
+        "y": 300.05,
+        "angle": 151.14372018901014,
+        "color": "blue"
+      }
+    ],
+    "targets": [
+      {
+        "x": 755,
+        "y": 96.03,
+        "radius": 22,
+        "color": "gold"
+      },
+      {
+        "x": 45,
+        "y": 363.96999999999997,
+        "radius": 22,
+        "color": "blue"
+      }
+    ],
+    "portals": [
+      {
+        "id": "A1",
+        "pairId": "A2",
+        "label": "A",
+        "x": 350,
+        "y": 80.05000000000001,
+        "radius": 15,
+        "colors": null
+      },
+      {
+        "id": "A2",
+        "pairId": "A1",
+        "label": "A",
+        "x": 470,
+        "y": 139.975,
+        "radius": 15,
+        "colors": null
+      },
+      {
+        "id": "C1",
+        "pairId": "C2",
+        "label": "C",
+        "x": 450,
+        "y": 379.95,
+        "radius": 15,
+        "colors": [
+          "blue"
+        ]
+      },
+      {
+        "id": "C2",
+        "pairId": "C1",
+        "label": "C",
+        "x": 330,
+        "y": 320.025,
+        "radius": 15,
+        "colors": [
+          "blue"
+        ]
+      }
+    ],
+    "objects": [
+      {
+        "type": "mirror",
+        "x": 130,
+        "y": 159.95,
+        "length": 104,
+        "angle": 3.171500223106129
+      },
+      {
+        "type": "mirror",
+        "x": 250,
+        "y": 80.05000000000001,
+        "length": 104,
+        "angle": -36.82849977689387
+      },
+      {
+        "type": "mirror",
+        "x": 610,
+        "y": 139.975,
+        "length": 104,
+        "angle": 11.56978618215164
+      },
+      {
+        "type": "wall",
+        "x": 410,
+        "y": 120,
+        "length": 185,
+        "angle": 90,
+        "width": 12,
+        "purpose": "Divisória: atravesse pelo par de portais."
+      },
+      {
+        "type": "mirror",
+        "x": 610,
+        "y": 379.95,
+        "length": 104,
+        "angle": 5.57186009450507
+      },
+      {
+        "type": "mirror",
+        "x": 185,
+        "y": 320.025,
+        "length": 104,
+        "angle": -28.7133502697734
+      },
+      {
+        "type": "wall",
+        "x": 390,
+        "y": 340,
+        "length": 185,
+        "angle": 90,
+        "width": 12,
+        "purpose": "Divisória: atravesse pelo par de portais."
+      }
+    ],
+    "solution": [
+      -16.82849977689387,
+      -16.82849977689387,
+      -8.43021381784836,
+      -14.42813990549493,
+      -8.7133502697734
+    ],
+    "sourceAngle": 0,
+    "target": {
+      "x": 755,
+      "y": 96.03,
+      "radius": 22,
+      "color": "gold"
+    },
+    "requiredBounces": 5,
+    "wallPurpose": [
+      "Divisória: atravesse pelo par de portais."
+    ],
+    "decoyCount": 0,
+    "tutorial": "Novidade: portais seletivos. Os pontos e nomes indicam as cores aceitas. Uma cor não autorizada para na entrada. Portais brancos continuam aceitando todas.",
+    "rules": "Cada cor no seu alvo, sem cruzar outras trajetórias."
+  },
+  {
+    "name": "Portais seletivos 2",
+    "hint": "Siga a letra de cada par: a direção não muda no teleporte. Planeje cada cor sem cruzamentos.",
+    "stage": 7,
+    "stageName": "Portais seletivos",
+    "difficulty": 62,
+    "family": "portal-arco-2",
+    "sources": [
+      {
+        "x": 755,
+        "y": 78.875,
+        "angle": 150.43629894954879,
+        "color": "gold"
+      },
+      {
+        "x": 45,
+        "y": 298.875,
+        "angle": 0,
+        "color": "blue"
+      }
+    ],
+    "targets": [
+      {
+        "x": 45,
+        "y": 144.675,
+        "radius": 22,
+        "color": "gold"
+      },
+      {
+        "x": 755,
+        "y": 298.875,
+        "radius": 22,
+        "color": "blue"
+      }
+    ],
+    "portals": [
+      {
+        "id": "A1",
+        "pairId": "A2",
+        "label": "A",
+        "x": 450,
+        "y": 161.125,
+        "radius": 15,
+        "colors": [
+          "gold"
+        ]
+      },
+      {
+        "id": "A2",
+        "pairId": "A1",
+        "label": "A",
+        "x": 330,
+        "y": 99.4375,
+        "radius": 15,
+        "colors": [
+          "gold"
+        ]
+      },
+      {
+        "id": "C1",
+        "pairId": "C2",
+        "label": "C",
+        "x": 145,
+        "y": 298.875,
+        "radius": 15,
+        "colors": [
+          "blue"
+        ]
+      },
+      {
+        "id": "C2",
+        "pairId": "C1",
+        "label": "C",
+        "x": 300,
+        "y": 381.125,
+        "radius": 15,
+        "colors": [
+          "blue"
+        ]
+      }
+    ],
+    "objects": [
+      {
+        "type": "mirror",
+        "x": 610,
+        "y": 161.125,
+        "length": 104,
+        "angle": 12.218149474774407
+      },
+      {
+        "type": "mirror",
+        "x": 185,
+        "y": 99.4375,
+        "length": 104,
+        "angle": -35.95347086430314
+      },
+      {
+        "type": "wall",
+        "x": 390,
+        "y": 120,
+        "length": 185,
+        "angle": 90,
+        "width": 12,
+        "purpose": "Divisória: atravesse pelo par de portais."
+      },
+      {
+        "type": "mirror",
+        "x": 470,
+        "y": 381.125,
+        "length": 104,
+        "angle": -41.36871350622759
+      },
+      {
+        "type": "mirror",
+        "x": 620,
+        "y": 298.875,
+        "length": 104,
+        "angle": 12.631286493772404
+      },
+      {
+        "type": "wall",
+        "x": 222.5,
+        "y": 340,
+        "length": 185,
+        "angle": 90,
+        "width": 12,
+        "purpose": "Divisória: atravesse pelo par de portais."
+      }
+    ],
+    "solution": [
+      -14.781850525225593,
+      -8.953470864303142,
+      -14.368713506227596,
+      -14.368713506227596
+    ],
+    "sourceAngle": 150.43629894954879,
+    "target": {
+      "x": 45,
+      "y": 144.675,
+      "radius": 22,
+      "color": "gold"
+    },
+    "requiredBounces": 4,
+    "wallPurpose": [
+      "Divisória: atravesse pelo par de portais."
+    ],
+    "decoyCount": 0,
+    "tutorial": "",
+    "rules": "Cada cor no seu alvo, sem cruzar outras trajetórias."
+  },
+  {
+    "name": "Portais seletivos 3",
+    "hint": "Siga a letra de cada par: a direção não muda no teleporte. Planeje cada cor sem cruzamentos.",
+    "stage": 7,
+    "stageName": "Portais seletivos",
+    "difficulty": 63,
+    "family": "portal-zigue-2",
+    "sources": [
+      {
+        "x": 45,
+        "y": 382.3,
+        "angle": 0,
+        "color": "gold"
+      },
+      {
+        "x": 755,
+        "y": 77.69999999999999,
+        "angle": 180,
+        "color": "blue"
+      }
+    ],
+    "targets": [
+      {
+        "x": 755,
+        "y": 382.3,
+        "radius": 22,
+        "color": "gold"
+      },
+      {
+        "x": 45,
+        "y": 77.69999999999999,
+        "radius": 22,
+        "color": "blue"
+      }
+    ],
+    "portals": [
+      {
+        "id": "A1",
+        "pairId": "A2",
+        "label": "A",
+        "x": 145,
+        "y": 382.3,
+        "radius": 15,
+        "colors": [
+          "gold"
+        ]
+      },
+      {
+        "id": "A2",
+        "pairId": "A1",
+        "label": "A",
+        "x": 300,
+        "y": 297.7,
+        "radius": 15,
+        "colors": [
+          "gold"
+        ]
+      },
+      {
+        "id": "C1",
+        "pairId": "C2",
+        "label": "C",
+        "x": 380,
+        "y": 162.3,
+        "radius": 15,
+        "colors": [
+          "blue"
+        ]
+      },
+      {
+        "id": "C2",
+        "pairId": "C1",
+        "label": "C",
+        "x": 200,
+        "y": 77.69999999999999,
+        "radius": 15,
+        "colors": [
+          "blue"
+        ]
+      }
+    ],
+    "objects": [
+      {
+        "type": "mirror",
+        "x": 470,
+        "y": 297.7,
+        "length": 104,
+        "angle": 48.71149914077176
+      },
+      {
+        "type": "mirror",
+        "x": 620,
+        "y": 382.3,
+        "length": 104,
+        "angle": -19.288500859228243
+      },
+      {
+        "type": "wall",
+        "x": 222.5,
+        "y": 340,
+        "length": 185,
+        "angle": 90,
+        "width": 12,
+        "purpose": "Divisória: atravesse pelo par de portais."
+      },
+      {
+        "type": "mirror",
+        "x": 620,
+        "y": 77.69999999999999,
+        "length": 104,
+        "angle": -49.571984562805284
+      },
+      {
+        "type": "mirror",
+        "x": 480,
+        "y": 162.3,
+        "length": 104,
+        "angle": 18.428015437194716
+      },
+      {
+        "type": "wall",
+        "x": 290,
+        "y": 120,
+        "length": 185,
+        "angle": 90,
+        "width": 12,
+        "purpose": "Divisória: atravesse pelo par de portais."
+      }
+    ],
+    "solution": [
+      14.711499140771755,
+      14.711499140771755,
+      -15.571984562805284,
+      -15.571984562805284
+    ],
+    "sourceAngle": 0,
+    "target": {
+      "x": 755,
+      "y": 382.3,
+      "radius": 22,
+      "color": "gold"
+    },
+    "requiredBounces": 4,
+    "wallPurpose": [
+      "Divisória: atravesse pelo par de portais."
+    ],
+    "decoyCount": 0,
+    "tutorial": "",
+    "rules": "Cada cor no seu alvo, sem cruzar outras trajetórias."
+  },
+  {
+    "name": "Portais seletivos 4",
+    "hint": "Siga a letra de cada par: a direção não muda no teleporte. Planeje cada cor sem cruzamentos.",
+    "stage": 7,
+    "stageName": "Portais seletivos",
+    "difficulty": 64,
+    "family": "portal-arco-2",
+    "sources": [
+      {
+        "x": 45,
+        "y": 163.475,
+        "angle": 0,
+        "color": "gold"
+      },
+      {
+        "x": 755,
+        "y": 296.525,
+        "angle": 180,
+        "color": "blue"
+      }
+    ],
+    "targets": [
+      {
+        "x": 755,
+        "y": 163.475,
+        "radius": 22,
+        "color": "gold"
+      },
+      {
+        "x": 45,
+        "y": 383.475,
+        "radius": 22,
+        "color": "blue"
+      }
+    ],
+    "portals": [
+      {
+        "id": "A1",
+        "pairId": "A2",
+        "label": "A",
+        "x": 420,
+        "y": 76.525,
+        "radius": 15,
+        "colors": [
+          "gold"
+        ]
+      },
+      {
+        "id": "A2",
+        "pairId": "A1",
+        "label": "A",
+        "x": 600,
+        "y": 163.475,
+        "radius": 15,
+        "colors": [
+          "gold"
+        ]
+      },
+      {
+        "id": "C1",
+        "pairId": "C2",
+        "label": "C",
+        "x": 670,
+        "y": 296.525,
+        "radius": 15,
+        "colors": [
+          "blue"
+        ]
+      },
+      {
+        "id": "C2",
+        "pairId": "C1",
+        "label": "C",
+        "x": 560,
+        "y": 383.475,
+        "radius": 15,
+        "colors": [
+          "blue"
+        ]
+      },
+      {
+        "id": "D1",
+        "pairId": "D2",
+        "label": "D",
+        "x": 200,
+        "y": 296.525,
+        "radius": 15,
+        "colors": [
+          "blue"
+        ]
+      },
+      {
+        "id": "D2",
+        "pairId": "D1",
+        "label": "D",
+        "x": 120,
+        "y": 383.475,
+        "radius": 15,
+        "colors": [
+          "blue"
+        ]
+      }
+    ],
+    "objects": [
+      {
+        "type": "mirror",
+        "x": 180,
+        "y": 163.475,
+        "length": 104,
+        "angle": 25.078382767022678
+      },
+      {
+        "type": "mirror",
+        "x": 320,
+        "y": 76.525,
+        "length": 104,
+        "angle": -56.921617232977326
+      },
+      {
+        "type": "wall",
+        "x": 510,
+        "y": 120,
+        "length": 185,
+        "angle": 90,
+        "width": 12,
+        "purpose": "Divisória: atravesse pelo par de portais."
+      },
+      {
+        "type": "mirror",
+        "x": 420,
+        "y": 383.475,
+        "length": 104,
+        "angle": -23.03676969932981
+      },
+      {
+        "type": "mirror",
+        "x": 300,
+        "y": 296.525,
+        "length": 104,
+        "angle": 58.96323030067019
+      },
+      {
+        "type": "wall",
+        "x": 615,
+        "y": 340,
+        "length": 185,
+        "angle": 90,
+        "width": 12,
+        "purpose": "Divisória: atravesse pelo par de portais."
+      },
+      {
+        "type": "wall",
+        "x": 160,
+        "y": 340,
+        "length": 185,
+        "angle": 90,
+        "width": 12,
+        "purpose": "Divisória: atravesse pelo par de portais."
+      }
+    ],
+    "solution": [
+      -15.921617232977322,
+      -15.921617232977322,
+      17.96323030067019,
+      17.96323030067019
+    ],
+    "sourceAngle": 0,
+    "target": {
+      "x": 755,
+      "y": 163.475,
+      "radius": 22,
+      "color": "gold"
+    },
+    "requiredBounces": 4,
+    "wallPurpose": [
+      "Divisória: atravesse pelo par de portais."
+    ],
+    "decoyCount": 0,
+    "tutorial": "",
+    "rules": "Cada cor no seu alvo, sem cruzar outras trajetórias."
+  },
+  {
+    "name": "Portais seletivos 5",
+    "hint": "Siga a letra de cada par: a direção não muda no teleporte. Planeje cada cor sem cruzamentos.",
+    "stage": 7,
+    "stageName": "Portais seletivos",
+    "difficulty": 65,
+    "family": "portal-zigue-2",
+    "sources": [
+      {
+        "x": 755,
+        "y": 75.35,
+        "angle": 180,
+        "color": "gold"
+      },
+      {
+        "x": 30,
+        "y": 384.65,
+        "angle": 0,
+        "color": "blue"
+      }
+    ],
+    "targets": [
+      {
+        "x": 45,
+        "y": 164.65,
+        "radius": 22,
+        "color": "gold"
+      },
+      {
+        "x": 755,
+        "y": 313.21,
+        "radius": 22,
+        "color": "blue"
+      }
+    ],
+    "portals": [
+      {
+        "id": "A1",
+        "pairId": "A2",
+        "label": "A",
+        "x": 670,
+        "y": 75.35,
+        "radius": 15,
+        "colors": null
+      },
+      {
+        "id": "A2",
+        "pairId": "A1",
+        "label": "A",
+        "x": 560,
+        "y": 164.65,
+        "radius": 15,
+        "colors": null
+      },
+      {
+        "id": "B1",
+        "pairId": "B2",
+        "label": "B",
+        "x": 200,
+        "y": 75.35,
+        "radius": 15,
+        "colors": null
+      },
+      {
+        "id": "B2",
+        "pairId": "B1",
+        "label": "B",
+        "x": 120,
+        "y": 164.65,
+        "radius": 15,
+        "colors": null
+      },
+      {
+        "id": "C1",
+        "pairId": "C2",
+        "label": "C",
+        "x": 350,
+        "y": 295.35,
+        "radius": 15,
+        "colors": [
+          "blue"
+        ]
+      },
+      {
+        "id": "C2",
+        "pairId": "C1",
+        "label": "C",
+        "x": 470,
+        "y": 362.325,
+        "radius": 15,
+        "colors": [
+          "blue"
+        ]
+      }
+    ],
+    "objects": [
+      {
+        "type": "mirror",
+        "x": 420,
+        "y": 164.65,
+        "length": 104,
+        "angle": 66.3276968954491
+      },
+      {
+        "type": "mirror",
+        "x": 300,
+        "y": 75.35,
+        "length": 104,
+        "angle": -29.672303104550906
+      },
+      {
+        "type": "wall",
+        "x": 615,
+        "y": 120,
+        "length": 185,
+        "angle": 90,
+        "width": 12,
+        "purpose": "Divisória: atravesse pelo par de portais."
+      },
+      {
+        "type": "wall",
+        "x": 160,
+        "y": 120,
+        "length": 185,
+        "angle": 90,
+        "width": 12,
+        "purpose": "Divisória: atravesse pelo par de portais."
+      },
+      {
+        "type": "mirror",
+        "x": 130,
+        "y": 384.65,
+        "length": 104,
+        "angle": 29.672303104550917
+      },
+      {
+        "type": "mirror",
+        "x": 250,
+        "y": 295.35,
+        "length": 104,
+        "angle": -66.32769689544908
+      },
+      {
+        "type": "mirror",
+        "x": 610,
+        "y": 362.325,
+        "length": 104,
+        "angle": 38.64375943572194
+      },
+      {
+        "type": "wall",
+        "x": 410,
+        "y": 340,
+        "length": 185,
+        "angle": 90,
+        "width": 12,
+        "purpose": "Divisória: atravesse pelo par de portais."
+      }
+    ],
+    "solution": [
+      18.327696895449094,
+      18.327696895449094,
+      -18.327696895449083,
+      -18.327696895449083,
+      -9.356240564278062
+    ],
+    "sourceAngle": 180,
+    "target": {
+      "x": 45,
+      "y": 164.65,
+      "radius": 22,
+      "color": "gold"
+    },
+    "requiredBounces": 5,
+    "wallPurpose": [
+      "Divisória: atravesse pelo par de portais."
+    ],
+    "decoyCount": 0,
+    "tutorial": "",
+    "rules": "Cada cor no seu alvo, sem cruzar outras trajetórias."
+  },
+  {
+    "name": "Portais seletivos 6",
+    "hint": "Siga a letra de cada par: a direção não muda no teleporte. Planeje cada cor sem cruzamentos.",
+    "stage": 7,
+    "stageName": "Portais seletivos",
+    "difficulty": 66,
+    "family": "portal-arco-2",
+    "sources": [
+      {
+        "x": 30,
+        "y": 294.175,
+        "angle": 0,
+        "color": "gold"
+      },
+      {
+        "x": 755,
+        "y": 165.825,
+        "angle": -147.7042899753517,
+        "color": "blue"
+      }
+    ],
+    "targets": [
+      {
+        "x": 755,
+        "y": 367.495,
+        "radius": 22,
+        "color": "gold"
+      },
+      {
+        "x": 45,
+        "y": 92.505,
+        "radius": 22,
+        "color": "blue"
+      }
+    ],
+    "portals": [
+      {
+        "id": "A1",
+        "pairId": "A2",
+        "label": "A",
+        "x": 350,
+        "y": 385.825,
+        "radius": 15,
+        "colors": [
+          "gold"
+        ]
+      },
+      {
+        "id": "A2",
+        "pairId": "A1",
+        "label": "A",
+        "x": 470,
+        "y": 317.0875,
+        "radius": 15,
+        "colors": [
+          "gold"
+        ]
+      },
+      {
+        "id": "C1",
+        "pairId": "C2",
+        "label": "C",
+        "x": 450,
+        "y": 74.17500000000001,
+        "radius": 15,
+        "colors": [
+          "blue"
+        ]
+      },
+      {
+        "id": "C2",
+        "pairId": "C1",
+        "label": "C",
+        "x": 330,
+        "y": 142.91250000000002,
+        "radius": 15,
+        "colors": [
+          "blue"
+        ]
+      }
+    ],
+    "objects": [
+      {
+        "type": "mirror",
+        "x": 130,
+        "y": 294.175,
+        "length": 104,
+        "angle": 38.68539091275994
+      },
+      {
+        "type": "mirror",
+        "x": 250,
+        "y": 385.825,
+        "length": 104,
+        "angle": -1.3146090872400613
+      },
+      {
+        "type": "mirror",
+        "x": 610,
+        "y": 317.0875,
+        "length": 104,
+        "angle": 29.584695211309597
+      },
+      {
+        "type": "wall",
+        "x": 410,
+        "y": 340,
+        "length": 185,
+        "angle": 90,
+        "width": 12,
+        "purpose": "Divisória: atravesse pelo par de portais."
+      },
+      {
+        "type": "mirror",
+        "x": 610,
+        "y": 74.17500000000001,
+        "length": 104,
+        "angle": 36.14785501232414
+      },
+      {
+        "type": "mirror",
+        "x": 185,
+        "y": 142.91250000000002,
+        "length": 104,
+        "angle": -10.099203215994464
+      },
+      {
+        "type": "wall",
+        "x": 390,
+        "y": 120,
+        "length": 185,
+        "angle": 90,
+        "width": 12,
+        "purpose": "Divisória: atravesse pelo par de portais."
+      }
+    ],
+    "solution": [
+      18.68539091275994,
+      18.68539091275994,
+      9.584695211309597,
+      16.147855012324143,
+      9.900796784005536
+    ],
+    "sourceAngle": 0,
+    "target": {
+      "x": 755,
+      "y": 367.495,
+      "radius": 22,
+      "color": "gold"
+    },
+    "requiredBounces": 5,
+    "wallPurpose": [
+      "Divisória: atravesse pelo par de portais."
+    ],
+    "decoyCount": 0,
+    "tutorial": "",
+    "rules": "Cada cor no seu alvo, sem cruzar outras trajetórias."
+  },
+  {
+    "name": "Portais seletivos 7",
+    "hint": "Siga a letra de cada par: a direção não muda no teleporte. Planeje cada cor sem cruzamentos.",
+    "stage": 7,
+    "stageName": "Portais seletivos",
+    "difficulty": 67,
+    "family": "portal-zigue-2",
+    "sources": [
+      {
+        "x": 45,
+        "y": 73,
+        "angle": 32.95436761473421,
+        "color": "gold"
+      },
+      {
+        "x": 755,
+        "y": 293,
+        "angle": 180,
+        "color": "blue"
+      }
+    ],
+    "targets": [
+      {
+        "x": 755,
+        "y": 148.2,
+        "radius": 22,
+        "color": "gold"
+      },
+      {
+        "x": 45,
+        "y": 293,
+        "radius": 22,
+        "color": "blue"
+      }
+    ],
+    "portals": [
+      {
+        "id": "A1",
+        "pairId": "A2",
+        "label": "A",
+        "x": 350,
+        "y": 167,
+        "radius": 15,
+        "colors": [
+          "gold"
+        ]
+      },
+      {
+        "id": "A2",
+        "pairId": "A1",
+        "label": "A",
+        "x": 470,
+        "y": 96.5,
+        "radius": 15,
+        "colors": [
+          "gold"
+        ]
+      },
+      {
+        "id": "C1",
+        "pairId": "C2",
+        "label": "C",
+        "x": 655,
+        "y": 293,
+        "radius": 15,
+        "colors": [
+          "blue"
+        ]
+      },
+      {
+        "id": "C2",
+        "pairId": "C1",
+        "label": "C",
+        "x": 500,
+        "y": 387,
+        "radius": 15,
+        "colors": [
+          "blue"
+        ]
+      }
+    ],
+    "objects": [
+      {
+        "type": "mirror",
+        "x": 190,
+        "y": 167,
+        "length": 104,
+        "angle": 43.477183807367105
+      },
+      {
+        "type": "mirror",
+        "x": 615,
+        "y": 96.5,
+        "length": 104,
+        "angle": -16.865766077222837
+      },
+      {
+        "type": "wall",
+        "x": 410,
+        "y": 120,
+        "length": 185,
+        "angle": 90,
+        "width": 12,
+        "purpose": "Divisória: atravesse pelo par de portais."
+      },
+      {
+        "type": "mirror",
+        "x": 330,
+        "y": 387,
+        "length": 104,
+        "angle": -10.962999562352977
+      },
+      {
+        "type": "mirror",
+        "x": 180,
+        "y": 293,
+        "length": 104,
+        "angle": 43.03700043764702
+      },
+      {
+        "type": "wall",
+        "x": 577.5,
+        "y": 340,
+        "length": 185,
+        "angle": 90,
+        "width": 12,
+        "purpose": "Divisória: atravesse pelo par de portais."
+      }
+    ],
+    "solution": [
+      16.477183807367105,
+      10.134233922777161,
+      16.037000437647023,
+      16.037000437647023
+    ],
+    "sourceAngle": 32.95436761473421,
+    "target": {
+      "x": 755,
+      "y": 148.2,
+      "radius": 22,
+      "color": "gold"
+    },
+    "requiredBounces": 4,
+    "wallPurpose": [
+      "Divisória: atravesse pelo par de portais."
+    ],
+    "decoyCount": 0,
+    "tutorial": "",
+    "rules": "Cada cor no seu alvo, sem cruzar outras trajetórias."
+  },
+  {
+    "name": "Portais seletivos 8",
+    "hint": "Siga a letra de cada par: a direção não muda no teleporte. Planeje cada cor sem cruzamentos.",
+    "stage": 7,
+    "stageName": "Portais seletivos",
+    "difficulty": 68,
+    "family": "portal-arco-2",
+    "sources": [
+      {
+        "x": 755,
+        "y": 71.825,
+        "angle": 180,
+        "color": "gold"
+      },
+      {
+        "x": 45,
+        "y": 388.175,
+        "angle": 0,
+        "color": "blue"
+      }
+    ],
+    "targets": [
+      {
+        "x": 45,
+        "y": 71.825,
+        "radius": 22,
+        "color": "gold"
+      },
+      {
+        "x": 755,
+        "y": 388.175,
+        "radius": 22,
+        "color": "blue"
+      }
+    ],
+    "portals": [
+      {
+        "id": "A1",
+        "pairId": "A2",
+        "label": "A",
+        "x": 655,
+        "y": 71.825,
+        "radius": 15,
+        "colors": [
+          "gold"
+        ]
+      },
+      {
+        "id": "A2",
+        "pairId": "A1",
+        "label": "A",
+        "x": 500,
+        "y": 168.175,
+        "radius": 15,
+        "colors": [
+          "gold"
+        ]
+      },
+      {
+        "id": "C1",
+        "pairId": "C2",
+        "label": "C",
+        "x": 420,
+        "y": 291.825,
+        "radius": 15,
+        "colors": [
+          "blue"
+        ]
+      },
+      {
+        "id": "C2",
+        "pairId": "C1",
+        "label": "C",
+        "x": 600,
+        "y": 388.175,
+        "radius": 15,
+        "colors": [
+          "blue"
+        ]
+      }
+    ],
+    "objects": [
+      {
+        "type": "mirror",
+        "x": 330,
+        "y": 168.175,
+        "length": 104,
+        "angle": 50.35699261559189
+      },
+      {
+        "type": "mirror",
+        "x": 180,
+        "y": 71.825,
+        "length": 104,
+        "angle": -17.643007384408108
+      },
+      {
+        "type": "wall",
+        "x": 577.5,
+        "y": 120,
+        "length": 185,
+        "angle": 90,
+        "width": 12,
+        "purpose": "Divisória: atravesse pelo par de portais."
+      },
+      {
+        "type": "mirror",
+        "x": 180,
+        "y": 388.175,
+        "length": 104,
+        "angle": -51.26815201007537
+      },
+      {
+        "type": "mirror",
+        "x": 320,
+        "y": 291.825,
+        "length": 104,
+        "angle": 16.73184798992463
+      },
+      {
+        "type": "wall",
+        "x": 510,
+        "y": 340,
+        "length": 185,
+        "angle": 90,
+        "width": 12,
+        "purpose": "Divisória: atravesse pelo par de portais."
+      }
+    ],
+    "solution": [
+      16.356992615591892,
+      16.356992615591892,
+      -17.26815201007537,
+      -17.26815201007537
+    ],
+    "sourceAngle": 180,
+    "target": {
+      "x": 45,
+      "y": 71.825,
+      "radius": 22,
+      "color": "gold"
+    },
+    "requiredBounces": 4,
+    "wallPurpose": [
+      "Divisória: atravesse pelo par de portais."
+    ],
+    "decoyCount": 0,
+    "tutorial": "",
+    "rules": "Cada cor no seu alvo, sem cruzar outras trajetórias."
+  },
+  {
+    "name": "Portais seletivos 9",
+    "hint": "Siga a letra de cada par: a direção não muda no teleporte. Planeje cada cor sem cruzamentos.",
+    "stage": 7,
+    "stageName": "Portais seletivos",
+    "difficulty": 69,
+    "family": "portal-zigue-2",
+    "sources": [
+      {
+        "x": 45,
+        "y": 290.65,
+        "angle": 0,
+        "color": "gold"
+      },
+      {
+        "x": 755,
+        "y": 169.35000000000002,
+        "angle": 180,
+        "color": "blue"
+      }
+    ],
+    "targets": [
+      {
+        "x": 755,
+        "y": 290.65,
+        "radius": 22,
+        "color": "gold"
+      },
+      {
+        "x": 45,
+        "y": 70.64999999999998,
+        "radius": 22,
+        "color": "blue"
+      }
+    ],
+    "portals": [
+      {
+        "id": "A1",
+        "pairId": "A2",
+        "label": "A",
+        "x": 420,
+        "y": 389.35,
+        "radius": 15,
+        "colors": null
+      },
+      {
+        "id": "A2",
+        "pairId": "A1",
+        "label": "A",
+        "x": 600,
+        "y": 290.65,
+        "radius": 15,
+        "colors": null
+      },
+      {
+        "id": "C1",
+        "pairId": "C2",
+        "label": "C",
+        "x": 670,
+        "y": 169.35000000000002,
+        "radius": 15,
+        "colors": [
+          "blue"
+        ]
+      },
+      {
+        "id": "C2",
+        "pairId": "C1",
+        "label": "C",
+        "x": 560,
+        "y": 70.64999999999998,
+        "radius": 15,
+        "colors": [
+          "blue"
+        ]
+      },
+      {
+        "id": "D1",
+        "pairId": "D2",
+        "label": "D",
+        "x": 200,
+        "y": 169.35000000000002,
+        "radius": 15,
+        "colors": [
+          "blue"
+        ]
+      },
+      {
+        "id": "D2",
+        "pairId": "D1",
+        "label": "D",
+        "x": 120,
+        "y": 70.64999999999998,
+        "radius": 15,
+        "colors": [
+          "blue"
+        ]
+      }
+    ],
+    "objects": [
+      {
+        "type": "mirror",
+        "x": 180,
+        "y": 290.65,
+        "length": 104,
+        "angle": 58.59191831062313
+      },
+      {
+        "type": "mirror",
+        "x": 320,
+        "y": 389.35,
+        "length": 104,
+        "angle": -23.408081689376868
+      },
+      {
+        "type": "wall",
+        "x": 510,
+        "y": 340,
+        "length": 185,
+        "angle": 90,
+        "width": 12,
+        "purpose": "Divisória: atravesse pelo par de portais."
+      },
+      {
+        "type": "mirror",
+        "x": 420,
+        "y": 70.64999999999998,
+        "length": 104,
+        "angle": -60.71864837033016
+      },
+      {
+        "type": "mirror",
+        "x": 300,
+        "y": 169.35000000000002,
+        "length": 104,
+        "angle": 21.281351629669842
+      },
+      {
+        "type": "wall",
+        "x": 615,
+        "y": 120,
+        "length": 185,
+        "angle": 90,
+        "width": 12,
+        "purpose": "Divisória: atravesse pelo par de portais."
+      },
+      {
+        "type": "wall",
+        "x": 160,
+        "y": 120,
+        "length": 185,
+        "angle": 90,
+        "width": 12,
+        "purpose": "Divisória: atravesse pelo par de portais."
+      }
+    ],
+    "solution": [
+      17.591918310623132,
+      17.591918310623132,
+      -19.718648370330158,
+      -19.718648370330158
+    ],
+    "sourceAngle": 0,
+    "target": {
+      "x": 755,
+      "y": 290.65,
+      "radius": 22,
+      "color": "gold"
+    },
+    "requiredBounces": 4,
+    "wallPurpose": [
+      "Divisória: atravesse pelo par de portais."
+    ],
+    "decoyCount": 0,
+    "tutorial": "",
+    "rules": "Cada cor no seu alvo, sem cruzar outras trajetórias."
+  },
+  {
+    "name": "Portais seletivos 10",
+    "hint": "Siga a letra de cada par: a direção não muda no teleporte. Planeje cada cor sem cruzamentos.",
+    "stage": 7,
+    "stageName": "Portais seletivos",
+    "difficulty": 70,
+    "family": "portal-arco-2",
+    "sources": [
+      {
+        "x": 45,
+        "y": 69.475,
+        "angle": 0,
+        "color": "gold"
+      },
+      {
+        "x": 770,
+        "y": 390.525,
+        "angle": 180,
+        "color": "blue"
+      }
+    ],
+    "targets": [
+      {
+        "x": 755,
+        "y": 170.525,
+        "radius": 22,
+        "color": "gold"
+      },
+      {
+        "x": 45,
+        "y": 309.685,
+        "radius": 22,
+        "color": "blue"
+      }
+    ],
+    "portals": [
+      {
+        "id": "A1",
+        "pairId": "A2",
+        "label": "A",
+        "x": 130,
+        "y": 69.475,
+        "radius": 15,
+        "colors": [
+          "gold"
+        ]
+      },
+      {
+        "id": "A2",
+        "pairId": "A1",
+        "label": "A",
+        "x": 240,
+        "y": 170.525,
+        "radius": 15,
+        "colors": [
+          "gold"
+        ]
+      },
+      {
+        "id": "B1",
+        "pairId": "B2",
+        "label": "B",
+        "x": 600,
+        "y": 69.475,
+        "radius": 15,
+        "colors": [
+          "gold"
+        ]
+      },
+      {
+        "id": "B2",
+        "pairId": "B1",
+        "label": "B",
+        "x": 680,
+        "y": 170.525,
+        "radius": 15,
+        "colors": [
+          "gold"
+        ]
+      },
+      {
+        "id": "C1",
+        "pairId": "C2",
+        "label": "C",
+        "x": 450,
+        "y": 289.475,
+        "radius": 15,
+        "colors": [
+          "blue"
+        ]
+      },
+      {
+        "id": "C2",
+        "pairId": "C1",
+        "label": "C",
+        "x": 330,
+        "y": 365.2625,
+        "radius": 15,
+        "colors": [
+          "blue"
+        ]
+      }
+    ],
+    "objects": [
+      {
+        "type": "mirror",
+        "x": 380,
+        "y": 170.525,
+        "length": 104,
+        "angle": 27.949913809137712
+      },
+      {
+        "type": "mirror",
+        "x": 500,
+        "y": 69.475,
+        "length": 104,
+        "angle": -68.05008619086229
+      },
+      {
+        "type": "wall",
+        "x": 185,
+        "y": 120,
+        "length": 185,
+        "angle": 90,
+        "width": 12,
+        "purpose": "Divisória: atravesse pelo par de portais."
+      },
+      {
+        "type": "wall",
+        "x": 640,
+        "y": 120,
+        "length": 185,
+        "angle": 90,
+        "width": 12,
+        "purpose": "Divisória: atravesse pelo par de portais."
+      },
+      {
+        "type": "mirror",
+        "x": 670,
+        "y": 390.525,
+        "length": 104,
+        "angle": 68.05008619086229
+      },
+      {
+        "type": "mirror",
+        "x": 550,
+        "y": 289.475,
+        "length": 104,
+        "angle": -27.949913809137712
+      },
+      {
+        "type": "mirror",
+        "x": 190,
+        "y": 365.2625,
+        "length": 104,
+        "angle": 58.48574185221801
+      },
+      {
+        "type": "wall",
+        "x": 390,
+        "y": 340,
+        "length": 185,
+        "angle": 90,
+        "width": 12,
+        "purpose": "Divisória: atravesse pelo par de portais."
+      }
+    ],
+    "solution": [
+      -20.050086190862288,
+      -20.050086190862288,
+      20.050086190862288,
+      20.050086190862288,
+      10.485741852218013
+    ],
+    "sourceAngle": 0,
+    "target": {
+      "x": 755,
+      "y": 170.525,
+      "radius": 22,
+      "color": "gold"
+    },
+    "requiredBounces": 5,
+    "wallPurpose": [
+      "Divisória: atravesse pelo par de portais."
+    ],
+    "decoyCount": 0,
+    "tutorial": "",
+    "rules": "Cada cor no seu alvo, sem cruzar outras trajetórias."
+  },
+  {
+    "name": "Escolha a passagem certa 1",
+    "hint": "Siga a letra de cada par: a direção não muda no teleporte. Planeje cada cor sem cruzamentos.",
+    "stage": 8,
+    "stageName": "Escolha a passagem certa",
+    "difficulty": 71,
+    "family": "portal-zigue-2",
+    "sources": [
+      {
+        "x": 45,
+        "y": 80.05000000000001,
+        "angle": 0,
+        "color": "gold"
+      },
+      {
+        "x": 755,
+        "y": 379.95,
+        "angle": 180,
+        "color": "blue"
+      }
+    ],
+    "targets": [
+      {
+        "x": 755,
+        "y": 80.05000000000001,
+        "radius": 22,
+        "color": "gold"
+      },
+      {
+        "x": 45,
+        "y": 379.95,
+        "radius": 22,
+        "color": "blue"
+      }
+    ],
+    "portals": [
+      {
+        "id": "A1",
+        "pairId": "A2",
+        "label": "A",
+        "x": 145,
+        "y": 80.05000000000001,
+        "radius": 15,
+        "colors": null
+      },
+      {
+        "id": "A2",
+        "pairId": "A1",
+        "label": "A",
+        "x": 300,
+        "y": 159.95,
+        "radius": 15,
+        "colors": null
+      },
+      {
+        "id": "C1",
+        "pairId": "C2",
+        "label": "C",
+        "x": 380,
+        "y": 300.05,
+        "radius": 15,
+        "colors": [
+          "blue"
+        ]
+      },
+      {
+        "id": "C2",
+        "pairId": "C1",
+        "label": "C",
+        "x": 200,
+        "y": 379.95,
+        "radius": 15,
+        "colors": [
+          "blue"
+        ]
+      }
+    ],
+    "objects": [
+      {
+        "type": "mirror",
+        "x": 470,
+        "y": 159.95,
+        "length": 104,
+        "angle": 5.978629794836193
+      },
+      {
+        "type": "mirror",
+        "x": 620,
+        "y": 80.05000000000001,
+        "length": 104,
+        "angle": -34.021370205163805
+      },
+      {
+        "type": "wall",
+        "x": 222.5,
+        "y": 120,
+        "length": 185,
+        "angle": 90,
+        "width": 12,
+        "purpose": "Divisória: atravesse pelo par de portais."
+      },
+      {
+        "type": "mirror",
+        "x": 620,
+        "y": 379.95,
+        "length": 104,
+        "angle": -5.142989884685463
+      },
+      {
+        "type": "mirror",
+        "x": 480,
+        "y": 300.05,
+        "length": 104,
+        "angle": 34.85701011531454
+      },
+      {
+        "type": "wall",
+        "x": 290,
+        "y": 340,
+        "length": 185,
+        "angle": 90,
+        "width": 12,
+        "purpose": "Divisória: atravesse pelo par de portais."
+      }
+    ],
+    "solution": [
+      -14.021370205163807,
+      -14.021370205163807,
+      14.857010115314537,
+      14.857010115314537
+    ],
+    "sourceAngle": 0,
+    "target": {
+      "x": 755,
+      "y": 80.05000000000001,
+      "radius": 22,
+      "color": "gold"
+    },
+    "requiredBounces": 4,
+    "wallPurpose": [
+      "Divisória: atravesse pelo par de portais."
+    ],
+    "decoyCount": 0,
+    "tutorial": "",
+    "rules": "Cada cor no seu alvo, sem cruzar outras trajetórias."
+  },
+  {
+    "name": "Escolha a passagem certa 2",
+    "hint": "Siga a letra de cada par: a direção não muda no teleporte. Planeje cada cor sem cruzamentos.",
+    "stage": 8,
+    "stageName": "Escolha a passagem certa",
+    "difficulty": 72,
+    "family": "portal-arco-2",
+    "sources": [
+      {
+        "x": 755,
+        "y": 161.125,
+        "angle": 180,
+        "color": "gold"
+      },
+      {
+        "x": 45,
+        "y": 298.875,
+        "angle": 0,
+        "color": "blue"
+      }
+    ],
+    "targets": [
+      {
+        "x": 45,
+        "y": 161.125,
+        "radius": 22,
+        "color": "gold"
+      },
+      {
+        "x": 755,
+        "y": 381.125,
+        "radius": 22,
+        "color": "blue"
+      }
+    ],
+    "portals": [
+      {
+        "id": "A1",
+        "pairId": "A2",
+        "label": "A",
+        "x": 380,
+        "y": 78.875,
+        "radius": 15,
+        "colors": [
+          "gold"
+        ]
+      },
+      {
+        "id": "A2",
+        "pairId": "A1",
+        "label": "A",
+        "x": 200,
+        "y": 161.125,
+        "radius": 15,
+        "colors": [
+          "gold"
+        ]
+      },
+      {
+        "id": "C1",
+        "pairId": "C2",
+        "label": "C",
+        "x": 130,
+        "y": 298.875,
+        "radius": 15,
+        "colors": [
+          "blue"
+        ]
+      },
+      {
+        "id": "C2",
+        "pairId": "C1",
+        "label": "C",
+        "x": 240,
+        "y": 381.125,
+        "radius": 15,
+        "colors": [
+          "blue"
+        ]
+      },
+      {
+        "id": "D1",
+        "pairId": "D2",
+        "label": "D",
+        "x": 600,
+        "y": 298.875,
+        "radius": 15,
+        "colors": [
+          "blue"
+        ]
+      },
+      {
+        "id": "D2",
+        "pairId": "D1",
+        "label": "D",
+        "x": 680,
+        "y": 381.125,
+        "radius": 15,
+        "colors": [
+          "blue"
+        ]
+      }
+    ],
+    "objects": [
+      {
+        "type": "mirror",
+        "x": 620,
+        "y": 161.125,
+        "length": 104,
+        "angle": 42.2171178767217
+      },
+      {
+        "type": "mirror",
+        "x": 480,
+        "y": 78.875,
+        "length": 104,
+        "angle": -11.782882123278299
+      },
+      {
+        "type": "wall",
+        "x": 290,
+        "y": 120,
+        "length": 185,
+        "angle": 90,
+        "width": 12,
+        "purpose": "Divisória: atravesse pelo par de portais."
+      },
+      {
+        "type": "mirror",
+        "x": 380,
+        "y": 381.125,
+        "length": 104,
+        "angle": -44.21369454722553
+      },
+      {
+        "type": "mirror",
+        "x": 500,
+        "y": 298.875,
+        "length": 104,
+        "angle": 9.786305452774474
+      },
+      {
+        "type": "wall",
+        "x": 185,
+        "y": 340,
+        "length": 185,
+        "angle": 90,
+        "width": 12,
+        "purpose": "Divisória: atravesse pelo par de portais."
+      },
+      {
+        "type": "wall",
+        "x": 640,
+        "y": 340,
+        "length": 185,
+        "angle": 90,
+        "width": 12,
+        "purpose": "Divisória: atravesse pelo par de portais."
+      }
+    ],
+    "solution": [
+      15.217117876721701,
+      15.217117876721701,
+      -17.213694547225526,
+      -17.213694547225526
+    ],
+    "sourceAngle": 180,
+    "target": {
+      "x": 45,
+      "y": 161.125,
+      "radius": 22,
+      "color": "gold"
+    },
+    "requiredBounces": 4,
+    "wallPurpose": [
+      "Divisória: atravesse pelo par de portais."
+    ],
+    "decoyCount": 0,
+    "tutorial": "",
+    "rules": "Cada cor no seu alvo, sem cruzar outras trajetórias."
+  },
+  {
+    "name": "Escolha a passagem certa 3",
+    "hint": "Siga a letra de cada par: a direção não muda no teleporte. Planeje cada cor sem cruzamentos.",
+    "stage": 8,
+    "stageName": "Escolha a passagem certa",
+    "difficulty": 73,
+    "family": "portal-zigue-2",
+    "sources": [
+      {
+        "x": 45,
+        "y": 382.3,
+        "angle": 0,
+        "color": "gold"
+      },
+      {
+        "x": 770,
+        "y": 77.69999999999999,
+        "angle": 180,
+        "color": "blue"
+      }
+    ],
+    "targets": [
+      {
+        "x": 755,
+        "y": 297.7,
+        "radius": 22,
+        "color": "gold"
+      },
+      {
+        "x": 45,
+        "y": 145.38,
+        "radius": 22,
+        "color": "blue"
+      }
+    ],
+    "portals": [
+      {
+        "id": "A1",
+        "pairId": "A2",
+        "label": "A",
+        "x": 130,
+        "y": 382.3,
+        "radius": 15,
+        "colors": [
+          "gold"
+        ]
+      },
+      {
+        "id": "A2",
+        "pairId": "A1",
+        "label": "A",
+        "x": 240,
+        "y": 297.7,
+        "radius": 15,
+        "colors": [
+          "gold"
+        ]
+      },
+      {
+        "id": "B1",
+        "pairId": "B2",
+        "label": "B",
+        "x": 600,
+        "y": 382.3,
+        "radius": 15,
+        "colors": [
+          "gold"
+        ]
+      },
+      {
+        "id": "B2",
+        "pairId": "B1",
+        "label": "B",
+        "x": 680,
+        "y": 297.7,
+        "radius": 15,
+        "colors": [
+          "gold"
+        ]
+      },
+      {
+        "id": "C1",
+        "pairId": "C2",
+        "label": "C",
+        "x": 450,
+        "y": 162.3,
+        "radius": 15,
+        "colors": [
+          "blue"
+        ]
+      },
+      {
+        "id": "C2",
+        "pairId": "C1",
+        "label": "C",
+        "x": 330,
+        "y": 98.85000000000002,
+        "radius": 15,
+        "colors": [
+          "blue"
+        ]
+      }
+    ],
+    "objects": [
+      {
+        "type": "mirror",
+        "x": 380,
+        "y": 297.7,
+        "length": 104,
+        "angle": 51.59191831062313
+      },
+      {
+        "type": "mirror",
+        "x": 500,
+        "y": 382.3,
+        "length": 104,
+        "angle": -16.408081689376868
+      },
+      {
+        "type": "wall",
+        "x": 185,
+        "y": 340,
+        "length": 185,
+        "angle": 90,
+        "width": 12,
+        "purpose": "Divisória: atravesse pelo par de portais."
+      },
+      {
+        "type": "wall",
+        "x": 640,
+        "y": 340,
+        "length": 185,
+        "angle": 90,
+        "width": 12,
+        "purpose": "Divisória: atravesse pelo par de portais."
+      },
+      {
+        "type": "mirror",
+        "x": 670,
+        "y": 77.69999999999999,
+        "length": 104,
+        "angle": 16.40808168937687
+      },
+      {
+        "type": "mirror",
+        "x": 550,
+        "y": 162.3,
+        "length": 104,
+        "angle": -51.59191831062313
+      },
+      {
+        "type": "mirror",
+        "x": 190,
+        "y": 98.85000000000002,
+        "length": 104,
+        "angle": 25.104371710364262
+      },
+      {
+        "type": "wall",
+        "x": 390,
+        "y": 120,
+        "length": 185,
+        "angle": 90,
+        "width": 12,
+        "purpose": "Divisória: atravesse pelo par de portais."
+      }
+    ],
+    "solution": [
+      17.591918310623132,
+      17.591918310623132,
+      -17.59191831062313,
+      -17.59191831062313,
+      -8.895628289635738
+    ],
+    "sourceAngle": 0,
+    "target": {
+      "x": 755,
+      "y": 297.7,
+      "radius": 22,
+      "color": "gold"
+    },
+    "requiredBounces": 5,
+    "wallPurpose": [
+      "Divisória: atravesse pelo par de portais."
+    ],
+    "decoyCount": 0,
+    "tutorial": "",
+    "rules": "Cada cor no seu alvo, sem cruzar outras trajetórias."
+  },
+  {
+    "name": "Escolha a passagem certa 4",
+    "hint": "Siga a letra de cada par: a direção não muda no teleporte. Planeje cada cor sem cruzamentos.",
+    "stage": 8,
+    "stageName": "Escolha a passagem certa",
+    "difficulty": 74,
+    "family": "portal-arco-2",
+    "sources": [
+      {
+        "x": 30,
+        "y": 163.475,
+        "angle": 0,
+        "color": "gold"
+      },
+      {
+        "x": 755,
+        "y": 296.525,
+        "angle": 149.0507730054537,
+        "color": "blue"
+      }
+    ],
+    "targets": [
+      {
+        "x": 755,
+        "y": 93.91499999999999,
+        "radius": 22,
+        "color": "gold"
+      },
+      {
+        "x": 45,
+        "y": 366.085,
+        "radius": 22,
+        "color": "blue"
+      }
+    ],
+    "portals": [
+      {
+        "id": "A1",
+        "pairId": "A2",
+        "label": "A",
+        "x": 350,
+        "y": 76.525,
+        "radius": 15,
+        "colors": [
+          "gold"
+        ]
+      },
+      {
+        "id": "A2",
+        "pairId": "A1",
+        "label": "A",
+        "x": 470,
+        "y": 141.7375,
+        "radius": 15,
+        "colors": [
+          "gold"
+        ]
+      },
+      {
+        "id": "C1",
+        "pairId": "C2",
+        "label": "C",
+        "x": 450,
+        "y": 383.475,
+        "radius": 15,
+        "colors": [
+          "blue"
+        ]
+      },
+      {
+        "id": "C2",
+        "pairId": "C1",
+        "label": "C",
+        "x": 330,
+        "y": 318.2625,
+        "radius": 15,
+        "colors": [
+          "blue"
+        ]
+      }
+    ],
+    "objects": [
+      {
+        "type": "mirror",
+        "x": 130,
+        "y": 163.475,
+        "length": 104,
+        "angle": 23.03676969932982
+      },
+      {
+        "type": "mirror",
+        "x": 250,
+        "y": 76.525,
+        "length": 104,
+        "angle": -58.963230300670176
+      },
+      {
+        "type": "mirror",
+        "x": 610,
+        "y": 141.7375,
+        "length": 104,
+        "angle": 31.873454954131375
+      },
+      {
+        "type": "wall",
+        "x": 410,
+        "y": 120,
+        "length": 185,
+        "angle": 90,
+        "width": 12,
+        "purpose": "Divisória: atravesse pelo par de portais."
+      },
+      {
+        "type": "mirror",
+        "x": 610,
+        "y": 383.475,
+        "length": 104,
+        "angle": 25.52538650272686
+      },
+      {
+        "type": "mirror",
+        "x": 185,
+        "y": 318.2625,
+        "length": 104,
+        "angle": -50.42980865934851
+      },
+      {
+        "type": "wall",
+        "x": 390,
+        "y": 340,
+        "length": 185,
+        "angle": 90,
+        "width": 12,
+        "purpose": "Divisória: atravesse pelo par de portais."
+      }
+    ],
+    "solution": [
+      -17.96323030067018,
+      -17.96323030067018,
+      -9.126545045868626,
+      -15.47461349727314,
+      -9.42980865934851
+    ],
+    "sourceAngle": 0,
+    "target": {
+      "x": 755,
+      "y": 93.91499999999999,
+      "radius": 22,
+      "color": "gold"
+    },
+    "requiredBounces": 5,
+    "wallPurpose": [
+      "Divisória: atravesse pelo par de portais."
+    ],
+    "decoyCount": 0,
+    "tutorial": "",
+    "rules": "Cada cor no seu alvo, sem cruzar outras trajetórias."
+  },
+  {
+    "name": "Escolha a passagem certa 5",
+    "hint": "Siga a letra de cada par: a direção não muda no teleporte. Planeje cada cor sem cruzamentos.",
+    "stage": 8,
+    "stageName": "Escolha a passagem certa",
+    "difficulty": 75,
+    "family": "portal-zigue-2",
+    "sources": [
+      {
+        "x": 755,
+        "y": 75.35,
+        "angle": 148.37266002215873,
+        "color": "gold"
+      },
+      {
+        "x": 45,
+        "y": 295.35,
+        "angle": 0,
+        "color": "blue"
+      }
+    ],
+    "targets": [
+      {
+        "x": 45,
+        "y": 146.79,
+        "radius": 22,
+        "color": "gold"
+      },
+      {
+        "x": 755,
+        "y": 295.35,
+        "radius": 22,
+        "color": "blue"
+      }
+    ],
+    "portals": [
+      {
+        "id": "A1",
+        "pairId": "A2",
+        "label": "A",
+        "x": 450,
+        "y": 164.65,
+        "radius": 15,
+        "colors": null
+      },
+      {
+        "id": "A2",
+        "pairId": "A1",
+        "label": "A",
+        "x": 330,
+        "y": 97.675,
+        "radius": 15,
+        "colors": null
+      },
+      {
+        "id": "C1",
+        "pairId": "C2",
+        "label": "C",
+        "x": 145,
+        "y": 295.35,
+        "radius": 15,
+        "colors": [
+          "blue"
+        ]
+      },
+      {
+        "id": "C2",
+        "pairId": "C1",
+        "label": "C",
+        "x": 300,
+        "y": 384.65,
+        "radius": 15,
+        "colors": [
+          "blue"
+        ]
+      }
+    ],
+    "objects": [
+      {
+        "type": "mirror",
+        "x": 610,
+        "y": 164.65,
+        "length": 104,
+        "angle": 32.18633001107935
+      },
+      {
+        "type": "mirror",
+        "x": 185,
+        "y": 97.675,
+        "length": 104,
+        "angle": -57.66598183148852
+      },
+      {
+        "type": "wall",
+        "x": 390,
+        "y": 120,
+        "length": 185,
+        "angle": 90,
+        "width": 12,
+        "purpose": "Divisória: atravesse pelo par de portais."
+      },
+      {
+        "type": "mirror",
+        "x": 470,
+        "y": 384.65,
+        "length": 104,
+        "angle": -63.3833742685933
+      },
+      {
+        "type": "mirror",
+        "x": 620,
+        "y": 295.35,
+        "length": 104,
+        "angle": 32.6166257314067
+      },
+      {
+        "type": "wall",
+        "x": 222.5,
+        "y": 340,
+        "length": 185,
+        "angle": 90,
+        "width": 12,
+        "purpose": "Divisória: atravesse pelo par de portais."
+      }
+    ],
+    "solution": [
+      -15.813669988920651,
+      -9.665981831488523,
+      -15.3833742685933,
+      -15.3833742685933
+    ],
+    "sourceAngle": 148.37266002215873,
+    "target": {
+      "x": 45,
+      "y": 146.79,
+      "radius": 22,
+      "color": "gold"
+    },
+    "requiredBounces": 4,
+    "wallPurpose": [
+      "Divisória: atravesse pelo par de portais."
+    ],
+    "decoyCount": 0,
+    "tutorial": "",
+    "rules": "Cada cor no seu alvo, sem cruzar outras trajetórias."
+  },
+  {
+    "name": "Escolha a passagem certa 6",
+    "hint": "Siga a letra de cada par: a direção não muda no teleporte. Planeje cada cor sem cruzamentos.",
+    "stage": 8,
+    "stageName": "Escolha a passagem certa",
+    "difficulty": 76,
+    "family": "portal-arco-2",
+    "sources": [
+      {
+        "x": 45,
+        "y": 385.825,
+        "angle": 0,
+        "color": "gold"
+      },
+      {
+        "x": 755,
+        "y": 74.17500000000001,
+        "angle": 180,
+        "color": "blue"
+      }
+    ],
+    "targets": [
+      {
+        "x": 755,
+        "y": 385.825,
+        "radius": 22,
+        "color": "gold"
+      },
+      {
+        "x": 45,
+        "y": 74.17500000000001,
+        "radius": 22,
+        "color": "blue"
+      }
+    ],
+    "portals": [
+      {
+        "id": "A1",
+        "pairId": "A2",
+        "label": "A",
+        "x": 145,
+        "y": 385.825,
+        "radius": 15,
+        "colors": [
+          "gold"
+        ]
+      },
+      {
+        "id": "A2",
+        "pairId": "A1",
+        "label": "A",
+        "x": 300,
+        "y": 294.175,
+        "radius": 15,
+        "colors": [
+          "gold"
+        ]
+      },
+      {
+        "id": "C1",
+        "pairId": "C2",
+        "label": "C",
+        "x": 380,
+        "y": 165.825,
+        "radius": 15,
+        "colors": [
+          "blue"
+        ]
+      },
+      {
+        "id": "C2",
+        "pairId": "C1",
+        "label": "C",
+        "x": 200,
+        "y": 74.17500000000001,
+        "radius": 15,
+        "colors": [
+          "blue"
+        ]
+      }
+    ],
+    "objects": [
+      {
+        "type": "mirror",
+        "x": 470,
+        "y": 294.175,
+        "length": 104,
+        "angle": 35.71246511074889
+      },
+      {
+        "type": "mirror",
+        "x": 620,
+        "y": 385.825,
+        "length": 104,
+        "angle": -4.287534889251111
+      },
+      {
+        "type": "wall",
+        "x": 222.5,
+        "y": 340,
+        "length": 185,
+        "angle": 90,
+        "width": 12,
+        "purpose": "Divisória: atravesse pelo par de portais."
+      },
+      {
+        "type": "mirror",
+        "x": 620,
+        "y": 74.17500000000001,
+        "length": 104,
+        "angle": -36.60523852929995
+      },
+      {
+        "type": "mirror",
+        "x": 480,
+        "y": 165.825,
+        "length": 104,
+        "angle": 3.394761470700047
+      },
+      {
+        "type": "wall",
+        "x": 290,
+        "y": 120,
+        "length": 185,
+        "angle": 90,
+        "width": 12,
+        "purpose": "Divisória: atravesse pelo par de portais."
+      }
+    ],
+    "solution": [
+      15.712465110748889,
+      15.712465110748889,
+      -16.605238529299953,
+      -16.605238529299953
+    ],
+    "sourceAngle": 0,
+    "target": {
+      "x": 755,
+      "y": 385.825,
+      "radius": 22,
+      "color": "gold"
+    },
+    "requiredBounces": 4,
+    "wallPurpose": [
+      "Divisória: atravesse pelo par de portais."
+    ],
+    "decoyCount": 0,
+    "tutorial": "",
+    "rules": "Cada cor no seu alvo, sem cruzar outras trajetórias."
+  },
+  {
+    "name": "Escolha a passagem certa 7",
+    "hint": "Siga a letra de cada par: a direção não muda no teleporte. Planeje cada cor sem cruzamentos.",
+    "stage": 8,
+    "stageName": "Escolha a passagem certa",
+    "difficulty": 77,
+    "family": "portal-zigue-2",
+    "sources": [
+      {
+        "x": 45,
+        "y": 167,
+        "angle": 0,
+        "color": "gold"
+      },
+      {
+        "x": 755,
+        "y": 293,
+        "angle": 180,
+        "color": "blue"
+      }
+    ],
+    "targets": [
+      {
+        "x": 755,
+        "y": 167,
+        "radius": 22,
+        "color": "gold"
+      },
+      {
+        "x": 45,
+        "y": 387,
+        "radius": 22,
+        "color": "blue"
+      }
+    ],
+    "portals": [
+      {
+        "id": "A1",
+        "pairId": "A2",
+        "label": "A",
+        "x": 420,
+        "y": 73,
+        "radius": 15,
+        "colors": [
+          "gold"
+        ]
+      },
+      {
+        "id": "A2",
+        "pairId": "A1",
+        "label": "A",
+        "x": 600,
+        "y": 167,
+        "radius": 15,
+        "colors": [
+          "gold"
+        ]
+      },
+      {
+        "id": "C1",
+        "pairId": "C2",
+        "label": "C",
+        "x": 670,
+        "y": 293,
+        "radius": 15,
+        "colors": [
+          "blue"
+        ]
+      },
+      {
+        "id": "C2",
+        "pairId": "C1",
+        "label": "C",
+        "x": 560,
+        "y": 387,
+        "radius": 15,
+        "colors": [
+          "blue"
+        ]
+      },
+      {
+        "id": "D1",
+        "pairId": "D2",
+        "label": "D",
+        "x": 200,
+        "y": 293,
+        "radius": 15,
+        "colors": [
+          "blue"
+        ]
+      },
+      {
+        "id": "D2",
+        "pairId": "D1",
+        "label": "D",
+        "x": 120,
+        "y": 387,
+        "radius": 15,
+        "colors": [
+          "blue"
+        ]
+      }
+    ],
+    "objects": [
+      {
+        "type": "mirror",
+        "x": 180,
+        "y": 167,
+        "length": 104,
+        "angle": 10.060730097445177
+      },
+      {
+        "type": "mirror",
+        "x": 320,
+        "y": 73,
+        "length": 104,
+        "angle": -43.93926990255483
+      },
+      {
+        "type": "wall",
+        "x": 510,
+        "y": 120,
+        "length": 185,
+        "angle": 90,
+        "width": 12,
+        "purpose": "Divisória: atravesse pelo par de portais."
+      },
+      {
+        "type": "mirror",
+        "x": 420,
+        "y": 387,
+        "length": 104,
+        "angle": -7.963609063004583
+      },
+      {
+        "type": "mirror",
+        "x": 300,
+        "y": 293,
+        "length": 104,
+        "angle": 46.03639093699542
+      },
+      {
+        "type": "wall",
+        "x": 615,
+        "y": 340,
+        "length": 185,
+        "angle": 90,
+        "width": 12,
+        "purpose": "Divisória: atravesse pelo par de portais."
+      },
+      {
+        "type": "wall",
+        "x": 160,
+        "y": 340,
+        "length": 185,
+        "angle": 90,
+        "width": 12,
+        "purpose": "Divisória: atravesse pelo par de portais."
+      }
+    ],
+    "solution": [
+      -16.939269902554823,
+      -16.939269902554823,
+      19.036390936995417,
+      19.036390936995417
+    ],
+    "sourceAngle": 0,
+    "target": {
+      "x": 755,
+      "y": 167,
+      "radius": 22,
+      "color": "gold"
+    },
+    "requiredBounces": 4,
+    "wallPurpose": [
+      "Divisória: atravesse pelo par de portais."
+    ],
+    "decoyCount": 0,
+    "tutorial": "",
+    "rules": "Cada cor no seu alvo, sem cruzar outras trajetórias."
+  },
+  {
+    "name": "Escolha a passagem certa 8",
+    "hint": "Siga a letra de cada par: a direção não muda no teleporte. Planeje cada cor sem cruzamentos.",
+    "stage": 8,
+    "stageName": "Escolha a passagem certa",
+    "difficulty": 78,
+    "family": "portal-arco-2",
+    "sources": [
+      {
+        "x": 755,
+        "y": 71.825,
+        "angle": 180,
+        "color": "gold"
+      },
+      {
+        "x": 30,
+        "y": 388.175,
+        "angle": 0,
+        "color": "blue"
+      }
+    ],
+    "targets": [
+      {
+        "x": 45,
+        "y": 168.175,
+        "radius": 22,
+        "color": "gold"
+      },
+      {
+        "x": 755,
+        "y": 311.095,
+        "radius": 22,
+        "color": "blue"
+      }
+    ],
+    "portals": [
+      {
+        "id": "A1",
+        "pairId": "A2",
+        "label": "A",
+        "x": 670,
+        "y": 71.825,
+        "radius": 15,
+        "colors": [
+          "gold"
+        ]
+      },
+      {
+        "id": "A2",
+        "pairId": "A1",
+        "label": "A",
+        "x": 560,
+        "y": 168.175,
+        "radius": 15,
+        "colors": [
+          "gold"
+        ]
+      },
+      {
+        "id": "B1",
+        "pairId": "B2",
+        "label": "B",
+        "x": 200,
+        "y": 71.825,
+        "radius": 15,
+        "colors": [
+          "gold"
+        ]
+      },
+      {
+        "id": "B2",
+        "pairId": "B1",
+        "label": "B",
+        "x": 120,
+        "y": 168.175,
+        "radius": 15,
+        "colors": [
+          "gold"
+        ]
+      },
+      {
+        "id": "C1",
+        "pairId": "C2",
+        "label": "C",
+        "x": 350,
+        "y": 291.825,
+        "radius": 15,
+        "colors": [
+          "blue"
+        ]
+      },
+      {
+        "id": "C2",
+        "pairId": "C1",
+        "label": "C",
+        "x": 470,
+        "y": 364.0875,
+        "radius": 15,
+        "colors": [
+          "blue"
+        ]
+      }
+    ],
+    "objects": [
+      {
+        "type": "mirror",
+        "x": 420,
+        "y": 168.175,
+        "length": 104,
+        "angle": 53.38078067907264
+      },
+      {
+        "type": "mirror",
+        "x": 300,
+        "y": 71.825,
+        "length": 104,
+        "angle": -14.619219320927357
+      },
+      {
+        "type": "wall",
+        "x": 615,
+        "y": 120,
+        "length": 185,
+        "angle": 90,
+        "width": 12,
+        "purpose": "Divisória: atravesse pelo par de portais."
+      },
+      {
+        "type": "wall",
+        "x": 160,
+        "y": 120,
+        "length": 185,
+        "angle": 90,
+        "width": 12,
+        "purpose": "Divisória: atravesse pelo par de portais."
+      },
+      {
+        "type": "mirror",
+        "x": 130,
+        "y": 388.175,
+        "length": 104,
+        "angle": 14.619219320927343
+      },
+      {
+        "type": "mirror",
+        "x": 250,
+        "y": 291.825,
+        "length": 104,
+        "angle": -53.38078067907266
+      },
+      {
+        "type": "mirror",
+        "x": 610,
+        "y": 364.0875,
+        "length": 104,
+        "angle": 23.96219243170836
+      },
+      {
+        "type": "wall",
+        "x": 410,
+        "y": 340,
+        "length": 185,
+        "angle": 90,
+        "width": 12,
+        "purpose": "Divisória: atravesse pelo par de portais."
+      }
+    ],
+    "solution": [
+      19.380780679072643,
+      19.380780679072643,
+      -19.380780679072657,
+      -19.380780679072657,
+      -10.037807568291639
+    ],
+    "sourceAngle": 180,
+    "target": {
+      "x": 45,
+      "y": 168.175,
+      "radius": 22,
+      "color": "gold"
+    },
+    "requiredBounces": 5,
+    "wallPurpose": [
+      "Divisória: atravesse pelo par de portais."
+    ],
+    "decoyCount": 0,
+    "tutorial": "",
+    "rules": "Cada cor no seu alvo, sem cruzar outras trajetórias."
+  },
+  {
+    "name": "Escolha a passagem certa 9",
+    "hint": "Siga a letra de cada par: a direção não muda no teleporte. Planeje cada cor sem cruzamentos.",
+    "stage": 8,
+    "stageName": "Escolha a passagem certa",
+    "difficulty": 79,
+    "family": "portal-zigue-2",
+    "sources": [
+      {
+        "x": 30,
+        "y": 290.65,
+        "angle": 0,
+        "color": "gold"
+      },
+      {
+        "x": 755,
+        "y": 169.35000000000002,
+        "angle": -145.7572863383671,
+        "color": "blue"
+      }
+    ],
+    "targets": [
+      {
+        "x": 755,
+        "y": 369.61,
+        "radius": 22,
+        "color": "gold"
+      },
+      {
+        "x": 45,
+        "y": 90.38999999999999,
+        "radius": 22,
+        "color": "blue"
+      }
+    ],
+    "portals": [
+      {
+        "id": "A1",
+        "pairId": "A2",
+        "label": "A",
+        "x": 350,
+        "y": 389.35,
+        "radius": 15,
+        "colors": null
+      },
+      {
+        "id": "A2",
+        "pairId": "A1",
+        "label": "A",
+        "x": 470,
+        "y": 315.325,
+        "radius": 15,
+        "colors": null
+      },
+      {
+        "id": "C1",
+        "pairId": "C2",
+        "label": "C",
+        "x": 450,
+        "y": 70.64999999999998,
+        "radius": 15,
+        "colors": [
+          "blue"
+        ]
+      },
+      {
+        "id": "C2",
+        "pairId": "C1",
+        "label": "C",
+        "x": 330,
+        "y": 144.675,
+        "radius": 15,
+        "colors": [
+          "blue"
+        ]
+      }
+    ],
+    "objects": [
+      {
+        "type": "mirror",
+        "x": 130,
+        "y": 290.65,
+        "length": 104,
+        "angle": 60.71864837033016
+      },
+      {
+        "type": "mirror",
+        "x": 250,
+        "y": 389.35,
+        "length": 104,
+        "angle": -21.28135162966984
+      },
+      {
+        "type": "mirror",
+        "x": 610,
+        "y": 315.325,
+        "length": 104,
+        "angle": 51.262430214111234
+      },
+      {
+        "type": "wall",
+        "x": 410,
+        "y": 340,
+        "length": 185,
+        "angle": 90,
+        "width": 12,
+        "purpose": "Divisória: atravesse pelo par de portais."
+      },
+      {
+        "type": "mirror",
+        "x": 610,
+        "y": 70.64999999999998,
+        "length": 104,
+        "angle": 58.12135683081645
+      },
+      {
+        "type": "mirror",
+        "x": 185,
+        "y": 144.675,
+        "length": 104,
+        "angle": -30.403098818335692
+      },
+      {
+        "type": "wall",
+        "x": 390,
+        "y": 120,
+        "length": 185,
+        "angle": 90,
+        "width": 12,
+        "purpose": "Divisória: atravesse pelo par de portais."
+      }
+    ],
+    "solution": [
+      19.71864837033016,
+      19.71864837033016,
+      10.262430214111236,
+      17.121356830816453,
+      10.596901181664308
+    ],
+    "sourceAngle": 0,
+    "target": {
+      "x": 755,
+      "y": 369.61,
+      "radius": 22,
+      "color": "gold"
+    },
+    "requiredBounces": 5,
+    "wallPurpose": [
+      "Divisória: atravesse pelo par de portais."
+    ],
+    "decoyCount": 0,
+    "tutorial": "",
+    "rules": "Cada cor no seu alvo, sem cruzar outras trajetórias."
+  },
+  {
+    "name": "Escolha a passagem certa 10",
+    "hint": "Siga a letra de cada par: a direção não muda no teleporte. Planeje cada cor sem cruzamentos.",
+    "stage": 8,
+    "stageName": "Escolha a passagem certa",
+    "difficulty": 80,
+    "family": "portal-arco-2",
+    "sources": [
+      {
+        "x": 45,
+        "y": 69.475,
+        "angle": 34.87250754003155,
+        "color": "gold"
+      },
+      {
+        "x": 755,
+        "y": 289.475,
+        "angle": 180,
+        "color": "blue"
+      }
+    ],
+    "targets": [
+      {
+        "x": 755,
+        "y": 150.315,
+        "radius": 22,
+        "color": "gold"
+      },
+      {
+        "x": 45,
+        "y": 289.475,
+        "radius": 22,
+        "color": "blue"
+      }
+    ],
+    "portals": [
+      {
+        "id": "A1",
+        "pairId": "A2",
+        "label": "A",
+        "x": 350,
+        "y": 170.525,
+        "radius": 15,
+        "colors": [
+          "gold"
+        ]
+      },
+      {
+        "id": "A2",
+        "pairId": "A1",
+        "label": "A",
+        "x": 470,
+        "y": 94.7375,
+        "radius": 15,
+        "colors": [
+          "gold"
+        ]
+      },
+      {
+        "id": "C1",
+        "pairId": "C2",
+        "label": "C",
+        "x": 655,
+        "y": 289.475,
+        "radius": 15,
+        "colors": [
+          "blue"
+        ]
+      },
+      {
+        "id": "C2",
+        "pairId": "C1",
+        "label": "C",
+        "x": 500,
+        "y": 390.525,
+        "radius": 15,
+        "colors": [
+          "blue"
+        ]
+      }
+    ],
+    "objects": [
+      {
+        "type": "mirror",
+        "x": 190,
+        "y": 170.525,
+        "length": 104,
+        "angle": 65.43625377001578
+      },
+      {
+        "type": "mirror",
+        "x": 615,
+        "y": 94.7375,
+        "length": 104,
+        "angle": -37.173903106482804
+      },
+      {
+        "type": "wall",
+        "x": 410,
+        "y": 120,
+        "length": 185,
+        "angle": 90,
+        "width": 12,
+        "purpose": "Divisória: atravesse pelo par de portais."
+      },
+      {
+        "type": "mirror",
+        "x": 330,
+        "y": 390.525,
+        "length": 104,
+        "angle": -31.016582322205792
+      },
+      {
+        "type": "mirror",
+        "x": 180,
+        "y": 289.475,
+        "length": 104,
+        "angle": 64.98341767779421
+      },
+      {
+        "type": "wall",
+        "x": 577.5,
+        "y": 340,
+        "length": 185,
+        "angle": 90,
+        "width": 12,
+        "purpose": "Divisória: atravesse pelo par de portais."
+      }
+    ],
+    "solution": [
+      17.436253770015774,
+      10.826096893517196,
+      16.983417677794208,
+      16.983417677794208
+    ],
+    "sourceAngle": 34.87250754003155,
+    "target": {
+      "x": 755,
+      "y": 150.315,
+      "radius": 22,
+      "color": "gold"
+    },
+    "requiredBounces": 4,
+    "wallPurpose": [
+      "Divisória: atravesse pelo par de portais."
+    ],
+    "decoyCount": 0,
+    "tutorial": "",
+    "rules": "Cada cor no seu alvo, sem cruzar outras trajetórias."
+  },
+  {
+    "name": "Terceira cor 1",
+    "hint": "Planeje os trajetos antes de girar os espelhos. Cada cor tem seu próprio destino.",
+    "stage": 9,
+    "stageName": "Terceira cor",
+    "difficulty": 81,
+    "family": "faixas-0",
+    "sources": [
+      {
+        "x": 45,
+        "y": 102.8,
+        "angle": 0,
+        "color": "gold"
+      },
+      {
+        "x": 755,
+        "y": 242.8,
+        "angle": -170.6216188069689,
+        "color": "blue"
+      },
+      {
+        "x": 45,
+        "y": 357.2,
+        "angle": 0,
+        "color": "pink"
+      }
+    ],
+    "targets": [
+      {
+        "x": 755,
+        "y": 77.2,
+        "radius": 22,
+        "color": "gold"
+      },
+      {
+        "x": 45,
+        "y": 242.8,
+        "radius": 22,
+        "color": "blue"
+      },
+      {
+        "x": 755,
+        "y": 370,
+        "radius": 22,
+        "color": "pink"
+      }
+    ],
+    "portals": [],
+    "objects": [
+      {
+        "type": "mirror",
+        "x": 260,
+        "y": 102.8,
+        "length": 104,
+        "angle": 17.29185155622742
+      },
+      {
+        "type": "mirror",
+        "x": 530,
+        "y": 77.2,
+        "length": 104,
+        "angle": -22.70814844377258
+      },
+      {
+        "type": "mirror",
+        "x": 600,
+        "y": 217.2,
+        "length": 104,
+        "angle": 21.37054297691543
+      },
+      {
+        "type": "mirror",
+        "x": 380,
+        "y": 242.8,
+        "length": 104,
+        "angle": -19.8434803018435
+      },
+      {
+        "type": "mirror",
+        "x": 170,
+        "y": 217.2,
+        "length": 104,
+        "angle": 17.688102924964852
+      },
+      {
+        "type": "mirror",
+        "x": 190,
+        "y": 357.2,
+        "length": 104,
+        "angle": -17.07664553800773
+      },
+      {
+        "type": "mirror",
+        "x": 440,
+        "y": 382.8,
+        "length": 104,
+        "angle": 19.44818714423566
+      },
+      {
+        "type": "mirror",
+        "x": 650,
+        "y": 357.2,
+        "length": 104,
+        "angle": -20
+      }
+    ],
+    "solution": [
+      -2.708148443772578,
+      -2.708148443772578,
+      1.3705429769154307,
+      0.1565196981565009,
+      -2.311897075035148,
+      2.923354461992269,
+      -0.5518128557643402,
+      0
+    ],
+    "sourceAngle": 0,
+    "target": {
+      "x": 755,
+      "y": 77.2,
+      "radius": 22,
+      "color": "gold"
+    },
+    "requiredBounces": 8,
+    "wallPurpose": [],
+    "decoyCount": 0,
+    "tutorial": "Nova cor: rosa! Agora são três disparadores e três alvos. Todos devem chegar sem cruzar a trajetória das outras cores.",
+    "rules": "Cada cor no seu alvo, sem cruzar outras trajetórias."
+  },
+  {
+    "name": "Terceira cor 2",
+    "hint": "Planeje os trajetos antes de girar os espelhos. Cada cor tem seu próprio destino.",
+    "stage": 9,
+    "stageName": "Terceira cor",
+    "difficulty": 82,
+    "family": "faixas-1",
+    "sources": [
+      {
+        "x": 755,
+        "y": 77.2,
+        "angle": 176.19580272646982,
+        "color": "gold"
+      },
+      {
+        "x": 45,
+        "y": 223.6,
+        "angle": 3.9938061914968426,
+        "color": "blue"
+      },
+      {
+        "x": 755,
+        "y": 370,
+        "angle": 176.5929239808306,
+        "color": "pink"
+      }
+    ],
+    "targets": [
+      {
+        "x": 45,
+        "y": 77.2,
+        "radius": 22,
+        "color": "gold"
+      },
+      {
+        "x": 755,
+        "y": 236.4,
+        "radius": 22,
+        "color": "blue"
+      },
+      {
+        "x": 45,
+        "y": 382.8,
+        "radius": 22,
+        "color": "pink"
+      }
+    ],
+    "portals": [],
+    "objects": [
+      {
+        "type": "mirror",
+        "x": 370,
+        "y": 102.8,
+        "length": 104,
+        "angle": 27.349823863648453
+      },
+      {
+        "type": "mirror",
+        "x": 320,
+        "y": 242.8,
+        "length": 104,
+        "angle": -27.525475642674934
+      },
+      {
+        "type": "mirror",
+        "x": 610,
+        "y": 217.2,
+        "length": 104,
+        "angle": 28.249057085241816
+      },
+      {
+        "type": "mirror",
+        "x": 540,
+        "y": 382.8,
+        "length": 104,
+        "angle": -26.264826019280633
+      },
+      {
+        "type": "mirror",
+        "x": 240,
+        "y": 357.2,
+        "length": 104,
+        "angle": 25.699144188703272
+      }
+    ],
+    "solution": [
+      0.34982386364845297,
+      -0.5254756426749356,
+      1.2490570852418168,
+      0.7351739807193667,
+      -1.300855811296728
+    ],
+    "sourceAngle": 176.19580272646982,
+    "target": {
+      "x": 45,
+      "y": 77.2,
+      "radius": 22,
+      "color": "gold"
+    },
+    "requiredBounces": 5,
+    "wallPurpose": [],
+    "decoyCount": 0,
+    "tutorial": "",
+    "rules": "Cada cor no seu alvo, sem cruzar outras trajetórias."
+  },
+  {
+    "name": "Terceira cor 3",
+    "hint": "Planeje os trajetos antes de girar os espelhos. Cada cor tem seu próprio destino.",
+    "stage": 9,
+    "stageName": "Terceira cor",
+    "difficulty": 83,
+    "family": "faixas-2",
+    "sources": [
+      {
+        "x": 45,
+        "y": 370,
+        "angle": 3.9579408267224214,
+        "color": "gold"
+      },
+      {
+        "x": 755,
+        "y": 217.2,
+        "angle": 175.35379221047174,
+        "color": "blue"
+      },
+      {
+        "x": 45,
+        "y": 102.80000000000001,
+        "angle": -6.217067304135458,
+        "color": "pink"
+      }
+    ],
+    "targets": [
+      {
+        "x": 755,
+        "y": 370,
+        "radius": 22,
+        "color": "gold"
+      },
+      {
+        "x": 45,
+        "y": 217.2,
+        "radius": 22,
+        "color": "blue"
+      },
+      {
+        "x": 755,
+        "y": 102.80000000000001,
+        "radius": 22,
+        "color": "pink"
+      }
+    ],
+    "portals": [],
+    "objects": [
+      {
+        "type": "mirror",
+        "x": 230,
+        "y": 382.8,
+        "length": 104,
+        "angle": 32.93470633626362
+      },
+      {
+        "type": "mirror",
+        "x": 470,
+        "y": 357.2,
+        "length": 104,
+        "angle": -35.758486066136086
+      },
+      {
+        "type": "mirror",
+        "x": 440,
+        "y": 242.8,
+        "length": 104,
+        "angle": 33.53097643765385
+      },
+      {
+        "type": "mirror",
+        "x": 280,
+        "y": 77.19999999999999,
+        "length": 104,
+        "angle": -35.51585921150876
+      },
+      {
+        "type": "mirror",
+        "x": 510,
+        "y": 90,
+        "length": 104,
+        "angle": 37.08802097575922
+      }
+    ],
+    "solution": [
+      -1.065293663736379,
+      -1.758486066136087,
+      -0.46902356234615183,
+      -1.5158592115087612,
+      3.088020975759223
+    ],
+    "sourceAngle": 3.9579408267224214,
+    "target": {
+      "x": 755,
+      "y": 370,
+      "radius": 22,
+      "color": "gold"
+    },
+    "requiredBounces": 5,
+    "wallPurpose": [],
+    "decoyCount": 0,
+    "tutorial": "",
+    "rules": "Cada cor no seu alvo, sem cruzar outras trajetórias."
+  },
+  {
+    "name": "Terceira cor 4",
+    "hint": "Planeje os trajetos antes de girar os espelhos. Cada cor tem seu próprio destino.",
+    "stage": 9,
+    "stageName": "Terceira cor",
+    "difficulty": 84,
+    "family": "colunas-3",
+    "sources": [
+      {
+        "x": 172.37894736842105,
+        "y": 47.56944444444444,
+        "angle": 90,
+        "color": "gold"
+      },
+      {
+        "x": 377.09473684210525,
+        "y": 412.43055555555554,
+        "angle": -76.96319187678922,
+        "color": "blue"
+      },
+      {
+        "x": 673.4315789473684,
+        "y": 47.56944444444444,
+        "angle": 90,
+        "color": "pink"
+      }
+    ],
+    "targets": [
+      {
+        "x": 126.56842105263159,
+        "y": 412.43055555555554,
+        "radius": 22,
+        "color": "gold"
+      },
+      {
+        "x": 377.09473684210525,
+        "y": 47.56944444444444,
+        "radius": 22,
+        "color": "blue"
+      },
+      {
+        "x": 627.6210526315789,
+        "y": 412.43055555555554,
+        "radius": 22,
+        "color": "pink"
+      }
+    ],
+    "portals": [],
+    "objects": [
+      {
+        "type": "mirror",
+        "x": 172.37894736842105,
+        "y": 158.05555555555554,
+        "length": 104,
+        "angle": -39.86426786323031
+      },
+      {
+        "type": "mirror",
+        "x": 126.56842105263159,
+        "y": 296.80555555555554,
+        "length": 104,
+        "angle": 58.13573213676969
+      },
+      {
+        "type": "mirror",
+        "x": 422.90526315789475,
+        "y": 214.58333333333334,
+        "length": 104,
+        "angle": -50.15085393647345
+      },
+      {
+        "type": "mirror",
+        "x": 673.4315789473684,
+        "y": 158.05555555555554,
+        "length": 104,
+        "angle": 58.13573213676969
+      },
+      {
+        "type": "mirror",
+        "x": 627.6210526315789,
+        "y": 296.80555555555554,
+        "length": 104,
+        "angle": -39.86426786323031
+      }
+    ],
+    "solution": [
+      -80.86426786323031,
+      -80.86426786323031,
+      88.84914606352655,
+      -80.86426786323031,
+      -80.86426786323031
+    ],
+    "sourceAngle": 90,
+    "target": {
+      "x": 126.56842105263159,
+      "y": 412.43055555555554,
+      "radius": 22,
+      "color": "gold"
+    },
+    "requiredBounces": 5,
+    "wallPurpose": [],
+    "decoyCount": 0,
+    "tutorial": "",
+    "rules": "Cada cor no seu alvo, sem cruzar outras trajetórias."
+  },
+  {
+    "name": "Terceira cor 5",
+    "hint": "Planeje os trajetos antes de girar os espelhos. Cada cor tem seu próprio destino.",
+    "stage": 9,
+    "stageName": "Terceira cor",
+    "difficulty": 85,
+    "family": "faixas-4",
+    "sources": [
+      {
+        "x": 755,
+        "y": 83.6,
+        "angle": 176.00619380850316,
+        "color": "gold"
+      },
+      {
+        "x": 45,
+        "y": 230,
+        "angle": 3.4070760191694163,
+        "color": "blue"
+      },
+      {
+        "x": 755,
+        "y": 382.8,
+        "angle": 180,
+        "color": "pink"
+      }
+    ],
+    "targets": [
+      {
+        "x": 45,
+        "y": 96.4,
+        "radius": 22,
+        "color": "gold"
+      },
+      {
+        "x": 755,
+        "y": 242.8,
+        "radius": 22,
+        "color": "blue"
+      },
+      {
+        "x": 45,
+        "y": 357.2,
+        "radius": 22,
+        "color": "pink"
+      }
+    ],
+    "portals": [],
+    "objects": [
+      {
+        "type": "mirror",
+        "x": 480,
+        "y": 102.8,
+        "length": 104,
+        "angle": 48.52547564267492
+      },
+      {
+        "type": "mirror",
+        "x": 190,
+        "y": 77.2,
+        "length": 104,
+        "angle": -49.24905708524183
+      },
+      {
+        "type": "mirror",
+        "x": 260,
+        "y": 242.8,
+        "length": 104,
+        "angle": 47.264826019280626
+      },
+      {
+        "type": "mirror",
+        "x": 560,
+        "y": 217.2,
+        "length": 104,
+        "angle": -46.699144188703265
+      },
+      {
+        "type": "mirror",
+        "x": 540,
+        "y": 382.8,
+        "length": 104,
+        "angle": 50.708148443772586
+      },
+      {
+        "type": "mirror",
+        "x": 270,
+        "y": 357.2,
+        "length": 104,
+        "angle": -45.291851556227414
+      }
+    ],
+    "solution": [
+      0.5254756426749196,
+      -1.2490570852418301,
+      -0.7351739807193747,
+      1.3008558112967337,
+      2.7081484437725862,
+      2.7081484437725862
+    ],
+    "sourceAngle": 176.00619380850316,
+    "target": {
+      "x": 45,
+      "y": 96.4,
+      "radius": 22,
+      "color": "gold"
+    },
+    "requiredBounces": 6,
+    "wallPurpose": [],
+    "decoyCount": 0,
+    "tutorial": "",
+    "rules": "Cada cor no seu alvo, sem cruzar outras trajetórias."
+  },
+  {
+    "name": "Terceira cor 6",
+    "hint": "Planeje os trajetos antes de girar os espelhos. Cada cor tem seu próprio destino.",
+    "stage": 9,
+    "stageName": "Terceira cor",
+    "difficulty": 86,
+    "family": "faixas-5",
+    "sources": [
+      {
+        "x": 45,
+        "y": 357.2,
+        "angle": 4.6462077895282645,
+        "color": "gold"
+      },
+      {
+        "x": 755,
+        "y": 242.8,
+        "angle": -173.78293269586453,
+        "color": "blue"
+      },
+      {
+        "x": 45,
+        "y": 102.80000000000001,
+        "angle": -3.8041972735301837,
+        "color": "pink"
+      }
+    ],
+    "targets": [
+      {
+        "x": 755,
+        "y": 357.2,
+        "radius": 22,
+        "color": "gold"
+      },
+      {
+        "x": 45,
+        "y": 242.8,
+        "radius": 22,
+        "color": "blue"
+      },
+      {
+        "x": 755,
+        "y": 102.80000000000001,
+        "radius": 22,
+        "color": "pink"
+      }
+    ],
+    "portals": [],
+    "objects": [
+      {
+        "type": "mirror",
+        "x": 360,
+        "y": 382.8,
+        "length": 104,
+        "angle": 20.469023562346152
+      },
+      {
+        "type": "mirror",
+        "x": 520,
+        "y": 217.2,
+        "length": 104,
+        "angle": -18.48414078849123
+      },
+      {
+        "type": "mirror",
+        "x": 290,
+        "y": 230,
+        "length": 104,
+        "angle": 16.911979024240793
+      },
+      {
+        "type": "mirror",
+        "x": 430,
+        "y": 77.19999999999999,
+        "length": 104,
+        "angle": -19.65017613635154
+      }
+    ],
+    "solution": [
+      0.4690235623461534,
+      1.5158592115087686,
+      -3.088020975759207,
+      0.3498238636484601
+    ],
+    "sourceAngle": 4.6462077895282645,
+    "target": {
+      "x": 755,
+      "y": 357.2,
+      "radius": 22,
+      "color": "gold"
+    },
+    "requiredBounces": 4,
+    "wallPurpose": [],
+    "decoyCount": 0,
+    "tutorial": "",
+    "rules": "Cada cor no seu alvo, sem cruzar outras trajetórias."
+  },
+  {
+    "name": "Terceira cor 7",
+    "hint": "Planeje os trajetos antes de girar os espelhos. Cada cor tem seu próprio destino.",
+    "stage": 9,
+    "stageName": "Terceira cor",
+    "difficulty": 87,
+    "family": "faixas-6",
+    "sources": [
+      {
+        "x": 45,
+        "y": 77.2,
+        "angle": 0,
+        "color": "gold"
+      },
+      {
+        "x": 755,
+        "y": 242.8,
+        "angle": -175.81667246776425,
+        "color": "blue"
+      },
+      {
+        "x": 45,
+        "y": 370,
+        "angle": -3.9579408267224214,
+        "color": "pink"
+      }
+    ],
+    "targets": [
+      {
+        "x": 755,
+        "y": 90,
+        "radius": 22,
+        "color": "gold"
+      },
+      {
+        "x": 26.072250065160773,
+        "y": 210.73932802224152,
+        "radius": 22,
+        "color": "blue"
+      },
+      {
+        "x": 755,
+        "y": 370,
+        "radius": 22,
+        "color": "pink"
+      }
+    ],
+    "portals": [],
+    "objects": [
+      {
+        "type": "mirror",
+        "x": 190,
+        "y": 77.2,
+        "length": 104,
+        "angle": 29.92335446199227
+      },
+      {
+        "type": "mirror",
+        "x": 440,
+        "y": 102.8,
+        "length": 104,
+        "angle": -27.55181285576434
+      },
+      {
+        "type": "mirror",
+        "x": 650,
+        "y": 77.2,
+        "length": 104,
+        "angle": 27
+      },
+      {
+        "type": "mirror",
+        "x": 580,
+        "y": 230,
+        "length": 104,
+        "angle": -23.442843951089912
+      },
+      {
+        "type": "mirror",
+        "x": 330,
+        "y": 217.2,
+        "length": 104,
+        "angle": 24.990324965035583
+      },
+      {
+        "type": "mirror",
+        "x": 120,
+        "y": 242.8,
+        "length": 104,
+        "angle": -21.051925488949166
+      },
+      {
+        "type": "mirror",
+        "x": 230,
+        "y": 357.2,
+        "length": 104,
+        "angle": 28.06529366373638
+      },
+      {
+        "type": "mirror",
+        "x": 470,
+        "y": 382.8,
+        "length": 104,
+        "angle": -25.241513933863914
+      }
+    ],
+    "solution": [
+      2.9233544619922665,
+      -0.5518128557643389,
+      0,
+      3.5571560489100875,
+      -2.009675034964417,
+      5.948074511050834,
+      1.065293663736379,
+      1.758486066136087
+    ],
+    "sourceAngle": 0,
+    "target": {
+      "x": 755,
+      "y": 90,
+      "radius": 22,
+      "color": "gold"
+    },
+    "requiredBounces": 8,
+    "wallPurpose": [],
+    "decoyCount": 0,
+    "tutorial": "",
+    "rules": "Cada cor no seu alvo, sem cruzar outras trajetórias."
+  },
+  {
+    "name": "Terceira cor 8",
+    "hint": "Planeje os trajetos antes de girar os espelhos. Cada cor tem seu próprio destino.",
+    "stage": 9,
+    "stageName": "Terceira cor",
+    "difficulty": 88,
+    "family": "colunas-7",
+    "sources": [
+      {
+        "x": 627.621052631579,
+        "y": 47.56944444444444,
+        "angle": 90,
+        "color": "gold"
+      },
+      {
+        "x": 422.90526315789475,
+        "y": 412.43055555555554,
+        "angle": -103.03680812321079,
+        "color": "blue"
+      },
+      {
+        "x": 126.5684210526316,
+        "y": 47.56944444444444,
+        "angle": 90,
+        "color": "pink"
+      }
+    ],
+    "targets": [
+      {
+        "x": 673.4315789473684,
+        "y": 412.43055555555554,
+        "radius": 22,
+        "color": "gold"
+      },
+      {
+        "x": 422.90526315789475,
+        "y": 47.56944444444444,
+        "radius": 22,
+        "color": "blue"
+      },
+      {
+        "x": 172.3789473684211,
+        "y": 412.43055555555554,
+        "radius": 22,
+        "color": "pink"
+      }
+    ],
+    "portals": [],
+    "objects": [
+      {
+        "type": "mirror",
+        "x": 627.621052631579,
+        "y": 158.05555555555554,
+        "length": 104,
+        "angle": -65.13573213676966
+      },
+      {
+        "type": "mirror",
+        "x": 673.4315789473684,
+        "y": 296.80555555555554,
+        "length": 104,
+        "angle": 46.86426786323034
+      },
+      {
+        "type": "mirror",
+        "x": 377.09473684210525,
+        "y": 214.58333333333334,
+        "length": 104,
+        "angle": -54.84914606352656
+      },
+      {
+        "type": "mirror",
+        "x": 126.5684210526316,
+        "y": 158.05555555555554,
+        "length": 104,
+        "angle": 46.86426786323031
+      },
+      {
+        "type": "mirror",
+        "x": 172.3789473684211,
+        "y": 296.80555555555554,
+        "length": 104,
+        "angle": -65.13573213676969
+      }
+    ],
+    "solution": [
+      80.86426786323034,
+      80.86426786323034,
+      -88.84914606352656,
+      80.86426786323031,
+      80.86426786323031
+    ],
+    "sourceAngle": 90,
+    "target": {
+      "x": 673.4315789473684,
+      "y": 412.43055555555554,
+      "radius": 22,
+      "color": "gold"
+    },
+    "requiredBounces": 5,
+    "wallPurpose": [],
+    "decoyCount": 0,
+    "tutorial": "",
+    "rules": "Cada cor no seu alvo, sem cruzar outras trajetórias."
+  },
+  {
+    "name": "Terceira cor 9",
+    "hint": "Planeje os trajetos antes de girar os espelhos. Cada cor tem seu próprio destino.",
+    "stage": 9,
+    "stageName": "Terceira cor",
+    "difficulty": 89,
+    "family": "faixas-8",
+    "sources": [
+      {
+        "x": 45,
+        "y": 382.8,
+        "angle": -6.217067304135458,
+        "color": "gold"
+      },
+      {
+        "x": 755,
+        "y": 242.8,
+        "angle": -176.19580272646982,
+        "color": "blue"
+      },
+      {
+        "x": 45,
+        "y": 96.39999999999998,
+        "angle": -3.993806191496837,
+        "color": "pink"
+      }
+    ],
+    "targets": [
+      {
+        "x": 755,
+        "y": 382.8,
+        "radius": 22,
+        "color": "gold"
+      },
+      {
+        "x": 45,
+        "y": 242.8,
+        "radius": 22,
+        "color": "blue"
+      },
+      {
+        "x": 755,
+        "y": 83.60000000000002,
+        "radius": 22,
+        "color": "pink"
+      }
+    ],
+    "portals": [],
+    "objects": [
+      {
+        "type": "mirror",
+        "x": 280,
+        "y": 357.2,
+        "length": 104,
+        "angle": 39.48414078849124
+      },
+      {
+        "type": "mirror",
+        "x": 510,
+        "y": 370,
+        "length": 104,
+        "angle": -37.91197902424078
+      },
+      {
+        "type": "mirror",
+        "x": 370,
+        "y": 217.2,
+        "length": 104,
+        "angle": 40.65017613635155
+      },
+      {
+        "type": "mirror",
+        "x": 320,
+        "y": 77.19999999999999,
+        "length": 104,
+        "angle": -40.47452435732506
+      },
+      {
+        "type": "mirror",
+        "x": 610,
+        "y": 102.80000000000001,
+        "length": 104,
+        "angle": 39.75094291475819
+      }
+    ],
+    "solution": [
+      -1.5158592115087612,
+      3.088020975759223,
+      -0.34982386364845297,
+      0.5254756426749385,
+      -1.249057085241812
+    ],
+    "sourceAngle": -6.217067304135458,
+    "target": {
+      "x": 755,
+      "y": 382.8,
+      "radius": 22,
+      "color": "gold"
+    },
+    "requiredBounces": 5,
+    "wallPurpose": [],
+    "decoyCount": 0,
+    "tutorial": "",
+    "rules": "Cada cor no seu alvo, sem cruzar outras trajetórias."
+  },
+  {
+    "name": "Terceira cor 10",
+    "hint": "Planeje os trajetos antes de girar os espelhos. Cada cor tem seu próprio destino.",
+    "stage": 9,
+    "stageName": "Terceira cor",
+    "difficulty": 90,
+    "family": "faixas-9",
+    "sources": [
+      {
+        "x": 45,
+        "y": 102.8,
+        "angle": -4.183327532235769,
+        "color": "gold"
+      },
+      {
+        "x": 755,
+        "y": 230,
+        "angle": -176.04205917327758,
+        "color": "blue"
+      },
+      {
+        "x": 45,
+        "y": 382.8,
+        "angle": -4.6462077895282645,
+        "color": "pink"
+      }
+    ],
+    "targets": [
+      {
+        "x": 773.9277499348391,
+        "y": 70.73932802224154,
+        "radius": 22,
+        "color": "gold"
+      },
+      {
+        "x": 45,
+        "y": 230,
+        "radius": 22,
+        "color": "blue"
+      },
+      {
+        "x": 755,
+        "y": 382.8,
+        "radius": 22,
+        "color": "pink"
+      }
+    ],
+    "portals": [],
+    "objects": [
+      {
+        "type": "mirror",
+        "x": 220,
+        "y": 90,
+        "length": 104,
+        "angle": 44.44284395108993
+      },
+      {
+        "type": "mirror",
+        "x": 470,
+        "y": 77.2,
+        "length": 104,
+        "angle": -45.99032496503558
+      },
+      {
+        "type": "mirror",
+        "x": 680,
+        "y": 102.8,
+        "length": 104,
+        "angle": 42.05192548894914
+      },
+      {
+        "type": "mirror",
+        "x": 570,
+        "y": 217.2,
+        "length": 104,
+        "angle": -49.065293663736384
+      },
+      {
+        "type": "mirror",
+        "x": 330,
+        "y": 242.8,
+        "length": 104,
+        "angle": 46.2415139338639
+      },
+      {
+        "type": "mirror",
+        "x": 360,
+        "y": 357.2,
+        "length": 104,
+        "angle": -48.46902356234615
+      }
+    ],
+    "solution": [
+      -3.557156048910074,
+      2.009675034964415,
+      -5.948074511050862,
+      -1.0652936637363837,
+      -1.7584860661361006,
+      -0.4690235623461534
+    ],
+    "sourceAngle": -4.183327532235769,
+    "target": {
+      "x": 773.9277499348391,
+      "y": 70.73932802224154,
+      "radius": 22,
+      "color": "gold"
+    },
+    "requiredBounces": 6,
+    "wallPurpose": [],
+    "decoyCount": 0,
+    "tutorial": "",
+    "rules": "Cada cor no seu alvo, sem cruzar outras trajetórias."
+  },
+  {
+    "name": "Síntese de cores e portais 1",
+    "hint": "Siga a letra de cada par: a direção não muda no teleporte. Planeje cada cor sem cruzamentos.",
+    "stage": 10,
+    "stageName": "Síntese de cores e portais",
+    "difficulty": 91,
+    "family": "portal-zigue-3",
+    "sources": [
+      {
+        "x": 30,
+        "y": 101.05,
+        "angle": 0,
+        "color": "gold"
+      },
+      {
+        "x": 755,
+        "y": 218.95,
+        "angle": 171.33402564107402,
+        "color": "blue"
+      },
+      {
+        "x": 45,
+        "y": 358.95,
+        "angle": 0,
+        "color": "pink"
+      }
+    ],
+    "targets": [
+      {
+        "x": 755,
+        "y": 83.37,
+        "radius": 22,
+        "color": "gold"
+      },
+      {
+        "x": 45,
+        "y": 236.63,
+        "radius": 22,
+        "color": "blue"
+      },
+      {
+        "x": 755,
+        "y": 358.95,
+        "radius": 22,
+        "color": "pink"
+      }
+    ],
+    "portals": [
+      {
+        "id": "A1",
+        "pairId": "A2",
+        "label": "A",
+        "x": 350,
+        "y": 78.95,
+        "radius": 15,
+        "colors": null
+      },
+      {
+        "id": "A2",
+        "pairId": "A1",
+        "label": "A",
+        "x": 470,
+        "y": 95.525,
+        "radius": 15,
+        "colors": null
+      },
+      {
+        "id": "C1",
+        "pairId": "C2",
+        "label": "C",
+        "x": 450,
+        "y": 241.05,
+        "radius": 15,
+        "colors": [
+          "blue"
+        ]
+      },
+      {
+        "id": "C2",
+        "pairId": "C1",
+        "label": "C",
+        "x": 330,
+        "y": 224.475,
+        "radius": 15,
+        "colors": [
+          "blue"
+        ]
+      },
+      {
+        "id": "E1",
+        "pairId": "E2",
+        "label": "E",
+        "x": 145,
+        "y": 358.95,
+        "radius": 15,
+        "colors": [
+          "pink"
+        ]
+      },
+      {
+        "id": "E2",
+        "pairId": "E1",
+        "label": "E",
+        "x": 300,
+        "y": 381.05,
+        "radius": 15,
+        "colors": [
+          "pink"
+        ]
+      }
+    ],
+    "objects": [
+      {
+        "type": "mirror",
+        "x": 130,
+        "y": 101.05,
+        "length": 104,
+        "angle": 14.782477582664738
+      },
+      {
+        "type": "mirror",
+        "x": 250,
+        "y": 78.95,
+        "length": 104,
+        "angle": -25.21752241733526
+      },
+      {
+        "type": "mirror",
+        "x": 610,
+        "y": 95.525,
+        "length": 104,
+        "angle": 17.604118079439687
+      },
+      {
+        "type": "wall",
+        "x": 410,
+        "y": 90,
+        "length": 125,
+        "angle": 90,
+        "width": 12,
+        "purpose": "Divisória: atravesse pelo par de portais."
+      },
+      {
+        "type": "mirror",
+        "x": 610,
+        "y": 241.05,
+        "length": 104,
+        "angle": 15.667012820537025
+      },
+      {
+        "type": "mirror",
+        "x": 185,
+        "y": 224.475,
+        "length": 104,
+        "angle": -22.481029229277823
+      },
+      {
+        "type": "wall",
+        "x": 390,
+        "y": 230,
+        "length": 125,
+        "angle": 90,
+        "width": 12,
+        "purpose": "Divisória: atravesse pelo par de portais."
+      },
+      {
+        "type": "mirror",
+        "x": 470,
+        "y": 381.05,
+        "length": 104,
+        "angle": -24.190640412499747
+      },
+      {
+        "type": "mirror",
+        "x": 620,
+        "y": 358.95,
+        "length": 104,
+        "angle": 15.809359587500253
+      },
+      {
+        "type": "wall",
+        "x": 222.5,
+        "y": 370,
+        "length": 125,
+        "angle": 90,
+        "width": 12,
+        "purpose": "Divisória: atravesse pelo par de portais."
+      }
+    ],
+    "solution": [
+      -5.217522417335262,
+      -5.217522417335262,
+      -2.3958819205603126,
+      -4.332987179462975,
+      -2.481029229277823,
+      -4.1906404124997465,
+      -4.1906404124997465
+    ],
+    "sourceAngle": 0,
+    "target": {
+      "x": 755,
+      "y": 83.37,
+      "radius": 22,
+      "color": "gold"
+    },
+    "requiredBounces": 7,
+    "wallPurpose": [
+      "Divisória: atravesse pelo par de portais."
+    ],
+    "decoyCount": 0,
+    "tutorial": "Síntese: combine três raios, portais brancos e seletivos. Alguns pares aceitam duas cores. Observe a letra do par e as cores permitidas antes de confirmar.",
+    "rules": "Cada cor no seu alvo, sem cruzar outras trajetórias."
+  },
+  {
+    "name": "Síntese de cores e portais 2",
+    "hint": "Siga a letra de cada par: a direção não muda no teleporte. Planeje cada cor sem cruzamentos.",
+    "stage": 10,
+    "stageName": "Síntese de cores e portais",
+    "difficulty": 92,
+    "family": "portal-arco-3",
+    "sources": [
+      {
+        "x": 755,
+        "y": 78.625,
+        "angle": 171.0831825921628,
+        "color": "gold"
+      },
+      {
+        "x": 45,
+        "y": 218.625,
+        "angle": 0,
+        "color": "blue"
+      },
+      {
+        "x": 755,
+        "y": 381.375,
+        "angle": 180,
+        "color": "pink"
+      }
+    ],
+    "targets": [
+      {
+        "x": 45,
+        "y": 96.825,
+        "radius": 22,
+        "color": "gold"
+      },
+      {
+        "x": 755,
+        "y": 218.625,
+        "radius": 22,
+        "color": "blue"
+      },
+      {
+        "x": 45,
+        "y": 381.375,
+        "radius": 22,
+        "color": "pink"
+      }
+    ],
+    "portals": [
+      {
+        "id": "A1",
+        "pairId": "A2",
+        "label": "A",
+        "x": 450,
+        "y": 101.375,
+        "radius": 15,
+        "colors": [
+          "gold",
+          "blue"
+        ]
+      },
+      {
+        "id": "A2",
+        "pairId": "A1",
+        "label": "A",
+        "x": 330,
+        "y": 84.3125,
+        "radius": 15,
+        "colors": [
+          "gold",
+          "blue"
+        ]
+      },
+      {
+        "id": "C1",
+        "pairId": "C2",
+        "label": "C",
+        "x": 145,
+        "y": 218.625,
+        "radius": 15,
+        "colors": [
+          "blue",
+          "pink"
+        ]
+      },
+      {
+        "id": "C2",
+        "pairId": "C1",
+        "label": "C",
+        "x": 300,
+        "y": 241.375,
+        "radius": 15,
+        "colors": [
+          "blue",
+          "pink"
+        ]
+      },
+      {
+        "id": "E1",
+        "pairId": "E2",
+        "label": "E",
+        "x": 380,
+        "y": 358.625,
+        "radius": 15,
+        "colors": [
+          "gold",
+          "pink"
+        ]
+      },
+      {
+        "id": "E2",
+        "pairId": "E1",
+        "label": "E",
+        "x": 200,
+        "y": 381.375,
+        "radius": 15,
+        "colors": [
+          "gold",
+          "pink"
+        ]
+      }
+    ],
+    "objects": [
+      {
+        "type": "mirror",
+        "x": 610,
+        "y": 101.375,
+        "length": 104,
+        "angle": 22.541591296081407
+      },
+      {
+        "type": "mirror",
+        "x": 185,
+        "y": 84.3125,
+        "length": 104,
+        "angle": -29.55362022367069
+      },
+      {
+        "type": "wall",
+        "x": 390,
+        "y": 90,
+        "length": 125,
+        "angle": 90,
+        "width": 12,
+        "purpose": "Divisória: atravesse pelo par de portais."
+      },
+      {
+        "type": "mirror",
+        "x": 470,
+        "y": 241.375,
+        "length": 104,
+        "angle": -31.312067176191718
+      },
+      {
+        "type": "mirror",
+        "x": 620,
+        "y": 218.625,
+        "length": 104,
+        "angle": 22.687932823808282
+      },
+      {
+        "type": "wall",
+        "x": 222.5,
+        "y": 230,
+        "length": 125,
+        "angle": 90,
+        "width": 12,
+        "purpose": "Divisória: atravesse pelo par de portais."
+      },
+      {
+        "type": "mirror",
+        "x": 620,
+        "y": 381.375,
+        "length": 104,
+        "angle": 31.614943121863845
+      },
+      {
+        "type": "mirror",
+        "x": 480,
+        "y": 358.625,
+        "length": 104,
+        "angle": -22.385056878136155
+      },
+      {
+        "type": "wall",
+        "x": 290,
+        "y": 370,
+        "length": 125,
+        "angle": 90,
+        "width": 12,
+        "purpose": "Divisória: atravesse pelo par de portais."
+      }
+    ],
+    "solution": [
+      -4.458408703918593,
+      -2.5536202236706913,
+      -4.312067176191717,
+      -4.312067176191717,
+      4.6149431218638455,
+      4.6149431218638455
+    ],
+    "sourceAngle": 171.0831825921628,
+    "target": {
+      "x": 45,
+      "y": 96.825,
+      "radius": 22,
+      "color": "gold"
+    },
+    "requiredBounces": 6,
+    "wallPurpose": [
+      "Divisória: atravesse pelo par de portais."
+    ],
+    "decoyCount": 0,
+    "tutorial": "",
+    "rules": "Cada cor no seu alvo, sem cruzar outras trajetórias."
+  },
+  {
+    "name": "Síntese de cores e portais 3",
+    "hint": "Siga a letra de cada par: a direção não muda no teleporte. Planeje cada cor sem cruzamentos.",
+    "stage": 10,
+    "stageName": "Síntese de cores e portais",
+    "difficulty": 93,
+    "family": "portal-zigue-3",
+    "sources": [
+      {
+        "x": 90,
+        "y": 425,
+        "angle": -90,
+        "color": "gold"
+      },
+      {
+        "x": 360,
+        "y": 435,
+        "angle": -90,
+        "color": "blue"
+      },
+      {
+        "x": 630,
+        "y": 425,
+        "angle": -90,
+        "color": "pink"
+      }
+    ],
+    "targets": [
+      {
+        "x": 90,
+        "y": 35,
+        "radius": 22,
+        "color": "gold"
+      },
+      {
+        "x": 360,
+        "y": 20,
+        "radius": 22,
+        "color": "blue"
+      },
+      {
+        "x": 630,
+        "y": 35,
+        "radius": 22,
+        "color": "pink"
+      }
+    ],
+    "portals": [
+      {
+        "id": "A1",
+        "pairId": "A2",
+        "label": "A",
+        "x": 90,
+        "y": 350,
+        "radius": 15,
+        "colors": null
+      },
+      {
+        "id": "A2",
+        "pairId": "A1",
+        "label": "A",
+        "x": 170,
+        "y": 230,
+        "radius": 15,
+        "colors": null
+      },
+      {
+        "id": "B1",
+        "pairId": "B2",
+        "label": "B",
+        "x": 440,
+        "y": 115,
+        "radius": 15,
+        "colors": [
+          "blue"
+        ]
+      },
+      {
+        "id": "B2",
+        "pairId": "B1",
+        "label": "B",
+        "x": 360,
+        "y": 75,
+        "radius": 15,
+        "colors": [
+          "blue"
+        ]
+      },
+      {
+        "id": "C1",
+        "pairId": "C2",
+        "label": "C",
+        "x": 630,
+        "y": 350,
+        "radius": 15,
+        "colors": [
+          "pink"
+        ]
+      },
+      {
+        "id": "C2",
+        "pairId": "C1",
+        "label": "C",
+        "x": 710,
+        "y": 230,
+        "radius": 15,
+        "colors": [
+          "pink"
+        ]
+      }
+    ],
+    "objects": [
+      {
+        "type": "mirror",
+        "x": 170,
+        "y": 130,
+        "length": 104,
+        "angle": -76.05045377310611
+      },
+      {
+        "type": "wall",
+        "x": 130,
+        "y": 290,
+        "length": 220,
+        "angle": 0,
+        "width": 12,
+        "purpose": "Barreira transversal: use o par de portais para passar de sala."
+      },
+      {
+        "type": "mirror",
+        "x": 360,
+        "y": 340,
+        "length": 104,
+        "angle": -39.154966237010115
+      },
+      {
+        "type": "mirror",
+        "x": 440,
+        "y": 220,
+        "length": 104,
+        "angle": 72.84503376298989
+      },
+      {
+        "type": "wall",
+        "x": 400,
+        "y": 95,
+        "length": 220,
+        "angle": 0,
+        "width": 12,
+        "purpose": "Barreira transversal: use o par de portais para passar de sala."
+      },
+      {
+        "type": "mirror",
+        "x": 710,
+        "y": 130,
+        "length": 104,
+        "angle": 35.94954622689389
+      },
+      {
+        "type": "wall",
+        "x": 670,
+        "y": 290,
+        "length": 220,
+        "angle": 0,
+        "width": 12,
+        "purpose": "Barreira transversal: use o par de portais para passar de sala."
+      }
+    ],
+    "solution": [
+      69.94954622689389,
+      -73.15496623701011,
+      -73.15496623701011,
+      69.94954622689389
+    ],
+    "sourceAngle": -90,
+    "target": {
+      "x": 90,
+      "y": 35,
+      "radius": 22,
+      "color": "gold"
+    },
+    "requiredBounces": 4,
+    "wallPurpose": [
+      "Barreira transversal: use o par de portais para passar de sala."
+    ],
+    "decoyCount": 0,
+    "tutorial": "",
+    "rules": "Cada cor no seu alvo, sem cruzar outras trajetórias."
+  },
+  {
+    "name": "Síntese de cores e portais 4",
+    "hint": "Siga a letra de cada par: a direção não muda no teleporte. Planeje cada cor sem cruzamentos.",
+    "stage": 10,
+    "stageName": "Síntese de cores e portais",
+    "difficulty": 94,
+    "family": "portal-arco-3",
+    "sources": [
+      {
+        "x": 45,
+        "y": 102.025,
+        "angle": 0,
+        "color": "gold"
+      },
+      {
+        "x": 755,
+        "y": 217.975,
+        "angle": 180,
+        "color": "blue"
+      },
+      {
+        "x": 30,
+        "y": 382.025,
+        "angle": 0,
+        "color": "pink"
+      }
+    ],
+    "targets": [
+      {
+        "x": 755,
+        "y": 102.025,
+        "radius": 22,
+        "color": "gold"
+      },
+      {
+        "x": 45,
+        "y": 242.025,
+        "radius": 22,
+        "color": "blue"
+      },
+      {
+        "x": 755,
+        "y": 362.785,
+        "radius": 22,
+        "color": "pink"
+      }
+    ],
+    "portals": [
+      {
+        "id": "A1",
+        "pairId": "A2",
+        "label": "A",
+        "x": 420,
+        "y": 77.975,
+        "radius": 15,
+        "colors": [
+          "gold"
+        ]
+      },
+      {
+        "id": "A2",
+        "pairId": "A1",
+        "label": "A",
+        "x": 600,
+        "y": 102.025,
+        "radius": 15,
+        "colors": [
+          "gold"
+        ]
+      },
+      {
+        "id": "C1",
+        "pairId": "C2",
+        "label": "C",
+        "x": 670,
+        "y": 217.975,
+        "radius": 15,
+        "colors": [
+          "blue"
+        ]
+      },
+      {
+        "id": "C2",
+        "pairId": "C1",
+        "label": "C",
+        "x": 560,
+        "y": 242.025,
+        "radius": 15,
+        "colors": [
+          "blue"
+        ]
+      },
+      {
+        "id": "D1",
+        "pairId": "D2",
+        "label": "D",
+        "x": 200,
+        "y": 217.975,
+        "radius": 15,
+        "colors": [
+          "blue"
+        ]
+      },
+      {
+        "id": "D2",
+        "pairId": "D1",
+        "label": "D",
+        "x": 120,
+        "y": 242.025,
+        "radius": 15,
+        "colors": [
+          "blue"
+        ]
+      },
+      {
+        "id": "E1",
+        "pairId": "E2",
+        "label": "E",
+        "x": 350,
+        "y": 357.975,
+        "radius": 15,
+        "colors": [
+          "pink"
+        ]
+      },
+      {
+        "id": "E2",
+        "pairId": "E1",
+        "label": "E",
+        "x": 470,
+        "y": 376.0125,
+        "radius": 15,
+        "colors": [
+          "pink"
+        ]
+      }
+    ],
+    "objects": [
+      {
+        "type": "mirror",
+        "x": 180,
+        "y": 102.025,
+        "length": 104,
+        "angle": 36.12627202020495
+      },
+      {
+        "type": "mirror",
+        "x": 320,
+        "y": 77.975,
+        "length": 104,
+        "angle": -45.87372797979505
+      },
+      {
+        "type": "wall",
+        "x": 510,
+        "y": 90,
+        "length": 125,
+        "angle": 90,
+        "width": 12,
+        "purpose": "Divisória: atravesse pelo par de portais."
+      },
+      {
+        "type": "mirror",
+        "x": 420,
+        "y": 242.025,
+        "length": 104,
+        "angle": -35.33355716326872
+      },
+      {
+        "type": "mirror",
+        "x": 300,
+        "y": 217.975,
+        "length": 104,
+        "angle": 46.66644283673128
+      },
+      {
+        "type": "wall",
+        "x": 615,
+        "y": 230,
+        "length": 125,
+        "angle": 90,
+        "width": 12,
+        "purpose": "Divisória: atravesse pelo par de portais."
+      },
+      {
+        "type": "wall",
+        "x": 160,
+        "y": 230,
+        "length": 125,
+        "angle": 90,
+        "width": 12,
+        "purpose": "Divisória: atravesse pelo par de portais."
+      },
+      {
+        "type": "mirror",
+        "x": 130,
+        "y": 382.025,
+        "length": 104,
+        "angle": -46.66644283673127
+      },
+      {
+        "type": "mirror",
+        "x": 250,
+        "y": 357.975,
+        "length": 104,
+        "angle": 35.33355716326873
+      },
+      {
+        "type": "mirror",
+        "x": 610,
+        "y": 376.0125,
+        "length": 104,
+        "angle": -43.606165652708476
+      },
+      {
+        "type": "wall",
+        "x": 410,
+        "y": 370,
+        "length": 125,
+        "angle": 90,
+        "width": 12,
+        "purpose": "Divisória: atravesse pelo par de portais."
+      }
+    ],
+    "solution": [
+      -4.873727979795053,
+      -4.873727979795053,
+      5.666442836731278,
+      5.666442836731278,
+      -5.666442836731272,
+      -5.666442836731272,
+      -2.6061656527084733
+    ],
+    "sourceAngle": 0,
+    "target": {
+      "x": 755,
+      "y": 102.025,
+      "radius": 22,
+      "color": "gold"
+    },
+    "requiredBounces": 7,
+    "wallPurpose": [
+      "Divisória: atravesse pelo par de portais."
+    ],
+    "decoyCount": 0,
+    "tutorial": "",
+    "rules": "Cada cor no seu alvo, sem cruzar outras trajetórias."
+  },
+  {
+    "name": "Síntese de cores e portais 5",
+    "hint": "Siga a letra de cada par: a direção não muda no teleporte. Planeje cada cor sem cruzamentos.",
+    "stage": 10,
+    "stageName": "Síntese de cores e portais",
+    "difficulty": 95,
+    "family": "portal-zigue-3",
+    "sources": [
+      {
+        "x": 755,
+        "y": 77.65,
+        "angle": 180,
+        "color": "gold"
+      },
+      {
+        "x": 30,
+        "y": 242.35,
+        "angle": 0,
+        "color": "blue"
+      },
+      {
+        "x": 755,
+        "y": 357.65,
+        "angle": 170.3327535574304,
+        "color": "pink"
+      }
+    ],
+    "targets": [
+      {
+        "x": 45,
+        "y": 102.35,
+        "radius": 22,
+        "color": "gold"
+      },
+      {
+        "x": 755,
+        "y": 222.59,
+        "radius": 22,
+        "color": "blue"
+      },
+      {
+        "x": 45,
+        "y": 377.41,
+        "radius": 22,
+        "color": "pink"
+      }
+    ],
+    "portals": [
+      {
+        "id": "A1",
+        "pairId": "A2",
+        "label": "A",
+        "x": 670,
+        "y": 77.65,
+        "radius": 15,
+        "colors": [
+          "gold",
+          "blue"
+        ]
+      },
+      {
+        "id": "A2",
+        "pairId": "A1",
+        "label": "A",
+        "x": 560,
+        "y": 102.35,
+        "radius": 15,
+        "colors": [
+          "gold",
+          "blue"
+        ]
+      },
+      {
+        "id": "B1",
+        "pairId": "B2",
+        "label": "B",
+        "x": 200,
+        "y": 77.65,
+        "radius": 15,
+        "colors": [
+          "gold",
+          "blue"
+        ]
+      },
+      {
+        "id": "B2",
+        "pairId": "B1",
+        "label": "B",
+        "x": 120,
+        "y": 102.35,
+        "radius": 15,
+        "colors": [
+          "gold",
+          "blue"
+        ]
+      },
+      {
+        "id": "C1",
+        "pairId": "C2",
+        "label": "C",
+        "x": 350,
+        "y": 217.65,
+        "radius": 15,
+        "colors": [
+          "blue",
+          "pink"
+        ]
+      },
+      {
+        "id": "C2",
+        "pairId": "C1",
+        "label": "C",
+        "x": 470,
+        "y": 236.175,
+        "radius": 15,
+        "colors": [
+          "blue",
+          "pink"
+        ]
+      },
+      {
+        "id": "E1",
+        "pairId": "E2",
+        "label": "E",
+        "x": 450,
+        "y": 382.35,
+        "radius": 15,
+        "colors": [
+          "gold",
+          "pink"
+        ]
+      },
+      {
+        "id": "E2",
+        "pairId": "E1",
+        "label": "E",
+        "x": 330,
+        "y": 363.825,
+        "radius": 15,
+        "colors": [
+          "gold",
+          "pink"
+        ]
+      }
+    ],
+    "objects": [
+      {
+        "type": "mirror",
+        "x": 420,
+        "y": 102.35,
+        "length": 104,
+        "angle": 53.81546978275993
+      },
+      {
+        "type": "mirror",
+        "x": 300,
+        "y": 77.65,
+        "length": 104,
+        "angle": -42.18453021724007
+      },
+      {
+        "type": "wall",
+        "x": 615,
+        "y": 90,
+        "length": 125,
+        "angle": 90,
+        "width": 12,
+        "purpose": "Divisória: atravesse pelo par de portais."
+      },
+      {
+        "type": "wall",
+        "x": 160,
+        "y": 90,
+        "length": 125,
+        "angle": 90,
+        "width": 12,
+        "purpose": "Divisória: atravesse pelo par de portais."
+      },
+      {
+        "type": "mirror",
+        "x": 130,
+        "y": 242.35,
+        "length": 104,
+        "angle": 42.18453021724005
+      },
+      {
+        "type": "mirror",
+        "x": 250,
+        "y": 217.65,
+        "length": 104,
+        "angle": -53.81546978275995
+      },
+      {
+        "type": "mirror",
+        "x": 610,
+        "y": 236.175,
+        "length": 104,
+        "angle": 45.32380117841832
+      },
+      {
+        "type": "wall",
+        "x": 410,
+        "y": 230,
+        "length": 125,
+        "angle": 90,
+        "width": 12,
+        "purpose": "Divisória: atravesse pelo par de portais."
+      },
+      {
+        "type": "mirror",
+        "x": 610,
+        "y": 382.35,
+        "length": 104,
+        "angle": 43.166376778715204
+      },
+      {
+        "type": "mirror",
+        "x": 185,
+        "y": 363.825,
+        "length": 104,
+        "angle": -50.77119239324736
+      },
+      {
+        "type": "wall",
+        "x": 390,
+        "y": 370,
+        "length": 125,
+        "angle": 90,
+        "width": 12,
+        "purpose": "Divisória: atravesse pelo par de portais."
+      }
+    ],
+    "solution": [
+      5.8154697827599335,
+      5.8154697827599335,
+      -5.815469782759951,
+      -5.815469782759951,
+      -2.676198821581682,
+      -4.833623221284796,
+      -2.771192393247361
+    ],
+    "sourceAngle": 180,
+    "target": {
+      "x": 45,
+      "y": 102.35,
+      "radius": 22,
+      "color": "gold"
+    },
+    "requiredBounces": 7,
+    "wallPurpose": [
+      "Divisória: atravesse pelo par de portais."
+    ],
+    "decoyCount": 0,
+    "tutorial": "",
+    "rules": "Cada cor no seu alvo, sem cruzar outras trajetórias."
+  },
+  {
+    "name": "Síntese de cores e portais 6",
+    "hint": "Siga a letra de cada par: a direção não muda no teleporte. Planeje cada cor sem cruzamentos.",
+    "stage": 10,
+    "stageName": "Síntese de cores e portais",
+    "difficulty": 96,
+    "family": "portal-arco-3",
+    "sources": [
+      {
+        "x": 90,
+        "y": 435,
+        "angle": -90,
+        "color": "gold"
+      },
+      {
+        "x": 360,
+        "y": 425,
+        "angle": -90,
+        "color": "blue"
+      },
+      {
+        "x": 630,
+        "y": 435,
+        "angle": -90,
+        "color": "pink"
+      }
+    ],
+    "targets": [
+      {
+        "x": 90,
+        "y": 20,
+        "radius": 22,
+        "color": "gold"
+      },
+      {
+        "x": 360,
+        "y": 35,
+        "radius": 22,
+        "color": "blue"
+      },
+      {
+        "x": 630,
+        "y": 20,
+        "radius": 22,
+        "color": "pink"
+      }
+    ],
+    "portals": [
+      {
+        "id": "A1",
+        "pairId": "A2",
+        "label": "A",
+        "x": 170,
+        "y": 115,
+        "radius": 15,
+        "colors": null
+      },
+      {
+        "id": "A2",
+        "pairId": "A1",
+        "label": "A",
+        "x": 90,
+        "y": 75,
+        "radius": 15,
+        "colors": null
+      },
+      {
+        "id": "B1",
+        "pairId": "B2",
+        "label": "B",
+        "x": 360,
+        "y": 350,
+        "radius": 15,
+        "colors": [
+          "blue"
+        ]
+      },
+      {
+        "id": "B2",
+        "pairId": "B1",
+        "label": "B",
+        "x": 440,
+        "y": 230,
+        "radius": 15,
+        "colors": [
+          "blue"
+        ]
+      },
+      {
+        "id": "C1",
+        "pairId": "C2",
+        "label": "C",
+        "x": 710,
+        "y": 115,
+        "radius": 15,
+        "colors": [
+          "pink"
+        ]
+      },
+      {
+        "id": "C2",
+        "pairId": "C1",
+        "label": "C",
+        "x": 630,
+        "y": 75,
+        "radius": 15,
+        "colors": [
+          "pink"
+        ]
+      }
+    ],
+    "objects": [
+      {
+        "type": "mirror",
+        "x": 90,
+        "y": 340,
+        "length": 104,
+        "angle": -53.154966237010115
+      },
+      {
+        "type": "mirror",
+        "x": 170,
+        "y": 220,
+        "length": 104,
+        "angle": 86.84503376298989
+      },
+      {
+        "type": "wall",
+        "x": 130,
+        "y": 95,
+        "length": 220,
+        "angle": 0,
+        "width": 12,
+        "purpose": "Barreira transversal: use o par de portais para passar de sala."
+      },
+      {
+        "type": "mirror",
+        "x": 440,
+        "y": 130,
+        "length": 104,
+        "angle": 49.94954622689389
+      },
+      {
+        "type": "wall",
+        "x": 400,
+        "y": 290,
+        "length": 220,
+        "angle": 0,
+        "width": 12,
+        "purpose": "Barreira transversal: use o par de portais para passar de sala."
+      },
+      {
+        "type": "mirror",
+        "x": 630,
+        "y": 340,
+        "length": 104,
+        "angle": 86.84503376298989
+      },
+      {
+        "type": "mirror",
+        "x": 710,
+        "y": 220,
+        "length": 104,
+        "angle": -53.154966237010115
+      },
+      {
+        "type": "wall",
+        "x": 670,
+        "y": 95,
+        "length": 220,
+        "angle": 0,
+        "width": 12,
+        "purpose": "Barreira transversal: use o par de portais para passar de sala."
+      }
+    ],
+    "solution": [
+      -73.15496623701011,
+      -73.15496623701011,
+      69.94954622689389,
+      -73.15496623701011,
+      -73.15496623701011
+    ],
+    "sourceAngle": -90,
+    "target": {
+      "x": 90,
+      "y": 20,
+      "radius": 22,
+      "color": "gold"
+    },
+    "requiredBounces": 5,
+    "wallPurpose": [
+      "Barreira transversal: use o par de portais para passar de sala."
+    ],
+    "decoyCount": 0,
+    "tutorial": "",
+    "rules": "Cada cor no seu alvo, sem cruzar outras trajetórias."
+  },
+  {
+    "name": "Síntese de cores e portais 7",
+    "hint": "Siga a letra de cada par: a direção não muda no teleporte. Planeje cada cor sem cruzamentos.",
+    "stage": 10,
+    "stageName": "Síntese de cores e portais",
+    "difficulty": 97,
+    "family": "portal-zigue-3",
+    "sources": [
+      {
+        "x": 45,
+        "y": 77,
+        "angle": 10.16569487954269,
+        "color": "gold"
+      },
+      {
+        "x": 755,
+        "y": 217,
+        "angle": 180,
+        "color": "blue"
+      },
+      {
+        "x": 45,
+        "y": 383,
+        "angle": 0,
+        "color": "pink"
+      }
+    ],
+    "targets": [
+      {
+        "x": 755,
+        "y": 97.8,
+        "radius": 22,
+        "color": "gold"
+      },
+      {
+        "x": 45,
+        "y": 217,
+        "radius": 22,
+        "color": "blue"
+      },
+      {
+        "x": 755,
+        "y": 383,
+        "radius": 22,
+        "color": "pink"
+      }
+    ],
+    "portals": [
+      {
+        "id": "A1",
+        "pairId": "A2",
+        "label": "A",
+        "x": 350,
+        "y": 103,
+        "radius": 15,
+        "colors": [
+          "gold"
+        ]
+      },
+      {
+        "id": "A2",
+        "pairId": "A1",
+        "label": "A",
+        "x": 470,
+        "y": 83.5,
+        "radius": 15,
+        "colors": [
+          "gold"
+        ]
+      },
+      {
+        "id": "C1",
+        "pairId": "C2",
+        "label": "C",
+        "x": 655,
+        "y": 217,
+        "radius": 15,
+        "colors": [
+          "blue"
+        ]
+      },
+      {
+        "id": "C2",
+        "pairId": "C1",
+        "label": "C",
+        "x": 500,
+        "y": 243,
+        "radius": 15,
+        "colors": [
+          "blue"
+        ]
+      },
+      {
+        "id": "E1",
+        "pairId": "E2",
+        "label": "E",
+        "x": 420,
+        "y": 357,
+        "radius": 15,
+        "colors": [
+          "pink"
+        ]
+      },
+      {
+        "id": "E2",
+        "pairId": "E1",
+        "label": "E",
+        "x": 600,
+        "y": 383,
+        "radius": 15,
+        "colors": [
+          "pink"
+        ]
+      }
+    ],
+    "objects": [
+      {
+        "type": "mirror",
+        "x": 190,
+        "y": 103,
+        "length": 104,
+        "angle": 32.08284743977134
+      },
+      {
+        "type": "mirror",
+        "x": 615,
+        "y": 83.5,
+        "length": 104,
+        "angle": -24.083935885206042
+      },
+      {
+        "type": "wall",
+        "x": 410,
+        "y": 90,
+        "length": 125,
+        "angle": 90,
+        "width": 12,
+        "purpose": "Divisória: atravesse pelo par de portais."
+      },
+      {
+        "type": "mirror",
+        "x": 330,
+        "y": 243,
+        "length": 104,
+        "angle": -22.083218017896456
+      },
+      {
+        "type": "mirror",
+        "x": 180,
+        "y": 217,
+        "length": 104,
+        "angle": 31.916781982103544
+      },
+      {
+        "type": "wall",
+        "x": 577.5,
+        "y": 230,
+        "length": 125,
+        "angle": 90,
+        "width": 12,
+        "purpose": "Divisória: atravesse pelo par de portais."
+      },
+      {
+        "type": "mirror",
+        "x": 180,
+        "y": 383,
+        "length": 104,
+        "angle": 21.73960784306282
+      },
+      {
+        "type": "mirror",
+        "x": 320,
+        "y": 357,
+        "length": 104,
+        "angle": -32.26039215693718
+      },
+      {
+        "type": "wall",
+        "x": 510,
+        "y": 370,
+        "length": 125,
+        "angle": 90,
+        "width": 12,
+        "purpose": "Divisória: atravesse pelo par de portais."
+      }
+    ],
+    "solution": [
+      5.082847439771345,
+      2.916064114793959,
+      4.916781982103544,
+      4.916781982103544,
+      -5.260392156937181,
+      -5.260392156937181
+    ],
+    "sourceAngle": 10.16569487954269,
+    "target": {
+      "x": 755,
+      "y": 97.8,
+      "radius": 22,
+      "color": "gold"
+    },
+    "requiredBounces": 6,
+    "wallPurpose": [
+      "Divisória: atravesse pelo par de portais."
+    ],
+    "decoyCount": 0,
+    "tutorial": "",
+    "rules": "Cada cor no seu alvo, sem cruzar outras trajetórias."
+  },
+  {
+    "name": "Síntese de cores e portais 8",
+    "hint": "Siga a letra de cada par: a direção não muda no teleporte. Planeje cada cor sem cruzamentos.",
+    "stage": 10,
+    "stageName": "Síntese de cores e portais",
+    "difficulty": 98,
+    "family": "portal-arco-3",
+    "sources": [
+      {
+        "x": 755,
+        "y": 76.675,
+        "angle": 180,
+        "color": "gold"
+      },
+      {
+        "x": 45,
+        "y": 243.325,
+        "angle": 0,
+        "color": "blue"
+      },
+      {
+        "x": 755,
+        "y": 356.675,
+        "angle": 180,
+        "color": "pink"
+      }
+    ],
+    "targets": [
+      {
+        "x": 45,
+        "y": 76.675,
+        "radius": 22,
+        "color": "gold"
+      },
+      {
+        "x": 755,
+        "y": 243.325,
+        "radius": 22,
+        "color": "blue"
+      },
+      {
+        "x": 45,
+        "y": 383.325,
+        "radius": 22,
+        "color": "pink"
+      }
+    ],
+    "portals": [
+      {
+        "id": "A1",
+        "pairId": "A2",
+        "label": "A",
+        "x": 655,
+        "y": 76.675,
+        "radius": 15,
+        "colors": [
+          "gold",
+          "blue"
+        ]
+      },
+      {
+        "id": "A2",
+        "pairId": "A1",
+        "label": "A",
+        "x": 500,
+        "y": 103.325,
+        "radius": 15,
+        "colors": [
+          "gold",
+          "blue"
+        ]
+      },
+      {
+        "id": "C1",
+        "pairId": "C2",
+        "label": "C",
+        "x": 420,
+        "y": 216.675,
+        "radius": 15,
+        "colors": [
+          "blue",
+          "pink"
+        ]
+      },
+      {
+        "id": "C2",
+        "pairId": "C1",
+        "label": "C",
+        "x": 600,
+        "y": 243.325,
+        "radius": 15,
+        "colors": [
+          "blue",
+          "pink"
+        ]
+      },
+      {
+        "id": "E1",
+        "pairId": "E2",
+        "label": "E",
+        "x": 670,
+        "y": 356.675,
+        "radius": 15,
+        "colors": [
+          "gold",
+          "pink"
+        ]
+      },
+      {
+        "id": "E2",
+        "pairId": "E1",
+        "label": "E",
+        "x": 560,
+        "y": 383.325,
+        "radius": 15,
+        "colors": [
+          "gold",
+          "pink"
+        ]
+      },
+      {
+        "id": "F1",
+        "pairId": "F2",
+        "label": "F",
+        "x": 200,
+        "y": 356.675,
+        "radius": 15,
+        "colors": [
+          "gold",
+          "pink"
+        ]
+      },
+      {
+        "id": "F2",
+        "pairId": "F1",
+        "label": "F",
+        "x": 120,
+        "y": 383.325,
+        "radius": 15,
+        "colors": [
+          "gold",
+          "pink"
+        ]
+      }
+    ],
+    "objects": [
+      {
+        "type": "mirror",
+        "x": 330,
+        "y": 103.325,
+        "length": 104,
+        "angle": 39.03721335538158
+      },
+      {
+        "type": "mirror",
+        "x": 180,
+        "y": 76.675,
+        "length": 104,
+        "angle": -28.96278664461842
+      },
+      {
+        "type": "wall",
+        "x": 577.5,
+        "y": 90,
+        "length": 125,
+        "angle": 90,
+        "width": 12,
+        "purpose": "Divisória: atravesse pelo par de portais."
+      },
+      {
+        "type": "mirror",
+        "x": 180,
+        "y": 243.325,
+        "length": 104,
+        "angle": -39.38885780223443
+      },
+      {
+        "type": "mirror",
+        "x": 320,
+        "y": 216.675,
+        "length": 104,
+        "angle": 28.611142197765567
+      },
+      {
+        "type": "wall",
+        "x": 510,
+        "y": 230,
+        "length": 125,
+        "angle": 90,
+        "width": 12,
+        "purpose": "Divisória: atravesse pelo par de portais."
+      },
+      {
+        "type": "mirror",
+        "x": 420,
+        "y": 383.325,
+        "length": 104,
+        "angle": 40.26061211060822
+      },
+      {
+        "type": "mirror",
+        "x": 300,
+        "y": 356.675,
+        "length": 104,
+        "angle": -27.73938788939178
+      },
+      {
+        "type": "wall",
+        "x": 615,
+        "y": 370,
+        "length": 125,
+        "angle": 90,
+        "width": 12,
+        "purpose": "Divisória: atravesse pelo par de portais."
+      },
+      {
+        "type": "wall",
+        "x": 160,
+        "y": 370,
+        "length": 125,
+        "angle": 90,
+        "width": 12,
+        "purpose": "Divisória: atravesse pelo par de portais."
+      }
+    ],
+    "solution": [
+      5.037213355381581,
+      5.037213355381581,
+      -5.388857802234432,
+      -5.388857802234432,
+      6.260612110608221,
+      6.260612110608221
+    ],
+    "sourceAngle": 180,
+    "target": {
+      "x": 45,
+      "y": 76.675,
+      "radius": 22,
+      "color": "gold"
+    },
+    "requiredBounces": 6,
+    "wallPurpose": [
+      "Divisória: atravesse pelo par de portais."
+    ],
+    "decoyCount": 0,
+    "tutorial": "",
+    "rules": "Cada cor no seu alvo, sem cruzar outras trajetórias."
+  },
+  {
+    "name": "Síntese de cores e portais 9",
+    "hint": "Siga a letra de cada par: a direção não muda no teleporte. Planeje cada cor sem cruzamentos.",
+    "stage": 10,
+    "stageName": "Síntese de cores e portais",
+    "difficulty": 99,
+    "family": "portal-zigue-3",
+    "sources": [
+      {
+        "x": 90,
+        "y": 425,
+        "angle": -90,
+        "color": "gold"
+      },
+      {
+        "x": 360,
+        "y": 435,
+        "angle": -90,
+        "color": "blue"
+      },
+      {
+        "x": 630,
+        "y": 425,
+        "angle": -90,
+        "color": "pink"
+      }
+    ],
+    "targets": [
+      {
+        "x": 90,
+        "y": 35,
+        "radius": 22,
+        "color": "gold"
+      },
+      {
+        "x": 360,
+        "y": 20,
+        "radius": 22,
+        "color": "blue"
+      },
+      {
+        "x": 630,
+        "y": 35,
+        "radius": 22,
+        "color": "pink"
+      }
+    ],
+    "portals": [
+      {
+        "id": "A1",
+        "pairId": "A2",
+        "label": "A",
+        "x": 90,
+        "y": 350,
+        "radius": 15,
+        "colors": [
+          "gold"
+        ]
+      },
+      {
+        "id": "A2",
+        "pairId": "A1",
+        "label": "A",
+        "x": 170,
+        "y": 230,
+        "radius": 15,
+        "colors": [
+          "gold"
+        ]
+      },
+      {
+        "id": "B1",
+        "pairId": "B2",
+        "label": "B",
+        "x": 440,
+        "y": 115,
+        "radius": 15,
+        "colors": [
+          "blue"
+        ]
+      },
+      {
+        "id": "B2",
+        "pairId": "B1",
+        "label": "B",
+        "x": 360,
+        "y": 75,
+        "radius": 15,
+        "colors": [
+          "blue"
+        ]
+      },
+      {
+        "id": "C1",
+        "pairId": "C2",
+        "label": "C",
+        "x": 630,
+        "y": 350,
+        "radius": 15,
+        "colors": [
+          "pink"
+        ]
+      },
+      {
+        "id": "C2",
+        "pairId": "C1",
+        "label": "C",
+        "x": 710,
+        "y": 230,
+        "radius": 15,
+        "colors": [
+          "pink"
+        ]
+      }
+    ],
+    "objects": [
+      {
+        "type": "mirror",
+        "x": 170,
+        "y": 130,
+        "length": 104,
+        "angle": -69.05045377310611
+      },
+      {
+        "type": "wall",
+        "x": 130,
+        "y": 290,
+        "length": 220,
+        "angle": 0,
+        "width": 12,
+        "purpose": "Barreira transversal: use o par de portais para passar de sala."
+      },
+      {
+        "type": "mirror",
+        "x": 360,
+        "y": 340,
+        "length": 104,
+        "angle": -32.154966237010115
+      },
+      {
+        "type": "mirror",
+        "x": 440,
+        "y": 220,
+        "length": 104,
+        "angle": 65.84503376298989
+      },
+      {
+        "type": "wall",
+        "x": 400,
+        "y": 95,
+        "length": 220,
+        "angle": 0,
+        "width": 12,
+        "purpose": "Barreira transversal: use o par de portais para passar de sala."
+      },
+      {
+        "type": "mirror",
+        "x": 710,
+        "y": 130,
+        "length": 104,
+        "angle": 28.949546226893887
+      },
+      {
+        "type": "wall",
+        "x": 670,
+        "y": 290,
+        "length": 220,
+        "angle": 0,
+        "width": 12,
+        "purpose": "Barreira transversal: use o par de portais para passar de sala."
+      }
+    ],
+    "solution": [
+      69.94954622689389,
+      -73.15496623701011,
+      -73.15496623701011,
+      69.94954622689389
+    ],
+    "sourceAngle": -90,
+    "target": {
+      "x": 90,
+      "y": 35,
+      "radius": 22,
+      "color": "gold"
+    },
+    "requiredBounces": 4,
+    "wallPurpose": [
+      "Barreira transversal: use o par de portais para passar de sala."
+    ],
+    "decoyCount": 0,
+    "tutorial": "",
+    "rules": "Cada cor no seu alvo, sem cruzar outras trajetórias."
+  },
+  {
+    "name": "Síntese de cores e portais 10",
+    "hint": "Siga a letra de cada par: a direção não muda no teleporte. Planeje cada cor sem cruzamentos.",
+    "stage": 10,
+    "stageName": "Síntese de cores e portais",
+    "difficulty": 100,
+    "family": "portal-arco-3",
+    "sources": [
+      {
+        "x": 45,
+        "y": 76.025,
+        "angle": 0,
+        "color": "gold"
+      },
+      {
+        "x": 770,
+        "y": 243.975,
+        "angle": 180,
+        "color": "blue"
+      },
+      {
+        "x": 45,
+        "y": 356.025,
+        "angle": 10.910439854462814,
+        "color": "pink"
+      }
+    ],
+    "targets": [
+      {
+        "x": 755,
+        "y": 103.975,
+        "radius": 22,
+        "color": "gold"
+      },
+      {
+        "x": 45,
+        "y": 221.615,
+        "radius": 22,
+        "color": "blue"
+      },
+      {
+        "x": 755,
+        "y": 378.385,
+        "radius": 22,
+        "color": "pink"
+      }
+    ],
+    "portals": [
+      {
+        "id": "A1",
+        "pairId": "A2",
+        "label": "A",
+        "x": 130,
+        "y": 76.025,
+        "radius": 15,
+        "colors": [
+          "gold"
+        ]
+      },
+      {
+        "id": "A2",
+        "pairId": "A1",
+        "label": "A",
+        "x": 240,
+        "y": 103.975,
+        "radius": 15,
+        "colors": [
+          "gold"
+        ]
+      },
+      {
+        "id": "B1",
+        "pairId": "B2",
+        "label": "B",
+        "x": 600,
+        "y": 76.025,
+        "radius": 15,
+        "colors": [
+          "gold"
+        ]
+      },
+      {
+        "id": "B2",
+        "pairId": "B1",
+        "label": "B",
+        "x": 680,
+        "y": 103.975,
+        "radius": 15,
+        "colors": [
+          "gold"
+        ]
+      },
+      {
+        "id": "C1",
+        "pairId": "C2",
+        "label": "C",
+        "x": 450,
+        "y": 216.025,
+        "radius": 15,
+        "colors": [
+          "blue"
+        ]
+      },
+      {
+        "id": "C2",
+        "pairId": "C1",
+        "label": "C",
+        "x": 330,
+        "y": 236.9875,
+        "radius": 15,
+        "colors": [
+          "blue"
+        ]
+      },
+      {
+        "id": "E1",
+        "pairId": "E2",
+        "label": "E",
+        "x": 350,
+        "y": 383.975,
+        "radius": 15,
+        "colors": [
+          "pink"
+        ]
+      },
+      {
+        "id": "E2",
+        "pairId": "E1",
+        "label": "E",
+        "x": 470,
+        "y": 363.0125,
+        "radius": 15,
+        "colors": [
+          "pink"
+        ]
+      }
+    ],
+    "objects": [
+      {
+        "type": "mirror",
+        "x": 380,
+        "y": 103.975,
+        "length": 104,
+        "angle": 41.444310183700075
+      },
+      {
+        "type": "mirror",
+        "x": 500,
+        "y": 76.025,
+        "length": 104,
+        "angle": -54.555689816299925
+      },
+      {
+        "type": "wall",
+        "x": 185,
+        "y": 90,
+        "length": 125,
+        "angle": 90,
+        "width": 12,
+        "purpose": "Divisória: atravesse pelo par de portais."
+      },
+      {
+        "type": "wall",
+        "x": 640,
+        "y": 90,
+        "length": 125,
+        "angle": 90,
+        "width": 12,
+        "purpose": "Divisória: atravesse pelo par de portais."
+      },
+      {
+        "type": "mirror",
+        "x": 670,
+        "y": 243.975,
+        "length": 104,
+        "angle": 54.55568981629992
+      },
+      {
+        "type": "mirror",
+        "x": 550,
+        "y": 216.025,
+        "length": 104,
+        "angle": -41.44431018370008
+      },
+      {
+        "type": "mirror",
+        "x": 190,
+        "y": 236.9875,
+        "length": 104,
+        "angle": 51.0258674539364
+      },
+      {
+        "type": "wall",
+        "x": 390,
+        "y": 230,
+        "length": 125,
+        "angle": 90,
+        "width": 12,
+        "purpose": "Divisória: atravesse pelo par de portais."
+      },
+      {
+        "type": "mirror",
+        "x": 190,
+        "y": 383.975,
+        "length": 104,
+        "angle": 53.455219927231404
+      },
+      {
+        "type": "mirror",
+        "x": 615,
+        "y": 363.0125,
+        "length": 104,
+        "angle": -44.86691086203522
+      },
+      {
+        "type": "wall",
+        "x": 410,
+        "y": 370,
+        "length": 125,
+        "angle": 90,
+        "width": 12,
+        "purpose": "Divisória: atravesse pelo par de portais."
+      }
+    ],
+    "solution": [
+      -6.555689816299926,
+      -6.555689816299926,
+      6.5556898162999175,
+      6.5556898162999175,
+      3.0258674539363994,
+      5.455219927231407,
+      3.133089137964783
+    ],
+    "sourceAngle": 0,
+    "target": {
+      "x": 755,
+      "y": 103.975,
+      "radius": 22,
+      "color": "gold"
+    },
+    "requiredBounces": 7,
+    "wallPurpose": [
+      "Divisória: atravesse pelo par de portais."
+    ],
+    "decoyCount": 0,
+    "tutorial": "",
+    "rules": "Cada cor no seu alvo, sem cruzar outras trajetórias."
   }
 ];

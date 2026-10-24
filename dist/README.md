@@ -99,15 +99,19 @@ Backup imediatamente anterior a esta mudança: [historico/BETA-210-ANTES-BURACOS
 
 ## Reflexos: 100 níveis (24/10/2026)
 
-O catálogo atual tem 300 desafios: 100 por jogo. Em Reflexos há dez etapas, de uma a oito reflexões, com distrações opcionais e divisórias que bloqueiam atalhos e deixam aberturas para a rota correta. Espelhos medem 120 unidades e têm moldura mais fina; alças continuam grandes para facilitar o uso. A luz tem traço de 2,4 unidades e setas de direção. Cada impacto revela uma normal perpendicular pontilhada, com opacidade 24%, somente quando a luz chega após **Confirmar resposta**.
+O catálogo atual tem 300 desafios: 100 por jogo. Reflexos introduz fontes adicionais e portais gradualmente. Os espelhos têm 104 unidades, com alças grandes e espaçamento verificado para evitar sobreposições. A luz mantém traço de 2,4 unidades, setas e normais pontilhadas sutis após cada impacto. Nenhuma trajetória aparece antes de confirmar.
 
 Paredes não são traços decorativos: sua espessura de 12 unidades participa da colisão, incluindo faces e extremidades. A mesma geometria gera o desenho. O alvo conserva o raio de tolerância de 22 unidades.
 
-Veja [Reflexos e obstáculos](documentacao/REFLEXOS-E-OBSTACULOS.md) e [QA atual](testes/RELATORIO-QA.md). Backup anterior, já contendo os buracos: [BETA-210-COM-BURACOS-ANTES-REFLEXOS.zip](historico/BETA-210-COM-BURACOS-ANTES-REFLEXOS.zip). O Drive não atualiza automaticamente a cópia do Chrome local. Não há publicação nem sincronização de progresso.
+Veja [Reflexos e obstáculos](documentacao/REFLEXOS-E-OBSTACULOS.md) e [QA atual](testes/RELATORIO-QA.md). Backup anterior, já contendo os buracos: [BETA-210-COM-BURACOS-ANTES-REFLEXOS.zip](historico/BETA-210-COM-BURACOS-ANTES-REFLEXOS.zip). O Drive não atualiza automaticamente a cópia do Chrome local. Existe uma versão privada no Sites do ChatGPT. Não há sincronização de progresso entre dispositivos.
 
 ## Vitória e nova tentativa
 
-Todos os 300 níveis e o modo livre têm vitória específica de cada jogo e derrota rápida de 300 ms (tremor, borda vermelha e blur, sem texto visual) e somente após confirmação. Reflexos espera o percurso terminar. Respeitam movimento reduzido e não bloqueiam controles. Veja [animações de resultado](documentacao/ANIMACOES-DE-RESULTADO.md). São 24.565 verificações automatizadas aprovadas; a suíte nova usa DOM simulado, não navegador. A cópia local aberta no Chrome não é sincronizada automaticamente pelo Drive.
+Todos os 300 níveis e o modo livre têm vitória específica de cada jogo e derrota rápida de 300 ms (tremor, borda vermelha e blur, sem texto visual) e somente após confirmação. Reflexos espera o percurso terminar. Respeitam movimento reduzido e não bloqueiam controles. Veja [animações de resultado](documentacao/ANIMACOES-DE-RESULTADO.md). Consulte o relatório de QA para a contagem atual. As suítes de interação usam DOM simulado, não navegador. A cópia local aberta no Chrome não é sincronizada automaticamente pelo Drive.
 
 ## Alças mais claras no Corte
 Quadrado com quatro setas: mover curva. Círculo dourado com seta curva: girar. Círculo claro com duas setas: deslizar o corte. Legenda, dicas e foco identificam as ações liberadas. Detalhes: documentacao/CONTROLES-DO-CORTE.md.
+
+## Reflexos com cores e portais
+
+Os 100 níveis foram reorganizados para introduzir gradualmente dois e três disparadores, colisões entre trajetórias e portais universais/seletivos. Os portais brancos aceitam todas as cores; pares com a mesma letra mantêm a direção da luz. Raios de cores diferentes não podem se cruzar. Veja [regras e progressão](documentacao/PORTAIS-E-CORES.md). A nota no jogo explica cada novidade quando ela aparece. Os portais giram lentamente, respeitando movimento reduzido.
