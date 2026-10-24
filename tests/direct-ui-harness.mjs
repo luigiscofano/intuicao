@@ -46,3 +46,8 @@ Element.prototype.click=function(){if(!this.disabled)this.dispatch('click',{deta
 Object.defineProperty(Element.prototype,'ownerDocument',{get(){return document;}});
 document.listeners=new Map();document.addEventListener=Element.prototype.addEventListener;document.removeEventListener=Element.prototype.removeEventListener;document.defaultView={listeners:new Map(),addEventListener:Element.prototype.addEventListener,removeEventListener:Element.prototype.removeEventListener};
 globalThis.confirm=()=>true;
+// Dialog API simulation. Native top-layer/inert layout is checked separately in browser QA.
+document.body=new Element('body');document.body.appendChild(host);
+Object.defineProperty(Element.prototype,'isConnected',{get(){return document.body.contains(this)||root.contains(this);}});
+Element.prototype.showModal=function(){this.open=true;};
+Element.prototype.close=function(){this.open=false;};

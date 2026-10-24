@@ -73,7 +73,7 @@ test('ELO returning drag to starting point cancels displacement',()=>{
  start('elo',3);const from=level.regions.findIndex(r=>level.fixed?.[r]===undefined&&level.regions.filter(v=>v===r).length>1),region=level.regions[from],to=level.regions.findIndex((r,i)=>r===region&&i!==from);assert.ok(from>=0&&to>=0);click(from);const before=state();event('pointerdown',from);event('pointermove',to);event('pointermove',from);event('pointerup',from);assert.deepEqual(state(),before,'actual drop cell must win over visited-cell suppression');
 });
 test('DESVIO saved redo branch survives reopening the same map',()=>{
- start('desvio',0,'training');$('c-reset').click();click(0);click(0);const moved=state();$('c-direct-undo').click();assert.equal(state().turn,0);start('desvio',0,'training');assert.equal($('c-direct-redo').disabled,false);$('c-direct-redo').click();assert.deepEqual(state(),moved);
+ start('desvio',0,'training');$('c-reset').click();$('restart-collection-confirm').click();click(0);click(0);const moved=state();$('c-direct-undo').click();assert.equal(state().turn,0);start('desvio',0,'training');assert.equal($('c-direct-redo').disabled,false);$('c-direct-redo').click();assert.deepEqual(state(),moved);
 });
 test('PACTO candidate palette restores mounted focus after marking',()=>{
  start('pacto',2);const free=level.clues.findIndex(v=>v<0);keypress(free,' ');const candidate=$('c-local-palette').querySelector('[data-local-candidate="2"]');candidate.focus();candidate.click();assert.equal($('c-local-palette').hidden,false);assert.ok(host.contains(document.activeElement),'palette candidate must not leave focus on a detached element');assert.equal(document.activeElement.dataset.localCandidate,'2');assert.deepEqual(state().candidates[free],[2]);
@@ -98,7 +98,7 @@ test('Visual revision removes only viewport buttons and preserves collapsible ru
  }
 });
 test('PACTO live hatching ignores inferred contradictions and survives undo/redo/reload',()=>{
- start('pacto',0);$('c-reset').click();
+ start('pacto',0);$('c-reset').click();$('restart-collection-confirm').click();
  const beforeAttempts=store.get('intuicao.answers.v1');
  keypress(10,'3');assert.equal(state().values[10],1);assert.notEqual(state().values[10],level.solution[10]);
  assert.equal($('c-board').querySelectorAll('.cell-conflict').length,0);
@@ -114,15 +114,16 @@ test('PACTO live hatching ignores inferred contradictions and survives undo/redo
  assert.equal($('c-board').querySelectorAll('.cell-conflict').length,0,'Confirmation does not turn deductions into live hatching');
 });
 test('PACTO explicit trio still hatches and clearing it removes the warning',()=>{
- start('pacto',0);$('c-reset').click();
+ start('pacto',0);$('c-reset').click();$('restart-collection-confirm').click();
  const triple=Array.from({length:64},(_,i)=>[i,i+1,i+2]).find(cells=>cells[0]%8<6&&cells.every(i=>level.clues[i]<0));
  assert.ok(triple);for(const i of triple)keypress(i,'1');
+ assert.equal($('c-board').querySelectorAll('.cell-conflict').length,0);flush();
  for(const i of triple){assert.ok(cell(i).matches('.cell-conflict'));assert.equal(cell(i).attrs['aria-invalid'],'true');}
  assert.equal($('c-live-errors').hidden,false);
- $('c-reset').click();assert.equal($('c-board').querySelectorAll('.cell-conflict').length,0);
+ $('c-reset').click();$('restart-collection-confirm').click();assert.equal($('c-board').querySelectorAll('.cell-conflict').length,0);
 });
 test('PACTO final confirmation uses rules, not the stored answer key',()=>{
- start('pacto',0);$('c-reset').click();
+ start('pacto',0);$('c-reset').click();$('restart-collection-confirm').click();
  const solution=level.solution;
  try{
   level.solution=solution.map(v=>(v+1)%4);

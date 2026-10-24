@@ -200,3 +200,18 @@ button.action-hint:hover{background:#e4dcf1;border-color:#9c85bb}
 .direct-controls{padding:0 24px;gap:8px}.direct-controls .action-hint{margin-left:8px}
 .collection-toolbar button.action-reset,.collection-toolbar button.action-hint{font-size:13px;padding:10px 16px}
 @media(max-width:600px){.rules-card{margin:14px}.rules-card>summary{padding:12px 14px;gap:8px}.rules-body{padding:2px 14px 14px}.direct-controls{padding:0 14px;gap:6px}.direct-controls .action-hint{margin-left:0}.stage-tools{flex-wrap:wrap}button.action-reset,button.action-hint{min-height:44px}}
+
+/* Reinício local: mesma paleta e botões do jogo, sem confirmação do navegador. */
+.restart-dialog{color:var(--ink);background:var(--white);border:1px solid var(--line);border-radius:19px;padding:28px;width:min(420px,calc(100vw - 32px));max-height:calc(100dvh - 32px);overflow:auto;box-shadow:0 18px 70px #25372e26}
+.restart-dialog::backdrop{background:#25372e59}
+.restart-dialog .eyebrow{margin-bottom:12px}
+.restart-dialog>p:not(.eyebrow){color:var(--muted);font-size:14px;line-height:1.7;margin:14px 0 24px}
+.restart-dialog-actions{display:flex;justify-content:flex-end;flex-wrap:wrap;gap:10px}
+.restart-dialog-actions button{min-height:44px}
+@media(max-width:380px){.restart-dialog{padding:22px}.restart-dialog-actions{flex-direction:column}.restart-dialog-actions button{width:100%}}
+
+/* Só a camada de hachuras aparece suavemente; símbolo e célula ficam estáveis. */
+@media(prefers-reduced-motion:no-preference){
+ .board-pacto .grid-cell.pacto-conflict-enter::after{animation:pacto-hatch-enter .3s ease-out both;animation-delay:var(--pacto-fade-offset,0ms)}
+ @keyframes pacto-hatch-enter{from{opacity:0}to{opacity:1}}
+}
