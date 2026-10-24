@@ -1,0 +1,18 @@
+import assert from 'node:assert/strict';
+import fs from 'node:fs';
+const html=fs.readFileSync(new URL('../dist/index.html',import.meta.url),'utf8');
+const app=fs.readFileSync(new URL('../dist/app.mjs',import.meta.url),'utf8');
+const css=fs.readFileSync(new URL('../dist/style.css',import.meta.url),'utf8');
+const rules=html.slice(html.indexOf('<details class="rules-card"'),html.indexOf('<div class="scene-wrap">'));
+assert.match(rules, /<details class="rules-card" open>/);
+assert.match(rules, /<summary>.*Regras e como jogar.*Mostrar.*Ocultar.*<\/summary>/);
+assert.match(rules, /id="mission"/);
+assert.match(rules, /<details class="rules-more">/);
+assert.match(rules, /id="explanation"/);
+assert.match(app, /\$\('explanation'\)\.textContent=texts\[game\]/);
+assert.ok(!app.includes("document.querySelector('.explanation').hidden"),'Rules cannot disappear before a result');
+for(const [id,style] of [['reset','action-reset'],['hint','action-hint']])assert.ok(html.includes(`id="${id}" class="${style}"`));
+assert.match(css, /\.rules-card:not\(\[open\]\) \.rules-hide/);
+assert.match(css, /\.rules-card\[open\] \.rules-show/);
+assert.match(css, /@media\(max-width:600px\).*\.rules-card/);
+console.log('PASS Reflexos/Corte native collapsible rules contain mission and explanation; actions styled; mobile and open/closed states present. Static structure only, not native-browser layout QA.');

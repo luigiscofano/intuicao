@@ -214,7 +214,7 @@ function status(label,value,message,success){
  const partial=game==='light'&&phase==='partial';
  $('confirm').disabled=phase==='animating';
  $('confirm').textContent=phase==='animating'?'Raio em percurso…':game==='light'?'Confirmar todos':'Confirmar resposta';
- document.querySelector('.explanation').hidden=phase!=='result';
+ // O quadro de regras fica disponível durante a edição e o resultado.
  if(phase!=='result'){
   success=false;
   if(partial){label='Disparo parcial';message=`${lightFired.length} de ${lightScene(state).sources.length} fontes disparadas. ${evaluation.ray.outcome==='collision'?'Houve colisão; os raios pararam no impacto. ':''}Clique em outra fonte ou em Confirmar todos. Editar limpa os rastros. Ainda não conta como tentativa completa.`;}

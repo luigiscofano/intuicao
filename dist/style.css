@@ -181,3 +181,22 @@ svg .cut-grip:focus{outline:none;stroke:none}
 @media(max-width:600px){.direct-controls{gap:4px}.direct-controls button{min-height:44px}.collection-board-wrap{padding:18px 6px}.local-palette{padding:10px}.collection-board .cell-coordinate{font-size:7px}}
 .local-palette{z-index:30;max-height:calc(100vh - 24px);overflow:auto}.local-palette button{touch-action:manipulation}
 .brush-cursor{position:fixed;z-index:35;pointer-events:none;border:1.5px solid #665975;border-radius:50%;width:24px;height:24px;display:grid;place-items:center;font-size:11px;font-weight:750;box-shadow:0 2px 6px #0002}.brush-cursor[hidden]{display:none}
+
+/* Regras separadas do tabuleiro; ações de apoio com identidades suaves. */
+.rules-card{margin:18px 24px;border:1px solid #ccd5c5;border-radius:16px;background:#fffefa;box-shadow:0 3px 10px #26382c05;font-size:13px;overflow:hidden}
+.rules-card>summary{display:flex;align-items:center;justify-content:space-between;gap:16px;min-height:52px;padding:14px 18px;list-style:none;font-weight:700;color:#354e3d;background:#edf1e7}
+.rules-card>summary::-webkit-details-marker{display:none}
+.rules-card>summary:focus-visible{outline-offset:-4px}
+.rules-card .rules-show,.rules-card .rules-hide{font-size:11px;font-weight:600;border:1px solid #c7d2c0;border-radius:20px;padding:4px 11px;background:#fffefa;white-space:nowrap}
+.rules-card:not([open]) .rules-hide,.rules-card[open] .rules-show{display:none}
+.rules-body{padding:2px 18px 16px;color:#536153;line-height:1.8}
+.rules-body p{margin:12px 0}.rules-body .collection-notes{margin:10px 0;background:#f4f5ee;padding:12px 14px}
+.rules-more{margin-top:14px;border-top:1px solid #e2e7dc;padding-top:8px}.rules-more>summary{min-height:44px;padding:10px 0;font-weight:600}
+button.action-reset,button.action-hint{min-height:44px;padding:10px 16px;border-width:1px;border-style:solid;font-size:13px;font-weight:700;box-shadow:0 2px 4px #29352708}
+button.action-reset{background:#fbefe7;border-color:#d9b9a5;color:#7d472c}
+button.action-hint{background:#eeeaf7;border-color:#c9bcdf;color:#574475}
+button.action-reset:hover{background:#f5e3d6;border-color:#af7e60}
+button.action-hint:hover{background:#e4dcf1;border-color:#9c85bb}
+.direct-controls{padding:0 24px;gap:8px}.direct-controls .action-hint{margin-left:8px}
+.collection-toolbar button.action-reset,.collection-toolbar button.action-hint{font-size:13px;padding:10px 16px}
+@media(max-width:600px){.rules-card{margin:14px}.rules-card>summary{padding:12px 14px;gap:8px}.rules-body{padding:2px 14px 14px}.direct-controls{padding:0 14px;gap:6px}.direct-controls .action-hint{margin-left:0}.stage-tools{flex-wrap:wrap}button.action-reset,button.action-hint{min-height:44px}}

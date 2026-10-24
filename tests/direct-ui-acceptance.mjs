@@ -87,5 +87,15 @@ test('Browser Ctrl/Cmd numeric shortcuts are neither intercepted nor edits',()=>
 test('Competitive DESVIO reset/rematch are hidden and handlers cannot reset an active turn',()=>{
  start('desvio',0,'competitive');click(0);click(0);assert.equal(state().turn,1);const before=state();for(const id of ['c-rematch','c-reset','c-direct-reset']){const button=$(id);assert.ok(!button||button.hidden,`${id} must not offer unilateral reset`);button?.onclick?.();assert.deepEqual(state(),before,`${id} handler cannot change competitive position`);}
 });
+test('Visual revision removes only viewport buttons and preserves collapsible rules/actions',()=>{
+ for(const game of ['elo','prumo','pacto','desvio']){
+  start(game);for(const id of ['c-coordinates','c-zoom-out','c-zoom-in','c-fit','c-pan-left','c-pan-right','c-pan-up','c-pan-down'])assert.equal(host.querySelector('#'+id),null,game+' must not render '+id);
+  assert.ok(host.querySelector('#c-rules-panel'));assert.ok(host.querySelector('#c-rules'));
+  assert.ok(host.querySelector('#c-direct-reset').matches('.action-reset'));
+  if(game!=='desvio')assert.ok(host.querySelector('#c-direct-hint').matches('.action-hint'));
+  $('c-rules-panel').open=false;$('c-rules-panel').ontoggle();$('c-advanced-toggle').click();assert.equal($('c-rules-panel').attrs.open,undefined,'closed rules survive rerender');
+  $('c-rules-panel').open=true;$('c-rules-panel').ontoggle();$('c-advanced-toggle').click();assert.ok(Object.hasOwn($('c-rules-panel').attrs,'open'),'open rules survive rerender');
+ }
+});
 let failed=0;for(const [name,run] of tests){try{run();console.log('PASS',name);}catch(error){failed++;console.error('FAIL',name,error.stack);}}
 console.log(`${tests.length-failed}/${tests.length} integrated UI suites passed (deterministic event simulation, not browser/device QA).`);if(failed)process.exitCode=1;

@@ -6,10 +6,10 @@ Esta atualização incremental cobre ELO, PRUMO, PACTO e DESVIO. NEXO não faz p
 
 ## Comandos comuns
 
-- Uma barra próxima da grade reúne desfazer, refazer, regras, reiniciar, coordenadas e ajustes de visualização. Dicas aparecem nos puzzles individuais.
+- Uma barra próxima da grade reúne desfazer, refazer e Reiniciar. Dicas aparecem nos puzzles individuais em lilás suave; Reiniciar usa terracota suave. As regras ficam em um quadro separado, com Mostrar/Ocultar e estratégias recolhíveis.
 - Setas navegam entre casas; Enter executa a ação principal da casa focalizada. Ctrl/Cmd + Z desfaz e Ctrl/Cmd + Shift + Z refaz quando o foco está no jogo. Os atalhos de edição não interceptam campos de texto.
 - Reiniciar pede confirmação. Uma edição comum não pede confirmação.
-- Os botões +, −, Enquadrar e as quatro direções ajustam a visualização sem mudar a solução. A entrada também oferece navegação com dois ponteiros; começar um gesto de navegação cancela a edição em andamento.
+- Os botões de coordenadas, zoom, Enquadrar e deslocamento foram retirados da interface. A navegação com dois ponteiros permanece; começar um gesto de navegação cancela a edição em andamento. O zoom nativo do navegador e a navegação por teclado entre casas continuam disponíveis.
 - Um arraste confirmado gera uma transação de histórico. Cancelá-lo restaura o estado anterior. Voltar sobre uma casa durante um mesmo traço não desfaz a própria pintura.
 
 ## ELO
