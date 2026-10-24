@@ -215,3 +215,12 @@ button.action-hint:hover{background:#e4dcf1;border-color:#9c85bb}
  .board-pacto .grid-cell.pacto-conflict-enter::after{animation:pacto-hatch-enter .3s ease-out both;animation-delay:var(--pacto-fade-offset,0ms)}
  @keyframes pacto-hatch-enter{from{opacity:0}to{opacity:1}}
 }
+
+/* Navegação compacta junto ao indicador, sem alterar os controles do tabuleiro. */
+.level-stepper{display:flex;align-items:center;gap:10px;min-width:0}
+.level-stepper .eyebrow{margin:0}
+.level-arrow{flex:0 0 44px;width:44px;height:44px;min-width:44px;min-height:44px;padding:0;border-radius:50%;display:inline-flex;align-items:center;justify-content:center;font-size:21px;line-height:1}
+.level-arrow:disabled{opacity:.35;cursor:default}
+.level-arrow:focus-visible{outline:3px solid #75618d;outline-offset:3px}
+.level-arrow[hidden]{display:none}
+@media(max-width:540px){.stage-top{flex-wrap:wrap}.level-stepper{gap:7px}.level-stepper .eyebrow{font-size:10px}}

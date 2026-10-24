@@ -1,0 +1,9 @@
+{
+  "authorization": "2026-10-24: clique da rodinha em Corte/ELO e setas de nível nos cinco jogos numerados. Baseline retrô original mantido separadamente.",
+  "sha256": {
+    "app.mjs": "601f7b289810286c01ec30bc521272bee79ea6bf6ae03f27aa37636f976172d4",
+    "collection-ui.mjs": "773cf31af9f81f756a267dcbac94b2a2b5e24b622600955d1a658237b6da0ed6",
+    "index.html": "7f9565e5b4346cc01f5b89e3c73506329f1386ebaa7b2bd9710621ada8b5b0dc",
+    "style.css": "925730720aa0d87513926d6b63556372bb351d4dbb144a2c979de45b9951cd04"
+  }
+}

@@ -1,3 +1,4 @@
+import {bindMiddleConfirm} from './middle-confirm.mjs';
 import {createRestartConfirmation} from './restart-confirmation.mjs';
 import {initCollection} from './collection-ui.mjs';
 import {traceLightWorld,traceLightAttempt,lightAttemptFrame,lightScene} from './light-world.mjs';
@@ -13,6 +14,7 @@ import {getOriginalAnswer} from './original-answers.mjs';
 const $=id=>document.getElementById(id), scene=$('scene'), drawing=$('drawing');
 const restartConfirmation=createRestartConfirmation('restart-original');
 let restartRevision=0;
+let middleConfirm=null;
 const resultMotion=createResultMotion($('result-motion'),document.querySelector('.experiment'));
 const catalogue={light:lightLevels,cut:cutLevels};
 const answerProgress=createAnswerProgress();
@@ -58,7 +60,7 @@ const completed=new Set();const lastLevel={light:null,cut:null};
 function showSelection(){restartConfirmation.dismiss();restartRevision++;placementMessage='';pendingSlot=null;invalidate();drag=null;document.querySelector('.lab').hidden=true;$('selection').hidden=false;document.querySelectorAll('[data-game]').forEach(b=>b.setAttribute('aria-pressed',String(b.dataset.game===game)));$('selection-title').textContent={light:`Reflexos · ${lightLevels.length} níveis`,cut:'Corte certo · 100 níveis'}[game];let html='';for(let k=0;k<catalogue[game].length;k+=10){if(game==='light')html+=`<h3 class="stage-heading">${catalogue.light[k].stage} · ${catalogue.light[k].stageName}</h3>`;if(game==='cut')html+=`<h3 class="stage-heading">${['1 · Uma direção por vez','2 · Parábolas e vazios','3 · Ondas e recortes','4 · Curvas em S','5 · Silhuetas irregulares','6 · Vazios maiores','7 · Bordas abertas','8 · Recortes combinados','9 · Área que resta','10 · Síntese de formas'][k/10]}</h3>`;html+='<div class="level-group">'+catalogue[game].slice(k,k+10).map((l,j)=>{const i=k+j,done=completed.has(game+i),assisted=answerProgress.get(`${game}:${l.id??i}`).assisted,current=lastLevel[game]===i;return `<button class="level-tile ${done?'done':''}" data-level="${i}" aria-current="${current}" aria-label="Nível ${i+1}: ${l.name}${done?', concluído':''}${assisted?', assistido por gabarito':''}${current?', atual':''}"><span>${i+1}</span><small>${done?(assisted?'✓ com gabarito':'✓ concluído'):assisted?'com gabarito':current?'atual':'explorar'}</small></button>`;}).join('')+'</div>';}$('level-grid').innerHTML=html;$('level-grid').querySelectorAll('[data-level]').forEach(b=>b.onclick=()=>{level=Number(b.dataset.level);free=false;start();});$('selection-title').focus();}
 
 let phase='editing',evaluation=null,frame=0,animationToken=0,revealed=[],lightDistance=0,lightFired=[];
-function invalidate(){resultMotion.clear();cancelAnimationFrame(frame);animationToken++;phase='editing';evaluation=null;revealed=[];lightDistance=0;lightFired=[];scene.setAttribute('aria-busy','false');}
+function invalidate(){middleConfirm?.cancel();resultMotion.clear();cancelAnimationFrame(frame);animationToken++;phase='editing';evaluation=null;revealed=[];lightDistance=0;lightFired=[];scene.setAttribute('aria-busy','false');}
 function finishResult(){
  // Exploração parcial não é uma resposta errada nem libera o próximo nível.
  if(game==='light'&&!evaluation.ray.complete){phase='partial';scene.setAttribute('aria-busy','false');draw();return;}
@@ -146,15 +148,17 @@ function render(){
  document.querySelectorAll('[data-game]').forEach(b=>b.setAttribute('aria-pressed',String(b.dataset.game===game)));
  $('challenge').setAttribute('aria-pressed',String(!free));$('free').setAttribute('aria-pressed',String(free));
  $('game-kicker').textContent='EXPERIMENTO '+titles[game][0];$('game-title').textContent=titles[game][1];
- $('scene-title').textContent=titles[game][1];$('scene-desc').textContent=game==='light'?'Gire os espelhos pelas alças. Clique nas fontes, ou use Tab e Enter ou Espaço, para disparar um raio de cada vez. Confirmar todos dispara o conjunto. Editar limpa os rastros.':'Use os controles rotulados abaixo ou ao lado. Arraste os elementos ajustáveis; o teclado também funciona nos controles.';
+ $('scene-title').textContent=titles[game][1];$('scene-desc').textContent=game==='light'?'Gire os espelhos pelas alças. Clique nas fontes, ou use Tab e Enter ou Espaço, para disparar um raio de cada vez. Confirmar todos dispara o conjunto. Editar limpa os rastros.':'Use os controles rotulados abaixo ou ao lado. Arraste os elementos ajustáveis; o teclado também funciona nos controles. Clique na rodinha do mouse sobre o tabuleiro para avaliar a resposta.';
  $('level').innerHTML=catalogue[game].map((l,i)=>`<option value="${i}">${i+1}. ${l.name}</option>`).join('');$('level').value=level;$('level').disabled=free;
+ $('level-prev').hidden=free;$('level-next').hidden=free;$('level-prev').disabled=level===0;$('level-next').disabled=level===catalogue[game].length-1;
+ $('confirm').title=game==='cut'?'Também pode avaliar clicando na rodinha do mouse sobre o tabuleiro.':'';
  $('stage-label').textContent=free?'SEU ESPAÇO PARA EXPERIMENTAR':`DESAFIO ${String(level+1).padStart(2,'0')} / ${String(catalogue[game].length).padStart(2,'0')}`;
  $('mission').textContent=game==='light'?(free?'Crie um caminho com espelhos, paredes e um alvo. Clique na fonte para disparar ou em Confirmar todos.':'Gire os espelhos. Clique em cada fonte para disparar separadamente, ou em Confirmar todos. Os raios ficam no palco; editar limpa todos. Cada cor deve alcançar seu próprio alvo, sem cruzar outra cor. Os símbolos também identificam cada par. Alvos aceitam 22 unidades de tolerância; espelhos e paredes têm posições fixas.'):(free?'Escolha uma forma, uma meta e experimente seu corte.':`Deixe ${state.target}% da área no lado roxo. Tolerância: ±3 pontos percentuais, incluindo o limite.`);
  if(game==='light'&&!free)$('mission').textContent+=' '+(lightLevels[level].wallPurpose??[]).join(' ');
  if(game==='cut'&&!free)$('mission').textContent+=` No modo básico, mova somente na direção indicada (${cutLevels[level].basicDirection}°). Os controles livres ficam na aba Controles da curva.`;
  if(game==='cut')$('mission').textContent+=` Corte: ${state.family}. ${state.family==='Reta'?'':`Amplitude ${state.amplitude}${state.family==='Seno'?`; frequência ${state.frequency}`:''}.`}`;
  if(game==='cut'&&state.holes.length)$('mission').textContent+=` ${state.holes.length} espaço(s) vazio(s): não pertencem à área. Divida apenas a parte preenchida.`;
- $('hint').hidden=free;$('next').hidden=free;
+ $('hint').hidden=free;$('next').hidden=free;$('next').disabled=level===catalogue[game].length-1;
  const texts={light:'A cada trecho, o raio encontra a superfície mais próxima. Paredes são retângulos sólidos com espessura real e absorvem a luz; espelhos refletem segundo d′ = d − 2(d·n)n. O disco da mesma cor aceita o raio: raio geométrico de 22 unidades do palco. A primeira entrada no disco precisa estar antes da próxima superfície; uma parede vence o empate. Cada raio para em 12 reflexões ou 40 eventos, sem loop infinito. Portais mantêm a direção e pulam para o par; o salto não é um segmento físico. Cores diferentes não podem cruzar nem tocar trajetórias. Portais seletivos bloqueiam cores não permitidas. Os ângulos são medidos em coordenadas de tela, com y para baixo. A normal pontilhada é perpendicular ao espelho no ponto de impacto. As setas indicam a direção de propagação. As bordas são paredes. Evite sobrepor objetos: paredes têm prioridade em empates.',cut:'Retas usam recorte exato. Curvas são gráficos sem autointerseção, aproximados por segmentos de passo máximo 1; cada faixa é recortada geometricamente. Um limite de segunda derivada controla o erro de área, muito menor que a margem de jogo. O contorno roxo é calculado pelas interseções reais da linha com as arestas; sua área usa a fórmula do cadarço. A proporção exibida é área roxa útil ÷ área total útil. Buracos são subtraídos de ambas: espaços vazios nunca contam, mesmo quando atravessados pela curva. O ângulo controla a normal da linha: 0° produz um corte vertical. Deslocamento positivo aumenta a região roxa. Não usamos contagem de pixels. Acerto: erro absoluto de até 3 pontos percentuais, incluindo os dois limites; isso não é 3% relativo à meta.'};
  $('explanation').textContent=texts[game];applyControlsVisibility();updateAnswerButton();editor();draw();
 }
@@ -265,7 +269,9 @@ function draw(){
 }
 // O SVG mantém a captura do ponteiro enquanto o desenho interno é atualizado.
 function localPoint(e){const p=scene.createSVGPoint();p.x=e.clientX;p.y=e.clientY;return p.matrixTransform(scene.getScreenCTM().inverse());}
+middleConfirm=bindMiddleConfirm(scene,{enabled:()=>game==='cut'&&!document.querySelector('.lab').hidden&&!restartConfirmation.isOpen&&drag===null,onConfirm:confirmAnswer});
 scene.addEventListener('pointerdown',e=>{
+ if(game==='cut'&&e.button===1)return;
  const el=e.target.closest('[data-item]');if(!el)return;const id=el.dataset.item, rotate=e.target.closest('[data-rotate]');
  if(game==='light'){if(!free&&id==='target')return;if(!free&&state.objects[Number(id)].type==='wall')return;selected=id==='target'?'target':Number(id);editor();draw();if(!free&&!rotate)return;}
  if(game==='cut')cutDragOrigin={point:localPoint(e),travel:state.basicTravel??0,centerX:state.centerX,centerY:state.centerY,offset:state.offset,angle:state.angle};
@@ -285,12 +291,14 @@ scene.addEventListener('keydown',e=>{
  if(game==='cut'){if(id==='basic-cut'&&!free&&cutMode==='basic')setBasicTravel((state.basicTravel??0)+step);else if(id==='rotate-curve'&&allowed('rotate'))state.angle=(state.angle+step+360)%360;else if(id==='move-curve'){if(['ArrowLeft','ArrowRight'].includes(e.key)&&allowed('x'))state.centerX=clamp(state.centerX+step,-400,1200);if(['ArrowUp','ArrowDown'].includes(e.key)&&allowed('y'))state.centerY=clamp(state.centerY+(e.key==='ArrowUp'?-1:1),-400,860);}else if(allowed('offset'))state.offset=clamp(state.offset+step,-600,600);}editor();draw();drawing.querySelector(`[data-item="${id}"]`)?.focus();
 });
 document.querySelectorAll('[data-game]').forEach(b=>b.onclick=()=>{if(!catalogue[b.dataset.game])return;collection.hide();game=b.dataset.game;showSelection();});
-$('free').onclick=()=>{free=true;start();};$('challenge').onclick=()=>{free=false;showSelection();};$('level').onchange=e=>{level=Number(e.target.value);start();};$('reset').onclick=()=>{const revision=restartRevision;restartConfirmation.open({trigger:$('reset'),isCurrent:()=>revision===restartRevision&&!document.querySelector('.lab').hidden,onConfirm:start});};
+$('free').onclick=()=>{free=true;start();};$('challenge').onclick=()=>{free=false;showSelection();};$('level').onchange=e=>{level=Number(e.target.value);start();};$('reset').onclick=()=>{middleConfirm?.cancel();const revision=restartRevision;restartConfirmation.open({trigger:$('reset'),isCurrent:()=>revision===restartRevision&&!document.querySelector('.lab').hidden,onConfirm:start});};
 $('selection-free').onclick=()=>{free=true;level=lastLevel[game]??0;start();};$('back-selection').onclick=showSelection;
 $('toggle-controls').onclick=toggleControls;
 applyControlsVisibility();
 $('confirm').onclick=confirmAnswer;
-$('next').onclick=()=>{level=(level+1)%catalogue[game].length;start();};$('hint').onclick=()=>{$('hint-text').textContent=game==='cut'?'Mova a linha até se aproximar da meta. A porcentagem depende da área, não do comprimento dos lados.':catalogue[game][level].hint;};
+function navigateLevel(delta){const next=level+delta;if(free||next<0||next>=catalogue[game].length)return;level=next;start();}
+$('level-prev').onclick=()=>navigateLevel(-1);$('level-next').onclick=()=>navigateLevel(1);
+$('next').onclick=()=>navigateLevel(1);$('hint').onclick=()=>{$('hint-text').textContent=game==='cut'?'Mova a linha até se aproximar da meta. A porcentagem depende da área, não do comprimento dos lados.':catalogue[game][level].hint;};
 showSelection();
 
 const collection=initCollection({hideOriginal(){restartConfirmation.dismiss();restartRevision++;invalidate();document.querySelector('.lab').hidden=true;$('selection').hidden=true;}});
