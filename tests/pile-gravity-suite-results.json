@@ -1,0 +1,147 @@
+[
+  {
+    "test": "curiosity-brand-tests.mjs",
+    "exit": 1,
+    "seconds": 0.15
+  },
+  {
+    "test": "decor-piles-tests.mjs",
+    "exit": 0,
+    "seconds": 0.09
+  },
+  {
+    "test": "direct-actions-tests.mjs",
+    "exit": 0,
+    "seconds": 0.13
+  },
+  {
+    "test": "direct-hints-tests.mjs",
+    "exit": 0,
+    "seconds": 1.27
+  },
+  {
+    "test": "direct-input-independent-tests.mjs",
+    "exit": 0,
+    "seconds": 0.1
+  },
+  {
+    "test": "endless-campaign-tests.mjs",
+    "exit": 1,
+    "seconds": 0.08
+  },
+  {
+    "test": "endless-collection-tests.mjs",
+    "exit": 0,
+    "seconds": 1.51
+  },
+  {
+    "test": "endless-collection-ui-tests.mjs",
+    "exit": 0,
+    "seconds": 0.37
+  },
+  {
+    "test": "header-tree-frame-tests.mjs",
+    "exit": 0,
+    "seconds": 0.07
+  },
+  {
+    "test": "home-copy-tests.mjs",
+    "exit": 0,
+    "seconds": 0.06
+  },
+  {
+    "test": "level-shortcuts-tests.mjs",
+    "exit": 0,
+    "seconds": 0.58
+  },
+  {
+    "test": "middle-confirm-tests.mjs",
+    "exit": 0,
+    "seconds": 0.07
+  },
+  {
+    "test": "pacto-check-tests.mjs",
+    "exit": 0,
+    "seconds": 0.19
+  },
+  {
+    "test": "pacto-feedback-tests.mjs",
+    "exit": 0,
+    "seconds": 0.23
+  },
+  {
+    "test": "pacto-live-tests.mjs",
+    "exit": 0,
+    "seconds": 0.12
+  },
+  {
+    "test": "pile-gravity-independent-tests.mjs",
+    "exit": 0,
+    "seconds": 0.08
+  },
+  {
+    "test": "pile-seam-tests.mjs",
+    "exit": 0,
+    "seconds": 0.07
+  },
+  {
+    "test": "platform-isolation-tests.mjs",
+    "exit": 0,
+    "seconds": 0.09
+  },
+  {
+    "test": "restart-collection-tests.mjs",
+    "exit": 0,
+    "seconds": 0.27
+  },
+  {
+    "test": "restart-original-tests.mjs",
+    "exit": 0,
+    "seconds": 0.55
+  },
+  {
+    "test": "visual-layout-tests.mjs",
+    "exit": 0,
+    "seconds": 0.06
+  },
+  {
+    "test": "direct-ui-acceptance.mjs",
+    "exit": 0,
+    "seconds": 0.36
+  },
+  {
+    "test": "endless-original-generators.mjs",
+    "exit": 0,
+    "seconds": 6.24
+  },
+  {
+    "test": "endless-original-ui.mjs",
+    "exit": 0,
+    "seconds": 0.56
+  },
+  {
+    "test": "corte-v2-geometry.mjs",
+    "exit": 0,
+    "seconds": 1.33
+  },
+  {
+    "test": "endless-original-resume.mjs light",
+    "exit": 0,
+    "seconds": 0.41
+  },
+  {
+    "test": "endless-original-resume.mjs light solved",
+    "exit": 0,
+    "seconds": 0.39
+  },
+  {
+    "test": "endless-original-resume.mjs cut",
+    "exit": 0,
+    "seconds": 0.49
+  },
+  {
+    "test": "endless-original-resume.mjs cut solved",
+    "exit": 0,
+    "seconds": 0.4
+  }
+]

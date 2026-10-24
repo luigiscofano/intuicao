@@ -1,0 +1,17 @@
+{
+  "scope": "Owner-marked outward curves above and below selection frames only; existing header and all layout metrics preserved.",
+  "base_commit": "344319baa5fa06d0e562ed563c0ac07fd77b49b6",
+  "priorCssSHA256": "19be436331ce329bc9dd04974bfa67091dffeafc81d362f9d4139ec3e7ba9214",
+  "afterCssSHA256": "23b2067d0539a5b9271c375dd107287f22af3498f2eba88bf99404939ee29f28",
+  "css_insertion": "\n/* Selection-frame branches and roots: the owner-drawn outward curves stay\n   entirely in the outer gutters. They never enter tiles or change box metrics. */\n:is(#selection, #collection > .level-screen){position:relative;--frame-flare:max(38px,calc((100vw - 1280px)/2 + 28px))}\n:is(#selection, #collection > .level-screen)::before,\n:is(#selection, #collection > .level-screen)::after{content:\"\";position:absolute;left:calc(-1 * var(--frame-flare));width:calc(100% + 2 * var(--frame-flare));pointer-events:none;user-select:none;background:url(\"platform-assets/content-frame-curve-left.svg\") left/var(--frame-flare) 100% no-repeat,url(\"platform-assets/content-frame-curve-right.svg\") right/var(--frame-flare) 100% no-repeat}\n:is(#selection, #collection > .level-screen)::before{top:-62px;height:62px;transform:rotate(180deg)}\n:is(#selection, #collection > .level-screen)::after{bottom:-260px;height:260px}\n@media(max-width:760px){\n :is(#selection, #collection > .level-screen){--frame-flare:14px}\n :is(#selection, #collection > .level-screen)::before{top:-28px;height:28px}\n :is(#selection, #collection > .level-screen)::after{bottom:-196px;height:196px}\n}\n",
+  "assets": [
+    {
+      "file": "content-frame-curve-left.svg",
+      "sha256": "d28d972590f8d3fda45de0361540a4ee091a4ad8387bec78e74e62d60977f096"
+    },
+    {
+      "file": "content-frame-curve-right.svg",
+      "sha256": "7f5cdcf4a1ce03a34640686a65cccd58e3cb6d7c3bf986b7b3aaec21fd5afda4"
+    }
+  ]
+}
