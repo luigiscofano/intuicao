@@ -4,14 +4,14 @@ Laboratório educativo de puzzles, produzido com auxílio de OpenAI/Codex a part
 
 ## Catálogo atual · 24/10/2026
 
-- Reflexos: 100 níveis de luz, espelhos, paredes, cores e portais.
+- Reflexos: 200 níveis de luz, espelhos, paredes, cores e portais.
 - Corte certo: 100 níveis de proporções, curvas e áreas com vazios.
 - ELO: 200 níveis de regiões e circuitos.
 - PRUMO: 200 níveis de peças e centros de massa.
 - PACTO: 200 níveis de duplas e dedução.
 - DESVIO: duelo local, bot ou treino; 16 mapas, sem campanha numerada.
 
-Total: 800 níveis de campanha e um duelo. NEXO e Equilíbrio foram retirados do site; PRUMO é outro jogo e permanece. Os registros antigos do navegador e os backups históricos não são apagados. Não misture arquivos de versões anteriores com a versão atual.
+Total: 900 níveis de campanha e um duelo. NEXO e Equilíbrio foram retirados do site; PRUMO é outro jogo e permanece. Os registros antigos do navegador e os backups históricos não são apagados. Não misture arquivos de versões anteriores com a versão atual.
 
 ## Jogar
 
@@ -35,11 +35,17 @@ Sem cadastro, ranking, coleta de dados pessoais ou upload automático de jogadas
 
 Sliders, campos numéricos e teclado complementam o arraste; estados e resultados têm anúncios acessíveis. A dificuldade é uma progressão editorial/estrutural, não uma alegação de calibração por testes com jogadores. Testes de motores e DOM simulado não substituem validação interativa em navegador real.
 
+## Reflexos v3
+
+A campanha tem 200 níveis em 20 capítulos, com IDs novos light-v3. Soluções e fichas completas estão em [Reflexos v3](REFLEXOS-V3.md). Os registros anteriores são preservados, sem marcar os novos desafios como resolvidos. A física, os controles, o visual e os demais jogos foram preservados.
+
 ## Documentação
 
+- [Reflexos v3: campanha e limites](REFLEXOS-V3.md)
+- [Validação final de Reflexos](QA-REFLEXOS-V3.md)
 - [Coleção lógica e regras](EXPANSAO.md)
 - [Gabaritos e resultados](GABARITOS.md)
-- [Corte v2: controles, geometria e validação](CORTE-V2-E-CATALOGO-800.md)
+- [Corte v2: controles e geometria (registro histórico)](CORTE-V2-E-CATALOGO-800.md)
 - [Catálogo atual e retirada de jogos](CATALOGO-ATUAL.md)
 - [Registro histórico de validação da expansão](VALIDACAO-EXPANSAO.md)
 
@@ -49,4 +55,4 @@ Os módulos de geometria, níveis, interface e resultados ficam separados para p
 
 ELO, PRUMO, PACTO e DESVIO agora têm edição direta por mouse, toque e teclado, histórico transacional, controles de zoom/deslocamento e atalhos junto ao tabuleiro. Veja [Controles por jogo](CONTROLES-DIRETOS.md) e [Matriz de implementação e testes](INTERACAO-DIRETA-MATRIZ.md).
 
-Nos puzzles, preencher o tabuleiro não revela vitória automaticamente: use **Confirmar resposta**. Dicas têm três etapas e aplicação explícita, sem consultar um gabarito para fabricar a explicação. O progresso é local a este navegador, sem sincronização prometida. NEXO e Equilíbrio permanecem fora do catálogo; Corte Certo e Reflexos não foram alterados nesta revisão.
+Nos puzzles, preencher o tabuleiro não revela vitória automaticamente: use **Confirmar resposta**. Dicas têm três etapas e aplicação explícita, sem consultar um gabarito para fabricar a explicação. O progresso é local a este navegador, sem sincronização prometida. NEXO e Equilíbrio permanecem fora do catálogo; Corte Certo e Reflexos não foram alterados na revisão de interação direta; a atualização posterior Reflexos v3 modifica exclusivamente o catálogo de Reflexos.

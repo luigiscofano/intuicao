@@ -6,7 +6,7 @@ Cada envio incorreto pelo botão **Confirmar resposta**, inclusive um tabuleiro 
 
 Recomeçar, trocar de fase e recarregar a página não apagam o desbloqueio. Os registros são locais ao navegador e separados por jogo e identificador da fase, incluindo os identificadores ELO v2 e PRUMO v2. Se o navegador bloquear o armazenamento, o desbloqueio funciona enquanto a página permanecer aberta, mas não é garantido após fechá-la. O progresso não sincroniza entre aparelhos. Limpar os dados do site apaga também esses registros.
 
-Os 800 níveis dos cinco puzzles possuem gabaritos certificados. Os arquivos de solução acompanham o código e funcionam sem depender do Drive. O bloqueio é uma regra da interface, não uma proteção criptográfica contra inspeção do código.
+Os 900 níveis dos cinco puzzles possuem gabaritos certificados. Os arquivos de solução acompanham o código e funcionam sem depender do Drive. O bloqueio é uma regra da interface, não uma proteção criptográfica contra inspeção do código.
 
 DESVIO é um duelo, não um puzzle com resposta única. Não recebe gabarito de fase: celebra o vencedor da partida local e distingue a sua vitória da vitória do bot. Análise e treino já existentes permanecem disponíveis.
 
@@ -30,3 +30,7 @@ Os testes automatizados usam motores puros e uma simulação determinística do 
 ## Catálogo atual
 
 NEXO e Equilíbrio não são selecionáveis nem aceitos como jogos importados. Os dados históricos locais não são removidos. Os novos níveis de Corte usam IDs corte-v2 e o gabarito monta uma solução alcançável no modo básico, restrito a uma direção.
+
+## Reflexos v3
+
+Os 200 níveis atuais usam IDs light-v3-1 a light-v3-200 e soluções de referência no próprio catálogo. Os registros antigos permanecem armazenados e não são convertidos. O teste app-flow percorre os 200 Reflexos e 100 Corte, incluindo três erros, desbloqueio, aplicação sem vitória automática, confirmação assistida e persistência.

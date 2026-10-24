@@ -2,7 +2,7 @@
 
 ## Escopo
 
-O site oferece seis jogos: Reflexos (100 níveis), Corte certo (100), ELO (200), PRUMO (200), PACTO (200) e DESVIO (duelo sem campanha). Total de campanha: 800 níveis. O jogo de gangorra Equilíbrio e o jogo NEXO foram retirados da navegação e dos caminhos de ativação. PRUMO não foi retirado.
+O site oferece seis jogos: Reflexos (200 níveis), Corte certo (100), ELO (200), PRUMO (200), PACTO (200) e DESVIO (duelo sem campanha). Total de campanha: 900 níveis. O jogo de gangorra Equilíbrio e o jogo NEXO foram retirados da navegação e dos caminhos de ativação. PRUMO não foi retirado.
 
 O texto “Não é sobre acertar de primeira. É sobre perceber o que muda quando você muda alguma coisa.” e o símbolo associado foram removidos. O rodapé de créditos e o acesso à documentação permanecem.
 
@@ -18,6 +18,10 @@ O texto “Não é sobre acertar de primeira. É sobre perceber o que muda quand
 ## Preservação
 
 As chaves antigas de progresso, respostas e sessões do navegador não são apagadas ou convertidas em conclusões dos jogos atuais. Sessões históricas não pertencentes ao catálogo ativo conservam inclusive seus históricos de desfazer/refazer. Backups anteriores são históricos e não fazem parte da navegação atual. O armazenamento continua apenas local e não sincroniza entre aparelhos.
+
+## Evidência histórica da retirada de jogos
+
+As referências abaixo descrevem a revisão anterior de 800 níveis. No pacote atual, execute TESTAR.sh; as suítes históricas preservadas não devem ser confundidas com a validação da campanha Reflexos v3.
 
 ## Evidência desta mudança
 
