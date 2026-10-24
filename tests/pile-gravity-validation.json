@@ -1,0 +1,11 @@
+{
+  "total": 4086,
+  "fail": 0,
+  "bounds": 0,
+  "maxSeconds": 1.8333333333333333,
+  "maxFrameSpread": 0.4653584389731691,
+  "failures": [],
+  "module_sha256": "ae9517fb518fe814255ceec973c8a7f29de97c7abd5fb767569b0369145438d6",
+  "cases": "227 original particle positions; scales 3 and 4; mouse speeds 70, 500, 1500; FPS 30, 60, 120; isolated floor support; 30 second maximum simulation per case",
+  "interpretation": "Approximate decorative physics validation, not a physically accurate simulator claim."
+}

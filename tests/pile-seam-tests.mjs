@@ -16,7 +16,13 @@ for(const change of manifest.svg_changes){
  assert.equal(sha(original),change.prior_sha256,'All original leaves preserved without changed seeds/timing or positions');
  assert.ok(!/filter=|clipPath|mask=/.test(change.insertion),'No blur or hard-edged mask');
 }
-const source=fs.readFileSync(new URL('../dist/decor-piles.mjs',import.meta.url),'utf8'),c=manifest.module_change;
+const gravity=JSON.parse(fs.readFileSync(new URL('./pile-gravity-authorized-change.json',import.meta.url)));
+const currentSource=fs.readFileSync(new URL('../dist/decor-piles.mjs',import.meta.url),'utf8');
+assert.equal(currentSource,gravity.module_change.after,'Exact authorized gravity revision');
+assert.equal(sha(currentSource),gravity.module_change.sha256);
+assert.ok(currentSource.includes(manifest.module_change.after),'Gravity still excludes static seam copies');
+const source=currentSource.replace(gravity.module_change.after,gravity.module_change.before),c=manifest.module_change;
+assert.equal(sha(source),gravity.module_change.prior_sha256);
 assert.equal(sha(source),c.sha256);assert.equal(source.split(c.after).length-1,1);assert.equal(sha(source.replace(c.after,c.before)),c.prior_sha256,'Only static seam copy exclusion changes in physics module');
 assert.ok(c.after.includes("!n.hasAttribute('data-wrap-copy')"),'Continuity copies cannot duplicate interactive particles');
 console.log('PASS natural pile edges: periodic seams and gradual live-leaf opacity; original paths/positions/physics preserved.');

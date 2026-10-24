@@ -1,0 +1,11 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1280 128" preserveAspectRatio="none" fill="none">
+  <!-- Quiet curved trunks live only in the header gutters; branch tips meet the existing canopy. -->
+  <path d="M10 0C12 13 28 16 24 33C19 53 7 58 7 79V101C7 116 17 126 34 126H1246C1263 126 1273 116 1273 101V79C1273 58 1261 53 1256 33C1252 16 1268 13 1270 0"
+        stroke="#a9b395" stroke-width="1.35" vector-effect="non-scaling-stroke"/>
+  <path d="M5 0C6 17 22 20 18 34C13 53 2 59 2 80V102C2 120 14 128 33 128H1247C1266 128 1278 120 1278 102V80C1278 59 1267 53 1262 34C1258 20 1274 17 1275 0"
+        stroke="#dce2d1" stroke-width="2" vector-effect="non-scaling-stroke"/>
+  <path d="M24 31C30 20 48 24 57 14C61 9 63 4 67 0M18 34C29 15 44 22 52 10C55 5 56 2 58 0M1256 31C1250 20 1232 24 1223 14C1219 9 1217 4 1213 0M1262 34C1251 15 1236 22 1228 10C1225 5 1224 2 1222 0"
+        stroke="#bec6aa" stroke-width=".85" vector-effect="non-scaling-stroke"/>
+  <path d="M8 81C10 61 24 49 27 37M1272 81C1270 61 1256 49 1253 37"
+        stroke="#c6b995" stroke-width=".7" vector-effect="non-scaling-stroke"/>
+</svg>

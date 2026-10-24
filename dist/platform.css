@@ -196,3 +196,11 @@ body > .platform-leaf-layer.platform-piles-interactive::after{visibility:hidden}
 body > .platform-leaf-layer.platform-piles-interactive > .platform-pile{visibility:hidden}
 body > .platform-leaf-layer > .platform-pile-surface{position:absolute;bottom:0;left:0;width:100%;height:112px;overflow:hidden;pointer-events:none;user-select:none;shape-rendering:crispEdges}
 @media(max-width:760px){body > .platform-leaf-layer > .platform-pile-surface{height:84px}}
+
+/* Header-only tree frame: curved gutter trunks connect to the existing canopy.
+   Pure paint: no padding, border widths, text metrics, event or game changes. */
+body > header{position:relative;border-bottom-color:transparent;box-shadow:none}
+body > header::before{content:"";position:absolute;inset:-28px 0 -1px;pointer-events:none;user-select:none;background:url("platform-assets/header-tree-frame.svg") center/100% 100% no-repeat}
+@media(max-width:760px){
+ body > header::before{top:-20px}
+}

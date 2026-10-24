@@ -13,7 +13,21 @@ const incidenceChange=JSON.parse(fs.readFileSync(new URL('./leaf-incidence-autho
 const growthChange=JSON.parse(fs.readFileSync(new URL('./growing-piles-authorized-change.json',import.meta.url)));
 const speedChange=JSON.parse(fs.readFileSync(new URL('./leaf-speed-authorized-change.json',import.meta.url)));
 const physicsChange=JSON.parse(fs.readFileSync(new URL('./pile-physics-authorized-change.json',import.meta.url)));
+const gravityChange=JSON.parse(fs.readFileSync(new URL('./pile-gravity-authorized-change.json',import.meta.url)));
+const headerFrameChange=JSON.parse(fs.readFileSync(new URL('./header-tree-frame-authorized-change.json',import.meta.url)));
 const sha=s=>crypto.createHash('sha256').update(s).digest('hex');
+for(const [name,hash] of Object.entries(gravityChange.preserved_dist_sha256)){
+ let bytes=fs.readFileSync(new URL('../'+name,import.meta.url));
+ if(name==='dist/platform.css'){
+  const css=bytes.toString();
+  assert.equal(css.split(headerFrameChange.css_insertion).length-1,1,'Exact separately authorized header frame');
+  assert.equal(sha(css),headerFrameChange.afterCssSHA256);
+  bytes=Buffer.from(css.replace(headerFrameChange.css_insertion,''));
+  assert.equal(sha(bytes),headerFrameChange.priorCssSHA256);
+ }
+ assert.equal(sha(bytes),hash,'Gravity revision preserves every other existing dist file: '+name);
+}
+for(const asset of headerFrameChange.assets)assert.equal(sha(fs.readFileSync(new URL('../dist/platform-assets/'+asset.file,import.meta.url))),asset.sha256,'Exact new header frame asset');
 for(const [name,hash] of Object.entries(baseline)){
  let bytes=fs.readFileSync(new URL('../dist/'+name,import.meta.url));
  if(name==='index.html'){
@@ -59,6 +73,7 @@ const edgeChange=JSON.parse(fs.readFileSync(new URL('./canopy-edge-authorized-ch
 const fineEdgeChange=JSON.parse(fs.readFileSync(new URL('./fine-edge-authorized-change.json',import.meta.url)));
 const compactIntroChange=JSON.parse(fs.readFileSync(new URL('./compact-intro-authorized-change.json',import.meta.url)));
 let physicsPlatformSource=fs.readFileSync(new URL('../dist/platform.css',import.meta.url),'utf8');
+physicsPlatformSource=physicsPlatformSource.replace(headerFrameChange.css_insertion,'');
 const naturalCanopyChange=JSON.parse(fs.readFileSync(new URL('./natural-canopy-authorized-change.json',import.meta.url)));
 assert.equal(physicsPlatformSource.split(naturalCanopyChange.css_after).length-1,1,'One exact authorized natural canopy URL');
 physicsPlatformSource=physicsPlatformSource.replace(naturalCanopyChange.css_after,naturalCanopyChange.css_before);
@@ -77,7 +92,11 @@ assert.equal(sha(physicsPlatformSource),compactIntroChange.priorCssSHA256,'Only 
 assert.equal(physicsPlatformSource.split(physicsChange.css_insertion).length-1,1,'Exact isolated interactive floor CSS');
 const fineEdgePlatformSource=physicsPlatformSource.replace(physicsChange.css_insertion,'');
 const pileSeamChange=JSON.parse(fs.readFileSync(new URL('./pile-seam-authorized-change.json',import.meta.url)));
-const pileModuleSource=fs.readFileSync(new URL('../dist/decor-piles.mjs',import.meta.url),'utf8');
+let pileModuleSource=fs.readFileSync(new URL('../dist/decor-piles.mjs',import.meta.url),'utf8');
+assert.equal(pileModuleSource,gravityChange.module_change.after,'Exact authorized gravity module');
+assert.equal(sha(pileModuleSource),gravityChange.module_change.sha256);
+pileModuleSource=pileModuleSource.replace(gravityChange.module_change.after,gravityChange.module_change.before);
+assert.equal(sha(pileModuleSource),gravityChange.module_change.prior_sha256,'Historical renderer preserved by exact reversal');
 assert.equal(sha(pileModuleSource),pileSeamChange.module_change.sha256,'Exact approved seam-aware renderer');
 assert.equal(pileModuleSource.split(pileSeamChange.module_change.after).length-1,1,'One exact static-copy exclusion');
 const priorPileModule=pileModuleSource.replace(pileSeamChange.module_change.after,pileSeamChange.module_change.before);

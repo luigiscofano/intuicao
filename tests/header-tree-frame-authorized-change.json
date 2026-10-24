@@ -1,0 +1,13 @@
+{
+  "scope": "Only the pictured site header: curved framing connected to existing canopy, no layout metrics changed.",
+  "base_commit": "1e28581a797bb0485c70e2e01c1d1d7ca95a3079",
+  "priorCssSHA256": "3981cb5bc005379dec0be87c55fd280966805a831edb37bd89ad2226eb23abbe",
+  "afterCssSHA256": "19be436331ce329bc9dd04974bfa67091dffeafc81d362f9d4139ec3e7ba9214",
+  "css_insertion": "\n/* Header-only tree frame: curved gutter trunks connect to the existing canopy.\n   Pure paint: no padding, border widths, text metrics, event or game changes. */\nbody > header{position:relative;border-bottom-color:transparent;box-shadow:none}\nbody > header::before{content:\"\";position:absolute;inset:-28px 0 -1px;pointer-events:none;user-select:none;background:url(\"platform-assets/header-tree-frame.svg\") center/100% 100% no-repeat}\n@media(max-width:760px){\n body > header::before{top:-20px}\n}\n",
+  "assets": [
+    {
+      "file": "header-tree-frame.svg",
+      "sha256": "2905f656215c19c7c95ddae3357e02886aed8f8262e922ff23f0cecf19aaeaa9"
+    }
+  ]
+}
