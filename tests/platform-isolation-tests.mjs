@@ -10,11 +10,14 @@ const leafChange=JSON.parse(fs.readFileSync(new URL('./leaf-layer-authorized-cha
 const identityChanges=JSON.parse(fs.readFileSync(new URL('./curiosity-brand-authorized-changes.json',import.meta.url)));
 const canopyChange=JSON.parse(fs.readFileSync(new URL('./document-canopy-authorized-change.json',import.meta.url)));
 const incidenceChange=JSON.parse(fs.readFileSync(new URL('./leaf-incidence-authorized-change.json',import.meta.url)));
+const growthChange=JSON.parse(fs.readFileSync(new URL('./growing-piles-authorized-change.json',import.meta.url)));
 const sha=s=>crypto.createHash('sha256').update(s).digest('hex');
 for(const [name,hash] of Object.entries(baseline)){
  let bytes=fs.readFileSync(new URL('../dist/'+name,import.meta.url));
  if(name==='index.html'){
   let html=bytes.toString();
+  assert.equal(html.split(growthChange.html_after).length-1,1,'Exact persistent ornamental pile spans');
+  html=html.replace(growthChange.html_after,growthChange.html_before);
   assert.equal(html.split(incidenceChange.html_after).length-1,1,'Exact approved higher incidence');
   html=html.replace(incidenceChange.html_after,incidenceChange.html_before);
   assert.equal(html.split(canopyChange.html_after).length-1,1,'Exact approved mixed decoration');
@@ -46,7 +49,10 @@ for(const [name,hash] of Object.entries(baseline)){
 }
 const fullCanopyChange=JSON.parse(fs.readFileSync(new URL('./fullwidth-canopy-authorized-change.json',import.meta.url)));
 const variedChange=JSON.parse(fs.readFileSync(new URL('./varied-foliage-authorized-change.json',import.meta.url)));
-const actualPlatformSource=fs.readFileSync(new URL('../dist/platform.css',import.meta.url),'utf8');
+const growingPlatformSource=fs.readFileSync(new URL('../dist/platform.css',import.meta.url),'utf8');
+assert.equal(growingPlatformSource.split(growthChange.css_after).length-1,1,'Exact approved finite pile growth');
+const actualPlatformSource=growingPlatformSource.replace(growthChange.css_after,growthChange.css_before).replace(growthChange.asset_after,growthChange.asset_before);
+assert.equal(sha(actualPlatformSource),growthChange.prior_css_sha256,'All earlier CSS including falling leaves unchanged');
 assert.equal(actualPlatformSource.split(variedChange.css_insertion).length-1,1,'Exact approved document-floor decoration');
 const currentPlatformSource=actualPlatformSource.replace(variedChange.css_insertion,'').replace(variedChange.asset_after,variedChange.asset_before);
 assert.equal(sha(currentPlatformSource),variedChange.prior_css_sha256,'Falling leaves and all previous CSS byte-identical');
@@ -62,7 +68,10 @@ const fullCSS=fs.readFileSync(new URL('../dist/platform.css',import.meta.url),'u
 // Only the document-anchored inert ornamental sibling may animate. Historical hashes remain.
 const leafFrames=fullCSS.match(/@keyframes platform-leaf-fall\{(?:[^{}]*\{[^{}]*\})+\s*\}/g)??[];
 assert.equal(leafFrames.length,1,'Exactly one isolated decorative leaf animation');
-const css=fullCSS.replace(leafFrames[0],'');
+const pileFrames=fullCSS.match(/@keyframes platform-pile-arrive\{(?:[^{}]*\{[^{}]*\})+\s*\}/g)??[];
+assert.equal(pileFrames.length,1,'One finite opacity-only pile animation');
+assert.ok(!pileFrames[0].includes('transform'));
+const css=fullCSS.replace(leafFrames[0],'').replace(pileFrames[0],'');
 assert.ok(!css.includes('--'),'No shared or inherited custom property changes');
 assert.ok(!/@(?:import|keyframes)/.test(css),'No external imports or unapproved keyframes');
 assert.ok(!/\b(?:filter|zoom|transform)\s*:/.test(css.replaceAll('transform:none;','')),'No game container transforms');
@@ -71,8 +80,8 @@ for(const [,raw,body] of selectors){
  const s=raw.trim();
  if(s==='body:has(> .platform-leaf-layer)'){assert.equal(body,'position:relative');continue;}
  if(/animation\s*:/.test(body)){
-  assert.ok(['body > .platform-leaf-layer > .platform-leaf','body > .platform-leaf-foreground > .platform-leaf'].includes(s),'Only decorative siblings animate');
-  assert.ok(/animation:(?:platform-leaf-fall|none)/.test(body),'Only approved leaf animation');
+  assert.ok(['body > .platform-leaf-layer > .platform-leaf','body > .platform-leaf-foreground > .platform-leaf','body > .platform-leaf-layer > .platform-pile'].includes(s),'Only decorative siblings animate');
+  assert.ok(/animation:(?:platform-leaf-fall|platform-pile-arrive|none)/.test(body),'Only approved leaf animation');
  }
  assert.ok(s.startsWith('body > .platform-leaf-layer')||s.startsWith('body > .platform-leaf-foreground')||s.startsWith('body > header')||s.startsWith('body > footer')||s.startsWith('#main > .intro')||s.startsWith('#main > .games')||s.startsWith(':where(body:not(:has(.lab:not([hidden]), #collection:not([hidden]) > .collection-lab)))')||s.startsWith(':is(#selection, #collection > .level-screen)'),`Unexpected unscoped selector: ${s}`);
 }
