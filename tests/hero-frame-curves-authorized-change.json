@@ -1,0 +1,17 @@
+{
+  "scope": "Move upper curves from level selection to hero title card and fill white; lower curves/header/game untouched.",
+  "base_commit": "7b613befdd7c9bbde06b13f411a3d560cec98b7c",
+  "priorCssSHA256": "45207e929a4db4139c916a7d1fb5540998fc1a6a16a69aed68c5050393eaa26a",
+  "afterCssSHA256": "3bb9630a0b2681ff48434e71a7a01b5bb1aaa5ac193b7e80787a189a14f8bb41",
+  "css_insertion": "\n/* Move the upper branches to the title card; white fills the curved interior.\n   The lower roots and every existing header/game metric remain unchanged. */\n:is(#selection, #collection > .level-screen)::before{content:none}\n:where(body:not(:has(.lab:not([hidden]), #collection:not([hidden]) > .collection-lab))) #main > .intro{--hero-flare:max(14px,calc((100vw - 1280px)/2 + 4px))}\n:where(body:not(:has(.lab:not([hidden]), #collection:not([hidden]) > .collection-lab))) #main > .intro::before{background-color:#fff}\n:where(body:not(:has(.lab:not([hidden]), #collection:not([hidden]) > .collection-lab))) #main > .intro::after{content:\"\";position:absolute;top:8px;left:calc(-24px - var(--hero-flare));width:calc(100% + 48px + 2 * var(--hero-flare));height:62px;background:url(\"platform-assets/hero-frame-curve-left.svg\") left/var(--hero-flare) 100% no-repeat,url(\"platform-assets/hero-frame-curve-right.svg\") right/var(--hero-flare) 100% no-repeat;pointer-events:none;user-select:none;z-index:-1}\n@media(max-width:760px){\n :where(body:not(:has(.lab:not([hidden]), #collection:not([hidden]) > .collection-lab))) #main > .intro{--hero-flare:6px}\n :where(body:not(:has(.lab:not([hidden]), #collection:not([hidden]) > .collection-lab))) #main > .intro::after{top:6px;left:calc(-8px - var(--hero-flare));width:calc(100% + 16px + 2 * var(--hero-flare));height:28px}\n}\n",
+  "assets": [
+    {
+      "file": "hero-frame-curve-left.svg",
+      "sha256": "0507968edf0b6a89f47a5c135b46f3c10546af3dca489d6f3bfdb9b7dd4300f7"
+    },
+    {
+      "file": "hero-frame-curve-right.svg",
+      "sha256": "9fbaa2bb48e821658d37cd0e57548fd09432801000991dfe36a3e33e7ea6da31"
+    }
+  ]
+}

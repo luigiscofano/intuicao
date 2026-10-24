@@ -217,3 +217,14 @@ body > header::before{content:"";position:absolute;inset:-28px 0 -1px;pointer-ev
  :is(#selection, #collection > .level-screen)::before{top:-28px;height:28px}
  :is(#selection, #collection > .level-screen)::after{bottom:-196px;height:196px}
 }
+
+/* Move the upper branches to the title card; white fills the curved interior.
+   The lower roots and every existing header/game metric remain unchanged. */
+:is(#selection, #collection > .level-screen)::before{content:none}
+:where(body:not(:has(.lab:not([hidden]), #collection:not([hidden]) > .collection-lab))) #main > .intro{--hero-flare:max(14px,calc((100vw - 1280px)/2 + 4px))}
+:where(body:not(:has(.lab:not([hidden]), #collection:not([hidden]) > .collection-lab))) #main > .intro::before{background-color:#fff}
+:where(body:not(:has(.lab:not([hidden]), #collection:not([hidden]) > .collection-lab))) #main > .intro::after{content:"";position:absolute;top:8px;left:calc(-24px - var(--hero-flare));width:calc(100% + 48px + 2 * var(--hero-flare));height:62px;background:url("platform-assets/hero-frame-curve-left.svg") left/var(--hero-flare) 100% no-repeat,url("platform-assets/hero-frame-curve-right.svg") right/var(--hero-flare) 100% no-repeat;pointer-events:none;user-select:none;z-index:-1}
+@media(max-width:760px){
+ :where(body:not(:has(.lab:not([hidden]), #collection:not([hidden]) > .collection-lab))) #main > .intro{--hero-flare:6px}
+ :where(body:not(:has(.lab:not([hidden]), #collection:not([hidden]) > .collection-lab))) #main > .intro::after{top:6px;left:calc(-8px - var(--hero-flare));width:calc(100% + 16px + 2 * var(--hero-flare));height:28px}
+}
