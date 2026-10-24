@@ -119,3 +119,7 @@ Os 100 níveis foram reorganizados para introduzir gradualmente dois e três dis
 ## Refinamento de fontes e colisões — 24/10/2026
 
 Fontes restauradas: círculo preto com bico e disco colorido menor. Os 100 níveis foram conferidos com folga mínima de 60 unidades entre o envelope completo de rotação de cada espelho/alça e o bico de qualquer fonte (centros ≥148). As trajetórias param na colisão e não mostram reflexões, portais ou alvos posteriores; trechos eliminados não geram novos choques. Um terceiro raio também para se tocar um rastro já iluminado, sem reativar raios parados. A animação revela o impacto quando as frentes envolvidas alcançam o ponto. As regras, cores e portais seguem a mesma progressão.
+
+## Celebração de vitória
+
+Vitória preserva as animações de canto e acrescenta borda verde, zoom suave de 1,8% e PARABÉNS! em arco com pequenos sparkles, durante 1,1 segundo. Derrota permanece rápida (300 ms), sem alteração. Movimento reduzido mantém a mensagem e a borda estáticas. Testes: 31.081 verificações; CSS e interação ainda não executados em navegador real nesta revisão.
