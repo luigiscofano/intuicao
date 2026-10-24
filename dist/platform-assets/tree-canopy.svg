@@ -1,0 +1,7 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="420" height="22" viewBox="0 0 420 22">
+<!-- Original small botanical canopy sprites, three distance planes. -->
+<g fill="#c8d5bd" opacity=".48"><path d="M0 0h142c-8 7-17 12-28 9-10 10-25 9-34 3-12 9-24 10-35 3C29 22 10 15 0 19z"/><path d="M228 0h192v11c-17 7-30 0-42 2-17 10-33 4-45-1-15 7-31 5-43-2-24 7-43 1-62-10z"/></g>
+<g fill="#9fb593" opacity=".52"><path d="M0 0h95C86 10 77 5 69 10 54 18 43 6 35 11 21 17 8 11 0 14z"/><path d="M167 0h70c-8 5-17 11-26 7-7 7-18 5-25 1-8 3-14-3-19-8z"/><path d="M313 0h107v10c-10 6-24 6-33-1-12 10-25 2-31 2-16 5-30-4-43-11z"/></g>
+<g fill="#688368" opacity=".57"><path d="M0 0h43c-3 9-14 12-20 8C12 14 5 10 0 12z"/><path d="M72 0h45c-8 8-16 12-25 6C80 9 78 4 72 0z"/><path d="M269 0h48c-7 10-20 10-26 5-10 5-16 0-22-5z"/><path d="M374 0h46v7c-8 8-17 6-24 1-13 6-18-1-22-8z"/></g>
+<g fill="#c5bd94" opacity=".4"><path d="M139 0h25c-5 6-18 12-25 0z"/><path d="M336 0h21c-2 7-16 9-21 0z"/></g>
+</svg>

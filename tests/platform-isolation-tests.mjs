@@ -8,11 +8,17 @@ const approved=JSON.parse(fs.readFileSync(new URL('./level-shortcuts-authorized-
 const copyChanges=JSON.parse(fs.readFileSync(new URL('./home-copy-authorized-changes.json',import.meta.url))).changes;
 const leafChange=JSON.parse(fs.readFileSync(new URL('./leaf-layer-authorized-change.json',import.meta.url)));
 const identityChanges=JSON.parse(fs.readFileSync(new URL('./curiosity-brand-authorized-changes.json',import.meta.url)));
+const canopyChange=JSON.parse(fs.readFileSync(new URL('./document-canopy-authorized-change.json',import.meta.url)));
 const sha=s=>crypto.createHash('sha256').update(s).digest('hex');
 for(const [name,hash] of Object.entries(baseline)){
  let bytes=fs.readFileSync(new URL('../dist/'+name,import.meta.url));
  if(name==='index.html'){
   let html=bytes.toString();
+  assert.equal(html.split(canopyChange.html_after).length-1,1,'Exact approved mixed decoration');
+  assert.equal((canopyChange.html_after.match(/<span class="platform-leaf"><\/span>/g)??[]).length,10,'Ten leaves total across both planes');
+  assert.equal((canopyChange.html_after.match(/aria-hidden="true" inert/g)??[]).length,2,'Both planes inert and hidden from accessibility');
+  assert.ok(!canopyChange.html_after.includes('tabindex'));
+  html=html.replace(canopyChange.html_after,canopyChange.html_before);
   for(const {before,after} of identityChanges.html_changes){
    assert.equal(html.split(after).length-1,1,'Exact approved title/brand replacement');
    html=html.replace(after,before);
@@ -37,10 +43,11 @@ for(const [name,hash] of Object.entries(baseline)){
 }
 const platformSource=fs.readFileSync(new URL('../dist/platform.css',import.meta.url),'utf8');
 assert.equal(platformSource.split(identityChanges.platform_css_insertion).length-1,1);
-assert.equal(sha(platformSource.replace(identityChanges.platform_css_insertion,'')),identityChanges.platform_css_before_sha256,'Only approved brand rules added to platform CSS');
+assert.equal(platformSource.split(canopyChange.after).length-1,1,'Exact authorized document decoration');
+assert.equal(sha(platformSource.replace(canopyChange.after,canopyChange.before).replace(identityChanges.platform_css_insertion,'')),identityChanges.platform_css_before_sha256,'Only approved brand rules added to platform CSS');
 const fullCSS=fs.readFileSync(new URL('../dist/platform.css',import.meta.url),'utf8').replace(/\/\*[\s\S]*?\*\//g,'');
 // User explicitly expanded leaves to all six games on 2026-10-24.
-// Only the fixed inert ornamental sibling may animate. Historical hashes remain.
+// Only the document-anchored inert ornamental sibling may animate. Historical hashes remain.
 const leafFrames=fullCSS.match(/@keyframes platform-leaf-fall\{(?:[^{}]*\{[^{}]*\})+\s*\}/g)??[];
 assert.equal(leafFrames.length,1,'Exactly one isolated decorative leaf animation');
 const css=fullCSS.replace(leafFrames[0],'');
@@ -50,16 +57,21 @@ assert.ok(!/\b(?:filter|zoom|transform)\s*:/.test(css.replaceAll('transform:none
 const selectors=[...css.matchAll(/([^{}]+)\{([^{}]*)\}/g)].filter(x=>!x[1].trim().startsWith('@'));
 for(const [,raw,body] of selectors){
  const s=raw.trim();
+ if(s==='body:has(> .platform-leaf-layer)'){assert.equal(body,'position:relative');continue;}
  if(/animation\s*:/.test(body)){
-  assert.equal(s,'body > .platform-leaf-layer > .platform-leaf','Only decorative siblings animate');
+  assert.ok(['body > .platform-leaf-layer > .platform-leaf','body > .platform-leaf-foreground > .platform-leaf'].includes(s),'Only decorative siblings animate');
   assert.ok(/animation:(?:platform-leaf-fall|none)/.test(body),'Only approved leaf animation');
  }
- assert.ok(s.startsWith('body > .platform-leaf-layer')||s.startsWith('body > header')||s.startsWith('body > footer')||s.startsWith('#main > .intro')||s.startsWith('#main > .games')||s.startsWith(':where(body:not(:has(.lab:not([hidden]), #collection:not([hidden]) > .collection-lab)))')||s.startsWith(':is(#selection, #collection > .level-screen)'),`Unexpected unscoped selector: ${s}`);
+ assert.ok(s.startsWith('body > .platform-leaf-layer')||s.startsWith('body > .platform-leaf-foreground')||s.startsWith('body > header')||s.startsWith('body > footer')||s.startsWith('#main > .intro')||s.startsWith('#main > .games')||s.startsWith(':where(body:not(:has(.lab:not([hidden]), #collection:not([hidden]) > .collection-lab)))')||s.startsWith(':is(#selection, #collection > .level-screen)'),`Unexpected unscoped selector: ${s}`);
 }
 assert.ok(fullCSS.includes('@media(prefers-reduced-motion:reduce)'),'Reduced-motion opt-out required');
 assert.ok(!css.includes('quiet-garden.svg'),'Landscape no longer displayed');
 assert.ok(css.includes('pointer-events:none'),'Leaves must not intercept input');
-assert.ok(css.includes('position:fixed;inset:0'),'Leaf layer is out of normal flow');
+assert.ok(css.includes('position:absolute;inset:0'),'Document leaf layer is out of normal flow');
+assert.ok(css.includes('position:fixed;inset:0'),'Distant plane follows viewport');
+assert.ok(fullCSS.includes('100cqh'),'Motion follows each decorative containing block');
+assert.ok(css.includes('height:22px'),'Canopies stay above logo');
+assert.equal((css.match(/display:none;animation:none/g)??[]).length,2,'Both motion planes disabled for reduced motion');
 assert.ok(css.includes('overflow:hidden;pointer-events:none;user-select:none;contain:strict'),'Only the ornamental layer clips its overflow');
 assert.ok(!css.includes('platform-leaf-drift'),'Old menu leaves removed to avoid duplication');
 console.log(`PASS PACTO/Endless exact authorized hashes; ${Object.keys(baseline).length-Object.keys(approved).length} original files byte-identical; ${Object.keys(approved).length} interface exceptions match their active separately recorded hashes (Endless overrides only app/collection); ${selectors.length} style blocks retain explicit platform roots. Exact authorized home-copy edits and the inert leaf-layer insertion are reversed for comparison. Original retro baseline is unchanged. Browser computed-style/geometry comparison remains separate.`);
