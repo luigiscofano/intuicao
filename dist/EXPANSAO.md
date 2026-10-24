@@ -13,7 +13,7 @@ A especificação de referência é o PDF “Plano Ilustrado — Coleção de Jo
 1. Escolha o jogo. A tela inicial mostra os 200 números em botões arredondados, ou os mapas do duelo.
 2. Escolha um nível, o tutorial do PDF, o desafio diário ou uma dificuldade para explorar livremente.
 3. Use as ferramentas e o tabuleiro. A interação não decide o resultado automaticamente.
-4. Pressione “Confirmar resposta”. Um estado incompleto sem contradição é uma pendência, não uma derrota.
+4. Pressione “Confirmar resposta”. Uma resposta incompleta ou incorreta aciona a derrota curta e conta um erro. Após três erros no mesmo nível, “Ver gabarito” monta a solução padrão; confirme depois para registrar a resolução assistida.
 5. Os tutoriais incluem três passos explícitos de explicação cada, com pré-requisitos; nenhuma escolha é feita por você. Peça pistas quando quiser. Os três graus de ajuda partem da regra/área relevante e chegam a uma dedução demonstrada; nenhum símbolo é preenchido automaticamente.
 
 ### ELO

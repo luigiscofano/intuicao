@@ -150,3 +150,7 @@ Onze suítes: 35.738 verificações aprovadas, incluindo as 100 soluções em pr
 ## Expansão da coleção lógica
 
 Veja [EXPANSAO.md](EXPANSAO.md) para as regras e recursos de ELO, PRUMO, PACTO, NEXO e DESVIO, limitações de armazenamento, editor e escopo futuro. A coleção completa tem 1.100 níveis de campanha e um duelo local sem níveis. [VALIDACAO-EXPANSAO.md](VALIDACAO-EXPANSAO.md) documenta a evidência de testes e seus limites.
+
+## Gabarito após três erros e feedback universal
+
+Todos os sete puzzles têm feedback de vitória/derrota ao confirmar, inclusive respostas incompletas. Após três erros no mesmo nível, **Ver gabarito** monta a solução padrão, preserva as pistas e aguarda uma nova confirmação. A conclusão fica marcada como assistida. O desbloqueio persiste localmente ao recomeçar/recarregar. DESVIO mantém o resultado da partida, sem gabarito de fase. Consulte [GABARITOS.md](GABARITOS.md) para comportamento, armazenamento, acessibilidade e limites da validação.

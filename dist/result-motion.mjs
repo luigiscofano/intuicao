@@ -10,7 +10,7 @@ export function celebrationMarkup(){
  const sparkles=stars.map(([x,y,r],i)=>`<path class="victory-sparkle" style="--spark-delay:${i*25}ms" d="M${x-r} ${y} Q${x} ${y} ${x} ${y-r} Q${x} ${y} ${x+r} ${y} Q${x} ${y} ${x} ${y+r} Q${x} ${y} ${x-r} ${y}Z"/>`).join('');
  return `<div class="victory-celebration" aria-hidden="true"><svg viewBox="0 0 500 140" focusable="false"><title>PARABÉNS!</title><g class="victory-word">${letters}</g><g>${sparkles}</g></svg></div>`;
 }
-export function resultMarkup(game,success){
+export function resultMarkup(game,success,options={}){
  if(!(game in names))throw new Error('Jogo desconhecido');
  if(!success)return ''; // Derrota não cria texto, ícone ou faixa visual.
  const outcome='win';
@@ -19,16 +19,16 @@ export function resultMarkup(game,success){
   light:`<circle class="fx-target" cx="64" cy="17" r="10"/><circle class="fx-target" cx="64" cy="17" r="3"/><path class="fx-mirror" d="M28 38 L48 58"/><path class="fx-ray" d="${success?'M10 48 H38 L64 17':'M10 48 H38 L65 48'}"/>${success?'':'<path class="fx-wall" d="M65 35 V59"/>'}`,
   cut:`<path class="fx-piece fx-piece-a" d="M13 14 H40 V58 H13 Z"/><path class="fx-piece fx-piece-b" d="M40 14 H67 V58 H40 Z"/><path class="fx-cut" d="M40 8 V64"/>`
  };
- return `${celebrationMarkup()}<div class="result-badge result-${game} result-${outcome}" data-outcome="${outcome}"><svg viewBox="0 0 80 72" aria-hidden="true" focusable="false">${shapes[game]??'<path class="fx-piece" d="M15 36 L32 52 L66 18"/>'}</svg><div><strong>${success?'✓ Vitória!':'↻ Ainda não!'}</strong><span>${captions[game]?.[success?0:1]??'Cada escolha encontrou seu lugar.'}</span></div></div>`;
+ return `${celebrationMarkup()}<div class="result-badge result-${game} result-${outcome}" data-outcome="${outcome}"><svg viewBox="0 0 80 72" aria-hidden="true" focusable="false">${shapes[game]??'<path class="fx-piece" d="M15 36 L32 52 L66 18"/>'}</svg><div><strong>${options.winner?'✓ Jogador '+options.winner+' venceu!':success?'✓ Vitória!':'↻ Ainda não!'}</strong><span>${captions[game]?.[success?0:1]??'Cada escolha encontrou seu lugar.'}</span></div></div>`;
 }
 export function createResultMotion(host,surface,clock=globalThis){
  let serial=0,timer=null;
  const stop=()=>{if(timer!==null)clock.clearTimeout(timer);timer=null;surface.classList.remove('result-failure');surface.classList.remove('result-success');};
  return {
   clear(){serial++;stop();host.innerHTML='';host.dataset.state='idle';delete host.dataset.outcome;},
-  show(game,success){
+  show(game,success,options={}){
    stop();const token=++serial;host.dataset.state='result';host.dataset.outcome=success?'win':'loss';host.dataset.attempt=String(serial);
-   host.innerHTML=resultMarkup(game,success);
+   host.innerHTML=resultMarkup(game,success,options);
    if(success){
     void surface.offsetWidth;surface.classList.add('result-success');
     timer=clock.setTimeout(()=>{if(token!==serial)return;surface.classList.remove('result-success');timer=null;},1100);

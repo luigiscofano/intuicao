@@ -124,3 +124,15 @@ svg .cut-grip:focus{outline:none;stroke:none}
 
 /* ELO: pistas explicitas e conexoes sempre acima das casas, sem capturar cliques. */
 .board-elo .grid-cell.fixed-region{background-image:none}.region-lock{position:absolute;right:8%;bottom:8%;font-size:12px;color:#687768;pointer-events:none}.board-elo .grid-cell:focus-visible{z-index:1}.board-elo .board-overlay,.board-elo .board-overlay *{pointer-events:none}.board-elo .elo-edge{stroke:#234c38;stroke-width:6;filter:drop-shadow(0 1px 1px #fffefa)}.board-elo .grid-cell{touch-action:manipulation}
+
+/* A coleção usa tabuleiro HTML: os efeitos não podem depender do SVG #scene. */
+.collection-board-wrap.result-success,.collection-board-wrap.result-failure{border-radius:16px}
+.collection-board-wrap .victory-celebration{z-index:10}
+.collection-board-wrap .result-motion{position:static}
+.collection-board-wrap .result-motion .victory-celebration{position:absolute;top:calc(50% - 43px);left:50%}
+@media(prefers-reduced-motion:no-preference){
+ .collection-board-wrap.result-failure .collection-board{animation:failure-blur .3s ease-out}
+ .collection-board-wrap.result-success .collection-board{transform-origin:center;animation:victory-zoom 1.1s ease-in-out}
+}
+.level-actions .actions{flex-wrap:wrap}
+.answer-key,#c-answer{border-color:#b8a271;background:#f7f0df;color:#594c31}

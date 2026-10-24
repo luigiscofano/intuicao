@@ -8,9 +8,38 @@ import {curvedCut,shapePolygon,shapes,families} from './curves.mjs';
 // Implementação de referência gerada com OpenAI/Codex. Comentários explicam decisões, não autoria do aluno.
 import {clamp,torque,segment,traceRay,polygon,cut,cutSuccess,mirrorAngle,pathAtDistance,wallPolygon} from './math.mjs';
 import {balanceLevels,lightLevels,cutLevels} from './levels.mjs';
+import {createAnswerProgress} from './answer-progress.mjs';
+import {getOriginalAnswer} from './original-answers.mjs';
 const $=id=>document.getElementById(id), scene=$('scene'), drawing=$('drawing');
 const resultMotion=createResultMotion($('result-motion'),document.querySelector('.experiment'));
 const catalogue={balance:balanceLevels,light:lightLevels,cut:cutLevels};
+const answerProgress=createAnswerProgress();
+// Fica perto de Confirmar, inclusive quando as opções avançadas estão recolhidas.
+const answerButton=document.createElement('button');
+answerButton.id='answer-key';answerButton.type='button';answerButton.className='quiet answer-key';
+answerButton.textContent='Ver gabarito';answerButton.hidden=true;
+answerButton.title='Aplica a configuração correta padrão e marca o nível como assistido. Depois, confirme a resposta para testar.';
+answerButton.setAttribute('aria-label','Ver gabarito: aplicar a configuração correta padrão, sem confirmar automaticamente.');
+document.querySelector('.level-actions .actions').appendChild(answerButton);
+function answerKey(){return `${game}:${catalogue[game][level].id??level}`;}
+function updateAnswerButton(){
+ const progress=answerProgress.get(answerKey());
+ answerButton.hidden=free||!answerProgress.unlocked(answerKey());
+ answerButton.dataset.assisted=String(progress.assisted);
+ answerButton.textContent=progress.assisted?'Reaplicar gabarito':'Ver gabarito';
+ answerButton.setAttribute('aria-label',`${answerButton.textContent}: aplicar a configuração correta padrão e marcar como assistido, sem confirmar automaticamente.`);
+}
+function applyAnswerKey(){
+ if(free||!answerProgress.unlocked(answerKey()))return;
+ const answer=getOriginalAnswer(game,level);
+ // Troca atômica pela configuração certificada, sem mover fixos ou criar pilhas ilegais.
+ invalidate();drag=null;pendingSlot=null;placementMessage='';state=answer;
+ selected=game==='balance'?state.weights.findIndex(w=>!w.fixed):game==='light'?state.objects.findIndex(o=>o.type==='mirror'):0;
+ answerProgress.assist(answerKey());
+ $('hint-text').textContent='Gabarito aplicado. Este desafio está marcado como assistido. Confira a configuração e clique em Confirmar resposta para testar.';
+ render();
+}
+answerButton.onclick=applyAnswerKey;
 // Preferência visual independente do progresso. Falhas de armazenamento não bloqueiam o jogo.
 let controlsHidden=false;
 try{controlsHidden=globalThis.localStorage?.getItem('intuicao.advanced-hidden')==='true';}catch{}
@@ -24,13 +53,15 @@ function toggleControls(){controlsHidden=!controlsHidden;applyControlsVisibility
 let placementMessage='',pendingSlot=null;
 let game='balance',free=false,level=0,state={},selected=0,drag=null;
 const completed=new Set();const lastLevel={balance:null,light:null,cut:null};
-function showSelection(){placementMessage='';pendingSlot=null;invalidate();drag=null;document.querySelector('.lab').hidden=true;$('selection').hidden=false;document.querySelectorAll('[data-game]').forEach(b=>b.setAttribute('aria-pressed',String(b.dataset.game===game)));$('selection-title').textContent={balance:'Equilíbrio · 100 níveis',light:'Reflexos · 100 níveis',cut:'Corte certo · 100 níveis'}[game];let html='';for(let k=0;k<catalogue[game].length;k+=10){if(game==='light')html+=`<h3 class="stage-heading">${catalogue.light[k].stage} · ${catalogue.light[k].stageName}</h3>`;if(game==='cut')html+=`<h3 class="stage-heading">${['1 · Retas e proporções','2 · Parábolas','3 · Ondas senoidais','4 · Curvas em S','5 · Síntese e restrições','6 · Translação por eixos e diagonais','7 · Entradas opostas e rotação','8 · Forma ajustável','9 · Curvas em S no espaço','10 · Síntese de transformações'][k/10]}</h3>`;html+='<div class="level-group">'+catalogue[game].slice(k,k+10).map((l,j)=>{const i=k+j,done=completed.has(game+i),current=lastLevel[game]===i;return `<button class="level-tile ${done?'done':''}" data-level="${i}" aria-current="${current}" aria-label="Nível ${i+1}: ${l.name}${done?', concluído':''}${current?', atual':''}"><span>${i+1}</span><small>${done?'✓ concluído':current?'atual':'explorar'}</small></button>`;}).join('')+'</div>';}$('level-grid').innerHTML=html;$('level-grid').querySelectorAll('[data-level]').forEach(b=>b.onclick=()=>{level=Number(b.dataset.level);free=false;start();});$('selection-title').focus();}
+function showSelection(){placementMessage='';pendingSlot=null;invalidate();drag=null;document.querySelector('.lab').hidden=true;$('selection').hidden=false;document.querySelectorAll('[data-game]').forEach(b=>b.setAttribute('aria-pressed',String(b.dataset.game===game)));$('selection-title').textContent={balance:'Equilíbrio · 100 níveis',light:'Reflexos · 100 níveis',cut:'Corte certo · 100 níveis'}[game];let html='';for(let k=0;k<catalogue[game].length;k+=10){if(game==='light')html+=`<h3 class="stage-heading">${catalogue.light[k].stage} · ${catalogue.light[k].stageName}</h3>`;if(game==='cut')html+=`<h3 class="stage-heading">${['1 · Retas e proporções','2 · Parábolas','3 · Ondas senoidais','4 · Curvas em S','5 · Síntese e restrições','6 · Translação por eixos e diagonais','7 · Entradas opostas e rotação','8 · Forma ajustável','9 · Curvas em S no espaço','10 · Síntese de transformações'][k/10]}</h3>`;html+='<div class="level-group">'+catalogue[game].slice(k,k+10).map((l,j)=>{const i=k+j,done=completed.has(game+i),assisted=answerProgress.get(`${game}:${l.id??i}`).assisted,current=lastLevel[game]===i;return `<button class="level-tile ${done?'done':''}" data-level="${i}" aria-current="${current}" aria-label="Nível ${i+1}: ${l.name}${done?', concluído':''}${assisted?', assistido por gabarito':''}${current?', atual':''}"><span>${i+1}</span><small>${done?(assisted?'✓ com gabarito':'✓ concluído'):assisted?'com gabarito':current?'atual':'explorar'}</small></button>`;}).join('')+'</div>';}$('level-grid').innerHTML=html;$('level-grid').querySelectorAll('[data-level]').forEach(b=>b.onclick=()=>{level=Number(b.dataset.level);free=false;start();});$('selection-title').focus();}
 
 let phase='editing',evaluation=null,frame=0,animationToken=0,revealed=[],lightDistance=0;
 function invalidate(){resultMotion.clear();cancelAnimationFrame(frame);animationToken++;phase='editing';evaluation=null;revealed=[];lightDistance=0;scene.setAttribute('aria-busy','false');}
 function finishResult(){
+ const success=game==='balance'?Math.abs(evaluation.torque)<=1.18:game==='light'?evaluation.ray.status==='target':cutSuccess(evaluation.cut.ratio*100,evaluation.snapshot.target);
+ // Só uma confirmação errada concluída conta; desenhar, editar ou cancelar o raio não conta.
+ if(!free&&!success&&!evaluation.counted){answerProgress.fail(answerKey());evaluation.counted=true;}
  phase='result';scene.setAttribute('aria-busy','false');draw();
- const success=game==='balance'?Math.abs(evaluation.torque)<=1.18:game==='light'?evaluation.ray.status==='target':cutSuccess(evaluation.cut.ratio*100,state.target);
  resultMotion.show(game,success);
 }
 function confirmAnswer(){
@@ -73,7 +104,7 @@ function start(){
  if(game==='balance'){state={weights:structuredClone(l.weights)};selected=state.weights.findIndex(w=>!w.fixed);if(free)state.weights.forEach(w=>w.fixed=false);}
  if(game==='light'){state={objects:structuredClone(l.objects),target:{...l.target,radius:22},sourceAngle:l.sourceAngle??0,...(!free?{sources:structuredClone(l.sources),targets:structuredClone(l.targets),portals:structuredClone(l.portals??[])}:{})};selected=state.objects.findIndex(o=>o.type==='mirror');}
  if(game==='cut')state={shape:l.shape,target:l.target,angle:l.angle??0,offset:l.initialOffset??80,family:l.family,amplitude:l.amplitude,frequency:l.frequency,centerX:l.centerX??400,centerY:l.centerY??230,holes:free?[]:structuredClone(l.holes??[])};
- $('hint-text').textContent=''; render();$('game-title').setAttribute('tabindex','-1');$('game-title').focus();
+ $('hint-text').textContent=!free&&answerProgress.get(answerKey()).assisted?'Este desafio está marcado como assistido por gabarito.':''; render();$('game-title').setAttribute('tabindex','-1');$('game-title').focus();
 }
 function render(){
  document.querySelectorAll('[data-game]').forEach(b=>b.setAttribute('aria-pressed',String(b.dataset.game===game)));
@@ -89,7 +120,7 @@ function render(){
  if(game==='cut'&&state.holes.length)$('mission').textContent+=` ${state.holes.length} espaço(s) vazio(s): não pertencem à área. Divida apenas a parte preenchida.`;
  $('hint').hidden=free;$('next').hidden=free;
  const texts={balance:'O torque é massa × gravidade × distância horizontal ao apoio. À direita ele é positivo (sentido horário); à esquerda, negativo. O painel mostra a soma em N·m. O equilíbrio é aceito até 1,18 N·m de diferença. A inclinação da viga é uma indicação visual do torque calculado na posição horizontal, não uma simulação dinâmica de movimento ou queda. O apoio está no centro; não há atrito.',light:'A cada trecho, o raio encontra a superfície mais próxima. Paredes são retângulos sólidos com espessura real e absorvem a luz; espelhos refletem segundo d′ = d − 2(d·n)n. O disco da mesma cor aceita o raio: raio geométrico de 22 unidades do palco. A primeira entrada no disco precisa estar antes da próxima superfície; uma parede vence o empate. Cada raio para em 12 reflexões ou 40 eventos, sem loop infinito. Portais mantêm a direção e pulam para o par; o salto não é um segmento físico. Cores diferentes não podem cruzar nem tocar trajetórias. Portais seletivos bloqueiam cores não permitidas. Os ângulos são medidos em coordenadas de tela, com y para baixo. A normal pontilhada é perpendicular ao espelho no ponto de impacto. As setas indicam a direção de propagação. As bordas são paredes. Evite sobrepor objetos: paredes têm prioridade em empates.',cut:'Retas usam recorte exato. Curvas são gráficos sem autointerseção, aproximados por segmentos de passo máximo 1; cada faixa é recortada geometricamente. Um limite de segunda derivada controla o erro de área, muito menor que a margem de jogo. O contorno roxo é calculado pelas interseções reais da linha com as arestas; sua área usa a fórmula do cadarço. A proporção exibida é área roxa útil ÷ área total útil. Buracos são subtraídos de ambas: espaços vazios nunca contam, mesmo quando atravessados pela curva. O ângulo controla a normal da linha: 0° produz um corte vertical. Deslocamento positivo aumenta a região roxa. Não usamos contagem de pixels. Acerto: erro absoluto de até 3 pontos percentuais, incluindo os dois limites; isso não é 3% relativo à meta.'};
- $('explanation').textContent=texts[game];applyControlsVisibility();editor();draw();
+ $('explanation').textContent=texts[game];applyControlsVisibility();updateAnswerButton();editor();draw();
 }
 function renderLevelNotes(){
  let notes='';
@@ -151,7 +182,7 @@ function change(key,v){
  if(key==='mass')$('selected').options[selected].textContent=`${selected+1} · ${fmt(v)} kg`;
  draw();
 }
-function status(label,value,message,success){$('confirm').disabled=phase==='animating';$('confirm').textContent=phase==='animating'?'Raio em percurso…':'Confirmar resposta';document.querySelector('.explanation').hidden=phase!=='result';if(phase!=='result'){label=phase==='animating'?'Experimento em andamento':'Prepare sua resposta';value='—';message=phase==='animating'?'Aguarde a luz percorrer o caminho. Editar cancela o disparo.':'Ajuste os controles e confirme para revelar o resultado.';success=false;}$('metric-label').textContent=label;$('metric').textContent=value;$('feedback').textContent=placementMessage||(phase==='result'?(success?'Vitória! ':'Ainda não. ')+message:message);$('feedback').classList.toggle('success',success);$('feedback').classList.toggle('sr-only',phase==='result'&&!success&&!placementMessage);if(success&&!free)completed.add(game+level);$('next').disabled=phase!=='result'||!success;$('next').textContent=level===catalogue[game].length-1?'Voltar ao início ↺':'Próximo desafio →';}
+function status(label,value,message,success){updateAnswerButton();if(success&&!free&&answerProgress.get(answerKey()).assisted)message+=' Concluído com gabarito.';$('confirm').disabled=phase==='animating';$('confirm').textContent=phase==='animating'?'Raio em percurso…':'Confirmar resposta';document.querySelector('.explanation').hidden=phase!=='result';if(phase!=='result'){label=phase==='animating'?'Experimento em andamento':'Prepare sua resposta';value='—';message=phase==='animating'?'Aguarde a luz percorrer o caminho. Editar cancela o disparo.':'Ajuste os controles e confirme para revelar o resultado.';success=false;}$('metric-label').textContent=label;$('metric').textContent=value;$('feedback').textContent=placementMessage||(phase==='result'?(success?'Vitória! ':'Ainda não. ')+message:message);$('feedback').classList.toggle('success',success);$('feedback').classList.toggle('sr-only',phase==='result'&&!success&&!placementMessage);if(success&&!free)completed.add(game+level);$('next').disabled=phase!=='result'||!success;$('next').textContent=level===catalogue[game].length-1?'Voltar ao início ↺':'Próximo desafio →';}
 function draw(){
  let svg='<defs><pattern id="dots" width="25" height="25" patternUnits="userSpaceOnUse"><circle cx="2" cy="2" r="1" fill="#d8ded0"/></pattern></defs><rect width="800" height="460" fill="url(#dots)"/>';
  if(game==='balance'){
