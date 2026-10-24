@@ -39,10 +39,10 @@ body > footer .brand-dot{color:#997838}
 :where(body:not(:has(.lab:not([hidden]), #collection:not([hidden]) > .collection-lab))) > header .brand-icon{font-size:0;transform:none;width:28px;height:28px;margin-right:10px;vertical-align:-2px;background:url("platform-assets/leaf-seal.svg") center/28px 28px no-repeat}
 :where(body:not(:has(.lab:not([hidden]), #collection:not([hidden]) > .collection-lab))) > header .tag{font-family:"Courier New",monospace;font-size:10px;letter-spacing:1.6px;line-height:1.5}
 :where(body:not(:has(.lab:not([hidden]), #collection:not([hidden]) > .collection-lab))) > header .doc-link{border:1px solid #bec9b6;border-radius:3px;padding:8px 12px;background:transparent;box-shadow:none}
-:where(body:not(:has(.lab:not([hidden]), #collection:not([hidden]) > .collection-lab))) #main > .intro{position:relative;isolation:isolate;padding:46px 0 40px;min-height:318px;background:none}
-:where(body:not(:has(.lab:not([hidden]), #collection:not([hidden]) > .collection-lab))) #main > .intro::before{content:"";position:absolute;inset:0 -40px;background:#fafbf7 url("platform-assets/paper-marks.svg") repeat;z-index:-2;pointer-events:none}
+:where(body:not(:has(.lab:not([hidden]), #collection:not([hidden]) > .collection-lab))) #main > .intro{position:relative;isolation:isolate;padding:32px 0 30px;min-height:260px;background:none}
+:where(body:not(:has(.lab:not([hidden]), #collection:not([hidden]) > .collection-lab))) #main > .intro::before{content:"";position:absolute;inset:8px -24px 0;background:#fafbf7 url("platform-assets/paper-marks.svg") repeat;border:1px solid #dce3d6;border-radius:12px;box-shadow:inset 0 0 0 4px #ffffff80,0 0 0 4px #fafbf755;z-index:-2;pointer-events:none}
 :where(body:not(:has(.lab:not([hidden]), #collection:not([hidden]) > .collection-lab))) #main > .intro .eyebrow{max-width:80%;font-family:"Courier New",monospace;font-size:10px;letter-spacing:1.7px;margin-bottom:20px}
-:where(body:not(:has(.lab:not([hidden]), #collection:not([hidden]) > .collection-lab))) #main > .intro h1{font-family:Georgia,"Times New Roman",serif;font-size:68px;font-weight:400;line-height:1.08;letter-spacing:-2.6px;max-width:100%;margin:0 0 24px}
+:where(body:not(:has(.lab:not([hidden]), #collection:not([hidden]) > .collection-lab))) #main > .intro h1{font-family:Georgia,"Times New Roman",serif;font-size:68px;font-weight:400;line-height:1.08;letter-spacing:-2.6px;max-width:100%;margin:0 0 16px}
 :where(body:not(:has(.lab:not([hidden]), #collection:not([hidden]) > .collection-lab))) #main > .intro h1 em{font-family:inherit;font-style:italic;font-weight:400;text-shadow:none;text-decoration:underline;text-decoration-color:#a6b49b;text-decoration-thickness:1px;text-underline-offset:8px}
 :where(body:not(:has(.lab:not([hidden]), #collection:not([hidden]) > .collection-lab))) #main > .intro > p:last-child{font-size:14px;max-width:100%;line-height:1.8;margin-bottom:0}
 :where(body:not(:has(.lab:not([hidden]), #collection:not([hidden]) > .collection-lab))) #main > .games{gap:12px;margin-top:24px;margin-bottom:28px}
@@ -89,8 +89,8 @@ body > footer .brand-dot{color:#997838}
  :where(body:not(:has(.lab:not([hidden]), #collection:not([hidden]) > .collection-lab))) > header .brand{font-size:31px}
  :where(body:not(:has(.lab:not([hidden]), #collection:not([hidden]) > .collection-lab))) > header .brand-icon{width:22px;height:22px;background-size:22px;margin-right:5px}
  :where(body:not(:has(.lab:not([hidden]), #collection:not([hidden]) > .collection-lab))) > header .doc-link{font-size:10px;padding:7px 8px}
- :where(body:not(:has(.lab:not([hidden]), #collection:not([hidden]) > .collection-lab))) #main > .intro{padding:28px 4px 26px;min-height:0}
- :where(body:not(:has(.lab:not([hidden]), #collection:not([hidden]) > .collection-lab))) #main > .intro::before{inset:0 -16px}
+ :where(body:not(:has(.lab:not([hidden]), #collection:not([hidden]) > .collection-lab))) #main > .intro{padding:24px 4px 24px;min-height:0}
+ :where(body:not(:has(.lab:not([hidden]), #collection:not([hidden]) > .collection-lab))) #main > .intro::before{inset:6px -8px 0;border-radius:9px}
  :where(body:not(:has(.lab:not([hidden]), #collection:not([hidden]) > .collection-lab))) #main > .intro :is(h1,.eyebrow,p:last-child){max-width:100%}
  :where(body:not(:has(.lab:not([hidden]), #collection:not([hidden]) > .collection-lab))) #main > .intro h1{font-size:46px;letter-spacing:-1.8px;line-height:1.1}
  :where(body:not(:has(.lab:not([hidden]), #collection:not([hidden]) > .collection-lab))) #main > .intro .eyebrow{font-size:9px;letter-spacing:1px;margin-bottom:18px}
@@ -134,7 +134,7 @@ body > .platform-leaf-layer{position:absolute;inset:0;z-index:3;overflow:hidden;
 /* Only the canopy adopts pixel art. The added header border reserves space
    without changing text, game widths, or the approved leaf motion rules. */
 body > header{border-top:88px solid #fafbf7}
-body > .platform-leaf-layer::before{content:"";position:absolute;top:0;left:0;width:100%;height:88px;pointer-events:none;background:url("platform-assets/tree-canopy-softedge-fine.svg") center top/960px 88px repeat-x;image-rendering:pixelated;opacity:.82}
+body > .platform-leaf-layer::before{content:"";position:absolute;top:0;left:0;width:100%;height:88px;pointer-events:none;background:url("platform-assets/tree-canopy-natural-filled.svg") center top/960px 88px repeat-x;image-rendering:pixelated;opacity:.82}
 @media(max-width:760px){
  body > header{border-top-width:64px}
  body > .platform-leaf-layer::before{height:64px;background-size:720px 66px}

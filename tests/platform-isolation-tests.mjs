@@ -57,10 +57,39 @@ const fullCanopyChange=JSON.parse(fs.readFileSync(new URL('./fullwidth-canopy-au
 const variedChange=JSON.parse(fs.readFileSync(new URL('./varied-foliage-authorized-change.json',import.meta.url)));
 const edgeChange=JSON.parse(fs.readFileSync(new URL('./canopy-edge-authorized-change.json',import.meta.url)));
 const fineEdgeChange=JSON.parse(fs.readFileSync(new URL('./fine-edge-authorized-change.json',import.meta.url)));
-const physicsPlatformSource=fs.readFileSync(new URL('../dist/platform.css',import.meta.url),'utf8');
+const compactIntroChange=JSON.parse(fs.readFileSync(new URL('./compact-intro-authorized-change.json',import.meta.url)));
+let physicsPlatformSource=fs.readFileSync(new URL('../dist/platform.css',import.meta.url),'utf8');
+const naturalCanopyChange=JSON.parse(fs.readFileSync(new URL('./natural-canopy-authorized-change.json',import.meta.url)));
+assert.equal(physicsPlatformSource.split(naturalCanopyChange.css_after).length-1,1,'One exact authorized natural canopy URL');
+physicsPlatformSource=physicsPlatformSource.replace(naturalCanopyChange.css_after,naturalCanopyChange.css_before);
+assert.equal(sha(physicsPlatformSource),naturalCanopyChange.priorCssSHA256,'Only authorized canopy URL changed after compact intro');
+const naturalCanopySVG=fs.readFileSync(new URL('../dist/platform-assets/'+naturalCanopyChange.after,import.meta.url),'utf8');
+assert.equal(sha(naturalCanopySVG),naturalCanopyChange.after_sha256,'Exact natural canopy asset');
+assert.equal(naturalCanopySVG.split(naturalCanopyChange.svg_addition).length-1,1,'One exact foliage overlay');
+assert.equal(sha(naturalCanopySVG.replace(naturalCanopyChange.svg_addition,'')),naturalCanopyChange.before_sha256,'Previous canopy body byte-identical');
+assert.equal(sha(fs.readFileSync(new URL('../dist/platform-assets/'+naturalCanopyChange.before,import.meta.url))),naturalCanopyChange.before_sha256,'Prior canopy asset preserved');
+for(const {before,after} of compactIntroChange.replacements){
+ assert.equal(physicsPlatformSource.split(after).length-1,1,'Exact authorized compact intro replacement');
+ assert.ok(!physicsPlatformSource.includes(before),'Prior intro styling must not remain');
+ physicsPlatformSource=physicsPlatformSource.replace(after,before);
+}
+assert.equal(sha(physicsPlatformSource),compactIntroChange.priorCssSHA256,'Only five authorized compact intro replacements');
 assert.equal(physicsPlatformSource.split(physicsChange.css_insertion).length-1,1,'Exact isolated interactive floor CSS');
 const fineEdgePlatformSource=physicsPlatformSource.replace(physicsChange.css_insertion,'');
-assert.equal(sha(fs.readFileSync(new URL('../dist/decor-piles.mjs',import.meta.url))),physicsChange.module_sha256,'Approved decorative module only');
+const pileSeamChange=JSON.parse(fs.readFileSync(new URL('./pile-seam-authorized-change.json',import.meta.url)));
+const pileModuleSource=fs.readFileSync(new URL('../dist/decor-piles.mjs',import.meta.url),'utf8');
+assert.equal(sha(pileModuleSource),pileSeamChange.module_change.sha256,'Exact approved seam-aware renderer');
+assert.equal(pileModuleSource.split(pileSeamChange.module_change.after).length-1,1,'One exact static-copy exclusion');
+const priorPileModule=pileModuleSource.replace(pileSeamChange.module_change.after,pileSeamChange.module_change.before);
+assert.equal(sha(priorPileModule),pileSeamChange.module_change.prior_sha256,'Physics unchanged apart from static-copy exclusion');
+assert.equal(sha(priorPileModule),physicsChange.module_sha256,'Historical decorative module unchanged');
+for(const change of pileSeamChange.svg_changes){
+ let svg=fs.readFileSync(new URL('../dist/platform-assets/'+change.file,import.meta.url),'utf8');
+ assert.equal(sha(svg),change.sha256,'Exact approved natural pile edge asset');
+ if(change.insertion){assert.equal(svg.split(change.insertion).length-1,1);svg=svg.replace(change.insertion,'');}
+ for(const {before,after} of change.replacements){assert.equal(svg.split(after).length-1,1);svg=svg.replace(after,before);}
+ assert.equal(sha(svg),change.prior_sha256,'Historical pile asset unchanged after exact reversal');
+}
 const edgePlatformSource=fineEdgePlatformSource.replace(fineEdgeChange.after,fineEdgeChange.before);
 assert.equal(sha(edgePlatformSource),fineEdgeChange.prior_css_sha256,'Only finer lower-edge URL changed');
 const fineEdgeSVG=fs.readFileSync(new URL('../dist/platform-assets/'+fineEdgeChange.after,import.meta.url),'utf8');
