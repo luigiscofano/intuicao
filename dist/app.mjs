@@ -1,3 +1,4 @@
+import {generateOriginalEndless,normalizeOriginalOptions} from './endless-original.mjs';
 import {bindMiddleConfirm} from './middle-confirm.mjs';
 import {createRestartConfirmation} from './restart-confirmation.mjs';
 import {initCollection} from './collection-ui.mjs';
@@ -14,10 +15,51 @@ import {getOriginalAnswer} from './original-answers.mjs';
 const $=id=>document.getElementById(id), scene=$('scene'), drawing=$('drawing');
 const restartConfirmation=createRestartConfirmation('restart-original');
 let restartRevision=0;
+let endlessTimer=null,endlessRun=null,endlessGenerated=null,endlessStorageWarning=false,endlessLastRaw=null;
+const endlessStoreKey='intuicao.endless.original.v1';
+let endlessSaved={};try{endlessSaved=JSON.parse(globalThis.localStorage?.getItem(endlessStoreKey)??'{}')??{};}catch{}
+if(!endlessSaved||typeof endlessSaved!=='object'||Array.isArray(endlessSaved))endlessSaved={};
+const endlessPanel=document.createElement('section');endlessPanel.id='original-endless';endlessPanel.className='endless-panel';endlessPanel.hidden=true;
+const endlessAnchor=document.querySelector('.lab-heading');if(endlessAnchor.after)endlessAnchor.after(endlessPanel);else endlessAnchor.appendChild(endlessPanel);
+function saveEndless(){if(!free||!endlessRun||phase==='animating')return;endlessSaved[game]={...endlessRun,state:structuredClone(state)};try{const raw=JSON.stringify(endlessSaved);if(raw!==endlessLastRaw){if(!globalThis.localStorage)throw Error('storage');globalThis.localStorage.setItem(endlessStoreKey,raw);endlessLastRaw=raw;}endlessStorageWarning=false;}catch{endlessStorageWarning=true;}if($('original-endless-storage'))$('original-endless-storage').hidden=!endlessStorageWarning;}
+function newSeed(){return ((Date.now()^Math.floor(Math.random()*4294967296))>>>0);}
+function enterEndless(){
+ const saved=endlessSaved[game];free=true;endlessRun={seed:Number.isInteger(saved?.seed)?saved.seed:newSeed(),options:normalizeOriginalOptions(game,saved?.options),count:Number.isInteger(saved?.count)&&saved.count>=0?saved.count:0,solved:!!saved?.solved,awarded:!!saved?.awarded,failures:Number.isSafeInteger(saved?.failures)?Math.max(0,Math.min(1000,saved.failures)):0,assisted:saved?.assisted===true};
+ if(endlessRun.solved){endlessRun.seed=(endlessRun.seed+0x9e3779b9)>>>0;endlessRun.solved=false;endlessRun.awarded=false;endlessRun.failures=0;endlessRun.assisted=false;}
+ const resume=saved&&!saved.solved?saved.state:null;start();if(!free)return;
+ if(resume&&validEndlessSnapshot(resume)){state=structuredClone(resume);render();}
+ saveEndless();
+}
+function validEndlessSnapshot(s){
+ if(!s||typeof s!=='object')return false;
+ const a=endlessGenerated.initial;
+ if(game==='light'){if(!Array.isArray(s.objects)||s.objects.length!==a.objects.length)return false;const normalized=structuredClone(s);for(let i=0;i<a.objects.length;i++){if(!s.objects[i]||typeof s.objects[i]!=='object')return false;if(a.objects[i].type==='mirror'){if(!Number.isFinite(s.objects[i].angle)||Math.abs(s.objects[i].angle)>90)return false;normalized.objects[i].angle=a.objects[i].angle;}}return JSON.stringify(normalized)===JSON.stringify(a);}
+ const normalized=structuredClone(s);for(const key of ['centerX','centerY','angle','offset','amplitude','frequency']){if(!Number.isFinite(s[key]))return false;normalized[key]=a[key];}return JSON.stringify(normalized)===JSON.stringify(a)&&s.centerX>=-400&&s.centerX<=1200&&s.centerY>=-400&&s.centerY<=860&&s.offset>=-600&&s.offset<=600&&Math.abs(s.amplitude)<=120&&s.frequency>=.5&&s.frequency<=2;
+}
+function scheduleEndlessAdvance(){clearTimeout(endlessTimer);if(!free||!endlessRun?.solved||restartConfirmation.isOpen)return;const token=animationToken;endlessTimer=setTimeout(()=>{if(token===animationToken&&free&&!restartConfirmation.isOpen&&!document.querySelector('.lab').hidden&&endlessRun.solved)advanceEndless();},1500);}
+function advanceEndless(){if(!free||!endlessRun)return;endlessRun.seed=(endlessRun.seed+0x9e3779b9)>>>0;endlessRun.solved=false;endlessRun.awarded=false;endlessRun.failures=0;endlessRun.assisted=false;start();}
+function renderEndlessPanel(){
+ endlessPanel.hidden=!free;if(!free)return;
+ const o=endlessRun.options;
+ const checked=v=>v?'checked':'';
+ endlessPanel.innerHTML=`<div class="endless-banner"><strong>Endless · ${endlessRun.count} desafios concluídos</strong><span>Acertou? Um novo desafio aparece automaticamente.</span></div><p id="original-endless-storage" role="status" hidden>Não foi possível salvar neste navegador. Você pode continuar jogando, mas esta sessão pode não voltar após recarregar.</p><details><summary>Personalizar o modo Endless</summary><form id="original-endless-form"><div class="endless-options">${game==='light'?`<label>Raios de luz<select id="endless-sources">${[1,2,3].map(n=>`<option value="${n}" ${o.sources===n?'selected':''}>${n}</option>`).join('')}</select></label><label>Espelhos por raio<select id="endless-mirrors">${[1,2,3].map(n=>`<option value="${n}" ${o.mirrors===n?'selected':''}>${n}</option>`).join('')}</select></label><label><input id="endless-walls" type="checkbox" ${checked(o.walls)}> Paredes</label><label><input id="endless-portals" type="checkbox" ${checked(o.portals)}> Portais</label><label><input id="endless-selective" type="checkbox" ${checked(o.selective)} ${o.portals?'':'disabled'}> Portais seletivos por cor (quando houver portais)</label>`:`<label>Forma<select id="endless-shape"><option value="random">Aleatória</option>${shapes.map(n=>`<option ${o.shape===n?'selected':''}>${n}</option>`).join('')}</select></label><label><input id="endless-curves" type="checkbox" ${checked(o.curves)}> Incluir curvas além de retas</label><label><input id="endless-holes" type="checkbox" ${checked(o.holes)}> Espaços vazios</label>`}</div><p>As opções só mudam o modo Endless. Aplicar gera um novo desafio; reiniciar mantém o mesmo.</p><div class="endless-actions"><button type="submit" class="primary">Aplicar e gerar desafio</button><button type="button" id="original-endless-new">Gerar outro desafio</button></div></form></details>`;
+ $('original-endless-storage').hidden=!endlessStorageWarning;
+ $('original-endless-form').onsubmit=e=>{e.preventDefault();endlessRun.options=normalizeOriginalOptions(game,game==='light'?{sources:$('endless-sources').value,mirrors:$('endless-mirrors').value,walls:$('endless-walls').checked,portals:$('endless-portals').checked,selective:$('endless-selective').checked}:{shape:$('endless-shape').value,curves:$('endless-curves').checked,holes:$('endless-holes').checked});advanceEndless();};
+ if($('endless-portals'))$('endless-portals').onchange=()=>{$('endless-selective').disabled=!$('endless-portals').checked;};
+ $('original-endless-new').onclick=advanceEndless;
+}
+
 let middleConfirm=null;
 const resultMotion=createResultMotion($('result-motion'),document.querySelector('.experiment'));
 const catalogue={light:lightLevels,cut:cutLevels};
-const answerProgress=createAnswerProgress();
+const campaignAnswerProgress=createAnswerProgress();
+const endlessAnswerKey=key=>free&&endlessRun&&String(key).startsWith('endless-');
+const answerProgress={
+ get:key=>endlessAnswerKey(key)?{failures:endlessRun.failures??0,assisted:!!endlessRun.assisted}:campaignAnswerProgress.get(key),
+ unlocked:key=>answerProgress.get(key).failures>=3,
+ fail:key=>{if(!endlessAnswerKey(key))return campaignAnswerProgress.fail(key);endlessRun.failures=Math.min(1000,(endlessRun.failures??0)+1);saveEndless();return answerProgress.get(key);},
+ assist:key=>{if(!endlessAnswerKey(key))return campaignAnswerProgress.assist(key);endlessRun.assisted=true;saveEndless();return answerProgress.get(key);}
+};
 // Fica perto de Confirmar, inclusive quando as opções avançadas estão recolhidas.
 const answerButton=document.createElement('button');
 answerButton.id='answer-key';answerButton.type='button';answerButton.className='quiet answer-key';
@@ -25,19 +67,19 @@ answerButton.textContent='Ver gabarito';answerButton.hidden=true;
 answerButton.title='Aplica a configuração correta padrão e marca o nível como assistido. Depois, confirme a resposta para testar.';
 answerButton.setAttribute('aria-label','Ver gabarito: aplicar a configuração correta padrão, sem confirmar automaticamente.');
 document.querySelector('.level-actions .actions').appendChild(answerButton);
-function answerKey(){return `${game}:${catalogue[game][level].id??level}`;}
+function answerKey(){return free?endlessGenerated.level.id:`${game}:${catalogue[game][level].id??level}`;}
 function updateAnswerButton(){
  const progress=answerProgress.get(answerKey());
- answerButton.hidden=free||!answerProgress.unlocked(answerKey());
+ answerButton.hidden=!answerProgress.unlocked(answerKey());
  answerButton.dataset.assisted=String(progress.assisted);
  answerButton.textContent=progress.assisted?'Reaplicar gabarito':'Ver gabarito';
  answerButton.setAttribute('aria-label',`${answerButton.textContent}: aplicar a configuração correta padrão e marcar como assistido, sem confirmar automaticamente.`);
 }
 function applyAnswerKey(){
- if(free||!answerProgress.unlocked(answerKey()))return;
- const answer=getOriginalAnswer(game,level);
+ if(restartConfirmation.isOpen||!answerProgress.unlocked(answerKey()))return;
+ const answer=free?structuredClone(endlessGenerated.answer):getOriginalAnswer(game,level);
  // Troca atômica pela configuração certificada, sem mover fixos ou criar pilhas ilegais.
- invalidate();drag=null;pendingSlot=null;placementMessage='';state=answer;if(game==='cut'){cutMode='basic';cutDrafts={basic:null,advanced:null};}
+ invalidate();drag=null;pendingSlot=null;placementMessage='';state=answer;if(game==='cut'){cutMode=free?'advanced':'basic';cutDrafts={basic:null,advanced:null};}
  selected=game==='light'?state.objects.findIndex(o=>o.type==='mirror'):0;
  answerProgress.assist(answerKey());
  $('hint-text').textContent='Gabarito aplicado. Este desafio está marcado como assistido. Confira a configuração e clique em Confirmar resposta para testar.';
@@ -57,21 +99,23 @@ function toggleControls(){controlsHidden=!controlsHidden;applyControlsVisibility
 let placementMessage='',pendingSlot=null;
 let game='light',free=false,level=0,state={},selected=0,drag=null;
 const completed=new Set();const lastLevel={light:null,cut:null};
-function showSelection(){restartConfirmation.dismiss();restartRevision++;placementMessage='';pendingSlot=null;invalidate();drag=null;document.querySelector('.lab').hidden=true;$('selection').hidden=false;document.querySelectorAll('[data-game]').forEach(b=>b.setAttribute('aria-pressed',String(b.dataset.game===game)));$('selection-title').textContent={light:`Reflexos · ${lightLevels.length} níveis`,cut:'Corte certo · 100 níveis'}[game];let html='';for(let k=0;k<catalogue[game].length;k+=10){if(game==='light')html+=`<h3 class="stage-heading">${catalogue.light[k].stage} · ${catalogue.light[k].stageName}</h3>`;if(game==='cut')html+=`<h3 class="stage-heading">${['1 · Uma direção por vez','2 · Parábolas e vazios','3 · Ondas e recortes','4 · Curvas em S','5 · Silhuetas irregulares','6 · Vazios maiores','7 · Bordas abertas','8 · Recortes combinados','9 · Área que resta','10 · Síntese de formas'][k/10]}</h3>`;html+='<div class="level-group">'+catalogue[game].slice(k,k+10).map((l,j)=>{const i=k+j,done=completed.has(game+i),assisted=answerProgress.get(`${game}:${l.id??i}`).assisted,current=lastLevel[game]===i;return `<button class="level-tile ${done?'done':''}" data-level="${i}" aria-current="${current}" aria-label="Nível ${i+1}: ${l.name}${done?', concluído':''}${assisted?', assistido por gabarito':''}${current?', atual':''}"><span>${i+1}</span><small>${done?(assisted?'✓ com gabarito':'✓ concluído'):assisted?'com gabarito':current?'atual':'explorar'}</small></button>`;}).join('')+'</div>';}$('level-grid').innerHTML=html;$('level-grid').querySelectorAll('[data-level]').forEach(b=>b.onclick=()=>{level=Number(b.dataset.level);free=false;start();});$('selection-title').focus();}
+function showSelection(){saveEndless();free=false;endlessPanel.hidden=true;restartConfirmation.dismiss();restartRevision++;placementMessage='';pendingSlot=null;invalidate();drag=null;document.querySelector('.lab').hidden=true;$('selection').hidden=false;document.querySelectorAll('[data-game]').forEach(b=>b.setAttribute('aria-pressed',String(b.dataset.game===game)));$('selection-title').textContent={light:`Reflexos · ${lightLevels.length} níveis`,cut:'Corte certo · 100 níveis'}[game];let html='';for(let k=0;k<catalogue[game].length;k+=10){if(game==='light')html+=`<h3 class="stage-heading">${catalogue.light[k].stage} · ${catalogue.light[k].stageName}</h3>`;if(game==='cut')html+=`<h3 class="stage-heading">${['1 · Uma direção por vez','2 · Parábolas e vazios','3 · Ondas e recortes','4 · Curvas em S','5 · Silhuetas irregulares','6 · Vazios maiores','7 · Bordas abertas','8 · Recortes combinados','9 · Área que resta','10 · Síntese de formas'][k/10]}</h3>`;html+='<div class="level-group">'+catalogue[game].slice(k,k+10).map((l,j)=>{const i=k+j,done=completed.has(game+i),assisted=answerProgress.get(`${game}:${l.id??i}`).assisted,current=lastLevel[game]===i;return `<button class="level-tile ${done?'done':''}" data-level="${i}" aria-current="${current}" aria-label="Nível ${i+1}: ${l.name}${done?', concluído':''}${assisted?', assistido por gabarito':''}${current?', atual':''}"><span>${i+1}</span><small>${done?(assisted?'✓ com gabarito':'✓ concluído'):assisted?'com gabarito':current?'atual':'explorar'}</small></button>`;}).join('')+'</div>';}$('level-grid').innerHTML=html;$('level-grid').querySelectorAll('[data-level]').forEach(b=>b.onclick=()=>{level=Number(b.dataset.level);free=false;start();});$('selection-title').focus();}
 
 let phase='editing',evaluation=null,frame=0,animationToken=0,revealed=[],lightDistance=0,lightFired=[];
-function invalidate(){middleConfirm?.cancel();resultMotion.clear();cancelAnimationFrame(frame);animationToken++;phase='editing';evaluation=null;revealed=[];lightDistance=0;lightFired=[];scene.setAttribute('aria-busy','false');}
+function invalidate(){if(free&&endlessRun)endlessRun.solved=false;clearTimeout(endlessTimer);endlessTimer=null;middleConfirm?.cancel();resultMotion.clear();cancelAnimationFrame(frame);animationToken++;phase='editing';evaluation=null;revealed=[];lightDistance=0;lightFired=[];scene.setAttribute('aria-busy','false');}
 function finishResult(){
  // Exploração parcial não é uma resposta errada nem libera o próximo nível.
  if(game==='light'&&!evaluation.ray.complete){phase='partial';scene.setAttribute('aria-busy','false');draw();return;}
  const success=game==='light'?evaluation.ray.status==='target':cutSuccess(evaluation.cut.ratio*100,evaluation.snapshot.target);
  // Só uma confirmação errada concluída conta; desenhar, editar ou cancelar o raio não conta.
- if(!free&&!success&&!evaluation.counted){answerProgress.fail(answerKey());evaluation.counted=true;}
+ if(!success&&!evaluation.counted){answerProgress.fail(answerKey());evaluation.counted=true;}
  phase='result';scene.setAttribute('aria-busy','false');draw();
  resultMotion.show(game,success);
+ if(free&&success){clearTimeout(endlessTimer);endlessRun.solved=true;if(!endlessRun.awarded){endlessRun.count++;endlessRun.awarded=true;}saveEndless();scheduleEndlessAdvance();}
 }
+
 function confirmAnswer(){
- if(phase==='animating')return;
+ if(restartConfirmation.isOpen||(free&&endlessRun?.solved&&phase==='result')||phase==='animating')return;
  resultMotion.clear();cancelAnimationFrame(frame);const token=++animationToken;
  const snapshot=structuredClone(state);evaluation={snapshot};
  if(game!=='light'){evaluation.cut=curvedCut(shapePolygon(snapshot.shape),snapshot);finishResult();return;}
@@ -80,7 +124,7 @@ function confirmAnswer(){
  animateLight(token);
 }
 function fireLightSource(index){
- if(game!=='light'||phase==='animating'||!Number.isInteger(index)||index<0||index>=lightScene(state).sources.length)return;
+ if(restartConfirmation.isOpen||(free&&endlessRun?.solved&&phase==='result')||game!=='light'||phase==='animating'||!Number.isInteger(index)||index<0||index>=lightScene(state).sources.length)return;
  if(phase==='result')invalidate();
  if(lightFired.includes(index))return; // Idempotente: não duplica disparos nem tentativas.
  const previous=evaluation?.ray??null;
@@ -140,11 +184,13 @@ const field=(key,label,min,max,step,value,unit='',disabled=false)=>`<div class="
 function start(){
  restartConfirmation.dismiss();restartRevision++;
  placementMessage='';pendingSlot=null;invalidate();drag=null;$('selection').hidden=true;document.querySelector('.lab').hidden=false;if(!free)lastLevel[game]=level; selected=0; const l=catalogue[game][level];
- if(game==='light'){state={objects:structuredClone(l.objects),target:{...l.target,radius:22},sourceAngle:l.sourceAngle??0,...(!free?{sources:structuredClone(l.sources),targets:structuredClone(l.targets),portals:structuredClone(l.portals??[])}:{})};selected=state.objects.findIndex(o=>o.type==='mirror');}
- if(game==='cut'){cutMode=free?'advanced':'basic';cutDrafts={basic:null,advanced:null};state=basicCutState(l);if(free)state.holes=[];}
- $('hint-text').textContent=!free&&answerProgress.get(answerKey()).assisted?'Este desafio está marcado como assistido por gabarito.':''; render();$('game-title').setAttribute('tabindex','-1');$('game-title').focus();
+ if(free){try{endlessGenerated=generateOriginalEndless(game,endlessRun.seed,endlessRun.options);}catch(error){free=false;showSelection();$('selection-title').textContent='Não foi possível gerar este desafio. Abra o modo livre e tente outra configuração.';return;}state=structuredClone(endlessGenerated.initial);endlessRun.solved=false;cutMode='advanced';cutDrafts={basic:null,advanced:null};if(game==='light')selected=state.objects.findIndex(o=>o.type==='mirror');}
+ if(game==='light'&&!free){state={objects:structuredClone(l.objects),target:{...l.target,radius:22},sourceAngle:l.sourceAngle??0,...(!free?{sources:structuredClone(l.sources),targets:structuredClone(l.targets),portals:structuredClone(l.portals??[])}:{})};selected=state.objects.findIndex(o=>o.type==='mirror');}
+ if(game==='cut'&&!free){cutMode=free?'advanced':'basic';cutDrafts={basic:null,advanced:null};state=basicCutState(l);if(free)state.holes=[];}
+ $('hint-text').textContent=answerProgress.get(answerKey()).assisted?'Este desafio está marcado como assistido por gabarito.':''; render();$('game-title').setAttribute('tabindex','-1');$('game-title').focus();
 }
 function render(){
+ renderEndlessPanel();document.querySelector('.level-picker').hidden=free;
  document.querySelectorAll('[data-game]').forEach(b=>b.setAttribute('aria-pressed',String(b.dataset.game===game)));
  $('challenge').setAttribute('aria-pressed',String(!free));$('free').setAttribute('aria-pressed',String(free));
  $('game-kicker').textContent='EXPERIMENTO '+titles[game][0];$('game-title').textContent=titles[game][1];
@@ -152,13 +198,13 @@ function render(){
  $('level').innerHTML=catalogue[game].map((l,i)=>`<option value="${i}">${i+1}. ${l.name}</option>`).join('');$('level').value=level;$('level').disabled=free;
  $('level-prev').hidden=free;$('level-next').hidden=free;$('level-prev').disabled=level===0;$('level-next').disabled=level===catalogue[game].length-1;
  $('confirm').title=game==='cut'?'Também pode avaliar clicando na rodinha do mouse sobre o tabuleiro.':'';
- $('stage-label').textContent=free?'SEU ESPAÇO PARA EXPERIMENTAR':`DESAFIO ${String(level+1).padStart(2,'0')} / ${String(catalogue[game].length).padStart(2,'0')}`;
- $('mission').textContent=game==='light'?(free?'Crie um caminho com espelhos, paredes e um alvo. Clique na fonte para disparar ou em Confirmar todos.':'Gire os espelhos. Clique em cada fonte para disparar separadamente, ou em Confirmar todos. Os raios ficam no palco; editar limpa todos. Cada cor deve alcançar seu próprio alvo, sem cruzar outra cor. Os símbolos também identificam cada par. Alvos aceitam 22 unidades de tolerância; espelhos e paredes têm posições fixas.'):(free?'Escolha uma forma, uma meta e experimente seu corte.':`Deixe ${state.target}% da área no lado roxo. Tolerância: ±3 pontos percentuais, incluindo o limite.`);
+ $('stage-label').textContent=free?`ENDLESS · DESAFIO ${endlessRun.count+1}`:`DESAFIO ${String(level+1).padStart(2,'0')} / ${String(catalogue[game].length).padStart(2,'0')}`;
+ $('mission').textContent=game==='light'?(free?'Ajuste os espelhos para cada cor chegar ao seu alvo, sem cruzar outra cor. As posições são fixas. Acertar gera o próximo desafio.':'Gire os espelhos. Clique em cada fonte para disparar separadamente, ou em Confirmar todos. Os raios ficam no palco; editar limpa todos. Cada cor deve alcançar seu próprio alvo, sem cruzar outra cor. Os símbolos também identificam cada par. Alvos aceitam 22 unidades de tolerância; espelhos e paredes têm posições fixas.'):(free?`Deixe ${state.target}% da área preenchida no lado roxo. Tolerância: ±3 pontos percentuais. Acertar gera o próximo desafio.`:`Deixe ${state.target}% da área no lado roxo. Tolerância: ±3 pontos percentuais, incluindo o limite.`);
  if(game==='light'&&!free)$('mission').textContent+=' '+(lightLevels[level].wallPurpose??[]).join(' ');
  if(game==='cut'&&!free)$('mission').textContent+=` No modo básico, mova somente na direção indicada (${cutLevels[level].basicDirection}°). Os controles livres ficam na aba Controles da curva.`;
  if(game==='cut')$('mission').textContent+=` Corte: ${state.family}. ${state.family==='Reta'?'':`Amplitude ${state.amplitude}${state.family==='Seno'?`; frequência ${state.frequency}`:''}.`}`;
  if(game==='cut'&&state.holes.length)$('mission').textContent+=` ${state.holes.length} espaço(s) vazio(s): não pertencem à área. Divida apenas a parte preenchida.`;
- $('hint').hidden=free;$('next').hidden=free;$('next').disabled=level===catalogue[game].length-1;
+ $('hint').hidden=false;$('next').hidden=free;$('next').disabled=level===catalogue[game].length-1;
  const texts={light:'A cada trecho, o raio encontra a superfície mais próxima. Paredes são retângulos sólidos com espessura real e absorvem a luz; espelhos refletem segundo d′ = d − 2(d·n)n. O disco da mesma cor aceita o raio: raio geométrico de 22 unidades do palco. A primeira entrada no disco precisa estar antes da próxima superfície; uma parede vence o empate. Cada raio para em 12 reflexões ou 40 eventos, sem loop infinito. Portais mantêm a direção e pulam para o par; o salto não é um segmento físico. Cores diferentes não podem cruzar nem tocar trajetórias. Portais seletivos bloqueiam cores não permitidas. Os ângulos são medidos em coordenadas de tela, com y para baixo. A normal pontilhada é perpendicular ao espelho no ponto de impacto. As setas indicam a direção de propagação. As bordas são paredes. Evite sobrepor objetos: paredes têm prioridade em empates.',cut:'Retas usam recorte exato. Curvas são gráficos sem autointerseção, aproximados por segmentos de passo máximo 1; cada faixa é recortada geometricamente. Um limite de segunda derivada controla o erro de área, muito menor que a margem de jogo. O contorno roxo é calculado pelas interseções reais da linha com as arestas; sua área usa a fórmula do cadarço. A proporção exibida é área roxa útil ÷ área total útil. Buracos são subtraídos de ambas: espaços vazios nunca contam, mesmo quando atravessados pela curva. O ângulo controla a normal da linha: 0° produz um corte vertical. Deslocamento positivo aumenta a região roxa. Não usamos contagem de pixels. Acerto: erro absoluto de até 3 pontos percentuais, incluindo os dois limites; isso não é 3% relativo à meta.'};
  $('explanation').textContent=texts[game];applyControlsVisibility();updateAnswerButton();editor();draw();
 }
@@ -175,17 +221,14 @@ function editor(){
  renderLevelNotes();
  let html='';
  if(game==='light'){
-  html=`<label for="selected">Elemento selecionado</label><select id="selected">${state.objects.map((o,i)=>o.type==='mirror'||free?`<option value="${i}">${o.type==='mirror'?'Espelho':'Parede'} ${i+1}</option>`:'').join('')}${free?'<option value="target">Alvo</option>':''}</select>`;
+  html=`<label for="selected">Elemento selecionado</label><select id="selected">${state.objects.map((o,i)=>o.type==='mirror'?`<option value="${i}">${o.type==='mirror'?'Espelho':'Parede'} ${i+1}</option>`:'').join('')}</select>`;
   const o=selected==='target'?state.target:state.objects[selected];
-  if(free)html+=field('objectX','Posição horizontal',30,770,1,o.x)+field('objectY','Posição vertical',30,430,1,o.y);
-  if(selected!=='target'){html+=field('angle','Ângulo do elemento',-90,90,.1,o.angle,'°');if(free)html+=field('length','Comprimento',40,220,.1,o.length);}
-  if(free)html+=field('sourceAngle','Direção da fonte',-180,180,1,state.sourceAngle,'°')+`<div class="inline-buttons"><button id="add">+ Espelho</button><button id="wall">+ Parede</button><button id="remove" ${selected==='target'?'disabled':''}>Remover</button></div>`;
+  html+=field('angle','Ângulo do elemento',-90,90,.1,o.angle,'°');
 
  }
  if(game==='cut'){
   if(!free&&cutMode==='basic')html='<p class="cut-panel-note">O desafio básico tem um único controle, abaixo do nível. Abra a aba Controles da curva para mover, girar e deslizar livremente.</p>';
   else{
-   if(free)html+=`<label for="shape">Forma</label><select id="shape">${shapes.map(n=>`<option>${n}</option>`).join('')}</select>`+field('target','Meta de área',10,90,1,state.target,'%')+`<label for="family">Tipo de corte</label><select id="family">${families.map(n=>`<option>${n}</option>`).join('')}</select>`;
    html+=field('centerX','Mover · horizontal',-400,1200,.1,state.centerX)+field('centerY','Mover · vertical',-400,860,.1,state.centerY)+field('cutAngle','Girar curva',0,360,.1,state.angle,'°')+field('offset','Deslizar curva',-600,600,.1,state.offset);
    if(allowed('amplitude'))html+=field('amplitude','Amplitude da curva',-120,120,1,state.amplitude);
    if(allowed('frequency')&&['Seno','Cosseno'].includes(state.family))html+=field('frequency','Frequência da onda',.5,2,.5,state.frequency);
@@ -195,30 +238,21 @@ function editor(){
  if($('cut-mode-basic'))$('cut-mode-basic').onclick=()=>setCutMode('basic');
  if($('cut-mode-advanced'))$('cut-mode-advanced').onclick=()=>setCutMode('advanced');
  if($('selected')){$('selected').value=selected;$('selected').onchange=e=>{selected=e.target.value==='target'?'target':Number(e.target.value);editor();draw();};}
- if($('shape')){$('shape').value=state.shape;$('shape').onchange=e=>{invalidate();state.shape=e.target.value;draw();};}
- if($('family')){$('family').value=state.family;$('family').onchange=e=>{invalidate();state.family=e.target.value;editor();draw();};}
  document.querySelectorAll('#editor [data-bind], #level-notes [data-bind]').forEach(el=>el.addEventListener('input',()=>{if(el.value!==''&&el.validity.valid)change(el.dataset.bind,Number(el.value));}));
- if($('add'))$('add').onclick=()=>{invalidate();
-  if(game==='light'&&state.objects.length<24){state.objects.push({type:'mirror',x:400,y:200,length:156,angle:0});selected=state.objects.length-1;}editor();draw();
- };
- if($('wall'))$('wall').onclick=()=>{invalidate();if(state.objects.length<24){state.objects.push({type:'wall',x:500,y:260,length:120,angle:90});selected=state.objects.length-1;}editor();draw();};
- if($('remove'))$('remove').onclick=()=>{invalidate();const list=state.objects;if(list.length>1&&selected!=='target'){list.splice(selected,1);selected=Math.min(selected,list.length-1);placementMessage='';editor();draw();}};
- if(free&&$('add'))$('add').disabled=state.objects.length>=24;
- if(free&&$('wall'))$('wall').disabled=state.objects.length>=24;
- if(free&&$('remove'))$('remove').disabled=selected==='target'||state.objects.length<=1;
+
 }
 function change(key,v){
  // Tanto os sliders quanto os campos numéricos passam pelo mesmo caminho de atualização.
  if(!Number.isFinite(v))return;invalidate();const slider=$(key);v=clamp(v,Number(slider.min),Number(slider.max));slider.value=v;$(key+'-number').value=v;
- if(game==='light'){const o=selected==='target'?state.target:state.objects[selected];if(key==='objectX'&&free)o.x=v;if(key==='objectY'&&free)o.y=v;if(key==='angle')o.angle=v;if(key==='length'&&free)o.length=v;if(key==='sourceAngle'&&free)state.sourceAngle=v;}
- if(game==='cut'){if(key==='basicTravel'&&cutMode==='basic')setBasicTravel(v);if(key==='cutAngle'&&allowed('rotate'))state.angle=v;if(key==='offset'&&allowed('offset'))state.offset=v;if(key==='target')state.target=v;if(key==='centerX'&&allowed('x'))state.centerX=v;if(key==='centerY'&&allowed('y'))state.centerY=v;if(key==='amplitude'&&allowed('amplitude'))state.amplitude=v;if(key==='frequency'&&allowed('frequency'))state.frequency=v;}
+ if(game==='light'&&key==='angle')state.objects[selected].angle=v;
+ if(game==='cut'){if(key==='basicTravel'&&cutMode==='basic')setBasicTravel(v);if(key==='cutAngle'&&allowed('rotate'))state.angle=v;if(key==='offset'&&allowed('offset'))state.offset=v;if(key==='centerX'&&allowed('x'))state.centerX=v;if(key==='centerY'&&allowed('y'))state.centerY=v;if(key==='amplitude'&&allowed('amplitude'))state.amplitude=v;if(key==='frequency'&&allowed('frequency'))state.frequency=v;}
  const units={angle:'°',cutAngle:'°',sourceAngle:'°',target:'%'};
  if($(key+'-out'))$(key+'-out').textContent=fmt(v,key==='position'?2:1)+(units[key]??'');
  draw();
 }
 function status(label,value,message,success){
  updateAnswerButton();
- if(success&&!free&&answerProgress.get(answerKey()).assisted)message+=' Concluído com gabarito.';
+ if(success&&answerProgress.get(answerKey()).assisted)message+=' Concluído com gabarito.';
  const partial=game==='light'&&phase==='partial';
  $('confirm').disabled=phase==='animating';
  $('confirm').textContent=phase==='animating'?'Raio em percurso…':game==='light'?'Confirmar todos':'Confirmar resposta';
@@ -241,11 +275,11 @@ function draw(){
   const r=evaluation?.ray??{rays:[],collisions:[],bounces:0,status:'pending'};
   if(phase!=='editing'){const distance=phase==='animating'?lightDistance:Infinity;svg+=worldRaysSVG(lightAttemptFrame(r,distance),distance,true);}
   svg+=portalSVG(state.portals??[],performance.now()/1000);
-  svg+=lightEndpointsSVG(state,free,{firedSourceIndices:lightFired,busy:phase==='animating',complete:phase==='result'});
+  svg+=lightEndpointsSVG(state,false,{firedSourceIndices:lightFired,busy:phase==='animating',complete:phase==='result'});
   state.objects.map((o,i)=>({o,i})).sort((a,b)=>(a.o.type==='wall'?0:1)-(b.o.type==='wall'?0:1)).forEach(({o,i})=>{const s=segment(o);
    // A alça fica sobre o vidro, na posição confortável anterior; a superfície usa o comprimento inteiro.
    const grip=o.type==='mirror'?segment({...o,length:Math.min(o.length,104)}).b:s.b;
-   if(o.type==='wall'){svg+=`<g ${free?`data-item="${i}" tabindex="0" role="button" class="handle"`:''} aria-label="Parede sólida"><polygon points="${points(wallPolygon(o))}" class="light-wall-body"/><path d="M${s.a.x},${s.a.y} L${s.b.x},${s.b.y}" class="light-wall-inset"/></g>`;return;}
+   if(o.type==='wall'){svg+=`<g aria-label="Parede sólida"><polygon points="${points(wallPolygon(o))}" class="light-wall-body"/><path d="M${s.a.x},${s.a.y} L${s.b.x},${s.b.y}" class="light-wall-inset"/></g>`;return;}
    svg+=`<g data-item="${i}" tabindex="0" role="button" class="handle" aria-label="Espelho ${i+1}, ${o.angle} graus">${line(s.a,s.b,'stroke="transparent" stroke-width="30"')}${line(s.a,s.b,'class="mirror-frame"')}${line(s.a,s.b,'class="mirror-glass"')}${line(s.a,s.b,'stroke="#ffffff" stroke-width="1" stroke-dasharray="18 9"')}<circle cx="${o.x}" cy="${o.y}" r="${selected===i?6:3}" fill="${selected===i?'#c76b42':'#fffefa'}"/><text x="${o.x+10}" y="${o.y-10}" font-size="11">${i+1}</text><circle data-rotate="${i}" cx="${grip.x}" cy="${grip.y}" r="14" fill="#fffefa" stroke="#c76b42" stroke-width="1.5"/><text x="${grip.x}" y="${grip.y+4}" text-anchor="middle" pointer-events="none" font-size="14">↻</text></g>`;
   });
   const message=r.status==='target'?'Todos os alvos alcançados, sem cruzamentos!':r.status==='collision'?`Colisão entre ${r.collisions[0].colors.map(beamName).join(' e ')}. Separe as trajetórias; o ponto está marcado.`:'Algum raio não alcançou seu alvo. Reveja espelhos, paredes e cores dos portais.';
@@ -264,6 +298,7 @@ function draw(){
   svg+=`<text x="24" y="430" font-size="13">Lado roxo · meta ${state.target}%${!free&&cutMode==='basic'?' · um único eixo':''}</text>`;
   const err=c.ratio*100-state.target, ok=cutSuccess(c.ratio*100,state.target);status('Área roxa',fmt(c.ratio*100)+'%',ok?'Corte encontrado! Dentro de ±3 pontos percentuais (limite incluído).':`Fora da margem de ±3 pp: ${fmt(Math.abs(err),2)} pontos percentuais ${err>0?'acima':'abaixo'} da meta.`,ok);
  }
+ saveEndless();
  drawing.innerHTML=svg;
  if(focusedSource!==undefined)drawing.querySelector(`[data-light-source="${focusedSource}"]`)?.focus({preventScroll:true});
 }
@@ -273,12 +308,12 @@ middleConfirm=bindMiddleConfirm(scene,{enabled:()=>game==='cut'&&!document.query
 scene.addEventListener('pointerdown',e=>{
  if(game==='cut'&&e.button===1)return;
  const el=e.target.closest('[data-item]');if(!el)return;const id=el.dataset.item, rotate=e.target.closest('[data-rotate]');
- if(game==='light'){if(!free&&id==='target')return;if(!free&&state.objects[Number(id)].type==='wall')return;selected=id==='target'?'target':Number(id);editor();draw();if(!free&&!rotate)return;}
+ if(game==='light'){if(id==='target')return;if(state.objects[Number(id)].type==='wall')return;selected=id==='target'?'target':Number(id);editor();draw();if(!rotate)return;}
  if(game==='cut')cutDragOrigin={point:localPoint(e),travel:state.basicTravel??0,centerX:state.centerX,centerY:state.centerY,offset:state.offset,angle:state.angle};
  if(game==='cut'&&id==='cut'&&!allowed('offset'))return;drag=rotate?'rotate':id;scene.setPointerCapture(e.pointerId);e.preventDefault();
 });
 scene.addEventListener('pointermove',e=>{if(drag===null)return;const p=localPoint(e);
- if(game==='light'){const o=selected==='target'?state.target:state.objects[selected];if(drag==='rotate'){if(Math.hypot(p.x-o.x,p.y-o.y)>10)change('angle',Math.round(mirrorAngle(p.x-o.x,p.y-o.y)*10)/10);}else if(free){change('objectX',Math.round(p.x));change('objectY',Math.round(p.y));}}
+ if(game==='light'){const o=selected==='target'?state.target:state.objects[selected];if(drag==='rotate'){if(Math.hypot(p.x-o.x,p.y-o.y)>10)change('angle',Math.round(mirrorAngle(p.x-o.x,p.y-o.y)*10)/10);}}
  if(game==='cut'){if(drag==='basic-cut'&&!free&&cutMode==='basic'){const d=cutDirection();change('basicTravel',cutDragOrigin.travel+(p.x-cutDragOrigin.point.x)*d.x+(p.y-cutDragOrigin.point.y)*d.y);}else if(drag==='move-curve'){if(allowed('x'))change('centerX',cutDragOrigin.centerX+p.x-cutDragOrigin.point.x);if(allowed('y'))change('centerY',cutDragOrigin.centerY+p.y-cutDragOrigin.point.y);}else if(drag==='rotate-curve'&&allowed('rotate')){const originAngle=Math.atan2(cutDragOrigin.point.y-state.centerY,cutDragOrigin.point.x-state.centerX),nowAngle=Math.atan2(p.y-state.centerY,p.x-state.centerX);const a=(cutDragOrigin.angle+(nowAngle-originAngle)*180/Math.PI+720)%360;change('cutAngle',Math.round(a*10)/10);}else if(allowed('offset')){const a=state.angle*Math.PI/180,v=cutDragOrigin.offset+(p.x-cutDragOrigin.point.x)*Math.cos(a)+(p.y-cutDragOrigin.point.y)*Math.sin(a);change('offset',v);}}
 });
 const endDrag=()=>{drag=null;pendingSlot=null;cutDragOrigin=null;};scene.addEventListener('pointerup',()=>{if(drag===null)return;endDrag();draw();});scene.addEventListener('pointercancel',()=>{endDrag();draw();});scene.addEventListener('lostpointercapture',endDrag);
@@ -287,18 +322,18 @@ scene.addEventListener('keydown',e=>{
  const source=e.target.closest('[data-light-source]');
  if(source){if(['Enter',' ','Spacebar'].includes(e.key)){e.preventDefault();if(!e.repeat)fireLightSource(Number(source.dataset.lightSource));}return;}
  const el=e.target.closest('[data-item]');if(!el||!['ArrowLeft','ArrowRight','ArrowUp','ArrowDown'].includes(e.key))return;e.preventDefault();invalidate();const id=el.dataset.item,step=e.key==='ArrowLeft'||e.key==='ArrowDown'?-1:1;
- if(game==='light'){if(id==='target'||(!free&&state.objects[Number(id)].type==='wall'))return;selected=Number(id);state.objects[selected].angle=clamp(state.objects[selected].angle+step,-90,90);}
+ if(game==='light'){if(id==='target'||(state.objects[Number(id)].type==='wall'))return;selected=Number(id);state.objects[selected].angle=clamp(state.objects[selected].angle+step,-90,90);}
  if(game==='cut'){if(id==='basic-cut'&&!free&&cutMode==='basic')setBasicTravel((state.basicTravel??0)+step);else if(id==='rotate-curve'&&allowed('rotate'))state.angle=(state.angle+step+360)%360;else if(id==='move-curve'){if(['ArrowLeft','ArrowRight'].includes(e.key)&&allowed('x'))state.centerX=clamp(state.centerX+step,-400,1200);if(['ArrowUp','ArrowDown'].includes(e.key)&&allowed('y'))state.centerY=clamp(state.centerY+(e.key==='ArrowUp'?-1:1),-400,860);}else if(allowed('offset'))state.offset=clamp(state.offset+step,-600,600);}editor();draw();drawing.querySelector(`[data-item="${id}"]`)?.focus();
 });
-document.querySelectorAll('[data-game]').forEach(b=>b.onclick=()=>{if(!catalogue[b.dataset.game])return;collection.hide();game=b.dataset.game;showSelection();});
-$('free').onclick=()=>{free=true;start();};$('challenge').onclick=()=>{free=false;showSelection();};$('level').onchange=e=>{level=Number(e.target.value);start();};$('reset').onclick=()=>{middleConfirm?.cancel();const revision=restartRevision;restartConfirmation.open({trigger:$('reset'),isCurrent:()=>revision===restartRevision&&!document.querySelector('.lab').hidden,onConfirm:start});};
-$('selection-free').onclick=()=>{free=true;level=lastLevel[game]??0;start();};$('back-selection').onclick=showSelection;
+document.querySelectorAll('[data-game]').forEach(b=>b.onclick=()=>{if(!catalogue[b.dataset.game])return;saveEndless();collection.hide();free=false;game=b.dataset.game;showSelection();});
+$('free').textContent='Endless';$('free').onclick=enterEndless;$('challenge').onclick=()=>{free=false;showSelection();};$('level').onchange=e=>{level=Number(e.target.value);start();};$('reset').onclick=()=>{middleConfirm?.cancel();clearTimeout(endlessTimer);endlessTimer=null;const revision=restartRevision;restartConfirmation.open({trigger:$('reset'),isCurrent:()=>revision===restartRevision&&!document.querySelector('.lab').hidden,onConfirm:start,onCancel:scheduleEndlessAdvance});};
+$('selection-free').onclick=enterEndless;$('back-selection').onclick=showSelection;
 $('toggle-controls').onclick=toggleControls;
 applyControlsVisibility();
 $('confirm').onclick=confirmAnswer;
 function navigateLevel(delta){const next=level+delta;if(free||next<0||next>=catalogue[game].length)return;level=next;start();}
 $('level-prev').onclick=()=>navigateLevel(-1);$('level-next').onclick=()=>navigateLevel(1);
-$('next').onclick=()=>navigateLevel(1);$('hint').onclick=()=>{$('hint-text').textContent=game==='cut'?'Mova a linha até se aproximar da meta. A porcentagem depende da área, não do comprimento dos lados.':catalogue[game][level].hint;};
+$('next').onclick=()=>navigateLevel(1);$('hint').onclick=()=>{$('hint-text').textContent=free?endlessGenerated.level.hint:game==='cut'?'Mova a linha até se aproximar da meta. A porcentagem depende da área, não do comprimento dos lados.':catalogue[game][level].hint;};
 showSelection();
 
-const collection=initCollection({hideOriginal(){restartConfirmation.dismiss();restartRevision++;invalidate();document.querySelector('.lab').hidden=true;$('selection').hidden=true;}});
+const collection=initCollection({hideOriginal(){saveEndless();free=false;endlessPanel.hidden=true;restartConfirmation.dismiss();restartRevision++;invalidate();document.querySelector('.lab').hidden=true;$('selection').hidden=true;}});

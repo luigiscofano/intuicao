@@ -1,0 +1,13 @@
+import assert from 'node:assert/strict';
+import fs from 'node:fs';
+import {root,store,$,timers} from './direct-ui-harness.mjs';
+import {generateOriginalEndless} from '../dist/endless-original.mjs';
+const game=process.argv[2]??'light',solved=process.argv[3]==='solved',seed=23012,key='intuicao.endless.original.v1';
+const options=game==='light'?{sources:2,mirrors:2,portals:true,walls:true,selective:true}:{shape:'Triângulo',holes:true,curves:true};
+const generated=generateOriginalEndless(game,seed,options),state=structuredClone(generated.initial);
+if(game==='light')state.objects[0].angle=22;else state.offset=33;
+store.set(key,JSON.stringify({[game]:{seed,options,count:7,state,solved,awarded:solved}}));
+root.innerHTML=fs.readFileSync(new URL('../dist/index.html',import.meta.url),'utf8');document.body=root;globalThis.cancelAnimationFrame=id=>timers.delete(id);globalThis.matchMedia=()=>({matches:true});
+await import('../dist/app.mjs');root.querySelector(`[data-game="${game}"]`).click();$('selection-free').click();
+const restored=JSON.parse(store.get(key))[game];assert.equal(restored.count,7);assert.equal(restored.seed,solved?(seed+0x9e3779b9)>>>0:seed);assert.deepEqual(restored.options,generated.options);assert.deepEqual(restored.state,solved?generateOriginalEndless(game,restored.seed,options).initial:state);
+console.log('PASS',game,'fresh-page storage resume',solved?'after victory advances once':'with edited current state');

@@ -1,0 +1,8 @@
+{
+  "authorization": "2026-10-24: user requested configurable seeded Endless mode in all six games. Only UI integration files below replace previously approved interface hashes; historical campaign, shortcut and platform baselines are retained. The index adds only the isolated endless.css link, reversed in the isolation check.",
+  "baseline": "835f473489f31c045b1b194e6ff23724a077483c",
+  "sha256": {
+    "app.mjs": "a094879b48e34c6f1e318402df50f9e42422624e21d6cbdad198be3eb1e70f51",
+    "collection-ui.mjs": "ebe8cdd6f4506b59c3b251459640a5c7d788ccb135cfb3c002fda73be2a227eb"
+  }
+}
