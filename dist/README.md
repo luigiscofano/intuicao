@@ -1,3 +1,9 @@
+## Revisão ELO v2 · 24/10/2026
+
+A campanha ELO foi substituída por 200 puzzles com IDs próprios (elo-v2-*), preservando os registros anteriores sem aplicá-los às novas fases. Retângulos caíram de 136 para 7, todos introdutórios; a variedade de formatos de circuito compactados subiu de 3 para 72. A progressão aumenta curvas, peças móveis e dependências entre regiões, até 12 curvas e grades 7×7. Os pontos fixos conservam a cor original da região.
+
+As conexões continuam automáticas durante a edição e a vitória só é avaliada ao confirmar. Editor/importação aceita todos os novos níveis. Outros jogos e o total de 1.100 níveis permanecem inalterados. Todos os 200 desafios fecham no verificador de raciocínio encadeado com até duas hipóteses simultâneas. Progressão é editorial e certificada estruturalmente, não calibrada por playtest humano. Detalhes, limites e provas estão na documentação ELO v2 do pacote completo.
+
 # Intuição
 
 #### Video Demo: ainda não gravado — não há URL de vídeo

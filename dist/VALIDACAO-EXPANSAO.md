@@ -1,3 +1,7 @@
+## Atualização ELO v2
+
+200 novos puzzles certificados, com unicidade por enumerador independente. 7 retângulos introdutórios, 72 formatos compactados de circuito, média de 9,23 peças e 6,29 móveis. Todos os testes de interação passam (5.493 cliques); 588 pontos fixos mantêm a cor de suas 1.846 regiões. Editor: 200/200 aceitos; sessões antigas isoladas por IDs novos. A suíte inteira e regressões dos outros jogos passaram. Revisão estática de imagens não equivale a teste real de navegador; não houve calibração com jogadores.
+
 # Evidência de validação · expansão lógica
 
 ## Método
