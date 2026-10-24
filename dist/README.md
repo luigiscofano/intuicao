@@ -44,3 +44,9 @@ Sliders, campos numéricos e teclado complementam o arraste; estados e resultado
 - [Registro histórico de validação da expansão](VALIDACAO-EXPANSAO.md)
 
 Os módulos de geometria, níveis, interface e resultados ficam separados para permitir testes reproduzíveis. O pacote completo inclui documentação e testes. Nenhum exercício foi enviado ao curso nem pedido de certificado foi realizado. Revise as regras do curso e registre suas próprias contribuições antes de qualquer entrega.
+
+## Interação direta nos jogos lógicos
+
+ELO, PRUMO, PACTO e DESVIO agora têm edição direta por mouse, toque e teclado, histórico transacional, controles de zoom/deslocamento e atalhos junto ao tabuleiro. Veja [Controles por jogo](CONTROLES-DIRETOS.md) e [Matriz de implementação e testes](INTERACAO-DIRETA-MATRIZ.md).
+
+Nos puzzles, preencher o tabuleiro não revela vitória automaticamente: use **Confirmar resposta**. Dicas têm três etapas e aplicação explícita, sem consultar um gabarito para fabricar a explicação. O progresso é local a este navegador, sem sincronização prometida. NEXO e Equilíbrio permanecem fora do catálogo; Corte Certo e Reflexos não foram alterados nesta revisão.
