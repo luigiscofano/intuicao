@@ -132,7 +132,9 @@ body > footer :is(p,small){color:#555344}
 }
 @media(max-width:760px){
  :where(body:not(:has(.lab:not([hidden]), #collection:not([hidden]) > .collection-lab))) > header::before{left:82%}
- :where(body:not(:has(.lab:not([hidden]), #collection:not([hidden]) > .collection-lab))) > header::after{left:95%}
- :where(body:not(:has(.lab:not([hidden]), #collection:not([hidden]) > .collection-lab))) #main > .intro::after{left:91%}
+ :where(body:not(:has(.lab:not([hidden]), #collection:not([hidden]) > .collection-lab))) > header::after{left:calc(100% - 52px)}
+ :where(body:not(:has(.lab:not([hidden]), #collection:not([hidden]) > .collection-lab))) #main > .intro::after{left:calc(100% - 52px)}
  :is(#selection, #collection > .level-screen) .level-tile{min-height:58px}
 }
+/* Pressed feedback follows frame styles and remains metric-neutral. */
+#main > .games > button:active{box-shadow:inset 2px 2px #3b342e33}
