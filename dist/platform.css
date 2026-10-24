@@ -134,7 +134,7 @@ body > .platform-leaf-layer{position:absolute;inset:0;z-index:3;overflow:hidden;
 /* Only the canopy adopts pixel art. The added header border reserves space
    without changing text, game widths, or the approved leaf motion rules. */
 body > header{border-top:88px solid #fafbf7}
-body > .platform-leaf-layer::before{content:"";position:absolute;top:0;left:0;width:100%;height:88px;pointer-events:none;background:url("platform-assets/tree-canopy-pixel.svg") center top/960px 88px repeat-x;image-rendering:pixelated;opacity:.82}
+body > .platform-leaf-layer::before{content:"";position:absolute;top:0;left:0;width:100%;height:88px;pointer-events:none;background:url("platform-assets/tree-canopy-varied.svg") center top/960px 88px repeat-x;image-rendering:pixelated;opacity:.82}
 @media(max-width:760px){
  body > header{border-top-width:64px}
  body > .platform-leaf-layer::before{height:64px;background-size:720px 66px}
@@ -168,4 +168,12 @@ body > .platform-leaf-foreground > .platform-leaf:nth-child(8){left:93%;width:24
 @media(prefers-reduced-motion:reduce){
  body > .platform-leaf-foreground > .platform-leaf{display:none;animation:none}
  body > .platform-leaf-layer > .platform-leaf{display:none;animation:none}
+}
+
+/* Static fallen leaves live only at the document floor, below footer text. */
+body > footer{border-bottom:44px solid #fafbf7}
+body > .platform-leaf-layer::after{content:"";position:absolute;bottom:0;left:0;width:100%;height:44px;pointer-events:none;background:url("platform-assets/leaf-floor.svg") center bottom/960px 44px repeat-x;image-rendering:pixelated;opacity:.8}
+@media(max-width:760px){
+ body > footer{border-bottom-width:36px}
+ body > .platform-leaf-layer::after{height:36px;background-size:720px 36px}
 }

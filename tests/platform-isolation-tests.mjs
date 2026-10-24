@@ -45,7 +45,11 @@ for(const [name,hash] of Object.entries(baseline)){
  assert.equal(sha(bytes),pactoApproved[name]??endlessApproved[name]??approved[name]??hash,`Protected original file modified: ${name}`);
 }
 const fullCanopyChange=JSON.parse(fs.readFileSync(new URL('./fullwidth-canopy-authorized-change.json',import.meta.url)));
-const currentPlatformSource=fs.readFileSync(new URL('../dist/platform.css',import.meta.url),'utf8');
+const variedChange=JSON.parse(fs.readFileSync(new URL('./varied-foliage-authorized-change.json',import.meta.url)));
+const actualPlatformSource=fs.readFileSync(new URL('../dist/platform.css',import.meta.url),'utf8');
+assert.equal(actualPlatformSource.split(variedChange.css_insertion).length-1,1,'Exact approved document-floor decoration');
+const currentPlatformSource=actualPlatformSource.replace(variedChange.css_insertion,'').replace(variedChange.asset_after,variedChange.asset_before);
+assert.equal(sha(currentPlatformSource),variedChange.prior_css_sha256,'Falling leaves and all previous CSS byte-identical');
 assert.equal(currentPlatformSource.split(fullCanopyChange.after).length-1,1,'Exact authorized full-width canopy and header space');
 for(const [name,hash] of Object.entries(fullCanopyChange.leaf_asset_sha256)) assert.equal(sha(fs.readFileSync(new URL('../dist/platform-assets/'+name,import.meta.url))),hash,'Falling leaf artwork unchanged');
 assert.equal(currentPlatformSource.split(incidenceChange.css_after).length-1,1,'Exact approved incidence rules');

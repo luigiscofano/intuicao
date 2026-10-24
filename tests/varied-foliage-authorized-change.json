@@ -1,0 +1,7 @@
+{
+  "authorization": "2026-10-24 Sentinel_6ce7db2e986c8191a25a7b34e3319ee8: vary canopy leaf models/angles/sizes/subtle colours with partial occlusion, preserve approved silhouette, add a multicolour pixel-art leaf pile at document floor. Falling leaves stay unchanged.",
+  "asset_before": "platform-assets/tree-canopy-pixel.svg",
+  "asset_after": "platform-assets/tree-canopy-varied.svg",
+  "css_insertion": "\n/* Static fallen leaves live only at the document floor, below footer text. */\nbody > footer{border-bottom:44px solid #fafbf7}\nbody > .platform-leaf-layer::after{content:\"\";position:absolute;bottom:0;left:0;width:100%;height:44px;pointer-events:none;background:url(\"platform-assets/leaf-floor.svg\") center bottom/960px 44px repeat-x;image-rendering:pixelated;opacity:.8}\n@media(max-width:760px){\n body > footer{border-bottom-width:36px}\n body > .platform-leaf-layer::after{height:36px;background-size:720px 36px}\n}\n",
+  "prior_css_sha256": "5453a573a59010c332f99043ec89513d26b8ee07f3c23220ad4efdd01268f1ab"
+}
