@@ -11,7 +11,7 @@
 .block-list{padding:0;list-style:none;font-size:13px;line-height:1.6;margin:12px 0}.block-list li{padding:5px 0;border-bottom:1px solid #e5e8df}
 
 /* Resultado curto e não modal: ocupa espaço reservado e nunca intercepta gestos. */
-.result-motion{min-height:86px;padding:0 24px;pointer-events:none;user-select:none}
+.result-motion{min-height:var(--result-reserved-height,86px);padding:0 24px;pointer-events:none;user-select:none}
 .result-badge{display:flex;align-items:center;gap:12px;min-height:80px;color:var(--green)}
 .result-badge>svg{width:76px;height:68px;flex:0 0 76px;overflow:visible}
 .result-badge strong{display:block;font-size:15px;line-height:1.4}
@@ -225,9 +225,9 @@ button.action-hint:hover{background:#e4dcf1;border-color:#9c85bb}
 .level-arrow[hidden]{display:none}
 @media(max-width:540px){.stage-top{flex-wrap:wrap}.level-stepper{gap:7px}.level-stepper .eyebrow{font-size:10px}}
 
-.board-navigation{min-width:0}
+.board-navigation{min-width:0;--result-reserved-height:86px}
 .board-navigation:has(> .level-arrow:not([hidden])){display:grid;grid-template-columns:44px minmax(0,1fr) 44px;gap:8px;align-items:center;padding:0 6px}
-.board-navigation> .level-arrow{align-self:center;position:static}
+.board-navigation> .level-arrow{align-self:center;position:static;margin-bottom:var(--result-reserved-height)}
 .board-navigation> .scene-wrap,.board-navigation> .collection-board-wrap{min-width:0;width:100%}
 @media(max-width:600px){.board-navigation:has(> .level-arrow:not([hidden])){gap:2px;padding:0 2px}.board-navigation:has(> .level-arrow)> .collection-board-wrap{padding-left:2px;padding-right:2px}}
 /* Mantém os 680 px máximos da superfície da coleção quando há espaço. */

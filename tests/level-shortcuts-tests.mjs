@@ -42,7 +42,9 @@ console.log('PASS DESVIO has no level arrows; Reflexos navigation cancels animat
 
 const styles=fs.readFileSync(new URL('../dist/style.css',import.meta.url),'utf8');
 assert.match(styles,/grid-template-columns:44px minmax\(0,1fr\) 44px/);
-assert.match(styles,/\.board-navigation> \.level-arrow\{align-self:center;position:static\}/);
+assert.match(styles,/\.board-navigation> \.level-arrow\{align-self:center;position:static;margin-bottom:var\(--result-reserved-height\)\}/);
 assert.match(styles,/max-width:796px/);
 assert.match(styles,/gap:2px;padding:0 2px/);
 console.log('PASS side navigation owns separate columns; no arrows in clickable board; one arrow per direction; responsive lanes and intrinsic board sizing');
+
+assert.match(styles,/min-height:var\(--result-reserved-height,86px\)/);
