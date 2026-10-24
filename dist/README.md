@@ -108,3 +108,6 @@ Veja [Reflexos e obstáculos](documentacao/REFLEXOS-E-OBSTACULOS.md) e [QA atual
 ## Vitória e nova tentativa
 
 Todos os 300 níveis e o modo livre têm vitória específica de cada jogo e derrota rápida de 300 ms (tremor, borda vermelha e blur, sem texto visual) e somente após confirmação. Reflexos espera o percurso terminar. Respeitam movimento reduzido e não bloqueiam controles. Veja [animações de resultado](documentacao/ANIMACOES-DE-RESULTADO.md). São 24.565 verificações automatizadas aprovadas; a suíte nova usa DOM simulado, não navegador. A cópia local aberta no Chrome não é sincronizada automaticamente pelo Drive.
+
+## Alças mais claras no Corte
+Quadrado com quatro setas: mover curva. Círculo dourado com seta curva: girar. Círculo claro com duas setas: deslizar o corte. Legenda, dicas e foco identificam as ações liberadas. Detalhes: documentacao/CONTROLES-DO-CORTE.md.

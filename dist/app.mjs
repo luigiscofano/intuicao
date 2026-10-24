@@ -39,6 +39,22 @@ const fmt=(n,d=1)=>Number(n).toLocaleString('pt-BR',{minimumFractionDigits:d,max
 const points=p=>p.map(v=>`${v.x},${v.y}`).join(' ');
 const line=(a,b,attrs='')=>`<line x1="${a.x}" y1="${a.y}" x2="${b.x}" y2="${b.y}" ${attrs}/>`;
 const allowed=key=>free||Boolean(cutLevels[level].permissions?.[key]);
+// Os símbolos descrevem ações, não apenas cores. O alvo transparente facilita o toque.
+function cutHandle(id,x,y,label,detail,kind,angle=0){
+ const rotation=kind==='rotate', move=kind==='move';
+ const shell=move?'<rect class="cut-grip-face" x="-17" y="-17" width="34" height="34" rx="10"/>':'<circle class="cut-grip-face" r="17"/>';
+ const glyph=rotation?'<path d="M-7 3 A8 8 0 1 1 6 6 M-7 3 L-8-3 M-7 3 L-1 2"/>':move?'<path d="M-9 0 H9 M0-9 V9 M-9 0 L-6-3 M-9 0 L-6 3 M9 0 L6-3 M9 0 L6 3 M0-9 L-3-6 M0-9 L3-6 M0 9 L-3 6 M0 9 L3 6"/>':`<path transform="rotate(${angle})" d="M-9 0 H9 M-9 0 L-5-4 M-9 0 L-5 4 M9 0 L5-4 M9 0 L5 4"/>`;
+ const tooltipX=Math.max(-x+8,Math.min(-54,800-x-116)),tooltipY=y<62?29:-47;
+ return `<g data-item="${id}" class="handle cut-grip cut-grip-${kind}" tabindex="0" role="button" aria-label="${label}. ${detail}" transform="translate(${x} ${y})"><title>${label} · ${detail}</title><circle class="cut-grip-hit" r="24"/>${shell}<g class="cut-grip-icon">${glyph}</g><g class="cut-grip-tip" transform="translate(${tooltipX} ${tooltipY})" aria-hidden="true"><rect width="108" height="23" rx="7"/><text x="54" y="15" text-anchor="middle">${label}</text></g></g>`;
+}
+function cutControlGuide(){
+ const entries=[];
+ if(allowed('x')||allowed('y'))entries.push(['move','↔','Mover curva',allowed('x')&&allowed('y')?'Arraste o quadrado para reposicionar.':`Arraste o quadrado no eixo ${allowed('x')?'horizontal':'vertical'}.`]);
+ if(allowed('rotate'))entries.push(['rotate','↻','Girar curva','Arraste a alça dourada ao redor do centro.']);
+ if(allowed('offset'))entries.push(['offset','↔','Deslizar corte','Arraste a alça redonda na direção das setas.']);
+ return `<div class="cut-control-guide"><strong>Alças do corte</strong>${entries.map(([kind,icon,label,detail])=>`<div class="cut-guide-row"><span class="cut-guide-icon cut-guide-${kind}" aria-hidden="true">${icon}</span><span><b>${label}</b><small>${detail}</small></span></div>`).join('')}<p>Tab seleciona uma alça; as setas ajustam. Só aparecem as ações liberadas neste nível.</p></div>`;
+}
+
 const field=(key,label,min,max,step,value,unit='',disabled=false)=>`<div class="field"><header><label for="${key}">${label}</label><output id="${key}-out" for="${key}">${fmt(value,step<.1?2:1)}${unit}</output></header><div class="precision"><input id="${key}" data-bind="${key}" type="range" min="${min}" max="${max}" step="${step}" value="${value}" aria-label="${label}" ${disabled?'disabled':''}><input id="${key}-number" data-bind="${key}" type="number" min="${min}" max="${max}" step="${step}" value="${value}" aria-label="${label} (valor)" ${disabled?'disabled':''}></div></div>`;
 function start(){
  placementMessage='';pendingSlot=null;invalidate();drag=null;$('selection').hidden=true;document.querySelector('.lab').hidden=false;if(!free)lastLevel[game]=level; selected=0; const l=catalogue[game][level];
@@ -79,7 +95,8 @@ function editor(){
   if(free)html+=field('sourceAngle','Direção da fonte',-80,80,1,state.sourceAngle,'°')+`<div class="inline-buttons"><button id="add">+ Espelho</button><button id="wall">+ Parede</button><button id="remove" ${selected==='target'?'disabled':''}>Remover</button></div>`;
  }
  if(game==='cut'){
-  if(free)html=`<label for="shape">Forma</label><select id="shape">${shapes.map(n=>`<option>${n}</option>`).join('')}</select>`+field('target','Meta de área',10,90,1,state.target,'%');
+  html=cutControlGuide();
+  if(free)html+=`<label for="shape">Forma</label><select id="shape">${shapes.map(n=>`<option>${n}</option>`).join('')}</select>`+field('target','Meta de área',10,90,1,state.target,'%');
   if(free)html+=`<label for="family">Tipo de corte</label><select id="family">${families.map(n=>`<option>${n}</option>`).join('')}</select>`;html+=field('centerX','Posição horizontal da curva',40,760,.1,state.centerX,'',!allowed('x'))+field('centerY','Posição vertical da curva',40,420,.1,state.centerY,'',!allowed('y'))+field('amplitude','Amplitude da curva',-120,120,1,state.amplitude,'',!allowed('amplitude'))+field('frequency','Frequência da onda',.5,2,.5,state.frequency,'',!allowed('frequency')||!['Seno','Cosseno'].includes(state.family));
   html+=field('cutAngle','Ângulo da normal',0,360,.1,state.angle,'°',!allowed('rotate'))+field('offset','Deslocamento do corte',-600,600,1,state.offset,'',!allowed('offset'));
  }
@@ -141,7 +158,7 @@ function draw(){
  }
  if(game==='cut'){
   const poly=shapePolygon(state.shape),shapePath=[poly,...state.holes].map(r=>'M'+r.map(v=>`${v.x},${v.y}`).join(' L')+' Z').join(' '),c=phase==='result'?evaluation.cut:curvedCut(poly,state),p={x:state.centerX+c.n.x*state.offset,y:state.centerY+c.n.y*state.offset},v={x:-c.n.y*900,y:c.n.x*900};
-  svg+=`<path data-shape="cut-region" d="${shapePath}" fill-rule="evenodd" fill="#e5e8df" stroke="#bcc8b5" stroke-width="2"/><defs><clipPath id="shape-clip"><path d="${shapePath}" clip-rule="evenodd"/></clipPath></defs><polygon points="${points(c.region)}" fill="#a89bc9" clip-path="url(#shape-clip)"/><polyline points="${points(c.curve)}" fill="none" stroke="#584976" stroke-width="3" stroke-dasharray="9 6"/><circle style="${allowed('offset')?'':'display:none'}" data-item="cut" class="handle" tabindex="0" role="button" aria-label="Mover corte" cx="${clamp(p.x,15,785)}" cy="${clamp(p.y,15,445)}" r="13" fill="#fffefa" stroke="#584976" stroke-width="3"/>${allowed('x')||allowed('y')?`<rect data-item="move-curve" class="handle" tabindex="0" role="button" aria-label="Mover curva no espaço" x="${state.centerX-13}" y="${state.centerY-13}" width="26" height="26" rx="6" fill="#fffefa" stroke="#584976" stroke-width="3"/>`:""}${allowed('rotate')?`<circle data-item="rotate-curve" class="handle" tabindex="0" role="button" aria-label="Girar curva" cx="${state.centerX-c.n.y*80}" cy="${state.centerY+c.n.x*80}" r="14" fill="#f4c98a" stroke="#584976" stroke-width="3"/>`:""}<text x="24" y="430" font-size="13">Lado roxo · meta ${state.target}%</text>`;
+  svg+=`<path data-shape="cut-region" d="${shapePath}" fill-rule="evenodd" fill="#e5e8df" stroke="#bcc8b5" stroke-width="2"/><defs><clipPath id="shape-clip"><path d="${shapePath}" clip-rule="evenodd"/></clipPath></defs><polygon points="${points(c.region)}" fill="#a89bc9" clip-path="url(#shape-clip)"/><polyline points="${points(c.curve)}" fill="none" stroke="#584976" stroke-width="3" stroke-dasharray="9 6"/>${allowed('offset')?cutHandle('cut',clamp(p.x,24,776),clamp(p.y,24,436),'Deslizar corte','Arraste na direção das setas ou use as teclas de seta.','offset',state.angle):''}${allowed('x')||allowed('y')?cutHandle('move-curve',state.centerX,state.centerY,'Mover curva',`Arraste para mover no eixo ${allowed('x')&&allowed('y')?'horizontal e vertical':allowed('x')?'horizontal':'vertical'} ou use as teclas de seta.`,'move'):''}${allowed('rotate')?cutHandle('rotate-curve',state.centerX-c.n.y*80,state.centerY+c.n.x*80,'Girar curva','Arraste ao redor do centro ou use as teclas de seta.','rotate'):''}<text x="24" y="430" font-size="13">Lado roxo · meta ${state.target}%</text>`;
   const err=c.ratio*100-state.target, ok=cutSuccess(c.ratio*100,state.target);status('Área roxa',fmt(c.ratio*100)+'%',ok?'Corte encontrado! Dentro de ±3 pontos percentuais (limite incluído).':`Fora da margem de ±3 pp: ${fmt(Math.abs(err),2)} pontos percentuais ${err>0?'acima':'abaixo'} da meta.`,ok);
  }
  drawing.innerHTML=svg;

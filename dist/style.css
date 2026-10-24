@@ -46,3 +46,25 @@
  @keyframes failure-shake{0%,100%{transform:translateX(0)}20%{transform:translateX(-2px)}40%{transform:translateX(2px)}60%{transform:translateX(-1px)}80%{transform:translateX(1px)}}
  @keyframes failure-blur{0%,100%{filter:blur(0)}35%{filter:blur(1px)}}
 }
+
+/* Alças do corte: forma + ícone + nome, sem depender exclusivamente da cor. */
+.cut-grip-hit{fill:#fff;opacity:0;stroke:none;pointer-events:all}
+.cut-grip-face{fill:#fffefa;stroke:#8c819e;stroke-width:1.6;filter:drop-shadow(0 2px 3px #30244222);pointer-events:none}
+.cut-grip-rotate .cut-grip-face{fill:#f5d28e;stroke:#b89450}
+.cut-grip-icon{fill:none;stroke:#584976;stroke-width:1.8;stroke-linecap:round;stroke-linejoin:round;pointer-events:none}
+.cut-grip-rotate .cut-grip-icon{stroke:#684c22}
+.cut-grip-tip{opacity:0;pointer-events:none;stroke:none}
+.cut-grip-tip rect{fill:#fffefa;stroke:#d7d0df;stroke-width:1}
+.cut-grip-tip text{fill:#584976;font-size:11px;font-weight:600}
+.cut-grip:hover .cut-grip-face,.cut-grip:focus .cut-grip-face{stroke:#584976;stroke-width:2.6}
+.cut-grip:hover .cut-grip-tip,.cut-grip:focus .cut-grip-tip{opacity:1}
+svg .cut-grip:focus{outline:none;stroke:none}
+.cut-grip:active{cursor:grabbing}
+.cut-control-guide{padding:13px;background:#f6f3f8;border:1px solid #e6e0ec;border-radius:12px;margin-bottom:18px}
+.cut-control-guide>strong{font-size:11px;color:#584976}
+.cut-guide-row{display:flex;align-items:center;gap:10px;margin-top:12px}
+.cut-guide-icon{flex:0 0 28px;width:28px;height:28px;display:grid;place-items:center;border:1px solid #b6a9c5;border-radius:50%;background:#fffefa;color:#584976;font-size:19px;line-height:1}
+.cut-guide-move{border-radius:8px}.cut-guide-rotate{background:#f5d28e;color:#684c22;border-color:#c3a367}
+.cut-guide-row b{display:block;font-size:11px;font-weight:650;color:#584976}
+.cut-guide-row small{display:block;font-size:10px;line-height:1.5;color:#647269;margin-top:2px}
+.cut-control-guide p{font-size:10px;color:#647269;line-height:1.6;margin:13px 0 0}
