@@ -4,11 +4,17 @@ import crypto from 'node:crypto';
 const baseline=JSON.parse(fs.readFileSync(new URL('./platform-baseline-sha256.json',import.meta.url)));
 const approved=JSON.parse(fs.readFileSync(new URL('./level-shortcuts-authorized-sha256.json',import.meta.url))).sha256;
 const copyChanges=JSON.parse(fs.readFileSync(new URL('./home-copy-authorized-changes.json',import.meta.url))).changes;
+const leafChange=JSON.parse(fs.readFileSync(new URL('./leaf-layer-authorized-change.json',import.meta.url)));
 const sha=s=>crypto.createHash('sha256').update(s).digest('hex');
 for(const [name,hash] of Object.entries(baseline)){
  let bytes=fs.readFileSync(new URL('../dist/'+name,import.meta.url));
  if(name==='index.html'){
   let html=bytes.toString();
+  assert.equal(html.split(leafChange.insertion).length-1,1,'Exactly one approved ornamental layer');
+  assert.ok(leafChange.insertion.startsWith('<div class="platform-leaf-layer" aria-hidden="true" inert>'));
+  assert.equal((leafChange.insertion.match(/<span class="platform-leaf"><\/span>/g)??[]).length,10);
+  assert.ok(!leafChange.insertion.includes('tabindex'));
+  html=html.replace(leafChange.insertion,'');
   // Reverse only the exact authorized copy edits, preserving historical hashes.
   for(const {before,after} of copyChanges){
    assert.equal(html.split(after).length-1,1,'Authorized replacement must occur exactly once');
@@ -20,10 +26,9 @@ for(const [name,hash] of Object.entries(baseline)){
  assert.equal(sha(bytes),approved[name]??hash,`Protected original file modified: ${name}`);
 }
 const fullCSS=fs.readFileSync(new URL('../dist/platform.css',import.meta.url),'utf8').replace(/\/\*[\s\S]*?\*\//g,'');
-// User explicitly requested sparse falling leaves in visual revision 2.
-// Permit only their named keyframes; every animation declaration must be on a
-// menu-only pseudo-element. The original game-file baseline is not rebased.
-const leafFrames=fullCSS.match(/@keyframes platform-leaf-drift\{(?:[^{}]*\{[^{}]*\})+\s*\}/g)??[];
+// User explicitly expanded leaves to all six games on 2026-10-24.
+// Only the fixed inert ornamental sibling may animate. Historical hashes remain.
+const leafFrames=fullCSS.match(/@keyframes platform-leaf-fall\{(?:[^{}]*\{[^{}]*\})+\s*\}/g)??[];
 assert.equal(leafFrames.length,1,'Exactly one isolated decorative leaf animation');
 const css=fullCSS.replace(leafFrames[0],'');
 assert.ok(!css.includes('--'),'No shared or inherited custom property changes');
@@ -33,13 +38,15 @@ const selectors=[...css.matchAll(/([^{}]+)\{([^{}]*)\}/g)].filter(x=>!x[1].trim(
 for(const [,raw,body] of selectors){
  const s=raw.trim();
  if(/animation\s*:/.test(body)){
-  assert.ok(s.startsWith(':where(body:not(:has(.lab:not([hidden]), #collection:not([hidden]) > .collection-lab)))'),'Decorative animation is menu-only');
-  assert.ok(/::(?:before|after)\s*$/.test(s),'Only decorative pseudo-elements animate');
-  assert.ok(/animation:(?:platform-leaf-drift|none)/.test(body),'Only approved leaf animation');
+  assert.equal(s,'body > .platform-leaf-layer > .platform-leaf','Only decorative siblings animate');
+  assert.ok(/animation:(?:platform-leaf-fall|none)/.test(body),'Only approved leaf animation');
  }
- assert.ok(s.startsWith('body > header')||s.startsWith('body > footer')||s.startsWith('#main > .intro')||s.startsWith('#main > .games')||s.startsWith(':where(body:not(:has(.lab:not([hidden]), #collection:not([hidden]) > .collection-lab)))')||s.startsWith(':is(#selection, #collection > .level-screen)'),`Unexpected unscoped selector: ${s}`);
+ assert.ok(s.startsWith('body > .platform-leaf-layer')||s.startsWith('body > header')||s.startsWith('body > footer')||s.startsWith('#main > .intro')||s.startsWith('#main > .games')||s.startsWith(':where(body:not(:has(.lab:not([hidden]), #collection:not([hidden]) > .collection-lab)))')||s.startsWith(':is(#selection, #collection > .level-screen)'),`Unexpected unscoped selector: ${s}`);
 }
 assert.ok(fullCSS.includes('@media(prefers-reduced-motion:reduce)'),'Reduced-motion opt-out required');
 assert.ok(!css.includes('quiet-garden.svg'),'Landscape no longer displayed');
 assert.ok(css.includes('pointer-events:none'),'Leaves must not intercept input');
-console.log(`PASS ${Object.keys(baseline).length-Object.keys(approved).length} original files byte-identical; ${Object.keys(approved).length} explicit shortcut/navigation changes match their separately recorded hashes; ${selectors.length} style blocks retain explicit platform roots. Three exact authorized home-copy edits are reversed for comparison. Original retro baseline is unchanged. Browser computed-style/geometry comparison remains separate.`);
+assert.ok(css.includes('position:fixed;inset:0'),'Leaf layer is out of normal flow');
+assert.ok(css.includes('overflow:hidden;pointer-events:none;user-select:none;contain:strict'),'Only the ornamental layer clips its overflow');
+assert.ok(!css.includes('platform-leaf-drift'),'Old menu leaves removed to avoid duplication');
+console.log(`PASS ${Object.keys(baseline).length-Object.keys(approved).length} original files byte-identical; ${Object.keys(approved).length} explicit shortcut/navigation changes match their separately recorded hashes; ${selectors.length} style blocks retain explicit platform roots. Exact authorized home-copy edits and the inert leaf-layer insertion are reversed for comparison. Original retro baseline is unchanged. Browser computed-style/geometry comparison remains separate.`);

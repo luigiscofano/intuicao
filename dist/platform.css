@@ -108,33 +108,38 @@ body > footer :is(p,small){color:#555344}
 #main > .games > button[aria-pressed=true]{box-shadow:inset 0 -2px #314d39,0 1px #303f32}
 :is(#selection, #collection > .level-screen){box-shadow:inset 0 0 0 5px #fafbf7,inset 0 0 0 6px #e5eadd,0 3px #e3e9dd}
 :is(#selection, #collection > .level-screen) .duel-maps > button{box-shadow:inset 0 -2px #e8ede3,0 1px #dce4d4}
-/* Original pixel leaves. Only three independent decorations. Empty generated
-   content is not spoken, accepts no pointer events, and never exists in games.
-   All animations target only these leaves, never a container or game surface. */
+/* Keep the established menu header and mobile tile metrics unchanged. */
 :where(body:not(:has(.lab:not([hidden]), #collection:not([hidden]) > .collection-lab))) > header{position:relative;z-index:1}
-:where(body:not(:has(.lab:not([hidden]), #collection:not([hidden]) > .collection-lab))) > header::before,
-:where(body:not(:has(.lab:not([hidden]), #collection:not([hidden]) > .collection-lab))) > header::after,
-:where(body:not(:has(.lab:not([hidden]), #collection:not([hidden]) > .collection-lab))) #main > .intro::after{content:"";position:absolute;pointer-events:none;width:20px;height:24px;image-rendering:pixelated;background-position:center;background-repeat:no-repeat;background-size:contain;opacity:0;top:-26px}
-:where(body:not(:has(.lab:not([hidden]), #collection:not([hidden]) > .collection-lab))) > header::before{left:64%;background-image:url("platform-assets/leaf-sage.svg");animation:platform-leaf-drift 24s 1s linear infinite}
-:where(body:not(:has(.lab:not([hidden]), #collection:not([hidden]) > .collection-lab))) > header::after{left:86%;width:16px;height:22px;background-image:url("platform-assets/leaf-clay.svg");animation:platform-leaf-drift 31s 12s linear infinite}
-:where(body:not(:has(.lab:not([hidden]), #collection:not([hidden]) > .collection-lab))) #main > .intro::after{left:76%;width:18px;height:22px;z-index:-1;background-image:url("platform-assets/leaf-honey.svg");animation:platform-leaf-drift 37s 22s linear infinite}
-@keyframes platform-leaf-drift{
- 0%{opacity:0;transform:translate(0,0) rotate(-12deg)}
- 3%{opacity:.65;transform:translate(4px,20px) rotate(0deg)}
- 13%{opacity:.65;transform:translate(-9px,110px) rotate(24deg)}
- 24%{opacity:.5;transform:translate(8px,220px) rotate(55deg)}
- 29%,100%{opacity:0;transform:translate(14px,250px) rotate(70deg)}
-}
-@media(prefers-reduced-motion:reduce){
- :where(body:not(:has(.lab:not([hidden]), #collection:not([hidden]) > .collection-lab))) > header::before,
- :where(body:not(:has(.lab:not([hidden]), #collection:not([hidden]) > .collection-lab))) > header::after,
- :where(body:not(:has(.lab:not([hidden]), #collection:not([hidden]) > .collection-lab))) #main > .intro::after{animation:none;display:none}
-}
 @media(max-width:760px){
- :where(body:not(:has(.lab:not([hidden]), #collection:not([hidden]) > .collection-lab))) > header::before{left:82%}
- :where(body:not(:has(.lab:not([hidden]), #collection:not([hidden]) > .collection-lab))) > header::after{left:calc(100% - 52px)}
- :where(body:not(:has(.lab:not([hidden]), #collection:not([hidden]) > .collection-lab))) #main > .intro::after{left:calc(100% - 52px)}
  :is(#selection, #collection > .level-screen) .level-tile{min-height:58px}
 }
 /* Pressed feedback follows frame styles and remains metric-neutral. */
 #main > .games > button:active{box-shadow:inset 2px 2px #3b342e33}
+
+/* Explicit owner request: leaves now cover the whole site, including games.
+   A fixed inert sibling layer never changes layout, focus, inputs or game state.
+   Ten reusable SVG backgrounds, transform-only CSS motion, no timer/JS/DOM churn.
+   Overflow is clipped on the decorative layer itself, never on a game ancestor. */
+body > .platform-leaf-layer{position:fixed;inset:0;z-index:3;overflow:hidden;pointer-events:none;user-select:none;contain:strict}
+body > .platform-leaf-layer > .platform-leaf{position:absolute;top:-48px;width:22px;height:30px;pointer-events:none;background:url("platform-assets/leaf-sage.svg") center/contain no-repeat;opacity:.32;animation:platform-leaf-fall 24s linear infinite}
+body > .platform-leaf-layer > .platform-leaf:nth-child(1){left:2%;width:16px;height:22px;opacity:.28;animation-duration:23s;animation-delay:-3s}
+body > .platform-leaf-layer > .platform-leaf:nth-child(2){left:12%;width:32px;height:38px;opacity:.18;background-image:url("platform-assets/leaf-honey.svg");animation-duration:29s;animation-delay:-17s}
+body > .platform-leaf-layer > .platform-leaf:nth-child(3){left:22%;width:21px;height:29px;opacity:.48;background-image:url("platform-assets/leaf-clay.svg");animation-duration:21s;animation-delay:-9s}
+body > .platform-leaf-layer > .platform-leaf:nth-child(4){left:32%;width:14px;height:19px;opacity:.65;animation-duration:19s;animation-delay:-14s}
+body > .platform-leaf-layer > .platform-leaf:nth-child(5){left:43%;width:38px;height:46px;opacity:.2;background-image:url("platform-assets/leaf-clay.svg");animation-duration:33s;animation-delay:-6s}
+body > .platform-leaf-layer > .platform-leaf:nth-child(6){left:53%;width:24px;height:29px;opacity:.38;background-image:url("platform-assets/leaf-honey.svg");animation-duration:25s;animation-delay:-20s}
+body > .platform-leaf-layer > .platform-leaf:nth-child(7){left:64%;width:18px;height:25px;opacity:.58;animation-duration:22s;animation-delay:-11s}
+body > .platform-leaf-layer > .platform-leaf:nth-child(8){left:74%;width:30px;height:36px;opacity:.24;background-image:url("platform-assets/leaf-honey.svg");animation-duration:28s;animation-delay:-4s}
+body > .platform-leaf-layer > .platform-leaf:nth-child(9){left:84%;width:20px;height:28px;opacity:.45;background-image:url("platform-assets/leaf-clay.svg");animation-duration:24s;animation-delay:-18s}
+body > .platform-leaf-layer > .platform-leaf:nth-child(10){left:94%;width:26px;height:35px;opacity:.32;animation-duration:30s;animation-delay:-12s}
+@keyframes platform-leaf-fall{
+ 0%{transform:translate3d(0,-48px,0) rotate(-25deg)}
+ 25%{transform:translate3d(-12px,calc(25vh - 12px),0) rotate(20deg)}
+ 50%{transform:translate3d(12px,calc(50vh + 24px),0) rotate(65deg)}
+ 75%{transform:translate3d(-8px,calc(75vh + 60px),0) rotate(95deg)}
+ 100%{transform:translate3d(18px,calc(100vh + 96px),0) rotate(135deg)}
+}
+@media(prefers-reduced-motion:reduce){
+ body > .platform-leaf-layer{display:none}
+ body > .platform-leaf-layer > .platform-leaf{animation:none}
+}
