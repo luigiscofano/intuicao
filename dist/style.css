@@ -93,3 +93,25 @@ svg .cut-grip:focus{outline:none;stroke:none}
  @keyframes victory-arrive{0%{opacity:0;transform:translate(-50%,-48%) scale(.96)}20%,80%{opacity:1;transform:translate(-50%,-50%) scale(1)}100%{opacity:0;transform:translate(-50%,-50%) scale(1)}}
  @keyframes victory-spark{0%{opacity:0;transform:scale(.65)}35%,70%{opacity:1;transform:scale(1)}100%{opacity:0;transform:scale(.8)}}
 }
+
+/* Paredes sólidas e portais luminosos, sem preenchimento escuro pesado. */
+.light-wall-body{fill:#87938b;stroke:#64736b;stroke-width:1;stroke-linejoin:round}
+.light-wall-inset{stroke:#c5cec5;stroke-width:1;stroke-opacity:.65;stroke-linecap:butt;pointer-events:none}
+.portal-halo,.portal-rim,.portal-window{pointer-events:none}
+/* O nível permanece utilizável com os ajustes precisos recolhidos. */
+.workspace.controls-hidden{grid-template-columns:minmax(0,1fr)}
+.stage-tools{display:flex;align-items:center;gap:12px}
+.panel-toggle{background:#fffefa;border:1px solid #d9dfd7;border-radius:8px;color:#52645a;font-size:11px;padding:7px 10px;min-height:36px!important}
+.controls-title{font-size:13px;font-weight:650;margin:0 0 20px;color:#43584b}
+.level-brief{padding:0 24px 12px}.level-brief #mission{font-size:12px;line-height:1.65;color:#596a60;margin:0;max-width:850px}
+.level-actions{padding:16px 24px 8px;border-top:1px solid #e0e4db;display:flex;flex-wrap:wrap;align-items:center;gap:10px}
+.level-actions .confirm{width:auto;margin:0;min-width:170px}.level-actions .actions{margin:0 0 0 auto;gap:12px}.level-actions .hint{flex-basis:100%;margin:0}.level-actions .hint:empty{display:none}
+.level-notes{padding:0 24px 20px;display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,240px),1fr));gap:10px}
+.level-notes .light-note{margin:8px 0 0;background:#f7f9f6;border-color:#dce3db;color:#50645a}
+.level-notes .cut-control-guide{margin:8px 0 0}.level-notes .cut-control-guide>strong{font-size:12px}
+@media(max-width:760px){.stage-top{align-items:flex-start;gap:12px;flex-wrap:wrap}.stage-tools{flex-wrap:wrap;gap:8px}.level-brief{padding:0 16px 12px}.level-actions{padding:14px 16px 8px}.level-actions .confirm{flex:1}.level-actions .actions{margin-left:0;flex:1;justify-content:flex-end}.level-notes{padding:0 16px 16px}.controls-title{margin-bottom:12px}}
+
+.level-picker{display:flex;align-items:center;gap:12px;margin-bottom:10px}.level-picker label{font-size:11px;color:var(--muted);white-space:nowrap}.level-picker select{max-width:100%;min-width:0;min-height:40px;flex:1;border:1px solid #d9dfd7;border-radius:8px;background:#fffefa;color:var(--ink);padding:8px 10px;font-size:12px}
+
+/* Celebração centrada no SVG, independente da altura das notas. */
+.scene-wrap{position:relative}.scene-wrap .victory-celebration{top:calc(50% - 43px)}

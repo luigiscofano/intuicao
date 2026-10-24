@@ -123,3 +123,11 @@ Fontes restauradas: círculo preto com bico e disco colorido menor. Os 100 níve
 ## Celebração de vitória
 
 Vitória preserva as animações de canto e acrescenta borda verde, zoom suave de 1,8% e PARABÉNS! em arco com pequenos sparkles, durante 1,1 segundo. Derrota permanece rápida (300 ms), sem alteração. Movimento reduzido mantém a mensagem e a borda estáticas. Testes: 31.081 verificações; CSS e interação ainda não executados em navegador real nesta revisão.
+
+## Painel recolhível e acabamento visual — 24/10/2026
+
+O botão “Ocultar opções avançadas” recolhe os ajustes precisos; “Mostrar opções avançadas” os restaura. A escolha é guardada apenas neste navegador, separada do progresso. O palco mantém as coordenadas e ocupa a largura disponível. Seleção de nível, missão, confirmação, pista, próximo nível e notas continuam na área principal. As explicações dos portais, cores e alças não dependem do painel.
+
+Portais mantêm formato, pares, cores e rotação, com centros translúcidos claros e aros sutis. Paredes têm acabamento sólido discreto; sua geometria de colisão não mudou.
+
+Verificação: dez suítes, 33.162 verificações; painel e notas dos 300 níveis em DOM simulado. Imagens SVG dos níveis 41 e 100 inspecionadas. Layout responsivo, cliques e movimento real em navegador permanecem sem validação nesta execução.

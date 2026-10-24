@@ -10,6 +10,16 @@ import {balanceLevels,lightLevels,cutLevels} from './levels.mjs';
 const $=id=>document.getElementById(id), scene=$('scene'), drawing=$('drawing');
 const resultMotion=createResultMotion($('result-motion'),document.querySelector('.experiment'));
 const catalogue={balance:balanceLevels,light:lightLevels,cut:cutLevels};
+// Preferência visual independente do progresso. Falhas de armazenamento não bloqueiam o jogo.
+let controlsHidden=false;
+try{controlsHidden=globalThis.localStorage?.getItem('intuicao.advanced-hidden')==='true';}catch{}
+function applyControlsVisibility(){
+ $('advanced-controls').hidden=controlsHidden;
+ document.querySelector('.workspace').classList.toggle('controls-hidden',controlsHidden);
+ $('toggle-controls').setAttribute('aria-expanded',String(!controlsHidden));
+ $('toggle-controls').textContent=controlsHidden?'Mostrar opções avançadas':'Ocultar opções avançadas';
+}
+function toggleControls(){controlsHidden=!controlsHidden;applyControlsVisibility();try{globalThis.localStorage?.setItem('intuicao.advanced-hidden',String(controlsHidden));}catch{}}
 let placementMessage='',pendingSlot=null;
 let game='balance',free=false,level=0,state={},selected=0,drag=null;
 const completed=new Set();const lastLevel={balance:null,light:null,cut:null};
@@ -78,9 +88,19 @@ function render(){
  if(game==='cut'&&state.holes.length)$('mission').textContent+=` ${state.holes.length} espaço(s) vazio(s): não pertencem à área. Divida apenas a parte preenchida.`;
  $('hint').hidden=free;$('next').hidden=free;
  const texts={balance:'O torque é massa × gravidade × distância horizontal ao apoio. À direita ele é positivo (sentido horário); à esquerda, negativo. O painel mostra a soma em N·m. O equilíbrio é aceito até 1,18 N·m de diferença. A inclinação da viga é uma indicação visual do torque calculado na posição horizontal, não uma simulação dinâmica de movimento ou queda. O apoio está no centro; não há atrito.',light:'A cada trecho, o raio encontra a superfície mais próxima. Paredes são retângulos sólidos com espessura real e absorvem a luz; espelhos refletem segundo d′ = d − 2(d·n)n. O disco da mesma cor aceita o raio: raio geométrico de 22 unidades do palco. A primeira entrada no disco precisa estar antes da próxima superfície; uma parede vence o empate. Cada raio para em 12 reflexões ou 40 eventos, sem loop infinito. Portais mantêm a direção e pulam para o par; o salto não é um segmento físico. Cores diferentes não podem cruzar nem tocar trajetórias. Portais seletivos bloqueiam cores não permitidas. Os ângulos são medidos em coordenadas de tela, com y para baixo. A normal pontilhada é perpendicular ao espelho no ponto de impacto. As setas indicam a direção de propagação. As bordas são paredes. Evite sobrepor objetos: paredes têm prioridade em empates.',cut:'Retas usam recorte exato. Curvas são gráficos sem autointerseção, aproximados por segmentos de passo máximo 1; cada faixa é recortada geometricamente. Um limite de segunda derivada controla o erro de área, muito menor que a margem de jogo. O contorno roxo é calculado pelas interseções reais da linha com as arestas; sua área usa a fórmula do cadarço. A proporção exibida é área roxa útil ÷ área total útil. Buracos são subtraídos de ambas: espaços vazios nunca contam, mesmo quando atravessados pela curva. O ângulo controla a normal da linha: 0° produz um corte vertical. Deslocamento positivo aumenta a região roxa. Não usamos contagem de pixels. Acerto: erro absoluto de até 3 pontos percentuais, incluindo os dois limites; isso não é 3% relativo à meta.'};
- $('explanation').textContent=texts[game];editor();draw();
+ $('explanation').textContent=texts[game];applyControlsVisibility();editor();draw();
+}
+function renderLevelNotes(){
+ let notes='';
+ if(game==='light'){
+  if(!free){const l=lightLevels[level];if(l.tutorial)notes+=`<div class="light-note" role="note"><strong>Nova ideia</strong>${l.tutorial}</div>`;if(state.portals?.length)notes+='<div class="light-note"><strong>Como usar os portais</strong>Portais com a mesma letra formam um par. A luz entra em um e sai do outro mantendo a direção. Branco aceita todas as cores; os símbolos coloridos indicam as cores permitidas. Uma cor não permitida é bloqueada. O salto entre portais não cruza outros raios.</div>';if(state.sources?.length>1)notes+='<div class="light-note"><strong>Caminhos separados</strong>Cada raio deve chegar ao alvo da mesma cor e símbolo. Cruzar ou encostar na trajetória de outra cor é colisão, mesmo que cheguem em momentos diferentes.</div>';} 
+ }
+ if(game==='cut')notes=cutControlGuide();
+ $('level-notes').innerHTML=notes;
+ $('level-notes').hidden=!notes;
 }
 function editor(){
+ renderLevelNotes();
  let html='';
  if(game==='balance'){
   const w=state.weights[selected];html=`<label for="selected">Peso selecionado</label><select id="selected">${state.weights.map((w,i)=>`<option value="${i}">${i+1} · ${fmt(w.mass)} kg${w.fixed?' • fixo':''}</option>`).join('')}</select>`;
@@ -94,10 +114,10 @@ function editor(){
   if(free)html+=field('objectX','Posição horizontal',30,770,1,o.x)+field('objectY','Posição vertical',30,430,1,o.y);
   if(selected!=='target'){html+=field('angle','Ângulo do elemento',-90,90,.1,o.angle,'°');if(free)html+=field('length','Comprimento',40,220,5,o.length);}
   if(free)html+=field('sourceAngle','Direção da fonte',-180,180,1,state.sourceAngle,'°')+`<div class="inline-buttons"><button id="add">+ Espelho</button><button id="wall">+ Parede</button><button id="remove" ${selected==='target'?'disabled':''}>Remover</button></div>`;
-  if(!free){const l=lightLevels[level];if(l.tutorial)html+=`<div class="light-note" role="note"><strong>Nova ideia</strong>${l.tutorial}</div>`;if(state.portals?.length)html+='<div class="light-note"><strong>Como usar os portais</strong>Portais com a mesma letra formam um par. A luz entra em um e sai do outro mantendo a direção. Branco aceita todas as cores; os símbolos coloridos indicam as cores permitidas. Uma cor não permitida é bloqueada. O salto entre portais não cruza outros raios.</div>';if(state.sources?.length>1)html+='<div class="light-note"><strong>Caminhos separados</strong>Cada raio deve chegar ao alvo da mesma cor e símbolo. Cruzar ou encostar na trajetória de outra cor é colisão, mesmo que cheguem em momentos diferentes.</div>';} 
+
  }
  if(game==='cut'){
-  html=cutControlGuide();
+  html='';
   if(free)html+=`<label for="shape">Forma</label><select id="shape">${shapes.map(n=>`<option>${n}</option>`).join('')}</select>`+field('target','Meta de área',10,90,1,state.target,'%');
   if(free)html+=`<label for="family">Tipo de corte</label><select id="family">${families.map(n=>`<option>${n}</option>`).join('')}</select>`;html+=field('centerX','Posição horizontal da curva',40,760,.1,state.centerX,'',!allowed('x'))+field('centerY','Posição vertical da curva',40,420,.1,state.centerY,'',!allowed('y'))+field('amplitude','Amplitude da curva',-120,120,1,state.amplitude,'',!allowed('amplitude'))+field('frequency','Frequência da onda',.5,2,.5,state.frequency,'',!allowed('frequency')||!['Seno','Cosseno'].includes(state.family));
   html+=field('cutAngle','Ângulo da normal',0,360,.1,state.angle,'°',!allowed('rotate'))+field('offset','Deslocamento do corte',-600,600,1,state.offset,'',!allowed('offset'));
@@ -152,7 +172,7 @@ function draw(){
   svg+=portalSVG(state.portals??[],performance.now()/1000);
   svg+=lightEndpointsSVG(state,free);
   state.objects.map((o,i)=>({o,i})).sort((a,b)=>(a.o.type==='wall'?0:1)-(b.o.type==='wall'?0:1)).forEach(({o,i})=>{const s=segment(o);
-   if(o.type==='wall'){svg+=`<g ${free?`data-item="${i}" tabindex="0" role="button" class="handle"`:''} aria-label="Parede sólida"><polygon points="${points(wallPolygon(o))}" fill="#526054"/><path d="M${s.a.x},${s.a.y} L${s.b.x},${s.b.y}" stroke="#778276" stroke-width="1" stroke-dasharray="18 3"/></g>`;return;}
+   if(o.type==='wall'){svg+=`<g ${free?`data-item="${i}" tabindex="0" role="button" class="handle"`:''} aria-label="Parede sólida"><polygon points="${points(wallPolygon(o))}" class="light-wall-body"/><path d="M${s.a.x},${s.a.y} L${s.b.x},${s.b.y}" class="light-wall-inset"/></g>`;return;}
    svg+=`<g data-item="${i}" tabindex="0" role="button" class="handle" aria-label="Espelho ${i+1}, ${o.angle} graus">${line(s.a,s.b,'stroke="transparent" stroke-width="30"')}${line(s.a,s.b,'class="mirror-frame"')}${line(s.a,s.b,'class="mirror-glass"')}${line(s.a,s.b,'stroke="#ffffff" stroke-width="1" stroke-dasharray="18 9"')}<circle cx="${o.x}" cy="${o.y}" r="${selected===i?6:3}" fill="${selected===i?'#c76b42':'#fffefa'}"/><text x="${o.x+10}" y="${o.y-10}" font-size="11">${i+1}</text><circle data-rotate="${i}" cx="${s.b.x}" cy="${s.b.y}" r="14" fill="#fffefa" stroke="#c76b42" stroke-width="1.5"/><text x="${s.b.x}" y="${s.b.y+4}" text-anchor="middle" pointer-events="none" font-size="14">↻</text></g>`;
   });
   const message=r.status==='target'?'Todos os alvos alcançados, sem cruzamentos!':r.status==='collision'?`Colisão entre ${r.collisions[0].colors.map(beamName).join(' e ')}. Separe as trajetórias; o ponto está marcado.`:'Algum raio não alcançou seu alvo. Reveja espelhos, paredes e cores dos portais.';
@@ -189,6 +209,8 @@ scene.addEventListener('keydown',e=>{const el=e.target.closest('[data-item]');if
 document.querySelectorAll('[data-game]').forEach(b=>b.onclick=()=>{game=b.dataset.game;showSelection();});
 $('free').onclick=()=>{free=true;start();};$('challenge').onclick=()=>{free=false;showSelection();};$('level').onchange=e=>{level=Number(e.target.value);start();};$('reset').onclick=start;
 $('selection-free').onclick=()=>{free=true;level=lastLevel[game]??0;start();};$('back-selection').onclick=showSelection;
+$('toggle-controls').onclick=toggleControls;
+applyControlsVisibility();
 $('confirm').onclick=confirmAnswer;
 $('next').onclick=()=>{level=(level+1)%catalogue[game].length;start();};$('hint').onclick=()=>{$('hint-text').textContent=game==='cut'?'Mova a linha até se aproximar da meta. A porcentagem depende da área, não do comprimento dos lados.':catalogue[game][level].hint;};
 showSelection();
