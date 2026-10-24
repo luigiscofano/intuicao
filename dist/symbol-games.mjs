@@ -1,4 +1,4 @@
-/** Pure PACTO/NEXO engines. Values: -1 empty, 0..3/2 symbols. No reference solution is consulted.
+/** Pure PACTO engine. Values: -1 empty, 0..3 symbols. No reference solution is consulted.
  * solveSymbols returns {solutions,count,complete,nodes}; complete=false only if optional maxNodes reached.
  * symbolCandidates returns arrays of supported values (GAC, not global-solution guarantees).
  * Hints return {tier,kind,text,cells,premises,eliminations,value?,cell?}; never overwrite clues.
@@ -7,7 +7,7 @@ const CACHE=new Map();
 const pop=x=>{let n=0;while(x){x&=x-1;n++;}return n;};
 const vals=m=>{const a=[];for(let v=0;v<4;v++)if(m&(1<<v))a.push(v);return a;};
 function model(level){
- const game=level.game,n=game==='pacto'?8:game==='nexo'?6:0,k=n/2;
+ const game=level.game,n=game==='pacto'?8:0,k=n/2;
  if(!n||level.rows!==n||level.cols!==n||!Array.isArray(level.clues)||level.clues.length!==n*n)throw new Error('Formato de fase inválido.');
  if(CACHE.has(game))return CACHE.get(game);
  const constraints=[],adj=Array.from({length:n*n},(_,i)=>{const r=i/n|0,c=i%n;return [[r-1,c],[r+1,c],[r,c-1],[r,c+1]].filter(([r,c])=>r>=0&&r<n&&c>=0&&c<n).map(([r,c])=>r*n+c);});
@@ -15,7 +15,7 @@ function model(level){
  const rowTable=tuples(n,()=>true,true),local=new Map();
  for(let r=0;r<n;r++)constraints.push({cells:Array.from({length:n},(_,c)=>r*n+c),table:rowTable,kind:'quota',label:`linha ${r+1}`});
  for(let c=0;c<n;c++)constraints.push({cells:Array.from({length:n},(_,r)=>r*n+c),table:rowTable,kind:'quota',label:`coluna ${c+1}`});
- for(let i=0;i<n*n;i++){const len=adj[i].length+1;if(!local.has(len))local.set(len,tuples(len,a=>game==='pacto'?a.slice(1).filter(v=>v===a[0]).length===1:new Set(a).size===3));constraints.push({cells:[i,...adj[i]],table:local.get(len),kind:game==='pacto'?'pair':'coverage',label:`vizinhança L${(i/n|0)+1}C${i%n+1}`});}
+ for(let i=0;i<n*n;i++){const len=adj[i].length+1;if(!local.has(len))local.set(len,tuples(len,a=>a.slice(1).filter(v=>v===a[0]).length===1));constraints.push({cells:[i,...adj[i]],table:local.get(len),kind:'pair',label:`vizinhança L${(i/n|0)+1}C${i%n+1}`});}
  const linked=Array.from({length:n*n},()=>[]);constraints.forEach((c,j)=>c.cells.forEach(i=>linked[i].push(j)));
  const m={n,k,adj,constraints,linked};CACHE.set(game,m);return m;
 }
@@ -49,12 +49,6 @@ export function validateSymbols(level,values=level.clues){
     // With no free neighbor left, the whole neighborhood proves isolation.
     violations.push({kind:'pair',text:'Cada casa precisa de exatamente um vizinho igual.',cells:c.cells.slice()});
    }else if(same===0)pending.push({kind:'partner',cells:c.cells.slice(),text:'Parceiro ainda por preencher.'});
-  }else if(c.kind==='coverage'){
-   const present=new Set(a.filter(v=>v>=0));
-   // Empty cells are possibilities, not errors, unless even all of them cannot
-   // supply the missing symbols. NEXO expressly permits equal neighbors.
-   if(present.size+blanks<3)violations.push({kind:'coverage',text:'Esta vizinhança não pode conter os três símbolos.',cells:c.cells.slice()});
-   else if(present.size<3)pending.push({kind:'coverage',cells:c.cells.slice(),text:'Diversidade local ainda incompleta.'});
   }
  }
  // GAC may prove a contradiction through interacting rules, without looking

@@ -36,23 +36,55 @@ function cutSolid(poly,config,step=1){
  return {ratio:Math.max(0,Math.min(1,selected/total)),cells,curve,region:[toWorld({x:u0,y:floor}),...curve,toWorld({x:u1,y:floor})],n,errorPP:100*bound/total};
 }
 
-// Uma região com vazios é o contorno exterior menos buracos convexos disjuntos.
-// Os níveis validam contenção e não sobreposição. Os buracos não se movem com a curva.
-export function curvedCut(poly,config,step=1){
- const holes=config.holes??[], outerArea=area(poly);
- if(!holes.length)return cutSolid(poly,config,step);
- const total=outerArea-holes.reduce((sum,h)=>sum+area(h),0);
- if(!(total>0))throw Error('A figura precisa ter área útil positiva');
- let result,removed,errorPP,selected;
- // Refinamento limita o erro absoluto combinado, após subtrair os vazios.
- for(let attempt=0;attempt<16;attempt++){
-  result=cutSolid(poly,config,step);
-  removed=holes.map(h=>cutSolid(h,config,step));
-  selected=result.ratio*outerArea-removed.reduce((sum,r,i)=>sum+r.ratio*area(holes[i]),0);
-  errorPP=(result.errorPP*outerArea+removed.reduce((sum,r,i)=>sum+r.errorPP*area(holes[i]),0))/total;
-  if(errorPP<=.01+1e-12)break;
-  step/=2;
+// Diferença poligonal exata por partição convexa. Cada recorte é subtraído
+// das partes restantes: regiões sobrepostas nunca são descontadas duas vezes.
+function signedArea(poly){return poly.reduce((s,p,i)=>s+p.x*poly[(i+1)%poly.length].y-p.y*poly[(i+1)%poly.length].x,0)/2;}
+function subtractConvex(poly,hole){
+ let inside=poly;const outside=[],sign=signedArea(hole)>=0?1:-1;
+ for(let i=0;i<hole.length&&inside.length>=3;i++){
+  const a=hole[i],b=hole[(i+1)%hole.length],n={x:sign*(b.y-a.y),y:sign*(a.x-b.x)},d=dot(n,a);
+  const part=clipHalfPlane(inside,{x:-n.x,y:-n.y},-d);
+  if(part.length>=3&&area(part)>1e-7)outside.push(part);
+  inside=clipHalfPlane(inside,n,d);
  }
- if(errorPP>.01+1e-12)throw Error('Precisão insuficiente para a figura com vazios');
- return {...result,ratio:Math.max(0,Math.min(1,selected/total)),errorPP,totalArea:total,selectedArea:selected,holeCuts:removed};
+ return outside;
+}
+// Decomposição de recortes simples côncavos em triângulos (ear clipping).
+function convexParts(poly){
+ if(poly.length<3||area(poly)<1e-9)return [];
+ const ps=signedArea(poly)>0?poly.slice():poly.slice().reverse();
+ const turn=(a,b,c)=>(b.x-a.x)*(c.y-b.y)-(b.y-a.y)*(c.x-b.x);
+ if(ps.every((p,i)=>turn(p,ps[(i+1)%ps.length],ps[(i+2)%ps.length])>=-1e-9))return [ps];
+ const result=[];let guard=0;
+ while(ps.length>3&&guard++<poly.length*poly.length){let found=false;
+  for(let i=0;i<ps.length;i++){const a=ps[(i+ps.length-1)%ps.length],b=ps[i],c=ps[(i+1)%ps.length];if(turn(a,b,c)<=1e-9)continue;
+   const inTriangle=p=>turn(a,b,p)>=-1e-9&&turn(b,c,p)>=-1e-9&&turn(c,a,p)>=-1e-9;
+   if(ps.some(p=>p!==a&&p!==b&&p!==c&&inTriangle(p)))continue;
+   result.push([a,b,c]);ps.splice(i,1);found=true;break;
+  }if(!found)throw Error('Recorte inválido ou autointersectante');
+ }
+ if(ps.length===3)result.push(ps);return result;
+}
+const geometryCache=new Map();
+export function regionGeometry(poly,holes=[]){
+ const key=JSON.stringify([poly,holes]);if(geometryCache.has(key))return geometryCache.get(key);
+ let pieces=convexParts(poly);
+ for(const hole of holes)for(const convex of convexParts(hole))pieces=pieces.flatMap(p=>subtractConvex(p,convex));
+ const totalArea=pieces.reduce((sum,p)=>sum+area(p),0),outerArea=area(poly);
+ if(!(totalArea>1e-7))throw Error('A figura precisa ter área útil positiva');
+ const result={pieces,totalArea,outerArea,removedArea:outerArea-totalArea};
+ if(geometryCache.size>200)geometryCache.clear();geometryCache.set(key,result);return result;
+}
+export function basicCutState(level,travel=level.initialTravel??0){
+ const angle=typeof level.basicDirection==='number'?level.basicDirection:level.basicDirection?.angle??level.angle;
+ const a=angle*Math.PI/180,origin=level.basicOrigin??{x:level.centerX??400,y:level.centerY??230};
+ return {shape:level.shape,target:level.target,family:level.family,angle:level.angle,amplitude:level.amplitude,frequency:level.frequency,
+ centerX:origin.x+Math.cos(a)*travel,centerY:origin.y+Math.sin(a)*travel,offset:level.initialOffset??0,holes:structuredClone(level.holes??[]),basicTravel:travel};
+}
+export function curvedCut(poly,config,step=1){
+ const geometry=regionGeometry(poly,config.holes??[]),{pieces,totalArea}=geometry;
+ const result=cutSolid(poly,config,step);
+ let selectedArea=0,error=0;const cells=[];
+ for(const piece of pieces){const r=cutSolid(piece,config,step),a=area(piece);selectedArea+=r.ratio*a;error+=r.errorPP*a;cells.push(...r.cells);}
+ return {...result,cells,ratio:Math.max(0,Math.min(1,selectedArea/totalArea)),errorPP:error/totalArea,totalArea,selectedArea,solidPieces:pieces,removedArea:geometry.removedArea};
 }

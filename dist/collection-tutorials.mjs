@@ -3,8 +3,7 @@ const clues=(n,entries)=>{const a=Array(n*n).fill(-1);for(const [r,c,v]of entrie
 export const TUTORIALS={
  elo:{id:'tutorial-E-01',game:'elo',rows:5,cols:5,regions:[0,1,1,1,1,0,0,1,1,2,0,5,3,3,2,0,5,3,3,2,5,5,4,4,2],fixed:{3:12},tutorial:true},
  prumo:{id:'tutorial-P-01',game:'prumo',rows:4,cols:4,supports:[{id:0,x2:2,y2:2},{id:1,x2:4,y2:0},{id:2,x2:4,y2:4},{id:3,x2:3,y2:6}],tutorial:true},
- pacto:{id:'tutorial-PA-01',game:'pacto',rows:8,cols:8,clues:clues(8,[[2,2,1],[3,2,1],[4,2,3],[4,3,3],[5,1,2],[5,6,0],[5,7,0],[7,2,3],[7,7,1]]),tutorial:true},
- nexo:{id:'tutorial-N-01',game:'nexo',rows:6,cols:6,clues:clues(6,[[2,6,0],[3,2,1],[4,2,2],[6,1,0],[6,2,2],[6,6,0]]),tutorial:true}
+ pacto:{id:'tutorial-PA-01',game:'pacto',rows:8,cols:8,clues:clues(8,[[2,2,1],[3,2,1],[4,2,3],[4,3,3],[5,1,2],[5,6,0],[5,7,0],[7,2,3],[7,7,1]]),tutorial:true}
 };
 // Roteiros explícitos do PDF. As instruções não preenchem a grade; o jogador executa cada passo.
 export const TUTORIAL_STEPS={
@@ -12,11 +11,6 @@ export const TUTORIAL_STEPS={
  {text:'1 · Cotas cruzadas. Na coluna 2, as pistas já usam dois triângulos e dois losangos. Em L5C2 restam círculo ou quadrado. A linha 5 já tem dois círculos, em C6 e C7. Portanto, preencha quadrado em L5C2.',cells:[9,17,25,49,37,38,33],requires:[]},
  {text:'2 · Dupla fechada. L5C1 e L5C2 são quadrados e já formam sua dupla. L6C2 não pode ser quadrado, pois daria um segundo parceiro a L5C2. Pela cota da coluna 2 só restam círculo ou quadrado: preencha círculo em L6C2.',cells:[32,33,41],requires:[[33,2]]},
  {text:'3 · Exclusão local e global. L5C3 não pode ser círculo pela cota da linha 5; nem quadrado, pois tocaria a dupla da esquerda; nem losango, pois L4C3 já está pareado com L4C2. Só resta triângulo. Continue usando cotas, duplas fechadas e parceiros obrigatórios. Confirme quando terminar.',cells:[34,32,33,25,26,37,38],requires:[[33,2],[41,0]]}
- ],
- nexo:[
- {text:'1 · Canto e cobertura única. O círculo em L6C1 já toca o quadrado em L6C2. Não há casa abaixo ou à esquerda. O triângulo necessário só pode ficar acima: preencha L5C1 com triângulo.',cells:[30,31,24],requires:[]},
- {text:'2 · Necessidade comum. L6 já tem dois círculos, em C1 e C6. As casas L6C3 e L6C4 não podem ser círculos e precisam tocar um círculo, seja qual for seu outro tipo. As laterais não podem fornecê-lo, e não há linha abaixo. Portanto, L5C3 e L5C4 são círculos.',cells:[30,35,32,33,26,27],requires:[[24,1]]},
- {text:'3 · Encadear cotas. L5C2 não pode ser círculo, pois L5 já tem dois, nem quadrado, pois C2 já tem dois. Preencha triângulo. Agora L5 tem dois triângulos e dois círculos: L5C5 e L5C6 são quadrados. Continue cruzando cotas com diversidade local e confirme ao terminar.',cells:[25,26,27,19,31,28,29],requires:[[24,1],[26,0],[27,0]]}
  ],
  elo:[
  {text:'1 · Conferência guiada E-01. D está fixa em L3C3. Para reconstruir o exemplo do PDF, coloque A em L1C1 e B em L1C5. A e B se enxergam na linha 1, mesmo atravessando fronteiras de regiões. A linha é criada automaticamente, não desenhada manualmente.',cells:[0,4,12],requires:[]},

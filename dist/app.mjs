@@ -3,16 +3,15 @@ import {traceLightWorld,traceLightAttempt,lightAttemptFrame,lightScene} from './
 import {worldRaysSVG,portalSVG,lightEndpointsSVG,beamName} from './light-world-render.mjs';
 import {createResultMotion} from './result-motion.mjs';
 import {lightRaysSVG} from './light-render.mjs';
-import {layout,moveBlock,movable,editBlock,legal} from './balance.mjs';
-import {curvedCut,shapePolygon,shapes,families} from './curves.mjs';
+import {curvedCut,shapePolygon,shapes,families,basicCutState} from './curves.mjs';
 // Implementação de referência gerada com OpenAI/Codex. Comentários explicam decisões, não autoria do aluno.
-import {clamp,torque,segment,traceRay,polygon,cut,cutSuccess,mirrorAngle,pathAtDistance,wallPolygon} from './math.mjs';
-import {balanceLevels,lightLevels,cutLevels} from './levels.mjs';
+import {clamp,segment,cutSuccess,mirrorAngle,wallPolygon} from './math.mjs';
+import {lightLevels,cutLevels} from './levels.mjs';
 import {createAnswerProgress} from './answer-progress.mjs';
 import {getOriginalAnswer} from './original-answers.mjs';
 const $=id=>document.getElementById(id), scene=$('scene'), drawing=$('drawing');
 const resultMotion=createResultMotion($('result-motion'),document.querySelector('.experiment'));
-const catalogue={balance:balanceLevels,light:lightLevels,cut:cutLevels};
+const catalogue={light:lightLevels,cut:cutLevels};
 const answerProgress=createAnswerProgress();
 // Fica perto de Confirmar, inclusive quando as opções avançadas estão recolhidas.
 const answerButton=document.createElement('button');
@@ -33,8 +32,8 @@ function applyAnswerKey(){
  if(free||!answerProgress.unlocked(answerKey()))return;
  const answer=getOriginalAnswer(game,level);
  // Troca atômica pela configuração certificada, sem mover fixos ou criar pilhas ilegais.
- invalidate();drag=null;pendingSlot=null;placementMessage='';state=answer;
- selected=game==='balance'?state.weights.findIndex(w=>!w.fixed):game==='light'?state.objects.findIndex(o=>o.type==='mirror'):0;
+ invalidate();drag=null;pendingSlot=null;placementMessage='';state=answer;if(game==='cut'){cutMode='basic';cutDrafts={basic:null,advanced:null};}
+ selected=game==='light'?state.objects.findIndex(o=>o.type==='mirror'):0;
  answerProgress.assist(answerKey());
  $('hint-text').textContent='Gabarito aplicado. Este desafio está marcado como assistido. Confira a configuração e clique em Confirmar resposta para testar.';
  render();
@@ -51,16 +50,16 @@ function applyControlsVisibility(){
 }
 function toggleControls(){controlsHidden=!controlsHidden;applyControlsVisibility();try{globalThis.localStorage?.setItem('intuicao.advanced-hidden',String(controlsHidden));}catch{}}
 let placementMessage='',pendingSlot=null;
-let game='balance',free=false,level=0,state={},selected=0,drag=null;
-const completed=new Set();const lastLevel={balance:null,light:null,cut:null};
-function showSelection(){placementMessage='';pendingSlot=null;invalidate();drag=null;document.querySelector('.lab').hidden=true;$('selection').hidden=false;document.querySelectorAll('[data-game]').forEach(b=>b.setAttribute('aria-pressed',String(b.dataset.game===game)));$('selection-title').textContent={balance:'Equilíbrio · 100 níveis',light:'Reflexos · 100 níveis',cut:'Corte certo · 100 níveis'}[game];let html='';for(let k=0;k<catalogue[game].length;k+=10){if(game==='light')html+=`<h3 class="stage-heading">${catalogue.light[k].stage} · ${catalogue.light[k].stageName}</h3>`;if(game==='cut')html+=`<h3 class="stage-heading">${['1 · Retas e proporções','2 · Parábolas','3 · Ondas senoidais','4 · Curvas em S','5 · Síntese e restrições','6 · Translação por eixos e diagonais','7 · Entradas opostas e rotação','8 · Forma ajustável','9 · Curvas em S no espaço','10 · Síntese de transformações'][k/10]}</h3>`;html+='<div class="level-group">'+catalogue[game].slice(k,k+10).map((l,j)=>{const i=k+j,done=completed.has(game+i),assisted=answerProgress.get(`${game}:${l.id??i}`).assisted,current=lastLevel[game]===i;return `<button class="level-tile ${done?'done':''}" data-level="${i}" aria-current="${current}" aria-label="Nível ${i+1}: ${l.name}${done?', concluído':''}${assisted?', assistido por gabarito':''}${current?', atual':''}"><span>${i+1}</span><small>${done?(assisted?'✓ com gabarito':'✓ concluído'):assisted?'com gabarito':current?'atual':'explorar'}</small></button>`;}).join('')+'</div>';}$('level-grid').innerHTML=html;$('level-grid').querySelectorAll('[data-level]').forEach(b=>b.onclick=()=>{level=Number(b.dataset.level);free=false;start();});$('selection-title').focus();}
+let game='light',free=false,level=0,state={},selected=0,drag=null;
+const completed=new Set();const lastLevel={light:null,cut:null};
+function showSelection(){placementMessage='';pendingSlot=null;invalidate();drag=null;document.querySelector('.lab').hidden=true;$('selection').hidden=false;document.querySelectorAll('[data-game]').forEach(b=>b.setAttribute('aria-pressed',String(b.dataset.game===game)));$('selection-title').textContent={light:'Reflexos · 100 níveis',cut:'Corte certo · 100 níveis'}[game];let html='';for(let k=0;k<catalogue[game].length;k+=10){if(game==='light')html+=`<h3 class="stage-heading">${catalogue.light[k].stage} · ${catalogue.light[k].stageName}</h3>`;if(game==='cut')html+=`<h3 class="stage-heading">${['1 · Uma direção por vez','2 · Parábolas e vazios','3 · Ondas e recortes','4 · Curvas em S','5 · Silhuetas irregulares','6 · Vazios maiores','7 · Bordas abertas','8 · Recortes combinados','9 · Área que resta','10 · Síntese de formas'][k/10]}</h3>`;html+='<div class="level-group">'+catalogue[game].slice(k,k+10).map((l,j)=>{const i=k+j,done=completed.has(game+i),assisted=answerProgress.get(`${game}:${l.id??i}`).assisted,current=lastLevel[game]===i;return `<button class="level-tile ${done?'done':''}" data-level="${i}" aria-current="${current}" aria-label="Nível ${i+1}: ${l.name}${done?', concluído':''}${assisted?', assistido por gabarito':''}${current?', atual':''}"><span>${i+1}</span><small>${done?(assisted?'✓ com gabarito':'✓ concluído'):assisted?'com gabarito':current?'atual':'explorar'}</small></button>`;}).join('')+'</div>';}$('level-grid').innerHTML=html;$('level-grid').querySelectorAll('[data-level]').forEach(b=>b.onclick=()=>{level=Number(b.dataset.level);free=false;start();});$('selection-title').focus();}
 
 let phase='editing',evaluation=null,frame=0,animationToken=0,revealed=[],lightDistance=0,lightFired=[];
 function invalidate(){resultMotion.clear();cancelAnimationFrame(frame);animationToken++;phase='editing';evaluation=null;revealed=[];lightDistance=0;lightFired=[];scene.setAttribute('aria-busy','false');}
 function finishResult(){
  // Exploração parcial não é uma resposta errada nem libera o próximo nível.
  if(game==='light'&&!evaluation.ray.complete){phase='partial';scene.setAttribute('aria-busy','false');draw();return;}
- const success=game==='balance'?Math.abs(evaluation.torque)<=1.18:game==='light'?evaluation.ray.status==='target':cutSuccess(evaluation.cut.ratio*100,evaluation.snapshot.target);
+ const success=game==='light'?evaluation.ray.status==='target':cutSuccess(evaluation.cut.ratio*100,evaluation.snapshot.target);
  // Só uma confirmação errada concluída conta; desenhar, editar ou cancelar o raio não conta.
  if(!free&&!success&&!evaluation.counted){answerProgress.fail(answerKey());evaluation.counted=true;}
  phase='result';scene.setAttribute('aria-busy','false');draw();
@@ -70,7 +69,7 @@ function confirmAnswer(){
  if(phase==='animating')return;
  resultMotion.clear();cancelAnimationFrame(frame);const token=++animationToken;
  const snapshot=structuredClone(state);evaluation={snapshot};
- if(game!=='light'){if(game==='balance')evaluation.torque=torque(snapshot.weights);else evaluation.cut=curvedCut(shapePolygon(snapshot.shape),snapshot);finishResult();return;}
+ if(game!=='light'){evaluation.cut=curvedCut(shapePolygon(snapshot.shape),snapshot);finishResult();return;}
  lightFired=lightScene(snapshot).sources.map((_,i)=>i);
  evaluation.ray=traceLightAttempt(snapshot,lightFired);
  animateLight(token);
@@ -93,11 +92,21 @@ function animateLight(token){
  function tick(now){if(token!==animationToken||phase!=='animating')return;lightDistance=(now-began)*.5;if(lightDistance>=total){finishResult();return;}draw();frame=requestAnimationFrame(tick);}
  frame=requestAnimationFrame(tick);
 }
-const titles={balance:['01','Tudo tem seu ponto de equilíbrio.'],light:['02','Encontre um caminho para a luz.'],cut:['03','Um corte. Duas novas perspectivas.']};
+const titles={light:['01','Encontre um caminho para a luz.'],cut:['02','Um corte. Duas novas perspectivas.']};
 const fmt=(n,d=1)=>Number(n).toLocaleString('pt-BR',{minimumFractionDigits:d,maximumFractionDigits:d});
 const points=p=>p.map(v=>`${v.x},${v.y}`).join(' ');
 const line=(a,b,attrs='')=>`<line x1="${a.x}" y1="${a.y}" x2="${b.x}" y2="${b.y}" ${attrs}/>`;
-const allowed=key=>free||Boolean(cutLevels[level].permissions?.[key]);
+let cutMode='basic',cutDrafts={basic:null,advanced:null},cutDragOrigin=null;
+const allowed=key=>free||(cutMode==='advanced'&&(['x','y','rotate','offset'].includes(key)||Boolean(cutLevels[level].permissions?.[key])));
+const cutDirection=()=>{const a=cutLevels[level].basicDirection*Math.PI/180;return {x:Math.cos(a),y:Math.sin(a)};};
+function setCutMode(mode){
+ if(game!=='cut'||free||mode===cutMode)return;
+ cutDrafts[cutMode]=structuredClone(state);cutMode=mode;
+ state=structuredClone(cutDrafts[mode]??state);invalidate();drag=null;editor();draw();$('cut-mode-'+mode)?.focus();
+}
+function setBasicTravel(value){
+ const l=cutLevels[level];state=basicCutState(l,clamp(value,l.basicMin,l.basicMax));
+}
 // Os símbolos descrevem ações, não apenas cores. O alvo transparente facilita o toque.
 function cutHandle(id,x,y,label,detail,kind,angle=0){
  const rotation=kind==='rotate', move=kind==='move';
@@ -106,20 +115,27 @@ function cutHandle(id,x,y,label,detail,kind,angle=0){
  const tooltipX=Math.max(-x+8,Math.min(-54,800-x-116)),tooltipY=y<62?29:-47;
  return `<g data-item="${id}" class="handle cut-grip cut-grip-${kind}" tabindex="0" role="button" aria-label="${label}. ${detail}" transform="translate(${x} ${y})"><title>${label} · ${detail}</title><circle class="cut-grip-hit" r="24"/>${shell}<g class="cut-grip-icon">${glyph}</g><g class="cut-grip-tip" transform="translate(${tooltipX} ${tooltipY})" aria-hidden="true"><rect width="108" height="23" rx="7"/><text x="54" y="15" text-anchor="middle">${label}</text></g></g>`;
 }
+function advancedCutHandles(c,p){
+ const clampPoint=q=>({x:clamp(q.x,24,776),y:clamp(q.y,24,408)});
+ let positions=[clampPoint({x:p.x+c.n.y*80,y:p.y-c.n.x*80}),clampPoint({x:state.centerX,y:state.centerY}),clampPoint({x:state.centerX-c.n.y*80,y:state.centerY+c.n.x*80})];
+ const crowded=positions.some((a,i)=>positions.some((b,j)=>j>i&&Math.hypot(a.x-b.x,a.y-b.y)<48));
+ if(crowded)positions=[{x:320,y:40},{x:400,y:40},{x:480,y:40}];
+ const [slide,move,rotate]=positions;
+ return `${crowded?'<text x="400" y="78" text-anchor="middle" font-size="11" fill="#686270">Alças reposicionadas para não se sobrepor</text>':''}${cutHandle('cut',slide.x,slide.y,'Deslizar curva','Arraste na direção das setas ou use as teclas de seta.','offset',state.angle)}${cutHandle('move-curve',move.x,move.y,'Mover curva','Arraste para mover livremente ou use as teclas de seta.','move')}${cutHandle('rotate-curve',rotate.x,rotate.y,'Girar curva','Arraste ao redor do centro ou use as teclas de seta.','rotate')}`;
+}
 function cutControlGuide(){
- const entries=[];
- if(allowed('x')||allowed('y'))entries.push(['move','↔','Mover curva',allowed('x')&&allowed('y')?'Arraste o quadrado para reposicionar.':`Arraste o quadrado no eixo ${allowed('x')?'horizontal':'vertical'}.`]);
- if(allowed('rotate'))entries.push(['rotate','↻','Girar curva','Arraste a alça dourada ao redor do centro.']);
- if(allowed('offset'))entries.push(['offset','↔','Deslizar corte','Arraste a alça redonda na direção das setas.']);
- return `<div class="cut-control-guide"><strong>Alças do corte</strong>${entries.map(([kind,icon,label,detail])=>`<div class="cut-guide-row"><span class="cut-guide-icon cut-guide-${kind}" aria-hidden="true">${icon}</span><span><b>${label}</b><small>${detail}</small></span></div>`).join('')}<p>Tab seleciona uma alça; as setas ajustam. Só aparecem as ações liberadas neste nível.</p></div>`;
+ const l=cutLevels[level];
+ const tabs=free?'':`<div class="cut-mode-tabs" role="tablist" aria-label="Modo de controle da curva"><button id="cut-mode-basic" role="tab" aria-selected="${cutMode==='basic'}" aria-controls="cut-control-panel">Desafio básico</button><button id="cut-mode-advanced" role="tab" aria-selected="${cutMode==='advanced'}" aria-controls="cut-control-panel">Controles da curva</button></div>`;
+ if(!free&&cutMode==='basic')return `${tabs}<div id="cut-control-panel" role="tabpanel" aria-labelledby="cut-mode-basic" class="cut-basic-panel"><strong>Uma direção, um movimento</strong><p>A seta indica o único eixo desta fase: ${l.basicDirection}°. Arraste a alça ou ajuste o deslocamento abaixo. A curva não gira neste modo.</p>${field('basicTravel','Deslocamento na direção indicada',l.basicMin,l.basicMax,.1,state.basicTravel??l.initialTravel)}<small>Trocar de aba guarda seu ajuste; voltar ao básico recupera a tentativa anterior.</small></div>`;
+ const entries=[['move','↔','Mover curva','Arraste o quadrado para mover livremente.'],['rotate','↻','Girar curva','Arraste a alça dourada ao redor do centro.'],['offset','↔','Deslizar curva','Arraste o círculo na direção das setas.']];
+ return `${tabs}<div id="cut-control-panel" role="tabpanel" ${free?'':'aria-labelledby="cut-mode-advanced"'} class="cut-control-guide"><strong>Controles da curva · exploração avançada</strong>${entries.map(([kind,icon,label,detail])=>`<div class="cut-guide-row"><span class="cut-guide-icon cut-guide-${kind}" aria-hidden="true">${icon}</span><span><b>${label}</b><small>${detail}</small></span></div>`).join('')}<p>Tab seleciona uma alça; as setas ajustam. Os valores precisos ficam no painel de opções avançadas. ${free?'':'Voltar ao básico restaura seu último ajuste nessa aba.'}</p></div>`;
 }
 
 const field=(key,label,min,max,step,value,unit='',disabled=false)=>`<div class="field"><header><label for="${key}">${label}</label><output id="${key}-out" for="${key}">${fmt(value,step<.1?2:1)}${unit}</output></header><div class="precision"><input id="${key}" data-bind="${key}" type="range" min="${min}" max="${max}" step="${step}" value="${value}" aria-label="${label}" ${disabled?'disabled':''}><input id="${key}-number" data-bind="${key}" type="number" min="${min}" max="${max}" step="${step}" value="${value}" aria-label="${label} (valor)" ${disabled?'disabled':''}></div></div>`;
 function start(){
  placementMessage='';pendingSlot=null;invalidate();drag=null;$('selection').hidden=true;document.querySelector('.lab').hidden=false;if(!free)lastLevel[game]=level; selected=0; const l=catalogue[game][level];
- if(game==='balance'){state={weights:structuredClone(l.weights)};selected=state.weights.findIndex(w=>!w.fixed);if(free)state.weights.forEach(w=>w.fixed=false);}
  if(game==='light'){state={objects:structuredClone(l.objects),target:{...l.target,radius:22},sourceAngle:l.sourceAngle??0,...(!free?{sources:structuredClone(l.sources),targets:structuredClone(l.targets),portals:structuredClone(l.portals??[])}:{})};selected=state.objects.findIndex(o=>o.type==='mirror');}
- if(game==='cut')state={shape:l.shape,target:l.target,angle:l.angle??0,offset:l.initialOffset??80,family:l.family,amplitude:l.amplitude,frequency:l.frequency,centerX:l.centerX??400,centerY:l.centerY??230,holes:free?[]:structuredClone(l.holes??[])};
+ if(game==='cut'){cutMode=free?'advanced':'basic';cutDrafts={basic:null,advanced:null};state=basicCutState(l);if(free)state.holes=[];}
  $('hint-text').textContent=!free&&answerProgress.get(answerKey()).assisted?'Este desafio está marcado como assistido por gabarito.':''; render();$('game-title').setAttribute('tabindex','-1');$('game-title').focus();
 }
 function render(){
@@ -129,13 +145,13 @@ function render(){
  $('scene-title').textContent=titles[game][1];$('scene-desc').textContent=game==='light'?'Gire os espelhos pelas alças. Clique nas fontes, ou use Tab e Enter ou Espaço, para disparar um raio de cada vez. Confirmar todos dispara o conjunto. Editar limpa os rastros.':'Use os controles rotulados abaixo ou ao lado. Arraste os elementos ajustáveis; o teclado também funciona nos controles.';
  $('level').innerHTML=catalogue[game].map((l,i)=>`<option value="${i}">${i+1}. ${l.name}</option>`).join('');$('level').value=level;$('level').disabled=free;
  $('stage-label').textContent=free?'SEU ESPAÇO PARA EXPERIMENTAR':`DESAFIO ${String(level+1).padStart(2,'0')} / ${String(catalogue[game].length).padStart(2,'0')}`;
- $('mission').textContent=game==='balance'?(free?'Explore blocos retangulares e triangulares. Mesma posição empilha; só o topo pode sair. Triângulos não sustentam blocos.':'Mova os blocos livres para equilibrar. F/FIXO identifica os imóveis. Mesma posição empilha. Só o topo pode sair; triângulos não sustentam blocos. Arraste e solte em uma das nove posições. Altura máxima: 200 unidades.') : game==='light'?(free?'Crie um caminho com espelhos, paredes e um alvo. Clique na fonte para disparar ou em Confirmar todos.':'Gire os espelhos. Clique em cada fonte para disparar separadamente, ou em Confirmar todos. Os raios ficam no palco; editar limpa todos. Cada cor deve alcançar seu próprio alvo, sem cruzar outra cor. Os símbolos também identificam cada par. Alvos aceitam 22 unidades de tolerância; espelhos e paredes têm posições fixas.'):(free?'Escolha uma forma, uma meta e experimente seu corte.':`Deixe ${state.target}% da área no lado roxo. Tolerância: ±3 pontos percentuais, incluindo o limite.`);
+ $('mission').textContent=game==='light'?(free?'Crie um caminho com espelhos, paredes e um alvo. Clique na fonte para disparar ou em Confirmar todos.':'Gire os espelhos. Clique em cada fonte para disparar separadamente, ou em Confirmar todos. Os raios ficam no palco; editar limpa todos. Cada cor deve alcançar seu próprio alvo, sem cruzar outra cor. Os símbolos também identificam cada par. Alvos aceitam 22 unidades de tolerância; espelhos e paredes têm posições fixas.'):(free?'Escolha uma forma, uma meta e experimente seu corte.':`Deixe ${state.target}% da área no lado roxo. Tolerância: ±3 pontos percentuais, incluindo o limite.`);
  if(game==='light'&&!free)$('mission').textContent+=' '+(lightLevels[level].wallPurpose??[]).join(' ');
- if(game==='cut'&&!free)$('mission').textContent+=` Entrada: ${cutLevels[level].entry??'orientação indicada'}. Liberados: ${Object.entries({x:'horizontal',y:'vertical',rotate:'rotação',amplitude:'amplitude',frequency:'frequência',offset:'deslocamento normal'}).filter(([key])=>allowed(key)).map(([,label])=>label).join(', ')}. Os outros controles estão bloqueados.`;
+ if(game==='cut'&&!free)$('mission').textContent+=` No modo básico, mova somente na direção indicada (${cutLevels[level].basicDirection}°). Os controles livres ficam na aba Controles da curva.`;
  if(game==='cut')$('mission').textContent+=` Corte: ${state.family}. ${state.family==='Reta'?'':`Amplitude ${state.amplitude}${state.family==='Seno'?`; frequência ${state.frequency}`:''}.`}`;
  if(game==='cut'&&state.holes.length)$('mission').textContent+=` ${state.holes.length} espaço(s) vazio(s): não pertencem à área. Divida apenas a parte preenchida.`;
  $('hint').hidden=free;$('next').hidden=free;
- const texts={balance:'O torque é massa × gravidade × distância horizontal ao apoio. À direita ele é positivo (sentido horário); à esquerda, negativo. O painel mostra a soma em N·m. O equilíbrio é aceito até 1,18 N·m de diferença. A inclinação da viga é uma indicação visual do torque calculado na posição horizontal, não uma simulação dinâmica de movimento ou queda. O apoio está no centro; não há atrito.',light:'A cada trecho, o raio encontra a superfície mais próxima. Paredes são retângulos sólidos com espessura real e absorvem a luz; espelhos refletem segundo d′ = d − 2(d·n)n. O disco da mesma cor aceita o raio: raio geométrico de 22 unidades do palco. A primeira entrada no disco precisa estar antes da próxima superfície; uma parede vence o empate. Cada raio para em 12 reflexões ou 40 eventos, sem loop infinito. Portais mantêm a direção e pulam para o par; o salto não é um segmento físico. Cores diferentes não podem cruzar nem tocar trajetórias. Portais seletivos bloqueiam cores não permitidas. Os ângulos são medidos em coordenadas de tela, com y para baixo. A normal pontilhada é perpendicular ao espelho no ponto de impacto. As setas indicam a direção de propagação. As bordas são paredes. Evite sobrepor objetos: paredes têm prioridade em empates.',cut:'Retas usam recorte exato. Curvas são gráficos sem autointerseção, aproximados por segmentos de passo máximo 1; cada faixa é recortada geometricamente. Um limite de segunda derivada controla o erro de área, muito menor que a margem de jogo. O contorno roxo é calculado pelas interseções reais da linha com as arestas; sua área usa a fórmula do cadarço. A proporção exibida é área roxa útil ÷ área total útil. Buracos são subtraídos de ambas: espaços vazios nunca contam, mesmo quando atravessados pela curva. O ângulo controla a normal da linha: 0° produz um corte vertical. Deslocamento positivo aumenta a região roxa. Não usamos contagem de pixels. Acerto: erro absoluto de até 3 pontos percentuais, incluindo os dois limites; isso não é 3% relativo à meta.'};
+ const texts={light:'A cada trecho, o raio encontra a superfície mais próxima. Paredes são retângulos sólidos com espessura real e absorvem a luz; espelhos refletem segundo d′ = d − 2(d·n)n. O disco da mesma cor aceita o raio: raio geométrico de 22 unidades do palco. A primeira entrada no disco precisa estar antes da próxima superfície; uma parede vence o empate. Cada raio para em 12 reflexões ou 40 eventos, sem loop infinito. Portais mantêm a direção e pulam para o par; o salto não é um segmento físico. Cores diferentes não podem cruzar nem tocar trajetórias. Portais seletivos bloqueiam cores não permitidas. Os ângulos são medidos em coordenadas de tela, com y para baixo. A normal pontilhada é perpendicular ao espelho no ponto de impacto. As setas indicam a direção de propagação. As bordas são paredes. Evite sobrepor objetos: paredes têm prioridade em empates.',cut:'Retas usam recorte exato. Curvas são gráficos sem autointerseção, aproximados por segmentos de passo máximo 1; cada faixa é recortada geometricamente. Um limite de segunda derivada controla o erro de área, muito menor que a margem de jogo. O contorno roxo é calculado pelas interseções reais da linha com as arestas; sua área usa a fórmula do cadarço. A proporção exibida é área roxa útil ÷ área total útil. Buracos são subtraídos de ambas: espaços vazios nunca contam, mesmo quando atravessados pela curva. O ângulo controla a normal da linha: 0° produz um corte vertical. Deslocamento positivo aumenta a região roxa. Não usamos contagem de pixels. Acerto: erro absoluto de até 3 pontos percentuais, incluindo os dois limites; isso não é 3% relativo à meta.'};
  $('explanation').textContent=texts[game];applyControlsVisibility();updateAnswerButton();editor();draw();
 }
 function renderLevelNotes(){
@@ -150,12 +166,6 @@ function renderLevelNotes(){
 function editor(){
  renderLevelNotes();
  let html='';
- if(game==='balance'){
-  const w=state.weights[selected];html=`<label for="selected">Peso selecionado</label><select id="selected">${state.weights.map((w,i)=>`<option value="${i}">${i+1} · ${fmt(w.mass)} kg${w.fixed?' • fixo':''}</option>`).join('')}</select>`;
-  html+=field('mass','Massa',1,6,1,w.mass,' kg',!free)+field('position','Posição no braço',-4,4,1,w.x,' m',w.fixed);
-  html+='<ul id="block-list" class="block-list" aria-label="Blocos e posições"></ul>';
-  if(free)html+=`<label for="block-shape">Formato</label><select id="block-shape"><option value="rectangle">Retângulo</option><option value="triangle">Triângulo</option></select><div class="inline-buttons"><button id="add">+ Peso</button><button id="remove">Remover peso</button></div>`;
- }
  if(game==='light'){
   html=`<label for="selected">Elemento selecionado</label><select id="selected">${state.objects.map((o,i)=>o.type==='mirror'||free?`<option value="${i}">${o.type==='mirror'?'Espelho':'Parede'} ${i+1}</option>`:'').join('')}${free?'<option value="target">Alvo</option>':''}</select>`;
   const o=selected==='target'?state.target:state.objects[selected];
@@ -165,37 +175,37 @@ function editor(){
 
  }
  if(game==='cut'){
-  html='';
-  if(free)html+=`<label for="shape">Forma</label><select id="shape">${shapes.map(n=>`<option>${n}</option>`).join('')}</select>`+field('target','Meta de área',10,90,1,state.target,'%');
-  if(free)html+=`<label for="family">Tipo de corte</label><select id="family">${families.map(n=>`<option>${n}</option>`).join('')}</select>`;html+=field('centerX','Posição horizontal da curva',40,760,.1,state.centerX,'',!allowed('x'))+field('centerY','Posição vertical da curva',40,420,.1,state.centerY,'',!allowed('y'))+field('amplitude','Amplitude da curva',-120,120,1,state.amplitude,'',!allowed('amplitude'))+field('frequency','Frequência da onda',.5,2,.5,state.frequency,'',!allowed('frequency')||!['Seno','Cosseno'].includes(state.family));
-  html+=field('cutAngle','Ângulo da normal',0,360,.1,state.angle,'°',!allowed('rotate'))+field('offset','Deslocamento do corte',-600,600,1,state.offset,'',!allowed('offset'));
+  if(!free&&cutMode==='basic')html='<p class="cut-panel-note">O desafio básico tem um único controle, abaixo do nível. Abra a aba Controles da curva para mover, girar e deslizar livremente.</p>';
+  else{
+   if(free)html+=`<label for="shape">Forma</label><select id="shape">${shapes.map(n=>`<option>${n}</option>`).join('')}</select>`+field('target','Meta de área',10,90,1,state.target,'%')+`<label for="family">Tipo de corte</label><select id="family">${families.map(n=>`<option>${n}</option>`).join('')}</select>`;
+   html+=field('centerX','Mover · horizontal',-400,1200,.1,state.centerX)+field('centerY','Mover · vertical',-400,860,.1,state.centerY)+field('cutAngle','Girar curva',0,360,.1,state.angle,'°')+field('offset','Deslizar curva',-600,600,.1,state.offset);
+   if(allowed('amplitude'))html+=field('amplitude','Amplitude da curva',-120,120,1,state.amplitude);
+   if(allowed('frequency')&&['Seno','Cosseno'].includes(state.family))html+=field('frequency','Frequência da onda',.5,2,.5,state.frequency);
+  }
  }
  $('editor').innerHTML=html;
- if($('block-shape')){$('block-shape').value=state.weights[selected].shape??'rectangle';$('block-shape').onchange=e=>{const r=editBlock(state.weights,selected,{shape:e.target.value});applyPlacement(r);editor();draw();};}
+ if($('cut-mode-basic'))$('cut-mode-basic').onclick=()=>setCutMode('basic');
+ if($('cut-mode-advanced'))$('cut-mode-advanced').onclick=()=>setCutMode('advanced');
  if($('selected')){$('selected').value=selected;$('selected').onchange=e=>{selected=e.target.value==='target'?'target':Number(e.target.value);editor();draw();};}
  if($('shape')){$('shape').value=state.shape;$('shape').onchange=e=>{invalidate();state.shape=e.target.value;draw();};}
  if($('family')){$('family').value=state.family;$('family').onchange=e=>{invalidate();state.family=e.target.value;editor();draw();};}
- $('editor').querySelectorAll('[data-bind]').forEach(el=>el.addEventListener('input',()=>{if(el.value!==''&&el.validity.valid)change(el.dataset.bind,Number(el.value));}));
+ document.querySelectorAll('#editor [data-bind], #level-notes [data-bind]').forEach(el=>el.addEventListener('input',()=>{if(el.value!==''&&el.validity.valid)change(el.dataset.bind,Number(el.value));}));
  if($('add'))$('add').onclick=()=>{invalidate();
-  if(game==='balance'&&state.weights.length<8){const next=[...state.weights,{mass:1,x:0,fixed:false,shape:'rectangle',ratio:1.2,order:1+Math.max(...state.weights.map((w,i)=>w.order??i))}];const error=legal(next);if(error)placementMessage=error;else{state.weights=next;selected=next.length-1;placementMessage='';}}
   if(game==='light'&&state.objects.length<24){state.objects.push({type:'mirror',x:400,y:200,length:130,angle:0});selected=state.objects.length-1;}editor();draw();
  };
  if($('wall'))$('wall').onclick=()=>{invalidate();if(state.objects.length<24){state.objects.push({type:'wall',x:500,y:260,length:120,angle:90});selected=state.objects.length-1;}editor();draw();};
- if($('remove'))$('remove').onclick=()=>{invalidate();const list=game==='balance'?state.weights:state.objects;if(list.length>1&&selected!=='target'){if(game==='balance'&&movable(list,selected)){placementMessage=movable(list,selected);}else{list.splice(selected,1);selected=Math.min(selected,list.length-1);placementMessage='';}editor();draw();}};
- if(free&&$('add'))$('add').disabled=(game==='balance'?state.weights.length>=8:state.objects.length>=24);
+ if($('remove'))$('remove').onclick=()=>{invalidate();const list=state.objects;if(list.length>1&&selected!=='target'){list.splice(selected,1);selected=Math.min(selected,list.length-1);placementMessage='';editor();draw();}};
+ if(free&&$('add'))$('add').disabled=state.objects.length>=24;
  if(free&&$('wall'))$('wall').disabled=state.objects.length>=24;
- if(free&&$('remove'))$('remove').disabled=selected==='target'||(game==='balance'?state.weights:state.objects).length<=1;
+ if(free&&$('remove'))$('remove').disabled=selected==='target'||state.objects.length<=1;
 }
-function applyPlacement(r){if(r.ok){state.weights=r.weights;placementMessage='';invalidate();}else placementMessage=r.reason;}
 function change(key,v){
  // Tanto os sliders quanto os campos numéricos passam pelo mesmo caminho de atualização.
  if(!Number.isFinite(v))return;invalidate();const slider=$(key);v=clamp(v,Number(slider.min),Number(slider.max));slider.value=v;$(key+'-number').value=v;
- if(game==='balance'){if(key==='mass'&&free)applyPlacement(editBlock(state.weights,selected,{mass:v}));if(key==='position')applyPlacement(moveBlock(state.weights,selected,Math.round(v)));v=key==='mass'?state.weights[selected].mass:state.weights[selected].x;slider.value=v;$(key+'-number').value=v;}
  if(game==='light'){const o=selected==='target'?state.target:state.objects[selected];if(key==='objectX'&&free)o.x=v;if(key==='objectY'&&free)o.y=v;if(key==='angle')o.angle=v;if(key==='length'&&free)o.length=v;if(key==='sourceAngle'&&free)state.sourceAngle=v;}
- if(game==='cut'){if(key==='cutAngle'&&allowed('rotate'))state.angle=v;if(key==='offset'&&allowed('offset'))state.offset=v;if(key==='target')state.target=v;if(key==='centerX'&&allowed('x'))state.centerX=v;if(key==='centerY'&&allowed('y'))state.centerY=v;if(key==='amplitude'&&allowed('amplitude'))state.amplitude=v;if(key==='frequency'&&allowed('frequency'))state.frequency=v;}
- const units={mass:' kg',position:' m',angle:'°',cutAngle:'°',sourceAngle:'°',target:'%'};
+ if(game==='cut'){if(key==='basicTravel'&&cutMode==='basic')setBasicTravel(v);if(key==='cutAngle'&&allowed('rotate'))state.angle=v;if(key==='offset'&&allowed('offset'))state.offset=v;if(key==='target')state.target=v;if(key==='centerX'&&allowed('x'))state.centerX=v;if(key==='centerY'&&allowed('y'))state.centerY=v;if(key==='amplitude'&&allowed('amplitude'))state.amplitude=v;if(key==='frequency'&&allowed('frequency'))state.frequency=v;}
+ const units={angle:'°',cutAngle:'°',sourceAngle:'°',target:'%'};
  if($(key+'-out'))$(key+'-out').textContent=fmt(v,key==='position'?2:1)+(units[key]??'');
- if(key==='mass')$('selected').options[selected].textContent=`${selected+1} · ${fmt(v)} kg`;
  draw();
 }
 function status(label,value,message,success){
@@ -219,19 +229,6 @@ function status(label,value,message,success){
 function draw(){
  const focusedSource=document.activeElement?.closest?.('[data-light-source]')?.dataset.lightSource;
  let svg='<defs><pattern id="dots" width="25" height="25" patternUnits="userSpaceOnUse"><circle cx="2" cy="2" r="1" fill="#d8ded0"/></pattern></defs><rect width="800" height="460" fill="url(#dots)"/>';
- if(game==='balance'){
-  const t=evaluation?.torque??0, angle=phase==='result'?clamp(t/12,-5,5):0, rad=angle*Math.PI/180, ok=Math.abs(t)<=1.18;
-  svg+='<line x1="70" y1="350" x2="730" y2="350" stroke="#cbd2c2"/><path d="M400 266 L372 350 L428 350 Z" fill="#ced7bf"/><circle cx="400" cy="266" r="9" fill="#486c4d"/>';
-  svg+=`<g transform="rotate(${angle} 400 260)"><rect x="75" y="253" width="650" height="14" rx="7" fill="#486c4d"/>${Array.from({length:9},(_,i)=>`<line x1="${80+i*80}" y1="254" x2="${80+i*80}" y2="267" stroke="#e7eedc"/>`).join('')}</g>`;
-  const blocks=layout(state.weights);if($('block-list'))$('block-list').innerHTML=state.weights.map((w,i)=>`<li><strong>${i+1} · ${w.mass} kg</strong> · ${w.x} m · ${w.shape==='triangle'?'triângulo':'retângulo'} · ${w.fixed?'FIXO':'móvel'}</li>`).join('');
-  state.weights.forEach((w,i)=>{const d=blocks[i],x=d.x,y=d.top,fill=w.fixed?'#a9b99a':'#e6a777';
-   const shape=w.shape==='triangle'?`<polygon points="${x-d.width/2},${d.bottom} ${x+d.width/2},${d.bottom} ${x},${y}"`:`<rect x="${x-d.width/2}" y="${y}" width="${d.width}" height="${d.height}"`;
-   svg+=`<g transform="rotate(${angle} 400 260)" data-item="${i}" class="handle" tabindex="0" role="button" aria-label="Bloco ${i+1}, ${w.mass} kg, posição ${w.x}, ${w.shape==='triangle'?'triângulo':'retângulo'}${w.fixed?', FIXO':', móvel'}">${shape} fill="${fill}" stroke="${selected===i?'#25372e':'#65775c'}" stroke-width="${selected===i?3:1}"/><text x="${x}" y="${w.shape==='triangle'?d.bottom-4:y+d.height/2+4}" text-anchor="middle" font-size="11" pointer-events="none">${w.mass}</text><text x="${x+d.width/2+3}" y="${d.bottom-4}" font-size="9" pointer-events="none">${i+1}${w.fixed?' F':''}</text></g>`;
-  });
-  if(pendingSlot!==null)svg+=`<line x1="${400+pendingSlot*80}" x2="${400+pendingSlot*80}" y1="45" y2="280" stroke="#c76b42" stroke-dasharray="5 5"/><text x="400" y="425" text-anchor="middle">Solte para colocar na posição ${pendingSlot}</text>`;
-  svg+='<text x="80" y="395" font-size="12">−4 m</text><text x="400" y="395" text-anchor="middle" font-size="12">apoio · 0</text><text x="720" y="395" text-anchor="end" font-size="12">+4 m</text>';
-  status('Torque resultante',fmt(t)+' N·m',ok?'Em equilíbrio. Os torques se compensam.':t>0?'O lado direito tem mais torque.':'O lado esquerdo tem mais torque.',ok);
- }
  if(game==='light'){
   const r=evaluation?.ray??{rays:[],collisions:[],bounces:0,status:'pending'};
   if(phase!=='editing'){const distance=phase==='animating'?lightDistance:Infinity;svg+=worldRaysSVG(lightAttemptFrame(r,distance),distance,true);}
@@ -247,8 +244,14 @@ function draw(){
 
  }
  if(game==='cut'){
-  const poly=shapePolygon(state.shape),shapePath=[poly,...state.holes].map(r=>'M'+r.map(v=>`${v.x},${v.y}`).join(' L')+' Z').join(' '),c=phase==='result'?evaluation.cut:curvedCut(poly,state),p={x:state.centerX+c.n.x*state.offset,y:state.centerY+c.n.y*state.offset},v={x:-c.n.y*900,y:c.n.x*900};
-  svg+=`<path data-shape="cut-region" d="${shapePath}" fill-rule="evenodd" fill="#e5e8df" stroke="#bcc8b5" stroke-width="2"/><defs><clipPath id="shape-clip"><path d="${shapePath}" clip-rule="evenodd"/></clipPath></defs><polygon points="${points(c.region)}" fill="#a89bc9" clip-path="url(#shape-clip)"/><polyline points="${points(c.curve)}" fill="none" stroke="#584976" stroke-width="3" stroke-dasharray="9 6"/>${allowed('offset')?cutHandle('cut',clamp(p.x,24,776),clamp(p.y,24,436),'Deslizar corte','Arraste na direção das setas ou use as teclas de seta.','offset',state.angle):''}${allowed('x')||allowed('y')?cutHandle('move-curve',state.centerX,state.centerY,'Mover curva',`Arraste para mover no eixo ${allowed('x')&&allowed('y')?'horizontal e vertical':allowed('x')?'horizontal':'vertical'} ou use as teclas de seta.`,'move'):''}${allowed('rotate')?cutHandle('rotate-curve',state.centerX-c.n.y*80,state.centerY+c.n.x*80,'Girar curva','Arraste ao redor do centro ou use as teclas de seta.','rotate'):''}<text x="24" y="430" font-size="13">Lado roxo · meta ${state.target}%</text>`;
+  const poly=shapePolygon(state.shape),c=phase==='result'?evaluation.cut:curvedCut(poly,state),p={x:state.centerX+c.n.x*state.offset,y:state.centerY+c.n.y*state.offset};
+  const holes=state.holes.map(r=>`<polygon points="${points(r)}" fill="black"/>`).join('');
+  svg+=`<defs><mask id="shape-mask" maskUnits="userSpaceOnUse" x="0" y="0" width="800" height="460"><rect width="800" height="460" fill="black"/><polygon points="${points(poly)}" fill="white"/>${holes}</mask><clipPath id="outer-clip"><polygon points="${points(poly)}"/></clipPath></defs><g mask="url(#shape-mask)"><polygon data-shape="cut-region" points="${points(poly)}" fill="#e5e8df"/><polygon points="${points(c.region)}" fill="#a89bc9"/></g><polyline points="${points(c.curve)}" fill="none" stroke="#584976" stroke-width="3" stroke-dasharray="9 6"/>`;
+  if(!free&&cutMode==='basic'){
+   const d=cutDirection(),h={x:clamp(p.x,48,752),y:clamp(p.y,48,398)};
+   svg+=`<g class="cut-direction" aria-hidden="true"><line x1="${h.x-d.x*48}" y1="${h.y-d.y*48}" x2="${h.x+d.x*48}" y2="${h.y+d.y*48}" stroke="#75618d" stroke-width="2" stroke-dasharray="3 5"/><path transform="translate(${h.x} ${h.y}) rotate(${cutLevels[level].basicDirection})" d="M-48 0 l8-5 m-8 5 l8 5 M48 0 l-8-5 m8 5 l-8 5" fill="none" stroke="#75618d" stroke-width="2"/></g>${cutHandle('basic-cut',h.x,h.y,'Mover no eixo',`Única direção liberada: ${cutLevels[level].basicDirection} graus. Arraste ou use as setas.`,'offset',cutLevels[level].basicDirection)}`;
+  }else svg+=advancedCutHandles(c,p);
+  svg+=`<text x="24" y="430" font-size="13">Lado roxo · meta ${state.target}%${!free&&cutMode==='basic'?' · um único eixo':''}</text>`;
   const err=c.ratio*100-state.target, ok=cutSuccess(c.ratio*100,state.target);status('Área roxa',fmt(c.ratio*100)+'%',ok?'Corte encontrado! Dentro de ±3 pontos percentuais (limite incluído).':`Fora da margem de ±3 pp: ${fmt(Math.abs(err),2)} pontos percentuais ${err>0?'acima':'abaixo'} da meta.`,ok);
  }
  drawing.innerHTML=svg;
@@ -258,26 +261,24 @@ function draw(){
 function localPoint(e){const p=scene.createSVGPoint();p.x=e.clientX;p.y=e.clientY;return p.matrixTransform(scene.getScreenCTM().inverse());}
 scene.addEventListener('pointerdown',e=>{
  const el=e.target.closest('[data-item]');if(!el)return;const id=el.dataset.item, rotate=e.target.closest('[data-rotate]');
- if(game==='balance'){selected=Number(id);placementMessage=movable(state.weights,selected);if(!placementMessage)invalidate();editor();draw();if(placementMessage)return;}
  if(game==='light'){if(!free&&id==='target')return;if(!free&&state.objects[Number(id)].type==='wall')return;selected=id==='target'?'target':Number(id);editor();draw();if(!free&&!rotate)return;}
+ if(game==='cut')cutDragOrigin={point:localPoint(e),travel:state.basicTravel??0,centerX:state.centerX,centerY:state.centerY,offset:state.offset,angle:state.angle};
  if(game==='cut'&&id==='cut'&&!allowed('offset'))return;drag=rotate?'rotate':id;scene.setPointerCapture(e.pointerId);e.preventDefault();
 });
 scene.addEventListener('pointermove',e=>{if(drag===null)return;const p=localPoint(e);
- if(game==='balance'){pendingSlot=Math.round(clamp((p.x-400)/80,-4,4));draw();}
  if(game==='light'){const o=selected==='target'?state.target:state.objects[selected];if(drag==='rotate'){if(Math.hypot(p.x-o.x,p.y-o.y)>10)change('angle',Math.round(mirrorAngle(p.x-o.x,p.y-o.y)*10)/10);}else if(free){change('objectX',Math.round(p.x));change('objectY',Math.round(p.y));}}
- if(game==='cut'){if(drag==='move-curve'){if(allowed('x'))change('centerX',clamp(Math.round(p.x*10)/10,40,760));if(allowed('y'))change('centerY',clamp(Math.round(p.y*10)/10,40,420));}else if(drag==='rotate-curve'&&allowed('rotate')){let a=(Math.atan2(p.y-state.centerY,p.x-state.centerX)*180/Math.PI-90+360)%360;change('cutAngle',Math.round(a*10)/10);}else if(allowed('offset')){const a=state.angle*Math.PI/180,v=clamp(Math.round((p.x-state.centerX)*Math.cos(a)+(p.y-state.centerY)*Math.sin(a)),-600,600);change('offset',v);}}
+ if(game==='cut'){if(drag==='basic-cut'&&!free&&cutMode==='basic'){const d=cutDirection();change('basicTravel',cutDragOrigin.travel+(p.x-cutDragOrigin.point.x)*d.x+(p.y-cutDragOrigin.point.y)*d.y);}else if(drag==='move-curve'){if(allowed('x'))change('centerX',cutDragOrigin.centerX+p.x-cutDragOrigin.point.x);if(allowed('y'))change('centerY',cutDragOrigin.centerY+p.y-cutDragOrigin.point.y);}else if(drag==='rotate-curve'&&allowed('rotate')){const originAngle=Math.atan2(cutDragOrigin.point.y-state.centerY,cutDragOrigin.point.x-state.centerX),nowAngle=Math.atan2(p.y-state.centerY,p.x-state.centerX);const a=(cutDragOrigin.angle+(nowAngle-originAngle)*180/Math.PI+720)%360;change('cutAngle',Math.round(a*10)/10);}else if(allowed('offset')){const a=state.angle*Math.PI/180,v=cutDragOrigin.offset+(p.x-cutDragOrigin.point.x)*Math.cos(a)+(p.y-cutDragOrigin.point.y)*Math.sin(a);change('offset',v);}}
 });
-const endDrag=()=>{drag=null;pendingSlot=null;};scene.addEventListener('pointerup',()=>{if(drag===null)return;if(game==='balance'&&drag!==null&&pendingSlot!==null){applyPlacement(moveBlock(state.weights,selected,pendingSlot));editor();}endDrag();draw();});scene.addEventListener('pointercancel',()=>{endDrag();draw();});scene.addEventListener('lostpointercapture',endDrag);
+const endDrag=()=>{drag=null;pendingSlot=null;cutDragOrigin=null;};scene.addEventListener('pointerup',()=>{if(drag===null)return;endDrag();draw();});scene.addEventListener('pointercancel',()=>{endDrag();draw();});scene.addEventListener('lostpointercapture',endDrag);
 scene.addEventListener('click',e=>{const source=e.target.closest('[data-light-source]');if(source){e.preventDefault();fireLightSource(Number(source.dataset.lightSource));}});
 scene.addEventListener('keydown',e=>{
  const source=e.target.closest('[data-light-source]');
  if(source){if(['Enter',' ','Spacebar'].includes(e.key)){e.preventDefault();if(!e.repeat)fireLightSource(Number(source.dataset.lightSource));}return;}
  const el=e.target.closest('[data-item]');if(!el||!['ArrowLeft','ArrowRight','ArrowUp','ArrowDown'].includes(e.key))return;e.preventDefault();invalidate();const id=el.dataset.item,step=e.key==='ArrowLeft'||e.key==='ArrowDown'?-1:1;
- if(game==='balance'){selected=Number(id);applyPlacement(moveBlock(state.weights,selected,clamp(state.weights[selected].x+step,-4,4)));}
  if(game==='light'){if(id==='target'||(!free&&state.objects[Number(id)].type==='wall'))return;selected=Number(id);state.objects[selected].angle=clamp(state.objects[selected].angle+step,-90,90);}
- if(game==='cut'){if(id==='rotate-curve'&&allowed('rotate'))state.angle=(state.angle+step+360)%360;else if(id==='move-curve'){if(['ArrowLeft','ArrowRight'].includes(e.key)&&allowed('x'))state.centerX=clamp(state.centerX+step,40,760);if(['ArrowUp','ArrowDown'].includes(e.key)&&allowed('y'))state.centerY=clamp(state.centerY+(e.key==='ArrowUp'?-1:1),40,420);}else if(allowed('offset'))state.offset=clamp(state.offset+step,-600,600);}editor();draw();drawing.querySelector(`[data-item="${id}"]`)?.focus();
+ if(game==='cut'){if(id==='basic-cut'&&!free&&cutMode==='basic')setBasicTravel((state.basicTravel??0)+step);else if(id==='rotate-curve'&&allowed('rotate'))state.angle=(state.angle+step+360)%360;else if(id==='move-curve'){if(['ArrowLeft','ArrowRight'].includes(e.key)&&allowed('x'))state.centerX=clamp(state.centerX+step,-400,1200);if(['ArrowUp','ArrowDown'].includes(e.key)&&allowed('y'))state.centerY=clamp(state.centerY+(e.key==='ArrowUp'?-1:1),-400,860);}else if(allowed('offset'))state.offset=clamp(state.offset+step,-600,600);}editor();draw();drawing.querySelector(`[data-item="${id}"]`)?.focus();
 });
-document.querySelectorAll('[data-game]').forEach(b=>b.onclick=()=>{collection.hide();game=b.dataset.game;showSelection();});
+document.querySelectorAll('[data-game]').forEach(b=>b.onclick=()=>{if(!catalogue[b.dataset.game])return;collection.hide();game=b.dataset.game;showSelection();});
 $('free').onclick=()=>{free=true;start();};$('challenge').onclick=()=>{free=false;showSelection();};$('level').onchange=e=>{level=Number(e.target.value);start();};$('reset').onclick=start;
 $('selection-free').onclick=()=>{free=true;level=lastLevel[game]??0;start();};$('back-selection').onclick=showSelection;
 $('toggle-controls').onclick=toggleControls;

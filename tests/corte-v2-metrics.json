@@ -1,0 +1,54 @@
+{
+  "levels": 100,
+  "previousHoleLevels": 30,
+  "holeLevels": 68,
+  "bands": [
+    {
+      "levels": 20,
+      "withHoles": 6,
+      "minRemoved": 0.19000000290654523,
+      "maxRemoved": 0.22599999371352017,
+      "meanRemoved": 0.2060000033081332
+    },
+    {
+      "levels": 20,
+      "withHoles": 10,
+      "minRemoved": 0.22499998247527903,
+      "maxRemoved": 0.2610000140525765,
+      "meanRemoved": 0.24059999541323124
+    },
+    {
+      "levels": 20,
+      "withHoles": 14,
+      "minRemoved": 0.2599999643202732,
+      "maxRemoved": 0.29600001581309676,
+      "meanRemoved": 0.27628571257947615
+    },
+    {
+      "levels": 20,
+      "withHoles": 18,
+      "minRemoved": 0.2949999619792785,
+      "maxRemoved": 0.3310000082572559,
+      "meanRemoved": 0.3116666601942176
+    },
+    {
+      "levels": 20,
+      "withHoles": 20,
+      "minRemoved": 0.3299999714143734,
+      "maxRemoved": 0.3660000275650477,
+      "meanRemoved": 0.3480000050409509
+    }
+  ],
+  "maxSolutionErrorPP": 0.0012342870219015367,
+  "analyticCases": [
+    "outside",
+    "clipped",
+    "overlap",
+    "duplicate",
+    "nested",
+    "touch",
+    "concave"
+  ],
+  "independentUnionRasterArea": 48,
+  "validation": "Analytical and programmatic, plus static SVG montage; no real browser test"
+}

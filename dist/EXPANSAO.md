@@ -4,7 +4,7 @@ Implementação educativa produzida com auxílio de IA. Não representa autoria 
 
 ## O que está incluído
 
-A coleção preserva os 300 níveis existentes: Equilíbrio, Reflexos e Corte certo, 100 cada. Acrescenta 200 níveis de ELO, 200 de PRUMO, 200 de PACTO e 200 de NEXO. São 1.100 desafios de campanha. DESVIO é um duelo, não uma quinta campanha: oferece 16 mapas, dois jogadores no mesmo dispositivo, bot e treino.
+A coleção atual reúne Reflexos e Corte certo, com 100 níveis cada, mais ELO, PRUMO e PACTO, com 200 níveis cada. São 800 desafios de campanha. DESVIO é um duelo com 16 mapas, dois jogadores no mesmo dispositivo, bot e treino. NEXO e o jogo de gangorra Equilíbrio foram retirados do site por solicitação do usuário; PRUMO permanece. Os registros locais antigos não são apagados.
 
 A especificação de referência é o PDF “Plano Ilustrado — Coleção de Jogos Lógicos”, versão 1.0, de outubro de 2026. As regras clássicas foram mantidas separadas das variantes que o documento descreve como futuras.
 
@@ -28,10 +28,6 @@ Selecione um apoio e pinte casas por clique ou arraste. Todas as casas devem per
 
 Grade 8 × 8, quatro símbolos. Cada linha e coluna contém exatamente dois de cada. Cada casa tem exatamente um vizinho ortogonal igual. Os componentes iguais são duplas, nunca trios ou blocos. Diagonais não contam. “Lápis” guarda candidatos separados dos valores; ligações de pares são apenas uma ajuda visual.
 
-### NEXO
-
-Grade 6 × 6, três símbolos. Cada linha e coluna contém exatamente dois de cada. Cada casa deve tocar os outros dois tipos. Vizinhos iguais são permitidos, diferentemente da parceria exclusiva de PACTO. A campanha tem 200 conjuntos de pistas diferentes e cobre as 183 classes possíveis de grades completas clássicas; 17 classes são usadas duas vezes com pistas não equivalentes. No canto, as duas vizinhas são os outros dois tipos.
-
 ### DESVIO
 
 Uma casa horizontal envia o próximo jogador à mesma linha; uma vertical, à mesma coluna. A casa escolhida é consumida. A primeira jogada é livre. A seleção é apenas prévia até “Confirmar jogada”. Quem não tem escolha legal perde; não há empate.
@@ -42,7 +38,7 @@ Há três bots: explorador, intermediário e exato. O bot exato usa busca comple
 
 As opções avançadas podem ser ocultadas. O editor JSON permite alterar as pistas, regiões, apoios ou setas. Antes de jogar uma fase editada ou importada, o motor verifica as regras e conta soluções até duas. Um puzzle sem solução ou ambíguo é recusado. DESVIO recebe análise de vantagem, não exigência de solução única.
 
-PRUMO também permite derivar os apoios de uma pintura completa: cada centro de massa precisa ser um centro de casa ou meio de lado. Depois é necessário verificar a unicidade da partição. O solucionador exato do editor PRUMO admite até 20 casas. ELO limita o trabalho de enumeração no editor; se necessário, reduza a grade ou adicione pistas fixas.
+PRUMO também permite derivar os apoios de uma pintura completa: cada centro de massa precisa ser um centro de casa ou meio de lado. Depois é necessário verificar a unicidade da partição. O solucionador exato do editor PRUMO admite até 6 × 6 (36 casas). ELO limita o trabalho de enumeração no editor; se necessário, reduza a grade ou adicione pistas fixas.
 
 Exportar gera um arquivo JSON local. Importar não envia dados a servidor. Fases personalizadas e tutoriais não marcam níveis da campanha como concluídos.
 
@@ -68,7 +64,7 @@ A dificuldade é uma hipótese editorial baseada em restrições, deduções, de
 - collection-state.mjs: histórico, diário, persistência e métricas locais.
 - collection-tutorials.mjs: instâncias exatas do PDF, sem respostas incorporadas.
 - geometry-games.mjs / geometry-levels.mjs: ELO e PRUMO.
-- symbol-games.mjs / symbol-levels.mjs: PACTO e NEXO.
+- symbol-games.mjs / symbol-levels.mjs: PACTO.
 - desvio.mjs: regras, minimax, bots, replay e mapas do duelo.
 - result-motion.mjs: efeitos de resultado compartilhados, sem decidir regras.
 
