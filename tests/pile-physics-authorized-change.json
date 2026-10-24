@@ -1,0 +1,6 @@
+{
+  "authorization": "2026-10-24 Sentinel_bbe0dbcbbca481918d5f1c5c556217ee explicitly requests mouse-speed proportional interaction with actual piled leaves, slow sway/return and fast launch/fall/re-form. Independent decorative module replaces static floor only after ready; no game modules changed.",
+  "css_insertion": "\n/* Interactive floor replaces, never duplicates, the existing static leaf art. */\nbody > .platform-leaf-layer.platform-piles-interactive::after{visibility:hidden}\nbody > .platform-leaf-layer.platform-piles-interactive > .platform-pile{visibility:hidden}\nbody > .platform-leaf-layer > .platform-pile-surface{position:absolute;bottom:0;left:0;width:100%;height:112px;overflow:hidden;pointer-events:none;user-select:none;shape-rendering:crispEdges}\n@media(max-width:760px){body > .platform-leaf-layer > .platform-pile-surface{height:84px}}\n",
+  "html_insertion": "<script type=\"module\" src=\"decor-piles.mjs\"></script>",
+  "module_sha256": "cce23d5719b0890b06a0b73365be7a59e10517e72d575836185cd9386430e724"
+}

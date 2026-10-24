@@ -12,11 +12,14 @@ const canopyChange=JSON.parse(fs.readFileSync(new URL('./document-canopy-authori
 const incidenceChange=JSON.parse(fs.readFileSync(new URL('./leaf-incidence-authorized-change.json',import.meta.url)));
 const growthChange=JSON.parse(fs.readFileSync(new URL('./growing-piles-authorized-change.json',import.meta.url)));
 const speedChange=JSON.parse(fs.readFileSync(new URL('./leaf-speed-authorized-change.json',import.meta.url)));
+const physicsChange=JSON.parse(fs.readFileSync(new URL('./pile-physics-authorized-change.json',import.meta.url)));
 const sha=s=>crypto.createHash('sha256').update(s).digest('hex');
 for(const [name,hash] of Object.entries(baseline)){
  let bytes=fs.readFileSync(new URL('../dist/'+name,import.meta.url));
  if(name==='index.html'){
   let html=bytes.toString();
+  assert.equal(html.split(physicsChange.html_insertion).length-1,1,'Exactly one approved decoration module');
+  html=html.replace(physicsChange.html_insertion,'');
   assert.equal(html.split(speedChange.html_after).length-1,1,'Exact moderate leaf incidence increase');
   html=html.replace(speedChange.html_after,speedChange.html_before);
   assert.equal(html.split(growthChange.html_after).length-1,1,'Exact persistent ornamental pile spans');
@@ -53,7 +56,15 @@ for(const [name,hash] of Object.entries(baseline)){
 const fullCanopyChange=JSON.parse(fs.readFileSync(new URL('./fullwidth-canopy-authorized-change.json',import.meta.url)));
 const variedChange=JSON.parse(fs.readFileSync(new URL('./varied-foliage-authorized-change.json',import.meta.url)));
 const edgeChange=JSON.parse(fs.readFileSync(new URL('./canopy-edge-authorized-change.json',import.meta.url)));
-const edgePlatformSource=fs.readFileSync(new URL('../dist/platform.css',import.meta.url),'utf8');
+const fineEdgeChange=JSON.parse(fs.readFileSync(new URL('./fine-edge-authorized-change.json',import.meta.url)));
+const physicsPlatformSource=fs.readFileSync(new URL('../dist/platform.css',import.meta.url),'utf8');
+assert.equal(physicsPlatformSource.split(physicsChange.css_insertion).length-1,1,'Exact isolated interactive floor CSS');
+const fineEdgePlatformSource=physicsPlatformSource.replace(physicsChange.css_insertion,'');
+assert.equal(sha(fs.readFileSync(new URL('../dist/decor-piles.mjs',import.meta.url))),physicsChange.module_sha256,'Approved decorative module only');
+const edgePlatformSource=fineEdgePlatformSource.replace(fineEdgeChange.after,fineEdgeChange.before);
+assert.equal(sha(edgePlatformSource),fineEdgeChange.prior_css_sha256,'Only finer lower-edge URL changed');
+const fineEdgeSVG=fs.readFileSync(new URL('../dist/platform-assets/'+fineEdgeChange.after,import.meta.url),'utf8');
+assert.equal(sha(fineEdgeSVG.replace(fineEdgeChange.svg_addition,'')),fineEdgeChange.body_svg_sha256,'Approved canopy body unchanged');
 const speedPlatformSource=edgePlatformSource.replace(edgeChange.after,edgeChange.before);
 assert.equal(sha(speedPlatformSource),edgeChange.prior_css_sha256,'Only canopy edge URL changed');
 const edgeSVG=fs.readFileSync(new URL('../dist/platform-assets/'+edgeChange.after,import.meta.url),'utf8');
