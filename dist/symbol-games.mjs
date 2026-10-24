@@ -23,9 +23,47 @@ function initial(level,values){const m=model(level),v=values===undefined?level.c
 function propagate(m,d,trace=null){const queue=m.constraints.map((_,i)=>i),queued=new Set(queue);let q=0;while(q<queue.length){const ci=queue[q++];queued.delete(ci);const c=m.constraints[ci],len=c.cells.length,support=Array(len).fill(0),t=c.table;let alive=0;outer:for(let off=0;off<t.length;off+=len){for(let j=0;j<len;j++)if(!(d[c.cells[j]]&(1<<t[off+j])))continue outer;alive++;for(let j=0;j<len;j++)support[j]|=1<<t[off+j];}if(!alive)return {ok:false,constraint:ci};const before=trace?c.cells.map(cell=>({cell,candidates:vals(d[cell])})):null;for(let j=0;j<len;j++){const cell=c.cells[j],old=d[cell],next=old&support[j];if(next!==old){d[cell]=next;if(trace)trace.push({kind:c.kind,label:c.label,cells:c.cells.slice(),cell,before:vals(old),after:vals(next),premises:before});for(const x of m.linked[cell])if(!queued.has(x)){queue.push(x);queued.add(x);}}}}
  return {ok:true};}
 export function symbolCandidates(level,values=level.clues){const s=initial(level,values);if(s.error)return Array.from({length:level.clues.length},()=>[]);if(!propagate(s.m,s.d).ok)return s.d.map(()=>[]);return s.d.map(vals);}
-export function validateSymbols(level,values=level.clues){let s;try{s=initial(level,values);}catch(e){return {complete:false,valid:false,violations:[{kind:'format',text:e.message,cells:[]}],pending:[]};}const violations=[],pending=[];if(s.error)return {complete:false,valid:false,violations:[{kind:'input',text:s.error,cells:s.cell===undefined?[]:[s.cell]}],pending};const {m}=s;const complete=values.every(v=>v>=0);for(const c of m.constraints){const a=c.cells.map(i=>values[i]),blanks=a.filter(v=>v<0).length;if(c.kind==='quota'){for(let v=0;v<m.k;v++){const count=a.filter(x=>x===v).length;if(count>2||count+blanks<2)violations.push({kind:'quota',text:`${c.label}: são necessários exatamente dois de cada símbolo.`,cells:c.cells,symbol:v});}}else if(c.kind==='pair'&&a[0]>=0){const same=a.slice(1).filter(v=>v===a[0]).length;if(same>1||(same===0&&blanks===0))violations.push({kind:'pair',text:'Cada casa precisa de exatamente um vizinho igual.',cells:c.cells});else if(same===0)pending.push({kind:'partner',cells:c.cells,text:'Parceiro ainda por preencher.'});}else if(c.kind==='coverage'){const present=new Set(a.filter(v=>v>=0));if(present.size+blanks<3)violations.push({kind:'coverage',text:'Esta vizinhança não pode conter os três símbolos.',cells:c.cells});else if(present.size<3)pending.push({kind:'coverage',cells:c.cells,text:'Diversidade local ainda incompleta.'});}}
- if(!violations.length){const result=propagate(m,s.d);if(!result.ok){const c=m.constraints[result.constraint];violations.push({kind:'impossible',text:`As escolhas deixam ${c.label} sem combinação possível.`,cells:c.cells});}}
- if(!complete)pending.push({kind:'empty',cells:values.flatMap((v,i)=>v<0?[i]:[]),text:'Há casas por preencher.'});return {complete,valid:violations.length===0,violations,pending};}
+export function validateSymbols(level,values=level.clues){
+ let s;try{s=initial(level,values);}catch(e){return {complete:false,valid:false,violations:[{kind:'format',text:e.message,cells:[]}],pending:[]};}
+ const violations=[],pending=[];
+ if(s.error)return {complete:false,valid:false,violations:[{kind:'input',text:s.error,cells:s.cell===undefined?[]:[s.cell]}],pending};
+ const {m}=s,complete=values.every(v=>v>=0),markedGroups=new Set();
+ for(const c of m.constraints){
+  const a=c.cells.map(i=>values[i]),blanks=a.filter(v=>v<0).length;
+  if(c.kind==='quota'){
+   for(let v=0;v<m.k;v++){
+    const count=a.filter(x=>x===v).length;
+    // A quota is a line-wide rule, so even its empty cells belong to the error.
+    if(count>2||count+blanks<2)violations.push({kind:'quota',text:`${c.label}: são necessários exatamente dois de cada símbolo.`,cells:c.cells.slice(),symbol:v});
+   }
+  }else if(c.kind==='pair'&&a[0]>=0){
+   const same=a.slice(1).filter(v=>v===a[0]).length,center=c.cells[0];
+   if(same>1&&!markedGroups.has(center)){
+    // Highlight the actual equal-symbol group, not unrelated neighbors of it.
+    // A larger connected group can violate several centers; report it once.
+    const cells=[center],seen=new Set(cells);
+    for(let j=0;j<cells.length;j++)for(const cell of m.adj[cells[j]])if(values[cell]===a[0]&&!seen.has(cell)){seen.add(cell);cells.push(cell);}
+    for(const cell of cells)markedGroups.add(cell);
+    violations.push({kind:'pair',text:'Cada casa precisa de exatamente um vizinho igual.',cells:cells.sort((a,b)=>a-b)});
+   }else if(same===0&&blanks===0){
+    // With no free neighbor left, the whole neighborhood proves isolation.
+    violations.push({kind:'pair',text:'Cada casa precisa de exatamente um vizinho igual.',cells:c.cells.slice()});
+   }else if(same===0)pending.push({kind:'partner',cells:c.cells.slice(),text:'Parceiro ainda por preencher.'});
+  }else if(c.kind==='coverage'){
+   const present=new Set(a.filter(v=>v>=0));
+   // Empty cells are possibilities, not errors, unless even all of them cannot
+   // supply the missing symbols. NEXO expressly permits equal neighbors.
+   if(present.size+blanks<3)violations.push({kind:'coverage',text:'Esta vizinhança não pode conter os três símbolos.',cells:c.cells.slice()});
+   else if(present.size<3)pending.push({kind:'coverage',cells:c.cells.slice(),text:'Diversidade local ainda incompleta.'});
+  }
+ }
+ // GAC may prove a contradiction through interacting rules, without looking
+ // at any answer key. Surviving propagation is not a global-solvability claim.
+ // On complete boards the direct checks above already cover every rule.
+ if(!complete&&!violations.length){const result=propagate(m,s.d);if(!result.ok){const c=m.constraints[result.constraint];violations.push({kind:'impossible',text:`As escolhas deixam ${c.label} sem combinação possível.`,cells:c.cells.slice()});}}
+ if(!complete)pending.push({kind:'empty',cells:values.flatMap((v,i)=>v<0?[i]:[]),text:'Há casas por preencher.'});
+ return {complete,valid:violations.length===0,violations,pending};
+}
 export function solveSymbols(level,values=level.clues,limit=2,options={}){const s=initial(level,values),solutions=[];let nodes=0,exhausted=false;if(s.error)return {solutions,count:0,complete:true,nodes};function dfs(d){if(solutions.length>=limit||exhausted)return;if(++nodes>(options.maxNodes??Infinity)){exhausted=true;return;}if(!propagate(s.m,d).ok)return;let best=-1,size=99,ties=0;for(let i=0;i<d.length;i++){const p=pop(d[i]);if(p>1&&p<size){best=i;size=p;ties=1;}else if(p>1&&p===size&&options.random&&options.random()<1/++ties)best=i;}if(best<0){solutions.push(d.map(x=>Math.log2(x)));return;}let choices=vals(d[best]);if(options.random)choices.sort(()=>options.random()-.5);for(const v of choices){const copy=d.slice();copy[best]=1<<v;dfs(copy);if(solutions.length>=limit||exhausted)break;}}if(limit>0)dfs(s.d);return {solutions,count:solutions.length,complete:!exhausted,nodes};}
 const names=['círculo','triângulo','quadrado','losango'];
 export function symbolHint(level,values=level.clues,tier=1){tier=Math.max(1,Math.min(3,tier));const check=validateSymbols(level,values);if(!check.valid)return {tier,kind:'conflict',text:check.violations[0].text,cells:check.violations[0].cells,premises:check.violations,eliminations:[]};if(check.complete)return {tier,kind:'complete',text:'Todas as regras estão satisfeitas.',cells:[],premises:[],eliminations:[]};const s=initial(level,values),trace=[];propagate(s.m,s.d,trace);const step=trace[0];if(!step)return {tier,kind:'no-human-step',text:'Nenhuma dedução direta disponível. Revise candidatos e cruze as restrições; nenhuma resposta foi revelada.',cells:[],premises:[],eliminations:[]};const loc=`L${(step.cell/s.m.n|0)+1}C${step.cell%s.m.n+1}`,rule=step.kind==='quota'?'Cada linha e coluna contém exatamente dois de cada símbolo.':step.kind==='pair'?'Cada casa precisa de um único vizinho igual; uma dupla fechada exclui iguais ao redor.':'A casa central e seus vizinhos precisam conter os três símbolos.';const removed=step.before.filter(v=>!step.after.includes(v));return {tier,kind:step.kind,text:tier===1?`Observe ${step.label}. ${rule}`:tier===2?`${rule} Compare as possibilidades das casas destacadas: nem toda combinação satisfaz essa regra.`:`${loc} não pode conter ${removed.map(v=>names[v]).join(' ou ')}: nenhuma combinação das possibilidades listadas satisfaz a regra de ${step.label}.${step.after.length===1?` Portanto, preencha ${names[step.after[0]]}.`:''}`,cells:tier<3?step.cells:[step.cell],premises:tier===1?[]:step.premises,eliminations:tier===3?removed.map(value=>({cell:step.cell,value})):[],...(tier===3&&step.after.length===1?{cell:step.cell,value:step.after[0]}:{})};}

@@ -73,3 +73,11 @@ A dificuldade é uma hipótese editorial baseada em restrições, deduções, de
 - result-motion.mjs: efeitos de resultado compartilhados, sem decidir regras.
 
 Validadores calculam as regras, não comparam com uma resposta de referência. Solucionadores e geradores são independentes da interface. Os scripts de geração, auditorias e testes acompanham a cópia completa do projeto.
+
+
+## Revisão de interação e campanha PRUMO v2
+
+- ELO: cadeados removidos; marcação opcional acessível das regiões bloqueadas, com preferência local, sem alterar cores ou regras.
+- PACTO/NEXO: hachuras vermelhas imediatas para cotas e contradições de grupos/vizinhanças; preenchimentos ainda viáveis não são erros. A avaliação não consulta solução. Confirmar continua necessário para vitória/derrota e contagem de falhas.
+- PRUMO: 200 fases prumo-v2-001 a prumo-v2-200; 40 em cada grade 4×4, 4×5, 5×5, 5×6, 6×6. Todas as células são utilizáveis, sem padding nem bloqueios. A ordem prioriza área crescente; dentro de cada patamar usa o perfil técnico de deduções. Isso não equivale a uma calibragem humana de dificuldade.
+- Editor PRUMO: máximo 6×6/36 casas e 20 apoios; orçamento de enumeração, combinações e busca protege contra entradas patológicas. Ao atingir o limite, a verificação é recusada, nunca apresentada como prova de unicidade. A campanha não pretende atingir 10×10.

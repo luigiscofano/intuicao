@@ -50,3 +50,12 @@ Por isso, 200 desenhos finais não equivalentes seriam impossíveis sem mudar as
 ## Reprodutibilidade
 
 Os scripts e sementes fornecidos reproduzem o pipeline completo de geração. Nos níveis geométricos, o campo seed registra o estado do gerador no pipeline; não é apresentado como comando que reconstrói isoladamente uma fase sem as etapas anteriores. O catálogo e as soluções de auditoria estão incluídos para verificação direta.
+
+
+## Revisão de controles e PRUMO v2 — 24/10/2026
+
+A campanha mantém 1.100 puzzles. PRUMO agora usa 200 fases versionadas com área não decrescente (16,20,25,30,36 casas). São 200 layouts e partições distintos, com unicidade também verificada por oráculo independente de programação inteira e cortes de conectividade. Geometria: 65.822 verificações; PRUMO v2: 8.854.
+
+A interface ELO passou testes de marcação opcional, cores, pistas, foco e persistência. PACTO/NEXO passaram 400 soluções e 1.200 parciais corretas sem falsos positivos, além de cotas, trios, isolamento e cobertura impossível. Reflexos passou 2.923 verificações, com 250 ordens de disparo em soluções e mais 250 nos estados iniciais. As suites de todos os 1.100 gabaritos, DESVIO e física anterior também passaram.
+
+Limites: DOM/relógio simulados e pranchas SVG estáticas; não houve execução interativa em navegador real nesta revisão. Dificuldade humana ainda não calibrada. Consulte o relatório detalhado documentacao/interacoes/VALIDACAO.md do pacote completo.

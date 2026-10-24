@@ -123,7 +123,7 @@ svg .cut-grip:focus{outline:none;stroke:none}
 .duel-arrow{display:block;width:70%;max-width:70px}.duel-arrow svg{width:100%;height:auto}.map-preview{font-variant-emoji:text}
 
 /* ELO: pistas explicitas e conexoes sempre acima das casas, sem capturar cliques. */
-.board-elo .grid-cell.fixed-region{background-image:none}.region-lock{position:absolute;right:8%;bottom:8%;font-size:12px;color:#687768;pointer-events:none}.board-elo .grid-cell:focus-visible{z-index:1}.board-elo .board-overlay,.board-elo .board-overlay *{pointer-events:none}.board-elo .elo-edge{stroke:#234c38;stroke-width:6;filter:drop-shadow(0 1px 1px #fffefa)}.board-elo .grid-cell{touch-action:manipulation}
+.board-elo .grid-cell.fixed-region{background-image:none}.board-elo .grid-cell:focus-visible{z-index:1}.board-elo .board-overlay,.board-elo .board-overlay *{pointer-events:none}.board-elo .elo-edge{stroke:#234c38;stroke-width:6;filter:drop-shadow(0 1px 1px #fffefa)}.board-elo .grid-cell{touch-action:manipulation}
 
 /* A coleção usa tabuleiro HTML: os efeitos não podem depender do SVG #scene. */
 .collection-board-wrap.result-success,.collection-board-wrap.result-failure{border-radius:16px}
@@ -136,3 +136,25 @@ svg .cut-grip:focus{outline:none;stroke:none}
 }
 .level-actions .actions{flex-wrap:wrap}
 .answer-key,#c-answer{border-color:#b8a271;background:#f7f0df;color:#594c31}
+
+/* Revisão interativa: marca opcional, sem cadeados e sem alterar a cor das regiões. */
+.board-options{display:flex;justify-content:flex-end;max-width:680px;margin:4px auto -12px;padding:0 24px}
+.board-options button{font-size:12px;min-height:44px;border:1px solid var(--line)}
+.board-options button[aria-pressed=true]{color:#284e38;background:#e9efe3;border-color:#7d987a}
+.blocked-marker{position:absolute;right:8%;bottom:8%;width:9px;height:9px;border:1.5px solid #52664b;border-radius:2px;opacity:.7;pointer-events:none}
+.blocked-marker::after{content:"";position:absolute;left:0;top:3px;width:7px;height:1px;background:#52664b;transform:rotate(-45deg)}
+/* A hachura se sobrepõe ao fundo, não ao conteúdo; a cor sozinha não é a indicação. */
+.grid-cell.cell-conflict::after{content:"";position:absolute;inset:0;pointer-events:none;background:repeating-linear-gradient(135deg,transparent 0 7px,#c5434336 7px 8px);box-shadow:inset 0 0 0 1px #b94242a6;z-index:0}
+.grid-cell.cell-conflict .symbol,.grid-cell.cell-conflict .pencil,.grid-cell.cell-conflict .fixed-dot{position:relative;z-index:1}
+.grid-cell.cell-conflict .fixed-dot{position:absolute}
+.live-errors{color:#a33131;font-size:12px;line-height:1.5}
+@media(forced-colors:active){.grid-cell.cell-conflict{outline:2px dashed Mark;outline-offset:-3px}.blocked-marker{border-color:CanvasText}.blocked-marker::after{background:CanvasText}}
+/* Disparadores individuais: área clicável de 48 unidades; espelhos mantêm prioridade. */
+.light-source{cursor:pointer;outline:none}
+.light-source-hit{pointer-events:all}
+.light-source-ring{pointer-events:none;transition:opacity .15s,stroke-width .15s}
+.light-source:hover .light-source-ring,.light-source:focus-visible .light-source-ring{opacity:1;stroke-width:3}
+.light-source:focus-visible .light-source-hit{stroke:#25372e;stroke-width:2;stroke-dasharray:3 3}
+.light-source[aria-disabled="true"]{cursor:default}
+.light-source-check{font:700 12px system-ui,sans-serif}
+@media(prefers-reduced-motion:reduce){.light-source-ring{transition:none}}

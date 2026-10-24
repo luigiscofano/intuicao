@@ -3,7 +3,8 @@
  * {assignments:[supportIndex|-1]}; arrays are also accepted. Support ids are labels,
  * assignments always index supports. Marks/discards are annotations, not constraints.
  * solveGeometry returns {count,solutions,exhaustive,stats}; limit defaults to 2.
- * No reference solution is consulted. PRUMO exact enumeration supports <=20 cells. */
+ * No reference solution is consulted. PRUMO uses exhaustive subsets through 20
+ * cells and meet-in-the-middle moment enumeration through 36 cells. */
 export const neighbors=(cell,rows,cols)=>[cell%cols?cell-1:-1,cell%cols<cols-1?cell+1:-1,cell>=cols?cell-cols:-1,cell<cols*(rows-1)?cell+cols:-1].filter(x=>x>=0);
 const arr=(l,s)=>Array.isArray(s)?s:(s?.[l.game==='elo'?'positions':'assignments']||[]);
 const connected=(cells,r,c)=>{if(!cells.length)return false;const set=new Set(cells),seen=new Set([cells[0]]),q=[cells[0]];for(const p of q)for(const n of neighbors(p,r,c))if(set.has(n)&&!seen.has(n)){seen.add(n);q.push(n);}return seen.size===set.size;};
@@ -33,8 +34,40 @@ export function validateGeometry(l,state){const v=[],pending=[],n=l.rows*l.cols,
 const shapeCache=new Map();
 /** Enumerates every connected balanced subset, not just symmetric shapes. */
 export function geometryShapes(rows,cols){const key=rows+'x'+cols;if(shapeCache.has(key))return shapeCache.get(key);const n=rows*cols;if(n>20)throw new RangeError('O solucionador exato de PRUMO admite até 20 casas.');const total=2**n,counts=new Uint8Array(total),sx=new Uint16Array(total),sy=new Uint16Array(total),adj=Array.from({length:n},(_,i)=>neighbors(i,rows,cols).reduce((a,j)=>a|(1<<j),0)),map=new Map();for(let m=1;m<total;m++){const b=m&-m,i=31-Math.clz32(b),rest=m^b,k=counts[m]=counts[rest]+1;sx[m]=sx[rest]+2*(i%cols);sy[m]=sy[rest]+2*Math.floor(i/cols);if(sx[m]%k||sy[m]%k)continue;const x2=sx[m]/k,y2=sy[m]/k;if(x2%2&&y2%2)continue;const inc=supportCells({rows,cols},{x2,y2}),im=inc.reduce((a,i)=>a|(1<<i),0);if((m&im)!==im)continue;let seen=b,front=b;while(front){const bit=front&-front;front^=bit;const next=adj[31-Math.clz32(bit)]&m&~seen;seen|=next;front|=next;}if(seen!==m)continue;const key=x2+','+y2;if(!map.has(key))map.set(key,[]);map.get(key).push(m);}shapeCache.set(key,map);return map;}
-export function prumoDomains(l,state){const shapes=geometryShapes(l.rows,l.cols),as=arr(l,state),inc=l.supports.map(p=>supportCells(l,p).reduce((a,i)=>a|(1<<i),0));return l.supports.map((p,s)=>{let must=inc[s],ban=inc.reduce((a,m,j)=>j===s?a:a|m,0);for(let i=0;i<as.length;i++)if(as[i]===s)must|=1<<i;else if(as[i]>=0)ban|=1<<i;return (shapes.get(p.x2+','+p.y2)||[]).filter(m=>(m&must)===must&&!(m&ban));});}
-export function solveGeometry(l,state,limit=2){limit=Math.max(1,Math.floor(limit));const solutions=[],stats={nodes:0,branches:0,forced:0,maxDepth:0,candidates:0};let cutoff=false;
+export function prumoDomains(l,state){if(l.rows*l.cols>20)return prumoWideDomains(l,state).domains;const shapes=geometryShapes(l.rows,l.cols),as=arr(l,state),inc=l.supports.map(p=>supportCells(l,p).reduce((a,i)=>a|(1<<i),0));return l.supports.map((p,s)=>{let must=inc[s],ban=inc.reduce((a,m,j)=>j===s?a:a|m,0);for(let i=0;i<as.length;i++)if(as[i]===s)must|=1<<i;else if(as[i]>=0)ban|=1<<i;return (shapes.get(p.x2+','+p.y2)||[]).filter(m=>(m&must)===must&&!(m&ban));});}
+// Acima de vinte casas, as máscaras bit a bit de Number são insuficientes.
+// Todos os subconjuntos opcionais continuam sendo considerados: juntamos duas
+// metades por seus momentos exatos horizontal E vertical e depois verificamos
+// a conectividade. Não há hipótese de simetria, tamanho máximo de peça,
+// casa bloqueada nem consulta ao gabarito.
+const prumoWideCache=new Map();
+function prumoWideDomains(l,state){
+ const n=l.rows*l.cols;if(n>36)throw new RangeError('O solucionador exato de PRUMO admite até 36 casas nesta versão.');
+ const key=JSON.stringify([l.rows,l.cols,l.supports.map(p=>[p.x2,p.y2]),arr(l,state)]);
+ if(prumoWideCache.has(key))return prumoWideCache.get(key);
+ const local=geometryLocalAnalysis(l,state),bits=Array.from({length:n},(_,i)=>1n<<BigInt(i)),adj=Array.from({length:n},(_,i)=>neighbors(i,l.rows,l.cols));let enumeratedSubsets=0,joinedSubsets=0;
+ function isConnected(mask){let first=0;while(first<n&&!(mask&bits[first]))first++;if(first===n)return false;let seen=bits[first];const queue=[first];for(const cell of queue)for(const next of adj[cell])if((mask&bits[next])&&!(seen&bits[next])){seen|=bits[next];queue.push(next);}return seen===mask;}
+ const incident=l.supports.flatMap(p=>supportCells(l,p)),overlap=new Set(incident).size!==incident.length;
+ const domains=overlap||local.contradiction||!validateGeometry(l,state).valid?l.supports.map(()=>[]):l.supports.map((p,s)=>{
+  const allowed=local.candidates.flatMap((d,c)=>d.includes(s)?[c]:[]),required=allowed.filter(c=>local.candidates[c].length===1),optional=allowed.filter(c=>local.candidates[c].length!==1);
+  const must=required.reduce((mask,c)=>mask|bits[c],0n),targetX=-required.reduce((sum,c)=>sum+2*(c%l.cols)-p.x2,0),targetY=-required.reduce((sum,c)=>sum+2*Math.floor(c/l.cols)-p.y2,0);
+  const middle=Math.floor(optional.length/2),left=optional.slice(0,middle),right=optional.slice(middle),sums=new Map(),shapes=[];
+  function enumerate(cells,index,x,y,mask,visit){if(index===cells.length){if(++enumeratedSubsets>1000000)throw new RangeError('Esta grade excede o orçamento de enumeração exata de PRUMO; simplifique os apoios.');visit(x,y,mask);return;}enumerate(cells,index+1,x,y,mask,visit);const c=cells[index];enumerate(cells,index+1,x+2*(c%l.cols)-p.x2,y+2*Math.floor(c/l.cols)-p.y2,mask|bits[c],visit);}
+  enumerate(left,0,0,0,0n,(x,y,mask)=>{const key=x+','+y;if(!sums.has(key))sums.set(key,[]);sums.get(key).push(mask);});
+  enumerate(right,0,0,0,0n,(x,y,mask)=>{for(const other of sums.get((targetX-x)+','+(targetY-y))||[]){if(++joinedSubsets>1000000)throw new RangeError('Esta grade excede o orçamento de formas exatas de PRUMO; simplifique os apoios.');const shape=must|mask|other;if(isConnected(shape))shapes.push(shape);}});
+  return shapes;
+ });
+ const result={domains,enumeratedSubsets};if(prumoWideCache.size>=64)prumoWideCache.delete(prumoWideCache.keys().next().value);prumoWideCache.set(key,result);return result;
+}
+function solvePrumoWide(l,state,limit){
+ const solutions=[],stats={nodes:0,branches:0,forced:0,maxDepth:0,candidates:0,enumeratedSubsets:0};
+ if(!validateGeometry(l,state).valid)return {count:0,solutions,exhaustive:true,stats};
+ const info=prumoWideDomains(l,state),domains=info.domains,n=l.rows*l.cols,bits=Array.from({length:n},(_,i)=>1n<<BigInt(i)),full=(1n<<BigInt(n))-1n,chosen=Array(l.supports.length).fill(0n);let cutoff=false;
+ stats.candidates=domains.reduce((sum,d)=>sum+d.length,0);stats.enumeratedSubsets=info.enumeratedSubsets;
+ function dfs(used,depth){if(++stats.nodes>1000000)throw new RangeError('Esta grade excede o orçamento de cobertura exata de PRUMO; simplifique os apoios.');stats.maxDepth=Math.max(stats.maxDepth,depth);if(depth===domains.length){if(used===full){solutions.push(Array.from({length:n},(_,i)=>chosen.findIndex(mask=>Boolean(mask&bits[i]))));if(solutions.length>=limit)cutoff=true;}return;}let best=-1,options;for(let s=0;s<domains.length;s++)if(!chosen[s]){const available=domains[s].filter(mask=>!(mask&used));if(!available.length)return;if(!options||available.length<options.length){options=available;best=s;}}if(options.length===1)stats.forced++;else stats.branches++;for(const mask of options){chosen[best]=mask;dfs(used|mask,depth+1);chosen[best]=0n;if(cutoff)break;}}
+ dfs(0n,0);return {count:solutions.length,solutions,exhaustive:!cutoff,stats};
+}
+export function solveGeometry(l,state,limit=2){limit=Math.max(1,Math.floor(limit));if(l.game==='prumo'&&l.rows*l.cols>20)return solvePrumoWide(l,state,limit);const solutions=[],stats={nodes:0,branches:0,forced:0,maxDepth:0,candidates:0};let cutoff=false;
  if(l.game==='elo'){const base=initialGeometryState(l).positions,a=arr(l,state);for(let i=0;i<base.length;i++)if(a[i]!==undefined&&a[i]!==-1){if(base[i]>=0&&base[i]!==a[i])return {count:0,solutions,exhaustive:true,stats};base[i]=a[i];}if(!validateGeometry(l,{positions:base}).valid)return {count:0,solutions,exhaustive:true,stats};const domains=base.map((c,r)=>c>=0?[c]:l.regions.flatMap((x,i)=>x===r?[i]:[]));stats.candidates=domains.reduce((a,d)=>a+d.length,0);const order=domains.map((_,i)=>i).sort((a,b)=>domains[a].length-domains[b].length),p=base.slice();function dfs(d){stats.nodes++;stats.maxDepth=Math.max(stats.maxDepth,d);if(d===order.length){if(validateGeometry(l,{positions:p}).complete){solutions.push(p.slice());if(solutions.length>=limit)cutoff=true;}return;}const r=order[d];if(domains[r].length===1)stats.forced++;else stats.branches++;for(const c of domains[r]){p[r]=c;const edges=eloEdges(l,p),deg=Array(p.length).fill(0);for(const [a,b]of edges){deg[a]++;deg[b]++;}if(!deg.some(x=>x>2)&&!edges.some((e,i)=>edges.slice(0,i).some(f=>crossing(l,p,e,f))))dfs(d+1);if(cutoff)break;}p[r]=base[r];}dfs(0);
  }else{if(!validateGeometry(l,state).valid)return {count:0,solutions,exhaustive:true,stats};const domains=prumoDomains(l,state),n=l.rows*l.cols,full=2**n-1,chosen=Array(l.supports.length).fill(0);stats.candidates=domains.reduce((a,d)=>a+d.length,0);function dfs(used,depth){stats.nodes++;stats.maxDepth=Math.max(stats.maxDepth,depth);if(depth===domains.length){if(used===full){solutions.push(Array.from({length:n},(_,i)=>chosen.findIndex(m=>m&(1<<i))));if(solutions.length>=limit)cutoff=true;}return;}let best=-1,options;for(let s=0;s<domains.length;s++)if(!chosen[s]){const opts=domains[s].filter(m=>!(m&used));if(!opts.length)return;if(!options||opts.length<options.length){options=opts;best=s;}}if(options.length===1)stats.forced++;else stats.branches++;for(const m of options){chosen[best]=m;dfs(used|m,depth+1);chosen[best]=0;if(cutoff)break;}}dfs(0,0);}
  return {count:solutions.length,solutions,exhaustive:!cutoff,stats};
@@ -50,7 +83,7 @@ export function geometryHint(l,state,tier=1){const check=validateGeometry(l,stat
 /** Locally admissible choices, never a claim that every listed option extends to
  * a solution. ELO: candidates[region] contains cells. PRUMO: candidates[cell]
  * contains support indices, obtained from all admissible connected shapes. */
-export function geometryCandidates(l,state){if(l.game==='elo'){const base=initialGeometryState(l).positions,a=arr(l,state);for(let r=0;r<base.length;r++)if(a[r]!==undefined)base[r]=a[r];return {kind:'regions',candidates:base.map((c,r)=>{if(l.fixed?.[r]!==undefined)return [l.fixed[r]];return l.regions.flatMap((x,i)=>{if(x!==r)return [];const p=base.slice();p[r]=i;return validateGeometry(l,{positions:p}).valid?[i]:[];});}),proof:'direct-rules'};}const domains=prumoDomains(l,state);return {kind:'cells',candidates:Array.from({length:l.rows*l.cols},(_,i)=>domains.flatMap((masks,s)=>masks.some(m=>m&(1<<i))?[s]:[])),proof:'connected-balanced-shapes'};}
+export function geometryCandidates(l,state){if(l.game==='elo'){const base=initialGeometryState(l).positions,a=arr(l,state);for(let r=0;r<base.length;r++)if(a[r]!==undefined)base[r]=a[r];return {kind:'regions',candidates:base.map((c,r)=>{if(l.fixed?.[r]!==undefined)return [l.fixed[r]];return l.regions.flatMap((x,i)=>{if(x!==r)return [];const p=base.slice();p[r]=i;return validateGeometry(l,{positions:p}).valid?[i]:[];});}),proof:'direct-rules'};}const domains=prumoDomains(l,state);return {kind:'cells',candidates:Array.from({length:l.rows*l.cols},(_,i)=>domains.flatMap((masks,s)=>masks.some(m=>typeof m==='bigint'?Boolean(m&(1n<<BigInt(i))):Boolean(m&(1<<i)))?[s]:[])),proof:'connected-balanced-shapes'};}
 
 export const GEOMETRY_TECHNIQUES={
  'support-incidence':'Casas incidentes ao apoio',

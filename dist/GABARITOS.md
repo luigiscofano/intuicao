@@ -2,9 +2,9 @@
 
 ## Para jogar
 
-Cada envio incorreto pelo botão **Confirmar resposta**, inclusive um tabuleiro incompleto, conta uma tentativa errada naquele nível. Edição, anotações e pistas não contam. Depois do terceiro erro aparece **Ver gabarito**. O botão monta uma configuração padrão válida, sem alterar pistas fixas, mas não concede a vitória automaticamente: confirme para conferir a solução. A conclusão passa a ser identificada como assistida.
+Cada envio incorreto pelo botão **Confirmar resposta**, inclusive um tabuleiro incompleto, conta uma tentativa errada naquele nível. Edição, anotações, pistas e hachuras locais de contradição não contam. Em Reflexos, disparar parte das fontes é exploração: somente quando todas as fontes necessárias terminam o disparo a tentativa é avaliada. O botão Confirmar todos também avalia o conjunto completo. Repetir uma fonte já disparada na tentativa parcial é idempotente. Depois do terceiro erro aparece **Ver gabarito**. O botão monta uma configuração padrão válida, sem alterar pistas fixas, mas não concede a vitória automaticamente: confirme para conferir a solução. A conclusão passa a ser identificada como assistida.
 
-Recomeçar, trocar de fase e recarregar a página não apagam o desbloqueio. Os registros são locais ao navegador e separados por jogo e identificador da fase, incluindo os identificadores ELO v2. Se o navegador bloquear o armazenamento, o desbloqueio funciona enquanto a página permanecer aberta, mas não é garantido após fechá-la. O progresso não sincroniza entre aparelhos. Limpar os dados do site apaga também esses registros.
+Recomeçar, trocar de fase e recarregar a página não apagam o desbloqueio. Os registros são locais ao navegador e separados por jogo e identificador da fase, incluindo os identificadores ELO v2 e PRUMO v2. Se o navegador bloquear o armazenamento, o desbloqueio funciona enquanto a página permanecer aberta, mas não é garantido após fechá-la. O progresso não sincroniza entre aparelhos. Limpar os dados do site apaga também esses registros.
 
 Os 1.100 níveis dos sete puzzles possuem gabaritos certificados. Os arquivos de solução acompanham o código e funcionam sem depender do Drive. O bloqueio é uma regra da interface, não uma proteção criptográfica contra inspeção do código.
 

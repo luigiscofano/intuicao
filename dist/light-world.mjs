@@ -67,8 +67,16 @@ export function lightSegmentIntersection(a,b,c,d){
 // Eventos são ordenados pelo alcance de ambas as frentes; os trechos cortados
 // deixam imediatamente de participar de qualquer colisão posterior.
 export function traceLightWorld(state,{maxBounces=12,maxEvents=40}={}){
- const scene=lightScene(state),rays=scene.sources.map(s=>traceSource(s,scene,maxBounces,maxEvents)),candidates=[];
+ const scene=lightScene(state);
+ return resolveLightRays(scene.sources.map(s=>traceSource(s,scene,maxBounces,maxEvents)));
+}
+// No disparo individual, os rastros anteriores já estão iluminados. Eles entram
+// com sua geometria cortada, nunca com a continuação que deixou de existir.
+function resolveLightRays(rays,{existing=new Set(),previousCollisions=[]}={}){
+ const candidates=[];
+ const eventDistance=(i,j,a,b)=>Math.max(existing.has(i)?0:a,existing.has(j)?0:b);
  for(let i=0;i<rays.length;i++)for(let j=i+1;j<rays.length;j++){
+  if(existing.has(i)&&existing.has(j))continue;
   if(rays[i].color===rays[j].color)continue;
   for(const a of rays[i].segments)for(const b of rays[j].segments){let h=lightSegmentIntersection(a.a,a.b,b.a,b.b);if(!h)continue;
    const al=a.endDistance-a.startDistance,bl=b.endDistance-b.startDistance;
@@ -77,17 +85,17 @@ export function traceLightWorld(state,{maxBounces=12,maxEvents=40}={}){
     const da=a.startDistance+al*h.t,db=b.startDistance+bl*h.u;
     const daEnd=a.startDistance+al*h.tEnd,dbEnd=b.startDistance+bl*h.uEnd;
     const delta=(daEnd-da)-(dbEnd-db),f=delta?Math.max(0,Math.min(1,(db-da)/delta)):0;
-    const options=[0,1,f].map(f=>({f,time:Math.max(da+(daEnd-da)*f,db+(dbEnd-db)*f)})).sort((x,y)=>x.time-y.time);
+    const options=[0,1,f].map(f=>({f,time:eventDistance(i,j,da+(daEnd-da)*f,db+(dbEnd-db)*f)})).sort((x,y)=>x.time-y.time);
     const k=options[0].f,t=h.t+(h.tEnd-h.t)*k,u=h.u+(h.uEnd-h.u)*k;
     h={...h,t,u,point:add(a.a,scale(sub(a.b,a.a),t))};
    }
    if(candidates.some(c=>c.rayIndices[0]===i&&c.rayIndices[1]===j&&Math.hypot(c.point.x-h.point.x,c.point.y-h.point.y)<CONTACT))continue;
    const distances=[a.startDistance+al*h.t,b.startDistance+bl*h.u];
-   candidates.push({point:h.point,colors:[rays[i].color,rays[j].color],rayIndices:[i,j],distances,triggerDistance:Math.max(...distances),overlap:!!h.overlap});
+   candidates.push({point:h.point,colors:[rays[i].color,rays[j].color],rayIndices:[i,j],distances,triggerDistance:eventDistance(i,j,...distances),overlap:!!h.overlap});
   }
  }
  candidates.sort((a,b)=>a.triggerDistance-b.triggerDistance||a.distances[0]+a.distances[1]-b.distances[0]-b.distances[1]);
- const stops=rays.map(r=>r.totalDistance),stopped=rays.map(()=>false),collisions=[];
+ const stops=rays.map(r=>r.totalDistance),stopped=rays.map(r=>r.status==='collision'),collisions=[...previousCollisions];
  for(const c of candidates){const [i,j]=c.rayIndices;
   if(c.distances[0]>stops[i]+CONTACT||c.distances[1]>stops[j]+CONTACT)continue;
   if(stopped[i]&&stopped[j])continue;
@@ -103,6 +111,33 @@ export function traceLightWorld(state,{maxBounces=12,maxEvents=40}={}){
   ray.bounces=ray.reflections.length;ray.totalDistance=stop;ray.status='collision';
  });
  return {rays,collisions,status:collisions.length?'collision':rays.length&&rays.every(r=>r.status==='target')?'target':'miss',totalDistance:Math.max(0,...rays.map(r=>r.totalDistance),...collisions.map(c=>c.triggerDistance)),bounces:rays.reduce((n,r)=>n+r.bounces,0)};
+}
+// Tentativa cumulativa: somente o conjunto completo pode vencer ou registrar erro.
+// Índices estáveis distinguem fontes da mesma cor e independem da ordem de clique.
+// Uma alteração da cena descarta a geometria antiga; a UI também limpa a seleção.
+export function traceLightAttempt(state,sourceIndices,{previous=null,maxBounces=12,maxEvents=40}={}){
+ const scene=lightScene(state),sceneKey=JSON.stringify(scene);
+ const firedSourceIndices=[...new Set(sourceIndices)].filter(i=>Number.isInteger(i)&&i>=0&&i<scene.sources.length).sort((a,b)=>a-b);
+ const validPrevious=previous?.sceneKey===sceneKey&&previous.firedSourceIndices.every(i=>firedSourceIndices.includes(i))?previous:null;
+ const previousRays=validPrevious?.rays??[],bySource=new Map(previousRays.map(r=>[r.sourceIndex,r]));
+ const rays=firedSourceIndices.map(sourceIndex=>bySource.has(sourceIndex)?structuredClone(bySource.get(sourceIndex)):{...traceSource(scene.sources[sourceIndex],scene,maxBounces,maxEvents),sourceIndex});
+ const existing=new Set(rays.flatMap((r,i)=>bySource.has(r.sourceIndex)?[i]:[]));
+ const remap=indices=>indices.map(i=>firedSourceIndices.indexOf(previousRays[i].sourceIndex));
+ const previousCollisions=(validPrevious?.collisions??[]).map(c=>({...structuredClone(c),rayIndices:remap(c.rayIndices),stoppedRayIndices:remap(c.stoppedRayIndices??[]),triggerDistance:0}));
+ const world=resolveLightRays(rays,{existing,previousCollisions}),complete=firedSourceIndices.length===scene.sources.length;
+ const animationDistance=Math.max(0,...rays.filter((r,i)=>!existing.has(i)).map(r=>r.totalDistance),...world.collisions.map(c=>c.triggerDistance));
+ return {...world,outcome:world.status,status:complete?world.status:'pending',complete,firedSourceIndices,requiredSourceCount:scene.sources.length,sceneKey,previousRays:structuredClone(previousRays),animationDistance};
+}
+// Mantém os rastros anteriores inteiros até a nova frente atingir o impacto.
+// Depois do impacto, nem a trilha, nem reflexões/portais posteriores reaparecem.
+export function lightAttemptFrame(world,distance=Infinity){
+ const previous=new Map((world.previousRays??[]).map(r=>[r.sourceIndex,r]));
+ return {...world,rays:world.rays.map((ray,i)=>{
+  const old=previous.get(ray.sourceIndex);
+  const cutAt=Math.min(Infinity,...world.collisions.filter(c=>(c.stoppedRayIndices??[]).includes(i)).map(c=>c.triggerDistance));
+  const visible=old&&distance+CONTACT<cutAt?old:ray;
+  return {...visible,visibleDistance:old?Infinity:distance};
+ })};
 }
 export function visibleLightSegments(ray,distance){
  const limit=Math.max(0,distance),out=[];

@@ -154,3 +154,14 @@ Veja [EXPANSAO.md](EXPANSAO.md) para as regras e recursos de ELO, PRUMO, PACTO, 
 ## Gabarito após três erros e feedback universal
 
 Todos os sete puzzles têm feedback de vitória/derrota ao confirmar, inclusive respostas incompletas. Após três erros no mesmo nível, **Ver gabarito** monta a solução padrão, preserva as pistas e aguarda uma nova confirmação. A conclusão fica marcada como assistida. O desbloqueio persiste localmente ao recomeçar/recarregar. DESVIO mantém o resultado da partida, sem gabarito de fase. Consulte [GABARITOS.md](GABARITOS.md) para comportamento, armazenamento, acessibilidade e limites da validação.
+
+
+## Controles, contradições e PRUMO v2 — 24/10/2026
+
+ELO mantém as cores de cada região e não mostra cadeados. “Marcar células bloqueadas”, no canto do tabuleiro, ativa marcadores discretos sem mudar regras ou peças. A preferência é local.
+
+PACTO e NEXO indicam contradições comprovadas imediatamente com hachuras vermelhas: toda a linha/coluna para cota excedida e os grupos/vizinhanças envolvidos nos erros locais. Os estados incompletos viáveis não são erros. As marcações não consultam o gabarito e não contam tentativas. Vitória/derrota continuam ao confirmar.
+
+Em Reflexos, clicar em uma fonte (ou Enter/Espaço com foco) dispara apenas sua luz. Os rastros ficam para os próximos disparos e continuam sujeitos a colisões. Editar ou recomeçar apaga a tentativa. O último disparo necessário completa a tentativa; clicar novamente numa fonte já usada antes disso não a duplica. Confirmar todos mantém o disparo conjunto. Veja GABARITOS.md para a contagem de erros.
+
+PRUMO v2 tem 200 fases em cinco patamares de 40: 4×4, 4×5, 5×5, 5×6 e 6×6. A área nunca diminui e permanece abaixo de 10×10; todas as células participam da área útil. O editor aceita até 6×6 nesta versão, com limites explícitos de cálculo. As fases maiores usam enumeração exata de momentos e conectividade, não uma restrição artificial ao tamanho das peças. Os identificadores prumo-v2 preservam separação do progresso da campanha anterior.
