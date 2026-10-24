@@ -1,3 +1,4 @@
+import {restoreSoftCornerCSS} from './soft-corner-history.mjs';
 import assert from 'node:assert/strict';
 import fs from 'node:fs';
 import crypto from 'node:crypto';
@@ -8,7 +9,7 @@ const curves=JSON.parse(read('./content-frame-curves-authorized-change.json'));
 const heroCurves=JSON.parse(read('./hero-frame-curves-authorized-change.json'));
 const continuousFrame=JSON.parse(read('./continuous-frame-authorized-change.json'));
 const crownPaint=JSON.parse(read('./top-crown-paint-authorized-change.json'));
-const css=read('../dist/platform.css').replace(crownPaint.css_insertion,'').replace(continuousFrame.css_after,continuousFrame.css_before).replace(heroCurves.css_insertion,'').replace(curves.css_insertion,'');
+const css=restoreSoftCornerCSS(read('../dist/platform.css')).replace(crownPaint.css_insertion,'').replace(continuousFrame.css_after,continuousFrame.css_before).replace(heroCurves.css_insertion,'').replace(curves.css_insertion,'');
 assert.equal(sha(css),change.afterCssSHA256,'Exact frame CSS revision');
 assert.equal(css.split(change.css_insertion).length-1,1,'One exact authorized frame insertion');
 assert.equal(sha(css.replace(change.css_insertion,'')),change.priorCssSHA256,'All previous CSS byte-identical');

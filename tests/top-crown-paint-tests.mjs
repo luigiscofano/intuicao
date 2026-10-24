@@ -1,9 +1,10 @@
+import {restoreSoftCornerCSS} from './soft-corner-history.mjs';
 import assert from 'node:assert/strict';
 import fs from 'node:fs';
 import crypto from 'node:crypto';
 const read=p=>fs.readFileSync(new URL(p,import.meta.url),'utf8');
 const sha=s=>crypto.createHash('sha256').update(s).digest('hex');
-const m=JSON.parse(read('./top-crown-paint-authorized-change.json')),css=read('../dist/platform.css');
+const m=JSON.parse(read('./top-crown-paint-authorized-change.json')),css=restoreSoftCornerCSS(read('../dist/platform.css'));
 assert.equal(sha(css),m.afterCssSHA256);
 assert.equal(css.split(m.css_insertion).length-1,1);
 assert.equal(sha(css.replace(m.css_insertion,'')),m.priorCssSHA256,'All prior CSS, including crown geometry and base roots, is unchanged');

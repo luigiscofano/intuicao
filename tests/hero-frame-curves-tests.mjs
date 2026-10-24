@@ -1,3 +1,4 @@
+import {restoreSoftCornerCSS} from './soft-corner-history.mjs';
 import assert from 'node:assert/strict';
 import fs from 'node:fs';
 import crypto from 'node:crypto';
@@ -6,7 +7,7 @@ const sha=s=>crypto.createHash('sha256').update(s).digest('hex');
 const m=JSON.parse(read('./hero-frame-curves-authorized-change.json'));
 const continuousFrame=JSON.parse(read('./continuous-frame-authorized-change.json'));
 const crownPaint=JSON.parse(read('./top-crown-paint-authorized-change.json'));
-const css=read('../dist/platform.css').replace(crownPaint.css_insertion,'').replace(continuousFrame.css_after,continuousFrame.css_before);
+const css=restoreSoftCornerCSS(read('../dist/platform.css')).replace(crownPaint.css_insertion,'').replace(continuousFrame.css_after,continuousFrame.css_before);
 assert.equal(sha(css),m.afterCssSHA256);
 assert.equal(css.split(m.css_insertion).length-1,1);
 assert.equal(sha(css.replace(m.css_insertion,'')),m.priorCssSHA256,'Every previous rule, including roots and header, byte-identical');

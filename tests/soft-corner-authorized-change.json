@@ -1,0 +1,38 @@
+{
+  "scope": "Soften only the two upper hero transitions with balanced quarter-ellipse control points and a taller decorative curve, preserving layout and existing integrated paint.",
+  "base_commit": "fb6b2ec1be0461239b3d74a32b06913e60e85481",
+  "priorCssSHA256": "9bf60a87ed56a86a817e317b918b61addcae892dce37f39b09afff7336ed07bb",
+  "afterCssSHA256": "4584489e4e882f1fbae22b43f03feed69c5db23c92281969fa9dc5f156d16c92",
+  "replacements": [
+    {
+      "before": "inset:69px -24.5px 0;background:#fff",
+      "after": "inset:101px -24.5px 0;background:#fff"
+    },
+    {
+      "before": "height:62px;background:url(\"platform-assets/continuous-crown-left.svg\")",
+      "after": "height:94px;background:url(\"platform-assets/soft-crown-left.svg\")"
+    },
+    {
+      "before": "url(\"platform-assets/continuous-crown-right.svg\")",
+      "after": "url(\"platform-assets/soft-crown-right.svg\")"
+    },
+    {
+      "before": "inset:33px -8.5px 0;border-radius",
+      "after": "inset:45px -8.5px 0;border-radius"
+    },
+    {
+      "before": "width:calc(100% + 16px + 2 * var(--hero-flare));height:28px",
+      "after": "width:calc(100% + 16px + 2 * var(--hero-flare));height:40px"
+    }
+  ],
+  "assets": [
+    {
+      "file": "soft-crown-left.svg",
+      "sha256": "9116fdd70cd5a33f4b21c322eeb36634d4a3d07a0b2c9263284bb36a30c7d3ff"
+    },
+    {
+      "file": "soft-crown-right.svg",
+      "sha256": "4ada816ca1ca7372d0bfd53e27e223c9345198bda2923d7857155623cba17e6c"
+    }
+  ]
+}

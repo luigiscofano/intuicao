@@ -1,3 +1,4 @@
+import {restoreSoftCornerCSS} from './soft-corner-history.mjs';
 import assert from 'node:assert/strict';
 import fs from 'node:fs';
 import crypto from 'node:crypto';
@@ -23,7 +24,7 @@ const sha=s=>crypto.createHash('sha256').update(s).digest('hex');
 for(const [name,hash] of Object.entries(gravityChange.preserved_dist_sha256)){
  let bytes=fs.readFileSync(new URL('../'+name,import.meta.url));
  if(name==='dist/platform.css'){
-  const css=bytes.toString().replace(crownPaint.css_insertion,'').replace(continuousFrame.css_after,continuousFrame.css_before).replace(heroCurves.css_insertion,'').replace(contentFrameCurves.css_insertion,'');
+  const css=restoreSoftCornerCSS(bytes.toString()).replace(crownPaint.css_insertion,'').replace(continuousFrame.css_after,continuousFrame.css_before).replace(heroCurves.css_insertion,'').replace(contentFrameCurves.css_insertion,'');
   assert.equal(css.split(headerFrameChange.css_insertion).length-1,1,'Exact separately authorized header frame');
   assert.equal(sha(css),headerFrameChange.afterCssSHA256);
   bytes=Buffer.from(css.replace(headerFrameChange.css_insertion,''));
@@ -76,7 +77,7 @@ const variedChange=JSON.parse(fs.readFileSync(new URL('./varied-foliage-authoriz
 const edgeChange=JSON.parse(fs.readFileSync(new URL('./canopy-edge-authorized-change.json',import.meta.url)));
 const fineEdgeChange=JSON.parse(fs.readFileSync(new URL('./fine-edge-authorized-change.json',import.meta.url)));
 const compactIntroChange=JSON.parse(fs.readFileSync(new URL('./compact-intro-authorized-change.json',import.meta.url)));
-let physicsPlatformSource=fs.readFileSync(new URL('../dist/platform.css',import.meta.url),'utf8').replace(crownPaint.css_insertion,'').replace(continuousFrame.css_after,continuousFrame.css_before).replace(heroCurves.css_insertion,'');
+let physicsPlatformSource=restoreSoftCornerCSS(fs.readFileSync(new URL('../dist/platform.css',import.meta.url),'utf8')).replace(crownPaint.css_insertion,'').replace(continuousFrame.css_after,continuousFrame.css_before).replace(heroCurves.css_insertion,'');
 assert.equal(sha(physicsPlatformSource),contentFrameCurves.afterCssSHA256,'Exact content curve CSS');
 assert.equal(physicsPlatformSource.split(contentFrameCurves.css_insertion).length-1,1,'One exact content curve insertion');
 physicsPlatformSource=physicsPlatformSource.replace(contentFrameCurves.css_insertion,'');
@@ -141,7 +142,7 @@ const platformSource=currentPlatformSource.replace(fullCanopyChange.after,fullCa
 assert.equal(platformSource.split(identityChanges.platform_css_insertion).length-1,1);
 assert.equal(platformSource.split(canopyChange.after).length-1,1,'Exact authorized document decoration');
 assert.equal(sha(platformSource.replace(canopyChange.after,canopyChange.before).replace(identityChanges.platform_css_insertion,'')),identityChanges.platform_css_before_sha256,'Only approved brand rules added to platform CSS');
-const fullCSS=fs.readFileSync(new URL('../dist/platform.css',import.meta.url),'utf8').replace(crownPaint.css_insertion,'').replace(continuousFrame.css_after,continuousFrame.css_before).replace(heroCurves.css_insertion,'').replace(contentFrameCurves.css_insertion,'').replace(/\/\*[\s\S]*?\*\//g,'');
+const fullCSS=restoreSoftCornerCSS(fs.readFileSync(new URL('../dist/platform.css',import.meta.url),'utf8')).replace(crownPaint.css_insertion,'').replace(continuousFrame.css_after,continuousFrame.css_before).replace(heroCurves.css_insertion,'').replace(contentFrameCurves.css_insertion,'').replace(/\/\*[\s\S]*?\*\//g,'');
 // User explicitly expanded leaves to all six games on 2026-10-24.
 // Only the document-anchored inert ornamental sibling may animate. Historical hashes remain.
 const leafFrames=fullCSS.match(/@keyframes platform-leaf-fall\{(?:[^{}]*\{[^{}]*\})+\s*\}/g)??[];

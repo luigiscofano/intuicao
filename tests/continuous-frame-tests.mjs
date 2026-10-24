@@ -1,3 +1,4 @@
+import {restoreSoftCornerCSS} from './soft-corner-history.mjs';
 import assert from 'node:assert/strict';
 import fs from 'node:fs';
 import crypto from 'node:crypto';
@@ -5,7 +6,7 @@ const read=p=>fs.readFileSync(new URL(p,import.meta.url),'utf8');
 const sha=s=>crypto.createHash('sha256').update(s).digest('hex');
 const m=JSON.parse(read('./continuous-frame-authorized-change.json'));
 const crownPaint=JSON.parse(read('./top-crown-paint-authorized-change.json'));
-const css=read('../dist/platform.css').replace(crownPaint.css_insertion,'');
+const css=restoreSoftCornerCSS(read('../dist/platform.css')).replace(crownPaint.css_insertion,'');
 assert.equal(sha(css),m.afterCssSHA256);
 assert.equal(css.split(m.css_after).length-1,1);
 assert.equal(sha(css.replace(m.css_after,m.css_before)),m.priorCssSHA256,'Only authorized perimeter reconstruction');
