@@ -1,0 +1,20 @@
+{
+  "authorization": "2026-10-24: título e subtítulo exatos solicitados; logo escolhida preservada nos dois locais existentes, inclusive durante jogos. Baselines anteriores intactos.",
+  "baseline": "f0546c0220beae71a8429b0475ac7ed07589cae8",
+  "html_changes": [
+    {
+      "before": "<h1>Antes da fórmula,<br>vem a <em>curiosidade.</em></h1>",
+      "after": "<h1>A <em>curiosidade</em><br>é a primeira lição.</h1>"
+    },
+    {
+      "before": "<p>Aprender é experimentar. Criar é descobrir novos caminhos.</p>",
+      "after": "<p>Brinque, experimente e descubra no seu ritmo.</p>"
+    },
+    {
+      "before": "<footer><span>intuição. <small>feito para explorar</small></span></footer>",
+      "after": "<footer><span class=\"footer-signature\"><span class=\"brand\"><span class=\"brand-icon\" aria-hidden=\"true\"></span>intuição<span class=\"brand-dot\">.</span></span> <small>feito para explorar</small></span></footer>"
+    }
+  ],
+  "platform_css_before_sha256": "6962272973848083da8a7fb0868689bec23f05061648d9596c00bc8ebeece1bc",
+  "platform_css_insertion": "/* Approved identity remains visible in both existing brand locations while playing.\n   Header keeps its original 30px / 45px line box outside menus; menu rules below\n   retain the approved larger lockup. No game geometry or selectors are changed. */\nbody > header .brand{display:inline-flex;align-items:center;color:#3b342e;font-family:Georgia,\"Times New Roman\",serif;font-size:30px;font-style:italic;font-weight:700;letter-spacing:-1.7px;line-height:1.5}\nbody > header .brand-icon{font-size:0;transform:none;flex-shrink:0;width:28px;height:28px;margin-right:10px;background:url(\"platform-assets/leaf-seal.svg\") center/28px 28px no-repeat}\nbody > footer .footer-signature{display:inline-flex;align-items:center;flex-wrap:wrap}\nbody > footer .brand{display:inline-flex;align-items:center;color:#3b342e;font-family:Georgia,\"Times New Roman\",serif;font-size:inherit;font-style:italic;font-weight:700;letter-spacing:-.5px;line-height:1.5}\nbody > footer .brand-icon{font-size:0;transform:none;flex-shrink:0;width:22px;height:22px;margin-right:7px;background:url(\"platform-assets/leaf-seal.svg\") center/22px 22px no-repeat}\nbody > footer .brand-dot{color:#997838}\n\n"
+}

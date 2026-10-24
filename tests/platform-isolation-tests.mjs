@@ -7,11 +7,16 @@ const endlessApproved=JSON.parse(fs.readFileSync(new URL('./endless-authorized-s
 const approved=JSON.parse(fs.readFileSync(new URL('./level-shortcuts-authorized-sha256.json',import.meta.url))).sha256;
 const copyChanges=JSON.parse(fs.readFileSync(new URL('./home-copy-authorized-changes.json',import.meta.url))).changes;
 const leafChange=JSON.parse(fs.readFileSync(new URL('./leaf-layer-authorized-change.json',import.meta.url)));
+const identityChanges=JSON.parse(fs.readFileSync(new URL('./curiosity-brand-authorized-changes.json',import.meta.url)));
 const sha=s=>crypto.createHash('sha256').update(s).digest('hex');
 for(const [name,hash] of Object.entries(baseline)){
  let bytes=fs.readFileSync(new URL('../dist/'+name,import.meta.url));
  if(name==='index.html'){
   let html=bytes.toString();
+  for(const {before,after} of identityChanges.html_changes){
+   assert.equal(html.split(after).length-1,1,'Exact approved title/brand replacement');
+   html=html.replace(after,before);
+  }
   assert.equal(html.split(leafChange.insertion).length-1,1,'Exactly one approved ornamental layer');
   assert.ok(leafChange.insertion.startsWith('<div class="platform-leaf-layer" aria-hidden="true" inert>'));
   assert.equal((leafChange.insertion.match(/<span class="platform-leaf"><\/span>/g)??[]).length,10);
@@ -30,6 +35,9 @@ for(const [name,hash] of Object.entries(baseline)){
  }
  assert.equal(sha(bytes),pactoApproved[name]??endlessApproved[name]??approved[name]??hash,`Protected original file modified: ${name}`);
 }
+const platformSource=fs.readFileSync(new URL('../dist/platform.css',import.meta.url),'utf8');
+assert.equal(platformSource.split(identityChanges.platform_css_insertion).length-1,1);
+assert.equal(sha(platformSource.replace(identityChanges.platform_css_insertion,'')),identityChanges.platform_css_before_sha256,'Only approved brand rules added to platform CSS');
 const fullCSS=fs.readFileSync(new URL('../dist/platform.css',import.meta.url),'utf8').replace(/\/\*[\s\S]*?\*\//g,'');
 // User explicitly expanded leaves to all six games on 2026-10-24.
 // Only the fixed inert ornamental sibling may animate. Historical hashes remain.
@@ -38,7 +46,7 @@ assert.equal(leafFrames.length,1,'Exactly one isolated decorative leaf animation
 const css=fullCSS.replace(leafFrames[0],'');
 assert.ok(!css.includes('--'),'No shared or inherited custom property changes');
 assert.ok(!/@(?:import|keyframes)/.test(css),'No external imports or unapproved keyframes');
-assert.ok(!/\b(?:filter|zoom|transform)\s*:/.test(css.replace('transform:none;','')),'No game container transforms');
+assert.ok(!/\b(?:filter|zoom|transform)\s*:/.test(css.replaceAll('transform:none;','')),'No game container transforms');
 const selectors=[...css.matchAll(/([^{}]+)\{([^{}]*)\}/g)].filter(x=>!x[1].trim().startsWith('@'));
 for(const [,raw,body] of selectors){
  const s=raw.trim();

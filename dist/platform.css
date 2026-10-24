@@ -22,6 +22,16 @@ body > header :is(.tag,.doc-link){color:#5a604c}
 body > footer{background:#edf1e8;color:#3b342e;border-color:#bec9b6;box-shadow:inset 0 3px #fafbf7}
 body > footer :is(p,small){color:#555344}
 
+/* Approved identity remains visible in both existing brand locations while playing.
+   Header keeps its original 30px / 45px line box outside menus; menu rules below
+   retain the approved larger lockup. No game geometry or selectors are changed. */
+body > header .brand{display:inline-flex;align-items:center;color:#3b342e;font-family:Georgia,"Times New Roman",serif;font-size:30px;font-style:italic;font-weight:700;letter-spacing:-1.7px;line-height:1.5}
+body > header .brand-icon{font-size:0;transform:none;flex-shrink:0;width:28px;height:28px;margin-right:10px;background:url("platform-assets/leaf-seal.svg") center/28px 28px no-repeat}
+body > footer .footer-signature{display:inline-flex;align-items:center;flex-wrap:wrap}
+body > footer .brand{display:inline-flex;align-items:center;color:#3b342e;font-family:Georgia,"Times New Roman",serif;font-size:inherit;font-style:italic;font-weight:700;letter-spacing:-.5px;line-height:1.5}
+body > footer .brand-icon{font-size:0;transform:none;flex-shrink:0;width:22px;height:22px;margin-right:7px;background:url("platform-assets/leaf-seal.svg") center/22px 22px no-repeat}
+body > footer .brand-dot{color:#997838}
+
 /* Menu-only treatment. :has observes existing state; no script, new state,
    event handler, route, focus operation or storage access is introduced. */
 :where(body:not(:has(.lab:not([hidden]), #collection:not([hidden]) > .collection-lab))) > header{padding-top:24px;padding-bottom:24px}

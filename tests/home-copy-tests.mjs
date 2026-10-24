@@ -1,7 +1,10 @@
 import assert from 'node:assert/strict';
 import fs from 'node:fs';
 import {root} from './direct-ui-harness.mjs';
-const html=fs.readFileSync(new URL('../dist/index.html',import.meta.url),'utf8');
+let html=fs.readFileSync(new URL('../dist/index.html',import.meta.url),'utf8');
+// Normalize the later explicitly requested title/brand revision for this historical test.
+const identityChanges=JSON.parse(fs.readFileSync(new URL('./curiosity-brand-authorized-changes.json',import.meta.url)));
+for(const {before,after} of identityChanges.html_changes) html=html.replace(after,before);
 const changes=JSON.parse(fs.readFileSync(new URL('./home-copy-authorized-changes.json',import.meta.url))).changes;
 for(const {before,after} of changes){
  assert.ok(!html.includes(before),'Removed copy is absent');
