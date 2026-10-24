@@ -1,3 +1,4 @@
+import {initCollection} from './collection-ui.mjs';
 import {traceLightWorld,lightScene} from './light-world.mjs';
 import {worldRaysSVG,portalSVG,lightEndpointsSVG,beamName} from './light-world-render.mjs';
 import {createResultMotion} from './result-motion.mjs';
@@ -206,7 +207,7 @@ scene.addEventListener('keydown',e=>{const el=e.target.closest('[data-item]');if
  if(game==='light'){if(id==='target'||(!free&&state.objects[Number(id)].type==='wall'))return;selected=Number(id);state.objects[selected].angle=clamp(state.objects[selected].angle+step,-90,90);}
  if(game==='cut'){if(id==='rotate-curve'&&allowed('rotate'))state.angle=(state.angle+step+360)%360;else if(id==='move-curve'){if(['ArrowLeft','ArrowRight'].includes(e.key)&&allowed('x'))state.centerX=clamp(state.centerX+step,40,760);if(['ArrowUp','ArrowDown'].includes(e.key)&&allowed('y'))state.centerY=clamp(state.centerY+(e.key==='ArrowUp'?-1:1),40,420);}else if(allowed('offset'))state.offset=clamp(state.offset+step,-600,600);}editor();draw();drawing.querySelector(`[data-item="${id}"]`)?.focus();
 });
-document.querySelectorAll('[data-game]').forEach(b=>b.onclick=()=>{game=b.dataset.game;showSelection();});
+document.querySelectorAll('[data-game]').forEach(b=>b.onclick=()=>{collection.hide();game=b.dataset.game;showSelection();});
 $('free').onclick=()=>{free=true;start();};$('challenge').onclick=()=>{free=false;showSelection();};$('level').onchange=e=>{level=Number(e.target.value);start();};$('reset').onclick=start;
 $('selection-free').onclick=()=>{free=true;level=lastLevel[game]??0;start();};$('back-selection').onclick=showSelection;
 $('toggle-controls').onclick=toggleControls;
@@ -214,3 +215,5 @@ applyControlsVisibility();
 $('confirm').onclick=confirmAnswer;
 $('next').onclick=()=>{level=(level+1)%catalogue[game].length;start();};$('hint').onclick=()=>{$('hint-text').textContent=game==='cut'?'Mova a linha até se aproximar da meta. A porcentagem depende da área, não do comprimento dos lados.':catalogue[game][level].hint;};
 showSelection();
+
+const collection=initCollection({hideOriginal(){invalidate();document.querySelector('.lab').hidden=true;$('selection').hidden=true;}});

@@ -140,3 +140,7 @@ Os 100 níveis de Reflexos foram redesenhados. A mediana da mudança de direçã
 A introdução de mecânicas nos níveis 21, 41, 61, 81 e 91 permanece. A dificuldade é organizada por conceitos e consolidação, não por aumento obrigatório de espelhos em toda fase. Folga real mínima fonte/alça: 62 unidades; centros de espelhos: 112. Alvos mantêm raio de tolerância 22.
 
 Onze suítes: 35.738 verificações aprovadas, incluindo as 100 soluções em precisão de 0,1°, regressões dos 300 desafios e DOM simulado. Seis mapas resolvidos inspecionados em SVG estático. Não houve teste interativo em navegador nesta revisão. Os números de seções anteriores são históricos. Detalhes e tabela completa: documentacao/REFLEXOS-E-OBSTACULOS.md.
+
+## Expansão da coleção lógica
+
+Veja [EXPANSAO.md](EXPANSAO.md) para as regras e recursos de ELO, PRUMO, PACTO, NEXO e DESVIO, limitações de armazenamento, editor e escopo futuro. A coleção completa tem 1.100 níveis de campanha e um duelo local sem níveis. [VALIDACAO-EXPANSAO.md](VALIDACAO-EXPANSAO.md) documenta a evidência de testes e seus limites.
