@@ -226,8 +226,8 @@ body:has(#selection:not([hidden]), #collection:not([hidden]) > .level-screen) > 
 /* One continuous white crown behind the canopy, header and hero opening.
    Clip only this inert paint plane, not the header or its focus outlines.
    The shadow supplies viewport-wide paint without adding scrollable width. */
-:where(body:not(:has(.lab:not([hidden]), #collection:not([hidden]) > .collection-lab))) > header{background:transparent;border-top-color:transparent}
-:where(body:not(:has(.lab:not([hidden]), #collection:not([hidden]) > .collection-lab))) > header::after{content:"";position:absolute;inset:-88px 0 -9px;background:#fff;box-shadow:0 0 0 100vmax #fff;clip-path:inset(0 -100vmax);pointer-events:none;user-select:none;z-index:-1}
+body:where(:not(:has(.lab:not([hidden]), #collection:not([hidden]) > .collection-lab))) > header{background:transparent;border-top-color:transparent}
+body:where(:not(:has(.lab:not([hidden]), #collection:not([hidden]) > .collection-lab))) > header::after{content:"";position:absolute;inset:-88px 0 -9px;background:#fff;box-shadow:0 0 0 100vmax #fff;clip-path:inset(0 -100vmax);pointer-events:none;user-select:none;z-index:-1}
 @media(max-width:760px){
- :where(body:not(:has(.lab:not([hidden]), #collection:not([hidden]) > .collection-lab))) > header::after{inset:-64px 0 -7px}
+ body:where(:not(:has(.lab:not([hidden]), #collection:not([hidden]) > .collection-lab))) > header::after{inset:-64px 0 -7px}
 }

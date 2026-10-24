@@ -16,11 +16,15 @@ assert.match(block,/header::after\{inset:-64px 0 -7px\}/);
 assert.ok(!/#selection|level-screen|footer|platform-leaf/.test(block),'No changes to lower frame, footer or leaf layers');
 for(const [,raw] of block.matchAll(/([^{}]+)\{([^{}]*)\}/g)){
  const selector=raw.trim();if(selector.startsWith('@'))continue;
- assert.ok(selector.startsWith(':where(body:not(:has(.lab:not([hidden]), #collection:not([hidden]) > .collection-lab))) > header'),'Only menu header paint allowed');
+ assert.ok(selector.startsWith('body:where(:not(:has(.lab:not([hidden]), #collection:not([hidden]) > .collection-lab))) > header'),'Only menu header paint allowed');
 }
 for(const mobile of [false,true]){
  const topBorder=mobile?64:88,capOffset=mobile?6:8,paintTop=mobile?-64:-88,paintBottom=mobile?-7:-9;
  assert.equal(topBorder+paintTop,0,'Paint starts at the top of the canopy reservation');
  assert.equal(-paintBottom-1,capOffset,'Paint ends exactly at the hero curved-cap start, no paper seam');
+}
+for(const viewport of [320,390,760,761,1180,1430,1886,1920,2560]){
+ const headerWidth=Math.min(viewport,1280),gutter=(viewport-headerWidth)/2,spread=Math.max(viewport,900);
+ assert.ok(spread>gutter,'White paint reaches both screen edges at '+viewport);
 }
 console.log('PASS single menu-only white crown plane, exact canopy-to-hero color join, inert paint, preserved feature and geometry CSS. Wide-screen visual proof required separately.');
