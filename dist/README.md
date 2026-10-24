@@ -115,3 +115,7 @@ Quadrado com quatro setas: mover curva. Círculo dourado com seta curva: girar. 
 ## Reflexos com cores e portais
 
 Os 100 níveis foram reorganizados para introduzir gradualmente dois e três disparadores, colisões entre trajetórias e portais universais/seletivos. Os portais brancos aceitam todas as cores; pares com a mesma letra mantêm a direção da luz. Raios de cores diferentes não podem se cruzar. Veja [regras e progressão](documentacao/PORTAIS-E-CORES.md). A nota no jogo explica cada novidade quando ela aparece. Os portais giram lentamente, respeitando movimento reduzido.
+
+## Refinamento de fontes e colisões — 24/10/2026
+
+Fontes restauradas: círculo preto com bico e disco colorido menor. Os 100 níveis foram conferidos com folga mínima de 60 unidades entre o envelope completo de rotação de cada espelho/alça e o bico de qualquer fonte (centros ≥148). As trajetórias param na colisão e não mostram reflexões, portais ou alvos posteriores; trechos eliminados não geram novos choques. Um terceiro raio também para se tocar um rastro já iluminado, sem reativar raios parados. A animação revela o impacto quando as frentes envolvidas alcançam o ponto. As regras, cores e portais seguem a mesma progressão.

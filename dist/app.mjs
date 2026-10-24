@@ -148,7 +148,7 @@ function draw(){
  }
  if(game==='light'){
   const r=evaluation?.ray??{rays:[],collisions:[],bounces:0,status:'pending'};
-  if(phase!=='editing')svg+=worldRaysSVG(r,phase==='animating'?lightDistance:Infinity,phase==='result');
+  if(phase!=='editing')svg+=worldRaysSVG(r,phase==='animating'?lightDistance:Infinity,true);
   svg+=portalSVG(state.portals??[],performance.now()/1000);
   svg+=lightEndpointsSVG(state,free);
   state.objects.map((o,i)=>({o,i})).sort((a,b)=>(a.o.type==='wall'?0:1)-(b.o.type==='wall'?0:1)).forEach(({o,i})=>{const s=segment(o);

@@ -61,19 +61,48 @@ export function lightSegmentIntersection(a,b,c,d){
  const t0=dot(q,r)/rr,t1=t0+dot(s,r)/rr,lo=Math.max(0,Math.min(t0,t1)),hi=Math.min(1,Math.max(t0,t1));
  if(lo>hi+CONTACT)return null;
  const t=Math.max(0,Math.min(1,lo)),point=add(a,scale(r,t)),u=Math.max(0,Math.min(1,dot(sub(point,c),s)/ss));
- return {point,t,u,overlap:hi-lo>CONTACT};
+ return {point,t,u,overlap:hi-lo>CONTACT,tEnd:hi,uEnd:Math.max(0,Math.min(1,dot(sub(add(a,scale(r,hi)),c),s)/ss))};
 }
+// Os rastros são persistentes: um raio parado não volta a propagar.
+// Eventos são ordenados pelo alcance de ambas as frentes; os trechos cortados
+// deixam imediatamente de participar de qualquer colisão posterior.
 export function traceLightWorld(state,{maxBounces=12,maxEvents=40}={}){
- const scene=lightScene(state),rays=scene.sources.map(s=>traceSource(s,scene,maxBounces,maxEvents)),collisions=[];
+ const scene=lightScene(state),rays=scene.sources.map(s=>traceSource(s,scene,maxBounces,maxEvents)),candidates=[];
  for(let i=0;i<rays.length;i++)for(let j=i+1;j<rays.length;j++){
   if(rays[i].color===rays[j].color)continue;
-  for(const a of rays[i].segments)for(const b of rays[j].segments){const h=lightSegmentIntersection(a.a,a.b,b.a,b.b);if(!h)continue;
-   if(collisions.some(c=>c.rayIndices[0]===i&&c.rayIndices[1]===j&&Math.hypot(c.point.x-h.point.x,c.point.y-h.point.y)<CONTACT))continue;
-   collisions.push({point:h.point,colors:[rays[i].color,rays[j].color],rayIndices:[i,j],distances:[a.startDistance+(a.endDistance-a.startDistance)*h.t,b.startDistance+(b.endDistance-b.startDistance)*h.u],overlap:!!h.overlap});
+  for(const a of rays[i].segments)for(const b of rays[j].segments){let h=lightSegmentIntersection(a.a,a.b,b.a,b.b);if(!h)continue;
+   const al=a.endDistance-a.startDistance,bl=b.endDistance-b.startDistance;
+   if(h.overlap){
+    // Num encontro frontal colinear, use o ponto de encontro, não a fonte.
+    const da=a.startDistance+al*h.t,db=b.startDistance+bl*h.u;
+    const daEnd=a.startDistance+al*h.tEnd,dbEnd=b.startDistance+bl*h.uEnd;
+    const delta=(daEnd-da)-(dbEnd-db),f=delta?Math.max(0,Math.min(1,(db-da)/delta)):0;
+    const options=[0,1,f].map(f=>({f,time:Math.max(da+(daEnd-da)*f,db+(dbEnd-db)*f)})).sort((x,y)=>x.time-y.time);
+    const k=options[0].f,t=h.t+(h.tEnd-h.t)*k,u=h.u+(h.uEnd-h.u)*k;
+    h={...h,t,u,point:add(a.a,scale(sub(a.b,a.a),t))};
+   }
+   if(candidates.some(c=>c.rayIndices[0]===i&&c.rayIndices[1]===j&&Math.hypot(c.point.x-h.point.x,c.point.y-h.point.y)<CONTACT))continue;
+   const distances=[a.startDistance+al*h.t,b.startDistance+bl*h.u];
+   candidates.push({point:h.point,colors:[rays[i].color,rays[j].color],rayIndices:[i,j],distances,triggerDistance:Math.max(...distances),overlap:!!h.overlap});
   }
  }
- collisions.sort((a,b)=>Math.max(...a.distances)-Math.max(...b.distances));
- return {rays,collisions,status:collisions.length?'collision':rays.length&&rays.every(r=>r.status==='target')?'target':'miss',totalDistance:Math.max(0,...rays.map(r=>r.totalDistance)),bounces:rays.reduce((n,r)=>n+r.bounces,0)};
+ candidates.sort((a,b)=>a.triggerDistance-b.triggerDistance||a.distances[0]+a.distances[1]-b.distances[0]-b.distances[1]);
+ const stops=rays.map(r=>r.totalDistance),stopped=rays.map(()=>false),collisions=[];
+ for(const c of candidates){const [i,j]=c.rayIndices;
+  if(c.distances[0]>stops[i]+CONTACT||c.distances[1]>stops[j]+CONTACT)continue;
+  if(stopped[i]&&stopped[j])continue;
+  // Um terceiro raio pode tocar um rastro já parado. Só ele continua ativo.
+  c.stoppedRayIndices=[];
+  c.rayIndices.forEach((index,k)=>{if(!stopped[index]){stops[index]=c.distances[k];stopped[index]=true;c.stoppedRayIndices.push(index);}});
+  collisions.push(c);
+ }
+ rays.forEach((ray,i)=>{if(!stopped[i])return;
+  const stop=stops[i];ray.segments=visibleLightSegments(ray,stop);
+  ray.reflections=ray.reflections.filter(h=>h.distance<stop-CONTACT);
+  ray.teleports=ray.teleports.filter(h=>h.distance<stop-CONTACT);
+  ray.bounces=ray.reflections.length;ray.totalDistance=stop;ray.status='collision';
+ });
+ return {rays,collisions,status:collisions.length?'collision':rays.length&&rays.every(r=>r.status==='target')?'target':'miss',totalDistance:Math.max(0,...rays.map(r=>r.totalDistance),...collisions.map(c=>c.triggerDistance)),bounces:rays.reduce((n,r)=>n+r.bounces,0)};
 }
 export function visibleLightSegments(ray,distance){
  const limit=Math.max(0,distance),out=[];
