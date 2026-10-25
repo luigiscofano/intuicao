@@ -45,9 +45,6 @@
 #repasse .r-gain:empty{display:none}
 #repasse .r-preview-source{background:#e4ecd9}
 #repasse .r-preview-target{outline:2px dashed #647c46;outline-offset:1px;z-index:3}
-#repasse .r-board-options{display:flex;gap:12px;align-items:center;flex-wrap:wrap;margin:8px 24px}
-#repasse #r-keyboard-help{font-size:11px;line-height:1.65;margin:0;flex:1 1 220px;color:var(--muted)}
-#repasse .r-preview{min-height:40px;margin:8px 24px 12px;padding:7px 10px;border-left:2px solid #b4c79b;font-size:12px;line-height:1.65;color:#405e49}
 #repasse .r-box-legend{display:flex;gap:6px 15px;flex-wrap:wrap;margin:4px 24px 16px;font-size:10px;color:var(--muted)}
 #repasse .r-readout{display:grid;grid-template-columns:auto auto minmax(0,1fr);gap:14px 22px;align-items:start}
 #repasse .r-readout strong{font-size:20px}
@@ -84,8 +81,6 @@
   #repasse #r-level-next{grid-column:3}
   #repasse .r-board-scroll{padding:8px 5px 12px}
   #repasse .r-scroll-help{display:block}
-  #repasse .r-board-options{margin:7px 14px;gap:6px 12px}
-  #repasse .r-preview{margin:8px 14px 12px;font-size:11px}
   #repasse .r-box-legend{margin:4px 14px 14px}
   #repasse .r-readout{grid-template-columns:1fr 1fr;gap:12px}
   #repasse .r-readout>p{grid-column:1/-1}
