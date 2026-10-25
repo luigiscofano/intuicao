@@ -2,6 +2,7 @@ import {CAMPAIGN,CHAPTERS,DIFFICULTIES} from './campaign.mjs';
 import {RULES_VERSION,initialState,validateLevel,validateState,transition,commandStatus,evaluateState,isWon,stateKey,replay} from './engine.mjs';
 import {hintFromSolution} from './analysis.mjs';
 import {createOrbitaService} from './service.mjs';
+import {orbitaSymbol,orbitaTypeName,orbitaLesson} from './symbols.mjs';
 import {createRestartConfirmation} from '../restart-confirmation.mjs';
 import {createResultMotion} from '../result-motion.mjs';
 import {dailyIndex,recordEvent} from '../collection-state.mjs';
@@ -14,7 +15,7 @@ const record=value=>value&&typeof value==='object'&&!Array.isArray(value);
 const short=value=>String(value).padStart(2,'0');
 const mod=(value,size)=>(value%size+size)%size;
 const TAU=Math.PI*2;
-const BASE_RULES='Gire os anéis para levar cada peça ao símbolo correspondente. Todas as peças do anel escolhido se movem juntas. Nas casas compartilhadas, uma peça pode passar de um anel para outro. Peças que já estão corretas continuam podendo se mover. Complete todos os alvos ao mesmo tempo.';
+const BASE_RULES='Gire os anéis para levar cada peça ao destino que mostra o mesmo símbolo: estrela com estrela, triângulo com triângulo, e assim por diante. Todas as peças do anel escolhido se movem juntas. Nas casas compartilhadas, uma peça pode passar de um anel para outro. Peças que já estão corretas continuam podendo se mover. Complete todos os alvos ao mesmo tempo.';
 const MECHANICS={step:['Dois passos em um giro','O anel marcado com passo 2 avança duas casas de uma vez. O sentido contrário desfaz o mesmo percurso.'],gear:['Anéis ligados','Este comando gira os anéis indicados ao mesmo tempo. Veja as setas junto de cada letra: um pode avançar enquanto o outro recua.'],sensor:['Uma peça libera o giro','A casa marcada com um sensor precisa conter o símbolo indicado para liberar o comando. Prepare essa casa usando outro anel.']};
 const TUTORIAL=[
   'Escolha o anel e toque na seta curva. Um giro leva cada peça à próxima casa.',
@@ -101,7 +102,7 @@ export function computeOrbitaBadgeLayout(level){
   for(const command of Array.isArray(level.commands)?level.commands:[])for(const condition of Array.isArray(command.requires)?command.requires:[]){if(!byCell.has(condition.cell))byCell.set(condition.cell,new Set());byCell.get(condition.cell).add(condition.type);}
   for(const cell of level.cells){
     if(!byCell.has(cell.id))continue;
-    const types=[...byCell.get(cell.id)],label=(level.cells.indexOf(cell)+1)+' · '+types.map(type=>level.pieceTypes?.find(piece=>piece.id===type)?.symbol??type).join('/'),w=Math.max(42,[...label].length*7+10),h=20;
+    const types=[...byCell.get(cell.id)],label=(level.cells.indexOf(cell)+1)+' · '+types.map(type=>orbitaSymbol(level,type)).join('/'),w=Math.max(42,[...label].length*7+10),h=20;
     const vertical=radius+21,horizontal=radius+10+w/2+3;
     const offsets=[[0,-vertical],[horizontal,0],[-horizontal,0],[horizontal,-vertical],[-horizontal,-vertical],[0,radius+37],[horizontal,vertical],[-horizontal,vertical]];
     for(const distance of [70,92,118,148])for(const [x,y] of [[0,-1],[1,0],[-1,0],[0,1],[.707,-.707],[-.707,-.707],[.707,.707],[-.707,.707]])offsets.push([x*distance,y*distance]);
@@ -184,12 +185,12 @@ export function initOrbita({hideOthers=()=>{}}={}){
   const current=()=>session?.states[session.cursor],isOpen=()=>!host.hidden;
   const log=(type,details={})=>recordEvent(data,type,{game:'orbita',mode,level:level?.id,...details});
   const difficultyName=value=>DIFFICULTIES[bounded(value,0,4)]??'Muito fácil';
-  const lesson=()=>String(level.discovery??level.lesson??'Prepare as passagens e complete todos os alvos ao mesmo tempo.').replace(/^Nesta fase, o jogador precisa perceber que\s*/i,'');
+  const lesson=()=>orbitaLesson(level,level.discovery??level.lesson??'Prepare as passagens e complete todos os alvos ao mesmo tempo.').replace(/^Nesta fase, o jogador precisa perceber que\s*/i,'');
   const safeError=error=>error?.name==='AbortError'?'':error instanceof SyntaxError?'JSON inválido. Confira aspas, vírgulas e colchetes.':error?.message??'Não foi possível concluir esta ação.';
   const seedNow=()=>{const values=new Uint32Array(1);if(globalThis.crypto?.getRandomValues)globalThis.crypto.getRandomValues(values);else values[0]=(Date.now()^Math.floor(Math.random()*0xffffffff))>>>0;return values[0];};
   const makeSeed=(base,number)=>(base+Math.imul(number,0x9e3779b9))>>>0;
-  const symbol=type=>String(level.pieceTypes.find(piece=>piece.id===type)?.symbol??type);
-  const typeName=type=>String(level.pieceTypes.find(piece=>piece.id===type)?.name??symbol(type));
+  const symbol=type=>orbitaSymbol(level,type);
+  const typeName=type=>orbitaTypeName(level,type);
   const commandName=id=>level.commands.find(command=>command.id===id)?.label??'Anel '+id;
   const moveName=move=>commandName(move.command)+' '+(move.direction===1?'↻':'↺');
   const optionsKey=options=>JSON.stringify(options);
