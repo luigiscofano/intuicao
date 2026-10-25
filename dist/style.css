@@ -254,3 +254,14 @@ button.action-hint:hover{background:#e4dcf1;border-color:#9c85bb}
 @media(prefers-reduced-motion:no-preference){
  :is(.board-elo,.board-prumo) .grid-cell.manual-check-enter::after{animation:pacto-hatch-enter .3s ease-out both;animation-delay:var(--pacto-fade-offset,0ms)}
 }
+
+/* JSON import panels only: placed after the campaign or duel configuration. */
+.level-json-import{margin-top:32px;padding:24px 0 0;border-top:1px solid var(--line);max-width:100%;font-size:13px;line-height:1.6}.level-json-import h3{font-size:19px;margin:0 0 10px}.level-json-import p{max-width:850px}.level-json-import .file-button{display:flex;flex-wrap:wrap;align-items:center;gap:10px;width:fit-content;max-width:100%;margin:16px 0}.level-json-import input[type=file]{max-width:100%;min-height:44px;margin:0}.level-json-import details{margin:14px 0;padding:12px 14px;border:1px solid var(--line);border-radius:10px;background:#f8f9f3;min-width:0}.level-json-import summary{cursor:pointer;min-height:32px;font-weight:650}.level-json-import pre{max-width:100%;max-height:300px;overflow:auto;padding:12px;border-radius:8px;background:#fffefa;font:12px/1.5 ui-monospace,monospace;white-space:pre}.level-json-import textarea{display:block;width:100%;max-width:100%;min-height:160px;margin:8px 0 12px;padding:12px;border:1px solid var(--line);border-radius:8px;background:#fffefa;font:12px/1.5 ui-monospace,monospace;resize:vertical}.level-json-import [role=status],.level-json-import [role=alert]{overflow-wrap:anywhere;color:var(--ink);min-height:24px}.level-json-import button{min-height:44px}.level-json-import label{display:block}@media(max-width:600px){.level-json-import{margin-top:24px;padding-top:18px}.level-json-import details{padding:10px}.level-json-import .file-button{width:100%}}
+
+/* The same direct campaign/Endless mode switch for the collection games. */
+.collection-mode-switch{display:flex;width:fit-content;margin-top:12px}.collection-mode-switch button{min-height:44px}
+
+/* Manual check stays near the map; keep the full result area only for victory. */
+.board-navigation:has(> .collection-board-wrap > :is(.board-elo,.board-prumo,.board-pacto)):not(:has(#c-motion[data-outcome="win"])){--result-reserved-height:24px}
+/* The shared top toolbar keeps the former collection touch targets. */
+.stage-top>.stage-tools>button{min-width:44px;min-height:44px}

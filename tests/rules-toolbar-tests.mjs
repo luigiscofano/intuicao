@@ -16,6 +16,8 @@ if(!suite){
  const toolbarStart=css.indexOf('/* Compact native disclosure');
  assert.ok(toolbarStart>=0,'Compact toolbar styles exist');
  const toolbar=css.slice(toolbarStart);
+ const baseCSS=fs.readFileSync(new URL('../dist/style.css',import.meta.url),'utf8');
+ assert.match(baseCSS,/\.stage-top>\.stage-tools>button\{min-width:44px;min-height:44px\}/,'Shared toolbar buttons retain 44px touch targets despite older stage-top defaults');
  assert.match(toolbar,/\.rules-heading-tools,\.stage-tools\{[^}]*display:flex/,'Both game families use inline toolbar layout');
  assert.match(toolbar,/\.rules-heading-tools>\.rules-card,\.stage-tools>\.rules-card\{[^}]*margin:0/,'Disclosure has no old full-width card margin');
  assert.match(toolbar,/\.rules-heading-tools>\.rules-card>summary,\.stage-tools>\.rules-card>summary\{[^}]*min-height:44px/,'Compact disclosure retains an accessible touch target');
@@ -63,17 +65,13 @@ const children=element=>element.nodes.filter(node=>node.parentElement===element)
 
 function placement(label){
  const toolbar=panel().parentElement,siblings=children(toolbar);
- assert.ok(toolbar.matches(original?'.stage-tools':'.rules-heading-tools'),label+': rules moved to the correct toolbar');
+ assert.ok(toolbar.matches('.stage-tools'),label+': rules moved to the correct toolbar');
  assert.equal(advanced().parentElement,toolbar,label+': rules and advanced options share a toolbar');
  assert.equal(siblings[siblings.indexOf(panel())+1],advanced(),label+': rules immediately precede advanced options');
- if(original){
-  assert.equal(siblings[siblings.indexOf(advanced())+1],$('reset'),label+': restart remains after advanced options');
-  assert.equal(toolbar.parentElement,container.querySelector('.stage-top'),label+': original stage placement');
- }else{
-  assert.equal(toolbar.parentElement,container.querySelector('.lab-heading'),label+': collection heading placement');
-  assert.equal(siblings.length,2,label+': heading controls contain only rules and advanced options');
-  assert.ok(!$('c-surface').contains(panel()),label+': old standalone rules control was removed from surface');
- }
+ assert.deepEqual(siblings.map(node=>node.id),original?['undo','redo','reset','original-rules-panel','toggle-controls']:['c-undo','c-redo','c-reset','c-rules-panel','c-advanced-toggle'],label+': final requested order, with no duplicate controls');
+ assert.equal(toolbar.parentElement,container.querySelector('.stage-top'),label+': shared stage placement');
+ if(!original){assert.ok($('c-surface').contains(panel()),label+': compact toolbar is in the board surface');for(const id of ['c-direct-reset','c-direct-undo','c-direct-redo'])assert.equal($(id),undefined,label+': old duplicate removed');}
+
  assert.equal(container.querySelectorAll('#'+panel().id).length,1,label+': no duplicate disclosure');
  assert.equal(panel().tag,'details',label+': native disclosure semantics preserved');
  assert.equal(children(panel()).length,1,label+': only the summary is in the compact control');
@@ -175,7 +173,7 @@ if(original){
   assert.equal(Object.hasOwn($('c-advanced').attrs,'hidden'),advanced().attrs['aria-expanded']==='false',game+': advanced ARIA agrees with visibility');
   visible(false,game+' advanced state independent of rules');
   edit(game);$('c-hint').click();$('c-confirm').click();$('c-check')?.click();visible(false,game+' edit hint confirm and check preserve close choice');
-  $('c-direct-undo').click();$('c-direct-redo').click();visible(false,game+' undo and redo preserve close choice');
+  $('c-undo').click();$('c-redo').click();visible(false,game+' undo and redo preserve close choice');
   $('c-reset').click();$('restart-collection-cancel').click();visible(false,game+' cancelled restart');
   $('c-reset').click();$('restart-collection-confirm').click();visible(false,game+' confirmed restart');
   $('c-back').click();host.querySelector(`[${game==='desvio'?'data-map':'data-new-level'}="0"]`).click();visible(true,game+' introduction reentry');

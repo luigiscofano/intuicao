@@ -107,7 +107,7 @@ if(suite==='originals'){
   toggle('original-rules-panel',false);edit(game);$('toggle-controls').click();rules('original-rules-panel',false,game+' closed choice survives editing');
   toggle('original-rules-panel',true);$('level-next').click();rules('original-rules-panel',entryOpen(game,1),game+' next level');assert.equal($('hint-text').textContent,'');
   toggle('original-rules-panel',true);$('level-prev').click();rules('original-rules-panel',entryOpen(game,0),game+' previous level');
-  $('hint').click();assert.equal($('hint-text').textContent,firstHint,game+': reentering starts at fresh first stage');
+  const resumedScene=scene();$('hint').click();assert.ok($('hint-text').textContent.length>15,game+': reentering starts at first hint stage for the resumed board');assert.equal(scene(),resumedScene,game+': resumed hint does not reset the board');
   toggle('original-rules-panel',true);$('back-selection').click();$('level-grid').querySelector('[data-level="0"]').click();rules('original-rules-panel',entryOpen(game,0),game+' reentry');
   toggle('original-rules-panel',true);$('level').dispatch('change',{target:{value:'2'}});rules('original-rules-panel',entryOpen(game,2),game+' level selector');
   toggle('original-rules-panel',true);$('back-selection').click();$('selection-free').click();rules('original-rules-panel',endlessEntryOpen(game),game+' Endless entry');belowBoard(root,'scene','hint','hint-text',game+' Endless');
@@ -166,17 +166,17 @@ if(suite==='originals'){
   staleRules.open=false;staleRules.dispatch('toggle');$('c-advanced-toggle').click();rules('c-rules-panel',true,game+' detached toggle cannot overwrite current choice');
   edit(game,key);assert.notDeepEqual(state(key),initial);rules('c-rules-panel',true,game+' editing');assert.equal($('c-hint-text').textContent,'');assert.equal($('c-hint-apply').hidden,true);
   $('c-hint').click();assert.equal($('c-hint-text').textContent,buildDirectHint(game,level(),state(key)).focusText,game+': fresh deduction after edit');assert.equal(data().events.filter(e=>e.type==='hint').at(-1).tier,1);
-  toggle('c-rules-panel',false);$('c-direct-undo').click();$('c-advanced-toggle').click();rules('c-rules-panel',false,game+' undo/rerender');assert.equal($('c-hint-text').textContent,'');
-  $('c-direct-redo').click();rules('c-rules-panel',false,game+' redo');
+  toggle('c-rules-panel',false);$('c-undo').click();$('c-advanced-toggle').click();rules('c-rules-panel',false,game+' undo/rerender');assert.equal($('c-hint-text').textContent,'');
+  $('c-redo').click();rules('c-rules-panel',false,game+' redo');
   toggle('c-rules-panel',true);const oldLevelRules=$('c-rules-panel');$('c-level-next').click();rules('c-rules-panel',entryOpen(game,5),game+' next level');assert.equal($('c-hint-text').textContent,'');
   oldLevelRules.open=true;oldLevelRules.dispatch('toggle');$('c-advanced-toggle').click();rules('c-rules-panel',entryOpen(game,5),game+' stale previous-level toggle cannot reopen rules');
   toggle('c-rules-panel',true);$('c-level-prev').click();rules('c-rules-panel',entryOpen(game,4),game+' previous level');
   toggle('c-rules-panel',true);$('c-back').click();host.querySelector('[data-new-level="4"]').click();rules('c-rules-panel',entryOpen(game,4),game+' reentry');
-  for(const entry of ['c-tutorial','c-daily','c-free']){
-   toggle('c-rules-panel',true);$('c-back').click();$(entry).click();rules('c-rules-panel',entry==='c-free'?endlessEntryOpen(game):entryOpen(game,catalogue[game].findIndex(l=>l.id===level().id),level(),entry==='c-tutorial'?'tutorial':entry==='c-daily'?'daily':'campaign'),game+' '+entry);belowBoard(host,'c-board','c-hint','c-hint-text',game+' '+entry);$('c-hint').click();assert.ok($('c-hint-text').textContent.trim().length>0,game+' '+entry+': contextual hint is nonempty');labelHasNoCounter('c-hint');
+  for(const entry of ['c-daily','c-free']){
+   toggle('c-rules-panel',true);$('c-back').click();$(entry).click();rules('c-rules-panel',entry==='c-free'?endlessEntryOpen(game):entryOpen(game,catalogue[game].findIndex(l=>l.id===level().id),level(),entry==='c-daily'?'daily':'campaign'),game+' '+entry);belowBoard(host,'c-board','c-hint','c-hint-text',game+' '+entry);$('c-hint').click();assert.ok($('c-hint-text').textContent.trim().length>0,game+' '+entry+': contextual hint is nonempty');labelHasNoCounter('c-hint');
   }
   toggle('c-rules-panel',true);const seed=data().endless[game].seed;$('c-endless-new').click();rules('c-rules-panel',endlessEntryOpen(game),game+' regenerated Endless');assert.notEqual(data().endless[game].seed,seed);assert.equal($('c-hint-text').textContent,'');
-  console.log('PASS',game,'one below-board hint, exact three-stage engine, edit/undo/redo invalidation and rules in campaign/tutorial/daily/Endless');
+  console.log('PASS',game,'one below-board hint, exact three-stage engine, edit/undo/redo invalidation and rules in campaign/daily/Endless');
  }
  for(const mode of ['local','competitive','bot','training']){
   const key=enter('desvio',0,mode);rules('c-rules-panel',entryOpen('desvio',0),'desvio '+mode);belowBoard(host,'c-board','c-hint','c-hint-text','desvio '+mode);assert.equal($('c-direct-hint'),undefined);

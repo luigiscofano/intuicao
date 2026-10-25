@@ -1,0 +1,12 @@
+{
+  "game": "desvio",
+  "id": "meu-desvio",
+  "rows": 2,
+  "cols": 2,
+  "arrows": [
+    "H",
+    "V",
+    "V",
+    "H"
+  ]
+}

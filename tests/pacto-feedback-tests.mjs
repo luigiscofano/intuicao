@@ -42,7 +42,7 @@ try{
  uiClock.tick(200);$('c-advanced-toggle').click();assert.ok(!cell(triple[0]).matches('.pacto-conflict-enter'));
  console.log('PASS integração: aviso e ARIA atrasados, rerender preserva timer e andamento do fade');
  start();error();uiClock.tick(1000);for(const i of triple)key(i,'Delete');uiClock.tick(4000);concealed();
- start();error();uiClock.tick(1000);$('c-direct-undo').click();$('c-direct-redo').click();uiClock.tick(1999);concealed();uiClock.tick(1);assert.ok(marked()>0);
+ start();error();uiClock.tick(1000);$('c-undo').click();$('c-redo').click();uiClock.tick(1999);concealed();uiClock.tick(1);assert.ok(marked()>0);
  console.log('PASS integração: correção cancela aviso; desfazer/refazer inicia novo prazo');
  start();error();$('c-reset').click();$('restart-collection-confirm').click();uiClock.tick(4000);concealed();
  start();error();$('c-back').click();host.querySelector('[data-new-level="1"]').click();uiClock.tick(4000);assert.equal(marked(),0);

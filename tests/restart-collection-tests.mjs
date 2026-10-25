@@ -22,7 +22,7 @@ function edit(game){
 }
 for(const game of ['elo','prumo','pacto','desvio']){
  start(game);const initial=structuredClone(session().history.present);edit(game);const changed=structuredClone(session());assert.notDeepEqual(changed.history.present,initial,game);
- const button=$('c-direct-reset');button.focus();button.click();assert.equal(dialog().open,true);assert.equal(document.activeElement,cancel());assert.deepEqual(session(),changed);
+ const button=$('c-reset');button.focus();button.click();assert.equal(dialog().open,true);assert.equal(document.activeElement,cancel());assert.deepEqual(session(),changed);
  assert.equal($('restart-collection-title').textContent,game==='desvio'?'Reiniciar esta partida?':'Reiniciar este nível?');
  button.click();assert.equal(document.body.querySelectorAll('#restart-collection').length,1);
  cancel().dispatch('keydown',{key:'Tab',shiftKey:true});assert.equal(document.activeElement,ok());ok().dispatch('keydown',{key:'Tab'});assert.equal(document.activeElement,cancel());

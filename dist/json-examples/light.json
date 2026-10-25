@@ -1,0 +1,35 @@
+{
+  "schemaVersion": 1,
+  "game": "light",
+  "id": "meu-reflexo",
+  "name": "Minha primeira reflexão",
+  "sources": [
+    {
+      "x": 200,
+      "y": 330,
+      "angle": 0,
+      "color": "gold"
+    }
+  ],
+  "targets": [
+    {
+      "x": 400,
+      "y": 150,
+      "radius": 22,
+      "color": "gold"
+    }
+  ],
+  "objects": [
+    {
+      "type": "mirror",
+      "x": 400,
+      "y": 330,
+      "length": 125,
+      "angle": -76
+    }
+  ],
+  "portals": [],
+  "solution": [
+    -45
+  ]
+}

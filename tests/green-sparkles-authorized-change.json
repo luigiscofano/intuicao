@@ -1,0 +1,24 @@
+{
+  "scope": "Add an isolated solid green outer sparkle layer while preserving all original sparkle source and styling.",
+  "files": {
+    "about-dialog.mjs": {
+      "beforeSha256": "d998d3755bb430ad554968f46fd26de8cb81f65804e1fbd83b473c8fb2c81513",
+      "afterSha256": "2b3565ac1bf1223c12e912fe800a30e12e31e374126d92b0c3d4eee72ecc8cf0",
+      "blocks": [
+        {
+          "before": " const reduced=window.matchMedia('(prefers-reduced-motion: reduce)');\n let returnFocus=null, cleanupTimer=null, pointerStartedOutside=false;\n const clearCelebration=()=>{clearTimeout(cleanupTimer);cleanupTimer=null;sparks.replaceChildren();status.textContent='';};\n trigger.addEventListener('click',()=>{\n",
+          "after": " const reduced=window.matchMedia('(prefers-reduced-motion: reduce)');\n // A manual top-layer popover escapes the dialog's clipping without changing it.\n const greenLayer=document.createElement('div');greenLayer.id='about-green-sparkles';\n greenLayer.setAttribute('popover','manual');greenLayer.setAttribute('aria-hidden','true');greenLayer.setAttribute('inert','');dialog.append(greenLayer);\n const clearGreen=()=>{greenLayer.replaceChildren();if(greenLayer.matches(':popover-open'))greenLayer.hidePopover();};\n const celebrateGreen=()=>{\n  const r=dialog.getBoundingClientRect(),vw=document.documentElement.clientWidth,vh=window.innerHeight;\n  const clamp=(v,max)=>Math.max(12,Math.min(max-12,v));\n  const fragment=document.createDocumentFragment(),greenCount=reduced.matches?10:32;\n  for(let i=0;i<greenCount;i++){\n   const edge=i%4,t=.12+Math.random()*.76,distance=26+Math.random()*42;\n   let x,y,dx=0,dy=0;\n   if(edge===0){x=r.left-12;y=r.top+r.height*t;dx=-distance;}\n   else if(edge===1){x=r.right+12;y=r.top+r.height*t;dx=distance;}\n   else if(edge===2){x=r.left+r.width*t;y=r.top-12;dy=-distance;}\n   else{x=r.left+r.width*t;y=r.bottom+12;dy=distance;}\n   x=clamp(x,vw);y=clamp(y,vh);\n   const spark=document.createElement('span');spark.className='about-green-spark';spark.textContent='✦';\n   spark.style.setProperty('--gx',`${x-12}px`);spark.style.setProperty('--gy',`${y-12}px`);\n   spark.style.setProperty('--gdx',`${clamp(x+dx,vw)-x}px`);spark.style.setProperty('--gdy',`${clamp(y+dy,vh)-y}px`);\n   spark.style.setProperty('--gsize',`${12+Math.random()*7}px`);spark.style.setProperty('--gdelay',`${Math.random()*140}ms`);\n   spark.style.setProperty('--gcolor',['#3e7045','#527f43','#688c4e'][i%3]);fragment.append(spark);\n  }\n  greenLayer.append(fragment);greenLayer.showPopover();\n };\n window.addEventListener('resize',clearGreen);\n let returnFocus=null, cleanupTimer=null, pointerStartedOutside=false;\n const clearCelebration=()=>{clearTimeout(cleanupTimer);cleanupTimer=null;sparks.replaceChildren();status.textContent='';clearGreen();};\n trigger.addEventListener('click',()=>{\n"
+        },
+        {
+          "before": "  sparks.append(fragment);status.textContent='Viva cada pequena descoberta!';\n  cleanupTimer=setTimeout(clearCelebration,reduced.matches?1100:1650);\n",
+          "after": "  sparks.append(fragment);status.textContent='Viva cada pequena descoberta!';\n  celebrateGreen();\n  cleanupTimer=setTimeout(clearCelebration,reduced.matches?1100:1650);\n"
+        }
+      ]
+    },
+    "about-dialog.css": {
+      "beforeSha256": "f8354af0bac9323404a4c17f157bd71ac69ae30a5d9d118c7b52f1bf45564561",
+      "afterSha256": "1f4dcf40920819a7d880778b5fe17362de541ff9ae884d771abd7f94e7abdb75",
+      "append": "\n/* Extra solid green stars, in their own top layer. Original stars stay intact. */\n#about-green-sparkles{position:fixed;inset:0;box-sizing:border-box;width:100vw;height:100dvh;max-width:none;max-height:none;margin:0;padding:0;border:0;background:transparent;overflow:hidden;pointer-events:none;user-select:none}\n#about-green-sparkles::backdrop{background:transparent;pointer-events:none}\n#about-green-sparkles .about-green-spark{position:absolute;left:var(--gx);top:var(--gy);display:grid;place-items:center;width:24px;height:24px;color:var(--gcolor);font:700 var(--gsize)/1 system-ui,sans-serif;opacity:0;pointer-events:none;animation:about-green-sparkle 1400ms ease-out var(--gdelay) both}\n@keyframes about-green-sparkle{0%{opacity:0;transform:scale(.65)}18%{opacity:.9}70%{opacity:.85}100%{opacity:0;transform:translate(var(--gdx),var(--gdy)) scale(.9) rotate(24deg)}}\n@media(prefers-reduced-motion:reduce){#about-green-sparkles .about-green-spark{animation:none;opacity:.8;transform:none}}\n"
+    }
+  }
+}

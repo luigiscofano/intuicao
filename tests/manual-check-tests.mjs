@@ -37,10 +37,10 @@ const clear=()=>{assert.equal($('c-check-status').hidden,true);assert.equal($('c
 try{for(const g of ['elo','prumo']){
  start(g);const l=GEOMETRY_LEVELS[g][0],answer=GEOMETRY_ANSWERS[l.id];$('c-check').click();assert.match($('c-check-status').textContent,/Preencha/);assert.equal($('c-check-ring').hidden,true);const c=place(g,l,answer);const before=JSON.stringify(data()),attempts=store.get('intuicao.answers.v1');$('c-check').click();assert.match($('c-check-status').textContent,/Tudo certo/);assert.equal($('c-check-ring').parentElement,$('c-board'));assert.equal($('c-check-ring').hidden,false);assert.equal(JSON.stringify(data()),before);assert.equal(store.get('intuicao.answers.v1'),attempts);
  uiClock.tick(9999);$('c-check').click();uiClock.tick(9999);assert.equal($('c-check-status').hidden,false);uiClock.tick(1);clear();
- $('c-check').click();$('c-direct-undo').click();clear();$('c-direct-redo').click();clear();$('c-check').click();$('c-reset').click();$('restart-collection-confirm').click();clear();
+ $('c-check').click();$('c-undo').click();clear();$('c-redo').click();clear();$('c-check').click();$('c-reset').click();$('restart-collection-confirm').click();clear();
  place(g,l,answer);$('c-check').click();$('c-level-next').click();uiClock.tick(10000);clear();
- // A custom map without its own reference has a neutral disabled control.
- const custom=JSON.parse($('c-editor-json').value);$('c-editor-json').value=JSON.stringify(custom);$('c-editor-play').click();assert.ok($('c-check').disabled);assert.match($('c-check-help').textContent,/não tem gabarito/);
+ // The custom importer computes its own reference; it never trusts supplied answers.
+ const custom=JSON.parse($('c-editor-json').value);$('c-editor-json').value=JSON.stringify(custom);const manualWorker=globalThis.Worker;delete globalThis.Worker;$('c-editor-play').click();globalThis.Worker=manualWorker;assert.equal($('c-check').disabled,false,'verified custom has a computed reference');$('c-check').click();assert.match($('c-check-status').textContent,/Preencha/);
  app.activate(g);$('c-free').click();const run=data().endless[g],generated=generateCollectionEndless(g,run.seed,run.options);place(g,generated.level,generated.answer[g==='elo'?'positions':'assignments']);$('c-check').click();assert.match($('c-check-status').textContent,/Tudo certo/);assert.equal(data().endless[g].solved,0);assert.equal(data().endless[g].assisted,false);
  for(let i=0;i<3;i++)$('c-confirm').click();$('c-answer').click();$('c-confirm').click();const seed=data().endless[g].seed;$('c-check').click();uiClock.tick(10000);assert.notEqual(data().endless[g].seed,seed);clear();
  }

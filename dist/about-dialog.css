@@ -20,3 +20,10 @@ body > header button.doc-link{font:inherit;font-size:12px;color:inherit;cursor:p
 #about-dialog .about-status{position:absolute;width:1px;height:1px;padding:0;margin:-1px;overflow:hidden;clip-path:inset(50%);white-space:nowrap}
 @media(max-width:600px){#about-dialog{width:calc(100vw - 24px);max-height:calc(100dvh - 24px);border-radius:14px}#about-dialog .about-shell{max-height:calc(100dvh - 26px)}#about-dialog .about-heading{padding:20px 18px 14px}#about-dialog h2{font-size:28px}#about-dialog .about-copy{padding:4px 20px 10px;font-size:14px}#about-dialog .about-actions{padding:14px 18px;flex-wrap:wrap}}
 @media(prefers-reduced-motion:reduce){#about-dialog .about-spark{animation:none;opacity:.85;transform:none}}
+
+/* Extra solid green stars, in their own top layer. Original stars stay intact. */
+#about-green-sparkles{position:fixed;inset:0;box-sizing:border-box;width:100vw;height:100dvh;max-width:none;max-height:none;margin:0;padding:0;border:0;background:transparent;overflow:hidden;pointer-events:none;user-select:none}
+#about-green-sparkles::backdrop{background:transparent;pointer-events:none}
+#about-green-sparkles .about-green-spark{position:absolute;left:var(--gx);top:var(--gy);display:grid;place-items:center;width:24px;height:24px;color:var(--gcolor);font:700 var(--gsize)/1 system-ui,sans-serif;opacity:0;pointer-events:none;animation:about-green-sparkle 1400ms ease-out var(--gdelay) both}
+@keyframes about-green-sparkle{0%{opacity:0;transform:scale(.65)}18%{opacity:.9}70%{opacity:.85}100%{opacity:0;transform:translate(var(--gdx),var(--gdy)) scale(.9) rotate(24deg)}}
+@media(prefers-reduced-motion:reduce){#about-green-sparkles .about-green-spark{animation:none;opacity:.8;transform:none}}

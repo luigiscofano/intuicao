@@ -5,8 +5,33 @@ if(trigger && dialog){
  const sparks=dialog.querySelector('.about-sparkles');
  const status=dialog.querySelector('.about-status');
  const reduced=window.matchMedia('(prefers-reduced-motion: reduce)');
+ // A manual top-layer popover escapes the dialog's clipping without changing it.
+ const greenLayer=document.createElement('div');greenLayer.id='about-green-sparkles';
+ greenLayer.setAttribute('popover','manual');greenLayer.setAttribute('aria-hidden','true');greenLayer.setAttribute('inert','');dialog.append(greenLayer);
+ const clearGreen=()=>{greenLayer.replaceChildren();if(greenLayer.matches(':popover-open'))greenLayer.hidePopover();};
+ const celebrateGreen=()=>{
+  const r=dialog.getBoundingClientRect(),vw=document.documentElement.clientWidth,vh=window.innerHeight;
+  const clamp=(v,max)=>Math.max(12,Math.min(max-12,v));
+  const fragment=document.createDocumentFragment(),greenCount=reduced.matches?10:32;
+  for(let i=0;i<greenCount;i++){
+   const edge=i%4,t=.12+Math.random()*.76,distance=26+Math.random()*42;
+   let x,y,dx=0,dy=0;
+   if(edge===0){x=r.left-12;y=r.top+r.height*t;dx=-distance;}
+   else if(edge===1){x=r.right+12;y=r.top+r.height*t;dx=distance;}
+   else if(edge===2){x=r.left+r.width*t;y=r.top-12;dy=-distance;}
+   else{x=r.left+r.width*t;y=r.bottom+12;dy=distance;}
+   x=clamp(x,vw);y=clamp(y,vh);
+   const spark=document.createElement('span');spark.className='about-green-spark';spark.textContent='✦';
+   spark.style.setProperty('--gx',`${x-12}px`);spark.style.setProperty('--gy',`${y-12}px`);
+   spark.style.setProperty('--gdx',`${clamp(x+dx,vw)-x}px`);spark.style.setProperty('--gdy',`${clamp(y+dy,vh)-y}px`);
+   spark.style.setProperty('--gsize',`${12+Math.random()*7}px`);spark.style.setProperty('--gdelay',`${Math.random()*140}ms`);
+   spark.style.setProperty('--gcolor',['#3e7045','#527f43','#688c4e'][i%3]);fragment.append(spark);
+  }
+  greenLayer.append(fragment);greenLayer.showPopover();
+ };
+ window.addEventListener('resize',clearGreen);
  let returnFocus=null, cleanupTimer=null, pointerStartedOutside=false;
- const clearCelebration=()=>{clearTimeout(cleanupTimer);cleanupTimer=null;sparks.replaceChildren();status.textContent='';};
+ const clearCelebration=()=>{clearTimeout(cleanupTimer);cleanupTimer=null;sparks.replaceChildren();status.textContent='';clearGreen();};
  trigger.addEventListener('click',()=>{
   if(dialog.open)return;
   returnFocus=document.activeElement;
@@ -41,6 +66,7 @@ if(trigger && dialog){
    fragment.append(spark);
   }
   sparks.append(fragment);status.textContent='Viva cada pequena descoberta!';
+  celebrateGreen();
   cleanupTimer=setTimeout(clearCelebration,reduced.matches?1100:1650);
  });
  reduced.addEventListener('change',clearCelebration);

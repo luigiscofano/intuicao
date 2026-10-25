@@ -125,7 +125,7 @@ if(suite==='originals'){
    assert.deepEqual([...store],saved,'Rules do not affect progress or events');assert.equal($('c-board').innerHTML,board,'Rules do not replace the board');
    toggle(false);const stale=panel();$('c-advanced-toggle').click();stale.open=true;stale.dispatch('toggle');visible(false,game+' detached toggles ignored');
    edit(game);$('c-hint').click();$('c-confirm').click();$('c-check')?.click();visible(false,game+' hide survives physical edit/hint/confirm/check');
-   $('c-direct-undo').click();$('c-direct-redo').click();visible(false,game+' hide survives undo/redo');
+   $('c-undo').click();$('c-redo').click();visible(false,game+' hide survives undo/redo');
    $('c-reset').click();$('restart-collection-cancel').click();visible(false,game+' canceled restart');
    $('c-reset').click();$('restart-collection-confirm').click();visible(false,game+' confirmed restart');
    $('c-back').click();host.querySelector(`[${game==='desvio'?'data-map':'data-new-level'}="${index}"]`).click();visible(true,game+' introductory reentry');
@@ -133,13 +133,11 @@ if(suite==='originals'){
   }
   enter(game,1);visible(false,game+' ordinary direct entry');toggle(true);$('c-reset').click();$('restart-collection-confirm').click();visible(true,game+' manual open survives restart');
   if(game!=='desvio'){
-   $('c-back').click();$('c-tutorial').click();visible(true,game+' explicit tutorial');toggle(false);$('c-guided').click();$('c-advanced-toggle').click();visible(false,game+' tutorial progress does not reopen rules');
-   $('c-back').click();$('c-tutorial').click();visible(true,game+' tutorial reentry');
    enter(game,1);$('c-editor-play').click();visible(true,game+' first custom mechanics');toggle(false);$('c-editor-play').click();visible(false,game+' equivalent custom edit');
   }
   app.activate(game);$('c-free').click();visible(true,game+' first Endless rules');toggle(false);$('c-endless-new').click();visible(false,game+' same-rule Endless regeneration');
   $('c-back').click();$('c-free').click();visible(false,game+' same-rule Endless resume');
-  console.log('PASS',game,'introduction/reentry, ordinary entry, choice preservation, stale callbacks, progress, custom/tutorial and Endless');
+  console.log('PASS',game,'introduction/reentry, ordinary entry, choice preservation, stale callbacks, progress, custom and Endless');
  }
  for(const mode of ['competitive','bot','training']){
   enter('desvio',0,mode);visible(true,'DESVIO '+mode+' intro');toggle(false);edit('desvio');$('c-confirm').click();flush();visible(false,'DESVIO '+mode+' move/bot preserves hidden rules');

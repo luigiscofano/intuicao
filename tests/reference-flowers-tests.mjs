@@ -1,3 +1,5 @@
+import {restoreGreenSparklesFile} from './green-sparkles-history.mjs';
+import {restoreWhiteFlowerCSS} from './white-flower-history.mjs';
 import assert from 'node:assert/strict';
 import fs from 'node:fs';
 import crypto from 'node:crypto';
@@ -9,7 +11,7 @@ const read=p=>fs.readFileSync(new URL('../'+p,import.meta.url));
 const sha=b=>crypto.createHash('sha256').update(b).digest('hex');
 const m=JSON.parse(read('tests/reference-flowers-authorized-change.json'));
 const prior=JSON.parse(read('tests/active-flower-authorized-change.json'));
-const css=read('dist/platform.css').toString(),old=restoreReferenceFlowersCSS(css);
+const css=restoreWhiteFlowerCSS(read('dist/platform.css').toString()),old=restoreReferenceFlowersCSS(css);
 assert.equal(sha(old),prior.afterCssSHA256,'Continues the previous authorization without rebasing it');
 assert.equal(restoreReferenceFlowersCSS(old),old);
 assert.equal(sha(restoreActiveFlowerCSS(css)),prior.priorCssSHA256);
@@ -31,7 +33,7 @@ assert.match(m.append,/:is\(#main > \.lab,#collection > \.collection-lab\) > \.l
 assert.match(m.append,/flower-white-original\.png/);
 assert.match(m.append,/@media\(max-width:760px\)/);
 assert.match(m.append,/left:-1px;width:18px;height:18px/,'Mobile lab ornament ends at17px, before19px text padding');
-for(const [file,hash] of Object.entries(m.preservedDistSHA256))assert.equal(sha(restoreRulesToolbarFile(file,read(file))),hash,'Flower change preserves JS, game styles, coordinates and all other existing files: '+file);
+for(const [file,hash] of Object.entries(m.preservedDistSHA256))assert.equal(sha(restoreGreenSparklesFile(file,restoreRulesToolbarFile(file,read(file)))),hash,'Flower change preserves JS, game styles, coordinates and all other existing files: '+file);
 function pngAlpha(bytes){
  assert.equal(bytes.subarray(0,8).toString('hex'),'89504e470d0a1a0a');
  let w,h,depth,type,interlace;const chunks=[];

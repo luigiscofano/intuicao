@@ -1,0 +1,31 @@
+{
+  "purpose": "Move original white flower to the active card top-right green-flower position, add a fine green alpha contour, and remove its lower duplicate. No other decorations or game styles change.",
+  "priorCssSHA256": "adea603466df458366851d7ed9f0462af266918cb8187005cc8377867ec99265",
+  "afterCssSHA256": "0da1007ffc0374966f22d4061dd82baf3a0d7b6c9d58bf1873d9c7c9ec1ea26f",
+  "replacements": [
+    {
+      "before": ":where(body:not(:has(.lab:not([hidden]), #collection:not([hidden]) > .collection-lab))) #main > .games > button[aria-pressed=true]::after{content:\"\";position:absolute;top:-13px;right:10px;width:32px;height:32px;border-radius:0;background:url(\"platform-assets/flower-green-original.png\") center/contain no-repeat;box-shadow:none;pointer-events:none;user-select:none}",
+      "after": ":where(body:not(:has(.lab:not([hidden]), #collection:not([hidden]) > .collection-lab))) #main > .games > button[aria-pressed=true]::after{content:\"\";position:absolute;top:-13px;right:10px;width:32px;height:32px;border-radius:0;background:url(\"platform-assets/flower-white-original.png\") center/contain no-repeat;box-shadow:none;filter:drop-shadow(.5px 0 0 #617b50) drop-shadow(-.5px 0 0 #617b50) drop-shadow(0 .5px 0 #617b50) drop-shadow(0 -.5px 0 #617b50);pointer-events:none;user-select:none}"
+    }
+  ],
+  "removals": [
+    {
+      "text": ":where(body:not(:has(.lab:not([hidden]),#collection:not([hidden]) > .collection-lab))) #main > .games > button[aria-pressed=true]::before{content:\"\";position:absolute;bottom:2px;right:44px;width:22px;height:22px;background:url(\"platform-assets/flower-white-original.png\") center/contain no-repeat;pointer-events:none;user-select:none;opacity:.8;transform:rotate(-18deg)}\n",
+      "beforeAnchor": "@media(max-width:760px){\n #main > .intro h1::before{right:-8px;top:6px;width:28px;height:28px}\n"
+    }
+  ],
+  "assets": [
+    {
+      "file": "platform-assets/flower-green-original.png",
+      "sha256": "4651cd8603999ad9ff6abb6ada2b8bd83c721719f8df899a83504a4cec8b42df",
+      "referenceFileName": "image(20261025-014508).png",
+      "referenceSHA256": "4651cd8603999ad9ff6abb6ada2b8bd83c721719f8df899a83504a4cec8b42df"
+    },
+    {
+      "file": "platform-assets/flower-white-original.png",
+      "sha256": "29f33ef8990e5bda53f566ab687b8336e84de0d95523cf7235031dd0852a35fc",
+      "referenceFileName": "image(20261025-014509).png",
+      "referenceSHA256": "29f33ef8990e5bda53f566ab687b8336e84de0d95523cf7235031dd0852a35fc"
+    }
+  ]
+}

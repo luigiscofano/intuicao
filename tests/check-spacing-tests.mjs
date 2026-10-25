@@ -1,0 +1,18 @@
+import assert from 'node:assert/strict';
+import fs from 'node:fs';
+const css=fs.readFileSync(new URL('../dist/style.css',import.meta.url),'utf8');
+const ui=fs.readFileSync(new URL('../dist/collection-ui.mjs',import.meta.url),'utf8');
+const selector='.board-navigation:has(> .collection-board-wrap > :is(.board-elo,.board-prumo,.board-pacto)):not(:has(#c-motion[data-outcome="win"]))';
+const rule=selector+'{--result-reserved-height:24px}';
+assert.equal(css.split(rule).length-1,1,'One exact scoped spacing override');
+assert.match(css,/\.board-navigation\{min-width:0;--result-reserved-height:86px\}/,'Victory and unrelated games retain 86px default');
+assert.match(css,/\.result-motion\{min-height:var\(--result-reserved-height,86px\)/,'Variable controls reserved feedback, not board size');
+assert.match(css,/margin-bottom:var\(--result-reserved-height\)/,'Navigation arrows follow the same reservation');
+assert.ok(css.indexOf(rule)>css.indexOf('.board-navigation{min-width:0;--result-reserved-height:86px}'));
+assert.ok(!/width|height:(?!24)|padding|margin|transform|position|display/.test('--result-reserved-height:24px'.replace('--result-reserved-height','reservation')),'No geometry or overlay rewrite');
+assert.equal(86-24,62,'The exact declared reserve reduction is62px, not a board scale change');
+assert.ok(ui.includes('id="c-check-status" class="pacto-check-status" role="status"'),'Accessible check message remains independent');
+assert.ok(css.includes('animation:pacto-check-window 10s'),'Check message/fade timing retained');
+assert.ok(css.includes('.pacto-check-ring{position:absolute;inset:-4px'),'Exact map ring retained');
+assert.ok(css.includes('.board-elo.elo-large{min-width:calc(var(--cols) * 44px)'),'Large ELO cell floor retained');
+console.log('PASS Checar reserve only: ELO/PRUMO/PACTO idle/loss −62px, win86px, no map dimensions/coordinate/overlay changes; timers/rings/arrows retained. Native geometry requires published-browser QA.');

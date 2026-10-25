@@ -1,3 +1,4 @@
+import {restoreGreenSparklesFile} from './green-sparkles-history.mjs';
 import {restoreRulesSidebarFile} from './rules-sidebar-history.mjs';
 import assert from 'node:assert/strict';
 import fs from 'node:fs';
@@ -6,6 +7,7 @@ const manifest=JSON.parse(fs.readFileSync(new URL('./hints-rules-authorized-chan
 const sha=s=>crypto.createHash('sha256').update(s).digest('hex');
 const priorHTML=['game-info-authorized-change.json','original-logo-authorized-change.json'].flatMap(name=>{const m=JSON.parse(fs.readFileSync(new URL('./'+name,import.meta.url)));return [m.priorHtmlSHA256,m.afterHtmlSHA256];});
 export function restoreHintsRulesFile(path,bytes){
+ bytes=restoreGreenSparklesFile(path,bytes);
  bytes=restoreRulesSidebarFile(path,bytes);
  const name=path.replace(/^dist\//,''),change=manifest.files[name];if(!change)return bytes;
  let text=Buffer.isBuffer(bytes)?bytes.toString():bytes;

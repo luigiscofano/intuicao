@@ -1,3 +1,4 @@
+import {restoreGreenSparklesFile} from './green-sparkles-history.mjs';
 import {restoreEloV3File} from './elo-v3-history.mjs';
 import assert from 'node:assert/strict';
 import fs from 'node:fs';
@@ -5,7 +6,7 @@ import vm from 'node:vm';
 import crypto from 'node:crypto';
 import {restoreAboutDialogHTML} from './about-dialog-history.mjs';
 const read=n=>fs.readFileSync(new URL('../dist/'+n,import.meta.url),'utf8');
-const html=read('index.html'),css=read('about-dialog.css'),source=read('about-dialog.mjs');
+const html=read('index.html'),css=restoreGreenSparklesFile('about-dialog.css',read('about-dialog.css')),source=restoreGreenSparklesFile('about-dialog.mjs',read('about-dialog.mjs'));
 restoreAboutDialogHTML(html);
 const manifest=JSON.parse(fs.readFileSync(new URL('./about-dialog-authorized-change.json',import.meta.url),'utf8'));
 for(const [file,hash] of Object.entries({...manifest.preservedDistSHA256,...manifest.newFilesSHA256})){const bytes=restoreEloV3File(file,fs.readFileSync(new URL('../'+file,import.meta.url)));assert.equal(crypto.createHash('sha256').update(bytes).digest('hex'),hash,'Exact protected/new artifact '+file);}

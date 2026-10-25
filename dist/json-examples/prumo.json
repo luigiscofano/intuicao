@@ -1,0 +1,13 @@
+{
+  "game": "prumo",
+  "id": "meu-prumo",
+  "rows": 1,
+  "cols": 3,
+  "supports": [
+    {
+      "id": 0,
+      "x2": 2,
+      "y2": 0
+    }
+  ]
+}

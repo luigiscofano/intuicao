@@ -1,0 +1,13 @@
+{
+  "game": "elo",
+  "id": "meu-elo",
+  "rows": 2,
+  "cols": 2,
+  "regions": [
+    0,
+    1,
+    2,
+    3
+  ],
+  "fixed": {}
+}

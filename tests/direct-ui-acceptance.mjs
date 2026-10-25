@@ -20,7 +20,7 @@ function drag(from,to,{button=0,cancel=false}={}){event('pointerdown',from,{butt
 const tests=[];const test=(name,run)=>tests.push([name,run]);
 test('ELO move, fixed-region X, invalid drop rollback, one undo',()=>{
  start('elo');const free=level.regions.findIndex(r=>level.fixed?.[r]===undefined),region=level.regions[free],other=level.regions.findIndex((r,i)=>r===region&&i!==free);
- click(free);assert.equal(state().positions[region],free);if(other>=0){const before=history().past.length;drag(free,other);assert.equal(state().positions[region],other);assert.equal(history().past.length,before+1);$('c-direct-undo').click();assert.equal(state().positions[region],free);}
+ click(free);assert.equal(state().positions[region],free);if(other>=0){const before=history().past.length;drag(free,other);assert.equal(state().positions[region],other);assert.equal(history().past.length,before+1);$('c-undo').click();assert.equal(state().positions[region],free);}
  const foreign=level.regions.findIndex(r=>r!==region),before=state();drag(free,foreign);assert.deepEqual(state(),before);
  const annotate=level.regions.findIndex((r,i)=>level.fixed?.[r]!==undefined&&level.fixed[r]!==i);assert.ok(annotate>=0);click(annotate,{shiftKey:true});assert.ok(state().discarded.includes(annotate));
  const fixed=Object.values(level.fixed)[0],unchanged=state();click(fixed,{button:2});assert.deepEqual(state(),unchanged);
@@ -32,14 +32,14 @@ test('PRUMO marker priority selects without editing and click toggles',()=>{
 test('PRUMO brush undo/cancel and Alt pick preserve logic',()=>{
  start('prumo',1);host.querySelector('[data-value="0"]').click();const free=state().assignments.findIndex(x=>x<0),end=level.rows*level.cols-1,before=state(),past=history().past.length;
  drag(free,end);assert.equal(history().past.length,past+1);for(const [i,support] of protectedPrumoCells(level))assert.equal(state().assignments[i],support);
- $('c-direct-undo').click();assert.deepEqual(state(),before);drag(free,end,{cancel:true});assert.deepEqual(state(),before);
+ $('c-undo').click();assert.deepEqual(state(),before);drag(free,end,{cancel:true});assert.deepEqual(state(),before);
  host.querySelector('[data-value="1"]').click();const protectedCell=[...protectedPrumoCells(level)].find(([,s])=>s===0)[0];click(protectedCell,{altKey:true});assert.equal(saved().sessions[key].selectedSupport,0);assert.deepEqual(state(),before);
 });
 test('PACTO exact cycle, canonical numeric keys, candidates and fixed palette',()=>{
  start('pacto');const free=level.clues.findIndex(v=>v<0),fixed=level.clues.findIndex(v=>v>=0);
  for(const value of [0,2,1,3,-1]){click(free);assert.equal(state().values[free],value);}
  click(free,{shiftKey:true});assert.equal(state().values[free],3);keypress(free,'Delete');
- keypress(free,'2',{shiftKey:true});assert.deepEqual(state().candidates[free],[2]);keypress(free,'3');assert.equal(state().values[free],1);assert.deepEqual(state().candidates[free],[]);$('c-direct-undo').click();assert.equal(state().values[free],-1);assert.deepEqual(state().candidates[free],[2]);
+ keypress(free,'2',{shiftKey:true});assert.deepEqual(state().candidates[free],[2]);keypress(free,'3');assert.equal(state().values[free],1);assert.deepEqual(state().candidates[free],[]);$('c-undo').click();assert.equal(state().values[free],-1);assert.deepEqual(state().candidates[free],[2]);
  keypress(free,' ');$('c-local-palette').querySelector('[data-local-candidate="3"]').click();assert.equal($('c-local-palette').hidden,false);assert.deepEqual(state().candidates[free],[2,3]);
  keypress(fixed,' ');const before=state();$('c-local-palette').querySelector('[data-local-value="2"]').click();assert.deepEqual(state(),before);keypress(fixed,'Delete');assert.deepEqual(state(),before);
 });
@@ -48,7 +48,7 @@ test('DESVIO hover/select/cancel never commits, second click commits',()=>{
  click(0);click(0);assert.equal(state().turn,1);assert.equal(state().history.length,1);
 });
 test('DESVIO bot undo returns before human and bot response',()=>{
- start('desvio',0,'bot');click(0);click(0);assert.equal(state().turn,1);flush();assert.equal(state().turn,2);$('c-direct-undo').click();assert.equal(state().turn,0);assert.equal(state().player,0);
+ start('desvio',0,'bot');click(0);click(0);assert.equal(state().turn,1);flush();assert.equal(state().turn,2);$('c-undo').click();assert.equal(state().turn,0);assert.equal(state().player,0);
 });
 test('Saved state reloads; solved board wins only after explicit confirmation',()=>{
  start('elo',1);for(const cellIndex of GEOMETRY_ANSWERS[level.id])if(level.fixed?.[level.regions[cellIndex]]===undefined)click(cellIndex);
@@ -58,7 +58,7 @@ test('PRUMO support keyboard, second finger rollback and right context suppressi
  start('prumo',2);const initial=state();$('c-board').querySelector('[data-support="0"]').dispatch('keydown',{key:'Enter'});assert.equal(saved().sessions[key].selectedSupport,0);
  const free=state().assignments.findIndex(x=>x<0),end=level.rows*level.cols-1;
  event('pointerdown',free,{pointerType:'touch'});event('pointermove',end,{pointerType:'touch'});event('pointerdown',free,{pointerType:'touch',pointerId:2});event('pointerup',free,{pointerType:'touch',pointerId:2});event('pointerup',end,{pointerType:'touch'});assert.deepEqual(state(),initial);
- click(free);assert.equal(state().assignments[free],0);const historyCount=history().past.length;drag(free,end,{button:2});event('contextmenu',end,{button:2});assert.equal(history().past.length,historyCount+1);$('c-direct-undo').click();assert.equal(state().assignments[free],0);
+ click(free);assert.equal(state().assignments[free],0);const historyCount=history().past.length;drag(free,end,{button:2});event('contextmenu',end,{button:2});assert.equal(history().past.length,historyCount+1);$('c-undo').click();assert.equal(state().assignments[free],0);
 });
 test('PACTO focus, longpress and local palette pointer do not add accidental edits',()=>{
  start('pacto',1);const free=level.clues.findIndex(v=>v<0),before=state();keypress(free,'ArrowDown');assert.match(document.activeElement.attrs['aria-label'],new RegExp('L'+(Math.floor((free+level.cols)/level.cols)+1)+'C'+(free%level.cols+1)));assert.equal($('c-details').hidden,true);assert.equal($('c-details').textContent,'');
@@ -67,13 +67,13 @@ test('PACTO focus, longpress and local palette pointer do not add accidental edi
 });
 test('DESVIO accessible confirm survives outside pointer and local undo agreement',()=>{
  start('desvio',0,'training');click(0);assert.equal(state().turn,0);const confirm=$('c-confirm');confirm.dispatch('pointerdown');confirm.dispatch('pointerup');confirm.click();assert.equal(state().turn,1);
- start('desvio',0,'local');const before=state();globalThis.confirm=()=>false;$('c-direct-undo').click();assert.deepEqual(state(),before);globalThis.confirm=()=>true;$('c-direct-undo').click();assert.equal(state().turn,0);
+ start('desvio',0,'local');const before=state();globalThis.confirm=()=>false;$('c-undo').click();assert.deepEqual(state(),before);globalThis.confirm=()=>true;$('c-undo').click();assert.equal(state().turn,0);
 });
 test('ELO returning drag to starting point cancels displacement',()=>{
  start('elo',3);const from=level.regions.findIndex(r=>level.fixed?.[r]===undefined&&level.regions.filter(v=>v===r).length>1),region=level.regions[from],to=level.regions.findIndex((r,i)=>r===region&&i!==from);assert.ok(from>=0&&to>=0);click(from);const before=state();event('pointerdown',from);event('pointermove',to);event('pointermove',from);event('pointerup',from);assert.deepEqual(state(),before,'actual drop cell must win over visited-cell suppression');
 });
 test('DESVIO saved redo branch survives reopening the same map',()=>{
- start('desvio',0,'training');$('c-reset').click();$('restart-collection-confirm').click();click(0);click(0);const moved=state();$('c-direct-undo').click();assert.equal(state().turn,0);start('desvio',0,'training');assert.equal($('c-direct-redo').disabled,false);$('c-direct-redo').click();assert.deepEqual(state(),moved);
+ start('desvio',0,'training');$('c-reset').click();$('restart-collection-confirm').click();click(0);click(0);const moved=state();$('c-undo').click();assert.equal(state().turn,0);start('desvio',0,'training');assert.equal($('c-redo').disabled,false);$('c-redo').click();assert.deepEqual(state(),moved);
 });
 test('PACTO candidate palette restores mounted focus after marking',()=>{
  start('pacto',2);const free=level.clues.findIndex(v=>v<0);keypress(free,' ');const candidate=$('c-local-palette').querySelector('[data-local-candidate="2"]');candidate.focus();candidate.click();assert.equal($('c-local-palette').hidden,false);assert.ok(host.contains(document.activeElement),'palette candidate must not leave focus on a detached element');assert.equal(document.activeElement.dataset.localCandidate,'2');assert.deepEqual(state().candidates[free],[2]);
@@ -91,7 +91,7 @@ test('Visual revision removes only viewport buttons and preserves collapsible ru
  for(const game of ['elo','prumo','pacto','desvio']){
   start(game);for(const id of ['c-coordinates','c-zoom-out','c-zoom-in','c-fit','c-pan-left','c-pan-right','c-pan-up','c-pan-down'])assert.equal(host.querySelector('#'+id),null,game+' must not render '+id);
   assert.ok(host.querySelector('#c-rules-panel'));assert.ok(host.querySelector('#c-rules'));
-  assert.ok(host.querySelector('#c-direct-reset').matches('.action-reset'));
+  assert.ok(host.querySelector('#c-reset').matches('.action-reset'));
   assert.ok(host.querySelector('#c-hint').matches('.action-hint'));
   $('c-rules-panel').open=false;$('c-rules-panel').ontoggle();$('c-advanced-toggle').click();assert.equal($('c-rules-panel').attrs.open,undefined,'closed rules survive rerender');
   $('c-rules-panel').open=true;$('c-rules-panel').ontoggle();$('c-advanced-toggle').click();assert.ok(Object.hasOwn($('c-rules-panel').attrs,'open'),'open rules survive rerender');
@@ -104,8 +104,8 @@ test('PACTO live hatching ignores inferred contradictions and survives undo/redo
  assert.equal($('c-board').querySelectorAll('.cell-conflict').length,0);
  assert.equal($('c-live-errors').hidden,true);
  assert.equal(store.get('intuicao.answers.v1'),beforeAttempts,'Editing never counts an attempt');
- $('c-direct-undo').click();assert.equal(state().values[10],-1);
- $('c-direct-redo').click();assert.equal(state().values[10],1);
+ $('c-undo').click();assert.equal(state().values[10],-1);
+ $('c-redo').click();assert.equal(state().values[10],1);
  assert.equal($('c-board').querySelectorAll('.cell-conflict').length,0);
  $('c-back').click();host.querySelector('[data-new-level="0"]').click();
  assert.equal(state().values[10],1);assert.equal($('c-board').querySelectorAll('.cell-conflict').length,0);

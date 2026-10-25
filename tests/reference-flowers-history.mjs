@@ -1,3 +1,4 @@
+import {restoreWhiteFlowerCSS} from './white-flower-history.mjs';
 import assert from 'node:assert/strict';
 import fs from 'node:fs';
 import crypto from 'node:crypto';
@@ -5,6 +6,7 @@ const m=JSON.parse(fs.readFileSync(new URL('./reference-flowers-authorized-chang
 const sha=s=>crypto.createHash('sha256').update(s).digest('hex');
 export function restoreReferenceFlowersCSS(css){
  if(sha(css)===m.priorCssSHA256)return css;
+ css=restoreWhiteFlowerCSS(css);
  assert.equal(sha(css),m.afterCssSHA256,'Exact authorized original-reference flowers CSS');
  assert.ok(css.endsWith(m.append),'One exact reference-flower appendix');
  css=css.slice(0,-m.append.length);

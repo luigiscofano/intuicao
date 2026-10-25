@@ -1,0 +1,23 @@
+{
+  "schemaVersion": 1,
+  "game": "cut",
+  "id": "meu-corte",
+  "name": "Minha divisão ao meio",
+  "shape": "Retângulo",
+  "target": 50,
+  "family": "Reta",
+  "angle": 0,
+  "amplitude": 40,
+  "frequency": 1,
+  "basicDirection": 0,
+  "basicOrigin": {
+    "x": 400,
+    "y": 230
+  },
+  "initialTravel": 80,
+  "basicMin": -300,
+  "basicMax": 300,
+  "initialOffset": 0,
+  "holes": [],
+  "solutionTravel": 0
+}
