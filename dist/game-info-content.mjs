@@ -67,6 +67,20 @@ export const GAME_INFO = {
     purpose: 'Praticar contagem, exclusão de possibilidades e dedução, combinando uma regra de vizinhança com restrições de linhas e colunas.',
     why: 'A proposta pedagógica é mostrar como regras simples se complementam: uma dupla possível num canto pode mudar as opções de toda uma linha ou coluna.'
   },
+  sintonia: {
+    name: 'SINTONIA',
+    description: 'Um puzzle de coordenação em que um único comando move vários animais, cada um no seu tabuleiro.',
+    summary: 'Leve todos aos seus destinos na mesma configuração. Use paredes e mecanismos para combinar os caminhos.',
+    rules: [
+      'Use as setas, WASD ou o controle direcional. Todos recebem o mesmo comando; cada animal tenta andar uma casa. Quem encontra um bloqueio permanece parado.',
+      'Todos precisam ocupar seus destinos ao final de um comando. Chegar antes não prende ninguém: um animal pode sair do destino e voltar depois.',
+      'Observe os símbolos das placas, cancelas e objetos. Uma passagem aberta no início do comando pode ser atravessada enquanto outro animal sai da placa que a mantinha aberta.',
+      'As mecânicas aparecem aos poucos, com explicações na própria fase. Desfaça e reinicie livremente; não há cronômetro, vidas ou limite obrigatório de movimentos.',
+      'Explore 500 desafios em 20 capítulos ou escolha o Endless para continuar com novas combinações. As dicas consideram a configuração atual dos tabuleiros.'
+    ],
+    purpose: 'Praticar planejamento, antecipação de consequências e raciocínio espacial, articulando objetivos individuais com uma condição conjunta.',
+    why: 'Cada seta pode ajudar um animal e afastar outro do destino. Experimentar paredes, apoios e sequências convida a pensar nas relações entre os caminhos.'
+  },
   desvio: {
     name: 'DESVIO',
     description: 'Um duelo de estratégia por turnos em que cada escolha limita as opções do adversário.',

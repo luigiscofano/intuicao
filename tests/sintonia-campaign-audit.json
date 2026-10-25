@@ -1,0 +1,637 @@
+{
+  "schemaVersion": 1,
+  "rulesVersion": 1,
+  "generatorVersion": 1,
+  "total": 500,
+  "ranges": [
+    {
+      "from": 1,
+      "to": 25,
+      "counts": [
+        25,
+        0,
+        0
+      ]
+    },
+    {
+      "from": 26,
+      "to": 100,
+      "counts": [
+        75,
+        0,
+        0
+      ]
+    },
+    {
+      "from": 101,
+      "to": 225,
+      "counts": [
+        85,
+        40,
+        0
+      ]
+    },
+    {
+      "from": 226,
+      "to": 350,
+      "counts": [
+        45,
+        80,
+        0
+      ]
+    },
+    {
+      "from": 351,
+      "to": 450,
+      "counts": [
+        20,
+        50,
+        30
+      ]
+    },
+    {
+      "from": 451,
+      "to": 500,
+      "counts": [
+        10,
+        20,
+        20
+      ]
+    }
+  ],
+  "animals": [
+    {
+      "animals": 2,
+      "count": 260
+    },
+    {
+      "animals": 3,
+      "count": 190
+    },
+    {
+      "animals": 4,
+      "count": 50
+    }
+  ],
+  "uniqueDefinitions": 500,
+  "uniqueTopologies": 500,
+  "certified": 500,
+  "optimalCertificates": 500,
+  "mechanics": {
+    "walls": {
+      "count": 500,
+      "first": 1
+    },
+    "plate": {
+      "count": 217,
+      "first": 76
+    },
+    "switch": {
+      "count": 70,
+      "first": 101
+    },
+    "key": {
+      "count": 38,
+      "first": 126
+    },
+    "box": {
+      "count": 101,
+      "first": 176
+    },
+    "ice": {
+      "count": 58,
+      "first": 201
+    },
+    "portal": {
+      "count": 59,
+      "first": 226
+    },
+    "oneway": {
+      "count": 44,
+      "first": 251
+    },
+    "alternate": {
+      "count": 32,
+      "first": 276
+    },
+    "fragile": {
+      "count": 40,
+      "first": 301
+    },
+    "handoff": {
+      "count": 26,
+      "first": 326
+    },
+    "and": {
+      "count": 25,
+      "first": 351
+    },
+    "selector": {
+      "count": 25,
+      "first": 401
+    },
+    "delivery": {
+      "count": 25,
+      "first": 426
+    }
+  },
+  "families": {
+    "final-command": 17,
+    "intermediate-stop": 41,
+    "goal-transit": 10,
+    "axis-order": 9,
+    "wall-adjust": 14,
+    "waiting-place": 37,
+    "priority-change": 48,
+    "unequal-loop": 14,
+    "remote-support": 73,
+    "scenario-choice": 70,
+    "support-handoff": 80,
+    "dual-use-object": 10,
+    "preserve-access": 52,
+    "help-recipient": 25
+  },
+  "antiSpam": {
+    "singleDirectionSolvable": [
+      1
+    ],
+    "sweepSolvable": [
+      1,
+      3,
+      4,
+      6,
+      7,
+      9,
+      11,
+      12
+    ],
+    "sweepInconclusive": [],
+    "shortCycleSolvable": [
+      1,
+      2,
+      3,
+      4,
+      6,
+      7,
+      9,
+      12,
+      16,
+      45,
+      85,
+      99
+    ],
+    "biasedRandomWins": 275,
+    "biasedRandomRuns": 6000,
+    "uniformRandomWins": 959,
+    "uniformRandomRuns": 6000
+  },
+  "chapters": [
+    {
+      "number": 1,
+      "title": "Primeiros passos",
+      "roleCounts": {
+        "focus": 4,
+        "mix": 8,
+        "compact": 4,
+        "revisit": 5,
+        "deep": 3,
+        "synthesis": 1
+      },
+      "moves": {
+        "min": 1,
+        "max": 6,
+        "mean": 4.2
+      },
+      "animals": [
+        25,
+        0,
+        0
+      ]
+    },
+    {
+      "number": 2,
+      "title": "Paredes que ajudam",
+      "roleCounts": {
+        "focus": 4,
+        "mix": 8,
+        "compact": 4,
+        "revisit": 5,
+        "deep": 3,
+        "synthesis": 1
+      },
+      "moves": {
+        "min": 5,
+        "max": 9,
+        "mean": 6.6
+      },
+      "animals": [
+        25,
+        0,
+        0
+      ]
+    },
+    {
+      "number": 3,
+      "title": "Ir para voltar",
+      "roleCounts": {
+        "focus": 4,
+        "mix": 8,
+        "compact": 4,
+        "revisit": 5,
+        "deep": 3,
+        "synthesis": 1
+      },
+      "moves": {
+        "min": 5,
+        "max": 12,
+        "mean": 7.3
+      },
+      "animals": [
+        25,
+        0,
+        0
+      ]
+    },
+    {
+      "number": 4,
+      "title": "Um ajuda o outro",
+      "roleCounts": {
+        "focus": 4,
+        "mix": 8,
+        "compact": 4,
+        "revisit": 5,
+        "deep": 3,
+        "synthesis": 1
+      },
+      "moves": {
+        "min": 2,
+        "max": 12,
+        "mean": 7.4
+      },
+      "animals": [
+        25,
+        0,
+        0
+      ]
+    },
+    {
+      "number": 5,
+      "title": "O cenário muda",
+      "roleCounts": {
+        "focus": 4,
+        "mix": 8,
+        "compact": 4,
+        "revisit": 5,
+        "deep": 3,
+        "synthesis": 1
+      },
+      "moves": {
+        "min": 5,
+        "max": 16,
+        "mean": 9.5
+      },
+      "animals": [
+        25,
+        0,
+        0
+      ]
+    },
+    {
+      "number": 6,
+      "title": "Preparar caminhos",
+      "roleCounts": {
+        "focus": 4,
+        "mix": 8,
+        "compact": 4,
+        "revisit": 5,
+        "deep": 3,
+        "synthesis": 1
+      },
+      "moves": {
+        "min": 7,
+        "max": 15,
+        "mean": 9.8
+      },
+      "animals": [
+        25,
+        0,
+        0
+      ]
+    },
+    {
+      "number": 7,
+      "title": "A terceira voz",
+      "roleCounts": {
+        "focus": 4,
+        "mix": 8,
+        "compact": 4,
+        "revisit": 5,
+        "deep": 3,
+        "synthesis": 1
+      },
+      "moves": {
+        "min": 4,
+        "max": 18,
+        "mean": 11.3
+      },
+      "animals": [
+        10,
+        15,
+        0
+      ]
+    },
+    {
+      "number": 8,
+      "title": "Construir apoios",
+      "roleCounts": {
+        "focus": 4,
+        "mix": 8,
+        "compact": 4,
+        "revisit": 5,
+        "deep": 3,
+        "synthesis": 1
+      },
+      "moves": {
+        "min": 5,
+        "max": 14,
+        "mean": 9.6
+      },
+      "animals": [
+        12,
+        13,
+        0
+      ]
+    },
+    {
+      "number": 9,
+      "title": "Distâncias diferentes",
+      "roleCounts": {
+        "focus": 4,
+        "mix": 8,
+        "compact": 4,
+        "revisit": 5,
+        "deep": 3,
+        "synthesis": 1
+      },
+      "moves": {
+        "min": 4,
+        "max": 17,
+        "mean": 9.2
+      },
+      "animals": [
+        13,
+        12,
+        0
+      ]
+    },
+    {
+      "number": 10,
+      "title": "Atalhos",
+      "roleCounts": {
+        "focus": 4,
+        "mix": 8,
+        "compact": 4,
+        "revisit": 5,
+        "deep": 3,
+        "synthesis": 1
+      },
+      "moves": {
+        "min": 6,
+        "max": 20,
+        "mean": 11.2
+      },
+      "animals": [
+        9,
+        16,
+        0
+      ]
+    },
+    {
+      "number": 11,
+      "title": "Escolher quando passar",
+      "roleCounts": {
+        "focus": 4,
+        "mix": 8,
+        "compact": 4,
+        "revisit": 5,
+        "deep": 3,
+        "synthesis": 1
+      },
+      "moves": {
+        "min": 6,
+        "max": 14,
+        "mean": 10.6
+      },
+      "animals": [
+        9,
+        16,
+        0
+      ]
+    },
+    {
+      "number": 12,
+      "title": "Dois caminhos",
+      "roleCounts": {
+        "focus": 4,
+        "mix": 8,
+        "compact": 4,
+        "revisit": 5,
+        "deep": 3,
+        "synthesis": 1
+      },
+      "moves": {
+        "min": 5,
+        "max": 19,
+        "mean": 13.4
+      },
+      "animals": [
+        9,
+        16,
+        0
+      ]
+    },
+    {
+      "number": 13,
+      "title": "Antes de voltar",
+      "roleCounts": {
+        "focus": 4,
+        "mix": 8,
+        "compact": 4,
+        "revisit": 5,
+        "deep": 3,
+        "synthesis": 1
+      },
+      "moves": {
+        "min": 5,
+        "max": 18,
+        "mean": 11.6
+      },
+      "animals": [
+        9,
+        16,
+        0
+      ]
+    },
+    {
+      "number": 14,
+      "title": "Revezamento",
+      "roleCounts": {
+        "focus": 4,
+        "mix": 8,
+        "compact": 4,
+        "revisit": 5,
+        "deep": 3,
+        "synthesis": 1
+      },
+      "moves": {
+        "min": 9,
+        "max": 19,
+        "mean": 13.6
+      },
+      "animals": [
+        9,
+        16,
+        0
+      ]
+    },
+    {
+      "number": 15,
+      "title": "Duas condições",
+      "roleCounts": {
+        "focus": 4,
+        "mix": 8,
+        "compact": 4,
+        "revisit": 5,
+        "deep": 3,
+        "synthesis": 1
+      },
+      "moves": {
+        "min": 7,
+        "max": 28,
+        "mean": 16.9
+      },
+      "animals": [
+        5,
+        20,
+        0
+      ]
+    },
+    {
+      "number": 16,
+      "title": "A quarta voz",
+      "roleCounts": {
+        "focus": 4,
+        "mix": 8,
+        "compact": 4,
+        "revisit": 5,
+        "deep": 3,
+        "synthesis": 1
+      },
+      "moves": {
+        "min": 8,
+        "max": 23,
+        "mean": 15.6
+      },
+      "animals": [
+        5,
+        10,
+        10
+      ]
+    },
+    {
+      "number": 17,
+      "title": "Conexões",
+      "roleCounts": {
+        "focus": 4,
+        "mix": 8,
+        "compact": 4,
+        "revisit": 5,
+        "deep": 3,
+        "synthesis": 1
+      },
+      "moves": {
+        "min": 7,
+        "max": 29,
+        "mean": 16.9
+      },
+      "animals": [
+        5,
+        10,
+        10
+      ]
+    },
+    {
+      "number": 18,
+      "title": "Um recurso compartilhado",
+      "roleCounts": {
+        "focus": 4,
+        "mix": 8,
+        "compact": 4,
+        "revisit": 5,
+        "deep": 3,
+        "synthesis": 1
+      },
+      "moves": {
+        "min": 9,
+        "max": 26,
+        "mean": 15.4
+      },
+      "animals": [
+        5,
+        10,
+        10
+      ]
+    },
+    {
+      "number": 19,
+      "title": "Tudo se encaixa",
+      "roleCounts": {
+        "focus": 4,
+        "mix": 8,
+        "compact": 4,
+        "revisit": 5,
+        "deep": 3,
+        "synthesis": 1
+      },
+      "moves": {
+        "min": 10,
+        "max": 32,
+        "mean": 17.8
+      },
+      "animals": [
+        5,
+        10,
+        10
+      ]
+    },
+    {
+      "number": 20,
+      "title": "Sintonia",
+      "roleCounts": {
+        "focus": 4,
+        "mix": 8,
+        "compact": 4,
+        "revisit": 5,
+        "deep": 3,
+        "synthesis": 1
+      },
+      "moves": {
+        "min": 9,
+        "max": 28,
+        "mean": 17.5
+      },
+      "animals": [
+        5,
+        10,
+        10
+      ]
+    }
+  ],
+  "humanPlaytesting": false,
+  "notes": [
+    "Solubilidade, condições, diversidade estrutural e padrões automáticos foram verificados pelo motor.",
+    "A dificuldade é uma hipótese de design baseada em dependências, estados e ritmo; não representa um estudo com jogadores.",
+    "Comandos sem efeito são excluídos das soluções. Todas as fases continuam acessíveis sem limite de movimentos."
+  ],
+  "generationRetries": 0
+}

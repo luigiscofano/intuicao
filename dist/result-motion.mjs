@@ -1,7 +1,7 @@
 // Feedback visual de resultado. Não calcula física nem decide se a resposta venceu.
 // Cada confirmação troca o conteúdo: efeitos CSS reiniciam sem timers acumulados.
-const names={light:'Reflexos',cut:'Corte certo',elo:'ELO',prumo:'PRUMO',pacto:'PACTO',desvio:'DESVIO'};
-const captions={light:['Um caminho até o alvo.','Gire os espelhos e tente novamente.'],cut:['As áreas ficaram na medida.','Ajuste o corte e tente novamente.']};
+const names={light:'Reflexos',cut:'Corte certo',elo:'ELO',prumo:'PRUMO',pacto:'PACTO',desvio:'DESVIO',sintonia:'SINTONIA'};
+const captions={light:['Um caminho até o alvo.','Gire os espelhos e tente novamente.'],cut:['As áreas ficaram na medida.','Ajuste o corte e tente novamente.'],sintonia:['Todos encontraram seu lugar.','Observe os caminhos e experimente novamente.']};
 // Letras seguem um arco suave sem deformar a leitura nem depender de fontes externas.
 export function celebrationMarkup(){
  const word=[...'PARABÉNS!'];

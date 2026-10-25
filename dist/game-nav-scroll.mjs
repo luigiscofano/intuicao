@@ -6,6 +6,7 @@ export function selectionSelector(button) {
  if (button?.dataset?.infoGame !== undefined) return null;
  if (ORIGINALS.has(button?.dataset?.game)) return '#selection';
  if (COLLECTIONS.has(button?.dataset?.collection)) return '#collection > .level-screen';
+ if (button?.dataset?.sintonia !== undefined) return '#sintonia > .level-screen';
  return null;
 }
 
@@ -30,7 +31,7 @@ export function initGameNavScroll(doc = document, win = window) {
  const instant = (top, left = win.scrollX) => win.scrollTo({top, left, behavior: 'instant'});
  const reduced = () => win.matchMedia?.('(prefers-reduced-motion: reduce)').matches;
  const onClick = event => {
-  const button = event.target?.closest?.('button[data-game], button[data-collection]');
+  const button = event.target?.closest?.('button[data-game], button[data-collection], button[data-sintonia]');
   const selector = button && nav.contains(button) && !button.disabled && selectionSelector(button);
   cancel();
   if (!selector || (event.button !== undefined && event.button !== 0)) return;

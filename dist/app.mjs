@@ -5,6 +5,7 @@ import {generateOriginalEndless,normalizeOriginalOptions} from './endless-origin
 import {bindMiddleConfirm} from './middle-confirm.mjs';
 import {createRestartConfirmation} from './restart-confirmation.mjs';
 import {initCollection} from './collection-ui.mjs';
+import {createSintoniaRoute} from './sintonia/route.mjs';
 import {traceLightWorld,traceLightAttempt,lightAttemptFrame,lightScene} from './light-world.mjs';
 import {worldRaysSVG,portalSVG,lightEndpointsSVG,beamName} from './light-world-render.mjs';
 import {createResultMotion} from './result-motion.mjs';
@@ -490,7 +491,7 @@ scene.addEventListener('keydown',e=>{
  if(game==='light'){if(id==='target'||(state.objects[Number(id)].type==='wall'))return;selected=Number(id);state.objects[selected].angle=clamp(state.objects[selected].angle+step,-90,90);}
  if(game==='cut'){if(id==='basic-cut'&&!free&&cutMode==='basic')setBasicTravel((state.basicTravel??0)+step);else if(id==='rotate-curve'&&allowed('rotate'))state.angle=(state.angle+step+360)%360;else if(id==='move-curve'){if(['ArrowLeft','ArrowRight'].includes(e.key)&&allowed('x'))state.centerX=clamp(state.centerX+step,-400,1200);if(['ArrowUp','ArrowDown'].includes(e.key)&&allowed('y'))state.centerY=clamp(state.centerY+(e.key==='ArrowUp'?-1:1),-400,860);}else if(allowed('offset'))state.offset=clamp(state.offset+step,-600,600);}commitOriginalEdit(before);editor();draw();drawing.querySelector(`[data-item="${id}"]`)?.focus();
 });
-document.querySelectorAll('[data-game]').forEach(b=>b.onclick=()=>{if(!catalogue[b.dataset.game])return;saveEndless();collection.hide();free=false;game=b.dataset.game;showSelection();});
+document.querySelectorAll('[data-game]').forEach(b=>b.onclick=()=>{if(!catalogue[b.dataset.game])return;sintonia.hide();saveEndless();collection.hide();free=false;game=b.dataset.game;showSelection();});
 $('free').textContent='Endless';$('free').onclick=enterEndless;$('challenge').onclick=()=>{free=false;showSelection();};$('level').onchange=e=>{saveCampaign();level=Number(e.target.value);start();};$('reset').onclick=()=>{finishOriginalGesture(true);endDrag();middleConfirm?.cancel();clearTimeout(endlessTimer);endlessTimer=null;const revision=restartRevision;restartConfirmation.open({trigger:$('reset'),isCurrent:()=>revision===restartRevision&&!document.querySelector('.lab').hidden,onConfirm:()=>{const open=$('original-rules-panel').open;start(false,true);$('original-rules-panel').open=open;syncOriginalRules();},onCancel:()=>{updateOriginalHistoryButtons();scheduleEndlessAdvance();}});updateOriginalHistoryButtons();};
 $('selection-free').onclick=enterEndless;$('back-selection').onclick=showSelection;
 $('toggle-controls').onclick=toggleControls;
@@ -508,6 +509,9 @@ $('level-prev').onclick=()=>navigateLevel(-1);$('level-next').onclick=()=>naviga
 $('next').onclick=()=>navigateLevel(1);$('hint').onclick=showOriginalHint;
 showSelection();
 
-const collection=initCollection({hideOriginal(){finishOriginalGesture(false);endDrag();saveCampaign();saveCustom();campaignActive=null;customLevel=null;customId='';customImportRevision++;customStorage.hidden=true;customExport.hidden=true;saveEndless();free=false;endlessPanel.hidden=true;restartConfirmation.dismiss();restartRevision++;invalidate();document.querySelector('.lab').hidden=true;$('selection').hidden=true;}});
+function hideOriginalForSibling(){finishOriginalGesture(false);endDrag();saveCampaign();saveCustom();campaignActive=null;customLevel=null;customId='';customImportRevision++;customStorage.hidden=true;customExport.hidden=true;saveEndless();free=false;endlessPanel.hidden=true;restartConfirmation.dismiss();restartRevision++;invalidate();document.querySelector('.lab').hidden=true;$('selection').hidden=true;}
+const collection=initCollection({hideOriginal(){sintonia.hide();hideOriginalForSibling();}});
+const sintonia=createSintoniaRoute({hideOtherGames(){collection.hide();hideOriginalForSibling();}});
+sintonia.restoreOnLoad();
 
 globalThis.addEventListener?.('pagehide',()=>{saveCampaign();saveCustom();saveEndless();});

@@ -33,13 +33,13 @@ export function initGameInfo(doc=document){
  },hideTip);
  const triggerFor=target=>target?.closest?.('button[data-info-game]');
  const makeTrigger=(game)=>{const b=doc.createElement('button');b.type='button';b.className='game-info-trigger';b.dataset.infoGame=game;b.textContent='i';b.setAttribute('aria-label',`Informações sobre ${GAME_INFO[game].name}`);b.setAttribute('aria-haspopup','dialog');b.setAttribute('aria-controls',dialog.id);return b;};
- const cards=[...nav.querySelectorAll('[data-game],[data-collection]')];
- for(const card of cards){const game=card.dataset.game||card.dataset.collection;const b=makeTrigger(game);b.classList.add('game-info-nav');nav.append(b);}
- const placeNav=()=>{for(const card of cards){const game=card.dataset.game||card.dataset.collection;const b=nav.querySelector(`[data-info-game="${game}"]`);b.style.left=`${card.offsetLeft+card.offsetWidth-40}px`;b.style.top=`${card.offsetTop+card.offsetHeight/2-16}px`;}};
- const activeGame=()=>{const c=cards.find(e=>e.getAttribute('aria-pressed')==='true');return c?.dataset.game||c?.dataset.collection;};
+ const cards=[...nav.querySelectorAll('[data-game],[data-collection],[data-sintonia]')];
+ for(const card of cards){const game=card.dataset.game||card.dataset.collection||card.dataset.sintonia;const b=makeTrigger(game);b.classList.add('game-info-nav');nav.append(b);}
+ const placeNav=()=>{for(const card of cards){const game=card.dataset.game||card.dataset.collection||card.dataset.sintonia;const b=nav.querySelector(`[data-info-game="${game}"]`);b.style.left=`${card.offsetLeft+card.offsetWidth-40}px`;b.style.top=`${card.offsetTop+card.offsetHeight/2-16}px`;}};
+ const activeGame=()=>{const c=cards.find(e=>e.getAttribute('aria-pressed')==='true');return c?.dataset.game||c?.dataset.collection||c?.dataset.sintonia;};
  const syncTitles=()=>{
   const game=activeGame();if(!GAME_INFO[game])return;
-  for(const h of doc.querySelectorAll('#selection-title,#game-title,#collection-title,#c-title')){
+  for(const h of doc.querySelectorAll('#selection-title,#game-title,#collection-title,#c-title,#s-selection-title,#s-title')){
    let b=h.querySelector('.game-info-trigger');if(b?.dataset.infoGame===game)continue;
    b?.remove();h.append(makeTrigger(game));
   }
@@ -49,7 +49,7 @@ export function initGameInfo(doc=document){
  // Watch route/title hosts only, never the game grid or per-move status updates.
  const observer=new MutationObserver(()=>{dwell.cancel();syncTitles();});
  observer.observe(nav,{attributes:true,subtree:true,attributeFilter:['aria-pressed']});
- const host=doc.querySelector('#collection');if(host)observer.observe(host,{childList:true});
+ for(const selector of ['#collection','#sintonia']){const host=doc.querySelector(selector);if(host)observer.observe(host,{childList:true});}
  for(const h of doc.querySelectorAll('#selection-title,#game-title'))observer.observe(h,{childList:true});
  // Appending one missing icon triggers at most one extra no-op observer pass.
  new ResizeObserver(()=>{dwell.cancel();placeNav();}).observe(nav);
