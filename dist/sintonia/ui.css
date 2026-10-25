@@ -117,21 +117,12 @@ body:has(#sintonia:not([hidden])>.level-screen)>footer{position:relative;z-index
 #sintonia .s-dpad>span{grid-column:2;grid-row:2;display:flex;align-items:center;justify-content:center;font-size:9px;color:var(--muted);letter-spacing:.5px}
 #sintonia #s-keyboard-help{font-size:12px;line-height:1.8;max-width:235px;margin:0;color:var(--ink)}
 #sintonia #s-keyboard-help>span{color:var(--muted);font-size:11px}
-#sintonia .s-connections{margin:10px 22px 18px;font-size:11px;color:var(--muted)}
-#sintonia .s-connections details{padding:9px 12px;border:1px solid #d5dccd;border-radius:10px;background:#f7f8f1}
-#sintonia .s-connections summary{cursor:pointer;min-height:32px;display:flex;align-items:center;color:#4d6250;font-weight:650}
-#sintonia .s-relation-buttons{display:flex;flex-wrap:wrap;gap:6px;margin:10px 0}
-#sintonia .s-relation-buttons button{min-height:44px;font-size:10px;padding:7px 9px;font-weight:500}
-#sintonia .s-relation-buttons button strong{padding-right:4px}
-#sintonia .s-relation-buttons button[aria-pressed="true"]{border-color:#b17c45;background:#fae9cc}
-#sintonia #s-relation-description{margin:8px 0 4px;line-height:1.7;color:var(--ink)}
-#sintonia .s-goal-legend{text-align:center;margin:0}
+#sintonia .s-goal-legend{text-align:center;margin:10px 22px 18px;font-size:11px;color:var(--muted)}
 #sintonia .s-goal-legend>span{font-size:20px;vertical-align:middle;color:#698251;margin-right:4px}
 #sintonia .s-readout{align-items:center;gap:20px;padding:15px 24px;min-height:80px}
 #sintonia .s-readout>div{flex:0 0 auto}
 #sintonia .s-readout p{max-width:380px}
 #sintonia #s-hint-text{line-height:1.7;overflow-wrap:anywhere}
-#sintonia #s-assist-note{flex-basis:100%;margin:0}
 #sintonia #s-advanced textarea{width:100%;font:11px/1.5 ui-monospace,monospace;resize:vertical;border:1px solid var(--line);border-radius:9px;padding:10px;background:#f7f7f1;color:var(--ink)}
 #sintonia #s-advanced .s-checkbox{display:flex;align-items:center;gap:8px;margin:14px 0}
 #sintonia .s-checkbox input{width:18px;height:18px;accent-color:var(--green)}
@@ -169,7 +160,7 @@ body:has(#sintonia:not([hidden])>.level-screen)>footer{position:relative;z-index
  #sintonia .s-surface>.stage-top{padding:8px 14px}
  #sintonia .s-mission{margin-inline:14px}
  #sintonia .s-new-rule{margin-inline:14px}
- #sintonia .s-connections{margin-inline:14px}
+ #sintonia .s-goal-legend{margin-inline:14px}
  #sintonia .s-mechanism{inset:12%;font-size:8px}
  #sintonia .s-gate>span{font-size:7px;padding:1px 2px}
  #sintonia .s-gate.vertical>span{top:-5px}

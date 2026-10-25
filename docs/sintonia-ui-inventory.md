@@ -30,8 +30,8 @@ Não foram encontrados serviços de login/perfil, contas, ranking, favoritos, co
 
 - Os quatro animais são representados pelos PNGs aprovados fornecidos pelo integrador. O renderer lê a folha e a grade de quadros em `assets.mjs`, sem modificar o arquivo.
 - Cada mapa é sempre visível; dois e quatro formam duas colunas. Trio usa três colunas quando há espaço e uma segunda linha compacta no celular.
-- Rótulos P/I/C/S/O/E identificam placas, interruptores, chaves, seletores, portais e entregas. Portões mostram os mesmos rótulos. Inspeção destaca ambos os lados e descreve condições faltantes.
-- Leitores de tela encontram nome e posição do animal, destino, descrição de cada casa e lista de passagens. Inspeção também funciona pelos botões da legenda.
+- Rótulos P/I/C/S/O/E identificam placas, interruptores, chaves, seletores, portais e entregas. Portões mostram os mesmos rótulos. Tocar em um elemento do mapa destaca os elementos conectados; tocar novamente limpa o destaque. O painel separado de inspeção foi removido.
+- Leitores de tela encontram nome e posição do animal, destino, descrição de cada casa e lista de passagens. Os botões da antiga legenda de conexões foram removidos.
 - Sementes, certificados e fila de geração ficam no modelo e nas exportações avançadas, sem poluir os controles da partida.
 
 ## Limite da evidência
