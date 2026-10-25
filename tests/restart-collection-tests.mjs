@@ -50,7 +50,7 @@ for(const game of ['elo','prumo','pacto']){
   $('c-hint').click();assert.equal($('c-hint').textContent,'✦ Dicas');
   assert.equal(saved().events.filter(e=>e.type==='hint').at(-1).tier,tier,'Internal hint progression remains intact');
   $('c-advanced-toggle').click();assert.equal($('c-hint').textContent,'✦ Dicas');
-  assert.ok(!$('c-direct-hint').innerHTML.includes('/3'));
+  assert.ok(!$('c-hint').textContent.includes('/3'));
  }
  console.log('PASS',game,'Dicas label stable across tiers 1/2/3 and rerender, internal progression preserved');
 }

@@ -4,7 +4,7 @@ import {GAME_INFO} from './game-info-content.mjs';
 export function createInfoDwell(show, hide, clock=globalThis){
  let timer=null;
  const cancel=()=>{if(timer!==null)clock.clearTimeout(timer);timer=null;hide();};
- return {cancel,start(anchor){cancel();timer=clock.setTimeout(()=>{timer=null;show(anchor);},1500);}};
+ return {cancel,start(anchor){cancel();timer=clock.setTimeout(()=>{timer=null;show(anchor);},800);}};
 }
 
 export function initGameInfo(doc=document){
@@ -22,7 +22,7 @@ export function initGameInfo(doc=document){
   if(!anchor.isConnected||dialog.open||doc.querySelector('dialog[open]'))return;
   const info=GAME_INFO[anchor.dataset.infoGame];if(!info)return;
   const strong=doc.createElement('strong');strong.textContent=info.name;
-  const p=doc.createElement('p');p.textContent=info.summary;
+  const p=doc.createElement('p');p.textContent=info.description+' '+info.summary;
   const hint=doc.createElement('small');hint.textContent='Clique para ver regras e proposta.';
   tip.replaceChildren(strong,p,hint);tip.hidden=false;tip.showPopover();
   const r=anchor.getBoundingClientRect(),t=tip.getBoundingClientRect();
@@ -35,7 +35,7 @@ export function initGameInfo(doc=document){
  const makeTrigger=(game)=>{const b=doc.createElement('button');b.type='button';b.className='game-info-trigger';b.dataset.infoGame=game;b.textContent='i';b.setAttribute('aria-label',`Informações sobre ${GAME_INFO[game].name}`);b.setAttribute('aria-haspopup','dialog');b.setAttribute('aria-controls',dialog.id);return b;};
  const cards=[...nav.querySelectorAll('[data-game],[data-collection]')];
  for(const card of cards){const game=card.dataset.game||card.dataset.collection;const b=makeTrigger(game);b.classList.add('game-info-nav');nav.append(b);}
- const placeNav=()=>{for(const card of cards){const game=card.dataset.game||card.dataset.collection;const b=nav.querySelector(`[data-info-game="${game}"]`);b.style.left=`${card.offsetLeft+card.offsetWidth-40}px`;b.style.top=`${card.offsetTop+8}px`;}};
+ const placeNav=()=>{for(const card of cards){const game=card.dataset.game||card.dataset.collection;const b=nav.querySelector(`[data-info-game="${game}"]`);b.style.left=`${card.offsetLeft+card.offsetWidth-40}px`;b.style.top=`${card.offsetTop+card.offsetHeight/2-16}px`;}};
  const activeGame=()=>{const c=cards.find(e=>e.getAttribute('aria-pressed')==='true');return c?.dataset.game||c?.dataset.collection;};
  const syncTitles=()=>{
   const game=activeGame();if(!GAME_INFO[game])return;
@@ -69,7 +69,8 @@ export function initGameInfo(doc=document){
   const info=GAME_INFO[b.dataset.infoGame];returnFocus=b;title.textContent=info.name;
   const rules=doc.createElement('ul');for(const rule of info.rules){const li=doc.createElement('li');li.textContent=rule;rules.append(li);}
   const section=(heading,text)=>{const s=doc.createElement('section'),h=doc.createElement('h3');h.textContent=heading;s.append(h);if(typeof text==='string'){const p=doc.createElement('p');p.textContent=text;s.append(p);}else s.append(text);return s;};
-  copy.replaceChildren(section('Como jogar',rules),section('Objetivo pedagógico',info.purpose),section('Por que este jogo?',info.why));copy.scrollTop=0;
+  const intro=doc.createElement('p');intro.className='game-info-intro';intro.textContent=info.description;
+  copy.replaceChildren(intro,section('Como jogar',rules),section('Objetivo pedagógico',info.purpose),section('Por que este jogo?',info.why));copy.scrollTop=0;
   dialog.showModal();title.focus({preventScroll:true});
  });
  dialog.querySelectorAll('[data-info-close]').forEach(b=>b.addEventListener('click',()=>dialog.close()));

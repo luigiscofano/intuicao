@@ -12,6 +12,7 @@ import {clamp,segment,cutSuccess,mirrorAngle,wallPolygon} from './math.mjs';
 import {lightLevels,cutLevels} from './levels.mjs';
 import {createAnswerProgress} from './answer-progress.mjs';
 import {getOriginalAnswer} from './original-answers.mjs';
+import {buildOriginalHint} from './original-hints.mjs';
 const $=id=>document.getElementById(id), scene=$('scene'), drawing=$('drawing');
 const restartConfirmation=createRestartConfirmation('restart-original');
 let restartRevision=0;
@@ -77,6 +78,7 @@ function updateAnswerButton(){
 }
 function applyAnswerKey(){
  if(restartConfirmation.isOpen||!answerProgress.unlocked(answerKey()))return;
+ resetOriginalHint();
  const answer=free?structuredClone(endlessGenerated.answer):getOriginalAnswer(game,level);
  // Troca atômica pela configuração certificada, sem mover fixos ou criar pilhas ilegais.
  invalidate();drag=null;pendingSlot=null;placementMessage='';state=answer;if(game==='cut'){cutMode=free?'advanced':'basic';cutDrafts={basic:null,advanced:null};}
@@ -98,8 +100,18 @@ function applyControlsVisibility(){
 function toggleControls(){controlsHidden=!controlsHidden;applyControlsVisibility();try{globalThis.localStorage?.setItem('intuicao.advanced-hidden',String(controlsHidden));}catch{}}
 let placementMessage='',pendingSlot=null;
 let game='light',free=false,level=0,state={},selected=0,drag=null;
+let originalHintPlan=null,originalHintTier=0,originalHintKey='';
+function resetOriginalHint(){originalHintPlan=null;originalHintTier=0;originalHintKey='';$('hint-text').textContent='';}
+function originalHintPosition(){return JSON.stringify([game,free?endlessGenerated?.level.id:level,cutMode,state,game==='light'?[phase,lightFired]:null]);}
+function showOriginalHint(){
+ if(restartConfirmation.isOpen)return;
+ const key=originalHintPosition();
+ if(!originalHintPlan||key!==originalHintKey){originalHintPlan=buildOriginalHint(game,free?endlessGenerated.level:catalogue[game][level],state,{free,cutMode,selected,phase,ray:evaluation?.ray});originalHintKey=key;originalHintTier=0;}
+ originalHintTier=Math.min(3,originalHintTier+1);
+ $('hint-text').textContent=originalHintPlan[['focusText','explanation','nextStep'][originalHintTier-1]];
+}
 const completed=new Set();const lastLevel={light:null,cut:null};
-function showSelection(){saveEndless();free=false;endlessPanel.hidden=true;restartConfirmation.dismiss();restartRevision++;placementMessage='';pendingSlot=null;invalidate();drag=null;document.querySelector('.lab').hidden=true;$('selection').hidden=false;document.querySelectorAll('[data-game]').forEach(b=>b.setAttribute('aria-pressed',String(b.dataset.game===game)));$('selection-title').textContent={light:`Reflexos · ${lightLevels.length} níveis`,cut:'Corte certo · 100 níveis'}[game];let html='';for(let k=0;k<catalogue[game].length;k+=10){if(game==='light')html+=`<h3 class="stage-heading">${catalogue.light[k].stage} · ${catalogue.light[k].stageName}</h3>`;if(game==='cut')html+=`<h3 class="stage-heading">${['1 · Uma direção por vez','2 · Parábolas e vazios','3 · Ondas e recortes','4 · Curvas em S','5 · Silhuetas irregulares','6 · Vazios maiores','7 · Bordas abertas','8 · Recortes combinados','9 · Área que resta','10 · Síntese de formas'][k/10]}</h3>`;html+='<div class="level-group">'+catalogue[game].slice(k,k+10).map((l,j)=>{const i=k+j,done=completed.has(game+i),assisted=answerProgress.get(`${game}:${l.id??i}`).assisted,current=lastLevel[game]===i;return `<button class="level-tile ${done?'done':''}" data-level="${i}" aria-current="${current}" aria-label="Nível ${i+1}: ${l.name}${done?', concluído':''}${assisted?', assistido por gabarito':''}${current?', atual':''}"><span>${i+1}</span><small>${done?(assisted?'✓ com gabarito':'✓ concluído'):assisted?'com gabarito':current?'atual':'explorar'}</small></button>`;}).join('')+'</div>';}$('level-grid').innerHTML=html;$('level-grid').querySelectorAll('[data-level]').forEach(b=>b.onclick=()=>{level=Number(b.dataset.level);free=false;start();});$('selection-title').focus();}
+function showSelection(){resetOriginalHint();saveEndless();free=false;endlessPanel.hidden=true;restartConfirmation.dismiss();restartRevision++;placementMessage='';pendingSlot=null;invalidate();drag=null;document.querySelector('.lab').hidden=true;$('selection').hidden=false;document.querySelectorAll('[data-game]').forEach(b=>b.setAttribute('aria-pressed',String(b.dataset.game===game)));$('selection-title').textContent={light:`Reflexos · ${lightLevels.length} níveis`,cut:'Corte certo · 100 níveis'}[game];let html='';for(let k=0;k<catalogue[game].length;k+=10){if(game==='light')html+=`<h3 class="stage-heading">${catalogue.light[k].stage} · ${catalogue.light[k].stageName}</h3>`;if(game==='cut')html+=`<h3 class="stage-heading">${['1 · Uma direção por vez','2 · Parábolas e vazios','3 · Ondas e recortes','4 · Curvas em S','5 · Silhuetas irregulares','6 · Vazios maiores','7 · Bordas abertas','8 · Recortes combinados','9 · Área que resta','10 · Síntese de formas'][k/10]}</h3>`;html+='<div class="level-group">'+catalogue[game].slice(k,k+10).map((l,j)=>{const i=k+j,done=completed.has(game+i),assisted=answerProgress.get(`${game}:${l.id??i}`).assisted,current=lastLevel[game]===i;return `<button class="level-tile ${done?'done':''}" data-level="${i}" aria-current="${current}" aria-label="Nível ${i+1}: ${l.name}${done?', concluído':''}${assisted?', assistido por gabarito':''}${current?', atual':''}"><span>${i+1}</span><small>${done?(assisted?'✓ com gabarito':'✓ concluído'):assisted?'com gabarito':current?'atual':'explorar'}</small></button>`;}).join('')+'</div>';}$('level-grid').innerHTML=html;$('level-grid').querySelectorAll('[data-level]').forEach(b=>b.onclick=()=>{level=Number(b.dataset.level);free=false;start();});$('selection-title').focus();}
 
 let phase='editing',evaluation=null,frame=0,animationToken=0,revealed=[],lightDistance=0,lightFired=[];
 function invalidate(){if(free&&endlessRun)endlessRun.solved=false;clearTimeout(endlessTimer);endlessTimer=null;middleConfirm?.cancel();resultMotion.clear();cancelAnimationFrame(frame);animationToken++;phase='editing';evaluation=null;revealed=[];lightDistance=0;lightFired=[];scene.setAttribute('aria-busy','false');}
@@ -150,6 +162,7 @@ const allowed=key=>free||(cutMode==='advanced'&&(['x','y','rotate','offset'].inc
 const cutDirection=()=>{const a=cutLevels[level].basicDirection*Math.PI/180;return {x:Math.cos(a),y:Math.sin(a)};};
 function setCutMode(mode){
  if(game!=='cut'||free||mode===cutMode)return;
+ resetOriginalHint();
  cutDrafts[cutMode]=structuredClone(state);cutMode=mode;
  state=structuredClone(cutDrafts[mode]??state);invalidate();drag=null;editor();draw();$('cut-mode-'+mode)?.focus();
 }
@@ -182,6 +195,7 @@ function cutControlGuide(){
 
 const field=(key,label,min,max,step,value,unit='',disabled=false)=>`<div class="field"><header><label for="${key}">${label}</label><output id="${key}-out" for="${key}">${fmt(value,step<.1?2:1)}${unit}</output></header><div class="precision"><input id="${key}" data-bind="${key}" type="range" min="${min}" max="${max}" step="${step}" value="${value}" aria-label="${label}" ${disabled?'disabled':''}><input id="${key}-number" data-bind="${key}" type="number" min="${min}" max="${max}" step="${step}" value="${value}" aria-label="${label} (valor)" ${disabled?'disabled':''}></div></div>`;
 function start(){
+ resetOriginalHint();if($('original-rules-panel'))$('original-rules-panel').open=false;
  restartConfirmation.dismiss();restartRevision++;
  placementMessage='';pendingSlot=null;invalidate();drag=null;$('selection').hidden=true;document.querySelector('.lab').hidden=false;if(!free)lastLevel[game]=level; selected=0; const l=catalogue[game][level];
  if(free){try{endlessGenerated=generateOriginalEndless(game,endlessRun.seed,endlessRun.options);}catch(error){free=false;showSelection();$('selection-title').textContent='Não foi possível gerar este desafio. Abra o modo livre e tente outra configuração.';return;}state=structuredClone(endlessGenerated.initial);endlessRun.solved=false;cutMode='advanced';cutDrafts={basic:null,advanced:null};if(game==='light')selected=state.objects.findIndex(o=>o.type==='mirror');}
@@ -269,6 +283,9 @@ function status(label,value,message,success){
  $('next').disabled=phase!=='result'||!success;$('next').textContent=level===catalogue[game].length-1?'Voltar ao início ↺':'Próximo desafio →';
 }
 function draw(){
+ // Só descarta a orientação quando a configuração ou o disparo observado muda.
+ // Selecionar uma alça ou abrir controles não consome nem reinicia as dicas.
+ if(originalHintPlan&&originalHintKey!==originalHintPosition())resetOriginalHint();
  const focusedSource=document.activeElement?.closest?.('[data-light-source]')?.dataset.lightSource;
  let svg='<defs><pattern id="dots" width="25" height="25" patternUnits="userSpaceOnUse"><circle cx="2" cy="2" r="1" fill="#d8ded0"/></pattern></defs><rect width="800" height="460" fill="url(#dots)"/>';
  if(game==='light'){
@@ -333,7 +350,7 @@ applyControlsVisibility();
 $('confirm').onclick=confirmAnswer;
 function navigateLevel(delta){const next=level+delta;if(free||next<0||next>=catalogue[game].length)return;level=next;start();}
 $('level-prev').onclick=()=>navigateLevel(-1);$('level-next').onclick=()=>navigateLevel(1);
-$('next').onclick=()=>navigateLevel(1);$('hint').onclick=()=>{$('hint-text').textContent=free?endlessGenerated.level.hint:game==='cut'?'Mova a linha até se aproximar da meta. A porcentagem depende da área, não do comprimento dos lados.':catalogue[game][level].hint;};
+$('next').onclick=()=>navigateLevel(1);$('hint').onclick=showOriginalHint;
 showSelection();
 
 const collection=initCollection({hideOriginal(){saveEndless();free=false;endlessPanel.hidden=true;restartConfirmation.dismiss();restartRevision++;invalidate();document.querySelector('.lab').hidden=true;$('selection').hidden=true;}});

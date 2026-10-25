@@ -1,3 +1,4 @@
+import {restoreHintsRulesFile} from './hints-rules-history.mjs';
 import {restoreAllScreensFrameFile} from './all-screens-frame-history.mjs';
 import {restoreManualCheckFile} from './manual-check-history.mjs';
 import {restoreOriginalLogoHTML} from './original-logo-history.mjs';
@@ -9,6 +10,7 @@ import crypto from 'node:crypto';
 const manifest=JSON.parse(fs.readFileSync(new URL('./elo-v3-authorized-change.json',import.meta.url)));
 const sha=s=>crypto.createHash('sha256').update(s).digest('hex');
 export function restoreEloV3File(path,bytes){
+ bytes=restoreHintsRulesFile(path,bytes);
  bytes=restoreAllScreensFrameFile(path,bytes);
  bytes=restoreManualCheckFile(path,bytes);
  const name=path.replace(/^dist\//,'');

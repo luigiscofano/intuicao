@@ -1,14 +1,16 @@
+import {restoreHintsRulesFile} from './hints-rules-history.mjs';
+import {restoreBottomAlignmentCSS} from './bottom-alignment-history.mjs';
 import {restoreGameInfoHTML} from './game-info-history.mjs';
 import assert from 'node:assert/strict';
 import fs from 'node:fs';
 import crypto from 'node:crypto';
 import {restoreGameSpacingCSS} from './game-spacing-history.mjs';
 import {restoreAllScreensFrameCSS} from './all-screens-frame-history.mjs';
-const read=p=>fs.readFileSync(new URL('../'+p,import.meta.url));
+const read=p=>restoreHintsRulesFile(p,fs.readFileSync(new URL('../'+p,import.meta.url)));
 const sha=b=>crypto.createHash('sha256').update(b).digest('hex');
 const m=JSON.parse(read('tests/game-spacing-authorized-change.json'));
 const previous=JSON.parse(read('tests/all-screens-frame-authorized-change.json'));
-const css=read('dist/platform.css').toString();
+const css=restoreBottomAlignmentCSS(read('dist/platform.css').toString());
 assert.equal(sha(css),m.afterCssSHA256);
 const restored=restoreGameSpacingCSS(css);
 assert.equal(sha(restored),m.priorCssSHA256);

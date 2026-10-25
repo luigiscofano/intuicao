@@ -1,3 +1,4 @@
+import {restoreHintsRulesFile} from './hints-rules-history.mjs';
 import assert from 'node:assert/strict';
 import fs from 'node:fs';
 import crypto from 'node:crypto';
@@ -5,6 +6,7 @@ const m=JSON.parse(fs.readFileSync(new URL('./game-info-authorized-change.json',
 const previous=JSON.parse(fs.readFileSync(new URL('./original-logo-authorized-change.json',import.meta.url),'utf8'));
 const sha=s=>crypto.createHash('sha256').update(s).digest('hex');
 export function restoreGameInfoHTML(html){
+ html=restoreHintsRulesFile('index.html',html);
  // A historical caller may already have reversed this layer, or the logo layer.
  // Accept only those exact documents, not arbitrary markup missing the additions.
  if([m.priorHtmlSHA256,previous.priorHtmlSHA256].includes(sha(html)))return html;

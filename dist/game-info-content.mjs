@@ -3,6 +3,7 @@
 export const GAME_INFO = {
   light: {
     name: 'Reflexos',
+    description: 'Um puzzle de luz e espelhos em que você constrói percursos para raios coloridos.',
     summary: 'Gire espelhos para levar cada raio ao alvo da mesma cor e símbolo, sem encostar nas trajetórias de outras cores.',
     rules: [
       'Gire os espelhos para guiar a luz. As posições dos espelhos e das paredes são fixas; paredes e bordas interrompem os raios.',
@@ -15,6 +16,7 @@ export const GAME_INFO = {
   },
   cut: {
     name: 'Corte certo',
+    description: 'Um puzzle de estimativa de áreas em que uma linha ou curva divide uma figura.',
     summary: 'Ajuste a linha ou curva até que o lado roxo tenha a porcentagem pedida da área útil da figura. Espaços vazios não contam.',
     rules: [
       'Observe a meta e ajuste a linha ou curva para deixar essa porcentagem da área útil no lado roxo.',
@@ -27,6 +29,7 @@ export const GAME_INFO = {
   },
   elo: {
     name: 'ELO',
+    description: 'Um puzzle de lógica em que pontos de regiões diferentes formam um circuito fechado.',
     summary: 'Coloque um ponto por região para formar um único circuito. As ligações são automáticas; observe também as pistas especiais de cada fase.',
     rules: [
       'Coloque exatamente um ponto em cada região, mantendo os pontos fixos. Cada ponto se liga automaticamente ao primeiro ponto encontrado em cada direção horizontal ou vertical; fronteiras e anotações X não bloqueiam essas ligações.',
@@ -40,6 +43,7 @@ export const GAME_INFO = {
   },
   prumo: {
     name: 'PRUMO',
+    description: 'Um puzzle de equilíbrio em que você desenha peças ao redor de seus apoios.',
     summary: 'Divida a grade em peças conectadas e equilibradas. O centro de massa de cada peça deve coincidir com seu apoio.',
     rules: [
       'Pinte todas as casas, sem sobreposição, formando uma peça para cada apoio. As casas de uma peça devem estar conectadas pelos lados.',
@@ -52,6 +56,7 @@ export const GAME_INFO = {
   },
   pacto: {
     name: 'PACTO',
+    description: 'Um puzzle de dedução em que quatro símbolos precisam formar parcerias numa grade.',
     summary: 'Complete a grade com quatro símbolos: dois de cada por linha e coluna. Cada casa deve tocar exatamente uma casa igual pelos lados.',
     rules: [
       'Complete a grade 8 × 8 com círculo, triângulo, quadrado e losango, sem alterar as pistas fixas.',
@@ -64,6 +69,7 @@ export const GAME_INFO = {
   },
   desvio: {
     name: 'DESVIO',
+    description: 'Um duelo de estratégia por turnos em que cada escolha limita as opções do adversário.',
     summary: 'Escolha uma casa e envie o adversário para a linha ou coluna indicada. Quem ficar sem jogada disponível perde.',
     rules: [
       'Na partida comum, a primeira escolha é livre. Depois, escolha uma casa disponível no destino indicado e confirme a jogada.',

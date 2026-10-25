@@ -1,0 +1,16 @@
+{
+  "baseCommit": "6d7cb638e4c3497309e6653ec56f9aa086f174b8",
+  "purpose": "Align active-game footer curve start centers with the 1px panel border centers, moving each side inward by 1px.",
+  "priorCssSHA256": "74ac9ae3661a98c32f66111e37afcf4c9fc4fadf595989c519378fb134a2397c",
+  "afterCssSHA256": "7436ac931827d323a7d1a751649747a1ae1bef79f6c0963246633df9373e3aa9",
+  "replacements": [
+    {
+      "before": "body:has(.lab:not([hidden]), #collection:not([hidden]) > .collection-lab) > footer::before{content:\"\";position:absolute;top:-2px;bottom:-113px;left:calc(40px - var(--game-root-flare) - .5px);width:calc(100% - 80px + 2 * var(--game-root-flare) + 1px);background:url(\"platform-assets/continuous-root-left.svg\") left/var(--game-root-flare) 100% no-repeat,url(\"platform-assets/continuous-root-right.svg\") right/var(--game-root-flare) 100% no-repeat,linear-gradient(#fff,#fff) center/calc(100% - 2 * var(--game-root-flare)) 100% no-repeat;filter:drop-shadow(0 2px 4px #34452a12);clip-path:inset(0 -12px -12px);pointer-events:none;user-select:none;z-index:-1}",
+      "after": "body:has(.lab:not([hidden]), #collection:not([hidden]) > .collection-lab) > footer::before{content:\"\";position:absolute;top:-2px;bottom:-113px;left:calc(40px - var(--game-root-flare) + .5px);width:calc(100% - 80px + 2 * var(--game-root-flare) - 1px);background:url(\"platform-assets/continuous-root-left.svg\") left/var(--game-root-flare) 100% no-repeat,url(\"platform-assets/continuous-root-right.svg\") right/var(--game-root-flare) 100% no-repeat,linear-gradient(#fff,#fff) center/calc(100% - 2 * var(--game-root-flare)) 100% no-repeat;filter:drop-shadow(0 2px 4px #34452a12);clip-path:inset(0 -12px -12px);pointer-events:none;user-select:none;z-index:-1}"
+    },
+    {
+      "before": " body:has(.lab:not([hidden]), #collection:not([hidden]) > .collection-lab) > footer::before{left:calc(16px - var(--game-root-flare) - .5px);width:calc(100% - 32px + 2 * var(--game-root-flare) + 1px);bottom:-85px}",
+      "after": " body:has(.lab:not([hidden]), #collection:not([hidden]) > .collection-lab) > footer::before{left:calc(16px - var(--game-root-flare) + .5px);width:calc(100% - 32px + 2 * var(--game-root-flare) - 1px);bottom:-85px}"
+    }
+  ]
+}

@@ -7,7 +7,11 @@ import {validateGeometry,geometryLocalAnalysis,neighbors} from './geometry-games
 const names=['círculo','triângulo','quadrado','losango'];
 const coord=(l,c)=>`L${Math.floor(c/l.cols)+1}C${c%l.cols+1}`;
 const result=(cells,focusText,explanation,action=null)=>({cells:[...new Set(cells)],focusText,explanation,action});
-const unavailable=()=>result([],'Nenhuma dedução direta disponível.','Não encontrei uma conclusão demonstrada pelas técnicas locais disponíveis. Isso não prova que a posição esteja correta ou que não exista outra dedução. Nenhuma resposta foi revelada.');
+const unavailable=(l,state)=>{
+ const values=l.game==='elo'?state.positions:l.game==='prumo'?state.assignments:(Array.isArray(state)?state:state.values),missing=values.filter(v=>v<0).length;
+ const context=`${l.game.toUpperCase()} · ${l.rows} × ${l.cols}: faltam ${missing} ${l.game==='elo'?'peças':'casas'} nesta configuração.`;
+ return result([],context+' Nenhuma dedução direta disponível.',context+' Não encontrei uma conclusão demonstrada pelas técnicas locais disponíveis. Isso não prova que a posição esteja correta ou que não exista outra dedução. Nenhuma resposta foi revelada.');
+};
 function conflict(l,cells,text){const where=cells.length?cells.map(c=>coord(l,c)).join(', '):'o tabuleiro';return result(cells,`Revise ${where}.`,`Contradição na configuração atual: ${text} Revise ${where} antes de continuar.`);}
 function geometry(l,state){
  const check=validateGeometry(l,state);
@@ -15,7 +19,7 @@ function geometry(l,state){
  if(check.complete)return result([],'Todas as regras foram satisfeitas.','O tabuleiro está completo e válido pelas regras.');
  // PRUMO retains its import guard. ELO uses bounded, local-only propagation
  // across the published campaign, including 10–12-cell-wide boards.
- if(l.game!=='elo'&&l.rows*l.cols>64)return unavailable();
+ if(l.game!=='elo'&&l.rows*l.cols>64)return unavailable(l,state);
  const d=geometryLocalAnalysis(l,state);
  if(l.game==='elo'&&d.contradiction&&d.diagnostic?.message)return conflict(l,d.diagnostic.cells??[],d.diagnostic.message);
  if(d.contradiction){const empty=d.candidates.findIndex(x=>!x.length),cells=l.game==='elo'?l.regions.flatMap((r,c)=>r===empty?[c]:[]):[empty];return conflict(l,cells,`As restrições locais deixam ${l.game==='elo'?`a região ${empty+1}`:coord(l,empty)} sem alternativa. ${d.eliminations.map(e=>e.explanation).join(' ')}`);}
@@ -31,7 +35,7 @@ function geometry(l,state){
  // Singleton regions need no eliminations to force their only location.
  if(l.game==='elo')for(let r=0;r<d.candidates.length;r++)if((state.positions?.[r]??-1)<0&&d.candidates[r].length===1){const cell=d.candidates[r][0];return result([cell],`Observe a região ${r+1}, em ${coord(l,cell)}.`,`A região ${r+1} tem somente ${coord(l,cell)} como posição permitida pelas pistas e pelas deduções locais. Como cada região precisa de exatamente um ponto, ele deve ocupar essa casa.`,{type:'place-point',cell,value:cell});}
  const e=d.eliminations[0];if(e){const cell=l.game==='elo'?e.value:e.index;return result([cell],`Observe ${coord(l,cell)}.`,e.explanation);}
- return unavailable();
+ return unavailable(l,state);
 }
 function symbolConflict(l,v){
  const n=l.rows*l.cols;
@@ -69,7 +73,7 @@ function symbols(l,state){
  if(forced){const {c,allowed,removed}=forced;return result([c,...removed.flatMap(e=>e.cells)],`Observe ${coord(l,c)} e suas restrições.`,`${removed.map(e=>`${coord(l,c)} não pode ser ${names[e.value]}: ${e.text}`).join(' ')} Portanto, ${coord(l,c)} é ${names[allowed[0]]}.`,{type:'set',cell:c,value:allowed[0]});}
  const elimination=deductions.find(d=>d.removed.length);
  if(elimination){const {c,removed}=elimination;return result([c,...removed.flatMap(e=>e.cells)],`Observe as possibilidades de ${coord(l,c)}.`,removed.map(e=>`${coord(l,c)} não pode ser ${names[e.value]}: ${e.text}`).join(' ')+' Ainda não há um único valor demonstrado para esta casa.');}
- return unavailable();
+ return unavailable(l,state);
 }
 export function buildDirectHint(game,level,state){
  if(game==='pacto')return symbols(level,state);

@@ -1,3 +1,4 @@
+import {restoreHintsRulesFile} from './hints-rules-history.mjs';
 import {restoreGameInfoHTML} from './game-info-history.mjs';
 import {restoreAllScreensFrameFile} from './all-screens-frame-history.mjs';
 import {restoreManualCheckFile} from './manual-check-history.mjs';
@@ -6,7 +7,7 @@ import fs from 'node:fs';
 import crypto from 'node:crypto';
 import {restoreOriginalLogoHTML} from './original-logo-history.mjs';
 const m=JSON.parse(fs.readFileSync(new URL('./original-logo-authorized-change.json',import.meta.url),'utf8'));
-const read=p=>fs.readFileSync(new URL('../'+p,import.meta.url));
+const read=p=>restoreHintsRulesFile(p,fs.readFileSync(new URL('../'+p,import.meta.url)));
 const sha=b=>crypto.createHash('sha256').update(b).digest('hex');
 const html=read('dist/index.html').toString(),css=read('dist/logo.css').toString();
 assert.equal(sha(restoreGameInfoHTML(html)),m.afterHtmlSHA256,'Current document matches exact approved logo changes');

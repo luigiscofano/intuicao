@@ -1,0 +1,58 @@
+{
+  "baseCommit": "6d7cb638e4c3497309e6653ec56f9aa086f174b8",
+  "purpose": "Set information hover dwell to 800ms, begin each explanation with a game description, and vertically center navigation information buttons.",
+  "files": {
+    "game-info.mjs": {
+      "beforeSha256": "1726d7cb20c51e6b01f87e29f07167bd7961b4afb1fe492a6e3ff5cbf17f540f",
+      "afterSha256": "29a567ffa0382ecafcb5f4b8443289a5b8143e61e7c027f7189901e4f8e5ee56",
+      "replacements": [
+        {
+          "before": " return {cancel,start(anchor){cancel();timer=clock.setTimeout(()=>{timer=null;show(anchor);},1500);}};\n",
+          "after": " return {cancel,start(anchor){cancel();timer=clock.setTimeout(()=>{timer=null;show(anchor);},800);}};\n"
+        },
+        {
+          "before": "  const p=doc.createElement('p');p.textContent=info.summary;\n",
+          "after": "  const p=doc.createElement('p');p.textContent=info.description+' '+info.summary;\n"
+        },
+        {
+          "before": " const placeNav=()=>{for(const card of cards){const game=card.dataset.game||card.dataset.collection;const b=nav.querySelector(`[data-info-game=\"${game}\"]`);b.style.left=`${card.offsetLeft+card.offsetWidth-40}px`;b.style.top=`${card.offsetTop+8}px`;}};\n",
+          "after": " const placeNav=()=>{for(const card of cards){const game=card.dataset.game||card.dataset.collection;const b=nav.querySelector(`[data-info-game=\"${game}\"]`);b.style.left=`${card.offsetLeft+card.offsetWidth-40}px`;b.style.top=`${card.offsetTop+card.offsetHeight/2-16}px`;}};\n"
+        },
+        {
+          "before": "  copy.replaceChildren(section('Como jogar',rules),section('Objetivo pedagógico',info.purpose),section('Por que este jogo?',info.why));copy.scrollTop=0;\n",
+          "after": "  const intro=doc.createElement('p');intro.className='game-info-intro';intro.textContent=info.description;\n  copy.replaceChildren(intro,section('Como jogar',rules),section('Objetivo pedagógico',info.purpose),section('Por que este jogo?',info.why));copy.scrollTop=0;\n"
+        }
+      ]
+    },
+    "game-info-content.mjs": {
+      "beforeSha256": "3172c022291583fbd921c9607ef882ddd8250acc7ddb9545889c5901aad4c7bf",
+      "afterSha256": "e5ac25dca1f5a20c5546d0374991205957fb8ac941667ff9b7ca3856998c42b4",
+      "replacements": [
+        {
+          "before": "    name: 'Reflexos',\n",
+          "after": "    name: 'Reflexos',\n    description: 'Um puzzle de luz e espelhos em que você constrói percursos para raios coloridos.',\n"
+        },
+        {
+          "before": "    name: 'Corte certo',\n",
+          "after": "    name: 'Corte certo',\n    description: 'Um puzzle de estimativa de áreas em que uma linha ou curva divide uma figura.',\n"
+        },
+        {
+          "before": "    name: 'ELO',\n",
+          "after": "    name: 'ELO',\n    description: 'Um puzzle de lógica em que pontos de regiões diferentes formam um circuito fechado.',\n"
+        },
+        {
+          "before": "    name: 'PRUMO',\n",
+          "after": "    name: 'PRUMO',\n    description: 'Um puzzle de equilíbrio em que você desenha peças ao redor de seus apoios.',\n"
+        },
+        {
+          "before": "    name: 'PACTO',\n",
+          "after": "    name: 'PACTO',\n    description: 'Um puzzle de dedução em que quatro símbolos precisam formar parcerias numa grade.',\n"
+        },
+        {
+          "before": "    name: 'DESVIO',\n",
+          "after": "    name: 'DESVIO',\n    description: 'Um duelo de estratégia por turnos em que cada escolha limita as opções do adversário.',\n"
+        }
+      ]
+    }
+  }
+}
