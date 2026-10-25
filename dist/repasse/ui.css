@@ -46,8 +46,6 @@
 #repasse .r-preview-source{background:#e4ecd9}
 #repasse .r-preview-target{outline:2px dashed #647c46;outline-offset:1px;z-index:3}
 #repasse .r-board-options{display:flex;gap:12px;align-items:center;flex-wrap:wrap;margin:8px 24px}
-#repasse .r-board-options button{border:1px solid var(--line);background:#fffefa;padding:7px 11px;min-height:44px}
-#repasse .r-board-options button[aria-pressed="true"]{background:var(--green);color:#fff;border-color:var(--green)}
 #repasse #r-keyboard-help{font-size:11px;line-height:1.65;margin:0;flex:1 1 220px;color:var(--muted)}
 #repasse .r-preview{min-height:40px;margin:8px 24px 12px;padding:7px 10px;border-left:2px solid #b4c79b;font-size:12px;line-height:1.65;color:#405e49}
 #repasse .r-box-legend{display:flex;gap:6px 15px;flex-wrap:wrap;margin:4px 24px 16px;font-size:10px;color:var(--muted)}

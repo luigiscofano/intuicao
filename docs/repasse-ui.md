@@ -12,7 +12,7 @@ O CSS próprio define o tabuleiro, suas caixas, as setas das peças e a animaç�
 
 O tabuleiro posiciona cada peça no mesmo lugar durante toda a partida e renderiza exatamente uma caixa para cada extremidade de linha e de coluna. Os quatro cantos não recebem caixas. Todas as metas, inclusive zero, mostram acumulado e objetivo. Os estados incompleto, exato e ultrapassado recebem símbolos e nomes acessíveis além de cores.
 
-Uma ativação normal por clique, toque, Enter ou espaço retira a peça imediatamente. Não existe um primeiro toque obrigatório para seleção. O botão explícito **Inspecionar repasses** permite observar sem retirar quando o jogador deseja esse comportamento.
+Uma ativação normal por clique, toque, Enter ou espaço retira a peça imediatamente. Não existe um primeiro toque obrigatório para seleção.
 
 Apontar ou focar uma peça destaca seus destinatários atuais e mostra o valor inteiro de cada contribuição. A prévia é recalculada pelo motor a cada consulta. A transição é resolvida antes da animação: os elementos que mostram +valor não executam somas e não controlam a validade da retirada. As peças não são desabilitadas preventivamente por uma heurística de derrota.
 
