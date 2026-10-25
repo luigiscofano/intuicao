@@ -17,6 +17,7 @@ function geometry(l,state){
  // across the published campaign, including 10–12-cell-wide boards.
  if(l.game!=='elo'&&l.rows*l.cols>64)return unavailable();
  const d=geometryLocalAnalysis(l,state);
+ if(l.game==='elo'&&d.contradiction&&d.diagnostic?.message)return conflict(l,d.diagnostic.cells??[],d.diagnostic.message);
  if(d.contradiction){const empty=d.candidates.findIndex(x=>!x.length),cells=l.game==='elo'?l.regions.flatMap((r,c)=>r===empty?[c]:[]):[empty];return conflict(l,cells,`As restrições locais deixam ${l.game==='elo'?`a região ${empty+1}`:coord(l,empty)} sem alternativa. ${d.eliminations.map(e=>e.explanation).join(' ')}`);}
  const f=d.forced[0];
  if(f){const cell=l.game==='elo'?f.value:f.index;

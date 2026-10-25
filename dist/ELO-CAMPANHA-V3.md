@@ -91,3 +91,13 @@ Relatórios: `tests/elo-campaign-audit.json`, `tests/elo-campaign-certificates.j
 ### Limite da verificação visual
 
 Os testes de interação são simulação determinística, não navegador/dispositivo. A grade ampla possui células mínimas de 44 px e deslocamento/rolagem sem mudar os gestos de edição; isso foi conferido estruturalmente. A revisão visual da versão publicada é uma etapa separada. Não se alega teste móvel físico nem calibração humana.
+
+### Correção após a primeira revisão visual publicada
+
+A revisão real do commit `459e027`, em viewport de 1180 px, identificou recorte à esquerda das pistas L4·2 no nível 81 e L5·2 no nível 121. A fonte e o afastamento eram escalados pelo viewBox do SVG, mas o espaço lateral era fixo em pixels. Isso também poderia reduzir a leitura dos rótulos nas grades 12×12.
+
+Os números de linha, coluna e corte agora são rótulos HTML absolutos no próprio tabuleiro, em fonte monoespaçada de 12 px. Seus centros continuam alinhados por percentuais às casas e aos cortes. Eles acompanham o pan/zoom do tabuleiro, não recebem eventos de ponteiro e não entram no fluxo do grid. O espaço físico é de 64 px à esquerda e 32 px nos demais lados, inclusive no estilo móvel; grades com rótulos externos também preservam o mínimo de 44 px por casa, com rolagem em vez de compressão.
+
+A mesma revisão corrigiu o texto de uma dica de contradição global: contagens ou cortes impossíveis usam o diagnóstico específico do motor, sem mencionar uma inexistente “região 0”. Nenhuma regra, fase, resposta, certificado ou migração foi alterada.
+
+A nova rodada executou 48 verificações: 47 passaram, e permanece somente a falha histórica das folhas já documentada. O teste adicional cobre os 85 rótulos da campanha, um caso sintético 12×12, as telas 81/121/161/200 no DOM determinístico, os espaços laterais e o diagnóstico global. A confirmação visual desta correção depende da republicação e da nova inspeção real; o teste estrutural não substitui essa etapa nem representa teste em dispositivo móvel.

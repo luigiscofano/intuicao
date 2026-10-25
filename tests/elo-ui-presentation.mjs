@@ -1,6 +1,6 @@
 import assert from 'node:assert/strict';
 import {readFileSync} from 'node:fs';
-import {ELO_STAGES,eloActiveMechanics,eloRulesMarkup,eloPublicLevel,eloLegendMarkup,eloCellClue,eloOverlayClues,eloRegionName} from '../dist/elo-presentation.mjs';
+import {ELO_STAGES,eloActiveMechanics,eloRulesMarkup,eloPublicLevel,eloLegendMarkup,eloCellClue,eloOverlayClues,eloRegionName,eloBoardLabels} from '../dist/elo-presentation.mjs';
 import {migrateEloProgress} from '../dist/elo-progress.mjs';
 import {applyDirectAction} from '../dist/direct-actions.mjs';
 import {buildDirectHint} from '../dist/direct-hints.mjs';
@@ -11,7 +11,7 @@ const rules=eloRulesMarkup(fixture),legend=eloLegendMarkup(fixture,['#fff']),ove
 for(const phrase of ['Curvas e retas','Passagem obrigatória','Trecho vedado','Contagens de pontos','Distância da região','Vizinhança direta','Ordem no circuito','Travessias do corte','Escolha exclusiva'])assert.ok(rules.includes(phrase),phrase);
 assert.match(rules,/não a uma casa/);assert.match(rules,/Não é a ordem de colocar/);assert.match(rules,/continua visível/);
 assert.match(legend,/Região A/);assert.match(legend,/Σ 8/);assert.match(legend,/A—B/);assert.match(legend,/L2\|L3 = 2/);assert.match(legend,/C3\|C4 = 2/);assert.match(legend,/L3C5 ou L3C3/);
-assert.match(overlay,/y1="200"/);assert.match(overlay,/x1="300"/);assert.match(overlay,/elo-forbidden/);assert.match(overlay,/C5·2/);
+assert.match(overlay,/y1="200"/);assert.match(overlay,/x1="300"/);assert.match(overlay,/elo-forbidden/);assert.match(eloBoardLabels(fixture),/C5·2/);assert.doesNotMatch(overlay,/<text/);
 assert.equal(eloCellClue(fixture,2).restricted,true);assert.equal(eloCellClue(fixture,12).restricted,true);assert.equal(eloCellClue(fixture,3).restricted,false);
 const exported=eloPublicLevel(fixture);assert.deepEqual(exported.constraints,fixture.constraints);assert.equal('solution' in exported,false);assert.equal('logicIdea' in exported,false);assert.equal('profile' in exported,false);assert.doesNotMatch(JSON.stringify(exported)+rules+legend,/PRIVATE_/);
 const state={positions:[0,3,20,24],discarded:[2]};

@@ -58,10 +58,18 @@ export function eloLegendMarkup(l,colors){const c=l.constraints??{},keys=eloActi
  for(const g of c.exclusivePassages??[])lines.push(`◇ Grupo ${g.id}: ${g.cells.map(i=>coord(l,i)).join(' ou ')}. Exatamente uma passagem.`);
  return `<section class="elo-clue-legend" aria-label="Pistas desta fase"><strong>Pistas desta fase</strong>${chips?`<ul class="elo-region-clues">${chips}</ul><p class="elo-region-help">As marcas das regiões acompanham seus pontos, onde quer que sejam colocados.</p>`:''}<ul class="elo-specific-clues">${lines.map(text=>`<li>${esc(text)}</li>`).join('')}</ul></section>`;
 }
+/** Labels live in the board's CSS coordinate space, not its scalable SVG viewBox.
+ * This keeps a 12×12 clue readable and a compact board's clue inside its gutter.
+ * The whole board still pans/zooms together; labels never intercept input. */
+export function eloBoardLabels(l,showCoordinates=false){const c=l.constraints??{};let markup='';
+ const label=(side,at,text,count=false)=>`<span aria-hidden="true" class="elo-board-label elo-label-${side}${count?' elo-count-label':''}" style="${side==='row'||side==='cut-row'?'top':'left'}:${at}%">${esc(text)}</span>`;
+ for(let r=0;r<l.rows;r++){const n=c.rowCounts?.[r];if(n!==undefined||showCoordinates)markup+=label('row',(r+.5)/l.rows*100,`L${r+1}${n!==undefined?`·${n}`:''}`,n!==undefined);}
+ for(let col=0;col<l.cols;col++){const n=c.colCounts?.[col];if(n!==undefined||showCoordinates)markup+=label('col',(col+.5)/l.cols*100,`C${col+1}${n!==undefined?`·${n}`:''}`,n!==undefined);}
+ for(const cut of c.cuts??[])markup+=label(cut.axis==='row'?'cut-row':'cut-col',(cut.index+1)/(cut.axis==='row'?l.rows:l.cols)*100,cut.count);
+ return markup;
+}
 export function eloOverlayClues(l){const c=l.constraints??{},w=l.cols*100,h=l.rows*100,center=i=>[(i%l.cols)*100+50,Math.floor(i/l.cols)*100+50];let markup='';
- for(const [r,n] of Object.entries(c.rowCounts??{}))markup+=`<text x="-14" y="${+r*100+57}" text-anchor="end" class="elo-count-label">L${+r+1}·${n}</text>`;
- for(const [col,n] of Object.entries(c.colCounts??{}))markup+=`<text x="${+col*100+50}" y="-15" text-anchor="middle" class="elo-count-label">C${+col+1}·${n}</text>`;
  for(const [a,b] of c.forbiddenEdges??[]){const p=center(a),q=center(b),x=(p[0]+q[0])/2,y=(p[1]+q[1])/2,horizontal=p[1]===q[1];markup+=`<g class="elo-forbidden" aria-label="Trecho vedado entre ${coord(l,a)} e ${coord(l,b)}"><line x1="${x-(horizontal?0:17)}" y1="${y-(horizontal?17:0)}" x2="${x+(horizontal?0:17)}" y2="${y+(horizontal?17:0)}"/><circle cx="${x}" cy="${y}" r="6"/></g>`;}
- for(const cut of c.cuts??[]){const row=cut.axis==='row',at=(cut.index+1)*100;markup+=`<g class="elo-cut"><line x1="${row?0:at}" y1="${row?at:0}" x2="${row?w:at}" y2="${row?at:h}"/><text x="${row?w+12:at+8}" y="${row?at+7:h+25}">${cut.count}</text></g>`;}
+ for(const cut of c.cuts??[]){const row=cut.axis==='row',at=(cut.index+1)*100;markup+=`<g class="elo-cut"><line x1="${row?0:at}" y1="${row?at:0}" x2="${row?w:at}" y2="${row?at:h}"/></g>`;}
  return markup;
 }
