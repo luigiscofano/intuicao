@@ -1,4 +1,6 @@
-import {CAMPAIGN,CHAPTERS,DIFFICULTIES} from './campaign.mjs';
+import {validateGeometryV2} from './topology-v2.mjs';
+import {topologyRecency} from './endless-v2.mjs';
+import {CAMPAIGN,CAMPAIGN_VERSION,CHAPTERS,DIFFICULTIES} from './campaign.mjs';
 import {RULES_VERSION,initialState,validateLevel,validateState,transition,commandStatus,evaluateState,isWon,stateKey,replay} from './engine.mjs';
 import {hintFromSolution} from './analysis.mjs';
 import {createOrbitaService} from './service.mjs';
@@ -12,6 +14,7 @@ const clone=value=>structuredClone(value);
 const esc=value=>String(value??'').replace(/[&<>"']/g,char=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[char]));
 const bounded=(value,min,max,fallback=min)=>Number.isSafeInteger(value)&&value>=min&&value<=max?value:fallback;
 const record=value=>value&&typeof value==='object'&&!Array.isArray(value);
+const savedTopologyHistory=level=>{try{return [topologyRecency(level)];}catch{return [];}};
 const short=value=>String(value).padStart(2,'0');
 const mod=(value,size)=>(value%size+size)%size;
 const TAU=Math.PI*2;
@@ -33,17 +36,17 @@ const definitionKey=level=>JSON.stringify([level.version,level.rulesVersion,leve
 const mechanics=level=>[...(level.rings.some(ring=>(ring.step??1)>1)?['step']:[]),...(level.commands.some(command=>command.turns.length>1)?['gear']:[]),...(level.commands.some(command=>command.requires?.length)?['sensor']:[])];
 
 export function freshOrbitaData(){
-  return {version:1,rulesVersion:RULES_VERSION,prefs:{advanced:false,autoAdvance:true},campaign:{lastId:null,completed:{},sessions:{}},endless:null,custom:null,learnedMechanics:[],events:[],lastView:{active:false,screen:'selection',mode:'campaign',daily:false}};
+  return {version:2,catalogVersion:CAMPAIGN_VERSION,rulesVersion:RULES_VERSION,prefs:{advanced:false,autoAdvance:true},campaign:{lastId:null,completed:{},sessions:{}},endless:null,custom:null,learnedMechanics:[],events:[],lastView:{active:false,screen:'selection',mode:'campaign',daily:false}};
 }
 export function normalizeOrbitaData(value){
   const data=freshOrbitaData();if(!record(value))return data;
   if(record(value.prefs))for(const key of Object.keys(data.prefs))if(typeof value.prefs[key]==='boolean')data.prefs[key]=value.prefs[key];
   if(record(value.campaign)){
-    data.campaign.lastId=bounded(value.campaign.lastId,1,500,null);
-    for(const key of ['completed','sessions'])if(record(value.campaign[key]))data.campaign[key]=Object.fromEntries(Object.entries(value.campaign[key]).filter(([id,item])=>/^[1-9][0-9]{0,2}$/.test(id)&&Number(id)<=500&&record(item)));
+    data.campaign.lastId=bounded(value.campaign.lastId,1,1000,null);
+    for(const key of ['completed','sessions'])if(record(value.campaign[key]))data.campaign[key]=Object.fromEntries(Object.entries(value.campaign[key]).filter(([id,item])=>/^[1-9][0-9]{0,3}$/.test(id)&&Number(id)<=1000&&record(item)));
   }
   if(record(value.endless)){
-    const run=value.endless;data.endless={version:1,baseSeed:bounded(run.baseSeed,0,0xffffffff),startDifficulty:bounded(run.startDifficulty,0,4),number:bounded(run.number,0,Number.MAX_SAFE_INTEGER),solved:bounded(run.solved,0,Number.MAX_SAFE_INTEGER),recentSignatures:Array.isArray(run.recentSignatures)?run.recentSignatures.filter(x=>typeof x==='string').slice(-30):[],recentFamilies:Array.isArray(run.recentFamilies)?run.recentFamilies.filter(x=>typeof x==='string').slice(-30):[],current:record(run.current)?run.current:null};
+    const run=value.endless;data.endless={version:2,baseSeed:bounded(run.baseSeed,0,0xffffffff),startDifficulty:bounded(run.startDifficulty,0,4),number:bounded(run.number,0,Number.MAX_SAFE_INTEGER),solved:bounded(run.solved,0,Number.MAX_SAFE_INTEGER),recentSignatures:Array.isArray(run.recentSignatures)?run.recentSignatures.filter(x=>typeof x==='string').slice(-30):[],recentFamilies:Array.isArray(run.recentFamilies)?run.recentFamilies.filter(x=>typeof x==='string').slice(-30):[],recentTopologies:Array.isArray(run.recentTopologies)?run.recentTopologies.filter(record).slice(-30):savedTopologyHistory(run.current?.level),current:record(run.current)?run.current:null};
   }
   if(record(value.custom))data.custom=value.custom;
   data.learnedMechanics=Array.isArray(value.learnedMechanics)?[...new Set(value.learnedMechanics.filter(key=>key in MECHANICS))]:[];
@@ -81,9 +84,9 @@ export function recordOrbitaCompletion(data,level,session,mode,now=new Date().to
   if(mode==='endless'&&data.endless)data.endless.solved=Math.min(Number.MAX_SAFE_INTEGER,bounded(data.endless.solved,0,Number.MAX_SAFE_INTEGER)+1);
   return true;
 }
-export function endlessOptions(startDifficulty,solved,recentSignatures=[],recentFamilies=[]){
+export function endlessOptions(startDifficulty,solved,recentSignatures=[],recentFamilies=[],recentTopologies=[]){
   const wins=bounded(solved,0,Number.MAX_SAFE_INTEGER),base=bounded(startDifficulty,0,4),rising=Math.min(4,base+Math.floor(wins/10));
-  return {difficulty:Math.max(0,rising-(wins>0&&wins%6===5?1:0)),recentSignatures:recentSignatures.filter(x=>typeof x==='string').slice(-30),recentFamilies:recentFamilies.filter(x=>typeof x==='string').slice(-30)};
+  return {difficulty:Math.max(0,rising-(wins>0&&wins%6===5?1:0)),recentSignatures:recentSignatures.filter(x=>typeof x==='string').slice(-30),recentFamilies:recentFamilies.filter(x=>typeof x==='string').slice(-30),recentTopologies:recentTopologies.filter(record).slice(-30)};
 }
 
 /** Fixed targets and collision-aware sensor labels share one layout for rendering and QA. */
@@ -136,6 +139,7 @@ export function validateOrbitaPresentation(level){
   }
   for(const ring of level.rings){
     if(!record(ring)||!Array.isArray(ring.cells)||ring.cells.some(id=>!cells.has(id))){errors.push('Um anel referencia casas sem posição válida.');continue;}
+    if(ring.labelPosition!==undefined&&(!record(ring.labelPosition)||![ring.labelPosition.x,ring.labelPosition.y].every(Number.isFinite)||ring.labelPosition.x<13||ring.labelPosition.y<13||ring.labelPosition.x>width-13||ring.labelPosition.y>height-13))errors.push('A identificação do anel precisa ter uma posição finita dentro do tabuleiro.');
     const g=ring.geometry;if(g===undefined)continue;
     const rx=g?.rx??g?.r,ry=g?.ry??g?.r;
     if(!record(g)||![g.cx,g.cy,rx,ry].every(Number.isFinite)||rx<=0||ry<=0){errors.push('O centro e os raios de cada anel precisam ser números finitos positivos.');continue;}
@@ -146,6 +150,7 @@ export function validateOrbitaPresentation(level){
     const turn=angles.reduce((sum,angle,index)=>sum+mod(angles[(index+1)%angles.length]-angle,TAU),0);
     if(Math.abs(turn-TAU)>.001)errors.push('A ordem das casas precisa acompanhar uma volta horária no desenho.');
   }
+  if(level.rings.every(ring=>!ring.geometry)&&!errors.length)errors.push(...validateGeometryV2(level).errors);
   if(Array.isArray(level.pieceTypes)&&level.pieceTypes.some(type=>typeof type?.symbol!=='string'||[...type.symbol].length>3))errors.push('Use símbolos curtos, de até três caracteres, para que caibam nas fichas.');
   if(!errors.length)errors.push(...computeOrbitaBadgeLayout(level).errors);
   return {valid:errors.length===0,errors:[...new Set(errors)]};
@@ -157,7 +162,7 @@ export function ringPath(level,ring){
   if(g&&Number.isFinite(g.cx)&&Number.isFinite(g.cy)&&Number.isFinite(g.rx??g.r)&&Number.isFinite(g.ry??g.r)){
     const rx=g.rx??g.r,ry=g.ry??g.r;return `M ${g.cx+rx} ${g.cy} A ${rx} ${ry} 0 1 1 ${g.cx-rx} ${g.cy} A ${rx} ${ry} 0 1 1 ${g.cx+rx} ${g.cy}`;
   }
-  const points=ring.cells.map(id=>level.cells.find(cell=>cell.id===id));
+  const points=ring.path??ring.cells.map(id=>level.cells.find(cell=>cell.id===id));
   return points.map((point,i)=>(i?'L ':'M ')+point.x+' '+point.y).join(' ')+' Z';
 }
 export function movementPoint(level,movement,progress){
@@ -165,6 +170,12 @@ export function movementPoint(level,movement,progress){
   if(progress>=1){const target=level.cells.find(cell=>cell.id===movement.to);return {x:target.x,y:target.y};}
   const position=Math.max(0,progress)*steps,segment=Math.min(steps-1,Math.floor(position)),portion=position-segment;
   const a=cells[mod(start+direction*segment,cells.length)],b=cells[mod(start+direction*(segment+1),cells.length)],g=ring.geometry;
+  if(ring.path){
+    const path=ring.path,from=path.findIndex(p=>p.cell===a.id),to=path.findIndex(p=>p.cell===b.id),segments=[];let cursor=from,total=0;
+    if(from<0||to<0)return {x:a.x+(b.x-a.x)*portion,y:a.y+(b.y-a.y)*portion};
+    do{const next=mod(cursor+direction,path.length),p=path[cursor],q=path[next],length=Math.hypot(q.x-p.x,q.y-p.y);segments.push({p,q,length});total+=length;cursor=next;}while(cursor!==to&&segments.length<=path.length);
+    let remaining=portion*total;for(const {p,q,length} of segments){if(remaining<=length){const t=length?remaining/length:0;return {x:p.x+(q.x-p.x)*t,y:p.y+(q.y-p.y)*t};}remaining-=length;}return {x:b.x,y:b.y};
+  }
   if(g&&Number.isFinite(g.cx)&&Number.isFinite(g.cy)){
     const rx=g.rx??g.r,ry=g.ry??g.r,angle=Math.atan2((a.y-g.cy)/ry,(a.x-g.cx)/rx),end=Math.atan2((b.y-g.cy)/ry,(b.x-g.cx)/rx);
     let distance=mod((end-angle)*direction,TAU);if(distance<1e-8)distance=TAU;
@@ -234,7 +245,7 @@ export function initOrbita({hideOthers=()=>{}}={}){
   function selection(){
     save();cancelGeneration();invalidate();screen='selection';level=null;session=null;data.lastView={active:true,screen,mode:'campaign',daily:false};
     const completed=Object.keys(data.campaign.completed).filter(id=>CAMPAIGN.some(item=>String(item.id)===id)).length;
-    host.innerHTML='<div class="level-screen orbita-selection"><p class="eyebrow">COLEÇÃO LÓGICA · CAMPANHA DE 500 NÍVEIS</p><h2 id="o-selection-title" tabindex="-1">ÓRBITA ·</h2><p>Um giro prepara o próximo. Transfira as peças entre os anéis e encontre um lugar para todos os símbolos.</p><div class="collection-toolbar selection-actions" role="group" aria-label="Ações do jogo"><button id="o-endless-entry" class="primary">Explorar modo livre</button><button id="o-daily" class="primary">Desafio de hoje</button></div><p class="collection-small">500 níveis em 20 capítulos. Todos estão disponíveis. '+completed+' '+(completed===1?'concluído':'concluídos')+'. Progresso salvo neste navegador.</p><p id="o-selection-status" role="status" aria-live="polite"></p><div id="o-catalog">'+CHAPTERS.map((chapter,chapterIndex)=>'<section class="o-chapter" aria-label="Capítulo '+(chapterIndex+1)+'"><h3 class="stage-heading">'+short(chapterIndex+1)+' · '+esc(typeof chapter==='string'?chapter:chapter.name)+' <small>Níveis '+(chapterIndex*25+1)+'–'+(chapterIndex*25+25)+'</small></h3><div class="level-group">'+CAMPAIGN.slice(chapterIndex*25,chapterIndex*25+25).map((item,offset)=>{
+    host.innerHTML='<div class="level-screen orbita-selection"><p class="eyebrow">COLEÇÃO LÓGICA · CAMPANHA DE 1000 NÍVEIS</p><h2 id="o-selection-title" tabindex="-1">ÓRBITA ·</h2><p>Um giro prepara o próximo. Transfira as peças entre os anéis e encontre um lugar para todos os símbolos.</p><div class="collection-toolbar selection-actions" role="group" aria-label="Ações do jogo"><button id="o-endless-entry" class="primary">Explorar modo livre</button><button id="o-daily" class="primary">Desafio de hoje</button></div><p class="collection-small">1000 níveis em 40 capítulos. Todos estão disponíveis. '+completed+' '+(completed===1?'concluído':'concluídos')+'. Progresso salvo neste navegador.</p><p id="o-selection-status" role="status" aria-live="polite"></p><div id="o-catalog">'+CHAPTERS.map((chapter,chapterIndex)=>'<section class="o-chapter" aria-label="Capítulo '+(chapterIndex+1)+'"><h3 class="stage-heading">'+short(chapterIndex+1)+' · '+esc(typeof chapter==='string'?chapter:chapter.name)+' <small>Níveis '+(chapterIndex*25+1)+'–'+(chapterIndex*25+25)+'</small></h3><div class="level-group">'+CAMPAIGN.slice(chapterIndex*25,chapterIndex*25+25).map((item,offset)=>{
       const number=chapterIndex*25+offset+1,done=data.campaign.completed[item.id],active=item.id===data.campaign.lastId;
       return '<button class="level-tile '+(done?'done':'')+'" data-o-level="'+(number-1)+'" aria-label="Nível '+number+', '+esc(item.name)+', '+(done?'concluído':'disponível')+'" '+(active?'aria-current="true"':'')+'><span>'+number+'</span><small>'+(done?(done.assisted?'✓ assistido':'✓ concluído'):active?'atual':'explorar')+'</small></button>';
     }).join('')+'</div></section>').join('')+'</div>'+importPanel()+'</div>';
@@ -262,17 +273,17 @@ export function initOrbita({hideOthers=()=>{}}={}){
   function verifyGenerated(result){if(!certified(result?.level))throw Error('O desafio não passou na verificação. Tente gerar outro.');}
   async function newEndless(startDifficulty=0){
     if(generationBusy)return;save();cancelGeneration();cancelAuto();const token=generationRevision,seed=seedNow(),options=endlessOptions(startDifficulty,0);generationBusy=true;generationStatus('Preparando um novo desafio de ÓRBITA…');
-    try{const result=await generator.generate(seed,options);if(token!==generationRevision||host.hidden)return;verifyGenerated(result);generationBusy=false;data.endless={version:1,baseSeed:seed,startDifficulty:bounded(startDifficulty,0,4),number:0,solved:0,recentSignatures:[],recentFamilies:[],current:null};acceptEndless(result,seed,1,options);}
+    try{const result=await generator.generate(seed,options);if(token!==generationRevision||host.hidden)return;verifyGenerated(result);generationBusy=false;data.endless={version:2,baseSeed:seed,startDifficulty:bounded(startDifficulty,0,4),number:0,solved:0,recentSignatures:[],recentFamilies:[],recentTopologies:[],current:null};acceptEndless(result,seed,1,options);}
     catch(error){if(token!==generationRevision)return;generationBusy=false;generationStatus((safeError(error)||'A geração foi cancelada.')+' Sua tentativa anterior continua salva.');}
   }
   function fillPrefetch(){
     if(mode!=='endless'||!data.endless||prefetchTask||generationBusy)return;
-    const run=data.endless,number=run.number+1,options=endlessOptions(run.startDifficulty,run.solved,run.recentSignatures,run.recentFamilies),seed=makeSeed(run.baseSeed,number),token=generationRevision,key=optionsKey(options);
+    const run=data.endless,number=run.number+1,options=endlessOptions(run.startDifficulty,run.solved,run.recentSignatures,run.recentFamilies,run.recentTopologies),seed=makeSeed(run.baseSeed,number),token=generationRevision,key=optionsKey(options);
     if(prefetch?.number===number&&prefetch.key===key)return;
     prefetchTask=(async()=>{try{const result=await generator.generate(seed,options);if(token!==generationRevision||data.endless!==run)return;verifyGenerated(result);prefetch={result,seed,number,key};}catch{/* The visible challenge remains playable when background generation fails. */}})().finally(()=>{if(token===generationRevision)prefetchTask=null;});
   }
   async function nextEndless(){
-    if(mode!=='endless'||generationBusy||!data.endless)return;save();cancelAuto();const run=data.endless,number=run.number+1,options=endlessOptions(run.startDifficulty,run.solved,run.recentSignatures,run.recentFamilies);
+    if(mode!=='endless'||generationBusy||!data.endless)return;save();cancelAuto();const run=data.endless,number=run.number+1,options=endlessOptions(run.startDifficulty,run.solved,run.recentSignatures,run.recentFamilies,run.recentTopologies);
     const cached=prefetch?.number===number&&prefetch.key===optionsKey(options)?prefetch:null;
     if(cached){cancelGeneration();acceptEndless(cached.result,cached.seed,number,options);return;}
     cancelGeneration();const token=generationRevision,seed=makeSeed(run.baseSeed,number);generationBusy=true;generationStatus('Preparando o próximo desafio… O atual continua salvo.');
@@ -281,6 +292,7 @@ export function initOrbita({hideOthers=()=>{}}={}){
   }
   function acceptEndless(result,seed,number,parameters){
     save();const run=data.endless;run.number=number;run.recentSignatures=[...run.recentSignatures,result.signature].filter(x=>typeof x==='string').slice(-30);run.recentFamilies=[...run.recentFamilies,result.family??result.level.family].filter(x=>typeof x==='string').slice(-30);
+    run.recentTopologies=[...(run.recentTopologies??[]),result.topology??topologyRecency(result.level)].slice(-30);
     run.current={level:result.level,seed,parameters:clone(parameters),signature:result.signature,generatorVersion:result.generatorVersion??1,rulesVersion:RULES_VERSION,session:null,completed:false};daily=false;start(result.level,{mode:'endless',fresh:true});
   }
   function recordWin(){if(recordOrbitaCompletion(data,level,session,mode))log('win',{assisted:session.assisted});save();}
@@ -288,7 +300,7 @@ export function initOrbita({hideOthers=()=>{}}={}){
   function tutorialMarkup(unknown){const tutorial=mode==='campaign'&&level.id<=10?TUTORIAL[level.id-1]:null;if(!tutorial&&!unknown.length)return '';return '<details class="o-tutorial" open><summary>'+esc(unknown.length?'Uma nova possibilidade':'Experimente')+'</summary>'+(tutorial?'<p>'+esc(tutorial)+'</p>':'')+unknown.map(key=>'<p><strong>'+esc(MECHANICS[key][0])+'.</strong> '+esc(MECHANICS[key][1])+'</p>').join('')+'</details>';}
   function render(unknown=[]){
     motion?.clear();
-    host.innerHTML='<div class="lab collection-lab orbita-lab"><button id="o-back" class="quiet">← Seleção de níveis</button><div class="lab-heading"><div><p id="o-kicker" class="eyebrow">'+(mode==='endless'?'ENDLESS · DESAFIO '+data.endless.number+' · '+data.endless.solved+' CONCLUÍDOS':mode==='custom'?'EDITOR · FASE PERSONALIZADA':'EXPERIMENTO 09')+'</p><h2 id="o-title" tabindex="-1">ÓRBITA ·</h2><p class="o-level-name">'+esc(level.name??'Entre anéis')+' <span>'+level.rings.length+' '+(level.rings.length===1?'anel':'anéis')+' · '+Object.keys(level.targets).length+' alvos</span></p></div><div class="modes collection-mode-switch" role="group" aria-label="Modo de jogo"><button id="o-mode-campaign" aria-pressed="'+(mode!=='endless')+'">Desafios</button><button id="o-mode-endless" aria-pressed="'+(mode==='endless')+'">Endless</button></div></div>'+(mode==='endless'?endlessControls():'')+'<div class="collection-workspace o-workspace '+(rulesOpen?'rules-open ':'')+(advanced?'':'closed')+'"><div class="collection-surface experiment o-surface"><div class="stage-top">'+(mode==='campaign'?'<div class="level-stepper"><span id="o-stage-label">'+(daily?'DESAFIO DO DIA':'DESAFIO')+' '+short(index+1)+' / 500</span></div>':'')+'<div class="stage-tools"><button id="o-undo" type="button" aria-label="Desfazer" title="Desfazer (Ctrl+Z)">↶</button><button id="o-redo" type="button" aria-label="Refazer" title="Refazer (Ctrl+Shift+Z)">↷</button><button id="o-reset" class="action-reset">↺ Reiniciar</button><details id="o-rules-panel" class="rules-card" '+(rulesOpen?'open':'')+'><summary aria-controls="o-rules-sidebar" aria-expanded="'+rulesOpen+'"><span>Regras e como jogar</span><span class="rules-show">Mostrar</span><span class="rules-hide">Ocultar</span></summary></details><button id="o-advanced-toggle" aria-controls="o-advanced" aria-expanded="'+advanced+'">'+(advanced?'Ocultar':'Mostrar')+' opções avançadas</button></div></div><p class="o-mission">'+esc(lesson())+'</p>'+tutorialMarkup(unknown)+'<div class="o-orbit-controls" role="group" aria-label="Controles dos anéis"><div id="o-ring-choices" class="o-ring-choices" role="group" aria-label="Selecionar anel ou engrenagem"></div><div class="o-turn-row"><button id="o-counterclockwise" class="o-turn" type="button" aria-label="Girar no sentido anti-horário"><span aria-hidden="true">↶</span><span>Anti-horário</span></button><div id="o-command-label" class="o-command-label"></div><button id="o-clockwise" class="o-turn" type="button" aria-label="Girar no sentido horário"><span aria-hidden="true">↷</span><span>Horário</span></button></div><p id="o-command-status" role="status" aria-live="polite"></p></div><div class="board-navigation o-board-navigation" role="group" aria-label="Área do jogo e navegação de níveis">'+(mode==='campaign'?'<button id="o-level-prev" class="level-arrow" aria-label="Nível anterior" title="Nível anterior">←</button>':'')+'<div id="o-board-surface" class="o-board-surface"><div id="o-board-scroll" class="o-board-scroll" tabindex="0" role="region" aria-label="Tabuleiro de ÓRBITA"><div id="o-board-holder"></div></div><div id="o-motion" class="result-motion" aria-hidden="true"></div></div>'+(mode==='campaign'?'<button id="o-level-next" class="level-arrow" aria-label="Próximo nível" title="Próximo nível">→</button>':'')+'</div><p id="o-scroll-help" class="o-scroll-help" hidden>Deslize o tabuleiro para ver todos os anéis. Os controles de giro ficam acima.</p><p id="o-keyboard-help" class="sr-only">Escolha um anel pelos botões. Com o tabuleiro em foco, esquerda gira anti-horário e direita gira horário. As teclas de 1 a 9 selecionam o comando correspondente. Ctrl+Z desfaz; Ctrl+Shift+Z refaz.</p><p class="o-board-legend"><span>Ficha grande: peça</span><span>Símbolo pequeno: alvo fixo</span><span>Contorno duplo: encontro</span></p><div class="readout o-readout"><div><span class="metric-label">GIROS</span><strong id="o-moves"></strong></div><div><span class="metric-label">ALVOS CERTOS</span><strong id="o-matched"></strong></div><p id="o-status" role="status" aria-live="polite" aria-atomic="true"></p></div><div class="level-actions"><button id="o-confirm" class="primary confirm">Confirmar resposta</button><div class="actions"><button id="o-answer" hidden>Ver gabarito</button><button id="o-hint" class="action-hint">✦ Dicas</button><button id="o-next" '+(mode==='custom'?'hidden':'')+'>'+(mode==='endless'?'Novo desafio':'Próximo nível')+' →</button></div><button id="o-hint-apply" hidden>Aplicar este giro</button><button id="o-answer-apply" hidden>Aplicar sequência do gabarito</button><button id="o-stop-guide" hidden>Pausar sequência</button><p id="o-hint-text" class="hint" role="status" aria-live="polite"></p></div></div><aside id="o-rules-sidebar" class="rules-sidebar" aria-label="Regras e como jogar" '+(rulesOpen?'':'hidden')+'>'+rulesMarkup()+'</aside><aside id="o-advanced" class="controls" '+(advanced?'':'hidden')+'>'+advancedMarkup()+'</aside></div></div>';
+    host.innerHTML='<div class="lab collection-lab orbita-lab"><button id="o-back" class="quiet">← Seleção de níveis</button><div class="lab-heading"><div><p id="o-kicker" class="eyebrow">'+(mode==='endless'?'ENDLESS · DESAFIO '+data.endless.number+' · '+data.endless.solved+' CONCLUÍDOS':mode==='custom'?'EDITOR · FASE PERSONALIZADA':'EXPERIMENTO 09')+'</p><h2 id="o-title" tabindex="-1">ÓRBITA ·</h2><p class="o-level-name">'+esc(level.name??'Entre anéis')+' <span>'+level.rings.length+' '+(level.rings.length===1?'anel':'anéis')+' · '+Object.keys(level.targets).length+' alvos</span></p></div><div class="modes collection-mode-switch" role="group" aria-label="Modo de jogo"><button id="o-mode-campaign" aria-pressed="'+(mode!=='endless')+'">Desafios</button><button id="o-mode-endless" aria-pressed="'+(mode==='endless')+'">Endless</button></div></div>'+(mode==='endless'?endlessControls():'')+'<div class="collection-workspace o-workspace '+(rulesOpen?'rules-open ':'')+(advanced?'':'closed')+'"><div class="collection-surface experiment o-surface"><div class="stage-top">'+(mode==='campaign'?'<div class="level-stepper"><span id="o-stage-label">'+(daily?'DESAFIO DO DIA':'DESAFIO')+' '+short(index+1)+' / '+CAMPAIGN.length+'</span></div>':'')+'<div class="stage-tools"><button id="o-undo" type="button" aria-label="Desfazer" title="Desfazer (Ctrl+Z)">↶</button><button id="o-redo" type="button" aria-label="Refazer" title="Refazer (Ctrl+Shift+Z)">↷</button><button id="o-reset" class="action-reset">↺ Reiniciar</button><details id="o-rules-panel" class="rules-card" '+(rulesOpen?'open':'')+'><summary aria-controls="o-rules-sidebar" aria-expanded="'+rulesOpen+'"><span>Regras e como jogar</span><span class="rules-show">Mostrar</span><span class="rules-hide">Ocultar</span></summary></details><button id="o-advanced-toggle" aria-controls="o-advanced" aria-expanded="'+advanced+'">'+(advanced?'Ocultar':'Mostrar')+' opções avançadas</button></div></div><p class="o-mission">'+esc(lesson())+'</p>'+tutorialMarkup(unknown)+'<div class="o-orbit-controls" role="group" aria-label="Controles dos anéis"><div id="o-ring-choices" class="o-ring-choices" role="group" aria-label="Selecionar anel ou engrenagem"></div><div class="o-turn-row"><button id="o-counterclockwise" class="o-turn" type="button" aria-label="Girar no sentido anti-horário"><span aria-hidden="true">↶</span><span>Anti-horário</span></button><div id="o-command-label" class="o-command-label"></div><button id="o-clockwise" class="o-turn" type="button" aria-label="Girar no sentido horário"><span aria-hidden="true">↷</span><span>Horário</span></button></div><p id="o-command-status" role="status" aria-live="polite"></p></div><div class="board-navigation o-board-navigation" role="group" aria-label="Área do jogo e navegação de níveis">'+(mode==='campaign'?'<button id="o-level-prev" class="level-arrow" aria-label="Nível anterior" title="Nível anterior">←</button>':'')+'<div id="o-board-surface" class="o-board-surface"><div id="o-board-scroll" class="o-board-scroll" tabindex="0" role="region" aria-label="Tabuleiro de ÓRBITA"><div id="o-board-holder"></div></div><div id="o-motion" class="result-motion" aria-hidden="true"></div></div>'+(mode==='campaign'?'<button id="o-level-next" class="level-arrow" aria-label="Próximo nível" title="Próximo nível">→</button>':'')+'</div><p id="o-scroll-help" class="o-scroll-help" hidden>Deslize o tabuleiro para ver todos os anéis. Os controles de giro ficam acima.</p><p id="o-keyboard-help" class="sr-only">Escolha um anel pelos botões. Com o tabuleiro em foco, esquerda gira anti-horário e direita gira horário. As teclas de 1 a 9 selecionam o comando correspondente. Ctrl+Z desfaz; Ctrl+Shift+Z refaz.</p><p class="o-board-legend"><span>Ficha grande: peça</span><span>Símbolo pequeno: alvo fixo</span><span>Contorno duplo: encontro</span></p><div class="readout o-readout"><div><span class="metric-label">GIROS</span><strong id="o-moves"></strong></div><div><span class="metric-label">ALVOS CERTOS</span><strong id="o-matched"></strong></div><p id="o-status" role="status" aria-live="polite" aria-atomic="true"></p></div><div class="level-actions"><button id="o-confirm" class="primary confirm">Confirmar resposta</button><div class="actions"><button id="o-answer" hidden>Ver gabarito</button><button id="o-hint" class="action-hint">✦ Dicas</button><button id="o-next" '+(mode==='custom'?'hidden':'')+'>'+(mode==='endless'?'Novo desafio':'Próximo nível')+' →</button></div><button id="o-hint-apply" hidden>Aplicar este giro</button><button id="o-answer-apply" hidden>Aplicar sequência do gabarito</button><button id="o-stop-guide" hidden>Pausar sequência</button><p id="o-hint-text" class="hint" role="status" aria-live="polite"></p></div></div><aside id="o-rules-sidebar" class="rules-sidebar" aria-label="Regras e como jogar" '+(rulesOpen?'':'hidden')+'>'+rulesMarkup()+'</aside><aside id="o-advanced" class="controls" '+(advanced?'':'hidden')+'>'+advancedMarkup()+'</aside></div></div>';
     motion=createResultMotion($('o-motion'),$('o-board-surface'),globalThis,{onRetry:restartCurrentImmediately});
     $('o-back').onclick=selection;$('o-mode-campaign').onclick=selection;$('o-mode-endless').onclick=()=>{if(mode!=='endless')data.endless?.current?.level?resumeEndless():newEndless(bounded(level.difficulty,0,4));};
     $('o-undo').onclick=()=>travelHistory(-1);$('o-redo').onclick=()=>travelHistory(1);$('o-reset').onclick=event=>restartLevel(event.currentTarget);
@@ -329,7 +341,7 @@ export function initOrbita({hideOthers=()=>{}}={}){
     }
   }
   function labelPoint(ring){
-    const g=ring.geometry;if(!g)return level.cells.find(cell=>cell.id===ring.cells[0]);
+    const g=ring.geometry;if(!g){if(ring.labelPosition)return ring.labelPosition;const points=ring.cells.map(id=>level.cells.find(cell=>cell.id===id));return {x:points.reduce((sum,p)=>sum+p.x,0)/points.length,y:points.reduce((sum,p)=>sum+p.y,0)/points.length};}
     const angles=ring.cells.map(id=>{const cell=level.cells.find(item=>item.id===id);return mod(Math.atan2(cell.y-g.cy,cell.x-g.cx),TAU);}).sort((a,b)=>a-b);
     let best={gap:-1,angle:0};for(let i=0;i<angles.length;i++){const gap=mod(angles[(i+1)%angles.length]-angles[i],TAU);if(gap>best.gap)best={gap,angle:angles[i]+gap/2};}
     return {x:g.cx+Math.cos(best.angle)*Math.max(15,(g.rx??g.r)-38),y:g.cy+Math.sin(best.angle)*Math.max(15,(g.ry??g.r)-38)};

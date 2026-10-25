@@ -1,9 +1,10 @@
+import {selectCertifiedV2} from './endless-v2.mjs';
 import {RULES_VERSION,createEngine,initialState,transition,replay,validateLevel,evaluateState,isWon,stateKey} from './engine.mjs';
 import {makeTopology,exampleTopology,FAMILIES} from './topology.mjs';
 
-export const GENERATOR_VERSION=1;
+export const GENERATOR_VERSION=2;
 export const DIFFICULTIES=Object.freeze(['Muito fácil','Básico','Intermediário','Avançado','Mestre']);
-export const CHAPTERS=Object.freeze(['Primeiras voltas','Encontros e chegadas','Preparar o receptor','Reparar e continuar','Um lugar provisório','A ordem das entregas','Duas tarefas juntas','Pequenas cadeias','Duas casas em comum','Cuidar dos dois encontros','O anel de passagem','Escolher o caminho','Restaurar uma região','Passos diferentes','Giros em conjunto','Preparar duas regiões','Condições para girar','Dependências e retornos','Poucas peças, muitas relações','Síntese dos caminhos']);
+export const CHAPTERS=Object.freeze(["Primeiras voltas", "Encontros e chegadas", "Preparar o receptor", "Reparar e continuar", "Um lugar provisório", "A ordem das entregas", "Duas tarefas juntas", "Pequenas cadeias", "Dois encontros", "Anéis deslocados", "Correntes de três", "Circuitos triangulares", "Passo 2 em rede", "Rotas e restaurações", "Engrenagens distantes", "Restauração cruzada", "Sensores em rede", "Condições e retornos", "Tranças de encontros", "Malhas de quatro", "Centro e satélites", "Portas entre regiões", "Circuitos redundantes", "Reservas com entradas", "Escadas e gargalos", "Trevos e cata-ventos", "Malhas e periodicidades", "Múltiplos encontros", "Cinco anéis em rede", "Estrelas e rotas cruzadas", "Preparações paralelas", "Efeitos localizados", "Sensores e engrenagens", "Restauração inversa", "Mestres compactos", "Circuitos longos", "Restauração global", "Cinco encontros decisivos", "Síntese livre", "Domínio orbital"]);
 export const CONCEPTS=Object.freeze({arrival:'Preparar a chegada',storage:'Guardar temporariamente',deliveries:'Duas entregas',restore:'Desfazer e recuperar um acerto',intermediate:'Transportar por um intermediário',encounters:'Cuidar de dois encontros',detour:'Escolher um desvio',localized:'Alterar pouco e restaurar o restante',last:'Pensar na última jogada',groups:'Organizar por grupos',equivalent:'Aproveitar peças equivalentes',together:'Resolver duas tarefas juntas',step:'Passos de duas casas',gear:'Engrenagens',sensor:'Preparar um sensor'});
 const LESSONS={
  arrival:'Prepare a chegada antes de trazer a peça: o giro do receptor também muda quem fica na conexão.',
@@ -259,7 +260,7 @@ export function topologySignature(level){return JSON.stringify([level.rings.map(
 export function createCandidate(seed,design={}){
  const rng=randomFor(seed),difficulty=bounded(design.difficulty,0,4),spec={number:design.number??null,role:'combine',family:'pair',concept:'arrival',variant:seedNumber(seed)%36,...design,difficulty};
  const topology=shapesFor(rng,spec),configured=goalConfiguration(topology,spec,rng);
- const level={version:1,rulesVersion:RULES_VERSION,generatorVersion:GENERATOR_VERSION,id:spec.number??'orbita-'+seedNumber(seed),name:pick(rng,NAMES[spec.concept]??NAMES.arrival),...topology,pieceTypes:configured.pieceTypes,initial:{...configured.goal},targets:configured.targets,commands:[],concepts:[spec.concept],difficulty,chapter:spec.number?Math.ceil(spec.number/25):null,discovery:LESSONS[spec.concept],hints:[LESSONS[spec.concept]],role:spec.role,specialRules:[],seed:seedNumber(seed)};
+ const level={version:1,rulesVersion:RULES_VERSION,generatorVersion:1,id:spec.number??'orbita-'+seedNumber(seed),name:pick(rng,NAMES[spec.concept]??NAMES.arrival),...topology,pieceTypes:configured.pieceTypes,initial:{...configured.goal},targets:configured.targets,commands:[],concepts:[spec.concept],difficulty,chapter:spec.number?Math.ceil(spec.number/25):null,discovery:LESSONS[spec.concept],hints:[LESSONS[spec.concept]],role:spec.role,specialRules:[],seed:seedNumber(seed)};
  configureRules(level,spec,rng,configured.goal);
  // Sensor symbols are real pieces in the solved arrangement, never hidden flags.
  level.initial={...configured.goal};
@@ -289,12 +290,18 @@ export function createCandidate(seed,design={}){
  if(trace.jointImprovements&&!level.concepts.includes('together'))level.concepts.push('together');
  if(Object.values(level.initial).filter(x=>x!=='n').length>new Set(Object.values(level.initial).filter(x=>x!=='n')).size&&!level.concepts.includes('equivalent'))level.concepts.push('equivalent');
  level.hints.push(trace.restoredTargets?'Alguns alvos já corretos fazem parte do caminho. Planeje como recuperá-los depois da transferência.':level.rings.length>2?'Observe qual anel precisa receber a peça antes que ela possa seguir até seu destino.':'Observe o conteúdo da conexão antes e depois de cada giro.');
- level.validation={verified:true,method:'same-engine-replay',rulesVersion:RULES_VERSION,generatorVersion:GENERATOR_VERSION,solutionUpperBound:level.solution.length,minimumProven:search.found&&search.optimal,minimum:search.found?search.distance:null,shortSolutionSearch:{visited:search.visited,completeDepth:search.completeDepth,status:search.found?'optimal-solution':search.status},trace,topology:topologySignature(level)};
+ level.validation={verified:true,method:'same-engine-replay',rulesVersion:RULES_VERSION,generatorVersion:1,solutionUpperBound:level.solution.length,minimumProven:search.found&&search.optimal,minimum:search.found?search.distance:null,shortSolutionSearch:{visited:search.visited,completeDepth:search.completeDepth,status:search.found?'optimal-solution':search.status},trace,topology:topologySignature(level)};
  return level;
 }
 
 /** Finite deterministic work, used inside the worker. The service owns reservoir fallback. */
 export function generateEndless(seed,options={}){
+ if(options.maxAttempts===0){const error=new Error('O limite de criação desta rodada foi alcançado.');error.code='GENERATION_BUDGET';throw error;}
+ return selectCertifiedV2(seed,options);
+}
+
+/** Retained only for explicit legacy reproduction; saved definitions remain authoritative. */
+export function generateEndlessLegacy(seed,options={}){
  const base=seedNumber(seed),difficulty=bounded(options.difficulty,0,4),recent=new Set(options.recentSignatures??[]),recentFamilies=(options.recentFamilies??[]).slice(-2),maxAttempts=bounded(options.maxAttempts,0,48,14);
  const families=difficulty===0?['pair','unequal']:difficulty===1?['pair','reserve','unequal','chain']:['pair','lens','chain','satellites','circuit','reserve','unequal','compact','nested'];
  const rng=randomFor(base),offset=integer(rng,0,499);
@@ -306,7 +313,7 @@ export function generateEndless(seed,options={}){
   if(design.concept==='encounters'&&design.family!=='lens')design.concept='arrival';
   const candidate=createCandidate((base+Math.imul(attempt+1,0x9e3779b9))>>>0,design);if(!candidate)continue;
   const signature=levelSignature(candidate);if(recent.has(signature))continue;
-  candidate.id='endless-'+base.toString(16)+'-'+GENERATOR_VERSION;candidate.seed=base;candidate.generation={seed:base,version:GENERATOR_VERSION,attempt:attempt+1,difficulty};
+  candidate.id='endless-'+base.toString(16)+'-1';candidate.seed=base;candidate.generation={seed:base,version:1,attempt:attempt+1,difficulty};
   return {level:candidate,signature,validation:candidate.validation,seed:base,generatorVersion:'orbita-generator-1',source:'generated',attempts:attempt+1};
  }
  const error=new Error('O limite de criação desta rodada foi alcançado.');error.code='GENERATION_BUDGET';throw error;

@@ -1,0 +1,179 @@
+{
+  "samples": [
+    {
+      "id": 201,
+      "rings": 2,
+      "intersections": 2,
+      "family": "lens"
+    },
+    {
+      "id": 276,
+      "rings": 3,
+      "intersections": 3,
+      "family": "triangle"
+    },
+    {
+      "id": 326,
+      "rings": 3,
+      "intersections": 4,
+      "family": "mixed-lengths"
+    },
+    {
+      "id": 461,
+      "rings": 2,
+      "intersections": 5,
+      "family": "cross-restoration"
+    },
+    {
+      "id": 903,
+      "rings": 3,
+      "intersections": 8,
+      "family": "mixed-lengths"
+    },
+    {
+      "id": 902,
+      "rings": 3,
+      "intersections": 10,
+      "family": "mixed-lengths"
+    },
+    {
+      "id": 973,
+      "rings": 5,
+      "intersections": 12,
+      "family": "circuit"
+    },
+    {
+      "id": 971,
+      "rings": 5,
+      "intersections": 14,
+      "family": "redundant-circuit"
+    },
+    {
+      "id": 451,
+      "rings": 2,
+      "intersections": 3,
+      "family": "braid-three"
+    },
+    {
+      "id": 251,
+      "rings": 3,
+      "intersections": 2,
+      "family": "chain"
+    },
+    {
+      "id": 377,
+      "rings": 4,
+      "intersections": 3,
+      "family": "satellites"
+    },
+    {
+      "id": 476,
+      "rings": 4,
+      "intersections": 4,
+      "family": "circuit"
+    },
+    {
+      "id": 495,
+      "rings": 4,
+      "intersections": 4,
+      "family": "circuit"
+    },
+    {
+      "id": 896,
+      "rings": 3,
+      "intersections": 6,
+      "family": "pinwheel"
+    },
+    {
+      "id": 898,
+      "rings": 3,
+      "intersections": 6,
+      "family": "mixed-lengths"
+    },
+    {
+      "id": 203,
+      "rings": 2,
+      "intersections": 2,
+      "family": "mixed-lengths"
+    },
+    {
+      "id": 327,
+      "rings": 3,
+      "intersections": 4,
+      "family": "nested"
+    },
+    {
+      "id": 837,
+      "rings": 5,
+      "intersections": 7,
+      "family": "star-five"
+    },
+    {
+      "id": 564,
+      "rings": 4,
+      "intersections": 4,
+      "family": "redundant-circuit"
+    },
+    {
+      "id": 478,
+      "rings": 4,
+      "intersections": 4,
+      "family": "mixed-lengths"
+    },
+    {
+      "id": 851,
+      "rings": 2,
+      "intersections": 6,
+      "family": "mixed-lengths"
+    },
+    {
+      "id": 301,
+      "rings": 3,
+      "intersections": 2,
+      "family": "chain"
+    },
+    {
+      "id": 351,
+      "rings": 3,
+      "intersections": 3,
+      "family": "cross-restoration"
+    },
+    {
+      "id": 401,
+      "rings": 3,
+      "intersections": 4,
+      "family": "triangle"
+    },
+    {
+      "id": 205,
+      "rings": 2,
+      "intersections": 2,
+      "family": "localized-effect"
+    },
+    {
+      "id": 202,
+      "rings": 2,
+      "intersections": 2,
+      "family": "mixed-lengths"
+    },
+    {
+      "id": 885,
+      "rings": 2,
+      "intersections": 5,
+      "family": "braid-many"
+    },
+    {
+      "id": 801,
+      "rings": 5,
+      "intersections": 7,
+      "family": "separate-gears"
+    },
+    {
+      "id": 1000,
+      "rings": 5,
+      "intersections": 11,
+      "family": "multiple-bottlenecks"
+    }
+  ],
+  "pages": 4
+}

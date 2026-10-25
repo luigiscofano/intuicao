@@ -58,7 +58,7 @@ export function validateLevel(level) {
       pairCounts.set(key, (pairCounts.get(key) ?? 0) + 1);
     }
   }
-  if ([...pairCounts.values()].some(count => count > 2)) errors.push('Um par de anéis não pode compartilhar mais de duas casas.');
+  if ([...pairCounts.values()].some(count => count > 14)) errors.push('Um par de anéis não pode compartilhar mais de catorze casas.');
 
   const counts = new Map(), demands = new Map();
   if (!record(level.initial)) errors.push('Falta a ocupação inicial das casas.');

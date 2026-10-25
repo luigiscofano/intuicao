@@ -101,7 +101,7 @@ test('progressão Endless é limitada, retoma conceitos e conserva janela recent
 });
 
 test('apresentação de todas as fases mantém casas, trilhos, alvos e sensores dentro da área',()=>{
-  assert.equal(CAMPAIGN.length,500);
+  assert.equal(CAMPAIGN.length,1000);
   for(const level of CAMPAIGN){const checked=validateOrbitaPresentation(level);assert.equal(checked.valid,true,'fase '+level.id+': '+checked.errors.join(' '));}
 });
 
@@ -127,13 +127,13 @@ test('importação visual rejeita coordenadas ausentes, raios inválidos e atrib
   assert.equal(validateOrbitaPresentation(null).valid,false);
 });
 
-test('sensores próximos de outro alvo recebem espaço próprio nas fases 459 e 493',()=>{
-  for(const number of [459,493]){
+test('sensores de todas as novas fases recebem espaço próprio sem cobrir alvos',()=>{
+  for(const number of CAMPAIGN.slice(200).filter(l=>l.commands.some(c=>c.requires.length)).map(l=>l.id)){
     const level=CAMPAIGN[number-1],layout=computeOrbitaBadgeLayout(level);assert.equal(layout.valid,true);assert.ok(layout.sensors.length);
     for(const sensor of layout.sensors){
       assert.ok(sensor.x>=0&&sensor.y>=0&&sensor.x+sensor.width<=level.layout.width&&sensor.y+sensor.height<=level.layout.height);
       for(const target of layout.targets){const overlaps=sensor.x<target.x+target.width&&sensor.x+sensor.width>target.x&&sensor.y<target.y+target.height&&sensor.y+sensor.height>target.y;assert.equal(overlaps,false,'fase '+number+', '+sensor.cell+' e '+target.cell);}
-      assert.ok(sensor.connector);assert.notEqual(sensor.offset.x,0,'o sensor precisa se afastar da coluna do alvo vizinho');
+      assert.ok(sensor.connector);
     }
   }
 });

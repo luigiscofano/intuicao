@@ -149,7 +149,10 @@ test('malformed topologies, concurrent gears and hidden sensor conditions are re
   broken(level => level.pieceTypes[1].symbol = level.pieceTypes[0].symbol);
   const manyShared = exampleLevel();
   manyShared.rings[1].cells = ['J','A1','A2','B1','B2','B3'];
-  assert.equal(validateLevel(manyShared).valid,false);
+  assert.equal(validateLevel(manyShared).valid,true); // v2 permits three distinct meetings.
+  const overLimit=exampleLevel();overLimit.rings[0].cells=['J','A1','A2','A3','B1','B2'];overLimit.rings[1].cells=['J','A1','A2','A3','B1','B2','B3'];
+  assert.equal(validateLevel(overLimit).valid,true); // Six meetings support non-dihedral encounter order.
+  const tooMany=structuredClone(overLimit);tooMany.cells=Array.from({length:15},(_,i)=>({id:'c'+i}));tooMany.rings=tooMany.rings.map(r=>({...r,cells:tooMany.cells.map(c=>c.id)}));tooMany.initial=Object.fromEntries(tooMany.cells.map(c=>[c.id,'0']));assert.equal(validateLevel(tooMany).valid,false);assert.ok(validateLevel(tooMany).errors.some(e=>e.includes('catorze')));
 });
 
 test('bad states and unknown directions cannot become legal no-op moves',() => {

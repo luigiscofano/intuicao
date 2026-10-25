@@ -1,0 +1,84 @@
+{
+  "catalogSha256": "8be22138d6406e8860a1096ff5c08eadfb9873188f021c83eca3568f45ece3c2",
+  "files": [
+    {
+      "path": "dist/orbita/analysis.mjs",
+      "sha256": "823f93c1f8e66535afaa979acf7b650a6681e4d2cd96c8c764d4c88f5540074d"
+    },
+    {
+      "path": "dist/orbita/authored-patterns.mjs",
+      "sha256": "18128d646d8da9ccfde71207441f8d5de89602032b83e55009bdcc0d8a79009a"
+    },
+    {
+      "path": "dist/orbita/campaign.mjs",
+      "sha256": "acc0ae309f20f9c114c81aecc552c905804b69eff51ec7fc14a6e8b2bc60195c"
+    },
+    {
+      "path": "dist/orbita/catalog.mjs",
+      "sha256": "8be22138d6406e8860a1096ff5c08eadfb9873188f021c83eca3568f45ece3c2"
+    },
+    {
+      "path": "dist/orbita/design-evidence.mjs",
+      "sha256": "0493c3b536ef774034168a7ef87b07703f21c4cfbf101e9e8ccd64389ccfbf81"
+    },
+    {
+      "path": "dist/orbita/diversity.mjs",
+      "sha256": "6a1f2f93bbef7f1bae776fe9c6f787e7d32d3a8729d4039962967a9a4ff5ae78"
+    },
+    {
+      "path": "dist/orbita/endless-v2.mjs",
+      "sha256": "e343282f5c97098a7b647c2ad3fc4e6112f7bfe8bee9f2c54997bbff6b61fc75"
+    },
+    {
+      "path": "dist/orbita/engine.mjs",
+      "sha256": "cffbc87dc68ecf884a20d232c68af9ad90758d2f0ec9943bfe391195e6015b72"
+    },
+    {
+      "path": "dist/orbita/fallback.mjs",
+      "sha256": "63045c3b2bfde812f6d9c082077e896ae3832565f5392e35d40be3e2c9c4e74b"
+    },
+    {
+      "path": "dist/orbita/generator-v2.mjs",
+      "sha256": "c74e47c87888c766dc21255a980b5479fc58d47612f9c251e7f29677fd081b33"
+    },
+    {
+      "path": "dist/orbita/generator.mjs",
+      "sha256": "95b08ccce8c4e79f505d44e2634fbd97dbe27175c2bcc4352307598e3e21eeef"
+    },
+    {
+      "path": "dist/orbita/route.mjs",
+      "sha256": "933a4cd89617b9671ab18ece71cbd416436e043ce19288d4838fbb8ddbe82e48"
+    },
+    {
+      "path": "dist/orbita/service.mjs",
+      "sha256": "3bc21d23462de992743bcb4b1637409737db813f355ee40e27d0b337b7f2b244"
+    },
+    {
+      "path": "dist/orbita/symbols.mjs",
+      "sha256": "14c651b8f160f4ea86f9c4c4335c050141e826ae4811655580a120d5b62b2f49"
+    },
+    {
+      "path": "dist/orbita/topology-braid-order.mjs",
+      "sha256": "86d2242f3386098965c25178a9731a64d824a2963163e9b453905e7d3ab923cd"
+    },
+    {
+      "path": "dist/orbita/topology-v2.mjs",
+      "sha256": "f844ca01876dcb1b79c890ec6dc4fb48036df6dc6f87e18f684671b47dc01eed"
+    },
+    {
+      "path": "dist/orbita/topology.mjs",
+      "sha256": "0fd2eb6117a1b5e732d2e624ecf77bb82fe72f2b358e37cb96502a33e15738b8"
+    },
+    {
+      "path": "dist/orbita/ui.mjs",
+      "sha256": "12c0a66f7a29ae7e055410fddfc3f976989bae166263d552a144114a5870820b"
+    },
+    {
+      "path": "dist/orbita/worker.mjs",
+      "sha256": "ac4df03a97523e1fbc04fd4bbb55088530203162376f8caca639c92fba15c565"
+    }
+  ],
+  "browserQA": "not run: no supported reachable browser preview",
+  "staticEvidence": "contact-sheet-1..4.svg/png",
+  "testCommand": "node --test tests/orbita-*.test.mjs"
+}
