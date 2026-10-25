@@ -45,18 +45,47 @@ export function eloRegionDescription(l,r){const c=l.constraints??{},parts=[];
 export function eloCellClue(l,cell){const c=l.constraints??{},required=(c.passages??[]).includes(cell),groups=(c.exclusivePassages??[]).filter(g=>g.cells.includes(cell));
  return {restricted:required||groups.length>0,markup:(required?'<span class="elo-passage" aria-hidden="true">○</span>':'')+groups.map(g=>`<span class="elo-exclusive" aria-hidden="true">◇<small>${esc(g.id)}</small></span>`).join(''),description:[required?'passagem obrigatória, sem ponto':'',...groups.map(g=>`passagem do grupo ${g.id}, exatamente uma por grupo, sem ponto`)].filter(Boolean).join('; ')};
 }
-export function eloLegendMarkup(l,colors){const c=l.constraints??{},keys=eloActiveMechanics(l);if(!keys.length)return '';
+export function eloLegendMarkup(l,colors,showExplanations=true){
+ const c=l.constraints??{},keys=eloActiveMechanics(l);if(!keys.length)return '';
+ // Explanations use only the public clues. IDs never contain imported group names.
+ const explanationIds=[];
+ const explain=(key,text)=>{
+  const id=`c-elo-clue-${key}-explanation`;explanationIds.push(id);
+  return ` <span id="${id}" class="elo-clue-explanation"${showExplanations?'':' hidden'}>${esc(text)}</span>`;
+ };
+ const quantity=(n,singular,plural)=>`${n} ${Number(n)===1?singular:plural}`;
  const regional=Array.from({length:Math.max(...l.regions)+1},(_,r)=>r).filter(r=>eloRegionDescription(l,r));
- const chips=regional.map(r=>{const shape=c.shapes?.[r],order=c.order?.indexOf(r)??-1;return `<li class="elo-region-chip" style="--elo-region:${colors[r%colors.length]}" title="${esc(eloRegionDescription(l,r))}"><strong>Região ${eloRegionName(r)}</strong>${shape?` <span>${shape==='turn'?'∟ curva':'↔ reta'}</span>`:''}${c.distances?.[r]!==undefined?` <span>Σ ${c.distances[r]}</span>`:''}${order>=0?` <span>marco ${order+1}</span>`:''}</li>`;}).join('');
+ const chips=regional.map(r=>{
+  const name=eloRegionName(r),shape=c.shapes?.[r],order=c.order?.indexOf(r)??-1,parts=[];
+  if(shape)parts.push(shape==='turn'
+   ?`O ponto da região ${name} deve formar uma curva: uma ligação horizontal e outra vertical, perpendiculares entre si.`
+   :`O ponto da região ${name} deve formar uma reta: as duas ligações seguem em direções opostas, ambas na horizontal ou ambas na vertical.`);
+  if(c.distances?.[r]!==undefined)parts.push(`No ponto da região ${name}, some o comprimento das duas ligações: o total deve ser exatamente ${quantity(c.distances[r],'intervalo','intervalos')} entre centros de casas vizinhas. Por exemplo, de C2 a C5 são 3 intervalos. Não é o tamanho de cada ligação separadamente.`);
+  if(order>=0)parts.push(`A região ${name} é o marco ${order+1} da sequência indicada abaixo. Os marcos devem aparecer nessa ordem ao percorrer o circuito, com outras regiões entre eles se necessário. Pode começar em qualquer marco e percorrer no sentido inverso; não é a ordem de colocar os pontos.`);
+  const peers=(c.neighbors??[]).flatMap(([a,b])=>a===r?[b]:b===r?[a]:[]);
+  if(peers.length)parts.push(`O ponto da região ${name} deve se ligar diretamente ${peers.length===1?'ao ponto da região':'aos pontos das regiões'} ${peers.map(eloRegionName).join(', ')}, sem ponto intermediário. As regiões não precisam compartilhar uma fronteira.`);
+  return `<li class="elo-region-chip" style="--elo-region:${colors[r%colors.length]}" title="${esc(eloRegionDescription(l,r))}"><strong>Região ${name}</strong>${shape?` <span>${shape==='turn'?'∟ curva':'↔ reta'}</span>`:''}${c.distances?.[r]!==undefined?` <span>Σ ${c.distances[r]}</span>`:''}${order>=0?` <span>marco ${order+1}</span>`:''}${explain(`region-${r}`,parts.join(' '))}</li>`;
+ }).join('');
  const lines=[];
- if(c.passages?.length)lines.push(`○ Passagens: ${c.passages.map(i=>coord(l,i)).join(', ')}.`);
- if(c.forbiddenEdges?.length)lines.push(`⊣ Trechos vedados: ${c.forbiddenEdges.map(([a,b])=>`${coord(l,a)}–${coord(l,b)}`).join('; ')}.`);
- const counts=[...Object.entries(c.rowCounts??{}).map(([r,n])=>`L${+r+1}: ${n}`),...Object.entries(c.colCounts??{}).map(([col,n])=>`C${+col+1}: ${n}`)];if(counts.length)lines.push(`● Pontos exatos: ${counts.join(' · ')}.`);
- if(c.neighbors?.length)lines.push(`Vizinhanças diretas: ${c.neighbors.map(([a,b])=>`${eloRegionName(a)}—${eloRegionName(b)}`).join(' · ')}.`);
- if(c.order?.length)lines.push(`① Ordem: ${c.order.map(eloRegionName).join(' → ')} → ${eloRegionName(c.order[0])}. Vale também o sentido inverso, sem início obrigatório.`);
- if(c.cuts?.length)lines.push(`┆ Travessias: ${c.cuts.map(cut=>`${cut.axis==='row'?'L':'C'}${cut.index+1}|${cut.axis==='row'?'L':'C'}${cut.index+2} = ${cut.count}`).join(' · ')}.`);
- for(const g of c.exclusivePassages??[])lines.push(`◇ Grupo ${g.id}: ${g.cells.map(i=>coord(l,i)).join(' ou ')}. Exatamente uma passagem.`);
- return `<section class="elo-clue-legend" aria-label="Pistas desta fase"><strong>Pistas desta fase</strong>${chips?`<ul class="elo-region-clues">${chips}</ul><p class="elo-region-help">As marcas das regiões acompanham seus pontos, onde quer que sejam colocados.</p>`:''}<ul class="elo-specific-clues">${lines.map(text=>`<li>${esc(text)}</li>`).join('')}</ul></section>`;
+ const line=(key,code,explanation)=>lines.push(`<li>${esc(code)}${explain(key,explanation)}</li>`);
+ if(c.passages?.length)line('passages',`○ Passagens: ${c.passages.map(i=>coord(l,i)).join(', ')}.`,
+  `Cada casa indicada (${c.passages.map(i=>coord(l,i)).join(', ')}) deve ficar sem ponto e ter seu centro atravessado pelo interior de uma ligação. Passar ao lado não vale. A passagem não interrompe nem cria uma ligação.`);
+ if(c.forbiddenEdges?.length)line('forbidden-edges',`⊣ Trechos vedados: ${c.forbiddenEdges.map(([a,b])=>`${coord(l,a)}–${coord(l,b)}`).join('; ')}.`,
+  `Nenhuma ligação pode percorrer os intervalos entre os centros de ${c.forbiddenEdges.map(([a,b])=>`${coord(l,a)} e ${coord(l,b)}`).join('; ')}. A proibição vale para esses intervalos, não bloqueia as casas nas extremidades. Uma ligação automática que percorra um deles viola a pista.`);
+ const counts=[...Object.entries(c.rowCounts??{}).map(([r,n])=>`L${+r+1}: ${n}`),...Object.entries(c.colCounts??{}).map(([col,n])=>`C${+col+1}: ${n}`)];
+ if(counts.length){
+  const quotas=[...Object.entries(c.rowCounts??{}).map(([r,n])=>`Na linha L${+r+1}, deve haver exatamente ${quantity(n,'ponto','pontos')}.`),...Object.entries(c.colCounts??{}).map(([col,n])=>`Na coluna C${+col+1}, deve haver exatamente ${quantity(n,'ponto','pontos')}.`)];
+  line('counts',`● Pontos exatos: ${counts.join(' · ')}.`,`${quotas.join(' ')} Os pontos fixos também entram nessas contagens. Uma ligação que só atravessa uma casa não conta como ponto.${[...Object.values(c.rowCounts??{}),...Object.values(c.colCounts??{})].some(n=>Number(n)===0)?' Zero significa que não pode haver nenhum ponto naquela linha ou coluna.':''}`);
+ }
+ if(c.neighbors?.length)line('neighbors',`Vizinhanças diretas: ${c.neighbors.map(([a,b])=>`${eloRegionName(a)}—${eloRegionName(b)}`).join(' · ')}.`,
+  `${c.neighbors.map(([a,b])=>`O ponto da região ${eloRegionName(a)} deve se ligar diretamente ao ponto da região ${eloRegionName(b)}.`).join(' ')} Não pode haver outro ponto entre os dois na mesma linha ou coluna. As regiões não precisam compartilhar uma fronteira.`);
+ if(c.order?.length)line('order',`① Ordem: ${c.order.map(eloRegionName).join(' → ')} → ${eloRegionName(c.order[0])}. Vale também o sentido inverso, sem início obrigatório.`,
+  `Ao percorrer o circuito, os pontos das regiões ${c.order.map(eloRegionName).join(' → ')} devem aparecer nessa ordem relativa. Pode haver outras regiões entre esses marcos. Pode começar por qualquer marco (rotacionar a sequência) ou percorrer no sentido inverso. Não é a ordem de colocar os pontos nem exige ligações diretas entre marcos consecutivos.`);
+ if(c.cuts?.length)line('cuts',`┆ Travessias: ${c.cuts.map(cut=>`${cut.axis==='row'?'L':'C'}${cut.index+1}|${cut.axis==='row'?'L':'C'}${cut.index+2} = ${cut.count}`).join(' · ')}.`,
+  `${c.cuts.map(cut=>{const row=cut.axis==='row',axis=row?'L':'C';return `Entre as ${row?'linhas':'colunas'} ${axis}${cut.index+1} e ${axis}${cut.index+2}, exatamente ${quantity(cut.count,'ligação deve','ligações devem')} cruzar a linha tracejada.`;}).join(' ')} Conte ligações, não pontos nem casas. O corte é só uma referência, não uma barreira.`);
+ for(const [index,g] of (c.exclusivePassages??[]).entries())line(`exclusive-${index}`,`◇ Grupo ${g.id}: ${g.cells.map(i=>coord(l,i)).join(' ou ')}. Exatamente uma passagem.`,
+  `No grupo ${g.id}, todas as casas indicadas (${g.cells.map(i=>coord(l,i)).join(', ')}) devem ficar sem ponto. Exatamente uma dessas casas deve ter seu centro atravessado pelo interior de uma ligação; as demais não podem ter o centro atravessado. Nem zero nem duas casas valem: até uma única ligação que atravesse duas casas do mesmo grupo viola a pista.`);
+ return `<section id="c-elo-clue-legend" class="elo-clue-legend" aria-label="Pistas desta fase"><div class="elo-clue-heading"><strong>Pistas desta fase</strong><button id="c-elo-explanations-toggle" type="button" aria-expanded="${showExplanations?'true':'false'}" aria-controls="${explanationIds.join(' ')}">${showExplanations?'Ocultar explicações':'Mostrar explicações'}</button></div>${chips?`<ul class="elo-region-clues">${chips}</ul><p class="elo-region-help">As marcas das regiões acompanham seus pontos, onde quer que sejam colocados.</p>`:''}<ul class="elo-specific-clues">${lines.join('')}</ul></section>`;
 }
 /** Labels live in the board's CSS coordinate space, not its scalable SVG viewBox.
  * This keeps a 12×12 clue readable and a compact board's clue inside its gutter.

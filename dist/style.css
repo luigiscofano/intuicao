@@ -294,3 +294,13 @@ button.action-hint:hover{background:#e4dcf1;border-color:#9c85bb}
  .collection-surface:has(>.board-navigation>.elo-board-surface.elo-has-gutter,>.board-navigation>.elo-board-surface .elo-large,>.board-navigation>.elo-board-surface .elo-board-label)>.stage-top{width:calc(100% - 64px)}
  .collection-surface:has(>.board-navigation>.level-arrow):has(>.board-navigation>.elo-board-surface.elo-has-gutter,>.board-navigation>.elo-board-surface .elo-large,>.board-navigation>.elo-board-surface .elo-board-label)>.stage-top{width:calc(100% - 160px)}
 }
+
+/* ELO clue meanings live beside their unchanged codes inside the rules sidebar. */
+.rules-sidebar .elo-clue-legend{margin:18px 0;padding:12px;min-width:0;font-size:13px;line-height:1.6}
+.elo-clue-legend #c-elo-explanations-toggle{display:block;min-height:44px;max-width:100%;margin:10px 0 14px;font-size:12px}
+.elo-clue-legend .elo-region-clues{display:block;margin:12px 0;padding:0}
+.elo-clue-legend .elo-region-chip{margin:10px 0;min-width:0;overflow-wrap:anywhere}
+.elo-clue-legend .elo-clue-explanation{display:block;flex-basis:100%;min-width:0;max-width:100%;margin:6px 0 2px;white-space:normal;overflow-wrap:anywhere;font-size:13px;line-height:1.6;color:#435440}
+.elo-clue-legend .elo-specific-clues{padding-left:16px;overflow-wrap:anywhere}
+.elo-clue-legend .elo-specific-clues>li{margin:12px 0}
+.elo-clue-legend .elo-clue-explanation[hidden]{display:none}
