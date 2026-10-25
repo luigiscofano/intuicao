@@ -251,3 +251,16 @@ body:has(.lab:not([hidden]), #collection:not([hidden]) > .collection-lab) > foot
  body:has(.lab:not([hidden]), #collection:not([hidden]) > .collection-lab) > footer{--game-root-flare:14px}
  body:has(.lab:not([hidden]), #collection:not([hidden]) > .collection-lab) > footer::before{left:calc(16px - var(--game-root-flare) - .5px);width:calc(100% - 32px + 2 * var(--game-root-flare) + 1px);bottom:-85px}
 }
+
+/* Breathing room in active games; only navigation and lower action surfaces.
+   Board sizes, inner coordinates, game colors and feedback remain untouched. */
+body:has(.lab:not([hidden]), #collection:not([hidden]) > .collection-lab) #main > .games{margin-top:24px;gap:18px}
+:is(#main > .lab, #collection > .collection-lab) .level-actions{gap:16px;padding-top:20px;padding-bottom:16px;background:#fff}
+:is(#main > .lab, #collection > .collection-lab) .level-actions :is(.actions,.collection-toolbar){gap:12px;flex-wrap:wrap}
+#main > .lab .level-notes{background:#fff}
+#collection > .collection-lab .collection-surface{background-image:linear-gradient(to top,#fff 20px,transparent 20px)}
+#collection > .collection-lab .collection-replay{background:#fff;margin:0;padding:10px 24px}
+@media(max-width:760px){
+ body:has(.lab:not([hidden]), #collection:not([hidden]) > .collection-lab) #main > .games{margin-top:20px;gap:12px}
+ :is(#main > .lab, #collection > .collection-lab) .level-actions{gap:12px;padding-top:18px;padding-bottom:16px}
+}

@@ -1,9 +1,10 @@
+import {restoreGameSpacingCSS} from './game-spacing-history.mjs';
 import assert from 'node:assert/strict';
 import fs from 'node:fs';
 import crypto from 'node:crypto';
 import {restoreAllScreensFrameCSS} from './all-screens-frame-history.mjs';
 const m=JSON.parse(fs.readFileSync(new URL('./all-screens-frame-authorized-change.json',import.meta.url),'utf8'));
-const css=fs.readFileSync(new URL('../dist/platform.css',import.meta.url),'utf8');
+const css=restoreGameSpacingCSS(fs.readFileSync(new URL('../dist/platform.css',import.meta.url),'utf8'));
 assert.equal(crypto.createHash('sha256').update(css).digest('hex'),m.afterCssSHA256);
 restoreAllScreensFrameCSS(css);
 const block=m.append.replace(/\/\*[\s\S]*?\*\//g,'');
