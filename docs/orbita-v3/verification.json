@@ -1,0 +1,100 @@
+{
+  "catalogVersion": 3,
+  "baseline": "4d7d87b459fa68e777e6eb8bdbbb42f24a0c0908",
+  "catalogSha256": "b048807b6fda6ccfec6d85555f04555e72c24e35cec32f0ccf955c8908fef60a",
+  "tests": {
+    "command": "node --test tests/orbita-*.test.mjs",
+    "passed": 109,
+    "failed": 0,
+    "log": "test-results.txt"
+  },
+  "staticEvidence": "contact-sheet-1..3.svg/png",
+  "browserQA": "parent-owned postpublication verification; no browser result claimed by implementation worker",
+  "legacyRecovery": "noncircular active Endless archived, replaced with distinct seed and visible notice; counters and full prior run history retained",
+  "files": [
+    {
+      "path": "dist/orbita/analysis.mjs",
+      "sha256": "823f93c1f8e66535afaa979acf7b650a6681e4d2cd96c8c764d4c88f5540074d"
+    },
+    {
+      "path": "dist/orbita/authored-patterns.mjs",
+      "sha256": "18128d646d8da9ccfde71207441f8d5de89602032b83e55009bdcc0d8a79009a"
+    },
+    {
+      "path": "dist/orbita/campaign.mjs",
+      "sha256": "cfc056c3517b2154b2d17e59a847e9eae23887392da83f882ef9aa11b6f410fe"
+    },
+    {
+      "path": "dist/orbita/catalog.mjs",
+      "sha256": "b048807b6fda6ccfec6d85555f04555e72c24e35cec32f0ccf955c8908fef60a"
+    },
+    {
+      "path": "dist/orbita/design-evidence.mjs",
+      "sha256": "0493c3b536ef774034168a7ef87b07703f21c4cfbf101e9e8ccd64389ccfbf81"
+    },
+    {
+      "path": "dist/orbita/diversity.mjs",
+      "sha256": "6a1f2f93bbef7f1bae776fe9c6f787e7d32d3a8729d4039962967a9a4ff5ae78"
+    },
+    {
+      "path": "dist/orbita/endless-v2.mjs",
+      "sha256": "f885e0f5d4c4ef4e8ad032bd20b3d76df21b203d4b4aeb240302091f9acb7756"
+    },
+    {
+      "path": "dist/orbita/engine.mjs",
+      "sha256": "cffbc87dc68ecf884a20d232c68af9ad90758d2f0ec9943bfe391195e6015b72"
+    },
+    {
+      "path": "dist/orbita/fallback.mjs",
+      "sha256": "63045c3b2bfde812f6d9c082077e896ae3832565f5392e35d40be3e2c9c4e74b"
+    },
+    {
+      "path": "dist/orbita/generator-v2.mjs",
+      "sha256": "c74e47c87888c766dc21255a980b5479fc58d47612f9c251e7f29677fd081b33"
+    },
+    {
+      "path": "dist/orbita/generator-v3.mjs",
+      "sha256": "ee27d012b09d95a25f1bba9f0899e217df47ef7936c01205c417f454340553a8"
+    },
+    {
+      "path": "dist/orbita/generator.mjs",
+      "sha256": "b6a04945fa2e7294bc71d4de19dc4f5649f8edae503e48df38125e7d57ad84a5"
+    },
+    {
+      "path": "dist/orbita/route.mjs",
+      "sha256": "933a4cd89617b9671ab18ece71cbd416436e043ce19288d4838fbb8ddbe82e48"
+    },
+    {
+      "path": "dist/orbita/service.mjs",
+      "sha256": "2e5f2a6b48da76d45569aa5f5dfc3795d644dc65712db20fd147568a40de88b4"
+    },
+    {
+      "path": "dist/orbita/symbols.mjs",
+      "sha256": "14c651b8f160f4ea86f9c4c4335c050141e826ae4811655580a120d5b62b2f49"
+    },
+    {
+      "path": "dist/orbita/topology-braid-order.mjs",
+      "sha256": "86d2242f3386098965c25178a9731a64d824a2963163e9b453905e7d3ab923cd"
+    },
+    {
+      "path": "dist/orbita/topology-circles-v3.mjs",
+      "sha256": "5a4356e4b23d25d4a9b115caa2b2a470418c845b8b5b642cfe28b58650f61892"
+    },
+    {
+      "path": "dist/orbita/topology-v2.mjs",
+      "sha256": "f844ca01876dcb1b79c890ec6dc4fb48036df6dc6f87e18f684671b47dc01eed"
+    },
+    {
+      "path": "dist/orbita/topology.mjs",
+      "sha256": "0fd2eb6117a1b5e732d2e624ecf77bb82fe72f2b358e37cb96502a33e15738b8"
+    },
+    {
+      "path": "dist/orbita/ui.mjs",
+      "sha256": "9a309bfe60d66e8393e0a49fe41eeebdcdc350a43dab7a72ffcb8e1106dcfa01"
+    },
+    {
+      "path": "dist/orbita/worker.mjs",
+      "sha256": "ac4df03a97523e1fbc04fd4bbb55088530203162376f8caca639c92fba15c565"
+    }
+  ]
+}

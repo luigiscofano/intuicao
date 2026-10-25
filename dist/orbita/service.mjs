@@ -1,3 +1,4 @@
+import {ENDLESS_VERSION,isCircularGeneration} from './endless-v2.mjs';
 import {certifyGenerated,certifyAnalysis} from './analysis.mjs';
 
 const abortError = () => Object.assign(new Error('Solicitação substituída.'),{name:'AbortError'});
@@ -15,6 +16,7 @@ export function createOrbitaService({workerFactory,timeoutMs = 14000} = {}) {
     }
     const certify = (payload,result) => {
       if (type === 'generate') {
+        if(result?.generatorVersion!==ENDLESS_VERSION||!isCircularGeneration(result?.level))throw new Error('O gerador precisa usar a versão circular atual.');
         if (result?.seed !== payload.seed) throw new Error('A geração devolveu uma seed diferente da solicitada.');
         return certifyGenerated(result,payload.options);
       }

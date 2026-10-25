@@ -1,3 +1,5 @@
+> Histórico da versão v2, substituído pela correção circular v3. Consulte [CATALOG-v3.md](CATALOG-v3.md) para os critérios atuais. As famílias de loops não circulares abaixo não são requisitos vigentes.
+
 # Catálogo Órbita 1000 — autoria e verificações
 
 ## Reprodução

@@ -7,7 +7,7 @@ import {certifyGenerated,certifyAnalysis} from '../dist/orbita/analysis.mjs';
 import {exampleLevel,move} from './orbita-engine-fixtures.mjs';
 
 const level = exampleLevel();
-const generated = seed => ({level,seed,generatorVersion:'orbita-generator-1',signature:'fixture',source:'generated'});
+const generated = seed => ({level,seed,generatorVersion:'orbita-generator-3',signature:'fixture',source:'generated'});
 function workers() {
   const instances = [];
   const factory = type => {

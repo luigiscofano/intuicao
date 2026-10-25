@@ -1,0 +1,119 @@
+{
+  "samples": [
+    {
+      "id": 201,
+      "rings": 2,
+      "intersections": 2,
+      "family": "lens"
+    },
+    {
+      "id": 251,
+      "rings": 3,
+      "intersections": 3,
+      "family": "chain"
+    },
+    {
+      "id": 401,
+      "rings": 3,
+      "intersections": 4,
+      "family": "chain"
+    },
+    {
+      "id": 571,
+      "rings": 4,
+      "intersections": 5,
+      "family": "cross-restoration"
+    },
+    {
+      "id": 723,
+      "rings": 4,
+      "intersections": 8,
+      "family": "mesh"
+    },
+    {
+      "id": 722,
+      "rings": 4,
+      "intersections": 10,
+      "family": "multiple-bottlenecks"
+    },
+    {
+      "id": 973,
+      "rings": 5,
+      "intersections": 12,
+      "family": "mixed-lengths"
+    },
+    {
+      "id": 971,
+      "rings": 5,
+      "intersections": 14,
+      "family": "redundant-circuit"
+    },
+    {
+      "id": 416,
+      "rings": 4,
+      "intersections": 4,
+      "family": "alternative-sensor"
+    },
+    {
+      "id": 885,
+      "rings": 2,
+      "intersections": 2,
+      "family": "step-network"
+    },
+    {
+      "id": 721,
+      "rings": 4,
+      "intersections": 9,
+      "family": "mesh"
+    },
+    {
+      "id": 434,
+      "rings": 4,
+      "intersections": 4,
+      "family": "orbital-ladder"
+    },
+    {
+      "id": 252,
+      "rings": 3,
+      "intersections": 3,
+      "family": "mixed-lengths"
+    },
+    {
+      "id": 209,
+      "rings": 2,
+      "intersections": 2,
+      "family": "mixed-lengths"
+    },
+    {
+      "id": 376,
+      "rings": 4,
+      "intersections": 3,
+      "family": "mixed-lengths"
+    },
+    {
+      "id": 351,
+      "rings": 3,
+      "intersections": 3,
+      "family": "cross-restoration"
+    },
+    {
+      "id": 301,
+      "rings": 3,
+      "intersections": 3,
+      "family": "chain"
+    },
+    {
+      "id": 801,
+      "rings": 5,
+      "intersections": 7,
+      "family": "step-network"
+    },
+    {
+      "id": 1000,
+      "rings": 5,
+      "intersections": 11,
+      "family": "mixed-lengths"
+    }
+  ],
+  "pages": 3
+}
