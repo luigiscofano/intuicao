@@ -1,0 +1,583 @@
+{
+  "generatedAt": "2026-10-25T01:45:48.006Z",
+  "passed": false,
+  "runs": [
+    {
+      "file": "about-dialog-tests.mjs",
+      "args": [],
+      "passed": true,
+      "status": 0,
+      "signal": null,
+      "elapsedMs": 94,
+      "summary": "PASS About dialog exact HTML isolation, six approved paragraphs, focus/Tab/Escape/X/Fechar/backdrop, repeated lifecycle, bounded sparkle cleanup and reduced-motion simulation. Native top-layer/mobile layout QA remains separate."
+    },
+    {
+      "file": "active-flower-tests.mjs",
+      "args": [],
+      "passed": true,
+      "status": 0,
+      "signal": null,
+      "elapsedMs": 70,
+      "summary": "PASS active flower: one exact menu-only active-marker replacement, passive green SVG, no flow/state/ARIA/source changes, bounded non-overlap for cards >=64px, and historical chain fail-closed."
+    },
+    {
+      "file": "all-screens-frame-tests.mjs",
+      "args": [],
+      "passed": true,
+      "status": 0,
+      "signal": null,
+      "elapsedMs": 62,
+      "summary": "PASS exact active-game exterior paint only, unchanged board geometry/gestures/clipping, inert footer shadow, responsive 1px joins. Browser QA remains required."
+    },
+    {
+      "file": "bottom-alignment-tests.mjs",
+      "args": [],
+      "passed": true,
+      "status": 0,
+      "signal": null,
+      "elapsedMs": 63,
+      "summary": "PASS bottom alignment: two exact CSS substitutions, fail-closed/idempotent historical restoration, 9 mobile/desktop/wide viewport geometries and 1px inward joins. Browser QA remains required."
+    },
+    {
+      "file": "completed-green-tests.mjs",
+      "args": [],
+      "passed": true,
+      "status": 0,
+      "signal": null,
+      "elapsedMs": 77,
+      "summary": "PASS completed green: exactly two done-only rules across five campaigns; preserved selection and assistance labels; contrast 5.95:1; immutable source hashes and fail-closed historical restoration."
+    },
+    {
+      "file": "content-frame-curves-tests.mjs",
+      "args": [],
+      "passed": true,
+      "status": 0,
+      "signal": null,
+      "elapsedMs": 85,
+      "summary": "PASS exact isolated selection curves, 1px non-scaling strokes, preserved shell/header/styles, inert decoration, structural gutter fit at 320–2560px. Visual browser/mobile QA separate."
+    },
+    {
+      "file": "continuous-frame-tests.mjs",
+      "args": [],
+      "passed": true,
+      "status": 0,
+      "signal": null,
+      "elapsedMs": 68,
+      "summary": "PASS exact reconstruction, removed closed junction borders, 1px tangent-aligned continuous centerlines and white interior; structural fit at 320–2560px. Visual join screenshots still required."
+    },
+    {
+      "file": "curiosity-brand-tests.mjs",
+      "args": [],
+      "passed": false,
+      "status": 1,
+      "signal": null,
+      "elapsedMs": 64,
+      "summary": "    triggerUncaughtException(\n    ^\n\nAssertionError [ERR_ASSERTION]: Expected values to be strictly equal:\n\n16 !== 10\n\n    at file:///workspace/scratch/9fd2016a15a9/sites/intuicao/tests/curiosity-brand-tests.mjs:28:8\n    at ModuleJob.run (node:internal/modules/esm/module_job:561:25)\n    at async node:internal/modules/esm/loader:647:26\n    at async asyncRunEntryPointWithESMLoader (node:internal/modules/run_main:101:5) {\n  generatedMessage: true,\n  code: 'ERR_ASSERTION',\n  actual: 16,\n  expected: 10,\n  operator: 'strictEqual',\n  diff: 'simple'\n}\n\nNode.js v24.22.1"
+    },
+    {
+      "file": "decor-piles-tests.mjs",
+      "args": [],
+      "passed": true,
+      "status": 0,
+      "signal": null,
+      "elapsedMs": 62,
+      "summary": "PASS free-landing decorative piles: velocity/dt/scroll guards, monotonic impulses, bounds/settle, growth, passive input, fallback and teardown."
+    },
+    {
+      "file": "desvio-context-hints-tests.mjs",
+      "args": [],
+      "passed": true,
+      "status": 0,
+      "signal": null,
+      "elapsedMs": 66,
+      "summary": "PASS DESVIO contextual per mode/map/turn/selection, no solver or suggested move outside explicit training analysis, immutable state and completed-game explanation"
+    },
+    {
+      "file": "direct-actions-tests.mjs",
+      "args": [],
+      "passed": true,
+      "status": 0,
+      "signal": null,
+      "elapsedMs": 71,
+      "summary": "PASS ELO move/toggle is atomic and clears target annotation\nPASS ELO fixed regions permit annotations but never move fixed points\nPASS ELO discard does not remove points or block connections\nPASS ELO drag validates source and same region, idempotent drop\nPASS PRUMO initializes center and horizontal/vertical support incidents\nPASS PRUMO toggles active color, overwrites other colors, requires selection\nPASS PRUMO stroke intent remains stable, filtered erase preserves other colors\nPASS PACTO forward/reverse cycle preserves saved canonical symbol ids\nPASS PACTO candidates only on empty; values clear notes atomically and are idempotent\nPASS PACTO fixed clues immune to all commands\nPASS One history transaction restores full notes/values and full paint stroke\nPASS Invalid cells/actions and unsupported games remain cloned no-ops\n12 direct-action tests passed."
+    },
+    {
+      "file": "direct-hints-tests.mjs",
+      "args": [],
+      "passed": true,
+      "status": 0,
+      "signal": null,
+      "elapsedMs": 1542,
+      "summary": "{\"passed\":true,\"hintChecks\":718,\"actionsChecked\":407,\"maxHintMilliseconds\":17.08}"
+    },
+    {
+      "file": "direct-input-independent-tests.mjs",
+      "args": [],
+      "passed": true,
+      "status": 0,
+      "signal": null,
+      "elapsedMs": 83,
+      "summary": "PASS right drag followed by contextmenu applies one transaction only\nPASS second touch rolls back active editing before viewport navigation\nPASS pointercancel and Escape each roll back but never commit\nPASS longpress release and browser contextmenu never also click\nPASS fast drag interpolates all cells and processes revisits once\nPASS outside drag supplies null drop rather than last valid cell\nPASS scaled translated bounding box gives correct drop cell\nPASS mouse click plus synthesized click creates one action\nPASS viewport reset is visual-only and restore returns original transform\n9/9 independent gesture tests passed."
+    },
+    {
+      "file": "elo-campaign-tests.mjs",
+      "args": [],
+      "passed": true,
+      "status": 0,
+      "signal": null,
+      "elapsedMs": 719,
+      "summary": "{\"passed\":true,\"levels\":200,\"completeCertificates\":200,\"compact\":77,\"large\":40,\"prumoData\":\"unchanged\",\"legacyBytes\":\"unchanged\"}"
+    },
+    {
+      "file": "elo-rules-tests.mjs",
+      "args": [],
+      "passed": true,
+      "status": 0,
+      "signal": null,
+      "elapsedMs": 978,
+      "summary": "PASS Classical visibility, straight points, region boundaries and alternative solutions\nPASS Curves and straight clues constrain directions, not point positions\nPASS Passages are strict interiors, never point positions or visibility walls\nPASS Forbidden unit intervals invalidate traversal without changing connections\nPASS Counts include fixed points but not traversing segments\nPASS Distance uses interval lengths and may shrink after subdivision\nPASS Mandatory neighbors require direct visibility, not merely a path\nPASS Order accepts rotations and reversal and ignores insertion order\nPASS Cuts lie between adjacent rows or columns and need even traversal counts\nPASS Exactly one exclusive passage is traversed and every option remains empty\nPASS A partial cycle is not rejected if remaining regions can subdivide it\nPASS Annotations do not alter truth, deductions or visibility\nPASS Search budgets are inconclusive, not a proof of zero solutions\nPASS Offline domain assumptions are explicit and never taken from player X marks\nPASS Geometry facade delegates ELO and local hints never search\nPASS Independent exhaustive oracle agrees on all mechanics and partial solution subsets\n{\"randomOracleBoards\":168,\"positiveBoards\":68,\"partialSolutionChecks\":2816}\nPASS Seeded connected region boards preserve every oracle solution under local deductions\n{\"passed\":true,\"tests\":17}"
+    },
+    {
+      "file": "elo-v3-answer-oracle-tests.mjs",
+      "args": [],
+      "passed": true,
+      "status": 0,
+      "signal": null,
+      "elapsedMs": 119,
+      "summary": "PASS 200 ELO answers through an independent row/column-sorted graph and all final constraint checks. This is not a second uniqueness proof."
+    },
+    {
+      "file": "elo-v3-campaign-tests.mjs",
+      "args": [],
+      "passed": true,
+      "status": 0,
+      "signal": null,
+      "elapsedMs": 291,
+      "summary": "{\"passed\":true,\"total\":200,\"stages\":10,\"compact\":77,\"large\":40,\"compactAfter80\":42,\"certificates\":200,\"unique\":200}"
+    },
+    {
+      "file": "elo-v3-campaign-ui-tests.mjs",
+      "args": [],
+      "passed": true,
+      "status": 0,
+      "signal": null,
+      "elapsedMs": 2380,
+      "summary": "{\"passed\":true,\"campaignLevels\":200,\"confirmedFailures\":600,\"verifiedAnswers\":200,\"reloadChecks\":5,\"explicitWins\":200}"
+    },
+    {
+      "file": "elo-v3-clue-layout-tests.mjs",
+      "args": [],
+      "passed": true,
+      "status": 0,
+      "signal": null,
+      "elapsedMs": 154,
+      "summary": "{\"passed\":true,\"campaignLabels\":85,\"liveUILevels\":4,\"synthetic12x12\":true,\"gutterGeometry\":true,\"globalHintDiagnostic\":true,\"realBrowserQA\":\"separate\"}"
+    },
+    {
+      "file": "elo-v3-independent-tests.mjs",
+      "args": [],
+      "passed": true,
+      "status": 0,
+      "signal": null,
+      "elapsedMs": 74,
+      "summary": "PASS classic and alternative solution are accepted by rules\nPASS turns versus straights constrain the region point, not its coordinate\nPASS passage uses strict segment interior and remains point-free\nPASS forbidden unit interval is checked without hiding automatic edges\nPASS row and column counts count points, not crossed segments\nPASS distance is the sum of the two first-visible incident lengths\nPASS neighbors require a direct edge, not a path\nPASS order accepts cyclic rotation and reversal, not a permutation\nPASS cuts count links and do not act as walls\nPASS exclusive passage means exactly one, including unused alternatives\nPASS first visible point replaces a long direct edge\nPASS a partial closed loop can be completed by subdivision\nPASS distance in a partial graph can shorten after subdivision\nPASS unmet passages and counts in an incomplete board are pending\nPASS annotation X does not affect mathematical truth\nPASS bounded solver never labels a node-budget cutoff exhaustive\n{\"passed\":true,\"independentMechanicCases\":16}"
+    },
+    {
+      "file": "elo-v3-isolation-tests.mjs",
+      "args": [],
+      "passed": true,
+      "status": 0,
+      "signal": null,
+      "elapsedMs": 90,
+      "summary": "{\"passed\":true,\"baseCommit\":\"0dc0c079a3df9a929b0615d9621eacda8120c83b\",\"untouchedFiles\":85,\"exactlyReversibleEloFiles\":7}"
+    },
+    {
+      "file": "elo-v3-regression-tests.mjs",
+      "args": [],
+      "passed": true,
+      "status": 0,
+      "signal": null,
+      "elapsedMs": 461,
+      "summary": "{\"passed\":true,\"legacyEloSolutions\":200,\"legacyEloPartialStates\":6400,\"prumoLevelsUnchanged\":200}"
+    },
+    {
+      "file": "endless-campaign-tests.mjs",
+      "args": [],
+      "passed": true,
+      "status": 0,
+      "signal": null,
+      "elapsedMs": 113,
+      "summary": "PASS PACTO/Endless exact authorized hashes; 35 original files byte-identical; 4 interface exceptions match their active separately recorded hashes (Endless overrides only app/collection); 139 style blocks retain explicit platform roots. Exact authorized home-copy edits and the inert leaf-layer insertion are reversed for comparison. Original retro baseline is unchanged. Browser computed-style/geometry comparison remains separate.\nPASS 34 campaign, engine, interaction and approved visual files match retained baseline or exact PACTO-approved UI hashes; pre-Endless 835f473489f31c045b1b194e6ff23724a077483c."
+    },
+    {
+      "file": "endless-collection-tests.mjs",
+      "args": [],
+      "passed": true,
+      "status": 0,
+      "signal": null,
+      "elapsedMs": 1181,
+      "summary": "PASS 15000 seeded configurations + determinism, diversity, concavity, terminal duels, exact validation, and campaign isolation."
+    },
+    {
+      "file": "endless-collection-ui-tests.mjs",
+      "args": [],
+      "passed": true,
+      "status": 0,
+      "signal": null,
+      "elapsedMs": 295,
+      "summary": "PASS elo entry, resume, answer, guarded automatic advance, reset, staged config, isolated campaign\nPASS prumo entry, resume, answer, guarded automatic advance, reset, staged config, isolated campaign\nPASS pacto entry, resume, answer, guarded automatic advance, reset, staged config, isolated campaign\nPASS DESVIO victory creates next generated map\nPASS pending victory resume and duplicate-count guard\nPASS reset after victory stays on the same puzzle after reopening\nPASS bot mode controls and loss preserves current map\nPASS bounded per-game session and answer-progress storage\nPASS editing a won puzzle cancels advancement after reopening\nPASS human victory against exact bot advances generated map\nPASS changing config invalidates captured stale bot callbacks"
+    },
+    {
+      "file": "game-info-tests.mjs",
+      "args": [],
+      "passed": true,
+      "status": 0,
+      "signal": null,
+      "elapsedMs": 83,
+      "summary": "PASS game info: six content records, exact 800ms dwell/cancellation, separate navigation/title icons, touch exclusion, modal isolation, focus/Tab/Escape/buttons/backdrop, route refresh and no duplicate icons. Native browser layout remains a separate check.\nPASS exact approved 4-file additions, all existing dist bytes, fail-closed reversible/idempotent HTML changes."
+    },
+    {
+      "file": "game-nav-scroll-tests.mjs",
+      "args": [],
+      "passed": true,
+      "status": 0,
+      "signal": null,
+      "elapsedMs": 54,
+      "summary": "game-nav-scroll: all tests passed"
+    },
+    {
+      "file": "game-spacing-tests.mjs",
+      "args": [],
+      "passed": true,
+      "status": 0,
+      "signal": null,
+      "elapsedMs": 74,
+      "summary": "PASS exact spacing append and SHA restoration, fail-closed historical chain, scoped desktop/mobile navigation/action spacing, 20px lower white paint only; all other dist files byte-identical."
+    },
+    {
+      "file": "header-tree-frame-tests.mjs",
+      "args": [],
+      "passed": true,
+      "status": 0,
+      "signal": null,
+      "elapsedMs": 59,
+      "summary": "PASS exact header-only frame insertion, preserved previous CSS, inert SVG, no game or leaf changes. Static checks only; mobile/live visual QA not run."
+    },
+    {
+      "file": "hero-frame-curves-tests.mjs",
+      "args": [],
+      "passed": true,
+      "status": 0,
+      "signal": null,
+      "elapsedMs": 57,
+      "summary": "PASS exact hero-only upper curves, white interior, unchanged roots/header/game styles and structural mobile gutters. Live visual QA separate."
+    },
+    {
+      "file": "hero-text-inset-tests.mjs",
+      "args": [],
+      "passed": true,
+      "status": 0,
+      "signal": null,
+      "elapsedMs": 62,
+      "summary": "PASS hero-only responsive left inset; all other CSS byte-identical to published dd7795c."
+    },
+    {
+      "file": "hints-rules-ui-tests.mjs",
+      "args": [],
+      "passed": true,
+      "status": 0,
+      "signal": null,
+      "elapsedMs": 1274,
+      "summary": "PASS light below-board hints, three stages, nonmutation, physical-edit invalidation, campaign navigation and Endless new/resume rules\nPASS cut below-board hints, three stages, nonmutation, physical-edit invalidation, campaign navigation and Endless new/resume rules\nPASS elo one below-board hint, exact three-stage engine, edit/undo/redo invalidation and rules in campaign/tutorial/daily/Endless\nPASS prumo one below-board hint, exact three-stage engine, edit/undo/redo invalidation and rules in campaign/tutorial/daily/Endless\nPASS pacto one below-board hint, exact three-stage engine, edit/undo/redo invalidation and rules in campaign/tutorial/daily/Endless\nPASS DESVIO local context-only three stages, preview/confirm/bot invalidation, no move application and map reentry\nPASS DESVIO competitive context-only three stages, preview/confirm/bot invalidation, no move application and map reentry\nPASS DESVIO bot context-only three stages, preview/confirm/bot invalidation, no move application and map reentry\nPASS DESVIO training context-only three stages, preview/confirm/bot invalidation, no move application and map reentry\nPASS DESVIO generated-board entry and context helper without optimal-play solver\nPASS six-game hints/rules UI integration suite"
+    },
+    {
+      "file": "home-copy-tests.mjs",
+      "args": [],
+      "passed": true,
+      "status": 0,
+      "signal": null,
+      "elapsedMs": 65,
+      "summary": "PASS home copy: exact scoped removals and one new phrase; title, footer brand and docs preserved; parsed DOM has no duplicate or broken ID references. Deterministic DOM harness, not native browser QA."
+    },
+    {
+      "file": "info-refinement-tests.mjs",
+      "args": [],
+      "passed": true,
+      "status": 0,
+      "signal": null,
+      "elapsedMs": 53,
+      "summary": "PASS information refinement: exact two-file changes, immutable published baseline, reversible/idempotent restoration, Buffer/string inputs, and fail-closed tampering guards."
+    },
+    {
+      "file": "level-shortcuts-tests.mjs",
+      "args": [],
+      "passed": true,
+      "status": 0,
+      "signal": null,
+      "elapsedMs": 442,
+      "summary": "PASS light side navigation, boundaries, free mode, stale reset and middle behavior\nPASS cut side navigation, boundaries, free mode, stale reset and middle behavior\nPASS elo side navigation, first/last, draft restored, stale reset, middle scoped\nPASS prumo side navigation, first/last, draft restored, stale reset, middle scoped\nPASS pacto side navigation, first/last, draft restored, stale reset, middle scoped\nPASS DESVIO has no level arrows; Reflexos navigation cancels animation\nPASS side navigation owns separate columns; no arrows in clickable board; one arrow per direction; responsive lanes and intrinsic board sizing"
+    },
+    {
+      "file": "manual-check-tests.mjs",
+      "args": [],
+      "passed": true,
+      "status": 0,
+      "signal": null,
+      "elapsedMs": 421,
+      "summary": "PASS 400 campaign answers/partials, real PRUMO alternative, PACTO alternative, neutral empty/unavailable, exhaustive-only errors, Worker deadline/repeat/stale/reset/failure\nPASS ELO/PRUMO UI, reference-free maps, counters/history unchanged, exact-board outline, 10s/repeated/edit/reset/undo/navigation and Endless advance; PACTO red outline\nPASS actual solver Worker accepts partial alternative; ELO full alternative and occupied-only error cells"
+    },
+    {
+      "file": "middle-confirm-tests.mjs",
+      "args": [],
+      "passed": true,
+      "status": 0,
+      "signal": null,
+      "elapsedMs": 60,
+      "summary": "PASS middle: one confirmation per gesture; native defaults suppressed; cancellation/movement/outside/blur/focus/chords/touch/links/other buttons/cleanup"
+    },
+    {
+      "file": "original-hints-tests.mjs",
+      "args": [],
+      "passed": true,
+      "status": 0,
+      "signal": null,
+      "elapsedMs": 1305,
+      "summary": "{\"passed\":true,\"checks\":345,\"distinctInitialLightHints\":170,\"maxMilliseconds\":11.16}"
+    },
+    {
+      "file": "original-logo-tests.mjs",
+      "args": [],
+      "passed": true,
+      "status": 0,
+      "signal": null,
+      "elapsedMs": 75,
+      "summary": "PASS two original PNG logos, exact original bytes/proportions/transparency, scoped responsive CSS, preserved complete prior dist and historical HTML. Browser visual QA remains separate."
+    },
+    {
+      "file": "pacto-check-tests.mjs",
+      "args": [],
+      "passed": true,
+      "status": 0,
+      "signal": null,
+      "elapsedMs": 195,
+      "summary": "PASS manual reference, fixed/empty ignored, alternative valid solution remains a reference mismatch, 10s/repeat/stale/reset\nPASS campaign/Endless UI: annotations, counters, correct/mismatch, timing, repeat, rerender, edit/undo/redo/reset/navigation/game switch/custom unavailable and automatic advance\nPASS reduced-motion and non-intercepting scoped check overlays"
+    },
+    {
+      "file": "pacto-feedback-tests.mjs",
+      "args": [],
+      "passed": true,
+      "status": 0,
+      "signal": null,
+      "elapsedMs": 234,
+      "summary": "PASS relógio unitário: 1999/2000 ms, rerender, novos conflitos, cancelamento, callback obsoleto, reset e confirmação\nPASS integração: aviso e ARIA atrasados, rerender preserva timer e andamento do fade\nPASS integração: correção cancela aviso; desfazer/refazer inicia novo prazo\nPASS integração: reinício, outro nível, outro jogo e saída descartam timers\nPASS integração: confirmação imediata e gabarito sem avisos obsoletos\nPASS CSS: desenho original preservado; fade só na camada de erro, desativado com movimento reduzido"
+    },
+    {
+      "file": "pacto-live-tests.mjs",
+      "args": [],
+      "passed": true,
+      "status": 0,
+      "signal": null,
+      "elapsedMs": 113,
+      "summary": "PASS Jogada não canônica sem erro explícito não é hachurada\nPASS Par válido e parceiro ainda possível não são erros\nPASS Trio reto, trio dobrado e grupo maior são erros imediatos\nPASS Isolamento fechado é erro; vizinho vazio ainda pode formar par\nPASS Cotas só hachuram linha/coluna completa, mesmo após ultrapassar dois\nPASS Cota válida completa não é erro\nPASS Vitória valida regras, não a igualdade com uma solução canônica\nPASS 200 inícios, 200 soluções e 600 estados parciais corretos sem hachuras\nPASS Entradas inválidas e pistas alteradas continuam protegidas\n9/9 grupos de regressão PACTO passaram."
+    },
+    {
+      "file": "pile-gravity-independent-tests.mjs",
+      "args": [],
+      "passed": true,
+      "status": 0,
+      "signal": null,
+      "elapsedMs": 74,
+      "summary": "PASS independent gravity checks: floor contact, new settled locations, idle stability, frame rates, dt guard, live supports and paused resize."
+    },
+    {
+      "file": "pile-open-flight-tests.mjs",
+      "args": [],
+      "passed": true,
+      "status": 0,
+      "signal": null,
+      "elapsedMs": 58,
+      "summary": "PASS open-flight: negative altitude at 30/60/120 FPS, gravity return/new landing, airborne resize, inert SVG overflow inside document containment. Static checks do not establish browser click-through."
+    },
+    {
+      "file": "pile-seam-tests.mjs",
+      "args": [],
+      "passed": true,
+      "status": 0,
+      "signal": null,
+      "elapsedMs": 61,
+      "summary": "PASS natural pile edges: periodic seams and gradual live-leaf opacity; original paths/positions/physics preserved."
+    },
+    {
+      "file": "platform-isolation-tests.mjs",
+      "args": [],
+      "passed": true,
+      "status": 0,
+      "signal": null,
+      "elapsedMs": 98,
+      "summary": "PASS PACTO/Endless exact authorized hashes; 35 original files byte-identical; 4 interface exceptions match their active separately recorded hashes (Endless overrides only app/collection); 139 style blocks retain explicit platform roots. Exact authorized home-copy edits and the inert leaf-layer insertion are reversed for comparison. Original retro baseline is unchanged. Browser computed-style/geometry comparison remains separate."
+    },
+    {
+      "file": "restart-collection-tests.mjs",
+      "args": [],
+      "passed": true,
+      "status": 0,
+      "signal": null,
+      "elapsedMs": 263,
+      "summary": "PASS elo cancel/Escape/native cancel, focus/trap, duplicate, scoped reset, navigation, persisted counters/other sessions\nPASS prumo cancel/Escape/native cancel, focus/trap, duplicate, scoped reset, navigation, persisted counters/other sessions\nPASS pacto cancel/Escape/native cancel, focus/trap, duplicate, scoped reset, navigation, persisted counters/other sessions\nPASS desvio cancel/Escape/native cancel, focus/trap, duplicate, scoped reset, navigation, persisted counters/other sessions\nPASS competitive reset blocked, bot pauses and resumes\nPASS no duplicated dialog/listeners and no browser confirmation\nPASS elo Dicas label stable across tiers 1/2/3 and rerender, internal progression preserved\nPASS prumo Dicas label stable across tiers 1/2/3 and rerender, internal progression preserved\nPASS pacto Dicas label stable across tiers 1/2/3 and rerender, internal progression preserved"
+    },
+    {
+      "file": "restart-original-tests.mjs",
+      "args": [],
+      "passed": true,
+      "status": 0,
+      "signal": null,
+      "elapsedMs": 360,
+      "summary": "PASS light actual module edit/cancel/Escape/reset, current level/focus, storage unchanged and stale navigation\nPASS cut actual module edit/cancel/Escape/reset, current level/focus, storage unchanged and stale navigation\nPASS Reflexos reset cancels active ray animation and clears result\nPASS game switch dismisses stale original confirmation"
+    },
+    {
+      "file": "rules-context-tests.mjs",
+      "args": [],
+      "passed": true,
+      "status": 0,
+      "signal": null,
+      "elapsedMs": 322,
+      "summary": "PASS Campaign introductions follow real mechanics, not stages or difficulty\nPASS Reflexos describes universal and selective portals from actual fields\nPASS ELO distinguishes curve/straight debut and explains diamond choice without answers\nPASS Daily uses actual catalogue identity even with stale index\nPASS Corte detects families and useful holes, not silhouette or direction changes\nPASS Tutorial is explicit and independent of campaign position\nPASS Endless inspects initial scene, not option wishes or secret constructed answer\nPASS Custom metadata cannot inherit campaign introduction from an index or title\nPASS DESVIO tactical setup is explained without choosing a move\nPASS Detector never reads solution, profile, hint, current moves, or progression labels\nPASS 10 contextual-rules checks across six games"
+    },
+    {
+      "file": "rules-sidebar-tests.mjs",
+      "args": [],
+      "passed": true,
+      "status": 0,
+      "signal": null,
+      "elapsedMs": 1706,
+      "summary": "PASS light introductory and ordinary navigation, reset choices, nonmutation, initial and novel Endless mechanics\nPASS cut introductory and ordinary navigation, reset choices, nonmutation, initial and novel Endless mechanics\nPASS elo introduction/reentry, ordinary entry, choice preservation, stale callbacks, progress, custom/tutorial and Endless\nPASS prumo introduction/reentry, ordinary entry, choice preservation, stale callbacks, progress, custom/tutorial and Endless\nPASS pacto introduction/reentry, ordinary entry, choice preservation, stale callbacks, progress, custom/tutorial and Endless\nPASS desvio introduction/reentry, ordinary entry, choice preservation, stale callbacks, progress, custom/tutorial and Endless\nPASS six-game sidebar structure, entry policy, session choices, responsive non-overlay CSS and preserved actions"
+    },
+    {
+      "file": "soft-corner-tests.mjs",
+      "args": [],
+      "passed": true,
+      "status": 0,
+      "signal": null,
+      "elapsedMs": 66,
+      "summary": "PASS localized symmetric corner softening, balanced ellipse tangents, 1px strokes, white paint, and exact preservation of all other CSS."
+    },
+    {
+      "file": "top-crown-paint-tests.mjs",
+      "args": [],
+      "passed": true,
+      "status": 0,
+      "signal": null,
+      "elapsedMs": 63,
+      "summary": "PASS single menu-only white crown plane, exact canopy-to-hero color join, inert paint, preserved feature and geometry CSS. Wide-screen visual proof required separately."
+    },
+    {
+      "file": "trunk-shadow-tests.mjs",
+      "args": [],
+      "passed": true,
+      "status": 0,
+      "signal": null,
+      "elapsedMs": 61,
+      "summary": "PASS one subtle selection silhouette shadow including curved roots; all other CSS exact."
+    },
+    {
+      "file": "visual-layout-tests.mjs",
+      "args": [],
+      "passed": true,
+      "status": 0,
+      "signal": null,
+      "elapsedMs": 53,
+      "summary": "PASS Reflexos/Corte native collapsible rules contain mission and explanation; actions styled; mobile and open/closed states present. Static structure only, not native-browser layout QA."
+    },
+    {
+      "file": "elo-ui-presentation.mjs",
+      "args": [],
+      "passed": true,
+      "status": 0,
+      "signal": null,
+      "elapsedMs": 66,
+      "summary": "PASS ELO presentation: 9 families, region-level clues, export privacy, passage actions, legacy migration, large local hint, 44px CSS"
+    },
+    {
+      "file": "elo-ui-interactions.mjs",
+      "args": [],
+      "passed": true,
+      "status": 0,
+      "signal": null,
+      "elapsedMs": 165,
+      "summary": "PASS ELO UI: 10×20, all clue families, accessible passages, atomic invalid drop, X, visible forbidden edges, reset cancel, explicit victory, navigation, saved history, 120-cell hints/undo/redo, PRUMO isolation"
+    },
+    {
+      "file": "direct-ui-acceptance.mjs",
+      "args": [],
+      "passed": true,
+      "status": 0,
+      "signal": null,
+      "elapsedMs": 382,
+      "summary": "PASS PRUMO marker priority selects without editing and click toggles\nPASS PRUMO brush undo/cancel and Alt pick preserve logic\nPASS PACTO exact cycle, canonical numeric keys, candidates and fixed palette\nPASS DESVIO hover/select/cancel never commits, second click commits\nPASS DESVIO bot undo returns before human and bot response\nPASS Saved state reloads; solved board wins only after explicit confirmation\nPASS PRUMO support keyboard, second finger rollback and right context suppression\nPASS PACTO focus, longpress and local palette pointer do not add accidental edits\nPASS DESVIO accessible confirm survives outside pointer and local undo agreement\nPASS ELO returning drag to starting point cancels displacement\nPASS DESVIO saved redo branch survives reopening the same map\nPASS PACTO candidate palette restores mounted focus after marking\nPASS PRUMO marker keyboard activation restores mounted support focus\nPASS Browser Ctrl/Cmd numeric shortcuts are neither intercepted nor edits\nPASS Competitive DESVIO reset/rematch are hidden and handlers cannot reset an active turn\nPASS Visual revision removes only viewport buttons and preserves collapsible rules/actions\nPASS PACTO live hatching ignores inferred contradictions and survives undo/redo/reload\nPASS PACTO explicit trio still hatches and clearing it removes the warning\nPASS PACTO final confirmation uses rules, not the stored answer key\n20/20 integrated UI suites passed (deterministic event simulation, not browser/device QA)."
+    },
+    {
+      "file": "endless-original-generators.mjs",
+      "args": [],
+      "passed": true,
+      "status": 0,
+      "signal": null,
+      "elapsedMs": 5664,
+      "summary": "PASS 8640 Reflexos + 3600 Corte seeds/configurations: solutions, individual rays, no collisions, initial challenge, options, repeatability and structural variation."
+    },
+    {
+      "file": "endless-original-ui.mjs",
+      "args": [],
+      "passed": true,
+      "status": 0,
+      "signal": null,
+      "elapsedMs": 567,
+      "summary": "PASS light Endless generation, gabarito, auto-next once, same-seed reset, resume, staged config, navigation cancellation and campaign separation\nPASS cut Endless generation, gabarito, auto-next once, same-seed reset, resume, staged config, navigation cancellation and campaign separation\nPASS Endless answer counters remain bounded in the current per-game run, not campaign storage\nPASS storage failure stays playable and shows an honest warning"
+    },
+    {
+      "file": "endless-original-resume.mjs",
+      "args": [
+        "light"
+      ],
+      "passed": true,
+      "status": 0,
+      "signal": null,
+      "elapsedMs": 389,
+      "summary": "PASS light fresh-page storage resume with edited current state"
+    },
+    {
+      "file": "endless-original-resume.mjs",
+      "args": [
+        "light",
+        "solved"
+      ],
+      "passed": true,
+      "status": 0,
+      "signal": null,
+      "elapsedMs": 380,
+      "summary": "PASS light fresh-page storage resume after victory advances once"
+    },
+    {
+      "file": "endless-original-resume.mjs",
+      "args": [
+        "cut"
+      ],
+      "passed": true,
+      "status": 0,
+      "signal": null,
+      "elapsedMs": 352,
+      "summary": "PASS cut fresh-page storage resume with edited current state"
+    },
+    {
+      "file": "endless-original-resume.mjs",
+      "args": [
+        "cut",
+        "solved"
+      ],
+      "passed": true,
+      "status": 0,
+      "signal": null,
+      "elapsedMs": 349,
+      "summary": "PASS cut fresh-page storage resume after victory advances once"
+    }
+  ]
+}

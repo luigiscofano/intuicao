@@ -51,7 +51,7 @@ body > footer .brand-dot{color:#997838}
 :where(body:not(:has(.lab:not([hidden]), #collection:not([hidden]) > .collection-lab))) #main > .games > button[aria-pressed=true] > span{color:#d3ddb5}
 :where(body:not(:has(.lab:not([hidden]), #collection:not([hidden]) > .collection-lab))) #main > .games > button small{font-family:system-ui,sans-serif;font-size:11px;line-height:1.6;opacity:1;margin-left:28px;color:#62634f}
 :where(body:not(:has(.lab:not([hidden]), #collection:not([hidden]) > .collection-lab))) #main > .games > button[aria-pressed=true] small{color:#e2e6ce}
-:where(body:not(:has(.lab:not([hidden]), #collection:not([hidden]) > .collection-lab))) #main > .games > button[aria-pressed=true]::after{content:"";position:absolute;top:-10px;right:14px;width:24px;height:24px;border-radius:0;background:url("platform-assets/active-flower.svg") center/contain no-repeat;box-shadow:none;pointer-events:none;user-select:none}
+:where(body:not(:has(.lab:not([hidden]), #collection:not([hidden]) > .collection-lab))) #main > .games > button[aria-pressed=true]::after{content:"";position:absolute;top:-13px;right:10px;width:32px;height:32px;border-radius:0;background:url("platform-assets/flower-green-original.png") center/contain no-repeat;box-shadow:none;pointer-events:none;user-select:none}
 :where(body:not(:has(.lab:not([hidden]), #collection:not([hidden]) > .collection-lab))) > footer > span{font-family:Georgia,"Times New Roman",serif;font-size:26px;font-style:italic;letter-spacing:-.5px;font-weight:700}
 
 /* Two explicit selection roots. .collection-lab can never match these. */
@@ -263,4 +263,24 @@ body:has(.lab:not([hidden]), #collection:not([hidden]) > .collection-lab) #main 
 @media(max-width:760px){
  body:has(.lab:not([hidden]), #collection:not([hidden]) > .collection-lab) #main > .games{margin-top:20px;gap:12px}
  :is(#main > .lab, #collection > .collection-lab) .level-actions{gap:12px;padding-top:18px;padding-bottom:16px}
+}
+
+/* Original owner-provided flowers: passive accents, never game pieces.
+   Transparent PNGs stay byte-identical; variations use size/rotation only. */
+#main > .intro h1::before,#main > .intro h1::after{content:"";position:absolute;pointer-events:none;user-select:none;background:url("platform-assets/flower-green-original.png") center/contain no-repeat;opacity:.55}
+#main > .intro h1::before{right:-8px;top:18px;width:42px;height:42px;transform:rotate(12deg)}
+#main > .intro h1::after{right:-5px;top:53px;width:26px;height:26px;transform:rotate(-22deg);opacity:.36}
+:is(#selection,#collection > .level-screen)::before{content:"";position:absolute;right:4px;top:6px;width:48px;height:56px;background:url("platform-assets/flower-green-original.png") right top/34px 34px no-repeat,url("platform-assets/flower-green-original.png") left bottom/23px 23px no-repeat;pointer-events:none;user-select:none;opacity:.5}
+:is(#main > .lab,#collection > .collection-lab) > .lab-heading{position:relative}
+:is(#main > .lab,#collection > .collection-lab) > .lab-heading::before,:is(#main > .lab,#collection > .collection-lab) > .lab-heading::after{content:"";position:absolute;left:1px;width:24px;height:24px;background:url("platform-assets/flower-green-original.png") center/contain no-repeat;pointer-events:none;user-select:none;opacity:.52}
+:is(#main > .lab,#collection > .collection-lab) > .lab-heading::before{top:2px;transform:rotate(-18deg)}
+:is(#main > .lab,#collection > .collection-lab) > .lab-heading::after{bottom:2px;transform:rotate(22deg);width:19px;height:19px;opacity:.34}
+body > footer::after{content:"";position:absolute;right:30px;top:18px;width:58px;height:56px;background:url("platform-assets/flower-green-original.png") right top/40px 40px no-repeat,url("platform-assets/flower-green-original.png") left bottom/27px 27px no-repeat;pointer-events:none;user-select:none;opacity:.5}
+:where(body:not(:has(.lab:not([hidden]),#collection:not([hidden]) > .collection-lab))) #main > .games > button[aria-pressed=true]::before{content:"";position:absolute;bottom:2px;right:44px;width:22px;height:22px;background:url("platform-assets/flower-white-original.png") center/contain no-repeat;pointer-events:none;user-select:none;opacity:.8;transform:rotate(-18deg)}
+@media(max-width:760px){
+ #main > .intro h1::before{right:-8px;top:6px;width:28px;height:28px}
+ #main > .intro h1::after{right:-5px;top:30px;width:20px;height:20px}
+ :is(#selection,#collection > .level-screen)::before{right:1px;top:2px;width:30px;height:42px;background-size:25px 25px,18px 18px}
+ :is(#main > .lab,#collection > .collection-lab) > .lab-heading::before,:is(#main > .lab,#collection > .collection-lab) > .lab-heading::after{left:-1px;width:18px;height:18px}
+ body > footer::after{right:18px;top:16px;width:42px;height:44px;background-size:30px 30px,21px 21px}
 }

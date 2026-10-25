@@ -1,3 +1,4 @@
+import {restoreReferenceFlowersCSS} from './reference-flowers-history.mjs';
 import {restoreRulesSidebarFile} from './rules-sidebar-history.mjs';
 import assert from 'node:assert/strict';
 import fs from 'node:fs';
@@ -8,7 +9,7 @@ const read=p=>restoreRulesSidebarFile(p,fs.readFileSync(new URL('../'+p,import.m
 const sha=s=>crypto.createHash('sha256').update(s).digest('hex');
 const m=JSON.parse(read('tests/active-flower-authorized-change.json'));
 const green=JSON.parse(read('tests/completed-green-authorized-change.json'));
-const css=read('dist/platform.css'),old=restoreActiveFlowerCSS(css);
+const css=restoreReferenceFlowersCSS(read('dist/platform.css')),old=restoreActiveFlowerCSS(css);
 assert.equal(sha(css),m.afterCssSHA256);
 assert.equal(sha(old),m.priorCssSHA256);
 assert.equal(m.priorCssSHA256,green.afterCssSHA256);
