@@ -276,3 +276,21 @@ button.action-hint:hover{background:#e4dcf1;border-color:#9c85bb}
 @media(max-width:600px){.experiment>.stage-top{padding-left:14px;padding-right:14px}.experiment>.stage-top>.stage-tools{width:100%;justify-content:flex-end}}
 /* Hints remain below the play area, with readable body-size text in all games. */
 #hint-text,#c-hint-text{font-size:16px;line-height:1.55}
+
+/* Align actions with the visible map, without resizing its cells or scroll area. */
+.experiment:has(>.board-navigation>.scene-wrap)>.stage-top{width:100%;margin-inline:auto;padding-inline:0}
+.experiment:has(>.board-navigation>.scene-wrap):has(>.board-navigation>.level-arrow:not([hidden]))>.stage-top{width:calc(100% - 116px)}
+.collection-surface>.stage-top{width:calc(100% - 48px);max-width:632px;margin-inline:auto;padding-inline:0}
+.collection-surface:has(>.board-navigation>.level-arrow)>.stage-top{width:calc(100% - 164px)}
+.collection-surface:has(>.board-navigation .board-desvio)>.stage-top{max-width:460px}
+.collection-surface:has(>.board-navigation>.elo-board-surface.elo-has-gutter,>.board-navigation>.elo-board-surface .elo-large,>.board-navigation>.elo-board-surface .elo-board-label)>.stage-top{width:calc(100% - 64px);max-width:616px;padding-left:32px}
+.collection-surface:has(>.board-navigation>.level-arrow):has(>.board-navigation>.elo-board-surface.elo-has-gutter,>.board-navigation>.elo-board-surface .elo-large,>.board-navigation>.elo-board-surface .elo-board-label)>.stage-top{width:calc(100% - 180px)}
+.experiment>.stage-top>.stage-tools{max-width:100%;min-width:0}
+.experiment>.stage-top+.board-navigation>.collection-board-wrap{margin-top:0}
+@media(max-width:600px){
+ .experiment:has(>.board-navigation>.scene-wrap):has(>.board-navigation>.level-arrow:not([hidden]))>.stage-top{width:calc(100% - 96px)}
+ .collection-surface>.stage-top{width:calc(100% - 12px)}
+ .collection-surface:has(>.board-navigation>.level-arrow)>.stage-top{width:calc(100% - 100px)}
+ .collection-surface:has(>.board-navigation>.elo-board-surface.elo-has-gutter,>.board-navigation>.elo-board-surface .elo-large,>.board-navigation>.elo-board-surface .elo-board-label)>.stage-top{width:calc(100% - 64px)}
+ .collection-surface:has(>.board-navigation>.level-arrow):has(>.board-navigation>.elo-board-surface.elo-has-gutter,>.board-navigation>.elo-board-surface .elo-large,>.board-navigation>.elo-board-surface .elo-board-label)>.stage-top{width:calc(100% - 160px)}
+}

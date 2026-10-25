@@ -17,7 +17,7 @@ for(const game of ['light','cut']){
  $('original-json-download').click();assert.equal(JSON.parse(await downloads.at(-1).text()).game,game);
  $('original-json-example').click();assert.equal(JSON.parse($('original-json-text').value).game,game);
  const definition=validateOriginalLevel(originalJSONExample(game),game),id=originalLevelIdentity(definition);
- play(game);assert.equal($('stage-label').textContent,'FASE PERSONALIZADA');assert.equal($('level-prev').hidden,true);assert.equal($('level-next').hidden,true);assert.equal($('next').hidden,true);assert.equal($('original-custom-export').hidden,false);assert.equal($('original-endless').hidden,true);
+ play(game);assert.equal($('original-rules-panel').open,true,'Custom original entry defaults open');assert.equal($('stage-label').textContent,'FASE PERSONALIZADA');assert.equal($('level-prev').hidden,true);assert.equal($('level-next').hidden,true);assert.equal($('next').hidden,true);assert.equal($('original-custom-export').hidden,false);assert.equal($('original-endless').hidden,true);
  assert.deepEqual(records()[id].state,originalLevelState(definition));
  edit(game);const modified=records()[id].state;assert.notDeepEqual(modified,originalLevelState(definition));
  $('hint').click();assert.ok($('hint-text').textContent.length>10);

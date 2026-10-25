@@ -1,5 +1,6 @@
+import {restoreBoardAlignmentFile} from './board-alignment-history.mjs';
 import assert from 'node:assert/strict';import fs from 'node:fs';
-const css=fs.readFileSync(new URL('../dist/style.css',import.meta.url),'utf8');
+const css=restoreBoardAlignmentFile('style.css',fs.readFileSync(new URL('../dist/style.css',import.meta.url),'utf8'));
 assert.equal(css.split('#hint-text,#c-hint-text{font-size:16px;line-height:1.55}').length-1,1);
 const last=css.slice(css.indexOf('/* Hints remain below'));
 assert.equal(last,'/* Hints remain below the play area, with readable body-size text in all games. */\n#hint-text,#c-hint-text{font-size:16px;line-height:1.55}\n');

@@ -1,6 +1,7 @@
 import assert from 'node:assert/strict';
 import fs from 'node:fs';
 import crypto from 'node:crypto';
+import {restoreIngameFlowerCSS} from './ingame-flower-history.mjs';
 import {restoreStemlessFlowerCSS} from './stemless-flower-history.mjs';
 import {restoreWhiteFlowerCSS} from './white-flower-history.mjs';
 import {restoreReferenceFlowersCSS} from './reference-flowers-history.mjs';
@@ -9,7 +10,8 @@ const sha=b=>crypto.createHash('sha256').update(b).digest('hex');
 const m=JSON.parse(read('tests/stemless-flower-authorized-change.json'));
 const white=JSON.parse(read('tests/white-flower-authorized-change.json'));
 const reference=JSON.parse(read('tests/reference-flowers-authorized-change.json'));
-const css=read('dist/platform.css').toString(),old=restoreStemlessFlowerCSS(css);
+const current=read('dist/platform.css').toString(),css=restoreIngameFlowerCSS(current),old=restoreStemlessFlowerCSS(css);
+assert.equal(restoreStemlessFlowerCSS(current),old,'New in-game scope restores through the unchanged stemless authorization');
 assert.equal(sha(css),m.afterCssSHA256);
 assert.equal(sha(old),white.afterCssSHA256,'Previous active-white-flower authorization is not rebased');
 assert.equal(m.priorCssSHA256,white.afterCssSHA256);

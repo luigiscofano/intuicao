@@ -313,7 +313,7 @@ function configureOriginalRules(){
  $('original-rules-context-title').textContent=context.title;
  $('original-rules-context-text').textContent=context.text;
  let autoOpen=context.autoOpen;if(free){const seen=originalRuleMechanicsSeen.get(game)??new Set();autoOpen=context.mechanics.some(key=>!seen.has(key));context.mechanics.forEach(key=>seen.add(key));originalRuleMechanicsSeen.set(game,seen);}
- $('original-rules-panel').open=autoOpen;syncOriginalRules();
+ $('original-rules-panel').open=true;syncOriginalRules();
 }
 $('original-rules-panel').ontoggle=syncOriginalRules;
 function render(){

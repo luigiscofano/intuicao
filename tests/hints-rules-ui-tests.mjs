@@ -9,7 +9,7 @@ import {GEOMETRY_LEVELS} from '../dist/geometry-levels.mjs';
 import {SYMBOL_LEVELS} from '../dist/symbol-levels.mjs';
 import {DESVIO_MAPS} from '../dist/desvio.mjs';
 const catalogue={light:lightLevels,cut:cutLevels,...GEOMETRY_LEVELS,...SYMBOL_LEVELS,desvio:DESVIO_MAPS};
-const entryOpen=(game,index,level=catalogue[game][index],mode='campaign')=>getRulesContext(game,level,{catalogue:catalogue[game],index,mode}).autoOpen;
+const entryOpen=()=>true; // Latest requested default: every fresh entry, irrespective of novelty.
 
 // The originals and collection must have independent document/module lifetimes.
 const suite=process.argv[2];
@@ -85,7 +85,7 @@ if(suite==='originals'){
  const {generateOriginalEndless}=await import('../dist/endless-original.mjs');
  const saved=game=>JSON.parse(store.get(endlessKey))[game];
  const seenEndless=new Map();
- const endlessEntryOpen=game=>{const record=saved(game),generated=generateOriginalEndless(game,record.seed,record.options),context=getRulesContext(game,{...generated.level,...generated.initial},{mode:'endless'}),seen=seenEndless.get(game)??new Set(),open=context.mechanics.some(m=>!seen.has(m));context.mechanics.forEach(m=>seen.add(m));seenEndless.set(game,seen);return open;};
+ const endlessEntryOpen=()=>true; // New seed or reentry defaults open; in-play choice remains independent.
  const scene=()=>$('drawing').innerHTML;
  function enter(game,index=0){root.querySelector(`[data-game="${game}"]`).click();$('level-grid').querySelector(`[data-level="${index}"]`).click();}
  function edit(game,free=false){
@@ -131,7 +131,7 @@ if(suite==='originals'){
  const level=()=>JSON.parse($('c-editor-json').value);
  const state=key=>data().sessions[key].history.present;
  const seenEndless=new Map();
- const endlessEntryOpen=game=>{const context=getRulesContext(game,level(),{mode:'endless'}),seen=seenEndless.get(game)??new Set(),open=context.mechanics.some(m=>!seen.has(m));context.mechanics.forEach(m=>seen.add(m));seenEndless.set(game,seen);return open;};
+ const endlessEntryOpen=()=>true; // New seed or reentry defaults open; in-play choice remains independent.
  function enter(game,index=0,mode='local'){
   app.activate(game);
   if(game==='desvio'){$('c-duel-mode').dispatch('change',{target:{value:mode}});host.querySelector(`[data-map="${index}"]`).click();return `desvio:${level().id}:${mode}`;}

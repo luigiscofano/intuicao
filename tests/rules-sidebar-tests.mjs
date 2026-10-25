@@ -82,18 +82,18 @@ if(suite==='originals'){
    $('reset').click();$('restart-original-confirm').click();visible(false,game+' confirmed restart');
    $('back-selection').click();$('level-grid').querySelector(`[data-level="${index}"]`).click();visible(true,game+' introductory reentry');
    const ordinary=index+1;
-   if(!getRulesContext(game,catalogue[game][ordinary],{catalogue:catalogue[game],index:ordinary}).autoOpen){$('level-next').click();visible(false,game+' ordinary successor');$('level-prev').click();visible(true,game+' back to introduction');}
+   if(!getRulesContext(game,catalogue[game][ordinary],{catalogue:catalogue[game],index:ordinary}).autoOpen){$('level-next').click();visible(true,game+' ordinary successor');$('level-prev').click();visible(true,game+' back to introduction');}
   }
-  enter(game,1);visible(false,game+' ordinary direct entry');toggle(true);$('reset').click();$('restart-original-confirm').click();visible(true,game+' manual open survives restart');
-  $('back-selection').click();$('selection-free').click();visible(true,game+' first Endless rules');toggle(false);$('original-endless-new').click();visible(false,game+' equivalent Endless seed');
-  $('back-selection').click();$('selection-free').click();visible(false,game+' equivalent Endless resume');
+  enter(game,1);visible(true,game+' ordinary direct entry');toggle(true);$('reset').click();$('restart-original-confirm').click();visible(true,game+' manual open survives restart');
+  $('back-selection').click();$('selection-free').click();visible(true,game+' first Endless rules');toggle(false);$('original-endless-new').click();visible(true,game+' equivalent Endless seed');
+  $('back-selection').click();$('selection-free').click();visible(true,game+' equivalent Endless resume');
   if(game==='light'){
    $('endless-sources').value='1';$('endless-mirrors').value='1';$('endless-walls').checked=false;$('endless-portals').checked=true;$('endless-selective').checked=false;$('original-endless-form').dispatch('submit');visible(true,'Endless portal newly introduced');
    assert.match($('original-rules-context-text').textContent,/porta/i);
-   toggle(false);$('original-endless-new').click();visible(false,'Another portal seed does not repeat rules');
+   toggle(false);$('original-endless-new').click();visible(true,'Another portal seed starts with rules open');
   }else{
    $('endless-shape').value='Retângulo';$('endless-curves').checked=false;$('endless-holes').checked=true;$('original-endless-form').dispatch('submit');visible(true,'Endless empty spaces newly introduced');
-   toggle(false);$('original-endless-new').click();visible(false,'Another holed seed does not repeat rules');
+   toggle(false);$('original-endless-new').click();visible(true,'Another holed seed starts with rules open');
   }
   console.log('PASS',game,'introductory and ordinary navigation, reset choices, nonmutation, initial and novel Endless mechanics');
  }
@@ -129,14 +129,14 @@ if(suite==='originals'){
    $('c-reset').click();$('restart-collection-cancel').click();visible(false,game+' canceled restart');
    $('c-reset').click();$('restart-collection-confirm').click();visible(false,game+' confirmed restart');
    $('c-back').click();host.querySelector(`[${game==='desvio'?'data-map':'data-new-level'}="${index}"]`).click();visible(true,game+' introductory reentry');
-   if(game!=='desvio'){$('c-level-next').click();visible(game==='elo'&&index===20,game+' successor entry');$('c-level-prev').click();visible(true,game+' preceding introduction');}
+   if(game!=='desvio'){$('c-level-next').click();visible(true,game+' successor entry');$('c-level-prev').click();visible(true,game+' preceding introduction');}
   }
-  enter(game,1);visible(false,game+' ordinary direct entry');toggle(true);$('c-reset').click();$('restart-collection-confirm').click();visible(true,game+' manual open survives restart');
+  enter(game,1);visible(true,game+' ordinary direct entry');toggle(true);$('c-reset').click();$('restart-collection-confirm').click();visible(true,game+' manual open survives restart');
   if(game!=='desvio'){
-   enter(game,1);$('c-editor-play').click();visible(true,game+' first custom mechanics');toggle(false);$('c-editor-play').click();visible(false,game+' equivalent custom edit');
+   enter(game,1);$('c-editor-play').click();visible(true,game+' first custom mechanics');toggle(false);$('c-editor-play').click();visible(true,game+' equivalent custom edit');
   }
-  app.activate(game);$('c-free').click();visible(true,game+' first Endless rules');toggle(false);$('c-endless-new').click();visible(false,game+' same-rule Endless regeneration');
-  $('c-back').click();$('c-free').click();visible(false,game+' same-rule Endless resume');
+  app.activate(game);$('c-free').click();visible(true,game+' first Endless rules');toggle(false);$('c-endless-new').click();visible(true,game+' same-rule Endless regeneration');
+  $('c-back').click();$('c-free').click();visible(true,game+' same-rule Endless resume');
   console.log('PASS',game,'introduction/reentry, ordinary entry, choice preservation, stale callbacks, progress, custom and Endless');
  }
  for(const mode of ['competitive','bot','training']){

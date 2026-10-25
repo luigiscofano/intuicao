@@ -128,11 +128,11 @@ if(original){
   $('reset').click();$('restart-original-cancel').click();visible(false,game+' cancelled restart');
   $('reset').click();$('restart-original-confirm').click();visible(false,game+' confirmed restart');
   $('back-selection').click();$('level-grid').querySelector('[data-level="0"]').click();visible(true,game+' introduction reentry');
-  $('level-next').click();visible(false,game+' ordinary successor');
+  $('level-next').click();visible(true,game+' ordinary successor');
   toggle(true);$('reset').click();$('restart-original-confirm').click();visible(true,game+' explicit open survives restart');
   $('back-selection').click();$('selection-free').click();visible(true,game+' first Endless entry');
-  toggle(false);$('original-endless-new').click();visible(false,game+' same-mechanics Endless regeneration');
-  $('back-selection').click();$('selection-free').click();visible(false,game+' Endless resume');
+  toggle(false);$('original-endless-new').click();visible(true,game+' same-mechanics Endless regeneration');
+  $('back-selection').click();$('selection-free').click();visible(true,game+' Endless resume');
   console.log('PASS',game,'adjacent rules toolbar, semantics, focus, actions, restart/reentry and Endless policy');
  }
 }else{
@@ -178,11 +178,11 @@ if(original){
   $('c-reset').click();$('restart-collection-cancel').click();visible(false,game+' cancelled restart');
   $('c-reset').click();$('restart-collection-confirm').click();visible(false,game+' confirmed restart');
   $('c-back').click();host.querySelector(`[${game==='desvio'?'data-map':'data-new-level'}="0"]`).click();visible(true,game+' introduction reentry');
-  enter(game,1);visible(false,game+' ordinary entry');
+  enter(game,1);visible(true,game+' ordinary entry');
   toggle(true);$('c-reset').click();$('restart-collection-confirm').click();visible(true,game+' explicit open survives restart');
   app.activate(game);$('c-free').click();visible(true,game+' first Endless entry');
-  toggle(false);$('c-endless-new').click();visible(false,game+' same-mechanics Endless regeneration');
-  $('c-back').click();$('c-free').click();visible(false,game+' Endless resume');
+  toggle(false);$('c-endless-new').click();visible(true,game+' same-mechanics Endless regeneration');
+  $('c-back').click();$('c-free').click();visible(true,game+' Endless resume');
   console.log('PASS',game,'adjacent rules toolbar, semantics, focus restoration, stale callbacks, actions, restart/reentry and Endless policy');
  }
  for(const mode of ['competitive','bot','training']){

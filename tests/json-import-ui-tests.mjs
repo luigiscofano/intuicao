@@ -41,7 +41,7 @@ for(const game of ['elo','prumo','pacto','desvio']){
  assert.equal(phase().id,canonical.id);assert.equal(phase().game,game);assert.equal(phase().endless,undefined);assert.equal(phase().tutorial,undefined);assert.equal(phase().solution,undefined);
  assert.equal($('c-endless-new'),undefined,'import is never Endless');assert.deepEqual(read().completed,before.completed);assert.deepEqual(read().sessions[key],before.sessions[key]);
  const customKey=game==='desvio'?`custom:desvio:${canonical.id}:local`:`custom:${game}:${canonical.id}`;
- assert.ok(read().sessions[customKey]);assert.notEqual(customKey,key);
+ assert.ok(Object.hasOwn($('c-rules-panel').attrs,'open'),'Custom collection entry defaults open');assert.ok(read().sessions[customKey]);assert.notEqual(customKey,key);
  if(game!=='desvio'){
   assert.equal($('c-check').disabled,false,'verified custom reference is available');
   for(let n=0;n<3;n++)$('c-confirm').click();assert.equal($('c-answer').hidden,false);$('c-answer').click();
