@@ -1,0 +1,28 @@
+import assert from 'node:assert/strict';
+import {readFileSync} from 'node:fs';
+import {ELO_STAGES,eloActiveMechanics,eloRulesMarkup,eloPublicLevel,eloLegendMarkup,eloCellClue,eloOverlayClues,eloRegionName} from '../dist/elo-presentation.mjs';
+import {migrateEloProgress} from '../dist/elo-progress.mjs';
+import {applyDirectAction} from '../dist/direct-actions.mjs';
+import {buildDirectHint} from '../dist/direct-hints.mjs';
+const fixture={game:'elo',id:'elo-ui-fixture',rows:5,cols:5,regions:Array.from({length:25},(_,i)=>(i%5<2?0:1)+(i<10?0:2)),fixed:{},constraints:{shapes:{0:'turn',1:'straight'},passages:[2],forbiddenEdges:[[6,7]],rowCounts:{0:2},colCounts:{4:2},distances:{0:8},neighbors:[[0,1]],order:[0,1,3,2],cuts:[{axis:'row',index:1,count:2},{axis:'col',index:2,count:2}],exclusivePassages:[{id:'X',cells:[14,12]}]},solution:[0,4,20,24],logicIdea:'PRIVATE_REASONING',profile:{trace:'PRIVATE_TRACE'},uniqueness:{exhaustive:true}};
+assert.equal(ELO_STAGES.length,10);assert.equal(eloActiveMechanics(fixture).length,9);
+assert.equal(eloRegionName(0),'A');assert.equal(eloRegionName(26),'AA');
+const rules=eloRulesMarkup(fixture),legend=eloLegendMarkup(fixture,['#fff']),overlay=eloOverlayClues(fixture);
+for(const phrase of ['Curvas e retas','Passagem obrigatória','Trecho vedado','Contagens de pontos','Distância da região','Vizinhança direta','Ordem no circuito','Travessias do corte','Escolha exclusiva'])assert.ok(rules.includes(phrase),phrase);
+assert.match(rules,/não a uma casa/);assert.match(rules,/Não é a ordem de colocar/);assert.match(rules,/continua visível/);
+assert.match(legend,/Região A/);assert.match(legend,/Σ 8/);assert.match(legend,/A—B/);assert.match(legend,/L2\|L3 = 2/);assert.match(legend,/C3\|C4 = 2/);assert.match(legend,/L3C5 ou L3C3/);
+assert.match(overlay,/y1="200"/);assert.match(overlay,/x1="300"/);assert.match(overlay,/elo-forbidden/);assert.match(overlay,/C5·2/);
+assert.equal(eloCellClue(fixture,2).restricted,true);assert.equal(eloCellClue(fixture,12).restricted,true);assert.equal(eloCellClue(fixture,3).restricted,false);
+const exported=eloPublicLevel(fixture);assert.deepEqual(exported.constraints,fixture.constraints);assert.equal('solution' in exported,false);assert.equal('logicIdea' in exported,false);assert.equal('profile' in exported,false);assert.doesNotMatch(JSON.stringify(exported)+rules+legend,/PRIVATE_/);
+const state={positions:[0,3,20,24],discarded:[2]};
+for(const type of ['point','place-point','move-point']){const next=applyDirectAction('elo',fixture,state,{type,cell:2,from:3});assert.deepEqual(next,state,'passage action is a cloned no-op');assert.notEqual(next,state);}
+assert.deepEqual(applyDirectAction('elo',fixture,state,{type:'move-point',from:3,cell:12}),state,'exclusive passage cannot receive point');
+const marked=applyDirectAction('elo',fixture,{positions:[0,-1,20,24],discarded:[]},{type:'discard',cell:2});assert.deepEqual(marked.discarded,[2]);
+const levels=Array.from({length:200},(_,i)=>({id:`elo-v3-${String(i+1).padStart(3,'0')}`}));levels[18]={id:'elo-v2-150'};
+const historical={version:1,completed:['elo-v2-080'],sessions:{'elo-v2-080':{history:{present:state,past:[state],future:[state]}}},lastSessions:{elo:'elo-v2-080'},events:[{type:'old'}]};const before=structuredClone(historical);
+assert.equal(migrateEloProgress(historical,levels),true);assert.equal(historical.lastSessions.elo,'elo-v3-080');assert.deepEqual(historical.sessions,before.sessions);assert.deepEqual(historical.completed,before.completed);assert.deepEqual(historical.events,before.events);assert.equal(historical.sessions['elo-v3-080'],undefined);assert.deepEqual(historical.eloLegacy.lastSessionIds,['elo-v2-080']);assert.equal(migrateEloProgress(historical,levels),false);
+historical.lastSessions.elo='elo-v2-150';assert.equal(migrateEloProgress(historical,levels),false,'unchanged ID wins over ordinal');assert.equal(historical.lastSessions.elo,'elo-v2-150');
+const wide={game:'elo',rows:10,cols:10,regions:Array.from({length:100},(_,i)=>(i%10<5?0:1)+(i<50?0:2)),fixed:{0:0,1:9,2:90},constraints:{rowCounts:{9:2},colCounts:{9:2}}};
+Object.defineProperty(wide,'solution',{get(){throw Error('hidden answer read');}});const hint=buildDirectHint('elo',wide,{positions:[0,9,90,-1],discarded:[]});assert.ok(hint.explanation);assert.doesNotMatch(hint.explanation,/Contradição/);assert.notEqual(hint.focusText,'Nenhuma dedução direta disponível.','large ELO does not hit old 64-cell blanket guard');assert.equal(hint.action?.cell,99);
+const css=readFileSync(new URL('../dist/style.css',import.meta.url),'utf8');assert.match(css,/\.board-elo\.elo-large\{min-width:calc\(var\(--cols\) \* 44px\)/);assert.match(css,/\.board-elo\.elo-large \.grid-cell\{min-height:44px;min-width:44px/);
+console.log('PASS ELO presentation: 9 families, region-level clues, export privacy, passage actions, legacy migration, large local hint, 44px CSS');

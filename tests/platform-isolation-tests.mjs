@@ -1,3 +1,4 @@
+import {restoreEloV3File} from './elo-v3-history.mjs';
 import {restoreAboutDialogHTML} from './about-dialog-history.mjs';
 import {restoreSoftCornerCSS} from './soft-corner-history.mjs';
 import assert from 'node:assert/strict';
@@ -23,7 +24,7 @@ const continuousFrame=JSON.parse(fs.readFileSync(new URL('./continuous-frame-aut
 const crownPaint=JSON.parse(fs.readFileSync(new URL('./top-crown-paint-authorized-change.json',import.meta.url)));
 const sha=s=>crypto.createHash('sha256').update(s).digest('hex');
 for(const [name,hash] of Object.entries(gravityChange.preserved_dist_sha256)){
- let bytes=fs.readFileSync(new URL('../'+name,import.meta.url));
+ let bytes=restoreEloV3File(name,fs.readFileSync(new URL('../'+name,import.meta.url)));
  if(name==='dist/index.html')bytes=Buffer.from(restoreAboutDialogHTML(bytes.toString()));
  if(name==='dist/platform.css'){
   const css=restoreSoftCornerCSS(bytes.toString()).replace(crownPaint.css_insertion,'').replace(continuousFrame.css_after,continuousFrame.css_before).replace(heroCurves.css_insertion,'').replace(contentFrameCurves.css_insertion,'');
@@ -36,7 +37,7 @@ for(const [name,hash] of Object.entries(gravityChange.preserved_dist_sha256)){
 }
 for(const asset of headerFrameChange.assets)assert.equal(sha(fs.readFileSync(new URL('../dist/platform-assets/'+asset.file,import.meta.url))),asset.sha256,'Exact new header frame asset');
 for(const [name,hash] of Object.entries(baseline)){
- let bytes=fs.readFileSync(new URL('../dist/'+name,import.meta.url));
+ let bytes=restoreEloV3File(name,fs.readFileSync(new URL('../dist/'+name,import.meta.url)));
  if(name==='index.html'){
   let html=restoreAboutDialogHTML(bytes.toString());
   assert.equal(html.split(physicsChange.html_insertion).length-1,1,'Exactly one approved decoration module');

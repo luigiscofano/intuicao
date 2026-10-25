@@ -3,6 +3,7 @@
  * Cada resultado é independente da entrada, inclusive ações ignoradas.
  */
 import {supportCells} from './geometry-games.mjs';
+import {eloPointAllowed} from './elo-rules.mjs';
 
 export const SYMBOL_CYCLE=Object.freeze([0,2,1,3]);
 export function cycleSymbol(value,reverse=false){
@@ -53,6 +54,7 @@ export function applyDirectAction(game,level,state,action={}){
    return next;
   }
   if(fixed!==undefined)return next;
+  if(!eloPointAllowed(level,cell))return next;
   if(type==='move-point'){
    if(!validCell(level,action.from)||level.regions[action.from]!==region||next.positions[region]!==action.from)return next;
    next.positions[region]=cell;

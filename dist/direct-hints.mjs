@@ -13,9 +13,9 @@ function geometry(l,state){
  const check=validateGeometry(l,state);
  if(check.violations.length){const v=check.violations[0];return conflict(l,v.cells||[],v.message);}
  if(check.complete)return result([],'Todas as regras foram satisfeitas.','O tabuleiro está completo e válido pelas regras.');
- // Os tabuleiros publicados têm até 49 casas. Importações arbitrárias não
- // podem iniciar propagação síncrona sem limite durante a interação.
- if(l.rows*l.cols>64)return unavailable();
+ // PRUMO retains its import guard. ELO uses bounded, local-only propagation
+ // across the published campaign, including 10–12-cell-wide boards.
+ if(l.game!=='elo'&&l.rows*l.cols>64)return unavailable();
  const d=geometryLocalAnalysis(l,state);
  if(d.contradiction){const empty=d.candidates.findIndex(x=>!x.length),cells=l.game==='elo'?l.regions.flatMap((r,c)=>r===empty?[c]:[]):[empty];return conflict(l,cells,`As restrições locais deixam ${l.game==='elo'?`a região ${empty+1}`:coord(l,empty)} sem alternativa. ${d.eliminations.map(e=>e.explanation).join(' ')}`);}
  const f=d.forced[0];
@@ -28,7 +28,7 @@ function geometry(l,state){
   return result([cell],`Observe ${coord(l,cell)}${l.game==='elo'?` na região ${f.index+1}`:''}.`,[...new Set([...trace.map(e=>e.explanation),f.explanation,conclusion])].join(' '),{type:l.game==='elo'?'place-point':'paint',cell,value:f.value});
  }
  // Singleton regions need no eliminations to force their only location.
- if(l.game==='elo')for(let r=0;r<d.candidates.length;r++)if((state.positions?.[r]??-1)<0&&d.candidates[r].length===1){const cell=d.candidates[r][0];return result([cell],`Observe a região ${r+1}, em ${coord(l,cell)}.`,`A região ${r+1} contém somente ${coord(l,cell)}. Como cada região precisa de exatamente um ponto, ele deve ocupar essa casa.`,{type:'place-point',cell,value:cell});}
+ if(l.game==='elo')for(let r=0;r<d.candidates.length;r++)if((state.positions?.[r]??-1)<0&&d.candidates[r].length===1){const cell=d.candidates[r][0];return result([cell],`Observe a região ${r+1}, em ${coord(l,cell)}.`,`A região ${r+1} tem somente ${coord(l,cell)} como posição permitida pelas pistas e pelas deduções locais. Como cada região precisa de exatamente um ponto, ele deve ocupar essa casa.`,{type:'place-point',cell,value:cell});}
  const e=d.eliminations[0];if(e){const cell=l.game==='elo'?e.value:e.index;return result([cell],`Observe ${coord(l,cell)}.`,e.explanation);}
  return unavailable();
 }

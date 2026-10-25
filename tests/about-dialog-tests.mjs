@@ -1,3 +1,4 @@
+import {restoreEloV3File} from './elo-v3-history.mjs';
 import assert from 'node:assert/strict';
 import fs from 'node:fs';
 import vm from 'node:vm';
@@ -7,7 +8,7 @@ const read=n=>fs.readFileSync(new URL('../dist/'+n,import.meta.url),'utf8');
 const html=read('index.html'),css=read('about-dialog.css'),source=read('about-dialog.mjs');
 restoreAboutDialogHTML(html);
 const manifest=JSON.parse(fs.readFileSync(new URL('./about-dialog-authorized-change.json',import.meta.url),'utf8'));
-for(const [file,hash] of Object.entries({...manifest.preservedDistSHA256,...manifest.newFilesSHA256})){const bytes=fs.readFileSync(new URL('../'+file,import.meta.url));assert.equal(crypto.createHash('sha256').update(bytes).digest('hex'),hash,'Exact protected/new artifact '+file);}
+for(const [file,hash] of Object.entries({...manifest.preservedDistSHA256,...manifest.newFilesSHA256})){const bytes=restoreEloV3File(file,fs.readFileSync(new URL('../'+file,import.meta.url)));assert.equal(crypto.createHash('sha256').update(bytes).digest('hex'),hash,'Exact protected/new artifact '+file);}
 const markup=html.slice(html.indexOf('<dialog id="about-dialog"'),html.indexOf('</dialog>')+9);
 assert.match(markup,/aria-modal="true" aria-labelledby="about-title"/);
 assert.match(markup,/Luigi Scofano de Araujo/);

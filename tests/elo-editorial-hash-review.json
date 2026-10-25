@@ -1,0 +1,159 @@
+{
+  "engineHash": "af5e6278aa156d9652d1a4462c05fa083f8b0926bb6113a0c8502ca339425e3f",
+  "methodVersion": "bounded-proof-v2-local-candidate-tests-plus-explicit-hypotheses",
+  "rows": [
+    {
+      "number": 1,
+      "id": "elo-v2-001",
+      "expectedHash": "f685725e1900085847afd9849bd5bd654844c8d2956768cd85c2d9a714e34478",
+      "actualHash": "f685725e1900085847afd9849bd5bd654844c8d2956768cd85c2d9a714e34478",
+      "matches": true
+    },
+    {
+      "number": 20,
+      "id": "elo-v2-153",
+      "expectedHash": "9bc65ffc2d41180a2e787f623d85c8c6deed0876b95fdf7ea319972d83fa37e3",
+      "actualHash": "9bc65ffc2d41180a2e787f623d85c8c6deed0876b95fdf7ea319972d83fa37e3",
+      "matches": true
+    },
+    {
+      "number": 21,
+      "id": "elo-v3-021",
+      "expectedHash": "b0b8547a4f39dd9b529293837cecaf85cf5b6c6a933bbb1f449c9e3ce4a2df37",
+      "actualHash": "b0b8547a4f39dd9b529293837cecaf85cf5b6c6a933bbb1f449c9e3ce4a2df37",
+      "matches": true
+    },
+    {
+      "number": 22,
+      "id": "elo-v3-022",
+      "expectedHash": "23c21949c6c37bf93e51b288e9dc8642ea044db59a61f03e5a3f30bb7145dddc",
+      "actualHash": "23c21949c6c37bf93e51b288e9dc8642ea044db59a61f03e5a3f30bb7145dddc",
+      "matches": true
+    },
+    {
+      "number": 41,
+      "id": "elo-v3-041",
+      "expectedHash": "93816cf84da0207d12f8fff041313b70f29a7e1bd9d9ec43aeb9519d36ac9066",
+      "actualHash": "93816cf84da0207d12f8fff041313b70f29a7e1bd9d9ec43aeb9519d36ac9066",
+      "matches": true
+    },
+    {
+      "number": 59,
+      "id": "elo-v3-059",
+      "expectedHash": "8f9f010928f7f0e86d0129f69864a94fe4908d22231daa274abff4e07b3f927b",
+      "actualHash": "8f9f010928f7f0e86d0129f69864a94fe4908d22231daa274abff4e07b3f927b",
+      "matches": true
+    },
+    {
+      "number": 61,
+      "id": "elo-v3-061",
+      "expectedHash": "6a792a944069ab5b62bc8a54e5d8beca5c879e77c56842d7415f9def641b5bcd",
+      "actualHash": "6a792a944069ab5b62bc8a54e5d8beca5c879e77c56842d7415f9def641b5bcd",
+      "matches": true
+    },
+    {
+      "number": 79,
+      "id": "elo-v3-079",
+      "expectedHash": "6f57056dce05de32db571140fdc2df3fa5773b94d8220a0dd4ac1f3176a836a5",
+      "actualHash": "6f57056dce05de32db571140fdc2df3fa5773b94d8220a0dd4ac1f3176a836a5",
+      "matches": true
+    },
+    {
+      "number": 81,
+      "id": "elo-v3-081",
+      "expectedHash": "9b6a9b876653a080c92b4bfff80eba23849022295fc0095c2a3d0431c723bb08",
+      "actualHash": "9b6a9b876653a080c92b4bfff80eba23849022295fc0095c2a3d0431c723bb08",
+      "matches": true
+    },
+    {
+      "number": 93,
+      "id": "elo-v3-093",
+      "expectedHash": "1b4eeb55f861af0e864ee41ca1fad00661d5d78a7f0465644fd25f6b94bde926",
+      "actualHash": "1b4eeb55f861af0e864ee41ca1fad00661d5d78a7f0465644fd25f6b94bde926",
+      "matches": true
+    },
+    {
+      "number": 99,
+      "id": "elo-v3-099",
+      "expectedHash": "4222ddcfb53aa691aa6fe25f0a2f9293f64398a57524fc773984b782422ffd9a",
+      "actualHash": "4222ddcfb53aa691aa6fe25f0a2f9293f64398a57524fc773984b782422ffd9a",
+      "matches": true
+    },
+    {
+      "number": 101,
+      "id": "elo-v3-101",
+      "expectedHash": "e8d3eb0904549a5b14aa499023595187aa66e8bed003a38a85ab1c68aaf40615",
+      "actualHash": "e8d3eb0904549a5b14aa499023595187aa66e8bed003a38a85ab1c68aaf40615",
+      "matches": true
+    },
+    {
+      "number": 117,
+      "id": "elo-v3-117",
+      "expectedHash": "4efc5e426f2a16a29721ca39d8cd61f8f1c3e2a069edea2feac2940b17c1ebbc",
+      "actualHash": "4efc5e426f2a16a29721ca39d8cd61f8f1c3e2a069edea2feac2940b17c1ebbc",
+      "matches": true
+    },
+    {
+      "number": 121,
+      "id": "elo-v3-121",
+      "expectedHash": "7bef78b02d2502b757e4dcab42908e77cdcb451d659cece1d01f2569be019056",
+      "actualHash": "7bef78b02d2502b757e4dcab42908e77cdcb451d659cece1d01f2569be019056",
+      "matches": true
+    },
+    {
+      "number": 128,
+      "id": "elo-v3-128",
+      "expectedHash": "11c36c82a3a9d78629e9ccf593fab8f5676f59974c2d2b65db5b2f172d44f2a9",
+      "actualHash": "11c36c82a3a9d78629e9ccf593fab8f5676f59974c2d2b65db5b2f172d44f2a9",
+      "matches": true
+    },
+    {
+      "number": 146,
+      "id": "elo-v3-146",
+      "expectedHash": "29f1453c9937ae66fc1cf7b6d806e0465178f7b9ecd8773b8bb50c214f3196f6",
+      "actualHash": "29f1453c9937ae66fc1cf7b6d806e0465178f7b9ecd8773b8bb50c214f3196f6",
+      "matches": true
+    },
+    {
+      "number": 159,
+      "id": "elo-v3-159",
+      "expectedHash": "15003fc59d927f2fcd712efdac82df3d510e954aa453631e46836b1fcd749426",
+      "actualHash": "15003fc59d927f2fcd712efdac82df3d510e954aa453631e46836b1fcd749426",
+      "matches": true
+    },
+    {
+      "number": 163,
+      "id": "elo-v3-163",
+      "expectedHash": "8258f1c9adf09f087b34b81417c4ea969a02e352ab619302b368fdecd0d9a18d",
+      "actualHash": "8258f1c9adf09f087b34b81417c4ea969a02e352ab619302b368fdecd0d9a18d",
+      "matches": true
+    },
+    {
+      "number": 171,
+      "id": "elo-v3-171",
+      "expectedHash": "1499a32d6cd686df8fafdfd40ee8aaaf8ae084eea142295ae9ca27202b93b6d3",
+      "actualHash": "1499a32d6cd686df8fafdfd40ee8aaaf8ae084eea142295ae9ca27202b93b6d3",
+      "matches": true
+    },
+    {
+      "number": 181,
+      "id": "elo-v3-181",
+      "expectedHash": "a80abc777210d7094ea3cb81fd7750bede1e838ecbb4943a09fc1e134de0afb2",
+      "actualHash": "a80abc777210d7094ea3cb81fd7750bede1e838ecbb4943a09fc1e134de0afb2",
+      "matches": true
+    },
+    {
+      "number": 182,
+      "id": "elo-v3-182",
+      "expectedHash": "dab524a1f92ea5428248e181898085c6e1801aaa67af80781864a5dc07573a03",
+      "actualHash": "dab524a1f92ea5428248e181898085c6e1801aaa67af80781864a5dc07573a03",
+      "matches": true
+    }
+  ],
+  "finalCampaignSha256": "084ab1ac2ea7ee52f7e8184c0dd048863931c2356cd578346f9e4684c88430cb",
+  "verification": {
+    "matchingSamples": 21,
+    "currentRuleValidCertificates": 200,
+    "certificateCount": 200
+  }
+}

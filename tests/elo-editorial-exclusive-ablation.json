@@ -1,0 +1,530 @@
+{
+  "elo-v3-181": {
+    "hash": "a80abc777210d7094ea3cb81fd7750bede1e838ecbb4943a09fc1e134de0afb2",
+    "groups": 1,
+    "ablations": [
+      {
+        "drop": "all",
+        "count": 2,
+        "exhaustive": false,
+        "cutoffReason": "solutionLimit"
+      },
+      {
+        "drop": "X6_0",
+        "count": 2,
+        "exhaustive": false,
+        "cutoffReason": "solutionLimit"
+      }
+    ]
+  },
+  "elo-v3-182": {
+    "hash": "dab524a1f92ea5428248e181898085c6e1801aaa67af80781864a5dc07573a03",
+    "groups": 1,
+    "ablations": [
+      {
+        "drop": "all",
+        "count": 2,
+        "exhaustive": false,
+        "cutoffReason": "solutionLimit"
+      },
+      {
+        "drop": "X19_0",
+        "count": 2,
+        "exhaustive": false,
+        "cutoffReason": "solutionLimit"
+      }
+    ]
+  },
+  "elo-v3-183": {
+    "hash": "cc1264becf2f9805d38694ecf2a539a1618170b52489e20e559f46778c4a952f",
+    "groups": 3,
+    "ablations": [
+      {
+        "drop": "all",
+        "count": 2,
+        "exhaustive": false,
+        "cutoffReason": "solutionLimit"
+      },
+      {
+        "drop": "X28_1",
+        "count": 2,
+        "exhaustive": false,
+        "cutoffReason": "solutionLimit"
+      },
+      {
+        "drop": "X10_1",
+        "count": 1,
+        "exhaustive": true,
+        "cutoffReason": null
+      },
+      {
+        "drop": "X3_0",
+        "count": 1,
+        "exhaustive": true,
+        "cutoffReason": null
+      }
+    ]
+  },
+  "elo-v3-184": {
+    "hash": "810258ae2cffcedf9215572f3bf64980c72a7feb826e475ed338368462d758c1",
+    "groups": 4,
+    "ablations": [
+      {
+        "drop": "all",
+        "count": 2,
+        "exhaustive": false,
+        "cutoffReason": "solutionLimit"
+      },
+      {
+        "drop": "X8_0",
+        "count": 2,
+        "exhaustive": false,
+        "cutoffReason": "solutionLimit"
+      },
+      {
+        "drop": "X35_1",
+        "count": 2,
+        "exhaustive": false,
+        "cutoffReason": "solutionLimit"
+      },
+      {
+        "drop": "X25_1",
+        "count": 2,
+        "exhaustive": false,
+        "cutoffReason": "solutionLimit"
+      },
+      {
+        "drop": "X11_2",
+        "count": 2,
+        "exhaustive": false,
+        "cutoffReason": "solutionLimit"
+      }
+    ]
+  },
+  "elo-v3-185": {
+    "hash": "0350792b2e1abb925df14bc8304962b9ae1cd9091f8068366f597af631cd00d9",
+    "groups": 2,
+    "ablations": [
+      {
+        "drop": "all",
+        "count": 2,
+        "exhaustive": false,
+        "cutoffReason": "solutionLimit"
+      },
+      {
+        "drop": "X50_2",
+        "count": 2,
+        "exhaustive": false,
+        "cutoffReason": "solutionLimit"
+      },
+      {
+        "drop": "X45_0",
+        "count": 1,
+        "exhaustive": true,
+        "cutoffReason": null
+      }
+    ]
+  },
+  "elo-v3-186": {
+    "hash": "a336cb32c5febd41d81b95eedbd7f4fb926413eb651a99d53c61a70660b03692",
+    "groups": 2,
+    "ablations": [
+      {
+        "drop": "all",
+        "count": 2,
+        "exhaustive": false,
+        "cutoffReason": "solutionLimit"
+      },
+      {
+        "drop": "X23_1",
+        "count": 2,
+        "exhaustive": false,
+        "cutoffReason": "solutionLimit"
+      },
+      {
+        "drop": "X15_2",
+        "count": 2,
+        "exhaustive": false,
+        "cutoffReason": "solutionLimit"
+      }
+    ]
+  },
+  "elo-v3-187": {
+    "hash": "6a7f3cfa949b29f6a8975782962225dc092f9eb0dfa9de76a43fd41acdc92a88",
+    "groups": 2,
+    "ablations": [
+      {
+        "drop": "all",
+        "count": 2,
+        "exhaustive": false,
+        "cutoffReason": "solutionLimit"
+      },
+      {
+        "drop": "X43_2",
+        "count": 2,
+        "exhaustive": false,
+        "cutoffReason": "solutionLimit"
+      },
+      {
+        "drop": "X43_0",
+        "count": 2,
+        "exhaustive": false,
+        "cutoffReason": "solutionLimit"
+      }
+    ]
+  },
+  "elo-v3-188": {
+    "hash": "30647de864d9456abae9ca7df066616d212a0f214e8f04677f2bab8716ecdc89",
+    "groups": 2,
+    "ablations": [
+      {
+        "drop": "all",
+        "count": 2,
+        "exhaustive": false,
+        "cutoffReason": "solutionLimit"
+      },
+      {
+        "drop": "X20_0",
+        "count": 1,
+        "exhaustive": true,
+        "cutoffReason": null
+      },
+      {
+        "drop": "X51_2",
+        "count": 2,
+        "exhaustive": false,
+        "cutoffReason": "solutionLimit"
+      }
+    ]
+  },
+  "elo-v3-189": {
+    "hash": "8d0c5d6b4886a506ad4021457b65a6499db5da6564857a2a99613f55a1153b12",
+    "groups": 3,
+    "ablations": [
+      {
+        "drop": "all",
+        "count": 2,
+        "exhaustive": false,
+        "cutoffReason": "solutionLimit"
+      },
+      {
+        "drop": "X65_1",
+        "count": 1,
+        "exhaustive": true,
+        "cutoffReason": null
+      },
+      {
+        "drop": "X44_0",
+        "count": 2,
+        "exhaustive": false,
+        "cutoffReason": "solutionLimit"
+      },
+      {
+        "drop": "X20_2",
+        "count": 2,
+        "exhaustive": false,
+        "cutoffReason": "solutionLimit"
+      }
+    ]
+  },
+  "elo-v3-190": {
+    "hash": "5f793390bbccb2504798868d29df476eadd686ab1bd30dbafb0473635a75d8b9",
+    "groups": 2,
+    "ablations": [
+      {
+        "drop": "all",
+        "count": 2,
+        "exhaustive": false,
+        "cutoffReason": "solutionLimit"
+      },
+      {
+        "drop": "X36_1",
+        "count": 2,
+        "exhaustive": false,
+        "cutoffReason": "solutionLimit"
+      },
+      {
+        "drop": "X9_0",
+        "count": 1,
+        "exhaustive": true,
+        "cutoffReason": null
+      }
+    ]
+  },
+  "elo-v3-191": {
+    "hash": "876e6dd4453f012a12bd787532435f5c954ddc14b4350da4f643ad0bebd1d13a",
+    "groups": 2,
+    "ablations": [
+      {
+        "drop": "all",
+        "count": 2,
+        "exhaustive": false,
+        "cutoffReason": "solutionLimit"
+      },
+      {
+        "drop": "X53_0",
+        "count": 2,
+        "exhaustive": false,
+        "cutoffReason": "solutionLimit"
+      },
+      {
+        "drop": "X26_0",
+        "count": 2,
+        "exhaustive": false,
+        "cutoffReason": "solutionLimit"
+      }
+    ]
+  },
+  "elo-v3-193": {
+    "hash": "4164eb59b2b3c108e05e8f19448c106a40d1b23bfdde41fbd255c6bebe3c4206",
+    "groups": 5,
+    "ablations": [
+      {
+        "drop": "all",
+        "count": 2,
+        "exhaustive": false,
+        "cutoffReason": "solutionLimit"
+      },
+      {
+        "drop": "X17_0",
+        "count": 2,
+        "exhaustive": false,
+        "cutoffReason": "solutionLimit"
+      },
+      {
+        "drop": "X23_0",
+        "count": 2,
+        "exhaustive": false,
+        "cutoffReason": "solutionLimit"
+      },
+      {
+        "drop": "X82_1",
+        "count": 2,
+        "exhaustive": false,
+        "cutoffReason": "solutionLimit"
+      },
+      {
+        "drop": "X130_1",
+        "count": 2,
+        "exhaustive": false,
+        "cutoffReason": "solutionLimit"
+      },
+      {
+        "drop": "X135_2",
+        "count": 2,
+        "exhaustive": false,
+        "cutoffReason": "solutionLimit"
+      }
+    ]
+  },
+  "elo-v3-194": {
+    "hash": "519c1e3c31e8fc683fdca5aa898f654e73c036b1c8018ce99dd4554d9b037aa5",
+    "groups": 2,
+    "ablations": [
+      {
+        "drop": "all",
+        "count": 2,
+        "exhaustive": false,
+        "cutoffReason": "solutionLimit"
+      },
+      {
+        "drop": "X78_2",
+        "count": 2,
+        "exhaustive": false,
+        "cutoffReason": "solutionLimit"
+      },
+      {
+        "drop": "X30_1",
+        "count": 2,
+        "exhaustive": false,
+        "cutoffReason": "solutionLimit"
+      }
+    ]
+  },
+  "elo-v3-195": {
+    "hash": "da1780310786b5d2ac7f5c3e1085f0eba92fb4c2dc75652d43b6347974b527b8",
+    "groups": 4,
+    "ablations": [
+      {
+        "drop": "all",
+        "count": 2,
+        "exhaustive": false,
+        "cutoffReason": "solutionLimit"
+      },
+      {
+        "drop": "X26_2",
+        "count": 2,
+        "exhaustive": false,
+        "cutoffReason": "solutionLimit"
+      },
+      {
+        "drop": "X45_0",
+        "count": 2,
+        "exhaustive": false,
+        "cutoffReason": "solutionLimit"
+      },
+      {
+        "drop": "X25_0",
+        "count": 1,
+        "exhaustive": true,
+        "cutoffReason": null
+      },
+      {
+        "drop": "X55_0",
+        "count": 2,
+        "exhaustive": false,
+        "cutoffReason": "solutionLimit"
+      }
+    ]
+  },
+  "elo-v3-196": {
+    "hash": "912e864621a9c8373d139ffff5d2ac51fc618817db0660b37d10cea1028cc28f",
+    "groups": 5,
+    "ablations": [
+      {
+        "drop": "all",
+        "count": 2,
+        "exhaustive": false,
+        "cutoffReason": "solutionLimit"
+      },
+      {
+        "drop": "X122_1",
+        "count": 2,
+        "exhaustive": false,
+        "cutoffReason": "solutionLimit"
+      },
+      {
+        "drop": "X131_1",
+        "count": 2,
+        "exhaustive": false,
+        "cutoffReason": "solutionLimit"
+      },
+      {
+        "drop": "X141_1",
+        "count": 2,
+        "exhaustive": false,
+        "cutoffReason": "solutionLimit"
+      },
+      {
+        "drop": "X68_1",
+        "count": 2,
+        "exhaustive": false,
+        "cutoffReason": "solutionLimit"
+      },
+      {
+        "drop": "X13_0",
+        "count": 1,
+        "exhaustive": true,
+        "cutoffReason": null
+      }
+    ]
+  },
+  "elo-v3-197": {
+    "hash": "d78dc166574d6bf7c4734264816b715ba1ae80edce2bbbc5a5b24d0e683953be",
+    "groups": 3,
+    "ablations": [
+      {
+        "drop": "all",
+        "count": 2,
+        "exhaustive": false,
+        "cutoffReason": "solutionLimit"
+      },
+      {
+        "drop": "X16_2",
+        "count": 1,
+        "exhaustive": true,
+        "cutoffReason": null
+      },
+      {
+        "drop": "X18_0",
+        "count": 2,
+        "exhaustive": false,
+        "cutoffReason": "solutionLimit"
+      },
+      {
+        "drop": "X5_2",
+        "count": 1,
+        "exhaustive": true,
+        "cutoffReason": null
+      }
+    ]
+  },
+  "elo-v3-198": {
+    "hash": "2fafa31ee3d549104566a92ca2fda0f6abb3e3fd2c1e9846e4295cfe0501cdb2",
+    "groups": 2,
+    "ablations": [
+      {
+        "drop": "all",
+        "count": 2,
+        "exhaustive": false,
+        "cutoffReason": "solutionLimit"
+      },
+      {
+        "drop": "X10_2",
+        "count": 2,
+        "exhaustive": false,
+        "cutoffReason": "solutionLimit"
+      },
+      {
+        "drop": "X14_2",
+        "count": 2,
+        "exhaustive": false,
+        "cutoffReason": "solutionLimit"
+      }
+    ]
+  },
+  "elo-v3-199": {
+    "hash": "5ee6f852fb38174a31c456c4457f51fffe118aca8984416e280f70e5bcc37c1e",
+    "groups": 2,
+    "ablations": [
+      {
+        "drop": "all",
+        "count": 2,
+        "exhaustive": false,
+        "cutoffReason": "solutionLimit"
+      },
+      {
+        "drop": "X4_1",
+        "count": 2,
+        "exhaustive": false,
+        "cutoffReason": "solutionLimit"
+      },
+      {
+        "drop": "X10_2",
+        "count": 2,
+        "exhaustive": false,
+        "cutoffReason": "solutionLimit"
+      }
+    ]
+  },
+  "elo-v3-200": {
+    "hash": "c4da1a42073aae6fa251dd9b48ae3b610bb618c6f21cdcf7975d195795a980da",
+    "groups": 3,
+    "ablations": [
+      {
+        "drop": "all",
+        "count": 2,
+        "exhaustive": false,
+        "cutoffReason": "solutionLimit"
+      },
+      {
+        "drop": "X16_0",
+        "count": 2,
+        "exhaustive": false,
+        "cutoffReason": "solutionLimit"
+      },
+      {
+        "drop": "X67_2",
+        "count": 2,
+        "exhaustive": false,
+        "cutoffReason": "solutionLimit"
+      },
+      {
+        "drop": "X26_1",
+        "count": 2,
+        "exhaustive": false,
+        "cutoffReason": "solutionLimit"
+      }
+    ]
+  }
+}
