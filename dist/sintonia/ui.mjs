@@ -1,6 +1,7 @@
 import {CAMPAIGN, CHAPTERS, DIFFICULTIES} from './campaign.mjs';
 import {RULES_VERSION, DIRECTIONS, initialState, transition, isWon, stateKey, validateLevel, replay, gateIsOpen} from './engine.mjs';
-import {createSintoniaService} from './service.mjs';
+import {createSintoniaService, restoreSintoniaSession, serializeSintoniaSession, commitSintoniaCommand, resolveSintoniaCampaignAttempt, isRetainedSintoniaAttempt, levelContentRevision} from './service.mjs';
+export {restoreSintoniaSession, serializeSintoniaSession, commitSintoniaCommand} from './service.mjs';
 import {ANIMAL_SPRITES} from './assets.mjs';
 import {createRestartConfirmation} from '../restart-confirmation.mjs';
 import {createResultMotion} from '../result-motion.mjs';
@@ -34,7 +35,7 @@ const shortNumber = value => String(value).padStart(2,'0');
 const lessonText = level => String(level.lesson??'Prepare os caminhos em conjunto.').replace(/^Aqui o jogador precisa descobrir que\s+/i,'Descoberta deste nível: ');
 
 export function freshSintoniaData() {
-  return {version:1,rulesVersion:RULES_VERSION,prefs:{advanced:false,rulesOpen:true,coordinates:false,autoAdvance:true},campaign:{lastId:null,completed:{},sessions:{}},endless:null,custom:null,learnedMechanics:[],events:[],lastView:{active:false,screen:'selection',mode:'campaign'}};
+  return {version:1,rulesVersion:RULES_VERSION,contentRevision:levelContentRevision(CAMPAIGN[0]),prefs:{advanced:false,rulesOpen:true,coordinates:false,autoAdvance:true},campaign:{lastId:null,completed:{},sessions:{}},endless:null,custom:null,learnedMechanics:[],events:[],lastView:{active:false,screen:'selection',mode:'campaign'}};
 }
 
 export function normalizeSintoniaData(value) {
@@ -52,39 +53,6 @@ export function normalizeSintoniaData(value) {
   data.events=Array.isArray(value.events)?value.events.slice(-500):[];
   if(value.lastView && typeof value.lastView==='object') data.lastView={active:value.lastView.active===true,screen:value.lastView.screen==='play'?'play':'selection',mode:['campaign','endless','custom'].includes(value.lastView.mode)?value.lastView.mode:'campaign'};
   return data;
-}
-
-export function restoreSintoniaSession(level, saved) {
-  const empty=()=>({commands:[],cursor:0,states:[initialState(level)],assisted:false,failures:0,winRecorded:false});
-  const session=empty();
-  if(!saved || saved.rulesVersion!==RULES_VERSION || !Array.isArray(saved.commands)) return session;
-  try {
-    if(saved.commands.length>100000 || saved.commands.some(dir=>!DIRECTIONS.includes(dir))) return session;
-    let state=session.states[0];
-    for(const direction of saved.commands){
-      const next=transition(level,state,direction);
-      if(!next.changed) return empty();
-      state=next.state;
-      session.states.push(state);
-    }
-    const cursor=bounded(saved.cursor,0,saved.commands.length);
-    if(saved.state && stateKey(session.states[cursor])!==stateKey(saved.state)) return empty();
-    session.commands=saved.commands.slice();session.cursor=cursor;
-    session.assisted=saved.assisted===true;
-    session.failures=bounded(saved.failures,0,Number.MAX_SAFE_INTEGER);
-    session.winRecorded=saved.winRecorded===true;
-    return session;
-  } catch {return empty();}
-}
-
-export function serializeSintoniaSession(session) {
-  return {rulesVersion:RULES_VERSION,commands:session.commands.slice(),cursor:session.cursor,state:clone(session.states[session.cursor]),assisted:session.assisted,failures:session.failures,winRecorded:session.winRecorded};
-}
-
-export function commitSintoniaCommand(level, session, direction) {
-  const next=transition(level,session.states[session.cursor],direction);
-  if(!next.changed) return {session,transition:next};
-  return {session:{...session,commands:[...session.commands.slice(0,session.cursor),direction],states:[...session.states.slice(0,session.cursor+1),next.state],cursor:session.cursor+1},transition:next};
 }
 
 export function endlessOptions(startDifficulty, solved, learnedMechanics=[], recentSignatures=[], recentFamilies=[]) {
@@ -203,17 +171,25 @@ export function initSintonia({hideOtherGames}) {
   function startCampaign(next,dailyChallenge=false) {
     if(!CAMPAIGN[next])return;
     save();cancelGeneration();index=next;daily=dailyChallenge;
-    start(CAMPAIGN[next],{mode:'campaign',saved:data.campaign.sessions[CAMPAIGN[next].id]});
+    const attempt=resolveSintoniaCampaignAttempt(CAMPAIGN[next],data.campaign.sessions[CAMPAIGN[next].id]);
+    if(attempt.status==='blocked'){
+      selection();
+      const token=revision;
+      $('s-selection-status').textContent='A tentativa anterior foi preservada, mas não foi possível recuperar seu mapa e histórico com segurança. Você pode cancelar ou reiniciar somente este nível na versão atual.';
+      restart.open({isCurrent:()=>revision===token&&!host.hidden&&screen==='selection',onConfirm:()=>{index=next;daily=dailyChallenge;start(CAMPAIGN[next],{mode:'campaign',fresh:true,notice:'Somente esta tentativa foi reiniciada no mapa atual. Suas conclusões foram mantidas.'});},fallbackFocus:()=>$('s-selection-title')});
+      describeContentRestart();return;
+    }
+    start(attempt.level,{mode:'campaign',saved:attempt.saved});
   }
 
-  function start(next,{mode:nextMode='campaign',saved=null,fresh=false}={}) {
+  function start(next,{mode:nextMode='campaign',saved=null,fresh=false,notice=''}={}) {
     invalidate();level=next;mode=nextMode;screen='play';model=relationModel(level);recentDirection='';
     session=restoreSintoniaSession(level,fresh?null:saved);
     const unknown=(level.mechanics??[]).filter(id=>id in MECHANIC_TEXT&&!data.learnedMechanics.includes(id));
     rulesOpen=true;
     data.learnedMechanics=[...new Set([...data.learnedMechanics,...(level.mechanics??[]).filter(id=>id in MECHANIC_TEXT)])];
     data.lastView={active:true,screen,mode};
-    message=isWon(level,current())?'Todos os animais estão nos seus destinos.':session.cursor?'Partida retomada. O mesmo comando continua valendo para todos.':'Use as setas para mover todos juntos. Chegar ao destino não prende o animal.';
+    message=notice||(isWon(level,current())?'Todos os animais estão nos seus destinos.':session.cursor?'Partida retomada. O mesmo comando continua valendo para todos.':'Use as setas para mover todos juntos. Chegar ao destino não prende o animal.');
     log('level-start',{resumed:session.cursor>0});render(unknown);save();
     $('s-play-area').focus({preventScroll:true});
     if(isWon(level,current())){recordWin();motion.show('sintonia',true);scheduleAuto();}
@@ -327,6 +303,9 @@ export function initSintonia({hideOtherGames}) {
 
   function restartCurrentImmediately() {
     if(!session||host.hidden||screen!=='play')return;
+    if(mode==='campaign'&&isRetainedSintoniaAttempt(level,CAMPAIGN[index])){
+      cancelGeneration();start(CAMPAIGN[index],{mode:'campaign',fresh:true,notice:'Mapa atualizado. Somente as jogadas desta tentativa foram reiniciadas; suas conclusões foram mantidas.'});return;
+    }
     const recorded=session.winRecorded,failures=session.failures,assisted=session.assisted;
     cancelGeneration();invalidate();session=restoreSintoniaSession(level,null);
     session.winRecorded=recorded;session.failures=failures;session.assisted=assisted;recentDirection='';
@@ -336,7 +315,16 @@ export function initSintonia({hideOtherGames}) {
 
   function restartLevel(trigger) {
     if(!session)return;cancelAuto();cancelHint();const token=revision;
-    restart.open({trigger,isCurrent:()=>revision===token&&!host.hidden&&screen==='play',onConfirm:restartCurrentImmediately,onCancel:scheduleAuto,fallbackFocus:()=>$('s-play-area')});
+    restart.open({trigger,isCurrent:()=>revision===token&&!host.hidden&&screen==='play',onConfirm:restartCurrentImmediately,onCancel:()=>{if(trigger?.matches?.('[data-result-retry]'))trigger.disabled=false;scheduleAuto();},fallbackFocus:()=>$('s-play-area')});
+    if(mode==='campaign'&&isRetainedSintoniaAttempt(level,CAMPAIGN[index]))describeContentRestart();
+  }
+
+  // Reuse the existing confirmation and layout: a content migration changes
+  // only its explanation, never resets progress without the player's consent.
+  function describeContentRestart() {
+    document.getElementById('restart-sintonia-title').textContent='Começar o mapa atualizado?';
+    document.getElementById('restart-sintonia-description').textContent='Este nível recebeu uma nova versão. Apenas as jogadas e o histórico de desfazer desta tentativa serão apagados. Suas conclusões, os outros níveis e o modo Endless serão mantidos.';
+    document.getElementById('restart-sintonia-confirm').textContent='Começar mapa atualizado';
   }
 
   function confirm() {
@@ -406,7 +394,10 @@ export function initSintonia({hideOtherGames}) {
     const retryVisible=$('s-motion')?.dataset.outcome==='loss';
     motion?.clear();
     host.innerHTML=`<div class="collection-lab lab sintonia-lab"><button id="s-back" class="quiet">← Seleção de níveis</button><div class="lab-heading"><div><p id="s-kicker" class="eyebrow">${mode==='endless'?`ENDLESS · DESAFIO ${data.endless.number} · ${data.endless.solved} CONCLUÍDOS`:mode==='custom'?'EDITOR · FASE PERSONALIZADA':'EXPERIMENTO 07'}</p><h2 id="s-title" tabindex="-1">SINTONIA ·</h2><p class="s-level-name">${esc(level.name??'Um comando, vários caminhos')} <span>${esc(difficultyName(level.difficulty))} · ${level.boards.length} animais</span></p></div><div class="modes collection-mode-switch" role="group" aria-label="Modo de jogo"><button id="s-mode-campaign" aria-pressed="${mode!=='endless'}">Desafios</button><button id="s-mode-endless" aria-pressed="${mode==='endless'}">Endless</button></div></div>${mode==='endless'?endlessControls():''}<div class="collection-workspace s-workspace ${rulesOpen?'rules-open':''} ${advanced?'':'closed'}"><div class="collection-surface experiment s-surface"><div class="stage-top">${mode==='campaign'?`<div class="level-stepper"><span id="s-stage-label">${daily?'DESAFIO DO DIA':'DESAFIO'} ${shortNumber(index+1)} / 500</span></div>`:''}<div class="stage-tools"><button id="s-undo" aria-label="Desfazer" title="Desfazer (Ctrl+Z)">↶</button><button id="s-redo" aria-label="Refazer" title="Refazer (Ctrl+Shift+Z)">↷</button><button id="s-reset" class="action-reset">↺ Reiniciar</button><details id="s-rules-panel" class="rules-card" ${rulesOpen?'open':''}><summary aria-controls="s-rules-sidebar" aria-expanded="${rulesOpen}"><span>Regras e como jogar</span><span class="rules-show">Mostrar</span><span class="rules-hide">Ocultar</span></summary></details><button id="s-advanced-toggle" aria-expanded="${advanced}" aria-controls="s-advanced">${advanced?'Ocultar':'Mostrar'} opções avançadas</button></div></div><p class="s-mission">${esc(lessonText(level))}</p>${unknown.length?`<details class="s-new-rule" open><summary>Uma ideia para experimentar: ${unknown.map(id=>esc(MECHANIC_TEXT[id][0])).join(' · ')}</summary>${unknown.map(id=>`<p>${esc(MECHANIC_TEXT[id][1])}</p>`).join('')}</details>`:''}<div class="board-navigation s-board-navigation" role="group" aria-label="Área do jogo e navegação de níveis">${mode==='campaign'?'<button id="s-level-prev" class="level-arrow" aria-label="Nível anterior" title="Nível anterior">←</button>':''}<div id="s-board-surface" class="s-board-surface"><div id="s-play-area" class="s-play-area" tabindex="0" role="group" aria-label="Comando compartilhado de SINTONIA" aria-describedby="s-keyboard-help"><div id="s-boards" class="s-boards" data-count="${level.boards.length}"></div></div><div id="s-motion" class="result-motion" aria-hidden="true"></div></div>${mode==='campaign'?'<button id="s-level-next" class="level-arrow" aria-label="Próximo nível" title="Próximo nível">→</button>':''}</div><div class="s-command-row"><div class="s-dpad" role="group" aria-label="Mover todos os animais"><button type="button" data-s-direction="up" aria-label="Mover todos para cima" title="Cima · W">↑</button><button type="button" data-s-direction="left" aria-label="Mover todos para esquerda" title="Esquerda · A">←</button><span aria-hidden="true">todos</span><button type="button" data-s-direction="right" aria-label="Mover todos para direita" title="Direita · D">→</button><button type="button" data-s-direction="down" aria-label="Mover todos para baixo" title="Baixo · S">↓</button></div><p id="s-keyboard-help">Um toque, um comando para todos.<br><span>Setas ou WASD com a área do jogo em foco. Ctrl+Z desfaz.</span></p></div>${model.relations.length?'':'<p class="s-goal-legend"><span aria-hidden="true">◎</span> Cada aro marca o destino daquele animal.</p>'}<div class="readout s-readout"><div><span class="metric-label">MOVIMENTOS</span><strong id="s-moves">${session.cursor}</strong></div><div><span class="metric-label">NOS DESTINOS</span><strong id="s-arrived">${statusCount()} / ${level.boards.length}</strong></div><p id="s-status" role="status" aria-live="polite" aria-atomic="true"></p></div><div class="level-actions"><button id="s-confirm" class="primary confirm">Confirmar resposta</button><div class="actions"><button id="s-answer" hidden>Ver gabarito</button><button id="s-hint" class="action-hint">✦ Dicas</button><button id="s-next" ${mode==='custom'?'hidden':''}>${mode==='endless'?'Novo desafio':'Próximo nível'} →</button></div><button id="s-hint-apply" hidden>Aplicar este passo</button><button id="s-answer-apply" hidden>Aplicar sequência do gabarito</button><p id="s-hint-text" class="hint" role="status" aria-live="polite"></p></div></div><aside id="s-rules-sidebar" class="rules-sidebar" aria-label="Regras e como jogar" ${rulesOpen?'':'hidden'}>${rulesMarkup()}</aside><aside id="s-advanced" class="controls" ${advanced?'':'hidden'}>${advancedMarkup()}</aside></div></div>`;
-    motion=createResultMotion($('s-motion'),$('s-board-surface'),globalThis,{onRetry:restartCurrentImmediately});
+    motion=createResultMotion($('s-motion'),$('s-board-surface'),globalThis,{onRetry:()=>{
+      if(mode==='campaign'&&isRetainedSintoniaAttempt(level,CAMPAIGN[index]))restartLevel($('s-motion').querySelector('[data-result-retry]'));
+      else restartCurrentImmediately();
+    }});
     $('s-back').onclick=selection;$('s-mode-campaign').onclick=selection;$('s-mode-endless').onclick=()=>{if(mode!=='endless')data.endless?.current?resumeEndless():newEndless(bounded(level.difficulty,0,5));};
     $('s-undo').onclick=()=>travelHistory(-1);$('s-redo').onclick=()=>travelHistory(1);$('s-reset').onclick=event=>restartLevel(event.currentTarget);
     if($('s-level-prev'))$('s-level-prev').onclick=()=>navigate(-1);if($('s-level-next'))$('s-level-next').onclick=()=>navigate(1);
@@ -548,7 +539,8 @@ export function initSintonia({hideOtherGames}) {
 
   function renderStatus() {
     if(!$('s-status'))return;
-    $('s-status').textContent=message+(storageWarning?' O navegador não permitiu salvar o progresso. Mantenha esta página aberta.':'');
+    const retainedNotice=mode==='campaign'&&isRetainedSintoniaAttempt(level,CAMPAIGN[index])?'Partida preservada no mapa anterior. Reiniciar permite começar o mapa atualizado sem perder suas conclusões. ':'';
+    $('s-status').textContent=retainedNotice+message+(storageWarning?' O navegador não permitiu salvar o progresso. Mantenha esta página aberta.':'');
     $('s-status').classList.toggle('success',isWon(level,current()));
     $('s-moves').textContent=session.cursor;$('s-arrived').textContent=`${statusCount()} / ${level.boards.length}`;
     $('s-undo').disabled=session.cursor===0;$('s-redo').disabled=session.cursor===session.commands.length;

@@ -2,7 +2,7 @@ import test from 'node:test';
 import assert from 'node:assert/strict';
 import {CAMPAIGN,CHAPTERS,DIFFICULTIES} from '../dist/sintonia/campaign.mjs';
 import {FALLBACK_LEVELS,selectCertifiedFallback} from '../dist/sintonia/fallback.mjs';
-import {generateLevel,structuralSignature,transformBoard,analyzeSolution,sweepReachability,MECHANICS,REASONING_FAMILIES,familyRecencyPenalty} from '../dist/sintonia/generator.mjs';
+import {generateLevel,structuralSignature,transformBoard,analyzeSolution,sweepReachability,MECHANICS,REASONING_FAMILIES,familyRecencyPenalty,GENERATOR_VERSION,CONTENT_REVISION} from '../dist/sintonia/generator.mjs';
 import {initialState,transition,validateLevel,replay,solveLevel,isWon,stateKey} from '../dist/sintonia/engine.mjs';
 
 test('campaign has exactly 500 real definitions, prescribed ranges and animal counts',()=>{
@@ -45,7 +45,7 @@ test('all mechanics appear on schedule and have actual certified usage',()=>{
     const analysis=analyzeSolution(level,level.solution),primary=level.parameters.primary;
     for(const flag of required[primary]||[])assert.ok(analysis.used.includes(flag),`${level.id} ${primary} not used: ${flag}`);
     if(level.parameters.secondary&&['ice','portal','oneway','fragile'].includes(level.parameters.secondary))assert.ok(analysis.used.includes(level.parameters.secondary),`${level.id} secondary unused`);
-    if(level.family==='dual-use-object')assert.equal(analysis.boxAsStopAfterSupport,true,level.id);
+    if(level.family==='dual-use-object'){assert.ok(['support-then-release','support-and-necessary-stop'].includes(level.editorial.design?.pattern),level.id);if(level.editorial.design.pattern==='support-then-release')assert.ok(level.editorial.purpose.boxes.some(box=>box.plateReleases.some(release=>release.afterGateSupport)),level.id);else assert.equal(level.editorial.design.necessity?.status,'unsolvable',level.id);}
     if(level.family==='goal-transit')assert.ok(analysis.goalDepartures.some(Boolean),level.id);
     if(level.family==='unequal-loop')assert.ok(analysis.unequalLoops>0,level.id);
     if(!level.boards.some(board=>board.boxes?.length))assert.equal(/caixa|peso/i.test(level.hints.join(' ')),false,`${level.id} hint mentions absent box`);
@@ -89,7 +89,7 @@ test('Endless creates replay-certified topology from new seeds and is determinis
   const signatures=new Set(),campaignSignatures=new Set(CAMPAIGN.map(l=>l.signature));
   for(let difficulty=0;difficulty<6;difficulty++)for(let i=0;i<8;i++){
     const seed=`acceptance-endless:${difficulty}:${i}`,options={difficulty,maxStates:35000,maxMs:12000,recentSignatures:[...signatures]},first=generateLevel(seed,options);
-    assert.equal(replay(first.level,first.solution).won,true,seed);assert.equal(first.level.seed,seed);assert.equal(first.level.generatorVersion,1);assert.equal(first.level.rulesVersion,1);
+    assert.equal(replay(first.level,first.solution).won,true,seed);assert.equal(first.level.seed,seed);assert.equal(first.level.generatorVersion,GENERATOR_VERSION);assert.equal(first.level.contentRevision,CONTENT_REVISION);assert.equal(first.level.rulesVersion,1);
     assert.ok(!signatures.has(first.signature));assert.ok(!campaignSignatures.has(first.signature));signatures.add(first.signature);
     if(i===0){const second=generateLevel(seed,{...options,maxMs:18000});assert.deepEqual(second.level,first.level,`non-deterministic ${seed}`);}
   }
@@ -151,4 +151,18 @@ test('separate safety bank is complete, certified, eligible and prioritizes unus
   assert.notEqual(first.level.id,second.level.id);assert.equal(first.validation.origin,'fallback');assert.equal(first.validation.replayed,true);
   const learning=selectCertifiedFallback('new-player',{difficulty:5,learnedMechanics:[]});assert.ok(learning.level.mechanics.filter(m=>m!=='walls').length<=1);
   assert.deepEqual(selectCertifiedFallback('repeat',{difficulty:4}),selectCertifiedFallback('repeat',{difficulty:4}));
+});
+
+
+test('Endless includes a compact supported-stop duet only after an exhaustive necessity proof',()=>{
+  const options={difficulty:2,animals:2,profile:{primary:'box',pattern:'support-and-necessary-stop',minDepth:1,maxDepth:20,orientations:[0,0]},maxStates:30000,maxMs:12000};
+  const first=generateLevel('supported-stop-duet',options),second=generateLevel('supported-stop-duet',options);
+  assert.deepEqual(first.level,second.level);assert.equal(first.level.boards.length,2);assert.equal(first.level.solution.length,9);assert.equal(replay(first.level,first.solution).won,true);
+  assert.equal(first.level.editorial.design.necessity.status,'unsolvable');assert.equal(first.level.editorial.design.necessity.predicate,'box-supported-stop');assert.ok(first.level.editorial.design.necessity.visited>1);assert.equal(first.level.editorial.humanPlaytested,false);
+});
+
+
+test('Endless can prepare a switch before committing to the one-way region',()=>{
+  const {level,solution}=generateLevel('switch-before-commit',{difficulty:3,animals:2,profile:{primary:'oneway',preparationControl:'switch',introduction:true,minDepth:1,maxDepth:24},maxStates:35000,maxMs:12000});
+  assert.equal(level.editorial.design.pattern,'oneway-prepare-before-commit');assert.equal(level.editorial.design.preparationControl,'switch');assert.ok(level.boards.some(b=>b.oneWays?.length&&b.switches?.length));assert.equal(replay(level,solution).won,true);assert.ok(level.mechanics.includes('switch'));
 });

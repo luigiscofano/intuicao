@@ -1,0 +1,128 @@
+{
+  "schemaVersion": 1,
+  "levelId": "sintonia-0251",
+  "number": 251,
+  "contentRevision": "sintonia-content-2",
+  "rulesVersion": 1,
+  "fingerprint": "a45b29f6290289f29ae4b5aef74f79ba2edf6d820519ef98df2ee3c220fc54b9",
+  "engineSha256": "db5503ca8fcff67526cab621be89c472c1afb75b2083b9c69d9f98859fe8eece",
+  "budget": {
+    "maxStates": 100000,
+    "maxMs": 30000,
+    "maxDepth": 240
+  },
+  "control": {
+    "board": 0,
+    "id": "prepare",
+    "group": "prepare",
+    "cell": 0
+  },
+  "commitment": {
+    "board": 0,
+    "from": 4,
+    "to": 7
+  },
+  "baseline": {
+    "status": "solved",
+    "solution": [
+      "up",
+      "left",
+      "right",
+      "down",
+      "right",
+      "right",
+      "down",
+      "right",
+      "left",
+      "up",
+      "right",
+      "down",
+      "left"
+    ],
+    "visited": 1255,
+    "optimal": true,
+    "commands": 13
+  },
+  "prematurePrefix": {
+    "status": "found",
+    "commands": [
+      "down",
+      "down"
+    ],
+    "state": {
+      "positions": [
+        7,
+        4,
+        8
+      ],
+      "boxes": [],
+      "switches": {
+        "prepare": false
+      },
+      "keys": [],
+      "selectors": {},
+      "collapsed": []
+    },
+    "visited": 12,
+    "configurationAtCommitment": false
+  },
+  "originalFromPrematureState": {
+    "status": "unsolvable",
+    "visited": 65,
+    "optimal": false
+  },
+  "sameStateWithoutDirectedRestriction": {
+    "status": "solved",
+    "solution": [
+      "up",
+      "up",
+      "left",
+      "right",
+      "down",
+      "right",
+      "right",
+      "down",
+      "left",
+      "up",
+      "right",
+      "right",
+      "down",
+      "left"
+    ],
+    "visited": 1200,
+    "optimal": true,
+    "commands": 14
+  },
+  "globalOrderCounterexample": {
+    "status": "unsolvable",
+    "visited": 1792,
+    "exhaustive": true,
+    "conclusion": "No winning solution commits this edge before an earlier command has configured prepare=true."
+  },
+  "currentValueAtCommitmentCounterexample": {
+    "status": "solved",
+    "solution": [
+      "down",
+      "up",
+      "left",
+      "right",
+      "right",
+      "right",
+      "left",
+      "left",
+      "right",
+      "down",
+      "down",
+      "up",
+      "up",
+      "right",
+      "down",
+      "left"
+    ],
+    "visited": 1780,
+    "optimal": true,
+    "optimalScope": "counterexample-predicate-only",
+    "commands": 16
+  },
+  "interpretation": "The exhaustive global order result concerns configuring prepare=true in an earlier command, not keeping it true forever. The stronger current-value query intentionally records a counterexample: after the receiver crosses, a winning solution may toggle false before commitment. No human difficulty, uniqueness, or playtesting claim."
+}

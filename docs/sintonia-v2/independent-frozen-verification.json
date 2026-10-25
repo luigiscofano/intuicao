@@ -1,0 +1,28 @@
+{
+  "created": "2026-10-25T23:51:17.957Z",
+  "files": {
+    "campaign.mjs": {
+      "actual": "d9dec2f9759eaf977fa8060a1689f0d68822c235f0eb687d5fc934cf56e8ef28",
+      "expected": "d9dec2f9759eaf977fa8060a1689f0d68822c235f0eb687d5fc934cf56e8ef28",
+      "match": true
+    },
+    "fallback.mjs": {
+      "actual": "f111a55290a3d876c58b4cbac0a55b480b03f37b9f1067f02b3d2006d578051b",
+      "expected": "f111a55290a3d876c58b4cbac0a55b480b03f37b9f1067f02b3d2006d578051b",
+      "match": true
+    },
+    "generator.mjs": {
+      "actual": "18db4d5144271e2cd15cf75d5648a482ab1e40815b53645c06354a684c9b14ad",
+      "expected": "18db4d5144271e2cd15cf75d5648a482ab1e40815b53645c06354a684c9b14ad",
+      "match": true
+    },
+    "engine.mjs": {
+      "actual": "db5503ca8fcff67526cab621be89c472c1afb75b2083b9c69d9f98859fe8eece",
+      "expected": "db5503ca8fcff67526cab621be89c472c1afb75b2083b9c69d9f98859fe8eece",
+      "match": true
+    }
+  },
+  "changedRulesOrCertificates": [],
+  "failedChecks": [],
+  "definitions": 536
+}

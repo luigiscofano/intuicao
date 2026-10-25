@@ -1,7 +1,12 @@
 /** Seeded SINTONIA authoring and Endless generation. Every returned level is replay-certified. */
-import {RULES_VERSION, DIRECTIONS, initialState, transition, stateKey, isWon, validateLevel, replay} from './engine.mjs';
+import {RULES_VERSION, DIRECTIONS, initialState, transition, stateKey, isWon, validateLevel, replay, solveLevel} from './engine.mjs';
 
-export const GENERATOR_VERSION = 1;
+import {buildBoxBoard,buildBoxDesign} from './box-design.mjs';
+import {buildDeliveryDesign} from './delivery-design.mjs';
+import {buildObstacleDesign,OBSTACLE_PRIMARIES} from './obstacle-design.mjs';
+import {analyzePurpose,findAvoidingSolution} from './purpose.mjs';
+export const GENERATOR_VERSION = 2;
+export const CONTENT_REVISION = 'sintonia-content-2';
 export const DIFFICULTIES = Object.freeze(['Muito fácil','Básico','Intermediário','Avançado','Especialista','Mestre']);
 export const CHAPTERS = Object.freeze(['Primeiros passos','Paredes que ajudam','Ir para voltar','Um ajuda o outro','O cenário muda','Preparar caminhos','A terceira voz','Construir apoios','Distâncias diferentes','Atalhos','Escolher quando passar','Dois caminhos','Antes de voltar','Revezamento','Duas condições','A quarta voz','Conexões','Um recurso compartilhado','Tudo se encaixa','Sintonia']);
 export const MECHANICS = Object.freeze([
@@ -87,13 +92,7 @@ function decorateGrowth(rng,board,protectedEdges=[],extra=3){
   board.walkable.sort((a,b)=>a-b);return board;
 }
 function boxBoard(rng,index,difficulty){
-  // The box fills a side alcove. Its plate keeps a distant edge of the same
-  // board open, so merely standing on that plate cannot replace the box.
-  const board={id:`b${index}`,animal:ANIMALS[index],rows:4,cols:5,walkable:[1,6,10,11,12,13,14],start:11,goal:14,boxes:[{id:'box0',cell:6}],plates:[{id:'weight',cell:1}],gates:[{id:'weight-gate',from:12,to:13,condition:{type:'plate',id:'weight'}}]};
-  decorateGrowth(rng,board,[[12,13]],integer(rng,0,Math.min(5,difficulty+1)));
-  // Keep the plate an alcove; preserve the intended pushing direction.
-  board.walkable=board.walkable.filter(cell=>![0,2].includes(cell));
-  return {board,region:reachable(board,13,[[12,13]])};
+  return buildBoxBoard(rng,index,{pattern:pick(rng,['turn-and-support','park-and-retrieve'])});
 }
 function portalBoard(rng,index,difficulty){
   const rows=integer(rng,3,4),cols=5;
@@ -115,9 +114,11 @@ function straightSpecialBoard(rng,index,difficulty,type){
 }
 
 const PRIMARY_REQUIRED={walls:[],plate:['plate-gate'],switch:['switch','switch-gate'],key:['key','key-gate'],box:['push','box-support-gate'],ice:['ice'],portal:['portal'],oneway:['oneway'],alternate:['switch','sun-gate','moon-gate'],fragile:['fragile'],handoff:['handoff-0','handoff-1'],and:['and-gate'],selector:['selector','selected-0','selected-1'],delivery:['delivery','delivery-gate']};
-function candidate(rng,{difficulty,animals,primary,secondary}){
+function candidate(rng,{difficulty,animals,primary,secondary,introduction=false,pattern,orientations,prepareSender,includeSupportedStop=false,preparationControl}){
   const level={id:'candidate',version:1,rulesVersion:RULES_VERSION,boards:Array.from({length:animals},(_,index)=>makeBoard(rng,index,difficulty)),mechanics:['walls'],initialSwitches:{},initialSelectors:{}};
   const constraints=new Map(),required=new Set(PRIMARY_REQUIRED[primary]||[]),used=new Set();
+  let design=null;
+  const applyDesign=built=>{level.boards=built.boards;level.mechanics=built.mechanics; if(built.channels)level.channels=built.channels;for(const [i,cells] of built.constraints)constraints.set(i,cells);for(const flag of built.required)required.add(flag);built.boards.forEach((b,i)=>used.add(i));design=built.design;};
   const putConstraint=(index,region)=>constraints.set(index,region);
   const replacePath=(index,min=5)=>{const result=ensurePathBoard(rng,index,difficulty,min);level.boards[index]=result.board;return result;};
   const addMechanic=(mechanic)=>{if(!level.mechanics.includes(mechanic))level.mechanics.push(mechanic);};
@@ -129,10 +130,10 @@ function candidate(rng,{difficulty,animals,primary,secondary}){
     if(type==='key'){helper.keys=[{id:'key0',cell:cellFor(rng,helper)}];condition={type:'key',id:'key0'};}
     receiver.gates=[{id:`${type}-gate`,from:edge.from,to:edge.to,condition}];putConstraint(1,edge.far);used.add(0);used.add(1);addMechanic(type);
   };
-  if(['plate','switch','key'].includes(primary))ordinaryPair(primary);
+  if(OBSTACLE_PRIMARIES.includes(primary))applyDesign(buildObstacleDesign(rng,{primary,animals,difficulty,introduction,makeBoard,preparationControl}));
+  else if(['plate','switch','key'].includes(primary))ordinaryPair(primary);
   else if(primary==='box'){
-    const {board,region}=boxBoard(rng,0,difficulty);level.boards[0]=board;putConstraint(0,region);used.add(0);addMechanic('plate');addMechanic('box');
-    if(difficulty>=3&&rng()<.65){const {board:receiver}=replacePath(1,5),edge=gateTarget(rng,receiver);receiver.gates=[{id:'weight-remote',from:edge.from,to:edge.to,condition:{type:'plate',id:'weight'}}];putConstraint(1,edge.far);used.add(1);}
+    applyDesign(buildBoxDesign(rng,{animals,difficulty,pattern,includeSupportedStop}));
   }else if(primary==='portal'){
     const {board,region}=portalBoard(rng,0,difficulty);level.boards[0]=board;putConstraint(0,region);used.add(0);addMechanic('portal');
   }else if(['ice','fragile'].includes(primary)){
@@ -169,13 +170,7 @@ function candidate(rng,{difficulty,animals,primary,secondary}){
     }
     used.add(0);used.add(1);addMechanic('plate');addMechanic('and');
   }else if(primary==='delivery'){
-    const source={id:'b0',animal:ANIMALS[0],rows:4,cols:5,walkable:[5,6,7,8,11,12,13,16],start:5,goal:13,boxes:[{id:'parcel',cell:6}]};
-    const receiver={id:'b1',animal:ANIMALS[1],rows:4,cols:5,walkable:[0,10,11,12,13,14,16,18,19],start:10,goal:14,plates:[{id:'arrival',cell:0}],gates:[{id:'delivery-gate',from:12,to:13,condition:{type:'plate',id:'arrival'}}]};
-    decorateGrowth(rng,source,[],integer(rng,0,4));
-    // Receiver's arrival cell is deliberately unreachable by its animal. A
-    // delivered box must sustain it; ordinary walking cannot bypass the lesson.
-    const additions=shuffled(rng,[15,17,9,4]);for(const cell of additions.slice(0,integer(rng,0,2))){const test={...receiver,walkable:[...receiver.walkable,cell]};if(!reachable(test,0).has(receiver.start)&&!reachable(test,12,[[12,13]]).has(13))receiver.walkable.push(cell);}
-    level.boards[0]=source;level.boards[1]=receiver;level.channels=[{id:'parcel-channel',fromBoard:0,entry:7,toBoard:1,exit:0}];putConstraint(1,reachable(receiver,13,[[12,13]]));used.add(0);used.add(1);addMechanic('plate');addMechanic('box');addMechanic('delivery');
+    applyDesign(buildDeliveryDesign(rng,{animals,difficulty,introduction,variant:pattern,prepareSender}));
   }
   // Secondary concepts occupy another board, or a separate uncomplicated
   // corridor. Never place box-accessible ice, portals or fragile tiles.
@@ -193,15 +188,29 @@ function candidate(rng,{difficulty,animals,primary,secondary}){
       ordinaryPair(secondary);for(const item of PRIMARY_REQUIRED[secondary])required.add(item);
     }
   }
+  // Every additional animal in a control composition owns a preparation cut.
+  // Do not leave a fourth panel as a copy or a decorative independent corridor.
+  if(['plate','alternate','selector','handoff','and'].includes(primary))for(let index=0;index<animals;index++)if(!used.has(index)){
+    const available=[];
+    for(const [target,goals] of constraints){const board=level.boards[target];for(const edge of bridges(board)){
+      const near=edge.side.has(board.start)?edge.side:edge.other,far=edge.side.has(board.start)?edge.other:edge.side;
+      if([...goals].every(c=>far.has(c))&&!(board.gates||[]).some(g=>(g.from===edge.a&&g.to===edge.b)||(g.from===edge.b&&g.to===edge.a)))available.push({target,from:edge.a,to:edge.b});
+    }}
+    if(!available.length)throw new Error('contributor-needs-distinct-cut');
+    const edge=pick(rng,available),id=`auxiliary-${index}`,helper=level.boards[index];helper.plates=[{id,cell:cellFor(rng,helper)}];
+    (level.boards[edge.target].gates||=[]).push({id:`auxiliary-gate-${index}`,from:edge.from,to:edge.to,condition:{type:'plate',id}});
+    used.add(index);addMechanic('plate');required.add('plate-gate');
+  }
   // Different orientations change shared coordination, but uniqueness is judged
   // after normalizing global rotations/reflections, not by these transformations.
   for(let i=0;i<level.boards.length;i++){
-    const transform=integer(rng,0,7),old=level.boards[i],result=transformBoard(old,transform);
+    const transform=orientations?.[i]??integer(rng,0,7),old=level.boards[i],result=transformBoard(old,transform);
     level.boards[i]=result.board;
     if(constraints.has(i))constraints.set(i,new Set([...constraints.get(i)].map(result.cell)));
+    if(design){for(const role of design.roles||[])if(role&&typeof role==='object'&&role.board===i){if(Number.isInteger(role.control))role.control=result.cell(role.control);for(const field of ['commit','goalRegion'])if(Array.isArray(role[field]))role[field]=role[field].map(result.cell);}for(const structure of Array.isArray(design.structures)?design.structures:[])if(structure.board===i)for(const field of ['cells','edge'])if(Array.isArray(structure[field]))structure[field]=structure[field].map(result.cell);}
     for(const channel of level.channels||[]){if(channel.fromBoard===i)channel.entry=result.cell(channel.entry);if(channel.toBoard===i)channel.exit=result.cell(channel.exit);}
   }
-  return {level,constraints,required};
+  return {level,constraints,required,design};
 }
 
 export function transformBoard(board,transform){
@@ -284,6 +293,15 @@ export function sweepReachability(level,{maxStates=1800,maxSteps=64,maxMs=1500}=
 }
 
 function searchTargets(level,constraints,required,{rng,minDepth,maxDepth,maxStates,maxMs,avoidSweep,strictSweep}){
+  if(constraints.size===level.boards.length&&[...constraints.values()].every(cells=>cells.size===1)){
+    const fixed=clone(level);fixed.boards.forEach((board,i)=>board.goal=[...constraints.get(i)][0]);
+    const solved=solveLevel(fixed,{maxStates,maxMs,maxDepth});if(solved.status==='inconclusive'){if(solved.reason==='time-budget')throw timeout();throw new Error('fixed-goal-budget');}if(solved.status!=='solved')throw new Error('fixed-goal-unsolvable');
+    if(solved.solution.length<minDepth||solved.solution.length>maxDepth)throw new Error('fixed-goal-depth');
+    const analysis=analyzeSolution(fixed,solved.solution);if(!hasFlags(new Set(analysis.used),required))throw new Error('fixed-goal-unused-role');
+    const sweep=avoidSweep?sweepReachability(fixed,{maxStates:Math.min(maxStates,3000),maxMs:Math.min(maxMs,900)}):null;
+    if(sweep?.reason==='time')throw timeout();if(strictSweep&&sweep?.status!=='complete')throw new Error('sweep-budget');if(sweep?.positions.has(fixed.boards.map(b=>b.goal).join(',')))throw new Error('fixed-goal-sweep');
+    return {level:fixed,solution:solved.solution,search:{visited:solved.visited,depth:solved.solution.length,optimal:solved.optimal,frontierExhausted:false,limits:{maxStates,maxDepth}},sweep:{status:sweep?.status||'not-run',visited:sweep?.visited||0,resistant:sweep?.status==='complete'?true:null}};
+  }
   const deadline=clock()+maxMs,start=initialState(level),nodes=[{state:start,parent:-1,direction:null,depth:0,flags:new Set()}],seen=new Map([[stateKey(start),0]]),goals=new Map();
   const sweep=avoidSweep?sweepReachability(level,{maxStates:Math.min(maxStates,2000),maxMs:Math.min(maxMs*.25,900)}):null;
   if(sweep?.reason==='time')throw timeout();
@@ -404,6 +422,10 @@ export function analyzeSolution(level,solution){
   return {used:[...used].sort(),partialBlocks,goalDepartures,unequalLoops,directionChanges,earlyTurns,occupiedBoxPlate,boxAsStopAfterSupport,finalApproach:states.at(-2)?.positions.map((p,i)=>p===level.boards[i].goal)||[]};
 }
 
+/** Compact runtime authoring record; full traces and searches stay in offline reports. */
+export function summarizePurpose(purpose){return {valid:purpose.valid,won:purpose.won,evidenceScope:purpose.evidenceScope,commands:purpose.commands,boxes:(purpose.boxes||[]).map(({id,origin,final,pushes,directionChanges,deliveries,postDeliveryPushes,plateEntries,plateReleases,supportUses,observedRoles})=>({id,origin,final,pushes,directionChanges,deliveries,postDeliveryPushes,plateEntries,plateReleases,supportUses,observedRoles})),dependencies:(purpose.dependencies||[]).map(({gateId,receiverBoard,condition,controllers,crossings})=>({gateId,receiverBoard,condition,controllers,crossingCommands:crossings.map(c=>c.command)})),boardRoles:(purpose.boards||[]).map(b=>({board:b.board,moved:b.movedCommands.length,waited:b.waitingCommands.length,goalDepartures:b.goalDepartures.length})),caveat:'Uso neste certificado não prova necessidade. Consulte tests/sintonia-purpose-audit.json para ablações e limites.'};}
+export function editorialReview(){return {status:'human-review-pending',dimensions:['purpose','discovery','interdependence','causal-clarity','spatial-economy','variety'],scores:null,humanPlaytesting:false,reason:'Replay e ablações são evidências automáticas, não substitutos de avaliação editorial e testes humanos.'};}
+
 function reasoningFor(level,analysis,primary,rng,recentFamilies=[]){
   let family=FAMILY_BY_MECHANIC[primary];
   const observedFamilies=['final-command'];
@@ -415,7 +437,8 @@ function reasoningFor(level,analysis,primary,rng,recentFamilies=[]){
   if(!family)family=preferUnrecent(rng,observedFamilies,recentFamilies,value=>[value]);
   // A blocked push after the box reaches its plate can also serve as the
   // asymmetric waiting point, giving the object a second genuine function.
-  if(primary==='box'&&analysis.boxAsStopAfterSupport)family='dual-use-object';
+  // A blocked push in one witness does not establish a second necessary role.
+  // Dual-use claims are assigned only by the support-then-release construction.
   const secondary=shuffled(rng,observedFamilies.filter(f=>f!==family)).slice(0,2),text=FAMILY_TEXT[family];
   if(!secondary.length)secondary.push('shared-command','individual-goals');
   return {family,secondaryFamilies:secondary,...primaryText(level,primary,family)};
@@ -454,7 +477,7 @@ export function generateLevel(seed,{difficulty=0,animals,learnedMechanics,recent
   if(!Number.isFinite(maxStates)||maxStates<16||!Number.isFinite(maxMs)||maxMs<=0)throw new Error('generation-budget');
   const rng=seededRandom(`${GENERATOR_VERSION}:${seed}`),choice=chooseMechanics(rng,difficulty,learnedMechanics,profile,recentFamilies);
   const count=clamp(Number(animals)|| (choice.introduction||difficulty<2?2:difficulty<4?(rng()<.55?3:2):(rng()<.3?4:rng()<.65?3:2)),2,4);
-  const shapeDifficulty=profile?.shapeDifficulty??(choice.introduction?Math.min(2,Math.max(0,difficulty-1)):difficulty);
+  const shapeDifficulty=profile?.shapeDifficulty??(choice.introduction?Math.min(2,Math.max(0,difficulty-1)):count===4?Math.min(2,difficulty):difficulty);
   const depthRanges=[[1,7],[5,12],[7,18],[9,24],[11,28],[13,32]];
   let [minDepth,maxDepth]=depthRanges[difficulty];
   if(choice.introduction||profile?.role==='revisit'){minDepth=Math.max(2,minDepth-4);maxDepth=Math.max(minDepth+3,maxDepth-6);}
@@ -465,17 +488,30 @@ export function generateLevel(seed,{difficulty=0,animals,learnedMechanics,recent
   const deadline=clock()+maxMs,recent=new Set(recentSignatures),failures={};let attempts=0;
   while(attempts++<100&&clock()<deadline){
     try{
-      const built=candidate(rng,{difficulty:shapeDifficulty,animals:count,primary:choice.primary,secondary:choice.secondary});
+      const built=candidate(rng,{difficulty:shapeDifficulty,animals:count,primary:choice.primary,secondary:choice.secondary,introduction:choice.introduction,pattern:profile?.pattern,orientations:profile?.orientations,prepareSender:profile?.prepareSender,includeSupportedStop:!profile,preparationControl:profile?.preparationControl??(!profile&&choice.primary==='oneway'?(rng()<.5?'switch':'key'):undefined)});
       const valid=validateLevel(built.level);if(!valid.valid)throw new Error(`invalid:${valid.errors[0]}`);
-      const result=searchTargets(built.level,built.constraints,built.required,{rng,minDepth,maxDepth,maxStates,maxMs:Math.max(30,Math.min(deadline-clock(),2200)),avoidSweep:strictSweep||difficulty>0||minDepth>=4,strictSweep});
+      const result=searchTargets(built.level,built.constraints,built.required,{rng,minDepth:built.design?.pattern==='support-and-necessary-stop'?Math.min(8,minDepth):minDepth,maxDepth,maxStates,maxMs:Math.max(30,Math.min(deadline-clock(),5000)),avoidSweep:strictSweep||difficulty>0||minDepth>=4,strictSweep});
       const signature=structuralSignature(result.level);if(recent.has(signature)||recent.has(structuralSignature(result.level,{topologyOnly:true})))throw new Error('recent-repeat');
       const checked=replay(result.level,result.solution);if(!checked.valid||!checked.won)throw new Error('certificate-replay-failed');
-      const analysis=analyzeSolution(result.level,result.solution),reasoning=reasoningFor(result.level,analysis,choice.primary,rng,recentFamilies);
-      const level={...result.level,...reasoning,id:`endless-v${GENERATOR_VERSION}-${hashString(seed).toString(16)}`,version:1,rulesVersion:RULES_VERSION,generatorVersion:GENERATOR_VERSION,seed:String(seed),difficulty,solution:result.solution,signature,
+      const analysis=analyzeSolution(result.level,result.solution),reasoning=reasoningFor(result.level,analysis,choice.primary,rng,recentFamilies),purpose=analyzePurpose(result.level,result.solution);
+      if(built.design){
+        const d=built.design;
+        if(['support-then-release','support-and-necessary-stop'].includes(d.pattern))reasoning.family='dual-use-object';
+        if(d.pattern==='park-and-retrieve')reasoning.family='preserve-access';
+        if(d.name)reasoning.name=d.name;if(d.lesson)reasoning.lesson=d.lesson;if(d.hints)reasoning.hints=d.hints;
+        reasoning.discovery=d.discovery.startsWith('Aqui o jogador')?d.discovery:`Aqui o jogador precisa descobrir que ${d.discovery}.`;
+        if(choice.primary==='delivery'){reasoning.name='Preparar a entrega';reasoning.lesson='Libere a saída do canal e reposicione a caixa recebida antes de usar o apoio.';reasoning.hints=['O canal precisa de uma saída livre antes do envio.','Receber ainda não basta: encontre a face que permite orientar a caixa para a placa.','Prepare as ajudas de retorno antes de abandonar uma placa.'];}
+        if(purpose.boxes.some(b=>b.pushes.length<2||b.directionChanges===0))throw new Error('box-role-not-realized');
+        if(d.pattern==='support-then-release'&&!purpose.boxes.some(b=>b.plateReleases.some(r=>r.afterGateSupport)))throw new Error('support-release-not-realized');
+        if(choice.primary==='delivery'&&purpose.boxes.some(b=>b.postDeliveryPushes.length<2))throw new Error('recipient-role-not-realized');
+        if(d.pattern==='support-and-necessary-stop'){const proof=findAvoidingSolution(result.level,{avoid:{type:'box-supported-stop',boxId:'box0'},maxStates:Math.min(maxStates,20000),maxMs:Math.max(1,Math.min(1200,deadline-clock()))});if(proof.status==='inconclusive'&&String(proof.reason).includes('time'))throw timeout();if(proof.status!=='unsolvable')throw new Error('supported-stop-not-proven');d.necessity={predicate:'box-supported-stop',status:proof.status,visited:proof.visited,maxStates:Math.min(maxStates,20000),scope:'full-state monitored exhaustive avoidance'};}
+      }
+      if(reasoning.hints[2]==='Peça uma dica concreta para a configuração atual.')reasoning.hints[2]=`Na configuração inicial, comece para ${{up:'cima',right:'a direita',down:'baixo',left:'a esquerda'}[result.solution[0]]}; observe quem avança e quem espera.`;
+      const level={...result.level,...reasoning,id:`endless-v${GENERATOR_VERSION}-${hashString(seed).toString(16)}`,version:1,rulesVersion:RULES_VERSION,generatorVersion:GENERATOR_VERSION,contentRevision:CONTENT_REVISION,seed:String(seed),difficulty,solution:result.solution,signature,
         prerequisites:result.level.mechanics.filter(m=>m!==choice.primary),introduction:choice.introduction?[choice.primary]:[],
-        parameters:{difficulty,animals:count,primary:choice.primary,secondary:result.level.mechanics.includes(choice.secondary)?choice.secondary:null,role:profile?.role||'varied'},
+        parameters:{difficulty,animals:count,primary:choice.primary,secondary:result.level.mechanics.includes(choice.secondary)?choice.secondary:null,role:profile?.role||'varied',pattern:built.design?.pattern||null},
         certificate:{method:'breadth-first-witness-and-engine-replay',rulesVersion:RULES_VERSION,commands:result.solution.length,optimal:result.search.optimal,visited:result.search.visited,replayed:true},
-        editorial:{source:'procedural-structure-and-automatic-curation',humanPlaytested:false,discovery:reasoning.discovery,reasoning:analysis,sweep:result.sweep,compatibility:'validated',alternatives:'Uma sequência verificada é fornecida; outras soluções podem existir.',deadEnds:result.level.mechanics.some(m=>['box','fragile','oneway','delivery'].includes(m))?'A fase permite estados sem saída; desfazer e reiniciar são livres.':'Mudanças de configuração podem exigir retornar a uma posição anterior.'}};
+        editorial:{source:built.design?'role-first-structure-and-automatic-curation':'procedural-structure-and-automatic-curation',design:built.design,purpose:summarizePurpose(purpose),rubric:editorialReview(),humanPlaytested:false,discovery:reasoning.discovery,reasoning:analysis,sweep:result.sweep,compatibility:'validated',alternatives:'Uma sequência verificada é fornecida; outras soluções podem existir.',deadEnds:result.level.mechanics.some(m=>['box','fragile','oneway','delivery'].includes(m))?'A fase permite estados sem saída; desfazer e reiniciar são livres.':'Mudanças de configuração podem exigir retornar a uma posição anterior.'}};
       return {level,solution:level.solution,signature,validation:{valid:true,replayed:true,search:result.search,sweep:result.sweep,attempts}};
     }catch(error){if(error.code==='GENERATION_TIMEOUT')throw error;const message=String(error.message||error);failures[message]=(failures[message]||0)+1;}
   }

@@ -1,7 +1,10 @@
 {
-  "schemaVersion": 1,
+  "schemaVersion": 2,
+  "contentRevision": "sintonia-content-2",
+  "retained": 76,
+  "rebuilt": 424,
   "rulesVersion": 1,
-  "generatorVersion": 1,
+  "generatorVersion": 2,
   "total": 500,
   "ranges": [
     {
@@ -83,31 +86,31 @@
       "first": 1
     },
     "plate": {
-      "count": 217,
+      "count": 213,
       "first": 76
     },
     "switch": {
-      "count": 70,
+      "count": 83,
       "first": 101
     },
     "key": {
-      "count": 38,
+      "count": 122,
       "first": 126
     },
     "box": {
-      "count": 101,
+      "count": 90,
       "first": 176
     },
     "ice": {
-      "count": 58,
+      "count": 39,
       "first": 201
     },
     "portal": {
-      "count": 59,
+      "count": 41,
       "first": 226
     },
     "oneway": {
-      "count": 44,
+      "count": 38,
       "first": 251
     },
     "alternate": {
@@ -115,7 +118,7 @@
       "first": 276
     },
     "fragile": {
-      "count": 40,
+      "count": 32,
       "first": 301
     },
     "handoff": {
@@ -131,24 +134,24 @@
       "first": 401
     },
     "delivery": {
-      "count": 25,
+      "count": 26,
       "first": 426
     }
   },
   "families": {
     "final-command": 17,
-    "intermediate-stop": 41,
+    "intermediate-stop": 42,
     "goal-transit": 10,
-    "axis-order": 9,
-    "wall-adjust": 14,
-    "waiting-place": 37,
-    "priority-change": 48,
-    "unequal-loop": 14,
+    "axis-order": 11,
+    "wall-adjust": 11,
+    "waiting-place": 38,
+    "priority-change": 50,
+    "unequal-loop": 11,
     "remote-support": 73,
     "scenario-choice": 70,
-    "support-handoff": 80,
-    "dual-use-object": 10,
-    "preserve-access": 52,
+    "support-handoff": 73,
+    "preserve-access": 63,
+    "dual-use-object": 6,
     "help-recipient": 25
   },
   "antiSpam": {
@@ -177,12 +180,14 @@
       12,
       16,
       45,
+      80,
+      81,
       85,
-      99
+      105
     ],
-    "biasedRandomWins": 275,
+    "biasedRandomWins": 244,
     "biasedRandomRuns": 6000,
-    "uniformRandomWins": 959,
+    "uniformRandomWins": 807,
     "uniformRandomRuns": 6000
   },
   "chapters": [
@@ -264,7 +269,7 @@
         "synthesis": 1
       },
       "moves": {
-        "min": 2,
+        "min": 3,
         "max": 12,
         "mean": 7.4
       },
@@ -286,9 +291,9 @@
         "synthesis": 1
       },
       "moves": {
-        "min": 5,
-        "max": 16,
-        "mean": 9.5
+        "min": 3,
+        "max": 14,
+        "mean": 9.8
       },
       "animals": [
         25,
@@ -308,9 +313,9 @@
         "synthesis": 1
       },
       "moves": {
-        "min": 7,
+        "min": 5,
         "max": 15,
-        "mean": 9.8
+        "mean": 10
       },
       "animals": [
         25,
@@ -330,9 +335,9 @@
         "synthesis": 1
       },
       "moves": {
-        "min": 4,
-        "max": 18,
-        "mean": 11.3
+        "min": 7,
+        "max": 20,
+        "mean": 13
       },
       "animals": [
         10,
@@ -352,9 +357,9 @@
         "synthesis": 1
       },
       "moves": {
-        "min": 5,
-        "max": 14,
-        "mean": 9.6
+        "min": 7,
+        "max": 18,
+        "mean": 13.2
       },
       "animals": [
         12,
@@ -376,7 +381,7 @@
       "moves": {
         "min": 4,
         "max": 17,
-        "mean": 9.2
+        "mean": 9.9
       },
       "animals": [
         13,
@@ -397,8 +402,8 @@
       },
       "moves": {
         "min": 6,
-        "max": 20,
-        "mean": 11.2
+        "max": 21,
+        "mean": 13.8
       },
       "animals": [
         9,
@@ -419,8 +424,8 @@
       },
       "moves": {
         "min": 6,
-        "max": 14,
-        "mean": 10.6
+        "max": 23,
+        "mean": 14.8
       },
       "animals": [
         9,
@@ -440,9 +445,9 @@
         "synthesis": 1
       },
       "moves": {
-        "min": 5,
-        "max": 19,
-        "mean": 13.4
+        "min": 8,
+        "max": 22,
+        "mean": 14.8
       },
       "animals": [
         9,
@@ -462,9 +467,9 @@
         "synthesis": 1
       },
       "moves": {
-        "min": 5,
-        "max": 18,
-        "mean": 11.6
+        "min": 9,
+        "max": 24,
+        "mean": 15.2
       },
       "animals": [
         9,
@@ -484,9 +489,9 @@
         "synthesis": 1
       },
       "moves": {
-        "min": 9,
-        "max": 19,
-        "mean": 13.6
+        "min": 7,
+        "max": 24,
+        "mean": 14.2
       },
       "animals": [
         9,
@@ -507,8 +512,8 @@
       },
       "moves": {
         "min": 7,
-        "max": 28,
-        "mean": 16.9
+        "max": 32,
+        "mean": 16.4
       },
       "animals": [
         5,
@@ -528,9 +533,9 @@
         "synthesis": 1
       },
       "moves": {
-        "min": 8,
+        "min": 7,
         "max": 23,
-        "mean": 15.6
+        "mean": 16.2
       },
       "animals": [
         5,
@@ -550,9 +555,9 @@
         "synthesis": 1
       },
       "moves": {
-        "min": 7,
-        "max": 29,
-        "mean": 16.9
+        "min": 10,
+        "max": 25,
+        "mean": 18.8
       },
       "animals": [
         5,
@@ -572,9 +577,9 @@
         "synthesis": 1
       },
       "moves": {
-        "min": 9,
-        "max": 26,
-        "mean": 15.4
+        "min": 10,
+        "max": 29,
+        "mean": 19.6
       },
       "animals": [
         5,
@@ -594,9 +599,9 @@
         "synthesis": 1
       },
       "moves": {
-        "min": 10,
-        "max": 32,
-        "mean": 17.8
+        "min": 9,
+        "max": 30,
+        "mean": 18.1
       },
       "animals": [
         5,
@@ -617,8 +622,8 @@
       },
       "moves": {
         "min": 9,
-        "max": 28,
-        "mean": 17.5
+        "max": 31,
+        "mean": 18.7
       },
       "animals": [
         5,
