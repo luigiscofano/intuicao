@@ -18,6 +18,7 @@ if(!suite){
  const toolbar=css.slice(toolbarStart);
  const baseCSS=fs.readFileSync(new URL('../dist/style.css',import.meta.url),'utf8');
  assert.match(baseCSS,/\.stage-top>\.stage-tools>button\{min-width:44px;min-height:44px\}/,'Shared toolbar buttons retain 44px touch targets despite older stage-top defaults');
+ assert.match(baseCSS,/\.stage-top>\.stage-tools>#toggle-controls\{min-height:44px!important\}/,'Original advanced button overrides the legacy 36px important declaration');
  assert.match(toolbar,/\.rules-heading-tools,\.stage-tools\{[^}]*display:flex/,'Both game families use inline toolbar layout');
  assert.match(toolbar,/\.rules-heading-tools>\.rules-card,\.stage-tools>\.rules-card\{[^}]*margin:0/,'Disclosure has no old full-width card margin');
  assert.match(toolbar,/\.rules-heading-tools>\.rules-card>summary,\.stage-tools>\.rules-card>summary\{[^}]*min-height:44px/,'Compact disclosure retains an accessible touch target');

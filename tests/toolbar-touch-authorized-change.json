@@ -1,0 +1,6 @@
+{
+  "baseCommit": "53784447416fe62e35cc26ece6b9ec71ea418fcd",
+  "beforeSha256": "c651d3d5015f68ef05c2b25e9ec5a58ec101df2db1ac95596037f2ab5aedcaa9",
+  "afterSha256": "3247b891ffc2d74fdf1f77e7bf642dc2b0fcccf8bb368a852b267c38fe9c36e0",
+  "append": "/* Legacy panel-toggle used !important; keep its original toolbar target 44px too. */\n.stage-top>.stage-tools>#toggle-controls{min-height:44px!important}\n"
+}

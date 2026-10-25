@@ -265,3 +265,14 @@ button.action-hint:hover{background:#e4dcf1;border-color:#9c85bb}
 .board-navigation:has(> .collection-board-wrap > :is(.board-elo,.board-prumo,.board-pacto)):not(:has(#c-motion[data-outcome="win"])){--result-reserved-height:24px}
 /* The shared top toolbar keeps the former collection touch targets. */
 .stage-top>.stage-tools>button{min-width:44px;min-height:44px}
+/* Legacy panel-toggle used !important; keep its original toolbar target 44px too. */
+.stage-top>.stage-tools>#toggle-controls{min-height:44px!important}
+
+/* Keep the action sequence directly before the map, after game-specific tools. */
+.experiment>.stage-top{padding-top:8px;padding-bottom:8px;gap:8px}
+.experiment>.stage-top>.stage-tools{justify-content:flex-end;margin-left:auto;flex-wrap:wrap}
+.experiment>.stage-top+.board-navigation{margin-top:0}
+.collection-surface>.collection-stage-top>.level-stepper:empty{display:none}
+@media(max-width:600px){.experiment>.stage-top{padding-left:14px;padding-right:14px}.experiment>.stage-top>.stage-tools{width:100%;justify-content:flex-end}}
+/* Hints remain below the play area, with readable body-size text in all games. */
+#hint-text,#c-hint-text{font-size:16px;line-height:1.55}

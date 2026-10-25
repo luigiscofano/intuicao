@@ -1,4 +1,6 @@
 import assert from 'node:assert/strict';
+import {restoreBoardToolbarFile} from './board-toolbar-history.mjs';
+import {restoreToolbarTouchFile} from './toolbar-touch-history.mjs';
 import fs from 'node:fs';
 import crypto from 'node:crypto';
 import {execFileSync} from 'node:child_process';
@@ -10,7 +12,7 @@ const read=file=>fs.readFileSync(new URL('../dist/'+file,import.meta.url));
 const sha=bytes=>crypto.createHash('sha256').update(bytes).digest('hex');
 assert.deepEqual(Object.keys(m.files).sort(),['app.mjs','collection-ui.mjs','index.html','style.css']);
 for(const [name,entry]of Object.entries(m.files)){
- const current=read(name),prior=execFileSync('git',['show',`${m.baseCommit}:dist/${name}`],{cwd:new URL('..',import.meta.url)});
+ const current=restoreToolbarTouchFile(name,restoreBoardToolbarFile(name,read(name))),prior=execFileSync('git',['show',`${m.baseCommit}:dist/${name}`],{cwd:new URL('..',import.meta.url)});
  assert.equal(sha(current),entry.afterSha256,'Exact authorized new source: '+name);
  assert.equal(sha(prior),entry.beforeSha256,'Published baseline unchanged: '+name);
  assert.deepEqual(restoreJSONImportFile(name,current),prior,'Only exact authorized edits: '+name);

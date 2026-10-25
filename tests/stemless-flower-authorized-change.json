@@ -1,0 +1,26 @@
+{
+  "purpose": "Remove only the stem from the active selection-card white flower using an exact alpha mask. Preserve original PNGs, petals, green contour, 32px geometry, pointer behavior and every other platform CSS byte.",
+  "priorCssSHA256": "0da1007ffc0374966f22d4061dd82baf3a0d7b6c9d58bf1873d9c7c9ec1ea26f",
+  "afterCssSHA256": "37157bf35cf4375cd0a8ec63260cd4ad564841701cc541041751d110fb61b9ef",
+  "replacements": [
+    {
+      "before": ":where(body:not(:has(.lab:not([hidden]), #collection:not([hidden]) > .collection-lab))) #main > .games > button[aria-pressed=true]::after{content:\"\";position:absolute;top:-13px;right:10px;width:32px;height:32px;border-radius:0;background:url(\"platform-assets/flower-white-original.png\") center/contain no-repeat;box-shadow:none;filter:drop-shadow(.5px 0 0 #617b50) drop-shadow(-.5px 0 0 #617b50) drop-shadow(0 .5px 0 #617b50) drop-shadow(0 -.5px 0 #617b50);pointer-events:none;user-select:none}",
+      "after": ":where(body:not(:has(.lab:not([hidden]), #collection:not([hidden]) > .collection-lab))) #main > .games > button[aria-pressed=true]::after{content:\"\";position:absolute;top:-13px;right:10px;width:32px;height:32px;border-radius:0;background:url(\"platform-assets/flower-white-original.png\") center/contain no-repeat;mask-image:url(\"data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 1254 1254'%3E%3Cpath fill='white' d='M0 0H1254V880H690L665 810L600 790V880H0Z'/%3E%3C/svg%3E\");mask-size:100% 100%;mask-repeat:no-repeat;box-shadow:none;filter:drop-shadow(.5px 0 0 #617b50) drop-shadow(-.5px 0 0 #617b50) drop-shadow(0 .5px 0 #617b50) drop-shadow(0 -.5px 0 #617b50);pointer-events:none;user-select:none}"
+    }
+  ],
+  "maskDeclaration": "mask-image:url(\"data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 1254 1254'%3E%3Cpath fill='white' d='M0 0H1254V880H690L665 810L600 790V880H0Z'/%3E%3C/svg%3E\");mask-size:100% 100%;mask-repeat:no-repeat;",
+  "assets": [
+    {
+      "file": "platform-assets/flower-green-original.png",
+      "sha256": "4651cd8603999ad9ff6abb6ada2b8bd83c721719f8df899a83504a4cec8b42df",
+      "referenceFileName": "image(20261025-014508).png",
+      "referenceSHA256": "4651cd8603999ad9ff6abb6ada2b8bd83c721719f8df899a83504a4cec8b42df"
+    },
+    {
+      "file": "platform-assets/flower-white-original.png",
+      "sha256": "29f33ef8990e5bda53f566ab687b8336e84de0d95523cf7235031dd0852a35fc",
+      "referenceFileName": "image(20261025-014509).png",
+      "referenceSHA256": "29f33ef8990e5bda53f566ab687b8336e84de0d95523cf7235031dd0852a35fc"
+    }
+  ]
+}

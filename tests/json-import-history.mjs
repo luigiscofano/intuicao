@@ -1,9 +1,12 @@
 import assert from 'node:assert/strict';
+import {restoreBoardToolbarFile} from './board-toolbar-history.mjs';
+import {restoreToolbarTouchFile} from './toolbar-touch-history.mjs';
 import fs from 'node:fs';
 import crypto from 'node:crypto';
 const manifest=JSON.parse(fs.readFileSync(new URL('./json-import-authorized-change.json',import.meta.url)));
 const sha=s=>crypto.createHash('sha256').update(s).digest('hex');
 export function restoreJSONImportFile(path,bytes){
+ bytes=restoreToolbarTouchFile(path,restoreBoardToolbarFile(path,bytes));
  const name=path.replace(/^dist\//,''),change=manifest.files[name];if(!change)return bytes;
  let text=Buffer.isBuffer(bytes)?bytes.toString():bytes;
  // Pass through older layers unchanged. Their exact historical SHA assertions
