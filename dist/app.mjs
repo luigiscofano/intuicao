@@ -1,3 +1,4 @@
+import {getRulesContext} from './rules-context.mjs';
 import {generateOriginalEndless,normalizeOriginalOptions} from './endless-original.mjs';
 import {bindMiddleConfirm} from './middle-confirm.mjs';
 import {createRestartConfirmation} from './restart-confirmation.mjs';
@@ -195,14 +196,29 @@ function cutControlGuide(){
 
 const field=(key,label,min,max,step,value,unit='',disabled=false)=>`<div class="field"><header><label for="${key}">${label}</label><output id="${key}-out" for="${key}">${fmt(value,step<.1?2:1)}${unit}</output></header><div class="precision"><input id="${key}" data-bind="${key}" type="range" min="${min}" max="${max}" step="${step}" value="${value}" aria-label="${label}" ${disabled?'disabled':''}><input id="${key}-number" data-bind="${key}" type="number" min="${min}" max="${max}" step="${step}" value="${value}" aria-label="${label} (valor)" ${disabled?'disabled':''}></div></div>`;
 function start(){
- resetOriginalHint();if($('original-rules-panel'))$('original-rules-panel').open=false;
+ resetOriginalHint();
  restartConfirmation.dismiss();restartRevision++;
  placementMessage='';pendingSlot=null;invalidate();drag=null;$('selection').hidden=true;document.querySelector('.lab').hidden=false;if(!free)lastLevel[game]=level; selected=0; const l=catalogue[game][level];
  if(free){try{endlessGenerated=generateOriginalEndless(game,endlessRun.seed,endlessRun.options);}catch(error){free=false;showSelection();$('selection-title').textContent='Não foi possível gerar este desafio. Abra o modo livre e tente outra configuração.';return;}state=structuredClone(endlessGenerated.initial);endlessRun.solved=false;cutMode='advanced';cutDrafts={basic:null,advanced:null};if(game==='light')selected=state.objects.findIndex(o=>o.type==='mirror');}
  if(game==='light'&&!free){state={objects:structuredClone(l.objects),target:{...l.target,radius:22},sourceAngle:l.sourceAngle??0,...(!free?{sources:structuredClone(l.sources),targets:structuredClone(l.targets),portals:structuredClone(l.portals??[])}:{})};selected=state.objects.findIndex(o=>o.type==='mirror');}
  if(game==='cut'&&!free){cutMode=free?'advanced':'basic';cutDrafts={basic:null,advanced:null};state=basicCutState(l);if(free)state.holes=[];}
+ configureOriginalRules();
  $('hint-text').textContent=answerProgress.get(answerKey()).assisted?'Este desafio está marcado como assistido por gabarito.':''; render();$('game-title').setAttribute('tabindex','-1');$('game-title').focus();
 }
+function syncOriginalRules(){
+ const panel=$('original-rules-panel'),sidebar=$('original-rules-sidebar');
+ sidebar.hidden=!panel.open;document.querySelector('.workspace').classList.toggle('rules-open',panel.open);
+ panel.querySelector('summary').setAttribute('aria-expanded',String(panel.open));
+}
+const originalRuleMechanicsSeen=new Map();
+function configureOriginalRules(){
+ const context=getRulesContext(game,free?{...endlessGenerated.level,...endlessGenerated.initial}:catalogue[game][level],{catalogue:catalogue[game],index:level,mode:free?'endless':'campaign'});
+ $('original-rules-context-title').textContent=context.title;
+ $('original-rules-context-text').textContent=context.text;
+ let autoOpen=context.autoOpen;if(free){const seen=originalRuleMechanicsSeen.get(game)??new Set();autoOpen=context.mechanics.some(key=>!seen.has(key));context.mechanics.forEach(key=>seen.add(key));originalRuleMechanicsSeen.set(game,seen);}
+ $('original-rules-panel').open=autoOpen;syncOriginalRules();
+}
+$('original-rules-panel').ontoggle=syncOriginalRules;
 function render(){
  renderEndlessPanel();document.querySelector('.level-picker').hidden=free;
  document.querySelectorAll('[data-game]').forEach(b=>b.setAttribute('aria-pressed',String(b.dataset.game===game)));
@@ -228,8 +244,9 @@ function renderLevelNotes(){
   if(!free){const l=lightLevels[level];if(l.tutorial)notes+=`<div class="light-note" role="note"><strong>Nova ideia</strong>${l.tutorial}</div>`;if(state.portals?.length)notes+='<div class="light-note"><strong>Como usar os portais</strong>Portais com a mesma letra formam um par. A luz entra em um e sai do outro mantendo a direção. Branco aceita todas as cores; os símbolos coloridos indicam as cores permitidas. Uma cor não permitida é bloqueada. O salto entre portais não cruza outros raios.</div>';if(state.sources?.length>1)notes+='<div class="light-note"><strong>Disparo individual</strong>Clique na fonte de cada cor, ou use Tab e Enter/Espaço. O anel e o ✓ mostram quais já dispararam. Clicar novamente em uma fonte já usada não repete a tentativa; após o resultado, inicia outra. Só disparar todas as fontes conclui a tentativa. Confirmar todos dispara o conjunto de uma vez. Editar qualquer ajuste ou recomeçar limpa todos os raios.<br><strong>Caminhos separados</strong>Cada raio deve chegar ao alvo da mesma cor e símbolo. Cruzar ou encostar na trajetória de outra cor é colisão, mesmo em disparos separados. Raios parados não voltam a avançar.</div>';} 
  }
  if(game==='cut')notes=cutControlGuide();
- $('level-notes').innerHTML=notes;
- $('level-notes').hidden=!notes;
+ $('original-rules-notes').innerHTML=game==='light'?notes:'';
+ $('level-notes').innerHTML=game==='cut'?notes:'';
+ $('level-notes').hidden=game!=='cut'||!notes;
 }
 function editor(){
  renderLevelNotes();
@@ -343,7 +360,7 @@ scene.addEventListener('keydown',e=>{
  if(game==='cut'){if(id==='basic-cut'&&!free&&cutMode==='basic')setBasicTravel((state.basicTravel??0)+step);else if(id==='rotate-curve'&&allowed('rotate'))state.angle=(state.angle+step+360)%360;else if(id==='move-curve'){if(['ArrowLeft','ArrowRight'].includes(e.key)&&allowed('x'))state.centerX=clamp(state.centerX+step,-400,1200);if(['ArrowUp','ArrowDown'].includes(e.key)&&allowed('y'))state.centerY=clamp(state.centerY+(e.key==='ArrowUp'?-1:1),-400,860);}else if(allowed('offset'))state.offset=clamp(state.offset+step,-600,600);}editor();draw();drawing.querySelector(`[data-item="${id}"]`)?.focus();
 });
 document.querySelectorAll('[data-game]').forEach(b=>b.onclick=()=>{if(!catalogue[b.dataset.game])return;saveEndless();collection.hide();free=false;game=b.dataset.game;showSelection();});
-$('free').textContent='Endless';$('free').onclick=enterEndless;$('challenge').onclick=()=>{free=false;showSelection();};$('level').onchange=e=>{level=Number(e.target.value);start();};$('reset').onclick=()=>{middleConfirm?.cancel();clearTimeout(endlessTimer);endlessTimer=null;const revision=restartRevision;restartConfirmation.open({trigger:$('reset'),isCurrent:()=>revision===restartRevision&&!document.querySelector('.lab').hidden,onConfirm:start,onCancel:scheduleEndlessAdvance});};
+$('free').textContent='Endless';$('free').onclick=enterEndless;$('challenge').onclick=()=>{free=false;showSelection();};$('level').onchange=e=>{level=Number(e.target.value);start();};$('reset').onclick=()=>{middleConfirm?.cancel();clearTimeout(endlessTimer);endlessTimer=null;const revision=restartRevision;restartConfirmation.open({trigger:$('reset'),isCurrent:()=>revision===restartRevision&&!document.querySelector('.lab').hidden,onConfirm:()=>{const open=$('original-rules-panel').open;start();$('original-rules-panel').open=open;syncOriginalRules();},onCancel:scheduleEndlessAdvance});};
 $('selection-free').onclick=enterEndless;$('back-selection').onclick=showSelection;
 $('toggle-controls').onclick=toggleControls;
 applyControlsVisibility();

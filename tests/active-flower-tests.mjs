@@ -1,9 +1,10 @@
+import {restoreRulesSidebarFile} from './rules-sidebar-history.mjs';
 import assert from 'node:assert/strict';
 import fs from 'node:fs';
 import crypto from 'node:crypto';
 import {restoreActiveFlowerCSS} from './active-flower-history.mjs';
 import {restoreCompletedGreenCSS} from './completed-green-history.mjs';
-const read=p=>fs.readFileSync(new URL('../'+p,import.meta.url),'utf8');
+const read=p=>restoreRulesSidebarFile(p,fs.readFileSync(new URL('../'+p,import.meta.url),'utf8'));
 const sha=s=>crypto.createHash('sha256').update(s).digest('hex');
 const m=JSON.parse(read('tests/active-flower-authorized-change.json'));
 const green=JSON.parse(read('tests/completed-green-authorized-change.json'));
