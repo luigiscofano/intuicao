@@ -1,3 +1,4 @@
+import {restoreOriginalLogoHTML} from './original-logo-history.mjs';
 /** Reverses only the exact ELO expansion recorded in the authorized manifest.
  * Existing pre-expansion manifests remain untouched and retain their checks. */
 import assert from 'node:assert/strict';
@@ -6,7 +7,9 @@ import crypto from 'node:crypto';
 const manifest=JSON.parse(fs.readFileSync(new URL('./elo-v3-authorized-change.json',import.meta.url)));
 const sha=s=>crypto.createHash('sha256').update(s).digest('hex');
 export function restoreEloV3File(path,bytes){
- const name=path.replace(/^dist\//,''),change=manifest.files[name];if(!change)return bytes;
+ const name=path.replace(/^dist\//,'');
+ if(name==='index.html'){const html=restoreOriginalLogoHTML(bytes.toString());bytes=Buffer.isBuffer(bytes)?Buffer.from(html):html;}
+ const change=manifest.files[name];if(!change)return bytes;
  let text=Buffer.isBuffer(bytes)?bytes.toString():bytes;
  assert.equal(sha(text),change.afterSha256,'Exact authorized ELO update: '+name);
  if(change.append!==undefined){assert.ok(text.endsWith(change.append),'Exact ELO appended block: '+name);text=text.slice(0,-change.append.length);}

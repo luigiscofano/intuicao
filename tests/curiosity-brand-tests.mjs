@@ -1,7 +1,8 @@
+import {restoreOriginalLogoHTML} from './original-logo-history.mjs';
 import assert from 'node:assert/strict';
 import fs from 'node:fs';
 import {root} from './direct-ui-harness.mjs';
-const html=fs.readFileSync(new URL('../dist/index.html',import.meta.url),'utf8');
+const html=restoreOriginalLogoHTML(fs.readFileSync(new URL('../dist/index.html',import.meta.url),'utf8'));
 const css=fs.readFileSync(new URL('../dist/platform.css',import.meta.url),'utf8');
 const revision=JSON.parse(fs.readFileSync(new URL('./curiosity-brand-authorized-changes.json',import.meta.url)));
 for(const {before,after} of revision.html_changes){

@@ -1,0 +1,7 @@
+/* Original supplied PNG, unchanged. Its transparent canvas is centered without
+   cropping, distortion or filters; the established shell line heights remain. */
+body > header .brand{position:relative;width:180px;height:45px;flex-shrink:0;overflow:visible}
+body > header .brand-image,body > footer .brand-image{position:absolute;left:0;top:50%;width:100%;height:auto;max-width:none;display:block;transform:translateY(-50%);pointer-events:none}
+body > footer .brand{position:relative;display:inline-block;width:140px;height:35px;flex-shrink:0;overflow:visible;vertical-align:middle}
+@media(max-width:760px){body > header .brand{width:150px}body > footer .brand{width:128px;height:32px}}
+@media(max-width:370px){body > header .brand{width:132px}}
