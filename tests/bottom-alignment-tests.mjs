@@ -1,3 +1,4 @@
+import {restoreCompletedGreenCSS} from './completed-green-history.mjs';
 import assert from 'node:assert/strict';
 import fs from 'node:fs';
 import crypto from 'node:crypto';
@@ -7,7 +8,7 @@ const read=p=>fs.readFileSync(new URL('../'+p,import.meta.url),'utf8');
 const sha=s=>crypto.createHash('sha256').update(s).digest('hex');
 const m=JSON.parse(read('tests/bottom-alignment-authorized-change.json'));
 const spacing=JSON.parse(read('tests/game-spacing-authorized-change.json'));
-const css=read('dist/platform.css');
+const css=restoreCompletedGreenCSS(read('dist/platform.css'));
 assert.equal(sha(css),m.afterCssSHA256);
 assert.equal(m.priorCssSHA256,spacing.afterCssSHA256);
 assert.equal(m.replacements.length,2,'Only desktop and mobile footer paint rules change');

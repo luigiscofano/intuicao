@@ -1,0 +1,20 @@
+{
+  "baseCommit": "f04fb0f708ef6ef8b248a1c51ef2091e4f15eeae",
+  "purpose": "Make completed campaign tiles visibly deeper green, with white readable labels. No incomplete tile or game logic changes.",
+  "priorCssSHA256": "7436ac931827d323a7d1a751649747a1ae1bef79f6c0963246633df9373e3aa9",
+  "afterCssSHA256": "ba78072529902c09e3093328b0124cb2599b1e37238988d5abeb91a02dc0de43",
+  "replacements": [
+    {
+      "before": ":is(#selection, #collection > .level-screen) .level-tile.done{background:#e1ecda;border-color:#71865b;box-shadow:0 2px #cbdac1}",
+      "after": ":is(#selection, #collection > .level-screen) .level-tile.done{background:#486c4d;color:#fff;border-color:#405e49;box-shadow:0 2px #354b3a}"
+    },
+    {
+      "before": ":is(#selection, #collection > .level-screen) .level-tile.done > small{color:#405e49}",
+      "after": ":is(#selection, #collection > .level-screen) .level-tile.done > small{color:#fff}"
+    }
+  ],
+  "preservedSourcesSHA256": {
+    "app.mjs": "d3c5a5d88da02f61bc1c01b9a779fcf4a6db8984d2580a68f1f90e781ee62257",
+    "collection-ui.mjs": "06a043079d294e62bf5c8c397689d6ebb1d6710402ca47086e601b9b97995e3a"
+  }
+}

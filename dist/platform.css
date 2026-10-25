@@ -51,7 +51,7 @@ body > footer .brand-dot{color:#997838}
 :where(body:not(:has(.lab:not([hidden]), #collection:not([hidden]) > .collection-lab))) #main > .games > button[aria-pressed=true] > span{color:#d3ddb5}
 :where(body:not(:has(.lab:not([hidden]), #collection:not([hidden]) > .collection-lab))) #main > .games > button small{font-family:system-ui,sans-serif;font-size:11px;line-height:1.6;opacity:1;margin-left:28px;color:#62634f}
 :where(body:not(:has(.lab:not([hidden]), #collection:not([hidden]) > .collection-lab))) #main > .games > button[aria-pressed=true] small{color:#e2e6ce}
-:where(body:not(:has(.lab:not([hidden]), #collection:not([hidden]) > .collection-lab))) #main > .games > button[aria-pressed=true]::after{content:"";position:absolute;top:17px;right:14px;width:5px;height:5px;border-radius:50%;background:#ddd3a6;box-shadow:none}
+:where(body:not(:has(.lab:not([hidden]), #collection:not([hidden]) > .collection-lab))) #main > .games > button[aria-pressed=true]::after{content:"";position:absolute;top:-10px;right:14px;width:24px;height:24px;border-radius:0;background:url("platform-assets/active-flower.svg") center/contain no-repeat;box-shadow:none;pointer-events:none;user-select:none}
 :where(body:not(:has(.lab:not([hidden]), #collection:not([hidden]) > .collection-lab))) > footer > span{font-family:Georgia,"Times New Roman",serif;font-size:26px;font-style:italic;letter-spacing:-.5px;font-weight:700}
 
 /* Two explicit selection roots. .collection-lab can never match these. */
@@ -67,8 +67,8 @@ body > footer .brand-dot{color:#997838}
 :is(#selection, #collection > .level-screen) .level-tile{border-radius:24%;min-height:64px;padding:5px;background:#f3f6ef;border-color:#c0cbb7;color:#3b342e;gap:4px;box-shadow:0 2px #dfe7d8}
 :is(#selection, #collection > .level-screen) .level-tile > span{font-family:"Courier New",monospace;font-size:22px;line-height:1.25;font-weight:400}
 :is(#selection, #collection > .level-screen) .level-tile > small{font-family:system-ui,sans-serif;font-size:10px;line-height:1.5;color:#62604c}
-:is(#selection, #collection > .level-screen) .level-tile.done{background:#e1ecda;border-color:#71865b;box-shadow:0 2px #cbdac1}
-:is(#selection, #collection > .level-screen) .level-tile.done > small{color:#405e49}
+:is(#selection, #collection > .level-screen) .level-tile.done{background:#486c4d;color:#fff;border-color:#405e49;box-shadow:0 2px #354b3a}
+:is(#selection, #collection > .level-screen) .level-tile.done > small{color:#fff}
 :is(#selection, #collection > .level-screen) .level-tile[aria-current=true]{outline:2px solid #997838;outline-offset:2px}
 :is(#selection, #collection > .level-screen) .duel-maps > button{background:#f3f6ef}
 :is(#selection, #collection > .level-screen) .duel-maps > button small{font-family:system-ui,sans-serif;color:#585644}

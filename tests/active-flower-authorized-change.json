@@ -1,0 +1,21 @@
+{
+  "purpose": "Replace only the menu active navigation gold dot with a decorative green flower extending above its button. No state, ARIA, layout, or game behavior changes.",
+  "priorCssSHA256": "ba78072529902c09e3093328b0124cb2599b1e37238988d5abeb91a02dc0de43",
+  "afterCssSHA256": "97dc172b84be2a5ee79e4d8f6974eaf07cc9fa97398302740e809e95c043b6b7",
+  "replacements": [
+    {
+      "before": ":where(body:not(:has(.lab:not([hidden]), #collection:not([hidden]) > .collection-lab))) #main > .games > button[aria-pressed=true]::after{content:\"\";position:absolute;top:17px;right:14px;width:5px;height:5px;border-radius:50%;background:#ddd3a6;box-shadow:none}",
+      "after": ":where(body:not(:has(.lab:not([hidden]), #collection:not([hidden]) > .collection-lab))) #main > .games > button[aria-pressed=true]::after{content:\"\";position:absolute;top:-10px;right:14px;width:24px;height:24px;border-radius:0;background:url(\"platform-assets/active-flower.svg\") center/contain no-repeat;box-shadow:none;pointer-events:none;user-select:none}"
+    }
+  ],
+  "asset": "platform-assets/active-flower.svg",
+  "assetSHA256": "6f68f0aba69d63be53952963ba3074e182d9d45d085c3eae354bce208fc0baf7",
+  "preservedSourcesSHA256": {
+    "app.mjs": "d3c5a5d88da02f61bc1c01b9a779fcf4a6db8984d2580a68f1f90e781ee62257",
+    "collection-ui.mjs": "06a043079d294e62bf5c8c397689d6ebb1d6710402ca47086e601b9b97995e3a",
+    "game-info.mjs": "29a567ffa0382ecafcb5f4b8443289a5b8143e61e7c027f7189901e4f8e5ee56",
+    "game-info.css": "d8ed3d872fca93383f506fa0cd0464abe5f5176f32eaca17582c978c08f3b42f",
+    "style.css": "46531ffe603cd1d305835320ba44dce2c2e3d20c465179af8ff91c96dc9a9fe7",
+    "index.html": "4b9f58afec4b34981331e521b92fa4d1997c38817a0478b448fdfe671a538d80"
+  }
+}
