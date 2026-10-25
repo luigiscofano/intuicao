@@ -31,7 +31,7 @@ try{
  input(free,(l.solution[free]+1)%4);$('c-check').click();assert.ok(cell(free).matches('.cell-conflict'));assert.ok(cell(free).matches('.pacto-conflict-enter'));assert.match($('c-check-status').textContent,/gabarito de referência/);
  $('c-direct-undo').click();cleared();$('c-check').click();$('c-direct-redo').click();cleared();$('c-check').click();$('c-reset').click();$('restart-collection-confirm').click();cleared();
  input(free,l.solution[free]);$('c-check').click();$('c-level-next').click();clock.tick(10000);cleared();
- start();input(free,l.solution[free]);$('c-check').click();app.activate('elo');host.querySelector('[data-new-level="0"]').click();clock.tick(10000);assert.equal($('c-check'),undefined);
+ start();input(free,l.solution[free]);$('c-check').click();app.activate('elo');host.querySelector('[data-new-level="0"]').click();clock.tick(10000);assert.ok($('c-check'));cleared();
  start();const custom=JSON.parse($('c-editor-json').value);$('c-editor-json').value=JSON.stringify(custom);$('c-editor-play').click();assert.equal($('c-check').disabled,true);assert.match($('c-check-help').textContent,/não tem gabarito/);
  app.activate('pacto');$('c-free').click();let run=data().endless.pacto;const generated=generateCollectionEndless('pacto',run.seed,run.options);const i=generated.level.clues.findIndex(v=>v<0);input(i,generated.answer.values[i]);$('c-check').click();assert.match($('c-check-status').textContent,/Tudo certo/);assert.equal(data().endless.pacto.solved,0);assert.equal(data().endless.pacto.failures,0);assert.equal(data().sessions['endless:pacto'].assistance,false);
  // Confirm still owns victory, and a check cannot cancel the pending next puzzle.

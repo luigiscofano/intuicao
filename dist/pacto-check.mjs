@@ -9,10 +9,10 @@ export function comparePactoReference(level,values,reference){
 export function createPactoCheck(onChange,clock=globalThis){
  let state=null,timer=null,revision=0;
  function reset(){revision++;if(timer!==null)clock.clearTimeout(timer);timer=null;state=null;}
- return {reset,get:()=>state?{...state,elapsed:Math.max(0,clock.Date.now()-state.startedAt)}:null,
-  check(level,values,reference){reset();state={...comparePactoReference(level,values,reference),revision,startedAt:clock.Date.now()};const token=revision;
-   timer=clock.setTimeout(()=>{if(token!==revision)return;reset();onChange();},PACTO_CHECK_DURATION);
-   onChange();return state;
-  }
+ function show(result){reset();state={...result,revision,startedAt:clock.Date.now()};const token=revision;
+  timer=clock.setTimeout(()=>{if(token!==revision)return;reset();onChange();},PACTO_CHECK_DURATION);onChange();return state;
+ }
+ return {reset,show,get:()=>state?{...state,elapsed:Math.max(0,clock.Date.now()-state.startedAt)}:null,
+  check(level,values,reference){return show(comparePactoReference(level,values,reference));}
  };
 }

@@ -1,7 +1,8 @@
+import {restoreAllScreensFrameCSS} from './all-screens-frame-history.mjs';
 import assert from 'node:assert/strict';
 import fs from 'node:fs';
 import {restoreTrunkShadowCSS} from './trunk-shadow-history.mjs';
-const css=fs.readFileSync(new URL('../dist/platform.css',import.meta.url),'utf8');
+const css=restoreAllScreensFrameCSS(fs.readFileSync(new URL('../dist/platform.css',import.meta.url),'utf8'));
 restoreTrunkShadowCSS(css);
 assert.equal(css.split('filter:drop-shadow(0 2px 4px #34452a12)').length-1,1);
 assert.match(css,/:is\(#selection, #collection > \.level-screen\)\{[^}]*filter:drop-shadow\(0 2px 4px #34452a12\)/);

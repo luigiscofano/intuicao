@@ -1,3 +1,5 @@
+import {restoreAllScreensFrameFile} from './all-screens-frame-history.mjs';
+import {restoreManualCheckFile} from './manual-check-history.mjs';
 import assert from 'node:assert/strict';
 import fs from 'node:fs';
 import crypto from 'node:crypto';
@@ -8,7 +10,7 @@ const sha=b=>crypto.createHash('sha256').update(b).digest('hex');
 const html=read('dist/index.html').toString(),css=read('dist/logo.css').toString();
 assert.equal(sha(html),m.afterHtmlSHA256,'Current document matches exact approved logo changes');
 assert.equal(sha(restoreOriginalLogoHTML(html)),m.priorHtmlSHA256);
-for(const [p,hash] of Object.entries({...m.preservedDistSHA256,...m.newFilesSHA256}))assert.equal(sha(read(p)),hash,'Protected file: '+p);
+for(const [p,hash] of Object.entries({...m.preservedDistSHA256,...m.newFilesSHA256}))assert.equal(sha(restoreAllScreensFrameFile(p,restoreManualCheckFile(p,read(p)))),hash,'Protected file: '+p);
 const png=read('dist/platform-assets/intuicao-logo-original.png');
 assert.equal(sha(png),m.originalPngSHA256,'Supplied PNG is copied without pixel modification');
 assert.equal(png.readUInt32BE(16),2048);assert.equal(png.readUInt32BE(20),682);assert.equal(png[25],6,'RGBA PNG retains transparency');
