@@ -1,4 +1,4 @@
-// Textos de orientação baseados nas regras atuais dos seis jogos.
+// Textos de orientação baseados nas regras atuais dos jogos.
 // Os objetivos descrevem propostas de prática, não benefícios comprovados.
 export const GAME_INFO = {
   light: {
@@ -80,6 +80,21 @@ export const GAME_INFO = {
     ],
     purpose: 'Praticar planejamento, antecipação de consequências e raciocínio espacial, articulando objetivos individuais com uma condição conjunta.',
     why: 'Cada seta pode ajudar um animal e afastar outro do destino. Experimentar paredes, apoios e sequências convida a pensar nas relações entre os caminhos.'
+  },
+  repasse: {
+    name: 'REPASSE',
+    description: 'Um puzzle de planejamento em que retirar uma peça transforma os valores e os caminhos das próximas.',
+    summary: 'Retire todas as peças e complete exatamente as metas das bordas. Decida quem precisa receber, esperar ou sair para abrir passagem.',
+    rules: [
+      'Clique ou toque em uma peça para retirá-la. Seu valor atual inteiro é enviado uma vez em cada direção indicada pelas setas; ele não é dividido.',
+      'Cada repasse atravessa vazios e para na primeira peça presente. Quem recebe soma o valor e continua esperando sua vez, independentemente da orientação das próprias setas.',
+      'Se não houver receptor, o valor chega à caixa correspondente na borda. Todas as caixas mostram acumulado / meta, inclusive as de meta zero.',
+      'Você vence quando a grade estiver vazia e todas as metas forem exatas. Um excesso pode ser revisto com Desfazer; experimentar outra ordem faz parte do jogo.',
+      'As setas e posições são fixas. Ao longo da campanha aparecem peças de uma seta, duas setas perpendiculares e quatro setas, sempre com a mesma regra de repasse.',
+      'Use o mouse, toque ou navegue pelas peças com as setas do teclado e retire com Enter ou espaço. A prévia mostra os destinatários atuais. Explore 500 fases ou continue com desafios novos no Endless, sem cronômetro.'
+    ],
+    purpose: 'Praticar planejamento de ordem, antecipação de consequências e leitura de relações entre valores, receptores e metas.',
+    why: 'Uma peça pode precisar receber primeiro e desaparecer depois para liberar um caminho. Comparar as metas com essas funções convida a formular, testar e revisar hipóteses.'
   },
   desvio: {
     name: 'DESVIO',

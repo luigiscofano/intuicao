@@ -1,0 +1,10306 @@
+{
+  "rulesVersion": 1,
+  "generatorVersion": 1,
+  "method": "Deterministic replay plus exact memoized order counting; no player testing.",
+  "campaign": {
+    "total": 500,
+    "idsConsecutive": true,
+    "categories": {
+      "Básico": 200,
+      "Intermediário": 100,
+      "Avançado": 100,
+      "Mestre": 100
+    },
+    "stages": {
+      "Descoberta": 25,
+      "Muito fácil": 50,
+      "Fácil": 50,
+      "Básico consolidado": 75,
+      "Intermediário": 100,
+      "Avançado": 100,
+      "Especialista": 50,
+      "Mestre": 50
+    },
+    "original": 350,
+    "expanded": 150,
+    "debuts": {
+      "single": 201,
+      "corner": 276,
+      "four": 351
+    },
+    "lastOnlyOriginal": true,
+    "replayed": 500,
+    "exactAlternativeAnalyses": 500,
+    "inconclusiveAnalyses": 0,
+    "uniqueOrders": 13,
+    "maxStates": 1597,
+    "maximumValue": 37,
+    "maximumTarget": 37,
+    "maximumRows": 4,
+    "maximumColumns": 4,
+    "pieceCounts": {
+      "1": 2,
+      "2": 3,
+      "3": 8,
+      "4": 19,
+      "5": 66,
+      "6": 92,
+      "7": 110,
+      "8": 104,
+      "9": 58,
+      "10": 38
+    },
+    "normalizedClasses": 498,
+    "topologyClasses": 496,
+    "normalizedEquivalentGroups": [
+      [
+        1,
+        2
+      ],
+      [
+        3,
+        5
+      ]
+    ],
+    "sameTopologyGroups": [
+      [
+        1,
+        2
+      ],
+      [
+        3,
+        5
+      ],
+      [
+        7,
+        8,
+        9
+      ]
+    ],
+    "primaryConcepts": {
+      "endgame": 27,
+      "receive": 89,
+      "accumulate": 44,
+      "timing": 78,
+      "passage": 43,
+      "destinations": 27,
+      "asymmetry": 26,
+      "protect": 29,
+      "handoff": 30,
+      "shared": 22,
+      "reunite": 23,
+      "unequal": 11,
+      "linked": 36,
+      "roles": 15
+    },
+    "observedConcepts": {
+      "receive": 498,
+      "accumulate": 394,
+      "passage": 488,
+      "timing": 401,
+      "handoff": 65,
+      "destinations": 245,
+      "protect": 451,
+      "reunite": 117,
+      "unequal": 129,
+      "shared": 307,
+      "roles": 138,
+      "linked": 340,
+      "asymmetry": 494,
+      "endgame": 500
+    },
+    "timingLevels": 401,
+    "accessibleReprises": 76
+  },
+  "chapters": [
+    {
+      "chapter": 1,
+      "name": "Primeiros repasses",
+      "first": 1,
+      "last": 25,
+      "original": 25,
+      "expanded": 0,
+      "roles": {
+        "introdução": 25
+      },
+      "averagePieces": 3.72,
+      "averageDependencyDepth": 2.16,
+      "averageRequiredPrecedences": 2.76,
+      "averageOrderRestrictionBits": 2.281,
+      "timing": 3,
+      "unique": 11
+    },
+    {
+      "chapter": 2,
+      "name": "Quem precisa esperar",
+      "first": 26,
+      "last": 50,
+      "original": 25,
+      "expanded": 0,
+      "roles": {
+        "variação": 4,
+        "retomada": 4,
+        "combinação": 11,
+        "aprofundamento": 4,
+        "marcante": 2
+      },
+      "averagePieces": 4.96,
+      "averageDependencyDepth": 2.52,
+      "averageRequiredPrecedences": 5.08,
+      "averageOrderRestrictionBits": 3.486,
+      "timing": 12,
+      "unique": 0
+    },
+    {
+      "chapter": 3,
+      "name": "Caminhos vazios",
+      "first": 51,
+      "last": 75,
+      "original": 25,
+      "expanded": 0,
+      "roles": {
+        "variação": 4,
+        "retomada": 4,
+        "combinação": 11,
+        "aprofundamento": 4,
+        "marcante": 2
+      },
+      "averagePieces": 5.08,
+      "averageDependencyDepth": 2.44,
+      "averageRequiredPrecedences": 5.16,
+      "averageOrderRestrictionBits": 3.616,
+      "timing": 11,
+      "unique": 0
+    },
+    {
+      "chapter": 4,
+      "name": "Juntar no lugar certo",
+      "first": 76,
+      "last": 100,
+      "original": 25,
+      "expanded": 0,
+      "roles": {
+        "variação": 4,
+        "retomada": 4,
+        "combinação": 11,
+        "aprofundamento": 4,
+        "marcante": 2
+      },
+      "averagePieces": 6.12,
+      "averageDependencyDepth": 2.72,
+      "averageRequiredPrecedences": 7.08,
+      "averageOrderRestrictionBits": 4.591,
+      "timing": 14,
+      "unique": 0
+    },
+    {
+      "chapter": 5,
+      "name": "A hora de sair",
+      "first": 101,
+      "last": 125,
+      "original": 25,
+      "expanded": 0,
+      "roles": {
+        "variação": 4,
+        "retomada": 4,
+        "combinação": 11,
+        "aprofundamento": 4,
+        "marcante": 2
+      },
+      "averagePieces": 5.88,
+      "averageDependencyDepth": 2.6,
+      "averageRequiredPrecedences": 7.08,
+      "averageOrderRestrictionBits": 4.672,
+      "timing": 22,
+      "unique": 0
+    },
+    {
+      "chapter": 6,
+      "name": "Os dois lados",
+      "first": 126,
+      "last": 150,
+      "original": 25,
+      "expanded": 0,
+      "roles": {
+        "variação": 4,
+        "retomada": 4,
+        "combinação": 11,
+        "aprofundamento": 4,
+        "marcante": 2
+      },
+      "averagePieces": 6.52,
+      "averageDependencyDepth": 3,
+      "averageRequiredPrecedences": 7.84,
+      "averageOrderRestrictionBits": 4.99,
+      "timing": 23,
+      "unique": 0
+    },
+    {
+      "chapter": 7,
+      "name": "Separar e reunir",
+      "first": 151,
+      "last": 175,
+      "original": 25,
+      "expanded": 0,
+      "roles": {
+        "variação": 4,
+        "retomada": 4,
+        "combinação": 11,
+        "aprofundamento": 4,
+        "marcante": 2
+      },
+      "averagePieces": 6.76,
+      "averageDependencyDepth": 3.16,
+      "averageRequiredPrecedences": 9.48,
+      "averageOrderRestrictionBits": 5.77,
+      "timing": 14,
+      "unique": 0
+    },
+    {
+      "chapter": 8,
+      "name": "Combinações do básico",
+      "first": 176,
+      "last": 200,
+      "original": 25,
+      "expanded": 0,
+      "roles": {
+        "variação": 4,
+        "retomada": 4,
+        "combinação": 11,
+        "aprofundamento": 4,
+        "marcante": 2
+      },
+      "averagePieces": 6.92,
+      "averageDependencyDepth": 2.92,
+      "averageRequiredPrecedences": 8.52,
+      "averageOrderRestrictionBits": 5.43,
+      "timing": 22,
+      "unique": 0
+    },
+    {
+      "chapter": 9,
+      "name": "Um destino por vez",
+      "first": 201,
+      "last": 225,
+      "original": 12,
+      "expanded": 13,
+      "roles": {
+        "variação": 4,
+        "retomada": 4,
+        "combinação": 11,
+        "aprofundamento": 4,
+        "marcante": 2
+      },
+      "averagePieces": 7.52,
+      "averageDependencyDepth": 3.2,
+      "averageRequiredPrecedences": 10.36,
+      "averageOrderRestrictionBits": 6.3,
+      "timing": 24,
+      "unique": 1
+    },
+    {
+      "chapter": 10,
+      "name": "Receptores compartilhados",
+      "first": 226,
+      "last": 250,
+      "original": 13,
+      "expanded": 12,
+      "roles": {
+        "variação": 4,
+        "retomada": 4,
+        "combinação": 11,
+        "aprofundamento": 4,
+        "marcante": 2
+      },
+      "averagePieces": 7.4,
+      "averageDependencyDepth": 3.08,
+      "averageRequiredPrecedences": 9.6,
+      "averageOrderRestrictionBits": 5.987,
+      "timing": 25,
+      "unique": 0
+    },
+    {
+      "chapter": 11,
+      "name": "Proteger e liberar",
+      "first": 251,
+      "last": 275,
+      "original": 12,
+      "expanded": 13,
+      "roles": {
+        "variação": 4,
+        "retomada": 4,
+        "combinação": 11,
+        "aprofundamento": 4,
+        "marcante": 2
+      },
+      "averagePieces": 7.36,
+      "averageDependencyDepth": 3.16,
+      "averageRequiredPrecedences": 10.16,
+      "averageOrderRestrictionBits": 6.251,
+      "timing": 21,
+      "unique": 0
+    },
+    {
+      "chapter": 12,
+      "name": "Duas direções em curva",
+      "first": 276,
+      "last": 300,
+      "original": 13,
+      "expanded": 12,
+      "roles": {
+        "variação": 4,
+        "retomada": 4,
+        "combinação": 11,
+        "aprofundamento": 4,
+        "marcante": 2
+      },
+      "averagePieces": 7.56,
+      "averageDependencyDepth": 3.08,
+      "averageRequiredPrecedences": 10.64,
+      "averageOrderRestrictionBits": 6.414,
+      "timing": 24,
+      "unique": 0
+    },
+    {
+      "chapter": 13,
+      "name": "Preparar o encerramento",
+      "first": 301,
+      "last": 325,
+      "original": 12,
+      "expanded": 13,
+      "roles": {
+        "variação": 4,
+        "retomada": 4,
+        "combinação": 11,
+        "aprofundamento": 4,
+        "marcante": 2
+      },
+      "averagePieces": 7.72,
+      "averageDependencyDepth": 2.92,
+      "averageRequiredPrecedences": 12,
+      "averageOrderRestrictionBits": 7.107,
+      "timing": 23,
+      "unique": 0
+    },
+    {
+      "chapter": 14,
+      "name": "Conectar regiões",
+      "first": 326,
+      "last": 350,
+      "original": 13,
+      "expanded": 12,
+      "roles": {
+        "variação": 4,
+        "retomada": 4,
+        "combinação": 11,
+        "aprofundamento": 4,
+        "marcante": 2
+      },
+      "averagePieces": 7.64,
+      "averageDependencyDepth": 3.28,
+      "averageRequiredPrecedences": 12,
+      "averageOrderRestrictionBits": 6.999,
+      "timing": 25,
+      "unique": 0
+    },
+    {
+      "chapter": 15,
+      "name": "Quatro destinos",
+      "first": 351,
+      "last": 375,
+      "original": 12,
+      "expanded": 13,
+      "roles": {
+        "variação": 4,
+        "retomada": 4,
+        "combinação": 11,
+        "aprofundamento": 4,
+        "marcante": 2
+      },
+      "averagePieces": 7.44,
+      "averageDependencyDepth": 3.24,
+      "averageRequiredPrecedences": 11.84,
+      "averageOrderRestrictionBits": 7.168,
+      "timing": 22,
+      "unique": 1
+    },
+    {
+      "chapter": 16,
+      "name": "Funções que mudam",
+      "first": 376,
+      "last": 400,
+      "original": 13,
+      "expanded": 12,
+      "roles": {
+        "variação": 4,
+        "retomada": 4,
+        "combinação": 11,
+        "aprofundamento": 4,
+        "marcante": 2
+      },
+      "averagePieces": 7.6,
+      "averageDependencyDepth": 3.2,
+      "averageRequiredPrecedences": 11.92,
+      "averageOrderRestrictionBits": 7.065,
+      "timing": 22,
+      "unique": 0
+    },
+    {
+      "chapter": 17,
+      "name": "Enigmas compactos",
+      "first": 401,
+      "last": 425,
+      "original": 12,
+      "expanded": 13,
+      "roles": {
+        "variação": 4,
+        "retomada": 4,
+        "combinação": 11,
+        "aprofundamento": 4,
+        "marcante": 2
+      },
+      "averagePieces": 6.88,
+      "averageDependencyDepth": 3.24,
+      "averageRequiredPrecedences": 11.96,
+      "averageOrderRestrictionBits": 7.167,
+      "timing": 21,
+      "unique": 0
+    },
+    {
+      "chapter": 18,
+      "name": "Diferenças decisivas",
+      "first": 426,
+      "last": 450,
+      "original": 13,
+      "expanded": 12,
+      "roles": {
+        "variação": 4,
+        "retomada": 4,
+        "combinação": 11,
+        "aprofundamento": 4,
+        "marcante": 2
+      },
+      "averagePieces": 8.44,
+      "averageDependencyDepth": 3.28,
+      "averageRequiredPrecedences": 14.28,
+      "averageOrderRestrictionBits": 8.008,
+      "timing": 24,
+      "unique": 0
+    },
+    {
+      "chapter": 19,
+      "name": "Conciliar condições",
+      "first": 451,
+      "last": 475,
+      "original": 12,
+      "expanded": 13,
+      "roles": {
+        "variação": 4,
+        "retomada": 4,
+        "combinação": 11,
+        "aprofundamento": 4,
+        "marcante": 2
+      },
+      "averagePieces": 9.2,
+      "averageDependencyDepth": 3.4,
+      "averageRequiredPrecedences": 16.64,
+      "averageOrderRestrictionBits": 9.068,
+      "timing": 25,
+      "unique": 0
+    },
+    {
+      "chapter": 20,
+      "name": "Domínio do REPASSE",
+      "first": 476,
+      "last": 500,
+      "original": 13,
+      "expanded": 12,
+      "roles": {
+        "variação": 4,
+        "retomada": 4,
+        "combinação": 11,
+        "aprofundamento": 4,
+        "marcante": 2
+      },
+      "averagePieces": 9.04,
+      "averageDependencyDepth": 3.64,
+      "averageRequiredPrecedences": 15.96,
+      "averageOrderRestrictionBits": 8.877,
+      "timing": 24,
+      "unique": 0
+    }
+  ],
+  "solutions": [
+    {
+      "id": 1,
+      "solutionCount": 1,
+      "possibleOrders": 1,
+      "states": 2,
+      "firstMoves": [
+        "p1"
+      ],
+      "lastMoves": [
+        "p1"
+      ],
+      "requiredPrecedences": 0
+    },
+    {
+      "id": 2,
+      "solutionCount": 1,
+      "possibleOrders": 1,
+      "states": 2,
+      "firstMoves": [
+        "p1"
+      ],
+      "lastMoves": [
+        "p1"
+      ],
+      "requiredPrecedences": 0
+    },
+    {
+      "id": 3,
+      "solutionCount": 1,
+      "possibleOrders": 2,
+      "states": 4,
+      "firstMoves": [
+        "p1"
+      ],
+      "lastMoves": [
+        "p2"
+      ],
+      "requiredPrecedences": 1
+    },
+    {
+      "id": 4,
+      "solutionCount": 1,
+      "possibleOrders": 2,
+      "states": 4,
+      "firstMoves": [
+        "p1"
+      ],
+      "lastMoves": [
+        "p2"
+      ],
+      "requiredPrecedences": 1
+    },
+    {
+      "id": 5,
+      "solutionCount": 1,
+      "possibleOrders": 2,
+      "states": 4,
+      "firstMoves": [
+        "p1"
+      ],
+      "lastMoves": [
+        "p2"
+      ],
+      "requiredPrecedences": 1
+    },
+    {
+      "id": 6,
+      "solutionCount": 1,
+      "possibleOrders": 6,
+      "states": 7,
+      "firstMoves": [
+        "p1"
+      ],
+      "lastMoves": [
+        "p3"
+      ],
+      "requiredPrecedences": 3
+    },
+    {
+      "id": 7,
+      "solutionCount": 2,
+      "possibleOrders": 6,
+      "states": 8,
+      "firstMoves": [
+        "p1",
+        "p3"
+      ],
+      "lastMoves": [
+        "p2"
+      ],
+      "requiredPrecedences": 2
+    },
+    {
+      "id": 8,
+      "solutionCount": 1,
+      "possibleOrders": 6,
+      "states": 7,
+      "firstMoves": [
+        "p1"
+      ],
+      "lastMoves": [
+        "p3"
+      ],
+      "requiredPrecedences": 3
+    },
+    {
+      "id": 9,
+      "solutionCount": 1,
+      "possibleOrders": 6,
+      "states": 7,
+      "firstMoves": [
+        "p2"
+      ],
+      "lastMoves": [
+        "p3"
+      ],
+      "requiredPrecedences": 3
+    },
+    {
+      "id": 10,
+      "solutionCount": 1,
+      "possibleOrders": 24,
+      "states": 11,
+      "firstMoves": [
+        "p1"
+      ],
+      "lastMoves": [
+        "p3"
+      ],
+      "requiredPrecedences": 6
+    },
+    {
+      "id": 11,
+      "solutionCount": 2,
+      "possibleOrders": 6,
+      "states": 7,
+      "firstMoves": [
+        "p2"
+      ],
+      "lastMoves": [
+        "p1",
+        "p3"
+      ],
+      "requiredPrecedences": 2
+    },
+    {
+      "id": 12,
+      "solutionCount": 3,
+      "possibleOrders": 24,
+      "states": 12,
+      "firstMoves": [
+        "p1"
+      ],
+      "lastMoves": [
+        "p3",
+        "p4"
+      ],
+      "requiredPrecedences": 4
+    },
+    {
+      "id": 13,
+      "solutionCount": 1,
+      "possibleOrders": 24,
+      "states": 11,
+      "firstMoves": [
+        "p1"
+      ],
+      "lastMoves": [
+        "p4"
+      ],
+      "requiredPrecedences": 6
+    },
+    {
+      "id": 14,
+      "solutionCount": 1,
+      "possibleOrders": 6,
+      "states": 10,
+      "firstMoves": [
+        "p2"
+      ],
+      "lastMoves": [
+        "p3"
+      ],
+      "requiredPrecedences": 3
+    },
+    {
+      "id": 15,
+      "solutionCount": 30,
+      "possibleOrders": 120,
+      "states": 30,
+      "firstMoves": [
+        "p1",
+        "p3",
+        "p4"
+      ],
+      "lastMoves": [
+        "p2",
+        "p3",
+        "p5"
+      ],
+      "requiredPrecedences": 2
+    },
+    {
+      "id": 16,
+      "solutionCount": 5,
+      "possibleOrders": 24,
+      "states": 14,
+      "firstMoves": [
+        "p1",
+        "p4"
+      ],
+      "lastMoves": [
+        "p2",
+        "p3"
+      ],
+      "requiredPrecedences": 3
+    },
+    {
+      "id": 17,
+      "solutionCount": 20,
+      "possibleOrders": 120,
+      "states": 29,
+      "firstMoves": [
+        "p1",
+        "p3",
+        "p4"
+      ],
+      "lastMoves": [
+        "p2",
+        "p5"
+      ],
+      "requiredPrecedences": 3
+    },
+    {
+      "id": 18,
+      "solutionCount": 20,
+      "possibleOrders": 120,
+      "states": 29,
+      "firstMoves": [
+        "p2",
+        "p4",
+        "p5"
+      ],
+      "lastMoves": [
+        "p1",
+        "p3"
+      ],
+      "requiredPrecedences": 3
+    },
+    {
+      "id": 19,
+      "solutionCount": 20,
+      "possibleOrders": 120,
+      "states": 26,
+      "firstMoves": [
+        "p2",
+        "p4"
+      ],
+      "lastMoves": [
+        "p1",
+        "p3",
+        "p5"
+      ],
+      "requiredPrecedences": 3
+    },
+    {
+      "id": 20,
+      "solutionCount": 20,
+      "possibleOrders": 120,
+      "states": 29,
+      "firstMoves": [
+        "p1",
+        "p3",
+        "p5"
+      ],
+      "lastMoves": [
+        "p2",
+        "p4"
+      ],
+      "requiredPrecedences": 3
+    },
+    {
+      "id": 21,
+      "solutionCount": 90,
+      "possibleOrders": 720,
+      "states": 67,
+      "firstMoves": [
+        "p1",
+        "p3",
+        "p5",
+        "p6"
+      ],
+      "lastMoves": [
+        "p2",
+        "p4"
+      ],
+      "requiredPrecedences": 4
+    },
+    {
+      "id": 22,
+      "solutionCount": 20,
+      "possibleOrders": 120,
+      "states": 26,
+      "firstMoves": [
+        "p3",
+        "p5"
+      ],
+      "lastMoves": [
+        "p1",
+        "p2",
+        "p4"
+      ],
+      "requiredPrecedences": 3
+    },
+    {
+      "id": 23,
+      "solutionCount": 20,
+      "possibleOrders": 120,
+      "states": 28,
+      "firstMoves": [
+        "p1",
+        "p3",
+        "p5"
+      ],
+      "lastMoves": [
+        "p1",
+        "p4",
+        "p5"
+      ],
+      "requiredPrecedences": 3
+    },
+    {
+      "id": 24,
+      "solutionCount": 15,
+      "possibleOrders": 120,
+      "states": 28,
+      "firstMoves": [
+        "p2",
+        "p4",
+        "p5"
+      ],
+      "lastMoves": [
+        "p1",
+        "p4"
+      ],
+      "requiredPrecedences": 4
+    },
+    {
+      "id": 25,
+      "solutionCount": 20,
+      "possibleOrders": 120,
+      "states": 36,
+      "firstMoves": [
+        "p1",
+        "p3",
+        "p4"
+      ],
+      "lastMoves": [
+        "p2",
+        "p5"
+      ],
+      "requiredPrecedences": 3
+    },
+    {
+      "id": 26,
+      "solutionCount": 10,
+      "possibleOrders": 120,
+      "states": 25,
+      "firstMoves": [
+        "p1",
+        "p3"
+      ],
+      "lastMoves": [
+        "p4",
+        "p5"
+      ],
+      "requiredPrecedences": 4
+    },
+    {
+      "id": 27,
+      "solutionCount": 5,
+      "possibleOrders": 24,
+      "states": 14,
+      "firstMoves": [
+        "p1",
+        "p3"
+      ],
+      "lastMoves": [
+        "p2",
+        "p4"
+      ],
+      "requiredPrecedences": 3
+    },
+    {
+      "id": 28,
+      "solutionCount": 12,
+      "possibleOrders": 120,
+      "states": 34,
+      "firstMoves": [
+        "p1",
+        "p4",
+        "p5"
+      ],
+      "lastMoves": [
+        "p3"
+      ],
+      "requiredPrecedences": 5
+    },
+    {
+      "id": 29,
+      "solutionCount": 20,
+      "possibleOrders": 120,
+      "states": 28,
+      "firstMoves": [
+        "p1",
+        "p4",
+        "p5"
+      ],
+      "lastMoves": [
+        "p1",
+        "p3",
+        "p5"
+      ],
+      "requiredPrecedences": 3
+    },
+    {
+      "id": 30,
+      "solutionCount": 12,
+      "possibleOrders": 120,
+      "states": 30,
+      "firstMoves": [
+        "p1",
+        "p3",
+        "p4"
+      ],
+      "lastMoves": [
+        "p2"
+      ],
+      "requiredPrecedences": 5
+    },
+    {
+      "id": 31,
+      "solutionCount": 20,
+      "possibleOrders": 720,
+      "states": 62,
+      "firstMoves": [
+        "p2"
+      ],
+      "lastMoves": [
+        "p1",
+        "p5",
+        "p6"
+      ],
+      "requiredPrecedences": 8
+    },
+    {
+      "id": 32,
+      "solutionCount": 2,
+      "possibleOrders": 6,
+      "states": 8,
+      "firstMoves": [
+        "p1",
+        "p3"
+      ],
+      "lastMoves": [
+        "p2"
+      ],
+      "requiredPrecedences": 2
+    },
+    {
+      "id": 33,
+      "solutionCount": 9,
+      "possibleOrders": 120,
+      "states": 29,
+      "firstMoves": [
+        "p2",
+        "p5"
+      ],
+      "lastMoves": [
+        "p3",
+        "p4"
+      ],
+      "requiredPrecedences": 5
+    },
+    {
+      "id": 34,
+      "solutionCount": 11,
+      "possibleOrders": 120,
+      "states": 30,
+      "firstMoves": [
+        "p1",
+        "p4"
+      ],
+      "lastMoves": [
+        "p2",
+        "p5"
+      ],
+      "requiredPrecedences": 5
+    },
+    {
+      "id": 35,
+      "solutionCount": 8,
+      "possibleOrders": 120,
+      "states": 22,
+      "firstMoves": [
+        "p1",
+        "p5"
+      ],
+      "lastMoves": [
+        "p2",
+        "p4"
+      ],
+      "requiredPrecedences": 6
+    },
+    {
+      "id": 36,
+      "solutionCount": 5,
+      "possibleOrders": 120,
+      "states": 19,
+      "firstMoves": [
+        "p1"
+      ],
+      "lastMoves": [
+        "p3",
+        "p5"
+      ],
+      "requiredPrecedences": 7
+    },
+    {
+      "id": 37,
+      "solutionCount": 12,
+      "possibleOrders": 120,
+      "states": 28,
+      "firstMoves": [
+        "p1",
+        "p4",
+        "p5"
+      ],
+      "lastMoves": [
+        "p2"
+      ],
+      "requiredPrecedences": 5
+    },
+    {
+      "id": 38,
+      "solutionCount": 7,
+      "possibleOrders": 120,
+      "states": 30,
+      "firstMoves": [
+        "p1",
+        "p3"
+      ],
+      "lastMoves": [
+        "p4",
+        "p5"
+      ],
+      "requiredPrecedences": 6
+    },
+    {
+      "id": 39,
+      "solutionCount": 6,
+      "possibleOrders": 24,
+      "states": 16,
+      "firstMoves": [
+        "p1",
+        "p3",
+        "p4"
+      ],
+      "lastMoves": [
+        "p2"
+      ],
+      "requiredPrecedences": 3
+    },
+    {
+      "id": 40,
+      "solutionCount": 8,
+      "possibleOrders": 120,
+      "states": 26,
+      "firstMoves": [
+        "p3",
+        "p4",
+        "p5"
+      ],
+      "lastMoves": [
+        "p1"
+      ],
+      "requiredPrecedences": 6
+    },
+    {
+      "id": 41,
+      "solutionCount": 15,
+      "possibleOrders": 120,
+      "states": 24,
+      "firstMoves": [
+        "p1",
+        "p3"
+      ],
+      "lastMoves": [
+        "p1",
+        "p2",
+        "p4"
+      ],
+      "requiredPrecedences": 4
+    },
+    {
+      "id": 42,
+      "solutionCount": 11,
+      "possibleOrders": 120,
+      "states": 37,
+      "firstMoves": [
+        "p1",
+        "p3"
+      ],
+      "lastMoves": [
+        "p2",
+        "p4"
+      ],
+      "requiredPrecedences": 5
+    },
+    {
+      "id": 43,
+      "solutionCount": 26,
+      "possibleOrders": 720,
+      "states": 41,
+      "firstMoves": [
+        "p1",
+        "p6"
+      ],
+      "lastMoves": [
+        "p3",
+        "p5"
+      ],
+      "requiredPrecedences": 7
+    },
+    {
+      "id": 44,
+      "solutionCount": 8,
+      "possibleOrders": 120,
+      "states": 26,
+      "firstMoves": [
+        "p1",
+        "p4",
+        "p5"
+      ],
+      "lastMoves": [
+        "p3"
+      ],
+      "requiredPrecedences": 6
+    },
+    {
+      "id": 45,
+      "solutionCount": 8,
+      "possibleOrders": 24,
+      "states": 18,
+      "firstMoves": [
+        "p1",
+        "p3",
+        "p4"
+      ],
+      "lastMoves": [
+        "p1",
+        "p2"
+      ],
+      "requiredPrecedences": 2
+    },
+    {
+      "id": 46,
+      "solutionCount": 11,
+      "possibleOrders": 120,
+      "states": 29,
+      "firstMoves": [
+        "p3",
+        "p5"
+      ],
+      "lastMoves": [
+        "p1",
+        "p2"
+      ],
+      "requiredPrecedences": 5
+    },
+    {
+      "id": 47,
+      "solutionCount": 24,
+      "possibleOrders": 720,
+      "states": 40,
+      "firstMoves": [
+        "p1",
+        "p4"
+      ],
+      "lastMoves": [
+        "p3",
+        "p5",
+        "p6"
+      ],
+      "requiredPrecedences": 8
+    },
+    {
+      "id": 48,
+      "solutionCount": 15,
+      "possibleOrders": 120,
+      "states": 28,
+      "firstMoves": [
+        "p1",
+        "p4",
+        "p5"
+      ],
+      "lastMoves": [
+        "p3",
+        "p5"
+      ],
+      "requiredPrecedences": 4
+    },
+    {
+      "id": 49,
+      "solutionCount": 48,
+      "possibleOrders": 720,
+      "states": 42,
+      "firstMoves": [
+        "p1",
+        "p3",
+        "p6"
+      ],
+      "lastMoves": [
+        "p2",
+        "p4",
+        "p5"
+      ],
+      "requiredPrecedences": 6
+    },
+    {
+      "id": 50,
+      "solutionCount": 6,
+      "possibleOrders": 120,
+      "states": 21,
+      "firstMoves": [
+        "p3",
+        "p4"
+      ],
+      "lastMoves": [
+        "p2",
+        "p5"
+      ],
+      "requiredPrecedences": 7
+    },
+    {
+      "id": 51,
+      "solutionCount": 12,
+      "possibleOrders": 120,
+      "states": 28,
+      "firstMoves": [
+        "p3",
+        "p4",
+        "p5"
+      ],
+      "lastMoves": [
+        "p1"
+      ],
+      "requiredPrecedences": 5
+    },
+    {
+      "id": 52,
+      "solutionCount": 5,
+      "possibleOrders": 24,
+      "states": 17,
+      "firstMoves": [
+        "p1",
+        "p3"
+      ],
+      "lastMoves": [
+        "p2",
+        "p4"
+      ],
+      "requiredPrecedences": 3
+    },
+    {
+      "id": 53,
+      "solutionCount": 10,
+      "possibleOrders": 120,
+      "states": 32,
+      "firstMoves": [
+        "p4",
+        "p5"
+      ],
+      "lastMoves": [
+        "p1",
+        "p3"
+      ],
+      "requiredPrecedences": 4
+    },
+    {
+      "id": 54,
+      "solutionCount": 3,
+      "possibleOrders": 24,
+      "states": 17,
+      "firstMoves": [
+        "p2"
+      ],
+      "lastMoves": [
+        "p3",
+        "p4"
+      ],
+      "requiredPrecedences": 4
+    },
+    {
+      "id": 55,
+      "solutionCount": 9,
+      "possibleOrders": 120,
+      "states": 24,
+      "firstMoves": [
+        "p2",
+        "p5"
+      ],
+      "lastMoves": [
+        "p3",
+        "p4"
+      ],
+      "requiredPrecedences": 5
+    },
+    {
+      "id": 56,
+      "solutionCount": 33,
+      "possibleOrders": 720,
+      "states": 55,
+      "firstMoves": [
+        "p2",
+        "p4",
+        "p6"
+      ],
+      "lastMoves": [
+        "p1",
+        "p3"
+      ],
+      "requiredPrecedences": 7
+    },
+    {
+      "id": 57,
+      "solutionCount": 6,
+      "possibleOrders": 24,
+      "states": 15,
+      "firstMoves": [
+        "p2",
+        "p3"
+      ],
+      "lastMoves": [
+        "p1",
+        "p4"
+      ],
+      "requiredPrecedences": 2
+    },
+    {
+      "id": 58,
+      "solutionCount": 4,
+      "possibleOrders": 24,
+      "states": 14,
+      "firstMoves": [
+        "p2",
+        "p4"
+      ],
+      "lastMoves": [
+        "p1",
+        "p4"
+      ],
+      "requiredPrecedences": 3
+    },
+    {
+      "id": 59,
+      "solutionCount": 12,
+      "possibleOrders": 120,
+      "states": 34,
+      "firstMoves": [
+        "p1",
+        "p4",
+        "p5"
+      ],
+      "lastMoves": [
+        "p3"
+      ],
+      "requiredPrecedences": 5
+    },
+    {
+      "id": 60,
+      "solutionCount": 10,
+      "possibleOrders": 120,
+      "states": 26,
+      "firstMoves": [
+        "p1",
+        "p3",
+        "p5"
+      ],
+      "lastMoves": [
+        "p3",
+        "p4"
+      ],
+      "requiredPrecedences": 5
+    },
+    {
+      "id": 61,
+      "solutionCount": 144,
+      "possibleOrders": 5040,
+      "states": 93,
+      "firstMoves": [
+        "p2",
+        "p4",
+        "p5",
+        "p6"
+      ],
+      "lastMoves": [
+        "p3",
+        "p7"
+      ],
+      "requiredPrecedences": 8
+    },
+    {
+      "id": 62,
+      "solutionCount": 16,
+      "possibleOrders": 120,
+      "states": 27,
+      "firstMoves": [
+        "p2",
+        "p4",
+        "p5"
+      ],
+      "lastMoves": [
+        "p1",
+        "p3"
+      ],
+      "requiredPrecedences": 4
+    },
+    {
+      "id": 63,
+      "solutionCount": 30,
+      "possibleOrders": 720,
+      "states": 55,
+      "firstMoves": [
+        "p2",
+        "p6"
+      ],
+      "lastMoves": [
+        "p1",
+        "p3",
+        "p5"
+      ],
+      "requiredPrecedences": 7
+    },
+    {
+      "id": 64,
+      "solutionCount": 3,
+      "possibleOrders": 24,
+      "states": 14,
+      "firstMoves": [
+        "p1",
+        "p4"
+      ],
+      "lastMoves": [
+        "p3"
+      ],
+      "requiredPrecedences": 4
+    },
+    {
+      "id": 65,
+      "solutionCount": 54,
+      "possibleOrders": 720,
+      "states": 48,
+      "firstMoves": [
+        "p1",
+        "p3",
+        "p6"
+      ],
+      "lastMoves": [
+        "p2",
+        "p4",
+        "p6"
+      ],
+      "requiredPrecedences": 5
+    },
+    {
+      "id": 66,
+      "solutionCount": 15,
+      "possibleOrders": 120,
+      "states": 34,
+      "firstMoves": [
+        "p2",
+        "p4"
+      ],
+      "lastMoves": [
+        "p3",
+        "p4",
+        "p5"
+      ],
+      "requiredPrecedences": 4
+    },
+    {
+      "id": 67,
+      "solutionCount": 7,
+      "possibleOrders": 120,
+      "states": 22,
+      "firstMoves": [
+        "p2",
+        "p4"
+      ],
+      "lastMoves": [
+        "p3",
+        "p5"
+      ],
+      "requiredPrecedences": 6
+    },
+    {
+      "id": 68,
+      "solutionCount": 10,
+      "possibleOrders": 720,
+      "states": 38,
+      "firstMoves": [
+        "p1",
+        "p2",
+        "p6"
+      ],
+      "lastMoves": [
+        "p3"
+      ],
+      "requiredPrecedences": 10
+    },
+    {
+      "id": 69,
+      "solutionCount": 9,
+      "possibleOrders": 120,
+      "states": 24,
+      "firstMoves": [
+        "p1",
+        "p5"
+      ],
+      "lastMoves": [
+        "p3",
+        "p4"
+      ],
+      "requiredPrecedences": 5
+    },
+    {
+      "id": 70,
+      "solutionCount": 8,
+      "possibleOrders": 24,
+      "states": 16,
+      "firstMoves": [
+        "p1",
+        "p3",
+        "p4"
+      ],
+      "lastMoves": [
+        "p2",
+        "p4"
+      ],
+      "requiredPrecedences": 2
+    },
+    {
+      "id": 71,
+      "solutionCount": 26,
+      "possibleOrders": 720,
+      "states": 48,
+      "firstMoves": [
+        "p2",
+        "p4",
+        "p5"
+      ],
+      "lastMoves": [
+        "p1",
+        "p6"
+      ],
+      "requiredPrecedences": 7
+    },
+    {
+      "id": 72,
+      "solutionCount": 5,
+      "possibleOrders": 120,
+      "states": 22,
+      "firstMoves": [
+        "p1",
+        "p5"
+      ],
+      "lastMoves": [
+        "p3"
+      ],
+      "requiredPrecedences": 7
+    },
+    {
+      "id": 73,
+      "solutionCount": 15,
+      "possibleOrders": 120,
+      "states": 40,
+      "firstMoves": [
+        "p2",
+        "p4",
+        "p5"
+      ],
+      "lastMoves": [
+        "p1",
+        "p4"
+      ],
+      "requiredPrecedences": 4
+    },
+    {
+      "id": 74,
+      "solutionCount": 16,
+      "possibleOrders": 120,
+      "states": 24,
+      "firstMoves": [
+        "p2",
+        "p4"
+      ],
+      "lastMoves": [
+        "p1",
+        "p3",
+        "p5"
+      ],
+      "requiredPrecedences": 4
+    },
+    {
+      "id": 75,
+      "solutionCount": 18,
+      "possibleOrders": 720,
+      "states": 85,
+      "firstMoves": [
+        "p4",
+        "p5"
+      ],
+      "lastMoves": [
+        "p1",
+        "p3",
+        "p6"
+      ],
+      "requiredPrecedences": 9
+    },
+    {
+      "id": 76,
+      "solutionCount": 48,
+      "possibleOrders": 720,
+      "states": 52,
+      "firstMoves": [
+        "p1",
+        "p3",
+        "p4",
+        "p6"
+      ],
+      "lastMoves": [
+        "p4",
+        "p5"
+      ],
+      "requiredPrecedences": 6
+    },
+    {
+      "id": 77,
+      "solutionCount": 18,
+      "possibleOrders": 120,
+      "states": 32,
+      "firstMoves": [
+        "p1",
+        "p3",
+        "p4"
+      ],
+      "lastMoves": [
+        "p2",
+        "p5"
+      ],
+      "requiredPrecedences": 4
+    },
+    {
+      "id": 78,
+      "solutionCount": 42,
+      "possibleOrders": 720,
+      "states": 44,
+      "firstMoves": [
+        "p2",
+        "p4",
+        "p6"
+      ],
+      "lastMoves": [
+        "p3",
+        "p5",
+        "p6"
+      ],
+      "requiredPrecedences": 6
+    },
+    {
+      "id": 79,
+      "solutionCount": 280,
+      "possibleOrders": 5040,
+      "states": 146,
+      "firstMoves": [
+        "p1",
+        "p4",
+        "p5",
+        "p6",
+        "p7"
+      ],
+      "lastMoves": [
+        "p2",
+        "p7"
+      ],
+      "requiredPrecedences": 7
+    },
+    {
+      "id": 80,
+      "solutionCount": 54,
+      "possibleOrders": 720,
+      "states": 73,
+      "firstMoves": [
+        "p2",
+        "p4",
+        "p5"
+      ],
+      "lastMoves": [
+        "p3",
+        "p4",
+        "p6"
+      ],
+      "requiredPrecedences": 5
+    },
+    {
+      "id": 81,
+      "solutionCount": 25,
+      "possibleOrders": 5040,
+      "states": 81,
+      "firstMoves": [
+        "p2",
+        "p7"
+      ],
+      "lastMoves": [
+        "p3",
+        "p6"
+      ],
+      "requiredPrecedences": 12
+    },
+    {
+      "id": 82,
+      "solutionCount": 6,
+      "possibleOrders": 24,
+      "states": 16,
+      "firstMoves": [
+        "p2",
+        "p3",
+        "p4"
+      ],
+      "lastMoves": [
+        "p1"
+      ],
+      "requiredPrecedences": 3
+    },
+    {
+      "id": 83,
+      "solutionCount": 66,
+      "possibleOrders": 720,
+      "states": 48,
+      "firstMoves": [
+        "p1",
+        "p5",
+        "p6"
+      ],
+      "lastMoves": [
+        "p3",
+        "p4",
+        "p6"
+      ],
+      "requiredPrecedences": 5
+    },
+    {
+      "id": 84,
+      "solutionCount": 9,
+      "possibleOrders": 120,
+      "states": 24,
+      "firstMoves": [
+        "p1",
+        "p5"
+      ],
+      "lastMoves": [
+        "p2",
+        "p4"
+      ],
+      "requiredPrecedences": 5
+    },
+    {
+      "id": 85,
+      "solutionCount": 210,
+      "possibleOrders": 5040,
+      "states": 88,
+      "firstMoves": [
+        "p1",
+        "p5",
+        "p6"
+      ],
+      "lastMoves": [
+        "p4",
+        "p5",
+        "p6",
+        "p7"
+      ],
+      "requiredPrecedences": 7
+    },
+    {
+      "id": 86,
+      "solutionCount": 9,
+      "possibleOrders": 720,
+      "states": 35,
+      "firstMoves": [
+        "p1",
+        "p4"
+      ],
+      "lastMoves": [
+        "p3"
+      ],
+      "requiredPrecedences": 10
+    },
+    {
+      "id": 87,
+      "solutionCount": 140,
+      "possibleOrders": 5040,
+      "states": 99,
+      "firstMoves": [
+        "p1",
+        "p3",
+        "p4",
+        "p6"
+      ],
+      "lastMoves": [
+        "p5",
+        "p7"
+      ],
+      "requiredPrecedences": 7
+    },
+    {
+      "id": 88,
+      "solutionCount": 49,
+      "possibleOrders": 5040,
+      "states": 76,
+      "firstMoves": [
+        "p1",
+        "p4",
+        "p7"
+      ],
+      "lastMoves": [
+        "p5",
+        "p6"
+      ],
+      "requiredPrecedences": 12
+    },
+    {
+      "id": 89,
+      "solutionCount": 15,
+      "possibleOrders": 120,
+      "states": 28,
+      "firstMoves": [
+        "p2",
+        "p4",
+        "p5"
+      ],
+      "lastMoves": [
+        "p1",
+        "p4"
+      ],
+      "requiredPrecedences": 4
+    },
+    {
+      "id": 90,
+      "solutionCount": 38,
+      "possibleOrders": 720,
+      "states": 53,
+      "firstMoves": [
+        "p1",
+        "p4",
+        "p5"
+      ],
+      "lastMoves": [
+        "p3",
+        "p6"
+      ],
+      "requiredPrecedences": 6
+    },
+    {
+      "id": 91,
+      "solutionCount": 48,
+      "possibleOrders": 720,
+      "states": 44,
+      "firstMoves": [
+        "p2",
+        "p4",
+        "p5"
+      ],
+      "lastMoves": [
+        "p1",
+        "p4",
+        "p6"
+      ],
+      "requiredPrecedences": 6
+    },
+    {
+      "id": 92,
+      "solutionCount": 25,
+      "possibleOrders": 720,
+      "states": 44,
+      "firstMoves": [
+        "p2",
+        "p5",
+        "p6"
+      ],
+      "lastMoves": [
+        "p3"
+      ],
+      "requiredPrecedences": 8
+    },
+    {
+      "id": 93,
+      "solutionCount": 6,
+      "possibleOrders": 5040,
+      "states": 44,
+      "firstMoves": [
+        "p4",
+        "p5"
+      ],
+      "lastMoves": [
+        "p1",
+        "p6"
+      ],
+      "requiredPrecedences": 18
+    },
+    {
+      "id": 94,
+      "solutionCount": 42,
+      "possibleOrders": 720,
+      "states": 84,
+      "firstMoves": [
+        "p2",
+        "p4",
+        "p6"
+      ],
+      "lastMoves": [
+        "p3",
+        "p5"
+      ],
+      "requiredPrecedences": 6
+    },
+    {
+      "id": 95,
+      "solutionCount": 20,
+      "possibleOrders": 120,
+      "states": 32,
+      "firstMoves": [
+        "p1",
+        "p4",
+        "p5"
+      ],
+      "lastMoves": [
+        "p3",
+        "p4",
+        "p5"
+      ],
+      "requiredPrecedences": 3
+    },
+    {
+      "id": 96,
+      "solutionCount": 60,
+      "possibleOrders": 720,
+      "states": 77,
+      "firstMoves": [
+        "p1",
+        "p4",
+        "p5",
+        "p6"
+      ],
+      "lastMoves": [
+        "p2"
+      ],
+      "requiredPrecedences": 6
+    },
+    {
+      "id": 97,
+      "solutionCount": 69,
+      "possibleOrders": 5040,
+      "states": 80,
+      "firstMoves": [
+        "p1",
+        "p5",
+        "p6"
+      ],
+      "lastMoves": [
+        "p2",
+        "p7"
+      ],
+      "requiredPrecedences": 10
+    },
+    {
+      "id": 98,
+      "solutionCount": 38,
+      "possibleOrders": 720,
+      "states": 52,
+      "firstMoves": [
+        "p1",
+        "p3",
+        "p5"
+      ],
+      "lastMoves": [
+        "p2",
+        "p6"
+      ],
+      "requiredPrecedences": 6
+    },
+    {
+      "id": 99,
+      "solutionCount": 164,
+      "possibleOrders": 5040,
+      "states": 76,
+      "firstMoves": [
+        "p1",
+        "p4",
+        "p7"
+      ],
+      "lastMoves": [
+        "p2",
+        "p5",
+        "p6"
+      ],
+      "requiredPrecedences": 7
+    },
+    {
+      "id": 100,
+      "solutionCount": 140,
+      "possibleOrders": 5040,
+      "states": 88,
+      "firstMoves": [
+        "p1",
+        "p4",
+        "p6",
+        "p7"
+      ],
+      "lastMoves": [
+        "p3",
+        "p4"
+      ],
+      "requiredPrecedences": 8
+    },
+    {
+      "id": 101,
+      "solutionCount": 30,
+      "possibleOrders": 720,
+      "states": 49,
+      "firstMoves": [
+        "p1",
+        "p4",
+        "p5"
+      ],
+      "lastMoves": [
+        "p3",
+        "p6"
+      ],
+      "requiredPrecedences": 6
+    },
+    {
+      "id": 102,
+      "solutionCount": 12,
+      "possibleOrders": 120,
+      "states": 28,
+      "firstMoves": [
+        "p2"
+      ],
+      "lastMoves": [
+        "p3",
+        "p4",
+        "p5"
+      ],
+      "requiredPrecedences": 5
+    },
+    {
+      "id": 103,
+      "solutionCount": 30,
+      "possibleOrders": 720,
+      "states": 48,
+      "firstMoves": [
+        "p1",
+        "p5",
+        "p6"
+      ],
+      "lastMoves": [
+        "p3"
+      ],
+      "requiredPrecedences": 7
+    },
+    {
+      "id": 104,
+      "solutionCount": 8,
+      "possibleOrders": 120,
+      "states": 26,
+      "firstMoves": [
+        "p1",
+        "p4",
+        "p5"
+      ],
+      "lastMoves": [
+        "p3"
+      ],
+      "requiredPrecedences": 6
+    },
+    {
+      "id": 105,
+      "solutionCount": 24,
+      "possibleOrders": 720,
+      "states": 50,
+      "firstMoves": [
+        "p1",
+        "p3",
+        "p5"
+      ],
+      "lastMoves": [
+        "p4",
+        "p6"
+      ],
+      "requiredPrecedences": 8
+    },
+    {
+      "id": 106,
+      "solutionCount": 10,
+      "possibleOrders": 720,
+      "states": 46,
+      "firstMoves": [
+        "p5",
+        "p6"
+      ],
+      "lastMoves": [
+        "p2"
+      ],
+      "requiredPrecedences": 9
+    },
+    {
+      "id": 107,
+      "solutionCount": 10,
+      "possibleOrders": 120,
+      "states": 26,
+      "firstMoves": [
+        "p1",
+        "p4",
+        "p5"
+      ],
+      "lastMoves": [
+        "p3",
+        "p4"
+      ],
+      "requiredPrecedences": 5
+    },
+    {
+      "id": 108,
+      "solutionCount": 33,
+      "possibleOrders": 720,
+      "states": 52,
+      "firstMoves": [
+        "p2",
+        "p5",
+        "p6"
+      ],
+      "lastMoves": [
+        "p1",
+        "p3"
+      ],
+      "requiredPrecedences": 7
+    },
+    {
+      "id": 109,
+      "solutionCount": 164,
+      "possibleOrders": 5040,
+      "states": 76,
+      "firstMoves": [
+        "p1",
+        "p4",
+        "p7"
+      ],
+      "lastMoves": [
+        "p3",
+        "p5",
+        "p6"
+      ],
+      "requiredPrecedences": 7
+    },
+    {
+      "id": 110,
+      "solutionCount": 24,
+      "possibleOrders": 720,
+      "states": 54,
+      "firstMoves": [
+        "p2",
+        "p5",
+        "p6"
+      ],
+      "lastMoves": [
+        "p4",
+        "p6"
+      ],
+      "requiredPrecedences": 7
+    },
+    {
+      "id": 111,
+      "solutionCount": 350,
+      "possibleOrders": 40320,
+      "states": 294,
+      "firstMoves": [
+        "p1",
+        "p3",
+        "p5",
+        "p6"
+      ],
+      "lastMoves": [
+        "p7",
+        "p8"
+      ],
+      "requiredPrecedences": 11
+    },
+    {
+      "id": 112,
+      "solutionCount": 6,
+      "possibleOrders": 120,
+      "states": 34,
+      "firstMoves": [
+        "p3",
+        "p5"
+      ],
+      "lastMoves": [
+        "p2"
+      ],
+      "requiredPrecedences": 6
+    },
+    {
+      "id": 113,
+      "solutionCount": 70,
+      "possibleOrders": 5040,
+      "states": 94,
+      "firstMoves": [
+        "p2",
+        "p6",
+        "p7"
+      ],
+      "lastMoves": [
+        "p4",
+        "p6"
+      ],
+      "requiredPrecedences": 9
+    },
+    {
+      "id": 114,
+      "solutionCount": 4,
+      "possibleOrders": 24,
+      "states": 14,
+      "firstMoves": [
+        "p2",
+        "p4"
+      ],
+      "lastMoves": [
+        "p3",
+        "p4"
+      ],
+      "requiredPrecedences": 3
+    },
+    {
+      "id": 115,
+      "solutionCount": 12,
+      "possibleOrders": 120,
+      "states": 28,
+      "firstMoves": [
+        "p1",
+        "p3",
+        "p5"
+      ],
+      "lastMoves": [
+        "p4"
+      ],
+      "requiredPrecedences": 5
+    },
+    {
+      "id": 116,
+      "solutionCount": 33,
+      "possibleOrders": 720,
+      "states": 46,
+      "firstMoves": [
+        "p1",
+        "p5",
+        "p6"
+      ],
+      "lastMoves": [
+        "p3",
+        "p4"
+      ],
+      "requiredPrecedences": 7
+    },
+    {
+      "id": 117,
+      "solutionCount": 45,
+      "possibleOrders": 720,
+      "states": 86,
+      "firstMoves": [
+        "p1",
+        "p3",
+        "p6"
+      ],
+      "lastMoves": [
+        "p2",
+        "p4"
+      ],
+      "requiredPrecedences": 5
+    },
+    {
+      "id": 118,
+      "solutionCount": 15,
+      "possibleOrders": 720,
+      "states": 52,
+      "firstMoves": [
+        "p1",
+        "p4",
+        "p5"
+      ],
+      "lastMoves": [
+        "p6"
+      ],
+      "requiredPrecedences": 9
+    },
+    {
+      "id": 119,
+      "solutionCount": 24,
+      "possibleOrders": 720,
+      "states": 54,
+      "firstMoves": [
+        "p2",
+        "p5",
+        "p6"
+      ],
+      "lastMoves": [
+        "p4",
+        "p5"
+      ],
+      "requiredPrecedences": 7
+    },
+    {
+      "id": 120,
+      "solutionCount": 16,
+      "possibleOrders": 120,
+      "states": 24,
+      "firstMoves": [
+        "p1",
+        "p4"
+      ],
+      "lastMoves": [
+        "p2",
+        "p3",
+        "p5"
+      ],
+      "requiredPrecedences": 4
+    },
+    {
+      "id": 121,
+      "solutionCount": 40,
+      "possibleOrders": 720,
+      "states": 58,
+      "firstMoves": [
+        "p1",
+        "p3",
+        "p4",
+        "p5"
+      ],
+      "lastMoves": [
+        "p6"
+      ],
+      "requiredPrecedences": 7
+    },
+    {
+      "id": 122,
+      "solutionCount": 41,
+      "possibleOrders": 5040,
+      "states": 59,
+      "firstMoves": [
+        "p2",
+        "p5"
+      ],
+      "lastMoves": [
+        "p4",
+        "p6",
+        "p7"
+      ],
+      "requiredPrecedences": 12
+    },
+    {
+      "id": 123,
+      "solutionCount": 40,
+      "possibleOrders": 720,
+      "states": 78,
+      "firstMoves": [
+        "p1",
+        "p4",
+        "p5",
+        "p6"
+      ],
+      "lastMoves": [
+        "p2"
+      ],
+      "requiredPrecedences": 7
+    },
+    {
+      "id": 124,
+      "solutionCount": 40,
+      "possibleOrders": 720,
+      "states": 60,
+      "firstMoves": [
+        "p1",
+        "p3",
+        "p4",
+        "p6"
+      ],
+      "lastMoves": [
+        "p2"
+      ],
+      "requiredPrecedences": 7
+    },
+    {
+      "id": 125,
+      "solutionCount": 6,
+      "possibleOrders": 720,
+      "states": 80,
+      "firstMoves": [
+        "p2"
+      ],
+      "lastMoves": [
+        "p4",
+        "p6"
+      ],
+      "requiredPrecedences": 11
+    },
+    {
+      "id": 126,
+      "solutionCount": 37,
+      "possibleOrders": 720,
+      "states": 38,
+      "firstMoves": [
+        "p1",
+        "p6"
+      ],
+      "lastMoves": [
+        "p3",
+        "p4",
+        "p5"
+      ],
+      "requiredPrecedences": 7
+    },
+    {
+      "id": 127,
+      "solutionCount": 9,
+      "possibleOrders": 120,
+      "states": 27,
+      "firstMoves": [
+        "p1",
+        "p4"
+      ],
+      "lastMoves": [
+        "p3",
+        "p5"
+      ],
+      "requiredPrecedences": 5
+    },
+    {
+      "id": 128,
+      "solutionCount": 52,
+      "possibleOrders": 720,
+      "states": 76,
+      "firstMoves": [
+        "p2",
+        "p3",
+        "p6"
+      ],
+      "lastMoves": [
+        "p1",
+        "p4"
+      ],
+      "requiredPrecedences": 6
+    },
+    {
+      "id": 129,
+      "solutionCount": 169,
+      "possibleOrders": 5040,
+      "states": 76,
+      "firstMoves": [
+        "p1",
+        "p5",
+        "p6"
+      ],
+      "lastMoves": [
+        "p3",
+        "p4",
+        "p7"
+      ],
+      "requiredPrecedences": 7
+    },
+    {
+      "id": 130,
+      "solutionCount": 20,
+      "possibleOrders": 720,
+      "states": 50,
+      "firstMoves": [
+        "p1",
+        "p5",
+        "p6"
+      ],
+      "lastMoves": [
+        "p3"
+      ],
+      "requiredPrecedences": 8
+    },
+    {
+      "id": 131,
+      "solutionCount": 33,
+      "possibleOrders": 5040,
+      "states": 62,
+      "firstMoves": [
+        "p2",
+        "p6",
+        "p7"
+      ],
+      "lastMoves": [
+        "p4"
+      ],
+      "requiredPrecedences": 13
+    },
+    {
+      "id": 132,
+      "solutionCount": 20,
+      "possibleOrders": 120,
+      "states": 28,
+      "firstMoves": [
+        "p1",
+        "p4",
+        "p5"
+      ],
+      "lastMoves": [
+        "p3",
+        "p4",
+        "p5"
+      ],
+      "requiredPrecedences": 3
+    },
+    {
+      "id": 133,
+      "solutionCount": 106,
+      "possibleOrders": 5040,
+      "states": 65,
+      "firstMoves": [
+        "p1",
+        "p3",
+        "p5"
+      ],
+      "lastMoves": [
+        "p2",
+        "p6",
+        "p7"
+      ],
+      "requiredPrecedences": 9
+    },
+    {
+      "id": 134,
+      "solutionCount": 42,
+      "possibleOrders": 720,
+      "states": 40,
+      "firstMoves": [
+        "p1",
+        "p4"
+      ],
+      "lastMoves": [
+        "p3",
+        "p5",
+        "p6"
+      ],
+      "requiredPrecedences": 6
+    },
+    {
+      "id": 135,
+      "solutionCount": 240,
+      "possibleOrders": 5040,
+      "states": 126,
+      "firstMoves": [
+        "p2",
+        "p3",
+        "p4",
+        "p6"
+      ],
+      "lastMoves": [
+        "p1",
+        "p5"
+      ],
+      "requiredPrecedences": 7
+    },
+    {
+      "id": 136,
+      "solutionCount": 81,
+      "possibleOrders": 5040,
+      "states": 84,
+      "firstMoves": [
+        "p5",
+        "p6",
+        "p7"
+      ],
+      "lastMoves": [
+        "p3",
+        "p4"
+      ],
+      "requiredPrecedences": 10
+    },
+    {
+      "id": 137,
+      "solutionCount": 120,
+      "possibleOrders": 5040,
+      "states": 113,
+      "firstMoves": [
+        "p1",
+        "p3",
+        "p4",
+        "p5"
+      ],
+      "lastMoves": [
+        "p6"
+      ],
+      "requiredPrecedences": 9
+    },
+    {
+      "id": 138,
+      "solutionCount": 22,
+      "possibleOrders": 5040,
+      "states": 90,
+      "firstMoves": [
+        "p2",
+        "p5",
+        "p7"
+      ],
+      "lastMoves": [
+        "p4",
+        "p6"
+      ],
+      "requiredPrecedences": 14
+    },
+    {
+      "id": 139,
+      "solutionCount": 15,
+      "possibleOrders": 120,
+      "states": 28,
+      "firstMoves": [
+        "p2",
+        "p4",
+        "p5"
+      ],
+      "lastMoves": [
+        "p1",
+        "p5"
+      ],
+      "requiredPrecedences": 4
+    },
+    {
+      "id": 140,
+      "solutionCount": 33,
+      "possibleOrders": 720,
+      "states": 55,
+      "firstMoves": [
+        "p1",
+        "p3",
+        "p6"
+      ],
+      "lastMoves": [
+        "p2",
+        "p4"
+      ],
+      "requiredPrecedences": 7
+    },
+    {
+      "id": 141,
+      "solutionCount": 245,
+      "possibleOrders": 5040,
+      "states": 139,
+      "firstMoves": [
+        "p1",
+        "p4",
+        "p5",
+        "p6"
+      ],
+      "lastMoves": [
+        "p2",
+        "p3",
+        "p5"
+      ],
+      "requiredPrecedences": 6
+    },
+    {
+      "id": 142,
+      "solutionCount": 189,
+      "possibleOrders": 5040,
+      "states": 90,
+      "firstMoves": [
+        "p3",
+        "p4",
+        "p5",
+        "p6"
+      ],
+      "lastMoves": [
+        "p1",
+        "p4",
+        "p7"
+      ],
+      "requiredPrecedences": 8
+    },
+    {
+      "id": 143,
+      "solutionCount": 240,
+      "possibleOrders": 40320,
+      "states": 156,
+      "firstMoves": [
+        "p2",
+        "p7",
+        "p8"
+      ],
+      "lastMoves": [
+        "p3",
+        "p4",
+        "p7"
+      ],
+      "requiredPrecedences": 11
+    },
+    {
+      "id": 144,
+      "solutionCount": 30,
+      "possibleOrders": 720,
+      "states": 63,
+      "firstMoves": [
+        "p1",
+        "p3",
+        "p5"
+      ],
+      "lastMoves": [
+        "p4"
+      ],
+      "requiredPrecedences": 7
+    },
+    {
+      "id": 145,
+      "solutionCount": 24,
+      "possibleOrders": 120,
+      "states": 35,
+      "firstMoves": [
+        "p1",
+        "p3",
+        "p4",
+        "p5"
+      ],
+      "lastMoves": [
+        "p2"
+      ],
+      "requiredPrecedences": 4
+    },
+    {
+      "id": 146,
+      "solutionCount": 162,
+      "possibleOrders": 5040,
+      "states": 95,
+      "firstMoves": [
+        "p1",
+        "p4",
+        "p5",
+        "p6"
+      ],
+      "lastMoves": [
+        "p3",
+        "p7"
+      ],
+      "requiredPrecedences": 8
+    },
+    {
+      "id": 147,
+      "solutionCount": 33,
+      "possibleOrders": 5040,
+      "states": 46,
+      "firstMoves": [
+        "p1",
+        "p5"
+      ],
+      "lastMoves": [
+        "p4",
+        "p6",
+        "p7"
+      ],
+      "requiredPrecedences": 13
+    },
+    {
+      "id": 148,
+      "solutionCount": 133,
+      "possibleOrders": 5040,
+      "states": 110,
+      "firstMoves": [
+        "p2",
+        "p3",
+        "p5"
+      ],
+      "lastMoves": [
+        "p1",
+        "p5",
+        "p6"
+      ],
+      "requiredPrecedences": 7
+    },
+    {
+      "id": 149,
+      "solutionCount": 1712,
+      "possibleOrders": 40320,
+      "states": 200,
+      "firstMoves": [
+        "p2",
+        "p4",
+        "p7",
+        "p8"
+      ],
+      "lastMoves": [
+        "p1",
+        "p5",
+        "p6",
+        "p7"
+      ],
+      "requiredPrecedences": 7
+    },
+    {
+      "id": 150,
+      "solutionCount": 42,
+      "possibleOrders": 5040,
+      "states": 79,
+      "firstMoves": [
+        "p4",
+        "p7"
+      ],
+      "lastMoves": [
+        "p3",
+        "p5",
+        "p6"
+      ],
+      "requiredPrecedences": 10
+    },
+    {
+      "id": 151,
+      "solutionCount": 240,
+      "possibleOrders": 40320,
+      "states": 156,
+      "firstMoves": [
+        "p1",
+        "p8"
+      ],
+      "lastMoves": [
+        "p6",
+        "p8"
+      ],
+      "requiredPrecedences": 13
+    },
+    {
+      "id": 152,
+      "solutionCount": 16,
+      "possibleOrders": 120,
+      "states": 24,
+      "firstMoves": [
+        "p1",
+        "p3"
+      ],
+      "lastMoves": [
+        "p2",
+        "p4",
+        "p5"
+      ],
+      "requiredPrecedences": 4
+    },
+    {
+      "id": 153,
+      "solutionCount": 1344,
+      "possibleOrders": 40320,
+      "states": 226,
+      "firstMoves": [
+        "p1",
+        "p3",
+        "p4",
+        "p6",
+        "p7"
+      ],
+      "lastMoves": [
+        "p2",
+        "p5",
+        "p7"
+      ],
+      "requiredPrecedences": 7
+    },
+    {
+      "id": 154,
+      "solutionCount": 36,
+      "possibleOrders": 5040,
+      "states": 60,
+      "firstMoves": [
+        "p1",
+        "p7"
+      ],
+      "lastMoves": [
+        "p6"
+      ],
+      "requiredPrecedences": 12
+    },
+    {
+      "id": 155,
+      "solutionCount": 378,
+      "possibleOrders": 5040,
+      "states": 151,
+      "firstMoves": [
+        "p2",
+        "p3",
+        "p5",
+        "p7"
+      ],
+      "lastMoves": [
+        "p1",
+        "p4",
+        "p5",
+        "p7"
+      ],
+      "requiredPrecedences": 5
+    },
+    {
+      "id": 156,
+      "solutionCount": 60,
+      "possibleOrders": 5040,
+      "states": 96,
+      "firstMoves": [
+        "p2",
+        "p5",
+        "p7"
+      ],
+      "lastMoves": [
+        "p1"
+      ],
+      "requiredPrecedences": 10
+    },
+    {
+      "id": 157,
+      "solutionCount": 3,
+      "possibleOrders": 24,
+      "states": 16,
+      "firstMoves": [
+        "p2",
+        "p4"
+      ],
+      "lastMoves": [
+        "p1"
+      ],
+      "requiredPrecedences": 4
+    },
+    {
+      "id": 158,
+      "solutionCount": 98,
+      "possibleOrders": 5040,
+      "states": 80,
+      "firstMoves": [
+        "p1",
+        "p6",
+        "p7"
+      ],
+      "lastMoves": [
+        "p3",
+        "p5",
+        "p7"
+      ],
+      "requiredPrecedences": 9
+    },
+    {
+      "id": 159,
+      "solutionCount": 42,
+      "possibleOrders": 5040,
+      "states": 60,
+      "firstMoves": [
+        "p1",
+        "p7"
+      ],
+      "lastMoves": [
+        "p6",
+        "p7"
+      ],
+      "requiredPrecedences": 11
+    },
+    {
+      "id": 160,
+      "solutionCount": 15,
+      "possibleOrders": 720,
+      "states": 46,
+      "firstMoves": [
+        "p1",
+        "p4",
+        "p6"
+      ],
+      "lastMoves": [
+        "p5"
+      ],
+      "requiredPrecedences": 9
+    },
+    {
+      "id": 161,
+      "solutionCount": 104,
+      "possibleOrders": 40320,
+      "states": 172,
+      "firstMoves": [
+        "p2",
+        "p6",
+        "p7"
+      ],
+      "lastMoves": [
+        "p4",
+        "p5",
+        "p6"
+      ],
+      "requiredPrecedences": 15
+    },
+    {
+      "id": 162,
+      "solutionCount": 81,
+      "possibleOrders": 5040,
+      "states": 105,
+      "firstMoves": [
+        "p1",
+        "p6",
+        "p7"
+      ],
+      "lastMoves": [
+        "p3",
+        "p4"
+      ],
+      "requiredPrecedences": 9
+    },
+    {
+      "id": 163,
+      "solutionCount": 126,
+      "possibleOrders": 40320,
+      "states": 96,
+      "firstMoves": [
+        "p1",
+        "p4",
+        "p5"
+      ],
+      "lastMoves": [
+        "p3",
+        "p7"
+      ],
+      "requiredPrecedences": 16
+    },
+    {
+      "id": 164,
+      "solutionCount": 11,
+      "possibleOrders": 120,
+      "states": 24,
+      "firstMoves": [
+        "p1",
+        "p3"
+      ],
+      "lastMoves": [
+        "p2",
+        "p5"
+      ],
+      "requiredPrecedences": 5
+    },
+    {
+      "id": 165,
+      "solutionCount": 231,
+      "possibleOrders": 5040,
+      "states": 136,
+      "firstMoves": [
+        "p2",
+        "p4",
+        "p5"
+      ],
+      "lastMoves": [
+        "p1",
+        "p3",
+        "p5",
+        "p7"
+      ],
+      "requiredPrecedences": 7
+    },
+    {
+      "id": 166,
+      "solutionCount": 35,
+      "possibleOrders": 720,
+      "states": 55,
+      "firstMoves": [
+        "p1",
+        "p4",
+        "p5"
+      ],
+      "lastMoves": [
+        "p2",
+        "p6"
+      ],
+      "requiredPrecedences": 6
+    },
+    {
+      "id": 167,
+      "solutionCount": 30,
+      "possibleOrders": 5040,
+      "states": 78,
+      "firstMoves": [
+        "p1"
+      ],
+      "lastMoves": [
+        "p6"
+      ],
+      "requiredPrecedences": 13
+    },
+    {
+      "id": 168,
+      "solutionCount": 135,
+      "possibleOrders": 40320,
+      "states": 128,
+      "firstMoves": [
+        "p3",
+        "p5",
+        "p8"
+      ],
+      "lastMoves": [
+        "p4",
+        "p6"
+      ],
+      "requiredPrecedences": 13
+    },
+    {
+      "id": 169,
+      "solutionCount": 40,
+      "possibleOrders": 720,
+      "states": 77,
+      "firstMoves": [
+        "p1",
+        "p3",
+        "p4",
+        "p6"
+      ],
+      "lastMoves": [
+        "p5"
+      ],
+      "requiredPrecedences": 7
+    },
+    {
+      "id": 170,
+      "solutionCount": 5,
+      "possibleOrders": 24,
+      "states": 14,
+      "firstMoves": [
+        "p1",
+        "p2"
+      ],
+      "lastMoves": [
+        "p3",
+        "p4"
+      ],
+      "requiredPrecedences": 3
+    },
+    {
+      "id": 171,
+      "solutionCount": 252,
+      "possibleOrders": 5040,
+      "states": 119,
+      "firstMoves": [
+        "p2",
+        "p4",
+        "p5",
+        "p7"
+      ],
+      "lastMoves": [
+        "p1",
+        "p6"
+      ],
+      "requiredPrecedences": 6
+    },
+    {
+      "id": 172,
+      "solutionCount": 57,
+      "possibleOrders": 5040,
+      "states": 120,
+      "firstMoves": [
+        "p1",
+        "p4",
+        "p7"
+      ],
+      "lastMoves": [
+        "p3",
+        "p5"
+      ],
+      "requiredPrecedences": 11
+    },
+    {
+      "id": 173,
+      "solutionCount": 81,
+      "possibleOrders": 5040,
+      "states": 65,
+      "firstMoves": [
+        "p2",
+        "p4",
+        "p7"
+      ],
+      "lastMoves": [
+        "p1",
+        "p6"
+      ],
+      "requiredPrecedences": 10
+    },
+    {
+      "id": 174,
+      "solutionCount": 72,
+      "possibleOrders": 5040,
+      "states": 99,
+      "firstMoves": [
+        "p1",
+        "p4",
+        "p5",
+        "p6"
+      ],
+      "lastMoves": [
+        "p3"
+      ],
+      "requiredPrecedences": 11
+    },
+    {
+      "id": 175,
+      "solutionCount": 244,
+      "possibleOrders": 362880,
+      "states": 286,
+      "firstMoves": [
+        "p1",
+        "p4",
+        "p6"
+      ],
+      "lastMoves": [
+        "p8",
+        "p9"
+      ],
+      "requiredPrecedences": 21
+    },
+    {
+      "id": 176,
+      "solutionCount": 294,
+      "possibleOrders": 5040,
+      "states": 202,
+      "firstMoves": [
+        "p2",
+        "p4",
+        "p5",
+        "p7"
+      ],
+      "lastMoves": [
+        "p1",
+        "p3",
+        "p7"
+      ],
+      "requiredPrecedences": 6
+    },
+    {
+      "id": 177,
+      "solutionCount": 84,
+      "possibleOrders": 720,
+      "states": 60,
+      "firstMoves": [
+        "p1",
+        "p3",
+        "p4",
+        "p5"
+      ],
+      "lastMoves": [
+        "p2",
+        "p6"
+      ],
+      "requiredPrecedences": 5
+    },
+    {
+      "id": 178,
+      "solutionCount": 16,
+      "possibleOrders": 720,
+      "states": 58,
+      "firstMoves": [
+        "p1",
+        "p6"
+      ],
+      "lastMoves": [
+        "p3",
+        "p4"
+      ],
+      "requiredPrecedences": 8
+    },
+    {
+      "id": 179,
+      "solutionCount": 284,
+      "possibleOrders": 40320,
+      "states": 382,
+      "firstMoves": [
+        "p2",
+        "p5"
+      ],
+      "lastMoves": [
+        "p4",
+        "p6",
+        "p8"
+      ],
+      "requiredPrecedences": 11
+    },
+    {
+      "id": 180,
+      "solutionCount": 210,
+      "possibleOrders": 5040,
+      "states": 186,
+      "firstMoves": [
+        "p1",
+        "p5",
+        "p6",
+        "p7"
+      ],
+      "lastMoves": [
+        "p3",
+        "p4",
+        "p6"
+      ],
+      "requiredPrecedences": 7
+    },
+    {
+      "id": 181,
+      "solutionCount": 180,
+      "possibleOrders": 40320,
+      "states": 116,
+      "firstMoves": [
+        "p5",
+        "p6"
+      ],
+      "lastMoves": [
+        "p2",
+        "p4",
+        "p7"
+      ],
+      "requiredPrecedences": 14
+    },
+    {
+      "id": 182,
+      "solutionCount": 42,
+      "possibleOrders": 720,
+      "states": 54,
+      "firstMoves": [
+        "p2",
+        "p6"
+      ],
+      "lastMoves": [
+        "p1",
+        "p4",
+        "p5"
+      ],
+      "requiredPrecedences": 6
+    },
+    {
+      "id": 183,
+      "solutionCount": 168,
+      "possibleOrders": 5040,
+      "states": 108,
+      "firstMoves": [
+        "p2",
+        "p5",
+        "p6",
+        "p7"
+      ],
+      "lastMoves": [
+        "p4",
+        "p6",
+        "p7"
+      ],
+      "requiredPrecedences": 7
+    },
+    {
+      "id": 184,
+      "solutionCount": 60,
+      "possibleOrders": 720,
+      "states": 70,
+      "firstMoves": [
+        "p4",
+        "p5",
+        "p6"
+      ],
+      "lastMoves": [
+        "p1",
+        "p2",
+        "p6"
+      ],
+      "requiredPrecedences": 4
+    },
+    {
+      "id": 185,
+      "solutionCount": 294,
+      "possibleOrders": 5040,
+      "states": 128,
+      "firstMoves": [
+        "p1",
+        "p5",
+        "p6",
+        "p7"
+      ],
+      "lastMoves": [
+        "p3",
+        "p4",
+        "p5",
+        "p7"
+      ],
+      "requiredPrecedences": 6
+    },
+    {
+      "id": 186,
+      "solutionCount": 35,
+      "possibleOrders": 5040,
+      "states": 133,
+      "firstMoves": [
+        "p1",
+        "p6",
+        "p7"
+      ],
+      "lastMoves": [
+        "p5",
+        "p6"
+      ],
+      "requiredPrecedences": 11
+    },
+    {
+      "id": 187,
+      "solutionCount": 477,
+      "possibleOrders": 40320,
+      "states": 190,
+      "firstMoves": [
+        "p2",
+        "p4",
+        "p7"
+      ],
+      "lastMoves": [
+        "p3",
+        "p6",
+        "p8"
+      ],
+      "requiredPrecedences": 9
+    },
+    {
+      "id": 188,
+      "solutionCount": 42,
+      "possibleOrders": 5040,
+      "states": 96,
+      "firstMoves": [
+        "p1",
+        "p6",
+        "p7"
+      ],
+      "lastMoves": [
+        "p5",
+        "p6",
+        "p7"
+      ],
+      "requiredPrecedences": 10
+    },
+    {
+      "id": 189,
+      "solutionCount": 16,
+      "possibleOrders": 120,
+      "states": 28,
+      "firstMoves": [
+        "p1",
+        "p3"
+      ],
+      "lastMoves": [
+        "p2",
+        "p4",
+        "p5"
+      ],
+      "requiredPrecedences": 4
+    },
+    {
+      "id": 190,
+      "solutionCount": 36,
+      "possibleOrders": 720,
+      "states": 54,
+      "firstMoves": [
+        "p4",
+        "p5",
+        "p6"
+      ],
+      "lastMoves": [
+        "p1",
+        "p6"
+      ],
+      "requiredPrecedences": 6
+    },
+    {
+      "id": 191,
+      "solutionCount": 44,
+      "possibleOrders": 5040,
+      "states": 119,
+      "firstMoves": [
+        "p3",
+        "p6"
+      ],
+      "lastMoves": [
+        "p4",
+        "p7"
+      ],
+      "requiredPrecedences": 12
+    },
+    {
+      "id": 192,
+      "solutionCount": 240,
+      "possibleOrders": 5040,
+      "states": 140,
+      "firstMoves": [
+        "p1",
+        "p3",
+        "p4",
+        "p6",
+        "p7"
+      ],
+      "lastMoves": [
+        "p5"
+      ],
+      "requiredPrecedences": 8
+    },
+    {
+      "id": 193,
+      "solutionCount": 1479,
+      "possibleOrders": 362880,
+      "states": 223,
+      "firstMoves": [
+        "p2",
+        "p5",
+        "p6"
+      ],
+      "lastMoves": [
+        "p4",
+        "p7",
+        "p8",
+        "p9"
+      ],
+      "requiredPrecedences": 15
+    },
+    {
+      "id": 194,
+      "solutionCount": 112,
+      "possibleOrders": 5040,
+      "states": 178,
+      "firstMoves": [
+        "p3",
+        "p6",
+        "p7"
+      ],
+      "lastMoves": [
+        "p2",
+        "p5",
+        "p7"
+      ],
+      "requiredPrecedences": 8
+    },
+    {
+      "id": 195,
+      "solutionCount": 60,
+      "possibleOrders": 720,
+      "states": 58,
+      "firstMoves": [
+        "p1",
+        "p4",
+        "p5"
+      ],
+      "lastMoves": [
+        "p3",
+        "p4",
+        "p6"
+      ],
+      "requiredPrecedences": 4
+    },
+    {
+      "id": 196,
+      "solutionCount": 30,
+      "possibleOrders": 720,
+      "states": 40,
+      "firstMoves": [
+        "p2"
+      ],
+      "lastMoves": [
+        "p1",
+        "p4",
+        "p6"
+      ],
+      "requiredPrecedences": 7
+    },
+    {
+      "id": 197,
+      "solutionCount": 1728,
+      "possibleOrders": 362880,
+      "states": 328,
+      "firstMoves": [
+        "p1",
+        "p4",
+        "p7",
+        "p9"
+      ],
+      "lastMoves": [
+        "p3",
+        "p4",
+        "p5"
+      ],
+      "requiredPrecedences": 13
+    },
+    {
+      "id": 198,
+      "solutionCount": 33,
+      "possibleOrders": 720,
+      "states": 44,
+      "firstMoves": [
+        "p1",
+        "p5",
+        "p6"
+      ],
+      "lastMoves": [
+        "p2",
+        "p4"
+      ],
+      "requiredPrecedences": 7
+    },
+    {
+      "id": 199,
+      "solutionCount": 120,
+      "possibleOrders": 5040,
+      "states": 92,
+      "firstMoves": [
+        "p1",
+        "p5",
+        "p6",
+        "p7"
+      ],
+      "lastMoves": [
+        "p3"
+      ],
+      "requiredPrecedences": 9
+    },
+    {
+      "id": 200,
+      "solutionCount": 95,
+      "possibleOrders": 40320,
+      "states": 166,
+      "firstMoves": [
+        "p4",
+        "p6"
+      ],
+      "lastMoves": [
+        "p5",
+        "p7"
+      ],
+      "requiredPrecedences": 16
+    },
+    {
+      "id": 201,
+      "solutionCount": 1,
+      "possibleOrders": 6,
+      "states": 7,
+      "firstMoves": [
+        "p1"
+      ],
+      "lastMoves": [
+        "p3"
+      ],
+      "requiredPrecedences": 3
+    },
+    {
+      "id": 202,
+      "solutionCount": 4,
+      "possibleOrders": 24,
+      "states": 22,
+      "firstMoves": [
+        "p2",
+        "p4"
+      ],
+      "lastMoves": [
+        "p1",
+        "p4"
+      ],
+      "requiredPrecedences": 3
+    },
+    {
+      "id": 203,
+      "solutionCount": 560,
+      "possibleOrders": 40320,
+      "states": 148,
+      "firstMoves": [
+        "p2",
+        "p6",
+        "p7",
+        "p8"
+      ],
+      "lastMoves": [
+        "p4",
+        "p7",
+        "p8"
+      ],
+      "requiredPrecedences": 9
+    },
+    {
+      "id": 204,
+      "solutionCount": 69,
+      "possibleOrders": 5040,
+      "states": 76,
+      "firstMoves": [
+        "p1",
+        "p5",
+        "p6"
+      ],
+      "lastMoves": [
+        "p3",
+        "p7"
+      ],
+      "requiredPrecedences": 10
+    },
+    {
+      "id": 205,
+      "solutionCount": 496,
+      "possibleOrders": 40320,
+      "states": 396,
+      "firstMoves": [
+        "p2",
+        "p4",
+        "p6",
+        "p7"
+      ],
+      "lastMoves": [
+        "p1",
+        "p7",
+        "p8"
+      ],
+      "requiredPrecedences": 10
+    },
+    {
+      "id": 206,
+      "solutionCount": 840,
+      "possibleOrders": 362880,
+      "states": 394,
+      "firstMoves": [
+        "p1",
+        "p6",
+        "p7",
+        "p8",
+        "p9"
+      ],
+      "lastMoves": [
+        "p5"
+      ],
+      "requiredPrecedences": 17
+    },
+    {
+      "id": 207,
+      "solutionCount": 15,
+      "possibleOrders": 120,
+      "states": 28,
+      "firstMoves": [
+        "p1",
+        "p4",
+        "p5"
+      ],
+      "lastMoves": [
+        "p3",
+        "p5"
+      ],
+      "requiredPrecedences": 4
+    },
+    {
+      "id": 208,
+      "solutionCount": 526,
+      "possibleOrders": 40320,
+      "states": 161,
+      "firstMoves": [
+        "p2",
+        "p4",
+        "p5"
+      ],
+      "lastMoves": [
+        "p1",
+        "p6",
+        "p8"
+      ],
+      "requiredPrecedences": 10
+    },
+    {
+      "id": 209,
+      "solutionCount": 4149,
+      "possibleOrders": 362880,
+      "states": 396,
+      "firstMoves": [
+        "p1",
+        "p6",
+        "p7",
+        "p8"
+      ],
+      "lastMoves": [
+        "p3",
+        "p4",
+        "p7",
+        "p9"
+      ],
+      "requiredPrecedences": 11
+    },
+    {
+      "id": 210,
+      "solutionCount": 90,
+      "possibleOrders": 5040,
+      "states": 108,
+      "firstMoves": [
+        "p2",
+        "p4",
+        "p7"
+      ],
+      "lastMoves": [
+        "p1",
+        "p5"
+      ],
+      "requiredPrecedences": 9
+    },
+    {
+      "id": 211,
+      "solutionCount": 1238,
+      "possibleOrders": 362880,
+      "states": 350,
+      "firstMoves": [
+        "p1",
+        "p5",
+        "p8"
+      ],
+      "lastMoves": [
+        "p3",
+        "p6"
+      ],
+      "requiredPrecedences": 14
+    },
+    {
+      "id": 212,
+      "solutionCount": 840,
+      "possibleOrders": 40320,
+      "states": 326,
+      "firstMoves": [
+        "p1",
+        "p3",
+        "p4",
+        "p6",
+        "p8"
+      ],
+      "lastMoves": [
+        "p5"
+      ],
+      "requiredPrecedences": 10
+    },
+    {
+      "id": 213,
+      "solutionCount": 754,
+      "possibleOrders": 362880,
+      "states": 397,
+      "firstMoves": [
+        "p2",
+        "p5",
+        "p9"
+      ],
+      "lastMoves": [
+        "p3",
+        "p4"
+      ],
+      "requiredPrecedences": 16
+    },
+    {
+      "id": 214,
+      "solutionCount": 20,
+      "possibleOrders": 120,
+      "states": 46,
+      "firstMoves": [
+        "p2",
+        "p4",
+        "p5"
+      ],
+      "lastMoves": [
+        "p3",
+        "p4",
+        "p5"
+      ],
+      "requiredPrecedences": 3
+    },
+    {
+      "id": 215,
+      "solutionCount": 312,
+      "possibleOrders": 40320,
+      "states": 174,
+      "firstMoves": [
+        "p1",
+        "p6",
+        "p8"
+      ],
+      "lastMoves": [
+        "p4",
+        "p5",
+        "p7"
+      ],
+      "requiredPrecedences": 12
+    },
+    {
+      "id": 216,
+      "solutionCount": 728,
+      "possibleOrders": 40320,
+      "states": 286,
+      "firstMoves": [
+        "p1",
+        "p4",
+        "p5",
+        "p8"
+      ],
+      "lastMoves": [
+        "p2",
+        "p6",
+        "p7"
+      ],
+      "requiredPrecedences": 8
+    },
+    {
+      "id": 217,
+      "solutionCount": 396,
+      "possibleOrders": 40320,
+      "states": 203,
+      "firstMoves": [
+        "p1",
+        "p5",
+        "p7"
+      ],
+      "lastMoves": [
+        "p3",
+        "p4",
+        "p8"
+      ],
+      "requiredPrecedences": 10
+    },
+    {
+      "id": 218,
+      "solutionCount": 93,
+      "possibleOrders": 40320,
+      "states": 127,
+      "firstMoves": [
+        "p4",
+        "p5",
+        "p6"
+      ],
+      "lastMoves": [
+        "p7",
+        "p8"
+      ],
+      "requiredPrecedences": 16
+    },
+    {
+      "id": 219,
+      "solutionCount": 1680,
+      "possibleOrders": 362880,
+      "states": 572,
+      "firstMoves": [
+        "p1",
+        "p5",
+        "p7",
+        "p8"
+      ],
+      "lastMoves": [
+        "p3"
+      ],
+      "requiredPrecedences": 14
+    },
+    {
+      "id": 220,
+      "solutionCount": 35,
+      "possibleOrders": 720,
+      "states": 53,
+      "firstMoves": [
+        "p1",
+        "p3",
+        "p6"
+      ],
+      "lastMoves": [
+        "p2",
+        "p5"
+      ],
+      "requiredPrecedences": 6
+    },
+    {
+      "id": 221,
+      "solutionCount": 672,
+      "possibleOrders": 40320,
+      "states": 140,
+      "firstMoves": [
+        "p1",
+        "p2",
+        "p7",
+        "p8"
+      ],
+      "lastMoves": [
+        "p1",
+        "p5",
+        "p6",
+        "p8"
+      ],
+      "requiredPrecedences": 9
+    },
+    {
+      "id": 222,
+      "solutionCount": 105,
+      "possibleOrders": 40320,
+      "states": 367,
+      "firstMoves": [
+        "p1",
+        "p5",
+        "p7"
+      ],
+      "lastMoves": [
+        "p4",
+        "p8"
+      ],
+      "requiredPrecedences": 16
+    },
+    {
+      "id": 223,
+      "solutionCount": 526,
+      "possibleOrders": 40320,
+      "states": 148,
+      "firstMoves": [
+        "p1",
+        "p6",
+        "p7"
+      ],
+      "lastMoves": [
+        "p2",
+        "p3",
+        "p8"
+      ],
+      "requiredPrecedences": 10
+    },
+    {
+      "id": 224,
+      "solutionCount": 396,
+      "possibleOrders": 40320,
+      "states": 187,
+      "firstMoves": [
+        "p1",
+        "p6",
+        "p8"
+      ],
+      "lastMoves": [
+        "p3",
+        "p4",
+        "p5"
+      ],
+      "requiredPrecedences": 10
+    },
+    {
+      "id": 225,
+      "solutionCount": 2900,
+      "possibleOrders": 3628800,
+      "states": 596,
+      "firstMoves": [
+        "p1",
+        "p7",
+        "p8"
+      ],
+      "lastMoves": [
+        "p6",
+        "p7",
+        "p9"
+      ],
+      "requiredPrecedences": 19
+    },
+    {
+      "id": 226,
+      "solutionCount": 70,
+      "possibleOrders": 5040,
+      "states": 94,
+      "firstMoves": [
+        "p2",
+        "p5",
+        "p7"
+      ],
+      "lastMoves": [
+        "p4",
+        "p5",
+        "p6"
+      ],
+      "requiredPrecedences": 10
+    },
+    {
+      "id": 227,
+      "solutionCount": 15,
+      "possibleOrders": 120,
+      "states": 28,
+      "firstMoves": [
+        "p1",
+        "p4",
+        "p5"
+      ],
+      "lastMoves": [
+        "p2",
+        "p5"
+      ],
+      "requiredPrecedences": 4
+    },
+    {
+      "id": 228,
+      "solutionCount": 960,
+      "possibleOrders": 40320,
+      "states": 230,
+      "firstMoves": [
+        "p1",
+        "p2",
+        "p4",
+        "p5",
+        "p8"
+      ],
+      "lastMoves": [
+        "p1",
+        "p7"
+      ],
+      "requiredPrecedences": 9
+    },
+    {
+      "id": 229,
+      "solutionCount": 768,
+      "possibleOrders": 40320,
+      "states": 182,
+      "firstMoves": [
+        "p2",
+        "p5",
+        "p7",
+        "p8"
+      ],
+      "lastMoves": [
+        "p1",
+        "p4",
+        "p7"
+      ],
+      "requiredPrecedences": 10
+    },
+    {
+      "id": 230,
+      "solutionCount": 63,
+      "possibleOrders": 5040,
+      "states": 102,
+      "firstMoves": [
+        "p3",
+        "p6",
+        "p7"
+      ],
+      "lastMoves": [
+        "p2",
+        "p7"
+      ],
+      "requiredPrecedences": 10
+    },
+    {
+      "id": 231,
+      "solutionCount": 810,
+      "possibleOrders": 362880,
+      "states": 422,
+      "firstMoves": [
+        "p1",
+        "p3",
+        "p8"
+      ],
+      "lastMoves": [
+        "p2",
+        "p4",
+        "p9"
+      ],
+      "requiredPrecedences": 14
+    },
+    {
+      "id": 232,
+      "solutionCount": 45,
+      "possibleOrders": 720,
+      "states": 56,
+      "firstMoves": [
+        "p1",
+        "p4",
+        "p6"
+      ],
+      "lastMoves": [
+        "p2",
+        "p3"
+      ],
+      "requiredPrecedences": 5
+    },
+    {
+      "id": 233,
+      "solutionCount": 518,
+      "possibleOrders": 40320,
+      "states": 230,
+      "firstMoves": [
+        "p2",
+        "p5",
+        "p7",
+        "p8"
+      ],
+      "lastMoves": [
+        "p4",
+        "p6"
+      ],
+      "requiredPrecedences": 10
+    },
+    {
+      "id": 234,
+      "solutionCount": 545,
+      "possibleOrders": 40320,
+      "states": 244,
+      "firstMoves": [
+        "p2",
+        "p5",
+        "p7"
+      ],
+      "lastMoves": [
+        "p3",
+        "p6",
+        "p8"
+      ],
+      "requiredPrecedences": 10
+    },
+    {
+      "id": 235,
+      "solutionCount": 468,
+      "possibleOrders": 40320,
+      "states": 140,
+      "firstMoves": [
+        "p1",
+        "p4",
+        "p6",
+        "p7"
+      ],
+      "lastMoves": [
+        "p3",
+        "p5"
+      ],
+      "requiredPrecedences": 11
+    },
+    {
+      "id": 236,
+      "solutionCount": 236,
+      "possibleOrders": 40320,
+      "states": 259,
+      "firstMoves": [
+        "p2",
+        "p4",
+        "p5",
+        "p8"
+      ],
+      "lastMoves": [
+        "p6",
+        "p7"
+      ],
+      "requiredPrecedences": 12
+    },
+    {
+      "id": 237,
+      "solutionCount": 520,
+      "possibleOrders": 40320,
+      "states": 172,
+      "firstMoves": [
+        "p1",
+        "p6",
+        "p7",
+        "p8"
+      ],
+      "lastMoves": [
+        "p3",
+        "p5",
+        "p8"
+      ],
+      "requiredPrecedences": 9
+    },
+    {
+      "id": 238,
+      "solutionCount": 707,
+      "possibleOrders": 362880,
+      "states": 493,
+      "firstMoves": [
+        "p2",
+        "p8",
+        "p9"
+      ],
+      "lastMoves": [
+        "p4",
+        "p7"
+      ],
+      "requiredPrecedences": 14
+    },
+    {
+      "id": 239,
+      "solutionCount": 66,
+      "possibleOrders": 720,
+      "states": 51,
+      "firstMoves": [
+        "p1",
+        "p5",
+        "p6"
+      ],
+      "lastMoves": [
+        "p3",
+        "p4",
+        "p5"
+      ],
+      "requiredPrecedences": 5
+    },
+    {
+      "id": 240,
+      "solutionCount": 24,
+      "possibleOrders": 720,
+      "states": 56,
+      "firstMoves": [
+        "p2",
+        "p5",
+        "p6"
+      ],
+      "lastMoves": [
+        "p4",
+        "p6"
+      ],
+      "requiredPrecedences": 7
+    },
+    {
+      "id": 241,
+      "solutionCount": 840,
+      "possibleOrders": 40320,
+      "states": 211,
+      "firstMoves": [
+        "p2",
+        "p4",
+        "p6",
+        "p7"
+      ],
+      "lastMoves": [
+        "p1",
+        "p8"
+      ],
+      "requiredPrecedences": 8
+    },
+    {
+      "id": 242,
+      "solutionCount": 42,
+      "possibleOrders": 720,
+      "states": 64,
+      "firstMoves": [
+        "p1",
+        "p4",
+        "p5"
+      ],
+      "lastMoves": [
+        "p3",
+        "p5",
+        "p6"
+      ],
+      "requiredPrecedences": 6
+    },
+    {
+      "id": 243,
+      "solutionCount": 882,
+      "possibleOrders": 362880,
+      "states": 344,
+      "firstMoves": [
+        "p1",
+        "p6",
+        "p7",
+        "p9"
+      ],
+      "lastMoves": [
+        "p5",
+        "p8",
+        "p9"
+      ],
+      "requiredPrecedences": 15
+    },
+    {
+      "id": 244,
+      "solutionCount": 114,
+      "possibleOrders": 5040,
+      "states": 86,
+      "firstMoves": [
+        "p2",
+        "p4",
+        "p5",
+        "p6"
+      ],
+      "lastMoves": [
+        "p3",
+        "p7"
+      ],
+      "requiredPrecedences": 10
+    },
+    {
+      "id": 245,
+      "solutionCount": 20,
+      "possibleOrders": 120,
+      "states": 46,
+      "firstMoves": [
+        "p2",
+        "p4",
+        "p5"
+      ],
+      "lastMoves": [
+        "p3",
+        "p4",
+        "p5"
+      ],
+      "requiredPrecedences": 3
+    },
+    {
+      "id": 246,
+      "solutionCount": 126,
+      "possibleOrders": 5040,
+      "states": 107,
+      "firstMoves": [
+        "p1",
+        "p3",
+        "p5",
+        "p6"
+      ],
+      "lastMoves": [
+        "p4",
+        "p7"
+      ],
+      "requiredPrecedences": 8
+    },
+    {
+      "id": 247,
+      "solutionCount": 474,
+      "possibleOrders": 362880,
+      "states": 378,
+      "firstMoves": [
+        "p5",
+        "p6",
+        "p8"
+      ],
+      "lastMoves": [
+        "p3",
+        "p4",
+        "p9"
+      ],
+      "requiredPrecedences": 18
+    },
+    {
+      "id": 248,
+      "solutionCount": 588,
+      "possibleOrders": 40320,
+      "states": 224,
+      "firstMoves": [
+        "p2",
+        "p5",
+        "p7",
+        "p8"
+      ],
+      "lastMoves": [
+        "p3",
+        "p4"
+      ],
+      "requiredPrecedences": 10
+    },
+    {
+      "id": 249,
+      "solutionCount": 100,
+      "possibleOrders": 5040,
+      "states": 166,
+      "firstMoves": [
+        "p1",
+        "p3",
+        "p4",
+        "p6"
+      ],
+      "lastMoves": [
+        "p5",
+        "p7"
+      ],
+      "requiredPrecedences": 10
+    },
+    {
+      "id": 250,
+      "solutionCount": 270,
+      "possibleOrders": 40320,
+      "states": 114,
+      "firstMoves": [
+        "p1",
+        "p4",
+        "p5"
+      ],
+      "lastMoves": [
+        "p3",
+        "p6"
+      ],
+      "requiredPrecedences": 12
+    },
+    {
+      "id": 251,
+      "solutionCount": 84,
+      "possibleOrders": 5040,
+      "states": 66,
+      "firstMoves": [
+        "p6",
+        "p7"
+      ],
+      "lastMoves": [
+        "p1",
+        "p4",
+        "p5"
+      ],
+      "requiredPrecedences": 8
+    },
+    {
+      "id": 252,
+      "solutionCount": 15,
+      "possibleOrders": 120,
+      "states": 28,
+      "firstMoves": [
+        "p1",
+        "p4",
+        "p5"
+      ],
+      "lastMoves": [
+        "p3",
+        "p4"
+      ],
+      "requiredPrecedences": 4
+    },
+    {
+      "id": 253,
+      "solutionCount": 320,
+      "possibleOrders": 40320,
+      "states": 156,
+      "firstMoves": [
+        "p2",
+        "p5",
+        "p6",
+        "p8"
+      ],
+      "lastMoves": [
+        "p4",
+        "p5",
+        "p7"
+      ],
+      "requiredPrecedences": 11
+    },
+    {
+      "id": 254,
+      "solutionCount": 81,
+      "possibleOrders": 5040,
+      "states": 67,
+      "firstMoves": [
+        "p1",
+        "p6",
+        "p7"
+      ],
+      "lastMoves": [
+        "p3",
+        "p5"
+      ],
+      "requiredPrecedences": 10
+    },
+    {
+      "id": 255,
+      "solutionCount": 126,
+      "possibleOrders": 5040,
+      "states": 148,
+      "firstMoves": [
+        "p4",
+        "p5",
+        "p6",
+        "p7"
+      ],
+      "lastMoves": [
+        "p3",
+        "p5",
+        "p7"
+      ],
+      "requiredPrecedences": 8
+    },
+    {
+      "id": 256,
+      "solutionCount": 450,
+      "possibleOrders": 362880,
+      "states": 188,
+      "firstMoves": [
+        "p1",
+        "p6",
+        "p8"
+      ],
+      "lastMoves": [
+        "p5",
+        "p6",
+        "p7",
+        "p9"
+      ],
+      "requiredPrecedences": 17
+    },
+    {
+      "id": 257,
+      "solutionCount": 20,
+      "possibleOrders": 120,
+      "states": 45,
+      "firstMoves": [
+        "p2",
+        "p4",
+        "p5"
+      ],
+      "lastMoves": [
+        "p1",
+        "p4",
+        "p5"
+      ],
+      "requiredPrecedences": 3
+    },
+    {
+      "id": 258,
+      "solutionCount": 102,
+      "possibleOrders": 5040,
+      "states": 76,
+      "firstMoves": [
+        "p1",
+        "p6"
+      ],
+      "lastMoves": [
+        "p3",
+        "p4",
+        "p7"
+      ],
+      "requiredPrecedences": 8
+    },
+    {
+      "id": 259,
+      "solutionCount": 336,
+      "possibleOrders": 40320,
+      "states": 172,
+      "firstMoves": [
+        "p4",
+        "p6",
+        "p7"
+      ],
+      "lastMoves": [
+        "p1",
+        "p5",
+        "p8"
+      ],
+      "requiredPrecedences": 12
+    },
+    {
+      "id": 260,
+      "solutionCount": 78,
+      "possibleOrders": 5040,
+      "states": 69,
+      "firstMoves": [
+        "p2",
+        "p5",
+        "p7"
+      ],
+      "lastMoves": [
+        "p4",
+        "p6"
+      ],
+      "requiredPrecedences": 9
+    },
+    {
+      "id": 261,
+      "solutionCount": 80,
+      "possibleOrders": 40320,
+      "states": 125,
+      "firstMoves": [
+        "p1",
+        "p7",
+        "p8"
+      ],
+      "lastMoves": [
+        "p3",
+        "p8"
+      ],
+      "requiredPrecedences": 15
+    },
+    {
+      "id": 262,
+      "solutionCount": 36,
+      "possibleOrders": 5040,
+      "states": 108,
+      "firstMoves": [
+        "p1",
+        "p5",
+        "p6"
+      ],
+      "lastMoves": [
+        "p4",
+        "p7"
+      ],
+      "requiredPrecedences": 12
+    },
+    {
+      "id": 263,
+      "solutionCount": 234,
+      "possibleOrders": 362880,
+      "states": 214,
+      "firstMoves": [
+        "p2",
+        "p4",
+        "p7",
+        "p8"
+      ],
+      "lastMoves": [
+        "p8",
+        "p9"
+      ],
+      "requiredPrecedences": 20
+    },
+    {
+      "id": 264,
+      "solutionCount": 12,
+      "possibleOrders": 120,
+      "states": 28,
+      "firstMoves": [
+        "p1",
+        "p4",
+        "p5"
+      ],
+      "lastMoves": [
+        "p2"
+      ],
+      "requiredPrecedences": 5
+    },
+    {
+      "id": 265,
+      "solutionCount": 1920,
+      "possibleOrders": 40320,
+      "states": 331,
+      "firstMoves": [
+        "p3",
+        "p4",
+        "p5",
+        "p6",
+        "p7",
+        "p8"
+      ],
+      "lastMoves": [
+        "p2",
+        "p5"
+      ],
+      "requiredPrecedences": 8
+    },
+    {
+      "id": 266,
+      "solutionCount": 105,
+      "possibleOrders": 5040,
+      "states": 76,
+      "firstMoves": [
+        "p1",
+        "p6",
+        "p7"
+      ],
+      "lastMoves": [
+        "p4",
+        "p5",
+        "p7"
+      ],
+      "requiredPrecedences": 7
+    },
+    {
+      "id": 267,
+      "solutionCount": 567,
+      "possibleOrders": 40320,
+      "states": 312,
+      "firstMoves": [
+        "p1",
+        "p4",
+        "p5",
+        "p7"
+      ],
+      "lastMoves": [
+        "p6",
+        "p8"
+      ],
+      "requiredPrecedences": 9
+    },
+    {
+      "id": 268,
+      "solutionCount": 252,
+      "possibleOrders": 40320,
+      "states": 169,
+      "firstMoves": [
+        "p1",
+        "p7"
+      ],
+      "lastMoves": [
+        "p4",
+        "p5",
+        "p6",
+        "p8"
+      ],
+      "requiredPrecedences": 12
+    },
+    {
+      "id": 269,
+      "solutionCount": 960,
+      "possibleOrders": 40320,
+      "states": 318,
+      "firstMoves": [
+        "p1",
+        "p4",
+        "p6",
+        "p7",
+        "p8"
+      ],
+      "lastMoves": [
+        "p1",
+        "p5"
+      ],
+      "requiredPrecedences": 9
+    },
+    {
+      "id": 270,
+      "solutionCount": 8,
+      "possibleOrders": 120,
+      "states": 26,
+      "firstMoves": [
+        "p2"
+      ],
+      "lastMoves": [
+        "p3",
+        "p4",
+        "p5"
+      ],
+      "requiredPrecedences": 6
+    },
+    {
+      "id": 271,
+      "solutionCount": 630,
+      "possibleOrders": 40320,
+      "states": 245,
+      "firstMoves": [
+        "p2",
+        "p3",
+        "p4",
+        "p8"
+      ],
+      "lastMoves": [
+        "p6",
+        "p7"
+      ],
+      "requiredPrecedences": 9
+    },
+    {
+      "id": 272,
+      "solutionCount": 122,
+      "possibleOrders": 40320,
+      "states": 200,
+      "firstMoves": [
+        "p1",
+        "p4",
+        "p5"
+      ],
+      "lastMoves": [
+        "p3",
+        "p6",
+        "p7"
+      ],
+      "requiredPrecedences": 17
+    },
+    {
+      "id": 273,
+      "solutionCount": 630,
+      "possibleOrders": 40320,
+      "states": 281,
+      "firstMoves": [
+        "p2",
+        "p4",
+        "p6",
+        "p7"
+      ],
+      "lastMoves": [
+        "p1",
+        "p3"
+      ],
+      "requiredPrecedences": 9
+    },
+    {
+      "id": 274,
+      "solutionCount": 72,
+      "possibleOrders": 5040,
+      "states": 98,
+      "firstMoves": [
+        "p1",
+        "p4",
+        "p6",
+        "p7"
+      ],
+      "lastMoves": [
+        "p3"
+      ],
+      "requiredPrecedences": 11
+    },
+    {
+      "id": 275,
+      "solutionCount": 6920,
+      "possibleOrders": 3628800,
+      "states": 1104,
+      "firstMoves": [
+        "p2",
+        "p3",
+        "p8",
+        "p9"
+      ],
+      "lastMoves": [
+        "p1",
+        "p5",
+        "p9"
+      ],
+      "requiredPrecedences": 15
+    },
+    {
+      "id": 276,
+      "solutionCount": 6,
+      "possibleOrders": 120,
+      "states": 34,
+      "firstMoves": [
+        "p1",
+        "p5"
+      ],
+      "lastMoves": [
+        "p3"
+      ],
+      "requiredPrecedences": 6
+    },
+    {
+      "id": 277,
+      "solutionCount": 40,
+      "possibleOrders": 720,
+      "states": 51,
+      "firstMoves": [
+        "p1",
+        "p3",
+        "p6"
+      ],
+      "lastMoves": [
+        "p2",
+        "p4"
+      ],
+      "requiredPrecedences": 6
+    },
+    {
+      "id": 278,
+      "solutionCount": 112,
+      "possibleOrders": 5040,
+      "states": 122,
+      "firstMoves": [
+        "p1",
+        "p5",
+        "p7"
+      ],
+      "lastMoves": [
+        "p4",
+        "p6",
+        "p7"
+      ],
+      "requiredPrecedences": 8
+    },
+    {
+      "id": 279,
+      "solutionCount": 366,
+      "possibleOrders": 40320,
+      "states": 192,
+      "firstMoves": [
+        "p2",
+        "p6"
+      ],
+      "lastMoves": [
+        "p1",
+        "p4",
+        "p5",
+        "p8"
+      ],
+      "requiredPrecedences": 12
+    },
+    {
+      "id": 280,
+      "solutionCount": 70,
+      "possibleOrders": 5040,
+      "states": 124,
+      "firstMoves": [
+        "p2",
+        "p5",
+        "p6",
+        "p7"
+      ],
+      "lastMoves": [
+        "p4",
+        "p6"
+      ],
+      "requiredPrecedences": 10
+    },
+    {
+      "id": 281,
+      "solutionCount": 648,
+      "possibleOrders": 362880,
+      "states": 382,
+      "firstMoves": [
+        "p3",
+        "p4",
+        "p6",
+        "p9"
+      ],
+      "lastMoves": [
+        "p1",
+        "p5"
+      ],
+      "requiredPrecedences": 15
+    },
+    {
+      "id": 282,
+      "solutionCount": 75,
+      "possibleOrders": 720,
+      "states": 55,
+      "firstMoves": [
+        "p2",
+        "p4",
+        "p6"
+      ],
+      "lastMoves": [
+        "p1",
+        "p3",
+        "p5"
+      ],
+      "requiredPrecedences": 4
+    },
+    {
+      "id": 283,
+      "solutionCount": 350,
+      "possibleOrders": 40320,
+      "states": 164,
+      "firstMoves": [
+        "p1",
+        "p6",
+        "p7",
+        "p8"
+      ],
+      "lastMoves": [
+        "p3"
+      ],
+      "requiredPrecedences": 12
+    },
+    {
+      "id": 284,
+      "solutionCount": 63,
+      "possibleOrders": 5040,
+      "states": 71,
+      "firstMoves": [
+        "p1",
+        "p4"
+      ],
+      "lastMoves": [
+        "p3",
+        "p6",
+        "p7"
+      ],
+      "requiredPrecedences": 10
+    },
+    {
+      "id": 285,
+      "solutionCount": 76,
+      "possibleOrders": 5040,
+      "states": 158,
+      "firstMoves": [
+        "p2",
+        "p4",
+        "p5"
+      ],
+      "lastMoves": [
+        "p1",
+        "p6",
+        "p7"
+      ],
+      "requiredPrecedences": 10
+    },
+    {
+      "id": 286,
+      "solutionCount": 2070,
+      "possibleOrders": 362880,
+      "states": 274,
+      "firstMoves": [
+        "p3",
+        "p6",
+        "p8",
+        "p9"
+      ],
+      "lastMoves": [
+        "p2",
+        "p4",
+        "p5",
+        "p6"
+      ],
+      "requiredPrecedences": 12
+    },
+    {
+      "id": 287,
+      "solutionCount": 544,
+      "possibleOrders": 40320,
+      "states": 240,
+      "firstMoves": [
+        "p2",
+        "p3",
+        "p5",
+        "p7"
+      ],
+      "lastMoves": [
+        "p4",
+        "p6",
+        "p7",
+        "p8"
+      ],
+      "requiredPrecedences": 11
+    },
+    {
+      "id": 288,
+      "solutionCount": 105,
+      "possibleOrders": 40320,
+      "states": 174,
+      "firstMoves": [
+        "p2",
+        "p7",
+        "p8"
+      ],
+      "lastMoves": [
+        "p6"
+      ],
+      "requiredPrecedences": 14
+    },
+    {
+      "id": 289,
+      "solutionCount": 72,
+      "possibleOrders": 720,
+      "states": 56,
+      "firstMoves": [
+        "p1",
+        "p3",
+        "p5",
+        "p6"
+      ],
+      "lastMoves": [
+        "p2",
+        "p5"
+      ],
+      "requiredPrecedences": 5
+    },
+    {
+      "id": 290,
+      "solutionCount": 98,
+      "possibleOrders": 5040,
+      "states": 77,
+      "firstMoves": [
+        "p2",
+        "p5",
+        "p6"
+      ],
+      "lastMoves": [
+        "p4",
+        "p5",
+        "p7"
+      ],
+      "requiredPrecedences": 9
+    },
+    {
+      "id": 291,
+      "solutionCount": 3000,
+      "possibleOrders": 362880,
+      "states": 317,
+      "firstMoves": [
+        "p2",
+        "p4",
+        "p8"
+      ],
+      "lastMoves": [
+        "p3",
+        "p5",
+        "p6",
+        "p7"
+      ],
+      "requiredPrecedences": 11
+    },
+    {
+      "id": 292,
+      "solutionCount": 100,
+      "possibleOrders": 5040,
+      "states": 119,
+      "firstMoves": [
+        "p1",
+        "p4",
+        "p5",
+        "p7"
+      ],
+      "lastMoves": [
+        "p3",
+        "p6"
+      ],
+      "requiredPrecedences": 10
+    },
+    {
+      "id": 293,
+      "solutionCount": 670,
+      "possibleOrders": 362880,
+      "states": 302,
+      "firstMoves": [
+        "p3",
+        "p5",
+        "p9"
+      ],
+      "lastMoves": [
+        "p1",
+        "p6"
+      ],
+      "requiredPrecedences": 15
+    },
+    {
+      "id": 294,
+      "solutionCount": 784,
+      "possibleOrders": 40320,
+      "states": 250,
+      "firstMoves": [
+        "p4",
+        "p5",
+        "p6",
+        "p7"
+      ],
+      "lastMoves": [
+        "p3",
+        "p5",
+        "p7",
+        "p8"
+      ],
+      "requiredPrecedences": 9
+    },
+    {
+      "id": 295,
+      "solutionCount": 48,
+      "possibleOrders": 720,
+      "states": 70,
+      "firstMoves": [
+        "p1",
+        "p4",
+        "p5",
+        "p6"
+      ],
+      "lastMoves": [
+        "p3",
+        "p4"
+      ],
+      "requiredPrecedences": 6
+    },
+    {
+      "id": 296,
+      "solutionCount": 90,
+      "possibleOrders": 5040,
+      "states": 125,
+      "firstMoves": [
+        "p3",
+        "p4",
+        "p5"
+      ],
+      "lastMoves": [
+        "p2"
+      ],
+      "requiredPrecedences": 9
+    },
+    {
+      "id": 297,
+      "solutionCount": 2374,
+      "possibleOrders": 3628800,
+      "states": 875,
+      "firstMoves": [
+        "p2",
+        "p3",
+        "p4",
+        "p10"
+      ],
+      "lastMoves": [
+        "p1",
+        "p5",
+        "p7"
+      ],
+      "requiredPrecedences": 22
+    },
+    {
+      "id": 298,
+      "solutionCount": 636,
+      "possibleOrders": 40320,
+      "states": 120,
+      "firstMoves": [
+        "p1",
+        "p4",
+        "p6"
+      ],
+      "lastMoves": [
+        "p2",
+        "p3",
+        "p7",
+        "p8"
+      ],
+      "requiredPrecedences": 9
+    },
+    {
+      "id": 299,
+      "solutionCount": 2874,
+      "possibleOrders": 362880,
+      "states": 276,
+      "firstMoves": [
+        "p1",
+        "p4",
+        "p5",
+        "p6",
+        "p9"
+      ],
+      "lastMoves": [
+        "p3",
+        "p8"
+      ],
+      "requiredPrecedences": 13
+    },
+    {
+      "id": 300,
+      "solutionCount": 41,
+      "possibleOrders": 40320,
+      "states": 91,
+      "firstMoves": [
+        "p1",
+        "p8"
+      ],
+      "lastMoves": [
+        "p6",
+        "p7"
+      ],
+      "requiredPrecedences": 18
+    },
+    {
+      "id": 301,
+      "solutionCount": 98,
+      "possibleOrders": 40320,
+      "states": 172,
+      "firstMoves": [
+        "p5",
+        "p6",
+        "p7"
+      ],
+      "lastMoves": [
+        "p1"
+      ],
+      "requiredPrecedences": 16
+    },
+    {
+      "id": 302,
+      "solutionCount": 40,
+      "possibleOrders": 720,
+      "states": 45,
+      "firstMoves": [
+        "p3",
+        "p5",
+        "p6"
+      ],
+      "lastMoves": [
+        "p1",
+        "p4"
+      ],
+      "requiredPrecedences": 6
+    },
+    {
+      "id": 303,
+      "solutionCount": 1504,
+      "possibleOrders": 362880,
+      "states": 303,
+      "firstMoves": [
+        "p3",
+        "p4",
+        "p6"
+      ],
+      "lastMoves": [
+        "p2",
+        "p5",
+        "p9"
+      ],
+      "requiredPrecedences": 14
+    },
+    {
+      "id": 304,
+      "solutionCount": 60,
+      "possibleOrders": 5040,
+      "states": 100,
+      "firstMoves": [
+        "p1",
+        "p4",
+        "p7"
+      ],
+      "lastMoves": [
+        "p5"
+      ],
+      "requiredPrecedences": 10
+    },
+    {
+      "id": 305,
+      "solutionCount": 972,
+      "possibleOrders": 362880,
+      "states": 320,
+      "firstMoves": [
+        "p2",
+        "p4",
+        "p7",
+        "p8"
+      ],
+      "lastMoves": [
+        "p1",
+        "p6",
+        "p8"
+      ],
+      "requiredPrecedences": 15
+    },
+    {
+      "id": 306,
+      "solutionCount": 104,
+      "possibleOrders": 40320,
+      "states": 281,
+      "firstMoves": [
+        "p2",
+        "p4"
+      ],
+      "lastMoves": [
+        "p5",
+        "p6",
+        "p7"
+      ],
+      "requiredPrecedences": 15
+    },
+    {
+      "id": 307,
+      "solutionCount": 280,
+      "possibleOrders": 5040,
+      "states": 86,
+      "firstMoves": [
+        "p1",
+        "p4",
+        "p6"
+      ],
+      "lastMoves": [
+        "p3",
+        "p4",
+        "p5",
+        "p7"
+      ],
+      "requiredPrecedences": 5
+    },
+    {
+      "id": 308,
+      "solutionCount": 496,
+      "possibleOrders": 40320,
+      "states": 254,
+      "firstMoves": [
+        "p1",
+        "p5",
+        "p7",
+        "p8"
+      ],
+      "lastMoves": [
+        "p2",
+        "p3",
+        "p8"
+      ],
+      "requiredPrecedences": 10
+    },
+    {
+      "id": 309,
+      "solutionCount": 840,
+      "possibleOrders": 40320,
+      "states": 258,
+      "firstMoves": [
+        "p1",
+        "p4",
+        "p5",
+        "p7",
+        "p8"
+      ],
+      "lastMoves": [
+        "p3"
+      ],
+      "requiredPrecedences": 10
+    },
+    {
+      "id": 310,
+      "solutionCount": 41,
+      "possibleOrders": 5040,
+      "states": 76,
+      "firstMoves": [
+        "p2",
+        "p6"
+      ],
+      "lastMoves": [
+        "p4",
+        "p5",
+        "p7"
+      ],
+      "requiredPrecedences": 12
+    },
+    {
+      "id": 311,
+      "solutionCount": 890,
+      "possibleOrders": 362880,
+      "states": 293,
+      "firstMoves": [
+        "p1",
+        "p4",
+        "p8"
+      ],
+      "lastMoves": [
+        "p6",
+        "p7",
+        "p9"
+      ],
+      "requiredPrecedences": 16
+    },
+    {
+      "id": 312,
+      "solutionCount": 56,
+      "possibleOrders": 5040,
+      "states": 94,
+      "firstMoves": [
+        "p3",
+        "p5"
+      ],
+      "lastMoves": [
+        "p1",
+        "p6"
+      ],
+      "requiredPrecedences": 10
+    },
+    {
+      "id": 313,
+      "solutionCount": 756,
+      "possibleOrders": 362880,
+      "states": 230,
+      "firstMoves": [
+        "p2",
+        "p5",
+        "p8"
+      ],
+      "lastMoves": [
+        "p3",
+        "p6",
+        "p9"
+      ],
+      "requiredPrecedences": 14
+    },
+    {
+      "id": 314,
+      "solutionCount": 24,
+      "possibleOrders": 720,
+      "states": 34,
+      "firstMoves": [
+        "p2",
+        "p6"
+      ],
+      "lastMoves": [
+        "p3",
+        "p4",
+        "p5"
+      ],
+      "requiredPrecedences": 8
+    },
+    {
+      "id": 315,
+      "solutionCount": 256,
+      "possibleOrders": 40320,
+      "states": 222,
+      "firstMoves": [
+        "p1",
+        "p4",
+        "p8"
+      ],
+      "lastMoves": [
+        "p1",
+        "p2",
+        "p3"
+      ],
+      "requiredPrecedences": 12
+    },
+    {
+      "id": 316,
+      "solutionCount": 24,
+      "possibleOrders": 5040,
+      "states": 67,
+      "firstMoves": [
+        "p2",
+        "p4",
+        "p7"
+      ],
+      "lastMoves": [
+        "p6"
+      ],
+      "requiredPrecedences": 13
+    },
+    {
+      "id": 317,
+      "solutionCount": 320,
+      "possibleOrders": 40320,
+      "states": 174,
+      "firstMoves": [
+        "p2",
+        "p5",
+        "p6",
+        "p8"
+      ],
+      "lastMoves": [
+        "p4",
+        "p8"
+      ],
+      "requiredPrecedences": 11
+    },
+    {
+      "id": 318,
+      "solutionCount": 45,
+      "possibleOrders": 40320,
+      "states": 109,
+      "firstMoves": [
+        "p1",
+        "p6",
+        "p8"
+      ],
+      "lastMoves": [
+        "p3"
+      ],
+      "requiredPrecedences": 18
+    },
+    {
+      "id": 319,
+      "solutionCount": 384,
+      "possibleOrders": 40320,
+      "states": 296,
+      "firstMoves": [
+        "p4",
+        "p5",
+        "p6",
+        "p7",
+        "p8"
+      ],
+      "lastMoves": [
+        "p3",
+        "p8"
+      ],
+      "requiredPrecedences": 12
+    },
+    {
+      "id": 320,
+      "solutionCount": 33,
+      "possibleOrders": 720,
+      "states": 38,
+      "firstMoves": [
+        "p1",
+        "p4"
+      ],
+      "lastMoves": [
+        "p2",
+        "p5",
+        "p6"
+      ],
+      "requiredPrecedences": 7
+    },
+    {
+      "id": 321,
+      "solutionCount": 176,
+      "possibleOrders": 40320,
+      "states": 215,
+      "firstMoves": [
+        "p2",
+        "p8"
+      ],
+      "lastMoves": [
+        "p4",
+        "p5",
+        "p6",
+        "p7"
+      ],
+      "requiredPrecedences": 14
+    },
+    {
+      "id": 322,
+      "solutionCount": 72,
+      "possibleOrders": 40320,
+      "states": 188,
+      "firstMoves": [
+        "p2",
+        "p7",
+        "p8"
+      ],
+      "lastMoves": [
+        "p5",
+        "p6",
+        "p8"
+      ],
+      "requiredPrecedences": 17
+    },
+    {
+      "id": 323,
+      "solutionCount": 420,
+      "possibleOrders": 40320,
+      "states": 303,
+      "firstMoves": [
+        "p1",
+        "p4",
+        "p5",
+        "p6"
+      ],
+      "lastMoves": [
+        "p7",
+        "p8"
+      ],
+      "requiredPrecedences": 10
+    },
+    {
+      "id": 324,
+      "solutionCount": 82,
+      "possibleOrders": 5040,
+      "states": 77,
+      "firstMoves": [
+        "p2",
+        "p5"
+      ],
+      "lastMoves": [
+        "p3",
+        "p6",
+        "p7"
+      ],
+      "requiredPrecedences": 9
+    },
+    {
+      "id": 325,
+      "solutionCount": 756,
+      "possibleOrders": 362880,
+      "states": 320,
+      "firstMoves": [
+        "p4",
+        "p6",
+        "p7"
+      ],
+      "lastMoves": [
+        "p3",
+        "p4",
+        "p5",
+        "p8"
+      ],
+      "requiredPrecedences": 16
+    },
+    {
+      "id": 326,
+      "solutionCount": 72,
+      "possibleOrders": 5040,
+      "states": 82,
+      "firstMoves": [
+        "p1",
+        "p2",
+        "p6",
+        "p7"
+      ],
+      "lastMoves": [
+        "p4"
+      ],
+      "requiredPrecedences": 11
+    },
+    {
+      "id": 327,
+      "solutionCount": 210,
+      "possibleOrders": 5040,
+      "states": 102,
+      "firstMoves": [
+        "p1",
+        "p4",
+        "p6"
+      ],
+      "lastMoves": [
+        "p3",
+        "p5",
+        "p7"
+      ],
+      "requiredPrecedences": 5
+    },
+    {
+      "id": 328,
+      "solutionCount": 14,
+      "possibleOrders": 720,
+      "states": 53,
+      "firstMoves": [
+        "p3",
+        "p6"
+      ],
+      "lastMoves": [
+        "p4",
+        "p5"
+      ],
+      "requiredPrecedences": 8
+    },
+    {
+      "id": 329,
+      "solutionCount": 2920,
+      "possibleOrders": 362880,
+      "states": 377,
+      "firstMoves": [
+        "p1",
+        "p3",
+        "p7",
+        "p8",
+        "p9"
+      ],
+      "lastMoves": [
+        "p2",
+        "p4"
+      ],
+      "requiredPrecedences": 12
+    },
+    {
+      "id": 330,
+      "solutionCount": 32,
+      "possibleOrders": 5040,
+      "states": 55,
+      "firstMoves": [
+        "p2",
+        "p5",
+        "p6"
+      ],
+      "lastMoves": [
+        "p4",
+        "p7"
+      ],
+      "requiredPrecedences": 13
+    },
+    {
+      "id": 331,
+      "solutionCount": 2396,
+      "possibleOrders": 3628800,
+      "states": 321,
+      "firstMoves": [
+        "p1",
+        "p9",
+        "p10"
+      ],
+      "lastMoves": [
+        "p6",
+        "p7",
+        "p8"
+      ],
+      "requiredPrecedences": 22
+    },
+    {
+      "id": 332,
+      "solutionCount": 60,
+      "possibleOrders": 720,
+      "states": 56,
+      "firstMoves": [
+        "p1",
+        "p3",
+        "p4",
+        "p5"
+      ],
+      "lastMoves": [
+        "p2"
+      ],
+      "requiredPrecedences": 6
+    },
+    {
+      "id": 333,
+      "solutionCount": 240,
+      "possibleOrders": 40320,
+      "states": 156,
+      "firstMoves": [
+        "p1",
+        "p8"
+      ],
+      "lastMoves": [
+        "p4",
+        "p5",
+        "p7",
+        "p8"
+      ],
+      "requiredPrecedences": 13
+    },
+    {
+      "id": 334,
+      "solutionCount": 168,
+      "possibleOrders": 5040,
+      "states": 100,
+      "firstMoves": [
+        "p1",
+        "p4",
+        "p6",
+        "p7"
+      ],
+      "lastMoves": [
+        "p4",
+        "p5",
+        "p7"
+      ],
+      "requiredPrecedences": 7
+    },
+    {
+      "id": 335,
+      "solutionCount": 398,
+      "possibleOrders": 40320,
+      "states": 136,
+      "firstMoves": [
+        "p1",
+        "p5",
+        "p7"
+      ],
+      "lastMoves": [
+        "p3",
+        "p4",
+        "p6"
+      ],
+      "requiredPrecedences": 10
+    },
+    {
+      "id": 336,
+      "solutionCount": 252,
+      "possibleOrders": 362880,
+      "states": 244,
+      "firstMoves": [
+        "p1",
+        "p3",
+        "p5",
+        "p8"
+      ],
+      "lastMoves": [
+        "p7"
+      ],
+      "requiredPrecedences": 21
+    },
+    {
+      "id": 337,
+      "solutionCount": 305,
+      "possibleOrders": 40320,
+      "states": 122,
+      "firstMoves": [
+        "p2",
+        "p7",
+        "p8"
+      ],
+      "lastMoves": [
+        "p4",
+        "p6"
+      ],
+      "requiredPrecedences": 12
+    },
+    {
+      "id": 338,
+      "solutionCount": 137,
+      "possibleOrders": 40320,
+      "states": 218,
+      "firstMoves": [
+        "p1",
+        "p3",
+        "p7"
+      ],
+      "lastMoves": [
+        "p4",
+        "p8"
+      ],
+      "requiredPrecedences": 14
+    },
+    {
+      "id": 339,
+      "solutionCount": 28,
+      "possibleOrders": 720,
+      "states": 58,
+      "firstMoves": [
+        "p1",
+        "p5",
+        "p6"
+      ],
+      "lastMoves": [
+        "p3",
+        "p4"
+      ],
+      "requiredPrecedences": 7
+    },
+    {
+      "id": 340,
+      "solutionCount": 70,
+      "possibleOrders": 5040,
+      "states": 92,
+      "firstMoves": [
+        "p1",
+        "p2",
+        "p7"
+      ],
+      "lastMoves": [
+        "p5",
+        "p6",
+        "p7"
+      ],
+      "requiredPrecedences": 10
+    },
+    {
+      "id": 341,
+      "solutionCount": 1824,
+      "possibleOrders": 362880,
+      "states": 371,
+      "firstMoves": [
+        "p4",
+        "p6",
+        "p7",
+        "p8"
+      ],
+      "lastMoves": [
+        "p2",
+        "p5"
+      ],
+      "requiredPrecedences": 14
+    },
+    {
+      "id": 342,
+      "solutionCount": 126,
+      "possibleOrders": 5040,
+      "states": 112,
+      "firstMoves": [
+        "p4",
+        "p5",
+        "p6",
+        "p7"
+      ],
+      "lastMoves": [
+        "p1",
+        "p5",
+        "p6"
+      ],
+      "requiredPrecedences": 8
+    },
+    {
+      "id": 343,
+      "solutionCount": 257,
+      "possibleOrders": 362880,
+      "states": 195,
+      "firstMoves": [
+        "p6",
+        "p7"
+      ],
+      "lastMoves": [
+        "p3",
+        "p8"
+      ],
+      "requiredPrecedences": 19
+    },
+    {
+      "id": 344,
+      "solutionCount": 40,
+      "possibleOrders": 5040,
+      "states": 103,
+      "firstMoves": [
+        "p2",
+        "p3"
+      ],
+      "lastMoves": [
+        "p1",
+        "p5",
+        "p7"
+      ],
+      "requiredPrecedences": 11
+    },
+    {
+      "id": 345,
+      "solutionCount": 37,
+      "possibleOrders": 720,
+      "states": 44,
+      "firstMoves": [
+        "p1",
+        "p3",
+        "p5"
+      ],
+      "lastMoves": [
+        "p2",
+        "p6"
+      ],
+      "requiredPrecedences": 7
+    },
+    {
+      "id": 346,
+      "solutionCount": 480,
+      "possibleOrders": 40320,
+      "states": 192,
+      "firstMoves": [
+        "p1",
+        "p3",
+        "p4",
+        "p7"
+      ],
+      "lastMoves": [
+        "p3",
+        "p5"
+      ],
+      "requiredPrecedences": 10
+    },
+    {
+      "id": 347,
+      "solutionCount": 396,
+      "possibleOrders": 362880,
+      "states": 182,
+      "firstMoves": [
+        "p2",
+        "p7",
+        "p8"
+      ],
+      "lastMoves": [
+        "p6",
+        "p7",
+        "p9"
+      ],
+      "requiredPrecedences": 19
+    },
+    {
+      "id": 348,
+      "solutionCount": 45,
+      "possibleOrders": 5040,
+      "states": 90,
+      "firstMoves": [
+        "p1",
+        "p6",
+        "p7"
+      ],
+      "lastMoves": [
+        "p2",
+        "p3"
+      ],
+      "requiredPrecedences": 12
+    },
+    {
+      "id": 349,
+      "solutionCount": 221,
+      "possibleOrders": 40320,
+      "states": 113,
+      "firstMoves": [
+        "p1",
+        "p6"
+      ],
+      "lastMoves": [
+        "p3",
+        "p7",
+        "p8"
+      ],
+      "requiredPrecedences": 13
+    },
+    {
+      "id": 350,
+      "solutionCount": 60,
+      "possibleOrders": 40320,
+      "states": 91,
+      "firstMoves": [
+        "p1",
+        "p8"
+      ],
+      "lastMoves": [
+        "p5",
+        "p7"
+      ],
+      "requiredPrecedences": 16
+    },
+    {
+      "id": 351,
+      "solutionCount": 1,
+      "possibleOrders": 24,
+      "states": 15,
+      "firstMoves": [
+        "p1"
+      ],
+      "lastMoves": [
+        "p3"
+      ],
+      "requiredPrecedences": 6
+    },
+    {
+      "id": 352,
+      "solutionCount": 45,
+      "possibleOrders": 720,
+      "states": 59,
+      "firstMoves": [
+        "p4",
+        "p5",
+        "p6"
+      ],
+      "lastMoves": [
+        "p2",
+        "p3"
+      ],
+      "requiredPrecedences": 5
+    },
+    {
+      "id": 353,
+      "solutionCount": 236,
+      "possibleOrders": 40320,
+      "states": 208,
+      "firstMoves": [
+        "p2",
+        "p4",
+        "p8"
+      ],
+      "lastMoves": [
+        "p3",
+        "p6",
+        "p7"
+      ],
+      "requiredPrecedences": 12
+    },
+    {
+      "id": 354,
+      "solutionCount": 10,
+      "possibleOrders": 720,
+      "states": 32,
+      "firstMoves": [
+        "p5",
+        "p6"
+      ],
+      "lastMoves": [
+        "p2",
+        "p4"
+      ],
+      "requiredPrecedences": 10
+    },
+    {
+      "id": 355,
+      "solutionCount": 324,
+      "possibleOrders": 40320,
+      "states": 167,
+      "firstMoves": [
+        "p1",
+        "p4",
+        "p7",
+        "p8"
+      ],
+      "lastMoves": [
+        "p5",
+        "p6"
+      ],
+      "requiredPrecedences": 11
+    },
+    {
+      "id": 356,
+      "solutionCount": 40,
+      "possibleOrders": 40320,
+      "states": 127,
+      "firstMoves": [
+        "p1",
+        "p6",
+        "p7"
+      ],
+      "lastMoves": [
+        "p8"
+      ],
+      "requiredPrecedences": 18
+    },
+    {
+      "id": 357,
+      "solutionCount": 60,
+      "possibleOrders": 720,
+      "states": 63,
+      "firstMoves": [
+        "p1",
+        "p3",
+        "p4",
+        "p5"
+      ],
+      "lastMoves": [
+        "p2"
+      ],
+      "requiredPrecedences": 6
+    },
+    {
+      "id": 358,
+      "solutionCount": 45,
+      "possibleOrders": 5040,
+      "states": 77,
+      "firstMoves": [
+        "p1",
+        "p6",
+        "p7"
+      ],
+      "lastMoves": [
+        "p3"
+      ],
+      "requiredPrecedences": 11
+    },
+    {
+      "id": 359,
+      "solutionCount": 1344,
+      "possibleOrders": 362880,
+      "states": 244,
+      "firstMoves": [
+        "p3",
+        "p4",
+        "p7",
+        "p9"
+      ],
+      "lastMoves": [
+        "p1",
+        "p5",
+        "p8"
+      ],
+      "requiredPrecedences": 14
+    },
+    {
+      "id": 360,
+      "solutionCount": 30,
+      "possibleOrders": 5040,
+      "states": 72,
+      "firstMoves": [
+        "p1",
+        "p5"
+      ],
+      "lastMoves": [
+        "p2",
+        "p6",
+        "p7"
+      ],
+      "requiredPrecedences": 13
+    },
+    {
+      "id": 361,
+      "solutionCount": 390,
+      "possibleOrders": 362880,
+      "states": 168,
+      "firstMoves": [
+        "p7",
+        "p8",
+        "p9"
+      ],
+      "lastMoves": [
+        "p3",
+        "p4"
+      ],
+      "requiredPrecedences": 18
+    },
+    {
+      "id": 362,
+      "solutionCount": 14,
+      "possibleOrders": 720,
+      "states": 42,
+      "firstMoves": [
+        "p4",
+        "p6"
+      ],
+      "lastMoves": [
+        "p1",
+        "p5"
+      ],
+      "requiredPrecedences": 9
+    },
+    {
+      "id": 363,
+      "solutionCount": 106,
+      "possibleOrders": 362880,
+      "states": 305,
+      "firstMoves": [
+        "p7",
+        "p8",
+        "p9"
+      ],
+      "lastMoves": [
+        "p6"
+      ],
+      "requiredPrecedences": 23
+    },
+    {
+      "id": 364,
+      "solutionCount": 35,
+      "possibleOrders": 720,
+      "states": 45,
+      "firstMoves": [
+        "p1",
+        "p3",
+        "p4"
+      ],
+      "lastMoves": [
+        "p2",
+        "p6"
+      ],
+      "requiredPrecedences": 6
+    },
+    {
+      "id": 365,
+      "solutionCount": 90,
+      "possibleOrders": 5040,
+      "states": 73,
+      "firstMoves": [
+        "p1",
+        "p2",
+        "p7"
+      ],
+      "lastMoves": [
+        "p4",
+        "p6"
+      ],
+      "requiredPrecedences": 8
+    },
+    {
+      "id": 366,
+      "solutionCount": 183,
+      "possibleOrders": 40320,
+      "states": 194,
+      "firstMoves": [
+        "p1",
+        "p6",
+        "p7"
+      ],
+      "lastMoves": [
+        "p2",
+        "p8"
+      ],
+      "requiredPrecedences": 13
+    },
+    {
+      "id": 367,
+      "solutionCount": 432,
+      "possibleOrders": 40320,
+      "states": 204,
+      "firstMoves": [
+        "p2",
+        "p5",
+        "p6"
+      ],
+      "lastMoves": [
+        "p4",
+        "p5",
+        "p7",
+        "p8"
+      ],
+      "requiredPrecedences": 11
+    },
+    {
+      "id": 368,
+      "solutionCount": 48,
+      "possibleOrders": 40320,
+      "states": 116,
+      "firstMoves": [
+        "p7",
+        "p8"
+      ],
+      "lastMoves": [
+        "p6",
+        "p7"
+      ],
+      "requiredPrecedences": 17
+    },
+    {
+      "id": 369,
+      "solutionCount": 504,
+      "possibleOrders": 40320,
+      "states": 208,
+      "firstMoves": [
+        "p3",
+        "p5",
+        "p6",
+        "p7"
+      ],
+      "lastMoves": [
+        "p1",
+        "p4",
+        "p7"
+      ],
+      "requiredPrecedences": 9
+    },
+    {
+      "id": 370,
+      "solutionCount": 37,
+      "possibleOrders": 720,
+      "states": 49,
+      "firstMoves": [
+        "p2",
+        "p6"
+      ],
+      "lastMoves": [
+        "p3",
+        "p4",
+        "p5"
+      ],
+      "requiredPrecedences": 7
+    },
+    {
+      "id": 371,
+      "solutionCount": 480,
+      "possibleOrders": 40320,
+      "states": 217,
+      "firstMoves": [
+        "p4",
+        "p5",
+        "p7",
+        "p8"
+      ],
+      "lastMoves": [
+        "p3",
+        "p8"
+      ],
+      "requiredPrecedences": 10
+    },
+    {
+      "id": 372,
+      "solutionCount": 70,
+      "possibleOrders": 40320,
+      "states": 108,
+      "firstMoves": [
+        "p1",
+        "p8"
+      ],
+      "lastMoves": [
+        "p6"
+      ],
+      "requiredPrecedences": 16
+    },
+    {
+      "id": 373,
+      "solutionCount": 1776,
+      "possibleOrders": 362880,
+      "states": 336,
+      "firstMoves": [
+        "p1",
+        "p4",
+        "p5",
+        "p8",
+        "p9"
+      ],
+      "lastMoves": [
+        "p3"
+      ],
+      "requiredPrecedences": 15
+    },
+    {
+      "id": 374,
+      "solutionCount": 30,
+      "possibleOrders": 5040,
+      "states": 57,
+      "firstMoves": [
+        "p2"
+      ],
+      "lastMoves": [
+        "p4",
+        "p5",
+        "p7"
+      ],
+      "requiredPrecedences": 12
+    },
+    {
+      "id": 375,
+      "solutionCount": 1260,
+      "possibleOrders": 3628800,
+      "states": 1597,
+      "firstMoves": [
+        "p2",
+        "p5",
+        "p10"
+      ],
+      "lastMoves": [
+        "p2",
+        "p3",
+        "p4"
+      ],
+      "requiredPrecedences": 16
+    },
+    {
+      "id": 376,
+      "solutionCount": 160,
+      "possibleOrders": 5040,
+      "states": 121,
+      "firstMoves": [
+        "p2",
+        "p4",
+        "p5",
+        "p7"
+      ],
+      "lastMoves": [
+        "p1",
+        "p6"
+      ],
+      "requiredPrecedences": 8
+    },
+    {
+      "id": 377,
+      "solutionCount": 40,
+      "possibleOrders": 720,
+      "states": 88,
+      "firstMoves": [
+        "p1",
+        "p3",
+        "p6"
+      ],
+      "lastMoves": [
+        "p2",
+        "p4"
+      ],
+      "requiredPrecedences": 6
+    },
+    {
+      "id": 378,
+      "solutionCount": 224,
+      "possibleOrders": 40320,
+      "states": 188,
+      "firstMoves": [
+        "p2",
+        "p5",
+        "p7"
+      ],
+      "lastMoves": [
+        "p3",
+        "p5",
+        "p8"
+      ],
+      "requiredPrecedences": 12
+    },
+    {
+      "id": 379,
+      "solutionCount": 352,
+      "possibleOrders": 40320,
+      "states": 190,
+      "firstMoves": [
+        "p2",
+        "p4",
+        "p7",
+        "p8"
+      ],
+      "lastMoves": [
+        "p1",
+        "p5",
+        "p8"
+      ],
+      "requiredPrecedences": 12
+    },
+    {
+      "id": 380,
+      "solutionCount": 44,
+      "possibleOrders": 5040,
+      "states": 69,
+      "firstMoves": [
+        "p1",
+        "p7"
+      ],
+      "lastMoves": [
+        "p2",
+        "p5"
+      ],
+      "requiredPrecedences": 12
+    },
+    {
+      "id": 381,
+      "solutionCount": 1008,
+      "possibleOrders": 362880,
+      "states": 502,
+      "firstMoves": [
+        "p1",
+        "p2",
+        "p8"
+      ],
+      "lastMoves": [
+        "p1",
+        "p5",
+        "p6",
+        "p9"
+      ],
+      "requiredPrecedences": 13
+    },
+    {
+      "id": 382,
+      "solutionCount": 8,
+      "possibleOrders": 120,
+      "states": 26,
+      "firstMoves": [
+        "p2"
+      ],
+      "lastMoves": [
+        "p3",
+        "p4",
+        "p5"
+      ],
+      "requiredPrecedences": 6
+    },
+    {
+      "id": 383,
+      "solutionCount": 386,
+      "possibleOrders": 40320,
+      "states": 219,
+      "firstMoves": [
+        "p2",
+        "p4",
+        "p6"
+      ],
+      "lastMoves": [
+        "p3",
+        "p5",
+        "p8"
+      ],
+      "requiredPrecedences": 10
+    },
+    {
+      "id": 384,
+      "solutionCount": 26,
+      "possibleOrders": 5040,
+      "states": 76,
+      "firstMoves": [
+        "p4",
+        "p7"
+      ],
+      "lastMoves": [
+        "p1"
+      ],
+      "requiredPrecedences": 13
+    },
+    {
+      "id": 385,
+      "solutionCount": 576,
+      "possibleOrders": 40320,
+      "states": 196,
+      "firstMoves": [
+        "p1",
+        "p3",
+        "p4",
+        "p5",
+        "p8"
+      ],
+      "lastMoves": [
+        "p5",
+        "p6"
+      ],
+      "requiredPrecedences": 11
+    },
+    {
+      "id": 386,
+      "solutionCount": 159,
+      "possibleOrders": 40320,
+      "states": 141,
+      "firstMoves": [
+        "p1",
+        "p4",
+        "p8"
+      ],
+      "lastMoves": [
+        "p5",
+        "p7"
+      ],
+      "requiredPrecedences": 14
+    },
+    {
+      "id": 387,
+      "solutionCount": 230,
+      "possibleOrders": 40320,
+      "states": 127,
+      "firstMoves": [
+        "p2",
+        "p7",
+        "p8"
+      ],
+      "lastMoves": [
+        "p4",
+        "p5",
+        "p6"
+      ],
+      "requiredPrecedences": 12
+    },
+    {
+      "id": 388,
+      "solutionCount": 128,
+      "possibleOrders": 40320,
+      "states": 122,
+      "firstMoves": [
+        "p4",
+        "p6",
+        "p7"
+      ],
+      "lastMoves": [
+        "p1",
+        "p7"
+      ],
+      "requiredPrecedences": 14
+    },
+    {
+      "id": 389,
+      "solutionCount": 136,
+      "possibleOrders": 5040,
+      "states": 70,
+      "firstMoves": [
+        "p1",
+        "p3",
+        "p5"
+      ],
+      "lastMoves": [
+        "p2",
+        "p6",
+        "p7"
+      ],
+      "requiredPrecedences": 8
+    },
+    {
+      "id": 390,
+      "solutionCount": 36,
+      "possibleOrders": 5040,
+      "states": 74,
+      "firstMoves": [
+        "p1",
+        "p5",
+        "p7"
+      ],
+      "lastMoves": [
+        "p4"
+      ],
+      "requiredPrecedences": 12
+    },
+    {
+      "id": 391,
+      "solutionCount": 165,
+      "possibleOrders": 40320,
+      "states": 185,
+      "firstMoves": [
+        "p1",
+        "p4",
+        "p5"
+      ],
+      "lastMoves": [
+        "p2",
+        "p6"
+      ],
+      "requiredPrecedences": 13
+    },
+    {
+      "id": 392,
+      "solutionCount": 510,
+      "possibleOrders": 40320,
+      "states": 138,
+      "firstMoves": [
+        "p1",
+        "p4",
+        "p6"
+      ],
+      "lastMoves": [
+        "p3",
+        "p8"
+      ],
+      "requiredPrecedences": 10
+    },
+    {
+      "id": 393,
+      "solutionCount": 84,
+      "possibleOrders": 362880,
+      "states": 220,
+      "firstMoves": [
+        "p1",
+        "p3",
+        "p7"
+      ],
+      "lastMoves": [
+        "p9"
+      ],
+      "requiredPrecedences": 24
+    },
+    {
+      "id": 394,
+      "solutionCount": 280,
+      "possibleOrders": 40320,
+      "states": 135,
+      "firstMoves": [
+        "p2",
+        "p7"
+      ],
+      "lastMoves": [
+        "p4",
+        "p5",
+        "p6"
+      ],
+      "requiredPrecedences": 10
+    },
+    {
+      "id": 395,
+      "solutionCount": 26,
+      "possibleOrders": 720,
+      "states": 49,
+      "firstMoves": [
+        "p1",
+        "p4",
+        "p5"
+      ],
+      "lastMoves": [
+        "p3",
+        "p6"
+      ],
+      "requiredPrecedences": 7
+    },
+    {
+      "id": 396,
+      "solutionCount": 140,
+      "possibleOrders": 5040,
+      "states": 170,
+      "firstMoves": [
+        "p3",
+        "p4",
+        "p6",
+        "p7"
+      ],
+      "lastMoves": [
+        "p1",
+        "p4"
+      ],
+      "requiredPrecedences": 8
+    },
+    {
+      "id": 397,
+      "solutionCount": 432,
+      "possibleOrders": 362880,
+      "states": 300,
+      "firstMoves": [
+        "p4",
+        "p6",
+        "p8",
+        "p9"
+      ],
+      "lastMoves": [
+        "p1",
+        "p7",
+        "p8"
+      ],
+      "requiredPrecedences": 19
+    },
+    {
+      "id": 398,
+      "solutionCount": 84,
+      "possibleOrders": 5040,
+      "states": 80,
+      "firstMoves": [
+        "p2",
+        "p6"
+      ],
+      "lastMoves": [
+        "p4",
+        "p5",
+        "p7"
+      ],
+      "requiredPrecedences": 8
+    },
+    {
+      "id": 399,
+      "solutionCount": 236,
+      "possibleOrders": 40320,
+      "states": 107,
+      "firstMoves": [
+        "p2",
+        "p4",
+        "p6"
+      ],
+      "lastMoves": [
+        "p1",
+        "p5",
+        "p8"
+      ],
+      "requiredPrecedences": 13
+    },
+    {
+      "id": 400,
+      "solutionCount": 190,
+      "possibleOrders": 362880,
+      "states": 206,
+      "firstMoves": [
+        "p4",
+        "p6",
+        "p9"
+      ],
+      "lastMoves": [
+        "p3",
+        "p5",
+        "p7"
+      ],
+      "requiredPrecedences": 23
+    },
+    {
+      "id": 401,
+      "solutionCount": 123,
+      "possibleOrders": 40320,
+      "states": 142,
+      "firstMoves": [
+        "p1",
+        "p4",
+        "p8"
+      ],
+      "lastMoves": [
+        "p3",
+        "p7"
+      ],
+      "requiredPrecedences": 14
+    },
+    {
+      "id": 402,
+      "solutionCount": 14,
+      "possibleOrders": 720,
+      "states": 50,
+      "firstMoves": [
+        "p4",
+        "p5"
+      ],
+      "lastMoves": [
+        "p3",
+        "p6"
+      ],
+      "requiredPrecedences": 9
+    },
+    {
+      "id": 403,
+      "solutionCount": 22,
+      "possibleOrders": 5040,
+      "states": 125,
+      "firstMoves": [
+        "p6",
+        "p7"
+      ],
+      "lastMoves": [
+        "p1",
+        "p4"
+      ],
+      "requiredPrecedences": 13
+    },
+    {
+      "id": 404,
+      "solutionCount": 7,
+      "possibleOrders": 720,
+      "states": 43,
+      "firstMoves": [
+        "p1",
+        "p4"
+      ],
+      "lastMoves": [
+        "p3"
+      ],
+      "requiredPrecedences": 11
+    },
+    {
+      "id": 405,
+      "solutionCount": 672,
+      "possibleOrders": 40320,
+      "states": 226,
+      "firstMoves": [
+        "p1",
+        "p3",
+        "p6",
+        "p8"
+      ],
+      "lastMoves": [
+        "p2",
+        "p7",
+        "p8"
+      ],
+      "requiredPrecedences": 8
+    },
+    {
+      "id": 406,
+      "solutionCount": 120,
+      "possibleOrders": 5040,
+      "states": 150,
+      "firstMoves": [
+        "p1",
+        "p3",
+        "p4",
+        "p7"
+      ],
+      "lastMoves": [
+        "p5"
+      ],
+      "requiredPrecedences": 9
+    },
+    {
+      "id": 407,
+      "solutionCount": 30,
+      "possibleOrders": 720,
+      "states": 44,
+      "firstMoves": [
+        "p4",
+        "p5",
+        "p6"
+      ],
+      "lastMoves": [
+        "p1",
+        "p4",
+        "p5"
+      ],
+      "requiredPrecedences": 6
+    },
+    {
+      "id": 408,
+      "solutionCount": 16,
+      "possibleOrders": 5040,
+      "states": 59,
+      "firstMoves": [
+        "p1",
+        "p7"
+      ],
+      "lastMoves": [
+        "p6"
+      ],
+      "requiredPrecedences": 14
+    },
+    {
+      "id": 409,
+      "solutionCount": 28,
+      "possibleOrders": 5040,
+      "states": 106,
+      "firstMoves": [
+        "p1",
+        "p5",
+        "p6"
+      ],
+      "lastMoves": [
+        "p3",
+        "p6"
+      ],
+      "requiredPrecedences": 12
+    },
+    {
+      "id": 410,
+      "solutionCount": 6,
+      "possibleOrders": 5040,
+      "states": 123,
+      "firstMoves": [
+        "p4",
+        "p7"
+      ],
+      "lastMoves": [
+        "p5"
+      ],
+      "requiredPrecedences": 17
+    },
+    {
+      "id": 411,
+      "solutionCount": 64,
+      "possibleOrders": 40320,
+      "states": 234,
+      "firstMoves": [
+        "p1",
+        "p5",
+        "p6"
+      ],
+      "lastMoves": [
+        "p4",
+        "p6",
+        "p7"
+      ],
+      "requiredPrecedences": 17
+    },
+    {
+      "id": 412,
+      "solutionCount": 41,
+      "possibleOrders": 5040,
+      "states": 115,
+      "firstMoves": [
+        "p4",
+        "p6",
+        "p7"
+      ],
+      "lastMoves": [
+        "p3",
+        "p5"
+      ],
+      "requiredPrecedences": 12
+    },
+    {
+      "id": 413,
+      "solutionCount": 84,
+      "possibleOrders": 40320,
+      "states": 371,
+      "firstMoves": [
+        "p2",
+        "p5"
+      ],
+      "lastMoves": [
+        "p4",
+        "p7"
+      ],
+      "requiredPrecedences": 16
+    },
+    {
+      "id": 414,
+      "solutionCount": 24,
+      "possibleOrders": 720,
+      "states": 48,
+      "firstMoves": [
+        "p2",
+        "p6"
+      ],
+      "lastMoves": [
+        "p1",
+        "p4",
+        "p5"
+      ],
+      "requiredPrecedences": 8
+    },
+    {
+      "id": 415,
+      "solutionCount": 22,
+      "possibleOrders": 5040,
+      "states": 52,
+      "firstMoves": [
+        "p2",
+        "p4",
+        "p6"
+      ],
+      "lastMoves": [
+        "p3",
+        "p7"
+      ],
+      "requiredPrecedences": 14
+    },
+    {
+      "id": 416,
+      "solutionCount": 4,
+      "possibleOrders": 720,
+      "states": 36,
+      "firstMoves": [
+        "p1"
+      ],
+      "lastMoves": [
+        "p4"
+      ],
+      "requiredPrecedences": 12
+    },
+    {
+      "id": 417,
+      "solutionCount": 182,
+      "possibleOrders": 40320,
+      "states": 134,
+      "firstMoves": [
+        "p1",
+        "p6",
+        "p7",
+        "p8"
+      ],
+      "lastMoves": [
+        "p5"
+      ],
+      "requiredPrecedences": 14
+    },
+    {
+      "id": 418,
+      "solutionCount": 18,
+      "possibleOrders": 5040,
+      "states": 75,
+      "firstMoves": [
+        "p5",
+        "p7"
+      ],
+      "lastMoves": [
+        "p3",
+        "p6"
+      ],
+      "requiredPrecedences": 13
+    },
+    {
+      "id": 419,
+      "solutionCount": 42,
+      "possibleOrders": 5040,
+      "states": 70,
+      "firstMoves": [
+        "p4",
+        "p6",
+        "p7"
+      ],
+      "lastMoves": [
+        "p1",
+        "p5",
+        "p6"
+      ],
+      "requiredPrecedences": 12
+    },
+    {
+      "id": 420,
+      "solutionCount": 8,
+      "possibleOrders": 120,
+      "states": 24,
+      "firstMoves": [
+        "p1",
+        "p5"
+      ],
+      "lastMoves": [
+        "p3"
+      ],
+      "requiredPrecedences": 6
+    },
+    {
+      "id": 421,
+      "solutionCount": 60,
+      "possibleOrders": 5040,
+      "states": 88,
+      "firstMoves": [
+        "p2",
+        "p5",
+        "p6"
+      ],
+      "lastMoves": [
+        "p4"
+      ],
+      "requiredPrecedences": 10
+    },
+    {
+      "id": 422,
+      "solutionCount": 11,
+      "possibleOrders": 720,
+      "states": 43,
+      "firstMoves": [
+        "p1",
+        "p6"
+      ],
+      "lastMoves": [
+        "p2",
+        "p5"
+      ],
+      "requiredPrecedences": 10
+    },
+    {
+      "id": 423,
+      "solutionCount": 226,
+      "possibleOrders": 40320,
+      "states": 137,
+      "firstMoves": [
+        "p3",
+        "p4",
+        "p7"
+      ],
+      "lastMoves": [
+        "p5",
+        "p8"
+      ],
+      "requiredPrecedences": 13
+    },
+    {
+      "id": 424,
+      "solutionCount": 6,
+      "possibleOrders": 720,
+      "states": 39,
+      "firstMoves": [
+        "p2"
+      ],
+      "lastMoves": [
+        "p4",
+        "p6"
+      ],
+      "requiredPrecedences": 11
+    },
+    {
+      "id": 425,
+      "solutionCount": 4,
+      "possibleOrders": 5040,
+      "states": 66,
+      "firstMoves": [
+        "p1"
+      ],
+      "lastMoves": [
+        "p6",
+        "p7"
+      ],
+      "requiredPrecedences": 18
+    },
+    {
+      "id": 426,
+      "solutionCount": 270,
+      "possibleOrders": 40320,
+      "states": 156,
+      "firstMoves": [
+        "p3",
+        "p4",
+        "p7"
+      ],
+      "lastMoves": [
+        "p2",
+        "p8"
+      ],
+      "requiredPrecedences": 11
+    },
+    {
+      "id": 427,
+      "solutionCount": 36,
+      "possibleOrders": 720,
+      "states": 46,
+      "firstMoves": [
+        "p1",
+        "p6"
+      ],
+      "lastMoves": [
+        "p3",
+        "p4",
+        "p6"
+      ],
+      "requiredPrecedences": 6
+    },
+    {
+      "id": 428,
+      "solutionCount": 120,
+      "possibleOrders": 40320,
+      "states": 128,
+      "firstMoves": [
+        "p3",
+        "p6",
+        "p8"
+      ],
+      "lastMoves": [
+        "p2",
+        "p8"
+      ],
+      "requiredPrecedences": 15
+    },
+    {
+      "id": 429,
+      "solutionCount": 1696,
+      "possibleOrders": 362880,
+      "states": 477,
+      "firstMoves": [
+        "p3",
+        "p4",
+        "p5",
+        "p7"
+      ],
+      "lastMoves": [
+        "p6",
+        "p8",
+        "p9"
+      ],
+      "requiredPrecedences": 14
+    },
+    {
+      "id": 430,
+      "solutionCount": 230,
+      "possibleOrders": 40320,
+      "states": 129,
+      "firstMoves": [
+        "p3",
+        "p8"
+      ],
+      "lastMoves": [
+        "p2",
+        "p5",
+        "p6"
+      ],
+      "requiredPrecedences": 12
+    },
+    {
+      "id": 431,
+      "solutionCount": 3350,
+      "possibleOrders": 3628800,
+      "states": 472,
+      "firstMoves": [
+        "p1",
+        "p7",
+        "p10"
+      ],
+      "lastMoves": [
+        "p3",
+        "p5",
+        "p7",
+        "p9"
+      ],
+      "requiredPrecedences": 20
+    },
+    {
+      "id": 432,
+      "solutionCount": 35,
+      "possibleOrders": 720,
+      "states": 39,
+      "firstMoves": [
+        "p1",
+        "p3"
+      ],
+      "lastMoves": [
+        "p2",
+        "p5",
+        "p6"
+      ],
+      "requiredPrecedences": 6
+    },
+    {
+      "id": 433,
+      "solutionCount": 140,
+      "possibleOrders": 40320,
+      "states": 167,
+      "firstMoves": [
+        "p1",
+        "p6",
+        "p7",
+        "p8"
+      ],
+      "lastMoves": [
+        "p5"
+      ],
+      "requiredPrecedences": 15
+    },
+    {
+      "id": 434,
+      "solutionCount": 750,
+      "possibleOrders": 362880,
+      "states": 276,
+      "firstMoves": [
+        "p1",
+        "p5",
+        "p6"
+      ],
+      "lastMoves": [
+        "p2",
+        "p4",
+        "p8"
+      ],
+      "requiredPrecedences": 14
+    },
+    {
+      "id": 435,
+      "solutionCount": 504,
+      "possibleOrders": 40320,
+      "states": 168,
+      "firstMoves": [
+        "p1",
+        "p5",
+        "p7",
+        "p8"
+      ],
+      "lastMoves": [
+        "p3",
+        "p6",
+        "p7",
+        "p8"
+      ],
+      "requiredPrecedences": 10
+    },
+    {
+      "id": 436,
+      "solutionCount": 450,
+      "possibleOrders": 3628800,
+      "states": 301,
+      "firstMoves": [
+        "p1",
+        "p5",
+        "p6",
+        "p8"
+      ],
+      "lastMoves": [
+        "p9"
+      ],
+      "requiredPrecedences": 27
+    },
+    {
+      "id": 437,
+      "solutionCount": 1392,
+      "possibleOrders": 362880,
+      "states": 320,
+      "firstMoves": [
+        "p2",
+        "p4",
+        "p6",
+        "p7"
+      ],
+      "lastMoves": [
+        "p3",
+        "p8",
+        "p9"
+      ],
+      "requiredPrecedences": 14
+    },
+    {
+      "id": 438,
+      "solutionCount": 103,
+      "possibleOrders": 362880,
+      "states": 169,
+      "firstMoves": [
+        "p7",
+        "p9"
+      ],
+      "lastMoves": [
+        "p6"
+      ],
+      "requiredPrecedences": 23
+    },
+    {
+      "id": 439,
+      "solutionCount": 42,
+      "possibleOrders": 720,
+      "states": 52,
+      "firstMoves": [
+        "p1",
+        "p4",
+        "p6"
+      ],
+      "lastMoves": [
+        "p3",
+        "p5"
+      ],
+      "requiredPrecedences": 6
+    },
+    {
+      "id": 440,
+      "solutionCount": 1571,
+      "possibleOrders": 362880,
+      "states": 410,
+      "firstMoves": [
+        "p5",
+        "p7",
+        "p9"
+      ],
+      "lastMoves": [
+        "p2",
+        "p6",
+        "p8"
+      ],
+      "requiredPrecedences": 14
+    },
+    {
+      "id": 441,
+      "solutionCount": 1890,
+      "possibleOrders": 362880,
+      "states": 268,
+      "firstMoves": [
+        "p1",
+        "p5",
+        "p6",
+        "p7",
+        "p9"
+      ],
+      "lastMoves": [
+        "p3",
+        "p7"
+      ],
+      "requiredPrecedences": 14
+    },
+    {
+      "id": 442,
+      "solutionCount": 2650,
+      "possibleOrders": 362880,
+      "states": 382,
+      "firstMoves": [
+        "p5",
+        "p6",
+        "p7",
+        "p8"
+      ],
+      "lastMoves": [
+        "p2",
+        "p3",
+        "p9"
+      ],
+      "requiredPrecedences": 12
+    },
+    {
+      "id": 443,
+      "solutionCount": 6048,
+      "possibleOrders": 3628800,
+      "states": 946,
+      "firstMoves": [
+        "p1",
+        "p4",
+        "p6",
+        "p9",
+        "p10"
+      ],
+      "lastMoves": [
+        "p5"
+      ],
+      "requiredPrecedences": 17
+    },
+    {
+      "id": 444,
+      "solutionCount": 123,
+      "possibleOrders": 40320,
+      "states": 142,
+      "firstMoves": [
+        "p2",
+        "p7"
+      ],
+      "lastMoves": [
+        "p4",
+        "p6"
+      ],
+      "requiredPrecedences": 15
+    },
+    {
+      "id": 445,
+      "solutionCount": 114,
+      "possibleOrders": 5040,
+      "states": 70,
+      "firstMoves": [
+        "p1",
+        "p3",
+        "p7"
+      ],
+      "lastMoves": [
+        "p2",
+        "p4",
+        "p5"
+      ],
+      "requiredPrecedences": 9
+    },
+    {
+      "id": 446,
+      "solutionCount": 759,
+      "possibleOrders": 362880,
+      "states": 214,
+      "firstMoves": [
+        "p1",
+        "p4",
+        "p7",
+        "p9"
+      ],
+      "lastMoves": [
+        "p3",
+        "p8"
+      ],
+      "requiredPrecedences": 16
+    },
+    {
+      "id": 447,
+      "solutionCount": 4180,
+      "possibleOrders": 3628800,
+      "states": 470,
+      "firstMoves": [
+        "p1",
+        "p8",
+        "p9",
+        "p10"
+      ],
+      "lastMoves": [
+        "p4",
+        "p5",
+        "p6",
+        "p8"
+      ],
+      "requiredPrecedences": 20
+    },
+    {
+      "id": 448,
+      "solutionCount": 152,
+      "possibleOrders": 40320,
+      "states": 124,
+      "firstMoves": [
+        "p4",
+        "p5",
+        "p7"
+      ],
+      "lastMoves": [
+        "p4",
+        "p6"
+      ],
+      "requiredPrecedences": 14
+    },
+    {
+      "id": 449,
+      "solutionCount": 1344,
+      "possibleOrders": 362880,
+      "states": 338,
+      "firstMoves": [
+        "p1",
+        "p2",
+        "p3",
+        "p5",
+        "p7"
+      ],
+      "lastMoves": [
+        "p6"
+      ],
+      "requiredPrecedences": 15
+    },
+    {
+      "id": 450,
+      "solutionCount": 368,
+      "possibleOrders": 362880,
+      "states": 398,
+      "firstMoves": [
+        "p2",
+        "p7",
+        "p9"
+      ],
+      "lastMoves": [
+        "p3",
+        "p5"
+      ],
+      "requiredPrecedences": 18
+    },
+    {
+      "id": 451,
+      "solutionCount": 6610,
+      "possibleOrders": 3628800,
+      "states": 663,
+      "firstMoves": [
+        "p1",
+        "p4",
+        "p5",
+        "p6"
+      ],
+      "lastMoves": [
+        "p8",
+        "p9",
+        "p10"
+      ],
+      "requiredPrecedences": 18
+    },
+    {
+      "id": 452,
+      "solutionCount": 26,
+      "possibleOrders": 720,
+      "states": 49,
+      "firstMoves": [
+        "p1",
+        "p4",
+        "p6"
+      ],
+      "lastMoves": [
+        "p2",
+        "p3"
+      ],
+      "requiredPrecedences": 7
+    },
+    {
+      "id": 453,
+      "solutionCount": 5670,
+      "possibleOrders": 3628800,
+      "states": 758,
+      "firstMoves": [
+        "p1",
+        "p3",
+        "p7",
+        "p8",
+        "p9"
+      ],
+      "lastMoves": [
+        "p10"
+      ],
+      "requiredPrecedences": 17
+    },
+    {
+      "id": 454,
+      "solutionCount": 192,
+      "possibleOrders": 40320,
+      "states": 244,
+      "firstMoves": [
+        "p1",
+        "p6",
+        "p7",
+        "p8"
+      ],
+      "lastMoves": [
+        "p5",
+        "p6"
+      ],
+      "requiredPrecedences": 13
+    },
+    {
+      "id": 455,
+      "solutionCount": 5250,
+      "possibleOrders": 3628800,
+      "states": 687,
+      "firstMoves": [
+        "p1",
+        "p3",
+        "p5",
+        "p8",
+        "p9"
+      ],
+      "lastMoves": [
+        "p3",
+        "p6",
+        "p10"
+      ],
+      "requiredPrecedences": 17
+    },
+    {
+      "id": 456,
+      "solutionCount": 355,
+      "possibleOrders": 3628800,
+      "states": 585,
+      "firstMoves": [
+        "p1",
+        "p6",
+        "p7"
+      ],
+      "lastMoves": [
+        "p5",
+        "p8"
+      ],
+      "requiredPrecedences": 27
+    },
+    {
+      "id": 457,
+      "solutionCount": 420,
+      "possibleOrders": 5040,
+      "states": 174,
+      "firstMoves": [
+        "p2",
+        "p4",
+        "p6",
+        "p7"
+      ],
+      "lastMoves": [
+        "p3",
+        "p5",
+        "p6",
+        "p7"
+      ],
+      "requiredPrecedences": 4
+    },
+    {
+      "id": 458,
+      "solutionCount": 4104,
+      "possibleOrders": 3628800,
+      "states": 391,
+      "firstMoves": [
+        "p2",
+        "p4",
+        "p8",
+        "p10"
+      ],
+      "lastMoves": [
+        "p6",
+        "p7",
+        "p9"
+      ],
+      "requiredPrecedences": 19
+    },
+    {
+      "id": 459,
+      "solutionCount": 5100,
+      "possibleOrders": 3628800,
+      "states": 528,
+      "firstMoves": [
+        "p1",
+        "p2",
+        "p7",
+        "p10"
+      ],
+      "lastMoves": [
+        "p1",
+        "p5",
+        "p8"
+      ],
+      "requiredPrecedences": 17
+    },
+    {
+      "id": 460,
+      "solutionCount": 792,
+      "possibleOrders": 362880,
+      "states": 444,
+      "firstMoves": [
+        "p4",
+        "p7",
+        "p9"
+      ],
+      "lastMoves": [
+        "p5",
+        "p6",
+        "p8"
+      ],
+      "requiredPrecedences": 14
+    },
+    {
+      "id": 461,
+      "solutionCount": 1607,
+      "possibleOrders": 3628800,
+      "states": 534,
+      "firstMoves": [
+        "p4",
+        "p6",
+        "p7"
+      ],
+      "lastMoves": [
+        "p1",
+        "p10"
+      ],
+      "requiredPrecedences": 18
+    },
+    {
+      "id": 462,
+      "solutionCount": 803,
+      "possibleOrders": 362880,
+      "states": 261,
+      "firstMoves": [
+        "p2",
+        "p4",
+        "p9"
+      ],
+      "lastMoves": [
+        "p1",
+        "p3",
+        "p5"
+      ],
+      "requiredPrecedences": 16
+    },
+    {
+      "id": 463,
+      "solutionCount": 1486,
+      "possibleOrders": 3628800,
+      "states": 542,
+      "firstMoves": [
+        "p2",
+        "p4"
+      ],
+      "lastMoves": [
+        "p1",
+        "p7",
+        "p10"
+      ],
+      "requiredPrecedences": 22
+    },
+    {
+      "id": 464,
+      "solutionCount": 72,
+      "possibleOrders": 720,
+      "states": 68,
+      "firstMoves": [
+        "p1",
+        "p4",
+        "p5",
+        "p6"
+      ],
+      "lastMoves": [
+        "p2",
+        "p5"
+      ],
+      "requiredPrecedences": 5
+    },
+    {
+      "id": 465,
+      "solutionCount": 4520,
+      "possibleOrders": 3628800,
+      "states": 282,
+      "firstMoves": [
+        "p1",
+        "p7",
+        "p10"
+      ],
+      "lastMoves": [
+        "p6",
+        "p9",
+        "p10"
+      ],
+      "requiredPrecedences": 16
+    },
+    {
+      "id": 466,
+      "solutionCount": 504,
+      "possibleOrders": 362880,
+      "states": 272,
+      "firstMoves": [
+        "p2",
+        "p4",
+        "p6",
+        "p8"
+      ],
+      "lastMoves": [
+        "p1",
+        "p9"
+      ],
+      "requiredPrecedences": 18
+    },
+    {
+      "id": 467,
+      "solutionCount": 6899,
+      "possibleOrders": 3628800,
+      "states": 833,
+      "firstMoves": [
+        "p2",
+        "p6",
+        "p8"
+      ],
+      "lastMoves": [
+        "p4",
+        "p5",
+        "p9"
+      ],
+      "requiredPrecedences": 15
+    },
+    {
+      "id": 468,
+      "solutionCount": 294,
+      "possibleOrders": 3628800,
+      "states": 433,
+      "firstMoves": [
+        "p1",
+        "p4",
+        "p6"
+      ],
+      "lastMoves": [
+        "p3",
+        "p7"
+      ],
+      "requiredPrecedences": 27
+    },
+    {
+      "id": 469,
+      "solutionCount": 6512,
+      "possibleOrders": 3628800,
+      "states": 511,
+      "firstMoves": [
+        "p1",
+        "p4",
+        "p6",
+        "p8",
+        "p9"
+      ],
+      "lastMoves": [
+        "p3",
+        "p7"
+      ],
+      "requiredPrecedences": 18
+    },
+    {
+      "id": 470,
+      "solutionCount": 60,
+      "possibleOrders": 720,
+      "states": 86,
+      "firstMoves": [
+        "p2",
+        "p4",
+        "p5"
+      ],
+      "lastMoves": [
+        "p3",
+        "p5",
+        "p6"
+      ],
+      "requiredPrecedences": 4
+    },
+    {
+      "id": 471,
+      "solutionCount": 4800,
+      "possibleOrders": 3628800,
+      "states": 772,
+      "firstMoves": [
+        "p2",
+        "p5",
+        "p9"
+      ],
+      "lastMoves": [
+        "p4",
+        "p7",
+        "p8",
+        "p10"
+      ],
+      "requiredPrecedences": 18
+    },
+    {
+      "id": 472,
+      "solutionCount": 864,
+      "possibleOrders": 3628800,
+      "states": 640,
+      "firstMoves": [
+        "p1",
+        "p7",
+        "p10"
+      ],
+      "lastMoves": [
+        "p5",
+        "p6",
+        "p8",
+        "p9"
+      ],
+      "requiredPrecedences": 27
+    },
+    {
+      "id": 473,
+      "solutionCount": 4624,
+      "possibleOrders": 3628800,
+      "states": 545,
+      "firstMoves": [
+        "p4",
+        "p6",
+        "p8",
+        "p9"
+      ],
+      "lastMoves": [
+        "p3",
+        "p5",
+        "p10"
+      ],
+      "requiredPrecedences": 18
+    },
+    {
+      "id": 474,
+      "solutionCount": 4592,
+      "possibleOrders": 3628800,
+      "states": 529,
+      "firstMoves": [
+        "p2",
+        "p4",
+        "p7",
+        "p8"
+      ],
+      "lastMoves": [
+        "p5",
+        "p6"
+      ],
+      "requiredPrecedences": 19
+    },
+    {
+      "id": 475,
+      "solutionCount": 1277,
+      "possibleOrders": 3628800,
+      "states": 636,
+      "firstMoves": [
+        "p6",
+        "p7"
+      ],
+      "lastMoves": [
+        "p3",
+        "p4",
+        "p10"
+      ],
+      "requiredPrecedences": 22
+    },
+    {
+      "id": 476,
+      "solutionCount": 1072,
+      "possibleOrders": 362880,
+      "states": 762,
+      "firstMoves": [
+        "p2",
+        "p4",
+        "p6",
+        "p8"
+      ],
+      "lastMoves": [
+        "p7",
+        "p9"
+      ],
+      "requiredPrecedences": 14
+    },
+    {
+      "id": 477,
+      "solutionCount": 504,
+      "possibleOrders": 5040,
+      "states": 180,
+      "firstMoves": [
+        "p1",
+        "p4",
+        "p5",
+        "p6",
+        "p7"
+      ],
+      "lastMoves": [
+        "p2",
+        "p6",
+        "p7"
+      ],
+      "requiredPrecedences": 5
+    },
+    {
+      "id": 478,
+      "solutionCount": 2241,
+      "possibleOrders": 362880,
+      "states": 266,
+      "firstMoves": [
+        "p2",
+        "p7",
+        "p8",
+        "p9"
+      ],
+      "lastMoves": [
+        "p5",
+        "p6",
+        "p9"
+      ],
+      "requiredPrecedences": 13
+    },
+    {
+      "id": 479,
+      "solutionCount": 3909,
+      "possibleOrders": 3628800,
+      "states": 254,
+      "firstMoves": [
+        "p1",
+        "p6",
+        "p7",
+        "p10"
+      ],
+      "lastMoves": [
+        "p4",
+        "p5",
+        "p9"
+      ],
+      "requiredPrecedences": 19
+    },
+    {
+      "id": 480,
+      "solutionCount": 1890,
+      "possibleOrders": 362880,
+      "states": 470,
+      "firstMoves": [
+        "p1",
+        "p5",
+        "p6",
+        "p8",
+        "p9"
+      ],
+      "lastMoves": [
+        "p4",
+        "p5",
+        "p7"
+      ],
+      "requiredPrecedences": 14
+    },
+    {
+      "id": 481,
+      "solutionCount": 999,
+      "possibleOrders": 3628800,
+      "states": 529,
+      "firstMoves": [
+        "p2",
+        "p5",
+        "p10"
+      ],
+      "lastMoves": [
+        "p6",
+        "p7",
+        "p9"
+      ],
+      "requiredPrecedences": 21
+    },
+    {
+      "id": 482,
+      "solutionCount": 420,
+      "possibleOrders": 5040,
+      "states": 100,
+      "firstMoves": [
+        "p2",
+        "p4",
+        "p5",
+        "p7"
+      ],
+      "lastMoves": [
+        "p3",
+        "p4",
+        "p5",
+        "p6"
+      ],
+      "requiredPrecedences": 4
+    },
+    {
+      "id": 483,
+      "solutionCount": 7200,
+      "possibleOrders": 3628800,
+      "states": 1377,
+      "firstMoves": [
+        "p1",
+        "p3",
+        "p4",
+        "p6",
+        "p8",
+        "p10"
+      ],
+      "lastMoves": [
+        "p4",
+        "p7",
+        "p9"
+      ],
+      "requiredPrecedences": 14
+    },
+    {
+      "id": 484,
+      "solutionCount": 1080,
+      "possibleOrders": 362880,
+      "states": 634,
+      "firstMoves": [
+        "p5",
+        "p8",
+        "p9"
+      ],
+      "lastMoves": [
+        "p1",
+        "p5",
+        "p7",
+        "p8"
+      ],
+      "requiredPrecedences": 13
+    },
+    {
+      "id": 485,
+      "solutionCount": 4280,
+      "possibleOrders": 3628800,
+      "states": 543,
+      "firstMoves": [
+        "p1",
+        "p8",
+        "p9",
+        "p10"
+      ],
+      "lastMoves": [
+        "p6"
+      ],
+      "requiredPrecedences": 19
+    },
+    {
+      "id": 486,
+      "solutionCount": 1644,
+      "possibleOrders": 3628800,
+      "states": 807,
+      "firstMoves": [
+        "p1",
+        "p5",
+        "p8"
+      ],
+      "lastMoves": [
+        "p4",
+        "p10"
+      ],
+      "requiredPrecedences": 21
+    },
+    {
+      "id": 487,
+      "solutionCount": 9072,
+      "possibleOrders": 3628800,
+      "states": 1240,
+      "firstMoves": [
+        "p1",
+        "p6",
+        "p9"
+      ],
+      "lastMoves": [
+        "p3",
+        "p4",
+        "p7",
+        "p8"
+      ],
+      "requiredPrecedences": 12
+    },
+    {
+      "id": 488,
+      "solutionCount": 1134,
+      "possibleOrders": 3628800,
+      "states": 537,
+      "firstMoves": [
+        "p3",
+        "p4",
+        "p8"
+      ],
+      "lastMoves": [
+        "p2",
+        "p9"
+      ],
+      "requiredPrecedences": 20
+    },
+    {
+      "id": 489,
+      "solutionCount": 42,
+      "possibleOrders": 720,
+      "states": 48,
+      "firstMoves": [
+        "p1",
+        "p4",
+        "p5"
+      ],
+      "lastMoves": [
+        "p2",
+        "p6"
+      ],
+      "requiredPrecedences": 6
+    },
+    {
+      "id": 490,
+      "solutionCount": 456,
+      "possibleOrders": 362880,
+      "states": 181,
+      "firstMoves": [
+        "p1",
+        "p2",
+        "p4",
+        "p5"
+      ],
+      "lastMoves": [
+        "p6"
+      ],
+      "requiredPrecedences": 19
+    },
+    {
+      "id": 491,
+      "solutionCount": 3780,
+      "possibleOrders": 3628800,
+      "states": 331,
+      "firstMoves": [
+        "p1",
+        "p4",
+        "p5",
+        "p8"
+      ],
+      "lastMoves": [
+        "p7",
+        "p9",
+        "p10"
+      ],
+      "requiredPrecedences": 17
+    },
+    {
+      "id": 492,
+      "solutionCount": 216,
+      "possibleOrders": 362880,
+      "states": 178,
+      "firstMoves": [
+        "p3"
+      ],
+      "lastMoves": [
+        "p1",
+        "p5",
+        "p6",
+        "p9"
+      ],
+      "requiredPrecedences": 22
+    },
+    {
+      "id": 493,
+      "solutionCount": 243,
+      "possibleOrders": 3628800,
+      "states": 243,
+      "firstMoves": [
+        "p8",
+        "p10"
+      ],
+      "lastMoves": [
+        "p6",
+        "p7",
+        "p9"
+      ],
+      "requiredPrecedences": 29
+    },
+    {
+      "id": 494,
+      "solutionCount": 2232,
+      "possibleOrders": 362880,
+      "states": 456,
+      "firstMoves": [
+        "p1",
+        "p5",
+        "p7",
+        "p8"
+      ],
+      "lastMoves": [
+        "p2",
+        "p6",
+        "p7",
+        "p9"
+      ],
+      "requiredPrecedences": 13
+    },
+    {
+      "id": 495,
+      "solutionCount": 35,
+      "possibleOrders": 720,
+      "states": 39,
+      "firstMoves": [
+        "p1",
+        "p4"
+      ],
+      "lastMoves": [
+        "p2",
+        "p3",
+        "p5"
+      ],
+      "requiredPrecedences": 6
+    },
+    {
+      "id": 496,
+      "solutionCount": 1532,
+      "possibleOrders": 362880,
+      "states": 531,
+      "firstMoves": [
+        "p5",
+        "p6",
+        "p8"
+      ],
+      "lastMoves": [
+        "p1",
+        "p7",
+        "p9"
+      ],
+      "requiredPrecedences": 13
+    },
+    {
+      "id": 497,
+      "solutionCount": 996,
+      "possibleOrders": 3628800,
+      "states": 709,
+      "firstMoves": [
+        "p1",
+        "p5",
+        "p6"
+      ],
+      "lastMoves": [
+        "p8",
+        "p9"
+      ],
+      "requiredPrecedences": 22
+    },
+    {
+      "id": 498,
+      "solutionCount": 168,
+      "possibleOrders": 40320,
+      "states": 259,
+      "firstMoves": [
+        "p2",
+        "p4",
+        "p5",
+        "p7"
+      ],
+      "lastMoves": [
+        "p8"
+      ],
+      "requiredPrecedences": 14
+    },
+    {
+      "id": 499,
+      "solutionCount": 1435,
+      "possibleOrders": 3628800,
+      "states": 335,
+      "firstMoves": [
+        "p1",
+        "p5",
+        "p6",
+        "p7"
+      ],
+      "lastMoves": [
+        "p4",
+        "p10"
+      ],
+      "requiredPrecedences": 22
+    },
+    {
+      "id": 500,
+      "solutionCount": 561,
+      "possibleOrders": 3628800,
+      "states": 693,
+      "firstMoves": [
+        "p1",
+        "p7",
+        "p8",
+        "p9"
+      ],
+      "lastMoves": [
+        "p10"
+      ],
+      "requiredPrecedences": 27
+    }
+  ],
+  "endless": {
+    "samples": 120,
+    "distinctSignatures": 120,
+    "campaignMatches": 0,
+    "historyWindow": 24,
+    "deterministic": true,
+    "certified": true,
+    "maximumMs": 46.121,
+    "reserves": 80,
+    "reservesIndependentOfCampaign": true,
+    "sample": [
+      {
+        "seed": 701335,
+        "difficulty": 0,
+        "pieces": 4,
+        "family": "handoff",
+        "configurations": [
+          "original"
+        ],
+        "maxValue": 3,
+        "repeat": false,
+        "matchesCampaign": false,
+        "durationMs": 8.159
+      },
+      {
+        "seed": 702482,
+        "difficulty": 0,
+        "pieces": 4,
+        "family": "asymmetry",
+        "configurations": [
+          "original"
+        ],
+        "maxValue": 7,
+        "repeat": false,
+        "matchesCampaign": false,
+        "durationMs": 3.884
+      },
+      {
+        "seed": 703629,
+        "difficulty": 0,
+        "pieces": 4,
+        "family": "receive",
+        "configurations": [
+          "original"
+        ],
+        "maxValue": 7,
+        "repeat": false,
+        "matchesCampaign": false,
+        "durationMs": 2.934
+      },
+      {
+        "seed": 704776,
+        "difficulty": 0,
+        "pieces": 4,
+        "family": "protect",
+        "configurations": [
+          "original"
+        ],
+        "maxValue": 9,
+        "repeat": false,
+        "matchesCampaign": false,
+        "durationMs": 2.555
+      },
+      {
+        "seed": 705923,
+        "difficulty": 0,
+        "pieces": 3,
+        "family": "accumulate",
+        "configurations": [
+          "original"
+        ],
+        "maxValue": 3,
+        "repeat": false,
+        "matchesCampaign": false,
+        "durationMs": 2.523
+      },
+      {
+        "seed": 707070,
+        "difficulty": 0,
+        "pieces": 4,
+        "family": "passage",
+        "configurations": [
+          "original"
+        ],
+        "maxValue": 12,
+        "repeat": false,
+        "matchesCampaign": false,
+        "durationMs": 2.692
+      },
+      {
+        "seed": 708217,
+        "difficulty": 0,
+        "pieces": 4,
+        "family": "endgame",
+        "configurations": [
+          "original"
+        ],
+        "maxValue": 9,
+        "repeat": false,
+        "matchesCampaign": false,
+        "durationMs": 2.865
+      },
+      {
+        "seed": 709364,
+        "difficulty": 0,
+        "pieces": 4,
+        "family": "shared",
+        "configurations": [
+          "original"
+        ],
+        "maxValue": 9,
+        "repeat": false,
+        "matchesCampaign": false,
+        "durationMs": 2.81
+      },
+      {
+        "seed": 710511,
+        "difficulty": 0,
+        "pieces": 4,
+        "family": "destinations",
+        "configurations": [
+          "original"
+        ],
+        "maxValue": 7,
+        "repeat": false,
+        "matchesCampaign": false,
+        "durationMs": 6.582
+      },
+      {
+        "seed": 711658,
+        "difficulty": 0,
+        "pieces": 4,
+        "family": "timing",
+        "configurations": [
+          "original"
+        ],
+        "maxValue": 6,
+        "repeat": false,
+        "matchesCampaign": false,
+        "durationMs": 3.974
+      },
+      {
+        "seed": 712805,
+        "difficulty": 0,
+        "pieces": 4,
+        "family": "handoff",
+        "configurations": [
+          "original"
+        ],
+        "maxValue": 8,
+        "repeat": false,
+        "matchesCampaign": false,
+        "durationMs": 20.406
+      },
+      {
+        "seed": 713952,
+        "difficulty": 0,
+        "pieces": 4,
+        "family": "timing",
+        "configurations": [
+          "original"
+        ],
+        "maxValue": 15,
+        "repeat": false,
+        "matchesCampaign": false,
+        "durationMs": 22.396
+      },
+      {
+        "seed": 715099,
+        "difficulty": 0,
+        "pieces": 4,
+        "family": "receive",
+        "configurations": [
+          "original"
+        ],
+        "maxValue": 11,
+        "repeat": false,
+        "matchesCampaign": false,
+        "durationMs": 15.63
+      },
+      {
+        "seed": 716246,
+        "difficulty": 0,
+        "pieces": 3,
+        "family": "accumulate",
+        "configurations": [
+          "original"
+        ],
+        "maxValue": 10,
+        "repeat": false,
+        "matchesCampaign": false,
+        "durationMs": 27.923
+      },
+      {
+        "seed": 717393,
+        "difficulty": 0,
+        "pieces": 3,
+        "family": "destinations",
+        "configurations": [
+          "original"
+        ],
+        "maxValue": 9,
+        "repeat": false,
+        "matchesCampaign": false,
+        "durationMs": 20.16
+      },
+      {
+        "seed": 806064,
+        "difficulty": 1,
+        "pieces": 5,
+        "family": "asymmetry",
+        "configurations": [
+          "original"
+        ],
+        "maxValue": 14,
+        "repeat": false,
+        "matchesCampaign": false,
+        "durationMs": 20.476
+      },
+      {
+        "seed": 807211,
+        "difficulty": 1,
+        "pieces": 4,
+        "family": "endgame",
+        "configurations": [
+          "original"
+        ],
+        "maxValue": 11,
+        "repeat": false,
+        "matchesCampaign": false,
+        "durationMs": 16.964
+      },
+      {
+        "seed": 808358,
+        "difficulty": 1,
+        "pieces": 5,
+        "family": "protect",
+        "configurations": [
+          "original"
+        ],
+        "maxValue": 9,
+        "repeat": false,
+        "matchesCampaign": false,
+        "durationMs": 21.567
+      },
+      {
+        "seed": 809505,
+        "difficulty": 1,
+        "pieces": 5,
+        "family": "shared",
+        "configurations": [
+          "original"
+        ],
+        "maxValue": 16,
+        "repeat": false,
+        "matchesCampaign": false,
+        "durationMs": 17.619
+      },
+      {
+        "seed": 810652,
+        "difficulty": 1,
+        "pieces": 4,
+        "family": "passage",
+        "configurations": [
+          "original"
+        ],
+        "maxValue": 3,
+        "repeat": false,
+        "matchesCampaign": false,
+        "durationMs": 19.548
+      },
+      {
+        "seed": 811799,
+        "difficulty": 1,
+        "pieces": 5,
+        "family": "receive",
+        "configurations": [
+          "original"
+        ],
+        "maxValue": 9,
+        "repeat": false,
+        "matchesCampaign": false,
+        "durationMs": 18.525
+      },
+      {
+        "seed": 812946,
+        "difficulty": 1,
+        "pieces": 5,
+        "family": "shared",
+        "configurations": [
+          "original"
+        ],
+        "maxValue": 11,
+        "repeat": false,
+        "matchesCampaign": false,
+        "durationMs": 17.403
+      },
+      {
+        "seed": 814093,
+        "difficulty": 1,
+        "pieces": 5,
+        "family": "protect",
+        "configurations": [
+          "original"
+        ],
+        "maxValue": 6,
+        "repeat": false,
+        "matchesCampaign": false,
+        "durationMs": 26.307
+      },
+      {
+        "seed": 815240,
+        "difficulty": 1,
+        "pieces": 5,
+        "family": "endgame",
+        "configurations": [
+          "original"
+        ],
+        "maxValue": 5,
+        "repeat": false,
+        "matchesCampaign": false,
+        "durationMs": 17.744
+      },
+      {
+        "seed": 816387,
+        "difficulty": 1,
+        "pieces": 5,
+        "family": "asymmetry",
+        "configurations": [
+          "original"
+        ],
+        "maxValue": 6,
+        "repeat": false,
+        "matchesCampaign": false,
+        "durationMs": 17.558
+      },
+      {
+        "seed": 817534,
+        "difficulty": 1,
+        "pieces": 5,
+        "family": "handoff",
+        "configurations": [
+          "original"
+        ],
+        "maxValue": 6,
+        "repeat": false,
+        "matchesCampaign": false,
+        "durationMs": 15.177
+      },
+      {
+        "seed": 818681,
+        "difficulty": 1,
+        "pieces": 5,
+        "family": "asymmetry",
+        "configurations": [
+          "original"
+        ],
+        "maxValue": 5,
+        "repeat": false,
+        "matchesCampaign": false,
+        "durationMs": 16.974
+      },
+      {
+        "seed": 819828,
+        "difficulty": 1,
+        "pieces": 5,
+        "family": "accumulate",
+        "configurations": [
+          "original"
+        ],
+        "maxValue": 10,
+        "repeat": false,
+        "matchesCampaign": false,
+        "durationMs": 16.382
+      },
+      {
+        "seed": 820975,
+        "difficulty": 1,
+        "pieces": 5,
+        "family": "destinations",
+        "configurations": [
+          "original"
+        ],
+        "maxValue": 8,
+        "repeat": false,
+        "matchesCampaign": false,
+        "durationMs": 15.738
+      },
+      {
+        "seed": 822122,
+        "difficulty": 1,
+        "pieces": 5,
+        "family": "protect",
+        "configurations": [
+          "original"
+        ],
+        "maxValue": 7,
+        "repeat": false,
+        "matchesCampaign": false,
+        "durationMs": 14.656
+      },
+      {
+        "seed": 910793,
+        "difficulty": 2,
+        "pieces": 6,
+        "family": "passage",
+        "configurations": [
+          "original",
+          "single"
+        ],
+        "maxValue": 10,
+        "repeat": false,
+        "matchesCampaign": false,
+        "durationMs": 17.438
+      },
+      {
+        "seed": 911940,
+        "difficulty": 2,
+        "pieces": 6,
+        "family": "endgame",
+        "configurations": [
+          "original",
+          "single"
+        ],
+        "maxValue": 21,
+        "repeat": false,
+        "matchesCampaign": false,
+        "durationMs": 20.042
+      },
+      {
+        "seed": 913087,
+        "difficulty": 2,
+        "pieces": 6,
+        "family": "timing",
+        "configurations": [
+          "original",
+          "single"
+        ],
+        "maxValue": 9,
+        "repeat": false,
+        "matchesCampaign": false,
+        "durationMs": 26.223
+      },
+      {
+        "seed": 914234,
+        "difficulty": 2,
+        "pieces": 6,
+        "family": "destinations",
+        "configurations": [
+          "original",
+          "single"
+        ],
+        "maxValue": 11,
+        "repeat": false,
+        "matchesCampaign": false,
+        "durationMs": 33.228
+      },
+      {
+        "seed": 915381,
+        "difficulty": 2,
+        "pieces": 6,
+        "family": "shared",
+        "configurations": [
+          "original"
+        ],
+        "maxValue": 17,
+        "repeat": false,
+        "matchesCampaign": false,
+        "durationMs": 30.113
+      },
+      {
+        "seed": 916528,
+        "difficulty": 2,
+        "pieces": 5,
+        "family": "handoff",
+        "configurations": [
+          "original"
+        ],
+        "maxValue": 5,
+        "repeat": false,
+        "matchesCampaign": false,
+        "durationMs": 17.481
+      },
+      {
+        "seed": 917675,
+        "difficulty": 2,
+        "pieces": 5,
+        "family": "timing",
+        "configurations": [
+          "original",
+          "single"
+        ],
+        "maxValue": 6,
+        "repeat": false,
+        "matchesCampaign": false,
+        "durationMs": 27.213
+      },
+      {
+        "seed": 918822,
+        "difficulty": 2,
+        "pieces": 6,
+        "family": "receive",
+        "configurations": [
+          "original",
+          "single"
+        ],
+        "maxValue": 8,
+        "repeat": false,
+        "matchesCampaign": false,
+        "durationMs": 15.211
+      },
+      {
+        "seed": 919969,
+        "difficulty": 2,
+        "pieces": 6,
+        "family": "accumulate",
+        "configurations": [
+          "original"
+        ],
+        "maxValue": 8,
+        "repeat": false,
+        "matchesCampaign": false,
+        "durationMs": 15.348
+      },
+      {
+        "seed": 921116,
+        "difficulty": 2,
+        "pieces": 6,
+        "family": "handoff",
+        "configurations": [
+          "original",
+          "single"
+        ],
+        "maxValue": 10,
+        "repeat": false,
+        "matchesCampaign": false,
+        "durationMs": 16.543
+      },
+      {
+        "seed": 922263,
+        "difficulty": 2,
+        "pieces": 6,
+        "family": "destinations",
+        "configurations": [
+          "original",
+          "single"
+        ],
+        "maxValue": 11,
+        "repeat": false,
+        "matchesCampaign": false,
+        "durationMs": 16.658
+      },
+      {
+        "seed": 923410,
+        "difficulty": 2,
+        "pieces": 6,
+        "family": "receive",
+        "configurations": [
+          "original"
+        ],
+        "maxValue": 10,
+        "repeat": false,
+        "matchesCampaign": false,
+        "durationMs": 16.583
+      },
+      {
+        "seed": 924557,
+        "difficulty": 2,
+        "pieces": 5,
+        "family": "protect",
+        "configurations": [
+          "original",
+          "single"
+        ],
+        "maxValue": 8,
+        "repeat": false,
+        "matchesCampaign": false,
+        "durationMs": 15.584
+      },
+      {
+        "seed": 925704,
+        "difficulty": 2,
+        "pieces": 6,
+        "family": "endgame",
+        "configurations": [
+          "original"
+        ],
+        "maxValue": 19,
+        "repeat": false,
+        "matchesCampaign": false,
+        "durationMs": 17.639
+      },
+      {
+        "seed": 926851,
+        "difficulty": 2,
+        "pieces": 6,
+        "family": "passage",
+        "configurations": [
+          "original",
+          "single"
+        ],
+        "maxValue": 16,
+        "repeat": false,
+        "matchesCampaign": false,
+        "durationMs": 16.22
+      },
+      {
+        "seed": 1015522,
+        "difficulty": 3,
+        "pieces": 6,
+        "family": "asymmetry",
+        "configurations": [
+          "original"
+        ],
+        "maxValue": 15,
+        "repeat": false,
+        "matchesCampaign": false,
+        "durationMs": 17.206
+      },
+      {
+        "seed": 1016669,
+        "difficulty": 3,
+        "pieces": 7,
+        "family": "shared",
+        "configurations": [
+          "original"
+        ],
+        "maxValue": 9,
+        "repeat": false,
+        "matchesCampaign": false,
+        "durationMs": 24.965
+      },
+      {
+        "seed": 1017816,
+        "difficulty": 3,
+        "pieces": 6,
+        "family": "shared",
+        "configurations": [
+          "original",
+          "single"
+        ],
+        "maxValue": 22,
+        "repeat": false,
+        "matchesCampaign": false,
+        "durationMs": 19.812
+      },
+      {
+        "seed": 1018963,
+        "difficulty": 3,
+        "pieces": 6,
+        "family": "timing",
+        "configurations": [
+          "original"
+        ],
+        "maxValue": 18,
+        "repeat": false,
+        "matchesCampaign": false,
+        "durationMs": 20.879
+      },
+      {
+        "seed": 1020110,
+        "difficulty": 3,
+        "pieces": 7,
+        "family": "endgame",
+        "configurations": [
+          "original",
+          "single"
+        ],
+        "maxValue": 8,
+        "repeat": false,
+        "matchesCampaign": false,
+        "durationMs": 19.346
+      },
+      {
+        "seed": 1021257,
+        "difficulty": 3,
+        "pieces": 5,
+        "family": "protect",
+        "configurations": [
+          "original",
+          "single"
+        ],
+        "maxValue": 17,
+        "repeat": false,
+        "matchesCampaign": false,
+        "durationMs": 18.009
+      },
+      {
+        "seed": 1022404,
+        "difficulty": 3,
+        "pieces": 5,
+        "family": "asymmetry",
+        "configurations": [
+          "original"
+        ],
+        "maxValue": 12,
+        "repeat": false,
+        "matchesCampaign": false,
+        "durationMs": 17.074
+      },
+      {
+        "seed": 1023551,
+        "difficulty": 3,
+        "pieces": 6,
+        "family": "accumulate",
+        "configurations": [
+          "original"
+        ],
+        "maxValue": 7,
+        "repeat": false,
+        "matchesCampaign": false,
+        "durationMs": 17.543
+      },
+      {
+        "seed": 1024698,
+        "difficulty": 3,
+        "pieces": 6,
+        "family": "receive",
+        "configurations": [
+          "original"
+        ],
+        "maxValue": 9,
+        "repeat": false,
+        "matchesCampaign": false,
+        "durationMs": 17.954
+      },
+      {
+        "seed": 1025845,
+        "difficulty": 3,
+        "pieces": 7,
+        "family": "protect",
+        "configurations": [
+          "original"
+        ],
+        "maxValue": 25,
+        "repeat": false,
+        "matchesCampaign": false,
+        "durationMs": 19.69
+      },
+      {
+        "seed": 1026992,
+        "difficulty": 3,
+        "pieces": 7,
+        "family": "passage",
+        "configurations": [
+          "original",
+          "single"
+        ],
+        "maxValue": 11,
+        "repeat": false,
+        "matchesCampaign": false,
+        "durationMs": 19.367
+      },
+      {
+        "seed": 1028139,
+        "difficulty": 3,
+        "pieces": 7,
+        "family": "handoff",
+        "configurations": [
+          "original",
+          "single"
+        ],
+        "maxValue": 11,
+        "repeat": false,
+        "matchesCampaign": false,
+        "durationMs": 16.778
+      },
+      {
+        "seed": 1029286,
+        "difficulty": 3,
+        "pieces": 7,
+        "family": "destinations",
+        "configurations": [
+          "original"
+        ],
+        "maxValue": 11,
+        "repeat": false,
+        "matchesCampaign": false,
+        "durationMs": 18.407
+      },
+      {
+        "seed": 1030433,
+        "difficulty": 3,
+        "pieces": 7,
+        "family": "asymmetry",
+        "configurations": [
+          "original"
+        ],
+        "maxValue": 11,
+        "repeat": false,
+        "matchesCampaign": false,
+        "durationMs": 17.97
+      },
+      {
+        "seed": 1031580,
+        "difficulty": 3,
+        "pieces": 7,
+        "family": "timing",
+        "configurations": [
+          "original",
+          "single"
+        ],
+        "maxValue": 9,
+        "repeat": false,
+        "matchesCampaign": false,
+        "durationMs": 17.799
+      },
+      {
+        "seed": 1120251,
+        "difficulty": 4,
+        "pieces": 7,
+        "family": "linked",
+        "configurations": [
+          "original",
+          "corner"
+        ],
+        "maxValue": 10,
+        "repeat": false,
+        "matchesCampaign": false,
+        "durationMs": 4.492
+      },
+      {
+        "seed": 1121398,
+        "difficulty": 4,
+        "pieces": 8,
+        "family": "roles",
+        "configurations": [
+          "original"
+        ],
+        "maxValue": 7,
+        "repeat": false,
+        "matchesCampaign": false,
+        "durationMs": 3.171
+      },
+      {
+        "seed": 1122545,
+        "difficulty": 4,
+        "pieces": 6,
+        "family": "reunite",
+        "configurations": [
+          "original"
+        ],
+        "maxValue": 18,
+        "repeat": false,
+        "matchesCampaign": false,
+        "durationMs": 3.288
+      },
+      {
+        "seed": 1123692,
+        "difficulty": 4,
+        "pieces": 7,
+        "family": "unequal",
+        "configurations": [
+          "original"
+        ],
+        "maxValue": 19,
+        "repeat": false,
+        "matchesCampaign": false,
+        "durationMs": 3.567
+      },
+      {
+        "seed": 1124839,
+        "difficulty": 4,
+        "pieces": 8,
+        "family": "linked",
+        "configurations": [
+          "original"
+        ],
+        "maxValue": 27,
+        "repeat": false,
+        "matchesCampaign": false,
+        "durationMs": 20.035
+      },
+      {
+        "seed": 1125986,
+        "difficulty": 4,
+        "pieces": 7,
+        "family": "destinations",
+        "configurations": [
+          "original"
+        ],
+        "maxValue": 16,
+        "repeat": false,
+        "matchesCampaign": false,
+        "durationMs": 20.17
+      },
+      {
+        "seed": 1127133,
+        "difficulty": 4,
+        "pieces": 8,
+        "family": "receive",
+        "configurations": [
+          "original"
+        ],
+        "maxValue": 23,
+        "repeat": false,
+        "matchesCampaign": false,
+        "durationMs": 19.807
+      },
+      {
+        "seed": 1128280,
+        "difficulty": 4,
+        "pieces": 7,
+        "family": "roles",
+        "configurations": [
+          "original"
+        ],
+        "maxValue": 22,
+        "repeat": false,
+        "matchesCampaign": false,
+        "durationMs": 20.968
+      },
+      {
+        "seed": 1129427,
+        "difficulty": 4,
+        "pieces": 8,
+        "family": "handoff",
+        "configurations": [
+          "original"
+        ],
+        "maxValue": 22,
+        "repeat": false,
+        "matchesCampaign": false,
+        "durationMs": 27.561
+      },
+      {
+        "seed": 1130574,
+        "difficulty": 4,
+        "pieces": 8,
+        "family": "reunite",
+        "configurations": [
+          "original",
+          "corner"
+        ],
+        "maxValue": 22,
+        "repeat": false,
+        "matchesCampaign": false,
+        "durationMs": 35.461
+      },
+      {
+        "seed": 1131721,
+        "difficulty": 4,
+        "pieces": 8,
+        "family": "unequal",
+        "configurations": [
+          "original"
+        ],
+        "maxValue": 20,
+        "repeat": false,
+        "matchesCampaign": false,
+        "durationMs": 26.341
+      },
+      {
+        "seed": 1132868,
+        "difficulty": 4,
+        "pieces": 8,
+        "family": "accumulate",
+        "configurations": [
+          "original"
+        ],
+        "maxValue": 19,
+        "repeat": false,
+        "matchesCampaign": false,
+        "durationMs": 23.669
+      },
+      {
+        "seed": 1134015,
+        "difficulty": 4,
+        "pieces": 6,
+        "family": "shared",
+        "configurations": [
+          "original",
+          "single"
+        ],
+        "maxValue": 7,
+        "repeat": false,
+        "matchesCampaign": false,
+        "durationMs": 3.441
+      },
+      {
+        "seed": 1135162,
+        "difficulty": 4,
+        "pieces": 8,
+        "family": "endgame",
+        "configurations": [
+          "original",
+          "corner"
+        ],
+        "maxValue": 17,
+        "repeat": false,
+        "matchesCampaign": false,
+        "durationMs": 21.035
+      },
+      {
+        "seed": 1136309,
+        "difficulty": 4,
+        "pieces": 8,
+        "family": "timing",
+        "configurations": [
+          "original",
+          "corner"
+        ],
+        "maxValue": 18,
+        "repeat": false,
+        "matchesCampaign": false,
+        "durationMs": 36.386
+      },
+      {
+        "seed": 1224980,
+        "difficulty": 5,
+        "pieces": 9,
+        "family": "protect",
+        "configurations": [
+          "original",
+          "corner"
+        ],
+        "maxValue": 9,
+        "repeat": false,
+        "matchesCampaign": false,
+        "durationMs": 30.795
+      },
+      {
+        "seed": 1226127,
+        "difficulty": 5,
+        "pieces": 7,
+        "family": "asymmetry",
+        "configurations": [
+          "original",
+          "corner"
+        ],
+        "maxValue": 22,
+        "repeat": false,
+        "matchesCampaign": false,
+        "durationMs": 25.074
+      },
+      {
+        "seed": 1227274,
+        "difficulty": 5,
+        "pieces": 8,
+        "family": "endgame",
+        "configurations": [
+          "original",
+          "corner"
+        ],
+        "maxValue": 18,
+        "repeat": false,
+        "matchesCampaign": false,
+        "durationMs": 24.682
+      },
+      {
+        "seed": 1228421,
+        "difficulty": 5,
+        "pieces": 9,
+        "family": "accumulate",
+        "configurations": [
+          "original"
+        ],
+        "maxValue": 14,
+        "repeat": false,
+        "matchesCampaign": false,
+        "durationMs": 23.72
+      },
+      {
+        "seed": 1229568,
+        "difficulty": 5,
+        "pieces": 9,
+        "family": "receive",
+        "configurations": [
+          "original"
+        ],
+        "maxValue": 22,
+        "repeat": false,
+        "matchesCampaign": false,
+        "durationMs": 22.651
+      },
+      {
+        "seed": 1230715,
+        "difficulty": 5,
+        "pieces": 8,
+        "family": "passage",
+        "configurations": [
+          "original",
+          "single"
+        ],
+        "maxValue": 17,
+        "repeat": false,
+        "matchesCampaign": false,
+        "durationMs": 3.808
+      },
+      {
+        "seed": 1231862,
+        "difficulty": 5,
+        "pieces": 8,
+        "family": "passage",
+        "configurations": [
+          "original",
+          "single",
+          "corner"
+        ],
+        "maxValue": 18,
+        "repeat": false,
+        "matchesCampaign": false,
+        "durationMs": 22.116
+      },
+      {
+        "seed": 1233009,
+        "difficulty": 5,
+        "pieces": 9,
+        "family": "destinations",
+        "configurations": [
+          "original"
+        ],
+        "maxValue": 19,
+        "repeat": false,
+        "matchesCampaign": false,
+        "durationMs": 22.587
+      },
+      {
+        "seed": 1234156,
+        "difficulty": 5,
+        "pieces": 8,
+        "family": "protect",
+        "configurations": [
+          "original",
+          "corner"
+        ],
+        "maxValue": 9,
+        "repeat": false,
+        "matchesCampaign": false,
+        "durationMs": 37.112
+      },
+      {
+        "seed": 1235303,
+        "difficulty": 5,
+        "pieces": 8,
+        "family": "shared",
+        "configurations": [
+          "original",
+          "single",
+          "corner"
+        ],
+        "maxValue": 22,
+        "repeat": false,
+        "matchesCampaign": false,
+        "durationMs": 35.049
+      },
+      {
+        "seed": 1236450,
+        "difficulty": 5,
+        "pieces": 9,
+        "family": "linked",
+        "configurations": [
+          "original",
+          "single",
+          "corner"
+        ],
+        "maxValue": 19,
+        "repeat": false,
+        "matchesCampaign": false,
+        "durationMs": 20.848
+      },
+      {
+        "seed": 1237597,
+        "difficulty": 5,
+        "pieces": 8,
+        "family": "asymmetry",
+        "configurations": [
+          "original"
+        ],
+        "maxValue": 20,
+        "repeat": false,
+        "matchesCampaign": false,
+        "durationMs": 21.955
+      },
+      {
+        "seed": 1238744,
+        "difficulty": 5,
+        "pieces": 9,
+        "family": "handoff",
+        "configurations": [
+          "original"
+        ],
+        "maxValue": 22,
+        "repeat": false,
+        "matchesCampaign": false,
+        "durationMs": 39.014
+      },
+      {
+        "seed": 1239891,
+        "difficulty": 5,
+        "pieces": 9,
+        "family": "reunite",
+        "configurations": [
+          "original",
+          "corner"
+        ],
+        "maxValue": 23,
+        "repeat": false,
+        "matchesCampaign": false,
+        "durationMs": 21.113
+      },
+      {
+        "seed": 1241038,
+        "difficulty": 5,
+        "pieces": 8,
+        "family": "linked",
+        "configurations": [
+          "original"
+        ],
+        "maxValue": 19,
+        "repeat": false,
+        "matchesCampaign": false,
+        "durationMs": 21.886
+      },
+      {
+        "seed": 1329709,
+        "difficulty": 6,
+        "pieces": 9,
+        "family": "timing",
+        "configurations": [
+          "original",
+          "four"
+        ],
+        "maxValue": 22,
+        "repeat": false,
+        "matchesCampaign": false,
+        "durationMs": 23.491
+      },
+      {
+        "seed": 1330856,
+        "difficulty": 6,
+        "pieces": 10,
+        "family": "unequal",
+        "configurations": [
+          "original"
+        ],
+        "maxValue": 24,
+        "repeat": false,
+        "matchesCampaign": false,
+        "durationMs": 25.665
+      },
+      {
+        "seed": 1332003,
+        "difficulty": 6,
+        "pieces": 9,
+        "family": "roles",
+        "configurations": [
+          "original",
+          "corner",
+          "four"
+        ],
+        "maxValue": 33,
+        "repeat": false,
+        "matchesCampaign": false,
+        "durationMs": 4.778
+      },
+      {
+        "seed": 1333150,
+        "difficulty": 6,
+        "pieces": 10,
+        "family": "handoff",
+        "configurations": [
+          "original",
+          "corner"
+        ],
+        "maxValue": 11,
+        "repeat": false,
+        "matchesCampaign": false,
+        "durationMs": 25.18
+      },
+      {
+        "seed": 1334297,
+        "difficulty": 6,
+        "pieces": 8,
+        "family": "roles",
+        "configurations": [
+          "original",
+          "single",
+          "four"
+        ],
+        "maxValue": 20,
+        "repeat": false,
+        "matchesCampaign": false,
+        "durationMs": 46.121
+      },
+      {
+        "seed": 1335444,
+        "difficulty": 6,
+        "pieces": 10,
+        "family": "destinations",
+        "configurations": [
+          "original"
+        ],
+        "maxValue": 34,
+        "repeat": false,
+        "matchesCampaign": false,
+        "durationMs": 27.257
+      },
+      {
+        "seed": 1336591,
+        "difficulty": 6,
+        "pieces": 9,
+        "family": "receive",
+        "configurations": [
+          "original",
+          "four"
+        ],
+        "maxValue": 62,
+        "repeat": false,
+        "matchesCampaign": false,
+        "durationMs": 38.379
+      },
+      {
+        "seed": 1337738,
+        "difficulty": 6,
+        "pieces": 10,
+        "family": "accumulate",
+        "configurations": [
+          "original",
+          "corner",
+          "four"
+        ],
+        "maxValue": 23,
+        "repeat": false,
+        "matchesCampaign": false,
+        "durationMs": 25.487
+      },
+      {
+        "seed": 1338885,
+        "difficulty": 6,
+        "pieces": 10,
+        "family": "reunite",
+        "configurations": [
+          "original",
+          "four"
+        ],
+        "maxValue": 31,
+        "repeat": false,
+        "matchesCampaign": false,
+        "durationMs": 24.413
+      },
+      {
+        "seed": 1340032,
+        "difficulty": 6,
+        "pieces": 10,
+        "family": "timing",
+        "configurations": [
+          "original",
+          "four"
+        ],
+        "maxValue": 40,
+        "repeat": false,
+        "matchesCampaign": false,
+        "durationMs": 24.615
+      },
+      {
+        "seed": 1341179,
+        "difficulty": 6,
+        "pieces": 8,
+        "family": "protect",
+        "configurations": [
+          "original"
+        ],
+        "maxValue": 19,
+        "repeat": false,
+        "matchesCampaign": false,
+        "durationMs": 23.952
+      },
+      {
+        "seed": 1342326,
+        "difficulty": 6,
+        "pieces": 10,
+        "family": "unequal",
+        "configurations": [
+          "original"
+        ],
+        "maxValue": 44,
+        "repeat": false,
+        "matchesCampaign": false,
+        "durationMs": 30.092
+      },
+      {
+        "seed": 1343473,
+        "difficulty": 6,
+        "pieces": 8,
+        "family": "endgame",
+        "configurations": [
+          "original",
+          "single",
+          "four"
+        ],
+        "maxValue": 11,
+        "repeat": false,
+        "matchesCampaign": false,
+        "durationMs": 3.875
+      },
+      {
+        "seed": 1344620,
+        "difficulty": 6,
+        "pieces": 10,
+        "family": "endgame",
+        "configurations": [
+          "original"
+        ],
+        "maxValue": 12,
+        "repeat": false,
+        "matchesCampaign": false,
+        "durationMs": 25.068
+      },
+      {
+        "seed": 1345767,
+        "difficulty": 6,
+        "pieces": 10,
+        "family": "receive",
+        "configurations": [
+          "original",
+          "four"
+        ],
+        "maxValue": 36,
+        "repeat": false,
+        "matchesCampaign": false,
+        "durationMs": 26.529
+      },
+      {
+        "seed": 1434438,
+        "difficulty": 7,
+        "pieces": 10,
+        "family": "asymmetry",
+        "configurations": [
+          "original",
+          "corner"
+        ],
+        "maxValue": 24,
+        "repeat": false,
+        "matchesCampaign": false,
+        "durationMs": 24.898
+      },
+      {
+        "seed": 1435585,
+        "difficulty": 7,
+        "pieces": 7,
+        "family": "passage",
+        "configurations": [
+          "original",
+          "corner",
+          "four"
+        ],
+        "maxValue": 16,
+        "repeat": false,
+        "matchesCampaign": false,
+        "durationMs": 4.851
+      },
+      {
+        "seed": 1436732,
+        "difficulty": 7,
+        "pieces": 10,
+        "family": "accumulate",
+        "configurations": [
+          "original"
+        ],
+        "maxValue": 25,
+        "repeat": false,
+        "matchesCampaign": false,
+        "durationMs": 27.059
+      },
+      {
+        "seed": 1437879,
+        "difficulty": 7,
+        "pieces": 9,
+        "family": "protect",
+        "configurations": [
+          "original",
+          "corner"
+        ],
+        "maxValue": 14,
+        "repeat": false,
+        "matchesCampaign": false,
+        "durationMs": 23.26
+      },
+      {
+        "seed": 1439026,
+        "difficulty": 7,
+        "pieces": 10,
+        "family": "shared",
+        "configurations": [
+          "original",
+          "four"
+        ],
+        "maxValue": 35,
+        "repeat": false,
+        "matchesCampaign": false,
+        "durationMs": 4.115
+      },
+      {
+        "seed": 1440173,
+        "difficulty": 7,
+        "pieces": 10,
+        "family": "linked",
+        "configurations": [
+          "original",
+          "single",
+          "four"
+        ],
+        "maxValue": 15,
+        "repeat": false,
+        "matchesCampaign": false,
+        "durationMs": 25.079
+      },
+      {
+        "seed": 1441320,
+        "difficulty": 7,
+        "pieces": 10,
+        "family": "asymmetry",
+        "configurations": [
+          "original",
+          "corner"
+        ],
+        "maxValue": 48,
+        "repeat": false,
+        "matchesCampaign": false,
+        "durationMs": 24.57
+      },
+      {
+        "seed": 1442467,
+        "difficulty": 7,
+        "pieces": 9,
+        "family": "passage",
+        "configurations": [
+          "original",
+          "four"
+        ],
+        "maxValue": 13,
+        "repeat": false,
+        "matchesCampaign": false,
+        "durationMs": 24.83
+      },
+      {
+        "seed": 1443614,
+        "difficulty": 7,
+        "pieces": 8,
+        "family": "handoff",
+        "configurations": [
+          "original",
+          "single",
+          "four"
+        ],
+        "maxValue": 19,
+        "repeat": false,
+        "matchesCampaign": false,
+        "durationMs": 25.629
+      },
+      {
+        "seed": 1444761,
+        "difficulty": 7,
+        "pieces": 10,
+        "family": "linked",
+        "configurations": [
+          "original"
+        ],
+        "maxValue": 13,
+        "repeat": false,
+        "matchesCampaign": false,
+        "durationMs": 24.805
+      },
+      {
+        "seed": 1445908,
+        "difficulty": 7,
+        "pieces": 9,
+        "family": "shared",
+        "configurations": [
+          "original",
+          "four"
+        ],
+        "maxValue": 43,
+        "repeat": false,
+        "matchesCampaign": false,
+        "durationMs": 24.377
+      },
+      {
+        "seed": 1447055,
+        "difficulty": 7,
+        "pieces": 10,
+        "family": "timing",
+        "configurations": [
+          "original",
+          "corner"
+        ],
+        "maxValue": 17,
+        "repeat": false,
+        "matchesCampaign": false,
+        "durationMs": 25.112
+      },
+      {
+        "seed": 1448202,
+        "difficulty": 7,
+        "pieces": 10,
+        "family": "unequal",
+        "configurations": [
+          "original",
+          "corner"
+        ],
+        "maxValue": 24,
+        "repeat": false,
+        "matchesCampaign": false,
+        "durationMs": 25.909
+      },
+      {
+        "seed": 1449349,
+        "difficulty": 7,
+        "pieces": 10,
+        "family": "reunite",
+        "configurations": [
+          "original",
+          "corner"
+        ],
+        "maxValue": 17,
+        "repeat": false,
+        "matchesCampaign": false,
+        "durationMs": 25.791
+      },
+      {
+        "seed": 1450496,
+        "difficulty": 7,
+        "pieces": 10,
+        "family": "roles",
+        "configurations": [
+          "original",
+          "four"
+        ],
+        "maxValue": 19,
+        "repeat": false,
+        "matchesCampaign": false,
+        "durationMs": 4.207
+      }
+    ]
+  },
+  "limits": [
+    "Difficulty is editorial and technical, not calibrated with players.",
+    "Concept occurrence is extracted from a certified witness. Exact precedence sets describe all winning orders, but they do not prove that every observed visual motif occurs in every solution.",
+    "The finite generator can eventually repeat. Recent structure/family history reduces repeats; no global infinite uniqueness claim.",
+    "Gaps, reflection and uniform scale are ignored by equivalence normalization. Tutorial levels2 and5 intentionally revisit levels1 and3."
+  ]
+}
