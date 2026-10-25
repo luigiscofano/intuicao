@@ -1,3 +1,4 @@
+import {restoreGameInfoHTML} from './game-info-history.mjs';
 import {restoreAllScreensFrameFile} from './all-screens-frame-history.mjs';
 import {restoreManualCheckFile} from './manual-check-history.mjs';
 import assert from 'node:assert/strict';
@@ -8,7 +9,7 @@ const m=JSON.parse(fs.readFileSync(new URL('./original-logo-authorized-change.js
 const read=p=>fs.readFileSync(new URL('../'+p,import.meta.url));
 const sha=b=>crypto.createHash('sha256').update(b).digest('hex');
 const html=read('dist/index.html').toString(),css=read('dist/logo.css').toString();
-assert.equal(sha(html),m.afterHtmlSHA256,'Current document matches exact approved logo changes');
+assert.equal(sha(restoreGameInfoHTML(html)),m.afterHtmlSHA256,'Current document matches exact approved logo changes');
 assert.equal(sha(restoreOriginalLogoHTML(html)),m.priorHtmlSHA256);
 for(const [p,hash] of Object.entries({...m.preservedDistSHA256,...m.newFilesSHA256}))assert.equal(sha(restoreAllScreensFrameFile(p,restoreManualCheckFile(p,read(p)))),hash,'Protected file: '+p);
 const png=read('dist/platform-assets/intuicao-logo-original.png');

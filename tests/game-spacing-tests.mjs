@@ -1,3 +1,4 @@
+import {restoreGameInfoHTML} from './game-info-history.mjs';
 import assert from 'node:assert/strict';
 import fs from 'node:fs';
 import crypto from 'node:crypto';
@@ -15,7 +16,7 @@ assert.equal(restoreGameSpacingCSS(restored),restored,'Exact prior state is an i
 assert.equal(sha(restoreAllScreensFrameCSS(css)),previous.priorCssSHA256,'Historical restoration chain includes spacing');
 assert.equal(restoreAllScreensFrameCSS(restoreAllScreensFrameCSS(css)),restoreAllScreensFrameCSS(css),'Convergent historical routes remain idempotent');
 for(const invalid of [css+' ',css.replace('margin-top:24px;gap:18px','margin-top:25px;gap:18px'),restored+' ',css+m.append])assert.throws(()=>restoreGameSpacingCSS(invalid),'Unapproved changes and duplicated blocks fail closed');
-for(const [p,hash] of Object.entries(m.preservedDistSHA256))assert.equal(sha(read(p)),hash,'Unchanged JS/HTML/assets/board styles: '+p);
+for(const [p,hash] of Object.entries(m.preservedDistSHA256))assert.equal(sha(p==='dist/index.html'?restoreGameInfoHTML(read(p).toString()):read(p)),hash,'Unchanged JS/HTML/assets/board styles: '+p);
 const active='body:has(.lab:not([hidden]), #collection:not([hidden]) > .collection-lab) #main > .games';
 const actions=':is(#main > .lab, #collection > .collection-lab) .level-actions';
 const expected=[

@@ -1,0 +1,77 @@
+// Textos de orientação baseados nas regras atuais dos seis jogos.
+// Os objetivos descrevem propostas de prática, não benefícios comprovados.
+export const GAME_INFO = {
+  light: {
+    name: 'Reflexos',
+    summary: 'Gire espelhos para levar cada raio ao alvo da mesma cor e símbolo, sem encostar nas trajetórias de outras cores.',
+    rules: [
+      'Gire os espelhos para guiar a luz. As posições dos espelhos e das paredes são fixas; paredes e bordas interrompem os raios.',
+      'Cada raio precisa alcançar o alvo da mesma cor e símbolo. Trajetórias de cores diferentes não podem se cruzar nem se tocar, mesmo em disparos separados.',
+      'Quando houver portais, os que têm a mesma letra formam um par. A luz sai mantendo a direção; portais seletivos bloqueiam cores não permitidas. O salto entre portais não conta como trajetória de luz.',
+      'Clique em cada fonte para disparar ou use Confirmar todos. A tentativa só termina após todos os disparos; mudar um ajuste limpa os raios para uma nova tentativa.'
+    ],
+    purpose: 'Praticar orientação espacial, leitura de ângulos e planejamento de trajetórias. Observar uma tentativa e ajustar os espelhos convida a formular e revisar hipóteses.',
+    why: 'A proposta pedagógica é tornar a reflexão da luz explorável: pequenas mudanças de direção produzem efeitos visíveis, e os percursos precisam funcionar em conjunto.'
+  },
+  cut: {
+    name: 'Corte certo',
+    summary: 'Ajuste a linha ou curva até que o lado roxo tenha a porcentagem pedida da área útil da figura. Espaços vazios não contam.',
+    rules: [
+      'Observe a meta e ajuste a linha ou curva para deixar essa porcentagem da área útil no lado roxo.',
+      'No Desafio básico, mova o corte apenas na direção indicada pela seta. A aba Controles da curva oferece outros ajustes, sem mudar a família de curva da fase.',
+      'Conte somente a parte preenchida da figura: buracos e recortes vazios não entram na área, mesmo quando o corte passa por eles.',
+      'Confirme sua resposta. É aceito um resultado até 3 pontos percentuais acima ou abaixo da meta, incluindo os limites.'
+    ],
+    purpose: 'Praticar estimativa de áreas, proporções e porcentagens, comparando a impressão visual com a medida apresentada pelo jogo.',
+    why: 'A proposta pedagógica é explorar a diferença entre tamanho aparente e área: formas, curvas e vazios convidam a testar estimativas e refinar o raciocínio proporcional.'
+  },
+  elo: {
+    name: 'ELO',
+    summary: 'Coloque um ponto por região para formar um único circuito. As ligações são automáticas; observe também as pistas especiais de cada fase.',
+    rules: [
+      'Coloque exatamente um ponto em cada região, mantendo os pontos fixos. Cada ponto se liga automaticamente ao primeiro ponto encontrado em cada direção horizontal ou vertical; fronteiras e anotações X não bloqueiam essas ligações.',
+      'Todos os pontos devem formar um único circuito fechado, com exatamente duas ligações por ponto e sem cruzamentos fora dos pontos. Trechos retos são permitidos e não é preciso ocupar todas as casas.',
+      'Nas fases com pistas especiais, respeite curvas ou retas obrigatórias, contagens exatas de pontos por linha ou coluna e a soma indicada dos comprimentos das duas ligações de uma região.',
+      'Passagens marcadas ficam sem ponto e devem ser atravessadas pelo interior de uma ligação; trechos vedados não podem ser percorridos. Nos grupos de escolha, atravesse exatamente uma das passagens, deixando as demais sem travessia.',
+      'Outras pistas exigem ligação direta entre regiões, ordem dos marcos no circuito ou número exato de travessias de uma linha de referência. A ordem aceita os dois sentidos e pode ter outras regiões entre os marcos. Confira as pistas da fase e confirme a resposta.'
+    ],
+    purpose: 'Praticar dedução lógica, visão espacial e articulação entre condições locais e globais, acompanhando como mover um ponto altera o circuito inteiro.',
+    why: 'A proposta pedagógica é transformar conexões simples em um problema de planejamento: cada escolha precisa respeitar sua região e, ao mesmo tempo, contribuir para uma estrutura única.'
+  },
+  prumo: {
+    name: 'PRUMO',
+    summary: 'Divida a grade em peças conectadas e equilibradas. O centro de massa de cada peça deve coincidir com seu apoio.',
+    rules: [
+      'Pinte todas as casas, sem sobreposição, formando uma peça para cada apoio. As casas de uma peça devem estar conectadas pelos lados.',
+      'Cada peça contém seu próprio apoio. As casas que tocam um apoio pertencem à sua peça; se o apoio fica entre duas casas, ambas precisam fazer parte dela.',
+      'Todas as casas têm a mesma massa. O centro de massa de cada peça deve coincidir exatamente com o apoio, tanto na horizontal quanto na vertical.',
+      'Considere a quantidade de casas e suas distâncias ao apoio: formas assimétricas também podem se equilibrar. Confirme quando toda a grade estiver preenchida.'
+    ],
+    purpose: 'Praticar raciocínio espacial e explorar centro de massa, equilíbrio e compensação entre quantidade e distância.',
+    why: 'A proposta pedagógica é permitir que o equilíbrio seja investigado com formas: uma peça não precisa ser simétrica para compensar seus dois lados.'
+  },
+  pacto: {
+    name: 'PACTO',
+    summary: 'Complete a grade com quatro símbolos: dois de cada por linha e coluna. Cada casa deve tocar exatamente uma casa igual pelos lados.',
+    rules: [
+      'Complete a grade 8 × 8 com círculo, triângulo, quadrado e losango, sem alterar as pistas fixas.',
+      'Cada linha e cada coluna deve conter exatamente dois de cada símbolo.',
+      'Cada casa deve ter exatamente um vizinho igual pelos lados. Diagonais não contam: os símbolos formam duplas, nunca trios ou grupos maiores.',
+      'Cruze as contagens com as possibilidades de parceria. Marcações a lápis são apenas anotações; preencha as casas e confirme a resposta para concluir.'
+    ],
+    purpose: 'Praticar contagem, exclusão de possibilidades e dedução, combinando uma regra de vizinhança com restrições de linhas e colunas.',
+    why: 'A proposta pedagógica é mostrar como regras simples se complementam: uma dupla possível num canto pode mudar as opções de toda uma linha ou coluna.'
+  },
+  desvio: {
+    name: 'DESVIO',
+    summary: 'Escolha uma casa e envie o adversário para a linha ou coluna indicada. Quem ficar sem jogada disponível perde.',
+    rules: [
+      'Na partida comum, a primeira escolha é livre. Depois, escolha uma casa disponível no destino indicado e confirme a jogada.',
+      'Uma casa com ↔ envia o adversário para a mesma linha; uma casa com ↕ o envia para a mesma coluna.',
+      'A casa escolhida é consumida e não pode ser usada de novo. Casas consumidas não bloqueiam o caminho: qualquer casa disponível na linha ou coluna obrigatória pode ser escolhida.',
+      'Os jogadores alternam as escolhas. Quem não tiver jogada legal na sua vez perde. Há partidas locais, contra o bot e treino com análise.'
+    ],
+    purpose: 'Praticar antecipação, planejamento por turnos e comparação de alternativas, considerando não só a própria jogada, mas também as respostas do adversário.',
+    why: 'A proposta pedagógica é explorar as consequências de uma decisão: cada escolha retira uma opção do tabuleiro e determina quais escolhas o outro jogador terá.'
+  }
+};
