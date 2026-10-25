@@ -60,3 +60,9 @@ As validações de conteúdo são automáticas. Houve inspeção manual assistid
 O teste de largura estreita exercitou layout e botões no navegador; não equivale a teste em todos os aparelhos físicos ou leitores de tela. O código mantém rótulos acessíveis, foco, atalhos delimitados à área do jogo, controles por botão e preferência por movimento reduzido.
 
 O Endless possui geração real com orçamento finito e banco certificado de recuperação. Não promete unicidade global infinita. O progresso permanece local ao navegador, seguindo o funcionamento existente do Intuição.
+
+## Ajuste posterior da seleção — 25 de outubro de 2026
+
+Atendendo à revisão visual do usuário, foram removidos os filtros Capítulo/Dificuldade, o campo Ir ao nível e a configuração do Endless da tela de seleção. Os 500 cartões continuam acessíveis por capítulo. A faixa de ações usa a mesma estrutura da coleção, com Explorar modo livre e Desafio de hoje. Durante a partida, o menu suspenso foi substituído pelo contador textual do desafio, mantendo as setas de navegação.
+
+A revisão corrigiu a especificidade de um seletor local que sobrepunha os fundos primários e o raio dos cartões. A comparação no navegador confirmou igualdade com PACTO para largura e altura (68,40625 px naquele viewport), raio de 24%, padding de 5 px, cores, sombra e tipografia da legenda. Os 500 cartões estavam presentes, sem seletores na tela de seleção. Abrir a fase 180 mostrou DESAFIO 180 / 500 sem dropdown; a seta avançou para 181. Explorar modo livre retomou o Endless, com a configuração de dificuldade disponível dentro do modo.
