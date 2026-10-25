@@ -22,7 +22,7 @@ As peças mantêm alvos de pelo menos 44 px. Em celular, as setas de fase ocupam
 
 ## Ajuda, tutorial e análise
 
-As dez primeiras fases apresentam lembretes curtos, distribuindo os conceitos fundamentais do jogo. As estreias nas fases 201, 276 e 351 mostram a configuração nova. O painel completo de regras começa fechado, como no padrão atual.
+As dez primeiras fases apresentam lembretes curtos, distribuindo os conceitos fundamentais do jogo. As estreias nas fases 201, 276 e 351 mostram a configuração nova. O painel completo de regras começa aberto ao entrar ou retomar uma fase, incluindo os modos Endless e personalizado. O jogador pode ocultá-lo durante a partida.
 
 As dicas usam o serviço de análise em worker e são aplicadas ao estado completo presente. Os três níveis apontam uma região, explicam uma continuação possível e identificam uma retirada com posição e motivo. Antes de exibir ou aplicar uma sequência, a UI reproduz a continuação pelo motor. Uma ordem alternativa válida é aceita.
 

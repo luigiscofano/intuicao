@@ -5,8 +5,8 @@
    Added presentation only. Functional changes authorized separately are preserved.
    SAFE ROOTS: direct header/footer, #main > .intro/.games, #selection,
    #collection > .level-screen. Never style body/main/collection or game roots.
-   While a game is open, retain ALL original shell metrics, so its page position
-   and responsive dimensions remain exact. New typography/layout only in menus. */
+   The approved intro typography and spacing are shared by menus and all games.
+   Board dimensions and gameplay styles remain scoped to their existing roots. */
 
 /* Metric-neutral shell finish, including while playing. No inherited game styles. */
 body > header{background:#fafbf7;border-color:#d4ddd0;box-shadow:inset 0 -1px #edf1e8;color:#3b342e}
@@ -32,19 +32,19 @@ body > footer .brand{display:inline-flex;align-items:center;color:#3b342e;font-f
 body > footer .brand-icon{font-size:0;transform:none;flex-shrink:0;width:22px;height:22px;margin-right:7px;background:url("platform-assets/leaf-seal.svg") center/22px 22px no-repeat}
 body > footer .brand-dot{color:#997838}
 
-/* Menu-only treatment. :has observes existing state; no script, new state,
-   event handler, route, focus operation or storage access is introduced. */
+/* Menu shell treatment and the shared reference intro. Only the menu shell
+   uses :has; intro typography and spacing never depend on the active game. */
 :where(body:not(:has(.lab:not([hidden]), #collection:not([hidden]) > .collection-lab))) > header{padding-top:24px;padding-bottom:24px}
 :where(body:not(:has(.lab:not([hidden]), #collection:not([hidden]) > .collection-lab))) > header .brand{display:inline-flex;align-items:center;font-family:Georgia,"Times New Roman",serif;font-size:38px;font-style:italic;font-weight:700;letter-spacing:-1.7px;line-height:1.25}
 :where(body:not(:has(.lab:not([hidden]), #collection:not([hidden]) > .collection-lab))) > header .brand-icon{font-size:0;transform:none;width:28px;height:28px;margin-right:10px;vertical-align:-2px;background:url("platform-assets/leaf-seal.svg") center/28px 28px no-repeat}
 :where(body:not(:has(.lab:not([hidden]), #collection:not([hidden]) > .collection-lab))) > header .tag{font-family:"Courier New",monospace;font-size:10px;letter-spacing:1.6px;line-height:1.5}
 :where(body:not(:has(.lab:not([hidden]), #collection:not([hidden]) > .collection-lab))) > header .doc-link{border:1px solid #bec9b6;border-radius:3px;padding:8px 12px;background:transparent;box-shadow:none}
-:where(body:not(:has(.lab:not([hidden]), #collection:not([hidden]) > .collection-lab))) #main > .intro{position:relative;isolation:isolate;padding:32px 0 30px 20px;min-height:260px;background:none}
-:where(body:not(:has(.lab:not([hidden]), #collection:not([hidden]) > .collection-lab))) #main > .intro::before{content:"";position:absolute;inset:8px -24px 0;background:#fafbf7 url("platform-assets/paper-marks.svg") repeat;border:1px solid #dce3d6;border-radius:12px;box-shadow:inset 0 0 0 4px #ffffff80,0 0 0 4px #fafbf755;z-index:-2;pointer-events:none}
-:where(body:not(:has(.lab:not([hidden]), #collection:not([hidden]) > .collection-lab))) #main > .intro .eyebrow{max-width:80%;font-family:"Courier New",monospace;font-size:10px;letter-spacing:1.7px;margin-bottom:20px}
-:where(body:not(:has(.lab:not([hidden]), #collection:not([hidden]) > .collection-lab))) #main > .intro h1{font-family:Georgia,"Times New Roman",serif;font-size:68px;font-weight:400;line-height:1.08;letter-spacing:-2.6px;max-width:100%;margin:0 0 16px}
-:where(body:not(:has(.lab:not([hidden]), #collection:not([hidden]) > .collection-lab))) #main > .intro h1 em{font-family:inherit;font-style:italic;font-weight:400;text-shadow:none;text-decoration:underline;text-decoration-color:#a6b49b;text-decoration-thickness:1px;text-underline-offset:8px}
-:where(body:not(:has(.lab:not([hidden]), #collection:not([hidden]) > .collection-lab))) #main > .intro > p:last-child{font-size:14px;max-width:100%;line-height:1.8;margin-bottom:0}
+#main > .intro{position:relative;isolation:isolate;padding:32px 0 30px 20px;min-height:260px;background:none}
+#main > .intro::before{content:"";position:absolute;inset:8px -24px 0;background:#fafbf7 url("platform-assets/paper-marks.svg") repeat;border:1px solid #dce3d6;border-radius:12px;box-shadow:inset 0 0 0 4px #ffffff80,0 0 0 4px #fafbf755;z-index:-2;pointer-events:none}
+#main > .intro .eyebrow{max-width:80%;font-family:"Courier New",monospace;font-size:10px;letter-spacing:1.7px;margin-bottom:20px}
+#main > .intro h1{font-family:Georgia,"Times New Roman",serif;font-size:68px;font-weight:400;line-height:1.08;letter-spacing:-2.6px;max-width:100%;margin:0 0 16px}
+#main > .intro h1 em{font-family:inherit;font-style:italic;font-weight:400;text-shadow:none;text-decoration:underline;text-decoration-color:#a6b49b;text-decoration-thickness:1px;text-underline-offset:8px}
+#main > .intro > p:last-child{font-size:14px;max-width:100%;line-height:1.8;margin-bottom:0}
 :where(body:not(:has(.lab:not([hidden]), #collection:not([hidden]) > .collection-lab))) #main > .games{gap:12px;margin-top:24px;margin-bottom:28px}
 :where(body:not(:has(.lab:not([hidden]), #collection:not([hidden]) > .collection-lab))) #main > .games > button{font-family:system-ui,-apple-system,"Segoe UI",sans-serif;font-size:16px;line-height:1.5;letter-spacing:.2px;font-weight:600;border-radius:5px;border-width:1px;padding:16px 18px;position:relative}
 :where(body:not(:has(.lab:not([hidden]), #collection:not([hidden]) > .collection-lab))) #main > .games > button > span{font-family:"Courier New",monospace;font-size:11px;font-weight:400;opacity:1;color:#666950;vertical-align:1px;margin-right:12px}
@@ -82,19 +82,19 @@ body > footer .brand-dot{color:#997838}
 :is(#selection, #collection > .level-screen, #repasse > .level-screen) button:disabled{opacity:.45}
 
 @media(max-width:1050px){
- :where(body:not(:has(.lab:not([hidden]), #collection:not([hidden]) > .collection-lab))) #main > .intro h1{font-size:58px}
+ #main > .intro h1{font-size:58px}
 }
 @media(max-width:760px){
  :where(body:not(:has(.lab:not([hidden]), #collection:not([hidden]) > .collection-lab))) > header{padding:18px 20px}
  :where(body:not(:has(.lab:not([hidden]), #collection:not([hidden]) > .collection-lab))) > header .brand{font-size:31px}
  :where(body:not(:has(.lab:not([hidden]), #collection:not([hidden]) > .collection-lab))) > header .brand-icon{width:22px;height:22px;background-size:22px;margin-right:5px}
  :where(body:not(:has(.lab:not([hidden]), #collection:not([hidden]) > .collection-lab))) > header .doc-link{font-size:10px;padding:7px 8px}
- :where(body:not(:has(.lab:not([hidden]), #collection:not([hidden]) > .collection-lab))) #main > .intro{padding:24px 4px 24px 12px;min-height:0}
- :where(body:not(:has(.lab:not([hidden]), #collection:not([hidden]) > .collection-lab))) #main > .intro::before{inset:6px -8px 0;border-radius:9px}
- :where(body:not(:has(.lab:not([hidden]), #collection:not([hidden]) > .collection-lab))) #main > .intro :is(h1,.eyebrow,p:last-child){max-width:100%}
- :where(body:not(:has(.lab:not([hidden]), #collection:not([hidden]) > .collection-lab))) #main > .intro h1{font-size:46px;letter-spacing:-1.8px;line-height:1.1}
- :where(body:not(:has(.lab:not([hidden]), #collection:not([hidden]) > .collection-lab))) #main > .intro .eyebrow{font-size:9px;letter-spacing:1px;margin-bottom:18px}
- :where(body:not(:has(.lab:not([hidden]), #collection:not([hidden]) > .collection-lab))) #main > .intro > p:last-child{font-size:12px}
+ #main > .intro{padding:24px 4px 24px 12px;min-height:0}
+ #main > .intro::before{inset:6px -8px 0;border-radius:9px}
+ #main > .intro :is(h1,.eyebrow,p:last-child){max-width:100%}
+ #main > .intro h1{font-size:46px;letter-spacing:-1.8px;line-height:1.1}
+ #main > .intro .eyebrow{font-size:9px;letter-spacing:1px;margin-bottom:18px}
+ #main > .intro > p:last-child{font-size:12px}
  :where(body:not(:has(.lab:not([hidden]), #collection:not([hidden]) > .collection-lab))) #main > .games{grid-template-columns:repeat(2,minmax(0,1fr));gap:10px;margin-top:20px;margin-bottom:24px}
  :where(body:not(:has(.lab:not([hidden]), #collection:not([hidden]) > .collection-lab))) #main > .games > button{font-size:14px;padding:14px 12px;line-height:1.5}
  :where(body:not(:has(.lab:not([hidden]), #collection:not([hidden]) > .collection-lab))) #main > .games > button > span{font-size:11px;display:block;margin-bottom:2px}
@@ -108,8 +108,8 @@ body > footer .brand-dot{color:#997838}
  :is(#selection, #collection > .level-screen, #repasse > .level-screen) .level-tile > small{font-size:9px}
 }
 @media(max-width:370px){
- :where(body:not(:has(.lab:not([hidden]), #collection:not([hidden]) > .collection-lab))) #main > .intro{padding-bottom:26px}
- :where(body:not(:has(.lab:not([hidden]), #collection:not([hidden]) > .collection-lab))) #main > .intro h1{font-size:39px}
+ #main > .intro{padding-bottom:26px}
+ #main > .intro h1{font-size:39px}
  :where(body:not(:has(.lab:not([hidden]), #collection:not([hidden]) > .collection-lab))) > header{gap:10px;padding:16px}
 }
 
@@ -212,15 +212,15 @@ body > header::before{content:"";position:absolute;inset:-28px 0 -1px;pointer-ev
 body:has(#selection:not([hidden]), #collection:not([hidden]) > .level-screen, #repasse:not([hidden]) > .level-screen) > footer{position:relative;z-index:1;background:transparent;border-top-color:transparent;border-bottom-color:transparent;box-shadow:none}
 :is(#selection, #collection > .level-screen, #repasse > .level-screen)::after{content:"";position:absolute;left:calc(-1 * var(--frame-flare) - .5px);width:calc(100% + 2 * var(--frame-flare) + 1px);bottom:-246px;height:247px;pointer-events:none;user-select:none;background:url("platform-assets/continuous-root-left.svg") left/var(--frame-flare) 100% no-repeat,url("platform-assets/continuous-root-right.svg") right/var(--frame-flare) 100% no-repeat,linear-gradient(#fff,#fff) center/calc(100% - 2 * var(--frame-flare)) 100% no-repeat}
 
-:where(body:not(:has(.lab:not([hidden]), #collection:not([hidden]) > .collection-lab))) #main > .intro{--hero-flare:max(14px,calc((100vw - 1280px)/2 + 4px))}
-:where(body:not(:has(.lab:not([hidden]), #collection:not([hidden]) > .collection-lab))) #main > .intro::before{inset:101px -24.5px 0;background:#fff;border:1px solid #b3c1a8;border-top:0;border-radius:0 0 12px 12px;box-shadow:none}
-:where(body:not(:has(.lab:not([hidden]), #collection:not([hidden]) > .collection-lab))) #main > .intro::after{content:"";position:absolute;top:8px;left:calc(-24px - var(--hero-flare));width:calc(100% + 48px + 2 * var(--hero-flare));height:94px;background:url("platform-assets/soft-crown-left.svg") left/var(--hero-flare) 100% no-repeat,url("platform-assets/soft-crown-right.svg") right/var(--hero-flare) 100% no-repeat,linear-gradient(#fff,#fff) center/calc(100% - 2 * var(--hero-flare)) 100% no-repeat;pointer-events:none;user-select:none;z-index:-1}
+#main > .intro{--hero-flare:max(14px,calc((100vw - 1280px)/2 + 4px))}
+#main > .intro::before{inset:101px -24.5px 0;background:#fff;border:1px solid #b3c1a8;border-top:0;border-radius:0 0 12px 12px;box-shadow:none}
+#main > .intro::after{content:"";position:absolute;top:8px;left:calc(-24px - var(--hero-flare));width:calc(100% + 48px + 2 * var(--hero-flare));height:94px;background:url("platform-assets/soft-crown-left.svg") left/var(--hero-flare) 100% no-repeat,url("platform-assets/soft-crown-right.svg") right/var(--hero-flare) 100% no-repeat,linear-gradient(#fff,#fff) center/calc(100% - 2 * var(--hero-flare)) 100% no-repeat;pointer-events:none;user-select:none;z-index:-1}
 @media(max-width:760px){
  :is(#selection, #collection > .level-screen, #repasse > .level-screen){--frame-flare:14px}
  :is(#selection, #collection > .level-screen, #repasse > .level-screen)::after{bottom:-202px;height:203px}
- :where(body:not(:has(.lab:not([hidden]), #collection:not([hidden]) > .collection-lab))) #main > .intro{--hero-flare:6px}
- :where(body:not(:has(.lab:not([hidden]), #collection:not([hidden]) > .collection-lab))) #main > .intro::before{inset:45px -8.5px 0;border-radius:0 0 9px 9px}
- :where(body:not(:has(.lab:not([hidden]), #collection:not([hidden]) > .collection-lab))) #main > .intro::after{top:6px;left:calc(-8px - var(--hero-flare));width:calc(100% + 16px + 2 * var(--hero-flare));height:40px}
+ #main > .intro{--hero-flare:6px}
+ #main > .intro::before{inset:45px -8.5px 0;border-radius:0 0 9px 9px}
+ #main > .intro::after{top:6px;left:calc(-8px - var(--hero-flare));width:calc(100% + 16px + 2 * var(--hero-flare));height:40px}
 }
 
 /* One continuous white crown behind the canopy, header and hero opening.

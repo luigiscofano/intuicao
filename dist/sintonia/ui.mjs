@@ -34,7 +34,7 @@ const shortNumber = value => String(value).padStart(2,'0');
 const lessonText = level => String(level.lesson??'Prepare os caminhos em conjunto.').replace(/^Aqui o jogador precisa descobrir que\s+/i,'Descoberta deste nível: ');
 
 export function freshSintoniaData() {
-  return {version:1,rulesVersion:RULES_VERSION,prefs:{advanced:false,rulesOpen:false,coordinates:false,autoAdvance:true},campaign:{lastId:null,completed:{},sessions:{}},endless:null,custom:null,learnedMechanics:[],events:[],lastView:{active:false,screen:'selection',mode:'campaign'}};
+  return {version:1,rulesVersion:RULES_VERSION,prefs:{advanced:false,rulesOpen:true,coordinates:false,autoAdvance:true},campaign:{lastId:null,completed:{},sessions:{}},endless:null,custom:null,learnedMechanics:[],events:[],lastView:{active:false,screen:'selection',mode:'campaign'}};
 }
 
 export function normalizeSintoniaData(value) {
@@ -133,7 +133,7 @@ export function initSintonia({hideOtherGames}) {
   let data;
   try{data=normalizeSintoniaData(JSON.parse(localStorage.getItem(STORE)||'null'));}catch{data=freshSintoniaData();}
   let level=null,session=null,mode='campaign',index=0,screen='selection',daily=false;
-  let rulesOpen=false,advanced=data.prefs.advanced,motion=null,storageWarning=false;
+  let rulesOpen=true,advanced=data.prefs.advanced,motion=null,storageWarning=false;
   let message='',hintText='',hintTier=0,hintPlan=null,hintBusy=false,answerPlan=null,inspectKey='',model=null;
   let revision=0,hintRevision=0,generationRevision=0,importRevision=0,autoTimer=null,generationBusy=false;
   let recentDirection='',prefetch=[],prefetchTask=null,connectionsOpen=false;
@@ -210,7 +210,7 @@ export function initSintonia({hideOtherGames}) {
     invalidate();level=next;mode=nextMode;screen='play';model=relationModel(level);recentDirection='';connectionsOpen=false;
     session=restoreSintoniaSession(level,fresh?null:saved);
     const unknown=(level.mechanics??[]).filter(id=>id in MECHANIC_TEXT&&!data.learnedMechanics.includes(id));
-    rulesOpen=data.prefs.rulesOpen||unknown.length>0||(!session.cursor&&index===0&&mode==='campaign');
+    rulesOpen=true;
     data.learnedMechanics=[...new Set([...data.learnedMechanics,...(level.mechanics??[]).filter(id=>id in MECHANIC_TEXT)])];
     data.lastView={active:true,screen,mode};
     message=isWon(level,current())?'Todos os animais estão nos seus destinos.':session.cursor?'Partida retomada. O mesmo comando continua valendo para todos.':'Use as setas para mover todos juntos. Chegar ao destino não prende o animal.';
@@ -413,7 +413,7 @@ export function initSintonia({hideOtherGames}) {
     $('s-confirm').onclick=confirm;$('s-next').onclick=()=>navigate(1);$('s-hint').onclick=hint;$('s-answer').onclick=showAnswer;
     $('s-hint-apply').onclick=()=>{if(hintPlan?.context===stateKey(current()))move(hintPlan.solution[0],{assisted:true});};$('s-answer-apply').onclick=applyAnswer;
     host.querySelectorAll('[data-s-direction]').forEach(button=>button.onclick=()=>move(button.dataset.sDirection));
-    $('s-rules-panel').ontoggle=()=>{rulesOpen=$('s-rules-panel').open;data.prefs.rulesOpen=rulesOpen;syncPanels();save();};
+    const rulesPanel=$('s-rules-panel');rulesPanel.ontoggle=()=>{if($('s-rules-panel')!==rulesPanel)return;rulesOpen=rulesPanel.open;data.prefs.rulesOpen=rulesOpen;syncPanels();save();};
     $('s-advanced-toggle').onclick=()=>{advanced=!advanced;syncPanels();save();};
     bindAdvanced();if(mode==='endless')bindEndless();renderBoards();renderStatus();
     if(won)motion.show('sintonia',true);
