@@ -1,3 +1,4 @@
+import {restoreAboutDialogHTML} from './about-dialog-history.mjs';
 import {restoreSoftCornerCSS} from './soft-corner-history.mjs';
 import assert from 'node:assert/strict';
 import fs from 'node:fs';
@@ -23,6 +24,7 @@ const crownPaint=JSON.parse(fs.readFileSync(new URL('./top-crown-paint-authorize
 const sha=s=>crypto.createHash('sha256').update(s).digest('hex');
 for(const [name,hash] of Object.entries(gravityChange.preserved_dist_sha256)){
  let bytes=fs.readFileSync(new URL('../'+name,import.meta.url));
+ if(name==='dist/index.html')bytes=Buffer.from(restoreAboutDialogHTML(bytes.toString()));
  if(name==='dist/platform.css'){
   const css=restoreSoftCornerCSS(bytes.toString()).replace(crownPaint.css_insertion,'').replace(continuousFrame.css_after,continuousFrame.css_before).replace(heroCurves.css_insertion,'').replace(contentFrameCurves.css_insertion,'');
   assert.equal(css.split(headerFrameChange.css_insertion).length-1,1,'Exact separately authorized header frame');
@@ -36,7 +38,7 @@ for(const asset of headerFrameChange.assets)assert.equal(sha(fs.readFileSync(new
 for(const [name,hash] of Object.entries(baseline)){
  let bytes=fs.readFileSync(new URL('../dist/'+name,import.meta.url));
  if(name==='index.html'){
-  let html=bytes.toString();
+  let html=restoreAboutDialogHTML(bytes.toString());
   assert.equal(html.split(physicsChange.html_insertion).length-1,1,'Exactly one approved decoration module');
   html=html.replace(physicsChange.html_insertion,'');
   assert.equal(html.split(speedChange.html_after).length-1,1,'Exact moderate leaf incidence increase');
