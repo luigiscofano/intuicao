@@ -19,7 +19,7 @@
 .result-motion .result-retry:focus-visible{outline:3px solid #b17c45;outline-offset:4px}
 .result-motion .result-retry:disabled{opacity:.65;cursor:default}
 .result-motion .result-retry svg{width:26px;height:26px;fill:none;stroke:currentColor;stroke-width:2;stroke-linecap:round;stroke-linejoin:round;pointer-events:none}
-.board-navigation:has(.result-motion[data-retry="true"]),#collection .board-navigation:has(#c-motion[data-retry="true"]),:is(#sintonia,#repasse) .board-navigation:has(.result-motion[data-retry="true"]){--result-reserved-height:76px}
+.board-navigation:has(.result-motion[data-retry="true"]),#collection .board-navigation:has(#c-motion[data-retry="true"]),:is(#sintonia,#repasse,#orbita) .board-navigation:has(.result-motion[data-retry="true"]){--result-reserved-height:76px}
 .result-badge{display:flex;align-items:center;gap:12px;min-height:80px;color:var(--green)}
 .result-badge>svg{width:76px;height:68px;flex:0 0 76px;overflow:visible}
 .result-badge strong{display:block;font-size:15px;line-height:1.4}

@@ -1,0 +1,1734 @@
+{
+  "rulesVersion": "orbita-1",
+  "sourceHash": "509b57014cabf1bb9080e7a94aa37d367d1a7d7b4b9dfb83176612bbb022b5f0",
+  "total": 500,
+  "validated": 500,
+  "replayVerified": 500,
+  "currentStateAdviceVerified": 500,
+  "duplicateGroups": [
+    [
+      1,
+      2
+    ]
+  ],
+  "specialActions": [
+    {
+      "level": 307,
+      "kind": "step",
+      "necessary": true,
+      "proof": {
+        "status": "unsolvable",
+        "visited": 4,
+        "method": "restricted-reachable-graph-exhausted"
+      }
+    },
+    {
+      "level": 319,
+      "kind": "step",
+      "necessary": true,
+      "proof": {
+        "status": "unsolvable",
+        "method": "incorrect-target-in-immovable-cell",
+        "witness": "c2"
+      }
+    },
+    {
+      "level": 331,
+      "kind": "step",
+      "necessary": true,
+      "proof": {
+        "status": "unsolvable",
+        "method": "incorrect-target-in-immovable-cell",
+        "witness": "c2"
+      }
+    },
+    {
+      "level": 343,
+      "kind": "step",
+      "necessary": true,
+      "proof": {
+        "status": "unsolvable",
+        "method": "incorrect-target-in-immovable-cell",
+        "witness": "c11"
+      }
+    },
+    {
+      "level": 352,
+      "kind": "gear",
+      "necessary": true,
+      "proof": {
+        "status": "unsolvable",
+        "visited": 4,
+        "method": "restricted-reachable-graph-exhausted"
+      }
+    },
+    {
+      "level": 355,
+      "kind": "step",
+      "necessary": true,
+      "proof": {
+        "status": "unsolvable",
+        "method": "incorrect-target-in-immovable-cell",
+        "witness": "c9"
+      }
+    },
+    {
+      "level": 357,
+      "kind": "gear",
+      "necessary": true,
+      "proof": {
+        "status": "unsolvable",
+        "method": "incorrect-target-in-immovable-cell",
+        "witness": "c13"
+      }
+    },
+    {
+      "level": 361,
+      "kind": "step",
+      "necessary": true,
+      "proof": {
+        "status": "unsolvable",
+        "method": "incorrect-target-in-immovable-cell",
+        "witness": "c12"
+      }
+    },
+    {
+      "level": 362,
+      "kind": "gear",
+      "necessary": true,
+      "proof": {
+        "status": "unsolvable",
+        "method": "incorrect-target-in-immovable-cell",
+        "witness": "c6"
+      }
+    },
+    {
+      "level": 367,
+      "kind": "gear",
+      "necessary": true,
+      "proof": {
+        "status": "unsolvable",
+        "method": "incorrect-target-in-immovable-cell",
+        "witness": "c12"
+      }
+    },
+    {
+      "level": 372,
+      "kind": "gear",
+      "necessary": true,
+      "proof": {
+        "status": "unsolvable",
+        "method": "incorrect-target-in-immovable-cell",
+        "witness": "c5"
+      }
+    },
+    {
+      "level": 373,
+      "kind": "step",
+      "necessary": true,
+      "proof": {
+        "status": "unsolvable",
+        "method": "incorrect-target-in-immovable-cell",
+        "witness": "c3"
+      }
+    },
+    {
+      "level": 379,
+      "kind": "step",
+      "necessary": true,
+      "proof": {
+        "status": "unsolvable",
+        "method": "incorrect-target-in-immovable-cell",
+        "witness": "c3"
+      }
+    },
+    {
+      "level": 385,
+      "kind": "step",
+      "necessary": true,
+      "proof": {
+        "status": "unsolvable",
+        "method": "incorrect-target-in-immovable-cell",
+        "witness": "c4"
+      }
+    },
+    {
+      "level": 392,
+      "kind": "gear",
+      "necessary": true,
+      "proof": {
+        "status": "unsolvable",
+        "visited": 6,
+        "method": "restricted-reachable-graph-exhausted"
+      }
+    },
+    {
+      "level": 397,
+      "kind": "gear",
+      "necessary": true,
+      "proof": {
+        "status": "unsolvable",
+        "method": "incorrect-target-in-immovable-cell",
+        "witness": "c2"
+      }
+    },
+    {
+      "level": 402,
+      "kind": "gear",
+      "necessary": true,
+      "proof": {
+        "status": "unsolvable",
+        "method": "incorrect-target-in-immovable-cell",
+        "witness": "c11"
+      }
+    },
+    {
+      "level": 403,
+      "kind": "step",
+      "necessary": true,
+      "proof": {
+        "status": "unsolvable",
+        "method": "incorrect-target-in-immovable-cell",
+        "witness": "c4"
+      }
+    },
+    {
+      "level": 407,
+      "kind": "gear",
+      "necessary": true,
+      "proof": {
+        "status": "unsolvable",
+        "method": "incorrect-target-in-immovable-cell",
+        "witness": "c4"
+      }
+    },
+    {
+      "level": 409,
+      "kind": "step",
+      "necessary": true,
+      "proof": {
+        "status": "unsolvable",
+        "method": "incorrect-target-in-immovable-cell",
+        "witness": "c3"
+      }
+    },
+    {
+      "level": 411,
+      "kind": "sensor",
+      "necessary": true,
+      "proof": {
+        "status": "unsolvable",
+        "method": "incorrect-target-in-immovable-cell",
+        "witness": "c3"
+      },
+      "initiallyBlocked": true
+    },
+    {
+      "level": 412,
+      "kind": "gear",
+      "necessary": true,
+      "proof": {
+        "status": "unsolvable",
+        "method": "incorrect-target-in-immovable-cell",
+        "witness": "c11"
+      }
+    },
+    {
+      "level": 416,
+      "kind": "sensor",
+      "necessary": true,
+      "proof": {
+        "status": "unsolvable",
+        "method": "incorrect-target-in-immovable-cell",
+        "witness": "c3"
+      },
+      "initiallyBlocked": true
+    },
+    {
+      "level": 417,
+      "kind": "gear",
+      "necessary": true,
+      "proof": {
+        "status": "unsolvable",
+        "method": "incorrect-target-in-immovable-cell",
+        "witness": "c2"
+      }
+    },
+    {
+      "level": 421,
+      "kind": "sensor",
+      "necessary": true,
+      "proof": {
+        "status": "unsolvable",
+        "method": "incorrect-target-in-immovable-cell",
+        "witness": "c1"
+      },
+      "initiallyBlocked": true
+    },
+    {
+      "level": 426,
+      "kind": "sensor",
+      "necessary": true,
+      "proof": {
+        "status": "unsolvable",
+        "method": "incorrect-target-in-immovable-cell",
+        "witness": "c5"
+      },
+      "initiallyBlocked": true
+    },
+    {
+      "level": 427,
+      "kind": "gear",
+      "necessary": true,
+      "proof": {
+        "status": "unsolvable",
+        "method": "incorrect-target-in-immovable-cell",
+        "witness": "c14"
+      }
+    },
+    {
+      "level": 431,
+      "kind": "sensor",
+      "necessary": true,
+      "proof": {
+        "status": "unsolvable",
+        "method": "incorrect-target-in-immovable-cell",
+        "witness": "c4"
+      },
+      "initiallyBlocked": false
+    },
+    {
+      "level": 433,
+      "kind": "step",
+      "necessary": true,
+      "proof": {
+        "status": "unsolvable",
+        "method": "incorrect-target-in-immovable-cell",
+        "witness": "c2"
+      }
+    },
+    {
+      "level": 436,
+      "kind": "sensor",
+      "necessary": true,
+      "proof": {
+        "status": "unsolvable",
+        "method": "incorrect-target-in-immovable-cell",
+        "witness": "c4"
+      },
+      "initiallyBlocked": true
+    },
+    {
+      "level": 441,
+      "kind": "sensor",
+      "necessary": true,
+      "proof": {
+        "status": "unsolvable",
+        "method": "incorrect-target-in-immovable-cell",
+        "witness": "c3"
+      },
+      "initiallyBlocked": true
+    },
+    {
+      "level": 442,
+      "kind": "gear",
+      "necessary": true,
+      "proof": {
+        "status": "unsolvable",
+        "method": "incorrect-target-in-immovable-cell",
+        "witness": "c7"
+      }
+    },
+    {
+      "level": 445,
+      "kind": "step",
+      "necessary": true,
+      "proof": {
+        "status": "unsolvable",
+        "method": "incorrect-target-in-immovable-cell",
+        "witness": "c1"
+      }
+    },
+    {
+      "level": 447,
+      "kind": "gear",
+      "necessary": true,
+      "proof": {
+        "status": "unsolvable",
+        "method": "incorrect-target-in-immovable-cell",
+        "witness": "c2"
+      }
+    },
+    {
+      "level": 452,
+      "kind": "gear",
+      "necessary": true,
+      "proof": {
+        "status": "unsolvable",
+        "method": "incorrect-target-in-immovable-cell",
+        "witness": "c14"
+      }
+    },
+    {
+      "level": 457,
+      "kind": "gear",
+      "necessary": true,
+      "proof": {
+        "status": "unsolvable",
+        "method": "incorrect-target-in-immovable-cell",
+        "witness": "c4"
+      }
+    },
+    {
+      "level": 459,
+      "kind": "gear",
+      "necessary": true,
+      "proof": {
+        "status": "unsolvable",
+        "method": "incorrect-target-in-immovable-cell",
+        "witness": "c17"
+      }
+    },
+    {
+      "level": 459,
+      "kind": "sensor",
+      "necessary": true,
+      "proof": {
+        "status": "unsolvable",
+        "method": "incorrect-target-in-immovable-cell",
+        "witness": "c17"
+      },
+      "initiallyBlocked": false
+    },
+    {
+      "level": 460,
+      "kind": "step",
+      "necessary": true,
+      "proof": {
+        "status": "unsolvable",
+        "method": "incorrect-target-in-immovable-cell",
+        "witness": "c2"
+      }
+    },
+    {
+      "level": 460,
+      "kind": "sensor",
+      "necessary": true,
+      "proof": {
+        "status": "unsolvable",
+        "method": "incorrect-target-in-immovable-cell",
+        "witness": "c2"
+      },
+      "initiallyBlocked": false
+    },
+    {
+      "level": 461,
+      "kind": "sensor",
+      "necessary": true,
+      "proof": {
+        "status": "unsolvable",
+        "method": "incorrect-target-in-immovable-cell",
+        "witness": "c6"
+      },
+      "initiallyBlocked": true
+    },
+    {
+      "level": 462,
+      "kind": "gear",
+      "necessary": true,
+      "proof": {
+        "status": "unsolvable",
+        "method": "incorrect-target-in-immovable-cell",
+        "witness": "c11"
+      }
+    },
+    {
+      "level": 466,
+      "kind": "sensor",
+      "necessary": true,
+      "proof": {
+        "status": "unsolvable",
+        "method": "incorrect-target-in-immovable-cell",
+        "witness": "c5"
+      },
+      "initiallyBlocked": true
+    },
+    {
+      "level": 467,
+      "kind": "gear",
+      "necessary": true,
+      "proof": {
+        "status": "unsolvable",
+        "method": "incorrect-target-in-immovable-cell",
+        "witness": "c2"
+      }
+    },
+    {
+      "level": 469,
+      "kind": "step",
+      "necessary": true,
+      "proof": {
+        "status": "unsolvable",
+        "method": "incorrect-target-in-immovable-cell",
+        "witness": "c4"
+      }
+    },
+    {
+      "level": 471,
+      "kind": "sensor",
+      "necessary": true,
+      "proof": {
+        "status": "unsolvable",
+        "method": "incorrect-target-in-immovable-cell",
+        "witness": "c5"
+      },
+      "initiallyBlocked": false
+    },
+    {
+      "level": 472,
+      "kind": "gear",
+      "necessary": true,
+      "proof": {
+        "status": "unsolvable",
+        "method": "incorrect-target-in-immovable-cell",
+        "witness": "c7"
+      }
+    },
+    {
+      "level": 476,
+      "kind": "gear",
+      "necessary": true,
+      "proof": {
+        "status": "unsolvable",
+        "method": "incorrect-target-in-immovable-cell",
+        "witness": "c12"
+      }
+    },
+    {
+      "level": 476,
+      "kind": "sensor",
+      "necessary": true,
+      "proof": {
+        "status": "unsolvable",
+        "method": "incorrect-target-in-immovable-cell",
+        "witness": "c12"
+      },
+      "initiallyBlocked": true
+    },
+    {
+      "level": 481,
+      "kind": "sensor",
+      "necessary": true,
+      "proof": {
+        "status": "unsolvable",
+        "method": "incorrect-target-in-immovable-cell",
+        "witness": "c3"
+      },
+      "initiallyBlocked": true
+    },
+    {
+      "level": 483,
+      "kind": "step",
+      "necessary": true,
+      "proof": {
+        "status": "unsolvable",
+        "method": "incorrect-target-in-immovable-cell",
+        "witness": "c3"
+      }
+    },
+    {
+      "level": 483,
+      "kind": "sensor",
+      "necessary": true,
+      "proof": {
+        "status": "unsolvable",
+        "method": "incorrect-target-in-immovable-cell",
+        "witness": "c3"
+      },
+      "initiallyBlocked": true
+    },
+    {
+      "level": 486,
+      "kind": "sensor",
+      "necessary": true,
+      "proof": {
+        "status": "unsolvable",
+        "method": "incorrect-target-in-immovable-cell",
+        "witness": "c2"
+      },
+      "initiallyBlocked": true
+    },
+    {
+      "level": 492,
+      "kind": "gear",
+      "necessary": true,
+      "proof": {
+        "status": "unsolvable",
+        "method": "incorrect-target-in-immovable-cell",
+        "witness": "c8"
+      }
+    },
+    {
+      "level": 493,
+      "kind": "gear",
+      "necessary": true,
+      "proof": {
+        "status": "unsolvable",
+        "method": "incorrect-target-in-immovable-cell",
+        "witness": "c14"
+      }
+    },
+    {
+      "level": 493,
+      "kind": "sensor",
+      "necessary": true,
+      "proof": {
+        "status": "unsolvable",
+        "method": "incorrect-target-in-immovable-cell",
+        "witness": "c14"
+      },
+      "initiallyBlocked": true
+    },
+    {
+      "level": 496,
+      "kind": "sensor",
+      "necessary": true,
+      "proof": {
+        "status": "unsolvable",
+        "method": "incorrect-target-in-immovable-cell",
+        "witness": "c1"
+      },
+      "initiallyBlocked": true
+    },
+    {
+      "level": 497,
+      "kind": "gear",
+      "necessary": true,
+      "proof": {
+        "status": "unsolvable",
+        "method": "incorrect-target-in-immovable-cell",
+        "witness": "c13"
+      }
+    },
+    {
+      "level": 500,
+      "kind": "step",
+      "necessary": true,
+      "proof": {
+        "status": "unsolvable",
+        "method": "incorrect-target-in-immovable-cell",
+        "witness": "c11"
+      }
+    },
+    {
+      "level": 500,
+      "kind": "gear",
+      "necessary": true,
+      "proof": {
+        "status": "unsolvable",
+        "method": "incorrect-target-in-immovable-cell",
+        "witness": "c11"
+      }
+    },
+    {
+      "level": 500,
+      "kind": "sensor",
+      "necessary": true,
+      "proof": {
+        "status": "unsolvable",
+        "method": "incorrect-target-in-immovable-cell",
+        "witness": "c11"
+      },
+      "initiallyBlocked": true
+    }
+  ],
+  "singleCommandSolutions": [
+    {
+      "level": 1,
+      "command": "A",
+      "direction": 1,
+      "repetitions": 1,
+      "knownLength": 1
+    },
+    {
+      "level": 1,
+      "command": "A",
+      "direction": -1,
+      "repetitions": 3,
+      "knownLength": 1
+    },
+    {
+      "level": 2,
+      "command": "A",
+      "direction": 1,
+      "repetitions": 3,
+      "knownLength": 1
+    },
+    {
+      "level": 2,
+      "command": "A",
+      "direction": -1,
+      "repetitions": 1,
+      "knownLength": 1
+    },
+    {
+      "level": 3,
+      "command": "A",
+      "direction": 1,
+      "repetitions": 1,
+      "knownLength": 1
+    },
+    {
+      "level": 3,
+      "command": "A",
+      "direction": -1,
+      "repetitions": 3,
+      "knownLength": 1
+    },
+    {
+      "level": 4,
+      "command": "A",
+      "direction": 1,
+      "repetitions": 2,
+      "knownLength": 2
+    },
+    {
+      "level": 4,
+      "command": "A",
+      "direction": -1,
+      "repetitions": 2,
+      "knownLength": 2
+    },
+    {
+      "level": 5,
+      "command": "A",
+      "direction": 1,
+      "repetitions": 1,
+      "knownLength": 1
+    },
+    {
+      "level": 5,
+      "command": "A",
+      "direction": -1,
+      "repetitions": 3,
+      "knownLength": 1
+    },
+    {
+      "level": 7,
+      "command": "B",
+      "direction": 1,
+      "repetitions": 1,
+      "knownLength": 1
+    },
+    {
+      "level": 7,
+      "command": "B",
+      "direction": -1,
+      "repetitions": 3,
+      "knownLength": 1
+    },
+    {
+      "level": 12,
+      "command": "B",
+      "direction": 1,
+      "repetitions": 2,
+      "knownLength": 2
+    },
+    {
+      "level": 12,
+      "command": "B",
+      "direction": -1,
+      "repetitions": 2,
+      "knownLength": 2
+    },
+    {
+      "level": 15,
+      "command": "B",
+      "direction": 1,
+      "repetitions": 4,
+      "knownLength": 1
+    },
+    {
+      "level": 15,
+      "command": "B",
+      "direction": -1,
+      "repetitions": 1,
+      "knownLength": 1
+    },
+    {
+      "level": 25,
+      "command": "B",
+      "direction": 1,
+      "repetitions": 2,
+      "knownLength": 2
+    },
+    {
+      "level": 25,
+      "command": "B",
+      "direction": -1,
+      "repetitions": 3,
+      "knownLength": 2
+    },
+    {
+      "level": 37,
+      "command": "A",
+      "direction": 1,
+      "repetitions": 1,
+      "knownLength": 1
+    },
+    {
+      "level": 37,
+      "command": "A",
+      "direction": -1,
+      "repetitions": 4,
+      "knownLength": 1
+    },
+    {
+      "level": 39,
+      "command": "B",
+      "direction": 1,
+      "repetitions": 2,
+      "knownLength": 2
+    },
+    {
+      "level": 39,
+      "command": "B",
+      "direction": -1,
+      "repetitions": 2,
+      "knownLength": 2
+    },
+    {
+      "level": 41,
+      "command": "A",
+      "direction": 1,
+      "repetitions": 1,
+      "knownLength": 1
+    },
+    {
+      "level": 41,
+      "command": "A",
+      "direction": -1,
+      "repetitions": 4,
+      "knownLength": 1
+    },
+    {
+      "level": 46,
+      "command": "A",
+      "direction": 1,
+      "repetitions": 3,
+      "knownLength": 1
+    },
+    {
+      "level": 46,
+      "command": "A",
+      "direction": -1,
+      "repetitions": 1,
+      "knownLength": 1
+    },
+    {
+      "level": 102,
+      "command": "B",
+      "direction": 1,
+      "repetitions": 2,
+      "knownLength": 2
+    },
+    {
+      "level": 102,
+      "command": "B",
+      "direction": -1,
+      "repetitions": 2,
+      "knownLength": 2
+    },
+    {
+      "level": 104,
+      "command": "A",
+      "direction": 1,
+      "repetitions": 2,
+      "knownLength": 2
+    },
+    {
+      "level": 104,
+      "command": "A",
+      "direction": -1,
+      "repetitions": 4,
+      "knownLength": 2
+    },
+    {
+      "level": 115,
+      "command": "A",
+      "direction": 1,
+      "repetitions": 2,
+      "knownLength": 2
+    },
+    {
+      "level": 115,
+      "command": "A",
+      "direction": -1,
+      "repetitions": 4,
+      "knownLength": 2
+    },
+    {
+      "level": 122,
+      "command": "B",
+      "direction": 1,
+      "repetitions": 5,
+      "knownLength": 2
+    },
+    {
+      "level": 122,
+      "command": "B",
+      "direction": -1,
+      "repetitions": 2,
+      "knownLength": 2
+    },
+    {
+      "level": 135,
+      "command": "B",
+      "direction": 1,
+      "repetitions": 2,
+      "knownLength": 2
+    },
+    {
+      "level": 135,
+      "command": "B",
+      "direction": -1,
+      "repetitions": 2,
+      "knownLength": 2
+    },
+    {
+      "level": 158,
+      "command": "A",
+      "direction": 1,
+      "repetitions": 5,
+      "knownLength": 2
+    },
+    {
+      "level": 158,
+      "command": "A",
+      "direction": -1,
+      "repetitions": 2,
+      "knownLength": 2
+    },
+    {
+      "level": 188,
+      "command": "A",
+      "direction": 1,
+      "repetitions": 4,
+      "knownLength": 2
+    },
+    {
+      "level": 188,
+      "command": "A",
+      "direction": -1,
+      "repetitions": 2,
+      "knownLength": 2
+    }
+  ],
+  "minimumCrossChecks": [
+    {
+      "level": 1,
+      "minimum": 1,
+      "visited": 2
+    },
+    {
+      "level": 2,
+      "minimum": 1,
+      "visited": 3
+    },
+    {
+      "level": 3,
+      "minimum": 1,
+      "visited": 2
+    },
+    {
+      "level": 4,
+      "minimum": 2,
+      "visited": 4
+    },
+    {
+      "level": 5,
+      "minimum": 1,
+      "visited": 2
+    },
+    {
+      "level": 6,
+      "minimum": 3,
+      "visited": 14
+    },
+    {
+      "level": 7,
+      "minimum": 1,
+      "visited": 4
+    },
+    {
+      "level": 8,
+      "minimum": 3,
+      "visited": 23
+    },
+    {
+      "level": 9,
+      "minimum": 3,
+      "visited": 10
+    },
+    {
+      "level": 10,
+      "minimum": 4,
+      "visited": 63
+    },
+    {
+      "level": 11,
+      "minimum": 2,
+      "visited": 8
+    },
+    {
+      "level": 12,
+      "minimum": 2,
+      "visited": 14
+    },
+    {
+      "level": 13,
+      "minimum": 3,
+      "visited": 24
+    },
+    {
+      "level": 14,
+      "minimum": 2,
+      "visited": 11
+    },
+    {
+      "level": 15,
+      "minimum": 1,
+      "visited": 5
+    },
+    {
+      "level": 16,
+      "minimum": 3,
+      "visited": 22
+    },
+    {
+      "level": 17,
+      "minimum": 2,
+      "visited": 11
+    },
+    {
+      "level": 19,
+      "minimum": 2,
+      "visited": 7
+    },
+    {
+      "level": 20,
+      "minimum": 3,
+      "visited": 34
+    },
+    {
+      "level": 21,
+      "minimum": 2,
+      "visited": 5
+    },
+    {
+      "level": 22,
+      "minimum": 3,
+      "visited": 26
+    },
+    {
+      "level": 24,
+      "minimum": 3,
+      "visited": 33
+    },
+    {
+      "level": 25,
+      "minimum": 2,
+      "visited": 11
+    },
+    {
+      "level": 26,
+      "minimum": 2,
+      "visited": 10
+    },
+    {
+      "level": 29,
+      "minimum": 3,
+      "visited": 24
+    },
+    {
+      "level": 31,
+      "minimum": 2,
+      "visited": 6
+    },
+    {
+      "level": 32,
+      "minimum": 3,
+      "visited": 22
+    },
+    {
+      "level": 34,
+      "minimum": 2,
+      "visited": 7
+    },
+    {
+      "level": 37,
+      "minimum": 1,
+      "visited": 2
+    },
+    {
+      "level": 39,
+      "minimum": 2,
+      "visited": 11
+    },
+    {
+      "level": 41,
+      "minimum": 1,
+      "visited": 2
+    },
+    {
+      "level": 44,
+      "minimum": 2,
+      "visited": 22
+    },
+    {
+      "level": 45,
+      "minimum": 3,
+      "visited": 32
+    },
+    {
+      "level": 46,
+      "minimum": 1,
+      "visited": 3
+    },
+    {
+      "level": 50,
+      "minimum": 2,
+      "visited": 9
+    },
+    {
+      "level": 54,
+      "minimum": 2,
+      "visited": 10
+    },
+    {
+      "level": 73,
+      "minimum": 2,
+      "visited": 12
+    },
+    {
+      "level": 79,
+      "minimum": 2,
+      "visited": 25
+    },
+    {
+      "level": 97,
+      "minimum": 2,
+      "visited": 12
+    },
+    {
+      "level": 102,
+      "minimum": 2,
+      "visited": 14
+    },
+    {
+      "level": 103,
+      "minimum": 2,
+      "visited": 18
+    },
+    {
+      "level": 104,
+      "minimum": 2,
+      "visited": 6
+    },
+    {
+      "level": 115,
+      "minimum": 2,
+      "visited": 6
+    },
+    {
+      "level": 122,
+      "minimum": 2,
+      "visited": 15
+    },
+    {
+      "level": 129,
+      "minimum": 2,
+      "visited": 10
+    },
+    {
+      "level": 135,
+      "minimum": 2,
+      "visited": 12
+    },
+    {
+      "level": 158,
+      "minimum": 2,
+      "visited": 13
+    },
+    {
+      "level": 188,
+      "minimum": 2,
+      "visited": 13
+    },
+    {
+      "level": 232,
+      "minimum": 3,
+      "visited": 92
+    },
+    {
+      "level": 278,
+      "minimum": 3,
+      "visited": 22
+    },
+    {
+      "level": 281,
+      "minimum": 3,
+      "visited": 67
+    },
+    {
+      "level": 307,
+      "minimum": 4,
+      "visited": 18
+    },
+    {
+      "level": 308,
+      "minimum": 4,
+      "visited": 110
+    },
+    {
+      "level": 309,
+      "minimum": 4,
+      "visited": 42
+    },
+    {
+      "level": 311,
+      "minimum": 4,
+      "visited": 603
+    },
+    {
+      "level": 315,
+      "minimum": 4,
+      "visited": 101
+    },
+    {
+      "level": 322,
+      "minimum": 4,
+      "visited": 130
+    },
+    {
+      "level": 336,
+      "minimum": 4,
+      "visited": 126
+    },
+    {
+      "level": 339,
+      "minimum": 4,
+      "visited": 124
+    },
+    {
+      "level": 346,
+      "minimum": 4,
+      "visited": 129
+    },
+    {
+      "level": 350,
+      "minimum": 4,
+      "visited": 136
+    },
+    {
+      "level": 352,
+      "minimum": 4,
+      "visited": 42
+    },
+    {
+      "level": 353,
+      "minimum": 4,
+      "visited": 122
+    },
+    {
+      "level": 367,
+      "minimum": 4,
+      "visited": 49
+    },
+    {
+      "level": 370,
+      "minimum": 4,
+      "visited": 96
+    },
+    {
+      "level": 377,
+      "minimum": 4,
+      "visited": 110
+    },
+    {
+      "level": 379,
+      "minimum": 4,
+      "visited": 122
+    },
+    {
+      "level": 384,
+      "minimum": 4,
+      "visited": 111
+    },
+    {
+      "level": 385,
+      "minimum": 4,
+      "visited": 120
+    },
+    {
+      "level": 388,
+      "minimum": 4,
+      "visited": 111
+    },
+    {
+      "level": 391,
+      "minimum": 4,
+      "visited": 132
+    },
+    {
+      "level": 392,
+      "minimum": 4,
+      "visited": 113
+    },
+    {
+      "level": 398,
+      "minimum": 4,
+      "visited": 249
+    },
+    {
+      "level": 408,
+      "minimum": 4,
+      "visited": 85
+    },
+    {
+      "level": 411,
+      "minimum": 2,
+      "visited": 6
+    },
+    {
+      "level": 414,
+      "minimum": 4,
+      "visited": 133
+    },
+    {
+      "level": 415,
+      "minimum": 4,
+      "visited": 140
+    },
+    {
+      "level": 421,
+      "minimum": 4,
+      "visited": 15
+    },
+    {
+      "level": 422,
+      "minimum": 4,
+      "visited": 115
+    },
+    {
+      "level": 431,
+      "minimum": 4,
+      "visited": 25
+    },
+    {
+      "level": 439,
+      "minimum": 4,
+      "visited": 97
+    },
+    {
+      "level": 445,
+      "minimum": 4,
+      "visited": 31
+    },
+    {
+      "level": 446,
+      "minimum": 4,
+      "visited": 126
+    },
+    {
+      "level": 453,
+      "minimum": 4,
+      "visited": 106
+    },
+    {
+      "level": 460,
+      "minimum": 4,
+      "visited": 14
+    },
+    {
+      "level": 461,
+      "minimum": 4,
+      "visited": 7
+    },
+    {
+      "level": 466,
+      "minimum": 4,
+      "visited": 19
+    },
+    {
+      "level": 468,
+      "minimum": 4,
+      "visited": 107
+    },
+    {
+      "level": 470,
+      "minimum": 4,
+      "visited": 129
+    },
+    {
+      "level": 476,
+      "minimum": 4,
+      "visited": 8
+    },
+    {
+      "level": 477,
+      "minimum": 4,
+      "visited": 106
+    },
+    {
+      "level": 483,
+      "minimum": 4,
+      "visited": 8
+    },
+    {
+      "level": 484,
+      "minimum": 4,
+      "visited": 93
+    },
+    {
+      "level": 491,
+      "minimum": 4,
+      "visited": 114
+    }
+  ],
+  "difficultySamples": [
+    {
+      "level": 201,
+      "status": "solved",
+      "optimal": true,
+      "foundLength": 5,
+      "knownLength": 5,
+      "visited": 197,
+      "reason": null
+    },
+    {
+      "level": 225,
+      "status": "inconclusive",
+      "optimal": false,
+      "foundLength": null,
+      "knownLength": 10,
+      "visited": 425,
+      "reason": "depth-limit"
+    },
+    {
+      "level": 250,
+      "status": "inconclusive",
+      "optimal": false,
+      "foundLength": null,
+      "knownLength": 6,
+      "visited": 417,
+      "reason": "depth-limit"
+    },
+    {
+      "level": 275,
+      "status": "inconclusive",
+      "optimal": false,
+      "foundLength": null,
+      "knownLength": 6,
+      "visited": 392,
+      "reason": "depth-limit"
+    },
+    {
+      "level": 300,
+      "status": "inconclusive",
+      "optimal": false,
+      "foundLength": null,
+      "knownLength": 8,
+      "visited": 1192,
+      "reason": "depth-limit"
+    },
+    {
+      "level": 325,
+      "status": "inconclusive",
+      "optimal": false,
+      "foundLength": null,
+      "knownLength": 8,
+      "visited": 370,
+      "reason": "depth-limit"
+    },
+    {
+      "level": 350,
+      "status": "solved",
+      "optimal": true,
+      "foundLength": 4,
+      "knownLength": 4,
+      "visited": 136,
+      "reason": null
+    },
+    {
+      "level": 375,
+      "status": "inconclusive",
+      "optimal": false,
+      "foundLength": null,
+      "knownLength": 6,
+      "visited": 302,
+      "reason": "depth-limit"
+    },
+    {
+      "level": 400,
+      "status": "solved",
+      "optimal": true,
+      "foundLength": 5,
+      "knownLength": 5,
+      "visited": 1157,
+      "reason": null
+    },
+    {
+      "level": 425,
+      "status": "inconclusive",
+      "optimal": false,
+      "foundLength": null,
+      "knownLength": 8,
+      "visited": 154,
+      "reason": "depth-limit"
+    },
+    {
+      "level": 450,
+      "status": "inconclusive",
+      "optimal": false,
+      "foundLength": null,
+      "knownLength": 9,
+      "visited": 301,
+      "reason": "depth-limit"
+    },
+    {
+      "level": 475,
+      "status": "inconclusive",
+      "optimal": false,
+      "foundLength": null,
+      "knownLength": 6,
+      "visited": 380,
+      "reason": "depth-limit"
+    },
+    {
+      "level": 499,
+      "status": "inconclusive",
+      "optimal": false,
+      "foundLength": null,
+      "knownLength": 7,
+      "visited": 385,
+      "reason": "depth-limit"
+    },
+    {
+      "level": 500,
+      "status": "inconclusive",
+      "optimal": false,
+      "foundLength": null,
+      "knownLength": 8,
+      "visited": 23,
+      "reason": "depth-limit"
+    }
+  ],
+  "endless": {
+    "tested": 20,
+    "reproducible": 20,
+    "families": {
+      "pair": 13,
+      "lens": 7
+    },
+    "fallbackTests": 160,
+    "rollingWindow": 30,
+    "sequence": [
+      {
+        "seed": 2095397032,
+        "family": "unequal",
+        "rings": 2,
+        "source": "generated"
+      },
+      {
+        "seed": 454865505,
+        "family": "satellites",
+        "rings": 4,
+        "source": "generated"
+      },
+      {
+        "seed": 3109301274,
+        "family": "pair",
+        "rings": 2,
+        "source": "generated"
+      },
+      {
+        "seed": 1468769747,
+        "family": "chain",
+        "rings": 3,
+        "source": "generated"
+      },
+      {
+        "seed": 4123205516,
+        "family": "circuit",
+        "rings": 3,
+        "source": "generated"
+      },
+      {
+        "seed": 2482673989,
+        "family": "nested",
+        "rings": 2,
+        "source": "generated"
+      },
+      {
+        "seed": 842142462,
+        "family": "pair",
+        "rings": 2,
+        "source": "generated"
+      },
+      {
+        "seed": 3496578231,
+        "family": "circuit",
+        "rings": 4,
+        "source": "generated"
+      },
+      {
+        "seed": 1856046704,
+        "family": "chain",
+        "rings": 3,
+        "source": "generated"
+      },
+      {
+        "seed": 215515177,
+        "family": "nested",
+        "rings": 3,
+        "source": "generated"
+      },
+      {
+        "seed": 2869950946,
+        "family": "circuit",
+        "rings": 4,
+        "source": "generated"
+      },
+      {
+        "seed": 1229419419,
+        "family": "satellites",
+        "rings": 4,
+        "source": "generated"
+      },
+      {
+        "seed": 3883855188,
+        "family": "unequal",
+        "rings": 2,
+        "source": "generated"
+      },
+      {
+        "seed": 2243323661,
+        "family": "lens",
+        "rings": 2,
+        "source": "generated"
+      },
+      {
+        "seed": 602792134,
+        "family": "chain",
+        "rings": 3,
+        "source": "generated"
+      },
+      {
+        "seed": 3257227903,
+        "family": "compact",
+        "rings": 4,
+        "source": "generated"
+      },
+      {
+        "seed": 1616696376,
+        "family": "pair",
+        "rings": 2,
+        "source": "generated"
+      },
+      {
+        "seed": 4271132145,
+        "family": "nested",
+        "rings": 5,
+        "source": "generated"
+      },
+      {
+        "seed": 2630600618,
+        "family": "chain",
+        "rings": 3,
+        "source": "generated"
+      },
+      {
+        "seed": 990069091,
+        "family": "satellites",
+        "rings": 4,
+        "source": "generated"
+      },
+      {
+        "seed": 3644504860,
+        "family": "compact",
+        "rings": 4,
+        "source": "generated"
+      },
+      {
+        "seed": 2003973333,
+        "family": "chain",
+        "rings": 3,
+        "source": "generated"
+      },
+      {
+        "seed": 363441806,
+        "family": "satellites",
+        "rings": 4,
+        "source": "generated"
+      },
+      {
+        "seed": 3017877575,
+        "family": "reserve",
+        "rings": 3,
+        "source": "generated"
+      }
+    ],
+    "uniqueSignatures": 19,
+    "sequenceFamilies": {
+      "unequal": 2,
+      "satellites": 4,
+      "pair": 3,
+      "chain": 5,
+      "circuit": 3,
+      "nested": 3,
+      "lens": 1,
+      "compact": 2,
+      "reserve": 1
+    }
+  },
+  "notes": [
+    "Independent review: certificates are replayed and special-action necessity is checked separately from generator trace metadata.",
+    "Minimum claims are cross-checked only where declared; bounded searches without a result remain inconclusive.",
+    "Tutorial levels 1 and 2 intentionally mirror the one-step lesson to teach both directions.",
+    "Difficulties also reflect topology, coupled goals, restoration and special rules; stored sequence length alone is not treated as a difficulty proof."
+  ],
+  "uniqueSignatures": 499,
+  "familyCounts": {
+    "single": 4,
+    "pair": 167,
+    "unequal": 117,
+    "chain": 76,
+    "reserve": 66,
+    "lens": 28,
+    "circuit": 18,
+    "compact": 8,
+    "satellites": 7,
+    "nested": 9
+  },
+  "ringCounts": {
+    "1": 4,
+    "2": 315,
+    "3": 154,
+    "4": 22,
+    "5": 5
+  },
+  "basicRulesByBand": [
+    50,
+    50,
+    50,
+    50,
+    50,
+    50,
+    46,
+    38,
+    32,
+    30
+  ],
+  "completed": true
+}

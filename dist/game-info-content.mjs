@@ -96,6 +96,21 @@ export const GAME_INFO = {
     purpose: 'Praticar planejamento de ordem, antecipação de consequências e leitura de relações entre valores, receptores e metas.',
     why: 'Uma peça pode precisar receber primeiro e desaparecer depois para liberar um caminho. Comparar as metas com essas funções convida a formular, testar e revisar hipóteses.'
   },
+  orbita: {
+    name: 'ÓRBITA',
+    description: 'Um puzzle de planejamento em que peças circulam por anéis conectados e precisam encontrar seus alvos ao mesmo tempo.',
+    summary: 'Gire um anel para mover todas as suas peças juntas. Use as casas compartilhadas para preparar transferências e restaurar o que já estava certo.',
+    rules: [
+      'Escolha um anel e use as setas curvas para girar no sentido horário ou anti-horário. Cada giro avança uma casa, salvo quando o controle indicar um passo diferente.',
+      'As casas e os alvos ficam no lugar. Todas as peças do anel escolhido se movem juntas; uma casa compartilhada pertence aos dois anéis, mas contém uma única peça.',
+      'Leve uma peça ao encontro dos anéis e gire o outro anel para transferi-la. Peças que já estão corretas continuam podendo se mover e voltar depois.',
+      'Complete todos os alvos simultaneamente. Símbolos iguais são equivalentes, e fichas neutras circulam normalmente pelas casas sem exigir um destino próprio.',
+      'Mais adiante, alguns anéis avançam duas casas, engrenagens movem anéis juntos e sensores liberam comandos quando o símbolo indicado ocupa a casa marcada. Cada novidade é explicada na própria fase.',
+      'Desfaça, refaça e reinicie livremente. Checar avalia sua configuração; movimentos de exploração não contam como erros. São 500 fases e desafios novos no Endless, sem cronômetro.'
+    ],
+    purpose: 'Praticar planejamento de sequências, orientação espacial e antecipação de efeitos sobre objetivos simultâneos, usando posições temporárias e movimentos reversíveis.',
+    why: 'Um giro pode entregar uma peça e tirar outra do lugar. Preparar a chegada, escolher a ordem das transferências e restaurar regiões convida a pensar nas relações entre as partes do tabuleiro.'
+  },
   desvio: {
     name: 'DESVIO',
     description: 'Um duelo de estratégia por turnos em que cada escolha limita as opções do adversário.',

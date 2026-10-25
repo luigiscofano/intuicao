@@ -1,0 +1,508 @@
+{
+  "version": 1,
+  "total": 500,
+  "validated": 500,
+  "initiallySolved": 0,
+  "solutionReplayFailures": 0,
+  "uniqueCanonicalSignatures": 499,
+  "intentionalTutorialMirrorVariants": [
+    2
+  ],
+  "uniqueTopologySignatures": 126,
+  "difficulties": {
+    "Muito fácil": 50,
+    "Básico": 150,
+    "Intermediário": 100,
+    "Avançado": 100,
+    "Mestre": 100
+  },
+  "families": {
+    "single": 4,
+    "pair": 167,
+    "unequal": 117,
+    "chain": 76,
+    "reserve": 66,
+    "lens": 28,
+    "circuit": 18,
+    "compact": 8,
+    "satellites": 7,
+    "nested": 9
+  },
+  "ringCounts": {
+    "1": 4,
+    "2": 315,
+    "3": 154,
+    "4": 22,
+    "5": 5
+  },
+  "specialMechanics": {
+    "basic": 446,
+    "step": 14,
+    "gear": 21,
+    "sensor": 13,
+    "gear+sensor": 3,
+    "step+sensor": 2,
+    "step+gear+sensor": 1
+  },
+  "mechanicOccurrences": {
+    "step": 17,
+    "gear": 25,
+    "sensor": 19
+  },
+  "concepts": {
+    "together": 478,
+    "last": 27,
+    "arrival": 57,
+    "restore": 333,
+    "deliveries": 55,
+    "equivalent": 336,
+    "groups": 17,
+    "storage": 108,
+    "localized": 43,
+    "intermediate": 49,
+    "encounters": 27,
+    "detour": 4,
+    "step": 17,
+    "gear": 25,
+    "sensor": 19
+  },
+  "provenMinimum": 94,
+  "shortSearchInconclusive": 0,
+  "restoration": 326,
+  "intermediateTransport": 49,
+  "multipleObjectivesOneMove": 478,
+  "solutionLength": {
+    "min": 1,
+    "max": 15,
+    "mean": 5.862
+  },
+  "firstMechanics": {
+    "step": 307,
+    "gear": 352,
+    "sensor": 411
+  },
+  "firstTen": [
+    {
+      "id": 1,
+      "name": "Uma primeira volta",
+      "solution": [
+        {
+          "command": "A",
+          "direction": 1
+        }
+      ],
+      "minimum": 1
+    },
+    {
+      "id": 2,
+      "name": "O outro sentido",
+      "solution": [
+        {
+          "command": "A",
+          "direction": -1
+        }
+      ],
+      "minimum": 1
+    },
+    {
+      "id": 3,
+      "name": "Todas juntas",
+      "solution": [
+        {
+          "command": "A",
+          "direction": 1
+        }
+      ],
+      "minimum": 1
+    },
+    {
+      "id": 4,
+      "name": "O destino fica",
+      "solution": [
+        {
+          "command": "A",
+          "direction": 1
+        },
+        {
+          "command": "A",
+          "direction": 1
+        }
+      ],
+      "minimum": 2
+    },
+    {
+      "id": 5,
+      "name": "Dois anéis",
+      "solution": [
+        {
+          "command": "A",
+          "direction": 1
+        }
+      ],
+      "minimum": 1
+    },
+    {
+      "id": 6,
+      "name": "Até o encontro",
+      "solution": [
+        {
+          "command": "A",
+          "direction": 1
+        },
+        {
+          "command": "B",
+          "direction": 1
+        },
+        {
+          "command": "A",
+          "direction": 1
+        }
+      ],
+      "minimum": 3
+    },
+    {
+      "id": 7,
+      "name": "Pelo outro anel",
+      "solution": [
+        {
+          "command": "B",
+          "direction": 1
+        }
+      ],
+      "minimum": 1
+    },
+    {
+      "id": 8,
+      "name": "Preparar para receber",
+      "solution": [
+        {
+          "command": "B",
+          "direction": 1
+        },
+        {
+          "command": "A",
+          "direction": 1
+        },
+        {
+          "command": "B",
+          "direction": 1
+        }
+      ],
+      "minimum": 3
+    },
+    {
+      "id": 9,
+      "name": "Um acerto pode sair",
+      "solution": [
+        {
+          "command": "A",
+          "direction": 1
+        },
+        {
+          "command": "B",
+          "direction": 1
+        },
+        {
+          "command": "A",
+          "direction": -1
+        }
+      ],
+      "minimum": 3
+    },
+    {
+      "id": 10,
+      "name": "Preparar, passar, restaurar",
+      "solution": [
+        {
+          "command": "B",
+          "direction": 1
+        },
+        {
+          "command": "A",
+          "direction": 1
+        },
+        {
+          "command": "B",
+          "direction": 1
+        },
+        {
+          "command": "A",
+          "direction": -1
+        }
+      ],
+      "minimum": 4
+    }
+  ],
+  "bands": [
+    {
+      "from": 1,
+      "to": 50,
+      "basic": 50,
+      "families": {
+        "single": 4,
+        "pair": 25,
+        "unequal": 19,
+        "chain": 2
+      },
+      "concepts": {
+        "together": 37,
+        "last": 10,
+        "arrival": 13,
+        "restore": 18,
+        "deliveries": 8,
+        "equivalent": 8
+      },
+      "meanLength": 2.68
+    },
+    {
+      "from": 51,
+      "to": 100,
+      "basic": 50,
+      "families": {
+        "unequal": 15,
+        "pair": 21,
+        "reserve": 12,
+        "chain": 2
+      },
+      "concepts": {
+        "arrival": 11,
+        "restore": 33,
+        "together": 48,
+        "equivalent": 31,
+        "groups": 3,
+        "deliveries": 5,
+        "storage": 19,
+        "last": 3,
+        "localized": 3
+      },
+      "meanLength": 4.46
+    },
+    {
+      "from": 101,
+      "to": 150,
+      "basic": 50,
+      "families": {
+        "unequal": 17,
+        "reserve": 10,
+        "pair": 21,
+        "chain": 2
+      },
+      "concepts": {
+        "restore": 28,
+        "together": 46,
+        "equivalent": 24,
+        "last": 4,
+        "storage": 16,
+        "arrival": 10,
+        "groups": 4,
+        "deliveries": 2,
+        "localized": 2,
+        "intermediate": 2
+      },
+      "meanLength": 4.32
+    },
+    {
+      "from": 151,
+      "to": 200,
+      "basic": 50,
+      "families": {
+        "unequal": 14,
+        "pair": 16,
+        "chain": 12,
+        "reserve": 8
+      },
+      "concepts": {
+        "deliveries": 9,
+        "restore": 32,
+        "together": 48,
+        "equivalent": 30,
+        "localized": 3,
+        "arrival": 6,
+        "storage": 18,
+        "intermediate": 3,
+        "last": 1,
+        "groups": 2
+      },
+      "meanLength": 4.84
+    },
+    {
+      "from": 201,
+      "to": 250,
+      "basic": 50,
+      "families": {
+        "unequal": 15,
+        "lens": 15,
+        "chain": 11,
+        "pair": 9
+      },
+      "concepts": {
+        "storage": 11,
+        "restore": 35,
+        "together": 50,
+        "equivalent": 31,
+        "encounters": 15,
+        "intermediate": 4,
+        "deliveries": 9,
+        "localized": 2,
+        "arrival": 6
+      },
+      "meanLength": 6.4
+    },
+    {
+      "from": 251,
+      "to": 300,
+      "basic": 50,
+      "families": {
+        "unequal": 5,
+        "reserve": 10,
+        "pair": 17,
+        "chain": 12,
+        "circuit": 6
+      },
+      "concepts": {
+        "arrival": 6,
+        "together": 50,
+        "equivalent": 38,
+        "storage": 16,
+        "restore": 31,
+        "intermediate": 11,
+        "detour": 1,
+        "deliveries": 8,
+        "groups": 1,
+        "last": 1
+      },
+      "meanLength": 6.62
+    },
+    {
+      "from": 301,
+      "to": 350,
+      "basic": 46,
+      "families": {
+        "unequal": 10,
+        "chain": 7,
+        "pair": 13,
+        "compact": 3,
+        "reserve": 6,
+        "satellites": 1,
+        "lens": 5,
+        "circuit": 4,
+        "nested": 1
+      },
+      "concepts": {
+        "together": 50,
+        "storage": 11,
+        "restore": 39,
+        "equivalent": 41,
+        "localized": 10,
+        "deliveries": 6,
+        "step": 4,
+        "encounters": 4,
+        "arrival": 2,
+        "intermediate": 7,
+        "groups": 1,
+        "detour": 1
+      },
+      "meanLength": 7.1
+    },
+    {
+      "from": 351,
+      "to": 400,
+      "basic": 38,
+      "families": {
+        "unequal": 9,
+        "chain": 8,
+        "pair": 14,
+        "satellites": 2,
+        "lens": 4,
+        "compact": 2,
+        "reserve": 7,
+        "nested": 3,
+        "circuit": 1
+      },
+      "concepts": {
+        "equivalent": 45,
+        "together": 50,
+        "gear": 7,
+        "restore": 37,
+        "localized": 9,
+        "intermediate": 3,
+        "step": 5,
+        "deliveries": 7,
+        "groups": 1,
+        "encounters": 4,
+        "last": 2,
+        "storage": 6,
+        "arrival": 1
+      },
+      "meanLength": 6.64
+    },
+    {
+      "from": 401,
+      "to": 450,
+      "basic": 32,
+      "families": {
+        "unequal": 7,
+        "reserve": 7,
+        "nested": 1,
+        "circuit": 6,
+        "pair": 15,
+        "chain": 8,
+        "satellites": 4,
+        "lens": 2
+      },
+      "concepts": {
+        "groups": 5,
+        "restore": 40,
+        "together": 49,
+        "equivalent": 45,
+        "gear": 7,
+        "step": 4,
+        "arrival": 2,
+        "detour": 2,
+        "intermediate": 10,
+        "localized": 6,
+        "sensor": 7,
+        "storage": 3,
+        "last": 1,
+        "encounters": 2
+      },
+      "meanLength": 7.9
+    },
+    {
+      "from": 451,
+      "to": 500,
+      "basic": 30,
+      "families": {
+        "unequal": 6,
+        "reserve": 6,
+        "pair": 16,
+        "lens": 2,
+        "nested": 4,
+        "chain": 12,
+        "compact": 3,
+        "circuit": 1
+      },
+      "concepts": {
+        "last": 5,
+        "restore": 40,
+        "together": 50,
+        "gear": 11,
+        "intermediate": 9,
+        "equivalent": 43,
+        "localized": 8,
+        "encounters": 2,
+        "storage": 8,
+        "sensor": 12,
+        "step": 4,
+        "deliveries": 1
+      },
+      "meanLength": 7.66
+    }
+  ],
+  "maxAttempts": 39,
+  "notes": [
+    "Replay proves solvability; a stored route is not claimed shortest without BFS evidence.",
+    "Fases 1 e 2 form an intentional mirrored lesson introducing opposite directions.",
+    "Trace measures report effects in the certified route, not uniqueness or necessity."
+  ]
+}

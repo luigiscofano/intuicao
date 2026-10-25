@@ -7,6 +7,7 @@ import {createRestartConfirmation} from './restart-confirmation.mjs';
 import {initCollection} from './collection-ui.mjs';
 import {createSintoniaRoute} from './sintonia/route.mjs';
 import {createRepasseRoute} from './repasse/route.mjs';
+import {createOrbitaRoute} from './orbita/route.mjs';
 import {traceLightWorld,traceLightAttempt,lightAttemptFrame,lightScene} from './light-world.mjs';
 import {worldRaysSVG,portalSVG,lightEndpointsSVG,beamName} from './light-world-render.mjs';
 import {createResultMotion} from './result-motion.mjs';
@@ -498,7 +499,7 @@ scene.addEventListener('keydown',e=>{
  if(game==='light'){if(id==='target'||(state.objects[Number(id)].type==='wall'))return;selected=Number(id);state.objects[selected].angle=clamp(state.objects[selected].angle+step,-90,90);}
  if(game==='cut'){if(id==='basic-cut'&&!free&&cutMode==='basic')setBasicTravel((state.basicTravel??0)+step);else if(id==='rotate-curve'&&allowed('rotate'))state.angle=(state.angle+step+360)%360;else if(id==='move-curve'){if(['ArrowLeft','ArrowRight'].includes(e.key)&&allowed('x'))state.centerX=clamp(state.centerX+step,-400,1200);if(['ArrowUp','ArrowDown'].includes(e.key)&&allowed('y'))state.centerY=clamp(state.centerY+(e.key==='ArrowUp'?-1:1),-400,860);}else if(allowed('offset'))state.offset=clamp(state.offset+step,-600,600);}commitOriginalEdit(before);editor();draw();drawing.querySelector(`[data-item="${id}"]`)?.focus();
 });
-document.querySelectorAll('[data-game]').forEach(b=>b.onclick=()=>{if(!catalogue[b.dataset.game])return;repasse.hide();sintonia.hide();saveEndless();collection.hide();free=false;game=b.dataset.game;showSelection();});
+document.querySelectorAll('[data-game]').forEach(b=>b.onclick=()=>{if(!catalogue[b.dataset.game])return;orbita.hide();repasse.hide();sintonia.hide();saveEndless();collection.hide();free=false;game=b.dataset.game;showSelection();});
 $('free').textContent='Endless';$('free').onclick=enterEndless;$('challenge').onclick=()=>{free=false;showSelection();};$('level').onchange=e=>{saveCampaign();level=Number(e.target.value);start();};$('reset').onclick=()=>{finishOriginalGesture(true);endDrag();middleConfirm?.cancel();clearTimeout(endlessTimer);endlessTimer=null;const revision=restartRevision;restartConfirmation.open({trigger:$('reset'),isCurrent:()=>revision===restartRevision&&!document.querySelector('.lab').hidden,onConfirm:restartOriginalNow,onCancel:()=>{updateOriginalHistoryButtons();scheduleEndlessAdvance();}});updateOriginalHistoryButtons();};
 $('selection-free').onclick=enterEndless;$('back-selection').onclick=showSelection;
 $('toggle-controls').onclick=toggleControls;
@@ -517,9 +518,10 @@ $('next').onclick=()=>navigateLevel(1);$('hint').onclick=showOriginalHint;
 showSelection();
 
 function hideOriginalForSibling(){finishOriginalGesture(false);endDrag();saveCampaign();saveCustom();campaignActive=null;customLevel=null;customId='';customImportRevision++;customStorage.hidden=true;customExport.hidden=true;saveEndless();free=false;endlessPanel.hidden=true;restartConfirmation.dismiss();restartRevision++;invalidate();document.querySelector('.lab').hidden=true;$('selection').hidden=true;}
-const collection=initCollection({hideOriginal(){repasse.hide();sintonia.hide();hideOriginalForSibling();}});
-const sintonia=createSintoniaRoute({hideOtherGames(){repasse.hide();collection.hide();hideOriginalForSibling();}});
-const repasse=createRepasseRoute({hideOthers(){sintonia.hide();collection.hide();hideOriginalForSibling();}});
-if(!repasse.restoreOnLoad())sintonia.restoreOnLoad();
+const collection=initCollection({hideOriginal(){orbita.hide();repasse.hide();sintonia.hide();hideOriginalForSibling();}});
+const sintonia=createSintoniaRoute({hideOtherGames(){orbita.hide();repasse.hide();collection.hide();hideOriginalForSibling();}});
+const repasse=createRepasseRoute({hideOthers(){orbita.hide();sintonia.hide();collection.hide();hideOriginalForSibling();}});
+const orbita=createOrbitaRoute({hideOthers(){repasse.hide();sintonia.hide();collection.hide();hideOriginalForSibling();}});
+if(!orbita.restoreOnLoad()&&!repasse.restoreOnLoad())sintonia.restoreOnLoad();
 
 globalThis.addEventListener?.('pagehide',()=>{saveCampaign();saveCustom();saveEndless();});
