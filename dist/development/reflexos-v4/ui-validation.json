@@ -1,0 +1,10 @@
+{
+  "passed": true,
+  "lightLevels": 500,
+  "cutLevels": 100,
+  "flows": 600,
+  "failedConfirmations": 1800,
+  "individualClicks": 1279,
+  "storedCompletions": 500,
+  "scope": "Actual app/catalogue with deterministic DOM; no browser or human-playtest claim."
+}

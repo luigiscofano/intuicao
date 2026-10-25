@@ -1,0 +1,110 @@
+{
+  "id": "light-v4-master-filter-001",
+  "baseId": "light-v4-master-reserve-007",
+  "passed": true,
+  "errors": [],
+  "referenceAngles": [
+    15.9,
+    -66.3,
+    -32.9
+  ],
+  "initialAngles": [
+    15.9,
+    -20,
+    -32.9
+  ],
+  "beforeWinning": [
+    [
+      0,
+      1,
+      0
+    ],
+    [
+      1,
+      0,
+      0
+    ]
+  ],
+  "afterWinning": [
+    [
+      0,
+      1,
+      0
+    ]
+  ],
+  "signature": "223:0110|011101|011101",
+  "distinctComparators": [
+    {
+      "id": "light-v4-deduction-master-detail-1",
+      "baseId": "light-v4-master-001",
+      "baseSignature": "233:011101|011101|010101110",
+      "different": true
+    },
+    {
+      "id": "light-v4-deduction-master-detail-2",
+      "baseId": "light-v4-master-002",
+      "baseSignature": "223:0110|001111|011110",
+      "different": true
+    },
+    {
+      "id": "light-v4-master-islands-002",
+      "baseId": "light-v4-master-islands-001",
+      "baseSignature": "223:0110|001110|011111",
+      "different": true
+    }
+  ],
+  "relationAblations": [
+    {
+      "omittedPair": [
+        0,
+        1
+      ],
+      "restoredAssignments": [
+        [
+          0,
+          0,
+          0
+        ],
+        [
+          0,
+          0,
+          2
+        ]
+      ]
+    },
+    {
+      "omittedPair": [
+        0,
+        2
+      ],
+      "restoredAssignments": [
+        [
+          0,
+          1,
+          1
+        ]
+      ]
+    },
+    {
+      "omittedPair": [
+        1,
+        2
+      ],
+      "restoredAssignments": [
+        [
+          0,
+          1,
+          2
+        ]
+      ]
+    }
+  ],
+  "orders": 6,
+  "collisionOrders": 6,
+  "individualPerturbations": 6,
+  "simultaneousCorners": 8,
+  "cases": 84,
+  "namedIsolatedChecks": 36,
+  "contextualPairChecks": 36,
+  "limitations": "Reference and documented finite alternatives only; no continuous-angle uniqueness or human difficulty calibration claim."
+}

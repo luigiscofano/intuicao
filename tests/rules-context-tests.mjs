@@ -13,15 +13,15 @@ const catalogues={light:lightLevels,cut:cutLevels,...GEOMETRY_LEVELS,...SYMBOL_L
 const context=(game,index,options={})=>getRulesContext(game,catalogues[game][index],{catalogue:catalogues[game],index,...options});
 
 test('Campaign introductions follow real mechanics, not stages or difficulty',()=>{
- const expected={light:[1,5,41,61,81,101],cut:[1,6,11,21,31,61,91],elo:[1,21,22,41,61,81,101,121,141,161,181],prumo:[1],pacto:[1],desvio:[1]};
+ const expected={light:[1,4,7,16,18,25],cut:[1,6,11,21,31,61,91],elo:[1,21,22,41,61,81,101,121,141,161,181],prumo:[1],pacto:[1],desvio:[1]};
  for(const [game,levels]of Object.entries(catalogues))assert.deepEqual(levels.flatMap((_,i)=>context(game,i).autoOpen?[i+1]:[]),expected[game],game);
 });
 test('Reflexos describes universal and selective portals from actual fields',()=>{
- const portal=context('light',60),selective=context('light',80);
+ const portal=context('light',15),selective=context('light',17);
  assert.deepEqual(portal.introduced,['portals']);assert.match(portal.text,/mesma letra/);assert.match(portal.text,/mantendo a direção/);assert.match(portal.text,/não é um trecho físico/);
  assert.deepEqual(selective.introduced,['selectivePortals']);assert.match(selective.text,/incompatível é bloqueada/);
- assert.equal(context('light',61).autoOpen,false);assert.equal(context('light',81).autoOpen,false);
- assert.equal(context('light',60).autoOpen,true,'Re-entering an introduction is deterministic');
+ assert.equal(context('light',16).autoOpen,false);assert.equal(context('light',18).autoOpen,false);
+ assert.equal(context('light',15).autoOpen,true,'Re-entering an introduction is deterministic');
 });
 test('ELO distinguishes curve/straight debut and explains diamond choice without answers',()=>{
  assert.deepEqual(context('elo',20).introduced,['shape-turn']);

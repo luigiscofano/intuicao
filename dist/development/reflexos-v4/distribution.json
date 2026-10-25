@@ -1,0 +1,167 @@
+{
+  "passed": true,
+  "total": 500,
+  "errors": [],
+  "counts": {
+    "basic": 200,
+    "intermediate": 100,
+    "advanced": 100,
+    "master": 100
+  },
+  "openCounts": {
+    "basic": 136,
+    "intermediate": 97,
+    "advanced": 90,
+    "master": 76
+  },
+  "noWalls": {
+    "basic": 127,
+    "intermediate": 68,
+    "advanced": 67,
+    "master": 73
+  },
+  "combinations": {
+    "basic": 135,
+    "intermediate": 99,
+    "advanced": 100,
+    "master": 100
+  },
+  "conceptCounts": {
+    "basic": {
+      "1": 64,
+      "2": 14,
+      "3": 2,
+      "4": 8,
+      "5": 115,
+      "6": 6,
+      "7": 136,
+      "8": 33,
+      "9": 46,
+      "10": 6,
+      "11": 9,
+      "12": 2,
+      "13": 1,
+      "14": 20,
+      "15": 1,
+      "16": 7
+    },
+    "intermediate": {
+      "1": 30,
+      "2": 3,
+      "3": 2,
+      "4": 6,
+      "5": 63,
+      "6": 15,
+      "7": 97,
+      "8": 17,
+      "9": 49,
+      "10": 6,
+      "11": 10,
+      "12": 2,
+      "13": 3,
+      "14": 24,
+      "15": 2,
+      "16": 6
+    },
+    "advanced": {
+      "1": 36,
+      "2": 2,
+      "3": 7,
+      "4": 5,
+      "5": 76,
+      "6": 25,
+      "7": 90,
+      "8": 21,
+      "9": 48,
+      "10": 25,
+      "11": 34,
+      "12": 2,
+      "13": 11,
+      "14": 59,
+      "15": 2,
+      "16": 6
+    },
+    "master": {
+      "1": 28,
+      "2": 2,
+      "3": 22,
+      "4": 3,
+      "5": 76,
+      "6": 98,
+      "7": 76,
+      "8": 39,
+      "9": 61,
+      "10": 31,
+      "11": 34,
+      "12": 5,
+      "13": 2,
+      "14": 98,
+      "15": 87,
+      "16": 11
+    }
+  },
+  "blocks": [
+    {
+      "from": 201,
+      "to": 250,
+      "missingConcepts": []
+    },
+    {
+      "from": 251,
+      "to": 300,
+      "missingConcepts": []
+    },
+    {
+      "from": 301,
+      "to": 350,
+      "missingConcepts": []
+    },
+    {
+      "from": 351,
+      "to": 400,
+      "missingConcepts": []
+    },
+    {
+      "from": 401,
+      "to": 450,
+      "missingConcepts": []
+    },
+    {
+      "from": 451,
+      "to": 500,
+      "missingConcepts": []
+    }
+  ],
+  "windows": [],
+  "runs": [],
+  "exactGeometryDuplicates": [],
+  "equalLogicalSignatures": [
+    [
+      "light-v3-45",
+      "light-v3-47"
+    ],
+    [
+      "light-v3-48",
+      "light-v3-46"
+    ],
+    [
+      "light-v3-49",
+      "light-v3-54"
+    ],
+    [
+      "light-v3-156",
+      "light-v3-174"
+    ],
+    [
+      "light-v4-open-hard-pair-3",
+      "light-v4-open-hard-pair-1",
+      "light-v4-open-hard-pair-4",
+      "light-v4-open-hard-pair-2"
+    ],
+    [
+      "light-v4-open-hard-third-4-gate",
+      "light-v4-open-hard-third-3"
+    ]
+  ],
+  "limits": "Exact geometric duplicates normalize rotations/reflections, color permutations and translations. Different geometry or different metadata is not itself a proof of pedagogical novelty; logical signatures require editorial review. Concept counts are accepted only after independent geometric evidence review."
+}

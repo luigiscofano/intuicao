@@ -1,0 +1,715 @@
+{
+  "light-v3-31": {
+    "exclude": true,
+    "reason": "No defensible principal concept remains after independent review."
+  },
+  "light-v3-34": {
+    "exclude": true,
+    "reason": "No defensible principal concept remains after independent review."
+  },
+  "light-v3-36": {
+    "exclude": true,
+    "reason": "No defensible principal concept remains after independent review."
+  },
+  "light-v3-39": {
+    "exclude": true,
+    "reason": "No defensible principal concept remains after independent review."
+  },
+  "light-v3-40": {
+    "exclude": true,
+    "reason": "No defensible principal concept remains after independent review."
+  },
+  "light-v3-55": {
+    "exclude": true,
+    "reason": "Independent legacy review recommends redesign, visual repair, or replacement; original archived without reusing its ID."
+  },
+  "light-v3-58": {
+    "exclude": true,
+    "reason": "Independent legacy review recommends redesign, visual repair, or replacement; original archived without reusing its ID."
+  },
+  "light-v3-72": {
+    "exclude": true,
+    "reason": "No defensible principal concept remains after independent review."
+  },
+  "light-v3-81": {
+    "exclude": true,
+    "reason": "No defensible principal concept remains after independent review."
+  },
+  "light-v3-106": {
+    "exclude": true,
+    "reason": "Independent legacy review recommends redesign, visual repair, or replacement; original archived without reusing its ID."
+  },
+  "light-v3-110": {
+    "exclude": true,
+    "reason": "Independent legacy review recommends redesign, visual repair, or replacement; original archived without reusing its ID."
+  },
+  "light-v3-112": {
+    "exclude": true,
+    "reason": "Independent legacy review recommends redesign, visual repair, or replacement; original archived without reusing its ID."
+  },
+  "light-v3-113": {
+    "exclude": true,
+    "reason": "Independent legacy review recommends redesign, visual repair, or replacement; original archived without reusing its ID."
+  },
+  "light-v3-114": {
+    "exclude": true,
+    "reason": "Independent legacy review recommends redesign, visual repair, or replacement; original archived without reusing its ID."
+  },
+  "light-v3-116": {
+    "exclude": true,
+    "reason": "Independent legacy review recommends redesign, visual repair, or replacement; original archived without reusing its ID."
+  },
+  "light-v3-117": {
+    "exclude": true,
+    "reason": "Independent legacy review recommends redesign, visual repair, or replacement; original archived without reusing its ID."
+  },
+  "light-v3-118": {
+    "exclude": true,
+    "reason": "Independent legacy review recommends redesign, visual repair, or replacement; original archived without reusing its ID."
+  },
+  "light-v3-119": {
+    "exclude": true,
+    "reason": "Independent legacy review recommends redesign, visual repair, or replacement; original archived without reusing its ID."
+  },
+  "light-v3-121": {
+    "exclude": false,
+    "reason": "Independent static review accepted a partial mirror-tip/portal-rim overlap without obscuring controls, labels, sources or targets; physical cases and tolerances passed."
+  },
+  "light-v3-122": {
+    "exclude": true,
+    "reason": "Independent legacy review recommends redesign, visual repair, or replacement; original archived without reusing its ID."
+  },
+  "light-v3-123": {
+    "exclude": false,
+    "reason": "Independent static review accepted a partial mirror-tip/portal-rim overlap without obscuring controls, labels, sources or targets; physical cases and tolerances passed."
+  },
+  "light-v3-124": {
+    "exclude": true,
+    "reason": "Independent legacy review recommends redesign, visual repair, or replacement; original archived without reusing its ID."
+  },
+  "light-v3-125": {
+    "exclude": true,
+    "reason": "Independent legacy review recommends redesign, visual repair, or replacement; original archived without reusing its ID."
+  },
+  "light-v3-127": {
+    "exclude": true,
+    "reason": "Independent legacy review recommends redesign, visual repair, or replacement; original archived without reusing its ID."
+  },
+  "light-v3-128": {
+    "exclude": true,
+    "reason": "Independent legacy review recommends redesign, visual repair, or replacement; original archived without reusing its ID."
+  },
+  "light-v3-129": {
+    "exclude": true,
+    "reason": "Independent legacy review recommends redesign, visual repair, or replacement; original archived without reusing its ID."
+  },
+  "light-v3-138": {
+    "exclude": false,
+    "reason": "Planejamento da conexão azul D/E e da chegada rosa condicionado por conflito distante com dourado. A alternativa rosa direta chega isoladamente, mas corta o dourado. A sobreposição parcial entre a ponta E3 e o aro W não oculta centros, letras ou controles e não altera o traço.",
+    "band": "advanced",
+    "addConceptEvidence": [
+      {
+        "concept": 11,
+        "claim": "A mudança rosa para a orientação 0 atinge o alvo isoladamente mas provoca colisão dourado/rosa em (116,6;250), longe da decisão.",
+        "caseIds": [
+          "legacy-case-1"
+        ]
+      }
+    ],
+    "geometryException": "Ponta E3 toca parcialmente o aro W; controle central, marca W e fontes/alvos legíveis. Preservar geometria e ressalva."
+  },
+  "light-v3-142": {
+    "exclude": true,
+    "reason": "Independent legacy review recommends redesign, visual repair, or replacement; original archived without reusing its ID."
+  },
+  "light-v3-143": {
+    "exclude": true,
+    "reason": "Independent legacy review recommends redesign, visual repair, or replacement; original archived without reusing its ID."
+  },
+  "light-v3-144": {
+    "exclude": true,
+    "reason": "Independent legacy review recommends redesign, visual repair, or replacement; original archived without reusing its ID."
+  },
+  "light-v3-146": {
+    "exclude": true,
+    "reason": "Independent legacy review recommends redesign, visual repair, or replacement; original archived without reusing its ID."
+  },
+  "light-v3-148": {
+    "exclude": true,
+    "reason": "Independent legacy review recommends redesign, visual repair, or replacement; original archived without reusing its ID."
+  },
+  "light-v3-149": {
+    "exclude": true,
+    "reason": "Independent legacy review recommends redesign, visual repair, or replacement; original archived without reusing its ID."
+  },
+  "light-v3-150": {
+    "exclude": true,
+    "reason": "Independent legacy review recommends redesign, visual repair, or replacement; original archived without reusing its ID."
+  },
+  "light-v3-180": {
+    "exclude": true,
+    "reason": "Independent legacy review recommends redesign, visual repair, or replacement; original archived without reusing its ID."
+  },
+  "light-v3-190": {
+    "exclude": true,
+    "reason": "Independent legacy review recommends redesign, visual repair, or replacement; original archived without reusing its ID."
+  },
+  "light-v4-legacy-159-labels": {
+    "exclude": true,
+    "reason": "Independent legacy review recommends redesign, visual repair, or replacement; original archived without reusing its ID."
+  },
+  "light-v4-legacy-160-labels": {
+    "exclude": true,
+    "reason": "Independent legacy review recommends redesign, visual repair, or replacement; original archived without reusing its ID."
+  },
+  "light-v4-legacy-170-labels": {
+    "exclude": true,
+    "reason": "Independent legacy review recommends redesign, visual repair, or replacement; original archived without reusing its ID."
+  },
+  "light-v4-legacy-171-labels": {
+    "exclude": true,
+    "reason": "Independent legacy review recommends redesign, visual repair, or replacement; original archived without reusing its ID."
+  },
+  "light-v4-legacy-172-labels": {
+    "exclude": true,
+    "reason": "Independent legacy review recommends redesign, visual repair, or replacement; original archived without reusing its ID."
+  },
+  "light-v4-legacy-175-labels": {
+    "exclude": true,
+    "reason": "Independent legacy review recommends redesign, visual repair, or replacement; original archived without reusing its ID."
+  },
+  "light-v4-legacy-179-labels": {
+    "exclude": true,
+    "reason": "Independent legacy review recommends redesign, visual repair, or replacement; original archived without reusing its ID."
+  },
+  "light-v4-legacy-182-labels": {
+    "exclude": true,
+    "reason": "Independent legacy review recommends redesign, visual repair, or replacement; original archived without reusing its ID."
+  },
+  "light-v3-159": {
+    "exclude": true,
+    "reason": "Original bottom portal label exceeds board; any selected translation is separately versioned with a new ID."
+  },
+  "light-v3-160": {
+    "exclude": true,
+    "reason": "Original bottom portal label exceeds board; any selected translation is separately versioned with a new ID."
+  },
+  "light-v3-170": {
+    "exclude": true,
+    "reason": "Original bottom portal label exceeds board; any selected translation is separately versioned with a new ID."
+  },
+  "light-v3-171": {
+    "exclude": true,
+    "reason": "Original bottom portal label exceeds board; any selected translation is separately versioned with a new ID."
+  },
+  "light-v3-172": {
+    "exclude": true,
+    "reason": "Original bottom portal label exceeds board; any selected translation is separately versioned with a new ID."
+  },
+  "light-v3-175": {
+    "exclude": true,
+    "reason": "Original bottom portal label exceeds board; any selected translation is separately versioned with a new ID."
+  },
+  "light-v3-179": {
+    "exclude": true,
+    "reason": "Original bottom portal label exceeds board; any selected translation is separately versioned with a new ID."
+  },
+  "light-v3-182": {
+    "exclude": true,
+    "reason": "Original bottom portal label exceeds board; any selected translation is separately versioned with a new ID."
+  },
+  "light-v3-186": {
+    "exclude": true,
+    "reason": "Original bottom portal label exceeds board; any selected translation is separately versioned with a new ID."
+  },
+  "light-v4-deduction-open-008": {
+    "exclude": true,
+    "reason": "Cross-author review: same conditional compatibility core as master003; open010 also has an unresolved extra legal route. Not counted as new variety."
+  },
+  "light-v4-deduction-open-010": {
+    "exclude": true,
+    "reason": "Cross-author review: same conditional compatibility core as master003; open010 also has an unresolved extra legal route. Not counted as new variety."
+  },
+  "light-v4-deduction-open-011": {
+    "exclude": true,
+    "reason": "Cross-author review: same conditional compatibility core as master003; open010 also has an unresolved extra legal route. Not counted as new variety."
+  },
+  "light-v3-109": {
+    "band": "advanced",
+    "reason": "O desvio dourado precisa ser avaliado em dois setores: sua chegada direta cruza a azul, enquanto a solução dourada mantida restringe a aproximação rosa muito adiante. Planejar apenas uma cor de cada vez esconde a segunda consequência; isso é planejamento global com efeito remoto, mesmo sem restabelecer a tag6 retirada."
+  },
+  "light-v3-111": {
+    "band": "advanced",
+    "reason": "A chegada azul lateral fixa uma cadeia real: ela exclui a aproximação dourada direta, e a orientação dourada necessária exclui a aproximação rosa direta. A rosa deve então usar a reentrada K, ligando a leitura a partir do alvo à distribuição global das três cores."
+  },
+  "light-v3-120": {
+    "band": "advanced",
+    "reason": "A aproximação azul deve ser reconstruída pelo último espelho antes de decidir a transferência dourada; o dourado compatível cria a restrição da rosa no setor direito. As duas contraprovas atingem todos os alvos isoladamente, mas colidem em regiões distintas, portanto não se trata apenas de prolongar os percursos."
+  },
+  "light-v3-131": {
+    "band": "intermediate",
+    "reason": "Itinerário entre áreas com uma consequência por vez; a mesma leitura de acessos pode introduzir planejamento global no fim do Intermediário, sem exigir a combinação remota densa dos Avançados. Preserva os pré-requisitos das versões posteriores."
+  },
+  "light-v3-132": {
+    "band": "advanced",
+    "reason": "O retorno dourado é escolhido por sua continuidade entre dois pares; a alternativa que parece voltar ao setor certo encontra a parede inicial. Essa leitura do itinerário se liga à exclusão das aproximações das outras cores e requer planejamento global, conforme calibração independente."
+  },
+  "light-v3-133": {
+    "band": "advanced",
+    "reason": "Reconstruir a chegada rosa exige considerar a continuidade H–J e descartar o retorno R sem aproximação útil. Além disso, a chegada rosa direta alcança seu alvo mas cruza o dourado, por isso a escolha do itinerário deve ser conciliada com uma rota alheia já correta."
+  },
+  "light-v3-134": {
+    "band": "advanced",
+    "reason": "O azul deve entrar pela conexão que passa ao setor inferior e continua horizontalmente; a entrada R aparentemente próxima devolve a luz a uma região sem chegada. A posição resultante do azul altera a viabilidade da diagonal dourada e exige conferir a continuação rosa, ligando seleção de saída ao conjunto."
+  },
+  "light-v3-135": {
+    "band": "advanced",
+    "reason": "O percurso azul A–B e a reentrada rosa K participam de uma cadeia causal compacta: preservar a azul exclui o dourado direto, e o dourado então exclui a rosa direta. A redução do número de espelhos não reduz essa interação; o retorno R inadequado oferece uma alternativa espacial concreta para comparar."
+  },
+  "light-v3-194": {
+    "band": "advanced",
+    "reason": "A chegada azul deve ser reconstruída através de U2 e U1, e uma entrada alternativa D devolve o feixe sem continuidade. O atalho azul que acerta isoladamente cruza a outra cor, portanto é preciso comparar a continuidade dos portais e a aproximação final com o conjunto, não apenas seguir uma sala após outra."
+  },
+  "light-v4-deduction-four-03": {
+    "band": "advanced",
+    "reason": "A escolha da aproximação rosa e a orientação de sua última curva devem ser coordenadas com a rota dourada, e a alternativa rosa pelo portal ainda ameaça a azul. O erro de trocar só a primeira orientação perde a chegada, enquanto a troca completa pode acertar isoladamente e colidir com outra cor; essa combinação de leitura final e compatibilidade global sustenta um Avançado de entrada."
+  },
+  "light-v4-deduction-windows-03": {
+    "band": "advanced",
+    "reason": "As duas janelas eliminam alternativas diferentes, mas, ao contrário das janelas01/02/04/05/08, ainda resta um conflito real entre chegadas individualmente corretas. É preciso usar a visibilidade para fixar as rotas e então escolher a saída azul que preserve o dourado, exatamente o tipo de integração que justifica os Avançados windows06/07."
+  },
+  "light-v4-deduction-pilot-return": {
+    "band": "intermediate",
+    "reason": "Itinerário de três setores com retorno condicionado pela aproximação final, combinando planejamento retroativo e leitura dos acessos. Mantém a classificação original Intermediário e prepara os retornos multicor Avançados."
+  },
+  "light-v4-open-301": {
+    "band": "basic",
+    "reason": "Comparação guiada ao fim do Básico: duas cores e duas rotas globais legíveis. A contraparte muda um alvo e mostra por que um trajeto local correto precisa ser reorganizado. A relação causal é acessível após aprender reflexão e colisão, sem novas regras."
+  },
+  "light-v4-open-302": {
+    "band": "basic",
+    "reason": "Comparação guiada ao fim do Básico: duas cores e duas rotas globais legíveis. A contraparte muda um alvo e mostra por que um trajeto local correto precisa ser reorganizado. A relação causal é acessível após aprender reflexão e colisão, sem novas regras."
+  },
+  "light-v4-open-303": {
+    "band": "basic",
+    "reason": "Comparação guiada ao fim do Básico: duas cores e duas rotas globais legíveis. A contraparte muda um alvo e mostra por que um trajeto local correto precisa ser reorganizado. A relação causal é acessível após aprender reflexão e colisão, sem novas regras."
+  },
+  "light-v4-open-304": {
+    "band": "basic",
+    "reason": "Comparação guiada ao fim do Básico: duas cores e duas rotas globais legíveis. A contraparte muda um alvo e mostra por que um trajeto local correto precisa ser reorganizado. A relação causal é acessível após aprender reflexão e colisão, sem novas regras."
+  },
+  "light-v4-deduction-pair-00-filter": {
+    "band": "basic",
+    "reason": "Consolidação do filtro seletivo e da falsa equivalência no Básico: o jogador compara a variante com a base já apresentada e observa uma alteração visível de acesso. A inferência principal é local, seguida de compatibilização simples, não uma hipótese profunda."
+  },
+  "light-v4-deduction-symmetry-01-filter": {
+    "band": "basic",
+    "reason": "Consolidação do filtro seletivo e da falsa equivalência no Básico: o jogador compara a variante com a base já apresentada e observa uma alteração visível de acesso. A inferência principal é local, seguida de compatibilização simples, não uma hipótese profunda."
+  },
+  "light-v3-178": {
+    "band": "advanced",
+    "reason": "As duas alternativas rosa localmente boas cortam a emissão dourada fixa; a rota rosa por C impõe então a conexão azul de dois portais. Uma mudança na última aproximação dourada falha no bloqueio, exigindo também planejamento a partir do alvo. São consequências relacionadas e remotas, não mera extensão.",
+    "addConceptEvidence": [
+      {
+        "concept": 11,
+        "claim": "Rosa direta (−0,2°) e via blue-chain-b (9,1°) chegam isoladamente, mas cruzam a emissão dourada em (352,93;267,01) e (349,20;291,62).",
+        "caseIds": [
+          "legacy-case-2",
+          "legacy-case-3"
+        ]
+      },
+      {
+        "concept": 14,
+        "claim": "Com rosa pela conexão útil, azul direto a 20,6° chega isoladamente e colide com rosa em (319,38;135,02). A conexão azul dupla evita esse conflito; o ajuste dourado local alternativo perde o acesso final.",
+        "caseIds": [
+          "legacy-case-1",
+          "legacy-case-4"
+        ]
+      }
+    ]
+  },
+  "light-v4-legacy-180-labels": {
+    "exclude": false,
+    "band": "advanced",
+    "reason": "Consolidação comparativa deliberada do padrão legado de superfície compartilhada, agora recebendo uma incidência transferida por portal. A orientação comum continua ligada à compatibilidade rosa. A translação vertical de5,5px corrige apenas rótulos e recebe ID novo; não conta como nova arquitetura."
+  },
+  "light-v4-legacy-190-labels": {
+    "exclude": false,
+    "band": "advanced",
+    "reason": "Consolidação comparativa do legado: dois impactos distintos na mesma superfície determinam chegadas dourada e azul, enquanto a aproximação rosa limita o acordo. Mantida como síntese, não nova arquitetura. A translação vertical de5,5px corrige rótulos com ID próprio e casos preservados."
+  },
+  "light-v3-74": {
+    "band": "basic",
+    "reason": "O itinerário direito inferior → esquerda → direito superior é determinado por uma divisória e uma tampa que eliminam atalhos diferentes. É uma introdução legível ao planejamento de áreas; não requer três compartimentos fechados.",
+    "addConceptEvidence": [
+      {
+        "concept": 13,
+        "claim": "A1 desloca a luz do setor direito inferior para a esquerda; E2 prepara a travessia superior sobre a divisória até o setor do alvo. A tampa impede o acesso direto a esse setor. Retirar a divisória libera o atalho baixo; retirar a tampa libera a diagonal local. A conexão entre os três setores contribui para decidir o itinerário.",
+        "caseIds": [
+          "solution",
+          "legacy-case-1",
+          "legacy-case-2"
+        ],
+        "additionalEvidenceIds": [
+          "wall-ablation-1",
+          "wall-ablation-2"
+        ]
+      }
+    ]
+  },
+  "light-v4-portal-800": {
+    "band": "advanced",
+    "reason": "A chegada do dourado no setor inicial requer sair e retornar por A/B; manter essa volta e a chegada rosa livre exige coordenar três percursos completos. O azul deve inicialmente apontar para longe do alvo para usar a saída C. As opções diretas atingem os alvos isoladamente, mas criam conflitos remotos; não é classificação por quantidade de ondas ou peças.",
+    "addConceptEvidence": [
+      {
+        "concept": 2,
+        "claim": "A saída real do primeiro espelho azul aponta para longe do alvo. O produto escalar máximo entre direção e vetor ao alvo foi -267.786157 nas soluções da malha finita do autor; as alternativas próximas documentadas colidem.",
+        "caseIds": [
+          "joint-solution",
+          "route-choice-1-0-1"
+        ]
+      },
+      {
+        "concept": 12,
+        "claim": "O dourado parte da direita, salta por A para o trecho intermediário e por B retorna ao setor direito para a aproximação final. A rota dourada direta é localmente válida mas incompatível com ambas as rotas rosa documentadas.",
+        "caseIds": [
+          "joint-solution",
+          "route-choice-0-1-0",
+          "route-choice-0-1-1"
+        ]
+      },
+      {
+        "concept": 14,
+        "claim": "É necessário compatibilizar o retorno dourado, a chegada rosa e a saída azul. Trocar somente o rosa pela alternativa direta conserva a chegada isolada, mas cria colisão com o dourado no trecho de retorno planejado.",
+        "caseIds": [
+          "joint-solution",
+          "route-choice-1-1-0"
+        ]
+      }
+    ]
+  },
+  "light-v4-portal-801": {
+    "band": "advanced",
+    "reason": "A chegada do dourado no setor inicial requer sair e retornar por A/B; manter essa volta e a chegada rosa livre exige coordenar três percursos completos. O azul deve inicialmente apontar para longe do alvo para usar a saída D. As opções diretas atingem os alvos isoladamente, mas criam conflitos remotos; não é classificação por quantidade de ondas ou peças.",
+    "addConceptEvidence": [
+      {
+        "concept": 2,
+        "claim": "A saída real do primeiro espelho azul aponta para longe do alvo. O produto escalar máximo entre direção e vetor ao alvo foi -118.560291 nas soluções da malha finita do autor; as alternativas próximas documentadas colidem.",
+        "caseIds": [
+          "joint-solution",
+          "route-choice-1-0-1"
+        ]
+      },
+      {
+        "concept": 12,
+        "claim": "O dourado parte da direita, salta por A para o trecho intermediário e por B retorna ao setor direito para a aproximação final. A rota dourada direta é localmente válida mas incompatível com ambas as rotas rosa documentadas.",
+        "caseIds": [
+          "joint-solution",
+          "route-choice-0-2-0",
+          "route-choice-0-2-1"
+        ]
+      },
+      {
+        "concept": 14,
+        "claim": "É necessário compatibilizar o retorno dourado, a chegada rosa e a saída azul. Trocar somente o rosa pela alternativa direta conserva a chegada isolada, mas cria colisão com o dourado no trecho de retorno planejado.",
+        "caseIds": [
+          "joint-solution",
+          "route-choice-1-2-0"
+        ]
+      },
+      {
+        "concept": 10,
+        "claim": "A entrada azul C leva a uma saída incompatível com ambas as opções rosa; D permite o conjunto. A decisão exige comparar o percurso após a saída, e não só alcançar uma entrada.",
+        "caseIds": [
+          "route-choice-1-1-0",
+          "route-choice-1-1-1",
+          "route-choice-1-2-1"
+        ]
+      }
+    ]
+  },
+  "light-v4-portal-047": {
+    "band": "intermediate",
+    "reason": "Prova condicional curta real, com três relações entre cores, conforme a definição literal do conceito15. Não se exige que seja o único modo de deduzir a solução.",
+    "addConceptEvidence": [
+      {
+        "concept": 15,
+        "claim": "Suponha rosa direta (−7,8°). Isso elimina dourado direto e azul pelo portal. Restam dourado pelo portal (28,5°) e azul direto (−8°), que colidem. A hipótese provoca consequências nas duas outras cores e se contradiz.",
+        "caseIds": [
+          "route-choice-0-0-0",
+          "route-choice-1-1-0",
+          "route-choice-1-0-0"
+        ]
+      }
+    ]
+  },
+  "light-v4-portal-064": {
+    "band": "advanced",
+    "reason": "Prova condicional curta real, com três relações entre cores, conforme a definição literal do conceito15. Não se exige que seja o único modo de deduzir a solução.",
+    "addConceptEvidence": [
+      {
+        "concept": 15,
+        "claim": "Suponha rosa direta (−15,1°). Isso elimina dourado direto e as alternativas azul direta/portal1, forçando azul portal2 (−49,5°). Essa alternativa elimina as duas rotas douradas restantes, esvaziando o domínio dourado.",
+        "caseIds": [
+          "route-choice-0-0-0",
+          "route-choice-0-1-0",
+          "route-choice-1-2-0",
+          "route-choice-2-2-0"
+        ]
+      }
+    ]
+  },
+  "light-v3-174": {
+    "band": "intermediate",
+    "reason": "Continuar Intermediário: o material já demonstra comparação de rotas, mas não uma consequência global adicional suficiente para promoção. Não promover por cota.",
+    "addConceptEvidence": []
+  },
+  "light-v3-196": {
+    "band": "advanced",
+    "reason": "Já era Avançado em records-v2; preservar. O controle compartilhado por dourado/azul e a consequência rosa remota sustentam a faixa, sem tratá-lo como nova promoção.",
+    "addConceptEvidence": []
+  },
+  "light-v4-deduction-symmetry-02-base": {
+    "band": "basic",
+    "reason": "Continuar Básico já atribuído: base comparativa das metades aparentadas. Não contar como nova transferência de faixa nem relabelar somente para diversificar a sequência.",
+    "primaryConcept": 7,
+    "addConceptEvidence": []
+  },
+  "light-v4-deduction-symmetry-02-filter": {
+    "band": "basic",
+    "reason": "Aceitar no fim do Básico após a respectiva base. O filtro superior elimina a opção dourada por portal; a alternativa dourada restante exige azul e rosa pelos acessos compatíveis. A relação é curta e diretamente ancorada no detalhe visível, apropriada à consolidação após seletividade e conflitos.",
+    "primaryConcept": 4,
+    "addConceptEvidence": [
+      {
+        "concept": 4,
+        "claim": "Metades visualmente equivalentes deixam de ter o mesmo acesso: o filtro de uma entrada aceita a outra cor. O traço isolado dessa alternativa muda de target para miss, quebrando a equivalência real.",
+        "caseIds": [
+          "choices-1",
+          "choices-6"
+        ]
+      },
+      {
+        "concept": 16,
+        "claim": "Comparar explicitamente com a base de mesmo número: a única modificação física fixa é o filtro seletivo da entrada, e as combinações vencedoras mudam. Não contar a variante como família independente.",
+        "caseIds": [
+          "choices-1",
+          "choices-3",
+          "choices-6"
+        ]
+      }
+    ]
+  },
+  "light-v4-deduction-symmetry-02-opposite-filter": {
+    "band": "basic",
+    "reason": "Aceitar no fim do Básico após a respectiva base. O filtro inferior remove a opção azul por portal; a incompatibilidade direta exige dourado pelo portal e deixa ambas as opções rosa disponíveis. É uma aplicação curta e visível da assimetria, sem rede avançada.",
+    "primaryConcept": 4,
+    "addConceptEvidence": [
+      {
+        "concept": 4,
+        "claim": "Metades visualmente equivalentes deixam de ter o mesmo acesso: o filtro de uma entrada aceita a outra cor. O traço isolado dessa alternativa muda de target para miss, quebrando a equivalência real.",
+        "caseIds": [
+          "choices-3",
+          "choices-1"
+        ]
+      },
+      {
+        "concept": 16,
+        "claim": "Comparar explicitamente com a base de mesmo número: a única modificação física fixa é o filtro seletivo da entrada, e as combinações vencedoras mudam. Não contar a variante como família independente.",
+        "caseIds": [
+          "choices-1",
+          "choices-3",
+          "choices-6"
+        ]
+      }
+    ]
+  },
+  "light-v4-deduction-symmetry-03-base": {
+    "band": "basic",
+    "reason": "Continuar Básico já atribuído: base comparativa das metades aparentadas. Não contar como nova transferência de faixa nem relabelar somente para diversificar a sequência.",
+    "primaryConcept": 7,
+    "addConceptEvidence": []
+  },
+  "light-v4-deduction-symmetry-03-filter": {
+    "band": "basic",
+    "reason": "Aceitar no fim do Básico após a respectiva base. O filtro superior elimina a opção dourada por portal; a alternativa dourada restante exige azul e rosa pelos acessos compatíveis. A relação é curta e diretamente ancorada no detalhe visível, apropriada à consolidação após seletividade e conflitos.",
+    "primaryConcept": 4,
+    "addConceptEvidence": [
+      {
+        "concept": 4,
+        "claim": "Metades visualmente equivalentes deixam de ter o mesmo acesso: o filtro de uma entrada aceita a outra cor. O traço isolado dessa alternativa muda de target para miss, quebrando a equivalência real.",
+        "caseIds": [
+          "choices-1",
+          "choices-6"
+        ]
+      },
+      {
+        "concept": 16,
+        "claim": "Comparar explicitamente com a base de mesmo número: a única modificação física fixa é o filtro seletivo da entrada, e as combinações vencedoras mudam. Não contar a variante como família independente.",
+        "caseIds": [
+          "choices-1",
+          "choices-3",
+          "choices-6"
+        ]
+      }
+    ]
+  },
+  "light-v4-deduction-windows-04": {
+    "band": "basic",
+    "reason": "Aceitar no fim do Básico, depois de janelas e portais: cada divisória exclui uma alternativa distinta pela visibilidade. Os arranjos em que todas as cores ainda chegam isoladamente já vencem juntos no catálogo; não resta uma cadeia multicor que exija Intermediário. O aprendizado é observar duas relações locais de passagem e combinar os resultados.",
+    "primaryConcept": 3,
+    "addConceptEvidence": [
+      {
+        "concept": 3,
+        "claim": "As duas ablações preservam a função específica de cada janela. A dificuldade vem de localizar passagens úteis, não de deduzir uma rede residual entre cores.",
+        "additionalEvidenceIds": [
+          "gateAblation[0]",
+          "gateAblation[1]"
+        ],
+        "caseIds": [
+          "choices-1",
+          "choices-3"
+        ]
+      }
+    ]
+  },
+  "light-v4-deduction-windows-05": {
+    "band": "basic",
+    "reason": "Aceitar no fim do Básico, depois de janelas e portais: cada divisória exclui uma alternativa distinta pela visibilidade. Os arranjos em que todas as cores ainda chegam isoladamente já vencem juntos no catálogo; não resta uma cadeia multicor que exija Intermediário. O aprendizado é observar duas relações locais de passagem e combinar os resultados.",
+    "primaryConcept": 3,
+    "addConceptEvidence": [
+      {
+        "concept": 3,
+        "claim": "As duas ablações preservam a função específica de cada janela. A dificuldade vem de localizar passagens úteis, não de deduzir uma rede residual entre cores.",
+        "additionalEvidenceIds": [
+          "gateAblation[0]",
+          "gateAblation[1]"
+        ],
+        "caseIds": [
+          "choices-3"
+        ]
+      }
+    ]
+  },
+  "light-v4-deduction-windows-08": {
+    "band": "basic",
+    "reason": "Aceitar no fim do Básico, depois de janelas e portais: cada divisória exclui uma alternativa distinta pela visibilidade. Os arranjos em que todas as cores ainda chegam isoladamente já vencem juntos no catálogo; não resta uma cadeia multicor que exija Intermediário. O aprendizado é observar duas relações locais de passagem e combinar os resultados.",
+    "primaryConcept": 3,
+    "addConceptEvidence": [
+      {
+        "concept": 3,
+        "claim": "As duas ablações preservam a função específica de cada janela. A dificuldade vem de localizar passagens úteis, não de deduzir uma rede residual entre cores.",
+        "additionalEvidenceIds": [
+          "gateAblation[0]",
+          "gateAblation[1]"
+        ],
+        "caseIds": [
+          "choices-7"
+        ]
+      }
+    ]
+  },
+  "light-v4-deduction-four-01": {
+    "band": "basic",
+    "reason": "Aceitar como introdução final de orientações relacionadas. No catálogo, dourado direto conflita para todas as combinações azul/rosa; dourado pelo portal admite todas elas. A dedução efetiva é trocar a primeira rota dourada e adaptar sua última curva, sem cadeia entre três cores. Exige pré-requisitos de portal e incidência, mas não planejamento avançado.",
+    "primaryConcept": 14,
+    "addConceptEvidence": [
+      {
+        "concept": 14,
+        "claim": "A primeira escolha dourada e a última orientação não são independentes; mudar somente a primeira não conserva a chegada isolada dourada. As outras cores não geram uma cadeia residual depois da escolha dourada útil.",
+        "caseIds": [
+          "choices-0",
+          "choices-1",
+          "choices-2",
+          "choices-3",
+          "change-first-only"
+        ]
+      },
+      {
+        "concept": 5,
+        "claim": "A opção dourada localmente correta precisa ser revista por conflito; as configurações com dourado pelo portal chegam em conjunto.",
+        "caseIds": [
+          "choices-0",
+          "choices-1"
+        ]
+      }
+    ]
+  },
+  "light-v4-open-chain-001": {
+    "band": "basic",
+    "reason": "Aceitar como consolidação final do Básico: após uma exclusão direta sem suporte, sobra uma compatibilidade curta entre duas cores. A revisão de uma só rota resolve a configuração local em conflito. Usar5 como principal é fiel à evidência; manter7 complementar e não restaurar6/14.",
+    "primaryConcept": 5,
+    "addConceptEvidence": [
+      {
+        "concept": 5,
+        "claim": "As três cores acertam isoladamente na configuração conflitante; revisar somente gold já produz vitória conjunta. Isso ensina abandonar uma rota aparentemente resolvida, sem exigir uma cadeia de três decisões.",
+        "caseIds": [
+          "rotas-locais-em-conflito",
+          "revisao-apenas-gold",
+          "solucao-conjunta"
+        ]
+      },
+      {
+        "concept": 7,
+        "claim": "O conflito é entre segmentos físicos das cores em tabuleiro aberto, não inferido apenas pela ausência de paredes.",
+        "caseIds": [
+          "rotas-locais-em-conflito",
+          "alternativa-isolada-gold",
+          "alternativa-isolada-blue",
+          "alternativa-isolada-pink"
+        ]
+      }
+    ]
+  },
+  "light-v4-open-chain-003": {
+    "band": "basic",
+    "reason": "Aceitar como consolidação final do Básico: após uma exclusão direta sem suporte, sobra uma compatibilidade curta entre duas cores. A revisão de uma só rota resolve a configuração local em conflito. Usar5 como principal é fiel à evidência; manter7 complementar e não restaurar6/14.",
+    "primaryConcept": 5,
+    "addConceptEvidence": [
+      {
+        "concept": 5,
+        "claim": "As três cores acertam isoladamente na configuração conflitante; revisar somente gold já produz vitória conjunta. Isso ensina abandonar uma rota aparentemente resolvida, sem exigir uma cadeia de três decisões.",
+        "caseIds": [
+          "rotas-locais-em-conflito",
+          "revisao-apenas-gold",
+          "solucao-conjunta"
+        ]
+      },
+      {
+        "concept": 7,
+        "claim": "O conflito é entre segmentos físicos das cores em tabuleiro aberto, não inferido apenas pela ausência de paredes.",
+        "caseIds": [
+          "rotas-locais-em-conflito",
+          "alternativa-isolada-gold",
+          "alternativa-isolada-blue",
+          "alternativa-isolada-pink"
+        ]
+      }
+    ]
+  },
+  "light-v4-open-chain-020": {
+    "band": "basic",
+    "reason": "Aceitar como consolidação final do Básico: após uma exclusão direta sem suporte, sobra uma compatibilidade curta entre duas cores. A revisão de uma só rota resolve a configuração local em conflito. Usar5 como principal é fiel à evidência; manter7 complementar e não restaurar6/14.",
+    "primaryConcept": 5,
+    "addConceptEvidence": [
+      {
+        "concept": 5,
+        "claim": "As três cores acertam isoladamente na configuração conflitante; revisar somente blue já produz vitória conjunta. Isso ensina abandonar uma rota aparentemente resolvida, sem exigir uma cadeia de três decisões.",
+        "caseIds": [
+          "rotas-locais-em-conflito",
+          "revisao-apenas-blue",
+          "solucao-conjunta"
+        ]
+      },
+      {
+        "concept": 7,
+        "claim": "O conflito é entre segmentos físicos das cores em tabuleiro aberto, não inferido apenas pela ausência de paredes.",
+        "caseIds": [
+          "rotas-locais-em-conflito",
+          "alternativa-isolada-gold",
+          "alternativa-isolada-blue",
+          "alternativa-isolada-pink"
+        ]
+      }
+    ]
+  }
+}

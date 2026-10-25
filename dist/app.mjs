@@ -14,6 +14,7 @@ import {curvedCut,shapePolygon,shapes,families,basicCutState} from './curves.mjs
 import {clamp,segment,cutSuccess,mirrorAngle,wallPolygon} from './math.mjs';
 import {lightLevels,cutLevels} from './levels.mjs';
 import {createAnswerProgress} from './answer-progress.mjs';
+import {createLightCampaignProgress} from './light-campaign-progress.mjs';
 import {getOriginalAnswer} from './original-answers.mjs';
 import {buildOriginalHint} from './original-hints.mjs';
 const $=id=>document.getElementById(id), scene=$('scene'), drawing=$('drawing');
@@ -165,7 +166,32 @@ function showOriginalHint(){
  $('hint-text').textContent=originalHintPlan[['focusText','explanation','nextStep'][originalHintTier-1]];
 }
 const completed=new Set();const lastLevel={light:null,cut:null};
-function showSelection(){finishOriginalGesture(false);endDrag();saveCampaign();saveCustom();campaignActive=null;customLevel=null;customId='';customImportRevision++;customStorage.hidden=true;customExport.hidden=true;resetOriginalHint();saveEndless();free=false;endlessPanel.hidden=true;restartConfirmation.dismiss();restartRevision++;placementMessage='';pendingSlot=null;invalidate();drag=null;document.querySelector('.lab').hidden=true;$('selection').hidden=false;document.querySelectorAll('[data-game]').forEach(b=>b.setAttribute('aria-pressed',String(b.dataset.game===game)));$('selection-title').textContent={light:'Reflexos ·',cut:'Corte certo ·'}[game];let html='';for(let k=0;k<catalogue[game].length;k+=10){if(game==='light')html+=`<h3 class="stage-heading">${catalogue.light[k].stage} · ${catalogue.light[k].stageName}</h3>`;if(game==='cut')html+=`<h3 class="stage-heading">${['1 · Uma direção por vez','2 · Parábolas e vazios','3 · Ondas e recortes','4 · Curvas em S','5 · Silhuetas irregulares','6 · Vazios maiores','7 · Bordas abertas','8 · Recortes combinados','9 · Área que resta','10 · Síntese de formas'][k/10]}</h3>`;html+='<div class="level-group">'+catalogue[game].slice(k,k+10).map((l,j)=>{const i=k+j,done=completed.has(game+i),assisted=answerProgress.get(`${game}:${l.id??i}`).assisted,current=lastLevel[game]===i;return `<button class="level-tile ${done?'done':''}" data-level="${i}" aria-current="${current}" aria-label="Nível ${i+1}: ${l.name}${done?', concluído':''}${assisted?', assistido por gabarito':''}${current?', atual':''}"><span>${i+1}</span><small>${done?(assisted?'✓ com gabarito':'✓ concluído'):assisted?'com gabarito':current?'atual':'explorar'}</small></button>`;}).join('')+'</div>';}$('level-grid').innerHTML=html;$('level-grid').querySelectorAll('[data-level]').forEach(b=>b.onclick=()=>{level=Number(b.dataset.level);free=false;start();});renderOriginalImport();$('selection-title').focus();}
+const lightCampaignProgress=createLightCampaignProgress();
+const lightCampaignBands=[['basic','Básico',1,200],['intermediate','Intermediário',201,300],['advanced','Avançado',301,400],['master','Mestre',401,500]];
+const lightCampaignNumber=(l,i)=>Number.isInteger(l.campaignNumber)&&l.campaignNumber>=1&&l.campaignNumber<=500?l.campaignNumber:i+1;
+function lightCampaignSelection(){
+ const progress=lightCampaignProgress.snapshot();let html='';
+ const entries=catalogue.light.map((l,i)=>({l,i,number:lightCampaignNumber(l,i)}));
+ for(const [band,name,first,last] of lightCampaignBands){
+  const levels=entries.filter(({l,number})=>(l.campaignBand??lightCampaignBands.find(([, ,a,b])=>number>=a&&number<=b)?.[0])===band);
+  if(!levels.length)continue;
+  html+=`<h3 class="stage-heading" data-campaign-band="${band}">${name} · ${first}–${last}</h3>`;
+  let groupOpen=false,previousStage;
+  for(const {l,i,number} of levels){
+   const stage=band==='basic'&&l.stageName?`${l.stage==null?'':l.stage+' · '}${l.stageName}`:'';
+   if(!groupOpen||stage!==previousStage){
+    if(groupOpen)html+='</div>';
+    if(stage)html+=`<h4 class="stage-heading">${stage}</h4>`;
+    html+=`<div class="level-group" data-campaign-band="${band}">`;groupOpen=true;previousStage=stage;
+   }
+   const done=progress.completedIds.has(l.id),assisted=answerProgress.get(`light:${l.id??i}`).assisted,current=progress.lastLevelId===l.id;
+   html+=`<button class="level-tile ${done?'done':''}" data-level="${i}" aria-current="${current}" aria-label="Nível ${number}: ${l.name}${done?', concluído':''}${assisted?', assistido por gabarito':''}${current?', atual':''}"><span>${number}</span><small>${done?(assisted?'✓ com gabarito':'✓ concluído'):assisted?'com gabarito':current?'atual':'explorar'}</small></button>`;
+  }
+  if(groupOpen)html+='</div>';
+ }
+ return html;
+}
+function showSelection(){finishOriginalGesture(false);endDrag();saveCampaign();saveCustom();campaignActive=null;customLevel=null;customId='';customImportRevision++;customStorage.hidden=true;customExport.hidden=true;resetOriginalHint();saveEndless();free=false;endlessPanel.hidden=true;restartConfirmation.dismiss();restartRevision++;placementMessage='';pendingSlot=null;invalidate();drag=null;document.querySelector('.lab').hidden=true;$('selection').hidden=false;document.querySelectorAll('[data-game]').forEach(b=>b.setAttribute('aria-pressed',String(b.dataset.game===game)));$('selection-title').textContent={light:'Reflexos ·',cut:'Corte certo ·'}[game];let html=game==='light'?lightCampaignSelection():'';if(game!=='light')for(let k=0;k<catalogue[game].length;k+=10){if(game==='cut')html+=`<h3 class="stage-heading">${['1 · Uma direção por vez','2 · Parábolas e vazios','3 · Ondas e recortes','4 · Curvas em S','5 · Silhuetas irregulares','6 · Vazios maiores','7 · Bordas abertas','8 · Recortes combinados','9 · Área que resta','10 · Síntese de formas'][k/10]}</h3>`;html+='<div class="level-group">'+catalogue[game].slice(k,k+10).map((l,j)=>{const i=k+j,done=completed.has(game+i),assisted=answerProgress.get(`${game}:${l.id??i}`).assisted,current=lastLevel[game]===i;return `<button class="level-tile ${done?'done':''}" data-level="${i}" aria-current="${current}" aria-label="Nível ${i+1}: ${l.name}${done?', concluído':''}${assisted?', assistido por gabarito':''}${current?', atual':''}"><span>${i+1}</span><small>${done?(assisted?'✓ com gabarito':'✓ concluído'):assisted?'com gabarito':current?'atual':'explorar'}</small></button>`;}).join('')+'</div>';}$('level-grid').innerHTML=html;$('level-grid').querySelectorAll('[data-level]').forEach(b=>b.onclick=()=>{level=Number(b.dataset.level);free=false;start();});renderOriginalImport();$('selection-title').focus();}
 
 let phase='editing',evaluation=null,frame=0,animationToken=0,revealed=[],lightDistance=0,lightFired=[];
 function invalidate(){if(free&&endlessRun)endlessRun.solved=false;clearTimeout(endlessTimer);endlessTimer=null;middleConfirm?.cancel();resultMotion.clear();cancelAnimationFrame(frame);animationToken++;phase='editing';evaluation=null;revealed=[];lightDistance=0;lightFired=[];scene.setAttribute('aria-busy','false');}
@@ -286,7 +312,8 @@ function start(resumeCustom=false,fresh=false){
  clearOriginalHistory();customImportRevision++;const resume=customLevel&&resumeCustom?structuredClone(customSaved[customId]??null):null;
  resetOriginalHint();
  restartConfirmation.dismiss();restartRevision++;
- placementMessage='';pendingSlot=null;invalidate();drag=null;$('selection').hidden=true;document.querySelector('.lab').hidden=false;if(!free&&!customLevel)lastLevel[game]=level; selected=0; const l=currentLevel();campaignActive=!free&&!customLevel?{game,id:l.id??level}:null;
+ placementMessage='';pendingSlot=null;invalidate();drag=null;$('selection').hidden=true;document.querySelector('.lab').hidden=false;if(!free&&!customLevel&&game!=='light')lastLevel[game]=level; selected=0; const l=currentLevel();campaignActive=!free&&!customLevel?{game,id:l.id??level}:null;
+ if(campaignActive&&game==='light')lightCampaignProgress.visit(l.id);
  if(free){try{endlessGenerated=generateOriginalEndless(game,endlessRun.seed,endlessRun.options);}catch(error){free=false;showSelection();$('selection-title').textContent='Não foi possível gerar este desafio. Abra o modo livre e tente outra configuração.';return;}state=structuredClone(endlessGenerated.initial);endlessRun.solved=false;cutMode='advanced';cutDrafts={basic:null,advanced:null};if(game==='light')selected=state.objects.findIndex(o=>o.type==='mirror');}
  if(game==='light'&&!free){state={objects:structuredClone(l.objects),target:{...l.target,radius:22},sourceAngle:l.sourceAngle??0,...(!free?{sources:structuredClone(l.sources),targets:structuredClone(l.targets),portals:structuredClone(l.portals??[])}:{})};selected=state.objects.findIndex(o=>o.type==='mirror');}
  if(game==='cut'&&!free){cutMode=free?'advanced':'basic';cutDrafts={basic:null,advanced:null};state=basicCutState(l);if(free)state.holes=[];}
@@ -322,10 +349,10 @@ function render(){
  $('challenge').setAttribute('aria-pressed',String(!free));$('free').setAttribute('aria-pressed',String(free));
  $('game-kicker').textContent='EXPERIMENTO '+titles[game][0];$('game-title').textContent=customLevel?customLevel.name:titles[game][1];
  $('scene-title').textContent=titles[game][1];$('scene-desc').textContent=game==='light'?'Gire os espelhos pelas alças. Clique nas fontes, ou use Tab e Enter ou Espaço, para disparar um raio de cada vez. Confirmar todos dispara o conjunto. Editar limpa os rastros.':'Use os controles rotulados abaixo ou ao lado. Arraste os elementos ajustáveis; o teclado também funciona nos controles. Clique na rodinha do mouse sobre o tabuleiro para avaliar a resposta.';
- $('level').innerHTML=catalogue[game].map((l,i)=>`<option value="${i}">${i+1}. ${l.name}</option>`).join('');$('level').value=level;$('level').disabled=free||!!customLevel;
+ $('level').innerHTML=catalogue[game].map((l,i)=>`<option value="${i}">${game==='light'?lightCampaignNumber(l,i):i+1}. ${l.name}</option>`).join('');$('level').value=level;$('level').disabled=free||!!customLevel;
  $('level-prev').hidden=free||!!customLevel;$('level-next').hidden=free||!!customLevel;$('level-prev').disabled=level===0;$('level-next').disabled=level===catalogue[game].length-1;
  $('confirm').title=game==='cut'?'Também pode avaliar clicando na rodinha do mouse sobre o tabuleiro.':'';
- $('stage-label').textContent=customLevel?'FASE PERSONALIZADA':free?`ENDLESS · DESAFIO ${endlessRun.count+1}`:`DESAFIO ${String(level+1).padStart(2,'0')} / ${String(catalogue[game].length).padStart(2,'0')}`;
+ $('stage-label').textContent=customLevel?'FASE PERSONALIZADA':free?`ENDLESS · DESAFIO ${endlessRun.count+1}`:`DESAFIO ${String(game==='light'?lightCampaignNumber(currentLevel(),level):level+1).padStart(2,'0')} / ${String(catalogue[game].length).padStart(2,'0')}`;
  $('mission').textContent=game==='light'?(free?'Ajuste os espelhos para cada cor chegar ao seu alvo, sem cruzar outra cor. As posições são fixas. Acertar gera o próximo desafio.':'Gire os espelhos. Clique em cada fonte para disparar separadamente, ou em Confirmar todos. Os raios ficam no palco; editar limpa todos. Cada cor deve alcançar seu próprio alvo, sem cruzar outra cor. Os símbolos também identificam cada par. Alvos aceitam 22 unidades de tolerância; espelhos e paredes têm posições fixas.'):(free?`Deixe ${state.target}% da área preenchida no lado roxo. Tolerância: ±3 pontos percentuais. Acertar gera o próximo desafio.`:`Deixe ${state.target}% da área no lado roxo. Tolerância: ±3 pontos percentuais, incluindo o limite.`);
  if(game==='light'&&!free)$('mission').textContent+=' '+(currentLevel().wallPurpose??[]).join(' ');
  if(game==='cut'&&!free)$('mission').textContent+=` No modo básico, mova somente na direção indicada (${currentLevel().basicDirection}°). Os controles livres ficam na aba Controles da curva.`;
@@ -397,7 +424,7 @@ function status(label,value,message,success){
  $('metric-label').textContent=label;$('metric').textContent=value;
  $('feedback').textContent=placementMessage||(phase==='result'?(success?'Vitória! ':'Ainda não. ')+message:message);
  $('feedback').classList.toggle('success',success);$('feedback').classList.toggle('sr-only',phase==='result'&&!success&&!placementMessage);
- if(success&&!free&&!customLevel)completed.add(game+level);
+ if(success&&!free&&!customLevel){if(game==='light')lightCampaignProgress.complete(currentLevel().id);else completed.add(game+level);}
  $('next').disabled=phase!=='result'||!success;$('next').textContent=level===catalogue[game].length-1?'Voltar ao início ↺':'Próximo desafio →';
 }
 function draw(){

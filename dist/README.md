@@ -2,16 +2,18 @@
 
 Laboratório educativo de puzzles, produzido com auxílio de OpenAI/Codex a partir do escopo aprovado por Luigi. Não representa autoria individual do estudante nem uma submissão concluída ao CS50. Vídeo de demonstração ainda não informado.
 
-## Catálogo atual · 24/10/2026
+## Catálogo da revisão v4 · 25/10/2026
 
-- Reflexos: 200 níveis de luz, espelhos, paredes, cores e portais.
+- Reflexos: 500 níveis de luz, espelhos, paredes, cores e portais.
 - Corte certo: 100 níveis de proporções, curvas e áreas com vazios.
 - ELO: 200 níveis de regiões e circuitos.
 - PRUMO: 200 níveis de peças e centros de massa.
 - PACTO: 200 níveis de duplas e dedução.
 - DESVIO: duelo local, bot ou treino; 16 mapas, sem campanha numerada.
 
-Total: 900 níveis de campanha e um duelo. NEXO e Equilíbrio foram retirados do site; PRUMO é outro jogo e permanece. Os registros antigos do navegador e os backups históricos não são apagados. Não misture arquivos de versões anteriores com a versão atual.
+Total: 1200 níveis de campanha e um duelo. NEXO e Equilíbrio foram retirados do site; PRUMO é outro jogo e permanece. Os registros antigos do navegador e os backups históricos não são apagados. Não misture arquivos de versões anteriores com a versão atual.
+
+A campanha v4 foi compilada com 500 soluções reproduzidas no motor real, 11.150 casos de contraprova/alternativa e fluxo de interface dos 500 Reflexos e 100 Corte em DOM determinístico. A inspeção em navegador real ainda não foi executada nesta etapa. Veja os resultados e limites no [registro v4](development/reflexos-v4/README.md); os relatórios históricos continuam separados.
 
 ## Jogar
 
@@ -35,14 +37,21 @@ Sem cadastro, ranking, coleta de dados pessoais ou upload automático de jogadas
 
 Sliders, campos numéricos e teclado complementam o arraste; estados e resultados têm anúncios acessíveis. A dificuldade é uma progressão editorial/estrutural, não uma alegação de calibração por testes com jogadores. Testes de motores e DOM simulado não substituem validação interativa em navegador real.
 
-## Reflexos v3
+## Reflexos v4
 
-A campanha tem 200 níveis em 20 capítulos, com IDs novos light-v3. Soluções e fichas completas estão em [Reflexos v3](REFLEXOS-V3.md). Os registros anteriores são preservados, sem marcar os novos desafios como resolvidos. A física, os controles, o visual e os demais jogos foram preservados.
+A campanha se organiza em quatro faixas: **Básico, 1–200; Intermediário, 201–300; Avançado, 301–400; Mestre, 401–500**. Subdivisões didáticas podem existir somente no Básico. As outras faixas misturam os conceitos; blocos de dez ou 50 fases são instrumentos de revisão da variedade, não capítulos da interface.
+
+A revisão altera a composição, a classificação e a ordem das fases, sem autorizar mudanças na física, nas regras, nos controles, no visual ou nos demais jogos. A dificuldade é avaliada pelas dependências entre decisões, não pela quantidade de peças ou pela precisão angular. Qualquer solução permitida pelas regras continua válida; o gabarito é uma configuração de referência, não uma exigência de percurso único.
+
+A identidade de uma fase é independente de seu número na seleção. Fases reaproveitadas sem mudança conservam seus IDs; fases novas ou redesenhadas recebem identidade de versão própria. Reordenar não deve transferir uma conclusão para outro desafio, apagar o histórico nem reiniciar os saves. Foram mantidos 158 IDs legados e criadas 342 identidades de versão nova, incluindo dois reparos de enquadramento; as 200 definições anteriores estão arquivadas. Os testes de correspondência por ID passaram sem acessar saves reais de usuários. Consulte o [registro de desenvolvimento v4](development/reflexos-v4/README.md).
+
+A campanha contém 399 aplicações certificadas da ideia 7, das quais 327 não têm paredes; ao todo, 335 mapas são inteiramente sem paredes. O mesmo registro reúne a distribuição por faixa, exemplos geométricos, três exceções visuais legadas e limites das verificações. Buscas finitas e amostras de ângulos não demonstram unicidade contínua. [Reflexos v3](REFLEXOS-V3.md) permanece como registro histórico da campanha anterior de 200 níveis.
 
 ## Documentação
 
-- [Reflexos v3: campanha e limites](REFLEXOS-V3.md)
-- [Validação final de Reflexos](QA-REFLEXOS-V3.md)
+- [Reflexos v4: desenvolvimento, distribuição e validação](development/reflexos-v4/README.md)
+- [Reflexos v3: campanha e limites (histórico)](REFLEXOS-V3.md)
+- [Validação de Reflexos v3 (histórico)](QA-REFLEXOS-V3.md)
 - [Coleção lógica e regras](EXPANSAO.md)
 - [Gabaritos e resultados](GABARITOS.md)
 - [PACTO: hachuras somente para erros explícitos](QA-PACTO-HACHURAS.md)
@@ -56,4 +65,4 @@ Os módulos de geometria, níveis, interface e resultados ficam separados para p
 
 ELO, PRUMO, PACTO e DESVIO agora têm edição direta por mouse, toque e teclado, histórico transacional, controles de zoom/deslocamento e atalhos junto ao tabuleiro. Veja [Controles por jogo](CONTROLES-DIRETOS.md) e [Matriz de implementação e testes](INTERACAO-DIRETA-MATRIZ.md).
 
-Nos puzzles, preencher o tabuleiro não revela vitória automaticamente: use **Confirmar resposta**. Dicas têm três etapas e aplicação explícita, sem consultar um gabarito para fabricar a explicação. O progresso é local a este navegador, sem sincronização prometida. NEXO e Equilíbrio permanecem fora do catálogo; Corte Certo e Reflexos não foram alterados na revisão de interação direta; a atualização posterior Reflexos v3 modifica exclusivamente o catálogo de Reflexos.
+Nos puzzles, preencher o tabuleiro não revela vitória automaticamente: use **Confirmar resposta**. Dicas têm três etapas e aplicação explícita, sem consultar um gabarito para fabricar a explicação. O progresso é local a este navegador, sem sincronização prometida. NEXO e Equilíbrio permanecem fora do catálogo. Corte certo e Reflexos não foram alterados na revisão histórica de interação direta; as revisões posteriores da campanha de Reflexos não autorizam alterações nas mecânicas desses jogos.

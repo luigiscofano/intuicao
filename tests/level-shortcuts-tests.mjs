@@ -17,7 +17,7 @@ for(const game of ['light','cut']){
  else assert.equal($('scene').attrs['aria-busy'],'false');
  $('reset').click();const stale=$('restart-original-confirm');$('level-next').click();assert.equal($('restart-original').open,false);const next=$('drawing').innerHTML;stale.click();assert.equal($('drawing').innerHTML,next);assert.equal(+$('level').value,1);
  $('level-prev').click();assert.equal(+$('level').value,0);
- const last=game==='cut'?99:199;$('level').dispatch('change',{target:{value:last}});assert.equal($('level-next').disabled,true);$('level-next').onclick();assert.equal(+$('level').value,last);assert.equal($('next').disabled,true);
+ const last=game==='cut'?99:499;$('level').dispatch('change',{target:{value:last}});assert.equal($('level-next').disabled,true);$('level-next').onclick();assert.equal(+$('level').value,last);assert.equal($('next').disabled,true);
  $('free').click();assert.equal($('level-prev').hidden,true);assert.equal($('level-next').hidden,true);
  console.log('PASS',game,'side navigation, boundaries, free mode, stale reset and middle behavior');
 }
