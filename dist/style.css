@@ -304,3 +304,7 @@ button.action-hint:hover{background:#e4dcf1;border-color:#9c85bb}
 .elo-clue-legend .elo-specific-clues{padding-left:16px;overflow-wrap:anywhere}
 .elo-clue-legend .elo-specific-clues>li{margin:12px 0}
 .elo-clue-legend .elo-clue-explanation[hidden]{display:none}
+
+/* Atalhos da seleção: mesma linha em todos os jogos, inclusive no celular. */
+.level-screen > .selection-actions{margin:14px 0;flex-wrap:nowrap;align-items:stretch}
+.level-screen > .selection-actions > button{min-width:0;white-space:normal}

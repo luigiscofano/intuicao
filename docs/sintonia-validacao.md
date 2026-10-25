@@ -66,3 +66,12 @@ O Endless possui geração real com orçamento finito e banco certificado de rec
 Atendendo à revisão visual do usuário, foram removidos os filtros Capítulo/Dificuldade, o campo Ir ao nível e a configuração do Endless da tela de seleção. Os 500 cartões continuam acessíveis por capítulo. A faixa de ações usa a mesma estrutura da coleção, com Explorar modo livre e Desafio de hoje. Durante a partida, o menu suspenso foi substituído pelo contador textual do desafio, mantendo as setas de navegação.
 
 A revisão corrigiu a especificidade de um seletor local que sobrepunha os fundos primários e o raio dos cartões. A comparação no navegador confirmou igualdade com PACTO para largura e altura (68,40625 px naquele viewport), raio de 24%, padding de 5 px, cores, sombra e tipografia da legenda. Os 500 cartões estavam presentes, sem seletores na tela de seleção. Abrir a fase 180 mostrou DESAFIO 180 / 500 sem dropdown; a seta avançou para 181. Explorar modo livre retomou o Endless, com a configuração de dificuldade disponível dentro do modo.
+
+
+## Ações da seleção lado a lado — 25/10/2026
+
+A faixa `selection-actions` foi aplicada às sete seleções: modo livre e desafio diário juntos em ELO, PRUMO, PACTO e SINTONIA; modo livre e desafio tático juntos em DESVIO; botão de modo livre na mesma estrutura em REFLEXOS e CORTE CERTO. IDs e handlers existentes foram preservados. O CSS é restrito à faixa de ações da seleção.
+
+Conferência no navegador: sete jogos em desktop, com pares na mesma coordenada vertical, intervalo de 8 px e altura de 44 px. Duas molduras móveis de 320 e 375 px (larguras úteis de 305 e 360 px devido à barra de rolagem) mantiveram os pares na mesma linha e sem transbordamento. Na menor largura, os rótulos quebram dentro dos botões, ambos com 54,375 px de altura; na maior, ambos ficam com 44 px. A navegação por Tab em SINTONIA passou do modo livre ao desafio diário. Os cliques abriram DESAFIO DO DIA 129 / 500 e retomaram ENDLESS · DESAFIO 3 · 1 CONCLUÍDOS. Verificação de sintaxe dos dois módulos alterados e `git diff --check` passaram.
+
+Captura da seleção: `intuicao-botoes-lado-a-lado-1792946069816.jpg`. A página temporária de conferência móvel foi removida antes da publicação.
