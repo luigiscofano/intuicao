@@ -211,7 +211,9 @@ export function initRepasse({hideOthers=()=>{}}={}) {
     data.lastView={active:true,screen,mode,daily:mode==='campaign'&&daily};
     message=session.restoreIssue||(session.cursor?'Partida retomada. Os valores, as caixas e o histórico foram restaurados.':'Toque em uma peça para retirá-la. Cada seta envia o valor inteiro.');
     render(unknown);log('level-start',{resumed:session.restored});save();focusBoard(false);
-    if(isWon(level,current())){recordWin();motion.show('repasse',true);scheduleAuto();}
+    const outcome=evaluateState(level,current());
+    if(outcome.won){recordWin();motion.show('repasse',true);scheduleAuto();}
+    else if(outcome.status==='overrun'||outcome.status==='exhausted')motion.show('repasse',false);
     if(mode==='endless')fillPrefetch();
   }
   function resumeEndless(){
@@ -287,7 +289,11 @@ export function initRepasse({hideOthers=()=>{}}={}) {
     activePiece=nextFocusable(piece)?.id??null;
     log('remove',{piece:pieceId,value:piece.value,removed:session.cursor});
     if(next.transition.result.won)recordWin();else save();
-    if(!silent){renderBoard();renderStatus();animateTransfer(next.transition);focusBoard(true);if(next.transition.result.won){motion.show('repasse',true);scheduleAuto();}}
+    if(!silent){
+      renderBoard();renderStatus();animateTransfer(next.transition);focusBoard(true);
+      if(next.transition.result.won){motion.show('repasse',true);scheduleAuto();}
+      else if(next.transition.result.status==='overrun'||next.transition.result.status==='exhausted')motion.show('repasse',false);
+    }
   }
   function nextFocusable(from){
     const present=level.pieces.filter((piece,i)=>current().values[i]>0);
@@ -299,19 +305,27 @@ export function initRepasse({hideOthers=()=>{}}={}) {
     const restoredId=delta<0?session.commands[session.cursor-1]:null;invalidate();session.cursor=next;
     activePiece=restoredId??level.pieces.find((piece,i)=>current().values[i]>0)?.id??null;
     message=delta<0?'Retirada desfeita. A peça, todos os valores recebidos e todas as caixas foram restaurados.':'Retirada refeita.';
-    log(delta<0?'undo':'redo');save();renderBoard();renderStatus();focusBoard(true);if(isWon(level,current()))motion.show('repasse',true);
+    log(delta<0?'undo':'redo');save();renderBoard();renderStatus();focusBoard(true);
+    const outcome=evaluateState(level,current());
+    if(outcome.won)motion.show('repasse',true);
+    else if(delta>0&&(outcome.status==='overrun'||outcome.status==='exhausted'))motion.show('repasse',false);
+  }
+  function restartCurrentImmediately(){
+    if(!session||host.hidden||screen!=='play')return;
+    const old=session;cancelGeneration();invalidate();session=restoreRepasseSession(level,null);
+    session.winRecorded=old.winRecorded;session.failures=old.failures;session.assisted=old.assisted;
+    activePiece=level.pieces[0]?.id??null;message='Mesmo desafio, um novo começo. As peças e as metas continuam iguais.';
+    log('restart');save();renderBoard();renderStatus();focusBoard(true);
+    if(mode==='endless'){generationStatus('');fillPrefetch();}
   }
   function restartLevel(trigger){
     if(!session)return;cancelAuto();cancelHint();const token=revision;
-    restart.open({trigger,match:mode==='endless',isCurrent:()=>revision===token&&!host.hidden&&screen==='play',onConfirm:()=>{
-      const old=session;invalidate();session=restoreRepasseSession(level,null);session.winRecorded=old.winRecorded;session.failures=old.failures;session.assisted=old.assisted;
-      activePiece=level.pieces[0]?.id??null;message='Mesmo desafio, um novo começo. As peças e as metas continuam iguais.';log('restart');save();renderBoard();renderStatus();focusBoard(true);
-    },onCancel:scheduleAuto,fallbackFocus:()=>$('r-board')});
+    restart.open({trigger,match:mode==='endless',isCurrent:()=>revision===token&&!host.hidden&&screen==='play',onConfirm:restartCurrentImmediately,onCancel:scheduleAuto,fallbackFocus:()=>$('r-board')});
   }
   function confirm(){
     if(!session||restart.isOpen)return;
     if(isWon(level,current())){recordWin();message='Todas as peças foram retiradas e todas as metas estão exatas.';motion.show('repasse',true);scheduleAuto();}
-    else{session.failures++;message='Confira as caixas e as peças que ainda precisam sair. Você pode experimentar, desfazer ou pedir uma dica.';log('check',{complete:false});save();}
+    else{session.failures++;message='Confira as caixas e as peças que ainda precisam sair. Você pode experimentar, desfazer ou pedir uma dica.';log('check',{complete:false});save();motion.show('repasse',false);}
     renderStatus();
   }
   function solutionValid(solution,state){try{return Array.isArray(solution)&&replay(level,solution,{state}).solved;}catch{return false;}}
@@ -326,7 +340,7 @@ export function initRepasse({hideOthers=()=>{}}={}) {
       if(token!==hintRevision||host.hidden||requestLevel!==level||stateKey(current())!==context)return;
       hintBusy=false;
       if(result.status==='solved'&&result.solution?.length&&solutionValid(result.solution,current())){hintPlan={context,solution:result.solution};hintTier=1;showHintTier();}
-      else if(result.status==='unsolvable'){hintText='Esta posição não tem uma continuação até todas as metas. Desfaça uma retirada para recuperar um receptor ou reinicie o mesmo desafio.';renderStatus();}
+      else if(result.status==='unsolvable'){hintText='Esta posição não tem uma continuação até todas as metas. Desfaça uma retirada para recuperar um receptor ou reinicie o mesmo desafio.';motion.show('repasse',false);renderStatus();}
       else{hintText='A análise não terminou dentro do limite. Isso não prova que a posição seja impossível. Seu tabuleiro continua disponível para explorar.';renderStatus();}
       log('hint',{status:result.status,tier:hintTier});save();
     }catch(error){if(token!==hintRevision)return;hintBusy=false;hintText=safeError(error)||'A dica foi cancelada.';renderStatus();}
@@ -347,7 +361,7 @@ export function initRepasse({hideOthers=()=>{}}={}) {
       if(result.status==='solved'&&solutionValid(result.solution,current())){
         answerPlan={context,solution:result.solution};session.assisted=true;
         hintText='Uma solução a partir daqui: '+result.solution.map(id=>{const p=level.pieces.find(piece=>piece.id===id);return '('+(p.row+1)+', '+(p.col+1)+')';}).join(' → ')+'. Os pares indicam (linha, coluna). A resolução será marcada como assistida.';
-      }else if(result.status==='unsolvable')hintText='Esta posição não pode completar todas as metas. Desfaça ou reinicie este desafio antes de pedir uma nova sequência.';
+      }else if(result.status==='unsolvable'){hintText='Esta posição não pode completar todas as metas. Desfaça ou reinicie este desafio antes de pedir uma nova sequência.';motion.show('repasse',false);}
       else hintText='A busca não terminou dentro do limite. Isso não permite concluir se esta posição tem solução. Você pode continuar explorando.';
       save();renderStatus();
     }catch(error){if(token!==hintRevision)return;hintBusy=false;hintText=safeError(error)||'A análise foi cancelada.';renderStatus();}
@@ -366,8 +380,10 @@ export function initRepasse({hideOthers=()=>{}}={}) {
     return '<details class="r-tutorial" open><summary>'+esc(configurationIntro.length?'Uma nova configuração':'Experimente')+'</summary>'+(tutorial?'<p>'+esc(tutorial)+'</p>':'')+configurationIntro.map(key=>'<p><strong>'+esc(CONFIGURATION_TEXT[key][0])+'.</strong> '+esc(CONFIGURATION_TEXT[key][1])+'</p>').join('')+'</details>';
   }
   function render(unknown=[]){
+    const retryVisible=$('r-motion')?.dataset.outcome==='loss';
+    motion?.clear();
     host.innerHTML='<div class="lab collection-lab repasse-lab"><button id="r-back" class="quiet">← Seleção de níveis</button><div class="lab-heading"><div><p id="r-kicker" class="eyebrow">'+(mode==='endless'?'ENDLESS · DESAFIO '+data.endless.number+' · '+data.endless.solved+(data.endless.solved===1?' CONCLUÍDO':' CONCLUÍDOS'):mode==='custom'?'EDITOR · FASE PERSONALIZADA':'EXPERIMENTO 08')+'</p><h2 id="r-title" tabindex="-1">REPASSE ·</h2><p class="r-level-name">'+esc(level.name??'A ordem dos repasses')+' <span>'+esc(difficultyName(level.difficulty))+' · '+level.pieces.length+' '+(level.pieces.length===1?'peça':'peças')+'</span></p></div><div class="modes collection-mode-switch" role="group" aria-label="Modo de jogo"><button id="r-mode-campaign" aria-pressed="'+(mode!=='endless')+'">Desafios</button><button id="r-mode-endless" aria-pressed="'+(mode==='endless')+'">Endless</button></div></div>'+(mode==='endless'?endlessControls():'')+'<div class="collection-workspace r-workspace '+(advanced?'':'closed')+'"><div class="collection-surface experiment r-surface"><div class="stage-top">'+(mode==='campaign'?'<div class="level-stepper"><span id="r-stage-label">'+(daily?'DESAFIO DO DIA':'DESAFIO')+' '+shortNumber(index+1)+' / 500</span></div>':'')+'<div class="stage-tools"><button id="r-undo" type="button" aria-label="Desfazer" title="Desfazer (Ctrl+Z)">↶</button><button id="r-redo" type="button" aria-label="Refazer" title="Refazer (Ctrl+Shift+Z)">↷</button><button id="r-reset" class="action-reset">↺ Reiniciar</button><details id="r-rules-panel" class="rules-card"><summary aria-controls="r-rules-sidebar" aria-expanded="false"><span>Regras e como jogar</span><span class="rules-show">Mostrar</span><span class="rules-hide">Ocultar</span></summary></details><button id="r-advanced-toggle" aria-controls="r-advanced" aria-expanded="'+advanced+'">'+(advanced?'Ocultar':'Mostrar')+' opções avançadas</button></div></div><p class="r-mission">'+esc(levelLesson(level))+'</p>'+tutorialMarkup(unknown)+'<div class="board-navigation r-board-navigation" role="group" aria-label="Área do jogo e navegação de níveis">'+(mode==='campaign'?'<button id="r-level-prev" class="level-arrow" aria-label="Nível anterior" title="Nível anterior">←</button>':'')+'<div id="r-board-surface" class="r-board-surface"><div id="r-board-scroll" class="r-board-scroll" tabindex="0" role="region" aria-label="Tabuleiro e caixas das bordas, com rolagem horizontal" aria-describedby="r-scroll-help"><div id="r-board" class="r-board" tabindex="-1" role="group" aria-label="Tabuleiro de REPASSE" aria-describedby="r-keyboard-help r-preview"></div></div><p id="r-scroll-help" class="r-scroll-help">Se precisar, deslize o tabuleiro para ver as caixas dos lados. Com a área de rolagem em foco, use ← e →.</p><div id="r-motion" class="result-motion" aria-hidden="true"></div></div>'+(mode==='campaign'?'<button id="r-level-next" class="level-arrow" aria-label="Próximo nível" title="Próximo nível">→</button>':'')+'</div><div class="r-board-options"><button id="r-inspect" class="quiet" aria-pressed="false">Inspecionar repasses</button><p id="r-keyboard-help">Toque para retirar. Setas movem o foco; Enter ou espaço retira. Ctrl+Z desfaz.</p></div><p id="r-preview" class="r-preview" role="status" aria-live="polite"></p><div class="r-box-legend" aria-label="Estados das metas"><span>○ incompleta</span><span>✓ exata</span><span>! ultrapassada</span><span>Caixas: acumulado / meta</span></div><div class="readout r-readout"><div><span class="metric-label">PEÇAS RETIRADAS</span><strong id="r-removed"></strong></div><div><span class="metric-label">METAS EXATAS</span><strong id="r-matched"></strong></div><p id="r-status" role="status" aria-live="polite" aria-atomic="true"></p></div><div class="level-actions"><button id="r-confirm" class="primary confirm">Confirmar resposta</button><div class="actions"><button id="r-answer" hidden>Ver gabarito</button><button id="r-hint" class="action-hint">✦ Dicas</button><button id="r-next" '+(mode==='custom'?'hidden':'')+'>'+(mode==='endless'?'Novo desafio':'Próximo nível')+' →</button></div><button id="r-hint-apply" hidden>Aplicar esta retirada</button><button id="r-answer-apply" hidden>Aplicar sequência do gabarito</button><p id="r-hint-text" class="hint" role="status" aria-live="polite"></p><p id="r-assisted" class="collection-small" hidden>Resolução assistida. Desfazer continua disponível para explorar qualquer passo.</p></div></div><aside id="r-rules-sidebar" class="rules-sidebar" aria-label="Regras e como jogar" hidden>'+rulesMarkup()+'</aside><aside id="r-advanced" class="controls" '+(advanced?'':'hidden')+'>'+advancedMarkup()+'</aside></div></div>';
-    motion=createResultMotion($('r-motion'),$('r-board-surface'));
+    motion=createResultMotion($('r-motion'),$('r-board-surface'),globalThis,{onRetry:restartCurrentImmediately});
     $('r-back').onclick=selection;$('r-mode-campaign').onclick=selection;$('r-mode-endless').onclick=()=>{if(mode!=='endless')data.endless?.current?.level?resumeEndless():newEndless(bounded(level.difficulty,0,7));};
     $('r-undo').onclick=()=>travelHistory(-1);$('r-redo').onclick=()=>travelHistory(1);$('r-reset').onclick=event=>restartLevel(event.currentTarget);
     if($('r-level-prev'))$('r-level-prev').onclick=()=>navigate(-1);if($('r-level-next'))$('r-level-next').onclick=()=>navigate(1);
@@ -377,6 +393,7 @@ export function initRepasse({hideOthers=()=>{}}={}) {
     $('r-advanced-toggle').onclick=()=>{advanced=!advanced;syncPanels();save();};
     $('r-inspect').onclick=()=>{inspect=!inspect;$('r-inspect').setAttribute('aria-pressed',String(inspect));$('r-inspect').textContent=inspect?'Encerrar inspeção':'Inspecionar repasses';$('r-keyboard-help').textContent=inspect?'Inspeção ativa: tocar ou pressionar Enter só mostra os repasses. Encerre a inspeção para retirar.':'Toque para retirar. Setas movem o foco; Enter ou espaço retira. Ctrl+Z desfaz.';showPreview(activePiece);};
     bindAdvanced();if(mode==='endless')bindEndless();renderBoard();renderStatus();syncPanels();
+    if(retryVisible&&!isWon(level,current()))motion.show('repasse',false);
   }
   function syncPanels(){
     const workspace=$('r-rules-sidebar').parentElement;workspace.classList.toggle('rules-open',rulesOpen);workspace.classList.toggle('closed',!advanced);

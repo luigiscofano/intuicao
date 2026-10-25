@@ -12,22 +12,34 @@ export function celebrationMarkup(){
 }
 export function resultMarkup(game,success,options={}){
  if(!(game in names))throw new Error('Jogo desconhecido');
- if(!success)return ''; // Derrota não cria texto, ícone ou faixa visual.
+ const retry=(!success||options.retry===true)?retryMarkup(game):'';
+ if(!success)return retry;
  const outcome='win';
  const shapes={
   light:`<circle class="fx-target" cx="64" cy="17" r="10"/><circle class="fx-target" cx="64" cy="17" r="3"/><path class="fx-mirror" d="M28 38 L48 58"/><path class="fx-ray" d="${success?'M10 48 H38 L64 17':'M10 48 H38 L65 48'}"/>${success?'':'<path class="fx-wall" d="M65 35 V59"/>'}`,
   cut:`<path class="fx-piece fx-piece-a" d="M13 14 H40 V58 H13 Z"/><path class="fx-piece fx-piece-b" d="M40 14 H67 V58 H40 Z"/><path class="fx-cut" d="M40 8 V64"/>`
  };
- return `${celebrationMarkup()}<div class="result-badge result-${game} result-${outcome}" data-outcome="${outcome}"><svg viewBox="0 0 80 72" aria-hidden="true" focusable="false">${shapes[game]??'<path class="fx-piece" d="M15 36 L32 52 L66 18"/>'}</svg><div><strong>${options.winner?'✓ Jogador '+options.winner+' venceu!':success?'✓ Vitória!':'↻ Ainda não!'}</strong><span>${captions[game]?.[success?0:1]??'Cada escolha encontrou seu lugar.'}</span></div></div>`;
+ return `${celebrationMarkup()}<div class="result-badge result-${game} result-${outcome}" data-outcome="${outcome}"><svg viewBox="0 0 80 72" aria-hidden="true" focusable="false">${shapes[game]??'<path class="fx-piece" d="M15 36 L32 52 L66 18"/>'}</svg><div><strong>${options.winner?'✓ Jogador '+options.winner+' venceu!':success?'✓ Vitória!':'↻ Ainda não!'}</strong><span>${captions[game]?.[success?0:1]??'Cada escolha encontrou seu lugar.'}</span></div></div>${retry}`;
 }
-export function createResultMotion(host,surface,clock=globalThis){
+function retryMarkup(game){
+ const label=game==='desvio'?'Reiniciar partida imediatamente':'Reiniciar fase imediatamente';
+ return `<div class="result-retry-actions"><button type="button" class="result-retry" data-result-retry aria-label="${label}" title="${label}"><svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M3 12a9 9 0 1 0 9-9 9.75 9.75 0 0 0-6.74 2.74L3 8"/><path d="M3 3v5h5"/></svg></button></div>`;
+}
+export function createResultMotion(host,surface,clock=globalThis,{onRetry}={}){
  let serial=0,timer=null;
  const stop=()=>{if(timer!==null)clock.clearTimeout(timer);timer=null;surface.classList.remove('result-failure');surface.classList.remove('result-success');};
  return {
-  clear(){serial++;stop();host.innerHTML='';host.dataset.state='idle';delete host.dataset.outcome;},
+  clear(){serial++;stop();host.innerHTML='';host.dataset.state='idle';delete host.dataset.outcome;delete host.dataset.retry;host.setAttribute('aria-hidden','true');},
   show(game,success,options={}){
    stop();const token=++serial;host.dataset.state='result';host.dataset.outcome=success?'win':'loss';host.dataset.attempt=String(serial);
    host.innerHTML=resultMarkup(game,success,options);
+   const retry=host.querySelector('[data-result-retry]');
+   host.setAttribute('aria-hidden',retry?'false':'true');
+   if(retry){
+    host.dataset.retry='true';
+    retry.disabled=typeof onRetry!=='function';
+    retry.onclick=()=>{if(token!==serial||retry.disabled)return;retry.disabled=true;onRetry();};
+   }else delete host.dataset.retry;
    if(success){
     void surface.offsetWidth;surface.classList.add('result-success');
     timer=clock.setTimeout(()=>{if(token!==serial)return;surface.classList.remove('result-success');timer=null;},1100);

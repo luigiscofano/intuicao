@@ -58,7 +58,7 @@ function renderEndlessPanel(){
 }
 
 let middleConfirm=null;
-const resultMotion=createResultMotion($('result-motion'),document.querySelector('.experiment'));
+const resultMotion=createResultMotion($('result-motion'),document.querySelector('.experiment'),globalThis,{onRetry:restartOriginalNow});
 const catalogue={light:lightLevels,cut:cutLevels};
 let customLevel=null,customId='',customFailures=0,customAssisted=false,customStorageWarning=false,customImportRevision=0;
 const currentLevel=()=>customLevel??catalogue[game][level];
@@ -310,6 +310,12 @@ function cutControlGuide(){
 }
 
 const field=(key,label,min,max,step,value,unit='',disabled=false)=>`<div class="field"><header><label for="${key}">${label}</label><output id="${key}-out" for="${key}">${fmt(value,step<.1?2:1)}${unit}</output></header><div class="precision"><input id="${key}" data-bind="${key}" type="range" min="${min}" max="${max}" step="${step}" value="${value}" aria-label="${label}" ${disabled?'disabled':''}><input id="${key}-number" data-bind="${key}" type="number" min="${min}" max="${max}" step="${step}" value="${value}" aria-label="${label} (valor)" ${disabled?'disabled':''}></div></div>`;
+function restartOriginalNow(){
+ if(document.querySelector('.lab').hidden)return;
+ finishOriginalGesture(true);endDrag();middleConfirm?.cancel();clearTimeout(endlessTimer);endlessTimer=null;
+ const open=$('original-rules-panel').open;
+ start(false,true);$('original-rules-panel').open=open;syncOriginalRules();
+}
 function start(resumeCustom=false,fresh=false){
  clearOriginalHistory();customImportRevision++;const resume=customLevel&&resumeCustom?structuredClone(customSaved[customId]??null):null;
  resetOriginalHint();
@@ -493,7 +499,7 @@ scene.addEventListener('keydown',e=>{
  if(game==='cut'){if(id==='basic-cut'&&!free&&cutMode==='basic')setBasicTravel((state.basicTravel??0)+step);else if(id==='rotate-curve'&&allowed('rotate'))state.angle=(state.angle+step+360)%360;else if(id==='move-curve'){if(['ArrowLeft','ArrowRight'].includes(e.key)&&allowed('x'))state.centerX=clamp(state.centerX+step,-400,1200);if(['ArrowUp','ArrowDown'].includes(e.key)&&allowed('y'))state.centerY=clamp(state.centerY+(e.key==='ArrowUp'?-1:1),-400,860);}else if(allowed('offset'))state.offset=clamp(state.offset+step,-600,600);}commitOriginalEdit(before);editor();draw();drawing.querySelector(`[data-item="${id}"]`)?.focus();
 });
 document.querySelectorAll('[data-game]').forEach(b=>b.onclick=()=>{if(!catalogue[b.dataset.game])return;repasse.hide();sintonia.hide();saveEndless();collection.hide();free=false;game=b.dataset.game;showSelection();});
-$('free').textContent='Endless';$('free').onclick=enterEndless;$('challenge').onclick=()=>{free=false;showSelection();};$('level').onchange=e=>{saveCampaign();level=Number(e.target.value);start();};$('reset').onclick=()=>{finishOriginalGesture(true);endDrag();middleConfirm?.cancel();clearTimeout(endlessTimer);endlessTimer=null;const revision=restartRevision;restartConfirmation.open({trigger:$('reset'),isCurrent:()=>revision===restartRevision&&!document.querySelector('.lab').hidden,onConfirm:()=>{const open=$('original-rules-panel').open;start(false,true);$('original-rules-panel').open=open;syncOriginalRules();},onCancel:()=>{updateOriginalHistoryButtons();scheduleEndlessAdvance();}});updateOriginalHistoryButtons();};
+$('free').textContent='Endless';$('free').onclick=enterEndless;$('challenge').onclick=()=>{free=false;showSelection();};$('level').onchange=e=>{saveCampaign();level=Number(e.target.value);start();};$('reset').onclick=()=>{finishOriginalGesture(true);endDrag();middleConfirm?.cancel();clearTimeout(endlessTimer);endlessTimer=null;const revision=restartRevision;restartConfirmation.open({trigger:$('reset'),isCurrent:()=>revision===restartRevision&&!document.querySelector('.lab').hidden,onConfirm:restartOriginalNow,onCancel:()=>{updateOriginalHistoryButtons();scheduleEndlessAdvance();}});updateOriginalHistoryButtons();};
 $('selection-free').onclick=enterEndless;$('back-selection').onclick=showSelection;
 $('toggle-controls').onclick=toggleControls;
 $('undo').onclick=()=>travelOriginalHistory(-1);$('redo').onclick=()=>travelOriginalHistory(1);

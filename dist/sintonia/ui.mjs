@@ -325,15 +325,24 @@ export function initSintonia({hideOtherGames}) {
     if(isWon(level,current()))motion.show('sintonia',true);
   }
 
+  function restartCurrentImmediately() {
+    if(!session||host.hidden||screen!=='play')return;
+    const recorded=session.winRecorded,failures=session.failures,assisted=session.assisted;
+    cancelGeneration();invalidate();session=restoreSintoniaSession(level,null);
+    session.winRecorded=recorded;session.failures=failures;session.assisted=assisted;recentDirection='';
+    message='Mesmo desafio, um novo começo.';log('restart');save();renderBoards();renderStatus();$('s-play-area').focus({preventScroll:true});
+    if(mode==='endless'){generationStatus('');fillPrefetch();}
+  }
+
   function restartLevel(trigger) {
     if(!session)return;cancelAuto();cancelHint();const token=revision;
-    restart.open({trigger,isCurrent:()=>revision===token&&!host.hidden&&screen==='play',onConfirm:()=>{const recorded=session.winRecorded,failures=session.failures,assisted=session.assisted;invalidate();session=restoreSintoniaSession(level,null);session.winRecorded=recorded;session.failures=failures;session.assisted=assisted;message='Mesmo desafio, um novo começo.';log('restart');save();renderBoards();renderStatus();$('s-play-area').focus({preventScroll:true});},onCancel:scheduleAuto,fallbackFocus:()=>$('s-play-area')});
+    restart.open({trigger,isCurrent:()=>revision===token&&!host.hidden&&screen==='play',onConfirm:restartCurrentImmediately,onCancel:scheduleAuto,fallbackFocus:()=>$('s-play-area')});
   }
 
   function confirm() {
     if(restart.isOpen)return;
     if(isWon(level,current())){recordWin();message='Em sintonia! Todos os animais estão no destino.';motion.show('sintonia',true);scheduleAuto();}
-    else{session.failures++;message=`Ainda faltam ${level.boards.length-statusCount()} animais. Você pode continuar, desfazer ou pedir uma dica.`;log('check',{complete:false});save();}
+    else{session.failures++;message=`Ainda faltam ${level.boards.length-statusCount()} animais. Você pode continuar, desfazer ou pedir uma dica.`;log('check',{complete:false});save();motion.show('sintonia',false);}
     renderStatus();
   }
 
@@ -349,7 +358,7 @@ export function initSintonia({hideOtherGames}) {
       if(token!==hintRevision||host.hidden||level!==requestLevel||stateKey(current())!==context)return;
       hintBusy=false;session.assisted=true;hintTier=1;
       if(result.status==='solved'&&result.solution?.length){hintPlan={context,solution:result.solution};showHintTier();}
-      else if(result.status==='unsolvable'){hintText='Esta configuração não tem continuação até os destinos. Desfaça os últimos movimentos para recuperar um acesso ou reinicie este mesmo desafio.';renderStatus();}
+      else if(result.status==='unsolvable'){hintText='Esta configuração não tem continuação até os destinos. Desfaça os últimos movimentos para recuperar um acesso ou reinicie este mesmo desafio.';motion.show('sintonia',false);renderStatus();}
       else{hintText='A busca de dica não terminou dentro do tempo disponível. Isso não significa que a posição seja impossível. Você pode continuar, desfazer ou pedir outra dica.';renderStatus();}
       log('hint',{status:result.status,tier:hintTier});save();
     }catch(error){if(token!==hintRevision)return;hintBusy=false;hintText=safeError(error)||'A dica foi cancelada.';renderStatus();}
@@ -377,7 +386,7 @@ export function initSintonia({hideOtherGames}) {
       if(result.status==='solved'){
         answerPlan={context,solution:result.solution};session.assisted=true;
         hintText=`Uma solução a partir daqui: ${result.solution.map(direction=>DIRECTIONS_UI[direction][0]).join(' ')}. Você pode experimentar os comandos ou aplicar a sequência. A resolução será identificada como assistida.`;
-      }else if(result.status==='unsolvable')hintText='Esta posição não chega à vitória. Desfaça para recuperar um caminho ou reinicie o mesmo desafio antes de pedir o gabarito.';
+      }else if(result.status==='unsolvable'){hintText='Esta posição não chega à vitória. Desfaça para recuperar um caminho ou reinicie o mesmo desafio antes de pedir o gabarito.';motion.show('sintonia',false);}
       else hintText='A busca não conseguiu concluir uma solução dentro do orçamento. Seu tabuleiro foi preservado; uma busca inconclusiva não prova impossibilidade.';
       save();renderStatus();
     }catch(error){if(token!==hintRevision)return;hintBusy=false;hintText=safeError(error);renderStatus();}
@@ -394,8 +403,10 @@ export function initSintonia({hideOtherGames}) {
 
   function render(unknown=[]) {
     const won=isWon(level,current());
+    const retryVisible=$('s-motion')?.dataset.outcome==='loss';
+    motion?.clear();
     host.innerHTML=`<div class="collection-lab lab sintonia-lab"><button id="s-back" class="quiet">← Seleção de níveis</button><div class="lab-heading"><div><p id="s-kicker" class="eyebrow">${mode==='endless'?`ENDLESS · DESAFIO ${data.endless.number} · ${data.endless.solved} CONCLUÍDOS`:mode==='custom'?'EDITOR · FASE PERSONALIZADA':'EXPERIMENTO 07'}</p><h2 id="s-title" tabindex="-1">SINTONIA ·</h2><p class="s-level-name">${esc(level.name??'Um comando, vários caminhos')} <span>${esc(difficultyName(level.difficulty))} · ${level.boards.length} animais</span></p></div><div class="modes collection-mode-switch" role="group" aria-label="Modo de jogo"><button id="s-mode-campaign" aria-pressed="${mode!=='endless'}">Desafios</button><button id="s-mode-endless" aria-pressed="${mode==='endless'}">Endless</button></div></div>${mode==='endless'?endlessControls():''}<div class="collection-workspace s-workspace ${rulesOpen?'rules-open':''} ${advanced?'':'closed'}"><div class="collection-surface experiment s-surface"><div class="stage-top">${mode==='campaign'?`<div class="level-stepper"><span id="s-stage-label">${daily?'DESAFIO DO DIA':'DESAFIO'} ${shortNumber(index+1)} / 500</span></div>`:''}<div class="stage-tools"><button id="s-undo" aria-label="Desfazer" title="Desfazer (Ctrl+Z)">↶</button><button id="s-redo" aria-label="Refazer" title="Refazer (Ctrl+Shift+Z)">↷</button><button id="s-reset" class="action-reset">↺ Reiniciar</button><details id="s-rules-panel" class="rules-card" ${rulesOpen?'open':''}><summary aria-controls="s-rules-sidebar" aria-expanded="${rulesOpen}"><span>Regras e como jogar</span><span class="rules-show">Mostrar</span><span class="rules-hide">Ocultar</span></summary></details><button id="s-advanced-toggle" aria-expanded="${advanced}" aria-controls="s-advanced">${advanced?'Ocultar':'Mostrar'} opções avançadas</button></div></div><p class="s-mission">${esc(lessonText(level))}</p>${unknown.length?`<details class="s-new-rule" open><summary>Uma ideia para experimentar: ${unknown.map(id=>esc(MECHANIC_TEXT[id][0])).join(' · ')}</summary>${unknown.map(id=>`<p>${esc(MECHANIC_TEXT[id][1])}</p>`).join('')}</details>`:''}<div class="board-navigation s-board-navigation" role="group" aria-label="Área do jogo e navegação de níveis">${mode==='campaign'?'<button id="s-level-prev" class="level-arrow" aria-label="Nível anterior" title="Nível anterior">←</button>':''}<div id="s-board-surface" class="s-board-surface"><div id="s-play-area" class="s-play-area" tabindex="0" role="group" aria-label="Comando compartilhado de SINTONIA" aria-describedby="s-keyboard-help"><div id="s-boards" class="s-boards" data-count="${level.boards.length}"></div></div><div id="s-motion" class="result-motion" aria-hidden="true"></div></div>${mode==='campaign'?'<button id="s-level-next" class="level-arrow" aria-label="Próximo nível" title="Próximo nível">→</button>':''}</div><div class="s-command-row"><div class="s-dpad" role="group" aria-label="Mover todos os animais"><button type="button" data-s-direction="up" aria-label="Mover todos para cima" title="Cima · W">↑</button><button type="button" data-s-direction="left" aria-label="Mover todos para esquerda" title="Esquerda · A">←</button><span aria-hidden="true">todos</span><button type="button" data-s-direction="right" aria-label="Mover todos para direita" title="Direita · D">→</button><button type="button" data-s-direction="down" aria-label="Mover todos para baixo" title="Baixo · S">↓</button></div><p id="s-keyboard-help">Um toque, um comando para todos.<br><span>Setas ou WASD com a área do jogo em foco. Ctrl+Z desfaz.</span></p></div><div id="s-connections" class="s-connections"></div><div class="readout s-readout"><div><span class="metric-label">MOVIMENTOS</span><strong id="s-moves">${session.cursor}</strong></div><div><span class="metric-label">NOS DESTINOS</span><strong id="s-arrived">${statusCount()} / ${level.boards.length}</strong></div><p id="s-status" role="status" aria-live="polite" aria-atomic="true"></p></div><div class="level-actions"><button id="s-confirm" class="primary confirm">Confirmar resposta</button><div class="actions"><button id="s-answer" hidden>Ver gabarito</button><button id="s-hint" class="action-hint">✦ Dicas</button><button id="s-next" ${mode==='custom'?'hidden':''}>${mode==='endless'?'Novo desafio':'Próximo nível'} →</button></div><button id="s-hint-apply" hidden>Aplicar este passo</button><button id="s-answer-apply" hidden>Aplicar sequência do gabarito</button><p id="s-hint-text" class="hint" role="status" aria-live="polite"></p><p id="s-assist-note" class="collection-small" hidden>Resolução assistida. Você pode desfazer qualquer passo e continuar explorando.</p></div></div><aside id="s-rules-sidebar" class="rules-sidebar" aria-label="Regras e como jogar" ${rulesOpen?'':'hidden'}>${rulesMarkup()}</aside><aside id="s-advanced" class="controls" ${advanced?'':'hidden'}>${advancedMarkup()}</aside></div></div>`;
-    motion=createResultMotion($('s-motion'),$('s-board-surface'));
+    motion=createResultMotion($('s-motion'),$('s-board-surface'),globalThis,{onRetry:restartCurrentImmediately});
     $('s-back').onclick=selection;$('s-mode-campaign').onclick=selection;$('s-mode-endless').onclick=()=>{if(mode!=='endless')data.endless?.current?resumeEndless():newEndless(bounded(level.difficulty,0,5));};
     $('s-undo').onclick=()=>travelHistory(-1);$('s-redo').onclick=()=>travelHistory(1);$('s-reset').onclick=event=>restartLevel(event.currentTarget);
     if($('s-level-prev'))$('s-level-prev').onclick=()=>navigate(-1);if($('s-level-next'))$('s-level-next').onclick=()=>navigate(1);
@@ -406,6 +417,7 @@ export function initSintonia({hideOtherGames}) {
     $('s-advanced-toggle').onclick=()=>{advanced=!advanced;syncPanels();save();};
     bindAdvanced();if(mode==='endless')bindEndless();renderBoards();renderStatus();
     if(won)motion.show('sintonia',true);
+    else if(retryVisible)motion.show('sintonia',false);
   }
 
   function syncPanels() {
