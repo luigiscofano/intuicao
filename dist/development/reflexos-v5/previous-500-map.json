@@ -1,0 +1,4002 @@
+[
+  {
+    "id": "light-v3-1",
+    "oldNumber": 1,
+    "newNumber": 1,
+    "puzzleHash": "8bca1d8cd23bc2937fd9174ee8712a882e46f8750045927ec85ca619296ad170",
+    "replacementId": null,
+    "treatment": "Retained exact puzzle content and stable ID."
+  },
+  {
+    "id": "light-v3-2",
+    "oldNumber": 2,
+    "newNumber": null,
+    "puzzleHash": "7ef5247c096157c55c7e30909f053492600897cad40e996327f5b949ea0eeefa",
+    "replacementId": "light-v5-legacy-2",
+    "treatment": "Versioned redesign in the same display slot. Previous definition and ID-keyed completion/draft/failure history stay archived; completion is not transferred."
+  },
+  {
+    "id": "light-v3-3",
+    "oldNumber": 3,
+    "newNumber": 3,
+    "puzzleHash": "f5d8867030cf9c66393b09d06e01e7d39f14f25fd1f19793f8c0025c9382a5d8",
+    "replacementId": null,
+    "treatment": "Retained exact puzzle content and stable ID."
+  },
+  {
+    "id": "light-v3-21",
+    "oldNumber": 4,
+    "newNumber": null,
+    "puzzleHash": "72870ffd345dd4cfe0343017f3c14d5f14de24ed8900622275bd79c9266e1853",
+    "replacementId": "light-v5-legacy-21",
+    "treatment": "Versioned redesign in the same display slot. Previous definition and ID-keyed completion/draft/failure history stay archived; completion is not transferred."
+  },
+  {
+    "id": "light-v3-22",
+    "oldNumber": 5,
+    "newNumber": 5,
+    "puzzleHash": "00de4eaf4988f444871ce6d62b7b319c5cfe48d8c4c49eb4d6b62ad675fb2f46",
+    "replacementId": null,
+    "treatment": "Retained exact puzzle content and stable ID."
+  },
+  {
+    "id": "light-v4-deduction-pilot-windows",
+    "oldNumber": 6,
+    "newNumber": null,
+    "puzzleHash": "5b8b53745d9a14124ee09611e940db18297c01a83d54802580ef34003e758b8a",
+    "replacementId": "light-v5-deduction-pilot-windows",
+    "treatment": "Versioned redesign in the same display slot. Previous definition and ID-keyed completion/draft/failure history stay archived; completion is not transferred."
+  },
+  {
+    "id": "light-v3-41",
+    "oldNumber": 7,
+    "newNumber": 7,
+    "puzzleHash": "c58a0946b79f9f19bf5831698c2c893c04bd4b2b16701a41df2d63af7a8b7256",
+    "replacementId": null,
+    "treatment": "Retained exact puzzle content and stable ID."
+  },
+  {
+    "id": "light-v3-42",
+    "oldNumber": 8,
+    "newNumber": null,
+    "puzzleHash": "350fb780a8234eff442edf0d8db925106adfb17ae4ea30de464ede9521f84cc8",
+    "replacementId": "light-v5-legacy-42",
+    "treatment": "Versioned redesign in the same display slot. Previous definition and ID-keyed completion/draft/failure history stay archived; completion is not transferred."
+  },
+  {
+    "id": "light-v3-9",
+    "oldNumber": 9,
+    "newNumber": null,
+    "puzzleHash": "729869a31259ff18110e93154f439ba6251e754cce42e5ba963cd105aa354eb4",
+    "replacementId": "light-v5-legacy-9",
+    "treatment": "Versioned redesign in the same display slot. Previous definition and ID-keyed completion/draft/failure history stay archived; completion is not transferred."
+  },
+  {
+    "id": "light-v3-43",
+    "oldNumber": 10,
+    "newNumber": null,
+    "puzzleHash": "ad756898188da13c8de39de3cc334bd9e66d63de015f156b8f172f682aeb13b5",
+    "replacementId": "light-v5-legacy-43",
+    "treatment": "Versioned redesign in the same display slot. Previous definition and ID-keyed completion/draft/failure history stay archived; completion is not transferred."
+  },
+  {
+    "id": "light-v3-51",
+    "oldNumber": 11,
+    "newNumber": 11,
+    "puzzleHash": "188220e29740a72fce8d314ff5120992ff5d6b521b038233f92d9a909bccb1ec",
+    "replacementId": null,
+    "treatment": "Retained exact puzzle content and stable ID."
+  },
+  {
+    "id": "light-v3-10",
+    "oldNumber": 12,
+    "newNumber": null,
+    "puzzleHash": "66db92fb33d95c6030b40fce235e7c4eac4a1299ff65480eca503ab8c134de1a",
+    "replacementId": "light-v5-legacy-10",
+    "treatment": "Versioned redesign in the same display slot. Previous definition and ID-keyed completion/draft/failure history stay archived; completion is not transferred."
+  },
+  {
+    "id": "light-v3-45",
+    "oldNumber": 13,
+    "newNumber": null,
+    "puzzleHash": "cf5795ddbc39cba3c713daf95e0468154c783636e770c13798ea1c41855792a8",
+    "replacementId": "light-v5-legacy-45",
+    "treatment": "Versioned redesign in the same display slot. Previous definition and ID-keyed completion/draft/failure history stay archived; completion is not transferred."
+  },
+  {
+    "id": "light-v4-open-003",
+    "oldNumber": 14,
+    "newNumber": null,
+    "puzzleHash": "27a4054fe11b88deb958ca063bcfe246868e1d62c994e8565f570172efca581d",
+    "replacementId": "light-v5-open-003",
+    "treatment": "Versioned redesign in the same display slot. Previous definition and ID-keyed completion/draft/failure history stay archived; completion is not transferred."
+  },
+  {
+    "id": "light-v4-open-001",
+    "oldNumber": 15,
+    "newNumber": null,
+    "puzzleHash": "e4c032b7a426014ae824d16c85e3e2b54f078eda816dae5076c15d064b18dd29",
+    "replacementId": "light-v5-open-001",
+    "treatment": "Versioned redesign in the same display slot. Previous definition and ID-keyed completion/draft/failure history stay archived; completion is not transferred."
+  },
+  {
+    "id": "light-v3-61",
+    "oldNumber": 16,
+    "newNumber": 16,
+    "puzzleHash": "261747051798d6e0030fe863d6c86dcd9f03da44738d972ca52ed2d98b64adf9",
+    "replacementId": null,
+    "treatment": "Retained exact puzzle content and stable ID."
+  },
+  {
+    "id": "light-v3-62",
+    "oldNumber": 17,
+    "newNumber": 17,
+    "puzzleHash": "c8d3cf500c79f1a173adc2f5b7a226916077fcd06b72bbba4846bb602d0d9f3f",
+    "replacementId": null,
+    "treatment": "Retained exact puzzle content and stable ID."
+  },
+  {
+    "id": "light-v4-portal-001",
+    "oldNumber": 18,
+    "newNumber": null,
+    "puzzleHash": "34ca94eb012a509885f6d9c786226cf8d33d77b1a30ad4f2391f57107f6abddd",
+    "replacementId": "light-v5-portal-001",
+    "treatment": "Versioned redesign in the same display slot. Previous definition and ID-keyed completion/draft/failure history stay archived; completion is not transferred."
+  },
+  {
+    "id": "light-v3-63",
+    "oldNumber": 19,
+    "newNumber": 19,
+    "puzzleHash": "a7601ba0ddecc8add8438823864659c0dbcea114048a4f36ae0059309bd5cf1b",
+    "replacementId": null,
+    "treatment": "Retained exact puzzle content and stable ID."
+  },
+  {
+    "id": "light-v3-64",
+    "oldNumber": 20,
+    "newNumber": 20,
+    "puzzleHash": "36543b8cc51af96e444c79ef308cfb9aec751ae48a50f5d349d9c98c6752de4b",
+    "replacementId": null,
+    "treatment": "Retained exact puzzle content and stable ID."
+  },
+  {
+    "id": "light-v4-portal-002",
+    "oldNumber": 21,
+    "newNumber": null,
+    "puzzleHash": "b20716beaf046063737f733d360294cd1c1d127d423695ec54c7ccabb9bc25c4",
+    "replacementId": "light-v5-portal-002",
+    "treatment": "Versioned redesign in the same display slot. Previous definition and ID-keyed completion/draft/failure history stay archived; completion is not transferred."
+  },
+  {
+    "id": "light-v3-82",
+    "oldNumber": 22,
+    "newNumber": 22,
+    "puzzleHash": "20fd145ca1ef3d7434ed203043582c0a0abc7e2abc8718c28fe8b70cb7414bcd",
+    "replacementId": null,
+    "treatment": "Retained exact puzzle content and stable ID."
+  },
+  {
+    "id": "light-v3-91",
+    "oldNumber": 23,
+    "newNumber": 23,
+    "puzzleHash": "7787109bfcb1016fd8983cdb5893a967ac6a9d88d61d5f94fbbe5d630756e57d",
+    "replacementId": null,
+    "treatment": "Retained exact puzzle content and stable ID."
+  },
+  {
+    "id": "light-v3-74",
+    "oldNumber": 24,
+    "newNumber": 24,
+    "puzzleHash": "12326776b4175cf3ceb4533ce29b5867d18e5fa5c081af5cff10b9766dbeb647",
+    "replacementId": null,
+    "treatment": "Retained exact puzzle content and stable ID."
+  },
+  {
+    "id": "light-v3-101",
+    "oldNumber": 25,
+    "newNumber": 25,
+    "puzzleHash": "a9885cb190bab35764c7edddc8fcbd86e7dde144cc963cf47bb6cd0d4b78b30d",
+    "replacementId": null,
+    "treatment": "Retained exact puzzle content and stable ID."
+  },
+  {
+    "id": "light-v3-26",
+    "oldNumber": 26,
+    "newNumber": null,
+    "puzzleHash": "a77bcf1dafb6f7953c20de1d48e1af14d4c77ebd21f4a854f637e38283235574",
+    "replacementId": "light-v5-legacy-26",
+    "treatment": "Versioned redesign in the same display slot. Previous definition and ID-keyed completion/draft/failure history stay archived; completion is not transferred."
+  },
+  {
+    "id": "light-v3-28",
+    "oldNumber": 27,
+    "newNumber": null,
+    "puzzleHash": "5e3a788faabd25cf9546e1fb177f3c7770c3187d66fe235a75cd88bb68ae2f71",
+    "replacementId": "light-v5-legacy-28",
+    "treatment": "Versioned redesign in the same display slot. Previous definition and ID-keyed completion/draft/failure history stay archived; completion is not transferred."
+  },
+  {
+    "id": "light-v4-deduction-pair-00-base",
+    "oldNumber": 28,
+    "newNumber": null,
+    "puzzleHash": "90c35fd05389a8e40752a51f10c89e37e420f0c311ed5c2913387d68a7b9bce2",
+    "replacementId": "light-v5-deduction-pair-00-base",
+    "treatment": "Versioned redesign in the same display slot. Previous definition and ID-keyed completion/draft/failure history stay archived; completion is not transferred."
+  },
+  {
+    "id": "light-v4-deduction-pair-00-filter",
+    "oldNumber": 29,
+    "newNumber": null,
+    "puzzleHash": "ff7118bd8041c219e4cf3e59f1dbe78c4ee32a16d96caacde32678bda20e9583",
+    "replacementId": "light-v5-deduction-pair-00-filter",
+    "treatment": "Versioned redesign in the same display slot. Previous definition and ID-keyed completion/draft/failure history stay archived; completion is not transferred."
+  },
+  {
+    "id": "light-v3-87",
+    "oldNumber": 30,
+    "newNumber": 30,
+    "puzzleHash": "48d64ebfe05bfc239bbe54d8aff58f7e0a824ddb70017d1d6b38710832196ccb",
+    "replacementId": null,
+    "treatment": "Retained exact puzzle content and stable ID."
+  },
+  {
+    "id": "light-v4-open-011",
+    "oldNumber": 31,
+    "newNumber": null,
+    "puzzleHash": "de58db4bb6d14eb409787f3d9d0449e0a3fe7e5b68a67edc9e4691dac8061dec",
+    "replacementId": "light-v5-open-011",
+    "treatment": "Versioned redesign in the same display slot. Previous definition and ID-keyed completion/draft/failure history stay archived; completion is not transferred."
+  },
+  {
+    "id": "light-v4-open-029",
+    "oldNumber": 32,
+    "newNumber": 32,
+    "puzzleHash": "967e3158d6d22848bf9abe926b71fab38a48504ffd91f5d6c2ebde37f05601af",
+    "replacementId": null,
+    "treatment": "Retained exact puzzle content and stable ID."
+  },
+  {
+    "id": "light-v3-6",
+    "oldNumber": 33,
+    "newNumber": null,
+    "puzzleHash": "233b6c3b77766461940c71d173eb1e53ef1789ac3f8ed210ee403e237ea22e76",
+    "replacementId": "light-v5-legacy-6",
+    "treatment": "Versioned redesign in the same display slot. Previous definition and ID-keyed completion/draft/failure history stay archived; completion is not transferred."
+  },
+  {
+    "id": "light-v4-open-028",
+    "oldNumber": 34,
+    "newNumber": null,
+    "puzzleHash": "a8561d4bf1aa654939da6dd2392827b0b1a8ef9b0149b38d448244fa827216e8",
+    "replacementId": "light-v5-open-028",
+    "treatment": "Versioned redesign in the same display slot. Previous definition and ID-keyed completion/draft/failure history stay archived; completion is not transferred."
+  },
+  {
+    "id": "light-v4-open-037",
+    "oldNumber": 35,
+    "newNumber": null,
+    "puzzleHash": "ed9115c85bf34e9a18669b797266906bd704c3c79f2de1f2bc6b309cd15442af",
+    "replacementId": "light-v5-open-037",
+    "treatment": "Versioned redesign in the same display slot. Previous definition and ID-keyed completion/draft/failure history stay archived; completion is not transferred."
+  },
+  {
+    "id": "light-v4-portal-012",
+    "oldNumber": 36,
+    "newNumber": null,
+    "puzzleHash": "ba9c04cb5ca2a8f95405566ec1ef4b6a0feba1df876665b95260c8b9615781b0",
+    "replacementId": "light-v5-portal-012",
+    "treatment": "Versioned redesign in the same display slot. Previous definition and ID-keyed completion/draft/failure history stay archived; completion is not transferred."
+  },
+  {
+    "id": "light-v4-deduction-open-040",
+    "oldNumber": 37,
+    "newNumber": null,
+    "puzzleHash": "a1c6c291e2b485efeeb7a1ae74527f250545e1b2262d983a334953cdc324fac5",
+    "replacementId": "light-v5-deduction-open-040",
+    "treatment": "Versioned redesign in the same display slot. Previous definition and ID-keyed completion/draft/failure history stay archived; completion is not transferred."
+  },
+  {
+    "id": "light-v4-open-002",
+    "oldNumber": 38,
+    "newNumber": null,
+    "puzzleHash": "4600c01840f283590a45142c238184b68668eaa690e71ca4468eee38d403f385",
+    "replacementId": "light-v5-open-002",
+    "treatment": "Versioned redesign in the same display slot. Previous definition and ID-keyed completion/draft/failure history stay archived; completion is not transferred."
+  },
+  {
+    "id": "light-v4-portal-030",
+    "oldNumber": 39,
+    "newNumber": null,
+    "puzzleHash": "37a3e33fad9808d82f697a5bead8bcdf3e1adccffabee1ea207a906bf41c99a4",
+    "replacementId": "light-v5-portal-030",
+    "treatment": "Versioned redesign in the same display slot. Previous definition and ID-keyed completion/draft/failure history stay archived; completion is not transferred."
+  },
+  {
+    "id": "light-v3-71",
+    "oldNumber": 40,
+    "newNumber": 40,
+    "puzzleHash": "b77ad5b80a09bc9d1497d258694cba73b7d1e27c6dc01c4ba16611e2e1a96efe",
+    "replacementId": null,
+    "treatment": "Retained exact puzzle content and stable ID."
+  },
+  {
+    "id": "light-v4-open-016",
+    "oldNumber": 41,
+    "newNumber": 41,
+    "puzzleHash": "4d197bace2320800e9708e2c099ff363c2d335ee5225773d4c5ede369d1dcbdc",
+    "replacementId": null,
+    "treatment": "Retained exact puzzle content and stable ID."
+  },
+  {
+    "id": "light-v4-open-044",
+    "oldNumber": 42,
+    "newNumber": null,
+    "puzzleHash": "b2e0dda57cfa0f11c2503e12d924ab59e0b1bfa1a97916b8bdc3000fe7ad5bad",
+    "replacementId": "light-v5-open-044",
+    "treatment": "Versioned redesign in the same display slot. Previous definition and ID-keyed completion/draft/failure history stay archived; completion is not transferred."
+  },
+  {
+    "id": "light-v4-deduction-open-015",
+    "oldNumber": 43,
+    "newNumber": null,
+    "puzzleHash": "76c08855372de4bc447812a12b3413ff0e66d18c99d7bf8228eaf8455e922c2c",
+    "replacementId": "light-v5-deduction-open-015",
+    "treatment": "Versioned redesign in the same display slot. Previous definition and ID-keyed completion/draft/failure history stay archived; completion is not transferred."
+  },
+  {
+    "id": "light-v4-portal-027",
+    "oldNumber": 44,
+    "newNumber": null,
+    "puzzleHash": "e1364b6bffef845b7fc23006b8d80b8f3e0f5677b849aa7bdfb1981695b01d4b",
+    "replacementId": "light-v5-portal-027",
+    "treatment": "Versioned redesign in the same display slot. Previous definition and ID-keyed completion/draft/failure history stay archived; completion is not transferred."
+  },
+  {
+    "id": "light-v3-24",
+    "oldNumber": 45,
+    "newNumber": null,
+    "puzzleHash": "f94e76bab0429c6ad9f8c4ae83ac0f387a5a5d13354ab340fc5c591349b5861f",
+    "replacementId": "light-v5-legacy-24",
+    "treatment": "Versioned redesign in the same display slot. Previous definition and ID-keyed completion/draft/failure history stay archived; completion is not transferred."
+  },
+  {
+    "id": "light-v4-portal-015",
+    "oldNumber": 46,
+    "newNumber": null,
+    "puzzleHash": "b2ad193aa85a1cd7ca2d1ff1f5144a86be20e39c406e0ef3d0dbdf9c806379cf",
+    "replacementId": "light-v5-portal-015",
+    "treatment": "Versioned redesign in the same display slot. Previous definition and ID-keyed completion/draft/failure history stay archived; completion is not transferred."
+  },
+  {
+    "id": "light-v3-48",
+    "oldNumber": 47,
+    "newNumber": null,
+    "puzzleHash": "58cb977ee4385c5752a35f20c9aa9970e1cfe8dcda047e0af5e7e17cd914419d",
+    "replacementId": "light-v5-legacy-48",
+    "treatment": "Versioned redesign in the same display slot. Previous definition and ID-keyed completion/draft/failure history stay archived; completion is not transferred."
+  },
+  {
+    "id": "light-v4-open-014",
+    "oldNumber": 48,
+    "newNumber": null,
+    "puzzleHash": "71411c54340cac9565f65141db5098ac886437bd7305ded9425410aac7e10c0a",
+    "replacementId": "light-v5-open-014",
+    "treatment": "Versioned redesign in the same display slot. Previous definition and ID-keyed completion/draft/failure history stay archived; completion is not transferred."
+  },
+  {
+    "id": "light-v4-open-042",
+    "oldNumber": 49,
+    "newNumber": null,
+    "puzzleHash": "28fb60ce3f6daafed5c22ee7028cacae6442d28758c86858da3a186fa5034300",
+    "replacementId": "light-v5-open-042",
+    "treatment": "Versioned redesign in the same display slot. Previous definition and ID-keyed completion/draft/failure history stay archived; completion is not transferred."
+  },
+  {
+    "id": "light-v3-5",
+    "oldNumber": 50,
+    "newNumber": 50,
+    "puzzleHash": "da52fc3b1ecaa025e3dcc1be7055d2970e4deae4efb1d3d0120cc4dadc62e354",
+    "replacementId": null,
+    "treatment": "Retained exact puzzle content and stable ID."
+  },
+  {
+    "id": "light-v4-open-043",
+    "oldNumber": 51,
+    "newNumber": null,
+    "puzzleHash": "6b359dfc0fc3a5f9e582a661f204f0a846ecec56cd90a6aa2521cf548eb6b863",
+    "replacementId": "light-v5-open-043",
+    "treatment": "Versioned redesign in the same display slot. Previous definition and ID-keyed completion/draft/failure history stay archived; completion is not transferred."
+  },
+  {
+    "id": "light-v4-deduction-open-031",
+    "oldNumber": 52,
+    "newNumber": null,
+    "puzzleHash": "ef8f96f7e1127a38f17303873fa4dfb3db550d88b0b74dd7a9784863ce450e44",
+    "replacementId": "light-v5-deduction-open-031",
+    "treatment": "Versioned redesign in the same display slot. Previous definition and ID-keyed completion/draft/failure history stay archived; completion is not transferred."
+  },
+  {
+    "id": "light-v3-49",
+    "oldNumber": 53,
+    "newNumber": null,
+    "puzzleHash": "c24862db0677ff251af4807cbbb9a9e3ce63e2b77fcf047b8eaa5687a9980ccd",
+    "replacementId": "light-v5-legacy-49",
+    "treatment": "Versioned redesign in the same display slot. Previous definition and ID-keyed completion/draft/failure history stay archived; completion is not transferred."
+  },
+  {
+    "id": "light-v3-7",
+    "oldNumber": 54,
+    "newNumber": 54,
+    "puzzleHash": "e0ab9452edce2acd3137124d821f684ef49d3a0671475cad28548aa1aa0f1889",
+    "replacementId": null,
+    "treatment": "Retained exact puzzle content and stable ID."
+  },
+  {
+    "id": "light-v4-portal-024",
+    "oldNumber": 55,
+    "newNumber": null,
+    "puzzleHash": "7dd7551e3eef70f35e1a3e26bf7a008b8e62a178645d191130c89af09f15b95d",
+    "replacementId": "light-v5-portal-024",
+    "treatment": "Versioned redesign in the same display slot. Previous definition and ID-keyed completion/draft/failure history stay archived; completion is not transferred."
+  },
+  {
+    "id": "light-v4-open-033",
+    "oldNumber": 56,
+    "newNumber": null,
+    "puzzleHash": "ade0a4de41c23fc9f74f2305c1977192eb1d850d7a5ccd56991c7239446d8a92",
+    "replacementId": "light-v5-open-033",
+    "treatment": "Versioned redesign in the same display slot. Previous definition and ID-keyed completion/draft/failure history stay archived; completion is not transferred."
+  },
+  {
+    "id": "light-v4-deduction-four-01",
+    "oldNumber": 57,
+    "newNumber": null,
+    "puzzleHash": "47a8c881d1b8e1f52e4b47a182757039549f0e49346f793ed629d62e95c17fe3",
+    "replacementId": "light-v5-deduction-four-01",
+    "treatment": "Versioned redesign in the same display slot. Previous definition and ID-keyed completion/draft/failure history stay archived; completion is not transferred."
+  },
+  {
+    "id": "light-v3-25",
+    "oldNumber": 58,
+    "newNumber": 58,
+    "puzzleHash": "9c85a7896d7831402f96ba3659a62bbbfd9460d0d2bef5fc37f3f03a2569815d",
+    "replacementId": null,
+    "treatment": "Retained exact puzzle content and stable ID."
+  },
+  {
+    "id": "light-v4-deduction-symmetry-02-base",
+    "oldNumber": 59,
+    "newNumber": null,
+    "puzzleHash": "5953adb57bc19a4a2a8cedf2137b20c3db61c58c60bc8fbb2cf66397378c6328",
+    "replacementId": "light-v5-deduction-symmetry-02-base-reauthored",
+    "treatment": "Versioned redesign in the same display slot. Previous definition and ID-keyed completion/draft/failure history stay archived; completion is not transferred."
+  },
+  {
+    "id": "light-v4-deduction-open-042",
+    "oldNumber": 60,
+    "newNumber": null,
+    "puzzleHash": "b88bd6fbee4c8abfc08a300d8817088d6d569b0e15bce327b00e3496dc82aca2",
+    "replacementId": "light-v5-deduction-open-042",
+    "treatment": "Versioned redesign in the same display slot. Previous definition and ID-keyed completion/draft/failure history stay archived; completion is not transferred."
+  },
+  {
+    "id": "light-v4-portal-023",
+    "oldNumber": 61,
+    "newNumber": null,
+    "puzzleHash": "2cf58f84355348da520db10d734e0c83cda7781e270273d12291f2c381e69fdc",
+    "replacementId": "light-v5-portal-023",
+    "treatment": "Versioned redesign in the same display slot. Previous definition and ID-keyed completion/draft/failure history stay archived; completion is not transferred."
+  },
+  {
+    "id": "light-v4-portal-028",
+    "oldNumber": 62,
+    "newNumber": null,
+    "puzzleHash": "89b1f70b4c10ce609b7dbff61e26255a92de61ab626ba6a3026ac2dec0e0b459",
+    "replacementId": "light-v5-portal-028",
+    "treatment": "Versioned redesign in the same display slot. Previous definition and ID-keyed completion/draft/failure history stay archived; completion is not transferred."
+  },
+  {
+    "id": "light-v4-open-006",
+    "oldNumber": 63,
+    "newNumber": null,
+    "puzzleHash": "0e356a7160771e6d332848af89f83ff4ee9c72bb9bda4284bdf49e18b059d8e8",
+    "replacementId": "light-v5-open-006",
+    "treatment": "Versioned redesign in the same display slot. Previous definition and ID-keyed completion/draft/failure history stay archived; completion is not transferred."
+  },
+  {
+    "id": "light-v3-33",
+    "oldNumber": 64,
+    "newNumber": 64,
+    "puzzleHash": "04e7742205cd04b92f5ec7a4c6ec9adfb4705f19567381a3a88fdde24398e7b8",
+    "replacementId": null,
+    "treatment": "Retained exact puzzle content and stable ID."
+  },
+  {
+    "id": "light-v3-35",
+    "oldNumber": 65,
+    "newNumber": null,
+    "puzzleHash": "9f0407d543bdfcd9b15719fc609656f0c95f893c92d36271b7f6f2698bdf550a",
+    "replacementId": "light-v5-legacy-35",
+    "treatment": "Versioned redesign in the same display slot. Previous definition and ID-keyed completion/draft/failure history stay archived; completion is not transferred."
+  },
+  {
+    "id": "light-v3-66",
+    "oldNumber": 66,
+    "newNumber": 66,
+    "puzzleHash": "256f35b76bf659dd7372812a0edb044c859228b4e660ca8db31be2ecb5d1bc89",
+    "replacementId": null,
+    "treatment": "Retained exact puzzle content and stable ID."
+  },
+  {
+    "id": "light-v4-portal-017",
+    "oldNumber": 67,
+    "newNumber": null,
+    "puzzleHash": "ff83bb4060cc893458581127d558ed7a780297d6771b10f16c1968cabba77bb1",
+    "replacementId": "light-v5-portal-017",
+    "treatment": "Versioned redesign in the same display slot. Previous definition and ID-keyed completion/draft/failure history stay archived; completion is not transferred."
+  },
+  {
+    "id": "light-v4-open-041",
+    "oldNumber": 68,
+    "newNumber": null,
+    "puzzleHash": "fa61fb528e1e26ce96e514ca00b092a3e6724fadefb1e79c18467a1663269931",
+    "replacementId": "light-v5-open-041",
+    "treatment": "Versioned redesign in the same display slot. Previous definition and ID-keyed completion/draft/failure history stay archived; completion is not transferred."
+  },
+  {
+    "id": "light-v4-portal-031",
+    "oldNumber": 69,
+    "newNumber": null,
+    "puzzleHash": "364fe61508191b86b4853fcbc5f7fbd4670ef9ac2cbd7f271ef135f49c5123af",
+    "replacementId": "light-v5-portal-031",
+    "treatment": "Versioned redesign in the same display slot. Previous definition and ID-keyed completion/draft/failure history stay archived; completion is not transferred."
+  },
+  {
+    "id": "light-v4-deduction-open-043",
+    "oldNumber": 70,
+    "newNumber": null,
+    "puzzleHash": "c3b003cb28b0a87d281178779218714c22e23eff3e018a2ec6c9961f70c23829",
+    "replacementId": "light-v5-deduction-open-043",
+    "treatment": "Versioned redesign in the same display slot. Previous definition and ID-keyed completion/draft/failure history stay archived; completion is not transferred."
+  },
+  {
+    "id": "light-v3-23",
+    "oldNumber": 71,
+    "newNumber": null,
+    "puzzleHash": "0e7259318dc9018ff37c8156f5869c5bd2afad61d83ceb56a8b767520c5b7728",
+    "replacementId": "light-v5-legacy-23",
+    "treatment": "Versioned redesign in the same display slot. Previous definition and ID-keyed completion/draft/failure history stay archived; completion is not transferred."
+  },
+  {
+    "id": "light-v3-86",
+    "oldNumber": 72,
+    "newNumber": null,
+    "puzzleHash": "8b1c11b0b4dd8153cfc7486b052987ebfb9e2e2c40d315563d85eeff2066f546",
+    "replacementId": "light-v5-legacy-86",
+    "treatment": "Versioned redesign in the same display slot. Previous definition and ID-keyed completion/draft/failure history stay archived; completion is not transferred."
+  },
+  {
+    "id": "light-v4-deduction-open-014",
+    "oldNumber": 73,
+    "newNumber": null,
+    "puzzleHash": "ece71737ac6bdf027d3229bb15406e34bddb0e374c19e09aff990fd038e73fa3",
+    "replacementId": "light-v5-deduction-open-014",
+    "treatment": "Versioned redesign in the same display slot. Previous definition and ID-keyed completion/draft/failure history stay archived; completion is not transferred."
+  },
+  {
+    "id": "light-v4-deduction-windows-04",
+    "oldNumber": 74,
+    "newNumber": null,
+    "puzzleHash": "fcf33324a65d7fc51b610e666ed2a760cdc80c79df61cc98b2a1c8be9b421fcc",
+    "replacementId": "light-v5-deduction-windows-04",
+    "treatment": "Versioned redesign in the same display slot. Previous definition and ID-keyed completion/draft/failure history stay archived; completion is not transferred."
+  },
+  {
+    "id": "light-v4-open-018",
+    "oldNumber": 75,
+    "newNumber": null,
+    "puzzleHash": "4c081704e20fd2f5468ae44f0cc9a2c46893847ec780d94d6d1898e67fc0971a",
+    "replacementId": "light-v5-open-018",
+    "treatment": "Versioned redesign in the same display slot. Previous definition and ID-keyed completion/draft/failure history stay archived; completion is not transferred."
+  },
+  {
+    "id": "light-v3-46",
+    "oldNumber": 76,
+    "newNumber": null,
+    "puzzleHash": "19f6a3325ce1b1134cfb5db97fc9b6530ca85cc9859a101ca5af93faf3ffe9ba",
+    "replacementId": "light-v5-legacy-46",
+    "treatment": "Versioned redesign in the same display slot. Previous definition and ID-keyed completion/draft/failure history stay archived; completion is not transferred."
+  },
+  {
+    "id": "light-v4-open-038",
+    "oldNumber": 77,
+    "newNumber": null,
+    "puzzleHash": "cf0cacb82422f3646e05d8cbf9069ca9247d5c1b51b85d6b477dc40a50bd6d16",
+    "replacementId": "light-v5-open-038",
+    "treatment": "Versioned redesign in the same display slot. Previous definition and ID-keyed completion/draft/failure history stay archived; completion is not transferred."
+  },
+  {
+    "id": "light-v3-68",
+    "oldNumber": 78,
+    "newNumber": 78,
+    "puzzleHash": "fc2c94203eecb9738827fedcccdedf88badf32b38f9931242cac3d1e971954f3",
+    "replacementId": null,
+    "treatment": "Retained exact puzzle content and stable ID."
+  },
+  {
+    "id": "light-v4-open-chain-003",
+    "oldNumber": 79,
+    "newNumber": null,
+    "puzzleHash": "f016638473fd46968abdf7a3cd032d40c194f5bac646286b6befcf233aafa764",
+    "replacementId": "light-v5-open-chain-003",
+    "treatment": "Versioned redesign in the same display slot. Previous definition and ID-keyed completion/draft/failure history stay archived; completion is not transferred."
+  },
+  {
+    "id": "light-v3-19",
+    "oldNumber": 80,
+    "newNumber": null,
+    "puzzleHash": "0fb60aa9c980a3eb487fbaa37e8de9eb619ce3b594f71c934c214da73da335e4",
+    "replacementId": "light-v5-legacy-19",
+    "treatment": "Versioned redesign in the same display slot. Previous definition and ID-keyed completion/draft/failure history stay archived; completion is not transferred."
+  },
+  {
+    "id": "light-v4-open-010",
+    "oldNumber": 81,
+    "newNumber": 81,
+    "puzzleHash": "51de2c1d3a32b9328df0deef6697cbcd6902a5fb6df678b5462095c05f88c3d2",
+    "replacementId": null,
+    "treatment": "Retained exact puzzle content and stable ID."
+  },
+  {
+    "id": "light-v3-50",
+    "oldNumber": 82,
+    "newNumber": null,
+    "puzzleHash": "f05da1f2ceda29524a4c8038fbb14e8c43a5d2b0317f6a591875c45fbad47305",
+    "replacementId": "light-v5-legacy-50",
+    "treatment": "Versioned redesign in the same display slot. Previous definition and ID-keyed completion/draft/failure history stay archived; completion is not transferred."
+  },
+  {
+    "id": "light-v4-portal-020",
+    "oldNumber": 83,
+    "newNumber": null,
+    "puzzleHash": "c21542683dc32fa17843735f2e563efab27d4cb38d49e64e46d163f31b984fd0",
+    "replacementId": "light-v5-portal-020",
+    "treatment": "Versioned redesign in the same display slot. Previous definition and ID-keyed completion/draft/failure history stay archived; completion is not transferred."
+  },
+  {
+    "id": "light-v4-deduction-symmetry-02-filter",
+    "oldNumber": 84,
+    "newNumber": null,
+    "puzzleHash": "fb070cfc5eee480bfd777ad2f033225b757e785aa6414c32fcf2b96061b807fe",
+    "replacementId": "light-v5-deduction-symmetry-02-filter-reauthored",
+    "treatment": "Versioned redesign in the same display slot. Previous definition and ID-keyed completion/draft/failure history stay archived; completion is not transferred."
+  },
+  {
+    "id": "light-v4-portal-018",
+    "oldNumber": 85,
+    "newNumber": null,
+    "puzzleHash": "e121bf1c6575c26e836f945e616e87fb1aa5c769204b0a6438b679021f0b604d",
+    "replacementId": "light-v5-portal-018",
+    "treatment": "Versioned redesign in the same display slot. Previous definition and ID-keyed completion/draft/failure history stay archived; completion is not transferred."
+  },
+  {
+    "id": "light-v4-open-008",
+    "oldNumber": 86,
+    "newNumber": null,
+    "puzzleHash": "62b8d77272d21681ac95b9d1a34734bace7cae5110924eb3f4e41d0c61f328cc",
+    "replacementId": "light-v5-open-008",
+    "treatment": "Versioned redesign in the same display slot. Previous definition and ID-keyed completion/draft/failure history stay archived; completion is not transferred."
+  },
+  {
+    "id": "light-v4-deduction-open-050",
+    "oldNumber": 87,
+    "newNumber": null,
+    "puzzleHash": "95d5c01ca4744cc1fbb96388c92779e4b385cd2b3aeef0e1ad472db0d634e84d",
+    "replacementId": "light-v5-deduction-open-050",
+    "treatment": "Versioned redesign in the same display slot. Previous definition and ID-keyed completion/draft/failure history stay archived; completion is not transferred."
+  },
+  {
+    "id": "light-v3-90",
+    "oldNumber": 88,
+    "newNumber": null,
+    "puzzleHash": "5ca8e0ab7a4304dc27ffe46ea20a9a1a7e2a017bcc822ae2e0770d254b110ee8",
+    "replacementId": "light-v5-legacy-90",
+    "treatment": "Versioned redesign in the same display slot. Previous definition and ID-keyed completion/draft/failure history stay archived; completion is not transferred."
+  },
+  {
+    "id": "light-v3-102",
+    "oldNumber": 89,
+    "newNumber": 89,
+    "puzzleHash": "301453eb4a292b55ede52a605a4710a44c360a0071a1290eec89d5470b72f06b",
+    "replacementId": null,
+    "treatment": "Retained exact puzzle content and stable ID."
+  },
+  {
+    "id": "light-v4-open-030",
+    "oldNumber": 90,
+    "newNumber": null,
+    "puzzleHash": "be08db475dc993480923ab6307a305a17a3766dc743eb3ee3371f54134340611",
+    "replacementId": "light-v5-open-030",
+    "treatment": "Versioned redesign in the same display slot. Previous definition and ID-keyed completion/draft/failure history stay archived; completion is not transferred."
+  },
+  {
+    "id": "light-v4-open-040",
+    "oldNumber": 91,
+    "newNumber": null,
+    "puzzleHash": "7ba621958d12cddc0388b1bc2f14c5440776422970dc5bf40550eb7595d47a2d",
+    "replacementId": "light-v5-open-040",
+    "treatment": "Versioned redesign in the same display slot. Previous definition and ID-keyed completion/draft/failure history stay archived; completion is not transferred."
+  },
+  {
+    "id": "light-v4-portal-011",
+    "oldNumber": 92,
+    "newNumber": null,
+    "puzzleHash": "585a5292d2ca2756c5e53593c478e4adc8693644ee8ee30ac7954a3e7b3d064e",
+    "replacementId": "light-v5-portal-011",
+    "treatment": "Versioned redesign in the same display slot. Previous definition and ID-keyed completion/draft/failure history stay archived; completion is not transferred."
+  },
+  {
+    "id": "light-v4-open-004",
+    "oldNumber": 93,
+    "newNumber": null,
+    "puzzleHash": "f261caf5c72b61f34efd786b7a9dfe39dd65d891209427621ea1b4609250fb21",
+    "replacementId": "light-v5-open-004",
+    "treatment": "Versioned redesign in the same display slot. Previous definition and ID-keyed completion/draft/failure history stay archived; completion is not transferred."
+  },
+  {
+    "id": "light-v3-32",
+    "oldNumber": 94,
+    "newNumber": 94,
+    "puzzleHash": "86c302d8095914d6621a4dc4280a023ea7fefe2957d76b6fbef1ea83582f351b",
+    "replacementId": null,
+    "treatment": "Retained exact puzzle content and stable ID."
+  },
+  {
+    "id": "light-v3-70",
+    "oldNumber": 95,
+    "newNumber": null,
+    "puzzleHash": "7cc4f0c2f732773bdb37f1d07c4a088eacca29664d1f10ae1a9979d0d0dad6ff",
+    "replacementId": "light-v5-legacy-70",
+    "treatment": "Versioned redesign in the same display slot. Previous definition and ID-keyed completion/draft/failure history stay archived; completion is not transferred."
+  },
+  {
+    "id": "light-v4-deduction-open-049",
+    "oldNumber": 96,
+    "newNumber": null,
+    "puzzleHash": "06ef7e4960ad1c503d0b81c607a94db086274974b73dfb36f8fb5a1cc5c009fd",
+    "replacementId": "light-v5-deduction-open-049",
+    "treatment": "Versioned redesign in the same display slot. Previous definition and ID-keyed completion/draft/failure history stay archived; completion is not transferred."
+  },
+  {
+    "id": "light-v4-open-013",
+    "oldNumber": 97,
+    "newNumber": null,
+    "puzzleHash": "75f7bcb72370b91150f1dd6cdda21d38eb2101b0c3945c49f0115ffd18b1f6d6",
+    "replacementId": "light-v5-open-013",
+    "treatment": "Versioned redesign in the same display slot. Previous definition and ID-keyed completion/draft/failure history stay archived; completion is not transferred."
+  },
+  {
+    "id": "light-v4-portal-004",
+    "oldNumber": 98,
+    "newNumber": null,
+    "puzzleHash": "acc828cf5ab95754954125f99c67c4706afc6bf8bda9875304541a2e304482c9",
+    "replacementId": "light-v5-portal-004",
+    "treatment": "Versioned redesign in the same display slot. Previous definition and ID-keyed completion/draft/failure history stay archived; completion is not transferred."
+  },
+  {
+    "id": "light-v4-deduction-open-029",
+    "oldNumber": 99,
+    "newNumber": null,
+    "puzzleHash": "7026a5261d9e873749c920dfc1cb03d2e7e62491f1500db8a1def3b929523287",
+    "replacementId": "light-v5-deduction-open-029",
+    "treatment": "Versioned redesign in the same display slot. Previous definition and ID-keyed completion/draft/failure history stay archived; completion is not transferred."
+  },
+  {
+    "id": "light-v3-97",
+    "oldNumber": 100,
+    "newNumber": null,
+    "puzzleHash": "51f5a1d647f951aae514b84a85d026e2058b4f9f6408183b8bc0324e8a628e6f",
+    "replacementId": "light-v5-legacy-97",
+    "treatment": "Versioned redesign in the same display slot. Previous definition and ID-keyed completion/draft/failure history stay archived; completion is not transferred."
+  },
+  {
+    "id": "light-v4-open-021",
+    "oldNumber": 101,
+    "newNumber": null,
+    "puzzleHash": "00b8dc6f2b38debcc960a80f3aa8f2c9dba441bfd2290e60a2c194f9e2a06382",
+    "replacementId": "light-v5-open-021",
+    "treatment": "Versioned redesign in the same display slot. Previous definition and ID-keyed completion/draft/failure history stay archived; completion is not transferred."
+  },
+  {
+    "id": "light-v3-8",
+    "oldNumber": 102,
+    "newNumber": null,
+    "puzzleHash": "739013106100fb336bbc61a0e142cfb479457c489470f985c50d9a7179eb0e9d",
+    "replacementId": "light-v5-legacy-8",
+    "treatment": "Versioned redesign in the same display slot. Previous definition and ID-keyed completion/draft/failure history stay archived; completion is not transferred."
+  },
+  {
+    "id": "light-v4-portal-035",
+    "oldNumber": 103,
+    "newNumber": null,
+    "puzzleHash": "b80807f111b8b65373266da63df5b126127a55808189e93bd29726ff8194ffdc",
+    "replacementId": "light-v5-portal-035",
+    "treatment": "Versioned redesign in the same display slot. Previous definition and ID-keyed completion/draft/failure history stay archived; completion is not transferred."
+  },
+  {
+    "id": "light-v3-11",
+    "oldNumber": 104,
+    "newNumber": 104,
+    "puzzleHash": "c115f6c1b0ed2b068cc381b0c7dabe9b982cea3de3a8401f767bfeb80b9bb84f",
+    "replacementId": null,
+    "treatment": "Retained exact puzzle content and stable ID."
+  },
+  {
+    "id": "light-v4-open-017",
+    "oldNumber": 105,
+    "newNumber": null,
+    "puzzleHash": "c268bff3f38a6692429111c871631af3d3f2f728c4e780539660eff06823e466",
+    "replacementId": "light-v5-open-017",
+    "treatment": "Versioned redesign in the same display slot. Previous definition and ID-keyed completion/draft/failure history stay archived; completion is not transferred."
+  },
+  {
+    "id": "light-v4-deduction-open-047",
+    "oldNumber": 106,
+    "newNumber": null,
+    "puzzleHash": "0bd1f402fcc8510bd92a80634a7aa9b84c9c191d97cb6e37c2d8379735e61918",
+    "replacementId": "light-v5-deduction-open-047",
+    "treatment": "Versioned redesign in the same display slot. Previous definition and ID-keyed completion/draft/failure history stay archived; completion is not transferred."
+  },
+  {
+    "id": "light-v3-15",
+    "oldNumber": 107,
+    "newNumber": null,
+    "puzzleHash": "9ccf33d048433ddf3f1aaaa196339766313f956ccc4e8507aab9d8a93ace04d2",
+    "replacementId": "light-v5-legacy-15",
+    "treatment": "Versioned redesign in the same display slot. Previous definition and ID-keyed completion/draft/failure history stay archived; completion is not transferred."
+  },
+  {
+    "id": "light-v4-open-015",
+    "oldNumber": 108,
+    "newNumber": null,
+    "puzzleHash": "f525b42cd58a2902e864fdf99992dd0458a5fa1e10c982a68a6ab2d0a7e55cad",
+    "replacementId": "light-v5-open-015",
+    "treatment": "Versioned redesign in the same display slot. Previous definition and ID-keyed completion/draft/failure history stay archived; completion is not transferred."
+  },
+  {
+    "id": "light-v3-84",
+    "oldNumber": 109,
+    "newNumber": 109,
+    "puzzleHash": "312f2b01d9da1035a8afc86915f8060e0b5a903d8b621a9450318efbee03f628",
+    "replacementId": null,
+    "treatment": "Retained exact puzzle content and stable ID."
+  },
+  {
+    "id": "light-v4-open-039",
+    "oldNumber": 110,
+    "newNumber": null,
+    "puzzleHash": "eef5325c99dd66a4d102fab5b95f3a29fd7b825c5445b00f1f085ff77048b1c0",
+    "replacementId": "light-v5-open-039",
+    "treatment": "Versioned redesign in the same display slot. Previous definition and ID-keyed completion/draft/failure history stay archived; completion is not transferred."
+  },
+  {
+    "id": "light-v4-portal-029",
+    "oldNumber": 111,
+    "newNumber": null,
+    "puzzleHash": "5a04229fd2d63125a5f0189abda4f62ca6026dacebb2a49221fbcdb12807ec5b",
+    "replacementId": "light-v5-portal-029",
+    "treatment": "Versioned redesign in the same display slot. Previous definition and ID-keyed completion/draft/failure history stay archived; completion is not transferred."
+  },
+  {
+    "id": "light-v3-47",
+    "oldNumber": 112,
+    "newNumber": null,
+    "puzzleHash": "c81e343d0878c3e7fa0340edd4ff7669dc7f3d47a715cb86cf1209c0a44ec39c",
+    "replacementId": "light-v5-legacy-47",
+    "treatment": "Versioned redesign in the same display slot. Previous definition and ID-keyed completion/draft/failure history stay archived; completion is not transferred."
+  },
+  {
+    "id": "light-v3-103",
+    "oldNumber": 113,
+    "newNumber": 113,
+    "puzzleHash": "4be0f98cf95ffe083c6dd849d92197001f29c9dee3c9b9890e2d60ff5ca6f303",
+    "replacementId": null,
+    "treatment": "Retained exact puzzle content and stable ID."
+  },
+  {
+    "id": "light-v4-portal-019",
+    "oldNumber": 114,
+    "newNumber": null,
+    "puzzleHash": "f31f4030c60e8af3630d45f7a92312881e47c62b16d2fb254cf70eed911c0676",
+    "replacementId": "light-v5-portal-019",
+    "treatment": "Versioned redesign in the same display slot. Previous definition and ID-keyed completion/draft/failure history stay archived; completion is not transferred."
+  },
+  {
+    "id": "light-v3-79",
+    "oldNumber": 115,
+    "newNumber": 115,
+    "puzzleHash": "fe4c71958117ac50f7fe298ce240b0617c08ca23e0346a756c43fe9e748d7865",
+    "replacementId": null,
+    "treatment": "Retained exact puzzle content and stable ID."
+  },
+  {
+    "id": "light-v4-open-019",
+    "oldNumber": 116,
+    "newNumber": null,
+    "puzzleHash": "387fd5fe3ccd618d7a5b6ab6e65ed021fc3d9a6aea4d5e414c2789c2a28c34b0",
+    "replacementId": "light-v5-open-019",
+    "treatment": "Versioned redesign in the same display slot. Previous definition and ID-keyed completion/draft/failure history stay archived; completion is not transferred."
+  },
+  {
+    "id": "light-v4-open-chain-020",
+    "oldNumber": 117,
+    "newNumber": null,
+    "puzzleHash": "ca95764cec592dc4249bc5b81659e510920c42587d449220124752a687503515",
+    "replacementId": "light-v5-open-chain-020",
+    "treatment": "Versioned redesign in the same display slot. Previous definition and ID-keyed completion/draft/failure history stay archived; completion is not transferred."
+  },
+  {
+    "id": "light-v4-deduction-symmetry-01-base",
+    "oldNumber": 118,
+    "newNumber": null,
+    "puzzleHash": "76f9ebd673e44a3145e8df6db2b2b9cccd95f6f55251b5fc81c41de233fb0788",
+    "replacementId": "light-v5-deduction-symmetry-01-base-reauthored",
+    "treatment": "Versioned redesign in the same display slot. Previous definition and ID-keyed completion/draft/failure history stay archived; completion is not transferred."
+  },
+  {
+    "id": "light-v3-29",
+    "oldNumber": 119,
+    "newNumber": null,
+    "puzzleHash": "72b8ca45bf069efd9cafef41e0ca445c9379a21ef3f8f789dd0171a988cb053c",
+    "replacementId": "light-v5-legacy-29",
+    "treatment": "Versioned redesign in the same display slot. Previous definition and ID-keyed completion/draft/failure history stay archived; completion is not transferred."
+  },
+  {
+    "id": "light-v4-deduction-symmetry-03-base",
+    "oldNumber": 120,
+    "newNumber": null,
+    "puzzleHash": "14b05fda4c376a3cab048ef5f88ec7ebe9f606ad4ebe24741783ab60c6e911f0",
+    "replacementId": "light-v5-deduction-symmetry-03-base-reauthored",
+    "treatment": "Versioned redesign in the same display slot. Previous definition and ID-keyed completion/draft/failure history stay archived; completion is not transferred."
+  },
+  {
+    "id": "light-v4-open-034",
+    "oldNumber": 121,
+    "newNumber": null,
+    "puzzleHash": "d71f35107b3a11743a6bf63b4eceecbf7b9e418a87dab17fb861c02a18ed4e0e",
+    "replacementId": "light-v5-open-034",
+    "treatment": "Versioned redesign in the same display slot. Previous definition and ID-keyed completion/draft/failure history stay archived; completion is not transferred."
+  },
+  {
+    "id": "light-v4-portal-013",
+    "oldNumber": 122,
+    "newNumber": null,
+    "puzzleHash": "c0f8d9d0599befaf5fc09af0e9a6719d2a0a59943610ec12ae52f0703f76fd91",
+    "replacementId": "light-v5-portal-013",
+    "treatment": "Versioned redesign in the same display slot. Previous definition and ID-keyed completion/draft/failure history stay archived; completion is not transferred."
+  },
+  {
+    "id": "light-v3-37",
+    "oldNumber": 123,
+    "newNumber": null,
+    "puzzleHash": "f70b5ec3141a9baf84927ccae368a310efb8261b4e56eb4836e6dfd831389282",
+    "replacementId": "light-v5-legacy-37",
+    "treatment": "Versioned redesign in the same display slot. Previous definition and ID-keyed completion/draft/failure history stay archived; completion is not transferred."
+  },
+  {
+    "id": "light-v4-deduction-open-045",
+    "oldNumber": 124,
+    "newNumber": null,
+    "puzzleHash": "628f80f388e487550b246e584de9f852e3869b65b1fc87b9d15c65bd7bd21140",
+    "replacementId": "light-v5-deduction-open-045",
+    "treatment": "Versioned redesign in the same display slot. Previous definition and ID-keyed completion/draft/failure history stay archived; completion is not transferred."
+  },
+  {
+    "id": "light-v3-56",
+    "oldNumber": 125,
+    "newNumber": null,
+    "puzzleHash": "bdf6bcf68bf7130193e77d7f219cf92caae687239b1ccbff563d5a2d7a627ac3",
+    "replacementId": "light-v5-legacy-56",
+    "treatment": "Versioned redesign in the same display slot. Previous definition and ID-keyed completion/draft/failure history stay archived; completion is not transferred."
+  },
+  {
+    "id": "light-v4-deduction-open-002",
+    "oldNumber": 126,
+    "newNumber": null,
+    "puzzleHash": "6e408faef848b2af0ce307af152f09114c1c5f0d4633e63eaecab445ae2d4412",
+    "replacementId": "light-v5-deduction-open-002",
+    "treatment": "Versioned redesign in the same display slot. Previous definition and ID-keyed completion/draft/failure history stay archived; completion is not transferred."
+  },
+  {
+    "id": "light-v4-open-012",
+    "oldNumber": 127,
+    "newNumber": null,
+    "puzzleHash": "7043413180a635a92045ca6524cf3ba7b6d0684e1fe0bcb0f6104f91cc12d9f1",
+    "replacementId": "light-v5-open-012",
+    "treatment": "Versioned redesign in the same display slot. Previous definition and ID-keyed completion/draft/failure history stay archived; completion is not transferred."
+  },
+  {
+    "id": "light-v3-69",
+    "oldNumber": 128,
+    "newNumber": 128,
+    "puzzleHash": "cf08ce560d31b829bb9e48dde80b273ce4540fad06490b3a8575e0056c7426f9",
+    "replacementId": null,
+    "treatment": "Retained exact puzzle content and stable ID."
+  },
+  {
+    "id": "light-v3-95",
+    "oldNumber": 129,
+    "newNumber": 129,
+    "puzzleHash": "2dcd453950e5e35bc0a2d5c6b2baf296b446ecb4757c705cf78a8b1a31775f8a",
+    "replacementId": null,
+    "treatment": "Retained exact puzzle content and stable ID."
+  },
+  {
+    "id": "light-v4-open-045",
+    "oldNumber": 130,
+    "newNumber": null,
+    "puzzleHash": "84c7db9d6da8d92dacb1e43aec2851daedd67160b68cf15908bc674bdba737f9",
+    "replacementId": "light-v5-open-045",
+    "treatment": "Versioned redesign in the same display slot. Previous definition and ID-keyed completion/draft/failure history stay archived; completion is not transferred."
+  },
+  {
+    "id": "light-v4-deduction-open-044",
+    "oldNumber": 131,
+    "newNumber": null,
+    "puzzleHash": "465d66b625cd824df8e58f70061990f86dcd56440f083046ed1184bd69bb19a1",
+    "replacementId": "light-v5-deduction-open-044",
+    "treatment": "Versioned redesign in the same display slot. Previous definition and ID-keyed completion/draft/failure history stay archived; completion is not transferred."
+  },
+  {
+    "id": "light-v4-open-303",
+    "oldNumber": 132,
+    "newNumber": null,
+    "puzzleHash": "ce56c811d66a4587ddb9fcfd85c8ad0eb98c903c021eeee3a4b27a27ee9cd787",
+    "replacementId": "light-v5-open-303",
+    "treatment": "Versioned redesign in the same display slot. Previous definition and ID-keyed completion/draft/failure history stay archived; completion is not transferred."
+  },
+  {
+    "id": "light-v3-30",
+    "oldNumber": 133,
+    "newNumber": null,
+    "puzzleHash": "91bd6dcff252f323b0e0a97cfef01e626246f8fe7c855bfca8f65db728fd5b36",
+    "replacementId": "light-v5-legacy-30",
+    "treatment": "Versioned redesign in the same display slot. Previous definition and ID-keyed completion/draft/failure history stay archived; completion is not transferred."
+  },
+  {
+    "id": "light-v3-77",
+    "oldNumber": 134,
+    "newNumber": 134,
+    "puzzleHash": "59910add9369473a5a7773b3f9848db9649268535e3f054813017e8495aa039e",
+    "replacementId": null,
+    "treatment": "Retained exact puzzle content and stable ID."
+  },
+  {
+    "id": "light-v3-89",
+    "oldNumber": 135,
+    "newNumber": 135,
+    "puzzleHash": "6d423e593c743de1df1fbec9b06033c466f2cac3fc78044cbbdac39c31b0942a",
+    "replacementId": null,
+    "treatment": "Retained exact puzzle content and stable ID."
+  },
+  {
+    "id": "light-v3-65",
+    "oldNumber": 136,
+    "newNumber": null,
+    "puzzleHash": "e5d915e419eca2333c288b99547f3add8e9720069a0eded71844e83bf833ba67",
+    "replacementId": "light-v5-legacy-65",
+    "treatment": "Versioned redesign in the same display slot. Previous definition and ID-keyed completion/draft/failure history stay archived; completion is not transferred."
+  },
+  {
+    "id": "light-v4-deduction-symmetry-03-filter",
+    "oldNumber": 137,
+    "newNumber": null,
+    "puzzleHash": "79a710d7eda5f915e0ee4f537917c573a619aa6c3799d45aee7ec76fd955e252",
+    "replacementId": "light-v5-deduction-symmetry-03-filter-reauthored",
+    "treatment": "Versioned redesign in the same display slot. Previous definition and ID-keyed completion/draft/failure history stay archived; completion is not transferred."
+  },
+  {
+    "id": "light-v4-portal-010",
+    "oldNumber": 138,
+    "newNumber": null,
+    "puzzleHash": "1b875153c3b4d8f7dbe51a910d730f8a75be91019d1a23de72ef3b8ea12db01f",
+    "replacementId": "light-v5-portal-010",
+    "treatment": "Versioned redesign in the same display slot. Previous definition and ID-keyed completion/draft/failure history stay archived; completion is not transferred."
+  },
+  {
+    "id": "light-v4-open-005",
+    "oldNumber": 139,
+    "newNumber": null,
+    "puzzleHash": "36b663cdad1ec1abb920d87729d9f715effd89b74753e6acb984338c79706fc3",
+    "replacementId": "light-v5-open-005",
+    "treatment": "Versioned redesign in the same display slot. Previous definition and ID-keyed completion/draft/failure history stay archived; completion is not transferred."
+  },
+  {
+    "id": "light-v4-portal-022",
+    "oldNumber": 140,
+    "newNumber": null,
+    "puzzleHash": "9835f2f37b342b343409076d71828359977c084685d109bb44e6e0d0f750b243",
+    "replacementId": "light-v5-portal-022",
+    "treatment": "Versioned redesign in the same display slot. Previous definition and ID-keyed completion/draft/failure history stay archived; completion is not transferred."
+  },
+  {
+    "id": "light-v3-4",
+    "oldNumber": 141,
+    "newNumber": null,
+    "puzzleHash": "436f7f4c9daa627194c9e14935df50285a4098b53b1bbf4b2d5d6e3f2095c142",
+    "replacementId": "light-v5-legacy-4",
+    "treatment": "Versioned redesign in the same display slot. Previous definition and ID-keyed completion/draft/failure history stay archived; completion is not transferred."
+  },
+  {
+    "id": "light-v3-18",
+    "oldNumber": 142,
+    "newNumber": 142,
+    "puzzleHash": "d03049afffa605ac2ea1db7ff127cc1a2266096eaddbbdbf9e9501d4c218dc8c",
+    "replacementId": null,
+    "treatment": "Retained exact puzzle content and stable ID."
+  },
+  {
+    "id": "light-v4-portal-032",
+    "oldNumber": 143,
+    "newNumber": null,
+    "puzzleHash": "03221c54c174a7b7eef03e7d7cb9186846f626bc74535f95807a9f8675cb114f",
+    "replacementId": "light-v5-portal-032",
+    "treatment": "Versioned redesign in the same display slot. Previous definition and ID-keyed completion/draft/failure history stay archived; completion is not transferred."
+  },
+  {
+    "id": "light-v4-open-031",
+    "oldNumber": 144,
+    "newNumber": null,
+    "puzzleHash": "59cfb018e9a4a955e674106136abbd3c04c798ac591fed99d1f5149b02d6ae32",
+    "replacementId": "light-v5-open-031",
+    "treatment": "Versioned redesign in the same display slot. Previous definition and ID-keyed completion/draft/failure history stay archived; completion is not transferred."
+  },
+  {
+    "id": "light-v4-deduction-open-048",
+    "oldNumber": 145,
+    "newNumber": null,
+    "puzzleHash": "7079a0bfefb41cf7b9afed5863bcb53170a209b05d467532ec658afed58fdcc6",
+    "replacementId": "light-v5-deduction-open-048",
+    "treatment": "Versioned redesign in the same display slot. Previous definition and ID-keyed completion/draft/failure history stay archived; completion is not transferred."
+  },
+  {
+    "id": "light-v3-93",
+    "oldNumber": 146,
+    "newNumber": 146,
+    "puzzleHash": "db522cf54e51eb5053791babff64d7225a5fed61c05fbbe96035f39a94f51fa2",
+    "replacementId": null,
+    "treatment": "Retained exact puzzle content and stable ID."
+  },
+  {
+    "id": "light-v4-deduction-open-046",
+    "oldNumber": 147,
+    "newNumber": null,
+    "puzzleHash": "b38df0bc250c700633aab647decaf3022bc510b12b3c56a0d1b1a6b79a3e86b4",
+    "replacementId": "light-v5-deduction-open-046",
+    "treatment": "Versioned redesign in the same display slot. Previous definition and ID-keyed completion/draft/failure history stay archived; completion is not transferred."
+  },
+  {
+    "id": "light-v3-52",
+    "oldNumber": 148,
+    "newNumber": null,
+    "puzzleHash": "7d472042638f8e685b2df038f76f9e2ef312304ceada91aef63650c0c2914651",
+    "replacementId": "light-v5-legacy-52",
+    "treatment": "Versioned redesign in the same display slot. Previous definition and ID-keyed completion/draft/failure history stay archived; completion is not transferred."
+  },
+  {
+    "id": "light-v3-80",
+    "oldNumber": 149,
+    "newNumber": 149,
+    "puzzleHash": "add385cfbdb54e0a63b0c91b18b8af48146d0339798c0d6be54f22f45849db70",
+    "replacementId": null,
+    "treatment": "Retained exact puzzle content and stable ID."
+  },
+  {
+    "id": "light-v4-open-301",
+    "oldNumber": 150,
+    "newNumber": null,
+    "puzzleHash": "459f01757be073aa55be993f9284c8f97d32785840ea69e2e899725ea5202d1b",
+    "replacementId": "light-v5-open-301",
+    "treatment": "Versioned redesign in the same display slot. Previous definition and ID-keyed completion/draft/failure history stay archived; completion is not transferred."
+  },
+  {
+    "id": "light-v4-deduction-open-030",
+    "oldNumber": 151,
+    "newNumber": null,
+    "puzzleHash": "f8b1aef317fca1012d2a59addb1cb19da67e2f069089f4fadb8b7ba9e64d0b21",
+    "replacementId": "light-v5-deduction-open-030-reauthored",
+    "treatment": "Versioned redesign in the same display slot. Previous definition and ID-keyed completion/draft/failure history stay archived; completion is not transferred."
+  },
+  {
+    "id": "light-v4-deduction-open-017",
+    "oldNumber": 152,
+    "newNumber": null,
+    "puzzleHash": "d01c384a342d9ffa8a93b33f6b5929f51a43add12dc95dff0c68080d858842f5",
+    "replacementId": "light-v5-deduction-open-017-reauthored",
+    "treatment": "Versioned redesign in the same display slot. Previous definition and ID-keyed completion/draft/failure history stay archived; completion is not transferred."
+  },
+  {
+    "id": "light-v3-88",
+    "oldNumber": 153,
+    "newNumber": 153,
+    "puzzleHash": "848e60fd13e8fd933c61df39db18fcc3bddc3fc6307d515d5d8ee749acfe5c99",
+    "replacementId": null,
+    "treatment": "Retained exact puzzle content and stable ID."
+  },
+  {
+    "id": "light-v4-deduction-open-016",
+    "oldNumber": 154,
+    "newNumber": null,
+    "puzzleHash": "f11b2c573f09c36de03a94c8dfbf348065ec51be9eb99880dbdb43dd1c87898b",
+    "replacementId": "light-v5-deduction-open-016",
+    "treatment": "Versioned redesign in the same display slot. Previous definition and ID-keyed completion/draft/failure history stay archived; completion is not transferred."
+  },
+  {
+    "id": "light-v3-12",
+    "oldNumber": 155,
+    "newNumber": 155,
+    "puzzleHash": "e64d46470102fd0594bdaa26a166b201c55d29ccd543edf784fa0b14475fd6eb",
+    "replacementId": null,
+    "treatment": "Retained exact puzzle content and stable ID."
+  },
+  {
+    "id": "light-v4-deduction-open-052",
+    "oldNumber": 156,
+    "newNumber": null,
+    "puzzleHash": "c9a30a6c915e8deff977fb10a803ff2a0c03604a4c9835337f330f08546f1748",
+    "replacementId": "light-v5-deduction-open-052-reauthored",
+    "treatment": "Versioned redesign in the same display slot. Previous definition and ID-keyed completion/draft/failure history stay archived; completion is not transferred."
+  },
+  {
+    "id": "light-v4-open-035",
+    "oldNumber": 157,
+    "newNumber": 157,
+    "puzzleHash": "337def96ab3d87a851fec8d5dcf3c1c3d39e8b7fc79659f6ff9ad1774b791483",
+    "replacementId": null,
+    "treatment": "Retained exact puzzle content and stable ID."
+  },
+  {
+    "id": "light-v3-99",
+    "oldNumber": 158,
+    "newNumber": 158,
+    "puzzleHash": "e2c74d0813672bcfe773d3e3387ae247a7fe371028070e237e40807d7139498d",
+    "replacementId": null,
+    "treatment": "Retained exact puzzle content and stable ID."
+  },
+  {
+    "id": "light-v4-open-chain-001",
+    "oldNumber": 159,
+    "newNumber": null,
+    "puzzleHash": "f17f3b92c4e5ae5a6440809a2d960f2d7dcd232516af7701eabc613805bd87e7",
+    "replacementId": "light-v5-open-chain-001",
+    "treatment": "Versioned redesign in the same display slot. Previous definition and ID-keyed completion/draft/failure history stay archived; completion is not transferred."
+  },
+  {
+    "id": "light-v4-open-009",
+    "oldNumber": 160,
+    "newNumber": 160,
+    "puzzleHash": "0c715308c38fe78a219623361e25d134f0c7be5646d8202b05799cab5768e6b3",
+    "replacementId": null,
+    "treatment": "Retained exact puzzle content and stable ID."
+  },
+  {
+    "id": "light-v4-deduction-open-013",
+    "oldNumber": 161,
+    "newNumber": null,
+    "puzzleHash": "a535af3ef80c45e2f05edcf6798e55bd34887486d0465be234bfc919a333cf34",
+    "replacementId": "light-v5-deduction-open-013",
+    "treatment": "Versioned redesign in the same display slot. Previous definition and ID-keyed completion/draft/failure history stay archived; completion is not transferred."
+  },
+  {
+    "id": "light-v3-20",
+    "oldNumber": 162,
+    "newNumber": 162,
+    "puzzleHash": "4d1b163c326d2378ea56ef032bd05bbe84592438f7632bdbb38e123701d4bb46",
+    "replacementId": null,
+    "treatment": "Retained exact puzzle content and stable ID."
+  },
+  {
+    "id": "light-v4-open-302",
+    "oldNumber": 163,
+    "newNumber": null,
+    "puzzleHash": "a963b14efd80a8108562ec2fd892e320fad2a044dbf96d3fea83d99b6f0fd193",
+    "replacementId": "light-v5-open-302",
+    "treatment": "Versioned redesign in the same display slot. Previous definition and ID-keyed completion/draft/failure history stay archived; completion is not transferred."
+  },
+  {
+    "id": "light-v4-portal-025",
+    "oldNumber": 164,
+    "newNumber": null,
+    "puzzleHash": "efe8df5da40139ad82c2438ef55ad98e008a1d80ccb93988ed51a3a0aef8493c",
+    "replacementId": "light-v5-portal-025",
+    "treatment": "Versioned redesign in the same display slot. Previous definition and ID-keyed completion/draft/failure history stay archived; completion is not transferred."
+  },
+  {
+    "id": "light-v4-deduction-open-053",
+    "oldNumber": 165,
+    "newNumber": null,
+    "puzzleHash": "7fcbaf2a75fbb03aff528328bf7ae6e383f897f00d71a7d606e8a75695d9797a",
+    "replacementId": "light-v5-deduction-open-053",
+    "treatment": "Versioned redesign in the same display slot. Previous definition and ID-keyed completion/draft/failure history stay archived; completion is not transferred."
+  },
+  {
+    "id": "light-v3-17",
+    "oldNumber": 166,
+    "newNumber": null,
+    "puzzleHash": "d24c7537658b4086234996e5b453d8a2644a819943ec4096484c84aacc0efb2b",
+    "replacementId": "light-v5-legacy-17",
+    "treatment": "Versioned redesign in the same display slot. Previous definition and ID-keyed completion/draft/failure history stay archived; completion is not transferred."
+  },
+  {
+    "id": "light-v3-53",
+    "oldNumber": 167,
+    "newNumber": 167,
+    "puzzleHash": "15375339d05dfbc048335a8d67a0094299d92f4b0a8904a3d668cd6fa776be5f",
+    "replacementId": null,
+    "treatment": "Retained exact puzzle content and stable ID."
+  },
+  {
+    "id": "light-v4-deduction-symmetry-01-filter",
+    "oldNumber": 168,
+    "newNumber": null,
+    "puzzleHash": "d7276ad511ea7e5a8e2e09a621dc5b104e6635585ce4f83a382bf6e6f433e4b7",
+    "replacementId": "light-v5-deduction-symmetry-01-filter-reauthored",
+    "treatment": "Versioned redesign in the same display slot. Previous definition and ID-keyed completion/draft/failure history stay archived; completion is not transferred."
+  },
+  {
+    "id": "light-v4-deduction-open-054",
+    "oldNumber": 169,
+    "newNumber": null,
+    "puzzleHash": "43c2cc1c107b9eba5a9653e16ef40aa35830d9cc642bb022aefca484e111178f",
+    "replacementId": "light-v5-deduction-open-054-reauthored",
+    "treatment": "Versioned redesign in the same display slot. Previous definition and ID-keyed completion/draft/failure history stay archived; completion is not transferred."
+  },
+  {
+    "id": "light-v3-83",
+    "oldNumber": 170,
+    "newNumber": null,
+    "puzzleHash": "65441cfe3463907228662a90ede1d4eca76b66202055838b69eda9c003276de4",
+    "replacementId": "light-v5-legacy-83",
+    "treatment": "Versioned redesign in the same display slot. Previous definition and ID-keyed completion/draft/failure history stay archived; completion is not transferred."
+  },
+  {
+    "id": "light-v3-14",
+    "oldNumber": 171,
+    "newNumber": null,
+    "puzzleHash": "957f57265503ea7d79dcdde649559140271f3e8d24f527ee393de976bada9798",
+    "replacementId": "light-v5-legacy-14",
+    "treatment": "Versioned redesign in the same display slot. Previous definition and ID-keyed completion/draft/failure history stay archived; completion is not transferred."
+  },
+  {
+    "id": "light-v4-deduction-symmetry-02-opposite-filter",
+    "oldNumber": 172,
+    "newNumber": null,
+    "puzzleHash": "7995aa71f0da856c0b01bb2c9ed991527e1abc3ecf9ae2009266e172ae232beb",
+    "replacementId": "light-v5-deduction-symmetry-02-opposite-filter-reauthored",
+    "treatment": "Versioned redesign in the same display slot. Previous definition and ID-keyed completion/draft/failure history stay archived; completion is not transferred."
+  },
+  {
+    "id": "light-v3-13",
+    "oldNumber": 173,
+    "newNumber": null,
+    "puzzleHash": "cf412af60c15f1de7088dc12485216f43d1d5366a9fd09f176efd79db2d753a5",
+    "replacementId": "light-v5-legacy-13",
+    "treatment": "Versioned redesign in the same display slot. Previous definition and ID-keyed completion/draft/failure history stay archived; completion is not transferred."
+  },
+  {
+    "id": "light-v3-76",
+    "oldNumber": 174,
+    "newNumber": 174,
+    "puzzleHash": "b3c67e69814b908fb98b81897b509e7d05e46e61f82ebe1e6ed030031b39d5f3",
+    "replacementId": null,
+    "treatment": "Retained exact puzzle content and stable ID."
+  },
+  {
+    "id": "light-v4-open-036",
+    "oldNumber": 175,
+    "newNumber": null,
+    "puzzleHash": "964b3e468d22712a799be9e5db102e9607181745343d63f132902c4d07322e2a",
+    "replacementId": "light-v5-open-036",
+    "treatment": "Versioned redesign in the same display slot. Previous definition and ID-keyed completion/draft/failure history stay archived; completion is not transferred."
+  },
+  {
+    "id": "light-v4-portal-026",
+    "oldNumber": 176,
+    "newNumber": null,
+    "puzzleHash": "1f61ffcc163166ef0fb5aabd0f906819ca6f7674a1ce4372b480a267ed468907",
+    "replacementId": "light-v5-portal-026",
+    "treatment": "Versioned redesign in the same display slot. Previous definition and ID-keyed completion/draft/failure history stay archived; completion is not transferred."
+  },
+  {
+    "id": "light-v4-open-020",
+    "oldNumber": 177,
+    "newNumber": null,
+    "puzzleHash": "6c39dafe74847e6e6ef2f5f7300d46a9401a8ac70b4dc5f2bdf41b16b5a311c6",
+    "replacementId": "light-v5-open-020",
+    "treatment": "Versioned redesign in the same display slot. Previous definition and ID-keyed completion/draft/failure history stay archived; completion is not transferred."
+  },
+  {
+    "id": "light-v4-portal-016",
+    "oldNumber": 178,
+    "newNumber": null,
+    "puzzleHash": "bf68e127ae28e58f0c47cb83684b1d8f3d6b59bf7ab9299e58129866f55a675d",
+    "replacementId": "light-v5-portal-016",
+    "treatment": "Versioned redesign in the same display slot. Previous definition and ID-keyed completion/draft/failure history stay archived; completion is not transferred."
+  },
+  {
+    "id": "light-v4-portal-021",
+    "oldNumber": 179,
+    "newNumber": null,
+    "puzzleHash": "d7811669ff3c749a2b3ed007b6df13cc4ee04b2c4226f406dfcd6742f91893af",
+    "replacementId": "light-v5-portal-021",
+    "treatment": "Versioned redesign in the same display slot. Previous definition and ID-keyed completion/draft/failure history stay archived; completion is not transferred."
+  },
+  {
+    "id": "light-v3-44",
+    "oldNumber": 180,
+    "newNumber": null,
+    "puzzleHash": "8be32506e453692a7a1402868112a33f550694e3eb399ea2ce16c418a8dd94a5",
+    "replacementId": "light-v5-legacy-44",
+    "treatment": "Versioned redesign in the same display slot. Previous definition and ID-keyed completion/draft/failure history stay archived; completion is not transferred."
+  },
+  {
+    "id": "light-v4-open-304",
+    "oldNumber": 181,
+    "newNumber": null,
+    "puzzleHash": "a7688512d798555bec3bcbeaeaf3f2c5d2eb68ab84f0a2fe8dd4187214b0b3f3",
+    "replacementId": "light-v5-open-304",
+    "treatment": "Versioned redesign in the same display slot. Previous definition and ID-keyed completion/draft/failure history stay archived; completion is not transferred."
+  },
+  {
+    "id": "light-v4-portal-014",
+    "oldNumber": 182,
+    "newNumber": null,
+    "puzzleHash": "e80657480be5efbf17f97987fb3efc6bd29b00594f7cb0e737bfb6e22e685eec",
+    "replacementId": "light-v5-portal-014",
+    "treatment": "Versioned redesign in the same display slot. Previous definition and ID-keyed completion/draft/failure history stay archived; completion is not transferred."
+  },
+  {
+    "id": "light-v3-67",
+    "oldNumber": 183,
+    "newNumber": 183,
+    "puzzleHash": "d8b083240a7840d4da72ef6b86b94dc3b1f57bc140d54d279f638ec8255aed2e",
+    "replacementId": null,
+    "treatment": "Retained exact puzzle content and stable ID."
+  },
+  {
+    "id": "light-v4-deduction-open-028",
+    "oldNumber": 184,
+    "newNumber": null,
+    "puzzleHash": "00b84069951d2b61ff371537f9c74cd58335663878bb56484dc4b669351b52b8",
+    "replacementId": "light-v5-deduction-open-028",
+    "treatment": "Versioned redesign in the same display slot. Previous definition and ID-keyed completion/draft/failure history stay archived; completion is not transferred."
+  },
+  {
+    "id": "light-v3-94",
+    "oldNumber": 185,
+    "newNumber": 185,
+    "puzzleHash": "b7f243991da3299611afcfe8ab958000852b38d559ddcfe6215ecf74d39b4301",
+    "replacementId": null,
+    "treatment": "Retained exact puzzle content and stable ID."
+  },
+  {
+    "id": "light-v4-open-007",
+    "oldNumber": 186,
+    "newNumber": null,
+    "puzzleHash": "3447370b703e9d8168fa83ffe83cd0b91ff8e776de313b4ba0724af83fc3b61c",
+    "replacementId": "light-v5-open-007",
+    "treatment": "Versioned redesign in the same display slot. Previous definition and ID-keyed completion/draft/failure history stay archived; completion is not transferred."
+  },
+  {
+    "id": "light-v4-deduction-open-051",
+    "oldNumber": 187,
+    "newNumber": null,
+    "puzzleHash": "920c0bda02add908bf415980013a9c976ae543a2fd8e7e76abc6ccf49b5337ff",
+    "replacementId": "light-v5-deduction-open-051",
+    "treatment": "Versioned redesign in the same display slot. Previous definition and ID-keyed completion/draft/failure history stay archived; completion is not transferred."
+  },
+  {
+    "id": "light-v3-59",
+    "oldNumber": 188,
+    "newNumber": 188,
+    "puzzleHash": "15bebfd07d65857df2066f71e01e43da300f212a5443d04b28f01cd82215a6b8",
+    "replacementId": null,
+    "treatment": "Retained exact puzzle content and stable ID."
+  },
+  {
+    "id": "light-v3-27",
+    "oldNumber": 189,
+    "newNumber": 189,
+    "puzzleHash": "ac0c9ea542d56cec119b7c3501e0ca9a25dc92c4f755a05774e5ed2079df06cc",
+    "replacementId": null,
+    "treatment": "Retained exact puzzle content and stable ID."
+  },
+  {
+    "id": "light-v4-portal-033",
+    "oldNumber": 190,
+    "newNumber": null,
+    "puzzleHash": "1adae5c6de618f9f7440ee90a0053800887c5528babdb6b7f8dda599ec9ac14e",
+    "replacementId": "light-v5-portal-033",
+    "treatment": "Versioned redesign in the same display slot. Previous definition and ID-keyed completion/draft/failure history stay archived; completion is not transferred."
+  },
+  {
+    "id": "light-v3-75",
+    "oldNumber": 191,
+    "newNumber": 191,
+    "puzzleHash": "ac3498a13095bf728477cad2661f27f877e8c733f51b9487a66548d0e37f34a9",
+    "replacementId": null,
+    "treatment": "Retained exact puzzle content and stable ID."
+  },
+  {
+    "id": "light-v4-portal-009",
+    "oldNumber": 192,
+    "newNumber": null,
+    "puzzleHash": "649b0db11b5efe0f292485acb45155fbbdfd32aa4258cb2bc9a8e0bbf37574a4",
+    "replacementId": "light-v5-portal-009",
+    "treatment": "Versioned redesign in the same display slot. Previous definition and ID-keyed completion/draft/failure history stay archived; completion is not transferred."
+  },
+  {
+    "id": "light-v3-78",
+    "oldNumber": 193,
+    "newNumber": 193,
+    "puzzleHash": "68e97fea2f5180f5adc003309fd2b3d60ce014df9808c787457ac4254d13f6f0",
+    "replacementId": null,
+    "treatment": "Retained exact puzzle content and stable ID."
+  },
+  {
+    "id": "light-v4-open-032",
+    "oldNumber": 194,
+    "newNumber": null,
+    "puzzleHash": "9cc3eed18ec97e7563dc2fd7683ac27f5011e835fabd86bf5291e45818b69873",
+    "replacementId": "light-v5-open-032",
+    "treatment": "Versioned redesign in the same display slot. Previous definition and ID-keyed completion/draft/failure history stay archived; completion is not transferred."
+  },
+  {
+    "id": "light-v3-16",
+    "oldNumber": 195,
+    "newNumber": null,
+    "puzzleHash": "7efd2b041c34f19afd07f067b3fc37157aafa2c7e2826a3c3c5cc40fdc9977f9",
+    "replacementId": "light-v5-legacy-16",
+    "treatment": "Versioned redesign in the same display slot. Previous definition and ID-keyed completion/draft/failure history stay archived; completion is not transferred."
+  },
+  {
+    "id": "light-v3-54",
+    "oldNumber": 196,
+    "newNumber": null,
+    "puzzleHash": "338aeb0bd4513785f35a8716dd143f7dfba75ec519699c1e64e8969bba28fdc6",
+    "replacementId": "light-v5-legacy-54",
+    "treatment": "Versioned redesign in the same display slot. Previous definition and ID-keyed completion/draft/failure history stay archived; completion is not transferred."
+  },
+  {
+    "id": "light-v3-73",
+    "oldNumber": 197,
+    "newNumber": 197,
+    "puzzleHash": "bde6434de6eadcb04c0b4de9e3349da7d6359f22b4932efeb1cf32f34e543c06",
+    "replacementId": null,
+    "treatment": "Retained exact puzzle content and stable ID."
+  },
+  {
+    "id": "light-v3-38",
+    "oldNumber": 198,
+    "newNumber": null,
+    "puzzleHash": "4f5400f9c46d285a7c3c5428b949543aa109fdbb6891356fcc627cd374efe915",
+    "replacementId": "light-v5-legacy-38",
+    "treatment": "Versioned redesign in the same display slot. Previous definition and ID-keyed completion/draft/failure history stay archived; completion is not transferred."
+  },
+  {
+    "id": "light-v4-deduction-open-041",
+    "oldNumber": 199,
+    "newNumber": null,
+    "puzzleHash": "8a3b88c52df5764faf4a860ddd6515b172eda822c350bcb025ca752b8ee76ebf",
+    "replacementId": "light-v5-deduction-open-041",
+    "treatment": "Versioned redesign in the same display slot. Previous definition and ID-keyed completion/draft/failure history stay archived; completion is not transferred."
+  },
+  {
+    "id": "light-v3-60",
+    "oldNumber": 200,
+    "newNumber": 200,
+    "puzzleHash": "a0f386290afec8ca25fa045ef0b05524bbb26617c9f3de6ca7622f385ffb0901",
+    "replacementId": null,
+    "treatment": "Retained exact puzzle content and stable ID."
+  },
+  {
+    "id": "light-v4-open-065",
+    "oldNumber": 201,
+    "newNumber": 201,
+    "puzzleHash": "076d15eaf946265d239eac692336a8c7b581404e6379346a81cd06517cce88ae",
+    "replacementId": null,
+    "treatment": "Retained exact puzzle content and stable ID."
+  },
+  {
+    "id": "light-v4-portal-059",
+    "oldNumber": 202,
+    "newNumber": null,
+    "puzzleHash": "dbca588c6438b69cae9019db6a44bc98133634beba365276efde105b622e3b34",
+    "replacementId": "light-v5-portal-059",
+    "treatment": "Versioned redesign in the same display slot. Previous definition and ID-keyed completion/draft/failure history stay archived; completion is not transferred."
+  },
+  {
+    "id": "light-v4-deduction-open-062",
+    "oldNumber": 203,
+    "newNumber": null,
+    "puzzleHash": "5fb689eeb28ec68128b393a9e5c2918a1fcebfb835d83fd05c3f9069826bc83c",
+    "replacementId": "light-v5-deduction-open-062",
+    "treatment": "Versioned redesign in the same display slot. Previous definition and ID-keyed completion/draft/failure history stay archived; completion is not transferred."
+  },
+  {
+    "id": "light-v3-164",
+    "oldNumber": 204,
+    "newNumber": 204,
+    "puzzleHash": "f620cf7a4f831783071fe88b5a8c8fb370830e8e38c2d3ec98f11abf889485d2",
+    "replacementId": null,
+    "treatment": "Retained exact puzzle content and stable ID."
+  },
+  {
+    "id": "light-v4-portal-049",
+    "oldNumber": 205,
+    "newNumber": null,
+    "puzzleHash": "c97b0c23c9ebf51873b935e67b03e6ebb2daae6ac0b8ede73bda1e947c06c14c",
+    "replacementId": "light-v5-portal-049",
+    "treatment": "Versioned redesign in the same display slot. Previous definition and ID-keyed completion/draft/failure history stay archived; completion is not transferred."
+  },
+  {
+    "id": "light-v3-161",
+    "oldNumber": 206,
+    "newNumber": 206,
+    "puzzleHash": "2e3b7a660f6291d839e3f1a4ce560a526b2fbb5f25f4ea42a5064f6b61244c83",
+    "replacementId": null,
+    "treatment": "Retained exact puzzle content and stable ID."
+  },
+  {
+    "id": "light-v4-portal-055",
+    "oldNumber": 207,
+    "newNumber": null,
+    "puzzleHash": "c370ab7045842015cfdf8129c10d017f04249ffc97271cfeccdd4859c9bd1314",
+    "replacementId": "light-v5-portal-055",
+    "treatment": "Versioned redesign in the same display slot. Previous definition and ID-keyed completion/draft/failure history stay archived; completion is not transferred."
+  },
+  {
+    "id": "light-v4-open-305",
+    "oldNumber": 208,
+    "newNumber": null,
+    "puzzleHash": "c37a7d2734415d9018f6bf50af372861dc3ad6538f21b5757a99cc256d2f60c7",
+    "replacementId": "light-v5-open-305",
+    "treatment": "Versioned redesign in the same display slot. Previous definition and ID-keyed completion/draft/failure history stay archived; completion is not transferred."
+  },
+  {
+    "id": "light-v4-open-chain-015",
+    "oldNumber": 209,
+    "newNumber": null,
+    "puzzleHash": "85c7694079196d256a6f88f0e7ffa53606ee819c1a0ce3cb12e9e3e7b3087f05",
+    "replacementId": "light-v5-open-chain-015",
+    "treatment": "Versioned redesign in the same display slot. Previous definition and ID-keyed completion/draft/failure history stay archived; completion is not transferred."
+  },
+  {
+    "id": "light-v4-open-chain-013",
+    "oldNumber": 210,
+    "newNumber": null,
+    "puzzleHash": "5ccc7f88c094dbc2a5ecb60eb80d867d4eaf0e011eae11c278b067f19c9bd650",
+    "replacementId": "light-v5-open-chain-013",
+    "treatment": "Versioned redesign in the same display slot. Previous definition and ID-keyed completion/draft/failure history stay archived; completion is not transferred."
+  },
+  {
+    "id": "light-v4-portal-057",
+    "oldNumber": 211,
+    "newNumber": null,
+    "puzzleHash": "615229baec728fb757f80ad8509960e841c542dd8c89a8e7a615893633c4ffd5",
+    "replacementId": "light-v5-portal-057",
+    "treatment": "Versioned redesign in the same display slot. Previous definition and ID-keyed completion/draft/failure history stay archived; completion is not transferred."
+  },
+  {
+    "id": "light-v4-open-306",
+    "oldNumber": 212,
+    "newNumber": null,
+    "puzzleHash": "2b39874dfa79f9eb7942103f04e2e168dc4a74843ffc16db3e68be1cc3e14f53",
+    "replacementId": "light-v5-open-306",
+    "treatment": "Versioned redesign in the same display slot. Previous definition and ID-keyed completion/draft/failure history stay archived; completion is not transferred."
+  },
+  {
+    "id": "light-v4-deduction-open-035",
+    "oldNumber": 213,
+    "newNumber": null,
+    "puzzleHash": "cab75845db5894b9581f4f061b92690c8749d41470838ff109a9a3c2775f9dee",
+    "replacementId": "light-v5-deduction-open-035",
+    "treatment": "Versioned redesign in the same display slot. Previous definition and ID-keyed completion/draft/failure history stay archived; completion is not transferred."
+  },
+  {
+    "id": "light-v4-deduction-open-065",
+    "oldNumber": 214,
+    "newNumber": null,
+    "puzzleHash": "268e0df71f2929f92e2842ca3d561135da43124e4bec3df8404c1ed61019a5cb",
+    "replacementId": "light-v5-deduction-open-065",
+    "treatment": "Versioned redesign in the same display slot. Previous definition and ID-keyed completion/draft/failure history stay archived; completion is not transferred."
+  },
+  {
+    "id": "light-v3-152",
+    "oldNumber": 215,
+    "newNumber": 215,
+    "puzzleHash": "2d8fd5cf4f68cf887a15242f0bcc505d2e994b8fa122fd0d9de90eb10a4180ff",
+    "replacementId": null,
+    "treatment": "Retained exact puzzle content and stable ID."
+  },
+  {
+    "id": "light-v3-162",
+    "oldNumber": 216,
+    "newNumber": 216,
+    "puzzleHash": "3cf412fb50ea79d90cd8263f46b8fc5965a01cc35b480597b45502711569941b",
+    "replacementId": null,
+    "treatment": "Retained exact puzzle content and stable ID."
+  },
+  {
+    "id": "light-v4-deduction-open-063",
+    "oldNumber": 217,
+    "newNumber": null,
+    "puzzleHash": "09515bc4833b0a10dedf2bf0dfd113c7e61368589c7ebded9d90ba607ccbb51a",
+    "replacementId": "light-v5-deduction-open-063-reauthored",
+    "treatment": "Versioned redesign in the same display slot. Previous definition and ID-keyed completion/draft/failure history stay archived; completion is not transferred."
+  },
+  {
+    "id": "light-v4-portal-085",
+    "oldNumber": 218,
+    "newNumber": null,
+    "puzzleHash": "e3c5418fbd031ebe42187fa09cee183e6ba521c0170795bea3fd6392570a6d52",
+    "replacementId": "light-v5-portal-085",
+    "treatment": "Versioned redesign in the same display slot. Previous definition and ID-keyed completion/draft/failure history stay archived; completion is not transferred."
+  },
+  {
+    "id": "light-v4-portal-052",
+    "oldNumber": 219,
+    "newNumber": null,
+    "puzzleHash": "f0c78779325d5551a58f848d86add61af364816566aa7d194029f90f528db595",
+    "replacementId": "light-v5-portal-052",
+    "treatment": "Versioned redesign in the same display slot. Previous definition and ID-keyed completion/draft/failure history stay archived; completion is not transferred."
+  },
+  {
+    "id": "light-v4-deduction-windows-01",
+    "oldNumber": 220,
+    "newNumber": null,
+    "puzzleHash": "e282503b906e7d4601aac64925ac0c11cc211688f2eaba3bcb5dc1acd96be515",
+    "replacementId": "light-v5-deduction-windows-01",
+    "treatment": "Versioned redesign in the same display slot. Previous definition and ID-keyed completion/draft/failure history stay archived; completion is not transferred."
+  },
+  {
+    "id": "light-v3-151",
+    "oldNumber": 221,
+    "newNumber": 221,
+    "puzzleHash": "c34b8ac7894a262274651e35cfa72f5e50ebbbda82fc24306a3740519d52860b",
+    "replacementId": null,
+    "treatment": "Retained exact puzzle content and stable ID."
+  },
+  {
+    "id": "light-v3-154",
+    "oldNumber": 222,
+    "newNumber": 222,
+    "puzzleHash": "7e6f15d7566c236f88cae527cadb9912b3fcf941590e039abefe0aec662202fa",
+    "replacementId": null,
+    "treatment": "Retained exact puzzle content and stable ID."
+  },
+  {
+    "id": "light-v4-portal-054",
+    "oldNumber": 223,
+    "newNumber": null,
+    "puzzleHash": "1d927cc640fecda05f1a968e1b7ed0ef7b353d3e052ed387c4779e54e931f894",
+    "replacementId": "light-v5-portal-054",
+    "treatment": "Versioned redesign in the same display slot. Previous definition and ID-keyed completion/draft/failure history stay archived; completion is not transferred."
+  },
+  {
+    "id": "light-v3-153",
+    "oldNumber": 224,
+    "newNumber": 224,
+    "puzzleHash": "343374366bda49d03db7e32edd7df48fec8288ad2a0a892ad3cea42b635811a6",
+    "replacementId": null,
+    "treatment": "Retained exact puzzle content and stable ID."
+  },
+  {
+    "id": "light-v3-183",
+    "oldNumber": 225,
+    "newNumber": 225,
+    "puzzleHash": "adfd1a06a0f9adfbb2fee27110b0b5aa15e6a1788911d580321fdd66a8a2953a",
+    "replacementId": null,
+    "treatment": "Retained exact puzzle content and stable ID."
+  },
+  {
+    "id": "light-v3-187",
+    "oldNumber": 226,
+    "newNumber": 226,
+    "puzzleHash": "f594229fbec980a426498aee7d8fca4fc6e7a8523a8246a0d65231c5616d401e",
+    "replacementId": null,
+    "treatment": "Retained exact puzzle content and stable ID."
+  },
+  {
+    "id": "light-v4-portal-056",
+    "oldNumber": 227,
+    "newNumber": null,
+    "puzzleHash": "154110a4f4c0e49abd14b9f87139dd2aa7a15bfd5c999565ab84a97ee9106d51",
+    "replacementId": "light-v5-portal-056",
+    "treatment": "Versioned redesign in the same display slot. Previous definition and ID-keyed completion/draft/failure history stay archived; completion is not transferred."
+  },
+  {
+    "id": "light-v3-195",
+    "oldNumber": 228,
+    "newNumber": null,
+    "puzzleHash": "b71d111f9374a1afe7a701fea061ee860bf9225b88eda2e8c60a335f02c36b64",
+    "replacementId": "light-v5-legacy-195",
+    "treatment": "Versioned redesign in the same display slot. Previous definition and ID-keyed completion/draft/failure history stay archived; completion is not transferred."
+  },
+  {
+    "id": "light-v3-104",
+    "oldNumber": 229,
+    "newNumber": 229,
+    "puzzleHash": "1b31b26e6bd814f38ae75128528f3f5af07173f8c5d0ab4aeae036dd9625bc05",
+    "replacementId": null,
+    "treatment": "Retained exact puzzle content and stable ID."
+  },
+  {
+    "id": "light-v4-portal-875",
+    "oldNumber": 230,
+    "newNumber": null,
+    "puzzleHash": "d90619aa7e087d03df21b0471f2ae72e9f4a0a7b74b02e7a4cb227676b878ab3",
+    "replacementId": "light-v5-portal-875",
+    "treatment": "Versioned redesign in the same display slot. Previous definition and ID-keyed completion/draft/failure history stay archived; completion is not transferred."
+  },
+  {
+    "id": "light-v4-deduction-four-02",
+    "oldNumber": 231,
+    "newNumber": null,
+    "puzzleHash": "ceb90e547b6d925f567aab5ad5fdd174a5ed0e0b5c23a266da9c784e590cd3a1",
+    "replacementId": "light-v5-deduction-four-02",
+    "treatment": "Versioned redesign in the same display slot. Previous definition and ID-keyed completion/draft/failure history stay archived; completion is not transferred."
+  },
+  {
+    "id": "light-v3-157",
+    "oldNumber": 232,
+    "newNumber": 232,
+    "puzzleHash": "87ebb1e1e880990003a2a19b83d882d96bc6f369a0c9c176ecaea429f5cfdad8",
+    "replacementId": null,
+    "treatment": "Retained exact puzzle content and stable ID."
+  },
+  {
+    "id": "light-v3-173",
+    "oldNumber": 233,
+    "newNumber": 233,
+    "puzzleHash": "eef66562bcd951e09ed64a09ef4bdc1b09066c62c7c39681bce7af1bf2859ff0",
+    "replacementId": null,
+    "treatment": "Retained exact puzzle content and stable ID."
+  },
+  {
+    "id": "light-v4-deduction-symmetry-11-base",
+    "oldNumber": 234,
+    "newNumber": null,
+    "puzzleHash": "f68548f718945b6a9051f2be3a82ec53b2cf905a542aee1124a747a8ab6f463c",
+    "replacementId": "light-v5-deduction-symmetry-11-base",
+    "treatment": "Versioned redesign in the same display slot. Previous definition and ID-keyed completion/draft/failure history stay archived; completion is not transferred."
+  },
+  {
+    "id": "light-v4-open-chain-017",
+    "oldNumber": 235,
+    "newNumber": null,
+    "puzzleHash": "6f694574f8e8d877cc7719d1cfaa6116502e9da428ae0f97c5ab15c76eb71c67",
+    "replacementId": "light-v5-open-chain-017",
+    "treatment": "Versioned redesign in the same display slot. Previous definition and ID-keyed completion/draft/failure history stay archived; completion is not transferred."
+  },
+  {
+    "id": "light-v3-131",
+    "oldNumber": 236,
+    "newNumber": 236,
+    "puzzleHash": "3461e916a1a6108a387b867c735ef633425bfc343f19cda919673d2f4b5c7fed",
+    "replacementId": null,
+    "treatment": "Retained exact puzzle content and stable ID."
+  },
+  {
+    "id": "light-v4-open-309",
+    "oldNumber": 237,
+    "newNumber": 237,
+    "puzzleHash": "bafd6a3da2de7f0483a0ac3ef8d0cabd1ef24a85f803c33eb6e4fc9a24456899",
+    "replacementId": null,
+    "treatment": "Retained exact puzzle content and stable ID."
+  },
+  {
+    "id": "light-v4-portal-058",
+    "oldNumber": 238,
+    "newNumber": null,
+    "puzzleHash": "8d02e544caf5b74037f075528a02f8a43525af22837c4323b873129cd2ae40c1",
+    "replacementId": "light-v5-portal-058",
+    "treatment": "Versioned redesign in the same display slot. Previous definition and ID-keyed completion/draft/failure history stay archived; completion is not transferred."
+  },
+  {
+    "id": "light-v3-189",
+    "oldNumber": 239,
+    "newNumber": 239,
+    "puzzleHash": "9724f02710901e52f03701955f6472881b3d46335464598de014654ef363931d",
+    "replacementId": null,
+    "treatment": "Retained exact puzzle content and stable ID."
+  },
+  {
+    "id": "light-v4-deduction-open-033",
+    "oldNumber": 240,
+    "newNumber": null,
+    "puzzleHash": "fd3cd3fa08e63b0600040ebe5bbe21e7de8092ed225488f66fc496877a7cf510",
+    "replacementId": "light-v5-deduction-open-033",
+    "treatment": "Versioned redesign in the same display slot. Previous definition and ID-keyed completion/draft/failure history stay archived; completion is not transferred."
+  },
+  {
+    "id": "light-v4-open-067",
+    "oldNumber": 241,
+    "newNumber": null,
+    "puzzleHash": "fc9b2a9ab214b883c5085bbbd83316246592f08166060bc6c3106a5997815de0",
+    "replacementId": "light-v5-open-067",
+    "treatment": "Versioned redesign in the same display slot. Previous definition and ID-keyed completion/draft/failure history stay archived; completion is not transferred."
+  },
+  {
+    "id": "light-v4-deduction-open-032",
+    "oldNumber": 242,
+    "newNumber": null,
+    "puzzleHash": "70fc07d869daea26193501cceb4e36dcd6bde0963e6067a2781442df6efc171f",
+    "replacementId": "light-v5-deduction-open-032",
+    "treatment": "Versioned redesign in the same display slot. Previous definition and ID-keyed completion/draft/failure history stay archived; completion is not transferred."
+  },
+  {
+    "id": "light-v3-156",
+    "oldNumber": 243,
+    "newNumber": 243,
+    "puzzleHash": "bc441f71c5623969b2e33de8549fd33e4e44d04e5c37f28989bc1cfd92ec34ec",
+    "replacementId": null,
+    "treatment": "Retained exact puzzle content and stable ID."
+  },
+  {
+    "id": "light-v3-184",
+    "oldNumber": 244,
+    "newNumber": 244,
+    "puzzleHash": "6a67720263a58d45787add58e92c8b229550f5b88e9e8f2448f97626c0cff619",
+    "replacementId": null,
+    "treatment": "Retained exact puzzle content and stable ID."
+  },
+  {
+    "id": "light-v4-portal-050",
+    "oldNumber": 245,
+    "newNumber": null,
+    "puzzleHash": "4a0f6885748c15c9394311c78eae77da3551949f5224adde01e3a9aa4e441592",
+    "replacementId": "light-v5-portal-050",
+    "treatment": "Versioned redesign in the same display slot. Previous definition and ID-keyed completion/draft/failure history stay archived; completion is not transferred."
+  },
+  {
+    "id": "light-v3-166",
+    "oldNumber": 246,
+    "newNumber": 246,
+    "puzzleHash": "b507f6c07b535652144e567c1ee918592b42aa24ea4bdfd78cf91b0b5cd52dda",
+    "replacementId": null,
+    "treatment": "Retained exact puzzle content and stable ID."
+  },
+  {
+    "id": "light-v4-portal-053",
+    "oldNumber": 247,
+    "newNumber": null,
+    "puzzleHash": "b974f440e7cb8e681a7c67d959794beaee00f36dde9817337821683cba70848b",
+    "replacementId": "light-v5-portal-053",
+    "treatment": "Versioned redesign in the same display slot. Previous definition and ID-keyed completion/draft/failure history stay archived; completion is not transferred."
+  },
+  {
+    "id": "light-v4-portal-047",
+    "oldNumber": 248,
+    "newNumber": null,
+    "puzzleHash": "e1b8dc4e7b469c9d42a08da08639c335aab9b8d739fef2454eb4487c4d4b56cf",
+    "replacementId": "light-v5-portal-047",
+    "treatment": "Versioned redesign in the same display slot. Previous definition and ID-keyed completion/draft/failure history stay archived; completion is not transferred."
+  },
+  {
+    "id": "light-v3-165",
+    "oldNumber": 249,
+    "newNumber": null,
+    "puzzleHash": "07aec40406d5a3a2b56355f352410adfe3f171781493b7253fc18acd577fd847",
+    "replacementId": "light-v5-legacy-165",
+    "treatment": "Versioned redesign in the same display slot. Previous definition and ID-keyed completion/draft/failure history stay archived; completion is not transferred."
+  },
+  {
+    "id": "light-v3-188",
+    "oldNumber": 250,
+    "newNumber": 250,
+    "puzzleHash": "220d73ec1511e2f50fa983a4a94bdb855c4f6c2bb50bce59868b0184855c3938",
+    "replacementId": null,
+    "treatment": "Retained exact puzzle content and stable ID."
+  },
+  {
+    "id": "light-v4-master-004",
+    "oldNumber": 251,
+    "newNumber": null,
+    "puzzleHash": "f228d14aaa6614b8d653c77f849ed2eee39252802f453ec077fc8458b94ed6a1",
+    "replacementId": "light-v5-master-004",
+    "treatment": "Versioned redesign in the same display slot. Previous definition and ID-keyed completion/draft/failure history stay archived; completion is not transferred."
+  },
+  {
+    "id": "light-v3-115",
+    "oldNumber": 252,
+    "newNumber": 252,
+    "puzzleHash": "0ec4f66206042a56005c5968648fe79e3e3b3f68cafcada1eef1e6a5fcd493ea",
+    "replacementId": null,
+    "treatment": "Retained exact puzzle content and stable ID."
+  },
+  {
+    "id": "light-v4-open-chain-018",
+    "oldNumber": 253,
+    "newNumber": null,
+    "puzzleHash": "b300e47cc09bbe716925db61cde053666061c6bb759630786b5e6ba47a0813b1",
+    "replacementId": "light-v5-open-chain-018",
+    "treatment": "Versioned redesign in the same display slot. Previous definition and ID-keyed completion/draft/failure history stay archived; completion is not transferred."
+  },
+  {
+    "id": "light-v3-177",
+    "oldNumber": 254,
+    "newNumber": 254,
+    "puzzleHash": "40aad2f7e031791840b024ad094b4e723cc2f6da81ee9db9b7e22490a91bb1b5",
+    "replacementId": null,
+    "treatment": "Retained exact puzzle content and stable ID."
+  },
+  {
+    "id": "light-v3-168",
+    "oldNumber": 255,
+    "newNumber": 255,
+    "puzzleHash": "f29f496334502cf1d38887e939b37f70c5f01d38400ff179da7bcb0c5a7bf240",
+    "replacementId": null,
+    "treatment": "Retained exact puzzle content and stable ID."
+  },
+  {
+    "id": "light-v4-open-311",
+    "oldNumber": 256,
+    "newNumber": null,
+    "puzzleHash": "ea56c57c5998e3b95a088154e9d162f6340ad64ab02cfb01f085e9663f1b36cf",
+    "replacementId": "light-v5-open-311",
+    "treatment": "Versioned redesign in the same display slot. Previous definition and ID-keyed completion/draft/failure history stay archived; completion is not transferred."
+  },
+  {
+    "id": "light-v4-portal-060",
+    "oldNumber": 257,
+    "newNumber": null,
+    "puzzleHash": "fb0fc93c17f62f36c2d7e6d925a24b88196f32a760477c93a0f5628d821acd48",
+    "replacementId": "light-v5-portal-060",
+    "treatment": "Versioned redesign in the same display slot. Previous definition and ID-keyed completion/draft/failure history stay archived; completion is not transferred."
+  },
+  {
+    "id": "light-v4-open-310",
+    "oldNumber": 258,
+    "newNumber": 258,
+    "puzzleHash": "5a8eee5bacf169223d9f38e25b7a1aeb79dffa96359276e18d94087f702f65d4",
+    "replacementId": null,
+    "treatment": "Retained exact puzzle content and stable ID."
+  },
+  {
+    "id": "light-v4-open-046",
+    "oldNumber": 259,
+    "newNumber": null,
+    "puzzleHash": "b451f29b297b0432028e58bd1918ab0040ec14cb9697705f049bbba9eea72475",
+    "replacementId": "light-v5-open-046",
+    "treatment": "Versioned redesign in the same display slot. Previous definition and ID-keyed completion/draft/failure history stay archived; completion is not transferred."
+  },
+  {
+    "id": "light-v3-139",
+    "oldNumber": 260,
+    "newNumber": 260,
+    "puzzleHash": "4948e67081a426f46a078a0aaf5cda3853152c8dc5923c12d5af604dbefa35d9",
+    "replacementId": null,
+    "treatment": "Retained exact puzzle content and stable ID."
+  },
+  {
+    "id": "light-v3-126",
+    "oldNumber": 261,
+    "newNumber": null,
+    "puzzleHash": "ce85382bbfb70a8a893a3383b5f18b6094e347841c546651ac9ffa0e4f0d9be7",
+    "replacementId": "light-v5-legacy-126",
+    "treatment": "Versioned redesign in the same display slot. Previous definition and ID-keyed completion/draft/failure history stay archived; completion is not transferred."
+  },
+  {
+    "id": "light-v3-174",
+    "oldNumber": 262,
+    "newNumber": null,
+    "puzzleHash": "7f57e2cd7ad898c631d5fe471cbae8edd433d3413faeac5264ac87f9e7fed1db",
+    "replacementId": "light-v5-legacy-174",
+    "treatment": "Versioned redesign in the same display slot. Previous definition and ID-keyed completion/draft/failure history stay archived; completion is not transferred."
+  },
+  {
+    "id": "light-v4-deduction-symmetry-06-base",
+    "oldNumber": 263,
+    "newNumber": null,
+    "puzzleHash": "2f6b1ab332fc9cf0c720c842244eed3754deb0388432ae59bec8694a2f2d5975",
+    "replacementId": "light-v5-deduction-symmetry-06-base",
+    "treatment": "Versioned redesign in the same display slot. Previous definition and ID-keyed completion/draft/failure history stay archived; completion is not transferred."
+  },
+  {
+    "id": "light-v4-deduction-windows-02",
+    "oldNumber": 264,
+    "newNumber": null,
+    "puzzleHash": "e3ff18c9ca6796fe4c0994d62a217f05e9590181260768fc133f7aeddb12cb4b",
+    "replacementId": "light-v5-deduction-windows-02",
+    "treatment": "Versioned redesign in the same display slot. Previous definition and ID-keyed completion/draft/failure history stay archived; completion is not transferred."
+  },
+  {
+    "id": "light-v4-portal-046",
+    "oldNumber": 265,
+    "newNumber": null,
+    "puzzleHash": "97520120d77eb44fcbdf82d498ce97429c1d59de01c34793863d87fafd4f5498",
+    "replacementId": "light-v5-portal-046",
+    "treatment": "Versioned redesign in the same display slot. Previous definition and ID-keyed completion/draft/failure history stay archived; completion is not transferred."
+  },
+  {
+    "id": "light-v4-open-307",
+    "oldNumber": 266,
+    "newNumber": null,
+    "puzzleHash": "353772326ef7c4fc233f93b4659cf12b0b5efc2305b088b481026a9b05150b62",
+    "replacementId": "light-v5-open-307",
+    "treatment": "Versioned redesign in the same display slot. Previous definition and ID-keyed completion/draft/failure history stay archived; completion is not transferred."
+  },
+  {
+    "id": "light-v3-108",
+    "oldNumber": 267,
+    "newNumber": 267,
+    "puzzleHash": "126724d5d2c727e76e198d68d84363e514402e7b9f04b7e5acf67e28fd90ac3f",
+    "replacementId": null,
+    "treatment": "Retained exact puzzle content and stable ID."
+  },
+  {
+    "id": "light-v3-169",
+    "oldNumber": 268,
+    "newNumber": 268,
+    "puzzleHash": "830f2757a27ce299b8ee166bb9cea977510f92cdce86193f4f2f087411d58c36",
+    "replacementId": null,
+    "treatment": "Retained exact puzzle content and stable ID."
+  },
+  {
+    "id": "light-v4-open-308",
+    "oldNumber": 269,
+    "newNumber": null,
+    "puzzleHash": "98e5bbb1f2de93e23a53f267ff2b263d54e13edf319bc85d61836572febc1f65",
+    "replacementId": "light-v5-open-308",
+    "treatment": "Versioned redesign in the same display slot. Previous definition and ID-keyed completion/draft/failure history stay archived; completion is not transferred."
+  },
+  {
+    "id": "light-v3-181",
+    "oldNumber": 270,
+    "newNumber": 270,
+    "puzzleHash": "158f0b5a80563b832403981175e36a12d74d9e3ad0c5947b6efcb72fc3983788",
+    "replacementId": null,
+    "treatment": "Retained exact puzzle content and stable ID."
+  },
+  {
+    "id": "light-v4-portal-051",
+    "oldNumber": 271,
+    "newNumber": null,
+    "puzzleHash": "88f7e74d3a69b4f3aa82997bc33e1c62267fdc12ebd411c27787d257d3eaca8c",
+    "replacementId": "light-v5-portal-051",
+    "treatment": "Versioned redesign in the same display slot. Previous definition and ID-keyed completion/draft/failure history stay archived; completion is not transferred."
+  },
+  {
+    "id": "light-v3-158",
+    "oldNumber": 272,
+    "newNumber": 272,
+    "puzzleHash": "98ca40084e8a5194d38e78d839c1d82cef3aa0da7cbffb6c5c3ba78777eedddd",
+    "replacementId": null,
+    "treatment": "Retained exact puzzle content and stable ID."
+  },
+  {
+    "id": "light-v3-176",
+    "oldNumber": 273,
+    "newNumber": 273,
+    "puzzleHash": "2846477e41bd5e3b5aff74579211b6aeaa4d08c33db2b5b2e6ee20b9481b3ed5",
+    "replacementId": null,
+    "treatment": "Retained exact puzzle content and stable ID."
+  },
+  {
+    "id": "light-v4-open-066",
+    "oldNumber": 274,
+    "newNumber": null,
+    "puzzleHash": "ef2ddbfdaa2df62a514c31b807d532014fd136a5a58b37f539a013c9a46b8663",
+    "replacementId": "light-v5-open-066",
+    "treatment": "Versioned redesign in the same display slot. Previous definition and ID-keyed completion/draft/failure history stay archived; completion is not transferred."
+  },
+  {
+    "id": "light-v4-master-009",
+    "oldNumber": 275,
+    "newNumber": null,
+    "puzzleHash": "d6366ec65d84b6a5924dd2ae30198e46d3a5d412f16e54174592079d8ebea380",
+    "replacementId": "light-v5-master-009",
+    "treatment": "Versioned redesign in the same display slot. Previous definition and ID-keyed completion/draft/failure history stay archived; completion is not transferred."
+  },
+  {
+    "id": "light-v4-deduction-open-061",
+    "oldNumber": 276,
+    "newNumber": null,
+    "puzzleHash": "de4e43aea3d4e3d5fe8c18c39941f985aff9713476d01165a7c2e51c800dcf87",
+    "replacementId": "light-v5-deduction-open-061",
+    "treatment": "Versioned redesign in the same display slot. Previous definition and ID-keyed completion/draft/failure history stay archived; completion is not transferred."
+  },
+  {
+    "id": "light-v4-open-chain-014",
+    "oldNumber": 277,
+    "newNumber": 277,
+    "puzzleHash": "9fa207003f1b3bb55e9b9b40ce206870431e1c14196fc0783161cbbde39ec82b",
+    "replacementId": null,
+    "treatment": "Retained exact puzzle content and stable ID."
+  },
+  {
+    "id": "light-v4-open-313",
+    "oldNumber": 278,
+    "newNumber": null,
+    "puzzleHash": "e6872c4b1d2d5a8916d635281a46b831289e0494110269ba21eff2b7dbee4314",
+    "replacementId": "light-v5-open-313",
+    "treatment": "Versioned redesign in the same display slot. Previous definition and ID-keyed completion/draft/failure history stay archived; completion is not transferred."
+  },
+  {
+    "id": "light-v4-open-312",
+    "oldNumber": 279,
+    "newNumber": null,
+    "puzzleHash": "1762b7c7a7a1a066a28e39a702f967326685d4d53bb3eee00a180c93ec2c2975",
+    "replacementId": "light-v5-open-312",
+    "treatment": "Versioned redesign in the same display slot. Previous definition and ID-keyed completion/draft/failure history stay archived; completion is not transferred."
+  },
+  {
+    "id": "light-v3-167",
+    "oldNumber": 280,
+    "newNumber": 280,
+    "puzzleHash": "01da8a47725f808bf7d52082d701fee47ca5a413f9838afcb8bae6b1195ddb6c",
+    "replacementId": null,
+    "treatment": "Retained exact puzzle content and stable ID."
+  },
+  {
+    "id": "light-v4-deduction-symmetry-01-opposite-filter",
+    "oldNumber": 281,
+    "newNumber": null,
+    "puzzleHash": "92847cf267b9a2ae12a3cea08cc51fcf9199888285429ec5618fb31596117649",
+    "replacementId": "light-v5-deduction-symmetry-01-opposite-filter-reauthored",
+    "treatment": "Versioned redesign in the same display slot. Previous definition and ID-keyed completion/draft/failure history stay archived; completion is not transferred."
+  },
+  {
+    "id": "light-v4-deduction-open-003",
+    "oldNumber": 282,
+    "newNumber": null,
+    "puzzleHash": "7578797ffd3458b1b5544ebec94e8de7c6323c70d9a6941e1f3c78807b883ded",
+    "replacementId": "light-v5-deduction-open-003",
+    "treatment": "Versioned redesign in the same display slot. Previous definition and ID-keyed completion/draft/failure history stay archived; completion is not transferred."
+  },
+  {
+    "id": "light-v4-open-chain-012",
+    "oldNumber": 283,
+    "newNumber": null,
+    "puzzleHash": "ca2e6ce3e1460cae56d43ff419441ffbfce526d753fc5929763852a7919195a8",
+    "replacementId": "light-v5-open-chain-012",
+    "treatment": "Versioned redesign in the same display slot. Previous definition and ID-keyed completion/draft/failure history stay archived; completion is not transferred."
+  },
+  {
+    "id": "light-v4-deduction-symmetry-08-base",
+    "oldNumber": 284,
+    "newNumber": null,
+    "puzzleHash": "f6b930e6d1f0109f6ba2fd69b4e2db2970093b8909b08890facf6007145ee767",
+    "replacementId": "light-v5-deduction-symmetry-08-base-reauthored",
+    "treatment": "Versioned redesign in the same display slot. Previous definition and ID-keyed completion/draft/failure history stay archived; completion is not transferred."
+  },
+  {
+    "id": "light-v4-open-chain-016",
+    "oldNumber": 285,
+    "newNumber": null,
+    "puzzleHash": "140e16b847e0a01b6551b09b72244cb922dd3b0e51bb030ad3173342391f7369",
+    "replacementId": "light-v5-open-chain-016",
+    "treatment": "Versioned redesign in the same display slot. Previous definition and ID-keyed completion/draft/failure history stay archived; completion is not transferred."
+  },
+  {
+    "id": "light-v4-deduction-open-064",
+    "oldNumber": 286,
+    "newNumber": null,
+    "puzzleHash": "4fc17ad85e6855bed88bb5981b08bf30ca7e27b4b2f2f51310d01acf911ece03",
+    "replacementId": "light-v5-deduction-open-064",
+    "treatment": "Versioned redesign in the same display slot. Previous definition and ID-keyed completion/draft/failure history stay archived; completion is not transferred."
+  },
+  {
+    "id": "light-v4-open-047",
+    "oldNumber": 287,
+    "newNumber": 287,
+    "puzzleHash": "e714565947c49aa0d82908b732c7e9f8eb2a3a18641f20cef149df336e732ad0",
+    "replacementId": null,
+    "treatment": "Retained exact puzzle content and stable ID."
+  },
+  {
+    "id": "light-v3-155",
+    "oldNumber": 288,
+    "newNumber": 288,
+    "puzzleHash": "28fbdc0032a13079a466ad3d74411563bf8f078967369406886e676ce08ff2e1",
+    "replacementId": null,
+    "treatment": "Retained exact puzzle content and stable ID."
+  },
+  {
+    "id": "light-v4-deduction-open-034",
+    "oldNumber": 289,
+    "newNumber": null,
+    "puzzleHash": "5eb502f480588512eb7e7a07e638bf383898e37f0111e0ec07ad140cbdff1269",
+    "replacementId": "light-v5-deduction-open-034",
+    "treatment": "Versioned redesign in the same display slot. Previous definition and ID-keyed completion/draft/failure history stay archived; completion is not transferred."
+  },
+  {
+    "id": "light-v4-open-068",
+    "oldNumber": 290,
+    "newNumber": null,
+    "puzzleHash": "faae791a77d9fdc3e822f3b782dbbaa1d8d38b002d878add0479a015d4e3a351",
+    "replacementId": "light-v5-open-068",
+    "treatment": "Versioned redesign in the same display slot. Previous definition and ID-keyed completion/draft/failure history stay archived; completion is not transferred."
+  },
+  {
+    "id": "light-v4-portal-048",
+    "oldNumber": 291,
+    "newNumber": null,
+    "puzzleHash": "e4bf707607fb420ac61b8711fc397468541d5ef5544b091c6ae87d87de7109d8",
+    "replacementId": "light-v5-portal-048",
+    "treatment": "Versioned redesign in the same display slot. Previous definition and ID-keyed completion/draft/failure history stay archived; completion is not transferred."
+  },
+  {
+    "id": "light-v4-open-070",
+    "oldNumber": 292,
+    "newNumber": null,
+    "puzzleHash": "9441bc0ef967e1f9a241a836c0977bb0b0422ab91b8cb5e16fce1edbfd09f29d",
+    "replacementId": "light-v5-open-070",
+    "treatment": "Versioned redesign in the same display slot. Previous definition and ID-keyed completion/draft/failure history stay archived; completion is not transferred."
+  },
+  {
+    "id": "light-v4-deduction-pilot-return",
+    "oldNumber": 293,
+    "newNumber": 293,
+    "puzzleHash": "9f04c89caf32b7b036c6ebcf491b5e7edb3d972596957c134c12d8cd1bd718de",
+    "replacementId": null,
+    "treatment": "Retained exact puzzle content and stable ID."
+  },
+  {
+    "id": "light-v4-open-069",
+    "oldNumber": 294,
+    "newNumber": null,
+    "puzzleHash": "9b812ce237c84ff5469149d927cc66316d08b74edbecb2539bfa576656918a98",
+    "replacementId": "light-v5-open-069",
+    "treatment": "Versioned redesign in the same display slot. Previous definition and ID-keyed completion/draft/failure history stay archived; completion is not transferred."
+  },
+  {
+    "id": "light-v3-163",
+    "oldNumber": 295,
+    "newNumber": 295,
+    "puzzleHash": "94bfeab7bfaa68631e29ff4fe25e05e39b935fdd03c9b502ceb492013464229c",
+    "replacementId": null,
+    "treatment": "Retained exact puzzle content and stable ID."
+  },
+  {
+    "id": "light-v3-107",
+    "oldNumber": 296,
+    "newNumber": 296,
+    "puzzleHash": "17527089c4c5effa17fa2f0be1a1808d32a46ae4ae7c0db54c8d9484dccd5212",
+    "replacementId": null,
+    "treatment": "Retained exact puzzle content and stable ID."
+  },
+  {
+    "id": "light-v4-deduction-symmetry-12-base",
+    "oldNumber": 297,
+    "newNumber": null,
+    "puzzleHash": "01a913a29663227f0cf1050734c4e8196635b5554c9110307e35e3ccfeb43a1c",
+    "replacementId": "light-v5-deduction-symmetry-12-base",
+    "treatment": "Versioned redesign in the same display slot. Previous definition and ID-keyed completion/draft/failure history stay archived; completion is not transferred."
+  },
+  {
+    "id": "light-v3-185",
+    "oldNumber": 298,
+    "newNumber": 298,
+    "puzzleHash": "b3f9e0c976b5764b72aa2da5bd405fb9a1a6bee39a404c88495dfc21353ac533",
+    "replacementId": null,
+    "treatment": "Retained exact puzzle content and stable ID."
+  },
+  {
+    "id": "light-v4-open-314",
+    "oldNumber": 299,
+    "newNumber": null,
+    "puzzleHash": "75cb9851a1c48edec6a23aef781a8f97633b56c9fe1e7e1c2ba9cf8ae732e036",
+    "replacementId": "light-v5-open-314",
+    "treatment": "Versioned redesign in the same display slot. Previous definition and ID-keyed completion/draft/failure history stay archived; completion is not transferred."
+  },
+  {
+    "id": "light-v3-105",
+    "oldNumber": 300,
+    "newNumber": 300,
+    "puzzleHash": "f7699160347fbb88512edb31837b850e2c7fe04a55a8a9b8f11f1cf7f5cb69d7",
+    "replacementId": null,
+    "treatment": "Retained exact puzzle content and stable ID."
+  },
+  {
+    "id": "light-v4-deduction-four-05",
+    "oldNumber": 301,
+    "newNumber": null,
+    "puzzleHash": "11397561f5333a4fa146b7e07cf7fe54e36ff2c44d99158df43b039b4efa3374",
+    "replacementId": "light-v5-deduction-four-05",
+    "treatment": "Versioned redesign in the same display slot. Previous definition and ID-keyed completion/draft/failure history stay archived; completion is not transferred."
+  },
+  {
+    "id": "light-v4-portal-072",
+    "oldNumber": 302,
+    "newNumber": null,
+    "puzzleHash": "28dd854bf4d46872ed5e95f94ec5ebb05694b2e702b65b0219535b422a7defd8",
+    "replacementId": "light-v5-portal-072",
+    "treatment": "Versioned redesign in the same display slot. Previous definition and ID-keyed completion/draft/failure history stay archived; completion is not transferred."
+  },
+  {
+    "id": "light-v3-193",
+    "oldNumber": 303,
+    "newNumber": 303,
+    "puzzleHash": "ab2583717b89bc4a03292e29c72010dd445f6b108d33778c6d0c2aa600609282",
+    "replacementId": null,
+    "treatment": "Retained exact puzzle content and stable ID."
+  },
+  {
+    "id": "light-v4-portal-061",
+    "oldNumber": 304,
+    "newNumber": null,
+    "puzzleHash": "2271179ec130c7ef102178bf34fc57d162fec2d926e01b851cff48f30e02d40b",
+    "replacementId": "light-v5-portal-061",
+    "treatment": "Versioned redesign in the same display slot. Previous definition and ID-keyed completion/draft/failure history stay archived; completion is not transferred."
+  },
+  {
+    "id": "light-v3-199",
+    "oldNumber": 305,
+    "newNumber": 305,
+    "puzzleHash": "6f2942b818884d806a24001b40c142b0ea1a7c3e4db50463bf7238ed984782f8",
+    "replacementId": null,
+    "treatment": "Retained exact puzzle content and stable ID."
+  },
+  {
+    "id": "light-v3-135",
+    "oldNumber": 306,
+    "newNumber": 306,
+    "puzzleHash": "f8cf9fa57b791e8ad5ac436a61f08363dfcf45864236407afd05f371a910223b",
+    "replacementId": null,
+    "treatment": "Retained exact puzzle content and stable ID."
+  },
+  {
+    "id": "light-v3-85",
+    "oldNumber": 307,
+    "newNumber": null,
+    "puzzleHash": "3eb67eb9a7268708f78351b5d547598c80cf19ee2f7c1026d597a45b76ee9b3f",
+    "replacementId": "light-v5-legacy-85",
+    "treatment": "Versioned redesign in the same display slot. Previous definition and ID-keyed completion/draft/failure history stay archived; completion is not transferred."
+  },
+  {
+    "id": "light-v4-deduction-open-026",
+    "oldNumber": 308,
+    "newNumber": null,
+    "puzzleHash": "b10c0d8d6ff126298c137341b45f38470e75010f01e13bff755850bd5b40894c",
+    "replacementId": "light-v5-deduction-open-026",
+    "treatment": "Versioned redesign in the same display slot. Previous definition and ID-keyed completion/draft/failure history stay archived; completion is not transferred."
+  },
+  {
+    "id": "light-v3-137",
+    "oldNumber": 309,
+    "newNumber": 309,
+    "puzzleHash": "e630ff306fbcb5c0ee20639643076e03ceea035e9c6e348be2ceda04cc440b57",
+    "replacementId": null,
+    "treatment": "Retained exact puzzle content and stable ID."
+  },
+  {
+    "id": "light-v4-deduction-open-037",
+    "oldNumber": 310,
+    "newNumber": null,
+    "puzzleHash": "8d3e99dc4a5ac5068b56ae2ecb8d7fbd549394d9fad760156c78520d773c45ae",
+    "replacementId": "light-v5-deduction-open-037",
+    "treatment": "Versioned redesign in the same display slot. Previous definition and ID-keyed completion/draft/failure history stay archived; completion is not transferred."
+  },
+  {
+    "id": "light-v4-deduction-four-06",
+    "oldNumber": 311,
+    "newNumber": null,
+    "puzzleHash": "902e0a767a25e659132f986d472b81da45d914ee9540fcc0c7309d15db5919f2",
+    "replacementId": "light-v5-deduction-four-06",
+    "treatment": "Versioned redesign in the same display slot. Previous definition and ID-keyed completion/draft/failure history stay archived; completion is not transferred."
+  },
+  {
+    "id": "light-v4-deduction-open-039",
+    "oldNumber": 312,
+    "newNumber": null,
+    "puzzleHash": "ffe781642cec5149d36ee8afc6158abe18de465721d14b68b9418c7edfb0f2a8",
+    "replacementId": "light-v5-deduction-open-039",
+    "treatment": "Versioned redesign in the same display slot. Previous definition and ID-keyed completion/draft/failure history stay archived; completion is not transferred."
+  },
+  {
+    "id": "light-v4-legacy-190-labels",
+    "oldNumber": 313,
+    "newNumber": 313,
+    "puzzleHash": "64d62e67a642a9bd71315d1b07d00439c519f0f91e2e51e285cad9b5556bbd15",
+    "replacementId": null,
+    "treatment": "Retained exact puzzle content and stable ID."
+  },
+  {
+    "id": "light-v3-198",
+    "oldNumber": 314,
+    "newNumber": null,
+    "puzzleHash": "6373ad18aff702678d2023abfe7f1144c5116cb9611129368ba452a0e0cf00d9",
+    "replacementId": "light-v5-legacy-198",
+    "treatment": "Versioned redesign in the same display slot. Previous definition and ID-keyed completion/draft/failure history stay archived; completion is not transferred."
+  },
+  {
+    "id": "light-v3-100",
+    "oldNumber": 315,
+    "newNumber": null,
+    "puzzleHash": "d286a005840b82fe1567fb06b8fbe4527a4ab6f2ec8cf6816dedde140377b69f",
+    "replacementId": "light-v5-legacy-100",
+    "treatment": "Versioned redesign in the same display slot. Previous definition and ID-keyed completion/draft/failure history stay archived; completion is not transferred."
+  },
+  {
+    "id": "light-v4-deduction-open-024",
+    "oldNumber": 316,
+    "newNumber": null,
+    "puzzleHash": "795a5e602af63a53b94c009bed32a4694f8f4a853b575cd115baf08207351d4a",
+    "replacementId": "light-v5-deduction-open-024",
+    "treatment": "Versioned redesign in the same display slot. Previous definition and ID-keyed completion/draft/failure history stay archived; completion is not transferred."
+  },
+  {
+    "id": "light-v4-deduction-four-13",
+    "oldNumber": 317,
+    "newNumber": null,
+    "puzzleHash": "5ddc2c4bcc6d2c365fe2982dd1539ca585ec0174571881420da818d32132b18a",
+    "replacementId": "light-v5-deduction-four-13",
+    "treatment": "Versioned redesign in the same display slot. Previous definition and ID-keyed completion/draft/failure history stay archived; completion is not transferred."
+  },
+  {
+    "id": "light-v3-96",
+    "oldNumber": 318,
+    "newNumber": 318,
+    "puzzleHash": "8ca7cda5f2d889502a2d361d57d8e8c290ac1503eafcd7668bb2085645857d1d",
+    "replacementId": null,
+    "treatment": "Retained exact puzzle content and stable ID."
+  },
+  {
+    "id": "light-v4-open-hard-002",
+    "oldNumber": 319,
+    "newNumber": 319,
+    "puzzleHash": "70666c51711e1034f30e310afa43fccdab9a02a9dd8727ec073b38af914c3732",
+    "replacementId": null,
+    "treatment": "Retained exact puzzle content and stable ID."
+  },
+  {
+    "id": "light-v4-open-hard-pair-3",
+    "oldNumber": 320,
+    "newNumber": 320,
+    "puzzleHash": "87f086c0e7876f022090a2b828cf437dff733f78395349405da27820d81aa01d",
+    "replacementId": null,
+    "treatment": "Retained exact puzzle content and stable ID."
+  },
+  {
+    "id": "light-v3-134",
+    "oldNumber": 321,
+    "newNumber": 321,
+    "puzzleHash": "9adce34a0e25d0d633336abb7a607427d6fae6ee240c6f529c378273737afafa",
+    "replacementId": null,
+    "treatment": "Retained exact puzzle content and stable ID."
+  },
+  {
+    "id": "light-v4-open-chain-019",
+    "oldNumber": 322,
+    "newNumber": null,
+    "puzzleHash": "c107075be13ba4b408f054db40b58298f68ca87b6505c4709a7d7fe7134a9ef9",
+    "replacementId": "light-v5-open-chain-019",
+    "treatment": "Versioned redesign in the same display slot. Previous definition and ID-keyed completion/draft/failure history stay archived; completion is not transferred."
+  },
+  {
+    "id": "light-v4-deduction-four-08",
+    "oldNumber": 323,
+    "newNumber": null,
+    "puzzleHash": "12baf60bb94e802b35c2a87dcaa8e7da86b959dd4daaff02b878534a51d599fd",
+    "replacementId": "light-v5-deduction-four-08-reauthored",
+    "treatment": "Versioned redesign in the same display slot. Previous definition and ID-keyed completion/draft/failure history stay archived; completion is not transferred."
+  },
+  {
+    "id": "light-v4-deduction-windows-07",
+    "oldNumber": 324,
+    "newNumber": null,
+    "puzzleHash": "0027c17144a212f479931392506f8ce592c4d3b73a274e1c251044f458b6b738",
+    "replacementId": "light-v5-deduction-windows-07",
+    "treatment": "Versioned redesign in the same display slot. Previous definition and ID-keyed completion/draft/failure history stay archived; completion is not transferred."
+  },
+  {
+    "id": "light-v4-portal-067",
+    "oldNumber": 325,
+    "newNumber": null,
+    "puzzleHash": "ba5b35a6f96311bc21a26faa69660b5171553a10e34c3244ca14d59f8c2edfd1",
+    "replacementId": "light-v5-portal-067",
+    "treatment": "Versioned redesign in the same display slot. Previous definition and ID-keyed completion/draft/failure history stay archived; completion is not transferred."
+  },
+  {
+    "id": "light-v3-120",
+    "oldNumber": 326,
+    "newNumber": null,
+    "puzzleHash": "72e166cfe5c6edea3fef2e1bce77e8993fa8790086f56e17c5c34f093a01e0e9",
+    "replacementId": "light-v5-legacy-120",
+    "treatment": "Versioned redesign in the same display slot. Previous definition and ID-keyed completion/draft/failure history stay archived; completion is not transferred."
+  },
+  {
+    "id": "light-v4-deduction-windows-03",
+    "oldNumber": 327,
+    "newNumber": null,
+    "puzzleHash": "bbf949a69c6ab49840eaa4f0a1f8df8994503874592c95481cb4504f46a0ae50",
+    "replacementId": "light-v5-deduction-windows-03-reauthored",
+    "treatment": "Versioned redesign in the same display slot. Previous definition and ID-keyed completion/draft/failure history stay archived; completion is not transferred."
+  },
+  {
+    "id": "light-v3-200",
+    "oldNumber": 328,
+    "newNumber": null,
+    "puzzleHash": "fa5cd569d98ca65e6c7bc95c514f7d170e1ed1e1e0b1560c3f00d2156d95269f",
+    "replacementId": "light-v5-legacy-200",
+    "treatment": "Versioned redesign in the same display slot. Previous definition and ID-keyed completion/draft/failure history stay archived; completion is not transferred."
+  },
+  {
+    "id": "light-v4-portal-071",
+    "oldNumber": 329,
+    "newNumber": null,
+    "puzzleHash": "d23f6eb57b64ac265ff23cd6badb9a4511cf043e3044f60824b514f2e7d133ba",
+    "replacementId": "light-v5-portal-071",
+    "treatment": "Versioned redesign in the same display slot. Previous definition and ID-keyed completion/draft/failure history stay archived; completion is not transferred."
+  },
+  {
+    "id": "light-v4-portal-077",
+    "oldNumber": 330,
+    "newNumber": null,
+    "puzzleHash": "f440addcc143adfda7252350ff68b71e16f2564cd6f897830835b49d17396c3c",
+    "replacementId": "light-v5-portal-077",
+    "treatment": "Versioned redesign in the same display slot. Previous definition and ID-keyed completion/draft/failure history stay archived; completion is not transferred."
+  },
+  {
+    "id": "light-v4-portal-066",
+    "oldNumber": 331,
+    "newNumber": null,
+    "puzzleHash": "22eec427992e26e9b4cdb2b9fd621d6d1f2ea33c1e3ead57385f3b1eb5d679f6",
+    "replacementId": "light-v5-portal-066",
+    "treatment": "Versioned redesign in the same display slot. Previous definition and ID-keyed completion/draft/failure history stay archived; completion is not transferred."
+  },
+  {
+    "id": "light-v4-deduction-symmetry-06-filter",
+    "oldNumber": 332,
+    "newNumber": null,
+    "puzzleHash": "23389942e36abf8baf273fd290c51b8694e680c0274453bedc794f4d1e02c0e6",
+    "replacementId": "light-v5-deduction-symmetry-06-filter",
+    "treatment": "Versioned redesign in the same display slot. Previous definition and ID-keyed completion/draft/failure history stay archived; completion is not transferred."
+  },
+  {
+    "id": "light-v4-deduction-windows-12",
+    "oldNumber": 333,
+    "newNumber": null,
+    "puzzleHash": "1668a3606835feccf0f17e69b34cfb7557d40ba0be717d8c977a595df12ad1b8",
+    "replacementId": "light-v5-deduction-windows-12",
+    "treatment": "Versioned redesign in the same display slot. Previous definition and ID-keyed completion/draft/failure history stay archived; completion is not transferred."
+  },
+  {
+    "id": "light-v4-deduction-four-07",
+    "oldNumber": 334,
+    "newNumber": null,
+    "puzzleHash": "fe73894de1b6e8fc62c3d22e4c05512d6092cf171a0739c66e18c2d767f2890b",
+    "replacementId": "light-v5-deduction-four-07-reauthored",
+    "treatment": "Versioned redesign in the same display slot. Previous definition and ID-keyed completion/draft/failure history stay archived; completion is not transferred."
+  },
+  {
+    "id": "light-v4-deduction-four-14",
+    "oldNumber": 335,
+    "newNumber": null,
+    "puzzleHash": "f3b643cad64c4666093ada40c181add7c710e29646012ed2f837b86e6f0be807",
+    "replacementId": "light-v5-deduction-four-14",
+    "treatment": "Versioned redesign in the same display slot. Previous definition and ID-keyed completion/draft/failure history stay archived; completion is not transferred."
+  },
+  {
+    "id": "light-v4-portal-074",
+    "oldNumber": 336,
+    "newNumber": null,
+    "puzzleHash": "925cb7c9a1cd3313b46cdb669f09271dad1f677384ce68b53b01f81a53645b07",
+    "replacementId": "light-v5-portal-074",
+    "treatment": "Versioned redesign in the same display slot. Previous definition and ID-keyed completion/draft/failure history stay archived; completion is not transferred."
+  },
+  {
+    "id": "light-v3-109",
+    "oldNumber": 337,
+    "newNumber": null,
+    "puzzleHash": "8332f2f3da5dce57a4ebdb1d6673eeec8574961a2ac55985e412dbbf873d8423",
+    "replacementId": "light-v5-legacy-109",
+    "treatment": "Versioned redesign in the same display slot. Previous definition and ID-keyed completion/draft/failure history stay archived; completion is not transferred."
+  },
+  {
+    "id": "light-v4-deduction-symmetry-12-filter",
+    "oldNumber": 338,
+    "newNumber": null,
+    "puzzleHash": "de01f742912cedb3b09ceede7d27b845e07b0b8a7cf6b4f47d4b16d98fece259",
+    "replacementId": "light-v5-deduction-symmetry-12-filter",
+    "treatment": "Versioned redesign in the same display slot. Previous definition and ID-keyed completion/draft/failure history stay archived; completion is not transferred."
+  },
+  {
+    "id": "light-v3-192",
+    "oldNumber": 339,
+    "newNumber": 339,
+    "puzzleHash": "1496d02006fe92f86a58900ba6e698250b9b1ec8b3566d92acf34761f0926bf3",
+    "replacementId": null,
+    "treatment": "Retained exact puzzle content and stable ID."
+  },
+  {
+    "id": "light-v4-open-hard-pair-1",
+    "oldNumber": 340,
+    "newNumber": 340,
+    "puzzleHash": "710e008e31b783cf1bb183f16ac60584057e1a813cf4f0eea59ba8b6bf256aa9",
+    "replacementId": null,
+    "treatment": "Retained exact puzzle content and stable ID."
+  },
+  {
+    "id": "light-v3-194",
+    "oldNumber": 341,
+    "newNumber": 341,
+    "puzzleHash": "d61495bf20e8d84353c75e8055f9e5fa7c81bc002df64c712c1047c7762a6732",
+    "replacementId": null,
+    "treatment": "Retained exact puzzle content and stable ID."
+  },
+  {
+    "id": "light-v4-deduction-four-10",
+    "oldNumber": 342,
+    "newNumber": null,
+    "puzzleHash": "2d4c343eb1044c732a2e002238aaeb2eeb118e0f166b3ab015fd601b0cf8419b",
+    "replacementId": "light-v5-deduction-four-10",
+    "treatment": "Versioned redesign in the same display slot. Previous definition and ID-keyed completion/draft/failure history stay archived; completion is not transferred."
+  },
+  {
+    "id": "light-v4-deduction-windows-06",
+    "oldNumber": 343,
+    "newNumber": null,
+    "puzzleHash": "0f8d0cdda23ca2fa21ab9b298c7ef3e56bf17078272c6853ce8a1140ef85e997",
+    "replacementId": "light-v5-deduction-windows-06",
+    "treatment": "Versioned redesign in the same display slot. Previous definition and ID-keyed completion/draft/failure history stay archived; completion is not transferred."
+  },
+  {
+    "id": "light-v4-deduction-four-03",
+    "oldNumber": 344,
+    "newNumber": null,
+    "puzzleHash": "4a8c32b2c6174eab1ffbebff67f89d6acb2e950efced0190ac8574482f280fae",
+    "replacementId": "light-v5-deduction-four-03",
+    "treatment": "Versioned redesign in the same display slot. Previous definition and ID-keyed completion/draft/failure history stay archived; completion is not transferred."
+  },
+  {
+    "id": "light-v4-deduction-four-09",
+    "oldNumber": 345,
+    "newNumber": null,
+    "puzzleHash": "82734204a581490bbc900c8efd6311d6b2f1e0278af6d237c077d69a14ac6efa",
+    "replacementId": "light-v5-deduction-four-09-reauthored",
+    "treatment": "Versioned redesign in the same display slot. Previous definition and ID-keyed completion/draft/failure history stay archived; completion is not transferred."
+  },
+  {
+    "id": "light-v3-141",
+    "oldNumber": 346,
+    "newNumber": null,
+    "puzzleHash": "1c9227433f0ecb54ae02905dcea4c4343edd5c1c189f49092ea148e69c1813b5",
+    "replacementId": "light-v5-legacy-141",
+    "treatment": "Versioned redesign in the same display slot. Previous definition and ID-keyed completion/draft/failure history stay archived; completion is not transferred."
+  },
+  {
+    "id": "light-v3-98",
+    "oldNumber": 347,
+    "newNumber": 347,
+    "puzzleHash": "c3cd4ef754fc419cdb1c0797a0d05a65ec1d6b21f2bd83508ddbe2639d5b7b4d",
+    "replacementId": null,
+    "treatment": "Retained exact puzzle content and stable ID."
+  },
+  {
+    "id": "light-v3-147",
+    "oldNumber": 348,
+    "newNumber": null,
+    "puzzleHash": "e865ab1f224cae3f2a5b7d8adfc20ed1bbe3ac5f8eb43f9bde44f92d7ff93881",
+    "replacementId": "light-v5-legacy-147",
+    "treatment": "Versioned redesign in the same display slot. Previous definition and ID-keyed completion/draft/failure history stay archived; completion is not transferred."
+  },
+  {
+    "id": "light-v4-open-hard-003",
+    "oldNumber": 349,
+    "newNumber": 349,
+    "puzzleHash": "77a7b083021477b34d5da58f91abb0e58b3e798085fa09b54dc19e2693b8bbc0",
+    "replacementId": null,
+    "treatment": "Retained exact puzzle content and stable ID."
+  },
+  {
+    "id": "light-v4-portal-801",
+    "oldNumber": 350,
+    "newNumber": null,
+    "puzzleHash": "eb4f9bdd21d37a61acb56f6543483637b60cafd6917cd17337624ad9d9a9d100",
+    "replacementId": "light-v5-portal-801",
+    "treatment": "Versioned redesign in the same display slot. Previous definition and ID-keyed completion/draft/failure history stay archived; completion is not transferred."
+  },
+  {
+    "id": "light-v4-deduction-four-04",
+    "oldNumber": 351,
+    "newNumber": null,
+    "puzzleHash": "bd4965173f902b8befa85abb1aacf0699fe52f68a41a2234f7c8045e6fb50799",
+    "replacementId": "light-v5-deduction-four-04",
+    "treatment": "Versioned redesign in the same display slot. Previous definition and ID-keyed completion/draft/failure history stay archived; completion is not transferred."
+  },
+  {
+    "id": "light-v3-140",
+    "oldNumber": 352,
+    "newNumber": 352,
+    "puzzleHash": "7e049f7945c14586b1f6ccdc517ca6fe3e1810aabcdcc01668bd658ccca27f16",
+    "replacementId": null,
+    "treatment": "Retained exact puzzle content and stable ID."
+  },
+  {
+    "id": "light-v4-deduction-four-12",
+    "oldNumber": 353,
+    "newNumber": null,
+    "puzzleHash": "ccac21bcc70c139e77c319bb80b55fff18885046a56614c2d99d107353acd8bb",
+    "replacementId": "light-v5-deduction-four-12-reauthored",
+    "treatment": "Versioned redesign in the same display slot. Previous definition and ID-keyed completion/draft/failure history stay archived; completion is not transferred."
+  },
+  {
+    "id": "light-v4-portal-079",
+    "oldNumber": 354,
+    "newNumber": null,
+    "puzzleHash": "8f7b57e6806d46c446f684e246f1b5db402c20c66d82b07c5db0f9a26dcb6034",
+    "replacementId": "light-v5-portal-079",
+    "treatment": "Versioned redesign in the same display slot. Previous definition and ID-keyed completion/draft/failure history stay archived; completion is not transferred."
+  },
+  {
+    "id": "light-v4-deduction-open-038",
+    "oldNumber": 355,
+    "newNumber": null,
+    "puzzleHash": "5327792f895267f536b5fedbe0e7cd408b2cb0c8275c25d17ca96dcbbefeb129",
+    "replacementId": "light-v5-deduction-open-038-reauthored",
+    "treatment": "Versioned redesign in the same display slot. Previous definition and ID-keyed completion/draft/failure history stay archived; completion is not transferred."
+  },
+  {
+    "id": "light-v4-portal-090",
+    "oldNumber": 356,
+    "newNumber": null,
+    "puzzleHash": "48ac9e1173500b9d0307249d1dea30ae6eee0973fc4071f7efabf986748cf9a7",
+    "replacementId": "light-v5-portal-090",
+    "treatment": "Versioned redesign in the same display slot. Previous definition and ID-keyed completion/draft/failure history stay archived; completion is not transferred."
+  },
+  {
+    "id": "light-v3-138",
+    "oldNumber": 357,
+    "newNumber": 357,
+    "puzzleHash": "89d594d72df148a72dc727c922f740c7b7fb02b01f9a7cb76fc45ddcc2887d69",
+    "replacementId": null,
+    "treatment": "Retained exact puzzle content and stable ID."
+  },
+  {
+    "id": "light-v3-178",
+    "oldNumber": 358,
+    "newNumber": 358,
+    "puzzleHash": "309751f5b0d64377a1135e7c39c343d93e35544d53386f028c0b3eeb69a4600d",
+    "replacementId": null,
+    "treatment": "Retained exact puzzle content and stable ID."
+  },
+  {
+    "id": "light-v3-136",
+    "oldNumber": 359,
+    "newNumber": null,
+    "puzzleHash": "3fa62dcabf4aa2ff043792504bae184118f19a6be08ed44ada467e1f6d53c941",
+    "replacementId": "light-v5-legacy-136",
+    "treatment": "Versioned redesign in the same display slot. Previous definition and ID-keyed completion/draft/failure history stay archived; completion is not transferred."
+  },
+  {
+    "id": "light-v4-deduction-open-007",
+    "oldNumber": 360,
+    "newNumber": null,
+    "puzzleHash": "52b87c8ba16ff20154f837947f4735c382c12ddfe77d2b429a3138aca00d99ad",
+    "replacementId": "light-v5-deduction-open-007",
+    "treatment": "Versioned redesign in the same display slot. Previous definition and ID-keyed completion/draft/failure history stay archived; completion is not transferred."
+  },
+  {
+    "id": "light-v4-portal-069",
+    "oldNumber": 361,
+    "newNumber": null,
+    "puzzleHash": "a157f95ab219e3d095adba4ef3e08ffdbcb48582ced6b2062d5d04806093b3c0",
+    "replacementId": "light-v5-portal-069",
+    "treatment": "Versioned redesign in the same display slot. Previous definition and ID-keyed completion/draft/failure history stay archived; completion is not transferred."
+  },
+  {
+    "id": "light-v3-121",
+    "oldNumber": 362,
+    "newNumber": null,
+    "puzzleHash": "e5dda12f769c17840e67cc544cf66d21fe5699c04fab135a79ea53ef28dd5e70",
+    "replacementId": "light-v5-legacy-121",
+    "treatment": "Versioned redesign in the same display slot. Previous definition and ID-keyed completion/draft/failure history stay archived; completion is not transferred."
+  },
+  {
+    "id": "light-v4-open-hard-pair-4",
+    "oldNumber": 363,
+    "newNumber": 363,
+    "puzzleHash": "b805e87499fb6d4eaefe25104499e247561f276b73686be5f2140ceef51a1224",
+    "replacementId": null,
+    "treatment": "Retained exact puzzle content and stable ID."
+  },
+  {
+    "id": "light-v4-portal-078",
+    "oldNumber": 364,
+    "newNumber": null,
+    "puzzleHash": "8f5fa9dc1fe494d0e23af102d06da410213fe8d835f1dd33550c6bc61d7907d5",
+    "replacementId": "light-v5-portal-078",
+    "treatment": "Versioned redesign in the same display slot. Previous definition and ID-keyed completion/draft/failure history stay archived; completion is not transferred."
+  },
+  {
+    "id": "light-v4-deduction-windows-10",
+    "oldNumber": 365,
+    "newNumber": null,
+    "puzzleHash": "bb28b27a969b7368f42084acb3d7de8492acc8ab7052475b17a849f4bd351dea",
+    "replacementId": "light-v5-deduction-windows-10",
+    "treatment": "Versioned redesign in the same display slot. Previous definition and ID-keyed completion/draft/failure history stay archived; completion is not transferred."
+  },
+  {
+    "id": "light-v4-open-hard-001",
+    "oldNumber": 366,
+    "newNumber": 366,
+    "puzzleHash": "1d6f665f65cc916eae6f92257f9475ec0b565265481b319c200cbc4330c23c20",
+    "replacementId": null,
+    "treatment": "Retained exact puzzle content and stable ID."
+  },
+  {
+    "id": "light-v3-57",
+    "oldNumber": 367,
+    "newNumber": null,
+    "puzzleHash": "b1f467ffabb821943673a1a20594f0c948aa6a40378b7dd114c9a6cb1f3d65fc",
+    "replacementId": "light-v5-legacy-57",
+    "treatment": "Versioned redesign in the same display slot. Previous definition and ID-keyed completion/draft/failure history stay archived; completion is not transferred."
+  },
+  {
+    "id": "light-v4-open-hard-last-1",
+    "oldNumber": 368,
+    "newNumber": 368,
+    "puzzleHash": "c7c9230ef12fff4ee0f11d0ddf48ab3b1b84fc0cfaecaef35ef6e3e74b27ef9b",
+    "replacementId": null,
+    "treatment": "Retained exact puzzle content and stable ID."
+  },
+  {
+    "id": "light-v4-deduction-windows-11",
+    "oldNumber": 369,
+    "newNumber": null,
+    "puzzleHash": "ac3c8b1193b71063aa50c3eaba565f6811fcd12fedcee157a09e4a6dd713945c",
+    "replacementId": "light-v5-deduction-windows-11",
+    "treatment": "Versioned redesign in the same display slot. Previous definition and ID-keyed completion/draft/failure history stay archived; completion is not transferred."
+  },
+  {
+    "id": "light-v4-portal-062",
+    "oldNumber": 370,
+    "newNumber": null,
+    "puzzleHash": "279d40b976cb30dbd2dac5df5729ee56bc7796b88256b52e4b2734c13c3a34ea",
+    "replacementId": "light-v5-portal-062",
+    "treatment": "Versioned redesign in the same display slot. Previous definition and ID-keyed completion/draft/failure history stay archived; completion is not transferred."
+  },
+  {
+    "id": "light-v4-deduction-open-023",
+    "oldNumber": 371,
+    "newNumber": null,
+    "puzzleHash": "acae0175e7e8e07439188d26ed34fed60f79db9e8bf37ab985f7e6551a19248d",
+    "replacementId": "light-v5-deduction-open-023",
+    "treatment": "Versioned redesign in the same display slot. Previous definition and ID-keyed completion/draft/failure history stay archived; completion is not transferred."
+  },
+  {
+    "id": "light-v4-portal-084",
+    "oldNumber": 372,
+    "newNumber": null,
+    "puzzleHash": "fe73502c559332b8afad3a749723466a8c6e774f0389504957e0700b884f9961",
+    "replacementId": "light-v5-portal-084",
+    "treatment": "Versioned redesign in the same display slot. Previous definition and ID-keyed completion/draft/failure history stay archived; completion is not transferred."
+  },
+  {
+    "id": "light-v4-open-hard-last-2-gate",
+    "oldNumber": 373,
+    "newNumber": 373,
+    "puzzleHash": "b0108cff2bc3cacc4ab3d38a1612a8a7b1978879ea01b3d9ee5a6004276f08dd",
+    "replacementId": null,
+    "treatment": "Retained exact puzzle content and stable ID."
+  },
+  {
+    "id": "light-v4-portal-073",
+    "oldNumber": 374,
+    "newNumber": null,
+    "puzzleHash": "5c3c77a885ece144c42012b962b3f31c4296ba8a4aa164cd627cdcc7bf6d7e5d",
+    "replacementId": "light-v5-portal-073-reauthored",
+    "treatment": "Versioned redesign in the same display slot. Previous definition and ID-keyed completion/draft/failure history stay archived; completion is not transferred."
+  },
+  {
+    "id": "light-v4-portal-065",
+    "oldNumber": 375,
+    "newNumber": null,
+    "puzzleHash": "68d380017225f17e574e0973db2758f2894327cdca05c6174425a15e46a60981",
+    "replacementId": "light-v5-portal-065",
+    "treatment": "Versioned redesign in the same display slot. Previous definition and ID-keyed completion/draft/failure history stay archived; completion is not transferred."
+  },
+  {
+    "id": "light-v4-portal-070",
+    "oldNumber": 376,
+    "newNumber": null,
+    "puzzleHash": "8725e964a123268e74f6cfc422f94330f264f52827dd11efe92a7248932962a8",
+    "replacementId": "light-v5-portal-070",
+    "treatment": "Versioned redesign in the same display slot. Previous definition and ID-keyed completion/draft/failure history stay archived; completion is not transferred."
+  },
+  {
+    "id": "light-v4-deduction-open-006",
+    "oldNumber": 377,
+    "newNumber": null,
+    "puzzleHash": "4d7f5dd3057c1cbbac8d4477842397ce1126dd2be62ef6e0ec1d0074f1b14fbd",
+    "replacementId": "light-v5-deduction-open-006-reauthored",
+    "treatment": "Versioned redesign in the same display slot. Previous definition and ID-keyed completion/draft/failure history stay archived; completion is not transferred."
+  },
+  {
+    "id": "light-v4-legacy-180-labels",
+    "oldNumber": 378,
+    "newNumber": 378,
+    "puzzleHash": "74b5347f09bf732c5ab01d287018b90f64b71610e4f77815e5555e2433acf8d9",
+    "replacementId": null,
+    "treatment": "Retained exact puzzle content and stable ID."
+  },
+  {
+    "id": "light-v4-portal-080",
+    "oldNumber": 379,
+    "newNumber": null,
+    "puzzleHash": "2d64ed4c358e19732d047867c830d834b9386cd32c0b9d60daa1becf30b43999",
+    "replacementId": "light-v5-portal-080",
+    "treatment": "Versioned redesign in the same display slot. Previous definition and ID-keyed completion/draft/failure history stay archived; completion is not transferred."
+  },
+  {
+    "id": "light-v3-132",
+    "oldNumber": 380,
+    "newNumber": 380,
+    "puzzleHash": "d7af8826579442b0d01b7b5e9b2d800a116a36a958bb29847a7188c830b7f7b5",
+    "replacementId": null,
+    "treatment": "Retained exact puzzle content and stable ID."
+  },
+  {
+    "id": "light-v4-deduction-open-027",
+    "oldNumber": 381,
+    "newNumber": null,
+    "puzzleHash": "65e9a15a5cd3b430c8deee63ca498aa5bfd56eb32f4eb73079345ef8347661f2",
+    "replacementId": "light-v5-deduction-open-027",
+    "treatment": "Versioned redesign in the same display slot. Previous definition and ID-keyed completion/draft/failure history stay archived; completion is not transferred."
+  },
+  {
+    "id": "light-v3-92",
+    "oldNumber": 382,
+    "newNumber": null,
+    "puzzleHash": "5b45f30d011d03a0e7964cd7ff2789efb24d4e4eaf36d240fdc4f3d0bfcfe8bd",
+    "replacementId": "light-v5-legacy-92",
+    "treatment": "Versioned redesign in the same display slot. Previous definition and ID-keyed completion/draft/failure history stay archived; completion is not transferred."
+  },
+  {
+    "id": "light-v3-191",
+    "oldNumber": 383,
+    "newNumber": null,
+    "puzzleHash": "59cdf366a5bab4f753d42b8eb5435275e3088458cf2526c2083991a9d3d0d35d",
+    "replacementId": "light-v5-legacy-191",
+    "treatment": "Versioned redesign in the same display slot. Previous definition and ID-keyed completion/draft/failure history stay archived; completion is not transferred."
+  },
+  {
+    "id": "light-v4-portal-064",
+    "oldNumber": 384,
+    "newNumber": null,
+    "puzzleHash": "7ad52b8a17fef5a82ca5ee0e1083ec5b1438b26606feb6c04e9203f5083670be",
+    "replacementId": "light-v5-portal-064",
+    "treatment": "Versioned redesign in the same display slot. Previous definition and ID-keyed completion/draft/failure history stay archived; completion is not transferred."
+  },
+  {
+    "id": "light-v4-deduction-open-005",
+    "oldNumber": 385,
+    "newNumber": null,
+    "puzzleHash": "d3da0c0160e1b06e35d3dee6b4fae2739a59567077c2dc876d0b7e1aeb72b296",
+    "replacementId": "light-v5-deduction-open-005",
+    "treatment": "Versioned redesign in the same display slot. Previous definition and ID-keyed completion/draft/failure history stay archived; completion is not transferred."
+  },
+  {
+    "id": "light-v4-portal-063",
+    "oldNumber": 386,
+    "newNumber": null,
+    "puzzleHash": "67637debead52804d8fa024b3f4c888462a8788f171dde9d728acb8e84ff8ad5",
+    "replacementId": "light-v5-portal-063",
+    "treatment": "Versioned redesign in the same display slot. Previous definition and ID-keyed completion/draft/failure history stay archived; completion is not transferred."
+  },
+  {
+    "id": "light-v3-123",
+    "oldNumber": 387,
+    "newNumber": null,
+    "puzzleHash": "ffc776d29298eda91a2c2ac63c9451f84008a684efe5a630bb75deb66afbbf40",
+    "replacementId": "light-v5-legacy-123",
+    "treatment": "Versioned redesign in the same display slot. Previous definition and ID-keyed completion/draft/failure history stay archived; completion is not transferred."
+  },
+  {
+    "id": "light-v4-deduction-four-11",
+    "oldNumber": 388,
+    "newNumber": null,
+    "puzzleHash": "c880492d06b24288334d082b65c607915f8c864827dbd37430be81083442a3fe",
+    "replacementId": "light-v5-deduction-four-11",
+    "treatment": "Versioned redesign in the same display slot. Previous definition and ID-keyed completion/draft/failure history stay archived; completion is not transferred."
+  },
+  {
+    "id": "light-v3-133",
+    "oldNumber": 389,
+    "newNumber": 389,
+    "puzzleHash": "408780aaf08dab8b77698c3ddfb0ab7c292de213484cdd99df950930f0548610",
+    "replacementId": null,
+    "treatment": "Retained exact puzzle content and stable ID."
+  },
+  {
+    "id": "light-v4-portal-800",
+    "oldNumber": 390,
+    "newNumber": null,
+    "puzzleHash": "a5ec2125b2d0cebe158dbdfc9eb28fbf9ed7fcc934a61beaf59bcf8a4e2d01aa",
+    "replacementId": "light-v5-portal-800",
+    "treatment": "Versioned redesign in the same display slot. Previous definition and ID-keyed completion/draft/failure history stay archived; completion is not transferred."
+  },
+  {
+    "id": "light-v4-deduction-windows-09",
+    "oldNumber": 391,
+    "newNumber": null,
+    "puzzleHash": "2ed5283b8eb43042faa4df9ced06488bddbadf89d209cad1a2f5c1ac6faf196d",
+    "replacementId": "light-v5-deduction-windows-09",
+    "treatment": "Versioned redesign in the same display slot. Previous definition and ID-keyed completion/draft/failure history stay archived; completion is not transferred."
+  },
+  {
+    "id": "light-v4-portal-081",
+    "oldNumber": 392,
+    "newNumber": null,
+    "puzzleHash": "5912911c164711dfe257473befa4389b91c2c560b38b7c605bec1d6a57086dab",
+    "replacementId": "light-v5-portal-081",
+    "treatment": "Versioned redesign in the same display slot. Previous definition and ID-keyed completion/draft/failure history stay archived; completion is not transferred."
+  },
+  {
+    "id": "light-v3-196",
+    "oldNumber": 393,
+    "newNumber": null,
+    "puzzleHash": "a7f6c991b1e7d7b2b5ad7af098fc3eaa516a1c5689f1bc5094b2bc75ee40b443",
+    "replacementId": "light-v5-legacy-196",
+    "treatment": "Versioned redesign in the same display slot. Previous definition and ID-keyed completion/draft/failure history stay archived; completion is not transferred."
+  },
+  {
+    "id": "light-v4-deduction-open-036",
+    "oldNumber": 394,
+    "newNumber": null,
+    "puzzleHash": "c9bfb446ee7caef339bfffc19ab1015a5b3b6cdaeda2fe894a670afe8301e022",
+    "replacementId": "light-v5-deduction-open-036",
+    "treatment": "Versioned redesign in the same display slot. Previous definition and ID-keyed completion/draft/failure history stay archived; completion is not transferred."
+  },
+  {
+    "id": "light-v3-111",
+    "oldNumber": 395,
+    "newNumber": 395,
+    "puzzleHash": "253481749a73db44fe4a1a15563651b73dd8336a07af69f8f2ad5bd51dc36939",
+    "replacementId": null,
+    "treatment": "Retained exact puzzle content and stable ID."
+  },
+  {
+    "id": "light-v4-deduction-open-012",
+    "oldNumber": 396,
+    "newNumber": null,
+    "puzzleHash": "2e5cb1fac44e07b971c6687d6bc9dcce88556bdb7e0586907b3a1a3bbcbf173e",
+    "replacementId": "light-v5-deduction-open-012",
+    "treatment": "Versioned redesign in the same display slot. Previous definition and ID-keyed completion/draft/failure history stay archived; completion is not transferred."
+  },
+  {
+    "id": "light-v4-open-hard-pair-2",
+    "oldNumber": 397,
+    "newNumber": 397,
+    "puzzleHash": "8b14f9f92bef4ec7480a073a8321da1ba1159eff4632832dd6e2d3b273f5b959",
+    "replacementId": null,
+    "treatment": "Retained exact puzzle content and stable ID."
+  },
+  {
+    "id": "light-v3-130",
+    "oldNumber": 398,
+    "newNumber": null,
+    "puzzleHash": "b8c3ec565aecaeafbc69ac54da598eccd7e49e6c05bf52ba6713828077dee87a",
+    "replacementId": "light-v5-legacy-130",
+    "treatment": "Versioned redesign in the same display slot. Previous definition and ID-keyed completion/draft/failure history stay archived; completion is not transferred."
+  },
+  {
+    "id": "light-v4-deduction-open-025",
+    "oldNumber": 399,
+    "newNumber": null,
+    "puzzleHash": "c770b35b736a865120196379dd3f1e6afd5cef882018638f0fc192c9ba679470",
+    "replacementId": "light-v5-deduction-open-025",
+    "treatment": "Versioned redesign in the same display slot. Previous definition and ID-keyed completion/draft/failure history stay archived; completion is not transferred."
+  },
+  {
+    "id": "light-v4-open-hard-chain-1",
+    "oldNumber": 400,
+    "newNumber": null,
+    "puzzleHash": "6cf283a2a1ad462801119c9c917d6d6b1d7b40cb5122fe8d59f4dce7c129bbb7",
+    "replacementId": "light-v5-open-hard-chain-1",
+    "treatment": "Versioned redesign in the same display slot. Previous definition and ID-keyed completion/draft/failure history stay archived; completion is not transferred."
+  },
+  {
+    "id": "light-v4-portal-937",
+    "oldNumber": 401,
+    "newNumber": null,
+    "puzzleHash": "3745165484be2c5b539d4a20cd930f48f52de7dc72b7e2de9cba6c7727bcfc32",
+    "replacementId": "light-v5-portal-937",
+    "treatment": "Versioned redesign in the same display slot. Previous definition and ID-keyed completion/draft/failure history stay archived; completion is not transferred."
+  },
+  {
+    "id": "light-v4-portal-915",
+    "oldNumber": 402,
+    "newNumber": null,
+    "puzzleHash": "0d226fde9dcc495399069fe946cc33640f4d893944738f8cb85953c3317a6759",
+    "replacementId": "light-v5-portal-915",
+    "treatment": "Versioned redesign in the same display slot. Previous definition and ID-keyed completion/draft/failure history stay archived; completion is not transferred."
+  },
+  {
+    "id": "light-v4-deduction-master-window-15-1",
+    "oldNumber": 403,
+    "newNumber": null,
+    "puzzleHash": "addaed8b3b246c127e4c32e8c2c5f9f9c131993d5d90962f4febbf095801d002",
+    "replacementId": "light-v5-deduction-master-window-15-1",
+    "treatment": "Versioned redesign in the same display slot. Previous definition and ID-keyed completion/draft/failure history stay archived; completion is not transferred."
+  },
+  {
+    "id": "light-v4-portal-903",
+    "oldNumber": 404,
+    "newNumber": null,
+    "puzzleHash": "3e96acc0788fd57dfc490a97b731b93939828e5860a9b0e1570a5a780130456f",
+    "replacementId": "light-v5-portal-903",
+    "treatment": "Versioned redesign in the same display slot. Previous definition and ID-keyed completion/draft/failure history stay archived; completion is not transferred."
+  },
+  {
+    "id": "light-v4-open-hard-chain-2",
+    "oldNumber": 405,
+    "newNumber": null,
+    "puzzleHash": "699a98dcfd7dac37f05f45f9b756234c63a8198ac849542e0cb8911ad406c9ca",
+    "replacementId": "light-v5-open-hard-chain-2",
+    "treatment": "Versioned redesign in the same display slot. Previous definition and ID-keyed completion/draft/failure history stay archived; completion is not transferred."
+  },
+  {
+    "id": "light-v4-master-reserve-011",
+    "oldNumber": 406,
+    "newNumber": null,
+    "puzzleHash": "e2f58778e04b15b01e9473673778ce88d54627e4bd22058f2a5a0dbda34a214c",
+    "replacementId": "light-v5-master-reserve-011",
+    "treatment": "Versioned redesign in the same display slot. Previous definition and ID-keyed completion/draft/failure history stay archived; completion is not transferred."
+  },
+  {
+    "id": "light-v4-deduction-master-window-16-1",
+    "oldNumber": 407,
+    "newNumber": null,
+    "puzzleHash": "adbf8dbf2c08f4c714f7d48ca5c42203655e8a616455dd4c346dce8f57648460",
+    "replacementId": "light-v5-deduction-master-window-16-1-reauthored",
+    "treatment": "Versioned redesign in the same display slot. Previous definition and ID-keyed completion/draft/failure history stay archived; completion is not transferred."
+  },
+  {
+    "id": "light-v4-deduction-master-window-21-1",
+    "oldNumber": 408,
+    "newNumber": null,
+    "puzzleHash": "0f6f881c135a0422041ec7c7182de7e0de28a5c703c70f21d2b4aa7795dc4fbc",
+    "replacementId": "light-v5-deduction-master-window-21-1",
+    "treatment": "Versioned redesign in the same display slot. Previous definition and ID-keyed completion/draft/failure history stay archived; completion is not transferred."
+  },
+  {
+    "id": "light-v4-master-reserve-017",
+    "oldNumber": 409,
+    "newNumber": null,
+    "puzzleHash": "0b0da95f178ade85faaf6c32c60a2b3155f7e2a618f15841ecb41699a799ffac",
+    "replacementId": "light-v5-master-reserve-017",
+    "treatment": "Versioned redesign in the same display slot. Previous definition and ID-keyed completion/draft/failure history stay archived; completion is not transferred."
+  },
+  {
+    "id": "light-v4-master-reserve-014",
+    "oldNumber": 410,
+    "newNumber": null,
+    "puzzleHash": "b8e7377675ef153539e5a919583e113afa5165107c0a12be02e6076ad24dcdfd",
+    "replacementId": "light-v5-master-reserve-014",
+    "treatment": "Versioned redesign in the same display slot. Previous definition and ID-keyed completion/draft/failure history stay archived; completion is not transferred."
+  },
+  {
+    "id": "light-v4-portal-924",
+    "oldNumber": 411,
+    "newNumber": null,
+    "puzzleHash": "edf06c8b686bd622c09aa778fa659d0b94b3a52b9ae90e907282660c69b0e0d1",
+    "replacementId": "light-v5-portal-924",
+    "treatment": "Versioned redesign in the same display slot. Previous definition and ID-keyed completion/draft/failure history stay archived; completion is not transferred."
+  },
+  {
+    "id": "light-v4-portal-950",
+    "oldNumber": 412,
+    "newNumber": null,
+    "puzzleHash": "0d22ee82131e998491ca84e1796b84f457031f34ce3934cc9dd412658fc59d43",
+    "replacementId": "light-v5-portal-950",
+    "treatment": "Versioned redesign in the same display slot. Previous definition and ID-keyed completion/draft/failure history stay archived; completion is not transferred."
+  },
+  {
+    "id": "light-v4-master-islands-001",
+    "oldNumber": 413,
+    "newNumber": null,
+    "puzzleHash": "866dbc25ad0094378bd8d20e09b160ef788461c65297df66cc1170e53cc29a34",
+    "replacementId": "light-v5-master-islands-001",
+    "treatment": "Versioned redesign in the same display slot. Previous definition and ID-keyed completion/draft/failure history stay archived; completion is not transferred."
+  },
+  {
+    "id": "light-v4-portal-938",
+    "oldNumber": 414,
+    "newNumber": null,
+    "puzzleHash": "8c4b1304552f564ca7a28bd1131e7587452da9e5bd42d83c49982b90cb497f01",
+    "replacementId": "light-v5-portal-938",
+    "treatment": "Versioned redesign in the same display slot. Previous definition and ID-keyed completion/draft/failure history stay archived; completion is not transferred."
+  },
+  {
+    "id": "light-v4-portal-1100",
+    "oldNumber": 415,
+    "newNumber": null,
+    "puzzleHash": "40c5acf6a976c40cf6f1459bd513f1bbb2df60970265de592552ca018943fa76",
+    "replacementId": "light-v5-portal-1100",
+    "treatment": "Versioned redesign in the same display slot. Previous definition and ID-keyed completion/draft/failure history stay archived; completion is not transferred."
+  },
+  {
+    "id": "light-v4-portal-086",
+    "oldNumber": 416,
+    "newNumber": null,
+    "puzzleHash": "7f76aac7a67a086d68aa8316e873a7e7f2f6d144d64c6e35fc4ee85b19a462d7",
+    "replacementId": "light-v5-portal-086",
+    "treatment": "Versioned redesign in the same display slot. Previous definition and ID-keyed completion/draft/failure history stay archived; completion is not transferred."
+  },
+  {
+    "id": "light-v4-deduction-master-window-22-1",
+    "oldNumber": 417,
+    "newNumber": null,
+    "puzzleHash": "e11387e88597a287dbd249261c5104da67cbd7e2102dfc344e0a2540950cdfae",
+    "replacementId": "light-v5-deduction-master-window-22-1",
+    "treatment": "Versioned redesign in the same display slot. Previous definition and ID-keyed completion/draft/failure history stay archived; completion is not transferred."
+  },
+  {
+    "id": "light-v4-portal-917",
+    "oldNumber": 418,
+    "newNumber": null,
+    "puzzleHash": "67f3d03ed2473d8794815a747e8470d2c0b0189665fcce18562568f48437baf3",
+    "replacementId": "light-v5-portal-917",
+    "treatment": "Versioned redesign in the same display slot. Previous definition and ID-keyed completion/draft/failure history stay archived; completion is not transferred."
+  },
+  {
+    "id": "light-v4-master-006",
+    "oldNumber": 419,
+    "newNumber": null,
+    "puzzleHash": "7eec7c7e8dfdaa31de737d53cba19a5cbcefabf997457debb3c768777571903a",
+    "replacementId": "light-v5-master-006",
+    "treatment": "Versioned redesign in the same display slot. Previous definition and ID-keyed completion/draft/failure history stay archived; completion is not transferred."
+  },
+  {
+    "id": "light-v4-portal-916",
+    "oldNumber": 420,
+    "newNumber": null,
+    "puzzleHash": "8e13eef931a5bde2015c29a461ce0b397ab61d81598e92046fb1d72a5fbcb2cc",
+    "replacementId": "light-v5-portal-916",
+    "treatment": "Versioned redesign in the same display slot. Previous definition and ID-keyed completion/draft/failure history stay archived; completion is not transferred."
+  },
+  {
+    "id": "light-v4-master-reserve-008",
+    "oldNumber": 421,
+    "newNumber": null,
+    "puzzleHash": "86f66df3e6591f0aa13cf8b2f5ea98d743e54065cb2f2359973a11c764685ce4",
+    "replacementId": "light-v5-master-reserve-008",
+    "treatment": "Versioned redesign in the same display slot. Previous definition and ID-keyed completion/draft/failure history stay archived; completion is not transferred."
+  },
+  {
+    "id": "light-v4-deduction-master-window-23-1",
+    "oldNumber": 422,
+    "newNumber": null,
+    "puzzleHash": "aadb3597f059e865eba7ebd5672dd1cf1dbee1c162adcd96bea715748ce285e8",
+    "replacementId": "light-v5-deduction-master-window-23-1",
+    "treatment": "Versioned redesign in the same display slot. Previous definition and ID-keyed completion/draft/failure history stay archived; completion is not transferred."
+  },
+  {
+    "id": "light-v4-open-hard-third-4-gate",
+    "oldNumber": 423,
+    "newNumber": 423,
+    "puzzleHash": "11151b3cb6c8626164af6f1f95feacf350eaaf2d2ffe332957a54f3359e0dde5",
+    "replacementId": null,
+    "treatment": "Retained exact puzzle content and stable ID."
+  },
+  {
+    "id": "light-v4-master-reserve-015",
+    "oldNumber": 424,
+    "newNumber": null,
+    "puzzleHash": "f951473fbe3a75b28c8678b5f2f26c534409e3e17926596e55f0197031c7dc3d",
+    "replacementId": "light-v5-master-reserve-015",
+    "treatment": "Versioned redesign in the same display slot. Previous definition and ID-keyed completion/draft/failure history stay archived; completion is not transferred."
+  },
+  {
+    "id": "light-v4-master-005",
+    "oldNumber": 425,
+    "newNumber": null,
+    "puzzleHash": "6afff343adb939b68cf87df2747e440fe966b188778111b94633b26e22887150",
+    "replacementId": "light-v5-master-005",
+    "treatment": "Versioned redesign in the same display slot. Previous definition and ID-keyed completion/draft/failure history stay archived; completion is not transferred."
+  },
+  {
+    "id": "light-v4-deduction-master-window-6-1",
+    "oldNumber": 426,
+    "newNumber": null,
+    "puzzleHash": "32d23b91be361ae4f580132e0fee2146bf8999f36b13df8d35253c8e27a62f47",
+    "replacementId": "light-v5-deduction-master-window-6-1-reauthored",
+    "treatment": "Versioned redesign in the same display slot. Previous definition and ID-keyed completion/draft/failure history stay archived; completion is not transferred."
+  },
+  {
+    "id": "light-v4-deduction-master-window-19-1",
+    "oldNumber": 427,
+    "newNumber": null,
+    "puzzleHash": "f6666dfa1a07da4cf9d972b3a674e2c6c40b1d2c66df8df421eb5bab1c0bba7d",
+    "replacementId": "light-v5-deduction-master-window-19-1",
+    "treatment": "Versioned redesign in the same display slot. Previous definition and ID-keyed completion/draft/failure history stay archived; completion is not transferred."
+  },
+  {
+    "id": "light-v4-open-hard-third-2",
+    "oldNumber": 428,
+    "newNumber": null,
+    "puzzleHash": "9a2302c29f639eab9e4f38bb77df82de011466d5a25bd014e8eb0d025f6003ca",
+    "replacementId": "light-v5-open-hard-third-2",
+    "treatment": "Versioned redesign in the same display slot. Previous definition and ID-keyed completion/draft/failure history stay archived; completion is not transferred."
+  },
+  {
+    "id": "light-v4-portal-904",
+    "oldNumber": 429,
+    "newNumber": null,
+    "puzzleHash": "b78ba53dfa61ddcf50ee15f7f33e07d60bc5e7b5f4b0e6a6238efd7044f83caf",
+    "replacementId": "light-v5-portal-904",
+    "treatment": "Versioned redesign in the same display slot. Previous definition and ID-keyed completion/draft/failure history stay archived; completion is not transferred."
+  },
+  {
+    "id": "light-v4-master-contrast-003",
+    "oldNumber": 430,
+    "newNumber": null,
+    "puzzleHash": "2976b0ce27dfc04ae618f1f3da2fc456e430f5c3a4d7bc469e025322c768214e",
+    "replacementId": "light-v5-master-contrast-003",
+    "treatment": "Versioned redesign in the same display slot. Previous definition and ID-keyed completion/draft/failure history stay archived; completion is not transferred."
+  },
+  {
+    "id": "light-v4-deduction-master-window-9-1",
+    "oldNumber": 431,
+    "newNumber": null,
+    "puzzleHash": "2d38d024c96b0ee74cca9107edc6eba658261f094d0e52f6b261f6a551929b8d",
+    "replacementId": "light-v5-deduction-master-window-9-1",
+    "treatment": "Versioned redesign in the same display slot. Previous definition and ID-keyed completion/draft/failure history stay archived; completion is not transferred."
+  },
+  {
+    "id": "light-v4-portal-941",
+    "oldNumber": 432,
+    "newNumber": null,
+    "puzzleHash": "8c1124e8ad6ddf52a3d24f183a2bdba3109a221ce7976c74b0f40cfbc6db37b5",
+    "replacementId": "light-v5-portal-941",
+    "treatment": "Versioned redesign in the same display slot. Previous definition and ID-keyed completion/draft/failure history stay archived; completion is not transferred."
+  },
+  {
+    "id": "light-v4-portal-876",
+    "oldNumber": 433,
+    "newNumber": null,
+    "puzzleHash": "9183696c551fadc005788654b407a2897d9e7ff7ab520076e3d0ccc0ece05fb3",
+    "replacementId": "light-v5-portal-876",
+    "treatment": "Versioned redesign in the same display slot. Previous definition and ID-keyed completion/draft/failure history stay archived; completion is not transferred."
+  },
+  {
+    "id": "light-v4-master-reserve-013",
+    "oldNumber": 434,
+    "newNumber": null,
+    "puzzleHash": "870a6a2637e59483ade39768e260a28cfd2ba538fd1cc7d25ed90faf356a5913",
+    "replacementId": "light-v5-master-reserve-013",
+    "treatment": "Versioned redesign in the same display slot. Previous definition and ID-keyed completion/draft/failure history stay archived; completion is not transferred."
+  },
+  {
+    "id": "light-v4-deduction-master-window-17-1",
+    "oldNumber": 435,
+    "newNumber": null,
+    "puzzleHash": "455ca87e9c3e19d9bc4ef9d9444c6a506987075042e169f5905c8380d3d74044",
+    "replacementId": "light-v5-deduction-master-window-17-1",
+    "treatment": "Versioned redesign in the same display slot. Previous definition and ID-keyed completion/draft/failure history stay archived; completion is not transferred."
+  },
+  {
+    "id": "light-v4-portal-962",
+    "oldNumber": 436,
+    "newNumber": null,
+    "puzzleHash": "d4ec4a32fad2254b7f5cc67c0664ac001c9ce19296eae9267be2b7a2f338e173",
+    "replacementId": "light-v5-portal-962",
+    "treatment": "Versioned redesign in the same display slot. Previous definition and ID-keyed completion/draft/failure history stay archived; completion is not transferred."
+  },
+  {
+    "id": "light-v4-deduction-master-window-3-1",
+    "oldNumber": 437,
+    "newNumber": null,
+    "puzzleHash": "d04516b15ac0ca9f6b04c861201e451ae289ad3c409712c8e9e3e444d2c508c7",
+    "replacementId": "light-v5-deduction-master-window-3-1-reauthored",
+    "treatment": "Versioned redesign in the same display slot. Previous definition and ID-keyed completion/draft/failure history stay archived; completion is not transferred."
+  },
+  {
+    "id": "light-v4-portal-952",
+    "oldNumber": 438,
+    "newNumber": null,
+    "puzzleHash": "51ea2f69eab983460a769fd1965df8b573deb1258981a0c3aaa35888847edf02",
+    "replacementId": "light-v5-portal-952",
+    "treatment": "Versioned redesign in the same display slot. Previous definition and ID-keyed completion/draft/failure history stay archived; completion is not transferred."
+  },
+  {
+    "id": "light-v4-master-reserve-009",
+    "oldNumber": 439,
+    "newNumber": null,
+    "puzzleHash": "04762de3279ca880096f6bda1f65d86bb0c1ffb187cd2e65992ef9b14e065042",
+    "replacementId": "light-v5-master-reserve-009",
+    "treatment": "Versioned redesign in the same display slot. Previous definition and ID-keyed completion/draft/failure history stay archived; completion is not transferred."
+  },
+  {
+    "id": "light-v4-deduction-master-window-12-1",
+    "oldNumber": 440,
+    "newNumber": null,
+    "puzzleHash": "2782e811166c0685bf03a2985a3c2eb4798b5e5b7cad39198e10cc80c7251080",
+    "replacementId": "light-v5-deduction-master-window-12-1",
+    "treatment": "Versioned redesign in the same display slot. Previous definition and ID-keyed completion/draft/failure history stay archived; completion is not transferred."
+  },
+  {
+    "id": "light-v4-portal-921",
+    "oldNumber": 441,
+    "newNumber": null,
+    "puzzleHash": "232e3f29a1170ea9ef1def99c92269cbec02a6a906ed9ea189da8088a0a5d876",
+    "replacementId": "light-v5-portal-921",
+    "treatment": "Versioned redesign in the same display slot. Previous definition and ID-keyed completion/draft/failure history stay archived; completion is not transferred."
+  },
+  {
+    "id": "light-v4-master-reserve-002",
+    "oldNumber": 442,
+    "newNumber": null,
+    "puzzleHash": "6f53d2acae98e49f19e9984c07e5527b932496414345c6cce4009e649b72500f",
+    "replacementId": "light-v5-master-reserve-002",
+    "treatment": "Versioned redesign in the same display slot. Previous definition and ID-keyed completion/draft/failure history stay archived; completion is not transferred."
+  },
+  {
+    "id": "light-v4-deduction-symmetry-11-filter",
+    "oldNumber": 443,
+    "newNumber": null,
+    "puzzleHash": "a94b36d0c43c74244d33ad236246f0686216f87c5a11e03fcfeecdeebf632789",
+    "replacementId": "light-v5-deduction-symmetry-11-filter",
+    "treatment": "Versioned redesign in the same display slot. Previous definition and ID-keyed completion/draft/failure history stay archived; completion is not transferred."
+  },
+  {
+    "id": "light-v4-portal-936",
+    "oldNumber": 444,
+    "newNumber": null,
+    "puzzleHash": "b788ad03185fab96f2106366b7204f94801e31ab4ff5a7d4b87d8a7ec8d976c5",
+    "replacementId": "light-v5-portal-936",
+    "treatment": "Versioned redesign in the same display slot. Previous definition and ID-keyed completion/draft/failure history stay archived; completion is not transferred."
+  },
+  {
+    "id": "light-v4-portal-939",
+    "oldNumber": 445,
+    "newNumber": null,
+    "puzzleHash": "fb03e6fad255afb8553ee353cccc8da04c9cd41021f71d55906c8b7a1abec8f7",
+    "replacementId": "light-v5-portal-939",
+    "treatment": "Versioned redesign in the same display slot. Previous definition and ID-keyed completion/draft/failure history stay archived; completion is not transferred."
+  },
+  {
+    "id": "light-v4-portal-909",
+    "oldNumber": 446,
+    "newNumber": null,
+    "puzzleHash": "f7054349f5f12f65b5d392b9eb1f52622f2ae06d0139460e1c9ca8f8a64bf163",
+    "replacementId": "light-v5-portal-909",
+    "treatment": "Versioned redesign in the same display slot. Previous definition and ID-keyed completion/draft/failure history stay archived; completion is not transferred."
+  },
+  {
+    "id": "light-v4-open-hard-third-3",
+    "oldNumber": 447,
+    "newNumber": 447,
+    "puzzleHash": "42897057a65a2f6865caf1df914d89fe7a3c7c0be2bfa672e5b0b67bab8988c8",
+    "replacementId": null,
+    "treatment": "Retained exact puzzle content and stable ID."
+  },
+  {
+    "id": "light-v4-portal-944",
+    "oldNumber": 448,
+    "newNumber": null,
+    "puzzleHash": "607ae565af4543b1741a7228e4c9b9dacf84285fae633e0137cc613d4b1683c0",
+    "replacementId": "light-v5-portal-944",
+    "treatment": "Versioned redesign in the same display slot. Previous definition and ID-keyed completion/draft/failure history stay archived; completion is not transferred."
+  },
+  {
+    "id": "light-v4-portal-951",
+    "oldNumber": 449,
+    "newNumber": null,
+    "puzzleHash": "1234facc235d09228e52560cd0904a4b56d4d0f537742d71ed34a9ab5a648a36",
+    "replacementId": "light-v5-portal-951",
+    "treatment": "Versioned redesign in the same display slot. Previous definition and ID-keyed completion/draft/failure history stay archived; completion is not transferred."
+  },
+  {
+    "id": "light-v3-145",
+    "oldNumber": 450,
+    "newNumber": null,
+    "puzzleHash": "ee1b9628cfbea225cafdc8f90f9f5acc1107eb0af6c9d5b0de75797bbf20402e",
+    "replacementId": "light-v5-legacy-145",
+    "treatment": "Versioned redesign in the same display slot. Previous definition and ID-keyed completion/draft/failure history stay archived; completion is not transferred."
+  },
+  {
+    "id": "light-v4-portal-930",
+    "oldNumber": 451,
+    "newNumber": null,
+    "puzzleHash": "4d65726b99470fe285de89eeb53db941d2b7d9b20bb9adbaef3fe742491efe36",
+    "replacementId": "light-v5-portal-930",
+    "treatment": "Versioned redesign in the same display slot. Previous definition and ID-keyed completion/draft/failure history stay archived; completion is not transferred."
+  },
+  {
+    "id": "light-v4-master-reserve-007",
+    "oldNumber": 452,
+    "newNumber": null,
+    "puzzleHash": "ad7fc2b560fd43347de957a3d1354561b4fa93550e497047ebd6d7cb8f7778bc",
+    "replacementId": "light-v5-master-reserve-007",
+    "treatment": "Versioned redesign in the same display slot. Previous definition and ID-keyed completion/draft/failure history stay archived; completion is not transferred."
+  },
+  {
+    "id": "light-v4-deduction-master-window-5-1",
+    "oldNumber": 453,
+    "newNumber": null,
+    "puzzleHash": "51d7e18db97691d53a01f6483250d90afbe9ccc0794c216c2348561b195f5e71",
+    "replacementId": "light-v5-deduction-master-window-5-1",
+    "treatment": "Versioned redesign in the same display slot. Previous definition and ID-keyed completion/draft/failure history stay archived; completion is not transferred."
+  },
+  {
+    "id": "light-v4-portal-956",
+    "oldNumber": 454,
+    "newNumber": null,
+    "puzzleHash": "5f54b7d59648a9a242aa640ca4081be04f94437f394de5040ae4f9370daa44ce",
+    "replacementId": "light-v5-portal-956",
+    "treatment": "Versioned redesign in the same display slot. Previous definition and ID-keyed completion/draft/failure history stay archived; completion is not transferred."
+  },
+  {
+    "id": "light-v4-deduction-master-window-11-1",
+    "oldNumber": 455,
+    "newNumber": null,
+    "puzzleHash": "1abebba5eafc59161e441b9e8bd35c31a88e4c63d782c1f212ee398140e6dbab",
+    "replacementId": "light-v5-deduction-master-window-11-1",
+    "treatment": "Versioned redesign in the same display slot. Previous definition and ID-keyed completion/draft/failure history stay archived; completion is not transferred."
+  },
+  {
+    "id": "light-v4-deduction-master-window-20-1",
+    "oldNumber": 456,
+    "newNumber": null,
+    "puzzleHash": "7768356994d460390288bff4bfc2f92a18befa75ee0b440788bcb600ddfee626",
+    "replacementId": "light-v5-deduction-master-window-20-1",
+    "treatment": "Versioned redesign in the same display slot. Previous definition and ID-keyed completion/draft/failure history stay archived; completion is not transferred."
+  },
+  {
+    "id": "light-v4-master-002",
+    "oldNumber": 457,
+    "newNumber": null,
+    "puzzleHash": "87491eec78fa4470dd3ef14583def8203fec66a292b0ca306768bc922399fdf6",
+    "replacementId": "light-v5-master-002",
+    "treatment": "Versioned redesign in the same display slot. Previous definition and ID-keyed completion/draft/failure history stay archived; completion is not transferred."
+  },
+  {
+    "id": "light-v4-master-reserve-001",
+    "oldNumber": 458,
+    "newNumber": null,
+    "puzzleHash": "b7af98d568918fd3d8ec575a1d72bbbdb157b2226dc46e1055399f058299380b",
+    "replacementId": "light-v5-master-reserve-001",
+    "treatment": "Versioned redesign in the same display slot. Previous definition and ID-keyed completion/draft/failure history stay archived; completion is not transferred."
+  },
+  {
+    "id": "light-v4-portal-955",
+    "oldNumber": 459,
+    "newNumber": null,
+    "puzzleHash": "e76226956a0140f439fe490a6c943abde04a782e722eccf07d74df91515f0e5d",
+    "replacementId": "light-v5-portal-955",
+    "treatment": "Versioned redesign in the same display slot. Previous definition and ID-keyed completion/draft/failure history stay archived; completion is not transferred."
+  },
+  {
+    "id": "light-v4-master-contrast-002",
+    "oldNumber": 460,
+    "newNumber": null,
+    "puzzleHash": "18c11a34f69184578a52bc65b73a36e802553534b866a31f6e04e99e22eb92ea",
+    "replacementId": "light-v5-master-contrast-002",
+    "treatment": "Versioned redesign in the same display slot. Previous definition and ID-keyed completion/draft/failure history stay archived; completion is not transferred."
+  },
+  {
+    "id": "light-v4-portal-087",
+    "oldNumber": 461,
+    "newNumber": null,
+    "puzzleHash": "d3b1f323804bfccb9cda5b1fa3bf8473bc4d1782420dcadf27cb20cbaeff62af",
+    "replacementId": "light-v5-portal-087",
+    "treatment": "Versioned redesign in the same display slot. Previous definition and ID-keyed completion/draft/failure history stay archived; completion is not transferred."
+  },
+  {
+    "id": "light-v4-portal-926",
+    "oldNumber": 462,
+    "newNumber": null,
+    "puzzleHash": "27d66a3730437542f194da0ae2f91a509a66bbcc72a71cc8840bd1cd2340397c",
+    "replacementId": "light-v5-portal-926",
+    "treatment": "Versioned redesign in the same display slot. Previous definition and ID-keyed completion/draft/failure history stay archived; completion is not transferred."
+  },
+  {
+    "id": "light-v4-master-001",
+    "oldNumber": 463,
+    "newNumber": null,
+    "puzzleHash": "1cf8d97360dd3825a44c4ac5a04663dcd5339de048affb5fc8742b1bdecfb595",
+    "replacementId": "light-v5-master-001",
+    "treatment": "Versioned redesign in the same display slot. Previous definition and ID-keyed completion/draft/failure history stay archived; completion is not transferred."
+  },
+  {
+    "id": "light-v4-portal-931",
+    "oldNumber": 464,
+    "newNumber": null,
+    "puzzleHash": "dbc6c0da5befe01418928fbee21a78749fe10b7d297bad56443693bb401f0574",
+    "replacementId": "light-v5-portal-931",
+    "treatment": "Versioned redesign in the same display slot. Previous definition and ID-keyed completion/draft/failure history stay archived; completion is not transferred."
+  },
+  {
+    "id": "light-v4-master-filter-001",
+    "oldNumber": 465,
+    "newNumber": null,
+    "puzzleHash": "90f4ab19803eeb23707633a626d99d95ced45e206c3ad216d01d991bc6fa65f8",
+    "replacementId": "light-v5-master-filter-001",
+    "treatment": "Versioned redesign in the same display slot. Previous definition and ID-keyed completion/draft/failure history stay archived; completion is not transferred."
+  },
+  {
+    "id": "light-v4-deduction-master-window-24-1",
+    "oldNumber": 466,
+    "newNumber": null,
+    "puzzleHash": "9bd17ef198b9778ab4687220706d04dc20b332164605dcda84027894f5e4f88e",
+    "replacementId": "light-v5-deduction-master-window-24-1-reauthored",
+    "treatment": "Versioned redesign in the same display slot. Previous definition and ID-keyed completion/draft/failure history stay archived; completion is not transferred."
+  },
+  {
+    "id": "light-v4-deduction-master-window-10-1",
+    "oldNumber": 467,
+    "newNumber": null,
+    "puzzleHash": "eab8341892891be0f10b9fcb7eb61f73d5a19dfa44a7504e50f829cd6359e990",
+    "replacementId": "light-v5-deduction-master-window-10-1",
+    "treatment": "Versioned redesign in the same display slot. Previous definition and ID-keyed completion/draft/failure history stay archived; completion is not transferred."
+  },
+  {
+    "id": "light-v4-portal-905",
+    "oldNumber": 468,
+    "newNumber": null,
+    "puzzleHash": "4b34f1ef0d7b5e1a9fd1bf1491f35dc0497d301e668f6142547224ada2a85636",
+    "replacementId": "light-v5-portal-905",
+    "treatment": "Versioned redesign in the same display slot. Previous definition and ID-keyed completion/draft/failure history stay archived; completion is not transferred."
+  },
+  {
+    "id": "light-v4-portal-954",
+    "oldNumber": 469,
+    "newNumber": null,
+    "puzzleHash": "dd941f189a5c8ae3fdc11e0ee96d1d23050780a0649a26e2a86e2fb9137ba44f",
+    "replacementId": "light-v5-portal-954",
+    "treatment": "Versioned redesign in the same display slot. Previous definition and ID-keyed completion/draft/failure history stay archived; completion is not transferred."
+  },
+  {
+    "id": "light-v4-deduction-master-detail-2",
+    "oldNumber": 470,
+    "newNumber": null,
+    "puzzleHash": "8f81bcfbf086af7b31404f13366b95c7b367f7e090fc2338fc18f345260d39b9",
+    "replacementId": "light-v5-deduction-master-detail-2",
+    "treatment": "Versioned redesign in the same display slot. Previous definition and ID-keyed completion/draft/failure history stay archived; completion is not transferred."
+  },
+  {
+    "id": "light-v4-master-reserve-004",
+    "oldNumber": 471,
+    "newNumber": null,
+    "puzzleHash": "948f3463507b892f205aee3907202ad6a400aab72f9fbeddbe91cba87cc89bdf",
+    "replacementId": "light-v5-master-reserve-004",
+    "treatment": "Versioned redesign in the same display slot. Previous definition and ID-keyed completion/draft/failure history stay archived; completion is not transferred."
+  },
+  {
+    "id": "light-v3-197",
+    "oldNumber": 472,
+    "newNumber": null,
+    "puzzleHash": "9ca339d09984a2be634bdc12a038e89f41e6d7a78336f51f7392915c1032fad8",
+    "replacementId": "light-v5-legacy-197",
+    "treatment": "Versioned redesign in the same display slot. Previous definition and ID-keyed completion/draft/failure history stay archived; completion is not transferred."
+  },
+  {
+    "id": "light-v4-deduction-master-window-4-1",
+    "oldNumber": 473,
+    "newNumber": null,
+    "puzzleHash": "4b698803742166aca683bf70c1f5a7478b0ea7b5ac0be7c7373536873c32dadf",
+    "replacementId": "light-v5-deduction-master-window-4-1",
+    "treatment": "Versioned redesign in the same display slot. Previous definition and ID-keyed completion/draft/failure history stay archived; completion is not transferred."
+  },
+  {
+    "id": "light-v4-portal-1200",
+    "oldNumber": 474,
+    "newNumber": null,
+    "puzzleHash": "135ae2c34fcd7d5672f80eb8b31e81060279018357a83f1a867d7d98f3c6dd14",
+    "replacementId": "light-v5-portal-1200",
+    "treatment": "Versioned redesign in the same display slot. Previous definition and ID-keyed completion/draft/failure history stay archived; completion is not transferred."
+  },
+  {
+    "id": "light-v4-master-reserve-005",
+    "oldNumber": 475,
+    "newNumber": null,
+    "puzzleHash": "aaa639c0bc526619cc49f758fa4ce26263802d5ddeb91c51166bc059300a4b17",
+    "replacementId": "light-v5-master-reserve-005",
+    "treatment": "Versioned redesign in the same display slot. Previous definition and ID-keyed completion/draft/failure history stay archived; completion is not transferred."
+  },
+  {
+    "id": "light-v4-master-reserve-012",
+    "oldNumber": 476,
+    "newNumber": null,
+    "puzzleHash": "3a0099b790f1584daa0d74196bf1c1839c4682e978ddc41331ecfbe0e830b600",
+    "replacementId": "light-v5-master-reserve-012",
+    "treatment": "Versioned redesign in the same display slot. Previous definition and ID-keyed completion/draft/failure history stay archived; completion is not transferred."
+  },
+  {
+    "id": "light-v4-portal-947",
+    "oldNumber": 477,
+    "newNumber": null,
+    "puzzleHash": "daf3c89a97076d04b1c69c035d9ab691e5b217f7267ccfc8dbdfff3d4b5a52f8",
+    "replacementId": "light-v5-portal-947",
+    "treatment": "Versioned redesign in the same display slot. Previous definition and ID-keyed completion/draft/failure history stay archived; completion is not transferred."
+  },
+  {
+    "id": "light-v4-master-reserve-010",
+    "oldNumber": 478,
+    "newNumber": null,
+    "puzzleHash": "65899d3c88477eed7d3f475f73d18c73770bf3fad469b2e27a9adfb313e802d6",
+    "replacementId": "light-v5-master-reserve-010",
+    "treatment": "Versioned redesign in the same display slot. Previous definition and ID-keyed completion/draft/failure history stay archived; completion is not transferred."
+  },
+  {
+    "id": "light-v4-master-reserve-006",
+    "oldNumber": 479,
+    "newNumber": null,
+    "puzzleHash": "95a1b0687b93c182533075cd39f6238c750c49581976fd77e0a3de9e7ef98cfa",
+    "replacementId": "light-v5-master-reserve-006",
+    "treatment": "Versioned redesign in the same display slot. Previous definition and ID-keyed completion/draft/failure history stay archived; completion is not transferred."
+  },
+  {
+    "id": "light-v4-deduction-master-window-25-1",
+    "oldNumber": 480,
+    "newNumber": null,
+    "puzzleHash": "77b2fd78314ecc0b2c12f52a02797c3e8d317f43bd93f7424abd66d88f5cebae",
+    "replacementId": "light-v5-deduction-master-window-25-1",
+    "treatment": "Versioned redesign in the same display slot. Previous definition and ID-keyed completion/draft/failure history stay archived; completion is not transferred."
+  },
+  {
+    "id": "light-v4-portal-946",
+    "oldNumber": 481,
+    "newNumber": null,
+    "puzzleHash": "db08c76cc1fdb52b758031e5b85c30e6e268fef05afd0bc5c9cd30af9de984bc",
+    "replacementId": "light-v5-portal-946",
+    "treatment": "Versioned redesign in the same display slot. Previous definition and ID-keyed completion/draft/failure history stay archived; completion is not transferred."
+  },
+  {
+    "id": "light-v4-master-003",
+    "oldNumber": 482,
+    "newNumber": null,
+    "puzzleHash": "6f3f8e895754582dcffde225902654df20e89e9b3c6e4cba7252531dfe388e38",
+    "replacementId": "light-v5-master-003",
+    "treatment": "Versioned redesign in the same display slot. Previous definition and ID-keyed completion/draft/failure history stay archived; completion is not transferred."
+  },
+  {
+    "id": "light-v4-deduction-symmetry-08-filter",
+    "oldNumber": 483,
+    "newNumber": null,
+    "puzzleHash": "929d4e01a3ba4542cd4e2e3af65a4d1123579584b1a48445a2ba08d8c7619cb5",
+    "replacementId": "light-v5-deduction-symmetry-08-filter-reauthored",
+    "treatment": "Versioned redesign in the same display slot. Previous definition and ID-keyed completion/draft/failure history stay archived; completion is not transferred."
+  },
+  {
+    "id": "light-v4-portal-912",
+    "oldNumber": 484,
+    "newNumber": null,
+    "puzzleHash": "ada090bad2e7d1e97d54d369182d24867d6cdbab882891b30dfc725baebd330e",
+    "replacementId": "light-v5-portal-912",
+    "treatment": "Versioned redesign in the same display slot. Previous definition and ID-keyed completion/draft/failure history stay archived; completion is not transferred."
+  },
+  {
+    "id": "light-v4-portal-082",
+    "oldNumber": 485,
+    "newNumber": null,
+    "puzzleHash": "411fb5688ed823f586e67a1e2a8a3a7011e20b488f2fc35892589a7eb2e8bc2d",
+    "replacementId": "light-v5-portal-082",
+    "treatment": "Versioned redesign in the same display slot. Previous definition and ID-keyed completion/draft/failure history stay archived; completion is not transferred."
+  },
+  {
+    "id": "light-v4-portal-933",
+    "oldNumber": 486,
+    "newNumber": null,
+    "puzzleHash": "f54e785481a3da63f237dbd5dad1faf56a3a1499a8c0442262dab292d5f9e769",
+    "replacementId": "light-v5-portal-933",
+    "treatment": "Versioned redesign in the same display slot. Previous definition and ID-keyed completion/draft/failure history stay archived; completion is not transferred."
+  },
+  {
+    "id": "light-v4-deduction-master-detail-1",
+    "oldNumber": 487,
+    "newNumber": null,
+    "puzzleHash": "5c736eb627dbcde5b0227df478b8cf2b60a8194cb5ce32321f54feba7da1dbdd",
+    "replacementId": "light-v5-deduction-master-detail-1",
+    "treatment": "Versioned redesign in the same display slot. Previous definition and ID-keyed completion/draft/failure history stay archived; completion is not transferred."
+  },
+  {
+    "id": "light-v4-deduction-master-window-1-1",
+    "oldNumber": 488,
+    "newNumber": null,
+    "puzzleHash": "3bf996979671523819486f7ea9a3919475543148c61f8f83be961bfc88b39a6c",
+    "replacementId": "light-v5-deduction-master-window-1-1-reauthored",
+    "treatment": "Versioned redesign in the same display slot. Previous definition and ID-keyed completion/draft/failure history stay archived; completion is not transferred."
+  },
+  {
+    "id": "light-v4-portal-943",
+    "oldNumber": 489,
+    "newNumber": null,
+    "puzzleHash": "d268d068cad2e61afc918f86406b8ffd557af76db432b1a8e82cee1d5ffec323",
+    "replacementId": "light-v5-portal-943",
+    "treatment": "Versioned redesign in the same display slot. Previous definition and ID-keyed completion/draft/failure history stay archived; completion is not transferred."
+  },
+  {
+    "id": "light-v4-deduction-master-window-18-1",
+    "oldNumber": 490,
+    "newNumber": null,
+    "puzzleHash": "a981688b74f3e9460487595fae6277915513ede05315f75bba123310d30423a9",
+    "replacementId": "light-v5-deduction-master-window-18-1",
+    "treatment": "Versioned redesign in the same display slot. Previous definition and ID-keyed completion/draft/failure history stay archived; completion is not transferred."
+  },
+  {
+    "id": "light-v4-portal-927",
+    "oldNumber": 491,
+    "newNumber": null,
+    "puzzleHash": "b58c7b4bff1d328ae3fb6122a26c50d1152d72786054078e973f0e4b65d230e4",
+    "replacementId": "light-v5-portal-927",
+    "treatment": "Versioned redesign in the same display slot. Previous definition and ID-keyed completion/draft/failure history stay archived; completion is not transferred."
+  },
+  {
+    "id": "light-v4-master-contrast-001",
+    "oldNumber": 492,
+    "newNumber": null,
+    "puzzleHash": "ec4f0d6d873e620feb70a56bb5d2d6e67af3de6e19d91cf5db6b141c61818428",
+    "replacementId": "light-v5-master-contrast-001",
+    "treatment": "Versioned redesign in the same display slot. Previous definition and ID-keyed completion/draft/failure history stay archived; completion is not transferred."
+  },
+  {
+    "id": "light-v4-master-islands-002",
+    "oldNumber": 493,
+    "newNumber": null,
+    "puzzleHash": "5b11ad9149fb38d8bf82391d068c8b402471d1f803cf2993659772d9af8f6a35",
+    "replacementId": "light-v5-master-islands-002",
+    "treatment": "Versioned redesign in the same display slot. Previous definition and ID-keyed completion/draft/failure history stay archived; completion is not transferred."
+  },
+  {
+    "id": "light-v4-portal-034",
+    "oldNumber": 494,
+    "newNumber": null,
+    "puzzleHash": "c13536ce2bd219f88bae74cb6527be724f0bd8ce8fcdb8ce75a2323142535a1a",
+    "replacementId": "light-v5-portal-034",
+    "treatment": "Versioned redesign in the same display slot. Previous definition and ID-keyed completion/draft/failure history stay archived; completion is not transferred."
+  },
+  {
+    "id": "light-v4-deduction-master-window-2-1",
+    "oldNumber": 495,
+    "newNumber": null,
+    "puzzleHash": "00e41c19f429f1310768fead419e857cccc25941a93234b68c16e14dcd0f67ae",
+    "replacementId": "light-v5-deduction-master-window-2-1-reauthored",
+    "treatment": "Versioned redesign in the same display slot. Previous definition and ID-keyed completion/draft/failure history stay archived; completion is not transferred."
+  },
+  {
+    "id": "light-v4-master-reserve-016",
+    "oldNumber": 496,
+    "newNumber": null,
+    "puzzleHash": "b2aed805ee9e6b60cb97f6f9f61ebf3e3d3f72474fa9500d1cc1d43939b12cdd",
+    "replacementId": "light-v5-master-reserve-016",
+    "treatment": "Versioned redesign in the same display slot. Previous definition and ID-keyed completion/draft/failure history stay archived; completion is not transferred."
+  },
+  {
+    "id": "light-v4-portal-949",
+    "oldNumber": 497,
+    "newNumber": null,
+    "puzzleHash": "1f376d0cd0bf5a60e4bbef0e306f14e11c1164cebf92ab2dd447910d69063488",
+    "replacementId": "light-v5-portal-949",
+    "treatment": "Versioned redesign in the same display slot. Previous definition and ID-keyed completion/draft/failure history stay archived; completion is not transferred."
+  },
+  {
+    "id": "light-v4-master-reserve-003",
+    "oldNumber": 498,
+    "newNumber": null,
+    "puzzleHash": "9be87fd5da7491a2ccc9c380d5cec900a32759c85e2b5c27b7a8350802c87bf6",
+    "replacementId": "light-v5-master-reserve-003",
+    "treatment": "Versioned redesign in the same display slot. Previous definition and ID-keyed completion/draft/failure history stay archived; completion is not transferred."
+  },
+  {
+    "id": "light-v4-master-008",
+    "oldNumber": 499,
+    "newNumber": null,
+    "puzzleHash": "fe3fc6c673080b55e3003a0187058b61d5d2f5f182ace3999f0875dab2bd658a",
+    "replacementId": "light-v5-master-008",
+    "treatment": "Versioned redesign in the same display slot. Previous definition and ID-keyed completion/draft/failure history stay archived; completion is not transferred."
+  },
+  {
+    "id": "light-v4-deduction-master-window-13-1",
+    "oldNumber": 500,
+    "newNumber": null,
+    "puzzleHash": "7f39a6f5c472b8698f1f5bce5b039f7600763a4be263a6f24cc4efedf17ab1c5",
+    "replacementId": "light-v5-deduction-master-window-13-1",
+    "treatment": "Versioned redesign in the same display slot. Previous definition and ID-keyed completion/draft/failure history stay archived; completion is not transferred."
+  }
+]

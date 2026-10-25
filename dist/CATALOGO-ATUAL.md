@@ -1,10 +1,10 @@
-# Catálogo da revisão v4 · 25/10/2026
+# Catálogo da revisão v5 · 25/10/2026
 
 ## Escopo
 
-O catálogo da revisão v4 reúne seis jogos: Reflexos (500 níveis), Corte certo (100), ELO (200), PRUMO (200), PACTO (200) e DESVIO (duelo sem campanha numerada). Total de campanha: 1200 níveis. O jogo de gangorra Equilíbrio e o jogo NEXO foram retirados da navegação e dos caminhos de ativação. PRUMO não foi retirado.
+O catálogo da revisão v5 reúne seis jogos: Reflexos (500 níveis), Corte certo (100), ELO (200), PRUMO (200), PACTO (200) e DESVIO (duelo sem campanha numerada). Total de campanha: 1200 níveis. O jogo de gangorra Equilíbrio e o jogo NEXO foram retirados da navegação e dos caminhos de ativação. PRUMO não foi retirado.
 
-**Estado da revisão:** catálogo compilado e validação automatizada dos 500 níveis concluída, conforme [relatório de validação](development/reflexos-v4/validation-report.json). A inspeção em navegador real ainda não foi executada nesta etapa; não se declara publicação nem calibração com jogadores.
+**Estado da revisão:** campanha v5 compilada e validada conforme [relatório de validação](development/reflexos-v5/validation-report.json), com gate editorial de incidência real. Publicação e inspeção em navegador são etapas separadas; nenhuma sessão de jogador é alegada.
 
 O texto “Não é sobre acertar de primeira. É sobre perceber o que muda quando você muda alguma coisa.” e o símbolo associado foram removidos. O rodapé de créditos e o acesso à documentação permanecem.
 
@@ -20,7 +20,7 @@ O texto “Não é sobre acertar de primeira. É sobre perceber o que muda quand
 
 Somente o Básico admite subdivisões de aprendizado. Intermediário, Avançado e Mestre intercalam o repertório existente e os 16 conceitos de composição, sem capítulos temáticos. Os recortes de dez e 50 níveis servem à auditoria da variedade, não acrescentam divisões à interface.
 
-A ideia 7 aparece em 136 Básicos, 97 Intermediários, 90 Avançados e 76 Mestres: 399 fases certificadas por conflito real. Há 335 mapas sem paredes, 109 com poucas paredes e 56 compartimentados. Entre os mapas sem paredes, 327 também têm certificado da ideia 7. As combinações de princípios relacionadas somam 135 / 99 / 100 / 100 por faixa. Os 16 conceitos aparecem em todas as faixas e em cada bloco superior de 50 níveis. A [distribuição detalhada](development/reflexos-v4/README.md) distingue contagens, decisões editoriais e limites.
+A ideia 7 aparece em 136 Básicos, 97 Intermediários, 90 Avançados e 76 Mestres: 399 fases com conflito multicor real. Há 335 mapas sem paredes, dos quais 327 certificados pela ideia 7. Combinações relacionadas: 127 / 91 / 100 / 96 por faixa. Os 16 conceitos aparecem em todas as faixas e em cada bloco superior de 50 níveis. A [distribuição detalhada](development/reflexos-v5/README.md) distingue contagens de provas físicas.
 
 ## Remoção funcional
 
@@ -35,11 +35,17 @@ A ideia 7 aparece em 136 Básicos, 97 Intermediários, 90 Avançados e 76 Mestre
 
 As chaves antigas de progresso, respostas e sessões do navegador não são apagadas ou convertidas em conclusões dos jogos atuais. Sessões históricas não pertencentes ao catálogo ativo conservam inclusive seus históricos de desfazer/refazer. Backups anteriores são históricos e não fazem parte da navegação atual. O armazenamento continua apenas local e não sincroniza entre aparelhos.
 
-Na reorganização de Reflexos, o número de exibição não substitui o identificador estável. Uma fase inalterada deve conservar sua identidade e a correspondência com seu progresso; uma fase nova ou redesenhada não herda conclusão apenas por ocupar a mesma posição. Preferências, histórico e acesso adquirido devem permanecer preservados. O inventário confirma 158 IDs legados mantidos, 42 IDs anteriores fora da seleção e 342 identidades novas. As 200 definições originais e suas correspondências estão arquivadas; nenhum ID antigo é reassociado a um desafio novo. Os [testes de preservação](development/reflexos-v4/progress-validation.json) usam armazenamento simulado, sem acessar saves reais.
+Nesta revisão conservam-se 120 IDs da campanha de 500 e 96 IDs originais v3. Mapas alterados recebem IDs novos, preservando os registros antigos sem transferência artificial de conclusões.
 
-A expansão é de conteúdo e organização. Motor, reflexão, colisões, portais, tolerâncias, condições de vitória, controles, identidade visual e demais jogos permanecem fora do escopo de alteração. A comparação de preservação passou para 97 arquivos de execução e visual, e a alteração de integração foi conferida contra a base autorizada, sem substituir os relatórios históricos.
+A correção é de composição e geometria das fases. Motor, reflexão, colisões, portais, tolerâncias, condições de vitória, controles, identidade visual e demais jogos permanecem fora do escopo de alteração. A comparação atual protege 139 arquivos de execução, visual e arquivos históricos; os quatro arquivos de dados/documentação autorizados são conferidos separadamente, sem substituir hashes antigos.
 
-## Evidência da revisão v4
+## Evidência atual da revisão v5
+
+A campanha v5 conserva 500 fases e corrige a geometria de 380 mapas. As 500 referências foram reproduzidas no motor preservado, com zero reflexão abaixo de 20° entre o feixe incidente e a linha do espelho. O limite é editorial, não uma nova regra de jogo: outras soluções legítimas continuam aceitas. Foram reexecutados 11.752 casos e os testes individuais/cantos ±0,5°. A inspeção em navegador da nova publicação permanece separada destes testes de motor e DOM; não se declara calibração com jogadores. Veja o [registro v5](development/reflexos-v5/README.md).
+
+O arquivo v5 conserva os 500 mapas anteriores integralmente. A proteção de 139 arquivos confirma que motor, controles, sprites e demais jogos permanecem inalterados. Há 88 fases com incidência de referência entre 20° e 30°; nenhuma abaixo 20°. Referências, contraprovas e alternativas completas conhecidas igualmente/menos complexas passaram pelo gate obrigatório. Alternativas locais ou mais longas podem conter incidências menores e são relatadas, não bloqueadas.
+
+## Evidência histórica da revisão v4
 
 - Catálogo integrado: 500 Reflexos em 200 / 100 / 100 / 100; 1200 níveis na coleção.
 - Motor real: 500 soluções, 500 inícios não resolvidos, 11.150 casos, 2254 ordens de disparo da solução e 2156 ordens de disparo de contraprovas com colisão.

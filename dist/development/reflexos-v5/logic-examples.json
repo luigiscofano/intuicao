@@ -1,0 +1,2864 @@
+{
+  "passed": true,
+  "scope": "Actual engine counterfactuals: local successes are incompatible jointly; a different complete configuration wins without collision. These examples are not a uniqueness or human difficulty proof.",
+  "examples": [
+    {
+      "id": "light-v5-legacy-147",
+      "number": 348,
+      "title": "Voltar para chegar por outro lado",
+      "claim": "Colisão de segmentos físicos na configuração registrada; não há linha fictícia entre portais.",
+      "localAngles": [
+        0,
+        29.6,
+        27.1
+      ],
+      "isolated": [
+        {
+          "sourceIndex": 0,
+          "color": "gold",
+          "world": {
+            "rays": [
+              {
+                "color": "gold",
+                "source": {
+                  "x": 180,
+                  "y": 191,
+                  "angle": 0,
+                  "color": "gold"
+                },
+                "segments": [
+                  {
+                    "a": {
+                      "x": 180,
+                      "y": 191
+                    },
+                    "b": {
+                      "x": 534,
+                      "y": 191
+                    },
+                    "startDistance": 0,
+                    "endDistance": 354
+                  },
+                  {
+                    "a": {
+                      "x": 236.000001,
+                      "y": 350
+                    },
+                    "b": {
+                      "x": 339,
+                      "y": 350
+                    },
+                    "startDistance": 354,
+                    "endDistance": 456.999999
+                  }
+                ],
+                "reflections": [],
+                "teleports": [
+                  {
+                    "point": {
+                      "x": 534,
+                      "y": 191
+                    },
+                    "from": {
+                      "x": 550,
+                      "y": 191
+                    },
+                    "to": {
+                      "x": 220,
+                      "y": 350
+                    },
+                    "exit": {
+                      "x": 236.000001,
+                      "y": 350
+                    },
+                    "distance": 354,
+                    "portalId": "Ga",
+                    "pairId": "Gb",
+                    "direction": {
+                      "x": 1,
+                      "y": 0
+                    }
+                  }
+                ],
+                "bounces": 0,
+                "status": "target",
+                "totalDistance": 456.999999
+              }
+            ],
+            "collisions": [],
+            "status": "target",
+            "totalDistance": 456.999999,
+            "bounces": 0
+          }
+        },
+        {
+          "sourceIndex": 1,
+          "color": "blue",
+          "world": {
+            "rays": [
+              {
+                "color": "blue",
+                "source": {
+                  "x": 599,
+                  "y": 269,
+                  "angle": 180,
+                  "color": "blue"
+                },
+                "segments": [
+                  {
+                    "a": {
+                      "x": 599,
+                      "y": 269
+                    },
+                    "b": {
+                      "x": 266,
+                      "y": 269.00000000000006
+                    },
+                    "startDistance": 0,
+                    "endDistance": 333
+                  },
+                  {
+                    "a": {
+                      "x": 563.999999,
+                      "y": 70
+                    },
+                    "b": {
+                      "x": 461,
+                      "y": 70.00000000000001
+                    },
+                    "startDistance": 333,
+                    "endDistance": 435.999999
+                  }
+                ],
+                "reflections": [],
+                "teleports": [
+                  {
+                    "point": {
+                      "x": 266,
+                      "y": 269.00000000000006
+                    },
+                    "from": {
+                      "x": 250,
+                      "y": 269
+                    },
+                    "to": {
+                      "x": 580,
+                      "y": 70
+                    },
+                    "exit": {
+                      "x": 563.999999,
+                      "y": 70
+                    },
+                    "distance": 333,
+                    "portalId": "Ba",
+                    "pairId": "Bb",
+                    "direction": {
+                      "x": -1,
+                      "y": 1.2246467991473532e-16
+                    }
+                  }
+                ],
+                "bounces": 0,
+                "status": "target",
+                "totalDistance": 435.999999
+              }
+            ],
+            "collisions": [],
+            "status": "target",
+            "totalDistance": 435.999999,
+            "bounces": 0
+          }
+        },
+        {
+          "sourceIndex": 2,
+          "color": "pink",
+          "world": {
+            "rays": [
+              {
+                "color": "pink",
+                "source": {
+                  "x": 630,
+                  "y": 390,
+                  "angle": 180,
+                  "color": "pink"
+                },
+                "segments": [
+                  {
+                    "a": {
+                      "x": 630,
+                      "y": 390
+                    },
+                    "b": {
+                      "x": 470,
+                      "y": 390
+                    },
+                    "startDistance": 0,
+                    "endDistance": 160
+                  },
+                  {
+                    "a": {
+                      "x": 469.99999948795715,
+                      "y": 389.9999991410401
+                    },
+                    "b": {
+                      "x": 392.3095319652976,
+                      "y": 259.6730274086502
+                    },
+                    "startDistance": 160,
+                    "endDistance": 311.72649176997595
+                  },
+                  {
+                    "a": {
+                      "x": 362.57178079158916,
+                      "y": 157.7692369341588
+                    },
+                    "b": {
+                      "x": 340.0817279498091,
+                      "y": 120.0418223048706
+                    },
+                    "startDistance": 311.72649176997595,
+                    "endDistance": 355.6486990396054
+                  },
+                  {
+                    "a": {
+                      "x": 340.0817269536144,
+                      "y": 120.04182239202635
+                    },
+                    "b": {
+                      "x": 285.34919918948765,
+                      "y": 124.83029809750539
+                    },
+                    "startDistance": 355.6486990396054,
+                    "endDistance": 410.59029616812785
+                  },
+                  {
+                    "a": {
+                      "x": 204.5175200633279,
+                      "y": 131.85318110083733
+                    },
+                    "b": {
+                      "x": 121.98051310694666,
+                      "y": 139.07423353088112
+                    },
+                    "startDistance": 410.59029616812785,
+                    "endDistance": 493.4425810823966
+                  }
+                ],
+                "reflections": [
+                  {
+                    "point": {
+                      "x": 470,
+                      "y": 390
+                    },
+                    "normal": {
+                      "x": -0.4939418665842312,
+                      "y": 0.869494929505219
+                    },
+                    "incoming": {
+                      "x": -1,
+                      "y": 1.2246467991473532e-16
+                    },
+                    "outgoing": {
+                      "x": -0.5120428648705709,
+                      "y": -0.8589598969306649
+                    },
+                    "distance": 160,
+                    "objectIndex": 1
+                  },
+                  {
+                    "point": {
+                      "x": 340.0817279498091,
+                      "y": 120.0418223048706
+                    },
+                    "normal": {
+                      "x": -0.4555449072335157,
+                      "y": 0.8902128046111267
+                    },
+                    "incoming": {
+                      "x": -0.5120428648705709,
+                      "y": -0.8589598969306649
+                    },
+                    "outgoing": {
+                      "x": -0.9961946980917453,
+                      "y": 0.08715574274765932
+                    },
+                    "distance": 355.6486990396054,
+                    "objectIndex": 2
+                  }
+                ],
+                "teleports": [
+                  {
+                    "point": {
+                      "x": 392.3095319652976,
+                      "y": 259.6730274086502
+                    },
+                    "from": {
+                      "x": 384,
+                      "y": 246
+                    },
+                    "to": {
+                      "x": 370.76446714156117,
+                      "y": 171.51259614400934
+                    },
+                    "exit": {
+                      "x": 362.57178079158916,
+                      "y": 157.7692369341588
+                    },
+                    "distance": 311.72649176997595,
+                    "portalId": "Ka",
+                    "pairId": "Kb",
+                    "direction": {
+                      "x": -0.5120428648705709,
+                      "y": -0.8589598969306649
+                    }
+                  },
+                  {
+                    "point": {
+                      "x": 285.34919918948765,
+                      "y": 124.83029809750539
+                    },
+                    "from": {
+                      "x": 269.35309867559675,
+                      "y": 125.18352373289804
+                    },
+                    "to": {
+                      "x": 220.45663622899053,
+                      "y": 130.45868912971903
+                    },
+                    "exit": {
+                      "x": 204.5175200633279,
+                      "y": 131.85318110083733
+                    },
+                    "distance": 410.59029616812785,
+                    "portalId": "Rb",
+                    "pairId": "Ra",
+                    "direction": {
+                      "x": -0.9961946980917453,
+                      "y": 0.08715574274765932
+                    }
+                  }
+                ],
+                "bounces": 2,
+                "status": "target",
+                "totalDistance": 493.4425810823966
+              }
+            ],
+            "collisions": [],
+            "status": "target",
+            "totalDistance": 493.4425810823966,
+            "bounces": 2
+          }
+        }
+      ],
+      "combined": {
+        "rays": [
+          {
+            "color": "gold",
+            "source": {
+              "x": 180,
+              "y": 191,
+              "angle": 0,
+              "color": "gold"
+            },
+            "segments": [
+              {
+                "a": {
+                  "x": 180,
+                  "y": 191
+                },
+                "b": {
+                  "x": 534,
+                  "y": 191
+                },
+                "startDistance": 0,
+                "endDistance": 354
+              },
+              {
+                "a": {
+                  "x": 236.000001,
+                  "y": 350
+                },
+                "b": {
+                  "x": 339,
+                  "y": 350
+                },
+                "startDistance": 354,
+                "endDistance": 456.999999
+              }
+            ],
+            "reflections": [],
+            "teleports": [
+              {
+                "point": {
+                  "x": 534,
+                  "y": 191
+                },
+                "from": {
+                  "x": 550,
+                  "y": 191
+                },
+                "to": {
+                  "x": 220,
+                  "y": 350
+                },
+                "exit": {
+                  "x": 236.000001,
+                  "y": 350
+                },
+                "distance": 354,
+                "portalId": "Ga",
+                "pairId": "Gb",
+                "direction": {
+                  "x": 1,
+                  "y": 0
+                }
+              }
+            ],
+            "bounces": 0,
+            "status": "target",
+            "totalDistance": 456.999999
+          },
+          {
+            "color": "blue",
+            "source": {
+              "x": 599,
+              "y": 269,
+              "angle": 180,
+              "color": "blue"
+            },
+            "segments": [
+              {
+                "a": {
+                  "x": 599,
+                  "y": 269
+                },
+                "b": {
+                  "x": 397.8695235124112,
+                  "y": 269.00000000000006
+                },
+                "startDistance": 0,
+                "endDistance": 201.13047648758882
+              }
+            ],
+            "reflections": [],
+            "teleports": [],
+            "bounces": 0,
+            "status": "collision",
+            "totalDistance": 201.13047648758882
+          },
+          {
+            "color": "pink",
+            "source": {
+              "x": 630,
+              "y": 390,
+              "angle": 180,
+              "color": "pink"
+            },
+            "segments": [
+              {
+                "a": {
+                  "x": 630,
+                  "y": 390
+                },
+                "b": {
+                  "x": 470,
+                  "y": 390
+                },
+                "startDistance": 0,
+                "endDistance": 160
+              },
+              {
+                "a": {
+                  "x": 469.99999948795715,
+                  "y": 389.9999991410401
+                },
+                "b": {
+                  "x": 397.8695235124112,
+                  "y": 269.00000000000006
+                },
+                "startDistance": 160,
+                "endDistance": 300.86804235379475
+              }
+            ],
+            "reflections": [
+              {
+                "point": {
+                  "x": 470,
+                  "y": 390
+                },
+                "normal": {
+                  "x": -0.4939418665842312,
+                  "y": 0.869494929505219
+                },
+                "incoming": {
+                  "x": -1,
+                  "y": 1.2246467991473532e-16
+                },
+                "outgoing": {
+                  "x": -0.5120428648705709,
+                  "y": -0.8589598969306649
+                },
+                "distance": 160,
+                "objectIndex": 1
+              }
+            ],
+            "teleports": [],
+            "bounces": 1,
+            "status": "collision",
+            "totalDistance": 300.86804235379475
+          }
+        ],
+        "collisions": [
+          {
+            "point": {
+              "x": 397.8695235124112,
+              "y": 269.00000000000006
+            },
+            "colors": [
+              "blue",
+              "pink"
+            ],
+            "rayIndices": [
+              1,
+              2
+            ],
+            "distances": [
+              201.13047648758882,
+              300.86804235379475
+            ],
+            "triggerDistance": 300.86804235379475,
+            "overlap": false,
+            "stoppedRayIndices": [
+              1,
+              2
+            ]
+          }
+        ],
+        "status": "collision",
+        "totalDistance": 456.999999,
+        "bounces": 1
+      },
+      "referenceAngles": [
+        45,
+        29.6,
+        27.1
+      ],
+      "reference": {
+        "rays": [
+          {
+            "color": "gold",
+            "source": {
+              "x": 180,
+              "y": 191,
+              "angle": 0,
+              "color": "gold"
+            },
+            "segments": [
+              {
+                "a": {
+                  "x": 180,
+                  "y": 191
+                },
+                "b": {
+                  "x": 361,
+                  "y": 191
+                },
+                "startDistance": 0,
+                "endDistance": 181
+              },
+              {
+                "a": {
+                  "x": 361,
+                  "y": 191.000001
+                },
+                "b": {
+                  "x": 361.0000000000001,
+                  "y": 328
+                },
+                "startDistance": 181,
+                "endDistance": 317.999999
+              }
+            ],
+            "reflections": [
+              {
+                "point": {
+                  "x": 361,
+                  "y": 191
+                },
+                "normal": {
+                  "x": -0.7071067811865472,
+                  "y": 0.7071067811865479
+                },
+                "incoming": {
+                  "x": 1,
+                  "y": 0
+                },
+                "outgoing": {
+                  "x": 7.771561172376094e-16,
+                  "y": 1
+                },
+                "distance": 181,
+                "objectIndex": 0
+              }
+            ],
+            "teleports": [],
+            "bounces": 1,
+            "status": "target",
+            "totalDistance": 317.999999
+          },
+          {
+            "color": "blue",
+            "source": {
+              "x": 599,
+              "y": 269,
+              "angle": 180,
+              "color": "blue"
+            },
+            "segments": [
+              {
+                "a": {
+                  "x": 599,
+                  "y": 269
+                },
+                "b": {
+                  "x": 439.0000000000001,
+                  "y": 269
+                },
+                "startDistance": 0,
+                "endDistance": 159.9999999999999
+              },
+              {
+                "a": {
+                  "x": 439.0000000000001,
+                  "y": 268.999999
+                },
+                "b": {
+                  "x": 439,
+                  "y": 92
+                },
+                "startDistance": 159.9999999999999,
+                "endDistance": 336.9999989999999
+              }
+            ],
+            "reflections": [
+              {
+                "point": {
+                  "x": 439.0000000000001,
+                  "y": 269
+                },
+                "normal": {
+                  "x": -0.7071067811865472,
+                  "y": 0.7071067811865479
+                },
+                "incoming": {
+                  "x": -1,
+                  "y": 1.2246467991473532e-16
+                },
+                "outgoing": {
+                  "x": -6.661338147750939e-16,
+                  "y": -1
+                },
+                "distance": 159.9999999999999,
+                "objectIndex": 0
+              }
+            ],
+            "teleports": [],
+            "bounces": 1,
+            "status": "target",
+            "totalDistance": 336.9999989999999
+          },
+          {
+            "color": "pink",
+            "source": {
+              "x": 630,
+              "y": 390,
+              "angle": 180,
+              "color": "pink"
+            },
+            "segments": [
+              {
+                "a": {
+                  "x": 630,
+                  "y": 390
+                },
+                "b": {
+                  "x": 470,
+                  "y": 390
+                },
+                "startDistance": 0,
+                "endDistance": 160
+              },
+              {
+                "a": {
+                  "x": 469.99999948795715,
+                  "y": 389.9999991410401
+                },
+                "b": {
+                  "x": 392.3095319652976,
+                  "y": 259.6730274086502
+                },
+                "startDistance": 160,
+                "endDistance": 311.72649176997595
+              },
+              {
+                "a": {
+                  "x": 362.57178079158916,
+                  "y": 157.7692369341588
+                },
+                "b": {
+                  "x": 340.0817279498091,
+                  "y": 120.0418223048706
+                },
+                "startDistance": 311.72649176997595,
+                "endDistance": 355.6486990396054
+              },
+              {
+                "a": {
+                  "x": 340.0817269536144,
+                  "y": 120.04182239202635
+                },
+                "b": {
+                  "x": 285.34919918948765,
+                  "y": 124.83029809750539
+                },
+                "startDistance": 355.6486990396054,
+                "endDistance": 410.59029616812785
+              },
+              {
+                "a": {
+                  "x": 204.5175200633279,
+                  "y": 131.85318110083733
+                },
+                "b": {
+                  "x": 121.98051310694666,
+                  "y": 139.07423353088112
+                },
+                "startDistance": 410.59029616812785,
+                "endDistance": 493.4425810823966
+              }
+            ],
+            "reflections": [
+              {
+                "point": {
+                  "x": 470,
+                  "y": 390
+                },
+                "normal": {
+                  "x": -0.4939418665842312,
+                  "y": 0.869494929505219
+                },
+                "incoming": {
+                  "x": -1,
+                  "y": 1.2246467991473532e-16
+                },
+                "outgoing": {
+                  "x": -0.5120428648705709,
+                  "y": -0.8589598969306649
+                },
+                "distance": 160,
+                "objectIndex": 1
+              },
+              {
+                "point": {
+                  "x": 340.0817279498091,
+                  "y": 120.0418223048706
+                },
+                "normal": {
+                  "x": -0.4555449072335157,
+                  "y": 0.8902128046111267
+                },
+                "incoming": {
+                  "x": -0.5120428648705709,
+                  "y": -0.8589598969306649
+                },
+                "outgoing": {
+                  "x": -0.9961946980917453,
+                  "y": 0.08715574274765932
+                },
+                "distance": 355.6486990396054,
+                "objectIndex": 2
+              }
+            ],
+            "teleports": [
+              {
+                "point": {
+                  "x": 392.3095319652976,
+                  "y": 259.6730274086502
+                },
+                "from": {
+                  "x": 384,
+                  "y": 246
+                },
+                "to": {
+                  "x": 370.76446714156117,
+                  "y": 171.51259614400934
+                },
+                "exit": {
+                  "x": 362.57178079158916,
+                  "y": 157.7692369341588
+                },
+                "distance": 311.72649176997595,
+                "portalId": "Ka",
+                "pairId": "Kb",
+                "direction": {
+                  "x": -0.5120428648705709,
+                  "y": -0.8589598969306649
+                }
+              },
+              {
+                "point": {
+                  "x": 285.34919918948765,
+                  "y": 124.83029809750539
+                },
+                "from": {
+                  "x": 269.35309867559675,
+                  "y": 125.18352373289804
+                },
+                "to": {
+                  "x": 220.45663622899053,
+                  "y": 130.45868912971903
+                },
+                "exit": {
+                  "x": 204.5175200633279,
+                  "y": 131.85318110083733
+                },
+                "distance": 410.59029616812785,
+                "portalId": "Rb",
+                "pairId": "Ra",
+                "direction": {
+                  "x": -0.9961946980917453,
+                  "y": 0.08715574274765932
+                }
+              }
+            ],
+            "bounces": 2,
+            "status": "target",
+            "totalDistance": 493.4425810823966
+          }
+        ],
+        "collisions": [],
+        "status": "target",
+        "totalDistance": 493.4425810823966,
+        "bounces": 4
+      },
+      "explanation": {
+        "suggestedBand": "advanced",
+        "primaryConcept": 14,
+        "complementaryConcepts": [
+          1,
+          5,
+          7
+        ],
+        "centralDeduction": "O espelho compartilhado compatibiliza dourado e azul; a chegada rosa usa o retorno e evita a aproximação direta bloqueada. As rotas locais ainda funcionam sozinhas e entram em conflito quando combinadas.",
+        "conceptEvidence": [
+          {
+            "concept": 1,
+            "claim": "A aproximação direta do espelho rosa ao alvo encontra a parede deslocada; removendo somente essa parede, o trajeto vence. A chegada via retorno contorna essa restrição.",
+            "caseIds": [
+              "solution"
+            ],
+            "additionalEvidenceIds": [
+              "v5-wall-direct-pink"
+            ]
+          },
+          {
+            "concept": 5,
+            "claim": "A configuração legacy-case-3 acerta os três alvos quando traçados individualmente, mas colide no conjunto; a referência redistribui as trajetórias sem contato.",
+            "caseIds": [
+              "solution",
+              "legacy-case-3",
+              "legacy-case-3-source-0",
+              "legacy-case-3-source-1",
+              "legacy-case-3-source-2"
+            ]
+          },
+          {
+            "concept": 7,
+            "claim": "A configuração legacy-case-3 acerta os três alvos quando traçados individualmente, mas colide no conjunto; a referência redistribui as trajetórias sem contato.",
+            "caseIds": [
+              "solution",
+              "legacy-case-3",
+              "legacy-case-3-source-0",
+              "legacy-case-3-source-1",
+              "legacy-case-3-source-2"
+            ]
+          },
+          {
+            "concept": 14,
+            "claim": "Um controle de espelho comum acopla as duas primeiras cores; a terceira rota cria conflito real na configuração local. Comparar o conjunto determina uma composição compatível.",
+            "caseIds": [
+              "solution",
+              "legacy-case-3",
+              "legacy-case-3-source-0",
+              "legacy-case-3-source-1",
+              "legacy-case-3-source-2"
+            ]
+          }
+        ],
+        "layout": "few-walls",
+        "logicalSignature": "3 fonte(s); ramos reais: M0/P0,M0/P0,M1,2/P2; conflitos testemunhados: C0→C2V,C2→C1V; família documental: shared-useful-return",
+        "dependencies": "pink restringe blue (trajeto após escolha de reflexão/portal, caso legacy-case-3) gold restringe pink (trajeto após escolha de reflexão/portal, caso new-center-conflict-1)",
+        "difficultyRationale": "Pede leitura global ou decisões condicionais entre saídas/cores, com consequências distantes ou dedução a partir da chegada. Evidência é a relação dos caminhos testados, não o total de peças.",
+        "humanReview": "Mapa reautorado: prova de parede, conflito multicor e geometria angular recomputados; evidências antigas arquivadas, sem afirmar preservação de atalhos que deixaram de existir.",
+        "relatedLegacyId": "light-v3-147",
+        "distinction": "Introduz retorno com função demonstrada por ablação, depois dos encadeamentos131–140; não é apenas alongamento de uma rota.",
+        "legacyPattern": "Depois de compatibilizar o espelho comum, retornar ao setor superior oferece outra aproximação ao alvo rosa.",
+        "retention": {
+          "recommendation": "retain",
+          "reasons": [
+            "Solução e contraprovas reproduzidas. Reaproveitável na dificuldade proposta, sujeito à composição global e revisão visual integrada."
+          ],
+          "geometryIssues": []
+        },
+        "relatedPrinciplesCount": 4,
+        "combinationIsRelated": true,
+        "campaignNumber": 348,
+        "campaignBand": "advanced",
+        "review": {
+          "approved": true,
+          "reason": "Redesenho de dados revisto por solução física, incidência real, contraprovas causais, catálogos finitos e margem angular no motor preservado. Não é calibração de dificuldade com jogadores.",
+          "relatedCombination": true
+        },
+        "resources": {
+          "sources": 3,
+          "mirrors": 3,
+          "walls": 1,
+          "portals": 8
+        },
+        "relatedPreviousId": "light-v3-147"
+      }
+    },
+    {
+      "id": "light-v5-portal-070",
+      "number": 376,
+      "title": "A saída decide 070",
+      "claim": "Rotas localmente válidas entram em conflito quando combinadas.",
+      "localAngles": [
+        -55.8,
+        59.5,
+        24.9
+      ],
+      "isolated": [
+        {
+          "sourceIndex": 0,
+          "color": "gold",
+          "world": {
+            "rays": [
+              {
+                "color": "gold",
+                "source": {
+                  "x": 337.0318186463901,
+                  "y": 147.01049646137005,
+                  "angle": -156,
+                  "color": "gold"
+                },
+                "segments": [
+                  {
+                    "a": {
+                      "x": 337.0318186463901,
+                      "y": 147.01049646137005
+                    },
+                    "b": {
+                      "x": 200,
+                      "y": 86
+                    },
+                    "startDistance": 0,
+                    "endDistance": 149.99999999999997
+                  },
+                  {
+                    "a": {
+                      "x": 200.0000007144727,
+                      "y": 86.00000069966335
+                    },
+                    "b": {
+                      "x": 484.39111950072436,
+                      "y": 364.49636011901185
+                    },
+                    "startDistance": 149.99999999999997,
+                    "endDistance": 548.0433778551363
+                  }
+                ],
+                "reflections": [
+                  {
+                    "point": {
+                      "x": 200,
+                      "y": 86
+                    },
+                    "normal": {
+                      "x": 0.8270805742745618,
+                      "y": 0.5620833778521309
+                    },
+                    "incoming": {
+                      "x": -0.9135454576426008,
+                      "y": -0.40673664307580043
+                    },
+                    "outgoing": {
+                      "x": 0.7144726796328034,
+                      "y": 0.6996633405133657
+                    },
+                    "distance": 149.99999999999997,
+                    "objectIndex": 0
+                  }
+                ],
+                "teleports": [],
+                "bounces": 1,
+                "status": "target",
+                "totalDistance": 548.0433778551363
+              }
+            ],
+            "collisions": [],
+            "status": "target",
+            "totalDistance": 548.0433778551363,
+            "bounces": 1
+          }
+        },
+        {
+          "sourceIndex": 1,
+          "color": "blue",
+          "world": {
+            "rays": [
+              {
+                "color": "blue",
+                "source": {
+                  "x": 745,
+                  "y": 190,
+                  "angle": 300,
+                  "color": "blue"
+                },
+                "segments": [
+                  {
+                    "a": {
+                      "x": 745,
+                      "y": 190
+                    },
+                    "b": {
+                      "x": 759.5,
+                      "y": 164.8852632902513
+                    },
+                    "startDistance": 0,
+                    "endDistance": 28.999999999999993
+                  },
+                  {
+                    "a": {
+                      "x": 565.0000005,
+                      "y": 290.6217773988853
+                    },
+                    "b": {
+                      "x": 600,
+                      "y": 230.00000000000006
+                    },
+                    "startDistance": 28.999999999999993,
+                    "endDistance": 98.99999899999992
+                  },
+                  {
+                    "a": {
+                      "x": 599.9999990001523,
+                      "y": 230.00000001745246
+                    },
+                    "b": {
+                      "x": 111.9947228642265,
+                      "y": 238.5181637977182
+                    },
+                    "startDistance": 98.99999899999992,
+                    "endDistance": 587.0796120250562
+                  }
+                ],
+                "reflections": [
+                  {
+                    "point": {
+                      "x": 600,
+                      "y": 230.00000000000006
+                    },
+                    "normal": {
+                      "x": -0.8616291604415257,
+                      "y": 0.5075383629607044
+                    },
+                    "incoming": {
+                      "x": 0.5000000000000001,
+                      "y": -0.8660254037844386
+                    },
+                    "outgoing": {
+                      "x": -0.9998476951563912,
+                      "y": 0.017452406437284292
+                    },
+                    "distance": 98.99999899999992,
+                    "objectIndex": 1
+                  }
+                ],
+                "teleports": [
+                  {
+                    "point": {
+                      "x": 759.5,
+                      "y": 164.8852632902513
+                    },
+                    "from": {
+                      "x": 767.5,
+                      "y": 151.02885682970026
+                    },
+                    "to": {
+                      "x": 557,
+                      "y": 304.4781847254617
+                    },
+                    "exit": {
+                      "x": 565.0000005,
+                      "y": 290.6217773988853
+                    },
+                    "distance": 28.999999999999993,
+                    "portalId": "angle-access-1a",
+                    "pairId": "angle-access-1b",
+                    "direction": {
+                      "x": 0.5000000000000001,
+                      "y": -0.8660254037844386
+                    }
+                  }
+                ],
+                "bounces": 1,
+                "status": "target",
+                "totalDistance": 587.0796120250562
+              }
+            ],
+            "collisions": [],
+            "status": "target",
+            "totalDistance": 587.0796120250562,
+            "bounces": 1
+          }
+        },
+        {
+          "sourceIndex": 2,
+          "color": "pink",
+          "world": {
+            "rays": [
+              {
+                "color": "pink",
+                "source": {
+                  "x": 30,
+                  "y": 334,
+                  "angle": 80,
+                  "color": "pink"
+                },
+                "segments": [
+                  {
+                    "a": {
+                      "x": 30,
+                      "y": 334
+                    },
+                    "b": {
+                      "x": 35.03579715234098,
+                      "y": 362.559424837354
+                    },
+                    "startDistance": 0,
+                    "endDistance": 28.99999999999998
+                  },
+                  {
+                    "a": {
+                      "x": 187.84462773696305,
+                      "y": 305.0634582739532
+                    },
+                    "b": {
+                      "x": 200,
+                      "y": 374
+                    },
+                    "startDistance": 28.99999999999998,
+                    "endDistance": 98.99999899999997
+                  },
+                  {
+                    "a": {
+                      "x": 200.0000008642748,
+                      "y": 373.9999994969801
+                    },
+                    "b": {
+                      "x": 691.061566057446,
+                      "y": 88.19534366616028
+                    },
+                    "startDistance": 98.99999899999997,
+                    "endDistance": 667.177578727096
+                  }
+                ],
+                "reflections": [
+                  {
+                    "point": {
+                      "x": 200,
+                      "y": 374
+                    },
+                    "normal": {
+                      "x": -0.4210358133674912,
+                      "y": 0.907044014291465
+                    },
+                    "incoming": {
+                      "x": 0.17364817766693041,
+                      "y": 0.984807753012208
+                    },
+                    "outgoing": {
+                      "x": 0.8642748019537048,
+                      "y": -0.5030199466302347
+                    },
+                    "distance": 98.99999899999997,
+                    "objectIndex": 2
+                  }
+                ],
+                "teleports": [
+                  {
+                    "point": {
+                      "x": 35.03579715234098,
+                      "y": 362.559424837354
+                    },
+                    "from": {
+                      "x": 37.81416799501187,
+                      "y": 378.31634888554936
+                    },
+                    "to": {
+                      "x": 185.066256720644,
+                      "y": 289.3065332409501
+                    },
+                    "exit": {
+                      "x": 187.84462773696305,
+                      "y": 305.0634582739532
+                    },
+                    "distance": 28.99999999999998,
+                    "portalId": "angle-access-2a",
+                    "pairId": "angle-access-2b",
+                    "direction": {
+                      "x": 0.17364817766693041,
+                      "y": 0.984807753012208
+                    }
+                  }
+                ],
+                "bounces": 1,
+                "status": "target",
+                "totalDistance": 667.177578727096
+              }
+            ],
+            "collisions": [],
+            "status": "target",
+            "totalDistance": 667.177578727096,
+            "bounces": 1
+          }
+        }
+      ],
+      "combined": {
+        "rays": [
+          {
+            "color": "gold",
+            "source": {
+              "x": 337.0318186463901,
+              "y": 147.01049646137005,
+              "angle": -156,
+              "color": "gold"
+            },
+            "segments": [
+              {
+                "a": {
+                  "x": 337.0318186463901,
+                  "y": 147.01049646137005
+                },
+                "b": {
+                  "x": 200,
+                  "y": 86
+                },
+                "startDistance": 0,
+                "endDistance": 149.99999999999997
+              },
+              {
+                "a": {
+                  "x": 200.0000007144727,
+                  "y": 86.00000069966335
+                },
+                "b": {
+                  "x": 351.477749683669,
+                  "y": 234.3379720153785
+                },
+                "startDistance": 149.99999999999997,
+                "endDistance": 362.0133537464958
+              }
+            ],
+            "reflections": [
+              {
+                "point": {
+                  "x": 200,
+                  "y": 86
+                },
+                "normal": {
+                  "x": 0.8270805742745618,
+                  "y": 0.5620833778521309
+                },
+                "incoming": {
+                  "x": -0.9135454576426008,
+                  "y": -0.40673664307580043
+                },
+                "outgoing": {
+                  "x": 0.7144726796328034,
+                  "y": 0.6996633405133657
+                },
+                "distance": 149.99999999999997,
+                "objectIndex": 0
+              }
+            ],
+            "teleports": [],
+            "bounces": 1,
+            "status": "collision",
+            "totalDistance": 362.0133537464958
+          },
+          {
+            "color": "blue",
+            "source": {
+              "x": 745,
+              "y": 190,
+              "angle": 300,
+              "color": "blue"
+            },
+            "segments": [
+              {
+                "a": {
+                  "x": 745,
+                  "y": 190
+                },
+                "b": {
+                  "x": 759.5,
+                  "y": 164.8852632902513
+                },
+                "startDistance": 0,
+                "endDistance": 28.999999999999993
+              },
+              {
+                "a": {
+                  "x": 565.0000005,
+                  "y": 290.6217773988853
+                },
+                "b": {
+                  "x": 600,
+                  "y": 230.00000000000006
+                },
+                "startDistance": 28.999999999999993,
+                "endDistance": 98.99999899999992
+              },
+              {
+                "a": {
+                  "x": 599.9999990001523,
+                  "y": 230.00000001745246
+                },
+                "b": {
+                  "x": 351.47774968366906,
+                  "y": 234.33797201537857
+                },
+                "startDistance": 98.99999899999992,
+                "endDistance": 347.56010522458917
+              }
+            ],
+            "reflections": [
+              {
+                "point": {
+                  "x": 600,
+                  "y": 230.00000000000006
+                },
+                "normal": {
+                  "x": -0.8616291604415257,
+                  "y": 0.5075383629607044
+                },
+                "incoming": {
+                  "x": 0.5000000000000001,
+                  "y": -0.8660254037844386
+                },
+                "outgoing": {
+                  "x": -0.9998476951563912,
+                  "y": 0.017452406437284292
+                },
+                "distance": 98.99999899999992,
+                "objectIndex": 1
+              }
+            ],
+            "teleports": [
+              {
+                "point": {
+                  "x": 759.5,
+                  "y": 164.8852632902513
+                },
+                "from": {
+                  "x": 767.5,
+                  "y": 151.02885682970026
+                },
+                "to": {
+                  "x": 557,
+                  "y": 304.4781847254617
+                },
+                "exit": {
+                  "x": 565.0000005,
+                  "y": 290.6217773988853
+                },
+                "distance": 28.999999999999993,
+                "portalId": "angle-access-1a",
+                "pairId": "angle-access-1b",
+                "direction": {
+                  "x": 0.5000000000000001,
+                  "y": -0.8660254037844386
+                }
+              }
+            ],
+            "bounces": 1,
+            "status": "collision",
+            "totalDistance": 347.56010522458917
+          },
+          {
+            "color": "pink",
+            "source": {
+              "x": 30,
+              "y": 334,
+              "angle": 80,
+              "color": "pink"
+            },
+            "segments": [
+              {
+                "a": {
+                  "x": 30,
+                  "y": 334
+                },
+                "b": {
+                  "x": 35.03579715234098,
+                  "y": 362.559424837354
+                },
+                "startDistance": 0,
+                "endDistance": 28.99999999999998
+              },
+              {
+                "a": {
+                  "x": 187.84462773696305,
+                  "y": 305.0634582739532
+                },
+                "b": {
+                  "x": 200,
+                  "y": 374
+                },
+                "startDistance": 28.99999999999998,
+                "endDistance": 98.99999899999997
+              },
+              {
+                "a": {
+                  "x": 200.0000008642748,
+                  "y": 373.9999994969801
+                },
+                "b": {
+                  "x": 442.6991943894932,
+                  "y": 232.74569577519256
+                },
+                "startDistance": 98.99999899999997,
+                "endDistance": 379.81252873775657
+              }
+            ],
+            "reflections": [
+              {
+                "point": {
+                  "x": 200,
+                  "y": 374
+                },
+                "normal": {
+                  "x": -0.4210358133674912,
+                  "y": 0.907044014291465
+                },
+                "incoming": {
+                  "x": 0.17364817766693041,
+                  "y": 0.984807753012208
+                },
+                "outgoing": {
+                  "x": 0.8642748019537048,
+                  "y": -0.5030199466302347
+                },
+                "distance": 98.99999899999997,
+                "objectIndex": 2
+              }
+            ],
+            "teleports": [
+              {
+                "point": {
+                  "x": 35.03579715234098,
+                  "y": 362.559424837354
+                },
+                "from": {
+                  "x": 37.81416799501187,
+                  "y": 378.31634888554936
+                },
+                "to": {
+                  "x": 185.066256720644,
+                  "y": 289.3065332409501
+                },
+                "exit": {
+                  "x": 187.84462773696305,
+                  "y": 305.0634582739532
+                },
+                "distance": 28.99999999999998,
+                "portalId": "angle-access-2a",
+                "pairId": "angle-access-2b",
+                "direction": {
+                  "x": 0.17364817766693041,
+                  "y": 0.984807753012208
+                }
+              }
+            ],
+            "bounces": 1,
+            "status": "collision",
+            "totalDistance": 379.81252873775657
+          }
+        ],
+        "collisions": [
+          {
+            "point": {
+              "x": 351.477749683669,
+              "y": 234.3379720153785
+            },
+            "colors": [
+              "gold",
+              "blue"
+            ],
+            "rayIndices": [
+              0,
+              1
+            ],
+            "distances": [
+              362.0133537464958,
+              347.56010522458917
+            ],
+            "triggerDistance": 362.0133537464958,
+            "overlap": false,
+            "stoppedRayIndices": [
+              0,
+              1
+            ]
+          },
+          {
+            "point": {
+              "x": 442.6991943894933,
+              "y": 232.7456957751925
+            },
+            "colors": [
+              "blue",
+              "pink"
+            ],
+            "rayIndices": [
+              1,
+              2
+            ],
+            "distances": [
+              256.32476493453044,
+              379.81252873775657
+            ],
+            "triggerDistance": 379.81252873775657,
+            "overlap": false,
+            "stoppedRayIndices": [
+              2
+            ]
+          }
+        ],
+        "status": "collision",
+        "totalDistance": 379.81252873775657,
+        "bounces": 3
+      },
+      "referenceAngles": [
+        -84.5,
+        59.5,
+        34
+      ],
+      "reference": {
+        "rays": [
+          {
+            "color": "gold",
+            "source": {
+              "x": 337.0318186463901,
+              "y": 147.01049646137005,
+              "angle": -156,
+              "color": "gold"
+            },
+            "segments": [
+              {
+                "a": {
+                  "x": 337.0318186463901,
+                  "y": 147.01049646137005
+                },
+                "b": {
+                  "x": 200,
+                  "y": 86
+                },
+                "startDistance": 0,
+                "endDistance": 149.99999999999997
+              },
+              {
+                "a": {
+                  "x": 200.00000097437007,
+                  "y": 85.99999977504895
+                },
+                "b": {
+                  "x": 427.0081910392089,
+                  "y": 33.591029564091635
+                },
+                "startDistance": 149.99999999999997,
+                "endDistance": 382.97943796628704
+              },
+              {
+                "a": {
+                  "x": 419.08992201093383,
+                  "y": 398.7007829055471
+                },
+                "b": {
+                  "x": 478.5685190619098,
+                  "y": 384.96906679370204
+                },
+                "startDistance": 382.97943796628704,
+                "endDistance": 444.0225664454916
+              }
+            ],
+            "reflections": [
+              {
+                "point": {
+                  "x": 200,
+                  "y": 86
+                },
+                "normal": {
+                  "x": 0.995396198367179,
+                  "y": 0.09584575252022413
+                },
+                "incoming": {
+                  "x": -0.9135454576426008,
+                  "y": -0.40673664307580043
+                },
+                "outgoing": {
+                  "x": 0.9743700647852351,
+                  "y": -0.22495105434386478
+                },
+                "distance": 149.99999999999997,
+                "objectIndex": 0
+              }
+            ],
+            "teleports": [
+              {
+                "point": {
+                  "x": 427.0081910392089,
+                  "y": 33.591029564091635
+                },
+                "from": {
+                  "x": 442.6,
+                  "y": 30
+                },
+                "to": {
+                  "x": 403.5,
+                  "y": 402.3
+                },
+                "exit": {
+                  "x": 419.08992201093383,
+                  "y": 398.7007829055471
+                },
+                "distance": 382.97943796628704,
+                "portalId": "g2a",
+                "pairId": "g2b",
+                "direction": {
+                  "x": 0.9743700647852351,
+                  "y": -0.22495105434386478
+                }
+              }
+            ],
+            "bounces": 1,
+            "status": "target",
+            "totalDistance": 444.0225664454916
+          },
+          {
+            "color": "blue",
+            "source": {
+              "x": 745,
+              "y": 190,
+              "angle": 300,
+              "color": "blue"
+            },
+            "segments": [
+              {
+                "a": {
+                  "x": 745,
+                  "y": 190
+                },
+                "b": {
+                  "x": 759.5,
+                  "y": 164.8852632902513
+                },
+                "startDistance": 0,
+                "endDistance": 28.999999999999993
+              },
+              {
+                "a": {
+                  "x": 565.0000005,
+                  "y": 290.6217773988853
+                },
+                "b": {
+                  "x": 600,
+                  "y": 230.00000000000006
+                },
+                "startDistance": 28.999999999999993,
+                "endDistance": 98.99999899999992
+              },
+              {
+                "a": {
+                  "x": 599.9999990001523,
+                  "y": 230.00000001745246
+                },
+                "b": {
+                  "x": 111.9947228642265,
+                  "y": 238.5181637977182
+                },
+                "startDistance": 98.99999899999992,
+                "endDistance": 587.0796120250562
+              }
+            ],
+            "reflections": [
+              {
+                "point": {
+                  "x": 600,
+                  "y": 230.00000000000006
+                },
+                "normal": {
+                  "x": -0.8616291604415257,
+                  "y": 0.5075383629607044
+                },
+                "incoming": {
+                  "x": 0.5000000000000001,
+                  "y": -0.8660254037844386
+                },
+                "outgoing": {
+                  "x": -0.9998476951563912,
+                  "y": 0.017452406437284292
+                },
+                "distance": 98.99999899999992,
+                "objectIndex": 1
+              }
+            ],
+            "teleports": [
+              {
+                "point": {
+                  "x": 759.5,
+                  "y": 164.8852632902513
+                },
+                "from": {
+                  "x": 767.5,
+                  "y": 151.02885682970026
+                },
+                "to": {
+                  "x": 557,
+                  "y": 304.4781847254617
+                },
+                "exit": {
+                  "x": 565.0000005,
+                  "y": 290.6217773988853
+                },
+                "distance": 28.999999999999993,
+                "portalId": "angle-access-1a",
+                "pairId": "angle-access-1b",
+                "direction": {
+                  "x": 0.5000000000000001,
+                  "y": -0.8660254037844386
+                }
+              }
+            ],
+            "bounces": 1,
+            "status": "target",
+            "totalDistance": 587.0796120250562
+          },
+          {
+            "color": "pink",
+            "source": {
+              "x": 30,
+              "y": 334,
+              "angle": 80,
+              "color": "pink"
+            },
+            "segments": [
+              {
+                "a": {
+                  "x": 30,
+                  "y": 334
+                },
+                "b": {
+                  "x": 35.03579715234098,
+                  "y": 362.559424837354
+                },
+                "startDistance": 0,
+                "endDistance": 28.99999999999998
+              },
+              {
+                "a": {
+                  "x": 187.84462773696305,
+                  "y": 305.0634582739532
+                },
+                "b": {
+                  "x": 200,
+                  "y": 374
+                },
+                "startDistance": 28.99999999999998,
+                "endDistance": 98.99999899999997
+              },
+              {
+                "a": {
+                  "x": 200.0000009781476,
+                  "y": 373.9999997920883
+                },
+                "b": {
+                  "x": 393.6520649885965,
+                  "y": 332.8379829057243
+                },
+                "startDistance": 98.99999899999997,
+                "endDistance": 296.9783653172831
+              },
+              {
+                "a": {
+                  "x": 509.4503625898885,
+                  "y": 119.57341273900417
+                },
+                "b": {
+                  "x": 688.4696864210798,
+                  "y": 81.52168079295394
+                },
+                "startDistance": 296.9783653172831,
+                "endDistance": 479.9970873351985
+              }
+            ],
+            "reflections": [
+              {
+                "point": {
+                  "x": 200,
+                  "y": 374
+                },
+                "normal": {
+                  "x": -0.5591929034707469,
+                  "y": 0.8290375725550416
+                },
+                "incoming": {
+                  "x": 0.17364817766693041,
+                  "y": 0.984807753012208
+                },
+                "outgoing": {
+                  "x": 0.9781476007338058,
+                  "y": -0.20791169081775912
+                },
+                "distance": 98.99999899999997,
+                "objectIndex": 2
+              }
+            ],
+            "teleports": [
+              {
+                "point": {
+                  "x": 35.03579715234098,
+                  "y": 362.559424837354
+                },
+                "from": {
+                  "x": 37.81416799501187,
+                  "y": 378.31634888554936
+                },
+                "to": {
+                  "x": 185.066256720644,
+                  "y": 289.3065332409501
+                },
+                "exit": {
+                  "x": 187.84462773696305,
+                  "y": 305.0634582739532
+                },
+                "distance": 28.99999999999998,
+                "portalId": "angle-access-2a",
+                "pairId": "angle-access-2b",
+                "direction": {
+                  "x": 0.17364817766693041,
+                  "y": 0.984807753012208
+                }
+              },
+              {
+                "point": {
+                  "x": 393.6520649885965,
+                  "y": 332.8379829057243
+                },
+                "from": {
+                  "x": 409.3,
+                  "y": 329.5
+                },
+                "to": {
+                  "x": 493.8,
+                  "y": 122.9
+                },
+                "exit": {
+                  "x": 509.4503625898885,
+                  "y": 119.57341273900417
+                },
+                "distance": 296.9783653172831,
+                "portalId": "p1a",
+                "pairId": "p1b",
+                "direction": {
+                  "x": 0.9781476007338058,
+                  "y": -0.20791169081775912
+                }
+              }
+            ],
+            "bounces": 1,
+            "status": "target",
+            "totalDistance": 479.9970873351985
+          }
+        ],
+        "collisions": [],
+        "status": "target",
+        "totalDistance": 587.0796120250562,
+        "bounces": 3
+      },
+      "explanation": {
+        "suggestedBand": "advanced",
+        "primaryConcept": 10,
+        "complementaryConcepts": [
+          5,
+          7,
+          14,
+          6,
+          11,
+          8,
+          9
+        ],
+        "centralDeduction": "gold: g2a, a 249.0px do primeiro espelho, funciona em 2/0/1; g1a, a 100.0px, entra em conflito em 1/0/1. A utilidade da saída, não a proximidade, decide.",
+        "conceptEvidence": [
+          {
+            "concept": 7,
+            "claim": "As alternativas do conflito documentado chegam aos respectivos alvos quando testadas isoladamente e colidem no conjunto, sem paredes novas.",
+            "caseIds": [
+              "local-routes-collide",
+              "local-gold-works",
+              "local-blue-works",
+              "local-pink-works",
+              "joint-solution"
+            ]
+          },
+          {
+            "concept": 5,
+            "claim": "Uma escolha já localmente resolvida precisa ser reconsiderada para satisfazer as outras cores no conjunto.",
+            "caseIds": [
+              "local-routes-collide",
+              "joint-solution"
+            ]
+          },
+          {
+            "concept": 14,
+            "claim": "3 orientações comandam escolhas relacionadas pela matriz conservadora recalculada; não são problemas independentes.",
+            "caseIds": [
+              "route-choice-0-0-0",
+              "route-choice-0-0-1",
+              "route-choice-0-1-0",
+              "route-choice-0-1-1",
+              "route-choice-1-0-0",
+              "route-choice-1-0-1",
+              "route-choice-1-1-0",
+              "route-choice-1-1-1",
+              "route-choice-2-0-0",
+              "route-choice-2-0-1",
+              "route-choice-2-1-0",
+              "route-choice-2-1-1"
+            ]
+          },
+          {
+            "concept": 6,
+            "claim": "As eliminações propagam entre as três cores nas ondas e hipóteses recalculadas, registradas no certificado de reautoria.",
+            "caseIds": [
+              "route-choice-0-0-0",
+              "route-choice-0-0-1",
+              "route-choice-0-1-0",
+              "route-choice-0-1-1",
+              "route-choice-1-0-0",
+              "route-choice-1-0-1",
+              "route-choice-1-1-0",
+              "route-choice-1-1-1",
+              "route-choice-2-0-0",
+              "route-choice-2-0-1",
+              "route-choice-2-1-0",
+              "route-choice-2-1-1"
+            ]
+          },
+          {
+            "concept": 10,
+            "claim": "gold: g2a, a 249.0px do primeiro espelho, funciona em 2/0/1; g1a, a 100.0px, entra em conflito em 1/0/1. A utilidade da saída, não a proximidade, decide.",
+            "caseIds": [
+              "route-choice-2-0-1",
+              "route-choice-1-0-1"
+            ]
+          },
+          {
+            "concept": 11,
+            "claim": "gold em 1/0/1 colide após g1a, em (515.6,231.5), a 347.5px da decisão; 2/0/1 evita essa consequência.",
+            "caseIds": [
+              "route-choice-2-0-1",
+              "route-choice-1-0-1"
+            ]
+          },
+          {
+            "concept": 8,
+            "claim": "Entre os primeiros espelhos e os alvos, rotas de posições relativas invertidas colidem; a composição com portais permite compatibilizar a troca.",
+            "caseIds": [
+              "route-choice-0-0-0",
+              "route-choice-0-0-1",
+              "route-choice-0-1-0",
+              "route-choice-0-1-1",
+              "route-choice-1-0-0",
+              "route-choice-1-0-1",
+              "route-choice-1-1-0",
+              "route-choice-1-1-1",
+              "route-choice-2-0-0",
+              "route-choice-2-0-1",
+              "route-choice-2-1-0",
+              "route-choice-2-1-1"
+            ]
+          },
+          {
+            "concept": 9,
+            "claim": "O salto entre portais cruza virtualmente um trecho de outra cor, mas os segmentos físicos da solução permanecem separados.",
+            "caseIds": [
+              "joint-solution",
+              "route-choice-2-0-1"
+            ]
+          }
+        ],
+        "layout": "open",
+        "logicalSignature": "{\"routes\":[[0,1,1],[0,1],[0,1]],\"edges\":[[0,0,1,0],[0,0,2,0],[0,1,1,0],[0,1,2,0],[1,0,2,0],[1,0,2,1],[1,1,2,1]]}",
+        "dependencies": "Matriz nova de incompatibilidades entre alternativas: [[0,0,1,0],[0,1,1,0],[0,0,2,0],[0,1,2,0],[1,0,2,0],[1,1,2,0],[1,1,2,1]]",
+        "difficultyRationale": "A dificuldade vem da comparação entre saídas e das incompatibilidades que elas criam longe da escolha. Não se usa número de saltos como medida.",
+        "humanReview": "Motor e matriz angular recalculados para o novo desenho; função central e conflito local/conjunto demonstrados. Busca finita, sem unicidade contínua ou playtest humano.",
+        "distinction": "Reautoria declarada: geometrias iniciais e matriz de compatibilidade recalculadas; a matriz anterior fica arquivada, não alegada como preservada.",
+        "campaignNumber": 376,
+        "campaignBand": "advanced",
+        "review": {
+          "approved": true,
+          "reason": "Redesenho de dados revisto por solução física, incidência real, contraprovas causais, catálogos finitos e margem angular no motor preservado. Não é calibração de dificuldade com jogadores.",
+          "relatedCombination": true
+        },
+        "combinationIsRelated": true,
+        "resources": {
+          "sources": 3,
+          "mirrors": 3,
+          "walls": 0,
+          "portals": 12
+        },
+        "relatedPreviousId": "light-v4-portal-070"
+      }
+    },
+    {
+      "id": "light-v5-open-hard-chain-2",
+      "number": 405,
+      "title": "Três escolhas, uma consequência",
+      "claim": "Rotas localmente válidas entram em conflito quando combinadas.",
+      "localAngles": [
+        -59.3,
+        89.6,
+        75.1
+      ],
+      "isolated": [
+        {
+          "sourceIndex": 0,
+          "color": "gold",
+          "world": {
+            "rays": [
+              {
+                "color": "gold",
+                "source": {
+                  "x": 327.2072144234639,
+                  "y": 165.48788963498072,
+                  "angle": -148,
+                  "color": "gold"
+                },
+                "segments": [
+                  {
+                    "a": {
+                      "x": 327.2072144234639,
+                      "y": 165.48788963498072
+                    },
+                    "b": {
+                      "x": 200,
+                      "y": 85.99999999999999
+                    },
+                    "startDistance": 0,
+                    "endDistance": 150
+                  },
+                  {
+                    "a": {
+                      "x": 200.0000008712138,
+                      "y": 86.00000049090374
+                    },
+                    "b": {
+                      "x": 691.1085984513632,
+                      "y": 362.72547351201905
+                    },
+                    "startDistance": 150,
+                    "endDistance": 713.7061663986842
+                  }
+                ],
+                "reflections": [
+                  {
+                    "point": {
+                      "x": 200,
+                      "y": 85.99999999999999
+                    },
+                    "normal": {
+                      "x": 0.8598522715968734,
+                      "y": 0.5105429179116058
+                    },
+                    "incoming": {
+                      "x": -0.848048096156426,
+                      "y": -0.5299192642332049
+                    },
+                    "outgoing": {
+                      "x": 0.8712138111201894,
+                      "y": 0.49090375361514094
+                    },
+                    "distance": 150,
+                    "objectIndex": 0
+                  }
+                ],
+                "teleports": [],
+                "bounces": 1,
+                "status": "target",
+                "totalDistance": 713.7061663986842
+              }
+            ],
+            "collisions": [],
+            "status": "target",
+            "totalDistance": 713.7061663986842,
+            "bounces": 1
+          }
+        },
+        {
+          "sourceIndex": 1,
+          "color": "blue",
+          "world": {
+            "rays": [
+              {
+                "color": "blue",
+                "source": {
+                  "x": 450,
+                  "y": 230,
+                  "angle": 0,
+                  "color": "blue"
+                },
+                "segments": [
+                  {
+                    "a": {
+                      "x": 450,
+                      "y": 230
+                    },
+                    "b": {
+                      "x": 600,
+                      "y": 230
+                    },
+                    "startDistance": 0,
+                    "endDistance": 150
+                  },
+                  {
+                    "a": {
+                      "x": 599.9999990000974,
+                      "y": 230.0000000139622
+                    },
+                    "b": {
+                      "x": 111.99921556526601,
+                      "y": 236.81421918068844
+                    },
+                    "startDistance": 150,
+                    "endDistance": 638.0483564318822
+                  }
+                ],
+                "reflections": [
+                  {
+                    "point": {
+                      "x": 600,
+                      "y": 230
+                    },
+                    "normal": {
+                      "x": -0.999975630705395,
+                      "y": 0.0069812602979624225
+                    },
+                    "incoming": {
+                      "x": 1,
+                      "y": 0
+                    },
+                    "outgoing": {
+                      "x": -0.999902524009304,
+                      "y": 0.013962180339147002
+                    },
+                    "distance": 150,
+                    "objectIndex": 1
+                  }
+                ],
+                "teleports": [],
+                "bounces": 1,
+                "status": "target",
+                "totalDistance": 638.0483564318822
+              }
+            ],
+            "collisions": [],
+            "status": "target",
+            "totalDistance": 638.0483564318822,
+            "bounces": 1
+          }
+        },
+        {
+          "sourceIndex": 2,
+          "color": "pink",
+          "world": {
+            "rays": [
+              {
+                "color": "pink",
+                "source": {
+                  "x": 420,
+                  "y": 374,
+                  "angle": -180,
+                  "color": "pink"
+                },
+                "segments": [
+                  {
+                    "a": {
+                      "x": 420,
+                      "y": 374
+                    },
+                    "b": {
+                      "x": 200,
+                      "y": 374
+                    },
+                    "startDistance": 0,
+                    "endDistance": 220
+                  },
+                  {
+                    "a": {
+                      "x": 200.00000086776546,
+                      "y": 373.99999950302606
+                    },
+                    "b": {
+                      "x": 691.3186031334043,
+                      "y": 92.61918289350888
+                    },
+                    "startDistance": 220,
+                    "endDistance": 786.1882486312302
+                  }
+                ],
+                "reflections": [
+                  {
+                    "point": {
+                      "x": 200,
+                      "y": 374
+                    },
+                    "normal": {
+                      "x": -0.9663760793213292,
+                      "y": 0.25713279315469645
+                    },
+                    "incoming": {
+                      "x": -1,
+                      "y": -1.2246467991473532e-16
+                    },
+                    "outgoing": {
+                      "x": 0.8677654533689282,
+                      "y": -0.4969739610275561
+                    },
+                    "distance": 220,
+                    "objectIndex": 2
+                  }
+                ],
+                "teleports": [],
+                "bounces": 1,
+                "status": "target",
+                "totalDistance": 786.1882486312302
+              }
+            ],
+            "collisions": [],
+            "status": "target",
+            "totalDistance": 786.1882486312302,
+            "bounces": 1
+          }
+        }
+      ],
+      "combined": {
+        "rays": [
+          {
+            "color": "gold",
+            "source": {
+              "x": 327.2072144234639,
+              "y": 165.48788963498072,
+              "angle": -148,
+              "color": "gold"
+            },
+            "segments": [
+              {
+                "a": {
+                  "x": 327.2072144234639,
+                  "y": 165.48788963498072
+                },
+                "b": {
+                  "x": 200,
+                  "y": 85.99999999999999
+                },
+                "startDistance": 0,
+                "endDistance": 150
+              },
+              {
+                "a": {
+                  "x": 200.0000008712138,
+                  "y": 86.00000049090374
+                },
+                "b": {
+                  "x": 455.5588297653585,
+                  "y": 230
+                },
+                "startDistance": 150,
+                "endDistance": 443.33652156587397
+              }
+            ],
+            "reflections": [
+              {
+                "point": {
+                  "x": 200,
+                  "y": 85.99999999999999
+                },
+                "normal": {
+                  "x": 0.8598522715968734,
+                  "y": 0.5105429179116058
+                },
+                "incoming": {
+                  "x": -0.848048096156426,
+                  "y": -0.5299192642332049
+                },
+                "outgoing": {
+                  "x": 0.8712138111201894,
+                  "y": 0.49090375361514094
+                },
+                "distance": 150,
+                "objectIndex": 0
+              }
+            ],
+            "teleports": [],
+            "bounces": 1,
+            "status": "collision",
+            "totalDistance": 443.33652156587397
+          },
+          {
+            "color": "blue",
+            "source": {
+              "x": 450,
+              "y": 230,
+              "angle": 0,
+              "color": "blue"
+            },
+            "segments": [
+              {
+                "a": {
+                  "x": 450,
+                  "y": 230
+                },
+                "b": {
+                  "x": 455.5588297653585,
+                  "y": 230
+                },
+                "startDistance": 0,
+                "endDistance": 5.558829765358493
+              }
+            ],
+            "reflections": [],
+            "teleports": [],
+            "bounces": 0,
+            "status": "collision",
+            "totalDistance": 5.558829765358493
+          },
+          {
+            "color": "pink",
+            "source": {
+              "x": 420,
+              "y": 374,
+              "angle": -180,
+              "color": "pink"
+            },
+            "segments": [
+              {
+                "a": {
+                  "x": 420,
+                  "y": 374
+                },
+                "b": {
+                  "x": 200,
+                  "y": 374
+                },
+                "startDistance": 0,
+                "endDistance": 220
+              },
+              {
+                "a": {
+                  "x": 200.00000086776546,
+                  "y": 373.99999950302606
+                },
+                "b": {
+                  "x": 451.4381739976051,
+                  "y": 230
+                },
+                "startDistance": 220,
+                "endDistance": 509.75361044125526
+              }
+            ],
+            "reflections": [
+              {
+                "point": {
+                  "x": 200,
+                  "y": 374
+                },
+                "normal": {
+                  "x": -0.9663760793213292,
+                  "y": 0.25713279315469645
+                },
+                "incoming": {
+                  "x": -1,
+                  "y": -1.2246467991473532e-16
+                },
+                "outgoing": {
+                  "x": 0.8677654533689282,
+                  "y": -0.4969739610275561
+                },
+                "distance": 220,
+                "objectIndex": 2
+              }
+            ],
+            "teleports": [],
+            "bounces": 1,
+            "status": "collision",
+            "totalDistance": 509.75361044125526
+          }
+        ],
+        "collisions": [
+          {
+            "point": {
+              "x": 455.5588297653585,
+              "y": 230
+            },
+            "colors": [
+              "gold",
+              "blue"
+            ],
+            "rayIndices": [
+              0,
+              1
+            ],
+            "distances": [
+              443.33652156587397,
+              5.558829765358493
+            ],
+            "triggerDistance": 443.33652156587397,
+            "overlap": false,
+            "stoppedRayIndices": [
+              0,
+              1
+            ]
+          },
+          {
+            "point": {
+              "x": 451.43817399760513,
+              "y": 230
+            },
+            "colors": [
+              "blue",
+              "pink"
+            ],
+            "rayIndices": [
+              1,
+              2
+            ],
+            "distances": [
+              1.4381739976051253,
+              509.75361044125526
+            ],
+            "triggerDistance": 509.75361044125526,
+            "overlap": false,
+            "stoppedRayIndices": [
+              2
+            ]
+          }
+        ],
+        "status": "collision",
+        "totalDistance": 509.75361044125526,
+        "bounces": 2
+      },
+      "referenceAngles": [
+        -71,
+        89.6,
+        88
+      ],
+      "reference": {
+        "rays": [
+          {
+            "color": "gold",
+            "source": {
+              "x": 327.2072144234639,
+              "y": 165.48788963498072,
+              "angle": -148,
+              "color": "gold"
+            },
+            "segments": [
+              {
+                "a": {
+                  "x": 327.2072144234639,
+                  "y": 165.48788963498072
+                },
+                "b": {
+                  "x": 200,
+                  "y": 85.99999999999999
+                },
+                "startDistance": 0,
+                "endDistance": 150
+              },
+              {
+                "a": {
+                  "x": 200.00000099452188,
+                  "y": 86.00000010452845
+                },
+                "b": {
+                  "x": 362.08676269771587,
+                  "y": 103.0360052400327
+                },
+                "startDistance": 150,
+                "endDistance": 312.97958090020023
+              },
+              {
+                "a": {
+                  "x": 599.6123513204143,
+                  "y": 362.37245551681093
+                },
+                "b": {
+                  "x": 688.1231663816266,
+                  "y": 371.6753170465614
+                },
+                "startDistance": 312.97958090020023,
+                "endDistance": 401.9779382751644
+              }
+            ],
+            "reflections": [
+              {
+                "point": {
+                  "x": 200,
+                  "y": 85.99999999999999
+                },
+                "normal": {
+                  "x": 0.9455185755993167,
+                  "y": 0.3255681544571569
+                },
+                "incoming": {
+                  "x": -0.848048096156426,
+                  "y": -0.5299192642332049
+                },
+                "outgoing": {
+                  "x": 0.9945218953682734,
+                  "y": 0.10452846326765408
+                },
+                "distance": 150,
+                "objectIndex": 0
+              }
+            ],
+            "teleports": [
+              {
+                "point": {
+                  "x": 362.08676269771587,
+                  "y": 103.0360052400327
+                },
+                "from": {
+                  "x": 378,
+                  "y": 104.7
+                },
+                "to": {
+                  "x": 583.7,
+                  "y": 360.7
+                },
+                "exit": {
+                  "x": 599.6123513204143,
+                  "y": 362.37245551681093
+                },
+                "distance": 312.97958090020023,
+                "portalId": "g1a",
+                "pairId": "g1b",
+                "direction": {
+                  "x": 0.9945218953682734,
+                  "y": 0.10452846326765408
+                }
+              }
+            ],
+            "bounces": 1,
+            "status": "target",
+            "totalDistance": 401.9779382751644
+          },
+          {
+            "color": "blue",
+            "source": {
+              "x": 450,
+              "y": 230,
+              "angle": 0,
+              "color": "blue"
+            },
+            "segments": [
+              {
+                "a": {
+                  "x": 450,
+                  "y": 230
+                },
+                "b": {
+                  "x": 600,
+                  "y": 230
+                },
+                "startDistance": 0,
+                "endDistance": 150
+              },
+              {
+                "a": {
+                  "x": 599.9999990000974,
+                  "y": 230.0000000139622
+                },
+                "b": {
+                  "x": 111.99921556526601,
+                  "y": 236.81421918068844
+                },
+                "startDistance": 150,
+                "endDistance": 638.0483564318822
+              }
+            ],
+            "reflections": [
+              {
+                "point": {
+                  "x": 600,
+                  "y": 230
+                },
+                "normal": {
+                  "x": -0.999975630705395,
+                  "y": 0.0069812602979624225
+                },
+                "incoming": {
+                  "x": 1,
+                  "y": 0
+                },
+                "outgoing": {
+                  "x": -0.999902524009304,
+                  "y": 0.013962180339147002
+                },
+                "distance": 150,
+                "objectIndex": 1
+              }
+            ],
+            "teleports": [],
+            "bounces": 1,
+            "status": "target",
+            "totalDistance": 638.0483564318822
+          },
+          {
+            "color": "pink",
+            "source": {
+              "x": 420,
+              "y": 374,
+              "angle": -180,
+              "color": "pink"
+            },
+            "segments": [
+              {
+                "a": {
+                  "x": 420,
+                  "y": 374
+                },
+                "b": {
+                  "x": 200,
+                  "y": 374
+                },
+                "startDistance": 0,
+                "endDistance": 220
+              },
+              {
+                "a": {
+                  "x": 200.00000099756406,
+                  "y": 373.9999999302435
+                },
+                "b": {
+                  "x": 495.24172013714224,
+                  "y": 353.35468775809136
+                },
+                "startDistance": 220,
+                "endDistance": 515.9626693270271
+              },
+              {
+                "a": {
+                  "x": 482.56102580172126,
+                  "y": 96.88389635033751
+                },
+                "b": {
+                  "x": 688.0521954115944,
+                  "y": 82.51455397697579
+                },
+                "startDistance": 515.9626693270271,
+                "endDistance": 721.9556274296685
+              }
+            ],
+            "reflections": [
+              {
+                "point": {
+                  "x": 200,
+                  "y": 374
+                },
+                "normal": {
+                  "x": -0.9993908270190957,
+                  "y": 0.034899496702501163
+                },
+                "incoming": {
+                  "x": -1,
+                  "y": -1.2246467991473532e-16
+                },
+                "outgoing": {
+                  "x": 0.9975640502598242,
+                  "y": -0.06975647374412582
+                },
+                "distance": 220,
+                "objectIndex": 2
+              }
+            ],
+            "teleports": [
+              {
+                "point": {
+                  "x": 495.24172013714224,
+                  "y": 353.35468775809136
+                },
+                "from": {
+                  "x": 511.2,
+                  "y": 352.2
+                },
+                "to": {
+                  "x": 466.6,
+                  "y": 98
+                },
+                "exit": {
+                  "x": 482.56102580172126,
+                  "y": 96.88389635033751
+                },
+                "distance": 515.9626693270271,
+                "portalId": "p2a",
+                "pairId": "p2b",
+                "direction": {
+                  "x": 0.9975640502598242,
+                  "y": -0.06975647374412582
+                }
+              }
+            ],
+            "bounces": 1,
+            "status": "target",
+            "totalDistance": 721.9556274296685
+          }
+        ],
+        "collisions": [],
+        "status": "target",
+        "totalDistance": 721.9556274296685,
+        "bounces": 3
+      },
+      "explanation": {
+        "suggestedBand": "master",
+        "primaryConcept": 6,
+        "complementaryConcepts": [
+          5,
+          7,
+          14
+        ],
+        "centralDeduction": "As eliminações propagam entre as três cores nas ondas e hipóteses recalculadas, registradas no certificado de reautoria.",
+        "conceptEvidence": [
+          {
+            "concept": 7,
+            "claim": "As alternativas do conflito documentado chegam aos respectivos alvos quando testadas isoladamente e colidem no conjunto, sem paredes novas.",
+            "caseIds": [
+              "local-routes-collide",
+              "local-gold-works",
+              "local-blue-works",
+              "local-pink-works",
+              "joint-solution"
+            ]
+          },
+          {
+            "concept": 5,
+            "claim": "Uma escolha já localmente resolvida precisa ser reconsiderada para satisfazer as outras cores no conjunto.",
+            "caseIds": [
+              "local-routes-collide",
+              "joint-solution"
+            ]
+          },
+          {
+            "concept": 14,
+            "claim": "3 orientações comandam escolhas relacionadas pela matriz conservadora recalculada; não são problemas independentes.",
+            "caseIds": [
+              "route-choice-0-0-0",
+              "route-choice-0-0-1",
+              "route-choice-0-0-2",
+              "route-choice-0-1-0",
+              "route-choice-0-1-1",
+              "route-choice-0-1-2",
+              "route-choice-0-2-0",
+              "route-choice-0-2-1",
+              "route-choice-0-2-2",
+              "route-choice-1-0-0",
+              "route-choice-1-0-1",
+              "route-choice-1-0-2",
+              "route-choice-1-1-0",
+              "route-choice-1-1-1",
+              "route-choice-1-1-2",
+              "route-choice-1-2-0",
+              "route-choice-1-2-1",
+              "route-choice-1-2-2",
+              "route-choice-2-0-0",
+              "route-choice-2-0-1",
+              "route-choice-2-0-2",
+              "route-choice-2-1-0",
+              "route-choice-2-1-1",
+              "route-choice-2-1-2",
+              "route-choice-2-2-0",
+              "route-choice-2-2-1",
+              "route-choice-2-2-2"
+            ]
+          },
+          {
+            "concept": 6,
+            "claim": "As eliminações propagam entre as três cores nas ondas e hipóteses recalculadas, registradas no certificado de reautoria.",
+            "caseIds": [
+              "route-choice-0-0-0",
+              "route-choice-0-0-1",
+              "route-choice-0-0-2",
+              "route-choice-0-1-0",
+              "route-choice-0-1-1",
+              "route-choice-0-1-2",
+              "route-choice-0-2-0",
+              "route-choice-0-2-1",
+              "route-choice-0-2-2",
+              "route-choice-1-0-0",
+              "route-choice-1-0-1",
+              "route-choice-1-0-2",
+              "route-choice-1-1-0",
+              "route-choice-1-1-1",
+              "route-choice-1-1-2",
+              "route-choice-1-2-0",
+              "route-choice-1-2-1",
+              "route-choice-1-2-2",
+              "route-choice-2-0-0",
+              "route-choice-2-0-1",
+              "route-choice-2-0-2",
+              "route-choice-2-1-0",
+              "route-choice-2-1-1",
+              "route-choice-2-1-2",
+              "route-choice-2-2-0",
+              "route-choice-2-2-1",
+              "route-choice-2-2-2"
+            ]
+          }
+        ],
+        "layout": "open",
+        "logicalSignature": "{\"routes\":[[0,1,1],[0,1,1],[0,1,1]],\"edges\":[[0,0,1,0],[0,0,1,1],[0,0,1,2],[0,0,2,0],[0,1,1,0],[0,1,1,1],[0,1,2,0],[0,2,1,1],[0,2,1,2],[1,0,2,0],[1,1,2,0]]}",
+        "dependencies": "Matriz nova de incompatibilidades entre alternativas: [[0,0,1,0],[0,0,1,1],[0,0,2,0],[0,0,2,1],[1,0,2,0],[1,0,2,1],[1,1,2,0],[1,1,2,1],[1,1,2,2],[1,2,2,0],[1,2,2,2]]",
+        "difficultyRationale": "Três decisões relacionadas: 27 combinações centrais reavaliadas, 3 compatíveis. A matriz conservadora contém 11 incompatibilidades e 3 cadeias condicionais, com 1 ondas de eliminação direta; a dificuldade vem destas dependências, não de ajuste angular.",
+        "humanReview": "Reautoria física e lógica: referência, alternativas nomeadas, pares e propagação foram recompostos no motor original. Varredura de0,5° e produto das janelas localmente vencedoras não encontram atalho completo igualmente ou mais simples. Rotas locais adicionais e ângulos com interferência são documentados, não ocultados; não se alega unicidade contínua ou independência de todos os ângulos possíveis.",
+        "distinction": "Reautoria declarada: geometrias iniciais e matriz de compatibilidade recalculadas; a matriz anterior fica arquivada, não alegada como preservada.",
+        "relatedPreviousId": "light-v4-open-hard-chain-2",
+        "review": {
+          "approved": true,
+          "reason": "Redesenho de dados revisto por solução física, incidência real, contraprovas causais, catálogos finitos e margem angular no motor preservado. Não é calibração de dificuldade com jogadores.",
+          "relatedCombination": false
+        },
+        "campaignNumber": 405,
+        "campaignBand": "master",
+        "combinationIsRelated": false,
+        "resources": {
+          "sources": 3,
+          "mirrors": 3,
+          "walls": 0,
+          "portals": 12
+        }
+      }
+    }
+  ]
+}

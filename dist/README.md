@@ -2,7 +2,7 @@
 
 Laboratório educativo de puzzles, produzido com auxílio de OpenAI/Codex a partir do escopo aprovado por Luigi. Não representa autoria individual do estudante nem uma submissão concluída ao CS50. Vídeo de demonstração ainda não informado.
 
-## Catálogo da revisão v4 · 25/10/2026
+## Catálogo da revisão v5 · 25/10/2026
 
 - Reflexos: 500 níveis de luz, espelhos, paredes, cores e portais.
 - Corte certo: 100 níveis de proporções, curvas e áreas com vazios.
@@ -13,7 +13,7 @@ Laboratório educativo de puzzles, produzido com auxílio de OpenAI/Codex a part
 
 Total: 1200 níveis de campanha e um duelo. NEXO e Equilíbrio foram retirados do site; PRUMO é outro jogo e permanece. Os registros antigos do navegador e os backups históricos não são apagados. Não misture arquivos de versões anteriores com a versão atual.
 
-A campanha v4 foi compilada com 500 soluções reproduzidas no motor real, 11.150 casos de contraprova/alternativa e fluxo de interface dos 500 Reflexos e 100 Corte em DOM determinístico. A inspeção em navegador real ainda não foi executada nesta etapa. Veja os resultados e limites no [registro v4](development/reflexos-v4/README.md); os relatórios históricos continuam separados.
+A campanha v5 conserva 500 fases e corrige a geometria de 380 mapas. As 500 referências foram reproduzidas no motor preservado, com zero reflexão abaixo de 20° entre o feixe incidente e a linha do espelho. O limite é editorial, não uma nova regra de jogo: outras soluções legítimas continuam aceitas. Foram reexecutados 11.752 casos e os testes individuais/cantos ±0,5°. A inspeção em navegador da nova publicação permanece separada destes testes de motor e DOM; não se declara calibração com jogadores. Veja o [registro v5](development/reflexos-v5/README.md).
 
 ## Jogar
 
@@ -37,19 +37,20 @@ Sem cadastro, ranking, coleta de dados pessoais ou upload automático de jogadas
 
 Sliders, campos numéricos e teclado complementam o arraste; estados e resultados têm anúncios acessíveis. A dificuldade é uma progressão editorial/estrutural, não uma alegação de calibração por testes com jogadores. Testes de motores e DOM simulado não substituem validação interativa em navegador real.
 
-## Reflexos v4
+## Reflexos v5
 
 A campanha se organiza em quatro faixas: **Básico, 1–200; Intermediário, 201–300; Avançado, 301–400; Mestre, 401–500**. Subdivisões didáticas podem existir somente no Básico. As outras faixas misturam os conceitos; blocos de dez ou 50 fases são instrumentos de revisão da variedade, não capítulos da interface.
 
-A revisão altera a composição, a classificação e a ordem das fases, sem autorizar mudanças na física, nas regras, nos controles, no visual ou nos demais jogos. A dificuldade é avaliada pelas dependências entre decisões, não pela quantidade de peças ou pela precisão angular. Qualquer solução permitida pelas regras continua válida; o gabarito é uma configuração de referência, não uma exigência de percurso único.
+A revisão corrige a composição das fases e conserva as quatro faixas e as posições de exibição, sem alterar física, regras, controles, visual ou demais jogos. A dificuldade é avaliada pelas dependências entre decisões, não pela quantidade de peças ou pela precisão angular. Qualquer solução permitida pelas regras continua válida; o gabarito é uma configuração de referência, não uma exigência de percurso único.
 
-A identidade de uma fase é independente de seu número na seleção. Fases reaproveitadas sem mudança conservam seus IDs; fases novas ou redesenhadas recebem identidade de versão própria. Reordenar não deve transferir uma conclusão para outro desafio, apagar o histórico nem reiniciar os saves. Foram mantidos 158 IDs legados e criadas 342 identidades de versão nova, incluindo dois reparos de enquadramento; as 200 definições anteriores estão arquivadas. Os testes de correspondência por ID passaram sem acessar saves reais de usuários. Consulte o [registro de desenvolvimento v4](development/reflexos-v4/README.md).
+A identidade de uma fase é independente de seu número na seleção. Nesta revisão, 120 mapas da campanha de 500 conservam conteúdo e IDs; 380 mapas alterados recebem identidade nova. As 500 definições anteriores e as 200 originais ficam arquivadas. O armazenamento mantém conclusões, rascunhos e falhas sob os IDs antigos, sem apagá-los nem transferir conclusão para uma nova geometria. Os testes usam armazenamento sintético; não acessam saves reais. Consulte o [registro v5](development/reflexos-v5/README.md).
 
-A campanha contém 399 aplicações certificadas da ideia 7, das quais 327 não têm paredes; ao todo, 335 mapas são inteiramente sem paredes. O mesmo registro reúne a distribuição por faixa, exemplos geométricos, três exceções visuais legadas e limites das verificações. Buscas finitas e amostras de ângulos não demonstram unicidade contínua. [Reflexos v3](REFLEXOS-V3.md) permanece como registro histórico da campanha anterior de 200 níveis.
+A campanha contém 399 aplicações certificadas da ideia 7, das quais 327 não têm paredes; ao todo, 335 mapas são inteiramente sem paredes. Os 16 conceitos e as quotas foram conferidos por faixa e blocos superiores de 50. Catálogos finitos não demonstram unicidade contínua; as provas geométricas, as alterações de relações e os limites estão no registro v5. [Reflexos v3](REFLEXOS-V3.md) e [v4](development/reflexos-v4/README.md) permanecem históricos.
 
 ## Documentação
 
-- [Reflexos v4: desenvolvimento, distribuição e validação](development/reflexos-v4/README.md)
+- [Reflexos v5: geometria, incidência, preservação e validação](development/reflexos-v5/README.md)
+- [Reflexos v4: arquivo da campanha anterior](development/reflexos-v4/README.md)
 - [Reflexos v3: campanha e limites (histórico)](REFLEXOS-V3.md)
 - [Validação de Reflexos v3 (histórico)](QA-REFLEXOS-V3.md)
 - [Coleção lógica e regras](EXPANSAO.md)

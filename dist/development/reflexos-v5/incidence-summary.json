@@ -1,0 +1,50 @@
+{
+  "passed": true,
+  "policy": {
+    "minAngle": 20,
+    "preferredAngle": 30,
+    "epsilon": 1e-8,
+    "perturbationDegrees": 0.5,
+    "hardKnownWinnerScope": "Full-world known winner with no more total reflections plus portal jumps than the reference. Other winners are review findings. Operation count is only a bounded geometric simplicity proxy, not logical difficulty.",
+    "knownTargetCasesIncludeSourceSubsets": "measured and reported, not a hard angle gate"
+  },
+  "summary": {
+    "levelCount": 500,
+    "references": {
+      "eventCount": 1719,
+      "minAngle": 20.29999999999998,
+      "minEndpointMargin": 0.842855999137754,
+      "belowMinimum": 0,
+      "betweenMinimumAndPreferred": 104
+    },
+    "levelsBelowMinimum": 0,
+    "levelsBetweenMinimumAndPreferred": 88,
+    "knownFullWinnerCaseCount": 1332,
+    "knownLocalWinnerCaseCount": 5800,
+    "knownWinnerEventSummary": {
+      "eventCount": 34264,
+      "minAngle": 0.29006752597978797,
+      "minEndpointMargin": 0.04615396609529654,
+      "belowMinimum": 427,
+      "betweenMinimumAndPreferred": 5460
+    },
+    "catalogueCount": 14119,
+    "catalogueMismatches": 0,
+    "caseCount": 11752,
+    "caseMismatches": 0,
+    "realConflictWitnessCount": 3292,
+    "realConflictLevelCount": 434,
+    "halfDegreeTests": 13632,
+    "halfDegreeFailures": 0,
+    "halfDegreeTopologyChanges": 162,
+    "minPerturbedEndpointMargin": 0.38412331927045074,
+    "reviewFindings": 427,
+    "metadataReviewItems": 953
+  },
+  "limitations": [
+    "Finite documented routes and sampled perturbations, not a proof about all continuous configurations.",
+    "A real isolated/joint conflict certifies geometry, not obviousness, novelty, difficulty or causal necessity of every tagged concept.",
+    "Topology changes, endpoint margins, longer winners and local winners are diagnostics. Current metadata that claims a catalogue winner but no longer replays is a stale-evidence failure.",
+    "Existing independent geometry, UI, identity/history and editorial tests remain necessary."
+  ]
+}

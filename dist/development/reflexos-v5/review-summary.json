@@ -1,0 +1,249 @@
+{
+  "passed": true,
+  "baseline": {
+    "events": 1718,
+    "eventsBelow20": 607,
+    "levelsBelow20": 312,
+    "levelsByBand": [
+      106,
+      54,
+      54,
+      98
+    ]
+  },
+  "current": {
+    "levelCount": 500,
+    "references": {
+      "eventCount": 1719,
+      "minAngle": 20.29999999999998,
+      "minEndpointMargin": 0.842855999137754,
+      "belowMinimum": 0,
+      "betweenMinimumAndPreferred": 104
+    },
+    "levelsBelowMinimum": 0,
+    "levelsBetweenMinimumAndPreferred": 88,
+    "knownFullWinnerCaseCount": 1332,
+    "knownLocalWinnerCaseCount": 5800,
+    "knownWinnerEventSummary": {
+      "eventCount": 34264,
+      "minAngle": 0.29006752597978797,
+      "minEndpointMargin": 0.04615396609529654,
+      "belowMinimum": 427,
+      "betweenMinimumAndPreferred": 5460
+    },
+    "catalogueCount": 14119,
+    "catalogueMismatches": 0,
+    "caseCount": 11752,
+    "caseMismatches": 0,
+    "realConflictWitnessCount": 3292,
+    "realConflictLevelCount": 434,
+    "halfDegreeTests": 13632,
+    "halfDegreeFailures": 0,
+    "halfDegreeTopologyChanges": 162,
+    "minPerturbedEndpointMargin": 0.38412331927045074,
+    "reviewFindings": 427,
+    "metadataReviewItems": 953
+  },
+  "marginReview": {
+    "minimumReferenceEndpoint": 0.842855999137754,
+    "minimumPerturbedEndpoint": 0.38412331927045074,
+    "minimumPerturbedIncidence": 0.5,
+    "levelsWithPerturbedIncidenceBelow20": [
+      {
+        "number": 48,
+        "referenceMinimum": 38.52939612009413,
+        "perturbedMinimum": 7.490067525979803,
+        "topologyChanges": 17
+      },
+      {
+        "number": 53,
+        "referenceMinimum": 20.29999999999998,
+        "perturbedMinimum": 17.800000000000036,
+        "topologyChanges": 0
+      },
+      {
+        "number": 117,
+        "referenceMinimum": 31.565778823666463,
+        "perturbedMinimum": 2.272176414896397,
+        "topologyChanges": 16
+      },
+      {
+        "number": 127,
+        "referenceMinimum": 21.1,
+        "perturbedMinimum": 8.499999999999986,
+        "topologyChanges": 18
+      },
+      {
+        "number": 144,
+        "referenceMinimum": 30.80744126106391,
+        "perturbedMinimum": 4.807441261063858,
+        "topologyChanges": 9
+      },
+      {
+        "number": 146,
+        "referenceMinimum": 44.97706756294617,
+        "perturbedMinimum": 0.5,
+        "topologyChanges": 10
+      },
+      {
+        "number": 148,
+        "referenceMinimum": 20.29999999999998,
+        "perturbedMinimum": 17.800000000000036,
+        "topologyChanges": 0
+      },
+      {
+        "number": 186,
+        "referenceMinimum": 41.60496481877747,
+        "perturbedMinimum": 11.228464370193583,
+        "topologyChanges": 34
+      },
+      {
+        "number": 196,
+        "referenceMinimum": 20.29999999999998,
+        "perturbedMinimum": 17.800000000000036,
+        "topologyChanges": 0
+      }
+    ],
+    "levelsWithPerturbedTopologyChanges": [
+      48,
+      117,
+      127,
+      144,
+      146,
+      186,
+      212,
+      258
+    ],
+    "referenceLevelsBelowOnePixelEndpoint": [
+      423
+    ],
+    "perturbedLevelsBelowOnePixelEndpoint": [
+      127,
+      423
+    ],
+    "scope": "Reference and perturbed margins are distinct. Successful alternate routes within the tested half-degree box are not failures."
+  },
+  "knownSimpleWinners": {
+    "configurations": 10976,
+    "minAngle": 19.99999999999999,
+    "violations": 0
+  },
+  "byBand": {
+    "basic": {
+      "levels": 200,
+      "changed": 147,
+      "events": 613,
+      "minimum": 20.29999999999998,
+      "below20": 0,
+      "between20and30": 24,
+      "histogram": {
+        "0–5": 0,
+        "5–10": 0,
+        "10–15": 0,
+        "15–20": 0,
+        "20–30": 29,
+        "30–45": 152,
+        "45–60": 241,
+        "60–90": 191
+      }
+    },
+    "intermediate": {
+      "levels": 100,
+      "changed": 61,
+      "events": 399,
+      "minimum": 21.55511520303051,
+      "below20": 0,
+      "between20and30": 8,
+      "histogram": {
+        "0–5": 0,
+        "5–10": 0,
+        "10–15": 0,
+        "15–20": 0,
+        "20–30": 9,
+        "30–45": 102,
+        "45–60": 134,
+        "60–90": 154
+      }
+    },
+    "advanced": {
+      "levels": 100,
+      "changed": 74,
+      "events": 376,
+      "minimum": 20.757226587369047,
+      "below20": 0,
+      "between20and30": 15,
+      "histogram": {
+        "0–5": 0,
+        "5–10": 0,
+        "10–15": 0,
+        "15–20": 0,
+        "20–30": 17,
+        "30–45": 74,
+        "45–60": 141,
+        "60–90": 144
+      }
+    },
+    "master": {
+      "levels": 100,
+      "changed": 98,
+      "events": 331,
+      "minimum": 20.977264440017453,
+      "below20": 0,
+      "between20and30": 41,
+      "histogram": {
+        "0–5": 0,
+        "5–10": 0,
+        "10–15": 0,
+        "15–20": 0,
+        "20–30": 49,
+        "30–45": 38,
+        "45–60": 61,
+        "60–90": 183
+      }
+    }
+  },
+  "referenceHistogram": {
+    "0–5": 0,
+    "5–10": 0,
+    "10–15": 0,
+    "15–20": 0,
+    "20–30": 104,
+    "30–45": 366,
+    "45–60": 577,
+    "60–90": 672
+  },
+  "identity": {
+    "changed": 380,
+    "unchanged": 120,
+    "originalV3Retained": 96
+  },
+  "concepts": {
+    "idea7": {
+      "basic": 136,
+      "intermediate": 97,
+      "advanced": 90,
+      "master": 76
+    },
+    "idea7WithoutWalls": 327,
+    "noWalls": {
+      "basic": 127,
+      "intermediate": 68,
+      "advanced": 67,
+      "master": 73
+    },
+    "combinations": {
+      "basic": 127,
+      "intermediate": 91,
+      "advanced": 100,
+      "master": 96
+    },
+    "allBandsAndUpper50Have16": true,
+    "distributionPassed": true
+  },
+  "limits": [
+    "Finite documented routes and sampled perturbations, not a proof about all continuous configurations.",
+    "A real isolated/joint conflict certifies geometry, not obviousness, novelty, difficulty or causal necessity of every tagged concept.",
+    "Topology changes, endpoint margins, longer winners and local winners are diagnostics. Current metadata that claims a catalogue winner but no longer replays is a stale-evidence failure.",
+    "Existing independent geometry, UI, identity/history and editorial tests remain necessary."
+  ]
+}

@@ -3,13 +3,16 @@ import fs from 'node:fs';
 import crypto from 'node:crypto';
 import {execFileSync} from 'node:child_process';
 import {restoreLightCampaignFile} from './light-v4-history.mjs';
+import {restoreLightV5File} from './light-v5-history.mjs';
 const manifest=JSON.parse(fs.readFileSync(new URL('./light-v4-authorized-change.json',import.meta.url)));
 const sha=x=>crypto.createHash('sha256').update(x).digest('hex');
 for(const[name,change]of Object.entries(manifest.files)){
- const current=fs.readFileSync(new URL('../dist/'+name,import.meta.url),'utf8');
+ const rawCurrent=fs.readFileSync(new URL('../dist/'+name,import.meta.url),'utf8');
+ const current=restoreLightV5File(name,rawCurrent);
  const before=execFileSync('git',['show',manifest.baseCommit+':dist/'+name],{encoding:'utf8'});
  assert.equal(sha(before),change.beforeSha256);assert.equal(sha(current),change.afterSha256);
  assert.equal(restoreLightCampaignFile(name,current),before);
+ assert.equal(restoreLightCampaignFile(name,rawCurrent),before);
  assert.equal(restoreLightCampaignFile('dist/'+name,Buffer.from(current)).toString(),before);
  assert.equal(restoreLightCampaignFile(name,before),before);
  assert.equal(restoreLightCampaignFile(name,current+' '),current+' ','Unknown changes cannot be hidden by a campaign rollback');

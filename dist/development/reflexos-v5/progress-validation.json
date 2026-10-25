@@ -1,0 +1,17 @@
+{
+  "passed": true,
+  "total": 500,
+  "legacyDefinitions": 200,
+  "retainedLegacyIds": 96,
+  "archivedLegacyIds": 104,
+  "newIdentities": 404,
+  "reclassified": 28,
+  "reviewedRelatedCombinations": 414,
+  "baselineLegacyDigest": "a3b5c9202d602a6450b060c0534aea7c40026c4419049da92a959ddd50ffa8f0",
+  "limits": [
+    "Selection/identity/content-hash consistency and synthetic ID-keyed storage semantics only; no real user storage is accessed.",
+    "Authoring source file references are retained for traceability but are not fetched from another workspace.",
+    "Unchanged legacy puzzle content is exact for the compiler fingerprint fields; presentation and campaign numbering may change.",
+    "Separate integration/history tests cover the exact app patch and unrelated runtime/visual byte preservation."
+  ]
+}

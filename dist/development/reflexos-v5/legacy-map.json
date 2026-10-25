@@ -1,0 +1,1402 @@
+[
+  {
+    "id": "light-v3-1",
+    "oldNumber": 1,
+    "newNumber": 1,
+    "puzzleHash": "8bca1d8cd23bc2937fd9174ee8712a882e46f8750045927ec85ca619296ad170",
+    "treatment": "Retained unchanged; existing ID-keyed progress remains attached."
+  },
+  {
+    "id": "light-v3-2",
+    "oldNumber": 2,
+    "newNumber": null,
+    "puzzleHash": "7ef5247c096157c55c7e30909f053492600897cad40e996327f5b949ea0eeefa",
+    "treatment": "Original definition archived; no history key is deleted, reset or reassigned."
+  },
+  {
+    "id": "light-v3-3",
+    "oldNumber": 3,
+    "newNumber": 3,
+    "puzzleHash": "f5d8867030cf9c66393b09d06e01e7d39f14f25fd1f19793f8c0025c9382a5d8",
+    "treatment": "Retained unchanged; existing ID-keyed progress remains attached."
+  },
+  {
+    "id": "light-v3-4",
+    "oldNumber": 4,
+    "newNumber": null,
+    "puzzleHash": "436f7f4c9daa627194c9e14935df50285a4098b53b1bbf4b2d5d6e3f2095c142",
+    "treatment": "Original definition archived; no history key is deleted, reset or reassigned."
+  },
+  {
+    "id": "light-v3-5",
+    "oldNumber": 5,
+    "newNumber": 50,
+    "puzzleHash": "da52fc3b1ecaa025e3dcc1be7055d2970e4deae4efb1d3d0120cc4dadc62e354",
+    "treatment": "Retained unchanged; existing ID-keyed progress remains attached."
+  },
+  {
+    "id": "light-v3-6",
+    "oldNumber": 6,
+    "newNumber": null,
+    "puzzleHash": "233b6c3b77766461940c71d173eb1e53ef1789ac3f8ed210ee403e237ea22e76",
+    "treatment": "Original definition archived; no history key is deleted, reset or reassigned."
+  },
+  {
+    "id": "light-v3-7",
+    "oldNumber": 7,
+    "newNumber": 54,
+    "puzzleHash": "e0ab9452edce2acd3137124d821f684ef49d3a0671475cad28548aa1aa0f1889",
+    "treatment": "Retained unchanged; existing ID-keyed progress remains attached."
+  },
+  {
+    "id": "light-v3-8",
+    "oldNumber": 8,
+    "newNumber": null,
+    "puzzleHash": "739013106100fb336bbc61a0e142cfb479457c489470f985c50d9a7179eb0e9d",
+    "treatment": "Original definition archived; no history key is deleted, reset or reassigned."
+  },
+  {
+    "id": "light-v3-9",
+    "oldNumber": 9,
+    "newNumber": null,
+    "puzzleHash": "729869a31259ff18110e93154f439ba6251e754cce42e5ba963cd105aa354eb4",
+    "treatment": "Original definition archived; no history key is deleted, reset or reassigned."
+  },
+  {
+    "id": "light-v3-10",
+    "oldNumber": 10,
+    "newNumber": null,
+    "puzzleHash": "66db92fb33d95c6030b40fce235e7c4eac4a1299ff65480eca503ab8c134de1a",
+    "treatment": "Original definition archived; no history key is deleted, reset or reassigned."
+  },
+  {
+    "id": "light-v3-11",
+    "oldNumber": 11,
+    "newNumber": 104,
+    "puzzleHash": "c115f6c1b0ed2b068cc381b0c7dabe9b982cea3de3a8401f767bfeb80b9bb84f",
+    "treatment": "Retained unchanged; existing ID-keyed progress remains attached."
+  },
+  {
+    "id": "light-v3-12",
+    "oldNumber": 12,
+    "newNumber": 155,
+    "puzzleHash": "e64d46470102fd0594bdaa26a166b201c55d29ccd543edf784fa0b14475fd6eb",
+    "treatment": "Retained unchanged; existing ID-keyed progress remains attached."
+  },
+  {
+    "id": "light-v3-13",
+    "oldNumber": 13,
+    "newNumber": null,
+    "puzzleHash": "cf412af60c15f1de7088dc12485216f43d1d5366a9fd09f176efd79db2d753a5",
+    "treatment": "Original definition archived; no history key is deleted, reset or reassigned."
+  },
+  {
+    "id": "light-v3-14",
+    "oldNumber": 14,
+    "newNumber": null,
+    "puzzleHash": "957f57265503ea7d79dcdde649559140271f3e8d24f527ee393de976bada9798",
+    "treatment": "Original definition archived; no history key is deleted, reset or reassigned."
+  },
+  {
+    "id": "light-v3-15",
+    "oldNumber": 15,
+    "newNumber": null,
+    "puzzleHash": "9ccf33d048433ddf3f1aaaa196339766313f956ccc4e8507aab9d8a93ace04d2",
+    "treatment": "Original definition archived; no history key is deleted, reset or reassigned."
+  },
+  {
+    "id": "light-v3-16",
+    "oldNumber": 16,
+    "newNumber": null,
+    "puzzleHash": "7efd2b041c34f19afd07f067b3fc37157aafa2c7e2826a3c3c5cc40fdc9977f9",
+    "treatment": "Original definition archived; no history key is deleted, reset or reassigned."
+  },
+  {
+    "id": "light-v3-17",
+    "oldNumber": 17,
+    "newNumber": null,
+    "puzzleHash": "d24c7537658b4086234996e5b453d8a2644a819943ec4096484c84aacc0efb2b",
+    "treatment": "Original definition archived; no history key is deleted, reset or reassigned."
+  },
+  {
+    "id": "light-v3-18",
+    "oldNumber": 18,
+    "newNumber": 142,
+    "puzzleHash": "d03049afffa605ac2ea1db7ff127cc1a2266096eaddbbdbf9e9501d4c218dc8c",
+    "treatment": "Retained unchanged; existing ID-keyed progress remains attached."
+  },
+  {
+    "id": "light-v3-19",
+    "oldNumber": 19,
+    "newNumber": null,
+    "puzzleHash": "0fb60aa9c980a3eb487fbaa37e8de9eb619ce3b594f71c934c214da73da335e4",
+    "treatment": "Original definition archived; no history key is deleted, reset or reassigned."
+  },
+  {
+    "id": "light-v3-20",
+    "oldNumber": 20,
+    "newNumber": 162,
+    "puzzleHash": "4d1b163c326d2378ea56ef032bd05bbe84592438f7632bdbb38e123701d4bb46",
+    "treatment": "Retained unchanged; existing ID-keyed progress remains attached."
+  },
+  {
+    "id": "light-v3-21",
+    "oldNumber": 21,
+    "newNumber": null,
+    "puzzleHash": "72870ffd345dd4cfe0343017f3c14d5f14de24ed8900622275bd79c9266e1853",
+    "treatment": "Original definition archived; no history key is deleted, reset or reassigned."
+  },
+  {
+    "id": "light-v3-22",
+    "oldNumber": 22,
+    "newNumber": 5,
+    "puzzleHash": "00de4eaf4988f444871ce6d62b7b319c5cfe48d8c4c49eb4d6b62ad675fb2f46",
+    "treatment": "Retained unchanged; existing ID-keyed progress remains attached."
+  },
+  {
+    "id": "light-v3-23",
+    "oldNumber": 23,
+    "newNumber": null,
+    "puzzleHash": "0e7259318dc9018ff37c8156f5869c5bd2afad61d83ceb56a8b767520c5b7728",
+    "treatment": "Original definition archived; no history key is deleted, reset or reassigned."
+  },
+  {
+    "id": "light-v3-24",
+    "oldNumber": 24,
+    "newNumber": null,
+    "puzzleHash": "f94e76bab0429c6ad9f8c4ae83ac0f387a5a5d13354ab340fc5c591349b5861f",
+    "treatment": "Original definition archived; no history key is deleted, reset or reassigned."
+  },
+  {
+    "id": "light-v3-25",
+    "oldNumber": 25,
+    "newNumber": 58,
+    "puzzleHash": "9c85a7896d7831402f96ba3659a62bbbfd9460d0d2bef5fc37f3f03a2569815d",
+    "treatment": "Retained unchanged; existing ID-keyed progress remains attached."
+  },
+  {
+    "id": "light-v3-26",
+    "oldNumber": 26,
+    "newNumber": null,
+    "puzzleHash": "a77bcf1dafb6f7953c20de1d48e1af14d4c77ebd21f4a854f637e38283235574",
+    "treatment": "Original definition archived; no history key is deleted, reset or reassigned."
+  },
+  {
+    "id": "light-v3-27",
+    "oldNumber": 27,
+    "newNumber": 189,
+    "puzzleHash": "ac0c9ea542d56cec119b7c3501e0ca9a25dc92c4f755a05774e5ed2079df06cc",
+    "treatment": "Retained unchanged; existing ID-keyed progress remains attached."
+  },
+  {
+    "id": "light-v3-28",
+    "oldNumber": 28,
+    "newNumber": null,
+    "puzzleHash": "5e3a788faabd25cf9546e1fb177f3c7770c3187d66fe235a75cd88bb68ae2f71",
+    "treatment": "Original definition archived; no history key is deleted, reset or reassigned."
+  },
+  {
+    "id": "light-v3-29",
+    "oldNumber": 29,
+    "newNumber": null,
+    "puzzleHash": "72b8ca45bf069efd9cafef41e0ca445c9379a21ef3f8f789dd0171a988cb053c",
+    "treatment": "Original definition archived; no history key is deleted, reset or reassigned."
+  },
+  {
+    "id": "light-v3-30",
+    "oldNumber": 30,
+    "newNumber": null,
+    "puzzleHash": "91bd6dcff252f323b0e0a97cfef01e626246f8fe7c855bfca8f65db728fd5b36",
+    "treatment": "Original definition archived; no history key is deleted, reset or reassigned."
+  },
+  {
+    "id": "light-v3-31",
+    "oldNumber": 31,
+    "newNumber": null,
+    "puzzleHash": "f701a931039962624e80a397e498bb58be921b03e8fe2737cd90b7d47815de6f",
+    "treatment": "Original definition archived; no history key is deleted, reset or reassigned."
+  },
+  {
+    "id": "light-v3-32",
+    "oldNumber": 32,
+    "newNumber": 94,
+    "puzzleHash": "86c302d8095914d6621a4dc4280a023ea7fefe2957d76b6fbef1ea83582f351b",
+    "treatment": "Retained unchanged; existing ID-keyed progress remains attached."
+  },
+  {
+    "id": "light-v3-33",
+    "oldNumber": 33,
+    "newNumber": 64,
+    "puzzleHash": "04e7742205cd04b92f5ec7a4c6ec9adfb4705f19567381a3a88fdde24398e7b8",
+    "treatment": "Retained unchanged; existing ID-keyed progress remains attached."
+  },
+  {
+    "id": "light-v3-34",
+    "oldNumber": 34,
+    "newNumber": null,
+    "puzzleHash": "7ed679a85999dbbe1e0dc41dfe5ba81592bd0fe9d7f003284d5ab1e73fe95836",
+    "treatment": "Original definition archived; no history key is deleted, reset or reassigned."
+  },
+  {
+    "id": "light-v3-35",
+    "oldNumber": 35,
+    "newNumber": null,
+    "puzzleHash": "9f0407d543bdfcd9b15719fc609656f0c95f893c92d36271b7f6f2698bdf550a",
+    "treatment": "Original definition archived; no history key is deleted, reset or reassigned."
+  },
+  {
+    "id": "light-v3-36",
+    "oldNumber": 36,
+    "newNumber": null,
+    "puzzleHash": "5a1aaa614e3529cd9ddb12d71b75e338da7edebc4ec75c4e70e7442ac74dc4f2",
+    "treatment": "Original definition archived; no history key is deleted, reset or reassigned."
+  },
+  {
+    "id": "light-v3-37",
+    "oldNumber": 37,
+    "newNumber": null,
+    "puzzleHash": "f70b5ec3141a9baf84927ccae368a310efb8261b4e56eb4836e6dfd831389282",
+    "treatment": "Original definition archived; no history key is deleted, reset or reassigned."
+  },
+  {
+    "id": "light-v3-38",
+    "oldNumber": 38,
+    "newNumber": null,
+    "puzzleHash": "4f5400f9c46d285a7c3c5428b949543aa109fdbb6891356fcc627cd374efe915",
+    "treatment": "Original definition archived; no history key is deleted, reset or reassigned."
+  },
+  {
+    "id": "light-v3-39",
+    "oldNumber": 39,
+    "newNumber": null,
+    "puzzleHash": "0c708ede07d002b25cf180a49106a414f14d1a39e7663090ada3ac53a1a2605f",
+    "treatment": "Original definition archived; no history key is deleted, reset or reassigned."
+  },
+  {
+    "id": "light-v3-40",
+    "oldNumber": 40,
+    "newNumber": null,
+    "puzzleHash": "d74b945a230079c1baec412cbad0cef05ec1b2413e53107f8e1cdcded72ef302",
+    "treatment": "Original definition archived; no history key is deleted, reset or reassigned."
+  },
+  {
+    "id": "light-v3-41",
+    "oldNumber": 41,
+    "newNumber": 7,
+    "puzzleHash": "c58a0946b79f9f19bf5831698c2c893c04bd4b2b16701a41df2d63af7a8b7256",
+    "treatment": "Retained unchanged; existing ID-keyed progress remains attached."
+  },
+  {
+    "id": "light-v3-42",
+    "oldNumber": 42,
+    "newNumber": null,
+    "puzzleHash": "350fb780a8234eff442edf0d8db925106adfb17ae4ea30de464ede9521f84cc8",
+    "treatment": "Original definition archived; no history key is deleted, reset or reassigned."
+  },
+  {
+    "id": "light-v3-43",
+    "oldNumber": 43,
+    "newNumber": null,
+    "puzzleHash": "ad756898188da13c8de39de3cc334bd9e66d63de015f156b8f172f682aeb13b5",
+    "treatment": "Original definition archived; no history key is deleted, reset or reassigned."
+  },
+  {
+    "id": "light-v3-44",
+    "oldNumber": 44,
+    "newNumber": null,
+    "puzzleHash": "8be32506e453692a7a1402868112a33f550694e3eb399ea2ce16c418a8dd94a5",
+    "treatment": "Original definition archived; no history key is deleted, reset or reassigned."
+  },
+  {
+    "id": "light-v3-45",
+    "oldNumber": 45,
+    "newNumber": null,
+    "puzzleHash": "cf5795ddbc39cba3c713daf95e0468154c783636e770c13798ea1c41855792a8",
+    "treatment": "Original definition archived; no history key is deleted, reset or reassigned."
+  },
+  {
+    "id": "light-v3-46",
+    "oldNumber": 46,
+    "newNumber": null,
+    "puzzleHash": "19f6a3325ce1b1134cfb5db97fc9b6530ca85cc9859a101ca5af93faf3ffe9ba",
+    "treatment": "Original definition archived; no history key is deleted, reset or reassigned."
+  },
+  {
+    "id": "light-v3-47",
+    "oldNumber": 47,
+    "newNumber": null,
+    "puzzleHash": "c81e343d0878c3e7fa0340edd4ff7669dc7f3d47a715cb86cf1209c0a44ec39c",
+    "treatment": "Original definition archived; no history key is deleted, reset or reassigned."
+  },
+  {
+    "id": "light-v3-48",
+    "oldNumber": 48,
+    "newNumber": null,
+    "puzzleHash": "58cb977ee4385c5752a35f20c9aa9970e1cfe8dcda047e0af5e7e17cd914419d",
+    "treatment": "Original definition archived; no history key is deleted, reset or reassigned."
+  },
+  {
+    "id": "light-v3-49",
+    "oldNumber": 49,
+    "newNumber": null,
+    "puzzleHash": "c24862db0677ff251af4807cbbb9a9e3ce63e2b77fcf047b8eaa5687a9980ccd",
+    "treatment": "Original definition archived; no history key is deleted, reset or reassigned."
+  },
+  {
+    "id": "light-v3-50",
+    "oldNumber": 50,
+    "newNumber": null,
+    "puzzleHash": "f05da1f2ceda29524a4c8038fbb14e8c43a5d2b0317f6a591875c45fbad47305",
+    "treatment": "Original definition archived; no history key is deleted, reset or reassigned."
+  },
+  {
+    "id": "light-v3-51",
+    "oldNumber": 51,
+    "newNumber": 11,
+    "puzzleHash": "188220e29740a72fce8d314ff5120992ff5d6b521b038233f92d9a909bccb1ec",
+    "treatment": "Retained unchanged; existing ID-keyed progress remains attached."
+  },
+  {
+    "id": "light-v3-52",
+    "oldNumber": 52,
+    "newNumber": null,
+    "puzzleHash": "7d472042638f8e685b2df038f76f9e2ef312304ceada91aef63650c0c2914651",
+    "treatment": "Original definition archived; no history key is deleted, reset or reassigned."
+  },
+  {
+    "id": "light-v3-53",
+    "oldNumber": 53,
+    "newNumber": 167,
+    "puzzleHash": "15375339d05dfbc048335a8d67a0094299d92f4b0a8904a3d668cd6fa776be5f",
+    "treatment": "Retained unchanged; existing ID-keyed progress remains attached."
+  },
+  {
+    "id": "light-v3-54",
+    "oldNumber": 54,
+    "newNumber": null,
+    "puzzleHash": "338aeb0bd4513785f35a8716dd143f7dfba75ec519699c1e64e8969bba28fdc6",
+    "treatment": "Original definition archived; no history key is deleted, reset or reassigned."
+  },
+  {
+    "id": "light-v3-55",
+    "oldNumber": 55,
+    "newNumber": null,
+    "puzzleHash": "5bb8c201a50b77350270ad06540c51b62685afbf8ff8cc0e51abe2bc399cbb6e",
+    "treatment": "Original definition archived; no history key is deleted, reset or reassigned."
+  },
+  {
+    "id": "light-v3-56",
+    "oldNumber": 56,
+    "newNumber": null,
+    "puzzleHash": "bdf6bcf68bf7130193e77d7f219cf92caae687239b1ccbff563d5a2d7a627ac3",
+    "treatment": "Original definition archived; no history key is deleted, reset or reassigned."
+  },
+  {
+    "id": "light-v3-57",
+    "oldNumber": 57,
+    "newNumber": null,
+    "puzzleHash": "b1f467ffabb821943673a1a20594f0c948aa6a40378b7dd114c9a6cb1f3d65fc",
+    "treatment": "Original definition archived; no history key is deleted, reset or reassigned."
+  },
+  {
+    "id": "light-v3-58",
+    "oldNumber": 58,
+    "newNumber": null,
+    "puzzleHash": "773f08a8f02ce0d134d3042e9b992a20d84e267444f1d9cb816c1d543d4ae84e",
+    "treatment": "Original definition archived; no history key is deleted, reset or reassigned."
+  },
+  {
+    "id": "light-v3-59",
+    "oldNumber": 59,
+    "newNumber": 188,
+    "puzzleHash": "15bebfd07d65857df2066f71e01e43da300f212a5443d04b28f01cd82215a6b8",
+    "treatment": "Retained unchanged; existing ID-keyed progress remains attached."
+  },
+  {
+    "id": "light-v3-60",
+    "oldNumber": 60,
+    "newNumber": 200,
+    "puzzleHash": "a0f386290afec8ca25fa045ef0b05524bbb26617c9f3de6ca7622f385ffb0901",
+    "treatment": "Retained unchanged; existing ID-keyed progress remains attached."
+  },
+  {
+    "id": "light-v3-61",
+    "oldNumber": 61,
+    "newNumber": 16,
+    "puzzleHash": "261747051798d6e0030fe863d6c86dcd9f03da44738d972ca52ed2d98b64adf9",
+    "treatment": "Retained unchanged; existing ID-keyed progress remains attached."
+  },
+  {
+    "id": "light-v3-62",
+    "oldNumber": 62,
+    "newNumber": 17,
+    "puzzleHash": "c8d3cf500c79f1a173adc2f5b7a226916077fcd06b72bbba4846bb602d0d9f3f",
+    "treatment": "Retained unchanged; existing ID-keyed progress remains attached."
+  },
+  {
+    "id": "light-v3-63",
+    "oldNumber": 63,
+    "newNumber": 19,
+    "puzzleHash": "a7601ba0ddecc8add8438823864659c0dbcea114048a4f36ae0059309bd5cf1b",
+    "treatment": "Retained unchanged; existing ID-keyed progress remains attached."
+  },
+  {
+    "id": "light-v3-64",
+    "oldNumber": 64,
+    "newNumber": 20,
+    "puzzleHash": "36543b8cc51af96e444c79ef308cfb9aec751ae48a50f5d349d9c98c6752de4b",
+    "treatment": "Retained unchanged; existing ID-keyed progress remains attached."
+  },
+  {
+    "id": "light-v3-65",
+    "oldNumber": 65,
+    "newNumber": null,
+    "puzzleHash": "e5d915e419eca2333c288b99547f3add8e9720069a0eded71844e83bf833ba67",
+    "treatment": "Original definition archived; no history key is deleted, reset or reassigned."
+  },
+  {
+    "id": "light-v3-66",
+    "oldNumber": 66,
+    "newNumber": 66,
+    "puzzleHash": "256f35b76bf659dd7372812a0edb044c859228b4e660ca8db31be2ecb5d1bc89",
+    "treatment": "Retained unchanged; existing ID-keyed progress remains attached."
+  },
+  {
+    "id": "light-v3-67",
+    "oldNumber": 67,
+    "newNumber": 183,
+    "puzzleHash": "d8b083240a7840d4da72ef6b86b94dc3b1f57bc140d54d279f638ec8255aed2e",
+    "treatment": "Retained unchanged; existing ID-keyed progress remains attached."
+  },
+  {
+    "id": "light-v3-68",
+    "oldNumber": 68,
+    "newNumber": 78,
+    "puzzleHash": "fc2c94203eecb9738827fedcccdedf88badf32b38f9931242cac3d1e971954f3",
+    "treatment": "Retained unchanged; existing ID-keyed progress remains attached."
+  },
+  {
+    "id": "light-v3-69",
+    "oldNumber": 69,
+    "newNumber": 128,
+    "puzzleHash": "cf08ce560d31b829bb9e48dde80b273ce4540fad06490b3a8575e0056c7426f9",
+    "treatment": "Retained unchanged; existing ID-keyed progress remains attached."
+  },
+  {
+    "id": "light-v3-70",
+    "oldNumber": 70,
+    "newNumber": null,
+    "puzzleHash": "7cc4f0c2f732773bdb37f1d07c4a088eacca29664d1f10ae1a9979d0d0dad6ff",
+    "treatment": "Original definition archived; no history key is deleted, reset or reassigned."
+  },
+  {
+    "id": "light-v3-71",
+    "oldNumber": 71,
+    "newNumber": 40,
+    "puzzleHash": "b77ad5b80a09bc9d1497d258694cba73b7d1e27c6dc01c4ba16611e2e1a96efe",
+    "treatment": "Retained unchanged; existing ID-keyed progress remains attached."
+  },
+  {
+    "id": "light-v3-72",
+    "oldNumber": 72,
+    "newNumber": null,
+    "puzzleHash": "f8debdf02a6750149d1554da4bc048a993661c217cd3291273d3a33dde54f9ca",
+    "treatment": "Original definition archived; no history key is deleted, reset or reassigned."
+  },
+  {
+    "id": "light-v3-73",
+    "oldNumber": 73,
+    "newNumber": 197,
+    "puzzleHash": "bde6434de6eadcb04c0b4de9e3349da7d6359f22b4932efeb1cf32f34e543c06",
+    "treatment": "Retained unchanged; existing ID-keyed progress remains attached."
+  },
+  {
+    "id": "light-v3-74",
+    "oldNumber": 74,
+    "newNumber": 24,
+    "puzzleHash": "12326776b4175cf3ceb4533ce29b5867d18e5fa5c081af5cff10b9766dbeb647",
+    "treatment": "Retained unchanged; existing ID-keyed progress remains attached."
+  },
+  {
+    "id": "light-v3-75",
+    "oldNumber": 75,
+    "newNumber": 191,
+    "puzzleHash": "ac3498a13095bf728477cad2661f27f877e8c733f51b9487a66548d0e37f34a9",
+    "treatment": "Retained unchanged; existing ID-keyed progress remains attached."
+  },
+  {
+    "id": "light-v3-76",
+    "oldNumber": 76,
+    "newNumber": 174,
+    "puzzleHash": "b3c67e69814b908fb98b81897b509e7d05e46e61f82ebe1e6ed030031b39d5f3",
+    "treatment": "Retained unchanged; existing ID-keyed progress remains attached."
+  },
+  {
+    "id": "light-v3-77",
+    "oldNumber": 77,
+    "newNumber": 134,
+    "puzzleHash": "59910add9369473a5a7773b3f9848db9649268535e3f054813017e8495aa039e",
+    "treatment": "Retained unchanged; existing ID-keyed progress remains attached."
+  },
+  {
+    "id": "light-v3-78",
+    "oldNumber": 78,
+    "newNumber": 193,
+    "puzzleHash": "68e97fea2f5180f5adc003309fd2b3d60ce014df9808c787457ac4254d13f6f0",
+    "treatment": "Retained unchanged; existing ID-keyed progress remains attached."
+  },
+  {
+    "id": "light-v3-79",
+    "oldNumber": 79,
+    "newNumber": 115,
+    "puzzleHash": "fe4c71958117ac50f7fe298ce240b0617c08ca23e0346a756c43fe9e748d7865",
+    "treatment": "Retained unchanged; existing ID-keyed progress remains attached."
+  },
+  {
+    "id": "light-v3-80",
+    "oldNumber": 80,
+    "newNumber": 149,
+    "puzzleHash": "add385cfbdb54e0a63b0c91b18b8af48146d0339798c0d6be54f22f45849db70",
+    "treatment": "Retained unchanged; existing ID-keyed progress remains attached."
+  },
+  {
+    "id": "light-v3-81",
+    "oldNumber": 81,
+    "newNumber": null,
+    "puzzleHash": "776dd81ccd2e3e45bcee3676342a0096fdf676425311cc213fea5336a8542ef6",
+    "treatment": "Original definition archived; no history key is deleted, reset or reassigned."
+  },
+  {
+    "id": "light-v3-82",
+    "oldNumber": 82,
+    "newNumber": 22,
+    "puzzleHash": "20fd145ca1ef3d7434ed203043582c0a0abc7e2abc8718c28fe8b70cb7414bcd",
+    "treatment": "Retained unchanged; existing ID-keyed progress remains attached."
+  },
+  {
+    "id": "light-v3-83",
+    "oldNumber": 83,
+    "newNumber": null,
+    "puzzleHash": "65441cfe3463907228662a90ede1d4eca76b66202055838b69eda9c003276de4",
+    "treatment": "Original definition archived; no history key is deleted, reset or reassigned."
+  },
+  {
+    "id": "light-v3-84",
+    "oldNumber": 84,
+    "newNumber": 109,
+    "puzzleHash": "312f2b01d9da1035a8afc86915f8060e0b5a903d8b621a9450318efbee03f628",
+    "treatment": "Retained unchanged; existing ID-keyed progress remains attached."
+  },
+  {
+    "id": "light-v3-85",
+    "oldNumber": 85,
+    "newNumber": null,
+    "puzzleHash": "3eb67eb9a7268708f78351b5d547598c80cf19ee2f7c1026d597a45b76ee9b3f",
+    "treatment": "Original definition archived; no history key is deleted, reset or reassigned."
+  },
+  {
+    "id": "light-v3-86",
+    "oldNumber": 86,
+    "newNumber": null,
+    "puzzleHash": "8b1c11b0b4dd8153cfc7486b052987ebfb9e2e2c40d315563d85eeff2066f546",
+    "treatment": "Original definition archived; no history key is deleted, reset or reassigned."
+  },
+  {
+    "id": "light-v3-87",
+    "oldNumber": 87,
+    "newNumber": 30,
+    "puzzleHash": "48d64ebfe05bfc239bbe54d8aff58f7e0a824ddb70017d1d6b38710832196ccb",
+    "treatment": "Retained unchanged; existing ID-keyed progress remains attached."
+  },
+  {
+    "id": "light-v3-88",
+    "oldNumber": 88,
+    "newNumber": 153,
+    "puzzleHash": "848e60fd13e8fd933c61df39db18fcc3bddc3fc6307d515d5d8ee749acfe5c99",
+    "treatment": "Retained unchanged; existing ID-keyed progress remains attached."
+  },
+  {
+    "id": "light-v3-89",
+    "oldNumber": 89,
+    "newNumber": 135,
+    "puzzleHash": "6d423e593c743de1df1fbec9b06033c466f2cac3fc78044cbbdac39c31b0942a",
+    "treatment": "Retained unchanged; existing ID-keyed progress remains attached."
+  },
+  {
+    "id": "light-v3-90",
+    "oldNumber": 90,
+    "newNumber": null,
+    "puzzleHash": "5ca8e0ab7a4304dc27ffe46ea20a9a1a7e2a017bcc822ae2e0770d254b110ee8",
+    "treatment": "Original definition archived; no history key is deleted, reset or reassigned."
+  },
+  {
+    "id": "light-v3-91",
+    "oldNumber": 91,
+    "newNumber": 23,
+    "puzzleHash": "7787109bfcb1016fd8983cdb5893a967ac6a9d88d61d5f94fbbe5d630756e57d",
+    "treatment": "Retained unchanged; existing ID-keyed progress remains attached."
+  },
+  {
+    "id": "light-v3-92",
+    "oldNumber": 92,
+    "newNumber": null,
+    "puzzleHash": "5b45f30d011d03a0e7964cd7ff2789efb24d4e4eaf36d240fdc4f3d0bfcfe8bd",
+    "treatment": "Original definition archived; no history key is deleted, reset or reassigned."
+  },
+  {
+    "id": "light-v3-93",
+    "oldNumber": 93,
+    "newNumber": 146,
+    "puzzleHash": "db522cf54e51eb5053791babff64d7225a5fed61c05fbbe96035f39a94f51fa2",
+    "treatment": "Retained unchanged; existing ID-keyed progress remains attached."
+  },
+  {
+    "id": "light-v3-94",
+    "oldNumber": 94,
+    "newNumber": 185,
+    "puzzleHash": "b7f243991da3299611afcfe8ab958000852b38d559ddcfe6215ecf74d39b4301",
+    "treatment": "Retained unchanged; existing ID-keyed progress remains attached."
+  },
+  {
+    "id": "light-v3-95",
+    "oldNumber": 95,
+    "newNumber": 129,
+    "puzzleHash": "2dcd453950e5e35bc0a2d5c6b2baf296b446ecb4757c705cf78a8b1a31775f8a",
+    "treatment": "Retained unchanged; existing ID-keyed progress remains attached."
+  },
+  {
+    "id": "light-v3-96",
+    "oldNumber": 96,
+    "newNumber": 318,
+    "puzzleHash": "8ca7cda5f2d889502a2d361d57d8e8c290ac1503eafcd7668bb2085645857d1d",
+    "treatment": "Retained unchanged; existing ID-keyed progress remains attached."
+  },
+  {
+    "id": "light-v3-97",
+    "oldNumber": 97,
+    "newNumber": null,
+    "puzzleHash": "51f5a1d647f951aae514b84a85d026e2058b4f9f6408183b8bc0324e8a628e6f",
+    "treatment": "Original definition archived; no history key is deleted, reset or reassigned."
+  },
+  {
+    "id": "light-v3-98",
+    "oldNumber": 98,
+    "newNumber": 347,
+    "puzzleHash": "c3cd4ef754fc419cdb1c0797a0d05a65ec1d6b21f2bd83508ddbe2639d5b7b4d",
+    "treatment": "Retained unchanged; existing ID-keyed progress remains attached."
+  },
+  {
+    "id": "light-v3-99",
+    "oldNumber": 99,
+    "newNumber": 158,
+    "puzzleHash": "e2c74d0813672bcfe773d3e3387ae247a7fe371028070e237e40807d7139498d",
+    "treatment": "Retained unchanged; existing ID-keyed progress remains attached."
+  },
+  {
+    "id": "light-v3-100",
+    "oldNumber": 100,
+    "newNumber": null,
+    "puzzleHash": "d286a005840b82fe1567fb06b8fbe4527a4ab6f2ec8cf6816dedde140377b69f",
+    "treatment": "Original definition archived; no history key is deleted, reset or reassigned."
+  },
+  {
+    "id": "light-v3-101",
+    "oldNumber": 101,
+    "newNumber": 25,
+    "puzzleHash": "a9885cb190bab35764c7edddc8fcbd86e7dde144cc963cf47bb6cd0d4b78b30d",
+    "treatment": "Retained unchanged; existing ID-keyed progress remains attached."
+  },
+  {
+    "id": "light-v3-102",
+    "oldNumber": 102,
+    "newNumber": 89,
+    "puzzleHash": "301453eb4a292b55ede52a605a4710a44c360a0071a1290eec89d5470b72f06b",
+    "treatment": "Retained unchanged; existing ID-keyed progress remains attached."
+  },
+  {
+    "id": "light-v3-103",
+    "oldNumber": 103,
+    "newNumber": 113,
+    "puzzleHash": "4be0f98cf95ffe083c6dd849d92197001f29c9dee3c9b9890e2d60ff5ca6f303",
+    "treatment": "Retained unchanged; existing ID-keyed progress remains attached."
+  },
+  {
+    "id": "light-v3-104",
+    "oldNumber": 104,
+    "newNumber": 229,
+    "puzzleHash": "1b31b26e6bd814f38ae75128528f3f5af07173f8c5d0ab4aeae036dd9625bc05",
+    "treatment": "Retained unchanged; existing ID-keyed progress remains attached."
+  },
+  {
+    "id": "light-v3-105",
+    "oldNumber": 105,
+    "newNumber": 300,
+    "puzzleHash": "f7699160347fbb88512edb31837b850e2c7fe04a55a8a9b8f11f1cf7f5cb69d7",
+    "treatment": "Retained unchanged; existing ID-keyed progress remains attached."
+  },
+  {
+    "id": "light-v3-106",
+    "oldNumber": 106,
+    "newNumber": null,
+    "puzzleHash": "ea6238bf3c04a8c6ed85a471f3bc4b584d449b4d53629a1ba7bc1864c934feef",
+    "treatment": "Original definition archived; no history key is deleted, reset or reassigned."
+  },
+  {
+    "id": "light-v3-107",
+    "oldNumber": 107,
+    "newNumber": 296,
+    "puzzleHash": "17527089c4c5effa17fa2f0be1a1808d32a46ae4ae7c0db54c8d9484dccd5212",
+    "treatment": "Retained unchanged; existing ID-keyed progress remains attached."
+  },
+  {
+    "id": "light-v3-108",
+    "oldNumber": 108,
+    "newNumber": 267,
+    "puzzleHash": "126724d5d2c727e76e198d68d84363e514402e7b9f04b7e5acf67e28fd90ac3f",
+    "treatment": "Retained unchanged; existing ID-keyed progress remains attached."
+  },
+  {
+    "id": "light-v3-109",
+    "oldNumber": 109,
+    "newNumber": null,
+    "puzzleHash": "8332f2f3da5dce57a4ebdb1d6673eeec8574961a2ac55985e412dbbf873d8423",
+    "treatment": "Original definition archived; no history key is deleted, reset or reassigned."
+  },
+  {
+    "id": "light-v3-110",
+    "oldNumber": 110,
+    "newNumber": null,
+    "puzzleHash": "10e451c1669a152b6bdf3c86a5e54f5ce9b7b5ec7f3b69c498c8a4e92fe2353b",
+    "treatment": "Original definition archived; no history key is deleted, reset or reassigned."
+  },
+  {
+    "id": "light-v3-111",
+    "oldNumber": 111,
+    "newNumber": 395,
+    "puzzleHash": "253481749a73db44fe4a1a15563651b73dd8336a07af69f8f2ad5bd51dc36939",
+    "treatment": "Retained unchanged; existing ID-keyed progress remains attached."
+  },
+  {
+    "id": "light-v3-112",
+    "oldNumber": 112,
+    "newNumber": null,
+    "puzzleHash": "cc4da56e2d6c8f3db7df24575668ef11374662a9aeb4c2333f504afc40372f98",
+    "treatment": "Original definition archived; no history key is deleted, reset or reassigned."
+  },
+  {
+    "id": "light-v3-113",
+    "oldNumber": 113,
+    "newNumber": null,
+    "puzzleHash": "84a73933839fba21f4a596f596f78e5b116563bd45b50229a3e6c2be43d0f6d4",
+    "treatment": "Original definition archived; no history key is deleted, reset or reassigned."
+  },
+  {
+    "id": "light-v3-114",
+    "oldNumber": 114,
+    "newNumber": null,
+    "puzzleHash": "ccc3cd815f1704577a28d09b02e609caebecacb175b6ba1ba6ad62f65b26c42c",
+    "treatment": "Original definition archived; no history key is deleted, reset or reassigned."
+  },
+  {
+    "id": "light-v3-115",
+    "oldNumber": 115,
+    "newNumber": 252,
+    "puzzleHash": "0ec4f66206042a56005c5968648fe79e3e3b3f68cafcada1eef1e6a5fcd493ea",
+    "treatment": "Retained unchanged; existing ID-keyed progress remains attached."
+  },
+  {
+    "id": "light-v3-116",
+    "oldNumber": 116,
+    "newNumber": null,
+    "puzzleHash": "df933d6c3d4202e32b0a09a5bb0c428493cef885eaaaf2d47f1fcc803b911bf2",
+    "treatment": "Original definition archived; no history key is deleted, reset or reassigned."
+  },
+  {
+    "id": "light-v3-117",
+    "oldNumber": 117,
+    "newNumber": null,
+    "puzzleHash": "3e661937729c859ec97a851bede732b357d136887f64c24bf75cdd30784065ec",
+    "treatment": "Original definition archived; no history key is deleted, reset or reassigned."
+  },
+  {
+    "id": "light-v3-118",
+    "oldNumber": 118,
+    "newNumber": null,
+    "puzzleHash": "ef24c6e091e0da669d21062cde3241f4d5e7f3deabd430a97eed86bad4b0a6ee",
+    "treatment": "Original definition archived; no history key is deleted, reset or reassigned."
+  },
+  {
+    "id": "light-v3-119",
+    "oldNumber": 119,
+    "newNumber": null,
+    "puzzleHash": "cdcd78c014722a95a0deae9ffa0cf94088e7cbc0ba55c6a22e69ccc25f9cda0f",
+    "treatment": "Original definition archived; no history key is deleted, reset or reassigned."
+  },
+  {
+    "id": "light-v3-120",
+    "oldNumber": 120,
+    "newNumber": null,
+    "puzzleHash": "72e166cfe5c6edea3fef2e1bce77e8993fa8790086f56e17c5c34f093a01e0e9",
+    "treatment": "Original definition archived; no history key is deleted, reset or reassigned."
+  },
+  {
+    "id": "light-v3-121",
+    "oldNumber": 121,
+    "newNumber": null,
+    "puzzleHash": "e5dda12f769c17840e67cc544cf66d21fe5699c04fab135a79ea53ef28dd5e70",
+    "treatment": "Original definition archived; no history key is deleted, reset or reassigned."
+  },
+  {
+    "id": "light-v3-122",
+    "oldNumber": 122,
+    "newNumber": null,
+    "puzzleHash": "ec39dde2f429a5af897730e93dd10cfca296436a3fe20d0f648ac66b6dd428eb",
+    "treatment": "Original definition archived; no history key is deleted, reset or reassigned."
+  },
+  {
+    "id": "light-v3-123",
+    "oldNumber": 123,
+    "newNumber": null,
+    "puzzleHash": "ffc776d29298eda91a2c2ac63c9451f84008a684efe5a630bb75deb66afbbf40",
+    "treatment": "Original definition archived; no history key is deleted, reset or reassigned."
+  },
+  {
+    "id": "light-v3-124",
+    "oldNumber": 124,
+    "newNumber": null,
+    "puzzleHash": "81cf9aa1232bfeaf8ccd65b9dcd40b4bcf9517a75251384174f9aeff0e4ac123",
+    "treatment": "Original definition archived; no history key is deleted, reset or reassigned."
+  },
+  {
+    "id": "light-v3-125",
+    "oldNumber": 125,
+    "newNumber": null,
+    "puzzleHash": "02d4f6dac59634b0e59782d118955f7b19ca64ad01511846cda874eca4471874",
+    "treatment": "Original definition archived; no history key is deleted, reset or reassigned."
+  },
+  {
+    "id": "light-v3-126",
+    "oldNumber": 126,
+    "newNumber": null,
+    "puzzleHash": "ce85382bbfb70a8a893a3383b5f18b6094e347841c546651ac9ffa0e4f0d9be7",
+    "treatment": "Original definition archived; no history key is deleted, reset or reassigned."
+  },
+  {
+    "id": "light-v3-127",
+    "oldNumber": 127,
+    "newNumber": null,
+    "puzzleHash": "c89fcb72bdf2f7fbc268789181b4d21fbd42ae0e02548fe784f030996c49266b",
+    "treatment": "Original definition archived; no history key is deleted, reset or reassigned."
+  },
+  {
+    "id": "light-v3-128",
+    "oldNumber": 128,
+    "newNumber": null,
+    "puzzleHash": "44d861282e1e32bc146ba367342db69d77ea7dfd194180744c2b3fcb3999f2f5",
+    "treatment": "Original definition archived; no history key is deleted, reset or reassigned."
+  },
+  {
+    "id": "light-v3-129",
+    "oldNumber": 129,
+    "newNumber": null,
+    "puzzleHash": "6adb8ce591b30b988b4a2cb8c63dc478a28cb076d038c869e3e27ba8e45ca820",
+    "treatment": "Original definition archived; no history key is deleted, reset or reassigned."
+  },
+  {
+    "id": "light-v3-130",
+    "oldNumber": 130,
+    "newNumber": null,
+    "puzzleHash": "b8c3ec565aecaeafbc69ac54da598eccd7e49e6c05bf52ba6713828077dee87a",
+    "treatment": "Original definition archived; no history key is deleted, reset or reassigned."
+  },
+  {
+    "id": "light-v3-131",
+    "oldNumber": 131,
+    "newNumber": 236,
+    "puzzleHash": "3461e916a1a6108a387b867c735ef633425bfc343f19cda919673d2f4b5c7fed",
+    "treatment": "Retained unchanged; existing ID-keyed progress remains attached."
+  },
+  {
+    "id": "light-v3-132",
+    "oldNumber": 132,
+    "newNumber": 380,
+    "puzzleHash": "d7af8826579442b0d01b7b5e9b2d800a116a36a958bb29847a7188c830b7f7b5",
+    "treatment": "Retained unchanged; existing ID-keyed progress remains attached."
+  },
+  {
+    "id": "light-v3-133",
+    "oldNumber": 133,
+    "newNumber": 389,
+    "puzzleHash": "408780aaf08dab8b77698c3ddfb0ab7c292de213484cdd99df950930f0548610",
+    "treatment": "Retained unchanged; existing ID-keyed progress remains attached."
+  },
+  {
+    "id": "light-v3-134",
+    "oldNumber": 134,
+    "newNumber": 321,
+    "puzzleHash": "9adce34a0e25d0d633336abb7a607427d6fae6ee240c6f529c378273737afafa",
+    "treatment": "Retained unchanged; existing ID-keyed progress remains attached."
+  },
+  {
+    "id": "light-v3-135",
+    "oldNumber": 135,
+    "newNumber": 306,
+    "puzzleHash": "f8cf9fa57b791e8ad5ac436a61f08363dfcf45864236407afd05f371a910223b",
+    "treatment": "Retained unchanged; existing ID-keyed progress remains attached."
+  },
+  {
+    "id": "light-v3-136",
+    "oldNumber": 136,
+    "newNumber": null,
+    "puzzleHash": "3fa62dcabf4aa2ff043792504bae184118f19a6be08ed44ada467e1f6d53c941",
+    "treatment": "Original definition archived; no history key is deleted, reset or reassigned."
+  },
+  {
+    "id": "light-v3-137",
+    "oldNumber": 137,
+    "newNumber": 309,
+    "puzzleHash": "e630ff306fbcb5c0ee20639643076e03ceea035e9c6e348be2ceda04cc440b57",
+    "treatment": "Retained unchanged; existing ID-keyed progress remains attached."
+  },
+  {
+    "id": "light-v3-138",
+    "oldNumber": 138,
+    "newNumber": 357,
+    "puzzleHash": "89d594d72df148a72dc727c922f740c7b7fb02b01f9a7cb76fc45ddcc2887d69",
+    "treatment": "Retained unchanged; existing ID-keyed progress remains attached."
+  },
+  {
+    "id": "light-v3-139",
+    "oldNumber": 139,
+    "newNumber": 260,
+    "puzzleHash": "4948e67081a426f46a078a0aaf5cda3853152c8dc5923c12d5af604dbefa35d9",
+    "treatment": "Retained unchanged; existing ID-keyed progress remains attached."
+  },
+  {
+    "id": "light-v3-140",
+    "oldNumber": 140,
+    "newNumber": 352,
+    "puzzleHash": "7e049f7945c14586b1f6ccdc517ca6fe3e1810aabcdcc01668bd658ccca27f16",
+    "treatment": "Retained unchanged; existing ID-keyed progress remains attached."
+  },
+  {
+    "id": "light-v3-141",
+    "oldNumber": 141,
+    "newNumber": null,
+    "puzzleHash": "1c9227433f0ecb54ae02905dcea4c4343edd5c1c189f49092ea148e69c1813b5",
+    "treatment": "Original definition archived; no history key is deleted, reset or reassigned."
+  },
+  {
+    "id": "light-v3-142",
+    "oldNumber": 142,
+    "newNumber": null,
+    "puzzleHash": "b8c1778969d4873143588937ba348499958f56faa9e6dac7ae1a3083f953a335",
+    "treatment": "Original definition archived; no history key is deleted, reset or reassigned."
+  },
+  {
+    "id": "light-v3-143",
+    "oldNumber": 143,
+    "newNumber": null,
+    "puzzleHash": "2060289319f3c1140b690be8cfae67d8bd1915f50ad0ef8289642fb73168d474",
+    "treatment": "Original definition archived; no history key is deleted, reset or reassigned."
+  },
+  {
+    "id": "light-v3-144",
+    "oldNumber": 144,
+    "newNumber": null,
+    "puzzleHash": "3bba912e4bb4c7fb5bc148ec6c30bf503c5ada89b9228eefd0aee5e2c1e034d2",
+    "treatment": "Original definition archived; no history key is deleted, reset or reassigned."
+  },
+  {
+    "id": "light-v3-145",
+    "oldNumber": 145,
+    "newNumber": null,
+    "puzzleHash": "ee1b9628cfbea225cafdc8f90f9f5acc1107eb0af6c9d5b0de75797bbf20402e",
+    "treatment": "Original definition archived; no history key is deleted, reset or reassigned."
+  },
+  {
+    "id": "light-v3-146",
+    "oldNumber": 146,
+    "newNumber": null,
+    "puzzleHash": "f6c7a91e7eccf11dd24eb84222c45c29177edac87e2ddb6c6542febfb27654cc",
+    "treatment": "Original definition archived; no history key is deleted, reset or reassigned."
+  },
+  {
+    "id": "light-v3-147",
+    "oldNumber": 147,
+    "newNumber": null,
+    "puzzleHash": "e865ab1f224cae3f2a5b7d8adfc20ed1bbe3ac5f8eb43f9bde44f92d7ff93881",
+    "treatment": "Original definition archived; no history key is deleted, reset or reassigned."
+  },
+  {
+    "id": "light-v3-148",
+    "oldNumber": 148,
+    "newNumber": null,
+    "puzzleHash": "d6659c6612651098aae2d981733ff57819caf6dee7951b8a1b9f84c872ad7548",
+    "treatment": "Original definition archived; no history key is deleted, reset or reassigned."
+  },
+  {
+    "id": "light-v3-149",
+    "oldNumber": 149,
+    "newNumber": null,
+    "puzzleHash": "7ad76b0ba50bd2e6db83443f305410108e1c7723a87a97c8935719ffc03a3f5d",
+    "treatment": "Original definition archived; no history key is deleted, reset or reassigned."
+  },
+  {
+    "id": "light-v3-150",
+    "oldNumber": 150,
+    "newNumber": null,
+    "puzzleHash": "0857c8f493c162bb6e13212d1fe91ceffd94cea78e4e34007a12c8f7049e9358",
+    "treatment": "Original definition archived; no history key is deleted, reset or reassigned."
+  },
+  {
+    "id": "light-v3-151",
+    "oldNumber": 151,
+    "newNumber": 221,
+    "puzzleHash": "c34b8ac7894a262274651e35cfa72f5e50ebbbda82fc24306a3740519d52860b",
+    "treatment": "Retained unchanged; existing ID-keyed progress remains attached."
+  },
+  {
+    "id": "light-v3-152",
+    "oldNumber": 152,
+    "newNumber": 215,
+    "puzzleHash": "2d8fd5cf4f68cf887a15242f0bcc505d2e994b8fa122fd0d9de90eb10a4180ff",
+    "treatment": "Retained unchanged; existing ID-keyed progress remains attached."
+  },
+  {
+    "id": "light-v3-153",
+    "oldNumber": 153,
+    "newNumber": 224,
+    "puzzleHash": "343374366bda49d03db7e32edd7df48fec8288ad2a0a892ad3cea42b635811a6",
+    "treatment": "Retained unchanged; existing ID-keyed progress remains attached."
+  },
+  {
+    "id": "light-v3-154",
+    "oldNumber": 154,
+    "newNumber": 222,
+    "puzzleHash": "7e6f15d7566c236f88cae527cadb9912b3fcf941590e039abefe0aec662202fa",
+    "treatment": "Retained unchanged; existing ID-keyed progress remains attached."
+  },
+  {
+    "id": "light-v3-155",
+    "oldNumber": 155,
+    "newNumber": 288,
+    "puzzleHash": "28fbdc0032a13079a466ad3d74411563bf8f078967369406886e676ce08ff2e1",
+    "treatment": "Retained unchanged; existing ID-keyed progress remains attached."
+  },
+  {
+    "id": "light-v3-156",
+    "oldNumber": 156,
+    "newNumber": 243,
+    "puzzleHash": "bc441f71c5623969b2e33de8549fd33e4e44d04e5c37f28989bc1cfd92ec34ec",
+    "treatment": "Retained unchanged; existing ID-keyed progress remains attached."
+  },
+  {
+    "id": "light-v3-157",
+    "oldNumber": 157,
+    "newNumber": 232,
+    "puzzleHash": "87ebb1e1e880990003a2a19b83d882d96bc6f369a0c9c176ecaea429f5cfdad8",
+    "treatment": "Retained unchanged; existing ID-keyed progress remains attached."
+  },
+  {
+    "id": "light-v3-158",
+    "oldNumber": 158,
+    "newNumber": 272,
+    "puzzleHash": "98ca40084e8a5194d38e78d839c1d82cef3aa0da7cbffb6c5c3ba78777eedddd",
+    "treatment": "Retained unchanged; existing ID-keyed progress remains attached."
+  },
+  {
+    "id": "light-v3-159",
+    "oldNumber": 159,
+    "newNumber": null,
+    "puzzleHash": "6b9da8ac0c3059add3260f0340d92384f12a743e3279dfca1f0c04d782faf141",
+    "treatment": "Original definition archived; no history key is deleted, reset or reassigned."
+  },
+  {
+    "id": "light-v3-160",
+    "oldNumber": 160,
+    "newNumber": null,
+    "puzzleHash": "29f92f6c07c18586b6a1eda1339a36bd159dc4dc1a8787f7dc169a215b30d129",
+    "treatment": "Original definition archived; no history key is deleted, reset or reassigned."
+  },
+  {
+    "id": "light-v3-161",
+    "oldNumber": 161,
+    "newNumber": 206,
+    "puzzleHash": "2e3b7a660f6291d839e3f1a4ce560a526b2fbb5f25f4ea42a5064f6b61244c83",
+    "treatment": "Retained unchanged; existing ID-keyed progress remains attached."
+  },
+  {
+    "id": "light-v3-162",
+    "oldNumber": 162,
+    "newNumber": 216,
+    "puzzleHash": "3cf412fb50ea79d90cd8263f46b8fc5965a01cc35b480597b45502711569941b",
+    "treatment": "Retained unchanged; existing ID-keyed progress remains attached."
+  },
+  {
+    "id": "light-v3-163",
+    "oldNumber": 163,
+    "newNumber": 295,
+    "puzzleHash": "94bfeab7bfaa68631e29ff4fe25e05e39b935fdd03c9b502ceb492013464229c",
+    "treatment": "Retained unchanged; existing ID-keyed progress remains attached."
+  },
+  {
+    "id": "light-v3-164",
+    "oldNumber": 164,
+    "newNumber": 204,
+    "puzzleHash": "f620cf7a4f831783071fe88b5a8c8fb370830e8e38c2d3ec98f11abf889485d2",
+    "treatment": "Retained unchanged; existing ID-keyed progress remains attached."
+  },
+  {
+    "id": "light-v3-165",
+    "oldNumber": 165,
+    "newNumber": null,
+    "puzzleHash": "07aec40406d5a3a2b56355f352410adfe3f171781493b7253fc18acd577fd847",
+    "treatment": "Original definition archived; no history key is deleted, reset or reassigned."
+  },
+  {
+    "id": "light-v3-166",
+    "oldNumber": 166,
+    "newNumber": 246,
+    "puzzleHash": "b507f6c07b535652144e567c1ee918592b42aa24ea4bdfd78cf91b0b5cd52dda",
+    "treatment": "Retained unchanged; existing ID-keyed progress remains attached."
+  },
+  {
+    "id": "light-v3-167",
+    "oldNumber": 167,
+    "newNumber": 280,
+    "puzzleHash": "01da8a47725f808bf7d52082d701fee47ca5a413f9838afcb8bae6b1195ddb6c",
+    "treatment": "Retained unchanged; existing ID-keyed progress remains attached."
+  },
+  {
+    "id": "light-v3-168",
+    "oldNumber": 168,
+    "newNumber": 255,
+    "puzzleHash": "f29f496334502cf1d38887e939b37f70c5f01d38400ff179da7bcb0c5a7bf240",
+    "treatment": "Retained unchanged; existing ID-keyed progress remains attached."
+  },
+  {
+    "id": "light-v3-169",
+    "oldNumber": 169,
+    "newNumber": 268,
+    "puzzleHash": "830f2757a27ce299b8ee166bb9cea977510f92cdce86193f4f2f087411d58c36",
+    "treatment": "Retained unchanged; existing ID-keyed progress remains attached."
+  },
+  {
+    "id": "light-v3-170",
+    "oldNumber": 170,
+    "newNumber": null,
+    "puzzleHash": "c835ad111e0df52e419f15d7944003d3c1846bc7cb2eb9f4f6f710094215e1be",
+    "treatment": "Original definition archived; no history key is deleted, reset or reassigned."
+  },
+  {
+    "id": "light-v3-171",
+    "oldNumber": 171,
+    "newNumber": null,
+    "puzzleHash": "82b62ea5b212c5d79b23ed66986275d04c3d1a293ac6b7055191a21c0dba0419",
+    "treatment": "Original definition archived; no history key is deleted, reset or reassigned."
+  },
+  {
+    "id": "light-v3-172",
+    "oldNumber": 172,
+    "newNumber": null,
+    "puzzleHash": "844382156fdf40c055a859f5deb6b74319a1d228c1686854404da0d51c20d034",
+    "treatment": "Original definition archived; no history key is deleted, reset or reassigned."
+  },
+  {
+    "id": "light-v3-173",
+    "oldNumber": 173,
+    "newNumber": 233,
+    "puzzleHash": "eef66562bcd951e09ed64a09ef4bdc1b09066c62c7c39681bce7af1bf2859ff0",
+    "treatment": "Retained unchanged; existing ID-keyed progress remains attached."
+  },
+  {
+    "id": "light-v3-174",
+    "oldNumber": 174,
+    "newNumber": null,
+    "puzzleHash": "7f57e2cd7ad898c631d5fe471cbae8edd433d3413faeac5264ac87f9e7fed1db",
+    "treatment": "Original definition archived; no history key is deleted, reset or reassigned."
+  },
+  {
+    "id": "light-v3-175",
+    "oldNumber": 175,
+    "newNumber": null,
+    "puzzleHash": "843daf76b1680fd6a85d62c96845bb78c8a9c7eb1534db91ed98eb7c1d3b64e4",
+    "treatment": "Original definition archived; no history key is deleted, reset or reassigned."
+  },
+  {
+    "id": "light-v3-176",
+    "oldNumber": 176,
+    "newNumber": 273,
+    "puzzleHash": "2846477e41bd5e3b5aff74579211b6aeaa4d08c33db2b5b2e6ee20b9481b3ed5",
+    "treatment": "Retained unchanged; existing ID-keyed progress remains attached."
+  },
+  {
+    "id": "light-v3-177",
+    "oldNumber": 177,
+    "newNumber": 254,
+    "puzzleHash": "40aad2f7e031791840b024ad094b4e723cc2f6da81ee9db9b7e22490a91bb1b5",
+    "treatment": "Retained unchanged; existing ID-keyed progress remains attached."
+  },
+  {
+    "id": "light-v3-178",
+    "oldNumber": 178,
+    "newNumber": 358,
+    "puzzleHash": "309751f5b0d64377a1135e7c39c343d93e35544d53386f028c0b3eeb69a4600d",
+    "treatment": "Retained unchanged; existing ID-keyed progress remains attached."
+  },
+  {
+    "id": "light-v3-179",
+    "oldNumber": 179,
+    "newNumber": null,
+    "puzzleHash": "4459cdaf8efef97ce9e0056211d81f75a1ccb268d3845fb7ed466306dc4d0400",
+    "treatment": "Original definition archived; no history key is deleted, reset or reassigned."
+  },
+  {
+    "id": "light-v3-180",
+    "oldNumber": 180,
+    "newNumber": null,
+    "puzzleHash": "7d3f542f4420ff20d5785b438b3703379a9304dc27ac8355d9efa2593b55ee19",
+    "treatment": "Original definition archived; no history key is deleted, reset or reassigned."
+  },
+  {
+    "id": "light-v3-181",
+    "oldNumber": 181,
+    "newNumber": 270,
+    "puzzleHash": "158f0b5a80563b832403981175e36a12d74d9e3ad0c5947b6efcb72fc3983788",
+    "treatment": "Retained unchanged; existing ID-keyed progress remains attached."
+  },
+  {
+    "id": "light-v3-182",
+    "oldNumber": 182,
+    "newNumber": null,
+    "puzzleHash": "92959d4d6feda0baeb987ad11893634e2d8f793678c3bf59db0328f1553631dc",
+    "treatment": "Original definition archived; no history key is deleted, reset or reassigned."
+  },
+  {
+    "id": "light-v3-183",
+    "oldNumber": 183,
+    "newNumber": 225,
+    "puzzleHash": "adfd1a06a0f9adfbb2fee27110b0b5aa15e6a1788911d580321fdd66a8a2953a",
+    "treatment": "Retained unchanged; existing ID-keyed progress remains attached."
+  },
+  {
+    "id": "light-v3-184",
+    "oldNumber": 184,
+    "newNumber": 244,
+    "puzzleHash": "6a67720263a58d45787add58e92c8b229550f5b88e9e8f2448f97626c0cff619",
+    "treatment": "Retained unchanged; existing ID-keyed progress remains attached."
+  },
+  {
+    "id": "light-v3-185",
+    "oldNumber": 185,
+    "newNumber": 298,
+    "puzzleHash": "b3f9e0c976b5764b72aa2da5bd405fb9a1a6bee39a404c88495dfc21353ac533",
+    "treatment": "Retained unchanged; existing ID-keyed progress remains attached."
+  },
+  {
+    "id": "light-v3-186",
+    "oldNumber": 186,
+    "newNumber": null,
+    "puzzleHash": "2362043161b21468fa46cf0a77ae41b90feef4e7ec0069586fd1dcdc0f8796a1",
+    "treatment": "Original definition archived; no history key is deleted, reset or reassigned."
+  },
+  {
+    "id": "light-v3-187",
+    "oldNumber": 187,
+    "newNumber": 226,
+    "puzzleHash": "f594229fbec980a426498aee7d8fca4fc6e7a8523a8246a0d65231c5616d401e",
+    "treatment": "Retained unchanged; existing ID-keyed progress remains attached."
+  },
+  {
+    "id": "light-v3-188",
+    "oldNumber": 188,
+    "newNumber": 250,
+    "puzzleHash": "220d73ec1511e2f50fa983a4a94bdb855c4f6c2bb50bce59868b0184855c3938",
+    "treatment": "Retained unchanged; existing ID-keyed progress remains attached."
+  },
+  {
+    "id": "light-v3-189",
+    "oldNumber": 189,
+    "newNumber": 239,
+    "puzzleHash": "9724f02710901e52f03701955f6472881b3d46335464598de014654ef363931d",
+    "treatment": "Retained unchanged; existing ID-keyed progress remains attached."
+  },
+  {
+    "id": "light-v3-190",
+    "oldNumber": 190,
+    "newNumber": null,
+    "puzzleHash": "c4f93dc9aff25d24aea7a114ea9ccc8060ed564e0a3c5baf5f1015b058831732",
+    "treatment": "Original definition archived; no history key is deleted, reset or reassigned."
+  },
+  {
+    "id": "light-v3-191",
+    "oldNumber": 191,
+    "newNumber": null,
+    "puzzleHash": "59cdf366a5bab4f753d42b8eb5435275e3088458cf2526c2083991a9d3d0d35d",
+    "treatment": "Original definition archived; no history key is deleted, reset or reassigned."
+  },
+  {
+    "id": "light-v3-192",
+    "oldNumber": 192,
+    "newNumber": 339,
+    "puzzleHash": "1496d02006fe92f86a58900ba6e698250b9b1ec8b3566d92acf34761f0926bf3",
+    "treatment": "Retained unchanged; existing ID-keyed progress remains attached."
+  },
+  {
+    "id": "light-v3-193",
+    "oldNumber": 193,
+    "newNumber": 303,
+    "puzzleHash": "ab2583717b89bc4a03292e29c72010dd445f6b108d33778c6d0c2aa600609282",
+    "treatment": "Retained unchanged; existing ID-keyed progress remains attached."
+  },
+  {
+    "id": "light-v3-194",
+    "oldNumber": 194,
+    "newNumber": 341,
+    "puzzleHash": "d61495bf20e8d84353c75e8055f9e5fa7c81bc002df64c712c1047c7762a6732",
+    "treatment": "Retained unchanged; existing ID-keyed progress remains attached."
+  },
+  {
+    "id": "light-v3-195",
+    "oldNumber": 195,
+    "newNumber": null,
+    "puzzleHash": "b71d111f9374a1afe7a701fea061ee860bf9225b88eda2e8c60a335f02c36b64",
+    "treatment": "Original definition archived; no history key is deleted, reset or reassigned."
+  },
+  {
+    "id": "light-v3-196",
+    "oldNumber": 196,
+    "newNumber": null,
+    "puzzleHash": "a7f6c991b1e7d7b2b5ad7af098fc3eaa516a1c5689f1bc5094b2bc75ee40b443",
+    "treatment": "Original definition archived; no history key is deleted, reset or reassigned."
+  },
+  {
+    "id": "light-v3-197",
+    "oldNumber": 197,
+    "newNumber": null,
+    "puzzleHash": "9ca339d09984a2be634bdc12a038e89f41e6d7a78336f51f7392915c1032fad8",
+    "treatment": "Original definition archived; no history key is deleted, reset or reassigned."
+  },
+  {
+    "id": "light-v3-198",
+    "oldNumber": 198,
+    "newNumber": null,
+    "puzzleHash": "6373ad18aff702678d2023abfe7f1144c5116cb9611129368ba452a0e0cf00d9",
+    "treatment": "Original definition archived; no history key is deleted, reset or reassigned."
+  },
+  {
+    "id": "light-v3-199",
+    "oldNumber": 199,
+    "newNumber": 305,
+    "puzzleHash": "6f2942b818884d806a24001b40c142b0ea1a7c3e4db50463bf7238ed984782f8",
+    "treatment": "Retained unchanged; existing ID-keyed progress remains attached."
+  },
+  {
+    "id": "light-v3-200",
+    "oldNumber": 200,
+    "newNumber": null,
+    "puzzleHash": "fa5cd569d98ca65e6c7bc95c514f7d170e1ed1e1e0b1560c3f00d2156d95269f",
+    "treatment": "Original definition archived; no history key is deleted, reset or reassigned."
+  }
+]

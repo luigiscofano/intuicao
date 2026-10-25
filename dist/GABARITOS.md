@@ -6,7 +6,7 @@ Cada envio incorreto pelo botão **Confirmar resposta**, inclusive um tabuleiro 
 
 Recomeçar, trocar de fase e recarregar a página não apagam o desbloqueio. Os registros são locais ao navegador e separados por jogo e identificador da fase, incluindo os identificadores ELO v2 e PRUMO v2. Se o navegador bloquear o armazenamento, o desbloqueio funciona enquanto a página permanecer aberta, mas não é garantido após fechá-la. O progresso não sincroniza entre aparelhos. Limpar os dados do site apaga também esses registros.
 
-A revisão v4 reúne 1200 níveis nos cinco puzzles, dos quais 500 são de Reflexos. As 500 configurações de referência de Reflexos foram reproduzidas no motor real; o relatório também registra 11.150 casos de contraprova/alternativa e as margens testadas. O fluxo de gabarito passou pelos 500 Reflexos e 100 Corte no app com DOM determinístico. Esses resultados são próprios da v4, não uma extrapolação das validações históricas. A inspeção em navegador real ainda não foi executada nesta etapa. Os arquivos de solução acompanham o código e funcionam sem depender do Drive. O bloqueio é uma regra da interface, não uma proteção criptográfica contra inspeção do código.
+A revisão v5 reúne 1200 níveis nos cinco puzzles, dos quais 500 são de Reflexos. A campanha v5 conserva 500 fases e corrige a geometria de 380 mapas. As 500 referências foram reproduzidas no motor preservado, com zero reflexão abaixo de 20° entre o feixe incidente e a linha do espelho. O limite é editorial, não uma nova regra de jogo: outras soluções legítimas continuam aceitas. Foram reexecutados 11.752 casos e os testes individuais/cantos ±0,5°. A inspeção em navegador da nova publicação permanece separada destes testes de motor e DOM; não se declara calibração com jogadores. Veja o [registro v5](development/reflexos-v5/README.md). O fluxo de gabarito é testado no app com DOM determinístico, sem vitória automática antes da confirmação. Os arquivos de solução acompanham o código; o desbloqueio é uma regra da interface, não proteção criptográfica.
 
 Em Reflexos, o gabarito exemplifica uma solução, não define a única resposta aceita. Outra configuração que satisfaça as regras existentes também deve vencer. Não é obrigatório usar todos os espelhos ou portais, reproduzir uma ordem específica de cliques nem igualar os ângulos do gabarito.
 
@@ -27,7 +27,7 @@ O contêiner de feedback dos jogos novos é o próprio tabuleiro HTML, com selet
 
 ## Limites de validação
 
-Os testes automatizados descritos nos relatórios históricos usam motores puros e uma simulação determinística do DOM. A inspeção de marcação, regras CSS, sobreposição e acessibilidade não equivale a uma sessão em navegador real. As regras e tolerâncias não podem ser modificadas para acomodar a campanha v4; sua dificuldade é revista pela composição e pelas relações entre trajetos.
+Os testes automatizados descritos nos relatórios históricos usam motores puros e uma simulação determinística do DOM. A inspeção de marcação, regras CSS, sobreposição e acessibilidade não equivale a uma sessão em navegador real. As regras e tolerâncias não podem ser modificadas para acomodar a campanha v5; sua dificuldade é revista pela composição e pelas relações entre trajetos.
 
 Um produto completo de alternativas nomeadas é exaustivo somente dentro dessas alternativas. Perturbações da solução e amostragens angulares são verificações finitas. Nenhuma delas, isoladamente, demonstra unicidade contínua ou ausência de toda solução não catalogada. Alternativas legítimas devem ser aceitas; quando uma delas elimina o desafio previsto, a fase ou sua classificação precisa de revisão, não de uma nova regra de vitória.
 
@@ -35,11 +35,11 @@ Um produto completo de alternativas nomeadas é exaustivo somente dentro dessas 
 
 NEXO e Equilíbrio não são selecionáveis nem aceitos como jogos importados. Os dados históricos locais não são removidos. Os novos níveis de Corte usam IDs corte-v2 e o gabarito monta uma solução alcançável no modo básico, restrito a uma direção.
 
-## Reflexos v4: identidade e progresso
+## Reflexos v5: identidade e progresso
 
 As quatro faixas são Básico (1–200), Intermediário (201–300), Avançado (301–400) e Mestre (401–500). O número mostrado na seleção pode mudar sem alterar a identidade interna de uma fase inalterada. IDs existentes são preservados para esse reaproveitamento; fases novas ou redesenhadas usam IDs de versão própria. A conclusão, os erros e a assistência não devem passar para uma fase diferente que ocupe o mesmo número. O histórico não deve ser apagado nem todos os saves reiniciados.
 
-Os testes confirmam 158 IDs legados mantidos, 342 identidades novas e preservação das 200 definições anteriores no arquivo histórico. Os dois reparos das antigas fases 180 e 190 têm IDs próprios, sem herdar conclusão pelo número. No fluxo automatizado dos 600 níveis de Reflexos/Corte, foram avaliadas 1800 confirmações incorretas, desbloqueio, aplicação sem vitória automática e confirmação assistida; 500 conclusões de Reflexos foram persistidas no armazenamento de teste. A correspondência de IDs, retomada e isolamento dos registros passou nas suítes de preservação, sem acessar dados reais de usuários. Veja o [registro de desenvolvimento v4](development/reflexos-v4/README.md) para as métricas e os limites. As fichas técnicas e os vetores de solução são documentação de desenvolvimento, não conteúdo a acrescentar às dicas normais do jogador.
+A revisão atual conserva 120 IDs da campanha v4 e cria 380 identidades para mapas redesenhados. Os500 mapas anteriores e as 200 definições originais continuam arquivados; 96 IDs v3 seguem ativos. Os testes de preservação usam armazenamento sintético e não acessam saves reais. O app mantém registros antigos sem reset, sem apagá-los e sem transferir conclusão para um novo desafio. Veja o [registro de desenvolvimento v5](development/reflexos-v5/README.md) para métricas e limites. As fichas técnicas e os vetores de solução são documentação de desenvolvimento, não conteúdo para dicas normais.
 
 ## Reflexos v3: registro histórico
 

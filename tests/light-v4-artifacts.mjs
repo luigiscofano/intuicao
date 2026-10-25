@@ -5,7 +5,7 @@ import {gunzipSync} from 'node:zlib';
 import {resolve} from 'node:path';
 import {pathToFileURL} from 'node:url';
 
-export const artifactURL = name => new URL('../dist/development/reflexos-v4/' + name, import.meta.url);
+export const artifactURL = name => new URL('../dist/development/reflexos-v5/' + name, import.meta.url);
 export function isMain(url) { return !!process.argv[1] && pathToFileURL(resolve(process.argv[1])).href === url; }
 export function readJSON(file) {
   const bytes = fs.readFileSync(file);

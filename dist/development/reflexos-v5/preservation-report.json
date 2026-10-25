@@ -1,0 +1,78 @@
+{
+  "passed": true,
+  "baselineCommit": "7e99fc3a1bc2f6a1c1eb8791826bbe08fb6fe1a3",
+  "protectedBytes": {
+    "passed": true,
+    "baseCommit": "7e99fc3a1bc2f6a1c1eb8791826bbe08fb6fe1a3",
+    "protectedFiles": 139,
+    "protectedCategories": [
+      "ray engine and math/tolerances",
+      "controls and input",
+      "app and ID-keyed progress",
+      "renderers/CSS/HTML",
+      "platform assets/fonts",
+      "all other games and their content",
+      "previous v4 development evidence"
+    ],
+    "dataOnlyRuntime": true
+  },
+  "definitions": 500,
+  "archivedPreviousDefinitions": 500,
+  "archivedOriginalDefinitions": 200,
+  "retainedPreviousIds": 120,
+  "replacedPreviousIds": 380,
+  "history": {
+    "passed": true,
+    "oldCompletedIds": 500,
+    "oldDrafts": 500,
+    "oldFailureRecords": 500,
+    "newIdentities": 380,
+    "readOnlyLoad": true,
+    "retiredHistoryRetained": true,
+    "noCompletionTransfer": true,
+    "noDraftTransfer": true,
+    "noFailureTransfer": true,
+    "noGlobalReset": true,
+    "realStorageAccessed": false
+  },
+  "selfTests": {
+    "passed": true,
+    "checks": [
+      "unchanged ID exact puzzle hash",
+      "changed content new ID",
+      "unchanged content retains ID",
+      "explicit correct replacement mapping",
+      "old completion/draft/failure preservation",
+      "new identity inherits no completion/draft/failures",
+      "no reset or real storage"
+    ],
+    "history": {
+      "passed": true,
+      "oldCompletedIds": 1,
+      "oldDrafts": 1,
+      "oldFailureRecords": 1,
+      "newIdentities": 1,
+      "readOnlyLoad": true,
+      "retiredHistoryRetained": true,
+      "noCompletionTransfer": true,
+      "noDraftTransfer": true,
+      "noFailureTransfer": true,
+      "noGlobalReset": true,
+      "realStorageAccessed": false
+    }
+  },
+  "replay": {
+    "records": 500,
+    "passed": 500,
+    "individualHalfDegreeTests": 3730,
+    "simultaneousCorners": 9902,
+    "allCornersExhaustive": true
+  },
+  "baselinePreviousDefinitionHash": "2b9e2909e38d8764e37b42cd381168a385792892c48d551f3debe7fb8057ae72",
+  "baselineLegacyDefinitionHash": "e2ee59b46675b93634e31091312e8608be8d832b311026b56bc033268219e1ea",
+  "limitations": [
+    "Exact protected byte hashes, identities and compiler puzzle-field fingerprints, not a human difficulty or continuous-angle uniqueness claim.",
+    "Only explicit in-memory storage is used. No browser or real user storage is accessed.",
+    "Numbering and presentation may describe redesigned content, but never move progress to its replacement identity."
+  ]
+}

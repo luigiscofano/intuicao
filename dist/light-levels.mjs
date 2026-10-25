@@ -1,4 +1,4 @@
-// Reflexos v4: 500 reviewed compositions, using the unchanged ray engine.
+// Reflexos v5: 500 reviewed compositions with audited comfortable reflection geometry; unchanged ray engine.
 export const lightLevels = [
   {
     "number": 1,
@@ -61,9 +61,9 @@ export const lightLevels = [
     "family": "autoral-2",
     "sources": [
       {
-        "x": 150,
-        "y": 150,
-        "angle": 0,
+        "x": 171.79869516232642,
+        "y": 240.79809994790935,
+        "angle": -27,
         "color": "gold"
       }
     ],
@@ -82,13 +82,13 @@ export const lightLevels = [
         "x": 350,
         "y": 150,
         "length": 124.8,
-        "angle": -14.5
+        "angle": -28
       }
     ],
     "solution": [
-      16.5
+      3
     ],
-    "sourceAngle": 0,
+    "sourceAngle": -27,
     "target": {
       "x": 550,
       "y": 280,
@@ -100,7 +100,7 @@ export const lightLevels = [
     "decoyCount": 0,
     "tutorial": "",
     "rules": "Leve a luz ao alvo.",
-    "id": "light-v3-2",
+    "id": "light-v5-legacy-2",
     "campaignNumber": 2,
     "campaignBand": "basic",
     "stage": 1,
@@ -167,9 +167,9 @@ export const lightLevels = [
     "family": "autoral-21",
     "sources": [
       {
-        "x": 72,
-        "y": 230,
-        "angle": 0,
+        "x": 100.26548483250778,
+        "y": 316.992217339286,
+        "angle": -36,
         "color": "gold"
       }
     ],
@@ -188,7 +188,7 @@ export const lightLevels = [
         "x": 220,
         "y": 230,
         "length": 124.8,
-        "angle": -17.7
+        "angle": -35.7
       },
       {
         "type": "mirror",
@@ -224,11 +224,11 @@ export const lightLevels = [
       }
     ],
     "solution": [
-      13.3,
+      -4.7,
       -31.7,
       -45
     ],
-    "sourceAngle": 0,
+    "sourceAngle": -36,
     "target": {
       "x": 570,
       "y": 110,
@@ -243,7 +243,7 @@ export const lightLevels = [
     "decoyCount": 0,
     "tutorial": "",
     "rules": "Leve a luz ao alvo.",
-    "id": "light-v3-21",
+    "id": "light-v5-legacy-21",
     "campaignNumber": 4,
     "campaignBand": "basic",
     "stage": 1,
@@ -342,9 +342,9 @@ export const lightLevels = [
   {
     "sources": [
       {
-        "x": 30,
-        "y": 330,
-        "angle": 0,
+        "x": 105.49511869853964,
+        "y": 171.06943328539316,
+        "angle": 62,
         "color": "gold"
       }
     ],
@@ -362,7 +362,7 @@ export const lightLevels = [
         "y": 330,
         "type": "mirror",
         "length": 124.8,
-        "angle": 11.5
+        "angle": 42.5
       },
       {
         "x": 400,
@@ -405,14 +405,14 @@ export const lightLevels = [
       }
     ],
     "portals": [],
-    "id": "light-v4-deduction-pilot-windows",
+    "id": "light-v5-deduction-pilot-windows",
     "name": "As duas aberturas",
     "hint": "Observe quais trechos são visíveis através de cada abertura.",
     "solution": [
-      -19.5,
+      11.5,
       -2.4
     ],
-    "sourceAngle": 0,
+    "sourceAngle": 62,
     "target": {
       "x": 620,
       "y": 310,
@@ -502,16 +502,16 @@ export const lightLevels = [
     "stageName": "Primeiras relações"
   },
   {
-    "id": "light-v3-42",
+    "id": "light-v5-legacy-42",
     "campaignNumber": 8,
     "name": "Complete o conjunto",
     "difficulty": 42,
     "family": "two-42",
     "sources": [
       {
-        "x": 50,
-        "y": 80,
-        "angle": 0,
+        "x": 54.15195586057692,
+        "y": 119.50322125537429,
+        "angle": -12,
         "color": "gold"
       },
       {
@@ -542,7 +542,7 @@ export const lightLevels = [
         "x": 240,
         "y": 80,
         "length": 124.8,
-        "angle": 72
+        "angle": 66
       },
       {
         "type": "mirror",
@@ -560,11 +560,11 @@ export const lightLevels = [
       }
     ],
     "solution": [
-      45,
+      39,
       45,
       45
     ],
-    "sourceAngle": 0,
+    "sourceAngle": -12,
     "target": {
       "x": 400,
       "y": 260,
@@ -587,9 +587,9 @@ export const lightLevels = [
     "family": "autoral-9",
     "sources": [
       {
-        "x": 660,
-        "y": 350,
-        "angle": 180,
+        "x": 649.3728682395523,
+        "y": 292.661128072752,
+        "angle": 159,
         "color": "gold"
       }
     ],
@@ -608,7 +608,7 @@ export const lightLevels = [
         "x": 500,
         "y": 350,
         "length": 124.8,
-        "angle": -10.6
+        "angle": -21.1
       },
       {
         "type": "mirror",
@@ -628,10 +628,10 @@ export const lightLevels = [
       }
     ],
     "solution": [
-      20.4,
+      9.9,
       -76.6
     ],
-    "sourceAngle": 180,
+    "sourceAngle": 159,
     "target": {
       "x": 520,
       "y": 100,
@@ -645,14 +645,14 @@ export const lightLevels = [
     "decoyCount": 0,
     "tutorial": "",
     "rules": "Leve a luz ao alvo.",
-    "id": "light-v3-9",
+    "id": "light-v5-legacy-9",
     "campaignNumber": 9,
     "campaignBand": "basic",
     "stage": 1,
     "stageName": "Primeiras relações"
   },
   {
-    "id": "light-v3-43",
+    "id": "light-v5-legacy-43",
     "campaignNumber": 10,
     "name": "Chegadas opostas",
     "difficulty": 43,
@@ -665,9 +665,9 @@ export const lightLevels = [
         "color": "gold"
       },
       {
-        "x": 740,
-        "y": 70,
-        "angle": 180,
+        "x": 736.7221401100708,
+        "y": 101.18675362266393,
+        "angle": 192,
         "color": "blue"
       }
     ],
@@ -706,7 +706,7 @@ export const lightLevels = [
         "x": 590,
         "y": 70,
         "length": 124.8,
-        "angle": 0
+        "angle": 6
       },
       {
         "type": "mirror",
@@ -728,7 +728,7 @@ export const lightLevels = [
     "solution": [
       -45,
       -45,
-      -45,
+      -39,
       -45
     ],
     "sourceAngle": 0,
@@ -845,9 +845,9 @@ export const lightLevels = [
     "family": "autoral-10",
     "sources": [
       {
-        "x": 100,
-        "y": 230,
-        "angle": 0,
+        "x": 117.43895612986114,
+        "y": 157.36152004167252,
+        "angle": 27,
         "color": "gold"
       }
     ],
@@ -866,7 +866,7 @@ export const lightLevels = [
         "x": 260,
         "y": 230,
         "length": 124.8,
-        "angle": -48.9
+        "angle": -35.4
       },
       {
         "type": "mirror",
@@ -886,10 +886,10 @@ export const lightLevels = [
       }
     ],
     "solution": [
-      -17.9,
+      -4.4,
       6.1
     ],
-    "sourceAngle": 0,
+    "sourceAngle": 27,
     "target": {
       "x": 620,
       "y": 300,
@@ -903,23 +903,23 @@ export const lightLevels = [
     "decoyCount": 0,
     "tutorial": "",
     "rules": "Leve a luz ao alvo.",
-    "id": "light-v3-10",
+    "id": "light-v5-legacy-10",
     "campaignNumber": 12,
     "campaignBand": "basic",
     "stage": 1,
     "stageName": "Primeiras relações"
   },
   {
-    "id": "light-v3-45",
+    "id": "light-v5-legacy-45",
     "campaignNumber": 13,
     "name": "Antes do primeiro espelho",
     "difficulty": 45,
     "family": "two-45",
     "sources": [
       {
-        "x": 60,
-        "y": 230,
-        "angle": 0,
+        "x": 60.21927443926819,
+        "y": 238.37375299887103,
+        "angle": -3,
         "color": "gold"
       },
       {
@@ -950,7 +950,7 @@ export const lightLevels = [
         "x": 220,
         "y": 230,
         "length": 124.8,
-        "angle": 56
+        "angle": 54.5
       },
       {
         "type": "mirror",
@@ -984,12 +984,12 @@ export const lightLevels = [
       }
     ],
     "solution": [
-      29,
+      27.5,
       18.6,
       38.4,
       -36.4
     ],
-    "sourceAngle": 0,
+    "sourceAngle": -3,
     "target": {
       "x": 740,
       "y": 230,
@@ -1007,43 +1007,43 @@ export const lightLevels = [
     "stageName": "Primeiras relações"
   },
   {
-    "id": "light-v4-open-003",
+    "id": "light-v5-open-003",
     "name": "Compartilhar o vazio",
     "hint": "Cada trajeto funciona sozinho. Compare o espaço que ocupam juntos.",
     "width": 800,
     "height": 460,
     "objects": [
       {
-        "x": 486.1,
-        "y": 248.8,
+        "x": 467.5,
+        "y": 194.9,
         "type": "mirror",
         "length": 124.8,
-        "angle": -71.3
+        "angle": -70.4
       },
       {
-        "x": 629.1,
-        "y": 272.7,
+        "x": 616.8,
+        "y": 226,
         "type": "mirror",
         "length": 124.8,
-        "angle": 76.2
+        "angle": 75.1
       },
       {
-        "x": 361.6,
-        "y": 340.4,
+        "x": 474.9,
+        "y": 394,
         "type": "mirror",
         "length": 124.8,
         "angle": 0
       },
       {
-        "x": 550.9,
-        "y": 123.3,
+        "x": 552.2,
+        "y": 97.3,
         "type": "mirror",
         "length": 124.8,
-        "angle": 18.1
+        "angle": 20.9
       },
       {
-        "x": 228.3,
-        "y": 144.3,
+        "x": 273.7,
+        "y": 180,
         "type": "mirror",
         "length": 124.8,
         "angle": 0
@@ -1051,44 +1051,44 @@ export const lightLevels = [
     ],
     "sources": [
       {
-        "x": 25,
-        "y": 248.8,
-        "angle": 0,
+        "x": 65.8,
+        "y": 202.5,
+        "angle": -1.0838834431723463,
         "color": "gold"
       },
       {
-        "x": 629.1,
-        "y": 435,
-        "angle": -90,
+        "x": 628.5,
+        "y": 436,
+        "angle": -93.18889662497303,
         "color": "blue"
       }
     ],
     "targets": [
       {
-        "x": 321.9,
-        "y": 123.1,
+        "x": 265.8,
+        "y": 24,
         "radius": 22,
         "color": "gold"
       },
       {
-        "x": 94.2,
-        "y": 347.8,
+        "x": 49.2,
+        "y": 295.8,
         "radius": 22,
         "color": "blue"
       }
     ],
     "portals": [],
     "solution": [
-      -71.3,
-      37.9,
-      -7.9,
+      -70.4,
+      18.5,
+      -18.4,
       0,
       0
     ],
-    "sourceAngle": 0,
+    "sourceAngle": -1.0838834431723463,
     "target": {
-      "x": 321.9,
-      "y": 123.1,
+      "x": 265.8,
+      "y": 24,
       "radius": 22,
       "color": "gold"
     },
@@ -1104,43 +1104,43 @@ export const lightLevels = [
     "stageName": "Primeiras relações"
   },
   {
-    "id": "light-v4-open-001",
+    "id": "light-v5-open-001",
     "name": "Primeiro, para longe",
     "hint": "Uma saída que aponta para o alvo pode ocupar a chegada de outra cor.",
     "width": 800,
     "height": 460,
     "objects": [
       {
-        "x": 258.3,
-        "y": 224,
+        "x": 379.4,
+        "y": 254.3,
         "type": "mirror",
         "length": 124.8,
-        "angle": 73.7
+        "angle": 76.6
       },
       {
-        "x": 613.2,
-        "y": 342,
+        "x": 591.2,
+        "y": 394,
         "type": "mirror",
         "length": 124.8,
-        "angle": 4
+        "angle": -19
       },
       {
-        "x": 399.1,
-        "y": 327.9,
-        "type": "mirror",
-        "length": 124.8,
-        "angle": 0
-      },
-      {
-        "x": 176.8,
-        "y": 80.8,
+        "x": 288.1,
+        "y": 378.8,
         "type": "mirror",
         "length": 124.8,
         "angle": 0
       },
       {
-        "x": 527.5,
-        "y": 95.8,
+        "x": 307.6,
+        "y": 99.7,
+        "type": "mirror",
+        "length": 124.8,
+        "angle": 0
+      },
+      {
+        "x": 542.1,
+        "y": 107.4,
         "type": "mirror",
         "length": 124.8,
         "angle": 0
@@ -1148,44 +1148,44 @@ export const lightLevels = [
     ],
     "sources": [
       {
-        "x": 25,
-        "y": 224,
-        "angle": 0,
+        "x": 141,
+        "y": 253,
+        "angle": 0.3124319425497898,
         "color": "gold"
       },
       {
-        "x": 775,
-        "y": 342,
-        "angle": 180,
+        "x": 715,
+        "y": 228.4,
+        "angle": 126.78122171817435,
         "color": "blue"
       }
     ],
     "targets": [
       {
-        "x": 79.2,
-        "y": 338.8,
+        "x": 24,
+        "y": 436,
         "radius": 22,
         "color": "gold"
       },
       {
-        "x": 135.8,
-        "y": 274.6,
+        "x": 240.4,
+        "y": 298.1,
         "radius": 22,
         "color": "blue"
       }
     ],
     "portals": [],
     "solution": [
-      -59.8,
-      4,
+      -57.3,
+      -19,
       0,
-      -4.5,
+      7.6,
       0
     ],
-    "sourceAngle": 0,
+    "sourceAngle": 0.3124319425497898,
     "target": {
-      "x": 79.2,
-      "y": 338.8,
+      "x": 24,
+      "y": 436,
       "radius": 22,
       "color": "gold"
     },
@@ -1360,27 +1360,27 @@ export const lightLevels = [
         "x": 200,
         "y": 110,
         "length": 124.8,
-        "angle": 12.2
+        "angle": -77.8
       },
       {
         "type": "mirror",
         "x": 200,
         "y": 350,
         "length": 124.8,
-        "angle": -12.8
+        "angle": 77.2
       }
     ],
     "sources": [
       {
-        "x": 30,
-        "y": 110,
-        "angle": 0,
+        "x": 350,
+        "y": 110.00000000000001,
+        "angle": -180,
         "color": "gold"
       },
       {
-        "x": 30,
+        "x": 350,
         "y": 350,
-        "angle": 0,
+        "angle": -180,
         "color": "blue"
       }
     ],
@@ -1446,14 +1446,14 @@ export const lightLevels = [
     ],
     "width": 800,
     "height": 460,
-    "id": "light-v4-portal-001",
+    "id": "light-v5-portal-001",
     "name": "Lados invertidos 001",
-    "hint": "Observe como a ordem das cores muda entre fontes e alvos.",
+    "hint": "Compare a posição dos trajetos nos primeiros espelhos e nos alvos.",
     "solution": [
-      12.2,
-      3
+      -77.8,
+      -87
     ],
-    "sourceAngle": 0,
+    "sourceAngle": -180,
     "target": {
       "x": 725,
       "y": 348,
@@ -1660,27 +1660,27 @@ export const lightLevels = [
         "x": 580,
         "y": 110,
         "length": 124.8,
-        "angle": -62.2
+        "angle": -60.2
       },
       {
         "type": "mirror",
         "x": 200,
         "y": 350,
         "length": 124.8,
-        "angle": -13.1
+        "angle": 76.9
       }
     ],
     "sources": [
       {
-        "x": 770,
-        "y": 110,
-        "angle": 180,
+        "x": 739.6102480415718,
+        "y": 121.16103579905997,
+        "angle": 184,
         "color": "gold"
       },
       {
-        "x": 30,
+        "x": 350,
         "y": 350,
-        "angle": 0,
+        "angle": -180,
         "color": "blue"
       }
     ],
@@ -1768,14 +1768,14 @@ export const lightLevels = [
     ],
     "width": 800,
     "height": 460,
-    "id": "light-v4-portal-002",
+    "id": "light-v5-portal-002",
     "name": "Um acesso para voltar 002",
     "hint": "Procure o acesso que permite voltar ao setor do alvo.",
     "solution": [
-      -25.5,
-      -24
+      -23.5,
+      66
     ],
-    "sourceAngle": 180,
+    "sourceAngle": 184,
     "target": {
       "x": 650,
       "y": 212,
@@ -2279,9 +2279,9 @@ export const lightLevels = [
     "family": "autoral-26",
     "sources": [
       {
-        "x": 92,
-        "y": 220,
-        "angle": 0,
+        "x": 101.83009687841414,
+        "y": 166.96154346729557,
+        "angle": 21,
         "color": "gold"
       }
     ],
@@ -2300,7 +2300,7 @@ export const lightLevels = [
         "x": 240,
         "y": 220,
         "length": 124.8,
-        "angle": -51.6
+        "angle": -41.1
       },
       {
         "type": "mirror",
@@ -2336,11 +2336,11 @@ export const lightLevels = [
       }
     ],
     "solution": [
-      -20.6,
+      -10.1,
       -3.1,
       86.9
     ],
-    "sourceAngle": 0,
+    "sourceAngle": 21,
     "target": {
       "x": 489,
       "y": 317,
@@ -2355,7 +2355,7 @@ export const lightLevels = [
     "decoyCount": 0,
     "tutorial": "",
     "rules": "Leve a luz ao alvo.",
-    "id": "light-v3-26",
+    "id": "light-v5-legacy-26",
     "campaignNumber": 26,
     "campaignBand": "basic",
     "stage": 1,
@@ -2369,9 +2369,9 @@ export const lightLevels = [
     "family": "autoral-28",
     "sources": [
       {
-        "x": 82,
-        "y": 330,
-        "angle": 0,
+        "x": 101.82824023990307,
+        "y": 256,
+        "angle": 30,
         "color": "gold"
       }
     ],
@@ -2390,7 +2390,7 @@ export const lightLevels = [
         "x": 230,
         "y": 330,
         "length": 124.8,
-        "angle": -46.5
+        "angle": -31.5
       },
       {
         "type": "mirror",
@@ -2426,11 +2426,11 @@ export const lightLevels = [
       }
     ],
     "solution": [
-      -15.5,
+      -0.5,
       -84,
       -68.5
     ],
-    "sourceAngle": 0,
+    "sourceAngle": 30,
     "target": {
       "x": 450,
       "y": 100,
@@ -2445,7 +2445,7 @@ export const lightLevels = [
     "decoyCount": 0,
     "tutorial": "",
     "rules": "Leve a luz ao alvo.",
-    "id": "light-v3-28",
+    "id": "light-v5-legacy-28",
     "campaignNumber": 27,
     "campaignBand": "basic",
     "stage": 1,
@@ -2454,28 +2454,28 @@ export const lightLevels = [
   {
     "sources": [
       {
-        "x": 30,
-        "y": 110,
-        "angle": 0,
+        "x": 352.64865730815666,
+        "y": 205.3854675619769,
+        "angle": -148,
         "color": "gold"
       },
       {
-        "x": 30,
-        "y": 350,
-        "angle": 0,
+        "x": 307.06089701741735,
+        "y": 231.09682792361693,
+        "angle": 132,
         "color": "blue"
       }
     ],
     "targets": [
       {
-        "x": 740,
-        "y": 350,
+        "x": 672.574263096701,
+        "y": 234.47499210841295,
         "radius": 22,
         "color": "gold"
       },
       {
-        "x": 740,
-        "y": 110,
+        "x": 665.6283359900237,
+        "y": 186.13269777109872,
         "radius": 22,
         "color": "blue"
       }
@@ -2532,43 +2532,43 @@ export const lightLevels = [
         "y": 110,
         "type": "mirror",
         "length": 124.8,
-        "angle": 24
+        "angle": -50
       },
       {
         "x": 200,
         "y": 350,
         "type": "mirror",
         "length": 124.8,
-        "angle": 16.4
+        "angle": 82.4
       },
       {
         "x": 650,
         "y": 362.5,
         "type": "mirror",
         "length": 124.8,
-        "angle": 20
+        "angle": -16
       },
       {
         "x": 650,
         "y": 97.5,
         "type": "mirror",
         "length": 124.8,
-        "angle": 20.3
+        "angle": 56.3
       }
     ],
-    "id": "light-v4-deduction-pair-00-base",
+    "id": "light-v5-deduction-pair-00-base",
     "name": "Quatro escolhas ligadas",
     "hint": "A primeira escolha muda também a chegada ao último espelho.",
     "solution": [
-      -7,
-      -14.6,
-      -11,
-      -10.7
+      -81,
+      51.4,
+      -47,
+      25.3
     ],
-    "sourceAngle": 0,
+    "sourceAngle": -148,
     "target": {
-      "x": 740,
-      "y": 350,
+      "x": 672.574263096701,
+      "y": 234.47499210841295,
       "radius": 22,
       "color": "gold"
     },
@@ -2586,28 +2586,28 @@ export const lightLevels = [
   {
     "sources": [
       {
-        "x": 30,
-        "y": 110,
-        "angle": 0,
+        "x": 352.64865730815666,
+        "y": 205.3854675619769,
+        "angle": -148,
         "color": "gold"
       },
       {
-        "x": 30,
-        "y": 350,
-        "angle": 0,
+        "x": 307.06089701741735,
+        "y": 231.09682792361693,
+        "angle": 132,
         "color": "blue"
       }
     ],
     "targets": [
       {
-        "x": 740,
-        "y": 350,
+        "x": 672.574263096701,
+        "y": 234.47499210841295,
         "radius": 22,
         "color": "gold"
       },
       {
-        "x": 740,
-        "y": 110,
+        "x": 665.6283359900237,
+        "y": 186.13269777109872,
         "radius": 22,
         "color": "blue"
       }
@@ -2664,43 +2664,43 @@ export const lightLevels = [
         "y": 110,
         "type": "mirror",
         "length": 124.8,
-        "angle": 24
+        "angle": -50
       },
       {
         "x": 200,
         "y": 350,
         "type": "mirror",
         "length": 124.8,
-        "angle": 16.4
+        "angle": 82.4
       },
       {
         "x": 650,
         "y": 362.5,
         "type": "mirror",
         "length": 124.8,
-        "angle": 20
+        "angle": -16
       },
       {
         "x": 650,
         "y": 97.5,
         "type": "mirror",
         "length": 124.8,
-        "angle": 20.3
+        "angle": 56.3
       }
     ],
-    "id": "light-v4-deduction-pair-00-filter",
+    "id": "light-v5-deduction-pair-00-filter",
     "name": "Parecidas, mas diferentes",
     "hint": "Uma diferença visível decide qual caminho continua disponível.",
     "solution": [
-      14.6,
-      7,
-      10.7,
-      11
+      -59.4,
+      73,
+      -25.3,
+      47
     ],
-    "sourceAngle": 0,
+    "sourceAngle": -148,
     "target": {
-      "x": 740,
-      "y": 350,
+      "x": 672.574263096701,
+      "y": 234.47499210841295,
       "radius": 22,
       "color": "gold"
     },
@@ -2853,43 +2853,43 @@ export const lightLevels = [
     "stageName": "Primeiras relações"
   },
   {
-    "id": "light-v4-open-011",
+    "id": "light-v5-open-011",
     "name": "Compartilhar o vazio",
     "hint": "Cada trajeto funciona sozinho. Compare o espaço que ocupam juntos.",
     "width": 800,
     "height": 460,
     "objects": [
       {
-        "x": 557.6,
-        "y": 137.6,
+        "x": 617.3,
+        "y": 68.2,
         "type": "mirror",
         "length": 124.8,
-        "angle": -19.1
+        "angle": -5
       },
       {
-        "x": 384.1,
-        "y": 208.9,
+        "x": 335.1,
+        "y": 73.9,
         "type": "mirror",
         "length": 124.8,
-        "angle": 16.6
+        "angle": 17.4
       },
       {
-        "x": 641.7,
-        "y": 377.8,
+        "x": 494.7,
+        "y": 338.1,
         "type": "mirror",
         "length": 124.8,
-        "angle": -71.1
+        "angle": -56.7
       },
       {
-        "x": 225.4,
-        "y": 271.6,
+        "x": 274.6,
+        "y": 220.8,
         "type": "mirror",
         "length": 124.8,
         "angle": 0
       },
       {
-        "x": 171,
-        "y": 128.6,
+        "x": 97.8,
+        "y": 66,
         "type": "mirror",
         "length": 124.8,
         "angle": 0
@@ -2897,44 +2897,44 @@ export const lightLevels = [
     ],
     "sources": [
       {
-        "x": 775,
-        "y": 137.6,
-        "angle": 180,
+        "x": 745.2,
+        "y": 151.2,
+        "angle": -147.0186671091103,
         "color": "gold"
       },
       {
-        "x": 25,
-        "y": 208.9,
-        "angle": 0,
+        "x": 26.6,
+        "y": 211.3,
+        "angle": -24.007276863213992,
         "color": "blue"
       }
     ],
     "targets": [
       {
-        "x": 272.6,
-        "y": 362.3,
+        "x": 332.7,
+        "y": 333.6,
         "radius": 22,
         "color": "gold"
       },
       {
-        "x": 59.8,
-        "y": 330.8,
+        "x": 111.7,
+        "y": 285.4,
         "radius": 22,
         "color": "blue"
       }
     ],
     "portals": [],
     "solution": [
-      -19.1,
-      -79.7,
+      -5,
+      79,
       0,
       0,
-      -20.3
+      -45.9
     ],
-    "sourceAngle": 180,
+    "sourceAngle": -147.0186671091103,
     "target": {
-      "x": 272.6,
-      "y": 362.3,
+      "x": 332.7,
+      "y": 333.6,
       "radius": 22,
       "color": "gold"
     },
@@ -3054,9 +3054,9 @@ export const lightLevels = [
     "family": "autoral-6",
     "sources": [
       {
-        "x": 100,
-        "y": 140,
-        "angle": 0,
+        "x": 113.83272677718386,
+        "y": 205.07786289212805,
+        "angle": -24,
         "color": "gold"
       }
     ],
@@ -3075,7 +3075,7 @@ export const lightLevels = [
         "x": 260,
         "y": 140,
         "length": 124.8,
-        "angle": -12.3
+        "angle": -24.3
       },
       {
         "type": "mirror",
@@ -3095,10 +3095,10 @@ export const lightLevels = [
       }
     ],
     "solution": [
-      18.7,
+      6.7,
       -0.3
     ],
-    "sourceAngle": 0,
+    "sourceAngle": -24,
     "target": {
       "x": 650,
       "y": 160,
@@ -3112,95 +3112,95 @@ export const lightLevels = [
     "decoyCount": 0,
     "tutorial": "",
     "rules": "Leve a luz ao alvo.",
-    "id": "light-v3-6",
+    "id": "light-v5-legacy-6",
     "campaignNumber": 33,
     "campaignBand": "basic",
     "stage": 2,
     "stageName": "Conectar caminhos"
   },
   {
-    "id": "light-v4-open-028",
+    "id": "light-v5-open-028",
     "name": "A chegada reservada",
     "hint": "Compare as aproximações do alvo com os trajetos que as outras cores precisam conservar.",
     "width": 800,
     "height": 460,
     "objects": [
       {
-        "x": 349.8,
-        "y": 108.9,
+        "x": 275.2,
+        "y": 74.9,
         "type": "mirror",
         "length": 124.8,
-        "angle": 58.5
+        "angle": 12.3
       },
       {
-        "x": 411.7,
-        "y": 365,
+        "x": 378.2,
+        "y": 391.1,
         "type": "mirror",
         "length": 124.8,
-        "angle": 14.8
+        "angle": 28.9
       },
       {
-        "x": 514.3,
-        "y": 202.6,
+        "x": 440.8,
+        "y": 271.9,
         "type": "mirror",
         "length": 124.8,
         "angle": 0
       },
       {
-        "x": 205.8,
-        "y": 99.5,
+        "x": 66,
+        "y": 151.7,
         "type": "mirror",
         "length": 124.8,
         "angle": 0
       },
       {
-        "x": 248.9,
-        "y": 307.2,
+        "x": 313.9,
+        "y": 243.9,
         "type": "mirror",
         "length": 124.8,
-        "angle": 54.8
+        "angle": 35.2
       }
     ],
     "sources": [
       {
-        "x": 25,
-        "y": 108.9,
-        "angle": 0,
+        "x": 48,
+        "y": 371.8,
+        "angle": -52.575308218944166,
         "color": "gold"
       },
       {
-        "x": 775,
-        "y": 365,
-        "angle": 180,
+        "x": 698.3,
+        "y": 216.6,
+        "angle": 151.4033371765396,
         "color": "blue"
       }
     ],
     "targets": [
       {
-        "x": 654.7,
-        "y": 255.3,
+        "x": 632.4,
+        "y": 206.3,
         "radius": 22,
         "color": "gold"
       },
       {
-        "x": 119.4,
-        "y": 199.6,
+        "x": 365.7,
+        "y": 190,
         "radius": 22,
         "color": "blue"
       }
     ],
     "portals": [],
     "solution": [
-      14.8,
-      9.8,
-      25.1,
+      -1.3,
+      18.9,
+      15.5,
       0,
-      29.6
+      -79.9
     ],
-    "sourceAngle": 0,
+    "sourceAngle": -52.575308218944166,
     "target": {
-      "x": 654.7,
-      "y": 255.3,
+      "x": 632.4,
+      "y": 206.3,
       "radius": 22,
       "color": "gold"
     },
@@ -3216,43 +3216,43 @@ export const lightLevels = [
     "stageName": "Conectar caminhos"
   },
   {
-    "id": "light-v4-open-037",
+    "id": "light-v5-open-037",
     "name": "Compartilhar o vazio",
     "hint": "Cada trajeto funciona sozinho. Compare o espaço que ocupam juntos.",
     "width": 800,
     "height": 460,
     "objects": [
       {
-        "x": 181.9,
-        "y": 167.6,
+        "x": 135.3,
+        "y": 250.8,
         "type": "mirror",
         "length": 124.8,
-        "angle": 87.3
+        "angle": 77
       },
       {
-        "x": 304.4,
-        "y": 265.2,
+        "x": 397.5,
+        "y": 339.1,
         "type": "mirror",
         "length": 124.8,
-        "angle": 79.9
+        "angle": 64.1
       },
       {
-        "x": 494.4,
-        "y": 220.9,
-        "type": "mirror",
-        "length": 124.8,
-        "angle": 0
-      },
-      {
-        "x": 615.9,
-        "y": 370.1,
+        "x": 573.7,
+        "y": 270.9,
         "type": "mirror",
         "length": 124.8,
         "angle": 0
       },
       {
-        "x": 334.9,
-        "y": 123.9,
+        "x": 642.2,
+        "y": 380.4,
+        "type": "mirror",
+        "length": 124.8,
+        "angle": 0
+      },
+      {
+        "x": 243.1,
+        "y": 153.8,
         "type": "mirror",
         "length": 124.8,
         "angle": 0
@@ -3260,44 +3260,44 @@ export const lightLevels = [
     ],
     "sources": [
       {
-        "x": 775,
-        "y": 167.6,
-        "angle": 180,
+        "x": 580.9,
+        "y": 105.4,
+        "angle": 161.92841179442377,
         "color": "gold"
       },
       {
-        "x": 775,
-        "y": 265.2,
-        "angle": 180,
+        "x": 776,
+        "y": 303.9,
+        "angle": 174.68685040053404,
         "color": "blue"
       }
     ],
     "targets": [
       {
-        "x": 678.8,
-        "y": 119.9,
+        "x": 607.7,
+        "y": 185,
         "radius": 22,
         "color": "gold"
       },
       {
-        "x": 594.2,
-        "y": 159.1,
+        "x": 691.1,
+        "y": 30.6,
         "radius": 22,
         "color": "blue"
       }
     ],
     "portals": [],
     "solution": [
-      87.3,
-      -80.7,
+      77,
+      -87.9,
       0,
-      -38.6,
+      -36.2,
       0
     ],
-    "sourceAngle": 180,
+    "sourceAngle": 161.92841179442377,
     "target": {
-      "x": 678.8,
-      "y": 119.9,
+      "x": 607.7,
+      "y": 185,
       "radius": 22,
       "color": "gold"
     },
@@ -3319,27 +3319,27 @@ export const lightLevels = [
         "x": 200,
         "y": 110,
         "length": 124.8,
-        "angle": 11.9
+        "angle": -18.1
       },
       {
         "type": "mirror",
         "x": 200,
         "y": 350,
         "length": 124.8,
-        "angle": -12.3
+        "angle": 77.7
       }
     ],
     "sources": [
       {
-        "x": 30,
-        "y": 110,
-        "angle": 0,
+        "x": 44.99999999999997,
+        "y": 378.46787517317597,
+        "angle": -60,
         "color": "gold"
       },
       {
-        "x": 30,
+        "x": 350,
         "y": 350,
-        "angle": 0,
+        "angle": -180,
         "color": "blue"
       }
     ],
@@ -3449,14 +3449,14 @@ export const lightLevels = [
     ],
     "width": 800,
     "height": 460,
-    "id": "light-v4-portal-012",
+    "id": "light-v5-portal-012",
     "name": "A consequência distante 012",
     "hint": "Uma escolha aqui pode atrapalhar uma luz do outro lado.",
     "solution": [
-      11.9,
-      -0.5
+      -18.1,
+      89.5
     ],
-    "sourceAngle": 0,
+    "sourceAngle": -60,
     "target": {
       "x": 725,
       "y": 341,
@@ -3477,21 +3477,21 @@ export const lightLevels = [
   {
     "sources": [
       {
-        "x": 30,
-        "y": 100,
-        "angle": 0,
+        "x": 359.99999999999994,
+        "y": 359.8076211353316,
+        "angle": -120,
         "color": "gold"
       },
       {
-        "x": 770,
-        "y": 360,
-        "angle": 180,
+        "x": 590,
+        "y": 160,
+        "angle": 90,
         "color": "blue"
       },
       {
-        "x": 400,
-        "y": 30,
-        "angle": 90,
+        "x": 381.1848766118224,
+        "y": 30.986058833710814,
+        "angle": 84,
         "color": "pink"
       }
     ],
@@ -3589,32 +3589,32 @@ export const lightLevels = [
         "x": 210,
         "y": 100,
         "length": 124.8,
-        "angle": 16.2
+        "angle": -43.8
       },
       {
         "type": "mirror",
         "x": 590,
         "y": 360,
         "length": 124.8,
-        "angle": 37.8
+        "angle": -7.2
       },
       {
         "type": "mirror",
         "x": 400,
         "y": 210,
         "length": 124.8,
-        "angle": 66.2
+        "angle": 63.2
       }
     ],
-    "id": "light-v4-deduction-open-040",
+    "id": "light-v5-deduction-open-040",
     "name": "Acordo de trajetos 39",
     "hint": "Compare os caminhos completos, não apenas cada chegada isolada.",
     "solution": [
-      -14.8,
-      6.8,
-      35.2
+      -74.8,
+      -38.2,
+      32.2
     ],
-    "sourceAngle": 0,
+    "sourceAngle": -120,
     "target": {
       "x": 602.4,
       "y": 216.4,
@@ -3633,88 +3633,88 @@ export const lightLevels = [
     "stageName": "Conectar caminhos"
   },
   {
-    "id": "light-v4-open-002",
+    "id": "light-v5-open-002",
     "name": "Compartilhar o vazio",
     "hint": "Cada trajeto funciona sozinho. Compare o espaço que ocupam juntos.",
     "width": 800,
     "height": 460,
     "objects": [
       {
-        "x": 204.7,
-        "y": 343.2,
+        "x": 139.2,
+        "y": 212.3,
         "type": "mirror",
         "length": 124.8,
-        "angle": -15.7
+        "angle": 21.1
       },
       {
-        "x": 569.6,
-        "y": 164.5,
+        "x": 520.7,
+        "y": 184.2,
         "type": "mirror",
         "length": 124.8,
-        "angle": -4.4
+        "angle": 12.4
       },
       {
-        "x": 462.3,
-        "y": 351.4,
+        "x": 490.1,
+        "y": 394,
         "type": "mirror",
         "length": 124.8,
         "angle": 0
       },
       {
-        "x": 648.3,
-        "y": 293.7,
+        "x": 677.2,
+        "y": 394,
         "type": "mirror",
         "length": 124.8,
         "angle": 0
       },
       {
-        "x": 297.5,
-        "y": 207.1,
+        "x": 374.6,
+        "y": 83.2,
         "type": "mirror",
         "length": 124.8,
-        "angle": -25.9
+        "angle": -5.7
       }
     ],
     "sources": [
       {
         "x": 25,
-        "y": 343.2,
-        "angle": 0,
+        "y": 38.1,
+        "angle": 56.75242104178906,
         "color": "gold"
       },
       {
-        "x": 775,
-        "y": 164.5,
-        "angle": 180,
+        "x": 693.3,
+        "y": 154.2,
+        "angle": 170.1397968301398,
         "color": "blue"
       }
     ],
     "targets": [
       {
-        "x": 694.8,
-        "y": 44.4,
+        "x": 695.7,
+        "y": 67.8,
         "radius": 22,
         "color": "gold"
       },
       {
-        "x": 104.7,
-        "y": 386.4,
+        "x": 64.5,
+        "y": 406,
         "radius": 22,
         "color": "blue"
       }
     ],
     "portals": [],
     "solution": [
-      -15.7,
-      -30.1,
-      -32.9,
+      21.1,
+      -45.8,
+      -41.7,
       0,
       0
     ],
-    "sourceAngle": 0,
+    "sourceAngle": 56.75242104178906,
     "target": {
-      "x": 694.8,
-      "y": 44.4,
+      "x": 695.7,
+      "y": 67.8,
       "radius": 22,
       "color": "gold"
     },
@@ -3736,59 +3736,59 @@ export const lightLevels = [
         "x": 200,
         "y": 86,
         "length": 124.8,
-        "angle": 14.1
+        "angle": -75.8
       },
       {
         "type": "mirror",
         "x": 200,
         "y": 230,
         "length": 124.8,
-        "angle": -7.4
+        "angle": -89.6
       },
       {
         "type": "mirror",
         "x": 200,
         "y": 374,
         "length": 124.8,
-        "angle": -7.3
+        "angle": 74
       }
     ],
     "sources": [
       {
-        "x": 30,
-        "y": 86,
-        "angle": 0,
+        "x": 350,
+        "y": 86.00000000000001,
+        "angle": -180,
         "color": "gold"
       },
       {
-        "x": 30,
-        "y": 230,
-        "angle": 0,
+        "x": 350,
+        "y": 230.00000000000003,
+        "angle": -180,
         "color": "blue"
       },
       {
-        "x": 30,
-        "y": 374,
-        "angle": 0,
+        "x": 349.6346075389736,
+        "y": 363.5365289383812,
+        "angle": 176,
         "color": "pink"
       }
     ],
     "targets": [
       {
         "x": 725,
-        "y": 367,
+        "y": 370,
         "radius": 22,
         "color": "gold"
       },
       {
         "x": 725,
-        "y": 91,
+        "y": 238,
         "radius": 22,
         "color": "blue"
       },
       {
         "x": 725,
-        "y": 237,
+        "y": 94,
         "radius": 22,
         "color": "pink"
       }
@@ -3798,8 +3798,8 @@ export const lightLevels = [
         "id": "g1a",
         "pairId": "g1b",
         "label": "A",
-        "x": 339.8,
-        "y": 78.7,
+        "x": 429,
+        "y": 28.9,
         "radius": 16,
         "colors": [
           "gold"
@@ -3809,8 +3809,8 @@ export const lightLevels = [
         "id": "g1b",
         "pairId": "g1a",
         "label": "A",
-        "x": 507.3,
-        "y": 378.4,
+        "x": 573.6,
+        "y": 407.7,
         "radius": 16,
         "colors": [
           "gold"
@@ -3820,8 +3820,8 @@ export const lightLevels = [
         "id": "b1a",
         "pairId": "b1b",
         "label": "B",
-        "x": 335.8,
-        "y": 263.9,
+        "x": 377.7,
+        "y": 395.7,
         "radius": 16,
         "colors": [
           "blue"
@@ -3831,8 +3831,8 @@ export const lightLevels = [
         "id": "b1b",
         "pairId": "b1a",
         "label": "B",
-        "x": 467.9,
-        "y": 26.9,
+        "x": 610.2,
+        "y": 130.9,
         "radius": 16,
         "colors": [
           "blue"
@@ -3842,8 +3842,8 @@ export const lightLevels = [
         "id": "p1a",
         "pairId": "p1b",
         "label": "C",
-        "x": 92.6,
-        "y": 153.8,
+        "x": 469,
+        "y": 369.3,
         "radius": 16,
         "colors": [
           "pink"
@@ -3853,8 +3853,8 @@ export const lightLevels = [
         "id": "p1b",
         "pairId": "p1a",
         "label": "C",
-        "x": 777.6,
-        "y": 344.9,
+        "x": 574,
+        "y": 96.6,
         "radius": 16,
         "colors": [
           "pink"
@@ -3863,18 +3863,18 @@ export const lightLevels = [
     ],
     "width": 800,
     "height": 460,
-    "id": "light-v4-portal-030",
-    "name": "O salto que não cruza 030",
+    "id": "light-v5-portal-030",
+    "name": "O salto que não cruza 003",
     "hint": "Separe os trechos iluminados do salto entre portais.",
     "solution": [
-      -1.5,
-      -7.4,
-      -7.3
+      83,
+      -89.6,
+      87.5
     ],
-    "sourceAngle": 0,
+    "sourceAngle": -180,
     "target": {
       "x": 725,
-      "y": 367,
+      "y": 370,
       "radius": 22,
       "color": "gold"
     },
@@ -4094,43 +4094,43 @@ export const lightLevels = [
     "stageName": "Conectar caminhos"
   },
   {
-    "id": "light-v4-open-044",
+    "id": "light-v5-open-044",
     "name": "Compartilhar o vazio",
     "hint": "Cada trajeto funciona sozinho. Compare o espaço que ocupam juntos.",
     "width": 800,
     "height": 460,
     "objects": [
       {
-        "x": 216.2,
-        "y": 305.2,
+        "x": 316.3,
+        "y": 333.3,
         "type": "mirror",
         "length": 124.8,
-        "angle": -7.5
+        "angle": -4.6
       },
       {
-        "x": 605,
-        "y": 314,
+        "x": 646.7,
+        "y": 385.6,
         "type": "mirror",
         "length": 124.8,
-        "angle": 23.4
+        "angle": -3.3
       },
       {
-        "x": 310.6,
-        "y": 145.3,
+        "x": 235.4,
+        "y": 176.3,
         "type": "mirror",
         "length": 124.8,
         "angle": 0
       },
       {
-        "x": 436.8,
-        "y": 246.4,
+        "x": 461.2,
+        "y": 286.8,
         "type": "mirror",
         "length": 124.8,
-        "angle": -18.4
+        "angle": -23.8
       },
       {
-        "x": 634.7,
-        "y": 78.1,
+        "x": 696.2,
+        "y": 66,
         "type": "mirror",
         "length": 124.8,
         "angle": 0
@@ -4138,44 +4138,44 @@ export const lightLevels = [
     ],
     "sources": [
       {
-        "x": 25,
-        "y": 305.2,
-        "angle": 0,
+        "x": 48.9,
+        "y": 292.7,
+        "angle": 8.63341982736376,
         "color": "gold"
       },
       {
-        "x": 775,
-        "y": 314,
-        "angle": 180,
+        "x": 748.6,
+        "y": 226.5,
+        "angle": 122.63865532478317,
         "color": "blue"
       }
     ],
     "targets": [
       {
-        "x": 731.1,
-        "y": 128.1,
+        "x": 743.8,
+        "y": 124.4,
         "radius": 22,
         "color": "gold"
       },
       {
-        "x": 443,
-        "y": 141.9,
+        "x": 490.7,
+        "y": 194.5,
         "radius": 22,
         "color": "blue"
       }
     ],
     "portals": [],
     "solution": [
-      -29.7,
-      23.4,
-      -30.9,
+      -54.3,
+      -3.3,
+      -61.5,
       0,
       0
     ],
-    "sourceAngle": 0,
+    "sourceAngle": 8.63341982736376,
     "target": {
-      "x": 731.1,
-      "y": 128.1,
+      "x": 743.8,
+      "y": 124.4,
       "radius": 22,
       "color": "gold"
     },
@@ -4193,21 +4193,21 @@ export const lightLevels = [
   {
     "sources": [
       {
-        "x": 30,
-        "y": 100,
-        "angle": 0,
+        "x": 167.42174637445845,
+        "y": 270.77204782457534,
+        "angle": -76,
         "color": "gold"
       },
       {
-        "x": 770,
-        "y": 110,
-        "angle": 180,
+        "x": 612.1600342127425,
+        "y": 320.83864181807394,
+        "angle": 264,
         "color": "blue"
       },
       {
-        "x": 400,
-        "y": 440,
-        "angle": -90,
+        "x": 383.6935597302461,
+        "y": 435.1454156774506,
+        "angle": -84,
         "color": "pink"
       }
     ],
@@ -4305,32 +4305,32 @@ export const lightLevels = [
         "x": 210,
         "y": 100,
         "length": 124.8,
-        "angle": 36.6
+        "angle": -1.4
       },
       {
         "type": "mirror",
         "x": 590,
         "y": 110,
         "length": 124.8,
-        "angle": -12.1
+        "angle": 29.9
       },
       {
         "type": "mirror",
         "x": 400,
         "y": 280,
         "length": 124.8,
-        "angle": -78.4
+        "angle": -75.4
       }
     ],
-    "id": "light-v4-deduction-open-015",
+    "id": "light-v5-deduction-open-015",
     "name": "Consequência 14",
     "hint": "Uma escolha pode decidir os caminhos das outras cores.",
     "solution": [
-      5.6,
-      -43.1,
-      70.6
+      -32.4,
+      -1.1,
+      73.6
     ],
-    "sourceAngle": 0,
+    "sourceAngle": -76,
     "target": {
       "x": 749.6,
       "y": 43.4,
@@ -4355,40 +4355,40 @@ export const lightLevels = [
         "x": 200,
         "y": 86,
         "length": 124.8,
-        "angle": 0.2
+        "angle": -89.8
       },
       {
         "type": "mirror",
         "x": 200,
         "y": 230,
         "length": 124.8,
-        "angle": 7.8
+        "angle": -82.2
       },
       {
         "type": "mirror",
         "x": 200,
         "y": 374,
         "length": 124.8,
-        "angle": -7.9
+        "angle": 82.1
       }
     ],
     "sources": [
       {
-        "x": 30,
-        "y": 86,
-        "angle": 0,
+        "x": 350,
+        "y": 86.00000000000001,
+        "angle": -180,
         "color": "gold"
       },
       {
-        "x": 30,
-        "y": 230,
-        "angle": 0,
+        "x": 350,
+        "y": 230.00000000000003,
+        "angle": -180,
         "color": "blue"
       },
       {
-        "x": 30,
+        "x": 350,
         "y": 374,
-        "angle": 0,
+        "angle": -180,
         "color": "pink"
       }
     ],
@@ -4482,15 +4482,15 @@ export const lightLevels = [
     ],
     "width": 800,
     "height": 460,
-    "id": "light-v4-portal-027",
+    "id": "light-v5-portal-027",
     "name": "O salto que não cruza 027",
     "hint": "Separe os trechos iluminados do salto entre portais.",
     "solution": [
-      0.2,
-      7.8,
-      2
+      -89.8,
+      -82.2,
+      -88
     ],
-    "sourceAngle": 0,
+    "sourceAngle": -180,
     "target": {
       "x": 725,
       "y": 89,
@@ -4516,9 +4516,9 @@ export const lightLevels = [
     "family": "autoral-24",
     "sources": [
       {
-        "x": 72,
-        "y": 100,
-        "angle": 0,
+        "x": 77.0429777092179,
+        "y": 138.30521867517308,
+        "angle": -15,
         "color": "gold"
       }
     ],
@@ -4537,7 +4537,7 @@ export const lightLevels = [
         "x": 220,
         "y": 100,
         "length": 124.8,
-        "angle": -7.6
+        "angle": -15.1
       },
       {
         "type": "mirror",
@@ -4573,11 +4573,11 @@ export const lightLevels = [
       }
     ],
     "solution": [
-      23.4,
+      15.9,
       5.2,
       11.5
     ],
-    "sourceAngle": 0,
+    "sourceAngle": -15,
     "target": {
       "x": 625,
       "y": 223,
@@ -4592,7 +4592,7 @@ export const lightLevels = [
     "decoyCount": 0,
     "tutorial": "",
     "rules": "Leve a luz ao alvo.",
-    "id": "light-v3-24",
+    "id": "light-v5-legacy-24",
     "campaignNumber": 45,
     "campaignBand": "basic",
     "stage": 2,
@@ -4605,40 +4605,40 @@ export const lightLevels = [
         "x": 200,
         "y": 86,
         "length": 124.8,
-        "angle": 14.7
+        "angle": -75.3
       },
       {
         "type": "mirror",
         "x": 200,
         "y": 230,
         "length": 124.8,
-        "angle": -7.3
+        "angle": 86.7
       },
       {
         "type": "mirror",
         "x": 200,
         "y": 374,
         "length": 124.8,
-        "angle": -7.8
+        "angle": 82.2
       }
     ],
     "sources": [
       {
-        "x": 30,
-        "y": 86,
-        "angle": 0,
+        "x": 350,
+        "y": 86.00000000000001,
+        "angle": -180,
         "color": "gold"
       },
       {
-        "x": 30,
-        "y": 230,
-        "angle": 0,
+        "x": 348.54021031123557,
+        "y": 250.87596514400985,
+        "angle": -172,
         "color": "blue"
       },
       {
-        "x": 30,
+        "x": 350,
         "y": 374,
-        "angle": 0,
+        "angle": -180,
         "color": "pink"
       }
     ],
@@ -4732,15 +4732,15 @@ export const lightLevels = [
     ],
     "width": 800,
     "height": 460,
-    "id": "light-v4-portal-015",
+    "id": "light-v5-portal-015",
     "name": "O salto que não cruza 015",
     "hint": "Separe os trechos iluminados do salto entre portais.",
     "solution": [
-      14.7,
-      3,
-      3.5
+      -75.3,
+      -83,
+      -86.5
     ],
-    "sourceAngle": 0,
+    "sourceAngle": -180,
     "target": {
       "x": 725,
       "y": 383,
@@ -4759,16 +4759,16 @@ export const lightLevels = [
     "stageName": "Conectar caminhos"
   },
   {
-    "id": "light-v3-48",
+    "id": "light-v5-legacy-48",
     "campaignNumber": 47,
     "name": "Olhe duas curvas adiante",
     "difficulty": 48,
     "family": "two-48",
     "sources": [
       {
-        "x": 60,
-        "y": 230,
-        "angle": 0,
+        "x": 60.21927443926819,
+        "y": 238.37375299887103,
+        "angle": -3,
         "color": "gold"
       },
       {
@@ -4799,7 +4799,7 @@ export const lightLevels = [
         "x": 220,
         "y": 230,
         "length": 124.8,
-        "angle": 56
+        "angle": 54.5
       },
       {
         "type": "mirror",
@@ -4856,14 +4856,14 @@ export const lightLevels = [
       }
     ],
     "solution": [
-      29,
+      27.5,
       18.6,
       45,
       -45,
       -45,
       24.4
     ],
-    "sourceAngle": 0,
+    "sourceAngle": -3,
     "target": {
       "x": 740,
       "y": 230,
@@ -4882,43 +4882,43 @@ export const lightLevels = [
     "stageName": "Conectar caminhos"
   },
   {
-    "id": "light-v4-open-014",
+    "id": "light-v5-open-014",
     "name": "Primeiro, para longe",
     "hint": "Uma saída que aponta para o alvo pode ocupar a chegada de outra cor.",
     "width": 800,
     "height": 460,
     "objects": [
       {
-        "x": 358.7,
-        "y": 119.8,
+        "x": 318.9,
+        "y": 106.8,
         "type": "mirror",
         "length": 124.8,
-        "angle": 87.2
+        "angle": 83.6
       },
       {
-        "x": 210,
-        "y": 110.3,
+        "x": 186.4,
+        "y": 151,
         "type": "mirror",
         "length": 124.8,
-        "angle": 42.2
+        "angle": 56.6
       },
       {
-        "x": 235.5,
-        "y": 366,
+        "x": 256.8,
+        "y": 259.3,
         "type": "mirror",
         "length": 124.8,
-        "angle": 15.4
+        "angle": 3.5
       },
       {
-        "x": 462,
-        "y": 332,
+        "x": 420.7,
+        "y": 394,
         "type": "mirror",
         "length": 124.8,
         "angle": 0
       },
       {
-        "x": 595.8,
-        "y": 181.8,
+        "x": 484.7,
+        "y": 265.7,
         "type": "mirror",
         "length": 124.8,
         "angle": 0
@@ -4926,44 +4926,44 @@ export const lightLevels = [
     ],
     "sources": [
       {
-        "x": 775,
-        "y": 119.8,
-        "angle": 180,
+        "x": 746,
+        "y": 176.2,
+        "angle": -170.77060387990588,
         "color": "gold"
       },
       {
-        "x": 25,
-        "y": 110.3,
-        "angle": 0,
+        "x": 103.2,
+        "y": 26.2,
+        "angle": 56.309932474020215,
         "color": "blue"
       }
     ],
     "targets": [
       {
-        "x": 621.4,
-        "y": 94.1,
+        "x": 519.1,
+        "y": 25.6,
         "radius": 22,
         "color": "gold"
       },
       {
-        "x": 458.8,
-        "y": 65.1,
+        "x": 432.6,
+        "y": 50.3,
         "radius": 22,
         "color": "blue"
       }
     ],
     "portals": [],
     "solution": [
-      -31.7,
-      -5.1,
-      40.7,
+      -29.3,
+      17,
+      35.2,
       0,
       0
     ],
-    "sourceAngle": 180,
+    "sourceAngle": -170.77060387990588,
     "target": {
-      "x": 621.4,
-      "y": 94.1,
+      "x": 519.1,
+      "y": 25.6,
       "radius": 22,
       "color": "gold"
     },
@@ -4979,43 +4979,43 @@ export const lightLevels = [
     "stageName": "Conectar caminhos"
   },
   {
-    "id": "light-v4-open-042",
+    "id": "light-v5-open-042",
     "name": "Compartilhar o vazio",
     "hint": "Cada trajeto funciona sozinho. Compare o espaço que ocupam juntos.",
     "width": 800,
     "height": 460,
     "objects": [
       {
-        "x": 442.5,
-        "y": 355,
+        "x": 308,
+        "y": 385.5,
         "type": "mirror",
         "length": 124.8,
-        "angle": 53
+        "angle": 66
       },
       {
-        "x": 640.8,
-        "y": 209.4,
+        "x": 535.5,
+        "y": 287.9,
         "type": "mirror",
         "length": 124.8,
-        "angle": -41.1
+        "angle": 4.4
       },
       {
-        "x": 288.8,
-        "y": 271.8,
-        "type": "mirror",
-        "length": 124.8,
-        "angle": 0
-      },
-      {
-        "x": 291.5,
-        "y": 125.7,
+        "x": 213.3,
+        "y": 281,
         "type": "mirror",
         "length": 124.8,
         "angle": 0
       },
       {
-        "x": 159.7,
-        "y": 158.7,
+        "x": 472.8,
+        "y": 107.5,
+        "type": "mirror",
+        "length": 124.8,
+        "angle": 0
+      },
+      {
+        "x": 251.1,
+        "y": 131.4,
         "type": "mirror",
         "length": 124.8,
         "angle": 0
@@ -5023,44 +5023,44 @@ export const lightLevels = [
     ],
     "sources": [
       {
-        "x": 775,
-        "y": 355,
-        "angle": 180,
+        "x": 773.2,
+        "y": 261.8,
+        "angle": 165.10921920722032,
         "color": "gold"
       },
       {
-        "x": 640.8,
-        "y": 25,
-        "angle": 90,
+        "x": 759.3,
+        "y": 78.6,
+        "angle": 136.91752160311364,
         "color": "blue"
       }
     ],
     "targets": [
       {
-        "x": 507,
-        "y": 129.5,
+        "x": 654,
+        "y": 159.6,
         "radius": 22,
         "color": "gold"
       },
       {
-        "x": 459.4,
-        "y": 184.3,
+        "x": 488.3,
+        "y": 227.8,
         "radius": 22,
         "color": "blue"
       }
     ],
     "portals": [],
     "solution": [
-      14.2,
-      -41.1,
-      87.7,
+      16.5,
+      4.4,
+      -73.8,
       0,
       0
     ],
-    "sourceAngle": 180,
+    "sourceAngle": 165.10921920722032,
     "target": {
-      "x": 507,
-      "y": 129.5,
+      "x": 654,
+      "y": 159.6,
       "radius": 22,
       "color": "gold"
     },
@@ -5148,43 +5148,43 @@ export const lightLevels = [
     "stageName": "Conectar caminhos"
   },
   {
-    "id": "light-v4-open-043",
+    "id": "light-v5-open-043",
     "name": "Compartilhar o vazio",
     "hint": "Cada trajeto funciona sozinho. Compare o espaço que ocupam juntos.",
     "width": 800,
     "height": 460,
     "objects": [
       {
-        "x": 303.7,
-        "y": 262.8,
+        "x": 79.5,
+        "y": 269.9,
         "type": "mirror",
         "length": 124.8,
-        "angle": 77.2
+        "angle": 71.1
       },
       {
-        "x": 564.3,
-        "y": 349.4,
+        "x": 308,
+        "y": 273.5,
         "type": "mirror",
         "length": 124.8,
-        "angle": 41
+        "angle": 53.3
       },
       {
-        "x": 221.5,
-        "y": 91.4,
+        "x": 205.3,
+        "y": 66,
         "type": "mirror",
         "length": 124.8,
-        "angle": -40.2
+        "angle": -13.9
       },
       {
-        "x": 606,
-        "y": 148.7,
+        "x": 492.1,
+        "y": 151.5,
         "type": "mirror",
         "length": 124.8,
         "angle": 0
       },
       {
-        "x": 153.1,
-        "y": 338.6,
+        "x": 207,
+        "y": 394,
         "type": "mirror",
         "length": 124.8,
         "angle": 0
@@ -5192,44 +5192,44 @@ export const lightLevels = [
     ],
     "sources": [
       {
-        "x": 303.7,
-        "y": 435,
-        "angle": -90,
+        "x": 426.4,
+        "y": 399.2,
+        "angle": -159.55807160682963,
         "color": "gold"
       },
       {
-        "x": 775,
-        "y": 349.4,
-        "angle": 180,
+        "x": 682.2,
+        "y": 136,
+        "angle": 159.8241155551873,
         "color": "blue"
       }
     ],
     "targets": [
       {
-        "x": 657.2,
-        "y": 399.6,
+        "x": 776,
+        "y": 403.6,
         "radius": 22,
         "color": "gold"
       },
       {
-        "x": 524.4,
-        "y": 64.5,
+        "x": 458.8,
+        "y": 71.1,
         "radius": 22,
         "color": "blue"
       }
     ],
     "portals": [],
     "solution": [
-      -34.4,
-      18.5,
-      -74.1,
+      -74.3,
+      21.7,
+      -57.6,
       0,
       0
     ],
-    "sourceAngle": -90,
+    "sourceAngle": -159.55807160682963,
     "target": {
-      "x": 657.2,
-      "y": 399.6,
+      "x": 776,
+      "y": 403.6,
       "radius": 22,
       "color": "gold"
     },
@@ -5247,21 +5247,21 @@ export const lightLevels = [
   {
     "sources": [
       {
-        "x": 30,
-        "y": 230,
-        "angle": 0,
+        "x": 329.9038105676658,
+        "y": 155,
+        "angle": 150,
         "color": "gold"
       },
       {
-        "x": 770,
-        "y": 110,
-        "angle": 180,
+        "x": 472.7927855765362,
+        "y": 189.4878896349809,
+        "angle": 328,
         "color": "blue"
       },
       {
-        "x": 470,
-        "y": 30,
-        "angle": 90,
+        "x": 459.5301509892497,
+        "y": 50.18275189427129,
+        "angle": 88,
         "color": "pink"
       }
     ],
@@ -5359,32 +5359,32 @@ export const lightLevels = [
         "x": 200,
         "y": 230,
         "length": 124.8,
-        "angle": -35.1
+        "angle": 39.9
       },
       {
         "type": "mirror",
         "x": 600,
         "y": 110,
         "length": 124.8,
-        "angle": 33.6
+        "angle": -72.4
       },
       {
         "type": "mirror",
         "x": 470,
         "y": 350,
         "length": 124.8,
-        "angle": 57.5
+        "angle": 56.5
       }
     ],
-    "id": "light-v4-deduction-open-031",
+    "id": "light-v5-deduction-open-031",
     "name": "Do outro lado 30",
     "hint": "Compare os caminhos completos, não apenas cada chegada isolada.",
     "solution": [
-      -66.1,
-      2.6,
-      26.5
+      8.9,
+      76.6,
+      25.5
     ],
-    "sourceAngle": 0,
+    "sourceAngle": 150,
     "target": {
       "x": 633.4,
       "y": 247.4,
@@ -5403,16 +5403,16 @@ export const lightLevels = [
     "stageName": "Conectar caminhos"
   },
   {
-    "id": "light-v3-49",
+    "id": "light-v5-legacy-49",
     "campaignNumber": 53,
     "name": "Dois bloqueios, um acordo",
     "difficulty": 49,
     "family": "two-49",
     "sources": [
       {
-        "x": 60,
-        "y": 230,
-        "angle": 0,
+        "x": 70.62713176044772,
+        "y": 287.338871927248,
+        "angle": -21,
         "color": "gold"
       },
       {
@@ -5443,7 +5443,7 @@ export const lightLevels = [
         "x": 220,
         "y": 230,
         "length": 124.8,
-        "angle": 47.30000000000001
+        "angle": 36.8
       },
       {
         "type": "mirror",
@@ -5509,14 +5509,14 @@ export const lightLevels = [
       }
     ],
     "solution": [
-      20.3,
+      9.8,
       20.3,
       -20.3,
       45,
       -45,
       24.4
     ],
-    "sourceAngle": 0,
+    "sourceAngle": -21,
     "target": {
       "x": 740,
       "y": 230,
@@ -5614,40 +5614,40 @@ export const lightLevels = [
         "x": 200,
         "y": 86,
         "length": 124.8,
-        "angle": 14.6
+        "angle": -85.4
       },
       {
         "type": "mirror",
         "x": 200,
         "y": 230,
         "length": 124.8,
-        "angle": 0.3
+        "angle": 10.3
       },
       {
         "type": "mirror",
         "x": 200,
         "y": 374,
         "length": 124.8,
-        "angle": -14.9
+        "angle": 75.1
       }
     ],
     "sources": [
       {
-        "x": 30,
-        "y": 86,
-        "angle": 0,
+        "x": 340.95389311788625,
+        "y": 34.696978501149665,
+        "angle": 160,
         "color": "gold"
       },
       {
-        "x": 30,
-        "y": 230,
-        "angle": 0,
+        "x": 59.04610688211375,
+        "y": 178.6969785011497,
+        "angle": 20,
         "color": "blue"
       },
       {
-        "x": 30,
+        "x": 350,
         "y": 374,
-        "angle": 0,
+        "angle": -180,
         "color": "pink"
       }
     ],
@@ -5741,15 +5741,15 @@ export const lightLevels = [
     ],
     "width": 800,
     "height": 460,
-    "id": "light-v4-portal-024",
+    "id": "light-v5-portal-024",
     "name": "O salto que não cruza 024",
     "hint": "Separe os trechos iluminados do salto entre portais.",
     "solution": [
-      -0.5,
-      -16.5,
-      -14.9
+      79.5,
+      -6.5,
+      75.1
     ],
-    "sourceAngle": 0,
+    "sourceAngle": 160,
     "target": {
       "x": 725,
       "y": 380,
@@ -5768,7 +5768,7 @@ export const lightLevels = [
     "stageName": "Conectar caminhos"
   },
   {
-    "id": "light-v4-open-033",
+    "id": "light-v5-open-033",
     "name": "Compartilhar o vazio",
     "hint": "Cada trajeto funciona sozinho. Compare o espaço que ocupam juntos.",
     "width": 800,
@@ -5779,14 +5779,14 @@ export const lightLevels = [
         "y": 319.6,
         "type": "mirror",
         "length": 124.8,
-        "angle": 10.6
+        "angle": -24.4
       },
       {
         "x": 567.9,
         "y": 127.7,
         "type": "mirror",
         "length": 124.8,
-        "angle": -13.6
+        "angle": 49.4
       },
       {
         "x": 242.9,
@@ -5812,15 +5812,15 @@ export const lightLevels = [
     ],
     "sources": [
       {
-        "x": 775,
-        "y": 319.6,
-        "angle": 180,
+        "x": 674.8,
+        "y": 23.6,
+        "angle": 109.99398507380874,
         "color": "gold"
       },
       {
-        "x": 775,
-        "y": 127.7,
-        "angle": 180,
+        "x": 418,
+        "y": 334,
+        "angle": -53.99740495248088,
         "color": "blue"
       }
     ],
@@ -5840,13 +5840,13 @@ export const lightLevels = [
     ],
     "portals": [],
     "solution": [
-      -4.2,
-      -13.6,
+      -39.2,
+      49.4,
       0,
       31.1,
       0
     ],
-    "sourceAngle": 180,
+    "sourceAngle": 109.99398507380874,
     "target": {
       "x": 61.6,
       "y": 123.5,
@@ -5867,21 +5867,21 @@ export const lightLevels = [
   {
     "sources": [
       {
-        "x": 30,
-        "y": 100,
-        "angle": 0,
+        "x": 46.62389615050998,
+        "y": 407.26576231490657,
+        "angle": -62,
         "color": "gold"
       },
       {
-        "x": 770,
-        "y": 360,
-        "angle": 180,
+        "x": 543.4277812568218,
+        "y": 140.89493743562755,
+        "angle": 78,
         "color": "blue"
       },
       {
-        "x": 400,
-        "y": 30,
-        "angle": 90,
+        "x": 356.45405879205975,
+        "y": 35.346769270320635,
+        "angle": 76,
         "color": "pink"
       }
     ],
@@ -5979,21 +5979,21 @@ export const lightLevels = [
         "x": 210,
         "y": 100,
         "length": 124.8,
-        "angle": 57.6
+        "angle": 26.6
       },
       {
         "type": "mirror",
         "x": 590,
         "y": 360,
         "length": 124.8,
-        "angle": 69.7
+        "angle": 18.7
       },
       {
         "type": "mirror",
         "x": 400,
         "y": 210,
         "length": 124.8,
-        "angle": 12.8
+        "angle": 5.8
       },
       {
         "type": "mirror",
@@ -6003,16 +6003,16 @@ export const lightLevels = [
         "angle": 17.2
       }
     ],
-    "id": "light-v4-deduction-four-01",
+    "id": "light-v5-deduction-four-01",
     "name": "A curva depende da escolha",
     "hint": "A chegada ao último espelho muda quando o caminho anterior muda.",
     "solution": [
-      26.6,
-      38.7,
-      -18.2,
+      -4.4,
+      -12.3,
+      -25.2,
       -13.8
     ],
-    "sourceAngle": 0,
+    "sourceAngle": -62,
     "target": {
       "x": 710.2,
       "y": 107.9,
@@ -6123,40 +6123,40 @@ export const lightLevels = [
   {
     "sources": [
       {
-        "x": 30,
-        "y": 110,
-        "angle": 0,
+        "x": 495.4423259036624,
+        "y": 162.09445330007907,
+        "angle": -170,
         "color": "gold"
       },
       {
-        "x": 30,
-        "y": 350,
-        "angle": 0,
+        "x": 32.242128958775965,
+        "y": 101.28872823348749,
+        "angle": 56,
         "color": "blue"
       },
       {
-        "x": 380,
-        "y": 440,
-        "angle": -90,
+        "x": 400.8759651440098,
+        "y": 433.54021031123557,
+        "angle": -98,
         "color": "pink"
       }
     ],
     "targets": [
       {
-        "x": 740,
-        "y": 350,
+        "x": 650,
+        "y": 272.5,
         "radius": 22,
         "color": "gold"
       },
       {
-        "x": 740,
-        "y": 110,
+        "x": 650,
+        "y": 187.5,
         "radius": 22,
         "color": "blue"
       },
       {
-        "x": 695.1,
-        "y": 220,
+        "x": 568,
+        "y": 308,
         "radius": 22,
         "color": "pink"
       }
@@ -6209,8 +6209,8 @@ export const lightLevels = [
       {
         "id": "pinka",
         "pairId": "pinkb",
-        "x": 498,
-        "y": 309.7,
+        "x": 458.9,
+        "y": 369.1,
         "radius": 16,
         "colors": [
           "pink"
@@ -6220,8 +6220,8 @@ export const lightLevels = [
       {
         "id": "pinkb",
         "pairId": "pinka",
-        "x": 553.5,
-        "y": 190.4,
+        "x": 500,
+        "y": 235.6,
         "radius": 16,
         "colors": [
           "pink"
@@ -6235,51 +6235,51 @@ export const lightLevels = [
         "y": 110,
         "type": "mirror",
         "length": 124.8,
-        "angle": 24
+        "angle": -61
       },
       {
         "x": 200,
         "y": 350,
         "type": "mirror",
         "length": 124.8,
-        "angle": 16.4
+        "angle": 44.4
       },
       {
         "x": 650,
         "y": 362.5,
         "type": "mirror",
         "length": 124.8,
-        "angle": 20
+        "angle": -21
       },
       {
         "x": 650,
         "y": 97.5,
         "type": "mirror",
         "length": 124.8,
-        "angle": 20.3
+        "angle": 61.3
       },
       {
         "type": "mirror",
         "x": 380,
         "y": 285,
         "length": 124.8,
-        "angle": -19.8
+        "angle": -6.7
       }
     ],
-    "id": "light-v4-deduction-symmetry-02-base",
+    "id": "light-v5-deduction-symmetry-02-base-reauthored",
     "name": "Dois pares e uma vizinha",
     "hint": "Uma escolha pode mudar o espaço disponível para a terceira cor.",
     "solution": [
-      -7,
-      -14.6,
-      -11,
-      -10.7,
-      -50.8
+      88,
+      13.4,
+      -52,
+      30.3,
+      -45.5
     ],
-    "sourceAngle": 0,
+    "sourceAngle": -170,
     "target": {
-      "x": 740,
-      "y": 350,
+      "x": 650,
+      "y": 272.5,
       "radius": 22,
       "color": "gold"
     },
@@ -6297,21 +6297,21 @@ export const lightLevels = [
   {
     "sources": [
       {
-        "x": 30,
-        "y": 100,
-        "angle": 0,
+        "x": 225.679269490148,
+        "y": 249.17828430524102,
+        "angle": -96,
         "color": "gold"
       },
       {
-        "x": 770,
-        "y": 360,
-        "angle": 180,
+        "x": 766.066568132085,
+        "y": 322.5758956528033,
+        "angle": 168,
         "color": "blue"
       },
       {
-        "x": 400,
-        "y": 30,
-        "angle": 90,
+        "x": 394.76507549462485,
+        "y": 60.091375947135646,
+        "angle": 88,
         "color": "pink"
       }
     ],
@@ -6409,32 +6409,32 @@ export const lightLevels = [
         "x": 210,
         "y": 100,
         "length": 124.8,
-        "angle": 63.8
+        "angle": 15.8
       },
       {
         "type": "mirror",
         "x": 590,
         "y": 360,
         "length": 124.8,
-        "angle": 87.9
+        "angle": 81.9
       },
       {
         "type": "mirror",
         "x": 400,
         "y": 210,
         "length": 124.8,
-        "angle": 16.7
+        "angle": 15.7
       }
     ],
-    "id": "light-v4-deduction-open-042",
+    "id": "light-v5-deduction-open-042",
     "name": "Acordo de trajetos 41",
     "hint": "Compare os caminhos completos, não apenas cada chegada isolada.",
     "solution": [
-      32.8,
-      56.9,
-      -14.3
+      -15.2,
+      50.9,
+      -15.3
     ],
-    "sourceAngle": 0,
+    "sourceAngle": -96,
     "target": {
       "x": 582.8,
       "y": 146.9,
@@ -6459,27 +6459,27 @@ export const lightLevels = [
         "x": 200,
         "y": 110,
         "length": 124.8,
-        "angle": 12.1
+        "angle": -77.9
       },
       {
         "type": "mirror",
         "x": 200,
         "y": 350,
         "length": 124.8,
-        "angle": -12.7
+        "angle": 77.3
       }
     ],
     "sources": [
       {
-        "x": 30,
-        "y": 110,
-        "angle": 0,
+        "x": 350,
+        "y": 110.00000000000001,
+        "angle": -180,
         "color": "gold"
       },
       {
-        "x": 30,
+        "x": 350,
         "y": 350,
-        "angle": 0,
+        "angle": -180,
         "color": "blue"
       }
     ],
@@ -6567,14 +6567,14 @@ export const lightLevels = [
     ],
     "width": 800,
     "height": 460,
-    "id": "light-v4-portal-023",
+    "id": "light-v5-portal-023",
     "name": "A saída decide 023",
     "hint": "Compare o que acontece depois de cada saída.",
     "solution": [
-      42,
-      -12.7
+      -48,
+      77.3
     ],
-    "sourceAngle": 0,
+    "sourceAngle": -180,
     "target": {
       "x": 725,
       "y": 347,
@@ -6599,40 +6599,40 @@ export const lightLevels = [
         "x": 200,
         "y": 86,
         "length": 124.8,
-        "angle": 14.2
+        "angle": -87.8
       },
       {
         "type": "mirror",
         "x": 200,
         "y": 230,
         "length": 124.8,
-        "angle": -0.1
+        "angle": 23.9
       },
       {
         "type": "mirror",
         "x": 200,
         "y": 374,
         "length": 124.8,
-        "angle": -14.1
+        "angle": 75.9
       }
     ],
     "sources": [
       {
-        "x": 30,
-        "y": 86,
-        "angle": 0,
+        "x": 337.0318186463901,
+        "y": 24.989503538629933,
+        "angle": 156,
         "color": "gold"
       },
       {
-        "x": 30,
-        "y": 230,
-        "angle": 0,
+        "x": 52.79126660105118,
+        "y": 66.50813839497326,
+        "angle": 48,
         "color": "blue"
       },
       {
-        "x": 30,
+        "x": 420,
         "y": 374,
-        "angle": 0,
+        "angle": -180,
         "color": "pink"
       }
     ],
@@ -6726,15 +6726,15 @@ export const lightLevels = [
     ],
     "width": 800,
     "height": 460,
-    "id": "light-v4-portal-028",
+    "id": "light-v5-portal-028",
     "name": "O salto que não cruza 028",
     "hint": "Separe os trechos iluminados do salto entre portais.",
     "solution": [
-      -4,
-      -26.5,
-      -14.1
+      74,
+      -2.5,
+      75.9
     ],
-    "sourceAngle": 0,
+    "sourceAngle": 156,
     "target": {
       "x": 725,
       "y": 371,
@@ -6753,88 +6753,88 @@ export const lightLevels = [
     "stageName": "Conectar caminhos"
   },
   {
-    "id": "light-v4-open-006",
+    "id": "light-v5-open-006",
     "name": "Compartilhar o vazio",
     "hint": "Cada trajeto funciona sozinho. Compare o espaço que ocupam juntos.",
     "width": 800,
     "height": 460,
     "objects": [
       {
-        "x": 418.8,
-        "y": 366.2,
+        "x": 382.2,
+        "y": 375.6,
         "type": "mirror",
         "length": 124.8,
-        "angle": -11.6
+        "angle": -17.6
       },
       {
-        "x": 559.5,
-        "y": 78.5,
+        "x": 513.5,
+        "y": 133.6,
         "type": "mirror",
         "length": 124.8,
-        "angle": 6.1
+        "angle": 3
       },
       {
-        "x": 188,
-        "y": 292.7,
+        "x": 158.6,
+        "y": 279.2,
         "type": "mirror",
         "length": 124.8,
         "angle": 0
       },
       {
-        "x": 294.6,
-        "y": 184.4,
+        "x": 357.8,
+        "y": 239.4,
         "type": "mirror",
         "length": 124.8,
         "angle": 0
       },
       {
-        "x": 639.4,
-        "y": 271.4,
+        "x": 628.2,
+        "y": 231.8,
         "type": "mirror",
         "length": 124.8,
-        "angle": 89.5
+        "angle": 80.6
       }
     ],
     "sources": [
       {
-        "x": 25,
-        "y": 366.2,
-        "angle": 0,
+        "x": 43.8,
+        "y": 404.1,
+        "angle": -4.814081803449968,
         "color": "gold"
       },
       {
-        "x": 559.5,
-        "y": 435,
-        "angle": -90,
+        "x": 537.5,
+        "y": 436,
+        "angle": -94.53777250790667,
         "color": "blue"
       }
     ],
     "targets": [
       {
-        "x": 238.6,
-        "y": 106.7,
+        "x": 197.4,
+        "y": 143.6,
         "radius": 22,
         "color": "gold"
       },
       {
-        "x": 508.2,
-        "y": 314.7,
+        "x": 486.9,
+        "y": 277.8,
         "radius": 22,
         "color": "blue"
       }
     ],
     "portals": [],
     "solution": [
-      -81.2,
-      6.1,
-      61.4,
+      -80.7,
+      3,
+      64.6,
       0,
       0
     ],
-    "sourceAngle": 0,
+    "sourceAngle": -4.814081803449968,
     "target": {
-      "x": 238.6,
-      "y": 106.7,
+      "x": 197.4,
+      "y": 143.6,
       "radius": 22,
       "color": "gold"
     },
@@ -6947,9 +6947,9 @@ export const lightLevels = [
     "family": "autoral-35",
     "sources": [
       {
-        "x": 680,
-        "y": 350,
-        "angle": 180,
+        "x": 672.1690426072246,
+        "y": 300.5572809000084,
+        "angle": 162,
         "color": "gold"
       }
     ],
@@ -6968,7 +6968,7 @@ export const lightLevels = [
         "x": 520,
         "y": 350,
         "length": 124.8,
-        "angle": -9.2
+        "angle": -18.2
       },
       {
         "type": "mirror",
@@ -7004,11 +7004,11 @@ export const lightLevels = [
       }
     ],
     "solution": [
-      21.8,
+      12.8,
       -72.7,
       12
     ],
-    "sourceAngle": 180,
+    "sourceAngle": 162,
     "target": {
       "x": 550,
       "y": 100,
@@ -7023,7 +7023,7 @@ export const lightLevels = [
     "decoyCount": 1,
     "tutorial": "",
     "rules": "Leve a luz ao alvo.",
-    "id": "light-v3-35",
+    "id": "light-v5-legacy-35",
     "campaignNumber": 65,
     "campaignBand": "basic",
     "stage": 2,
@@ -7146,27 +7146,27 @@ export const lightLevels = [
         "x": 200,
         "y": 110,
         "length": 124.8,
-        "angle": 12.5
+        "angle": -67.5
       },
       {
         "type": "mirror",
         "x": 200,
         "y": 350,
         "length": 124.8,
-        "angle": -12.1
+        "angle": 65.9
       }
     ],
     "sources": [
       {
-        "x": 30,
-        "y": 110,
-        "angle": 0,
+        "x": 340.95389311788625,
+        "y": 161.30302149885034,
+        "angle": -160,
         "color": "gold"
       },
       {
-        "x": 30,
-        "y": 350,
-        "angle": 0,
+        "x": 337.0318186463901,
+        "y": 288.98950353862995,
+        "angle": 156,
         "color": "blue"
       }
     ],
@@ -7254,14 +7254,14 @@ export const lightLevels = [
     ],
     "width": 800,
     "height": 460,
-    "id": "light-v4-portal-017",
+    "id": "light-v5-portal-017",
     "name": "O salto que não cruza 017",
     "hint": "Separe os trechos iluminados do salto entre portais.",
     "solution": [
-      12.5,
-      -55.5
+      -67.5,
+      22.5
     ],
-    "sourceAngle": 0,
+    "sourceAngle": -160,
     "target": {
       "x": 725,
       "y": 354,
@@ -7280,43 +7280,43 @@ export const lightLevels = [
     "stageName": "Conectar caminhos"
   },
   {
-    "id": "light-v4-open-041",
+    "id": "light-v5-open-041",
     "name": "A chegada reservada",
     "hint": "Compare as aproximações do alvo com os trajetos que as outras cores precisam conservar.",
     "width": 800,
     "height": 460,
     "objects": [
       {
-        "x": 502,
-        "y": 109.3,
+        "x": 486.2,
+        "y": 207.2,
         "type": "mirror",
         "length": 124.8,
-        "angle": -13.8
+        "angle": -23
       },
       {
-        "x": 235.6,
-        "y": 127.3,
+        "x": 203.9,
+        "y": 100,
         "type": "mirror",
         "length": 124.8,
-        "angle": -19.2
+        "angle": -28.7
       },
       {
-        "x": 379.1,
-        "y": 319.1,
+        "x": 433.9,
+        "y": 356.5,
         "type": "mirror",
         "length": 124.8,
         "angle": 0
       },
       {
-        "x": 197.5,
-        "y": 268.9,
+        "x": 185.9,
+        "y": 258.8,
         "type": "mirror",
         "length": 124.8,
-        "angle": 76.4
+        "angle": 86
       },
       {
-        "x": 613.9,
-        "y": 188,
+        "x": 654.7,
+        "y": 155.1,
         "type": "mirror",
         "length": 124.8,
         "angle": 0
@@ -7324,44 +7324,44 @@ export const lightLevels = [
     ],
     "sources": [
       {
-        "x": 775,
-        "y": 109.3,
-        "angle": 180,
+        "x": 735.7,
+        "y": 24.9,
+        "angle": 143.8458451354872,
         "color": "gold"
       },
       {
-        "x": 235.6,
-        "y": 435,
-        "angle": -90,
+        "x": 249.8,
+        "y": 436,
+        "angle": -97.77886276612567,
         "color": "blue"
       }
     ],
     "targets": [
       {
-        "x": 719.3,
-        "y": 272.8,
+        "x": 697,
+        "y": 274.2,
         "radius": 22,
         "color": "gold"
       },
       {
-        "x": 328.1,
-        "y": 243.8,
+        "x": 350.2,
+        "y": 224.5,
         "radius": 22,
         "color": "blue"
       }
     ],
     "portals": [],
     "solution": [
-      -72.4,
-      7.5,
-      -54.3,
-      60.3,
-      37
+      63.3,
+      -0.7,
+      -50.4,
+      59,
+      26.6
     ],
-    "sourceAngle": 180,
+    "sourceAngle": 143.8458451354872,
     "target": {
-      "x": 719.3,
-      "y": 272.8,
+      "x": 697,
+      "y": 274.2,
       "radius": 22,
       "color": "gold"
     },
@@ -7383,27 +7383,27 @@ export const lightLevels = [
         "x": 200,
         "y": 110,
         "length": 124.8,
-        "angle": 12.3
+        "angle": -61.7
       },
       {
         "type": "mirror",
         "x": 200,
         "y": 350,
         "length": 124.8,
-        "angle": -12.2
+        "angle": 65.8
       }
     ],
     "sources": [
       {
-        "x": 30,
-        "y": 110,
-        "angle": 0,
+        "x": 327.2072144234639,
+        "y": 189.48788963498072,
+        "angle": -148,
         "color": "gold"
       },
       {
-        "x": 30,
-        "y": 350,
-        "angle": 0,
+        "x": 337.0318186463901,
+        "y": 288.98950353862995,
+        "angle": 156,
         "color": "blue"
       }
     ],
@@ -7469,14 +7469,14 @@ export const lightLevels = [
     ],
     "width": 800,
     "height": 460,
-    "id": "light-v4-portal-031",
+    "id": "light-v5-portal-031",
     "name": "Lados invertidos 031",
-    "hint": "Observe como a ordem das cores muda entre fontes e alvos.",
+    "hint": "Compare a posição dos trajetos nos primeiros espelhos e nos alvos.",
     "solution": [
-      12.3,
-      -57
+      -61.7,
+      21
     ],
-    "sourceAngle": 0,
+    "sourceAngle": -148,
     "target": {
       "x": 725,
       "y": 350,
@@ -7497,15 +7497,15 @@ export const lightLevels = [
   {
     "sources": [
       {
-        "x": 30,
-        "y": 100,
-        "angle": 0,
+        "x": 283.212595753644,
+        "y": 264.43818237566813,
+        "angle": -114,
         "color": "gold"
       },
       {
-        "x": 770,
-        "y": 110,
-        "angle": 180,
+        "x": 696.0000000000001,
+        "y": 293.59738560230096,
+        "angle": 240,
         "color": "blue"
       }
     ],
@@ -7575,24 +7575,24 @@ export const lightLevels = [
         "x": 210,
         "y": 100,
         "length": 124.8,
-        "angle": 24.8
+        "angle": -32.2
       },
       {
         "type": "mirror",
         "x": 590,
         "y": 110,
         "length": 124.8,
-        "angle": 11.1
+        "angle": 41.1
       }
     ],
-    "id": "light-v4-deduction-open-043",
+    "id": "light-v5-deduction-open-043",
     "name": "Acordo de trajetos 42",
     "hint": "Compare os caminhos completos, não apenas cada chegada isolada.",
     "solution": [
-      -6.2,
-      -19.9
+      -63.2,
+      10.1
     ],
-    "sourceAngle": 0,
+    "sourceAngle": -114,
     "target": {
       "x": 450.1,
       "y": 318.7,
@@ -7618,9 +7618,9 @@ export const lightLevels = [
     "family": "autoral-23",
     "sources": [
       {
-        "x": 72,
-        "y": 330,
-        "angle": 0,
+        "x": 79.24363558831729,
+        "y": 284.2654848325078,
+        "angle": 18,
         "color": "gold"
       }
     ],
@@ -7639,7 +7639,7 @@ export const lightLevels = [
         "x": 220,
         "y": 330,
         "length": 124.8,
-        "angle": -52.8
+        "angle": -43.8
       },
       {
         "type": "mirror",
@@ -7675,11 +7675,11 @@ export const lightLevels = [
       }
     ],
     "solution": [
-      -21.8,
+      -12.8,
       0.7,
       -9.9
     ],
-    "sourceAngle": 0,
+    "sourceAngle": 18,
     "target": {
       "x": 675,
       "y": 234,
@@ -7694,7 +7694,7 @@ export const lightLevels = [
     "decoyCount": 0,
     "tutorial": "",
     "rules": "Leve a luz ao alvo.",
-    "id": "light-v3-23",
+    "id": "light-v5-legacy-23",
     "campaignNumber": 71,
     "campaignBand": "basic",
     "stage": 2,
@@ -7707,10 +7707,10 @@ export const lightLevels = [
     "family": "filtros-direcoes-ortogonais",
     "sources": [
       {
-        "x": 80,
-        "y": 30,
+        "x": 317.99160977831866,
+        "y": 27.38261490453867,
         "color": "gold",
-        "angle": 36.86989764584402
+        "angle": 141.86989764584402
       },
       {
         "x": 50,
@@ -7786,7 +7786,7 @@ export const lightLevels = [
         "x": 200,
         "y": 120,
         "length": 124.8,
-        "angle": 42.43494882292201
+        "angle": -85.1
       },
       {
         "type": "mirror",
@@ -7823,12 +7823,12 @@ export const lightLevels = [
       }
     ],
     "solution": [
-      18.4,
+      70.9,
       -45,
       -45,
       -45
     ],
-    "sourceAngle": 36.86989764584402,
+    "sourceAngle": 141.86989764584402,
     "target": {
       "x": 650,
       "y": 200,
@@ -7843,7 +7843,7 @@ export const lightLevels = [
     "hint": "Os filtros não giram os feixes.",
     "tutorial": "",
     "rules": "Cada cor no seu alvo, sem cruzar outras trajetórias.",
-    "id": "light-v3-86",
+    "id": "light-v5-legacy-86",
     "campaignNumber": 72,
     "campaignBand": "basic",
     "stage": 2,
@@ -7858,15 +7858,15 @@ export const lightLevels = [
         "color": "gold"
       },
       {
-        "x": 770,
-        "y": 360,
-        "angle": 180,
+        "x": 583.7180905935498,
+        "y": 180.10965113656277,
+        "angle": 88,
         "color": "blue"
       },
       {
-        "x": 400,
-        "y": 30,
-        "angle": 90,
+        "x": 225.34676927032064,
+        "y": 253.5459412079402,
+        "angle": -14,
         "color": "pink"
       }
     ],
@@ -7971,23 +7971,23 @@ export const lightLevels = [
         "x": 590,
         "y": 360,
         "length": 124.8,
-        "angle": 36.6
+        "angle": -9.4
       },
       {
         "type": "mirror",
         "x": 400,
         "y": 210,
         "length": 124.8,
-        "angle": -28.7
+        "angle": -80.7
       }
     ],
-    "id": "light-v4-deduction-open-014",
+    "id": "light-v5-deduction-open-014",
     "name": "Consequência 13",
     "hint": "Uma escolha pode decidir os caminhos das outras cores.",
     "solution": [
       -83.1,
-      5.6,
-      -59.7
+      -40.4,
+      68.3
     ],
     "sourceAngle": 0,
     "target": {
@@ -8010,15 +8010,15 @@ export const lightLevels = [
   {
     "sources": [
       {
-        "x": 30,
-        "y": 100,
-        "angle": 0,
+        "x": 40.855328258536474,
+        "y": 161.56362579862036,
+        "angle": -20,
         "color": "gold"
       },
       {
-        "x": 770,
-        "y": 360,
-        "angle": 180,
+        "x": 546.4540587920598,
+        "y": 185.34676927032064,
+        "angle": 76,
         "color": "blue"
       },
       {
@@ -8122,14 +8122,14 @@ export const lightLevels = [
         "x": 210,
         "y": 100,
         "length": 124.8,
-        "angle": 71.6
+        "angle": 61.6
       },
       {
         "type": "mirror",
         "x": 590,
         "y": 360,
         "length": 124.8,
-        "angle": 36.1
+        "angle": -15.9
       },
       {
         "type": "mirror",
@@ -8179,15 +8179,15 @@ export const lightLevels = [
         "angle": 90
       }
     ],
-    "id": "light-v4-deduction-windows-04",
+    "id": "light-v5-deduction-windows-04",
     "name": "Visibilidade entre regiões",
     "hint": "Compare o que cada abertura deixa passar.",
     "solution": [
-      40.6,
-      5.1,
+      30.6,
+      -46.9,
       38.5
     ],
-    "sourceAngle": 0,
+    "sourceAngle": -20,
     "target": {
       "x": 693.1,
       "y": 271.3,
@@ -8206,7 +8206,7 @@ export const lightLevels = [
     "stageName": "Conectar caminhos"
   },
   {
-    "id": "light-v4-open-018",
+    "id": "light-v5-open-018",
     "name": "Compartilhar o vazio",
     "hint": "Cada trajeto funciona sozinho. Compare o espaço que ocupam juntos.",
     "width": 800,
@@ -8224,7 +8224,7 @@ export const lightLevels = [
         "y": 292.7,
         "type": "mirror",
         "length": 124.8,
-        "angle": 18
+        "angle": -9
       },
       {
         "x": 562.3,
@@ -8256,9 +8256,9 @@ export const lightLevels = [
         "color": "gold"
       },
       {
-        "x": 775,
-        "y": 292.7,
-        "angle": 180,
+        "x": 473.2,
+        "y": 118.8,
+        "angle": 126.01169792172452,
         "color": "blue"
       }
     ],
@@ -8279,7 +8279,7 @@ export const lightLevels = [
     "portals": [],
     "solution": [
       14.6,
-      18,
+      -9,
       0,
       0,
       -22.3
@@ -8303,16 +8303,16 @@ export const lightLevels = [
     "stageName": "Conectar caminhos"
   },
   {
-    "id": "light-v3-46",
+    "id": "light-v5-legacy-46",
     "campaignNumber": 76,
     "name": "Proteja a entrada azul",
     "difficulty": 46,
     "family": "two-46",
     "sources": [
       {
-        "x": 60,
-        "y": 230,
-        "angle": 0,
+        "x": 60.21927443926819,
+        "y": 221.62624700112897,
+        "angle": 3,
         "color": "gold"
       },
       {
@@ -8343,7 +8343,7 @@ export const lightLevels = [
         "x": 220,
         "y": 230,
         "length": 124.8,
-        "angle": -2
+        "angle": -0.5
       },
       {
         "type": "mirror",
@@ -8393,13 +8393,13 @@ export const lightLevels = [
       }
     ],
     "solution": [
-      -29,
+      -27.5,
       -18.6,
       -45,
       45,
       36.4
     ],
-    "sourceAngle": 0,
+    "sourceAngle": 3,
     "target": {
       "x": 740,
       "y": 230,
@@ -8418,43 +8418,43 @@ export const lightLevels = [
     "stageName": "Conectar caminhos"
   },
   {
-    "id": "light-v4-open-038",
+    "id": "light-v5-open-038",
     "name": "Compartilhar o vazio",
     "hint": "Cada trajeto funciona sozinho. Compare o espaço que ocupam juntos.",
     "width": 800,
     "height": 460,
     "objects": [
       {
-        "x": 459.6,
-        "y": 261.2,
+        "x": 475.4,
+        "y": 302,
         "type": "mirror",
         "length": 124.8,
-        "angle": -69.4
+        "angle": -55.7
       },
       {
-        "x": 602.9,
-        "y": 109.4,
+        "x": 577.4,
+        "y": 156.9,
         "type": "mirror",
         "length": 124.8,
-        "angle": -29.7
+        "angle": -2.7
       },
       {
-        "x": 261.8,
-        "y": 210.1,
-        "type": "mirror",
-        "length": 124.8,
-        "angle": 0
-      },
-      {
-        "x": 231.9,
-        "y": 369.7,
+        "x": 219,
+        "y": 225.2,
         "type": "mirror",
         "length": 124.8,
         "angle": 0
       },
       {
-        "x": 425.8,
-        "y": 117.7,
+        "x": 232.1,
+        "y": 384,
+        "type": "mirror",
+        "length": 124.8,
+        "angle": 0
+      },
+      {
+        "x": 321.4,
+        "y": 131.7,
         "type": "mirror",
         "length": 124.8,
         "angle": 0
@@ -8462,44 +8462,44 @@ export const lightLevels = [
     ],
     "sources": [
       {
-        "x": 775,
-        "y": 261.2,
-        "angle": 180,
+        "x": 741.9,
+        "y": 402.9,
+        "angle": -159.26275133384766,
         "color": "gold"
       },
       {
-        "x": 775,
-        "y": 109.4,
-        "angle": 180,
+        "x": 678.9,
+        "y": 290.7,
+        "angle": -127.18376920630014,
         "color": "blue"
       }
     ],
     "targets": [
       {
-        "x": 628.9,
-        "y": 409.9,
+        "x": 591.3,
+        "y": 430.1,
         "radius": 22,
         "color": "gold"
       },
       {
-        "x": 432.5,
-        "y": 396.7,
+        "x": 441.6,
+        "y": 376.1,
         "radius": 22,
         "color": "blue"
       }
     ],
     "portals": [],
     "solution": [
-      -69.4,
-      -8.2,
-      -74.4,
+      -55.7,
+      21,
+      -78.3,
       0,
       0
     ],
-    "sourceAngle": 180,
+    "sourceAngle": -159.26275133384766,
     "target": {
-      "x": 628.9,
-      "y": 409.9,
+      "x": 591.3,
+      "y": 430.1,
       "radius": 22,
       "color": "gold"
     },
@@ -8616,50 +8616,50 @@ export const lightLevels = [
     "stageName": "Conectar caminhos"
   },
   {
-    "id": "light-v4-open-chain-003",
+    "id": "light-v5-open-chain-003",
     "name": "Compatibilidade após a poda",
     "hint": "Uma alternativa pode decidir a passagem de uma segunda cor e limitar a terceira.",
     "width": 800,
     "height": 460,
     "objects": [
       {
-        "x": 259.2,
-        "y": 337.9,
+        "x": 335.2,
+        "y": 286.9,
         "type": "mirror",
         "length": 124.8,
-        "angle": -15
+        "angle": -10.2
       },
       {
-        "x": 582.1,
-        "y": 184.1,
+        "x": 517,
+        "y": 89.3,
         "type": "mirror",
         "length": 124.8,
-        "angle": -9.9
+        "angle": -18.9
       },
       {
-        "x": 603.8,
-        "y": 370.2,
+        "x": 521,
+        "y": 255.8,
         "type": "mirror",
         "length": 124.8,
-        "angle": -2.5
+        "angle": 13.3
       },
       {
-        "x": 200.4,
-        "y": 121.3,
-        "type": "mirror",
-        "length": 124.8,
-        "angle": 0
-      },
-      {
-        "x": 346.2,
-        "y": 140.6,
+        "x": 156.1,
+        "y": 76.2,
         "type": "mirror",
         "length": 124.8,
         "angle": 0
       },
       {
-        "x": 460.1,
-        "y": 345.3,
+        "x": 326.2,
+        "y": 66,
+        "type": "mirror",
+        "length": 124.8,
+        "angle": 0
+      },
+      {
+        "x": 458.7,
+        "y": 387.5,
         "type": "mirror",
         "length": 124.8,
         "angle": 0
@@ -8667,57 +8667,57 @@ export const lightLevels = [
     ],
     "sources": [
       {
-        "x": 25,
-        "y": 337.9,
-        "angle": 0,
+        "x": 166.7,
+        "y": 230.9,
+        "angle": 18.383928551889905,
         "color": "gold"
       },
       {
-        "x": 775,
-        "y": 184.1,
-        "angle": 180,
+        "x": 719.5,
+        "y": 208.5,
+        "angle": -149.51714704539538,
         "color": "blue"
       },
       {
-        "x": 775,
-        "y": 370.2,
-        "angle": 180,
+        "x": 672.1,
+        "y": 418.6,
+        "angle": -132.86540159357008,
         "color": "pink"
       }
     ],
     "targets": [
       {
-        "x": 728.7,
-        "y": 66.4,
+        "x": 662.2,
+        "y": 24,
         "radius": 22,
         "color": "gold"
       },
       {
-        "x": 393,
-        "y": 252.5,
+        "x": 445.6,
+        "y": 268.1,
         "radius": 22,
         "color": "blue"
       },
       {
-        "x": 120.4,
-        "y": 412.7,
+        "x": 90.3,
+        "y": 417.1,
         "radius": 22,
         "color": "pink"
       }
     ],
     "portals": [],
     "solution": [
-      -33.1,
-      -9.9,
-      -2.5,
+      -37,
+      -18.9,
+      13.3,
       0,
-      -38.6,
+      -49.7,
       0
     ],
-    "sourceAngle": 0,
+    "sourceAngle": 18.383928551889905,
     "target": {
-      "x": 728.7,
-      "y": 66.4,
+      "x": 662.2,
+      "y": 24,
       "radius": 22,
       "color": "gold"
     },
@@ -8740,9 +8740,9 @@ export const lightLevels = [
     "family": "autoral-19",
     "sources": [
       {
-        "x": 42,
-        "y": 260,
-        "angle": 0,
+        "x": 51.83009687841414,
+        "y": 206.96154346729557,
+        "angle": 21,
         "color": "gold"
       }
     ],
@@ -8761,7 +8761,7 @@ export const lightLevels = [
         "x": 190,
         "y": 260,
         "length": 124.8,
-        "angle": -50.9
+        "angle": -40.4
       },
       {
         "type": "mirror",
@@ -8797,11 +8797,11 @@ export const lightLevels = [
       }
     ],
     "solution": [
-      -19.9,
+      -9.4,
       3.4,
       0.8
     ],
-    "sourceAngle": 0,
+    "sourceAngle": 21,
     "target": {
       "x": 650,
       "y": 200,
@@ -8816,7 +8816,7 @@ export const lightLevels = [
     "decoyCount": 0,
     "tutorial": "",
     "rules": "Leve a luz ao alvo.",
-    "id": "light-v3-19",
+    "id": "light-v5-legacy-19",
     "campaignNumber": 80,
     "campaignBand": "basic",
     "stage": 2,
@@ -8920,16 +8920,16 @@ export const lightLevels = [
     "stageName": "Compatibilizar trajetos"
   },
   {
-    "id": "light-v3-50",
+    "id": "light-v5-legacy-50",
     "campaignNumber": 82,
     "name": "Três opções, uma compatível",
     "difficulty": 50,
     "family": "two-50",
     "sources": [
       {
-        "x": 60,
-        "y": 230,
-        "angle": 0,
+        "x": 60.21927443926819,
+        "y": 221.62624700112897,
+        "angle": 3,
         "color": "gold"
       },
       {
@@ -8960,7 +8960,7 @@ export const lightLevels = [
         "x": 220,
         "y": 230,
         "length": 124.8,
-        "angle": -2
+        "angle": -0.5
       },
       {
         "type": "mirror",
@@ -9008,14 +9008,14 @@ export const lightLevels = [
       }
     ],
     "solution": [
-      -29,
+      -27.5,
       -18.6,
       -45,
       52,
       -24.4,
       0
     ],
-    "sourceAngle": 0,
+    "sourceAngle": 3,
     "target": {
       "x": 740,
       "y": 230,
@@ -9039,40 +9039,40 @@ export const lightLevels = [
         "x": 200,
         "y": 86,
         "length": 124.8,
-        "angle": 13.9
+        "angle": -70.1
       },
       {
         "type": "mirror",
         "x": 200,
         "y": 230,
         "length": 124.8,
-        "angle": 0.3
+        "angle": -89.7
       },
       {
         "type": "mirror",
         "x": 200,
         "y": 374,
         "length": 124.8,
-        "angle": -14
+        "angle": 74
       }
     ],
     "sources": [
       {
-        "x": 30,
-        "y": 86,
-        "angle": 0,
+        "x": 346.7221401100709,
+        "y": 117.1867536226639,
+        "angle": -168,
         "color": "gold"
       },
       {
-        "x": 30,
-        "y": 230,
-        "angle": 0,
+        "x": 350,
+        "y": 230.00000000000003,
+        "angle": -180,
         "color": "blue"
       },
       {
-        "x": 30,
-        "y": 374,
-        "angle": 0,
+        "x": 349.6346075389736,
+        "y": 363.5365289383812,
+        "angle": 176,
         "color": "pink"
       }
     ],
@@ -9166,15 +9166,15 @@ export const lightLevels = [
     ],
     "width": 800,
     "height": 460,
-    "id": "light-v4-portal-020",
+    "id": "light-v5-portal-020",
     "name": "O salto que não cruza 020",
     "hint": "Separe os trechos iluminados do salto entre portais.",
     "solution": [
-      13.9,
-      17,
-      5.5
+      -70.1,
+      -73,
+      -86.5
     ],
-    "sourceAngle": 0,
+    "sourceAngle": -168,
     "target": {
       "x": 725,
       "y": 362,
@@ -9195,40 +9195,40 @@ export const lightLevels = [
   {
     "sources": [
       {
-        "x": 30,
-        "y": 110,
-        "angle": 0,
+        "x": 495.4423259036624,
+        "y": 162.09445330007907,
+        "angle": -170,
         "color": "gold"
       },
       {
-        "x": 30,
-        "y": 350,
-        "angle": 0,
+        "x": 32.242128958775965,
+        "y": 101.28872823348749,
+        "angle": 56,
         "color": "blue"
       },
       {
-        "x": 380,
-        "y": 440,
-        "angle": -90,
+        "x": 400.8759651440098,
+        "y": 433.54021031123557,
+        "angle": -98,
         "color": "pink"
       }
     ],
     "targets": [
       {
-        "x": 740,
-        "y": 350,
+        "x": 650,
+        "y": 272.5,
         "radius": 22,
         "color": "gold"
       },
       {
-        "x": 740,
-        "y": 110,
+        "x": 650,
+        "y": 187.5,
         "radius": 22,
         "color": "blue"
       },
       {
-        "x": 695.1,
-        "y": 220,
+        "x": 568,
+        "y": 308,
         "radius": 22,
         "color": "pink"
       }
@@ -9281,8 +9281,8 @@ export const lightLevels = [
       {
         "id": "pinka",
         "pairId": "pinkb",
-        "x": 498,
-        "y": 309.7,
+        "x": 458.9,
+        "y": 369.1,
         "radius": 16,
         "colors": [
           "pink"
@@ -9292,8 +9292,8 @@ export const lightLevels = [
       {
         "id": "pinkb",
         "pairId": "pinka",
-        "x": 553.5,
-        "y": 190.4,
+        "x": 500,
+        "y": 235.6,
         "radius": 16,
         "colors": [
           "pink"
@@ -9307,51 +9307,51 @@ export const lightLevels = [
         "y": 110,
         "type": "mirror",
         "length": 124.8,
-        "angle": 24
+        "angle": -61
       },
       {
         "x": 200,
         "y": 350,
         "type": "mirror",
         "length": 124.8,
-        "angle": 16.4
+        "angle": 44.4
       },
       {
         "x": 650,
         "y": 362.5,
         "type": "mirror",
         "length": 124.8,
-        "angle": 20
+        "angle": -21
       },
       {
         "x": 650,
         "y": 97.5,
         "type": "mirror",
         "length": 124.8,
-        "angle": 20.3
+        "angle": 61.3
       },
       {
         "type": "mirror",
         "x": 380,
         "y": 285,
         "length": 124.8,
-        "angle": -19.8
+        "angle": -6.7
       }
     ],
-    "id": "light-v4-deduction-symmetry-02-filter",
+    "id": "light-v5-deduction-symmetry-02-filter-reauthored",
     "name": "A entrada diferente",
     "hint": "Compare a marca da entrada com a fonte que se aproxima.",
     "solution": [
-      14.6,
-      7,
-      10.7,
-      11,
-      -39.1
+      -70.4,
+      35,
+      -30.3,
+      52,
+      -25.6
     ],
-    "sourceAngle": 0,
+    "sourceAngle": -170,
     "target": {
-      "x": 740,
-      "y": 350,
+      "x": 650,
+      "y": 272.5,
       "radius": 22,
       "color": "gold"
     },
@@ -9373,40 +9373,40 @@ export const lightLevels = [
         "x": 200,
         "y": 86,
         "length": 124.8,
-        "angle": 7.5
+        "angle": -82.5
       },
       {
         "type": "mirror",
         "x": 200,
         "y": 230,
         "length": 124.8,
-        "angle": 7.6
+        "angle": -82.4
       },
       {
         "type": "mirror",
         "x": 200,
         "y": 374,
         "length": 124.8,
-        "angle": -14.5
+        "angle": 75.5
       }
     ],
     "sources": [
       {
-        "x": 30,
-        "y": 86,
-        "angle": 0,
+        "x": 350,
+        "y": 86.00000000000001,
+        "angle": -180,
         "color": "gold"
       },
       {
-        "x": 30,
-        "y": 230,
-        "angle": 0,
+        "x": 350,
+        "y": 230.00000000000003,
+        "angle": -180,
         "color": "blue"
       },
       {
-        "x": 30,
+        "x": 350,
         "y": 374,
-        "angle": 0,
+        "angle": -180,
         "color": "pink"
       }
     ],
@@ -9500,15 +9500,15 @@ export const lightLevels = [
     ],
     "width": 800,
     "height": 460,
-    "id": "light-v4-portal-018",
+    "id": "light-v5-portal-018",
     "name": "O salto que não cruza 018",
     "hint": "Separe os trechos iluminados do salto entre portais.",
     "solution": [
-      7.5,
-      7.6,
-      -4.5
+      -82.5,
+      -82.4,
+      85.5
     ],
-    "sourceAngle": 0,
+    "sourceAngle": -180,
     "target": {
       "x": 725,
       "y": 227,
@@ -9527,43 +9527,43 @@ export const lightLevels = [
     "stageName": "Compatibilizar trajetos"
   },
   {
-    "id": "light-v4-open-008",
+    "id": "light-v5-open-008",
     "name": "Compartilhar o vazio",
     "hint": "Cada trajeto funciona sozinho. Compare o espaço que ocupam juntos.",
     "width": 800,
     "height": 460,
     "objects": [
       {
-        "x": 287.7,
-        "y": 88.2,
+        "x": 230.6,
+        "y": 72,
         "type": "mirror",
         "length": 124.8,
-        "angle": -54.1
+        "angle": -65.9
       },
       {
-        "x": 195.4,
-        "y": 354.1,
+        "x": 233.4,
+        "y": 282,
         "type": "mirror",
         "length": 124.8,
-        "angle": 53.8
+        "angle": 66.6
       },
       {
-        "x": 383,
-        "y": 377.4,
+        "x": 457.5,
+        "y": 351,
         "type": "mirror",
         "length": 124.8,
-        "angle": 19.6
+        "angle": 0.3
       },
       {
-        "x": 579.6,
-        "y": 297,
+        "x": 646.2,
+        "y": 204.4,
         "type": "mirror",
         "length": 124.8,
         "angle": 0
       },
       {
-        "x": 531.1,
-        "y": 127.1,
+        "x": 411.6,
+        "y": 178.4,
         "type": "mirror",
         "length": 124.8,
         "angle": 0
@@ -9571,44 +9571,44 @@ export const lightLevels = [
     ],
     "sources": [
       {
-        "x": 775,
-        "y": 88.2,
-        "angle": 180,
+        "x": 776,
+        "y": 45.8,
+        "angle": 177.24973174925248,
         "color": "gold"
       },
       {
-        "x": 775,
-        "y": 354.1,
-        "angle": 180,
+        "x": 766.4,
+        "y": 314.1,
+        "angle": -176.55351647014646,
         "color": "blue"
       }
     ],
     "targets": [
       {
-        "x": 722.5,
-        "y": 161.3,
+        "x": 662.6,
+        "y": 104.3,
         "radius": 22,
         "color": "gold"
       },
       {
-        "x": 247.7,
-        "y": 189.2,
+        "x": 295.1,
+        "y": 207.7,
         "radius": 22,
         "color": "blue"
       }
     ],
     "portals": [],
     "solution": [
-      -72.2,
-      53.8,
+      -82.5,
+      66.6,
       0,
-      -4,
+      -31.5,
       0
     ],
-    "sourceAngle": 180,
+    "sourceAngle": 177.24973174925248,
     "target": {
-      "x": 722.5,
-      "y": 161.3,
+      "x": 662.6,
+      "y": 104.3,
       "radius": 22,
       "color": "gold"
     },
@@ -9626,21 +9626,21 @@ export const lightLevels = [
   {
     "sources": [
       {
-        "x": 30,
-        "y": 230,
-        "angle": 0,
+        "x": 314.90666646784666,
+        "y": 133.58185854701907,
+        "angle": 140,
         "color": "gold"
       },
       {
-        "x": 770,
-        "y": 110,
-        "angle": 180,
+        "x": 464.31230461497194,
+        "y": 194.78708227731292,
+        "angle": 328,
         "color": "blue"
       },
       {
-        "x": 470,
-        "y": 30,
-        "angle": 90,
+        "x": 407.62649275467214,
+        "y": 56.55571977985835,
+        "angle": 78,
         "color": "pink"
       }
     ],
@@ -9738,32 +9738,32 @@ export const lightLevels = [
         "x": 200,
         "y": 230,
         "length": 124.8,
-        "angle": -10.6
+        "angle": 59.4
       },
       {
         "type": "mirror",
         "x": 600,
         "y": 110,
         "length": 124.8,
-        "angle": -12
+        "angle": 62
       },
       {
         "type": "mirror",
         "x": 470,
         "y": 350,
         "length": 124.8,
-        "angle": -16.9
+        "angle": -22.9
       }
     ],
-    "id": "light-v4-deduction-open-050",
+    "id": "light-v5-deduction-open-050",
     "name": "Acordo de trajetos 49",
     "hint": "Compare os caminhos completos, não apenas cada chegada isolada.",
     "solution": [
-      -41.6,
-      -43,
-      -47.9
+      28.4,
+      31,
+      -53.9
     ],
-    "sourceAngle": 0,
+    "sourceAngle": 140,
     "target": {
       "x": 720.6,
       "y": 164.9,
@@ -9788,10 +9788,10 @@ export const lightLevels = [
     "family": "dois-filtros-conflito-pos-saida",
     "sources": [
       {
-        "x": 50,
-        "y": 140,
+        "x": 55.11112605663976,
+        "y": 178.8228567653781,
         "color": "gold",
-        "angle": 0
+        "angle": -15
       },
       {
         "x": 60,
@@ -9867,7 +9867,7 @@ export const lightLevels = [
         "x": 200,
         "y": 140,
         "length": 124.8,
-        "angle": 46.5
+        "angle": 39
       },
       {
         "type": "mirror",
@@ -9912,13 +9912,13 @@ export const lightLevels = [
       }
     ],
     "solution": [
-      22.5,
+      15,
       -67.5,
       -45,
       -45,
       45
     ],
-    "sourceAngle": 0,
+    "sourceAngle": -15,
     "target": {
       "x": 500,
       "y": 400,
@@ -9933,7 +9933,7 @@ export const lightLevels = [
     "hint": "Escolher os filtros certos não encerra o problema.",
     "tutorial": "",
     "rules": "Cada cor no seu alvo, sem cruzar outras trajetórias.",
-    "id": "light-v3-90",
+    "id": "light-v5-legacy-90",
     "campaignNumber": 88,
     "campaignBand": "basic",
     "stage": 3,
@@ -10084,43 +10084,43 @@ export const lightLevels = [
     "stageName": "Compatibilizar trajetos"
   },
   {
-    "id": "light-v4-open-030",
+    "id": "light-v5-open-030",
     "name": "Compartilhar o vazio",
     "hint": "Cada trajeto funciona sozinho. Compare o espaço que ocupam juntos.",
     "width": 800,
     "height": 460,
     "objects": [
       {
-        "x": 627.7,
-        "y": 252.5,
+        "x": 606.6,
+        "y": 248.4,
         "type": "mirror",
         "length": 124.8,
-        "angle": -41.9
+        "angle": -40.1
       },
       {
-        "x": 414.8,
-        "y": 324.7,
+        "x": 419.1,
+        "y": 373.7,
         "type": "mirror",
         "length": 124.8,
-        "angle": 18.4
+        "angle": 24.8
       },
       {
-        "x": 259.9,
-        "y": 333.3,
-        "type": "mirror",
-        "length": 124.8,
-        "angle": 0
-      },
-      {
-        "x": 481.7,
-        "y": 128.1,
+        "x": 251.3,
+        "y": 245.6,
         "type": "mirror",
         "length": 124.8,
         "angle": 0
       },
       {
-        "x": 180.5,
-        "y": 99,
+        "x": 489.3,
+        "y": 103.4,
+        "type": "mirror",
+        "length": 124.8,
+        "angle": 0
+      },
+      {
+        "x": 178.6,
+        "y": 113.4,
         "type": "mirror",
         "length": 124.8,
         "angle": 0
@@ -10128,44 +10128,44 @@ export const lightLevels = [
     ],
     "sources": [
       {
-        "x": 627.7,
-        "y": 25,
-        "angle": 90,
+        "x": 631,
+        "y": 24,
+        "angle": 96.20564221747772,
         "color": "gold"
       },
       {
-        "x": 775,
-        "y": 324.7,
-        "angle": 180,
+        "x": 776,
+        "y": 333.8,
+        "angle": 173.6210472775528,
         "color": "blue"
       }
     ],
     "targets": [
       {
-        "x": 57.4,
-        "y": 190.6,
+        "x": 62.6,
+        "y": 214.4,
         "radius": 22,
         "color": "gold"
       },
       {
-        "x": 231.8,
-        "y": 187.6,
+        "x": 276.4,
+        "y": 162.5,
         "radius": 22,
         "color": "blue"
       }
     ],
     "portals": [],
     "solution": [
-      -24.8,
-      18.4,
+      -16.4,
+      24.8,
       0,
-      16,
+      18.2,
       0
     ],
-    "sourceAngle": 90,
+    "sourceAngle": 96.20564221747772,
     "target": {
-      "x": 57.4,
-      "y": 190.6,
+      "x": 62.6,
+      "y": 214.4,
       "radius": 22,
       "color": "gold"
     },
@@ -10181,43 +10181,43 @@ export const lightLevels = [
     "stageName": "Compatibilizar trajetos"
   },
   {
-    "id": "light-v4-open-040",
+    "id": "light-v5-open-040",
     "name": "Compartilhar o vazio",
     "hint": "Cada trajeto funciona sozinho. Compare o espaço que ocupam juntos.",
     "width": 800,
     "height": 460,
     "objects": [
       {
-        "x": 426.1,
-        "y": 367.9,
+        "x": 364.3,
+        "y": 394,
         "type": "mirror",
         "length": 124.8,
-        "angle": 64.1
+        "angle": 42.2
       },
       {
-        "x": 358.9,
-        "y": 127.5,
+        "x": 369.9,
+        "y": 225.7,
         "type": "mirror",
         "length": 124.8,
-        "angle": -45.8
+        "angle": 86.1
       },
       {
-        "x": 514.2,
-        "y": 256,
+        "x": 508.6,
+        "y": 72.6,
         "type": "mirror",
         "length": 124.8,
-        "angle": 69.3
+        "angle": 56.1
       },
       {
-        "x": 226.3,
-        "y": 265.8,
+        "x": 76.4,
+        "y": 201,
         "type": "mirror",
         "length": 124.8,
         "angle": 0
       },
       {
-        "x": 219.8,
-        "y": 108.8,
+        "x": 192.7,
+        "y": 90.3,
         "type": "mirror",
         "length": 124.8,
         "angle": 0
@@ -10225,44 +10225,44 @@ export const lightLevels = [
     ],
     "sources": [
       {
-        "x": 775,
-        "y": 367.9,
-        "angle": 180,
+        "x": 637.4,
+        "y": 237.9,
+        "angle": 150.24834107844765,
         "color": "gold"
       },
       {
-        "x": 775,
-        "y": 127.5,
-        "angle": 180,
+        "x": 748.8,
+        "y": 95.1,
+        "angle": 160.98185064870387,
         "color": "blue"
       }
     ],
     "targets": [
       {
-        "x": 46,
-        "y": 170.9,
+        "x": 120.2,
+        "y": 86,
         "radius": 22,
         "color": "gold"
       },
       {
-        "x": 363.7,
-        "y": 293.9,
+        "x": 439,
+        "y": 239.5,
         "radius": 22,
         "color": "blue"
       }
     ],
     "portals": [],
     "solution": [
-      13.5,
-      -45.8,
+      2,
+      86.1,
       0,
-      27.4,
+      72.3,
       0
     ],
-    "sourceAngle": 180,
+    "sourceAngle": 150.24834107844765,
     "target": {
-      "x": 46,
-      "y": 170.9,
+      "x": 120.2,
+      "y": 86,
       "radius": 22,
       "color": "gold"
     },
@@ -10284,27 +10284,27 @@ export const lightLevels = [
         "x": 200,
         "y": 110,
         "length": 124.8,
-        "angle": 12.7
+        "angle": -17.3
       },
       {
         "type": "mirror",
         "x": 200,
         "y": 350,
         "length": 124.8,
-        "angle": -12
+        "angle": 84
       }
     ],
     "sources": [
       {
-        "x": 30,
-        "y": 110,
-        "angle": 0,
+        "x": 44.99999999999997,
+        "y": 378.46787517317597,
+        "angle": -60,
         "color": "gold"
       },
       {
-        "x": 30,
-        "y": 350,
-        "angle": 0,
+        "x": 346.7221401100709,
+        "y": 381.1867536226639,
+        "angle": -168,
         "color": "blue"
       }
     ],
@@ -10392,14 +10392,14 @@ export const lightLevels = [
     ],
     "width": 800,
     "height": 460,
-    "id": "light-v4-portal-011",
+    "id": "light-v5-portal-011",
     "name": "O salto que não cruza 011",
     "hint": "Separe os trechos iluminados do salto entre portais.",
     "solution": [
-      1.5,
-      -12
+      -28.5,
+      84
     ],
-    "sourceAngle": 0,
+    "sourceAngle": -60,
     "target": {
       "x": 725,
       "y": 359,
@@ -10418,88 +10418,88 @@ export const lightLevels = [
     "stageName": "Compatibilizar trajetos"
   },
   {
-    "id": "light-v4-open-004",
+    "id": "light-v5-open-004",
     "name": "A chegada reservada",
     "hint": "Compare as aproximações do alvo com os trajetos que as outras cores precisam conservar.",
     "width": 800,
     "height": 460,
     "objects": [
       {
-        "x": 157.8,
-        "y": 239.1,
+        "x": 77.3,
+        "y": 204.4,
         "type": "mirror",
         "length": 124.8,
-        "angle": -52.1
+        "angle": -61.2
       },
       {
-        "x": 474.8,
-        "y": 230.9,
+        "x": 490.2,
+        "y": 287,
         "type": "mirror",
         "length": 124.8,
-        "angle": -29.3
+        "angle": -19.7
       },
       {
-        "x": 633.3,
-        "y": 345.5,
+        "x": 657.3,
+        "y": 394,
         "type": "mirror",
         "length": 124.8,
         "angle": 0
       },
       {
-        "x": 326.6,
-        "y": 258.1,
+        "x": 362.7,
+        "y": 264.9,
         "type": "mirror",
         "length": 124.8,
         "angle": 0
       },
       {
-        "x": 282.9,
-        "y": 114.2,
+        "x": 297.9,
+        "y": 66,
         "type": "mirror",
         "length": 124.8,
-        "angle": 36.2
+        "angle": 14
       }
     ],
     "sources": [
       {
-        "x": 157.8,
-        "y": 435,
-        "angle": -90,
+        "x": 178.5,
+        "y": 350.4,
+        "angle": -124.72779139697924,
         "color": "gold"
       },
       {
-        "x": 474.8,
-        "y": 25,
-        "angle": 90,
+        "x": 495.6,
+        "y": 87,
+        "angle": 91.54661029358465,
         "color": "blue"
       }
     ],
     "targets": [
       {
-        "x": 730.3,
-        "y": 94.4,
+        "x": 636,
+        "y": 227.2,
         "radius": 22,
         "color": "gold"
       },
       {
-        "x": 214.8,
-        "y": 54.9,
+        "x": 186.4,
+        "y": 108.8,
         "radius": 22,
         "color": "blue"
       }
     ],
     "portals": [],
     "solution": [
-      -38.7,
-      -29.3,
-      -28.1,
+      -53.3,
+      -19.7,
+      -39.6,
       0,
-      36.2
+      14
     ],
-    "sourceAngle": -90,
+    "sourceAngle": -124.72779139697924,
     "target": {
-      "x": 730.3,
-      "y": 94.4,
+      "x": 636,
+      "y": 227.2,
       "radius": 22,
       "color": "gold"
     },
@@ -10629,10 +10629,10 @@ export const lightLevels = [
     "family": "universal-bidirecional",
     "sources": [
       {
-        "x": 120,
-        "y": 30,
+        "x": 318.9445621637447,
+        "y": 29.0496795037308,
         "color": "gold",
-        "angle": 47.72631099390627
+        "angle": 131.72631099390628
       },
       {
         "x": 740,
@@ -10680,7 +10680,7 @@ export const lightLevels = [
         "x": 220,
         "y": 140,
         "length": 124.8,
-        "angle": 47.863155496953134
+        "angle": 89.9
       },
       {
         "type": "mirror",
@@ -10717,12 +10717,12 @@ export const lightLevels = [
       }
     ],
     "solution": [
-      23.9,
+      65.9,
       -45,
       -41.6,
       -41.6
     ],
-    "sourceAngle": 47.72631099390627,
+    "sourceAngle": 131.72631099390628,
     "target": {
       "x": 700,
       "y": 180,
@@ -10737,7 +10737,7 @@ export const lightLevels = [
     "hint": "Cada membro também pode ser entrada.",
     "tutorial": "",
     "rules": "Cada cor no seu alvo, sem cruzar outras trajetórias.",
-    "id": "light-v3-70",
+    "id": "light-v5-legacy-70",
     "campaignNumber": 95,
     "campaignBand": "basic",
     "stage": 3,
@@ -10746,21 +10746,21 @@ export const lightLevels = [
   {
     "sources": [
       {
-        "x": 30,
-        "y": 100,
-        "angle": 0,
+        "x": 360.3508193257453,
+        "y": 45.27677706789298,
+        "angle": 160,
         "color": "gold"
       },
       {
-        "x": 770,
-        "y": 110,
-        "angle": 180,
+        "x": 554.1955594512492,
+        "y": 253.6037674888475,
+        "angle": 284,
         "color": "blue"
       },
       {
-        "x": 400,
-        "y": 440,
-        "angle": -90,
+        "x": 540.9521775338919,
+        "y": 398.2729201823233,
+        "angle": -140,
         "color": "pink"
       }
     ],
@@ -10858,32 +10858,32 @@ export const lightLevels = [
         "x": 210,
         "y": 100,
         "length": 124.8,
-        "angle": 70.6
+        "angle": -29.4
       },
       {
         "type": "mirror",
         "x": 590,
         "y": 110,
         "length": 124.8,
-        "angle": 17.6
+        "angle": 69.6
       },
       {
         "type": "mirror",
         "x": 400,
         "y": 280,
         "length": 124.8,
-        "angle": -16.7
+        "angle": -41.7
       }
     ],
-    "id": "light-v4-deduction-open-049",
+    "id": "light-v5-deduction-open-049",
     "name": "Acordo de trajetos 48",
     "hint": "Compare os caminhos completos, não apenas cada chegada isolada.",
     "solution": [
-      39.6,
-      -13.4,
-      -47.7
+      -60.4,
+      38.6,
+      -72.7
     ],
-    "sourceAngle": 0,
+    "sourceAngle": 160,
     "target": {
       "x": 737.7,
       "y": 388.3,
@@ -10902,43 +10902,43 @@ export const lightLevels = [
     "stageName": "Compatibilizar trajetos"
   },
   {
-    "id": "light-v4-open-013",
+    "id": "light-v5-open-013",
     "name": "Compartilhar o vazio",
     "hint": "Cada trajeto funciona sozinho. Compare o espaço que ocupam juntos.",
     "width": 800,
     "height": 460,
     "objects": [
       {
-        "x": 174.4,
-        "y": 278.3,
+        "x": 188,
+        "y": 344.4,
         "type": "mirror",
         "length": 124.8,
-        "angle": 50.4
+        "angle": 50.7
       },
       {
-        "x": 598.1,
-        "y": 197.8,
+        "x": 714.2,
+        "y": 297.5,
         "type": "mirror",
         "length": 124.8,
-        "angle": -65.1
+        "angle": -58
       },
       {
-        "x": 335.4,
-        "y": 205.6,
+        "x": 283.3,
+        "y": 235.1,
         "type": "mirror",
         "length": 124.8,
         "angle": 0
       },
       {
-        "x": 618.6,
-        "y": 363.4,
+        "x": 532.8,
+        "y": 385,
         "type": "mirror",
         "length": 124.8,
-        "angle": -53.8
+        "angle": -41.8
       },
       {
-        "x": 312.1,
-        "y": 339.5,
+        "x": 341.2,
+        "y": 394,
         "type": "mirror",
         "length": 124.8,
         "angle": 0
@@ -10946,44 +10946,44 @@ export const lightLevels = [
     ],
     "sources": [
       {
-        "x": 174.4,
-        "y": 25,
-        "angle": 90,
+        "x": 210.9,
+        "y": 62.3,
+        "angle": 94.64091684380473,
         "color": "gold"
       },
       {
-        "x": 598.1,
-        "y": 25,
-        "angle": 90,
+        "x": 689.4,
+        "y": 102.7,
+        "angle": 82.74470039519238,
         "color": "blue"
       }
     ],
     "targets": [
       {
-        "x": 504.6,
-        "y": 153.2,
+        "x": 532.2,
+        "y": 295.3,
         "radius": 22,
         "color": "gold"
       },
       {
-        "x": 492.8,
-        "y": 286.8,
+        "x": 454.8,
+        "y": 385.3,
         "radius": 22,
         "color": "blue"
       }
     ],
     "portals": [],
     "solution": [
-      32.8,
-      -65.1,
-      -20.8,
+      22.9,
+      -58,
+      -17.7,
       0,
       0
     ],
-    "sourceAngle": 90,
+    "sourceAngle": 94.64091684380473,
     "target": {
-      "x": 504.6,
-      "y": 153.2,
+      "x": 532.2,
+      "y": 295.3,
       "radius": 22,
       "color": "gold"
     },
@@ -11005,27 +11005,27 @@ export const lightLevels = [
         "x": 200,
         "y": 110,
         "length": 124.8,
-        "angle": 12.6
+        "angle": -17.4
       },
       {
         "type": "mirror",
         "x": 200,
         "y": 350,
         "length": 124.8,
-        "angle": -11.8
+        "angle": 78.2
       }
     ],
     "sources": [
       {
-        "x": 30,
-        "y": 110,
-        "angle": 0,
+        "x": 44.99999999999997,
+        "y": 378.46787517317597,
+        "angle": -60,
         "color": "gold"
       },
       {
-        "x": 30,
+        "x": 350,
         "y": 350,
-        "angle": 0,
+        "angle": -180,
         "color": "blue"
       }
     ],
@@ -11091,14 +11091,14 @@ export const lightLevels = [
     ],
     "width": 800,
     "height": 460,
-    "id": "light-v4-portal-004",
+    "id": "light-v5-portal-004",
     "name": "Lados invertidos 004",
-    "hint": "Observe como a ordem das cores muda entre fontes e alvos.",
+    "hint": "Compare a posição dos trajetos nos primeiros espelhos e nos alvos.",
     "solution": [
-      -7,
-      -11.8
+      -37,
+      78.2
     ],
-    "sourceAngle": 0,
+    "sourceAngle": -60,
     "target": {
       "x": 725,
       "y": 357,
@@ -11119,21 +11119,21 @@ export const lightLevels = [
   {
     "sources": [
       {
-        "x": 30,
-        "y": 100,
-        "angle": 0,
+        "x": 30.986058833710814,
+        "y": 118.81512338817762,
+        "angle": -6,
         "color": "gold"
       },
       {
-        "x": 770,
-        "y": 360,
-        "angle": 180,
+        "x": 596.2819094064502,
+        "y": 180.10965113656277,
+        "angle": 92,
         "color": "blue"
       },
       {
-        "x": 400,
-        "y": 30,
-        "angle": 90,
+        "x": 350.38527595294016,
+        "y": 36.9728947311026,
+        "angle": 74,
         "color": "pink"
       }
     ],
@@ -11231,32 +11231,32 @@ export const lightLevels = [
         "x": 210,
         "y": 100,
         "length": 124.8,
-        "angle": 78.3
+        "angle": 75.3
       },
       {
         "type": "mirror",
         "x": 590,
         "y": 360,
         "length": 124.8,
-        "angle": 63.8
+        "angle": 19.8
       },
       {
         "type": "mirror",
         "x": 400,
         "y": 210,
         "length": 124.8,
-        "angle": -31.7
+        "angle": -39.7
       }
     ],
-    "id": "light-v4-deduction-open-029",
+    "id": "light-v5-deduction-open-029",
     "name": "Do outro lado 28",
     "hint": "Compare os caminhos completos, não apenas cada chegada isolada.",
     "solution": [
-      47.3,
-      32.8,
-      -62.7
+      44.3,
+      -11.2,
+      -70.7
     ],
-    "sourceAngle": 0,
+    "sourceAngle": -6,
     "target": {
       "x": 186.2,
       "y": 396.5,
@@ -11287,10 +11287,10 @@ export const lightLevels = [
         "angle": 0
       },
       {
-        "x": 620,
-        "y": 430,
+        "x": 488.86939767145304,
+        "y": 414.1221659467825,
         "color": "blue",
-        "angle": -58.392497753751094
+        "angle": -28.392497753751094
       }
     ],
     "targets": [
@@ -11370,7 +11370,7 @@ export const lightLevels = [
         "x": 700,
         "y": 300,
         "length": 124.8,
-        "angle": -41.19624887687554
+        "angle": -26.2
       },
       {
         "type": "mirror",
@@ -11393,7 +11393,7 @@ export const lightLevels = [
     "solution": [
       -45,
       -45,
-      -74.2,
+      -59.2,
       45
     ],
     "sourceAngle": 0,
@@ -11411,50 +11411,50 @@ export const lightLevels = [
     "hint": "Comece pela barreira dourada.",
     "tutorial": "",
     "rules": "Cada cor no seu alvo, sem cruzar outras trajetórias.",
-    "id": "light-v3-97",
+    "id": "light-v5-legacy-97",
     "campaignNumber": 100,
     "campaignBand": "basic",
     "stage": 3,
     "stageName": "Compatibilizar trajetos"
   },
   {
-    "id": "light-v4-open-021",
+    "id": "light-v5-open-021",
     "name": "Compartilhar o vazio",
     "hint": "Cada trajeto funciona sozinho. Compare o espaço que ocupam juntos.",
     "width": 800,
     "height": 460,
     "objects": [
       {
-        "x": 253.1,
-        "y": 232.1,
+        "x": 102.1,
+        "y": 195.7,
         "type": "mirror",
         "length": 124.8,
-        "angle": -76.3
+        "angle": 81.7
       },
       {
-        "x": 597.9,
-        "y": 158.8,
+        "x": 418,
+        "y": 66,
         "type": "mirror",
         "length": 124.8,
-        "angle": 65.5
+        "angle": 62.4
       },
       {
-        "x": 434.5,
-        "y": 347.4,
+        "x": 246.2,
+        "y": 368.4,
         "type": "mirror",
         "length": 124.8,
-        "angle": 12.1
+        "angle": 11.3
       },
       {
-        "x": 206,
-        "y": 93.1,
+        "x": 267.6,
+        "y": 66,
         "type": "mirror",
         "length": 124.8,
         "angle": 0
       },
       {
-        "x": 622.9,
-        "y": 302.8,
+        "x": 541.9,
+        "y": 362.5,
         "type": "mirror",
         "length": 124.8,
         "angle": 0
@@ -11462,44 +11462,44 @@ export const lightLevels = [
     ],
     "sources": [
       {
-        "x": 775,
-        "y": 232.1,
-        "angle": 180,
+        "x": 558.3,
+        "y": 159,
+        "angle": 175.40062149376797,
         "color": "gold"
       },
       {
-        "x": 25,
-        "y": 158.8,
-        "angle": 0,
+        "x": 70.9,
+        "y": 34.6,
+        "angle": 5.1691261882023305,
         "color": "blue"
       }
     ],
     "targets": [
       {
-        "x": 559.4,
-        "y": 391.2,
+        "x": 646.6,
+        "y": 79.9,
         "radius": 22,
         "color": "gold"
       },
       {
-        "x": 350.4,
-        "y": 68.8,
+        "x": 214.1,
+        "y": 105,
         "radius": 22,
         "color": "blue"
       }
     ],
     "portals": [],
     "solution": [
-      -73.8,
-      -80,
-      25.9,
+      -67.2,
+      87.2,
+      7.2,
       0,
       0
     ],
-    "sourceAngle": 180,
+    "sourceAngle": 175.40062149376797,
     "target": {
-      "x": 559.4,
-      "y": 391.2,
+      "x": 646.6,
+      "y": 79.9,
       "radius": 22,
       "color": "gold"
     },
@@ -11522,9 +11522,9 @@ export const lightLevels = [
     "family": "autoral-8",
     "sources": [
       {
-        "x": 100,
-        "y": 330,
-        "angle": 0,
+        "x": 101.96986550477794,
+        "y": 304.97048559356307,
+        "angle": 9,
         "color": "gold"
       }
     ],
@@ -11543,7 +11543,7 @@ export const lightLevels = [
         "x": 260,
         "y": 330,
         "length": 124.8,
-        "angle": -56.7
+        "angle": -52.2
       },
       {
         "type": "mirror",
@@ -11563,10 +11563,10 @@ export const lightLevels = [
       }
     ],
     "solution": [
-      -25.7,
+      -21.2,
       -10.2
     ],
-    "sourceAngle": 0,
+    "sourceAngle": 9,
     "target": {
       "x": 620,
       "y": 250,
@@ -11580,7 +11580,7 @@ export const lightLevels = [
     "decoyCount": 0,
     "tutorial": "",
     "rules": "Leve a luz ao alvo.",
-    "id": "light-v3-8",
+    "id": "light-v5-legacy-8",
     "campaignNumber": 102,
     "campaignBand": "basic",
     "stage": 3,
@@ -11593,40 +11593,40 @@ export const lightLevels = [
         "x": 200,
         "y": 86,
         "length": 124.8,
-        "angle": 14.2
+        "angle": -75.8
       },
       {
         "type": "mirror",
         "x": 200,
         "y": 230,
         "length": 124.8,
-        "angle": -7.3
+        "angle": 88.7
       },
       {
         "type": "mirror",
         "x": 200,
         "y": 374,
         "length": 124.8,
-        "angle": -7.9
+        "angle": 80.1
       }
     ],
     "sources": [
       {
-        "x": 30,
-        "y": 86,
-        "angle": 0,
+        "x": 350,
+        "y": 86.00000000000001,
+        "angle": -180,
         "color": "gold"
       },
       {
-        "x": 30,
-        "y": 230,
-        "angle": 0,
+        "x": 346.7221401100709,
+        "y": 261.1867536226639,
+        "angle": -168,
         "color": "blue"
       },
       {
-        "x": 30,
-        "y": 374,
-        "angle": 0,
+        "x": 349.6346075389736,
+        "y": 363.5365289383812,
+        "angle": 176,
         "color": "pink"
       }
     ],
@@ -11720,15 +11720,15 @@ export const lightLevels = [
     ],
     "width": 800,
     "height": 460,
-    "id": "light-v4-portal-035",
+    "id": "light-v5-portal-035",
     "name": "O salto que não cruza 035",
     "hint": "Separe os trechos iluminados do salto entre portais.",
     "solution": [
-      14.2,
-      4,
-      1.5
+      -75.8,
+      -80,
+      89.5
     ],
-    "sourceAngle": 0,
+    "sourceAngle": -180,
     "target": {
       "x": 725,
       "y": 369,
@@ -11819,88 +11819,88 @@ export const lightLevels = [
     "stageName": "Compatibilizar trajetos"
   },
   {
-    "id": "light-v4-open-017",
+    "id": "light-v5-open-017",
     "name": "Compartilhar o vazio",
     "hint": "Cada trajeto funciona sozinho. Compare o espaço que ocupam juntos.",
     "width": 800,
     "height": 460,
     "objects": [
       {
-        "x": 536.7,
-        "y": 216.4,
+        "x": 406.8,
+        "y": 168.4,
         "type": "mirror",
         "length": 124.8,
-        "angle": 10.5
+        "angle": 28.6
       },
       {
-        "x": 247.5,
-        "y": 151.2,
+        "x": 273.7,
+        "y": 129.9,
         "type": "mirror",
         "length": 124.8,
-        "angle": -1.3
+        "angle": -28.6
       },
       {
-        "x": 250.8,
-        "y": 331.1,
+        "x": 277.7,
+        "y": 356.1,
         "type": "mirror",
         "length": 124.8,
         "angle": 0
       },
       {
-        "x": 478.1,
-        "y": 373.2,
+        "x": 406.5,
+        "y": 334.8,
         "type": "mirror",
         "length": 124.8,
         "angle": 0
       },
       {
-        "x": 643.2,
-        "y": 133.3,
+        "x": 526.5,
+        "y": 66,
         "type": "mirror",
         "length": 124.8,
-        "angle": 82.3
+        "angle": 78.6
       }
     ],
     "sources": [
       {
-        "x": 775,
-        "y": 216.4,
-        "angle": 180,
+        "x": 712.3,
+        "y": 114.3,
+        "angle": 169.95778694253258,
         "color": "gold"
       },
       {
-        "x": 25,
-        "y": 151.2,
-        "angle": 0,
+        "x": 70,
+        "y": 319.3,
+        "angle": -42.91664075036493,
         "color": "blue"
       }
     ],
     "targets": [
       {
-        "x": 148.9,
-        "y": 67.2,
+        "x": 346.3,
+        "y": 24,
         "radius": 22,
         "color": "gold"
       },
       {
-        "x": 89.2,
-        "y": 259.3,
+        "x": 25,
+        "y": 142.8,
         "radius": 22,
         "color": "blue"
       }
     ],
     "portals": [],
     "solution": [
-      10.5,
-      44.5,
-      -33.5,
+      28.6,
+      23,
+      -25.4,
       0,
       0
     ],
-    "sourceAngle": 180,
+    "sourceAngle": 169.95778694253258,
     "target": {
-      "x": 148.9,
-      "y": 67.2,
+      "x": 346.3,
+      "y": 24,
       "radius": 22,
       "color": "gold"
     },
@@ -11918,21 +11918,21 @@ export const lightLevels = [
   {
     "sources": [
       {
-        "x": 30,
-        "y": 100,
-        "angle": 0,
+        "x": 503.4442802201417,
+        "y": 37.626492754672206,
+        "angle": 168,
         "color": "gold"
       },
       {
-        "x": 770,
-        "y": 360,
-        "angle": 180,
+        "x": 571.1848766118223,
+        "y": 180.9860588337108,
+        "angle": 84,
         "color": "blue"
       },
       {
-        "x": 400,
-        "y": 30,
-        "angle": 90,
+        "x": 433.2658705308415,
+        "y": 53.49638388259109,
+        "angle": 102,
         "color": "pink"
       }
     ],
@@ -12030,32 +12030,32 @@ export const lightLevels = [
         "x": 210,
         "y": 100,
         "length": 124.8,
-        "angle": 29.9
+        "angle": -66.1
       },
       {
         "type": "mirror",
         "x": 590,
         "y": 360,
         "length": 124.8,
-        "angle": 26.3
+        "angle": -21.7
       },
       {
         "type": "mirror",
         "x": 400,
         "y": 210,
         "length": 124.8,
-        "angle": -11.7
+        "angle": -5.7
       }
     ],
-    "id": "light-v4-deduction-open-047",
+    "id": "light-v5-deduction-open-047",
     "name": "Acordo de trajetos 46",
     "hint": "Compare os caminhos completos, não apenas cada chegada isolada.",
     "solution": [
-      -1.1,
-      -4.7,
-      -42.7
+      82.9,
+      -52.7,
+      -36.7
     ],
-    "sourceAngle": 0,
+    "sourceAngle": 168,
     "target": {
       "x": 173.5,
       "y": 331.5,
@@ -12081,9 +12081,9 @@ export const lightLevels = [
     "family": "autoral-15",
     "sources": [
       {
-        "x": 620,
-        "y": 110,
-        "angle": 180,
+        "x": 608.7086725045243,
+        "y": 170.92255142270108,
+        "angle": 201,
         "color": "gold"
       }
     ],
@@ -12102,7 +12102,7 @@ export const lightLevels = [
         "x": 450,
         "y": 110,
         "length": 124.8,
-        "angle": -51.9
+        "angle": -41.4
       },
       {
         "type": "mirror",
@@ -12122,10 +12122,10 @@ export const lightLevels = [
       }
     ],
     "solution": [
-      -20.9,
+      -10.4,
       79.2
     ],
-    "sourceAngle": 180,
+    "sourceAngle": 201,
     "target": {
       "x": 450,
       "y": 350,
@@ -12139,14 +12139,14 @@ export const lightLevels = [
     "decoyCount": 0,
     "tutorial": "",
     "rules": "Leve a luz ao alvo.",
-    "id": "light-v3-15",
+    "id": "light-v5-legacy-15",
     "campaignNumber": 107,
     "campaignBand": "basic",
     "stage": 3,
     "stageName": "Compatibilizar trajetos"
   },
   {
-    "id": "light-v4-open-015",
+    "id": "light-v5-open-015",
     "name": "A chegada reservada",
     "hint": "Compare as aproximações do alvo com os trajetos que as outras cores precisam conservar.",
     "width": 800,
@@ -12157,14 +12157,14 @@ export const lightLevels = [
         "y": 156.4,
         "type": "mirror",
         "length": 124.8,
-        "angle": 52.5
+        "angle": 57.9
       },
       {
-        "x": 635.2,
-        "y": 273.8,
+        "x": 652.3,
+        "y": 305.7,
         "type": "mirror",
         "length": 124.8,
-        "angle": -38.4
+        "angle": -40.4
       },
       {
         "x": 183.7,
@@ -12190,44 +12190,44 @@ export const lightLevels = [
     ],
     "sources": [
       {
-        "x": 25,
-        "y": 156.4,
-        "angle": 0,
+        "x": 40.4,
+        "y": 133.5,
+        "angle": 4.349227146644364,
         "color": "gold"
       },
       {
-        "x": 635.2,
-        "y": 25,
-        "angle": 90,
+        "x": 610.6,
+        "y": 24,
+        "angle": 81.57966524992197,
         "color": "blue"
       }
     ],
     "targets": [
       {
-        "x": 312.4,
-        "y": 264.6,
+        "x": 310.5,
+        "y": 235.6,
         "radius": 22,
         "color": "gold"
       },
       {
-        "x": 134.3,
-        "y": 155.4,
+        "x": 154.9,
+        "y": 148.5,
         "radius": 22,
         "color": "blue"
       }
     ],
     "portals": [],
     "solution": [
-      52.5,
-      -42.8,
-      31.9,
+      57.9,
+      -45.1,
+      40.2,
       0,
       0
     ],
-    "sourceAngle": 0,
+    "sourceAngle": 4.349227146644364,
     "target": {
-      "x": 312.4,
-      "y": 264.6,
+      "x": 310.5,
+      "y": 235.6,
       "radius": 22,
       "color": "gold"
     },
@@ -12371,43 +12371,43 @@ export const lightLevels = [
     "stageName": "Compatibilizar trajetos"
   },
   {
-    "id": "light-v4-open-039",
+    "id": "light-v5-open-039",
     "name": "Compartilhar o vazio",
     "hint": "Cada trajeto funciona sozinho. Compare o espaço que ocupam juntos.",
     "width": 800,
     "height": 460,
     "objects": [
       {
-        "x": 560.1,
-        "y": 350.6,
+        "x": 448.3,
+        "y": 244.1,
         "type": "mirror",
         "length": 124.8,
-        "angle": 3.6
+        "angle": 2.4
       },
       {
-        "x": 229.1,
-        "y": 225.7,
+        "x": 351.6,
+        "y": 383.7,
         "type": "mirror",
         "length": 124.8,
-        "angle": 15.3
+        "angle": -20.8
       },
       {
-        "x": 381.1,
-        "y": 109.8,
+        "x": 459,
+        "y": 85.8,
         "type": "mirror",
         "length": 124.8,
         "angle": 0
       },
       {
-        "x": 336.1,
-        "y": 322,
+        "x": 220.1,
+        "y": 237.3,
         "type": "mirror",
         "length": 124.8,
-        "angle": 44.2
+        "angle": 63.7
       },
       {
-        "x": 631.4,
-        "y": 137.1,
+        "x": 720,
+        "y": 78.9,
         "type": "mirror",
         "length": 124.8,
         "angle": 0
@@ -12415,44 +12415,44 @@ export const lightLevels = [
     ],
     "sources": [
       {
-        "x": 775,
-        "y": 350.6,
-        "angle": 180,
+        "x": 623.1,
+        "y": 253.8,
+        "angle": -176.8238006763359,
         "color": "gold"
       },
       {
-        "x": 25,
-        "y": 225.7,
-        "angle": 0,
+        "x": 141.5,
+        "y": 41.7,
+        "angle": 58.43645056939515,
         "color": "blue"
       }
     ],
     "targets": [
       {
-        "x": 295,
-        "y": 56.7,
+        "x": 327.4,
+        "y": 87.9,
         "radius": 22,
         "color": "gold"
       },
       {
-        "x": 469.3,
-        "y": 368.1,
+        "x": 301.2,
+        "y": 97.9,
         "radius": 22,
         "color": "blue"
       }
     ],
     "portals": [],
     "solution": [
-      26.7,
-      21,
-      42.5,
-      30.5,
+      48.5,
+      -36.7,
+      46.5,
+      84.1,
       0
     ],
-    "sourceAngle": 180,
+    "sourceAngle": -176.8238006763359,
     "target": {
-      "x": 295,
-      "y": 56.7,
+      "x": 327.4,
+      "y": 87.9,
       "radius": 22,
       "color": "gold"
     },
@@ -12474,40 +12474,40 @@ export const lightLevels = [
         "x": 200,
         "y": 86,
         "length": 124.8,
-        "angle": 14.2
+        "angle": -75.8
       },
       {
         "type": "mirror",
         "x": 200,
         "y": 230,
         "length": 124.8,
-        "angle": -7.1
+        "angle": 74.9
       },
       {
         "type": "mirror",
         "x": 200,
         "y": 374,
         "length": 124.8,
-        "angle": -8.1
+        "angle": 81.9
       }
     ],
     "sources": [
       {
-        "x": 30,
-        "y": 86,
-        "angle": 0,
+        "x": 350,
+        "y": 86.00000000000001,
+        "angle": -180,
         "color": "gold"
       },
       {
-        "x": 30,
-        "y": 230,
-        "angle": 0,
+        "x": 344.1892543907478,
+        "y": 188.65439662745004,
+        "angle": 164,
         "color": "blue"
       },
       {
-        "x": 30,
+        "x": 350,
         "y": 374,
-        "angle": 0,
+        "angle": -180,
         "color": "pink"
       }
     ],
@@ -12601,15 +12601,15 @@ export const lightLevels = [
     ],
     "width": 800,
     "height": 460,
-    "id": "light-v4-portal-029",
+    "id": "light-v5-portal-029",
     "name": "O salto que não cruza 029",
     "hint": "Separe os trechos iluminados do salto entre portais.",
     "solution": [
-      -10,
-      -7.1,
-      -8.1
+      80,
+      74.9,
+      81.9
     ],
-    "sourceAngle": 0,
+    "sourceAngle": -180,
     "target": {
       "x": 725,
       "y": 369,
@@ -12628,16 +12628,16 @@ export const lightLevels = [
     "stageName": "Compatibilizar trajetos"
   },
   {
-    "id": "light-v3-47",
+    "id": "light-v5-legacy-47",
     "campaignNumber": 112,
     "name": "O caminho tentador",
     "difficulty": 47,
     "family": "two-47",
     "sources": [
       {
-        "x": 60,
-        "y": 230,
-        "angle": 0,
+        "x": 60.21927443926819,
+        "y": 238.37375299887103,
+        "angle": -3,
         "color": "gold"
       },
       {
@@ -12668,7 +12668,7 @@ export const lightLevels = [
         "x": 220,
         "y": 230,
         "length": 124.8,
-        "angle": 56
+        "angle": 54.5
       },
       {
         "type": "mirror",
@@ -12709,13 +12709,13 @@ export const lightLevels = [
       }
     ],
     "solution": [
-      29,
+      27.5,
       18.6,
       45,
       -45,
       24.4
     ],
-    "sourceAngle": 0,
+    "sourceAngle": -3,
     "target": {
       "x": 740,
       "y": 230,
@@ -12887,40 +12887,40 @@ export const lightLevels = [
         "x": 200,
         "y": 86,
         "length": 124.8,
-        "angle": 7.9
+        "angle": -82.1
       },
       {
         "type": "mirror",
         "x": 200,
         "y": 230,
         "length": 124.8,
-        "angle": 7.8
+        "angle": -70.2
       },
       {
         "type": "mirror",
         "x": 200,
         "y": 374,
         "length": 124.8,
-        "angle": -14.7
+        "angle": 85.3
       }
     ],
     "sources": [
       {
-        "x": 30,
-        "y": 86,
-        "angle": 0,
+        "x": 350,
+        "y": 86.00000000000001,
+        "angle": -180,
         "color": "gold"
       },
       {
-        "x": 30,
-        "y": 230,
-        "angle": 0,
+        "x": 337.0318186463901,
+        "y": 291.01049646137005,
+        "angle": -156,
         "color": "blue"
       },
       {
-        "x": 30,
-        "y": 374,
-        "angle": 0,
+        "x": 340.95389311788625,
+        "y": 425.30302149885034,
+        "angle": -160,
         "color": "pink"
       }
     ],
@@ -13014,15 +13014,15 @@ export const lightLevels = [
     ],
     "width": 800,
     "height": 460,
-    "id": "light-v4-portal-019",
+    "id": "light-v5-portal-019",
     "name": "O salto que não cruza 019",
     "hint": "Separe os trechos iluminados do salto entre portais.",
     "solution": [
-      7.9,
-      7.8,
-      4
+      -82.1,
+      -70.2,
+      -76
     ],
-    "sourceAngle": 0,
+    "sourceAngle": -180,
     "target": {
       "x": 725,
       "y": 234,
@@ -13162,43 +13162,43 @@ export const lightLevels = [
     "stageName": "Compatibilizar trajetos"
   },
   {
-    "id": "light-v4-open-019",
+    "id": "light-v5-open-019",
     "name": "Compartilhar o vazio",
     "hint": "Cada trajeto funciona sozinho. Compare o espaço que ocupam juntos.",
     "width": 800,
     "height": 460,
     "objects": [
       {
-        "x": 453.2,
-        "y": 191.9,
+        "x": 471.5,
+        "y": 76.6,
         "type": "mirror",
         "length": 124.8,
-        "angle": -18.9
+        "angle": -8.3
       },
       {
-        "x": 241.9,
-        "y": 129.5,
+        "x": 256.8,
+        "y": 138.5,
         "type": "mirror",
         "length": 124.8,
-        "angle": 38.1
+        "angle": 27.9
       },
       {
-        "x": 622.6,
-        "y": 166.3,
+        "x": 458.7,
+        "y": 231,
         "type": "mirror",
         "length": 124.8,
         "angle": 0
       },
       {
-        "x": 290.4,
-        "y": 326.9,
+        "x": 230.1,
+        "y": 393.8,
         "type": "mirror",
         "length": 124.8,
-        "angle": -34.2
+        "angle": -14.9
       },
       {
-        "x": 471.3,
-        "y": 348.1,
+        "x": 424,
+        "y": 394,
         "type": "mirror",
         "length": 124.8,
         "angle": 0
@@ -13206,44 +13206,44 @@ export const lightLevels = [
     ],
     "sources": [
       {
-        "x": 775,
-        "y": 191.9,
-        "angle": 180,
+        "x": 699.2,
+        "y": 130.4,
+        "angle": -166.70619604884152,
         "color": "gold"
       },
       {
-        "x": 25,
-        "y": 129.5,
-        "angle": 0,
+        "x": 32.3,
+        "y": 327.4,
+        "angle": -40.07810842001427,
         "color": "blue"
       }
     ],
     "targets": [
       {
-        "x": 191.7,
-        "y": 395.3,
+        "x": 163.9,
+        "y": 253.3,
         "radius": 22,
         "color": "gold"
       },
       {
-        "x": 113.1,
-        "y": 200.5,
+        "x": 66,
+        "y": 166.3,
         "radius": 22,
         "color": "blue"
       }
     ],
     "portals": [],
     "solution": [
-      -19.8,
-      75.6,
+      -19.7,
+      65.8,
       0,
-      -37.2,
+      6,
       0
     ],
-    "sourceAngle": 180,
+    "sourceAngle": -166.70619604884152,
     "target": {
-      "x": 191.7,
-      "y": 395.3,
+      "x": 163.9,
+      "y": 253.3,
       "radius": 22,
       "color": "gold"
     },
@@ -13259,50 +13259,50 @@ export const lightLevels = [
     "stageName": "Compatibilizar trajetos"
   },
   {
-    "id": "light-v4-open-chain-020",
+    "id": "light-v5-open-chain-020",
     "name": "Compatibilidade após a poda",
     "hint": "Uma alternativa pode decidir a passagem de uma segunda cor e limitar a terceira.",
     "width": 800,
     "height": 460,
     "objects": [
       {
-        "x": 535.7,
-        "y": 360.1,
+        "x": 583.6,
+        "y": 394,
         "type": "mirror",
         "length": 124.8,
-        "angle": -60.6
+        "angle": -56.8
       },
       {
-        "x": 231.6,
-        "y": 259.8,
+        "x": 304.7,
+        "y": 313.9,
         "type": "mirror",
         "length": 124.8,
-        "angle": -10.4
+        "angle": -1.2
       },
       {
-        "x": 603.2,
-        "y": 170.5,
+        "x": 610,
+        "y": 99.7,
         "type": "mirror",
         "length": 124.8,
-        "angle": -2.7
+        "angle": -0.5
       },
       {
-        "x": 392.4,
-        "y": 93.3,
-        "type": "mirror",
-        "length": 124.8,
-        "angle": 0
-      },
-      {
-        "x": 370.5,
-        "y": 293.3,
+        "x": 418.2,
+        "y": 85.5,
         "type": "mirror",
         "length": 124.8,
         "angle": 0
       },
       {
-        "x": 234.1,
-        "y": 97.5,
+        "x": 430.2,
+        "y": 347.6,
+        "type": "mirror",
+        "length": 124.8,
+        "angle": 0
+      },
+      {
+        "x": 230,
+        "y": 66,
         "type": "mirror",
         "length": 124.8,
         "angle": 0
@@ -13310,57 +13310,57 @@ export const lightLevels = [
     ],
     "sources": [
       {
-        "x": 25,
-        "y": 360.1,
-        "angle": 0,
+        "x": 31.1,
+        "y": 303.9,
+        "angle": 9.262088147216206,
         "color": "gold"
       },
       {
-        "x": 25,
-        "y": 259.8,
-        "angle": 0,
+        "x": 57.2,
+        "y": 192.8,
+        "angle": 26.07217641489638,
         "color": "blue"
       },
       {
         "x": 775,
-        "y": 170.5,
-        "angle": 180,
+        "y": 199.1,
+        "angle": -148.93422117633355,
         "color": "pink"
       }
     ],
     "targets": [
       {
-        "x": 460.9,
-        "y": 236.9,
+        "x": 462.3,
+        "y": 205.8,
         "radius": 22,
         "color": "gold"
       },
       {
-        "x": 688.8,
-        "y": 85.4,
+        "x": 722.4,
+        "y": 86.9,
         "radius": 22,
         "color": "blue"
       },
       {
-        "x": 395.9,
-        "y": 190.3,
+        "x": 380.3,
+        "y": 244.1,
         "radius": 22,
         "color": "pink"
       }
     ],
     "portals": [],
     "solution": [
-      -60.6,
-      -23,
-      -2.7,
-      -23.8,
+      -56.8,
+      -18.8,
+      -0.5,
+      -31.7,
       0,
       0
     ],
-    "sourceAngle": 0,
+    "sourceAngle": 9.262088147216206,
     "target": {
-      "x": 460.9,
-      "y": 236.9,
+      "x": 462.3,
+      "y": 205.8,
       "radius": 22,
       "color": "gold"
     },
@@ -13378,40 +13378,40 @@ export const lightLevels = [
   {
     "sources": [
       {
-        "x": 30,
-        "y": 110,
-        "angle": 0,
+        "x": 495.4423259036624,
+        "y": 162.09445330007907,
+        "angle": -170,
         "color": "gold"
       },
       {
-        "x": 30,
-        "y": 350,
-        "angle": 0,
+        "x": 32.242128958775965,
+        "y": 101.28872823348749,
+        "angle": 56,
         "color": "blue"
       },
       {
-        "x": 380,
-        "y": 440,
-        "angle": -90,
+        "x": 400.8759651440098,
+        "y": 433.54021031123557,
+        "angle": -98,
         "color": "pink"
       }
     ],
     "targets": [
       {
-        "x": 740,
-        "y": 350,
+        "x": 650,
+        "y": 272.5,
         "radius": 22,
         "color": "gold"
       },
       {
-        "x": 740,
-        "y": 110,
+        "x": 650,
+        "y": 187.5,
         "radius": 22,
         "color": "blue"
       },
       {
-        "x": 510.6,
-        "y": 282.5,
+        "x": 743.6,
+        "y": 305.9,
         "radius": 22,
         "color": "pink"
       }
@@ -13464,8 +13464,8 @@ export const lightLevels = [
       {
         "id": "pinka",
         "pairId": "pinkb",
-        "x": 434.9,
-        "y": 375.6,
+        "x": 466.4,
+        "y": 403.9,
         "radius": 16,
         "colors": [
           "pink"
@@ -13475,8 +13475,8 @@ export const lightLevels = [
       {
         "id": "pinkb",
         "pairId": "pinka",
-        "x": 416.9,
-        "y": 127.8,
+        "x": 697.4,
+        "y": 242.3,
         "radius": 16,
         "colors": [
           "pink"
@@ -13490,51 +13490,51 @@ export const lightLevels = [
         "y": 110,
         "type": "mirror",
         "length": 124.8,
-        "angle": 24
+        "angle": -61
       },
       {
         "x": 200,
         "y": 350,
         "type": "mirror",
         "length": 124.8,
-        "angle": 16.4
+        "angle": 44.4
       },
       {
         "x": 650,
         "y": 362.5,
         "type": "mirror",
         "length": 124.8,
-        "angle": 20
+        "angle": -21
       },
       {
         "x": 650,
         "y": 97.5,
         "type": "mirror",
         "length": 124.8,
-        "angle": 20.3
+        "angle": 61.3
       },
       {
         "type": "mirror",
         "x": 380,
         "y": 285,
         "length": 124.8,
-        "angle": -14.5
+        "angle": -6.7
       }
     ],
-    "id": "light-v4-deduction-symmetry-01-base",
+    "id": "light-v5-deduction-symmetry-01-base-reauthored",
     "name": "Dois pares e uma vizinha",
     "hint": "Uma escolha pode mudar o espaço disponível para a terceira cor.",
     "solution": [
-      -7,
-      -14.6,
-      -11,
-      -10.7,
-      -45.5
+      88,
+      13.4,
+      -52,
+      30.3,
+      -22
     ],
-    "sourceAngle": 0,
+    "sourceAngle": -170,
     "target": {
-      "x": 740,
-      "y": 350,
+      "x": 650,
+      "y": 272.5,
       "radius": 22,
       "color": "gold"
     },
@@ -13557,9 +13557,9 @@ export const lightLevels = [
     "family": "autoral-29",
     "sources": [
       {
-        "x": 72,
-        "y": 220,
-        "angle": 0,
+        "x": 81.83009687841414,
+        "y": 273.03845653270446,
+        "angle": -21,
         "color": "gold"
       }
     ],
@@ -13578,7 +13578,7 @@ export const lightLevels = [
         "x": 220,
         "y": 220,
         "length": 124.8,
-        "angle": -11.1
+        "angle": -21.6
       },
       {
         "type": "mirror",
@@ -13614,11 +13614,11 @@ export const lightLevels = [
       }
     ],
     "solution": [
-      19.9,
+      9.4,
       0,
       89.1
     ],
-    "sourceAngle": 0,
+    "sourceAngle": -21,
     "target": {
       "x": 462,
       "y": 128,
@@ -13633,7 +13633,7 @@ export const lightLevels = [
     "decoyCount": 0,
     "tutorial": "",
     "rules": "Leve a luz ao alvo.",
-    "id": "light-v3-29",
+    "id": "light-v5-legacy-29",
     "campaignNumber": 119,
     "campaignBand": "basic",
     "stage": 3,
@@ -13642,40 +13642,40 @@ export const lightLevels = [
   {
     "sources": [
       {
-        "x": 30,
-        "y": 110,
-        "angle": 0,
+        "x": 495.4423259036624,
+        "y": 162.09445330007907,
+        "angle": -170,
         "color": "gold"
       },
       {
-        "x": 30,
-        "y": 350,
-        "angle": 0,
+        "x": 32.242128958775965,
+        "y": 101.28872823348749,
+        "angle": 56,
         "color": "blue"
       },
       {
-        "x": 380,
-        "y": 440,
-        "angle": -90,
+        "x": 400.8759651440098,
+        "y": 433.54021031123557,
+        "angle": -98,
         "color": "pink"
       }
     ],
     "targets": [
       {
-        "x": 740,
-        "y": 350,
+        "x": 650,
+        "y": 272.5,
         "radius": 22,
         "color": "gold"
       },
       {
-        "x": 740,
-        "y": 110,
+        "x": 650,
+        "y": 187.5,
         "radius": 22,
         "color": "blue"
       },
       {
-        "x": 588.8,
-        "y": 205.2,
+        "x": 552.4,
+        "y": 308.8,
         "radius": 22,
         "color": "pink"
       }
@@ -13728,8 +13728,8 @@ export const lightLevels = [
       {
         "id": "pinka",
         "pairId": "pinkb",
-        "x": 450.5,
-        "y": 401.3,
+        "x": 449.8,
+        "y": 392.5,
         "radius": 16,
         "colors": [
           "pink"
@@ -13739,8 +13739,8 @@ export const lightLevels = [
       {
         "id": "pinkb",
         "pairId": "pinka",
-        "x": 545.8,
-        "y": 134.2,
+        "x": 438.1,
+        "y": 132.9,
         "radius": 16,
         "colors": [
           "pink"
@@ -13754,51 +13754,51 @@ export const lightLevels = [
         "y": 110,
         "type": "mirror",
         "length": 124.8,
-        "angle": 24
+        "angle": -61
       },
       {
         "x": 200,
         "y": 350,
         "type": "mirror",
         "length": 124.8,
-        "angle": 38
+        "angle": 44.4
       },
       {
         "x": 650,
         "y": 362.5,
         "type": "mirror",
         "length": 124.8,
-        "angle": 20
+        "angle": -21
       },
       {
         "x": 650,
         "y": 97.5,
         "type": "mirror",
         "length": 124.8,
-        "angle": 42
+        "angle": 61.3
       },
       {
         "type": "mirror",
         "x": 380,
         "y": 285,
         "length": 124.8,
-        "angle": -24.5
+        "angle": -6.7
       }
     ],
-    "id": "light-v4-deduction-symmetry-03-base",
+    "id": "light-v5-deduction-symmetry-03-base-reauthored",
     "name": "Dois pares e uma vizinha",
     "hint": "Uma escolha pode mudar o espaço disponível para a terceira cor.",
     "solution": [
-      -7,
-      7,
-      -11,
-      11,
-      -55.5
+      88,
+      13.4,
+      -52,
+      30.3,
+      -45.1
     ],
-    "sourceAngle": 0,
+    "sourceAngle": -170,
     "target": {
-      "x": 740,
-      "y": 350,
+      "x": 650,
+      "y": 272.5,
       "radius": 22,
       "color": "gold"
     },
@@ -13814,88 +13814,88 @@ export const lightLevels = [
     "stageName": "Compatibilizar trajetos"
   },
   {
-    "id": "light-v4-open-034",
+    "id": "light-v5-open-034",
     "name": "Compartilhar o vazio",
     "hint": "Cada trajeto funciona sozinho. Compare o espaço que ocupam juntos.",
     "width": 800,
     "height": 460,
     "objects": [
       {
-        "x": 531.8,
-        "y": 122.6,
+        "x": 470.5,
+        "y": 102.8,
         "type": "mirror",
         "length": 124.8,
-        "angle": -23.8
+        "angle": -38.4
       },
       {
-        "x": 362.3,
-        "y": 104,
+        "x": 343.7,
+        "y": 110.5,
         "type": "mirror",
         "length": 124.8,
-        "angle": 18.4
+        "angle": 20.3
       },
       {
-        "x": 177.1,
-        "y": 181.3,
+        "x": 273.3,
+        "y": 231.4,
         "type": "mirror",
         "length": 124.8,
         "angle": 0
       },
       {
-        "x": 327.4,
-        "y": 328.5,
+        "x": 327.2,
+        "y": 390.8,
         "type": "mirror",
         "length": 124.8,
         "angle": 0
       },
       {
-        "x": 627.5,
-        "y": 302.3,
+        "x": 692.5,
+        "y": 327.9,
         "type": "mirror",
         "length": 124.8,
-        "angle": -66.6
+        "angle": -65.9
       }
     ],
     "sources": [
       {
-        "x": 775,
-        "y": 122.6,
-        "angle": 180,
+        "x": 773.2,
+        "y": 189.3,
+        "angle": -164.05210417414688,
         "color": "gold"
       },
       {
-        "x": 25,
-        "y": 104,
-        "angle": 0,
+        "x": 43,
+        "y": 64.6,
+        "angle": 8.678854896753075,
         "color": "blue"
       }
     ],
     "targets": [
       {
-        "x": 443,
-        "y": 219.9,
+        "x": 477.1,
+        "y": 241.6,
         "radius": 22,
         "color": "gold"
       },
       {
-        "x": 84.7,
-        "y": 206.8,
+        "x": 53.8,
+        "y": 140.5,
         "radius": 22,
         "color": "blue"
       }
     ],
     "portals": [],
     "solution": [
-      -23.8,
-      78.7,
-      -19,
+      -38.4,
+      64.4,
+      -18.6,
       0,
       0
     ],
-    "sourceAngle": 180,
+    "sourceAngle": -164.05210417414688,
     "target": {
-      "x": 443,
-      "y": 219.9,
+      "x": 477.1,
+      "y": 241.6,
       "radius": 22,
       "color": "gold"
     },
@@ -13917,40 +13917,40 @@ export const lightLevels = [
         "x": 200,
         "y": 86,
         "length": 124.8,
-        "angle": 8.1
+        "angle": -81.9
       },
       {
         "type": "mirror",
         "x": 200,
         "y": 230,
         "length": 124.8,
-        "angle": 7.5
+        "angle": -68.5
       },
       {
         "type": "mirror",
         "x": 200,
         "y": 374,
         "length": 124.8,
-        "angle": -14.5
+        "angle": 75.5
       }
     ],
     "sources": [
       {
-        "x": 30,
-        "y": 86,
-        "angle": 0,
+        "x": 350,
+        "y": 86.00000000000001,
+        "angle": -180,
         "color": "gold"
       },
       {
-        "x": 30,
-        "y": 230,
-        "angle": 0,
+        "x": 332.44213892883903,
+        "y": 300.42073441788364,
+        "angle": -152,
         "color": "blue"
       },
       {
-        "x": 30,
+        "x": 350,
         "y": 374,
-        "angle": 0,
+        "angle": -180,
         "color": "pink"
       }
     ],
@@ -14044,15 +14044,15 @@ export const lightLevels = [
     ],
     "width": 800,
     "height": 460,
-    "id": "light-v4-portal-013",
+    "id": "light-v5-portal-013",
     "name": "O salto que não cruza 013",
     "hint": "Separe os trechos iluminados do salto entre portais.",
     "solution": [
-      8.1,
-      7.5,
-      5
+      -81.9,
+      -68.5,
+      -85
     ],
-    "sourceAngle": 0,
+    "sourceAngle": -180,
     "target": {
       "x": 725,
       "y": 238,
@@ -14078,9 +14078,9 @@ export const lightLevels = [
     "family": "autoral-37",
     "sources": [
       {
-        "x": 92,
-        "y": 330,
-        "angle": 0,
+        "x": 104.79527226889508,
+        "y": 269.8029768247816,
+        "angle": 24,
         "color": "gold"
       }
     ],
@@ -14099,7 +14099,7 @@ export const lightLevels = [
         "x": 240,
         "y": 330,
         "length": 124.8,
-        "angle": -49.4
+        "angle": -37.4
       },
       {
         "type": "mirror",
@@ -14126,11 +14126,11 @@ export const lightLevels = [
       }
     ],
     "solution": [
-      -18.4,
+      -6.4,
       10.7,
       12
     ],
-    "sourceAngle": 0,
+    "sourceAngle": 24,
     "target": {
       "x": 650,
       "y": 330,
@@ -14144,7 +14144,7 @@ export const lightLevels = [
     "decoyCount": 1,
     "tutorial": "",
     "rules": "Leve a luz ao alvo.",
-    "id": "light-v3-37",
+    "id": "light-v5-legacy-37",
     "campaignNumber": 123,
     "campaignBand": "basic",
     "stage": 3,
@@ -14153,21 +14153,21 @@ export const lightLevels = [
   {
     "sources": [
       {
-        "x": 30,
-        "y": 100,
-        "angle": 0,
+        "x": 216.28190940645013,
+        "y": 279.8903488634372,
+        "angle": -92,
         "color": "gold"
       },
       {
-        "x": 770,
-        "y": 360,
-        "angle": 180,
+        "x": 663.212595753644,
+        "y": 195.56181762433184,
+        "angle": 114,
         "color": "blue"
       },
       {
-        "x": 400,
-        "y": 30,
-        "angle": 90,
+        "x": 362.5758956528033,
+        "y": 33.933431867915004,
+        "angle": 78,
         "color": "pink"
       }
     ],
@@ -14265,32 +14265,32 @@ export const lightLevels = [
         "x": 210,
         "y": 100,
         "length": 124.8,
-        "angle": 66
+        "angle": 20
       },
       {
         "type": "mirror",
         "x": 590,
         "y": 360,
         "length": 124.8,
-        "angle": -85.1
+        "angle": 61.9
       },
       {
         "type": "mirror",
         "x": 400,
         "y": 210,
         "length": 124.8,
-        "angle": 47.1
+        "angle": 41.1
       }
     ],
-    "id": "light-v4-deduction-open-045",
+    "id": "light-v5-deduction-open-045",
     "name": "Acordo de trajetos 44",
     "hint": "Compare os caminhos completos, não apenas cada chegada isolada.",
     "solution": [
-      35,
-      63.9,
-      16.1
+      -11,
+      30.9,
+      10.1
     ],
-    "sourceAngle": 0,
+    "sourceAngle": -92,
     "target": {
       "x": 518,
       "y": 142.6,
@@ -14309,22 +14309,22 @@ export const lightLevels = [
     "stageName": "Compatibilizar trajetos"
   },
   {
-    "id": "light-v3-56",
+    "id": "light-v5-legacy-56",
     "campaignNumber": 125,
     "name": "Entre dois espelhos",
     "difficulty": 56,
     "family": "two-56",
     "sources": [
       {
-        "x": 60,
-        "y": 300,
-        "angle": 0,
+        "x": 82.77678952411546,
+        "y": 355.441775825555,
+        "angle": -22,
         "color": "gold"
       },
       {
-        "x": 780,
-        "y": 20,
-        "angle": 172.29500280116102,
+        "x": 661.1025484444639,
+        "y": 297.33020354325436,
+        "angle": 226.29500280116102,
         "color": "blue"
       }
     ],
@@ -14349,7 +14349,7 @@ export const lightLevels = [
         "x": 220,
         "y": 300,
         "length": 124.8,
-        "angle": 46
+        "angle": 35
       },
       {
         "type": "mirror",
@@ -14363,7 +14363,7 @@ export const lightLevels = [
         "x": 440,
         "y": 66,
         "length": 124.8,
-        "angle": -23.900000000000006
+        "angle": 3.1
       },
       {
         "type": "mirror",
@@ -14396,14 +14396,14 @@ export const lightLevels = [
       }
     ],
     "solution": [
-      21,
+      10,
       14.9,
-      -48.9,
+      -21.9,
       33.5,
       -45,
       23.5
     ],
-    "sourceAngle": 0,
+    "sourceAngle": -22,
     "target": {
       "x": 740,
       "y": 300,
@@ -14423,21 +14423,21 @@ export const lightLevels = [
   {
     "sources": [
       {
-        "x": 30,
-        "y": 100,
-        "angle": 0,
+        "x": 387.26539554219744,
+        "y": 131.25667198004746,
+        "angle": -170,
         "color": "gold"
       },
       {
-        "x": 770,
-        "y": 110,
-        "angle": 180,
+        "x": 548.6543966274501,
+        "y": 254.1892543907478,
+        "angle": 286,
         "color": "blue"
       },
       {
-        "x": 400,
-        "y": 440,
-        "angle": -90,
+        "x": 373.95277334996047,
+        "y": 427.72116295183116,
+        "angle": -80,
         "color": "pink"
       }
     ],
@@ -14535,32 +14535,32 @@ export const lightLevels = [
         "x": 210,
         "y": 100,
         "length": 124.8,
-        "angle": 14.5
+        "angle": -70.5
       },
       {
         "type": "mirror",
         "x": 590,
         "y": 110,
         "length": 124.8,
-        "angle": 17.7
+        "angle": 70.7
       },
       {
         "type": "mirror",
         "x": 400,
         "y": 280,
         "length": 124.8,
-        "angle": 19.3
+        "angle": 24.3
       }
     ],
-    "id": "light-v4-deduction-open-002",
+    "id": "light-v5-deduction-open-002",
     "name": "Hipótese 01",
     "hint": "Siga as consequências de uma hipótese antes de manter a primeira rota.",
     "solution": [
-      -16.5,
-      -13.3,
-      -11.7
+      78.5,
+      39.7,
+      -6.7
     ],
-    "sourceAngle": 0,
+    "sourceAngle": -170,
     "target": {
       "x": 238.6,
       "y": 318.4,
@@ -14579,43 +14579,43 @@ export const lightLevels = [
     "stageName": "Compatibilizar trajetos"
   },
   {
-    "id": "light-v4-open-012",
+    "id": "light-v5-open-012",
     "name": "Compartilhar o vazio",
     "hint": "Cada trajeto funciona sozinho. Compare o espaço que ocupam juntos.",
     "width": 800,
     "height": 460,
     "objects": [
       {
-        "x": 280.3,
-        "y": 198.9,
+        "x": 334.6,
+        "y": 300.7,
         "type": "mirror",
         "length": 124.8,
-        "angle": 0.2
+        "angle": -14.7
       },
       {
-        "x": 318.2,
-        "y": 336.7,
+        "x": 639.7,
+        "y": 104.7,
         "type": "mirror",
         "length": 124.8,
-        "angle": 63.1
+        "angle": -18
       },
       {
-        "x": 477.6,
-        "y": 200.6,
-        "type": "mirror",
-        "length": 124.8,
-        "angle": -71.8
-      },
-      {
-        "x": 392.4,
-        "y": 82,
+        "x": 504.4,
+        "y": 296.2,
         "type": "mirror",
         "length": 124.8,
         "angle": 0
       },
       {
-        "x": 180,
-        "y": 378.1,
+        "x": 335.6,
+        "y": 163.8,
+        "type": "mirror",
+        "length": 124.8,
+        "angle": 0
+      },
+      {
+        "x": 482.8,
+        "y": 116.2,
         "type": "mirror",
         "length": 124.8,
         "angle": 0
@@ -14624,43 +14624,43 @@ export const lightLevels = [
     "sources": [
       {
         "x": 25,
-        "y": 198.9,
+        "y": 300.7,
         "angle": 0,
         "color": "gold"
       },
       {
-        "x": 775,
-        "y": 336.7,
-        "angle": 180,
+        "x": 639.7,
+        "y": 435,
+        "angle": -90,
         "color": "blue"
       }
     ],
     "targets": [
       {
-        "x": 266.3,
-        "y": 47.5,
+        "x": 732.7,
+        "y": 77,
         "radius": 22,
         "color": "gold"
       },
       {
-        "x": 509.3,
-        "y": 76,
+        "x": 722.7,
+        "y": 218.7,
         "radius": 22,
         "color": "blue"
       }
     ],
     "portals": [],
     "solution": [
-      -47.6,
-      69.8,
-      -58.1,
+      -25.6,
+      -18,
       0,
-      0
+      0,
+      -30.1
     ],
     "sourceAngle": 0,
     "target": {
-      "x": 266.3,
-      "y": 47.5,
+      "x": 732.7,
+      "y": 77,
       "radius": 22,
       "color": "gold"
     },
@@ -14940,88 +14940,88 @@ export const lightLevels = [
     "stageName": "Compatibilizar trajetos"
   },
   {
-    "id": "light-v4-open-045",
+    "id": "light-v5-open-045",
     "name": "A chegada reservada",
     "hint": "Compare as aproximações do alvo com os trajetos que as outras cores precisam conservar.",
     "width": 800,
     "height": 460,
     "objects": [
       {
-        "x": 350.6,
-        "y": 362,
+        "x": 353.3,
+        "y": 380.7,
         "type": "mirror",
         "length": 124.8,
-        "angle": 33.2
+        "angle": 38.2
       },
       {
-        "x": 205.8,
-        "y": 113.3,
+        "x": 206,
+        "y": 66,
         "type": "mirror",
         "length": 124.8,
-        "angle": -39.3
+        "angle": -52.2
       },
       {
-        "x": 470.5,
-        "y": 212.8,
+        "x": 437.7,
+        "y": 254.8,
         "type": "mirror",
         "length": 124.8,
         "angle": 0
       },
       {
-        "x": 368.1,
-        "y": 119.7,
+        "x": 411.7,
+        "y": 123.8,
         "type": "mirror",
         "length": 124.8,
         "angle": 0
       },
       {
-        "x": 177.1,
-        "y": 256.1,
+        "x": 247.7,
+        "y": 224,
         "type": "mirror",
         "length": 124.8,
-        "angle": 51.2
+        "angle": 33.7
       }
     ],
     "sources": [
       {
-        "x": 775,
-        "y": 362,
-        "angle": 180,
+        "x": 776,
+        "y": 360.7,
+        "angle": 177.2910773186069,
         "color": "gold"
       },
       {
-        "x": 775,
-        "y": 113.3,
-        "angle": 180,
+        "x": 767.8,
+        "y": 69.3,
+        "angle": -179.66344980805187,
         "color": "blue"
       }
     ],
     "targets": [
       {
-        "x": 274.6,
-        "y": 188,
+        "x": 315.4,
+        "y": 184.6,
         "radius": 22,
         "color": "gold"
       },
       {
-        "x": 612.5,
-        "y": 263.8,
+        "x": 631.6,
+        "y": 171.3,
         "radius": 22,
         "color": "blue"
       }
     ],
     "portals": [],
     "solution": [
-      33.2,
-      -79.7,
-      20.2,
+      38.2,
+      -70.2,
+      7.9,
       0,
       0
     ],
-    "sourceAngle": 180,
+    "sourceAngle": 177.2910773186069,
     "target": {
-      "x": 274.6,
-      "y": 188,
+      "x": 315.4,
+      "y": 184.6,
       "radius": 22,
       "color": "gold"
     },
@@ -15039,21 +15039,21 @@ export const lightLevels = [
   {
     "sources": [
       {
-        "x": 30,
-        "y": 230,
-        "angle": 0,
+        "x": 344.1892543907478,
+        "y": 271.34560337254993,
+        "angle": -164,
         "color": "gold"
       },
       {
-        "x": 770,
-        "y": 110,
-        "angle": 180,
+        "x": 690.0000000000001,
+        "y": 265.88457268119896,
+        "angle": 240,
         "color": "blue"
       },
       {
-        "x": 470,
-        "y": 30,
-        "angle": 90,
+        "x": 480.4634710616188,
+        "y": 200.36539246102637,
+        "angle": 94,
         "color": "pink"
       }
     ],
@@ -15151,32 +15151,32 @@ export const lightLevels = [
         "x": 200,
         "y": 230,
         "length": 124.8,
-        "angle": 72.9
+        "angle": -9.1
       },
       {
         "type": "mirror",
         "x": 600,
         "y": 110,
         "length": 124.8,
-        "angle": -2.2
+        "angle": 27.8
       },
       {
         "type": "mirror",
         "x": 470,
         "y": 350,
         "length": 124.8,
-        "angle": 11.6
+        "angle": 13.6
       }
     ],
-    "id": "light-v4-deduction-open-044",
+    "id": "light-v5-deduction-open-044",
     "name": "Acordo de trajetos 43",
     "hint": "Compare os caminhos completos, não apenas cada chegada isolada.",
     "solution": [
-      41.9,
-      -33.2,
-      -19.4
+      -40.1,
+      -3.2,
+      -17.4
     ],
-    "sourceAngle": 0,
+    "sourceAngle": -164,
     "target": {
       "x": 362.4,
       "y": 172.4,
@@ -15195,50 +15195,50 @@ export const lightLevels = [
     "stageName": "Compatibilizar trajetos"
   },
   {
-    "id": "light-v4-open-303",
+    "id": "light-v5-open-303",
     "name": "Antes do deslocamento",
     "hint": "Compare como os dois trajetos distribuem o espaço.",
     "width": 800,
     "height": 460,
     "objects": [
       {
-        "x": 202.6,
-        "y": 367,
+        "x": 574.1,
+        "y": 371.1,
         "type": "mirror",
         "length": 124.8,
-        "angle": -12.1
+        "angle": -34
       },
       {
-        "x": 597.4,
-        "y": 93,
+        "x": 225.9,
+        "y": 88.9,
         "type": "mirror",
         "length": 124.8,
-        "angle": -10.5
+        "angle": 9.7
       },
       {
-        "x": 424.9,
-        "y": 159.3,
+        "x": 166.6,
+        "y": 256.7,
         "type": "mirror",
         "length": 124.8,
-        "angle": -45.8
+        "angle": 51.5
       },
       {
-        "x": 375.1,
-        "y": 300.7,
+        "x": 633.4,
+        "y": 203.3,
         "type": "mirror",
         "length": 124.8,
-        "angle": -16.4
+        "angle": -89.7
       },
       {
-        "x": 635.8,
-        "y": 377.1,
+        "x": 422.4,
+        "y": 78,
         "type": "mirror",
         "length": 124.8,
         "angle": 0
       },
       {
-        "x": 164.2,
-        "y": 82.9,
+        "x": 377.6,
+        "y": 382,
         "type": "mirror",
         "length": 124.8,
         "angle": 0
@@ -15246,45 +15246,45 @@ export const lightLevels = [
     ],
     "sources": [
       {
-        "x": 25,
-        "y": 367,
-        "angle": 0,
+        "x": 574.1,
+        "y": 25,
+        "angle": 90,
         "color": "gold"
       },
       {
-        "x": 775,
-        "y": 93,
-        "angle": 180,
+        "x": 225.89999999999998,
+        "y": 435,
+        "angle": -90,
         "color": "blue"
       }
     ],
     "targets": [
       {
-        "x": 513.1,
-        "y": 227.7,
+        "x": 345,
+        "y": 279,
         "radius": 22,
         "color": "gold"
       },
       {
-        "x": 286.9,
-        "y": 232.3,
+        "x": 455,
+        "y": 181,
         "radius": 22,
         "color": "blue"
       }
     ],
     "portals": [],
     "solution": [
-      -21.5,
-      0.7,
-      -2.6,
+      9.7,
+      9.7,
+      47.4,
+      47.4,
       0,
-      0,
-      -64
+      0
     ],
-    "sourceAngle": 0,
+    "sourceAngle": 90,
     "target": {
-      "x": 513.1,
-      "y": 227.7,
+      "x": 345,
+      "y": 279,
       "radius": 22,
       "color": "gold"
     },
@@ -15307,9 +15307,9 @@ export const lightLevels = [
     "family": "autoral-30",
     "sources": [
       {
-        "x": 708,
-        "y": 120,
-        "angle": 180,
+        "x": 698.1699031215859,
+        "y": 173.03845653270446,
+        "angle": 201,
         "color": "gold"
       }
     ],
@@ -15328,7 +15328,7 @@ export const lightLevels = [
         "x": 560,
         "y": 120,
         "length": 124.8,
-        "angle": -51.2
+        "angle": -40.7
       },
       {
         "type": "mirror",
@@ -15364,11 +15364,11 @@ export const lightLevels = [
       }
     ],
     "solution": [
-      -20.2,
+      -9.7,
       1.5,
       -23.3
     ],
-    "sourceAngle": 180,
+    "sourceAngle": 201,
     "target": {
       "x": 180,
       "y": 245,
@@ -15383,7 +15383,7 @@ export const lightLevels = [
     "decoyCount": 0,
     "tutorial": "",
     "rules": "Leve a luz ao alvo.",
-    "id": "light-v3-30",
+    "id": "light-v5-legacy-30",
     "campaignNumber": 133,
     "campaignBand": "basic",
     "stage": 3,
@@ -15640,10 +15640,10 @@ export const lightLevels = [
     "family": "portal-diagonal",
     "sources": [
       {
-        "x": 50,
-        "y": 230,
+        "x": 55.11112605663976,
+        "y": 268.8228567653781,
         "color": "gold",
-        "angle": 0
+        "angle": -15
       }
     ],
     "targets": [
@@ -15679,7 +15679,7 @@ export const lightLevels = [
         "x": 200,
         "y": 230,
         "length": 124.8,
-        "angle": 46.5
+        "angle": 39
       },
       {
         "type": "mirror",
@@ -15700,10 +15700,10 @@ export const lightLevels = [
       }
     ],
     "solution": [
-      22.5,
+      15,
       67.5
     ],
-    "sourceAngle": 0,
+    "sourceAngle": -15,
     "target": {
       "x": 650,
       "y": 400,
@@ -15718,7 +15718,7 @@ export const lightLevels = [
     "hint": "Imagine a diagonal a partir da saída.",
     "tutorial": "",
     "rules": "Leve a luz ao alvo.",
-    "id": "light-v3-65",
+    "id": "light-v5-legacy-65",
     "campaignNumber": 136,
     "campaignBand": "basic",
     "stage": 3,
@@ -15727,40 +15727,40 @@ export const lightLevels = [
   {
     "sources": [
       {
-        "x": 30,
-        "y": 110,
-        "angle": 0,
+        "x": 495.4423259036624,
+        "y": 162.09445330007907,
+        "angle": -170,
         "color": "gold"
       },
       {
-        "x": 30,
-        "y": 350,
-        "angle": 0,
+        "x": 32.242128958775965,
+        "y": 101.28872823348749,
+        "angle": 56,
         "color": "blue"
       },
       {
-        "x": 380,
-        "y": 440,
-        "angle": -90,
+        "x": 400.8759651440098,
+        "y": 433.54021031123557,
+        "angle": -98,
         "color": "pink"
       }
     ],
     "targets": [
       {
-        "x": 740,
-        "y": 350,
+        "x": 650,
+        "y": 272.5,
         "radius": 22,
         "color": "gold"
       },
       {
-        "x": 740,
-        "y": 110,
+        "x": 650,
+        "y": 187.5,
         "radius": 22,
         "color": "blue"
       },
       {
-        "x": 588.8,
-        "y": 205.2,
+        "x": 552.4,
+        "y": 308.8,
         "radius": 22,
         "color": "pink"
       }
@@ -15813,8 +15813,8 @@ export const lightLevels = [
       {
         "id": "pinka",
         "pairId": "pinkb",
-        "x": 450.5,
-        "y": 401.3,
+        "x": 449.8,
+        "y": 392.5,
         "radius": 16,
         "colors": [
           "pink"
@@ -15824,8 +15824,8 @@ export const lightLevels = [
       {
         "id": "pinkb",
         "pairId": "pinka",
-        "x": 545.8,
-        "y": 134.2,
+        "x": 438.1,
+        "y": 132.9,
         "radius": 16,
         "colors": [
           "pink"
@@ -15839,51 +15839,51 @@ export const lightLevels = [
         "y": 110,
         "type": "mirror",
         "length": 124.8,
-        "angle": 24
+        "angle": -61
       },
       {
         "x": 200,
         "y": 350,
         "type": "mirror",
         "length": 124.8,
-        "angle": 38
+        "angle": 44.4
       },
       {
         "x": 650,
         "y": 362.5,
         "type": "mirror",
         "length": 124.8,
-        "angle": 20
+        "angle": -21
       },
       {
         "x": 650,
         "y": 97.5,
         "type": "mirror",
         "length": 124.8,
-        "angle": 42
+        "angle": 61.3
       },
       {
         "type": "mirror",
         "x": 380,
         "y": 285,
         "length": 124.8,
-        "angle": -24.5
+        "angle": -6.7
       }
     ],
-    "id": "light-v4-deduction-symmetry-03-filter",
+    "id": "light-v5-deduction-symmetry-03-filter-reauthored",
     "name": "A entrada diferente",
     "hint": "Compare a marca da entrada com a fonte que se aproxima.",
     "solution": [
-      14.6,
-      7,
-      10.7,
-      11,
-      -15.6
+      -70.4,
+      35,
+      -30.3,
+      52,
+      -45.1
     ],
-    "sourceAngle": 0,
+    "sourceAngle": -170,
     "target": {
-      "x": 740,
-      "y": 350,
+      "x": 650,
+      "y": 272.5,
       "radius": 22,
       "color": "gold"
     },
@@ -15905,40 +15905,40 @@ export const lightLevels = [
         "x": 200,
         "y": 86,
         "length": 124.8,
-        "angle": 14.5
+        "angle": -75.5
       },
       {
         "type": "mirror",
         "x": 200,
         "y": 230,
         "length": 124.8,
-        "angle": -8.1
+        "angle": -82.1
       },
       {
         "type": "mirror",
         "x": 200,
         "y": 374,
         "length": 124.8,
-        "angle": -7.3
+        "angle": -85.3
       }
     ],
     "sources": [
       {
-        "x": 30,
-        "y": 86,
-        "angle": 0,
+        "x": 350,
+        "y": 86.00000000000001,
+        "angle": -180,
         "color": "gold"
       },
       {
-        "x": 30,
-        "y": 230,
-        "angle": 0,
+        "x": 361.1291382697209,
+        "y": 330.6846602043089,
+        "angle": -148,
         "color": "blue"
       },
       {
-        "x": 30,
-        "y": 374,
-        "angle": 0,
+        "x": 337.0318186463901,
+        "y": 435.01049646137005,
+        "angle": -156,
         "color": "pink"
       }
     ],
@@ -16032,15 +16032,15 @@ export const lightLevels = [
     ],
     "width": 800,
     "height": 460,
-    "id": "light-v4-portal-010",
+    "id": "light-v5-portal-010",
     "name": "O salto que não cruza 010",
     "hint": "Separe os trechos iluminados do salto entre portais.",
     "solution": [
-      14.5,
-      2,
-      5.5
+      -75.5,
+      -72,
+      -72.5
     ],
-    "sourceAngle": 0,
+    "sourceAngle": -180,
     "target": {
       "x": 725,
       "y": 378,
@@ -16059,88 +16059,88 @@ export const lightLevels = [
     "stageName": "Compatibilizar trajetos"
   },
   {
-    "id": "light-v4-open-005",
+    "id": "light-v5-open-005",
     "name": "Compartilhar o vazio",
     "hint": "Cada trajeto funciona sozinho. Compare o espaço que ocupam juntos.",
     "width": 800,
     "height": 460,
     "objects": [
       {
-        "x": 231.6,
-        "y": 104.8,
+        "x": 211.3,
+        "y": 66,
         "type": "mirror",
         "length": 124.8,
-        "angle": 34
+        "angle": 16
       },
       {
-        "x": 423.1,
-        "y": 109,
+        "x": 558.4,
+        "y": 66,
         "type": "mirror",
         "length": 124.8,
-        "angle": -26.1
+        "angle": -15.8
       },
       {
-        "x": 594.2,
-        "y": 242.3,
+        "x": 617.2,
+        "y": 274.3,
         "type": "mirror",
         "length": 124.8,
         "angle": 0
       },
       {
-        "x": 452.6,
-        "y": 248.7,
+        "x": 385,
+        "y": 176.3,
         "type": "mirror",
         "length": 124.8,
         "angle": 0
       },
       {
-        "x": 232.8,
-        "y": 353.8,
+        "x": 252,
+        "y": 394,
         "type": "mirror",
         "length": 124.8,
-        "angle": 62
+        "angle": 61.2
       }
     ],
     "sources": [
       {
         "x": 25,
-        "y": 104.8,
-        "angle": 0,
+        "y": 218.5,
+        "angle": -39.30280233353179,
         "color": "gold"
       },
       {
-        "x": 775,
-        "y": 109,
-        "angle": 180,
+        "x": 752,
+        "y": 119.4,
+        "angle": -164.57973539006338,
         "color": "blue"
       }
     ],
     "targets": [
       {
-        "x": 331.2,
-        "y": 352.1,
+        "x": 317,
+        "y": 378.6,
         "radius": 22,
         "color": "gold"
       },
       {
-        "x": 721.8,
-        "y": 320.2,
+        "x": 776,
+        "y": 296,
         "radius": 22,
         "color": "blue"
       }
     ],
     "portals": [],
     "solution": [
-      34,
-      -71,
-      34.7,
+      16,
+      -45.2,
+      41,
       0,
       0
     ],
-    "sourceAngle": 0,
+    "sourceAngle": -39.30280233353179,
     "target": {
-      "x": 331.2,
-      "y": 352.1,
+      "x": 317,
+      "y": 378.6,
       "radius": 22,
       "color": "gold"
     },
@@ -16162,40 +16162,40 @@ export const lightLevels = [
         "x": 200,
         "y": 86,
         "length": 124.8,
-        "angle": 8.3
+        "angle": -81.7
       },
       {
         "type": "mirror",
         "x": 200,
         "y": 230,
         "length": 124.8,
-        "angle": -7.2
+        "angle": -21.2
       },
       {
         "type": "mirror",
         "x": 200,
         "y": 374,
         "length": 124.8,
-        "angle": -0.4
+        "angle": 89.6
       }
     ],
     "sources": [
       {
-        "x": 30,
-        "y": 86,
-        "angle": 0,
+        "x": 350,
+        "y": 86.00000000000001,
+        "angle": -180,
         "color": "gold"
       },
       {
-        "x": 30,
-        "y": 230,
-        "angle": 0,
+        "x": 32.23995735680387,
+        "y": 319.1995969293192,
+        "angle": -28,
         "color": "blue"
       },
       {
-        "x": 30,
+        "x": 350,
         "y": 374,
-        "angle": 0,
+        "angle": -180,
         "color": "pink"
       }
     ],
@@ -16289,15 +16289,15 @@ export const lightLevels = [
     ],
     "width": 800,
     "height": 460,
-    "id": "light-v4-portal-022",
+    "id": "light-v5-portal-022",
     "name": "O salto que não cruza 022",
     "hint": "Separe os trechos iluminados do salto entre portais.",
     "solution": [
-      8.3,
-      8,
-      -0.4
+      -81.7,
+      -6,
+      89.6
     ],
-    "sourceAngle": 0,
+    "sourceAngle": -180,
     "target": {
       "x": 725,
       "y": 242,
@@ -16323,9 +16323,9 @@ export const lightLevels = [
     "family": "autoral-4",
     "sources": [
       {
-        "x": 160,
-        "y": 340,
-        "angle": -30.96375653207352,
+        "x": 246.79491924311228,
+        "y": 423.9230484541326,
+        "angle": -60.96375653207352,
         "color": "gold"
       }
     ],
@@ -16344,13 +16344,13 @@ export const lightLevels = [
         "x": 360,
         "y": 220,
         "length": 124.8,
-        "angle": -46.5
+        "angle": -61.5
       }
     ],
     "solution": [
-      -15.5
+      -30.5
     ],
-    "sourceAngle": -30.96375653207352,
+    "sourceAngle": -60.96375653207352,
     "target": {
       "x": 570,
       "y": 220,
@@ -16362,7 +16362,7 @@ export const lightLevels = [
     "decoyCount": 0,
     "tutorial": "",
     "rules": "Leve a luz ao alvo.",
-    "id": "light-v3-4",
+    "id": "light-v5-legacy-4",
     "campaignNumber": 141,
     "campaignBand": "basic",
     "stage": 4,
@@ -16455,47 +16455,47 @@ export const lightLevels = [
         "x": 200,
         "y": 86,
         "length": 124.8,
-        "angle": 14.5
+        "angle": -75.7
       },
       {
         "type": "mirror",
         "x": 200,
         "y": 230,
         "length": 124.8,
-        "angle": -8.3
+        "angle": 81.7
       },
       {
         "type": "mirror",
         "x": 200,
         "y": 374,
         "length": 124.8,
-        "angle": -7.3
+        "angle": 81.9
       }
     ],
     "sources": [
       {
-        "x": 30,
-        "y": 86,
-        "angle": 0,
+        "x": 350,
+        "y": 86.00000000000001,
+        "angle": -180,
         "color": "gold"
       },
       {
-        "x": 30,
-        "y": 230,
-        "angle": 0,
+        "x": 350,
+        "y": 230.00000000000003,
+        "angle": -180,
         "color": "blue"
       },
       {
-        "x": 30,
+        "x": 350,
         "y": 374,
-        "angle": 0,
+        "angle": -180,
         "color": "pink"
       }
     ],
     "targets": [
       {
         "x": 725,
-        "y": 378,
+        "y": 373,
         "radius": 22,
         "color": "gold"
       },
@@ -16507,7 +16507,7 @@ export const lightLevels = [
       },
       {
         "x": 725,
-        "y": 237,
+        "y": 222,
         "radius": 22,
         "color": "pink"
       }
@@ -16517,8 +16517,8 @@ export const lightLevels = [
         "id": "g1a",
         "pairId": "g1b",
         "label": "A",
-        "x": 491.3,
-        "y": 106.4,
+        "x": 402.9,
+        "y": 50.2,
         "radius": 16,
         "colors": [
           "gold"
@@ -16528,8 +16528,8 @@ export const lightLevels = [
         "id": "g1b",
         "pairId": "g1a",
         "label": "A",
-        "x": 599.3,
-        "y": 369.2,
+        "x": 606.8,
+        "y": 393.8,
         "radius": 16,
         "colors": [
           "gold"
@@ -16539,8 +16539,8 @@ export const lightLevels = [
         "id": "b1a",
         "pairId": "b1b",
         "label": "B",
-        "x": 348.6,
-        "y": 32.7,
+        "x": 449.2,
+        "y": 273.9,
         "radius": 16,
         "colors": [
           "blue"
@@ -16550,8 +16550,8 @@ export const lightLevels = [
         "id": "b1b",
         "pairId": "b1a",
         "label": "B",
-        "x": 643.2,
-        "y": 182.6,
+        "x": 523.1,
+        "y": 38.4,
         "radius": 16,
         "colors": [
           "blue"
@@ -16561,8 +16561,8 @@ export const lightLevels = [
         "id": "p1a",
         "pairId": "p1b",
         "label": "C",
-        "x": 32.5,
-        "y": 134.8,
+        "x": 402.9,
+        "y": 221.1,
         "radius": 16,
         "colors": [
           "pink"
@@ -16572,8 +16572,8 @@ export const lightLevels = [
         "id": "p1b",
         "pairId": "p1a",
         "label": "C",
-        "x": 777.8,
-        "y": 312.4,
+        "x": 577.3,
+        "y": 333.3,
         "radius": 16,
         "colors": [
           "pink"
@@ -16582,18 +16582,18 @@ export const lightLevels = [
     ],
     "width": 800,
     "height": 460,
-    "id": "light-v4-portal-032",
-    "name": "O salto que não cruza 032",
+    "id": "light-v5-portal-032",
+    "name": "O salto que não cruza 005",
     "hint": "Separe os trechos iluminados do salto entre portais.",
     "solution": [
-      2,
-      -8.3,
-      -7.3
+      85,
+      81.7,
+      81.9
     ],
-    "sourceAngle": 0,
+    "sourceAngle": -180,
     "target": {
       "x": 725,
-      "y": 378,
+      "y": 373,
       "radius": 22,
       "color": "gold"
     },
@@ -16609,7 +16609,7 @@ export const lightLevels = [
     "stageName": "Combinar descobertas"
   },
   {
-    "id": "light-v4-open-031",
+    "id": "light-v5-open-031",
     "name": "Compartilhar o vazio",
     "hint": "Cada trajeto funciona sozinho. Compare o espaço que ocupam juntos.",
     "width": 800,
@@ -16620,14 +16620,14 @@ export const lightLevels = [
         "y": 183.5,
         "type": "mirror",
         "length": 124.8,
-        "angle": 16.9
+        "angle": 54.9
       },
       {
         "x": 509.2,
         "y": 175.1,
         "type": "mirror",
         "length": 124.8,
-        "angle": -70.9
+        "angle": -64.9
       },
       {
         "x": 371.1,
@@ -16653,15 +16653,15 @@ export const lightLevels = [
     ],
     "sources": [
       {
-        "x": 25,
-        "y": 183.5,
-        "angle": 0,
+        "x": 282.2,
+        "y": 28.3,
+        "angle": 75.9985075692152,
         "color": "gold"
       },
       {
-        "x": 775,
-        "y": 175.1,
-        "angle": 180,
+        "x": 769.2,
+        "y": 230.4,
+        "angle": -167.9925587389361,
         "color": "blue"
       }
     ],
@@ -16681,13 +16681,13 @@ export const lightLevels = [
     ],
     "portals": [],
     "solution": [
-      -8.4,
-      -24.8,
+      29.6,
+      -18.8,
       67.1,
       0,
       0
     ],
-    "sourceAngle": 0,
+    "sourceAngle": 75.9985075692152,
     "target": {
       "x": 653.8,
       "y": 83.3,
@@ -16708,15 +16708,15 @@ export const lightLevels = [
   {
     "sources": [
       {
-        "x": 30,
-        "y": 230,
-        "angle": 0,
+        "x": 156.45405879205978,
+        "y": 55.346769270320635,
+        "angle": 76,
         "color": "gold"
       },
       {
-        "x": 770,
-        "y": 110,
-        "angle": 180,
+        "x": 526.7874042463559,
+        "y": 274.43818237566813,
+        "angle": 294,
         "color": "blue"
       }
     ],
@@ -16786,24 +16786,24 @@ export const lightLevels = [
         "x": 200,
         "y": 230,
         "length": 124.8,
-        "angle": -10.1
+        "angle": 27.9
       },
       {
         "type": "mirror",
         "x": 600,
         "y": 110,
         "length": 124.8,
-        "angle": 29.3
+        "angle": 86.3
       }
     ],
-    "id": "light-v4-deduction-open-048",
+    "id": "light-v5-deduction-open-048",
     "name": "Acordo de trajetos 47",
     "hint": "Compare os caminhos completos, não apenas cada chegada isolada.",
     "solution": [
-      -41.1,
-      -1.7
+      -3.1,
+      55.3
     ],
-    "sourceAngle": 0,
+    "sourceAngle": 76,
     "target": {
       "x": 491.3,
       "y": 102.7,
@@ -16947,21 +16947,21 @@ export const lightLevels = [
   {
     "sources": [
       {
-        "x": 30,
-        "y": 100,
-        "angle": 0,
+        "x": 164.8514738065981,
+        "y": 356.0500157831741,
+        "angle": -80,
         "color": "gold"
       },
       {
-        "x": 770,
-        "y": 110,
-        "angle": 180,
+        "x": 727.7790087006333,
+        "y": 330.49250500067075,
+        "angle": 238,
         "color": "blue"
       },
       {
-        "x": 400,
-        "y": 440,
-        "angle": -90,
+        "x": 559.1235032589237,
+        "y": 263.2754458771755,
+        "angle": -186,
         "color": "pink"
       }
     ],
@@ -17059,32 +17059,32 @@ export const lightLevels = [
         "x": 210,
         "y": 100,
         "length": 124.8,
-        "angle": 70.9
+        "angle": 30.9
       },
       {
         "type": "mirror",
         "x": 590,
         "y": 110,
         "length": 124.8,
-        "angle": 19.6
+        "angle": 48.6
       },
       {
         "type": "mirror",
         "x": 400,
         "y": 280,
         "length": 124.8,
-        "angle": -17.7
+        "angle": -65.7
       }
     ],
-    "id": "light-v4-deduction-open-046",
+    "id": "light-v5-deduction-open-046",
     "name": "Acordo de trajetos 45",
     "hint": "Compare os caminhos completos, não apenas cada chegada isolada.",
     "solution": [
-      39.9,
-      -11.4,
-      -48.7
+      -0.1,
+      17.6,
+      83.3
     ],
-    "sourceAngle": 0,
+    "sourceAngle": -80,
     "target": {
       "x": 695.7,
       "y": 290.6,
@@ -17103,16 +17103,16 @@ export const lightLevels = [
     "stageName": "Combinar descobertas"
   },
   {
-    "id": "light-v3-52",
+    "id": "light-v5-legacy-52",
     "campaignNumber": 148,
     "name": "Cada parede tem um motivo",
     "difficulty": 52,
     "family": "two-52",
     "sources": [
       {
-        "x": 60,
-        "y": 230,
-        "angle": 0,
+        "x": 70.62713176044772,
+        "y": 287.338871927248,
+        "angle": -21,
         "color": "gold"
       },
       {
@@ -17143,7 +17143,7 @@ export const lightLevels = [
         "x": 220,
         "y": 230,
         "length": 124.8,
-        "angle": 47.30000000000001
+        "angle": 36.8
       },
       {
         "type": "mirror",
@@ -17225,7 +17225,7 @@ export const lightLevels = [
       }
     ],
     "solution": [
-      20.3,
+      9.8,
       20.3,
       -20.3,
       45,
@@ -17233,7 +17233,7 @@ export const lightLevels = [
       -45,
       24.4
     ],
-    "sourceAngle": 0,
+    "sourceAngle": -21,
     "target": {
       "x": 740,
       "y": 230,
@@ -17384,96 +17384,96 @@ export const lightLevels = [
     "stageName": "Combinar descobertas"
   },
   {
-    "id": "light-v4-open-301",
+    "id": "light-v5-open-301",
     "name": "Antes do deslocamento",
     "hint": "Compare como os dois trajetos distribuem o espaço.",
     "width": 800,
     "height": 460,
     "objects": [
       {
-        "x": 605.2,
-        "y": 340,
+        "x": 224.6,
+        "y": 372.7,
         "type": "mirror",
         "length": 124.8,
-        "angle": 8.8
+        "angle": 27.2
       },
       {
-        "x": 194.8,
-        "y": 120,
+        "x": 575.4,
+        "y": 87.3,
         "type": "mirror",
         "length": 124.8,
-        "angle": 6.6
+        "angle": 36.7
       },
       {
-        "x": 339.8,
-        "y": 153.8,
-        "type": "mirror",
-        "length": 124.8,
-        "angle": 32.4
-      },
-      {
-        "x": 460.2,
-        "y": 306.2,
-        "type": "mirror",
-        "length": 124.8,
-        "angle": 11.2
-      },
-      {
-        "x": 510.8,
-        "y": 104.7,
+        "x": 405.1,
+        "y": 108.8,
         "type": "mirror",
         "length": 124.8,
         "angle": 0
       },
       {
-        "x": 289.2,
-        "y": 355.3,
+        "x": 394.9,
+        "y": 351.2,
         "type": "mirror",
         "length": 124.8,
         "angle": 0
+      },
+      {
+        "x": 615.2,
+        "y": 255.8,
+        "type": "mirror",
+        "length": 124.8,
+        "angle": 89.9
+      },
+      {
+        "x": 184.8,
+        "y": 204.2,
+        "type": "mirror",
+        "length": 124.8,
+        "angle": 85.1
       }
     ],
     "sources": [
       {
-        "x": 775,
-        "y": 340,
-        "angle": 180,
+        "x": 224.6,
+        "y": 25,
+        "angle": 90,
         "color": "gold"
       },
       {
-        "x": 25,
-        "y": 120,
-        "angle": 0,
+        "x": 575.4,
+        "y": 435,
+        "angle": -90,
         "color": "blue"
       }
     ],
     "targets": [
       {
-        "x": 223.2,
-        "y": 219.3,
+        "x": 518.5,
+        "y": 162.8,
         "radius": 22,
         "color": "gold"
       },
       {
-        "x": 576.8,
-        "y": 240.7,
+        "x": 281.5,
+        "y": 297.2,
         "radius": 22,
         "color": "blue"
       }
     ],
     "portals": [],
     "solution": [
-      17.5,
-      -1.4,
-      2.9,
+      -6.6,
+      -6.6,
       0,
-      30.7,
-      0
+      0,
+      -55.2,
+      -55.2
     ],
-    "sourceAngle": 180,
+    "sourceAngle": 90,
     "target": {
-      "x": 223.2,
-      "y": 219.3,
+      "x": 518.5,
+      "y": 162.8,
       "radius": 22,
       "color": "gold"
     },
@@ -17491,38 +17491,50 @@ export const lightLevels = [
   {
     "sources": [
       {
-        "x": 30,
-        "y": 230,
-        "angle": 0,
+        "x": 243.26587053084145,
+        "y": 256.5036161174089,
+        "angle": -102,
         "color": "gold"
       },
       {
-        "x": 770,
-        "y": 110,
-        "angle": 180,
+        "x": 596.2819094064502,
+        "y": 180.10965113656277,
+        "angle": 92,
         "color": "blue"
+      },
+      {
+        "x": 350.38527595294016,
+        "y": 36.9728947311026,
+        "angle": 74,
+        "color": "pink"
       }
     ],
     "targets": [
       {
-        "x": 655.2,
-        "y": 250.1,
+        "x": 663,
+        "y": 138.5,
         "radius": 22,
         "color": "gold"
       },
       {
-        "x": 95.5,
-        "y": 301.1,
+        "x": 107.1,
+        "y": 260.9,
         "radius": 22,
         "color": "blue"
+      },
+      {
+        "x": 229.7,
+        "y": 304.3,
+        "radius": 22,
+        "color": "pink"
       }
     ],
     "portals": [
       {
         "id": "p0a",
         "pairId": "p0b",
-        "x": 380.7,
-        "y": 37.6,
+        "x": 320.4,
+        "y": 101.5,
         "radius": 16,
         "colors": [
           "gold"
@@ -17532,8 +17544,8 @@ export const lightLevels = [
       {
         "id": "p0b",
         "pairId": "p0a",
-        "x": 526.4,
-        "y": 387.2,
+        "x": 464.3,
+        "y": 135.7,
         "radius": 16,
         "colors": [
           "gold"
@@ -17543,8 +17555,8 @@ export const lightLevels = [
       {
         "id": "p1a",
         "pairId": "p1b",
-        "x": 590.1,
-        "y": 227.9,
+        "x": 712,
+        "y": 61,
         "radius": 16,
         "colors": [
           "blue"
@@ -17554,136 +17566,8 @@ export const lightLevels = [
       {
         "id": "p1b",
         "pairId": "p1a",
-        "x": 102.9,
-        "y": 213.1,
-        "radius": 16,
-        "colors": [
-          "blue"
-        ],
-        "label": "B"
-      }
-    ],
-    "objects": [
-      {
-        "type": "mirror",
-        "x": 200,
-        "y": 230,
-        "length": 124.8,
-        "angle": 7.6
-      },
-      {
-        "type": "mirror",
-        "x": 600,
-        "y": 110,
-        "length": 124.8,
-        "angle": 20.6
-      }
-    ],
-    "id": "light-v4-deduction-open-030",
-    "name": "Do outro lado 29",
-    "hint": "Compare os caminhos completos, não apenas cada chegada isolada.",
-    "solution": [
-      -23.4,
-      -10.4
-    ],
-    "sourceAngle": 0,
-    "target": {
-      "x": 655.2,
-      "y": 250.1,
-      "radius": 22,
-      "color": "gold"
-    },
-    "requiredBounces": 2,
-    "wallPurpose": [],
-    "decoyCount": 0,
-    "tutorial": "",
-    "rules": "Leve cada cor ao alvo sem cruzar os feixes.",
-    "number": 151,
-    "campaignNumber": 151,
-    "campaignBand": "basic",
-    "stage": 4,
-    "stageName": "Combinar descobertas"
-  },
-  {
-    "sources": [
-      {
-        "x": 30,
-        "y": 100,
-        "angle": 0,
-        "color": "gold"
-      },
-      {
-        "x": 770,
-        "y": 110,
-        "angle": 180,
-        "color": "blue"
-      },
-      {
-        "x": 400,
-        "y": 440,
-        "angle": -90,
-        "color": "pink"
-      }
-    ],
-    "targets": [
-      {
-        "x": 633.9,
-        "y": 324.7,
-        "radius": 22,
-        "color": "gold"
-      },
-      {
-        "x": 91.7,
-        "y": 335.5,
-        "radius": 22,
-        "color": "blue"
-      },
-      {
-        "x": 665,
-        "y": 261.7,
-        "radius": 22,
-        "color": "pink"
-      }
-    ],
-    "portals": [
-      {
-        "id": "p0a",
-        "pairId": "p0b",
-        "x": 384.1,
-        "y": 88.4,
-        "radius": 16,
-        "colors": [
-          "gold"
-        ],
-        "label": "A"
-      },
-      {
-        "id": "p0b",
-        "pairId": "p0a",
-        "x": 487.2,
-        "y": 334.4,
-        "radius": 16,
-        "colors": [
-          "gold"
-        ],
-        "label": "A"
-      },
-      {
-        "id": "p1a",
-        "pairId": "p1b",
-        "x": 443.4,
-        "y": 157.1,
-        "radius": 16,
-        "colors": [
-          "blue"
-        ],
-        "label": "B"
-      },
-      {
-        "id": "p1b",
-        "pairId": "p1a",
-        "x": 231.8,
-        "y": 290.5,
+        "x": 52.2,
+        "y": 395.5,
         "radius": 16,
         "colors": [
           "blue"
@@ -17693,8 +17577,8 @@ export const lightLevels = [
       {
         "id": "p2a",
         "pairId": "p2b",
-        "x": 63.8,
-        "y": 153.6,
+        "x": 725.3,
+        "y": 124.1,
         "radius": 16,
         "colors": [
           "pink"
@@ -17704,8 +17588,8 @@ export const lightLevels = [
       {
         "id": "p2b",
         "pairId": "p2a",
-        "x": 749.4,
-        "y": 293.4,
+        "x": 134,
+        "y": 329.6,
         "radius": 16,
         "colors": [
           "pink"
@@ -17719,35 +17603,193 @@ export const lightLevels = [
         "x": 210,
         "y": 100,
         "length": 124.8,
-        "angle": 29.1
+        "angle": -17.6
       },
       {
         "type": "mirror",
         "x": 590,
-        "y": 110,
+        "y": 360,
         "length": 124.8,
-        "angle": 18.8
+        "angle": 43.1
       },
       {
         "type": "mirror",
         "x": 400,
-        "y": 280,
+        "y": 210,
         "length": 124.8,
-        "angle": -16
+        "angle": -36.5
       }
     ],
-    "id": "light-v4-deduction-open-017",
-    "name": "Consequência 16",
+    "id": "light-v5-deduction-open-030-reauthored",
+    "name": "Consequência 21",
     "hint": "Uma escolha pode decidir os caminhos das outras cores.",
     "solution": [
-      -1.9,
-      -12.2,
-      -47
+      -48.6,
+      12.1,
+      -67.5
     ],
-    "sourceAngle": 0,
+    "sourceAngle": -102,
     "target": {
-      "x": 633.9,
-      "y": 324.7,
+      "x": 663,
+      "y": 138.5,
+      "radius": 22,
+      "color": "gold"
+    },
+    "requiredBounces": 3,
+    "wallPurpose": [],
+    "decoyCount": 0,
+    "tutorial": "",
+    "rules": "Leve cada cor ao alvo sem cruzar os feixes.",
+    "number": 151,
+    "campaignNumber": 151,
+    "campaignBand": "basic",
+    "stage": 4,
+    "stageName": "Combinar descobertas"
+  },
+  {
+    "sources": [
+      {
+        "x": 249.61472404705984,
+        "y": 403.0271052688974,
+        "angle": -106,
+        "color": "gold"
+      },
+      {
+        "x": 625.0511581728117,
+        "y": 288.24825237348267,
+        "angle": 262,
+        "color": "blue"
+      },
+      {
+        "x": 456.0487052511749,
+        "y": 150.48718994803517,
+        "angle": 86,
+        "color": "pink"
+      }
+    ],
+    "targets": [
+      {
+        "x": 449,
+        "y": 208.8,
+        "radius": 22,
+        "color": "gold"
+      },
+      {
+        "x": 314.9,
+        "y": 209.7,
+        "radius": 22,
+        "color": "blue"
+      },
+      {
+        "x": 158.5,
+        "y": 56.6,
+        "radius": 22,
+        "color": "pink"
+      }
+    ],
+    "portals": [
+      {
+        "id": "p0a",
+        "pairId": "p0b",
+        "x": 284,
+        "y": 297.1,
+        "radius": 16,
+        "colors": [
+          "gold"
+        ],
+        "label": "A"
+      },
+      {
+        "id": "p0b",
+        "pairId": "p0a",
+        "x": 373.5,
+        "y": 148.5,
+        "radius": 16,
+        "colors": [
+          "gold"
+        ],
+        "label": "A"
+      },
+      {
+        "id": "p1a",
+        "pairId": "p1b",
+        "x": 585.7,
+        "y": 214.1,
+        "radius": 16,
+        "colors": [
+          "blue"
+        ],
+        "label": "B"
+      },
+      {
+        "id": "p1b",
+        "pairId": "p1a",
+        "x": 331,
+        "y": 91.9,
+        "radius": 16,
+        "colors": [
+          "blue"
+        ],
+        "label": "B"
+      },
+      {
+        "id": "p2a",
+        "pairId": "p2b",
+        "x": 536.1,
+        "y": 270.6,
+        "radius": 16,
+        "colors": [
+          "pink"
+        ],
+        "label": "C"
+      },
+      {
+        "id": "p2b",
+        "pairId": "p2a",
+        "x": 115.2,
+        "y": 108.6,
+        "radius": 16,
+        "colors": [
+          "pink"
+        ],
+        "label": "C"
+      }
+    ],
+    "objects": [
+      {
+        "type": "mirror",
+        "x": 200,
+        "y": 230,
+        "length": 124.8,
+        "angle": -2.7
+      },
+      {
+        "type": "mirror",
+        "x": 600,
+        "y": 110,
+        "length": 124.8,
+        "angle": 30.9
+      },
+      {
+        "type": "mirror",
+        "x": 470,
+        "y": 350,
+        "length": 124.8,
+        "angle": 5.6
+      }
+    ],
+    "id": "light-v5-deduction-open-017-reauthored",
+    "name": "Acordo de trajetos 54",
+    "hint": "Compare os caminhos completos, não apenas cada chegada isolada.",
+    "solution": [
+      -33.7,
+      -0.1,
+      -25.4
+    ],
+    "sourceAngle": -106,
+    "target": {
+      "x": 449,
+      "y": 208.8,
       "radius": 22,
       "color": "gold"
     },
@@ -17872,21 +17914,21 @@ export const lightLevels = [
   {
     "sources": [
       {
-        "x": 30,
-        "y": 100,
-        "angle": 0,
+        "x": 246.28828433995017,
+        "y": 245.54435894139948,
+        "angle": -104,
         "color": "gold"
       },
       {
-        "x": 770,
-        "y": 110,
-        "angle": 180,
+        "x": 440.821715694759,
+        "y": 125.67926949014802,
+        "angle": 354,
         "color": "blue"
       },
       {
-        "x": 400,
-        "y": 440,
-        "angle": -90,
+        "x": 558.4428909986513,
+        "y": 257.7323038463895,
+        "angle": -188,
         "color": "pink"
       }
     ],
@@ -17984,32 +18026,32 @@ export const lightLevels = [
         "x": 210,
         "y": 100,
         "length": 124.8,
-        "angle": 27
+        "angle": -25
       },
       {
         "type": "mirror",
         "x": 590,
         "y": 110,
         "length": 124.8,
-        "angle": -28.6
+        "angle": 58.4
       },
       {
         "type": "mirror",
         "x": 400,
         "y": 280,
         "length": 124.8,
-        "angle": -67.2
+        "angle": 63.8
       }
     ],
-    "id": "light-v4-deduction-open-016",
+    "id": "light-v5-deduction-open-016",
     "name": "Consequência 15",
     "hint": "Uma escolha pode decidir os caminhos das outras cores.",
     "solution": [
-      -4,
-      -59.6,
-      81.8
+      -56,
+      27.4,
+      32.8
     ],
-    "sourceAngle": 0,
+    "sourceAngle": -104,
     "target": {
       "x": 428.2,
       "y": 69.2,
@@ -18110,40 +18152,40 @@ export const lightLevels = [
   {
     "sources": [
       {
-        "x": 30,
-        "y": 100,
-        "angle": 0,
+        "x": 285.24443153164714,
+        "y": 306.73237657289985,
+        "angle": -110,
         "color": "gold"
       },
       {
-        "x": 770,
-        "y": 360,
-        "angle": 180,
+        "x": 330.1583849750351,
+        "y": 369.0738691426502,
+        "angle": 358,
         "color": "blue"
       },
       {
-        "x": 400,
-        "y": 30,
-        "angle": 90,
+        "x": 431.25667198004743,
+        "y": 32.73460445780256,
+        "angle": 100,
         "color": "pink"
       }
     ],
     "targets": [
       {
-        "x": 326.4,
-        "y": 329.8,
+        "x": 394.3,
+        "y": 353.6,
         "radius": 22,
         "color": "gold"
       },
       {
-        "x": 262,
-        "y": 264.4,
+        "x": 123.6,
+        "y": 292.9,
         "radius": 22,
         "color": "blue"
       },
       {
-        "x": 492.2,
-        "y": 407.7,
+        "x": 740.9,
+        "y": 205.7,
         "radius": 22,
         "color": "pink"
       }
@@ -18152,8 +18194,8 @@ export const lightLevels = [
       {
         "id": "p0a",
         "pairId": "p0b",
-        "x": 476.2,
-        "y": 82.3,
+        "x": 544.7,
+        "y": 148.2,
         "radius": 16,
         "colors": [
           "gold"
@@ -18163,8 +18205,8 @@ export const lightLevels = [
       {
         "id": "p0b",
         "pairId": "p0a",
-        "x": 152.4,
-        "y": 341.4,
+        "x": 192.8,
+        "y": 324.6,
         "radius": 16,
         "colors": [
           "gold"
@@ -18174,8 +18216,8 @@ export const lightLevels = [
       {
         "id": "p1a",
         "pairId": "p1b",
-        "x": 659.5,
-        "y": 258.5,
+        "x": 684.3,
+        "y": 256,
         "radius": 16,
         "colors": [
           "blue"
@@ -18185,8 +18227,8 @@ export const lightLevels = [
       {
         "id": "p1b",
         "pairId": "p1a",
-        "x": 179.9,
-        "y": 384.4,
+        "x": 70.7,
+        "y": 351.2,
         "radius": 16,
         "colors": [
           "blue"
@@ -18196,8 +18238,8 @@ export const lightLevels = [
       {
         "id": "p2a",
         "pairId": "p2b",
-        "x": 359.6,
-        "y": 385,
+        "x": 676.2,
+        "y": 144.2,
         "radius": 16,
         "colors": [
           "pink"
@@ -18207,8 +18249,8 @@ export const lightLevels = [
       {
         "id": "p2b",
         "pairId": "p2a",
-        "x": 522.2,
-        "y": 277.6,
+        "x": 574.7,
+        "y": 245.3,
         "radius": 16,
         "colors": [
           "pink"
@@ -18222,35 +18264,35 @@ export const lightLevels = [
         "x": 210,
         "y": 100,
         "length": 124.8,
-        "angle": 62.6
+        "angle": 3
       },
       {
         "type": "mirror",
         "x": 590,
         "y": 360,
         "length": 124.8,
-        "angle": -86.8
+        "angle": 6.1
       },
       {
         "type": "mirror",
         "x": 400,
         "y": 210,
         "length": 124.8,
-        "angle": -71.5
+        "angle": 80.6
       }
     ],
-    "id": "light-v4-deduction-open-052",
-    "name": "Acordo de trajetos 51",
+    "id": "light-v5-deduction-open-052-reauthored",
+    "name": "Acordo de trajetos 55",
     "hint": "Compare os caminhos completos, não apenas cada chegada isolada.",
     "solution": [
-      31.6,
-      62.2,
-      77.5
+      -28,
+      -24.9,
+      49.6
     ],
-    "sourceAngle": 0,
+    "sourceAngle": -110,
     "target": {
-      "x": 326.4,
-      "y": 329.8,
+      "x": 394.3,
+      "y": 353.6,
       "radius": 22,
       "color": "gold"
     },
@@ -18516,50 +18558,50 @@ export const lightLevels = [
     "stageName": "Combinar descobertas"
   },
   {
-    "id": "light-v4-open-chain-001",
+    "id": "light-v5-open-chain-001",
     "name": "Compatibilidade após a poda",
     "hint": "Uma alternativa pode decidir a passagem de uma segunda cor e limitar a terceira.",
     "width": 800,
     "height": 460,
     "objects": [
       {
-        "x": 435.3,
-        "y": 81.4,
+        "x": 163.6,
+        "y": 89.7,
         "type": "mirror",
         "length": 124.8,
-        "angle": -50.8
+        "angle": -80.2
       },
       {
-        "x": 551.2,
-        "y": 176.1,
+        "x": 549.2,
+        "y": 108.4,
         "type": "mirror",
         "length": 124.8,
-        "angle": -6.4
+        "angle": 4.1
       },
       {
-        "x": 545.1,
-        "y": 361.8,
+        "x": 626.7,
+        "y": 394,
         "type": "mirror",
         "length": 124.8,
-        "angle": -2.8
+        "angle": -56.3
       },
       {
-        "x": 412.1,
-        "y": 334,
-        "type": "mirror",
-        "length": 124.8,
-        "angle": 0
-      },
-      {
-        "x": 259.6,
-        "y": 128.6,
+        "x": 508.3,
+        "y": 282.6,
         "type": "mirror",
         "length": 124.8,
         "angle": 0
       },
       {
-        "x": 208.1,
-        "y": 284.5,
+        "x": 216.5,
+        "y": 265.5,
+        "type": "mirror",
+        "length": 124.8,
+        "angle": 0
+      },
+      {
+        "x": 389.9,
+        "y": 357.9,
         "type": "mirror",
         "length": 124.8,
         "angle": 0
@@ -18567,57 +18609,57 @@ export const lightLevels = [
     ],
     "sources": [
       {
-        "x": 775,
-        "y": 81.4,
-        "angle": 180,
+        "x": 775.4,
+        "y": 68.2,
+        "angle": 177.98732832616687,
         "color": "gold"
       },
       {
-        "x": 775,
-        "y": 176.1,
-        "angle": 180,
+        "x": 771.8,
+        "y": 358.4,
+        "angle": -131.68186860226015,
         "color": "blue"
       },
       {
-        "x": 25,
-        "y": 361.8,
-        "angle": 0,
+        "x": 105.5,
+        "y": 423.3,
+        "angle": -3.217577177168736,
         "color": "pink"
       }
     ],
     "targets": [
       {
-        "x": 469.3,
-        "y": 247.1,
+        "x": 469.6,
+        "y": 210.5,
         "radius": 22,
         "color": "gold"
       },
       {
-        "x": 344.5,
-        "y": 222.9,
+        "x": 366.7,
+        "y": 261.8,
         "radius": 22,
         "color": "blue"
       },
       {
-        "x": 690.2,
-        "y": 347.7,
+        "x": 558.3,
+        "y": 198.5,
         "radius": 22,
         "color": "pink"
       }
     ],
     "portals": [],
     "solution": [
-      -20.9,
-      -6.4,
-      -2.8,
+      -66.1,
+      4.1,
+      -56.3,
       0,
       0,
-      65
+      -5.9
     ],
-    "sourceAngle": 180,
+    "sourceAngle": 177.98732832616687,
     "target": {
-      "x": 469.3,
-      "y": 247.1,
+      "x": 469.6,
+      "y": 210.5,
       "radius": 22,
       "color": "gold"
     },
@@ -18732,21 +18774,21 @@ export const lightLevels = [
   {
     "sources": [
       {
-        "x": 30,
-        "y": 100,
-        "angle": 0,
+        "x": 222.55616527394255,
+        "y": 279.5615290467683,
+        "angle": -94,
         "color": "gold"
       },
       {
-        "x": 770,
-        "y": 110,
-        "angle": 180,
+        "x": 757.1247785185003,
+        "y": 309.17155521093423,
+        "angle": 230,
         "color": "blue"
       },
       {
-        "x": 400,
-        "y": 440,
-        "angle": -90,
+        "x": 329.57926558211636,
+        "y": 412.44213892883903,
+        "angle": -62,
         "color": "pink"
       }
     ],
@@ -18844,32 +18886,32 @@ export const lightLevels = [
         "x": 210,
         "y": 100,
         "length": 124.8,
-        "angle": 40.5
+        "angle": -6.5
       },
       {
         "type": "mirror",
         "x": 590,
         "y": 110,
         "length": 124.8,
-        "angle": 30.4
+        "angle": 55.4
       },
       {
         "type": "mirror",
         "x": 400,
         "y": 280,
         "length": 124.8,
-        "angle": -23
+        "angle": -9
       }
     ],
-    "id": "light-v4-deduction-open-013",
+    "id": "light-v5-deduction-open-013",
     "name": "Consequência 12",
     "hint": "Uma escolha pode decidir os caminhos das outras cores.",
     "solution": [
-      9.5,
-      -0.6,
-      -54
+      -37.5,
+      24.4,
+      -40
     ],
-    "sourceAngle": 0,
+    "sourceAngle": -94,
     "target": {
       "x": 411.6,
       "y": 169.8,
@@ -18978,96 +19020,96 @@ export const lightLevels = [
     "stageName": "Combinar descobertas"
   },
   {
-    "id": "light-v4-open-302",
+    "id": "light-v5-open-302",
     "name": "Uma metade diferente",
     "hint": "As peças se correspondem, mas a posição dos alvos não.",
     "width": 800,
     "height": 460,
     "objects": [
       {
-        "x": 605.2,
-        "y": 340,
+        "x": 224.6,
+        "y": 372.7,
         "type": "mirror",
         "length": 124.8,
-        "angle": 8.8
+        "angle": 27.2
       },
       {
-        "x": 194.8,
-        "y": 120,
+        "x": 575.4,
+        "y": 87.3,
         "type": "mirror",
         "length": 124.8,
-        "angle": 6.6
+        "angle": 36.7
       },
       {
-        "x": 339.8,
-        "y": 153.8,
-        "type": "mirror",
-        "length": 124.8,
-        "angle": 32.4
-      },
-      {
-        "x": 460.2,
-        "y": 306.2,
-        "type": "mirror",
-        "length": 124.8,
-        "angle": 11.2
-      },
-      {
-        "x": 510.8,
-        "y": 104.7,
+        "x": 405.1,
+        "y": 108.8,
         "type": "mirror",
         "length": 124.8,
         "angle": 0
       },
       {
-        "x": 289.2,
-        "y": 355.3,
+        "x": 394.9,
+        "y": 351.2,
         "type": "mirror",
         "length": 124.8,
         "angle": 0
+      },
+      {
+        "x": 615.2,
+        "y": 255.8,
+        "type": "mirror",
+        "length": 124.8,
+        "angle": 89.9
+      },
+      {
+        "x": 184.8,
+        "y": 204.2,
+        "type": "mirror",
+        "length": 124.8,
+        "angle": 85.1
       }
     ],
     "sources": [
       {
-        "x": 775,
-        "y": 340,
-        "angle": 180,
+        "x": 224.6,
+        "y": 25,
+        "angle": 90,
         "color": "gold"
       },
       {
-        "x": 25,
-        "y": 120,
-        "angle": 0,
+        "x": 575.4,
+        "y": 435,
+        "angle": -90,
         "color": "blue"
       }
     ],
     "targets": [
       {
-        "x": 223.2,
-        "y": 219.3,
+        "x": 518.5,
+        "y": 162.8,
         "radius": 22,
         "color": "gold"
       },
       {
-        "x": 576.8,
-        "y": 195.7,
+        "x": 281.5,
+        "y": 252.2,
         "radius": 22,
         "color": "blue"
       }
     ],
     "portals": [],
     "solution": [
-      17.5,
-      -1.4,
-      2.9,
+      -6.6,
+      -6.6,
       0,
-      25.6,
-      0
+      0,
+      -51.3,
+      -55.2
     ],
-    "sourceAngle": 180,
+    "sourceAngle": 90,
     "target": {
-      "x": 223.2,
-      "y": 219.3,
+      "x": 518.5,
+      "y": 162.8,
       "radius": 22,
       "color": "gold"
     },
@@ -19089,40 +19131,40 @@ export const lightLevels = [
         "x": 200,
         "y": 86,
         "length": 124.8,
-        "angle": 14.2
+        "angle": -87.8
       },
       {
         "type": "mirror",
         "x": 200,
         "y": 230,
         "length": 124.8,
-        "angle": -7.6
+        "angle": 8.4
       },
       {
         "type": "mirror",
         "x": 200,
         "y": 374,
         "length": 124.8,
-        "angle": -8.2
+        "angle": 81.8
       }
     ],
     "sources": [
       {
-        "x": 30,
-        "y": 86,
-        "angle": 0,
+        "x": 337.0318186463901,
+        "y": 24.989503538629933,
+        "angle": 156,
         "color": "gold"
       },
       {
-        "x": 30,
-        "y": 230,
-        "angle": 0,
+        "x": 64.31230461497185,
+        "y": 145.21291772268722,
+        "angle": 32,
         "color": "blue"
       },
       {
-        "x": 30,
+        "x": 350,
         "y": 374,
-        "angle": 0,
+        "angle": -180,
         "color": "pink"
       }
     ],
@@ -19216,15 +19258,15 @@ export const lightLevels = [
     ],
     "width": 800,
     "height": 460,
-    "id": "light-v4-portal-025",
+    "id": "light-v5-portal-025",
     "name": "O salto que não cruza 025",
     "hint": "Separe os trechos iluminados do salto entre portais.",
     "solution": [
-      1.5,
-      -7.6,
-      -8.2
+      79.5,
+      8.4,
+      81.8
     ],
-    "sourceAngle": 0,
+    "sourceAngle": 156,
     "target": {
       "x": 725,
       "y": 369,
@@ -19245,21 +19287,21 @@ export const lightLevels = [
   {
     "sources": [
       {
-        "x": 30,
-        "y": 230,
-        "angle": 0,
+        "x": 287.67422935781553,
+        "y": 50.241190740166616,
+        "angle": 116,
         "color": "gold"
       },
       {
-        "x": 770,
-        "y": 110,
-        "angle": 180,
+        "x": 483.3744084662052,
+        "y": 201.1178983481975,
+        "angle": 322,
         "color": "blue"
       },
       {
-        "x": 470,
-        "y": 30,
-        "angle": 90,
+        "x": 458.83216105519966,
+        "y": 30.194935353889377,
+        "angle": 88,
         "color": "pink"
       }
     ],
@@ -19357,32 +19399,32 @@ export const lightLevels = [
         "x": 200,
         "y": 230,
         "length": 124.8,
-        "angle": 19.1
+        "angle": 77.1
       },
       {
         "type": "mirror",
         "x": 600,
         "y": 110,
         "length": 124.8,
-        "angle": -25.4
+        "angle": 45.6
       },
       {
         "type": "mirror",
         "x": 470,
         "y": 350,
         "length": 124.8,
-        "angle": 24.9
+        "angle": 23.9
       }
     ],
-    "id": "light-v4-deduction-open-053",
+    "id": "light-v5-deduction-open-053",
     "name": "Acordo de trajetos 52",
     "hint": "Compare os caminhos completos, não apenas cada chegada isolada.",
     "solution": [
-      -11.9,
-      -56.4,
-      -6.1
+      46.1,
+      14.6,
+      -7.1
     ],
-    "sourceAngle": 0,
+    "sourceAngle": 116,
     "target": {
       "x": 655,
       "y": 300.5,
@@ -19408,9 +19450,9 @@ export const lightLevels = [
     "family": "autoral-17",
     "sources": [
       {
-        "x": 90,
-        "y": 330,
-        "angle": 0,
+        "x": 114.19941480818639,
+        "y": 248.30414474774594,
+        "angle": 33,
         "color": "gold"
       }
     ],
@@ -19429,7 +19471,7 @@ export const lightLevels = [
         "x": 240,
         "y": 330,
         "length": 124.8,
-        "angle": -44.7
+        "angle": -28.2
       },
       {
         "type": "mirror",
@@ -19449,10 +19491,10 @@ export const lightLevels = [
       }
     ],
     "solution": [
-      -13.7,
+      2.8,
       89
     ],
-    "sourceAngle": 0,
+    "sourceAngle": 33,
     "target": {
       "x": 280,
       "y": 100,
@@ -19466,7 +19508,7 @@ export const lightLevels = [
     "decoyCount": 0,
     "tutorial": "",
     "rules": "Leve a luz ao alvo.",
-    "id": "light-v3-17",
+    "id": "light-v5-legacy-17",
     "campaignNumber": 166,
     "campaignBand": "basic",
     "stage": 4,
@@ -19572,40 +19614,40 @@ export const lightLevels = [
   {
     "sources": [
       {
-        "x": 30,
-        "y": 110,
-        "angle": 0,
+        "x": 495.4423259036624,
+        "y": 162.09445330007907,
+        "angle": -170,
         "color": "gold"
       },
       {
-        "x": 30,
-        "y": 350,
-        "angle": 0,
+        "x": 32.242128958775965,
+        "y": 101.28872823348749,
+        "angle": 56,
         "color": "blue"
       },
       {
-        "x": 380,
-        "y": 440,
-        "angle": -90,
+        "x": 400.8759651440098,
+        "y": 433.54021031123557,
+        "angle": -98,
         "color": "pink"
       }
     ],
     "targets": [
       {
-        "x": 740,
-        "y": 350,
+        "x": 650,
+        "y": 272.5,
         "radius": 22,
         "color": "gold"
       },
       {
-        "x": 740,
-        "y": 110,
+        "x": 650,
+        "y": 187.5,
         "radius": 22,
         "color": "blue"
       },
       {
-        "x": 510.6,
-        "y": 282.5,
+        "x": 743.6,
+        "y": 305.9,
         "radius": 22,
         "color": "pink"
       }
@@ -19658,8 +19700,8 @@ export const lightLevels = [
       {
         "id": "pinka",
         "pairId": "pinkb",
-        "x": 434.9,
-        "y": 375.6,
+        "x": 466.4,
+        "y": 403.9,
         "radius": 16,
         "colors": [
           "pink"
@@ -19669,8 +19711,8 @@ export const lightLevels = [
       {
         "id": "pinkb",
         "pairId": "pinka",
-        "x": 416.9,
-        "y": 127.8,
+        "x": 697.4,
+        "y": 242.3,
         "radius": 16,
         "colors": [
           "pink"
@@ -19684,51 +19726,51 @@ export const lightLevels = [
         "y": 110,
         "type": "mirror",
         "length": 124.8,
-        "angle": 24
+        "angle": -61
       },
       {
         "x": 200,
         "y": 350,
         "type": "mirror",
         "length": 124.8,
-        "angle": 16.4
+        "angle": 44.4
       },
       {
         "x": 650,
         "y": 362.5,
         "type": "mirror",
         "length": 124.8,
-        "angle": 20
+        "angle": -21
       },
       {
         "x": 650,
         "y": 97.5,
         "type": "mirror",
         "length": 124.8,
-        "angle": 20.3
+        "angle": 61.3
       },
       {
         "type": "mirror",
         "x": 380,
         "y": 285,
         "length": 124.8,
-        "angle": -14.5
+        "angle": -6.7
       }
     ],
-    "id": "light-v4-deduction-symmetry-01-filter",
+    "id": "light-v5-deduction-symmetry-01-filter-reauthored",
     "name": "A entrada diferente",
     "hint": "Compare a marca da entrada com a fonte que se aproxima.",
     "solution": [
-      14.6,
-      7,
-      10.7,
-      11,
-      -45.5
+      -70.4,
+      35,
+      -30.3,
+      52,
+      -22
     ],
-    "sourceAngle": 0,
+    "sourceAngle": -170,
     "target": {
-      "x": 740,
-      "y": 350,
+      "x": 650,
+      "y": 272.5,
       "radius": 22,
       "color": "gold"
     },
@@ -19746,40 +19788,40 @@ export const lightLevels = [
   {
     "sources": [
       {
-        "x": 30,
-        "y": 100,
-        "angle": 0,
+        "x": 69.99999999999997,
+        "y": 342.4871130596428,
+        "angle": -60,
         "color": "gold"
       },
       {
-        "x": 770,
-        "y": 110,
-        "angle": 180,
+        "x": 645.6230589874905,
+        "y": 188.80982706687234,
+        "angle": 108,
         "color": "blue"
       },
       {
-        "x": 400,
-        "y": 440,
-        "angle": -90,
+        "x": 561.7829283338501,
+        "y": 131.09319357796608,
+        "angle": 154,
         "color": "pink"
       }
     ],
     "targets": [
       {
-        "x": 591.7,
-        "y": 329,
+        "x": 756.4,
+        "y": 170.1,
         "radius": 22,
         "color": "gold"
       },
       {
-        "x": 172.6,
-        "y": 263.1,
+        "x": 561.7,
+        "y": 78.1,
         "radius": 22,
         "color": "blue"
       },
       {
-        "x": 96.6,
-        "y": 86.8,
+        "x": 506.5,
+        "y": 296.3,
         "radius": 22,
         "color": "pink"
       }
@@ -19788,8 +19830,8 @@ export const lightLevels = [
       {
         "id": "p0a",
         "pairId": "p0b",
-        "x": 288.6,
-        "y": 189.8,
+        "x": 267.5,
+        "y": 396,
         "radius": 16,
         "colors": [
           "gold"
@@ -19799,8 +19841,8 @@ export const lightLevels = [
       {
         "id": "p0b",
         "pairId": "p0a",
-        "x": 535.3,
-        "y": 264.6,
+        "x": 741.4,
+        "y": 93.2,
         "radius": 16,
         "colors": [
           "gold"
@@ -19810,8 +19852,8 @@ export const lightLevels = [
       {
         "id": "p1a",
         "pairId": "p1b",
-        "x": 486.1,
-        "y": 186.6,
+        "x": 232.8,
+        "y": 322.5,
         "radius": 16,
         "colors": [
           "blue"
@@ -19821,8 +19863,8 @@ export const lightLevels = [
       {
         "id": "p1b",
         "pairId": "p1a",
-        "x": 244.2,
-        "y": 210.3,
+        "x": 630.2,
+        "y": 85.3,
         "radius": 16,
         "colors": [
           "blue"
@@ -19832,8 +19874,8 @@ export const lightLevels = [
       {
         "id": "p2a",
         "pairId": "p2b",
-        "x": 321,
-        "y": 112.2,
+        "x": 404.7,
+        "y": 359.3,
         "radius": 16,
         "colors": [
           "pink"
@@ -19843,8 +19885,8 @@ export const lightLevels = [
       {
         "id": "p2b",
         "pairId": "p2a",
-        "x": 144.7,
-        "y": 189.1,
+        "x": 500.8,
+        "y": 115.6,
         "radius": 16,
         "colors": [
           "pink"
@@ -19858,35 +19900,35 @@ export const lightLevels = [
         "x": 210,
         "y": 100,
         "length": 124.8,
-        "angle": 55.4
+        "angle": 40.5
       },
       {
         "type": "mirror",
         "x": 590,
-        "y": 110,
+        "y": 360,
         "length": 124.8,
-        "angle": 12.8
+        "angle": 37.1
       },
       {
         "type": "mirror",
         "x": 400,
-        "y": 280,
+        "y": 210,
         "length": 124.8,
-        "angle": -71.6
+        "angle": -52.5
       }
     ],
-    "id": "light-v4-deduction-open-054",
-    "name": "Acordo de trajetos 53",
+    "id": "light-v5-deduction-open-054-reauthored",
+    "name": "Acordo de trajetos 56",
     "hint": "Compare os caminhos completos, não apenas cada chegada isolada.",
     "solution": [
-      24.4,
-      -18.2,
-      77.4
+      9.5,
+      6.1,
+      -83.5
     ],
-    "sourceAngle": 0,
+    "sourceAngle": -60,
     "target": {
-      "x": 591.7,
-      "y": 329,
+      "x": 756.4,
+      "y": 170.1,
       "radius": 22,
       "color": "gold"
     },
@@ -19908,10 +19950,10 @@ export const lightLevels = [
     "family": "seletivo-como-obstaculo-e-ponte",
     "sources": [
       {
-        "x": 60,
-        "y": 100,
+        "x": 365.27695991665496,
+        "y": 385.1220877402777,
         "color": "gold",
-        "angle": 0
+        "angle": -117
       },
       {
         "x": 30,
@@ -19965,7 +20007,7 @@ export const lightLevels = [
         "x": 220,
         "y": 100,
         "length": 124.8,
-        "angle": 69
+        "angle": 10.5
       },
       {
         "type": "mirror",
@@ -20001,13 +20043,13 @@ export const lightLevels = [
       }
     ],
     "solution": [
-      45,
+      -13.5,
       45,
       -45,
       -18.4,
       -45
     ],
-    "sourceAngle": 0,
+    "sourceAngle": -117,
     "target": {
       "x": 540,
       "y": 230,
@@ -20020,7 +20062,7 @@ export const lightLevels = [
     "hint": "Compare o acesso azul com o contorno inferior.",
     "tutorial": "",
     "rules": "Cada cor no seu alvo, sem cruzar outras trajetórias.",
-    "id": "light-v3-83",
+    "id": "light-v5-legacy-83",
     "campaignNumber": 170,
     "campaignBand": "basic",
     "stage": 4,
@@ -20034,9 +20076,9 @@ export const lightLevels = [
     "family": "autoral-14",
     "sources": [
       {
-        "x": 82,
-        "y": 120,
-        "angle": 0,
+        "x": 83.82212559191962,
+        "y": 143.15230082595417,
+        "angle": -9,
         "color": "gold"
       }
     ],
@@ -20055,7 +20097,7 @@ export const lightLevels = [
         "x": 230,
         "y": 120,
         "length": 124.8,
-        "angle": -5.5
+        "angle": -10
       },
       {
         "type": "mirror",
@@ -20091,11 +20133,11 @@ export const lightLevels = [
       }
     ],
     "solution": [
-      25.5,
+      21,
       7.1,
       26.6
     ],
-    "sourceAngle": 0,
+    "sourceAngle": -9,
     "target": {
       "x": 600,
       "y": 290,
@@ -20110,7 +20152,7 @@ export const lightLevels = [
     "decoyCount": 0,
     "tutorial": "",
     "rules": "Leve a luz ao alvo.",
-    "id": "light-v3-14",
+    "id": "light-v5-legacy-14",
     "campaignNumber": 171,
     "campaignBand": "basic",
     "stage": 4,
@@ -20119,40 +20161,40 @@ export const lightLevels = [
   {
     "sources": [
       {
-        "x": 30,
-        "y": 110,
-        "angle": 0,
+        "x": 495.4423259036624,
+        "y": 162.09445330007907,
+        "angle": -170,
         "color": "gold"
       },
       {
-        "x": 30,
-        "y": 350,
-        "angle": 0,
+        "x": 32.242128958775965,
+        "y": 101.28872823348749,
+        "angle": 56,
         "color": "blue"
       },
       {
-        "x": 380,
-        "y": 440,
-        "angle": -90,
+        "x": 400.8759651440098,
+        "y": 433.54021031123557,
+        "angle": -98,
         "color": "pink"
       }
     ],
     "targets": [
       {
-        "x": 740,
-        "y": 350,
+        "x": 650,
+        "y": 272.5,
         "radius": 22,
         "color": "gold"
       },
       {
-        "x": 740,
-        "y": 110,
+        "x": 650,
+        "y": 187.5,
         "radius": 22,
         "color": "blue"
       },
       {
-        "x": 695.1,
-        "y": 220,
+        "x": 568,
+        "y": 308,
         "radius": 22,
         "color": "pink"
       }
@@ -20205,8 +20247,8 @@ export const lightLevels = [
       {
         "id": "pinka",
         "pairId": "pinkb",
-        "x": 498,
-        "y": 309.7,
+        "x": 458.9,
+        "y": 369.1,
         "radius": 16,
         "colors": [
           "pink"
@@ -20216,8 +20258,8 @@ export const lightLevels = [
       {
         "id": "pinkb",
         "pairId": "pinka",
-        "x": 553.5,
-        "y": 190.4,
+        "x": 500,
+        "y": 235.6,
         "radius": 16,
         "colors": [
           "pink"
@@ -20231,51 +20273,51 @@ export const lightLevels = [
         "y": 110,
         "type": "mirror",
         "length": 124.8,
-        "angle": 24
+        "angle": -61
       },
       {
         "x": 200,
         "y": 350,
         "type": "mirror",
         "length": 124.8,
-        "angle": 16.4
+        "angle": 44.4
       },
       {
         "x": 650,
         "y": 362.5,
         "type": "mirror",
         "length": 124.8,
-        "angle": 20
+        "angle": -21
       },
       {
         "x": 650,
         "y": 97.5,
         "type": "mirror",
         "length": 124.8,
-        "angle": 20.3
+        "angle": 61.3
       },
       {
         "type": "mirror",
         "x": 380,
         "y": 285,
         "length": 124.8,
-        "angle": -19.8
+        "angle": -6.7
       }
     ],
-    "id": "light-v4-deduction-symmetry-02-opposite-filter",
+    "id": "light-v5-deduction-symmetry-02-opposite-filter-reauthored",
     "name": "A diferença do outro lado",
     "hint": "Compare a marca da entrada com a fonte que se aproxima.",
     "solution": [
-      -7,
-      -14.6,
-      -11,
-      -10.7,
-      -50.8
+      88,
+      13.4,
+      -52,
+      30.3,
+      -45.5
     ],
-    "sourceAngle": 0,
+    "sourceAngle": -170,
     "target": {
-      "x": 740,
-      "y": 350,
+      "x": 650,
+      "y": 272.5,
       "radius": 22,
       "color": "gold"
     },
@@ -20298,9 +20340,9 @@ export const lightLevels = [
     "family": "autoral-13",
     "sources": [
       {
-        "x": 100,
-        "y": 230,
-        "angle": 0,
+        "x": 124.11542731880104,
+        "y": 140,
+        "angle": 30,
         "color": "gold"
       }
     ],
@@ -20319,7 +20361,7 @@ export const lightLevels = [
         "x": 280,
         "y": 230,
         "length": 124.8,
-        "angle": -47.1
+        "angle": -32.1
       },
       {
         "type": "mirror",
@@ -20339,10 +20381,10 @@ export const lightLevels = [
       }
     ],
     "solution": [
-      -16.1,
+      -1.1,
       28.9
     ],
-    "sourceAngle": 0,
+    "sourceAngle": 30,
     "target": {
       "x": 470,
       "y": 330,
@@ -20356,7 +20398,7 @@ export const lightLevels = [
     "decoyCount": 0,
     "tutorial": "",
     "rules": "Leve a luz ao alvo.",
-    "id": "light-v3-13",
+    "id": "light-v5-legacy-13",
     "campaignNumber": 173,
     "campaignBand": "basic",
     "stage": 4,
@@ -20500,88 +20542,88 @@ export const lightLevels = [
     "stageName": "Combinar descobertas"
   },
   {
-    "id": "light-v4-open-036",
+    "id": "light-v5-open-036",
     "name": "A chegada reservada",
     "hint": "Compare as aproximações do alvo com os trajetos que as outras cores precisam conservar.",
     "width": 800,
     "height": 460,
     "objects": [
       {
-        "x": 301.5,
-        "y": 165.4,
+        "x": 231.4,
+        "y": 66,
         "type": "mirror",
         "length": 124.8,
-        "angle": -21.6
+        "angle": -44.7
       },
       {
-        "x": 288.2,
-        "y": 346.5,
+        "x": 568.1,
+        "y": 394,
         "type": "mirror",
         "length": 124.8,
-        "angle": 71.8
+        "angle": 19.3
       },
       {
-        "x": 544.5,
-        "y": 245.8,
+        "x": 468.8,
+        "y": 299.9,
         "type": "mirror",
         "length": 124.8,
         "angle": 0
       },
       {
-        "x": 607.7,
-        "y": 110.4,
+        "x": 547.6,
+        "y": 80.5,
         "type": "mirror",
         "length": 124.8,
-        "angle": 17.3
+        "angle": -24.6
       },
       {
-        "x": 151.1,
-        "y": 306.2,
+        "x": 283.7,
+        "y": 368.4,
         "type": "mirror",
         "length": 124.8,
-        "angle": -35
+        "angle": -30.5
       }
     ],
     "sources": [
       {
-        "x": 775,
-        "y": 165.4,
-        "angle": 180,
+        "x": 683.8,
+        "y": 149.5,
+        "angle": -169.54254041092912,
         "color": "gold"
       },
       {
-        "x": 775,
-        "y": 346.5,
-        "angle": 180,
+        "x": 774.6,
+        "y": 167.1,
+        "angle": 132.30509496422417,
         "color": "blue"
       }
     ],
     "targets": [
       {
-        "x": 42.1,
-        "y": 361.7,
+        "x": 83.5,
+        "y": 207.1,
         "radius": 22,
         "color": "gold"
       },
       {
-        "x": 644.9,
-        "y": 219.4,
+        "x": 671.8,
+        "y": 202.7,
         "radius": 22,
         "color": "blue"
       }
     ],
     "portals": [],
     "solution": [
-      -21.6,
-      79.3,
-      -18.1,
+      -44.7,
+      -2.1,
+      -81.1,
       0,
-      -35
+      -30.5
     ],
-    "sourceAngle": 180,
+    "sourceAngle": -169.54254041092912,
     "target": {
-      "x": 42.1,
-      "y": 361.7,
+      "x": 83.5,
+      "y": 207.1,
       "radius": 22,
       "color": "gold"
     },
@@ -20603,27 +20645,27 @@ export const lightLevels = [
         "x": 200,
         "y": 110,
         "length": 124.8,
-        "angle": 12.1
+        "angle": -17.9
       },
       {
         "type": "mirror",
         "x": 200,
         "y": 350,
         "length": 124.8,
-        "angle": -12.1
+        "angle": 83.9
       }
     ],
     "sources": [
       {
-        "x": 30,
-        "y": 110,
-        "angle": 0,
+        "x": 44.99999999999997,
+        "y": 378.46787517317597,
+        "angle": -60,
         "color": "gold"
       },
       {
-        "x": 30,
-        "y": 350,
-        "angle": 0,
+        "x": 346.7221401100709,
+        "y": 381.1867536226639,
+        "angle": -168,
         "color": "blue"
       }
     ],
@@ -20755,14 +20797,14 @@ export const lightLevels = [
     ],
     "width": 800,
     "height": 460,
-    "id": "light-v4-portal-026",
+    "id": "light-v5-portal-026",
     "name": "O salto que não cruza 026",
     "hint": "Separe os trechos iluminados do salto entre portais.",
     "solution": [
-      12.1,
-      -2.5
+      -17.9,
+      -86.5
     ],
-    "sourceAngle": 0,
+    "sourceAngle": -60,
     "target": {
       "x": 725,
       "y": 345,
@@ -20781,43 +20823,43 @@ export const lightLevels = [
     "stageName": "Combinar descobertas"
   },
   {
-    "id": "light-v4-open-020",
+    "id": "light-v5-open-020",
     "name": "Compartilhar o vazio",
     "hint": "Cada trajeto funciona sozinho. Compare o espaço que ocupam juntos.",
     "width": 800,
     "height": 460,
     "objects": [
       {
-        "x": 361.4,
-        "y": 256.2,
+        "x": 522.6,
+        "y": 255.5,
         "type": "mirror",
         "length": 124.8,
-        "angle": -53
+        "angle": -51.5
       },
       {
-        "x": 646.5,
-        "y": 167.4,
+        "x": 669.1,
+        "y": 194.4,
         "type": "mirror",
         "length": 124.8,
-        "angle": 47.8
+        "angle": 39.5
       },
       {
-        "x": 156.2,
-        "y": 120,
+        "x": 277,
+        "y": 66,
         "type": "mirror",
         "length": 124.8,
-        "angle": -32.3
+        "angle": -31.7
       },
       {
-        "x": 199.3,
-        "y": 304.3,
+        "x": 86.3,
+        "y": 243.7,
         "type": "mirror",
         "length": 124.8,
         "angle": 0
       },
       {
-        "x": 513.5,
-        "y": 112,
+        "x": 492.6,
+        "y": 113.5,
         "type": "mirror",
         "length": 124.8,
         "angle": 0
@@ -20825,44 +20867,44 @@ export const lightLevels = [
     ],
     "sources": [
       {
-        "x": 25,
-        "y": 256.2,
-        "angle": 0,
+        "x": 71.2,
+        "y": 53.1,
+        "angle": 24.150644053763784,
         "color": "gold"
       },
       {
-        "x": 646.5,
-        "y": 435,
-        "angle": -90,
+        "x": 758.7,
+        "y": 354.8,
+        "angle": -119.18787803393883,
         "color": "blue"
       }
     ],
     "targets": [
       {
-        "x": 335,
-        "y": 164.6,
+        "x": 396.6,
+        "y": 88.9,
         "radius": 22,
         "color": "gold"
       },
       {
-        "x": 50.4,
-        "y": 411.3,
+        "x": 222,
+        "y": 436,
         "radius": 22,
         "color": "blue"
       }
     ],
     "portals": [],
     "solution": [
-      -21.7,
-      33.9,
+      -38.9,
+      16.2,
       0,
       0,
-      60.1
+      46.2
     ],
-    "sourceAngle": 0,
+    "sourceAngle": 24.150644053763784,
     "target": {
-      "x": 335,
-      "y": 164.6,
+      "x": 396.6,
+      "y": 88.9,
       "radius": 22,
       "color": "gold"
     },
@@ -20884,40 +20926,40 @@ export const lightLevels = [
         "x": 200,
         "y": 86,
         "length": 124.8,
-        "angle": 14
+        "angle": -64
       },
       {
         "type": "mirror",
         "x": 200,
         "y": 230,
         "length": 124.8,
-        "angle": -7.8
+        "angle": 12.2
       },
       {
         "type": "mirror",
         "x": 200,
         "y": 374,
         "length": 124.8,
-        "angle": -7.9
+        "angle": 82.1
       }
     ],
     "sources": [
       {
-        "x": 30,
-        "y": 86,
-        "angle": 0,
+        "x": 337.0318186463901,
+        "y": 147.01049646137005,
+        "angle": -156,
         "color": "gold"
       },
       {
-        "x": 30,
-        "y": 230,
-        "angle": 0,
+        "x": 31.470222513824837,
+        "y": 88.58672586896137,
+        "angle": 40,
         "color": "blue"
       },
       {
-        "x": 30,
+        "x": 350,
         "y": 374,
-        "angle": 0,
+        "angle": -180,
         "color": "pink"
       }
     ],
@@ -21011,15 +21053,15 @@ export const lightLevels = [
     ],
     "width": 800,
     "height": 460,
-    "id": "light-v4-portal-016",
+    "id": "light-v5-portal-016",
     "name": "O salto que não cruza 016",
     "hint": "Separe os trechos iluminados do salto entre portais.",
     "solution": [
-      5,
-      -7.8,
-      -7.9
+      -73,
+      12.2,
+      82.1
     ],
-    "sourceAngle": 0,
+    "sourceAngle": -156,
     "target": {
       "x": 725,
       "y": 365,
@@ -21044,40 +21086,40 @@ export const lightLevels = [
         "x": 200,
         "y": 86,
         "length": 124.8,
-        "angle": 14.8
+        "angle": -75.2
       },
       {
         "type": "mirror",
         "x": 200,
         "y": 230,
         "length": 124.8,
-        "angle": -7.4
+        "angle": 12.6
       },
       {
         "type": "mirror",
         "x": 200,
         "y": 374,
         "length": 124.8,
-        "angle": -7.1
+        "angle": 84.9
       }
     ],
     "sources": [
       {
-        "x": 30,
-        "y": 86,
-        "angle": 0,
+        "x": 350,
+        "y": 86.00000000000001,
+        "angle": -180,
         "color": "gold"
       },
       {
-        "x": 30,
-        "y": 230,
-        "angle": 0,
+        "x": 31.470222513824837,
+        "y": 88.58672586896137,
+        "angle": 40,
         "color": "blue"
       },
       {
-        "x": 30,
-        "y": 374,
-        "angle": 0,
+        "x": 419.46409105716134,
+        "y": 389.34642422370763,
+        "angle": -176,
         "color": "pink"
       }
     ],
@@ -21171,15 +21213,15 @@ export const lightLevels = [
     ],
     "width": 800,
     "height": 460,
-    "id": "light-v4-portal-021",
+    "id": "light-v5-portal-021",
     "name": "O salto que não cruza 021",
     "hint": "Separe os trechos iluminados do salto entre portais.",
     "solution": [
-      -2.5,
-      -7.4,
-      -7.1
+      87.5,
+      12.6,
+      84.9
     ],
-    "sourceAngle": 0,
+    "sourceAngle": -180,
     "target": {
       "x": 725,
       "y": 384,
@@ -21198,16 +21240,16 @@ export const lightLevels = [
     "stageName": "Combinar descobertas"
   },
   {
-    "id": "light-v3-44",
+    "id": "light-v5-legacy-44",
     "campaignNumber": 180,
     "name": "Leia as duas chegadas",
     "difficulty": 44,
     "family": "two-44",
     "sources": [
       {
-        "x": 60,
-        "y": 120,
-        "angle": 0,
+        "x": 63.71490787525303,
+        "y": 155.3449874390191,
+        "angle": -12,
         "color": "gold"
       },
       {
@@ -21238,7 +21280,7 @@ export const lightLevels = [
         "x": 230,
         "y": 120,
         "length": 124.8,
-        "angle": 72
+        "angle": 66
       },
       {
         "type": "mirror",
@@ -21272,12 +21314,12 @@ export const lightLevels = [
       }
     ],
     "solution": [
-      45,
+      39,
       45,
       45,
       45
     ],
-    "sourceAngle": 0,
+    "sourceAngle": -12,
     "target": {
       "x": 430,
       "y": 360,
@@ -21295,50 +21337,50 @@ export const lightLevels = [
     "stageName": "Combinar descobertas"
   },
   {
-    "id": "light-v4-open-304",
+    "id": "light-v5-open-304",
     "name": "Uma metade diferente",
     "hint": "As peças se correspondem, mas a posição dos alvos não.",
     "width": 800,
     "height": 460,
     "objects": [
       {
-        "x": 202.6,
-        "y": 367,
+        "x": 574.1,
+        "y": 371.1,
         "type": "mirror",
         "length": 124.8,
-        "angle": -12.1
+        "angle": -34
       },
       {
-        "x": 597.4,
-        "y": 93,
+        "x": 225.9,
+        "y": 88.9,
         "type": "mirror",
         "length": 124.8,
-        "angle": -10.5
+        "angle": 9.7
       },
       {
-        "x": 424.9,
-        "y": 159.3,
+        "x": 166.6,
+        "y": 256.7,
         "type": "mirror",
         "length": 124.8,
-        "angle": -45.8
+        "angle": 51.5
       },
       {
-        "x": 375.1,
-        "y": 300.7,
+        "x": 633.4,
+        "y": 203.3,
         "type": "mirror",
         "length": 124.8,
-        "angle": -16.4
+        "angle": -89.7
       },
       {
-        "x": 635.8,
-        "y": 377.1,
+        "x": 422.4,
+        "y": 78,
         "type": "mirror",
         "length": 124.8,
         "angle": 0
       },
       {
-        "x": 164.2,
-        "y": 82.9,
+        "x": 377.6,
+        "y": 382,
         "type": "mirror",
         "length": 124.8,
         "angle": 0
@@ -21346,51 +21388,51 @@ export const lightLevels = [
     ],
     "sources": [
       {
-        "x": 25,
-        "y": 367,
-        "angle": 0,
+        "x": 574.1,
+        "y": 25,
+        "angle": 90,
         "color": "gold"
       },
       {
-        "x": 775,
-        "y": 93,
-        "angle": 180,
+        "x": 225.89999999999998,
+        "y": 435,
+        "angle": -90,
         "color": "blue"
       }
     ],
     "targets": [
       {
-        "x": 513.1,
-        "y": 227.7,
+        "x": 345,
+        "y": 279,
         "radius": 22,
         "color": "gold"
       },
       {
-        "x": 286.9,
-        "y": 327.3,
+        "x": 455,
+        "y": 276,
         "radius": 22,
         "color": "blue"
       }
     ],
     "portals": [],
     "solution": [
-      -10.5,
-      -18.5,
+      9.7,
+      9.7,
+      70.1,
+      47.4,
       0,
-      -24.5,
-      0,
-      0
+      -11.6
     ],
-    "sourceAngle": 0,
+    "sourceAngle": 90,
     "target": {
-      "x": 513.1,
-      "y": 227.7,
+      "x": 345,
+      "y": 279,
       "radius": 22,
       "color": "gold"
     },
-    "requiredBounces": 3,
+    "requiredBounces": 5,
     "wallPurpose": [],
-    "decoyCount": 3,
+    "decoyCount": 1,
     "tutorial": "",
     "rules": "Leve cada cor ao seu alvo sem cruzar outras cores.",
     "number": 181,
@@ -21406,40 +21448,40 @@ export const lightLevels = [
         "x": 200,
         "y": 86,
         "length": 124.8,
-        "angle": 7.2
+        "angle": -82.8
       },
       {
         "type": "mirror",
         "x": 200,
         "y": 230,
         "length": 124.8,
-        "angle": 7.4
+        "angle": -82.6
       },
       {
         "type": "mirror",
         "x": 200,
         "y": 374,
         "length": 124.8,
-        "angle": -14.2
+        "angle": 75.8
       }
     ],
     "sources": [
       {
-        "x": 30,
-        "y": 86,
-        "angle": 0,
+        "x": 350,
+        "y": 86.00000000000001,
+        "angle": -180,
         "color": "gold"
       },
       {
-        "x": 30,
-        "y": 230,
-        "angle": 0,
+        "x": 350,
+        "y": 230.00000000000003,
+        "angle": -180,
         "color": "blue"
       },
       {
-        "x": 30,
+        "x": 350,
         "y": 374,
-        "angle": 0,
+        "angle": -180,
         "color": "pink"
       }
     ],
@@ -21533,15 +21575,15 @@ export const lightLevels = [
     ],
     "width": 800,
     "height": 460,
-    "id": "light-v4-portal-014",
+    "id": "light-v5-portal-014",
     "name": "O salto que não cruza 014",
     "hint": "Separe os trechos iluminados do salto entre portais.",
     "solution": [
-      7.2,
-      7.4,
-      -0.5
+      -82.8,
+      -82.6,
+      89.5
     ],
-    "sourceAngle": 0,
+    "sourceAngle": -180,
     "target": {
       "x": 725,
       "y": 221,
@@ -21665,21 +21707,21 @@ export const lightLevels = [
   {
     "sources": [
       {
-        "x": 30,
-        "y": 230,
-        "angle": 0,
+        "x": 47.351342691843314,
+        "y": 134.6145324380231,
+        "angle": 32,
         "color": "gold"
       },
       {
-        "x": 770,
-        "y": 110,
-        "angle": 180,
+        "x": 610.4634710616189,
+        "y": 259.6346075389736,
+        "angle": 266,
         "color": "blue"
       },
       {
-        "x": 470,
-        "y": 30,
-        "angle": 90,
+        "x": 437.9901867791849,
+        "y": 122.23834418943883,
+        "angle": 82,
         "color": "pink"
       }
     ],
@@ -21777,32 +21819,32 @@ export const lightLevels = [
         "x": 200,
         "y": 230,
         "length": 124.8,
-        "angle": -86.6
+        "angle": -70.6
       },
       {
         "type": "mirror",
         "x": 600,
         "y": 110,
         "length": 124.8,
-        "angle": -45.3
+        "angle": -2.3
       },
       {
         "type": "mirror",
         "x": 470,
         "y": 350,
         "length": 124.8,
-        "angle": 79.4
+        "angle": 75.4
       }
     ],
-    "id": "light-v4-deduction-open-028",
+    "id": "light-v5-deduction-open-028",
     "name": "Do outro lado 27",
     "hint": "Compare os caminhos completos, não apenas cada chegada isolada.",
     "solution": [
-      62.4,
-      -76.3,
-      48.4
+      78.4,
+      -33.3,
+      44.4
     ],
-    "sourceAngle": 0,
+    "sourceAngle": 32,
     "target": {
       "x": 126.1,
       "y": 336.4,
@@ -21955,43 +21997,43 @@ export const lightLevels = [
     "stageName": "Combinar descobertas"
   },
   {
-    "id": "light-v4-open-007",
+    "id": "light-v5-open-007",
     "name": "Compartilhar o vazio",
     "hint": "Cada trajeto funciona sozinho. Compare o espaço que ocupam juntos.",
     "width": 800,
     "height": 460,
     "objects": [
       {
-        "x": 466,
-        "y": 263.3,
+        "x": 472.3,
+        "y": 160.1,
         "type": "mirror",
         "length": 124.8,
-        "angle": -4
+        "angle": 12
       },
       {
-        "x": 542.9,
-        "y": 120.5,
+        "x": 734,
+        "y": 151.5,
         "type": "mirror",
         "length": 124.8,
-        "angle": -18.4
+        "angle": -79.3
       },
       {
-        "x": 270.8,
-        "y": 324.7,
+        "x": 99.7,
+        "y": 291.1,
         "type": "mirror",
         "length": 124.8,
-        "angle": 18
+        "angle": 69.2
       },
       {
-        "x": 310.5,
-        "y": 94.6,
+        "x": 88.3,
+        "y": 137.4,
         "type": "mirror",
         "length": 124.8,
         "angle": 0
       },
       {
-        "x": 565.1,
-        "y": 368,
+        "x": 415.1,
+        "y": 341.1,
         "type": "mirror",
         "length": 124.8,
         "angle": 0
@@ -21999,44 +22041,44 @@ export const lightLevels = [
     ],
     "sources": [
       {
-        "x": 775,
-        "y": 263.3,
-        "angle": 180,
+        "x": 634.1,
+        "y": 379.6,
+        "angle": -126.39503518122254,
         "color": "gold"
       },
       {
-        "x": 775,
-        "y": 120.5,
-        "angle": 180,
+        "x": 561.9,
+        "y": 36.6,
+        "angle": 33.7284643701936,
         "color": "blue"
       }
     ],
     "targets": [
       {
-        "x": 77.1,
-        "y": 317.8,
+        "x": 90.7,
+        "y": 376.9,
         "radius": 22,
         "color": "gold"
       },
       {
-        "x": 192.5,
-        "y": 70.1,
+        "x": 403,
+        "y": 121.2,
         "radius": 22,
         "color": "blue"
       }
     ],
     "portals": [],
     "solution": [
-      -4,
-      3.2,
+      12,
+      -72.5,
       0,
-      9,
+      89.2,
       0
     ],
-    "sourceAngle": 180,
+    "sourceAngle": -126.39503518122254,
     "target": {
-      "x": 77.1,
-      "y": 317.8,
+      "x": 90.7,
+      "y": 376.9,
       "radius": 22,
       "color": "gold"
     },
@@ -22054,21 +22096,21 @@ export const lightLevels = [
   {
     "sources": [
       {
-        "x": 30,
-        "y": 100,
-        "angle": 0,
+        "x": 236.04722665003953,
+        "y": 247.7211629518312,
+        "angle": -100,
         "color": "gold"
       },
       {
-        "x": 770,
-        "y": 110,
-        "angle": 180,
+        "x": 718.5575219373079,
+        "y": 263.2088886237956,
+        "angle": 230,
         "color": "blue"
       },
       {
-        "x": 400,
-        "y": 440,
-        "angle": -90,
+        "x": 172.2383441894388,
+        "y": 247.99018677918497,
+        "angle": 8,
         "color": "pink"
       }
     ],
@@ -22166,32 +22208,32 @@ export const lightLevels = [
         "x": 210,
         "y": 100,
         "length": 124.8,
-        "angle": -41.6
+        "angle": 88.4
       },
       {
         "type": "mirror",
         "x": 590,
         "y": 110,
         "length": 124.8,
-        "angle": -2.1
+        "angle": 22.9
       },
       {
         "type": "mirror",
         "x": 400,
         "y": 280,
         "length": 124.8,
-        "angle": -62.8
+        "angle": -13.8
       }
     ],
-    "id": "light-v4-deduction-open-051",
+    "id": "light-v5-deduction-open-051",
     "name": "Acordo de trajetos 50",
     "hint": "Compare os caminhos completos, não apenas cada chegada isolada.",
     "solution": [
-      -72.6,
-      -33.1,
-      86.2
+      57.4,
+      -8.1,
+      -44.8
     ],
-    "sourceAngle": 0,
+    "sourceAngle": -100,
     "target": {
       "x": 595.2,
       "y": 249.8,
@@ -22368,40 +22410,40 @@ export const lightLevels = [
         "x": 200,
         "y": 110,
         "length": 124.8,
-        "angle": 12.7
+        "angle": -77.5
       },
       {
         "type": "mirror",
         "x": 200,
         "y": 350,
         "length": 124.8,
-        "angle": -12.3
+        "angle": 77.2
       }
     ],
     "sources": [
       {
-        "x": 30,
-        "y": 110,
-        "angle": 0,
+        "x": 350,
+        "y": 110.00000000000001,
+        "angle": -180,
         "color": "gold"
       },
       {
-        "x": 30,
+        "x": 350,
         "y": 350,
-        "angle": 0,
+        "angle": -180,
         "color": "blue"
       }
     ],
     "targets": [
       {
         "x": 725,
-        "y": 360,
+        "y": 354,
         "radius": 22,
         "color": "gold"
       },
       {
         "x": 725,
-        "y": 110,
+        "y": 98,
         "radius": 22,
         "color": "blue"
       }
@@ -22411,8 +22453,8 @@ export const lightLevels = [
         "id": "g1a",
         "pairId": "g1b",
         "label": "A",
-        "x": 348.9,
-        "y": 91.7,
+        "x": 459.6,
+        "y": 123.6,
         "radius": 16,
         "colors": [
           "gold"
@@ -22422,8 +22464,8 @@ export const lightLevels = [
         "id": "g1b",
         "pairId": "g1a",
         "label": "A",
-        "x": 498.7,
-        "y": 387.8,
+        "x": 589.2,
+        "y": 346.9,
         "radius": 16,
         "colors": [
           "gold"
@@ -22433,8 +22475,8 @@ export const lightLevels = [
         "id": "g2a",
         "pairId": "g2b",
         "label": "B",
-        "x": 120.1,
-        "y": 266.8,
+        "x": 301.4,
+        "y": 327.5,
         "radius": 16,
         "colors": [
           "gold"
@@ -22444,8 +22486,8 @@ export const lightLevels = [
         "id": "g2b",
         "pairId": "g2a",
         "label": "B",
-        "x": 768.1,
-        "y": 275.4,
+        "x": 667.9,
+        "y": 231.6,
         "radius": 16,
         "colors": [
           "gold"
@@ -22455,8 +22497,8 @@ export const lightLevels = [
         "id": "b1a",
         "pairId": "b1b",
         "label": "C",
-        "x": 299.1,
-        "y": 25.8,
+        "x": 291.5,
+        "y": 191.5,
         "radius": 16,
         "colors": [
           "blue"
@@ -22466,30 +22508,8 @@ export const lightLevels = [
         "id": "b1b",
         "pairId": "b1a",
         "label": "C",
-        "x": 666.5,
-        "y": 301.3,
-        "radius": 16,
-        "colors": [
-          "blue"
-        ]
-      },
-      {
-        "id": "b2a",
-        "pairId": "b2b",
-        "label": "D",
-        "x": 120.4,
-        "y": 142.7,
-        "radius": 16,
-        "colors": [
-          "blue"
-        ]
-      },
-      {
-        "id": "b2b",
-        "pairId": "b2a",
-        "label": "D",
-        "x": 772.7,
-        "y": 234.2,
+        "x": 673.5,
+        "y": 187.2,
         "radius": 16,
         "colors": [
           "blue"
@@ -22498,17 +22518,17 @@ export const lightLevels = [
     ],
     "width": 800,
     "height": 460,
-    "id": "light-v4-portal-033",
-    "name": "O salto que não cruza 033",
+    "id": "light-v5-portal-033",
+    "name": "O salto que não cruza 006",
     "hint": "Separe os trechos iluminados do salto entre portais.",
     "solution": [
-      12.7,
-      -55.5
+      -77.5,
+      60
     ],
-    "sourceAngle": 0,
+    "sourceAngle": -180,
     "target": {
       "x": 725,
-      "y": 360,
+      "y": 354,
       "radius": 22,
       "color": "gold"
     },
@@ -22640,27 +22660,27 @@ export const lightLevels = [
         "x": 200,
         "y": 110,
         "length": 124.8,
-        "angle": 12.8
+        "angle": -65.2
       },
       {
         "type": "mirror",
         "x": 200,
         "y": 350,
         "length": 124.8,
-        "angle": -12
+        "angle": 78
       }
     ],
     "sources": [
       {
-        "x": 30,
-        "y": 110,
-        "angle": 0,
+        "x": 337.0318186463901,
+        "y": 171.01049646137005,
+        "angle": -156,
         "color": "gold"
       },
       {
-        "x": 30,
+        "x": 350,
         "y": 350,
-        "angle": 0,
+        "angle": -180,
         "color": "blue"
       }
     ],
@@ -22770,14 +22790,14 @@ export const lightLevels = [
     ],
     "width": 800,
     "height": 460,
-    "id": "light-v4-portal-009",
+    "id": "light-v5-portal-009",
     "name": "O salto que não cruza 009",
     "hint": "Separe os trechos iluminados do salto entre portais.",
     "solution": [
-      12.8,
-      -0.5
+      -65.2,
+      89.5
     ],
-    "sourceAngle": 0,
+    "sourceAngle": -156,
     "target": {
       "x": 725,
       "y": 362,
@@ -22913,43 +22933,43 @@ export const lightLevels = [
     "stageName": "Combinar descobertas"
   },
   {
-    "id": "light-v4-open-032",
+    "id": "light-v5-open-032",
     "name": "Compartilhar o vazio",
     "hint": "Cada trajeto funciona sozinho. Compare o espaço que ocupam juntos.",
     "width": 800,
     "height": 460,
     "objects": [
       {
-        "x": 270.5,
-        "y": 184.6,
+        "x": 334.2,
+        "y": 220.5,
         "type": "mirror",
         "length": 124.8,
-        "angle": -28.3
+        "angle": -14.8
       },
       {
-        "x": 409.3,
-        "y": 144,
+        "x": 409.7,
+        "y": 66,
         "type": "mirror",
         "length": 124.8,
-        "angle": 38.7
+        "angle": 39.4
       },
       {
-        "x": 643.3,
-        "y": 197.6,
+        "x": 734,
+        "y": 150.5,
         "type": "mirror",
         "length": 124.8,
         "angle": 0
       },
       {
-        "x": 450.8,
-        "y": 330.7,
+        "x": 383,
+        "y": 394,
         "type": "mirror",
         "length": 124.8,
-        "angle": 42
+        "angle": 47.2
       },
       {
-        "x": 161.2,
-        "y": 284.8,
+        "x": 79.4,
+        "y": 364,
         "type": "mirror",
         "length": 124.8,
         "angle": 0
@@ -22957,44 +22977,44 @@ export const lightLevels = [
     ],
     "sources": [
       {
-        "x": 270.5,
-        "y": 435,
-        "angle": -90,
+        "x": 236.6,
+        "y": 350.9,
+        "angle": -53.18638502712643,
         "color": "gold"
       },
       {
-        "x": 25,
-        "y": 144,
-        "angle": 0,
+        "x": 54.8,
+        "y": 167.4,
+        "angle": -15.945395900922858,
         "color": "blue"
       }
     ],
     "targets": [
       {
-        "x": 619.7,
-        "y": 414.8,
+        "x": 738.8,
+        "y": 397.2,
         "radius": 22,
         "color": "gold"
       },
       {
-        "x": 729.3,
-        "y": 362.1,
+        "x": 694.2,
+        "y": 392.2,
         "radius": 22,
         "color": "blue"
       }
     ],
     "portals": [],
     "solution": [
-      -25.5,
-      17.1,
+      10.6,
+      16.5,
       0,
-      32.7,
+      37.4,
       0
     ],
-    "sourceAngle": -90,
+    "sourceAngle": -53.18638502712643,
     "target": {
-      "x": 619.7,
-      "y": 414.8,
+      "x": 738.8,
+      "y": 397.2,
       "radius": 22,
       "color": "gold"
     },
@@ -23017,9 +23037,9 @@ export const lightLevels = [
     "family": "autoral-16",
     "sources": [
       {
-        "x": 42,
-        "y": 330,
-        "angle": 0,
+        "x": 49.24363558831729,
+        "y": 284.2654848325078,
+        "angle": 18,
         "color": "gold"
       }
     ],
@@ -23038,7 +23058,7 @@ export const lightLevels = [
         "x": 190,
         "y": 330,
         "length": 124.8,
-        "angle": -52.7
+        "angle": -43.7
       },
       {
         "type": "mirror",
@@ -23065,11 +23085,11 @@ export const lightLevels = [
       }
     ],
     "solution": [
-      -21.7,
+      -12.7,
       -21.7,
       45
     ],
-    "sourceAngle": 0,
+    "sourceAngle": 18,
     "target": {
       "x": 590,
       "y": 280,
@@ -23083,23 +23103,23 @@ export const lightLevels = [
     "decoyCount": 0,
     "tutorial": "",
     "rules": "Leve a luz ao alvo.",
-    "id": "light-v3-16",
+    "id": "light-v5-legacy-16",
     "campaignNumber": 195,
     "campaignBand": "basic",
     "stage": 4,
     "stageName": "Combinar descobertas"
   },
   {
-    "id": "light-v3-54",
+    "id": "light-v5-legacy-54",
     "campaignNumber": 196,
     "name": "Curto não é compatível",
     "difficulty": 54,
     "family": "two-54",
     "sources": [
       {
-        "x": 60,
-        "y": 230,
-        "angle": 0,
+        "x": 70.62713176044772,
+        "y": 172.66112807275195,
+        "angle": 21,
         "color": "gold"
       },
       {
@@ -23130,7 +23150,7 @@ export const lightLevels = [
         "x": 220,
         "y": 230,
         "length": 124.8,
-        "angle": 6.699999999999989
+        "angle": 17.2
       },
       {
         "type": "mirror",
@@ -23189,13 +23209,13 @@ export const lightLevels = [
       }
     ],
     "solution": [
-      -20.3,
+      -9.8,
       -20.3,
       20.3,
       -38.4,
       36.4
     ],
-    "sourceAngle": 0,
+    "sourceAngle": 21,
     "target": {
       "x": 740,
       "y": 230,
@@ -23332,9 +23352,9 @@ export const lightLevels = [
     "family": "autoral-38",
     "sources": [
       {
-        "x": 82,
-        "y": 220,
-        "angle": 0,
+        "x": 110.26548483250778,
+        "y": 306.992217339286,
+        "angle": -36,
         "color": "gold"
       }
     ],
@@ -23353,7 +23373,7 @@ export const lightLevels = [
         "x": 230,
         "y": 220,
         "length": 124.8,
-        "angle": -17.7
+        "angle": -35.7
       },
       {
         "type": "mirror",
@@ -23389,11 +23409,11 @@ export const lightLevels = [
       }
     ],
     "solution": [
-      13.3,
+      -4.7,
       -1.1,
       12
     ],
-    "sourceAngle": 0,
+    "sourceAngle": -36,
     "target": {
       "x": 650,
       "y": 220,
@@ -23408,7 +23428,7 @@ export const lightLevels = [
     "decoyCount": 1,
     "tutorial": "",
     "rules": "Leve a luz ao alvo.",
-    "id": "light-v3-38",
+    "id": "light-v5-legacy-38",
     "campaignNumber": 198,
     "campaignBand": "basic",
     "stage": 4,
@@ -23417,21 +23437,21 @@ export const lightLevels = [
   {
     "sources": [
       {
-        "x": 30,
-        "y": 100,
-        "angle": 0,
+        "x": 204.41608052759983,
+        "y": 259.9025323230553,
+        "angle": -88,
         "color": "gold"
       },
       {
-        "x": 770,
-        "y": 360,
-        "angle": 180,
+        "x": 601.1610357990601,
+        "y": 200.38975195842812,
+        "angle": 94,
         "color": "blue"
       },
       {
-        "x": 400,
-        "y": 30,
-        "angle": 90,
+        "x": 350.38527595294016,
+        "y": 36.9728947311026,
+        "angle": 74,
         "color": "pink"
       }
     ],
@@ -23529,32 +23549,32 @@ export const lightLevels = [
         "x": 210,
         "y": 100,
         "length": 124.8,
-        "angle": 62.9
+        "angle": 18.9
       },
       {
         "type": "mirror",
         "x": 590,
         "y": 360,
         "length": 124.8,
-        "angle": 77.5
+        "angle": 34.5
       },
       {
         "type": "mirror",
         "x": 400,
         "y": 210,
         "length": 124.8,
-        "angle": -34.7
+        "angle": -42.7
       }
     ],
-    "id": "light-v4-deduction-open-041",
+    "id": "light-v5-deduction-open-041",
     "name": "Acordo de trajetos 40",
     "hint": "Compare os caminhos completos, não apenas cada chegada isolada.",
     "solution": [
-      31.9,
-      46.5,
-      -65.7
+      -12.1,
+      3.5,
+      -73.7
     ],
-    "sourceAngle": 0,
+    "sourceAngle": -88,
     "target": {
       "x": 551.2,
       "y": 180.4,
@@ -23788,40 +23808,40 @@ export const lightLevels = [
         "x": 200,
         "y": 86,
         "length": 124.8,
-        "angle": 7.7
+        "angle": -82.3
       },
       {
         "type": "mirror",
         "x": 200,
         "y": 230,
         "length": 124.8,
-        "angle": 7.6
+        "angle": 27.6
       },
       {
         "type": "mirror",
         "x": 200,
         "y": 374,
         "length": 124.8,
-        "angle": -13.9
+        "angle": 76.1
       }
     ],
     "sources": [
       {
-        "x": 30,
-        "y": 86,
-        "angle": 0,
+        "x": 350,
+        "y": 86.00000000000001,
+        "angle": -180,
         "color": "gold"
       },
       {
-        "x": 30,
-        "y": 230,
-        "angle": 0,
+        "x": 31.470222513824837,
+        "y": 88.58672586896137,
+        "angle": 40,
         "color": "blue"
       },
       {
-        "x": 30,
+        "x": 350,
         "y": 374,
-        "angle": 0,
+        "angle": -180,
         "color": "pink"
       }
     ],
@@ -23937,15 +23957,15 @@ export const lightLevels = [
     ],
     "width": 800,
     "height": 460,
-    "id": "light-v4-portal-059",
+    "id": "light-v5-portal-059",
     "name": "A saída decide 059",
     "hint": "Compare o que acontece depois de cada saída.",
     "solution": [
-      -3,
-      -11,
-      -13.9
+      87,
+      9,
+      76.1
     ],
-    "sourceAngle": 0,
+    "sourceAngle": -180,
     "target": {
       "x": 725,
       "y": 230,
@@ -23964,21 +23984,21 @@ export const lightLevels = [
   {
     "sources": [
       {
-        "x": 30,
-        "y": 100,
-        "angle": 0,
+        "x": 59.99999999999997,
+        "y": 359.8076211353316,
+        "angle": -60,
         "color": "gold"
       },
       {
-        "x": 770,
-        "y": 110,
-        "angle": 180,
+        "x": 390.12183459618086,
+        "y": 116.97989934050017,
+        "angle": 358,
         "color": "blue"
       },
       {
-        "x": 400,
-        "y": 440,
-        "angle": -90,
+        "x": 405.2349245053751,
+        "y": 429.90862405286435,
+        "angle": -92,
         "color": "pink"
       }
     ],
@@ -24076,32 +24096,32 @@ export const lightLevels = [
         "x": 210,
         "y": 100,
         "length": 124.8,
-        "angle": 62.9
+        "angle": 32.9
       },
       {
         "type": "mirror",
         "x": 590,
         "y": 110,
         "length": 124.8,
-        "angle": -1.6
+        "angle": 87.4
       },
       {
         "type": "mirror",
         "x": 400,
         "y": 280,
         "length": 124.8,
-        "angle": 51.4
+        "angle": 50.4
       }
     ],
-    "id": "light-v4-deduction-open-062",
+    "id": "light-v5-deduction-open-062",
     "name": "Acordo de trajetos 61",
     "hint": "Compare os caminhos completos, não apenas cada chegada isolada.",
     "solution": [
-      31.9,
-      -32.6,
-      20.4
+      1.9,
+      56.4,
+      19.4
     ],
-    "sourceAngle": 0,
+    "sourceAngle": -60,
     "target": {
       "x": 680.3,
       "y": 334.2,
@@ -24275,40 +24295,40 @@ export const lightLevels = [
         "x": 200,
         "y": 86,
         "length": 124.8,
-        "angle": 14.4
+        "angle": -73.6
       },
       {
         "type": "mirror",
         "x": 200,
         "y": 230,
         "length": 124.8,
-        "angle": -0.4
+        "angle": 25.6
       },
       {
         "type": "mirror",
         "x": 200,
         "y": 374,
         "length": 124.8,
-        "angle": -14.4
+        "angle": 75.6
       }
     ],
     "sources": [
       {
-        "x": 30,
-        "y": 86,
-        "angle": 0,
+        "x": 349.6346075389736,
+        "y": 96.46347106161883,
+        "angle": -176,
         "color": "gold"
       },
       {
-        "x": 30,
-        "y": 230,
-        "angle": 0,
+        "x": 39.92801641532884,
+        "y": 25.117204062252284,
+        "angle": 52,
         "color": "blue"
       },
       {
-        "x": 30,
+        "x": 420,
         "y": 374,
-        "angle": 0,
+        "angle": -180,
         "color": "pink"
       }
     ],
@@ -24424,15 +24444,15 @@ export const lightLevels = [
     ],
     "width": 800,
     "height": 460,
-    "id": "light-v4-portal-049",
+    "id": "light-v5-portal-049",
     "name": "A saída decide 049",
     "hint": "Compare o que acontece depois de cada saída.",
     "solution": [
-      4,
-      -0.4,
-      4.5
+      -84,
+      25.6,
+      -85.5
     ],
-    "sourceAngle": 0,
+    "sourceAngle": -176,
     "target": {
       "x": 725,
       "y": 375,
@@ -24612,27 +24632,27 @@ export const lightLevels = [
         "x": 200,
         "y": 110,
         "length": 124.8,
-        "angle": 12.6
+        "angle": -17.4
       },
       {
         "type": "mirror",
         "x": 200,
         "y": 350,
         "length": 124.8,
-        "angle": -12.7
+        "angle": 77.3
       }
     ],
     "sources": [
       {
-        "x": 30,
-        "y": 110,
-        "angle": 0,
+        "x": 44.99999999999997,
+        "y": 378.46787517317597,
+        "angle": -60,
         "color": "gold"
       },
       {
-        "x": 30,
+        "x": 350,
         "y": 350,
-        "angle": 0,
+        "angle": -180,
         "color": "blue"
       }
     ],
@@ -24742,14 +24762,14 @@ export const lightLevels = [
     ],
     "width": 800,
     "height": 460,
-    "id": "light-v4-portal-055",
+    "id": "light-v5-portal-055",
     "name": "O salto que não cruza 055",
     "hint": "Separe os trechos iluminados do salto entre portais.",
     "solution": [
-      31.5,
-      -12.7
+      1.5,
+      77.3
     ],
-    "sourceAngle": 0,
+    "sourceAngle": -60,
     "target": {
       "x": 725,
       "y": 358,
@@ -24766,96 +24786,96 @@ export const lightLevels = [
     "campaignBand": "intermediate"
   },
   {
-    "id": "light-v4-open-305",
+    "id": "light-v5-open-305",
     "name": "Antes do deslocamento",
     "hint": "Compare como os dois trajetos distribuem o espaço.",
     "width": 800,
     "height": 460,
     "objects": [
       {
-        "x": 622.6,
-        "y": 314.3,
+        "x": 193.8,
+        "y": 104.3,
         "type": "mirror",
         "length": 124.8,
-        "angle": 13.5
+        "angle": -22.3
       },
       {
-        "x": 177.4,
-        "y": 145.7,
+        "x": 606.2,
+        "y": 355.7,
         "type": "mirror",
         "length": 124.8,
-        "angle": 7.3
+        "angle": -37.2
       },
       {
-        "x": 205.1,
-        "y": 384.8,
+        "x": 561.2,
+        "y": 206.3,
+        "type": "mirror",
+        "length": 124.8,
+        "angle": 89.9
+      },
+      {
+        "x": 238.8,
+        "y": 253.7,
+        "type": "mirror",
+        "length": 124.8,
+        "angle": -86.4
+      },
+      {
+        "x": 410.5,
+        "y": 95.1,
         "type": "mirror",
         "length": 124.8,
         "angle": 0
       },
       {
-        "x": 594.9,
-        "y": 75.2,
+        "x": 389.5,
+        "y": 364.9,
         "type": "mirror",
         "length": 124.8,
         "angle": 0
-      },
-      {
-        "x": 294.7,
-        "y": 228.5,
-        "type": "mirror",
-        "length": 124.8,
-        "angle": 0
-      },
-      {
-        "x": 505.3,
-        "y": 231.5,
-        "type": "mirror",
-        "length": 124.8,
-        "angle": 45.1
       }
     ],
     "sources": [
       {
-        "x": 775,
-        "y": 314.3,
-        "angle": 180,
+        "x": 193.8,
+        "y": 435,
+        "angle": -90,
         "color": "gold"
       },
       {
-        "x": 25,
-        "y": 145.7,
-        "angle": 0,
+        "x": 606.2,
+        "y": 25,
+        "angle": 90,
         "color": "blue"
       }
     ],
     "targets": [
       {
-        "x": 270.5,
-        "y": 134.3,
+        "x": 357.7,
+        "y": 270.6,
         "radius": 22,
         "color": "gold"
       },
       {
-        "x": 529.5,
-        "y": 325.7,
+        "x": 442.3,
+        "y": 189.4,
         "radius": 22,
         "color": "blue"
       }
     ],
     "portals": [],
     "solution": [
-      41.7,
-      41.7,
-      36.5,
-      36.5,
+      -37.2,
+      -37.2,
+      89,
+      89,
       0,
       0
     ],
-    "sourceAngle": 180,
+    "sourceAngle": -90,
     "target": {
-      "x": 270.5,
-      "y": 134.3,
+      "x": 357.7,
+      "y": 270.6,
       "radius": 22,
       "color": "gold"
     },
@@ -24869,7 +24889,7 @@ export const lightLevels = [
     "campaignBand": "intermediate"
   },
   {
-    "id": "light-v4-open-chain-015",
+    "id": "light-v5-open-chain-015",
     "name": "Uma escolha atravessa três",
     "hint": "Uma alternativa pode decidir a passagem de uma segunda cor e limitar a terceira.",
     "width": 800,
@@ -24879,14 +24899,14 @@ export const lightLevels = [
         "x": 227.4,
         "y": 99.9,
         "type": "mirror",
-        "angle": 16.9,
+        "angle": 2.9,
         "length": 124.8
       },
       {
         "x": 567.8,
         "y": 103,
         "type": "mirror",
-        "angle": -10.7,
+        "angle": 9.3,
         "length": 124.8
       },
       {
@@ -24920,20 +24940,20 @@ export const lightLevels = [
     ],
     "sources": [
       {
-        "x": 25,
-        "y": 99.9,
-        "angle": 0,
+        "x": 48.7,
+        "y": 194.9,
+        "angle": -27.995881666644244,
         "color": "gold"
       },
       {
-        "x": 775,
-        "y": 103,
-        "angle": 180,
+        "x": 763.1,
+        "y": 266.9,
+        "angle": -139.99589563981885,
         "color": "blue"
       },
       {
         "x": 390.8,
-        "y": 440,
+        "y": 435,
         "angle": -90,
         "color": "pink"
       }
@@ -24960,14 +24980,14 @@ export const lightLevels = [
     ],
     "portals": [],
     "solution": [
-      16.9,
-      -10.7,
+      2.9,
+      9.3,
       -36.4,
       0,
       -52.7,
       0
     ],
-    "sourceAngle": 0,
+    "sourceAngle": -27.995881666644244,
     "target": {
       "x": 331,
       "y": 169.1,
@@ -24984,50 +25004,50 @@ export const lightLevels = [
     "campaignBand": "intermediate"
   },
   {
-    "id": "light-v4-open-chain-013",
+    "id": "light-v5-open-chain-013",
     "name": "Uma escolha atravessa três",
     "hint": "Uma alternativa pode decidir a passagem de uma segunda cor e limitar a terceira.",
     "width": 800,
     "height": 460,
     "objects": [
       {
-        "x": 238.5,
-        "y": 217.3,
+        "x": 388.6,
+        "y": 137.5,
         "type": "mirror",
         "length": 124.8,
-        "angle": -21.3
+        "angle": 76.7
       },
       {
-        "x": 516,
-        "y": 86.9,
+        "x": 527.5,
+        "y": 70.7,
         "type": "mirror",
         "length": 124.8,
-        "angle": -44.8
+        "angle": -22.4
       },
       {
-        "x": 613,
-        "y": 291.5,
+        "x": 514.6,
+        "y": 286.8,
         "type": "mirror",
         "length": 124.8,
-        "angle": 18.2
+        "angle": 58.7
       },
       {
-        "x": 480.4,
-        "y": 367.4,
-        "type": "mirror",
-        "length": 124.8,
-        "angle": 0
-      },
-      {
-        "x": 208.7,
-        "y": 84.6,
+        "x": 414.1,
+        "y": 394,
         "type": "mirror",
         "length": 124.8,
         "angle": 0
       },
       {
-        "x": 206.5,
-        "y": 371.9,
+        "x": 221.5,
+        "y": 66,
+        "type": "mirror",
+        "length": 124.8,
+        "angle": 0
+      },
+      {
+        "x": 286.9,
+        "y": 394,
         "type": "mirror",
         "length": 124.8,
         "angle": 0
@@ -25035,57 +25055,57 @@ export const lightLevels = [
     ],
     "sources": [
       {
-        "x": 25,
-        "y": 217.3,
-        "angle": 0,
+        "x": 83.5,
+        "y": 150.2,
+        "angle": -2.3836006766725233,
         "color": "gold"
       },
       {
-        "x": 775,
-        "y": 86.9,
-        "angle": 180,
+        "x": 770.4,
+        "y": 181.3,
+        "angle": -155.5187351882738,
         "color": "blue"
       },
       {
-        "x": 775,
-        "y": 291.5,
-        "angle": 180,
+        "x": 677.7,
+        "y": 410.7,
+        "angle": -142.77763789012934,
         "color": "pink"
       }
     ],
     "targets": [
       {
-        "x": 420.7,
-        "y": 50.1,
+        "x": 244.5,
+        "y": 202.5,
         "radius": 22,
         "color": "gold"
       },
       {
-        "x": 514.9,
-        "y": 244.1,
+        "x": 442.6,
+        "y": 295.2,
         "radius": 22,
         "color": "blue"
       },
       {
-        "x": 461.1,
-        "y": 179.3,
+        "x": 487.4,
+        "y": 130.6,
         "radius": 22,
         "color": "pink"
       }
     ],
     "portals": [],
     "solution": [
-      -21.3,
-      -44.8,
-      -5.6,
+      76.7,
+      -22.4,
+      6,
       0,
       0,
-      65.9
+      51
     ],
-    "sourceAngle": 0,
+    "sourceAngle": -2.3836006766725233,
     "target": {
-      "x": 420.7,
-      "y": 50.1,
+      "x": 244.5,
+      "y": 202.5,
       "radius": 22,
       "color": "gold"
     },
@@ -25105,40 +25125,40 @@ export const lightLevels = [
         "x": 200,
         "y": 86,
         "length": 124.8,
-        "angle": 8.2
+        "angle": -81.8
       },
       {
         "type": "mirror",
         "x": 200,
         "y": 230,
         "length": 124.8,
-        "angle": 7.1
+        "angle": 27.1
       },
       {
         "type": "mirror",
         "x": 200,
         "y": 374,
         "length": 124.8,
-        "angle": -14.5
+        "angle": 75.5
       }
     ],
     "sources": [
       {
-        "x": 30,
-        "y": 86,
-        "angle": 0,
+        "x": 350,
+        "y": 86.00000000000001,
+        "angle": -180,
         "color": "gold"
       },
       {
-        "x": 30,
-        "y": 230,
-        "angle": 0,
+        "x": 31.470222513824837,
+        "y": 88.58672586896137,
+        "angle": 40,
         "color": "blue"
       },
       {
-        "x": 30,
+        "x": 350,
         "y": 374,
-        "angle": 0,
+        "angle": -180,
         "color": "pink"
       }
     ],
@@ -25254,15 +25274,15 @@ export const lightLevels = [
     ],
     "width": 800,
     "height": 460,
-    "id": "light-v4-portal-057",
+    "id": "light-v5-portal-057",
     "name": "A saída decide 057",
     "hint": "Compare o que acontece depois de cada saída.",
     "solution": [
-      -10,
-      -6,
-      -14.5
+      80,
+      14,
+      75.5
     ],
-    "sourceAngle": 0,
+    "sourceAngle": -180,
     "target": {
       "x": 725,
       "y": 240,
@@ -25279,96 +25299,96 @@ export const lightLevels = [
     "campaignBand": "intermediate"
   },
   {
-    "id": "light-v4-open-306",
+    "id": "light-v5-open-306",
     "name": "Uma metade diferente",
     "hint": "As peças se correspondem, mas a posição dos alvos não.",
     "width": 800,
     "height": 460,
     "objects": [
       {
-        "x": 622.6,
-        "y": 314.3,
+        "x": 193.8,
+        "y": 104.3,
         "type": "mirror",
         "length": 124.8,
-        "angle": 13.5
+        "angle": -22.3
       },
       {
-        "x": 177.4,
-        "y": 145.7,
+        "x": 606.2,
+        "y": 355.7,
         "type": "mirror",
         "length": 124.8,
-        "angle": 7.3
+        "angle": -37.2
       },
       {
-        "x": 205.1,
-        "y": 384.8,
+        "x": 561.2,
+        "y": 206.3,
+        "type": "mirror",
+        "length": 124.8,
+        "angle": 89.9
+      },
+      {
+        "x": 238.8,
+        "y": 253.7,
+        "type": "mirror",
+        "length": 124.8,
+        "angle": -86.4
+      },
+      {
+        "x": 410.5,
+        "y": 95.1,
         "type": "mirror",
         "length": 124.8,
         "angle": 0
       },
       {
-        "x": 594.9,
-        "y": 75.2,
+        "x": 389.5,
+        "y": 364.9,
         "type": "mirror",
         "length": 124.8,
         "angle": 0
-      },
-      {
-        "x": 294.7,
-        "y": 228.5,
-        "type": "mirror",
-        "length": 124.8,
-        "angle": 0
-      },
-      {
-        "x": 505.3,
-        "y": 231.5,
-        "type": "mirror",
-        "length": 124.8,
-        "angle": 45.1
       }
     ],
     "sources": [
       {
-        "x": 775,
-        "y": 314.3,
-        "angle": 180,
+        "x": 193.8,
+        "y": 435,
+        "angle": -90,
         "color": "gold"
       },
       {
-        "x": 25,
-        "y": 145.7,
-        "angle": 0,
+        "x": 606.2,
+        "y": 25,
+        "angle": 90,
         "color": "blue"
       }
     ],
     "targets": [
       {
-        "x": 270.5,
-        "y": 134.3,
+        "x": 357.7,
+        "y": 270.6,
         "radius": 22,
         "color": "gold"
       },
       {
-        "x": 529.5,
-        "y": 420.7,
+        "x": 442.3,
+        "y": 259.4,
         "radius": 22,
         "color": "blue"
       }
     ],
     "portals": [],
     "solution": [
-      41.7,
-      41.7,
-      44.9,
-      36.5,
+      -37.2,
+      -29.8,
+      -86.4,
+      89.9,
       0,
       0
     ],
-    "sourceAngle": 180,
+    "sourceAngle": -90,
     "target": {
-      "x": 270.5,
-      "y": 134.3,
+      "x": 357.7,
+      "y": 270.6,
       "radius": 22,
       "color": "gold"
     },
@@ -25384,21 +25404,21 @@ export const lightLevels = [
   {
     "sources": [
       {
-        "x": 30,
-        "y": 230,
-        "angle": 0,
+        "x": 150.5572809000084,
+        "y": 77.83095739277545,
+        "angle": 72,
         "color": "gold"
       },
       {
-        "x": 770,
-        "y": 110,
-        "angle": 180,
+        "x": 616.7245541228245,
+        "y": 269.12350325892373,
+        "angle": 264,
         "color": "blue"
       },
       {
-        "x": 470,
-        "y": 30,
-        "angle": 90,
+        "x": 442.8225995504101,
+        "y": 91.42430720424892,
+        "angle": 84,
         "color": "pink"
       }
     ],
@@ -25496,32 +25516,32 @@ export const lightLevels = [
         "x": 200,
         "y": 230,
         "length": 124.8,
-        "angle": 16.9
+        "angle": 52.9
       },
       {
         "type": "mirror",
         "x": 600,
         "y": 110,
         "length": 124.8,
-        "angle": -9.7
+        "angle": 32.3
       },
       {
         "type": "mirror",
         "x": 470,
         "y": 350,
         "length": 124.8,
-        "angle": 36.3
+        "angle": 33.3
       }
     ],
-    "id": "light-v4-deduction-open-035",
+    "id": "light-v5-deduction-open-035",
     "name": "Do outro lado 34",
     "hint": "Compare os caminhos completos, não apenas cada chegada isolada.",
     "solution": [
-      -14.1,
-      -40.7,
-      5.3
+      21.9,
+      1.3,
+      2.3
     ],
-    "sourceAngle": 0,
+    "sourceAngle": 72,
     "target": {
       "x": 361,
       "y": 143.5,
@@ -25540,21 +25560,21 @@ export const lightLevels = [
   {
     "sources": [
       {
-        "x": 30,
-        "y": 100,
-        "angle": 0,
+        "x": 197.44383472605742,
+        "y": 279.5615290467683,
+        "angle": -86,
         "color": "gold"
       },
       {
-        "x": 770,
-        "y": 110,
-        "angle": 180,
+        "x": 407.29090847147984,
+        "y": 28.652671384839977,
+        "angle": 24,
         "color": "blue"
       },
       {
-        "x": 400,
-        "y": 440,
-        "angle": -90,
+        "x": 254.45564105860052,
+        "y": 243.71171566004983,
+        "angle": 14,
         "color": "pink"
       }
     ],
@@ -25652,32 +25672,32 @@ export const lightLevels = [
         "x": 210,
         "y": 100,
         "length": 124.8,
-        "angle": 41.2
+        "angle": -1.8
       },
       {
         "type": "mirror",
         "x": 590,
         "y": 110,
         "length": 124.8,
-        "angle": 37.9
+        "angle": -40.1
       },
       {
         "type": "mirror",
         "x": 400,
         "y": 280,
         "length": 124.8,
-        "angle": 74.9
+        "angle": -53.1
       }
     ],
-    "id": "light-v4-deduction-open-065",
+    "id": "light-v5-deduction-open-065",
     "name": "Acordo de trajetos 64",
     "hint": "Compare os caminhos completos, não apenas cada chegada isolada.",
     "solution": [
-      10.2,
-      6.9,
-      43.9
+      -32.8,
+      -71.1,
+      -84.1
     ],
-    "sourceAngle": 0,
+    "sourceAngle": -86,
     "target": {
       "x": 216.2,
       "y": 378.7,
@@ -26026,40 +26046,40 @@ export const lightLevels = [
   {
     "sources": [
       {
-        "x": 30,
-        "y": 100,
-        "angle": 0,
+        "x": 74.55447542835518,
+        "y": 273.36236579347883,
+        "angle": -52,
         "color": "gold"
       },
       {
-        "x": 770,
-        "y": 360,
-        "angle": 180,
+        "x": 558.8132463773361,
+        "y": 213.27785988992918,
+        "angle": 78,
         "color": "blue"
       },
       {
-        "x": 400,
-        "y": 30,
-        "angle": 90,
+        "x": 366.73412946915846,
+        "y": 53.49638388259112,
+        "angle": 78,
         "color": "pink"
       }
     ],
     "targets": [
       {
-        "x": 706.2,
-        "y": 99.9,
+        "x": 171.4,
+        "y": 241,
         "radius": 22,
         "color": "gold"
       },
       {
-        "x": 646.5,
-        "y": 240.4,
+        "x": 246.9,
+        "y": 218.9,
         "radius": 22,
         "color": "blue"
       },
       {
-        "x": 698.8,
-        "y": 307.1,
+        "x": 286.2,
+        "y": 339.5,
         "radius": 22,
         "color": "pink"
       }
@@ -26068,8 +26088,8 @@ export const lightLevels = [
       {
         "id": "p0a",
         "pairId": "p0b",
-        "x": 312.4,
-        "y": 69.1,
+        "x": 407.2,
+        "y": 338.4,
         "radius": 16,
         "colors": [
           "gold"
@@ -26079,8 +26099,8 @@ export const lightLevels = [
       {
         "id": "p0b",
         "pairId": "p0a",
-        "x": 634.6,
-        "y": 121.5,
+        "x": 89.7,
+        "y": 142.2,
         "radius": 16,
         "colors": [
           "gold"
@@ -26090,8 +26110,8 @@ export const lightLevels = [
       {
         "id": "p1a",
         "pairId": "p1b",
-        "x": 245.5,
-        "y": 275.4,
+        "x": 605.4,
+        "y": 230.8,
         "radius": 16,
         "colors": [
           "blue"
@@ -26101,8 +26121,8 @@ export const lightLevels = [
       {
         "id": "p1b",
         "pairId": "p1a",
-        "x": 769.5,
-        "y": 270.6,
+        "x": 228.6,
+        "y": 372.2,
         "radius": 16,
         "colors": [
           "blue"
@@ -26112,8 +26132,8 @@ export const lightLevels = [
       {
         "id": "p2a",
         "pairId": "p2b",
-        "x": 336.3,
-        "y": 349.2,
+        "x": 748.9,
+        "y": 216.1,
         "radius": 16,
         "colors": [
           "pink"
@@ -26123,8 +26143,8 @@ export const lightLevels = [
       {
         "id": "p2b",
         "pairId": "p2a",
-        "x": 769,
-        "y": 153.8,
+        "x": 130.8,
+        "y": 336.8,
         "radius": 16,
         "colors": [
           "pink"
@@ -26138,35 +26158,35 @@ export const lightLevels = [
         "x": 210,
         "y": 100,
         "length": 124.8,
-        "angle": 22.6
+        "angle": 57.7
       },
       {
         "type": "mirror",
         "x": 590,
         "y": 360,
         "length": 124.8,
-        "angle": 37.9
+        "angle": 28.4
       },
       {
         "type": "mirror",
         "x": 400,
         "y": 210,
         "length": 124.8,
-        "angle": 85
+        "angle": -44.3
       }
     ],
-    "id": "light-v4-deduction-open-063",
-    "name": "Acordo de trajetos 62",
-    "hint": "Compare os caminhos completos, não apenas cada chegada isolada.",
+    "id": "light-v5-deduction-open-063-reauthored",
+    "name": "Hipótese 07",
+    "hint": "Siga as consequências de uma hipótese antes de manter a primeira rota.",
     "solution": [
-      -8.4,
-      6.9,
-      54
+      26.7,
+      -2.6,
+      -75.3
     ],
-    "sourceAngle": 0,
+    "sourceAngle": -52,
     "target": {
-      "x": 706.2,
-      "y": 99.9,
+      "x": 171.4,
+      "y": 241,
       "radius": 22,
       "color": "gold"
     },
@@ -26186,40 +26206,40 @@ export const lightLevels = [
         "x": 200,
         "y": 86,
         "length": 124.8,
-        "angle": 15.1
+        "angle": -60.9
       },
       {
         "type": "mirror",
         "x": 600,
         "y": 230,
         "length": 124.8,
-        "angle": 0.6
+        "angle": -13.4
       },
       {
         "type": "mirror",
         "x": 200,
         "y": 374,
         "length": 124.8,
-        "angle": -14.6
+        "angle": 75.4
       }
     ],
     "sources": [
       {
-        "x": 30,
-        "y": 86,
-        "angle": 0,
+        "x": 332.44213892883903,
+        "y": 156.42073441788366,
+        "angle": -152,
         "color": "gold"
       },
       {
-        "x": 770,
-        "y": 230,
-        "angle": 180,
+        "x": 732.4421389288391,
+        "y": 159.57926558211634,
+        "angle": 152,
         "color": "blue"
       },
       {
-        "x": 30,
+        "x": 350,
         "y": 374,
-        "angle": 0,
+        "angle": -180,
         "color": "pink"
       }
     ],
@@ -26313,15 +26333,15 @@ export const lightLevels = [
     ],
     "width": 800,
     "height": 460,
-    "id": "light-v4-portal-085",
+    "id": "light-v5-portal-085",
     "name": "O salto que não cruza 085",
     "hint": "Separe os trechos iluminados do salto entre portais.",
     "solution": [
-      15.1,
-      48,
-      -31.5
+      -60.9,
+      34,
+      58.5
     ],
-    "sourceAngle": 0,
+    "sourceAngle": -152,
     "target": {
       "x": 710,
       "y": 382,
@@ -26344,27 +26364,27 @@ export const lightLevels = [
         "x": 200,
         "y": 110,
         "length": 124.8,
-        "angle": 11.9
+        "angle": -66.1
       },
       {
         "type": "mirror",
         "x": 200,
         "y": 350,
         "length": 124.8,
-        "angle": -12
+        "angle": 78
       }
     ],
     "sources": [
       {
-        "x": 30,
-        "y": 110,
-        "angle": 0,
+        "x": 337.0318186463901,
+        "y": 171.01049646137005,
+        "angle": -156,
         "color": "gold"
       },
       {
-        "x": 30,
+        "x": 350,
         "y": 350,
-        "angle": 0,
+        "angle": -180,
         "color": "blue"
       }
     ],
@@ -26474,14 +26494,14 @@ export const lightLevels = [
     ],
     "width": 800,
     "height": 460,
-    "id": "light-v4-portal-052",
+    "id": "light-v5-portal-052",
     "name": "A consequência distante 052",
     "hint": "Uma escolha aqui pode atrapalhar uma luz do outro lado.",
     "solution": [
-      11.9,
-      -1
+      -66.1,
+      89
     ],
-    "sourceAngle": 0,
+    "sourceAngle": -156,
     "target": {
       "x": 725,
       "y": 341,
@@ -26500,21 +26520,21 @@ export const lightLevels = [
   {
     "sources": [
       {
-        "x": 30,
-        "y": 100,
-        "angle": 0,
+        "x": 591.3572833753192,
+        "y": 357.2287355965436,
+        "angle": -146,
         "color": "gold"
       },
       {
-        "x": 770,
-        "y": 110,
-        "angle": 180,
+        "x": 428.21707166614993,
+        "y": 31.093193577966062,
+        "angle": 26,
         "color": "blue"
       },
       {
-        "x": 400,
-        "y": 440,
-        "angle": -90,
+        "x": 348.69697850114966,
+        "y": 420.95389311788625,
+        "angle": -70,
         "color": "pink"
       }
     ],
@@ -26612,21 +26632,21 @@ export const lightLevels = [
         "x": 210,
         "y": 100,
         "length": 124.8,
-        "angle": 47.5
+        "angle": -25.5
       },
       {
         "type": "mirror",
         "x": 590,
         "y": 110,
         "length": 124.8,
-        "angle": 37.7
+        "angle": -39.3
       },
       {
         "type": "mirror",
         "x": 400,
         "y": 280,
         "length": 124.8,
-        "angle": 82.4
+        "angle": -87.6
       },
       {
         "type": "wall",
@@ -26669,15 +26689,15 @@ export const lightLevels = [
         "angle": 90
       }
     ],
-    "id": "light-v4-deduction-windows-01",
+    "id": "light-v5-deduction-windows-01",
     "name": "Visibilidade entre regiões",
     "hint": "Compare o que cada abertura deixa passar.",
     "solution": [
-      16.5,
-      6.7,
-      51.4
+      -56.5,
+      -70.3,
+      61.4
     ],
-    "sourceAngle": 0,
+    "sourceAngle": -146,
     "target": {
       "x": 680.5,
       "y": 404.5,
@@ -27010,40 +27030,40 @@ export const lightLevels = [
         "x": 200,
         "y": 86,
         "length": 124.8,
-        "angle": -0.5
+        "angle": 89.5
       },
       {
         "type": "mirror",
         "x": 200,
         "y": 230,
         "length": 124.8,
-        "angle": 7.3
+        "angle": -82.7
       },
       {
         "type": "mirror",
         "x": 200,
         "y": 374,
         "length": 124.8,
-        "angle": -8.1
+        "angle": 81.9
       }
     ],
     "sources": [
       {
-        "x": 30,
-        "y": 86,
-        "angle": 0,
+        "x": 350,
+        "y": 86.00000000000001,
+        "angle": -180,
         "color": "gold"
       },
       {
-        "x": 30,
-        "y": 230,
-        "angle": 0,
+        "x": 350,
+        "y": 230.00000000000003,
+        "angle": -180,
         "color": "blue"
       },
       {
-        "x": 30,
+        "x": 350,
         "y": 374,
-        "angle": 0,
+        "angle": -180,
         "color": "pink"
       }
     ],
@@ -27137,15 +27157,15 @@ export const lightLevels = [
     ],
     "width": 800,
     "height": 460,
-    "id": "light-v4-portal-054",
+    "id": "light-v5-portal-054",
     "name": "Lados invertidos 054",
-    "hint": "Observe como a ordem das cores muda entre fontes e alvos.",
+    "hint": "Compare a posição dos trajetos nos primeiros espelhos e nos alvos.",
     "solution": [
-      -0.5,
-      -5,
-      -8.1
+      89.5,
+      85,
+      81.9
     ],
-    "sourceAngle": 0,
+    "sourceAngle": -180,
     "target": {
       "x": 725,
       "y": 77,
@@ -27592,40 +27612,40 @@ export const lightLevels = [
         "x": 200,
         "y": 86,
         "length": 124.8,
-        "angle": 8
+        "angle": -82
       },
       {
         "type": "mirror",
         "x": 200,
         "y": 230,
         "length": 124.8,
-        "angle": 7.4
+        "angle": -82.6
       },
       {
         "type": "mirror",
         "x": 200,
         "y": 374,
         "length": 124.8,
-        "angle": -14.7
+        "angle": 75.3
       }
     ],
     "sources": [
       {
-        "x": 30,
-        "y": 86,
-        "angle": 0,
+        "x": 350,
+        "y": 86.00000000000001,
+        "angle": -180,
         "color": "gold"
       },
       {
-        "x": 30,
-        "y": 230,
-        "angle": 0,
+        "x": 350,
+        "y": 230.00000000000003,
+        "angle": -180,
         "color": "blue"
       },
       {
-        "x": 30,
+        "x": 350,
         "y": 374,
-        "angle": 0,
+        "angle": -180,
         "color": "pink"
       }
     ],
@@ -27741,15 +27761,15 @@ export const lightLevels = [
     ],
     "width": 800,
     "height": 460,
-    "id": "light-v4-portal-056",
+    "id": "light-v5-portal-056",
     "name": "O salto que não cruza 056",
     "hint": "Separe os trechos iluminados do salto entre portais.",
     "solution": [
-      8,
-      7.4,
-      -4.5
+      -82,
+      -82.6,
+      85.5
     ],
-    "sourceAngle": 0,
+    "sourceAngle": -180,
     "target": {
       "x": 725,
       "y": 237,
@@ -27780,9 +27800,9 @@ export const lightLevels = [
         "color": "gold"
       },
       {
-        "x": 750,
-        "y": 430,
-        "angle": -140.19442890773482,
+        "x": 523.1810426290249,
+        "y": 433.83651574160297,
+        "angle": -59.19442890773482,
         "color": "pink"
       }
     ],
@@ -27833,7 +27853,7 @@ export const lightLevels = [
         "x": 600,
         "y": 305,
         "length": 124.8,
-        "angle": -20
+        "angle": 20.5
       },
       {
         "type": "wall",
@@ -27905,7 +27925,7 @@ export const lightLevels = [
       45,
       45,
       45,
-      19.9
+      60.4
     ],
     "name": "Quem não pode desviar",
     "difficulty": 195,
@@ -27925,7 +27945,7 @@ export const lightLevels = [
     "decoyCount": 0,
     "tutorial": "",
     "rules": "Leve todas as fontes aos alvos da mesma cor, sem cruzar nem encostar nos trechos físicos das outras luzes.",
-    "id": "light-v3-195",
+    "id": "light-v5-legacy-195",
     "campaignNumber": 228,
     "number": 228,
     "campaignBand": "intermediate"
@@ -28078,40 +28098,40 @@ export const lightLevels = [
         "x": 580,
         "y": 86,
         "length": 124.8,
-        "angle": -54.6
+        "angle": -22.6
       },
       {
         "type": "mirror",
         "x": 200,
         "y": 230,
         "length": 124.8,
-        "angle": 7.8
+        "angle": -68.2
       },
       {
         "type": "mirror",
         "x": 200,
         "y": 374,
         "length": 124.8,
-        "angle": -8.1
+        "angle": -88.1
       }
     ],
     "sources": [
       {
-        "x": 770,
-        "y": 86,
-        "angle": 180,
+        "x": 645.7556720183617,
+        "y": 220.81910694487502,
+        "angle": 244,
         "color": "gold"
       },
       {
-        "x": 30,
-        "y": 230,
-        "angle": 0,
+        "x": 367.7600426431961,
+        "y": 319.19959692931934,
+        "angle": -152,
         "color": "blue"
       },
       {
-        "x": 30,
-        "y": 374,
-        "angle": 0,
+        "x": 340.95389311788625,
+        "y": 425.30302149885034,
+        "angle": -160,
         "color": "pink"
       }
     ],
@@ -28249,15 +28269,15 @@ export const lightLevels = [
     ],
     "width": 800,
     "height": 460,
-    "id": "light-v4-portal-875",
+    "id": "light-v5-portal-875",
     "name": "A volta pelo acesso útil 875",
     "hint": "Reconstrua a chegada e procure o acesso que permite voltar.",
     "solution": [
-      -85.5,
-      7.8,
-      1.5
+      -53.5,
+      -68.2,
+      -78.5
     ],
-    "sourceAngle": 180,
+    "sourceAngle": 244,
     "target": {
       "x": 650,
       "y": 286,
@@ -28276,21 +28296,21 @@ export const lightLevels = [
   {
     "sources": [
       {
-        "x": 30,
-        "y": 230,
-        "angle": 0,
+        "x": 231.25667198004746,
+        "y": 407.26539554219744,
+        "angle": -100,
         "color": "gold"
       },
       {
-        "x": 770,
-        "y": 110,
-        "angle": 180,
+        "x": 481.7983869589918,
+        "y": 202.34922129884882,
+        "angle": 322,
         "color": "blue"
       },
       {
-        "x": 470,
-        "y": 30,
-        "angle": 90,
+        "x": 431.0315317311816,
+        "y": 72.72494075236034,
+        "angle": 82,
         "color": "pink"
       }
     ],
@@ -28388,21 +28408,21 @@ export const lightLevels = [
         "x": 200,
         "y": 230,
         "length": 124.8,
-        "angle": 39.8
+        "angle": -10.2
       },
       {
         "type": "mirror",
         "x": 600,
         "y": 110,
         "length": 124.8,
-        "angle": -47.8
+        "angle": 23.2
       },
       {
         "type": "mirror",
         "x": 470,
         "y": 350,
         "length": 124.8,
-        "angle": 81.4
+        "angle": 77.4
       },
       {
         "type": "mirror",
@@ -28412,16 +28432,16 @@ export const lightLevels = [
         "angle": -58.2
       }
     ],
-    "id": "light-v4-deduction-four-02",
+    "id": "light-v5-deduction-four-02",
     "name": "A curva depende da escolha",
     "hint": "A chegada ao último espelho muda quando o caminho anterior muda.",
     "solution": [
-      8.8,
-      -78.8,
-      50.4,
+      -41.2,
+      -7.8,
+      46.4,
       -89.2
     ],
-    "sourceAngle": 0,
+    "sourceAngle": -100,
     "target": {
       "x": 582.1,
       "y": 296.1,
@@ -28772,34 +28792,34 @@ export const lightLevels = [
   {
     "sources": [
       {
-        "x": 30,
-        "y": 110,
-        "angle": 0,
+        "x": 378.2482523734826,
+        "y": 135.05115817281182,
+        "angle": -172,
         "color": "gold"
       },
       {
-        "x": 30,
-        "y": 350,
-        "angle": 0,
+        "x": 323.13229506513164,
+        "y": 192.3978492786556,
+        "angle": 128,
         "color": "blue"
       },
       {
-        "x": 450,
-        "y": 440,
-        "angle": -90,
+        "x": 429.12403485599015,
+        "y": 428.54021031123557,
+        "angle": -82,
         "color": "pink"
       }
     ],
     "targets": [
       {
-        "x": 740,
-        "y": 350,
+        "x": 650,
+        "y": 272.5,
         "radius": 22,
         "color": "gold"
       },
       {
-        "x": 740,
-        "y": 110,
+        "x": 650,
+        "y": 187.5,
         "radius": 22,
         "color": "blue"
       },
@@ -28884,51 +28904,51 @@ export const lightLevels = [
         "y": 110,
         "type": "mirror",
         "length": 124.8,
-        "angle": 24
+        "angle": -62
       },
       {
         "x": 200,
         "y": 350,
         "type": "mirror",
         "length": 124.8,
-        "angle": 16.4
+        "angle": 80.4
       },
       {
         "x": 650,
         "y": 362.5,
         "type": "mirror",
         "length": 124.8,
-        "angle": 20
+        "angle": -21
       },
       {
         "x": 650,
         "y": 97.5,
         "type": "mirror",
         "length": 124.8,
-        "angle": 20.3
+        "angle": 61.3
       },
       {
         "type": "mirror",
         "x": 450,
         "y": 280,
         "length": 124.8,
-        "angle": 56.9
+        "angle": 60.9
       }
     ],
-    "id": "light-v4-deduction-symmetry-11-base",
+    "id": "light-v5-deduction-symmetry-11-base",
     "name": "Dois pares e uma vizinha",
     "hint": "Uma escolha pode mudar o espaço disponível para a terceira cor.",
     "solution": [
-      -7,
-      -14.6,
-      -11,
-      -10.7,
-      25.9
+      87,
+      49.4,
+      -52,
+      30.3,
+      29.9
     ],
-    "sourceAngle": 0,
+    "sourceAngle": -172,
     "target": {
-      "x": 740,
-      "y": 350,
+      "x": 650,
+      "y": 272.5,
       "radius": 22,
       "color": "gold"
     },
@@ -28942,50 +28962,50 @@ export const lightLevels = [
     "campaignBand": "intermediate"
   },
   {
-    "id": "light-v4-open-chain-017",
+    "id": "light-v5-open-chain-017",
     "name": "Uma escolha atravessa três",
     "hint": "Uma alternativa pode decidir a passagem de uma segunda cor e limitar a terceira.",
     "width": 800,
     "height": 460,
     "objects": [
       {
-        "x": 253.9,
-        "y": 98.2,
+        "x": 145.2,
+        "y": 66,
         "type": "mirror",
-        "angle": 9.6,
+        "angle": -19,
         "length": 124.8
       },
       {
-        "x": 576,
-        "y": 101.3,
+        "x": 538.2,
+        "y": 175.8,
         "type": "mirror",
-        "angle": -7.6,
+        "angle": -16.9,
         "length": 124.8
       },
       {
-        "x": 404.9,
-        "y": 274.8,
+        "x": 211.1,
+        "y": 242.3,
         "type": "mirror",
-        "angle": 51,
+        "angle": -42.2,
         "length": 124.8
       },
       {
-        "x": 191.5,
-        "y": 338,
-        "type": "mirror",
-        "angle": 0,
-        "length": 124.8
-      },
-      {
-        "x": 553.9,
-        "y": 329.9,
+        "x": 70.9,
+        "y": 394,
         "type": "mirror",
         "angle": 0,
         "length": 124.8
       },
       {
-        "x": 386.8,
-        "y": 69.3,
+        "x": 586.2,
+        "y": 330.6,
+        "type": "mirror",
+        "angle": 0,
+        "length": 124.8
+      },
+      {
+        "x": 398.2,
+        "y": 74.7,
         "type": "mirror",
         "angle": 0,
         "length": 124.8
@@ -28993,57 +29013,57 @@ export const lightLevels = [
     ],
     "sources": [
       {
-        "x": 25,
-        "y": 98.2,
-        "angle": 0,
+        "x": 64.9,
+        "y": 194.6,
+        "angle": -58.01865193537686,
         "color": "gold"
       },
       {
-        "x": 775,
-        "y": 101.3,
-        "angle": 180,
+        "x": 724.6,
+        "y": 25,
+        "angle": 141.0266952991718,
         "color": "blue"
       },
       {
-        "x": 404.9,
-        "y": 440,
-        "angle": -90,
+        "x": 286.9,
+        "y": 372.4,
+        "angle": -120.22630744192355,
         "color": "pink"
       }
     ],
     "targets": [
       {
-        "x": 452.7,
-        "y": 167.2,
+        "x": 458.5,
+        "y": 179.6,
         "radius": 22,
         "color": "gold"
       },
       {
-        "x": 376.9,
-        "y": 155.6,
+        "x": 379.9,
+        "y": 161.7,
         "radius": 22,
         "color": "blue"
       },
       {
-        "x": 227.4,
-        "y": 237.1,
+        "x": 405.6,
+        "y": 382.7,
         "radius": 22,
         "color": "pink"
       }
     ],
     "portals": [],
     "solution": [
-      9.6,
+      -19,
+      -73.1,
       -42.2,
-      51,
       0,
-      -20,
+      -34,
       0
     ],
-    "sourceAngle": 0,
+    "sourceAngle": -58.01865193537686,
     "target": {
-      "x": 452.7,
-      "y": 167.2,
+      "x": 458.5,
+      "y": 179.6,
       "radius": 22,
       "color": "gold"
     },
@@ -29390,40 +29410,40 @@ export const lightLevels = [
         "x": 200,
         "y": 86,
         "length": 124.8,
-        "angle": 14
+        "angle": -76
       },
       {
         "type": "mirror",
         "x": 200,
         "y": 230,
         "length": 124.8,
-        "angle": -8
+        "angle": -34
       },
       {
         "type": "mirror",
         "x": 200,
         "y": 374,
         "length": 124.8,
-        "angle": -7.2
+        "angle": 82.8
       }
     ],
     "sources": [
       {
-        "x": 30,
-        "y": 86,
-        "angle": 0,
+        "x": 350,
+        "y": 86.00000000000001,
+        "angle": -180,
         "color": "gold"
       },
       {
-        "x": 30,
-        "y": 230,
-        "angle": 0,
+        "x": 39.92801641532884,
+        "y": 434.8827959377477,
+        "angle": -52,
         "color": "blue"
       },
       {
-        "x": 30,
-        "y": 374,
-        "angle": 0,
+        "x": 510,
+        "y": 374.00000000000006,
+        "angle": -180,
         "color": "pink"
       }
     ],
@@ -29517,15 +29537,15 @@ export const lightLevels = [
     ],
     "width": 800,
     "height": 460,
-    "id": "light-v4-portal-058",
+    "id": "light-v5-portal-058",
     "name": "Lados invertidos 058",
-    "hint": "Observe como a ordem das cores muda entre fontes e alvos.",
+    "hint": "Compare a posição dos trajetos nos primeiros espelhos e nos alvos.",
     "solution": [
-      23.5,
-      12,
-      -7.2
+      -66.5,
+      -14,
+      82.8
     ],
-    "sourceAngle": 0,
+    "sourceAngle": -180,
     "target": {
       "x": 725,
       "y": 364,
@@ -29712,21 +29732,21 @@ export const lightLevels = [
   {
     "sources": [
       {
-        "x": 30,
-        "y": 100,
-        "angle": 0,
+        "x": 237.83462019201306,
+        "y": 298.0536137483141,
+        "angle": -98,
         "color": "gold"
       },
       {
-        "x": 770,
-        "y": 360,
-        "angle": 180,
+        "x": 684.0456403667956,
+        "y": 230.5572809000084,
+        "angle": 126,
         "color": "blue"
       },
       {
-        "x": 400,
-        "y": 30,
-        "angle": 90,
+        "x": 515.0943680541842,
+        "y": 98.85466072656045,
+        "angle": 136,
         "color": "pink"
       }
     ],
@@ -29824,32 +29844,32 @@ export const lightLevels = [
         "x": 210,
         "y": 100,
         "length": 124.8,
-        "angle": 71.6
+        "angle": 22.6
       },
       {
         "type": "mirror",
         "x": 590,
         "y": 360,
         "length": 124.8,
-        "angle": -70.8
+        "angle": 82.2
       },
       {
         "type": "mirror",
         "x": 400,
         "y": 210,
         "length": 124.8,
-        "angle": -58.4
+        "angle": -35.4
       }
     ],
-    "id": "light-v4-deduction-open-033",
+    "id": "light-v5-deduction-open-033",
     "name": "Do outro lado 32",
     "hint": "Compare os caminhos completos, não apenas cada chegada isolada.",
     "solution": [
-      40.6,
-      78.2,
-      -89.4
+      -8.4,
+      51.2,
+      -66.4
     ],
-    "sourceAngle": 0,
+    "sourceAngle": -98,
     "target": {
       "x": 607.9,
       "y": 99.3,
@@ -29866,50 +29886,50 @@ export const lightLevels = [
     "campaignBand": "intermediate"
   },
   {
-    "id": "light-v4-open-067",
+    "id": "light-v5-open-067",
     "name": "A chegada reservada",
     "hint": "Compare as aproximações do alvo com os trajetos que as outras cores precisam conservar.",
     "width": 800,
     "height": 460,
     "objects": [
       {
-        "x": 433.5,
-        "y": 123.6,
+        "x": 382.2,
+        "y": 96.5,
         "type": "mirror",
         "length": 124.8,
-        "angle": 78.9
+        "angle": 70.6
       },
       {
-        "x": 335.8,
-        "y": 219.8,
+        "x": 291.3,
+        "y": 196.3,
         "type": "mirror",
         "length": 124.8,
-        "angle": -67.5
+        "angle": -83.9
       },
       {
-        "x": 547.9,
-        "y": 201.2,
+        "x": 728.5,
+        "y": 360,
         "type": "mirror",
         "length": 124.8,
-        "angle": 77.4
+        "angle": -21.1
       },
       {
-        "x": 195.7,
-        "y": 79.6,
+        "x": 231.1,
+        "y": 66,
         "type": "mirror",
         "length": 124.8,
-        "angle": -7.9
+        "angle": -1.2
       },
       {
-        "x": 227.1,
-        "y": 365.6,
+        "x": 440.6,
+        "y": 394,
         "type": "mirror",
         "length": 124.8,
         "angle": 0
       },
       {
-        "x": 474.5,
-        "y": 330,
+        "x": 653.1,
+        "y": 168.8,
         "type": "mirror",
         "length": 124.8,
         "angle": 0
@@ -29917,57 +29937,57 @@ export const lightLevels = [
     ],
     "sources": [
       {
-        "x": 25,
-        "y": 123.6,
-        "angle": 0,
+        "x": 101.6,
+        "y": 171.3,
+        "angle": -14.92633348359315,
         "color": "gold"
       },
       {
-        "x": 25,
-        "y": 219.8,
-        "angle": 0,
+        "x": 164.2,
+        "y": 364.6,
+        "angle": -52.93993213897997,
         "color": "blue"
       },
       {
-        "x": 547.9,
-        "y": 25,
-        "angle": 90,
+        "x": 756.5,
+        "y": 24,
+        "angle": 94.76364169072619,
         "color": "pink"
       }
     ],
     "targets": [
       {
-        "x": 177.1,
-        "y": 228.3,
+        "x": 141.1,
+        "y": 203.6,
         "radius": 22,
         "color": "gold"
       },
       {
-        "x": 58.8,
-        "y": 325.7,
+        "x": 95.1,
+        "y": 396.5,
         "radius": 22,
         "color": "blue"
       },
       {
-        "x": 633.5,
-        "y": 383.3,
+        "x": 638.6,
+        "y": 276.1,
         "radius": 22,
         "color": "pink"
       }
     ],
     "portals": [],
     "solution": [
-      -84.8,
-      79.5,
-      77.4,
-      -36.2,
+      88.2,
+      40.7,
+      -21.1,
+      -22.7,
       0,
       0
     ],
-    "sourceAngle": 0,
+    "sourceAngle": -14.92633348359315,
     "target": {
-      "x": 177.1,
-      "y": 228.3,
+      "x": 141.1,
+      "y": 203.6,
       "radius": 22,
       "color": "gold"
     },
@@ -29983,21 +30003,21 @@ export const lightLevels = [
   {
     "sources": [
       {
-        "x": 30,
-        "y": 230,
-        "angle": 0,
+        "x": 273.212595753644,
+        "y": 394.43818237566813,
+        "angle": -114,
         "color": "gold"
       },
       {
-        "x": 770,
-        "y": 110,
-        "angle": 180,
+        "x": 637.4241043471968,
+        "y": 286.06656813208497,
+        "angle": 258,
         "color": "blue"
       },
       {
-        "x": 470,
-        "y": 30,
-        "angle": 90,
+        "x": 439.38191778878553,
+        "y": 132.14102487685454,
+        "angle": 82,
         "color": "pink"
       }
     ],
@@ -30095,32 +30115,32 @@ export const lightLevels = [
         "x": 200,
         "y": 230,
         "length": 124.8,
-        "angle": 55.9
+        "angle": -1.1
       },
       {
         "type": "mirror",
         "x": 600,
         "y": 110,
         "length": 124.8,
-        "angle": -48.4
+        "angle": -9.4
       },
       {
         "type": "mirror",
         "x": 470,
         "y": 350,
         "length": 124.8,
-        "angle": 15.9
+        "angle": 11.9
       }
     ],
-    "id": "light-v4-deduction-open-032",
+    "id": "light-v5-deduction-open-032",
     "name": "Do outro lado 31",
     "hint": "Compare os caminhos completos, não apenas cada chegada isolada.",
     "solution": [
-      24.9,
-      -79.4,
-      -15.1
+      -32.1,
+      -40.4,
+      -19.1
     ],
-    "sourceAngle": 0,
+    "sourceAngle": -114,
     "target": {
       "x": 479.5,
       "y": 161.2,
@@ -30475,40 +30495,40 @@ export const lightLevels = [
         "x": 200,
         "y": 86,
         "length": 124.8,
-        "angle": 14
+        "angle": -76
       },
       {
         "type": "mirror",
         "x": 200,
         "y": 230,
         "length": 124.8,
-        "angle": 0.2
+        "angle": -77.8
       },
       {
         "type": "mirror",
         "x": 200,
         "y": 374,
         "length": 124.8,
-        "angle": -14.5
+        "angle": 75.5
       }
     ],
     "sources": [
       {
-        "x": 30,
-        "y": 86,
-        "angle": 0,
+        "x": 350,
+        "y": 86.00000000000001,
+        "angle": -180,
         "color": "gold"
       },
       {
-        "x": 30,
-        "y": 230,
-        "angle": 0,
+        "x": 337.0318186463901,
+        "y": 291.01049646137005,
+        "angle": -156,
         "color": "blue"
       },
       {
-        "x": 30,
+        "x": 350,
         "y": 374,
-        "angle": 0,
+        "angle": -180,
         "color": "pink"
       }
     ],
@@ -30624,15 +30644,15 @@ export const lightLevels = [
     ],
     "width": 800,
     "height": 460,
-    "id": "light-v4-portal-050",
+    "id": "light-v5-portal-050",
     "name": "O salto que não cruza 050",
     "hint": "Separe os trechos iluminados do salto entre portais.",
     "solution": [
-      14,
-      -11,
-      -2.5
+      -76,
+      -89,
+      87.5
     ],
-    "sourceAngle": 0,
+    "sourceAngle": -180,
     "target": {
       "x": 725,
       "y": 365,
@@ -30839,40 +30859,40 @@ export const lightLevels = [
         "x": 200,
         "y": 86,
         "length": 124.8,
-        "angle": 14.7
+        "angle": -79.3
       },
       {
         "type": "mirror",
         "x": 200,
         "y": 230,
         "length": 124.8,
-        "angle": 0.5
+        "angle": 16.5
       },
       {
         "type": "mirror",
         "x": 200,
         "y": 374,
         "length": 124.8,
-        "angle": -14.5
+        "angle": 69.5
       }
     ],
     "sources": [
       {
-        "x": 30,
-        "y": 86,
-        "angle": 0,
+        "x": 348.54021031123557,
+        "y": 65.12403485599015,
+        "angle": 172,
         "color": "gold"
       },
       {
-        "x": 30,
-        "y": 230,
-        "angle": 0,
+        "x": 64.31230461497185,
+        "y": 145.21291772268722,
+        "angle": 32,
         "color": "blue"
       },
       {
-        "x": 30,
-        "y": 374,
-        "angle": 0,
+        "x": 346.7221401100709,
+        "y": 342.8132463773361,
+        "angle": 168,
         "color": "pink"
       }
     ],
@@ -30988,15 +31008,15 @@ export const lightLevels = [
     ],
     "width": 800,
     "height": 460,
-    "id": "light-v4-portal-053",
+    "id": "light-v5-portal-053",
     "name": "A saída decide 053",
     "hint": "Compare o que acontece depois de cada saída.",
     "solution": [
-      -5,
-      -18.5,
-      -14.5
+      81,
+      -2.5,
+      69.5
     ],
-    "sourceAngle": 0,
+    "sourceAngle": 172,
     "target": {
       "x": 725,
       "y": 382,
@@ -31019,40 +31039,40 @@ export const lightLevels = [
         "x": 200,
         "y": 86,
         "length": 124.8,
-        "angle": 14.5
+        "angle": -75.5
       },
       {
         "type": "mirror",
         "x": 200,
         "y": 230,
         "length": 124.8,
-        "angle": -8
+        "angle": -84
       },
       {
         "type": "mirror",
         "x": 200,
         "y": 374,
         "length": 124.8,
-        "angle": -7.8
+        "angle": 80.2
       }
     ],
     "sources": [
       {
-        "x": 30,
-        "y": 86,
-        "angle": 0,
+        "x": 350,
+        "y": 86.00000000000001,
+        "angle": -180,
         "color": "gold"
       },
       {
-        "x": 30,
-        "y": 230,
-        "angle": 0,
+        "x": 332.44213892883903,
+        "y": 300.42073441788364,
+        "angle": -152,
         "color": "blue"
       },
       {
-        "x": 30,
-        "y": 374,
-        "angle": 0,
+        "x": 349.6346075389736,
+        "y": 363.5365289383812,
+        "angle": 176,
         "color": "pink"
       }
     ],
@@ -31146,15 +31166,15 @@ export const lightLevels = [
     ],
     "width": 800,
     "height": 460,
-    "id": "light-v4-portal-047",
+    "id": "light-v5-portal-047",
     "name": "Lados invertidos 047",
-    "hint": "Observe como a ordem das cores muda entre fontes e alvos.",
+    "hint": "Compare a posição dos trajetos nos primeiros espelhos e nos alvos.",
     "solution": [
-      14.5,
-      17.5,
-      5.5
+      -75.5,
+      -58.5,
+      -86.5
     ],
-    "sourceAngle": 0,
+    "sourceAngle": -180,
     "target": {
       "x": 725,
       "y": 378,
@@ -31182,9 +31202,9 @@ export const lightLevels = [
         "color": "gold"
       },
       {
-        "x": 62.78963268298966,
-        "y": 186.4329252175475,
-        "angle": -16.7551152030305,
+        "x": 78.32630295810446,
+        "y": 53.0685386809687,
+        "angle": 30.044884796969498,
         "color": "blue"
       },
       {
@@ -31284,7 +31304,7 @@ export const lightLevels = [
         "x": 224.65142460539937,
         "y": 137.7022952698171,
         "length": 124.8,
-        "angle": 45.2
+        "angle": 68.6
       },
       {
         "type": "mirror",
@@ -31320,7 +31340,7 @@ export const lightLevels = [
     "solution": [
       30,
       60,
-      28.2,
+      51.6,
       43.2,
       60,
       -30
@@ -31340,7 +31360,7 @@ export const lightLevels = [
     "tutorial": "",
     "rules": "Todas as três cores devem alcançar seus alvos sem cruzar nem tocar os trechos físicos de outra cor.",
     "hint": "Observe o alvo da luz azul e a parede na sua aproximação direta.",
-    "id": "light-v3-165",
+    "id": "light-v5-legacy-165",
     "campaignNumber": 249,
     "number": 249,
     "campaignBand": "intermediate"
@@ -31495,41 +31515,41 @@ export const lightLevels = [
         "y": 106.8,
         "type": "mirror",
         "length": 124.8,
-        "angle": 14.6
+        "angle": -25.4
       },
       {
         "x": 607.1,
         "y": 142.7,
         "type": "mirror",
         "length": 124.8,
-        "angle": -66.3
+        "angle": 7.7
       },
       {
         "x": 396.8,
         "y": 260.8,
         "type": "mirror",
         "length": 124.8,
-        "angle": -82.8
+        "angle": -36.8
       }
     ],
     "sources": [
       {
-        "x": 30,
-        "y": 70.4,
+        "x": 161.49586813987776,
+        "y": 246.74125103783564,
         "color": "gold",
-        "angle": 11.101887711112571
+        "angle": -68.89811228888743
       },
       {
-        "x": 770,
-        "y": 35.5,
+        "x": 544.5336816109435,
+        "y": 279.0284849297432,
         "color": "blue",
-        "angle": 146.6521873619691
+        "angle": 294.65218736196914
       },
       {
-        "x": 396.8,
-        "y": 435.9,
+        "x": 246.89137594713566,
+        "y": 255.56507549462486,
         "color": "pink",
-        "angle": -90
+        "angle": 2
       }
     ],
     "targets": [
@@ -31623,14 +31643,14 @@ export const lightLevels = [
     "width": 800,
     "height": 460,
     "solution": [
-      14.6,
-      -66.3,
-      32.6
+      -25.4,
+      7.7,
+      78.6
     ],
-    "id": "light-v4-master-004",
+    "id": "light-v5-master-004",
     "name": "Os caminhos podem ficar",
     "hint": "Confira os percursos diretos antes de buscar desvios.",
-    "sourceAngle": 11.101887711112571,
+    "sourceAngle": -68.89811228888743,
     "target": {
       "x": 554.3,
       "y": 216.9,
@@ -31798,50 +31818,50 @@ export const lightLevels = [
     "campaignBand": "intermediate"
   },
   {
-    "id": "light-v4-open-chain-018",
+    "id": "light-v5-open-chain-018",
     "name": "Uma escolha atravessa três",
     "hint": "Uma alternativa pode decidir a passagem de uma segunda cor e limitar a terceira.",
     "width": 800,
     "height": 460,
     "objects": [
       {
-        "x": 256.4,
-        "y": 138.4,
+        "x": 77.3,
+        "y": 101.8,
         "type": "mirror",
         "length": 124.8,
-        "angle": 20
+        "angle": -32.9
       },
       {
-        "x": 324.9,
-        "y": 380,
+        "x": 325.1,
+        "y": 336.9,
         "type": "mirror",
         "length": 124.8,
-        "angle": -30.6
+        "angle": -3.4
       },
       {
-        "x": 511,
-        "y": 272.4,
+        "x": 687.3,
+        "y": 375,
         "type": "mirror",
         "length": 124.8,
-        "angle": -0.7
+        "angle": -70.2
       },
       {
-        "x": 398.6,
-        "y": 80.1,
-        "type": "mirror",
-        "length": 124.8,
-        "angle": 0
-      },
-      {
-        "x": 164,
-        "y": 254.3,
+        "x": 618,
+        "y": 66,
         "type": "mirror",
         "length": 124.8,
         "angle": 0
       },
       {
-        "x": 638.5,
-        "y": 166.5,
+        "x": 376.3,
+        "y": 155.8,
+        "type": "mirror",
+        "length": 124.8,
+        "angle": 0
+      },
+      {
+        "x": 720.5,
+        "y": 150.1,
         "type": "mirror",
         "length": 124.8,
         "angle": 0
@@ -31849,57 +31869,57 @@ export const lightLevels = [
     ],
     "sources": [
       {
-        "x": 25,
-        "y": 138.4,
-        "angle": 0,
+        "x": 60.9,
+        "y": 288,
+        "angle": -84.96652946045978,
         "color": "gold"
       },
       {
-        "x": 25,
-        "y": 380,
-        "angle": 0,
+        "x": 156.5,
+        "y": 269.5,
+        "angle": 21.78969016159949,
         "color": "blue"
       },
       {
-        "x": 775,
-        "y": 272.4,
-        "angle": 180,
+        "x": 524,
+        "y": 323.7,
+        "angle": 17.439889365451943,
         "color": "pink"
       }
     ],
     "targets": [
       {
-        "x": 389.2,
-        "y": 249.7,
+        "x": 581.6,
+        "y": 276.8,
         "radius": 22,
         "color": "gold"
       },
       {
-        "x": 442.2,
-        "y": 166.4,
+        "x": 475.8,
+        "y": 254.9,
         "radius": 22,
         "color": "blue"
       },
       {
-        "x": 256.6,
-        "y": 278.4,
+        "x": 405.9,
+        "y": 260.7,
         "radius": 22,
         "color": "pink"
       }
     ],
     "portals": [],
     "solution": [
-      2.1,
-      -71,
-      -0.7,
+      -40.3,
+      -26.2,
+      -70.2,
       0,
-      -79.8,
-      82.9
+      -14.7,
+      71
     ],
-    "sourceAngle": 0,
+    "sourceAngle": -84.96652946045978,
     "target": {
-      "x": 389.2,
-      "y": 249.7,
+      "x": 581.6,
+      "y": 276.8,
       "radius": 22,
       "color": "gold"
     },
@@ -32215,96 +32235,96 @@ export const lightLevels = [
     "campaignBand": "intermediate"
   },
   {
-    "id": "light-v4-open-311",
+    "id": "light-v5-open-311",
     "name": "Antes do deslocamento",
     "hint": "Compare como os dois trajetos distribuem o espaço.",
     "width": 800,
     "height": 460,
     "objects": [
       {
-        "x": 333.4,
-        "y": 92.3,
+        "x": 250,
+        "y": 377.7,
         "type": "mirror",
         "length": 124.8,
-        "angle": -66.3
+        "angle": 36.3
       },
       {
-        "x": 466.6,
-        "y": 367.7,
+        "x": 550,
+        "y": 82.3,
         "type": "mirror",
         "length": 124.8,
-        "angle": -46.2
+        "angle": 36.3
       },
       {
-        "x": 646.7,
-        "y": 330.9,
+        "x": 605.4,
+        "y": 267,
+        "type": "mirror",
+        "length": 124.8,
+        "angle": -89.5
+      },
+      {
+        "x": 194.6,
+        "y": 193,
+        "type": "mirror",
+        "length": 124.8,
+        "angle": -89.5
+      },
+      {
+        "x": 399.7,
+        "y": 381.3,
         "type": "mirror",
         "length": 124.8,
         "angle": 0
       },
       {
-        "x": 153.3,
-        "y": 129.1,
+        "x": 400.3,
+        "y": 78.7,
         "type": "mirror",
         "length": 124.8,
         "angle": 0
-      },
-      {
-        "x": 341.7,
-        "y": 288.3,
-        "type": "mirror",
-        "length": 124.8,
-        "angle": 7.5
-      },
-      {
-        "x": 458.3,
-        "y": 171.7,
-        "type": "mirror",
-        "length": 124.8,
-        "angle": 21.3
       }
     ],
     "sources": [
       {
-        "x": 775,
-        "y": 92.3,
-        "angle": 180,
+        "x": 250,
+        "y": 25,
+        "angle": 90,
         "color": "gold"
       },
       {
-        "x": 25,
-        "y": 367.7,
-        "angle": 0,
+        "x": 550,
+        "y": 435,
+        "angle": -90,
         "color": "blue"
       }
     ],
     "targets": [
       {
-        "x": 545.9,
-        "y": 323.3,
+        "x": 469,
+        "y": 221.8,
         "radius": 22,
         "color": "gold"
       },
       {
-        "x": 254.1,
-        "y": 136.7,
+        "x": 331,
+        "y": 238.2,
         "radius": 22,
         "color": "blue"
       }
     ],
     "portals": [],
     "solution": [
-      -5.8,
-      -5.8,
-      -82.6,
-      -82.6,
+      -8.3,
+      -8.3,
+      -50.4,
+      -50.4,
       0,
       0
     ],
-    "sourceAngle": 180,
+    "sourceAngle": 90,
     "target": {
-      "x": 545.9,
-      "y": 323.3,
+      "x": 469,
+      "y": 221.8,
       "radius": 22,
       "color": "gold"
     },
@@ -32324,40 +32344,40 @@ export const lightLevels = [
         "x": 200,
         "y": 86,
         "length": 124.8,
-        "angle": 7.6
+        "angle": -82.4
       },
       {
         "type": "mirror",
         "x": 200,
         "y": 230,
         "length": 124.8,
-        "angle": 7.4
+        "angle": -70.6
       },
       {
         "type": "mirror",
         "x": 200,
         "y": 374,
         "length": 124.8,
-        "angle": -14.4
+        "angle": 75.6
       }
     ],
     "sources": [
       {
-        "x": 30,
-        "y": 86,
-        "angle": 0,
+        "x": 350,
+        "y": 86.00000000000001,
+        "angle": -180,
         "color": "gold"
       },
       {
-        "x": 30,
-        "y": 230,
-        "angle": 0,
+        "x": 337.0318186463901,
+        "y": 291.01049646137005,
+        "angle": -156,
         "color": "blue"
       },
       {
-        "x": 30,
+        "x": 350,
         "y": 374,
-        "angle": 0,
+        "angle": -180,
         "color": "pink"
       }
     ],
@@ -32473,15 +32493,15 @@ export const lightLevels = [
     ],
     "width": 800,
     "height": 460,
-    "id": "light-v4-portal-060",
+    "id": "light-v5-portal-060",
     "name": "O salto que não cruza 060",
     "hint": "Separe os trechos iluminados do salto entre portais.",
     "solution": [
-      7.6,
-      7.4,
-      1
+      -82.4,
+      -70.6,
+      -89
     ],
-    "sourceAngle": 0,
+    "sourceAngle": -180,
     "target": {
       "x": 725,
       "y": 228,
@@ -32601,108 +32621,108 @@ export const lightLevels = [
     "campaignBand": "intermediate"
   },
   {
-    "id": "light-v4-open-046",
+    "id": "light-v5-open-046",
     "name": "Compartilhar o vazio",
     "hint": "Cada trajeto funciona sozinho. Compare o espaço que ocupam juntos.",
     "width": 800,
     "height": 460,
     "objects": [
       {
-        "x": 612.1,
-        "y": 374.8,
+        "x": 611.6,
+        "y": 394,
         "type": "mirror",
         "length": 124.8,
-        "angle": 7.4
+        "angle": -15.2
       },
       {
-        "x": 516,
-        "y": 111.5,
+        "x": 510.6,
+        "y": 80.5,
         "type": "mirror",
         "length": 124.8,
-        "angle": -7.6
+        "angle": 4.5
       },
       {
-        "x": 237.2,
-        "y": 80.2,
+        "x": 242.1,
+        "y": 107.7,
         "type": "mirror",
         "length": 124.8,
-        "angle": 41.9
+        "angle": 49.4
       },
       {
-        "x": 421.3,
-        "y": 229.8,
+        "x": 471.6,
+        "y": 229.9,
         "type": "mirror",
         "length": 124.8,
         "angle": 0
       },
       {
-        "x": 158.7,
-        "y": 347.6,
+        "x": 187.7,
+        "y": 391.3,
         "type": "mirror",
         "length": 124.8,
         "angle": 0
       },
       {
-        "x": 162.5,
-        "y": 206.9,
+        "x": 99.2,
+        "y": 233.9,
         "type": "mirror",
         "length": 124.8,
-        "angle": -36.4
+        "angle": -36.8
       }
     ],
     "sources": [
       {
-        "x": 775,
-        "y": 374.8,
-        "angle": 180,
+        "x": 729,
+        "y": 252.3,
+        "angle": 129.64211989636763,
         "color": "gold"
       },
       {
-        "x": 775,
-        "y": 111.5,
-        "angle": 180,
+        "x": 643.8,
+        "y": 155.9,
+        "angle": -150.48727213078504,
         "color": "blue"
       },
       {
-        "x": 25,
-        "y": 80.2,
-        "angle": 0,
+        "x": 54.6,
+        "y": 77.3,
+        "angle": 9.209417086203597,
         "color": "pink"
       }
     ],
     "targets": [
       {
-        "x": 370.3,
-        "y": 310.7,
+        "x": 336,
+        "y": 294.2,
         "radius": 22,
         "color": "gold"
       },
       {
-        "x": 45.3,
-        "y": 392,
+        "x": 24,
+        "y": 334.3,
         "radius": 22,
         "color": "blue"
       },
       {
-        "x": 253.5,
-        "y": 230.6,
+        "x": 242.8,
+        "y": 204.3,
         "radius": 22,
         "color": "pink"
       }
     ],
     "portals": [],
     "solution": [
-      7.4,
-      -16.7,
-      41.9,
+      -15.2,
+      -7.2,
+      49.4,
       0,
-      -27.4,
+      -12.4,
       0
     ],
-    "sourceAngle": 180,
+    "sourceAngle": 129.64211989636763,
     "target": {
-      "x": 370.3,
-      "y": 310.7,
+      "x": 336,
+      "y": 294.2,
       "radius": 22,
       "color": "gold"
     },
@@ -32924,7 +32944,7 @@ export const lightLevels = [
     "campaignBand": "intermediate"
   },
   {
-    "id": "light-v3-126",
+    "id": "light-v5-legacy-126",
     "campaignNumber": 261,
     "name": "Dois impactos, uma orientação",
     "sources": [
@@ -32941,9 +32961,9 @@ export const lightLevels = [
         "color": "blue"
       },
       {
-        "x": 630,
-        "y": 390,
-        "angle": 180,
+        "x": 656.5150307496731,
+        "y": 238.96310614803903,
+        "angle": 141,
         "color": "pink"
       }
     ],
@@ -32982,7 +33002,7 @@ export const lightLevels = [
         "x": 470,
         "y": 390,
         "length": 124.8,
-        "angle": -20
+        "angle": -39.5
       }
     ],
     "portals": [
@@ -33055,7 +33075,7 @@ export const lightLevels = [
     ],
     "solution": [
       45,
-      29.6
+      10.1
     ],
     "width": 800,
     "height": 460,
@@ -33093,15 +33113,15 @@ export const lightLevels = [
         "color": "gold"
       },
       {
-        "x": 489.3449778431344,
-        "y": 29.369315669173304,
-        "angle": 150,
+        "x": 25.566024347487314,
+        "y": 226.953143830165,
+        "angle": -20,
         "color": "blue"
       },
       {
-        "x": 516.8572301294305,
-        "y": 166.4741106162578,
-        "angle": -219.720976111235,
+        "x": 478.35420837255015,
+        "y": 26.225412357286757,
+        "angle": -251.720976111235,
         "color": "pink"
       }
     ],
@@ -33195,14 +33215,14 @@ export const lightLevels = [
         "x": 354.45844162255526,
         "y": 107.24609366618097,
         "length": 124.8,
-        "angle": -35
+        "angle": 60
       },
       {
         "type": "mirror",
         "x": 399.94299632962793,
         "y": 263.61050419323146,
         "length": 124.8,
-        "angle": -44.7
+        "angle": -60.7
       },
       {
         "type": "mirror",
@@ -33224,8 +33244,8 @@ export const lightLevels = [
     "solution": [
       -15,
       0,
-      -60,
-      -9.7,
+      35,
+      -25.7,
       -9.7
     ],
     "sourceAngle": 375,
@@ -33243,7 +33263,7 @@ export const lightLevels = [
     "tutorial": "",
     "rules": "Todas as três cores devem alcançar seus alvos sem cruzar nem tocar os trechos físicos de outra cor.",
     "hint": "Observe o alvo da luz rosa e a parede na sua aproximação direta.",
-    "id": "light-v3-174",
+    "id": "light-v5-legacy-174",
     "campaignNumber": 262,
     "number": 262,
     "campaignBand": "intermediate"
@@ -33251,34 +33271,34 @@ export const lightLevels = [
   {
     "sources": [
       {
-        "x": 30,
-        "y": 110,
-        "angle": 0,
+        "x": 495.4423259036624,
+        "y": 162.09445330007907,
+        "angle": -170,
         "color": "gold"
       },
       {
-        "x": 30,
-        "y": 350,
-        "angle": 0,
+        "x": 32.242128958775965,
+        "y": 101.28872823348749,
+        "angle": 56,
         "color": "blue"
       },
       {
-        "x": 380,
-        "y": 440,
-        "angle": -90,
+        "x": 400.8759651440098,
+        "y": 433.54021031123557,
+        "angle": -98,
         "color": "pink"
       }
     ],
     "targets": [
       {
-        "x": 740,
-        "y": 350,
+        "x": 650,
+        "y": 272.5,
         "radius": 22,
         "color": "gold"
       },
       {
-        "x": 740,
-        "y": 110,
+        "x": 650,
+        "y": 187.5,
         "radius": 22,
         "color": "blue"
       },
@@ -33363,51 +33383,51 @@ export const lightLevels = [
         "y": 110,
         "type": "mirror",
         "length": 124.8,
-        "angle": 24
+        "angle": -61
       },
       {
         "x": 200,
         "y": 350,
         "type": "mirror",
         "length": 124.8,
-        "angle": 16.4
+        "angle": 44.4
       },
       {
         "x": 650,
         "y": 362.5,
         "type": "mirror",
         "length": 124.8,
-        "angle": 20
+        "angle": -21
       },
       {
         "x": 650,
         "y": 97.5,
         "type": "mirror",
         "length": 124.8,
-        "angle": 20.3
+        "angle": 61.3
       },
       {
         "type": "mirror",
         "x": 380,
         "y": 285,
         "length": 124.8,
-        "angle": -2.7
+        "angle": -6.7
       }
     ],
-    "id": "light-v4-deduction-symmetry-06-base",
+    "id": "light-v5-deduction-symmetry-06-base",
     "name": "Dois pares e uma vizinha",
     "hint": "Uma escolha pode mudar o espaço disponível para a terceira cor.",
     "solution": [
-      -7,
-      -14.6,
-      -11,
-      -10.7,
-      -33.7
+      88,
+      13.4,
+      -52,
+      30.3,
+      -37.7
     ],
-    "sourceAngle": 0,
+    "sourceAngle": -170,
     "target": {
-      "x": 740,
-      "y": 350,
+      "x": 650,
+      "y": 272.5,
       "radius": 22,
       "color": "gold"
     },
@@ -33423,21 +33443,21 @@ export const lightLevels = [
   {
     "sources": [
       {
-        "x": 30,
-        "y": 100,
-        "angle": 0,
+        "x": 139.8606165137476,
+        "y": 243.80704740786672,
+        "angle": -64,
         "color": "gold"
       },
       {
-        "x": 770,
-        "y": 110,
-        "angle": 180,
+        "x": 727.7790087006333,
+        "y": 330.49250500067075,
+        "angle": 238,
         "color": "blue"
       },
       {
-        "x": 400,
-        "y": 440,
-        "angle": -90,
+        "x": 579.0139411662892,
+        "y": 298.81512338817765,
+        "angle": -174,
         "color": "pink"
       }
     ],
@@ -33535,21 +33555,21 @@ export const lightLevels = [
         "x": 210,
         "y": 100,
         "length": 124.8,
-        "angle": 33.5
+        "angle": 1.5
       },
       {
         "type": "mirror",
         "x": 590,
         "y": 110,
         "length": 124.8,
-        "angle": 20.6
+        "angle": 49.6
       },
       {
         "type": "mirror",
         "x": 400,
         "y": 280,
         "length": 124.8,
-        "angle": -18
+        "angle": -60
       },
       {
         "type": "wall",
@@ -33608,15 +33628,15 @@ export const lightLevels = [
         "angle": 90
       }
     ],
-    "id": "light-v4-deduction-windows-02",
+    "id": "light-v5-deduction-windows-02",
     "name": "Visibilidade entre regiões",
     "hint": "Compare o que cada abertura deixa passar.",
     "solution": [
-      2.5,
-      -10.4,
-      -49
+      -29.5,
+      18.6,
+      89
     ],
-    "sourceAngle": 0,
+    "sourceAngle": -64,
     "target": {
       "x": 333.7,
       "y": 405.8,
@@ -33639,40 +33659,40 @@ export const lightLevels = [
         "x": 200,
         "y": 86,
         "length": 124.8,
-        "angle": 14
+        "angle": -76
       },
       {
         "type": "mirror",
         "x": 200,
         "y": 230,
         "length": 124.8,
-        "angle": -7.3
+        "angle": -89.3
       },
       {
         "type": "mirror",
         "x": 200,
         "y": 374,
         "length": 124.8,
-        "angle": -8.3
+        "angle": 81.7
       }
     ],
     "sources": [
       {
-        "x": 30,
-        "y": 86,
-        "angle": 0,
+        "x": 350,
+        "y": 86.00000000000001,
+        "angle": -180,
         "color": "gold"
       },
       {
-        "x": 30,
-        "y": 230,
-        "angle": 0,
+        "x": 344.1892543907478,
+        "y": 271.34560337254993,
+        "angle": -164,
         "color": "blue"
       },
       {
-        "x": 30,
+        "x": 350,
         "y": 374,
-        "angle": 0,
+        "angle": -180,
         "color": "pink"
       }
     ],
@@ -33788,15 +33808,15 @@ export const lightLevels = [
     ],
     "width": 800,
     "height": 460,
-    "id": "light-v4-portal-046",
+    "id": "light-v5-portal-046",
     "name": "A consequência distante 046",
     "hint": "Uma escolha aqui pode atrapalhar uma luz do outro lado.",
     "solution": [
-      3.5,
-      -7.3,
-      -8.3
+      -86.5,
+      -89.3,
+      81.7
     ],
-    "sourceAngle": 0,
+    "sourceAngle": -180,
     "target": {
       "x": 725,
       "y": 364,
@@ -33813,64 +33833,64 @@ export const lightLevels = [
     "campaignBand": "intermediate"
   },
   {
-    "id": "light-v4-open-307",
+    "id": "light-v5-open-307",
     "name": "Antes do deslocamento",
     "hint": "Compare como os dois trajetos distribuem o espaço.",
     "width": 800,
     "height": 460,
     "objects": [
       {
-        "x": 171.5,
-        "y": 232.4,
+        "x": 579.6,
+        "y": 382,
         "type": "mirror",
         "length": 124.8,
-        "angle": 34.2
+        "angle": -26.5
       },
       {
-        "x": 628.5,
-        "y": 227.6,
+        "x": 220.4,
+        "y": 78,
         "type": "mirror",
         "length": 124.8,
-        "angle": 51.1
+        "angle": 10.4
       },
       {
-        "x": 498.9,
-        "y": 302.8,
+        "x": 392.2,
+        "y": 112.5,
         "type": "mirror",
         "length": 124.8,
         "angle": 0
       },
       {
-        "x": 301.1,
-        "y": 157.2,
-        "type": "mirror",
-        "length": 124.8,
-        "angle": -41.5
-      },
-      {
-        "x": 614.2,
-        "y": 76.6,
+        "x": 407.8,
+        "y": 347.5,
         "type": "mirror",
         "length": 124.8,
         "angle": 0
       },
       {
-        "x": 185.8,
-        "y": 383.4,
+        "x": 163.4,
+        "y": 228.7,
         "type": "mirror",
         "length": 124.8,
-        "angle": 0
+        "angle": 55.5
+      },
+      {
+        "x": 636.6,
+        "y": 231.3,
+        "type": "mirror",
+        "length": 124.8,
+        "angle": 78.7
       }
     ],
     "sources": [
       {
-        "x": 171.5,
+        "x": 579.6,
         "y": 25,
         "angle": 90,
         "color": "gold"
       },
       {
-        "x": 628.5,
+        "x": 220.39999999999998,
         "y": 435,
         "angle": -90,
         "color": "blue"
@@ -33878,31 +33898,31 @@ export const lightLevels = [
     ],
     "targets": [
       {
-        "x": 481.7,
-        "y": 109.7,
+        "x": 299.8,
+        "y": 171.3,
         "radius": 22,
         "color": "gold"
       },
       {
-        "x": 318.3,
-        "y": 350.3,
+        "x": 500.2,
+        "y": 288.7,
         "radius": 22,
         "color": "blue"
       }
     ],
     "portals": [],
     "solution": [
-      29.9,
-      29.9,
-      -22.4,
-      -22.4,
+      10.4,
+      10.4,
       0,
-      0
+      0,
+      60.4,
+      60.4
     ],
     "sourceAngle": 90,
     "target": {
-      "x": 481.7,
-      "y": 109.7,
+      "x": 299.8,
+      "y": 171.3,
       "radius": 22,
       "color": "gold"
     },
@@ -34268,64 +34288,64 @@ export const lightLevels = [
     "campaignBand": "intermediate"
   },
   {
-    "id": "light-v4-open-308",
+    "id": "light-v5-open-308",
     "name": "Uma metade diferente",
     "hint": "As peças se correspondem, mas a posição dos alvos não.",
     "width": 800,
     "height": 460,
     "objects": [
       {
-        "x": 171.5,
-        "y": 232.4,
+        "x": 579.6,
+        "y": 382,
         "type": "mirror",
         "length": 124.8,
-        "angle": 34.2
+        "angle": -26.5
       },
       {
-        "x": 628.5,
-        "y": 227.6,
+        "x": 220.4,
+        "y": 78,
         "type": "mirror",
         "length": 124.8,
-        "angle": 51.1
+        "angle": 10.4
       },
       {
-        "x": 498.9,
-        "y": 302.8,
+        "x": 392.2,
+        "y": 112.5,
         "type": "mirror",
         "length": 124.8,
         "angle": 0
       },
       {
-        "x": 301.1,
-        "y": 157.2,
-        "type": "mirror",
-        "length": 124.8,
-        "angle": -41.5
-      },
-      {
-        "x": 614.2,
-        "y": 76.6,
+        "x": 407.8,
+        "y": 347.5,
         "type": "mirror",
         "length": 124.8,
         "angle": 0
       },
       {
-        "x": 185.8,
-        "y": 383.4,
+        "x": 163.4,
+        "y": 228.7,
         "type": "mirror",
         "length": 124.8,
-        "angle": 0
+        "angle": 55.5
+      },
+      {
+        "x": 636.6,
+        "y": 231.3,
+        "type": "mirror",
+        "length": 124.8,
+        "angle": 78.7
       }
     ],
     "sources": [
       {
-        "x": 171.5,
+        "x": 579.6,
         "y": 25,
         "angle": 90,
         "color": "gold"
       },
       {
-        "x": 628.5,
+        "x": 220.39999999999998,
         "y": 435,
         "angle": -90,
         "color": "blue"
@@ -34333,37 +34353,37 @@ export const lightLevels = [
     ],
     "targets": [
       {
-        "x": 481.7,
-        "y": 109.7,
+        "x": 299.8,
+        "y": 171.3,
         "radius": 22,
         "color": "gold"
       },
       {
-        "x": 318.3,
-        "y": 255.3,
+        "x": 500.2,
+        "y": 193.7,
         "radius": 22,
         "color": "blue"
       }
     ],
     "portals": [],
     "solution": [
-      29.9,
-      42.4,
+      10.4,
+      10.4,
+      -3.3,
       0,
-      -22.4,
-      0,
-      0
+      52.4,
+      68.3
     ],
     "sourceAngle": 90,
     "target": {
-      "x": 481.7,
-      "y": 109.7,
+      "x": 299.8,
+      "y": 171.3,
       "radius": 22,
       "color": "gold"
     },
-    "requiredBounces": 3,
+    "requiredBounces": 5,
     "wallPurpose": [],
-    "decoyCount": 3,
+    "decoyCount": 1,
     "tutorial": "",
     "rules": "Leve cada cor ao seu alvo sem cruzar outras cores.",
     "number": 269,
@@ -34523,40 +34543,40 @@ export const lightLevels = [
         "x": 200,
         "y": 86,
         "length": 124.8,
-        "angle": 7.4
+        "angle": -82.6
       },
       {
         "type": "mirror",
         "x": 200,
         "y": 230,
         "length": 124.8,
-        "angle": 8.1
+        "angle": -75.9
       },
       {
         "type": "mirror",
         "x": 200,
         "y": 374,
         "length": 124.8,
-        "angle": -14.3
+        "angle": 75.7
       }
     ],
     "sources": [
       {
-        "x": 30,
-        "y": 86,
-        "angle": 0,
+        "x": 350,
+        "y": 86.00000000000001,
+        "angle": -180,
         "color": "gold"
       },
       {
-        "x": 30,
-        "y": 230,
-        "angle": 0,
+        "x": 346.7221401100709,
+        "y": 261.1867536226639,
+        "angle": -168,
         "color": "blue"
       },
       {
-        "x": 30,
+        "x": 350,
         "y": 374,
-        "angle": 0,
+        "angle": -180,
         "color": "pink"
       }
     ],
@@ -34672,15 +34692,15 @@ export const lightLevels = [
     ],
     "width": 800,
     "height": 460,
-    "id": "light-v4-portal-051",
+    "id": "light-v5-portal-051",
     "name": "A consequência distante 051",
     "hint": "Uma escolha aqui pode atrapalhar uma luz do outro lado.",
     "solution": [
-      7.4,
-      8.1,
-      -3.5
+      -82.6,
+      -75.9,
+      86.5
     ],
-    "sourceAngle": 0,
+    "sourceAngle": -180,
     "target": {
       "x": 725,
       "y": 224,
@@ -35051,50 +35071,50 @@ export const lightLevels = [
     "campaignBand": "intermediate"
   },
   {
-    "id": "light-v4-open-066",
+    "id": "light-v5-open-066",
     "name": "Primeiro, para longe",
     "hint": "Uma saída que aponta para o alvo pode ocupar a chegada de outra cor.",
     "width": 800,
     "height": 460,
     "objects": [
       {
-        "x": 528.8,
-        "y": 326.1,
+        "x": 475.4,
+        "y": 266.1,
         "type": "mirror",
         "length": 124.8,
-        "angle": 32.4
+        "angle": 46.3
       },
       {
-        "x": 238,
-        "y": 144.7,
+        "x": 268.9,
+        "y": 193.1,
         "type": "mirror",
         "length": 124.8,
-        "angle": 52.1
+        "angle": 50.3
       },
       {
-        "x": 557.8,
-        "y": 177.7,
+        "x": 387.7,
+        "y": 119,
         "type": "mirror",
         "length": 124.8,
-        "angle": 80
+        "angle": -49.3
       },
       {
-        "x": 432.6,
-        "y": 82.2,
+        "x": 579.6,
+        "y": 120.5,
         "type": "mirror",
         "length": 124.8,
         "angle": 0
       },
       {
-        "x": 185.4,
-        "y": 352.7,
+        "x": 613.3,
+        "y": 302.1,
         "type": "mirror",
         "length": 124.8,
-        "angle": 44.1
+        "angle": 0
       },
       {
-        "x": 358.4,
-        "y": 227.8,
+        "x": 154.9,
+        "y": 342,
         "type": "mirror",
         "length": 124.8,
         "angle": 0
@@ -35103,56 +35123,56 @@ export const lightLevels = [
     "sources": [
       {
         "x": 775,
-        "y": 326.1,
+        "y": 266.1,
         "angle": 180,
         "color": "gold"
       },
       {
-        "x": 25,
-        "y": 144.7,
-        "angle": 0,
+        "x": 200.5,
+        "y": 39.5,
+        "angle": 65.99599235188239,
         "color": "blue"
       },
       {
         "x": 775,
-        "y": 177.7,
+        "y": 119,
         "angle": 180,
         "color": "pink"
       }
     ],
     "targets": [
       {
-        "x": 483.7,
-        "y": 230.1,
+        "x": 479.8,
+        "y": 165.9,
         "radius": 22,
         "color": "gold"
       },
       {
-        "x": 666.5,
-        "y": 215.1,
+        "x": 537.4,
+        "y": 378.9,
         "radius": 22,
         "color": "blue"
       },
       {
-        "x": 683.8,
-        "y": 131.6,
+        "x": 424.2,
+        "y": 359.5,
         "radius": 22,
         "color": "pink"
       }
     ],
     "portals": [],
     "solution": [
-      32.4,
-      4.7,
-      18.7,
-      -65.8,
+      46.3,
+      -83.3,
+      -49.3,
       0,
-      0
+      0,
+      66.5
     ],
     "sourceAngle": 180,
     "target": {
-      "x": 483.7,
-      "y": 230.1,
+      "x": 479.8,
+      "y": 165.9,
       "radius": 22,
       "color": "gold"
     },
@@ -35172,41 +35192,41 @@ export const lightLevels = [
         "y": 151.5,
         "type": "mirror",
         "length": 124.8,
-        "angle": 2.3
+        "angle": 20.3
       },
       {
         "x": 597.8,
         "y": 110,
         "type": "mirror",
         "length": 124.8,
-        "angle": -22.2
+        "angle": 75.8
       },
       {
         "x": 420,
         "y": 277.2,
         "type": "mirror",
         "length": 124.8,
-        "angle": -85.2
+        "angle": 52.8
       }
     ],
     "sources": [
       {
-        "x": 30,
-        "y": 76.9,
+        "x": 135.7313235509471,
+        "y": 24.405932503298473,
         "color": "gold",
-        "angle": 21.918535057199076
+        "angle": 57.91853505719908
       },
       {
-        "x": 770,
-        "y": 40.4,
+        "x": 448.62380559533995,
+        "y": 125.69914083455141,
         "color": "blue",
-        "angle": 157.992367842636
+        "angle": -6.007632157363986
       },
       {
-        "x": 420,
-        "y": 440,
+        "x": 579.1235032589237,
+        "y": 293.9245541228246,
         "color": "pink",
-        "angle": -90
+        "angle": -174
       }
     ],
     "targets": [
@@ -35322,14 +35342,14 @@ export const lightLevels = [
     "width": 800,
     "height": 460,
     "solution": [
-      2.3,
-      -22.2,
-      -57.6
+      20.3,
+      75.8,
+      80.4
     ],
-    "id": "light-v4-master-009",
+    "id": "light-v5-master-009",
     "name": "Nem tudo precisa mudar",
     "hint": "Confira os percursos diretos antes de buscar desvios.",
-    "sourceAngle": 21.918535057199076,
+    "sourceAngle": 57.91853505719908,
     "target": {
       "x": 374,
       "y": 102.3,
@@ -35348,21 +35368,21 @@ export const lightLevels = [
   {
     "sources": [
       {
-        "x": 30,
-        "y": 100,
-        "angle": 0,
+        "x": 71.4359353944898,
+        "y": 180,
+        "angle": -30,
         "color": "gold"
       },
       {
-        "x": 770,
-        "y": 110,
-        "angle": 180,
+        "x": 551.2924967040532,
+        "y": 265.24731620415946,
+        "angle": 284,
         "color": "blue"
       },
       {
-        "x": 400,
-        "y": 440,
-        "angle": -90,
+        "x": 599.5128100519648,
+        "y": 293.9512947488251,
+        "angle": -176,
         "color": "pink"
       }
     ],
@@ -35460,32 +35480,32 @@ export const lightLevels = [
         "x": 210,
         "y": 100,
         "length": 124.8,
-        "angle": 66.6
+        "angle": 51.6
       },
       {
         "type": "mirror",
         "x": 590,
         "y": 110,
         "length": 124.8,
-        "angle": -16.4
+        "angle": 35.6
       },
       {
         "type": "mirror",
         "x": 400,
         "y": 280,
         "length": 124.8,
-        "angle": -51.5
+        "angle": 85.5
       }
     ],
-    "id": "light-v4-deduction-open-061",
+    "id": "light-v5-deduction-open-061",
     "name": "Acordo de trajetos 60",
     "hint": "Compare os caminhos completos, não apenas cada chegada isolada.",
     "solution": [
-      35.6,
-      -47.4,
-      -82.5
+      20.6,
+      4.6,
+      54.5
     ],
-    "sourceAngle": 0,
+    "sourceAngle": -30,
     "target": {
       "x": 306.4,
       "y": 381.9,
@@ -35617,50 +35637,50 @@ export const lightLevels = [
     "campaignBand": "intermediate"
   },
   {
-    "id": "light-v4-open-313",
+    "id": "light-v5-open-313",
     "name": "Antes do deslocamento",
     "hint": "Compare como os dois trajetos distribuem o espaço.",
     "width": 800,
     "height": 460,
     "objects": [
       {
-        "x": 279.7,
-        "y": 283.4,
+        "x": 155.6,
+        "y": 383.4,
         "type": "mirror",
         "length": 124.8,
-        "angle": -64
+        "angle": -12.8
       },
       {
-        "x": 520.3,
-        "y": 176.6,
+        "x": 644.4,
+        "y": 76.6,
         "type": "mirror",
         "length": 124.8,
-        "angle": -25.8
+        "angle": 16.7
       },
       {
-        "x": 150.9,
-        "y": 118.1,
+        "x": 173.2,
+        "y": 66,
         "type": "mirror",
         "length": 124.8,
-        "angle": -50.5
+        "angle": -24.7
       },
       {
-        "x": 649.1,
-        "y": 341.9,
+        "x": 626.8,
+        "y": 394,
         "type": "mirror",
         "length": 124.8,
         "angle": 0
       },
       {
-        "x": 420.4,
-        "y": 302.8,
+        "x": 322.5,
+        "y": 245.9,
         "type": "mirror",
         "length": 124.8,
-        "angle": -4.1
+        "angle": 22
       },
       {
-        "x": 379.6,
-        "y": 157.2,
+        "x": 477.5,
+        "y": 214.1,
         "type": "mirror",
         "length": 124.8,
         "angle": 0
@@ -35668,45 +35688,45 @@ export const lightLevels = [
     ],
     "sources": [
       {
-        "x": 25,
-        "y": 283.4,
-        "angle": 0,
+        "x": 45.4,
+        "y": 183.1,
+        "angle": 61.18152026465054,
         "color": "gold"
       },
       {
-        "x": 775,
-        "y": 176.60000000000002,
-        "angle": -180,
+        "x": 754.6,
+        "y": 276.9,
+        "angle": -118.8184797353495,
         "color": "blue"
       }
     ],
     "targets": [
       {
-        "x": 556.8,
-        "y": 325,
+        "x": 514.6,
+        "y": 327,
         "radius": 22,
         "color": "gold"
       },
       {
-        "x": 243.2,
-        "y": 135,
+        "x": 285.4,
+        "y": 133,
         "radius": 22,
         "color": "blue"
       }
     ],
     "portals": [],
     "solution": [
-      3.9,
-      3.9,
+      10.8,
+      10.8,
       0,
       0,
-      8.5,
-      8.5
+      -8.3,
+      -8.3
     ],
-    "sourceAngle": 0,
+    "sourceAngle": 61.18152026465054,
     "target": {
-      "x": 556.8,
-      "y": 325,
+      "x": 514.6,
+      "y": 327,
       "radius": 22,
       "color": "gold"
     },
@@ -35720,102 +35740,102 @@ export const lightLevels = [
     "campaignBand": "intermediate"
   },
   {
-    "id": "light-v4-open-312",
+    "id": "light-v5-open-312",
     "name": "Uma metade diferente",
     "hint": "As peças se correspondem, mas a posição dos alvos não.",
     "width": 800,
     "height": 460,
     "objects": [
       {
-        "x": 333.4,
-        "y": 92.3,
+        "x": 250,
+        "y": 377.7,
         "type": "mirror",
         "length": 124.8,
-        "angle": -66.3
+        "angle": 36.3
       },
       {
-        "x": 466.6,
-        "y": 367.7,
+        "x": 550,
+        "y": 82.3,
         "type": "mirror",
         "length": 124.8,
-        "angle": -46.2
+        "angle": 36.3
       },
       {
-        "x": 646.7,
-        "y": 330.9,
+        "x": 605.4,
+        "y": 267,
+        "type": "mirror",
+        "length": 124.8,
+        "angle": -89.5
+      },
+      {
+        "x": 194.6,
+        "y": 193,
+        "type": "mirror",
+        "length": 124.8,
+        "angle": -89.5
+      },
+      {
+        "x": 399.7,
+        "y": 381.3,
         "type": "mirror",
         "length": 124.8,
         "angle": 0
       },
       {
-        "x": 153.3,
-        "y": 129.1,
+        "x": 400.3,
+        "y": 78.7,
         "type": "mirror",
         "length": 124.8,
         "angle": 0
-      },
-      {
-        "x": 341.7,
-        "y": 288.3,
-        "type": "mirror",
-        "length": 124.8,
-        "angle": 7.5
-      },
-      {
-        "x": 458.3,
-        "y": 171.7,
-        "type": "mirror",
-        "length": 124.8,
-        "angle": 21.3
       }
     ],
     "sources": [
       {
-        "x": 775,
-        "y": 92.3,
-        "angle": 180,
+        "x": 250,
+        "y": 25,
+        "angle": 90,
         "color": "gold"
       },
       {
-        "x": 25,
-        "y": 367.7,
-        "angle": 0,
+        "x": 550,
+        "y": 435,
+        "angle": -90,
         "color": "blue"
       }
     ],
     "targets": [
       {
-        "x": 545.9,
-        "y": 323.3,
+        "x": 469,
+        "y": 221.8,
         "radius": 22,
         "color": "gold"
       },
       {
-        "x": 254.1,
-        "y": 206.7,
+        "x": 331,
+        "y": 193.2,
         "radius": 22,
         "color": "blue"
       }
     ],
     "portals": [],
     "solution": [
-      -73.8,
-      -73.8,
+      -8.3,
+      -8.3,
+      -32.1,
+      -50.4,
       0,
-      0,
-      37.7,
-      46.2
+      -8.1
     ],
-    "sourceAngle": 180,
+    "sourceAngle": 90,
     "target": {
-      "x": 545.9,
-      "y": 323.3,
+      "x": 469,
+      "y": 221.8,
       "radius": 22,
       "color": "gold"
     },
-    "requiredBounces": 4,
+    "requiredBounces": 5,
     "wallPurpose": [],
-    "decoyCount": 2,
+    "decoyCount": 1,
     "tutorial": "",
     "rules": "Leve cada cor ao seu alvo sem cruzar outras cores.",
     "number": 279,
@@ -35968,40 +35988,40 @@ export const lightLevels = [
   {
     "sources": [
       {
-        "x": 30,
-        "y": 110,
-        "angle": 0,
+        "x": 495.4423259036624,
+        "y": 162.09445330007907,
+        "angle": -170,
         "color": "gold"
       },
       {
-        "x": 30,
-        "y": 350,
-        "angle": 0,
+        "x": 32.242128958775965,
+        "y": 101.28872823348749,
+        "angle": 56,
         "color": "blue"
       },
       {
-        "x": 380,
-        "y": 440,
-        "angle": -90,
+        "x": 400.8759651440098,
+        "y": 433.54021031123557,
+        "angle": -98,
         "color": "pink"
       }
     ],
     "targets": [
       {
-        "x": 740,
-        "y": 350,
+        "x": 650,
+        "y": 272.5,
         "radius": 22,
         "color": "gold"
       },
       {
-        "x": 740,
-        "y": 110,
+        "x": 650,
+        "y": 187.5,
         "radius": 22,
         "color": "blue"
       },
       {
-        "x": 510.6,
-        "y": 282.5,
+        "x": 743.6,
+        "y": 305.9,
         "radius": 22,
         "color": "pink"
       }
@@ -36054,8 +36074,8 @@ export const lightLevels = [
       {
         "id": "pinka",
         "pairId": "pinkb",
-        "x": 434.9,
-        "y": 375.6,
+        "x": 466.4,
+        "y": 403.9,
         "radius": 16,
         "colors": [
           "pink"
@@ -36065,8 +36085,8 @@ export const lightLevels = [
       {
         "id": "pinkb",
         "pairId": "pinka",
-        "x": 416.9,
-        "y": 127.8,
+        "x": 697.4,
+        "y": 242.3,
         "radius": 16,
         "colors": [
           "pink"
@@ -36080,51 +36100,51 @@ export const lightLevels = [
         "y": 110,
         "type": "mirror",
         "length": 124.8,
-        "angle": 24
+        "angle": -61
       },
       {
         "x": 200,
         "y": 350,
         "type": "mirror",
         "length": 124.8,
-        "angle": 16.4
+        "angle": 44.4
       },
       {
         "x": 650,
         "y": 362.5,
         "type": "mirror",
         "length": 124.8,
-        "angle": 20
+        "angle": -21
       },
       {
         "x": 650,
         "y": 97.5,
         "type": "mirror",
         "length": 124.8,
-        "angle": 20.3
+        "angle": 61.3
       },
       {
         "type": "mirror",
         "x": 380,
         "y": 285,
         "length": 124.8,
-        "angle": -14.5
+        "angle": -6.7
       }
     ],
-    "id": "light-v4-deduction-symmetry-01-opposite-filter",
+    "id": "light-v5-deduction-symmetry-01-opposite-filter-reauthored",
     "name": "A diferença do outro lado",
     "hint": "Compare a marca da entrada com a fonte que se aproxima.",
     "solution": [
-      -7,
-      -14.6,
-      -11,
-      -10.7,
-      -45.5
+      88,
+      13.4,
+      -52,
+      30.3,
+      -22
     ],
-    "sourceAngle": 0,
+    "sourceAngle": -170,
     "target": {
-      "x": 740,
-      "y": 350,
+      "x": 650,
+      "y": 272.5,
       "radius": 22,
       "color": "gold"
     },
@@ -36140,21 +36160,21 @@ export const lightLevels = [
   {
     "sources": [
       {
-        "x": 30,
-        "y": 100,
-        "angle": 0,
+        "x": 436.5057831928078,
+        "y": 60.06091913660604,
+        "angle": 170,
         "color": "gold"
       },
       {
-        "x": 770,
-        "y": 110,
-        "angle": 180,
+        "x": 595.5839194724002,
+        "y": 269.9025323230553,
+        "angle": 268,
         "color": "blue"
       },
       {
-        "x": 400,
-        "y": 440,
-        "angle": -90,
+        "x": 334.92213710787195,
+        "y": 426.1672732228161,
+        "angle": -66,
         "color": "pink"
       }
     ],
@@ -36252,32 +36272,32 @@ export const lightLevels = [
         "x": 210,
         "y": 100,
         "length": 124.8,
-        "angle": 38
+        "angle": -57
       },
       {
         "type": "mirror",
         "x": 590,
         "y": 110,
         "length": 124.8,
-        "angle": 17.9
+        "angle": 61.9
       },
       {
         "type": "mirror",
         "x": 400,
         "y": 280,
         "length": 124.8,
-        "angle": 59.6
+        "angle": 71.6
       }
     ],
-    "id": "light-v4-deduction-open-003",
+    "id": "light-v5-deduction-open-003",
     "name": "Hipótese 02",
     "hint": "Siga as consequências de uma hipótese antes de manter a primeira rota.",
     "solution": [
-      7,
-      -13.1,
-      28.6
+      -88,
+      30.9,
+      40.6
     ],
-    "sourceAngle": 0,
+    "sourceAngle": 170,
     "target": {
       "x": 441.4,
       "y": 157.5,
@@ -36294,50 +36314,50 @@ export const lightLevels = [
     "campaignBand": "intermediate"
   },
   {
-    "id": "light-v4-open-chain-012",
+    "id": "light-v5-open-chain-012",
     "name": "Uma escolha atravessa três",
     "hint": "Uma alternativa pode decidir a passagem de uma segunda cor e limitar a terceira.",
     "width": 800,
     "height": 460,
     "objects": [
       {
-        "x": 347.7,
-        "y": 372.3,
+        "x": 401.6,
+        "y": 394,
         "type": "mirror",
         "length": 124.8,
-        "angle": -26.2
+        "angle": -36
       },
       {
-        "x": 316.7,
-        "y": 81.5,
+        "x": 364.7,
+        "y": 69.9,
         "type": "mirror",
         "length": 124.8,
-        "angle": -5.1
+        "angle": -60.3
       },
       {
-        "x": 559.5,
-        "y": 363.9,
+        "x": 581.3,
+        "y": 394,
         "type": "mirror",
         "length": 124.8,
-        "angle": 18.2
+        "angle": 3.7
       },
       {
-        "x": 152.3,
-        "y": 269.1,
-        "type": "mirror",
-        "length": 124.8,
-        "angle": 0
-      },
-      {
-        "x": 524.7,
-        "y": 106.8,
+        "x": 259.5,
+        "y": 206.7,
         "type": "mirror",
         "length": 124.8,
         "angle": 0
       },
       {
-        "x": 621.3,
-        "y": 209.1,
+        "x": 506.5,
+        "y": 112.4,
+        "type": "mirror",
+        "length": 124.8,
+        "angle": 0
+      },
+      {
+        "x": 624.5,
+        "y": 229.8,
         "type": "mirror",
         "length": 124.8,
         "angle": 0
@@ -36345,57 +36365,57 @@ export const lightLevels = [
     ],
     "sources": [
       {
-        "x": 25,
-        "y": 372.3,
-        "angle": 0,
+        "x": 210.5,
+        "y": 435.9,
+        "angle": -12.366803109275176,
         "color": "gold"
       },
       {
-        "x": 775,
-        "y": 81.5,
-        "angle": 180,
+        "x": 652.2,
+        "y": 25.1,
+        "angle": 171.14305196231345,
         "color": "blue"
       },
       {
-        "x": 775,
-        "y": 363.9,
-        "angle": 180,
+        "x": 764.3,
+        "y": 292.4,
+        "angle": 150.9613483217208,
         "color": "pink"
       }
     ],
     "targets": [
       {
-        "x": 484.2,
-        "y": 195.3,
+        "x": 518.7,
+        "y": 194,
         "radius": 22,
         "color": "gold"
       },
       {
-        "x": 109,
-        "y": 119.2,
+        "x": 395.1,
+        "y": 145.8,
         "radius": 22,
         "color": "blue"
       },
       {
-        "x": 394.5,
-        "y": 242,
+        "x": 393.2,
+        "y": 255.4,
         "radius": 22,
         "color": "pink"
       }
     ],
     "portals": [],
     "solution": [
-      -76.1,
-      -5.1,
-      18.2,
-      -82.3,
+      -69.8,
+      -60.3,
+      3.7,
+      -65,
       0,
       0
     ],
-    "sourceAngle": 0,
+    "sourceAngle": -12.366803109275176,
     "target": {
-      "x": 484.2,
-      "y": 195.3,
+      "x": 518.7,
+      "y": 194,
       "radius": 22,
       "color": "gold"
     },
@@ -36411,40 +36431,40 @@ export const lightLevels = [
   {
     "sources": [
       {
-        "x": 30,
-        "y": 110,
-        "angle": 0,
+        "x": 495.4423259036624,
+        "y": 162.09445330007907,
+        "angle": -170,
         "color": "gold"
       },
       {
-        "x": 30,
-        "y": 350,
-        "angle": 0,
+        "x": 32.242128958775965,
+        "y": 101.28872823348749,
+        "angle": 56,
         "color": "blue"
       },
       {
-        "x": 450,
-        "y": 440,
-        "angle": -90,
+        "x": 400.8759651440098,
+        "y": 433.54021031123557,
+        "angle": -98,
         "color": "pink"
       }
     ],
     "targets": [
       {
-        "x": 740,
-        "y": 350,
+        "x": 650,
+        "y": 272.5,
         "radius": 22,
         "color": "gold"
       },
       {
-        "x": 740,
-        "y": 110,
+        "x": 650,
+        "y": 187.5,
         "radius": 22,
         "color": "blue"
       },
       {
-        "x": 113.5,
-        "y": 296.9,
+        "x": 600.6,
+        "y": 247.5,
         "radius": 22,
         "color": "pink"
       }
@@ -36497,8 +36517,8 @@ export const lightLevels = [
       {
         "id": "pinka",
         "pairId": "pinkb",
-        "x": 313.9,
-        "y": 411.4,
+        "x": 462.1,
+        "y": 406.8,
         "radius": 16,
         "colors": [
           "pink"
@@ -36508,8 +36528,8 @@ export const lightLevels = [
       {
         "id": "pinkb",
         "pairId": "pinka",
-        "x": 186.4,
-        "y": 226.5,
+        "x": 494.3,
+        "y": 89.9,
         "radius": 16,
         "colors": [
           "pink"
@@ -36523,51 +36543,51 @@ export const lightLevels = [
         "y": 110,
         "type": "mirror",
         "length": 124.8,
-        "angle": 24
+        "angle": -61
       },
       {
         "x": 200,
         "y": 350,
         "type": "mirror",
         "length": 124.8,
-        "angle": 38
+        "angle": 44.4
       },
       {
         "x": 650,
         "y": 362.5,
         "type": "mirror",
         "length": 124.8,
-        "angle": 20
+        "angle": -21
       },
       {
         "x": 650,
         "y": 97.5,
         "type": "mirror",
         "length": 124.8,
-        "angle": 42
+        "angle": 61.3
       },
       {
         "type": "mirror",
-        "x": 450,
-        "y": 280,
+        "x": 380,
+        "y": 285,
         "length": 124.8,
-        "angle": 74.6
+        "angle": -6.7
       }
     ],
-    "id": "light-v4-deduction-symmetry-08-base",
+    "id": "light-v5-deduction-symmetry-08-base-reauthored",
     "name": "Dois pares e uma vizinha",
     "hint": "Uma escolha pode mudar o espaço disponível para a terceira cor.",
     "solution": [
-      -7,
-      7,
-      -11,
-      11,
-      43.6
+      88,
+      13.4,
+      -52,
+      30.3,
+      -53.8
     ],
-    "sourceAngle": 0,
+    "sourceAngle": -170,
     "target": {
-      "x": 740,
-      "y": 350,
+      "x": 650,
+      "y": 272.5,
       "radius": 22,
       "color": "gold"
     },
@@ -36581,50 +36601,50 @@ export const lightLevels = [
     "campaignBand": "intermediate"
   },
   {
-    "id": "light-v4-open-chain-016",
+    "id": "light-v5-open-chain-016",
     "name": "Uma escolha atravessa três",
     "hint": "Uma alternativa pode decidir a passagem de uma segunda cor e limitar a terceira.",
     "width": 800,
     "height": 460,
     "objects": [
       {
-        "x": 237.9,
-        "y": 90.7,
+        "x": 82,
+        "y": 124.6,
         "type": "mirror",
-        "angle": -4.4,
+        "angle": 73.3,
         "length": 124.8
       },
       {
-        "x": 585.4,
-        "y": 116,
+        "x": 673.5,
+        "y": 87.2,
         "type": "mirror",
-        "angle": -31.1,
+        "angle": 33.5,
         "length": 124.8
       },
       {
-        "x": 413.9,
-        "y": 260.8,
+        "x": 302.1,
+        "y": 325.6,
         "type": "mirror",
-        "angle": -56,
+        "angle": 67.8,
         "length": 124.8
       },
       {
-        "x": 171,
-        "y": 376.9,
-        "type": "mirror",
-        "angle": 0,
-        "length": 124.8
-      },
-      {
-        "x": 613,
-        "y": 360.9,
+        "x": 103.4,
+        "y": 308.3,
         "type": "mirror",
         "angle": 0,
         "length": 124.8
       },
       {
-        "x": 412.3,
-        "y": 83.2,
+        "x": 715.3,
+        "y": 285.2,
+        "type": "mirror",
+        "angle": 0,
+        "length": 124.8
+      },
+      {
+        "x": 363.1,
+        "y": 140,
         "type": "mirror",
         "angle": 0,
         "length": 124.8
@@ -36632,57 +36652,57 @@ export const lightLevels = [
     ],
     "sources": [
       {
-        "x": 25,
-        "y": 90.7,
-        "angle": 0,
+        "x": 267.2,
+        "y": 25,
+        "angle": 151.728770528475,
         "color": "gold"
       },
       {
-        "x": 775,
-        "y": 116,
-        "angle": 180,
+        "x": 546.8,
+        "y": 387.6,
+        "angle": -67.1313948212395,
         "color": "blue"
       },
       {
-        "x": 413.9,
-        "y": 440,
-        "angle": -90,
+        "x": 445.5,
+        "y": 267.6,
+        "angle": 157.97848776149482,
         "color": "pink"
       }
     ],
     "targets": [
       {
-        "x": 514.5,
-        "y": 48,
+        "x": 537.1,
+        "y": 83.5,
         "radius": 22,
         "color": "gold"
       },
       {
-        "x": 498.3,
-        "y": 280.6,
+        "x": 507,
+        "y": 258.8,
         "radius": 22,
         "color": "blue"
       },
       {
-        "x": 563.7,
-        "y": 200.1,
+        "x": 557.5,
+        "y": 220.9,
         "radius": 22,
         "color": "pink"
       }
     ],
     "portals": [],
     "solution": [
-      -4.4,
-      -48.2,
-      -56,
+      73.3,
+      5.5,
+      67.8,
       0,
-      -30.7,
+      -47.3,
       0
     ],
-    "sourceAngle": 0,
+    "sourceAngle": 151.728770528475,
     "target": {
-      "x": 514.5,
-      "y": 48,
+      "x": 537.1,
+      "y": 83.5,
       "radius": 22,
       "color": "gold"
     },
@@ -36698,21 +36718,21 @@ export const lightLevels = [
   {
     "sources": [
       {
-        "x": 30,
-        "y": 230,
-        "angle": 0,
+        "x": 138.19660112501052,
+        "y": 420.21130325903073,
+        "angle": -72,
         "color": "gold"
       },
       {
-        "x": 770,
-        "y": 110,
-        "angle": 180,
+        "x": 767.7578710412242,
+        "y": 358.7112717665124,
+        "angle": 236,
         "color": "blue"
       },
       {
-        "x": 470,
-        "y": 30,
-        "angle": 90,
+        "x": 451.86331682652735,
+        "y": 90.6333469324457,
+        "angle": 86,
         "color": "pink"
       }
     ],
@@ -36810,32 +36830,32 @@ export const lightLevels = [
         "x": 200,
         "y": 230,
         "length": 124.8,
-        "angle": 45.3
+        "angle": 9.3
       },
       {
         "type": "mirror",
         "x": 600,
         "y": 110,
         "length": 124.8,
-        "angle": -77.9
+        "angle": -49.9
       },
       {
         "type": "mirror",
         "x": 470,
         "y": 350,
         "length": 124.8,
-        "angle": 79.8
+        "angle": 77.8
       }
     ],
-    "id": "light-v4-deduction-open-064",
+    "id": "light-v5-deduction-open-064",
     "name": "Acordo de trajetos 63",
     "hint": "Compare os caminhos completos, não apenas cada chegada isolada.",
     "solution": [
-      14.3,
-      71.1,
-      48.8
+      -21.7,
+      -80.9,
+      46.8
     ],
-    "sourceAngle": 0,
+    "sourceAngle": -72,
     "target": {
       "x": 346.3,
       "y": 309.5,
@@ -37164,21 +37184,21 @@ export const lightLevels = [
   {
     "sources": [
       {
-        "x": 30,
-        "y": 230,
-        "angle": 0,
+        "x": 419.1050625643725,
+        "y": 183.4277812568219,
+        "angle": 168,
         "color": "gold"
       },
       {
-        "x": 770,
-        "y": 110,
-        "angle": 180,
+        "x": 629.267969714943,
+        "y": 388.46613070311656,
+        "angle": 264,
         "color": "blue"
       },
       {
-        "x": 470,
-        "y": 30,
-        "angle": 90,
+        "x": 447.67792840187985,
+        "y": 30.779503916856243,
+        "angle": 86,
         "color": "pink"
       }
     ],
@@ -37276,32 +37296,32 @@ export const lightLevels = [
         "x": 200,
         "y": 230,
         "length": 124.8,
-        "angle": 14.5
+        "angle": -81.5
       },
       {
         "type": "mirror",
         "x": 600,
         "y": 110,
         "length": 124.8,
-        "angle": -37.4
+        "angle": 4.6
       },
       {
         "type": "mirror",
         "x": 470,
         "y": 350,
         "length": 124.8,
-        "angle": 2.5
+        "angle": 0.5
       }
     ],
-    "id": "light-v4-deduction-open-034",
+    "id": "light-v5-deduction-open-034",
     "name": "Do outro lado 33",
     "hint": "Compare os caminhos completos, não apenas cada chegada isolada.",
     "solution": [
-      -16.5,
-      -68.4,
-      -28.5
+      67.5,
+      -26.4,
+      -30.5
     ],
-    "sourceAngle": 0,
+    "sourceAngle": 168,
     "target": {
       "x": 432.4,
       "y": 78.9,
@@ -37318,108 +37338,108 @@ export const lightLevels = [
     "campaignBand": "intermediate"
   },
   {
-    "id": "light-v4-open-068",
+    "id": "light-v5-open-068",
     "name": "Compartilhar o vazio",
     "hint": "Cada trajeto funciona sozinho. Compare o espaço que ocupam juntos.",
     "width": 800,
     "height": 460,
     "objects": [
       {
-        "x": 523.1,
-        "y": 97.3,
+        "x": 385.3,
+        "y": 78.4,
         "type": "mirror",
         "length": 124.8,
-        "angle": -28.1
+        "angle": -45.1
       },
       {
-        "x": 225.9,
-        "y": 316.1,
+        "x": 322.3,
+        "y": 386,
         "type": "mirror",
         "length": 124.8,
-        "angle": -39.5
+        "angle": -49.4
       },
       {
-        "x": 495.6,
-        "y": 324.2,
+        "x": 506.1,
+        "y": 339.6,
         "type": "mirror",
         "length": 124.8,
-        "angle": 18.1
+        "angle": 29.3
       },
       {
-        "x": 180.3,
-        "y": 121.6,
+        "x": 83.8,
+        "y": 116.5,
         "type": "mirror",
         "length": 124.8,
         "angle": 0
       },
       {
-        "x": 641.3,
-        "y": 190.1,
+        "x": 552.4,
+        "y": 154,
         "type": "mirror",
         "length": 124.8,
         "angle": 0
       },
       {
-        "x": 385.5,
-        "y": 243.8,
+        "x": 334.4,
+        "y": 208.6,
         "type": "mirror",
         "length": 124.8,
-        "angle": -79.2
+        "angle": -50.8
       }
     ],
     "sources": [
       {
-        "x": 775,
-        "y": 97.3,
-        "angle": 180,
+        "x": 750,
+        "y": 99.8,
+        "angle": -176.64182799026028,
         "color": "gold"
       },
       {
-        "x": 25,
-        "y": 316.1,
-        "angle": 0,
+        "x": 26.6,
+        "y": 268.1,
+        "angle": 21.7379072192456,
         "color": "blue"
       },
       {
-        "x": 775,
-        "y": 324.2,
-        "angle": 180,
+        "x": 684.8,
+        "y": 409.2,
+        "angle": -158.72010252474604,
         "color": "pink"
       }
     ],
     "targets": [
       {
-        "x": 324.7,
-        "y": 394,
+        "x": 404.4,
+        "y": 390.9,
         "radius": 22,
         "color": "gold"
       },
       {
-        "x": 277.9,
-        "y": 46.6,
+        "x": 155.3,
+        "y": 104,
         "radius": 22,
         "color": "blue"
       },
       {
-        "x": 479.3,
-        "y": 219.4,
+        "x": 568.6,
+        "y": 412.5,
         "radius": 22,
         "color": "pink"
       }
     ],
     "portals": [],
     "solution": [
-      -28.1,
-      -12.2,
-      40.6,
+      -45.1,
+      -32.2,
+      -54.7,
       0,
       0,
-      -71.5
+      62.1
     ],
-    "sourceAngle": 180,
+    "sourceAngle": -176.64182799026028,
     "target": {
-      "x": 324.7,
-      "y": 394,
+      "x": 404.4,
+      "y": 390.9,
       "radius": 22,
       "color": "gold"
     },
@@ -37439,40 +37459,40 @@ export const lightLevels = [
         "x": 200,
         "y": 86,
         "length": 124.8,
-        "angle": 14.2
+        "angle": -75.8
       },
       {
         "type": "mirror",
         "x": 200,
         "y": 230,
         "length": 124.8,
-        "angle": -8.2
+        "angle": -84.2
       },
       {
         "type": "mirror",
         "x": 200,
         "y": 374,
         "length": 124.8,
-        "angle": -7.6
+        "angle": 84.4
       }
     ],
     "sources": [
       {
-        "x": 30,
-        "y": 86,
-        "angle": 0,
+        "x": 350,
+        "y": 86.00000000000001,
+        "angle": -180,
         "color": "gold"
       },
       {
-        "x": 30,
-        "y": 230,
-        "angle": 0,
+        "x": 332.44213892883903,
+        "y": 300.42073441788364,
+        "angle": -152,
         "color": "blue"
       },
       {
-        "x": 30,
-        "y": 374,
-        "angle": 0,
+        "x": 349.6346075389736,
+        "y": 384.4634710616188,
+        "angle": -176,
         "color": "pink"
       }
     ],
@@ -37588,15 +37608,15 @@ export const lightLevels = [
     ],
     "width": 800,
     "height": 460,
-    "id": "light-v4-portal-048",
+    "id": "light-v5-portal-048",
     "name": "O salto que não cruza 048",
     "hint": "Separe os trechos iluminados do salto entre portais.",
     "solution": [
-      -8,
-      -8.2,
-      -7.6
+      82,
+      -84.2,
+      84.4
     ],
-    "sourceAngle": 0,
+    "sourceAngle": -180,
     "target": {
       "x": 725,
       "y": 371,
@@ -37613,7 +37633,7 @@ export const lightLevels = [
     "campaignBand": "intermediate"
   },
   {
-    "id": "light-v4-open-070",
+    "id": "light-v5-open-070",
     "name": "Compartilhar o vazio",
     "hint": "Cada trajeto funciona sozinho. Compare o espaço que ocupam juntos.",
     "width": 800,
@@ -37638,7 +37658,7 @@ export const lightLevels = [
         "y": 108.8,
         "type": "mirror",
         "length": 124.8,
-        "angle": -15.3
+        "angle": 6.7
       },
       {
         "x": 158.9,
@@ -37676,9 +37696,9 @@ export const lightLevels = [
         "color": "blue"
       },
       {
-        "x": 775,
-        "y": 108.8,
-        "angle": 180,
+        "x": 717.3,
+        "y": 237.3,
+        "angle": -136.00739077386794,
         "color": "pink"
       }
     ],
@@ -37706,7 +37726,7 @@ export const lightLevels = [
     "solution": [
       65.5,
       -83,
-      -8.7,
+      13.3,
       -82,
       0,
       0
@@ -37834,108 +37854,108 @@ export const lightLevels = [
     "campaignBand": "intermediate"
   },
   {
-    "id": "light-v4-open-069",
+    "id": "light-v5-open-069",
     "name": "Compartilhar o vazio",
     "hint": "Cada trajeto funciona sozinho. Compare o espaço que ocupam juntos.",
     "width": 800,
     "height": 460,
     "objects": [
       {
-        "x": 235.4,
-        "y": 353.4,
+        "x": 601.8,
+        "y": 337.8,
         "type": "mirror",
         "length": 124.8,
-        "angle": -30.7
+        "angle": -4.5
       },
       {
-        "x": 209.3,
-        "y": 207.6,
+        "x": 512.7,
+        "y": 223.7,
         "type": "mirror",
         "length": 124.8,
-        "angle": -9.9
+        "angle": 41.3
       },
       {
-        "x": 606.7,
-        "y": 381.9,
+        "x": 282.1,
+        "y": 84.2,
         "type": "mirror",
         "length": 124.8,
-        "angle": 27.7
+        "angle": 33.1
       },
       {
-        "x": 605.7,
-        "y": 229.4,
+        "x": 459.1,
+        "y": 355.4,
+        "type": "mirror",
+        "length": 124.8,
+        "angle": 41.2
+      },
+      {
+        "x": 309.5,
+        "y": 372.1,
         "type": "mirror",
         "length": 124.8,
         "angle": 0
       },
       {
-        "x": 483.6,
-        "y": 297.6,
+        "x": 171.6,
+        "y": 285.4,
         "type": "mirror",
         "length": 124.8,
         "angle": 0
-      },
-      {
-        "x": 420.6,
-        "y": 111.5,
-        "type": "mirror",
-        "length": 124.8,
-        "angle": -7.9
       }
     ],
     "sources": [
       {
-        "x": 25,
-        "y": 353.4,
-        "angle": 0,
+        "x": 774.9,
+        "y": 331.8,
+        "angle": 178.01480589619726,
         "color": "gold"
       },
       {
         "x": 25,
-        "y": 207.6,
+        "y": 223.7,
         "angle": 0,
         "color": "blue"
       },
       {
-        "x": 775,
-        "y": 381.9,
-        "angle": 180,
+        "x": 25,
+        "y": 84.2,
+        "angle": 0,
         "color": "pink"
       }
     ],
     "targets": [
       {
-        "x": 292.3,
-        "y": 249.3,
+        "x": 456.9,
+        "y": 98,
         "radius": 22,
         "color": "gold"
       },
       {
-        "x": 620.4,
-        "y": 59.1,
+        "x": 536.8,
+        "y": 410.9,
         "radius": 22,
         "color": "blue"
       },
       {
-        "x": 332.9,
-        "y": 370,
+        "x": 350.4,
+        "y": 238.6,
         "radius": 22,
         "color": "pink"
       }
     ],
     "portals": [],
     "solution": [
-      -30.7,
-      1.6,
-      1.2,
-      -41,
+      28.4,
+      56.1,
+      33.1,
+      73.8,
       0,
       0
     ],
-    "sourceAngle": 0,
+    "sourceAngle": 178.01480589619726,
     "target": {
-      "x": 292.3,
-      "y": 249.3,
+      "x": 456.9,
+      "y": 98,
       "radius": 22,
       "color": "gold"
     },
@@ -38273,34 +38293,34 @@ export const lightLevels = [
   {
     "sources": [
       {
-        "x": 30,
-        "y": 110,
-        "angle": 0,
+        "x": 340.95389311788625,
+        "y": 161.30302149885034,
+        "angle": -160,
         "color": "gold"
       },
       {
-        "x": 30,
-        "y": 350,
-        "angle": 0,
+        "x": 310.8190655586185,
+        "y": 208.15806435079003,
+        "angle": 128,
         "color": "blue"
       },
       {
-        "x": 450,
-        "y": 440,
-        "angle": -90,
+        "x": 470.8759651440098,
+        "y": 428.54021031123557,
+        "angle": -98,
         "color": "pink"
       }
     ],
     "targets": [
       {
-        "x": 740,
-        "y": 350,
+        "x": 650,
+        "y": 272.5,
         "radius": 22,
         "color": "gold"
       },
       {
-        "x": 740,
-        "y": 110,
+        "x": 650,
+        "y": 187.5,
         "radius": 22,
         "color": "blue"
       },
@@ -38385,51 +38405,51 @@ export const lightLevels = [
         "y": 110,
         "type": "mirror",
         "length": 124.8,
-        "angle": 24
+        "angle": -56
       },
       {
         "x": 200,
         "y": 350,
         "type": "mirror",
         "length": 124.8,
-        "angle": 16.4
+        "angle": 80.4
       },
       {
         "x": 650,
         "y": 362.5,
         "type": "mirror",
         "length": 124.8,
-        "angle": 20
+        "angle": -21
       },
       {
         "x": 650,
         "y": 97.5,
         "type": "mirror",
         "length": 124.8,
-        "angle": 20.3
+        "angle": 61.3
       },
       {
         "type": "mirror",
         "x": 450,
         "y": 280,
         "length": 124.8,
-        "angle": 55.1
+        "angle": 51.1
       }
     ],
-    "id": "light-v4-deduction-symmetry-12-base",
+    "id": "light-v5-deduction-symmetry-12-base",
     "name": "Dois pares e uma vizinha",
     "hint": "Uma escolha pode mudar o espaço disponível para a terceira cor.",
     "solution": [
-      -7,
-      -14.6,
-      -11,
-      -10.7,
-      24.1
+      -87,
+      49.4,
+      -52,
+      30.3,
+      20.1
     ],
-    "sourceAngle": 0,
+    "sourceAngle": -160,
     "target": {
-      "x": 740,
-      "y": 350,
+      "x": 650,
+      "y": 272.5,
       "radius": 22,
       "color": "gold"
     },
@@ -38591,50 +38611,50 @@ export const lightLevels = [
     "campaignBand": "intermediate"
   },
   {
-    "id": "light-v4-open-314",
-    "name": "Uma metade diferente",
-    "hint": "As peças se correspondem, mas a posição dos alvos não.",
+    "id": "light-v5-open-314",
+    "name": "Antes do deslocamento",
+    "hint": "Compare como os dois trajetos distribuem o espaço.",
     "width": 800,
     "height": 460,
     "objects": [
       {
-        "x": 279.7,
-        "y": 283.4,
+        "x": 155.6,
+        "y": 383.4,
         "type": "mirror",
         "length": 124.8,
-        "angle": -64
+        "angle": -12.8
       },
       {
-        "x": 520.3,
-        "y": 176.6,
+        "x": 644.4,
+        "y": 76.6,
         "type": "mirror",
         "length": 124.8,
         "angle": -25.8
       },
       {
-        "x": 150.9,
-        "y": 118.1,
+        "x": 173.2,
+        "y": 66,
         "type": "mirror",
         "length": 124.8,
-        "angle": -50.5
+        "angle": -24.7
       },
       {
-        "x": 649.1,
-        "y": 341.9,
+        "x": 626.8,
+        "y": 394,
         "type": "mirror",
         "length": 124.8,
         "angle": 0
       },
       {
-        "x": 420.4,
-        "y": 302.8,
+        "x": 322.5,
+        "y": 245.9,
         "type": "mirror",
         "length": 124.8,
         "angle": -4.1
       },
       {
-        "x": 379.6,
-        "y": 157.2,
+        "x": 477.5,
+        "y": 214.1,
         "type": "mirror",
         "length": 124.8,
         "angle": 0
@@ -38642,51 +38662,51 @@ export const lightLevels = [
     ],
     "sources": [
       {
-        "x": 25,
-        "y": 283.4,
-        "angle": 0,
+        "x": 45.4,
+        "y": 183.1,
+        "angle": 61.18152026465054,
         "color": "gold"
       },
       {
-        "x": 775,
-        "y": 176.60000000000002,
-        "angle": -180,
+        "x": 754.6,
+        "y": 276.9,
+        "angle": -118.8184797353495,
         "color": "blue"
       }
     ],
     "targets": [
       {
-        "x": 556.8,
-        "y": 325,
+        "x": 514.6,
+        "y": 327,
         "radius": 22,
         "color": "gold"
       },
       {
-        "x": 243.2,
-        "y": 180,
+        "x": 285.4,
+        "y": 178,
         "radius": 22,
         "color": "blue"
       }
     ],
     "portals": [],
     "solution": [
-      3.9,
-      -0.4,
+      10.8,
+      22.7,
       0,
       0,
-      8.5,
+      -8.3,
       0
     ],
-    "sourceAngle": 0,
+    "sourceAngle": 61.18152026465054,
     "target": {
-      "x": 556.8,
-      "y": 325,
+      "x": 514.6,
+      "y": 327,
       "radius": 22,
       "color": "gold"
     },
-    "requiredBounces": 3,
+    "requiredBounces": 4,
     "wallPurpose": [],
-    "decoyCount": 3,
+    "decoyCount": 2,
     "tutorial": "",
     "rules": "Leve cada cor ao seu alvo sem cruzar outras cores.",
     "number": 299,
@@ -38856,28 +38876,28 @@ export const lightLevels = [
   {
     "sources": [
       {
-        "x": 30,
-        "y": 100,
-        "angle": 0,
+        "x": 166.45405879205978,
+        "y": 274.65323072967936,
+        "angle": -76,
         "color": "gold"
       },
       {
-        "x": 770,
-        "y": 110,
-        "angle": 180,
+        "x": 458.8876923044308,
+        "y": 434.5143490983756,
+        "angle": 292,
         "color": "blue"
       },
       {
-        "x": 400,
-        "y": 440,
-        "angle": -90,
+        "x": 243.4963838825911,
+        "y": 246.73412946915852,
+        "angle": 12,
         "color": "pink"
       }
     ],
     "targets": [
       {
-        "x": 750.3,
-        "y": 329.2,
+        "x": 737.9623892592501,
+        "y": 196.81422239453283,
         "radius": 22,
         "color": "gold"
       },
@@ -38968,43 +38988,43 @@ export const lightLevels = [
         "x": 210,
         "y": 100,
         "length": 124.8,
-        "angle": 56.1
+        "angle": 18.1
       },
       {
         "type": "mirror",
         "x": 590,
         "y": 110,
         "length": 124.8,
-        "angle": -7.4
+        "angle": 48.6
       },
       {
         "type": "mirror",
         "x": 400,
         "y": 280,
         "length": 124.8,
-        "angle": -57.8
+        "angle": -6.8
       },
       {
         "type": "mirror",
         "x": 654.4,
         "y": 296.4,
         "length": 124.8,
-        "angle": 65.5
+        "angle": 31.1
       }
     ],
-    "id": "light-v4-deduction-four-05",
+    "id": "light-v5-deduction-four-05",
     "name": "A curva depende da escolha",
     "hint": "A chegada ao último espelho muda quando o caminho anterior muda.",
     "solution": [
-      25.1,
-      -38.4,
-      -88.8,
-      34.5
+      -12.9,
+      17.6,
+      -37.8,
+      0.1
     ],
-    "sourceAngle": 0,
+    "sourceAngle": -76,
     "target": {
-      "x": 750.3,
-      "y": 329.2,
+      "x": 737.9623892592501,
+      "y": 196.81422239453283,
       "radius": 22,
       "color": "gold"
     },
@@ -39024,40 +39044,40 @@ export const lightLevels = [
         "x": 200,
         "y": 86,
         "length": 124.8,
-        "angle": 14.6
+        "angle": -13.4
       },
       {
         "type": "mirror",
         "x": 600,
         "y": 230,
         "length": 124.8,
-        "angle": -0.7
+        "angle": 59.3
       },
       {
         "type": "mirror",
         "x": 200,
         "y": 374,
         "length": 124.8,
-        "angle": -15.1
+        "angle": 74.9
       }
     ],
     "sources": [
       {
-        "x": 30,
-        "y": 86,
-        "angle": 0,
+        "x": 54.60984509760584,
+        "y": 301.54976886431086,
+        "angle": -56,
         "color": "gold"
       },
       {
-        "x": 770,
-        "y": 230,
-        "angle": 180,
+        "x": 515,
+        "y": 377.22431864335454,
+        "angle": 300,
         "color": "blue"
       },
       {
-        "x": 30,
+        "x": 420,
         "y": 374,
-        "angle": 0,
+        "angle": -180,
         "color": "pink"
       }
     ],
@@ -39173,15 +39193,15 @@ export const lightLevels = [
     ],
     "width": 800,
     "height": 460,
-    "id": "light-v4-portal-072",
+    "id": "light-v5-portal-072",
     "name": "A saída decide 072",
     "hint": "Compare o que acontece depois de cada saída.",
     "solution": [
-      -0.5,
-      -12,
-      -15.1
+      -28.5,
+      48,
+      74.9
     ],
-    "sourceAngle": 0,
+    "sourceAngle": -56,
     "target": {
       "x": 710,
       "y": 370,
@@ -39369,40 +39389,40 @@ export const lightLevels = [
         "x": 200,
         "y": 86,
         "length": 124.8,
-        "angle": -0.4
+        "angle": -64.4
       },
       {
         "type": "mirror",
         "x": 600,
         "y": 230,
         "length": 124.8,
-        "angle": -8.5
+        "angle": 26.1
       },
       {
         "type": "mirror",
         "x": 200,
         "y": 374,
         "length": 124.8,
-        "angle": -7.9
+        "angle": 83.2
       }
     ],
     "sources": [
       {
-        "x": 30,
-        "y": 86,
-        "angle": 0,
+        "x": 292.34922129884876,
+        "y": 204.2016130410083,
+        "angle": -128,
         "color": "gold"
       },
       {
         "x": 770,
         "y": 230,
-        "angle": 180,
+        "angle": 240,
         "color": "blue"
       },
       {
-        "x": 30,
-        "y": 374,
-        "angle": 0,
+        "x": 400,
+        "y": 230,
+        "angle": 180,
         "color": "pink"
       }
     ],
@@ -39415,13 +39435,13 @@ export const lightLevels = [
       },
       {
         "x": 90,
-        "y": 386,
+        "y": 300,
         "radius": 22,
         "color": "blue"
       },
       {
         "x": 710,
-        "y": 230,
+        "y": 250,
         "radius": 22,
         "color": "pink"
       }
@@ -39465,7 +39485,7 @@ export const lightLevels = [
         "pairId": "b1a",
         "label": "B",
         "x": 119.2,
-        "y": 290.4,
+        "y": 204.39999999999998,
         "radius": 16,
         "colors": [
           "blue"
@@ -39487,7 +39507,51 @@ export const lightLevels = [
         "pairId": "p1a",
         "label": "C",
         "x": 602.2,
-        "y": 384,
+        "y": 404,
+        "radius": 16,
+        "colors": [
+          "pink"
+        ]
+      },
+      {
+        "x": 747.5,
+        "y": 191.02885682970026,
+        "id": "angle-access-1a",
+        "pairId": "angle-access-1b",
+        "label": "K",
+        "radius": 16,
+        "colors": [
+          "blue"
+        ]
+      },
+      {
+        "x": 643,
+        "y": 304.4781847254617,
+        "id": "angle-access-1b",
+        "pairId": "angle-access-1a",
+        "label": "K",
+        "radius": 16,
+        "colors": [
+          "blue"
+        ]
+      },
+      {
+        "x": 355,
+        "y": 230,
+        "id": "angle-access-2a",
+        "pairId": "angle-access-2b",
+        "label": "L",
+        "radius": 16,
+        "colors": [
+          "pink"
+        ]
+      },
+      {
+        "x": 286,
+        "y": 374,
+        "id": "angle-access-2b",
+        "pairId": "angle-access-2a",
+        "label": "L",
         "radius": 16,
         "colors": [
           "pink"
@@ -39496,15 +39560,15 @@ export const lightLevels = [
     ],
     "width": 800,
     "height": 460,
-    "id": "light-v4-portal-061",
+    "id": "light-v5-portal-061",
     "name": "Uma escolha leva às outras 061",
     "hint": "A rota mais restrita ajuda a decidir as outras.",
     "solution": [
-      -0.4,
-      -36.5,
-      -27.5
+      -64.4,
+      -6.5,
+      62.5
     ],
-    "sourceAngle": 0,
+    "sourceAngle": -128,
     "target": {
       "x": 710,
       "y": 78,
@@ -39916,16 +39980,16 @@ export const lightLevels = [
     "family": "filtro-decide-distribuicao-saida-cruza",
     "sources": [
       {
-        "x": 110,
-        "y": 30,
+        "x": 286.31525246167314,
+        "y": 27.322874208442485,
         "color": "gold",
-        "angle": 53.13010235415598
+        "angle": 125.13010235415598
       },
       {
-        "x": 100,
-        "y": 430,
+        "x": 298.9445621637447,
+        "y": 430.9503204962692,
         "color": "blue",
-        "angle": -47.72631099390627
+        "angle": -131.72631099390628
       }
     ],
     "targets": [
@@ -39989,7 +40053,7 @@ export const lightLevels = [
         "x": 200,
         "y": 150,
         "length": 124.8,
-        "angle": 50.56505117707799
+        "angle": 86.6
       },
       {
         "type": "mirror",
@@ -40005,7 +40069,7 @@ export const lightLevels = [
         "x": 200,
         "y": 320,
         "length": 124.8,
-        "angle": 9.136844503046866
+        "angle": -32.9
       },
       {
         "type": "mirror",
@@ -40026,12 +40090,12 @@ export const lightLevels = [
       }
     ],
     "solution": [
-      26.6,
+      62.6,
       45,
-      -23.9,
+      -65.9,
       67.5
     ],
-    "sourceAngle": 53.13010235415598,
+    "sourceAngle": 125.13010235415598,
     "target": {
       "x": 580,
       "y": 380,
@@ -40046,28 +40110,28 @@ export const lightLevels = [
     "hint": "A azul tem menos acessos.",
     "tutorial": "",
     "rules": "Cada cor no seu alvo, sem cruzar outras trajetórias.",
-    "id": "light-v3-85",
+    "id": "light-v5-legacy-85",
     "campaignNumber": 307,
     "campaignBand": "advanced"
   },
   {
     "sources": [
       {
-        "x": 30,
-        "y": 100,
-        "angle": 0,
+        "x": 609.0256201039297,
+        "y": 127.90258949765021,
+        "angle": -176,
         "color": "gold"
       },
       {
-        "x": 770,
-        "y": 360,
-        "angle": 180,
+        "x": 757.1247785185002,
+        "y": 160.8284447890657,
+        "angle": 130,
         "color": "blue"
       },
       {
-        "x": 400,
-        "y": 30,
-        "angle": 90,
+        "x": 580,
+        "y": 209.99999999999997,
+        "angle": 180,
         "color": "pink"
       }
     ],
@@ -40165,32 +40229,32 @@ export const lightLevels = [
         "x": 210,
         "y": 100,
         "length": 124.8,
-        "angle": 81.2
+        "angle": -6.8
       },
       {
         "type": "mirror",
         "x": 590,
         "y": 360,
         "length": 124.8,
-        "angle": 84.7
+        "angle": 59.7
       },
       {
         "type": "mirror",
         "x": 400,
         "y": 210,
         "length": 124.8,
-        "angle": -68.9
+        "angle": -23.9
       }
     ],
-    "id": "light-v4-deduction-open-026",
+    "id": "light-v5-deduction-open-026",
     "name": "Consequência 25",
     "hint": "Uma escolha pode decidir os caminhos das outras cores.",
     "solution": [
-      50.2,
-      53.7,
-      80.1
+      -37.8,
+      28.7,
+      -54.9
     ],
-    "sourceAngle": 0,
+    "sourceAngle": -176,
     "target": {
       "x": 181.3,
       "y": 255.2,
@@ -40432,21 +40496,21 @@ export const lightLevels = [
   {
     "sources": [
       {
-        "x": 30,
-        "y": 100,
-        "angle": 0,
+        "x": 408.0536137483141,
+        "y": 72.16537980798685,
+        "angle": 172,
         "color": "gold"
       },
       {
-        "x": 770,
-        "y": 110,
-        "angle": 180,
+        "x": 342.72530576326005,
+        "y": 29.65558146251368,
+        "angle": 18,
         "color": "blue"
       },
       {
-        "x": 400,
-        "y": 440,
-        "angle": -90,
+        "x": 438.7075032959468,
+        "y": 435.24731620415946,
+        "angle": -104,
         "color": "pink"
       }
     ],
@@ -40544,32 +40608,32 @@ export const lightLevels = [
         "x": 210,
         "y": 100,
         "length": 124.8,
-        "angle": 36.4
+        "angle": -57.6
       },
       {
         "type": "mirror",
         "x": 590,
         "y": 110,
         "length": 124.8,
-        "angle": 26.3
+        "angle": -54.7
       },
       {
         "type": "mirror",
         "x": 400,
         "y": 280,
         "length": 124.8,
-        "angle": 66.7
+        "angle": 59.7
       }
     ],
-    "id": "light-v4-deduction-open-037",
+    "id": "light-v5-deduction-open-037",
     "name": "Do outro lado 36",
     "hint": "Compare os caminhos completos, não apenas cada chegada isolada.",
     "solution": [
-      5.4,
-      -4.7,
-      35.7
+      -88.6,
+      -85.7,
+      28.7
     ],
-    "sourceAngle": 0,
+    "sourceAngle": 172,
     "target": {
       "x": 101.3,
       "y": 393.2,
@@ -40588,21 +40652,21 @@ export const lightLevels = [
   {
     "sources": [
       {
-        "x": 30,
-        "y": 230,
-        "angle": 0,
+        "x": 275.1154500457425,
+        "y": 371.27161485742835,
+        "angle": -118,
         "color": "gold"
       },
       {
-        "x": 770,
-        "y": 110,
-        "angle": 180,
+        "x": 655.1274711633998,
+        "y": 302.2523391876638,
+        "angle": 254,
         "color": "blue"
       },
       {
-        "x": 470,
-        "y": 30,
-        "angle": 90,
+        "x": 397.4234313200996,
+        "y": 58.91128211720104,
+        "angle": 76,
         "color": "pink"
       }
     ],
@@ -40700,21 +40764,21 @@ export const lightLevels = [
         "x": 200,
         "y": 230,
         "length": 124.8,
-        "angle": 26.5
+        "angle": -32.5
       },
       {
         "type": "mirror",
         "x": 600,
         "y": 110,
         "length": 124.8,
-        "angle": -77.7
+        "angle": -40.7
       },
       {
         "type": "mirror",
         "x": 470,
         "y": 350,
         "length": 124.8,
-        "angle": 82.9
+        "angle": 75.9
       },
       {
         "type": "mirror",
@@ -40724,16 +40788,16 @@ export const lightLevels = [
         "angle": -63.7
       }
     ],
-    "id": "light-v4-deduction-four-06",
+    "id": "light-v5-deduction-four-06",
     "name": "A curva depende da escolha",
     "hint": "A chegada ao último espelho muda quando o caminho anterior muda.",
     "solution": [
-      -4.5,
-      71.3,
-      51.9,
+      -63.5,
+      -71.7,
+      44.9,
       85.3
     ],
-    "sourceAngle": 0,
+    "sourceAngle": -118,
     "target": {
       "x": 357,
       "y": 186.4,
@@ -40752,15 +40816,15 @@ export const lightLevels = [
   {
     "sources": [
       {
-        "x": 30,
-        "y": 100,
-        "angle": 0,
+        "x": 197.44383472605742,
+        "y": 279.5615290467683,
+        "angle": -86,
         "color": "gold"
       },
       {
-        "x": 770,
-        "y": 360,
-        "angle": 180,
+        "x": 569.1240348559902,
+        "y": 211.45978968876446,
+        "angle": 82,
         "color": "blue"
       },
       {
@@ -40864,14 +40928,14 @@ export const lightLevels = [
         "x": 210,
         "y": 100,
         "length": 124.8,
-        "angle": 69.8
+        "angle": 26.8
       },
       {
         "type": "mirror",
         "x": 590,
         "y": 360,
         "length": 124.8,
-        "angle": 36.7
+        "angle": -12.3
       },
       {
         "type": "mirror",
@@ -40881,15 +40945,15 @@ export const lightLevels = [
         "angle": 43.5
       }
     ],
-    "id": "light-v4-deduction-open-039",
+    "id": "light-v5-deduction-open-039",
     "name": "Do outro lado 38",
     "hint": "Compare os caminhos completos, não apenas cada chegada isolada.",
     "solution": [
-      38.8,
-      5.7,
+      -4.2,
+      -43.3,
       12.5
     ],
-    "sourceAngle": 0,
+    "sourceAngle": -86,
     "target": {
       "x": 672.3,
       "y": 234.7,
@@ -41054,21 +41118,21 @@ export const lightLevels = [
   {
     "sources": [
       {
-        "x": 60,
-        "y": 90,
-        "angle": 0,
+        "x": 585.1384809639065,
+        "y": 145.56741685341768,
+        "angle": -170,
         "color": "blue"
       },
       {
-        "x": 40,
-        "y": 230,
-        "angle": 0,
+        "x": 448.8854381999831,
+        "y": 418.0912807335915,
+        "angle": -144,
         "color": "gold"
       },
       {
-        "x": 750,
-        "y": 430,
-        "angle": -140.19442890773482,
+        "x": 501.3424670093529,
+        "y": 415.32085561760016,
+        "angle": -48.19442890773482,
         "color": "pink"
       }
     ],
@@ -41098,7 +41162,7 @@ export const lightLevels = [
         "x": 270,
         "y": 90,
         "length": 124.8,
-        "angle": 14
+        "angle": -71
       },
       {
         "type": "mirror",
@@ -41112,7 +41176,7 @@ export const lightLevels = [
         "x": 190,
         "y": 230,
         "length": 124.8,
-        "angle": -25
+        "angle": 83
       },
       {
         "type": "mirror",
@@ -41126,7 +41190,7 @@ export const lightLevels = [
         "x": 600,
         "y": 305,
         "length": 124.8,
-        "angle": -20
+        "angle": 26
       },
       {
         "type": "wall",
@@ -41210,17 +41274,17 @@ export const lightLevels = [
       }
     ],
     "solution": [
-      5.9,
+      -79.1,
       45,
-      16.2,
+      -55.8,
       45,
-      44.4
+      -89.6
     ],
     "name": "O atalho que cobra depois",
     "difficulty": 198,
     "family": "v3-final-198",
     "hint": "Depois de escolher o acesso dourado, confira o que muda no setor superior.",
-    "sourceAngle": 0,
+    "sourceAngle": -170,
     "target": {
       "x": 750,
       "y": 190,
@@ -41235,7 +41299,7 @@ export const lightLevels = [
     "decoyCount": 0,
     "tutorial": "",
     "rules": "Leve todas as fontes aos alvos da mesma cor, sem cruzar nem encostar nos trechos físicos das outras luzes.",
-    "id": "light-v3-198",
+    "id": "light-v5-legacy-198",
     "campaignNumber": 314,
     "number": 314,
     "campaignBand": "advanced"
@@ -41247,16 +41311,16 @@ export const lightLevels = [
     "family": "filtro-cruzamento-aproximacao-final",
     "sources": [
       {
-        "x": 110,
-        "y": 30,
+        "x": 286.31525246167314,
+        "y": 27.322874208442485,
         "color": "gold",
-        "angle": 53.13010235415598
+        "angle": 125.13010235415598
       },
       {
-        "x": 100,
-        "y": 430,
+        "x": 298.9445621637447,
+        "y": 430.9503204962692,
         "color": "blue",
-        "angle": -47.72631099390627
+        "angle": -131.72631099390628
       }
     ],
     "targets": [
@@ -41320,7 +41384,7 @@ export const lightLevels = [
         "x": 200,
         "y": 150,
         "length": 124.8,
-        "angle": 50.56505117707799
+        "angle": 86.6
       },
       {
         "type": "mirror",
@@ -41344,7 +41408,7 @@ export const lightLevels = [
         "x": 200,
         "y": 320,
         "length": 124.8,
-        "angle": -45.863155496953134
+        "angle": -87.9
       },
       {
         "type": "mirror",
@@ -41374,13 +41438,13 @@ export const lightLevels = [
       }
     ],
     "solution": [
-      26.6,
+      62.6,
       45,
       45,
-      -23.9,
+      -65.9,
       67.5
     ],
-    "sourceAngle": 53.13010235415598,
+    "sourceAngle": 125.13010235415598,
     "target": {
       "x": 730,
       "y": 380,
@@ -41396,28 +41460,28 @@ export const lightLevels = [
     "hint": "Comece pela cor que não pode escolher os dois acessos.",
     "tutorial": "",
     "rules": "Cada cor no seu alvo, sem cruzar outras trajetórias.",
-    "id": "light-v3-100",
+    "id": "light-v5-legacy-100",
     "campaignNumber": 315,
     "campaignBand": "advanced"
   },
   {
     "sources": [
       {
-        "x": 30,
-        "y": 100,
-        "angle": 0,
+        "x": 359.6346075389736,
+        "y": 110.46347106161883,
+        "angle": -176,
         "color": "gold"
       },
       {
-        "x": 770,
-        "y": 110,
-        "angle": 180,
+        "x": 674.7870822773128,
+        "y": 245.68769538502815,
+        "angle": 238,
         "color": "blue"
       },
       {
-        "x": 400,
-        "y": 440,
-        "angle": -90,
+        "x": 252.2788370481688,
+        "y": 306.04722665003953,
+        "angle": -10,
         "color": "pink"
       }
     ],
@@ -41515,32 +41579,32 @@ export const lightLevels = [
         "x": 210,
         "y": 100,
         "length": 124.8,
-        "angle": 88.2
+        "angle": 0.2
       },
       {
         "type": "mirror",
         "x": 590,
         "y": 110,
         "length": 124.8,
-        "angle": 20.9
+        "angle": 49.9
       },
       {
         "type": "mirror",
         "x": 400,
         "y": 280,
         "length": 124.8,
-        "angle": 69.8
+        "angle": -70.2
       }
     ],
-    "id": "light-v4-deduction-open-024",
+    "id": "light-v5-deduction-open-024",
     "name": "Consequência 23",
     "hint": "Uma escolha pode decidir os caminhos das outras cores.",
     "solution": [
-      57.2,
-      -10.1,
-      38.8
+      -30.8,
+      18.9,
+      78.8
     ],
-    "sourceAngle": 0,
+    "sourceAngle": -176,
     "target": {
       "x": 713.2,
       "y": 287.9,
@@ -41559,21 +41623,21 @@ export const lightLevels = [
   {
     "sources": [
       {
-        "x": 30,
-        "y": 100,
-        "angle": 0,
+        "x": 161.61562088006642,
+        "y": 294.05914525519927,
+        "angle": -76,
         "color": "gold"
       },
       {
-        "x": 770,
-        "y": 110,
-        "angle": 180,
+        "x": 721.1123076955694,
+        "y": 434.51434909837553,
+        "angle": 248,
         "color": "blue"
       },
       {
-        "x": 400,
-        "y": 440,
-        "angle": -90,
+        "x": 220.9860588337108,
+        "y": 298.8151233881776,
+        "angle": -6,
         "color": "pink"
       }
     ],
@@ -41671,21 +41735,21 @@ export const lightLevels = [
         "x": 210,
         "y": 100,
         "length": 124.8,
-        "angle": -79.4
+        "angle": 62.6
       },
       {
         "type": "mirror",
         "x": 590,
         "y": 110,
         "length": 124.8,
-        "angle": -13.4
+        "angle": 20.6
       },
       {
         "type": "mirror",
         "x": 400,
         "y": 280,
         "length": 124.8,
-        "angle": -66.8
+        "angle": -24.8
       },
       {
         "type": "mirror",
@@ -41695,16 +41759,16 @@ export const lightLevels = [
         "angle": 51.1
       }
     ],
-    "id": "light-v4-deduction-four-13",
+    "id": "light-v5-deduction-four-13",
     "name": "A curva depende da escolha",
     "hint": "A chegada ao último espelho muda quando o caminho anterior muda.",
     "solution": [
-      69.6,
-      -44.4,
-      82.2,
+      31.6,
+      -10.4,
+      -55.8,
       20.1
     ],
-    "sourceAngle": 0,
+    "sourceAngle": -76,
     "target": {
       "x": 683,
       "y": 323.5,
@@ -42213,50 +42277,50 @@ export const lightLevels = [
     "campaignBand": "advanced"
   },
   {
-    "id": "light-v4-open-chain-019",
+    "id": "light-v5-open-chain-019",
     "name": "A volta da hipótese",
     "hint": "Se uma cor tomar o desvio, acompanhe o que isso força nas outras duas.",
     "width": 800,
     "height": 460,
     "objects": [
       {
-        "x": 605.8,
-        "y": 202,
+        "x": 615.4,
+        "y": 207.9,
         "type": "mirror",
         "length": 124.8,
-        "angle": -60.2
+        "angle": 84
       },
       {
-        "x": 515.8,
-        "y": 330,
+        "x": 640.5,
+        "y": 394,
         "type": "mirror",
         "length": 124.8,
-        "angle": 37.4
+        "angle": 4.8
       },
       {
-        "x": 199.1,
-        "y": 159.1,
+        "x": 172.6,
+        "y": 215.5,
         "type": "mirror",
         "length": 124.8,
-        "angle": -10.1
+        "angle": 15.8
       },
       {
-        "x": 312.6,
-        "y": 372.4,
+        "x": 405.2,
+        "y": 358.3,
+        "type": "mirror",
+        "length": 124.8,
+        "angle": -22.4
+      },
+      {
+        "x": 372,
+        "y": 189.4,
         "type": "mirror",
         "length": 124.8,
         "angle": 0
       },
       {
-        "x": 368,
-        "y": 130.5,
-        "type": "mirror",
-        "length": 124.8,
-        "angle": 0
-      },
-      {
-        "x": 163.5,
-        "y": 316.9,
+        "x": 114,
+        "y": 383.9,
         "type": "mirror",
         "length": 124.8,
         "angle": 0
@@ -42264,57 +42328,57 @@ export const lightLevels = [
     ],
     "sources": [
       {
-        "x": 605.8,
-        "y": 25,
-        "angle": 90,
+        "x": 531,
+        "y": 79.8,
+        "angle": 56.620700242879714,
         "color": "gold"
       },
       {
-        "x": 775,
-        "y": 330,
-        "angle": 180,
+        "x": 758.9,
+        "y": 280.1,
+        "angle": 136.1097665271965,
         "color": "blue"
       },
       {
-        "x": 25,
-        "y": 159.1,
-        "angle": 0,
+        "x": 40,
+        "y": 36.9,
+        "angle": 53.40828503553196,
         "color": "pink"
       }
     ],
     "targets": [
       {
-        "x": 414.2,
-        "y": 314.3,
+        "x": 544.5,
+        "y": 388.3,
         "radius": 22,
         "color": "gold"
       },
       {
-        "x": 470.6,
-        "y": 164.7,
+        "x": 531.6,
+        "y": 247.2,
         "radius": 22,
         "color": "blue"
       },
       {
-        "x": 481.1,
-        "y": 55.1,
+        "x": 468.9,
+        "y": 96.7,
         "radius": 22,
         "color": "pink"
       }
     ],
     "portals": [],
     "solution": [
-      -36.6,
-      37.4,
-      -10.1,
-      0,
-      -43.7,
+      -59.5,
+      4.8,
+      15.8,
+      -22.4,
+      -63.3,
       0
     ],
-    "sourceAngle": 90,
+    "sourceAngle": 56.620700242879714,
     "target": {
-      "x": 414.2,
-      "y": 314.3,
+      "x": 544.5,
+      "y": 388.3,
       "radius": 22,
       "color": "gold"
     },
@@ -42330,40 +42394,40 @@ export const lightLevels = [
   {
     "sources": [
       {
-        "x": 30,
-        "y": 100,
-        "angle": 0,
+        "x": 30.241190740166587,
+        "y": 187.67422935781548,
+        "angle": -26,
         "color": "gold"
       },
       {
-        "x": 770,
-        "y": 360,
-        "angle": 180,
+        "x": 764.8733571969576,
+        "y": 80.1441282683794,
+        "angle": 122,
         "color": "blue"
       },
       {
-        "x": 400,
-        "y": 30,
-        "angle": 90,
+        "x": 377.73230384638947,
+        "y": 51.55710900134875,
+        "angle": 82,
         "color": "pink"
       }
     ],
     "targets": [
       {
-        "x": 336.8,
-        "y": 89.4,
+        "x": 300.7,
+        "y": 268.2,
         "radius": 22,
         "color": "gold"
       },
       {
-        "x": 514.5,
-        "y": 251.5,
+        "x": 86.2,
+        "y": 143.1,
         "radius": 22,
         "color": "blue"
       },
       {
-        "x": 650.4,
-        "y": 270.8,
+        "x": 178.5,
+        "y": 283.2,
         "radius": 22,
         "color": "pink"
       }
@@ -42372,8 +42436,8 @@ export const lightLevels = [
       {
         "id": "p0a",
         "pairId": "p0b",
-        "x": 545.2,
-        "y": 162.7,
+        "x": 301.3,
+        "y": 165.4,
         "radius": 16,
         "colors": [
           "gold"
@@ -42383,8 +42447,8 @@ export const lightLevels = [
       {
         "id": "p0b",
         "pairId": "p0a",
-        "x": 113.6,
-        "y": 47.6,
+        "x": 104.2,
+        "y": 254.6,
         "radius": 16,
         "colors": [
           "gold"
@@ -42394,8 +42458,8 @@ export const lightLevels = [
       {
         "id": "p1a",
         "pairId": "p1b",
-        "x": 283.3,
-        "y": 267.4,
+        "x": 452.2,
+        "y": 41.6,
         "radius": 16,
         "colors": [
           "blue"
@@ -42405,8 +42469,8 @@ export const lightLevels = [
       {
         "id": "p1b",
         "pairId": "p1a",
-        "x": 742.1,
-        "y": 238.5,
+        "x": 116.1,
+        "y": 212.1,
         "radius": 16,
         "colors": [
           "blue"
@@ -42416,8 +42480,8 @@ export const lightLevels = [
       {
         "id": "p2a",
         "pairId": "p2b",
-        "x": 302.9,
-        "y": 183.6,
+        "x": 674.8,
+        "y": 147.6,
         "radius": 16,
         "colors": [
           "pink"
@@ -42427,8 +42491,8 @@ export const lightLevels = [
       {
         "id": "p2b",
         "pairId": "p2a",
-        "x": 713.3,
-        "y": 287.9,
+        "x": 79.9,
+        "y": 305.6,
         "radius": 16,
         "colors": [
           "pink"
@@ -42442,43 +42506,43 @@ export const lightLevels = [
         "x": 210,
         "y": 100,
         "length": 124.8,
-        "angle": 28.6
+        "angle": 35.8
       },
       {
         "type": "mirror",
         "x": 590,
         "y": 360,
         "length": 124.8,
-        "angle": 85.3
+        "angle": 35.3
       },
       {
         "type": "mirror",
         "x": 400,
         "y": 210,
         "length": 124.8,
-        "angle": -6.4
+        "angle": -27.1
       },
       {
         "type": "mirror",
-        "x": 641.3,
-        "y": 208.1,
+        "x": 290.2,
+        "y": 387.7,
         "length": 124.8,
-        "angle": 75.9
+        "angle": 22.7
       }
     ],
-    "id": "light-v4-deduction-four-08",
+    "id": "light-v5-deduction-four-08-reauthored",
     "name": "A curva depende da escolha",
     "hint": "A chegada ao último espelho muda quando o caminho anterior muda.",
     "solution": [
-      -2.4,
-      54.3,
-      -37.4,
-      44.9
+      4.8,
+      4.3,
+      -58.1,
+      -24.7
     ],
-    "sourceAngle": 0,
+    "sourceAngle": -26,
     "target": {
-      "x": 336.8,
-      "y": 89.4,
+      "x": 300.7,
+      "y": 268.2,
       "radius": 22,
       "color": "gold"
     },
@@ -42494,21 +42558,21 @@ export const lightLevels = [
   {
     "sources": [
       {
-        "x": 30,
-        "y": 100,
-        "angle": 0,
+        "x": 66.19295259213328,
+        "y": 170.13938348625237,
+        "angle": -26,
         "color": "gold"
       },
       {
-        "x": 770,
-        "y": 360,
-        "angle": 180,
+        "x": 769.5615290467683,
+        "y": 347.4438347260574,
+        "angle": 176,
         "color": "blue"
       },
       {
-        "x": 400,
-        "y": 30,
-        "angle": 90,
+        "x": 433.2658705308415,
+        "y": 53.49638388259109,
+        "angle": 102,
         "color": "pink"
       }
     ],
@@ -42606,21 +42670,21 @@ export const lightLevels = [
         "x": 210,
         "y": 100,
         "length": 124.8,
-        "angle": 59.1
+        "angle": 46.1
       },
       {
         "type": "mirror",
         "x": 590,
         "y": 360,
         "length": 124.8,
-        "angle": 54.8
+        "angle": 52.8
       },
       {
         "type": "mirror",
         "x": 400,
         "y": 210,
         "length": 124.8,
-        "angle": 84.6
+        "angle": -89.4
       },
       {
         "type": "wall",
@@ -42663,15 +42727,15 @@ export const lightLevels = [
         "angle": 90
       }
     ],
-    "id": "light-v4-deduction-windows-07",
+    "id": "light-v5-deduction-windows-07",
     "name": "Visibilidade entre regiões",
     "hint": "Compare o que cada abertura deixa passar.",
     "solution": [
-      28.1,
-      23.8,
-      53.6
+      15.1,
+      21.8,
+      59.6
     ],
-    "sourceAngle": 0,
+    "sourceAngle": -26,
     "target": {
       "x": 378.4,
       "y": 352.2,
@@ -42694,40 +42758,40 @@ export const lightLevels = [
         "x": 200,
         "y": 86,
         "length": 124.8,
-        "angle": 14.8
+        "angle": -75.2
       },
       {
         "type": "mirror",
         "x": 200,
         "y": 230,
         "length": 124.8,
-        "angle": -7.6
+        "angle": 82.4
       },
       {
         "type": "mirror",
         "x": 200,
         "y": 374,
         "length": 124.8,
-        "angle": -7.3
+        "angle": 82.7
       }
     ],
     "sources": [
       {
-        "x": 30,
-        "y": 86,
-        "angle": 0,
+        "x": 350,
+        "y": 86.00000000000001,
+        "angle": -180,
         "color": "gold"
       },
       {
-        "x": 30,
-        "y": 230,
-        "angle": 0,
+        "x": 350,
+        "y": 230.00000000000003,
+        "angle": -180,
         "color": "blue"
       },
       {
-        "x": 30,
+        "x": 350,
         "y": 374,
-        "angle": 0,
+        "angle": -180,
         "color": "pink"
       }
     ],
@@ -42821,15 +42885,15 @@ export const lightLevels = [
     ],
     "width": 800,
     "height": 460,
-    "id": "light-v4-portal-067",
+    "id": "light-v5-portal-067",
     "name": "A consequência distante 067",
     "hint": "Uma escolha aqui pode atrapalhar uma luz do outro lado.",
     "solution": [
-      0.5,
-      -7.6,
-      -7.3
+      -89.5,
+      82.4,
+      82.7
     ],
-    "sourceAngle": 0,
+    "sourceAngle": -180,
     "target": {
       "x": 725,
       "y": 384,
@@ -42860,9 +42924,9 @@ export const lightLevels = [
         "color": "gold"
       },
       {
-        "x": 620,
-        "y": 30,
-        "angle": 51.84277341263095,
+        "x": 632.11023844511,
+        "y": 31.012250242236206,
+        "angle": 54.84277341263095,
         "color": "pink"
       }
     ],
@@ -42924,7 +42988,7 @@ export const lightLevels = [
         "type": "mirror",
         "x": 730,
         "y": 170,
-        "angle": 50.1,
+        "angle": 51.6,
         "length": 124.8
       },
       {
@@ -42989,11 +43053,11 @@ export const lightLevels = [
       -45,
       45,
       -45,
-      74.1,
+      75.6,
       -41.8,
       45
     ],
-    "id": "light-v3-120",
+    "id": "light-v5-legacy-120",
     "campaignNumber": 326,
     "name": "Da chegada azul ao contorno rosa",
     "difficulty": 120,
@@ -43021,40 +43085,40 @@ export const lightLevels = [
   {
     "sources": [
       {
-        "x": 30,
-        "y": 100,
-        "angle": 0,
+        "x": 360.3508193257453,
+        "y": 45.27677706789298,
+        "angle": 160,
         "color": "gold"
       },
       {
-        "x": 770,
-        "y": 110,
-        "angle": 180,
+        "x": 617.7837084267088,
+        "y": 267.5692404819533,
+        "angle": 260,
         "color": "blue"
       },
       {
-        "x": 400,
-        "y": 440,
-        "angle": -90,
+        "x": 124.25382915658173,
+        "y": 328.6214897467405,
+        "angle": -10,
         "color": "pink"
       }
     ],
     "targets": [
       {
-        "x": 724.5,
-        "y": 292.5,
+        "x": 691.9,
+        "y": 365.5,
         "radius": 22,
         "color": "gold"
       },
       {
-        "x": 561.2,
-        "y": 357.7,
+        "x": 249.1,
+        "y": 259.9,
         "radius": 22,
         "color": "blue"
       },
       {
-        "x": 671.7,
-        "y": 214.3,
+        "x": 94.6,
+        "y": 220.2,
         "radius": 22,
         "color": "pink"
       }
@@ -43063,8 +43127,8 @@ export const lightLevels = [
       {
         "id": "p0a",
         "pairId": "p0b",
-        "x": 230.5,
-        "y": 213.7,
+        "x": 349.4,
+        "y": 128.6,
         "radius": 16,
         "colors": [
           "gold"
@@ -43074,8 +43138,8 @@ export const lightLevels = [
       {
         "id": "p0b",
         "pairId": "p0a",
-        "x": 686,
-        "y": 78.7,
+        "x": 618.2,
+        "y": 350.4,
         "radius": 16,
         "colors": [
           "gold"
@@ -43085,8 +43149,8 @@ export const lightLevels = [
       {
         "id": "p1a",
         "pairId": "p1b",
-        "x": 369.7,
-        "y": 25.4,
+        "x": 703.2,
+        "y": 185.2,
         "radius": 16,
         "colors": [
           "blue"
@@ -43096,8 +43160,8 @@ export const lightLevels = [
       {
         "id": "p1b",
         "pairId": "p1a",
-        "x": 683.2,
-        "y": 404.5,
+        "x": 84.1,
+        "y": 150.3,
         "radius": 16,
         "colors": [
           "blue"
@@ -43107,8 +43171,8 @@ export const lightLevels = [
       {
         "id": "p2a",
         "pairId": "p2b",
-        "x": 124.1,
-        "y": 271.3,
+        "x": 476.1,
+        "y": 68.5,
         "radius": 16,
         "colors": [
           "pink"
@@ -43118,8 +43182,8 @@ export const lightLevels = [
       {
         "id": "p2b",
         "pairId": "p2a",
-        "x": 764.4,
-        "y": 217.2,
+        "x": 64.5,
+        "y": 303.7,
         "radius": 16,
         "colors": [
           "pink"
@@ -43133,83 +43197,99 @@ export const lightLevels = [
         "x": 210,
         "y": 100,
         "length": 124.8,
-        "angle": 41.3
+        "angle": -63.2
       },
       {
         "type": "mirror",
         "x": 590,
         "y": 110,
         "length": 124.8,
-        "angle": 41.5
+        "angle": -2.2
       },
       {
         "type": "mirror",
         "x": 400,
         "y": 280,
         "length": 124.8,
-        "angle": 76.9
+        "angle": -9.1
       },
       {
         "type": "wall",
-        "x": 490,
-        "y": 20.306798248229228,
-        "length": 40.613596496458456,
+        "x": 140,
+        "y": 87.72674036725286,
+        "length": 175.45348073450572,
         "width": 12,
         "angle": 90
       },
       {
         "type": "wall",
-        "x": 490,
-        "y": 138.4293386914197,
-        "length": 71.63148438992249,
+        "x": 140,
+        "y": 209.86054972101516,
+        "length": 20.868576096703578,
         "width": 12,
         "angle": 90
       },
       {
         "type": "wall",
-        "x": 490,
-        "y": 348.1225404431905,
-        "length": 223.75491911361905,
+        "x": 140,
+        "y": 261.62444561288004,
+        "length": 45.99408826772094,
         "width": 12,
         "angle": 90
       },
       {
         "type": "wall",
-        "x": 695,
-        "y": 16.85,
-        "length": 33.7,
+        "x": 140,
+        "y": 416.31074487337025,
+        "length": 87.37851025325949,
         "width": 12,
         "angle": 90
       },
       {
         "type": "wall",
-        "x": 695,
-        "y": 155.15,
-        "length": 28.30000000000001,
+        "x": 480,
+        "y": 12.25,
+        "length": 24.5,
         "width": 12,
         "angle": 90
       },
       {
         "type": "wall",
-        "x": 695,
-        "y": 348.5,
-        "length": 22,
+        "x": 480,
+        "y": 130.18473269662042,
+        "length": 35.36946539324083,
+        "width": 12,
+        "angle": 90
+      },
+      {
+        "type": "wall",
+        "x": 480,
+        "y": 203.1486620972147,
+        "length": 67.97313216335371,
+        "width": 12,
+        "angle": 90
+      },
+      {
+        "type": "wall",
+        "x": 480,
+        "y": 359.8661420026024,
+        "length": 200.2677159947952,
         "width": 12,
         "angle": 90
       }
     ],
-    "id": "light-v4-deduction-windows-03",
+    "id": "light-v5-deduction-windows-03-reauthored",
     "name": "Visibilidade entre regiões",
     "hint": "Compare o que cada abertura deixa passar.",
     "solution": [
-      10.3,
-      10.5,
-      45.9
+      85.8,
+      -33.2,
+      -40.1
     ],
-    "sourceAngle": 0,
+    "sourceAngle": 160,
     "target": {
-      "x": 724.5,
-      "y": 292.5,
+      "x": 691.9,
+      "y": 365.5,
       "radius": 22,
       "color": "gold"
     },
@@ -43225,21 +43305,21 @@ export const lightLevels = [
   {
     "sources": [
       {
-        "x": 60,
-        "y": 90,
-        "angle": 0,
+        "x": 40.18666706430659,
+        "y": 282.83628290596175,
+        "angle": -40,
         "color": "blue"
       },
       {
-        "x": 40,
-        "y": 230,
-        "angle": 0,
+        "x": 113.9287128866741,
+        "y": 393.135401666597,
+        "angle": -65,
         "color": "gold"
       },
       {
-        "x": 750,
-        "y": 430,
-        "angle": -140.19442890773482,
+        "x": 430,
+        "y": 400,
+        "angle": -20.92450174492117,
         "color": "pink"
       }
     ],
@@ -43251,8 +43331,8 @@ export const lightLevels = [
         "color": "blue"
       },
       {
-        "x": 620,
-        "y": 235,
+        "x": 750,
+        "y": 305,
         "radius": 22,
         "color": "gold"
       },
@@ -43269,7 +43349,7 @@ export const lightLevels = [
         "x": 270,
         "y": 90,
         "length": 124.8,
-        "angle": 14
+        "angle": -6
       },
       {
         "type": "mirror",
@@ -43283,21 +43363,21 @@ export const lightLevels = [
         "x": 190,
         "y": 230,
         "length": 124.8,
-        "angle": -25
+        "angle": -57.5
       },
       {
         "type": "mirror",
-        "x": 430,
-        "y": 235,
+        "x": 380,
+        "y": 160,
         "length": 124.8,
         "angle": 18
       },
       {
         "type": "mirror",
         "x": 600,
-        "y": 305,
+        "y": 335,
         "length": 124.8,
-        "angle": -20
+        "angle": 39.6
       },
       {
         "type": "wall",
@@ -43366,8 +43446,8 @@ export const lightLevels = [
         "id": "Gb",
         "pairId": "Ga",
         "label": "C",
-        "x": 430,
-        "y": 80,
+        "x": 380,
+        "y": 60,
         "radius": 16,
         "colors": [
           "gold"
@@ -43378,7 +43458,7 @@ export const lightLevels = [
         "pairId": "U3b",
         "label": "D",
         "x": 500,
-        "y": 305,
+        "y": 335,
         "radius": 16,
         "colors": [
           "pink"
@@ -43397,17 +43477,17 @@ export const lightLevels = [
       }
     ],
     "solution": [
+      25,
       45,
-      45,
-      45,
-      45,
-      19.9
+      12.5,
+      55.7,
+      79.5
     ],
     "name": "O acordo das três luzes",
     "difficulty": 200,
     "family": "v3-final-200",
     "hint": "Observe quais trechos cada escolha ocupa depois das saídas dos portais.",
-    "sourceAngle": 0,
+    "sourceAngle": -40,
     "target": {
       "x": 750,
       "y": 190,
@@ -43422,7 +43502,7 @@ export const lightLevels = [
     "decoyCount": 0,
     "tutorial": "",
     "rules": "Leve todas as fontes aos alvos da mesma cor, sem cruzar nem encostar nos trechos físicos das outras luzes.",
-    "id": "light-v3-200",
+    "id": "light-v5-legacy-200",
     "campaignNumber": 328,
     "number": 328,
     "campaignBand": "advanced"
@@ -43434,47 +43514,47 @@ export const lightLevels = [
         "x": 200,
         "y": 86,
         "length": 124.8,
-        "angle": 14.5
+        "angle": -69.3
       },
       {
         "type": "mirror",
         "x": 600,
         "y": 230,
         "length": 124.8,
-        "angle": 0.1
+        "angle": 82.1
       },
       {
         "type": "mirror",
         "x": 200,
         "y": 374,
         "length": 124.8,
-        "angle": -14.3
+        "angle": 55.7
       }
     ],
     "sources": [
       {
-        "x": 30,
-        "y": 86,
-        "angle": 0,
+        "x": 350,
+        "y": 86.00000000000001,
+        "angle": -180,
         "color": "gold"
       },
       {
-        "x": 770,
-        "y": 230,
-        "angle": 180,
+        "x": 455.8107456092522,
+        "y": 271.34560337255,
+        "angle": 344,
         "color": "blue"
       },
       {
-        "x": 30,
-        "y": 374,
-        "angle": 0,
+        "x": 314.90666646784666,
+        "y": 277.58185854701907,
+        "angle": 140,
         "color": "pink"
       }
     ],
     "targets": [
       {
-        "x": 710,
-        "y": 368,
+        "x": 500,
+        "y": 350,
         "radius": 22,
         "color": "gold"
       },
@@ -43507,8 +43587,8 @@ export const lightLevels = [
         "id": "g1b",
         "pairId": "g1a",
         "label": "A",
-        "x": 493.1,
-        "y": 410.2,
+        "x": 431.288369862682,
+        "y": 363.36831641877205,
         "radius": 16,
         "colors": [
           "gold"
@@ -43518,8 +43598,8 @@ export const lightLevels = [
         "id": "g2a",
         "pairId": "g2b",
         "label": "B",
-        "x": 130.6,
-        "y": 276.8,
+        "x": 179.15415254245642,
+        "y": 173.55255932168302,
         "radius": 16,
         "colors": [
           "gold"
@@ -43529,8 +43609,8 @@ export const lightLevels = [
         "id": "g2b",
         "pairId": "g2a",
         "label": "B",
-        "x": 742.5,
-        "y": 278.7,
+        "x": 550,
+        "y": 140,
         "radius": 16,
         "colors": [
           "gold"
@@ -43551,8 +43631,8 @@ export const lightLevels = [
         "id": "b1b",
         "pairId": "b1a",
         "label": "C",
-        "x": 96.4,
-        "y": 412.9,
+        "x": 96.40208624486178,
+        "y": 412.89992738365436,
         "radius": 16,
         "colors": [
           "blue"
@@ -43573,8 +43653,8 @@ export const lightLevels = [
         "id": "p1b",
         "pairId": "p1a",
         "label": "D",
-        "x": 569.4,
-        "y": 77.2,
+        "x": 569.3994367165028,
+        "y": 77.20400029391556,
         "radius": 16,
         "colors": [
           "pink"
@@ -43583,18 +43663,18 @@ export const lightLevels = [
     ],
     "width": 800,
     "height": 460,
-    "id": "light-v4-portal-071",
+    "id": "light-v5-portal-071",
     "name": "A saída decide 071",
     "hint": "Compare o que acontece depois de cada saída.",
     "solution": [
-      -5.5,
-      0.1,
-      4
+      84.5,
+      82.1,
+      74
     ],
-    "sourceAngle": 0,
+    "sourceAngle": -180,
     "target": {
-      "x": 710,
-      "y": 368,
+      "x": 500,
+      "y": 350,
       "radius": 22,
       "color": "gold"
     },
@@ -43614,40 +43694,40 @@ export const lightLevels = [
         "x": 200,
         "y": 86,
         "length": 124.8,
-        "angle": 7.9
+        "angle": -86.1
       },
       {
         "type": "mirror",
         "x": 200,
         "y": 230,
         "length": 124.8,
-        "angle": 7.9
+        "angle": 27.9
       },
       {
         "type": "mirror",
         "x": 200,
         "y": 374,
         "length": 124.8,
-        "angle": -14.5
+        "angle": 85.5
       }
     ],
     "sources": [
       {
-        "x": 30,
-        "y": 86,
-        "angle": 0,
+        "x": 348.54021031123557,
+        "y": 65.12403485599015,
+        "angle": 172,
         "color": "gold"
       },
       {
-        "x": 30,
-        "y": 230,
-        "angle": 0,
+        "x": 31.470222513824837,
+        "y": 88.58672586896137,
+        "angle": 40,
         "color": "blue"
       },
       {
-        "x": 30,
-        "y": 374,
-        "angle": 0,
+        "x": 340.95389311788625,
+        "y": 425.30302149885034,
+        "angle": -160,
         "color": "pink"
       }
     ],
@@ -43763,15 +43843,15 @@ export const lightLevels = [
     ],
     "width": 800,
     "height": 460,
-    "id": "light-v4-portal-077",
+    "id": "light-v5-portal-077",
     "name": "A saída decide 077",
     "hint": "Compare o que acontece depois de cada saída.",
     "solution": [
-      -4,
-      -5.5,
-      -14.5
+      82,
+      14.5,
+      85.5
     ],
-    "sourceAngle": 0,
+    "sourceAngle": 172,
     "target": {
       "x": 725,
       "y": 234,
@@ -43794,40 +43874,40 @@ export const lightLevels = [
         "x": 200,
         "y": 86,
         "length": 124.8,
-        "angle": 7.1
+        "angle": -82.9
       },
       {
         "type": "mirror",
         "x": 200,
         "y": 230,
         "length": 124.8,
-        "angle": 7.1
+        "angle": -76.9
       },
       {
         "type": "mirror",
         "x": 200,
         "y": 374,
         "length": 124.8,
-        "angle": -14.2
+        "angle": 71.8
       }
     ],
     "sources": [
       {
-        "x": 30,
-        "y": 86,
-        "angle": 0,
+        "x": 350,
+        "y": 86.00000000000001,
+        "angle": -180,
         "color": "gold"
       },
       {
-        "x": 30,
-        "y": 230,
-        "angle": 0,
+        "x": 346.7221401100709,
+        "y": 261.1867536226639,
+        "angle": -168,
         "color": "blue"
       },
       {
-        "x": 30,
-        "y": 374,
-        "angle": 0,
+        "x": 348.54021031123557,
+        "y": 353.12403485599015,
+        "angle": 172,
         "color": "pink"
       }
     ],
@@ -43943,15 +44023,15 @@ export const lightLevels = [
     ],
     "width": 800,
     "height": 460,
-    "id": "light-v4-portal-066",
+    "id": "light-v5-portal-066",
     "name": "A consequência distante 066",
     "hint": "Uma escolha aqui pode atrapalhar uma luz do outro lado.",
     "solution": [
-      7.1,
-      7.1,
-      3.5
+      -82.9,
+      -76.9,
+      89.5
     ],
-    "sourceAngle": 0,
+    "sourceAngle": -180,
     "target": {
       "x": 725,
       "y": 218,
@@ -43970,34 +44050,34 @@ export const lightLevels = [
   {
     "sources": [
       {
-        "x": 30,
-        "y": 110,
-        "angle": 0,
+        "x": 495.4423259036624,
+        "y": 162.09445330007907,
+        "angle": -170,
         "color": "gold"
       },
       {
-        "x": 30,
-        "y": 350,
-        "angle": 0,
+        "x": 32.242128958775965,
+        "y": 101.28872823348749,
+        "angle": 56,
         "color": "blue"
       },
       {
-        "x": 380,
-        "y": 440,
-        "angle": -90,
+        "x": 400.8759651440098,
+        "y": 433.54021031123557,
+        "angle": -98,
         "color": "pink"
       }
     ],
     "targets": [
       {
-        "x": 740,
-        "y": 350,
+        "x": 650,
+        "y": 272.5,
         "radius": 22,
         "color": "gold"
       },
       {
-        "x": 740,
-        "y": 110,
+        "x": 650,
+        "y": 187.5,
         "radius": 22,
         "color": "blue"
       },
@@ -44082,51 +44162,51 @@ export const lightLevels = [
         "y": 110,
         "type": "mirror",
         "length": 124.8,
-        "angle": 24
+        "angle": -61
       },
       {
         "x": 200,
         "y": 350,
         "type": "mirror",
         "length": 124.8,
-        "angle": 16.4
+        "angle": 44.4
       },
       {
         "x": 650,
         "y": 362.5,
         "type": "mirror",
         "length": 124.8,
-        "angle": 20
+        "angle": -21
       },
       {
         "x": 650,
         "y": 97.5,
         "type": "mirror",
         "length": 124.8,
-        "angle": 20.3
+        "angle": 61.3
       },
       {
         "type": "mirror",
         "x": 380,
         "y": 285,
         "length": 124.8,
-        "angle": -2.7
+        "angle": -6.7
       }
     ],
-    "id": "light-v4-deduction-symmetry-06-filter",
+    "id": "light-v5-deduction-symmetry-06-filter",
     "name": "A entrada diferente",
     "hint": "Compare a marca da entrada com a fonte que se aproxima.",
     "solution": [
-      14.6,
-      7,
-      10.7,
-      11,
-      -33.7
+      -70.4,
+      35,
+      -30.3,
+      52,
+      -37.7
     ],
-    "sourceAngle": 0,
+    "sourceAngle": -170,
     "target": {
-      "x": 740,
-      "y": 350,
+      "x": 650,
+      "y": 272.5,
       "radius": 22,
       "color": "gold"
     },
@@ -44142,21 +44222,21 @@ export const lightLevels = [
   {
     "sources": [
       {
-        "x": 30,
-        "y": 100,
-        "angle": 0,
+        "x": 104.19865458735484,
+        "y": 245.62305898749054,
+        "angle": -54,
         "color": "gold"
       },
       {
-        "x": 770,
-        "y": 360,
-        "angle": 180,
+        "x": 663.212595753644,
+        "y": 195.56181762433184,
+        "angle": 114,
         "color": "blue"
       },
       {
-        "x": 400,
-        "y": 30,
-        "angle": 90,
+        "x": 381.1848766118224,
+        "y": 30.986058833710814,
+        "angle": 84,
         "color": "pink"
       }
     ],
@@ -44254,21 +44334,21 @@ export const lightLevels = [
         "x": 210,
         "y": 100,
         "length": 124.8,
-        "angle": 54.5
+        "angle": 27.5
       },
       {
         "type": "mirror",
         "x": 590,
         "y": 360,
         "length": 124.8,
-        "angle": 63
+        "angle": 30
       },
       {
         "type": "mirror",
         "x": 400,
         "y": 210,
         "length": 124.8,
-        "angle": 20.4
+        "angle": 17.4
       },
       {
         "type": "wall",
@@ -44319,15 +44399,15 @@ export const lightLevels = [
         "angle": 90
       }
     ],
-    "id": "light-v4-deduction-windows-12",
+    "id": "light-v5-deduction-windows-12",
     "name": "Visibilidade entre regiões",
     "hint": "Compare o que cada abertura deixa passar.",
     "solution": [
-      23.5,
-      32,
-      -10.6
+      -3.5,
+      -1,
+      -13.6
     ],
-    "sourceAngle": 0,
+    "sourceAngle": -54,
     "target": {
       "x": 729.4,
       "y": 162.7,
@@ -44346,40 +44426,40 @@ export const lightLevels = [
   {
     "sources": [
       {
-        "x": 30,
-        "y": 100,
-        "angle": 0,
+        "x": 183.95277334996044,
+        "y": 247.7211629518312,
+        "angle": -80,
         "color": "gold"
       },
       {
-        "x": 770,
-        "y": 110,
-        "angle": 180,
+        "x": 665.1154500457425,
+        "y": 218.72838514257165,
+        "angle": 118,
         "color": "blue"
       },
       {
-        "x": 400,
-        "y": 440,
-        "angle": -90,
+        "x": 600,
+        "y": 209.99999999999997,
+        "angle": 180,
         "color": "pink"
       }
     ],
     "targets": [
       {
-        "x": 333.7,
-        "y": 405.8,
+        "x": 459.8,
+        "y": 325.5,
         "radius": 22,
         "color": "gold"
       },
       {
-        "x": 91.7,
-        "y": 300.1,
+        "x": 254.8,
+        "y": 290.7,
         "radius": 22,
         "color": "blue"
       },
       {
-        "x": 528.5,
-        "y": 374.5,
+        "x": 359.5,
+        "y": 338.5,
         "radius": 22,
         "color": "pink"
       }
@@ -44388,8 +44468,8 @@ export const lightLevels = [
       {
         "id": "p0a",
         "pairId": "p0b",
-        "x": 333.2,
-        "y": 110.8,
+        "x": 319.4,
+        "y": 141.6,
         "radius": 16,
         "colors": [
           "gold"
@@ -44399,8 +44479,8 @@ export const lightLevels = [
       {
         "id": "p0b",
         "pairId": "p0a",
-        "x": 166.8,
-        "y": 391.2,
+        "x": 192.4,
+        "y": 301.9,
         "radius": 16,
         "colors": [
           "gold"
@@ -44410,8 +44490,8 @@ export const lightLevels = [
       {
         "id": "p1a",
         "pairId": "p1b",
-        "x": 442.3,
-        "y": 37.3,
+        "x": 708.8,
+        "y": 261,
         "radius": 16,
         "colors": [
           "blue"
@@ -44421,8 +44501,8 @@ export const lightLevels = [
       {
         "id": "p1b",
         "pairId": "p1a",
-        "x": 224.4,
-        "y": 365.4,
+        "x": 174.6,
+        "y": 357.5,
         "radius": 16,
         "colors": [
           "blue"
@@ -44432,8 +44512,8 @@ export const lightLevels = [
       {
         "id": "p2a",
         "pairId": "p2b",
-        "x": 108.5,
-        "y": 381.5,
+        "x": 726.3,
+        "y": 211.1,
         "radius": 16,
         "colors": [
           "pink"
@@ -44443,8 +44523,8 @@ export const lightLevels = [
       {
         "id": "p2b",
         "pairId": "p2a",
-        "x": 678.3,
-        "y": 214.1,
+        "x": 232.6,
+        "y": 338.1,
         "radius": 16,
         "colors": [
           "pink"
@@ -44458,43 +44538,43 @@ export const lightLevels = [
         "x": 210,
         "y": 100,
         "length": 124.8,
-        "angle": 33.5
+        "angle": 18.8
       },
       {
         "type": "mirror",
         "x": 590,
-        "y": 110,
+        "y": 360,
         "length": 124.8,
-        "angle": 20.6
+        "angle": 70.1
       },
       {
         "type": "mirror",
         "x": 400,
-        "y": 280,
+        "y": 210,
         "length": 124.8,
-        "angle": -18
+        "angle": -5.3
       },
       {
         "type": "mirror",
-        "x": 548.7,
-        "y": 259.2,
+        "x": 403.1,
+        "y": 381.9,
         "length": 124.8,
-        "angle": 77
+        "angle": 33.4
       }
     ],
-    "id": "light-v4-deduction-four-07",
+    "id": "light-v5-deduction-four-07-reauthored",
     "name": "A curva depende da escolha",
     "hint": "A chegada ao último espelho muda quando o caminho anterior muda.",
     "solution": [
-      2.5,
-      -10.4,
-      -49,
-      46
+      -12.2,
+      39.1,
+      -36.3,
+      5.4
     ],
-    "sourceAngle": 0,
+    "sourceAngle": -80,
     "target": {
-      "x": 333.7,
-      "y": 405.8,
+      "x": 459.8,
+      "y": 325.5,
       "radius": 22,
       "color": "gold"
     },
@@ -44510,28 +44590,28 @@ export const lightLevels = [
   {
     "sources": [
       {
-        "x": 30,
-        "y": 100,
-        "angle": 0,
+        "x": 347.0318186463901,
+        "y": 38.98950353862993,
+        "angle": 156,
         "color": "gold"
       },
       {
-        "x": 770,
-        "y": 110,
-        "angle": 180,
+        "x": 360.14010978560793,
+        "y": 118.02688424157519,
+        "angle": 358,
         "color": "blue"
       },
       {
-        "x": 400,
-        "y": 440,
-        "angle": -90,
+        "x": 242.43075951804673,
+        "y": 252.21629157329116,
+        "angle": 10,
         "color": "pink"
       }
     ],
     "targets": [
       {
-        "x": 740.9,
-        "y": 404,
+        "x": 617.2142223945328,
+        "y": 375.46238925925013,
         "radius": 22,
         "color": "gold"
       },
@@ -44622,43 +44702,43 @@ export const lightLevels = [
         "x": 210,
         "y": 100,
         "length": 124.8,
-        "angle": 21.9
+        "angle": -80.1
       },
       {
         "type": "mirror",
         "x": 590,
         "y": 110,
         "length": 124.8,
-        "angle": 1.7
+        "angle": -89.3
       },
       {
         "type": "mirror",
         "x": 400,
         "y": 280,
         "length": 124.8,
-        "angle": -58.2
+        "angle": -8.2
       },
       {
         "type": "mirror",
         "x": 716.8,
         "y": 291.9,
         "length": 124.8,
-        "angle": 60.8
+        "angle": -88.1
       }
     ],
-    "id": "light-v4-deduction-four-14",
+    "id": "light-v5-deduction-four-14",
     "name": "A curva depende da escolha",
     "hint": "A chegada ao último espelho muda quando o caminho anterior muda.",
     "solution": [
-      -9.1,
-      -29.3,
-      -89.2,
-      29.8
+      68.9,
+      59.7,
+      -39.2,
+      60.9
     ],
-    "sourceAngle": 0,
+    "sourceAngle": 156,
     "target": {
-      "x": 740.9,
-      "y": 404,
+      "x": 617.2142223945328,
+      "y": 375.46238925925013,
       "radius": 22,
       "color": "gold"
     },
@@ -44678,40 +44758,40 @@ export const lightLevels = [
         "x": 200,
         "y": 86,
         "length": 124.8,
-        "angle": 7.7
+        "angle": -78.3
       },
       {
         "type": "mirror",
         "x": 200,
         "y": 230,
         "length": 124.8,
-        "angle": 7.1
+        "angle": -76.9
       },
       {
         "type": "mirror",
         "x": 200,
         "y": 374,
         "length": 124.8,
-        "angle": -13.9
+        "angle": 88.1
       }
     ],
     "sources": [
       {
-        "x": 30,
-        "y": 86,
-        "angle": 0,
+        "x": 348.54021031123557,
+        "y": 106.87596514400985,
+        "angle": -172,
         "color": "gold"
       },
       {
-        "x": 30,
-        "y": 230,
-        "angle": 0,
+        "x": 346.7221401100709,
+        "y": 261.1867536226639,
+        "angle": -168,
         "color": "blue"
       },
       {
-        "x": 30,
-        "y": 374,
-        "angle": 0,
+        "x": 337.0318186463901,
+        "y": 435.01049646137005,
+        "angle": -156,
         "color": "pink"
       }
     ],
@@ -44827,15 +44907,15 @@ export const lightLevels = [
     ],
     "width": 800,
     "height": 460,
-    "id": "light-v4-portal-074",
+    "id": "light-v5-portal-074",
     "name": "Uma escolha leva às outras 074",
     "hint": "A rota mais restrita ajuda a decidir as outras.",
     "solution": [
-      7.7,
-      7.1,
-      -1.5
+      -78.3,
+      -76.9,
+      -79.5
     ],
-    "sourceAngle": 0,
+    "sourceAngle": -172,
     "target": {
       "x": 725,
       "y": 230,
@@ -44866,9 +44946,9 @@ export const lightLevels = [
         "color": "gold"
       },
       {
-        "x": 620,
-        "y": 30,
-        "angle": 51.84277341263095,
+        "x": 632.11023844511,
+        "y": 31.012250242236206,
+        "angle": 54.84277341263095,
         "color": "pink"
       }
     ],
@@ -44922,7 +45002,7 @@ export const lightLevels = [
         "type": "mirror",
         "x": 730,
         "y": 170,
-        "angle": -81.9,
+        "angle": -80.4,
         "length": 124.8
       },
       {
@@ -44977,11 +45057,11 @@ export const lightLevels = [
       45,
       43.2,
       -45,
-      74.1,
+      75.6,
       -41.8,
       45
     ],
-    "id": "light-v3-109",
+    "id": "light-v5-legacy-109",
     "campaignNumber": 337,
     "name": "A consequência muda de setor",
     "difficulty": 109,
@@ -45007,34 +45087,34 @@ export const lightLevels = [
   {
     "sources": [
       {
-        "x": 30,
-        "y": 110,
-        "angle": 0,
+        "x": 340.95389311788625,
+        "y": 161.30302149885034,
+        "angle": -160,
         "color": "gold"
       },
       {
-        "x": 30,
-        "y": 350,
-        "angle": 0,
+        "x": 310.8190655586185,
+        "y": 208.15806435079003,
+        "angle": 128,
         "color": "blue"
       },
       {
-        "x": 450,
-        "y": 440,
-        "angle": -90,
+        "x": 470.8759651440098,
+        "y": 428.54021031123557,
+        "angle": -98,
         "color": "pink"
       }
     ],
     "targets": [
       {
-        "x": 740,
-        "y": 350,
+        "x": 650,
+        "y": 272.5,
         "radius": 22,
         "color": "gold"
       },
       {
-        "x": 740,
-        "y": 110,
+        "x": 650,
+        "y": 187.5,
         "radius": 22,
         "color": "blue"
       },
@@ -45119,51 +45199,51 @@ export const lightLevels = [
         "y": 110,
         "type": "mirror",
         "length": 124.8,
-        "angle": 24
+        "angle": -56
       },
       {
         "x": 200,
         "y": 350,
         "type": "mirror",
         "length": 124.8,
-        "angle": 16.4
+        "angle": 80.4
       },
       {
         "x": 650,
         "y": 362.5,
         "type": "mirror",
         "length": 124.8,
-        "angle": 20
+        "angle": -21
       },
       {
         "x": 650,
         "y": 97.5,
         "type": "mirror",
         "length": 124.8,
-        "angle": 20.3
+        "angle": 61.3
       },
       {
         "type": "mirror",
         "x": 450,
         "y": 280,
         "length": 124.8,
-        "angle": 55.1
+        "angle": 51.1
       }
     ],
-    "id": "light-v4-deduction-symmetry-12-filter",
+    "id": "light-v5-deduction-symmetry-12-filter",
     "name": "A entrada diferente",
     "hint": "Compare a marca da entrada com a fonte que se aproxima.",
     "solution": [
-      14.6,
-      7,
-      10.7,
-      11,
-      46.1
+      -65.4,
+      71,
+      -30.3,
+      52,
+      42.1
     ],
-    "sourceAngle": 0,
+    "sourceAngle": -160,
     "target": {
-      "x": 740,
-      "y": 350,
+      "x": 650,
+      "y": 272.5,
       "radius": 22,
       "color": "gold"
     },
@@ -45610,21 +45690,21 @@ export const lightLevels = [
   {
     "sources": [
       {
-        "x": 30,
-        "y": 100,
-        "angle": 0,
+        "x": 154.37694101250946,
+        "y": 271.19017293312766,
+        "angle": -72,
         "color": "gold"
       },
       {
-        "x": 770,
-        "y": 110,
-        "angle": 180,
+        "x": 769.0139411662892,
+        "y": 128.81512338817754,
+        "angle": 186,
         "color": "blue"
       },
       {
-        "x": 400,
-        "y": 440,
-        "angle": -90,
+        "x": 526.0817205770755,
+        "y": 378.50583605210534,
+        "angle": -142,
         "color": "pink"
       }
     ],
@@ -45722,21 +45802,21 @@ export const lightLevels = [
         "x": 210,
         "y": 100,
         "length": 124.8,
-        "angle": -90
+        "angle": 54
       },
       {
         "type": "mirror",
         "x": 590,
         "y": 110,
         "length": 124.8,
-        "angle": -51.8
+        "angle": -48.8
       },
       {
         "type": "mirror",
         "x": 400,
         "y": 280,
         "length": 124.8,
-        "angle": -20.6
+        "angle": -46.6
       },
       {
         "type": "mirror",
@@ -45746,16 +45826,16 @@ export const lightLevels = [
         "angle": 50.4
       }
     ],
-    "id": "light-v4-deduction-four-10",
+    "id": "light-v5-deduction-four-10",
     "name": "A curva depende da escolha",
     "hint": "A chegada ao último espelho muda quando o caminho anterior muda.",
     "solution": [
-      59,
-      -82.8,
-      -51.6,
+      23,
+      -79.8,
+      -77.6,
       19.4
     ],
-    "sourceAngle": 0,
+    "sourceAngle": -72,
     "target": {
       "x": 717,
       "y": 202.6,
@@ -45774,21 +45854,21 @@ export const lightLevels = [
   {
     "sources": [
       {
-        "x": 30,
-        "y": 100,
-        "angle": 0,
+        "x": 216.97989934050014,
+        "y": 299.87816540381914,
+        "angle": -92,
         "color": "gold"
       },
       {
-        "x": 770,
-        "y": 360,
-        "angle": 180,
+        "x": 441.45978968876443,
+        "y": 380.8759651440099,
+        "angle": 352,
         "color": "blue"
       },
       {
-        "x": 400,
-        "y": 30,
-        "angle": 90,
+        "x": 610.3444185374863,
+        "y": 57.17583440395697,
+        "angle": 144,
         "color": "pink"
       }
     ],
@@ -45886,21 +45966,21 @@ export const lightLevels = [
         "x": 210,
         "y": 100,
         "length": 124.8,
-        "angle": 22.5
+        "angle": -23.5
       },
       {
         "type": "mirror",
         "x": 590,
         "y": 360,
         "length": 124.8,
-        "angle": 34.9
+        "angle": -59.1
       },
       {
         "type": "mirror",
         "x": 400,
         "y": 210,
         "length": 124.8,
-        "angle": 81
+        "angle": -72
       },
       {
         "type": "wall",
@@ -45951,15 +46031,15 @@ export const lightLevels = [
         "angle": 90
       }
     ],
-    "id": "light-v4-deduction-windows-06",
+    "id": "light-v5-deduction-windows-06",
     "name": "Visibilidade entre regiões",
     "hint": "Compare o que cada abertura deixa passar.",
     "solution": [
-      -8.5,
-      3.9,
-      50
+      -54.5,
+      89.9,
+      77
     ],
-    "sourceAngle": 0,
+    "sourceAngle": -92,
     "target": {
       "x": 731.7,
       "y": 155,
@@ -45978,21 +46058,21 @@ export const lightLevels = [
   {
     "sources": [
       {
-        "x": 30,
-        "y": 100,
-        "angle": 0,
+        "x": 342.44213892883903,
+        "y": 29.579265582116335,
+        "angle": 152,
         "color": "gold"
       },
       {
-        "x": 770,
-        "y": 360,
-        "angle": 180,
+        "x": 556.7341294691585,
+        "y": 203.49638388259112,
+        "angle": 78,
         "color": "blue"
       },
       {
-        "x": 400,
-        "y": 30,
-        "angle": 90,
+        "x": 412.55616527394255,
+        "y": 30.438470953231644,
+        "angle": 94,
         "color": "pink"
       }
     ],
@@ -46090,21 +46170,21 @@ export const lightLevels = [
         "x": 210,
         "y": 100,
         "length": 124.8,
-        "angle": 46.1
+        "angle": -57.9
       },
       {
         "type": "mirror",
         "x": 590,
         "y": 360,
         "length": 124.8,
-        "angle": 58.7
+        "angle": 7.7
       },
       {
         "type": "mirror",
         "x": 400,
         "y": 210,
         "length": 124.8,
-        "angle": -17.4
+        "angle": -15.4
       },
       {
         "type": "mirror",
@@ -46114,16 +46194,16 @@ export const lightLevels = [
         "angle": -7.4
       }
     ],
-    "id": "light-v4-deduction-four-03",
+    "id": "light-v5-deduction-four-03",
     "name": "A curva depende da escolha",
     "hint": "A chegada ao último espelho muda quando o caminho anterior muda.",
     "solution": [
-      15.1,
-      27.7,
-      -48.4,
+      -88.9,
+      -23.3,
+      -46.4,
       -38.4
     ],
-    "sourceAngle": 0,
+    "sourceAngle": 152,
     "target": {
       "x": 712.4,
       "y": 202.7,
@@ -46142,40 +46222,40 @@ export const lightLevels = [
   {
     "sources": [
       {
-        "x": 30,
-        "y": 100,
-        "angle": 0,
+        "x": 86.86770493486834,
+        "y": 257.6021507213444,
+        "angle": -52,
         "color": "gold"
       },
       {
-        "x": 770,
-        "y": 360,
-        "angle": 180,
+        "x": 635.740571979907,
+        "y": 144.80752783856275,
+        "angle": 102,
         "color": "blue"
       },
       {
-        "x": 400,
-        "y": 30,
-        "angle": 90,
+        "x": 350.38527595294016,
+        "y": 36.9728947311026,
+        "angle": 74,
         "color": "pink"
       }
     ],
     "targets": [
       {
-        "x": 714.2,
-        "y": 238.9,
+        "x": 463.2,
+        "y": 388.4,
         "radius": 22,
         "color": "gold"
       },
       {
-        "x": 342.1,
-        "y": 340.2,
+        "x": 463.5,
+        "y": 324,
         "radius": 22,
         "color": "blue"
       },
       {
-        "x": 515.7,
-        "y": 33.2,
+        "x": 248.3,
+        "y": 227.6,
         "radius": 22,
         "color": "pink"
       }
@@ -46184,8 +46264,8 @@ export const lightLevels = [
       {
         "id": "p0a",
         "pairId": "p0b",
-        "x": 276.4,
-        "y": 262.7,
+        "x": 139.3,
+        "y": 288,
         "radius": 16,
         "colors": [
           "gold"
@@ -46195,8 +46275,8 @@ export const lightLevels = [
       {
         "id": "p0b",
         "pairId": "p0a",
-        "x": 688.9,
-        "y": 176.9,
+        "x": 545,
+        "y": 170.8,
         "radius": 16,
         "colors": [
           "gold"
@@ -46206,8 +46286,8 @@ export const lightLevels = [
       {
         "id": "p1a",
         "pairId": "p1b",
-        "x": 740.9,
-        "y": 150.7,
+        "x": 729.6,
+        "y": 230.7,
         "radius": 16,
         "colors": [
           "blue"
@@ -46217,8 +46297,8 @@ export const lightLevels = [
       {
         "id": "p1b",
         "pairId": "p1a",
-        "x": 295.1,
-        "y": 405.4,
+        "x": 366.6,
+        "y": 413.8,
         "radius": 16,
         "colors": [
           "blue"
@@ -46228,8 +46308,8 @@ export const lightLevels = [
       {
         "id": "p2a",
         "pairId": "p2b",
-        "x": 647.1,
-        "y": 155.7,
+        "x": 605.4,
+        "y": 184.8,
         "radius": 16,
         "colors": [
           "pink"
@@ -46239,8 +46319,8 @@ export const lightLevels = [
       {
         "id": "p2b",
         "pairId": "p2a",
-        "x": 571.8,
-        "y": 85.6,
+        "x": 126.6,
+        "y": 360.8,
         "radius": 16,
         "colors": [
           "pink"
@@ -46254,43 +46334,43 @@ export const lightLevels = [
         "x": 210,
         "y": 100,
         "length": 124.8,
-        "angle": 64.9
+        "angle": 60.3
       },
       {
         "type": "mirror",
         "x": 590,
         "y": 360,
         "length": 124.8,
-        "angle": 33.3
+        "angle": 60.6
       },
       {
         "type": "mirror",
         "x": 400,
         "y": 210,
         "length": 124.8,
-        "angle": 61.5
+        "angle": -42.1
       },
       {
         "type": "mirror",
-        "x": 657.7,
-        "y": 66.7,
+        "x": 237.8,
+        "y": 347.1,
         "length": 124.8,
-        "angle": -66.9
+        "angle": 55.4
       }
     ],
-    "id": "light-v4-deduction-four-09",
+    "id": "light-v5-deduction-four-09-reauthored",
     "name": "A curva depende da escolha",
     "hint": "A chegada ao último espelho muda quando o caminho anterior muda.",
     "solution": [
-      33.9,
-      2.3,
-      30.5,
-      82.1
+      -1.6,
+      -31.1,
+      33.5,
+      -46
     ],
-    "sourceAngle": 0,
+    "sourceAngle": -52,
     "target": {
-      "x": 714.2,
-      "y": 238.9,
+      "x": 463.2,
+      "y": 388.4,
       "radius": 22,
       "color": "gold"
     },
@@ -46306,21 +46386,21 @@ export const lightLevels = [
   {
     "sources": [
       {
-        "x": 25,
-        "y": 130,
-        "angle": 0,
+        "x": 78.53770954987962,
+        "y": 232.8094388279316,
+        "angle": -44,
         "color": "gold"
       },
       {
-        "x": 775,
-        "y": 130,
-        "angle": 180,
+        "x": 660.7345151674922,
+        "y": 270.75636441168274,
+        "angle": 252,
         "color": "blue"
       },
       {
-        "x": 550,
-        "y": 440,
-        "angle": -149.03624346792648,
+        "x": 273.0910469945435,
+        "y": 273.8546281967261,
+        "angle": 30.963756532073518,
         "color": "pink"
       }
     ],
@@ -46350,7 +46430,7 @@ export const lightLevels = [
         "y": 130,
         "type": "mirror",
         "length": 124.8,
-        "angle": -35,
+        "angle": -57,
         "id": "M1"
       },
       {
@@ -46358,7 +46438,7 @@ export const lightLevels = [
         "y": 130,
         "type": "mirror",
         "length": 124.8,
-        "angle": 35,
+        "angle": 71,
         "id": "M2"
       },
       {
@@ -46366,7 +46446,7 @@ export const lightLevels = [
         "y": 350,
         "type": "mirror",
         "length": 124.8,
-        "angle": -10,
+        "angle": 80,
         "id": "M3"
       },
       {
@@ -46513,11 +46593,11 @@ export const lightLevels = [
       }
     ],
     "solution": [
-      34.9,
-      -53.9,
-      50.5
+      12.9,
+      -17.9,
+      -39.5
     ],
-    "id": "light-v3-141",
+    "id": "light-v5-legacy-141",
     "campaignNumber": 346,
     "name": "A rosa decide o acordo",
     "difficulty": 141,
@@ -46531,7 +46611,7 @@ export const lightLevels = [
       "revision": "editorial-causal-v2",
       "variant": "Apresentação de cadeia condicional"
     },
-    "sourceAngle": 0,
+    "sourceAngle": -44,
     "target": {
       "x": 558.0554754449986,
       "y": 245.40516932494938,
@@ -46699,12 +46779,12 @@ export const lightLevels = [
     "campaignBand": "advanced"
   },
   {
-    "id": "light-v3-147",
+    "id": "light-v5-legacy-147",
     "campaignNumber": 348,
     "name": "Voltar para chegar por outro lado",
     "sources": [
       {
-        "x": 201,
+        "x": 180,
         "y": 191,
         "angle": 0,
         "color": "gold"
@@ -46736,8 +46816,8 @@ export const lightLevels = [
         "color": "blue"
       },
       {
-        "x": 80,
-        "y": 40,
+        "x": 100,
+        "y": 140,
         "color": "pink",
         "radius": 22
       }
@@ -46769,12 +46849,12 @@ export const lightLevels = [
       },
       {
         "type": "wall",
-        "x": 200,
-        "y": 77,
+        "x": 220,
+        "y": 223,
         "length": 50,
         "angle": 90,
         "width": 12,
-        "purpose": "Impede a aproximação direta do espelho superior ao alvo rosa; o retorno R oferece outro lado.",
+        "purpose": "Bloqueia a aproximação direta do primeiro espelho rosa ao alvo; o retorno permite a chegada pelo setor superior.",
         "id": "W4"
       }
     ],
@@ -46860,8 +46940,8 @@ export const lightLevels = [
         "id": "Rb",
         "pairId": "Ra",
         "label": "R",
-        "x": 249.35309867559675,
-        "y": 25.18352373289803,
+        "x": 269.35309867559675,
+        "y": 125.18352373289804,
         "radius": 16,
         "colors": [
           "pink"
@@ -46891,11 +46971,11 @@ export const lightLevels = [
     },
     "requiredBounces": 4,
     "wallPurpose": [
-      "Impede a aproximação direta do espelho superior ao alvo rosa; o retorno R oferece outro lado."
+      "Bloqueia a aproximação direta do primeiro espelho rosa ao alvo; o retorno permite a chegada pelo setor superior."
     ],
     "rules": "Leve as três luzes aos respectivos alvos sem cruzar os feixes.",
     "tutorial": "",
-    "hint": "O alvo rosa está perto do setor superior, mas proximidade não garante chegada.",
+    "hint": "Compare a chegada rosa pelo retorno com a rota direta bloqueada e confira as outras duas cores juntas.",
     "number": 348,
     "campaignBand": "advanced"
   },
@@ -46985,40 +47065,40 @@ export const lightLevels = [
         "x": 580,
         "y": 86,
         "length": 124.8,
-        "angle": -59.8
+        "angle": -55.8
       },
       {
         "type": "mirror",
         "x": 200,
         "y": 230,
         "length": 124.8,
-        "angle": 8.3
+        "angle": 20.3
       },
       {
         "type": "mirror",
         "x": 200,
         "y": 374,
         "length": 124.8,
-        "angle": -15.2
+        "angle": 72.8
       }
     ],
     "sources": [
       {
-        "x": 770,
-        "y": 86,
-        "angle": 180,
+        "x": 768.1509330608983,
+        "y": 112.44288918241244,
+        "angle": 188,
         "color": "gold"
       },
       {
-        "x": 30,
-        "y": 230,
-        "angle": 0,
+        "x": 62.96818135360988,
+        "y": 168.98950353862998,
+        "angle": 24,
         "color": "blue"
       },
       {
-        "x": 30,
-        "y": 374,
-        "angle": 0,
+        "x": 349.6346075389736,
+        "y": 363.5365289383812,
+        "angle": 176,
         "color": "pink"
       }
     ],
@@ -47156,15 +47236,15 @@ export const lightLevels = [
     ],
     "width": 800,
     "height": 460,
-    "id": "light-v4-portal-801",
+    "id": "light-v5-portal-801",
     "name": "A volta pelo acesso útil 801",
     "hint": "Reconstrua a chegada e procure o acesso que permite voltar.",
     "solution": [
-      -22,
-      63,
-      -28
+      -18,
+      75,
+      60
     ],
-    "sourceAngle": 180,
+    "sourceAngle": 188,
     "target": {
       "x": 650,
       "y": 209,
@@ -47183,21 +47263,21 @@ export const lightLevels = [
   {
     "sources": [
       {
-        "x": 30,
-        "y": 100,
-        "angle": 0,
+        "x": 255.7345151674922,
+        "y": 240.75636441168274,
+        "angle": -108,
         "color": "gold"
       },
       {
-        "x": 770,
-        "y": 110,
-        "angle": 180,
+        "x": 404.56322908664254,
+        "y": 35.078681316817594,
+        "angle": 22,
         "color": "blue"
       },
       {
-        "x": 400,
-        "y": 440,
-        "angle": -90,
+        "x": 298.9009366056946,
+        "y": 419.15092303249094,
+        "angle": -54,
         "color": "pink"
       }
     ],
@@ -47295,21 +47375,21 @@ export const lightLevels = [
         "x": 210,
         "y": 100,
         "length": 124.8,
-        "angle": 47.5
+        "angle": -6.5
       },
       {
         "type": "mirror",
         "x": 590,
         "y": 110,
         "length": 124.8,
-        "angle": 37.7
+        "angle": -41.3
       },
       {
         "type": "mirror",
         "x": 400,
         "y": 280,
         "length": 124.8,
-        "angle": 82.4
+        "angle": -79.6
       },
       {
         "type": "mirror",
@@ -47319,16 +47399,16 @@ export const lightLevels = [
         "angle": -16.6
       }
     ],
-    "id": "light-v4-deduction-four-04",
+    "id": "light-v5-deduction-four-04",
     "name": "A curva depende da escolha",
     "hint": "A chegada ao último espelho muda quando o caminho anterior muda.",
     "solution": [
-      16.5,
-      6.7,
-      51.4,
+      -37.5,
+      -72.3,
+      69.4,
       -47.6
     ],
-    "sourceAngle": 0,
+    "sourceAngle": -108,
     "target": {
       "x": 680.5,
       "y": 404.5,
@@ -47599,40 +47679,40 @@ export const lightLevels = [
   {
     "sources": [
       {
-        "x": 30,
-        "y": 230,
-        "angle": 0,
+        "x": 225.679269490148,
+        "y": 249.17828430524102,
+        "angle": -96,
         "color": "gold"
       },
       {
-        "x": 770,
-        "y": 110,
-        "angle": 180,
+        "x": 766.066568132085,
+        "y": 322.5758956528033,
+        "angle": 168,
         "color": "blue"
       },
       {
-        "x": 470,
-        "y": 30,
-        "angle": 90,
+        "x": 394.76507549462485,
+        "y": 60.091375947135646,
+        "angle": 88,
         "color": "pink"
       }
     ],
     "targets": [
       {
-        "x": 735,
-        "y": 222.7,
+        "x": 509.1,
+        "y": 214.4,
         "radius": 22,
         "color": "gold"
       },
       {
-        "x": 369.8,
-        "y": 217,
+        "x": 686.2,
+        "y": 142.4,
         "radius": 22,
         "color": "blue"
       },
       {
-        "x": 91.5,
-        "y": 101.9,
+        "x": 210.6,
+        "y": 312.6,
         "radius": 22,
         "color": "pink"
       }
@@ -47641,8 +47721,8 @@ export const lightLevels = [
       {
         "id": "p0a",
         "pairId": "p0b",
-        "x": 418.9,
-        "y": 200,
+        "x": 311.7,
+        "y": 324.2,
         "radius": 16,
         "colors": [
           "gold"
@@ -47652,8 +47732,8 @@ export const lightLevels = [
       {
         "id": "p0b",
         "pairId": "p0a",
-        "x": 507.2,
-        "y": 253.9,
+        "x": 546,
+        "y": 65.7,
         "radius": 16,
         "colors": [
           "gold"
@@ -47663,8 +47743,8 @@ export const lightLevels = [
       {
         "id": "p1a",
         "pairId": "p1b",
-        "x": 501.4,
-        "y": 154.3,
+        "x": 583.8,
+        "y": 255,
         "radius": 16,
         "colors": [
           "blue"
@@ -47674,8 +47754,8 @@ export const lightLevels = [
       {
         "id": "p1b",
         "pairId": "p1a",
-        "x": 417.3,
-        "y": 30,
+        "x": 695.1,
+        "y": 292.6,
         "radius": 16,
         "colors": [
           "blue"
@@ -47685,8 +47765,8 @@ export const lightLevels = [
       {
         "id": "p2a",
         "pairId": "p2b",
-        "x": 325.3,
-        "y": 381.8,
+        "x": 315.7,
+        "y": 55.4,
         "radius": 16,
         "colors": [
           "pink"
@@ -47696,8 +47776,8 @@ export const lightLevels = [
       {
         "id": "p2b",
         "pairId": "p2a",
-        "x": 184,
-        "y": 81.6,
+        "x": 262.8,
+        "y": 408.3,
         "radius": 16,
         "colors": [
           "pink"
@@ -47708,46 +47788,46 @@ export const lightLevels = [
     "objects": [
       {
         "type": "mirror",
-        "x": 200,
-        "y": 230,
+        "x": 210,
+        "y": 100,
         "length": 124.8,
-        "angle": 27.1
+        "angle": 15.8
       },
       {
         "type": "mirror",
-        "x": 600,
-        "y": 110,
+        "x": 590,
+        "y": 360,
         "length": 124.8,
-        "angle": 18.9
+        "angle": 81.9
       },
       {
         "type": "mirror",
-        "x": 470,
-        "y": 350,
+        "x": 400,
+        "y": 210,
         "length": 124.8,
-        "angle": -20.2
+        "angle": 15.7
       },
       {
         "type": "mirror",
-        "x": 323.7,
-        "y": 72.1,
+        "x": 582.8,
+        "y": 146.9,
         "length": 124.8,
-        "angle": -34.9
+        "angle": -79.6
       }
     ],
-    "id": "light-v4-deduction-four-12",
+    "id": "light-v5-deduction-four-12-reauthored",
     "name": "A curva depende da escolha",
     "hint": "A chegada ao último espelho muda quando o caminho anterior muda.",
     "solution": [
-      -3.9,
-      -12.1,
-      -51.2,
-      -65.9
+      -15.2,
+      50.9,
+      -15.3,
+      -78.4
     ],
-    "sourceAngle": 0,
+    "sourceAngle": -96,
     "target": {
-      "x": 735,
-      "y": 222.7,
+      "x": 509.1,
+      "y": 214.4,
       "radius": 22,
       "color": "gold"
     },
@@ -47767,40 +47847,40 @@ export const lightLevels = [
         "x": 200,
         "y": 86,
         "length": 124.8,
-        "angle": 14.7
+        "angle": -75.3
       },
       {
         "type": "mirror",
         "x": 200,
         "y": 230,
         "length": 124.8,
-        "angle": -0.5
+        "angle": -80.5
       },
       {
         "type": "mirror",
         "x": 200,
         "y": 374,
         "length": 124.8,
-        "angle": -13.9
+        "angle": 76.1
       }
     ],
     "sources": [
       {
-        "x": 30,
-        "y": 86,
-        "angle": 0,
+        "x": 350,
+        "y": 86.00000000000001,
+        "angle": -180,
         "color": "gold"
       },
       {
-        "x": 30,
-        "y": 230,
-        "angle": 0,
+        "x": 340.95389311788625,
+        "y": 281.30302149885034,
+        "angle": -160,
         "color": "blue"
       },
       {
-        "x": 30,
+        "x": 350,
         "y": 374,
-        "angle": 0,
+        "angle": -180,
         "color": "pink"
       }
     ],
@@ -47938,15 +48018,15 @@ export const lightLevels = [
     ],
     "width": 800,
     "height": 460,
-    "id": "light-v4-portal-079",
+    "id": "light-v5-portal-079",
     "name": "O salto que não cruza 079",
     "hint": "Separe os trechos iluminados do salto entre portais.",
     "solution": [
-      14.7,
-      12.5,
-      0.5
+      -75.3,
+      -67.5,
+      -89.5
     ],
-    "sourceAngle": 0,
+    "sourceAngle": -180,
     "target": {
       "x": 725,
       "y": 381,
@@ -47965,40 +48045,40 @@ export const lightLevels = [
   {
     "sources": [
       {
-        "x": 30,
-        "y": 100,
-        "angle": 0,
+        "x": 89.55649085540551,
+        "y": 233.76606858593095,
+        "angle": -48,
         "color": "gold"
       },
       {
-        "x": 770,
-        "y": 110,
-        "angle": 180,
+        "x": 615.0511581728117,
+        "y": 181.75174762651733,
+        "angle": 98,
         "color": "blue"
       },
       {
-        "x": 400,
-        "y": 440,
-        "angle": -90,
+        "x": 350.38527595294016,
+        "y": 36.9728947311026,
+        "angle": 74,
         "color": "pink"
       }
     ],
     "targets": [
       {
-        "x": 725.3,
-        "y": 218.1,
+        "x": 462.4,
+        "y": 398.8,
         "radius": 22,
         "color": "gold"
       },
       {
-        "x": 157.5,
-        "y": 314,
+        "x": 441.9,
+        "y": 310.5,
         "radius": 22,
         "color": "blue"
       },
       {
-        "x": 486.6,
-        "y": 140.2,
+        "x": 152.5,
+        "y": 252.7,
         "radius": 22,
         "color": "pink"
       }
@@ -48007,8 +48087,8 @@ export const lightLevels = [
       {
         "id": "p0a",
         "pairId": "p0b",
-        "x": 260,
-        "y": 222.5,
+        "x": 146.7,
+        "y": 196.8,
         "radius": 16,
         "colors": [
           "gold"
@@ -48018,8 +48098,8 @@ export const lightLevels = [
       {
         "id": "p0b",
         "pairId": "p0a",
-        "x": 692.7,
-        "y": 138.1,
+        "x": 543.9,
+        "y": 274.3,
         "radius": 16,
         "colors": [
           "gold"
@@ -48029,8 +48109,8 @@ export const lightLevels = [
       {
         "id": "p1a",
         "pairId": "p1b",
-        "x": 365.5,
-        "y": 166,
+        "x": 749.9,
+        "y": 272.1,
         "radius": 16,
         "colors": [
           "blue"
@@ -48040,8 +48120,8 @@ export const lightLevels = [
       {
         "id": "p1b",
         "pairId": "p1a",
-        "x": 293.5,
-        "y": 280.1,
+        "x": 360.3,
+        "y": 355.4,
         "radius": 16,
         "colors": [
           "blue"
@@ -48051,8 +48131,8 @@ export const lightLevels = [
       {
         "id": "p2a",
         "pairId": "p2b",
-        "x": 75.5,
-        "y": 353.7,
+        "x": 458.6,
+        "y": 113.2,
         "radius": 16,
         "colors": [
           "pink"
@@ -48062,8 +48142,8 @@ export const lightLevels = [
       {
         "id": "p2b",
         "pairId": "p2a",
-        "x": 710.6,
-        "y": 89.3,
+        "x": 81.2,
+        "y": 370.5,
         "radius": 16,
         "colors": [
           "pink"
@@ -48077,35 +48157,35 @@ export const lightLevels = [
         "x": 210,
         "y": 100,
         "length": 124.8,
-        "angle": 64.9
+        "angle": 68.6
       },
       {
         "type": "mirror",
         "x": 590,
-        "y": 110,
+        "y": 360,
         "length": 124.8,
-        "angle": 24
+        "angle": 65.6
       },
       {
         "type": "mirror",
         "x": 400,
-        "y": 280,
+        "y": 210,
         "length": 124.8,
-        "angle": -43.1
+        "angle": -26.9
       }
     ],
-    "id": "light-v4-deduction-open-038",
-    "name": "Do outro lado 37",
-    "hint": "Compare os caminhos completos, não apenas cada chegada isolada.",
+    "id": "light-v5-deduction-open-038-reauthored",
+    "name": "Consequência 19",
+    "hint": "Uma escolha pode decidir os caminhos das outras cores.",
     "solution": [
-      33.9,
-      -7,
-      -74.1
+      37.6,
+      34.6,
+      -57.9
     ],
-    "sourceAngle": 0,
+    "sourceAngle": -48,
     "target": {
-      "x": 725.3,
-      "y": 218.1,
+      "x": 462.4,
+      "y": 398.8,
       "radius": 22,
       "color": "gold"
     },
@@ -48125,40 +48205,40 @@ export const lightLevels = [
         "x": 200,
         "y": 86,
         "length": 124.8,
-        "angle": 15.2
+        "angle": -84.8
       },
       {
         "type": "mirror",
         "x": 600,
         "y": 230,
         "length": 124.8,
-        "angle": -0.2
+        "angle": 89.8
       },
       {
         "type": "mirror",
         "x": 200,
         "y": 374,
         "length": 124.8,
-        "angle": -14.8
+        "angle": 35.2
       }
     ],
     "sources": [
       {
-        "x": 30,
-        "y": 86,
-        "angle": 0,
+        "x": 340.95389311788625,
+        "y": 34.696978501149665,
+        "angle": 160,
         "color": "gold"
       },
       {
-        "x": 770,
+        "x": 300,
         "y": 230,
-        "angle": 180,
+        "angle": 360,
         "color": "blue"
       },
       {
         "x": 30,
         "y": 374,
-        "angle": 0,
+        "angle": 100,
         "color": "pink"
       }
     ],
@@ -48314,19 +48394,63 @@ export const lightLevels = [
         "colors": [
           "pink"
         ]
+      },
+      {
+        "x": 345,
+        "y": 230,
+        "id": "angle-access-1a",
+        "pairId": "angle-access-1b",
+        "label": "K",
+        "radius": 16,
+        "colors": [
+          "blue"
+        ]
+      },
+      {
+        "x": 514,
+        "y": 230.00000000000003,
+        "id": "angle-access-1b",
+        "pairId": "angle-access-1a",
+        "label": "K",
+        "radius": 16,
+        "colors": [
+          "blue"
+        ]
+      },
+      {
+        "x": 22.185832004988136,
+        "y": 418.31634888554936,
+        "id": "angle-access-2a",
+        "pairId": "angle-access-2b",
+        "label": "L",
+        "radius": 16,
+        "colors": [
+          "pink"
+        ]
+      },
+      {
+        "x": 214.933743279356,
+        "y": 289.3065332409501,
+        "id": "angle-access-2b",
+        "pairId": "angle-access-2a",
+        "label": "L",
+        "radius": 16,
+        "colors": [
+          "pink"
+        ]
       }
     ],
     "width": 800,
     "height": 460,
-    "id": "light-v4-portal-090",
+    "id": "light-v5-portal-090",
     "name": "Lados invertidos 090",
-    "hint": "Observe como a ordem das cores muda entre fontes e alvos.",
+    "hint": "Compare a posição dos trajetos nos primeiros espelhos e nos alvos.",
     "solution": [
-      15.2,
-      10.5,
-      -3
+      -84.8,
+      -79.5,
+      47
     ],
-    "sourceAngle": 0,
+    "sourceAngle": 160,
     "target": {
       "x": 710,
       "y": 385,
@@ -48754,9 +48878,9 @@ export const lightLevels = [
   {
     "sources": [
       {
-        "x": 70,
-        "y": 90,
-        "angle": 0,
+        "x": 70.98605883371081,
+        "y": 108.81512338817762,
+        "angle": -6,
         "color": "blue"
       },
       {
@@ -48798,7 +48922,7 @@ export const lightLevels = [
         "type": "mirror",
         "x": 250,
         "y": 90,
-        "angle": 21,
+        "angle": 18,
         "length": 124.8
       },
       {
@@ -48949,7 +49073,7 @@ export const lightLevels = [
       }
     },
     "solution": [
-      45,
+      42,
       -45,
       45,
       -45,
@@ -48957,14 +49081,14 @@ export const lightLevels = [
       45,
       -45
     ],
-    "id": "light-v3-136",
+    "id": "light-v5-legacy-136",
     "campaignNumber": 359,
     "name": "Retorno dourado, chegada lateral",
     "difficulty": 136,
     "family": "retorno-dourado-e-alvo-azul-lateral",
     "width": 800,
     "height": 460,
-    "sourceAngle": 0,
+    "sourceAngle": -6,
     "target": {
       "x": 100,
       "y": 330,
@@ -48987,21 +49111,21 @@ export const lightLevels = [
   {
     "sources": [
       {
-        "x": 30,
-        "y": 100,
-        "angle": 0,
+        "x": 459.92804094396286,
+        "y": 28.334287487580085,
+        "angle": 164,
         "color": "gold"
       },
       {
-        "x": 770,
-        "y": 360,
-        "angle": 180,
+        "x": 558.7433280199525,
+        "y": 182.73460445780256,
+        "angle": 80,
         "color": "blue"
       },
       {
-        "x": 400,
-        "y": 30,
-        "angle": 90,
+        "x": 547.8411502279041,
+        "y": 33.80977808263506,
+        "angle": 130,
         "color": "pink"
       }
     ],
@@ -49099,32 +49223,32 @@ export const lightLevels = [
         "x": 210,
         "y": 100,
         "length": 124.8,
-        "angle": 62
+        "angle": -36
       },
       {
         "type": "mirror",
         "x": 590,
         "y": 360,
         "length": 124.8,
-        "angle": 42
+        "angle": -8
       },
       {
         "type": "mirror",
         "x": 400,
         "y": 210,
         "length": 124.8,
-        "angle": -60.3
+        "angle": -40.3
       }
     ],
-    "id": "light-v4-deduction-open-007",
+    "id": "light-v5-deduction-open-007",
     "name": "Hipótese 06",
     "hint": "Siga as consequências de uma hipótese antes de manter a primeira rota.",
     "solution": [
-      31,
-      11,
-      88.7
+      -67,
+      -39,
+      -71.3
     ],
-    "sourceAngle": 0,
+    "sourceAngle": 164,
     "target": {
       "x": 332.2,
       "y": 330.6,
@@ -49147,40 +49271,40 @@ export const lightLevels = [
         "x": 200,
         "y": 86,
         "length": 124.8,
-        "angle": 15.1
+        "angle": -74.9
       },
       {
         "type": "mirror",
         "x": 600,
         "y": 230,
         "length": 124.8,
-        "angle": -0.5
+        "angle": 25.5
       },
       {
         "type": "mirror",
         "x": 200,
         "y": 374,
         "length": 124.8,
-        "angle": -14.3
+        "angle": 75.7
       }
     ],
     "sources": [
       {
-        "x": 30,
-        "y": 86,
-        "angle": 0,
+        "x": 350,
+        "y": 86.00000000000001,
+        "angle": -180,
         "color": "gold"
       },
       {
-        "x": 770,
-        "y": 230,
-        "angle": 180,
+        "x": 760.0719835846711,
+        "y": 434.88279593774774,
+        "angle": 232,
         "color": "blue"
       },
       {
-        "x": 30,
+        "x": 350,
         "y": 374,
-        "angle": 0,
+        "angle": -180,
         "color": "pink"
       }
     ],
@@ -49318,15 +49442,15 @@ export const lightLevels = [
     ],
     "width": 800,
     "height": 460,
-    "id": "light-v4-portal-069",
+    "id": "light-v5-portal-069",
     "name": "A saída decide 069",
     "hint": "Compare o que acontece depois de cada saída.",
     "solution": [
-      2.5,
-      -11,
-      -14.3
+      -87.5,
+      15,
+      75.7
     ],
-    "sourceAngle": 0,
+    "sourceAngle": -180,
     "target": {
       "x": 710,
       "y": 383,
@@ -49345,21 +49469,21 @@ export const lightLevels = [
   {
     "sources": [
       {
-        "x": 25,
-        "y": 130,
-        "angle": 0,
+        "x": 147.42326274078232,
+        "y": 397.372378560224,
+        "angle": -82,
         "color": "gold"
       },
       {
-        "x": 775,
-        "y": 130,
-        "angle": 180,
+        "x": 758.6037674888476,
+        "y": 165.8044405487508,
+        "angle": 194,
         "color": "blue"
       },
       {
-        "x": 550,
-        "y": 440,
-        "angle": -149.03624346792648,
+        "x": 471.78708934530414,
+        "y": 38.156106676226045,
+        "angle": -257.0362434679265,
         "color": "pink"
       }
     ],
@@ -49389,7 +49513,7 @@ export const lightLevels = [
         "y": 130,
         "type": "mirror",
         "length": 124.8,
-        "angle": -40,
+        "angle": -81,
         "id": "M1"
       },
       {
@@ -49397,7 +49521,7 @@ export const lightLevels = [
         "y": 130,
         "type": "mirror",
         "length": 124.8,
-        "angle": 55,
+        "angle": 62,
         "id": "M2"
       },
       {
@@ -49405,7 +49529,7 @@ export const lightLevels = [
         "y": 350,
         "type": "mirror",
         "length": 124.8,
-        "angle": 5,
+        "angle": -49,
         "id": "M3"
       }
     ],
@@ -49491,13 +49615,13 @@ export const lightLevels = [
         "radius": 16
       }
     ],
-    "id": "light-v3-121",
+    "id": "light-v5-legacy-121",
     "campaignNumber": 362,
     "name": "Uma saída determina outro setor",
     "solution": [
-      46.1,
-      -43.3,
-      65.1
+      5.1,
+      -36.3,
+      11.1
     ],
     "width": 800,
     "height": 460,
@@ -49508,7 +49632,7 @@ export const lightLevels = [
       "revision": "editorial-causal-v2",
       "variant": "Apresentação"
     },
-    "sourceAngle": 0,
+    "sourceAngle": -82,
     "target": {
       "x": 539.0819820901379,
       "y": 272.98926962772384,
@@ -49609,40 +49733,40 @@ export const lightLevels = [
         "x": 200,
         "y": 86,
         "length": 124.8,
-        "angle": 8
+        "angle": -82
       },
       {
         "type": "mirror",
         "x": 200,
         "y": 230,
         "length": 124.8,
-        "angle": -8.1
+        "angle": 87.9
       },
       {
         "type": "mirror",
         "x": 200,
         "y": 374,
         "length": 124.8,
-        "angle": -0.2
+        "angle": 89.8
       }
     ],
     "sources": [
       {
-        "x": 30,
-        "y": 86,
-        "angle": 0,
+        "x": 350,
+        "y": 86.00000000000001,
+        "angle": -180,
         "color": "gold"
       },
       {
-        "x": 30,
-        "y": 230,
-        "angle": 0,
+        "x": 346.7221401100709,
+        "y": 261.1867536226639,
+        "angle": -168,
         "color": "blue"
       },
       {
-        "x": 30,
+        "x": 350,
         "y": 374,
-        "angle": 0,
+        "angle": -180,
         "color": "pink"
       }
     ],
@@ -49780,15 +49904,15 @@ export const lightLevels = [
     ],
     "width": 800,
     "height": 460,
-    "id": "light-v4-portal-078",
+    "id": "light-v5-portal-078",
     "name": "Uma escolha leva às outras 078",
     "hint": "A rota mais restrita ajuda a decidir as outras.",
     "solution": [
-      8,
-      4.5,
-      -0.2
+      -82,
+      -79.5,
+      89.8
     ],
-    "sourceAngle": 0,
+    "sourceAngle": -180,
     "target": {
       "x": 725,
       "y": 237,
@@ -49807,21 +49931,21 @@ export const lightLevels = [
   {
     "sources": [
       {
-        "x": 30,
-        "y": 100,
-        "angle": 0,
+        "x": 127.30879325490025,
+        "y": 388.37850878149567,
+        "angle": -74,
         "color": "gold"
       },
       {
-        "x": 770,
-        "y": 360,
-        "angle": 180,
+        "x": 330.6333469324457,
+        "y": 341.8633168265274,
+        "angle": 4,
         "color": "blue"
       },
       {
-        "x": 400,
-        "y": 30,
-        "angle": 90,
+        "x": 411.1610357990601,
+        "y": 50.38975195842812,
+        "angle": 94,
         "color": "pink"
       }
     ],
@@ -49919,21 +50043,21 @@ export const lightLevels = [
         "x": 210,
         "y": 100,
         "length": 124.8,
-        "angle": -49.6
+        "angle": -86.6
       },
       {
         "type": "mirror",
         "x": 590,
         "y": 360,
         "length": 124.8,
-        "angle": 40.2
+        "angle": -47.8
       },
       {
         "type": "mirror",
         "x": 400,
         "y": 210,
         "length": 124.8,
-        "angle": 80.4
+        "angle": 82.4
       },
       {
         "type": "wall",
@@ -49984,15 +50108,15 @@ export const lightLevels = [
         "angle": 90
       }
     ],
-    "id": "light-v4-deduction-windows-10",
+    "id": "light-v5-deduction-windows-10",
     "name": "Visibilidade entre regiões",
     "hint": "Compare o que cada abertura deixa passar.",
     "solution": [
-      -80.6,
-      9.2,
-      49.4
+      62.4,
+      -78.8,
+      51.4
     ],
-    "sourceAngle": 0,
+    "sourceAngle": -74,
     "target": {
       "x": 460.3,
       "y": 123.6,
@@ -50088,23 +50212,23 @@ export const lightLevels = [
     "campaignBand": "advanced"
   },
   {
-    "id": "light-v3-57",
+    "id": "light-v5-legacy-57",
     "campaignNumber": 367,
     "name": "Quatro hipóteses, um acordo",
     "difficulty": 57,
     "family": "two-57",
     "sources": [
       {
-        "x": 20,
-        "y": 230,
+        "x": 51.258493381657615,
+        "y": 256.4420994615757,
         "color": "gold",
-        "angle": 21.3286646380784
+        "angle": 19.3286646380784
       },
       {
-        "x": 780,
-        "y": 230,
+        "x": 681.2265633430645,
+        "y": 234.0858441796527,
         "color": "blue",
-        "angle": 140.11947022610047
+        "angle": 116.11947022610047
       }
     ],
     "targets": [
@@ -50128,7 +50252,7 @@ export const lightLevels = [
         "x": 409.8399756550789,
         "y": 382.2169799846597,
         "length": 124.8,
-        "angle": -53.80000000000001
+        "angle": -54.8
       },
       {
         "type": "mirror",
@@ -50149,7 +50273,7 @@ export const lightLevels = [
         "x": 616.0704052001238,
         "y": 366.97179172886536,
         "length": 124.8,
-        "angle": 31.30000000000001
+        "angle": 19.3
       },
       {
         "type": "mirror",
@@ -50185,14 +50309,14 @@ export const lightLevels = [
       }
     ],
     "solution": [
-      -78.8,
+      -79.8,
       52.6,
       66.9,
-      6.3,
+      -5.7,
       -30.5,
       -50.8
     ],
-    "sourceAngle": 21.3286646380784,
+    "sourceAngle": 19.3286646380784,
     "target": {
       "x": 285.6986225582659,
       "y": 30,
@@ -50298,15 +50422,15 @@ export const lightLevels = [
         "color": "gold"
       },
       {
-        "x": 770,
-        "y": 110,
-        "angle": 180,
+        "x": 645.6230589874906,
+        "y": 281.19017293312766,
+        "angle": 252,
         "color": "blue"
       },
       {
-        "x": 400,
-        "y": 440,
-        "angle": -90,
+        "x": 456.1909890123868,
+        "y": 419.0775781850181,
+        "angle": -112,
         "color": "pink"
       }
     ],
@@ -50411,14 +50535,14 @@ export const lightLevels = [
         "x": 590,
         "y": 110,
         "length": 124.8,
-        "angle": 14.7
+        "angle": 50.7
       },
       {
         "type": "mirror",
         "x": 400,
         "y": 280,
         "length": 124.8,
-        "angle": -23.6
+        "angle": -34.6
       },
       {
         "type": "wall",
@@ -50469,13 +50593,13 @@ export const lightLevels = [
         "angle": 90
       }
     ],
-    "id": "light-v4-deduction-windows-11",
+    "id": "light-v5-deduction-windows-11",
     "name": "Visibilidade entre regiões",
     "hint": "Compare o que cada abertura deixa passar.",
     "solution": [
       67.1,
-      -16.3,
-      -54.6
+      19.7,
+      -65.6
     ],
     "sourceAngle": 0,
     "target": {
@@ -50500,40 +50624,40 @@ export const lightLevels = [
         "x": 200,
         "y": 86,
         "length": 124.8,
-        "angle": 14.9
+        "angle": -75.1
       },
       {
         "type": "mirror",
         "x": 600,
         "y": 230,
         "length": 124.8,
-        "angle": 0.1
+        "angle": 26.1
       },
       {
         "type": "mirror",
         "x": 200,
         "y": 374,
         "length": 124.8,
-        "angle": -14.2
+        "angle": 73.8
       }
     ],
     "sources": [
       {
-        "x": 30,
-        "y": 86,
-        "angle": 0,
+        "x": 350,
+        "y": 86.00000000000001,
+        "angle": -180,
         "color": "gold"
       },
       {
-        "x": 770,
-        "y": 230,
-        "angle": 180,
+        "x": 760.0719835846711,
+        "y": 434.88279593774774,
+        "angle": 232,
         "color": "blue"
       },
       {
-        "x": 30,
-        "y": 374,
-        "angle": 0,
+        "x": 459.3666530675543,
+        "y": 355.86331682652735,
+        "angle": 176,
         "color": "pink"
       }
     ],
@@ -50649,15 +50773,15 @@ export const lightLevels = [
     ],
     "width": 800,
     "height": 460,
-    "id": "light-v4-portal-062",
+    "id": "light-v5-portal-062",
     "name": "A saída decide 062",
     "hint": "Compare o que acontece depois de cada saída.",
     "solution": [
-      -1.5,
-      -13,
-      -14.2
+      88.5,
+      13,
+      73.8
     ],
-    "sourceAngle": 0,
+    "sourceAngle": -180,
     "target": {
       "x": 710,
       "y": 378,
@@ -50676,21 +50800,21 @@ export const lightLevels = [
   {
     "sources": [
       {
-        "x": 30,
-        "y": 100,
-        "angle": 0,
+        "x": 510,
+        "y": 100.00000000000004,
+        "angle": -180,
         "color": "gold"
       },
       {
-        "x": 770,
-        "y": 360,
-        "angle": 180,
+        "x": 558.7433280199525,
+        "y": 182.73460445780256,
+        "angle": 80,
         "color": "blue"
       },
       {
-        "x": 400,
-        "y": 30,
-        "angle": 90,
+        "x": 254.45564105860052,
+        "y": 246.28828433995017,
+        "angle": -14,
         "color": "pink"
       }
     ],
@@ -50788,32 +50912,32 @@ export const lightLevels = [
         "x": 210,
         "y": 100,
         "length": 124.8,
-        "angle": 71.2
+        "angle": -18.8
       },
       {
         "type": "mirror",
         "x": 590,
         "y": 360,
         "length": 124.8,
-        "angle": 62.1
+        "angle": 12.1
       },
       {
         "type": "mirror",
         "x": 400,
         "y": 210,
         "length": 124.8,
-        "angle": -55.8
+        "angle": 72.2
       }
     ],
-    "id": "light-v4-deduction-open-023",
+    "id": "light-v5-deduction-open-023",
     "name": "Consequência 22",
     "hint": "Uma escolha pode decidir os caminhos das outras cores.",
     "solution": [
-      40.2,
-      31.1,
-      -86.8
+      -49.8,
+      -18.9,
+      41.2
     ],
-    "sourceAngle": 0,
+    "sourceAngle": -180,
     "target": {
       "x": 243,
       "y": 296.2,
@@ -50836,40 +50960,40 @@ export const lightLevels = [
         "x": 200,
         "y": 86,
         "length": 124.8,
-        "angle": 14.9
+        "angle": -83.1
       },
       {
         "type": "mirror",
         "x": 600,
         "y": 230,
         "length": 124.8,
-        "angle": -0.6
+        "angle": 13.4
       },
       {
         "type": "mirror",
         "x": 200,
         "y": 374,
         "length": 124.8,
-        "angle": -15
+        "angle": 83
       }
     ],
     "sources": [
       {
-        "x": 30,
-        "y": 86,
-        "angle": 0,
+        "x": 344.1892543907478,
+        "y": 44.65439662745005,
+        "angle": 164,
         "color": "gold"
       },
       {
-        "x": 770,
-        "y": 230,
-        "angle": 180,
+        "x": 732.4421389288391,
+        "y": 300.42073441788364,
+        "angle": 208,
         "color": "blue"
       },
       {
-        "x": 30,
-        "y": 374,
-        "angle": 0,
+        "x": 344.1892543907478,
+        "y": 415.34560337254993,
+        "angle": -164,
         "color": "pink"
       }
     ],
@@ -50985,15 +51109,15 @@ export const lightLevels = [
     ],
     "width": 800,
     "height": 460,
-    "id": "light-v4-portal-084",
+    "id": "light-v5-portal-084",
     "name": "A saída decide 084",
     "hint": "Compare o que acontece depois de cada saída.",
     "solution": [
-      1,
-      -14,
-      -15
+      83,
+      0,
+      83
     ],
-    "sourceAngle": 0,
+    "sourceAngle": 164,
     "target": {
       "x": 710,
       "y": 377,
@@ -51102,151 +51226,149 @@ export const lightLevels = [
     "campaignBand": "advanced"
   },
   {
-    "objects": [
-      {
-        "type": "mirror",
-        "x": 200,
-        "y": 86,
-        "length": 124.8,
-        "angle": 0.6
-      },
-      {
-        "type": "mirror",
-        "x": 600,
-        "y": 230,
-        "length": 124.8,
-        "angle": -8
-      },
-      {
-        "type": "mirror",
-        "x": 200,
-        "y": 374,
-        "length": 124.8,
-        "angle": -8.3
-      }
-    ],
     "sources": [
       {
-        "x": 30,
-        "y": 86,
-        "angle": 0,
+        "x": 104.01614715335901,
+        "y": 269.60961923128525,
+        "angle": -58,
         "color": "gold"
       },
       {
-        "x": 770,
-        "y": 230,
-        "angle": 180,
+        "x": 620.6180822112144,
+        "y": 142.14102487685452,
+        "angle": 98,
         "color": "blue"
       },
       {
-        "x": 30,
-        "y": 374,
-        "angle": 0,
+        "x": 400,
+        "y": 30,
+        "angle": 90,
         "color": "pink"
       }
     ],
     "targets": [
       {
-        "x": 710,
-        "y": 97,
+        "x": 407.3,
+        "y": 318.5,
         "radius": 22,
         "color": "gold"
       },
       {
-        "x": 90,
-        "y": 376,
+        "x": 150.6,
+        "y": 228.7,
         "radius": 22,
         "color": "blue"
       },
       {
-        "x": 710,
-        "y": 222,
+        "x": 622.6,
+        "y": 223,
         "radius": 22,
         "color": "pink"
       }
     ],
     "portals": [
       {
-        "id": "g1a",
-        "pairId": "g1b",
-        "label": "A",
-        "x": 94.3,
-        "y": 203.4,
+        "id": "p0a",
+        "pairId": "p0b",
+        "x": 59.4,
+        "y": 241.4,
         "radius": 16,
         "colors": [
           "gold"
-        ]
+        ],
+        "label": "A"
       },
       {
-        "id": "g1b",
-        "pairId": "g1a",
-        "label": "A",
-        "x": 769.6,
-        "y": 30.9,
+        "id": "p0b",
+        "pairId": "p0a",
+        "x": 572.7,
+        "y": 163.2,
         "radius": 16,
         "colors": [
           "gold"
-        ]
-      },
-      {
-        "id": "b1a",
-        "pairId": "b1b",
-        "label": "B",
-        "x": 466.6,
-        "y": 413.6,
-        "radius": 16,
-        "colors": [
-          "blue"
-        ]
-      },
-      {
-        "id": "b1b",
-        "pairId": "b1a",
-        "label": "B",
-        "x": 177.6,
-        "y": 255.5,
-        "radius": 16,
-        "colors": [
-          "blue"
-        ]
+        ],
+        "label": "A"
       },
       {
         "id": "p1a",
         "pairId": "p1b",
-        "label": "C",
-        "x": 375,
-        "y": 70.9,
+        "x": 486.4,
+        "y": 55.5,
         "radius": 16,
         "colors": [
-          "pink"
-        ]
+          "blue"
+        ],
+        "label": "B"
       },
       {
         "id": "p1b",
         "pairId": "p1a",
-        "label": "C",
-        "x": 641,
-        "y": 341.5,
+        "x": 173.9,
+        "y": 297.2,
+        "radius": 16,
+        "colors": [
+          "blue"
+        ],
+        "label": "B"
+      },
+      {
+        "id": "p2a",
+        "pairId": "p2b",
+        "x": 286.2,
+        "y": 212.8,
         "radius": 16,
         "colors": [
           "pink"
-        ]
+        ],
+        "label": "C"
+      },
+      {
+        "id": "p2b",
+        "pairId": "p2a",
+        "x": 711.7,
+        "y": 220.8,
+        "radius": 16,
+        "colors": [
+          "pink"
+        ],
+        "label": "C"
       }
     ],
-    "width": 800,
-    "height": 460,
-    "id": "light-v4-portal-073",
-    "name": "Uma escolha leva às outras 073",
-    "hint": "A rota mais restrita ajuda a decidir as outras.",
-    "solution": [
-      66,
-      -27,
-      -30
+    "objects": [
+      {
+        "type": "mirror",
+        "x": 210,
+        "y": 100,
+        "length": 124.8,
+        "angle": 70.4
+      },
+      {
+        "type": "mirror",
+        "x": 590,
+        "y": 360,
+        "length": 124.8,
+        "angle": -1.7
+      },
+      {
+        "type": "mirror",
+        "x": 400,
+        "y": 210,
+        "length": 124.8,
+        "angle": -14.7
+      }
     ],
-    "sourceAngle": 0,
+    "id": "light-v5-portal-073-reauthored",
+    "name": "Hipótese 09",
+    "hint": "Siga as consequências de uma hipótese antes de manter a primeira rota.",
+    "solution": [
+      39.4,
+      -32.7,
+      -45.7
+    ],
+    "sourceAngle": -58,
     "target": {
-      "x": 710,
-      "y": 97,
+      "x": 407.3,
+      "y": 318.5,
       "radius": 22,
       "color": "gold"
     },
@@ -51254,7 +51376,7 @@ export const lightLevels = [
     "wallPurpose": [],
     "decoyCount": 0,
     "tutorial": "",
-    "rules": "Leve todas as fontes aos alvos da mesma cor, sem cruzar nem encostar nos trechos físicos das outras luzes.",
+    "rules": "Leve cada cor ao alvo sem cruzar os feixes.",
     "number": 374,
     "campaignNumber": 374,
     "campaignBand": "advanced"
@@ -51266,40 +51388,40 @@ export const lightLevels = [
         "x": 200,
         "y": 86,
         "length": 124.8,
-        "angle": 15.2
+        "angle": -74.8
       },
       {
         "type": "mirror",
         "x": 600,
         "y": 230,
         "length": 124.8,
-        "angle": -0.2
+        "angle": -78.2
       },
       {
         "type": "mirror",
         "x": 200,
         "y": 374,
         "length": 124.8,
-        "angle": -14.2
+        "angle": 55.8
       }
     ],
     "sources": [
       {
-        "x": 30,
-        "y": 86,
-        "angle": 0,
+        "x": 350,
+        "y": 86.00000000000001,
+        "angle": -180,
         "color": "gold"
       },
       {
-        "x": 770,
-        "y": 230,
-        "angle": 180,
+        "x": 462.9681813536099,
+        "y": 168.98950353862998,
+        "angle": 24,
         "color": "blue"
       },
       {
-        "x": 30,
-        "y": 374,
-        "angle": 0,
+        "x": 314.90666646784666,
+        "y": 277.58185854701907,
+        "angle": 140,
         "color": "pink"
       }
     ],
@@ -51437,15 +51559,15 @@ export const lightLevels = [
     ],
     "width": 800,
     "height": 460,
-    "id": "light-v4-portal-065",
+    "id": "light-v5-portal-065",
     "name": "A consequência distante 065",
-    "hint": "Uma escolha aqui pode atrapalhar uma luz do outro lado.",
+    "hint": "Uma escolha aqui pode interferir em outra região.",
     "solution": [
-      15.2,
-      29.5,
-      1
+      -74.8,
+      -48.5,
+      71
     ],
-    "sourceAngle": 0,
+    "sourceAngle": -180,
     "target": {
       "x": 710,
       "y": 385,
@@ -51468,46 +51590,46 @@ export const lightLevels = [
         "x": 200,
         "y": 86,
         "length": 124.8,
-        "angle": 15
+        "angle": -55.8
       },
       {
         "type": "mirror",
         "x": 600,
         "y": 230,
         "length": 124.8,
-        "angle": -0.5
+        "angle": 59.5
       },
       {
         "type": "mirror",
         "x": 200,
         "y": 374,
         "length": 124.8,
-        "angle": -15.1
+        "angle": 24.9
       }
     ],
     "sources": [
       {
-        "x": 30,
-        "y": 86,
-        "angle": 0,
+        "x": 337.0318186463901,
+        "y": 147.01049646137005,
+        "angle": -156,
         "color": "gold"
       },
       {
-        "x": 770,
-        "y": 230,
-        "angle": 180,
+        "x": 745,
+        "y": 190,
+        "angle": 300,
         "color": "blue"
       },
       {
         "x": 30,
-        "y": 374,
-        "angle": 0,
+        "y": 334,
+        "angle": 80,
         "color": "pink"
       }
     ],
     "targets": [
       {
-        "x": 710,
+        "x": 500,
         "y": 380,
         "radius": 22,
         "color": "gold"
@@ -51530,8 +51652,8 @@ export const lightLevels = [
         "id": "g1a",
         "pairId": "g1b",
         "label": "A",
-        "x": 179.1,
-        "y": 284.9,
+        "x": 189.54974135289768,
+        "y": 185.4524614788828,
         "radius": 16,
         "colors": [
           "gold"
@@ -51541,7 +51663,7 @@ export const lightLevels = [
         "id": "g1b",
         "pairId": "g1a",
         "label": "A",
-        "x": 733.3,
+        "x": 523.3,
         "y": 158.2,
         "radius": 16,
         "colors": [
@@ -51563,7 +51685,7 @@ export const lightLevels = [
         "id": "g2b",
         "pairId": "g2a",
         "label": "B",
-        "x": 613.5,
+        "x": 403.5,
         "y": 402.3,
         "radius": 16,
         "colors": [
@@ -51613,21 +51735,65 @@ export const lightLevels = [
         "colors": [
           "pink"
         ]
+      },
+      {
+        "x": 767.5,
+        "y": 151.02885682970026,
+        "id": "angle-access-1a",
+        "pairId": "angle-access-1b",
+        "label": "K",
+        "radius": 16,
+        "colors": [
+          "blue"
+        ]
+      },
+      {
+        "x": 557,
+        "y": 304.4781847254617,
+        "id": "angle-access-1b",
+        "pairId": "angle-access-1a",
+        "label": "K",
+        "radius": 16,
+        "colors": [
+          "blue"
+        ]
+      },
+      {
+        "x": 37.81416799501187,
+        "y": 378.31634888554936,
+        "id": "angle-access-2a",
+        "pairId": "angle-access-2b",
+        "label": "L",
+        "radius": 16,
+        "colors": [
+          "pink"
+        ]
+      },
+      {
+        "x": 185.066256720644,
+        "y": 289.3065332409501,
+        "id": "angle-access-2b",
+        "pairId": "angle-access-2a",
+        "label": "L",
+        "radius": 16,
+        "colors": [
+          "pink"
+        ]
       }
     ],
     "width": 800,
     "height": 460,
-    "id": "light-v4-portal-070",
+    "id": "light-v5-portal-070",
     "name": "A saída decide 070",
     "hint": "Compare o que acontece depois de cada saída.",
     "solution": [
-      -6.5,
-      -0.5,
-      -6
+      -84.5,
+      59.5,
+      34
     ],
-    "sourceAngle": 0,
+    "sourceAngle": -156,
     "target": {
-      "x": 710,
+      "x": 500,
       "y": 380,
       "radius": 22,
       "color": "gold"
@@ -51644,40 +51810,40 @@ export const lightLevels = [
   {
     "sources": [
       {
-        "x": 30,
-        "y": 100,
-        "angle": 0,
+        "x": 142.57081318513585,
+        "y": 266.89309382202174,
+        "angle": -68,
         "color": "gold"
       },
       {
-        "x": 770,
-        "y": 360,
-        "angle": 180,
+        "x": 763.0271052688975,
+        "y": 159.6147240470598,
+        "angle": 196,
         "color": "blue"
       },
       {
-        "x": 400,
-        "y": 30,
-        "angle": 90,
+        "x": 438.7075032959468,
+        "y": 435.24731620415946,
+        "angle": -104,
         "color": "pink"
       }
     ],
     "targets": [
       {
-        "x": 451.1,
-        "y": 327.3,
+        "x": 675.7,
+        "y": 357.4,
         "radius": 22,
         "color": "gold"
       },
       {
-        "x": 543.5,
-        "y": 127.3,
+        "x": 547.2,
+        "y": 289,
         "radius": 22,
         "color": "blue"
       },
       {
-        "x": 754.9,
-        "y": 296.8,
+        "x": 611,
+        "y": 271.1,
         "radius": 22,
         "color": "pink"
       }
@@ -51686,8 +51852,8 @@ export const lightLevels = [
       {
         "id": "p0a",
         "pairId": "p0b",
-        "x": 197.2,
-        "y": 207.6,
+        "x": 186.4,
+        "y": 205.6,
         "radius": 16,
         "colors": [
           "gold"
@@ -51697,8 +51863,8 @@ export const lightLevels = [
       {
         "id": "p0b",
         "pairId": "p0a",
-        "x": 477.8,
-        "y": 103.3,
+        "x": 717.3,
+        "y": 171.1,
         "radius": 16,
         "colors": [
           "gold"
@@ -51708,8 +51874,8 @@ export const lightLevels = [
       {
         "id": "p1a",
         "pairId": "p1b",
-        "x": 283.7,
-        "y": 243.6,
+        "x": 676.7,
+        "y": 270.3,
         "radius": 16,
         "colors": [
           "blue"
@@ -51719,8 +51885,8 @@ export const lightLevels = [
       {
         "id": "p1b",
         "pairId": "p1a",
-        "x": 708.6,
-        "y": 190,
+        "x": 501.6,
+        "y": 204.6,
         "radius": 16,
         "colors": [
           "blue"
@@ -51730,8 +51896,8 @@ export const lightLevels = [
       {
         "id": "p2a",
         "pairId": "p2b",
-        "x": 480.1,
-        "y": 402.3,
+        "x": 145.4,
+        "y": 381.8,
         "radius": 16,
         "colors": [
           "pink"
@@ -51741,8 +51907,8 @@ export const lightLevels = [
       {
         "id": "p2b",
         "pairId": "p2a",
-        "x": 728.9,
-        "y": 234.4,
+        "x": 721.3,
+        "y": 227,
         "radius": 16,
         "colors": [
           "pink"
@@ -51756,35 +51922,35 @@ export const lightLevels = [
         "x": 210,
         "y": 100,
         "length": 124.8,
-        "angle": 52.7
+        "angle": 11.5
       },
       {
         "type": "mirror",
         "x": 590,
-        "y": 360,
+        "y": 110,
         "length": 124.8,
-        "angle": 70.3
+        "angle": 0.7
       },
       {
         "type": "mirror",
         "x": 400,
-        "y": 210,
+        "y": 280,
         "length": 124.8,
-        "angle": -70.3
+        "angle": 58.1
       }
     ],
-    "id": "light-v4-deduction-open-006",
-    "name": "Hipótese 05",
-    "hint": "Siga as consequências de uma hipótese antes de manter a primeira rota.",
+    "id": "light-v5-deduction-open-006-reauthored",
+    "name": "Consequência 17",
+    "hint": "Uma escolha pode decidir os caminhos das outras cores.",
     "solution": [
-      21.7,
-      39.3,
-      78.7
+      -19.5,
+      -30.3,
+      27.1
     ],
-    "sourceAngle": 0,
+    "sourceAngle": -68,
     "target": {
-      "x": 451.1,
-      "y": 327.3,
+      "x": 675.7,
+      "y": 357.4,
       "radius": 22,
       "color": "gold"
     },
@@ -51966,59 +52132,59 @@ export const lightLevels = [
         "x": 200,
         "y": 86,
         "length": 124.8,
-        "angle": 14
+        "angle": -77
       },
       {
         "type": "mirror",
         "x": 200,
         "y": 230,
         "length": 124.8,
-        "angle": -7.2
+        "angle": 66.5
       },
       {
         "type": "mirror",
         "x": 200,
         "y": 374,
         "length": 124.8,
-        "angle": -7.7
+        "angle": 66.4
       }
     ],
     "sources": [
       {
-        "x": 30,
-        "y": 86,
-        "angle": 0,
+        "x": 419.46409105716134,
+        "y": 70.65357577629239,
+        "angle": 176,
         "color": "gold"
       },
       {
-        "x": 30,
-        "y": 230,
-        "angle": 0,
+        "x": 650,
+        "y": 30,
+        "angle": 140,
         "color": "blue"
       },
       {
-        "x": 30,
-        "y": 374,
-        "angle": 0,
+        "x": 377.98373876248843,
+        "y": 244.68724449565588,
+        "angle": 144,
         "color": "pink"
       }
     ],
     "targets": [
       {
         "x": 725,
-        "y": 365,
+        "y": 390,
         "radius": 22,
         "color": "gold"
       },
       {
-        "x": 725,
-        "y": 95,
+        "x": 645,
+        "y": 175,
         "radius": 22,
         "color": "blue"
       },
       {
         "x": 725,
-        "y": 230,
+        "y": 270,
         "radius": 22,
         "color": "pink"
       }
@@ -52028,8 +52194,8 @@ export const lightLevels = [
         "id": "g1a",
         "pairId": "g1b",
         "label": "A",
-        "x": 387,
-        "y": 89.3,
+        "x": 489.95485483466985,
+        "y": 91.11685037943535,
         "radius": 16,
         "colors": [
           "gold"
@@ -52039,8 +52205,8 @@ export const lightLevels = [
         "id": "g1b",
         "pairId": "g1a",
         "label": "A",
-        "x": 532,
-        "y": 361.6,
+        "x": 595.0202374879066,
+        "y": 387.7062394850807,
         "radius": 16,
         "colors": [
           "gold"
@@ -52050,8 +52216,8 @@ export const lightLevels = [
         "id": "b1a",
         "pairId": "b1b",
         "label": "B",
-        "x": 457.7,
-        "y": 328.9,
+        "x": 358.71315616952455,
+        "y": 290.9108697910981,
         "radius": 16,
         "colors": [
           "blue"
@@ -52061,8 +52227,8 @@ export const lightLevels = [
         "id": "b1b",
         "pairId": "b1a",
         "label": "B",
-        "x": 585.9,
-        "y": 41.6,
+        "x": 551.6393199002797,
+        "y": 139.17007659347172,
         "radius": 16,
         "colors": [
           "blue"
@@ -52072,8 +52238,8 @@ export const lightLevels = [
         "id": "p1a",
         "pairId": "p1b",
         "label": "C",
-        "x": 92.4,
-        "y": 179.8,
+        "x": 59.451992697588,
+        "y": 120.33435856757984,
         "radius": 16,
         "colors": [
           "pink"
@@ -52083,28 +52249,50 @@ export const lightLevels = [
         "id": "p1b",
         "pairId": "p1a",
         "label": "C",
-        "x": 773,
-        "y": 316.6,
+        "x": 773.46483010428,
+        "y": 357.4709108387656,
         "radius": 16,
         "colors": [
           "pink"
+        ]
+      },
+      {
+        "x": 615.528000059646,
+        "y": 58.925442435894276,
+        "id": "angle-access-1a",
+        "pairId": "angle-access-1b",
+        "label": "K",
+        "radius": 16,
+        "colors": [
+          "blue"
+        ]
+      },
+      {
+        "x": 265.87982210823213,
+        "y": 174.7202655669576,
+        "id": "angle-access-1b",
+        "pairId": "angle-access-1a",
+        "label": "K",
+        "radius": 16,
+        "colors": [
+          "blue"
         ]
       }
     ],
     "width": 800,
     "height": 460,
-    "id": "light-v4-portal-080",
+    "id": "light-v5-portal-080",
     "name": "Uma escolha leva às outras 080",
     "hint": "A rota mais restrita ajuda a decidir as outras.",
     "solution": [
-      0.5,
-      -7.2,
-      -7.7
+      88.5,
+      66.5,
+      66.4
     ],
-    "sourceAngle": 0,
+    "sourceAngle": 176,
     "target": {
       "x": 725,
-      "y": 365,
+      "y": 390,
       "radius": 22,
       "color": "gold"
     },
@@ -52334,21 +52522,21 @@ export const lightLevels = [
   {
     "sources": [
       {
-        "x": 30,
-        "y": 100,
-        "angle": 0,
+        "x": 191.18487661182238,
+        "y": 279.0139411662892,
+        "angle": -84,
         "color": "gold"
       },
       {
-        "x": 770,
-        "y": 110,
-        "angle": 180,
+        "x": 735.3901549023942,
+        "y": 325.54976886431075,
+        "angle": 236,
         "color": "blue"
       },
       {
-        "x": 400,
-        "y": 440,
-        "angle": -90,
+        "x": 579.5615290467683,
+        "y": 267.4438347260575,
+        "angle": -184,
         "color": "pink"
       }
     ],
@@ -52446,32 +52634,32 @@ export const lightLevels = [
         "x": 210,
         "y": 100,
         "length": 124.8,
-        "angle": 88.3
+        "angle": 46.3
       },
       {
         "type": "mirror",
         "x": 590,
         "y": 110,
         "length": 124.8,
-        "angle": -15.6
+        "angle": 12.4
       },
       {
         "type": "mirror",
         "x": 400,
         "y": 280,
         "length": 124.8,
-        "angle": -50.6
+        "angle": 82.4
       }
     ],
-    "id": "light-v4-deduction-open-027",
+    "id": "light-v5-deduction-open-027",
     "name": "Consequência 26",
     "hint": "Uma escolha pode decidir os caminhos das outras cores.",
     "solution": [
-      57.3,
-      -46.6,
-      -81.6
+      15.3,
+      -18.6,
+      51.4
     ],
-    "sourceAngle": 0,
+    "sourceAngle": -84,
     "target": {
       "x": 674.6,
       "y": 229.8,
@@ -52500,10 +52688,10 @@ export const lightLevels = [
         "angle": 0
       },
       {
-        "x": 90,
-        "y": 430,
+        "x": 305.61990866218116,
+        "y": 434.61565319870874,
         "color": "blue",
-        "angle": -42.27368900609373
+        "angle": -135.27368900609372
       }
     ],
     "targets": [
@@ -52591,7 +52779,7 @@ export const lightLevels = [
         "x": 200,
         "y": 330,
         "length": 124.8,
-        "angle": -43.136844503046866
+        "angle": -89.6
       },
       {
         "type": "mirror",
@@ -52624,7 +52812,7 @@ export const lightLevels = [
       45,
       45,
       45,
-      -21.1,
+      -67.6,
       69.7
     ],
     "sourceAngle": 0,
@@ -52643,16 +52831,16 @@ export const lightLevels = [
     "hint": "Comece pela azul.",
     "tutorial": "",
     "rules": "Cada cor no seu alvo, sem cruzar outras trajetórias.",
-    "id": "light-v3-92",
+    "id": "light-v5-legacy-92",
     "campaignNumber": 382,
     "campaignBand": "advanced"
   },
   {
     "sources": [
       {
-        "x": 35,
-        "y": 75,
-        "angle": 8.615648184164113,
+        "x": 51.81756462082183,
+        "y": 176.75914176888438,
+        "angle": -27.384351815835885,
         "color": "gold"
       },
       {
@@ -52694,7 +52882,7 @@ export const lightLevels = [
         "x": 200,
         "y": 100,
         "length": 124.8,
-        "angle": 20
+        "angle": 2
       },
       {
         "type": "mirror",
@@ -52762,7 +52950,7 @@ export const lightLevels = [
       }
     ],
     "solution": [
-      49.3,
+      31.3,
       45,
       -49.2
     ],
@@ -52770,7 +52958,7 @@ export const lightLevels = [
     "difficulty": 191,
     "family": "v3-final-191",
     "hint": "Observe os trechos verticais antes e depois dos portais.",
-    "sourceAngle": 8.615648184164113,
+    "sourceAngle": -27.384351815835885,
     "target": {
       "x": 560,
       "y": 340,
@@ -52782,7 +52970,7 @@ export const lightLevels = [
     "decoyCount": 0,
     "tutorial": "",
     "rules": "Leve todas as fontes aos alvos da mesma cor, sem cruzar nem encostar nos trechos físicos das outras luzes.",
-    "id": "light-v3-191",
+    "id": "light-v5-legacy-191",
     "campaignNumber": 383,
     "number": 383,
     "campaignBand": "advanced"
@@ -52794,40 +52982,40 @@ export const lightLevels = [
         "x": 200,
         "y": 86,
         "length": 124.8,
-        "angle": 15.1
+        "angle": -4.9
       },
       {
         "type": "mirror",
         "x": 600,
         "y": 230,
         "length": 124.8,
-        "angle": -0.2
+        "angle": -72.2
       },
       {
         "type": "mirror",
         "x": 200,
         "y": 374,
         "length": 124.8,
-        "angle": -15.1
+        "angle": 14.9
       }
     ],
     "sources": [
       {
         "x": 30,
-        "y": 86,
-        "angle": 0,
+        "y": 310,
+        "angle": -40,
         "color": "gold"
       },
       {
-        "x": 770,
-        "y": 230,
-        "angle": 180,
+        "x": 478.6474508437579,
+        "y": 141.83221215612903,
+        "angle": 36,
         "color": "blue"
       },
       {
-        "x": 30,
-        "y": 374,
-        "angle": 0,
+        "x": 400,
+        "y": 230,
+        "angle": 60,
         "color": "pink"
       }
     ],
@@ -52961,19 +53149,63 @@ export const lightLevels = [
         "colors": [
           "pink"
         ]
+      },
+      {
+        "x": 64.47199994035401,
+        "y": 281.07455756410576,
+        "id": "angle-access-0a",
+        "pairId": "angle-access-0b",
+        "label": "J",
+        "radius": 16,
+        "colors": [
+          "gold"
+        ]
+      },
+      {
+        "x": 134.1201778917679,
+        "y": 141.2797344330424,
+        "id": "angle-access-0b",
+        "pairId": "angle-access-0a",
+        "label": "J",
+        "radius": 16,
+        "colors": [
+          "gold"
+        ]
+      },
+      {
+        "x": 422.5,
+        "y": 268.97114317029974,
+        "id": "angle-access-2a",
+        "pairId": "angle-access-2b",
+        "label": "L",
+        "radius": 16,
+        "colors": [
+          "pink"
+        ]
+      },
+      {
+        "x": 157,
+        "y": 299.5218152745383,
+        "id": "angle-access-2b",
+        "pairId": "angle-access-2a",
+        "label": "L",
+        "radius": 16,
+        "colors": [
+          "pink"
+        ]
       }
     ],
     "width": 800,
     "height": 460,
-    "id": "light-v4-portal-064",
+    "id": "light-v5-portal-064",
     "name": "A consequência distante 064",
-    "hint": "Uma escolha aqui pode atrapalhar uma luz do outro lado.",
+    "hint": "Uma escolha aqui pode interferir em outra região.",
     "solution": [
-      15.1,
-      11.5,
-      5
+      -4.9,
+      -60.5,
+      35
     ],
-    "sourceAngle": 0,
+    "sourceAngle": -40,
     "target": {
       "x": 710,
       "y": 384,
@@ -52992,21 +53224,21 @@ export const lightLevels = [
   {
     "sources": [
       {
-        "x": 30,
-        "y": 100,
-        "angle": 0,
+        "x": 64.45564105860052,
+        "y": 136.28828433995017,
+        "angle": -14,
         "color": "gold"
       },
       {
-        "x": 770,
-        "y": 360,
-        "angle": 180,
+        "x": 601.1610357990601,
+        "y": 200.38975195842812,
+        "angle": 94,
         "color": "blue"
       },
       {
-        "x": 400,
-        "y": 30,
-        "angle": 90,
+        "x": 363.71171566004983,
+        "y": 64.45564105860052,
+        "angle": 76,
         "color": "pink"
       }
     ],
@@ -53104,32 +53336,32 @@ export const lightLevels = [
         "x": 210,
         "y": 100,
         "length": 124.8,
-        "angle": -81.4
+        "angle": -88.4
       },
       {
         "type": "mirror",
         "x": 590,
         "y": 360,
         "length": 124.8,
-        "angle": -81.4
+        "angle": 55.6
       },
       {
         "type": "mirror",
         "x": 400,
         "y": 210,
         "length": 124.8,
-        "angle": -38.4
+        "angle": -45.4
       }
     ],
-    "id": "light-v4-deduction-open-005",
+    "id": "light-v5-deduction-open-005",
     "name": "Hipótese 04",
     "hint": "Siga as consequências de uma hipótese antes de manter a primeira rota.",
     "solution": [
-      67.6,
-      67.6,
-      -69.4
+      60.6,
+      24.6,
+      -76.4
     ],
-    "sourceAngle": 0,
+    "sourceAngle": -14,
     "target": {
       "x": 116.2,
       "y": 193,
@@ -53152,58 +53384,58 @@ export const lightLevels = [
         "x": 200,
         "y": 86,
         "length": 124.8,
-        "angle": 7.3
+        "angle": -53
       },
       {
         "type": "mirror",
         "x": 200,
         "y": 230,
         "length": 124.8,
-        "angle": 7.8
+        "angle": -63.8
       },
       {
         "type": "mirror",
         "x": 200,
         "y": 374,
         "length": 124.8,
-        "angle": -14.8
+        "angle": 75.1
       }
     ],
     "sources": [
       {
-        "x": 30,
-        "y": 86,
-        "angle": 0,
+        "x": 347.2087333989488,
+        "y": 249.49186160502674,
+        "angle": -132,
         "color": "gold"
       },
       {
-        "x": 30,
+        "x": 650,
         "y": 230,
-        "angle": 0,
+        "angle": -140,
         "color": "blue"
       },
       {
-        "x": 30,
-        "y": 374,
-        "angle": 0,
+        "x": 349.6346075389736,
+        "y": 384.4634710616188,
+        "angle": -176,
         "color": "pink"
       }
     ],
     "targets": [
       {
-        "x": 725,
-        "y": 223,
+        "x": 645,
+        "y": 303,
         "radius": 22,
         "color": "gold"
       },
       {
-        "x": 725,
-        "y": 376,
+        "x": 685,
+        "y": 336,
         "radius": 22,
         "color": "blue"
       },
       {
-        "x": 725,
+        "x": 645,
         "y": 75,
         "radius": 22,
         "color": "pink"
@@ -53214,8 +53446,8 @@ export const lightLevels = [
         "id": "g1a",
         "pairId": "g1b",
         "label": "A",
-        "x": 334,
-        "y": 318.1,
+        "x": 344.99756737854966,
+        "y": 337.1487715564282,
         "radius": 16,
         "colors": [
           "gold"
@@ -53225,8 +53457,8 @@ export const lightLevels = [
         "id": "g1b",
         "pairId": "g1a",
         "label": "A",
-        "x": 634,
-        "y": 65.4,
+        "x": 540.001761553464,
+        "y": 121.13364818327614,
         "radius": 16,
         "colors": [
           "gold"
@@ -53236,8 +53468,8 @@ export const lightLevels = [
         "id": "g2a",
         "pairId": "g2b",
         "label": "B",
-        "x": 111.5,
-        "y": 259.7,
+        "x": 86.50702836265792,
+        "y": 308.75400195939346,
         "radius": 16,
         "colors": [
           "gold"
@@ -53247,8 +53479,8 @@ export const lightLevels = [
         "id": "g2b",
         "pairId": "g2a",
         "label": "B",
-        "x": 778.1,
-        "y": 118.8,
+        "x": 722.1752207133926,
+        "y": 151.52727866761248,
         "radius": 16,
         "colors": [
           "gold"
@@ -53258,8 +53490,8 @@ export const lightLevels = [
         "id": "b1a",
         "pairId": "b1b",
         "label": "C",
-        "x": 374.3,
-        "y": 214.7,
+        "x": 409.19559189415645,
+        "y": 211.63687575455768,
         "radius": 16,
         "colors": [
           "blue"
@@ -53269,8 +53501,8 @@ export const lightLevels = [
         "id": "b1b",
         "pairId": "b1a",
         "label": "C",
-        "x": 480.9,
-        "y": 397.4,
+        "x": 585.3830514789731,
+        "y": 344.74434487878204,
         "radius": 16,
         "colors": [
           "blue"
@@ -53280,8 +53512,8 @@ export const lightLevels = [
         "id": "p1a",
         "pairId": "p1b",
         "label": "D",
-        "x": 447.6,
-        "y": 348,
+        "x": 299.4531832366822,
+        "y": 363.5566124226424,
         "radius": 16,
         "colors": [
           "pink"
@@ -53291,28 +53523,50 @@ export const lightLevels = [
         "id": "p1b",
         "pairId": "p1a",
         "label": "D",
-        "x": 542,
-        "y": 94.2,
+        "x": 495.8202251449767,
+        "y": 90.66508136603643,
         "radius": 16,
         "colors": [
           "pink"
+        ]
+      },
+      {
+        "x": 615.528000059646,
+        "y": 201.07455756410573,
+        "id": "angle-access-1a",
+        "pairId": "angle-access-1b",
+        "label": "K",
+        "radius": 16,
+        "colors": [
+          "blue"
+        ]
+      },
+      {
+        "x": 265.87982210823213,
+        "y": 285.2797344330424,
+        "id": "angle-access-1b",
+        "pairId": "angle-access-1a",
+        "label": "K",
+        "radius": 16,
+        "colors": [
+          "blue"
         ]
       }
     ],
     "width": 800,
     "height": 460,
-    "id": "light-v4-portal-063",
+    "id": "light-v5-portal-063",
     "name": "Uma escolha leva às outras 063",
     "hint": "A rota mais restrita ajuda a decidir as outras.",
     "solution": [
-      7.3,
-      7.8,
-      -3
+      -53,
+      -63.8,
+      89
     ],
-    "sourceAngle": 0,
+    "sourceAngle": -132,
     "target": {
-      "x": 725,
-      "y": 223,
+      "x": 645,
+      "y": 303,
       "radius": 22,
       "color": "gold"
     },
@@ -53328,21 +53582,21 @@ export const lightLevels = [
   {
     "sources": [
       {
-        "x": 25,
-        "y": 130,
-        "angle": 0,
+        "x": 147.42326274078232,
+        "y": 397.372378560224,
+        "angle": -82,
         "color": "gold"
       },
       {
-        "x": 775,
-        "y": 130,
-        "angle": 180,
+        "x": 758.6037674888476,
+        "y": 165.8044405487508,
+        "angle": 194,
         "color": "blue"
       },
       {
-        "x": 550,
-        "y": 440,
-        "angle": -149.03624346792648,
+        "x": 471.78708934530414,
+        "y": 38.156106676226045,
+        "angle": -257.0362434679265,
         "color": "pink"
       }
     ],
@@ -53372,7 +53626,7 @@ export const lightLevels = [
         "y": 130,
         "type": "mirror",
         "length": 124.8,
-        "angle": -40,
+        "angle": -81,
         "id": "M1"
       },
       {
@@ -53380,7 +53634,7 @@ export const lightLevels = [
         "y": 130,
         "type": "mirror",
         "length": 124.8,
-        "angle": 55,
+        "angle": 62,
         "id": "M2"
       },
       {
@@ -53388,7 +53642,7 @@ export const lightLevels = [
         "y": 350,
         "type": "mirror",
         "length": 124.8,
-        "angle": 5,
+        "angle": -49,
         "id": "M3"
       }
     ],
@@ -53490,13 +53744,13 @@ export const lightLevels = [
         "radius": 16
       }
     ],
-    "id": "light-v3-123",
+    "id": "light-v5-legacy-123",
     "campaignNumber": 387,
     "name": "Saídas que trocam o acordo",
     "solution": [
-      46.1,
-      -43.3,
-      65.1
+      5.1,
+      -36.3,
+      11.1
     ],
     "width": 800,
     "height": 460,
@@ -53507,7 +53761,7 @@ export const lightLevels = [
       "revision": "editorial-causal-v2",
       "variant": "Generalização e escolha"
     },
-    "sourceAngle": 0,
+    "sourceAngle": -82,
     "target": {
       "x": 539.0819820901379,
       "y": 272.98926962772384,
@@ -53525,21 +53779,21 @@ export const lightLevels = [
   {
     "sources": [
       {
-        "x": 30,
-        "y": 100,
-        "angle": 0,
+        "x": 355.5443589413995,
+        "y": 136.28828433995017,
+        "angle": -166,
         "color": "gold"
       },
       {
-        "x": 770,
-        "y": 110,
-        "angle": 180,
+        "x": 622.009813220815,
+        "y": 337.7616558105612,
+        "angle": 262,
         "color": "blue"
       },
       {
-        "x": 400,
-        "y": 440,
-        "angle": -90,
+        "x": 579.5615290467683,
+        "y": 292.5561652739426,
+        "angle": -176,
         "color": "pink"
       }
     ],
@@ -53551,8 +53805,8 @@ export const lightLevels = [
         "color": "gold"
       },
       {
-        "x": 44.4,
-        "y": 302.2,
+        "x": 173.07426309670095,
+        "y": 396.6250078915871,
         "radius": 22,
         "color": "blue"
       },
@@ -53637,40 +53891,40 @@ export const lightLevels = [
         "x": 210,
         "y": 100,
         "length": 124.8,
-        "angle": 18.4
+        "angle": -64.6
       },
       {
         "type": "mirror",
         "x": 590,
         "y": 110,
         "length": 124.8,
-        "angle": 14.7
+        "angle": 55.7
       },
       {
         "type": "mirror",
         "x": 400,
         "y": 280,
         "length": 124.8,
-        "angle": -51.5
+        "angle": 85.5
       },
       {
         "type": "mirror",
         "x": 150.5,
         "y": 268.6,
         "length": 124.8,
-        "angle": 5.9
+        "angle": -35.3
       }
     ],
-    "id": "light-v4-deduction-four-11",
+    "id": "light-v5-deduction-four-11",
     "name": "A curva depende da escolha",
     "hint": "A chegada ao último espelho muda quando o caminho anterior muda.",
     "solution": [
-      -12.6,
-      -16.3,
-      -82.5,
-      -25.1
+      84.4,
+      24.7,
+      54.5,
+      -66.3
     ],
-    "sourceAngle": 0,
+    "sourceAngle": -166,
     "target": {
       "x": 693.1,
       "y": 224.3,
@@ -53904,33 +54158,33 @@ export const lightLevels = [
         "x": 200,
         "y": 230,
         "length": 124.8,
-        "angle": 8.2
+        "angle": 34.2
       },
       {
         "type": "mirror",
         "x": 200,
         "y": 374,
         "length": 124.8,
-        "angle": -15.2
+        "angle": 74.8
       }
     ],
     "sources": [
       {
-        "x": 770,
-        "y": 86,
+        "x": 740,
+        "y": 85.99999999999999,
         "angle": 180,
         "color": "gold"
       },
       {
-        "x": 30,
-        "y": 230,
-        "angle": 0,
+        "x": 107.65077870115125,
+        "y": 111.7983869589917,
+        "angle": 52,
         "color": "blue"
       },
       {
-        "x": 30,
+        "x": 350,
         "y": 374,
-        "angle": 0,
+        "angle": -180,
         "color": "pink"
       }
     ],
@@ -54046,13 +54300,13 @@ export const lightLevels = [
     ],
     "width": 800,
     "height": 460,
-    "id": "light-v4-portal-800",
+    "id": "light-v5-portal-800",
     "name": "A volta pelo acesso útil 800",
     "hint": "Reconstrua a chegada e procure o acesso que permite voltar.",
     "solution": [
       -29.5,
-      72.5,
-      -27.5
+      -81.5,
+      62.5
     ],
     "sourceAngle": 180,
     "target": {
@@ -54073,21 +54327,21 @@ export const lightLevels = [
   {
     "sources": [
       {
-        "x": 30,
-        "y": 100,
-        "angle": 0,
+        "x": 131.33536703509617,
+        "y": 316.1293027807589,
+        "angle": -70,
         "color": "gold"
       },
       {
         "x": 770,
-        "y": 110,
+        "y": 109.99999999999997,
         "angle": 180,
         "color": "blue"
       },
       {
-        "x": 400,
-        "y": 440,
-        "angle": -90,
+        "x": 343.8090109876132,
+        "y": 419.0775781850181,
+        "angle": -68,
         "color": "pink"
       }
     ],
@@ -54185,7 +54439,7 @@ export const lightLevels = [
         "x": 210,
         "y": 100,
         "length": 124.8,
-        "angle": 46.3
+        "angle": 11.3
       },
       {
         "type": "mirror",
@@ -54199,7 +54453,7 @@ export const lightLevels = [
         "x": 400,
         "y": 280,
         "length": 124.8,
-        "angle": -87.6
+        "angle": -76.6
       },
       {
         "type": "wall",
@@ -54234,15 +54488,15 @@ export const lightLevels = [
         "angle": 90
       }
     ],
-    "id": "light-v4-deduction-windows-09",
+    "id": "light-v5-deduction-windows-09",
     "name": "Visibilidade entre regiões",
     "hint": "Compare o que cada abertura deixa passar.",
     "solution": [
-      15.3,
+      -19.7,
       -50.4,
-      61.4
+      72.4
     ],
-    "sourceAngle": 0,
+    "sourceAngle": -70,
     "target": {
       "x": 600.3,
       "y": 330.8,
@@ -54265,40 +54519,40 @@ export const lightLevels = [
         "x": 200,
         "y": 86,
         "length": 124.8,
-        "angle": 14
+        "angle": -76
       },
       {
         "type": "mirror",
         "x": 200,
         "y": 230,
         "length": 124.8,
-        "angle": -0.5
+        "angle": 89.5
       },
       {
         "type": "mirror",
         "x": 200,
         "y": 374,
         "length": 124.8,
-        "angle": -14.2
+        "angle": 75.8
       }
     ],
     "sources": [
       {
-        "x": 30,
-        "y": 86,
-        "angle": 0,
+        "x": 350,
+        "y": 86.00000000000001,
+        "angle": -180,
         "color": "gold"
       },
       {
-        "x": 30,
-        "y": 230,
-        "angle": 0,
+        "x": 350,
+        "y": 230.00000000000003,
+        "angle": -180,
         "color": "blue"
       },
       {
-        "x": 30,
+        "x": 350,
         "y": 374,
-        "angle": 0,
+        "angle": -180,
         "color": "pink"
       }
     ],
@@ -54414,15 +54668,15 @@ export const lightLevels = [
     ],
     "width": 800,
     "height": 460,
-    "id": "light-v4-portal-081",
+    "id": "light-v5-portal-081",
     "name": "A saída decide 081",
     "hint": "Compare o que acontece depois de cada saída.",
     "solution": [
-      -6.5,
-      -0.5,
-      -3
+      83.5,
+      89.5,
+      87
     ],
-    "sourceAngle": 0,
+    "sourceAngle": -180,
     "target": {
       "x": 725,
       "y": 365,
@@ -54453,9 +54707,9 @@ export const lightLevels = [
         "color": "blue"
       },
       {
-        "x": 770,
-        "y": 430,
-        "angle": -115.01689347810004,
+        "x": 770.4597814991466,
+        "y": 412.4213698429846,
+        "angle": -118.01689347810004,
         "color": "pink"
       }
     ],
@@ -54499,7 +54753,7 @@ export const lightLevels = [
         "x": 700,
         "y": 280,
         "length": 124.8,
-        "angle": 60
+        "angle": 58.5
       },
       {
         "type": "wall",
@@ -54554,7 +54808,7 @@ export const lightLevels = [
     "solution": [
       -45,
       45,
-      -86.5
+      -88
     ],
     "name": "Simetria interrompida",
     "difficulty": 196,
@@ -54574,7 +54828,7 @@ export const lightLevels = [
     "decoyCount": 0,
     "tutorial": "",
     "rules": "Leve todas as fontes aos alvos da mesma cor, sem cruzar nem encostar nos trechos físicos das outras luzes.",
-    "id": "light-v3-196",
+    "id": "light-v5-legacy-196",
     "campaignNumber": 393,
     "number": 393,
     "campaignBand": "advanced"
@@ -54582,15 +54836,15 @@ export const lightLevels = [
   {
     "sources": [
       {
-        "x": 30,
-        "y": 230,
-        "angle": 0,
+        "x": 261.56362579862036,
+        "y": 60.855328258536474,
+        "angle": 110,
         "color": "gold"
       },
       {
-        "x": 770,
-        "y": 110,
-        "angle": 180,
+        "x": 655.1274711633998,
+        "y": 302.2523391876638,
+        "angle": 254,
         "color": "blue"
       }
     ],
@@ -54660,24 +54914,24 @@ export const lightLevels = [
         "x": 200,
         "y": 230,
         "length": 124.8,
-        "angle": -47.8
+        "angle": 7.2
       },
       {
         "type": "mirror",
         "x": 600,
         "y": 110,
         "length": 124.8,
-        "angle": 18.2
+        "angle": 55.2
       }
     ],
-    "id": "light-v4-deduction-open-036",
+    "id": "light-v5-deduction-open-036",
     "name": "Do outro lado 35",
     "hint": "Compare os caminhos completos, não apenas cada chegada isolada.",
     "solution": [
-      -78.8,
-      -12.8
+      -23.8,
+      24.2
     ],
-    "sourceAngle": 0,
+    "sourceAngle": 110,
     "target": {
       "x": 371.3,
       "y": 283.1,
@@ -54851,21 +55105,21 @@ export const lightLevels = [
   {
     "sources": [
       {
-        "x": 30,
-        "y": 100,
-        "angle": 0,
+        "x": 355.5443589413995,
+        "y": 136.28828433995017,
+        "angle": -166,
         "color": "gold"
       },
       {
-        "x": 770,
-        "y": 110,
-        "angle": 180,
+        "x": 668.906806422034,
+        "y": 271.78292833385,
+        "angle": 244,
         "color": "blue"
       },
       {
-        "x": 400,
-        "y": 440,
-        "angle": -90,
+        "x": 355.89802306928016,
+        "y": 433.801871350131,
+        "angle": -74,
         "color": "pink"
       }
     ],
@@ -54963,32 +55217,32 @@ export const lightLevels = [
         "x": 210,
         "y": 100,
         "length": 124.8,
-        "angle": 26.1
+        "angle": -56.9
       },
       {
         "type": "mirror",
         "x": 590,
         "y": 110,
         "length": 124.8,
-        "angle": -70.9
+        "angle": -38.9
       },
       {
         "type": "mirror",
         "x": 400,
         "y": 280,
         "length": 124.8,
-        "angle": 88.6
+        "angle": -83.4
       }
     ],
-    "id": "light-v4-deduction-open-012",
+    "id": "light-v5-deduction-open-012",
     "name": "Hipótese 11",
     "hint": "Siga as consequências de uma hipótese antes de manter a primeira rota.",
     "solution": [
-      -4.9,
-      78.1,
-      57.6
+      -87.9,
+      -69.9,
+      65.6
     ],
-    "sourceAngle": 0,
+    "sourceAngle": -166,
     "target": {
       "x": 172.2,
       "y": 388.3,
@@ -55084,7 +55338,7 @@ export const lightLevels = [
     "campaignBand": "advanced"
   },
   {
-    "id": "light-v3-130",
+    "id": "light-v5-legacy-130",
     "campaignNumber": 398,
     "name": "Uma orientação, dois impactos",
     "sources": [
@@ -55101,9 +55355,9 @@ export const lightLevels = [
         "color": "blue"
       },
       {
-        "x": 630,
-        "y": 390,
-        "angle": 180,
+        "x": 656.5150307496731,
+        "y": 238.96310614803903,
+        "angle": 141,
         "color": "pink"
       }
     ],
@@ -55142,7 +55396,7 @@ export const lightLevels = [
         "x": 470,
         "y": 390,
         "length": 124.8,
-        "angle": -20
+        "angle": -39.5
       }
     ],
     "portals": [
@@ -55237,7 +55491,7 @@ export const lightLevels = [
     ],
     "solution": [
       45,
-      29.6
+      10.1
     ],
     "width": 800,
     "height": 460,
@@ -55266,21 +55520,21 @@ export const lightLevels = [
   {
     "sources": [
       {
-        "x": 30,
-        "y": 100,
-        "angle": 0,
+        "x": 77.55786107116094,
+        "y": 170.42073441788364,
+        "angle": -28,
         "color": "gold"
       },
       {
-        "x": 770,
-        "y": 110,
-        "angle": 180,
+        "x": 590,
+        "y": 290,
+        "angle": 270,
         "color": "blue"
       },
       {
-        "x": 400,
-        "y": 440,
-        "angle": -90,
+        "x": 547.7211629518312,
+        "y": 253.95277334996044,
+        "angle": -190,
         "color": "pink"
       }
     ],
@@ -55378,32 +55632,32 @@ export const lightLevels = [
         "x": 210,
         "y": 100,
         "length": 124.8,
-        "angle": 74.3
+        "angle": 60.3
       },
       {
         "type": "mirror",
         "x": 590,
         "y": 110,
         "length": 124.8,
-        "angle": -33.9
+        "angle": 11.1
       },
       {
         "type": "mirror",
         "x": 400,
         "y": 280,
         "length": 124.8,
-        "angle": -64.8
+        "angle": 65.2
       }
     ],
-    "id": "light-v4-deduction-open-025",
+    "id": "light-v5-deduction-open-025",
     "name": "Consequência 24",
     "hint": "Uma escolha pode decidir os caminhos das outras cores.",
     "solution": [
-      43.3,
-      -64.9,
-      84.2
+      29.3,
+      -19.9,
+      34.2
     ],
-    "sourceAngle": 0,
+    "sourceAngle": -28,
     "target": {
       "x": 228.5,
       "y": 417.5,
@@ -55420,7 +55674,7 @@ export const lightLevels = [
     "campaignBand": "advanced"
   },
   {
-    "id": "light-v4-open-hard-chain-1",
+    "id": "light-v5-open-hard-chain-1",
     "width": 800,
     "height": 460,
     "objects": [
@@ -55429,48 +55683,48 @@ export const lightLevels = [
         "y": 270,
         "type": "mirror",
         "length": 124.8,
-        "angle": 18
+        "angle": 16
       },
       {
-        "x": 304.1,
-        "y": 180,
+        "x": 324.1,
+        "y": 150,
         "type": "mirror",
         "length": 124.8,
-        "angle": -17.5
+        "angle": -12
       },
       {
         "x": 492.5,
         "y": 390.2,
         "type": "mirror",
         "length": 124.8,
-        "angle": -41.6
+        "angle": -44.7
       },
       {
-        "x": 223.8,
-        "y": 352.2,
+        "x": 242.36971653761827,
+        "y": 344.7726432889953,
         "type": "mirror",
         "length": 124.8,
-        "angle": -27.3
+        "angle": -26.5
       },
       {
         "x": 389.3,
         "y": 75.8,
         "type": "mirror",
         "length": 124.8,
-        "angle": -30.7
+        "angle": -28.7
       }
     ],
     "sources": [
       {
-        "x": 99.57060059975765,
-        "y": 449.64101615137747,
+        "x": 123.1975336408111,
+        "y": 436,
         "angle": -30,
         "color": "gold"
       },
       {
-        "x": 775,
-        "y": 280,
-        "angle": 180,
+        "x": 770.5125987042953,
+        "y": 214.55664862583188,
+        "angle": 167,
         "color": "blue"
       },
       {
@@ -55516,15 +55770,16 @@ export const lightLevels = [
     "tutorial": "",
     "rules": "Leve cada cor ao seu alvo sem cruzar outras cores.",
     "solution": [
-      12,
-      -23.5,
-      -50.7,
-      -22.2,
-      -44.5
+      13,
+      -14,
+      -49.2,
+      -21.8,
+      -32.7
     ],
     "number": 400,
     "campaignNumber": 400,
-    "campaignBand": "advanced"
+    "campaignBand": "advanced",
+    "relatedPreviousId": "light-v4-open-hard-chain-1"
   },
   {
     "objects": [
@@ -55533,40 +55788,40 @@ export const lightLevels = [
         "x": 200,
         "y": 86,
         "length": 124.8,
-        "angle": 14.7
+        "angle": 8.7
       },
       {
         "type": "mirror",
         "x": 600,
         "y": 230,
         "length": 124.8,
-        "angle": -0.4
+        "angle": -22.4
       },
       {
         "type": "mirror",
         "x": 200,
         "y": 374,
         "length": 124.8,
-        "angle": -14.9
+        "angle": 75.1
       }
     ],
     "sources": [
       {
-        "x": 30,
-        "y": 86,
-        "angle": 0,
+        "x": 43.49638388259109,
+        "y": 119.26587053084148,
+        "angle": -12,
         "color": "gold"
       },
       {
-        "x": 770,
-        "y": 230,
-        "angle": 180,
+        "x": 707.9009700507977,
+        "y": 125.80124443115042,
+        "angle": 136,
         "color": "blue"
       },
       {
-        "x": 30,
+        "x": 350,
         "y": 374,
-        "angle": 0,
+        "angle": -180,
         "color": "pink"
       }
     ],
@@ -55726,15 +55981,15 @@ export const lightLevels = [
     ],
     "width": 800,
     "height": 460,
-    "id": "light-v4-portal-937",
+    "id": "light-v5-portal-937",
     "name": "A saída decide 937",
     "hint": "Compare o que acontece depois de cada saída.",
     "solution": [
-      28.3,
-      -45.8,
-      -14.9
+      22.3,
+      -67.8,
+      75.1
     ],
-    "sourceAngle": 0,
+    "sourceAngle": -12,
     "target": {
       "x": 710,
       "y": 374,
@@ -55757,40 +56012,40 @@ export const lightLevels = [
         "x": 200,
         "y": 86,
         "length": 124.8,
-        "angle": 14.7
+        "angle": -77.3
       },
       {
         "type": "mirror",
         "x": 600,
         "y": 230,
         "length": 124.8,
-        "angle": -0.4
+        "angle": 89.6
       },
       {
         "type": "mirror",
         "x": 200,
         "y": 374,
         "length": 124.8,
-        "angle": -14.9
+        "angle": 73.1
       }
     ],
     "sources": [
       {
-        "x": 30,
-        "y": 86,
-        "angle": 0,
+        "x": 349.6346075389736,
+        "y": 75.53652893838117,
+        "angle": 176,
         "color": "gold"
       },
       {
-        "x": 770,
+        "x": 450,
         "y": 230,
-        "angle": 180,
+        "angle": 0,
         "color": "blue"
       },
       {
-        "x": 30,
-        "y": 374,
-        "angle": 0,
+        "x": 349.6346075389736,
+        "y": 363.5365289383812,
+        "angle": 176,
         "color": "pink"
       }
     ],
@@ -55950,15 +56205,15 @@ export const lightLevels = [
     ],
     "width": 800,
     "height": 460,
-    "id": "light-v4-portal-915",
+    "id": "light-v5-portal-915",
     "name": "A consequência distante 915",
-    "hint": "Uma escolha aqui pode atrapalhar uma luz do outro lado.",
+    "hint": "Uma escolha aqui pode interferir em outra região.",
     "solution": [
-      3,
-      -0.4,
-      -2
+      -89,
+      89.6,
+      86
     ],
-    "sourceAngle": 0,
+    "sourceAngle": 176,
     "target": {
       "x": 710,
       "y": 374,
@@ -55981,28 +56236,28 @@ export const lightLevels = [
         "y": 105.7,
         "type": "mirror",
         "length": 124.8,
-        "angle": 47.4
+        "angle": 30.4
       },
       {
         "x": 582.9,
         "y": 95.7,
         "type": "mirror",
         "length": 124.8,
-        "angle": -72.9
+        "angle": -60.9
       },
       {
         "x": 366,
         "y": 281.1,
         "type": "mirror",
         "length": 124.8,
-        "angle": 88.5
+        "angle": -44.5
       },
       {
         "type": "mirror",
         "x": 647.1,
         "y": 290.7,
         "length": 124.8,
-        "angle": -74.1
+        "angle": -52.7
       },
       {
         "type": "wall",
@@ -56063,28 +56318,28 @@ export const lightLevels = [
     ],
     "sources": [
       {
-        "x": 30,
-        "y": 74.9,
+        "x": 61.72669725566857,
+        "y": 165.9376600899659,
         "color": "gold",
-        "angle": 10.322735559982544
+        "angle": -23.677264440017456
       },
       {
-        "x": 770,
-        "y": 78.3,
+        "x": 753.4110740985643,
+        "y": 153.37125462267917,
         "color": "blue",
-        "angle": 174.68686644306962
+        "angle": 198.68686644306962
       },
       {
-        "x": 366,
-        "y": 440,
+        "x": 216.36539246102637,
+        "y": 270.6365289383812,
         "color": "pink",
-        "angle": -90
+        "angle": 4
       }
     ],
     "targets": [
       {
-        "x": 573.9,
-        "y": 387,
+        "x": 558.4673022289013,
+        "y": 306.32833599002373,
         "radius": 22,
         "color": "gold"
       },
@@ -56172,18 +56427,18 @@ export const lightLevels = [
     "width": 800,
     "height": 460,
     "solution": [
-      16.4,
-      76.1,
-      57.5,
-      74.9
+      -0.6,
+      88.1,
+      -75.5,
+      -83.7
     ],
-    "id": "light-v4-deduction-master-window-15-1",
+    "id": "light-v5-deduction-master-window-15-1",
     "name": "As janelas da última curva",
     "hint": "As duas entradas podem alcançar o mesmo espelho, mas não oferecem as mesmas chegadas.",
-    "sourceAngle": 10.322735559982544,
+    "sourceAngle": -23.677264440017456,
     "target": {
-      "x": 573.9,
-      "y": 387,
+      "x": 558.4673022289013,
+      "y": 306.32833599002373,
       "radius": 22,
       "color": "gold"
     },
@@ -56203,40 +56458,40 @@ export const lightLevels = [
         "x": 200,
         "y": 86,
         "length": 124.8,
-        "angle": 14.7
+        "angle": -39.3
       },
       {
         "type": "mirror",
         "x": 600,
         "y": 230,
         "length": 124.8,
-        "angle": -0.4
+        "angle": 87.6
       },
       {
         "type": "mirror",
         "x": 200,
         "y": 374,
         "length": 124.8,
-        "angle": -14.9
+        "angle": 49.1
       }
     ],
     "sources": [
       {
-        "x": 30,
-        "y": 86,
-        "angle": 0,
+        "x": 246.3525491562421,
+        "y": 228.65847744427305,
+        "angle": -108,
         "color": "gold"
       },
       {
-        "x": 770,
-        "y": 230,
-        "angle": 180,
+        "x": 380.53590894283866,
+        "y": 245.34642422370746,
+        "angle": 356,
         "color": "blue"
       },
       {
-        "x": 30,
-        "y": 374,
-        "angle": 0,
+        "x": 335.4455245716448,
+        "y": 200.63763420652117,
+        "angle": 128,
         "color": "pink"
       }
     ],
@@ -56375,6 +56630,230 @@ export const lightLevels = [
         "id": "p2a",
         "pairId": "p2b",
         "label": "F",
+        "x": 324.8,
+        "y": 365.3,
+        "radius": 16,
+        "colors": [
+          "pink"
+        ]
+      },
+      {
+        "id": "p2b",
+        "pairId": "p2a",
+        "label": "F",
+        "x": 466.6,
+        "y": 98,
+        "radius": 16,
+        "colors": [
+          "pink"
+        ]
+      }
+    ],
+    "width": 800,
+    "height": 460,
+    "id": "light-v5-portal-903",
+    "name": "A saída decide 903",
+    "hint": "Compare o que acontece depois de cada saída.",
+    "solution": [
+      -51,
+      70,
+      62
+    ],
+    "sourceAngle": -108,
+    "target": {
+      "x": 710,
+      "y": 374,
+      "radius": 22,
+      "color": "gold"
+    },
+    "requiredBounces": 3,
+    "wallPurpose": [],
+    "decoyCount": 0,
+    "tutorial": "",
+    "rules": "Leve todas as fontes aos alvos da mesma cor, sem cruzar nem encostar nos trechos físicos das outras luzes.",
+    "number": 404,
+    "campaignNumber": 404,
+    "campaignBand": "master"
+  },
+  {
+    "objects": [
+      {
+        "type": "mirror",
+        "x": 200,
+        "y": 86,
+        "length": 124.8,
+        "angle": -59.3
+      },
+      {
+        "type": "mirror",
+        "x": 600,
+        "y": 230,
+        "length": 124.8,
+        "angle": 89.6
+      },
+      {
+        "type": "mirror",
+        "x": 200,
+        "y": 374,
+        "length": 124.8,
+        "angle": 75.1
+      }
+    ],
+    "sources": [
+      {
+        "x": 327.2072144234639,
+        "y": 165.48788963498072,
+        "angle": -148,
+        "color": "gold"
+      },
+      {
+        "x": 450,
+        "y": 230,
+        "angle": 0,
+        "color": "blue"
+      },
+      {
+        "x": 420,
+        "y": 374,
+        "angle": -180,
+        "color": "pink"
+      }
+    ],
+    "targets": [
+      {
+        "x": 710,
+        "y": 374,
+        "radius": 22,
+        "color": "gold"
+      },
+      {
+        "x": 90,
+        "y": 237,
+        "radius": 22,
+        "color": "blue"
+      },
+      {
+        "x": 710,
+        "y": 81,
+        "radius": 22,
+        "color": "pink"
+      }
+    ],
+    "portals": [
+      {
+        "id": "g1a",
+        "pairId": "g1b",
+        "label": "A",
+        "x": 378,
+        "y": 104.7,
+        "radius": 16,
+        "colors": [
+          "gold"
+        ]
+      },
+      {
+        "id": "g1b",
+        "pairId": "g1a",
+        "label": "A",
+        "x": 583.7,
+        "y": 360.7,
+        "radius": 16,
+        "colors": [
+          "gold"
+        ]
+      },
+      {
+        "id": "g2a",
+        "pairId": "g2b",
+        "label": "B",
+        "x": 47.9,
+        "y": 329.4,
+        "radius": 16,
+        "colors": [
+          "gold"
+        ]
+      },
+      {
+        "id": "g2b",
+        "pairId": "g2a",
+        "label": "B",
+        "x": 755.6,
+        "y": 301.1,
+        "radius": 16,
+        "colors": [
+          "gold"
+        ]
+      },
+      {
+        "id": "b1a",
+        "pairId": "b1b",
+        "label": "C",
+        "x": 348.4,
+        "y": 412.8,
+        "radius": 16,
+        "colors": [
+          "blue"
+        ]
+      },
+      {
+        "id": "b1b",
+        "pairId": "b1a",
+        "label": "C",
+        "x": 176.6,
+        "y": 174.1,
+        "radius": 16,
+        "colors": [
+          "blue"
+        ]
+      },
+      {
+        "id": "b2a",
+        "pairId": "b2b",
+        "label": "D",
+        "x": 590,
+        "y": 22.3,
+        "radius": 16,
+        "colors": [
+          "blue"
+        ]
+      },
+      {
+        "id": "b2b",
+        "pairId": "b2a",
+        "label": "D",
+        "x": 94.7,
+        "y": 333.4,
+        "radius": 16,
+        "colors": [
+          "blue"
+        ]
+      },
+      {
+        "id": "p1a",
+        "pairId": "p1b",
+        "label": "E",
+        "x": 373.7,
+        "y": 159.5,
+        "radius": 16,
+        "colors": [
+          "pink"
+        ]
+      },
+      {
+        "id": "p1b",
+        "pairId": "p1a",
+        "label": "E",
+        "x": 656.5,
+        "y": 147.1,
+        "radius": 16,
+        "colors": [
+          "pink"
+        ]
+      },
+      {
+        "id": "p2a",
+        "pairId": "p2b",
+        "label": "F",
         "x": 511.2,
         "y": 352.2,
         "radius": 16,
@@ -56396,15 +56875,15 @@ export const lightLevels = [
     ],
     "width": 800,
     "height": 460,
-    "id": "light-v4-portal-903",
-    "name": "A saída decide 903",
-    "hint": "Compare o que acontece depois de cada saída.",
+    "id": "light-v5-open-hard-chain-2",
+    "name": "Três escolhas, uma consequência",
+    "hint": "Uma chegada válida sozinha pode precisar de outra rota no conjunto.",
     "solution": [
-      3,
-      -0.4,
-      -2
+      -71,
+      89.6,
+      88
     ],
-    "sourceAngle": 0,
+    "sourceAngle": -148,
     "target": {
       "x": 710,
       "y": 374,
@@ -56416,113 +56895,6 @@ export const lightLevels = [
     "decoyCount": 0,
     "tutorial": "",
     "rules": "Leve todas as fontes aos alvos da mesma cor, sem cruzar nem encostar nos trechos físicos das outras luzes.",
-    "number": 404,
-    "campaignNumber": 404,
-    "campaignBand": "master"
-  },
-  {
-    "id": "light-v4-open-hard-chain-2",
-    "width": 800,
-    "height": 460,
-    "objects": [
-      {
-        "x": 440,
-        "y": 270,
-        "type": "mirror",
-        "length": 124.8,
-        "angle": 16
-      },
-      {
-        "x": 304.1,
-        "y": 180,
-        "type": "mirror",
-        "length": 124.8,
-        "angle": -23.5
-      },
-      {
-        "x": 492.5,
-        "y": 390.2,
-        "type": "mirror",
-        "length": 124.8,
-        "angle": -1
-      },
-      {
-        "x": 223.8,
-        "y": 352.2,
-        "type": "mirror",
-        "length": 124.8,
-        "angle": -21.7
-      },
-      {
-        "x": 389.3,
-        "y": 75.8,
-        "type": "mirror",
-        "length": 124.8,
-        "angle": 29.9
-      }
-    ],
-    "sources": [
-      {
-        "x": 99.57060059975765,
-        "y": 449.64101615137747,
-        "angle": -30,
-        "color": "gold"
-      },
-      {
-        "x": 775,
-        "y": 280,
-        "angle": 180,
-        "color": "blue"
-      },
-      {
-        "x": 147.84684723205055,
-        "y": 51.46823902230774,
-        "angle": 30,
-        "color": "pink"
-      }
-    ],
-    "targets": [
-      {
-        "x": 545.1,
-        "y": 272,
-        "radius": 22,
-        "color": "gold"
-      },
-      {
-        "x": 70.2,
-        "y": 178.7,
-        "radius": 22,
-        "color": "blue"
-      },
-      {
-        "x": 148.9,
-        "y": 265.3,
-        "radius": 22,
-        "color": "pink"
-      }
-    ],
-    "portals": [],
-    "sourceAngle": -30,
-    "target": {
-      "x": 545.1,
-      "y": 272,
-      "radius": 22,
-      "color": "gold"
-    },
-    "name": "Duas incidências propagam três",
-    "hint": "Uma rotação comum altera a chegada ao segundo espelho compartilhado.",
-    "requiredBounces": 7,
-    "wallPurpose": [],
-    "decoyCount": 0,
-    "tutorial": "",
-    "rules": "Leve cada cor ao seu alvo sem cruzar outras cores.",
-    "solution": [
-      12,
-      -23.5,
-      -9,
-      -11.6,
-      29.9
-    ],
     "number": 405,
     "campaignNumber": 405,
     "campaignBand": "master"
@@ -56534,41 +56906,41 @@ export const lightLevels = [
         "y": 105.7,
         "type": "mirror",
         "length": 124.8,
-        "angle": 16
+        "angle": -76
       },
       {
         "x": 582.9,
         "y": 95.7,
         "type": "mirror",
         "length": 124.8,
-        "angle": -14.9
+        "angle": 21.1
       },
       {
         "x": 366,
         "y": 281.1,
         "type": "mirror",
         "length": 124.8,
-        "angle": 57.5
+        "angle": 61.5
       }
     ],
     "sources": [
       {
-        "x": 30,
-        "y": 74.9,
+        "x": 417.7618133675719,
+        "y": 129.92831762226072,
         "color": "gold",
-        "angle": 10.322735559982544
+        "angle": 186.32273555998253
       },
       {
-        "x": 770,
-        "y": 78.3,
+        "x": 642.2634032923661,
+        "y": 233.453353315075,
         "color": "blue",
-        "angle": 174.68686644306962
+        "angle": 246.68686644306962
       },
       {
-        "x": 366,
-        "y": 440,
+        "x": 345.12403485599015,
+        "y": 429.6402103112356,
         "color": "pink",
-        "angle": -90
+        "angle": -82
       }
     ],
     "targets": [
@@ -56706,14 +57078,14 @@ export const lightLevels = [
     "width": 800,
     "height": 460,
     "solution": [
-      50.3,
-      -14.9,
-      -50.6
+      -41.7,
+      21.1,
+      -46.6
     ],
-    "id": "light-v4-master-reserve-011",
+    "id": "light-v5-master-reserve-011",
     "name": "Condições entre 2, 3, 3 rotas",
     "hint": "Considere uma rota de cada vez e siga o que ela exige das outras duas cores.",
-    "sourceAngle": 10.322735559982544,
+    "sourceAngle": 186.32273555998253,
     "target": {
       "x": 755,
       "y": 325.9,
@@ -56732,142 +57104,126 @@ export const lightLevels = [
   {
     "objects": [
       {
-        "x": 235.8,
-        "y": 123.5,
+        "x": 181.2,
+        "y": 117.3,
         "type": "mirror",
         "length": 124.8,
-        "angle": 25.9
+        "angle": -1.5
       },
       {
-        "x": 579.9,
-        "y": 127.6,
+        "x": 592.9,
+        "y": 104,
         "type": "mirror",
         "length": 124.8,
-        "angle": 12.5
+        "angle": 42
       },
       {
-        "x": 386.6,
-        "y": 277.3,
+        "x": 393.6,
+        "y": 280.5,
         "type": "mirror",
         "length": 124.8,
-        "angle": 86.7
+        "angle": -2.8
       },
       {
         "type": "mirror",
-        "x": 682.4,
-        "y": 306.3,
+        "x": 726.5,
+        "y": 259,
         "length": 124.8,
-        "angle": 53.3
+        "angle": 82.6
       },
       {
         "type": "wall",
-        "x": 140,
-        "y": 44.97283770651117,
-        "length": 89.94567541302234,
+        "x": 100,
+        "y": 69.90106393716306,
+        "length": 139.80212787432612,
         "width": 12,
         "angle": 90
       },
       {
         "type": "wall",
-        "x": 140,
-        "y": 140.3020960900157,
-        "length": 60.71284135398669,
+        "x": 100,
+        "y": 247.60235665083061,
+        "length": 173.86573589099004,
         "width": 12,
         "angle": 90
       },
       {
         "type": "wall",
-        "x": 140,
-        "y": 247.72925838350454,
-        "length": 114.14148323299096,
+        "x": 100,
+        "y": 408.20704821432207,
+        "length": 103.58590357135586,
         "width": 12,
         "angle": 90
       },
       {
         "type": "wall",
-        "x": 140,
-        "y": 424.4,
-        "length": 71.19999999999999,
+        "x": 260,
+        "y": 67.23907497396148,
+        "length": 134.47814994792296,
         "width": 12,
         "angle": 90
       },
       {
         "type": "wall",
-        "x": 460,
-        "y": 50.25,
-        "length": 100.5,
+        "x": 260,
+        "y": 198.18165947510425,
+        "length": 87.10653006054181,
         "width": 12,
         "angle": 90
       },
       {
         "type": "wall",
-        "x": 460,
-        "y": 194.7168015124165,
-        "length": 20.43360302483299,
-        "width": 12,
-        "angle": 90
-      },
-      {
-        "type": "wall",
-        "x": 460,
-        "y": 261.3668015124165,
-        "length": 72.86639697516702,
-        "width": 12,
-        "angle": 90
-      },
-      {
-        "type": "wall",
-        "x": 460,
-        "y": 420.9,
-        "length": 78.19999999999999,
+        "x": 260,
+        "y": 394.8674622526876,
+        "length": 130.26507549462485,
         "width": 12,
         "angle": 90
       }
     ],
     "sources": [
       {
-        "x": 30,
-        "y": 72.9,
+        "x": 42.1991785068806,
+        "y": 173.68059616781258,
         "color": "gold",
-        "angle": 13.813303816728954
+        "angle": -22.078133994588455
       },
       {
-        "x": 770,
-        "y": 46.3,
+        "x": 541.349791557406,
+        "y": 244.86367881581506,
         "color": "blue",
-        "angle": 156.8450744946745
+        "angle": 290.10051016264254
       },
       {
-        "x": 386.6,
-        "y": 440,
+        "x": 243.69137594713567,
+        "y": 285.73492450537515,
         "color": "pink",
-        "angle": -90
+        "angle": -2
       }
     ],
     "targets": [
       {
-        "x": 729.6,
-        "y": 427,
-        "radius": 22,
-        "color": "gold"
+        "x": 474.1,
+        "y": 218.2,
+        "color": "gold",
+        "radius": 22
       },
       {
-        "x": 278.5,
-        "y": 201.5,
+        "x": 59.6,
+        "y": 365.6,
         "color": "blue",
         "radius": 22
       },
       {
-        "x": 95.2,
-        "y": 163.6,
+        "x": 672.4,
+        "y": 388.1,
         "color": "pink",
         "radius": 22
       }
     ],
     "portals": [
       {
-        "x": 419.3,
-        "y": 41.8,
+        "x": 162.2,
+        "y": 272.7,
         "id": "gold1a",
         "pairId": "gold1b",
         "label": "A",
@@ -56877,8 +57233,8 @@ export const lightLevels = [
         ]
       },
       {
-        "x": 592.5,
-        "y": 346.4,
+        "x": 486.2,
+        "y": 119.5,
         "id": "gold1b",
         "pairId": "gold1a",
         "label": "A",
@@ -56888,8 +57244,8 @@ export const lightLevels = [
         ]
       },
       {
-        "x": 247.1,
-        "y": 317.1,
+        "x": 145.6,
+        "y": 30.3,
         "id": "gold2a",
         "pairId": "gold2b",
         "label": "B",
@@ -56899,8 +57255,8 @@ export const lightLevels = [
         ]
       },
       {
-        "x": 675.3,
-        "y": 187.4,
+        "x": 517.3,
+        "y": 323.6,
         "id": "gold2b",
         "pairId": "gold2a",
         "label": "B",
@@ -56910,8 +57266,8 @@ export const lightLevels = [
         ]
       },
       {
-        "x": 658.7,
-        "y": 44.1,
+        "x": 650.9,
+        "y": 294.3,
         "id": "blue1a",
         "pairId": "blue1b",
         "label": "C",
@@ -56921,8 +57277,8 @@ export const lightLevels = [
         ]
       },
       {
-        "x": 141.4,
-        "y": 346.8,
+        "x": 32.2,
+        "y": 275.8,
         "id": "blue1b",
         "pairId": "blue1a",
         "label": "C",
@@ -56932,44 +57288,22 @@ export const lightLevels = [
         ]
       },
       {
-        "x": 484.7,
-        "y": 339.8,
-        "id": "blue2a",
-        "pairId": "blue2b",
-        "label": "D",
-        "radius": 16,
-        "colors": [
-          "blue"
-        ]
-      },
-      {
-        "x": 351.4,
-        "y": 39,
-        "id": "blue2b",
-        "pairId": "blue2a",
-        "label": "D",
-        "radius": 16,
-        "colors": [
-          "blue"
-        ]
-      },
-      {
-        "x": 436.3,
-        "y": 142.5,
+        "x": 325.6,
+        "y": 124.4,
         "id": "pink1a",
         "pairId": "pink1b",
-        "label": "E",
+        "label": "D",
         "radius": 16,
         "colors": [
           "pink"
         ]
       },
       {
-        "x": 25.3,
-        "y": 353.4,
+        "x": 765.1,
+        "y": 347.5,
         "id": "pink1b",
         "pairId": "pink1a",
-        "label": "E",
+        "label": "D",
         "radius": 16,
         "colors": [
           "pink"
@@ -56979,26 +57313,26 @@ export const lightLevels = [
     "width": 800,
     "height": 460,
     "solution": [
-      -5.1,
-      -18.5,
-      55.7,
-      22.3
+      37.4,
+      1.6,
+      -57.8,
+      -0.4
     ],
-    "id": "light-v4-deduction-master-window-16-1",
+    "id": "light-v5-deduction-master-window-16-1-reauthored",
     "name": "As janelas da última curva",
     "hint": "As duas entradas podem alcançar o mesmo espelho, mas não oferecem as mesmas chegadas.",
-    "sourceAngle": 13.813303816728954,
+    "sourceAngle": -22.078133994588455,
     "target": {
-      "x": 729.6,
-      "y": 427,
-      "radius": 22,
-      "color": "gold"
+      "x": 474.1,
+      "y": 218.2,
+      "color": "gold",
+      "radius": 22
     },
     "requiredBounces": 4,
     "wallPurpose": [],
     "decoyCount": 0,
-    "tutorial": "",
-    "rules": "Leve cada cor ao alvo sem cruzar os feixes.",
+    "tutorial": false,
+    "rules": "Leve cada cor ao seu alvo sem cruzar ou encostar nos trechos físicos das outras luzes.",
     "number": 407,
     "campaignNumber": 407,
     "campaignBand": "master"
@@ -57010,21 +57344,21 @@ export const lightLevels = [
         "y": 105.7,
         "type": "mirror",
         "length": 124.8,
-        "angle": 50.2
+        "angle": 32.2
       },
       {
         "x": 582.9,
         "y": 95.7,
         "type": "mirror",
         "length": 124.8,
-        "angle": -72.9
+        "angle": -48.9
       },
       {
         "x": 366,
         "y": 281.1,
         "type": "mirror",
         "length": 124.8,
-        "angle": 88.5
+        "angle": -58.5
       },
       {
         "type": "mirror",
@@ -57092,22 +57426,22 @@ export const lightLevels = [
     ],
     "sources": [
       {
-        "x": 30,
-        "y": 74.9,
+        "x": 54.90015507165245,
+        "y": 175.02823899855323,
         "color": "gold",
-        "angle": 10.322735559982544
+        "angle": -25.677264440017456
       },
       {
-        "x": 770,
-        "y": 78.3,
+        "x": 774.018206808109,
+        "y": 271.97770995350743,
         "color": "blue",
-        "angle": 174.68686644306962
+        "angle": 222.68686644306962
       },
       {
-        "x": 366,
-        "y": 440,
+        "x": 155.8845447422018,
+        "y": 374.6494279074341,
         "color": "pink",
-        "angle": -90
+        "angle": -24
       }
     ],
     "targets": [
@@ -57223,15 +57557,15 @@ export const lightLevels = [
     "width": 800,
     "height": 460,
     "solution": [
-      19.2,
-      76.1,
-      57.5,
+      1.2,
+      -79.9,
+      -89.5,
       -18.2
     ],
-    "id": "light-v4-deduction-master-window-21-1",
+    "id": "light-v5-deduction-master-window-21-1",
     "name": "As janelas da última curva",
     "hint": "As duas entradas podem alcançar o mesmo espelho, mas não oferecem as mesmas chegadas.",
-    "sourceAngle": 10.322735559982544,
+    "sourceAngle": -25.677264440017456,
     "target": {
       "x": 673.8,
       "y": 206.7,
@@ -57254,41 +57588,41 @@ export const lightLevels = [
         "y": 152.5,
         "type": "mirror",
         "length": 124.8,
-        "angle": 18
+        "angle": -26
       },
       {
         "x": 575.9,
         "y": 119.4,
         "type": "mirror",
         "length": 124.8,
-        "angle": -22.3
+        "angle": -2.3
       },
       {
         "x": 418.6,
         "y": 270.5,
         "type": "mirror",
         "length": 124.8,
-        "angle": -50.4
+        "angle": 85.6
       }
     ],
     "sources": [
       {
-        "x": 30,
-        "y": 53.8,
+        "x": 130.07263110700202,
+        "y": 280.971796696036,
         "color": "gold",
-        "angle": 29.076525008390387
+        "angle": -58.92347499160961
       },
       {
-        "x": 770,
-        "y": 44.3,
+        "x": 717.8569688438056,
+        "y": 167.85842544572395,
         "color": "blue",
-        "angle": 158.84785013170438
+        "angle": 198.84785013170438
       },
       {
-        "x": 418.6,
-        "y": 440,
+        "x": 568.5086240528644,
+        "y": 275.7349245053751,
         "color": "pink",
-        "angle": -90
+        "angle": -178
       }
     ],
     "targets": [
@@ -57404,14 +57738,14 @@ export const lightLevels = [
     "width": 800,
     "height": 460,
     "solution": [
-      -72.9,
-      -22.3,
-      -50.4
+      63.1,
+      -2.3,
+      85.6
     ],
-    "id": "light-v4-master-reserve-017",
+    "id": "light-v5-master-reserve-017",
     "name": "Condições entre 3, 2, 2 rotas",
     "hint": "Considere uma rota de cada vez e siga o que ela exige das outras duas cores.",
-    "sourceAngle": 29.076525008390387,
+    "sourceAngle": -58.92347499160961,
     "target": {
       "x": 516.8,
       "y": 190.3,
@@ -57434,41 +57768,41 @@ export const lightLevels = [
         "y": 105.7,
         "type": "mirror",
         "length": 124.8,
-        "angle": 16
+        "angle": -76
       },
       {
         "x": 582.9,
         "y": 95.7,
         "type": "mirror",
         "length": 124.8,
-        "angle": -14.9
+        "angle": 21.1
       },
       {
         "x": 366,
         "y": 281.1,
         "type": "mirror",
         "length": 124.8,
-        "angle": 57.5
+        "angle": 47.5
       }
     ],
     "sources": [
       {
-        "x": 30,
-        "y": 74.9,
+        "x": 417.7618133675719,
+        "y": 129.92831762226072,
         "color": "gold",
-        "angle": 10.322735559982544
+        "angle": 186.32273555998253
       },
       {
-        "x": 770,
-        "y": 78.3,
+        "x": 642.2634032923661,
+        "y": 233.453353315075,
         "color": "blue",
-        "angle": 174.68686644306962
+        "angle": 246.68686644306962
       },
       {
-        "x": 366,
-        "y": 440,
+        "x": 417.3030214988503,
+        "y": 422.0538931178863,
         "color": "pink",
-        "angle": -90
+        "angle": -110
       }
     ],
     "targets": [
@@ -57584,14 +57918,14 @@ export const lightLevels = [
     "width": 800,
     "height": 460,
     "solution": [
-      16,
-      76.1,
-      57.5
+      -76,
+      -67.9,
+      47.5
     ],
-    "id": "light-v4-master-reserve-014",
+    "id": "light-v5-master-reserve-014",
     "name": "Condições entre 3, 2, 2 rotas",
     "hint": "Considere uma rota de cada vez e siga o que ela exige das outras duas cores.",
-    "sourceAngle": 10.322735559982544,
+    "sourceAngle": 186.32273555998253,
     "target": {
       "x": 755,
       "y": 325.9,
@@ -57614,59 +57948,59 @@ export const lightLevels = [
         "x": 200,
         "y": 86,
         "length": 124.8,
-        "angle": 14.7
+        "angle": -82.8
       },
       {
         "type": "mirror",
         "x": 600,
         "y": 230,
         "length": 124.8,
-        "angle": -0.4
+        "angle": 25.4
       },
       {
         "type": "mirror",
         "x": 200,
         "y": 374,
         "length": 124.8,
-        "angle": -14.9
+        "angle": 61
       }
     ],
     "sources": [
       {
-        "x": 30,
-        "y": 86,
-        "angle": 0,
+        "x": 344.1892543907478,
+        "y": 44.65439662745005,
+        "angle": 164,
         "color": "gold"
       },
       {
-        "x": 770,
-        "y": 230,
-        "angle": 180,
+        "x": 760.0719835846711,
+        "y": 434.88279593774774,
+        "angle": 232,
         "color": "blue"
       },
       {
-        "x": 30,
-        "y": 374,
-        "angle": 0,
+        "x": 332.44213892883903,
+        "y": 303.57926558211636,
+        "angle": 152,
         "color": "pink"
       }
     ],
     "targets": [
       {
         "x": 710,
-        "y": 374,
+        "y": 385,
         "radius": 22,
         "color": "gold"
       },
       {
         "x": 90,
-        "y": 237,
+        "y": 241,
         "radius": 22,
         "color": "blue"
       },
       {
         "x": 710,
-        "y": 81,
+        "y": 79,
         "radius": 22,
         "color": "pink"
       }
@@ -57676,8 +58010,8 @@ export const lightLevels = [
         "id": "g1a",
         "pairId": "g1b",
         "label": "A",
-        "x": 378,
-        "y": 104.7,
+        "x": 103.5,
+        "y": 313.4,
         "radius": 16,
         "colors": [
           "gold"
@@ -57687,8 +58021,8 @@ export const lightLevels = [
         "id": "g1b",
         "pairId": "g1a",
         "label": "A",
-        "x": 583.7,
-        "y": 360.7,
+        "x": 749.5,
+        "y": 292,
         "radius": 16,
         "colors": [
           "gold"
@@ -57698,8 +58032,8 @@ export const lightLevels = [
         "id": "g2a",
         "pairId": "g2b",
         "label": "B",
-        "x": 47.9,
-        "y": 329.4,
+        "x": 353,
+        "y": 88.7,
         "radius": 16,
         "colors": [
           "gold"
@@ -57709,8 +58043,8 @@ export const lightLevels = [
         "id": "g2b",
         "pairId": "g2a",
         "label": "B",
-        "x": 755.6,
-        "y": 301.1,
+        "x": 467,
+        "y": 380.8,
         "radius": 16,
         "colors": [
           "gold"
@@ -57720,8 +58054,8 @@ export const lightLevels = [
         "id": "b1a",
         "pairId": "b1b",
         "label": "C",
-        "x": 333,
-        "y": 343.1,
+        "x": 322,
+        "y": 348,
         "radius": 16,
         "colors": [
           "blue"
@@ -57731,8 +58065,8 @@ export const lightLevels = [
         "id": "b1b",
         "pairId": "b1a",
         "label": "C",
-        "x": 235.7,
-        "y": 175.3,
+        "x": 230.8,
+        "y": 181.2,
         "radius": 16,
         "colors": [
           "blue"
@@ -57742,8 +58076,8 @@ export const lightLevels = [
         "id": "b2a",
         "pairId": "b2b",
         "label": "D",
-        "x": 590,
-        "y": 22.3,
+        "x": 666.4,
+        "y": 25.5,
         "radius": 16,
         "colors": [
           "blue"
@@ -57753,8 +58087,8 @@ export const lightLevels = [
         "id": "b2b",
         "pairId": "b2a",
         "label": "D",
-        "x": 94.7,
-        "y": 333.4,
+        "x": 60.3,
+        "y": 332.3,
         "radius": 16,
         "colors": [
           "blue"
@@ -57764,8 +58098,8 @@ export const lightLevels = [
         "id": "p1a",
         "pairId": "p1b",
         "label": "E",
-        "x": 373.7,
-        "y": 159.5,
+        "x": 105.3,
+        "y": 171,
         "radius": 16,
         "colors": [
           "pink"
@@ -57775,8 +58109,8 @@ export const lightLevels = [
         "id": "p1b",
         "pairId": "p1a",
         "label": "E",
-        "x": 656.5,
-        "y": 147.1,
+        "x": 745.9,
+        "y": 156,
         "radius": 16,
         "colors": [
           "pink"
@@ -57786,8 +58120,8 @@ export const lightLevels = [
         "id": "p2a",
         "pairId": "p2b",
         "label": "F",
-        "x": 511.2,
-        "y": 352.2,
+        "x": 519.8,
+        "y": 402,
         "radius": 16,
         "colors": [
           "pink"
@@ -57797,8 +58131,8 @@ export const lightLevels = [
         "id": "p2b",
         "pairId": "p2a",
         "label": "F",
-        "x": 466.6,
-        "y": 98,
+        "x": 519.7,
+        "y": 62.4,
         "radius": 16,
         "colors": [
           "pink"
@@ -57807,18 +58141,18 @@ export const lightLevels = [
     ],
     "width": 800,
     "height": 460,
-    "id": "light-v4-portal-924",
-    "name": "A consequência distante 924",
-    "hint": "Uma escolha aqui pode atrapalhar uma luz do outro lado.",
+    "id": "light-v5-portal-924",
+    "name": "A consequência distante 88",
+    "hint": "Uma chegada válida sozinha pode precisar de outra rota no conjunto.",
     "solution": [
-      3,
-      -0.4,
-      -2
+      -82.8,
+      80,
+      18.5
     ],
-    "sourceAngle": 0,
+    "sourceAngle": 164,
     "target": {
       "x": 710,
-      "y": 374,
+      "y": 385,
       "radius": 22,
       "color": "gold"
     },
@@ -57838,40 +58172,40 @@ export const lightLevels = [
         "x": 200,
         "y": 86,
         "length": 124.8,
-        "angle": 14.7
+        "angle": -75.3
       },
       {
         "type": "mirror",
         "x": 600,
         "y": 230,
         "length": 124.8,
-        "angle": -0.4
+        "angle": 25.6
       },
       {
         "type": "mirror",
         "x": 200,
         "y": 374,
         "length": 124.8,
-        "angle": -14.9
+        "angle": 65.1
       }
     ],
     "sources": [
       {
-        "x": 30,
-        "y": 86,
-        "angle": 0,
+        "x": 350,
+        "y": 86.00000000000001,
+        "angle": -180,
         "color": "gold"
       },
       {
-        "x": 770,
-        "y": 230,
-        "angle": 180,
+        "x": 760.0719835846711,
+        "y": 434.88279593774774,
+        "angle": 232,
         "color": "blue"
       },
       {
-        "x": 30,
-        "y": 374,
-        "angle": 0,
+        "x": 340.95389311788625,
+        "y": 322.69697850114966,
+        "angle": 160,
         "color": "pink"
       }
     ],
@@ -58031,15 +58365,15 @@ export const lightLevels = [
     ],
     "width": 800,
     "height": 460,
-    "id": "light-v4-portal-950",
+    "id": "light-v5-portal-950",
     "name": "A saída decide 950",
     "hint": "Compare o que acontece depois de cada saída.",
     "solution": [
-      35.4,
-      -18,
-      -14.9
+      -54.6,
+      8,
+      65.1
     ],
-    "sourceAngle": 0,
+    "sourceAngle": -180,
     "target": {
       "x": 710,
       "y": 374,
@@ -58059,24 +58393,24 @@ export const lightLevels = [
     "objects": [
       {
         "x": 207.5,
-        "y": 152.5,
+        "y": 144.5,
         "type": "mirror",
         "length": 124.8,
-        "angle": 18
+        "angle": 14
       },
       {
         "x": 575.9,
         "y": 119.4,
         "type": "mirror",
         "length": 124.8,
-        "angle": -56.7
+        "angle": -86.7
       },
       {
         "x": 418.6,
         "y": 270.5,
         "type": "mirror",
         "length": 124.8,
-        "angle": -50.4
+        "angle": -80.4
       },
       {
         "type": "mirror",
@@ -58124,22 +58458,22 @@ export const lightLevels = [
     ],
     "sources": [
       {
-        "x": 30,
-        "y": 53.8,
+        "x": 39.541828472625554,
+        "y": 79.76938423604282,
         "color": "gold",
-        "angle": 29.076525008390387
+        "angle": 21.076525008390387
       },
       {
-        "x": 30,
-        "y": 120,
+        "x": 25,
+        "y": 31.69872981077807,
         "color": "blue",
-        "angle": 90
+        "angle": 30
       },
       {
-        "x": 418.6,
-        "y": 440,
+        "x": 565.8243186433547,
+        "y": 355.5,
         "color": "pink",
-        "angle": -90
+        "angle": -150
       }
     ],
     "targets": [
@@ -58318,8 +58652,8 @@ export const lightLevels = [
         ]
       },
       {
-        "x": 30,
-        "y": 185,
+        "x": 100,
+        "y": 75,
         "id": "Ha",
         "pairId": "Hb",
         "label": "H",
@@ -58329,8 +58663,8 @@ export const lightLevels = [
         ]
       },
       {
-        "x": 575.9,
-        "y": 30,
+        "x": 489.2974596215561,
+        "y": 69.4,
         "id": "Hb",
         "pairId": "Ha",
         "label": "H",
@@ -58343,15 +58677,15 @@ export const lightLevels = [
     "width": 800,
     "height": 460,
     "solution": [
-      48.3,
-      88,
-      -87.7,
+      44.3,
+      58,
+      62.3,
       -27
     ],
-    "id": "light-v4-master-islands-001",
+    "id": "light-v5-master-islands-001",
     "name": "Uma ilha antes de voltar",
     "hint": "A chegada à ilha inferior muda conforme o acesso escolhido. Pense no retorno e depois no resto do tabuleiro.",
-    "sourceAngle": 29.076525008390387,
+    "sourceAngle": 21.076525008390387,
     "target": {
       "x": 516.8,
       "y": 190.3,
@@ -58379,40 +58713,40 @@ export const lightLevels = [
         "x": 200,
         "y": 86,
         "length": 124.8,
-        "angle": 14.7
+        "angle": -75.3
       },
       {
         "type": "mirror",
         "x": 600,
         "y": 230,
         "length": 124.8,
-        "angle": -0.4
+        "angle": 89.6
       },
       {
         "type": "mirror",
         "x": 200,
         "y": 374,
         "length": 124.8,
-        "angle": -14.9
+        "angle": 65.1
       }
     ],
     "sources": [
       {
-        "x": 30,
-        "y": 86,
-        "angle": 0,
+        "x": 350,
+        "y": 86.00000000000001,
+        "angle": -180,
         "color": "gold"
       },
       {
-        "x": 770,
+        "x": 150,
         "y": 230,
-        "angle": 180,
+        "angle": 360,
         "color": "blue"
       },
       {
-        "x": 30,
-        "y": 374,
-        "angle": 0,
+        "x": 340.95389311788625,
+        "y": 322.69697850114966,
+        "angle": 160,
         "color": "pink"
       }
     ],
@@ -58568,19 +58902,41 @@ export const lightLevels = [
         "colors": [
           "pink"
         ]
+      },
+      {
+        "x": 195,
+        "y": 230,
+        "id": "angle-access-1a",
+        "pairId": "angle-access-1b",
+        "label": "K",
+        "radius": 16,
+        "colors": [
+          "blue"
+        ]
+      },
+      {
+        "x": 514,
+        "y": 230.00000000000003,
+        "id": "angle-access-1b",
+        "pairId": "angle-access-1a",
+        "label": "K",
+        "radius": 16,
+        "colors": [
+          "blue"
+        ]
       }
     ],
     "width": 800,
     "height": 460,
-    "id": "light-v4-portal-938",
+    "id": "light-v5-portal-938",
     "name": "A saída decide 938",
     "hint": "Compare o que acontece depois de cada saída.",
     "solution": [
-      39.5,
-      -18,
-      -14.9
+      -50.5,
+      72,
+      65.1
     ],
-    "sourceAngle": 0,
+    "sourceAngle": -180,
     "target": {
       "x": 710,
       "y": 374,
@@ -58603,40 +58959,40 @@ export const lightLevels = [
         "x": 580,
         "y": 86,
         "length": 124.8,
-        "angle": -54.6
+        "angle": -22.6
       },
       {
         "type": "mirror",
         "x": 200,
         "y": 230,
         "length": 124.8,
-        "angle": 7.8
+        "angle": -12.2
       },
       {
         "type": "mirror",
         "x": 200,
         "y": 374,
         "length": 124.8,
-        "angle": -8.1
+        "angle": 79.9
       }
     ],
     "sources": [
       {
-        "x": 770,
-        "y": 86,
-        "angle": 180,
+        "x": 645.7556720183617,
+        "y": 220.81910694487502,
+        "angle": 244,
         "color": "gold"
       },
       {
-        "x": 30,
-        "y": 230,
-        "angle": 0,
+        "x": 31.470222513824837,
+        "y": 371.41327413103863,
+        "angle": -40,
         "color": "blue"
       },
       {
-        "x": 30,
-        "y": 374,
-        "angle": 0,
+        "x": 419.46409105716134,
+        "y": 358.65357577629237,
+        "angle": 176,
         "color": "pink"
       }
     ],
@@ -58796,15 +59152,15 @@ export const lightLevels = [
     ],
     "width": 800,
     "height": 460,
-    "id": "light-v4-portal-1100",
+    "id": "light-v5-portal-1100",
     "name": "Um acesso para voltar 1100",
     "hint": "Procure o acesso que permite voltar ao setor do alvo.",
     "solution": [
-      -85.5,
-      7.8,
-      1.5
+      -53.5,
+      -12.2,
+      89.5
     ],
-    "sourceAngle": 180,
+    "sourceAngle": 244,
     "target": {
       "x": 650,
       "y": 286,
@@ -58827,40 +59183,40 @@ export const lightLevels = [
         "x": 200,
         "y": 86,
         "length": 124.8,
-        "angle": 15.1
+        "angle": -34.9
       },
       {
         "type": "mirror",
         "x": 600,
         "y": 230,
         "length": 124.8,
-        "angle": 0.7
+        "angle": -89.3
       },
       {
         "type": "mirror",
         "x": 200,
         "y": 374,
         "length": 124.8,
-        "angle": -15.2
+        "angle": 54.8
       }
     ],
     "sources": [
       {
         "x": 30,
-        "y": 86,
-        "angle": 0,
+        "y": 230,
+        "angle": -100,
         "color": "gold"
       },
       {
-        "x": 770,
+        "x": 300,
         "y": 230,
-        "angle": 180,
+        "angle": 360,
         "color": "blue"
       },
       {
-        "x": 30,
-        "y": 374,
-        "angle": 0,
+        "x": 750,
+        "y": 230,
+        "angle": 140,
         "color": "pink"
       }
     ],
@@ -58994,19 +59350,85 @@ export const lightLevels = [
         "colors": [
           "pink"
         ]
+      },
+      {
+        "x": 22.185832004988136,
+        "y": 185.68365111445064,
+        "id": "angle-access-0a",
+        "pairId": "angle-access-0b",
+        "label": "J",
+        "radius": 16,
+        "colors": [
+          "gold"
+        ]
+      },
+      {
+        "x": 214.933743279356,
+        "y": 170.6934667590499,
+        "id": "angle-access-0b",
+        "pairId": "angle-access-0a",
+        "label": "J",
+        "radius": 16,
+        "colors": [
+          "gold"
+        ]
+      },
+      {
+        "x": 345,
+        "y": 230,
+        "id": "angle-access-1a",
+        "pairId": "angle-access-1b",
+        "label": "K",
+        "radius": 16,
+        "colors": [
+          "blue"
+        ]
+      },
+      {
+        "x": 514,
+        "y": 230.00000000000003,
+        "id": "angle-access-1b",
+        "pairId": "angle-access-1a",
+        "label": "K",
+        "radius": 16,
+        "colors": [
+          "blue"
+        ]
+      },
+      {
+        "x": 715.528000059646,
+        "y": 258.9254424358943,
+        "id": "angle-access-2a",
+        "pairId": "angle-access-2b",
+        "label": "L",
+        "radius": 16,
+        "colors": [
+          "pink"
+        ]
+      },
+      {
+        "x": 276.6044443118978,
+        "y": 309.72123903134604,
+        "id": "angle-access-2b",
+        "pairId": "angle-access-2a",
+        "label": "L",
+        "radius": 16,
+        "colors": [
+          "pink"
+        ]
       }
     ],
     "width": 800,
     "height": 460,
-    "id": "light-v4-portal-086",
+    "id": "light-v5-portal-086",
     "name": "A consequência distante 086",
-    "hint": "Uma escolha aqui pode atrapalhar uma luz do outro lado.",
+    "hint": "Uma escolha aqui pode interferir em outra região.",
     "solution": [
-      15.1,
-      23,
-      5
+      -34.9,
+      -67,
+      75
     ],
-    "sourceAngle": 0,
+    "sourceAngle": -100,
     "target": {
       "x": 710,
       "y": 383,
@@ -59029,21 +59451,21 @@ export const lightLevels = [
         "y": 117.3,
         "type": "mirror",
         "length": 124.8,
-        "angle": 88.4
+        "angle": -16.6
       },
       {
         "x": 592.9,
         "y": 104,
         "type": "mirror",
         "length": 124.8,
-        "angle": -31.4
+        "angle": 32.6
       },
       {
         "x": 393.6,
         "y": 280.5,
         "type": "mirror",
         "length": 124.8,
-        "angle": -70.8
+        "angle": -54.8
       },
       {
         "type": "mirror",
@@ -59055,78 +59477,86 @@ export const lightLevels = [
       {
         "type": "wall",
         "x": 260,
-        "y": 67.27663609818903,
-        "length": 134.55327219637806,
+        "y": 45.57715118217017,
+        "length": 91.15430236434034,
         "width": 12,
         "angle": 90
       },
       {
         "type": "wall",
         "x": 260,
-        "y": 200.8368779190809,
-        "length": 92.56721144540566,
+        "y": 122.10011985676795,
+        "length": 24.756060182310023,
         "width": 12,
         "angle": 90
       },
       {
         "type": "wall",
         "x": 260,
-        "y": 296.8602418208919,
-        "length": 59.4795163582163,
+        "y": 200.49456084887942,
+        "length": 91.73233280809214,
         "width": 12,
         "angle": 90
       },
       {
         "type": "wall",
         "x": 260,
-        "y": 435.3,
-        "length": 49.39999999999998,
+        "y": 296.2401200153204,
+        "length": 56.7197599693593,
         "width": 12,
         "angle": 90
       },
       {
         "type": "wall",
-        "x": 500,
-        "y": 38.75,
-        "length": 77.5,
+        "x": 260,
+        "y": 436.3,
+        "length": 47.39999999999998,
         "width": 12,
         "angle": 90
       },
       {
         "type": "wall",
-        "x": 500,
-        "y": 168.85,
-        "length": 14.699999999999989,
+        "x": 520,
+        "y": 37.75,
+        "length": 75.5,
         "width": 12,
         "angle": 90
       },
       {
         "type": "wall",
-        "x": 500,
-        "y": 412.8,
-        "length": 94.39999999999998,
+        "x": 520,
+        "y": 182.18183940790755,
+        "length": 37.363678815815064,
+        "width": 12,
+        "angle": 90
+      },
+      {
+        "type": "wall",
+        "x": 520,
+        "y": 413.8,
+        "length": 92.39999999999998,
         "width": 12,
         "angle": 90
       }
     ],
     "sources": [
       {
-        "x": 30,
-        "y": 68.4,
+        "x": 357.2153693541668,
+        "y": 79.63582934516904,
         "color": "gold",
-        "angle": 17.921866005411545
+        "angle": 167.92186600541154
       },
       {
-        "x": 770,
-        "y": 46.8,
+        "x": 541.349791557406,
+        "y": 244.86367881581506,
         "color": "blue",
-        "angle": 162.10051016264254
+        "angle": 290.10051016264254
       },
       {
-        "x": 393.6,
-        "y": 440,
+        "x": 298.2145324380231,
+        "y": 433.14865730815666,
         "color": "pink",
-        "angle": -90
+        "angle": -58
       }
     ],
     "targets": [
@@ -59264,15 +59694,15 @@ export const lightLevels = [
     "width": 800,
     "height": 460,
     "solution": [
-      57.4,
-      -62.4,
-      78.2,
+      -47.6,
+      1.6,
+      -85.8,
       41.9
     ],
-    "id": "light-v4-deduction-master-window-22-1",
+    "id": "light-v5-deduction-master-window-22-1",
     "name": "As janelas da última curva",
     "hint": "As duas entradas podem alcançar o mesmo espelho, mas não oferecem as mesmas chegadas.",
-    "sourceAngle": 17.921866005411545,
+    "sourceAngle": 167.92186600541154,
     "target": {
       "x": 474.1,
       "y": 218.2,
@@ -59295,40 +59725,40 @@ export const lightLevels = [
         "x": 200,
         "y": 86,
         "length": 124.8,
-        "angle": 14.7
+        "angle": -77.3
       },
       {
         "type": "mirror",
         "x": 600,
         "y": 230,
         "length": 124.8,
-        "angle": -0.4
+        "angle": 89.6
       },
       {
         "type": "mirror",
         "x": 200,
         "y": 374,
         "length": 124.8,
-        "angle": -14.9
+        "angle": 65.1
       }
     ],
     "sources": [
       {
-        "x": 30,
-        "y": 86,
-        "angle": 0,
+        "x": 349.6346075389736,
+        "y": 75.53652893838117,
+        "angle": 176,
         "color": "gold"
       },
       {
-        "x": 770,
+        "x": 450,
         "y": 230,
-        "angle": 180,
+        "angle": 0,
         "color": "blue"
       },
       {
-        "x": 30,
-        "y": 374,
-        "angle": 0,
+        "x": 340.95389311788625,
+        "y": 322.69697850114966,
+        "angle": 160,
         "color": "pink"
       }
     ],
@@ -59488,15 +59918,15 @@ export const lightLevels = [
     ],
     "width": 800,
     "height": 460,
-    "id": "light-v4-portal-917",
+    "id": "light-v5-portal-917",
     "name": "A consequência distante 917",
-    "hint": "Uma escolha aqui pode atrapalhar uma luz do outro lado.",
+    "hint": "Uma escolha aqui pode interferir em outra região.",
     "solution": [
-      3,
-      -0.4,
-      -3.8
+      -89,
+      89.6,
+      76.2
     ],
-    "sourceAngle": 0,
+    "sourceAngle": 176,
     "target": {
       "x": 710,
       "y": 374,
@@ -59515,151 +59945,195 @@ export const lightLevels = [
   {
     "objects": [
       {
-        "x": 217.4,
-        "y": 114.1,
         "type": "mirror",
+        "x": 200,
+        "y": 86,
         "length": 124.8,
-        "angle": 16.5
+        "angle": -59.3
       },
       {
-        "x": 574.7,
-        "y": 116.4,
         "type": "mirror",
+        "x": 600,
+        "y": 230,
         "length": 124.8,
-        "angle": -16
+        "angle": -84.4
       },
       {
-        "x": 375.3,
-        "y": 278.4,
         "type": "mirror",
+        "x": 200,
+        "y": 374,
         "length": 124.8,
-        "angle": -55.4
+        "angle": 73.1
       }
     ],
     "sources": [
       {
-        "x": 30,
-        "y": 58.7,
-        "color": "gold",
-        "angle": 16.46896148614233
+        "x": 327.2072144234639,
+        "y": 165.48788963498072,
+        "angle": -148,
+        "color": "gold"
       },
       {
-        "x": 770,
-        "y": 76.3,
-        "color": "blue",
-        "angle": 168.39699704095344
+        "x": 453.2778598899291,
+        "y": 198.8132463773361,
+        "angle": 12,
+        "color": "blue"
       },
       {
-        "x": 375.3,
-        "y": 440,
-        "color": "pink",
-        "angle": -90
+        "x": 349.6346075389736,
+        "y": 363.5365289383812,
+        "angle": 176,
+        "color": "pink"
       }
     ],
     "targets": [
       {
-        "x": 523.3,
-        "y": 205.3,
-        "color": "gold",
-        "radius": 22
+        "x": 710,
+        "y": 374,
+        "radius": 22,
+        "color": "gold"
       },
       {
-        "x": 241.1,
-        "y": 240.4,
-        "color": "blue",
-        "radius": 22
+        "x": 90,
+        "y": 237,
+        "radius": 22,
+        "color": "blue"
       },
       {
-        "x": 725.4,
-        "y": 145.2,
-        "color": "pink",
-        "radius": 22
+        "x": 710,
+        "y": 81,
+        "radius": 22,
+        "color": "pink"
       }
     ],
     "portals": [
       {
-        "x": 80.5,
-        "y": 94.2,
-        "id": "gold1a",
-        "pairId": "gold1b",
+        "id": "g1a",
+        "pairId": "g1b",
         "label": "A",
+        "x": 378,
+        "y": 104.7,
         "radius": 16,
         "colors": [
           "gold"
         ]
       },
       {
-        "x": 625.6,
-        "y": 220.2,
-        "id": "gold1b",
-        "pairId": "gold1a",
+        "id": "g1b",
+        "pairId": "g1a",
         "label": "A",
+        "x": 583.7,
+        "y": 360.7,
         "radius": 16,
         "colors": [
           "gold"
         ]
       },
       {
-        "x": 301.1,
-        "y": 200.2,
-        "id": "gold2a",
-        "pairId": "gold2b",
+        "id": "g2a",
+        "pairId": "g2b",
         "label": "B",
+        "x": 47.9,
+        "y": 329.4,
         "radius": 16,
         "colors": [
           "gold"
         ]
       },
       {
-        "x": 432.9,
-        "y": 112.3,
-        "id": "gold2b",
-        "pairId": "gold2a",
+        "id": "g2b",
+        "pairId": "g2a",
         "label": "B",
+        "x": 755.6,
+        "y": 301.1,
         "radius": 16,
         "colors": [
           "gold"
         ]
       },
       {
-        "x": 718.4,
-        "y": 209.3,
-        "id": "blue1a",
-        "pairId": "blue1b",
+        "id": "b1a",
+        "pairId": "b1b",
         "label": "C",
+        "x": 348.4,
+        "y": 412.8,
         "radius": 16,
         "colors": [
           "blue"
         ]
       },
       {
-        "x": 131.7,
-        "y": 169.7,
-        "id": "blue1b",
-        "pairId": "blue1a",
+        "id": "b1b",
+        "pairId": "b1a",
         "label": "C",
+        "x": 176.6,
+        "y": 174.1,
         "radius": 16,
         "colors": [
           "blue"
         ]
       },
       {
-        "x": 299.9,
-        "y": 88.2,
-        "id": "pink1a",
-        "pairId": "pink1b",
+        "id": "b2a",
+        "pairId": "b2b",
         "label": "D",
+        "x": 505.6,
+        "y": 44.7,
+        "radius": 16,
+        "colors": [
+          "blue"
+        ]
+      },
+      {
+        "id": "b2b",
+        "pairId": "b2a",
+        "label": "D",
+        "x": 132.2,
+        "y": 319.9,
+        "radius": 16,
+        "colors": [
+          "blue"
+        ]
+      },
+      {
+        "id": "p1a",
+        "pairId": "p1b",
+        "label": "E",
+        "x": 373.7,
+        "y": 159.5,
         "radius": 16,
         "colors": [
           "pink"
         ]
       },
       {
-        "x": 772.5,
-        "y": 263.9,
-        "id": "pink1b",
-        "pairId": "pink1a",
-        "label": "D",
+        "id": "p1b",
+        "pairId": "p1a",
+        "label": "E",
+        "x": 656.5,
+        "y": 147.1,
+        "radius": 16,
+        "colors": [
+          "pink"
+        ]
+      },
+      {
+        "id": "p2a",
+        "pairId": "p2b",
+        "label": "F",
+        "x": 460.5,
+        "y": 275.7,
+        "radius": 16,
+        "colors": [
+          "pink"
+        ]
+      },
+      {
+        "id": "p2b",
+        "pairId": "p2a",
+        "label": "F",
+        "x": 494.4,
+        "y": 162.3,
         "radius": 16,
         "colors": [
           "pink"
@@ -59668,26 +60142,26 @@ export const lightLevels = [
     ],
     "width": 800,
     "height": 460,
+    "id": "light-v5-master-006",
+    "name": "Uma hipótese percorre três cores",
+    "hint": "Teste uma rota e acompanhe o que ela exige das outras cores.",
     "solution": [
-      -77.6,
-      -79.4,
-      79.2
+      -71,
+      -84.4,
+      77.7
     ],
-    "id": "light-v4-master-006",
-    "name": "O desvio que obriga",
-    "hint": "Considere uma rota de cada vez e siga o que ela exige das outras duas cores.",
-    "sourceAngle": 16.46896148614233,
+    "sourceAngle": -148,
     "target": {
-      "x": 523.3,
-      "y": 205.3,
-      "color": "gold",
-      "radius": 22
+      "x": 710,
+      "y": 374,
+      "radius": 22,
+      "color": "gold"
     },
     "requiredBounces": 3,
     "wallPurpose": [],
     "decoyCount": 0,
     "tutorial": false,
-    "rules": "Leve cada cor ao seu alvo sem cruzar ou encostar nos trechos físicos das outras luzes.",
+    "rules": "Leve todas as fontes aos alvos da mesma cor, sem cruzar nem encostar nos trechos físicos das outras luzes.",
     "number": 419,
     "campaignNumber": 419,
     "campaignBand": "master"
@@ -59699,40 +60173,40 @@ export const lightLevels = [
         "x": 200,
         "y": 86,
         "length": 124.8,
-        "angle": 14.7
+        "angle": 10.7
       },
       {
         "type": "mirror",
         "x": 600,
         "y": 230,
         "length": 124.8,
-        "angle": -0.4
+        "angle": -22.4
       },
       {
         "type": "mirror",
         "x": 200,
         "y": 374,
         "length": 124.8,
-        "angle": -14.9
+        "angle": 75.1
       }
     ],
     "sources": [
       {
-        "x": 30,
-        "y": 86,
-        "angle": 0,
+        "x": 51.45978968876446,
+        "y": 106.87596514400981,
+        "angle": -8,
         "color": "gold"
       },
       {
-        "x": 770,
-        "y": 230,
-        "angle": 180,
+        "x": 707.9009700507977,
+        "y": 125.80124443115042,
+        "angle": 136,
         "color": "blue"
       },
       {
-        "x": 30,
+        "x": 350,
         "y": 374,
-        "angle": 0,
+        "angle": -180,
         "color": "pink"
       }
     ],
@@ -59892,15 +60366,15 @@ export const lightLevels = [
     ],
     "width": 800,
     "height": 460,
-    "id": "light-v4-portal-916",
+    "id": "light-v5-portal-916",
     "name": "A saída decide 916",
     "hint": "Compare o que acontece depois de cada saída.",
     "solution": [
-      45.2,
-      -45.8,
-      -14.9
+      41.2,
+      -67.8,
+      75.1
     ],
-    "sourceAngle": 0,
+    "sourceAngle": -8,
     "target": {
       "x": 710,
       "y": 374,
@@ -59923,41 +60397,41 @@ export const lightLevels = [
         "y": 108.1,
         "type": "mirror",
         "length": 124.8,
-        "angle": 15.9
+        "angle": -22.1
       },
       {
         "x": 605.9,
         "y": 151.5,
         "type": "mirror",
         "length": 124.8,
-        "angle": -20
+        "angle": 86
       },
       {
         "x": 422.6,
         "y": 281.7,
         "type": "mirror",
         "length": 124.8,
-        "angle": -32.9
+        "angle": -26.9
       }
     ],
     "sources": [
       {
-        "x": 30,
-        "y": 64.3,
+        "x": 183.97723358332806,
+        "y": 243.65602632782355,
         "color": "gold",
-        "angle": 11.350324275233758
+        "angle": -64.64967572476624
       },
       {
-        "x": 770,
-        "y": 69.3,
+        "x": 456.5639980268078,
+        "y": 137.4018258393953,
         "color": "blue",
-        "angle": 153.39306595062106
+        "angle": 5.3930659506210645
       },
       {
-        "x": 422.6,
-        "y": 440,
+        "x": 391.4132463773361,
+        "y": 428.4221401100708,
         "color": "pink",
-        "angle": -90
+        "angle": -78
       }
     ],
     "targets": [
@@ -60095,14 +60569,14 @@ export const lightLevels = [
     "width": 800,
     "height": 460,
     "solution": [
-      15.9,
-      -66.3,
-      -32.9
+      -22.1,
+      39.7,
+      -26.9
     ],
-    "id": "light-v4-master-reserve-008",
+    "id": "light-v5-master-reserve-008",
     "name": "Condições entre 2, 2, 4 rotas",
     "hint": "Considere uma rota de cada vez e siga o que ela exige das outras duas cores.",
-    "sourceAngle": 11.350324275233758,
+    "sourceAngle": -64.64967572476624,
     "target": {
       "x": 552.9,
       "y": 222.2,
@@ -60125,21 +60599,21 @@ export const lightLevels = [
         "y": 117.3,
         "type": "mirror",
         "length": 124.8,
-        "angle": 88.4
+        "angle": -20.6
       },
       {
         "x": 592.9,
         "y": 104,
         "type": "mirror",
         "length": 124.8,
-        "angle": -31.4
+        "angle": 23.6
       },
       {
         "x": 393.6,
         "y": 280.5,
         "type": "mirror",
         "length": 124.8,
-        "angle": -70.8
+        "angle": -53.8
       },
       {
         "type": "mirror",
@@ -60151,70 +60625,78 @@ export const lightLevels = [
       {
         "type": "wall",
         "x": 260,
-        "y": 67.27663609818903,
-        "length": 134.55327219637806,
+        "y": 39.152149064897486,
+        "length": 78.30429812979497,
         "width": 12,
         "angle": 90
       },
       {
         "type": "wall",
         "x": 260,
-        "y": 205.10224501410056,
-        "length": 101.09794563544497,
+        "y": 116.58431615231687,
+        "length": 35.78766759121217,
         "width": 12,
         "angle": 90
       },
       {
         "type": "wall",
         "x": 260,
-        "y": 367.8256089159115,
-        "length": 184.34878216817697,
+        "y": 204.68305139667763,
+        "length": 100.10931390368859,
         "width": 12,
         "angle": 90
       },
       {
         "type": "wall",
-        "x": 510,
-        "y": 38.75,
-        "length": 77.5,
+        "x": 260,
+        "y": 368.2823636575621,
+        "length": 183.43527268487588,
         "width": 12,
         "angle": 90
       },
       {
         "type": "wall",
-        "x": 510,
-        "y": 212.33836636583763,
-        "length": 101.67673273167526,
+        "x": 520,
+        "y": 37.75,
+        "length": 75.5,
         "width": 12,
         "angle": 90
       },
       {
         "type": "wall",
-        "x": 510,
-        "y": 412.8,
-        "length": 94.39999999999998,
+        "x": 520,
+        "y": 213.83504902780837,
+        "length": 100.67009805561673,
+        "width": 12,
+        "angle": 90
+      },
+      {
+        "type": "wall",
+        "x": 520,
+        "y": 413.8,
+        "length": 92.39999999999998,
         "width": 12,
         "angle": 90
       }
     ],
     "sources": [
       {
-        "x": 30,
-        "y": 68.4,
+        "x": 406.61408060541737,
+        "y": 34.90769292698258,
         "color": "gold",
-        "angle": 17.921866005411545
+        "angle": 159.92186600541154
       },
       {
-        "x": 770,
-        "y": 46.8,
+        "x": 587.0355829211292,
+        "y": 263.892490794049,
         "color": "blue",
-        "angle": 162.10051016264254
+        "angle": 272.10051016264254
       },
       {
-        "x": 393.6,
-        "y": 440,
+        "x": 309.721064479388,
+        "y": 404.85563588325624,
         "color": "pink",
-        "angle": -90
+        "angle": -56
       }
     ],
     "targets": [
@@ -60330,15 +60812,15 @@ export const lightLevels = [
     "width": 800,
     "height": 460,
     "solution": [
-      57.4,
-      -62.4,
-      78.2,
+      -51.6,
+      -7.4,
+      -84.8,
       -2.7
     ],
-    "id": "light-v4-deduction-master-window-23-1",
+    "id": "light-v5-deduction-master-window-23-1",
     "name": "As janelas da última curva",
     "hint": "As duas entradas podem alcançar o mesmo espelho, mas não oferecem as mesmas chegadas.",
-    "sourceAngle": 17.921866005411545,
+    "sourceAngle": 159.92186600541154,
     "target": {
       "x": 474.1,
       "y": 218.2,
@@ -60465,41 +60947,41 @@ export const lightLevels = [
         "y": 105.7,
         "type": "mirror",
         "length": 124.8,
-        "angle": 16
+        "angle": -76
       },
       {
         "x": 582.9,
         "y": 95.7,
         "type": "mirror",
         "length": 124.8,
-        "angle": -14.9
+        "angle": 21.1
       },
       {
         "x": 366,
         "y": 281.1,
         "type": "mirror",
         "length": 124.8,
-        "angle": 57.5
+        "angle": 47.5
       }
     ],
     "sources": [
       {
-        "x": 30,
-        "y": 74.9,
+        "x": 417.7618133675719,
+        "y": 129.92831762226072,
         "color": "gold",
-        "angle": 10.322735559982544
+        "angle": 186.32273555998253
       },
       {
-        "x": 770,
-        "y": 78.3,
+        "x": 642.2634032923661,
+        "y": 233.453353315075,
         "color": "blue",
-        "angle": 174.68686644306962
+        "angle": 246.68686644306962
       },
       {
-        "x": 366,
-        "y": 440,
+        "x": 417.3030214988503,
+        "y": 422.0538931178863,
         "color": "pink",
-        "angle": -90
+        "angle": -110
       }
     ],
     "targets": [
@@ -60637,14 +61119,14 @@ export const lightLevels = [
     "width": 800,
     "height": 460,
     "solution": [
-      16,
-      76.1,
-      57.5
+      -76,
+      -67.9,
+      47.5
     ],
-    "id": "light-v4-master-reserve-015",
+    "id": "light-v5-master-reserve-015",
     "name": "Condições entre 3, 3, 2 rotas",
     "hint": "Considere uma rota de cada vez e siga o que ela exige das outras duas cores.",
-    "sourceAngle": 10.322735559982544,
+    "sourceAngle": 186.32273555998253,
     "target": {
       "x": 755,
       "y": 325.9,
@@ -60667,41 +61149,41 @@ export const lightLevels = [
         "y": 105.7,
         "type": "mirror",
         "length": 124.8,
-        "angle": 16
+        "angle": -76
       },
       {
         "x": 582.9,
         "y": 95.7,
         "type": "mirror",
         "length": 124.8,
-        "angle": -14.9
+        "angle": 21.1
       },
       {
         "x": 366,
         "y": 281.1,
         "type": "mirror",
         "length": 124.8,
-        "angle": 57.5
+        "angle": 89.5
       }
     ],
     "sources": [
       {
-        "x": 30,
-        "y": 74.9,
+        "x": 417.7618133675719,
+        "y": 129.92831762226072,
         "color": "gold",
-        "angle": 10.322735559982544
+        "angle": 186.32273555998253
       },
       {
-        "x": 770,
-        "y": 78.3,
+        "x": 642.2634032923661,
+        "y": 233.453353315075,
         "color": "blue",
-        "angle": 174.68686644306962
+        "angle": 246.68686644306962
       },
       {
-        "x": 366,
-        "y": 440,
+        "x": 231.18089305512495,
+        "y": 346.85567201836164,
         "color": "pink",
-        "angle": -90
+        "angle": -26
       }
     ],
     "targets": [
@@ -60795,14 +61277,14 @@ export const lightLevels = [
     "width": 800,
     "height": 460,
     "solution": [
-      16,
-      76.1,
-      57.5
+      -76,
+      -67.9,
+      89.5
     ],
-    "id": "light-v4-master-005",
+    "id": "light-v5-master-005",
     "name": "O acordo impossível",
     "hint": "Considere uma rota de cada vez e siga o que ela exige das outras duas cores.",
-    "sourceAngle": 10.322735559982544,
+    "sourceAngle": 186.32273555998253,
     "target": {
       "x": 755,
       "y": 325.9,
@@ -60821,126 +61303,126 @@ export const lightLevels = [
   {
     "objects": [
       {
-        "x": 215.4,
-        "y": 151.5,
+        "x": 181.2,
+        "y": 117.3,
         "type": "mirror",
         "length": 124.8,
-        "angle": 33.3
+        "angle": -1.5
       },
       {
-        "x": 597.8,
-        "y": 110,
+        "x": 592.9,
+        "y": 104,
         "type": "mirror",
         "length": 124.8,
-        "angle": 8.8
+        "angle": 42
       },
       {
-        "x": 420,
-        "y": 277.2,
+        "x": 393.6,
+        "y": 280.5,
         "type": "mirror",
         "length": 124.8,
-        "angle": -26.6
+        "angle": -2.8
       },
       {
         "type": "mirror",
-        "x": 374,
-        "y": 102.3,
+        "x": 726.5,
+        "y": 259,
         "length": 124.8,
-        "angle": 74.1
+        "angle": 82.6
       },
       {
         "type": "wall",
         "x": 100,
-        "y": 45.53306364617044,
-        "length": 91.06612729234088,
-        "width": 12,
-        "angle": 90
-      },
-      {
-        "type": "wall",
-        "x": 100,
-        "y": 254.66549214252896,
-        "length": 92.87058191976229,
+        "y": 69.90106393716306,
+        "length": 139.80212787432612,
         "width": 12,
         "angle": 90
       },
       {
         "type": "wall",
         "x": 100,
-        "y": 394.55039155120505,
-        "length": 130.8992168975899,
+        "y": 203.6847443526678,
+        "length": 86.0305112946644,
         "width": 12,
         "angle": 90
       },
       {
         "type": "wall",
-        "x": 290,
-        "y": 55.11910533783306,
-        "length": 110.23821067566612,
+        "x": 100,
+        "y": 408.20704821432207,
+        "length": 103.58590357135586,
         "width": 12,
         "angle": 90
       },
       {
         "type": "wall",
-        "x": 290,
-        "y": 182.5281260679675,
-        "length": 72.5798307846027,
+        "x": 260,
+        "y": 67.23907497396148,
+        "length": 134.47814994792296,
         "width": 12,
         "angle": 90
       },
       {
         "type": "wall",
-        "x": 290,
-        "y": 357.40902073013444,
-        "length": 205.18195853973117,
+        "x": 260,
+        "y": 198.18165947510425,
+        "length": 87.10653006054181,
+        "width": 12,
+        "angle": 90
+      },
+      {
+        "type": "wall",
+        "x": 260,
+        "y": 394.8674622526876,
+        "length": 130.26507549462485,
         "width": 12,
         "angle": 90
       }
     ],
     "sources": [
       {
-        "x": 30,
-        "y": 76.9,
+        "x": 42.1991785068806,
+        "y": 173.68059616781258,
         "color": "gold",
-        "angle": 21.918535057199076
+        "angle": -22.078133994588455
       },
       {
-        "x": 770,
-        "y": 40.4,
+        "x": 541.349791557406,
+        "y": 244.86367881581506,
         "color": "blue",
-        "angle": 157.992367842636
+        "angle": 290.10051016264254
       },
       {
-        "x": 420,
-        "y": 440,
+        "x": 243.69137594713567,
+        "y": 285.73492450537515,
         "color": "pink",
-        "angle": -90
+        "angle": -2
       }
     ],
     "targets": [
       {
-        "x": 345.1,
-        "y": 222.9,
-        "radius": 22,
-        "color": "gold"
+        "x": 474.1,
+        "y": 218.2,
+        "color": "gold",
+        "radius": 22
       },
       {
-        "x": 61.1,
-        "y": 330.9,
+        "x": 59.6,
+        "y": 365.6,
         "color": "blue",
         "radius": 22
       },
       {
-        "x": 714.4,
-        "y": 138.3,
+        "x": 672.4,
+        "y": 388.1,
         "color": "pink",
         "radius": 22
       }
     ],
     "portals": [
       {
-        "x": 28.8,
-        "y": 220.8,
+        "x": 162.2,
+        "y": 272.7,
         "id": "gold1a",
         "pairId": "gold1b",
         "label": "A",
@@ -60950,8 +61432,8 @@ export const lightLevels = [
         ]
       },
       {
-        "x": 584.9,
-        "y": 23.9,
+        "x": 486.2,
+        "y": 119.5,
         "id": "gold1b",
         "pairId": "gold1a",
         "label": "A",
@@ -60961,8 +61443,8 @@ export const lightLevels = [
         ]
       },
       {
-        "x": 145.2,
-        "y": 75.7,
+        "x": 145.6,
+        "y": 30.3,
         "id": "gold2a",
         "pairId": "gold2b",
         "label": "B",
@@ -60972,8 +61454,8 @@ export const lightLevels = [
         ]
       },
       {
-        "x": 483.7,
-        "y": 220.8,
+        "x": 517.3,
+        "y": 323.6,
         "id": "gold2b",
         "pairId": "gold2a",
         "label": "B",
@@ -60983,8 +61465,8 @@ export const lightLevels = [
         ]
       },
       {
-        "x": 569.3,
-        "y": 252.9,
+        "x": 650.9,
+        "y": 294.3,
         "id": "blue1a",
         "pairId": "blue1b",
         "label": "C",
@@ -60994,8 +61476,8 @@ export const lightLevels = [
         ]
       },
       {
-        "x": 94.7,
-        "y": 162.7,
+        "x": 32.2,
+        "y": 275.8,
         "id": "blue1b",
         "pairId": "blue1a",
         "label": "C",
@@ -61005,8 +61487,8 @@ export const lightLevels = [
         ]
       },
       {
-        "x": 459.1,
-        "y": 45.9,
+        "x": 325.6,
+        "y": 124.4,
         "id": "pink1a",
         "pairId": "pink1b",
         "label": "D",
@@ -61016,8 +61498,8 @@ export const lightLevels = [
         ]
       },
       {
-        "x": 692.2,
-        "y": 269.4,
+        "x": 765.1,
+        "y": 347.5,
         "id": "pink1b",
         "pairId": "pink1a",
         "label": "D",
@@ -61025,31 +61507,53 @@ export const lightLevels = [
         "colors": [
           "pink"
         ]
+      },
+      {
+        "x": 465.6,
+        "y": 324.4,
+        "id": "blue2a",
+        "pairId": "blue2b",
+        "label": "E",
+        "radius": 16,
+        "colors": [
+          "blue"
+        ]
+      },
+      {
+        "x": 102.9,
+        "y": 290.7,
+        "id": "blue2b",
+        "pairId": "blue2a",
+        "label": "E",
+        "radius": 16,
+        "colors": [
+          "blue"
+        ]
       }
     ],
     "width": 800,
     "height": 460,
     "solution": [
-      2.3,
-      -22.2,
-      -57.6,
-      43.1
+      37.4,
+      1.6,
+      -57.8,
+      -0.4
     ],
-    "id": "light-v4-deduction-master-window-6-1",
+    "id": "light-v5-deduction-master-window-6-1-reauthored",
     "name": "As janelas da última curva",
     "hint": "As duas entradas podem alcançar o mesmo espelho, mas não oferecem as mesmas chegadas.",
-    "sourceAngle": 21.918535057199076,
+    "sourceAngle": -22.078133994588455,
     "target": {
-      "x": 345.1,
-      "y": 222.9,
-      "radius": 22,
-      "color": "gold"
+      "x": 474.1,
+      "y": 218.2,
+      "color": "gold",
+      "radius": 22
     },
     "requiredBounces": 4,
     "wallPurpose": [],
     "decoyCount": 0,
-    "tutorial": "",
-    "rules": "Leve cada cor ao alvo sem cruzar os feixes.",
+    "tutorial": false,
+    "rules": "Leve cada cor ao seu alvo sem cruzar ou encostar nos trechos físicos das outras luzes.",
     "number": 426,
     "campaignNumber": 426,
     "campaignBand": "master"
@@ -61061,21 +61565,21 @@ export const lightLevels = [
         "y": 105.7,
         "type": "mirror",
         "length": 124.8,
-        "angle": 48.3
+        "angle": 34.3
       },
       {
         "x": 582.9,
         "y": 95.7,
         "type": "mirror",
         "length": 124.8,
-        "angle": -72.9
+        "angle": -59.9
       },
       {
         "x": 366,
         "y": 281.1,
         "type": "mirror",
         "length": 124.8,
-        "angle": 88.5
+        "angle": 80.5
       },
       {
         "type": "mirror",
@@ -61151,22 +61655,22 @@ export const lightLevels = [
     ],
     "sources": [
       {
-        "x": 30,
-        "y": 74.9,
+        "x": 54.27712844222003,
+        "y": 151.85556167742698,
         "color": "gold",
-        "angle": 10.322735559982544
+        "angle": -17.677264440017456
       },
       {
-        "x": 770,
-        "y": 78.3,
+        "x": 751.2945055987452,
+        "y": 159.28687352083094,
         "color": "blue",
-        "angle": 174.68686644306962
+        "angle": 200.68686644306962
       },
       {
-        "x": 366,
-        "y": 440,
+        "x": 410.10197693071984,
+        "y": 434.90187135013105,
         "color": "pink",
-        "angle": -90
+        "angle": -106
       }
     ],
     "targets": [
@@ -61304,15 +61808,15 @@ export const lightLevels = [
     "width": 800,
     "height": 460,
     "solution": [
-      17.3,
-      76.1,
-      57.5,
+      3.3,
+      89.1,
+      49.5,
       -17.9
     ],
-    "id": "light-v4-deduction-master-window-19-1",
+    "id": "light-v5-deduction-master-window-19-1",
     "name": "As janelas da última curva",
     "hint": "As duas entradas podem alcançar o mesmo espelho, mas não oferecem as mesmas chegadas.",
-    "sourceAngle": 10.322735559982544,
+    "sourceAngle": -17.677264440017456,
     "target": {
       "x": 756.5,
       "y": 228.7,
@@ -61329,7 +61833,7 @@ export const lightLevels = [
     "campaignBand": "master"
   },
   {
-    "id": "light-v4-open-hard-third-2",
+    "id": "light-v5-open-hard-third-2",
     "width": 800,
     "height": 460,
     "objects": [
@@ -61369,10 +61873,10 @@ export const lightLevels = [
         "color": "blue"
       },
       {
-        "x": 10,
-        "y": 56.4,
-        "color": "pink",
-        "angle": 3.453484043552125
+        "x": 770,
+        "y": 130,
+        "angle": 180,
+        "color": "pink"
       }
     ],
     "targets": [
@@ -61389,10 +61893,10 @@ export const lightLevels = [
         "color": "blue"
       },
       {
-        "x": 596.6,
-        "y": 91.8,
-        "radius": 22,
-        "color": "pink"
+        "x": 440,
+        "y": 130,
+        "color": "pink",
+        "radius": 22
       }
     ],
     "portals": [],
@@ -61417,7 +61921,8 @@ export const lightLevels = [
     "rules": "Leve cada cor ao seu alvo sem cruzar outras cores.",
     "number": 428,
     "campaignNumber": 428,
-    "campaignBand": "master"
+    "campaignBand": "master",
+    "relatedPreviousId": "light-v4-open-hard-third-2"
   },
   {
     "objects": [
@@ -61426,40 +61931,40 @@ export const lightLevels = [
         "x": 200,
         "y": 86,
         "length": 124.8,
-        "angle": 14.7
+        "angle": -67.3
       },
       {
         "type": "mirror",
         "x": 600,
         "y": 230,
         "length": 124.8,
-        "angle": -0.4
+        "angle": 89.6
       },
       {
         "type": "mirror",
         "x": 200,
         "y": 374,
         "length": 124.8,
-        "angle": -14.9
+        "angle": 73.1
       }
     ],
     "sources": [
       {
-        "x": 30,
-        "y": 86,
-        "angle": 0,
+        "x": 344.1892543907478,
+        "y": 127.34560337254996,
+        "angle": -164,
         "color": "gold"
       },
       {
-        "x": 770,
+        "x": 450,
         "y": 230,
-        "angle": 180,
+        "angle": 0,
         "color": "blue"
       },
       {
-        "x": 30,
-        "y": 374,
-        "angle": 0,
+        "x": 349.6346075389736,
+        "y": 363.5365289383812,
+        "angle": 176,
         "color": "pink"
       }
     ],
@@ -61619,15 +62124,15 @@ export const lightLevels = [
     ],
     "width": 800,
     "height": 460,
-    "id": "light-v4-portal-904",
+    "id": "light-v5-portal-904",
     "name": "A consequência distante 904",
-    "hint": "Uma escolha aqui pode atrapalhar uma luz do outro lado.",
+    "hint": "Uma escolha aqui pode interferir em outra região.",
     "solution": [
-      3,
-      -0.4,
-      -2
+      -79,
+      89.6,
+      86
     ],
-    "sourceAngle": 0,
+    "sourceAngle": -164,
     "target": {
       "x": 710,
       "y": 374,
@@ -61650,41 +62155,41 @@ export const lightLevels = [
         "y": 152.5,
         "type": "mirror",
         "length": 124.8,
-        "angle": 18
+        "angle": -26
       },
       {
         "x": 575.9,
         "y": 119.4,
         "type": "mirror",
         "length": 124.8,
-        "angle": -22.3
+        "angle": -2.3
       },
       {
         "x": 418.6,
         "y": 270.5,
         "type": "mirror",
         "length": 124.8,
-        "angle": -56
+        "angle": 80
       }
     ],
     "sources": [
       {
-        "x": 30,
-        "y": 53.8,
+        "x": 130.07263110700202,
+        "y": 280.971796696036,
         "color": "gold",
-        "angle": 29.076525008390387
+        "angle": -58.92347499160961
       },
       {
-        "x": 770,
-        "y": 44.3,
+        "x": 717.8569688438056,
+        "y": 167.85842544572395,
         "color": "blue",
-        "angle": 158.84785013170438
+        "angle": 198.84785013170438
       },
       {
-        "x": 418.6,
-        "y": 440,
+        "x": 568.5086240528644,
+        "y": 275.7349245053751,
         "color": "pink",
-        "angle": -90
+        "angle": -178
       }
     ],
     "targets": [
@@ -61800,14 +62305,14 @@ export const lightLevels = [
     "width": 800,
     "height": 460,
     "solution": [
-      48.3,
-      -57.6,
-      -88.8
+      4.3,
+      -37.6,
+      47.2
     ],
-    "id": "light-v4-master-contrast-003",
+    "id": "light-v5-master-contrast-003",
     "name": "O alvo mudou o acordo",
     "hint": "Compare a nova aproximação ao alvo com as rotas que antes eram compatíveis.",
-    "sourceAngle": 29.076525008390387,
+    "sourceAngle": -58.92347499160961,
     "target": {
       "x": 516.8,
       "y": 190.3,
@@ -61830,21 +62335,21 @@ export const lightLevels = [
         "y": 117.3,
         "type": "mirror",
         "length": 124.8,
-        "angle": 88.4
+        "angle": 56.4
       },
       {
         "x": 592.9,
         "y": 104,
         "type": "mirror",
         "length": 124.8,
-        "angle": -31.4
+        "angle": 68.6
       },
       {
         "x": 393.6,
         "y": 280.5,
         "type": "mirror",
         "length": 124.8,
-        "angle": -70.8
+        "angle": -58.8
       },
       {
         "type": "mirror",
@@ -61904,22 +62409,22 @@ export const lightLevels = [
     ],
     "sources": [
       {
-        "x": 30,
-        "y": 68.4,
+        "x": 64.66230357663268,
+        "y": 238.30812085283816,
         "color": "gold",
-        "angle": 17.921866005411545
+        "angle": -46.078133994588455
       },
       {
-        "x": 770,
-        "y": 46.8,
+        "x": 413.0209478566949,
+        "y": 97.4025307862703,
         "color": "blue",
-        "angle": 162.10051016264254
+        "angle": 2.1005101626425358
       },
       {
-        "x": 393.6,
-        "y": 440,
+        "x": 333.4029768247816,
+        "y": 415.7047277311049,
         "color": "pink",
-        "angle": -90
+        "angle": -66
       }
     ],
     "targets": [
@@ -62057,15 +62562,15 @@ export const lightLevels = [
     "width": 800,
     "height": 460,
     "solution": [
-      57.4,
-      -62.4,
-      78.2,
+      25.4,
+      37.6,
+      -89.8,
       -5.2
     ],
-    "id": "light-v4-deduction-master-window-9-1",
+    "id": "light-v5-deduction-master-window-9-1",
     "name": "As janelas da última curva",
     "hint": "As duas entradas podem alcançar o mesmo espelho, mas não oferecem as mesmas chegadas.",
-    "sourceAngle": 17.921866005411545,
+    "sourceAngle": -46.078133994588455,
     "target": {
       "x": 474.1,
       "y": 218.2,
@@ -62088,40 +62593,40 @@ export const lightLevels = [
         "x": 200,
         "y": 86,
         "length": 124.8,
-        "angle": 14.7
+        "angle": -61.3
       },
       {
         "type": "mirror",
         "x": 600,
         "y": 230,
         "length": 124.8,
-        "angle": -0.4
+        "angle": -84.4
       },
       {
         "type": "mirror",
         "x": 200,
         "y": 374,
         "length": 124.8,
-        "angle": -14.9
+        "angle": 61.1
       }
     ],
     "sources": [
       {
-        "x": 30,
-        "y": 86,
-        "angle": 0,
+        "x": 332.44213892883903,
+        "y": 156.42073441788366,
+        "angle": -152,
         "color": "gold"
       },
       {
-        "x": 770,
-        "y": 230,
-        "angle": 180,
+        "x": 453.2778598899291,
+        "y": 198.8132463773361,
+        "angle": 12,
         "color": "blue"
       },
       {
-        "x": 30,
-        "y": 374,
-        "angle": 0,
+        "x": 332.44213892883903,
+        "y": 303.57926558211636,
+        "angle": 152,
         "color": "pink"
       }
     ],
@@ -62238,8 +62743,8 @@ export const lightLevels = [
         "id": "p1a",
         "pairId": "p1b",
         "label": "E",
-        "x": 373.7,
-        "y": 159.5,
+        "x": 416.8,
+        "y": 106.3,
         "radius": 16,
         "colors": [
           "pink"
@@ -62281,15 +62786,15 @@ export const lightLevels = [
     ],
     "width": 800,
     "height": 460,
-    "id": "light-v4-portal-941",
+    "id": "light-v5-portal-941",
     "name": "A saída decide 941",
     "hint": "Compare o que acontece depois de cada saída.",
     "solution": [
-      -1.6,
-      -0.4,
-      -2
+      -77.6,
+      -84.4,
+      74
     ],
-    "sourceAngle": 0,
+    "sourceAngle": -152,
     "target": {
       "x": 710,
       "y": 374,
@@ -62309,50 +62814,50 @@ export const lightLevels = [
     "objects": [
       {
         "type": "mirror",
-        "x": 580,
-        "y": 86,
+        "x": 599,
+        "y": 110,
         "length": 124.8,
-        "angle": -54.8
+        "angle": -53.2
       },
       {
         "type": "mirror",
         "x": 200,
         "y": 230,
         "length": 124.8,
-        "angle": 0.4
+        "angle": -89.6
       },
       {
         "type": "mirror",
         "x": 200,
         "y": 374,
         "length": 124.8,
-        "angle": -15
+        "angle": 65
       }
     ],
     "sources": [
       {
-        "x": 770,
-        "y": 86,
-        "angle": 180,
+        "x": 731.4421389288391,
+        "y": 39.579265582116335,
+        "angle": 152,
         "color": "gold"
       },
       {
-        "x": 30,
+        "x": 350,
         "y": 230,
-        "angle": 0,
+        "angle": 180,
         "color": "blue"
       },
       {
-        "x": 30,
+        "x": 350,
         "y": 374,
-        "angle": 0,
+        "angle": -180,
         "color": "pink"
       }
     ],
     "targets": [
       {
-        "x": 650,
-        "y": 283,
+        "x": 550,
+        "y": 350,
         "radius": 22,
         "color": "gold"
       },
@@ -62374,8 +62879,8 @@ export const lightLevels = [
         "id": "g1a",
         "pairId": "g1b",
         "label": "A",
-        "x": 471,
-        "y": 46.3,
+        "x": 496.581734306218,
+        "y": 72.6972004766684,
         "radius": 16,
         "colors": [
           "gold"
@@ -62407,8 +62912,8 @@ export const lightLevels = [
         "id": "g1d",
         "pairId": "g1c",
         "label": "B",
-        "x": 749.6,
-        "y": 319.3,
+        "x": 649.6,
+        "y": 386.3,
         "radius": 16,
         "colors": [
           "gold"
@@ -62418,8 +62923,8 @@ export const lightLevels = [
         "id": "b1a",
         "pairId": "b1b",
         "label": "C",
-        "x": 179.4,
-        "y": 62.3,
+        "x": 412.5,
+        "y": 173.1,
         "radius": 16,
         "colors": [
           "blue"
@@ -62429,8 +62934,8 @@ export const lightLevels = [
         "id": "b1b",
         "pairId": "b1a",
         "label": "C",
-        "x": 703.2,
-        "y": 343.2,
+        "x": 496.8,
+        "y": 287.8,
         "radius": 16,
         "colors": [
           "blue"
@@ -62440,8 +62945,8 @@ export const lightLevels = [
         "id": "b2a",
         "pairId": "b2b",
         "label": "D",
-        "x": 308.9,
-        "y": 121.1,
+        "x": 338.6,
+        "y": 150,
         "radius": 16,
         "colors": [
           "blue"
@@ -62451,8 +62956,8 @@ export const lightLevels = [
         "id": "b2b",
         "pairId": "b2a",
         "label": "D",
-        "x": 581.8,
-        "y": 344.2,
+        "x": 499.5,
+        "y": 346,
         "radius": 16,
         "colors": [
           "blue"
@@ -62505,18 +63010,18 @@ export const lightLevels = [
     ],
     "width": 800,
     "height": 460,
-    "id": "light-v4-portal-876",
-    "name": "Um acesso para voltar 876",
-    "hint": "Procure o acesso que permite voltar ao setor do alvo.",
+    "id": "light-v5-portal-876",
+    "name": "Sair para recompor a chegada",
+    "hint": "Reconstrua a chegada dourada e compare o que o acesso azul libera para rosa.",
     "solution": [
-      10,
-      0.4,
-      -25
+      -4,
+      -89.6,
+      65
     ],
-    "sourceAngle": 180,
+    "sourceAngle": 152,
     "target": {
-      "x": 650,
-      "y": 283,
+      "x": 550,
+      "y": 350,
       "radius": 22,
       "color": "gold"
     },
@@ -62536,41 +63041,41 @@ export const lightLevels = [
         "y": 105.7,
         "type": "mirror",
         "length": 124.8,
-        "angle": 16
+        "angle": -76
       },
       {
         "x": 582.9,
         "y": 95.7,
         "type": "mirror",
         "length": 124.8,
-        "angle": -14.9
+        "angle": 21.1
       },
       {
         "x": 366,
         "y": 281.1,
         "type": "mirror",
         "length": 124.8,
-        "angle": 57.5
+        "angle": 47.5
       }
     ],
     "sources": [
       {
-        "x": 30,
-        "y": 74.9,
+        "x": 417.7618133675719,
+        "y": 129.92831762226072,
         "color": "gold",
-        "angle": 10.322735559982544
+        "angle": 186.32273555998253
       },
       {
-        "x": 770,
-        "y": 78.3,
+        "x": 642.2634032923661,
+        "y": 233.453353315075,
         "color": "blue",
-        "angle": 174.68686644306962
+        "angle": 246.68686644306962
       },
       {
-        "x": 366,
-        "y": 440,
+        "x": 417.3030214988503,
+        "y": 422.0538931178863,
         "color": "pink",
-        "angle": -90
+        "angle": -110
       }
     ],
     "targets": [
@@ -62708,14 +63213,14 @@ export const lightLevels = [
     "width": 800,
     "height": 460,
     "solution": [
-      16,
-      76.1,
-      57.5
+      -76,
+      -67.9,
+      47.5
     ],
-    "id": "light-v4-master-reserve-013",
+    "id": "light-v5-master-reserve-013",
     "name": "Condições entre 3, 3, 2 rotas",
     "hint": "Considere uma rota de cada vez e siga o que ela exige das outras duas cores.",
-    "sourceAngle": 10.322735559982544,
+    "sourceAngle": 186.32273555998253,
     "target": {
       "x": 755,
       "y": 325.9,
@@ -62738,102 +63243,118 @@ export const lightLevels = [
         "y": 105.7,
         "type": "mirror",
         "length": 124.8,
-        "angle": 68.9
+        "angle": -23.1
       },
       {
         "x": 582.9,
         "y": 95.7,
         "type": "mirror",
         "length": 124.8,
-        "angle": -72.9
+        "angle": -51.9
       },
       {
         "x": 366,
         "y": 281.1,
         "type": "mirror",
         "length": 124.8,
-        "angle": -46.9
+        "angle": -55.9
       },
       {
         "type": "mirror",
         "x": 628.4,
         "y": 350.5,
         "length": 124.8,
-        "angle": 71.3
+        "angle": 33.8
       },
       {
         "type": "wall",
-        "x": 270,
-        "y": 68.05168369671088,
-        "length": 136.10336739342176,
+        "x": 280,
+        "y": 52.99956082628109,
+        "length": 105.99912165256218,
         "width": 12,
         "angle": 90
       },
       {
         "type": "wall",
-        "x": 270,
-        "y": 177.7016836967109,
-        "length": 43.19663260657825,
+        "x": 280,
+        "y": 131.8557889529954,
+        "length": 17.05406998589322,
         "width": 12,
         "angle": 90
       },
       {
         "type": "wall",
-        "x": 270,
-        "y": 418.55,
-        "length": 82.89999999999998,
+        "x": 280,
+        "y": 180.26059680175143,
+        "length": 34.078806396497185,
         "width": 12,
         "angle": 90
       },
       {
         "type": "wall",
-        "x": 440,
-        "y": 20.200000000000003,
-        "length": 40.400000000000006,
-        "width": 12,
-        "angle": 90
-      },
-      {
-        "type": "wall",
-        "x": 440,
-        "y": 201.88199892319034,
-        "length": 46.19654390468551,
+        "x": 280,
+        "y": 419.55,
+        "length": 80.89999999999998,
         "width": 12,
         "angle": 90
       },
       {
         "type": "wall",
         "x": 440,
-        "y": 360.4901354377665,
-        "length": 199.0197291244669,
+        "y": 19.200000000000003,
+        "length": 38.400000000000006,
+        "width": 12,
+        "angle": 90
+      },
+      {
+        "type": "wall",
+        "x": 440,
+        "y": 143.92208413863705,
+        "length": 12.257892216904025,
+        "width": 12,
+        "angle": 90
+      },
+      {
+        "type": "wall",
+        "x": 440,
+        "y": 201.53875487067936,
+        "length": 60.0446623521467,
+        "width": 12,
+        "angle": 90
+      },
+      {
+        "type": "wall",
+        "x": 440,
+        "y": 317.0789665742933,
+        "length": 125.35902173995956,
         "width": 12,
         "angle": 90
       }
     ],
     "sources": [
       {
-        "x": 30,
-        "y": 74.9,
+        "x": 348.1876000233445,
+        "y": 122.21930746972322,
         "color": "gold",
-        "angle": 10.322735559982544
+        "angle": 186.32273555998253
       },
       {
-        "x": 770,
-        "y": 78.3,
+        "x": 711.2060180947492,
+        "y": 191.29061523324296,
         "color": "blue",
-        "angle": 174.68686644306962
+        "angle": 216.68686644306962
       },
       {
-        "x": 366,
-        "y": 440,
+        "x": 412.3525491562421,
+        "y": 423.75847744427307,
         "color": "pink",
-        "angle": -90
+        "angle": -108
       }
     ],
     "targets": [
       {
-        "x": 773.3,
-        "y": 389.4,
+        "x": 673.4,
+        "y": 272.5577136594005,
         "radius": 22,
         "color": "gold"
       },
@@ -62965,18 +63486,18 @@ export const lightLevels = [
     "width": 800,
     "height": 460,
     "solution": [
-      37.9,
-      76.1,
-      -77.9,
-      40.3
+      -54.1,
+      -82.9,
+      -86.9,
+      2.8
     ],
-    "id": "light-v4-deduction-master-window-17-1",
+    "id": "light-v5-deduction-master-window-17-1",
     "name": "As janelas da última curva",
     "hint": "As duas entradas podem alcançar o mesmo espelho, mas não oferecem as mesmas chegadas.",
-    "sourceAngle": 10.322735559982544,
+    "sourceAngle": 186.32273555998253,
     "target": {
-      "x": 773.3,
-      "y": 389.4,
+      "x": 673.4,
+      "y": 272.5577136594005,
       "radius": 22,
       "color": "gold"
     },
@@ -62996,40 +63517,40 @@ export const lightLevels = [
         "x": 200,
         "y": 86,
         "length": 124.8,
-        "angle": 14.7
+        "angle": -25.3
       },
       {
         "type": "mirror",
         "x": 600,
         "y": 230,
         "length": 124.8,
-        "angle": -0.4
+        "angle": -84.4
       },
       {
         "type": "mirror",
         "x": 200,
         "y": 374,
         "length": 124.8,
-        "angle": -14.9
+        "angle": 73.1
       }
     ],
     "sources": [
       {
         "x": 30,
-        "y": 86,
-        "angle": 0,
+        "y": 126,
+        "angle": -80,
         "color": "gold"
       },
       {
-        "x": 770,
-        "y": 230,
-        "angle": 180,
+        "x": 453.2778598899291,
+        "y": 198.8132463773361,
+        "angle": 12,
         "color": "blue"
       },
       {
-        "x": 30,
-        "y": 374,
-        "angle": 0,
+        "x": 349.6346075389736,
+        "y": 363.5365289383812,
+        "angle": 176,
         "color": "pink"
       }
     ],
@@ -63185,19 +63706,41 @@ export const lightLevels = [
         "colors": [
           "pink"
         ]
+      },
+      {
+        "x": 37.81416799501187,
+        "y": 81.68365111445064,
+        "id": "angle-access-0a",
+        "pairId": "angle-access-0b",
+        "label": "J",
+        "radius": 16,
+        "colors": [
+          "gold"
+        ]
+      },
+      {
+        "x": 185.066256720644,
+        "y": 170.6934667590499,
+        "id": "angle-access-0b",
+        "pairId": "angle-access-0a",
+        "label": "J",
+        "radius": 16,
+        "colors": [
+          "gold"
+        ]
       }
     ],
     "width": 800,
     "height": 460,
-    "id": "light-v4-portal-962",
+    "id": "light-v5-portal-962",
     "name": "A consequência distante 962",
-    "hint": "Uma escolha aqui pode atrapalhar uma luz do outro lado.",
+    "hint": "Uma escolha aqui pode interferir em outra região.",
     "solution": [
-      -1.6,
-      -0.4,
-      -2
+      -41.6,
+      -84.4,
+      86
     ],
-    "sourceAngle": 0,
+    "sourceAngle": -80,
     "target": {
       "x": 710,
       "y": 374,
@@ -63216,126 +63759,134 @@ export const lightLevels = [
   {
     "objects": [
       {
-        "x": 207.5,
-        "y": 152.5,
+        "x": 181.2,
+        "y": 117.3,
         "type": "mirror",
         "length": 124.8,
-        "angle": -41.9
+        "angle": -1.5
       },
       {
-        "x": 575.9,
-        "y": 119.4,
+        "x": 592.9,
+        "y": 104,
         "type": "mirror",
         "length": 124.8,
-        "angle": 8.7
+        "angle": 42
       },
       {
-        "x": 418.6,
-        "y": 270.5,
+        "x": 393.6,
+        "y": 280.5,
         "type": "mirror",
         "length": 124.8,
-        "angle": -19.4
+        "angle": -24.8
       },
       {
         "type": "mirror",
-        "x": 100.6,
-        "y": 326.4,
+        "x": 726.5,
+        "y": 259,
         "length": 124.8,
-        "angle": -57.3
+        "angle": 78.7
       },
       {
         "type": "wall",
-        "x": 280,
-        "y": 71.65180245587024,
-        "length": 143.30360491174048,
+        "x": 260,
+        "y": 67.23907497396148,
+        "length": 134.47814994792296,
         "width": 12,
         "angle": 90
       },
       {
         "type": "wall",
-        "x": 280,
-        "y": 204.5222350099415,
-        "length": 50.437260196402065,
+        "x": 260,
+        "y": 205.38933063845576,
+        "length": 101.52187238724483,
         "width": 12,
         "angle": 90
       },
       {
         "type": "wall",
-        "x": 280,
-        "y": 287.7371917846684,
-        "length": 43.992653353051764,
+        "x": 260,
+        "y": 311.2150543575972,
+        "length": 66.37183138640103,
         "width": 12,
         "angle": 90
       },
       {
         "type": "wall",
-        "x": 650,
-        "y": 40.36483771251928,
-        "length": 80.72967542503856,
+        "x": 260,
+        "y": 446.20048502539885,
+        "length": 27.599029949202304,
         "width": 12,
         "angle": 90
       },
       {
         "type": "wall",
-        "x": 650,
-        "y": 130.96483771251928,
-        "length": 60.47032457496141,
+        "x": 520,
+        "y": 37.75,
+        "length": 75.5,
         "width": 12,
         "angle": 90
       },
       {
         "type": "wall",
-        "x": 650,
-        "y": 352.6,
-        "length": 214.8,
+        "x": 520,
+        "y": 182.18183940790755,
+        "length": 37.363678815815064,
+        "width": 12,
+        "angle": 90
+      },
+      {
+        "type": "wall",
+        "x": 520,
+        "y": 413.8,
+        "length": 92.39999999999998,
         "width": 12,
         "angle": 90
       }
     ],
     "sources": [
       {
-        "x": 30,
-        "y": 53.8,
+        "x": 42.1991785068806,
+        "y": 173.68059616781258,
         "color": "gold",
-        "angle": 29.076525008390387
+        "angle": -22.078133994588455
       },
       {
-        "x": 770,
-        "y": 44.3,
+        "x": 541.349791557406,
+        "y": 244.86367881581506,
         "color": "blue",
-        "angle": 158.84785013170438
+        "angle": 290.10051016264254
       },
       {
-        "x": 418.6,
-        "y": 440,
+        "x": 289.4012444311504,
+        "y": 388.4009700507977,
         "color": "pink",
-        "angle": -90
+        "angle": -46
       }
     ],
     "targets": [
       {
-        "x": 516.8,
-        "y": 190.3,
+        "x": 474.1,
+        "y": 218.2,
         "color": "gold",
         "radius": 22
       },
       {
-        "x": 276.1,
-        "y": 415.1,
+        "x": 59.6,
+        "y": 365.6,
         "color": "blue",
         "radius": 22
       },
       {
-        "x": 738.4,
-        "y": 209.5,
+        "x": 705.7,
+        "y": 336.3,
         "color": "pink",
         "radius": 22
       }
     ],
     "portals": [
       {
-        "x": 76.8,
-        "y": 140.8,
+        "x": 162.2,
+        "y": 272.7,
         "id": "gold1a",
         "pairId": "gold1b",
         "label": "A",
@@ -63345,8 +63896,8 @@ export const lightLevels = [
         ]
       },
       {
-        "x": 660.4,
-        "y": 203.2,
+        "x": 486.2,
+        "y": 119.5,
         "id": "gold1b",
         "pairId": "gold1a",
         "label": "A",
@@ -63356,8 +63907,8 @@ export const lightLevels = [
         ]
       },
       {
-        "x": 295.4,
-        "y": 364.2,
+        "x": 145.6,
+        "y": 30.3,
         "id": "gold2a",
         "pairId": "gold2b",
         "label": "B",
@@ -63367,8 +63918,8 @@ export const lightLevels = [
         ]
       },
       {
-        "x": 469.3,
-        "y": 76,
+        "x": 517.3,
+        "y": 323.6,
         "id": "gold2b",
         "pairId": "gold2a",
         "label": "B",
@@ -63378,8 +63929,8 @@ export const lightLevels = [
         ]
       },
       {
-        "x": 591,
-        "y": 332.3,
+        "x": 650.9,
+        "y": 294.3,
         "id": "blue1a",
         "pairId": "blue1b",
         "label": "C",
@@ -63389,8 +63940,8 @@ export const lightLevels = [
         ]
       },
       {
-        "x": 94.5,
-        "y": 239.6,
+        "x": 32.2,
+        "y": 275.8,
         "id": "blue1b",
         "pairId": "blue1a",
         "label": "C",
@@ -63400,8 +63951,8 @@ export const lightLevels = [
         ]
       },
       {
-        "x": 437.2,
-        "y": 38.3,
+        "x": 325.6,
+        "y": 124.4,
         "id": "pink1a",
         "pairId": "pink1b",
         "label": "D",
@@ -63411,8 +63962,8 @@ export const lightLevels = [
         ]
       },
       {
-        "x": 732.2,
-        "y": 287.2,
+        "x": 765.1,
+        "y": 347.5,
         "id": "pink1b",
         "pairId": "pink1a",
         "label": "D",
@@ -63422,51 +63973,51 @@ export const lightLevels = [
         ]
       },
       {
-        "x": 217.3,
-        "y": 35.4,
-        "id": "gold3a",
-        "pairId": "gold3b",
+        "x": 472.2,
+        "y": 314.3,
+        "id": "pink2a",
+        "pairId": "pink2b",
         "label": "E",
         "radius": 16,
         "colors": [
-          "gold"
+          "pink"
         ]
       },
       {
-        "x": 500.7,
-        "y": 383.6,
-        "id": "gold3b",
-        "pairId": "gold3a",
+        "x": 603.5,
+        "y": 206.2,
+        "id": "pink2b",
+        "pairId": "pink2a",
         "label": "E",
         "radius": 16,
         "colors": [
-          "gold"
+          "pink"
         ]
       }
     ],
     "width": 800,
     "height": 460,
     "solution": [
-      -72.9,
-      -22.3,
-      -50.4,
-      -88.3
+      37.4,
+      1.6,
+      -79.8,
+      -4.3
     ],
-    "id": "light-v4-deduction-master-window-3-1",
+    "id": "light-v5-deduction-master-window-3-1-reauthored",
     "name": "As janelas da última curva",
     "hint": "As duas entradas podem alcançar o mesmo espelho, mas não oferecem as mesmas chegadas.",
-    "sourceAngle": 29.076525008390387,
+    "sourceAngle": -22.078133994588455,
     "target": {
-      "x": 516.8,
-      "y": 190.3,
+      "x": 474.1,
+      "y": 218.2,
       "color": "gold",
       "radius": 22
     },
     "requiredBounces": 4,
     "wallPurpose": [],
     "decoyCount": 0,
-    "tutorial": "",
-    "rules": "Leve cada cor ao alvo sem cruzar os feixes.",
+    "tutorial": false,
+    "rules": "Leve cada cor ao seu alvo sem cruzar ou encostar nos trechos físicos das outras luzes.",
     "number": 437,
     "campaignNumber": 437,
     "campaignBand": "master"
@@ -63478,40 +64029,40 @@ export const lightLevels = [
         "x": 200,
         "y": 86,
         "length": 124.8,
-        "angle": 14.7
+        "angle": -75.3
       },
       {
         "type": "mirror",
         "x": 600,
         "y": 230,
         "length": 124.8,
-        "angle": -0.4
+        "angle": 25.6
       },
       {
         "type": "mirror",
         "x": 200,
         "y": 374,
         "length": 124.8,
-        "angle": -14.9
+        "angle": 73.1
       }
     ],
     "sources": [
       {
-        "x": 30,
-        "y": 86,
-        "angle": 0,
+        "x": 350,
+        "y": 86.00000000000001,
+        "angle": -180,
         "color": "gold"
       },
       {
-        "x": 770,
-        "y": 230,
-        "angle": 180,
+        "x": 760.0719835846711,
+        "y": 434.88279593774774,
+        "angle": 232,
         "color": "blue"
       },
       {
-        "x": 30,
-        "y": 374,
-        "angle": 0,
+        "x": 349.6346075389736,
+        "y": 363.5365289383812,
+        "angle": 176,
         "color": "pink"
       }
     ],
@@ -63671,15 +64222,15 @@ export const lightLevels = [
     ],
     "width": 800,
     "height": 460,
-    "id": "light-v4-portal-952",
+    "id": "light-v5-portal-952",
     "name": "A saída decide 952",
     "hint": "Compare o que acontece depois de cada saída.",
     "solution": [
-      -1.6,
-      -0.4,
-      -2
+      88.4,
+      25.6,
+      86
     ],
-    "sourceAngle": 0,
+    "sourceAngle": -180,
     "target": {
       "x": 710,
       "y": 374,
@@ -63702,41 +64253,41 @@ export const lightLevels = [
         "y": 105.7,
         "type": "mirror",
         "length": 124.8,
-        "angle": 16
+        "angle": -76
       },
       {
         "x": 582.9,
         "y": 95.7,
         "type": "mirror",
         "length": 124.8,
-        "angle": -14.9
+        "angle": 21.1
       },
       {
         "x": 366,
         "y": 281.1,
         "type": "mirror",
         "length": 124.8,
-        "angle": 57.5
+        "angle": 89.5
       }
     ],
     "sources": [
       {
-        "x": 30,
-        "y": 74.9,
+        "x": 417.7618133675719,
+        "y": 129.92831762226072,
         "color": "gold",
-        "angle": 10.322735559982544
+        "angle": 186.32273555998253
       },
       {
-        "x": 770,
-        "y": 78.3,
+        "x": 642.2634032923661,
+        "y": 233.453353315075,
         "color": "blue",
-        "angle": 174.68686644306962
+        "angle": 246.68686644306962
       },
       {
-        "x": 366,
-        "y": 440,
+        "x": 231.18089305512495,
+        "y": 346.85567201836164,
         "color": "pink",
-        "angle": -90
+        "angle": -26
       }
     ],
     "targets": [
@@ -63852,14 +64403,14 @@ export const lightLevels = [
     "width": 800,
     "height": 460,
     "solution": [
-      16,
-      76.1,
-      57.5
+      -76,
+      -67.9,
+      89.5
     ],
-    "id": "light-v4-master-reserve-009",
+    "id": "light-v5-master-reserve-009",
     "name": "Condições entre 2, 3, 2 rotas",
     "hint": "Considere uma rota de cada vez e siga o que ela exige das outras duas cores.",
-    "sourceAngle": 10.322735559982544,
+    "sourceAngle": 186.32273555998253,
     "target": {
       "x": 755,
       "y": 325.9,
@@ -63882,21 +64433,21 @@ export const lightLevels = [
         "y": 108.1,
         "type": "mirror",
         "length": 124.8,
-        "angle": 46.9
+        "angle": -65.1
       },
       {
         "x": 605.9,
         "y": 151.5,
         "type": "mirror",
         "length": 124.8,
-        "angle": -35.3
+        "angle": 70.7
       },
       {
         "x": 422.6,
         "y": 281.7,
         "type": "mirror",
         "length": 124.8,
-        "angle": -1.9
+        "angle": -43.9
       },
       {
         "type": "mirror",
@@ -63908,70 +64459,86 @@ export const lightLevels = [
       {
         "type": "wall",
         "x": 320,
-        "y": 62.43653211199326,
-        "length": 124.87306422398652,
+        "y": 25.124865311401766,
+        "length": 50.24973062280353,
         "width": 12,
         "angle": 90
       },
       {
         "type": "wall",
         "x": 320,
-        "y": 180.93704409946696,
-        "length": 72.12795975096091,
+        "y": 99.28723949717502,
+        "length": 50.69704261953065,
         "width": 12,
         "angle": 90
       },
       {
         "type": "wall",
         "x": 320,
-        "y": 348.5005119874737,
-        "length": 222.99897602505257,
+        "y": 181.26345001601788,
+        "length": 72.30616474997012,
         "width": 12,
         "angle": 90
       },
       {
         "type": "wall",
-        "x": 530,
-        "y": 80.7719092684479,
-        "length": 161.5438185368958,
+        "x": 320,
+        "y": 348.29275777944576,
+        "length": 223.4144844411084,
         "width": 12,
         "angle": 90
       },
       {
         "type": "wall",
-        "x": 530,
-        "y": 272,
-        "length": 15.600000000000023,
+        "x": 500,
+        "y": 66.46799945181716,
+        "length": 132.93599890363433,
         "width": 12,
         "angle": 90
       },
       {
         "type": "wall",
-        "x": 530,
+        "x": 500,
+        "y": 159.97532626329397,
+        "length": 19.81291721875823,
+        "width": 12,
+        "angle": 90
+      },
+      {
+        "type": "wall",
+        "x": 500,
+        "y": 245.01473507620986,
+        "length": 65.5705298475803,
+        "width": 12,
+        "angle": 90
+      },
+      {
+        "type": "wall",
+        "x": 500,
         "y": 373.25,
-        "length": 18.899999999999977,
+        "length": 14.899999999999977,
         "width": 12,
         "angle": 90
       }
     ],
     "sources": [
       {
-        "x": 30,
-        "y": 64.3,
+        "x": 374.4977445235747,
+        "y": 27.17485107670261,
         "color": "gold",
-        "angle": 11.350324275233758
+        "angle": 147.35032427523376
       },
       {
-        "x": 770,
-        "y": 69.3,
+        "x": 456.5639980268078,
+        "y": 137.4018258393953,
         "color": "blue",
-        "angle": 153.39306595062106
+        "angle": 5.3930659506210645
       },
       {
-        "x": 422.6,
-        "y": 443.9,
+        "x": 601.6139411662892,
+        "y": 300.51512338817764,
         "color": "pink",
-        "angle": -90
+        "angle": -174
       }
     ],
     "targets": [
@@ -64065,15 +64632,15 @@ export const lightLevels = [
     "width": 800,
     "height": 460,
     "solution": [
-      15.9,
-      -66.3,
-      -32.9,
+      83.9,
+      39.7,
+      -74.9,
       -8.8
     ],
-    "id": "light-v4-deduction-master-window-12-1",
+    "id": "light-v5-deduction-master-window-12-1",
     "name": "As janelas da última curva",
     "hint": "As duas entradas podem alcançar o mesmo espelho, mas não oferecem as mesmas chegadas.",
-    "sourceAngle": 11.350324275233758,
+    "sourceAngle": 147.35032427523376,
     "target": {
       "x": 552.9,
       "y": 222.2,
@@ -64096,40 +64663,40 @@ export const lightLevels = [
         "x": 200,
         "y": 86,
         "length": 124.8,
-        "angle": 14.7
+        "angle": -77.3
       },
       {
         "type": "mirror",
         "x": 600,
         "y": 230,
         "length": 124.8,
-        "angle": -0.4
+        "angle": -22.4
       },
       {
         "type": "mirror",
         "x": 200,
         "y": 374,
         "length": 124.8,
-        "angle": -14.9
+        "angle": 75.1
       }
     ],
     "sources": [
       {
-        "x": 30,
-        "y": 86,
-        "angle": 0,
+        "x": 349.6346075389736,
+        "y": 75.53652893838117,
+        "angle": 176,
         "color": "gold"
       },
       {
-        "x": 770,
-        "y": 230,
-        "angle": 180,
+        "x": 707.9009700507977,
+        "y": 125.80124443115042,
+        "angle": 136,
         "color": "blue"
       },
       {
-        "x": 30,
+        "x": 350,
         "y": 374,
-        "angle": 0,
+        "angle": -180,
         "color": "pink"
       }
     ],
@@ -64289,15 +64856,15 @@ export const lightLevels = [
     ],
     "width": 800,
     "height": 460,
-    "id": "light-v4-portal-921",
+    "id": "light-v5-portal-921",
     "name": "A saída decide 921",
     "hint": "Compare o que acontece depois de cada saída.",
     "solution": [
-      3,
-      -0.4,
-      -2
+      -89,
+      -22.4,
+      88
     ],
-    "sourceAngle": 0,
+    "sourceAngle": 176,
     "target": {
       "x": 710,
       "y": 374,
@@ -64320,41 +64887,41 @@ export const lightLevels = [
         "y": 152.5,
         "type": "mirror",
         "length": 124.8,
-        "angle": 18
+        "angle": -26
       },
       {
         "x": 575.9,
         "y": 119.4,
         "type": "mirror",
         "length": 124.8,
-        "angle": -22.3
+        "angle": -2.3
       },
       {
         "x": 418.6,
         "y": 270.5,
         "type": "mirror",
         "length": 124.8,
-        "angle": -50.4
+        "angle": 85.6
       }
     ],
     "sources": [
       {
-        "x": 30,
-        "y": 53.8,
+        "x": 130.07263110700202,
+        "y": 280.971796696036,
         "color": "gold",
-        "angle": 29.076525008390387
+        "angle": -58.92347499160961
       },
       {
-        "x": 770,
-        "y": 44.3,
+        "x": 717.8569688438056,
+        "y": 167.85842544572395,
         "color": "blue",
-        "angle": 158.84785013170438
+        "angle": 198.84785013170438
       },
       {
-        "x": 418.6,
-        "y": 440,
+        "x": 568.5086240528644,
+        "y": 275.7349245053751,
         "color": "pink",
-        "angle": -90
+        "angle": -178
       }
     ],
     "targets": [
@@ -64492,14 +65059,14 @@ export const lightLevels = [
     "width": 800,
     "height": 460,
     "solution": [
-      -72.9,
-      -22.3,
-      -50.4
+      63.1,
+      -2.3,
+      85.6
     ],
-    "id": "light-v4-master-reserve-002",
+    "id": "light-v5-master-reserve-002",
     "name": "Condições entre 4, 2, 2 rotas",
     "hint": "Considere uma rota de cada vez e siga o que ela exige das outras duas cores.",
-    "sourceAngle": 29.076525008390387,
+    "sourceAngle": -58.92347499160961,
     "target": {
       "x": 516.8,
       "y": 190.3,
@@ -64518,34 +65085,34 @@ export const lightLevels = [
   {
     "sources": [
       {
-        "x": 30,
-        "y": 110,
-        "angle": 0,
+        "x": 378.2482523734826,
+        "y": 135.05115817281182,
+        "angle": -172,
         "color": "gold"
       },
       {
-        "x": 30,
-        "y": 350,
-        "angle": 0,
+        "x": 323.13229506513164,
+        "y": 192.3978492786556,
+        "angle": 128,
         "color": "blue"
       },
       {
-        "x": 450,
-        "y": 440,
-        "angle": -90,
+        "x": 429.12403485599015,
+        "y": 428.54021031123557,
+        "angle": -82,
         "color": "pink"
       }
     ],
     "targets": [
       {
-        "x": 740,
-        "y": 350,
+        "x": 650,
+        "y": 272.5,
         "radius": 22,
         "color": "gold"
       },
       {
-        "x": 740,
-        "y": 110,
+        "x": 650,
+        "y": 187.5,
         "radius": 22,
         "color": "blue"
       },
@@ -64630,51 +65197,51 @@ export const lightLevels = [
         "y": 110,
         "type": "mirror",
         "length": 124.8,
-        "angle": 24
+        "angle": -62
       },
       {
         "x": 200,
         "y": 350,
         "type": "mirror",
         "length": 124.8,
-        "angle": 16.4
+        "angle": 80.4
       },
       {
         "x": 650,
         "y": 362.5,
         "type": "mirror",
         "length": 124.8,
-        "angle": 20
+        "angle": -21
       },
       {
         "x": 650,
         "y": 97.5,
         "type": "mirror",
         "length": 124.8,
-        "angle": 20.3
+        "angle": 61.3
       },
       {
         "type": "mirror",
         "x": 450,
         "y": 280,
         "length": 124.8,
-        "angle": 56.9
+        "angle": 60.9
       }
     ],
-    "id": "light-v4-deduction-symmetry-11-filter",
+    "id": "light-v5-deduction-symmetry-11-filter",
     "name": "A entrada diferente",
     "hint": "Compare a marca da entrada com a fonte que se aproxima.",
     "solution": [
-      14.6,
-      7,
-      10.7,
-      11,
-      43.8
+      -71.4,
+      71,
+      -30.3,
+      52,
+      47.8
     ],
-    "sourceAngle": 0,
+    "sourceAngle": -172,
     "target": {
-      "x": 740,
-      "y": 350,
+      "x": 650,
+      "y": 272.5,
       "radius": 22,
       "color": "gold"
     },
@@ -64694,40 +65261,40 @@ export const lightLevels = [
         "x": 200,
         "y": 86,
         "length": 124.8,
-        "angle": 14.7
+        "angle": -75.3
       },
       {
         "type": "mirror",
         "x": 600,
         "y": 230,
         "length": 124.8,
-        "angle": -0.4
+        "angle": -22.4
       },
       {
         "type": "mirror",
         "x": 200,
         "y": 374,
         "length": 124.8,
-        "angle": -14.9
+        "angle": 73.1
       }
     ],
     "sources": [
       {
-        "x": 30,
-        "y": 86,
-        "angle": 0,
+        "x": 350,
+        "y": 86.00000000000001,
+        "angle": -180,
         "color": "gold"
       },
       {
-        "x": 770,
-        "y": 230,
-        "angle": 180,
+        "x": 707.9009700507977,
+        "y": 125.80124443115042,
+        "angle": 136,
         "color": "blue"
       },
       {
-        "x": 30,
-        "y": 374,
-        "angle": 0,
+        "x": 349.6346075389736,
+        "y": 363.5365289383812,
+        "angle": 176,
         "color": "pink"
       }
     ],
@@ -64887,15 +65454,15 @@ export const lightLevels = [
     ],
     "width": 800,
     "height": 460,
-    "id": "light-v4-portal-936",
+    "id": "light-v5-portal-936",
     "name": "A saída decide 936",
     "hint": "Compare o que acontece depois de cada saída.",
     "solution": [
-      7.9,
-      -0.4,
-      -2
+      -82.1,
+      -22.4,
+      86
     ],
-    "sourceAngle": 0,
+    "sourceAngle": -180,
     "target": {
       "x": 710,
       "y": 374,
@@ -64918,40 +65485,40 @@ export const lightLevels = [
         "x": 200,
         "y": 86,
         "length": 124.8,
-        "angle": 14.7
+        "angle": -41.3
       },
       {
         "type": "mirror",
         "x": 600,
         "y": 230,
         "length": 124.8,
-        "angle": -0.4
+        "angle": -84.4
       },
       {
         "type": "mirror",
         "x": 200,
         "y": 374,
         "length": 124.8,
-        "angle": -14.9
+        "angle": 81.1
       }
     ],
     "sources": [
       {
-        "x": 30,
-        "y": 86,
-        "angle": 0,
+        "x": 256.1909890123868,
+        "y": 225.07757818501813,
+        "angle": -112,
         "color": "gold"
       },
       {
-        "x": 770,
-        "y": 230,
-        "angle": 180,
+        "x": 453.2778598899291,
+        "y": 198.8132463773361,
+        "angle": 12,
         "color": "blue"
       },
       {
-        "x": 30,
-        "y": 374,
-        "angle": 0,
+        "x": 415.19247216143725,
+        "y": 419.74057197990703,
+        "angle": -168,
         "color": "pink"
       }
     ],
@@ -65111,15 +65678,15 @@ export const lightLevels = [
     ],
     "width": 800,
     "height": 460,
-    "id": "light-v4-portal-939",
+    "id": "light-v5-portal-939",
     "name": "A saída decide 939",
     "hint": "Compare o que acontece depois de cada saída.",
     "solution": [
-      3,
-      -0.4,
-      -2
+      -53,
+      -84.4,
+      -86
     ],
-    "sourceAngle": 0,
+    "sourceAngle": -112,
     "target": {
       "x": 710,
       "y": 374,
@@ -65142,40 +65709,40 @@ export const lightLevels = [
         "x": 200,
         "y": 86,
         "length": 124.8,
-        "angle": 15.1
+        "angle": -74.9
       },
       {
         "type": "mirror",
         "x": 600,
         "y": 230,
         "length": 124.8,
-        "angle": 0.7
+        "angle": -89.3
       },
       {
         "type": "mirror",
         "x": 200,
         "y": 374,
         "length": 124.8,
-        "angle": -15.2
+        "angle": 50.8
       }
     ],
     "sources": [
       {
-        "x": 30,
-        "y": 86,
-        "angle": 0,
+        "x": 350,
+        "y": 86.00000000000001,
+        "angle": -180,
         "color": "gold"
       },
       {
-        "x": 770,
+        "x": 150,
         "y": 230,
-        "angle": 180,
+        "angle": 360,
         "color": "blue"
       },
       {
-        "x": 30,
-        "y": 374,
-        "angle": 0,
+        "x": 300.3695909538287,
+        "y": 262.52827617839085,
+        "angle": 132,
         "color": "pink"
       }
     ],
@@ -65309,19 +65876,41 @@ export const lightLevels = [
         "colors": [
           "pink"
         ]
+      },
+      {
+        "x": 195,
+        "y": 230,
+        "id": "angle-access-1a",
+        "pairId": "angle-access-1b",
+        "label": "K",
+        "radius": 16,
+        "colors": [
+          "blue"
+        ]
+      },
+      {
+        "x": 514,
+        "y": 230.00000000000003,
+        "id": "angle-access-1b",
+        "pairId": "angle-access-1a",
+        "label": "K",
+        "radius": 16,
+        "colors": [
+          "blue"
+        ]
       }
     ],
     "width": 800,
     "height": 460,
-    "id": "light-v4-portal-909",
+    "id": "light-v5-portal-909",
     "name": "A consequência distante 909",
-    "hint": "Uma escolha aqui pode atrapalhar uma luz do outro lado.",
+    "hint": "Uma escolha aqui pode interferir em outra região.",
     "solution": [
-      15.1,
-      23,
-      5
+      -74.9,
+      -67,
+      71
     ],
-    "sourceAngle": 0,
+    "sourceAngle": -180,
     "target": {
       "x": 710,
       "y": 383,
@@ -65437,40 +66026,40 @@ export const lightLevels = [
         "x": 200,
         "y": 86,
         "length": 124.8,
-        "angle": 14.7
+        "angle": -39.3
       },
       {
         "type": "mirror",
         "x": 600,
         "y": 230,
         "length": 124.8,
-        "angle": -0.4
+        "angle": 81.6
       },
       {
         "type": "mirror",
         "x": 200,
         "y": 374,
         "length": 124.8,
-        "angle": -14.9
+        "angle": 67.1
       }
     ],
     "sources": [
       {
-        "x": 30,
-        "y": 86,
-        "angle": 0,
+        "x": 246.3525491562421,
+        "y": 228.65847744427305,
+        "angle": -108,
         "color": "gold"
       },
       {
-        "x": 770,
-        "y": 230,
-        "angle": 180,
+        "x": 455.8107456092522,
+        "y": 271.34560337255,
+        "angle": 344,
         "color": "blue"
       },
       {
-        "x": 30,
-        "y": 374,
-        "angle": 0,
+        "x": 411.4775731064301,
+        "y": 313.35978172026006,
+        "angle": 164,
         "color": "pink"
       }
     ],
@@ -65609,8 +66198,8 @@ export const lightLevels = [
         "id": "p2a",
         "pairId": "p2b",
         "label": "F",
-        "x": 511.2,
-        "y": 352.2,
+        "x": 337.3,
+        "y": 364.4,
         "radius": 16,
         "colors": [
           "pink"
@@ -65630,15 +66219,15 @@ export const lightLevels = [
     ],
     "width": 800,
     "height": 460,
-    "id": "light-v4-portal-944",
+    "id": "light-v5-portal-944",
     "name": "A saída decide 944",
     "hint": "Compare o que acontece depois de cada saída.",
     "solution": [
-      34.9,
-      -18,
-      -14.9
+      -19.1,
+      64,
+      67.1
     ],
-    "sourceAngle": 0,
+    "sourceAngle": -108,
     "target": {
       "x": 710,
       "y": 374,
@@ -65661,40 +66250,40 @@ export const lightLevels = [
         "x": 200,
         "y": 86,
         "length": 124.8,
-        "angle": 14.7
+        "angle": -41.3
       },
       {
         "type": "mirror",
         "x": 600,
         "y": 230,
         "length": 124.8,
-        "angle": -0.4
+        "angle": 89.6
       },
       {
         "type": "mirror",
         "x": 200,
         "y": 374,
         "length": 124.8,
-        "angle": -14.9
+        "angle": 73.1
       }
     ],
     "sources": [
       {
-        "x": 30,
-        "y": 86,
-        "angle": 0,
+        "x": 256.1909890123868,
+        "y": 225.07757818501813,
+        "angle": -112,
         "color": "gold"
       },
       {
-        "x": 770,
+        "x": 380,
         "y": 230,
-        "angle": 180,
+        "angle": 0,
         "color": "blue"
       },
       {
-        "x": 30,
-        "y": 374,
-        "angle": 0,
+        "x": 459.3666530675543,
+        "y": 355.86331682652735,
+        "angle": 176,
         "color": "pink"
       }
     ],
@@ -65767,8 +66356,8 @@ export const lightLevels = [
         "id": "b1a",
         "pairId": "b1b",
         "label": "C",
-        "x": 356.5,
-        "y": 336.9,
+        "x": 459.5,
+        "y": 291.7,
         "radius": 16,
         "colors": [
           "blue"
@@ -65854,15 +66443,15 @@ export const lightLevels = [
     ],
     "width": 800,
     "height": 460,
-    "id": "light-v4-portal-951",
+    "id": "light-v5-portal-951",
     "name": "A saída decide 951",
     "hint": "Compare o que acontece depois de cada saída.",
     "solution": [
-      -1.6,
-      -0.4,
-      -2
+      -57.6,
+      89.6,
+      86
     ],
-    "sourceAngle": 0,
+    "sourceAngle": -112,
     "target": {
       "x": 710,
       "y": 374,
@@ -65881,21 +66470,21 @@ export const lightLevels = [
   {
     "sources": [
       {
-        "x": 25,
-        "y": 130,
-        "angle": 0,
+        "x": 78.53770954987962,
+        "y": 232.8094388279316,
+        "angle": -44,
         "color": "gold"
       },
       {
-        "x": 775,
-        "y": 130,
-        "angle": 180,
+        "x": 660.7345151674922,
+        "y": 270.75636441168274,
+        "angle": 252,
         "color": "blue"
       },
       {
-        "x": 550,
-        "y": 440,
-        "angle": -149.03624346792648,
+        "x": 273.0910469945435,
+        "y": 273.8546281967261,
+        "angle": 30.963756532073518,
         "color": "pink"
       }
     ],
@@ -65925,7 +66514,7 @@ export const lightLevels = [
         "y": 130,
         "type": "mirror",
         "length": 124.8,
-        "angle": -35,
+        "angle": -57,
         "id": "M1"
       },
       {
@@ -65933,7 +66522,7 @@ export const lightLevels = [
         "y": 130,
         "type": "mirror",
         "length": 124.8,
-        "angle": 35,
+        "angle": 71,
         "id": "M2"
       },
       {
@@ -65941,7 +66530,7 @@ export const lightLevels = [
         "y": 350,
         "type": "mirror",
         "length": 124.8,
-        "angle": -10,
+        "angle": 80,
         "id": "M3"
       },
       {
@@ -66110,11 +66699,11 @@ export const lightLevels = [
       }
     ],
     "solution": [
-      34.9,
-      -53.9,
-      50.5
+      12.9,
+      -17.9,
+      -39.5
     ],
-    "id": "light-v3-145",
+    "id": "light-v5-legacy-145",
     "campaignNumber": 450,
     "name": "Um acordo exige o próximo",
     "difficulty": 145,
@@ -66128,7 +66717,7 @@ export const lightLevels = [
       "revision": "editorial-causal-v2",
       "variant": "Combinação e reversibilidade"
     },
-    "sourceAngle": 0,
+    "sourceAngle": -44,
     "target": {
       "x": 558.0554754449986,
       "y": 245.40516932494938,
@@ -66152,40 +66741,40 @@ export const lightLevels = [
         "x": 200,
         "y": 86,
         "length": 124.8,
-        "angle": 14.7
+        "angle": -67.3
       },
       {
         "type": "mirror",
         "x": 600,
         "y": 230,
         "length": 124.8,
-        "angle": -0.4
+        "angle": 85.6
       },
       {
         "type": "mirror",
         "x": 200,
         "y": 374,
         "length": 124.8,
-        "angle": -14.9
+        "angle": 75.1
       }
     ],
     "sources": [
       {
-        "x": 30,
-        "y": 86,
-        "angle": 0,
+        "x": 344.1892543907478,
+        "y": 127.34560337254996,
+        "angle": -164,
         "color": "gold"
       },
       {
-        "x": 770,
-        "y": 230,
-        "angle": 180,
+        "x": 451.45978968876443,
+        "y": 250.87596514400988,
+        "angle": 352,
         "color": "blue"
       },
       {
-        "x": 30,
+        "x": 350,
         "y": 374,
-        "angle": 0,
+        "angle": -180,
         "color": "pink"
       }
     ],
@@ -66345,15 +66934,15 @@ export const lightLevels = [
     ],
     "width": 800,
     "height": 460,
-    "id": "light-v4-portal-930",
+    "id": "light-v5-portal-930",
     "name": "A consequência distante 930",
-    "hint": "Uma escolha aqui pode atrapalhar uma luz do outro lado.",
+    "hint": "Uma escolha aqui pode interferir em outra região.",
     "solution": [
-      3,
-      -0.4,
-      -2
+      -79,
+      85.6,
+      88
     ],
-    "sourceAngle": 0,
+    "sourceAngle": -164,
     "target": {
       "x": 710,
       "y": 374,
@@ -66376,41 +66965,41 @@ export const lightLevels = [
         "y": 108.1,
         "type": "mirror",
         "length": 124.8,
-        "angle": 15.9
+        "angle": -22.1
       },
       {
         "x": 605.9,
         "y": 151.5,
         "type": "mirror",
         "length": 124.8,
-        "angle": -20
+        "angle": 86
       },
       {
         "x": 422.6,
         "y": 281.7,
         "type": "mirror",
         "length": 124.8,
-        "angle": -32.9
+        "angle": -74.9
       }
     ],
     "sources": [
       {
-        "x": 30,
-        "y": 64.3,
+        "x": 183.97723358332806,
+        "y": 243.65602632782355,
         "color": "gold",
-        "angle": 11.350324275233758
+        "angle": -64.64967572476624
       },
       {
-        "x": 770,
-        "y": 69.3,
+        "x": 456.5639980268078,
+        "y": 137.4018258393953,
         "color": "blue",
-        "angle": 153.39306595062106
+        "angle": 5.3930659506210645
       },
       {
-        "x": 422.6,
-        "y": 440,
+        "x": 571.778284305241,
+        "y": 297.37926949014803,
         "color": "pink",
-        "angle": -90
+        "angle": -174
       }
     ],
     "targets": [
@@ -66526,14 +67115,14 @@ export const lightLevels = [
     "width": 800,
     "height": 460,
     "solution": [
-      15.9,
-      -66.3,
-      -32.9
+      -22.1,
+      39.7,
+      -74.9
     ],
-    "id": "light-v4-master-reserve-007",
+    "id": "light-v5-master-reserve-007",
     "name": "Condições entre 2, 2, 3 rotas",
     "hint": "Considere uma rota de cada vez e siga o que ela exige das outras duas cores.",
-    "sourceAngle": 11.350324275233758,
+    "sourceAngle": -64.64967572476624,
     "target": {
       "x": 552.9,
       "y": 222.2,
@@ -66556,21 +67145,21 @@ export const lightLevels = [
         "y": 106.8,
         "type": "mirror",
         "length": 124.8,
-        "angle": 45.6
+        "angle": 4.6
       },
       {
         "x": 607.1,
         "y": 142.7,
         "type": "mirror",
         "length": 124.8,
-        "angle": -35.3
+        "angle": 38.7
       },
       {
         "x": 396.8,
         "y": 260.8,
         "type": "mirror",
         "length": 124.8,
-        "angle": 63.6
+        "angle": -82.4
       },
       {
         "type": "mirror",
@@ -66630,22 +67219,22 @@ export const lightLevels = [
     ],
     "sources": [
       {
-        "x": 30,
-        "y": 70.4,
+        "x": 156.59517427240354,
+        "y": 276.88886355667586,
         "color": "gold",
-        "angle": 11.101887711112571
+        "angle": -70.89811228888743
       },
       {
-        "x": 770,
-        "y": 35.5,
+        "x": 545.3678991894643,
+        "y": 277.21077179734664,
         "color": "blue",
-        "angle": 146.6521873619691
+        "angle": 294.65218736196914
       },
       {
-        "x": 396.8,
-        "y": 435.9,
+        "x": 248.45058326931402,
+        "y": 320.7370549465459,
         "color": "pink",
-        "angle": -90
+        "angle": -22
       }
     ],
     "targets": [
@@ -66739,15 +67328,15 @@ export const lightLevels = [
     "width": 800,
     "height": 460,
     "solution": [
-      14.6,
-      -66.3,
-      32.6,
+      -26.4,
+      7.7,
+      66.6,
       14.1
     ],
-    "id": "light-v4-deduction-master-window-5-1",
+    "id": "light-v5-deduction-master-window-5-1",
     "name": "As janelas da última curva",
     "hint": "As duas entradas podem alcançar o mesmo espelho, mas não oferecem as mesmas chegadas.",
-    "sourceAngle": 11.101887711112571,
+    "sourceAngle": -70.89811228888743,
     "target": {
       "x": 554.3,
       "y": 216.9,
@@ -66770,40 +67359,40 @@ export const lightLevels = [
         "x": 200,
         "y": 86,
         "length": 124.8,
-        "angle": 14.7
+        "angle": -75.3
       },
       {
         "type": "mirror",
         "x": 600,
         "y": 230,
         "length": 124.8,
-        "angle": -0.4
+        "angle": 21.6
       },
       {
         "type": "mirror",
         "x": 200,
         "y": 374,
         "length": 124.8,
-        "angle": -14.9
+        "angle": 73.1
       }
     ],
     "sources": [
       {
-        "x": 30,
-        "y": 86,
-        "angle": 0,
+        "x": 350,
+        "y": 86.00000000000001,
+        "angle": -180,
         "color": "gold"
       },
       {
-        "x": 770,
-        "y": 230,
-        "angle": 180,
+        "x": 758.2547560745032,
+        "y": 382.82484150097946,
+        "angle": 224,
         "color": "blue"
       },
       {
-        "x": 30,
-        "y": 374,
-        "angle": 0,
+        "x": 349.6346075389736,
+        "y": 363.5365289383812,
+        "angle": 176,
         "color": "pink"
       }
     ],
@@ -66963,15 +67552,15 @@ export const lightLevels = [
     ],
     "width": 800,
     "height": 460,
-    "id": "light-v4-portal-956",
+    "id": "light-v5-portal-956",
     "name": "A saída decide 956",
     "hint": "Compare o que acontece depois de cada saída.",
     "solution": [
-      -1.6,
-      -0.4,
-      -2
+      88.4,
+      21.6,
+      86
     ],
-    "sourceAngle": 0,
+    "sourceAngle": -180,
     "target": {
       "x": 710,
       "y": 374,
@@ -66994,21 +67583,21 @@ export const lightLevels = [
         "y": 105.7,
         "type": "mirror",
         "length": 124.8,
-        "angle": 50.6
+        "angle": 38.6
       },
       {
         "x": 582.9,
         "y": 95.7,
         "type": "mirror",
         "length": 124.8,
-        "angle": -72.9
+        "angle": -49.9
       },
       {
         "x": 366,
         "y": 281.1,
         "type": "mirror",
         "length": 124.8,
-        "angle": 88.5
+        "angle": -43.5
       },
       {
         "type": "mirror",
@@ -67020,102 +67609,102 @@ export const lightLevels = [
       {
         "type": "wall",
         "x": 440,
-        "y": 20.200000000000003,
-        "length": 40.400000000000006,
+        "y": 19.200000000000003,
+        "length": 38.400000000000006,
         "width": 12,
         "angle": 90
       },
       {
         "type": "wall",
         "x": 440,
-        "y": 138.61312976655387,
-        "length": 16.341194408587455,
+        "y": 143.92208413863727,
+        "length": 12.257892216903542,
         "width": 12,
         "angle": 90
       },
       {
         "type": "wall",
         "x": 440,
-        "y": 199.67148847162116,
-        "length": 49.7755230015471,
+        "y": 199.38330071927373,
+        "length": 55.733754049335545,
         "width": 12,
         "angle": 90
       },
       {
         "type": "wall",
         "x": 440,
-        "y": 356.27962498619735,
-        "length": 207.4407500276053,
+        "y": 354.9341611004239,
+        "length": 210.13167779915213,
         "width": 12,
         "angle": 90
       },
       {
         "type": "wall",
-        "x": 42.8,
+        "x": 181.15570551167167,
         "y": 180,
-        "length": 85.6,
+        "length": 19.111411023343322,
         "width": 12,
         "angle": 0
       },
       {
         "type": "wall",
-        "x": 236.30710189421853,
+        "x": 232.53474080258002,
         "y": 180,
-        "length": 39.133311159933896,
+        "length": 51.53051839483999,
         "width": 12,
         "angle": 0
       },
       {
         "type": "wall",
-        "x": 365.8143256309559,
+        "x": 364.6670167965517,
         "y": 180,
-        "length": 27.98756976071411,
+        "length": 23.934587502306897,
         "width": 12,
         "angle": 0
       },
       {
         "type": "wall",
-        "x": 490.25582232827367,
+        "x": 491.1121008082358,
         "y": 180,
-        "length": 121.63936152940818,
+        "length": 137.95890465389357,
         "width": 12,
         "angle": 0
       },
       {
         "type": "wall",
-        "x": 604.387751546489,
+        "x": 598.8797265253866,
         "y": 180,
-        "length": 34.62449690702226,
+        "length": 41.64054694922709,
         "width": 12,
         "angle": 0
       },
       {
         "type": "wall",
-        "x": 752.85,
+        "x": 781.6955413484033,
         "y": 180,
-        "length": 94.29999999999995,
+        "length": 36.60891730319349,
         "width": 12,
         "angle": 0
       }
     ],
     "sources": [
       {
-        "x": 30,
-        "y": 74.9,
+        "x": 24.204255798735943,
+        "y": 148.26146919792615,
         "color": "gold",
-        "angle": 10.322735559982544
+        "angle": -13.677264440017456
       },
       {
-        "x": 770,
-        "y": 78.3,
+        "x": 719.3910826968065,
+        "y": 213.04642876650968,
         "color": "blue",
-        "angle": 174.68686644306962
+        "angle": 220.68686644306962
       },
       {
-        "x": 366,
-        "y": 440,
+        "x": 216.821715694759,
+        "y": 265.420730509852,
         "color": "pink",
-        "angle": -90
+        "angle": 6
       }
     ],
     "targets": [
@@ -67275,15 +67864,15 @@ export const lightLevels = [
     "width": 800,
     "height": 460,
     "solution": [
-      19.6,
-      76.1,
-      57.5,
+      7.6,
+      -80.9,
+      -74.5,
       -84.6
     ],
-    "id": "light-v4-deduction-master-window-11-1",
+    "id": "light-v5-deduction-master-window-11-1",
     "name": "As janelas da última curva",
     "hint": "As duas entradas podem alcançar o mesmo espelho, mas não oferecem as mesmas chegadas.",
-    "sourceAngle": 10.322735559982544,
+    "sourceAngle": -13.677264440017456,
     "target": {
       "x": 513.4,
       "y": 410.5,
@@ -67306,21 +67895,21 @@ export const lightLevels = [
         "y": 108.1,
         "type": "mirror",
         "length": 124.8,
-        "angle": 46.9
+        "angle": 15.9
       },
       {
         "x": 605.9,
         "y": 151.5,
         "type": "mirror",
         "length": 124.8,
-        "angle": -35.3
+        "angle": 35.7
       },
       {
         "x": 422.6,
         "y": 281.7,
         "type": "mirror",
         "length": 124.8,
-        "angle": 75
+        "angle": -71
       },
       {
         "type": "mirror",
@@ -67331,87 +67920,87 @@ export const lightLevels = [
       },
       {
         "type": "wall",
-        "x": 160,
-        "y": 25.552546931284123,
-        "length": 51.105093862568246,
+        "x": 500,
+        "y": 83.64338057459209,
+        "length": 167.28676114918417,
         "width": 12,
         "angle": 90
       },
       {
         "type": "wall",
-        "x": 160,
-        "y": 161.94766269477543,
-        "length": 123.10467461044914,
+        "x": 500,
+        "y": 283.09205526902406,
+        "length": 141.7251702332092,
         "width": 12,
         "angle": 90
       },
       {
         "type": "wall",
-        "x": 160,
-        "y": 383.75,
-        "length": 152.5,
-        "width": 12,
-        "angle": 90
-      },
-      {
-        "type": "wall",
-        "x": 127.88558923210874,
+        "x": 13.331556475956347,
         "y": 360,
-        "length": 255.77117846421748,
+        "length": 26.663112951912694,
         "width": 12,
         "angle": 0
       },
       {
         "type": "wall",
-        "x": 287.94940335183605,
+        "x": 160.3066456044595,
         "y": 360,
-        "length": 24.356449775237195,
+        "length": 91.28706530509362,
         "width": 12,
         "angle": 0
       },
       {
         "type": "wall",
-        "x": 366.388260386521,
+        "x": 286.7149795752003,
         "y": 360,
-        "length": 92.42347922695802,
+        "length": 24.710991934576555,
         "width": 12,
         "angle": 0
       },
       {
         "type": "wall",
-        "x": 525.7,
+        "x": 408.6566977123264,
         "y": 360,
-        "length": 186.19999999999993,
+        "length": 174.8460484846363,
         "width": 12,
         "angle": 0
       },
       {
         "type": "wall",
-        "x": 751.4,
+        "x": 567.2879806429266,
         "y": 360,
-        "length": 97.20000000000005,
+        "length": 99.02403871414663,
+        "width": 12,
+        "angle": 0
+      },
+      {
+        "type": "wall",
+        "x": 752.4,
+        "y": 360,
+        "length": 95.20000000000005,
         "width": 12,
         "angle": 0
       }
     ],
     "sources": [
       {
-        "x": 30,
-        "y": 64.3,
+        "x": 70.6631129519127,
+        "y": 324.61940729937976,
         "color": "gold",
-        "angle": 11.350324275233758
+        "angle": -50.64967572476624
       },
       {
-        "x": 770,
-        "y": 69.3,
+        "x": 477.25225795234337,
+        "y": 422.5161590496766,
         "color": "blue",
-        "angle": 153.39306595062106
+        "angle": 295.39306595062106
       },
       {
-        "x": 422.6,
-        "y": 443.9,
+        "x": 116.62932799296016,
+        "y": 405.320175827251,
         "color": "pink",
-        "angle": -90
+        "angle": -22
       }
     ],
     "targets": [
@@ -67505,15 +68094,15 @@ export const lightLevels = [
     "width": 800,
     "height": 460,
     "solution": [
-      15.9,
-      -66.3,
-      44,
+      -15.1,
+      4.7,
+      78,
       -59.5
     ],
-    "id": "light-v4-deduction-master-window-20-1",
+    "id": "light-v5-deduction-master-window-20-1",
     "name": "As janelas da última curva",
     "hint": "As duas entradas podem alcançar o mesmo espelho, mas não oferecem as mesmas chegadas.",
-    "sourceAngle": 11.350324275233758,
+    "sourceAngle": -50.64967572476624,
     "target": {
       "x": 552.9,
       "y": 222.2,
@@ -67536,41 +68125,41 @@ export const lightLevels = [
         "y": 117.3,
         "type": "mirror",
         "length": 124.8,
-        "angle": 18.5
+        "angle": -1.5
       },
       {
         "x": 592.9,
         "y": 104,
         "type": "mirror",
         "length": 124.8,
-        "angle": -22
+        "angle": 42
       },
       {
         "x": 393.6,
         "y": 280.5,
         "type": "mirror",
         "length": 124.8,
-        "angle": -46.8
+        "angle": -2.8
       }
     ],
     "sources": [
       {
-        "x": 30,
-        "y": 68.4,
+        "x": 42.1991785068806,
+        "y": 173.68059616781258,
         "color": "gold",
-        "angle": 17.921866005411545
+        "angle": -22.078133994588455
       },
       {
-        "x": 770,
-        "y": 46.8,
+        "x": 541.349791557406,
+        "y": 244.86367881581506,
         "color": "blue",
-        "angle": 162.10051016264254
+        "angle": 290.10051016264254
       },
       {
-        "x": 393.6,
-        "y": 440,
+        "x": 243.69137594713567,
+        "y": 285.73492450537515,
         "color": "pink",
-        "angle": -90
+        "angle": -2
       }
     ],
     "targets": [
@@ -67686,14 +68275,14 @@ export const lightLevels = [
     "width": 800,
     "height": 460,
     "solution": [
-      57.4,
-      -62.4,
-      78.2
+      37.4,
+      1.6,
+      -57.8
     ],
-    "id": "light-v4-master-002",
+    "id": "light-v5-master-002",
     "name": "Uma saída, duas consequências",
     "hint": "Considere uma rota de cada vez e siga o que ela exige das outras duas cores.",
-    "sourceAngle": 17.921866005411545,
+    "sourceAngle": -22.078133994588455,
     "target": {
       "x": 474.1,
       "y": 218.2,
@@ -67716,41 +68305,41 @@ export const lightLevels = [
         "y": 152.5,
         "type": "mirror",
         "length": 124.8,
-        "angle": 18
+        "angle": -12
       },
       {
         "x": 575.9,
         "y": 119.4,
         "type": "mirror",
         "length": 124.8,
-        "angle": -22.3
+        "angle": -2.3
       },
       {
         "x": 418.6,
         "y": 270.5,
         "type": "mirror",
         "length": 124.8,
-        "angle": -50.4
+        "angle": 59.6
       }
     ],
     "sources": [
       {
         "x": 30,
-        "y": 53.8,
+        "y": 93.8,
         "color": "gold",
-        "angle": 29.076525008390387
+        "angle": -30.923474991609613
       },
       {
-        "x": 770,
-        "y": 44.3,
+        "x": 400,
+        "y": 430,
         "color": "blue",
-        "angle": 158.84785013170438
+        "angle": 198.84785013170438
       },
       {
-        "x": 418.6,
-        "y": 440,
+        "x": 50,
+        "y": 230,
         "color": "pink",
-        "angle": -90
+        "angle": -230
       }
     ],
     "targets": [
@@ -67883,19 +68472,85 @@ export const lightLevels = [
         "colors": [
           "gold"
         ]
+      },
+      {
+        "x": 68.6034492462816,
+        "y": 70.67482527007068,
+        "id": "angle-access-0a",
+        "pairId": "angle-access-0b",
+        "label": "J",
+        "radius": 16,
+        "colors": [
+          "gold"
+        ]
+      },
+      {
+        "x": 133.72451921821738,
+        "y": 196.69477837275377,
+        "id": "angle-access-0b",
+        "pairId": "angle-access-0a",
+        "label": "J",
+        "radius": 16,
+        "colors": [
+          "gold"
+        ]
+      },
+      {
+        "x": 357.4129093468583,
+        "y": 415.46247236628284,
+        "id": "angle-access-1a",
+        "pairId": "angle-access-1b",
+        "label": "K",
+        "radius": 16,
+        "colors": [
+          "blue"
+        ]
+      },
+      {
+        "x": 657.2886621371152,
+        "y": 147.18283058888173,
+        "id": "angle-access-1b",
+        "pairId": "angle-access-1a",
+        "label": "K",
+        "radius": 16,
+        "colors": [
+          "blue"
+        ]
+      },
+      {
+        "x": 21.074557564105724,
+        "y": 264.471999940354,
+        "id": "angle-access-2a",
+        "pairId": "angle-access-2b",
+        "label": "L",
+        "radius": 16,
+        "colors": [
+          "pink"
+        ]
+      },
+      {
+        "x": 473.8797344330424,
+        "y": 204.6201778917679,
+        "id": "angle-access-2b",
+        "pairId": "angle-access-2a",
+        "label": "L",
+        "radius": 16,
+        "colors": [
+          "pink"
+        ]
       }
     ],
     "width": 800,
     "height": 460,
     "solution": [
-      -72.9,
-      -22.3,
-      -50.4
+      77.1,
+      -2.3,
+      59.6
     ],
-    "id": "light-v4-master-reserve-001",
+    "id": "light-v5-master-reserve-001",
     "name": "Condições entre 4, 2, 2 rotas",
-    "hint": "Considere uma rota de cada vez e siga o que ela exige das outras duas cores.",
-    "sourceAngle": 29.076525008390387,
+    "hint": "Teste uma rota e acompanhe o que ela exige das outras cores.",
+    "sourceAngle": -30.923474991609613,
     "target": {
       "x": 516.8,
       "y": 190.3,
@@ -67918,40 +68573,40 @@ export const lightLevels = [
         "x": 200,
         "y": 86,
         "length": 124.8,
-        "angle": 14.7
+        "angle": -35.3
       },
       {
         "type": "mirror",
         "x": 600,
         "y": 230,
         "length": 124.8,
-        "angle": -0.4
+        "angle": 89.6
       },
       {
         "type": "mirror",
         "x": 200,
         "y": 374,
         "length": 124.8,
-        "angle": -14.9
+        "angle": 55.1
       }
     ],
     "sources": [
       {
-        "x": 30,
-        "y": 86,
-        "angle": 0,
+        "x": 50,
+        "y": 150,
+        "angle": -100,
         "color": "gold"
       },
       {
-        "x": 770,
+        "x": 450,
         "y": 230,
-        "angle": 180,
+        "angle": 0,
         "color": "blue"
       },
       {
-        "x": 30,
-        "y": 374,
-        "angle": 0,
+        "x": 314.90666646784666,
+        "y": 277.58185854701907,
+        "angle": 140,
         "color": "pink"
       }
     ],
@@ -68107,19 +68762,41 @@ export const lightLevels = [
         "colors": [
           "pink"
         ]
+      },
+      {
+        "x": 42.185832004988136,
+        "y": 105.68365111445064,
+        "id": "angle-access-0a",
+        "pairId": "angle-access-0b",
+        "label": "J",
+        "radius": 16,
+        "colors": [
+          "gold"
+        ]
+      },
+      {
+        "x": 220.83778132003164,
+        "y": 204.17693036146497,
+        "id": "angle-access-0b",
+        "pairId": "angle-access-0a",
+        "label": "J",
+        "radius": 16,
+        "colors": [
+          "gold"
+        ]
       }
     ],
     "width": 800,
     "height": 460,
-    "id": "light-v4-portal-955",
+    "id": "light-v5-portal-955",
     "name": "A consequência distante 955",
-    "hint": "Uma escolha aqui pode atrapalhar uma luz do outro lado.",
+    "hint": "Uma escolha aqui pode interferir em outra região.",
     "solution": [
-      -1.6,
-      -0.4,
-      -2
+      -51.6,
+      89.6,
+      68
     ],
-    "sourceAngle": 0,
+    "sourceAngle": -100,
     "target": {
       "x": 710,
       "y": 374,
@@ -68142,41 +68819,41 @@ export const lightLevels = [
         "y": 105.7,
         "type": "mirror",
         "length": 124.8,
-        "angle": 16
+        "angle": -76
       },
       {
         "x": 582.9,
         "y": 95.7,
         "type": "mirror",
         "length": 124.8,
-        "angle": -14
+        "angle": 22
       },
       {
         "x": 366,
         "y": 281.1,
         "type": "mirror",
         "length": 124.8,
-        "angle": 57.5
+        "angle": 61.5
       }
     ],
     "sources": [
       {
-        "x": 30,
-        "y": 74.9,
+        "x": 417.7618133675719,
+        "y": 129.92831762226072,
         "color": "gold",
-        "angle": 10.322735559982544
+        "angle": 186.32273555998253
       },
       {
-        "x": 770,
-        "y": 78.3,
+        "x": 642.2634032923661,
+        "y": 233.453353315075,
         "color": "blue",
-        "angle": 174.68686644306962
+        "angle": 246.68686644306962
       },
       {
-        "x": 366,
-        "y": 440,
+        "x": 345.12403485599015,
+        "y": 429.6402103112356,
         "color": "pink",
-        "angle": -90
+        "angle": -82
       }
     ],
     "targets": [
@@ -68314,14 +68991,14 @@ export const lightLevels = [
     "width": 800,
     "height": 460,
     "solution": [
-      50.3,
-      -14,
-      -50.6
+      -41.7,
+      22,
+      -46.6
     ],
-    "id": "light-v4-master-contrast-002",
+    "id": "light-v5-master-contrast-002",
     "name": "O alvo mudou o acordo",
     "hint": "Compare a nova aproximação ao alvo com as rotas que antes eram compatíveis.",
-    "sourceAngle": 10.322735559982544,
+    "sourceAngle": 186.32273555998253,
     "target": {
       "x": 755,
       "y": 325.9,
@@ -68344,40 +69021,40 @@ export const lightLevels = [
         "x": 200,
         "y": 86,
         "length": 124.8,
-        "angle": 14.7
+        "angle": -55.3
       },
       {
         "type": "mirror",
         "x": 600,
         "y": 230,
         "length": 124.8,
-        "angle": -0.4
+        "angle": 89.6
       },
       {
         "type": "mirror",
         "x": 200,
         "y": 374,
         "length": 124.8,
-        "angle": -14.9
+        "angle": 15.1
       }
     ],
     "sources": [
       {
-        "x": 30,
-        "y": 86,
-        "angle": 0,
+        "x": 750,
+        "y": 230,
+        "angle": -140,
         "color": "gold"
       },
       {
-        "x": 770,
+        "x": 450,
         "y": 230,
-        "angle": 180,
+        "angle": 0,
         "color": "blue"
       },
       {
         "x": 30,
         "y": 374,
-        "angle": 0,
+        "angle": 60,
         "color": "pink"
       }
     ],
@@ -68533,19 +69210,63 @@ export const lightLevels = [
         "colors": [
           "pink"
         ]
+      },
+      {
+        "x": 715.528000059646,
+        "y": 201.07455756410573,
+        "id": "angle-access-0a",
+        "pairId": "angle-access-0b",
+        "label": "J",
+        "radius": 16,
+        "colors": [
+          "gold"
+        ]
+      },
+      {
+        "x": 276.6044443118978,
+        "y": 150.27876096865396,
+        "id": "angle-access-0b",
+        "pairId": "angle-access-0a",
+        "label": "J",
+        "radius": 16,
+        "colors": [
+          "gold"
+        ]
+      },
+      {
+        "x": 52.5,
+        "y": 412.97114317029974,
+        "id": "angle-access-2a",
+        "pairId": "angle-access-2b",
+        "label": "L",
+        "radius": 16,
+        "colors": [
+          "pink"
+        ]
+      },
+      {
+        "x": 140,
+        "y": 270.07695154586736,
+        "id": "angle-access-2b",
+        "pairId": "angle-access-2a",
+        "label": "L",
+        "radius": 16,
+        "colors": [
+          "pink"
+        ]
       }
     ],
     "width": 800,
     "height": 460,
-    "id": "light-v4-portal-087",
+    "id": "light-v5-portal-087",
     "name": "A consequência distante 087",
-    "hint": "Uma escolha aqui pode atrapalhar uma luz do outro lado.",
+    "hint": "Uma escolha aqui pode interferir em outra região.",
     "solution": [
-      3,
-      -0.4,
-      -2
+      -67,
+      89.6,
+      28
     ],
-    "sourceAngle": 0,
+    "sourceAngle": -140,
     "target": {
       "x": 710,
       "y": 374,
@@ -68568,40 +69289,40 @@ export const lightLevels = [
         "x": 200,
         "y": 86,
         "length": 124.8,
-        "angle": 14.7
+        "angle": -41.3
       },
       {
         "type": "mirror",
         "x": 600,
         "y": 230,
         "length": 124.8,
-        "angle": -0.4
+        "angle": 81.6
       },
       {
         "type": "mirror",
         "x": 200,
         "y": 374,
         "length": 124.8,
-        "angle": -14.9
+        "angle": 73.1
       }
     ],
     "sources": [
       {
-        "x": 30,
-        "y": 86,
-        "angle": 0,
+        "x": 256.1909890123868,
+        "y": 225.07757818501813,
+        "angle": -112,
         "color": "gold"
       },
       {
-        "x": 770,
-        "y": 230,
-        "angle": 180,
+        "x": 455.8107456092522,
+        "y": 271.34560337255,
+        "angle": 344,
         "color": "blue"
       },
       {
-        "x": 30,
-        "y": 374,
-        "angle": 0,
+        "x": 349.6346075389736,
+        "y": 363.5365289383812,
+        "angle": 176,
         "color": "pink"
       }
     ],
@@ -68761,15 +69482,15 @@ export const lightLevels = [
     ],
     "width": 800,
     "height": 460,
-    "id": "light-v4-portal-926",
+    "id": "light-v5-portal-926",
     "name": "A saída decide 926",
     "hint": "Compare o que acontece depois de cada saída.",
     "solution": [
-      3,
-      -0.4,
-      -2
+      -53,
+      81.6,
+      86
     ],
-    "sourceAngle": 0,
+    "sourceAngle": -112,
     "target": {
       "x": 710,
       "y": 374,
@@ -68792,41 +69513,41 @@ export const lightLevels = [
         "y": 123.5,
         "type": "mirror",
         "length": 124.8,
-        "angle": 17.4
+        "angle": 25.4
       },
       {
         "x": 579.9,
         "y": 127.6,
         "type": "mirror",
         "length": 124.8,
-        "angle": -18.5
+        "angle": -75.5
       },
       {
         "x": 386.6,
         "y": 277.3,
         "type": "mirror",
         "length": 124.8,
-        "angle": 55.7
+        "angle": 44.7
       }
     ],
     "sources": [
       {
-        "x": 30,
-        "y": 72.9,
+        "x": 105.65249476392759,
+        "y": 48.92368418306987,
         "color": "gold",
-        "angle": 13.813303816728954
+        "angle": 29.813303816728954
       },
       {
-        "x": 770,
-        "y": 46.3,
+        "x": 471.38712192021336,
+        "y": 26.95728893336903,
         "color": "blue",
-        "angle": 156.8450744946745
+        "angle": 42.84507449467449
       },
       {
-        "x": 386.6,
-        "y": 440,
+        "x": 442.79098901238683,
+        "y": 416.37757818501814,
         "color": "pink",
-        "angle": -90
+        "angle": -112
       }
     ],
     "targets": [
@@ -68964,14 +69685,14 @@ export const lightLevels = [
     "width": 800,
     "height": 460,
     "solution": [
-      -5.1,
-      -18.5,
-      55.7
+      2.9,
+      -75.5,
+      44.7
     ],
-    "id": "light-v4-master-001",
+    "id": "light-v5-master-001",
     "name": "Três respostas para uma hipótese",
     "hint": "Considere uma rota de cada vez e siga o que ela exige das outras duas cores.",
-    "sourceAngle": 13.813303816728954,
+    "sourceAngle": 29.813303816728954,
     "target": {
       "x": 735.8,
       "y": 315.6,
@@ -68994,40 +69715,40 @@ export const lightLevels = [
         "x": 200,
         "y": 86,
         "length": 124.8,
-        "angle": 14.7
+        "angle": -55.3
       },
       {
         "type": "mirror",
         "x": 600,
         "y": 230,
         "length": 124.8,
-        "angle": -0.4
+        "angle": 87.6
       },
       {
         "type": "mirror",
         "x": 200,
         "y": 374,
         "length": 124.8,
-        "angle": -14.9
+        "angle": 73.1
       }
     ],
     "sources": [
       {
-        "x": 30,
-        "y": 86,
-        "angle": 0,
+        "x": 314.90666646784666,
+        "y": 182.41814145298093,
+        "angle": -140,
         "color": "gold"
       },
       {
-        "x": 770,
-        "y": 230,
-        "angle": 180,
+        "x": 450.3653924610263,
+        "y": 240.46347106161872,
+        "angle": 356,
         "color": "blue"
       },
       {
-        "x": 30,
-        "y": 374,
-        "angle": 0,
+        "x": 349.6346075389736,
+        "y": 363.5365289383812,
+        "angle": 176,
         "color": "pink"
       }
     ],
@@ -69187,15 +69908,15 @@ export const lightLevels = [
     ],
     "width": 800,
     "height": 460,
-    "id": "light-v4-portal-931",
+    "id": "light-v5-portal-931",
     "name": "A saída decide 931",
     "hint": "Compare o que acontece depois de cada saída.",
     "solution": [
-      6.1,
-      -0.4,
-      -2
+      -63.9,
+      87.6,
+      86
     ],
-    "sourceAngle": 0,
+    "sourceAngle": -140,
     "target": {
       "x": 710,
       "y": 374,
@@ -69218,41 +69939,41 @@ export const lightLevels = [
         "y": 108.1,
         "type": "mirror",
         "length": 124.8,
-        "angle": 15.9
+        "angle": -22.1
       },
       {
         "x": 605.9,
         "y": 151.5,
         "type": "mirror",
         "length": 124.8,
-        "angle": -20
+        "angle": 86
       },
       {
         "x": 422.6,
         "y": 281.7,
         "type": "mirror",
         "length": 124.8,
-        "angle": -32.9
+        "angle": -74.9
       }
     ],
     "sources": [
       {
-        "x": 30,
-        "y": 64.3,
+        "x": 183.97723358332806,
+        "y": 243.65602632782355,
         "color": "gold",
-        "angle": 11.350324275233758
+        "angle": -64.64967572476624
       },
       {
-        "x": 770,
-        "y": 69.3,
+        "x": 456.5639980268078,
+        "y": 137.4018258393953,
         "color": "blue",
-        "angle": 153.39306595062106
+        "angle": 5.3930659506210645
       },
       {
-        "x": 422.6,
-        "y": 440,
+        "x": 571.778284305241,
+        "y": 297.37926949014803,
         "color": "pink",
-        "angle": -90
+        "angle": -174
       }
     ],
     "targets": [
@@ -69368,14 +70089,14 @@ export const lightLevels = [
     "width": 800,
     "height": 460,
     "solution": [
-      15.9,
-      -66.3,
-      -32.9
+      -22.1,
+      39.7,
+      -74.9
     ],
-    "id": "light-v4-master-filter-001",
+    "id": "light-v5-master-filter-001",
     "name": "Uma entrada, três consequências",
     "hint": "Uma entrada mudou de cor. Siga as consequências até encontrar a rota que respeita as duas outras luzes.",
-    "sourceAngle": 11.350324275233758,
+    "sourceAngle": -64.64967572476624,
     "target": {
       "x": 552.9,
       "y": 222.2,
@@ -69392,289 +70113,229 @@ export const lightLevels = [
     "campaignBand": "master"
   },
   {
-    "objects": [
-      {
-        "x": 235.8,
-        "y": 123.5,
-        "type": "mirror",
-        "length": 124.8,
-        "angle": 25.9
-      },
-      {
-        "x": 579.9,
-        "y": 127.6,
-        "type": "mirror",
-        "length": 124.8,
-        "angle": 12.5
-      },
-      {
-        "x": 386.6,
-        "y": 277.3,
-        "type": "mirror",
-        "length": 124.8,
-        "angle": 86.7
-      },
-      {
-        "type": "mirror",
-        "x": 635.8,
-        "y": 327.3,
-        "length": 124.8,
-        "angle": -3.5
-      },
-      {
-        "type": "wall",
-        "x": 140,
-        "y": 44.97283770651117,
-        "length": 89.94567541302234,
-        "width": 12,
-        "angle": 90
-      },
-      {
-        "type": "wall",
-        "x": 140,
-        "y": 140.3020960900157,
-        "length": 60.71284135398669,
-        "width": 12,
-        "angle": 90
-      },
-      {
-        "type": "wall",
-        "x": 140,
-        "y": 293.15,
-        "length": 23.30000000000001,
-        "width": 12,
-        "angle": 90
-      },
-      {
-        "type": "wall",
-        "x": 140,
-        "y": 424.4,
-        "length": 71.19999999999999,
-        "width": 12,
-        "angle": 90
-      },
-      {
-        "type": "wall",
-        "x": 460,
-        "y": 50.25,
-        "length": 100.5,
-        "width": 12,
-        "angle": 90
-      },
-      {
-        "type": "wall",
-        "x": 460,
-        "y": 206.08502008447266,
-        "length": 43.17004016894529,
-        "width": 12,
-        "angle": 90
-      },
-      {
-        "type": "wall",
-        "x": 460,
-        "y": 272.73502008447264,
-        "length": 50.12995983105472,
-        "width": 12,
-        "angle": 90
-      },
-      {
-        "type": "wall",
-        "x": 460,
-        "y": 447.75,
-        "length": 24.5,
-        "width": 12,
-        "angle": 90
-      }
-    ],
     "sources": [
       {
-        "x": 30,
-        "y": 72.9,
-        "color": "gold",
-        "angle": 13.813303816728954
+        "x": 30.241190740166587,
+        "y": 187.67422935781548,
+        "angle": -26,
+        "color": "gold"
       },
       {
-        "x": 770,
-        "y": 46.3,
-        "color": "blue",
-        "angle": 156.8450744946745
+        "x": 764.8733571969576,
+        "y": 80.1441282683794,
+        "angle": 122,
+        "color": "blue"
       },
       {
-        "x": 386.6,
-        "y": 440,
-        "color": "pink",
-        "angle": -90
+        "x": 377.73230384638947,
+        "y": 51.55710900134875,
+        "angle": 82,
+        "color": "pink"
       }
     ],
     "targets": [
       {
-        "x": 742.5,
-        "y": 220.9,
+        "x": 300.7,
+        "y": 268.2,
         "radius": 22,
         "color": "gold"
       },
       {
-        "x": 278.5,
-        "y": 201.5,
-        "color": "blue",
-        "radius": 22
+        "x": 86.2,
+        "y": 143.1,
+        "radius": 22,
+        "color": "blue"
       },
       {
-        "x": 95.2,
-        "y": 163.6,
-        "color": "pink",
-        "radius": 22
+        "x": 178.5,
+        "y": 283.2,
+        "radius": 22,
+        "color": "pink"
       }
     ],
     "portals": [
       {
-        "x": 419.3,
-        "y": 41.8,
-        "id": "gold1a",
-        "pairId": "gold1b",
-        "label": "A",
+        "id": "p0a",
+        "pairId": "p0b",
+        "x": 301.3,
+        "y": 165.4,
         "radius": 16,
         "colors": [
           "gold"
-        ]
+        ],
+        "label": "A"
       },
       {
-        "x": 487.2,
-        "y": 393.5,
-        "id": "gold1b",
-        "pairId": "gold1a",
-        "label": "A",
+        "id": "p0b",
+        "pairId": "p0a",
+        "x": 104.2,
+        "y": 254.6,
         "radius": 16,
         "colors": [
           "gold"
-        ]
+        ],
+        "label": "A"
       },
       {
-        "x": 247.1,
-        "y": 317.1,
-        "id": "gold2a",
-        "pairId": "gold2b",
-        "label": "B",
-        "radius": 16,
-        "colors": [
-          "gold"
-        ]
-      },
-      {
-        "x": 629.3,
-        "y": 218.2,
-        "id": "gold2b",
-        "pairId": "gold2a",
-        "label": "B",
-        "radius": 16,
-        "colors": [
-          "gold"
-        ]
-      },
-      {
-        "x": 658.7,
-        "y": 44.1,
-        "id": "blue1a",
-        "pairId": "blue1b",
-        "label": "C",
+        "id": "p1a",
+        "pairId": "p1b",
+        "x": 452.2,
+        "y": 41.6,
         "radius": 16,
         "colors": [
           "blue"
-        ]
+        ],
+        "label": "B"
       },
       {
-        "x": 141.4,
-        "y": 346.8,
-        "id": "blue1b",
-        "pairId": "blue1a",
-        "label": "C",
+        "id": "p1b",
+        "pairId": "p1a",
+        "x": 116.1,
+        "y": 212.1,
         "radius": 16,
         "colors": [
           "blue"
-        ]
+        ],
+        "label": "B"
       },
       {
-        "x": 484.7,
-        "y": 339.8,
-        "id": "blue2a",
-        "pairId": "blue2b",
-        "label": "D",
-        "radius": 16,
-        "colors": [
-          "blue"
-        ]
-      },
-      {
-        "x": 351.4,
-        "y": 39,
-        "id": "blue2b",
-        "pairId": "blue2a",
-        "label": "D",
-        "radius": 16,
-        "colors": [
-          "blue"
-        ]
-      },
-      {
-        "x": 436.3,
-        "y": 142.5,
-        "id": "pink1a",
-        "pairId": "pink1b",
-        "label": "E",
+        "id": "p2a",
+        "pairId": "p2b",
+        "x": 674.8,
+        "y": 147.6,
         "radius": 16,
         "colors": [
           "pink"
-        ]
+        ],
+        "label": "C"
       },
       {
-        "x": 25.3,
-        "y": 353.4,
-        "id": "pink1b",
-        "pairId": "pink1a",
-        "label": "E",
+        "id": "p2b",
+        "pairId": "p2a",
+        "x": 79.9,
+        "y": 305.6,
         "radius": 16,
         "colors": [
           "pink"
-        ]
-      },
-      {
-        "x": 308.3,
-        "y": 63.4,
-        "id": "pink2a",
-        "pairId": "pink2b",
-        "label": "F",
-        "radius": 16,
-        "colors": [
-          "pink"
-        ]
-      },
-      {
-        "x": 123,
-        "y": 239.5,
-        "id": "pink2b",
-        "pairId": "pink2a",
-        "label": "F",
-        "radius": 16,
-        "colors": [
-          "pink"
-        ]
+        ],
+        "label": "C"
       }
     ],
-    "width": 800,
-    "height": 460,
-    "solution": [
-      -5.1,
-      -18.5,
-      55.7,
-      -34.5
+    "objects": [
+      {
+        "type": "mirror",
+        "x": 210,
+        "y": 100,
+        "length": 124.8,
+        "angle": 35.8
+      },
+      {
+        "type": "mirror",
+        "x": 590,
+        "y": 360,
+        "length": 124.8,
+        "angle": 35.3
+      },
+      {
+        "type": "mirror",
+        "x": 400,
+        "y": 210,
+        "length": 124.8,
+        "angle": -27.1
+      },
+      {
+        "type": "mirror",
+        "x": 290.2,
+        "y": 387.7,
+        "length": 124.8,
+        "angle": 22.7
+      },
+      {
+        "type": "wall",
+        "x": 480,
+        "y": 155.065729688769,
+        "length": 46.79109938507824,
+        "width": 12,
+        "angle": 90
+      },
+      {
+        "type": "wall",
+        "x": 480,
+        "y": 251.73497449299845,
+        "length": 93.0947240042108,
+        "width": 12,
+        "angle": 90
+      },
+      {
+        "type": "wall",
+        "x": 480,
+        "y": 393.7127715322879,
+        "length": 132.57445693542417,
+        "width": 12,
+        "angle": 90
+      },
+      {
+        "type": "wall",
+        "x": 17.950000000000003,
+        "y": 280,
+        "length": 35.900000000000006,
+        "width": 12,
+        "angle": 0
+      },
+      {
+        "type": "wall",
+        "x": 236.54083645901613,
+        "y": 280,
+        "length": 28.08167291803224,
+        "width": 12,
+        "angle": 0
+      },
+      {
+        "type": "wall",
+        "x": 363.0234832579414,
+        "y": 280,
+        "length": 36.64696651588275,
+        "width": 12,
+        "angle": 0
+      },
+      {
+        "type": "wall",
+        "x": 485.0647704890311,
+        "y": 280,
+        "length": 119.43941255538027,
+        "width": 12,
+        "angle": 0
+      },
+      {
+        "type": "wall",
+        "x": 597.1088362574902,
+        "y": 280,
+        "length": 62.262991567599784,
+        "width": 12,
+        "angle": 0
+      },
+      {
+        "type": "wall",
+        "x": 725.8693821321011,
+        "y": 280,
+        "length": 148.26123573579775,
+        "width": 12,
+        "angle": 0
+      }
     ],
-    "id": "light-v4-deduction-master-window-24-1",
+    "id": "light-v5-deduction-master-window-24-1-reauthored",
     "name": "As janelas da última curva",
     "hint": "As duas entradas podem alcançar o mesmo espelho, mas não oferecem as mesmas chegadas.",
-    "sourceAngle": 13.813303816728954,
+    "solution": [
+      4.8,
+      4.3,
+      -58.1,
+      -24.7
+    ],
+    "sourceAngle": -26,
     "target": {
-      "x": 742.5,
-      "y": 220.9,
+      "x": 300.7,
+      "y": 268.2,
       "radius": 22,
       "color": "gold"
     },
@@ -69694,21 +70355,21 @@ export const lightLevels = [
         "y": 117.3,
         "type": "mirror",
         "length": 124.8,
-        "angle": 88.4
+        "angle": 50.4
       },
       {
         "x": 592.9,
         "y": 104,
         "type": "mirror",
         "length": 124.8,
-        "angle": -31.4
+        "angle": 69.6
       },
       {
         "x": 393.6,
         "y": 280.5,
         "type": "mirror",
         "length": 124.8,
-        "angle": -70.8
+        "angle": -56.8
       },
       {
         "type": "mirror",
@@ -69768,22 +70429,22 @@ export const lightLevels = [
     ],
     "sources": [
       {
-        "x": 30,
-        "y": 68.4,
+        "x": 101.8856561228857,
+        "y": 244.6154933829456,
         "color": "gold",
-        "angle": 17.921866005411545
+        "angle": -58.078133994588455
       },
       {
-        "x": 770,
-        "y": 46.8,
+        "x": 413.3607736701606,
+        "y": 91.12886139913338,
         "color": "blue",
-        "angle": 162.10051016264254
+        "angle": 4.100510162642536
       },
       {
-        "x": 393.6,
-        "y": 440,
+        "x": 318.4845499542575,
+        "y": 421.7716148574283,
         "color": "pink",
-        "angle": -90
+        "angle": -62
       }
     ],
     "targets": [
@@ -69921,15 +70582,15 @@ export const lightLevels = [
     "width": 800,
     "height": 460,
     "solution": [
-      57.4,
-      -62.4,
-      78.2,
+      19.4,
+      38.6,
+      -87.8,
       9.1
     ],
-    "id": "light-v4-deduction-master-window-10-1",
+    "id": "light-v5-deduction-master-window-10-1",
     "name": "As janelas da última curva",
     "hint": "As duas entradas podem alcançar o mesmo espelho, mas não oferecem as mesmas chegadas.",
-    "sourceAngle": 17.921866005411545,
+    "sourceAngle": -58.078133994588455,
     "target": {
       "x": 474.1,
       "y": 218.2,
@@ -69952,40 +70613,40 @@ export const lightLevels = [
         "x": 200,
         "y": 86,
         "length": 124.8,
-        "angle": 15.1
+        "angle": -78.9
       },
       {
         "type": "mirror",
         "x": 600,
         "y": 230,
         "length": 124.8,
-        "angle": 0.7
+        "angle": -89.3
       },
       {
         "type": "mirror",
         "x": 200,
         "y": 374,
         "length": 124.8,
-        "angle": -15.2
+        "angle": 58.8
       }
     ],
     "sources": [
       {
-        "x": 30,
-        "y": 86,
-        "angle": 0,
+        "x": 348.54021031123557,
+        "y": 65.12403485599015,
+        "angle": 172,
         "color": "gold"
       },
       {
-        "x": 770,
+        "x": 150,
         "y": 230,
-        "angle": 180,
+        "angle": 360,
         "color": "blue"
       },
       {
-        "x": 30,
-        "y": 374,
-        "angle": 0,
+        "x": 327.2072144234639,
+        "y": 294.5121103650193,
+        "angle": 148,
         "color": "pink"
       }
     ],
@@ -70119,19 +70780,41 @@ export const lightLevels = [
         "colors": [
           "pink"
         ]
+      },
+      {
+        "x": 195,
+        "y": 230,
+        "id": "angle-access-1a",
+        "pairId": "angle-access-1b",
+        "label": "K",
+        "radius": 16,
+        "colors": [
+          "blue"
+        ]
+      },
+      {
+        "x": 514,
+        "y": 230.00000000000003,
+        "id": "angle-access-1b",
+        "pairId": "angle-access-1a",
+        "label": "K",
+        "radius": 16,
+        "colors": [
+          "blue"
+        ]
       }
     ],
     "width": 800,
     "height": 460,
-    "id": "light-v4-portal-905",
+    "id": "light-v5-portal-905",
     "name": "A consequência distante 905",
-    "hint": "Uma escolha aqui pode atrapalhar uma luz do outro lado.",
+    "hint": "Uma escolha aqui pode interferir em outra região.",
     "solution": [
-      15.1,
-      8.7,
-      5
+      -78.9,
+      -81.3,
+      79
     ],
-    "sourceAngle": 0,
+    "sourceAngle": 172,
     "target": {
       "x": 710,
       "y": 383,
@@ -70154,40 +70837,40 @@ export const lightLevels = [
         "x": 200,
         "y": 86,
         "length": 124.8,
-        "angle": 14.7
+        "angle": -75.3
       },
       {
         "type": "mirror",
         "x": 600,
         "y": 230,
         "length": 124.8,
-        "angle": -0.4
+        "angle": -22.4
       },
       {
         "type": "mirror",
         "x": 200,
         "y": 374,
         "length": 124.8,
-        "angle": -14.9
+        "angle": 75.1
       }
     ],
     "sources": [
       {
-        "x": 30,
-        "y": 86,
-        "angle": 0,
+        "x": 420,
+        "y": 86.00000000000003,
+        "angle": -180,
         "color": "gold"
       },
       {
-        "x": 770,
-        "y": 230,
-        "angle": 180,
+        "x": 707.9009700507977,
+        "y": 125.80124443115042,
+        "angle": 136,
         "color": "blue"
       },
       {
-        "x": 30,
+        "x": 350,
         "y": 374,
-        "angle": 0,
+        "angle": -180,
         "color": "pink"
       }
     ],
@@ -70347,15 +71030,15 @@ export const lightLevels = [
     ],
     "width": 800,
     "height": 460,
-    "id": "light-v4-portal-954",
+    "id": "light-v5-portal-954",
     "name": "A saída decide 954",
     "hint": "Compare o que acontece depois de cada saída.",
     "solution": [
-      3,
-      -0.4,
-      -2
+      -87,
+      -22.4,
+      88
     ],
-    "sourceAngle": 0,
+    "sourceAngle": -180,
     "target": {
       "x": 710,
       "y": 374,
@@ -70378,41 +71061,41 @@ export const lightLevels = [
         "y": 117.3,
         "type": "mirror",
         "length": 124.8,
-        "angle": 18.5
+        "angle": -1.5
       },
       {
         "x": 592.9,
         "y": 104,
         "type": "mirror",
         "length": 124.8,
-        "angle": -22
+        "angle": 42
       },
       {
         "x": 393.6,
         "y": 280.5,
         "type": "mirror",
         "length": 124.8,
-        "angle": -46.8
+        "angle": -2.8
       }
     ],
     "sources": [
       {
-        "x": 30,
-        "y": 68.4,
+        "x": 42.1991785068806,
+        "y": 173.68059616781258,
         "color": "gold",
-        "angle": 17.921866005411545
+        "angle": -22.078133994588455
       },
       {
-        "x": 770,
-        "y": 46.8,
+        "x": 541.349791557406,
+        "y": 244.86367881581506,
         "color": "blue",
-        "angle": 162.10051016264254
+        "angle": 290.10051016264254
       },
       {
-        "x": 393.6,
-        "y": 440,
+        "x": 243.69137594713567,
+        "y": 285.73492450537515,
         "color": "pink",
-        "angle": -90
+        "angle": -2
       }
     ],
     "targets": [
@@ -70528,14 +71211,14 @@ export const lightLevels = [
     "width": 800,
     "height": 460,
     "solution": [
-      -47.2,
-      -62.4,
-      78.2
+      -67.2,
+      1.6,
+      -57.8
     ],
-    "id": "light-v4-deduction-master-detail-2",
+    "id": "light-v5-deduction-master-detail-2",
     "name": "Uma entrada muda o acordo",
     "hint": "Uma pequena diferença pode mudar as alternativas das outras cores.",
-    "sourceAngle": 17.921866005411545,
+    "sourceAngle": -22.078133994588455,
     "target": {
       "x": 474.1,
       "y": 218.2,
@@ -70558,41 +71241,41 @@ export const lightLevels = [
         "y": 123.5,
         "type": "mirror",
         "length": 124.8,
-        "angle": 17.4
+        "angle": 25.4
       },
       {
         "x": 579.9,
         "y": 127.6,
         "type": "mirror",
         "length": 124.8,
-        "angle": -18.5
+        "angle": -78.5
       },
       {
         "x": 386.6,
         "y": 277.3,
         "type": "mirror",
         "length": 124.8,
-        "angle": 55.7
+        "angle": 49.7
       }
     ],
     "sources": [
       {
-        "x": 30,
-        "y": 72.9,
+        "x": 105.65249476392759,
+        "y": 48.92368418306987,
         "color": "gold",
-        "angle": 13.813303816728954
+        "angle": 29.813303816728954
       },
       {
-        "x": 770,
-        "y": 46.3,
+        "x": 459.86101914865424,
+        "y": 37.65199793119224,
         "color": "blue",
-        "angle": 156.8450744946745
+        "angle": 36.84507449467449
       },
       {
-        "x": 386.6,
-        "y": 440,
+        "x": 417.78675362266387,
+        "y": 424.02214011007084,
         "color": "pink",
-        "angle": -90
+        "angle": -102
       }
     ],
     "targets": [
@@ -70752,14 +71435,14 @@ export const lightLevels = [
     "width": 800,
     "height": 460,
     "solution": [
-      -5.1,
-      -18.5,
-      55.7
+      2.9,
+      -78.5,
+      49.7
     ],
-    "id": "light-v4-master-reserve-004",
+    "id": "light-v5-master-reserve-004",
     "name": "Condições entre 3, 3, 3 rotas",
     "hint": "Considere uma rota de cada vez e siga o que ela exige das outras duas cores.",
-    "sourceAngle": 13.813303816728954,
+    "sourceAngle": 29.813303816728954,
     "target": {
       "x": 735.8,
       "y": 315.6,
@@ -70778,21 +71461,21 @@ export const lightLevels = [
   {
     "sources": [
       {
-        "x": 40,
-        "y": 60,
-        "angle": 23.62937773065682,
+        "x": 305.79503680597,
+        "y": 26.504057146072412,
+        "angle": 135.6293777306568,
         "color": "gold"
       },
       {
-        "x": 760,
-        "y": 60,
-        "angle": 156.3706222693432,
+        "x": 488.6107451803184,
+        "y": 429.98738958615587,
+        "angle": 290.3706222693432,
         "color": "blue"
       },
       {
-        "x": 400,
-        "y": 430,
-        "angle": -90,
+        "x": 297.19056117206844,
+        "y": 386.46229045012035,
+        "angle": -46,
         "color": "pink"
       }
     ],
@@ -70822,21 +71505,21 @@ export const lightLevels = [
         "x": 200,
         "y": 130,
         "length": 124.8,
-        "angle": 20
+        "angle": 76
       },
       {
         "type": "mirror",
         "x": 600,
         "y": 130,
         "length": 124.8,
-        "angle": 40
+        "angle": -73
       },
       {
         "type": "mirror",
         "x": 400,
         "y": 280,
         "length": 124.8,
-        "angle": 60
+        "angle": 82
       },
       {
         "type": "wall",
@@ -70933,15 +71616,15 @@ export const lightLevels = [
       }
     ],
     "solution": [
-      -24.5,
-      -43.3,
-      82.1
+      31.5,
+      23.7,
+      -75.9
     ],
     "name": "Uma escolha, três percursos",
     "difficulty": 197,
     "family": "v3-final-197",
     "hint": "Compare os percursos depois dos espelhos, não apenas as partidas das fontes.",
-    "sourceAngle": 23.62937773065682,
+    "sourceAngle": 135.6293777306568,
     "target": {
       "x": 294.5868209004402,
       "y": 226.5578272100538,
@@ -70955,7 +71638,7 @@ export const lightLevels = [
     "decoyCount": 0,
     "tutorial": "",
     "rules": "Leve todas as fontes aos alvos da mesma cor, sem cruzar nem encostar nos trechos físicos das outras luzes.",
-    "id": "light-v3-197",
+    "id": "light-v5-legacy-197",
     "campaignNumber": 472,
     "number": 472,
     "campaignBand": "master"
@@ -70967,96 +71650,96 @@ export const lightLevels = [
         "y": 117.3,
         "type": "mirror",
         "length": 124.8,
-        "angle": 88.4
+        "angle": 56.4
       },
       {
         "x": 592.9,
         "y": 104,
         "type": "mirror",
         "length": 124.8,
-        "angle": -31.4
+        "angle": 76.6
       },
       {
         "x": 393.6,
         "y": 280.5,
         "type": "mirror",
         "length": 124.8,
-        "angle": -70.8
+        "angle": -52.8
       },
       {
         "type": "mirror",
         "x": 726.5,
         "y": 259,
         "length": 124.8,
-        "angle": -66.3
+        "angle": 74.2
       },
       {
         "type": "wall",
-        "x": 260,
-        "y": 67.27663609818903,
-        "length": 134.55327219637806,
+        "x": 100,
+        "y": 90.67148252358845,
+        "length": 181.3429650471769,
         "width": 12,
         "angle": 90
       },
       {
         "type": "wall",
-        "x": 260,
-        "y": 205.82148747230804,
-        "length": 102.53643055185992,
+        "x": 100,
+        "y": 301.9390948217515,
+        "length": 65.19225954914913,
         "width": 12,
         "angle": 90
       },
       {
         "type": "wall",
-        "x": 260,
-        "y": 368.544851374119,
-        "length": 182.91029725176202,
+        "x": 100,
+        "y": 408.2070482143223,
+        "length": 103.58590357135535,
         "width": 12,
         "angle": 90
       },
       {
         "type": "wall",
-        "x": 510,
-        "y": 38.75,
-        "length": 77.5,
+        "x": 520,
+        "y": 35.10536365405054,
+        "length": 70.21072730810108,
         "width": 12,
         "angle": 90
       },
       {
         "type": "wall",
-        "x": 510,
-        "y": 212.3383663658376,
-        "length": 101.6767327316752,
+        "x": 520,
+        "y": 213.83504902780837,
+        "length": 100.67009805561673,
         "width": 12,
         "angle": 90
       },
       {
         "type": "wall",
-        "x": 510,
-        "y": 412.8,
-        "length": 94.39999999999998,
+        "x": 520,
+        "y": 413.8,
+        "length": 92.39999999999998,
         "width": 12,
         "angle": 90
       }
     ],
     "sources": [
       {
-        "x": 30,
-        "y": 68.4,
+        "x": 77.14848533627918,
+        "y": 225.3429650471769,
         "color": "gold",
-        "angle": 17.921866005411545
+        "angle": -46.078133994588455
       },
       {
-        "x": 770,
-        "y": 46.8,
+        "x": 364.7768883228076,
+        "y": 29.435625673414137,
         "color": "blue",
-        "angle": 162.10051016264254
+        "angle": 18.100510162642536
       },
       {
-        "x": 393.6,
-        "y": 440,
+        "x": 305.432212156129,
+        "y": 401.8525491562421,
         "color": "pink",
-        "angle": -90
+        "angle": -54
       }
     ],
     "targets": [
@@ -71073,8 +71756,8 @@ export const lightLevels = [
         "radius": 22
       },
       {
-        "x": 745.8,
-        "y": 136.7,
+        "x": 623.1338117135501,
+        "y": 221.37778423417643,
         "radius": 22,
         "color": "pink"
       }
@@ -71172,15 +71855,15 @@ export const lightLevels = [
     "width": 800,
     "height": 460,
     "solution": [
-      57.4,
-      -62.4,
-      78.2,
-      82.7
+      25.4,
+      45.6,
+      -83.8,
+      43.2
     ],
-    "id": "light-v4-deduction-master-window-4-1",
+    "id": "light-v5-deduction-master-window-4-1",
     "name": "As janelas da última curva",
     "hint": "As duas entradas podem alcançar o mesmo espelho, mas não oferecem as mesmas chegadas.",
-    "sourceAngle": 17.921866005411545,
+    "sourceAngle": -46.078133994588455,
     "target": {
       "x": 474.1,
       "y": 218.2,
@@ -71200,50 +71883,50 @@ export const lightLevels = [
     "objects": [
       {
         "type": "mirror",
-        "x": 580,
-        "y": 86,
+        "x": 599,
+        "y": 110,
         "length": 124.8,
-        "angle": -54.8
+        "angle": -53.2
       },
       {
         "type": "mirror",
         "x": 200,
         "y": 230,
         "length": 124.8,
-        "angle": 0.4
+        "angle": -89.6
       },
       {
         "type": "mirror",
         "x": 200,
         "y": 374,
         "length": 124.8,
-        "angle": -15
+        "angle": 65
       }
     ],
     "sources": [
       {
-        "x": 770,
-        "y": 86,
-        "angle": 180,
+        "x": 731.4421389288391,
+        "y": 39.579265582116335,
+        "angle": 152,
         "color": "gold"
       },
       {
-        "x": 30,
+        "x": 350,
         "y": 230,
-        "angle": 0,
+        "angle": 180,
         "color": "blue"
       },
       {
-        "x": 30,
+        "x": 350,
         "y": 374,
-        "angle": 0,
+        "angle": -180,
         "color": "pink"
       }
     ],
     "targets": [
       {
-        "x": 650,
-        "y": 283,
+        "x": 550,
+        "y": 350,
         "radius": 22,
         "color": "gold"
       },
@@ -71265,8 +71948,8 @@ export const lightLevels = [
         "id": "g1a",
         "pairId": "g1b",
         "label": "A",
-        "x": 471,
-        "y": 46.3,
+        "x": 496.581734306218,
+        "y": 72.6972004766684,
         "radius": 16,
         "colors": [
           "gold"
@@ -71298,8 +71981,8 @@ export const lightLevels = [
         "id": "g1d",
         "pairId": "g1c",
         "label": "B",
-        "x": 749.6,
-        "y": 319.3,
+        "x": 649.6,
+        "y": 386.3,
         "radius": 16,
         "colors": [
           "gold"
@@ -71309,8 +71992,8 @@ export const lightLevels = [
         "id": "b1a",
         "pairId": "b1b",
         "label": "C",
-        "x": 179.4,
-        "y": 62.3,
+        "x": 412.5,
+        "y": 173.1,
         "radius": 16,
         "colors": [
           "blue"
@@ -71320,8 +72003,8 @@ export const lightLevels = [
         "id": "b1b",
         "pairId": "b1a",
         "label": "C",
-        "x": 703.2,
-        "y": 343.2,
+        "x": 496.8,
+        "y": 287.8,
         "radius": 16,
         "colors": [
           "blue"
@@ -71331,8 +72014,8 @@ export const lightLevels = [
         "id": "b2a",
         "pairId": "b2b",
         "label": "D",
-        "x": 460.7,
-        "y": 112.4,
+        "x": 329.9,
+        "y": 305,
         "radius": 16,
         "colors": [
           "blue"
@@ -71342,8 +72025,8 @@ export const lightLevels = [
         "id": "b2b",
         "pairId": "b2a",
         "label": "D",
-        "x": 570.2,
-        "y": 290.1,
+        "x": 473.5,
+        "y": 111,
         "radius": 16,
         "colors": [
           "blue"
@@ -71396,18 +72079,18 @@ export const lightLevels = [
     ],
     "width": 800,
     "height": 460,
-    "id": "light-v4-portal-1200",
-    "name": "A volta muda o acordo 1200",
-    "hint": "Reconstrua a chegada e compare como os outros acessos permitem voltar.",
+    "id": "light-v5-portal-1200",
+    "name": "Uma saída muda o retorno",
+    "hint": "Reconstrua a chegada dourada e compare o que o acesso azul libera para rosa.",
     "solution": [
-      10,
-      0.4,
-      -25
+      -4,
+      -89.6,
+      65
     ],
-    "sourceAngle": 180,
+    "sourceAngle": 152,
     "target": {
-      "x": 650,
-      "y": 283,
+      "x": 550,
+      "y": 350,
       "radius": 22,
       "color": "gold"
     },
@@ -71427,41 +72110,41 @@ export const lightLevels = [
         "y": 117.3,
         "type": "mirror",
         "length": 124.8,
-        "angle": 18.5
+        "angle": -1.5
       },
       {
         "x": 592.9,
         "y": 104,
         "type": "mirror",
         "length": 124.8,
-        "angle": -22
+        "angle": 42
       },
       {
         "x": 393.6,
         "y": 280.5,
         "type": "mirror",
         "length": 124.8,
-        "angle": -46.8
+        "angle": -2.8
       }
     ],
     "sources": [
       {
-        "x": 30,
-        "y": 68.4,
+        "x": 42.1991785068806,
+        "y": 173.68059616781258,
         "color": "gold",
-        "angle": 17.921866005411545
+        "angle": -22.078133994588455
       },
       {
-        "x": 770,
-        "y": 46.8,
+        "x": 541.349791557406,
+        "y": 244.86367881581506,
         "color": "blue",
-        "angle": 162.10051016264254
+        "angle": 290.10051016264254
       },
       {
-        "x": 393.6,
-        "y": 440,
+        "x": 243.69137594713567,
+        "y": 285.73492450537515,
         "color": "pink",
-        "angle": -90
+        "angle": -2
       }
     ],
     "targets": [
@@ -71599,14 +72282,14 @@ export const lightLevels = [
     "width": 800,
     "height": 460,
     "solution": [
-      57.4,
-      -62.4,
-      78.2
+      37.4,
+      1.6,
+      -57.8
     ],
-    "id": "light-v4-master-reserve-005",
+    "id": "light-v5-master-reserve-005",
     "name": "Condições entre 3, 3, 2 rotas",
     "hint": "Considere uma rota de cada vez e siga o que ela exige das outras duas cores.",
-    "sourceAngle": 17.921866005411545,
+    "sourceAngle": -22.078133994588455,
     "target": {
       "x": 474.1,
       "y": 218.2,
@@ -71629,41 +72312,41 @@ export const lightLevels = [
         "y": 105.7,
         "type": "mirror",
         "length": 124.8,
-        "angle": 16
+        "angle": 84
       },
       {
         "x": 582.9,
         "y": 95.7,
         "type": "mirror",
         "length": 124.8,
-        "angle": -14.9
+        "angle": 21.1
       },
       {
         "x": 366,
         "y": 281.1,
         "type": "mirror",
         "length": 124.8,
-        "angle": 57.5
+        "angle": -86.5
       }
     ],
     "sources": [
       {
-        "x": 30,
-        "y": 74.9,
+        "x": 323.9261336979682,
+        "y": 22.52286163844684,
         "color": "gold",
-        "angle": 10.322735559982544
+        "angle": 146.32273555998253
       },
       {
-        "x": 770,
-        "y": 78.3,
+        "x": 642.2634032923661,
+        "y": 233.453353315075,
         "color": "blue",
-        "angle": 174.68686644306962
+        "angle": 246.68686644306962
       },
       {
-        "x": 366,
-        "y": 440,
+        "x": 156.76756641506623,
+        "y": 349.08373876248845,
         "color": "pink",
-        "angle": -90
+        "angle": -18
       }
     ],
     "targets": [
@@ -71823,14 +72506,14 @@ export const lightLevels = [
     "width": 800,
     "height": 460,
     "solution": [
-      16,
-      76.1,
-      57.5
+      84,
+      -67.9,
+      -86.5
     ],
-    "id": "light-v4-master-reserve-012",
+    "id": "light-v5-master-reserve-012",
     "name": "Condições entre 2, 4, 3 rotas",
     "hint": "Considere uma rota de cada vez e siga o que ela exige das outras duas cores.",
-    "sourceAngle": 10.322735559982544,
+    "sourceAngle": 146.32273555998253,
     "target": {
       "x": 755,
       "y": 325.9,
@@ -71853,40 +72536,40 @@ export const lightLevels = [
         "x": 200,
         "y": 86,
         "length": 124.8,
-        "angle": 14.7
+        "angle": -49.3
       },
       {
         "type": "mirror",
         "x": 600,
         "y": 230,
         "length": 124.8,
-        "angle": -0.4
+        "angle": -88.4
       },
       {
         "type": "mirror",
         "x": 200,
         "y": 374,
         "length": 124.8,
-        "angle": -14.9
+        "angle": 75.1
       }
     ],
     "sources": [
       {
-        "x": 30,
-        "y": 86,
-        "angle": 0,
+        "x": 292.34922129884876,
+        "y": 204.2016130410083,
+        "angle": -128,
         "color": "gold"
       },
       {
-        "x": 770,
-        "y": 230,
-        "angle": 180,
+        "x": 450.3653924610264,
+        "y": 219.5365289383812,
+        "angle": 4,
         "color": "blue"
       },
       {
-        "x": 30,
+        "x": 350,
         "y": 374,
-        "angle": 0,
+        "angle": -180,
         "color": "pink"
       }
     ],
@@ -72046,15 +72729,15 @@ export const lightLevels = [
     ],
     "width": 800,
     "height": 460,
-    "id": "light-v4-portal-947",
+    "id": "light-v5-portal-947",
     "name": "A consequência distante 947",
-    "hint": "Uma escolha aqui pode atrapalhar uma luz do outro lado.",
+    "hint": "Uma escolha aqui pode interferir em outra região.",
     "solution": [
-      3,
-      -0.4,
-      -2
+      -61,
+      -88.4,
+      88
     ],
-    "sourceAngle": 0,
+    "sourceAngle": -128,
     "target": {
       "x": 710,
       "y": 374,
@@ -72077,41 +72760,41 @@ export const lightLevels = [
         "y": 105.7,
         "type": "mirror",
         "length": 124.8,
-        "angle": 16
+        "angle": 84
       },
       {
         "x": 582.9,
         "y": 95.7,
         "type": "mirror",
         "length": 124.8,
-        "angle": -14.9
+        "angle": 21.1
       },
       {
         "x": 366,
         "y": 281.1,
         "type": "mirror",
         "length": 124.8,
-        "angle": 57.5
+        "angle": -86.5
       }
     ],
     "sources": [
       {
-        "x": 30,
-        "y": 74.9,
+        "x": 323.9261336979682,
+        "y": 22.52286163844684,
         "color": "gold",
-        "angle": 10.322735559982544
+        "angle": 146.32273555998253
       },
       {
-        "x": 770,
-        "y": 78.3,
+        "x": 642.2634032923661,
+        "y": 233.453353315075,
         "color": "blue",
-        "angle": 174.68686644306962
+        "angle": 246.68686644306962
       },
       {
-        "x": 366,
-        "y": 440,
+        "x": 156.76756641506623,
+        "y": 349.08373876248845,
         "color": "pink",
-        "angle": -90
+        "angle": -18
       }
     ],
     "targets": [
@@ -72249,14 +72932,14 @@ export const lightLevels = [
     "width": 800,
     "height": 460,
     "solution": [
-      16,
-      76.1,
-      57.5
+      84,
+      -67.9,
+      -86.5
     ],
-    "id": "light-v4-master-reserve-010",
+    "id": "light-v5-master-reserve-010",
     "name": "Condições entre 2, 4, 2 rotas",
     "hint": "Considere uma rota de cada vez e siga o que ela exige das outras duas cores.",
-    "sourceAngle": 10.322735559982544,
+    "sourceAngle": 146.32273555998253,
     "target": {
       "x": 755,
       "y": 325.9,
@@ -72279,41 +72962,41 @@ export const lightLevels = [
         "y": 117.3,
         "type": "mirror",
         "length": 124.8,
-        "angle": 18.5
+        "angle": -1.5
       },
       {
         "x": 592.9,
         "y": 104,
         "type": "mirror",
         "length": 124.8,
-        "angle": -22
+        "angle": 42
       },
       {
         "x": 393.6,
         "y": 280.5,
         "type": "mirror",
         "length": 124.8,
-        "angle": -46.8
+        "angle": -18.8
       }
     ],
     "sources": [
       {
-        "x": 30,
-        "y": 68.4,
+        "x": 42.1991785068806,
+        "y": 173.68059616781258,
         "color": "gold",
-        "angle": 17.921866005411545
+        "angle": -22.078133994588455
       },
       {
-        "x": 770,
-        "y": 46.8,
+        "x": 541.349791557406,
+        "y": 244.86367881581506,
         "color": "blue",
-        "angle": 162.10051016264254
+        "angle": 290.10051016264254
       },
       {
-        "x": 393.6,
-        "y": 440,
+        "x": 269.2443641167438,
+        "y": 364.37893552061206,
         "color": "pink",
-        "angle": -90
+        "angle": -34
       }
     ],
     "targets": [
@@ -72451,14 +73134,14 @@ export const lightLevels = [
     "width": 800,
     "height": 460,
     "solution": [
-      57.4,
-      -62.4,
-      78.2
+      37.4,
+      1.6,
+      -73.8
     ],
-    "id": "light-v4-master-reserve-006",
+    "id": "light-v5-master-reserve-006",
     "name": "Condições entre 3, 2, 3 rotas",
     "hint": "Considere uma rota de cada vez e siga o que ela exige das outras duas cores.",
-    "sourceAngle": 17.921866005411545,
+    "sourceAngle": -22.078133994588455,
     "target": {
       "x": 474.1,
       "y": 218.2,
@@ -72481,96 +73164,112 @@ export const lightLevels = [
         "y": 151.5,
         "type": "mirror",
         "length": 124.8,
-        "angle": 33.3
+        "angle": 51.3
       },
       {
         "x": 597.8,
         "y": 110,
         "type": "mirror",
         "length": 124.8,
-        "angle": 10.6
+        "angle": -72.4
       },
       {
         "x": 420,
         "y": 277.2,
         "type": "mirror",
         "length": 124.8,
-        "angle": -26.6
+        "angle": -63.6
       },
       {
         "type": "mirror",
         "x": 90.1,
         "y": 283,
         "length": 124.8,
-        "angle": -35.4
+        "angle": -68.4
       },
       {
         "type": "wall",
-        "x": 290,
-        "y": 55.11910533783306,
-        "length": 110.23821067566612,
+        "x": 340,
+        "y": 29.15,
+        "length": 58.3,
         "width": 12,
         "angle": 90
       },
       {
         "type": "wall",
-        "x": 290,
-        "y": 171.4880636922358,
-        "length": 50.499706033139375,
+        "x": 340,
+        "y": 166.9911426693916,
+        "length": 41.382285338783134,
         "width": 12,
         "angle": 90
       },
       {
         "type": "wall",
-        "x": 290,
-        "y": 346.36895835440276,
-        "length": 227.2620832911945,
+        "x": 340,
+        "y": 333.8828174590369,
+        "length": 252.23436508192614,
         "width": 12,
         "angle": 90
       },
       {
         "type": "wall",
-        "x": 490,
-        "y": 112.29104519364722,
-        "length": 48.78209038729443,
+        "x": 500,
+        "y": 22.55750811659842,
+        "length": 45.11501623319684,
         "width": 12,
         "angle": 90
       },
       {
         "type": "wall",
-        "x": 490,
-        "y": 167.7410451936472,
-        "length": 22.117909612705574,
+        "x": 500,
+        "y": 90.23624171786369,
+        "length": 49.355754016270026,
         "width": 12,
         "angle": 90
       },
       {
         "type": "wall",
-        "x": 490,
-        "y": 361.4,
-        "length": 197.2,
+        "x": 500,
+        "y": 165.0604869304323,
+        "length": 23.479026139135442,
+        "width": 12,
+        "angle": 90
+      },
+      {
+        "type": "wall",
+        "x": 500,
+        "y": 277.60957927307595,
+        "length": 25.619158546151823,
+        "width": 12,
+        "angle": 90
+      },
+      {
+        "type": "wall",
+        "x": 500,
+        "y": 384.9300515876288,
+        "length": 150.13989682474244,
         "width": 12,
         "angle": 90
       }
     ],
     "sources": [
       {
-        "x": 30,
-        "y": 76.9,
+        "x": 135.7313235509471,
+        "y": 24.405932503298473,
         "color": "gold",
-        "angle": 21.918535057199076
+        "angle": 57.91853505719908
       },
       {
-        "x": 770,
-        "y": 40.4,
+        "x": 449.2625718161529,
+        "y": 130.89575144684866,
         "color": "blue",
-        "angle": 157.992367842636
+        "angle": -8.007632157363986
       },
       {
-        "x": 420,
-        "y": 440,
+        "x": 593.0271052688973,
+        "y": 326.81472404705994,
         "color": "pink",
-        "angle": -90
+        "angle": -164
       }
     ],
     "targets": [
@@ -72581,8 +73280,8 @@ export const lightLevels = [
         "radius": 22
       },
       {
-        "x": 154.1,
-        "y": 426.4,
+        "x": 220.1,
+        "y": 283,
         "radius": 22,
         "color": "blue"
       },
@@ -72686,15 +73385,15 @@ export const lightLevels = [
     "width": 800,
     "height": 460,
     "solution": [
-      2.3,
-      -20.4,
-      -57.6,
-      -66.4
+      20.3,
+      76.6,
+      85.4,
+      80.6
     ],
-    "id": "light-v4-deduction-master-window-25-1",
+    "id": "light-v5-deduction-master-window-25-1",
     "name": "As janelas da última curva",
     "hint": "As duas entradas podem alcançar o mesmo espelho, mas não oferecem as mesmas chegadas.",
-    "sourceAngle": 21.918535057199076,
+    "sourceAngle": 57.91853505719908,
     "target": {
       "x": 374,
       "y": 102.3,
@@ -72717,40 +73416,40 @@ export const lightLevels = [
         "x": 200,
         "y": 86,
         "length": 124.8,
-        "angle": 14.7
+        "angle": -75.3
       },
       {
         "type": "mirror",
         "x": 600,
         "y": 230,
         "length": 124.8,
-        "angle": -0.4
+        "angle": 25.6
       },
       {
         "type": "mirror",
         "x": 200,
         "y": 374,
         "length": 124.8,
-        "angle": -14.9
+        "angle": 77.1
       }
     ],
     "sources": [
       {
-        "x": 30,
-        "y": 86,
-        "angle": 0,
+        "x": 350,
+        "y": 86.00000000000001,
+        "angle": -180,
         "color": "gold"
       },
       {
-        "x": 770,
-        "y": 230,
-        "angle": 180,
+        "x": 760.0719835846711,
+        "y": 434.88279593774774,
+        "angle": 232,
         "color": "blue"
       },
       {
-        "x": 30,
-        "y": 374,
-        "angle": 0,
+        "x": 349.6346075389736,
+        "y": 384.4634710616188,
+        "angle": -176,
         "color": "pink"
       }
     ],
@@ -72910,15 +73609,15 @@ export const lightLevels = [
     ],
     "width": 800,
     "height": 460,
-    "id": "light-v4-portal-946",
+    "id": "light-v5-portal-946",
     "name": "A saída decide 946",
     "hint": "Compare o que acontece depois de cada saída.",
     "solution": [
-      -1.6,
-      -0.4,
-      -2
+      88.4,
+      25.6,
+      -90
     ],
-    "sourceAngle": 0,
+    "sourceAngle": -180,
     "target": {
       "x": 710,
       "y": 374,
@@ -72941,41 +73640,41 @@ export const lightLevels = [
         "y": 108.1,
         "type": "mirror",
         "length": 124.8,
-        "angle": 15.9
+        "angle": -22.1
       },
       {
         "x": 605.9,
         "y": 151.5,
         "type": "mirror",
         "length": 124.8,
-        "angle": -20
+        "angle": 86
       },
       {
         "x": 422.6,
         "y": 281.7,
         "type": "mirror",
         "length": 124.8,
-        "angle": -32.9
+        "angle": -74.9
       }
     ],
     "sources": [
       {
-        "x": 30,
-        "y": 64.3,
+        "x": 183.97723358332806,
+        "y": 243.65602632782355,
         "color": "gold",
-        "angle": 11.350324275233758
+        "angle": -64.64967572476624
       },
       {
-        "x": 770,
-        "y": 69.3,
+        "x": 456.5639980268078,
+        "y": 137.4018258393953,
         "color": "blue",
-        "angle": 153.39306595062106
+        "angle": 5.3930659506210645
       },
       {
-        "x": 422.6,
-        "y": 440,
+        "x": 571.778284305241,
+        "y": 297.37926949014803,
         "color": "pink",
-        "angle": -90
+        "angle": -174
       }
     ],
     "targets": [
@@ -73069,14 +73768,14 @@ export const lightLevels = [
     "width": 800,
     "height": 460,
     "solution": [
-      15.9,
-      -66.3,
-      -32.9
+      -22.1,
+      39.7,
+      -74.9
     ],
-    "id": "light-v4-master-003",
+    "id": "light-v5-master-003",
     "name": "As duas metades da escolha",
     "hint": "Considere uma rota de cada vez e siga o que ela exige das outras duas cores.",
-    "sourceAngle": 11.350324275233758,
+    "sourceAngle": -64.64967572476624,
     "target": {
       "x": 552.9,
       "y": 222.2,
@@ -73095,40 +73794,40 @@ export const lightLevels = [
   {
     "sources": [
       {
-        "x": 30,
-        "y": 110,
-        "angle": 0,
+        "x": 495.4423259036624,
+        "y": 162.09445330007907,
+        "angle": -170,
         "color": "gold"
       },
       {
-        "x": 30,
-        "y": 350,
-        "angle": 0,
+        "x": 32.242128958775965,
+        "y": 101.28872823348749,
+        "angle": 56,
         "color": "blue"
       },
       {
-        "x": 450,
-        "y": 440,
-        "angle": -90,
+        "x": 400.8759651440098,
+        "y": 433.54021031123557,
+        "angle": -98,
         "color": "pink"
       }
     ],
     "targets": [
       {
-        "x": 740,
-        "y": 350,
+        "x": 650,
+        "y": 272.5,
         "radius": 22,
         "color": "gold"
       },
       {
-        "x": 740,
-        "y": 110,
+        "x": 650,
+        "y": 187.5,
         "radius": 22,
         "color": "blue"
       },
       {
-        "x": 113.5,
-        "y": 296.9,
+        "x": 600.6,
+        "y": 247.5,
         "radius": 22,
         "color": "pink"
       }
@@ -73181,8 +73880,8 @@ export const lightLevels = [
       {
         "id": "pinka",
         "pairId": "pinkb",
-        "x": 313.9,
-        "y": 411.4,
+        "x": 462.1,
+        "y": 406.8,
         "radius": 16,
         "colors": [
           "pink"
@@ -73192,8 +73891,8 @@ export const lightLevels = [
       {
         "id": "pinkb",
         "pairId": "pinka",
-        "x": 186.4,
-        "y": 226.5,
+        "x": 494.3,
+        "y": 89.9,
         "radius": 16,
         "colors": [
           "pink"
@@ -73207,51 +73906,51 @@ export const lightLevels = [
         "y": 110,
         "type": "mirror",
         "length": 124.8,
-        "angle": 24
+        "angle": -61
       },
       {
         "x": 200,
         "y": 350,
         "type": "mirror",
         "length": 124.8,
-        "angle": 38
+        "angle": 44.4
       },
       {
         "x": 650,
         "y": 362.5,
         "type": "mirror",
         "length": 124.8,
-        "angle": 20
+        "angle": -21
       },
       {
         "x": 650,
         "y": 97.5,
         "type": "mirror",
         "length": 124.8,
-        "angle": 42
+        "angle": 61.3
       },
       {
         "type": "mirror",
-        "x": 450,
-        "y": 280,
+        "x": 380,
+        "y": 285,
         "length": 124.8,
-        "angle": 74.6
+        "angle": -6.7
       }
     ],
-    "id": "light-v4-deduction-symmetry-08-filter",
+    "id": "light-v5-deduction-symmetry-08-filter-reauthored",
     "name": "A entrada diferente",
     "hint": "Compare a marca da entrada com a fonte que se aproxima.",
     "solution": [
-      14.6,
-      7,
-      10.7,
-      11,
-      43.6
+      -70.4,
+      35,
+      -30.3,
+      52,
+      -21
     ],
-    "sourceAngle": 0,
+    "sourceAngle": -170,
     "target": {
-      "x": 740,
-      "y": 350,
+      "x": 650,
+      "y": 272.5,
       "radius": 22,
       "color": "gold"
     },
@@ -73271,40 +73970,40 @@ export const lightLevels = [
         "x": 200,
         "y": 86,
         "length": 124.8,
-        "angle": 14.7
+        "angle": -77.3
       },
       {
         "type": "mirror",
         "x": 600,
         "y": 230,
         "length": 124.8,
-        "angle": -0.4
+        "angle": 89.6
       },
       {
         "type": "mirror",
         "x": 200,
         "y": 374,
         "length": 124.8,
-        "angle": -14.9
+        "angle": 73.1
       }
     ],
     "sources": [
       {
-        "x": 30,
-        "y": 86,
-        "angle": 0,
+        "x": 349.6346075389736,
+        "y": 75.53652893838117,
+        "angle": 176,
         "color": "gold"
       },
       {
-        "x": 770,
+        "x": 450,
         "y": 230,
-        "angle": 180,
+        "angle": 0,
         "color": "blue"
       },
       {
-        "x": 30,
-        "y": 374,
-        "angle": 0,
+        "x": 349.6346075389736,
+        "y": 363.5365289383812,
+        "angle": 176,
         "color": "pink"
       }
     ],
@@ -73464,15 +74163,15 @@ export const lightLevels = [
     ],
     "width": 800,
     "height": 460,
-    "id": "light-v4-portal-912",
+    "id": "light-v5-portal-912",
     "name": "A consequência distante 912",
-    "hint": "Uma escolha aqui pode atrapalhar uma luz do outro lado.",
+    "hint": "Uma escolha aqui pode interferir em outra região.",
     "solution": [
-      3,
-      -0.4,
-      -2
+      -89,
+      89.6,
+      86
     ],
-    "sourceAngle": 0,
+    "sourceAngle": 176,
     "target": {
       "x": 710,
       "y": 374,
@@ -73495,40 +74194,40 @@ export const lightLevels = [
         "x": 200,
         "y": 86,
         "length": 124.8,
-        "angle": 14.9
+        "angle": -79.1
       },
       {
         "type": "mirror",
         "x": 600,
         "y": 230,
         "length": 124.8,
-        "angle": -0.3
+        "angle": 25.7
       },
       {
         "type": "mirror",
         "x": 200,
         "y": 374,
         "length": 124.8,
-        "angle": -14.3
+        "angle": 87.7
       }
     ],
     "sources": [
       {
-        "x": 30,
-        "y": 86,
-        "angle": 0,
+        "x": 348.54021031123557,
+        "y": 65.12403485599015,
+        "angle": 172,
         "color": "gold"
       },
       {
-        "x": 770,
-        "y": 230,
-        "angle": 180,
+        "x": 760.0719835846711,
+        "y": 434.88279593774774,
+        "angle": 232,
         "color": "blue"
       },
       {
-        "x": 30,
-        "y": 374,
-        "angle": 0,
+        "x": 337.0318186463901,
+        "y": 435.01049646137005,
+        "angle": -156,
         "color": "pink"
       }
     ],
@@ -73644,15 +74343,15 @@ export const lightLevels = [
     ],
     "width": 800,
     "height": 460,
-    "id": "light-v4-portal-082",
+    "id": "light-v5-portal-082",
     "name": "A saída decide 082",
     "hint": "Compare o que acontece depois de cada saída.",
     "solution": [
-      4.5,
-      -0.3,
-      -38
+      -89.5,
+      25.7,
+      64
     ],
-    "sourceAngle": 0,
+    "sourceAngle": 172,
     "target": {
       "x": 710,
       "y": 379,
@@ -73675,40 +74374,40 @@ export const lightLevels = [
         "x": 200,
         "y": 86,
         "length": 124.8,
-        "angle": 14.7
+        "angle": -73.3
       },
       {
         "type": "mirror",
         "x": 600,
         "y": 230,
         "length": 124.8,
-        "angle": -0.4
+        "angle": -22.4
       },
       {
         "type": "mirror",
         "x": 200,
         "y": 374,
         "length": 124.8,
-        "angle": -14.9
+        "angle": 75.1
       }
     ],
     "sources": [
       {
-        "x": 30,
-        "y": 86,
-        "angle": 0,
+        "x": 349.6346075389736,
+        "y": 96.46347106161883,
+        "angle": -176,
         "color": "gold"
       },
       {
-        "x": 770,
-        "y": 230,
-        "angle": 180,
+        "x": 707.9009700507977,
+        "y": 125.80124443115042,
+        "angle": 136,
         "color": "blue"
       },
       {
-        "x": 30,
+        "x": 350,
         "y": 374,
-        "angle": 0,
+        "angle": -180,
         "color": "pink"
       }
     ],
@@ -73868,15 +74567,15 @@ export const lightLevels = [
     ],
     "width": 800,
     "height": 460,
-    "id": "light-v4-portal-933",
+    "id": "light-v5-portal-933",
     "name": "A consequência distante 933",
     "hint": "Uma escolha aqui pode atrapalhar uma luz do outro lado.",
     "solution": [
-      45.2,
-      -45.8,
-      -14.9
+      -42.8,
+      -67.8,
+      75.1
     ],
-    "sourceAngle": 0,
+    "sourceAngle": -176,
     "target": {
       "x": 710,
       "y": 374,
@@ -73899,41 +74598,41 @@ export const lightLevels = [
         "y": 123.5,
         "type": "mirror",
         "length": 124.8,
-        "angle": 17.4
+        "angle": 25.4
       },
       {
         "x": 579.9,
         "y": 127.6,
         "type": "mirror",
         "length": 124.8,
-        "angle": -18.5
+        "angle": -75.5
       },
       {
         "x": 386.6,
         "y": 277.3,
         "type": "mirror",
         "length": 124.8,
-        "angle": 55.7
+        "angle": 44.7
       }
     ],
     "sources": [
       {
-        "x": 30,
-        "y": 72.9,
+        "x": 105.65249476392759,
+        "y": 48.92368418306987,
         "color": "gold",
-        "angle": 13.813303816728954
+        "angle": 29.813303816728954
       },
       {
-        "x": 770,
-        "y": 46.3,
+        "x": 471.38712192021336,
+        "y": 26.95728893336903,
         "color": "blue",
-        "angle": 156.8450744946745
+        "angle": 42.84507449467449
       },
       {
-        "x": 386.6,
-        "y": 440,
+        "x": 442.79098901238683,
+        "y": 416.37757818501814,
         "color": "pink",
-        "angle": -90
+        "angle": -112
       }
     ],
     "targets": [
@@ -74071,14 +74770,14 @@ export const lightLevels = [
     "width": 800,
     "height": 460,
     "solution": [
-      50.2,
-      -44.5,
-      -79.9
+      58.2,
+      78.5,
+      89.1
     ],
-    "id": "light-v4-deduction-master-detail-1",
+    "id": "light-v5-deduction-master-detail-1",
     "name": "Uma entrada muda o acordo",
     "hint": "Uma pequena diferença pode mudar as alternativas das outras cores.",
-    "sourceAngle": 13.813303816728954,
+    "sourceAngle": 29.813303816728954,
     "target": {
       "x": 735.8,
       "y": 315.6,
@@ -74097,134 +74796,134 @@ export const lightLevels = [
   {
     "objects": [
       {
-        "x": 207.5,
-        "y": 152.5,
+        "x": 199.1,
+        "y": 105.7,
         "type": "mirror",
         "length": 124.8,
-        "angle": -41.9
+        "angle": -76
       },
       {
-        "x": 575.9,
-        "y": 119.4,
+        "x": 582.9,
+        "y": 95.7,
         "type": "mirror",
         "length": 124.8,
-        "angle": 8.7
+        "angle": 21.1
       },
       {
-        "x": 418.6,
-        "y": 270.5,
+        "x": 366,
+        "y": 281.1,
         "type": "mirror",
+        "length": 124.8,
+        "angle": 61.5
+      },
+      {
+        "type": "mirror",
+        "x": 127.6,
+        "y": 169.7,
         "length": 124.8,
         "angle": -19.4
       },
       {
-        "type": "mirror",
-        "x": 100.6,
-        "y": 326.4,
-        "length": 124.8,
-        "angle": 48
-      },
-      {
         "type": "wall",
         "x": 280,
-        "y": 71.65180245587024,
-        "length": 143.30360491174048,
+        "y": 52.9995608262811,
+        "length": 105.9991216525622,
         "width": 12,
         "angle": 90
       },
       {
         "type": "wall",
         "x": 280,
-        "y": 204.52223500994154,
-        "length": 50.43726019640209,
+        "y": 172.7708863777456,
+        "length": 49.05822724450883,
         "width": 12,
         "angle": 90
       },
       {
         "type": "wall",
         "x": 280,
-        "y": 287.7371917846684,
-        "length": 43.992653353051764,
+        "y": 372.65,
+        "length": 174.7,
         "width": 12,
         "angle": 90
       },
       {
         "type": "wall",
-        "x": 280,
-        "y": 433.1,
-        "length": 53.80000000000001,
+        "x": 440,
+        "y": 19.200000000000003,
+        "length": 38.400000000000006,
         "width": 12,
         "angle": 90
       },
       {
         "type": "wall",
-        "x": 500,
-        "y": 17,
-        "length": 34,
+        "x": 440,
+        "y": 182.49921301288458,
+        "length": 17.141790781247693,
         "width": 12,
         "angle": 90
       },
       {
         "type": "wall",
-        "x": 500,
-        "y": 125.10116563281832,
-        "length": 14.202331265636644,
+        "x": 440,
+        "y": 234.54977344770123,
+        "length": 45.41959998330174,
         "width": 12,
         "angle": 90
       },
       {
         "type": "wall",
-        "x": 500,
-        "y": 366.48605976970435,
-        "length": 187.0278804605913,
+        "x": 440,
+        "y": 367.8178187117246,
+        "length": 184.36436257655072,
         "width": 12,
         "angle": 90
       }
     ],
     "sources": [
       {
-        "x": 30,
-        "y": 53.8,
+        "x": 417.7618133675719,
+        "y": 129.92831762226072,
         "color": "gold",
-        "angle": 29.076525008390387
+        "angle": 186.32273555998253
       },
       {
-        "x": 770,
-        "y": 44.3,
+        "x": 642.2634032923661,
+        "y": 233.453353315075,
         "color": "blue",
-        "angle": 158.84785013170438
+        "angle": 246.68686644306962
       },
       {
-        "x": 418.6,
-        "y": 440,
+        "x": 345.12403485599015,
+        "y": 429.6402103112356,
         "color": "pink",
-        "angle": -90
+        "angle": -82
       }
     ],
     "targets": [
       {
-        "x": 516.8,
-        "y": 190.3,
+        "x": 755,
+        "y": 325.9,
         "color": "gold",
         "radius": 22
       },
       {
-        "x": 26.6,
-        "y": 210.4,
+        "x": 264.1,
+        "y": 241.3,
         "color": "blue",
         "radius": 22
       },
       {
-        "x": 738.4,
-        "y": 209.5,
+        "x": 167.4,
+        "y": 239.1,
         "color": "pink",
         "radius": 22
       }
     ],
     "portals": [
       {
-        "x": 76.8,
-        "y": 140.8,
+        "x": 198.3,
+        "y": 317.4,
         "id": "gold1a",
         "pairId": "gold1b",
         "label": "A",
@@ -74234,8 +74933,8 @@ export const lightLevels = [
         ]
       },
       {
-        "x": 660.4,
-        "y": 203.2,
+        "x": 755.6,
+        "y": 156.4,
         "id": "gold1b",
         "pairId": "gold1a",
         "label": "A",
@@ -74245,66 +74944,88 @@ export const lightLevels = [
         ]
       },
       {
-        "x": 295.4,
-        "y": 364.2,
-        "id": "gold2a",
-        "pairId": "gold2b",
-        "label": "B",
-        "radius": 16,
-        "colors": [
-          "gold"
-        ]
-      },
-      {
-        "x": 469.3,
-        "y": 76,
-        "id": "gold2b",
-        "pairId": "gold2a",
-        "label": "B",
-        "radius": 16,
-        "colors": [
-          "gold"
-        ]
-      },
-      {
-        "x": 591,
-        "y": 332.3,
+        "x": 669.6,
+        "y": 59.9,
         "id": "blue1a",
         "pairId": "blue1b",
-        "label": "C",
+        "label": "B",
         "radius": 16,
         "colors": [
           "blue"
         ]
       },
       {
-        "x": 94.5,
-        "y": 239.6,
+        "x": 99.6,
+        "y": 309.3,
         "id": "blue1b",
         "pairId": "blue1a",
-        "label": "C",
+        "label": "B",
         "radius": 16,
         "colors": [
           "blue"
         ]
       },
       {
-        "x": 437.2,
-        "y": 38.3,
+        "x": 455.2,
+        "y": 82.4,
         "id": "pink1a",
         "pairId": "pink1b",
-        "label": "D",
+        "label": "C",
         "radius": 16,
         "colors": [
           "pink"
         ]
       },
       {
-        "x": 732.2,
-        "y": 287.2,
+        "x": 56.3,
+        "y": 328.5,
         "id": "pink1b",
         "pairId": "pink1a",
+        "label": "C",
+        "radius": 16,
+        "colors": [
+          "pink"
+        ]
+      },
+      {
+        "x": 689.9,
+        "y": 109.7,
+        "id": "blue2a",
+        "pairId": "blue2b",
         "label": "D",
+        "radius": 16,
+        "colors": [
+          "blue"
+        ]
+      },
+      {
+        "x": 69,
+        "y": 215.8,
+        "id": "blue2b",
+        "pairId": "blue2a",
+        "label": "D",
+        "radius": 16,
+        "colors": [
+          "blue"
+        ]
+      },
+      {
+        "x": 587,
+        "y": 237,
+        "id": "pink2a",
+        "pairId": "pink2b",
+        "label": "E",
+        "radius": 16,
+        "colors": [
+          "pink"
+        ]
+      },
+      {
+        "x": 23.7,
+        "y": 190.5,
+        "id": "pink2b",
+        "pairId": "pink2a",
+        "label": "E",
         "radius": 16,
         "colors": [
           "pink"
@@ -74314,26 +75035,26 @@ export const lightLevels = [
     "width": 800,
     "height": 460,
     "solution": [
-      -72.9,
-      -22.3,
-      -50.4,
-      17
+      -41.7,
+      21.1,
+      -46.6,
+      24.5
     ],
-    "id": "light-v4-deduction-master-window-1-1",
+    "id": "light-v5-deduction-master-window-1-1-reauthored",
     "name": "As janelas da última curva",
     "hint": "As duas entradas podem alcançar o mesmo espelho, mas não oferecem as mesmas chegadas.",
-    "sourceAngle": 29.076525008390387,
+    "sourceAngle": 186.32273555998253,
     "target": {
-      "x": 516.8,
-      "y": 190.3,
+      "x": 755,
+      "y": 325.9,
       "color": "gold",
       "radius": 22
     },
     "requiredBounces": 4,
     "wallPurpose": [],
     "decoyCount": 0,
-    "tutorial": "",
-    "rules": "Leve cada cor ao alvo sem cruzar os feixes.",
+    "tutorial": false,
+    "rules": "Leve cada cor ao seu alvo sem cruzar ou encostar nos trechos físicos das outras luzes.",
     "number": 488,
     "campaignNumber": 488,
     "campaignBand": "master"
@@ -74345,40 +75066,40 @@ export const lightLevels = [
         "x": 200,
         "y": 86,
         "length": 124.8,
-        "angle": 14.7
+        "angle": -83.3
       },
       {
         "type": "mirror",
         "x": 600,
         "y": 230,
         "length": 124.8,
-        "angle": -0.4
+        "angle": -78.4
       },
       {
         "type": "mirror",
         "x": 200,
         "y": 374,
         "length": 124.8,
-        "angle": -14.9
+        "angle": 73.1
       }
     ],
     "sources": [
       {
-        "x": 30,
-        "y": 86,
-        "angle": 0,
+        "x": 411.4775731064301,
+        "y": 25.359781720260074,
+        "angle": 164,
         "color": "gold"
       },
       {
-        "x": 770,
-        "y": 230,
-        "angle": 180,
+        "x": 399.0199993186278,
+        "y": 140.51793852332395,
+        "angle": 24,
         "color": "blue"
       },
       {
-        "x": 30,
-        "y": 374,
-        "angle": 0,
+        "x": 389.5371695493666,
+        "y": 360.7462699886162,
+        "angle": 176,
         "color": "pink"
       }
     ],
@@ -74538,15 +75259,15 @@ export const lightLevels = [
     ],
     "width": 800,
     "height": 460,
-    "id": "light-v4-portal-943",
+    "id": "light-v5-portal-943",
     "name": "A consequência distante 943",
-    "hint": "Uma escolha aqui pode atrapalhar uma luz do outro lado.",
+    "hint": "Uma escolha aqui pode interferir em outra região.",
     "solution": [
-      3,
-      -0.4,
-      -2
+      85,
+      -78.4,
+      86
     ],
-    "sourceAngle": 0,
+    "sourceAngle": 164,
     "target": {
       "x": 710,
       "y": 374,
@@ -74569,21 +75290,21 @@ export const lightLevels = [
         "y": 105.7,
         "type": "mirror",
         "length": 124.8,
-        "angle": 46.5
+        "angle": -54.5
       },
       {
         "x": 582.9,
         "y": 95.7,
         "type": "mirror",
         "length": 124.8,
-        "angle": -72.9
+        "angle": -60.9
       },
       {
         "x": 366,
         "y": 281.1,
         "type": "mirror",
         "length": 124.8,
-        "angle": 88.5
+        "angle": 78.5
       },
       {
         "type": "mirror",
@@ -74594,71 +75315,87 @@ export const lightLevels = [
       },
       {
         "type": "wall",
-        "x": 270,
-        "y": 61.229365682853555,
-        "length": 122.45873136570711,
+        "x": 280,
+        "y": 39.86991692414471,
+        "length": 79.73983384828942,
         "width": 12,
         "angle": 90
       },
       {
         "type": "wall",
-        "x": 270,
-        "y": 170.87936568285357,
-        "length": 56.8412686342929,
+        "x": 280,
+        "y": 112.09417033072427,
+        "length": 27.74844295749277,
         "width": 12,
         "angle": 90
       },
       {
         "type": "wall",
-        "x": 270,
-        "y": 371.65,
-        "length": 176.7,
+        "x": 280,
+        "y": 171.8986865703805,
+        "length": 50.802626859238984,
         "width": 12,
         "angle": 90
       },
       {
         "type": "wall",
-        "x": 440,
-        "y": 20.200000000000003,
-        "length": 40.400000000000006,
-        "width": 12,
-        "angle": 90
-      },
-      {
-        "type": "wall",
-        "x": 440,
-        "y": 138.61312976655387,
-        "length": 16.341194408587455,
+        "x": 280,
+        "y": 372.65,
+        "length": 174.7,
         "width": 12,
         "angle": 90
       },
       {
         "type": "wall",
         "x": 440,
-        "y": 335.30965011282683,
-        "length": 249.38069977434634,
+        "y": 19.200000000000003,
+        "length": 38.400000000000006,
+        "width": 12,
+        "angle": 90
+      },
+      {
+        "type": "wall",
+        "x": 440,
+        "y": 143.92208413863708,
+        "length": 12.257892216903656,
+        "width": 12,
+        "angle": 90
+      },
+      {
+        "type": "wall",
+        "x": 440,
+        "y": 178.93561662730733,
+        "length": 14.838385865402984,
+        "width": 12,
+        "angle": 90
+      },
+      {
+        "type": "wall",
+        "x": 440,
+        "y": 297.16730510852227,
+        "length": 180.5670284344462,
         "width": 12,
         "angle": 90
       }
     ],
     "sources": [
       {
-        "x": 30,
-        "y": 74.9,
+        "x": 355.7885122607538,
+        "y": 73.31620581970682,
         "color": "gold",
-        "angle": 10.322735559982544
+        "angle": 168.32273555998253
       },
       {
-        "x": 770,
-        "y": 78.3,
+        "x": 734.4653991987238,
+        "y": 146.9633374423815,
         "color": "blue",
-        "angle": 174.68686644306962
+        "angle": 198.68686644306962
       },
       {
-        "x": 366,
-        "y": 440,
+        "x": 420.723222932107,
+        "y": 431.4508193257454,
         "color": "pink",
-        "angle": -90
+        "angle": -110
       }
     ],
     "targets": [
@@ -74774,15 +75511,15 @@ export const lightLevels = [
     "width": 800,
     "height": 460,
     "solution": [
-      15.5,
-      76.1,
-      57.5,
+      -85.5,
+      88.1,
+      47.5,
       -52
     ],
-    "id": "light-v4-deduction-master-window-18-1",
+    "id": "light-v5-deduction-master-window-18-1",
     "name": "As janelas da última curva",
     "hint": "As duas entradas podem alcançar o mesmo espelho, mas não oferecem as mesmas chegadas.",
-    "sourceAngle": 10.322735559982544,
+    "sourceAngle": 168.32273555998253,
     "target": {
       "x": 641.1,
       "y": 198.3,
@@ -74805,40 +75542,40 @@ export const lightLevels = [
         "x": 200,
         "y": 86,
         "length": 124.8,
-        "angle": 14.7
+        "angle": -43.3
       },
       {
         "type": "mirror",
         "x": 600,
         "y": 230,
         "length": 124.8,
-        "angle": -0.4
+        "angle": 89.6
       },
       {
         "type": "mirror",
         "x": 200,
         "y": 374,
         "length": 124.8,
-        "angle": -14.9
+        "angle": 77.1
       }
     ],
     "sources": [
       {
-        "x": 30,
-        "y": 86,
-        "angle": 0,
+        "x": 265.7556720183616,
+        "y": 220.81910694487505,
+        "angle": -116,
         "color": "gold"
       },
       {
-        "x": 770,
+        "x": 450,
         "y": 230,
-        "angle": 180,
+        "angle": 0,
         "color": "blue"
       },
       {
-        "x": 30,
-        "y": 374,
-        "angle": 0,
+        "x": 509.2448555805455,
+        "y": 395.62450686067893,
+        "angle": -176,
         "color": "pink"
       }
     ],
@@ -74998,15 +75735,15 @@ export const lightLevels = [
     ],
     "width": 800,
     "height": 460,
-    "id": "light-v4-portal-927",
+    "id": "light-v5-portal-927",
     "name": "A consequência distante 927",
-    "hint": "Uma escolha aqui pode atrapalhar uma luz do outro lado.",
+    "hint": "Uma escolha aqui pode interferir em outra região.",
     "solution": [
-      3,
-      -0.4,
-      -2
+      -55,
+      89.6,
+      -90
     ],
-    "sourceAngle": 0,
+    "sourceAngle": -116,
     "target": {
       "x": 710,
       "y": 374,
@@ -75029,41 +75766,41 @@ export const lightLevels = [
         "y": 152.5,
         "type": "mirror",
         "length": 124.8,
-        "angle": 18
+        "angle": -12
       },
       {
         "x": 575.9,
         "y": 119.4,
         "type": "mirror",
         "length": 124.8,
-        "angle": -22.3
+        "angle": -2.3
       },
       {
         "x": 418.6,
         "y": 270.5,
         "type": "mirror",
         "length": 124.8,
-        "angle": -55.2
+        "angle": 54.8
       }
     ],
     "sources": [
       {
         "x": 30,
-        "y": 53.8,
+        "y": 93.8,
         "color": "gold",
-        "angle": 29.076525008390387
+        "angle": -30.923474991609613
       },
       {
-        "x": 770,
-        "y": 44.3,
+        "x": 400,
+        "y": 430,
         "color": "blue",
-        "angle": 158.84785013170438
+        "angle": 198.84785013170438
       },
       {
-        "x": 418.6,
-        "y": 440,
+        "x": 50,
+        "y": 230,
         "color": "pink",
-        "angle": -90
+        "angle": -230
       }
     ],
     "targets": [
@@ -75196,19 +75933,85 @@ export const lightLevels = [
         "colors": [
           "gold"
         ]
+      },
+      {
+        "x": 68.6034492462816,
+        "y": 70.67482527007068,
+        "id": "angle-access-0a",
+        "pairId": "angle-access-0b",
+        "label": "J",
+        "radius": 16,
+        "colors": [
+          "gold"
+        ]
+      },
+      {
+        "x": 133.72451921821738,
+        "y": 196.69477837275377,
+        "id": "angle-access-0b",
+        "pairId": "angle-access-0a",
+        "label": "J",
+        "radius": 16,
+        "colors": [
+          "gold"
+        ]
+      },
+      {
+        "x": 357.4129093468583,
+        "y": 415.46247236628284,
+        "id": "angle-access-1a",
+        "pairId": "angle-access-1b",
+        "label": "K",
+        "radius": 16,
+        "colors": [
+          "blue"
+        ]
+      },
+      {
+        "x": 657.2886621371152,
+        "y": 147.18283058888173,
+        "id": "angle-access-1b",
+        "pairId": "angle-access-1a",
+        "label": "K",
+        "radius": 16,
+        "colors": [
+          "blue"
+        ]
+      },
+      {
+        "x": 21.074557564105724,
+        "y": 264.471999940354,
+        "id": "angle-access-2a",
+        "pairId": "angle-access-2b",
+        "label": "L",
+        "radius": 16,
+        "colors": [
+          "pink"
+        ]
+      },
+      {
+        "x": 473.8797344330424,
+        "y": 204.6201778917679,
+        "id": "angle-access-2b",
+        "pairId": "angle-access-2a",
+        "label": "L",
+        "radius": 16,
+        "colors": [
+          "pink"
+        ]
       }
     ],
     "width": 800,
     "height": 460,
     "solution": [
-      48.3,
-      -57.6,
-      -88.4
+      18.3,
+      -37.6,
+      21.6
     ],
-    "id": "light-v4-master-contrast-001",
+    "id": "light-v5-master-contrast-001",
     "name": "O alvo mudou o acordo",
     "hint": "Compare a nova aproximação ao alvo com as rotas que antes eram compatíveis.",
-    "sourceAngle": 29.076525008390387,
+    "sourceAngle": -30.923474991609613,
     "target": {
       "x": 516.8,
       "y": 190.3,
@@ -75228,24 +76031,24 @@ export const lightLevels = [
     "objects": [
       {
         "x": 207.5,
-        "y": 152.5,
+        "y": 144.5,
         "type": "mirror",
         "length": 124.8,
-        "angle": 18
+        "angle": 14
       },
       {
         "x": 575.9,
         "y": 119.4,
         "type": "mirror",
         "length": 124.8,
-        "angle": 88
+        "angle": 58
       },
       {
         "x": 418.6,
         "y": 270.5,
         "type": "mirror",
         "length": 124.8,
-        "angle": -50.4
+        "angle": -80.4
       },
       {
         "type": "mirror",
@@ -75293,22 +76096,22 @@ export const lightLevels = [
     ],
     "sources": [
       {
-        "x": 30,
-        "y": 53.8,
+        "x": 39.541828472625554,
+        "y": 79.76938423604282,
         "color": "gold",
-        "angle": 29.076525008390387
+        "angle": 21.076525008390387
       },
       {
-        "x": 30,
-        "y": 120,
+        "x": 25,
+        "y": 31.69872981077807,
         "color": "blue",
-        "angle": 90
+        "angle": 30
       },
       {
-        "x": 418.6,
-        "y": 440,
+        "x": 565.8243186433547,
+        "y": 355.5,
         "color": "pink",
-        "angle": -90
+        "angle": -150
       }
     ],
     "targets": [
@@ -75487,8 +76290,8 @@ export const lightLevels = [
         ]
       },
       {
-        "x": 30,
-        "y": 185,
+        "x": 100,
+        "y": 75,
         "id": "Ha",
         "pairId": "Hb",
         "label": "H",
@@ -75498,8 +76301,8 @@ export const lightLevels = [
         ]
       },
       {
-        "x": 575.9,
-        "y": 30,
+        "x": 489.2974596215561,
+        "y": 69.4,
         "id": "Hb",
         "pairId": "Ha",
         "label": "H",
@@ -75512,15 +76315,15 @@ export const lightLevels = [
     "width": 800,
     "height": 460,
     "solution": [
-      48.3,
-      88,
-      -87.7,
+      44.3,
+      58,
+      62.3,
       -27
     ],
-    "id": "light-v4-master-islands-002",
+    "id": "light-v5-master-islands-002",
     "name": "A passagem muda o itinerário",
     "hint": "Uma passagem mudou de cor. Siga o efeito dessa diferença até as outras rotas e a última curva.",
-    "sourceAngle": 29.076525008390387,
+    "sourceAngle": 21.076525008390387,
     "target": {
       "x": 516.8,
       "y": 190.3,
@@ -75548,40 +76351,40 @@ export const lightLevels = [
         "x": 200,
         "y": 86,
         "length": 124.8,
-        "angle": 7.6
+        "angle": -82.4
       },
       {
         "type": "mirror",
         "x": 200,
         "y": 230,
         "length": 124.8,
-        "angle": 7.7
+        "angle": -82.3
       },
       {
         "type": "mirror",
         "x": 200,
         "y": 374,
         "length": 124.8,
-        "angle": -14.1
+        "angle": 75.9
       }
     ],
     "sources": [
       {
-        "x": 30,
-        "y": 86,
-        "angle": 0,
+        "x": 350,
+        "y": 86.00000000000001,
+        "angle": -180,
         "color": "gold"
       },
       {
-        "x": 30,
-        "y": 230,
-        "angle": 0,
+        "x": 350,
+        "y": 230.00000000000003,
+        "angle": -180,
         "color": "blue"
       },
       {
-        "x": 30,
+        "x": 350,
         "y": 374,
-        "angle": 0,
+        "angle": -180,
         "color": "pink"
       }
     ],
@@ -75675,15 +76478,15 @@ export const lightLevels = [
     ],
     "width": 800,
     "height": 460,
-    "id": "light-v4-portal-034",
+    "id": "light-v5-portal-034",
     "name": "Uma hipótese, três consequências 034",
     "hint": "Teste uma rota e acompanhe o que ela exige das outras cores.",
     "solution": [
-      7.6,
-      7.7,
-      8.5
+      -82.4,
+      -82.3,
+      -81.5
     ],
-    "sourceAngle": 0,
+    "sourceAngle": -180,
     "target": {
       "x": 725,
       "y": 228,
@@ -75702,134 +76505,126 @@ export const lightLevels = [
   {
     "objects": [
       {
-        "x": 207.5,
-        "y": 152.5,
+        "x": 199.1,
+        "y": 105.7,
         "type": "mirror",
         "length": 124.8,
-        "angle": -41.9
+        "angle": -76
       },
       {
-        "x": 575.9,
-        "y": 119.4,
+        "x": 582.9,
+        "y": 95.7,
         "type": "mirror",
         "length": 124.8,
-        "angle": 8.7
+        "angle": 21.1
       },
       {
-        "x": 418.6,
-        "y": 270.5,
+        "x": 366,
+        "y": 281.1,
         "type": "mirror",
+        "length": 124.8,
+        "angle": 47.5
+      },
+      {
+        "type": "mirror",
+        "x": 127.6,
+        "y": 169.7,
         "length": 124.8,
         "angle": -19.4
       },
       {
-        "type": "mirror",
-        "x": 100.6,
-        "y": 326.4,
-        "length": 124.8,
-        "angle": 49.6
-      },
-      {
         "type": "wall",
         "x": 280,
-        "y": 71.65180245587024,
-        "length": 143.30360491174048,
+        "y": 52.9995608262811,
+        "length": 105.9991216525622,
         "width": 12,
         "angle": 90
       },
       {
         "type": "wall",
         "x": 280,
-        "y": 204.52223500994154,
-        "length": 50.43726019640209,
+        "y": 172.7708863777456,
+        "length": 49.05822724450883,
         "width": 12,
         "angle": 90
       },
       {
         "type": "wall",
         "x": 280,
-        "y": 287.7371917846684,
-        "length": 43.992653353051764,
+        "y": 399.5,
+        "length": 121,
         "width": 12,
         "angle": 90
       },
       {
         "type": "wall",
-        "x": 280,
-        "y": 433.1,
-        "length": 53.80000000000001,
+        "x": 440,
+        "y": 19.200000000000003,
+        "length": 38.400000000000006,
         "width": 12,
         "angle": 90
       },
       {
         "type": "wall",
-        "x": 500,
-        "y": 17,
-        "length": 34,
+        "x": 440,
+        "y": 182.49921301288458,
+        "length": 17.141790781247693,
         "width": 12,
         "angle": 90
       },
       {
         "type": "wall",
-        "x": 500,
-        "y": 125.10116563281832,
-        "length": 14.202331265636644,
-        "width": 12,
-        "angle": 90
-      },
-      {
-        "type": "wall",
-        "x": 500,
-        "y": 366.48605976970435,
-        "length": 187.0278804605913,
+        "x": 440,
+        "y": 294.9469332869683,
+        "length": 166.21391966183592,
         "width": 12,
         "angle": 90
       }
     ],
     "sources": [
       {
-        "x": 30,
-        "y": 53.8,
+        "x": 417.7618133675719,
+        "y": 129.92831762226072,
         "color": "gold",
-        "angle": 29.076525008390387
+        "angle": 186.32273555998253
       },
       {
-        "x": 770,
-        "y": 44.3,
+        "x": 642.2634032923661,
+        "y": 233.453353315075,
         "color": "blue",
-        "angle": 158.84785013170438
+        "angle": 246.68686644306962
       },
       {
-        "x": 418.6,
-        "y": 440,
+        "x": 417.3030214988503,
+        "y": 422.0538931178863,
         "color": "pink",
-        "angle": -90
+        "angle": -110
       }
     ],
     "targets": [
       {
-        "x": 516.8,
-        "y": 190.3,
+        "x": 755,
+        "y": 325.9,
         "color": "gold",
         "radius": 22
       },
       {
-        "x": 42.5,
-        "y": 223,
+        "x": 264.1,
+        "y": 241.3,
         "color": "blue",
         "radius": 22
       },
       {
-        "x": 738.4,
-        "y": 209.5,
+        "x": 167.4,
+        "y": 239.1,
         "color": "pink",
         "radius": 22
       }
     ],
     "portals": [
       {
-        "x": 76.8,
-        "y": 140.8,
+        "x": 198.3,
+        "y": 317.4,
         "id": "gold1a",
         "pairId": "gold1b",
         "label": "A",
@@ -75839,8 +76634,8 @@ export const lightLevels = [
         ]
       },
       {
-        "x": 660.4,
-        "y": 203.2,
+        "x": 755.6,
+        "y": 156.4,
         "id": "gold1b",
         "pairId": "gold1a",
         "label": "A",
@@ -75850,88 +76645,66 @@ export const lightLevels = [
         ]
       },
       {
-        "x": 295.4,
-        "y": 364.2,
-        "id": "gold2a",
-        "pairId": "gold2b",
-        "label": "B",
-        "radius": 16,
-        "colors": [
-          "gold"
-        ]
-      },
-      {
-        "x": 469.3,
-        "y": 76,
-        "id": "gold2b",
-        "pairId": "gold2a",
-        "label": "B",
-        "radius": 16,
-        "colors": [
-          "gold"
-        ]
-      },
-      {
-        "x": 591,
-        "y": 332.3,
+        "x": 669.6,
+        "y": 59.9,
         "id": "blue1a",
         "pairId": "blue1b",
-        "label": "C",
+        "label": "B",
         "radius": 16,
         "colors": [
           "blue"
         ]
       },
       {
-        "x": 94.5,
-        "y": 239.6,
+        "x": 99.6,
+        "y": 309.3,
         "id": "blue1b",
         "pairId": "blue1a",
-        "label": "C",
+        "label": "B",
         "radius": 16,
         "colors": [
           "blue"
         ]
       },
       {
-        "x": 437.2,
-        "y": 38.3,
+        "x": 455.2,
+        "y": 82.4,
         "id": "pink1a",
         "pairId": "pink1b",
-        "label": "D",
+        "label": "C",
         "radius": 16,
         "colors": [
           "pink"
         ]
       },
       {
-        "x": 732.2,
-        "y": 287.2,
+        "x": 56.3,
+        "y": 328.5,
         "id": "pink1b",
         "pairId": "pink1a",
-        "label": "D",
+        "label": "C",
         "radius": 16,
         "colors": [
           "pink"
         ]
       },
       {
-        "x": 103.5,
-        "y": 76,
-        "id": "gold3a",
-        "pairId": "gold3b",
-        "label": "E",
+        "x": 282.3,
+        "y": 295,
+        "id": "gold2a",
+        "pairId": "gold2b",
+        "label": "D",
         "radius": 16,
         "colors": [
           "gold"
         ]
       },
       {
-        "x": 691.9,
-        "y": 319.1,
-        "id": "gold3b",
-        "pairId": "gold3a",
-        "label": "E",
+        "x": 673.3,
+        "y": 140,
+        "id": "gold2b",
+        "pairId": "gold2a",
+        "label": "D",
         "radius": 16,
         "colors": [
           "gold"
@@ -75941,26 +76714,26 @@ export const lightLevels = [
     "width": 800,
     "height": 460,
     "solution": [
-      -72.9,
-      -22.3,
-      -50.4,
-      18.6
+      -76,
+      -67.9,
+      47.5,
+      -47.4
     ],
-    "id": "light-v4-deduction-master-window-2-1",
+    "id": "light-v5-deduction-master-window-2-1-reauthored",
     "name": "As janelas da última curva",
     "hint": "As duas entradas podem alcançar o mesmo espelho, mas não oferecem as mesmas chegadas.",
-    "sourceAngle": 29.076525008390387,
+    "sourceAngle": 186.32273555998253,
     "target": {
-      "x": 516.8,
-      "y": 190.3,
+      "x": 755,
+      "y": 325.9,
       "color": "gold",
       "radius": 22
     },
     "requiredBounces": 4,
     "wallPurpose": [],
     "decoyCount": 0,
-    "tutorial": "",
-    "rules": "Leve cada cor ao alvo sem cruzar os feixes.",
+    "tutorial": false,
+    "rules": "Leve cada cor ao seu alvo sem cruzar ou encostar nos trechos físicos das outras luzes.",
     "number": 495,
     "campaignNumber": 495,
     "campaignBand": "master"
@@ -75972,41 +76745,41 @@ export const lightLevels = [
         "y": 105.7,
         "type": "mirror",
         "length": 124.8,
-        "angle": 16
+        "angle": -86
       },
       {
         "x": 582.9,
         "y": 95.7,
         "type": "mirror",
         "length": 124.8,
-        "angle": -14.9
+        "angle": 21.1
       },
       {
         "x": 366,
         "y": 281.1,
         "type": "mirror",
         "length": 124.8,
-        "angle": 57.5
+        "angle": 47.5
       }
     ],
     "sources": [
       {
-        "x": 30,
-        "y": 74.9,
+        "x": 344.84645350105336,
+        "y": 70.23210900172818,
         "color": "gold",
-        "angle": 10.322735559982544
+        "angle": 166.32273555998253
       },
       {
-        "x": 770,
-        "y": 78.3,
+        "x": 642.2634032923661,
+        "y": 233.453353315075,
         "color": "blue",
-        "angle": 174.68686644306962
+        "angle": 246.68686644306962
       },
       {
-        "x": 366,
-        "y": 440,
+        "x": 417.3030214988503,
+        "y": 422.0538931178863,
         "color": "pink",
-        "angle": -90
+        "angle": -110
       }
     ],
     "targets": [
@@ -76166,14 +76939,14 @@ export const lightLevels = [
     "width": 800,
     "height": 460,
     "solution": [
-      16,
-      76.1,
-      57.5
+      -86,
+      -67.9,
+      47.5
     ],
-    "id": "light-v4-master-reserve-016",
+    "id": "light-v5-master-reserve-016",
     "name": "Condições entre 3, 3, 3 rotas",
     "hint": "Considere uma rota de cada vez e siga o que ela exige das outras duas cores.",
-    "sourceAngle": 10.322735559982544,
+    "sourceAngle": 166.32273555998253,
     "target": {
       "x": 755,
       "y": 325.9,
@@ -76196,59 +76969,59 @@ export const lightLevels = [
         "x": 200,
         "y": 86,
         "length": 124.8,
-        "angle": 14.7
+        "angle": -70.8
       },
       {
         "type": "mirror",
         "x": 600,
         "y": 230,
         "length": 124.8,
-        "angle": -0.4
+        "angle": -89.8
       },
       {
         "type": "mirror",
         "x": 200,
         "y": 374,
         "length": 124.8,
-        "angle": -14.9
+        "angle": 14.9
       }
     ],
     "sources": [
       {
-        "x": 30,
-        "y": 86,
-        "angle": 0,
+        "x": 348.54021031123557,
+        "y": 106.87596514400985,
+        "angle": -172,
         "color": "gold"
       },
       {
-        "x": 770,
+        "x": 150,
         "y": 230,
-        "angle": 180,
+        "angle": 360,
         "color": "blue"
       },
       {
         "x": 30,
         "y": 374,
-        "angle": 0,
+        "angle": 60,
         "color": "pink"
       }
     ],
     "targets": [
       {
         "x": 710,
-        "y": 374,
+        "y": 386,
         "radius": 22,
         "color": "gold"
       },
       {
         "x": 90,
-        "y": 237,
+        "y": 227,
         "radius": 22,
         "color": "blue"
       },
       {
         "x": 710,
-        "y": 81,
+        "y": 77,
         "radius": 22,
         "color": "pink"
       }
@@ -76258,8 +77031,8 @@ export const lightLevels = [
         "id": "g1a",
         "pairId": "g1b",
         "label": "A",
-        "x": 198.5,
-        "y": 284.4,
+        "x": 396.5,
+        "y": 99.7,
         "radius": 16,
         "colors": [
           "gold"
@@ -76269,8 +77042,8 @@ export const lightLevels = [
         "id": "g1b",
         "pairId": "g1a",
         "label": "A",
-        "x": 710.9,
-        "y": 256.3,
+        "x": 613.2,
+        "y": 379.2,
         "radius": 16,
         "colors": [
           "gold"
@@ -76280,8 +77053,8 @@ export const lightLevels = [
         "id": "g2a",
         "pairId": "g2b",
         "label": "B",
-        "x": 47.9,
-        "y": 329.4,
+        "x": 44.7,
+        "y": 330.9,
         "radius": 16,
         "colors": [
           "gold"
@@ -76291,8 +77064,8 @@ export const lightLevels = [
         "id": "g2b",
         "pairId": "g2a",
         "label": "B",
-        "x": 755.6,
-        "y": 301.1,
+        "x": 759.1,
+        "y": 308.6,
         "radius": 16,
         "colors": [
           "gold"
@@ -76302,8 +77075,8 @@ export const lightLevels = [
         "id": "b1a",
         "pairId": "b1b",
         "label": "C",
-        "x": 348.4,
-        "y": 412.8,
+        "x": 357.7,
+        "y": 364.3,
         "radius": 16,
         "colors": [
           "blue"
@@ -76313,8 +77086,8 @@ export const lightLevels = [
         "id": "b1b",
         "pairId": "b1a",
         "label": "C",
-        "x": 176.6,
-        "y": 174.1,
+        "x": 291.2,
+        "y": 115.5,
         "radius": 16,
         "colors": [
           "blue"
@@ -76324,8 +77097,8 @@ export const lightLevels = [
         "id": "b2a",
         "pairId": "b2b",
         "label": "D",
-        "x": 505.6,
-        "y": 44.7,
+        "x": 460.6,
+        "y": 149.5,
         "radius": 16,
         "colors": [
           "blue"
@@ -76335,8 +77108,8 @@ export const lightLevels = [
         "id": "b2b",
         "pairId": "b2a",
         "label": "D",
-        "x": 132.2,
-        "y": 319.9,
+        "x": 288.3,
+        "y": 341.5,
         "radius": 16,
         "colors": [
           "blue"
@@ -76346,8 +77119,8 @@ export const lightLevels = [
         "id": "p1a",
         "pairId": "p1b",
         "label": "E",
-        "x": 373.7,
-        "y": 159.5,
+        "x": 358.4,
+        "y": 63,
         "radius": 16,
         "colors": [
           "pink"
@@ -76357,8 +77130,8 @@ export const lightLevels = [
         "id": "p1b",
         "pairId": "p1a",
         "label": "E",
-        "x": 656.5,
-        "y": 147.1,
+        "x": 670.5,
+        "y": 154.5,
         "radius": 16,
         "colors": [
           "pink"
@@ -76368,8 +77141,8 @@ export const lightLevels = [
         "id": "p2a",
         "pairId": "p2b",
         "label": "F",
-        "x": 59.7,
-        "y": 163.7,
+        "x": 33.9,
+        "y": 196.2,
         "radius": 16,
         "colors": [
           "pink"
@@ -76379,8 +77152,52 @@ export const lightLevels = [
         "id": "p2b",
         "pairId": "p2a",
         "label": "F",
-        "x": 760.9,
-        "y": 157.2,
+        "x": 777.9,
+        "y": 149.7,
+        "radius": 16,
+        "colors": [
+          "pink"
+        ]
+      },
+      {
+        "x": 195,
+        "y": 230,
+        "id": "angle-access-1a",
+        "pairId": "angle-access-1b",
+        "label": "K",
+        "radius": 16,
+        "colors": [
+          "blue"
+        ]
+      },
+      {
+        "x": 514,
+        "y": 230.00000000000003,
+        "id": "angle-access-1b",
+        "pairId": "angle-access-1a",
+        "label": "K",
+        "radius": 16,
+        "colors": [
+          "blue"
+        ]
+      },
+      {
+        "x": 52.5,
+        "y": 412.97114317029974,
+        "id": "angle-access-2a",
+        "pairId": "angle-access-2b",
+        "label": "L",
+        "radius": 16,
+        "colors": [
+          "pink"
+        ]
+      },
+      {
+        "x": 157,
+        "y": 299.5218152745383,
+        "id": "angle-access-2b",
+        "pairId": "angle-access-2a",
+        "label": "L",
         "radius": 16,
         "colors": [
           "pink"
@@ -76389,18 +77206,18 @@ export const lightLevels = [
     ],
     "width": 800,
     "height": 460,
-    "id": "light-v4-portal-949",
-    "name": "A saída decide 949",
+    "id": "light-v5-portal-949",
+    "name": "Entradas em dependência",
     "hint": "Compare o que acontece depois de cada saída.",
     "solution": [
-      14.7,
-      31.5,
-      -61.9
+      -70.8,
+      -75,
+      -36.5
     ],
-    "sourceAngle": 0,
+    "sourceAngle": -172,
     "target": {
       "x": 710,
-      "y": 374,
+      "y": 386,
       "radius": 22,
       "color": "gold"
     },
@@ -76420,41 +77237,41 @@ export const lightLevels = [
         "y": 118.9,
         "type": "mirror",
         "length": 124.8,
-        "angle": 21.5
+        "angle": -16.5
       },
       {
         "x": 613.8,
         "y": 101.2,
         "type": "mirror",
         "length": 124.8,
-        "angle": -16.9
+        "angle": 61.1
       },
       {
         "x": 377.7,
         "y": 283.3,
         "type": "mirror",
         "length": 124.8,
-        "angle": -43.2
+        "angle": 86.8
       }
     ],
     "sources": [
       {
-        "x": 30,
-        "y": 55.2,
+        "x": 122.95812562612123,
+        "y": 243.48232308838627,
         "color": "gold",
-        "angle": 19.844843515036995
+        "angle": -56.155156484963
       },
       {
-        "x": 770,
-        "y": 54.7,
+        "x": 499.87186298586437,
+        "y": 198.7724325641641,
         "color": "blue",
-        "angle": 163.42198086060804
+        "angle": 319.4219808606081
       },
       {
-        "x": 377.7,
-        "y": 440,
+        "x": 525.4211629518312,
+        "y": 257.2527733499604,
         "color": "pink",
-        "angle": -90
+        "angle": -190
       }
     ],
     "targets": [
@@ -76570,14 +77387,14 @@ export const lightLevels = [
     "width": 800,
     "height": 460,
     "solution": [
-      -82.8,
-      -16.9,
-      -43.2
+      59.2,
+      61.1,
+      86.8
     ],
-    "id": "light-v4-master-reserve-003",
+    "id": "light-v5-master-reserve-003",
     "name": "Condições entre 3, 2, 2 rotas",
     "hint": "Considere uma rota de cada vez e siga o que ela exige das outras duas cores.",
-    "sourceAngle": 19.844843515036995,
+    "sourceAngle": -56.155156484963,
     "target": {
       "x": 467.3,
       "y": 229.9,
@@ -76600,41 +77417,41 @@ export const lightLevels = [
         "y": 118.9,
         "type": "mirror",
         "length": 124.8,
-        "angle": 21.5
+        "angle": -16.5
       },
       {
         "x": 613.8,
         "y": 101.2,
         "type": "mirror",
         "length": 124.8,
-        "angle": -16.9
+        "angle": 77.1
       },
       {
         "x": 377.7,
         "y": 283.3,
         "type": "mirror",
         "length": 124.8,
-        "angle": -43.2
+        "angle": 74.8
       }
     ],
     "sources": [
       {
-        "x": 30,
-        "y": 55.2,
+        "x": 122.95812562612123,
+        "y": 243.48232308838627,
         "color": "gold",
-        "angle": 19.844843515036995
+        "angle": -56.155156484963
       },
       {
-        "x": 770,
-        "y": 54.7,
+        "x": 465.477948632668,
+        "y": 123.5734011314002,
         "color": "blue",
-        "angle": 163.42198086060804
+        "angle": -8.578019139391955
       },
       {
-        "x": 377.7,
-        "y": 440,
+        "x": 502.0556358832563,
+        "y": 199.421064479388,
         "color": "pink",
-        "angle": -90
+        "angle": -214
       }
     ],
     "targets": [
@@ -76728,14 +77545,14 @@ export const lightLevels = [
     "width": 800,
     "height": 460,
     "solution": [
-      -82.8,
-      -16.9,
-      -43.2
+      59.2,
+      77.1,
+      74.8
     ],
-    "id": "light-v4-master-008",
+    "id": "light-v5-master-008",
     "name": "O caminho que sobra",
     "hint": "Considere uma rota de cada vez e siga o que ela exige das outras duas cores.",
-    "sourceAngle": 19.844843515036995,
+    "sourceAngle": -56.155156484963,
     "target": {
       "x": 467.3,
       "y": 229.9,
@@ -76758,21 +77575,21 @@ export const lightLevels = [
         "y": 105.7,
         "type": "mirror",
         "length": 124.8,
-        "angle": 50
+        "angle": 37
       },
       {
         "x": 582.9,
         "y": 95.7,
         "type": "mirror",
         "length": 124.8,
-        "angle": -72.9
+        "angle": -52.9
       },
       {
         "x": 366,
         "y": 281.1,
         "type": "mirror",
         "length": 124.8,
-        "angle": 88.5
+        "angle": -56.5
       },
       {
         "type": "mirror",
@@ -76784,110 +77601,94 @@ export const lightLevels = [
       {
         "type": "wall",
         "x": 440,
-        "y": 20.200000000000003,
-        "length": 40.400000000000006,
+        "y": 19.200000000000003,
+        "length": 38.400000000000006,
         "width": 12,
         "angle": 90
       },
       {
         "type": "wall",
         "x": 440,
-        "y": 138.61312976655387,
-        "length": 16.341194408587455,
+        "y": 143.92208413863693,
+        "length": 12.257892216904082,
         "width": 12,
         "angle": 90
       },
       {
         "type": "wall",
         "x": 440,
-        "y": 196.41856982982534,
-        "length": 43.26968571795547,
+        "y": 196.21140122173182,
+        "length": 49.38995505425183,
         "width": 12,
         "angle": 90
       },
       {
         "type": "wall",
         "x": 440,
-        "y": 353.02670634440153,
-        "length": 213.94658731119694,
+        "y": 351.60022331437415,
+        "length": 216.7995533712517,
         "width": 12,
         "angle": 90
       },
       {
         "type": "wall",
-        "x": 42.8,
+        "x": 180.38440144144207,
         "y": 180,
-        "length": 85.6,
+        "length": 12.654019163802445,
         "width": 12,
         "angle": 0
       },
       {
         "type": "wall",
-        "x": 236.30710189421853,
+        "x": 235.82964456077514,
         "y": 180,
-        "length": 31.133311159933896,
+        "length": 50.12032591123031,
         "width": 12,
         "angle": 0
       },
       {
         "type": "wall",
-        "x": 307.3154761572641,
+        "x": 302.08777974287733,
         "y": 180,
-        "length": 22.88343736615718,
+        "length": 30.460144621793347,
         "width": 12,
         "angle": 0
       },
       {
         "type": "wall",
-        "x": 369.2826526758278,
+        "x": 491.11210080823565,
         "y": 180,
-        "length": 13.050915670970312,
+        "length": 129.95890465389368,
         "width": 12,
         "angle": 0
       },
       {
         "type": "wall",
-        "x": 490.25582232827367,
+        "x": 604.8797265253864,
         "y": 180,
-        "length": 113.63936152940818,
-        "width": 12,
-        "angle": 0
-      },
-      {
-        "type": "wall",
-        "x": 610.387751546489,
-        "y": 180,
-        "length": 38.62449690702226,
-        "width": 12,
-        "angle": 0
-      },
-      {
-        "type": "wall",
-        "x": 756.85,
-        "y": 180,
-        "length": 86.29999999999995,
+        "length": 45.6405469492272,
         "width": 12,
         "angle": 0
       }
     ],
     "sources": [
       {
-        "x": 30,
-        "y": 74.9,
+        "x": 54.68014284542093,
+        "y": 146.23276279074722,
         "color": "gold",
-        "angle": 10.322735559982544
+        "angle": -15.677264440017456
       },
       {
-        "x": 770,
-        "y": 78.3,
+        "x": 747.3549023704513,
+        "y": 209.5182106972576,
         "color": "blue",
-        "angle": 174.68686644306962
+        "angle": 214.68686644306962
       },
       {
-        "x": 366,
-        "y": 440,
+        "x": 140.47377101138198,
+        "y": 363.18483439816055,
         "color": "pink",
-        "angle": -90
+        "angle": -20
       }
     ],
     "targets": [
@@ -77025,15 +77826,15 @@ export const lightLevels = [
     "width": 800,
     "height": 460,
     "solution": [
-      19,
-      76.1,
-      57.5,
+      6,
+      -83.9,
+      -87.5,
       -7.3
     ],
-    "id": "light-v4-deduction-master-window-13-1",
+    "id": "light-v5-deduction-master-window-13-1",
     "name": "As janelas da última curva",
     "hint": "As duas entradas podem alcançar o mesmo espelho, mas não oferecem as mesmas chegadas.",
-    "sourceAngle": 10.322735559982544,
+    "sourceAngle": -15.677264440017456,
     "target": {
       "x": 758.5,
       "y": 273.8,
