@@ -4,6 +4,7 @@ import fs from 'node:fs';
 import path from 'node:path';
 import {fileURLToPath,pathToFileURL} from 'node:url';
 import {execFileSync} from 'node:child_process';
+import {USER_SPRITE_CHANGE,assertAuthorizedUserSpriteFiles,restorePreUserSpriteAssets} from './sintonia-sprites-history.mjs';
 
 // Content-only redesign baseline: the full nine-game site immediately before
 // this change. The original Sintonia-addition integration audit targeted an
@@ -11,7 +12,13 @@ import {execFileSync} from 'node:child_process';
 const baseline='a9f4bd4d58218f474a5eba3cd54700ff6b1b134b';
 const root=process.env.SINTONIA_TEST_ROOT||path.resolve(path.dirname(fileURLToPath(import.meta.url)),'..');
 const git=(...args)=>execFileSync('git',args,{cwd:root,maxBuffer:128*1024*1024});
-const read=p=>fs.readFileSync(path.join(root,p));
+// The subsequent user-uploaded sprite replacement is validated exactly, then
+// projected back for this historical content-only audit; no generic asset
+// exemption is introduced. The new sprite audit freezes the current baseline.
+const read=p=>{
+ const bytes=fs.readFileSync(path.join(root,p));
+ return p===USER_SPRITE_CHANGE.module?Buffer.from(restorePreUserSpriteAssets(bytes.toString())):bytes;
+};
 const before=p=>git('show',`${baseline}:${p}`);
 const load=p=>import(pathToFileURL(path.join(root,p)));
 const boundedChanges=new Set([
@@ -38,9 +45,11 @@ test('redesign preserves every engine, asset, stylesheet and unrelated source by
 });
 
 test('changed and new deployed files are explicitly bounded Sintonia modules',()=>{
+ assertAuthorizedUserSpriteFiles();
+ const exactLaterSpriteChanges=new Set([USER_SPRITE_CHANGE.module,...USER_SPRITE_CHANGE.newAssets.map(asset=>asset.path)]);
  const changed=git('diff','--name-only',baseline,'--','dist').toString().trim().split('\n').filter(Boolean);
  const untracked=git('ls-files','--others','--exclude-standard','--','dist').toString().trim().split('\n').filter(Boolean);
- for(const file of [...changed,...untracked])assert.ok(boundedChanges.has(file),`Unexpected deployed file: ${file}`);
+ for(const file of [...changed,...untracked])assert.ok(boundedChanges.has(file)||exactLaterSpriteChanges.has(file),`Unexpected deployed file: ${file}`);
 });
 
 test('Sintonia map artwork, edge rendering and board layout code remain identical',()=>{

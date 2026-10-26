@@ -1,0 +1,67 @@
+{
+  "sourceLibraryFileId": "libfile_8a210bf8f6008191873c2b2786ed652f",
+  "sourceLibraryVersion": 0,
+  "sourceFilename": "sprites_chibi_ituicao.png",
+  "sourceSHA256": "3eca630eae5054dbc39dab03a64af4b059821edf4412a8f1b0fda63f9d4a5651",
+  "sourceSize": [
+    1254,
+    1254
+  ],
+  "atlas": "dist/sintonia/assets/chibi-user-atlas.svg",
+  "atlasSize": [
+    1254,
+    313.5
+  ],
+  "atlasSHA256": "097a3b06f44666066c888f6338981d62fb894d515bc2781304659f9781d8c3e0",
+  "method": "Unmodified original PNG embedded once; code-native clipping paths select the four top-row silhouettes. No generated or redrawn artwork.",
+  "animals": [
+    {
+      "animal": "tuiuiu",
+      "frame": 0,
+      "visibleBounds": [
+        34,
+        50,
+        286,
+        298
+      ],
+      "clipRectangles": 81,
+      "visibleSourcePixels": 28320
+    },
+    {
+      "animal": "capivara",
+      "frame": 1,
+      "visibleBounds": [
+        348,
+        98,
+        600,
+        298
+      ],
+      "clipRectangles": 42,
+      "visibleSourcePixels": 34909
+    },
+    {
+      "animal": "bemtevi",
+      "frame": 2,
+      "visibleBounds": [
+        658,
+        88,
+        901,
+        298
+      ],
+      "clipRectangles": 66,
+      "visibleSourcePixels": 26106
+    },
+    {
+      "animal": "mico",
+      "frame": 3,
+      "visibleBounds": [
+        963,
+        99,
+        1228,
+        299
+      ],
+      "clipRectangles": 62,
+      "visibleSourcePixels": 36269
+    }
+  ]
+}

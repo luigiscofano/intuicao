@@ -1,9 +1,11 @@
-// Exact PNG atlases extracted from the existing approved Intuição artwork.
-// All four sheets contain a 4 × 4 grid of 256px frames; no pixel was redrawn.
-const sprite = name => Object.freeze({url: new URL(`./assets/${name}.png`, import.meta.url).href, columns: 4, rows: 4, frame: 0});
+// Exact artwork from the user's sprites_chibi_ituicao.png (Library v0).
+// One self-contained 4 × 1 SVG atlas clips the unchanged PNG's top row:
+// tuiuiú, capivara, bem-te-vi, mico. No artwork is redrawn or recolored.
+const atlasURL = new URL('./assets/chibi-user-atlas.svg', import.meta.url).href;
+const sprite = frame => Object.freeze({url: atlasURL, columns: 4, rows: 1, frame});
 export const ANIMAL_SPRITES = Object.freeze({
-  capivara: sprite('capivara'),
-  tuiuiu: sprite('tuiuiu'),
-  bemtevi: sprite('bemtevi'),
-  mico: sprite('mico')
+  capivara: sprite(1),
+  tuiuiu: sprite(0),
+  bemtevi: sprite(2),
+  mico: sprite(3)
 });

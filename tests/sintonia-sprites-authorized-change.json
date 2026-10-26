@@ -1,0 +1,16 @@
+{
+  "baseline": "06549a80f656c6d0a839a526c58e11ddedb5b1a4",
+  "authorization": "Replace only the four existing Sintonia animal sprites with the corresponding top-row artworks in the user upload.",
+  "module": "dist/sintonia/assets.mjs",
+  "beforeSHA256": "8d1fd742395cd02f199d5b877ec6ca8f5f98c2f2b4bd4af4eb02791c87261be2",
+  "afterSHA256": "1a39abdbc91de43b43b14e0fd36cc5ba02724627a26e9134b8244a57216fc430",
+  "before": "// Exact PNG atlases extracted from the existing approved Intuição artwork.\n// All four sheets contain a 4 × 4 grid of 256px frames; no pixel was redrawn.\nconst sprite = name => Object.freeze({url: new URL(`./assets/${name}.png`, import.meta.url).href, columns: 4, rows: 4, frame: 0});\nexport const ANIMAL_SPRITES = Object.freeze({\n  capivara: sprite('capivara'),\n  tuiuiu: sprite('tuiuiu'),\n  bemtevi: sprite('bemtevi'),\n  mico: sprite('mico')\n});\n",
+  "after": "// Exact artwork from the user's sprites_chibi_ituicao.png (Library v0).\n// One self-contained 4 × 1 SVG atlas clips the unchanged PNG's top row:\n// tuiuiú, capivara, bem-te-vi, mico. No artwork is redrawn or recolored.\nconst atlasURL = new URL('./assets/chibi-user-atlas.svg', import.meta.url).href;\nconst sprite = frame => Object.freeze({url: atlasURL, columns: 4, rows: 1, frame});\nexport const ANIMAL_SPRITES = Object.freeze({\n  capivara: sprite(1),\n  tuiuiu: sprite(0),\n  bemtevi: sprite(2),\n  mico: sprite(3)\n});\n",
+  "newAssets": [
+    {
+      "path": "dist/sintonia/assets/chibi-user-atlas.svg",
+      "sha256": "097a3b06f44666066c888f6338981d62fb894d515bc2781304659f9781d8c3e0"
+    }
+  ],
+  "sourceSHA256": "3eca630eae5054dbc39dab03a64af4b059821edf4412a8f1b0fda63f9d4a5651"
+}
