@@ -16,35 +16,43 @@
 #repasse .r-tutorial p{margin:6px 0 0}
 #repasse .r-board-navigation{max-width:840px;width:100%;margin:10px auto 0;--result-reserved-height:24px}
 #repasse .r-board-navigation:has(#r-motion[data-outcome="win"]){--result-reserved-height:86px}
-#repasse .r-board-surface{position:relative;min-width:0;width:100%}
+/* Keep ambient leaves behind the board, without removing the exterior identity. */
+#repasse .r-board-surface{position:relative;z-index:4;min-width:0;width:100%;background:#fff}
 #repasse .r-board-scroll{min-width:0;max-width:100%;overflow-x:auto;overscroll-behavior-inline:contain;padding:9px 8px 12px;scroll-padding-inline:8px;scrollbar-width:thin;scrollbar-color:#a6b49b #f1f3ec}
 #repasse .r-board-scroll:focus-visible{outline:2px solid var(--green);outline-offset:-2px;border-radius:5px}
 #repasse .r-scroll-help{display:none;margin:2px 8px 10px;font-size:10px;line-height:1.6;color:var(--muted)}
 #repasse .r-board{position:relative;display:grid;grid-template-columns:repeat(var(--r-cols),minmax(0,1fr));grid-template-rows:repeat(var(--r-rows),minmax(44px,1fr));gap:5px;aspect-ratio:var(--r-cols)/var(--r-rows);width:min(100%,var(--r-grid-width));min-width:var(--r-min-width);margin-inline:auto;isolation:isolate;touch-action:pan-x pan-y}
 #repasse .r-board:focus-visible{outline:3px solid var(--green);outline-offset:5px}
 #repasse .r-piece,#repasse .r-empty,#repasse .r-edge-box{position:relative;min-width:0;min-height:44px;box-sizing:border-box}
-#repasse .r-piece{padding:0;margin:0;border:1px solid #a9bba0;border-radius:18%;background:#f3f6ef;box-shadow:0 2px #dfe7d8;color:#25372e;display:grid;place-items:center;cursor:pointer;touch-action:manipulation;container-type:inline-size}
-#repasse .r-piece:hover{border-color:#405e49}
-#repasse .r-piece:active{box-shadow:inset 1px 2px #405e4933}
-#repasse .r-piece:focus-visible{outline:3px solid #405e49;outline-offset:2px;z-index:4}
-#repasse .r-piece-value{font:600 18px/1 system-ui,sans-serif;font-size:clamp(18px,42cqi,25px);letter-spacing:-.6px;font-variant-numeric:tabular-nums}
-#repasse .r-arrow{position:absolute;font:600 9px/1 system-ui,sans-serif;font-size:clamp(9px,20cqi,12px);width:9px;width:clamp(9px,20cqi,12px);text-align:center;color:#405e49;pointer-events:none}
-#repasse .r-arrow-up{left:50%;top:2px;transform:translateX(-50%)}
-#repasse .r-arrow-right{right:1px;top:50%;transform:translateY(-50%)}
-#repasse .r-arrow-down{left:50%;bottom:2px;transform:translateX(-50%)}
-#repasse .r-arrow-left{left:1px;top:50%;transform:translateY(-50%)}
-#repasse .r-empty{border:1px dashed #d9dfd2;border-radius:8px;background:#fafbf7}
+/* Flat cells and a single solid outline keep the numbers and directions primary. */
+#repasse .r-piece{padding:0;margin:0;border:1px solid #607366;border-radius:6px;background:#fff;box-shadow:none;color:#243b2e;display:grid;place-items:center;cursor:pointer;touch-action:manipulation;container-type:inline-size}
+#repasse .r-piece:hover{border-color:#243b2e;background:#f3f6f1}
+#repasse .r-piece:active{background:#e9efe5;box-shadow:none}
+#repasse .r-piece:focus-visible{outline:2px solid #243b2e;outline-offset:2px;z-index:4}
+#repasse .r-piece-value{font:600 18px/1 system-ui,sans-serif;font-size:clamp(17px,34cqi,22px);letter-spacing:-.4px;font-variant-numeric:tabular-nums}
+/* Vector silhouettes avoid font-dependent arrow weights at small cell sizes. */
+#repasse .r-arrow{position:absolute;width:10px;height:10px;font-size:0;line-height:0;color:#536459;pointer-events:none}
+#repasse .r-arrow::before{content:"";display:block;width:100%;height:100%;background:currentColor;clip-path:polygon(0 40%,60% 40%,60% 10%,100% 50%,60% 90%,60% 60%,0 60%)}
+#repasse .r-arrow-up{left:50%;top:2px;transform:translateX(-50%) rotate(-90deg)}
+#repasse .r-arrow-right{right:2px;top:50%;transform:translateY(-50%)}
+#repasse .r-arrow-down{left:50%;bottom:2px;transform:translateX(-50%) rotate(90deg)}
+#repasse .r-arrow-left{left:2px;top:50%;transform:translateY(-50%) rotate(180deg)}
+#repasse .r-empty{border:1px solid #e1e6de;border-radius:6px;background:#f8faf6}
 #repasse .r-coordinate{position:absolute;left:3px;bottom:2px;font:8px/1 system-ui,sans-serif;color:#586b4e;pointer-events:none}
-#repasse .r-edge-box{display:grid;place-content:center;border:1px solid #c8cdbf;border-radius:6px;background:#f5f3eb;color:#3b4234;text-align:center;padding:11px 2px 6px;overflow:visible}
-#repasse .r-edge-box.exact{border-color:#93aa7c;background:#e7efdd}
+/* Collectors are quieter than playable cells; current amount leads, goal follows. */
+#repasse .r-edge-box{display:grid;place-content:center;border:1px solid #c2ccc0;border-radius:6px;background:#f5f7f2;color:#354737;text-align:center;padding:4px 2px;overflow:visible}
+#repasse .r-edge-box.exact{border-color:#9caf90;background:#eef4e9}
 #repasse .r-edge-box.over{border-color:#b5674d;background:#fff0e8;color:#85402a}
-#repasse .r-box-total{font:600 11px/1.3 system-ui,sans-serif;white-space:nowrap;letter-spacing:-.2px;font-variant-numeric:tabular-nums}
-#repasse .r-box-divider{font-weight:400;color:inherit;opacity:.8}
-#repasse .r-box-state{position:absolute;top:2px;left:4px;font:700 10px/1 system-ui,sans-serif}
-#repasse .r-gain{position:absolute;right:-5px;top:-7px;z-index:6;min-width:20px;border-radius:6px;background:#405e49;color:white;font:700 11px/1.5 system-ui,sans-serif;padding:1px 4px;box-shadow:0 1px 3px #263f2e33;pointer-events:none}
+#repasse .r-box-total{display:grid;justify-items:center;gap:2px;font:500 10px/1.2 system-ui,sans-serif;white-space:nowrap;font-variant-numeric:tabular-nums}
+#repasse .r-box-current{font-size:16px;font-weight:600;line-height:1.1;letter-spacing:-.3px}
+#repasse .r-box-target{color:#576653}
+#repasse .over .r-box-target{color:#85402a}
+#repasse .r-box-divider{font-weight:400}
+#repasse .r-box-state{position:absolute;top:3px;left:3px;font:700 9px/1 system-ui,sans-serif}
+#repasse .r-gain{position:absolute;right:-4px;top:-6px;z-index:6;min-width:20px;border-radius:4px;background:#405e49;color:white;font:600 11px/1.5 system-ui,sans-serif;padding:1px 4px;box-shadow:none;pointer-events:none}
 #repasse .r-gain:empty{display:none}
-#repasse .r-preview-source{background:#e4ecd9}
-#repasse .r-preview-target{outline:2px dashed #647c46;outline-offset:1px;z-index:3}
+#repasse .r-piece.r-preview-source{background:#edf3e8;border-color:#405e49}
+#repasse .r-preview-target{outline:2px solid #607d4e;outline-offset:0;z-index:3}
 #repasse .r-box-legend{display:flex;gap:6px 15px;flex-wrap:wrap;margin:4px 24px 16px;font-size:10px;color:var(--muted)}
 #repasse .r-readout{display:grid;grid-template-columns:auto auto minmax(0,1fr);gap:14px 22px;align-items:start}
 #repasse .r-readout strong{font-size:20px}
@@ -52,7 +60,7 @@
 #repasse .r-readout .r-overrun{color:#85402a}
 #repasse #r-motion{min-height:var(--result-reserved-height);padding:0}
 #repasse .r-transfer-layer{position:absolute;inset:0;pointer-events:none;z-index:8}
-#repasse .r-transfer{position:absolute;background:#405e49;color:#fff;border:1px solid #304b37;border-radius:6px;font:700 13px/1.4 system-ui,sans-serif;padding:2px 5px;white-space:nowrap;box-shadow:0 2px 4px #263f2e33;animation:r-transfer-travel .5s cubic-bezier(.22,.7,.3,1) both}
+#repasse .r-transfer{position:absolute;background:#405e49;color:#fff;border:1px solid #304b37;border-radius:6px;font:700 13px/1.4 system-ui,sans-serif;padding:2px 5px;white-space:nowrap;box-shadow:none;animation:r-transfer-travel .5s cubic-bezier(.22,.7,.3,1) both}
 #repasse .r-transfer-static{animation:none;transform:translate(-50%,-100%)}
 #repasse .r-receiving{box-shadow:inset 0 0 0 2px #88a36b}
 #repasse .r-checkbox{display:flex;align-items:center;gap:8px;min-height:44px}

@@ -414,7 +414,7 @@ export function initRepasse({hideOthers=()=>{}}={}) {
   function arrowsMarkup(piece){return piece.directions.map(direction=>'<span class="r-arrow r-arrow-'+direction+'" aria-hidden="true">'+ARROWS[direction]+'</span>').join('');}
   function boxMarkup(side,index,row,col){
     const value=current().boxes[side][index],target=level.targets[side][index],status=value===target?'exact':value>target?'over':'pending',symbol=status==='exact'?'✓':status==='over'?'!':'○';
-    return '<div id="r-box-'+side+'-'+index+'" class="r-edge-box '+status+'" style="grid-row:'+row+';grid-column:'+col+'" role="img" aria-label="'+esc(boxName(side,index))+': '+value+' de '+target+', '+(status==='exact'?'meta exata':status==='over'?'meta ultrapassada':'meta incompleta')+'"><span class="r-box-state" aria-hidden="true">'+symbol+'</span><span class="r-box-total">'+value+'<span class="r-box-divider"> / </span>'+target+'</span><span class="r-gain" aria-hidden="true"></span></div>';
+    return '<div id="r-box-'+side+'-'+index+'" class="r-edge-box '+status+'" style="grid-row:'+row+';grid-column:'+col+'" role="img" aria-label="'+esc(boxName(side,index))+': '+value+' de '+target+', '+(status==='exact'?'meta exata':status==='over'?'meta ultrapassada':'meta incompleta')+'"><span class="r-box-state" aria-hidden="true">'+symbol+'</span><span class="r-box-total"><span class="r-box-current">'+value+'</span><span class="r-box-target"><span class="r-box-divider">/ </span>'+target+'</span></span><span class="r-gain" aria-hidden="true"></span></div>';
   }
   function renderBoard(){
     const board=$('r-board');if(!board)return;
