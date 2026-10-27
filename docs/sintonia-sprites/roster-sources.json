@@ -1,0 +1,146 @@
+[
+  {
+    "name": "16_quati(1).png",
+    "library_file_id": "libfile_61915bc7fb208191b6ee25c94afb5d1c",
+    "file_id": "file_0000000084f882108d354167b47f7f90",
+    "sourceSHA256": "7cb7aa286a9c1359af2c052e63e477b651e71f29a083a95e6e54ad927ae19c08",
+    "asset": "dist/sintonia/assets/roster/16_quati.svg",
+    "assetSHA256": "bd151c324320243754076754a8f8d68801e5e04c152255feb752362cce817d85",
+    "visibleCells": 420
+  },
+  {
+    "name": "15_macaco(1).png",
+    "library_file_id": "libfile_f037fc3e145481919f7e59a0c10d750e",
+    "file_id": "file_000000003a90820e9af01d55f5212f67",
+    "sourceSHA256": "581ece04b6a0b22cc4526aa846ef8c1f800bf5d5a30ef5ee4511420020bcf23d",
+    "asset": "dist/sintonia/assets/roster/15_macaco.svg",
+    "assetSHA256": "3051a90fbc19cebfc8920cccde3bbfbaa6ba79b5fb09bc85844959627c9c9137",
+    "visibleCells": 461
+  },
+  {
+    "name": "14_tucano(1).png",
+    "library_file_id": "libfile_e6515d698898819191088c000ac6d08a",
+    "file_id": "file_00000000caf4820ea19f9b6f75d109e8",
+    "sourceSHA256": "42499538a98b1d4927706af2f176fa3033d54fb531d3b45a99aaf290284fa837",
+    "asset": "dist/sintonia/assets/roster/14_tucano.svg",
+    "assetSHA256": "2140665a7725c2858cd21eeb6971c0e246822f36b3a019f1267c7cdbf64f132a",
+    "visibleCells": 349
+  },
+  {
+    "name": "13_piranha_vermelha(1).png",
+    "library_file_id": "libfile_ce934a0322b48191a1cee9583be3f5ca",
+    "file_id": "file_0000000032fc820ebfdaaa844746c691",
+    "sourceSHA256": "876e7496b5eee1abe72878a1d08fea2ead371679cdd4f0448313809ed82baf65",
+    "asset": "dist/sintonia/assets/roster/13_piranha_vermelha.svg",
+    "assetSHA256": "ace756daf39d28e182b0b552d439b1013246fbb41cd8826beea4fdcd346ada32",
+    "visibleCells": 342
+  },
+  {
+    "name": "12_anta(1).png",
+    "library_file_id": "libfile_6c4c408ed7808191bc7a758e3a6220bd",
+    "file_id": "file_00000000d3c0820e8fff90b0cb8e9465",
+    "sourceSHA256": "71366fa3e6b9a1dbf37508d4cd7aabc4ca4c1d1aaf4bd9b87bdc8943a1d266c4",
+    "asset": "dist/sintonia/assets/roster/12_anta.svg",
+    "assetSHA256": "8135733fb85ea0a23c483b080815f42eaa67702e32365061ac43a4c4a6c180f8",
+    "visibleCells": 410
+  },
+  {
+    "name": "11_arara_azul(1).png",
+    "library_file_id": "libfile_e5ff193c1388819183ab3ae406981c66",
+    "file_id": "file_0000000016c8820e8cad56772a631971",
+    "sourceSHA256": "7c045c37c93b5f2065993051b97b7225fb1e01cc57b82c838d1962f6065a0feb",
+    "asset": "dist/sintonia/assets/roster/11_arara_azul.svg",
+    "assetSHA256": "e7f04df94a59d2c64aad5f2618a47d30632df83acb9543a40e6638a64f4fc7d8",
+    "visibleCells": 383
+  },
+  {
+    "name": "10_tatu_bola(1).png",
+    "library_file_id": "libfile_5e41d5f47efc81918a8baf444ad5bf6f",
+    "file_id": "file_000000001d34820e90a6592f7255b9df",
+    "sourceSHA256": "bffd28f522b65fcda73e4e819319bc7c7ea19fc916c3afcdcc7b008b9eeb863a",
+    "asset": "dist/sintonia/assets/roster/10_tatu_bola.svg",
+    "assetSHA256": "121b8b907bd285ff6622ed3ce74ac5e234a620c7be9dfce3a4ff69a35b463f80",
+    "visibleCells": 434
+  },
+  {
+    "name": "09_jacare_do_papo_amarelo(1).png",
+    "library_file_id": "libfile_ba7c0a878c6c8191b614986c52cd6967",
+    "file_id": "file_0000000037ec820e9be11fb19752e633",
+    "sourceSHA256": "6b542f62598ae77f7e15d4d02ced577fee5e25d476976d3777210a853574ac94",
+    "asset": "dist/sintonia/assets/roster/09_jacare_do_papo_amarelo.svg",
+    "assetSHA256": "7bb3c37bf047262b248db3b7e5f7dda342300dfbe52c191cfe213e3c1a5e7640",
+    "visibleCells": 378
+  },
+  {
+    "name": "08_cobra_coral(1).png",
+    "library_file_id": "libfile_632c8fbd66788191b4b96f8b15b86d11",
+    "file_id": "file_00000000a268820ea4cd126b4eb50235",
+    "sourceSHA256": "8d955cf0ac216baa7f55243e08ae0a21e6520a163053277c53fbba7e618cf44f",
+    "asset": "dist/sintonia/assets/roster/08_cobra_coral.svg",
+    "assetSHA256": "e7c4c8652a0ccc20f0946be9e33aac0586c03c0018d8f947648f0e7c890cfee6",
+    "visibleCells": 300
+  },
+  {
+    "name": "07_lobo_guara(1).png",
+    "library_file_id": "libfile_c25169b8e89c8191b8654076bba71e67",
+    "file_id": "file_00000000d34081f59b586b703ed30657",
+    "sourceSHA256": "f79c7901fdc6c709034c7400c2825a8868699026bd5d290bdb689d3fc8b302a9",
+    "asset": "dist/sintonia/assets/roster/07_lobo_guara.svg",
+    "assetSHA256": "242881de3f04a4616daebdc2e1db18604398603b731fb6025090215d2226107b",
+    "visibleCells": 455
+  },
+  {
+    "name": "06_onca_pintada(1).png",
+    "library_file_id": "libfile_61577889851481919937ca7474c110b0",
+    "file_id": "file_00000000ca58820e8db485a7a2121852",
+    "sourceSHA256": "46349b9778c0b72a2502710c276f0841dbe51c176850492855390bc7853ea092",
+    "asset": "dist/sintonia/assets/roster/06_onca_pintada.svg",
+    "assetSHA256": "d0119ba9bdf36905c12731d9970c5bd86e78372b2b83d5ff9e882aebf1abbcdb",
+    "visibleCells": 516
+  },
+  {
+    "name": "05_tamandua_bandeira(1).png",
+    "library_file_id": "libfile_154a7f1db82c8191a2af00df8ab7355d",
+    "file_id": "file_000000006028820eb53327b9edc5a593",
+    "sourceSHA256": "1c382f99f1bbfef76937887351b5f8ced32fd6873760fab767d97eda154bf591",
+    "asset": "dist/sintonia/assets/roster/05_tamandua_bandeira.svg",
+    "assetSHA256": "9f5b2d91022b5f111baf7bcad981bf79225ff256c1faf813aae4b1e7f7cf9b02",
+    "visibleCells": 400
+  },
+  {
+    "name": "04_mico_leao_dourado(1).png",
+    "library_file_id": "libfile_360781b05c588191920d5cc9b7f0b26e",
+    "file_id": "file_00000000d2d0820e939ac2009df23aaf",
+    "sourceSHA256": "6f892e414a3fc75605380f3b5658cfd94cbdf0208acb3eb6c1ca05e79f786f34",
+    "asset": "dist/sintonia/assets/roster/04_mico_leao_dourado.svg",
+    "assetSHA256": "cfdc4e14207d7c01dec358748b3464b576ddb2d427ca1f801603b8622d3c3749",
+    "visibleCells": 340
+  },
+  {
+    "name": "03_bem_te_vi(1).png",
+    "library_file_id": "libfile_7a5e323ad8bc8191909ad1c6c1d1377e",
+    "file_id": "file_00000000c694820eb62a8d92593e2e60",
+    "sourceSHA256": "ef73487f2179f4b86dc361b084139b23ae8d7e305d98d5c73dacda41878cc09f",
+    "asset": "dist/sintonia/assets/roster/03_bem_te_vi.svg",
+    "assetSHA256": "77e3fd8574d2f7c93b0cde0fd59178ac5ee4735a664ca9b26877c0c3efbc7cd5",
+    "visibleCells": 270
+  },
+  {
+    "name": "02_capivara(1).png",
+    "library_file_id": "libfile_e6e77072601c8191956bcc1a49c7737a",
+    "file_id": "file_00000000e7b8820e928466365ec40d06",
+    "sourceSHA256": "7b9c33fe26ca66eeef77d006503d018888ac8abe7e1157bf49649991635ec95b",
+    "asset": "dist/sintonia/assets/roster/02_capivara.svg",
+    "assetSHA256": "1d4ef2c0e845354dd2953b2c87fb74068613116bf67c2aa825a1292bc8fce0da",
+    "visibleCells": 316
+  },
+  {
+    "name": "01_tuiuiu(1).png",
+    "library_file_id": "libfile_8912b2d90c248191a40b94e3ad916d3e",
+    "file_id": "file_00000000441c8210ad260d45dff45f03",
+    "sourceSHA256": "0a3901dbfefa2cb8ad975cc649a9cdbf1944af16d411cd29fca446e47eb2dd43",
+    "asset": "dist/sintonia/assets/roster/01_tuiuiu.svg",
+    "assetSHA256": "fc1cb97240f99e44d394b60c3af58742420a8d109cb803d59aa93841e21274b8",
+    "visibleCells": 296
+  }
+]

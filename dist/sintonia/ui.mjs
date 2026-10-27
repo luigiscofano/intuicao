@@ -2,13 +2,12 @@ import {CAMPAIGN, CHAPTERS, DIFFICULTIES} from './campaign.mjs';
 import {RULES_VERSION, DIRECTIONS, initialState, transition, isWon, stateKey, validateLevel, replay, gateIsOpen} from './engine.mjs';
 import {createSintoniaService, restoreSintoniaSession, serializeSintoniaSession, commitSintoniaCommand, resolveSintoniaCampaignAttempt, isRetainedSintoniaAttempt, levelContentRevision} from './service.mjs';
 export {restoreSintoniaSession, serializeSintoniaSession, commitSintoniaCommand} from './service.mjs';
-import {ANIMAL_SPRITES} from './assets.mjs';
+import {ANIMAL_SPRITES, ANIMAL_NAMES, resolveAnimalRoster} from './animal-roster.mjs';
 import {createRestartConfirmation} from '../restart-confirmation.mjs';
 import {createResultMotion} from '../result-motion.mjs';
 import {dailyIndex, recordEvent} from '../collection-state.mjs';
 
 const STORE = 'intuicao.sintonia.v1';
-const ANIMALS = {capivara:'Capivara', tuiuiu:'Tuiuiú', bemtevi:'Bem-te-vi', mico:'Mico'};
 const DIRECTIONS_UI = {up:['↑','cima'],right:['→','direita'],down:['↓','baixo'],left:['←','esquerda']};
 const MECHANIC_TEXT = {
   walls:['Paredes e recuos','Uma parede mantém um animal parado naquela direção, enquanto os outros continuam.'],
@@ -30,7 +29,6 @@ const esc = value => String(value ?? '').replace(/[&<>"']/g, char => ({'&':'&amp
 const clone = value => structuredClone(value);
 const bounded = (value, min, max, fallback=min) => Number.isInteger(value) && value>=min && value<=max ? value : fallback;
 const coordinate = (cell, board) => `linha ${Math.floor(cell/board.cols)+1}, coluna ${cell%board.cols+1}`;
-const animalName = board => ANIMALS[board.animal] ?? 'Animal';
 const shortNumber = value => String(value).padStart(2,'0');
 const lessonText = level => String(level.lesson??'Prepare os caminhos em conjunto.').replace(/^Aqui o jogador precisa descobrir que\s+/i,'Descoberta deste nível: ');
 
@@ -101,6 +99,10 @@ export function initSintonia({hideOtherGames}) {
   let data;
   try{data=normalizeSintoniaData(JSON.parse(localStorage.getItem(STORE)||'null'));}catch{data=freshSintoniaData();}
   let level=null,session=null,mode='campaign',index=0,screen='selection',daily=false;
+  // Cosmetic identities stay separate from the certified level and history.
+  let animalRoster=[];
+  const animalKey=board=>animalRoster[level?.boards.indexOf(board)]??board.animal;
+  const animalName=board=>ANIMAL_NAMES[animalKey(board)]??'Animal';
   let rulesOpen=true,advanced=data.prefs.advanced,motion=null,storageWarning=false;
   let message='',hintText='',hintTier=0,hintPlan=null,hintBusy=false,answerPlan=null,inspectKey='',model=null;
   let revision=0,hintRevision=0,generationRevision=0,importRevision=0,autoTimer=null,generationBusy=false;
@@ -118,7 +120,7 @@ export function initSintonia({hideOtherGames}) {
 
   function save() {
     if(level&&session){
-      const saved=serializeSintoniaSession(session);
+      const saved={...serializeSintoniaSession(session),animalRoster:animalRoster.slice()};
       if(mode==='campaign'){data.campaign.lastId=level.id;data.campaign.sessions[level.id]=saved;}
       else if(mode==='endless'&&data.endless?.current?.level?.id===level.id)data.endless.current.session=saved;
       else if(mode==='custom')data.custom={level:clone(level),session:saved};
@@ -185,6 +187,7 @@ export function initSintonia({hideOtherGames}) {
   function start(next,{mode:nextMode='campaign',saved=null,fresh=false,notice=''}={}) {
     invalidate();level=next;mode=nextMode;screen='play';model=relationModel(level);recentDirection='';
     session=restoreSintoniaSession(level,fresh?null:saved);
+    animalRoster=resolveAnimalRoster(level.boards.length,fresh?null:saved?.animalRoster);
     const unknown=(level.mechanics??[]).filter(id=>id in MECHANIC_TEXT&&!data.learnedMechanics.includes(id));
     rulesOpen=true;
     data.learnedMechanics=[...new Set([...data.learnedMechanics,...(level.mechanics??[]).filter(id=>id in MECHANIC_TEXT)])];
@@ -491,7 +494,7 @@ export function initSintonia({hideOtherGames}) {
   }
 
   function spriteMarkup(board) {
-    const sprite=ANIMAL_SPRITES[board.animal];
+    const sprite=ANIMAL_SPRITES[animalKey(board)];
     if(!sprite)return `<span class="s-animal-placeholder" aria-hidden="true">${esc(animalName(board).slice(0,1))}</span>`;
     const columns=sprite.columns??1,rows=sprite.rows??1,frame=sprite.directions?.[recentDirection]??sprite.frame??0;
     const x=columns>1?(frame%columns)/(columns-1)*100:0,y=rows>1?Math.floor(frame/columns)/(rows-1)*100:0;
