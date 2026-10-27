@@ -7,15 +7,33 @@ import {ANIMAL_IDS,ANIMAL_SPRITES,resolveAnimalRoster} from '../dist/sintonia/an
 import {CAMPAIGN} from '../dist/sintonia/campaign.mjs';
 
 const hash=data=>crypto.createHash('sha256').update(data).digest('hex');
-test('all 16 original PNGs are embedded unchanged in local sprite assets',()=>{
+test('the exact user-attached sheet supplies all 16 frames, embedded once without modification',()=>{
   assert.equal(ANIMAL_IDS.length,16);assert.equal(new Set(ANIMAL_IDS).size,16);
-  const sources=JSON.parse(fs.readFileSync(new URL('../docs/sintonia-sprites/roster-sources.json',import.meta.url)));
-  for(const sprite of Object.values(ANIMAL_SPRITES)){
-    const svg=fs.readFileSync(fileURLToPath(sprite.url),'utf8');
-    const source=sources.find(item=>sprite.url.endsWith(item.asset.replace('dist/','')));
-    assert.ok(source);assert.equal(hash(svg),source.assetSHA256);
-    assert.equal(hash(Buffer.from(svg.match(/base64,([^" ]+)/)[1],'base64')),source.sourceSHA256);
-    assert.match(svg,/clipPath/);assert.doesNotMatch(svg,/<script|<foreignObject|xlink:href="https?:/);
+  const source=JSON.parse(fs.readFileSync(new URL('../docs/sintonia-sprites/roster-sources.json',import.meta.url)));
+  const svg=fs.readFileSync(fileURLToPath(ANIMAL_SPRITES.tuiuiu.url),'utf8');
+  assert.equal(hash(svg),source.assetSHA256);
+  assert.equal(source.sourceSHA256,'86d64f23b418243f573acfad6e14b06d750a1156c4adc901a3fb13b349f90f0e');
+  assert.equal(source.sourceLibraryFileId,'libfile_c8e90fb42ca48191bdd126cc3f7638bc');
+  const embedded=[...svg.matchAll(/base64,([^" ]+)/g)];
+  assert.equal(embedded.length,1);assert.equal(hash(Buffer.from(embedded[0][1],'base64')),source.sourceSHA256);
+  assert.doesNotMatch(svg,/<script|<foreignObject|xlink:href="https?:/);
+  const paths=[...svg.matchAll(/<path data-animal="([a-z]+)" d="([^"]+)"\/>/g)];
+  assert.deepEqual(paths.map(match=>match[1]),ANIMAL_IDS);
+  for(const [frame,[id,sprite]] of Object.entries(ANIMAL_SPRITES).entries()){
+    assert.equal(sprite.url,ANIMAL_SPRITES.tuiuiu.url);assert.equal(sprite.columns,4);assert.equal(sprite.rows,4);assert.equal(sprite.frame,frame);
+    const rects=[...paths[frame][2].matchAll(/M(\d+) (\d+)h(\d+)v(\d+)h-\d+z/g)];
+    assert.ok(rects.length>0,id);
+    for(const [,x,y,w,h] of rects){assert.ok(+x>=frame%4*313.5&&+x+ +w<=(frame%4+1)*313.5);assert.ok(+y>=Math.floor(frame/4)*313.5&&+y+ +h<=(Math.floor(frame/4)+1)*313.5);}
+  }
+});
+
+test('the game renderer selects the right row and column for every approved animal',()=>{
+  const ui=fs.readFileSync(new URL('../dist/sintonia/ui.mjs',import.meta.url),'utf8');
+  const fragment=ui.slice(ui.indexOf('  function spriteMarkup(board)'),ui.indexOf('  function renderBoards()'));
+  const render=new Function('ANIMAL_SPRITES','animalKey','animalName','recentDirection','esc',fragment+';return spriteMarkup;')(ANIMAL_SPRITES,board=>board.animal,board=>board.animal,'up',String);
+  for(const [frame,id] of ANIMAL_IDS.entries()){
+    const expected=`background-size:400% 400%;background-position:${(frame%4)/3*100}% ${Math.floor(frame/4)/3*100}%`;
+    assert.ok(render({animal:id}).includes(expected),id);
   }
 });
 

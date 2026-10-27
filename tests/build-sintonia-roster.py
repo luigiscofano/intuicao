@@ -1,65 +1,61 @@
-"""Package unchanged 32-cell PNGs as clipped SVG assets (no raster rewriting)."""
+"""Clip all 16 animals from the approved sheet without rewriting its PNG."""
 import base64
 import hashlib
 import json
+import re
 import sys
-from collections import deque
 from pathlib import Path
+import numpy as np
 from PIL import Image
+from scipy import ndimage
 
 root = Path(__file__).resolve().parents[1]
-sources = json.loads((root / 'docs/sintonia-sprites/roster-sources.json').read_text())
-output = root / 'dist/sintonia/assets/roster'
-output.mkdir(parents=True, exist_ok=True)
-for source in sources:
-    path = Path(sys.argv[1]) / source['name']
-    raw = path.read_bytes()
-    im = Image.open(path).convert('RGB')
-    assert im.size == (512, 512)
-    cells = {(x, y) for y in range(32) for x in range(32)}
-    ink = {(x, y) for x, y in cells if im.getpixel((x * 16, y * 16)) != (255, 255, 255)}
-    # The main connected silhouette excludes isolated decorative floor flecks.
-    parts = []
-    while ink:
-        part = {ink.pop()}
-        queue = deque(part)
-        while queue:
-            x, y = queue.popleft()
-            for dx, dy in [(a,b) for a in (-1,0,1) for b in (-1,0,1) if a or b]:
-                p = (x + dx, y + dy)
-                if p in ink:
-                    ink.remove(p); part.add(p); queue.append(p)
-        parts.append(part)
-    silhouette = max(parts, key=len)
-    # Keep enclosed white eyes and plumage; clip only the outside/background.
-    outside = {p for p in cells - silhouette if p[0] in (0,31) or p[1] in (0,31)}
-    queue = deque(outside)
-    while queue:
-        x, y = queue.popleft()
-        for dx, dy in [(1,0),(-1,0),(0,1),(0,-1)]:
-            p = (x + dx, y + dy)
-            if p in cells and p not in silhouette and p not in outside:
-                outside.add(p); queue.append(p)
-    visible = cells - outside
-    commands = []
-    for y in range(32):
-        x = 0
-        while x < 32:
-            if (x,y) not in visible:
-                x += 1; continue
-            start = x
-            while x < 32 and (x,y) in visible: x += 1
-            width = (x-start)*16
-            commands.append(f'M{start*16} {y*16}h{width}v16h-{width}z')
-    xs, ys = zip(*visible)
-    dx, dy = 256-(min(xs)+max(xs)+1)*8, 256-(min(ys)+max(ys)+1)*8
-    encoded = base64.b64encode(raw).decode()
-    svg = f'<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="512" height="512" viewBox="0 0 512 512"><defs><clipPath id="animal"><path d="{"".join(commands)}"/></clipPath></defs><g transform="translate({dx} {dy})"><image width="512" height="512" style="image-rendering:pixelated" clip-path="url(#animal)" xlink:href="data:image/png;base64,{encoded}"/></g></svg>\n'
-    target = output / source['name'].replace('(1).png','.svg')
-    target.write_text(svg)
-    source['sourceSHA256'] = hashlib.sha256(raw).hexdigest()
-    source['asset'] = str(target.relative_to(root))
-    source['assetSHA256'] = hashlib.sha256(svg.encode()).hexdigest()
-    source['visibleCells'] = len(visible)
-(root / 'docs/sintonia-sprites/roster-sources.json').write_text(json.dumps(sources, ensure_ascii=False, indent=2)+'\n')
-print(f'Packaged {len(sources)} unchanged PNGs in SVG wrappers.')
+source = Path(sys.argv[1])
+raw = source.read_bytes()
+pixels = np.array(Image.open(source).convert('RGBA'))
+assert pixels.shape == (1254, 1254, 4)
+names = ['tuiuiu','capivara','bemtevi','mico','tamandua','onca','lobo','coral',
+         'jacare','tatu','arara','anta','piranha','tucano','macaco','quati']
+old_svg = (root/'dist/sintonia/assets/chibi-user-atlas.svg').read_text()
+old_paths = dict(re.findall(r'<path data-animal="([a-z]+)" d="([^"]+)"/>', old_svg))
+clips, records = [], []
+
+for frame, animal in enumerate(names):
+    row, col = divmod(frame, 4)
+    x0, y0 = round(col*313.5)+7, round(row*313.5)+7
+    x1, y1 = round((col+1)*313.5)-7, round((row+1)*313.5)-7
+    if frame < 4:
+        # The old top-row masks already preserve plumage and white eye details.
+        path = old_paths[animal]
+    else:
+        patch = pixels[y0:y1,x0:x1]
+        foreground = (patch[:,:,:3].min(axis=2)<235)&(patch[:,:,3]>0)
+        labels, count = ndimage.label(foreground,np.ones((3,3)))
+        sizes = np.bincount(labels.ravel());sizes[0]=0
+        mask = ndimage.binary_fill_holes(labels==sizes.argmax())
+        # Exact integer-coordinate clip rectangles, not repainted pixel art.
+        rectangles=[];active={}
+        for y,line in enumerate(mask):
+            padded=np.r_[False,line,False].astype(int)
+            starts=np.flatnonzero(np.diff(padded)==1)
+            ends=np.flatnonzero(np.diff(padded)==-1)
+            current={}
+            for start,end in zip(starts,ends):
+                key=(int(start+x0),int(end-start))
+                if key in active:
+                    rect=active.pop(key);rect[3]+=1
+                else:rect=[key[0],y+y0,key[1],1]
+                current[key]=rect
+            rectangles.extend(active.values());active=current
+        rectangles.extend(active.values())
+        path=''.join(f'M{x} {y}h{w}v{h}h-{w}z' for x,y,w,h in rectangles)
+    rects=[tuple(map(int,m)) for m in re.findall(r'M(\d+) (\d+)h(\d+)v(\d+)h-\d+z',path)]
+    records.append({'animal':animal,'frame':frame,'visibleBounds':[min(x for x,y,w,h in rects),min(y for x,y,w,h in rects),max(x+w for x,y,w,h in rects),max(y+h for x,y,w,h in rects)],'visibleSourcePixels':sum(w*h for x,y,w,h in rects)})
+    clips.append(f'<path data-animal="{animal}" d="{path}"/>')
+
+svg='<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="1254" height="1254" viewBox="0 0 1254 1254"><defs><clipPath id="animals">'+''.join(clips)+'</clipPath></defs><image width="1254" height="1254" style="image-rendering:pixelated" clip-path="url(#animals)" xlink:href="data:image/png;base64,'+base64.b64encode(raw).decode()+'"/></svg>\n'
+target=root/'dist/sintonia/assets/chibi-user-roster.svg'
+target.write_text(svg)
+provenance={'sourceFilename':source.name,'sourceLibraryFileId':'libfile_c8e90fb42ca48191bdd126cc3f7638bc','sourceSHA256':hashlib.sha256(raw).hexdigest(),'sourceSize':[1254,1254],'asset':str(target.relative_to(root)),'assetSHA256':hashlib.sha256(svg.encode()).hexdigest(),'method':'Original attached PNG embedded unchanged once; SVG clipping selects all 16 original silhouettes. No resampling, repainting or substituted artwork.','animals':records}
+(root/'docs/sintonia-sprites/roster-sources.json').write_text(json.dumps(provenance,ensure_ascii=False,indent=2)+'\n')
+print('Packaged the 16 exact animals from the attached sheet.')
