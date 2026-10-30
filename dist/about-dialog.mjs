@@ -8,7 +8,8 @@ if(trigger && dialog){
  // A manual top-layer popover escapes the dialog's clipping without changing it.
  const greenLayer=document.createElement('div');greenLayer.id='about-green-sparkles';
  greenLayer.setAttribute('popover','manual');greenLayer.setAttribute('aria-hidden','true');greenLayer.setAttribute('inert','');dialog.append(greenLayer);
- const clearGreen=()=>{greenLayer.replaceChildren();if(greenLayer.matches(':popover-open'))greenLayer.hidePopover();};
+ let faunaAnimations=[];
+ const clearGreen=()=>{faunaAnimations.forEach(animation=>animation.cancel());faunaAnimations=[];greenLayer.replaceChildren();if(greenLayer.matches(':popover-open'))greenLayer.hidePopover();};
  const celebrateGreen=()=>{
   const r=dialog.getBoundingClientRect(),vw=document.documentElement.clientWidth,vh=window.innerHeight;
   const clamp=(v,max)=>Math.max(12,Math.min(max-12,v));
@@ -39,25 +40,37 @@ if(trigger && dialog){
   [80,1220,240,220],[405,1215,255,230],[720,1205,285,240]
  ];
  const celebrateAnimals=()=>{
-  const vw=document.documentElement.clientWidth,vh=window.innerHeight;
-  const fragment=document.createDocumentFragment(),count=reduced.matches?8:28;
+  const r=dialog.getBoundingClientRect(),vw=document.documentElement.clientWidth;
+  const fragment=document.createDocumentFragment(),count=reduced.matches?8:28,flights=[];
   for(let i=0;i<count;i++){
    const [x,y,w,h]=faunaFrames[i%faunaFrames.length];
    const piece=document.createElement('span');piece.className='about-animal-confetti';
-   const size=20+Math.random()*24,rotation=-42+Math.random()*84;
-   piece.style.setProperty('--ax',`${12+Math.random()*Math.max(0,vw-size-24)}px`);
-   piece.style.setProperty('--ay',`${Math.max(12,vh*(.08+Math.random()*.57))}px`);
+   const size=22+Math.random()*24,rotation=-35+Math.random()*70;
+   // Launch inside the panel, then let momentum carry the icons beyond its edges.
+   const originX=Math.max(4,Math.min(vw-size-4,r.left+r.width*(.2+Math.random()*.6)-size/2));
+   const originY=r.top+r.height*(.35+Math.random()*.25);
+   piece.style.setProperty('--ax',`${originX}px`);
+   piece.style.setProperty('--ay',`${originY}px`);
    piece.style.setProperty('--asize',`${size}px`);
-   piece.style.setProperty('--adx',`${-65+Math.random()*130}px`);
-   piece.style.setProperty('--amid',`${-22+Math.random()*44}px`);
-   piece.style.setProperty('--afall',`${75+Math.random()*140}px`);
    piece.style.setProperty('--arot',`${rotation}deg`);
-   piece.style.setProperty('--aspin',`${rotation-110+Math.random()*220}deg`);
-   piece.style.setProperty('--adelay',`${Math.random()*150}ms`);
    piece.innerHTML=`<svg viewBox="${x} ${y} ${w} ${h}" aria-hidden="true" focusable="false"><defs><filter id="fauna-paper-${i}" color-interpolation-filters="sRGB"><feColorMatrix type="matrix" values="1 0 0 0 0  0 1 0 0 0  0 0 1 0 0  -1 -1 -1 0 3"/></filter></defs><image href="platform-assets/fauna-green-original.png" width="1079" height="1458" filter="url(#fauna-paper-${i})"/></svg>`;
    fragment.append(piece);
+   if(!reduced.matches){
+    const duration=2400+Math.random()*500,drag=.28+Math.random()*.25;
+    const vx=(i%2?-1:1)*(180+Math.random()*210),vy=-190-Math.random()*190;
+    const gravity=420+Math.random()*180,spin=(i%3?-1:1)*(80+Math.random()*170),flutter=8+Math.random()*13;
+    const frames=Array.from({length:61},(_,frame)=>{
+     const progress=frame/60,t=progress*duration/1000;
+     const dx=vx*(1-Math.exp(-drag*t))/drag+Math.sin(t*5+i)*flutter*t;
+     const dy=vy*t+gravity*t*t/2;
+     return {offset:progress,opacity:progress<.06?progress/.06:progress>.82?(1-progress)/.18:1,
+      transform:`translate(${dx}px,${dy}px) rotate(${rotation+spin*t+Math.sin(t*4+i)*12}deg) scale(${.8+.2*Math.min(1,progress/.12)})`};
+    });
+    flights.push({piece,frames,duration,delay:Math.random()*120});
+   }
   }
   greenLayer.append(fragment);
+  for(const {piece,frames,duration,delay} of flights)faunaAnimations.push(piece.animate(frames,{duration,delay,easing:'linear',fill:'both'}));
  };
  window.addEventListener('resize',clearGreen);
  let returnFocus=null, cleanupTimer=null, pointerStartedOutside=false;
@@ -98,7 +111,7 @@ if(trigger && dialog){
   sparks.append(fragment);status.textContent='Viva cada pequena descoberta!';
   celebrateGreen();
   celebrateAnimals();
-  cleanupTimer=setTimeout(clearCelebration,reduced.matches?1100:1650);
+  cleanupTimer=setTimeout(clearCelebration,reduced.matches?1100:3200);
  });
  reduced.addEventListener('change',clearCelebration);
 }
