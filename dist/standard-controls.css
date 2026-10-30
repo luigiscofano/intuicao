@@ -12,3 +12,9 @@
    supports its direct on-board handles; only the auxiliary editor is hidden. */
 body:has(.games [data-game="cut"][aria-pressed="true"]) :is(#toggle-controls,#advanced-controls){display:none!important}
 body:has(.games [data-game="cut"][aria-pressed="true"]) .workspace:not(.rules-open){grid-template-columns:minmax(0,1fr)}
+
+/* Dicas is available only in PACTO; intrinsic puzzle clues and rules stay intact. */
+#hint,#s-hint,#r-hint,#o-hint,
+#s-hint-apply,#r-hint-apply,#o-hint-apply,
+body:not(:has(.games>[data-collection="pacto"][aria-pressed="true"])) #c-hint,
+body:not(:has(.games>[data-collection="pacto"][aria-pressed="true"])) #c-hint-apply{display:none!important}
