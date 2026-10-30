@@ -1,4 +1,4 @@
-# Verificação do modo Endless
+# Verificação do Modo Sem Parar
 
 Data: 24 de outubro de 2026. Base anterior: `835f473489f31c045b1b194e6ff23724a077483c`.
 
@@ -24,14 +24,14 @@ A execução agrega 22 suítes/execuções determinísticas. Não depende de red
 - Interface simulada: entrada antes dos níveis, configurações aplicadas explicitamente, gabarito após três erros, confirmação duplicada, avanço automático, reinício com mesma semente, reabertura, retorno após vitória, saída durante avanço, callbacks antigos, histórico e separação da campanha.
 - DESVIO: derrota contra bot mantém mapa; vitória humana avança; alteração de opções invalida a jogada pendente do bot; controles de modo e dificuldade preservados.
 - Vitória seguida de edição/reinício não avança um tabuleiro incompleto ao reabrir. Diálogo de reinício pausa o avanço automático.
-- Sessões e contadores Endless limitados ao registro atual por jogo. Opções inválidas/corrompidas normalizadas; falha de armazenamento não impede jogar.
+- Sessões e contadores Modo Sem Parar limitados ao registro atual por jogo. Opções inválidas/corrompidas normalizadas; falha de armazenamento não impede jogar.
 - Regressões dos controles diretos, dicas, PACTO, reinício, atalhos, middle-click, estrutura visual e 20 cenários integrados existentes.
 
 ## Isolamento histórico
 
 `tests/endless-campaign-baseline.json` fixa os hashes dos 34 arquivos protegidos anteriores: campanhas, motores, helpers de interação, estilos originais e arte da plataforma. O teste exige igualdade byte a byte.
 
-A integração altera `app.mjs` e `collection-ui.mjs`. Seus novos hashes ficam em `tests/endless-authorized-sha256.json`, separado dos manifestos históricos. No HTML, só é acrescentado o link de `endless.css`; o teste de isolamento remove essa inserção exata para comparar o HTML histórico. Os geradores e o CSS Endless são novos módulos, sem sobrescrever o pacote congelado.
+A integração altera `app.mjs` e `collection-ui.mjs`. Seus novos hashes ficam em `tests/endless-authorized-sha256.json`, separado dos manifestos históricos. No HTML, só é acrescentado o link de `endless.css`; o teste de isolamento remove essa inserção exata para comparar o HTML histórico. Os geradores e o CSS Modo Sem Parar são novos módulos, sem sobrescrever o pacote congelado.
 
 ## Limite da verificação
 

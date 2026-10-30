@@ -9,7 +9,7 @@ A opção **Adicionar seu próprio nível em JSON** fica no fim da seleção, de
 - Use o campo `game` correto: `light`, `cut`, `elo`, `prumo`, `pacto` ou `desvio`. Um arquivo de outro jogo é recusado. A única exceção é o formato antigo de mapa do DESVIO sem `game`.
 - A importação só troca o tabuleiro depois de validar os dados e a solução. Um erro, cancelamento, arquivo grande demais ou verificação inconclusiva preserva a partida e o progresso anteriores.
 - `id` e `name` servem para identificar/apresentar o arquivo, mas o jogo cria uma identidade personalizada a partir de suas regras. Reimportar as mesmas regras retoma a sessão personalizada; mudar apenas o nome não limpa os erros nem o uso de gabarito. Regras diferentes criam outra sessão.
-- Campos de progresso, conclusão, modo Endless ou assistência fornecidos pelo arquivo não são aceitos como progresso. Concluir um nível personalizado nunca completa um nível da campanha.
+- Campos de progresso, conclusão, Modo Sem Parar ou assistência fornecidos pelo arquivo não são aceitos como progresso. Concluir um nível personalizado nunca completa um nível da campanha.
 - O estado fica no armazenamento local deste navegador, sujeito às permissões e ao espaço disponíveis. Não é uma conta ou sincronização entre aparelhos. Reflexos/Corte conservam até 20 sessões personalizadas recentes.
 
 ## Exemplos prontos
@@ -107,6 +107,6 @@ Nos três puzzles de grade, zero soluções, várias soluções e busca inconclu
 
 Os gabaritos personalizados usam somente soluções conferidas e continuam sujeitos aos erros/desbloqueio e à confirmação explícita do jogo. Importar ou ver gabarito não dá vitória automática.
 
-O botão Endless entra diretamente no modo, reutilizando sua sessão/configuração/seed quando existentes. Voltar a Desafios/Mapas e selecionar a fase retoma seu estado. O histórico novo de Reflexos e Corte certo é temporário, limitado a 80 edições nesta sessão: um arrasto ou ajuste contínuo conta como uma edição; desfazer não apaga tentativas, assistência nem vitórias. O campo JSON mantém o desfazer nativo da edição de texto.
+O botão Modo Sem Parar entra diretamente no modo, reutilizando sua sessão/configuração/seed quando existentes. Voltar a Desafios/Mapas e selecionar a fase retoma seu estado. O histórico novo de Reflexos e Corte certo é temporário, limitado a 80 edições nesta sessão: um arrasto ou ajuste contínuo conta como uma edição; desfazer não apaga tentativas, assistência nem vitórias. O campo JSON mantém o desfazer nativo da edição de texto.
 
-Em todos os jogos, a barra usa a ordem: **desfazer, refazer, Reiniciar, Mostrar/Ocultar regras, Opções avançadas**. Reiniciar mantém sua confirmação e não apaga o progresso geral. Regras, dicas, gabaritos, exportação, campanhas e Endless continuam disponíveis. Os botões antigos Continuar partida e Tutorial do PDF foram retirados, não os dados salvos ou os documentos.
+Em todos os jogos, a barra usa a ordem: **desfazer, refazer, Reiniciar, Mostrar/Ocultar regras, Opções avançadas**. Reiniciar mantém sua confirmação e não apaga o progresso geral. Regras, dicas, gabaritos, exportação, campanhas e Modo Sem Parar continuam disponíveis. Os botões antigos Continuar partida e Tutorial do PDF foram retirados, não os dados salvos ou os documentos.

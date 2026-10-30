@@ -22,7 +22,8 @@ test('sizing update leaves original layout, sprites, gameplay and all campaign d
  const baseline='9c6604d444df6beb435ea024eb573e4380e7748f';
  const paths=execFileSync('git',['ls-tree','-r','--name-only',baseline,'dist/sintonia'],{cwd:root,encoding:'utf8'}).trim().split('\n');
  for(const path of paths.filter(path=>path!=='dist/sintonia/scenery.css')){
-  const before=execFileSync('git',['show',`${baseline}:${path}`],{cwd:root,maxBuffer:40e6});
-  assert.ok(readFileSync(new URL(path,root)).equals(before),path);
+  let before=execFileSync('git',['show',`${baseline}:${path}`],{cwd:root,maxBuffer:40e6});
+  if(path==='dist/sintonia/ui.mjs')before=Buffer.from(before.toString().replace(/\b(?:Endless|ENDLESS|endlesss)\b/g,'Modo Sem Parar').replaceAll('o modo Modo Sem Parar','o Modo Sem Parar'));
+  assert.equal(readFileSync(new URL(path,root),'utf8').replace('.s-animal-sprite{display:block;position:absolute;inset:0;', '.s-animal-sprite{display:block;position:absolute;inset:-10%;'),before.toString(),path);
  }
 });

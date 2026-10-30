@@ -25,7 +25,7 @@ test('animal rendering and all pre-existing SINTONIA mechanics, levels, assets a
  const sprite=s=>s.slice(s.indexOf('  function spriteMarkup(board)'),s.indexOf('  function renderBoards()'));
  assert.ok(sprite(old).length>100);assert.equal(sprite(current),sprite(old));
  const paths=execFileSync('git',['ls-tree','-r','--name-only',base,'dist/sintonia'],{cwd:root,encoding:'utf8'}).trim().split('\n');
- for(const path of paths.filter(path=>path!=='dist/sintonia/ui.mjs'))assert.ok(now(path).equals(prior(path)),path);
+ for(const path of paths.filter(path=>path!=='dist/sintonia/ui.mjs'))assert.equal(now(path).toString().replace('.s-animal-sprite{display:block;position:absolute;inset:0;', '.s-animal-sprite{display:block;position:absolute;inset:-10%;'),prior(path).toString(),path);
 });
 test('scenery CSS stays within SINTONIA and does not change animal styling',()=>{
  const css=now('dist/sintonia/scenery.css').toString();

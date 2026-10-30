@@ -47,7 +47,7 @@ if(trigger && dialog){
    const piece=document.createElement('span');piece.className='about-animal-confetti';
    const size=22+Math.random()*24,rotation=-35+Math.random()*70;
    // Each icon leaves its nearest edge: no flight traverses the panel.
-   const edge=i%4,inset=size/2+8,t=.2+Math.random()*.6;
+   const edge=i%2,inset=size/2+8,t=.2+Math.random()*.6;
    const cx=edge===0?r.left+inset:edge===1?r.right-inset:r.left+r.width*t;
    const cy=edge===2?r.top+inset:edge===3?r.bottom-inset:r.top+r.height*t;
    const originX=cx-size/2,originY=cy-size/2;
@@ -56,19 +56,20 @@ if(trigger && dialog){
    piece.style.setProperty('--ay',`${originY}px`);
    piece.style.setProperty('--asize',`${size}px`);
    piece.style.setProperty('--arot',`${rotation}deg`);
-   piece.innerHTML=`<svg viewBox="${x} ${y} ${w} ${h}" aria-hidden="true" focusable="false"><defs><filter id="fauna-paper-${i}" color-interpolation-filters="sRGB"><feColorMatrix type="matrix" values="1 0 0 0 0  0 1 0 0 0  0 0 1 0 0  -1 -1 -1 0 3"/></filter></defs><image href="platform-assets/fauna-green-original.png" width="1079" height="1458" filter="url(#fauna-paper-${i})"/></svg>`;
+   const isolatedCrop=i%faunaFrames.length===11||i%faunaFrames.length===14;
+   piece.innerHTML=`<svg viewBox="${x} ${y} ${w} ${h}" aria-hidden="true" focusable="false"><defs>${isolatedCrop?`<clipPath id="fauna-crop-${i}"><rect x="${x}" y="${y}" width="${w}" height="${h}"/></clipPath>`:''}<filter id="fauna-paper-${i}" color-interpolation-filters="sRGB"><feColorMatrix type="matrix" values="1 0 0 0 0  0 1 0 0 0  0 0 1 0 0  -1 -1 -1 0 3"/></filter></defs><image ${isolatedCrop?`clip-path="url(#fauna-crop-${i})"`:''} href="platform-assets/fauna-green-original.png" width="1079" height="1458" filter="url(#fauna-paper-${i})"/></svg>`;
    fragment.append(piece);
    if(!reduced.matches){
     const slow=i%3!==0,duration=(slow?8000:5800)+Math.random()*1400;
     const gap=Math.max(0,[r.left,vw-r.right,r.top,vh-r.bottom][edge]);
     // Settle in the outside margin instead of racing offscreen. A narrow mobile
     // margin keeps a visible portion of the PNG until its gentle final fade.
-    const distance=inset+Math.min(180,gap*.65);
-    const tangent=(Math.random()-.5)*70,spin=(Math.random()-.5)*80;
+    const distance=inset+Math.min(220,gap*.8);
+    const tangent=(Math.random()-.5)*110,spin=(Math.random()-.5)*80;
     const frames=Array.from({length:61},(_,frame)=>{
      const progress=frame/60;
-     const outward=distance*(1-Math.exp(-3.2*progress))/(1-Math.exp(-3.2));
-     const drift=tangent*progress+Math.sin(progress*Math.PI*2)*4;
+     const outward=distance*(1-Math.exp(-7*progress))/(1-Math.exp(-7));
+     const drift=tangent*(1-Math.exp(-4*progress))/(1-Math.exp(-4))+Math.sin(progress*Math.PI*2)*5;
      const dx=edge===0?-outward:edge===1?outward:drift;
      const dy=edge===2?-outward:edge===3?outward:drift;
      return {offset:progress,opacity:progress<.05?progress/.05:progress>.8?(1-progress)/.2:1,

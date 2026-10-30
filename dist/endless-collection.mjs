@@ -16,7 +16,7 @@ export function normalizeCollectionOptions(game,options={}){
  if(game==='prumo')return {size:integer(options.size,4,10,6),pieces:integer(options.pieces,2,10,5)};
  if(game==='pacto')return {clues:choose(Number(options.clues),[24,32,40],32)};
  if(game==='desvio')return {size:choose(String(options.size),['3x3','3x4','4x4'],'4x4')};
- throw new Error('Jogo Endless desconhecido.');
+ throw new Error('Jogo Modo Sem Parar desconhecido.');
 }
 export function collectionOptionSpec(game){
  const size={key:'size',label:'Tamanho da grade',type:'select',values:[4,5,6,7,8,9,10]};
@@ -65,8 +65,8 @@ function pacto(random,o){
 function desvio(random,o){const [rows,cols]=o.size.split('x').map(Number),arrows=sequence(rows*cols).map(()=>random()<.5?'H':'V');return {level:{game:'desvio',rows,cols,arrows},answer:null};}
 export function generateCollectionEndless(game,seed,rawOptions={}){
  const options=normalizeCollectionOptions(game,rawOptions),random=rng(`${game}:${seed}:${JSON.stringify(options)}`),result=({elo,prumo,pacto,desvio})[game](random,options);
- Object.assign(result.level,{id:`endless-${game}-${String(seed).replace(/[^a-zA-Z0-9_-]/g,'_')}-${Object.values(options).join('-')}`,name:'Desafio Endless',difficulty:'Endless',endless:true,seed:String(seed)});
- if(game==='desvio'){if(!legalDesvioMoves(result.level,createDesvio(result.level)).length)throw new Error('Mapa Endless sem jogada inicial.');}
+ Object.assign(result.level,{id:`endless-${game}-${String(seed).replace(/[^a-zA-Z0-9_-]/g,'_')}-${Object.values(options).join('-')}`,name:'Desafio Modo Sem Parar',difficulty:'Modo Sem Parar',endless:true,seed:String(seed)});
+ if(game==='desvio'){if(!legalDesvioMoves(result.level,createDesvio(result.level)).length)throw new Error('Mapa Modo Sem Parar sem jogada inicial.');}
  else{const checked=game==='pacto'?validateSymbols(result.level,result.answer.values):validateGeometry(result.level,result.answer);if(!checked.valid||!checked.complete)throw new Error(`Falha na validação do gerador ${game}.`);}
  return {...result,options};
 }

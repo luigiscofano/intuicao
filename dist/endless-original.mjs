@@ -47,5 +47,5 @@ export function generateOriginalEndless(game,seed,options={}){
   if(!cutSuccess(curvedCut(shapePolygon(shape),answer).ratio*100,answer.target))throw Error('Não foi possível validar o corte gerado.');
   initial=clone(answer);initial.offset=answer.offset+(random()<.5?-130:130);
  }else throw Error('Jogo desconhecido');
- return {level:{id:`endless-${game}-${Number(seed)>>>0}-${JSON.stringify(o)}`,name:'Endless',hint:game==='light'?'Os caminhos de cores diferentes não podem se tocar. Use os portais para atravessar paredes e ajuste um espelho por vez.':'A meta usa só a área preenchida. Deslize a curva; buracos não contam na proporção.'},initial,answer,options:o};
+ return {level:{id:`endless-${game}-${Number(seed)>>>0}-${JSON.stringify(o)}`,name:'Modo Sem Parar',hint:game==='light'?'Os caminhos de cores diferentes não podem se tocar. Use os portais para atravessar paredes e ajuste um espelho por vez.':'A meta usa só a área preenchida. Deslize a curva; buracos não contam na proporção.'},initial,answer,options:o};
 }

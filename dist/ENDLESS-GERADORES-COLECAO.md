@@ -1,4 +1,4 @@
-# Endless: geração da coleção
+# Modo Sem Parar: geração da coleção
 
 Este documento descreve somente o modo novo. Os catálogos e as regras das campanhas não são modificados.
 
@@ -23,7 +23,7 @@ A mesma semente com as mesmas opções produz o mesmo desafio. O gerador não im
 - Cada divisão preserva pelo menos uma peça com três ou mais casas. Como um apoio incide em no máximo duas casas, a inicialização automática nunca entrega o tabuleiro já completo.
 - Os centros e todas as atribuições são validados pelos momentos exatos nos dois eixos, conectividade, cobertura e incidência dos apoios.
 - A solução construída usa peças retangulares. As regras do jogo continuam aceitando qualquer partição conectada e equilibrada, inclusive soluções assimétricas. Não se promete uma solução exclusiva nem variedade irrestrita de formas nesta versão do gerador.
-- Grades grandes não devem acionar o solucionador exato antigo: sua enumeração é limitada a 36 casas e pode exceder o orçamento antes disso. No Endless, dicas devem ser locais e honestas; o gabarito usa a solução validada gerada.
+- Grades grandes não devem acionar o solucionador exato antigo: sua enumeração é limitada a 36 casas e pode exceder o orçamento antes disso. No Modo Sem Parar, dicas devem ser locais e honestas; o gabarito usa a solução validada gerada.
 
 ## PACTO
 

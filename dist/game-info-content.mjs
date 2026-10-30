@@ -76,7 +76,7 @@ export const GAME_INFO = {
       'Todos precisam ocupar seus destinos ao final de um comando. Chegar antes não prende ninguém: um animal pode sair do destino e voltar depois.',
       'Observe os símbolos das placas, cancelas e objetos. Uma passagem aberta no início do comando pode ser atravessada enquanto outro animal sai da placa que a mantinha aberta.',
       'As mecânicas aparecem aos poucos, com explicações na própria fase. Desfaça e reinicie livremente; não há cronômetro, vidas ou limite obrigatório de movimentos.',
-      'Explore 500 desafios em 20 capítulos ou escolha o Endless para continuar com novas combinações. As dicas consideram a configuração atual dos tabuleiros.'
+      'Explore 500 desafios em 20 capítulos ou escolha o Modo Sem Parar para continuar com novas combinações. As dicas consideram a configuração atual dos tabuleiros.'
     ],
     purpose: 'Praticar planejamento, antecipação de consequências e raciocínio espacial, articulando objetivos individuais com uma condição conjunta.',
     why: 'Cada seta pode ajudar um animal e afastar outro do destino. Experimentar paredes, apoios e sequências convida a pensar nas relações entre os caminhos.'
@@ -91,7 +91,7 @@ export const GAME_INFO = {
       'Se não houver receptor, o valor chega à caixa correspondente na borda. Todas as caixas mostram acumulado / meta, inclusive as de meta zero.',
       'Você vence quando a grade estiver vazia e todas as metas forem exatas. Um excesso pode ser revisto com Desfazer; experimentar outra ordem faz parte do jogo.',
       'As setas e posições são fixas. Ao longo da campanha aparecem peças de uma seta, duas setas perpendiculares e quatro setas, sempre com a mesma regra de repasse.',
-      'Use o mouse, toque ou navegue pelas peças com as setas do teclado e retire com Enter ou espaço. A prévia mostra os destinatários atuais. Explore 500 fases ou continue com desafios novos no Endless, sem cronômetro.'
+      'Use o mouse, toque ou navegue pelas peças com as setas do teclado e retire com Enter ou espaço. A prévia mostra os destinatários atuais. Explore 500 fases ou continue com desafios novos no Modo Sem Parar, sem cronômetro.'
     ],
     purpose: 'Praticar planejamento de ordem, antecipação de consequências e leitura de relações entre valores, receptores e metas.',
     why: 'Uma peça pode precisar receber primeiro e desaparecer depois para liberar um caminho. Comparar as metas com essas funções convida a formular, testar e revisar hipóteses.'
@@ -106,7 +106,7 @@ export const GAME_INFO = {
       'Leve uma peça ao encontro dos anéis e gire o outro anel para transferi-la. Peças que já estão corretas continuam podendo se mover e voltar depois.',
       'Complete todos os alvos simultaneamente. Símbolos iguais são equivalentes, e fichas neutras circulam normalmente pelas casas sem exigir um destino próprio.',
       'Mais adiante, alguns anéis avançam duas casas, engrenagens movem anéis juntos e sensores liberam comandos quando o símbolo indicado ocupa a casa marcada. Cada novidade é explicada na própria fase.',
-      'Desfaça, refaça e reinicie livremente. Checar avalia sua configuração; movimentos de exploração não contam como erros. São 500 fases e desafios novos no Endless, sem cronômetro.'
+      'Desfaça, refaça e reinicie livremente. Checar avalia sua configuração; movimentos de exploração não contam como erros. São 500 fases e desafios novos no Modo Sem Parar, sem cronômetro.'
     ],
     purpose: 'Praticar planejamento de sequências, orientação espacial e antecipação de efeitos sobre objetivos simultâneos, usando posições temporárias e movimentos reversíveis.',
     why: 'Um giro pode entregar uma peça e tirar outra do lugar. Preparar a chegada, escolher a ordem das transferências e restaurar regiões convida a pensar nas relações entre as partes do tabuleiro.'

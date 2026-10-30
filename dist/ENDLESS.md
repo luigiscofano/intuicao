@@ -1,10 +1,10 @@
-# Intuição · modo Endless
+# Intuição · Modo Sem Parar
 
 Atualização de 24 de outubro de 2026. Este documento descreve o novo modo; não substitui os registros históricos das campanhas.
 
 ## Entrar e jogar
 
-Nos seis jogos, **Explorar modo livre** aparece antes dos níveis ou mapas. O botão abre **Endless**, com desafios gerados por uma semente aleatória, em vez de escolher uma fase do catálogo.
+Nos seis jogos, **Explorar modo livre** aparece antes dos níveis ou mapas. O botão abre **Modo Sem Parar**, com desafios gerados por uma semente aleatória, em vez de escolher uma fase do catálogo.
 
 Cada puzzle é gerado a partir de uma resposta e conferido pelo mesmo motor de regras usado durante o jogo. Uma resposta válida, confirmada pelo jogador, exibe a animação de vitória e abre outro desafio depois de aproximadamente 1,5 segundo. No DESVIO local, a vitória de qualquer jogador inicia outro mapa. Contra o bot, uma vitória humana avança; uma derrota mantém o mapa para uma nova tentativa.
 
@@ -12,7 +12,7 @@ A geração usa um espaço finito de possibilidades e não promete variedade mat
 
 ## Personalizar
 
-As opções ficam dentro do modo Endless. Alterar um campo não modifica a partida imediatamente: use **Aplicar opções e gerar**. Isso substitui o desafio atual, sem contar uma vitória. **Novo desafio** também troca a geração. **Reiniciar** mantém o mesmo desafio, semente e configurações.
+As opções ficam dentro do Modo Sem Parar. Alterar um campo não modifica a partida imediatamente: use **Aplicar opções e gerar**. Isso substitui o desafio atual, sem contar uma vitória. **Novo desafio** também troca a geração. **Reiniciar** mantém o mesmo desafio, semente e configurações.
 
 | Jogo | Opções | Limites e construção |
 |---|---|---|
@@ -29,10 +29,10 @@ Portais seletivos são configuráveis somente quando os portais estão habilitad
 
 - Depois de três confirmações erradas, o gabarito aplica uma solução conhecida, mas não confirma automaticamente. A resolução é marcada como assistida.
 - Dicas são gerais ou deduções locais. Elas não alegam ter provado unicidade ou executado uma busca exata em tabuleiros que excedem os limites do solucionador.
-- Configurações, semente, partida e contadores Endless ficam no navegador. Reabra **Explorar modo livre** para continuar. Não há sincronização entre aparelhos.
-- O progresso Endless é separado das campanhas. Gerar outro desafio não conclui um nível de campanha.
+- Configurações, semente, partida e contadores Modo Sem Parar ficam no navegador. Reabra **Explorar modo livre** para continuar. Não há sincronização entre aparelhos.
+- O progresso Modo Sem Parar é separado das campanhas. Gerar outro desafio não conclui um nível de campanha.
 - Sair, trocar de jogo, reiniciar e alterar configurações invalidam avanços e jogadas automáticas antigos. A confirmação de reinício não deixa um novo desafio surgir por trás do diálogo.
-- Os registros atuais de Endless são limitados por jogo, em vez de acumular uma sessão por semente.
+- Os registros atuais de Modo Sem Parar são limitados por jogo, em vez de acumular uma sessão por semente.
 
 ## Preservação e verificação
 
