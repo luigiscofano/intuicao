@@ -1,0 +1,294 @@
+{
+  "id": "endless-v2-90bd70a",
+  "version": 1,
+  "rulesVersion": 1,
+  "boards": [
+    {
+      "id": "b0",
+      "animal": "capivara",
+      "rows": 3,
+      "cols": 3,
+      "walkable": [
+        1,
+        3,
+        4,
+        6,
+        7,
+        8
+      ],
+      "start": 6,
+      "goal": 1,
+      "plates": [
+        {
+          "id": "choice-plate",
+          "cell": 1
+        }
+      ],
+      "selectors": [
+        {
+          "id": "choice",
+          "cell": 3,
+          "group": "choice"
+        }
+      ]
+    },
+    {
+      "id": "b1",
+      "animal": "tuiuiu",
+      "rows": 4,
+      "cols": 3,
+      "walkable": [
+        0,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        9,
+        10,
+        11
+      ],
+      "start": 11,
+      "goal": 2,
+      "gates": [
+        {
+          "id": "choice-left",
+          "from": 11,
+          "to": 10,
+          "condition": {
+            "type": "selected",
+            "plate": "choice-plate",
+            "selector": "choice",
+            "value": 0
+          }
+        },
+        {
+          "id": "choice-right",
+          "from": 4,
+          "to": 5,
+          "condition": {
+            "type": "selected",
+            "plate": "choice-plate",
+            "selector": "choice",
+            "value": 1
+          }
+        }
+      ]
+    }
+  ],
+  "mechanics": [
+    "walls",
+    "plate",
+    "selector"
+  ],
+  "initialSwitches": {},
+  "initialSelectors": {},
+  "family": "help-recipient",
+  "secondaryFamilies": [
+    "wall-adjust",
+    "waiting-place"
+  ],
+  "name": "Quem recebe a ajuda",
+  "lesson": "Mude a ligação para que a mesma placa ajude passagens diferentes.",
+  "discovery": "Aqui o jogador precisa descobrir que a placa precisa ajudar uma passagem antes de ser ligada à outra.",
+  "hints": [
+    "Siga o símbolo da placa até a cancela selecionada.",
+    "Prepare uma travessia, entre no seletor e volte a sustentar a placa para a próxima ligação.",
+    "Na configuração inicial, comece para a direita; observe quem avança e quem espera."
+  ],
+  "generatorVersion": 2,
+  "contentRevision": "sintonia-content-2",
+  "seed": "sintonia80-curated:67:0",
+  "difficulty": 4,
+  "solution": [
+    "right",
+    "up",
+    "up",
+    "left",
+    "down",
+    "left",
+    "up",
+    "right",
+    "up",
+    "right",
+    "up"
+  ],
+  "signature": "st1-f6cdfba2-559",
+  "prerequisites": [
+    "walls",
+    "plate"
+  ],
+  "introduction": [
+    "selector"
+  ],
+  "parameters": {
+    "difficulty": 4,
+    "animals": 2,
+    "primary": "selector",
+    "secondary": null,
+    "role": "focus",
+    "pattern": null
+  },
+  "certificate": {
+    "method": "breadth-first-witness-and-engine-replay",
+    "rulesVersion": 1,
+    "commands": 11,
+    "optimal": true,
+    "visited": 81,
+    "replayed": true
+  },
+  "editorial": {
+    "source": "procedural-structure-and-automatic-curation",
+    "design": null,
+    "purpose": {
+      "valid": true,
+      "won": true,
+      "evidenceScope": "supplied-command-sequence",
+      "commands": 11,
+      "boxes": [],
+      "dependencies": [
+        {
+          "gateId": "choice-left",
+          "receiverBoard": 1,
+          "condition": {
+            "type": "selected",
+            "plate": "choice-plate",
+            "selector": "choice",
+            "value": 0
+          },
+          "controllers": [
+            {
+              "type": "plate",
+              "id": "choice-plate",
+              "board": 0,
+              "cell": 1
+            },
+            {
+              "type": "selector",
+              "id": "choice",
+              "board": 0,
+              "cell": 3
+            }
+          ],
+          "crossingCommands": [
+            4
+          ]
+        },
+        {
+          "gateId": "choice-right",
+          "receiverBoard": 1,
+          "condition": {
+            "type": "selected",
+            "plate": "choice-plate",
+            "selector": "choice",
+            "value": 1
+          },
+          "controllers": [
+            {
+              "type": "plate",
+              "id": "choice-plate",
+              "board": 0,
+              "cell": 1
+            },
+            {
+              "type": "selector",
+              "id": "choice",
+              "board": 0,
+              "cell": 3
+            }
+          ],
+          "crossingCommands": [
+            10
+          ]
+        }
+      ],
+      "boardRoles": [
+        {
+          "board": 0,
+          "moved": 7,
+          "waited": 4,
+          "goalDepartures": 1
+        },
+        {
+          "board": 1,
+          "moved": 7,
+          "waited": 4,
+          "goalDepartures": 0
+        }
+      ],
+      "caveat": "Uso neste certificado não prova necessidade. Consulte tests/sintonia-purpose-audit.json para ablações e limites."
+    },
+    "rubric": {
+      "status": "human-review-pending",
+      "dimensions": [
+        "purpose",
+        "discovery",
+        "interdependence",
+        "causal-clarity",
+        "spatial-economy",
+        "variety"
+      ],
+      "scores": null,
+      "humanPlaytesting": false,
+      "reason": "Replay e ablações são evidências automáticas, não substitutos de avaliação editorial e testes humanos."
+    },
+    "humanPlaytested": false,
+    "discovery": "Aqui o jogador precisa descobrir que a placa precisa ajudar uma passagem antes de ser ligada à outra.",
+    "reasoning": {
+      "used": [
+        "selected-0",
+        "selected-1",
+        "selector"
+      ],
+      "partialBlocks": 8,
+      "goalDepartures": [
+        true,
+        false
+      ],
+      "unequalLoops": 10,
+      "directionChanges": 9,
+      "earlyTurns": 4,
+      "occupiedBoxPlate": false,
+      "boxAsStopAfterSupport": false,
+      "finalApproach": [
+        true,
+        false
+      ]
+    },
+    "sweep": {
+      "status": "complete",
+      "visited": 29,
+      "resistant": true
+    },
+    "compatibility": "validated",
+    "alternatives": "Uma sequência verificada é fornecida; outras soluções podem existir.",
+    "deadEnds": "Mudanças de configuração podem exigir retornar a uma posição anterior.",
+    "antiSpam": {
+      "singleDirection": {
+        "tested": 4,
+        "winningDirections": []
+      },
+      "sweeps": {
+        "status": "complete",
+        "visited": 29,
+        "solves": false
+      },
+      "shortCycles": {
+        "tested": 40,
+        "winningPatterns": []
+      },
+      "biasedRandom": {
+        "runs": 12,
+        "commandsPerRun": 128,
+        "wins": 0
+      },
+      "uniformRandom": {
+        "runs": 12,
+        "commandsPerRun": 128,
+        "wins": 0
+      },
+      "interpretation": "Diagnóstico automático; ciclos curtos e acertos aleatórios não provam ausência de raciocínio. A varredura testa vitória após cada movimento."
+    }
+  }
+}

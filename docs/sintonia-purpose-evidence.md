@@ -1,3 +1,5 @@
+> **Arquivo histórico anterior à campanha de 80 fases.** Números, capítulos e totais abaixo pertencem às versões preservadas; não controlam a campanha atual. Consulte [SINTONIA80 — relatório atual](sintonia80/relatorio-independente.md). As regras do motor continuam preservadas.
+
 # Sintonia — evidências de propósito e limites
 
 Este relatório é reproduzido por `node tests/sintonia-audit-purpose.mjs`. O motor não foi alterado; a versão de regras permanece 1. Os resultados descrevem o conteúdo exato identificado pelos hashes no JSON, não uma promessa sobre versões futuras.

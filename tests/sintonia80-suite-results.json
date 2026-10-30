@@ -1,0 +1,111 @@
+{
+  "passed": true,
+  "results": [
+    {
+      "command": [
+        "node",
+        "--test",
+        "tests/sintonia-engine.test.mjs",
+        "tests/sintonia-engine-analysis.test.mjs",
+        "tests/sintonia-purpose.test.mjs",
+        "tests/sintonia-service.test.mjs",
+        "tests/sintonia-ui-state.test.mjs"
+      ],
+      "passed": true,
+      "exitCode": 0,
+      "durationMs": 480,
+      "output": "✔ a bridge history with identical animal positions must not reuse the initial witness (7.934071ms)\n✔ a collected key is included when matching a state to its stored witness (1.493031ms)\n✔ certified suffixes are replayed, and a lack of background search is not declared impossible (0.535501ms)\n✔ a genuine one-way dead end is proved by complete search (0.542551ms)\n✔ the generation boundary rejects missing or non-winning certificates (0.756145ms)\n✔ reference fixture requires intermediate stops and permits leaving a goal (6.616117ms)\n✔ no combination of complete wall sweeps solves the reference fixture, including mid-sweep wins (2.361004ms)\n✔ one blocked animal does not prevent the other, and true no-ops preserve the state (0.733771ms)\n✔ an initially occupied remote plate opens the gate during the command that leaves it (0.860913ms)\n✔ arriving at a plate changes passages only for the following command (0.523423ms)\n✔ toggle switches act on entry, persist on exit, and do not retrigger while blocked (0.48858ms)\n✔ complementary gate configurations use one declared persistent control (0.743306ms)\n✔ selectors update after simultaneous movement and blocked commands do not retoggle them (0.503422ms)\n✔ a box moves with free room and becomes a barrier only when its push is blocked (0.664957ms)\n✔ pushes check both animal and box edges, gates, one-way edges and chains (1.361712ms)\n✔ a directed edge is a passage restriction, never automatic motion (1.460751ms)\n✔ ice reaches the first ordinary cell or the last free icy cell before a wall (0.471214ms)\n✔ portals teleport once and end the command, with no automatic return (0.360586ms)\n✔ fragile terrain collapses on departure, keys persist, and snapshots restore both (0.519056ms)\n✔ AND gates require every plate, including a plate held by a box (0.386375ms)\n✔ a successful delivery transfers one box, leaves the animal in its own board and updates plates (1.018653ms)\n✔ initially occupied delivery outputs block even if their occupant moves away (0.350331ms)\n✔ competing animal or box movement cancels only the sender transaction (0.577294ms)\n✔ two deliveries to the same exit both cancel, independent of board processing order (10.375038ms)\n✔ delivery onto another channel entrance never starts an automatic chain (0.478895ms)\n✔ full-state identity distinguishes all mechanisms and ignores incidental ordering (0.632858ms)\n✔ BFS returns a proven shortest solution, distinguishes budgets and proves exhausted graphs (3.740794ms)\n✔ validation rejects ambiguous triggers, unknown controls and unsupported box terrain (0.720601ms)\n✔ restored state validation rejects missing boxes, collisions and invented mechanism state (0.98392ms)\n✔ all reachable transitions are pure and valid for representative mechanism levels (5.001171ms)\n✔ witness analysis records real turning, support, waits and dependency order (11.536066ms)\n✔ release after support includes the same snapshot command that consumes the plate (2.670584ms)\n✔ goal departures and intermediate goal visits are observations, not freezes (0.98427ms)\n✔ delivery preparation and recipient repositioning are separate observed events (2.038065ms)\n✔ a closed edge before a box is not credited as a box-created local stop (1.62555ms)\n✔ support then stop uses prior-command history, not support first consumed in the same command (1.55246ms)\n✔ plate occupation without an actual consumed gate condition does not count as prior support (0.780141ms)\n✔ avoidance search proves necessary turn only by exhausting monitored states (32.159139ms)\n✔ avoidance predicates target event identity and remote helper consumption (41.006123ms)\n✔ time, state and depth exhaustion never become proofs of impossibility (1.049128ms)\n✔ box removal, static replacement, final placement and gate groups are controlled copies (1.890813ms)\n✔ invalid static-wall comparison is skipped rather than silently changing controls (0.688453ms)\n✔ terrain ablations change just the named rule-bearing data (0.848335ms)\n✔ audit reports counterfactual outcomes with reproducible budgets and honest limits (134.888864ms)\n✔ invalid definitions and commands never produce fabricated witness evidence (0.955507ms)\nPASS certificate suffix is replayed from the exact current state\nPASS matching animal positions cannot hide a different gate state\nPASS an invalid witness cannot become a hint or generated level\nPASS invalid restored data stays inconclusive instead of impossible\nPASS a completed state has a verified empty continuation\nPASS superseding a task cancels the old worker and ignores late answers\nPASS without Worker, a known witness is replayed and no search blocks the page\nPASS a stalled worker is terminated and falls back to a verified answer\n8 SINTONIA service tests passed.\n✔ tests/sintonia-service.test.mjs (298.387233ms)\n✔ sem efeito não cria histórico nem aumenta movimentos (2.832619ms)\n✔ retomada preserva estado, comandos e histórico de refazer (2.346462ms)\n✔ novo comando depois de desfazer descarta somente o futuro (0.335128ms)\n✔ caixas, chaves, interruptores e pontes voltam juntos após serialização (5.456742ms)\n✔ snapshot adulterado ou histórico com no-op não é parcialmente retomado (0.628902ms)\n✔ normalização preserva resultados próprios e não inventa contas ou progresso (0.979402ms)\n✔ Endless cresce com interlúdios e mantém teto finito (0.35034ms)\n✔ famílias recentes persistem com limite e sessões anteriores continuam compatíveis (0.449811ms)\nℹ tests 54\nℹ suites 0\nℹ pass 54\nℹ fail 0\nℹ cancelled 0\nℹ skipped 0\nℹ todo 0\nℹ duration_ms 378.030827\n"
+    },
+    {
+      "command": [
+        "node",
+        "tests/sintonia80-preservation.mjs"
+      ],
+      "passed": true,
+      "exitCode": 0,
+      "durationMs": 1350,
+      "output": "PASS 232 existing runtime files byte-identical (all other games, shared controls, SINTONIA engine, art, CSS, generator and reserves); v2 definitions archived exactly.\n"
+    },
+    {
+      "command": [
+        "node",
+        "--test",
+        "tests/sintonia80-audit.test.mjs"
+      ],
+      "passed": true,
+      "exitCode": 0,
+      "durationMs": 346,
+      "output": "✔ 80 campaign levels, exact six tiers, independent animal introductions and mechanics (2.14651ms)\n✔ all current definitions validate and win exactly on final certified command; engine frozen (104.176896ms)\n✔ fresh independent evidence bound to exact 80 maps and certificates (20.246413ms)\n✔ final synthesis includes release, recipient reorientation and all four final responsibilities (12.282039ms)\n✔ objects have scoped necessity and no non-intro trivial repeat/sweep certificate (10.273344ms)\nℹ tests 5\nℹ suites 0\nℹ pass 5\nℹ fail 0\nℹ cancelled 0\nℹ skipped 0\nℹ todo 0\nℹ duration_ms 281.670364\n"
+    },
+    {
+      "command": [
+        "node",
+        "tests/sintonia80-ui.mjs"
+      ],
+      "passed": true,
+      "exitCode": 0,
+      "durationMs": 3148,
+      "output": "PASS SINTONIA80: 80 selection/actual-handler automatic wins, complete-state undo/redo, confirmed reset/cancel, stable unique skins, limits, tier labels and milestones. DOM simulation, not visual/mobile/human testing.\n"
+    },
+    {
+      "command": [
+        "node",
+        "tests/sintonia80-migration.mjs"
+      ],
+      "passed": true,
+      "exitCode": 0,
+      "durationMs": 764,
+      "output": "PASS SINTONIA80: 1000 v1/v2 archived histories, reused-ID map identity, learning recovery, archived active attempt UI undo/redo/restart/reload, separate fallback learning gates. No replay onto another map.\nPASS legacy completion identity: original achievements archived and never credited to a different map, including a later win on the retained old attempt.\nPASS unproven completion identity is conservatively archived; known current definitions retain progress.\n"
+    },
+    {
+      "command": [
+        "node",
+        "tests/sintonia-animal-roster-ui.test.mjs"
+      ],
+      "passed": true,
+      "exitCode": 0,
+      "durationMs": 260,
+      "output": "PASS roster, names, hints, undo/redo, restart, phase navigation, reload, legacy saves, Endless and custom maps\n"
+    },
+    {
+      "command": [
+        "node",
+        "tests/nonstop-visible-ui.test.mjs"
+      ],
+      "passed": true,
+      "exitCode": 0,
+      "durationMs": 196,
+      "output": "PASS elo new/resumed visible copy and preserved identity/session keys\nPASS prumo new/resumed visible copy and preserved identity/session keys\nPASS pacto new/resumed visible copy and preserved identity/session keys\nPASS desvio new/resumed visible copy and preserved identity/session keys\n"
+    },
+    {
+      "command": [
+        "node",
+        "tests/elo80-progress-tests.mjs"
+      ],
+      "passed": true,
+      "exitCode": 0,
+      "durationMs": 68,
+      "output": "PASS ELO80 identity-safe archival, unchanged IDs, no ordinal mapping, custom/endless/other-game isolation, idempotence and unavailable storage.\n"
+    },
+    {
+      "command": [
+        "node",
+        "tests/prumo80-progress-tests.mjs"
+      ],
+      "passed": true,
+      "exitCode": 0,
+      "durationMs": 70,
+      "output": "PASS PRUMO80 identity-safe archival, unchanged IDs, no ordinal mapping, custom/endless/other-game isolation, idempotence and unavailable storage.\nPASS answer-only retired PRUMO records archived with exact IDs; other games and custom answers excluded.\n"
+    },
+    {
+      "command": [
+        "node",
+        "tests/pacto80-progress-tests.mjs"
+      ],
+      "passed": true,
+      "exitCode": 0,
+      "durationMs": 68,
+      "output": "PASS PACTO80 identity-safe archival, unchanged IDs, no ordinal mapping, custom/endless/other-game isolation, idempotence and unavailable storage.\nPASS answer-only retired PACTO records archived with exact IDs; other games and custom answers excluded.\n"
+    }
+  ]
+}

@@ -1,3 +1,5 @@
+> **Arquivo histórico anterior à campanha de 80 fases.** Números, capítulos e totais abaixo pertencem às versões preservadas; não controlam a campanha atual. Consulte [SINTONIA80 — relatório atual](sintonia80/relatorio-independente.md). As regras do motor continuam preservadas.
+
 # SINTONIA — catálogo editorial das 500 fases
 
 Revisão de conteúdo **`sintonia-content-2`** · gerador **2** · regras **1**. Este índice é gerado das definições completas de `dist/sintonia/campaign.mjs`, sem copiar números de uma revisão anterior.

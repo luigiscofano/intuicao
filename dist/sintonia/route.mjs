@@ -1,4 +1,4 @@
-// Load the 500-level catalog only when SINTONIA is opened or resumed.
+// Load the 80-level catalog only when SINTONIA is opened or resumed.
 // The other six games retain their initial loading path.
 export function createSintoniaRoute({hideOtherGames}) {
   let ui = null, loading = null, revision = 0, visible = false;

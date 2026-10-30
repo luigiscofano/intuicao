@@ -1,3 +1,5 @@
+> **Arquivo histórico anterior à campanha de 80 fases.** Números, capítulos e totais abaixo pertencem às versões preservadas; não controlam a campanha atual. Consulte [SINTONIA80 — relatório atual](sintonia80/relatorio-independente.md). As regras do motor continuam preservadas.
+
 # SINTONIA — redesign de conteúdo, geração e evidências
 
 ## Revisão e escopo

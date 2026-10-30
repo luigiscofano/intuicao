@@ -1,0 +1,51 @@
+// Deterministic DOM with actual UI handlers; not native browser or mobile QA.
+import assert from 'node:assert/strict';
+import {readFileSync} from 'node:fs';
+import {host,store,$} from './direct-ui-harness.mjs';
+import {CAMPAIGN,CHAPTERS,DIFFICULTIES} from '../dist/sintonia/campaign.mjs';
+import {initSintonia,endlessOptions,SINTONIA_CAMPAIGN_MILESTONES} from '../dist/sintonia/ui.mjs';
+import {initialState,stateKey,isWon} from '../dist/sintonia/engine.mjs';
+import {ANIMAL_IDS} from '../dist/sintonia/animal-roster.mjs';
+
+host.id='sintonia';globalThis.addEventListener=()=>{};
+const key='intuicao.sintonia.v1',read=()=>JSON.parse(store.get(key));
+assert.equal(CAMPAIGN.length,80);
+assert.deepEqual(CHAPTERS,['Básico','Aprendiz','Intermediário','Avançado','Mestre','Modo Sábio']);
+assert.deepEqual(DIFFICULTIES,CHAPTERS);
+const app=initSintonia({hideOtherGames(){}});app.open();
+assert.equal(host.querySelectorAll('[data-s-level]').length,80);
+assert.equal(host.querySelectorAll('.s-chapter').length,6);
+assert.match(host.innerHTML,/80 níveis em seis dificuldades/);
+assert.match(host.innerHTML,/Níveis 76–80/);
+assert.doesNotMatch(host.innerHTML,/500|20 capítulos/);
+for(let i=0;i<CAMPAIGN.length;i++){
+ const level=CAMPAIGN[i];host.querySelector(`[data-s-level="${i}"]`).click();
+ assert.match(host.innerHTML,new RegExp(`${String(i+1).padStart(2,'0')} / 80`));
+ const saved=()=>read().campaign.sessions[level.id];
+ const roster=saved().animalRoster;
+ assert.equal(new Set(roster).size,level.boards.length);
+ assert.equal(roster.length,level.boards.length);
+ assert.equal($('s-level-prev').disabled,i===0);assert.equal($('s-level-next').disabled,i===79);
+ for(const direction of level.solution)host.querySelector(`[data-s-direction="${direction}"]`).click();
+ assert.equal(isWon(level,saved().state),true,`automatic win ${i+1}`);
+ assert.ok(read().campaign.completed[level.id],`recorded win ${i+1}`);
+ const won=structuredClone(saved());
+ $('s-undo').click();assert.equal(saved().cursor,won.cursor-1);
+ $('s-redo').click();assert.equal(stateKey(saved().state),stateKey(won.state));
+ assert.deepEqual(saved().animalRoster,roster);
+ $('s-reset').click();assert.equal($('restart-sintonia').open,true);
+ $('restart-sintonia-cancel').click();assert.deepEqual(saved(),won);
+ $('s-reset').click();$('restart-sintonia-confirm').click();
+ assert.equal(saved().cursor,0);assert.equal(stateKey(saved().state),stateKey(initialState(level)));
+ assert.deepEqual(saved().animalRoster,roster,'reset does not redraw identities');
+ assert.ok(read().campaign.completed[level.id],'restart does not clear completion');
+ $('s-back').click();
+}
+assert.equal(Object.keys(read().campaign.completed).length,80);
+assert.deepEqual(SINTONIA_CAMPAIGN_MILESTONES,{walls:1,plate:16,switch:21,key:26,box:34,ice:38,portal:42,oneway:46,alternate:50,fragile:54,handoff:57,and:61,selector:67,delivery:71});
+const options=endlessOptions(4,3,['walls','plate','switch']);
+assert.deepEqual(options.learnedMechanics,['walls','plate','switch']);assert.equal(options.animals,2);
+const controls=readFileSync(new URL('../dist/standard-controls.css',import.meta.url),'utf8');
+assert.match(controls,/#hint,#s-hint,#r-hint,#o-hint/);assert.match(controls,/#sintonia :is\(#s-advanced-toggle,#s-advanced\)/);
+assert.equal(ANIMAL_IDS.length,16);
+app.hide();console.log('PASS SINTONIA80: 80 selection/actual-handler automatic wins, complete-state undo/redo, confirmed reset/cancel, stable unique skins, limits, tier labels and milestones. DOM simulation, not visual/mobile/human testing.');

@@ -1,3 +1,5 @@
+> **Arquivo histórico anterior à campanha de 80 fases.** Números, capítulos e totais abaixo pertencem às versões preservadas; não controlam a campanha atual. Consulte [SINTONIA80 — relatório atual](sintonia80/relatorio-independente.md). As regras do motor continuam preservadas.
+
 # SINTONIA — relatório de validação
 
 Revisão de 25 de outubro de 2026 no projeto Intuição existente. A implementação é aditiva: `dist/sintonia/` contém o jogo, e seis arquivos compartilhados recebem apenas a integração de navegação, ajuda e celebração. O manifesto de publicação mantém o projeto e a pasta estática originais.

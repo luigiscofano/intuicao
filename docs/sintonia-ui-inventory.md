@@ -1,3 +1,5 @@
+> **Arquivo histórico anterior à campanha de 80 fases.** Números, capítulos e totais abaixo pertencem às versões preservadas; não controlam a campanha atual. Consulte [SINTONIA80 — relatório atual](sintonia80/relatorio-independente.md). As regras do motor continuam preservadas.
+
 # SINTONIA · inventário de padrões e aplicação
 
 Inspeção do código de Reflexos/Corte certo (`dist/app.mjs`, `dist/index.html`) e da coleção ELO/PRUMO/PACTO/DESVIO (`dist/collection-ui.mjs`). A inspeção de navegador e regressão visual da integração é registrada na validação geral do projeto.

@@ -1,0 +1,232 @@
+{
+  "id": "endless-v2-791b7f8c",
+  "version": 1,
+  "rulesVersion": 1,
+  "boards": [
+    {
+      "id": "b0",
+      "animal": "capivara",
+      "rows": 3,
+      "cols": 4,
+      "walkable": [
+        2,
+        3,
+        7,
+        8,
+        9,
+        10,
+        11
+      ],
+      "start": 3,
+      "goal": 11,
+      "plates": [
+        {
+          "id": "support",
+          "cell": 7
+        }
+      ]
+    },
+    {
+      "id": "b1",
+      "animal": "tuiuiu",
+      "rows": 4,
+      "cols": 4,
+      "walkable": [
+        2,
+        3,
+        5,
+        7,
+        8,
+        9,
+        10,
+        11,
+        13,
+        15
+      ],
+      "start": 2,
+      "goal": 9,
+      "gates": [
+        {
+          "id": "plate-gate",
+          "from": 7,
+          "to": 11,
+          "condition": {
+            "type": "plate",
+            "id": "support"
+          }
+        }
+      ]
+    }
+  ],
+  "mechanics": [
+    "walls",
+    "plate"
+  ],
+  "initialSwitches": {},
+  "initialSelectors": {},
+  "family": "remote-support",
+  "secondaryFamilies": [
+    "final-command",
+    "wall-adjust"
+  ],
+  "name": "Uma passagem para o outro",
+  "lesson": "Prepare a placa que abre o caminho do outro animal.",
+  "discovery": "Aqui o jogador precisa descobrir que a ocupação de uma placa prepara a passagem de outro tabuleiro.",
+  "hints": [
+    "Encontre a placa e a cancela com o mesmo símbolo.",
+    "O estado no início da seta decide a travessia: é possível sair da placa enquanto o outro atravessa.",
+    "Na configuração inicial, comece para a direita; observe quem avança e quem espera."
+  ],
+  "generatorVersion": 2,
+  "contentRevision": "sintonia-content-2",
+  "seed": "sintonia80-curated:76:0",
+  "difficulty": 5,
+  "solution": [
+    "right",
+    "down",
+    "down",
+    "up",
+    "left",
+    "left",
+    "left",
+    "down",
+    "right"
+  ],
+  "signature": "st1-cb3a1f45-336",
+  "prerequisites": [
+    "walls"
+  ],
+  "introduction": [],
+  "parameters": {
+    "difficulty": 5,
+    "animals": 2,
+    "primary": "plate",
+    "secondary": null,
+    "role": "compact",
+    "pattern": null
+  },
+  "certificate": {
+    "method": "breadth-first-witness-and-engine-replay",
+    "rulesVersion": 1,
+    "commands": 9,
+    "optimal": true,
+    "visited": 67,
+    "replayed": true
+  },
+  "editorial": {
+    "source": "procedural-structure-and-automatic-curation",
+    "design": null,
+    "purpose": {
+      "valid": true,
+      "won": true,
+      "evidenceScope": "supplied-command-sequence",
+      "commands": 9,
+      "boxes": [],
+      "dependencies": [
+        {
+          "gateId": "plate-gate",
+          "receiverBoard": 1,
+          "condition": {
+            "type": "plate",
+            "id": "support"
+          },
+          "controllers": [
+            {
+              "type": "plate",
+              "id": "support",
+              "board": 0,
+              "cell": 7
+            }
+          ],
+          "crossingCommands": [
+            3
+          ]
+        }
+      ],
+      "boardRoles": [
+        {
+          "board": 0,
+          "moved": 4,
+          "waited": 5,
+          "goalDepartures": 1
+        },
+        {
+          "board": 1,
+          "moved": 7,
+          "waited": 2,
+          "goalDepartures": 1
+        }
+      ],
+      "caveat": "Uso neste certificado não prova necessidade. Consulte tests/sintonia-purpose-audit.json para ablações e limites."
+    },
+    "rubric": {
+      "status": "human-review-pending",
+      "dimensions": [
+        "purpose",
+        "discovery",
+        "interdependence",
+        "causal-clarity",
+        "spatial-economy",
+        "variety"
+      ],
+      "scores": null,
+      "humanPlaytesting": false,
+      "reason": "Replay e ablações são evidências automáticas, não substitutos de avaliação editorial e testes humanos."
+    },
+    "humanPlaytested": false,
+    "discovery": "Aqui o jogador precisa descobrir que a ocupação de uma placa prepara a passagem de outro tabuleiro.",
+    "reasoning": {
+      "used": [
+        "plate-gate"
+      ],
+      "partialBlocks": 7,
+      "goalDepartures": [
+        true,
+        true
+      ],
+      "unequalLoops": 10,
+      "directionChanges": 5,
+      "earlyTurns": 2,
+      "occupiedBoxPlate": false,
+      "boxAsStopAfterSupport": false,
+      "finalApproach": [
+        true,
+        false
+      ]
+    },
+    "sweep": {
+      "status": "complete",
+      "visited": 14,
+      "resistant": true
+    },
+    "compatibility": "validated",
+    "alternatives": "Uma sequência verificada é fornecida; outras soluções podem existir.",
+    "deadEnds": "Mudanças de configuração podem exigir retornar a uma posição anterior.",
+    "antiSpam": {
+      "singleDirection": {
+        "tested": 4,
+        "winningDirections": []
+      },
+      "sweeps": {
+        "status": "complete",
+        "visited": 14,
+        "solves": false
+      },
+      "shortCycles": {
+        "tested": 40,
+        "winningPatterns": []
+      },
+      "biasedRandom": {
+        "runs": 12,
+        "commandsPerRun": 128,
+        "wins": 0
+      },
+      "uniformRandom": {
+        "runs": 12,
+        "commandsPerRun": 128,
+        "wins": 3
+      },
+      "interpretation": "Diagnóstico automático; ciclos curtos e acertos aleatórios não provam ausência de raciocínio. A varredura testa vitória após cada movimento."
+    }
+  }
+}

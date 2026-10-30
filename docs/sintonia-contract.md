@@ -1,3 +1,5 @@
+> **Arquivo histórico anterior à campanha de 80 fases.** Números, capítulos e totais abaixo pertencem às versões preservadas; não controlam a campanha atual. Consulte [SINTONIA80 — relatório atual](sintonia80/relatorio-independente.md). As regras do motor continuam preservadas.
+
 # SINTONIA implementation contract
 
 This is an addition to the existing buildless ES-module Intuição Site. Do not edit existing games. All new implementation files live in dist/sintonia/. Root owns integration edits in existing files. Every board has exactly one animal. All coordinates in data are zero-based flat cell indices (row * cols + col).
