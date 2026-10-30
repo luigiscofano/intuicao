@@ -1,0 +1,145 @@
+{
+  "passed": true,
+  "tests": [
+    {
+      "test": "pacto80-budget-and-identities.mjs",
+      "passed": true,
+      "status": 0,
+      "durationMs": 302,
+      "output": "{\"passed\":true,\"kept\":56,\"changed\":24,\"explicitlyInconclusiveBudgetChecks\":80}\n"
+    },
+    {
+      "test": "pacto80-progress-tests.mjs",
+      "passed": true,
+      "status": 0,
+      "durationMs": 64,
+      "output": "PASS PACTO80 identity-safe archival, unchanged IDs, no ordinal mapping, custom/endless/other-game isolation, idempotence and unavailable storage.\nPASS answer-only retired PACTO records archived with exact IDs; other games and custom answers excluded.\n"
+    },
+    {
+      "test": "pacto80-preservation-tests.mjs",
+      "passed": true,
+      "status": 0,
+      "durationMs": 1275,
+      "output": "{\"passed\":true,\"byteIdenticalExistingDistFiles\":228,\"base\":\"0ea60be4554c118c96f531f1d26b3f0dfc603ca5\",\"unchanged\":\"All CSS, assets, physics, symbol engine, validators, hints, explicit error feedback, manual check, direct controls, all other games including ELO80 and PRUMO80\"}\n"
+    },
+    {
+      "test": "pacto80-independent-tests.mjs",
+      "passed": true,
+      "status": 0,
+      "durationMs": 415,
+      "output": "PASS independent complete search 1 pacto-v2-001 1\nPASS independent complete search 2 pacto-v2-002 1\nPASS independent complete search 3 pacto-v2-003 1\nPASS independent complete search 4 pacto-v2-004 1\nPASS independent complete search 5 pacto-v2-005 1\nPASS independent complete search 6 pacto-v2-006 1\nPASS independent complete search 7 pacto-v2-007 1\nPASS independent complete search 8 pacto-v2-008 1\nPASS independent complete search 9 pacto-v2-009 1\nPASS independent complete search 10 pacto-v2-010 1\nPASS independent complete search 11 pacto-v2-011 1\nPASS independent complete search 12 pacto-v2-012 1\nPASS independent complete search 13 pacto-v2-013 1\nPASS independent complete search 14 pacto-v2-014 1\nPASS independent complete search 15 pacto-v2-015 1\nPASS independent complete search 16 pacto-002 1\nPASS independent complete search 17 pacto-011 1\nPASS independent complete search 18 pacto-018 1\nPASS independent complete search 19 pacto-029 1\nPASS independent complete search 20 pacto-041 1\nPASS independent complete search 21 pacto-056 1\nPASS independent complete search 22 pacto-057 1\nPASS independent complete search 23 pacto-023 1\nPASS independent complete search 24 pacto-052 1\nPASS independent complete search 25 pacto-053 1\nPASS independent complete search 26 pacto-054 1\nPASS independent complete search 27 pacto-060 1\nPASS independent complete search 28 pacto-096 1\nPASS independent complete search 29 pacto-084 1\nPASS independent complete search 30 pacto-087 1\nPASS independent complete search 31 pacto-088 1\nPASS independent complete search 32 pacto-094 1\nPASS independent complete search 33 pacto-064 1\nPASS independent complete search 34 pacto-067 1\nPASS independent complete search 35 pacto-102 1\nPASS independent complete search 36 pacto-106 1\nPASS independent complete search 37 pacto-119 1\nPASS independent complete search 38 pacto-125 1\nPASS independent complete search 39 pacto-122 1\nPASS independent complete search 40 pacto-140 1\nPASS independent complete search 41 pacto-095 1\nPASS independent complete search 42 pacto-098 1\nPASS independent complete search 43 pacto-113 1\nPASS independent complete search 44 pacto-132 1\nPASS independent complete search 45 pacto-162 1\nPASS independent complete search 46 pacto-103 1\nPASS independent complete search 47 pacto-099 1\nPASS independent complete search 48 pacto-v2-101 1\nPASS independent complete search 49 pacto-v2-103 1\nPASS independent complete search 50 pacto-v2-107 1\nPASS independent complete search 51 pacto-116 1\nPASS independent complete search 52 pacto-v2-102 1\nPASS independent complete search 53 pacto-139 1\nPASS independent complete search 54 pacto-100 1\nPASS independent complete search 55 pacto-v2-104 1\nPASS independent complete search 56 pacto-118 1\nPASS independent complete search 57 pacto-127 1\nPASS independent complete search 58 pacto-v2-106 1\nPASS independent complete search 59 pacto-186 1\nPASS independent complete search 60 pacto-138 1\nPASS independent complete search 61 pacto-146 1\nPASS independent complete search 62 pacto-166 1\nPASS independent complete search 63 pacto-v2-201 1\nPASS independent complete search 64 pacto-104 1\nPASS independent complete search 65 pacto-107 1\nPASS independent complete search 66 pacto-171 1\nPASS independent complete search 67 pacto-109 1\nPASS independent complete search 68 pacto-v2-202 1\nPASS independent complete search 69 pacto-105 1\nPASS independent complete search 70 pacto-120 1\nPASS independent complete search 71 pacto-121 1\nPASS independent complete search 72 pacto-156 1\nPASS independent complete search 73 pacto-v2-203 1\nPASS independent complete search 74 pacto-136 1\nPASS independent complete search 75 pacto-178 1\nPASS independent complete search 76 pacto-124 1\nPASS independent complete search 77 pacto-123 1\nPASS independent complete search 78 pacto-154 1\nPASS independent complete search 79 pacto-172 1\nPASS independent complete search 80 pacto-141 1\nPASS exhausted search reports incomplete; all80 engine propagation solved.\n"
+    },
+    {
+      "test": "pacto80-independent-trace-tests.mjs",
+      "passed": true,
+      "status": 0,
+      "durationMs": 464,
+      "output": "PASS replay 1 pacto-v2-001\nPASS replay 2 pacto-v2-002\nPASS replay 3 pacto-v2-003\nPASS replay 4 pacto-v2-004\nPASS replay 5 pacto-v2-005\nPASS replay 6 pacto-v2-006\nPASS replay 7 pacto-v2-007\nPASS replay 8 pacto-v2-008\nPASS replay 9 pacto-v2-009\nPASS replay 10 pacto-v2-010\nPASS replay 11 pacto-v2-011\nPASS replay 12 pacto-v2-012\nPASS replay 13 pacto-v2-013\nPASS replay 14 pacto-v2-014\nPASS replay 15 pacto-v2-015\nPASS replay 16 pacto-002\nPASS replay 17 pacto-011\nPASS replay 18 pacto-018\nPASS replay 19 pacto-029\nPASS replay 20 pacto-041\nPASS replay 21 pacto-056\nPASS replay 22 pacto-057\nPASS replay 23 pacto-023\nPASS replay 24 pacto-052\nPASS replay 25 pacto-053\nPASS replay 26 pacto-054\nPASS replay 27 pacto-060\nPASS replay 28 pacto-096\nPASS replay 29 pacto-084\nPASS replay 30 pacto-087\nPASS replay 31 pacto-088\nPASS replay 32 pacto-094\nPASS replay 33 pacto-064\nPASS replay 34 pacto-067\nPASS replay 35 pacto-102\nPASS replay 36 pacto-106\nPASS replay 37 pacto-119\nPASS replay 38 pacto-125\nPASS replay 39 pacto-122\nPASS replay 40 pacto-140\nPASS replay 41 pacto-095\nPASS replay 42 pacto-098\nPASS replay 43 pacto-113\nPASS replay 44 pacto-132\nPASS replay 45 pacto-162\nPASS replay 46 pacto-103\nPASS replay 47 pacto-099\nPASS replay 48 pacto-v2-101\nPASS replay 49 pacto-v2-103\nPASS replay 50 pacto-v2-107\nPASS replay 51 pacto-116\nPASS replay 52 pacto-v2-102\nPASS replay 53 pacto-139\nPASS replay 54 pacto-100\nPASS replay 55 pacto-v2-104\nPASS replay 56 pacto-118\nPASS replay 57 pacto-127\nPASS replay 58 pacto-v2-106\nPASS replay 59 pacto-186\nPASS replay 60 pacto-138\nPASS replay 61 pacto-146\nPASS replay 62 pacto-166\nPASS replay 63 pacto-v2-201\nPASS replay 64 pacto-104\nPASS replay 65 pacto-107\nPASS replay 66 pacto-171\nPASS replay 67 pacto-109\nPASS replay 68 pacto-v2-202\nPASS replay 69 pacto-105\nPASS replay 70 pacto-120\nPASS replay 71 pacto-121\nPASS replay 72 pacto-156\nPASS replay 73 pacto-v2-203\nPASS replay 74 pacto-136\nPASS replay 75 pacto-178\nPASS replay 76 pacto-124\nPASS replay 77 pacto-123\nPASS replay 78 pacto-154\nPASS replay 79 pacto-172\nPASS replay 80 pacto-141\n"
+    },
+    {
+      "test": "pacto80-independent-editorial.mjs",
+      "passed": true,
+      "status": 0,
+      "durationMs": 159,
+      "output": "PASS independent editorial factual checks; subjective pacing still separately reviewed.\n"
+    },
+    {
+      "test": "pacto80-ui-tests.mjs",
+      "passed": true,
+      "status": 0,
+      "durationMs": 2951,
+      "output": "PASS UI 1 pacto-v2-001\nPASS UI 2 pacto-v2-002\nPASS UI 3 pacto-v2-003\nPASS UI 4 pacto-v2-004\nPASS UI 5 pacto-v2-005\nPASS UI 6 pacto-v2-006\nPASS UI 7 pacto-v2-007\nPASS UI 8 pacto-v2-008\nPASS UI 9 pacto-v2-009\nPASS UI 10 pacto-v2-010\nPASS UI 11 pacto-v2-011\nPASS UI 12 pacto-v2-012\nPASS UI 13 pacto-v2-013\nPASS UI 14 pacto-v2-014\nPASS UI 15 pacto-v2-015\nPASS UI 16 pacto-002\nPASS UI 17 pacto-011\nPASS UI 18 pacto-018\nPASS UI 19 pacto-029\nPASS UI 20 pacto-041\nPASS UI 21 pacto-056\nPASS UI 22 pacto-057\nPASS UI 23 pacto-023\nPASS UI 24 pacto-052\nPASS UI 25 pacto-053\nPASS UI 26 pacto-054\nPASS UI 27 pacto-060\nPASS UI 28 pacto-096\nPASS UI 29 pacto-084\nPASS UI 30 pacto-087\nPASS UI 31 pacto-088\nPASS UI 32 pacto-094\nPASS UI 33 pacto-064\nPASS UI 34 pacto-067\nPASS UI 35 pacto-102\nPASS UI 36 pacto-106\nPASS UI 37 pacto-119\nPASS UI 38 pacto-125\nPASS UI 39 pacto-122\nPASS UI 40 pacto-140\nPASS UI 41 pacto-095\nPASS UI 42 pacto-098\nPASS UI 43 pacto-113\nPASS UI 44 pacto-132\nPASS UI 45 pacto-162\nPASS UI 46 pacto-103\nPASS UI 47 pacto-099\nPASS UI 48 pacto-v2-101\nPASS UI 49 pacto-v2-103\nPASS UI 50 pacto-v2-107\nPASS UI 51 pacto-116\nPASS UI 52 pacto-v2-102\nPASS UI 53 pacto-139\nPASS UI 54 pacto-100\nPASS UI 55 pacto-v2-104\nPASS UI 56 pacto-118\nPASS UI 57 pacto-127\nPASS UI 58 pacto-v2-106\nPASS UI 59 pacto-186\nPASS UI 60 pacto-138\nPASS UI 61 pacto-146\nPASS UI 62 pacto-166\nPASS UI 63 pacto-v2-201\nPASS UI 64 pacto-104\nPASS UI 65 pacto-107\nPASS UI 66 pacto-171\nPASS UI 67 pacto-109\nPASS UI 68 pacto-v2-202\nPASS UI 69 pacto-105\nPASS UI 70 pacto-120\nPASS UI 71 pacto-121\nPASS UI 72 pacto-156\nPASS UI 73 pacto-v2-203\nPASS UI 74 pacto-136\nPASS UI 75 pacto-178\nPASS UI 76 pacto-124\nPASS UI 77 pacto-123\nPASS UI 78 pacto-154\nPASS UI 79 pacto-172\nPASS UI 80 pacto-141\n{\"passed\":true,\"campaignLevels\":80,\"confirmedFailures\":240,\"verifiedAnswers\":80,\"explicitWins\":80,\"hints\":80,\"undoRedo\":80,\"restartCancelConfirm\":80,\"clueProtection\":80,\"reloads\":5,\"nativeBrowser\":false}\n"
+    },
+    {
+      "test": "pacto80-ui-feedback-tests.mjs",
+      "passed": true,
+      "status": 0,
+      "durationMs": 247,
+      "output": "{\"passed\":true,\"fixture\":\"pacto-v2-001\",\"delay1999\":true,\"delay2000\":true,\"cancelBeforeAfterRepair\":true,\"undoRedoTimer\":true,\"resetNavigation\":true,\"partialMismatchNotImpossible\":true,\"alternateValidRuleAccepted\":true,\"nativeBrowser\":false}\n"
+    },
+    {
+      "test": "pacto80-direct-hints-tests.mjs",
+      "passed": true,
+      "status": 0,
+      "durationMs": 1074,
+      "output": "{\"passed\":true,\"hintChecks\":352,\"actionsChecked\":198,\"maxHintMilliseconds\":29.05}\n"
+    },
+    {
+      "test": "pacto80-legacy-rule-regression.mjs",
+      "passed": true,
+      "status": 0,
+      "durationMs": 160,
+      "output": "PASS Jogada não canônica sem erro explícito não é hachurada\nPASS Par válido e parceiro ainda possível não são erros\nPASS Trio reto, trio dobrado e grupo maior são erros imediatos\nPASS Isolamento fechado é erro; vizinho vazio ainda pode formar par\nPASS Cotas só hachuram linha/coluna completa, mesmo após ultrapassar dois\nPASS Cota válida completa não é erro\nPASS Vitória valida regras, não a igualdade com uma solução canônica\nPASS 200 inícios, 200 soluções e 600 estados parciais corretos sem hachuras\nPASS Entradas inválidas e pistas alteradas continuam protegidas\n9/9 grupos de regressão PACTO passaram.\n"
+    },
+    {
+      "test": "pacto-check-tests.mjs",
+      "passed": true,
+      "status": 0,
+      "durationMs": 268,
+      "output": "PASS manual reference, fixed/empty ignored, alternative valid solution remains a reference mismatch, 10s/repeat/stale/reset\nPASS campaign/Endless UI: annotations, counters, correct/mismatch, timing, repeat, rerender, edit/undo/redo/reset/navigation/game switch/certified custom and automatic advance\nPASS reduced-motion and non-intercepting scoped check overlays\n"
+    },
+    {
+      "test": "direct-actions-tests.mjs",
+      "passed": true,
+      "status": 0,
+      "durationMs": 76,
+      "output": "PASS ELO move/toggle is atomic and clears target annotation\nPASS ELO fixed regions permit annotations but never move fixed points\nPASS ELO discard does not remove points or block connections\nPASS ELO drag validates source and same region, idempotent drop\nPASS PRUMO initializes center and horizontal/vertical support incidents\nPASS PRUMO toggles active color, overwrites other colors, requires selection\nPASS PRUMO stroke intent remains stable, filtered erase preserves other colors\nPASS PACTO forward/reverse cycle preserves saved canonical symbol ids\nPASS PACTO candidates only on empty; values clear notes atomically and are idempotent\nPASS PACTO fixed clues immune to all commands\nPASS One history transaction restores full notes/values and full paint stroke\nPASS Invalid cells/actions and unsupported games remain cloned no-ops\n12 direct-action tests passed.\n"
+    },
+    {
+      "test": "direct-input-independent-tests.mjs",
+      "passed": true,
+      "status": 0,
+      "durationMs": 108,
+      "output": "PASS right drag followed by contextmenu applies one transaction only\nPASS second touch rolls back active editing before viewport navigation\nPASS pointercancel and Escape each roll back but never commit\nPASS longpress release and browser contextmenu never also click\nPASS fast drag interpolates all cells and processes revisits once\nPASS outside drag supplies null drop rather than last valid cell\nPASS scaled translated bounding box gives correct drop cell\nPASS mouse click plus synthesized click creates one action\nPASS viewport reset is visual-only and restore returns original transform\n9/9 independent gesture tests passed.\n"
+    },
+    {
+      "test": "restart-collection-tests.mjs",
+      "passed": true,
+      "status": 0,
+      "durationMs": 306,
+      "output": "PASS elo cancel/Escape/native cancel, focus/trap, duplicate, scoped reset, navigation, persisted counters/other sessions\nPASS prumo cancel/Escape/native cancel, focus/trap, duplicate, scoped reset, navigation, persisted counters/other sessions\nPASS pacto cancel/Escape/native cancel, focus/trap, duplicate, scoped reset, navigation, persisted counters/other sessions\nPASS desvio cancel/Escape/native cancel, focus/trap, duplicate, scoped reset, navigation, persisted counters/other sessions\nPASS competitive reset blocked, bot pauses and resumes\nPASS no duplicated dialog/listeners and no browser confirmation\nPASS elo Dicas label stable across tiers 1/2/3 and rerender, internal progression preserved\nPASS prumo Dicas label stable across tiers 1/2/3 and rerender, internal progression preserved\nPASS pacto Dicas label stable across tiers 1/2/3 and rerender, internal progression preserved\n"
+    },
+    {
+      "test": "focused-game-controls.test.mjs",
+      "passed": true,
+      "status": 0,
+      "durationMs": 103,
+      "output": "✔ three automatic-completion games change only confirm button visibility, not behavior (15.295424ms)\n✔ only PACTO exposes the hint button and follow-up application; rules and intrinsic clues unaffected (0.434588ms)\nℹ tests 2\nℹ suites 0\nℹ pass 2\nℹ fail 0\nℹ cancelled 0\nℹ skipped 0\nℹ todo 0\nℹ duration_ms 22.047084\n"
+    },
+    {
+      "test": "nonstop-visible-ui.test.mjs",
+      "passed": true,
+      "status": 0,
+      "durationMs": 176,
+      "output": "PASS elo new/resumed visible copy and preserved identity/session keys\nPASS prumo new/resumed visible copy and preserved identity/session keys\nPASS pacto new/resumed visible copy and preserved identity/session keys\nPASS desvio new/resumed visible copy and preserved identity/session keys\n"
+    },
+    {
+      "test": "elo80-progress-tests.mjs",
+      "passed": true,
+      "status": 0,
+      "durationMs": 66,
+      "output": "PASS ELO80 identity-safe archival, unchanged IDs, no ordinal mapping, custom/endless/other-game isolation, idempotence and unavailable storage.\n"
+    },
+    {
+      "test": "prumo80-progress-tests.mjs",
+      "passed": true,
+      "status": 0,
+      "durationMs": 65,
+      "output": "PASS PRUMO80 identity-safe archival, unchanged IDs, no ordinal mapping, custom/endless/other-game isolation, idempotence and unavailable storage.\nPASS answer-only retired PRUMO records archived with exact IDs; other games and custom answers excluded.\n"
+    },
+    {
+      "test": "elo-rules-tests.mjs",
+      "passed": true,
+      "status": 0,
+      "durationMs": 1311,
+      "output": "PASS Classical visibility, straight points, region boundaries and alternative solutions\nPASS Curves and straight clues constrain directions, not point positions\nPASS Passages are strict interiors, never point positions or visibility walls\nPASS Forbidden unit intervals invalidate traversal without changing connections\nPASS Counts include fixed points but not traversing segments\nPASS Distance uses interval lengths and may shrink after subdivision\nPASS Mandatory neighbors require direct visibility, not merely a path\nPASS Order accepts rotations and reversal and ignores insertion order\nPASS Cuts lie between adjacent rows or columns and need even traversal counts\nPASS Exactly one exclusive passage is traversed and every option remains empty\nPASS A partial cycle is not rejected if remaining regions can subdivide it\nPASS Annotations do not alter truth, deductions or visibility\nPASS Search budgets are inconclusive, not a proof of zero solutions\nPASS Offline domain assumptions are explicit and never taken from player X marks\nPASS Geometry facade delegates ELO and local hints never search\nPASS Independent exhaustive oracle agrees on all mechanics and partial solution subsets\n{\"randomOracleBoards\":168,\"positiveBoards\":68,\"partialSolutionChecks\":2816}\nPASS Seeded connected region boards preserve every oracle solution under local deductions\n{\"passed\":true,\"tests\":17}\n"
+    },
+    {
+      "test": "prumo80-solver-tests.mjs",
+      "passed": true,
+      "status": 0,
+      "durationMs": 676,
+      "output": "{\"pass\":true,\"dimensions\":\"10x10\",\"validationMs\":0.039146635,\"completedIterations\":1000,\"inconclusiveBudget\":true,\"exactSingletonPartition\":1}\n"
+    }
+  ]
+}

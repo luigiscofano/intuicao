@@ -1,5 +1,12 @@
 # Atualização PRUMO80 · 30/10/2026
 
+## Atualização PACTO80 — campanha ativa
+
+**PACTO tem exatamente 80 níveis**: Básico 1–15, Aprendiz 16–30, Intermediário 31–45, Avançado 46–60, Mestre 61–75 e Modo Sábio 76–80. Grade 8×8, quatro símbolos, duas ocorrências por linha e coluna e exatamente um parceiro ortogonal permanecem obrigatórios desde o primeiro nível. A curadoria considera as relações dedutivas, não somente a quantidade de pistas.
+
+As [80 definições e sequências de raciocínio](PACTO80-VALIDACAO.md) registram origem, função das pistas e certificados. IDs preservam fases idênticas; pistas alteradas recebem IDs novos. Histórico anterior fica preservado, sem transferir conclusões pelo número exibido. Diário usa apenas as 80 fases atuais; Modo Sem Parar e personalizados ficam fora da campanha. As referências numéricas antigas abaixo são históricas.
+
+
 A campanha ativa de **PRUMO tem exatamente 80 níveis**, em seis faixas: Básico 1–15, Aprendiz 16–30, Intermediário 31–45, Avançado 46–60, Mestre 61–75 e Modo Sábio 76–80. As grades reais progridem de 4×4 até 10×10, intercalando enigmas compactos. Consulte a [tabela por fase e limites de validação](PRUMO80-VALIDACAO.md). Diário escolhe deste catálogo; Modo Sem Parar e fases personalizadas não aumentam a campanha. Dicas visíveis continuam exclusivas de PACTO; opções avançadas continuam exclusivas de Reflexos.
 
 As seções a seguir documentam revisões históricas. Suas antigas contagens e divisões de PRUMO não descrevem a campanha atual; não se sobrepõem à atualização acima. Os dados e gabaritos antigos são preservados como histórico, sem transferir vitórias por número de posição.

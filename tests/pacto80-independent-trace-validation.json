@@ -1,0 +1,1411 @@
+{
+  "method": "Every elimination replayed and checked against named quota/partner/subset rule; hypothetical chains recursively replayed and independently checked for concrete contradiction",
+  "levels": [
+    {
+      "number": 1,
+      "id": "pacto-v2-001",
+      "steps": 47,
+      "maxDepth": 3,
+      "counts": {
+        "quota-saturated": 38,
+        "quota-remaining": 9
+      },
+      "refutations": []
+    },
+    {
+      "number": 2,
+      "id": "pacto-v2-002",
+      "steps": 45,
+      "maxDepth": 3,
+      "counts": {
+        "quota-saturated": 34,
+        "quota-remaining": 6,
+        "closed-pair": 1,
+        "mandatory-partner": 4
+      },
+      "refutations": []
+    },
+    {
+      "number": 3,
+      "id": "pacto-v2-003",
+      "steps": 45,
+      "maxDepth": 3,
+      "counts": {
+        "quota-saturated": 34,
+        "quota-remaining": 5,
+        "mandatory-partner": 6
+      },
+      "refutations": []
+    },
+    {
+      "number": 4,
+      "id": "pacto-v2-004",
+      "steps": 40,
+      "maxDepth": 4,
+      "counts": {
+        "quota-saturated": 28,
+        "quota-remaining": 10,
+        "mandatory-partner": 1,
+        "closed-pair": 1
+      },
+      "refutations": []
+    },
+    {
+      "number": 5,
+      "id": "pacto-v2-005",
+      "steps": 44,
+      "maxDepth": 4,
+      "counts": {
+        "quota-saturated": 32,
+        "quota-remaining": 6,
+        "closed-pair": 1,
+        "isolation": 3,
+        "mandatory-partner": 2
+      },
+      "refutations": []
+    },
+    {
+      "number": 6,
+      "id": "pacto-v2-006",
+      "steps": 55,
+      "maxDepth": 4,
+      "counts": {
+        "quota-saturated": 37,
+        "quota-remaining": 8,
+        "mandatory-partner": 7,
+        "closed-pair": 2,
+        "isolation": 1
+      },
+      "refutations": []
+    },
+    {
+      "number": 7,
+      "id": "pacto-v2-007",
+      "steps": 62,
+      "maxDepth": 5,
+      "counts": {
+        "quota-saturated": 49,
+        "quota-remaining": 4,
+        "mandatory-partner": 3,
+        "closed-pair": 4,
+        "isolation": 2
+      },
+      "refutations": []
+    },
+    {
+      "number": 8,
+      "id": "pacto-v2-008",
+      "steps": 58,
+      "maxDepth": 5,
+      "counts": {
+        "quota-saturated": 35,
+        "quota-remaining": 3,
+        "closed-pair": 11,
+        "mandatory-partner": 5,
+        "isolation": 4
+      },
+      "refutations": []
+    },
+    {
+      "number": 9,
+      "id": "pacto-v2-009",
+      "steps": 58,
+      "maxDepth": 5,
+      "counts": {
+        "quota-saturated": 38,
+        "quota-remaining": 8,
+        "mandatory-partner": 5,
+        "closed-pair": 6,
+        "isolation": 1
+      },
+      "refutations": []
+    },
+    {
+      "number": 10,
+      "id": "pacto-v2-010",
+      "steps": 48,
+      "maxDepth": 6,
+      "counts": {
+        "quota-saturated": 30,
+        "quota-remaining": 9,
+        "mandatory-partner": 6,
+        "closed-pair": 2,
+        "isolation": 1
+      },
+      "refutations": []
+    },
+    {
+      "number": 11,
+      "id": "pacto-v2-011",
+      "steps": 68,
+      "maxDepth": 6,
+      "counts": {
+        "quota-saturated": 46,
+        "quota-remaining": 8,
+        "mandatory-partner": 4,
+        "closed-pair": 8,
+        "isolation": 1,
+        "trio": 1
+      },
+      "refutations": []
+    },
+    {
+      "number": 12,
+      "id": "pacto-v2-012",
+      "steps": 71,
+      "maxDepth": 6,
+      "counts": {
+        "quota-saturated": 45,
+        "quota-remaining": 9,
+        "mandatory-partner": 7,
+        "closed-pair": 8,
+        "isolation": 2
+      },
+      "refutations": []
+    },
+    {
+      "number": 13,
+      "id": "pacto-v2-013",
+      "steps": 65,
+      "maxDepth": 7,
+      "counts": {
+        "quota-remaining": 4,
+        "quota-saturated": 42,
+        "mandatory-partner": 11,
+        "closed-pair": 7,
+        "isolation": 1
+      },
+      "refutations": []
+    },
+    {
+      "number": 14,
+      "id": "pacto-v2-014",
+      "steps": 69,
+      "maxDepth": 7,
+      "counts": {
+        "quota-saturated": 38,
+        "quota-remaining": 4,
+        "closed-pair": 11,
+        "mandatory-partner": 11,
+        "isolation": 4,
+        "trio": 1
+      },
+      "refutations": []
+    },
+    {
+      "number": 15,
+      "id": "pacto-v2-015",
+      "steps": 68,
+      "maxDepth": 7,
+      "counts": {
+        "quota-saturated": 45,
+        "quota-remaining": 5,
+        "mandatory-partner": 6,
+        "closed-pair": 7,
+        "isolation": 5
+      },
+      "refutations": []
+    },
+    {
+      "number": 16,
+      "id": "pacto-002",
+      "steps": 86,
+      "maxDepth": 8,
+      "counts": {
+        "quota-saturated": 61,
+        "quota-remaining": 9,
+        "mandatory-partner": 8,
+        "closed-pair": 7,
+        "isolation": 1
+      },
+      "refutations": []
+    },
+    {
+      "number": 17,
+      "id": "pacto-011",
+      "steps": 85,
+      "maxDepth": 8,
+      "counts": {
+        "quota-saturated": 57,
+        "quota-remaining": 4,
+        "isolation": 4,
+        "mandatory-partner": 11,
+        "closed-pair": 9
+      },
+      "refutations": []
+    },
+    {
+      "number": 18,
+      "id": "pacto-018",
+      "steps": 78,
+      "maxDepth": 9,
+      "counts": {
+        "quota-saturated": 46,
+        "quota-remaining": 7,
+        "mandatory-partner": 13,
+        "closed-pair": 9,
+        "isolation": 3
+      },
+      "refutations": []
+    },
+    {
+      "number": 19,
+      "id": "pacto-029",
+      "steps": 85,
+      "maxDepth": 9,
+      "counts": {
+        "quota-saturated": 52,
+        "quota-remaining": 3,
+        "mandatory-partner": 16,
+        "closed-pair": 10,
+        "isolation": 4
+      },
+      "refutations": []
+    },
+    {
+      "number": 20,
+      "id": "pacto-041",
+      "steps": 83,
+      "maxDepth": 10,
+      "counts": {
+        "quota-saturated": 50,
+        "quota-remaining": 8,
+        "mandatory-partner": 6,
+        "isolation": 4,
+        "closed-pair": 13,
+        "trio": 2
+      },
+      "refutations": []
+    },
+    {
+      "number": 21,
+      "id": "pacto-056",
+      "steps": 110,
+      "maxDepth": 10,
+      "counts": {
+        "quota-saturated": 75,
+        "quota-remaining": 11,
+        "closed-pair": 12,
+        "mandatory-partner": 11,
+        "isolation": 1
+      },
+      "refutations": []
+    },
+    {
+      "number": 22,
+      "id": "pacto-057",
+      "steps": 105,
+      "maxDepth": 10,
+      "counts": {
+        "quota-saturated": 61,
+        "closed-pair": 17,
+        "mandatory-partner": 14,
+        "quota-remaining": 13
+      },
+      "refutations": []
+    },
+    {
+      "number": 23,
+      "id": "pacto-023",
+      "steps": 86,
+      "maxDepth": 11,
+      "counts": {
+        "quota-saturated": 66,
+        "mandatory-partner": 6,
+        "closed-pair": 5,
+        "isolation": 3,
+        "quota-remaining": 6
+      },
+      "refutations": []
+    },
+    {
+      "number": 24,
+      "id": "pacto-052",
+      "steps": 109,
+      "maxDepth": 11,
+      "counts": {
+        "quota-saturated": 69,
+        "quota-remaining": 12,
+        "mandatory-partner": 14,
+        "closed-pair": 13,
+        "isolation": 1
+      },
+      "refutations": []
+    },
+    {
+      "number": 25,
+      "id": "pacto-053",
+      "steps": 100,
+      "maxDepth": 12,
+      "counts": {
+        "quota-saturated": 47,
+        "mandatory-partner": 13,
+        "isolation": 5,
+        "trio": 1,
+        "closed-pair": 21,
+        "quota-remaining": 13
+      },
+      "refutations": []
+    },
+    {
+      "number": 26,
+      "id": "pacto-054",
+      "steps": 108,
+      "maxDepth": 12,
+      "counts": {
+        "quota-saturated": 68,
+        "quota-remaining": 14,
+        "isolation": 5,
+        "mandatory-partner": 8,
+        "closed-pair": 12,
+        "trio": 1
+      },
+      "refutations": []
+    },
+    {
+      "number": 27,
+      "id": "pacto-060",
+      "steps": 103,
+      "maxDepth": 12,
+      "counts": {
+        "quota-saturated": 56,
+        "closed-pair": 14,
+        "isolation": 6,
+        "mandatory-partner": 18,
+        "quota-remaining": 9
+      },
+      "refutations": []
+    },
+    {
+      "number": 28,
+      "id": "pacto-096",
+      "steps": 103,
+      "maxDepth": 13,
+      "counts": {
+        "quota-saturated": 52,
+        "mandatory-partner": 17,
+        "closed-pair": 19,
+        "isolation": 5,
+        "quota-remaining": 9,
+        "trio": 1
+      },
+      "refutations": []
+    },
+    {
+      "number": 29,
+      "id": "pacto-084",
+      "steps": 108,
+      "maxDepth": 14,
+      "counts": {
+        "quota-saturated": 58,
+        "quota-remaining": 18,
+        "trio": 2,
+        "closed-pair": 11,
+        "mandatory-partner": 11,
+        "isolation": 8
+      },
+      "refutations": []
+    },
+    {
+      "number": 30,
+      "id": "pacto-087",
+      "steps": 109,
+      "maxDepth": 14,
+      "counts": {
+        "quota-saturated": 60,
+        "closed-pair": 16,
+        "isolation": 4,
+        "mandatory-partner": 22,
+        "trio": 1,
+        "quota-remaining": 6
+      },
+      "refutations": []
+    },
+    {
+      "number": 31,
+      "id": "pacto-088",
+      "steps": 109,
+      "maxDepth": 15,
+      "counts": {
+        "quota-saturated": 61,
+        "mandatory-partner": 14,
+        "closed-pair": 15,
+        "isolation": 6,
+        "trio": 2,
+        "quota-remaining": 11
+      },
+      "refutations": []
+    },
+    {
+      "number": 32,
+      "id": "pacto-094",
+      "steps": 108,
+      "maxDepth": 15,
+      "counts": {
+        "quota-saturated": 66,
+        "mandatory-partner": 10,
+        "closed-pair": 16,
+        "isolation": 3,
+        "quota-remaining": 12,
+        "trio": 1
+      },
+      "refutations": []
+    },
+    {
+      "number": 33,
+      "id": "pacto-064",
+      "steps": 103,
+      "maxDepth": 16,
+      "counts": {
+        "quota-saturated": 54,
+        "mandatory-partner": 9,
+        "isolation": 6,
+        "closed-pair": 16,
+        "quota-remaining": 18
+      },
+      "refutations": []
+    },
+    {
+      "number": 34,
+      "id": "pacto-067",
+      "steps": 113,
+      "maxDepth": 16,
+      "counts": {
+        "quota-saturated": 70,
+        "isolation": 8,
+        "closed-pair": 14,
+        "mandatory-partner": 17,
+        "quota-remaining": 4
+      },
+      "refutations": []
+    },
+    {
+      "number": 35,
+      "id": "pacto-102",
+      "steps": 122,
+      "maxDepth": 16,
+      "counts": {
+        "quota-saturated": 64,
+        "trio": 2,
+        "closed-pair": 17,
+        "mandatory-partner": 16,
+        "isolation": 7,
+        "quota-remaining": 16
+      },
+      "refutations": []
+    },
+    {
+      "number": 36,
+      "id": "pacto-106",
+      "steps": 127,
+      "maxDepth": 16,
+      "counts": {
+        "quota-saturated": 76,
+        "mandatory-partner": 19,
+        "closed-pair": 16,
+        "isolation": 3,
+        "quota-remaining": 13
+      },
+      "refutations": []
+    },
+    {
+      "number": 37,
+      "id": "pacto-119",
+      "steps": 131,
+      "maxDepth": 17,
+      "counts": {
+        "quota-saturated": 76,
+        "mandatory-partner": 19,
+        "closed-pair": 19,
+        "isolation": 7,
+        "quota-remaining": 9,
+        "trio": 1
+      },
+      "refutations": []
+    },
+    {
+      "number": 38,
+      "id": "pacto-125",
+      "steps": 130,
+      "maxDepth": 17,
+      "counts": {
+        "quota-saturated": 86,
+        "mandatory-partner": 15,
+        "closed-pair": 16,
+        "trio": 2,
+        "quota-remaining": 8,
+        "isolation": 3
+      },
+      "refutations": []
+    },
+    {
+      "number": 39,
+      "id": "pacto-122",
+      "steps": 134,
+      "maxDepth": 18,
+      "counts": {
+        "quota-saturated": 72,
+        "closed-pair": 22,
+        "mandatory-partner": 11,
+        "isolation": 8,
+        "trio": 5,
+        "quota-remaining": 16
+      },
+      "refutations": []
+    },
+    {
+      "number": 40,
+      "id": "pacto-140",
+      "steps": 128,
+      "maxDepth": 18,
+      "counts": {
+        "quota-saturated": 76,
+        "mandatory-partner": 12,
+        "closed-pair": 17,
+        "isolation": 4,
+        "trio": 2,
+        "quota-remaining": 17
+      },
+      "refutations": []
+    },
+    {
+      "number": 41,
+      "id": "pacto-095",
+      "steps": 115,
+      "maxDepth": 19,
+      "counts": {
+        "quota-saturated": 70,
+        "closed-pair": 9,
+        "trio": 2,
+        "mandatory-partner": 18,
+        "isolation": 6,
+        "quota-remaining": 10
+      },
+      "refutations": []
+    },
+    {
+      "number": 42,
+      "id": "pacto-098",
+      "steps": 105,
+      "maxDepth": 19,
+      "counts": {
+        "quota-saturated": 55,
+        "trio": 4,
+        "isolation": 4,
+        "closed-pair": 14,
+        "mandatory-partner": 10,
+        "quota-remaining": 18
+      },
+      "refutations": []
+    },
+    {
+      "number": 43,
+      "id": "pacto-113",
+      "steps": 134,
+      "maxDepth": 19,
+      "counts": {
+        "quota-saturated": 72,
+        "mandatory-partner": 14,
+        "closed-pair": 22,
+        "isolation": 9,
+        "trio": 2,
+        "quota-remaining": 15
+      },
+      "refutations": []
+    },
+    {
+      "number": 44,
+      "id": "pacto-132",
+      "steps": 129,
+      "maxDepth": 21,
+      "counts": {
+        "quota-saturated": 69,
+        "closed-pair": 25,
+        "mandatory-partner": 18,
+        "isolation": 7,
+        "quota-remaining": 10
+      },
+      "refutations": []
+    },
+    {
+      "number": 45,
+      "id": "pacto-162",
+      "steps": 137,
+      "maxDepth": 22,
+      "counts": {
+        "quota-saturated": 78,
+        "mandatory-partner": 15,
+        "closed-pair": 23,
+        "isolation": 6,
+        "quota-remaining": 15
+      },
+      "refutations": []
+    },
+    {
+      "number": 46,
+      "id": "pacto-103",
+      "steps": 132,
+      "maxDepth": 19,
+      "counts": {
+        "quota-saturated": 76,
+        "mandatory-partner": 12,
+        "closed-pair": 19,
+        "trio": 4,
+        "isolation": 4,
+        "quota-remaining": 15,
+        "candidate-group": 2
+      },
+      "refutations": []
+    },
+    {
+      "number": 47,
+      "id": "pacto-099",
+      "steps": 114,
+      "maxDepth": 18,
+      "counts": {
+        "quota-saturated": 63,
+        "closed-pair": 22,
+        "isolation": 6,
+        "trio": 1,
+        "mandatory-partner": 10,
+        "quota-remaining": 10,
+        "refutation": 2
+      },
+      "refutations": [
+        {
+          "steps": 8,
+          "contradiction": "empty-domain"
+        },
+        {
+          "steps": 2,
+          "contradiction": "empty-domain"
+        }
+      ]
+    },
+    {
+      "number": 48,
+      "id": "pacto-v2-101",
+      "steps": 129,
+      "maxDepth": 19,
+      "counts": {
+        "quota-saturated": 75,
+        "mandatory-partner": 15,
+        "closed-pair": 18,
+        "isolation": 3,
+        "quota-remaining": 12,
+        "candidate-group": 5,
+        "refutation": 1
+      },
+      "refutations": [
+        {
+          "steps": 2,
+          "contradiction": "empty-domain"
+        }
+      ]
+    },
+    {
+      "number": 49,
+      "id": "pacto-v2-103",
+      "steps": 122,
+      "maxDepth": 20,
+      "counts": {
+        "quota-saturated": 68,
+        "isolation": 3,
+        "mandatory-partner": 23,
+        "closed-pair": 14,
+        "quota-remaining": 7,
+        "candidate-group": 5,
+        "refutation": 2
+      },
+      "refutations": [
+        {
+          "steps": 6,
+          "contradiction": "empty-domain"
+        },
+        {
+          "steps": 8,
+          "contradiction": "empty-domain"
+        }
+      ]
+    },
+    {
+      "number": 50,
+      "id": "pacto-v2-107",
+      "steps": 127,
+      "maxDepth": 19,
+      "counts": {
+        "quota-saturated": 59,
+        "trio": 2,
+        "closed-pair": 21,
+        "mandatory-partner": 14,
+        "isolation": 6,
+        "quota-remaining": 15,
+        "refutation": 8,
+        "candidate-group": 2
+      },
+      "refutations": [
+        {
+          "steps": 9,
+          "contradiction": "empty-domain"
+        },
+        {
+          "steps": 9,
+          "contradiction": "empty-domain"
+        },
+        {
+          "steps": 7,
+          "contradiction": "empty-domain"
+        },
+        {
+          "steps": 4,
+          "contradiction": "empty-domain"
+        },
+        {
+          "steps": 8,
+          "contradiction": "empty-domain"
+        },
+        {
+          "steps": 4,
+          "contradiction": "empty-domain"
+        },
+        {
+          "steps": 8,
+          "contradiction": "empty-domain"
+        },
+        {
+          "steps": 3,
+          "contradiction": "empty-domain"
+        }
+      ]
+    },
+    {
+      "number": 51,
+      "id": "pacto-116",
+      "steps": 138,
+      "maxDepth": 20,
+      "counts": {
+        "quota-saturated": 87,
+        "closed-pair": 19,
+        "mandatory-partner": 12,
+        "quota-remaining": 17,
+        "trio": 1,
+        "refutation": 2
+      },
+      "refutations": [
+        {
+          "steps": 2,
+          "contradiction": "empty-domain"
+        },
+        {
+          "steps": 2,
+          "contradiction": "empty-domain"
+        }
+      ]
+    },
+    {
+      "number": 52,
+      "id": "pacto-v2-102",
+      "steps": 134,
+      "maxDepth": 22,
+      "counts": {
+        "quota-saturated": 75,
+        "mandatory-partner": 16,
+        "closed-pair": 11,
+        "isolation": 5,
+        "trio": 2,
+        "quota-remaining": 16,
+        "candidate-group": 8,
+        "refutation": 1
+      },
+      "refutations": [
+        {
+          "steps": 7,
+          "contradiction": "empty-domain"
+        }
+      ]
+    },
+    {
+      "number": 53,
+      "id": "pacto-139",
+      "steps": 138,
+      "maxDepth": 20,
+      "counts": {
+        "quota-saturated": 74,
+        "isolation": 6,
+        "mandatory-partner": 10,
+        "closed-pair": 27,
+        "trio": 3,
+        "quota-remaining": 17,
+        "refutation": 1
+      },
+      "refutations": [
+        {
+          "steps": 10,
+          "contradiction": "quota"
+        }
+      ]
+    },
+    {
+      "number": 54,
+      "id": "pacto-100",
+      "steps": 130,
+      "maxDepth": 21,
+      "counts": {
+        "quota-saturated": 73,
+        "isolation": 4,
+        "mandatory-partner": 18,
+        "trio": 1,
+        "closed-pair": 18,
+        "quota-remaining": 15,
+        "refutation": 1
+      },
+      "refutations": [
+        {
+          "steps": 7,
+          "contradiction": "empty-domain"
+        }
+      ]
+    },
+    {
+      "number": 55,
+      "id": "pacto-v2-104",
+      "steps": 132,
+      "maxDepth": 22,
+      "counts": {
+        "quota-saturated": 68,
+        "mandatory-partner": 10,
+        "closed-pair": 25,
+        "quota-remaining": 16,
+        "isolation": 8,
+        "refutation": 2,
+        "candidate-group": 3
+      },
+      "refutations": [
+        {
+          "steps": 10,
+          "contradiction": "empty-domain"
+        },
+        {
+          "steps": 5,
+          "contradiction": "empty-domain"
+        }
+      ]
+    },
+    {
+      "number": 56,
+      "id": "pacto-118",
+      "steps": 128,
+      "maxDepth": 22,
+      "counts": {
+        "quota-saturated": 63,
+        "isolation": 9,
+        "mandatory-partner": 17,
+        "closed-pair": 19,
+        "trio": 2,
+        "refutation": 2,
+        "quota-remaining": 16
+      },
+      "refutations": [
+        {
+          "steps": 3,
+          "contradiction": "empty-domain"
+        },
+        {
+          "steps": 6,
+          "contradiction": "empty-domain"
+        }
+      ]
+    },
+    {
+      "number": 57,
+      "id": "pacto-127",
+      "steps": 124,
+      "maxDepth": 22,
+      "counts": {
+        "quota-saturated": 75,
+        "isolation": 6,
+        "mandatory-partner": 14,
+        "closed-pair": 10,
+        "quota-remaining": 17,
+        "trio": 1,
+        "refutation": 1
+      },
+      "refutations": [
+        {
+          "steps": 6,
+          "contradiction": "quota"
+        }
+      ]
+    },
+    {
+      "number": 58,
+      "id": "pacto-v2-106",
+      "steps": 124,
+      "maxDepth": 22,
+      "counts": {
+        "quota-saturated": 62,
+        "closed-pair": 30,
+        "mandatory-partner": 9,
+        "isolation": 5,
+        "trio": 1,
+        "quota-remaining": 3,
+        "refutation": 4,
+        "candidate-group": 10
+      },
+      "refutations": [
+        {
+          "steps": 8,
+          "contradiction": "empty-domain"
+        },
+        {
+          "steps": 3,
+          "contradiction": "empty-domain"
+        },
+        {
+          "steps": 5,
+          "contradiction": "empty-domain"
+        },
+        {
+          "steps": 4,
+          "contradiction": "empty-domain"
+        }
+      ]
+    },
+    {
+      "number": 59,
+      "id": "pacto-186",
+      "steps": 138,
+      "maxDepth": 23,
+      "counts": {
+        "quota-saturated": 85,
+        "mandatory-partner": 13,
+        "closed-pair": 25,
+        "quota-remaining": 7,
+        "trio": 2,
+        "isolation": 5,
+        "refutation": 1
+      },
+      "refutations": [
+        {
+          "steps": 2,
+          "contradiction": "empty-domain"
+        }
+      ]
+    },
+    {
+      "number": 60,
+      "id": "pacto-138",
+      "steps": 140,
+      "maxDepth": 23,
+      "counts": {
+        "quota-saturated": 69,
+        "trio": 3,
+        "closed-pair": 24,
+        "isolation": 8,
+        "mandatory-partner": 15,
+        "quota-remaining": 21
+      },
+      "refutations": []
+    },
+    {
+      "number": 61,
+      "id": "pacto-146",
+      "steps": 135,
+      "maxDepth": 22,
+      "counts": {
+        "quota-saturated": 76,
+        "mandatory-partner": 19,
+        "isolation": 5,
+        "closed-pair": 15,
+        "trio": 5,
+        "quota-remaining": 12,
+        "refutation": 3
+      },
+      "refutations": [
+        {
+          "steps": 4,
+          "contradiction": "empty-domain"
+        },
+        {
+          "steps": 7,
+          "contradiction": "empty-domain"
+        },
+        {
+          "steps": 8,
+          "contradiction": "empty-domain"
+        }
+      ]
+    },
+    {
+      "number": 62,
+      "id": "pacto-166",
+      "steps": 143,
+      "maxDepth": 22,
+      "counts": {
+        "quota-saturated": 94,
+        "mandatory-partner": 21,
+        "trio": 1,
+        "isolation": 5,
+        "closed-pair": 11,
+        "quota-remaining": 10,
+        "refutation": 1
+      },
+      "refutations": [
+        {
+          "steps": 10,
+          "contradiction": "empty-domain"
+        }
+      ]
+    },
+    {
+      "number": 63,
+      "id": "pacto-v2-201",
+      "steps": 73,
+      "maxDepth": 16,
+      "counts": {
+        "quota-saturated": 48,
+        "refutation": 1,
+        "mandatory-partner": 9,
+        "closed-pair": 7,
+        "isolation": 1,
+        "quota-remaining": 7
+      },
+      "refutations": [
+        {
+          "steps": 7,
+          "contradiction": "empty-domain"
+        }
+      ]
+    },
+    {
+      "number": 64,
+      "id": "pacto-104",
+      "steps": 124,
+      "maxDepth": 24,
+      "counts": {
+        "quota-saturated": 66,
+        "mandatory-partner": 13,
+        "closed-pair": 16,
+        "isolation": 10,
+        "quota-remaining": 19
+      },
+      "refutations": []
+    },
+    {
+      "number": 65,
+      "id": "pacto-107",
+      "steps": 128,
+      "maxDepth": 24,
+      "counts": {
+        "quota-saturated": 67,
+        "mandatory-partner": 16,
+        "closed-pair": 20,
+        "isolation": 3,
+        "quota-remaining": 20,
+        "refutation": 1,
+        "trio": 1
+      },
+      "refutations": [
+        {
+          "steps": 3,
+          "contradiction": "empty-domain"
+        }
+      ]
+    },
+    {
+      "number": 66,
+      "id": "pacto-171",
+      "steps": 143,
+      "maxDepth": 24,
+      "counts": {
+        "quota-saturated": 82,
+        "mandatory-partner": 18,
+        "closed-pair": 27,
+        "quota-remaining": 13,
+        "isolation": 3
+      },
+      "refutations": []
+    },
+    {
+      "number": 67,
+      "id": "pacto-109",
+      "steps": 120,
+      "maxDepth": 25,
+      "counts": {
+        "quota-saturated": 63,
+        "mandatory-partner": 16,
+        "closed-pair": 21,
+        "isolation": 4,
+        "trio": 3,
+        "quota-remaining": 12,
+        "refutation": 1
+      },
+      "refutations": [
+        {
+          "steps": 6,
+          "contradiction": "empty-domain"
+        }
+      ]
+    },
+    {
+      "number": 68,
+      "id": "pacto-v2-202",
+      "steps": 84,
+      "maxDepth": 16,
+      "counts": {
+        "quota-saturated": 55,
+        "closed-pair": 15,
+        "refutation": 2,
+        "mandatory-partner": 8,
+        "quota-remaining": 4
+      },
+      "refutations": [
+        {
+          "steps": 6,
+          "contradiction": "empty-domain"
+        },
+        {
+          "steps": 3,
+          "contradiction": "empty-domain"
+        }
+      ]
+    },
+    {
+      "number": 69,
+      "id": "pacto-105",
+      "steps": 123,
+      "maxDepth": 26,
+      "counts": {
+        "quota-saturated": 63,
+        "mandatory-partner": 12,
+        "closed-pair": 18,
+        "isolation": 9,
+        "quota-remaining": 21
+      },
+      "refutations": []
+    },
+    {
+      "number": 70,
+      "id": "pacto-120",
+      "steps": 134,
+      "maxDepth": 26,
+      "counts": {
+        "quota-saturated": 79,
+        "closed-pair": 21,
+        "mandatory-partner": 15,
+        "isolation": 5,
+        "quota-remaining": 12,
+        "trio": 2
+      },
+      "refutations": []
+    },
+    {
+      "number": 71,
+      "id": "pacto-121",
+      "steps": 131,
+      "maxDepth": 26,
+      "counts": {
+        "quota-saturated": 76,
+        "mandatory-partner": 17,
+        "closed-pair": 16,
+        "isolation": 3,
+        "quota-remaining": 15,
+        "refutation": 4
+      },
+      "refutations": [
+        {
+          "steps": 7,
+          "contradiction": "empty-domain"
+        },
+        {
+          "steps": 6,
+          "contradiction": "empty-domain"
+        },
+        {
+          "steps": 8,
+          "contradiction": "empty-domain"
+        },
+        {
+          "steps": 5,
+          "contradiction": "empty-domain"
+        }
+      ]
+    },
+    {
+      "number": 72,
+      "id": "pacto-156",
+      "steps": 137,
+      "maxDepth": 26,
+      "counts": {
+        "quota-saturated": 71,
+        "mandatory-partner": 9,
+        "isolation": 7,
+        "closed-pair": 22,
+        "quota-remaining": 24,
+        "trio": 2,
+        "refutation": 2
+      },
+      "refutations": [
+        {
+          "steps": 9,
+          "contradiction": "empty-domain"
+        },
+        {
+          "steps": 5,
+          "contradiction": "empty-domain"
+        }
+      ]
+    },
+    {
+      "number": 73,
+      "id": "pacto-v2-203",
+      "steps": 80,
+      "maxDepth": 15,
+      "counts": {
+        "quota-saturated": 61,
+        "refutation": 1,
+        "isolation": 2,
+        "mandatory-partner": 4,
+        "closed-pair": 6,
+        "quota-remaining": 6
+      },
+      "refutations": [
+        {
+          "steps": 4,
+          "contradiction": "empty-domain"
+        }
+      ]
+    },
+    {
+      "number": 74,
+      "id": "pacto-136",
+      "steps": 130,
+      "maxDepth": 28,
+      "counts": {
+        "quota-saturated": 73,
+        "mandatory-partner": 14,
+        "closed-pair": 19,
+        "quota-remaining": 17,
+        "isolation": 6,
+        "trio": 1
+      },
+      "refutations": []
+    },
+    {
+      "number": 75,
+      "id": "pacto-178",
+      "steps": 133,
+      "maxDepth": 28,
+      "counts": {
+        "quota-saturated": 69,
+        "isolation": 6,
+        "closed-pair": 25,
+        "mandatory-partner": 16,
+        "quota-remaining": 17
+      },
+      "refutations": []
+    },
+    {
+      "number": 76,
+      "id": "pacto-124",
+      "steps": 134,
+      "maxDepth": 21,
+      "counts": {
+        "quota-saturated": 73,
+        "closed-pair": 20,
+        "trio": 1,
+        "mandatory-partner": 13,
+        "isolation": 9,
+        "quota-remaining": 16,
+        "refutation": 2
+      },
+      "refutations": [
+        {
+          "steps": 2,
+          "contradiction": "empty-domain"
+        },
+        {
+          "steps": 2,
+          "contradiction": "empty-domain"
+        }
+      ]
+    },
+    {
+      "number": 77,
+      "id": "pacto-123",
+      "steps": 127,
+      "maxDepth": 23,
+      "counts": {
+        "quota-saturated": 68,
+        "mandatory-partner": 11,
+        "closed-pair": 18,
+        "isolation": 5,
+        "trio": 1,
+        "quota-remaining": 20,
+        "candidate-group": 4
+      },
+      "refutations": []
+    },
+    {
+      "number": 78,
+      "id": "pacto-154",
+      "steps": 135,
+      "maxDepth": 27,
+      "counts": {
+        "quota-saturated": 73,
+        "closed-pair": 20,
+        "mandatory-partner": 19,
+        "quota-remaining": 20,
+        "isolation": 3
+      },
+      "refutations": []
+    },
+    {
+      "number": 79,
+      "id": "pacto-172",
+      "steps": 130,
+      "maxDepth": 29,
+      "counts": {
+        "quota-saturated": 67,
+        "closed-pair": 21,
+        "trio": 2,
+        "mandatory-partner": 18,
+        "isolation": 6,
+        "quota-remaining": 14,
+        "refutation": 2
+      },
+      "refutations": [
+        {
+          "steps": 7,
+          "contradiction": "empty-domain"
+        },
+        {
+          "steps": 6,
+          "contradiction": "empty-domain"
+        }
+      ]
+    },
+    {
+      "number": 80,
+      "id": "pacto-141",
+      "steps": 124,
+      "maxDepth": 33,
+      "counts": {
+        "quota-saturated": 66,
+        "closed-pair": 16,
+        "trio": 2,
+        "mandatory-partner": 16,
+        "isolation": 1,
+        "quota-remaining": 18,
+        "candidate-group": 4,
+        "refutation": 1
+      },
+      "refutations": [
+        {
+          "steps": 10,
+          "contradiction": "empty-domain"
+        }
+      ]
+    }
+  ]
+}

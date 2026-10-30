@@ -1,0 +1,1577 @@
+{
+  "canonicalTopologies": 51,
+  "canonicalClueLayouts": 80,
+  "noThreeConsecutiveTopologies": true,
+  "levels": [
+    {
+      "number": 1,
+      "id": "pacto-v2-001",
+      "discovery": "Cotas por linha e coluna",
+      "clues": 48,
+      "depth": 3,
+      "edgePartnerSteps": 0,
+      "initiallyAmbiguousOrientationSteps": 0,
+      "horizontalPartnerSteps": 0,
+      "verticalPartnerSteps": 0,
+      "groups": 0,
+      "refutations": []
+    },
+    {
+      "number": 2,
+      "id": "pacto-v2-002",
+      "discovery": "Cotas por linha e coluna",
+      "clues": 48,
+      "depth": 3,
+      "edgePartnerSteps": 1,
+      "initiallyAmbiguousOrientationSteps": 1,
+      "horizontalPartnerSteps": 1,
+      "verticalPartnerSteps": 3,
+      "orientationWitness": {
+        "step": 41,
+        "center": 18,
+        "partner": 26,
+        "text": "L3C3 precisa de um parceiro quadrado; só L4C3 pode recebê-lo (vertical)."
+      },
+      "groups": 0,
+      "refutations": []
+    },
+    {
+      "number": 3,
+      "id": "pacto-v2-003",
+      "discovery": "Cotas por linha e coluna",
+      "clues": 48,
+      "depth": 3,
+      "edgePartnerSteps": 0,
+      "initiallyAmbiguousOrientationSteps": 3,
+      "horizontalPartnerSteps": 1,
+      "verticalPartnerSteps": 5,
+      "orientationWitness": {
+        "step": 40,
+        "center": 21,
+        "partner": 29,
+        "text": "L3C6 precisa de um parceiro losango; só L4C6 pode recebê-lo (vertical)."
+      },
+      "groups": 0,
+      "refutations": []
+    },
+    {
+      "number": 4,
+      "id": "pacto-v2-004",
+      "discovery": "Cotas por linha e coluna",
+      "clues": 48,
+      "depth": 4,
+      "edgePartnerSteps": 0,
+      "initiallyAmbiguousOrientationSteps": 0,
+      "horizontalPartnerSteps": 0,
+      "verticalPartnerSteps": 1,
+      "groups": 0,
+      "refutations": []
+    },
+    {
+      "number": 5,
+      "id": "pacto-v2-005",
+      "discovery": "Cotas por linha e coluna",
+      "clues": 48,
+      "depth": 4,
+      "edgePartnerSteps": 1,
+      "initiallyAmbiguousOrientationSteps": 2,
+      "horizontalPartnerSteps": 1,
+      "verticalPartnerSteps": 1,
+      "orientationWitness": {
+        "step": 42,
+        "center": 54,
+        "partner": 53,
+        "text": "L7C7 precisa de um parceiro círculo; só L7C6 pode recebê-lo (horizontal)."
+      },
+      "groups": 0,
+      "refutations": []
+    },
+    {
+      "number": 6,
+      "id": "pacto-v2-006",
+      "discovery": "Parceiro ortogonal obrigatório",
+      "clues": 43,
+      "depth": 4,
+      "edgePartnerSteps": 4,
+      "initiallyAmbiguousOrientationSteps": 1,
+      "horizontalPartnerSteps": 3,
+      "verticalPartnerSteps": 4,
+      "orientationWitness": {
+        "step": 52,
+        "center": 39,
+        "partner": 47,
+        "text": "L5C8 precisa de um parceiro triângulo; só L6C8 pode recebê-lo (vertical)."
+      },
+      "groups": 0,
+      "refutations": []
+    },
+    {
+      "number": 7,
+      "id": "pacto-v2-007",
+      "discovery": "Parceiro ortogonal obrigatório",
+      "clues": 43,
+      "depth": 5,
+      "edgePartnerSteps": 0,
+      "initiallyAmbiguousOrientationSteps": 0,
+      "horizontalPartnerSteps": 2,
+      "verticalPartnerSteps": 1,
+      "groups": 0,
+      "refutations": []
+    },
+    {
+      "number": 8,
+      "id": "pacto-v2-008",
+      "discovery": "Parceiro ortogonal obrigatório",
+      "clues": 43,
+      "depth": 5,
+      "edgePartnerSteps": 2,
+      "initiallyAmbiguousOrientationSteps": 3,
+      "horizontalPartnerSteps": 3,
+      "verticalPartnerSteps": 2,
+      "orientationWitness": {
+        "step": 40,
+        "center": 6,
+        "partner": 14,
+        "text": "L1C7 precisa de um parceiro círculo; só L2C7 pode recebê-lo (vertical)."
+      },
+      "groups": 0,
+      "refutations": []
+    },
+    {
+      "number": 9,
+      "id": "pacto-v2-009",
+      "discovery": "Parceiro ortogonal obrigatório",
+      "clues": 43,
+      "depth": 5,
+      "edgePartnerSteps": 4,
+      "initiallyAmbiguousOrientationSteps": 3,
+      "horizontalPartnerSteps": 1,
+      "verticalPartnerSteps": 4,
+      "orientationWitness": {
+        "step": 44,
+        "center": 8,
+        "partner": 9,
+        "text": "L2C1 precisa de um parceiro losango; só L2C2 pode recebê-lo (horizontal)."
+      },
+      "groups": 0,
+      "refutations": []
+    },
+    {
+      "number": 10,
+      "id": "pacto-v2-010",
+      "discovery": "Parceiro ortogonal obrigatório",
+      "clues": 43,
+      "depth": 6,
+      "edgePartnerSteps": 3,
+      "initiallyAmbiguousOrientationSteps": 0,
+      "horizontalPartnerSteps": 2,
+      "verticalPartnerSteps": 4,
+      "groups": 0,
+      "refutations": []
+    },
+    {
+      "number": 11,
+      "id": "pacto-v2-011",
+      "discovery": "Dupla fechada impede o terceiro",
+      "clues": 39,
+      "depth": 6,
+      "edgePartnerSteps": 1,
+      "initiallyAmbiguousOrientationSteps": 3,
+      "horizontalPartnerSteps": 2,
+      "verticalPartnerSteps": 2,
+      "orientationWitness": {
+        "step": 53,
+        "center": 2,
+        "partner": 3,
+        "text": "L1C3 precisa de um parceiro círculo; só L1C4 pode recebê-lo (horizontal)."
+      },
+      "groups": 0,
+      "refutations": []
+    },
+    {
+      "number": 12,
+      "id": "pacto-v2-012",
+      "discovery": "Dupla fechada impede o terceiro",
+      "clues": 39,
+      "depth": 6,
+      "edgePartnerSteps": 4,
+      "initiallyAmbiguousOrientationSteps": 6,
+      "horizontalPartnerSteps": 5,
+      "verticalPartnerSteps": 2,
+      "orientationWitness": {
+        "step": 52,
+        "center": 3,
+        "partner": 4,
+        "text": "L1C4 precisa de um parceiro quadrado; só L1C5 pode recebê-lo (horizontal)."
+      },
+      "groups": 0,
+      "refutations": []
+    },
+    {
+      "number": 13,
+      "id": "pacto-v2-013",
+      "discovery": "Dupla fechada impede o terceiro",
+      "clues": 39,
+      "depth": 7,
+      "edgePartnerSteps": 7,
+      "initiallyAmbiguousOrientationSteps": 3,
+      "horizontalPartnerSteps": 2,
+      "verticalPartnerSteps": 9,
+      "orientationWitness": {
+        "step": 45,
+        "center": 4,
+        "partner": 12,
+        "text": "L1C5 precisa de um parceiro triângulo; só L2C5 pode recebê-lo (vertical)."
+      },
+      "groups": 0,
+      "refutations": []
+    },
+    {
+      "number": 14,
+      "id": "pacto-v2-014",
+      "discovery": "Dupla fechada impede o terceiro",
+      "clues": 39,
+      "depth": 7,
+      "edgePartnerSteps": 3,
+      "initiallyAmbiguousOrientationSteps": 5,
+      "horizontalPartnerSteps": 5,
+      "verticalPartnerSteps": 6,
+      "orientationWitness": {
+        "step": 44,
+        "center": 19,
+        "partner": 18,
+        "text": "L3C4 precisa de um parceiro triângulo; só L3C3 pode recebê-lo (horizontal)."
+      },
+      "groups": 0,
+      "refutations": []
+    },
+    {
+      "number": 15,
+      "id": "pacto-v2-015",
+      "discovery": "Dupla fechada impede o terceiro",
+      "clues": 39,
+      "depth": 7,
+      "edgePartnerSteps": 3,
+      "initiallyAmbiguousOrientationSteps": 2,
+      "horizontalPartnerSteps": 6,
+      "verticalPartnerSteps": 0,
+      "orientationWitness": {
+        "step": 54,
+        "center": 12,
+        "partner": 13,
+        "text": "L2C5 precisa de um parceiro quadrado; só L2C6 pode recebê-lo (horizontal)."
+      },
+      "groups": 0,
+      "refutations": []
+    },
+    {
+      "number": 16,
+      "id": "pacto-002",
+      "discovery": "Parceiro de canto e borda",
+      "clues": 34,
+      "depth": 8,
+      "edgePartnerSteps": 4,
+      "initiallyAmbiguousOrientationSteps": 3,
+      "horizontalPartnerSteps": 4,
+      "verticalPartnerSteps": 4,
+      "orientationWitness": {
+        "step": 61,
+        "center": 3,
+        "partner": 11,
+        "text": "L1C4 precisa de um parceiro losango; só L2C4 pode recebê-lo (vertical)."
+      },
+      "groups": 0,
+      "refutations": []
+    },
+    {
+      "number": 17,
+      "id": "pacto-011",
+      "discovery": "Duas ocorrências, duas posições",
+      "clues": 34,
+      "depth": 8,
+      "edgePartnerSteps": 5,
+      "initiallyAmbiguousOrientationSteps": 7,
+      "horizontalPartnerSteps": 1,
+      "verticalPartnerSteps": 10,
+      "orientationWitness": {
+        "step": 55,
+        "center": 15,
+        "partner": 7,
+        "text": "L2C8 precisa de um parceiro quadrado; só L1C8 pode recebê-lo (vertical)."
+      },
+      "groups": 0,
+      "refutations": []
+    },
+    {
+      "number": 18,
+      "id": "pacto-018",
+      "discovery": "Horizontal ou vertical",
+      "clues": 34,
+      "depth": 9,
+      "edgePartnerSteps": 9,
+      "initiallyAmbiguousOrientationSteps": 6,
+      "horizontalPartnerSteps": 10,
+      "verticalPartnerSteps": 3,
+      "orientationWitness": {
+        "step": 38,
+        "center": 11,
+        "partner": 19,
+        "text": "L2C4 precisa de um parceiro quadrado; só L3C4 pode recebê-lo (vertical)."
+      },
+      "groups": 0,
+      "refutations": []
+    },
+    {
+      "number": 19,
+      "id": "pacto-029",
+      "discovery": "Exclusão ao redor da dupla",
+      "clues": 34,
+      "depth": 9,
+      "edgePartnerSteps": 7,
+      "initiallyAmbiguousOrientationSteps": 7,
+      "horizontalPartnerSteps": 8,
+      "verticalPartnerSteps": 8,
+      "orientationWitness": {
+        "step": 59,
+        "center": 21,
+        "partner": 29,
+        "text": "L3C6 precisa de um parceiro triângulo; só L4C6 pode recebê-lo (vertical)."
+      },
+      "groups": 0,
+      "refutations": []
+    },
+    {
+      "number": 20,
+      "id": "pacto-041",
+      "discovery": "Linha e coluna em sequência",
+      "clues": 34,
+      "depth": 10,
+      "edgePartnerSteps": 3,
+      "initiallyAmbiguousOrientationSteps": 4,
+      "horizontalPartnerSteps": 3,
+      "verticalPartnerSteps": 3,
+      "orientationWitness": {
+        "step": 37,
+        "center": 1,
+        "partner": 9,
+        "text": "L1C2 precisa de um parceiro triângulo; só L2C2 pode recebê-lo (vertical)."
+      },
+      "groups": 0,
+      "refutations": []
+    },
+    {
+      "number": 21,
+      "id": "pacto-056",
+      "discovery": "Parceiro de canto e borda",
+      "clues": 24,
+      "depth": 10,
+      "edgePartnerSteps": 6,
+      "initiallyAmbiguousOrientationSteps": 8,
+      "horizontalPartnerSteps": 7,
+      "verticalPartnerSteps": 4,
+      "orientationWitness": {
+        "step": 54,
+        "center": 24,
+        "partner": 25,
+        "text": "L4C1 precisa de um parceiro círculo; só L4C2 pode recebê-lo (horizontal)."
+      },
+      "groups": 0,
+      "refutations": []
+    },
+    {
+      "number": 22,
+      "id": "pacto-057",
+      "discovery": "Duas ocorrências, duas posições",
+      "clues": 24,
+      "depth": 10,
+      "edgePartnerSteps": 6,
+      "initiallyAmbiguousOrientationSteps": 12,
+      "horizontalPartnerSteps": 3,
+      "verticalPartnerSteps": 11,
+      "orientationWitness": {
+        "step": 28,
+        "center": 8,
+        "partner": 0,
+        "text": "L2C1 precisa de um parceiro círculo; só L1C1 pode recebê-lo (vertical)."
+      },
+      "groups": 0,
+      "refutations": []
+    },
+    {
+      "number": 23,
+      "id": "pacto-023",
+      "discovery": "Horizontal ou vertical",
+      "clues": 34,
+      "depth": 11,
+      "edgePartnerSteps": 2,
+      "initiallyAmbiguousOrientationSteps": 4,
+      "horizontalPartnerSteps": 2,
+      "verticalPartnerSteps": 4,
+      "orientationWitness": {
+        "step": 52,
+        "center": 20,
+        "partner": 28,
+        "text": "L3C5 precisa de um parceiro losango; só L4C5 pode recebê-lo (vertical)."
+      },
+      "groups": 0,
+      "refutations": []
+    },
+    {
+      "number": 24,
+      "id": "pacto-052",
+      "discovery": "Exclusão ao redor da dupla",
+      "clues": 24,
+      "depth": 11,
+      "edgePartnerSteps": 6,
+      "initiallyAmbiguousOrientationSteps": 9,
+      "horizontalPartnerSteps": 9,
+      "verticalPartnerSteps": 5,
+      "orientationWitness": {
+        "step": 58,
+        "center": 26,
+        "partner": 25,
+        "text": "L4C3 precisa de um parceiro círculo; só L4C2 pode recebê-lo (horizontal)."
+      },
+      "groups": 0,
+      "refutations": []
+    },
+    {
+      "number": 25,
+      "id": "pacto-053",
+      "discovery": "Linha e coluna em sequência",
+      "clues": 24,
+      "depth": 12,
+      "edgePartnerSteps": 8,
+      "initiallyAmbiguousOrientationSteps": 8,
+      "horizontalPartnerSteps": 4,
+      "verticalPartnerSteps": 9,
+      "orientationWitness": {
+        "step": 22,
+        "center": 6,
+        "partner": 14,
+        "text": "L1C7 precisa de um parceiro círculo; só L2C7 pode recebê-lo (vertical)."
+      },
+      "groups": 0,
+      "refutations": []
+    },
+    {
+      "number": 26,
+      "id": "pacto-054",
+      "discovery": "Parceiro de canto e borda",
+      "clues": 24,
+      "depth": 12,
+      "edgePartnerSteps": 3,
+      "initiallyAmbiguousOrientationSteps": 6,
+      "horizontalPartnerSteps": 6,
+      "verticalPartnerSteps": 2,
+      "orientationWitness": {
+        "step": 41,
+        "center": 45,
+        "partner": 44,
+        "text": "L6C6 precisa de um parceiro losango; só L6C5 pode recebê-lo (horizontal)."
+      },
+      "groups": 0,
+      "refutations": []
+    },
+    {
+      "number": 27,
+      "id": "pacto-060",
+      "discovery": "Duas ocorrências, duas posições",
+      "clues": 24,
+      "depth": 12,
+      "edgePartnerSteps": 8,
+      "initiallyAmbiguousOrientationSteps": 15,
+      "horizontalPartnerSteps": 14,
+      "verticalPartnerSteps": 4,
+      "orientationWitness": {
+        "step": 41,
+        "center": 15,
+        "partner": 14,
+        "text": "L2C8 precisa de um parceiro círculo; só L2C7 pode recebê-lo (horizontal)."
+      },
+      "groups": 0,
+      "refutations": []
+    },
+    {
+      "number": 28,
+      "id": "pacto-096",
+      "discovery": "Horizontal ou vertical",
+      "clues": 24,
+      "depth": 13,
+      "edgePartnerSteps": 8,
+      "initiallyAmbiguousOrientationSteps": 10,
+      "horizontalPartnerSteps": 3,
+      "verticalPartnerSteps": 14,
+      "orientationWitness": {
+        "step": 28,
+        "center": 1,
+        "partner": 9,
+        "text": "L1C2 precisa de um parceiro círculo; só L2C2 pode recebê-lo (vertical)."
+      },
+      "groups": 0,
+      "refutations": []
+    },
+    {
+      "number": 29,
+      "id": "pacto-084",
+      "discovery": "Exclusão ao redor da dupla",
+      "clues": 24,
+      "depth": 14,
+      "edgePartnerSteps": 5,
+      "initiallyAmbiguousOrientationSteps": 7,
+      "horizontalPartnerSteps": 7,
+      "verticalPartnerSteps": 4,
+      "orientationWitness": {
+        "step": 36,
+        "center": 28,
+        "partner": 29,
+        "text": "L4C5 precisa de um parceiro círculo; só L4C6 pode recebê-lo (horizontal)."
+      },
+      "groups": 0,
+      "refutations": []
+    },
+    {
+      "number": 30,
+      "id": "pacto-087",
+      "discovery": "Linha e coluna em sequência",
+      "clues": 24,
+      "depth": 14,
+      "edgePartnerSteps": 7,
+      "initiallyAmbiguousOrientationSteps": 12,
+      "horizontalPartnerSteps": 4,
+      "verticalPartnerSteps": 18,
+      "orientationWitness": {
+        "step": 30,
+        "center": 11,
+        "partner": 3,
+        "text": "L2C4 precisa de um parceiro losango; só L1C4 pode recebê-lo (vertical)."
+      },
+      "groups": 0,
+      "refutations": []
+    },
+    {
+      "number": 31,
+      "id": "pacto-088",
+      "discovery": "Cota e parceria retornam à região",
+      "clues": 24,
+      "depth": 15,
+      "edgePartnerSteps": 5,
+      "initiallyAmbiguousOrientationSteps": 10,
+      "horizontalPartnerSteps": 9,
+      "verticalPartnerSteps": 5,
+      "orientationWitness": {
+        "step": 31,
+        "center": 34,
+        "partner": 35,
+        "text": "L5C3 precisa de um parceiro círculo; só L5C4 pode recebê-lo (horizontal)."
+      },
+      "groups": 0,
+      "refutations": []
+    },
+    {
+      "number": 32,
+      "id": "pacto-094",
+      "discovery": "Evitar isolamento mesmo com cota livre",
+      "clues": 24,
+      "depth": 15,
+      "edgePartnerSteps": 8,
+      "initiallyAmbiguousOrientationSteps": 5,
+      "horizontalPartnerSteps": 2,
+      "verticalPartnerSteps": 8,
+      "orientationWitness": {
+        "step": 32,
+        "center": 44,
+        "partner": 45,
+        "text": "L6C5 precisa de um parceiro triângulo; só L6C6 pode recebê-lo (horizontal)."
+      },
+      "groups": 0,
+      "refutations": []
+    },
+    {
+      "number": 33,
+      "id": "pacto-064",
+      "discovery": "Orientação comunica duas faixas",
+      "clues": 24,
+      "depth": 16,
+      "edgePartnerSteps": 3,
+      "initiallyAmbiguousOrientationSteps": 5,
+      "horizontalPartnerSteps": 6,
+      "verticalPartnerSteps": 3,
+      "orientationWitness": {
+        "step": 28,
+        "center": 3,
+        "partner": 2,
+        "text": "L1C4 precisa de um parceiro círculo; só L1C3 pode recebê-lo (horizontal)."
+      },
+      "groups": 0,
+      "refutations": []
+    },
+    {
+      "number": 34,
+      "id": "pacto-067",
+      "discovery": "Cota e parceria retornam à região",
+      "clues": 24,
+      "depth": 16,
+      "edgePartnerSteps": 6,
+      "initiallyAmbiguousOrientationSteps": 16,
+      "horizontalPartnerSteps": 7,
+      "verticalPartnerSteps": 10,
+      "orientationWitness": {
+        "step": 39,
+        "center": 21,
+        "partner": 20,
+        "text": "L3C6 precisa de um parceiro quadrado; só L3C5 pode recebê-lo (horizontal)."
+      },
+      "groups": 0,
+      "refutations": []
+    },
+    {
+      "number": 35,
+      "id": "pacto-102",
+      "discovery": "Evitar isolamento mesmo com cota livre",
+      "clues": 15,
+      "depth": 16,
+      "edgePartnerSteps": 6,
+      "initiallyAmbiguousOrientationSteps": 15,
+      "horizontalPartnerSteps": 0,
+      "verticalPartnerSteps": 16,
+      "orientationWitness": {
+        "step": 17,
+        "center": 37,
+        "partner": 45,
+        "text": "L5C6 precisa de um parceiro quadrado; só L6C6 pode recebê-lo (vertical)."
+      },
+      "groups": 0,
+      "refutations": []
+    },
+    {
+      "number": 36,
+      "id": "pacto-106",
+      "discovery": "Orientação comunica duas faixas",
+      "clues": 15,
+      "depth": 16,
+      "edgePartnerSteps": 10,
+      "initiallyAmbiguousOrientationSteps": 15,
+      "horizontalPartnerSteps": 5,
+      "verticalPartnerSteps": 14,
+      "orientationWitness": {
+        "step": 29,
+        "center": 0,
+        "partner": 8,
+        "text": "L1C1 precisa de um parceiro triângulo; só L2C1 pode recebê-lo (vertical)."
+      },
+      "groups": 0,
+      "refutations": []
+    },
+    {
+      "number": 37,
+      "id": "pacto-119",
+      "discovery": "Cota e parceria retornam à região",
+      "clues": 15,
+      "depth": 17,
+      "edgePartnerSteps": 7,
+      "initiallyAmbiguousOrientationSteps": 15,
+      "horizontalPartnerSteps": 15,
+      "verticalPartnerSteps": 4,
+      "orientationWitness": {
+        "step": 18,
+        "center": 3,
+        "partner": 2,
+        "text": "L1C4 precisa de um parceiro quadrado; só L1C3 pode recebê-lo (horizontal)."
+      },
+      "groups": 0,
+      "refutations": []
+    },
+    {
+      "number": 38,
+      "id": "pacto-125",
+      "discovery": "Evitar isolamento mesmo com cota livre",
+      "clues": 15,
+      "depth": 17,
+      "edgePartnerSteps": 11,
+      "initiallyAmbiguousOrientationSteps": 13,
+      "horizontalPartnerSteps": 7,
+      "verticalPartnerSteps": 8,
+      "orientationWitness": {
+        "step": 19,
+        "center": 1,
+        "partner": 0,
+        "text": "L1C2 precisa de um parceiro triângulo; só L1C1 pode recebê-lo (horizontal)."
+      },
+      "groups": 0,
+      "refutations": []
+    },
+    {
+      "number": 39,
+      "id": "pacto-122",
+      "discovery": "Orientação comunica duas faixas",
+      "clues": 15,
+      "depth": 18,
+      "edgePartnerSteps": 6,
+      "initiallyAmbiguousOrientationSteps": 8,
+      "horizontalPartnerSteps": 6,
+      "verticalPartnerSteps": 5,
+      "orientationWitness": {
+        "step": 33,
+        "center": 53,
+        "partner": 52,
+        "text": "L7C6 precisa de um parceiro círculo; só L7C5 pode recebê-lo (horizontal)."
+      },
+      "groups": 0,
+      "refutations": []
+    },
+    {
+      "number": 40,
+      "id": "pacto-140",
+      "discovery": "Cota e parceria retornam à região",
+      "clues": 15,
+      "depth": 18,
+      "edgePartnerSteps": 6,
+      "initiallyAmbiguousOrientationSteps": 9,
+      "horizontalPartnerSteps": 8,
+      "verticalPartnerSteps": 4,
+      "orientationWitness": {
+        "step": 25,
+        "center": 0,
+        "partner": 8,
+        "text": "L1C1 precisa de um parceiro círculo; só L2C1 pode recebê-lo (vertical)."
+      },
+      "groups": 0,
+      "refutations": []
+    },
+    {
+      "number": 41,
+      "id": "pacto-095",
+      "discovery": "Evitar isolamento mesmo com cota livre",
+      "clues": 24,
+      "depth": 19,
+      "edgePartnerSteps": 9,
+      "initiallyAmbiguousOrientationSteps": 13,
+      "horizontalPartnerSteps": 7,
+      "verticalPartnerSteps": 11,
+      "orientationWitness": {
+        "step": 31,
+        "center": 48,
+        "partner": 49,
+        "text": "L7C1 precisa de um parceiro quadrado; só L7C2 pode recebê-lo (horizontal)."
+      },
+      "groups": 0,
+      "refutations": []
+    },
+    {
+      "number": 42,
+      "id": "pacto-098",
+      "discovery": "Orientação comunica duas faixas",
+      "clues": 24,
+      "depth": 19,
+      "edgePartnerSteps": 1,
+      "initiallyAmbiguousOrientationSteps": 8,
+      "horizontalPartnerSteps": 0,
+      "verticalPartnerSteps": 10,
+      "orientationWitness": {
+        "step": 33,
+        "center": 43,
+        "partner": 35,
+        "text": "L6C4 precisa de um parceiro triângulo; só L5C4 pode recebê-lo (vertical)."
+      },
+      "groups": 0,
+      "refutations": []
+    },
+    {
+      "number": 43,
+      "id": "pacto-113",
+      "discovery": "Cota e parceria retornam à região",
+      "clues": 15,
+      "depth": 19,
+      "edgePartnerSteps": 4,
+      "initiallyAmbiguousOrientationSteps": 11,
+      "horizontalPartnerSteps": 8,
+      "verticalPartnerSteps": 6,
+      "orientationWitness": {
+        "step": 21,
+        "center": 22,
+        "partner": 23,
+        "text": "L3C7 precisa de um parceiro triângulo; só L3C8 pode recebê-lo (horizontal)."
+      },
+      "groups": 0,
+      "refutations": []
+    },
+    {
+      "number": 44,
+      "id": "pacto-132",
+      "discovery": "Evitar isolamento mesmo com cota livre",
+      "clues": 15,
+      "depth": 21,
+      "edgePartnerSteps": 8,
+      "initiallyAmbiguousOrientationSteps": 16,
+      "horizontalPartnerSteps": 9,
+      "verticalPartnerSteps": 9,
+      "orientationWitness": {
+        "step": 22,
+        "center": 21,
+        "partner": 29,
+        "text": "L3C6 precisa de um parceiro quadrado; só L4C6 pode recebê-lo (vertical)."
+      },
+      "groups": 0,
+      "refutations": []
+    },
+    {
+      "number": 45,
+      "id": "pacto-162",
+      "discovery": "Orientação comunica duas faixas",
+      "clues": 10,
+      "depth": 22,
+      "edgePartnerSteps": 7,
+      "initiallyAmbiguousOrientationSteps": 15,
+      "horizontalPartnerSteps": 4,
+      "verticalPartnerSteps": 11,
+      "orientationWitness": {
+        "step": 16,
+        "center": 3,
+        "partner": 11,
+        "text": "L1C4 precisa de um parceiro círculo; só L2C4 pode recebê-lo (vertical)."
+      },
+      "groups": 0,
+      "refutations": []
+    },
+    {
+      "number": 46,
+      "id": "pacto-103",
+      "discovery": "Conjunto de candidatas e capacidade da faixa",
+      "clues": 15,
+      "depth": 19,
+      "edgePartnerSteps": 6,
+      "initiallyAmbiguousOrientationSteps": 11,
+      "horizontalPartnerSteps": 3,
+      "verticalPartnerSteps": 9,
+      "orientationWitness": {
+        "step": 11,
+        "center": 1,
+        "partner": 9,
+        "text": "L1C2 precisa de um parceiro círculo; só L2C2 pode recebê-lo (vertical)."
+      },
+      "groups": 2,
+      "refutations": []
+    },
+    {
+      "number": 47,
+      "id": "pacto-099",
+      "discovery": "Hipótese curta termina em contradição",
+      "clues": 24,
+      "depth": 18,
+      "edgePartnerSteps": 3,
+      "initiallyAmbiguousOrientationSteps": 6,
+      "horizontalPartnerSteps": 7,
+      "verticalPartnerSteps": 3,
+      "orientationWitness": {
+        "step": 50,
+        "center": 32,
+        "partner": 40,
+        "text": "L5C1 precisa de um parceiro losango; só L6C1 pode recebê-lo (vertical)."
+      },
+      "groups": 0,
+      "refutations": [
+        8,
+        2
+      ]
+    },
+    {
+      "number": 48,
+      "id": "pacto-v2-101",
+      "discovery": "Compatibilidade entre vários pares",
+      "clues": 17,
+      "depth": 19,
+      "edgePartnerSteps": 7,
+      "initiallyAmbiguousOrientationSteps": 12,
+      "horizontalPartnerSteps": 1,
+      "verticalPartnerSteps": 14,
+      "orientationWitness": {
+        "step": 30,
+        "center": 17,
+        "partner": 18,
+        "text": "L3C2 precisa de um parceiro triângulo; só L3C3 pode recebê-lo (horizontal)."
+      },
+      "groups": 5,
+      "refutations": [
+        2
+      ]
+    },
+    {
+      "number": 49,
+      "id": "pacto-v2-103",
+      "discovery": "Conjunto de candidatas e capacidade da faixa",
+      "clues": 19,
+      "depth": 20,
+      "edgePartnerSteps": 9,
+      "initiallyAmbiguousOrientationSteps": 18,
+      "horizontalPartnerSteps": 5,
+      "verticalPartnerSteps": 18,
+      "orientationWitness": {
+        "step": 29,
+        "center": 1,
+        "partner": 9,
+        "text": "L1C2 precisa de um parceiro círculo; só L2C2 pode recebê-lo (vertical)."
+      },
+      "groups": 5,
+      "refutations": [
+        6,
+        8
+      ]
+    },
+    {
+      "number": 50,
+      "id": "pacto-v2-107",
+      "discovery": "Hipótese curta termina em contradição",
+      "clues": 18,
+      "depth": 19,
+      "edgePartnerSteps": 6,
+      "initiallyAmbiguousOrientationSteps": 11,
+      "horizontalPartnerSteps": 6,
+      "verticalPartnerSteps": 8,
+      "orientationWitness": {
+        "step": 22,
+        "center": 33,
+        "partner": 41,
+        "text": "L5C2 precisa de um parceiro quadrado; só L6C2 pode recebê-lo (vertical)."
+      },
+      "groups": 2,
+      "refutations": [
+        9,
+        9,
+        7,
+        4,
+        8,
+        4,
+        8,
+        3
+      ]
+    },
+    {
+      "number": 51,
+      "id": "pacto-116",
+      "discovery": "Compatibilidade entre vários pares",
+      "clues": 15,
+      "depth": 20,
+      "edgePartnerSteps": 5,
+      "initiallyAmbiguousOrientationSteps": 11,
+      "horizontalPartnerSteps": 2,
+      "verticalPartnerSteps": 10,
+      "orientationWitness": {
+        "step": 30,
+        "center": 25,
+        "partner": 17,
+        "text": "L4C2 precisa de um parceiro triângulo; só L3C2 pode recebê-lo (vertical)."
+      },
+      "groups": 0,
+      "refutations": [
+        2,
+        2
+      ]
+    },
+    {
+      "number": 52,
+      "id": "pacto-v2-102",
+      "discovery": "Conjunto de candidatas e capacidade da faixa",
+      "clues": 16,
+      "depth": 22,
+      "edgePartnerSteps": 8,
+      "initiallyAmbiguousOrientationSteps": 13,
+      "horizontalPartnerSteps": 9,
+      "verticalPartnerSteps": 7,
+      "orientationWitness": {
+        "step": 22,
+        "center": 32,
+        "partner": 33,
+        "text": "L5C1 precisa de um parceiro quadrado; só L5C2 pode recebê-lo (horizontal)."
+      },
+      "groups": 8,
+      "refutations": [
+        7
+      ]
+    },
+    {
+      "number": 53,
+      "id": "pacto-139",
+      "discovery": "Hipótese curta termina em contradição",
+      "clues": 12,
+      "depth": 20,
+      "edgePartnerSteps": 7,
+      "initiallyAmbiguousOrientationSteps": 10,
+      "horizontalPartnerSteps": 3,
+      "verticalPartnerSteps": 7,
+      "orientationWitness": {
+        "step": 32,
+        "center": 7,
+        "partner": 6,
+        "text": "L1C8 precisa de um parceiro losango; só L1C7 pode recebê-lo (horizontal)."
+      },
+      "groups": 0,
+      "refutations": [
+        10
+      ]
+    },
+    {
+      "number": 54,
+      "id": "pacto-100",
+      "discovery": "Compatibilidade entre vários pares",
+      "clues": 15,
+      "depth": 21,
+      "edgePartnerSteps": 8,
+      "initiallyAmbiguousOrientationSteps": 16,
+      "horizontalPartnerSteps": 7,
+      "verticalPartnerSteps": 11,
+      "orientationWitness": {
+        "step": 15,
+        "center": 9,
+        "partner": 1,
+        "text": "L2C2 precisa de um parceiro triângulo; só L1C2 pode recebê-lo (vertical)."
+      },
+      "groups": 0,
+      "refutations": [
+        7
+      ]
+    },
+    {
+      "number": 55,
+      "id": "pacto-v2-104",
+      "discovery": "Conjunto de candidatas e capacidade da faixa",
+      "clues": 17,
+      "depth": 22,
+      "edgePartnerSteps": 6,
+      "initiallyAmbiguousOrientationSteps": 8,
+      "horizontalPartnerSteps": 7,
+      "verticalPartnerSteps": 3,
+      "orientationWitness": {
+        "step": 31,
+        "center": 1,
+        "partner": 9,
+        "text": "L1C2 precisa de um parceiro quadrado; só L2C2 pode recebê-lo (vertical)."
+      },
+      "groups": 3,
+      "refutations": [
+        10,
+        5
+      ]
+    },
+    {
+      "number": 56,
+      "id": "pacto-118",
+      "discovery": "Hipótese curta termina em contradição",
+      "clues": 15,
+      "depth": 22,
+      "edgePartnerSteps": 5,
+      "initiallyAmbiguousOrientationSteps": 15,
+      "horizontalPartnerSteps": 9,
+      "verticalPartnerSteps": 8,
+      "orientationWitness": {
+        "step": 26,
+        "center": 12,
+        "partner": 4,
+        "text": "L2C5 precisa de um parceiro triângulo; só L1C5 pode recebê-lo (vertical)."
+      },
+      "groups": 0,
+      "refutations": [
+        3,
+        6
+      ]
+    },
+    {
+      "number": 57,
+      "id": "pacto-127",
+      "discovery": "Compatibilidade entre vários pares",
+      "clues": 15,
+      "depth": 22,
+      "edgePartnerSteps": 5,
+      "initiallyAmbiguousOrientationSteps": 13,
+      "horizontalPartnerSteps": 5,
+      "verticalPartnerSteps": 9,
+      "orientationWitness": {
+        "step": 21,
+        "center": 26,
+        "partner": 25,
+        "text": "L4C3 precisa de um parceiro triângulo; só L4C2 pode recebê-lo (horizontal)."
+      },
+      "groups": 0,
+      "refutations": [
+        6
+      ]
+    },
+    {
+      "number": 58,
+      "id": "pacto-v2-106",
+      "discovery": "Conjunto de candidatas e capacidade da faixa",
+      "clues": 19,
+      "depth": 22,
+      "edgePartnerSteps": 2,
+      "initiallyAmbiguousOrientationSteps": 7,
+      "horizontalPartnerSteps": 4,
+      "verticalPartnerSteps": 5,
+      "orientationWitness": {
+        "step": 28,
+        "center": 2,
+        "partner": 3,
+        "text": "L1C3 precisa de um parceiro círculo; só L1C4 pode recebê-lo (horizontal)."
+      },
+      "groups": 10,
+      "refutations": [
+        8,
+        3,
+        5,
+        4
+      ]
+    },
+    {
+      "number": 59,
+      "id": "pacto-186",
+      "discovery": "Hipótese curta termina em contradição",
+      "clues": 15,
+      "depth": 23,
+      "edgePartnerSteps": 7,
+      "initiallyAmbiguousOrientationSteps": 12,
+      "horizontalPartnerSteps": 6,
+      "verticalPartnerSteps": 7,
+      "orientationWitness": {
+        "step": 26,
+        "center": 17,
+        "partner": 25,
+        "text": "L3C2 precisa de um parceiro triângulo; só L4C2 pode recebê-lo (vertical)."
+      },
+      "groups": 0,
+      "refutations": [
+        2
+      ]
+    },
+    {
+      "number": 60,
+      "id": "pacto-138",
+      "discovery": "Compatibilidade entre vários pares",
+      "clues": 12,
+      "depth": 23,
+      "edgePartnerSteps": 1,
+      "initiallyAmbiguousOrientationSteps": 12,
+      "horizontalPartnerSteps": 4,
+      "verticalPartnerSteps": 11,
+      "orientationWitness": {
+        "step": 24,
+        "center": 28,
+        "partner": 20,
+        "text": "L4C5 precisa de um parceiro quadrado; só L3C5 pode recebê-lo (vertical)."
+      },
+      "groups": 0,
+      "refutations": []
+    },
+    {
+      "number": 61,
+      "id": "pacto-146",
+      "discovery": "Entrada evidente, desenvolvimento remoto",
+      "clues": 15,
+      "depth": 22,
+      "edgePartnerSteps": 6,
+      "initiallyAmbiguousOrientationSteps": 18,
+      "horizontalPartnerSteps": 9,
+      "verticalPartnerSteps": 10,
+      "orientationWitness": {
+        "step": 17,
+        "center": 4,
+        "partner": 12,
+        "text": "L1C5 precisa de um parceiro quadrado; só L2C5 pode recebê-lo (vertical)."
+      },
+      "groups": 0,
+      "refutations": [
+        4,
+        7,
+        8
+      ]
+    },
+    {
+      "number": 62,
+      "id": "pacto-166",
+      "discovery": "Orientações encadeadas entre linhas e colunas",
+      "clues": 11,
+      "depth": 22,
+      "edgePartnerSteps": 11,
+      "initiallyAmbiguousOrientationSteps": 20,
+      "horizontalPartnerSteps": 5,
+      "verticalPartnerSteps": 16,
+      "orientationWitness": {
+        "step": 10,
+        "center": 42,
+        "partner": 34,
+        "text": "L6C3 precisa de um parceiro círculo; só L5C3 pode recebê-lo (vertical)."
+      },
+      "groups": 0,
+      "refutations": [
+        10
+      ]
+    },
+    {
+      "number": 63,
+      "id": "pacto-v2-201",
+      "discovery": "Compacto: hipótese curta necessária apesar das pistas",
+      "clues": 38,
+      "depth": 16,
+      "edgePartnerSteps": 1,
+      "initiallyAmbiguousOrientationSteps": 8,
+      "horizontalPartnerSteps": 2,
+      "verticalPartnerSteps": 7,
+      "orientationWitness": {
+        "step": 37,
+        "center": 19,
+        "partner": 27,
+        "text": "L3C4 precisa de um parceiro losango; só L4C4 pode recebê-lo (vertical)."
+      },
+      "groups": 0,
+      "refutations": [
+        7
+      ]
+    },
+    {
+      "number": 64,
+      "id": "pacto-104",
+      "discovery": "Entrada evidente, desenvolvimento remoto",
+      "clues": 15,
+      "depth": 24,
+      "edgePartnerSteps": 9,
+      "initiallyAmbiguousOrientationSteps": 11,
+      "horizontalPartnerSteps": 4,
+      "verticalPartnerSteps": 9,
+      "orientationWitness": {
+        "step": 25,
+        "center": 4,
+        "partner": 12,
+        "text": "L1C5 precisa de um parceiro círculo; só L2C5 pode recebê-lo (vertical)."
+      },
+      "groups": 0,
+      "refutations": []
+    },
+    {
+      "number": 65,
+      "id": "pacto-107",
+      "discovery": "Orientações encadeadas entre linhas e colunas",
+      "clues": 15,
+      "depth": 24,
+      "edgePartnerSteps": 7,
+      "initiallyAmbiguousOrientationSteps": 14,
+      "horizontalPartnerSteps": 7,
+      "verticalPartnerSteps": 9,
+      "orientationWitness": {
+        "step": 14,
+        "center": 0,
+        "partner": 1,
+        "text": "L1C1 precisa de um parceiro círculo; só L1C2 pode recebê-lo (horizontal)."
+      },
+      "groups": 0,
+      "refutations": [
+        3
+      ]
+    },
+    {
+      "number": 66,
+      "id": "pacto-171",
+      "discovery": "Cadeia profunda de cotas e parceiros",
+      "clues": 11,
+      "depth": 24,
+      "edgePartnerSteps": 8,
+      "initiallyAmbiguousOrientationSteps": 17,
+      "horizontalPartnerSteps": 10,
+      "verticalPartnerSteps": 8,
+      "orientationWitness": {
+        "step": 16,
+        "center": 0,
+        "partner": 1,
+        "text": "L1C1 precisa de um parceiro círculo; só L1C2 pode recebê-lo (horizontal)."
+      },
+      "groups": 0,
+      "refutations": []
+    },
+    {
+      "number": 67,
+      "id": "pacto-109",
+      "discovery": "Entrada evidente, desenvolvimento remoto",
+      "clues": 15,
+      "depth": 25,
+      "edgePartnerSteps": 9,
+      "initiallyAmbiguousOrientationSteps": 16,
+      "horizontalPartnerSteps": 4,
+      "verticalPartnerSteps": 12,
+      "orientationWitness": {
+        "step": 12,
+        "center": 3,
+        "partner": 11,
+        "text": "L1C4 precisa de um parceiro círculo; só L2C4 pode recebê-lo (vertical)."
+      },
+      "groups": 0,
+      "refutations": [
+        6
+      ]
+    },
+    {
+      "number": 68,
+      "id": "pacto-v2-202",
+      "discovery": "Compacto: hipótese curta necessária apesar das pistas",
+      "clues": 34,
+      "depth": 16,
+      "edgePartnerSteps": 1,
+      "initiallyAmbiguousOrientationSteps": 5,
+      "horizontalPartnerSteps": 5,
+      "verticalPartnerSteps": 3,
+      "orientationWitness": {
+        "step": 43,
+        "center": 10,
+        "partner": 11,
+        "text": "L2C3 precisa de um parceiro losango; só L2C4 pode recebê-lo (horizontal)."
+      },
+      "groups": 0,
+      "refutations": [
+        6,
+        3
+      ]
+    },
+    {
+      "number": 69,
+      "id": "pacto-105",
+      "discovery": "Cadeia profunda de cotas e parceiros",
+      "clues": 15,
+      "depth": 26,
+      "edgePartnerSteps": 1,
+      "initiallyAmbiguousOrientationSteps": 9,
+      "horizontalPartnerSteps": 9,
+      "verticalPartnerSteps": 3,
+      "orientationWitness": {
+        "step": 29,
+        "center": 10,
+        "partner": 2,
+        "text": "L2C3 precisa de um parceiro triângulo; só L1C3 pode recebê-lo (vertical)."
+      },
+      "groups": 0,
+      "refutations": []
+    },
+    {
+      "number": 70,
+      "id": "pacto-120",
+      "discovery": "Entrada evidente, desenvolvimento remoto",
+      "clues": 15,
+      "depth": 26,
+      "edgePartnerSteps": 4,
+      "initiallyAmbiguousOrientationSteps": 12,
+      "horizontalPartnerSteps": 7,
+      "verticalPartnerSteps": 8,
+      "orientationWitness": {
+        "step": 17,
+        "center": 41,
+        "partner": 33,
+        "text": "L6C2 precisa de um parceiro círculo; só L5C2 pode recebê-lo (vertical)."
+      },
+      "groups": 0,
+      "refutations": []
+    },
+    {
+      "number": 71,
+      "id": "pacto-121",
+      "discovery": "Orientações encadeadas entre linhas e colunas",
+      "clues": 11,
+      "depth": 26,
+      "edgePartnerSteps": 11,
+      "initiallyAmbiguousOrientationSteps": 12,
+      "horizontalPartnerSteps": 8,
+      "verticalPartnerSteps": 9,
+      "orientationWitness": {
+        "step": 10,
+        "center": 28,
+        "partner": 27,
+        "text": "L4C5 precisa de um parceiro quadrado; só L4C4 pode recebê-lo (horizontal)."
+      },
+      "groups": 0,
+      "refutations": [
+        7,
+        6,
+        8,
+        5
+      ]
+    },
+    {
+      "number": 72,
+      "id": "pacto-156",
+      "discovery": "Cadeia profunda de cotas e parceiros",
+      "clues": 9,
+      "depth": 26,
+      "edgePartnerSteps": 8,
+      "initiallyAmbiguousOrientationSteps": 9,
+      "horizontalPartnerSteps": 6,
+      "verticalPartnerSteps": 3,
+      "orientationWitness": {
+        "step": 17,
+        "center": 15,
+        "partner": 14,
+        "text": "L2C8 precisa de um parceiro círculo; só L2C7 pode recebê-lo (horizontal)."
+      },
+      "groups": 0,
+      "refutations": [
+        9,
+        5
+      ]
+    },
+    {
+      "number": 73,
+      "id": "pacto-v2-203",
+      "discovery": "Compacto: hipótese curta necessária apesar das pistas",
+      "clues": 37,
+      "depth": 15,
+      "edgePartnerSteps": 3,
+      "initiallyAmbiguousOrientationSteps": 3,
+      "horizontalPartnerSteps": 2,
+      "verticalPartnerSteps": 2,
+      "orientationWitness": {
+        "step": 45,
+        "center": 5,
+        "partner": 13,
+        "text": "L1C6 precisa de um parceiro quadrado; só L2C6 pode recebê-lo (vertical)."
+      },
+      "groups": 0,
+      "refutations": [
+        4
+      ]
+    },
+    {
+      "number": 74,
+      "id": "pacto-136",
+      "discovery": "Orientações encadeadas entre linhas e colunas",
+      "clues": 15,
+      "depth": 28,
+      "edgePartnerSteps": 6,
+      "initiallyAmbiguousOrientationSteps": 13,
+      "horizontalPartnerSteps": 0,
+      "verticalPartnerSteps": 14,
+      "orientationWitness": {
+        "step": 14,
+        "center": 25,
+        "partner": 17,
+        "text": "L4C2 precisa de um parceiro triângulo; só L3C2 pode recebê-lo (vertical)."
+      },
+      "groups": 0,
+      "refutations": []
+    },
+    {
+      "number": 75,
+      "id": "pacto-178",
+      "discovery": "Cadeia profunda de cotas e parceiros",
+      "clues": 15,
+      "depth": 28,
+      "edgePartnerSteps": 4,
+      "initiallyAmbiguousOrientationSteps": 14,
+      "horizontalPartnerSteps": 6,
+      "verticalPartnerSteps": 10,
+      "orientationWitness": {
+        "step": 28,
+        "center": 32,
+        "partner": 40,
+        "text": "L5C1 precisa de um parceiro círculo; só L6C1 pode recebê-lo (vertical)."
+      },
+      "groups": 0,
+      "refutations": []
+    },
+    {
+      "number": 76,
+      "id": "pacto-124",
+      "discovery": "Síntese 1: orientação decisiva",
+      "clues": 15,
+      "depth": 21,
+      "edgePartnerSteps": 7,
+      "initiallyAmbiguousOrientationSteps": 8,
+      "horizontalPartnerSteps": 7,
+      "verticalPartnerSteps": 6,
+      "orientationWitness": {
+        "step": 33,
+        "center": 26,
+        "partner": 27,
+        "text": "L4C3 precisa de um parceiro quadrado; só L4C4 pode recebê-lo (horizontal)."
+      },
+      "groups": 0,
+      "refutations": [
+        2,
+        2
+      ]
+    },
+    {
+      "number": 77,
+      "id": "pacto-123",
+      "discovery": "Síntese 2: restrição coletiva de uma faixa",
+      "clues": 15,
+      "depth": 23,
+      "edgePartnerSteps": 8,
+      "initiallyAmbiguousOrientationSteps": 9,
+      "horizontalPartnerSteps": 7,
+      "verticalPartnerSteps": 4,
+      "orientationWitness": {
+        "step": 14,
+        "center": 10,
+        "partner": 9,
+        "text": "L2C3 precisa de um parceiro círculo; só L2C2 pode recebê-lo (horizontal)."
+      },
+      "groups": 4,
+      "refutations": []
+    },
+    {
+      "number": 78,
+      "id": "pacto-154",
+      "discovery": "Síntese 3: parceiros obrigatórios com efeito remoto",
+      "clues": 9,
+      "depth": 27,
+      "edgePartnerSteps": 10,
+      "initiallyAmbiguousOrientationSteps": 17,
+      "horizontalPartnerSteps": 6,
+      "verticalPartnerSteps": 13,
+      "orientationWitness": {
+        "step": 19,
+        "center": 60,
+        "partner": 52,
+        "text": "L8C5 precisa de um parceiro círculo; só L7C5 pode recebê-lo (vertical)."
+      },
+      "groups": 0,
+      "refutations": []
+    },
+    {
+      "number": 79,
+      "id": "pacto-172",
+      "discovery": "Síntese 4: hipótese refutada por cotas e duplas",
+      "clues": 15,
+      "depth": 29,
+      "edgePartnerSteps": 8,
+      "initiallyAmbiguousOrientationSteps": 15,
+      "horizontalPartnerSteps": 3,
+      "verticalPartnerSteps": 15,
+      "orientationWitness": {
+        "step": 15,
+        "center": 38,
+        "partner": 46,
+        "text": "L5C7 precisa de um parceiro triângulo; só L6C7 pode recebê-lo (vertical)."
+      },
+      "groups": 0,
+      "refutations": [
+        7,
+        6
+      ]
+    },
+    {
+      "number": 80,
+      "id": "pacto-141",
+      "discovery": "Síntese 5: integração final",
+      "clues": 15,
+      "depth": 33,
+      "edgePartnerSteps": 9,
+      "initiallyAmbiguousOrientationSteps": 15,
+      "horizontalPartnerSteps": 10,
+      "verticalPartnerSteps": 6,
+      "orientationWitness": {
+        "step": 21,
+        "center": 23,
+        "partner": 22,
+        "text": "L3C8 precisa de um parceiro quadrado; só L3C7 pode recebê-lo (horizontal)."
+      },
+      "groups": 4,
+      "refutations": [
+        10
+      ]
+    }
+  ]
+}

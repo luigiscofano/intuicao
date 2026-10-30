@@ -1,0 +1,645 @@
+{
+  "method": "Independent finite domains: symbol-subset line capacity + explicitly enumerated orthogonal partner neighborhoods + exhaustive DFS; no budgets and no reference in search",
+  "levels": [
+    {
+      "number": 1,
+      "id": "pacto-v2-001",
+      "solutionCount": 1,
+      "searchCompleted": true,
+      "nodes": 1,
+      "clues": 48
+    },
+    {
+      "number": 2,
+      "id": "pacto-v2-002",
+      "solutionCount": 1,
+      "searchCompleted": true,
+      "nodes": 1,
+      "clues": 48
+    },
+    {
+      "number": 3,
+      "id": "pacto-v2-003",
+      "solutionCount": 1,
+      "searchCompleted": true,
+      "nodes": 1,
+      "clues": 48
+    },
+    {
+      "number": 4,
+      "id": "pacto-v2-004",
+      "solutionCount": 1,
+      "searchCompleted": true,
+      "nodes": 1,
+      "clues": 48
+    },
+    {
+      "number": 5,
+      "id": "pacto-v2-005",
+      "solutionCount": 1,
+      "searchCompleted": true,
+      "nodes": 1,
+      "clues": 48
+    },
+    {
+      "number": 6,
+      "id": "pacto-v2-006",
+      "solutionCount": 1,
+      "searchCompleted": true,
+      "nodes": 1,
+      "clues": 43
+    },
+    {
+      "number": 7,
+      "id": "pacto-v2-007",
+      "solutionCount": 1,
+      "searchCompleted": true,
+      "nodes": 1,
+      "clues": 43
+    },
+    {
+      "number": 8,
+      "id": "pacto-v2-008",
+      "solutionCount": 1,
+      "searchCompleted": true,
+      "nodes": 1,
+      "clues": 43
+    },
+    {
+      "number": 9,
+      "id": "pacto-v2-009",
+      "solutionCount": 1,
+      "searchCompleted": true,
+      "nodes": 1,
+      "clues": 43
+    },
+    {
+      "number": 10,
+      "id": "pacto-v2-010",
+      "solutionCount": 1,
+      "searchCompleted": true,
+      "nodes": 1,
+      "clues": 43
+    },
+    {
+      "number": 11,
+      "id": "pacto-v2-011",
+      "solutionCount": 1,
+      "searchCompleted": true,
+      "nodes": 1,
+      "clues": 39
+    },
+    {
+      "number": 12,
+      "id": "pacto-v2-012",
+      "solutionCount": 1,
+      "searchCompleted": true,
+      "nodes": 1,
+      "clues": 39
+    },
+    {
+      "number": 13,
+      "id": "pacto-v2-013",
+      "solutionCount": 1,
+      "searchCompleted": true,
+      "nodes": 1,
+      "clues": 39
+    },
+    {
+      "number": 14,
+      "id": "pacto-v2-014",
+      "solutionCount": 1,
+      "searchCompleted": true,
+      "nodes": 1,
+      "clues": 39
+    },
+    {
+      "number": 15,
+      "id": "pacto-v2-015",
+      "solutionCount": 1,
+      "searchCompleted": true,
+      "nodes": 1,
+      "clues": 39
+    },
+    {
+      "number": 16,
+      "id": "pacto-002",
+      "solutionCount": 1,
+      "searchCompleted": true,
+      "nodes": 1,
+      "clues": 34
+    },
+    {
+      "number": 17,
+      "id": "pacto-011",
+      "solutionCount": 1,
+      "searchCompleted": true,
+      "nodes": 1,
+      "clues": 34
+    },
+    {
+      "number": 18,
+      "id": "pacto-018",
+      "solutionCount": 1,
+      "searchCompleted": true,
+      "nodes": 1,
+      "clues": 34
+    },
+    {
+      "number": 19,
+      "id": "pacto-029",
+      "solutionCount": 1,
+      "searchCompleted": true,
+      "nodes": 1,
+      "clues": 34
+    },
+    {
+      "number": 20,
+      "id": "pacto-041",
+      "solutionCount": 1,
+      "searchCompleted": true,
+      "nodes": 1,
+      "clues": 34
+    },
+    {
+      "number": 21,
+      "id": "pacto-056",
+      "solutionCount": 1,
+      "searchCompleted": true,
+      "nodes": 1,
+      "clues": 24
+    },
+    {
+      "number": 22,
+      "id": "pacto-057",
+      "solutionCount": 1,
+      "searchCompleted": true,
+      "nodes": 1,
+      "clues": 24
+    },
+    {
+      "number": 23,
+      "id": "pacto-023",
+      "solutionCount": 1,
+      "searchCompleted": true,
+      "nodes": 1,
+      "clues": 34
+    },
+    {
+      "number": 24,
+      "id": "pacto-052",
+      "solutionCount": 1,
+      "searchCompleted": true,
+      "nodes": 1,
+      "clues": 24
+    },
+    {
+      "number": 25,
+      "id": "pacto-053",
+      "solutionCount": 1,
+      "searchCompleted": true,
+      "nodes": 1,
+      "clues": 24
+    },
+    {
+      "number": 26,
+      "id": "pacto-054",
+      "solutionCount": 1,
+      "searchCompleted": true,
+      "nodes": 1,
+      "clues": 24
+    },
+    {
+      "number": 27,
+      "id": "pacto-060",
+      "solutionCount": 1,
+      "searchCompleted": true,
+      "nodes": 1,
+      "clues": 24
+    },
+    {
+      "number": 28,
+      "id": "pacto-096",
+      "solutionCount": 1,
+      "searchCompleted": true,
+      "nodes": 1,
+      "clues": 24
+    },
+    {
+      "number": 29,
+      "id": "pacto-084",
+      "solutionCount": 1,
+      "searchCompleted": true,
+      "nodes": 1,
+      "clues": 24
+    },
+    {
+      "number": 30,
+      "id": "pacto-087",
+      "solutionCount": 1,
+      "searchCompleted": true,
+      "nodes": 1,
+      "clues": 24
+    },
+    {
+      "number": 31,
+      "id": "pacto-088",
+      "solutionCount": 1,
+      "searchCompleted": true,
+      "nodes": 1,
+      "clues": 24
+    },
+    {
+      "number": 32,
+      "id": "pacto-094",
+      "solutionCount": 1,
+      "searchCompleted": true,
+      "nodes": 1,
+      "clues": 24
+    },
+    {
+      "number": 33,
+      "id": "pacto-064",
+      "solutionCount": 1,
+      "searchCompleted": true,
+      "nodes": 1,
+      "clues": 24
+    },
+    {
+      "number": 34,
+      "id": "pacto-067",
+      "solutionCount": 1,
+      "searchCompleted": true,
+      "nodes": 1,
+      "clues": 24
+    },
+    {
+      "number": 35,
+      "id": "pacto-102",
+      "solutionCount": 1,
+      "searchCompleted": true,
+      "nodes": 1,
+      "clues": 15
+    },
+    {
+      "number": 36,
+      "id": "pacto-106",
+      "solutionCount": 1,
+      "searchCompleted": true,
+      "nodes": 1,
+      "clues": 15
+    },
+    {
+      "number": 37,
+      "id": "pacto-119",
+      "solutionCount": 1,
+      "searchCompleted": true,
+      "nodes": 1,
+      "clues": 15
+    },
+    {
+      "number": 38,
+      "id": "pacto-125",
+      "solutionCount": 1,
+      "searchCompleted": true,
+      "nodes": 1,
+      "clues": 15
+    },
+    {
+      "number": 39,
+      "id": "pacto-122",
+      "solutionCount": 1,
+      "searchCompleted": true,
+      "nodes": 1,
+      "clues": 15
+    },
+    {
+      "number": 40,
+      "id": "pacto-140",
+      "solutionCount": 1,
+      "searchCompleted": true,
+      "nodes": 1,
+      "clues": 15
+    },
+    {
+      "number": 41,
+      "id": "pacto-095",
+      "solutionCount": 1,
+      "searchCompleted": true,
+      "nodes": 1,
+      "clues": 24
+    },
+    {
+      "number": 42,
+      "id": "pacto-098",
+      "solutionCount": 1,
+      "searchCompleted": true,
+      "nodes": 1,
+      "clues": 24
+    },
+    {
+      "number": 43,
+      "id": "pacto-113",
+      "solutionCount": 1,
+      "searchCompleted": true,
+      "nodes": 1,
+      "clues": 15
+    },
+    {
+      "number": 44,
+      "id": "pacto-132",
+      "solutionCount": 1,
+      "searchCompleted": true,
+      "nodes": 1,
+      "clues": 15
+    },
+    {
+      "number": 45,
+      "id": "pacto-162",
+      "solutionCount": 1,
+      "searchCompleted": true,
+      "nodes": 1,
+      "clues": 10
+    },
+    {
+      "number": 46,
+      "id": "pacto-103",
+      "solutionCount": 1,
+      "searchCompleted": true,
+      "nodes": 1,
+      "clues": 15
+    },
+    {
+      "number": 47,
+      "id": "pacto-099",
+      "solutionCount": 1,
+      "searchCompleted": true,
+      "nodes": 1,
+      "clues": 24
+    },
+    {
+      "number": 48,
+      "id": "pacto-v2-101",
+      "solutionCount": 1,
+      "searchCompleted": true,
+      "nodes": 1,
+      "clues": 17
+    },
+    {
+      "number": 49,
+      "id": "pacto-v2-103",
+      "solutionCount": 1,
+      "searchCompleted": true,
+      "nodes": 1,
+      "clues": 19
+    },
+    {
+      "number": 50,
+      "id": "pacto-v2-107",
+      "solutionCount": 1,
+      "searchCompleted": true,
+      "nodes": 1,
+      "clues": 18
+    },
+    {
+      "number": 51,
+      "id": "pacto-116",
+      "solutionCount": 1,
+      "searchCompleted": true,
+      "nodes": 1,
+      "clues": 15
+    },
+    {
+      "number": 52,
+      "id": "pacto-v2-102",
+      "solutionCount": 1,
+      "searchCompleted": true,
+      "nodes": 1,
+      "clues": 16
+    },
+    {
+      "number": 53,
+      "id": "pacto-139",
+      "solutionCount": 1,
+      "searchCompleted": true,
+      "nodes": 1,
+      "clues": 12
+    },
+    {
+      "number": 54,
+      "id": "pacto-100",
+      "solutionCount": 1,
+      "searchCompleted": true,
+      "nodes": 1,
+      "clues": 15
+    },
+    {
+      "number": 55,
+      "id": "pacto-v2-104",
+      "solutionCount": 1,
+      "searchCompleted": true,
+      "nodes": 1,
+      "clues": 17
+    },
+    {
+      "number": 56,
+      "id": "pacto-118",
+      "solutionCount": 1,
+      "searchCompleted": true,
+      "nodes": 1,
+      "clues": 15
+    },
+    {
+      "number": 57,
+      "id": "pacto-127",
+      "solutionCount": 1,
+      "searchCompleted": true,
+      "nodes": 1,
+      "clues": 15
+    },
+    {
+      "number": 58,
+      "id": "pacto-v2-106",
+      "solutionCount": 1,
+      "searchCompleted": true,
+      "nodes": 1,
+      "clues": 19
+    },
+    {
+      "number": 59,
+      "id": "pacto-186",
+      "solutionCount": 1,
+      "searchCompleted": true,
+      "nodes": 1,
+      "clues": 15
+    },
+    {
+      "number": 60,
+      "id": "pacto-138",
+      "solutionCount": 1,
+      "searchCompleted": true,
+      "nodes": 1,
+      "clues": 12
+    },
+    {
+      "number": 61,
+      "id": "pacto-146",
+      "solutionCount": 1,
+      "searchCompleted": true,
+      "nodes": 1,
+      "clues": 15
+    },
+    {
+      "number": 62,
+      "id": "pacto-166",
+      "solutionCount": 1,
+      "searchCompleted": true,
+      "nodes": 1,
+      "clues": 11
+    },
+    {
+      "number": 63,
+      "id": "pacto-v2-201",
+      "solutionCount": 1,
+      "searchCompleted": true,
+      "nodes": 1,
+      "clues": 38
+    },
+    {
+      "number": 64,
+      "id": "pacto-104",
+      "solutionCount": 1,
+      "searchCompleted": true,
+      "nodes": 1,
+      "clues": 15
+    },
+    {
+      "number": 65,
+      "id": "pacto-107",
+      "solutionCount": 1,
+      "searchCompleted": true,
+      "nodes": 1,
+      "clues": 15
+    },
+    {
+      "number": 66,
+      "id": "pacto-171",
+      "solutionCount": 1,
+      "searchCompleted": true,
+      "nodes": 1,
+      "clues": 11
+    },
+    {
+      "number": 67,
+      "id": "pacto-109",
+      "solutionCount": 1,
+      "searchCompleted": true,
+      "nodes": 1,
+      "clues": 15
+    },
+    {
+      "number": 68,
+      "id": "pacto-v2-202",
+      "solutionCount": 1,
+      "searchCompleted": true,
+      "nodes": 1,
+      "clues": 34
+    },
+    {
+      "number": 69,
+      "id": "pacto-105",
+      "solutionCount": 1,
+      "searchCompleted": true,
+      "nodes": 1,
+      "clues": 15
+    },
+    {
+      "number": 70,
+      "id": "pacto-120",
+      "solutionCount": 1,
+      "searchCompleted": true,
+      "nodes": 1,
+      "clues": 15
+    },
+    {
+      "number": 71,
+      "id": "pacto-121",
+      "solutionCount": 1,
+      "searchCompleted": true,
+      "nodes": 1,
+      "clues": 11
+    },
+    {
+      "number": 72,
+      "id": "pacto-156",
+      "solutionCount": 1,
+      "searchCompleted": true,
+      "nodes": 1,
+      "clues": 9
+    },
+    {
+      "number": 73,
+      "id": "pacto-v2-203",
+      "solutionCount": 1,
+      "searchCompleted": true,
+      "nodes": 1,
+      "clues": 37
+    },
+    {
+      "number": 74,
+      "id": "pacto-136",
+      "solutionCount": 1,
+      "searchCompleted": true,
+      "nodes": 1,
+      "clues": 15
+    },
+    {
+      "number": 75,
+      "id": "pacto-178",
+      "solutionCount": 1,
+      "searchCompleted": true,
+      "nodes": 1,
+      "clues": 15
+    },
+    {
+      "number": 76,
+      "id": "pacto-124",
+      "solutionCount": 1,
+      "searchCompleted": true,
+      "nodes": 1,
+      "clues": 15
+    },
+    {
+      "number": 77,
+      "id": "pacto-123",
+      "solutionCount": 1,
+      "searchCompleted": true,
+      "nodes": 1,
+      "clues": 15
+    },
+    {
+      "number": 78,
+      "id": "pacto-154",
+      "solutionCount": 1,
+      "searchCompleted": true,
+      "nodes": 1,
+      "clues": 9
+    },
+    {
+      "number": 79,
+      "id": "pacto-172",
+      "solutionCount": 1,
+      "searchCompleted": true,
+      "nodes": 1,
+      "clues": 15
+    },
+    {
+      "number": 80,
+      "id": "pacto-141",
+      "solutionCount": 1,
+      "searchCompleted": true,
+      "nodes": 1,
+      "clues": 15
+    }
+  ]
+}

@@ -1,0 +1,21 @@
+import assert from 'node:assert/strict';
+import {migratePactoProgress} from '../dist/pacto-progress.mjs';
+const levels=[{id:'pacto-v3-021'},{id:'pacto-v4-076'}];
+const history={past:[{positions:[1]}],present:{positions:[2]},future:[{positions:[3]}]};
+const data={sessions:{'pacto-v3-021':{history},'pacto-v3-076':{history,assistance:true},'custom:pacto:pacto-v3-077':{history},'endless:pacto':{history},'other-001':{history}},completed:['pacto-v3-021','pacto-v3-076','other-001'],lastSessions:{pacto:'pacto-v3-076',other:'other-001'}};
+const original=structuredClone(data);const raw=JSON.stringify({'pacto:pacto-v3-076':{failures:3,assisted:true},'pacto:pacto-v3-021':{failures:1,assisted:false}});let writes=0;const store={getItem:()=>raw,setItem:()=>writes++};
+assert.equal(migratePactoProgress(data,levels,store),true);
+assert.deepEqual(data.sessions,original.sessions);assert.deepEqual(data.completed,original.completed);assert.equal(data.lastSessions.pacto,undefined);assert.equal(data.lastSessions.other,'other-001');
+assert.deepEqual(data.pactoLegacy.campaign80.records['pacto-v3-076'].session,original.sessions['pacto-v3-076']);assert.deepEqual(data.pactoLegacy.campaign80.records['pacto-v3-076'].answer,{failures:3,assisted:true});
+assert.deepEqual(Object.keys(data.pactoLegacy.campaign80.records),['pacto-v3-076']);assert.equal(data.sessions['pacto-v4-076'],undefined);assert.equal(writes,0);assert.equal(migratePactoProgress(data,levels,store),false);
+const kept={lastSessions:{pacto:'pacto-v3-021'},sessions:{},completed:[]};assert.equal(migratePactoProgress(kept,levels,{getItem:()=>null}),false);assert.equal(kept.lastSessions.pacto,'pacto-v3-021');
+assert.equal(migratePactoProgress({sessions:{},completed:[]},levels,{getItem(){throw Error('blocked')}}),false);
+console.log('PASS PACTO80 identity-safe archival, unchanged IDs, no ordinal mapping, custom/endless/other-game isolation, idempotence and unavailable storage.');
+
+const answerOnly={sessions:{},completed:[],lastSessions:{}};
+const answerOnlyStore={getItem:()=>JSON.stringify({'pacto:pacto-v2-199':{failures:3,assisted:true},'elo:elo-v2-001':{failures:2},'pacto:custom:pacto-v2-200':{failures:1}})};
+assert.equal(migratePactoProgress(answerOnly,levels,answerOnlyStore),true);
+assert.deepEqual(Object.keys(answerOnly.pactoLegacy.campaign80.records),['pacto-v2-199']);
+assert.deepEqual(answerOnly.pactoLegacy.campaign80.records['pacto-v2-199'],{id:'pacto-v2-199',completed:false,answer:{failures:3,assisted:true}});
+assert.equal(migratePactoProgress(answerOnly,levels,answerOnlyStore),false);
+console.log('PASS answer-only retired PACTO records archived with exact IDs; other games and custom answers excluded.');
