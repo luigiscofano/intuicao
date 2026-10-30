@@ -1,0 +1,14 @@
+/* Front-facing fauna from the original PNG: unaltered colors and white paper.
+   Each viewport crops only its existing icon, including corrected edge crops. */
+#main > .intro > p{font-size:14px;line-height:1.8;color:#5a604c;margin-bottom:0}
+.hero-fauna{position:absolute;top:31px;right:48px;width:37%;max-width:420px;display:grid;grid-template-columns:repeat(5,minmax(0,1fr));gap:15px 20px;align-items:center;justify-items:center;pointer-events:none;user-select:none}
+.hero-fauna-cell{display:flex;align-items:center;justify-content:center;width:54px;height:54px;max-width:100%}
+.hero-fauna-crop{display:block;position:relative;overflow:hidden;background:#fff;flex:none}
+.hero-fauna-crop img{position:absolute;display:block;max-width:none;object-fit:fill}
+@media(min-width:1101px){#main > .intro h1,#main > .intro > p{max-width:59%}}
+@media(max-width:1100px){
+ .hero-fauna{position:relative;top:auto;right:auto;width:100%;max-width:none;grid-template-columns:repeat(8,minmax(0,1fr));gap:20px 16px;margin:26px 0 3px;padding-right:20px}
+ .hero-fauna-cell{width:48px;height:48px}
+}
+@media(max-width:760px){#main > .intro > p{font-size:12px}.hero-fauna{padding-right:0;gap:17px 14px}}
+@media(max-width:600px){.hero-fauna{grid-template-columns:repeat(5,minmax(0,1fr));gap:18px 12px;margin-top:24px}.hero-fauna-cell{width:42px;height:42px}}

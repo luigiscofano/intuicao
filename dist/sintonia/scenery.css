@@ -52,3 +52,22 @@
 #sintonia .s-boards[data-count="3"]{--s-cell-max:70px}
 #sintonia .s-boards[data-count="4"]{--s-cell-max:62.5px}
 #sintonia .s-animal-board{max-width:475px}
+
+/* A calm, vivid movement readout inside the board frame, beside the arrows. */
+#sintonia .s-board-surface > .s-command-row{display:grid;grid-template-columns:146px minmax(100px,130px);justify-content:center;align-items:center;gap:10px 24px;margin:22px 0 2px;padding-top:18px;border-top:1px solid #d6e2ca}
+#sintonia .s-move-counter{display:flex;flex-direction:column;align-items:center;justify-content:center;gap:8px;min-height:112px;padding:15px 12px;background:#e5efd8;border:1px solid #a9c192;border-radius:16px;color:#315e43;box-shadow:inset 0 1px 0 #fff9}
+#sintonia .s-move-label{font-size:10px;font-weight:750;letter-spacing:.11em;line-height:1.3}
+#sintonia #s-moves{font-size:46px;line-height:1;font-weight:700;font-variant-numeric:tabular-nums;letter-spacing:-.04em;overflow-wrap:anywhere;max-width:100%}
+#sintonia .s-board-surface > .s-command-row #s-keyboard-help{grid-column:1/-1;text-align:center;max-width:330px;justify-self:center}
+@media(max-width:760px){
+ #sintonia .s-board-surface > .s-command-row{grid-template-columns:146px minmax(88px,112px);gap:10px 14px;margin-top:18px;padding-top:16px}
+ #sintonia .s-move-counter{min-height:104px;padding:14px 8px;border-radius:14px}
+ #sintonia #s-moves{font-size:42px}
+ #sintonia .s-move-label{font-size:9px}
+}
+@media(max-width:380px){
+ #sintonia .s-board-surface > .s-command-row{grid-template-columns:146px minmax(0,1fr);column-gap:10px}
+ #sintonia .s-move-counter{min-width:0;padding-inline:3px}
+ #sintonia .s-move-label{font-size:8px;letter-spacing:.04em}
+ #sintonia #s-moves{font-size:38px}
+}

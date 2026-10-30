@@ -18,3 +18,7 @@ body:has(.games [data-game="cut"][aria-pressed="true"]) .workspace:not(.rules-op
 #s-hint-apply,#r-hint-apply,#o-hint-apply,
 body:not(:has(.games>[data-collection="pacto"][aria-pressed="true"])) #c-hint,
 body:not(:has(.games>[data-collection="pacto"][aria-pressed="true"])) #c-hint-apply{display:none!important}
+
+/* One legible campaign position across every level-based game. */
+#main :is(#stage-label,#c-stage-label,#s-stage-label,#r-stage-label,#o-stage-label){font-size:16px;font-weight:750;line-height:1.4;letter-spacing:.035em;color:#405e49;font-variant-numeric:tabular-nums;white-space:nowrap}
+@media(max-width:760px){#main :is(#stage-label,#c-stage-label,#s-stage-label,#r-stage-label,#o-stage-label){font-size:14px;letter-spacing:.025em}}
