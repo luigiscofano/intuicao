@@ -232,7 +232,7 @@ export function initRepasse({hideOthers=()=>{}}={}) {
     const configurations=pieceConfigurations(level),unknown=configurations.filter(key=>!data.learnedConfigurations.includes(key));
     data.learnedConfigurations=[...new Set([...data.learnedConfigurations,...configurations])];
     data.lastView={active:true,screen,mode,daily:mode==='campaign'&&daily};
-    message=session.restoreIssue||(session.cursor?'Partida retomada. Os valores, as caixas e o histórico foram restaurados.':'Toque em uma peça para retirá-la. Cada seta envia o valor inteiro.');
+    message=session.restoreIssue||'';
     render(unknown);log('level-start',{resumed:session.restored});save();focusBoard(false);
     const outcome=evaluateState(level,current());
     if(outcome.won){recordWin();motion.show('repasse',true);scheduleAuto();}
@@ -337,7 +337,7 @@ export function initRepasse({hideOthers=()=>{}}={}) {
     if(!session||host.hidden||screen!=='play')return;
     const old=session;cancelGeneration();invalidate();session=restoreRepasseSession(level,null);
     session.winRecorded=old.winRecorded;session.failures=old.failures;session.assisted=old.assisted;
-    activePiece=level.pieces[0]?.id??null;message='Mesmo desafio, um novo começo. As peças e as metas continuam iguais.';
+    activePiece=level.pieces[0]?.id??null;message='';
     log('restart');save();renderBoard();renderStatus();focusBoard(true);
     if(mode==='endless'){generationStatus('');fillPrefetch();}
   }

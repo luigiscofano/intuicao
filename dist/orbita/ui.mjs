@@ -325,7 +325,7 @@ export function initOrbita({hideOthers=()=>{}}={}){
     invalidate();level=next;mode=nextMode;screen='play';rulesOpen=true;session=restoreOrbitaSession(level,fresh?null:saved);selected=level.commands[0]?.id;
     if(mode==='endless'&&data.endless?.current?.completed===true)session.winRecorded=true;
     const unknown=mechanics(level).filter(key=>!data.learnedMechanics.includes(key));data.learnedMechanics=[...new Set([...data.learnedMechanics,...mechanics(level)])];
-    data.lastView={active:true,screen,mode,daily:mode==='campaign'&&daily};message=(mode==='endless'?data.endless?.current?.recovery?.notice:'')||session.restoreIssue||(session.cursor?'Partida retomada. As peças, os alvos e o histórico foram restaurados.':'Escolha um anel e use uma das setas curvas para girar.');
+    data.lastView={active:true,screen,mode,daily:mode==='campaign'&&daily};message=(mode==='endless'?data.endless?.current?.recovery?.notice:'')||session.restoreIssue||'';
     render(unknown);log('level-start',{resumed:session.restored});save();$('o-title').focus({preventScroll:true});
     if(isWon(level,current())){recordWin();motion.show('orbita',true);scheduleAuto();}if(mode==='endless')fillPrefetch();
   }
@@ -460,7 +460,7 @@ export function initOrbita({hideOthers=()=>{}}={}){
     if(isWon(level,current()))motion.show('orbita',true);restoreFocus();
   }
   function restartCurrentImmediately(){
-    if(!session||host.hidden||screen!=='play')return;const old=session;cancelGeneration();invalidate();session=restoreOrbitaSession(level,null);session.winRecorded=old.winRecorded;session.failures=old.failures;session.assisted=old.assisted;selected=level.commands[0].id;message='Mesmo desafio, um novo começo. Os anéis, as peças e os alvos continuam iguais.';log('restart');save();renderBoard();renderStatus();if(mode==='endless'){generationStatus('');fillPrefetch();}$('o-board').focus({preventScroll:true});
+    if(!session||host.hidden||screen!=='play')return;const old=session;cancelGeneration();invalidate();session=restoreOrbitaSession(level,null);session.winRecorded=old.winRecorded;session.failures=old.failures;session.assisted=old.assisted;selected=level.commands[0].id;message='';log('restart');save();renderBoard();renderStatus();if(mode==='endless'){generationStatus('');fillPrefetch();}$('o-board').focus({preventScroll:true});
   }
   function restartLevel(trigger){if(!session||animating)return;cancelAuto();cancelHint();guided=false;const token=revision;restart.open({trigger,match:mode==='endless',isCurrent:()=>revision===token&&!host.hidden&&screen==='play',onConfirm:restartCurrentImmediately,onCancel:scheduleAuto,fallbackFocus:()=>$('o-board')});}
   function confirm(){

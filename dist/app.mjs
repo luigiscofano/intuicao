@@ -441,7 +441,7 @@ function status(label,value,message,success){
  if(phase!=='result'){
   success=false;
   if(partial){label='Disparo parcial';message=`${lightFired.length} de ${lightScene(state).sources.length} fontes disparadas. ${evaluation.ray.outcome==='collision'?'Houve colisão; os raios pararam no impacto. ':''}Clique em outra fonte ou em Confirmar todos. Editar limpa os rastros. Ainda não conta como tentativa completa.`;}
-  else{label=phase==='animating'?'Experimento em andamento':'Prepare sua resposta';value='—';message=phase==='animating'?'Aguarde a luz percorrer o caminho. Editar cancela o disparo.':game==='light'?'Ajuste os espelhos. Clique em uma fonte ou em Confirmar todos para disparar.':'Ajuste os controles e confirme para revelar o resultado.';}
+  else{label=phase==='animating'?'Experimento em andamento':'Prepare sua resposta';value='—';message=phase==='animating'?'Aguarde a luz percorrer o caminho. Editar cancela o disparo.':'';}
  }
  $('metric-label').textContent=label;$('metric').textContent=value;
  $('feedback').textContent=placementMessage||(phase==='result'?(success?'Vitória! ':'Ainda não. ')+message:message);

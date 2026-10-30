@@ -212,7 +212,7 @@ export function initSintonia({hideOtherGames}) {
     rulesOpen=true;
     data.learnedMechanics=[...new Set([...data.learnedMechanics,...(level.mechanics??[]).filter(id=>id in MECHANIC_TEXT)])];
     data.lastView={active:true,screen,mode};
-    message=notice||(isWon(level,current())?'Todos os animais estão nos seus destinos.':session.cursor?'Partida retomada. O mesmo comando continua valendo para todos.':'Use as setas para mover todos juntos. Chegar ao destino não prende o animal.');
+    message=notice||(isWon(level,current())?'Todos os animais estão nos seus destinos.':'');
     log('level-start',{resumed:session.cursor>0});render(unknown);save();
     $('s-play-area').focus({preventScroll:true});
     if(isWon(level,current())){recordWin();motion.show('sintonia',true);scheduleAuto();}
@@ -337,7 +337,7 @@ export function initSintonia({hideOtherGames}) {
     const recorded=session.winRecorded,failures=session.failures,assisted=session.assisted;
     cancelGeneration();invalidate();session=restoreSintoniaSession(level,null);
     session.winRecorded=recorded;session.failures=failures;session.assisted=assisted;recentDirection='';
-    message='Mesmo desafio, um novo começo.';log('restart');save();renderBoards();renderStatus();$('s-play-area').focus({preventScroll:true});
+    message='';log('restart');save();renderBoards();renderStatus();$('s-play-area').focus({preventScroll:true});
     if(mode==='endless'){generationStatus('');fillPrefetch();}
   }
 
