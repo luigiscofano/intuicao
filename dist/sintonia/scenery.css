@@ -1,0 +1,48 @@
+/* Clean scenery system: flat surfaces, consistent contours, no emoji or textures.
+   Deliberately excludes animal sprite rules and all game geometry. */
+#sintonia .s-map{border:2px solid #53694c;border-radius:9px;background:#6b8b5b;box-shadow:none}
+#sintonia .s-tile{background:#fffaf0;border-color:#d1d6bf}
+#sintonia .s-tile.wall{background:#70935d;border-color:#70935d;background-image:none}
+#sintonia .s-tile.wall::after{content:"";position:absolute;inset:10%;border:1px solid #ffffff17;border-radius:3px;pointer-events:none}
+#sintonia .s-tile.ice{background:#c6e8ee;border-color:#90bdc9;background-image:none}
+#sintonia .s-tile.ice::before{content:"";position:absolute;width:36%;height:30%;border-top:2px solid #fffdf2;border-bottom:2px solid #fffdf2;transform:rotate(-45deg);pointer-events:none}
+#sintonia .s-tile.collapsed{background:#e0dacd;border-color:#c8beaa;background-image:none}
+#sintonia .s-tile.collapsed::before,#sintonia .s-tile.collapsed::after{content:"";position:absolute;top:49%;left:25%;width:50%;height:2px;background:#9d927d;transform:rotate(45deg)}
+#sintonia .s-tile.collapsed::after{transform:rotate(-45deg)}
+#sintonia .s-goal-ring{inset:19%;border:2px solid #678c3d;background:#d6e9a6;border-radius:50%;box-shadow:none}
+#sintonia .s-goal-ring::after{inset:23%;border:1.5px solid #678c3d}
+#sintonia .goal-occupied .s-goal-ring{background:#a8d379;border-color:#3f6b2f;box-shadow:0 0 0 2px #fffaf0}
+#sintonia .s-scenery-icon{display:block;width:100%;height:100%;max-width:100%;overflow:visible;pointer-events:none}
+#sintonia .s-box{inset:10%;border:0;border-radius:5px;background:#e8b969;color:#825720;box-shadow:none;padding:0}
+#sintonia .s-box .s-scenery-icon{width:100%;height:100%}
+#sintonia .s-mechanism{inset:17%;font-family:system-ui,sans-serif;font-size:clamp(8px,1vw,12px);font-weight:750;box-shadow:none}
+#sintonia .s-mechanism b{position:absolute;right:-13%;bottom:-12%;padding:1px 3px;border:1px solid currentColor;border-radius:3px;background:#fffaf0;color:inherit;font-size:clamp(7px,.85vw,10px);line-height:1.15;white-space:nowrap}
+#sintonia .s-plate{border:2px solid #8864a0;background:#e2ccec;color:#624176;border-radius:50%;box-shadow:inset 0 0 0 3px #fffaf080}
+#sintonia .s-plate.active{background:#ae87c7;border-color:#68437e;color:#392448;box-shadow:inset 0 0 0 3px #68437e30}
+#sintonia .s-switch,#sintonia .s-selector{border:0;background:transparent;border-radius:0;box-shadow:none;padding:0}
+#sintonia .s-switch{color:#91651e}
+#sintonia .s-switch .s-scenery-icon{fill:#f7d78b}
+#sintonia .s-switch.active{background:transparent;color:#74521a}
+#sintonia .s-switch.active .s-scenery-icon{fill:#efbd4d}
+#sintonia .s-selector{color:#326f78}
+#sintonia .s-key{color:#9b6b17}
+#sintonia .s-portal{border:3px double #8960a3;border-radius:50%;background:#eadbf2;color:#654180;box-shadow:none}
+#sintonia .s-delivery{border:0;border-radius:0;background:transparent;color:#9b632c;padding:1px}
+#sintonia .s-fragile-lines{inset:20% 12%;border-top:2px solid #b28b50;border-bottom:2px solid #b28b50;background:linear-gradient(#e9d3aa,#e9d3aa);transform:none;border-radius:2px}
+#sintonia .s-fragile-lines::after{content:"";position:absolute;inset:40% 0;border-top:1px solid #b28b50}
+#sintonia .s-gate{border-radius:2px}
+#sintonia .s-gate.closed{background:#8960a3;box-shadow:0 0 0 2px #fffaf0}
+#sintonia .s-gate.closed::after{content:"";position:absolute;inset:15% -2px;border:1px solid #68417e;border-radius:2px}
+#sintonia .s-gate.closed.horizontal::after{inset:-2px 15%}
+#sintonia .s-gate.open{background:transparent;border:1px dashed #a78ab9;box-shadow:none}
+#sintonia .s-gate>span{border:1px solid #a487b5;background:#fffaf0;color:#68417e;border-radius:3px;padding:2px 3px;font-weight:750}
+#sintonia .s-gate.open>span{opacity:1;border-style:dashed}
+#sintonia .s-gate.oneway{background:transparent;border:0;box-shadow:none}
+#sintonia .s-gate.oneway>span{background:#fffaf0;color:#3e6a45;border-color:#91ac80;border-radius:3px}
+#sintonia .s-dpad button{display:grid;place-items:center;background:#edf3e4;color:#3f6446;border:1.5px solid #809774;border-radius:9px;box-shadow:none}
+#sintonia .s-dpad button .s-scenery-icon{width:23px;height:23px}
+#sintonia .s-dpad button:hover{background:#dae9c8;border-color:#4f7754}
+#sintonia .s-dpad button:active{background:#bdd79e;transform:none}
+@media(max-width:680px){#sintonia .s-mechanism{inset:14%}#sintonia .s-mechanism b{font-size:7px;padding:1px 2px}#sintonia .s-gate>span{font-size:7px}}
+#sintonia .s-gate.oneway>span{display:grid;place-items:center;width:16px;height:16px;padding:1px;box-sizing:border-box;opacity:1}
+#sintonia .s-gate.oneway .s-scenery-icon{width:12px;height:12px;stroke-width:3}

@@ -45,7 +45,7 @@
 #repasse .r-piece:active{background:#214a36}
 #repasse .r-arrow{color:#e5f3d6}
 #repasse .r-empty{background:#eef0e6;border-color:#bdc8b6}
-#repasse .r-edge-box{background:#ffe36b;border-color:#b68a16;color:#55420d}
+#repasse .r-edge-box{background:#f5dfa0;border-color:#b99a52;color:#55420d}
 #repasse .r-box-target{color:#665017}
 #repasse .r-edge-box.exact{background:#b9dca6;border-color:#507b3d;color:#284b21}
 #repasse .exact .r-box-target{color:#385b2d}

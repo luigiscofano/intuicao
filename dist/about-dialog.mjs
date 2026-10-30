@@ -29,6 +29,36 @@ if(trigger && dialog){
   }
   greenLayer.append(fragment);greenLayer.showPopover();
  };
+ // The supplied 15-icon sheet is used unchanged. SVG crops only its cells;
+ // the color matrix makes its white paper transparent without redrawing icons.
+ const faunaFrames=[
+  [110,55,200,320],[390,80,290,280],[735,125,255,235],
+  [45,390,325,250],[390,375,295,270],[715,370,310,295],
+  [45,680,320,280],[400,645,270,315],[700,695,325,270],
+  [60,965,290,250],[410,965,255,250],[705,965,320,250],
+  [80,1220,240,220],[405,1215,255,230],[720,1205,285,240]
+ ];
+ const celebrateAnimals=()=>{
+  const vw=document.documentElement.clientWidth,vh=window.innerHeight;
+  const fragment=document.createDocumentFragment(),count=reduced.matches?8:28;
+  for(let i=0;i<count;i++){
+   const [x,y,w,h]=faunaFrames[i%faunaFrames.length];
+   const piece=document.createElement('span');piece.className='about-animal-confetti';
+   const size=20+Math.random()*24,rotation=-42+Math.random()*84;
+   piece.style.setProperty('--ax',`${12+Math.random()*Math.max(0,vw-size-24)}px`);
+   piece.style.setProperty('--ay',`${Math.max(12,vh*(.08+Math.random()*.57))}px`);
+   piece.style.setProperty('--asize',`${size}px`);
+   piece.style.setProperty('--adx',`${-65+Math.random()*130}px`);
+   piece.style.setProperty('--amid',`${-22+Math.random()*44}px`);
+   piece.style.setProperty('--afall',`${75+Math.random()*140}px`);
+   piece.style.setProperty('--arot',`${rotation}deg`);
+   piece.style.setProperty('--aspin',`${rotation-110+Math.random()*220}deg`);
+   piece.style.setProperty('--adelay',`${Math.random()*150}ms`);
+   piece.innerHTML=`<svg viewBox="${x} ${y} ${w} ${h}" aria-hidden="true" focusable="false"><defs><filter id="fauna-paper-${i}" color-interpolation-filters="sRGB"><feColorMatrix type="matrix" values="1 0 0 0 0  0 1 0 0 0  0 0 1 0 0  -1 -1 -1 0 3"/></filter></defs><image href="platform-assets/fauna-green-original.png" width="1079" height="1458" filter="url(#fauna-paper-${i})"/></svg>`;
+   fragment.append(piece);
+  }
+  greenLayer.append(fragment);
+ };
  window.addEventListener('resize',clearGreen);
  let returnFocus=null, cleanupTimer=null, pointerStartedOutside=false;
  const clearCelebration=()=>{clearTimeout(cleanupTimer);cleanupTimer=null;sparks.replaceChildren();status.textContent='';clearGreen();};
@@ -67,6 +97,7 @@ if(trigger && dialog){
   }
   sparks.append(fragment);status.textContent='Viva cada pequena descoberta!';
   celebrateGreen();
+  celebrateAnimals();
   cleanupTimer=setTimeout(clearCelebration,reduced.matches?1100:1650);
  });
  reduced.addEventListener('change',clearCelebration);

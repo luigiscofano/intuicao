@@ -1,0 +1,14 @@
+/* Advanced-only tools are intentionally unavailable outside the two original
+   experiments. Retain their saved preferences/data without exposing the panel. */
+#collection :is(#c-advanced-toggle,#c-advanced),
+#sintonia :is(#s-advanced-toggle,#s-advanced),
+#repasse :is(#r-advanced-toggle,#r-advanced),
+#orbita :is(#o-advanced-toggle,#o-advanced){display:none!important}
+#collection .collection-workspace:not(.rules-open),
+#sintonia .s-workspace:not(.rules-open),
+#repasse .r-workspace:not(.rules-open),
+#orbita .o-workspace:not(.rules-open){grid-template-columns:minmax(0,1fr)}
+/* Latest request: only Reflexos retains advanced options. Corte certo still
+   supports its direct on-board handles; only the auxiliary editor is hidden. */
+body:has(.games [data-game="cut"][aria-pressed="true"]) :is(#toggle-controls,#advanced-controls){display:none!important}
+body:has(.games [data-game="cut"][aria-pressed="true"]) .workspace:not(.rules-open){grid-template-columns:minmax(0,1fr)}
