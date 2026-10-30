@@ -30,3 +30,15 @@ body:not(:has(.games>[data-collection="pacto"][aria-pressed="true"])) #c-hint-ap
 /* Empty neutral feedback has no visual footprint; real feedback remains live. */
 #main :is(#feedback,#c-status,#s-status,#r-status,#o-status):empty{display:none}
 #main .collection-feedback:not(:has(> :not([hidden]):not(.sr-only):not(:empty))){min-height:0;padding:0}
+
+/* Native disclosure preserves the import fields while opening/closing. */
+.level-json-import.json-import-disclosure{padding-top:0}
+.level-json-import.json-import-disclosure>summary{display:list-item;list-style:disclosure-closed inside;padding:16px 0;font-size:16px;font-weight:650;line-height:1.5;cursor:pointer}
+.level-json-import.json-import-disclosure[open]>summary{list-style-type:disclosure-open}
+.level-json-import.json-import-disclosure>summary::marker{color:#486c4d}
+@media(max-width:600px){.level-json-import.json-import-disclosure>summary{font-size:14px;padding:14px 0}}
+
+/* PRUMO's equilibrium aid belongs next to Checar, with a clear pressed state. */
+#c-moments{display:inline-flex;align-items:center;justify-content:center;gap:8px}
+#c-moments .moments-icon{width:20px;height:20px;flex:none;fill:none;stroke:currentColor;stroke-width:1.6;stroke-linecap:round;stroke-linejoin:round}
+#c-moments[aria-pressed="true"]{background:#405e49;color:#fffefa;border-color:#405e49;box-shadow:inset 0 0 0 1px #fffefa33}
