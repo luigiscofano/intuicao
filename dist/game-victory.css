@@ -1,0 +1,63 @@
+/* Seven small, finite celebrations. All selectors stay inside the new scenes. */
+.result-badge>.game-victory{width:108px;height:72px;flex:0 0 108px;overflow:visible}
+.game-victory{color:#4f775b;--gv-delay:0ms}
+.result-badge .game-victory :is(path,rect,circle){stroke:#55745c;stroke-width:2;stroke-linecap:round;stroke-linejoin:round;fill:none}
+.result-badge .game-victory .gv-paper{fill:#f6f8f0;stroke:#d1dcc9}
+.result-badge .game-victory .gv-guide{stroke:#dce5d4;stroke-width:1}
+.result-badge .game-victory .gv-node{fill:#749763;stroke:#4f775b}
+.result-badge .game-victory .gv-piece{fill:#dce9cc;stroke:#779465}
+.result-badge .game-victory .gv-loop{stroke-width:3;stroke-dasharray:100;animation:gv-close-loop 1.2s ease-in-out both}
+.game-victory .gv-link-node{transform-box:fill-box;transform-origin:center;animation:gv-link-settle .6s var(--gv-delay) ease-out both}
+.result-badge .game-victory .gv-support{fill:#e6d9b7;stroke:#ac956a}
+.game-victory .gv-balance{transform-origin:80px 63px;animation:gv-balance 1.3s ease-in-out both}
+.result-badge .game-victory .gv-seams{stroke:#b6caa7;stroke-width:1}
+.result-badge .game-victory .gv-pivot{fill:#55745c;stroke:none}
+.result-badge .game-victory .gv-plumb{stroke-dasharray:3 3;stroke-width:1.3}
+.game-victory .gv-level{animation:gv-reveal .3s .95s both}
+.result-badge .game-victory .gv-pair-frame{fill:#eef3e7;stroke:#bdd0ae;animation:gv-reveal .4s calc(var(--gv-delay) + .55s) both}
+.result-badge .game-victory :is(.gv-pair-a,.gv-pair-b)>*{fill:#dce9cc;stroke:#66835b}
+.game-victory .gv-pair-a{animation:gv-pair-left .8s var(--gv-delay) cubic-bezier(.2,.7,.2,1) both}
+.game-victory .gv-pair-b{animation:gv-pair-right .8s var(--gv-delay) cubic-bezier(.2,.7,.2,1) both}
+.result-badge .game-victory .gv-destination{fill:#e5efda;stroke:#adc59d;stroke-width:1.3}
+.game-victory .gv-together{animation:gv-together 1.2s cubic-bezier(.4,0,.2,1) both}
+.game-victory .gv-command{animation:gv-command 1.2s ease-out both}
+.result-badge .game-victory .gv-empty{stroke:#cbd8c1;stroke-dasharray:3 4}
+.result-badge .game-victory .gv-receiver{fill:#edf3e5;stroke:#91af7d}
+.game-victory text{font:600 14px ui-sans-serif,system-ui,sans-serif;text-anchor:middle;fill:#46674d;stroke:none}
+.game-victory .gv-repass-tile{opacity:0;animation:gv-repass 1.1s ease-in-out both}
+.game-victory .gv-transfer-line{stroke-dasharray:100;animation:gv-close-loop .8s ease-out both}
+.game-victory .gv-before{opacity:0;animation:gv-count-before 1.15s step-end both}
+.game-victory .gv-after{animation:gv-count-after 1.15s step-end both}
+.game-victory .gv-exact{animation:gv-reveal .3s 1s both}
+.result-badge .game-victory .gv-orbit-track{stroke:#ccd9c2;stroke-width:3}
+.result-badge .game-victory .gv-target-mark{stroke:#b0c69e;stroke-dasharray:2 3;stroke-width:1.5}
+.result-badge .game-victory .gv-orbit-piece{fill:#80a269;stroke:#55764a}
+.game-victory .gv-orbit-a{transform-origin:56px 50px;animation:gv-orbit-clockwise 1.2s cubic-bezier(.4,0,.2,1) both}
+.game-victory .gv-orbit-b{transform-origin:104px 50px;animation:gv-orbit-counter 1.2s cubic-bezier(.4,0,.2,1) both}
+.result-badge .game-victory .gv-meeting{fill:#f7f9f2;stroke:#c3d4b5;stroke-width:1}
+.result-badge .game-victory :is(.gv-row,.gv-column){stroke:#bfd2ae;stroke-width:7;opacity:0}
+.game-victory .gv-row{animation:gv-row .6s ease-in-out both}
+.game-victory .gv-column{animation:gv-row .6s .45s ease-in-out both}
+.game-victory .gv-used-a{opacity:0;animation:gv-consumed .65s ease-in both}
+.game-victory .gv-used-b{opacity:0;animation:gv-consumed .65s .4s ease-in both}
+.game-victory .gv-last-choice{animation:gv-reveal .3s 1s both}
+.result-badge .game-victory .gv-white{stroke:white;stroke-width:2.3}
+@keyframes gv-close-loop{from{stroke-dashoffset:100}to{stroke-dashoffset:0}}
+@keyframes gv-link-settle{0%{transform:scale(.65);opacity:.3}70%{transform:scale(1.12)}100%{transform:scale(1);opacity:1}}
+@keyframes gv-balance{0%{transform:rotate(-13deg)}45%{transform:rotate(5deg)}75%{transform:rotate(-2deg)}100%{transform:rotate(0)}}
+@keyframes gv-reveal{from{opacity:0}to{opacity:1}}
+@keyframes gv-pair-left{from{transform:translateX(-8px);opacity:.3}to{transform:translateX(0);opacity:1}}
+@keyframes gv-pair-right{from{transform:translateX(8px);opacity:.3}to{transform:translateX(0);opacity:1}}
+@keyframes gv-together{0%,15%{transform:translateX(-52px)}45%,55%{transform:translateX(-26px)}90%,100%{transform:translateX(0)}}
+@keyframes gv-command{0%,50%{transform:translateX(-3px);opacity:.4}30%,75%,100%{transform:translateX(0);opacity:1}}
+@keyframes gv-repass{0%,30%{opacity:1;transform:translateX(0)}70%{opacity:1;transform:translateX(67px)}100%{opacity:0;transform:translateX(80px) scale(.98)}}
+@keyframes gv-count-before{0%,70%{opacity:1}71%,100%{opacity:0}}
+@keyframes gv-count-after{0%,70%{opacity:0}71%,100%{opacity:1}}
+@keyframes gv-orbit-clockwise{from{transform:rotate(-180deg)}to{transform:rotate(0)}}
+@keyframes gv-orbit-counter{from{transform:rotate(180deg)}to{transform:rotate(0)}}
+@keyframes gv-row{0%{opacity:0}35%,70%{opacity:1}100%{opacity:0}}
+@keyframes gv-consumed{0%,35%{opacity:1}100%{opacity:0}}
+@media(max-width:560px){.result-badge>.game-victory{width:96px;height:60px;flex-basis:96px}}
+@media(prefers-reduced-motion:reduce){.game-victory *{animation:none!important}.game-victory :is(.gv-repass-tile,.gv-before,.gv-used-a,.gv-used-b,.gv-row,.gv-column){opacity:0}.game-victory .gv-after{opacity:1}}
+/* Revisiting an already won state keeps the completed picture without replay. */
+.result-badge.game-victory-static,.game-victory-static .game-victory *{animation:none!important}

@@ -207,7 +207,7 @@ export function initCollection({hideOriginal}){
   const syncExplanations=()=>{eloExplanationToggle.setAttribute('aria-expanded',String(eloExplanationsShown));eloExplanationToggle.textContent=eloExplanationsShown?'Ocultar explicações':'Mostrar explicações';$('c-elo-clue-legend').querySelectorAll('.elo-clue-explanation').forEach(node=>{node.hidden=!eloExplanationsShown;});};
   eloExplanationToggle.onclick=()=>{if($('c-elo-explanations-toggle')!==eloExplanationToggle)return;eloExplanationsShown=!eloExplanationsShown;syncExplanations();};syncExplanations();
  }
- const rulesPanel=$('c-rules-panel');rulesPanel.ontoggle=()=>{if($('c-rules-panel')===rulesPanel){rulesOpen=rulesPanel.open;syncRulesSidebar();}};syncRulesSidebar();motion=createResultMotion($('c-motion'),$('c-board-surface'),globalThis,{onRetry:retryCurrent});$('c-back').onclick=()=>{persist();selection();};$('c-mode-challenge').onclick=()=>{if(endless||custom){persist();selection();}};$('c-mode-endless').onclick=()=>{if(!endless)startEndless();};$('c-advanced-toggle').onclick=()=>{advanced=!advanced;data.advancedOpen=advanced;saveCollection(data);render();};if($('c-mark-blocked'))$('c-mark-blocked').onclick=()=>{markBlocked=!markBlocked;data.markBlockedCells=markBlocked;persist();$('c-mark-blocked').setAttribute('aria-pressed',String(markBlocked));renderBoard();renderStatus();};$('c-confirm').onclick=confirm;if($('c-check'))$('c-check').onclick=()=>{if(!restartConfirmation.isOpen)pactoCheck.check(level,current(),pactoReference());};if(game==='elo'){$('c-confirm').title='Também pode avaliar clicando na rodinha do mouse sobre o tabuleiro.';$('c-board').title='Clique na rodinha do mouse para avaliar a resposta.';}$('c-reset').onclick=event=>{middleConfirm?.cancel();
+ const rulesPanel=$('c-rules-panel');rulesPanel.ontoggle=()=>{if($('c-rules-panel')===rulesPanel){rulesOpen=rulesPanel.open;syncRulesSidebar();}};syncRulesSidebar();motion=createResultMotion($('c-motion'),$('c-board-surface'),globalThis,{getVictoryState:current,onRetry:retryCurrent});$('c-back').onclick=()=>{persist();selection();};$('c-mode-challenge').onclick=()=>{if(endless||custom){persist();selection();}};$('c-mode-endless').onclick=()=>{if(!endless)startEndless();};$('c-advanced-toggle').onclick=()=>{advanced=!advanced;data.advancedOpen=advanced;saveCollection(data);render();};if($('c-mark-blocked'))$('c-mark-blocked').onclick=()=>{markBlocked=!markBlocked;data.markBlockedCells=markBlocked;persist();$('c-mark-blocked').setAttribute('aria-pressed',String(markBlocked));renderBoard();renderStatus();};$('c-confirm').onclick=confirm;if($('c-check'))$('c-check').onclick=()=>{if(!restartConfirmation.isOpen)pactoCheck.check(level,current(),pactoReference());};if(game==='elo'){$('c-confirm').title='Também pode avaliar clicando na rodinha do mouse sobre o tabuleiro.';$('c-board').title='Clique na rodinha do mouse para avaliar a resposta.';}$('c-reset').onclick=event=>{middleConfirm?.cancel();
   if(game==='desvio'&&duelMode==='competitive'&&current().winner===null)return;
   if(restartConfirmation.isOpen)return;
   cancelGesture();clearTimeout(botTimer);cancelEndlessAdvance();
@@ -263,12 +263,12 @@ export function initCollection({hideOriginal}){
   }else if(!evaluated||(evaluated.complete&&evaluated.valid))return;
   restartCurrent();
  }
- function showDuelResult(){
+ function showDuelResult(animate=true){
   if(current().winner===null||replayAt!==null)return;
-  motion.show('desvio',duelMode!=='bot'||current().winner===0,duelMode==='bot'?{}:{winner:current().winner+1,retry:true});
+  motion.show('desvio',duelMode!=='bot'||current().winner===0,duelMode==='bot'?{animate}:{winner:current().winner+1,retry:true,animate});
  }
  function restoreResult(){
-  if(game==='desvio')showDuelResult();
+  if(game==='desvio')showDuelResult(false);
   else if(evaluated&&!(evaluated.complete&&evaluated.valid))motion.show(game,false);
  }
  function confirm(){if(endlessTimer!==null||restartConfirmation.isOpen)return;cancelGesture();if(game==='desvio'){if($('c-confirm').disabled)return;const cell=duelPreview;duelPreview=-1;try{history=commitHistory(history,applyDesvioMove(level,current(),cell,{expectedPlayer:current().player,expectedTurn:current().turn}));log('move',{cell,turn:current().turn});duelAfter();scheduleBot();}catch(e){message=e.message;renderStatus();}return;}
