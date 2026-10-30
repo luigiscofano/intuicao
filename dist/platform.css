@@ -287,3 +287,8 @@ body > footer::after{content:"";position:absolute;right:30px;top:18px;width:58px
 /* Give the footer signature breathing room inside the curved panel edge. */
 body > footer .footer-signature{padding-inline-start:24px;max-width:100%}
 @media(max-width:600px){body > footer .footer-signature{padding-inline-start:16px}}
+/* Category-only screens have no level panel to paint the original curved roots.
+   Reuse that same artwork in the footer; floor height and leaf physics stay intact. */
+body:not(:has(#main > section:not(.intro):not([hidden]))) > footer{position:relative;isolation:isolate;z-index:1;background:transparent;border-top-color:transparent;border-bottom-color:transparent;box-shadow:none;--menu-root-flare:max(38px,calc((100vw - 1280px)/2 + 28px))}
+body:not(:has(#main > section:not(.intro):not([hidden]))) > footer::before{content:"";position:absolute;top:-2px;bottom:-113px;left:calc(40px - var(--menu-root-flare) + .5px);width:calc(100% - 80px + 2 * var(--menu-root-flare) - 1px);background:url("platform-assets/continuous-root-left.svg") left/var(--menu-root-flare) 100% no-repeat,url("platform-assets/continuous-root-right.svg") right/var(--menu-root-flare) 100% no-repeat,linear-gradient(#fff,#fff) center/calc(100% - 2 * var(--menu-root-flare)) 100% no-repeat;filter:drop-shadow(0 2px 4px #34452a12);clip-path:inset(0 -12px -12px);pointer-events:none;user-select:none;z-index:-1}
+@media(max-width:760px){body:not(:has(#main > section:not(.intro):not([hidden]))) > footer{--menu-root-flare:14px}body:not(:has(#main > section:not(.intro):not([hidden]))) > footer::before{left:calc(16px - var(--menu-root-flare) + .5px);width:calc(100% - 32px + 2 * var(--menu-root-flare) - 1px);bottom:-85px}}
