@@ -43,12 +43,14 @@ function run(reducedMotion,vw,vh,random){
  const layer=created[0];assert.equal(layer.id,'about-green-sparkles');assert.deepEqual(layer.attrs,{popover:'manual','aria-hidden':'true',inert:''});assert.equal(dialog.children[0],layer);
  trigger.focus();trigger.fire('click');assert.ok(dialog.open);assert.equal(active,title);
  const verify=()=>{
-  assert.equal(sparks.children.length,reducedMotion?18:60);assert.equal(layer.children.length,reducedMotion?18:60);assert.ok(layer.popoverOpen);assert.equal(timers.size,1);assert.deepEqual([...durations.values()],[reducedMotion?1100:5000]);
+  assert.equal(sparks.children.length,reducedMotion?18:60);assert.equal(layer.children.length,reducedMotion?18:60);assert.ok(layer.popoverOpen);assert.equal(timers.size,1);assert.deepEqual([...durations.values()],[reducedMotion?1100:3500]);
   let outside=0;const r=dialog.getBoundingClientRect();
   for(const s of layer.children.filter(s=>s.className==='about-green-spark')){assert.equal(s.textContent,'✦');assert.equal(s.className,'about-green-spark');assert.ok(['#3e7045','#527f43','#688c4e'].includes(s.values['--gcolor']));const x=parseFloat(s.values['--gx']),y=parseFloat(s.values['--gy']),dx=parseFloat(s.values['--gdx']),dy=parseFloat(s.values['--gdy']);for(const t of [0,.25,.5,.75,1]){assert.ok(x+t*dx>=0&&x+t*dx+24<=vw,'Star cell remains inside viewport horizontally');assert.ok(y+t*dy>=0&&y+t*dy+24<=vh,'Star cell remains inside viewport vertically');}if(x<r.left||x+24>r.right||y<r.top||y+24>r.bottom)outside++;}
   assert.ok(outside>0,'Green stars still extend beyond modal boundary');
   const animals=layer.children.filter(s=>s.className==='about-animal-confetti');assert.equal(animals.length,reducedMotion?8:28);
-  for(const [index,p] of animals.entries()){if([8,11,14].includes(index%15))assert.ok(p.innerHTML.includes('clip-path=')&&p.innerHTML.includes('<clipPath'),'Crop explicitly isolates coral/anteater/manatee from neighbors');assert.ok(p.innerHTML.includes('platform-assets/fauna-green-original.png'));assert.ok(p.innerHTML.includes('feColorMatrix'));assert.ok(parseFloat(p.values['--asize'])>=20&&parseFloat(p.values['--asize'])<=46);assert.ok(parseFloat(p.values['--ax'])>=4);assert.ok(parseFloat(p.values['--ay'])>=12);if(!reducedMotion){assert.equal(p.flight.frames.length,61);assert.ok(p.flight.options.duration>=800);const middle=p.flight.frames[30].transform;assert.ok(middle.includes('translate('));assert.equal(p.flight.options.easing,'linear');
+  const launchYs=animals.map(p=>parseFloat(p.values['--ay']));
+  assert.ok(Math.max(...launchYs)-Math.min(...launchYs)>r.height*.6,'Launches spread over most of both side edges');
+  for(const [index,p] of animals.entries()){if([8,11,14].includes(index%15))assert.ok(p.innerHTML.includes('clip-path=')&&p.innerHTML.includes('<clipPath'),'Crop explicitly isolates coral/anteater/manatee from neighbors');assert.ok(p.innerHTML.includes('platform-assets/fauna-green-original.png'));assert.ok(p.innerHTML.includes('feColorMatrix'));assert.ok(parseFloat(p.values['--asize'])>=20&&parseFloat(p.values['--asize'])<=46);assert.ok(parseFloat(p.values['--ax'])>=4);assert.ok(parseFloat(p.values['--ay'])>=12);if(!reducedMotion){assert.equal(p.flight.frames.length,61);assert.ok(p.flight.options.duration>=560);const middle=p.flight.frames[30].transform;assert.ok(middle.includes('translate('));assert.equal(p.flight.options.easing,'linear');
     const edge=Number(p.attrs['data-exit-edge']),px=parseFloat(p.values['--ax']),py=parseFloat(p.values['--ay']),size=parseFloat(p.values['--asize']);
     assert.ok(px>=r.left&&px+size<=r.right&&py>=r.top&&py+size<=r.bottom,'Launch wholly inside panel');
     const distances=[px+size/2-r.left,r.right-px-size/2,py+size/2-r.top,r.bottom-py-size/2];
@@ -57,7 +59,7 @@ function run(reducedMotion,vw,vh,random){
     let previous=-1;
     for(const f of p.flight.frames){const [,dx,dy]=f.transform.match(/translate\(([-+.e\d]+)px,([-+.e\d]+)px\)/);assert.ok(Number(dy)<=1e-8,'Lateral jets arc diagonally upward');const normal=[-dx,+dx,-dy,+dy][edge];assert.ok(normal>=previous,'Outward movement never reverses or crosses panel');previous=normal;}
     assert.ok(previous>distances[edge],'Crosses selected edge');
-    assert.ok(p.flight.options.duration<=4400&&p.flight.options.delay<=500);
+    assert.ok(p.flight.options.duration<=3080&&p.flight.options.delay<=350);
 }else assert.equal(p.flight,undefined);}
 
  };

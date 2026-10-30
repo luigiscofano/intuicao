@@ -27,6 +27,8 @@ body:has(#sintonia:not([hidden])>.level-screen)>footer{position:relative;z-index
 #sintonia .sintonia-lab>.lab-heading::before,#sintonia .sintonia-lab>.lab-heading::after{content:"";position:absolute;left:1px;width:24px;height:24px;background:url("../platform-assets/flower-green-original.png") center/contain no-repeat;pointer-events:none;user-select:none;opacity:.52}
 #sintonia .sintonia-lab>.lab-heading::before{top:2px;transform:rotate(-18deg)}
 #sintonia .sintonia-lab>.lab-heading::after{bottom:2px;transform:rotate(22deg);width:19px;height:19px;opacity:.34}
+/* Keep the inherited 20px surface padding continuous with the white actions below. */
+#sintonia .sintonia-lab .collection-surface{background-image:linear-gradient(to top,#fff 20px,transparent 20px)}
 #sintonia .sintonia-lab .level-actions{gap:16px;padding-top:20px;padding-bottom:16px;background:#fff}
 #sintonia .sintonia-lab .level-actions :is(.actions,.collection-toolbar){gap:12px;flex-wrap:wrap}
 #sintonia #s-selection-status{min-height:24px;font-size:13px;color:var(--green)}

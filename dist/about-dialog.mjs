@@ -47,7 +47,9 @@ if(trigger && dialog){
    const piece=document.createElement('span');piece.className='about-animal-confetti';
    const size=22+Math.random()*24,rotation=-35+Math.random()*70;
    // Each icon leaves its nearest edge: no flight traverses the panel.
-   const edge=i%2,inset=size/2+8,t=.2+Math.random()*.6;
+   const edge=i%2,inset=size/2+8;
+   // Stagger launches over nearly the full edge instead of clustering at its middle.
+   const t=.08+.84*((Math.floor(i/2)+Math.random())/Math.ceil(count/2));
    const cx=edge===0?r.left+inset:edge===1?r.right-inset:r.left+r.width*t;
    const cy=edge===2?r.top+inset:edge===3?r.bottom-inset:r.top+r.height*t;
    const originX=cx-size/2,originY=cy-size/2;
@@ -60,12 +62,12 @@ if(trigger && dialog){
    piece.innerHTML=`<svg viewBox="${x} ${y} ${w} ${h}" aria-hidden="true" focusable="false"><defs>${isolatedCrop?`<clipPath id="fauna-crop-${i}"><rect x="${x}" y="${y}" width="${w}" height="${h}"/></clipPath>`:''}<filter id="fauna-paper-${i}" color-interpolation-filters="sRGB"><feColorMatrix type="matrix" values="1 0 0 0 0  0 1 0 0 0  0 0 1 0 0  -1 -1 -1 0 3"/></filter></defs><image ${isolatedCrop?`clip-path="url(#fauna-crop-${i})"`:''} href="platform-assets/fauna-green-original.png" width="1079" height="1458" filter="url(#fauna-paper-${i})"/></svg>`;
    fragment.append(piece);
    if(!reduced.matches){
-    const slow=i%3!==0,duration=(slow?3000:800)+Math.random()*1400;
+    const slow=i%3!==0,duration=(slow?2100:560)+Math.random()*980;
     const gap=Math.max(0,[r.left,vw-r.right,r.top,vh-r.bottom][edge]);
     // Settle in the outside margin instead of racing offscreen. A narrow mobile
     // margin keeps a visible portion of the PNG until its gentle final fade.
-    const distance=inset+Math.min(220,gap*.8);
-    const tangent=-35-Math.random()*65,spin=(Math.random()-.5)*80;
+    const distance=inset+gap*(.3+Math.random()*.65);
+    const tangent=-Math.min(24+Math.random()*160,Math.max(0,originY-8)),spin=(Math.random()-.5)*80;
     const frames=Array.from({length:61},(_,frame)=>{
      const progress=frame/60;
      const outward=distance*(1-Math.exp(-7*progress))/(1-Math.exp(-7));
@@ -75,7 +77,7 @@ if(trigger && dialog){
      return {offset:progress,opacity:progress<.05?progress/.05:progress>.8?(1-progress)/.2:1,
       transform:`translate(${dx}px,${dy}px) rotate(${rotation+spin*progress}deg)`};
     });
-    flights.push({piece,frames,duration,delay:Math.random()*500});
+    flights.push({piece,frames,duration,delay:Math.random()*350});
    }
   }
   greenLayer.append(fragment);
@@ -120,7 +122,7 @@ if(trigger && dialog){
   sparks.append(fragment);status.textContent='Viva cada pequena descoberta!';
   celebrateGreen();
   celebrateAnimals();
-  cleanupTimer=setTimeout(clearCelebration,reduced.matches?1100:5000);
+  cleanupTimer=setTimeout(clearCelebration,reduced.matches?1100:3500);
  });
  reduced.addEventListener('change',clearCelebration);
 }
