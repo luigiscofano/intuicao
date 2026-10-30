@@ -1,0 +1,1042 @@
+[
+  {
+    "number": 1,
+    "id": "light-v3-1",
+    "band": "basic",
+    "origin": {
+      "previousNumber": 1,
+      "previousId": "light-v3-1",
+      "recomposed": false,
+      "action": "retained-geometry-and-identity",
+      "archive": "../reflexos-v5/evidence-records.json.gz",
+      "transformation": "Somente ordem/faixa e metadados editoriais."
+    }
+  },
+  {
+    "number": 2,
+    "id": "light-v5-legacy-2",
+    "band": "basic",
+    "origin": {
+      "previousNumber": 2,
+      "previousId": "light-v5-legacy-2",
+      "recomposed": false,
+      "action": "retained-geometry-and-identity",
+      "archive": "../reflexos-v5/evidence-records.json.gz",
+      "transformation": "Somente ordem/faixa e metadados editoriais."
+    }
+  },
+  {
+    "number": 3,
+    "id": "light-v3-3",
+    "band": "basic",
+    "origin": {
+      "previousNumber": 3,
+      "previousId": "light-v3-3",
+      "recomposed": false,
+      "action": "retained-geometry-and-identity",
+      "archive": "../reflexos-v5/evidence-records.json.gz",
+      "transformation": "Somente ordem/faixa e metadados editoriais."
+    }
+  },
+  {
+    "number": 4,
+    "id": "light-v6-intro-chain",
+    "band": "basic",
+    "origin": {
+      "previousNumber": null,
+      "previousId": null,
+      "recomposed": true,
+      "action": "new-version-new-identity",
+      "archive": "../reflexos-v5/evidence-records.json.gz",
+      "transformation": "Nova introdução em dados; dimensões históricas inalteradas."
+    }
+  },
+  {
+    "number": 5,
+    "id": "light-v3-5",
+    "band": "basic",
+    "origin": {
+      "previousNumber": 50,
+      "previousId": "light-v3-5",
+      "recomposed": false,
+      "action": "retained-geometry-and-identity",
+      "archive": "../reflexos-v5/evidence-records.json.gz",
+      "transformation": "Somente ordem/faixa e metadados editoriais."
+    }
+  },
+  {
+    "number": 6,
+    "id": "light-v5-deduction-pilot-windows",
+    "band": "basic",
+    "origin": {
+      "previousNumber": 6,
+      "previousId": "light-v5-deduction-pilot-windows",
+      "recomposed": false,
+      "action": "retained-geometry-and-identity",
+      "archive": "../reflexos-v5/evidence-records.json.gz",
+      "transformation": "Somente ordem/faixa e metadados editoriais."
+    }
+  },
+  {
+    "number": 7,
+    "id": "light-v5-legacy-9",
+    "band": "basic",
+    "origin": {
+      "previousNumber": 9,
+      "previousId": "light-v5-legacy-9",
+      "recomposed": false,
+      "action": "retained-geometry-and-identity",
+      "archive": "../reflexos-v5/evidence-records.json.gz",
+      "transformation": "Somente ordem/faixa e metadados editoriais."
+    }
+  },
+  {
+    "number": 8,
+    "id": "light-v5-legacy-35",
+    "band": "basic",
+    "origin": {
+      "previousNumber": 65,
+      "previousId": "light-v5-legacy-35",
+      "recomposed": false,
+      "action": "retained-geometry-and-identity",
+      "archive": "../reflexos-v5/evidence-records.json.gz",
+      "transformation": "Somente ordem/faixa e metadados editoriais."
+    }
+  },
+  {
+    "number": 9,
+    "id": "light-v3-41",
+    "band": "basic",
+    "origin": {
+      "previousNumber": 7,
+      "previousId": "light-v3-41",
+      "recomposed": false,
+      "action": "retained-geometry-and-identity",
+      "archive": "../reflexos-v5/evidence-records.json.gz",
+      "transformation": "Somente ordem/faixa e metadados editoriais."
+    }
+  },
+  {
+    "number": 10,
+    "id": "light-v5-legacy-43",
+    "band": "basic",
+    "origin": {
+      "previousNumber": 10,
+      "previousId": "light-v5-legacy-43",
+      "recomposed": false,
+      "action": "retained-geometry-and-identity",
+      "archive": "../reflexos-v5/evidence-records.json.gz",
+      "transformation": "Somente ordem/faixa e metadados editoriais."
+    }
+  },
+  {
+    "number": 11,
+    "id": "light-v3-51",
+    "band": "basic",
+    "origin": {
+      "previousNumber": 11,
+      "previousId": "light-v3-51",
+      "recomposed": false,
+      "action": "retained-geometry-and-identity",
+      "archive": "../reflexos-v5/evidence-records.json.gz",
+      "transformation": "Somente ordem/faixa e metadados editoriais."
+    }
+  },
+  {
+    "number": 12,
+    "id": "light-v3-61",
+    "band": "basic",
+    "origin": {
+      "previousNumber": 16,
+      "previousId": "light-v3-61",
+      "recomposed": false,
+      "action": "retained-geometry-and-identity",
+      "archive": "../reflexos-v5/evidence-records.json.gz",
+      "transformation": "Somente ordem/faixa e metadados editoriais."
+    }
+  },
+  {
+    "number": 13,
+    "id": "light-v3-68",
+    "band": "basic",
+    "origin": {
+      "previousNumber": 78,
+      "previousId": "light-v3-68",
+      "recomposed": false,
+      "action": "retained-geometry-and-identity",
+      "archive": "../reflexos-v5/evidence-records.json.gz",
+      "transformation": "Somente ordem/faixa e metadados editoriais."
+    }
+  },
+  {
+    "number": 14,
+    "id": "light-v3-75",
+    "band": "basic",
+    "origin": {
+      "previousNumber": 191,
+      "previousId": "light-v3-75",
+      "recomposed": false,
+      "action": "retained-geometry-and-identity",
+      "archive": "../reflexos-v5/evidence-records.json.gz",
+      "transformation": "Somente ordem/faixa e metadados editoriais."
+    }
+  },
+  {
+    "number": 15,
+    "id": "light-v5-open-018",
+    "band": "basic",
+    "origin": {
+      "previousNumber": 75,
+      "previousId": "light-v5-open-018",
+      "recomposed": false,
+      "action": "retained-geometry-and-identity",
+      "archive": "../reflexos-v5/evidence-records.json.gz",
+      "transformation": "Somente ordem/faixa e metadados editoriais."
+    }
+  },
+  {
+    "number": 16,
+    "id": "light-v5-deduction-pair-00-filter",
+    "band": "apprentice",
+    "origin": {
+      "previousNumber": 29,
+      "previousId": "light-v5-deduction-pair-00-filter",
+      "recomposed": false,
+      "action": "retained-geometry-and-identity",
+      "archive": "../reflexos-v5/evidence-records.json.gz",
+      "transformation": "Somente ordem/faixa e metadados editoriais."
+    }
+  },
+  {
+    "number": 17,
+    "id": "light-v5-portal-001",
+    "band": "apprentice",
+    "origin": {
+      "previousNumber": 18,
+      "previousId": "light-v5-portal-001",
+      "recomposed": false,
+      "action": "retained-geometry-and-identity",
+      "archive": "../reflexos-v5/evidence-records.json.gz",
+      "transformation": "Somente ordem/faixa e metadados editoriais."
+    }
+  },
+  {
+    "number": 18,
+    "id": "light-v3-59",
+    "band": "apprentice",
+    "origin": {
+      "previousNumber": 188,
+      "previousId": "light-v3-59",
+      "recomposed": false,
+      "action": "retained-geometry-and-identity",
+      "archive": "../reflexos-v5/evidence-records.json.gz",
+      "transformation": "Somente ordem/faixa e metadados editoriais."
+    }
+  },
+  {
+    "number": 19,
+    "id": "light-v5-portal-023",
+    "band": "apprentice",
+    "origin": {
+      "previousNumber": 61,
+      "previousId": "light-v5-portal-023",
+      "recomposed": false,
+      "action": "retained-geometry-and-identity",
+      "archive": "../reflexos-v5/evidence-records.json.gz",
+      "transformation": "Somente ordem/faixa e metadados editoriais."
+    }
+  },
+  {
+    "number": 20,
+    "id": "light-v5-open-011",
+    "band": "apprentice",
+    "origin": {
+      "previousNumber": 31,
+      "previousId": "light-v5-open-011",
+      "recomposed": false,
+      "action": "retained-geometry-and-identity",
+      "archive": "../reflexos-v5/evidence-records.json.gz",
+      "transformation": "Somente ordem/faixa e metadados editoriais."
+    }
+  },
+  {
+    "number": 21,
+    "id": "light-v3-101",
+    "band": "apprentice",
+    "origin": {
+      "previousNumber": 25,
+      "previousId": "light-v3-101",
+      "recomposed": false,
+      "action": "retained-geometry-and-identity",
+      "archive": "../reflexos-v5/evidence-records.json.gz",
+      "transformation": "Somente ordem/faixa e metadados editoriais."
+    }
+  },
+  {
+    "number": 22,
+    "id": "light-v3-74",
+    "band": "apprentice",
+    "origin": {
+      "previousNumber": 24,
+      "previousId": "light-v3-74",
+      "recomposed": false,
+      "action": "retained-geometry-and-identity",
+      "archive": "../reflexos-v5/evidence-records.json.gz",
+      "transformation": "Somente ordem/faixa e metadados editoriais."
+    }
+  },
+  {
+    "number": 23,
+    "id": "light-v5-portal-011",
+    "band": "apprentice",
+    "origin": {
+      "previousNumber": 92,
+      "previousId": "light-v5-portal-011",
+      "recomposed": false,
+      "action": "retained-geometry-and-identity",
+      "archive": "../reflexos-v5/evidence-records.json.gz",
+      "transformation": "Somente ordem/faixa e metadados editoriais."
+    }
+  },
+  {
+    "number": 24,
+    "id": "light-v5-portal-012",
+    "band": "apprentice",
+    "origin": {
+      "previousNumber": 36,
+      "previousId": "light-v5-portal-012",
+      "recomposed": false,
+      "action": "retained-geometry-and-identity",
+      "archive": "../reflexos-v5/evidence-records.json.gz",
+      "transformation": "Somente ordem/faixa e metadados editoriais."
+    }
+  },
+  {
+    "number": 25,
+    "id": "light-v4-open-010",
+    "band": "apprentice",
+    "origin": {
+      "previousNumber": 81,
+      "previousId": "light-v4-open-010",
+      "recomposed": false,
+      "action": "retained-geometry-and-identity",
+      "archive": "../reflexos-v5/evidence-records.json.gz",
+      "transformation": "Somente ordem/faixa e metadados editoriais."
+    }
+  },
+  {
+    "number": 26,
+    "id": "light-v5-deduction-four-01",
+    "band": "apprentice",
+    "origin": {
+      "previousNumber": 57,
+      "previousId": "light-v5-deduction-four-01",
+      "recomposed": false,
+      "action": "retained-geometry-and-identity",
+      "archive": "../reflexos-v5/evidence-records.json.gz",
+      "transformation": "Somente ordem/faixa e metadados editoriais."
+    }
+  },
+  {
+    "number": 27,
+    "id": "light-v5-portal-031",
+    "band": "apprentice",
+    "origin": {
+      "previousNumber": 69,
+      "previousId": "light-v5-portal-031",
+      "recomposed": false,
+      "action": "retained-geometry-and-identity",
+      "archive": "../reflexos-v5/evidence-records.json.gz",
+      "transformation": "Somente ordem/faixa e metadados editoriais."
+    }
+  },
+  {
+    "number": 28,
+    "id": "light-v5-open-chain-003",
+    "band": "apprentice",
+    "origin": {
+      "previousNumber": 79,
+      "previousId": "light-v5-open-chain-003",
+      "recomposed": false,
+      "action": "retained-geometry-and-identity",
+      "archive": "../reflexos-v5/evidence-records.json.gz",
+      "transformation": "Somente ordem/faixa e metadados editoriais."
+    }
+  },
+  {
+    "number": 29,
+    "id": "light-v3-60",
+    "band": "apprentice",
+    "origin": {
+      "previousNumber": 200,
+      "previousId": "light-v3-60",
+      "recomposed": false,
+      "action": "retained-geometry-and-identity",
+      "archive": "../reflexos-v5/evidence-records.json.gz",
+      "transformation": "Somente ordem/faixa e metadados editoriais."
+    }
+  },
+  {
+    "number": 30,
+    "id": "light-v5-portal-030",
+    "band": "apprentice",
+    "origin": {
+      "previousNumber": 39,
+      "previousId": "light-v5-portal-030",
+      "recomposed": false,
+      "action": "retained-geometry-and-identity",
+      "archive": "../reflexos-v5/evidence-records.json.gz",
+      "transformation": "Somente ordem/faixa e metadados editoriais."
+    }
+  },
+  {
+    "number": 31,
+    "id": "light-v5-open-028",
+    "band": "intermediate",
+    "origin": {
+      "previousNumber": 34,
+      "previousId": "light-v5-open-028",
+      "recomposed": false,
+      "action": "retained-geometry-and-identity",
+      "archive": "../reflexos-v5/evidence-records.json.gz",
+      "transformation": "Somente ordem/faixa e metadados editoriais."
+    }
+  },
+  {
+    "number": 32,
+    "id": "light-v5-deduction-windows-04",
+    "band": "intermediate",
+    "origin": {
+      "previousNumber": 74,
+      "previousId": "light-v5-deduction-windows-04",
+      "recomposed": false,
+      "action": "retained-geometry-and-identity",
+      "archive": "../reflexos-v5/evidence-records.json.gz",
+      "transformation": "Somente ordem/faixa e metadados editoriais."
+    }
+  },
+  {
+    "number": 33,
+    "id": "light-v5-open-301",
+    "band": "intermediate",
+    "origin": {
+      "previousNumber": 150,
+      "previousId": "light-v5-open-301",
+      "recomposed": false,
+      "action": "retained-geometry-and-identity",
+      "archive": "../reflexos-v5/evidence-records.json.gz",
+      "transformation": "Somente ordem/faixa e metadados editoriais."
+    }
+  },
+  {
+    "number": 34,
+    "id": "light-v3-77",
+    "band": "intermediate",
+    "origin": {
+      "previousNumber": 134,
+      "previousId": "light-v3-77",
+      "recomposed": false,
+      "action": "retained-geometry-and-identity",
+      "archive": "../reflexos-v5/evidence-records.json.gz",
+      "transformation": "Somente ordem/faixa e metadados editoriais."
+    }
+  },
+  {
+    "number": 35,
+    "id": "light-v4-open-065",
+    "band": "intermediate",
+    "origin": {
+      "previousNumber": 201,
+      "previousId": "light-v4-open-065",
+      "recomposed": false,
+      "action": "retained-geometry-and-identity",
+      "archive": "../reflexos-v5/evidence-records.json.gz",
+      "transformation": "Somente ordem/faixa e metadados editoriais."
+    }
+  },
+  {
+    "number": 36,
+    "id": "light-v5-open-302",
+    "band": "intermediate",
+    "origin": {
+      "previousNumber": 163,
+      "previousId": "light-v5-open-302",
+      "recomposed": false,
+      "action": "retained-geometry-and-identity",
+      "archive": "../reflexos-v5/evidence-records.json.gz",
+      "transformation": "Somente ordem/faixa e metadados editoriais."
+    }
+  },
+  {
+    "number": 37,
+    "id": "light-v4-deduction-pilot-return",
+    "band": "intermediate",
+    "origin": {
+      "previousNumber": 293,
+      "previousId": "light-v4-deduction-pilot-return",
+      "recomposed": false,
+      "action": "retained-geometry-and-identity",
+      "archive": "../reflexos-v5/evidence-records.json.gz",
+      "transformation": "Somente ordem/faixa e metadados editoriais."
+    }
+  },
+  {
+    "number": 38,
+    "id": "light-v5-deduction-symmetry-02-base-reauthored",
+    "band": "intermediate",
+    "origin": {
+      "previousNumber": 59,
+      "previousId": "light-v5-deduction-symmetry-02-base-reauthored",
+      "recomposed": false,
+      "action": "retained-geometry-and-identity",
+      "archive": "../reflexos-v5/evidence-records.json.gz",
+      "transformation": "Somente ordem/faixa e metadados editoriais."
+    }
+  },
+  {
+    "number": 39,
+    "id": "light-v5-deduction-open-016",
+    "band": "intermediate",
+    "origin": {
+      "previousNumber": 154,
+      "previousId": "light-v5-deduction-open-016",
+      "recomposed": false,
+      "action": "retained-geometry-and-identity",
+      "archive": "../reflexos-v5/evidence-records.json.gz",
+      "transformation": "Somente ordem/faixa e metadados editoriais."
+    }
+  },
+  {
+    "number": 40,
+    "id": "light-v4-legacy-190-labels",
+    "band": "intermediate",
+    "origin": {
+      "previousNumber": 313,
+      "previousId": "light-v4-legacy-190-labels",
+      "recomposed": false,
+      "action": "retained-geometry-and-identity",
+      "archive": "../reflexos-v5/evidence-records.json.gz",
+      "transformation": "Somente ordem/faixa e metadados editoriais."
+    }
+  },
+  {
+    "number": 41,
+    "id": "light-v5-deduction-four-02",
+    "band": "intermediate",
+    "origin": {
+      "previousNumber": 231,
+      "previousId": "light-v5-deduction-four-02",
+      "recomposed": false,
+      "action": "retained-geometry-and-identity",
+      "archive": "../reflexos-v5/evidence-records.json.gz",
+      "transformation": "Somente ordem/faixa e metadados editoriais."
+    }
+  },
+  {
+    "number": 42,
+    "id": "light-v5-open-chain-012",
+    "band": "intermediate",
+    "origin": {
+      "previousNumber": 283,
+      "previousId": "light-v5-open-chain-012",
+      "recomposed": false,
+      "action": "retained-geometry-and-identity",
+      "archive": "../reflexos-v5/evidence-records.json.gz",
+      "transformation": "Somente ordem/faixa e metadados editoriais."
+    }
+  },
+  {
+    "number": 43,
+    "id": "light-v5-deduction-symmetry-02-opposite-filter-reauthored",
+    "band": "intermediate",
+    "origin": {
+      "previousNumber": 172,
+      "previousId": "light-v5-deduction-symmetry-02-opposite-filter-reauthored",
+      "recomposed": false,
+      "action": "retained-geometry-and-identity",
+      "archive": "../reflexos-v5/evidence-records.json.gz",
+      "transformation": "Somente ordem/faixa e metadados editoriais."
+    }
+  },
+  {
+    "number": 44,
+    "id": "light-v3-139",
+    "band": "intermediate",
+    "origin": {
+      "previousNumber": 260,
+      "previousId": "light-v3-139",
+      "recomposed": false,
+      "action": "retained-geometry-and-identity",
+      "archive": "../reflexos-v5/evidence-records.json.gz",
+      "transformation": "Somente ordem/faixa e metadados editoriais."
+    }
+  },
+  {
+    "number": 45,
+    "id": "light-v5-deduction-open-002",
+    "band": "intermediate",
+    "origin": {
+      "previousNumber": 126,
+      "previousId": "light-v5-deduction-open-002",
+      "recomposed": false,
+      "action": "retained-geometry-and-identity",
+      "archive": "../reflexos-v5/evidence-records.json.gz",
+      "transformation": "Somente ordem/faixa e metadados editoriais."
+    }
+  },
+  {
+    "number": 46,
+    "id": "light-v3-135",
+    "band": "advanced",
+    "origin": {
+      "previousNumber": 306,
+      "previousId": "light-v3-135",
+      "recomposed": false,
+      "action": "retained-geometry-and-identity",
+      "archive": "../reflexos-v5/evidence-records.json.gz",
+      "transformation": "Somente ordem/faixa e metadados editoriais."
+    }
+  },
+  {
+    "number": 47,
+    "id": "light-v3-73",
+    "band": "advanced",
+    "origin": {
+      "previousNumber": 197,
+      "previousId": "light-v3-73",
+      "recomposed": false,
+      "action": "retained-geometry-and-identity",
+      "archive": "../reflexos-v5/evidence-records.json.gz",
+      "transformation": "Somente ordem/faixa e metadados editoriais."
+    }
+  },
+  {
+    "number": 48,
+    "id": "light-v5-deduction-open-031",
+    "band": "advanced",
+    "origin": {
+      "previousNumber": 52,
+      "previousId": "light-v5-deduction-open-031",
+      "recomposed": false,
+      "action": "retained-geometry-and-identity",
+      "archive": "../reflexos-v5/evidence-records.json.gz",
+      "transformation": "Somente ordem/faixa e metadados editoriais."
+    }
+  },
+  {
+    "number": 49,
+    "id": "light-v4-open-chain-014",
+    "band": "advanced",
+    "origin": {
+      "previousNumber": 277,
+      "previousId": "light-v4-open-chain-014",
+      "recomposed": false,
+      "action": "retained-geometry-and-identity",
+      "archive": "../reflexos-v5/evidence-records.json.gz",
+      "transformation": "Somente ordem/faixa e metadados editoriais."
+    }
+  },
+  {
+    "number": 50,
+    "id": "light-v3-95",
+    "band": "advanced",
+    "origin": {
+      "previousNumber": 129,
+      "previousId": "light-v3-95",
+      "recomposed": false,
+      "action": "retained-geometry-and-identity",
+      "archive": "../reflexos-v5/evidence-records.json.gz",
+      "transformation": "Somente ordem/faixa e metadados editoriais."
+    }
+  },
+  {
+    "number": 51,
+    "id": "light-v3-84",
+    "band": "advanced",
+    "origin": {
+      "previousNumber": 109,
+      "previousId": "light-v3-84",
+      "recomposed": false,
+      "action": "retained-geometry-and-identity",
+      "archive": "../reflexos-v5/evidence-records.json.gz",
+      "transformation": "Somente ordem/faixa e metadados editoriais."
+    }
+  },
+  {
+    "number": 52,
+    "id": "light-v4-legacy-180-labels",
+    "band": "advanced",
+    "origin": {
+      "previousNumber": 378,
+      "previousId": "light-v4-legacy-180-labels",
+      "recomposed": false,
+      "action": "retained-geometry-and-identity",
+      "archive": "../reflexos-v5/evidence-records.json.gz",
+      "transformation": "Somente ordem/faixa e metadados editoriais."
+    }
+  },
+  {
+    "number": 53,
+    "id": "light-v5-portal-875",
+    "band": "advanced",
+    "origin": {
+      "previousNumber": 230,
+      "previousId": "light-v5-portal-875",
+      "recomposed": false,
+      "action": "retained-geometry-and-identity",
+      "archive": "../reflexos-v5/evidence-records.json.gz",
+      "transformation": "Somente ordem/faixa e metadados editoriais."
+    }
+  },
+  {
+    "number": 54,
+    "id": "light-v5-portal-017",
+    "band": "advanced",
+    "origin": {
+      "previousNumber": 67,
+      "previousId": "light-v5-portal-017",
+      "recomposed": false,
+      "action": "retained-geometry-and-identity",
+      "archive": "../reflexos-v5/evidence-records.json.gz",
+      "transformation": "Somente ordem/faixa e metadados editoriais."
+    }
+  },
+  {
+    "number": 55,
+    "id": "light-v5-legacy-196",
+    "band": "advanced",
+    "origin": {
+      "previousNumber": 393,
+      "previousId": "light-v5-legacy-196",
+      "recomposed": false,
+      "action": "retained-geometry-and-identity",
+      "archive": "../reflexos-v5/evidence-records.json.gz",
+      "transformation": "Somente ordem/faixa e metadados editoriais."
+    }
+  },
+  {
+    "number": 56,
+    "id": "light-v5-deduction-four-05",
+    "band": "advanced",
+    "origin": {
+      "previousNumber": 301,
+      "previousId": "light-v5-deduction-four-05",
+      "recomposed": false,
+      "action": "retained-geometry-and-identity",
+      "archive": "../reflexos-v5/evidence-records.json.gz",
+      "transformation": "Somente ordem/faixa e metadados editoriais."
+    }
+  },
+  {
+    "number": 57,
+    "id": "light-v5-deduction-open-003",
+    "band": "advanced",
+    "origin": {
+      "previousNumber": 282,
+      "previousId": "light-v5-deduction-open-003",
+      "recomposed": false,
+      "action": "retained-geometry-and-identity",
+      "archive": "../reflexos-v5/evidence-records.json.gz",
+      "transformation": "Somente ordem/faixa e metadados editoriais."
+    }
+  },
+  {
+    "number": 58,
+    "id": "light-v3-133",
+    "band": "advanced",
+    "origin": {
+      "previousNumber": 389,
+      "previousId": "light-v3-133",
+      "recomposed": false,
+      "action": "retained-geometry-and-identity",
+      "archive": "../reflexos-v5/evidence-records.json.gz",
+      "transformation": "Somente ordem/faixa e metadados editoriais."
+    }
+  },
+  {
+    "number": 59,
+    "id": "light-v5-master-reserve-011",
+    "band": "advanced",
+    "origin": {
+      "previousNumber": 406,
+      "previousId": "light-v5-master-reserve-011",
+      "recomposed": false,
+      "action": "retained-geometry-and-identity",
+      "archive": "../reflexos-v5/evidence-records.json.gz",
+      "transformation": "Somente ordem/faixa e metadados editoriais."
+    }
+  },
+  {
+    "number": 60,
+    "id": "light-v5-master-contrast-002",
+    "band": "advanced",
+    "origin": {
+      "previousNumber": 460,
+      "previousId": "light-v5-master-contrast-002",
+      "recomposed": false,
+      "action": "retained-geometry-and-identity",
+      "archive": "../reflexos-v5/evidence-records.json.gz",
+      "transformation": "Somente ordem/faixa e metadados editoriais."
+    }
+  },
+  {
+    "number": 61,
+    "id": "light-v5-master-003",
+    "band": "master",
+    "origin": {
+      "previousNumber": 482,
+      "previousId": "light-v5-master-003",
+      "recomposed": false,
+      "action": "retained-geometry-and-identity",
+      "archive": "../reflexos-v5/evidence-records.json.gz",
+      "transformation": "Somente ordem/faixa e metadados editoriais."
+    }
+  },
+  {
+    "number": 62,
+    "id": "light-v5-deduction-master-window-16-1-reauthored",
+    "band": "master",
+    "origin": {
+      "previousNumber": 407,
+      "previousId": "light-v5-deduction-master-window-16-1-reauthored",
+      "recomposed": false,
+      "action": "retained-geometry-and-identity",
+      "archive": "../reflexos-v5/evidence-records.json.gz",
+      "transformation": "Somente ordem/faixa e metadados editoriais."
+    }
+  },
+  {
+    "number": 63,
+    "id": "light-v5-deduction-open-025",
+    "band": "master",
+    "origin": {
+      "previousNumber": 399,
+      "previousId": "light-v5-deduction-open-025",
+      "recomposed": false,
+      "action": "retained-geometry-and-identity",
+      "archive": "../reflexos-v5/evidence-records.json.gz",
+      "transformation": "Somente ordem/faixa e metadados editoriais."
+    }
+  },
+  {
+    "number": 64,
+    "id": "light-v6-recomposed-261",
+    "band": "master",
+    "origin": {
+      "previousNumber": 261,
+      "previousId": "light-v5-legacy-126",
+      "recomposed": true,
+      "action": "new-version-new-identity",
+      "archive": "../reflexos-v5/evidence-records.json.gz",
+      "transformation": "Centros de fontes, alvos, objetos e portais recombinados por homotetia0.8 ao redor400,230; comprimentos, raios, ângulos e física inalterados."
+    }
+  },
+  {
+    "number": 65,
+    "id": "light-v5-portal-931",
+    "band": "master",
+    "origin": {
+      "previousNumber": 464,
+      "previousId": "light-v5-portal-931",
+      "recomposed": false,
+      "action": "retained-geometry-and-identity",
+      "archive": "../reflexos-v5/evidence-records.json.gz",
+      "transformation": "Somente ordem/faixa e metadados editoriais."
+    }
+  },
+  {
+    "number": 66,
+    "id": "light-v3-76",
+    "band": "master",
+    "origin": {
+      "previousNumber": 174,
+      "previousId": "light-v3-76",
+      "recomposed": false,
+      "action": "retained-geometry-and-identity",
+      "archive": "../reflexos-v5/evidence-records.json.gz",
+      "transformation": "Somente ordem/faixa e metadados editoriais."
+    }
+  },
+  {
+    "number": 67,
+    "id": "light-v3-199",
+    "band": "master",
+    "origin": {
+      "previousNumber": 305,
+      "previousId": "light-v3-199",
+      "recomposed": false,
+      "action": "retained-geometry-and-identity",
+      "archive": "../reflexos-v5/evidence-records.json.gz",
+      "transformation": "Somente ordem/faixa e metadados editoriais."
+    }
+  },
+  {
+    "number": 68,
+    "id": "light-v5-deduction-symmetry-11-filter",
+    "band": "master",
+    "origin": {
+      "previousNumber": 443,
+      "previousId": "light-v5-deduction-symmetry-11-filter",
+      "recomposed": false,
+      "action": "retained-geometry-and-identity",
+      "archive": "../reflexos-v5/evidence-records.json.gz",
+      "transformation": "Somente ordem/faixa e metadados editoriais."
+    }
+  },
+  {
+    "number": 69,
+    "id": "light-v5-open-hard-chain-2",
+    "band": "master",
+    "origin": {
+      "previousNumber": 405,
+      "previousId": "light-v5-open-hard-chain-2",
+      "recomposed": false,
+      "action": "retained-geometry-and-identity",
+      "archive": "../reflexos-v5/evidence-records.json.gz",
+      "transformation": "Somente ordem/faixa e metadados editoriais."
+    }
+  },
+  {
+    "number": 70,
+    "id": "light-v5-deduction-four-11",
+    "band": "master",
+    "origin": {
+      "previousNumber": 388,
+      "previousId": "light-v5-deduction-four-11",
+      "recomposed": false,
+      "action": "retained-geometry-and-identity",
+      "archive": "../reflexos-v5/evidence-records.json.gz",
+      "transformation": "Somente ordem/faixa e metadados editoriais."
+    }
+  },
+  {
+    "number": 71,
+    "id": "light-v5-master-filter-001",
+    "band": "master",
+    "origin": {
+      "previousNumber": 465,
+      "previousId": "light-v5-master-filter-001",
+      "recomposed": false,
+      "action": "retained-geometry-and-identity",
+      "archive": "../reflexos-v5/evidence-records.json.gz",
+      "transformation": "Somente ordem/faixa e metadados editoriais."
+    }
+  },
+  {
+    "number": 72,
+    "id": "light-v5-deduction-master-window-1-1-reauthored",
+    "band": "master",
+    "origin": {
+      "previousNumber": 488,
+      "previousId": "light-v5-deduction-master-window-1-1-reauthored",
+      "recomposed": false,
+      "action": "retained-geometry-and-identity",
+      "archive": "../reflexos-v5/evidence-records.json.gz",
+      "transformation": "Somente ordem/faixa e metadados editoriais."
+    }
+  },
+  {
+    "number": 73,
+    "id": "light-v5-portal-034",
+    "band": "master",
+    "origin": {
+      "previousNumber": 494,
+      "previousId": "light-v5-portal-034",
+      "recomposed": false,
+      "action": "retained-geometry-and-identity",
+      "archive": "../reflexos-v5/evidence-records.json.gz",
+      "transformation": "Somente ordem/faixa e metadados editoriais."
+    }
+  },
+  {
+    "number": 74,
+    "id": "light-v5-master-contrast-001",
+    "band": "master",
+    "origin": {
+      "previousNumber": 492,
+      "previousId": "light-v5-master-contrast-001",
+      "recomposed": false,
+      "action": "retained-geometry-and-identity",
+      "archive": "../reflexos-v5/evidence-records.json.gz",
+      "transformation": "Somente ordem/faixa e metadados editoriais."
+    }
+  },
+  {
+    "number": 75,
+    "id": "light-v3-194",
+    "band": "master",
+    "origin": {
+      "previousNumber": 341,
+      "previousId": "light-v3-194",
+      "recomposed": false,
+      "action": "retained-geometry-and-identity",
+      "archive": "../reflexos-v5/evidence-records.json.gz",
+      "transformation": "Somente ordem/faixa e metadados editoriais."
+    }
+  },
+  {
+    "number": 76,
+    "id": "light-v5-open-chain-019",
+    "band": "sage",
+    "origin": {
+      "previousNumber": 322,
+      "previousId": "light-v5-open-chain-019",
+      "recomposed": false,
+      "action": "retained-geometry-and-identity",
+      "archive": "../reflexos-v5/evidence-records.json.gz",
+      "transformation": "Somente ordem/faixa e metadados editoriais."
+    }
+  },
+  {
+    "number": 77,
+    "id": "light-v5-deduction-master-detail-2",
+    "band": "sage",
+    "origin": {
+      "previousNumber": 470,
+      "previousId": "light-v5-deduction-master-detail-2",
+      "recomposed": false,
+      "action": "retained-geometry-and-identity",
+      "archive": "../reflexos-v5/evidence-records.json.gz",
+      "transformation": "Somente ordem/faixa e metadados editoriais."
+    }
+  },
+  {
+    "number": 78,
+    "id": "light-v6-recomposed-398",
+    "band": "sage",
+    "origin": {
+      "previousNumber": 398,
+      "previousId": "light-v5-legacy-130",
+      "recomposed": true,
+      "action": "new-version-new-identity",
+      "archive": "../reflexos-v5/evidence-records.json.gz",
+      "transformation": "Centros de fontes, alvos, objetos e portais recombinados por homotetia0.8 ao redor400,230; comprimentos, raios, ângulos e física inalterados."
+    }
+  },
+  {
+    "number": 79,
+    "id": "light-v6-recomposed-380",
+    "band": "sage",
+    "origin": {
+      "previousNumber": 380,
+      "previousId": "light-v3-132",
+      "recomposed": true,
+      "action": "new-version-new-identity",
+      "archive": "../reflexos-v5/evidence-records.json.gz",
+      "transformation": "Alvo rosa deslocado80px para trás na mesma chegada final (370,195→370,115); demais objetos e dimensões preservados."
+    }
+  },
+  {
+    "number": 80,
+    "id": "light-v5-master-005",
+    "band": "sage",
+    "origin": {
+      "previousNumber": 425,
+      "previousId": "light-v5-master-005",
+      "recomposed": false,
+      "action": "retained-geometry-and-identity",
+      "archive": "../reflexos-v5/evidence-records.json.gz",
+      "transformation": "Somente ordem/faixa e metadados editoriais."
+    }
+  }
+]

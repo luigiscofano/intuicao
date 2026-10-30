@@ -1,0 +1,160 @@
+{
+  "level": {
+    "id": "light-v5-legacy-126",
+    "campaignNumber": 261,
+    "name": "Dois impactos, uma orienta\u00e7\u00e3o",
+    "sources": [
+      {
+        "x": 240.79999999999998,
+        "y": 198.8,
+        "angle": 0,
+        "color": "gold"
+      },
+      {
+        "x": 559.2,
+        "y": 261.2,
+        "angle": 180,
+        "color": "blue"
+      },
+      {
+        "x": 605.2120245997385,
+        "y": 237.1704849184312,
+        "angle": 141,
+        "color": "pink"
+      }
+    ],
+    "targets": [
+      {
+        "x": 368.8,
+        "y": 326,
+        "radius": 22,
+        "color": "gold"
+      },
+      {
+        "x": 431.2,
+        "y": 102,
+        "radius": 22,
+        "color": "blue"
+      },
+      {
+        "x": 304,
+        "y": 78,
+        "radius": 22,
+        "color": "pink"
+      }
+    ],
+    "objects": [
+      {
+        "type": "mirror",
+        "id": "shared",
+        "x": 400,
+        "y": 230,
+        "length": 124.8,
+        "angle": 55
+      },
+      {
+        "type": "mirror",
+        "id": "pink",
+        "x": 456,
+        "y": 358,
+        "length": 124.8,
+        "angle": -39.5
+      }
+    ],
+    "portals": [
+      {
+        "id": "Ga",
+        "pairId": "Gb",
+        "label": "G",
+        "x": 520,
+        "y": 198.8,
+        "radius": 16,
+        "colors": [
+          "gold"
+        ]
+      },
+      {
+        "id": "Gb",
+        "pairId": "Ga",
+        "label": "G",
+        "x": 256,
+        "y": 326,
+        "radius": 16,
+        "colors": [
+          "gold"
+        ]
+      },
+      {
+        "id": "Ba",
+        "pairId": "Bb",
+        "label": "B",
+        "x": 280,
+        "y": 261.2,
+        "radius": 16,
+        "colors": [
+          "blue"
+        ]
+      },
+      {
+        "id": "Bb",
+        "pairId": "Ba",
+        "label": "B",
+        "x": 544,
+        "y": 102,
+        "radius": 16,
+        "colors": [
+          "blue"
+        ]
+      },
+      {
+        "id": "Ka",
+        "pairId": "Kb",
+        "label": "K",
+        "x": 387.2,
+        "y": 242.8,
+        "radius": 16,
+        "colors": [
+          "pink"
+        ]
+      },
+      {
+        "id": "Kb",
+        "pairId": "Ka",
+        "label": "K",
+        "x": 352,
+        "y": 158,
+        "radius": 16,
+        "colors": [
+          "pink"
+        ]
+      }
+    ],
+    "solution": [
+      45,
+      10.1
+    ],
+    "width": 800,
+    "height": 460,
+    "difficulty": 126,
+    "family": "shared-control",
+    "design": {
+      "family": "shared-control",
+      "revision": "editorial-causal-v2",
+      "variant": "Apresenta\u00e7\u00e3o de acoplamento"
+    },
+    "sourceAngle": 0,
+    "target": {
+      "x": 361,
+      "y": 350,
+      "radius": 22,
+      "color": "gold"
+    },
+    "requiredBounces": 3,
+    "wallPurpose": [],
+    "rules": "Leve as tr\u00eas luzes aos respectivos alvos sem cruzar os feixes.",
+    "tutorial": "",
+    "hint": "O espelho central recebe duas luzes em pontos diferentes.",
+    "number": 261,
+    "campaignBand": "intermediate"
+  }
+}

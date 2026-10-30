@@ -170,8 +170,8 @@ function showOriginalHint(){
 }
 const completed=new Set();const lastLevel={light:null,cut:null};
 const lightCampaignProgress=createLightCampaignProgress();
-const lightCampaignBands=[['basic','Básico',1,200],['intermediate','Intermediário',201,300],['advanced','Avançado',301,400],['master','Mestre',401,500]];
-const lightCampaignNumber=(l,i)=>Number.isInteger(l.campaignNumber)&&l.campaignNumber>=1&&l.campaignNumber<=500?l.campaignNumber:i+1;
+const lightCampaignBands=[['basic','Básico',1,15],['apprentice','Aprendiz',16,30],['intermediate','Intermediário',31,45],['advanced','Avançado',46,60],['master','Mestre',61,75],['sage','Modo Sábio',76,80]];
+const lightCampaignNumber=(l,i)=>Number.isInteger(l.campaignNumber)&&l.campaignNumber>=1&&l.campaignNumber<=catalogue.light.length?l.campaignNumber:i+1;
 function lightCampaignSelection(){
  const progress=lightCampaignProgress.snapshot();let html='';
  const entries=catalogue.light.map((l,i)=>({l,i,number:lightCampaignNumber(l,i)}));
@@ -181,7 +181,7 @@ function lightCampaignSelection(){
   html+=`<h3 class="stage-heading" data-campaign-band="${band}">${name} · ${first}–${last}</h3>`;
   let groupOpen=false,previousStage;
   for(const {l,i,number} of levels){
-   const stage=band==='basic'&&l.stageName?`${l.stage==null?'':l.stage+' · '}${l.stageName}`:'';
+   const stage=''; // The six 80-level tiers are the complete campaign grouping.
    if(!groupOpen||stage!==previousStage){
     if(groupOpen)html+='</div>';
     if(stage)html+=`<h4 class="stage-heading">${stage}</h4>`;

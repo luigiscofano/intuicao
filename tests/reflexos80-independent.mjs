@@ -1,0 +1,46 @@
+// Independent authoring audit. Uses the unmodified production motor, never its cached claims.
+import fs from 'node:fs';
+import {pathToFileURL} from 'node:url';
+import {traceLightWorld,traceLightAttempt,lightSegmentIntersection} from '../dist/light-world.mjs';
+import {wallPolygon} from '../dist/math.mjs';
+import {cataloguedConfigurations} from './light-v5-incidence-tests.mjs';
+const min=a=>a.length?Math.min(...a):null, dist=(a,b)=>Math.hypot(a.x-b.x,a.y-b.y);
+const pointSeg=(p,a,b)=>{const dx=b.x-a.x,dy=b.y-a.y,t=Math.max(0,Math.min(1,((p.x-a.x)*dx+(p.y-a.y)*dy)/(dx*dx+dy*dy||1)));return dist(p,{x:a.x+t*dx,y:a.y+t*dy})};
+const segDist=(a,b,c,d)=>lightSegmentIntersection(a,b,c,d)?0:Math.min(pointSeg(a,c,d),pointSeg(b,c,d),pointSeg(c,a,b),pointSeg(d,a,b));
+const lineDist=(p,s)=>Math.abs((s.b.x-s.a.x)*(s.a.y-p.y)-(s.a.x-p.x)*(s.b.y-s.a.y))/dist(s.a,s.b);
+export function applyAngles(l,angles=l.solution){let n=0;return {...l,objects:l.objects.map(o=>({...o,...(o.type==='mirror'?{angle:angles[n++]}:{})}))};}
+function topology(w){return JSON.stringify(w.rays.map(r=>[r.status,r.reflections.map(x=>x.objectIndex),r.teleports.map(x=>x.portalId)]));}
+export function metrics(state,world){
+ const events=[],targetMargins=[],portalMargins=[],wallMargins=[],rayMargins=[];
+ const walls=state.objects.filter(o=>o.type==='wall').flatMap(o=>{const p=wallPolygon(o);return p.map((a,i)=>({a,b:p[(i+1)%4]}))});
+ world.rays.forEach((r,sourceIndex)=>{
+  for(const h of r.reflections){const m=state.objects[h.objectIndex],a=m.angle*Math.PI/180,tx=Math.cos(a),ty=Math.sin(a);events.push({sourceIndex,color:r.color,objectIndex:h.objectIndex,mirrorAngle:m.angle,point:h.point,incidence:Math.atan2(Math.abs(h.incoming.x*ty-h.incoming.y*tx),Math.abs(h.incoming.x*tx+h.incoming.y*ty))*180/Math.PI,endpointMargin:m.length/2-dist(m,h.point)});}
+  if(r.status==='target'){const s=r.segments.at(-1),t=state.targets.find(t=>t.color===r.color&&Math.abs(dist(s.b,t)-(t.radius??22))<1e-4);if(t)targetMargins.push({color:r.color,margin:(t.radius??22)-lineDist(t,s)});}
+  for(const p of r.teleports){const portal=state.portals.find(q=>q.id===p.portalId),s=r.segments.find(s=>dist(s.b,p.point)<1e-4);if(portal&&s)portalMargins.push({color:r.color,id:p.portalId,margin:(portal.radius??16)-lineDist(portal,s)});}
+  for(const s of r.segments)for(const wall of walls)wallMargins.push(segDist(s.a,s.b,wall.a,wall.b));
+ });
+ for(let i=0;i<world.rays.length;i++)for(let j=i+1;j<world.rays.length;j++)if(world.rays[i].color!==world.rays[j].color)for(const a of world.rays[i].segments)for(const b of world.rays[j].segments)rayMargins.push(segDist(a.a,a.b,b.a,b.b));
+ const grouped=new Map();for(const e of events){if(!grouped.has(e.objectIndex))grouped.set(e.objectIndex,[]);grouped.get(e.objectIndex).push(e);}
+ const shared=[...grouped].filter(([i,es])=>new Set(es.map(e=>e.color)).size>1).map(([objectIndex,events])=>({objectIndex,angle:state.objects[objectIndex].angle,events,distinctContactPoints:events.every((e,i)=>events.slice(i+1).filter(f=>f.color!==e.color).every(f=>dist(e.point,f.point)>1e-6))}));
+ return {minIncidence:min(events.map(e=>e.incidence)),minMirrorEndpointMargin:min(events.map(e=>e.endpointMargin)),minWallClearance:min(wallMargins),minTargetTransverseMargin:min(targetMargins.map(e=>e.margin)),minPortalTransverseMargin:min(portalMargins.map(e=>e.margin)),minDifferentColorPathDistance:min(rayMargins),events,targetMargins,portalMargins,shared};
+}
+const permutations=xs=>xs.length?xs.flatMap((x,i)=>permutations(xs.filter((_,j)=>j!==i)).map(p=>[x,...p])):[[]];
+export function auditRecord(record,{perturb=true}={}){
+ const l=record.level??record,st=applyAngles(l),w=traceLightWorld(st),initial=traceLightWorld(l),m=metrics(st,w),issues=[];
+ if(w.status!=='target')issues.push('reference-not-target');if(initial.status==='target')issues.push('initial-already-solved');if(m.minIncidence<20-1e-8)issues.push('reference-below-20');if(m.shared.some(s=>!s.distinctContactPoints))issues.push('shared-contact-point');
+ const witnesses=[];
+ for(const c of record.cases??[]){if(!Array.isArray(c.angles)||c.angles.length!==l.solution.length||c.sourceIndices?.length&&c.sourceIndices.length!==l.sources.length)continue;const s=applyAngles(l,c.angles),joint=traceLightWorld(s);if(!joint.collisions.length)continue;const individuals=s.sources.map(source=>traceLightWorld({...s,sources:[source]}));if(!individuals.every(w=>w.status==='target'))continue;
+ const orders=permutations(s.sources.map((_,i)=>i)).map(order=>{let previous=null;for(let n=1;n<=order.length;n++)previous=traceLightAttempt(s,order.slice(0,n),{previous});return {order,status:previous.status}});
+ witnesses.push({caseId:c.id,angles:c.angles,individualStatuses:individuals.map(w=>w.status),jointStatus:joint.status,collisions:joint.collisions.map(c=>({point:c.point,colors:c.colors})),individualRoutes:individuals.map(w=>w.rays[0].segments.map(s=>({a:s.a,b:s.b}))),orders});
+ }
+ const referenceOperations=w.rays.reduce((n,r)=>n+r.reflections.length+r.teleports.length,0),knownAlternatives={tested:0,fullWorldWinners:0,equalOrFewerOperationWinners:0,below20EqualOrFewer:[],between20and30EqualOrFewer:[],staleExpectedWinners:0,enumerationErrors:[]};
+ let catalogue=[];try{catalogue=cataloguedConfigurations({...record,level:l})}catch(e){knownAlternatives.enumerationErrors.push(e.message)}
+ const seen=new Set();for(const c of [...(record.cases??[]),...catalogue]){if(!Array.isArray(c.angles)||c.angles.length!==l.solution.length||(c.sourceIndices&&c.sourceIndices.length!==l.sources.length))continue;const key=JSON.stringify(c.angles);if(seen.has(key))continue;seen.add(key);knownAlternatives.tested++;const s=applyAngles(l,c.angles),ww=traceLightWorld(s);if(ww.status!=='target'){if(c.expectedStatus==='target')knownAlternatives.staleExpectedWinners++;continue;}knownAlternatives.fullWorldWinners++;const operations=ww.rays.reduce((n,r)=>n+r.reflections.length+r.teleports.length,0);if(operations>referenceOperations)continue;knownAlternatives.equalOrFewerOperationWinners++;const mm=metrics(s,ww),finding={origin:c.id??c.origin,angles:c.angles,operations,minIncidence:mm.minIncidence};if(mm.minIncidence<20-1e-8)knownAlternatives.below20EqualOrFewer.push(finding);else if(mm.minIncidence<30-1e-8)knownAlternatives.between20and30EqualOrFewer.push(finding);}
+ const probes=[];if(perturb){for(let i=0;i<l.solution.length;i++)for(const delta of [-.5,.5]){const a=[...l.solution];a[i]+=delta;probes.push({kind:'individual',mirror:i,delta,angles:a});}for(let mask=0;mask<2**l.solution.length;mask++)probes.push({kind:'corner',mask,angles:l.solution.map((a,i)=>a+((mask>>i)&1?.5:-.5))});}
+ const ps=probes.map(p=>{const s=applyAngles(l,p.angles),ww=traceLightWorld(s),mm=metrics(s,ww);return {...p,status:ww.status,sameTopology:topology(w)===topology(ww),minIncidence:mm.minIncidence,minMirrorEndpointMargin:mm.minMirrorEndpointMargin,minWallClearance:mm.minWallClearance,minTargetTransverseMargin:mm.minTargetTransverseMargin,minPortalTransverseMargin:mm.minPortalTransverseMargin,minDifferentColorPathDistance:mm.minDifferentColorPathDistance};});
+ if(ps.some(p=>p.status!=='target'))issues.push('half-degree-failure');
+ const keys=['minIncidence','minMirrorEndpointMargin','minWallClearance','minTargetTransverseMargin','minPortalTransverseMargin','minDifferentColorPathDistance'];
+ return {id:l.id,number:l.campaignNumber??l.number,referenceStatus:w.status,initialStatus:initial.status,metrics:m,witnesses,knownAlternatives,wallFree:!l.objects.some(o=>o.type==='wall'),perturbation:{tests:ps.length,failures:ps.filter(p=>p.status!=='target').length,topologyChanges:ps.filter(p=>!p.sameTopology).length,minima:Object.fromEntries(keys.map(k=>[k,min(ps.map(p=>p[k]).filter(x=>x!==null))])),probes:ps},issues};
+}
+export function audit(records){const levels=records.map(r=>auditRecord(r));return {passed:levels.every(l=>!l.issues.length),summary:{count:levels.length,exceptions20to30:levels.filter(l=>l.metrics.minIncidence<30-1e-8).map(l=>l.number),conflictCount:levels.filter(l=>l.witnesses.length).length,wallFreeConflictCount:levels.filter(l=>l.witnesses.length&&l.wallFree).length,sharedMirrorCount:levels.filter(l=>l.metrics.shared.length).length,perturbationTests:levels.reduce((n,l)=>n+l.perturbation.tests,0),perturbationFailures:levels.reduce((n,l)=>n+l.perturbation.failures,0)},limitations:['Finite ±0.5° individual and simultaneous-corner samples do not prove the whole continuous angular box.','Target and portal margins measure transverse clearance to the incoming line, not distance to the boundary point where a successful ray necessarily terminates.','Reference shared use is certified, not universal necessity, uniqueness, minimum resources, or human difficulty.','No browser/mobile ergonomics or human playtesting is claimed.'],levels};}
+if(process.argv[1]&&import.meta.url===pathToFileURL(process.argv[1]).href){const records=JSON.parse(fs.readFileSync(process.argv[2]??new URL('../dist/development/reflexos-v5/records.json',import.meta.url),'utf8'));const result=audit(records);fs.writeFileSync(process.argv[3]??new URL('./reflexos80-independent-validation.json',import.meta.url),JSON.stringify(result,null,2));console.log(JSON.stringify(result.summary));if(!result.passed)process.exitCode=1;}

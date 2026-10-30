@@ -1,0 +1,3915 @@
+{
+  "count": 80,
+  "patterns": [
+    "A",
+    "B",
+    "C",
+    "D",
+    "E",
+    "F",
+    "G",
+    "H",
+    "I",
+    "J"
+  ],
+  "consecutiveTripleKernels": [],
+  "records": [
+    {
+      "number": 1,
+      "id": "light-v3-1",
+      "band": "Básico",
+      "primaryPattern": "G",
+      "combinedPatterns": [],
+      "decisionKernel": "primeira-reflexao",
+      "discovery": "Relacionar a chegada horizontal com uma saída vertical.",
+      "plausibleFailure": {
+        "caseId": "legacy-case-1",
+        "angles": [
+          45
+        ],
+        "status": "miss",
+        "routes": [
+          "gold: E1 → wall"
+        ],
+        "explanation": "A alternativa registrada legacy-case-1 não completa a chegada: gold: E1 → wall. O contraste permite conferir a direção ou a conexão escolhida, sem proibir outras soluções válidas."
+      },
+      "dependencies": "Não foi demonstrada cadeia entre cores; as decisões locais ou a orientação comum são descritas na dedução, sem inventar dependência adicional.",
+      "difficultyRationale": "Básico: a relação é apresentada em um percurso curto ou num conflito local entre duas cores; nenhuma classificação usa precisão angular. Relação central: Relacionar a chegada horizontal com uma saída vertical.",
+      "referenceRoutes": [
+        "gold: E1 → alvo"
+      ],
+      "concept": 1,
+      "combinedConcepts": [],
+      "comfortSeparate": true,
+      "limits": "Testes de configurações e catálogos finitos; não provam unicidade, mínimo de recursos, necessidade universal ou dificuldade humana."
+    },
+    {
+      "number": 2,
+      "id": "light-v5-legacy-2",
+      "band": "Básico",
+      "primaryPattern": "G",
+      "combinedPatterns": [],
+      "decisionKernel": "virada-obliqua",
+      "discovery": "Entender que a reflexão não precisa fazer uma virada de noventa graus.",
+      "plausibleFailure": {
+        "caseId": "legacy-case-1",
+        "angles": [
+          33
+        ],
+        "status": "miss",
+        "routes": [
+          "gold: E1 → wall"
+        ],
+        "explanation": "A alternativa registrada legacy-case-1 não completa a chegada: gold: E1 → wall. O contraste permite conferir a direção ou a conexão escolhida, sem proibir outras soluções válidas."
+      },
+      "dependencies": "Não foi demonstrada cadeia entre cores; as decisões locais ou a orientação comum são descritas na dedução, sem inventar dependência adicional.",
+      "difficultyRationale": "Básico: a relação é apresentada em um percurso curto ou num conflito local entre duas cores; nenhuma classificação usa precisão angular. Relação central: Entender que a reflexão não precisa fazer uma virada de noventa graus.",
+      "referenceRoutes": [
+        "gold: E1 → alvo"
+      ],
+      "concept": 1,
+      "combinedConcepts": [],
+      "comfortSeparate": true,
+      "limits": "Testes de configurações e catálogos finitos; não provam unicidade, mínimo de recursos, necessidade universal ou dificuldade humana."
+    },
+    {
+      "number": 3,
+      "id": "light-v3-3",
+      "band": "Básico",
+      "primaryPattern": "B",
+      "combinedPatterns": [],
+      "decisionKernel": "retorno-sem-sobreposicao",
+      "discovery": "Devolver a luz ao lado da fonte sem repetir a mesma linha.",
+      "plausibleFailure": {
+        "caseId": "legacy-case-1",
+        "angles": [
+          -22.5
+        ],
+        "status": "miss",
+        "routes": [
+          "gold: E1 → wall"
+        ],
+        "explanation": "A alternativa registrada legacy-case-1 não completa a chegada: gold: E1 → wall. O contraste permite conferir a direção ou a conexão escolhida, sem proibir outras soluções válidas."
+      },
+      "dependencies": "Não foi demonstrada cadeia entre cores; as decisões locais ou a orientação comum são descritas na dedução, sem inventar dependência adicional.",
+      "difficultyRationale": "Básico: a relação é apresentada em um percurso curto ou num conflito local entre duas cores; nenhuma classificação usa precisão angular. Relação central: Devolver a luz ao lado da fonte sem repetir a mesma linha.",
+      "referenceRoutes": [
+        "gold: E1 → alvo"
+      ],
+      "concept": 2,
+      "combinedConcepts": [],
+      "comfortSeparate": true,
+      "limits": "Testes de configurações e catálogos finitos; não provam unicidade, mínimo de recursos, necessidade universal ou dificuldade humana."
+    },
+    {
+      "number": 4,
+      "id": "light-v6-intro-chain",
+      "band": "Básico",
+      "primaryPattern": "G",
+      "combinedPatterns": [],
+      "decisionKernel": "encadeamento-curto",
+      "discovery": "Encadear duas reflexões confortáveis: a primeira leva à região superior e a segunda à chegada. A solução direta alternativa é legítima; não se afirma necessidade dos dois espelhos.",
+      "plausibleFailure": {
+        "caseId": "initial",
+        "angles": [
+          -70,
+          15
+        ],
+        "status": "miss",
+        "routes": [
+          "gold: E1 → wall"
+        ],
+        "explanation": "A alternativa registrada initial não completa a chegada: gold: E1 → wall. O contraste permite conferir a direção ou a conexão escolhida, sem proibir outras soluções válidas."
+      },
+      "dependencies": "A referência alinha a saída do primeiro espelho com o segundo; a última curva entrega ao alvo.",
+      "difficultyRationale": "Básico: a relação é apresentada em um percurso curto ou num conflito local entre duas cores; nenhuma classificação usa precisão angular. Relação central: Encadear duas reflexões confortáveis: a primeira leva à região superior e a segunda à chegada. A solução direta alternativa é legítima; não se afirma necessidade dos dois espelhos.",
+      "referenceRoutes": [
+        "gold: E1 → E2 → alvo"
+      ],
+      "concept": 1,
+      "combinedConcepts": [],
+      "comfortSeparate": true,
+      "limits": "Testes de configurações e catálogos finitos; não provam unicidade, mínimo de recursos, necessidade universal ou dificuldade humana."
+    },
+    {
+      "number": 5,
+      "id": "light-v3-5",
+      "band": "Básico",
+      "primaryPattern": "G",
+      "combinedPatterns": [],
+      "decisionKernel": "contorno-de-parede",
+      "discovery": "Usar o segundo espelho porque a parede corta a aproximação direta.",
+      "plausibleFailure": {
+        "caseId": "legacy-case-1",
+        "angles": [
+          -17.7,
+          -45
+        ],
+        "status": "miss",
+        "routes": [
+          "gold: E1 → wall"
+        ],
+        "explanation": "A alternativa registrada legacy-case-1 não completa a chegada: gold: E1 → wall. O contraste permite conferir a direção ou a conexão escolhida, sem proibir outras soluções válidas."
+      },
+      "dependencies": "Não foi demonstrada cadeia entre cores; as decisões locais ou a orientação comum são descritas na dedução, sem inventar dependência adicional.",
+      "difficultyRationale": "Básico: a relação é apresentada em um percurso curto ou num conflito local entre duas cores; nenhuma classificação usa precisão angular. Relação central: Usar o segundo espelho porque a parede corta a aproximação direta.",
+      "referenceRoutes": [
+        "gold: E1 → E2 → alvo"
+      ],
+      "concept": 1,
+      "combinedConcepts": [],
+      "comfortSeparate": true,
+      "limits": "Testes de configurações e catálogos finitos; não provam unicidade, mínimo de recursos, necessidade universal ou dificuldade humana."
+    },
+    {
+      "number": 6,
+      "id": "light-v5-deduction-pilot-windows",
+      "band": "Básico",
+      "primaryPattern": "D",
+      "combinedPatterns": [
+        "G"
+      ],
+      "decisionKernel": "duas-janelas-complementares",
+      "discovery": "O segundo espelho conecta as duas janelas: recebe pela esquerda e entrega ao alvo pela direita. O primeiro não enxerga o alvo através das aberturas.",
+      "plausibleFailure": {
+        "caseId": "direct-target",
+        "angles": [
+          29.7,
+          -2.4
+        ],
+        "status": "miss",
+        "routes": [
+          "gold: E1 → wall"
+        ],
+        "explanation": "A alternativa registrada direct-target não completa a chegada: gold: E1 → wall. O contraste permite conferir a direção ou a conexão escolhida, sem proibir outras soluções válidas."
+      },
+      "dependencies": "A aproximação final pela janela direita identifica a segunda curva; a janela esquerda conecta essa curva à fonte.",
+      "difficultyRationale": "Básico: a relação é apresentada em um percurso curto ou num conflito local entre duas cores; nenhuma classificação usa precisão angular. Relação central: O segundo espelho conecta as duas janelas: recebe pela esquerda e entrega ao alvo pela direita. O primeiro não enxerga o alvo através das aberturas.",
+      "referenceRoutes": [
+        "gold: E1 → E2 → alvo"
+      ],
+      "concept": 3,
+      "combinedConcepts": [
+        1
+      ],
+      "comfortSeparate": true,
+      "limits": "Testes de configurações e catálogos finitos; não provam unicidade, mínimo de recursos, necessidade universal ou dificuldade humana."
+    },
+    {
+      "number": 7,
+      "id": "light-v5-legacy-9",
+      "band": "Básico",
+      "primaryPattern": "B",
+      "combinedPatterns": [],
+      "decisionKernel": "afastamento-inicial-util",
+      "discovery": "Aceitar um deslocamento inicial para longe do destino.",
+      "plausibleFailure": {
+        "caseId": "legacy-case-1",
+        "angles": [
+          36.8,
+          -76.6
+        ],
+        "status": "miss",
+        "routes": [
+          "gold: E1 → wall"
+        ],
+        "explanation": "A alternativa registrada legacy-case-1 não completa a chegada: gold: E1 → wall. O contraste permite conferir a direção ou a conexão escolhida, sem proibir outras soluções válidas."
+      },
+      "dependencies": "Não foi demonstrada cadeia entre cores; as decisões locais ou a orientação comum são descritas na dedução, sem inventar dependência adicional.",
+      "difficultyRationale": "Básico: a relação é apresentada em um percurso curto ou num conflito local entre duas cores; nenhuma classificação usa precisão angular. Relação central: Aceitar um deslocamento inicial para longe do destino.",
+      "referenceRoutes": [
+        "gold: E1 → E2 → alvo"
+      ],
+      "concept": 2,
+      "combinedConcepts": [],
+      "comfortSeparate": true,
+      "limits": "Testes de configurações e catálogos finitos; não provam unicidade, mínimo de recursos, necessidade universal ou dificuldade humana."
+    },
+    {
+      "number": 8,
+      "id": "light-v5-legacy-35",
+      "band": "Básico",
+      "primaryPattern": "G",
+      "combinedPatterns": [],
+      "decisionKernel": "escolha-de-receptor",
+      "discovery": "Comparar receptores próximos em horizontal pelas possibilidades de saída.",
+      "plausibleFailure": {
+        "caseId": "legacy-case-1",
+        "angles": [
+          -9,
+          -72.7,
+          66.9
+        ],
+        "status": "miss",
+        "routes": [
+          "gold: E1 → E3 → wall"
+        ],
+        "explanation": "A alternativa registrada legacy-case-1 não completa a chegada: gold: E1 → E3 → wall. O contraste permite conferir a direção ou a conexão escolhida, sem proibir outras soluções válidas."
+      },
+      "dependencies": "Não foi demonstrada cadeia entre cores; as decisões locais ou a orientação comum são descritas na dedução, sem inventar dependência adicional.",
+      "difficultyRationale": "Básico: a relação é apresentada em um percurso curto ou num conflito local entre duas cores; nenhuma classificação usa precisão angular. Relação central: Comparar receptores próximos em horizontal pelas possibilidades de saída.",
+      "referenceRoutes": [
+        "gold: E1 → E2 → alvo"
+      ],
+      "concept": 1,
+      "combinedConcepts": [],
+      "comfortSeparate": true,
+      "limits": "Testes de configurações e catálogos finitos; não provam unicidade, mínimo de recursos, necessidade universal ou dificuldade humana."
+    },
+    {
+      "number": 9,
+      "id": "light-v3-41",
+      "band": "Básico",
+      "primaryPattern": "G",
+      "combinedPatterns": [],
+      "decisionKernel": "duas-fontes-independentes",
+      "discovery": "Associar duas fontes a dois alvos e confirmar o conjunto.",
+      "plausibleFailure": {
+        "caseId": "legacy-case-2",
+        "angles": [
+          18.7,
+          -65.5
+        ],
+        "status": "miss",
+        "routes": [
+          "gold: E1 → E2 → alvo",
+          "blue: E2 → wall"
+        ],
+        "explanation": "A alternativa registrada legacy-case-2 não completa a chegada: gold: E1 → E2 → alvo; blue: E2 → wall. O contraste permite conferir a direção ou a conexão escolhida, sem proibir outras soluções válidas."
+      },
+      "dependencies": "Não foi demonstrada cadeia entre cores; as decisões locais ou a orientação comum são descritas na dedução, sem inventar dependência adicional.",
+      "difficultyRationale": "Básico: a relação é apresentada em um percurso curto ou num conflito local entre duas cores; nenhuma classificação usa precisão angular. Relação central: Associar duas fontes a dois alvos e confirmar o conjunto.",
+      "referenceRoutes": [
+        "gold: E1 → alvo",
+        "blue: E2 → alvo"
+      ],
+      "concept": 1,
+      "combinedConcepts": [],
+      "comfortSeparate": true,
+      "limits": "Testes de configurações e catálogos finitos; não provam unicidade, mínimo de recursos, necessidade universal ou dificuldade humana."
+    },
+    {
+      "number": 10,
+      "id": "light-v5-legacy-43",
+      "band": "Básico",
+      "primaryPattern": "G",
+      "combinedPatterns": [
+        "A",
+        "E"
+      ],
+      "decisionKernel": "cadeia-contorna-parede",
+      "discovery": "A parede torna necessária a cadeia dourada.",
+      "plausibleFailure": {
+        "caseId": "legacy-case-5",
+        "angles": [
+          -45,
+          -29.3,
+          -39,
+          -47.3
+        ],
+        "individualRoutes": [
+          "gold: E1 → E2 → E4 → alvo",
+          "blue: E3 → E4 → alvo"
+        ],
+        "jointStatus": "collision",
+        "collision": {
+          "point": {
+            "x": 590,
+            "y": 299.74493851020935
+          },
+          "colors": [
+            "gold",
+            "blue"
+          ]
+        },
+        "explanation": "A configuração completa leva gold, blue aos respectivos alvos quando cada fonte é examinada sozinha, mas os rastros conjuntos entram em conflito em (590.0, 299.7). Mudar a ordem de disparo não libera esse espaço."
+      },
+      "dependencies": "Escopo: relações entre as alternativas documentadas, não necessidade em todo o espaço contínuo. Não foi demonstrada cadeia entre cores; as decisões locais ou a orientação comum são descritas na dedução, sem inventar dependência adicional. Referência conjunta: gold: E1 → E2 → alvo; blue: E3 → E4 → alvo. O contraste com legacy-case-5 demonstra a incompatibilidade que precisa ser evitada, não exclusividade desta referência.",
+      "difficultyRationale": "Básico: a relação é apresentada em um percurso curto ou num conflito local entre duas cores; nenhuma classificação usa precisão angular. Relação central: A parede torna necessária a cadeia dourada.",
+      "referenceRoutes": [
+        "gold: E1 → E2 → alvo",
+        "blue: E3 → E4 → alvo"
+      ],
+      "concept": 1,
+      "combinedConcepts": [
+        7
+      ],
+      "comfortSeparate": true,
+      "limits": "Testes de configurações e catálogos finitos; não provam unicidade, mínimo de recursos, necessidade universal ou dificuldade humana."
+    },
+    {
+      "number": 11,
+      "id": "light-v3-51",
+      "band": "Básico",
+      "primaryPattern": "G",
+      "combinedPatterns": [
+        "A",
+        "E"
+      ],
+      "decisionKernel": "reserva-da-chegada-azul",
+      "discovery": "Uma chegada azul restrita impede o atalho dourado, mesmo que ele acerte sozinho.",
+      "plausibleFailure": {
+        "caseId": "legacy-case-1",
+        "angles": [
+          45,
+          25.1,
+          -45
+        ],
+        "individualRoutes": [
+          "blue: E1 → alvo",
+          "gold: E2 → alvo"
+        ],
+        "jointStatus": "collision",
+        "collision": {
+          "point": {
+            "x": 250.00000000000014,
+            "y": 280.8539263456174
+          },
+          "colors": [
+            "blue",
+            "gold"
+          ]
+        },
+        "explanation": "A configuração completa leva blue, gold aos respectivos alvos quando cada fonte é examinada sozinha, mas os rastros conjuntos entram em conflito em (250.0, 280.9). Mudar a ordem de disparo não libera esse espaço."
+      },
+      "dependencies": "Escopo: relações entre as alternativas documentadas, não necessidade em todo o espaço contínuo. blue restringe gold (trajeto após escolha de reflexão/portal, caso legacy-case-1) Referência conjunta: blue: E1 → alvo; gold: E2 → E3 → alvo. O contraste com legacy-case-1 demonstra a incompatibilidade que precisa ser evitada, não exclusividade desta referência.",
+      "difficultyRationale": "Básico: a relação é apresentada em um percurso curto ou num conflito local entre duas cores; nenhuma classificação usa precisão angular. Relação central: Uma chegada azul restrita impede o atalho dourado, mesmo que ele acerte sozinho.",
+      "referenceRoutes": [
+        "blue: E1 → alvo",
+        "gold: E2 → E3 → alvo"
+      ],
+      "concept": 1,
+      "combinedConcepts": [
+        5,
+        7
+      ],
+      "comfortSeparate": true,
+      "limits": "Testes de configurações e catálogos finitos; não provam unicidade, mínimo de recursos, necessidade universal ou dificuldade humana."
+    },
+    {
+      "number": 12,
+      "id": "light-v3-61",
+      "band": "Básico",
+      "primaryPattern": "G",
+      "combinedPatterns": [],
+      "decisionKernel": "primeiro-salto-universal",
+      "discovery": "O espelho esquerdo precisa enviar a luz para cima.",
+      "plausibleFailure": {
+        "caseId": "legacy-case-1",
+        "angles": [
+          -15.3
+        ],
+        "status": "miss",
+        "routes": [
+          "gold: E1 → wall"
+        ],
+        "explanation": "A alternativa registrada legacy-case-1 não completa a chegada: gold: E1 → wall. O contraste permite conferir a direção ou a conexão escolhida, sem proibir outras soluções válidas."
+      },
+      "dependencies": "Escopo: relações entre as alternativas documentadas, não necessidade em todo o espaço contínuo. Não foi demonstrada cadeia entre cores; as decisões locais ou a orientação comum são descritas na dedução, sem inventar dependência adicional.",
+      "difficultyRationale": "Básico: a relação é apresentada em um percurso curto ou num conflito local entre duas cores; nenhuma classificação usa precisão angular. Relação central: O espelho esquerdo precisa enviar a luz para cima.",
+      "referenceRoutes": [
+        "gold: E1 / portais A1 → alvo"
+      ],
+      "concept": 1,
+      "combinedConcepts": [],
+      "comfortSeparate": true,
+      "limits": "Testes de configurações e catálogos finitos; não provam unicidade, mínimo de recursos, necessidade universal ou dificuldade humana."
+    },
+    {
+      "number": 13,
+      "id": "light-v3-68",
+      "band": "Básico",
+      "primaryPattern": "B",
+      "combinedPatterns": [
+        "A",
+        "E"
+      ],
+      "decisionKernel": "salto-sem-trecho-fisico",
+      "discovery": "A transporta a dourada para além do cruzamento sem segmento entre os portais.",
+      "plausibleFailure": {
+        "caseId": "new-center-conflict-1",
+        "angles": [
+          10.7,
+          45,
+          45
+        ],
+        "individualRoutes": [
+          "gold: E1 → alvo",
+          "blue: E3 → alvo"
+        ],
+        "jointStatus": "collision",
+        "collision": {
+          "point": {
+            "x": 410,
+            "y": 174.46018578373167
+          },
+          "colors": [
+            "gold",
+            "blue"
+          ]
+        },
+        "explanation": "A configuração completa leva gold, blue aos respectivos alvos quando cada fonte é examinada sozinha, mas os rastros conjuntos entram em conflito em (410.0, 174.5). Mudar a ordem de disparo não libera esse espaço."
+      },
+      "dependencies": "Escopo: relações entre as alternativas documentadas, não necessidade em todo o espaço contínuo. blue restringe gold (trecho inicial fixo, caso new-center-conflict-1) blue restringe gold (trecho inicial fixo, caso new-center-conflict-2) Referência conjunta: gold: E1 → E2 / portais A1 → alvo; blue: E3 → alvo. O contraste com new-center-conflict-1 demonstra a incompatibilidade que precisa ser evitada, não exclusividade desta referência.",
+      "difficultyRationale": "Básico: a relação é apresentada em um percurso curto ou num conflito local entre duas cores; nenhuma classificação usa precisão angular. Relação central: A transporta a dourada para além do cruzamento sem segmento entre os portais.",
+      "referenceRoutes": [
+        "gold: E1 → E2 / portais A1 → alvo",
+        "blue: E3 → alvo"
+      ],
+      "concept": 9,
+      "combinedConcepts": [
+        7,
+        8
+      ],
+      "comfortSeparate": true,
+      "limits": "Testes de configurações e catálogos finitos; não provam unicidade, mínimo de recursos, necessidade universal ou dificuldade humana."
+    },
+    {
+      "number": 14,
+      "id": "light-v3-75",
+      "band": "Básico",
+      "primaryPattern": "B",
+      "combinedPatterns": [
+        "A",
+        "E",
+        "G"
+      ],
+      "decisionKernel": "afastamento-inicial-util",
+      "discovery": "O receptor inferior prepara a horizontal segura.",
+      "plausibleFailure": {
+        "caseId": "new-center-conflict-1",
+        "angles": [
+          6.5,
+          45,
+          45,
+          45
+        ],
+        "individualRoutes": [
+          "gold: E1 → alvo",
+          "blue: E4 → alvo"
+        ],
+        "jointStatus": "collision",
+        "collision": {
+          "point": {
+            "x": 400,
+            "y": 141.55627440260133
+          },
+          "colors": [
+            "gold",
+            "blue"
+          ]
+        },
+        "explanation": "A configuração completa leva gold, blue aos respectivos alvos quando cada fonte é examinada sozinha, mas os rastros conjuntos entram em conflito em (400.0, 141.6). Mudar a ordem de disparo não libera esse espaço."
+      },
+      "dependencies": "Escopo: relações entre as alternativas documentadas, não necessidade em todo o espaço contínuo. blue restringe gold (trecho inicial fixo, caso new-center-conflict-1) Referência conjunta: gold: E1 → E2 → E3 / portais A1 → alvo; blue: E4 → alvo. O contraste com new-center-conflict-1 demonstra a incompatibilidade que precisa ser evitada, não exclusividade desta referência.",
+      "difficultyRationale": "Básico: a relação é apresentada em um percurso curto ou num conflito local entre duas cores; nenhuma classificação usa precisão angular. Relação central: O receptor inferior prepara a horizontal segura.",
+      "referenceRoutes": [
+        "gold: E1 → E2 → E3 / portais A1 → alvo",
+        "blue: E4 → alvo"
+      ],
+      "concept": 2,
+      "combinedConcepts": [
+        1,
+        7,
+        9
+      ],
+      "comfortSeparate": true,
+      "limits": "Testes de configurações e catálogos finitos; não provam unicidade, mínimo de recursos, necessidade universal ou dificuldade humana."
+    },
+    {
+      "number": 15,
+      "id": "light-v5-open-018",
+      "band": "Básico",
+      "primaryPattern": "A",
+      "combinedPatterns": [
+        "E"
+      ],
+      "decisionKernel": "desvio-contra-conflito-direto",
+      "discovery": "Rever gold: rotas locais (gold: E1 → alvo; blue: E2 → alvo) chegam isoladamente, mas colidem; a configuração conjunta (gold: E1 → E5 → alvo; blue: E2 → alvo) distribui os trajetos sem contato.",
+      "plausibleFailure": {
+        "caseId": "rotas-locais-em-conflito",
+        "angles": [
+          23.2,
+          -9,
+          0,
+          0,
+          0
+        ],
+        "individualRoutes": [
+          "gold: E1 → alvo",
+          "blue: E2 → alvo"
+        ],
+        "jointStatus": "collision",
+        "collision": {
+          "point": {
+            "x": 286.0057108402951,
+            "y": 248.54932481163232
+          },
+          "colors": [
+            "gold",
+            "blue"
+          ]
+        },
+        "explanation": "A configuração completa leva gold, blue aos respectivos alvos quando cada fonte é examinada sozinha, mas os rastros conjuntos entram em conflito em (286.0, 248.5). Mudar a ordem de disparo não libera esse espaço."
+      },
+      "dependencies": "Escopo: relações entre as alternativas documentadas, não necessidade em todo o espaço contínuo. O conflito local documentado é reproduzido com todas as peças presentes. As revisões parciais conservam seus resultados: revisao-apenas-gold: target. Referência conjunta: gold: E1 → E5 → alvo; blue: E2 → alvo. O contraste com rotas-locais-em-conflito demonstra a incompatibilidade que precisa ser evitada, não exclusividade desta referência.",
+      "difficultyRationale": "Básico: a relação é apresentada em um percurso curto ou num conflito local entre duas cores; nenhuma classificação usa precisão angular. Relação central: Rever gold: rotas locais (gold: E1 → alvo; blue: E2 → alvo) chegam isoladamente, mas colidem; a configuração conjunta (gold: E1 → E5 → alvo; blue: E2 → alvo) distribui os trajetos sem contato.",
+      "referenceRoutes": [
+        "gold: E1 → E5 → alvo",
+        "blue: E2 → alvo"
+      ],
+      "concept": 7,
+      "combinedConcepts": [
+        5
+      ],
+      "comfortSeparate": true,
+      "limits": "Testes de configurações e catálogos finitos; não provam unicidade, mínimo de recursos, necessidade universal ou dificuldade humana."
+    },
+    {
+      "number": 16,
+      "id": "light-v5-deduction-pair-00-filter",
+      "band": "Aprendiz",
+      "primaryPattern": "I",
+      "combinedPatterns": [
+        "A",
+        "E",
+        "J"
+      ],
+      "decisionKernel": "assimetria-de-compatibilidades",
+      "discovery": "O filtro superior não aceita dourado: compare o que permanece viável para cada cor e adapte a última curva à chegada escolhida. A diferença em relação ao mapa-base está arquivada; esse mapa-base não é a fase 15.",
+      "plausibleFailure": {
+        "caseId": "branches-0",
+        "angles": [
+          -59.4,
+          51.4,
+          -25.3,
+          25.3
+        ],
+        "individualRoutes": [
+          "gold: E1 → E3 → alvo",
+          "blue: E2 → E4 → alvo"
+        ],
+        "jointStatus": "collision",
+        "collision": {
+          "point": {
+            "x": 414.71471828046595,
+            "y": 230.00000000000009
+          },
+          "colors": [
+            "gold",
+            "blue"
+          ]
+        },
+        "explanation": "A configuração completa leva gold, blue aos respectivos alvos quando cada fonte é examinada sozinha, mas os rastros conjuntos entram em conflito em (414.7, 230.0). Mudar a ordem de disparo não libera esse espaço."
+      },
+      "dependencies": "Escopo: relações entre as alternativas documentadas, não necessidade em todo o espaço contínuo. Cada alternativa de entrada muda a incidência no último espelho da mesma cor. O cruzamento entre as rotas diretas conecta os dois pares de decisões. Referência conjunta: gold: E1 → E3 → alvo; blue: E2 → E4 / portais s1a → alvo. O contraste com branches-0 demonstra a incompatibilidade que precisa ser evitada, não exclusividade desta referência.",
+      "difficultyRationale": "Aprendiz: compara uma alternativa já ensinada com uma restrição nova ou recombina duas relações locais; as fases de uma cor consolidam o repertório sem introduzir precisão. Relação central: O filtro superior não aceita dourado: compare o que permanece viável para cada cor e adapte a última curva à chegada escolhida. A diferença em relação ao mapa-base está arquivada; esse mapa-base não é a fase 15.",
+      "referenceRoutes": [
+        "gold: E1 → E3 → alvo",
+        "blue: E2 → E4 / portais s1a → alvo"
+      ],
+      "concept": 4,
+      "combinedConcepts": [
+        7,
+        14,
+        16
+      ],
+      "comfortSeparate": true,
+      "limits": "Testes de configurações e catálogos finitos; não provam unicidade, mínimo de recursos, necessidade universal ou dificuldade humana."
+    },
+    {
+      "number": 17,
+      "id": "light-v5-portal-001",
+      "band": "Aprendiz",
+      "primaryPattern": "B",
+      "combinedPatterns": [
+        "A",
+        "E"
+      ],
+      "decisionKernel": "troca-de-lados",
+      "discovery": "Entre os primeiros espelhos e os alvos, as rotas diretas documentadas trocam de posição relativa e colidem; a alternativa com portal evita esse cruzamento físico.",
+      "plausibleFailure": {
+        "caseId": "local-routes-collide",
+        "angles": [
+          -77.8,
+          77.2
+        ],
+        "individualRoutes": [
+          "gold: E1 → alvo",
+          "blue: E2 → alvo"
+        ],
+        "jointStatus": "collision",
+        "collision": {
+          "point": {
+            "x": 457.3064747742741,
+            "y": 226.719393491361
+          },
+          "colors": [
+            "gold",
+            "blue"
+          ]
+        },
+        "explanation": "A configuração completa leva gold, blue aos respectivos alvos quando cada fonte é examinada sozinha, mas os rastros conjuntos entram em conflito em (457.3, 226.7). Mudar a ordem de disparo não libera esse espaço."
+      },
+      "dependencies": "Escopo: relações entre as alternativas documentadas, não necessidade em todo o espaço contínuo. Grafo conservador entre alternativas [cor,opção,cor,opção]: [[0,0,1,0]].   Referência conjunta: gold: E1 → alvo; blue: E2 / portais b1a → alvo. O contraste com local-routes-collide demonstra a incompatibilidade que precisa ser evitada, não exclusividade desta referência.",
+      "difficultyRationale": "Aprendiz: compara uma alternativa já ensinada com uma restrição nova ou recombina duas relações locais; as fases de uma cor consolidam o repertório sem introduzir precisão. Relação central: Entre os primeiros espelhos e os alvos, as rotas diretas documentadas trocam de posição relativa e colidem; a alternativa com portal evita esse cruzamento físico.",
+      "referenceRoutes": [
+        "gold: E1 → alvo",
+        "blue: E2 / portais b1a → alvo"
+      ],
+      "concept": 8,
+      "combinedConcepts": [
+        5,
+        7,
+        9
+      ],
+      "comfortSeparate": true,
+      "limits": "Testes de configurações e catálogos finitos; não provam unicidade, mínimo de recursos, necessidade universal ou dificuldade humana."
+    },
+    {
+      "number": 18,
+      "id": "light-v3-59",
+      "band": "Aprendiz",
+      "primaryPattern": "F",
+      "combinedPatterns": [],
+      "decisionKernel": "duas-incidencias-um-angulo",
+      "discovery": "Duas fontes opostas usam pontos diferentes da mesma superfície refletora.",
+      "plausibleFailure": {
+        "caseId": "legacy-case-1",
+        "angles": [
+          -45
+        ],
+        "status": "miss",
+        "routes": [
+          "gold: E1 → wall",
+          "blue: E1 → wall"
+        ],
+        "explanation": "A alternativa registrada legacy-case-1 não completa a chegada: gold: E1 → wall; blue: E1 → wall. O contraste permite conferir a direção ou a conexão escolhida, sem proibir outras soluções válidas."
+      },
+      "dependencies": "Escopo: relações entre as alternativas documentadas, não necessidade em todo o espaço contínuo. Não foi demonstrada cadeia entre cores; as decisões locais ou a orientação comum são descritas na dedução, sem inventar dependência adicional.",
+      "difficultyRationale": "Aprendiz: compara uma alternativa já ensinada com uma restrição nova ou recombina duas relações locais; as fases de uma cor consolidam o repertório sem introduzir precisão. Relação central: Duas fontes opostas usam pontos diferentes da mesma superfície refletora.",
+      "referenceRoutes": [
+        "gold: E1 → alvo",
+        "blue: E1 → alvo"
+      ],
+      "concept": 1,
+      "combinedConcepts": [],
+      "comfortSeparate": true,
+      "limits": "Testes de configurações e catálogos finitos; não provam unicidade, mínimo de recursos, necessidade universal ou dificuldade humana."
+    },
+    {
+      "number": 19,
+      "id": "light-v5-portal-023",
+      "band": "Aprendiz",
+      "primaryPattern": "C",
+      "combinedPatterns": [
+        "A",
+        "E",
+        "B"
+      ],
+      "decisionKernel": "comparacao-da-utilidade-das-saidas",
+      "discovery": "gold: g2a (125.0px) vence na combinação 2/0; trocar por g1a (132.0px) mantém incompatibilidade mesmo nas amostras angulares.",
+      "plausibleFailure": {
+        "caseId": "local-routes-collide",
+        "angles": [
+          -77.9,
+          77.3
+        ],
+        "individualRoutes": [
+          "gold: E1 → alvo",
+          "blue: E2 → alvo"
+        ],
+        "jointStatus": "collision",
+        "collision": {
+          "point": {
+            "x": 459.6692355295832,
+            "y": 226.699981654066
+          },
+          "colors": [
+            "gold",
+            "blue"
+          ]
+        },
+        "explanation": "A configuração completa leva gold, blue aos respectivos alvos quando cada fonte é examinada sozinha, mas os rastros conjuntos entram em conflito em (459.7, 226.7). Mudar a ordem de disparo não libera esse espaço."
+      },
+      "dependencies": "Escopo: relações entre as alternativas documentadas, não necessidade em todo o espaço contínuo. Grafo conservador entre alternativas [cor,opção,cor,opção]: [[0,0,1,0],[0,0,1,1],[0,1,1,0]]. Onda 1: gold=0 perde suporte frente às opções 0/1 de blue  Referência conjunta: gold: E1 / portais g2a → alvo; blue: E2 → alvo. O contraste com local-routes-collide demonstra a incompatibilidade que precisa ser evitada, não exclusividade desta referência.",
+      "difficultyRationale": "Aprendiz: compara uma alternativa já ensinada com uma restrição nova ou recombina duas relações locais; as fases de uma cor consolidam o repertório sem introduzir precisão. Relação central: gold: g2a (125.0px) vence na combinação 2/0; trocar por g1a (132.0px) mantém incompatibilidade mesmo nas amostras angulares.",
+      "referenceRoutes": [
+        "gold: E1 / portais g2a → alvo",
+        "blue: E2 → alvo"
+      ],
+      "concept": 10,
+      "combinedConcepts": [
+        5,
+        7,
+        8,
+        9,
+        11
+      ],
+      "comfortSeparate": true,
+      "limits": "Testes de configurações e catálogos finitos; não provam unicidade, mínimo de recursos, necessidade universal ou dificuldade humana."
+    },
+    {
+      "number": 20,
+      "id": "light-v5-open-011",
+      "band": "Aprendiz",
+      "primaryPattern": "A",
+      "combinedPatterns": [
+        "E"
+      ],
+      "decisionKernel": "desvio-contra-conflito-direto",
+      "discovery": "Rever blue: rotas locais (gold: E1 → alvo; blue: E2 → E3 → alvo) chegam isoladamente, mas colidem; a configuração conjunta (gold: E1 → alvo; blue: E2 → E5 → alvo) distribui os trajetos sem contato.",
+      "plausibleFailure": {
+        "caseId": "rotas-locais-em-conflito",
+        "angles": [
+          -5,
+          17.4,
+          -56.7,
+          0,
+          0
+        ],
+        "individualRoutes": [
+          "gold: E1 → alvo",
+          "blue: E2 → E3 → alvo"
+        ],
+        "jointStatus": "collision",
+        "collision": {
+          "point": {
+            "x": 434.684427856923,
+            "y": 238.38057582914814
+          },
+          "colors": [
+            "gold",
+            "blue"
+          ]
+        },
+        "explanation": "A configuração completa leva gold, blue aos respectivos alvos quando cada fonte é examinada sozinha, mas os rastros conjuntos entram em conflito em (434.7, 238.4). Mudar a ordem de disparo não libera esse espaço."
+      },
+      "dependencies": "Escopo: relações entre as alternativas documentadas, não necessidade em todo o espaço contínuo. O conflito local documentado é reproduzido com todas as peças presentes. As revisões parciais conservam seus resultados: revisao-apenas-blue: target. Referência conjunta: gold: E1 → alvo; blue: E2 → E5 → alvo. O contraste com rotas-locais-em-conflito demonstra a incompatibilidade que precisa ser evitada, não exclusividade desta referência.",
+      "difficultyRationale": "Aprendiz: compara uma alternativa já ensinada com uma restrição nova ou recombina duas relações locais; as fases de uma cor consolidam o repertório sem introduzir precisão. Relação central: Rever blue: rotas locais (gold: E1 → alvo; blue: E2 → E3 → alvo) chegam isoladamente, mas colidem; a configuração conjunta (gold: E1 → alvo; blue: E2 → E5 → alvo) distribui os trajetos sem contato.",
+      "referenceRoutes": [
+        "gold: E1 → alvo",
+        "blue: E2 → E5 → alvo"
+      ],
+      "concept": 7,
+      "combinedConcepts": [
+        5
+      ],
+      "comfortSeparate": true,
+      "limits": "Testes de configurações e catálogos finitos; não provam unicidade, mínimo de recursos, necessidade universal ou dificuldade humana."
+    },
+    {
+      "number": 21,
+      "id": "light-v3-101",
+      "band": "Aprendiz",
+      "primaryPattern": "G",
+      "combinedPatterns": [
+        "A",
+        "E"
+      ],
+      "decisionKernel": "aproximacao-final-reservada",
+      "discovery": "Acrescentar rosa independente sem apagar a dependência entre azul e dourado.",
+      "plausibleFailure": {
+        "caseId": "legacy-case-1",
+        "angles": [
+          45,
+          24.3,
+          -45,
+          -45
+        ],
+        "individualRoutes": [
+          "blue: E1 → alvo",
+          "gold: E2 → alvo",
+          "pink: E4 → alvo"
+        ],
+        "jointStatus": "collision",
+        "collision": {
+          "point": {
+            "x": 250.00000000000014,
+            "y": 287.957339323643
+          },
+          "colors": [
+            "blue",
+            "gold"
+          ]
+        },
+        "explanation": "A configuração completa leva blue, gold, pink aos respectivos alvos quando cada fonte é examinada sozinha, mas os rastros conjuntos entram em conflito em (250.0, 288.0). Mudar a ordem de disparo não libera esse espaço."
+      },
+      "dependencies": "Escopo: relações entre as alternativas documentadas, não necessidade em todo o espaço contínuo. blue restringe gold (trajeto após escolha de reflexão/portal, caso legacy-case-1) Referência conjunta: blue: E1 → alvo; gold: E2 → E3 → alvo; pink: E4 → alvo. O contraste com legacy-case-1 demonstra a incompatibilidade que precisa ser evitada, não exclusividade desta referência.",
+      "difficultyRationale": "Aprendiz: compara uma alternativa já ensinada com uma restrição nova ou recombina duas relações locais; as fases de uma cor consolidam o repertório sem introduzir precisão. Relação central: Acrescentar rosa independente sem apagar a dependência entre azul e dourado.",
+      "referenceRoutes": [
+        "blue: E1 → alvo",
+        "gold: E2 → E3 → alvo",
+        "pink: E4 → alvo"
+      ],
+      "concept": 1,
+      "combinedConcepts": [
+        7
+      ],
+      "comfortSeparate": true,
+      "limits": "Testes de configurações e catálogos finitos; não provam unicidade, mínimo de recursos, necessidade universal ou dificuldade humana."
+    },
+    {
+      "number": 22,
+      "id": "light-v3-74",
+      "band": "Aprendiz",
+      "primaryPattern": "H",
+      "combinedPatterns": [
+        "G",
+        "B"
+      ],
+      "decisionKernel": "saida-e-retorno-util",
+      "discovery": "A saída distante permite subir por fora da divisória e retornar ao alvo.",
+      "plausibleFailure": {
+        "caseId": "legacy-case-1",
+        "angles": [
+          -63.9,
+          -45
+        ],
+        "status": "miss",
+        "routes": [
+          "gold: E1 → wall"
+        ],
+        "explanation": "A alternativa registrada legacy-case-1 não completa a chegada: gold: E1 → wall. O contraste permite conferir a direção ou a conexão escolhida, sem proibir outras soluções válidas."
+      },
+      "dependencies": "Escopo: relações entre as alternativas documentadas, não necessidade em todo o espaço contínuo. Não foi demonstrada cadeia entre cores; as decisões locais ou a orientação comum são descritas na dedução, sem inventar dependência adicional.",
+      "difficultyRationale": "Aprendiz: compara uma alternativa já ensinada com uma restrição nova ou recombina duas relações locais; as fases de uma cor consolidam o repertório sem introduzir precisão. Relação central: A saída distante permite subir por fora da divisória e retornar ao alvo.",
+      "referenceRoutes": [
+        "gold: E1 → E2 / portais A1 → alvo"
+      ],
+      "concept": 12,
+      "combinedConcepts": [
+        1,
+        2,
+        13
+      ],
+      "comfortSeparate": true,
+      "limits": "Testes de configurações e catálogos finitos; não provam unicidade, mínimo de recursos, necessidade universal ou dificuldade humana."
+    },
+    {
+      "number": 23,
+      "id": "light-v5-portal-011",
+      "band": "Aprendiz",
+      "primaryPattern": "B",
+      "combinedPatterns": [
+        "A",
+        "E"
+      ],
+      "decisionKernel": "salto-sem-trecho-fisico",
+      "discovery": "A linha imaginária entre os portais cruza um trecho de outra cor, mas o salto não é um segmento físico.",
+      "plausibleFailure": {
+        "caseId": "local-routes-collide",
+        "angles": [
+          -17.3,
+          84
+        ],
+        "individualRoutes": [
+          "gold: E1 → alvo",
+          "blue: E2 → alvo"
+        ],
+        "jointStatus": "collision",
+        "collision": {
+          "point": {
+            "x": 460.8515334799682,
+            "y": 233.8614146879981
+          },
+          "colors": [
+            "gold",
+            "blue"
+          ]
+        },
+        "explanation": "A configuração completa leva gold, blue aos respectivos alvos quando cada fonte é examinada sozinha, mas os rastros conjuntos entram em conflito em (460.9, 233.9). Mudar a ordem de disparo não libera esse espaço."
+      },
+      "dependencies": "Escopo: relações entre as alternativas documentadas, não necessidade em todo o espaço contínuo. Grafo conservador entre alternativas [cor,opção,cor,opção]: [[0,0,1,0],[0,0,1,1],[0,1,1,1]]. Onda 1: gold=0 perde suporte frente às opções 0/1 de blue  Referência conjunta: gold: E1 / portais g1a → alvo; blue: E2 → alvo. O contraste com local-routes-collide demonstra a incompatibilidade que precisa ser evitada, não exclusividade desta referência.",
+      "difficultyRationale": "Aprendiz: compara uma alternativa já ensinada com uma restrição nova ou recombina duas relações locais; as fases de uma cor consolidam o repertório sem introduzir precisão. Relação central: A linha imaginária entre os portais cruza um trecho de outra cor, mas o salto não é um segmento físico.",
+      "referenceRoutes": [
+        "gold: E1 / portais g1a → alvo",
+        "blue: E2 → alvo"
+      ],
+      "concept": 9,
+      "combinedConcepts": [
+        5,
+        7,
+        8
+      ],
+      "comfortSeparate": true,
+      "limits": "Testes de configurações e catálogos finitos; não provam unicidade, mínimo de recursos, necessidade universal ou dificuldade humana."
+    },
+    {
+      "number": 24,
+      "id": "light-v5-portal-012",
+      "band": "Aprendiz",
+      "primaryPattern": "C",
+      "combinedPatterns": [
+        "A",
+        "E",
+        "B"
+      ],
+      "decisionKernel": "consequencia-na-regiao-de-saida",
+      "discovery": "gold em 1/2 colide após g1a, em (617.7,110.9), a 417.7px da decisão; 0/2 evita esse conflito. gold em 1/0 colide após g1a, em (636.1,150.3), a 438.0px da decisão; 2/0 evita esse conflito. gold em 1/2 colide após g1a, em (617.7,110.9), a 417.7px da decisão; 2/2 evita esse conflito.",
+      "plausibleFailure": {
+        "caseId": "local-routes-collide",
+        "angles": [
+          -18.1,
+          77.7
+        ],
+        "individualRoutes": [
+          "gold: E1 → alvo",
+          "blue: E2 → alvo"
+        ],
+        "jointStatus": "collision",
+        "collision": {
+          "point": {
+            "x": 466.996467276721,
+            "y": 227.7594732294911
+          },
+          "colors": [
+            "gold",
+            "blue"
+          ]
+        },
+        "explanation": "A configuração completa leva gold, blue aos respectivos alvos quando cada fonte é examinada sozinha, mas os rastros conjuntos entram em conflito em (467.0, 227.8). Mudar a ordem de disparo não libera esse espaço."
+      },
+      "dependencies": "Escopo: relações entre as alternativas documentadas, não necessidade em todo o espaço contínuo. Grafo conservador entre alternativas [cor,opção,cor,opção]: [[0,0,1,0],[0,0,1,1],[0,1,1,0],[0,1,1,1],[0,1,1,2],[0,2,1,1]]. Onda 1: gold=1 perde suporte frente às opções 0/1/2 de blue; blue=1 perde suporte frente às opções 0/1/2 de gold  Referência conjunta: gold: E1 → alvo; blue: E2 / portais b2a → alvo. O contraste com local-routes-collide demonstra a incompatibilidade que precisa ser evitada, não exclusividade desta referência.",
+      "difficultyRationale": "Aprendiz: compara uma alternativa já ensinada com uma restrição nova ou recombina duas relações locais; as fases de uma cor consolidam o repertório sem introduzir precisão. Relação central: gold em 1/2 colide após g1a, em (617.7,110.9), a 417.7px da decisão; 0/2 evita esse conflito. gold em 1/0 colide após g1a, em (636.1,150.3), a 438.0px da decisão; 2/0 evita esse conflito. gold em 1/2 colide após g1a, em (617.7,110.9), a 417.7px da decisão; 2/2 evita esse conflito.",
+      "referenceRoutes": [
+        "gold: E1 → alvo",
+        "blue: E2 / portais b2a → alvo"
+      ],
+      "concept": 11,
+      "combinedConcepts": [
+        5,
+        7,
+        8,
+        9
+      ],
+      "comfortSeparate": true,
+      "limits": "Testes de configurações e catálogos finitos; não provam unicidade, mínimo de recursos, necessidade universal ou dificuldade humana."
+    },
+    {
+      "number": 25,
+      "id": "light-v4-open-010",
+      "band": "Aprendiz",
+      "primaryPattern": "A",
+      "combinedPatterns": [
+        "E"
+      ],
+      "decisionKernel": "desvio-contra-conflito-direto",
+      "discovery": "Substituir rotas locais incompatíveis (gold: E1 → E4 → alvo; blue: E2 → alvo) por uma distribuição conjunta (gold: E1 → alvo; blue: E2 → E3 → alvo).",
+      "plausibleFailure": {
+        "caseId": "rotas-locais-em-conflito",
+        "angles": [
+          -80.1,
+          -11.1,
+          0,
+          -88.6,
+          0
+        ],
+        "individualRoutes": [
+          "gold: E1 → E4 → alvo",
+          "blue: E2 → alvo"
+        ],
+        "jointStatus": "collision",
+        "collision": {
+          "point": {
+            "x": 492.9,
+            "y": 189.6380079195694
+          },
+          "colors": [
+            "gold",
+            "blue"
+          ]
+        },
+        "explanation": "A configuração completa leva gold, blue aos respectivos alvos quando cada fonte é examinada sozinha, mas os rastros conjuntos entram em conflito em (492.9, 189.6). Mudar a ordem de disparo não libera esse espaço."
+      },
+      "dependencies": "Escopo: relações entre as alternativas documentadas, não necessidade em todo o espaço contínuo. A alternativa possui 6 combinações localmente corretas com colisão no catálogo finito. gold, blue muda(m) de sequência de espelhos. revisao-apenas-gold: miss; revisao-apenas-blue: collision. Referência conjunta: gold: E1 → alvo; blue: E2 → E3 → alvo. O contraste com rotas-locais-em-conflito demonstra a incompatibilidade que precisa ser evitada, não exclusividade desta referência.",
+      "difficultyRationale": "Aprendiz: compara uma alternativa já ensinada com uma restrição nova ou recombina duas relações locais; as fases de uma cor consolidam o repertório sem introduzir precisão. Relação central: Substituir rotas locais incompatíveis (gold: E1 → E4 → alvo; blue: E2 → alvo) por uma distribuição conjunta (gold: E1 → alvo; blue: E2 → E3 → alvo).",
+      "referenceRoutes": [
+        "gold: E1 → alvo",
+        "blue: E2 → E3 → alvo"
+      ],
+      "concept": 7,
+      "combinedConcepts": [
+        5
+      ],
+      "comfortSeparate": true,
+      "limits": "Testes de configurações e catálogos finitos; não provam unicidade, mínimo de recursos, necessidade universal ou dificuldade humana."
+    },
+    {
+      "number": 26,
+      "id": "light-v5-deduction-four-01",
+      "band": "Aprendiz",
+      "primaryPattern": "J",
+      "combinedPatterns": [
+        "A",
+        "E",
+        "G"
+      ],
+      "decisionKernel": "primeira-e-ultima-curvas-acopladas",
+      "discovery": "A dourada tem duas incidências diferentes no quarto espelho. Trocar a primeira orientação sem adaptar a última curva não conserva a chegada; a escolha do par precisa continuar compatível com as outras cores.",
+      "plausibleFailure": {
+        "caseId": "choices-0",
+        "angles": [
+          -24.4,
+          -12.3,
+          -56.9,
+          -33.8
+        ],
+        "individualRoutes": [
+          "gold: E1 → E4 → alvo",
+          "blue: E2 → alvo",
+          "pink: E3 → alvo"
+        ],
+        "jointStatus": "collision",
+        "collision": {
+          "point": {
+            "x": 382.671646203636,
+            "y": 140.49976898397983
+          },
+          "colors": [
+            "gold",
+            "pink"
+          ]
+        },
+        "explanation": "A configuração completa leva gold, blue, pink aos respectivos alvos quando cada fonte é examinada sozinha, mas os rastros conjuntos entram em conflito em (382.7, 140.5). Mudar a ordem de disparo não libera esse espaço."
+      },
+      "dependencies": "Escopo: relações entre as alternativas documentadas, não necessidade em todo o espaço contínuo. Última orientação da dourada condicionada à sua primeira escolha; tabela de incompatibilidades: [[null,[1,1,0,0],[1,1,0,0]],[null,null,[0,0,0,0]],[]]. Referência conjunta: gold: E1 → E4 / portais p0a → alvo; blue: E2 → alvo; pink: E3 / portais p2a → alvo. O contraste com choices-0 demonstra a incompatibilidade que precisa ser evitada, não exclusividade desta referência.",
+      "difficultyRationale": "Aprendiz: compara uma alternativa já ensinada com uma restrição nova ou recombina duas relações locais; as fases de uma cor consolidam o repertório sem introduzir precisão. Relação central: A dourada tem duas incidências diferentes no quarto espelho. Trocar a primeira orientação sem adaptar a última curva não conserva a chegada; a escolha do par precisa continuar compatível com as outras cores.",
+      "referenceRoutes": [
+        "gold: E1 → E4 / portais p0a → alvo",
+        "blue: E2 → alvo",
+        "pink: E3 / portais p2a → alvo"
+      ],
+      "concept": 14,
+      "combinedConcepts": [
+        7,
+        1,
+        5
+      ],
+      "comfortSeparate": true,
+      "limits": "Testes de configurações e catálogos finitos; não provam unicidade, mínimo de recursos, necessidade universal ou dificuldade humana."
+    },
+    {
+      "number": 27,
+      "id": "light-v5-portal-031",
+      "band": "Aprendiz",
+      "primaryPattern": "B",
+      "combinedPatterns": [
+        "A",
+        "E"
+      ],
+      "decisionKernel": "troca-de-lados",
+      "discovery": "Entre os primeiros espelhos e os alvos, as rotas diretas documentadas trocam de posição relativa e colidem; a alternativa com portal evita esse cruzamento físico.",
+      "plausibleFailure": {
+        "caseId": "local-routes-collide",
+        "angles": [
+          -61.7,
+          65.8
+        ],
+        "individualRoutes": [
+          "gold: E1 → alvo",
+          "blue: E2 → alvo"
+        ],
+        "jointStatus": "collision",
+        "collision": {
+          "point": {
+            "x": 463.3149990478941,
+            "y": 230.5550190176506
+          },
+          "colors": [
+            "gold",
+            "blue"
+          ]
+        },
+        "explanation": "A configuração completa leva gold, blue aos respectivos alvos quando cada fonte é examinada sozinha, mas os rastros conjuntos entram em conflito em (463.3, 230.6). Mudar a ordem de disparo não libera esse espaço."
+      },
+      "dependencies": "Escopo: relações entre as alternativas documentadas, não necessidade em todo o espaço contínuo. Grafo conservador entre alternativas [cor,opção,cor,opção]: [[0,0,1,0],[0,1,1,1]].   Referência conjunta: gold: E1 → alvo; blue: E2 / portais b1a → alvo. O contraste com local-routes-collide demonstra a incompatibilidade que precisa ser evitada, não exclusividade desta referência.",
+      "difficultyRationale": "Aprendiz: compara uma alternativa já ensinada com uma restrição nova ou recombina duas relações locais; as fases de uma cor consolidam o repertório sem introduzir precisão. Relação central: Entre os primeiros espelhos e os alvos, as rotas diretas documentadas trocam de posição relativa e colidem; a alternativa com portal evita esse cruzamento físico.",
+      "referenceRoutes": [
+        "gold: E1 → alvo",
+        "blue: E2 / portais b1a → alvo"
+      ],
+      "concept": 8,
+      "combinedConcepts": [
+        5,
+        7,
+        9
+      ],
+      "comfortSeparate": true,
+      "limits": "Testes de configurações e catálogos finitos; não provam unicidade, mínimo de recursos, necessidade universal ou dificuldade humana."
+    },
+    {
+      "number": 28,
+      "id": "light-v5-open-chain-003",
+      "band": "Aprendiz",
+      "primaryPattern": "E",
+      "combinedPatterns": [
+        "A"
+      ],
+      "decisionKernel": "revisao-de-acerto-local",
+      "discovery": "Rever gold: rotas locais (gold: E1 → alvo; blue: E2 → alvo; pink: E3 → alvo) chegam isoladamente, mas colidem; a configuração conjunta (gold: E1 → E5 → alvo; blue: E2 → alvo; pink: E3 → alvo) distribui os trajetos sem contato.",
+      "plausibleFailure": {
+        "caseId": "rotas-locais-em-conflito",
+        "angles": [
+          -10.2,
+          -18.9,
+          13.3,
+          0,
+          0,
+          0
+        ],
+        "individualRoutes": [
+          "gold: E1 → alvo",
+          "blue: E2 → alvo",
+          "pink: E3 → alvo"
+        ],
+        "jointStatus": "collision",
+        "collision": {
+          "point": {
+            "x": 486.82502476464913,
+            "y": 165.06035912259293
+          },
+          "colors": [
+            "gold",
+            "blue"
+          ]
+        },
+        "explanation": "A configuração completa leva gold, blue, pink aos respectivos alvos quando cada fonte é examinada sozinha, mas os rastros conjuntos entram em conflito em (486.8, 165.1). Mudar a ordem de disparo não libera esse espaço."
+      },
+      "dependencies": "Escopo: relações entre as alternativas documentadas, não necessidade em todo o espaço contínuo. O conflito local documentado é reproduzido com todas as peças presentes. As revisões parciais conservam seus resultados: revisao-apenas-gold: target. Referência conjunta: gold: E1 → E5 → alvo; blue: E2 → alvo; pink: E3 → alvo. O contraste com rotas-locais-em-conflito demonstra a incompatibilidade que precisa ser evitada, não exclusividade desta referência.",
+      "difficultyRationale": "Aprendiz: compara uma alternativa já ensinada com uma restrição nova ou recombina duas relações locais; as fases de uma cor consolidam o repertório sem introduzir precisão. Relação central: Rever gold: rotas locais (gold: E1 → alvo; blue: E2 → alvo; pink: E3 → alvo) chegam isoladamente, mas colidem; a configuração conjunta (gold: E1 → E5 → alvo; blue: E2 → alvo; pink: E3 → alvo) distribui os trajetos sem contato.",
+      "referenceRoutes": [
+        "gold: E1 → E5 → alvo",
+        "blue: E2 → alvo",
+        "pink: E3 → alvo"
+      ],
+      "concept": 5,
+      "combinedConcepts": [
+        7
+      ],
+      "comfortSeparate": true,
+      "limits": "Testes de configurações e catálogos finitos; não provam unicidade, mínimo de recursos, necessidade universal ou dificuldade humana."
+    },
+    {
+      "number": 29,
+      "id": "light-v3-60",
+      "band": "Aprendiz",
+      "primaryPattern": "F",
+      "combinedPatterns": [
+        "A",
+        "E",
+        "B",
+        "J"
+      ],
+      "decisionKernel": "atalhos-conflicting-versus-espelho-comum",
+      "discovery": "Dois atalhos isoladamente corretos colidem; o uso compartilhado do espelho central separa o conjunto.",
+      "plausibleFailure": {
+        "caseId": "legacy-case-1",
+        "angles": [
+          0,
+          45,
+          45,
+          45,
+          45
+        ],
+        "individualRoutes": [
+          "gold: E4 → alvo",
+          "blue: E5 → alvo"
+        ],
+        "jointStatus": "collision",
+        "collision": {
+          "point": {
+            "x": 600,
+            "y": 250.00000000000003
+          },
+          "colors": [
+            "gold",
+            "blue"
+          ]
+        },
+        "explanation": "A configuração completa leva gold, blue aos respectivos alvos quando cada fonte é examinada sozinha, mas os rastros conjuntos entram em conflito em (600.0, 250.0). Mudar a ordem de disparo não libera esse espaço."
+      },
+      "dependencies": "Escopo: relações entre as alternativas documentadas, não necessidade em todo o espaço contínuo. Não foi demonstrada cadeia entre cores; as decisões locais ou a orientação comum são descritas na dedução, sem inventar dependência adicional. Referência conjunta: gold: E1 → E2 → alvo; blue: E1 → E3 → alvo. O contraste com legacy-case-1 demonstra a incompatibilidade que precisa ser evitada, não exclusividade desta referência.",
+      "difficultyRationale": "Aprendiz: compara uma alternativa já ensinada com uma restrição nova ou recombina duas relações locais; as fases de uma cor consolidam o repertório sem introduzir precisão. Relação central: Dois atalhos isoladamente corretos colidem; o uso compartilhado do espelho central separa o conjunto.",
+      "referenceRoutes": [
+        "gold: E1 → E2 → alvo",
+        "blue: E1 → E3 → alvo"
+      ],
+      "concept": 7,
+      "combinedConcepts": [
+        5,
+        8,
+        14
+      ],
+      "comfortSeparate": true,
+      "limits": "Testes de configurações e catálogos finitos; não provam unicidade, mínimo de recursos, necessidade universal ou dificuldade humana."
+    },
+    {
+      "number": 30,
+      "id": "light-v5-portal-030",
+      "band": "Aprendiz",
+      "primaryPattern": "B",
+      "combinedPatterns": [
+        "A",
+        "E",
+        "J"
+      ],
+      "decisionKernel": "salto-sem-trecho-fisico",
+      "discovery": "A linha imaginária entre os portais cruza um trecho de outra cor, mas o salto não é um segmento físico.",
+      "plausibleFailure": {
+        "caseId": "local-routes-collide",
+        "angles": [
+          -75.8,
+          -89.6,
+          74
+        ],
+        "individualRoutes": [
+          "gold: E1 → alvo",
+          "blue: E2 → alvo",
+          "pink: E3 → alvo"
+        ],
+        "jointStatus": "collision",
+        "collision": {
+          "point": {
+            "x": 463.89432333273646,
+            "y": 233.68489932206037
+          },
+          "colors": [
+            "blue",
+            "pink"
+          ]
+        },
+        "explanation": "A configuração completa leva gold, blue, pink aos respectivos alvos quando cada fonte é examinada sozinha, mas os rastros conjuntos entram em conflito em (463.9, 233.7). Mudar a ordem de disparo não libera esse espaço."
+      },
+      "dependencies": "Escopo: relações entre as alternativas documentadas, não necessidade em todo o espaço contínuo. Grafo conservador entre alternativas [cor,opção,cor,opção]: [[0,0,1,0],[0,0,2,0],[1,0,2,0],[1,1,2,0],[1,1,2,1]]. Onda 1: blue=1 perde suporte frente às opções 0/1 de pink; pink=0 perde suporte frente às opções 0/1 de blue. Onda 2: gold=0 perde suporte frente às opções 0 de blue  Referência conjunta: gold: E1 / portais g1a → alvo; blue: E2 → alvo; pink: E3 / portais p1a → alvo. O contraste com local-routes-collide demonstra a incompatibilidade que precisa ser evitada, não exclusividade desta referência.",
+      "difficultyRationale": "Aprendiz: compara uma alternativa já ensinada com uma restrição nova ou recombina duas relações locais; as fases de uma cor consolidam o repertório sem introduzir precisão. Relação central: A linha imaginária entre os portais cruza um trecho de outra cor, mas o salto não é um segmento físico.",
+      "referenceRoutes": [
+        "gold: E1 / portais g1a → alvo",
+        "blue: E2 → alvo",
+        "pink: E3 / portais p1a → alvo"
+      ],
+      "concept": 9,
+      "combinedConcepts": [
+        5,
+        6,
+        7,
+        8,
+        14
+      ],
+      "comfortSeparate": true,
+      "limits": "Testes de configurações e catálogos finitos; não provam unicidade, mínimo de recursos, necessidade universal ou dificuldade humana."
+    },
+    {
+      "number": 31,
+      "id": "light-v5-open-028",
+      "band": "Intermediário",
+      "primaryPattern": "G",
+      "combinedPatterns": [
+        "A",
+        "E"
+      ],
+      "decisionKernel": "aproximacao-final-reservada",
+      "discovery": "A referência chega com blue por E5; a última curva alternativa E4 acerta isoladamente, mas colide no conjunto. 43/43 vitórias reexecutadas usam a chegada de referência. Isso fornece uma comparação real a partir do alvo, sem afirmar exclusividade contínua. Rever gold, blue: rotas locais (gold: E1 → E5 → alvo; blue: E2 → alvo) chegam isoladamente, mas colidem; a configuração conjunta (gold: E1 → E3 → alvo; blue: E2 → E5 → alvo) distribui os trajetos sem contato.",
+      "plausibleFailure": {
+        "caseId": "rotas-locais-em-conflito",
+        "angles": [
+          12.3,
+          28.9,
+          0,
+          0,
+          35.2
+        ],
+        "individualRoutes": [
+          "gold: E1 → E5 → alvo",
+          "blue: E2 → alvo"
+        ],
+        "jointStatus": "collision",
+        "collision": {
+          "point": {
+            "x": 368.5077318654603,
+            "y": 237.188860841665
+          },
+          "colors": [
+            "gold",
+            "blue"
+          ]
+        },
+        "explanation": "A configuração completa leva gold, blue aos respectivos alvos quando cada fonte é examinada sozinha, mas os rastros conjuntos entram em conflito em (368.5, 237.2). Mudar a ordem de disparo não libera esse espaço."
+      },
+      "dependencies": "Escopo: relações entre as alternativas documentadas, não necessidade em todo o espaço contínuo. O conflito local documentado é reproduzido com todas as peças presentes. As revisões parciais conservam seus resultados: revisao-apenas-gold: miss. Referência conjunta: gold: E1 → E3 → alvo; blue: E2 → E5 → alvo. O contraste com rotas-locais-em-conflito demonstra a incompatibilidade que precisa ser evitada, não exclusividade desta referência.",
+      "difficultyRationale": "Intermediário: a escolha de uma chegada, saída ou região precisa ser confrontada com outra decisão relacionada; alterna encadeamentos de duas ou três relações com consolidação de uma cor. Relação central: A referência chega com blue por E5; a última curva alternativa E4 acerta isoladamente, mas colide no conjunto. 43/43 vitórias reexecutadas usam a chegada de referência. Isso fornece uma comparação real a partir do alvo, sem afirmar exclusividade contínua. Rever gold, blue: rotas locais (gold: E1 → E5 → alvo; blue: E2 → alvo) chegam isoladamente, mas colidem; a configuração conjunta (gold: E1 → E3 → alvo; blue: E2 → E5 → alvo) distribui os trajetos sem contato.",
+      "referenceRoutes": [
+        "gold: E1 → E3 → alvo",
+        "blue: E2 → E5 → alvo"
+      ],
+      "concept": 1,
+      "combinedConcepts": [
+        7,
+        5
+      ],
+      "comfortSeparate": true,
+      "limits": "Testes de configurações e catálogos finitos; não provam unicidade, mínimo de recursos, necessidade universal ou dificuldade humana."
+    },
+    {
+      "number": 32,
+      "id": "light-v5-deduction-windows-04",
+      "band": "Intermediário",
+      "primaryPattern": "D",
+      "combinedPatterns": [
+        "G"
+      ],
+      "decisionKernel": "duas-janelas-complementares",
+      "discovery": "As duas divisórias selecionam conexões visíveis distintas. Cada janela elimina uma alternativa que a outra divisória, sozinha, não elimina.",
+      "plausibleFailure": {
+        "caseId": "choices-0",
+        "angles": [
+          -0.2,
+          -46.9,
+          38.5
+        ],
+        "status": "miss",
+        "routes": [
+          "gold: E1 → wall",
+          "blue: E2 → alvo",
+          "pink: E3 → alvo"
+        ],
+        "explanation": "A alternativa registrada choices-0 não completa a chegada: gold: E1 → wall; blue: E2 → alvo; pink: E3 → alvo. O contraste permite conferir a direção ou a conexão escolhida, sem proibir outras soluções válidas."
+      },
+      "dependencies": "Escopo: relações entre as alternativas documentadas, não necessidade em todo o espaço contínuo. A divisória 1 em x=290 bloqueia dourada na alternativa 0; a outra divisória sozinha não bloqueia essa mesma rota. A divisória 2 em x=510 bloqueia rosa na alternativa 4; a outra divisória sozinha não bloqueia essa mesma rota. Auditoria independente: todas as combinações que continuam individualmente válidas já são conjuntamente válidas; não há conflito residual atribuído a esta fase.",
+      "difficultyRationale": "Intermediário: a escolha de uma chegada, saída ou região precisa ser confrontada com outra decisão relacionada; alterna encadeamentos de duas ou três relações com consolidação de uma cor. Relação central: As duas divisórias selecionam conexões visíveis distintas. Cada janela elimina uma alternativa que a outra divisória, sozinha, não elimina.",
+      "referenceRoutes": [
+        "gold: E1 / portais p0a → alvo",
+        "blue: E2 → alvo",
+        "pink: E3 → alvo"
+      ],
+      "concept": 3,
+      "combinedConcepts": [
+        1
+      ],
+      "comfortSeparate": true,
+      "limits": "Testes de configurações e catálogos finitos; não provam unicidade, mínimo de recursos, necessidade universal ou dificuldade humana."
+    },
+    {
+      "number": 33,
+      "id": "light-v5-open-301",
+      "band": "Intermediário",
+      "primaryPattern": "A",
+      "combinedPatterns": [
+        "E"
+      ],
+      "decisionKernel": "desvio-contra-conflito-direto",
+      "discovery": "Par documental light-v5-open-302. Só a geometria fixa do alvo azul muda na coordenada y em -45px; uma ligação antes válida deixa de ser, enquanto outra passa a ser compatível. Os ângulos das rotas comparadas foram recalculados para o novo alvo, portanto não é apenas errar um alvo movido.",
+      "plausibleFailure": {
+        "caseId": "rotas-locais-em-conflito",
+        "angles": [
+          27.2,
+          36.7,
+          0,
+          0,
+          89.9,
+          85.1
+        ],
+        "individualRoutes": [
+          "gold: E1 → alvo",
+          "blue: E2 → E6 → E5 → alvo"
+        ],
+        "jointStatus": "collision",
+        "collision": {
+          "point": {
+            "x": 224.6,
+            "y": 191.8780220105952
+          },
+          "colors": [
+            "gold",
+            "blue"
+          ]
+        },
+        "explanation": "A configuração completa leva gold, blue aos respectivos alvos quando cada fonte é examinada sozinha, mas os rastros conjuntos entram em conflito em (224.6, 191.9). Mudar a ordem de disparo não libera esse espaço."
+      },
+      "dependencies": "Escopo: relações entre as alternativas documentadas, não necessidade em todo o espaço contínuo. Par documental light-v5-open-302. Só a geometria fixa do alvo azul muda na coordenada y em -45px; uma ligação antes válida deixa de ser, enquanto outra passa a ser compatível. Os ângulos das rotas comparadas foram recalculados para o novo alvo, portanto não é apenas errar um alvo movido. Referência conjunta: gold: E1 → E6 → alvo; blue: E2 → E5 → alvo. O contraste com rotas-locais-em-conflito demonstra a incompatibilidade que precisa ser evitada, não exclusividade desta referência.",
+      "difficultyRationale": "Intermediário: a escolha de uma chegada, saída ou região precisa ser confrontada com outra decisão relacionada; alterna encadeamentos de duas ou três relações com consolidação de uma cor. Relação central: Par documental light-v5-open-302. Só a geometria fixa do alvo azul muda na coordenada y em -45px; uma ligação antes válida deixa de ser, enquanto outra passa a ser compatível. Os ângulos das rotas comparadas foram recalculados para o novo alvo, portanto não é apenas errar um alvo movido.",
+      "referenceRoutes": [
+        "gold: E1 → E6 → alvo",
+        "blue: E2 → E5 → alvo"
+      ],
+      "concept": 7,
+      "combinedConcepts": [
+        5
+      ],
+      "comfortSeparate": true,
+      "limits": "Testes de configurações e catálogos finitos; não provam unicidade, mínimo de recursos, necessidade universal ou dificuldade humana."
+    },
+    {
+      "number": 34,
+      "id": "light-v3-77",
+      "band": "Intermediário",
+      "primaryPattern": "C",
+      "combinedPatterns": [
+        "A",
+        "E",
+        "B"
+      ],
+      "decisionKernel": "consequencia-na-regiao-de-saida",
+      "discovery": "A oferece uma descida independente.",
+      "plausibleFailure": {
+        "caseId": "new-center-conflict-1",
+        "angles": [
+          10.7,
+          45,
+          45
+        ],
+        "individualRoutes": [
+          "gold: E1 → alvo",
+          "blue: E3 → alvo"
+        ],
+        "jointStatus": "collision",
+        "collision": {
+          "point": {
+            "x": 410,
+            "y": 174.46018578373167
+          },
+          "colors": [
+            "gold",
+            "blue"
+          ]
+        },
+        "explanation": "A configuração completa leva gold, blue aos respectivos alvos quando cada fonte é examinada sozinha, mas os rastros conjuntos entram em conflito em (410.0, 174.5). Mudar a ordem de disparo não libera esse espaço."
+      },
+      "dependencies": "Escopo: relações entre as alternativas documentadas, não necessidade em todo o espaço contínuo. blue restringe gold (trecho inicial fixo, caso new-center-conflict-1) blue restringe gold (trecho inicial fixo, caso new-center-conflict-2) Referência conjunta: gold: E1 → E2 / portais A1 → alvo; blue: E3 → alvo. O contraste com new-center-conflict-1 demonstra a incompatibilidade que precisa ser evitada, não exclusividade desta referência.",
+      "difficultyRationale": "Intermediário: a escolha de uma chegada, saída ou região precisa ser confrontada com outra decisão relacionada; alterna encadeamentos de duas ou três relações com consolidação de uma cor. Relação central: A oferece uma descida independente.",
+      "referenceRoutes": [
+        "gold: E1 → E2 / portais A1 → alvo",
+        "blue: E3 → alvo"
+      ],
+      "concept": 11,
+      "combinedConcepts": [
+        5,
+        7,
+        9,
+        10
+      ],
+      "comfortSeparate": true,
+      "limits": "Testes de configurações e catálogos finitos; não provam unicidade, mínimo de recursos, necessidade universal ou dificuldade humana."
+    },
+    {
+      "number": 35,
+      "id": "light-v4-open-065",
+      "band": "Intermediário",
+      "primaryPattern": "B",
+      "combinedPatterns": [
+        "A",
+        "E"
+      ],
+      "decisionKernel": "afastamento-inicial-util",
+      "discovery": "A rota direta pink ocupa um trecho incompatível com outra cor. O afastamento inicial reserva espaço para uma aproximação posterior; ele ocorre em todas as 3 soluções enumeradas. Substituir rotas locais incompatíveis (gold: E1 → E5 → alvo; blue: E2 → alvo; pink: E3 → alvo) por uma distribuição conjunta (gold: E1 → E6 → alvo; blue: E2 → alvo; pink: E3 → E4 → alvo).",
+      "plausibleFailure": {
+        "caseId": "rotas-locais-em-conflito",
+        "angles": [
+          -1,
+          -85.1,
+          -87,
+          0,
+          53.9,
+          0
+        ],
+        "individualRoutes": [
+          "gold: E1 → E5 → alvo",
+          "blue: E2 → alvo",
+          "pink: E3 → alvo"
+        ],
+        "jointStatus": "collision",
+        "collision": {
+          "point": {
+            "x": 538.5682167293143,
+            "y": 359.00000000000006
+          },
+          "colors": [
+            "gold",
+            "pink"
+          ]
+        },
+        "explanation": "A configuração completa leva gold, blue, pink aos respectivos alvos quando cada fonte é examinada sozinha, mas os rastros conjuntos entram em conflito em (538.6, 359.0). Mudar a ordem de disparo não libera esse espaço."
+      },
+      "dependencies": "Escopo: relações entre as alternativas documentadas, não necessidade em todo o espaço contínuo. A alternativa possui 12 combinações localmente corretas com colisão no catálogo finito. gold, pink muda(m) de sequência de espelhos. revisao-apenas-gold: collision; revisao-apenas-pink: collision. Referência conjunta: gold: E1 → E6 → alvo; blue: E2 → alvo; pink: E3 → E4 → alvo. O contraste com rotas-locais-em-conflito demonstra a incompatibilidade que precisa ser evitada, não exclusividade desta referência.",
+      "difficultyRationale": "Intermediário: a escolha de uma chegada, saída ou região precisa ser confrontada com outra decisão relacionada; alterna encadeamentos de duas ou três relações com consolidação de uma cor. Relação central: A rota direta pink ocupa um trecho incompatível com outra cor. O afastamento inicial reserva espaço para uma aproximação posterior; ele ocorre em todas as 3 soluções enumeradas. Substituir rotas locais incompatíveis (gold: E1 → E5 → alvo; blue: E2 → alvo; pink: E3 → alvo) por uma distribuição conjunta (gold: E1 → E6 → alvo; blue: E2 → alvo; pink: E3 → E4 → alvo).",
+      "referenceRoutes": [
+        "gold: E1 → E6 → alvo",
+        "blue: E2 → alvo",
+        "pink: E3 → E4 → alvo"
+      ],
+      "concept": 2,
+      "combinedConcepts": [
+        7,
+        5
+      ],
+      "comfortSeparate": true,
+      "limits": "Testes de configurações e catálogos finitos; não provam unicidade, mínimo de recursos, necessidade universal ou dificuldade humana."
+    },
+    {
+      "number": 36,
+      "id": "light-v5-open-302",
+      "band": "Intermediário",
+      "primaryPattern": "I",
+      "combinedPatterns": [
+        "A",
+        "E"
+      ],
+      "decisionKernel": "assimetria-de-compatibilidades",
+      "discovery": "Par documental light-v5-open-301. Só a geometria fixa do alvo azul muda na coordenada y em -45px; uma ligação antes válida deixa de ser, enquanto outra passa a ser compatível. Os ângulos das rotas comparadas foram recalculados para o novo alvo, portanto não é apenas errar um alvo movido.",
+      "plausibleFailure": {
+        "caseId": "rotas-locais-em-conflito",
+        "angles": [
+          27.2,
+          36.7,
+          0,
+          0,
+          -86.3,
+          85.1
+        ],
+        "individualRoutes": [
+          "gold: E1 → alvo",
+          "blue: E2 → E6 → E5 → alvo"
+        ],
+        "jointStatus": "collision",
+        "collision": {
+          "point": {
+            "x": 224.6,
+            "y": 191.8780220105952
+          },
+          "colors": [
+            "gold",
+            "blue"
+          ]
+        },
+        "explanation": "A configuração completa leva gold, blue aos respectivos alvos quando cada fonte é examinada sozinha, mas os rastros conjuntos entram em conflito em (224.6, 191.9). Mudar a ordem de disparo não libera esse espaço."
+      },
+      "dependencies": "Escopo: relações entre as alternativas documentadas, não necessidade em todo o espaço contínuo. Par documental light-v5-open-301. Só a geometria fixa do alvo azul muda na coordenada y em -45px; uma ligação antes válida deixa de ser, enquanto outra passa a ser compatível. Os ângulos das rotas comparadas foram recalculados para o novo alvo, portanto não é apenas errar um alvo movido. Referência conjunta: gold: E1 → E6 → alvo; blue: E2 → E5 → alvo. O contraste com rotas-locais-em-conflito demonstra a incompatibilidade que precisa ser evitada, não exclusividade desta referência.",
+      "difficultyRationale": "Intermediário: a escolha de uma chegada, saída ou região precisa ser confrontada com outra decisão relacionada; alterna encadeamentos de duas ou três relações com consolidação de uma cor. Relação central: Par documental light-v5-open-301. Só a geometria fixa do alvo azul muda na coordenada y em -45px; uma ligação antes válida deixa de ser, enquanto outra passa a ser compatível. Os ângulos das rotas comparadas foram recalculados para o novo alvo, portanto não é apenas errar um alvo movido.",
+      "referenceRoutes": [
+        "gold: E1 → E6 → alvo",
+        "blue: E2 → E5 → alvo"
+      ],
+      "concept": 4,
+      "combinedConcepts": [
+        7,
+        5,
+        16
+      ],
+      "comfortSeparate": true,
+      "limits": "Testes de configurações e catálogos finitos; não provam unicidade, mínimo de recursos, necessidade universal ou dificuldade humana."
+    },
+    {
+      "number": 37,
+      "id": "light-v4-deduction-pilot-return",
+      "band": "Intermediário",
+      "primaryPattern": "H",
+      "combinedPatterns": [
+        "G",
+        "B"
+      ],
+      "decisionKernel": "saida-e-retorno-util",
+      "discovery": "O alvo fica no setor esquerdo, mas a divisão horizontal impede a aproximação local. A luz sai pela ilha inferior, atravessa a sala direita e retorna acima da divisória.",
+      "plausibleFailure": {
+        "caseId": "direct-target",
+        "angles": [
+          -56.7,
+          -45
+        ],
+        "status": "miss",
+        "routes": [
+          "gold: E1 → wall"
+        ],
+        "explanation": "A alternativa registrada direct-target não completa a chegada: gold: E1 → wall. O contraste permite conferir a direção ou a conexão escolhida, sem proibir outras soluções válidas."
+      },
+      "dependencies": "Escopo: relações entre as alternativas documentadas, não necessidade em todo o espaço contínuo. A saída acima da divisória exige chegada horizontal na segunda entrada; o espelho da sala direita precisa virar para a esquerda, e o primeiro precisa entregar luz vertical a essa sala.",
+      "difficultyRationale": "Intermediário: a escolha de uma chegada, saída ou região precisa ser confrontada com outra decisão relacionada; alterna encadeamentos de duas ou três relações com consolidação de uma cor. Relação central: O alvo fica no setor esquerdo, mas a divisão horizontal impede a aproximação local. A luz sai pela ilha inferior, atravessa a sala direita e retorna acima da divisória.",
+      "referenceRoutes": [
+        "gold: E1 → E2 / portais a → c → alvo"
+      ],
+      "concept": 12,
+      "combinedConcepts": [
+        13,
+        1,
+        2
+      ],
+      "comfortSeparate": true,
+      "limits": "Testes de configurações e catálogos finitos; não provam unicidade, mínimo de recursos, necessidade universal ou dificuldade humana."
+    },
+    {
+      "number": 38,
+      "id": "light-v5-deduction-symmetry-02-base-reauthored",
+      "band": "Intermediário",
+      "primaryPattern": "A",
+      "combinedPatterns": [
+        "E"
+      ],
+      "decisionKernel": "desvio-contra-conflito-direto",
+      "discovery": "Os dois trajetos principais têm geometria espelhada entre os primeiros espelhos e os alvos, mas a terceira rota cria uma rede específica de incompatibilidades. As três chegadas diretas funcionam isoladamente e colidem juntas.",
+      "plausibleFailure": {
+        "caseId": "choices-0",
+        "angles": [
+          -70.4,
+          13.4,
+          -30.3,
+          30.3,
+          -45.5
+        ],
+        "individualRoutes": [
+          "gold: E1 → E3 → alvo",
+          "blue: E2 → E4 → alvo",
+          "pink: E5 → alvo"
+        ],
+        "jointStatus": "collision",
+        "collision": {
+          "point": {
+            "x": 414.71471828046583,
+            "y": 229.99999999999991
+          },
+          "colors": [
+            "gold",
+            "blue"
+          ]
+        },
+        "explanation": "A configuração completa leva gold, blue, pink aos respectivos alvos quando cada fonte é examinada sozinha, mas os rastros conjuntos entram em conflito em (414.7, 230.0). Mudar a ordem de disparo não libera esse espaço."
+      },
+      "dependencies": "Escopo: relações entre as alternativas documentadas, não necessidade em todo o espaço contínuo. Matriz nova derivada do motor: [[null,[1,0,0,0],[0,0,0,0]],[null,null,[0,0,0,0]],[]]. Vitórias da base: 1, 2, 3, 5, 6, 7. Vitórias deste registro: 1, 2, 3, 5, 6, 7. Referência conjunta: gold: E1 → E3 / portais s0a → alvo; blue: E2 → E4 → alvo; pink: E5 → alvo. O contraste com choices-0 demonstra a incompatibilidade que precisa ser evitada, não exclusividade desta referência.",
+      "difficultyRationale": "Intermediário: a escolha de uma chegada, saída ou região precisa ser confrontada com outra decisão relacionada; alterna encadeamentos de duas ou três relações com consolidação de uma cor. Relação central: Os dois trajetos principais têm geometria espelhada entre os primeiros espelhos e os alvos, mas a terceira rota cria uma rede específica de incompatibilidades. As três chegadas diretas funcionam isoladamente e colidem juntas.",
+      "referenceRoutes": [
+        "gold: E1 → E3 / portais s0a → alvo",
+        "blue: E2 → E4 → alvo",
+        "pink: E5 → alvo"
+      ],
+      "concept": 7,
+      "combinedConcepts": [
+        5
+      ],
+      "comfortSeparate": true,
+      "limits": "Testes de configurações e catálogos finitos; não provam unicidade, mínimo de recursos, necessidade universal ou dificuldade humana."
+    },
+    {
+      "number": 39,
+      "id": "light-v5-deduction-open-016",
+      "band": "Intermediário",
+      "primaryPattern": "J",
+      "combinedPatterns": [
+        "A",
+        "E"
+      ],
+      "decisionKernel": "propagacao-entre-tres-cores",
+      "discovery": "dourada pelo portal → azul pelo portal → rosa direta. A escolha inicial condiciona as duas outras cores. As relações foram verificadas no catálogo finito ampliado, não impostas aos controles contínuos.",
+      "plausibleFailure": {
+        "caseId": "choices-0",
+        "angles": [
+          -56,
+          74.5,
+          32.8
+        ],
+        "individualRoutes": [
+          "gold: E1 → alvo",
+          "blue: E2 → alvo",
+          "pink: E3 → alvo"
+        ],
+        "jointStatus": "collision",
+        "collision": {
+          "point": {
+            "x": 378.9334358043118,
+            "y": 208.42195526491327
+          },
+          "colors": [
+            "blue",
+            "pink"
+          ]
+        },
+        "explanation": "A configuração completa leva gold, blue, pink aos respectivos alvos quando cada fonte é examinada sozinha, mas os rastros conjuntos entram em conflito em (378.9, 208.4). Mudar a ordem de disparo não libera esse espaço."
+      },
+      "dependencies": "Escopo: relações entre as alternativas documentadas, não necessidade em todo o espaço contínuo. dourada pelo portal → azul pelo portal → rosa direta. A escolha inicial condiciona as duas outras cores. Referência conjunta: gold: E1 → alvo; blue: E2 / portais p1a → alvo; pink: E3 → alvo. O contraste com choices-0 demonstra a incompatibilidade que precisa ser evitada, não exclusividade desta referência.",
+      "difficultyRationale": "Intermediário: a escolha de uma chegada, saída ou região precisa ser confrontada com outra decisão relacionada; alterna encadeamentos de duas ou três relações com consolidação de uma cor. Relação central: dourada pelo portal → azul pelo portal → rosa direta. A escolha inicial condiciona as duas outras cores. As relações foram verificadas no catálogo finito ampliado, não impostas aos controles contínuos.",
+      "referenceRoutes": [
+        "gold: E1 → alvo",
+        "blue: E2 / portais p1a → alvo",
+        "pink: E3 → alvo"
+      ],
+      "concept": 6,
+      "combinedConcepts": [
+        7,
+        5
+      ],
+      "comfortSeparate": true,
+      "limits": "Testes de configurações e catálogos finitos; não provam unicidade, mínimo de recursos, necessidade universal ou dificuldade humana."
+    },
+    {
+      "number": 40,
+      "id": "light-v4-legacy-190-labels",
+      "band": "Intermediário",
+      "primaryPattern": "F",
+      "combinedPatterns": [
+        "A",
+        "E",
+        "B"
+      ],
+      "decisionKernel": "orientacao-comum-e-terceira-cor",
+      "discovery": "Sintetizar a escolha compartilhada em dois espelhos.",
+      "plausibleFailure": {
+        "caseId": "legacy-case-1",
+        "angles": [
+          -45,
+          -67.5
+        ],
+        "individualRoutes": [
+          "gold: E1 / portais Aa → alvo",
+          "blue: E1 / portais Ba → alvo",
+          "pink: E2 / portais Ca → alvo"
+        ],
+        "jointStatus": "collision",
+        "collision": {
+          "point": {
+            "x": 330,
+            "y": 229.50000000000003
+          },
+          "colors": [
+            "gold",
+            "blue"
+          ]
+        },
+        "explanation": "A configuração completa leva gold, blue, pink aos respectivos alvos quando cada fonte é examinada sozinha, mas os rastros conjuntos entram em conflito em (330.0, 229.5). Mudar a ordem de disparo não libera esse espaço."
+      },
+      "dependencies": "Escopo: relações entre as alternativas documentadas, não necessidade em todo o espaço contínuo. Relações geométricas e casos concretos preservados abaixo; a lista não implica uma cadeia causal de três cores nem contradição por si só. blue restringe pink (trajeto após escolha de reflexão/portal, caso legacy-case-2) Referência conjunta: gold: E1 → alvo; blue: E1 → alvo; pink: E2 / portais Ca → alvo. O contraste com legacy-case-1 demonstra a incompatibilidade que precisa ser evitada, não exclusividade desta referência.",
+      "difficultyRationale": "Intermediário: a escolha de uma chegada, saída ou região precisa ser confrontada com outra decisão relacionada; alterna encadeamentos de duas ou três relações com consolidação de uma cor. Relação central: Sintetizar a escolha compartilhada em dois espelhos.",
+      "referenceRoutes": [
+        "gold: E1 → alvo",
+        "blue: E1 → alvo",
+        "pink: E2 / portais Ca → alvo"
+      ],
+      "concept": 14,
+      "combinedConcepts": [
+        5,
+        7,
+        9
+      ],
+      "comfortSeparate": true,
+      "limits": "Testes de configurações e catálogos finitos; não provam unicidade, mínimo de recursos, necessidade universal ou dificuldade humana."
+    },
+    {
+      "number": 41,
+      "id": "light-v5-deduction-four-02",
+      "band": "Intermediário",
+      "primaryPattern": "J",
+      "combinedPatterns": [
+        "A",
+        "E",
+        "G"
+      ],
+      "decisionKernel": "primeira-e-ultima-curvas-acopladas",
+      "discovery": "A dourada tem duas incidências diferentes no quarto espelho. Trocar a primeira orientação sem adaptar a última curva não conserva a chegada; a escolha do par precisa continuar compatível com as outras cores.",
+      "plausibleFailure": {
+        "caseId": "choices-0",
+        "angles": [
+          -48.7,
+          74.2,
+          46.4,
+          83.3
+        ],
+        "individualRoutes": [
+          "gold: E1 → E4 → alvo",
+          "blue: E2 → alvo",
+          "pink: E3 → alvo"
+        ],
+        "jointStatus": "collision",
+        "collision": {
+          "point": {
+            "x": 433.64779347408364,
+            "y": 91.3406103436376
+          },
+          "colors": [
+            "blue",
+            "pink"
+          ]
+        },
+        "explanation": "A configuração completa leva gold, blue, pink aos respectivos alvos quando cada fonte é examinada sozinha, mas os rastros conjuntos entram em conflito em (433.6, 91.3). Mudar a ordem de disparo não libera esse espaço."
+      },
+      "dependencies": "Escopo: relações entre as alternativas documentadas, não necessidade em todo o espaço contínuo. Última orientação da dourada condicionada à sua primeira escolha; tabela de incompatibilidades: [[null,[0,0,0,0],[1,1,0,0]],[null,null,[1,1,0,0]],[]]. Referência conjunta: gold: E1 → E4 / portais p0a → alvo; blue: E2 / portais p1a → alvo; pink: E3 → alvo. O contraste com choices-0 demonstra a incompatibilidade que precisa ser evitada, não exclusividade desta referência.",
+      "difficultyRationale": "Intermediário: a escolha de uma chegada, saída ou região precisa ser confrontada com outra decisão relacionada; alterna encadeamentos de duas ou três relações com consolidação de uma cor. Relação central: A dourada tem duas incidências diferentes no quarto espelho. Trocar a primeira orientação sem adaptar a última curva não conserva a chegada; a escolha do par precisa continuar compatível com as outras cores.",
+      "referenceRoutes": [
+        "gold: E1 → E4 / portais p0a → alvo",
+        "blue: E2 / portais p1a → alvo",
+        "pink: E3 → alvo"
+      ],
+      "concept": 14,
+      "combinedConcepts": [
+        7,
+        1,
+        5
+      ],
+      "comfortSeparate": true,
+      "limits": "Testes de configurações e catálogos finitos; não provam unicidade, mínimo de recursos, necessidade universal ou dificuldade humana."
+    },
+    {
+      "number": 42,
+      "id": "light-v5-open-chain-012",
+      "band": "Intermediário",
+      "primaryPattern": "J",
+      "combinedPatterns": [
+        "A",
+        "E"
+      ],
+      "decisionKernel": "propagacao-entre-tres-cores",
+      "discovery": "A hipótese percorre três cores: [{\"from\":[0,0],\"to\":[2,1],\"forbidden\":[[0,0],[2,0]]},{\"from\":[2,1],\"to\":[1,0],\"forbidden\":[[1,1],[2,1]]}]",
+      "plausibleFailure": {
+        "caseId": "rotas-locais-em-conflito",
+        "angles": [
+          -36,
+          -60.3,
+          3.7,
+          0,
+          0,
+          0
+        ],
+        "individualRoutes": [
+          "gold: E1 → alvo",
+          "blue: E2 → alvo",
+          "pink: E3 → alvo"
+        ],
+        "jointStatus": "collision",
+        "collision": {
+          "point": {
+            "x": 455.8625375353524,
+            "y": 301.3888458795702
+          },
+          "colors": [
+            "gold",
+            "pink"
+          ]
+        },
+        "explanation": "A configuração completa leva gold, blue, pink aos respectivos alvos quando cada fonte é examinada sozinha, mas os rastros conjuntos entram em conflito em (455.9, 301.4). Mudar a ordem de disparo não libera esse espaço."
+      },
+      "dependencies": "Escopo: relações entre as alternativas documentadas, não necessidade em todo o espaço contínuo. [{\"from\":[0,0],\"to\":[2,1],\"forbidden\":[[0,0],[2,0]]},{\"from\":[2,1],\"to\":[1,0],\"forbidden\":[[1,1],[2,1]]}] Referência conjunta: gold: E1 → E4 → alvo; blue: E2 → alvo; pink: E3 → alvo. O contraste com rotas-locais-em-conflito demonstra a incompatibilidade que precisa ser evitada, não exclusividade desta referência.",
+      "difficultyRationale": "Intermediário: a escolha de uma chegada, saída ou região precisa ser confrontada com outra decisão relacionada; alterna encadeamentos de duas ou três relações com consolidação de uma cor. Relação central: A hipótese percorre três cores: [{\"from\":[0,0],\"to\":[2,1],\"forbidden\":[[0,0],[2,0]]},{\"from\":[2,1],\"to\":[1,0],\"forbidden\":[[1,1],[2,1]]}]",
+      "referenceRoutes": [
+        "gold: E1 → E4 → alvo",
+        "blue: E2 → alvo",
+        "pink: E3 → alvo"
+      ],
+      "concept": 6,
+      "combinedConcepts": [
+        7,
+        5,
+        14
+      ],
+      "comfortSeparate": true,
+      "limits": "Testes de configurações e catálogos finitos; não provam unicidade, mínimo de recursos, necessidade universal ou dificuldade humana."
+    },
+    {
+      "number": 43,
+      "id": "light-v5-deduction-symmetry-02-opposite-filter-reauthored",
+      "band": "Intermediário",
+      "primaryPattern": "I",
+      "combinedPatterns": [
+        "A",
+        "E"
+      ],
+      "decisionKernel": "assimetria-de-compatibilidades",
+      "discovery": "Os dois trajetos principais têm geometria espelhada entre os primeiros espelhos e os alvos. Um único filtro invalida a alternativa de desvio correspondente; a cor vizinha e a terceira rota precisam ser consideradas juntas.",
+      "plausibleFailure": {
+        "caseId": "choices-0",
+        "angles": [
+          -70.4,
+          13.4,
+          -30.3,
+          30.3,
+          -45.5
+        ],
+        "individualRoutes": [
+          "gold: E1 → E3 → alvo",
+          "blue: E2 → E4 → alvo",
+          "pink: E5 → alvo"
+        ],
+        "jointStatus": "collision",
+        "collision": {
+          "point": {
+            "x": 414.71471828046583,
+            "y": 229.99999999999991
+          },
+          "colors": [
+            "gold",
+            "blue"
+          ]
+        },
+        "explanation": "A configuração completa leva gold, blue, pink aos respectivos alvos quando cada fonte é examinada sozinha, mas os rastros conjuntos entram em conflito em (414.7, 230.0). Mudar a ordem de disparo não libera esse espaço."
+      },
+      "dependencies": "Escopo: relações entre as alternativas documentadas, não necessidade em todo o espaço contínuo. Matriz nova derivada do motor: [[null,[1,0,0,0],[0,0,0,0]],[null,null,[0,0,0,0]],[]]. Vitórias da base: 1, 2, 3, 5, 6, 7. Vitórias deste registro: 1, 5. Referência conjunta: gold: E1 → E3 / portais s0a → alvo; blue: E2 → E4 → alvo; pink: E5 → alvo. O contraste com choices-0 demonstra a incompatibilidade que precisa ser evitada, não exclusividade desta referência.",
+      "difficultyRationale": "Intermediário: a escolha de uma chegada, saída ou região precisa ser confrontada com outra decisão relacionada; alterna encadeamentos de duas ou três relações com consolidação de uma cor. Relação central: Os dois trajetos principais têm geometria espelhada entre os primeiros espelhos e os alvos. Um único filtro invalida a alternativa de desvio correspondente; a cor vizinha e a terceira rota precisam ser consideradas juntas.",
+      "referenceRoutes": [
+        "gold: E1 → E3 / portais s0a → alvo",
+        "blue: E2 → E4 → alvo",
+        "pink: E5 → alvo"
+      ],
+      "concept": 4,
+      "combinedConcepts": [
+        7,
+        16
+      ],
+      "comfortSeparate": true,
+      "limits": "Testes de configurações e catálogos finitos; não provam unicidade, mínimo de recursos, necessidade universal ou dificuldade humana."
+    },
+    {
+      "number": 44,
+      "id": "light-v3-139",
+      "band": "Intermediário",
+      "primaryPattern": "H",
+      "combinedPatterns": [
+        "A",
+        "E",
+        "J",
+        "B",
+        "C"
+      ],
+      "decisionKernel": "sequencia-de-regioes",
+      "discovery": "Relacionar dois pares dourados com um desvio rosa de apenas uma reflexão.",
+      "plausibleFailure": {
+        "caseId": "legacy-case-1",
+        "angles": [
+          45,
+          24.3,
+          -45,
+          45
+        ],
+        "individualRoutes": [
+          "blue: E1 → alvo",
+          "gold: E2 → alvo",
+          "pink: E4 / portais K1 → alvo"
+        ],
+        "jointStatus": "collision",
+        "collision": {
+          "point": {
+            "x": 250.00000000000014,
+            "y": 287.957339323643
+          },
+          "colors": [
+            "blue",
+            "gold"
+          ]
+        },
+        "explanation": "A configuração completa leva blue, gold, pink aos respectivos alvos quando cada fonte é examinada sozinha, mas os rastros conjuntos entram em conflito em (250.0, 288.0). Mudar a ordem de disparo não libera esse espaço."
+      },
+      "dependencies": "Escopo: relações entre as alternativas documentadas, não necessidade em todo o espaço contínuo. blue restringe gold (trajeto após escolha de reflexão/portal, caso legacy-case-1) gold restringe pink (trajeto após escolha de reflexão/portal, caso legacy-case-2) Referência conjunta: blue: E1 → alvo; gold: E2 → E3 / portais C1 → F1 → alvo; pink: E4 / portais K1 → alvo. O contraste com legacy-case-1 demonstra a incompatibilidade que precisa ser evitada, não exclusividade desta referência.",
+      "difficultyRationale": "Intermediário: a escolha de uma chegada, saída ou região precisa ser confrontada com outra decisão relacionada; alterna encadeamentos de duas ou três relações com consolidação de uma cor. Relação central: Relacionar dois pares dourados com um desvio rosa de apenas uma reflexão.",
+      "referenceRoutes": [
+        "blue: E1 → alvo",
+        "gold: E2 → E3 / portais C1 → F1 → alvo",
+        "pink: E4 / portais K1 → alvo"
+      ],
+      "concept": 13,
+      "combinedConcepts": [
+        6,
+        7,
+        9,
+        10,
+        11
+      ],
+      "comfortSeparate": true,
+      "limits": "Testes de configurações e catálogos finitos; não provam unicidade, mínimo de recursos, necessidade universal ou dificuldade humana."
+    },
+    {
+      "number": 45,
+      "id": "light-v5-deduction-open-002",
+      "band": "Intermediário",
+      "primaryPattern": "J",
+      "combinedPatterns": [
+        "A",
+        "E"
+      ],
+      "decisionKernel": "hipotese-com-contradicao",
+      "discovery": "rosa direta → dourada pelo portal → azul direta → rosa pelo portal. A conclusão contradiz a hipótese inicial. As relações foram verificadas no catálogo finito ampliado, não impostas aos controles contínuos.",
+      "plausibleFailure": {
+        "caseId": "choices-0",
+        "angles": [
+          -43.7,
+          39.7,
+          49.9
+        ],
+        "individualRoutes": [
+          "gold: E1 → alvo",
+          "blue: E2 → alvo",
+          "pink: E3 → alvo"
+        ],
+        "jointStatus": "collision",
+        "collision": {
+          "point": {
+            "x": 233.45342369594795,
+            "y": 280.581359584118
+          },
+          "colors": [
+            "gold",
+            "pink"
+          ]
+        },
+        "explanation": "A configuração completa leva gold, blue, pink aos respectivos alvos quando cada fonte é examinada sozinha, mas os rastros conjuntos entram em conflito em (233.5, 280.6). Mudar a ordem de disparo não libera esse espaço."
+      },
+      "dependencies": "Escopo: relações entre as alternativas documentadas, não necessidade em todo o espaço contínuo. rosa direta → dourada pelo portal → azul direta → rosa pelo portal. A conclusão contradiz a hipótese inicial. Referência conjunta: gold: E1 / portais p0a → alvo; blue: E2 → alvo; pink: E3 / portais p2a → alvo. O contraste com choices-0 demonstra a incompatibilidade que precisa ser evitada, não exclusividade desta referência.",
+      "difficultyRationale": "Intermediário: a escolha de uma chegada, saída ou região precisa ser confrontada com outra decisão relacionada; alterna encadeamentos de duas ou três relações com consolidação de uma cor. Relação central: rosa direta → dourada pelo portal → azul direta → rosa pelo portal. A conclusão contradiz a hipótese inicial. As relações foram verificadas no catálogo finito ampliado, não impostas aos controles contínuos.",
+      "referenceRoutes": [
+        "gold: E1 / portais p0a → alvo",
+        "blue: E2 → alvo",
+        "pink: E3 / portais p2a → alvo"
+      ],
+      "concept": 15,
+      "combinedConcepts": [
+        7,
+        5
+      ],
+      "comfortSeparate": true,
+      "limits": "Testes de configurações e catálogos finitos; não provam unicidade, mínimo de recursos, necessidade universal ou dificuldade humana."
+    },
+    {
+      "number": 46,
+      "id": "light-v3-135",
+      "band": "Avançado",
+      "primaryPattern": "H",
+      "combinedPatterns": [
+        "A",
+        "E",
+        "J",
+        "B",
+        "C"
+      ],
+      "decisionKernel": "sequencia-de-regioes",
+      "discovery": "Combinar dois pares azuis com uma reentrada rosa curta, sem acrescentar viradas supérfluas.",
+      "plausibleFailure": {
+        "caseId": "legacy-case-1",
+        "angles": [
+          45,
+          24.3,
+          -45,
+          45
+        ],
+        "individualRoutes": [
+          "blue: E1 / portais A1 → B1 → alvo",
+          "gold: E2 → alvo",
+          "pink: E4 / portais K1 → alvo"
+        ],
+        "jointStatus": "collision",
+        "collision": {
+          "point": {
+            "x": 250.00000000000003,
+            "y": 287.9573393236431
+          },
+          "colors": [
+            "blue",
+            "gold"
+          ]
+        },
+        "explanation": "A configuração completa leva blue, gold, pink aos respectivos alvos quando cada fonte é examinada sozinha, mas os rastros conjuntos entram em conflito em (250.0, 288.0). Mudar a ordem de disparo não libera esse espaço."
+      },
+      "dependencies": "Escopo: relações entre as alternativas documentadas, não necessidade em todo o espaço contínuo. blue restringe gold (trajeto após escolha de reflexão/portal, caso legacy-case-1) gold restringe pink (trajeto após escolha de reflexão/portal, caso legacy-case-2) Referência conjunta: blue: E1 / portais A1 → B1 → alvo; gold: E2 → E3 → alvo; pink: E4 / portais K1 → alvo. O contraste com legacy-case-1 demonstra a incompatibilidade que precisa ser evitada, não exclusividade desta referência.",
+      "difficultyRationale": "Avançado: compara planos com consequência em outra chegada ou região; a justificativa é a dependência documentada, não o número de objetos. As pausas de uma cor preservam variedade e não são alegadas como problemas globais. Relação central: Combinar dois pares azuis com uma reentrada rosa curta, sem acrescentar viradas supérfluas.",
+      "referenceRoutes": [
+        "blue: E1 / portais A1 → B1 → alvo",
+        "gold: E2 → E3 → alvo",
+        "pink: E4 / portais K1 → alvo"
+      ],
+      "concept": 13,
+      "combinedConcepts": [
+        6,
+        7,
+        9,
+        10,
+        11
+      ],
+      "comfortSeparate": true,
+      "limits": "Testes de configurações e catálogos finitos; não provam unicidade, mínimo de recursos, necessidade universal ou dificuldade humana."
+    },
+    {
+      "number": 47,
+      "id": "light-v3-73",
+      "band": "Avançado",
+      "primaryPattern": "B",
+      "combinedPatterns": [
+        "A",
+        "E"
+      ],
+      "decisionKernel": "salto-sem-trecho-fisico",
+      "discovery": "O salto imaginário entre os portais não conta como segmento.",
+      "plausibleFailure": {
+        "caseId": "new-center-conflict-1",
+        "angles": [
+          17.4,
+          17.4,
+          -63.4,
+          -45
+        ],
+        "individualRoutes": [
+          "gold: E1 → E2 → alvo",
+          "blue: E3 → E4 → alvo"
+        ],
+        "jointStatus": "collision",
+        "collision": {
+          "point": {
+            "x": 400.48241314297064,
+            "y": 225.43854486298204
+          },
+          "colors": [
+            "gold",
+            "blue"
+          ]
+        },
+        "explanation": "A configuração completa leva gold, blue aos respectivos alvos quando cada fonte é examinada sozinha, mas os rastros conjuntos entram em conflito em (400.5, 225.4). Mudar a ordem de disparo não libera esse espaço."
+      },
+      "dependencies": "Escopo: relações entre as alternativas documentadas, não necessidade em todo o espaço contínuo. blue restringe gold (trajeto após escolha de reflexão/portal, caso new-center-conflict-1) Referência conjunta: gold: E1 → E2 / portais A1 → alvo; blue: E3 → E4 → alvo. O contraste com new-center-conflict-1 demonstra a incompatibilidade que precisa ser evitada, não exclusividade desta referência.",
+      "difficultyRationale": "Avançado: compara planos com consequência em outra chegada ou região; a justificativa é a dependência documentada, não o número de objetos. As pausas de uma cor preservam variedade e não são alegadas como problemas globais. Relação central: O salto imaginário entre os portais não conta como segmento.",
+      "referenceRoutes": [
+        "gold: E1 → E2 / portais A1 → alvo",
+        "blue: E3 → E4 → alvo"
+      ],
+      "concept": 9,
+      "combinedConcepts": [
+        5,
+        7,
+        8
+      ],
+      "comfortSeparate": true,
+      "limits": "Testes de configurações e catálogos finitos; não provam unicidade, mínimo de recursos, necessidade universal ou dificuldade humana."
+    },
+    {
+      "number": 48,
+      "id": "light-v5-deduction-open-031",
+      "band": "Avançado",
+      "primaryPattern": "C",
+      "combinedPatterns": [
+        "A",
+        "E"
+      ],
+      "decisionKernel": "consequencia-na-regiao-de-saida",
+      "discovery": "A rota azul da combinação 2 passa pelo portal e colide na região de saída em (470.0, 85.3), a mais de300unidades da entrada. A utilidade da decisão local depende dessa aproximação distante.",
+      "plausibleFailure": {
+        "caseId": "choices-0",
+        "angles": [
+          76.1,
+          76.6,
+          25.5
+        ],
+        "individualRoutes": [
+          "gold: E1 → alvo",
+          "blue: E2 → alvo",
+          "pink: E3 → alvo"
+        ],
+        "jointStatus": "collision",
+        "collision": {
+          "point": {
+            "x": 466.16657561726726,
+            "y": 240.22508843516002
+          },
+          "colors": [
+            "gold",
+            "pink"
+          ]
+        },
+        "explanation": "A configuração completa leva gold, blue, pink aos respectivos alvos quando cada fonte é examinada sozinha, mas os rastros conjuntos entram em conflito em (466.2, 240.2). Mudar a ordem de disparo não libera esse espaço."
+      },
+      "dependencies": "Escopo: relações entre as alternativas documentadas, não necessidade em todo o espaço contínuo. dourada direta é incompatível com rosa direta; dourada direta é incompatível com rosa portal; dourada portal é incompatível com rosa portal; azul portal é incompatível com rosa direta; azul portal é incompatível com rosa portal Referência conjunta: gold: E1 / portais p0a → alvo; blue: E2 → alvo; pink: E3 → alvo. O contraste com choices-0 demonstra a incompatibilidade que precisa ser evitada, não exclusividade desta referência.",
+      "difficultyRationale": "Avançado: compara planos com consequência em outra chegada ou região; a justificativa é a dependência documentada, não o número de objetos. As pausas de uma cor preservam variedade e não são alegadas como problemas globais. Relação central: A rota azul da combinação 2 passa pelo portal e colide na região de saída em (470.0, 85.3), a mais de300unidades da entrada. A utilidade da decisão local depende dessa aproximação distante.",
+      "referenceRoutes": [
+        "gold: E1 / portais p0a → alvo",
+        "blue: E2 → alvo",
+        "pink: E3 → alvo"
+      ],
+      "concept": 11,
+      "combinedConcepts": [
+        7,
+        5
+      ],
+      "comfortSeparate": true,
+      "limits": "Testes de configurações e catálogos finitos; não provam unicidade, mínimo de recursos, necessidade universal ou dificuldade humana."
+    },
+    {
+      "number": 49,
+      "id": "light-v4-open-chain-014",
+      "band": "Avançado",
+      "primaryPattern": "J",
+      "combinedPatterns": [
+        "A",
+        "E"
+      ],
+      "decisionKernel": "propagacao-entre-tres-cores",
+      "discovery": "A hipótese percorre três cores: [{\"from\":[0,1],\"to\":[2,0],\"forbidden\":[[0,1],[2,1]]},{\"from\":[2,0],\"to\":[1,1],\"forbidden\":[[1,0],[2,0]]}]",
+      "plausibleFailure": {
+        "caseId": "rotas-locais-em-conflito",
+        "angles": [
+          34.3,
+          -30.3,
+          -42.2,
+          0,
+          0,
+          0
+        ],
+        "individualRoutes": [
+          "gold: E1 → alvo",
+          "blue: E2 → alvo",
+          "pink: E3 → alvo"
+        ],
+        "jointStatus": "collision",
+        "collision": {
+          "point": {
+            "x": 501.1769874877841,
+            "y": 260.955693673625
+          },
+          "colors": [
+            "blue",
+            "pink"
+          ]
+        },
+        "explanation": "A configuração completa leva gold, blue, pink aos respectivos alvos quando cada fonte é examinada sozinha, mas os rastros conjuntos entram em conflito em (501.2, 261.0). Mudar a ordem de disparo não libera esse espaço."
+      },
+      "dependencies": "Escopo: relações entre as alternativas documentadas, não necessidade em todo o espaço contínuo. [{\"from\":[0,1],\"to\":[2,0],\"forbidden\":[[0,1],[2,1]]},{\"from\":[2,0],\"to\":[1,1],\"forbidden\":[[1,0],[2,0]]}] Referência conjunta: gold: E1 → alvo; blue: E2 → E5 → alvo; pink: E3 → alvo. O contraste com rotas-locais-em-conflito demonstra a incompatibilidade que precisa ser evitada, não exclusividade desta referência.",
+      "difficultyRationale": "Avançado: compara planos com consequência em outra chegada ou região; a justificativa é a dependência documentada, não o número de objetos. As pausas de uma cor preservam variedade e não são alegadas como problemas globais. Relação central: A hipótese percorre três cores: [{\"from\":[0,1],\"to\":[2,0],\"forbidden\":[[0,1],[2,1]]},{\"from\":[2,0],\"to\":[1,1],\"forbidden\":[[1,0],[2,0]]}]",
+      "referenceRoutes": [
+        "gold: E1 → alvo",
+        "blue: E2 → E5 → alvo",
+        "pink: E3 → alvo"
+      ],
+      "concept": 6,
+      "combinedConcepts": [
+        7,
+        5,
+        14
+      ],
+      "comfortSeparate": true,
+      "limits": "Testes de configurações e catálogos finitos; não provam unicidade, mínimo de recursos, necessidade universal ou dificuldade humana."
+    },
+    {
+      "number": 50,
+      "id": "light-v3-95",
+      "band": "Avançado",
+      "primaryPattern": "E",
+      "combinedPatterns": [
+        "A",
+        "C"
+      ],
+      "decisionKernel": "revisao-de-acerto-local",
+      "discovery": "O atalho azul ao receptor esquerdo cruza essa cadeia; U evita o segundo conflito.",
+      "plausibleFailure": {
+        "caseId": "legacy-case-1",
+        "angles": [
+          0,
+          45,
+          -51.3,
+          45,
+          73.8
+        ],
+        "individualRoutes": [
+          "gold: E5 / portais G1 → alvo",
+          "blue: E3 → E4 / portais U1 → alvo"
+        ],
+        "jointStatus": "collision",
+        "collision": {
+          "point": {
+            "x": 572.1307189542483,
+            "y": 104.58823529411764
+          },
+          "colors": [
+            "gold",
+            "blue"
+          ]
+        },
+        "explanation": "A configuração completa leva gold, blue aos respectivos alvos quando cada fonte é examinada sozinha, mas os rastros conjuntos entram em conflito em (572.1, 104.6). Mudar a ordem de disparo não libera esse espaço."
+      },
+      "dependencies": "Escopo: relações entre as alternativas documentadas, não necessidade em todo o espaço contínuo. blue restringe gold (trecho inicial fixo, caso legacy-case-1) Referência conjunta: gold: E1 → E2 → alvo; blue: E3 → E4 / portais U1 → alvo. O contraste com legacy-case-1 demonstra a incompatibilidade que precisa ser evitada, não exclusividade desta referência.",
+      "difficultyRationale": "Avançado: compara planos com consequência em outra chegada ou região; a justificativa é a dependência documentada, não o número de objetos. As pausas de uma cor preservam variedade e não são alegadas como problemas globais. Relação central: O atalho azul ao receptor esquerdo cruza essa cadeia; U evita o segundo conflito.",
+      "referenceRoutes": [
+        "gold: E1 → E2 → alvo",
+        "blue: E3 → E4 / portais U1 → alvo"
+      ],
+      "concept": 5,
+      "combinedConcepts": [
+        7,
+        11
+      ],
+      "comfortSeparate": true,
+      "limits": "Testes de configurações e catálogos finitos; não provam unicidade, mínimo de recursos, necessidade universal ou dificuldade humana."
+    },
+    {
+      "number": 51,
+      "id": "light-v3-84",
+      "band": "Avançado",
+      "primaryPattern": "C",
+      "combinedPatterns": [],
+      "decisionKernel": "comparacao-da-utilidade-das-saidas",
+      "discovery": "O receptor inferior prepara essa entrada.",
+      "plausibleFailure": {
+        "caseId": "legacy-case-1",
+        "angles": [
+          22.5,
+          45,
+          45
+        ],
+        "status": "miss",
+        "routes": [
+          "blue: E1 / portais C1 → wall"
+        ],
+        "explanation": "A alternativa registrada legacy-case-1 não completa a chegada: blue: E1 / portais C1 → wall. O contraste permite conferir a direção ou a conexão escolhida, sem proibir outras soluções válidas."
+      },
+      "dependencies": "Escopo: relações entre as alternativas documentadas, não necessidade em todo o espaço contínuo. Não foi demonstrada cadeia entre cores; as decisões locais ou a orientação comum são descritas na dedução, sem inventar dependência adicional.",
+      "difficultyRationale": "Avançado: compara planos com consequência em outra chegada ou região; a justificativa é a dependência documentada, não o número de objetos. As pausas de uma cor preservam variedade e não são alegadas como problemas globais. Relação central: O receptor inferior prepara essa entrada.",
+      "referenceRoutes": [
+        "blue: E1 → E2 → E3 / portais B1 → alvo"
+      ],
+      "concept": 10,
+      "combinedConcepts": [],
+      "comfortSeparate": true,
+      "limits": "Testes de configurações e catálogos finitos; não provam unicidade, mínimo de recursos, necessidade universal ou dificuldade humana."
+    },
+    {
+      "number": 52,
+      "id": "light-v4-legacy-180-labels",
+      "band": "Avançado",
+      "primaryPattern": "F",
+      "combinedPatterns": [
+        "A",
+        "E",
+        "B"
+      ],
+      "decisionKernel": "portal-antes-do-recurso-comum",
+      "discovery": "Aplicar a mesma escolha compartilhada depois de sair de um portal.",
+      "plausibleFailure": {
+        "caseId": "legacy-case-1",
+        "angles": [
+          -45,
+          -67.5
+        ],
+        "individualRoutes": [
+          "gold: E1 / portais Aa → alvo",
+          "blue: E1 / portais Da → Ba → alvo",
+          "pink: E2 / portais Ca → alvo"
+        ],
+        "jointStatus": "collision",
+        "collision": {
+          "point": {
+            "x": 300,
+            "y": 234.5
+          },
+          "colors": [
+            "gold",
+            "blue"
+          ]
+        },
+        "explanation": "A configuração completa leva gold, blue, pink aos respectivos alvos quando cada fonte é examinada sozinha, mas os rastros conjuntos entram em conflito em (300.0, 234.5). Mudar a ordem de disparo não libera esse espaço."
+      },
+      "dependencies": "Escopo: relações entre as alternativas documentadas, não necessidade em todo o espaço contínuo. Relações geométricas e casos concretos preservados abaixo; a lista não implica uma cadeia causal de três cores nem contradição por si só. blue restringe pink (trajeto após escolha de reflexão/portal, caso legacy-case-2) Referência conjunta: gold: E1 → alvo; blue: E1 / portais Da → alvo; pink: E2 / portais Ca → alvo. O contraste com legacy-case-1 demonstra a incompatibilidade que precisa ser evitada, não exclusividade desta referência.",
+      "difficultyRationale": "Avançado: compara planos com consequência em outra chegada ou região; a justificativa é a dependência documentada, não o número de objetos. As pausas de uma cor preservam variedade e não são alegadas como problemas globais. Relação central: Aplicar a mesma escolha compartilhada depois de sair de um portal.",
+      "referenceRoutes": [
+        "gold: E1 → alvo",
+        "blue: E1 / portais Da → alvo",
+        "pink: E2 / portais Ca → alvo"
+      ],
+      "concept": 14,
+      "combinedConcepts": [
+        5,
+        7,
+        9
+      ],
+      "comfortSeparate": true,
+      "limits": "Testes de configurações e catálogos finitos; não provam unicidade, mínimo de recursos, necessidade universal ou dificuldade humana."
+    },
+    {
+      "number": 53,
+      "id": "light-v5-portal-875",
+      "band": "Avançado",
+      "primaryPattern": "H",
+      "combinedPatterns": [
+        "A",
+        "E",
+        "J",
+        "B",
+        "C"
+      ],
+      "decisionKernel": "saida-e-retorno-util",
+      "discovery": "A cor dourada parte do setor direito, visita fisicamente a região à esquerda de x450 e regressa ao alvo no setor direito (x650). A volta permite uma aproximação que as alternativas diretas não compatibilizam.",
+      "plausibleFailure": {
+        "caseId": "local-routes-collide",
+        "angles": [
+          -22.6,
+          -68.2,
+          -88.1
+        ],
+        "individualRoutes": [
+          "gold: E1 → alvo",
+          "blue: E2 → alvo",
+          "pink: E3 → alvo"
+        ],
+        "jointStatus": "collision",
+        "collision": {
+          "point": {
+            "x": 452.7504721033307,
+            "y": 300.5691998023117
+          },
+          "colors": [
+            "blue",
+            "pink"
+          ]
+        },
+        "explanation": "A configuração completa leva gold, blue, pink aos respectivos alvos quando cada fonte é examinada sozinha, mas os rastros conjuntos entram em conflito em (452.8, 300.6). Mudar a ordem de disparo não libera esse espaço."
+      },
+      "dependencies": "Escopo: relações entre as alternativas documentadas, não necessidade em todo o espaço contínuo. Opções por cor: gold: 0=0 saltos/1=2 saltos; blue: 0=0 saltos/1=1 saltos/2=1 saltos; pink: 0=0 saltos/1=1 saltos. Incompatibilidades pares [cor,opção,cor,opção]: [[0,1,1,1],[0,0,2,0],[0,0,2,1],[0,1,2,0],[1,0,2,0],[1,1,2,0]]. A dedução exige escolher um conjunto sem essas arestas, não uma ordem temporal. Hipótese blue=1: blue=1 elimina gold=1; restam gold=0. blue=1 elimina pink=0; restam pink=1. gold=0 elimina pink=1; restam nenhuma opção, contradição  Referência conjunta: gold: E1 / portais g1a → g1c → alvo; blue: E2 → alvo; pink: E3 / portais p1a → alvo. O contraste com local-routes-collide demonstra a incompatibilidade que precisa ser evitada, não exclusividade desta referência.",
+      "difficultyRationale": "Avançado: compara planos com consequência em outra chegada ou região; a justificativa é a dependência documentada, não o número de objetos. As pausas de uma cor preservam variedade e não são alegadas como problemas globais. Relação central: A cor dourada parte do setor direito, visita fisicamente a região à esquerda de x450 e regressa ao alvo no setor direito (x650). A volta permite uma aproximação que as alternativas diretas não compatibilizam.",
+      "referenceRoutes": [
+        "gold: E1 / portais g1a → g1c → alvo",
+        "blue: E2 → alvo",
+        "pink: E3 / portais p1a → alvo"
+      ],
+      "concept": 12,
+      "combinedConcepts": [
+        5,
+        6,
+        7,
+        8,
+        9,
+        11,
+        14
+      ],
+      "comfortSeparate": true,
+      "limits": "Testes de configurações e catálogos finitos; não provam unicidade, mínimo de recursos, necessidade universal ou dificuldade humana."
+    },
+    {
+      "number": 54,
+      "id": "light-v5-portal-017",
+      "band": "Avançado",
+      "primaryPattern": "B",
+      "combinedPatterns": [
+        "A",
+        "E"
+      ],
+      "decisionKernel": "salto-sem-trecho-fisico",
+      "discovery": "A linha imaginária entre os portais cruza um trecho de outra cor, mas o salto não é um segmento físico.",
+      "plausibleFailure": {
+        "caseId": "local-routes-collide",
+        "angles": [
+          -67.5,
+          65.9
+        ],
+        "individualRoutes": [
+          "gold: E1 → alvo",
+          "blue: E2 → alvo"
+        ],
+        "jointStatus": "collision",
+        "collision": {
+          "point": {
+            "x": 462.0872803311936,
+            "y": 232.21330592345154
+          },
+          "colors": [
+            "gold",
+            "blue"
+          ]
+        },
+        "explanation": "A configuração completa leva gold, blue aos respectivos alvos quando cada fonte é examinada sozinha, mas os rastros conjuntos entram em conflito em (462.1, 232.2). Mudar a ordem de disparo não libera esse espaço."
+      },
+      "dependencies": "Escopo: relações entre as alternativas documentadas, não necessidade em todo o espaço contínuo. Grafo conservador entre alternativas [cor,opção,cor,opção]: [[0,0,1,0],[0,2,1,1]].   Referência conjunta: gold: E1 → alvo; blue: E2 / portais b1a → alvo. O contraste com local-routes-collide demonstra a incompatibilidade que precisa ser evitada, não exclusividade desta referência.",
+      "difficultyRationale": "Avançado: compara planos com consequência em outra chegada ou região; a justificativa é a dependência documentada, não o número de objetos. As pausas de uma cor preservam variedade e não são alegadas como problemas globais. Relação central: A linha imaginária entre os portais cruza um trecho de outra cor, mas o salto não é um segmento físico.",
+      "referenceRoutes": [
+        "gold: E1 → alvo",
+        "blue: E2 / portais b1a → alvo"
+      ],
+      "concept": 9,
+      "combinedConcepts": [
+        5,
+        7,
+        8
+      ],
+      "comfortSeparate": true,
+      "limits": "Testes de configurações e catálogos finitos; não provam unicidade, mínimo de recursos, necessidade universal ou dificuldade humana."
+    },
+    {
+      "number": 55,
+      "id": "light-v5-legacy-196",
+      "band": "Avançado",
+      "primaryPattern": "I",
+      "combinedPatterns": [
+        "A",
+        "E",
+        "B",
+        "C"
+      ],
+      "decisionKernel": "assimetria-de-compatibilidades",
+      "discovery": "Reconhecer que duas cores podem compartilhar um universal, enquanto o seletivo aparentemente natural produz um conflito distante.",
+      "plausibleFailure": {
+        "caseId": "legacy-case-4",
+        "angles": [
+          -90,
+          45,
+          -88
+        ],
+        "individualRoutes": [
+          "gold: sem reflexão / portais Sa → alvo",
+          "blue: E2 / portais Ua → alvo",
+          "pink: E3 → alvo"
+        ],
+        "jointStatus": "collision",
+        "collision": {
+          "point": {
+            "x": 720,
+            "y": 317.5877889557714
+          },
+          "colors": [
+            "gold",
+            "pink"
+          ]
+        },
+        "explanation": "A configuração completa leva gold, blue, pink aos respectivos alvos quando cada fonte é examinada sozinha, mas os rastros conjuntos entram em conflito em (720.0, 317.6). Mudar a ordem de disparo não libera esse espaço."
+      },
+      "dependencies": "Escopo: relações entre as alternativas documentadas, não necessidade em todo o espaço contínuo. pink restringe gold (trecho inicial fixo, caso legacy-case-4) Referência conjunta: gold: E1 / portais Ua → alvo; blue: E2 / portais Ua → alvo; pink: E3 → alvo. O contraste com legacy-case-4 demonstra a incompatibilidade que precisa ser evitada, não exclusividade desta referência.",
+      "difficultyRationale": "Avançado: compara planos com consequência em outra chegada ou região; a justificativa é a dependência documentada, não o número de objetos. As pausas de uma cor preservam variedade e não são alegadas como problemas globais. Relação central: Reconhecer que duas cores podem compartilhar um universal, enquanto o seletivo aparentemente natural produz um conflito distante.",
+      "referenceRoutes": [
+        "gold: E1 / portais Ua → alvo",
+        "blue: E2 / portais Ua → alvo",
+        "pink: E3 → alvo"
+      ],
+      "concept": 4,
+      "combinedConcepts": [
+        5,
+        7,
+        8,
+        9,
+        11
+      ],
+      "comfortSeparate": true,
+      "limits": "Testes de configurações e catálogos finitos; não provam unicidade, mínimo de recursos, necessidade universal ou dificuldade humana."
+    },
+    {
+      "number": 56,
+      "id": "light-v5-deduction-four-05",
+      "band": "Avançado",
+      "primaryPattern": "J",
+      "combinedPatterns": [
+        "A",
+        "E",
+        "G"
+      ],
+      "decisionKernel": "primeira-e-ultima-curvas-acopladas",
+      "discovery": "A dourada tem duas incidências diferentes no quarto espelho. Trocar a primeira orientação sem adaptar a última curva não conserva a chegada; a escolha do par precisa continuar compatível com as outras cores.",
+      "plausibleFailure": {
+        "caseId": "choices-0",
+        "angles": [
+          -26.1,
+          17.6,
+          -37.8,
+          -13.1
+        ],
+        "individualRoutes": [
+          "gold: E1 → E4 → alvo",
+          "blue: E2 → alvo",
+          "pink: E3 → alvo"
+        ],
+        "jointStatus": "collision",
+        "collision": {
+          "point": {
+            "x": 403.9587946395865,
+            "y": 185.5460213311077
+          },
+          "colors": [
+            "gold",
+            "pink"
+          ]
+        },
+        "explanation": "A configuração completa leva gold, blue, pink aos respectivos alvos quando cada fonte é examinada sozinha, mas os rastros conjuntos entram em conflito em (404.0, 185.5). Mudar a ordem de disparo não libera esse espaço."
+      },
+      "dependencies": "Escopo: relações entre as alternativas documentadas, não necessidade em todo o espaço contínuo. Última orientação da dourada condicionada à sua primeira escolha; tabela de incompatibilidades: [[null,[1,1,0,1],[1,1,0,0]],[null,null,[0,0,0,0]],[]]. Referência conjunta: gold: E1 → E4 / portais p0a → alvo; blue: E2 → alvo; pink: E3 → alvo. O contraste com choices-0 demonstra a incompatibilidade que precisa ser evitada, não exclusividade desta referência.",
+      "difficultyRationale": "Avançado: compara planos com consequência em outra chegada ou região; a justificativa é a dependência documentada, não o número de objetos. As pausas de uma cor preservam variedade e não são alegadas como problemas globais. Relação central: A dourada tem duas incidências diferentes no quarto espelho. Trocar a primeira orientação sem adaptar a última curva não conserva a chegada; a escolha do par precisa continuar compatível com as outras cores.",
+      "referenceRoutes": [
+        "gold: E1 → E4 / portais p0a → alvo",
+        "blue: E2 → alvo",
+        "pink: E3 → alvo"
+      ],
+      "concept": 14,
+      "combinedConcepts": [
+        7,
+        1,
+        5
+      ],
+      "comfortSeparate": true,
+      "limits": "Testes de configurações e catálogos finitos; não provam unicidade, mínimo de recursos, necessidade universal ou dificuldade humana."
+    },
+    {
+      "number": 57,
+      "id": "light-v5-deduction-open-003",
+      "band": "Avançado",
+      "primaryPattern": "J",
+      "combinedPatterns": [
+        "A",
+        "E"
+      ],
+      "decisionKernel": "hipotese-com-contradicao",
+      "discovery": "rosa direta → dourada pelo portal → azul direta → rosa pelo portal. A conclusão contradiz a hipótese inicial. As relações foram verificadas no catálogo finito ampliado, não impostas aos controles contínuos.",
+      "plausibleFailure": {
+        "caseId": "choices-0",
+        "angles": [
+          -88,
+          30.9,
+          -88.4
+        ],
+        "individualRoutes": [
+          "gold: E1 → alvo",
+          "blue: E2 → alvo",
+          "pink: E3 → alvo"
+        ],
+        "jointStatus": "collision",
+        "collision": {
+          "point": {
+            "x": 344.3486892169384,
+            "y": 133.49689036705846
+          },
+          "colors": [
+            "gold",
+            "pink"
+          ]
+        },
+        "explanation": "A configuração completa leva gold, blue, pink aos respectivos alvos quando cada fonte é examinada sozinha, mas os rastros conjuntos entram em conflito em (344.3, 133.5). Mudar a ordem de disparo não libera esse espaço."
+      },
+      "dependencies": "Escopo: relações entre as alternativas documentadas, não necessidade em todo o espaço contínuo. rosa direta → dourada pelo portal → azul direta → rosa pelo portal. A conclusão contradiz a hipótese inicial. Referência conjunta: gold: E1 → alvo; blue: E2 → alvo; pink: E3 / portais p2a → alvo. O contraste com choices-0 demonstra a incompatibilidade que precisa ser evitada, não exclusividade desta referência.",
+      "difficultyRationale": "Avançado: compara planos com consequência em outra chegada ou região; a justificativa é a dependência documentada, não o número de objetos. As pausas de uma cor preservam variedade e não são alegadas como problemas globais. Relação central: rosa direta → dourada pelo portal → azul direta → rosa pelo portal. A conclusão contradiz a hipótese inicial. As relações foram verificadas no catálogo finito ampliado, não impostas aos controles contínuos.",
+      "referenceRoutes": [
+        "gold: E1 → alvo",
+        "blue: E2 → alvo",
+        "pink: E3 / portais p2a → alvo"
+      ],
+      "concept": 15,
+      "combinedConcepts": [
+        7,
+        5
+      ],
+      "comfortSeparate": true,
+      "limits": "Testes de configurações e catálogos finitos; não provam unicidade, mínimo de recursos, necessidade universal ou dificuldade humana."
+    },
+    {
+      "number": 58,
+      "id": "light-v3-133",
+      "band": "Avançado",
+      "primaryPattern": "H",
+      "combinedPatterns": [
+        "A",
+        "E",
+        "C"
+      ],
+      "decisionKernel": "sequencia-de-regioes",
+      "discovery": "Ler a sequência rosa H–J e rejeitar tanto o retorno improdutivo como o salto da última região.",
+      "plausibleFailure": {
+        "caseId": "legacy-case-1",
+        "angles": [
+          45,
+          25.4,
+          -45,
+          45,
+          45,
+          -45
+        ],
+        "individualRoutes": [
+          "blue: E1 → alvo",
+          "gold: E2 → alvo",
+          "pink: E4 → E5 → E6 / portais H1 → J1 → alvo"
+        ],
+        "jointStatus": "collision",
+        "collision": {
+          "point": {
+            "x": 250.00000000000014,
+            "y": 295.4306727000851
+          },
+          "colors": [
+            "blue",
+            "gold"
+          ]
+        },
+        "explanation": "A configuração completa leva blue, gold, pink aos respectivos alvos quando cada fonte é examinada sozinha, mas os rastros conjuntos entram em conflito em (250.0, 295.4). Mudar a ordem de disparo não libera esse espaço."
+      },
+      "dependencies": "Escopo: relações entre as alternativas documentadas, não necessidade em todo o espaço contínuo. Relações geométricas e casos concretos preservados abaixo; a lista não implica uma cadeia causal de três cores nem contradição por si só. blue restringe gold (trajeto após escolha de reflexão/portal, caso legacy-case-1) gold restringe pink (trajeto após escolha de reflexão/portal, caso legacy-case-2) gold restringe pink (trajeto após escolha de reflexão/portal, caso new-center-conflict-2) Referência conjunta: blue: E1 → alvo; gold: E2 → E3 → alvo; pink: E4 → E5 → E6 / portais H1 → J1 → alvo. O contraste com legacy-case-1 demonstra a incompatibilidade que precisa ser evitada, não exclusividade desta referência.",
+      "difficultyRationale": "Avançado: compara planos com consequência em outra chegada ou região; a justificativa é a dependência documentada, não o número de objetos. As pausas de uma cor preservam variedade e não são alegadas como problemas globais. Relação central: Ler a sequência rosa H–J e rejeitar tanto o retorno improdutivo como o salto da última região.",
+      "referenceRoutes": [
+        "blue: E1 → alvo",
+        "gold: E2 → E3 → alvo",
+        "pink: E4 → E5 → E6 / portais H1 → J1 → alvo"
+      ],
+      "concept": 13,
+      "combinedConcepts": [
+        7,
+        10,
+        11
+      ],
+      "comfortSeparate": true,
+      "limits": "Testes de configurações e catálogos finitos; não provam unicidade, mínimo de recursos, necessidade universal ou dificuldade humana."
+    },
+    {
+      "number": 59,
+      "id": "light-v5-master-reserve-011",
+      "band": "Avançado",
+      "primaryPattern": "J",
+      "combinedPatterns": [
+        "A",
+        "E",
+        "B"
+      ],
+      "decisionKernel": "hipotese-com-contradicao",
+      "discovery": "Suponha rosa pela entrada C. A ausência de suporte com rosa em {rosa pela entrada C} elimina dourada direta. A ausência de suporte com rosa em {rosa pela entrada C} elimina azul direta. A ausência de suporte com rosa em {rosa pela entrada C} elimina azul pela entrada D. A ausência de suporte com azul em {azul pela entrada B} elimina dourada pela entrada A, esvaziando esse domínio.",
+      "plausibleFailure": {
+        "caseId": "rotas-000",
+        "angles": [
+          -76,
+          21.1,
+          61.5
+        ],
+        "individualRoutes": [
+          "gold: E1 → alvo",
+          "blue: E2 → alvo",
+          "pink: E3 → alvo"
+        ],
+        "jointStatus": "collision",
+        "collision": {
+          "point": {
+            "x": 392.3162245971238,
+            "y": 182.5012764408262
+          },
+          "colors": [
+            "gold",
+            "blue"
+          ]
+        },
+        "explanation": "A configuração completa leva gold, blue, pink aos respectivos alvos quando cada fonte é examinada sozinha, mas os rastros conjuntos entram em conflito em (392.3, 182.5). Mudar a ordem de disparo não libera esse espaço."
+      },
+      "dependencies": "Escopo: relações entre as alternativas documentadas, não necessidade em todo o espaço contínuo. Rede triangular de compatibilidades entre 2×3×3 alternativas. Suponha rosa pela entrada C. A ausência de suporte com rosa em {rosa pela entrada C} elimina dourada direta. A ausência de suporte com rosa em {rosa pela entrada C} elimina azul direta. A ausência de suporte com rosa em {rosa pela entrada C} elimina azul pela entrada D. A ausência de suporte com azul em {azul pela entrada B} elimina dourada pela entrada A, esvaziando esse domínio. Referência conjunta: gold: E1 / portais gold1a → alvo; blue: E2 → alvo; pink: E3 / portais pink2a → alvo. O contraste com rotas-000 demonstra a incompatibilidade que precisa ser evitada, não exclusividade desta referência.",
+      "difficultyRationale": "Avançado: compara planos com consequência em outra chegada ou região; a justificativa é a dependência documentada, não o número de objetos. As pausas de uma cor preservam variedade e não são alegadas como problemas globais. Relação central: Suponha rosa pela entrada C. A ausência de suporte com rosa em {rosa pela entrada C} elimina dourada direta. A ausência de suporte com rosa em {rosa pela entrada C} elimina azul direta. A ausência de suporte com rosa em {rosa pela entrada C} elimina azul pela entrada D. A ausência de suporte com azul em {azul pela entrada B} elimina dourada pela entrada A, esvaziando esse domínio.",
+      "referenceRoutes": [
+        "gold: E1 / portais gold1a → alvo",
+        "blue: E2 → alvo",
+        "pink: E3 / portais pink2a → alvo"
+      ],
+      "concept": 15,
+      "combinedConcepts": [
+        7,
+        5,
+        14,
+        6,
+        9
+      ],
+      "comfortSeparate": true,
+      "limits": "Testes de configurações e catálogos finitos; não provam unicidade, mínimo de recursos, necessidade universal ou dificuldade humana."
+    },
+    {
+      "number": 60,
+      "id": "light-v5-master-contrast-002",
+      "band": "Avançado",
+      "primaryPattern": "I",
+      "combinedPatterns": [
+        "A",
+        "E",
+        "J"
+      ],
+      "decisionKernel": "alteracao-causal-comparada",
+      "discovery": "O deslocamento do alvo modifica a aproximação final e cria incompatibilidades que não existiam no par anterior. As antigas estratégias [[0,1,0],[0,2,0],[1,0,2]] são reduzidas a [[1,0,2]].",
+      "plausibleFailure": {
+        "caseId": "rotas-000",
+        "angles": [
+          -76,
+          22,
+          61.5
+        ],
+        "individualRoutes": [
+          "gold: E1 → alvo",
+          "blue: E2 → alvo",
+          "pink: E3 → alvo"
+        ],
+        "jointStatus": "collision",
+        "collision": {
+          "point": {
+            "x": 383.5738177705705,
+            "y": 179.0262680410695
+          },
+          "colors": [
+            "gold",
+            "blue"
+          ]
+        },
+        "explanation": "A configuração completa leva gold, blue, pink aos respectivos alvos quando cada fonte é examinada sozinha, mas os rastros conjuntos entram em conflito em (383.6, 179.0). Mudar a ordem de disparo não libera esse espaço."
+      },
+      "dependencies": "Escopo: relações entre as alternativas documentadas, não necessidade em todo o espaço contínuo. Rede triangular de compatibilidades entre 2×3×3 alternativas. Suponha azul pela entrada B. A ausência de suporte com azul em {azul pela entrada B} elimina dourada pela entrada A. A ausência de suporte com dourada em {dourada direta} elimina rosa pela entrada C. A ausência de suporte com dourada em {dourada direta} elimina rosa pela entrada E. A ausência de suporte com rosa em {rosa direta} elimina azul pela entrada B, esvaziando esse domínio. Referência conjunta: gold: E1 / portais gold1a → alvo; blue: E2 → alvo; pink: E3 / portais pink2a → alvo. O contraste com rotas-000 demonstra a incompatibilidade que precisa ser evitada, não exclusividade desta referência.",
+      "difficultyRationale": "Avançado: compara planos com consequência em outra chegada ou região; a justificativa é a dependência documentada, não o número de objetos. As pausas de uma cor preservam variedade e não são alegadas como problemas globais. Relação central: O deslocamento do alvo modifica a aproximação final e cria incompatibilidades que não existiam no par anterior. As antigas estratégias [[0,1,0],[0,2,0],[1,0,2]] são reduzidas a [[1,0,2]].",
+      "referenceRoutes": [
+        "gold: E1 / portais gold1a → alvo",
+        "blue: E2 → alvo",
+        "pink: E3 / portais pink2a → alvo"
+      ],
+      "concept": 16,
+      "combinedConcepts": [
+        15,
+        7,
+        5,
+        14,
+        6
+      ],
+      "comfortSeparate": true,
+      "limits": "Testes de configurações e catálogos finitos; não provam unicidade, mínimo de recursos, necessidade universal ou dificuldade humana."
+    },
+    {
+      "number": 61,
+      "id": "light-v5-master-003",
+      "band": "Mestre",
+      "primaryPattern": "J",
+      "combinedPatterns": [
+        "A",
+        "E"
+      ],
+      "decisionKernel": "hipotese-com-contradicao",
+      "discovery": "Suponha rosa pela entrada C. A ausência de suporte com rosa em {rosa pela entrada C} elimina dourada direta. A ausência de suporte com rosa em {rosa pela entrada C} elimina azul direta. A ausência de suporte com azul em {azul pela entrada B} elimina dourada pela entrada A, esvaziando esse domínio.",
+      "plausibleFailure": {
+        "caseId": "rotas-000",
+        "angles": [
+          -22.1,
+          86,
+          -74.9
+        ],
+        "individualRoutes": [
+          "gold: E1 → alvo",
+          "blue: E2 → alvo",
+          "pink: E3 → alvo"
+        ],
+        "jointStatus": "collision",
+        "collision": {
+          "point": {
+            "x": 458.62978608235176,
+            "y": 186.56587990839205
+          },
+          "colors": [
+            "gold",
+            "blue"
+          ]
+        },
+        "explanation": "A configuração completa leva gold, blue, pink aos respectivos alvos quando cada fonte é examinada sozinha, mas os rastros conjuntos entram em conflito em (458.6, 186.6). Mudar a ordem de disparo não libera esse espaço."
+      },
+      "dependencies": "Escopo: relações entre as alternativas documentadas, não necessidade em todo o espaço contínuo. Rede triangular de compatibilidades entre 2×2×2 alternativas. Suponha rosa pela entrada C. A ausência de suporte com rosa em {rosa pela entrada C} elimina dourada direta. A ausência de suporte com rosa em {rosa pela entrada C} elimina azul direta. A ausência de suporte com azul em {azul pela entrada B} elimina dourada pela entrada A, esvaziando esse domínio. Referência conjunta: gold: E1 → alvo; blue: E2 / portais blue1a → alvo; pink: E3 → alvo. O contraste com rotas-000 demonstra a incompatibilidade que precisa ser evitada, não exclusividade desta referência.",
+      "difficultyRationale": "Mestre: revisita planos globais, hipóteses ou alterações que propagam pelas cores; intercala composições compactas e uma pausa de duas cores. A execução confortável é uma condição separada, nunca somada à profundidade lógica. Relação central: Suponha rosa pela entrada C. A ausência de suporte com rosa em {rosa pela entrada C} elimina dourada direta. A ausência de suporte com rosa em {rosa pela entrada C} elimina azul direta. A ausência de suporte com azul em {azul pela entrada B} elimina dourada pela entrada A, esvaziando esse domínio.",
+      "referenceRoutes": [
+        "gold: E1 → alvo",
+        "blue: E2 / portais blue1a → alvo",
+        "pink: E3 → alvo"
+      ],
+      "concept": 15,
+      "combinedConcepts": [
+        7,
+        5,
+        14,
+        6
+      ],
+      "comfortSeparate": true,
+      "limits": "Testes de configurações e catálogos finitos; não provam unicidade, mínimo de recursos, necessidade universal ou dificuldade humana."
+    },
+    {
+      "number": 62,
+      "id": "light-v5-deduction-master-window-16-1-reauthored",
+      "band": "Mestre",
+      "primaryPattern": "D",
+      "combinedPatterns": [
+        "A",
+        "E",
+        "J",
+        "G"
+      ],
+      "decisionKernel": "duas-janelas-complementares",
+      "discovery": "Duas janelas eliminam atalhos locais distintos. Entre as alternativas restantes, uma hipótese precisa percorrer o triângulo de incompatibilidades e a última curva ainda depende da chegada escolhida.",
+      "plausibleFailure": {
+        "caseId": "choices-0",
+        "angles": [
+          -1.5,
+          42,
+          -2.8,
+          54.6
+        ],
+        "individualRoutes": [
+          "gold: E1 → alvo",
+          "blue: E2 → alvo",
+          "pink: E3 → E4 → alvo"
+        ],
+        "jointStatus": "collision",
+        "collision": {
+          "point": {
+            "x": 406.6168222953858,
+            "y": 195.2612438535374
+          },
+          "colors": [
+            "gold",
+            "blue"
+          ]
+        },
+        "explanation": "A configuração completa leva gold, blue, pink aos respectivos alvos quando cada fonte é examinada sozinha, mas os rastros conjuntos entram em conflito em (406.6, 195.3). Mudar a ordem de disparo não libera esse espaço."
+      },
+      "dependencies": "Escopo: relações entre as alternativas documentadas, não necessidade em todo o espaço contínuo. A primeira divisória impede color-1-via-other-mirror-2; a segunda impede color-0-via-other-mirror-2. Os domínios vencedores e a matriz essencial do núcleo foram preservados e reexecutados; a última curva permanece condicionada à chegada. Referência conjunta: gold: E1 / portais gold1a → alvo; blue: E2 / portais blue1a → alvo; pink: E3 → E4 / portais pink1a → alvo. O contraste com choices-0 demonstra a incompatibilidade que precisa ser evitada, não exclusividade desta referência.",
+      "difficultyRationale": "Mestre: revisita planos globais, hipóteses ou alterações que propagam pelas cores; intercala composições compactas e uma pausa de duas cores. A execução confortável é uma condição separada, nunca somada à profundidade lógica. Relação central: Duas janelas eliminam atalhos locais distintos. Entre as alternativas restantes, uma hipótese precisa percorrer o triângulo de incompatibilidades e a última curva ainda depende da chegada escolhida.",
+      "referenceRoutes": [
+        "gold: E1 / portais gold1a → alvo",
+        "blue: E2 / portais blue1a → alvo",
+        "pink: E3 → E4 / portais pink1a → alvo"
+      ],
+      "concept": 3,
+      "combinedConcepts": [
+        14,
+        15,
+        1,
+        6
+      ],
+      "comfortSeparate": true,
+      "limits": "Testes de configurações e catálogos finitos; não provam unicidade, mínimo de recursos, necessidade universal ou dificuldade humana."
+    },
+    {
+      "number": 63,
+      "id": "light-v5-deduction-open-025",
+      "band": "Mestre",
+      "primaryPattern": "J",
+      "combinedPatterns": [
+        "A",
+        "E"
+      ],
+      "decisionKernel": "propagacao-entre-tres-cores",
+      "discovery": "dourada pelo portal → azul direta → rosa pelo portal. A escolha inicial condiciona as duas outras cores. As relações foram verificadas no catálogo finito ampliado, não impostas aos controles contínuos.",
+      "plausibleFailure": {
+        "caseId": "choices-0",
+        "angles": [
+          29.3,
+          34.7,
+          34.2
+        ],
+        "individualRoutes": [
+          "gold: E1 → alvo",
+          "blue: E2 → alvo",
+          "pink: E3 → alvo"
+        ],
+        "jointStatus": "collision",
+        "collision": {
+          "point": {
+            "x": 381.21319084115936,
+            "y": 188.4778022068982
+          },
+          "colors": [
+            "blue",
+            "pink"
+          ]
+        },
+        "explanation": "A configuração completa leva gold, blue, pink aos respectivos alvos quando cada fonte é examinada sozinha, mas os rastros conjuntos entram em conflito em (381.2, 188.5). Mudar a ordem de disparo não libera esse espaço."
+      },
+      "dependencies": "Escopo: relações entre as alternativas documentadas, não necessidade em todo o espaço contínuo. dourada pelo portal → azul direta → rosa pelo portal. A escolha inicial condiciona as duas outras cores. Referência conjunta: gold: E1 → alvo; blue: E2 / portais p1a → alvo; pink: E3 → alvo. O contraste com choices-0 demonstra a incompatibilidade que precisa ser evitada, não exclusividade desta referência.",
+      "difficultyRationale": "Mestre: revisita planos globais, hipóteses ou alterações que propagam pelas cores; intercala composições compactas e uma pausa de duas cores. A execução confortável é uma condição separada, nunca somada à profundidade lógica. Relação central: dourada pelo portal → azul direta → rosa pelo portal. A escolha inicial condiciona as duas outras cores. As relações foram verificadas no catálogo finito ampliado, não impostas aos controles contínuos.",
+      "referenceRoutes": [
+        "gold: E1 → alvo",
+        "blue: E2 / portais p1a → alvo",
+        "pink: E3 → alvo"
+      ],
+      "concept": 6,
+      "combinedConcepts": [
+        7,
+        5
+      ],
+      "comfortSeparate": true,
+      "limits": "Testes de configurações e catálogos finitos; não provam unicidade, mínimo de recursos, necessidade universal ou dificuldade humana."
+    },
+    {
+      "number": 64,
+      "id": "light-v6-recomposed-261",
+      "band": "Mestre",
+      "primaryPattern": "F",
+      "combinedPatterns": [
+        "A",
+        "E"
+      ],
+      "decisionKernel": "orientacao-comum-compacta-e-rosa",
+      "discovery": "Uma orientação comum reflete duas cores em pontos diferentes e muda a compatibilidade da rosa.",
+      "plausibleFailure": {
+        "caseId": "legacy-case-2",
+        "angles": [
+          0,
+          10.1
+        ],
+        "individualRoutes": [
+          "gold: sem reflexão / portais Ga → alvo",
+          "blue: sem reflexão / portais Ba → alvo",
+          "pink: E2 / portais Ka → alvo"
+        ],
+        "jointStatus": "collision",
+        "collision": {
+          "point": {
+            "x": 398.2956188099291,
+            "y": 261.20000000000005
+          },
+          "colors": [
+            "blue",
+            "pink"
+          ]
+        },
+        "explanation": "A configuração completa leva gold, blue, pink aos respectivos alvos quando cada fonte é examinada sozinha, mas os rastros conjuntos entram em conflito em (398.3, 261.2). Mudar a ordem de disparo não libera esse espaço."
+      },
+      "dependencies": "Escopo: relações entre as alternativas documentadas, não necessidade em todo o espaço contínuo. pink restringe blue (trajeto após escolha de reflexão/portal, caso legacy-case-2) Referência conjunta: gold: E1 → alvo; blue: E1 → alvo; pink: E2 / portais Ka → alvo. O contraste com legacy-case-2 demonstra a incompatibilidade que precisa ser evitada, não exclusividade desta referência.",
+      "difficultyRationale": "Mestre: revisita planos globais, hipóteses ou alterações que propagam pelas cores; intercala composições compactas e uma pausa de duas cores. A execução confortável é uma condição separada, nunca somada à profundidade lógica. Relação central: Uma orientação comum reflete duas cores em pontos diferentes e muda a compatibilidade da rosa.",
+      "referenceRoutes": [
+        "gold: E1 → alvo",
+        "blue: E1 → alvo",
+        "pink: E2 / portais Ka → alvo"
+      ],
+      "concept": 14,
+      "combinedConcepts": [
+        5,
+        7
+      ],
+      "comfortSeparate": true,
+      "limits": "Testes de configurações e catálogos finitos; não provam unicidade, mínimo de recursos, necessidade universal ou dificuldade humana."
+    },
+    {
+      "number": 65,
+      "id": "light-v5-portal-931",
+      "band": "Mestre",
+      "primaryPattern": "C",
+      "combinedPatterns": [
+        "A",
+        "E",
+        "J"
+      ],
+      "decisionKernel": "comparacao-da-utilidade-das-saidas",
+      "discovery": "gold: g2a, a 256.2px do primeiro espelho, funciona em 2/1/0; g1a, a 206.4px, entra em conflito em 1/1/0. A utilidade da saída, não a proximidade, decide.",
+      "plausibleFailure": {
+        "caseId": "local-routes-collide",
+        "angles": [
+          -55.3,
+          87.6,
+          73.1
+        ],
+        "individualRoutes": [
+          "gold: E1 → alvo",
+          "blue: E2 → alvo",
+          "pink: E3 → alvo"
+        ],
+        "jointStatus": "collision",
+        "collision": {
+          "point": {
+            "x": 447.7254591121548,
+            "y": 232.12629186334294
+          },
+          "colors": [
+            "blue",
+            "pink"
+          ]
+        },
+        "explanation": "A configuração completa leva gold, blue, pink aos respectivos alvos quando cada fonte é examinada sozinha, mas os rastros conjuntos entram em conflito em (447.7, 232.1). Mudar a ordem de disparo não libera esse espaço."
+      },
+      "dependencies": "Escopo: relações entre as alternativas documentadas, não necessidade em todo o espaço contínuo. Matriz nova de incompatibilidades entre alternativas: [[0,0,1,0],[0,0,1,1],[0,0,1,2],[0,1,1,1],[0,0,2,0],[0,0,2,1],[0,1,2,1],[0,2,2,1],[1,0,2,0],[1,0,2,1],[1,1,2,2],[1,2,2,0],[1,2,2,2]] Referência conjunta: gold: E1 / portais g1a → alvo; blue: E2 → alvo; pink: E3 / portais p2a → alvo. O contraste com local-routes-collide demonstra a incompatibilidade que precisa ser evitada, não exclusividade desta referência.",
+      "difficultyRationale": "Mestre: revisita planos globais, hipóteses ou alterações que propagam pelas cores; intercala composições compactas e uma pausa de duas cores. A execução confortável é uma condição separada, nunca somada à profundidade lógica. Relação central: gold: g2a, a 256.2px do primeiro espelho, funciona em 2/1/0; g1a, a 206.4px, entra em conflito em 1/1/0. A utilidade da saída, não a proximidade, decide.",
+      "referenceRoutes": [
+        "gold: E1 / portais g1a → alvo",
+        "blue: E2 → alvo",
+        "pink: E3 / portais p2a → alvo"
+      ],
+      "concept": 10,
+      "combinedConcepts": [
+        5,
+        6,
+        7,
+        14
+      ],
+      "comfortSeparate": true,
+      "limits": "Testes de configurações e catálogos finitos; não provam unicidade, mínimo de recursos, necessidade universal ou dificuldade humana."
+    },
+    {
+      "number": 66,
+      "id": "light-v3-76",
+      "band": "Mestre",
+      "primaryPattern": "C",
+      "combinedPatterns": [],
+      "decisionKernel": "comparacao-da-utilidade-das-saidas",
+      "discovery": "Trocar as entradas preserva diagonais que saem do tabuleiro.",
+      "plausibleFailure": {
+        "caseId": "legacy-case-1",
+        "angles": [
+          28.5,
+          45,
+          -45,
+          45
+        ],
+        "status": "miss",
+        "routes": [
+          "gold: E1 / portais B1 → wall",
+          "blue: E3 → E4 / portais B1 → alvo"
+        ],
+        "explanation": "A alternativa registrada legacy-case-1 não completa a chegada: gold: E1 / portais B1 → wall; blue: E3 → E4 / portais B1 → alvo. O contraste permite conferir a direção ou a conexão escolhida, sem proibir outras soluções válidas."
+      },
+      "dependencies": "Escopo: relações entre as alternativas documentadas, não necessidade em todo o espaço contínuo. Não foi demonstrada cadeia entre cores; as decisões locais ou a orientação comum são descritas na dedução, sem inventar dependência adicional.",
+      "difficultyRationale": "Mestre: revisita planos globais, hipóteses ou alterações que propagam pelas cores; intercala composições compactas e uma pausa de duas cores. A execução confortável é uma condição separada, nunca somada à profundidade lógica. Relação central: Trocar as entradas preserva diagonais que saem do tabuleiro.",
+      "referenceRoutes": [
+        "gold: E1 → E2 / portais A1 → alvo",
+        "blue: E3 → E4 / portais B1 → alvo"
+      ],
+      "concept": 10,
+      "combinedConcepts": [],
+      "comfortSeparate": true,
+      "limits": "Testes de configurações e catálogos finitos; não provam unicidade, mínimo de recursos, necessidade universal ou dificuldade humana."
+    },
+    {
+      "number": 67,
+      "id": "light-v3-199",
+      "band": "Mestre",
+      "primaryPattern": "G",
+      "combinedPatterns": [
+        "A",
+        "E",
+        "B",
+        "C",
+        "H",
+        "J"
+      ],
+      "decisionKernel": "aproximacao-final-reservada",
+      "discovery": "Propagar dedução reversa por uma chegada final, duas outras cores e duas conexões em série.",
+      "plausibleFailure": {
+        "caseId": "legacy-case-1",
+        "angles": [
+          21.2,
+          45,
+          -40,
+          -24
+        ],
+        "individualRoutes": [
+          "gold: E1 → alvo",
+          "blue: E2 / portais Ba → Da → alvo",
+          "pink: E3 → E4 / portais Pa → alvo"
+        ],
+        "jointStatus": "collision",
+        "collision": {
+          "point": {
+            "x": 399.98660189838745,
+            "y": 233.8002791711948
+          },
+          "colors": [
+            "gold",
+            "pink"
+          ]
+        },
+        "explanation": "A configuração completa leva gold, blue, pink aos respectivos alvos quando cada fonte é examinada sozinha, mas os rastros conjuntos entram em conflito em (400.0, 233.8). Mudar a ordem de disparo não libera esse espaço."
+      },
+      "dependencies": "Escopo: relações entre as alternativas documentadas, não necessidade em todo o espaço contínuo. Relações geométricas e casos concretos preservados abaixo; a lista não implica uma cadeia causal de três cores nem contradição por si só. pink restringe gold (trajeto após escolha de reflexão/portal, caso legacy-case-1) gold restringe blue (trajeto após escolha de reflexão/portal, caso legacy-case-2) pink restringe gold (trajeto após escolha de reflexão/portal, caso legacy-case-5) Referência conjunta: gold: E1 / portais Ga → alvo; blue: E2 / portais Ba → Da → alvo; pink: E3 → E4 / portais Pa → alvo. O contraste com legacy-case-1 demonstra a incompatibilidade que precisa ser evitada, não exclusividade desta referência.",
+      "difficultyRationale": "Mestre: revisita planos globais, hipóteses ou alterações que propagam pelas cores; intercala composições compactas e uma pausa de duas cores. A execução confortável é uma condição separada, nunca somada à profundidade lógica. Relação central: Propagar dedução reversa por uma chegada final, duas outras cores e duas conexões em série.",
+      "referenceRoutes": [
+        "gold: E1 / portais Ga → alvo",
+        "blue: E2 / portais Ba → Da → alvo",
+        "pink: E3 → E4 / portais Pa → alvo"
+      ],
+      "concept": 1,
+      "combinedConcepts": [
+        5,
+        7,
+        9,
+        11,
+        13,
+        14
+      ],
+      "comfortSeparate": true,
+      "limits": "Testes de configurações e catálogos finitos; não provam unicidade, mínimo de recursos, necessidade universal ou dificuldade humana."
+    },
+    {
+      "number": 68,
+      "id": "light-v5-deduction-symmetry-11-filter",
+      "band": "Mestre",
+      "primaryPattern": "I",
+      "combinedPatterns": [
+        "A",
+        "E"
+      ],
+      "decisionKernel": "assimetria-de-compatibilidades",
+      "discovery": "As duas metades principais mantêm geometria espelhada, mas a entrada superior passa a aceitar azul, não dourado. No domínio examinado a rota dourada por esse portal desaparece, obrigando reavaliar a rota azul e a aproximação rosa.",
+      "plausibleFailure": {
+        "caseId": "choices-0",
+        "angles": [
+          -71.4,
+          49.4,
+          -30.3,
+          30.3,
+          47.8
+        ],
+        "individualRoutes": [
+          "gold: E1 → E3 → alvo",
+          "blue: E2 → E4 → alvo",
+          "pink: E5 → alvo"
+        ],
+        "jointStatus": "collision",
+        "collision": {
+          "point": {
+            "x": 315.1363640809684,
+            "y": 285.6524610871393
+          },
+          "colors": [
+            "blue",
+            "pink"
+          ]
+        },
+        "explanation": "A configuração completa leva gold, blue, pink aos respectivos alvos quando cada fonte é examinada sozinha, mas os rastros conjuntos entram em conflito em (315.1, 285.7). Mudar a ordem de disparo não libera esse espaço."
+      },
+      "dependencies": "Escopo: relações entre as alternativas documentadas, não necessidade em todo o espaço contínuo. Rede de incompatibilidades por pares: [[null,[1,0,0,0],[0,1,0,0]],[null,null,[1,0,0,1]],[]]. Configurações antes: 2, 3, 5; depois da alteração: 2. Referência conjunta: gold: E1 → E3 → alvo; blue: E2 → E4 / portais s1a → alvo; pink: E5 → alvo. O contraste com choices-0 demonstra a incompatibilidade que precisa ser evitada, não exclusividade desta referência.",
+      "difficultyRationale": "Mestre: revisita planos globais, hipóteses ou alterações que propagam pelas cores; intercala composições compactas e uma pausa de duas cores. A execução confortável é uma condição separada, nunca somada à profundidade lógica. Relação central: As duas metades principais mantêm geometria espelhada, mas a entrada superior passa a aceitar azul, não dourado. No domínio examinado a rota dourada por esse portal desaparece, obrigando reavaliar a rota azul e a aproximação rosa.",
+      "referenceRoutes": [
+        "gold: E1 → E3 → alvo",
+        "blue: E2 → E4 / portais s1a → alvo",
+        "pink: E5 → alvo"
+      ],
+      "concept": 4,
+      "combinedConcepts": [
+        7,
+        16
+      ],
+      "comfortSeparate": true,
+      "limits": "Testes de configurações e catálogos finitos; não provam unicidade, mínimo de recursos, necessidade universal ou dificuldade humana."
+    },
+    {
+      "number": 69,
+      "id": "light-v5-open-hard-chain-2",
+      "band": "Mestre",
+      "primaryPattern": "J",
+      "combinedPatterns": [
+        "A",
+        "E"
+      ],
+      "decisionKernel": "propagacao-entre-tres-cores",
+      "discovery": "As eliminações propagam entre as três cores nas ondas e hipóteses recalculadas, registradas no certificado de reautoria.",
+      "plausibleFailure": {
+        "caseId": "local-routes-collide",
+        "angles": [
+          -59.3,
+          89.6,
+          75.1
+        ],
+        "individualRoutes": [
+          "gold: E1 → alvo",
+          "blue: E2 → alvo",
+          "pink: E3 → alvo"
+        ],
+        "jointStatus": "collision",
+        "collision": {
+          "point": {
+            "x": 455.5588297653585,
+            "y": 230
+          },
+          "colors": [
+            "gold",
+            "blue"
+          ]
+        },
+        "explanation": "A configuração completa leva gold, blue, pink aos respectivos alvos quando cada fonte é examinada sozinha, mas os rastros conjuntos entram em conflito em (455.6, 230.0). Mudar a ordem de disparo não libera esse espaço."
+      },
+      "dependencies": "Escopo: relações entre as alternativas documentadas, não necessidade em todo o espaço contínuo. Matriz nova de incompatibilidades entre alternativas: [[0,0,1,0],[0,0,1,1],[0,0,2,0],[0,0,2,1],[1,0,2,0],[1,0,2,1],[1,1,2,0],[1,1,2,1],[1,1,2,2],[1,2,2,0],[1,2,2,2]] Referência conjunta: gold: E1 / portais g1a → alvo; blue: E2 → alvo; pink: E3 / portais p2a → alvo. O contraste com local-routes-collide demonstra a incompatibilidade que precisa ser evitada, não exclusividade desta referência.",
+      "difficultyRationale": "Mestre: revisita planos globais, hipóteses ou alterações que propagam pelas cores; intercala composições compactas e uma pausa de duas cores. A execução confortável é uma condição separada, nunca somada à profundidade lógica. Relação central: As eliminações propagam entre as três cores nas ondas e hipóteses recalculadas, registradas no certificado de reautoria.",
+      "referenceRoutes": [
+        "gold: E1 / portais g1a → alvo",
+        "blue: E2 → alvo",
+        "pink: E3 / portais p2a → alvo"
+      ],
+      "concept": 6,
+      "combinedConcepts": [
+        5,
+        7,
+        14
+      ],
+      "comfortSeparate": true,
+      "limits": "Testes de configurações e catálogos finitos; não provam unicidade, mínimo de recursos, necessidade universal ou dificuldade humana."
+    },
+    {
+      "number": 70,
+      "id": "light-v5-deduction-four-11",
+      "band": "Mestre",
+      "primaryPattern": "J",
+      "combinedPatterns": [
+        "A",
+        "E",
+        "G"
+      ],
+      "decisionKernel": "primeira-e-ultima-curvas-acopladas",
+      "discovery": "A azul tem duas incidências diferentes no quarto espelho. Trocar a primeira orientação sem adaptar a última curva não conserva a chegada; a escolha do par precisa continuar compatível com as outras cores.",
+      "plausibleFailure": {
+        "caseId": "choices-0",
+        "angles": [
+          -75.8,
+          31.1,
+          54.5,
+          -59.9
+        ],
+        "individualRoutes": [
+          "gold: E1 → alvo",
+          "blue: E2 → E4 → alvo",
+          "pink: E3 → alvo"
+        ],
+        "jointStatus": "collision",
+        "collision": {
+          "point": {
+            "x": 432.89612307781954,
+            "y": 157.229997301538
+          },
+          "colors": [
+            "gold",
+            "pink"
+          ]
+        },
+        "explanation": "A configuração completa leva gold, blue, pink aos respectivos alvos quando cada fonte é examinada sozinha, mas os rastros conjuntos entram em conflito em (432.9, 157.2). Mudar a ordem de disparo não libera esse espaço."
+      },
+      "dependencies": "Escopo: relações entre as alternativas documentadas, não necessidade em todo o espaço contínuo. Última orientação da azul condicionada à sua primeira escolha; tabela de incompatibilidades: [[null,[1,1,0,0],[1,0,0,0]],[null,null,[1,0,0,0]],[]]. Referência conjunta: gold: E1 / portais p0a → alvo; blue: E2 → E4 / portais p1a → alvo; pink: E3 → alvo. O contraste com choices-0 demonstra a incompatibilidade que precisa ser evitada, não exclusividade desta referência.",
+      "difficultyRationale": "Mestre: revisita planos globais, hipóteses ou alterações que propagam pelas cores; intercala composições compactas e uma pausa de duas cores. A execução confortável é uma condição separada, nunca somada à profundidade lógica. Relação central: A azul tem duas incidências diferentes no quarto espelho. Trocar a primeira orientação sem adaptar a última curva não conserva a chegada; a escolha do par precisa continuar compatível com as outras cores.",
+      "referenceRoutes": [
+        "gold: E1 / portais p0a → alvo",
+        "blue: E2 → E4 / portais p1a → alvo",
+        "pink: E3 → alvo"
+      ],
+      "concept": 14,
+      "combinedConcepts": [
+        7,
+        1,
+        5
+      ],
+      "comfortSeparate": true,
+      "limits": "Testes de configurações e catálogos finitos; não provam unicidade, mínimo de recursos, necessidade universal ou dificuldade humana."
+    },
+    {
+      "number": 71,
+      "id": "light-v5-master-filter-001",
+      "band": "Mestre",
+      "primaryPattern": "I",
+      "combinedPatterns": [
+        "A",
+        "E",
+        "J"
+      ],
+      "decisionKernel": "alteracao-causal-comparada",
+      "discovery": "Somente a seletividade da entrada gold1a muda. A alternativa dourada por essa entrada deixa de chegar isoladamente; as rotas remanescentes propagam a restrição pelas outras cores.",
+      "plausibleFailure": {
+        "caseId": "rotas-000",
+        "angles": [
+          -22.1,
+          86,
+          -74.9
+        ],
+        "individualRoutes": [
+          "gold: E1 → alvo",
+          "blue: E2 → alvo",
+          "pink: E3 → alvo"
+        ],
+        "jointStatus": "collision",
+        "collision": {
+          "point": {
+            "x": 458.62978608235176,
+            "y": 186.56587990839205
+          },
+          "colors": [
+            "gold",
+            "blue"
+          ]
+        },
+        "explanation": "A configuração completa leva gold, blue, pink aos respectivos alvos quando cada fonte é examinada sozinha, mas os rastros conjuntos entram em conflito em (458.6, 186.6). Mudar a ordem de disparo não libera esse espaço."
+      },
+      "dependencies": "Escopo: relações entre as alternativas documentadas, não necessidade em todo o espaço contínuo. Reautoria do par controlado: [{\"i\":0,\"j\":1,\"ok\":[[0,1],[0,0]]},{\"i\":0,\"j\":2,\"ok\":[[1,0,1],[0,0,0]]},{\"i\":1,\"j\":2,\"ok\":[[1,0,1],[1,1,0]]}]. Propagação: {\"sets\":[[0],[1],[0]],\"steps\":[{\"removed\":[0,1],\"becauseNoSupportIn\":1,\"remainingSupportingDomain\":[0,1],\"before\":[[0,1],[0,1],[0,1,2]],\"after\":[[0],[0,1],[0,1,2]]},{\"removed\":[1,0],\"becauseNoSupportIn\":0,\"remainingSupportingDomain\":[0],\"before\":[[0],[0,1],[0,1,2]],\"after\":[[0],[1],[0,1,2]]},{\"removed\":[2,1],\"becauseNoSupportIn\":0,\"remainingSupportingDomain\":[0],\"before\":[[0],[1],[0,1,2]],\"after\":[[0],[1],[0,2]]},{\"removed\":[2,2],\"becauseNoSupportIn\":1,\"remainingSupportingDomain\":[1],\"before\":[[0],[1],[0,2]],\"after\":[[0],[1],[0]]}],\"contradiction\":false} Referência conjunta: gold: E1 → alvo; blue: E2 / portais blue1a → alvo; pink: E3 → alvo. O contraste com rotas-000 demonstra a incompatibilidade que precisa ser evitada, não exclusividade desta referência.",
+      "difficultyRationale": "Mestre: revisita planos globais, hipóteses ou alterações que propagam pelas cores; intercala composições compactas e uma pausa de duas cores. A execução confortável é uma condição separada, nunca somada à profundidade lógica. Relação central: Somente a seletividade da entrada gold1a muda. A alternativa dourada por essa entrada deixa de chegar isoladamente; as rotas remanescentes propagam a restrição pelas outras cores.",
+      "referenceRoutes": [
+        "gold: E1 → alvo",
+        "blue: E2 / portais blue1a → alvo",
+        "pink: E3 → alvo"
+      ],
+      "concept": 16,
+      "combinedConcepts": [
+        6,
+        7,
+        5,
+        14
+      ],
+      "comfortSeparate": true,
+      "limits": "Testes de configurações e catálogos finitos; não provam unicidade, mínimo de recursos, necessidade universal ou dificuldade humana."
+    },
+    {
+      "number": 72,
+      "id": "light-v5-deduction-master-window-1-1-reauthored",
+      "band": "Mestre",
+      "primaryPattern": "D",
+      "combinedPatterns": [
+        "A",
+        "E",
+        "J",
+        "G"
+      ],
+      "decisionKernel": "duas-janelas-complementares",
+      "discovery": "Duas janelas eliminam atalhos locais distintos. Entre as alternativas restantes, uma hipótese precisa percorrer o triângulo de incompatibilidades e a última curva ainda depende da chegada escolhida.",
+      "plausibleFailure": {
+        "caseId": "choices-0",
+        "angles": [
+          -76,
+          21.1,
+          61.5,
+          -47.4
+        ],
+        "individualRoutes": [
+          "gold: E1 → alvo",
+          "blue: E2 → alvo",
+          "pink: E3 → E4 → alvo"
+        ],
+        "jointStatus": "collision",
+        "collision": {
+          "point": {
+            "x": 392.3162245971238,
+            "y": 182.5012764408262
+          },
+          "colors": [
+            "gold",
+            "blue"
+          ]
+        },
+        "explanation": "A configuração completa leva gold, blue, pink aos respectivos alvos quando cada fonte é examinada sozinha, mas os rastros conjuntos entram em conflito em (392.3, 182.5). Mudar a ordem de disparo não libera esse espaço."
+      },
+      "dependencies": "Escopo: relações entre as alternativas documentadas, não necessidade em todo o espaço contínuo. A primeira divisória impede color-0-via-other-mirror-1; a segunda impede color-0-via-other-mirror-3. Os domínios vencedores e a matriz essencial do núcleo foram preservados e reexecutados; a última curva permanece condicionada à chegada. Referência conjunta: gold: E1 / portais gold1a → alvo; blue: E2 → alvo; pink: E3 → E4 / portais pink2a → alvo. O contraste com choices-0 demonstra a incompatibilidade que precisa ser evitada, não exclusividade desta referência.",
+      "difficultyRationale": "Mestre: revisita planos globais, hipóteses ou alterações que propagam pelas cores; intercala composições compactas e uma pausa de duas cores. A execução confortável é uma condição separada, nunca somada à profundidade lógica. Relação central: Duas janelas eliminam atalhos locais distintos. Entre as alternativas restantes, uma hipótese precisa percorrer o triângulo de incompatibilidades e a última curva ainda depende da chegada escolhida.",
+      "referenceRoutes": [
+        "gold: E1 / portais gold1a → alvo",
+        "blue: E2 → alvo",
+        "pink: E3 → E4 / portais pink2a → alvo"
+      ],
+      "concept": 3,
+      "combinedConcepts": [
+        14,
+        15,
+        1,
+        6
+      ],
+      "comfortSeparate": true,
+      "limits": "Testes de configurações e catálogos finitos; não provam unicidade, mínimo de recursos, necessidade universal ou dificuldade humana."
+    },
+    {
+      "number": 73,
+      "id": "light-v5-portal-034",
+      "band": "Mestre",
+      "primaryPattern": "J",
+      "combinedPatterns": [
+        "A",
+        "E",
+        "B"
+      ],
+      "decisionKernel": "hipotese-com-contradicao",
+      "discovery": "Hipótese pink=0: pink=0 elimina gold=0; restam gold=1; pink=0 elimina blue=0; restam blue=1; gold=1 elimina blue=1; nenhuma opção resta",
+      "plausibleFailure": {
+        "caseId": "local-routes-collide",
+        "angles": [
+          -82.4,
+          -82.3,
+          75.9
+        ],
+        "individualRoutes": [
+          "gold: E1 → alvo",
+          "blue: E2 → alvo",
+          "pink: E3 → alvo"
+        ],
+        "jointStatus": "collision",
+        "collision": {
+          "point": {
+            "x": 377.41830063388585,
+            "y": 278.8691418717742
+          },
+          "colors": [
+            "blue",
+            "pink"
+          ]
+        },
+        "explanation": "A configuração completa leva gold, blue, pink aos respectivos alvos quando cada fonte é examinada sozinha, mas os rastros conjuntos entram em conflito em (377.4, 278.9). Mudar a ordem de disparo não libera esse espaço."
+      },
+      "dependencies": "Escopo: relações entre as alternativas documentadas, não necessidade em todo o espaço contínuo. Grafo conservador entre alternativas [cor,opção,cor,opção]: [[0,1,1,1],[0,0,2,0],[1,0,2,0]].  Hipótese pink=0: pink=0 elimina gold=0; restam gold=1; pink=0 elimina blue=0; restam blue=1; gold=1 elimina blue=1; nenhuma opção resta Referência conjunta: gold: E1 → alvo; blue: E2 → alvo; pink: E3 / portais p1a → alvo. O contraste com local-routes-collide demonstra a incompatibilidade que precisa ser evitada, não exclusividade desta referência.",
+      "difficultyRationale": "Mestre: revisita planos globais, hipóteses ou alterações que propagam pelas cores; intercala composições compactas e uma pausa de duas cores. A execução confortável é uma condição separada, nunca somada à profundidade lógica. Relação central: Hipótese pink=0: pink=0 elimina gold=0; restam gold=1; pink=0 elimina blue=0; restam blue=1; gold=1 elimina blue=1; nenhuma opção resta",
+      "referenceRoutes": [
+        "gold: E1 → alvo",
+        "blue: E2 → alvo",
+        "pink: E3 / portais p1a → alvo"
+      ],
+      "concept": 15,
+      "combinedConcepts": [
+        5,
+        6,
+        7,
+        8,
+        9,
+        14
+      ],
+      "comfortSeparate": true,
+      "limits": "Testes de configurações e catálogos finitos; não provam unicidade, mínimo de recursos, necessidade universal ou dificuldade humana."
+    },
+    {
+      "number": 74,
+      "id": "light-v5-master-contrast-001",
+      "band": "Mestre",
+      "primaryPattern": "I",
+      "combinedPatterns": [
+        "A",
+        "E",
+        "J"
+      ],
+      "decisionKernel": "alteracao-causal-comparada",
+      "discovery": "Somente o alvo rosa muda de posição. Na geometria comum reautorada, a estratégia da base deixa de resolver o conjunto e as compatibilidades recalculadas exigem outra composição de rotas.",
+      "plausibleFailure": {
+        "caseId": "local-routes-collide",
+        "angles": [
+          -12,
+          -2.3,
+          54.8
+        ],
+        "individualRoutes": [
+          "gold: E1 / portais angle-access-0a → alvo",
+          "blue: E2 / portais angle-access-1a → alvo",
+          "pink: E3 / portais angle-access-2a → alvo"
+        ],
+        "jointStatus": "collision",
+        "collision": {
+          "point": {
+            "x": 435.69804654696077,
+            "y": 180.209868185247
+          },
+          "colors": [
+            "gold",
+            "blue"
+          ]
+        },
+        "explanation": "A configuração completa leva gold, blue, pink aos respectivos alvos quando cada fonte é examinada sozinha, mas os rastros conjuntos entram em conflito em (435.7, 180.2). Mudar a ordem de disparo não libera esse espaço."
+      },
+      "dependencies": "Escopo: relações entre as alternativas documentadas, não necessidade em todo o espaço contínuo. Matriz nova de incompatibilidades entre alternativas: [[0,0,1,0],[0,1,1,1],[0,2,1,0],[0,0,2,1],[0,1,2,0],[0,3,2,0],[1,0,2,1],[1,1,2,0]] Referência conjunta: gold: E1 / portais angle-access-0a → gold2a → alvo; blue: E2 / portais angle-access-1a → blue1a → alvo; pink: E3 / portais angle-access-2a → pink1a → alvo. O contraste com local-routes-collide demonstra a incompatibilidade que precisa ser evitada, não exclusividade desta referência.",
+      "difficultyRationale": "Mestre: revisita planos globais, hipóteses ou alterações que propagam pelas cores; intercala composições compactas e uma pausa de duas cores. A execução confortável é uma condição separada, nunca somada à profundidade lógica. Relação central: Somente o alvo rosa muda de posição. Na geometria comum reautorada, a estratégia da base deixa de resolver o conjunto e as compatibilidades recalculadas exigem outra composição de rotas.",
+      "referenceRoutes": [
+        "gold: E1 / portais angle-access-0a → gold2a → alvo",
+        "blue: E2 / portais angle-access-1a → blue1a → alvo",
+        "pink: E3 / portais angle-access-2a → pink1a → alvo"
+      ],
+      "concept": 16,
+      "combinedConcepts": [
+        6,
+        5,
+        7,
+        14,
+        15
+      ],
+      "comfortSeparate": true,
+      "limits": "Testes de configurações e catálogos finitos; não provam unicidade, mínimo de recursos, necessidade universal ou dificuldade humana."
+    },
+    {
+      "number": 75,
+      "id": "light-v3-194",
+      "band": "Mestre",
+      "primaryPattern": "H",
+      "combinedPatterns": [
+        "A",
+        "E",
+        "G",
+        "B",
+        "C"
+      ],
+      "decisionKernel": "sequencia-de-regioes",
+      "discovery": "Escolher conexões pela continuidade após a saída e descartar um retorno improdutivo.",
+      "plausibleFailure": {
+        "caseId": "legacy-case-1",
+        "angles": [
+          5.9,
+          11.8,
+          45,
+          45
+        ],
+        "individualRoutes": [
+          "blue: E1 → alvo",
+          "gold: E3 → E4 / portais Ga → alvo"
+        ],
+        "jointStatus": "collision",
+        "collision": {
+          "point": {
+            "x": 430,
+            "y": 123.42574149505387
+          },
+          "colors": [
+            "blue",
+            "gold"
+          ]
+        },
+        "explanation": "A configuração completa leva blue, gold aos respectivos alvos quando cada fonte é examinada sozinha, mas os rastros conjuntos entram em conflito em (430.0, 123.4). Mudar a ordem de disparo não libera esse espaço."
+      },
+      "dependencies": "Escopo: relações entre as alternativas documentadas, não necessidade em todo o espaço contínuo. gold restringe blue (trajeto após escolha de reflexão/portal, caso legacy-case-1) gold restringe blue (trajeto após escolha de reflexão/portal, caso new-center-conflict-1) Referência conjunta: blue: E1 → E2 / portais U1a → U2a → alvo; gold: E3 → E4 / portais Ga → alvo. O contraste com legacy-case-1 demonstra a incompatibilidade que precisa ser evitada, não exclusividade desta referência.",
+      "difficultyRationale": "Mestre: revisita planos globais, hipóteses ou alterações que propagam pelas cores; intercala composições compactas e uma pausa de duas cores. A execução confortável é uma condição separada, nunca somada à profundidade lógica. Relação central: Escolher conexões pela continuidade após a saída e descartar um retorno improdutivo.",
+      "referenceRoutes": [
+        "blue: E1 → E2 / portais U1a → U2a → alvo",
+        "gold: E3 → E4 / portais Ga → alvo"
+      ],
+      "concept": 13,
+      "combinedConcepts": [
+        1,
+        7,
+        9,
+        10
+      ],
+      "comfortSeparate": true,
+      "limits": "Testes de configurações e catálogos finitos; não provam unicidade, mínimo de recursos, necessidade universal ou dificuldade humana."
+    },
+    {
+      "number": 76,
+      "id": "light-v5-open-chain-019",
+      "band": "Modo Sábio",
+      "primaryPattern": "J",
+      "combinedPatterns": [
+        "A",
+        "E"
+      ],
+      "decisionKernel": "hipotese-com-contradicao",
+      "discovery": "A hipótese percorre três cores: [{\"from\":[2,1],\"to\":[0,0],\"forbidden\":[[0,1],[2,1]]},{\"from\":[0,0],\"to\":[1,1],\"forbidden\":[[0,0],[1,0]]},{\"from\":[1,1],\"to\":[2,0],\"forbidden\":[[1,1],[2,1]]}]",
+      "plausibleFailure": {
+        "caseId": "rotas-locais-em-conflito",
+        "angles": [
+          84,
+          4.8,
+          15.8,
+          -22.4,
+          0,
+          0
+        ],
+        "individualRoutes": [
+          "gold: E1 → alvo",
+          "blue: E2 → alvo",
+          "pink: E3 → alvo"
+        ],
+        "jointStatus": "collision",
+        "collision": {
+          "point": {
+            "x": 576.4300884149424,
+            "y": 307.44534392305553
+          },
+          "colors": [
+            "gold",
+            "blue"
+          ]
+        },
+        "explanation": "A configuração completa leva gold, blue, pink aos respectivos alvos quando cada fonte é examinada sozinha, mas os rastros conjuntos entram em conflito em (576.4, 307.4). Mudar a ordem de disparo não libera esse espaço."
+      },
+      "dependencies": "Escopo: relações entre as alternativas documentadas, não necessidade em todo o espaço contínuo. [{\"from\":[2,1],\"to\":[0,0],\"forbidden\":[[0,1],[2,1]]},{\"from\":[0,0],\"to\":[1,1],\"forbidden\":[[0,0],[1,0]]},{\"from\":[1,1],\"to\":[2,0],\"forbidden\":[[1,1],[2,1]]}] Referência conjunta: gold: E1 → E5 → alvo; blue: E2 → alvo; pink: E3 → alvo. O contraste com rotas-locais-em-conflito demonstra a incompatibilidade que precisa ser evitada, não exclusividade desta referência.",
+      "difficultyRationale": "Modo Sábio: síntese do repertório anterior com descoberta própria, sustentada pelos trajetos e contraprovas abaixo; não se afirma calibração com jogadores nem que cada fase seja universalmente mais difícil que a anterior. Relação central: A hipótese percorre três cores: [{\"from\":[2,1],\"to\":[0,0],\"forbidden\":[[0,1],[2,1]]},{\"from\":[0,0],\"to\":[1,1],\"forbidden\":[[0,0],[1,0]]},{\"from\":[1,1],\"to\":[2,0],\"forbidden\":[[1,1],[2,1]]}]",
+      "referenceRoutes": [
+        "gold: E1 → E5 → alvo",
+        "blue: E2 → alvo",
+        "pink: E3 → alvo"
+      ],
+      "concept": 15,
+      "combinedConcepts": [
+        7,
+        5,
+        14,
+        6
+      ],
+      "comfortSeparate": true,
+      "limits": "Testes de configurações e catálogos finitos; não provam unicidade, mínimo de recursos, necessidade universal ou dificuldade humana."
+    },
+    {
+      "number": 77,
+      "id": "light-v5-deduction-master-detail-2",
+      "band": "Modo Sábio",
+      "primaryPattern": "I",
+      "combinedPatterns": [
+        "A",
+        "E",
+        "J"
+      ],
+      "decisionKernel": "alteracao-causal-comparada",
+      "discovery": "O filtro da entrada gold1a muda de dourado para azul. A antiga chegada por essa entrada deixa de funcionar; mesmo depois dessa perda, as três cores conservam alternativas locais e exigem a hipótese triangular restante.",
+      "plausibleFailure": {
+        "caseId": "rotas-000",
+        "angles": [
+          -1.5,
+          42,
+          -2.8
+        ],
+        "individualRoutes": [
+          "gold: E1 → alvo",
+          "blue: E2 → alvo",
+          "pink: E3 → alvo"
+        ],
+        "jointStatus": "collision",
+        "collision": {
+          "point": {
+            "x": 406.6168222953858,
+            "y": 195.2612438535374
+          },
+          "colors": [
+            "gold",
+            "blue"
+          ]
+        },
+        "explanation": "A configuração completa leva gold, blue, pink aos respectivos alvos quando cada fonte é examinada sozinha, mas os rastros conjuntos entram em conflito em (406.6, 195.3). Mudar a ordem de disparo não libera esse espaço."
+      },
+      "dependencies": "Escopo: relações entre as alternativas documentadas, não necessidade em todo o espaço contínuo. Domínios restantes: [[0,2],[0,1],[0,1]]. Hipótese [2,0]; eliminações [{\"removed\":[0,2],\"because\":2},{\"removed\":[1,1],\"because\":2},{\"removed\":[0,0],\"because\":1}] Referência conjunta: gold: E1 / portais gold2a → alvo; blue: E2 / portais blue1a → alvo; pink: E3 / portais pink1a → alvo. O contraste com rotas-000 demonstra a incompatibilidade que precisa ser evitada, não exclusividade desta referência.",
+      "difficultyRationale": "Modo Sábio: síntese do repertório anterior com descoberta própria, sustentada pelos trajetos e contraprovas abaixo; não se afirma calibração com jogadores nem que cada fase seja universalmente mais difícil que a anterior. Relação central: O filtro da entrada gold1a muda de dourado para azul. A antiga chegada por essa entrada deixa de funcionar; mesmo depois dessa perda, as três cores conservam alternativas locais e exigem a hipótese triangular restante.",
+      "referenceRoutes": [
+        "gold: E1 / portais gold2a → alvo",
+        "blue: E2 / portais blue1a → alvo",
+        "pink: E3 / portais pink1a → alvo"
+      ],
+      "concept": 16,
+      "combinedConcepts": [
+        15,
+        7,
+        6,
+        14,
+        5
+      ],
+      "comfortSeparate": true,
+      "limits": "Testes de configurações e catálogos finitos; não provam unicidade, mínimo de recursos, necessidade universal ou dificuldade humana."
+    },
+    {
+      "number": 78,
+      "id": "light-v6-recomposed-398",
+      "band": "Modo Sábio",
+      "primaryPattern": "F",
+      "combinedPatterns": [
+        "A",
+        "E",
+        "J"
+      ],
+      "decisionKernel": "orientacao-comum-inverte-continuacao-rosa",
+      "discovery": "O mesmo controle reorganiza duas cores e inverte qual continuação rosa é compatível.",
+      "plausibleFailure": {
+        "caseId": "legacy-case-2",
+        "angles": [
+          0,
+          10.1
+        ],
+        "individualRoutes": [
+          "gold: sem reflexão / portais Ga → alvo",
+          "blue: sem reflexão / portais Ba → alvo",
+          "pink: E2 / portais Ka → alvo"
+        ],
+        "jointStatus": "collision",
+        "collision": {
+          "point": {
+            "x": 398.2956188099291,
+            "y": 261.20000000000005
+          },
+          "colors": [
+            "blue",
+            "pink"
+          ]
+        },
+        "explanation": "A configuração completa leva gold, blue, pink aos respectivos alvos quando cada fonte é examinada sozinha, mas os rastros conjuntos entram em conflito em (398.3, 261.2). Mudar a ordem de disparo não libera esse espaço."
+      },
+      "dependencies": "Escopo: relações entre as alternativas documentadas, não necessidade em todo o espaço contínuo. pink restringe blue (trajeto após escolha de reflexão/portal, caso legacy-case-2) blue restringe pink (trajeto após escolha de reflexão/portal, caso legacy-case-3) Referência conjunta: gold: E1 → alvo; blue: E1 → alvo; pink: E2 / portais Ka → alvo. O contraste com legacy-case-2 demonstra a incompatibilidade que precisa ser evitada, não exclusividade desta referência.",
+      "difficultyRationale": "Modo Sábio: síntese do repertório anterior com descoberta própria, sustentada pelos trajetos e contraprovas abaixo; não se afirma calibração com jogadores nem que cada fase seja universalmente mais difícil que a anterior. Relação central: O mesmo controle reorganiza duas cores e inverte qual continuação rosa é compatível.",
+      "referenceRoutes": [
+        "gold: E1 → alvo",
+        "blue: E1 → alvo",
+        "pink: E2 / portais Ka → alvo"
+      ],
+      "concept": 16,
+      "combinedConcepts": [
+        5,
+        7,
+        14
+      ],
+      "comfortSeparate": true,
+      "limits": "Testes de configurações e catálogos finitos; não provam unicidade, mínimo de recursos, necessidade universal ou dificuldade humana."
+    },
+    {
+      "number": 79,
+      "id": "light-v6-recomposed-380",
+      "band": "Modo Sábio",
+      "primaryPattern": "H",
+      "combinedPatterns": [
+        "A",
+        "E",
+        "C"
+      ],
+      "decisionKernel": "sequencia-de-regioes",
+      "discovery": "Diferenciar o retorno dourado útil, por dois pares, do retorno que encontra a parede inicial.",
+      "plausibleFailure": {
+        "caseId": "legacy-case-1",
+        "angles": [
+          45,
+          24.3,
+          -45,
+          45,
+          45,
+          -45
+        ],
+        "individualRoutes": [
+          "blue: E1 → alvo",
+          "gold: E2 → alvo",
+          "pink: E4 → E5 → E6 → alvo"
+        ],
+        "jointStatus": "collision",
+        "collision": {
+          "point": {
+            "x": 250.00000000000014,
+            "y": 287.957339323643
+          },
+          "colors": [
+            "blue",
+            "gold"
+          ]
+        },
+        "explanation": "A configuração completa leva blue, gold, pink aos respectivos alvos quando cada fonte é examinada sozinha, mas os rastros conjuntos entram em conflito em (250.0, 288.0). Mudar a ordem de disparo não libera esse espaço."
+      },
+      "dependencies": "Escopo: relações entre as alternativas documentadas, não necessidade em todo o espaço contínuo. Relações geométricas e casos concretos preservados abaixo; a lista não implica uma cadeia causal de três cores nem contradição por si só. blue restringe gold (trajeto após escolha de reflexão/portal, caso legacy-case-1) gold restringe pink (trajeto após escolha de reflexão/portal, caso legacy-case-2) pink restringe gold (trajeto após escolha de reflexão/portal, caso new-center-conflict-1) gold restringe pink (trajeto após escolha de reflexão/portal, caso new-center-conflict-2) Referência conjunta: blue: E1 → alvo; gold: E2 → E3 / portais C1 → F1 → alvo; pink: E4 → E5 → E6 → alvo. O contraste com legacy-case-1 demonstra a incompatibilidade que precisa ser evitada, não exclusividade desta referência.",
+      "difficultyRationale": "Modo Sábio: síntese do repertório anterior com descoberta própria, sustentada pelos trajetos e contraprovas abaixo; não se afirma calibração com jogadores nem que cada fase seja universalmente mais difícil que a anterior. Relação central: Diferenciar o retorno dourado útil, por dois pares, do retorno que encontra a parede inicial.",
+      "referenceRoutes": [
+        "blue: E1 → alvo",
+        "gold: E2 → E3 / portais C1 → F1 → alvo",
+        "pink: E4 → E5 → E6 → alvo"
+      ],
+      "concept": 13,
+      "combinedConcepts": [
+        7,
+        10,
+        11
+      ],
+      "comfortSeparate": true,
+      "limits": "Testes de configurações e catálogos finitos; não provam unicidade, mínimo de recursos, necessidade universal ou dificuldade humana."
+    },
+    {
+      "number": 80,
+      "id": "light-v5-master-005",
+      "band": "Modo Sábio",
+      "primaryPattern": "J",
+      "combinedPatterns": [
+        "A",
+        "E",
+        "B"
+      ],
+      "decisionKernel": "hipotese-com-contradicao",
+      "discovery": "Suponha dourada pela entrada A. A ausência de suporte com dourada em {dourada pela entrada A} elimina azul pela entrada B. A ausência de suporte com dourada em {dourada pela entrada A} elimina rosa direta. A ausência de suporte com rosa em {rosa pela entrada C} elimina azul direta, esvaziando esse domínio.",
+      "plausibleFailure": {
+        "caseId": "rotas-000",
+        "angles": [
+          -76,
+          21.1,
+          89.5
+        ],
+        "individualRoutes": [
+          "gold: E1 → alvo",
+          "blue: E2 → alvo",
+          "pink: E3 → alvo"
+        ],
+        "jointStatus": "collision",
+        "collision": {
+          "point": {
+            "x": 392.3162245971238,
+            "y": 182.5012764408262
+          },
+          "colors": [
+            "gold",
+            "blue"
+          ]
+        },
+        "explanation": "A configuração completa leva gold, blue, pink aos respectivos alvos quando cada fonte é examinada sozinha, mas os rastros conjuntos entram em conflito em (392.3, 182.5). Mudar a ordem de disparo não libera esse espaço."
+      },
+      "dependencies": "Escopo: relações entre as alternativas documentadas, não necessidade em todo o espaço contínuo. Rede triangular de compatibilidades entre 2×2×2 alternativas. Suponha dourada pela entrada A. A ausência de suporte com dourada em {dourada pela entrada A} elimina azul pela entrada B. A ausência de suporte com dourada em {dourada pela entrada A} elimina rosa direta. A ausência de suporte com rosa em {rosa pela entrada C} elimina azul direta, esvaziando esse domínio. Referência conjunta: gold: E1 → alvo; blue: E2 / portais blue1a → alvo; pink: E3 → alvo. O contraste com rotas-000 demonstra a incompatibilidade que precisa ser evitada, não exclusividade desta referência.",
+      "difficultyRationale": "Modo Sábio: síntese do repertório anterior com descoberta própria, sustentada pelos trajetos e contraprovas abaixo; não se afirma calibração com jogadores nem que cada fase seja universalmente mais difícil que a anterior. Relação central: Suponha dourada pela entrada A. A ausência de suporte com dourada em {dourada pela entrada A} elimina azul pela entrada B. A ausência de suporte com dourada em {dourada pela entrada A} elimina rosa direta. A ausência de suporte com rosa em {rosa pela entrada C} elimina azul direta, esvaziando esse domínio.",
+      "referenceRoutes": [
+        "gold: E1 → alvo",
+        "blue: E2 / portais blue1a → alvo",
+        "pink: E3 → alvo"
+      ],
+      "concept": 15,
+      "combinedConcepts": [
+        7,
+        5,
+        14,
+        6,
+        9
+      ],
+      "comfortSeparate": true,
+      "limits": "Testes de configurações e catálogos finitos; não provam unicidade, mínimo de recursos, necessidade universal ou dificuldade humana."
+    }
+  ]
+}

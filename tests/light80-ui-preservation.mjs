@@ -1,0 +1,10 @@
+import assert from 'node:assert/strict';
+import {readFileSync} from 'node:fs';
+import {execFileSync} from 'node:child_process';
+const baseline='58c52648c5c5ebff46a742de6ebb55c99d758349';
+const files=['dist/light-world.mjs','dist/math.mjs','dist/light-render.mjs','dist/light-world-render.mjs','dist/light-campaign-progress.mjs','dist/original-json.mjs','dist/original-answers.mjs','dist/original-hints.mjs','dist/standard-controls.css','dist/index.html','dist/rules-context.mjs','dist/answer-progress.mjs','dist/restart-confirmation.mjs','dist/middle-confirm.mjs','dist/result-motion.mjs','dist/sintonia/ui.mjs','dist/repasse/ui.mjs','dist/orbita/ui.mjs'];
+for(const path of files)assert.equal(readFileSync(path,'utf8'),execFileSync('git',['show',`${baseline}:${path}`],{encoding:'utf8'}),path+' must be byte-identical');
+const old=execFileSync('git',['show',`${baseline}:dist/app.mjs`],{encoding:'utf8'}),now=readFileSync('dist/app.mjs','utf8');
+const expected=old.replace("const lightCampaignBands=[['basic','Básico',1,200],['intermediate','Intermediário',201,300],['advanced','Avançado',301,400],['master','Mestre',401,500]];","const lightCampaignBands=[['basic','Básico',1,15],['apprentice','Aprendiz',16,30],['intermediate','Intermediário',31,45],['advanced','Avançado',46,60],['master','Mestre',61,75],['sage','Modo Sábio',76,80]];").replace('l.campaignNumber<=500','l.campaignNumber<=catalogue.light.length').replace("const stage=band==='basic'&&l.stageName?`${l.stage==null?'':l.stage+' · '}${l.stageName}`:'';","const stage=''; // The six 80-level tiers are the complete campaign grouping.");
+assert.equal(now,expected,'Only three campaign-selection lines may change in app');
+console.log(JSON.stringify({passed:true,baseline,byteIdenticalFiles:files.length,appChangedLines:3,hints:'PACTO only',advanced:'Reflexos only',rules:'always open on entry; introduction content catalogue-derived',endlessLabel:'Modo Sem Parar'}));

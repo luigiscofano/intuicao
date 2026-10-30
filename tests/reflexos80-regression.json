@@ -1,0 +1,89 @@
+{
+  "passed": true,
+  "results": [
+    {
+      "test": "prumo80-progress-tests.mjs",
+      "passed": true,
+      "status": 0,
+      "output": "PASS PRUMO80 identity-safe archival, unchanged IDs, no ordinal mapping, custom/endless/other-game isolation, idempotence and unavailable storage.\nPASS answer-only retired PRUMO records archived with exact IDs; other games and custom answers excluded.\n"
+    },
+    {
+      "test": "prumo80-solver-tests.mjs",
+      "passed": true,
+      "status": 0,
+      "output": "{\"pass\":true,\"dimensions\":\"10x10\",\"validationMs\":0.040332436,\"completedIterations\":1000,\"inconclusiveBudget\":true,\"exactSingletonPartition\":1}\n"
+    },
+    {
+      "test": "elo80-progress-tests.mjs",
+      "passed": true,
+      "status": 0,
+      "output": "PASS ELO80 identity-safe archival, unchanged IDs, no ordinal mapping, custom/endless/other-game isolation, idempotence and unavailable storage.\n"
+    },
+    {
+      "test": "pacto80-progress-tests.mjs",
+      "passed": true,
+      "status": 0,
+      "output": "PASS PACTO80 identity-safe archival, unchanged IDs, no ordinal mapping, custom/endless/other-game isolation, idempotence and unavailable storage.\nPASS answer-only retired PACTO records archived with exact IDs; other games and custom answers excluded.\n"
+    },
+    {
+      "test": "pacto80-budget-and-identities.mjs",
+      "passed": true,
+      "status": 0,
+      "output": "{\"passed\":true,\"kept\":56,\"changed\":24,\"explicitlyInconclusiveBudgetChecks\":80}\n"
+    },
+    {
+      "test": "sintonia80-migration.mjs",
+      "passed": true,
+      "status": 0,
+      "output": "PASS SINTONIA80: 1000 v1/v2 archived histories, reused-ID map identity, learning recovery, archived active attempt UI undo/redo/restart/reload, separate fallback learning gates. No replay onto another map.\nPASS legacy completion identity: original achievements archived and never credited to a different map, including a later win on the retained old attempt.\nPASS unproven completion identity is conservatively archived; known current definitions retain progress.\n"
+    },
+    {
+      "test": "repasse80-progress.test.mjs",
+      "passed": true,
+      "status": 0,
+      "output": "✔ curation retains exact stable identities and archives omitted records without positional remapping (3.986686ms)\n✔ Sem Parar configurations remain gradual and independent of displayed campaign positions (0.282728ms)\n✔ legacy configuration milestone discoveries survive absent learned field and archived sessions (0.228736ms)\nℹ tests 3\nℹ suites 0\nℹ pass 3\nℹ fail 0\nℹ cancelled 0\nℹ skipped 0\nℹ todo 0\nℹ duration_ms 11.235539\n"
+    },
+    {
+      "test": "orbita80-contract.test.mjs",
+      "passed": true,
+      "status": 0,
+      "output": "✔ 80-level quota, progression, discoveries and all structural families (5.579707ms)\n✔ every inverse shuffle replays from its solved arrangement; special introductions have causal witnesses (29.725492ms)\n✔ full source reservoir retained rather than truncating first80 (0.17858ms)\nℹ tests 3\nℹ suites 0\nℹ pass 3\nℹ fail 0\nℹ cancelled 0\nℹ skipped 0\nℹ todo 0\nℹ duration_ms 41.44201\n"
+    },
+    {
+      "test": "orbita80-ui-migration.test.mjs",
+      "passed": true,
+      "status": 0,
+      "output": "✔ six editorial ranges explicitly map to the five internal generator strengths (6.300268ms)\n✔ old campaign records without geometry evidence are archived, never assigned to new boards by ID (3.087003ms)\n✔ exact definition and geometry evidence preserves unchanged history and completion across editorial revision (1.057621ms)\n✔ current completion, undo, redo, reset and session replay remain motor based (107.580067ms)\n✔ current global control overrides and UI numbering stay intact (0.805529ms)\nℹ tests 5\nℹ suites 0\nℹ pass 5\nℹ fail 0\nℹ cancelled 0\nℹ skipped 0\nℹ todo 0\nℹ duration_ms 127.070445\n"
+    },
+    {
+      "test": "light-v4-integration-progress.mjs",
+      "passed": true,
+      "status": 0,
+      "output": "PASS stable-ID completion/current level survive reload without inventing old completions or touching existing stores\nPASS sequential cross-tab updates merge completions and retain absent IDs and unknown record fields\nPASS malformed/future records stay untouched; unavailable/denied/quota storage retains session progress and recovers when possible\n"
+    },
+    {
+      "test": "light80-integration-ui.mjs",
+      "passed": true,
+      "status": 0,
+      "output": "PASS 80 selectable tiles; six 15/15/15/15/15/5 bands; no subdivisions; retained ID keeps completion, current status, draft and assistance after reordering\nPASS newly earned completion persists by ID; undo/redo and existing stores remain isolated\nPASS all five tier boundaries, first/last, back/next, stale restart, cut switching, custom and Endless stay independent\nPASS denied storage methods do not interrupt campaign play or session completion\nPASS display number, navigation index and stable identity are independent\n"
+    },
+    {
+      "test": "light80-ui-preservation.mjs",
+      "passed": true,
+      "status": 0,
+      "output": "{\"passed\":true,\"baseline\":\"58c52648c5c5ebff46a742de6ebb55c99d758349\",\"byteIdenticalFiles\":18,\"appChangedLines\":3,\"hints\":\"PACTO only\",\"advanced\":\"Reflexos only\",\"rules\":\"always open on entry; introduction content catalogue-derived\",\"endlessLabel\":\"Modo Sem Parar\"}\n"
+    },
+    {
+      "test": "light80-campaign-ui.mjs",
+      "passed": true,
+      "status": 0,
+      "output": "{\"passed\":true,\"levels\":80,\"completeFailures\":240,\"referenceWins\":80,\"debuts\":{\"base\":1,\"walls\":5,\"multipleSources\":9,\"portals\":12,\"selectivePortals\":16,\"threeSources\":21}}\n"
+    },
+    {
+      "test": "reflexos80-contract.mjs",
+      "passed": true,
+      "status": 0,
+      "output": "{\"passed\":true,\"levels\":80,\"cases\":1678,\"quotas\":[5,13,13,14,14,5],\"wallFree\":51,\"shared\":6,\"retainedIdentities\":76,\"newIdentities\":4,\"unchangedDistFiles\":236}\n"
+    }
+  ]
+}

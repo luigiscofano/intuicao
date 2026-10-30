@@ -1,0 +1,60 @@
+{
+  "count": 80,
+  "exceptions20to30": [],
+  "conflictCount": 64,
+  "wallFreeConflictCount": 51,
+  "sharedMirrorCount": 6,
+  "perturbationTests": 1938,
+  "perturbationFailures": 0,
+  "passed": true,
+  "sourceSha256": "a970153c785ab79b013b071425fb69b8a5f0c0e092eefeeefe52c089e5561310",
+  "quotas": [
+    5,
+    13,
+    13,
+    14,
+    14,
+    5
+  ],
+  "requiredQuotas": [
+    4,
+    10,
+    12,
+    12,
+    12,
+    5
+  ],
+  "sharedLevels": [
+    18,
+    29,
+    40,
+    52,
+    64,
+    78
+  ],
+  "referenceMinimumIncidence": 29.999999999999993,
+  "minima": {
+    "minIncidence": 29.5,
+    "minMirrorEndpointMargin": 12.464863196005808,
+    "minWallClearance": 6.396028130506646,
+    "minTargetTransverseMargin": 5.484452493486433,
+    "minPortalTransverseMargin": 6.327359024884469,
+    "minDifferentColorPathDistance": 6.335012502007877
+  },
+  "topologyChanges": 0,
+  "knownAlternatives": {
+    "tested": 1078,
+    "fullWorldWinners": 414,
+    "equalOrFewerOperationWinners": 299,
+    "staleExpectedWinners": 0
+  },
+  "below20Equivalent": [],
+  "catalogueEnumerationErrors": [],
+  "issues": [],
+  "limitations": [
+    "Finite ±0.5° individual and simultaneous-corner samples do not prove the whole continuous angular box.",
+    "Target and portal margins measure transverse clearance to the incoming line, not distance to the boundary point where a successful ray necessarily terminates.",
+    "Reference shared use is certified, not universal necessity, uniqueness, minimum resources, or human difficulty.",
+    "No browser/mobile ergonomics or human playtesting is claimed."
+  ]
+}
