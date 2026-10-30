@@ -91,7 +91,7 @@ export const GAME_INFO = {
       'Se não houver receptor, o valor chega à caixa correspondente na borda. Todas as caixas mostram acumulado / meta, inclusive as de meta zero.',
       'Você vence quando a grade estiver vazia e todas as metas forem exatas. Um excesso pode ser revisto com Desfazer; experimentar outra ordem faz parte do jogo.',
       'As setas e posições são fixas. Ao longo da campanha aparecem peças de uma seta, duas setas perpendiculares e quatro setas, sempre com a mesma regra de repasse.',
-      'Use o mouse, toque ou navegue pelas peças com as setas do teclado e retire com Enter ou espaço. A prévia mostra os destinatários atuais. Explore 500 fases ou continue com desafios novos no Modo Sem Parar, sem cronômetro.'
+      'Use o mouse, toque ou navegue pelas peças com as setas do teclado e retire com Enter ou espaço. A prévia mostra os destinatários atuais. Explore 80 fases ou continue com desafios novos no Modo Sem Parar, sem cronômetro.'
     ],
     purpose: 'Praticar planejamento de ordem, antecipação de consequências e leitura de relações entre valores, receptores e metas.',
     why: 'Uma peça pode precisar receber primeiro e desaparecer depois para liberar um caminho. Comparar as metas com essas funções convida a formular, testar e revisar hipóteses.'

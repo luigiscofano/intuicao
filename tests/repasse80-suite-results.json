@@ -1,0 +1,119 @@
+{
+  "passed": true,
+  "results": [
+    {
+      "command": [
+        "node",
+        "tests/repasse80-build.mjs"
+      ],
+      "passed": true,
+      "exitCode": 0,
+      "durationMs": 218,
+      "output": "{\n  \"levels\": 80,\n  \"tiers\": [\n    {\n      \"name\": \"Básico\",\n      \"count\": 15,\n      \"hv\": 15\n    },\n    {\n      \"name\": \"Aprendiz\",\n      \"count\": 15,\n      \"hv\": 15\n    },\n    {\n      \"name\": \"Intermediário\",\n      \"count\": 15,\n      \"hv\": 5\n    },\n    {\n      \"name\": \"Avançado\",\n      \"count\": 15,\n      \"hv\": 5\n    },\n    {\n      \"name\": \"Mestre\",\n      \"count\": 15,\n      \"hv\": 5\n    },\n    {\n      \"name\": \"Modo Sábio\",\n      \"count\": 5,\n      \"hv\": 3\n    }\n  ],\n  \"hv\": 48,\n  \"families\": [\n    \"endgame\",\n    \"receive\",\n    \"destinations\",\n    \"asymmetry\",\n    \"accumulate\",\n    \"protect\",\n    \"timing\",\n    \"passage\",\n    \"handoff\",\n    \"shared\",\n    \"reunite\",\n    \"unequal\",\n    \"linked\",\n    \"roles\"\n  ],\n  \"configurations\": 11,\n  \"allReplayed\": true,\n  \"allAlternativesComplete\": true,\n  \"allDefinitionsIdentical\": true,\n  \"maxRows\": 4,\n  \"maxCols\": 4,\n  \"maxPieces\": 10,\n  \"maxTarget\": 20,\n  \"ids\": [\n    1,\n    2,\n    3,\n    11,\n    4,\n    14,\n    5,\n    52,\n    57,\n    45,\n    6,\n    62,\n    12,\n    27,\n    13,\n    7,\n    8,\n    9,\n    39,\n    95,\n    134,\n    107,\n    82,\n    53,\n    64,\n    114,\n    127,\n    90,\n    119,\n    115,\n    201,\n    207,\n    190,\n    232,\n    226,\n    106,\n    240,\n    251,\n    166,\n    242,\n    257,\n    147,\n    269,\n    267,\n    160,\n    276,\n    280,\n    178,\n    284,\n    290,\n    159,\n    340,\n    348,\n    110,\n    344,\n    342,\n    188,\n    319,\n    346,\n    200,\n    351,\n    367,\n    362,\n    398,\n    384,\n    424,\n    403,\n    307,\n    354,\n    415,\n    378,\n    416,\n    421,\n    423,\n    350,\n    410,\n    288,\n    337,\n    392,\n    500\n  ]\n}\n"
+    },
+    {
+      "command": [
+        "node",
+        "tests/repasse80-independent.mjs"
+      ],
+      "passed": true,
+      "exitCode": 0,
+      "durationMs": 467,
+      "output": "{\n  \"passed\": true,\n  \"summary\": {\n    \"count\": 80,\n    \"originalOnly\": 48,\n    \"families\": [\n      \"endgame\",\n      \"receive\",\n      \"destinations\",\n      \"asymmetry\",\n      \"accumulate\",\n      \"protect\",\n      \"timing\",\n      \"passage\",\n      \"handoff\",\n      \"shared\",\n      \"reunite\",\n      \"unequal\",\n      \"linked\",\n      \"roles\"\n    ],\n    \"totalWinningOrders\": 6757,\n    \"allReverseAudits\": 597\n  },\n  \"errors\": []\n}\n"
+    },
+    {
+      "command": [
+        "node",
+        "tests/repasse80-ui.mjs"
+      ],
+      "passed": true,
+      "exitCode": 0,
+      "durationMs": 2064,
+      "output": "PASS REPASSE80: 80 selections and actual-handler automatic wins, exact preview values, complete-state undo/redo, confirmed reset/cancel, stable identities, limits, six tiers/milestones, partial resume, invalid/valid custom import, and daily flow. Deterministic DOM, not native browser/mobile layout.\n"
+    },
+    {
+      "command": [
+        "node",
+        "--test",
+        "tests/repasse80-progress.test.mjs"
+      ],
+      "passed": true,
+      "exitCode": 0,
+      "durationMs": 209,
+      "output": "✔ curation retains exact stable identities and archives omitted records without positional remapping (12.482727ms)\n✔ Sem Parar configurations remain gradual and independent of displayed campaign positions (0.507608ms)\n✔ legacy configuration milestone discoveries survive absent learned field and archived sessions (0.271191ms)\nℹ tests 3\nℹ suites 0\nℹ pass 3\nℹ fail 0\nℹ cancelled 0\nℹ skipped 0\nℹ todo 0\nℹ duration_ms 132.072954\n"
+    },
+    {
+      "command": [
+        "node",
+        "--test",
+        "tests/repasse-engine.test.mjs",
+        "tests/repasse-service.test.mjs",
+        "tests/repasse-ui-state.test.mjs"
+      ],
+      "passed": true,
+      "exitCode": 0,
+      "durationMs": 360,
+      "output": "✔ referência A: valores, metas e 1 ordens vencedoras por oráculo independente (12.022742ms)\n✔ referência B juntar: valores, metas e 2 ordens vencedoras por oráculo independente (1.192786ms)\n✔ referência B hora: valores, metas e 1 ordens vencedoras por oráculo independente (1.020715ms)\n✔ referência B passagem: valores, metas e 1 ordens vencedoras por oráculo independente (1.100877ms)\n✔ referência C: valores, metas e 6 ordens vencedoras por oráculo independente (67.683067ms)\n✔ as seis soluções de reencontro respeitam todas as dependências, permitindo permutações independentes (16.937342ms)\n✔ onze configurações permitidas enviam valor integral, sem retirada automática do receptor (1.95504ms)\n✔ primeiro receptor interrompe a emissão, espaços vazios são atravessados e setas só definem a saída (1.090731ms)\n✔ cantos nunca fundem as quatro caixas de uma grade 1×1 (0.359274ms)\n✔ prévia é pura e coincide com todos os repasses atômicos da retirada (1.070971ms)\n✔ um desfazer por snapshot restaura juntos valor emissor, todos os receptores e caixas (0.458014ms)\n✔ retirada repetida ou ID vazio não muda estado, caixas ou contador implícito (0.615752ms)\n✔ vitória exige tabuleiro vazio e todas as metas exatas; metas zero são objetivos reais (0.401297ms)\n✔ excesso não impede novas hipóteses nem reiniciar a mesma definição (0.427217ms)\n✔ chave de busca distingue valores e acumulados, mesmo com a mesma ocupação (0.424342ms)\n✔ validação rejeita posições, direções, formatos e números inválidos (1.519731ms)\n✔ aritmética mantém o inteiro seguro completo e rejeita definições que podem transbordar (0.477763ms)\n✔ um estado sem excesso ainda pode estar comprovadamente sem solução (0.927124ms)\n✔ limites de estados/tempo são inconclusivos, nunca impossibilidade inventada (0.493988ms)\n✔ dicas partem de ordens alternativas e certificam a continuação desde o estado atual (1.509385ms)\n✔ sufixo certificado exige estado completo e testemunha final vencedora (0.808324ms)\n✔ simulador preparado usa a mesma regra e mantém um snapshot da definição (0.420497ms)\n✔ 200 tabuleiros e ordens independentes conferem conservação e aritmética de todas as configurações (41.841415ms)\n✔ solver e podas concordam com enumeração independente em posições parciais de 60 fases pequenas (11.388792ms)\n✔ a resposta antiga nunca substitui o novo desafio e seu worker é encerrado (3.815567ms)\n✔ dica e geração usam canais independentes (1.35391ms)\n✔ a seed numérica chega ao gerador sem virar uma string diferente (0.392094ms)\n✔ trocar de modo cancela análise e prefetch, inclusive callbacks tardios (0.370982ms)\n✔ resposta de geração sem prova válida é substituída por reserva certificada (22.157204ms)\n✔ sem Worker há reserva válida e a introdução continua curta e conhecida (9.53807ms)\n✔ tempo esgotado encerra o worker e usa reserva sem aceitar resposta posterior (54.341589ms)\n✔ dica recebida é reproduzida no estado presente antes de ser aceita (2.177957ms)\n✔ análise sem worker e sem certificado não inventa impossibilidade (0.372103ms)\n✔ serviço destruído recusa novos trabalhos (0.357351ms)\n✔ uma retirada é uma transação única; eventos repetidos e vazio não criam histórico (4.516748ms)\n✔ retomada reproduz os valores e mantém o futuro de refazer após desfazer (1.744591ms)\n✔ desfazer restaura a peça e todos os repasses juntos; nova hipótese descarta só o futuro (2.668651ms)\n✔ ordem alternativa é retomada pela mesma regra, sem forçar a solução armazenada (0.787752ms)\n✔ snapshot adulterado, IDs repetidos, versão ou definição incompatível resetam só a tentativa (1.514913ms)\n✔ campanha e infinito ficam separados, e um registro ruim não apaga conclusões válidas (1.726053ms)\n✔ conclusão da campanha é idempotente e mantém a primeira data sem inventar recorde de movimentos (1.936762ms)\n✔ vitória do Endless não é contada de novo ao refazer, recarregar ou recuperar uma tentativa inválida (1.11637ms)\n✔ uma nova resolução sem assistência pode atualizar o marcador sem duplicar a conclusão (0.842585ms)\n✔ Endless progride com retomadas e apresenta uma configuração nova por vez (0.697706ms)\nℹ tests 44\nℹ suites 0\nℹ pass 44\nℹ fail 0\nℹ cancelled 0\nℹ skipped 0\nℹ todo 0\nℹ duration_ms 283.67597\n"
+    },
+    {
+      "command": [
+        "node",
+        "tests/repasse80-preservation.mjs"
+      ],
+      "passed": true,
+      "exitCode": 0,
+      "durationMs": 1303,
+      "output": "{\"passed\":true,\"baseline\":\"bad9ec679bbbd0b4939cc329b4d476ea5d1eb1bd\",\"byteIdenticalFiles\":234,\"engineHash\":\"82dbdc0a09649c2dfe663942864b9e7ee372c0fdbf1adb493538024c2bc7984c\",\"scope\":\"All other campaigns, shared controls, CSS, assets, REPASSE engine, generator, fallback, advisor and service unchanged\"}\n"
+    },
+    {
+      "command": [
+        "node",
+        "tests/elo80-progress-tests.mjs"
+      ],
+      "passed": true,
+      "exitCode": 0,
+      "durationMs": 71,
+      "output": "PASS ELO80 identity-safe archival, unchanged IDs, no ordinal mapping, custom/endless/other-game isolation, idempotence and unavailable storage.\n"
+    },
+    {
+      "command": [
+        "node",
+        "tests/prumo80-progress-tests.mjs"
+      ],
+      "passed": true,
+      "exitCode": 0,
+      "durationMs": 70,
+      "output": "PASS PRUMO80 identity-safe archival, unchanged IDs, no ordinal mapping, custom/endless/other-game isolation, idempotence and unavailable storage.\nPASS answer-only retired PRUMO records archived with exact IDs; other games and custom answers excluded.\n"
+    },
+    {
+      "command": [
+        "node",
+        "tests/pacto80-progress-tests.mjs"
+      ],
+      "passed": true,
+      "exitCode": 0,
+      "durationMs": 83,
+      "output": "PASS PACTO80 identity-safe archival, unchanged IDs, no ordinal mapping, custom/endless/other-game isolation, idempotence and unavailable storage.\nPASS answer-only retired PACTO records archived with exact IDs; other games and custom answers excluded.\n"
+    },
+    {
+      "command": [
+        "node",
+        "tests/sintonia80-migration.mjs"
+      ],
+      "passed": true,
+      "exitCode": 0,
+      "durationMs": 879,
+      "output": "PASS SINTONIA80: 1000 v1/v2 archived histories, reused-ID map identity, learning recovery, archived active attempt UI undo/redo/restart/reload, separate fallback learning gates. No replay onto another map.\nPASS legacy completion identity: original achievements archived and never credited to a different map, including a later win on the retained old attempt.\nPASS unproven completion identity is conservatively archived; known current definitions retain progress.\n"
+    },
+    {
+      "command": [
+        "node",
+        "tests/nonstop-visible-ui.test.mjs"
+      ],
+      "passed": true,
+      "exitCode": 0,
+      "durationMs": 227,
+      "output": "PASS elo new/resumed visible copy and preserved identity/session keys\nPASS prumo new/resumed visible copy and preserved identity/session keys\nPASS pacto new/resumed visible copy and preserved identity/session keys\nPASS desvio new/resumed visible copy and preserved identity/session keys\n"
+    }
+  ]
+}
