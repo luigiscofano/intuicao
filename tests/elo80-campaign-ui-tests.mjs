@@ -14,7 +14,7 @@ let failures=0,answers=0,reloads=0;
 for(let index=0;index<levels.length;index++){
  const l=levels[index];host.querySelector(`[data-new-level="${index}"]`).click();
  const session=()=>read().sessions[l.id].history.present;
- assert.match(host.innerHTML,new RegExp('DESAFIO '+(index+1)+' / 80'));
+ assert.match(host.innerHTML,new RegExp('DESAFIO '+String(index+1).padStart(2,'0')+' / 80'));
  assert.equal($('c-level-prev').disabled,index===0);assert.equal($('c-level-next').disabled,index===79);
  assert.equal($('c-board').querySelectorAll('[data-cell]').length,l.rows*l.cols);
  assert.equal(validateGeometry(l,session()).complete,false,l.id+' begins as a puzzle');
@@ -34,6 +34,6 @@ for(let index=0;index<levels.length;index++){
 assert.equal(read().completed.filter(id=>levels.some(l=>l.id===id)).length,80);
 console.log(JSON.stringify({passed:true,campaignLevels:80,confirmedFailures:failures,verifiedAnswers:answers,reloadChecks:reloads,explicitWins:80}));
 $('c-daily').click();assert.match(host.innerHTML,/DESAFIO DO DIA/);assert.ok(levels.some(l=>host.innerHTML.includes(l.id)),'Daily picks only current campaign');$('c-back').click();
-app.activate('prumo');assert.equal(host.querySelectorAll('[data-new-level]').length,200);assert.equal(host.querySelectorAll('.level-group').length,4);
-app.activate('pacto');assert.equal(host.querySelectorAll('[data-new-level]').length,200);
+app.activate('prumo');assert.equal(host.querySelectorAll('[data-new-level]').length,80);assert.equal(host.querySelectorAll('.level-group').length,6);
+app.activate('pacto');assert.equal(host.querySelectorAll('[data-new-level]').length,80);
 console.log('PASS daily campaign bounds and other campaign grouping/count isolation');
