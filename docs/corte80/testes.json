@@ -1,0 +1,155 @@
+{
+  "passed": true,
+  "results": [
+    {
+      "test": "corte80-ui.mjs",
+      "passed": true,
+      "status": 0,
+      "output": "{\"passed\":true,\"levels\":80,\"failures\":240,\"referenceWins\":80,\"roundedWins\":80,\"undoRedo\":80,\"tabDrafts\":80,\"restartConfirmCancel\":80,\"debuts\":{\"base\":1,\"family:Reta\":1,\"family:Parábola\":7,\"holes\":11,\"family:Seno\":16,\"family:Cúbica\":31,\"family:Cosseno\":39,\"family:Dupla curva\":46},\"nativeBrowser\":false}\n"
+    },
+    {
+      "test": "corte80-progress.mjs",
+      "passed": true,
+      "status": 0,
+      "output": "{\"passed\":true,\"stableIdReorder\":true,\"newIdentityDoesNotReuseNumber\":true,\"retiredRecordsPreserved\":true,\"adjacentTiers\":5,\"storageIsolation\":true}\n"
+    },
+    {
+      "test": "corte80-actual-history.mjs",
+      "passed": true,
+      "status": 0,
+      "output": "{\"passed\":true,\"actualRoster\":80,\"retained\":69,\"recomposed\":11,\"legacyRecordsPreserved\":100,\"identitySeparated\":true}\n"
+    },
+    {
+      "test": "corte80-ui-preservation.mjs",
+      "passed": true,
+      "status": 0,
+      "output": "{\"passed\":true,\"baseline\":\"cc16d2583b73d46ffd3bf09658129fe61010bae9\",\"unchangedFiles\":75,\"controlsAndRendererIdentical\":true,\"nativeBrowser\":\"not run: authorized access unavailable; no bypass\"}\n"
+    },
+    {
+      "test": "corte80-preservation.mjs",
+      "passed": true,
+      "status": 0,
+      "output": "{\"passed\":true,\"unchangedExistingDistFiles\":238,\"baseline\":\"cc16d2583b73d46ffd3bf09658129fe61010bae9\",\"scope\":\"All seven prior 80-level campaigns, engines, sprites, visuals, standard buttons and wrappers byte-identical.\"}\n"
+    },
+    {
+      "test": "corte80-independent.mjs",
+      "passed": true,
+      "status": 0,
+      "output": "ca 60 no holes\n35 Seno 70.002606 hole effect 6.749414 / sensitivity 0.290323\n36 Reta 59.021286 hole effect 6.13079 / sensitivity 0.36918\n37 Parábola 20.997382 hole effect 5.711288 / sensitivity 0.373626\n38 Cúbica 39.978016 hole effect 0.42554 / sensitivity 0.186427\n39 Cosseno 50.000917 no holes\n40 Seno 78.002299 hole effect 5.476566 / sensitivity 0.323327\n41 Parábola 40.983685 hole effect 1.858046 / sensitivity 0.373626\n42 Cúbica 30.016828 no holes\n43 Cosseno 41.012582 hole effect 9.021453 / sensitivity 0.036161\n44 Parábola 16.998542 no holes\n45 Seno 26.995947 no holes\n46 Dupla curva 40.006793 no holes\n47 Cúbica 76.018104 hole effect 0.075877 / sensitivity 0.351351\n48 Parábola 76.009074 hole effect 4.974206 / sensitivity 0.186326\n49 Cosseno 32.000165 hole effect 8.773412 / sensitivity 0.506986\n50 Seno 78.99227 hole effect 3.987524 / sensitivity 0.048619\n51 Reta 24.015747 hole effect 1.825048 / sensitivity 0.271068\n52 Cúbica 23.986308 hole effect 2.399907 / sensitivity 0.231035\n53 Dupla curva 32.016075 hole effect 3.315339 / sensitivity 0.132552\n54 Parábola 68.006455 no holes\n55 Cosseno 59.01671 hole effect 5.155409 / sensitivity 0.41844\n56 Seno 32.005833 hole effect 9.40871 / sensitivity 0.199428\n57 Cúbica 82.996973 hole effect 4.638653 / sensitivity 0.212686\n58 Dupla curva 76.017358 hole effect 7.914272 / sensitivity 0.492537\n59 Parábola 18.99637 hole effect 3.658639 / sensitivity 0.067883\n60 Cosseno 68.0009 hole effect 6.72819 / sensitivity 0.221454\n61 Reta 36.006176 hole effect 7.498857 / sensitivity 0.517515\n62 Seno 68.009639 hole effect 9.286938 / sensitivity 0.342566\n63 Cúbica 68.000307 hole effect 10.990334 / sensitivity 0.202568\n64 Parábola 24.011665 hole effect 3.453492 / sensitivity 0.096722\n65 Cosseno 68.011745 hole effect 5.767812 / sensitivity 0.103313\n66 Dupla curva 81.012537 hole effect 5.018595 / sensitivity 0.117236\n67 Seno 23.996549 no holes\n68 Cúbica 36.994513 hole effect 2.832321 / sensitivity 0.305835\n69 Parábola 62.990859 no holes\n70 Cosseno 76.016769 hole effect 7.040774 / sensitivity 0.207751\n71 Reta 63.005794 hole effect 11.316786 / sensitivity 0.192716\n72 Seno 36.996211 hole effect 8.2925 / sensitivity 0.081474\n73 Cúbica 63.005155 hole effect 12.173988 / sensitivity 0.063708\n74 Dupla curva 32.039675 hole effect 10.197224 / sensitivity 0.285605\n75 Cosseno 62.990726 hole effect 6.153699 / sensitivity 0.022074\n76 Reta 43.00941 hole effect 10.250364 / sensitivity 0.025538\n77 Seno 18.991187 hole effect 0.617631 / sensitivity 0.255892\n78 Cúbica 19.002732 hole effect 6.465818 / sensitivity 0.428913\n79 Dupla curva 67.985856 hole effect 5.440908 / sensitivity 0.1648\n80 Cosseno 19.001587 hole effect 4.071563 / sensitivity 0.434573\n{\n  \"passed\": true,\n  \"method\": \"Independent interval-union sweep in curve coordinates. Polygon useful area exact between all edge-intersection breakpoints; selected area adaptive Simpson with independent six-family formulas. No production polygon subtraction or clipping reused.\",\n  \"fixtures\": [\n    \"clipped\",\n    \"overlap\",\n    \"duplicate\",\n    \"outside\",\n    \"nested\",\n    \"concave\"\n  ],\n  \"levels\": 80,\n  \"introException\": \"Levels 1–6 explicitly teach straight lines; no three consecutive family repetitions after that six-level introduction.\",\n  \"overlapLevels\": [\n    28,\n    33,\n    36,\n    37,\n    38,\n    40,\n    43,\n    50,\n    53,\n    56,\n    58,\n    60,\n    61,\n    62,\n    63,\n    64,\n    65,\n    66,\n    68,\n    70,\n    71,\n    72,\n    73,\n    74,\n    75,\n    76,\n    77,\n    78,\n    79,\n    80\n  ],\n  \"edgeOpeningLevels\": [\n    21,\n    23,\n    35,\n    41,\n    47,\n    48,\n    49,\n    51,\n    52,\n    53,\n    55,\n    56,\n    57,\n    59,\n    60,\n    61,\n    63,\n    64,\n    65,\n    66,\n    71,\n    72,\n    73,\n    75,\n    77,\n    78,\n    79\n  ],\n  \"weakHoles\": [],\n  \"maximumProductionDifferencePP\": 0.001336,\n  \"minimumInitialErrorPP\": 17.992277,\n  \"maximumIntegerErrorPP\": 0.197731,\n  \"browser\": \"Not run: existing native ATSPI unavailable and DevTools organization-denied; no bypass.\"\n}\n"
+    },
+    {
+      "test": "prumo80-progress-tests.mjs",
+      "passed": true,
+      "status": 0,
+      "output": "PASS PRUMO80 identity-safe archival, unchanged IDs, no ordinal mapping, custom/endless/other-game isolation, idempotence and unavailable storage.\nPASS answer-only retired PRUMO records archived with exact IDs; other games and custom answers excluded.\n"
+    },
+    {
+      "test": "prumo80-solver-tests.mjs",
+      "passed": true,
+      "status": 0,
+      "output": "{\"pass\":true,\"dimensions\":\"10x10\",\"validationMs\":0.04536205,\"completedIterations\":1000,\"inconclusiveBudget\":true,\"exactSingletonPartition\":1}\n"
+    },
+    {
+      "test": "elo80-progress-tests.mjs",
+      "passed": true,
+      "status": 0,
+      "output": "PASS ELO80 identity-safe archival, unchanged IDs, no ordinal mapping, custom/endless/other-game isolation, idempotence and unavailable storage.\n"
+    },
+    {
+      "test": "pacto80-progress-tests.mjs",
+      "passed": true,
+      "status": 0,
+      "output": "PASS PACTO80 identity-safe archival, unchanged IDs, no ordinal mapping, custom/endless/other-game isolation, idempotence and unavailable storage.\nPASS answer-only retired PACTO records archived with exact IDs; other games and custom answers excluded.\n"
+    },
+    {
+      "test": "pacto80-budget-and-identities.mjs",
+      "passed": true,
+      "status": 0,
+      "output": "{\"passed\":true,\"kept\":56,\"changed\":24,\"explicitlyInconclusiveBudgetChecks\":80}\n"
+    },
+    {
+      "test": "sintonia80-migration.mjs",
+      "passed": true,
+      "status": 0,
+      "output": "PASS SINTONIA80: 1000 v1/v2 archived histories, reused-ID map identity, learning recovery, archived active attempt UI undo/redo/restart/reload, separate fallback learning gates. No replay onto another map.\nPASS legacy completion identity: original achievements archived and never credited to a different map, including a later win on the retained old attempt.\nPASS unproven completion identity is conservatively archived; known current definitions retain progress.\n"
+    },
+    {
+      "test": "repasse80-progress.test.mjs",
+      "passed": true,
+      "status": 0,
+      "output": "✔ curation retains exact stable identities and archives omitted records without positional remapping (3.990161ms)\n✔ Sem Parar configurations remain gradual and independent of displayed campaign positions (0.345513ms)\n✔ legacy configuration milestone discoveries survive absent learned field and archived sessions (0.338242ms)\nℹ tests 3\nℹ suites 0\nℹ pass 3\nℹ fail 0\nℹ cancelled 0\nℹ skipped 0\nℹ todo 0\nℹ duration_ms 13.215364\n"
+    },
+    {
+      "test": "orbita80-contract.test.mjs",
+      "passed": true,
+      "status": 0,
+      "output": "✔ 80-level quota, progression, discoveries and all structural families (2.319692ms)\n✔ every inverse shuffle replays from its solved arrangement; special introductions have causal witnesses (36.861755ms)\n✔ full source reservoir retained rather than truncating first80 (0.189457ms)\nℹ tests 3\nℹ suites 0\nℹ pass 3\nℹ fail 0\nℹ cancelled 0\nℹ skipped 0\nℹ todo 0\nℹ duration_ms 50.489727\n"
+    },
+    {
+      "test": "orbita80-ui-migration.test.mjs",
+      "passed": true,
+      "status": 0,
+      "output": "✔ six editorial ranges explicitly map to the five internal generator strengths (1.480942ms)\n✔ old campaign records without geometry evidence are archived, never assigned to new boards by ID (3.860765ms)\n✔ exact definition and geometry evidence preserves unchanged history and completion across editorial revision (6.979346ms)\n✔ current completion, undo, redo, reset and session replay remain motor based (124.806504ms)\n✔ current global control overrides and UI numbering stay intact (0.805189ms)\nℹ tests 5\nℹ suites 0\nℹ pass 5\nℹ fail 0\nℹ cancelled 0\nℹ skipped 0\nℹ todo 0\nℹ duration_ms 144.984612\n"
+    },
+    {
+      "test": "light-v4-integration-progress.mjs",
+      "passed": true,
+      "status": 0,
+      "output": "PASS stable-ID completion/current level survive reload without inventing old completions or touching existing stores\nPASS sequential cross-tab updates merge completions and retain absent IDs and unknown record fields\nPASS malformed/future records stay untouched; unavailable/denied/quota storage retains session progress and recovers when possible\n"
+    },
+    {
+      "test": "light80-integration-ui.mjs",
+      "passed": true,
+      "status": 0,
+      "output": "PASS 80 selectable tiles; six 15/15/15/15/15/5 bands; no subdivisions; retained ID keeps completion, current status, draft and assistance after reordering\nPASS newly earned completion persists by ID; undo/redo and existing stores remain isolated\nPASS all five tier boundaries, first/last, back/next, stale restart, cut switching, custom and Endless stay independent\nPASS denied storage methods do not interrupt campaign play or session completion\nPASS display number, navigation index and stable identity are independent\n"
+    },
+    {
+      "test": "light80-campaign-ui.mjs",
+      "passed": true,
+      "status": 0,
+      "output": "{\"passed\":true,\"levels\":80,\"completeFailures\":240,\"referenceWins\":80,\"debuts\":{\"base\":1,\"walls\":5,\"multipleSources\":9,\"portals\":12,\"selectivePortals\":16,\"threeSources\":21}}\n"
+    },
+    {
+      "test": "corte80-controls-preservation.mjs",
+      "passed": true,
+      "status": 0,
+      "output": "PASS latest wrappers: hints PACTO-only, automatic game confirmation visibility retained, actual Corte curve tabs preserved.\n"
+    },
+    {
+      "test": "arrow-only-controls.test.mjs",
+      "passed": true,
+      "status": 0,
+      "output": "✔ all nine games expose arrow-only undo/redo, with accessible names and native buttons retained (2.684353ms)\nℹ tests 1\nℹ suites 0\nℹ pass 1\nℹ fail 0\nℹ cancelled 0\nℹ skipped 0\nℹ todo 0\nℹ duration_ms 10.250108\n"
+    },
+    {
+      "test": "original-json-tests.mjs",
+      "passed": true,
+      "status": 0,
+      "output": "{\"passed\":true,\"checks\":217,\"campaignsRoundTripped\":300}\n"
+    },
+    {
+      "test": "original-json-resume-tests.mjs",
+      "passed": true,
+      "status": 0,
+      "output": "PASS light fresh-page custom/campaign/Endless restore, assistance and separate cut-mode drafts\nPASS cut fresh-page custom/campaign/Endless restore, assistance and separate cut-mode drafts\nPASS immutable snapshot fields and basic-control restrictions\n"
+    },
+    {
+      "test": "original-json-ui-tests.mjs",
+      "passed": true,
+      "status": 0,
+      "output": "PASS light JSON placement/example/download/import/export, atomic failures, hints, gabarito, isolated saves, explicit reset and direct Endless shortcut preserving both modes\nPASS cut JSON placement/example/download/import/export, atomic failures, hints, gabarito, isolated saves, explicit reset and direct Endless shortcut preserving both modes\nPASS asynchronous navigation cancellation, real file path, oversized-file atomicity and storage warning\n"
+    },
+    {
+      "test": "restart-original-tests.mjs",
+      "passed": true,
+      "status": 0,
+      "output": "PASS light actual module edit/cancel/Escape/reset, current level/focus, storage unchanged and stale navigation\nPASS cut actual module edit/cancel/Escape/reset, current level/focus, storage unchanged and stale navigation\nPASS Reflexos reset cancels active ray animation and clears result\nPASS game switch dismisses stale original confirmation\n"
+    },
+    {
+      "test": "middle-confirm-tests.mjs",
+      "passed": true,
+      "status": 0,
+      "output": "PASS middle: one confirmation per gesture; native defaults suppressed; cancellation/movement/outside/blur/focus/chords/touch/links/other buttons/cleanup\n"
+    }
+  ]
+}

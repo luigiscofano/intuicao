@@ -20,7 +20,7 @@ Laboratório educativo de puzzles, produzido com auxílio de OpenAI/Codex a part
 ## Catálogo da revisão v5 · 25/10/2026
 
 - Reflexos: 500 níveis de luz, espelhos, paredes, cores e portais.
-- Corte certo: 100 níveis de proporções, curvas e áreas com vazios.
+- Corte certo: 80 níveis de proporções, curvas e áreas com vazios, em seis faixas (15/15/15/15/15/5).
 - ELO: 200 níveis de regiões e circuitos.
 - PRUMO: 200 níveis de peças e centros de massa.
 - PACTO: 200 níveis de duplas e dedução.
@@ -82,3 +82,7 @@ Os módulos de geometria, níveis, interface e resultados ficam separados para p
 ELO, PRUMO, PACTO e DESVIO agora têm edição direta por mouse, toque e teclado, histórico transacional, controles de zoom/deslocamento e atalhos junto ao tabuleiro. Veja [Controles por jogo](CONTROLES-DIRETOS.md) e [Matriz de implementação e testes](INTERACAO-DIRETA-MATRIZ.md).
 
 Nos puzzles, preencher o tabuleiro não revela vitória automaticamente: use **Confirmar resposta**. Dicas têm três etapas e aplicação explícita, sem consultar um gabarito para fabricar a explicação. O progresso é local a este navegador, sem sincronização prometida. NEXO e Equilíbrio permanecem fora do catálogo. Corte certo e Reflexos não foram alterados na revisão histórica de interação direta; as revisões posteriores da campanha de Reflexos não autorizam alterações nas mecânicas desses jogos.
+
+## CORTE80 — campanha atual
+
+A campanha ativa tem 80 fases: Básico 1–15, Aprendiz 16–30, Intermediário 31–45, Avançado 46–60, Mestre 61–75 e Modo Sábio 76–80. Todas têm solução por deslocamento na aba Desafio básico. Motor, tolerância inclusiva de ±3 pp, aparência e controles foram preservados. A sequência explícita de seis retas iniciais é a exceção à alternância; depois dela não há três famílias iguais consecutivas. Modo Sem Parar e importações permanecem separados. As antigas contagens de Corte v2 são históricas. Consulte CORTE80-VALIDACAO.md.

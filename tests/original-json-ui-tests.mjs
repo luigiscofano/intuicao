@@ -1,5 +1,6 @@
 import assert from 'node:assert/strict';
 import fs from 'node:fs';
+import {lightLevels,cutLevels} from '../dist/levels.mjs';
 import {root,store,$,timers} from './direct-ui-harness.mjs';
 import {originalJSONExample,validateOriginalLevel,originalLevelIdentity,originalLevelAnswer,originalLevelState} from '../dist/original-json.mjs';
 root.innerHTML=fs.readFileSync(new URL('../dist/index.html',import.meta.url),'utf8');document.body=root;
@@ -12,7 +13,7 @@ const pick=game=>root.querySelector(`[data-game="${game}"]`).click();
 const play=game=>{$('original-json-text').value=JSON.stringify(originalJSONExample(game));$('original-json-play').click();};
 const edit=game=>$('scene').dispatch('keydown',{target:$('drawing').querySelector(game==='light'?'[data-item="0"]':'[data-item="basic-cut"]'),key:'ArrowRight'});
 for(const game of ['light','cut']){
- pick(game);const count=game==='light'?500:100,all=$('level-grid').querySelectorAll('[data-level]');
+ pick(game);const count=(game==='light'?lightLevels:cutLevels).length,all=$('level-grid').querySelectorAll('[data-level]');
  assert.equal(all.length,count);assert.ok($('selection').nodes.filter(n=>n.parentElement===$('selection')).indexOf($('original-json-import'))>$('selection').nodes.filter(n=>n.parentElement===$('selection')).indexOf($('level-grid')));assert.equal($('selection-title').textContent,game==='light'?'Reflexos ·':'Corte certo ·');
  $('original-json-download').click();assert.equal(JSON.parse(await downloads.at(-1).text()).game,game);
  $('original-json-example').click();assert.equal(JSON.parse($('original-json-text').value).game,game);

@@ -1,3 +1,7 @@
+# Atualização CORTE80 · 30/10/2026
+
+Corte certo tem exatamente 80 fases em seis faixas (15/15/15/15/15/5), todas solucionáveis no eixo básico. A curadoria preserva identidades das definições inalteradas e dá nova identidade às geometrias recompostas; não transfere vitórias pela posição. Motor, visuais e tolerância inclusiva de ±3 pp permanecem iguais. Controles da curva continuam disponíveis na aba própria; o painel auxiliar avançado continua exclusivo de Reflexos, e Dicas continuam exclusivas de PACTO. [Validação e limites](CORTE80-VALIDACAO.md).
+
 # Atualização PRUMO80 · 30/10/2026
 
 ## Atualização PACTO80 — campanha ativa

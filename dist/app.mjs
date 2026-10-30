@@ -18,6 +18,7 @@ import {clamp,segment,cutSuccess,mirrorAngle,wallPolygon} from './math.mjs';
 import {lightLevels,cutLevels} from './levels.mjs';
 import {createAnswerProgress} from './answer-progress.mjs';
 import {createLightCampaignProgress} from './light-campaign-progress.mjs';
+import {createCutCampaignProgress} from './cut-campaign-progress.mjs';
 import {getOriginalAnswer} from './original-answers.mjs';
 import {buildOriginalHint} from './original-hints.mjs';
 const $=id=>document.getElementById(id), scene=$('scene'), drawing=$('drawing');
@@ -168,7 +169,7 @@ function showOriginalHint(){
  originalHintTier=Math.min(3,originalHintTier+1);
  $('hint-text').textContent=originalHintPlan[['focusText','explanation','nextStep'][originalHintTier-1]];
 }
-const completed=new Set();const lastLevel={light:null,cut:null};
+const cutCampaignProgress=createCutCampaignProgress();
 const lightCampaignProgress=createLightCampaignProgress();
 const lightCampaignBands=[['basic','Básico',1,15],['apprentice','Aprendiz',16,30],['intermediate','Intermediário',31,45],['advanced','Avançado',46,60],['master','Mestre',61,75],['sage','Modo Sábio',76,80]];
 const lightCampaignNumber=(l,i)=>Number.isInteger(l.campaignNumber)&&l.campaignNumber>=1&&l.campaignNumber<=catalogue.light.length?l.campaignNumber:i+1;
@@ -194,7 +195,19 @@ function lightCampaignSelection(){
  }
  return html;
 }
-function showSelection(){finishOriginalGesture(false);endDrag();saveCampaign();saveCustom();campaignActive=null;customLevel=null;customId='';customImportRevision++;customStorage.hidden=true;customExport.hidden=true;resetOriginalHint();saveEndless();free=false;endlessPanel.hidden=true;restartConfirmation.dismiss();restartRevision++;placementMessage='';pendingSlot=null;invalidate();drag=null;document.querySelector('.lab').hidden=true;$('selection').hidden=false;document.querySelectorAll('[data-game]').forEach(b=>b.setAttribute('aria-pressed',String(b.dataset.game===game)));$('selection-title').textContent={light:'Reflexos ·',cut:'Corte certo ·'}[game];let html=game==='light'?lightCampaignSelection():'';if(game!=='light')for(let k=0;k<catalogue[game].length;k+=10){if(game==='cut')html+=`<h3 class="stage-heading">${['1 · Uma direção por vez','2 · Parábolas e vazios','3 · Ondas e recortes','4 · Curvas em S','5 · Silhuetas irregulares','6 · Vazios maiores','7 · Bordas abertas','8 · Recortes combinados','9 · Área que resta','10 · Síntese de formas'][k/10]}</h3>`;html+='<div class="level-group">'+catalogue[game].slice(k,k+10).map((l,j)=>{const i=k+j,done=completed.has(game+i),assisted=answerProgress.get(`${game}:${l.id??i}`).assisted,current=lastLevel[game]===i;return `<button class="level-tile ${done?'done':''}" data-level="${i}" aria-current="${current}" aria-label="Nível ${i+1}: ${l.name}${done?', concluído':''}${assisted?', assistido por gabarito':''}${current?', atual':''}"><span>${i+1}</span><small>${done?(assisted?'✓ com gabarito':'✓ concluído'):assisted?'com gabarito':current?'atual':'explorar'}</small></button>`;}).join('')+'</div>';}$('level-grid').innerHTML=html;$('level-grid').querySelectorAll('[data-level]').forEach(b=>b.onclick=()=>{level=Number(b.dataset.level);free=false;start();});renderOriginalImport();$('selection-title').focus();}
+function cutCampaignSelection(){
+ const progress=cutCampaignProgress.snapshot();let html='';
+ for(const [band,name,first,last] of lightCampaignBands){
+  html+=`<h3 class="stage-heading" data-campaign-band="${band}">${name} · ${first}–${last}</h3><div class="level-group" data-campaign-band="${band}">`;
+  for(let i=first-1;i<Math.min(last,catalogue.cut.length);i++){
+   const l=catalogue.cut[i],done=progress.completedIds.has(l.id),assisted=answerProgress.get(`cut:${l.id}`).assisted,current=progress.lastLevelId===l.id;
+   html+=`<button class="level-tile ${done?'done':''}" data-level="${i}" aria-current="${current}" aria-label="Nível ${i+1}: ${l.name}${done?', concluído':''}${assisted?', assistido por gabarito':''}${current?', atual':''}"><span>${i+1}</span><small>${done?(assisted?'✓ com gabarito':'✓ concluído'):assisted?'com gabarito':current?'atual':'explorar'}</small></button>`;
+  }
+  html+='</div>';
+ }
+ return html;
+}
+function showSelection(){finishOriginalGesture(false);endDrag();saveCampaign();saveCustom();campaignActive=null;customLevel=null;customId='';customImportRevision++;customStorage.hidden=true;customExport.hidden=true;resetOriginalHint();saveEndless();free=false;endlessPanel.hidden=true;restartConfirmation.dismiss();restartRevision++;placementMessage='';pendingSlot=null;invalidate();drag=null;document.querySelector('.lab').hidden=true;$('selection').hidden=false;document.querySelectorAll('[data-game]').forEach(b=>b.setAttribute('aria-pressed',String(b.dataset.game===game)));$('selection-title').textContent={light:'Reflexos ·',cut:'Corte certo ·'}[game];const html=game==='light'?lightCampaignSelection():cutCampaignSelection();$('level-grid').innerHTML=html;$('level-grid').querySelectorAll('[data-level]').forEach(b=>b.onclick=()=>{level=Number(b.dataset.level);free=false;start();});renderOriginalImport();$('selection-title').focus();}
 
 let phase='editing',evaluation=null,frame=0,animationToken=0,revealed=[],lightDistance=0,lightFired=[];
 function invalidate(){if(free&&endlessRun)endlessRun.solved=false;clearTimeout(endlessTimer);endlessTimer=null;middleConfirm?.cancel();resultMotion.clear();cancelAnimationFrame(frame);animationToken++;phase='editing';evaluation=null;revealed=[];lightDistance=0;lightFired=[];scene.setAttribute('aria-busy','false');}
@@ -321,8 +334,8 @@ function start(resumeCustom=false,fresh=false){
  clearOriginalHistory();customImportRevision++;const resume=customLevel&&resumeCustom?structuredClone(customSaved[customId]??null):null;
  resetOriginalHint();
  restartConfirmation.dismiss();restartRevision++;
- placementMessage='';pendingSlot=null;invalidate();drag=null;$('selection').hidden=true;document.querySelector('.lab').hidden=false;if(!free&&!customLevel&&game!=='light')lastLevel[game]=level; selected=0; const l=currentLevel();campaignActive=!free&&!customLevel?{game,id:l.id??level}:null;
- if(campaignActive&&game==='light')lightCampaignProgress.visit(l.id);
+ placementMessage='';pendingSlot=null;invalidate();drag=null;$('selection').hidden=true;document.querySelector('.lab').hidden=false;selected=0; const l=currentLevel();campaignActive=!free&&!customLevel?{game,id:l.id??level}:null;
+ if(campaignActive)(game==='light'?lightCampaignProgress:cutCampaignProgress).visit(l.id);
  if(free){try{endlessGenerated=generateOriginalEndless(game,endlessRun.seed,endlessRun.options);}catch(error){free=false;showSelection();$('selection-title').textContent='Não foi possível gerar este desafio. Abra o modo livre e tente outra configuração.';return;}state=structuredClone(endlessGenerated.initial);endlessRun.solved=false;cutMode='advanced';cutDrafts={basic:null,advanced:null};if(game==='light')selected=state.objects.findIndex(o=>o.type==='mirror');}
  if(game==='light'&&!free){state={objects:structuredClone(l.objects),target:{...l.target,radius:22},sourceAngle:l.sourceAngle??0,...(!free?{sources:structuredClone(l.sources),targets:structuredClone(l.targets),portals:structuredClone(l.portals??[])}:{})};selected=state.objects.findIndex(o=>o.type==='mirror');}
  if(game==='cut'&&!free){cutMode=free?'advanced':'basic';cutDrafts={basic:null,advanced:null};state=basicCutState(l);if(free)state.holes=[];}
@@ -347,7 +360,7 @@ const originalRuleMechanicsSeen=new Map();
 function configureOriginalRules(){
  const context=getRulesContext(game,free?{...endlessGenerated.level,...endlessGenerated.initial}:currentLevel(),{catalogue:catalogue[game],index:level,mode:free?'endless':customLevel?'custom':'campaign'});
  $('original-rules-context-title').textContent=context.title;
- $('original-rules-context-text').textContent=context.text;
+ $('original-rules-context-text').textContent=context.text+(game==='cut'&&!free&&!customLevel&&(currentLevel().discovery??currentLevel().lesson)?' '+(currentLevel().discovery??currentLevel().lesson):'');
  let autoOpen=context.autoOpen;if(free){const seen=originalRuleMechanicsSeen.get(game)??new Set();autoOpen=context.mechanics.some(key=>!seen.has(key));context.mechanics.forEach(key=>seen.add(key));originalRuleMechanicsSeen.set(game,seen);}
  $('original-rules-panel').open=true;syncOriginalRules();
 }
@@ -433,7 +446,7 @@ function status(label,value,message,success){
  $('metric-label').textContent=label;$('metric').textContent=value;
  $('feedback').textContent=placementMessage||(phase==='result'?(success?'Vitória! ':'Ainda não. ')+message:message);
  $('feedback').classList.toggle('success',success);$('feedback').classList.toggle('sr-only',phase==='result'&&!success&&!placementMessage);
- if(success&&!free&&!customLevel){if(game==='light')lightCampaignProgress.complete(currentLevel().id);else completed.add(game+level);}
+ if(success&&!free&&!customLevel){(game==='light'?lightCampaignProgress:cutCampaignProgress).complete(currentLevel().id);}
  $('next').disabled=phase!=='result'||!success;$('next').textContent=level===catalogue[game].length-1?'Voltar ao início ↺':'Próximo desafio →';
 }
 function draw(){

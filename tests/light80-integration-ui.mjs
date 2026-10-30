@@ -77,7 +77,7 @@ go(0);$('confirm').click();$('next').click();assert.equal(Number($('level').valu
 edit(-62);$('reset').click();$('restart-original-cancel').click();assert.equal(angle(),-62);
 $('reset').click();$('restart-original-confirm').click();assert.equal(angle(),original.objects[0].angle);assert.equal($('undo').disabled,true);
 const progressBeforeOtherModes=store.get(KEY);
-root.querySelector('[data-game="cut"]').click();assert.equal(grid().querySelectorAll('[data-level]').length,cutLevels.length);assert.equal(grid().querySelectorAll('h3').length,10);assert.equal(grid().querySelectorAll('h4').length,0);select(0);
+root.querySelector('[data-game="cut"]').click();assert.equal(grid().querySelectorAll('[data-level]').length,cutLevels.length);assert.equal(grid().querySelectorAll('h3').length,6);assert.equal(grid().querySelectorAll('h4').length,0);select(0);
 assert.equal(store.get(KEY),progressBeforeOtherModes);root.querySelector('[data-game="light"]').click();assert.equal(tile(1).attrs['aria-current'],'true');
 $('original-json-text').value=JSON.stringify(originalJSONExample('light'));$('original-json-play').click();assert.equal($('stage-label').textContent,'FASE PERSONALIZADA');assert.equal($('level-next').hidden,true);
 $('reset').click();$('restart-original-confirm').click();assert.equal(store.get(KEY),progressBeforeOtherModes);

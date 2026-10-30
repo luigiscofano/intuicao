@@ -1,0 +1,10 @@
+import assert from 'node:assert/strict';import fs from 'node:fs';import {execFileSync} from 'node:child_process';
+const base='cc16d2583b73d46ffd3bf09658129fe61010bae9';
+const paths=execFileSync('git',['ls-tree','-r','--name-only',base,'dist'],{encoding:'utf8'}).trim().split('\n');
+const retained=paths.filter(p=>/\.(css|png|svg|webp|jpg)$/.test(p)||['index.html','curves.mjs','math.mjs','original-answers.mjs','original-json.mjs','original-hints.mjs','answer-progress.mjs','restart-confirmation.mjs','middle-confirm.mjs','result-motion.mjs','rules-context.mjs','light-campaign-progress.mjs'].includes(p.split('/').at(-1)));
+for(const path of retained)assert.deepEqual(fs.readFileSync(path),execFileSync('git',['show',`${base}:${path}`],{maxBuffer:30e6}),path+' unchanged');
+const before=execFileSync('git',['show',`${base}:dist/app.mjs`],{encoding:'utf8'}),after=fs.readFileSync('dist/app.mjs','utf8');
+const section=(s,a,b)=>s.slice(s.indexOf(a),s.indexOf(b,s.indexOf(a)));
+for(const [a,b] of [['function applyControlsVisibility(){','let placementMessage='],['const allowed=','function start('],['function confirmAnswer(){','const titles='],['function renderLevelNotes(){','function editor('],['function localPoint(','document.querySelectorAll(\'[data-game]\').forEach']])assert.equal(section(before,a,b),section(after,a,b),a+' control contract unchanged');
+assert.equal(section(before," if(game==='cut'){\n  const poly=","// O SVG mantém"),section(after," if(game==='cut'){\n  const poly=","// O SVG mantém"),'Corte rendering identical including arrow/mask/purple/curve handles');
+console.log(JSON.stringify({passed:true,baseline:base,unchangedFiles:retained.length,controlsAndRendererIdentical:true,nativeBrowser:'not run: authorized access unavailable; no bypass'}));
