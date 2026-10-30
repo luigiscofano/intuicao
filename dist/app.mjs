@@ -1,3 +1,4 @@
+import {initCategoryNavigation} from './category-navigation.mjs';
 import {parseLevelJSON} from './level-json-common.mjs';
 import {validateOriginalLevel,originalLevelState,originalLevelAnswer,originalLevelIdentity,exportOriginalLevel,validOriginalSnapshot,originalJSONExample,originalJSONHelp} from './original-json.mjs';
 import {getRulesContext} from './rules-context.mjs';
@@ -536,6 +537,6 @@ const collection=initCollection({hideOriginal(){orbita.hide();repasse.hide();sin
 const sintonia=createSintoniaRoute({hideOtherGames(){orbita.hide();repasse.hide();collection.hide();hideOriginalForSibling();}});
 const repasse=createRepasseRoute({hideOthers(){orbita.hide();sintonia.hide();collection.hide();hideOriginalForSibling();}});
 const orbita=createOrbitaRoute({hideOthers(){repasse.hide();sintonia.hide();collection.hide();hideOriginalForSibling();}});
-if(!orbita.restoreOnLoad()&&!repasse.restoreOnLoad())sintonia.restoreOnLoad();
+initCategoryNavigation({hideGames(){orbita.hide();repasse.hide();sintonia.hide();collection.hide();hideOriginalForSibling();}});
 
 globalThis.addEventListener?.('pagehide',()=>{saveCampaign();saveCustom();saveEndless();});

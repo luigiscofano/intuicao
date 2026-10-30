@@ -35,7 +35,7 @@ export function initGameInfo(doc=document){
  const makeTrigger=(game)=>{const b=doc.createElement('button');b.type='button';b.className='game-info-trigger';b.dataset.infoGame=game;b.textContent='i';b.setAttribute('aria-label',`Informações sobre ${GAME_INFO[game].name}`);b.setAttribute('aria-haspopup','dialog');b.setAttribute('aria-controls',dialog.id);return b;};
  const cards=[...nav.querySelectorAll('[data-game],[data-collection],[data-sintonia],[data-repasse],[data-orbita]')];
  for(const card of cards){const game=card.dataset.game||card.dataset.collection||card.dataset.sintonia||card.dataset.repasse||card.dataset.orbita;const b=makeTrigger(game);b.classList.add('game-info-nav');nav.append(b);}
- const placeNav=()=>{for(const card of cards){const game=card.dataset.game||card.dataset.collection||card.dataset.sintonia||card.dataset.repasse||card.dataset.orbita;const b=nav.querySelector(`[data-info-game="${game}"]`);b.style.left=`${card.offsetLeft+card.offsetWidth-40}px`;b.style.top=`${card.offsetTop+card.offsetHeight/2-16}px`;}};
+ const placeNav=()=>{for(const card of cards){const game=card.dataset.game||card.dataset.collection||card.dataset.sintonia||card.dataset.repasse||card.dataset.orbita;const b=nav.querySelector(`[data-info-game="${game}"]`);b.hidden=card.hidden;b.style.left=`${card.offsetLeft+card.offsetWidth-40}px`;b.style.top=`${card.offsetTop+card.offsetHeight/2-16}px`;}};
  const activeGame=()=>{const c=cards.find(e=>e.getAttribute('aria-pressed')==='true');return c?.dataset.game||c?.dataset.collection||c?.dataset.sintonia||c?.dataset.repasse||c?.dataset.orbita;};
  const syncTitles=()=>{
   const game=activeGame();if(!GAME_INFO[game])return;
