@@ -1,0 +1,427 @@
+[
+  {
+    "candidate": 0,
+    "rows": 7,
+    "cols": 7,
+    "count": 0,
+    "exhaustive": false,
+    "budgetExhausted": true,
+    "ms": 192.602011,
+    "stats": {
+      "nodes": 0,
+      "branches": 0,
+      "forced": 0,
+      "maxDepth": 0,
+      "candidates": 0,
+      "enumeratedSubsets": 141401
+    }
+  },
+  {
+    "candidate": 1,
+    "rows": 7,
+    "cols": 7,
+    "count": 0,
+    "exhaustive": false,
+    "budgetExhausted": true,
+    "ms": 104.915054,
+    "stats": {
+      "nodes": 0,
+      "branches": 0,
+      "forced": 0,
+      "maxDepth": 0,
+      "candidates": 0,
+      "enumeratedSubsets": 250001
+    }
+  },
+  {
+    "candidate": 2,
+    "rows": 7,
+    "cols": 7,
+    "count": 0,
+    "exhaustive": false,
+    "budgetExhausted": true,
+    "ms": 122.85260100000005,
+    "stats": {
+      "nodes": 0,
+      "branches": 0,
+      "forced": 0,
+      "maxDepth": 0,
+      "candidates": 0,
+      "enumeratedSubsets": 250001
+    }
+  },
+  {
+    "candidate": 3,
+    "rows": 7,
+    "cols": 7,
+    "count": 0,
+    "exhaustive": false,
+    "budgetExhausted": true,
+    "ms": 109.84914800000001,
+    "stats": {
+      "nodes": 0,
+      "branches": 0,
+      "forced": 0,
+      "maxDepth": 0,
+      "candidates": 0,
+      "enumeratedSubsets": 250001
+    }
+  },
+  {
+    "candidate": 4,
+    "rows": 7,
+    "cols": 7,
+    "count": 0,
+    "exhaustive": false,
+    "budgetExhausted": true,
+    "ms": 198.39896799999997,
+    "stats": {
+      "nodes": 0,
+      "branches": 0,
+      "forced": 0,
+      "maxDepth": 0,
+      "candidates": 0,
+      "enumeratedSubsets": 246958
+    }
+  },
+  {
+    "candidate": 5,
+    "rows": 7,
+    "cols": 7,
+    "count": 0,
+    "exhaustive": false,
+    "budgetExhausted": true,
+    "ms": 66.81513099999995,
+    "stats": {
+      "nodes": 0,
+      "branches": 0,
+      "forced": 0,
+      "maxDepth": 0,
+      "candidates": 0,
+      "enumeratedSubsets": 250001
+    }
+  },
+  {
+    "candidate": 6,
+    "rows": 8,
+    "cols": 8,
+    "count": 0,
+    "exhaustive": false,
+    "budgetExhausted": true,
+    "ms": 108.08050500000002,
+    "stats": {
+      "nodes": 0,
+      "branches": 0,
+      "forced": 0,
+      "maxDepth": 0,
+      "candidates": 0,
+      "enumeratedSubsets": 250001
+    }
+  },
+  {
+    "candidate": 7,
+    "rows": 8,
+    "cols": 8,
+    "count": 0,
+    "exhaustive": false,
+    "budgetExhausted": true,
+    "ms": 98.14627199999995,
+    "stats": {
+      "nodes": 0,
+      "branches": 0,
+      "forced": 0,
+      "maxDepth": 0,
+      "candidates": 0,
+      "enumeratedSubsets": 250001
+    }
+  },
+  {
+    "candidate": 8,
+    "rows": 8,
+    "cols": 8,
+    "count": 0,
+    "exhaustive": false,
+    "budgetExhausted": true,
+    "ms": 83.71660399999996,
+    "stats": {
+      "nodes": 0,
+      "branches": 0,
+      "forced": 0,
+      "maxDepth": 0,
+      "candidates": 0,
+      "enumeratedSubsets": 250001
+    }
+  },
+  {
+    "candidate": 9,
+    "rows": 8,
+    "cols": 8,
+    "count": 0,
+    "exhaustive": false,
+    "budgetExhausted": true,
+    "ms": 83.25463100000002,
+    "stats": {
+      "nodes": 0,
+      "branches": 0,
+      "forced": 0,
+      "maxDepth": 0,
+      "candidates": 0,
+      "enumeratedSubsets": 250001
+    }
+  },
+  {
+    "candidate": 10,
+    "rows": 8,
+    "cols": 8,
+    "count": 0,
+    "exhaustive": false,
+    "budgetExhausted": true,
+    "ms": 71.16963499999997,
+    "stats": {
+      "nodes": 0,
+      "branches": 0,
+      "forced": 0,
+      "maxDepth": 0,
+      "candidates": 0,
+      "enumeratedSubsets": 250001
+    }
+  },
+  {
+    "candidate": 11,
+    "rows": 8,
+    "cols": 8,
+    "count": 0,
+    "exhaustive": false,
+    "budgetExhausted": true,
+    "ms": 83.82730699999979,
+    "stats": {
+      "nodes": 0,
+      "branches": 0,
+      "forced": 0,
+      "maxDepth": 0,
+      "candidates": 0,
+      "enumeratedSubsets": 250001
+    }
+  },
+  {
+    "candidate": 12,
+    "rows": 8,
+    "cols": 8,
+    "count": 0,
+    "exhaustive": false,
+    "budgetExhausted": true,
+    "ms": 162.68321300000002,
+    "stats": {
+      "nodes": 0,
+      "branches": 0,
+      "forced": 0,
+      "maxDepth": 0,
+      "candidates": 0,
+      "enumeratedSubsets": 250001
+    }
+  },
+  {
+    "candidate": 13,
+    "rows": 8,
+    "cols": 8,
+    "count": 0,
+    "exhaustive": false,
+    "budgetExhausted": true,
+    "ms": 170.98389300000008,
+    "stats": {
+      "nodes": 0,
+      "branches": 0,
+      "forced": 0,
+      "maxDepth": 0,
+      "candidates": 0,
+      "enumeratedSubsets": 250001
+    }
+  },
+  {
+    "candidate": 14,
+    "rows": 8,
+    "cols": 8,
+    "count": 0,
+    "exhaustive": false,
+    "budgetExhausted": true,
+    "ms": 70.33919100000003,
+    "stats": {
+      "nodes": 0,
+      "branches": 0,
+      "forced": 0,
+      "maxDepth": 0,
+      "candidates": 0,
+      "enumeratedSubsets": 250001
+    }
+  },
+  {
+    "candidate": 15,
+    "rows": 9,
+    "cols": 9,
+    "count": 0,
+    "exhaustive": false,
+    "budgetExhausted": true,
+    "ms": 98.7686990000002,
+    "stats": {
+      "nodes": 0,
+      "branches": 0,
+      "forced": 0,
+      "maxDepth": 0,
+      "candidates": 0,
+      "enumeratedSubsets": 250001
+    }
+  },
+  {
+    "candidate": 16,
+    "rows": 9,
+    "cols": 9,
+    "count": 0,
+    "exhaustive": false,
+    "budgetExhausted": true,
+    "ms": 91.04633400000012,
+    "stats": {
+      "nodes": 0,
+      "branches": 0,
+      "forced": 0,
+      "maxDepth": 0,
+      "candidates": 0,
+      "enumeratedSubsets": 250001
+    }
+  },
+  {
+    "candidate": 17,
+    "rows": 9,
+    "cols": 9,
+    "count": 0,
+    "exhaustive": false,
+    "budgetExhausted": true,
+    "ms": 131.26186299999972,
+    "stats": {
+      "nodes": 0,
+      "branches": 0,
+      "forced": 0,
+      "maxDepth": 0,
+      "candidates": 0,
+      "enumeratedSubsets": 250001
+    }
+  },
+  {
+    "candidate": 18,
+    "rows": 9,
+    "cols": 9,
+    "count": 0,
+    "exhaustive": false,
+    "budgetExhausted": true,
+    "ms": 70.18489799999998,
+    "stats": {
+      "nodes": 0,
+      "branches": 0,
+      "forced": 0,
+      "maxDepth": 0,
+      "candidates": 0,
+      "enumeratedSubsets": 250001
+    }
+  },
+  {
+    "candidate": 19,
+    "rows": 9,
+    "cols": 9,
+    "count": 0,
+    "exhaustive": false,
+    "budgetExhausted": true,
+    "ms": 85.91093600000022,
+    "stats": {
+      "nodes": 0,
+      "branches": 0,
+      "forced": 0,
+      "maxDepth": 0,
+      "candidates": 0,
+      "enumeratedSubsets": 250001
+    }
+  },
+  {
+    "candidate": 20,
+    "rows": 10,
+    "cols": 10,
+    "count": 0,
+    "exhaustive": false,
+    "budgetExhausted": true,
+    "ms": 189.22379599999977,
+    "stats": {
+      "nodes": 0,
+      "branches": 0,
+      "forced": 0,
+      "maxDepth": 0,
+      "candidates": 0,
+      "enumeratedSubsets": 250001
+    }
+  },
+  {
+    "candidate": 21,
+    "rows": 10,
+    "cols": 10,
+    "count": 0,
+    "exhaustive": false,
+    "budgetExhausted": true,
+    "ms": 103.53549099999964,
+    "stats": {
+      "nodes": 0,
+      "branches": 0,
+      "forced": 0,
+      "maxDepth": 0,
+      "candidates": 0,
+      "enumeratedSubsets": 250001
+    }
+  },
+  {
+    "candidate": 22,
+    "rows": 10,
+    "cols": 10,
+    "count": 0,
+    "exhaustive": false,
+    "budgetExhausted": true,
+    "ms": 132.2551470000003,
+    "stats": {
+      "nodes": 0,
+      "branches": 0,
+      "forced": 0,
+      "maxDepth": 0,
+      "candidates": 0,
+      "enumeratedSubsets": 250001
+    }
+  },
+  {
+    "candidate": 23,
+    "rows": 10,
+    "cols": 10,
+    "count": 0,
+    "exhaustive": false,
+    "budgetExhausted": true,
+    "ms": 91.96562199999971,
+    "stats": {
+      "nodes": 0,
+      "branches": 0,
+      "forced": 0,
+      "maxDepth": 0,
+      "candidates": 0,
+      "enumeratedSubsets": 250001
+    }
+  },
+  {
+    "candidate": 24,
+    "rows": 10,
+    "cols": 10,
+    "count": 0,
+    "exhaustive": false,
+    "budgetExhausted": true,
+    "ms": 131.3959749999999,
+    "stats": {
+      "nodes": 0,
+      "branches": 0,
+      "forced": 0,
+      "maxDepth": 0,
+      "candidates": 0,
+      "enumeratedSubsets": 250001
+    }
+  }
+]

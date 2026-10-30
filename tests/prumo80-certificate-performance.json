@@ -1,0 +1,642 @@
+[
+  {
+    "id": "prumo-v3-001",
+    "rows": 4,
+    "cols": 4,
+    "referenceValid": true,
+    "completeStateExhaustive": true,
+    "checkMs": 0.04954875999999999
+  },
+  {
+    "id": "prumo-v3-002",
+    "rows": 4,
+    "cols": 4,
+    "referenceValid": true,
+    "completeStateExhaustive": true,
+    "checkMs": 0.026795789999999896
+  },
+  {
+    "id": "prumo-v3-003",
+    "rows": 4,
+    "cols": 4,
+    "referenceValid": true,
+    "completeStateExhaustive": true,
+    "checkMs": 0.017449869999999947
+  },
+  {
+    "id": "prumo-v2-002",
+    "rows": 4,
+    "cols": 4,
+    "referenceValid": true,
+    "completeStateExhaustive": true,
+    "checkMs": 0.025963330000000014
+  },
+  {
+    "id": "prumo-v2-003",
+    "rows": 4,
+    "cols": 4,
+    "referenceValid": true,
+    "completeStateExhaustive": true,
+    "checkMs": 0.01764064999999988
+  },
+  {
+    "id": "prumo-v2-005",
+    "rows": 4,
+    "cols": 4,
+    "referenceValid": true,
+    "completeStateExhaustive": true,
+    "checkMs": 0.011200120000000027
+  },
+  {
+    "id": "prumo-v2-007",
+    "rows": 4,
+    "cols": 4,
+    "referenceValid": true,
+    "completeStateExhaustive": true,
+    "checkMs": 0.014270059999999916
+  },
+  {
+    "id": "prumo-v2-009",
+    "rows": 4,
+    "cols": 4,
+    "referenceValid": true,
+    "completeStateExhaustive": true,
+    "checkMs": 0.01031538999999995
+  },
+  {
+    "id": "prumo-v2-011",
+    "rows": 4,
+    "cols": 4,
+    "referenceValid": true,
+    "completeStateExhaustive": true,
+    "checkMs": 0.012518110000000035
+  },
+  {
+    "id": "prumo-v2-012",
+    "rows": 4,
+    "cols": 4,
+    "referenceValid": true,
+    "completeStateExhaustive": true,
+    "checkMs": 0.011282340000000063
+  },
+  {
+    "id": "prumo-v2-014",
+    "rows": 4,
+    "cols": 4,
+    "referenceValid": true,
+    "completeStateExhaustive": true,
+    "checkMs": 0.011283240000000062
+  },
+  {
+    "id": "prumo-v2-016",
+    "rows": 4,
+    "cols": 4,
+    "referenceValid": true,
+    "completeStateExhaustive": true,
+    "checkMs": 0.008200889999999959
+  },
+  {
+    "id": "prumo-v2-017",
+    "rows": 4,
+    "cols": 4,
+    "referenceValid": true,
+    "completeStateExhaustive": true,
+    "checkMs": 0.01030407000000011
+  },
+  {
+    "id": "prumo-v2-019",
+    "rows": 4,
+    "cols": 4,
+    "referenceValid": true,
+    "completeStateExhaustive": true,
+    "checkMs": 0.012671139999999923
+  },
+  {
+    "id": "prumo-v2-020",
+    "rows": 4,
+    "cols": 4,
+    "referenceValid": true,
+    "completeStateExhaustive": true,
+    "checkMs": 0.013258229999999998
+  },
+  {
+    "id": "prumo-v2-045",
+    "rows": 4,
+    "cols": 5,
+    "referenceValid": true,
+    "completeStateExhaustive": true,
+    "checkMs": 0.01429540000000003
+  },
+  {
+    "id": "prumo-v2-047",
+    "rows": 4,
+    "cols": 5,
+    "referenceValid": true,
+    "completeStateExhaustive": true,
+    "checkMs": 0.012195320000000152
+  },
+  {
+    "id": "prumo-v2-087",
+    "rows": 5,
+    "cols": 5,
+    "referenceValid": true,
+    "completeStateExhaustive": true,
+    "checkMs": 0.010366659999999967
+  },
+  {
+    "id": "prumo-v2-050",
+    "rows": 4,
+    "cols": 5,
+    "referenceValid": true,
+    "completeStateExhaustive": true,
+    "checkMs": 0.012828289999999925
+  },
+  {
+    "id": "prumo-v2-015",
+    "rows": 4,
+    "cols": 4,
+    "referenceValid": true,
+    "completeStateExhaustive": true,
+    "checkMs": 0.0076647800000000646
+  },
+  {
+    "id": "prumo-v2-092",
+    "rows": 5,
+    "cols": 5,
+    "referenceValid": true,
+    "completeStateExhaustive": true,
+    "checkMs": 0.012382010000000037
+  },
+  {
+    "id": "prumo-v2-055",
+    "rows": 4,
+    "cols": 5,
+    "referenceValid": true,
+    "completeStateExhaustive": true,
+    "checkMs": 0.007866789999999924
+  },
+  {
+    "id": "prumo-v2-057",
+    "rows": 4,
+    "cols": 5,
+    "referenceValid": true,
+    "completeStateExhaustive": true,
+    "checkMs": 0.008277909999999906
+  },
+  {
+    "id": "prumo-v2-097",
+    "rows": 5,
+    "cols": 5,
+    "referenceValid": true,
+    "completeStateExhaustive": true,
+    "checkMs": 0.012247509999999977
+  },
+  {
+    "id": "prumo-v2-060",
+    "rows": 4,
+    "cols": 5,
+    "referenceValid": true,
+    "completeStateExhaustive": true,
+    "checkMs": 0.008113549999999919
+  },
+  {
+    "id": "prumo-v2-026",
+    "rows": 4,
+    "cols": 4,
+    "referenceValid": true,
+    "completeStateExhaustive": true,
+    "checkMs": 0.008000490000000013
+  },
+  {
+    "id": "prumo-v2-101",
+    "rows": 5,
+    "cols": 5,
+    "referenceValid": true,
+    "completeStateExhaustive": true,
+    "checkMs": 0.011517999999999801
+  },
+  {
+    "id": "prumo-v2-064",
+    "rows": 4,
+    "cols": 5,
+    "referenceValid": true,
+    "completeStateExhaustive": true,
+    "checkMs": 0.011201020000000029
+  },
+  {
+    "id": "prumo-v2-066",
+    "rows": 4,
+    "cols": 5,
+    "referenceValid": true,
+    "completeStateExhaustive": true,
+    "checkMs": 0.008061579999999822
+  },
+  {
+    "id": "prumo-v2-106",
+    "rows": 5,
+    "cols": 5,
+    "referenceValid": true,
+    "completeStateExhaustive": true,
+    "checkMs": 0.01306083000000001
+  },
+  {
+    "id": "prumo-v2-084",
+    "rows": 5,
+    "cols": 5,
+    "referenceValid": true,
+    "completeStateExhaustive": true,
+    "checkMs": 0.010030859999999961
+  },
+  {
+    "id": "prumo-v2-126",
+    "rows": 5,
+    "cols": 6,
+    "referenceValid": true,
+    "completeStateExhaustive": true,
+    "checkMs": 0.01484421999999995
+  },
+  {
+    "id": "prumo-v2-167",
+    "rows": 6,
+    "cols": 6,
+    "referenceValid": true,
+    "completeStateExhaustive": true,
+    "checkMs": 0.01862433999999979
+  },
+  {
+    "id": "prumo-v2-089",
+    "rows": 5,
+    "cols": 5,
+    "referenceValid": true,
+    "completeStateExhaustive": true,
+    "checkMs": 0.01145150000000001
+  },
+  {
+    "id": "prumo-v2-131",
+    "rows": 5,
+    "cols": 6,
+    "referenceValid": true,
+    "completeStateExhaustive": true,
+    "checkMs": 0.014587230000000204
+  },
+  {
+    "id": "prumo-v2-172",
+    "rows": 6,
+    "cols": 6,
+    "referenceValid": true,
+    "completeStateExhaustive": true,
+    "checkMs": 0.01829152999999991
+  },
+  {
+    "id": "prumo-v2-095",
+    "rows": 5,
+    "cols": 5,
+    "referenceValid": true,
+    "completeStateExhaustive": true,
+    "checkMs": 0.010334619999999859
+  },
+  {
+    "id": "prumo-v2-136",
+    "rows": 5,
+    "cols": 6,
+    "referenceValid": true,
+    "completeStateExhaustive": true,
+    "checkMs": 0.01400074999999987
+  },
+  {
+    "id": "prumo-v2-177",
+    "rows": 6,
+    "cols": 6,
+    "referenceValid": true,
+    "completeStateExhaustive": true,
+    "checkMs": 0.019442569999999933
+  },
+  {
+    "id": "prumo-v2-100",
+    "rows": 5,
+    "cols": 5,
+    "referenceValid": true,
+    "completeStateExhaustive": true,
+    "checkMs": 0.009892339999999819
+  },
+  {
+    "id": "prumo-v2-140",
+    "rows": 5,
+    "cols": 6,
+    "referenceValid": true,
+    "completeStateExhaustive": true,
+    "checkMs": 0.014361999999999852
+  },
+  {
+    "id": "prumo-v2-181",
+    "rows": 6,
+    "cols": 6,
+    "referenceValid": true,
+    "completeStateExhaustive": true,
+    "checkMs": 0.015747690000000033
+  },
+  {
+    "id": "prumo-v2-105",
+    "rows": 5,
+    "cols": 5,
+    "referenceValid": true,
+    "completeStateExhaustive": true,
+    "checkMs": 0.009801909999999907
+  },
+  {
+    "id": "prumo-v2-144",
+    "rows": 5,
+    "cols": 6,
+    "referenceValid": true,
+    "completeStateExhaustive": true,
+    "checkMs": 0.01352452999999997
+  },
+  {
+    "id": "prumo-v2-186",
+    "rows": 6,
+    "cols": 6,
+    "referenceValid": true,
+    "completeStateExhaustive": true,
+    "checkMs": 0.016832930000000204
+  },
+  {
+    "id": "prumo-v2-190",
+    "rows": 6,
+    "cols": 6,
+    "referenceValid": true,
+    "completeStateExhaustive": true,
+    "checkMs": 0.01741340999999977
+  },
+  {
+    "id": "prumo-v3-047",
+    "rows": 7,
+    "cols": 7,
+    "referenceValid": true,
+    "completeStateExhaustive": true,
+    "checkMs": 0.04550034000000011
+  },
+  {
+    "id": "prumo-v2-150",
+    "rows": 5,
+    "cols": 6,
+    "referenceValid": true,
+    "completeStateExhaustive": true,
+    "checkMs": 0.016295519999999897
+  },
+  {
+    "id": "prumo-v3-049",
+    "rows": 7,
+    "cols": 7,
+    "referenceValid": true,
+    "completeStateExhaustive": true,
+    "checkMs": 0.02580138000000005
+  },
+  {
+    "id": "prumo-v3-050",
+    "rows": 7,
+    "cols": 7,
+    "referenceValid": true,
+    "completeStateExhaustive": true,
+    "checkMs": 0.024623300000000084
+  },
+  {
+    "id": "prumo-v2-189",
+    "rows": 6,
+    "cols": 6,
+    "referenceValid": true,
+    "completeStateExhaustive": true,
+    "checkMs": 0.018232039999999755
+  },
+  {
+    "id": "prumo-v3-052",
+    "rows": 8,
+    "cols": 8,
+    "referenceValid": true,
+    "completeStateExhaustive": true,
+    "checkMs": 0.03334537000000012
+  },
+  {
+    "id": "prumo-v3-053",
+    "rows": 7,
+    "cols": 7,
+    "referenceValid": true,
+    "completeStateExhaustive": true,
+    "checkMs": 0.023862450000000025
+  },
+  {
+    "id": "prumo-v2-112",
+    "rows": 5,
+    "cols": 5,
+    "referenceValid": true,
+    "completeStateExhaustive": true,
+    "checkMs": 0.01360465000000005
+  },
+  {
+    "id": "prumo-v3-055",
+    "rows": 8,
+    "cols": 8,
+    "referenceValid": true,
+    "completeStateExhaustive": true,
+    "checkMs": 0.03330561999999986
+  },
+  {
+    "id": "prumo-v3-056",
+    "rows": 7,
+    "cols": 7,
+    "referenceValid": true,
+    "completeStateExhaustive": true,
+    "checkMs": 0.022928129999999953
+  },
+  {
+    "id": "prumo-v3-057",
+    "rows": 8,
+    "cols": 8,
+    "referenceValid": true,
+    "completeStateExhaustive": true,
+    "checkMs": 0.03591645999999997
+  },
+  {
+    "id": "prumo-v2-191",
+    "rows": 6,
+    "cols": 6,
+    "referenceValid": true,
+    "completeStateExhaustive": true,
+    "checkMs": 0.018406909999999926
+  },
+  {
+    "id": "prumo-v3-059",
+    "rows": 8,
+    "cols": 8,
+    "referenceValid": true,
+    "completeStateExhaustive": true,
+    "checkMs": 0.038246079999999835
+  },
+  {
+    "id": "prumo-v3-060",
+    "rows": 7,
+    "cols": 7,
+    "referenceValid": true,
+    "completeStateExhaustive": true,
+    "checkMs": 0.02383902000000006
+  },
+  {
+    "id": "prumo-v3-061",
+    "rows": 8,
+    "cols": 8,
+    "referenceValid": true,
+    "completeStateExhaustive": true,
+    "checkMs": 0.03251763000000011
+  },
+  {
+    "id": "prumo-v2-196",
+    "rows": 6,
+    "cols": 6,
+    "referenceValid": true,
+    "completeStateExhaustive": true,
+    "checkMs": 0.014041009999999972
+  },
+  {
+    "id": "prumo-v3-063",
+    "rows": 9,
+    "cols": 9,
+    "referenceValid": true,
+    "completeStateExhaustive": true,
+    "checkMs": 0.04375039999999984
+  },
+  {
+    "id": "prumo-v3-064",
+    "rows": 8,
+    "cols": 8,
+    "referenceValid": true,
+    "completeStateExhaustive": true,
+    "checkMs": 0.03296310000000005
+  },
+  {
+    "id": "prumo-v2-155",
+    "rows": 5,
+    "cols": 6,
+    "referenceValid": true,
+    "completeStateExhaustive": true,
+    "checkMs": 0.013925729999999987
+  },
+  {
+    "id": "prumo-v3-066",
+    "rows": 9,
+    "cols": 9,
+    "referenceValid": true,
+    "completeStateExhaustive": true,
+    "checkMs": 0.045884120000000056
+  },
+  {
+    "id": "prumo-v3-067",
+    "rows": 8,
+    "cols": 8,
+    "referenceValid": true,
+    "completeStateExhaustive": true,
+    "checkMs": 0.032311810000000205
+  },
+  {
+    "id": "prumo-v3-068",
+    "rows": 10,
+    "cols": 10,
+    "referenceValid": true,
+    "completeStateExhaustive": true,
+    "checkMs": 0.05442532999999997
+  },
+  {
+    "id": "prumo-v2-195",
+    "rows": 6,
+    "cols": 6,
+    "referenceValid": true,
+    "completeStateExhaustive": true,
+    "checkMs": 0.016948800000000118
+  },
+  {
+    "id": "prumo-v3-070",
+    "rows": 9,
+    "cols": 9,
+    "referenceValid": true,
+    "completeStateExhaustive": true,
+    "checkMs": 0.042617979999999986
+  },
+  {
+    "id": "prumo-v3-071",
+    "rows": 8,
+    "cols": 8,
+    "referenceValid": true,
+    "completeStateExhaustive": true,
+    "checkMs": 0.033093200000000135
+  },
+  {
+    "id": "prumo-v3-072",
+    "rows": 10,
+    "cols": 10,
+    "referenceValid": true,
+    "completeStateExhaustive": true,
+    "checkMs": 0.05761405000000025
+  },
+  {
+    "id": "prumo-v2-116",
+    "rows": 5,
+    "cols": 5,
+    "referenceValid": true,
+    "completeStateExhaustive": true,
+    "checkMs": 0.011760170000000016
+  },
+  {
+    "id": "prumo-v3-074",
+    "rows": 9,
+    "cols": 9,
+    "referenceValid": true,
+    "completeStateExhaustive": true,
+    "checkMs": 0.045861290000000283
+  },
+  {
+    "id": "prumo-v3-075",
+    "rows": 10,
+    "cols": 10,
+    "referenceValid": true,
+    "completeStateExhaustive": true,
+    "checkMs": 0.0580192599999998
+  },
+  {
+    "id": "prumo-v2-199",
+    "rows": 6,
+    "cols": 6,
+    "referenceValid": true,
+    "completeStateExhaustive": true,
+    "checkMs": 0.016340190000000233
+  },
+  {
+    "id": "prumo-v3-077",
+    "rows": 8,
+    "cols": 8,
+    "referenceValid": true,
+    "completeStateExhaustive": true,
+    "checkMs": 0.0266070000000002
+  },
+  {
+    "id": "prumo-v3-078",
+    "rows": 9,
+    "cols": 9,
+    "referenceValid": true,
+    "completeStateExhaustive": true,
+    "checkMs": 0.030150260000000345
+  },
+  {
+    "id": "prumo-v3-079",
+    "rows": 10,
+    "cols": 10,
+    "referenceValid": true,
+    "completeStateExhaustive": true,
+    "checkMs": 0.04352787000000035
+  },
+  {
+    "id": "prumo-v2-200",
+    "rows": 6,
+    "cols": 6,
+    "referenceValid": true,
+    "completeStateExhaustive": true,
+    "checkMs": 0.017054860000000074
+  }
+]

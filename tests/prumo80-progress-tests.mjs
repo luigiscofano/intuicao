@@ -1,0 +1,21 @@
+import assert from 'node:assert/strict';
+import {migratePrumoProgress} from '../dist/prumo-progress.mjs';
+const levels=[{id:'prumo-v3-021'},{id:'prumo-v4-076'}];
+const history={past:[{positions:[1]}],present:{positions:[2]},future:[{positions:[3]}]};
+const data={sessions:{'prumo-v3-021':{history},'prumo-v3-076':{history,assistance:true},'custom:prumo:prumo-v3-077':{history},'endless:prumo':{history},'pacto-001':{history}},completed:['prumo-v3-021','prumo-v3-076','pacto-001'],lastSessions:{prumo:'prumo-v3-076',pacto:'pacto-001'}};
+const original=structuredClone(data);const raw=JSON.stringify({'prumo:prumo-v3-076':{failures:3,assisted:true},'prumo:prumo-v3-021':{failures:1,assisted:false}});let writes=0;const store={getItem:()=>raw,setItem:()=>writes++};
+assert.equal(migratePrumoProgress(data,levels,store),true);
+assert.deepEqual(data.sessions,original.sessions);assert.deepEqual(data.completed,original.completed);assert.equal(data.lastSessions.prumo,undefined);assert.equal(data.lastSessions.pacto,'pacto-001');
+assert.deepEqual(data.prumoLegacy.campaign80.records['prumo-v3-076'].session,original.sessions['prumo-v3-076']);assert.deepEqual(data.prumoLegacy.campaign80.records['prumo-v3-076'].answer,{failures:3,assisted:true});
+assert.deepEqual(Object.keys(data.prumoLegacy.campaign80.records),['prumo-v3-076']);assert.equal(data.sessions['prumo-v4-076'],undefined);assert.equal(writes,0);assert.equal(migratePrumoProgress(data,levels,store),false);
+const kept={lastSessions:{prumo:'prumo-v3-021'},sessions:{},completed:[]};assert.equal(migratePrumoProgress(kept,levels,{getItem:()=>null}),false);assert.equal(kept.lastSessions.prumo,'prumo-v3-021');
+assert.equal(migratePrumoProgress({sessions:{},completed:[]},levels,{getItem(){throw Error('blocked')}}),false);
+console.log('PASS PRUMO80 identity-safe archival, unchanged IDs, no ordinal mapping, custom/endless/other-game isolation, idempotence and unavailable storage.');
+
+const answerOnly={sessions:{},completed:[],lastSessions:{}};
+const answerOnlyStore={getItem:()=>JSON.stringify({'prumo:prumo-v2-199':{failures:3,assisted:true},'elo:elo-v2-001':{failures:2},'prumo:custom:prumo-v2-200':{failures:1}})};
+assert.equal(migratePrumoProgress(answerOnly,levels,answerOnlyStore),true);
+assert.deepEqual(Object.keys(answerOnly.prumoLegacy.campaign80.records),['prumo-v2-199']);
+assert.deepEqual(answerOnly.prumoLegacy.campaign80.records['prumo-v2-199'],{id:'prumo-v2-199',completed:false,answer:{failures:3,assisted:true}});
+assert.equal(migratePrumoProgress(answerOnly,levels,answerOnlyStore),false);
+console.log('PASS answer-only retired PRUMO records archived with exact IDs; other games and custom answers excluded.');

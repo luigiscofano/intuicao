@@ -1,3 +1,11 @@
+# Atualização PRUMO80 · 30/10/2026
+
+A campanha ativa de **PRUMO tem exatamente 80 níveis**, em seis faixas: Básico 1–15, Aprendiz 16–30, Intermediário 31–45, Avançado 46–60, Mestre 61–75 e Modo Sábio 76–80. As grades reais progridem de 4×4 até 10×10, intercalando enigmas compactos. Consulte a [tabela por fase e limites de validação](PRUMO80-VALIDACAO.md). Diário escolhe deste catálogo; Modo Sem Parar e fases personalizadas não aumentam a campanha. Dicas visíveis continuam exclusivas de PACTO; opções avançadas continuam exclusivas de Reflexos.
+
+As seções a seguir documentam revisões históricas. Suas antigas contagens e divisões de PRUMO não descrevem a campanha atual; não se sobrepõem à atualização acima. Os dados e gabaritos antigos são preservados como histórico, sem transferir vitórias por número de posição.
+
+---
+
 # Catálogo da revisão v5 · 25/10/2026
 
 ## Escopo

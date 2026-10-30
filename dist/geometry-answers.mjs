@@ -4,3 +4,7 @@ export const GEOMETRY_ANSWERS={"elo-v2-001":[2,0,20,22],"elo-v2-002":[18,17,12,1
 // ELO v3 campaign overlay: legacy data above remains byte-for-byte intact.
 import { ELO_CAMPAIGN_ANSWERS } from './elo-campaign-answers.mjs';
 Object.assign(GEOMETRY_ANSWERS, ELO_CAMPAIGN_ANSWERS);
+
+// PRUMO80 reference partitions; historical answers retain their original IDs.
+import { PRUMO_CAMPAIGN_ANSWERS } from './prumo-campaign-answers.mjs';
+Object.assign(GEOMETRY_ANSWERS, PRUMO_CAMPAIGN_ANSWERS);

@@ -1,0 +1,1395 @@
+{
+  "passedStructuralAssertions": true,
+  "scope": "Exact stage/grid/template/identity invariants. Metadata and candidate-overlap graphs do not prove human difficulty, mandatory corridors or dependency-chain depth.",
+  "preservedIds": 53,
+  "newIds": 27,
+  "distinctPartitions": 80,
+  "tiers": [
+    {
+      "name": "Básico",
+      "count": 15
+    },
+    {
+      "name": "Aprendiz",
+      "count": 15
+    },
+    {
+      "name": "Intermediário",
+      "count": 15
+    },
+    {
+      "name": "Avançado",
+      "count": 15
+    },
+    {
+      "name": "Mestre",
+      "count": 15
+    },
+    {
+      "name": "Modo Sábio",
+      "count": 5
+    }
+  ],
+  "records": [
+    {
+      "number": 1,
+      "id": "prumo-v3-001",
+      "tier": "Básico",
+      "dimensions": [
+        4,
+        4
+      ],
+      "supports": 4,
+      "core": "support-incidence",
+      "coreObserved": true,
+      "localSolved": true,
+      "asymmetricPieces": 0,
+      "nonRectangularPieces": 0,
+      "sharedCandidateCells": 0,
+      "preservedId": false
+    },
+    {
+      "number": 2,
+      "id": "prumo-v3-002",
+      "tier": "Básico",
+      "dimensions": [
+        4,
+        4
+      ],
+      "supports": 4,
+      "core": "support-incidence",
+      "coreObserved": true,
+      "localSolved": true,
+      "asymmetricPieces": 0,
+      "nonRectangularPieces": 0,
+      "sharedCandidateCells": 0,
+      "preservedId": false
+    },
+    {
+      "number": 3,
+      "id": "prumo-v3-003",
+      "tier": "Básico",
+      "dimensions": [
+        4,
+        4
+      ],
+      "supports": 6,
+      "core": "support-incidence",
+      "coreObserved": true,
+      "localSolved": false,
+      "asymmetricPieces": 0,
+      "nonRectangularPieces": 1,
+      "sharedCandidateCells": 2,
+      "preservedId": false
+    },
+    {
+      "number": 4,
+      "id": "prumo-v2-002",
+      "tier": "Básico",
+      "dimensions": [
+        4,
+        4
+      ],
+      "supports": 6,
+      "core": "border-support",
+      "coreObserved": true,
+      "localSolved": true,
+      "asymmetricPieces": 0,
+      "nonRectangularPieces": 0,
+      "sharedCandidateCells": 0,
+      "preservedId": true
+    },
+    {
+      "number": 5,
+      "id": "prumo-v2-003",
+      "tier": "Básico",
+      "dimensions": [
+        4,
+        4
+      ],
+      "supports": 7,
+      "core": "support-incidence",
+      "coreObserved": true,
+      "localSolved": true,
+      "asymmetricPieces": 0,
+      "nonRectangularPieces": 1,
+      "sharedCandidateCells": 0,
+      "preservedId": true
+    },
+    {
+      "number": 6,
+      "id": "prumo-v2-005",
+      "tier": "Básico",
+      "dimensions": [
+        4,
+        4
+      ],
+      "supports": 6,
+      "core": "connectivity-path",
+      "coreObserved": true,
+      "localSolved": true,
+      "asymmetricPieces": 0,
+      "nonRectangularPieces": 1,
+      "sharedCandidateCells": 0,
+      "preservedId": true
+    },
+    {
+      "number": 7,
+      "id": "prumo-v2-007",
+      "tier": "Básico",
+      "dimensions": [
+        4,
+        4
+      ],
+      "supports": 7,
+      "core": "moment-bounds",
+      "coreObserved": true,
+      "localSolved": true,
+      "asymmetricPieces": 0,
+      "nonRectangularPieces": 1,
+      "sharedCandidateCells": 0,
+      "preservedId": true
+    },
+    {
+      "number": 8,
+      "id": "prumo-v2-009",
+      "tier": "Básico",
+      "dimensions": [
+        4,
+        4
+      ],
+      "supports": 5,
+      "core": "border-support",
+      "coreObserved": true,
+      "localSolved": true,
+      "asymmetricPieces": 0,
+      "nonRectangularPieces": 1,
+      "sharedCandidateCells": 0,
+      "preservedId": true
+    },
+    {
+      "number": 9,
+      "id": "prumo-v2-011",
+      "tier": "Básico",
+      "dimensions": [
+        4,
+        4
+      ],
+      "supports": 7,
+      "core": "support-incidence",
+      "coreObserved": true,
+      "localSolved": true,
+      "asymmetricPieces": 0,
+      "nonRectangularPieces": 1,
+      "sharedCandidateCells": 0,
+      "preservedId": true
+    },
+    {
+      "number": 10,
+      "id": "prumo-v2-012",
+      "tier": "Básico",
+      "dimensions": [
+        4,
+        4
+      ],
+      "supports": 7,
+      "core": "border-support",
+      "coreObserved": true,
+      "localSolved": true,
+      "asymmetricPieces": 0,
+      "nonRectangularPieces": 2,
+      "sharedCandidateCells": 0,
+      "preservedId": true
+    },
+    {
+      "number": 11,
+      "id": "prumo-v2-014",
+      "tier": "Básico",
+      "dimensions": [
+        4,
+        4
+      ],
+      "supports": 6,
+      "core": "support-incidence",
+      "coreObserved": true,
+      "localSolved": true,
+      "asymmetricPieces": 0,
+      "nonRectangularPieces": 1,
+      "sharedCandidateCells": 0,
+      "preservedId": true
+    },
+    {
+      "number": 12,
+      "id": "prumo-v2-016",
+      "tier": "Básico",
+      "dimensions": [
+        4,
+        4
+      ],
+      "supports": 7,
+      "core": "border-support",
+      "coreObserved": true,
+      "localSolved": true,
+      "asymmetricPieces": 1,
+      "nonRectangularPieces": 1,
+      "sharedCandidateCells": 0,
+      "preservedId": true
+    },
+    {
+      "number": 13,
+      "id": "prumo-v2-017",
+      "tier": "Básico",
+      "dimensions": [
+        4,
+        4
+      ],
+      "supports": 6,
+      "core": "support-incidence",
+      "coreObserved": true,
+      "localSolved": true,
+      "asymmetricPieces": 0,
+      "nonRectangularPieces": 2,
+      "sharedCandidateCells": 0,
+      "preservedId": true
+    },
+    {
+      "number": 14,
+      "id": "prumo-v2-019",
+      "tier": "Básico",
+      "dimensions": [
+        4,
+        4
+      ],
+      "supports": 4,
+      "core": "border-support",
+      "coreObserved": true,
+      "localSolved": false,
+      "asymmetricPieces": 1,
+      "nonRectangularPieces": 1,
+      "sharedCandidateCells": 11,
+      "preservedId": true
+    },
+    {
+      "number": 15,
+      "id": "prumo-v2-020",
+      "tier": "Básico",
+      "dimensions": [
+        4,
+        4
+      ],
+      "supports": 4,
+      "core": "global-coverage",
+      "coreObserved": false,
+      "localSolved": false,
+      "asymmetricPieces": 0,
+      "nonRectangularPieces": 2,
+      "sharedCandidateCells": 6,
+      "preservedId": true
+    },
+    {
+      "number": 16,
+      "id": "prumo-v2-045",
+      "tier": "Aprendiz",
+      "dimensions": [
+        4,
+        5
+      ],
+      "supports": 5,
+      "core": "asymmetric-compensation",
+      "coreObserved": false,
+      "localSolved": false,
+      "asymmetricPieces": 1,
+      "nonRectangularPieces": 2,
+      "sharedCandidateCells": 13,
+      "preservedId": true
+    },
+    {
+      "number": 17,
+      "id": "prumo-v2-047",
+      "tier": "Aprendiz",
+      "dimensions": [
+        4,
+        5
+      ],
+      "supports": 4,
+      "core": "support-incidence",
+      "coreObserved": true,
+      "localSolved": false,
+      "asymmetricPieces": 1,
+      "nonRectangularPieces": 2,
+      "sharedCandidateCells": 14,
+      "preservedId": true
+    },
+    {
+      "number": 18,
+      "id": "prumo-v2-087",
+      "tier": "Aprendiz",
+      "dimensions": [
+        5,
+        5
+      ],
+      "supports": 6,
+      "core": "connectivity-path",
+      "coreObserved": true,
+      "localSolved": false,
+      "asymmetricPieces": 1,
+      "nonRectangularPieces": 2,
+      "sharedCandidateCells": 18,
+      "preservedId": true
+    },
+    {
+      "number": 19,
+      "id": "prumo-v2-050",
+      "tier": "Aprendiz",
+      "dimensions": [
+        4,
+        5
+      ],
+      "supports": 5,
+      "core": "moment-bounds",
+      "coreObserved": true,
+      "localSolved": false,
+      "asymmetricPieces": 1,
+      "nonRectangularPieces": 2,
+      "sharedCandidateCells": 11,
+      "preservedId": true
+    },
+    {
+      "number": 20,
+      "id": "prumo-v2-015",
+      "tier": "Aprendiz",
+      "dimensions": [
+        4,
+        4
+      ],
+      "supports": 7,
+      "core": "moment-bounds",
+      "coreObserved": true,
+      "localSolved": true,
+      "asymmetricPieces": 0,
+      "nonRectangularPieces": 2,
+      "sharedCandidateCells": 0,
+      "preservedId": true
+    },
+    {
+      "number": 21,
+      "id": "prumo-v2-092",
+      "tier": "Aprendiz",
+      "dimensions": [
+        5,
+        5
+      ],
+      "supports": 6,
+      "core": "border-support",
+      "coreObserved": true,
+      "localSolved": false,
+      "asymmetricPieces": 1,
+      "nonRectangularPieces": 2,
+      "sharedCandidateCells": 18,
+      "preservedId": true
+    },
+    {
+      "number": 22,
+      "id": "prumo-v2-055",
+      "tier": "Aprendiz",
+      "dimensions": [
+        4,
+        5
+      ],
+      "supports": 4,
+      "core": "support-incidence",
+      "coreObserved": true,
+      "localSolved": false,
+      "asymmetricPieces": 1,
+      "nonRectangularPieces": 1,
+      "sharedCandidateCells": 12,
+      "preservedId": true
+    },
+    {
+      "number": 23,
+      "id": "prumo-v2-057",
+      "tier": "Aprendiz",
+      "dimensions": [
+        4,
+        5
+      ],
+      "supports": 5,
+      "core": "connectivity-path",
+      "coreObserved": true,
+      "localSolved": false,
+      "asymmetricPieces": 1,
+      "nonRectangularPieces": 1,
+      "sharedCandidateCells": 9,
+      "preservedId": true
+    },
+    {
+      "number": 24,
+      "id": "prumo-v2-097",
+      "tier": "Aprendiz",
+      "dimensions": [
+        5,
+        5
+      ],
+      "supports": 7,
+      "core": "moment-bounds",
+      "coreObserved": true,
+      "localSolved": false,
+      "asymmetricPieces": 0,
+      "nonRectangularPieces": 2,
+      "sharedCandidateCells": 13,
+      "preservedId": true
+    },
+    {
+      "number": 25,
+      "id": "prumo-v2-060",
+      "tier": "Aprendiz",
+      "dimensions": [
+        4,
+        5
+      ],
+      "supports": 5,
+      "core": "moment-bounds",
+      "coreObserved": true,
+      "localSolved": false,
+      "asymmetricPieces": 2,
+      "nonRectangularPieces": 2,
+      "sharedCandidateCells": 14,
+      "preservedId": true
+    },
+    {
+      "number": 26,
+      "id": "prumo-v2-026",
+      "tier": "Aprendiz",
+      "dimensions": [
+        4,
+        4
+      ],
+      "supports": 5,
+      "core": "border-support",
+      "coreObserved": true,
+      "localSolved": false,
+      "asymmetricPieces": 1,
+      "nonRectangularPieces": 1,
+      "sharedCandidateCells": 10,
+      "preservedId": true
+    },
+    {
+      "number": 27,
+      "id": "prumo-v2-101",
+      "tier": "Aprendiz",
+      "dimensions": [
+        5,
+        5
+      ],
+      "supports": 6,
+      "core": "support-incidence",
+      "coreObserved": true,
+      "localSolved": false,
+      "asymmetricPieces": 1,
+      "nonRectangularPieces": 3,
+      "sharedCandidateCells": 16,
+      "preservedId": true
+    },
+    {
+      "number": 28,
+      "id": "prumo-v2-064",
+      "tier": "Aprendiz",
+      "dimensions": [
+        4,
+        5
+      ],
+      "supports": 6,
+      "core": "connectivity-path",
+      "coreObserved": true,
+      "localSolved": false,
+      "asymmetricPieces": 1,
+      "nonRectangularPieces": 2,
+      "sharedCandidateCells": 13,
+      "preservedId": true
+    },
+    {
+      "number": 29,
+      "id": "prumo-v2-066",
+      "tier": "Aprendiz",
+      "dimensions": [
+        4,
+        5
+      ],
+      "supports": 5,
+      "core": "moment-bounds",
+      "coreObserved": true,
+      "localSolved": false,
+      "asymmetricPieces": 0,
+      "nonRectangularPieces": 1,
+      "sharedCandidateCells": 7,
+      "preservedId": true
+    },
+    {
+      "number": 30,
+      "id": "prumo-v2-106",
+      "tier": "Aprendiz",
+      "dimensions": [
+        5,
+        5
+      ],
+      "supports": 7,
+      "core": "moment-bounds",
+      "coreObserved": true,
+      "localSolved": false,
+      "asymmetricPieces": 0,
+      "nonRectangularPieces": 2,
+      "sharedCandidateCells": 13,
+      "preservedId": true
+    },
+    {
+      "number": 31,
+      "id": "prumo-v2-084",
+      "tier": "Intermediário",
+      "dimensions": [
+        5,
+        5
+      ],
+      "supports": 6,
+      "core": "border-support",
+      "coreObserved": true,
+      "localSolved": false,
+      "asymmetricPieces": 2,
+      "nonRectangularPieces": 3,
+      "sharedCandidateCells": 18,
+      "preservedId": true
+    },
+    {
+      "number": 32,
+      "id": "prumo-v2-126",
+      "tier": "Intermediário",
+      "dimensions": [
+        5,
+        6
+      ],
+      "supports": 8,
+      "core": "support-incidence",
+      "coreObserved": true,
+      "localSolved": false,
+      "asymmetricPieces": 1,
+      "nonRectangularPieces": 2,
+      "sharedCandidateCells": 21,
+      "preservedId": true
+    },
+    {
+      "number": 33,
+      "id": "prumo-v2-167",
+      "tier": "Intermediário",
+      "dimensions": [
+        6,
+        6
+      ],
+      "supports": 8,
+      "core": "connectivity-path",
+      "coreObserved": true,
+      "localSolved": false,
+      "asymmetricPieces": 2,
+      "nonRectangularPieces": 4,
+      "sharedCandidateCells": 26,
+      "preservedId": true
+    },
+    {
+      "number": 34,
+      "id": "prumo-v2-089",
+      "tier": "Intermediário",
+      "dimensions": [
+        5,
+        5
+      ],
+      "supports": 6,
+      "core": "moment-bounds",
+      "coreObserved": true,
+      "localSolved": false,
+      "asymmetricPieces": 2,
+      "nonRectangularPieces": 3,
+      "sharedCandidateCells": 17,
+      "preservedId": true
+    },
+    {
+      "number": 35,
+      "id": "prumo-v2-131",
+      "tier": "Intermediário",
+      "dimensions": [
+        5,
+        6
+      ],
+      "supports": 7,
+      "core": "moment-bounds",
+      "coreObserved": true,
+      "localSolved": false,
+      "asymmetricPieces": 1,
+      "nonRectangularPieces": 3,
+      "sharedCandidateCells": 21,
+      "preservedId": true
+    },
+    {
+      "number": 36,
+      "id": "prumo-v2-172",
+      "tier": "Intermediário",
+      "dimensions": [
+        6,
+        6
+      ],
+      "supports": 9,
+      "core": "border-support",
+      "coreObserved": true,
+      "localSolved": false,
+      "asymmetricPieces": 2,
+      "nonRectangularPieces": 3,
+      "sharedCandidateCells": 23,
+      "preservedId": true
+    },
+    {
+      "number": 37,
+      "id": "prumo-v2-095",
+      "tier": "Intermediário",
+      "dimensions": [
+        5,
+        5
+      ],
+      "supports": 6,
+      "core": "support-incidence",
+      "coreObserved": true,
+      "localSolved": false,
+      "asymmetricPieces": 0,
+      "nonRectangularPieces": 2,
+      "sharedCandidateCells": 11,
+      "preservedId": true
+    },
+    {
+      "number": 38,
+      "id": "prumo-v2-136",
+      "tier": "Intermediário",
+      "dimensions": [
+        5,
+        6
+      ],
+      "supports": 7,
+      "core": "connectivity-path",
+      "coreObserved": true,
+      "localSolved": false,
+      "asymmetricPieces": 2,
+      "nonRectangularPieces": 4,
+      "sharedCandidateCells": 20,
+      "preservedId": true
+    },
+    {
+      "number": 39,
+      "id": "prumo-v2-177",
+      "tier": "Intermediário",
+      "dimensions": [
+        6,
+        6
+      ],
+      "supports": 10,
+      "core": "moment-bounds",
+      "coreObserved": true,
+      "localSolved": false,
+      "asymmetricPieces": 1,
+      "nonRectangularPieces": 2,
+      "sharedCandidateCells": 23,
+      "preservedId": true
+    },
+    {
+      "number": 40,
+      "id": "prumo-v2-100",
+      "tier": "Intermediário",
+      "dimensions": [
+        5,
+        5
+      ],
+      "supports": 7,
+      "core": "moment-bounds",
+      "coreObserved": true,
+      "localSolved": false,
+      "asymmetricPieces": 1,
+      "nonRectangularPieces": 2,
+      "sharedCandidateCells": 14,
+      "preservedId": true
+    },
+    {
+      "number": 41,
+      "id": "prumo-v2-140",
+      "tier": "Intermediário",
+      "dimensions": [
+        5,
+        6
+      ],
+      "supports": 8,
+      "core": "border-support",
+      "coreObserved": true,
+      "localSolved": false,
+      "asymmetricPieces": 0,
+      "nonRectangularPieces": 2,
+      "sharedCandidateCells": 15,
+      "preservedId": true
+    },
+    {
+      "number": 42,
+      "id": "prumo-v2-181",
+      "tier": "Intermediário",
+      "dimensions": [
+        6,
+        6
+      ],
+      "supports": 8,
+      "core": "support-incidence",
+      "coreObserved": true,
+      "localSolved": false,
+      "asymmetricPieces": 2,
+      "nonRectangularPieces": 4,
+      "sharedCandidateCells": 24,
+      "preservedId": true
+    },
+    {
+      "number": 43,
+      "id": "prumo-v2-105",
+      "tier": "Intermediário",
+      "dimensions": [
+        5,
+        5
+      ],
+      "supports": 7,
+      "core": "connectivity-path",
+      "coreObserved": true,
+      "localSolved": false,
+      "asymmetricPieces": 1,
+      "nonRectangularPieces": 3,
+      "sharedCandidateCells": 17,
+      "preservedId": true
+    },
+    {
+      "number": 44,
+      "id": "prumo-v2-144",
+      "tier": "Intermediário",
+      "dimensions": [
+        5,
+        6
+      ],
+      "supports": 7,
+      "core": "moment-bounds",
+      "coreObserved": true,
+      "localSolved": false,
+      "asymmetricPieces": 0,
+      "nonRectangularPieces": 2,
+      "sharedCandidateCells": 18,
+      "preservedId": true
+    },
+    {
+      "number": 45,
+      "id": "prumo-v2-186",
+      "tier": "Intermediário",
+      "dimensions": [
+        6,
+        6
+      ],
+      "supports": 9,
+      "core": "moment-bounds",
+      "coreObserved": true,
+      "localSolved": false,
+      "asymmetricPieces": 2,
+      "nonRectangularPieces": 4,
+      "sharedCandidateCells": 23,
+      "preservedId": true
+    },
+    {
+      "number": 46,
+      "id": "prumo-v2-190",
+      "tier": "Avançado",
+      "dimensions": [
+        6,
+        6
+      ],
+      "supports": 10,
+      "core": "border-support",
+      "coreObserved": true,
+      "localSolved": false,
+      "asymmetricPieces": 1,
+      "nonRectangularPieces": 4,
+      "sharedCandidateCells": 19,
+      "preservedId": true
+    },
+    {
+      "number": 47,
+      "id": "prumo-v3-047",
+      "tier": "Avançado",
+      "dimensions": [
+        7,
+        7
+      ],
+      "supports": 11,
+      "core": "support-incidence",
+      "coreObserved": true,
+      "localSolved": false,
+      "asymmetricPieces": 3,
+      "nonRectangularPieces": 3,
+      "sharedCandidateCells": 31,
+      "preservedId": false
+    },
+    {
+      "number": 48,
+      "id": "prumo-v2-150",
+      "tier": "Avançado",
+      "dimensions": [
+        5,
+        6
+      ],
+      "supports": 8,
+      "core": "connectivity-path",
+      "coreObserved": true,
+      "localSolved": false,
+      "asymmetricPieces": 1,
+      "nonRectangularPieces": 3,
+      "sharedCandidateCells": 20,
+      "preservedId": true
+    },
+    {
+      "number": 49,
+      "id": "prumo-v3-049",
+      "tier": "Avançado",
+      "dimensions": [
+        7,
+        7
+      ],
+      "supports": 9,
+      "core": "moment-bounds",
+      "coreObserved": true,
+      "localSolved": false,
+      "asymmetricPieces": 2,
+      "nonRectangularPieces": 4,
+      "sharedCandidateCells": 33,
+      "preservedId": false
+    },
+    {
+      "number": 50,
+      "id": "prumo-v3-050",
+      "tier": "Avançado",
+      "dimensions": [
+        7,
+        7
+      ],
+      "supports": 10,
+      "core": "moment-bounds",
+      "coreObserved": true,
+      "localSolved": false,
+      "asymmetricPieces": 3,
+      "nonRectangularPieces": 3,
+      "sharedCandidateCells": 32,
+      "preservedId": false
+    },
+    {
+      "number": 51,
+      "id": "prumo-v2-189",
+      "tier": "Avançado",
+      "dimensions": [
+        6,
+        6
+      ],
+      "supports": 9,
+      "core": "border-support",
+      "coreObserved": true,
+      "localSolved": false,
+      "asymmetricPieces": 2,
+      "nonRectangularPieces": 5,
+      "sharedCandidateCells": 25,
+      "preservedId": true
+    },
+    {
+      "number": 52,
+      "id": "prumo-v3-052",
+      "tier": "Avançado",
+      "dimensions": [
+        8,
+        8
+      ],
+      "supports": 12,
+      "core": "support-incidence",
+      "coreObserved": true,
+      "localSolved": false,
+      "asymmetricPieces": 1,
+      "nonRectangularPieces": 4,
+      "sharedCandidateCells": 45,
+      "preservedId": false
+    },
+    {
+      "number": 53,
+      "id": "prumo-v3-053",
+      "tier": "Avançado",
+      "dimensions": [
+        7,
+        7
+      ],
+      "supports": 9,
+      "core": "connectivity-path",
+      "coreObserved": true,
+      "localSolved": false,
+      "asymmetricPieces": 0,
+      "nonRectangularPieces": 3,
+      "sharedCandidateCells": 36,
+      "preservedId": false
+    },
+    {
+      "number": 54,
+      "id": "prumo-v2-112",
+      "tier": "Avançado",
+      "dimensions": [
+        5,
+        5
+      ],
+      "supports": 7,
+      "core": "moment-bounds",
+      "coreObserved": true,
+      "localSolved": false,
+      "asymmetricPieces": 0,
+      "nonRectangularPieces": 2,
+      "sharedCandidateCells": 15,
+      "preservedId": true
+    },
+    {
+      "number": 55,
+      "id": "prumo-v3-055",
+      "tier": "Avançado",
+      "dimensions": [
+        8,
+        8
+      ],
+      "supports": 11,
+      "core": "moment-bounds",
+      "coreObserved": true,
+      "localSolved": false,
+      "asymmetricPieces": 2,
+      "nonRectangularPieces": 4,
+      "sharedCandidateCells": 45,
+      "preservedId": false
+    },
+    {
+      "number": 56,
+      "id": "prumo-v3-056",
+      "tier": "Avançado",
+      "dimensions": [
+        7,
+        7
+      ],
+      "supports": 8,
+      "core": "border-support",
+      "coreObserved": true,
+      "localSolved": false,
+      "asymmetricPieces": 3,
+      "nonRectangularPieces": 3,
+      "sharedCandidateCells": 36,
+      "preservedId": false
+    },
+    {
+      "number": 57,
+      "id": "prumo-v3-057",
+      "tier": "Avançado",
+      "dimensions": [
+        8,
+        8
+      ],
+      "supports": 12,
+      "core": "support-incidence",
+      "coreObserved": true,
+      "localSolved": false,
+      "asymmetricPieces": 3,
+      "nonRectangularPieces": 4,
+      "sharedCandidateCells": 46,
+      "preservedId": false
+    },
+    {
+      "number": 58,
+      "id": "prumo-v2-191",
+      "tier": "Avançado",
+      "dimensions": [
+        6,
+        6
+      ],
+      "supports": 9,
+      "core": "connectivity-path",
+      "coreObserved": true,
+      "localSolved": false,
+      "asymmetricPieces": 1,
+      "nonRectangularPieces": 2,
+      "sharedCandidateCells": 24,
+      "preservedId": true
+    },
+    {
+      "number": 59,
+      "id": "prumo-v3-059",
+      "tier": "Avançado",
+      "dimensions": [
+        8,
+        8
+      ],
+      "supports": 11,
+      "core": "moment-bounds",
+      "coreObserved": true,
+      "localSolved": false,
+      "asymmetricPieces": 3,
+      "nonRectangularPieces": 4,
+      "sharedCandidateCells": 48,
+      "preservedId": false
+    },
+    {
+      "number": 60,
+      "id": "prumo-v3-060",
+      "tier": "Avançado",
+      "dimensions": [
+        7,
+        7
+      ],
+      "supports": 9,
+      "core": "moment-bounds",
+      "coreObserved": true,
+      "localSolved": false,
+      "asymmetricPieces": 3,
+      "nonRectangularPieces": 3,
+      "sharedCandidateCells": 36,
+      "preservedId": false
+    },
+    {
+      "number": 61,
+      "id": "prumo-v3-061",
+      "tier": "Mestre",
+      "dimensions": [
+        8,
+        8
+      ],
+      "supports": 10,
+      "core": "border-support",
+      "coreObserved": true,
+      "localSolved": false,
+      "asymmetricPieces": 4,
+      "nonRectangularPieces": 5,
+      "sharedCandidateCells": 48,
+      "preservedId": false
+    },
+    {
+      "number": 62,
+      "id": "prumo-v2-196",
+      "tier": "Mestre",
+      "dimensions": [
+        6,
+        6
+      ],
+      "supports": 7,
+      "core": "support-incidence",
+      "coreObserved": true,
+      "localSolved": false,
+      "asymmetricPieces": 1,
+      "nonRectangularPieces": 3,
+      "sharedCandidateCells": 23,
+      "preservedId": true
+    },
+    {
+      "number": 63,
+      "id": "prumo-v3-063",
+      "tier": "Mestre",
+      "dimensions": [
+        9,
+        9
+      ],
+      "supports": 15,
+      "core": "connectivity-path",
+      "coreObserved": true,
+      "localSolved": false,
+      "asymmetricPieces": 3,
+      "nonRectangularPieces": 5,
+      "sharedCandidateCells": 56,
+      "preservedId": false
+    },
+    {
+      "number": 64,
+      "id": "prumo-v3-064",
+      "tier": "Mestre",
+      "dimensions": [
+        8,
+        8
+      ],
+      "supports": 12,
+      "core": "moment-bounds",
+      "coreObserved": true,
+      "localSolved": false,
+      "asymmetricPieces": 1,
+      "nonRectangularPieces": 4,
+      "sharedCandidateCells": 47,
+      "preservedId": false
+    },
+    {
+      "number": 65,
+      "id": "prumo-v2-155",
+      "tier": "Mestre",
+      "dimensions": [
+        5,
+        6
+      ],
+      "supports": 8,
+      "core": "moment-bounds",
+      "coreObserved": true,
+      "localSolved": false,
+      "asymmetricPieces": 1,
+      "nonRectangularPieces": 4,
+      "sharedCandidateCells": 21,
+      "preservedId": true
+    },
+    {
+      "number": 66,
+      "id": "prumo-v3-066",
+      "tier": "Mestre",
+      "dimensions": [
+        9,
+        9
+      ],
+      "supports": 16,
+      "core": "border-support",
+      "coreObserved": true,
+      "localSolved": false,
+      "asymmetricPieces": 4,
+      "nonRectangularPieces": 5,
+      "sharedCandidateCells": 55,
+      "preservedId": false
+    },
+    {
+      "number": 67,
+      "id": "prumo-v3-067",
+      "tier": "Mestre",
+      "dimensions": [
+        8,
+        8
+      ],
+      "supports": 13,
+      "core": "support-incidence",
+      "coreObserved": true,
+      "localSolved": false,
+      "asymmetricPieces": 2,
+      "nonRectangularPieces": 4,
+      "sharedCandidateCells": 43,
+      "preservedId": false
+    },
+    {
+      "number": 68,
+      "id": "prumo-v3-068",
+      "tier": "Mestre",
+      "dimensions": [
+        10,
+        10
+      ],
+      "supports": 16,
+      "core": "connectivity-path",
+      "coreObserved": true,
+      "localSolved": false,
+      "asymmetricPieces": 6,
+      "nonRectangularPieces": 7,
+      "sharedCandidateCells": 75,
+      "preservedId": false
+    },
+    {
+      "number": 69,
+      "id": "prumo-v2-195",
+      "tier": "Mestre",
+      "dimensions": [
+        6,
+        6
+      ],
+      "supports": 10,
+      "core": "moment-bounds",
+      "coreObserved": true,
+      "localSolved": false,
+      "asymmetricPieces": 2,
+      "nonRectangularPieces": 3,
+      "sharedCandidateCells": 25,
+      "preservedId": true
+    },
+    {
+      "number": 70,
+      "id": "prumo-v3-070",
+      "tier": "Mestre",
+      "dimensions": [
+        9,
+        9
+      ],
+      "supports": 14,
+      "core": "moment-bounds",
+      "coreObserved": true,
+      "localSolved": false,
+      "asymmetricPieces": 5,
+      "nonRectangularPieces": 5,
+      "sharedCandidateCells": 61,
+      "preservedId": false
+    },
+    {
+      "number": 71,
+      "id": "prumo-v3-071",
+      "tier": "Mestre",
+      "dimensions": [
+        8,
+        8
+      ],
+      "supports": 12,
+      "core": "border-support",
+      "coreObserved": true,
+      "localSolved": false,
+      "asymmetricPieces": 4,
+      "nonRectangularPieces": 5,
+      "sharedCandidateCells": 46,
+      "preservedId": false
+    },
+    {
+      "number": 72,
+      "id": "prumo-v3-072",
+      "tier": "Mestre",
+      "dimensions": [
+        10,
+        10
+      ],
+      "supports": 18,
+      "core": "support-incidence",
+      "coreObserved": true,
+      "localSolved": false,
+      "asymmetricPieces": 5,
+      "nonRectangularPieces": 7,
+      "sharedCandidateCells": 73,
+      "preservedId": false
+    },
+    {
+      "number": 73,
+      "id": "prumo-v2-116",
+      "tier": "Mestre",
+      "dimensions": [
+        5,
+        5
+      ],
+      "supports": 8,
+      "core": "connectivity-path",
+      "coreObserved": true,
+      "localSolved": false,
+      "asymmetricPieces": 0,
+      "nonRectangularPieces": 2,
+      "sharedCandidateCells": 9,
+      "preservedId": true
+    },
+    {
+      "number": 74,
+      "id": "prumo-v3-074",
+      "tier": "Mestre",
+      "dimensions": [
+        9,
+        9
+      ],
+      "supports": 16,
+      "core": "moment-bounds",
+      "coreObserved": true,
+      "localSolved": false,
+      "asymmetricPieces": 2,
+      "nonRectangularPieces": 4,
+      "sharedCandidateCells": 54,
+      "preservedId": false
+    },
+    {
+      "number": 75,
+      "id": "prumo-v3-075",
+      "tier": "Mestre",
+      "dimensions": [
+        10,
+        10
+      ],
+      "supports": 17,
+      "core": "moment-bounds",
+      "coreObserved": true,
+      "localSolved": false,
+      "asymmetricPieces": 6,
+      "nonRectangularPieces": 6,
+      "sharedCandidateCells": 74,
+      "preservedId": false
+    },
+    {
+      "number": 76,
+      "id": "prumo-v2-199",
+      "tier": "Modo Sábio",
+      "dimensions": [
+        6,
+        6
+      ],
+      "supports": 9,
+      "core": "asymmetric-compensation",
+      "coreObserved": false,
+      "localSolved": false,
+      "asymmetricPieces": 1,
+      "nonRectangularPieces": 4,
+      "sharedCandidateCells": 24,
+      "preservedId": true
+    },
+    {
+      "number": 77,
+      "id": "prumo-v3-077",
+      "tier": "Modo Sábio",
+      "dimensions": [
+        8,
+        8
+      ],
+      "supports": 11,
+      "core": "shared-corridor",
+      "coreObserved": false,
+      "localSolved": false,
+      "asymmetricPieces": 5,
+      "nonRectangularPieces": 5,
+      "sharedCandidateCells": 48,
+      "preservedId": false
+    },
+    {
+      "number": 78,
+      "id": "prumo-v3-078",
+      "tier": "Modo Sábio",
+      "dimensions": [
+        9,
+        9
+      ],
+      "supports": 14,
+      "core": "compensation-and-access",
+      "coreObserved": false,
+      "localSolved": false,
+      "asymmetricPieces": 3,
+      "nonRectangularPieces": 5,
+      "sharedCandidateCells": 60,
+      "preservedId": false
+    },
+    {
+      "number": 79,
+      "id": "prumo-v3-079",
+      "tier": "Modo Sábio",
+      "dimensions": [
+        10,
+        10
+      ],
+      "supports": 15,
+      "core": "dependency-chain",
+      "coreObserved": false,
+      "localSolved": false,
+      "asymmetricPieces": 3,
+      "nonRectangularPieces": 7,
+      "sharedCandidateCells": 76,
+      "preservedId": false
+    },
+    {
+      "number": 80,
+      "id": "prumo-v2-200",
+      "tier": "Modo Sábio",
+      "dimensions": [
+        6,
+        6
+      ],
+      "supports": 9,
+      "core": "global-coverage",
+      "coreObserved": false,
+      "localSolved": false,
+      "asymmetricPieces": 1,
+      "nonRectangularPieces": 3,
+      "sharedCandidateCells": 22,
+      "preservedId": true
+    }
+  ]
+}

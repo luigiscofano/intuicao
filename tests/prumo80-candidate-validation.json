@@ -1,0 +1,4191 @@
+[
+  {
+    "id": "candidate-0",
+    "number": 1,
+    "rows": 7,
+    "cols": 7,
+    "supports": 11,
+    "certificate": {
+      "completePartition": true,
+      "allowedAnchors": true,
+      "unitMass": true,
+      "exactZeroMoments": true,
+      "orthogonalConnectivity": true,
+      "incidentCells": true,
+      "pieces": [
+        {
+          "support": 0,
+          "size": 16,
+          "momentX": 0,
+          "momentY": 0,
+          "incident": [
+            16
+          ],
+          "connected": true
+        },
+        {
+          "support": 1,
+          "size": 2,
+          "momentX": 0,
+          "momentY": 0,
+          "incident": [
+            1,
+            2
+          ],
+          "connected": true
+        },
+        {
+          "support": 2,
+          "size": 11,
+          "momentX": 0,
+          "momentY": 0,
+          "incident": [
+            19
+          ],
+          "connected": true
+        },
+        {
+          "support": 3,
+          "size": 1,
+          "momentX": 0,
+          "momentY": 0,
+          "incident": [
+            13
+          ],
+          "connected": true
+        },
+        {
+          "support": 4,
+          "size": 1,
+          "momentX": 0,
+          "momentY": 0,
+          "incident": [
+            18
+          ],
+          "connected": true
+        },
+        {
+          "support": 5,
+          "size": 8,
+          "momentX": 0,
+          "momentY": 0,
+          "incident": [
+            36,
+            37
+          ],
+          "connected": true
+        },
+        {
+          "support": 6,
+          "size": 2,
+          "momentX": 0,
+          "momentY": 0,
+          "incident": [
+            22,
+            29
+          ],
+          "connected": true
+        },
+        {
+          "support": 7,
+          "size": 2,
+          "momentX": 0,
+          "momentY": 0,
+          "incident": [
+            34,
+            41
+          ],
+          "connected": true
+        },
+        {
+          "support": 8,
+          "size": 2,
+          "momentX": 0,
+          "momentY": 0,
+          "incident": [
+            39,
+            40
+          ],
+          "connected": true
+        },
+        {
+          "support": 9,
+          "size": 2,
+          "momentX": 0,
+          "momentY": 0,
+          "incident": [
+            42,
+            43
+          ],
+          "connected": true
+        },
+        {
+          "support": 10,
+          "size": 2,
+          "momentX": 0,
+          "momentY": 0,
+          "incident": [
+            47,
+            48
+          ],
+          "connected": true
+        }
+      ],
+      "milliseconds": 0.0845
+    },
+    "uniqueness": {
+      "method": "independent MILP assignment + two integer moments + connectivity flow; excludes reference",
+      "status": "unique",
+      "solverStatus": 2,
+      "message": "The problem is infeasible. (HiGHS Status 8: model_status is Infeasible; primal_status is None)",
+      "seconds": 0.832,
+      "timeLimitSeconds": 3.0,
+      "numerics": "HiGHS floating-point MILP feasibility; mip_rel_gap=0, other tolerances solver defaults. Infeasible is complete-model MILP evidence, not an exported exact-rational proof."
+    },
+    "definitionSha256": "792f518639b3d7364878eea088952648126e5382301ad74d21136cee7e5fcbb0",
+    "seed": 70000
+  },
+  {
+    "id": "candidate-1",
+    "number": 2,
+    "rows": 7,
+    "cols": 7,
+    "supports": 9,
+    "certificate": {
+      "completePartition": true,
+      "allowedAnchors": true,
+      "unitMass": true,
+      "exactZeroMoments": true,
+      "orthogonalConnectivity": true,
+      "incidentCells": true,
+      "pieces": [
+        {
+          "support": 0,
+          "size": 14,
+          "momentX": 0,
+          "momentY": 0,
+          "incident": [
+            15,
+            22
+          ],
+          "connected": true
+        },
+        {
+          "support": 1,
+          "size": 12,
+          "momentX": 0,
+          "momentY": 0,
+          "incident": [
+            11,
+            18
+          ],
+          "connected": true
+        },
+        {
+          "support": 2,
+          "size": 2,
+          "momentX": 0,
+          "momentY": 0,
+          "incident": [
+            5,
+            6
+          ],
+          "connected": true
+        },
+        {
+          "support": 3,
+          "size": 2,
+          "momentX": 0,
+          "momentY": 0,
+          "incident": [
+            9,
+            16
+          ],
+          "connected": true
+        },
+        {
+          "support": 4,
+          "size": 2,
+          "momentX": 0,
+          "momentY": 0,
+          "incident": [
+            13,
+            20
+          ],
+          "connected": true
+        },
+        {
+          "support": 5,
+          "size": 8,
+          "momentX": 0,
+          "momentY": 0,
+          "incident": [
+            37
+          ],
+          "connected": true
+        },
+        {
+          "support": 6,
+          "size": 5,
+          "momentX": 0,
+          "momentY": 0,
+          "incident": [
+            40
+          ],
+          "connected": true
+        },
+        {
+          "support": 7,
+          "size": 2,
+          "momentX": 0,
+          "momentY": 0,
+          "incident": [
+            41,
+            48
+          ],
+          "connected": true
+        },
+        {
+          "support": 8,
+          "size": 2,
+          "momentX": 0,
+          "momentY": 0,
+          "incident": [
+            44,
+            45
+          ],
+          "connected": true
+        }
+      ],
+      "milliseconds": 0.0915
+    },
+    "uniqueness": {
+      "method": "independent MILP assignment + two integer moments + connectivity flow; excludes reference",
+      "status": "unique",
+      "solverStatus": 2,
+      "message": "The problem is infeasible. (HiGHS Status 8: model_status is Infeasible; primal_status is None)",
+      "seconds": 0.3819,
+      "timeLimitSeconds": 3.0,
+      "numerics": "HiGHS floating-point MILP feasibility; mip_rel_gap=0, other tolerances solver defaults. Infeasible is complete-model MILP evidence, not an exported exact-rational proof."
+    },
+    "definitionSha256": "65a243f0deed40e0c6b4d898a1f3894588f08a4dbcd9638bc7a3f51b12b51972",
+    "seed": 70100
+  },
+  {
+    "id": "candidate-2",
+    "number": 3,
+    "rows": 7,
+    "cols": 7,
+    "supports": 10,
+    "certificate": {
+      "completePartition": true,
+      "allowedAnchors": true,
+      "unitMass": true,
+      "exactZeroMoments": true,
+      "orthogonalConnectivity": true,
+      "incidentCells": true,
+      "pieces": [
+        {
+          "support": 0,
+          "size": 14,
+          "momentX": 0,
+          "momentY": 0,
+          "incident": [
+            9,
+            16
+          ],
+          "connected": true
+        },
+        {
+          "support": 1,
+          "size": 2,
+          "momentX": 0,
+          "momentY": 0,
+          "incident": [
+            1,
+            2
+          ],
+          "connected": true
+        },
+        {
+          "support": 2,
+          "size": 11,
+          "momentX": 0,
+          "momentY": 0,
+          "incident": [
+            26
+          ],
+          "connected": true
+        },
+        {
+          "support": 3,
+          "size": 1,
+          "momentX": 0,
+          "momentY": 0,
+          "incident": [
+            6
+          ],
+          "connected": true
+        },
+        {
+          "support": 4,
+          "size": 2,
+          "momentX": 0,
+          "momentY": 0,
+          "incident": [
+            13,
+            20
+          ],
+          "connected": true
+        },
+        {
+          "support": 5,
+          "size": 12,
+          "momentX": 0,
+          "momentY": 0,
+          "incident": [
+            36,
+            37
+          ],
+          "connected": true
+        },
+        {
+          "support": 6,
+          "size": 2,
+          "momentX": 0,
+          "momentY": 0,
+          "incident": [
+            22,
+            29
+          ],
+          "connected": true
+        },
+        {
+          "support": 7,
+          "size": 2,
+          "momentX": 0,
+          "momentY": 0,
+          "incident": [
+            25,
+            32
+          ],
+          "connected": true
+        },
+        {
+          "support": 8,
+          "size": 1,
+          "momentX": 0,
+          "momentY": 0,
+          "incident": [
+            38
+          ],
+          "connected": true
+        },
+        {
+          "support": 9,
+          "size": 2,
+          "momentX": 0,
+          "momentY": 0,
+          "incident": [
+            41,
+            48
+          ],
+          "connected": true
+        }
+      ],
+      "milliseconds": 0.0759
+    },
+    "uniqueness": {
+      "method": "independent MILP assignment + two integer moments + connectivity flow; excludes reference",
+      "status": "inconclusive",
+      "solverStatus": 1,
+      "message": "Time limit reached. (HiGHS Status 13: model_status is Time limit reached; primal_status is None)",
+      "seconds": 3.0068,
+      "timeLimitSeconds": 3.0,
+      "numerics": "HiGHS floating-point MILP feasibility; mip_rel_gap=0, other tolerances solver defaults. Infeasible is complete-model MILP evidence, not an exported exact-rational proof."
+    },
+    "definitionSha256": "05326d5a906bf30aa19bf6f8200d78304194346a043c1ccfd2088c3774f8ccbe",
+    "seed": 70200
+  },
+  {
+    "id": "candidate-3",
+    "number": 4,
+    "rows": 7,
+    "cols": 7,
+    "supports": 9,
+    "certificate": {
+      "completePartition": true,
+      "allowedAnchors": true,
+      "unitMass": true,
+      "exactZeroMoments": true,
+      "orthogonalConnectivity": true,
+      "incidentCells": true,
+      "pieces": [
+        {
+          "support": 0,
+          "size": 14,
+          "momentX": 0,
+          "momentY": 0,
+          "incident": [
+            9,
+            16
+          ],
+          "connected": true
+        },
+        {
+          "support": 1,
+          "size": 3,
+          "momentX": 0,
+          "momentY": 0,
+          "incident": [
+            3
+          ],
+          "connected": true
+        },
+        {
+          "support": 2,
+          "size": 10,
+          "momentX": 0,
+          "momentY": 0,
+          "incident": [
+            19,
+            26
+          ],
+          "connected": true
+        },
+        {
+          "support": 3,
+          "size": 3,
+          "momentX": 0,
+          "momentY": 0,
+          "incident": [
+            27
+          ],
+          "connected": true
+        },
+        {
+          "support": 4,
+          "size": 12,
+          "momentX": 0,
+          "momentY": 0,
+          "incident": [
+            30,
+            37
+          ],
+          "connected": true
+        },
+        {
+          "support": 5,
+          "size": 3,
+          "momentX": 0,
+          "momentY": 0,
+          "incident": [
+            35
+          ],
+          "connected": true
+        },
+        {
+          "support": 6,
+          "size": 2,
+          "momentX": 0,
+          "momentY": 0,
+          "incident": [
+            41,
+            48
+          ],
+          "connected": true
+        },
+        {
+          "support": 7,
+          "size": 1,
+          "momentX": 0,
+          "momentY": 0,
+          "incident": [
+            43
+          ],
+          "connected": true
+        },
+        {
+          "support": 8,
+          "size": 1,
+          "momentX": 0,
+          "momentY": 0,
+          "incident": [
+            47
+          ],
+          "connected": true
+        }
+      ],
+      "milliseconds": 0.1386
+    },
+    "uniqueness": {
+      "method": "independent MILP assignment + two integer moments + connectivity flow; excludes reference",
+      "status": "unique",
+      "solverStatus": 2,
+      "message": "The problem is infeasible. (HiGHS Status 8: model_status is Infeasible; primal_status is None)",
+      "seconds": 2.2552,
+      "timeLimitSeconds": 3.0,
+      "numerics": "HiGHS floating-point MILP feasibility; mip_rel_gap=0, other tolerances solver defaults. Infeasible is complete-model MILP evidence, not an exported exact-rational proof."
+    },
+    "definitionSha256": "b8394d8d55489b326643ec97f3a0565ad6548e5e7e4e4c54d79e6642b8ae2a36",
+    "seed": 70300
+  },
+  {
+    "id": "candidate-4",
+    "number": 5,
+    "rows": 7,
+    "cols": 7,
+    "supports": 8,
+    "certificate": {
+      "completePartition": true,
+      "allowedAnchors": true,
+      "unitMass": true,
+      "exactZeroMoments": true,
+      "orthogonalConnectivity": true,
+      "incidentCells": true,
+      "pieces": [
+        {
+          "support": 0,
+          "size": 14,
+          "momentX": 0,
+          "momentY": 0,
+          "incident": [
+            9,
+            10
+          ],
+          "connected": true
+        },
+        {
+          "support": 1,
+          "size": 1,
+          "momentX": 0,
+          "momentY": 0,
+          "incident": [
+            2
+          ],
+          "connected": true
+        },
+        {
+          "support": 2,
+          "size": 13,
+          "momentX": 0,
+          "momentY": 0,
+          "incident": [
+            26
+          ],
+          "connected": true
+        },
+        {
+          "support": 3,
+          "size": 10,
+          "momentX": 0,
+          "momentY": 0,
+          "incident": [
+            28,
+            29
+          ],
+          "connected": true
+        },
+        {
+          "support": 4,
+          "size": 3,
+          "momentX": 0,
+          "momentY": 0,
+          "incident": [
+            24
+          ],
+          "connected": true
+        },
+        {
+          "support": 5,
+          "size": 2,
+          "momentX": 0,
+          "momentY": 0,
+          "incident": [
+            37,
+            38
+          ],
+          "connected": true
+        },
+        {
+          "support": 6,
+          "size": 2,
+          "momentX": 0,
+          "momentY": 0,
+          "incident": [
+            41,
+            48
+          ],
+          "connected": true
+        },
+        {
+          "support": 7,
+          "size": 4,
+          "momentX": 0,
+          "momentY": 0,
+          "incident": [
+            45,
+            46
+          ],
+          "connected": true
+        }
+      ],
+      "milliseconds": 0.0712
+    },
+    "uniqueness": {
+      "method": "independent MILP assignment + two integer moments + connectivity flow; excludes reference",
+      "status": "inconclusive",
+      "solverStatus": 1,
+      "message": "Time limit reached. (HiGHS Status 13: model_status is Time limit reached; primal_status is None)",
+      "seconds": 3.0082,
+      "timeLimitSeconds": 3.0,
+      "numerics": "HiGHS floating-point MILP feasibility; mip_rel_gap=0, other tolerances solver defaults. Infeasible is complete-model MILP evidence, not an exported exact-rational proof."
+    },
+    "definitionSha256": "2bf140853f8ab328265899863a3812202b51f0a2129194e54af9baae87f6c4cd",
+    "seed": 70400
+  },
+  {
+    "id": "candidate-5",
+    "number": 6,
+    "rows": 7,
+    "cols": 7,
+    "supports": 9,
+    "certificate": {
+      "completePartition": true,
+      "allowedAnchors": true,
+      "unitMass": true,
+      "exactZeroMoments": true,
+      "orthogonalConnectivity": true,
+      "incidentCells": true,
+      "pieces": [
+        {
+          "support": 0,
+          "size": 14,
+          "momentX": 0,
+          "momentY": 0,
+          "incident": [
+            16
+          ],
+          "connected": true
+        },
+        {
+          "support": 1,
+          "size": 10,
+          "momentX": 0,
+          "momentY": 0,
+          "incident": [
+            11
+          ],
+          "connected": true
+        },
+        {
+          "support": 2,
+          "size": 2,
+          "momentX": 0,
+          "momentY": 0,
+          "incident": [
+            6,
+            13
+          ],
+          "connected": true
+        },
+        {
+          "support": 3,
+          "size": 10,
+          "momentX": 0,
+          "momentY": 0,
+          "incident": [
+            29,
+            36
+          ],
+          "connected": true
+        },
+        {
+          "support": 4,
+          "size": 1,
+          "momentX": 0,
+          "momentY": 0,
+          "incident": [
+            20
+          ],
+          "connected": true
+        },
+        {
+          "support": 5,
+          "size": 4,
+          "momentX": 0,
+          "momentY": 0,
+          "incident": [
+            32,
+            33
+          ],
+          "connected": true
+        },
+        {
+          "support": 6,
+          "size": 3,
+          "momentX": 0,
+          "momentY": 0,
+          "incident": [
+            40
+          ],
+          "connected": true
+        },
+        {
+          "support": 7,
+          "size": 1,
+          "momentX": 0,
+          "momentY": 0,
+          "incident": [
+            42
+          ],
+          "connected": true
+        },
+        {
+          "support": 8,
+          "size": 4,
+          "momentX": 0,
+          "momentY": 0,
+          "incident": [
+            46,
+            47
+          ],
+          "connected": true
+        }
+      ],
+      "milliseconds": 0.1448
+    },
+    "uniqueness": {
+      "method": "independent MILP assignment + two integer moments + connectivity flow; excludes reference",
+      "status": "inconclusive",
+      "solverStatus": 1,
+      "message": "Time limit reached. (HiGHS Status 13: model_status is Time limit reached; primal_status is None)",
+      "seconds": 3.0074,
+      "timeLimitSeconds": 3.0,
+      "numerics": "HiGHS floating-point MILP feasibility; mip_rel_gap=0, other tolerances solver defaults. Infeasible is complete-model MILP evidence, not an exported exact-rational proof."
+    },
+    "definitionSha256": "6629cdb7b59f72d70521544d5cb7ced42a3d585e40c0a1dc98bb2b90df3d256b",
+    "seed": 70500
+  },
+  {
+    "id": "candidate-6",
+    "number": 7,
+    "rows": 8,
+    "cols": 8,
+    "supports": 12,
+    "certificate": {
+      "completePartition": true,
+      "allowedAnchors": true,
+      "unitMass": true,
+      "exactZeroMoments": true,
+      "orthogonalConnectivity": true,
+      "incidentCells": true,
+      "pieces": [
+        {
+          "support": 0,
+          "size": 14,
+          "momentX": 0,
+          "momentY": 0,
+          "incident": [
+            11
+          ],
+          "connected": true
+        },
+        {
+          "support": 1,
+          "size": 1,
+          "momentX": 0,
+          "momentY": 0,
+          "incident": [
+            1
+          ],
+          "connected": true
+        },
+        {
+          "support": 2,
+          "size": 3,
+          "momentX": 0,
+          "momentY": 0,
+          "incident": [
+            5
+          ],
+          "connected": true
+        },
+        {
+          "support": 3,
+          "size": 1,
+          "momentX": 0,
+          "momentY": 0,
+          "incident": [
+            7
+          ],
+          "connected": true
+        },
+        {
+          "support": 4,
+          "size": 14,
+          "momentX": 0,
+          "momentY": 0,
+          "incident": [
+            26,
+            34
+          ],
+          "connected": true
+        },
+        {
+          "support": 5,
+          "size": 14,
+          "momentX": 0,
+          "momentY": 0,
+          "incident": [
+            38,
+            46
+          ],
+          "connected": true
+        },
+        {
+          "support": 6,
+          "size": 2,
+          "momentX": 0,
+          "momentY": 0,
+          "incident": [
+            23,
+            31
+          ],
+          "connected": true
+        },
+        {
+          "support": 7,
+          "size": 6,
+          "momentX": 0,
+          "momentY": 0,
+          "incident": [
+            49,
+            50
+          ],
+          "connected": true
+        },
+        {
+          "support": 8,
+          "size": 2,
+          "momentX": 0,
+          "momentY": 0,
+          "incident": [
+            41,
+            42
+          ],
+          "connected": true
+        },
+        {
+          "support": 9,
+          "size": 2,
+          "momentX": 0,
+          "momentY": 0,
+          "incident": [
+            52,
+            60
+          ],
+          "connected": true
+        },
+        {
+          "support": 10,
+          "size": 2,
+          "momentX": 0,
+          "momentY": 0,
+          "incident": [
+            53,
+            61
+          ],
+          "connected": true
+        },
+        {
+          "support": 11,
+          "size": 3,
+          "momentX": 0,
+          "momentY": 0,
+          "incident": [
+            57
+          ],
+          "connected": true
+        }
+      ],
+      "milliseconds": 0.1284
+    },
+    "uniqueness": {
+      "method": "independent MILP assignment + two integer moments + connectivity flow; excludes reference",
+      "status": "unique",
+      "solverStatus": 2,
+      "message": "The problem is infeasible. (HiGHS Status 8: model_status is Infeasible; primal_status is None)",
+      "seconds": 2.6001,
+      "timeLimitSeconds": 3.0,
+      "numerics": "HiGHS floating-point MILP feasibility; mip_rel_gap=0, other tolerances solver defaults. Infeasible is complete-model MILP evidence, not an exported exact-rational proof."
+    },
+    "definitionSha256": "ecd66687a7e14142fd6abfffec6b19bd482d8e32df7736d73bc7c406ea952a67",
+    "seed": 80000
+  },
+  {
+    "id": "candidate-7",
+    "number": 8,
+    "rows": 8,
+    "cols": 8,
+    "supports": 11,
+    "certificate": {
+      "completePartition": true,
+      "allowedAnchors": true,
+      "unitMass": true,
+      "exactZeroMoments": true,
+      "orthogonalConnectivity": true,
+      "incidentCells": true,
+      "pieces": [
+        {
+          "support": 0,
+          "size": 16,
+          "momentX": 0,
+          "momentY": 0,
+          "incident": [
+            18
+          ],
+          "connected": true
+        },
+        {
+          "support": 1,
+          "size": 1,
+          "momentX": 0,
+          "momentY": 0,
+          "incident": [
+            1
+          ],
+          "connected": true
+        },
+        {
+          "support": 2,
+          "size": 1,
+          "momentX": 0,
+          "momentY": 0,
+          "incident": [
+            2
+          ],
+          "connected": true
+        },
+        {
+          "support": 3,
+          "size": 10,
+          "momentX": 0,
+          "momentY": 0,
+          "incident": [
+            14
+          ],
+          "connected": true
+        },
+        {
+          "support": 4,
+          "size": 13,
+          "momentX": 0,
+          "momentY": 0,
+          "incident": [
+            37
+          ],
+          "connected": true
+        },
+        {
+          "support": 5,
+          "size": 8,
+          "momentX": 0,
+          "momentY": 0,
+          "incident": [
+            33,
+            41
+          ],
+          "connected": true
+        },
+        {
+          "support": 6,
+          "size": 3,
+          "momentX": 0,
+          "momentY": 0,
+          "incident": [
+            48
+          ],
+          "connected": true
+        },
+        {
+          "support": 7,
+          "size": 6,
+          "momentX": 0,
+          "momentY": 0,
+          "incident": [
+            53,
+            54
+          ],
+          "connected": true
+        },
+        {
+          "support": 8,
+          "size": 2,
+          "momentX": 0,
+          "momentY": 0,
+          "incident": [
+            51,
+            59
+          ],
+          "connected": true
+        },
+        {
+          "support": 9,
+          "size": 2,
+          "momentX": 0,
+          "momentY": 0,
+          "incident": [
+            55,
+            63
+          ],
+          "connected": true
+        },
+        {
+          "support": 10,
+          "size": 2,
+          "momentX": 0,
+          "momentY": 0,
+          "incident": [
+            57,
+            58
+          ],
+          "connected": true
+        }
+      ],
+      "milliseconds": 0.0886
+    },
+    "uniqueness": {
+      "method": "independent MILP assignment + two integer moments + connectivity flow; excludes reference",
+      "status": "multiple",
+      "solverStatus": 0,
+      "message": "Optimization terminated successfully. (HiGHS Status 7: Optimal)",
+      "seconds": 1.567,
+      "timeLimitSeconds": 3.0,
+      "alternative": [
+        0,
+        1,
+        2,
+        0,
+        0,
+        4,
+        3,
+        4,
+        0,
+        0,
+        0,
+        0,
+        0,
+        4,
+        3,
+        4,
+        0,
+        0,
+        0,
+        0,
+        0,
+        4,
+        3,
+        4,
+        0,
+        0,
+        0,
+        0,
+        0,
+        4,
+        4,
+        4,
+        0,
+        5,
+        0,
+        0,
+        4,
+        4,
+        4,
+        4,
+        6,
+        5,
+        4,
+        4,
+        4,
+        4,
+        4,
+        4,
+        6,
+        4,
+        4,
+        8,
+        4,
+        7,
+        7,
+        9,
+        6,
+        10,
+        10,
+        8,
+        4,
+        4,
+        4,
+        9
+      ],
+      "numerics": "HiGHS floating-point MILP feasibility; mip_rel_gap=0, other tolerances solver defaults. Infeasible is complete-model MILP evidence, not an exported exact-rational proof."
+    },
+    "definitionSha256": "2c6900b0dd4b9cd151d82271846800bcb2e5bb66eb4ce04e4520cfbbaed6bbc3",
+    "seed": 80100
+  },
+  {
+    "id": "candidate-8",
+    "number": 9,
+    "rows": 8,
+    "cols": 8,
+    "supports": 12,
+    "certificate": {
+      "completePartition": true,
+      "allowedAnchors": true,
+      "unitMass": true,
+      "exactZeroMoments": true,
+      "orthogonalConnectivity": true,
+      "incidentCells": true,
+      "pieces": [
+        {
+          "support": 0,
+          "size": 15,
+          "momentX": 0,
+          "momentY": 0,
+          "incident": [
+            10
+          ],
+          "connected": true
+        },
+        {
+          "support": 1,
+          "size": 11,
+          "momentX": 0,
+          "momentY": 0,
+          "incident": [
+            22
+          ],
+          "connected": true
+        },
+        {
+          "support": 2,
+          "size": 1,
+          "momentX": 0,
+          "momentY": 0,
+          "incident": [
+            15
+          ],
+          "connected": true
+        },
+        {
+          "support": 3,
+          "size": 14,
+          "momentX": 0,
+          "momentY": 0,
+          "incident": [
+            36,
+            44
+          ],
+          "connected": true
+        },
+        {
+          "support": 4,
+          "size": 1,
+          "momentX": 0,
+          "momentY": 0,
+          "incident": [
+            21
+          ],
+          "connected": true
+        },
+        {
+          "support": 5,
+          "size": 9,
+          "momentX": 0,
+          "momentY": 0,
+          "incident": [
+            41
+          ],
+          "connected": true
+        },
+        {
+          "support": 6,
+          "size": 2,
+          "momentX": 0,
+          "momentY": 0,
+          "incident": [
+            34,
+            42
+          ],
+          "connected": true
+        },
+        {
+          "support": 7,
+          "size": 2,
+          "momentX": 0,
+          "momentY": 0,
+          "incident": [
+            39,
+            47
+          ],
+          "connected": true
+        },
+        {
+          "support": 8,
+          "size": 3,
+          "momentX": 0,
+          "momentY": 0,
+          "incident": [
+            48
+          ],
+          "connected": true
+        },
+        {
+          "support": 9,
+          "size": 2,
+          "momentX": 0,
+          "momentY": 0,
+          "incident": [
+            52,
+            60
+          ],
+          "connected": true
+        },
+        {
+          "support": 10,
+          "size": 2,
+          "momentX": 0,
+          "momentY": 0,
+          "incident": [
+            55,
+            63
+          ],
+          "connected": true
+        },
+        {
+          "support": 11,
+          "size": 2,
+          "momentX": 0,
+          "momentY": 0,
+          "incident": [
+            61,
+            62
+          ],
+          "connected": true
+        }
+      ],
+      "milliseconds": 0.1105
+    },
+    "uniqueness": {
+      "method": "independent MILP assignment + two integer moments + connectivity flow; excludes reference",
+      "status": "inconclusive",
+      "solverStatus": 1,
+      "message": "Time limit reached. (HiGHS Status 13: model_status is Time limit reached; primal_status is None)",
+      "seconds": 3.0119,
+      "timeLimitSeconds": 3.0,
+      "numerics": "HiGHS floating-point MILP feasibility; mip_rel_gap=0, other tolerances solver defaults. Infeasible is complete-model MILP evidence, not an exported exact-rational proof."
+    },
+    "definitionSha256": "807b97b683260c76b2c67361b22bd45d6c9069be9cb7241d64557952cc0427ba",
+    "seed": 80200
+  },
+  {
+    "id": "candidate-9",
+    "number": 10,
+    "rows": 8,
+    "cols": 8,
+    "supports": 11,
+    "certificate": {
+      "completePartition": true,
+      "allowedAnchors": true,
+      "unitMass": true,
+      "exactZeroMoments": true,
+      "orthogonalConnectivity": true,
+      "incidentCells": true,
+      "pieces": [
+        {
+          "support": 0,
+          "size": 13,
+          "momentX": 0,
+          "momentY": 0,
+          "incident": [
+            17
+          ],
+          "connected": true
+        },
+        {
+          "support": 1,
+          "size": 13,
+          "momentX": 0,
+          "momentY": 0,
+          "incident": [
+            13
+          ],
+          "connected": true
+        },
+        {
+          "support": 2,
+          "size": 1,
+          "momentX": 0,
+          "momentY": 0,
+          "incident": [
+            7
+          ],
+          "connected": true
+        },
+        {
+          "support": 3,
+          "size": 1,
+          "momentX": 0,
+          "momentY": 0,
+          "incident": [
+            11
+          ],
+          "connected": true
+        },
+        {
+          "support": 4,
+          "size": 12,
+          "momentX": 0,
+          "momentY": 0,
+          "incident": [
+            37,
+            45
+          ],
+          "connected": true
+        },
+        {
+          "support": 5,
+          "size": 11,
+          "momentX": 0,
+          "momentY": 0,
+          "incident": [
+            42
+          ],
+          "connected": true
+        },
+        {
+          "support": 6,
+          "size": 4,
+          "momentX": 0,
+          "momentY": 0,
+          "incident": [
+            39,
+            47
+          ],
+          "connected": true
+        },
+        {
+          "support": 7,
+          "size": 2,
+          "momentX": 0,
+          "momentY": 0,
+          "incident": [
+            33,
+            41
+          ],
+          "connected": true
+        },
+        {
+          "support": 8,
+          "size": 2,
+          "momentX": 0,
+          "momentY": 0,
+          "incident": [
+            52,
+            60
+          ],
+          "connected": true
+        },
+        {
+          "support": 9,
+          "size": 3,
+          "momentX": 0,
+          "momentY": 0,
+          "incident": [
+            57
+          ],
+          "connected": true
+        },
+        {
+          "support": 10,
+          "size": 2,
+          "momentX": 0,
+          "momentY": 0,
+          "incident": [
+            62,
+            63
+          ],
+          "connected": true
+        }
+      ],
+      "milliseconds": 0.0826
+    },
+    "uniqueness": {
+      "method": "independent MILP assignment + two integer moments + connectivity flow; excludes reference",
+      "status": "inconclusive",
+      "solverStatus": 1,
+      "message": "Time limit reached. (HiGHS Status 13: model_status is Time limit reached; primal_status is None)",
+      "seconds": 3.0103,
+      "timeLimitSeconds": 3.0,
+      "numerics": "HiGHS floating-point MILP feasibility; mip_rel_gap=0, other tolerances solver defaults. Infeasible is complete-model MILP evidence, not an exported exact-rational proof."
+    },
+    "definitionSha256": "b3e5a16b08d828a18ff99917caac694cd6f3717781c292868129d4b52d43f897",
+    "seed": 80300
+  },
+  {
+    "id": "candidate-10",
+    "number": 11,
+    "rows": 8,
+    "cols": 8,
+    "supports": 10,
+    "certificate": {
+      "completePartition": true,
+      "allowedAnchors": true,
+      "unitMass": true,
+      "exactZeroMoments": true,
+      "orthogonalConnectivity": true,
+      "incidentCells": true,
+      "pieces": [
+        {
+          "support": 0,
+          "size": 14,
+          "momentX": 0,
+          "momentY": 0,
+          "incident": [
+            25,
+            33
+          ],
+          "connected": true
+        },
+        {
+          "support": 1,
+          "size": 14,
+          "momentX": 0,
+          "momentY": 0,
+          "incident": [
+            11
+          ],
+          "connected": true
+        },
+        {
+          "support": 2,
+          "size": 10,
+          "momentX": 0,
+          "momentY": 0,
+          "incident": [
+            22,
+            23
+          ],
+          "connected": true
+        },
+        {
+          "support": 3,
+          "size": 12,
+          "momentX": 0,
+          "momentY": 0,
+          "incident": [
+            44
+          ],
+          "connected": true
+        },
+        {
+          "support": 4,
+          "size": 1,
+          "momentX": 0,
+          "momentY": 0,
+          "incident": [
+            29
+          ],
+          "connected": true
+        },
+        {
+          "support": 5,
+          "size": 6,
+          "momentX": 0,
+          "momentY": 0,
+          "incident": [
+            46,
+            54
+          ],
+          "connected": true
+        },
+        {
+          "support": 6,
+          "size": 2,
+          "momentX": 0,
+          "momentY": 0,
+          "incident": [
+            41,
+            49
+          ],
+          "connected": true
+        },
+        {
+          "support": 7,
+          "size": 2,
+          "momentX": 0,
+          "momentY": 0,
+          "incident": [
+            50,
+            58
+          ],
+          "connected": true
+        },
+        {
+          "support": 8,
+          "size": 2,
+          "momentX": 0,
+          "momentY": 0,
+          "incident": [
+            56,
+            57
+          ],
+          "connected": true
+        },
+        {
+          "support": 9,
+          "size": 1,
+          "momentX": 0,
+          "momentY": 0,
+          "incident": [
+            63
+          ],
+          "connected": true
+        }
+      ],
+      "milliseconds": 0.1523
+    },
+    "uniqueness": {
+      "method": "independent MILP assignment + two integer moments + connectivity flow; excludes reference",
+      "status": "inconclusive",
+      "solverStatus": 1,
+      "message": "Time limit reached. (HiGHS Status 13: model_status is Time limit reached; primal_status is None)",
+      "seconds": 3.3751,
+      "timeLimitSeconds": 3.0,
+      "numerics": "HiGHS floating-point MILP feasibility; mip_rel_gap=0, other tolerances solver defaults. Infeasible is complete-model MILP evidence, not an exported exact-rational proof."
+    },
+    "definitionSha256": "88016e51ac584575e7bbe587a343eb9a2aac174f3f6b39cf35e867cfe12fc8fe",
+    "seed": 80400
+  },
+  {
+    "id": "candidate-11",
+    "number": 12,
+    "rows": 8,
+    "cols": 8,
+    "supports": 12,
+    "certificate": {
+      "completePartition": true,
+      "allowedAnchors": true,
+      "unitMass": true,
+      "exactZeroMoments": true,
+      "orthogonalConnectivity": true,
+      "incidentCells": true,
+      "pieces": [
+        {
+          "support": 0,
+          "size": 14,
+          "momentX": 0,
+          "momentY": 0,
+          "incident": [
+            25
+          ],
+          "connected": true
+        },
+        {
+          "support": 1,
+          "size": 12,
+          "momentX": 0,
+          "momentY": 0,
+          "incident": [
+            4,
+            12
+          ],
+          "connected": true
+        },
+        {
+          "support": 2,
+          "size": 1,
+          "momentX": 0,
+          "momentY": 0,
+          "incident": [
+            7
+          ],
+          "connected": true
+        },
+        {
+          "support": 3,
+          "size": 1,
+          "momentX": 0,
+          "momentY": 0,
+          "incident": [
+            9
+          ],
+          "connected": true
+        },
+        {
+          "support": 4,
+          "size": 13,
+          "momentX": 0,
+          "momentY": 0,
+          "incident": [
+            37
+          ],
+          "connected": true
+        },
+        {
+          "support": 5,
+          "size": 2,
+          "momentX": 0,
+          "momentY": 0,
+          "incident": [
+            22,
+            23
+          ],
+          "connected": true
+        },
+        {
+          "support": 6,
+          "size": 7,
+          "momentX": 0,
+          "momentY": 0,
+          "incident": [
+            43
+          ],
+          "connected": true
+        },
+        {
+          "support": 7,
+          "size": 5,
+          "momentX": 0,
+          "momentY": 0,
+          "incident": [
+            47
+          ],
+          "connected": true
+        },
+        {
+          "support": 8,
+          "size": 2,
+          "momentX": 0,
+          "momentY": 0,
+          "incident": [
+            40,
+            48
+          ],
+          "connected": true
+        },
+        {
+          "support": 9,
+          "size": 2,
+          "momentX": 0,
+          "momentY": 0,
+          "incident": [
+            50,
+            58
+          ],
+          "connected": true
+        },
+        {
+          "support": 10,
+          "size": 2,
+          "momentX": 0,
+          "momentY": 0,
+          "incident": [
+            56,
+            57
+          ],
+          "connected": true
+        },
+        {
+          "support": 11,
+          "size": 3,
+          "momentX": 0,
+          "momentY": 0,
+          "incident": [
+            61
+          ],
+          "connected": true
+        }
+      ],
+      "milliseconds": 0.1194
+    },
+    "uniqueness": {
+      "method": "independent MILP assignment + two integer moments + connectivity flow; excludes reference",
+      "status": "inconclusive",
+      "solverStatus": 1,
+      "message": "Time limit reached. (HiGHS Status 13: model_status is Time limit reached; primal_status is None)",
+      "seconds": 3.0289,
+      "timeLimitSeconds": 3.0,
+      "numerics": "HiGHS floating-point MILP feasibility; mip_rel_gap=0, other tolerances solver defaults. Infeasible is complete-model MILP evidence, not an exported exact-rational proof."
+    },
+    "definitionSha256": "37e712b9192a813a87cf7482eb5fa14fd7a83b2180375584ce026c06514cfa98",
+    "seed": 80500
+  },
+  {
+    "id": "candidate-12",
+    "number": 13,
+    "rows": 8,
+    "cols": 8,
+    "supports": 13,
+    "certificate": {
+      "completePartition": true,
+      "allowedAnchors": true,
+      "unitMass": true,
+      "exactZeroMoments": true,
+      "orthogonalConnectivity": true,
+      "incidentCells": true,
+      "pieces": [
+        {
+          "support": 0,
+          "size": 14,
+          "momentX": 0,
+          "momentY": 0,
+          "incident": [
+            18,
+            26
+          ],
+          "connected": true
+        },
+        {
+          "support": 1,
+          "size": 12,
+          "momentX": 0,
+          "momentY": 0,
+          "incident": [
+            12
+          ],
+          "connected": true
+        },
+        {
+          "support": 2,
+          "size": 2,
+          "momentX": 0,
+          "momentY": 0,
+          "incident": [
+            6,
+            7
+          ],
+          "connected": true
+        },
+        {
+          "support": 3,
+          "size": 1,
+          "momentX": 0,
+          "momentY": 0,
+          "incident": [
+            9
+          ],
+          "connected": true
+        },
+        {
+          "support": 4,
+          "size": 8,
+          "momentX": 0,
+          "momentY": 0,
+          "incident": [
+            30,
+            38
+          ],
+          "connected": true
+        },
+        {
+          "support": 5,
+          "size": 11,
+          "momentX": 0,
+          "momentY": 0,
+          "incident": [
+            41
+          ],
+          "connected": true
+        },
+        {
+          "support": 6,
+          "size": 1,
+          "momentX": 0,
+          "momentY": 0,
+          "incident": [
+            28
+          ],
+          "connected": true
+        },
+        {
+          "support": 7,
+          "size": 5,
+          "momentX": 0,
+          "momentY": 0,
+          "incident": [
+            47
+          ],
+          "connected": true
+        },
+        {
+          "support": 8,
+          "size": 2,
+          "momentX": 0,
+          "momentY": 0,
+          "incident": [
+            44,
+            52
+          ],
+          "connected": true
+        },
+        {
+          "support": 9,
+          "size": 2,
+          "momentX": 0,
+          "momentY": 0,
+          "incident": [
+            51,
+            59
+          ],
+          "connected": true
+        },
+        {
+          "support": 10,
+          "size": 2,
+          "momentX": 0,
+          "momentY": 0,
+          "incident": [
+            54,
+            62
+          ],
+          "connected": true
+        },
+        {
+          "support": 11,
+          "size": 2,
+          "momentX": 0,
+          "momentY": 0,
+          "incident": [
+            56,
+            57
+          ],
+          "connected": true
+        },
+        {
+          "support": 12,
+          "size": 2,
+          "momentX": 0,
+          "momentY": 0,
+          "incident": [
+            60,
+            61
+          ],
+          "connected": true
+        }
+      ],
+      "milliseconds": 0.1355
+    },
+    "uniqueness": {
+      "method": "independent MILP assignment + two integer moments + connectivity flow; excludes reference",
+      "status": "inconclusive",
+      "solverStatus": 1,
+      "message": "Time limit reached. (HiGHS Status 13: model_status is Time limit reached; primal_status is None)",
+      "seconds": 3.0137,
+      "timeLimitSeconds": 3.0,
+      "numerics": "HiGHS floating-point MILP feasibility; mip_rel_gap=0, other tolerances solver defaults. Infeasible is complete-model MILP evidence, not an exported exact-rational proof."
+    },
+    "definitionSha256": "95029a44dcd4b53e20ac56fd3ee355004c19e140a77f728d95eb5fafd71c4b0d",
+    "seed": 80600
+  },
+  {
+    "id": "candidate-13",
+    "number": 14,
+    "rows": 8,
+    "cols": 8,
+    "supports": 12,
+    "certificate": {
+      "completePartition": true,
+      "allowedAnchors": true,
+      "unitMass": true,
+      "exactZeroMoments": true,
+      "orthogonalConnectivity": true,
+      "incidentCells": true,
+      "pieces": [
+        {
+          "support": 0,
+          "size": 16,
+          "momentX": 0,
+          "momentY": 0,
+          "incident": [
+            18
+          ],
+          "connected": true
+        },
+        {
+          "support": 1,
+          "size": 1,
+          "momentX": 0,
+          "momentY": 0,
+          "incident": [
+            1
+          ],
+          "connected": true
+        },
+        {
+          "support": 2,
+          "size": 1,
+          "momentX": 0,
+          "momentY": 0,
+          "incident": [
+            2
+          ],
+          "connected": true
+        },
+        {
+          "support": 3,
+          "size": 11,
+          "momentX": 0,
+          "momentY": 0,
+          "incident": [
+            22
+          ],
+          "connected": true
+        },
+        {
+          "support": 4,
+          "size": 2,
+          "momentX": 0,
+          "momentY": 0,
+          "incident": [
+            7,
+            15
+          ],
+          "connected": true
+        },
+        {
+          "support": 5,
+          "size": 10,
+          "momentX": 0,
+          "momentY": 0,
+          "incident": [
+            37
+          ],
+          "connected": true
+        },
+        {
+          "support": 6,
+          "size": 10,
+          "momentX": 0,
+          "momentY": 0,
+          "incident": [
+            41,
+            49
+          ],
+          "connected": true
+        },
+        {
+          "support": 7,
+          "size": 2,
+          "momentX": 0,
+          "momentY": 0,
+          "incident": [
+            32,
+            40
+          ],
+          "connected": true
+        },
+        {
+          "support": 8,
+          "size": 2,
+          "momentX": 0,
+          "momentY": 0,
+          "incident": [
+            36,
+            44
+          ],
+          "connected": true
+        },
+        {
+          "support": 9,
+          "size": 5,
+          "momentX": 0,
+          "momentY": 0,
+          "incident": [
+            51
+          ],
+          "connected": true
+        },
+        {
+          "support": 10,
+          "size": 2,
+          "momentX": 0,
+          "momentY": 0,
+          "incident": [
+            54,
+            55
+          ],
+          "connected": true
+        },
+        {
+          "support": 11,
+          "size": 2,
+          "momentX": 0,
+          "momentY": 0,
+          "incident": [
+            62,
+            63
+          ],
+          "connected": true
+        }
+      ],
+      "milliseconds": 0.1326
+    },
+    "uniqueness": {
+      "method": "independent MILP assignment + two integer moments + connectivity flow; excludes reference",
+      "status": "inconclusive",
+      "solverStatus": 1,
+      "message": "Time limit reached. (HiGHS Status 13: model_status is Time limit reached; primal_status is None)",
+      "seconds": 3.0258,
+      "timeLimitSeconds": 3.0,
+      "numerics": "HiGHS floating-point MILP feasibility; mip_rel_gap=0, other tolerances solver defaults. Infeasible is complete-model MILP evidence, not an exported exact-rational proof."
+    },
+    "definitionSha256": "ad19a0b6d4f30f8abd4adeab03e90388c8be21d4e4b5435c2f31419ad824b04b",
+    "seed": 80700
+  },
+  {
+    "id": "candidate-14",
+    "number": 15,
+    "rows": 8,
+    "cols": 8,
+    "supports": 11,
+    "certificate": {
+      "completePartition": true,
+      "allowedAnchors": true,
+      "unitMass": true,
+      "exactZeroMoments": true,
+      "orthogonalConnectivity": true,
+      "incidentCells": true,
+      "pieces": [
+        {
+          "support": 0,
+          "size": 14,
+          "momentX": 0,
+          "momentY": 0,
+          "incident": [
+            10,
+            11
+          ],
+          "connected": true
+        },
+        {
+          "support": 1,
+          "size": 1,
+          "momentX": 0,
+          "momentY": 0,
+          "incident": [
+            3
+          ],
+          "connected": true
+        },
+        {
+          "support": 2,
+          "size": 12,
+          "momentX": 0,
+          "momentY": 0,
+          "incident": [
+            30
+          ],
+          "connected": true
+        },
+        {
+          "support": 3,
+          "size": 1,
+          "momentX": 0,
+          "momentY": 0,
+          "incident": [
+            7
+          ],
+          "connected": true
+        },
+        {
+          "support": 4,
+          "size": 10,
+          "momentX": 0,
+          "momentY": 0,
+          "incident": [
+            25,
+            33
+          ],
+          "connected": true
+        },
+        {
+          "support": 5,
+          "size": 10,
+          "momentX": 0,
+          "momentY": 0,
+          "incident": [
+            36,
+            44
+          ],
+          "connected": true
+        },
+        {
+          "support": 6,
+          "size": 2,
+          "momentX": 0,
+          "momentY": 0,
+          "incident": [
+            23,
+            31
+          ],
+          "connected": true
+        },
+        {
+          "support": 7,
+          "size": 6,
+          "momentX": 0,
+          "momentY": 0,
+          "incident": [
+            49
+          ],
+          "connected": true
+        },
+        {
+          "support": 8,
+          "size": 3,
+          "momentX": 0,
+          "momentY": 0,
+          "incident": [
+            54
+          ],
+          "connected": true
+        },
+        {
+          "support": 9,
+          "size": 3,
+          "momentX": 0,
+          "momentY": 0,
+          "incident": [
+            58
+          ],
+          "connected": true
+        },
+        {
+          "support": 10,
+          "size": 2,
+          "momentX": 0,
+          "momentY": 0,
+          "incident": [
+            62,
+            63
+          ],
+          "connected": true
+        }
+      ],
+      "milliseconds": 0.149
+    },
+    "uniqueness": {
+      "method": "independent MILP assignment + two integer moments + connectivity flow; excludes reference",
+      "status": "inconclusive",
+      "solverStatus": 1,
+      "message": "Time limit reached. (HiGHS Status 13: model_status is Time limit reached; primal_status is None)",
+      "seconds": 3.0173,
+      "timeLimitSeconds": 3.0,
+      "numerics": "HiGHS floating-point MILP feasibility; mip_rel_gap=0, other tolerances solver defaults. Infeasible is complete-model MILP evidence, not an exported exact-rational proof."
+    },
+    "definitionSha256": "21f5eca42bb4d63ca46bd2b16bc98ea06ed2627cb3c9745f6e5d3c42de908e7d",
+    "seed": 80800
+  },
+  {
+    "id": "candidate-15",
+    "number": 16,
+    "rows": 9,
+    "cols": 9,
+    "supports": 15,
+    "certificate": {
+      "completePartition": true,
+      "allowedAnchors": true,
+      "unitMass": true,
+      "exactZeroMoments": true,
+      "orthogonalConnectivity": true,
+      "incidentCells": true,
+      "pieces": [
+        {
+          "support": 0,
+          "size": 14,
+          "momentX": 0,
+          "momentY": 0,
+          "incident": [
+            11,
+            20
+          ],
+          "connected": true
+        },
+        {
+          "support": 1,
+          "size": 12,
+          "momentX": 0,
+          "momentY": 0,
+          "incident": [
+            14
+          ],
+          "connected": true
+        },
+        {
+          "support": 2,
+          "size": 8,
+          "momentX": 0,
+          "momentY": 0,
+          "incident": [
+            25,
+            34
+          ],
+          "connected": true
+        },
+        {
+          "support": 3,
+          "size": 1,
+          "momentX": 0,
+          "momentY": 0,
+          "incident": [
+            16
+          ],
+          "connected": true
+        },
+        {
+          "support": 4,
+          "size": 14,
+          "momentX": 0,
+          "momentY": 0,
+          "incident": [
+            47
+          ],
+          "connected": true
+        },
+        {
+          "support": 5,
+          "size": 2,
+          "momentX": 0,
+          "momentY": 0,
+          "incident": [
+            28,
+            29
+          ],
+          "connected": true
+        },
+        {
+          "support": 6,
+          "size": 10,
+          "momentX": 0,
+          "momentY": 0,
+          "incident": [
+            52,
+            61
+          ],
+          "connected": true
+        },
+        {
+          "support": 7,
+          "size": 1,
+          "momentX": 0,
+          "momentY": 0,
+          "incident": [
+            40
+          ],
+          "connected": true
+        },
+        {
+          "support": 8,
+          "size": 4,
+          "momentX": 0,
+          "momentY": 0,
+          "incident": [
+            54,
+            63
+          ],
+          "connected": true
+        },
+        {
+          "support": 9,
+          "size": 4,
+          "momentX": 0,
+          "momentY": 0,
+          "incident": [
+            59,
+            68
+          ],
+          "connected": true
+        },
+        {
+          "support": 10,
+          "size": 2,
+          "momentX": 0,
+          "momentY": 0,
+          "incident": [
+            64,
+            73
+          ],
+          "connected": true
+        },
+        {
+          "support": 11,
+          "size": 2,
+          "momentX": 0,
+          "momentY": 0,
+          "incident": [
+            66,
+            67
+          ],
+          "connected": true
+        },
+        {
+          "support": 12,
+          "size": 2,
+          "momentX": 0,
+          "momentY": 0,
+          "incident": [
+            70,
+            79
+          ],
+          "connected": true
+        },
+        {
+          "support": 13,
+          "size": 2,
+          "momentX": 0,
+          "momentY": 0,
+          "incident": [
+            71,
+            80
+          ],
+          "connected": true
+        },
+        {
+          "support": 14,
+          "size": 3,
+          "momentX": 0,
+          "momentY": 0,
+          "incident": [
+            75
+          ],
+          "connected": true
+        }
+      ],
+      "milliseconds": 0.1489
+    },
+    "uniqueness": {
+      "method": "independent MILP assignment + two integer moments + connectivity flow; excludes reference",
+      "status": "inconclusive",
+      "solverStatus": 1,
+      "message": "Time limit reached. (HiGHS Status 13: model_status is Time limit reached; primal_status is None)",
+      "seconds": 3.0179,
+      "timeLimitSeconds": 3.0,
+      "numerics": "HiGHS floating-point MILP feasibility; mip_rel_gap=0, other tolerances solver defaults. Infeasible is complete-model MILP evidence, not an exported exact-rational proof."
+    },
+    "definitionSha256": "7c575e08730fffdc2bed2d24df36129a93fbf730f9c5d5a34a1fcf678761fd12",
+    "seed": 90000
+  },
+  {
+    "id": "candidate-16",
+    "number": 17,
+    "rows": 9,
+    "cols": 9,
+    "supports": 16,
+    "certificate": {
+      "completePartition": true,
+      "allowedAnchors": true,
+      "unitMass": true,
+      "exactZeroMoments": true,
+      "orthogonalConnectivity": true,
+      "incidentCells": true,
+      "pieces": [
+        {
+          "support": 0,
+          "size": 14,
+          "momentX": 0,
+          "momentY": 0,
+          "incident": [
+            29
+          ],
+          "connected": true
+        },
+        {
+          "support": 1,
+          "size": 12,
+          "momentX": 0,
+          "momentY": 0,
+          "incident": [
+            12,
+            13
+          ],
+          "connected": true
+        },
+        {
+          "support": 2,
+          "size": 10,
+          "momentX": 0,
+          "momentY": 0,
+          "incident": [
+            16,
+            25
+          ],
+          "connected": true
+        },
+        {
+          "support": 3,
+          "size": 1,
+          "momentX": 0,
+          "momentY": 0,
+          "incident": [
+            8
+          ],
+          "connected": true
+        },
+        {
+          "support": 4,
+          "size": 2,
+          "momentX": 0,
+          "momentY": 0,
+          "incident": [
+            10,
+            11
+          ],
+          "connected": true
+        },
+        {
+          "support": 5,
+          "size": 2,
+          "momentX": 0,
+          "momentY": 0,
+          "incident": [
+            30,
+            31
+          ],
+          "connected": true
+        },
+        {
+          "support": 6,
+          "size": 14,
+          "momentX": 0,
+          "momentY": 0,
+          "incident": [
+            58
+          ],
+          "connected": true
+        },
+        {
+          "support": 7,
+          "size": 8,
+          "momentX": 0,
+          "momentY": 0,
+          "incident": [
+            61
+          ],
+          "connected": true
+        },
+        {
+          "support": 8,
+          "size": 4,
+          "momentX": 0,
+          "momentY": 0,
+          "incident": [
+            45,
+            54
+          ],
+          "connected": true
+        },
+        {
+          "support": 9,
+          "size": 2,
+          "momentX": 0,
+          "momentY": 0,
+          "incident": [
+            46,
+            55
+          ],
+          "connected": true
+        },
+        {
+          "support": 10,
+          "size": 2,
+          "momentX": 0,
+          "momentY": 0,
+          "incident": [
+            47,
+            48
+          ],
+          "connected": true
+        },
+        {
+          "support": 11,
+          "size": 3,
+          "momentX": 0,
+          "momentY": 0,
+          "incident": [
+            62
+          ],
+          "connected": true
+        },
+        {
+          "support": 12,
+          "size": 1,
+          "momentX": 0,
+          "momentY": 0,
+          "incident": [
+            60
+          ],
+          "connected": true
+        },
+        {
+          "support": 13,
+          "size": 2,
+          "momentX": 0,
+          "momentY": 0,
+          "incident": [
+            72,
+            73
+          ],
+          "connected": true
+        },
+        {
+          "support": 14,
+          "size": 2,
+          "momentX": 0,
+          "momentY": 0,
+          "incident": [
+            74,
+            75
+          ],
+          "connected": true
+        },
+        {
+          "support": 15,
+          "size": 2,
+          "momentX": 0,
+          "momentY": 0,
+          "incident": [
+            77,
+            78
+          ],
+          "connected": true
+        }
+      ],
+      "milliseconds": 0.1569
+    },
+    "uniqueness": {
+      "method": "independent MILP assignment + two integer moments + connectivity flow; excludes reference",
+      "status": "inconclusive",
+      "solverStatus": 1,
+      "message": "Time limit reached. (HiGHS Status 13: model_status is Time limit reached; primal_status is None)",
+      "seconds": 3.0209,
+      "timeLimitSeconds": 3.0,
+      "numerics": "HiGHS floating-point MILP feasibility; mip_rel_gap=0, other tolerances solver defaults. Infeasible is complete-model MILP evidence, not an exported exact-rational proof."
+    },
+    "definitionSha256": "caabad8998632cce68796458f7c2a9f9b461f3aae2ef59dfea8e5efaf2734d62",
+    "seed": 90100
+  },
+  {
+    "id": "candidate-17",
+    "number": 18,
+    "rows": 9,
+    "cols": 9,
+    "supports": 14,
+    "certificate": {
+      "completePartition": true,
+      "allowedAnchors": true,
+      "unitMass": true,
+      "exactZeroMoments": true,
+      "orthogonalConnectivity": true,
+      "incidentCells": true,
+      "pieces": [
+        {
+          "support": 0,
+          "size": 14,
+          "momentX": 0,
+          "momentY": 0,
+          "incident": [
+            29
+          ],
+          "connected": true
+        },
+        {
+          "support": 1,
+          "size": 14,
+          "momentX": 0,
+          "momentY": 0,
+          "incident": [
+            12,
+            13
+          ],
+          "connected": true
+        },
+        {
+          "support": 2,
+          "size": 4,
+          "momentX": 0,
+          "momentY": 0,
+          "incident": [
+            6,
+            7
+          ],
+          "connected": true
+        },
+        {
+          "support": 3,
+          "size": 11,
+          "momentX": 0,
+          "momentY": 0,
+          "incident": [
+            34
+          ],
+          "connected": true
+        },
+        {
+          "support": 4,
+          "size": 1,
+          "momentX": 0,
+          "momentY": 0,
+          "incident": [
+            20
+          ],
+          "connected": true
+        },
+        {
+          "support": 5,
+          "size": 1,
+          "momentX": 0,
+          "momentY": 0,
+          "incident": [
+            30
+          ],
+          "connected": true
+        },
+        {
+          "support": 6,
+          "size": 2,
+          "momentX": 0,
+          "momentY": 0,
+          "incident": [
+            33,
+            42
+          ],
+          "connected": true
+        },
+        {
+          "support": 7,
+          "size": 14,
+          "momentX": 0,
+          "momentY": 0,
+          "incident": [
+            56
+          ],
+          "connected": true
+        },
+        {
+          "support": 8,
+          "size": 8,
+          "momentX": 0,
+          "momentY": 0,
+          "incident": [
+            68
+          ],
+          "connected": true
+        },
+        {
+          "support": 9,
+          "size": 3,
+          "momentX": 0,
+          "momentY": 0,
+          "incident": [
+            62
+          ],
+          "connected": true
+        },
+        {
+          "support": 10,
+          "size": 2,
+          "momentX": 0,
+          "momentY": 0,
+          "incident": [
+            54,
+            63
+          ],
+          "connected": true
+        },
+        {
+          "support": 11,
+          "size": 2,
+          "momentX": 0,
+          "momentY": 0,
+          "incident": [
+            60,
+            61
+          ],
+          "connected": true
+        },
+        {
+          "support": 12,
+          "size": 2,
+          "momentX": 0,
+          "momentY": 0,
+          "incident": [
+            72,
+            73
+          ],
+          "connected": true
+        },
+        {
+          "support": 13,
+          "size": 3,
+          "momentX": 0,
+          "momentY": 0,
+          "incident": [
+            79
+          ],
+          "connected": true
+        }
+      ],
+      "milliseconds": 0.1762
+    },
+    "uniqueness": {
+      "method": "independent MILP assignment + two integer moments + connectivity flow; excludes reference",
+      "status": "inconclusive",
+      "solverStatus": 1,
+      "message": "Time limit reached. (HiGHS Status 13: model_status is Time limit reached; primal_status is None)",
+      "seconds": 3.0181,
+      "timeLimitSeconds": 3.0,
+      "numerics": "HiGHS floating-point MILP feasibility; mip_rel_gap=0, other tolerances solver defaults. Infeasible is complete-model MILP evidence, not an exported exact-rational proof."
+    },
+    "definitionSha256": "43081b6f697d44271818377093a884666ac2c8ca05a27bf8232f84f84ab6ae35",
+    "seed": 90200
+  },
+  {
+    "id": "candidate-18",
+    "number": 19,
+    "rows": 9,
+    "cols": 9,
+    "supports": 16,
+    "certificate": {
+      "completePartition": true,
+      "allowedAnchors": true,
+      "unitMass": true,
+      "exactZeroMoments": true,
+      "orthogonalConnectivity": true,
+      "incidentCells": true,
+      "pieces": [
+        {
+          "support": 0,
+          "size": 16,
+          "momentX": 0,
+          "momentY": 0,
+          "incident": [
+            20
+          ],
+          "connected": true
+        },
+        {
+          "support": 1,
+          "size": 1,
+          "momentX": 0,
+          "momentY": 0,
+          "incident": [
+            1
+          ],
+          "connected": true
+        },
+        {
+          "support": 2,
+          "size": 1,
+          "momentX": 0,
+          "momentY": 0,
+          "incident": [
+            2
+          ],
+          "connected": true
+        },
+        {
+          "support": 3,
+          "size": 13,
+          "momentX": 0,
+          "momentY": 0,
+          "incident": [
+            24
+          ],
+          "connected": true
+        },
+        {
+          "support": 4,
+          "size": 2,
+          "momentX": 0,
+          "momentY": 0,
+          "incident": [
+            7,
+            8
+          ],
+          "connected": true
+        },
+        {
+          "support": 5,
+          "size": 2,
+          "momentX": 0,
+          "momentY": 0,
+          "incident": [
+            16,
+            17
+          ],
+          "connected": true
+        },
+        {
+          "support": 6,
+          "size": 14,
+          "momentX": 0,
+          "momentY": 0,
+          "incident": [
+            50,
+            59
+          ],
+          "connected": true
+        },
+        {
+          "support": 7,
+          "size": 2,
+          "momentX": 0,
+          "momentY": 0,
+          "incident": [
+            26,
+            35
+          ],
+          "connected": true
+        },
+        {
+          "support": 8,
+          "size": 14,
+          "momentX": 0,
+          "momentY": 0,
+          "incident": [
+            46,
+            55
+          ],
+          "connected": true
+        },
+        {
+          "support": 9,
+          "size": 2,
+          "momentX": 0,
+          "momentY": 0,
+          "incident": [
+            32,
+            41
+          ],
+          "connected": true
+        },
+        {
+          "support": 10,
+          "size": 2,
+          "momentX": 0,
+          "momentY": 0,
+          "incident": [
+            52,
+            53
+          ],
+          "connected": true
+        },
+        {
+          "support": 11,
+          "size": 3,
+          "momentX": 0,
+          "momentY": 0,
+          "incident": [
+            66
+          ],
+          "connected": true
+        },
+        {
+          "support": 12,
+          "size": 3,
+          "momentX": 0,
+          "momentY": 0,
+          "incident": [
+            71
+          ],
+          "connected": true
+        },
+        {
+          "support": 13,
+          "size": 2,
+          "momentX": 0,
+          "momentY": 0,
+          "incident": [
+            63,
+            72
+          ],
+          "connected": true
+        },
+        {
+          "support": 14,
+          "size": 2,
+          "momentX": 0,
+          "momentY": 0,
+          "incident": [
+            68,
+            77
+          ],
+          "connected": true
+        },
+        {
+          "support": 15,
+          "size": 2,
+          "momentX": 0,
+          "momentY": 0,
+          "incident": [
+            78,
+            79
+          ],
+          "connected": true
+        }
+      ],
+      "milliseconds": 0.1744
+    },
+    "uniqueness": {
+      "method": "independent MILP assignment + two integer moments + connectivity flow; excludes reference",
+      "status": "inconclusive",
+      "solverStatus": 1,
+      "message": "Time limit reached. (HiGHS Status 13: model_status is Time limit reached; primal_status is None)",
+      "seconds": 3.0177,
+      "timeLimitSeconds": 3.0,
+      "numerics": "HiGHS floating-point MILP feasibility; mip_rel_gap=0, other tolerances solver defaults. Infeasible is complete-model MILP evidence, not an exported exact-rational proof."
+    },
+    "definitionSha256": "56fecf20b1e8553eb6a284068470066900c8fac1fe11770689cf6286a50ec6ce",
+    "seed": 90300
+  },
+  {
+    "id": "candidate-19",
+    "number": 20,
+    "rows": 9,
+    "cols": 9,
+    "supports": 14,
+    "certificate": {
+      "completePartition": true,
+      "allowedAnchors": true,
+      "unitMass": true,
+      "exactZeroMoments": true,
+      "orthogonalConnectivity": true,
+      "incidentCells": true,
+      "pieces": [
+        {
+          "support": 0,
+          "size": 14,
+          "momentX": 0,
+          "momentY": 0,
+          "incident": [
+            28
+          ],
+          "connected": true
+        },
+        {
+          "support": 1,
+          "size": 11,
+          "momentX": 0,
+          "momentY": 0,
+          "incident": [
+            13
+          ],
+          "connected": true
+        },
+        {
+          "support": 2,
+          "size": 2,
+          "momentX": 0,
+          "momentY": 0,
+          "incident": [
+            3,
+            4
+          ],
+          "connected": true
+        },
+        {
+          "support": 3,
+          "size": 1,
+          "momentX": 0,
+          "momentY": 0,
+          "incident": [
+            5
+          ],
+          "connected": true
+        },
+        {
+          "support": 4,
+          "size": 12,
+          "momentX": 0,
+          "momentY": 0,
+          "incident": [
+            33
+          ],
+          "connected": true
+        },
+        {
+          "support": 5,
+          "size": 9,
+          "momentX": 0,
+          "momentY": 0,
+          "incident": [
+            44
+          ],
+          "connected": true
+        },
+        {
+          "support": 6,
+          "size": 1,
+          "momentX": 0,
+          "momentY": 0,
+          "incident": [
+            10
+          ],
+          "connected": true
+        },
+        {
+          "support": 7,
+          "size": 10,
+          "momentX": 0,
+          "momentY": 0,
+          "incident": [
+            48,
+            57
+          ],
+          "connected": true
+        },
+        {
+          "support": 8,
+          "size": 4,
+          "momentX": 0,
+          "momentY": 0,
+          "incident": [
+            54,
+            63
+          ],
+          "connected": true
+        },
+        {
+          "support": 9,
+          "size": 8,
+          "momentX": 0,
+          "momentY": 0,
+          "incident": [
+            59,
+            60
+          ],
+          "connected": true
+        },
+        {
+          "support": 10,
+          "size": 2,
+          "momentX": 0,
+          "momentY": 0,
+          "incident": [
+            64,
+            65
+          ],
+          "connected": true
+        },
+        {
+          "support": 11,
+          "size": 2,
+          "momentX": 0,
+          "momentY": 0,
+          "incident": [
+            70,
+            79
+          ],
+          "connected": true
+        },
+        {
+          "support": 12,
+          "size": 2,
+          "momentX": 0,
+          "momentY": 0,
+          "incident": [
+            73,
+            74
+          ],
+          "connected": true
+        },
+        {
+          "support": 13,
+          "size": 3,
+          "momentX": 0,
+          "momentY": 0,
+          "incident": [
+            77
+          ],
+          "connected": true
+        }
+      ],
+      "milliseconds": 0.1468
+    },
+    "uniqueness": {
+      "method": "independent MILP assignment + two integer moments + connectivity flow; excludes reference",
+      "status": "inconclusive",
+      "solverStatus": 1,
+      "message": "Time limit reached. (HiGHS Status 13: model_status is Time limit reached; primal_status is None)",
+      "seconds": 3.0173,
+      "timeLimitSeconds": 3.0,
+      "numerics": "HiGHS floating-point MILP feasibility; mip_rel_gap=0, other tolerances solver defaults. Infeasible is complete-model MILP evidence, not an exported exact-rational proof."
+    },
+    "definitionSha256": "756476f253452880c24a5e9f19e5cb2177ed112183e65d89df401008118aa0da",
+    "seed": 90400
+  },
+  {
+    "id": "candidate-20",
+    "number": 21,
+    "rows": 10,
+    "cols": 10,
+    "supports": 16,
+    "certificate": {
+      "completePartition": true,
+      "allowedAnchors": true,
+      "unitMass": true,
+      "exactZeroMoments": true,
+      "orthogonalConnectivity": true,
+      "incidentCells": true,
+      "pieces": [
+        {
+          "support": 0,
+          "size": 13,
+          "momentX": 0,
+          "momentY": 0,
+          "incident": [
+            21
+          ],
+          "connected": true
+        },
+        {
+          "support": 1,
+          "size": 12,
+          "momentX": 0,
+          "momentY": 0,
+          "incident": [
+            24,
+            25
+          ],
+          "connected": true
+        },
+        {
+          "support": 2,
+          "size": 10,
+          "momentX": 0,
+          "momentY": 0,
+          "incident": [
+            17,
+            18
+          ],
+          "connected": true
+        },
+        {
+          "support": 3,
+          "size": 1,
+          "momentX": 0,
+          "momentY": 0,
+          "incident": [
+            9
+          ],
+          "connected": true
+        },
+        {
+          "support": 4,
+          "size": 1,
+          "momentX": 0,
+          "momentY": 0,
+          "incident": [
+            13
+          ],
+          "connected": true
+        },
+        {
+          "support": 5,
+          "size": 2,
+          "momentX": 0,
+          "momentY": 0,
+          "incident": [
+            15,
+            16
+          ],
+          "connected": true
+        },
+        {
+          "support": 6,
+          "size": 14,
+          "momentX": 0,
+          "momentY": 0,
+          "incident": [
+            57
+          ],
+          "connected": true
+        },
+        {
+          "support": 7,
+          "size": 13,
+          "momentX": 0,
+          "momentY": 0,
+          "incident": [
+            63
+          ],
+          "connected": true
+        },
+        {
+          "support": 8,
+          "size": 2,
+          "momentX": 0,
+          "momentY": 0,
+          "incident": [
+            33,
+            43
+          ],
+          "connected": true
+        },
+        {
+          "support": 9,
+          "size": 2,
+          "momentX": 0,
+          "momentY": 0,
+          "incident": [
+            37,
+            47
+          ],
+          "connected": true
+        },
+        {
+          "support": 10,
+          "size": 7,
+          "momentX": 0,
+          "momentY": 0,
+          "incident": [
+            61
+          ],
+          "connected": true
+        },
+        {
+          "support": 11,
+          "size": 10,
+          "momentX": 0,
+          "momentY": 0,
+          "incident": [
+            86,
+            87
+          ],
+          "connected": true
+        },
+        {
+          "support": 12,
+          "size": 3,
+          "momentX": 0,
+          "momentY": 0,
+          "incident": [
+            79
+          ],
+          "connected": true
+        },
+        {
+          "support": 13,
+          "size": 6,
+          "momentX": 0,
+          "momentY": 0,
+          "incident": [
+            80,
+            81
+          ],
+          "connected": true
+        },
+        {
+          "support": 14,
+          "size": 2,
+          "momentX": 0,
+          "momentY": 0,
+          "incident": [
+            84,
+            85
+          ],
+          "connected": true
+        },
+        {
+          "support": 15,
+          "size": 2,
+          "momentX": 0,
+          "momentY": 0,
+          "incident": [
+            98,
+            99
+          ],
+          "connected": true
+        }
+      ],
+      "milliseconds": 0.1773
+    },
+    "uniqueness": {
+      "method": "independent MILP assignment + two integer moments + connectivity flow; excludes reference",
+      "status": "inconclusive",
+      "solverStatus": 1,
+      "message": "Time limit reached. (HiGHS Status 13: model_status is Time limit reached; primal_status is None)",
+      "seconds": 3.0302,
+      "timeLimitSeconds": 3.0,
+      "numerics": "HiGHS floating-point MILP feasibility; mip_rel_gap=0, other tolerances solver defaults. Infeasible is complete-model MILP evidence, not an exported exact-rational proof."
+    },
+    "definitionSha256": "144c2324fb4269f167df515db3d13fef5ee8b97dadd4b1831fbb55afd9cf1b6e",
+    "seed": 100001
+  },
+  {
+    "id": "candidate-21",
+    "number": 22,
+    "rows": 10,
+    "cols": 10,
+    "supports": 18,
+    "certificate": {
+      "completePartition": true,
+      "allowedAnchors": true,
+      "unitMass": true,
+      "exactZeroMoments": true,
+      "orthogonalConnectivity": true,
+      "incidentCells": true,
+      "pieces": [
+        {
+          "support": 0,
+          "size": 15,
+          "momentX": 0,
+          "momentY": 0,
+          "incident": [
+            12
+          ],
+          "connected": true
+        },
+        {
+          "support": 1,
+          "size": 15,
+          "momentX": 0,
+          "momentY": 0,
+          "incident": [
+            26
+          ],
+          "connected": true
+        },
+        {
+          "support": 2,
+          "size": 10,
+          "momentX": 0,
+          "momentY": 0,
+          "incident": [
+            38,
+            39
+          ],
+          "connected": true
+        },
+        {
+          "support": 3,
+          "size": 1,
+          "momentX": 0,
+          "momentY": 0,
+          "incident": [
+            9
+          ],
+          "connected": true
+        },
+        {
+          "support": 4,
+          "size": 12,
+          "momentX": 0,
+          "momentY": 0,
+          "incident": [
+            52
+          ],
+          "connected": true
+        },
+        {
+          "support": 5,
+          "size": 1,
+          "momentX": 0,
+          "momentY": 0,
+          "incident": [
+            24
+          ],
+          "connected": true
+        },
+        {
+          "support": 6,
+          "size": 2,
+          "momentX": 0,
+          "momentY": 0,
+          "incident": [
+            30,
+            31
+          ],
+          "connected": true
+        },
+        {
+          "support": 7,
+          "size": 3,
+          "momentX": 0,
+          "momentY": 0,
+          "incident": [
+            41
+          ],
+          "connected": true
+        },
+        {
+          "support": 8,
+          "size": 12,
+          "momentX": 0,
+          "momentY": 0,
+          "incident": [
+            65,
+            75
+          ],
+          "connected": true
+        },
+        {
+          "support": 9,
+          "size": 5,
+          "momentX": 0,
+          "momentY": 0,
+          "incident": [
+            57
+          ],
+          "connected": true
+        },
+        {
+          "support": 10,
+          "size": 3,
+          "momentX": 0,
+          "momentY": 0,
+          "incident": [
+            79
+          ],
+          "connected": true
+        },
+        {
+          "support": 11,
+          "size": 7,
+          "momentX": 0,
+          "momentY": 0,
+          "incident": [
+            82
+          ],
+          "connected": true
+        },
+        {
+          "support": 12,
+          "size": 2,
+          "momentX": 0,
+          "momentY": 0,
+          "incident": [
+            76,
+            77
+          ],
+          "connected": true
+        },
+        {
+          "support": 13,
+          "size": 2,
+          "momentX": 0,
+          "momentY": 0,
+          "incident": [
+            78,
+            88
+          ],
+          "connected": true
+        },
+        {
+          "support": 14,
+          "size": 2,
+          "momentX": 0,
+          "momentY": 0,
+          "incident": [
+            80,
+            81
+          ],
+          "connected": true
+        },
+        {
+          "support": 15,
+          "size": 2,
+          "momentX": 0,
+          "momentY": 0,
+          "incident": [
+            83,
+            84
+          ],
+          "connected": true
+        },
+        {
+          "support": 16,
+          "size": 2,
+          "momentX": 0,
+          "momentY": 0,
+          "incident": [
+            90,
+            91
+          ],
+          "connected": true
+        },
+        {
+          "support": 17,
+          "size": 4,
+          "momentX": 0,
+          "momentY": 0,
+          "incident": [
+            97,
+            98
+          ],
+          "connected": true
+        }
+      ],
+      "milliseconds": 0.1831
+    },
+    "uniqueness": {
+      "method": "independent MILP assignment + two integer moments + connectivity flow; excludes reference",
+      "status": "inconclusive",
+      "solverStatus": 1,
+      "message": "Time limit reached. (HiGHS Status 13: model_status is Time limit reached; primal_status is None)",
+      "seconds": 3.024,
+      "timeLimitSeconds": 3.0,
+      "numerics": "HiGHS floating-point MILP feasibility; mip_rel_gap=0, other tolerances solver defaults. Infeasible is complete-model MILP evidence, not an exported exact-rational proof."
+    },
+    "definitionSha256": "0aef19962fb02ded1119a17e183730bd5d76c1f8d5bb11389f5e5cbd4838ac07",
+    "seed": 100100
+  },
+  {
+    "id": "candidate-22",
+    "number": 23,
+    "rows": 10,
+    "cols": 10,
+    "supports": 17,
+    "certificate": {
+      "completePartition": true,
+      "allowedAnchors": true,
+      "unitMass": true,
+      "exactZeroMoments": true,
+      "orthogonalConnectivity": true,
+      "incidentCells": true,
+      "pieces": [
+        {
+          "support": 0,
+          "size": 14,
+          "momentX": 0,
+          "momentY": 0,
+          "incident": [
+            12
+          ],
+          "connected": true
+        },
+        {
+          "support": 1,
+          "size": 15,
+          "momentX": 0,
+          "momentY": 0,
+          "incident": [
+            25
+          ],
+          "connected": true
+        },
+        {
+          "support": 2,
+          "size": 10,
+          "momentX": 0,
+          "momentY": 0,
+          "incident": [
+            28,
+            29
+          ],
+          "connected": true
+        },
+        {
+          "support": 3,
+          "size": 14,
+          "momentX": 0,
+          "momentY": 0,
+          "incident": [
+            51,
+            61
+          ],
+          "connected": true
+        },
+        {
+          "support": 4,
+          "size": 2,
+          "momentX": 0,
+          "momentY": 0,
+          "incident": [
+            31,
+            41
+          ],
+          "connected": true
+        },
+        {
+          "support": 5,
+          "size": 17,
+          "momentX": 0,
+          "momentY": 0,
+          "incident": [
+            66
+          ],
+          "connected": true
+        },
+        {
+          "support": 6,
+          "size": 2,
+          "momentX": 0,
+          "momentY": 0,
+          "incident": [
+            36,
+            46
+          ],
+          "connected": true
+        },
+        {
+          "support": 7,
+          "size": 1,
+          "momentX": 0,
+          "momentY": 0,
+          "incident": [
+            37
+          ],
+          "connected": true
+        },
+        {
+          "support": 8,
+          "size": 3,
+          "momentX": 0,
+          "momentY": 0,
+          "incident": [
+            58
+          ],
+          "connected": true
+        },
+        {
+          "support": 9,
+          "size": 1,
+          "momentX": 0,
+          "momentY": 0,
+          "incident": [
+            53
+          ],
+          "connected": true
+        },
+        {
+          "support": 10,
+          "size": 8,
+          "momentX": 0,
+          "momentY": 0,
+          "incident": [
+            84
+          ],
+          "connected": true
+        },
+        {
+          "support": 11,
+          "size": 2,
+          "momentX": 0,
+          "momentY": 0,
+          "incident": [
+            69,
+            79
+          ],
+          "connected": true
+        },
+        {
+          "support": 12,
+          "size": 2,
+          "momentX": 0,
+          "momentY": 0,
+          "incident": [
+            71,
+            81
+          ],
+          "connected": true
+        },
+        {
+          "support": 13,
+          "size": 2,
+          "momentX": 0,
+          "momentY": 0,
+          "incident": [
+            82,
+            92
+          ],
+          "connected": true
+        },
+        {
+          "support": 14,
+          "size": 2,
+          "momentX": 0,
+          "momentY": 0,
+          "incident": [
+            88,
+            89
+          ],
+          "connected": true
+        },
+        {
+          "support": 15,
+          "size": 2,
+          "momentX": 0,
+          "momentY": 0,
+          "incident": [
+            90,
+            91
+          ],
+          "connected": true
+        },
+        {
+          "support": 16,
+          "size": 3,
+          "momentX": 0,
+          "momentY": 0,
+          "incident": [
+            98
+          ],
+          "connected": true
+        }
+      ],
+      "milliseconds": 0.1825
+    },
+    "uniqueness": {
+      "method": "independent MILP assignment + two integer moments + connectivity flow; excludes reference",
+      "status": "inconclusive",
+      "solverStatus": 1,
+      "message": "Time limit reached. (HiGHS Status 13: model_status is Time limit reached; primal_status is None)",
+      "seconds": 3.0284,
+      "timeLimitSeconds": 3.0,
+      "numerics": "HiGHS floating-point MILP feasibility; mip_rel_gap=0, other tolerances solver defaults. Infeasible is complete-model MILP evidence, not an exported exact-rational proof."
+    },
+    "definitionSha256": "9c7c9d25288c5ae7ea4e43dcff196fd81cc452e15cb42b88da697301aa0465c1",
+    "seed": 100200
+  },
+  {
+    "id": "candidate-23",
+    "number": 24,
+    "rows": 10,
+    "cols": 10,
+    "supports": 15,
+    "certificate": {
+      "completePartition": true,
+      "allowedAnchors": true,
+      "unitMass": true,
+      "exactZeroMoments": true,
+      "orthogonalConnectivity": true,
+      "incidentCells": true,
+      "pieces": [
+        {
+          "support": 0,
+          "size": 15,
+          "momentX": 0,
+          "momentY": 0,
+          "incident": [
+            12
+          ],
+          "connected": true
+        },
+        {
+          "support": 1,
+          "size": 12,
+          "momentX": 0,
+          "momentY": 0,
+          "incident": [
+            17,
+            27
+          ],
+          "connected": true
+        },
+        {
+          "support": 2,
+          "size": 2,
+          "momentX": 0,
+          "momentY": 0,
+          "incident": [
+            8,
+            9
+          ],
+          "connected": true
+        },
+        {
+          "support": 3,
+          "size": 2,
+          "momentX": 0,
+          "momentY": 0,
+          "incident": [
+            19,
+            29
+          ],
+          "connected": true
+        },
+        {
+          "support": 4,
+          "size": 15,
+          "momentX": 0,
+          "momentY": 0,
+          "incident": [
+            54
+          ],
+          "connected": true
+        },
+        {
+          "support": 5,
+          "size": 8,
+          "momentX": 0,
+          "momentY": 0,
+          "incident": [
+            36,
+            46
+          ],
+          "connected": true
+        },
+        {
+          "support": 6,
+          "size": 14,
+          "momentX": 0,
+          "momentY": 0,
+          "incident": [
+            51,
+            61
+          ],
+          "connected": true
+        },
+        {
+          "support": 7,
+          "size": 9,
+          "momentX": 0,
+          "momentY": 0,
+          "incident": [
+            68
+          ],
+          "connected": true
+        },
+        {
+          "support": 8,
+          "size": 3,
+          "momentX": 0,
+          "momentY": 0,
+          "incident": [
+            66
+          ],
+          "connected": true
+        },
+        {
+          "support": 9,
+          "size": 9,
+          "momentX": 0,
+          "momentY": 0,
+          "incident": [
+            83
+          ],
+          "connected": true
+        },
+        {
+          "support": 10,
+          "size": 3,
+          "momentX": 0,
+          "momentY": 0,
+          "incident": [
+            80
+          ],
+          "connected": true
+        },
+        {
+          "support": 11,
+          "size": 2,
+          "momentX": 0,
+          "momentY": 0,
+          "incident": [
+            78,
+            79
+          ],
+          "connected": true
+        },
+        {
+          "support": 12,
+          "size": 2,
+          "momentX": 0,
+          "momentY": 0,
+          "incident": [
+            86,
+            96
+          ],
+          "connected": true
+        },
+        {
+          "support": 13,
+          "size": 2,
+          "momentX": 0,
+          "momentY": 0,
+          "incident": [
+            89,
+            99
+          ],
+          "connected": true
+        },
+        {
+          "support": 14,
+          "size": 2,
+          "momentX": 0,
+          "momentY": 0,
+          "incident": [
+            97,
+            98
+          ],
+          "connected": true
+        }
+      ],
+      "milliseconds": 0.1732
+    },
+    "uniqueness": {
+      "method": "independent MILP assignment + two integer moments + connectivity flow; excludes reference",
+      "status": "inconclusive",
+      "solverStatus": 1,
+      "message": "Time limit reached. (HiGHS Status 13: model_status is Time limit reached; primal_status is None)",
+      "seconds": 3.0536,
+      "timeLimitSeconds": 3.0,
+      "numerics": "HiGHS floating-point MILP feasibility; mip_rel_gap=0, other tolerances solver defaults. Infeasible is complete-model MILP evidence, not an exported exact-rational proof."
+    },
+    "definitionSha256": "dba3906461c364b89246d3a60faec4cd08fb4458100371e3fd9e321d2bf788a0",
+    "seed": 100300
+  },
+  {
+    "id": "candidate-24",
+    "number": 25,
+    "rows": 10,
+    "cols": 10,
+    "supports": 21,
+    "certificate": {
+      "completePartition": true,
+      "allowedAnchors": true,
+      "unitMass": true,
+      "exactZeroMoments": true,
+      "orthogonalConnectivity": true,
+      "incidentCells": true,
+      "pieces": [
+        {
+          "support": 0,
+          "size": 14,
+          "momentX": 0,
+          "momentY": 0,
+          "incident": [
+            12
+          ],
+          "connected": true
+        },
+        {
+          "support": 1,
+          "size": 14,
+          "momentX": 0,
+          "momentY": 0,
+          "incident": [
+            26
+          ],
+          "connected": true
+        },
+        {
+          "support": 2,
+          "size": 3,
+          "momentX": 0,
+          "momentY": 0,
+          "incident": [
+            8
+          ],
+          "connected": true
+        },
+        {
+          "support": 3,
+          "size": 1,
+          "momentX": 0,
+          "momentY": 0,
+          "incident": [
+            18
+          ],
+          "connected": true
+        },
+        {
+          "support": 4,
+          "size": 1,
+          "momentX": 0,
+          "momentY": 0,
+          "incident": [
+            19
+          ],
+          "connected": true
+        },
+        {
+          "support": 5,
+          "size": 12,
+          "momentX": 0,
+          "momentY": 0,
+          "incident": [
+            51
+          ],
+          "connected": true
+        },
+        {
+          "support": 6,
+          "size": 2,
+          "momentX": 0,
+          "momentY": 0,
+          "incident": [
+            24,
+            25
+          ],
+          "connected": true
+        },
+        {
+          "support": 7,
+          "size": 8,
+          "momentX": 0,
+          "momentY": 0,
+          "incident": [
+            53,
+            54
+          ],
+          "connected": true
+        },
+        {
+          "support": 8,
+          "size": 12,
+          "momentX": 0,
+          "momentY": 0,
+          "incident": [
+            67,
+            68
+          ],
+          "connected": true
+        },
+        {
+          "support": 9,
+          "size": 2,
+          "momentX": 0,
+          "momentY": 0,
+          "incident": [
+            38,
+            48
+          ],
+          "connected": true
+        },
+        {
+          "support": 10,
+          "size": 3,
+          "momentX": 0,
+          "momentY": 0,
+          "incident": [
+            49
+          ],
+          "connected": true
+        },
+        {
+          "support": 11,
+          "size": 2,
+          "momentX": 0,
+          "momentY": 0,
+          "incident": [
+            45,
+            55
+          ],
+          "connected": true
+        },
+        {
+          "support": 12,
+          "size": 3,
+          "momentX": 0,
+          "momentY": 0,
+          "incident": [
+            60
+          ],
+          "connected": true
+        },
+        {
+          "support": 13,
+          "size": 6,
+          "momentX": 0,
+          "momentY": 0,
+          "incident": [
+            75,
+            76
+          ],
+          "connected": true
+        },
+        {
+          "support": 14,
+          "size": 2,
+          "momentX": 0,
+          "momentY": 0,
+          "incident": [
+            63,
+            73
+          ],
+          "connected": true
+        },
+        {
+          "support": 15,
+          "size": 2,
+          "momentX": 0,
+          "momentY": 0,
+          "incident": [
+            80,
+            90
+          ],
+          "connected": true
+        },
+        {
+          "support": 16,
+          "size": 3,
+          "momentX": 0,
+          "momentY": 0,
+          "incident": [
+            83
+          ],
+          "connected": true
+        },
+        {
+          "support": 17,
+          "size": 2,
+          "momentX": 0,
+          "momentY": 0,
+          "incident": [
+            88,
+            89
+          ],
+          "connected": true
+        },
+        {
+          "support": 18,
+          "size": 4,
+          "momentX": 0,
+          "momentY": 0,
+          "incident": [
+            92,
+            93
+          ],
+          "connected": true
+        },
+        {
+          "support": 19,
+          "size": 2,
+          "momentX": 0,
+          "momentY": 0,
+          "incident": [
+            96,
+            97
+          ],
+          "connected": true
+        },
+        {
+          "support": 20,
+          "size": 2,
+          "momentX": 0,
+          "momentY": 0,
+          "incident": [
+            98,
+            99
+          ],
+          "connected": true
+        }
+      ],
+      "milliseconds": 0.2126
+    },
+    "uniqueness": {
+      "method": "independent MILP assignment + two integer moments + connectivity flow; excludes reference",
+      "status": "inconclusive",
+      "solverStatus": 1,
+      "message": "Time limit reached. (HiGHS Status 13: model_status is Time limit reached; primal_status is None)",
+      "seconds": 3.0375,
+      "timeLimitSeconds": 3.0,
+      "numerics": "HiGHS floating-point MILP feasibility; mip_rel_gap=0, other tolerances solver defaults. Infeasible is complete-model MILP evidence, not an exported exact-rational proof."
+    },
+    "definitionSha256": "f491c11ec2f8a7ebd60b8d3b61e9b4bff66a39f322d600bb1fa99088d92dffd2",
+    "seed": 100400
+  }
+]

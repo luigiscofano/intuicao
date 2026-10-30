@@ -4,3 +4,7 @@ export const GEOMETRY_LEVELS = {"elo":[{"game":"elo","rows":5,"cols":5,"regions"
 // ELO v3 campaign overlay: legacy data above remains byte-for-byte intact.
 import { ELO_CAMPAIGN } from './elo-campaign.mjs';
 GEOMETRY_LEVELS.elo = ELO_CAMPAIGN;
+
+// PRUMO80 curated campaign; historical definitions above are retained.
+import { PRUMO_CAMPAIGN } from './prumo-campaign.mjs';
+GEOMETRY_LEVELS.prumo = PRUMO_CAMPAIGN;
