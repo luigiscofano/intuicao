@@ -28,3 +28,7 @@
 #category-back:focus-visible{outline:3px solid #405e49;outline-offset:4px}
 #category-back:active{box-shadow:inset 0 2px 0 #c3ceba}
 @media(max-width:420px){#category-back{width:100%;padding:13px 14px;font-size:16px;gap:10px}}
+/* Equal breathing room around the return/title block, without collapsing margins. */
+#main > .category-heading{margin:0;padding-block:24px}
+#main > .category-heading + .games{margin-top:0}
+@media(max-width:760px){#main > .category-heading{padding-block:20px}}
