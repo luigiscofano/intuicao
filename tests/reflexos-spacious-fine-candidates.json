@@ -1,0 +1,271 @@
+[
+  {
+    "number": 58,
+    "level": {
+      "sources": [
+        {
+          "x": 70,
+          "y": 130,
+          "angle": 0,
+          "color": "blue"
+        },
+        {
+          "x": 115,
+          "y": 225,
+          "angle": 86.42366562500266,
+          "color": "gold"
+        },
+        {
+          "x": 780,
+          "y": 350,
+          "angle": 180,
+          "color": "pink"
+        }
+      ],
+      "targets": [
+        {
+          "x": 250,
+          "y": 350,
+          "color": "blue",
+          "radius": 22
+        },
+        {
+          "x": 480,
+          "y": 146,
+          "color": "gold",
+          "radius": 22
+        },
+        {
+          "x": 370,
+          "y": 195,
+          "color": "pink",
+          "radius": 22
+        }
+      ],
+      "objects": [
+        {
+          "id": "B",
+          "type": "mirror",
+          "x": 250,
+          "y": 130,
+          "angle": 69,
+          "length": 124.8
+        },
+        {
+          "id": "G1",
+          "type": "mirror",
+          "x": 125,
+          "y": 385,
+          "angle": 67.2,
+          "length": 124.8
+        },
+        {
+          "id": "G2",
+          "type": "mirror",
+          "x": 480,
+          "y": 385,
+          "angle": -21,
+          "length": 124.8
+        },
+        {
+          "id": "P1",
+          "type": "mirror",
+          "x": 620,
+          "y": 350,
+          "angle": 69,
+          "length": 124.8
+        },
+        {
+          "id": "P2",
+          "type": "mirror",
+          "x": 651.1126983722081,
+          "y": 85.11269837220809,
+          "angle": 69,
+          "length": 124.8
+        },
+        {
+          "id": "P3",
+          "type": "mirror",
+          "x": 370,
+          "y": 70,
+          "angle": -21,
+          "length": 124.8
+        },
+        {
+          "type": "wall",
+          "x": 550,
+          "y": 115,
+          "angle": 90,
+          "length": 60,
+          "width": 12,
+          "purpose": "Impede saltar da virada rosa superior diretamente ao alvo; a abertura horizontal conduz ao encadeamento H–J."
+        }
+      ],
+      "portals": [
+        {
+          "id": "H1",
+          "pairId": "H2",
+          "label": "H",
+          "x": 574.1005057458066,
+          "y": 56.10380940790108,
+          "radius": 16,
+          "colors": [
+            "pink"
+          ]
+        },
+        {
+          "id": "H2",
+          "pairId": "H1",
+          "label": "H",
+          "x": 250,
+          "y": 25,
+          "radius": 16,
+          "colors": [
+            "pink"
+          ]
+        },
+        {
+          "id": "J1",
+          "pairId": "J2",
+          "label": "J",
+          "x": 70,
+          "y": 25,
+          "radius": 16
+        },
+        {
+          "id": "J2",
+          "pairId": "J1",
+          "label": "J",
+          "x": 480,
+          "y": 70,
+          "radius": 16
+        },
+        {
+          "id": "R1",
+          "pairId": "R2",
+          "label": "R",
+          "x": 583.2842712474619,
+          "y": 378.2842712474619,
+          "radius": 16
+        },
+        {
+          "id": "R2",
+          "pairId": "R1",
+          "label": "R",
+          "x": 55,
+          "y": 390,
+          "radius": 16
+        }
+      ],
+      "design": {
+        "family": "dupla-passagem-rosa",
+        "dependency": "chain",
+        "blue": "straight",
+        "gold": "ground",
+        "pink": "chain",
+        "chainColor": "pink",
+        "returnAlternative": {
+          "color": "pink",
+          "mirror": "P1",
+          "angle": 0,
+          "portal": "R1",
+          "reason": "Continuar para a esquerda entra em R e retorna ao canto inicial sem uma chegada ao alvo rosa."
+        }
+      },
+      "solution": [
+        45,
+        43.2,
+        -45,
+        45,
+        45,
+        -45
+      ],
+      "id": "light-v3-133",
+      "campaignNumber": 58,
+      "name": "Dois pares antes da última virada",
+      "difficulty": 133,
+      "family": "dupla-passagem-rosa",
+      "width": 800,
+      "height": 460,
+      "sourceAngle": 0,
+      "target": {
+        "x": 250,
+        "y": 350,
+        "color": "blue",
+        "radius": 22
+      },
+      "requiredBounces": 6,
+      "wallPurpose": [
+        "Impede saltar da virada rosa superior diretamente ao alvo; a abertura horizontal conduz ao encadeamento H–J."
+      ],
+      "decoyCount": 1,
+      "rules": "Leve as três luzes aos respectivos alvos sem cruzar os feixes.",
+      "tutorial": "",
+      "hint": "Observe a chegada azul antes de decidir o trajeto dourado.",
+      "number": 58,
+      "campaignBand": "advanced",
+      "campaignRevision": "reflexos80-v6"
+    },
+    "scoreBefore": 175.92075242003312,
+    "scoreAfter": 7.191758432336186,
+    "initial": 12.597186672640348,
+    "reference": 12.195564362605175,
+    "edits": [
+      {
+        "round": 0,
+        "scoreBefore": 175.92075242003312,
+        "scoreAfter": 128.29828981611357
+      },
+      {
+        "round": 1,
+        "scoreBefore": 128.29828981611357,
+        "scoreAfter": 120.52061228313099
+      },
+      {
+        "round": 2,
+        "scoreBefore": 120.52061228313099,
+        "scoreAfter": 116.27962993270205
+      },
+      {
+        "round": 3,
+        "scoreBefore": 116.27962993270205,
+        "scoreAfter": 111.35564393941053
+      },
+      {
+        "round": 4,
+        "scoreBefore": 111.35564393941053,
+        "scoreAfter": 84.81202946802563
+      },
+      {
+        "round": 5,
+        "scoreBefore": 84.81202946802563,
+        "scoreAfter": 66.35752260658043
+      },
+      {
+        "round": 6,
+        "scoreBefore": 66.35752260658043,
+        "scoreAfter": 43.27940683632904
+      },
+      {
+        "round": 7,
+        "scoreBefore": 43.27940683632904,
+        "scoreAfter": 37.823592957300036
+      },
+      {
+        "round": 8,
+        "scoreBefore": 37.823592957300036,
+        "scoreAfter": 13.791826119993853
+      },
+      {
+        "round": 9,
+        "scoreBefore": 13.791826119993853,
+        "scoreAfter": 10.659058145571088
+      },
+      {
+        "round": 10,
+        "scoreBefore": 10.659058145571088,
+        "scoreAfter": 7.191758432336186
+      }
+    ]
+  }
+]

@@ -1,0 +1,19 @@
+import fs from'node:fs';import{traceLightWorld}from'../dist/light-world.mjs';import{applyAngles}from'./reflexos80-independent.mjs';
+const baseline=JSON.parse(fs.readFileSync('dist/development/reflexos80/records.json')),records=structuredClone(baseline),edits=[];
+const paths=['tests/reflexos-spacious-generic-candidates.json','tests/reflexos-spacious-extra-candidates.json','tests/reflexos-spacious-density-candidates.json','tests/reflexos-spacious-35-strict.json','tests/reflexos-spacious-fine-candidates.json'];
+for(const path of paths)if(fs.existsSync(path))for(const r of JSON.parse(fs.readFileSync(path))){records[r.number-1].level=structuredClone(r.level);edits.push({number:r.number,source:path,scoreBefore:r.scoreBefore,scoreAfter:r.scoreAfter});}
+for(const r of JSON.parse(fs.readFileSync('tests/reflexos-spacious-shared-candidates.json'))){records[r.number-1].level=structuredClone(r.best.record.level);edits.push({number:r.number,source:'shared-spacing',edits:r.best.edits});}
+const walls=JSON.parse(fs.readFileSync('tests/reflexos-spacious-wall-final.json')).candidates;
+for(const r of walls){const level=records[r.number-1].level;level.objects.push({...r.wall,purpose:r.purpose});level.wallPurpose=[...(level.wallPurpose??[]),r.purpose];edits.push({number:r.number,wall:r.wall,ablation:r.ablation,purpose:r.purpose});}
+const geometry=l=>JSON.stringify({sources:l.sources,targets:l.targets,portals:l.portals,objects:l.objects,solution:l.solution});
+for(let i=0;i<records.length;i++){const r=records[i],old=baseline[i],l=r.level,changed=geometry(l)!==geometry(old.level);r.previousOrigin=old.origin;r.origin={previousNumber:i+1,previousId:old.level.id,recomposed:changed,action:changed?'new-version-new-identity':'retained-geometry-and-identity',archive:'../reflexos80/records.json',transformation:changed?'Recomposição de posições e/ou paredes com replay de decisões e folgas; desenhos, dimensões, física e controles preservados.':'Geometria e identidade preservadas.'};
+if(changed){l.id='light-v7-spacious-'+String(i+1).padStart(3,'0');l.campaignRevision='reflexos80-spacious-v7';l.target=structuredClone(l.targets[0]);l.sourceAngle=l.sources[0].angle;}
+r.spacingRevision={baseCommit:'bc9240ebd850f3b7d0710b36d8a0ce10319f7cb0',changed,edits:edits.filter(e=>e.number===i+1),addedWall:!!walls.find(w=>w.number===i+1)};
+for(const c of r.cases){let s=applyAngles(l,c.angles);if(c.sourceIndices)s.sources=c.sourceIndices.map(j=>s.sources[j]);const status=traceLightWorld(s).status;if(status!==c.expectedStatus)throw Error('Core case changed '+l.number+' '+c.id+' '+status+' != '+c.expectedStatus);}
+if(changed)r.cases.push({id:'initial-spacious',angles:l.objects.filter(o=>o.type==='mirror').map(o=>o.angle),expectedStatus:traceLightWorld(l).status,claim:'Estado inicial da revisão de espaçamento; o caso initial anterior permanece documental.'});
+for(const c of r.validation.finiteAngleCatalogue??[]){let s=applyAngles(l,c.angles);if(c.sourceIndices)s.sources=c.sourceIndices.map(j=>s.sources[j]);c.previousExpectedStatus=c.expectedStatus;c.expectedStatus=traceLightWorld(s).status;}
+const wall=walls.find(w=>w.number===i+1);if(wall)r.wallPurposeCertificate=wall;
+}
+fs.mkdirSync('dist/development/reflexos-spacious',{recursive:true});fs.writeFileSync('dist/development/reflexos-spacious/records.json',JSON.stringify(records,null,2));fs.writeFileSync('dist/development/reflexos-spacious/previous-80.json',JSON.stringify(baseline.map(r=>r.level),null,2));
+fs.writeFileSync('dist/light-levels.mjs','// Reflexos80 v7: roomier authored layouts and meaningful walls; unchanged production engine and visuals.\nexport const lightLevels = '+JSON.stringify(records.map(r=>r.level),null,2)+';\n');
+console.log(JSON.stringify({levels:records.length,changed:records.filter(r=>r.spacingRevision.changed).length,wallLevels:records.filter(r=>r.level.objects.some(o=>o.type==='wall')).length,addedWalls:walls.length}));

@@ -1,0 +1,113 @@
+{
+  "recordsSha256": "3d3d45476f04fbc8e74d29a8175df319fec7d885a4af7254cbf0815f388ef7b3",
+  "physics": {
+    "count": 80,
+    "exceptions20to30": [],
+    "conflictCount": 64,
+    "wallFreeConflictCount": 41,
+    "sharedMirrorCount": 6,
+    "perturbationTests": 1938,
+    "perturbationFailures": 0
+  },
+  "physicsPassed": true,
+  "minima": {
+    "minIncidence": 29.5,
+    "minMirrorEndpointMargin": 10.324785904405992,
+    "minWallClearance": 5.639348493823144,
+    "minTargetTransverseMargin": 5.06025801377065,
+    "minPortalTransverseMargin": 5.231505591315132,
+    "minDifferentColorPathDistance": 6.335012502007877
+  },
+  "caseChecks": 1731,
+  "winningTopologyChecks": 1092,
+  "caseChanges": [],
+  "initialChanges": [
+    {
+      "number": 46,
+      "before": "collision",
+      "after": "miss"
+    }
+  ],
+  "issues": [],
+  "sizeIssues": [],
+  "newOrWorsenedClipping": [],
+  "preservation": [
+    {
+      "path": "dist/light-world.mjs",
+      "unchanged": true
+    },
+    {
+      "path": "dist/math.mjs",
+      "unchanged": true
+    },
+    {
+      "path": "dist/light-render.mjs",
+      "unchanged": true
+    },
+    {
+      "path": "dist/light-world-render.mjs",
+      "unchanged": true
+    },
+    {
+      "path": "dist/app.mjs",
+      "unchanged": true
+    },
+    {
+      "path": "dist/style.css",
+      "unchanged": true
+    },
+    {
+      "path": "dist/standard-controls.css",
+      "unchanged": true
+    }
+  ],
+  "spacing": {
+    "before": {
+      "levels": 80,
+      "initialOverlapLevels": 24,
+      "referenceOverlapLevels": 22,
+      "perturbedOverlapLevels": 22,
+      "initialMinimum": -18,
+      "referenceMinimum": -18,
+      "perturbedMinimum": -18
+    },
+    "after": {
+      "levels": 80,
+      "initialOverlapLevels": 0,
+      "referenceOverlapLevels": 0,
+      "perturbedOverlapLevels": 0,
+      "initialMinimum": 1.4822611461941335,
+      "referenceMinimum": 1.4822611461941335,
+      "perturbedMinimum": 1.4822611461941335
+    },
+    "changedCount": 53,
+    "improvedInitial": 47,
+    "improvedReference": 48,
+    "remainingUnder8": [
+      {
+        "number": 37,
+        "initial": 3,
+        "reference": 3,
+        "perturbed": 3
+      },
+      {
+        "number": 62,
+        "initial": 5.567819101271027,
+        "reference": 14.102792260455168,
+        "perturbed": 14.102792260455168
+      },
+      {
+        "number": 64,
+        "initial": 1.4822611461941335,
+        "reference": 1.4822611461941335,
+        "perturbed": 1.4822611461941335
+      },
+      {
+        "number": 78,
+        "initial": 1.4822611461941335,
+        "reference": 1.4822611461941335,
+        "perturbed": 1.4822611461941335
+      }
+    ]
+  }
+}

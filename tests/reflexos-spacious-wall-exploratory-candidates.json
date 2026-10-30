@@ -1,0 +1,2655 @@
+{
+  "count": 40,
+  "candidates": [
+    {
+      "number": 13,
+      "id": "light-v3-68",
+      "wall": {
+        "type": "wall",
+        "x": 489.2592892374202,
+        "y": 205.52156158217818,
+        "length": 40,
+        "width": 12,
+        "angle": 111.4
+      },
+      "score": 77.49963835151664,
+      "objectSpacing": 33.49963835151663,
+      "referenceClearance": 45.918413531061056,
+      "ablation": {
+        "caseId": "new-center-conflict-1",
+        "angles": [
+          10.7,
+          45,
+          45
+        ],
+        "sourceIndex": 0,
+        "color": "gold",
+        "withoutWallIndividualStatus": "target",
+        "withoutWallJointStatus": "collision",
+        "withWallIndividualStatus": "miss",
+        "blockedRayStatus": "wall",
+        "alternativeMirrorRoute": [
+          0
+        ],
+        "alternativePortalRoute": [],
+        "segment": {
+          "a": {
+            "x": 220.0000009310558,
+            "y": 100.00000036487678
+          },
+          "b": {
+            "x": 709.5623433062638,
+            "y": 291.8573843963338
+          },
+          "startDistance": 160,
+          "endDistance": 685.8141714325454
+        }
+      },
+      "preservedConflictWitness": {
+        "caseId": "new-center-conflict-2",
+        "angles": [
+          15.6,
+          15.6,
+          45
+        ],
+        "individualStatuses": [
+          "target",
+          "target"
+        ],
+        "jointStatus": "collision"
+      },
+      "perturbation": {
+        "tests": 15,
+        "failures": 0
+      },
+      "purpose": "A parede bloqueia uma chegada alternativa gold antes válida isoladamente (new-center-conflict-1), preservando a referência conjunta e outra contraprova completa de conflito. A ablação física verifica que a parede, não uma regra oculta, elimina esse percurso."
+    },
+    {
+      "number": 15,
+      "id": "light-v5-open-018",
+      "wall": {
+        "type": "wall",
+        "x": 465.6008682238207,
+        "y": 263.4939881198174,
+        "length": 70,
+        "width": 12,
+        "angle": 76.18830207827551
+      },
+      "score": 86.11189077515027,
+      "objectSpacing": 31.111890775150265,
+      "referenceClearance": 46.18389219449267,
+      "ablation": {
+        "caseId": "validation.finiteShortcutSearch.solutions[44]",
+        "angles": [
+          14.6,
+          56.1,
+          -38.7,
+          50,
+          -22.3
+        ],
+        "sourceIndex": 1,
+        "color": "blue",
+        "withoutWallIndividualStatus": "target",
+        "withoutWallJointStatus": "target",
+        "withWallIndividualStatus": "miss",
+        "blockedRayStatus": "wall",
+        "alternativeMirrorRoute": [
+          1,
+          2,
+          3
+        ],
+        "alternativePortalRoute": [],
+        "segment": {
+          "a": {
+            "x": 346.8000009710856,
+            "y": 292.69999976126826
+          },
+          "b": {
+            "x": 562.8015777942404,
+            "y": 239.59816041317578
+          },
+          "startDistance": 214.9841156922994,
+          "endDistance": 437.417221439263
+        }
+      },
+      "preservedConflictWitness": {
+        "caseId": "rotas-locais-em-conflito",
+        "angles": [
+          23.2,
+          -9,
+          0,
+          0,
+          0
+        ],
+        "individualStatuses": [
+          "target",
+          "target"
+        ],
+        "jointStatus": "collision"
+      },
+      "perturbation": {
+        "tests": 43,
+        "failures": 0
+      },
+      "purpose": "A parede bloqueia uma chegada alternativa blue antes válida isoladamente (catálogo), preservando a referência conjunta e outra contraprova completa de conflito. A ablação física verifica que a parede, não uma regra oculta, elimina esse percurso."
+    },
+    {
+      "number": 17,
+      "id": "light-v5-portal-001",
+      "wall": {
+        "type": "wall",
+        "x": 409.637925607728,
+        "y": 99.01334186539559,
+        "length": 70,
+        "width": 12,
+        "angle": 87
+      },
+      "score": 95,
+      "objectSpacing": 42.131191162762114,
+      "referenceClearance": 54.131191162762114,
+      "ablation": {
+        "caseId": "route-choice-1-0",
+        "angles": [
+          88.5,
+          77.2
+        ],
+        "sourceIndex": 0,
+        "color": "gold",
+        "withoutWallIndividualStatus": "target",
+        "withoutWallJointStatus": "target",
+        "withWallIndividualStatus": "miss",
+        "blockedRayStatus": "wall",
+        "alternativeMirrorRoute": [
+          0
+        ],
+        "alternativePortalRoute": [
+          "g1a"
+        ],
+        "segment": {
+          "a": {
+            "x": 200.00000099862956,
+            "y": 109.99999994766404
+          },
+          "b": {
+            "x": 522.5198850126271,
+            "y": 93.09744905186642
+          },
+          "startDistance": 149.99999999999997,
+          "endDistance": 472.9624928860742
+        }
+      },
+      "preservedConflictWitness": {
+        "caseId": "local-routes-collide",
+        "angles": [
+          -77.8,
+          77.2
+        ],
+        "individualStatuses": [
+          "target",
+          "target"
+        ],
+        "jointStatus": "collision"
+      },
+      "perturbation": {
+        "tests": 9,
+        "failures": 0
+      },
+      "purpose": "A parede bloqueia uma chegada alternativa gold antes válida isoladamente (route-choice-1-0), preservando a referência conjunta e outra contraprova completa de conflito. A ablação física verifica que a parede, não uma regra oculta, elimina esse percurso."
+    },
+    {
+      "number": 19,
+      "id": "light-v5-portal-023",
+      "wall": {
+        "type": "wall",
+        "x": 341.61543884047444,
+        "y": 175.1194972544346,
+        "length": 54,
+        "width": 12,
+        "angle": 39
+      },
+      "score": 88.26987913250187,
+      "objectSpacing": 34.869879132501865,
+      "referenceClearance": 42.12784669608898,
+      "ablation": {
+        "caseId": "route-choice-1-1",
+        "angles": [
+          -66.5,
+          64.5
+        ],
+        "sourceIndex": 1,
+        "color": "blue",
+        "withoutWallIndividualStatus": "target",
+        "withoutWallJointStatus": "target",
+        "withWallIndividualStatus": "miss",
+        "blockedRayStatus": "wall",
+        "alternativeMirrorRoute": [
+          1
+        ],
+        "alternativePortalRoute": [
+          "b1a"
+        ],
+        "segment": {
+          "a": {
+            "x": 200.0000006293204,
+            "y": 349.99999922285406
+          },
+          "b": {
+            "x": 388.82058491085917,
+            "y": 116.82599659829478
+          },
+          "startDistance": 150,
+          "endDistance": 450.0388783947501
+        }
+      },
+      "preservedConflictWitness": {
+        "caseId": "route-choice-1-0",
+        "angles": [
+          -66.5,
+          77.3
+        ],
+        "individualStatuses": [
+          "target",
+          "target"
+        ],
+        "jointStatus": "collision"
+      },
+      "perturbation": {
+        "tests": 9,
+        "failures": 0
+      },
+      "purpose": "A parede bloqueia uma chegada alternativa blue antes válida isoladamente (route-choice-1-1), preservando a referência conjunta e outra contraprova completa de conflito. A ablação física verifica que a parede, não uma regra oculta, elimina esse percurso."
+    },
+    {
+      "number": 20,
+      "id": "light-v5-open-011",
+      "wall": {
+        "type": "wall",
+        "x": 537.6661576816548,
+        "y": 243.59990901413914,
+        "length": 54,
+        "width": 12,
+        "angle": 204.41866710911032
+      },
+      "score": 88.6174342202905,
+      "objectSpacing": 35.40922274494162,
+      "referenceClearance": 39.80821147534887,
+      "ablation": {
+        "caseId": "validation.finiteShortcutSearch.solutions[44]",
+        "angles": [
+          -16.3,
+          44.2,
+          -32,
+          -44.6,
+          0
+        ],
+        "sourceIndex": 0,
+        "color": "gold",
+        "withoutWallIndividualStatus": "target",
+        "withoutWallJointStatus": "target",
+        "withWallIndividualStatus": "miss",
+        "blockedRayStatus": "wall",
+        "alternativeMirrorRoute": [
+          0,
+          2
+        ],
+        "alternativePortalRoute": [],
+        "segment": {
+          "a": {
+            "x": 617.2999995865988,
+            "y": 68.20000091054901
+          },
+          "b": {
+            "x": 494.7863966559157,
+            "y": 338.0460133776108
+          },
+          "startDistance": 152.4710136386586,
+          "endDistance": 448.82629593919523
+        }
+      },
+      "preservedConflictWitness": {
+        "caseId": "rotas-locais-em-conflito",
+        "angles": [
+          -5,
+          17.4,
+          -56.7,
+          0,
+          0
+        ],
+        "individualStatuses": [
+          "target",
+          "target"
+        ],
+        "jointStatus": "collision"
+      },
+      "perturbation": {
+        "tests": 43,
+        "failures": 0
+      },
+      "purpose": "A parede bloqueia uma chegada alternativa gold antes válida isoladamente (catálogo), preservando a referência conjunta e outra contraprova completa de conflito. A ablação física verifica que a parede, não uma regra oculta, elimina esse percurso."
+    },
+    {
+      "number": 23,
+      "id": "light-v5-portal-011",
+      "wall": {
+        "type": "wall",
+        "x": 269.53313735026086,
+        "y": 229.56507329968304,
+        "length": 70,
+        "width": 12,
+        "angle": 30.000000000000014
+      },
+      "score": 95,
+      "objectSpacing": 40.94195874836347,
+      "referenceClearance": 45.09481670922618,
+      "ablation": {
+        "caseId": "route-choice-2-1",
+        "angles": [
+          23.5,
+          66
+        ],
+        "sourceIndex": 1,
+        "color": "blue",
+        "withoutWallIndividualStatus": "target",
+        "withoutWallJointStatus": "target",
+        "withWallIndividualStatus": "miss",
+        "blockedRayStatus": "wall",
+        "alternativeMirrorRoute": [
+          1
+        ],
+        "alternativePortalRoute": [
+          "b1a"
+        ],
+        "segment": {
+          "a": {
+            "x": 200.0000005,
+            "y": 349.9999991339746
+          },
+          "b": {
+            "x": 354.51808238946865,
+            "y": 82.36683061332667
+          },
+          "startDistance": 150.00000000000003,
+          "endDistance": 459.0361637789372
+        }
+      },
+      "preservedConflictWitness": {
+        "caseId": "local-routes-collide",
+        "angles": [
+          -17.3,
+          84
+        ],
+        "individualStatuses": [
+          "target",
+          "target"
+        ],
+        "jointStatus": "collision"
+      },
+      "perturbation": {
+        "tests": 9,
+        "failures": 0
+      },
+      "purpose": "A parede bloqueia uma chegada alternativa blue antes válida isoladamente (route-choice-2-1), preservando a referência conjunta e outra contraprova completa de conflito. A ablação física verifica que a parede, não uma regra oculta, elimina esse percurso."
+    },
+    {
+      "number": 24,
+      "id": "light-v5-portal-012",
+      "wall": {
+        "type": "wall",
+        "x": 376.8355877840705,
+        "y": 269.03834675050746,
+        "length": 54,
+        "width": 12,
+        "angle": 65.40000000000002
+      },
+      "score": 93.4,
+      "objectSpacing": 50.0592657269998,
+      "referenceClearance": 43.81418472303816,
+      "ablation": {
+        "caseId": "route-choice-2-0",
+        "angles": [
+          -27.5,
+          77.7
+        ],
+        "sourceIndex": 1,
+        "color": "blue",
+        "withoutWallIndividualStatus": "target",
+        "withoutWallJointStatus": "target",
+        "withWallIndividualStatus": "miss",
+        "blockedRayStatus": "wall",
+        "alternativeMirrorRoute": [
+          1
+        ],
+        "alternativePortalRoute": [],
+        "segment": {
+          "a": {
+            "x": 200.00000090923612,
+            "y": 349.9999995837192
+          },
+          "b": {
+            "x": 705.2445348373345,
+            "y": 118.68099148882851
+          },
+          "startDistance": 150,
+          "endDistance": 705.6802341007151
+        }
+      },
+      "preservedConflictWitness": {
+        "caseId": "route-choice-0-1",
+        "angles": [
+          -18.1,
+          34
+        ],
+        "individualStatuses": [
+          "target",
+          "target"
+        ],
+        "jointStatus": "collision"
+      },
+      "perturbation": {
+        "tests": 9,
+        "failures": 0
+      },
+      "purpose": "A parede bloqueia uma chegada alternativa blue antes válida isoladamente (route-choice-2-0), preservando a referência conjunta e outra contraprova completa de conflito. A ablação física verifica que a parede, não uma regra oculta, elimina esse percurso."
+    },
+    {
+      "number": 25,
+      "id": "light-v4-open-010",
+      "wall": {
+        "type": "wall",
+        "x": 192.35681442524822,
+        "y": 240.1939161797494,
+        "length": 40,
+        "width": 12,
+        "angle": 191.20000000000005
+      },
+      "score": 92,
+      "objectSpacing": 51.459078334859306,
+      "referenceClearance": 43.25726403795084,
+      "ablation": {
+        "caseId": "validation.finiteShortcutSearch.solutions[2]",
+        "angles": [
+          -39.4,
+          -11.1,
+          0,
+          0,
+          47.8
+        ],
+        "sourceIndex": 0,
+        "color": "gold",
+        "withoutWallIndividualStatus": "target",
+        "withoutWallJointStatus": "target",
+        "withWallIndividualStatus": "miss",
+        "blockedRayStatus": "wall",
+        "alternativeMirrorRoute": [
+          0,
+          4
+        ],
+        "alternativePortalRoute": [],
+        "segment": {
+          "a": {
+            "x": 221.69999980576546,
+            "y": 92.00000098095522
+          },
+          "b": {
+            "x": 168.3487536593705,
+            "y": 361.443483160581
+          },
+          "startDistance": 553.3000000000002,
+          "endDistance": 827.9746176013641
+        }
+      },
+      "preservedConflictWitness": {
+        "caseId": "rotas-locais-em-conflito",
+        "angles": [
+          -80.1,
+          -11.1,
+          0,
+          -88.6,
+          0
+        ],
+        "individualStatuses": [
+          "target",
+          "target"
+        ],
+        "jointStatus": "collision"
+      },
+      "perturbation": {
+        "tests": 43,
+        "failures": 0
+      },
+      "purpose": "A parede bloqueia uma chegada alternativa gold antes válida isoladamente (catálogo), preservando a referência conjunta e outra contraprova completa de conflito. A ablação física verifica que a parede, não uma regra oculta, elimina esse percurso."
+    },
+    {
+      "number": 26,
+      "id": "light-v5-deduction-four-01",
+      "wall": {
+        "type": "wall",
+        "x": 230.88359984921078,
+        "y": 239.21147457284204,
+        "length": 54,
+        "width": 12,
+        "angle": 260.20000000000005
+      },
+      "score": 93.4,
+      "objectSpacing": 44.48395038140134,
+      "referenceClearance": 46.658867286420595,
+      "ablation": {
+        "caseId": "choices-1",
+        "angles": [
+          -4.4,
+          -12.3,
+          -56.9,
+          -13.8
+        ],
+        "sourceIndex": 2,
+        "color": "pink",
+        "withoutWallIndividualStatus": "target",
+        "withoutWallJointStatus": "target",
+        "withWallIndividualStatus": "miss",
+        "blockedRayStatus": "wall",
+        "alternativeMirrorRoute": [
+          2
+        ],
+        "alternativePortalRoute": [],
+        "segment": {
+          "a": {
+            "x": 399.9999990145921,
+            "y": 210.00000017020952
+          },
+          "b": {
+            "x": 174.51146679408367,
+            "y": 248.94863270705287
+          },
+          "startDistance": 180.00000000000006,
+          "endDistance": 408.827607904836
+        }
+      },
+      "preservedConflictWitness": {
+        "caseId": "choices-4",
+        "angles": [
+          -24.4,
+          -12.3,
+          -25.2,
+          -33.8
+        ],
+        "individualStatuses": [
+          "target",
+          "target",
+          "target"
+        ],
+        "jointStatus": "collision"
+      },
+      "perturbation": {
+        "tests": 25,
+        "failures": 0
+      },
+      "purpose": "A parede bloqueia uma chegada alternativa pink antes válida isoladamente (choices-1), preservando a referência conjunta e outra contraprova completa de conflito. A ablação física verifica que a parede, não uma regra oculta, elimina esse percurso."
+    },
+    {
+      "number": 27,
+      "id": "light-v5-portal-031",
+      "wall": {
+        "type": "wall",
+        "x": 578.9726854876288,
+        "y": 178.09036562833154,
+        "length": 70,
+        "width": 12,
+        "angle": 65.59999999999998
+      },
+      "score": 95,
+      "objectSpacing": 132.70001659743312,
+      "referenceClearance": 59.90630347383207,
+      "ablation": {
+        "caseId": "route-choice-1-0",
+        "angles": [
+          -14,
+          65.8
+        ],
+        "sourceIndex": 1,
+        "color": "blue",
+        "withoutWallIndividualStatus": "target",
+        "withoutWallJointStatus": "target",
+        "withWallIndividualStatus": "miss",
+        "blockedRayStatus": "wall",
+        "alternativeMirrorRoute": [
+          1
+        ],
+        "alternativePortalRoute": [],
+        "segment": {
+          "a": {
+            "x": 200.00000091068367,
+            "y": 349.99999958689557
+          },
+          "b": {
+            "x": 705.2969136799438,
+            "y": 120.78715430881019
+          },
+          "startDistance": 149.99999999999997,
+          "endDistance": 704.8544840718338
+        }
+      },
+      "preservedConflictWitness": {
+        "caseId": "route-choice-1-1",
+        "angles": [
+          -14,
+          21
+        ],
+        "individualStatuses": [
+          "target",
+          "target"
+        ],
+        "jointStatus": "collision"
+      },
+      "perturbation": {
+        "tests": 9,
+        "failures": 0
+      },
+      "purpose": "A parede bloqueia uma chegada alternativa blue antes válida isoladamente (route-choice-1-0), preservando a referência conjunta e outra contraprova completa de conflito. A ablação física verifica que a parede, não uma regra oculta, elimina esse percurso."
+    },
+    {
+      "number": 28,
+      "id": "light-v5-open-chain-003",
+      "wall": {
+        "type": "wall",
+        "x": 236.67419383045726,
+        "y": 171.06675590445553,
+        "length": 54,
+        "width": 12,
+        "angle": -40.38392855188994
+      },
+      "score": 93.4,
+      "objectSpacing": 43.06512664755534,
+      "referenceClearance": 49.76130228021873,
+      "ablation": {
+        "caseId": "validation.finiteShortcutSearch.solutions[1]",
+        "angles": [
+          -56,
+          -18.9,
+          -8.8,
+          -68.1,
+          0,
+          -34.6
+        ],
+        "sourceIndex": 0,
+        "color": "gold",
+        "withoutWallIndividualStatus": "target",
+        "withoutWallJointStatus": "target",
+        "withWallIndividualStatus": "miss",
+        "blockedRayStatus": "wall",
+        "alternativeMirrorRoute": [
+          0,
+          3
+        ],
+        "alternativePortalRoute": [],
+        "segment": {
+          "a": {
+            "x": 335.19999935209376,
+            "y": 286.8999992382799
+          },
+          "b": {
+            "x": 156.0621711309365,
+            "y": 76.29410226769014
+          },
+          "startDistance": 177.56196101642948,
+          "endDistance": 454.0492217330483
+        }
+      },
+      "preservedConflictWitness": {
+        "caseId": "rotas-locais-em-conflito",
+        "angles": [
+          -10.2,
+          -18.9,
+          13.3,
+          0,
+          0,
+          0
+        ],
+        "individualStatuses": [
+          "target",
+          "target",
+          "target"
+        ],
+        "jointStatus": "collision"
+      },
+      "perturbation": {
+        "tests": 77,
+        "failures": 0
+      },
+      "purpose": "A parede bloqueia uma chegada alternativa gold antes válida isoladamente (catálogo), preservando a referência conjunta e outra contraprova completa de conflito. A ablação física verifica que a parede, não uma regra oculta, elimina esse percurso."
+    },
+    {
+      "number": 30,
+      "id": "light-v5-portal-030",
+      "wall": {
+        "type": "wall",
+        "x": 326.4259721649404,
+        "y": 154.3582681444404,
+        "length": 40,
+        "width": 12,
+        "angle": 118.40000000000003
+      },
+      "score": 78.67677246807858,
+      "objectSpacing": 34.67677246807858,
+      "referenceClearance": 44.765296687108034,
+      "ablation": {
+        "caseId": "local-routes-collide",
+        "angles": [
+          -75.8,
+          -89.6,
+          74
+        ],
+        "sourceIndex": 0,
+        "color": "gold",
+        "withoutWallIndividualStatus": "target",
+        "withoutWallJointStatus": "collision",
+        "withWallIndividualStatus": "miss",
+        "blockedRayStatus": "wall",
+        "alternativeMirrorRoute": [
+          0
+        ],
+        "alternativePortalRoute": [],
+        "segment": {
+          "a": {
+            "x": 200.00000087964858,
+            "y": 86.0000004756242
+          },
+          "b": {
+            "x": 705.7038860208158,
+            "y": 359.43307115088896
+          },
+          "startDistance": 150,
+          "endDistance": 724.8930888311106
+        }
+      },
+      "preservedConflictWitness": {
+        "caseId": "route-choice-1-0-0",
+        "angles": [
+          83,
+          -89.6,
+          74
+        ],
+        "individualStatuses": [
+          "target",
+          "target",
+          "target"
+        ],
+        "jointStatus": "collision"
+      },
+      "perturbation": {
+        "tests": 15,
+        "failures": 0
+      },
+      "purpose": "A parede bloqueia uma chegada alternativa gold antes válida isoladamente (local-routes-collide), preservando a referência conjunta e outra contraprova completa de conflito. A ablação física verifica que a parede, não uma regra oculta, elimina esse percurso."
+    },
+    {
+      "number": 31,
+      "id": "light-v5-open-028",
+      "wall": {
+        "type": "wall",
+        "x": 460.329509292597,
+        "y": 142.92382884945795,
+        "length": 40,
+        "width": 12,
+        "angle": 110.17530821894418
+      },
+      "score": 92,
+      "objectSpacing": 42.52490040521163,
+      "referenceClearance": 71.49075858923763,
+      "ablation": {
+        "caseId": "editorial.lastApproachAudit.solutions[33]",
+        "angles": [
+          -16.2,
+          18.9,
+          15.5,
+          -0.5,
+          -79.9
+        ],
+        "sourceIndex": 0,
+        "color": "gold",
+        "withoutWallIndividualStatus": "target",
+        "withoutWallJointStatus": "target",
+        "withWallIndividualStatus": "miss",
+        "blockedRayStatus": "wall",
+        "alternativeMirrorRoute": [
+          0
+        ],
+        "alternativePortalRoute": [],
+        "segment": {
+          "a": {
+            "x": 275.2000009386418,
+            "y": 74.9000003448937
+          },
+          "b": {
+            "x": 611.799107036742,
+            "y": 198.57968853501052
+          },
+          "startDistance": 373.85752633857726,
+          "endDistance": 732.4598457633749
+        }
+      },
+      "preservedConflictWitness": {
+        "caseId": "rotas-locais-em-conflito",
+        "angles": [
+          12.3,
+          28.9,
+          0,
+          0,
+          35.2
+        ],
+        "individualStatuses": [
+          "target",
+          "target"
+        ],
+        "jointStatus": "collision"
+      },
+      "perturbation": {
+        "tests": 43,
+        "failures": 0
+      },
+      "purpose": "A parede bloqueia uma chegada alternativa gold antes válida isoladamente (catálogo), preservando a referência conjunta e outra contraprova completa de conflito. A ablação física verifica que a parede, não uma regra oculta, elimina esse percurso."
+    },
+    {
+      "number": 33,
+      "id": "light-v5-open-301",
+      "wall": {
+        "type": "wall",
+        "x": 321.5837462871462,
+        "y": 236.4010405836018,
+        "length": 40,
+        "width": 12,
+        "angle": 213.20000000000005
+      },
+      "score": 67.29225259121367,
+      "objectSpacing": 44.82278486172903,
+      "referenceClearance": 23.292252591213664,
+      "ablation": {
+        "caseId": "validation.finiteShortcutSearch.configurations[14]",
+        "angles": [
+          36.7,
+          41.4,
+          -32,
+          0,
+          85.1,
+          89.9
+        ],
+        "sourceIndex": 1,
+        "color": "blue",
+        "withoutWallIndividualStatus": "target",
+        "withoutWallJointStatus": "collision",
+        "withWallIndividualStatus": "miss",
+        "blockedRayStatus": "wall",
+        "alternativeMirrorRoute": [
+          1,
+          2
+        ],
+        "alternativePortalRoute": [],
+        "segment": {
+          "a": {
+            "x": 405.0721317786056,
+            "y": 108.81741449205046
+          },
+          "b": {
+            "x": 293.7542844566597,
+            "y": 278.92891594745225
+          },
+          "startDistance": 519.3816275941126,
+          "endDistance": 722.6784206327713
+        }
+      },
+      "preservedConflictWitness": {
+        "caseId": "rota-do-par-reaferida",
+        "angles": [
+          41.4,
+          -6.6,
+          0,
+          -76.1,
+          -55.2,
+          -76
+        ],
+        "individualStatuses": [
+          "target",
+          "target"
+        ],
+        "jointStatus": "collision"
+      },
+      "perturbation": {
+        "tests": 77,
+        "failures": 0
+      },
+      "purpose": "A parede bloqueia uma chegada alternativa blue antes válida isoladamente (catálogo), preservando a referência conjunta e outra contraprova completa de conflito. A ablação física verifica que a parede, não uma regra oculta, elimina esse percurso."
+    },
+    {
+      "number": 34,
+      "id": "light-v3-77",
+      "wall": {
+        "type": "wall",
+        "x": 489.2592892374202,
+        "y": 205.52156158217818,
+        "length": 40,
+        "width": 12,
+        "angle": 111.4
+      },
+      "score": 77.49963835151664,
+      "objectSpacing": 33.49963835151663,
+      "referenceClearance": 45.918413531061056,
+      "ablation": {
+        "caseId": "new-center-conflict-1",
+        "angles": [
+          10.7,
+          45,
+          45
+        ],
+        "sourceIndex": 0,
+        "color": "gold",
+        "withoutWallIndividualStatus": "target",
+        "withoutWallJointStatus": "collision",
+        "withWallIndividualStatus": "miss",
+        "blockedRayStatus": "wall",
+        "alternativeMirrorRoute": [
+          0
+        ],
+        "alternativePortalRoute": [],
+        "segment": {
+          "a": {
+            "x": 220.0000009310558,
+            "y": 100.00000036487678
+          },
+          "b": {
+            "x": 709.5623433062638,
+            "y": 291.8573843963338
+          },
+          "startDistance": 160,
+          "endDistance": 685.8141714325454
+        }
+      },
+      "preservedConflictWitness": {
+        "caseId": "new-center-conflict-2",
+        "angles": [
+          15.6,
+          15.6,
+          45
+        ],
+        "individualStatuses": [
+          "target",
+          "target"
+        ],
+        "jointStatus": "collision"
+      },
+      "perturbation": {
+        "tests": 15,
+        "failures": 0
+      },
+      "purpose": "A parede bloqueia uma chegada alternativa gold antes válida isoladamente (new-center-conflict-1), preservando a referência conjunta e outra contraprova completa de conflito. A ablação física verifica que a parede, não uma regra oculta, elimina esse percurso."
+    },
+    {
+      "number": 35,
+      "id": "light-v4-open-065",
+      "wall": {
+        "type": "wall",
+        "x": 626.8812660235612,
+        "y": 307.13943906609893,
+        "length": 40,
+        "width": 12,
+        "angle": 160.59999999999997
+      },
+      "score": 68.88883085423643,
+      "objectSpacing": 36.3752570429397,
+      "referenceClearance": 20.51357381129673,
+      "ablation": {
+        "caseId": "editorial.backwardDepartureAudit.solutions[1]",
+        "angles": [
+          39.5,
+          -85.1,
+          33.4,
+          -60.1,
+          31.8,
+          43.8
+        ],
+        "sourceIndex": 2,
+        "color": "pink",
+        "withoutWallIndividualStatus": "target",
+        "withoutWallJointStatus": "target",
+        "withWallIndividualStatus": "miss",
+        "blockedRayStatus": "wall",
+        "alternativeMirrorRoute": [
+          2,
+          3,
+          4
+        ],
+        "alternativePortalRoute": [],
+        "segment": {
+          "a": {
+            "x": 591.9384017055285,
+            "y": 207.9137976689687
+          },
+          "b": {
+            "x": 645.6966545025019,
+            "y": 360.56863058763054
+          },
+          "startDistance": 676.3564469013078,
+          "endDistance": 838.2003462525279
+        }
+      },
+      "preservedConflictWitness": {
+        "caseId": "rotas-locais-em-conflito",
+        "angles": [
+          -1,
+          -85.1,
+          -87,
+          0,
+          53.9,
+          0
+        ],
+        "individualStatuses": [
+          "target",
+          "target",
+          "target"
+        ],
+        "jointStatus": "collision"
+      },
+      "perturbation": {
+        "tests": 77,
+        "failures": 0
+      },
+      "purpose": "A parede bloqueia uma chegada alternativa pink antes válida isoladamente (catálogo), preservando a referência conjunta e outra contraprova completa de conflito. A ablação física verifica que a parede, não uma regra oculta, elimina esse percurso."
+    },
+    {
+      "number": 36,
+      "id": "light-v5-open-302",
+      "wall": {
+        "type": "wall",
+        "x": 495.0086477274182,
+        "y": 308.6063928875156,
+        "length": 40,
+        "width": 12,
+        "angle": 246.3999999999999
+      },
+      "score": 74.04375702243419,
+      "objectSpacing": 40.388143084873256,
+      "referenceClearance": 22.043757022434193,
+      "ablation": {
+        "caseId": "validation.finiteShortcutSearch.solutions[5]",
+        "angles": [
+          17.2,
+          -6.6,
+          50.5,
+          8.9,
+          -63.4,
+          74.8
+        ],
+        "sourceIndex": 1,
+        "color": "blue",
+        "withoutWallIndividualStatus": "target",
+        "withoutWallJointStatus": "target",
+        "withWallIndividualStatus": "miss",
+        "blockedRayStatus": "wall",
+        "alternativeMirrorRoute": [
+          1,
+          4,
+          3
+        ],
+        "alternativePortalRoute": [],
+        "segment": {
+          "a": {
+            "x": 615.0102106411331,
+            "y": 256.1789991623561
+          },
+          "b": {
+            "x": 396.8255507980151,
+            "y": 351.5015332081007
+          },
+          "startDistance": 521.162055607454,
+          "endDistance": 759.2606303359878
+        }
+      },
+      "preservedConflictWitness": {
+        "caseId": "rotas-locais-em-conflito",
+        "angles": [
+          27.2,
+          36.7,
+          0,
+          0,
+          -86.3,
+          85.1
+        ],
+        "individualStatuses": [
+          "target",
+          "target"
+        ],
+        "jointStatus": "collision"
+      },
+      "perturbation": {
+        "tests": 77,
+        "failures": 0
+      },
+      "purpose": "A parede bloqueia uma chegada alternativa blue antes válida isoladamente (catálogo), preservando a referência conjunta e outra contraprova completa de conflito. A ablação física verifica que a parede, não uma regra oculta, elimina esse percurso."
+    },
+    {
+      "number": 38,
+      "id": "light-v5-deduction-symmetry-02-base-reauthored",
+      "wall": {
+        "type": "wall",
+        "x": 308.3756280564806,
+        "y": 377.0210789001977,
+        "length": 40,
+        "width": 12,
+        "angle": 104.00000000000001
+      },
+      "score": 82.25760529034153,
+      "objectSpacing": 30.257605290341537,
+      "referenceClearance": 54.21066411878378,
+      "ablation": {
+        "caseId": "choices-2",
+        "angles": [
+          -70.4,
+          35,
+          -30.3,
+          52,
+          -45.5
+        ],
+        "sourceIndex": 1,
+        "color": "blue",
+        "withoutWallIndividualStatus": "target",
+        "withoutWallJointStatus": "target",
+        "withWallIndividualStatus": "miss",
+        "blockedRayStatus": "wall",
+        "alternativeMirrorRoute": [
+          1,
+          3
+        ],
+        "alternativePortalRoute": [
+          "s1a"
+        ],
+        "segment": {
+          "a": {
+            "x": 200.00000097029573,
+            "y": 350.0000002419219
+          },
+          "b": {
+            "x": 344.5008370852089,
+            "y": 386.028105119623
+          },
+          "startDistance": 300,
+          "endDistance": 448.9245311524855
+        }
+      },
+      "preservedConflictWitness": {
+        "caseId": "choices-0",
+        "angles": [
+          -70.4,
+          13.4,
+          -30.3,
+          30.3,
+          -45.5
+        ],
+        "individualStatuses": [
+          "target",
+          "target",
+          "target"
+        ],
+        "jointStatus": "collision"
+      },
+      "perturbation": {
+        "tests": 43,
+        "failures": 0
+      },
+      "purpose": "A parede bloqueia uma chegada alternativa blue antes válida isoladamente (choices-2), preservando a referência conjunta e outra contraprova completa de conflito. A ablação física verifica que a parede, não uma regra oculta, elimina esse percurso."
+    },
+    {
+      "number": 41,
+      "id": "light-v5-deduction-four-02",
+      "wall": {
+        "type": "wall",
+        "x": 385.39721362662175,
+        "y": 238.41883820731908,
+        "length": 70,
+        "width": 12,
+        "angle": 92.60000000000007
+      },
+      "score": 87,
+      "objectSpacing": 46.92126785005802,
+      "referenceClearance": 55.81204430526144,
+      "ablation": {
+        "caseId": "choices-0",
+        "angles": [
+          -48.7,
+          74.2,
+          46.4,
+          83.3
+        ],
+        "sourceIndex": 0,
+        "color": "gold",
+        "withoutWallIndividualStatus": "target",
+        "withoutWallJointStatus": "collision",
+        "withWallIndividualStatus": "miss",
+        "blockedRayStatus": "wall",
+        "alternativeMirrorRoute": [
+          0,
+          3
+        ],
+        "alternativePortalRoute": [],
+        "segment": {
+          "a": {
+            "x": 200.00000099897056,
+            "y": 230.000000045363
+          },
+          "b": {
+            "x": 729.7063227922597,
+            "y": 254.05382336523752
+          },
+          "startDistance": 179.99999999999994,
+          "endDistance": 710.2521794053082
+        }
+      },
+      "preservedConflictWitness": {
+        "caseId": "choices-1",
+        "angles": [
+          -41.2,
+          74.2,
+          46.4,
+          -89.2
+        ],
+        "individualStatuses": [
+          "target",
+          "target",
+          "target"
+        ],
+        "jointStatus": "collision"
+      },
+      "perturbation": {
+        "tests": 25,
+        "failures": 0
+      },
+      "purpose": "A parede bloqueia uma chegada alternativa gold antes válida isoladamente (choices-0), preservando a referência conjunta e outra contraprova completa de conflito. A ablação física verifica que a parede, não uma regra oculta, elimina esse percurso."
+    },
+    {
+      "number": 42,
+      "id": "light-v5-open-chain-012",
+      "wall": {
+        "type": "wall",
+        "x": 481.1304053655069,
+        "y": 258.2635792001689,
+        "length": 40,
+        "width": 12,
+        "angle": 30.366803109275175
+      },
+      "score": 85.89047233536488,
+      "objectSpacing": 43.0448663593301,
+      "referenceClearance": 33.89047233536487,
+      "ablation": {
+        "caseId": "binary-4",
+        "angles": [
+          -36,
+          -60.3,
+          23,
+          0,
+          11.8,
+          0
+        ],
+        "sourceIndex": 0,
+        "color": "gold",
+        "withoutWallIndividualStatus": "target",
+        "withoutWallJointStatus": "target",
+        "withWallIndividualStatus": "miss",
+        "blockedRayStatus": "wall",
+        "alternativeMirrorRoute": [
+          0
+        ],
+        "alternativePortalRoute": [],
+        "segment": {
+          "a": {
+            "x": 401.60000050553396,
+            "y": 393.9999991371933
+          },
+          "b": {
+            "x": 507.6405403188312,
+            "y": 213.01810588782743
+          },
+          "startDistance": 195.639515435916,
+          "endDistance": 405.39900096164934
+        }
+      },
+      "preservedConflictWitness": {
+        "caseId": "binary-5",
+        "angles": [
+          -69.8,
+          -60.3,
+          23,
+          -65,
+          11.8,
+          0
+        ],
+        "individualStatuses": [
+          "target",
+          "target",
+          "target"
+        ],
+        "jointStatus": "collision"
+      },
+      "perturbation": {
+        "tests": 77,
+        "failures": 0
+      },
+      "purpose": "A parede bloqueia uma chegada alternativa gold antes válida isoladamente (binary-4), preservando a referência conjunta e outra contraprova completa de conflito. A ablação física verifica que a parede, não uma regra oculta, elimina esse percurso."
+    },
+    {
+      "number": 45,
+      "id": "light-v5-deduction-open-002",
+      "wall": {
+        "type": "wall",
+        "x": 224.04466689208328,
+        "y": 208.13794502491453,
+        "length": 70,
+        "width": 12,
+        "angle": 172.60000000000002
+      },
+      "score": 95,
+      "objectSpacing": 40.646172891674745,
+      "referenceClearance": 52.68837108806048,
+      "ablation": {
+        "caseId": "choices-6",
+        "angles": [
+          -43.7,
+          57.2,
+          -6.7
+        ],
+        "sourceIndex": 0,
+        "color": "gold",
+        "withoutWallIndividualStatus": "target",
+        "withoutWallJointStatus": "target",
+        "withWallIndividualStatus": "miss",
+        "blockedRayStatus": "wall",
+        "alternativeMirrorRoute": [
+          0
+        ],
+        "alternativePortalRoute": [],
+        "segment": {
+          "a": {
+            "x": 210.0000001287956,
+            "y": 100.00000099167116
+          },
+          "b": {
+            "x": 235.53575788022775,
+            "y": 296.6144446884773
+          },
+          "startDistance": 179.99999999999997,
+          "endDistance": 378.26576707577226
+        }
+      },
+      "preservedConflictWitness": {
+        "caseId": "choices-1",
+        "angles": [
+          78.5,
+          39.7,
+          49.9
+        ],
+        "individualStatuses": [
+          "target",
+          "target",
+          "target"
+        ],
+        "jointStatus": "collision"
+      },
+      "perturbation": {
+        "tests": 15,
+        "failures": 0
+      },
+      "purpose": "A parede bloqueia uma chegada alternativa gold antes válida isoladamente (choices-6), preservando a referência conjunta e outra contraprova completa de conflito. A ablação física verifica que a parede, não uma regra oculta, elimina esse percurso."
+    },
+    {
+      "number": 48,
+      "id": "light-v5-deduction-open-031",
+      "wall": {
+        "type": "wall",
+        "x": 385.15600051743013,
+        "y": 237.1129760571952,
+        "length": 70,
+        "width": 12,
+        "angle": 92.19999999999997
+      },
+      "score": 87,
+      "objectSpacing": 47.78392968378461,
+      "referenceClearance": 67.65557977826045,
+      "ablation": {
+        "caseId": "choices-0",
+        "angles": [
+          76.1,
+          76.6,
+          25.5
+        ],
+        "sourceIndex": 0,
+        "color": "gold",
+        "withoutWallIndividualStatus": "target",
+        "withoutWallJointStatus": "collision",
+        "withWallIndividualStatus": "miss",
+        "blockedRayStatus": "wall",
+        "alternativeMirrorRoute": [
+          0
+        ],
+        "alternativePortalRoute": [],
+        "segment": {
+          "a": {
+            "x": 200.0000009992629,
+            "y": 230.0000000383878
+          },
+          "b": {
+            "x": 611.4577777063012,
+            "y": 245.80661341351532
+          },
+          "startDistance": 150,
+          "endDistance": 561.7612791886697
+        }
+      },
+      "preservedConflictWitness": {
+        "caseId": "choices-3",
+        "angles": [
+          8.9,
+          -0.2,
+          25.5
+        ],
+        "individualStatuses": [
+          "target",
+          "target",
+          "target"
+        ],
+        "jointStatus": "collision"
+      },
+      "perturbation": {
+        "tests": 15,
+        "failures": 0
+      },
+      "purpose": "A parede bloqueia uma chegada alternativa gold antes válida isoladamente (choices-0), preservando a referência conjunta e outra contraprova completa de conflito. A ablação física verifica que a parede, não uma regra oculta, elimina esse percurso."
+    },
+    {
+      "number": 49,
+      "id": "light-v4-open-chain-014",
+      "wall": {
+        "type": "wall",
+        "x": 225.82377577293002,
+        "y": 227.44359468324097,
+        "length": 54,
+        "width": 12,
+        "angle": 189.60000000000002
+      },
+      "score": 92.90379516667227,
+      "objectSpacing": 44.38756161113587,
+      "referenceClearance": 39.50379516667227,
+      "ablation": {
+        "caseId": "validation.finiteShortcutSearch.solutions[14]",
+        "angles": [
+          49.8,
+          -30.3,
+          -32.1,
+          22.1,
+          -46.9,
+          23.9
+        ],
+        "sourceIndex": 0,
+        "color": "gold",
+        "withoutWallIndividualStatus": "target",
+        "withoutWallJointStatus": "target",
+        "withWallIndividualStatus": "miss",
+        "blockedRayStatus": "wall",
+        "alternativeMirrorRoute": [
+          0,
+          3,
+          5
+        ],
+        "alternativePortalRoute": [],
+        "segment": {
+          "a": {
+            "x": 248.79999983323125,
+            "y": 91.60000098599603
+          },
+          "b": {
+            "x": 207.02504699631993,
+            "y": 338.58835316280494
+          },
+          "startDistance": 223.8,
+          "endDistance": 474.2962929776438
+        }
+      },
+      "preservedConflictWitness": {
+        "caseId": "rotas-locais-em-conflito",
+        "angles": [
+          34.3,
+          -30.3,
+          -42.2,
+          0,
+          0,
+          0
+        ],
+        "individualStatuses": [
+          "target",
+          "target",
+          "target"
+        ],
+        "jointStatus": "collision"
+      },
+      "perturbation": {
+        "tests": 77,
+        "failures": 0
+      },
+      "purpose": "A parede bloqueia uma chegada alternativa gold antes válida isoladamente (catálogo), preservando a referência conjunta e outra contraprova completa de conflito. A ablação física verifica que a parede, não uma regra oculta, elimina esse percurso."
+    },
+    {
+      "number": 53,
+      "id": "light-v5-portal-875",
+      "wall": {
+        "type": "wall",
+        "x": 739.2936746878802,
+        "y": 311.220913049139,
+        "length": 54,
+        "width": 12,
+        "angle": 221.99999999999994
+      },
+      "score": 89.69403847535344,
+      "objectSpacing": 36.29403847535344,
+      "referenceClearance": 69.9205178452656,
+      "ablation": {
+        "caseId": "route-choice-1-2-1",
+        "angles": [
+          -53.5,
+          -10,
+          -78.5
+        ],
+        "sourceIndex": 1,
+        "color": "blue",
+        "withoutWallIndividualStatus": "target",
+        "withoutWallJointStatus": "target",
+        "withWallIndividualStatus": "miss",
+        "blockedRayStatus": "wall",
+        "alternativeMirrorRoute": [
+          1
+        ],
+        "alternativePortalRoute": [
+          "b2a"
+        ],
+        "segment": {
+          "a": {
+            "x": 767.5939096291277,
+            "y": 279.7903179507831
+          },
+          "b": {
+            "x": 704.7044986485777,
+            "y": 349.63608483601854
+          },
+          "startDistance": 314.9806599684242,
+          "endDistance": 408.96740991365414
+        }
+      },
+      "preservedConflictWitness": {
+        "caseId": "local-routes-collide",
+        "angles": [
+          -22.6,
+          -68.2,
+          -88.1
+        ],
+        "individualStatuses": [
+          "target",
+          "target",
+          "target"
+        ],
+        "jointStatus": "collision"
+      },
+      "perturbation": {
+        "tests": 15,
+        "failures": 0
+      },
+      "purpose": "A parede bloqueia uma chegada alternativa blue antes válida isoladamente (route-choice-1-2-1), preservando a referência conjunta e outra contraprova completa de conflito. A ablação física verifica que a parede, não uma regra oculta, elimina esse percurso."
+    },
+    {
+      "number": 54,
+      "id": "light-v5-portal-017",
+      "wall": {
+        "type": "wall",
+        "x": 578.7156624871702,
+        "y": 179.79843270911877,
+        "length": 70,
+        "width": 12,
+        "angle": 65.80000000000004
+      },
+      "score": 95,
+      "objectSpacing": 117.27511769251788,
+      "referenceClearance": 60.94485962954025,
+      "ablation": {
+        "caseId": "route-choice-1-0",
+        "angles": [
+          -81,
+          65.9
+        ],
+        "sourceIndex": 1,
+        "color": "blue",
+        "withoutWallIndividualStatus": "target",
+        "withoutWallJointStatus": "target",
+        "withWallIndividualStatus": "miss",
+        "blockedRayStatus": "wall",
+        "alternativeMirrorRoute": [
+          1
+        ],
+        "alternativePortalRoute": [],
+        "segment": {
+          "a": {
+            "x": 200.00000091212013,
+            "y": 349.999999590077
+          },
+          "b": {
+            "x": 704.9542163455202,
+            "y": 123.0645770821327
+          },
+          "startDistance": 149.99999999999997,
+          "endDistance": 703.6049545233675
+        }
+      },
+      "preservedConflictWitness": {
+        "caseId": "route-choice-2-1",
+        "angles": [
+          -25,
+          22.5
+        ],
+        "individualStatuses": [
+          "target",
+          "target"
+        ],
+        "jointStatus": "collision"
+      },
+      "perturbation": {
+        "tests": 9,
+        "failures": 0
+      },
+      "purpose": "A parede bloqueia uma chegada alternativa blue antes válida isoladamente (route-choice-1-0), preservando a referência conjunta e outra contraprova completa de conflito. A ablação física verifica que a parede, não uma regra oculta, elimina esse percurso."
+    },
+    {
+      "number": 56,
+      "id": "light-v5-deduction-four-05",
+      "wall": {
+        "type": "wall",
+        "x": 445.24289351578716,
+        "y": 166.40926502861274,
+        "length": 40,
+        "width": 12,
+        "angle": -29.599999999999966
+      },
+      "score": 66.64009579298857,
+      "objectSpacing": 38.98690347690572,
+      "referenceClearance": 15.653192316082858,
+      "ablation": {
+        "caseId": "choices-5",
+        "angles": [
+          -12.9,
+          17.6,
+          -53.8,
+          0.1
+        ],
+        "sourceIndex": 2,
+        "color": "pink",
+        "withoutWallIndividualStatus": "target",
+        "withoutWallJointStatus": "target",
+        "withWallIndividualStatus": "miss",
+        "blockedRayStatus": "wall",
+        "alternativeMirrorRoute": [
+          2
+        ],
+        "alternativePortalRoute": [
+          "p2a"
+        ],
+        "segment": {
+          "a": {
+            "x": 494.59692964071047,
+            "y": 253.28808025842156
+          },
+          "b": {
+            "x": 418.66764329467463,
+            "y": 119.62836452025414
+          },
+          "startDistance": 260.9774896344096,
+          "endDistance": 414.6985881740246
+        }
+      },
+      "preservedConflictWitness": {
+        "caseId": "choices-0",
+        "angles": [
+          -26.1,
+          17.6,
+          -37.8,
+          -13.1
+        ],
+        "individualStatuses": [
+          "target",
+          "target",
+          "target"
+        ],
+        "jointStatus": "collision"
+      },
+      "perturbation": {
+        "tests": 25,
+        "failures": 0
+      },
+      "purpose": "A parede bloqueia uma chegada alternativa pink antes válida isoladamente (choices-5), preservando a referência conjunta e outra contraprova completa de conflito. A ablação física verifica que a parede, não uma regra oculta, elimina esse percurso."
+    },
+    {
+      "number": 57,
+      "id": "light-v5-deduction-open-003",
+      "wall": {
+        "type": "wall",
+        "x": 134.94989961705545,
+        "y": 248.57394576095595,
+        "length": 70,
+        "width": 12,
+        "angle": 206.8
+      },
+      "score": 95,
+      "objectSpacing": 50.83737873052125,
+      "referenceClearance": 87.83767153115524,
+      "ablation": {
+        "caseId": "choices-5",
+        "angles": [
+          -36.6,
+          30.9,
+          40.6
+        ],
+        "sourceIndex": 0,
+        "color": "gold",
+        "withoutWallIndividualStatus": "target",
+        "withoutWallJointStatus": "target",
+        "withWallIndividualStatus": "miss",
+        "blockedRayStatus": "wall",
+        "alternativeMirrorRoute": [
+          0
+        ],
+        "alternativePortalRoute": [
+          "p0a"
+        ],
+        "segment": {
+          "a": {
+            "x": 209.99999954912244,
+            "y": 100.00000089258582
+          },
+          "b": {
+            "x": 73.54527239990972,
+            "y": 370.1344461078042
+          },
+          "startDistance": 229.99999999999997,
+          "endDistance": 532.6425466670208
+        }
+      },
+      "preservedConflictWitness": {
+        "caseId": "choices-0",
+        "angles": [
+          -88,
+          30.9,
+          -88.4
+        ],
+        "individualStatuses": [
+          "target",
+          "target",
+          "target"
+        ],
+        "jointStatus": "collision"
+      },
+      "perturbation": {
+        "tests": 15,
+        "failures": 0
+      },
+      "purpose": "A parede bloqueia uma chegada alternativa gold antes válida isoladamente (choices-5), preservando a referência conjunta e outra contraprova completa de conflito. A ablação física verifica que a parede, não uma regra oculta, elimina esse percurso."
+    },
+    {
+      "number": 59,
+      "id": "light-v5-master-reserve-011",
+      "wall": {
+        "type": "wall",
+        "x": 146.72252623049457,
+        "y": 289.79386420831145,
+        "length": 40,
+        "width": 12,
+        "angle": 67.51313355693034
+      },
+      "score": 69.7370712413164,
+      "objectSpacing": 22.866146357144856,
+      "referenceClearance": 34.870924884171544,
+      "ablation": {
+        "caseId": "rotas-010",
+        "angles": [
+          -76,
+          -67.9,
+          61.5
+        ],
+        "sourceIndex": 1,
+        "color": "blue",
+        "withoutWallIndividualStatus": "target",
+        "withoutWallJointStatus": "target",
+        "withWallIndividualStatus": "miss",
+        "blockedRayStatus": "wall",
+        "alternativeMirrorRoute": [
+          1
+        ],
+        "alternativePortalRoute": [
+          "blue1a"
+        ],
+        "segment": {
+          "a": {
+            "x": 114.38347657826016,
+            "y": 303.1804532635142
+          },
+          "b": {
+            "x": 243.73967518719786,
+            "y": 249.63409704270316
+          },
+          "startDistance": 227.8006541556745,
+          "endDistance": 367.801505521232
+        }
+      },
+      "preservedConflictWitness": {
+        "caseId": "rotas-000",
+        "angles": [
+          -76,
+          21.1,
+          61.5
+        ],
+        "individualStatuses": [
+          "target",
+          "target",
+          "target"
+        ],
+        "jointStatus": "collision"
+      },
+      "perturbation": {
+        "tests": 15,
+        "failures": 0
+      },
+      "purpose": "A parede bloqueia uma chegada alternativa blue antes válida isoladamente (rotas-010), preservando a referência conjunta e outra contraprova completa de conflito. A ablação física verifica que a parede, não uma regra oculta, elimina esse percurso."
+    },
+    {
+      "number": 60,
+      "id": "light-v5-master-contrast-002",
+      "wall": {
+        "type": "wall",
+        "x": 238.0906124437622,
+        "y": 243.28232968841166,
+        "length": 40,
+        "width": 12,
+        "angle": 64.51313355693047
+      },
+      "score": 66.6802057321196,
+      "objectSpacing": 39.80580259638718,
+      "referenceClearance": 22.874403135732422,
+      "ablation": {
+        "caseId": "rotas-010",
+        "angles": [
+          -76,
+          -69.4,
+          61.5
+        ],
+        "sourceIndex": 1,
+        "color": "blue",
+        "withoutWallIndividualStatus": "target",
+        "withoutWallJointStatus": "collision",
+        "withWallIndividualStatus": "miss",
+        "blockedRayStatus": "wall",
+        "alternativeMirrorRoute": [
+          1
+        ],
+        "alternativePortalRoute": [
+          "blue1a"
+        ],
+        "segment": {
+          "a": {
+            "x": 114.04294400717572,
+            "y": 302.41513250631596
+          },
+          "b": {
+            "x": 279.4398352559577,
+            "y": 223.57139541577692
+          },
+          "startDistance": 228.46603964400128,
+          "endDistance": 411.6939483074018
+        }
+      },
+      "preservedConflictWitness": {
+        "caseId": "rotas-001",
+        "angles": [
+          -76,
+          22,
+          -73.9
+        ],
+        "individualStatuses": [
+          "target",
+          "target",
+          "target"
+        ],
+        "jointStatus": "collision"
+      },
+      "perturbation": {
+        "tests": 15,
+        "failures": 0
+      },
+      "purpose": "A parede bloqueia uma chegada alternativa blue antes válida isoladamente (rotas-010), preservando a referência conjunta e outra contraprova completa de conflito. A ablação física verifica que a parede, não uma regra oculta, elimina esse percurso."
+    },
+    {
+      "number": 61,
+      "id": "light-v5-master-003",
+      "wall": {
+        "type": "wall",
+        "x": 154.16169184024483,
+        "y": 57.99431445248788,
+        "length": 70,
+        "width": 12,
+        "angle": -61.950324275233754
+      },
+      "score": 93.15413237287063,
+      "objectSpacing": 38.15413237287063,
+      "referenceClearance": 100.55413237287063,
+      "ablation": {
+        "caseId": "rotas-100",
+        "angles": [
+          71.7,
+          86,
+          -74.9
+        ],
+        "sourceIndex": 0,
+        "color": "gold",
+        "withoutWallIndividualStatus": "target",
+        "withoutWallJointStatus": "target",
+        "withWallIndividualStatus": "miss",
+        "blockedRayStatus": "wall",
+        "alternativeMirrorRoute": [
+          0
+        ],
+        "alternativePortalRoute": [
+          "gold1a"
+        ],
+        "segment": {
+          "a": {
+            "x": 248.19999911745975,
+            "y": 108.09999952976311
+          },
+          "b": {
+            "x": 103.5256802294368,
+            "y": 31.014330180108914
+          },
+          "startDistance": 149.99999999999994,
+          "endDistance": 313.9294328813394
+        }
+      },
+      "preservedConflictWitness": {
+        "caseId": "rotas-000",
+        "angles": [
+          -22.1,
+          86,
+          -74.9
+        ],
+        "individualStatuses": [
+          "target",
+          "target",
+          "target"
+        ],
+        "jointStatus": "collision"
+      },
+      "perturbation": {
+        "tests": 15,
+        "failures": 0
+      },
+      "purpose": "A parede bloqueia uma chegada alternativa gold antes válida isoladamente (rotas-100), preservando a referência conjunta e outra contraprova completa de conflito. A ablação física verifica que a parede, não uma regra oculta, elimina esse percurso."
+    },
+    {
+      "number": 63,
+      "id": "light-v5-deduction-open-025",
+      "wall": {
+        "type": "wall",
+        "x": 439.65014500578854,
+        "y": 141.77357572726802,
+        "length": 54,
+        "width": 12,
+        "angle": -59.99999999999997
+      },
+      "score": 93.4,
+      "objectSpacing": 44.45284854546388,
+      "referenceClearance": 40.82956269425313,
+      "ablation": {
+        "caseId": "validation.finiteShortcutSearch.winningAlternatives[2]",
+        "angles": [
+          29.3,
+          -19.9,
+          10
+        ],
+        "sourceIndex": 2,
+        "color": "pink",
+        "withoutWallIndividualStatus": "target",
+        "withoutWallJointStatus": "target",
+        "withWallIndividualStatus": "miss",
+        "blockedRayStatus": "wall",
+        "alternativeMirrorRoute": [
+          2
+        ],
+        "alternativePortalRoute": [
+          "p2b"
+        ],
+        "segment": {
+          "a": {
+            "x": 483.3435926734236,
+            "y": 166.9999995
+          },
+          "b": {
+            "x": 386.2470423009013,
+            "y": 110.94128000504007
+          },
+          "startDistance": 281.017986708977,
+          "endDistance": 393.13542569889665
+        }
+      },
+      "preservedConflictWitness": {
+        "caseId": "choices-3",
+        "angles": [
+          39.6,
+          -19.9,
+          34.2
+        ],
+        "individualStatuses": [
+          "target",
+          "target",
+          "target"
+        ],
+        "jointStatus": "collision"
+      },
+      "perturbation": {
+        "tests": 15,
+        "failures": 0
+      },
+      "purpose": "A parede bloqueia uma chegada alternativa pink antes válida isoladamente (catálogo), preservando a referência conjunta e outra contraprova completa de conflito. A ablação física verifica que a parede, não uma regra oculta, elimina esse percurso."
+    },
+    {
+      "number": 65,
+      "id": "light-v5-portal-931",
+      "wall": {
+        "type": "wall",
+        "x": 322.82965143417516,
+        "y": 303.6547953506469,
+        "length": 40,
+        "width": 12,
+        "angle": 60.2
+      },
+      "score": 74.96533396352746,
+      "objectSpacing": 27.748673128502787,
+      "referenceClearance": 35.21666083502466,
+      "ablation": {
+        "caseId": "route-choice-2-1-0",
+        "angles": [
+          -6.5,
+          70,
+          73.1
+        ],
+        "sourceIndex": 2,
+        "color": "pink",
+        "withoutWallIndividualStatus": "target",
+        "withoutWallJointStatus": "target",
+        "withWallIndividualStatus": "miss",
+        "blockedRayStatus": "wall",
+        "alternativeMirrorRoute": [
+          2
+        ],
+        "alternativePortalRoute": [],
+        "segment": {
+          "a": {
+            "x": 200.00000086776546,
+            "y": 373.99999950302606
+          },
+          "b": {
+            "x": 691.3186031334044,
+            "y": 92.61918289350939
+          },
+          "startDistance": 149.99999999999997,
+          "endDistance": 716.18824863123
+        }
+      },
+      "preservedConflictWitness": {
+        "caseId": "route-choice-0-0-1",
+        "angles": [
+          -55.3,
+          87.6,
+          55
+        ],
+        "individualStatuses": [
+          "target",
+          "target",
+          "target"
+        ],
+        "jointStatus": "collision"
+      },
+      "perturbation": {
+        "tests": 15,
+        "failures": 0
+      },
+      "purpose": "A parede bloqueia uma chegada alternativa pink antes válida isoladamente (route-choice-2-1-0), preservando a referência conjunta e outra contraprova completa de conflito. A ablação física verifica que a parede, não uma regra oculta, elimina esse percurso."
+    },
+    {
+      "number": 68,
+      "id": "light-v5-deduction-symmetry-11-filter",
+      "wall": {
+        "type": "wall",
+        "x": 538.1583304963159,
+        "y": 161.00969703179564,
+        "length": 70,
+        "width": 12,
+        "angle": 60.8
+      },
+      "score": 87,
+      "objectSpacing": 41.34780085680641,
+      "referenceClearance": 59.976759317507316,
+      "ablation": {
+        "caseId": "choices-0",
+        "angles": [
+          -71.4,
+          49.4,
+          -30.3,
+          30.3,
+          47.8
+        ],
+        "sourceIndex": 1,
+        "color": "blue",
+        "withoutWallIndividualStatus": "target",
+        "withoutWallJointStatus": "collision",
+        "withWallIndividualStatus": "miss",
+        "blockedRayStatus": "wall",
+        "alternativeMirrorRoute": [
+          1,
+          3
+        ],
+        "alternativePortalRoute": [],
+        "segment": {
+          "a": {
+            "x": 200.00000087292207,
+            "y": 349.99999951214033
+          },
+          "b": {
+            "x": 650.8777737041139,
+            "y": 98.01292953834741
+          },
+          "startDistance": 200.00000000000003,
+          "endDistance": 716.5154881193719
+        }
+      },
+      "preservedConflictWitness": {
+        "caseId": "choices-6",
+        "angles": [
+          -71.4,
+          71,
+          -30.3,
+          52,
+          29.9
+        ],
+        "individualStatuses": [
+          "target",
+          "target",
+          "target"
+        ],
+        "jointStatus": "collision"
+      },
+      "perturbation": {
+        "tests": 43,
+        "failures": 0
+      },
+      "purpose": "A parede bloqueia uma chegada alternativa blue antes válida isoladamente (choices-0), preservando a referência conjunta e outra contraprova completa de conflito. A ablação física verifica que a parede, não uma regra oculta, elimina esse percurso."
+    },
+    {
+      "number": 69,
+      "id": "light-v5-open-hard-chain-2",
+      "wall": {
+        "type": "wall",
+        "x": 322.82965143417516,
+        "y": 303.65479535064674,
+        "length": 40,
+        "width": 12,
+        "angle": 60.19999999999995
+      },
+      "score": 79.21666083502473,
+      "objectSpacing": 71.11127218247442,
+      "referenceClearance": 35.216660835024726,
+      "ablation": {
+        "caseId": "local-routes-collide",
+        "angles": [
+          -59.3,
+          89.6,
+          75.1
+        ],
+        "sourceIndex": 2,
+        "color": "pink",
+        "withoutWallIndividualStatus": "target",
+        "withoutWallJointStatus": "collision",
+        "withWallIndividualStatus": "miss",
+        "blockedRayStatus": "wall",
+        "alternativeMirrorRoute": [
+          2
+        ],
+        "alternativePortalRoute": [],
+        "segment": {
+          "a": {
+            "x": 200.00000086776546,
+            "y": 373.99999950302606
+          },
+          "b": {
+            "x": 691.3186031334043,
+            "y": 92.61918289350888
+          },
+          "startDistance": 220,
+          "endDistance": 786.1882486312302
+        }
+      },
+      "preservedConflictWitness": {
+        "caseId": "route-choice-0-0-1",
+        "angles": [
+          -59.3,
+          89.6,
+          64.5
+        ],
+        "individualStatuses": [
+          "target",
+          "target",
+          "target"
+        ],
+        "jointStatus": "collision"
+      },
+      "perturbation": {
+        "tests": 15,
+        "failures": 0
+      },
+      "purpose": "A parede bloqueia uma chegada alternativa pink antes válida isoladamente (local-routes-collide), preservando a referência conjunta e outra contraprova completa de conflito. A ablação física verifica que a parede, não uma regra oculta, elimina esse percurso."
+    },
+    {
+      "number": 71,
+      "id": "light-v5-master-filter-001",
+      "wall": {
+        "type": "wall",
+        "x": 309.8802620580105,
+        "y": 221.98399201071288,
+        "length": 40,
+        "width": 12,
+        "angle": 256.606934049379
+      },
+      "score": 84,
+      "objectSpacing": 41.92255538049124,
+      "referenceClearance": 61.02634391693367,
+      "ablation": {
+        "caseId": "rotas-000",
+        "angles": [
+          -22.1,
+          86,
+          -74.9
+        ],
+        "sourceIndex": 1,
+        "color": "blue",
+        "withoutWallIndividualStatus": "target",
+        "withoutWallJointStatus": "collision",
+        "withWallIndividualStatus": "miss",
+        "blockedRayStatus": "wall",
+        "alternativeMirrorRoute": [
+          1
+        ],
+        "alternativePortalRoute": [],
+        "segment": {
+          "a": {
+            "x": 605.899999027196,
+            "y": 151.50000023163017
+          },
+          "b": {
+            "x": 150.48501907460292,
+            "y": 259.9369106609882
+          },
+          "startDistance": 150.00000000000003,
+          "endDistance": 618.1467371548
+        }
+      },
+      "preservedConflictWitness": {
+        "caseId": "rotas-011",
+        "angles": [
+          -22.1,
+          39.7,
+          50.8
+        ],
+        "individualStatuses": [
+          "target",
+          "target",
+          "target"
+        ],
+        "jointStatus": "collision"
+      },
+      "perturbation": {
+        "tests": 15,
+        "failures": 0
+      },
+      "purpose": "A parede bloqueia uma chegada alternativa blue antes válida isoladamente (rotas-000), preservando a referência conjunta e outra contraprova completa de conflito. A ablação física verifica que a parede, não uma regra oculta, elimina esse percurso."
+    },
+    {
+      "number": 73,
+      "id": "light-v5-portal-034",
+      "wall": {
+        "type": "wall",
+        "x": 319.7844202925269,
+        "y": 169.87395404890748,
+        "length": 40,
+        "width": 12,
+        "angle": 125
+      },
+      "score": 74.19185535992997,
+      "objectSpacing": 42.42570232751324,
+      "referenceClearance": 22.19185535992998,
+      "ablation": {
+        "caseId": "route-choice-1-0-1",
+        "angles": [
+          -72.5,
+          -82.3,
+          -81.5
+        ],
+        "sourceIndex": 0,
+        "color": "gold",
+        "withoutWallIndividualStatus": "target",
+        "withoutWallJointStatus": "target",
+        "withWallIndividualStatus": "miss",
+        "blockedRayStatus": "wall",
+        "alternativeMirrorRoute": [
+          0
+        ],
+        "alternativePortalRoute": [
+          "g1a"
+        ],
+        "segment": {
+          "a": {
+            "x": 200.00000081915204,
+            "y": 86.00000057357644
+          },
+          "b": {
+            "x": 384.28372308588257,
+            "y": 215.03685207408572
+          },
+          "startDistance": 150,
+          "endDistance": 374.9688852655984
+        }
+      },
+      "preservedConflictWitness": {
+        "caseId": "local-routes-collide",
+        "angles": [
+          -82.4,
+          -82.3,
+          75.9
+        ],
+        "individualStatuses": [
+          "target",
+          "target",
+          "target"
+        ],
+        "jointStatus": "collision"
+      },
+      "perturbation": {
+        "tests": 15,
+        "failures": 0
+      },
+      "purpose": "A parede bloqueia uma chegada alternativa gold antes válida isoladamente (route-choice-1-0-1), preservando a referência conjunta e outra contraprova completa de conflito. A ablação física verifica que a parede, não uma regra oculta, elimina esse percurso."
+    },
+    {
+      "number": 74,
+      "id": "light-v5-master-contrast-001",
+      "wall": {
+        "type": "wall",
+        "x": 336.8708084167156,
+        "y": 168.20937219880324,
+        "length": 70,
+        "width": 12,
+        "angle": 96.92347499160961
+      },
+      "score": 87,
+      "objectSpacing": 40.91393941563138,
+      "referenceClearance": 76.71352403164825,
+      "ablation": {
+        "caseId": "local-routes-collide",
+        "angles": [
+          -12,
+          -2.3,
+          54.8
+        ],
+        "sourceIndex": 0,
+        "color": "gold",
+        "withoutWallIndividualStatus": "target",
+        "withoutWallJointStatus": "collision",
+        "withWallIndividualStatus": "miss",
+        "blockedRayStatus": "wall",
+        "alternativeMirrorRoute": [
+          0
+        ],
+        "alternativePortalRoute": [
+          "angle-access-0a"
+        ],
+        "segment": {
+          "a": {
+            "x": 207.50000099270795,
+            "y": 152.5000001205436
+          },
+          "b": {
+            "x": 494.9906841571694,
+            "y": 187.40971585000946
+          },
+          "startDistance": 98.99999899999995,
+          "endDistance": 388.60245264754917
+        }
+      },
+      "preservedConflictWitness": {
+        "caseId": "route-choice-1-0-0",
+        "angles": [
+          77.1,
+          -2.3,
+          54.8
+        ],
+        "individualStatuses": [
+          "target",
+          "target",
+          "target"
+        ],
+        "jointStatus": "collision"
+      },
+      "perturbation": {
+        "tests": 15,
+        "failures": 0
+      },
+      "purpose": "A parede bloqueia uma chegada alternativa gold antes válida isoladamente (local-routes-collide), preservando a referência conjunta e outra contraprova completa de conflito. A ablação física verifica que a parede, não uma regra oculta, elimina esse percurso."
+    },
+    {
+      "number": 76,
+      "id": "light-v5-open-chain-019",
+      "wall": {
+        "type": "wall",
+        "x": 245.63404437641873,
+        "y": 386.4855190034253,
+        "length": 70,
+        "width": 12,
+        "angle": -88.90976652719647
+      },
+      "score": 95,
+      "objectSpacing": 63.25940936954672,
+      "referenceClearance": 147.3030353377558,
+      "ablation": {
+        "caseId": "binary-2",
+        "angles": [
+          84,
+          -21.4,
+          15.8,
+          -22.4,
+          0,
+          81.5
+        ],
+        "sourceIndex": 1,
+        "color": "blue",
+        "withoutWallIndividualStatus": "target",
+        "withoutWallJointStatus": "target",
+        "withWallIndividualStatus": "miss",
+        "blockedRayStatus": "wall",
+        "alternativeMirrorRoute": [
+          1,
+          5
+        ],
+        "alternativePortalRoute": [],
+        "segment": {
+          "a": {
+            "x": 640.4999990001808,
+            "y": 393.9999999809731
+          },
+          "b": {
+            "x": 114.01205950183135,
+            "y": 383.98069201090937
+          },
+          "startDistance": 164.29172225039235,
+          "endDistance": 690.87498914122
+        }
+      },
+      "preservedConflictWitness": {
+        "caseId": "rotas-locais-em-conflito",
+        "angles": [
+          84,
+          4.8,
+          15.8,
+          -22.4,
+          0,
+          0
+        ],
+        "individualStatuses": [
+          "target",
+          "target",
+          "target"
+        ],
+        "jointStatus": "collision"
+      },
+      "perturbation": {
+        "tests": 77,
+        "failures": 0
+      },
+      "purpose": "A parede bloqueia uma chegada alternativa blue antes válida isoladamente (binary-2), preservando a referência conjunta e outra contraprova completa de conflito. A ablação física verifica que a parede, não uma regra oculta, elimina esse percurso."
+    },
+    {
+      "number": 77,
+      "id": "light-v5-deduction-master-detail-2",
+      "wall": {
+        "type": "wall",
+        "x": 595.7403896666,
+        "y": 267.7824046456029,
+        "length": 40,
+        "width": 12,
+        "angle": 86.40000000000005
+      },
+      "score": 68.17975545869473,
+      "objectSpacing": 32.30114818697648,
+      "referenceClearance": 31.878607271718245,
+      "ablation": {
+        "caseId": "rotas-000",
+        "angles": [
+          -1.5,
+          42,
+          -2.8
+        ],
+        "sourceIndex": 2,
+        "color": "pink",
+        "withoutWallIndividualStatus": "target",
+        "withoutWallJointStatus": "collision",
+        "withWallIndividualStatus": "miss",
+        "blockedRayStatus": "wall",
+        "alternativeMirrorRoute": [
+          2
+        ],
+        "alternativePortalRoute": [],
+        "segment": {
+          "a": {
+            "x": 393.60000099802653,
+            "y": 280.49999993720945
+          },
+          "b": {
+            "x": 704.5852143342934,
+            "y": 260.9344687193532
+          },
+          "startDistance": 149.99999999999977,
+          "endDistance": 461.6000849255984
+        }
+      },
+      "preservedConflictWitness": {
+        "caseId": "rotas-001",
+        "angles": [
+          -1.5,
+          42,
+          -57.8
+        ],
+        "individualStatuses": [
+          "target",
+          "target",
+          "target"
+        ],
+        "jointStatus": "collision"
+      },
+      "perturbation": {
+        "tests": 15,
+        "failures": 0
+      },
+      "purpose": "A parede bloqueia uma chegada alternativa pink antes válida isoladamente (rotas-000), preservando a referência conjunta e outra contraprova completa de conflito. A ablação física verifica que a parede, não uma regra oculta, elimina esse percurso."
+    },
+    {
+      "number": 80,
+      "id": "light-v5-master-005",
+      "wall": {
+        "type": "wall",
+        "x": 99.11522202575344,
+        "y": 233.2318104520935,
+        "length": 54,
+        "width": 12,
+        "angle": 24.200000000000017
+      },
+      "score": 85.4,
+      "objectSpacing": 41.62520893570512,
+      "referenceClearance": 43.9933796946162,
+      "ablation": {
+        "caseId": "rotas-001",
+        "angles": [
+          -76,
+          21.1,
+          -45.9
+        ],
+        "sourceIndex": 2,
+        "color": "pink",
+        "withoutWallIndividualStatus": "target",
+        "withoutWallJointStatus": "collision",
+        "withWallIndividualStatus": "miss",
+        "blockedRayStatus": "wall",
+        "alternativeMirrorRoute": [
+          2
+        ],
+        "alternativePortalRoute": [
+          "pink1a"
+        ],
+        "segment": {
+          "a": {
+            "x": 62.8587689513882,
+            "y": 313.9060772291235
+          },
+          "b": {
+            "x": 118.63792752733471,
+            "y": 189.79182064907735
+          },
+          "startDistance": 351.80365717272116,
+          "endDistance": 487.87592921173035
+        }
+      },
+      "preservedConflictWitness": {
+        "caseId": "rotas-000",
+        "angles": [
+          -76,
+          21.1,
+          89.5
+        ],
+        "individualStatuses": [
+          "target",
+          "target",
+          "target"
+        ],
+        "jointStatus": "collision"
+      },
+      "perturbation": {
+        "tests": 15,
+        "failures": 0
+      },
+      "purpose": "A parede bloqueia uma chegada alternativa pink antes válida isoladamente (rotas-001), preservando a referência conjunta e outra contraprova completa de conflito. A ablação física verifica que a parede, não uma regra oculta, elimina esse percurso."
+    }
+  ]
+}

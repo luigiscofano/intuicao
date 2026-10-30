@@ -1,4 +1,4 @@
-// Reflexos80 v6: curated logical campaign; unchanged production physics and object dimensions.
+// Reflexos80 v7: roomier authored layouts and meaningful walls; unchanged production engine and visuals.
 export const lightLevels = [
   {
     "number": 1,
@@ -994,7 +994,7 @@ export const lightLevels = [
     "targets": [
       {
         "x": 650,
-        "y": 200,
+        "y": 208,
         "color": "gold",
         "radius": 22
       },
@@ -1066,7 +1066,7 @@ export const lightLevels = [
     "sourceAngle": 0,
     "target": {
       "x": 650,
-      "y": 200,
+      "y": 208,
       "color": "gold",
       "radius": 22
     },
@@ -1076,13 +1076,13 @@ export const lightLevels = [
     "hint": "A saída precisa chegar horizontalmente ao receptor.",
     "tutorial": "",
     "rules": "Cada cor no seu alvo, sem cruzar outras trajetórias.",
-    "id": "light-v3-75",
+    "id": "light-v7-spacious-014",
     "campaignNumber": 14,
     "campaignBand": "basic",
-    "campaignRevision": "reflexos80-v6"
+    "campaignRevision": "reflexos80-spacious-v7"
   },
   {
-    "id": "light-v5-open-018",
+    "id": "light-v7-spacious-015",
     "name": "Compartilhar o vazio",
     "hint": "Cada trajeto funciona sozinho. Compare o espaço que ocupam juntos.",
     "width": 800,
@@ -1122,6 +1122,15 @@ export const lightLevels = [
         "type": "mirror",
         "length": 124.8,
         "angle": 0
+      },
+      {
+        "type": "wall",
+        "x": 465.6008682238207,
+        "y": 263.4939881198174,
+        "length": 70,
+        "width": 12,
+        "angle": 76.18830207827551,
+        "purpose": "Parede absorvente em (465.6, 263.5) fecha um percurso adicional de blue pelo(s) espelho(s) E2→E3→E4. Sem esta parede, o trajeto atinge o alvo; com ela, termina na parede. As 4 chegadas locais válidas das 2 configurações narrativas originais continuam válidas; a parede organiza o espaço sem substituir a dedução de compatibilidade por uma simples eliminação do domínio principal."
       }
     ],
     "sources": [
@@ -1140,8 +1149,8 @@ export const lightLevels = [
     ],
     "targets": [
       {
-        "x": 380.7,
-        "y": 158.5,
+        "x": 388.38234948541555,
+        "y": 160.73192884831383,
         "radius": 22,
         "color": "gold"
       },
@@ -1162,26 +1171,28 @@ export const lightLevels = [
     ],
     "sourceAngle": 90,
     "target": {
-      "x": 380.7,
-      "y": 158.5,
+      "x": 388.38234948541555,
+      "y": 160.73192884831383,
       "radius": 22,
       "color": "gold"
     },
     "requiredBounces": 3,
-    "wallPurpose": [],
+    "wallPurpose": [
+      "Parede absorvente em (465.6, 263.5) fecha um percurso adicional de blue pelo(s) espelho(s) E2→E3→E4. Sem esta parede, o trajeto atinge o alvo; com ela, termina na parede. As 4 chegadas locais válidas das 2 configurações narrativas originais continuam válidas; a parede organiza o espaço sem substituir a dedução de compatibilidade por uma simples eliminação do domínio principal."
+    ],
     "decoyCount": 2,
     "tutorial": "",
     "rules": "Leve cada cor ao seu alvo sem cruzar outras cores.",
     "number": 15,
     "campaignNumber": 15,
     "campaignBand": "basic",
-    "campaignRevision": "reflexos80-v6"
+    "campaignRevision": "reflexos80-spacious-v7"
   },
   {
     "sources": [
       {
-        "x": 352.64865730815666,
-        "y": 205.3854675619769,
+        "x": 366.6154105444736,
+        "y": 213.19122210819663,
         "angle": -148,
         "color": "gold"
       },
@@ -1195,13 +1206,13 @@ export const lightLevels = [
     "targets": [
       {
         "x": 672.574263096701,
-        "y": 234.47499210841295,
+        "y": 250.47499210841295,
         "radius": 22,
         "color": "gold"
       },
       {
-        "x": 665.6283359900237,
-        "y": 186.13269777109872,
+        "x": 659.9714817405313,
+        "y": 191.7895520205911,
         "radius": 22,
         "color": "blue"
       }
@@ -1282,7 +1293,7 @@ export const lightLevels = [
         "angle": 56.3
       }
     ],
-    "id": "light-v5-deduction-pair-00-filter",
+    "id": "light-v7-spacious-016",
     "name": "Parecidas, mas diferentes",
     "hint": "Uma diferença visível decide qual caminho continua disponível.",
     "solution": [
@@ -1294,7 +1305,7 @@ export const lightLevels = [
     "sourceAngle": -148,
     "target": {
       "x": 672.574263096701,
-      "y": 234.47499210841295,
+      "y": 250.47499210841295,
       "radius": 22,
       "color": "gold"
     },
@@ -1306,7 +1317,7 @@ export const lightLevels = [
     "number": 16,
     "campaignNumber": 16,
     "campaignBand": "apprentice",
-    "campaignRevision": "reflexos80-v6"
+    "campaignRevision": "reflexos80-spacious-v7"
   },
   {
     "objects": [
@@ -1358,7 +1369,7 @@ export const lightLevels = [
         "id": "g1a",
         "pairId": "g1b",
         "label": "A",
-        "x": 538.5,
+        "x": 522.5,
         "y": 92.3,
         "radius": 16,
         "colors": [
@@ -1401,7 +1412,7 @@ export const lightLevels = [
     ],
     "width": 800,
     "height": 460,
-    "id": "light-v5-portal-001",
+    "id": "light-v7-spacious-017",
     "name": "Lados invertidos 001",
     "hint": "Compare a posição dos trajetos nos primeiros espelhos e nos alvos.",
     "solution": [
@@ -1423,7 +1434,7 @@ export const lightLevels = [
     "number": 17,
     "campaignNumber": 17,
     "campaignBand": "apprentice",
-    "campaignRevision": "reflexos80-v6"
+    "campaignRevision": "reflexos80-spacious-v7"
   },
   {
     "id": "light-v3-59",
@@ -1505,7 +1516,7 @@ export const lightLevels = [
     ],
     "sources": [
       {
-        "x": 350,
+        "x": 334,
         "y": 110.00000000000001,
         "angle": -180,
         "color": "gold"
@@ -1601,7 +1612,7 @@ export const lightLevels = [
     ],
     "width": 800,
     "height": 460,
-    "id": "light-v5-portal-023",
+    "id": "light-v7-spacious-019",
     "name": "A saída decide 023",
     "hint": "Compare o que acontece depois de cada saída.",
     "solution": [
@@ -1623,10 +1634,10 @@ export const lightLevels = [
     "number": 19,
     "campaignNumber": 19,
     "campaignBand": "apprentice",
-    "campaignRevision": "reflexos80-v6"
+    "campaignRevision": "reflexos80-spacious-v7"
   },
   {
-    "id": "light-v5-open-011",
+    "id": "light-v7-spacious-020",
     "name": "Compartilhar o vazio",
     "hint": "Cada trajeto funciona sozinho. Compare o espaço que ocupam juntos.",
     "width": 800,
@@ -1666,6 +1677,15 @@ export const lightLevels = [
         "type": "mirror",
         "length": 124.8,
         "angle": 0
+      },
+      {
+        "type": "wall",
+        "x": 537.6661576816548,
+        "y": 243.59990901413914,
+        "length": 54,
+        "width": 12,
+        "angle": 204.41866710911032,
+        "purpose": "Parede absorvente em (537.7, 243.6) fecha um percurso adicional de gold pelo(s) espelho(s) E1→E3. Sem esta parede, o trajeto atinge o alvo; com ela, termina na parede. As 4 chegadas locais válidas das 2 configurações narrativas originais continuam válidas; a parede organiza o espaço sem substituir a dedução de compatibilidade por uma simples eliminação do domínio principal."
       }
     ],
     "sources": [
@@ -1712,14 +1732,16 @@ export const lightLevels = [
       "color": "gold"
     },
     "requiredBounces": 3,
-    "wallPurpose": [],
+    "wallPurpose": [
+      "Parede absorvente em (537.7, 243.6) fecha um percurso adicional de gold pelo(s) espelho(s) E1→E3. Sem esta parede, o trajeto atinge o alvo; com ela, termina na parede. As 4 chegadas locais válidas das 2 configurações narrativas originais continuam válidas; a parede organiza o espaço sem substituir a dedução de compatibilidade por uma simples eliminação do domínio principal."
+    ],
     "decoyCount": 2,
     "tutorial": "",
     "rules": "Leve cada cor ao seu alvo sem cruzar outras cores.",
     "number": 20,
     "campaignNumber": 20,
     "campaignBand": "apprentice",
-    "campaignRevision": "reflexos80-v6"
+    "campaignRevision": "reflexos80-spacious-v7"
   },
   {
     "sources": [
@@ -1869,8 +1891,8 @@ export const lightLevels = [
     "portals": [
       {
         "id": "A1",
-        "x": 650,
-        "y": 280,
+        "x": 644.3431457505076,
+        "y": 274.34314575050763,
         "pairId": "A2",
         "radius": 16,
         "label": "A"
@@ -1940,10 +1962,10 @@ export const lightLevels = [
     "hint": "A saída distante pode ser a útil.",
     "tutorial": "",
     "rules": "Leve a luz ao alvo.",
-    "id": "light-v3-74",
+    "id": "light-v7-spacious-022",
     "campaignNumber": 22,
     "campaignBand": "apprentice",
-    "campaignRevision": "reflexos80-v6"
+    "campaignRevision": "reflexos80-spacious-v7"
   },
   {
     "objects": [
@@ -2246,7 +2268,7 @@ export const lightLevels = [
     "campaignRevision": "reflexos80-v6"
   },
   {
-    "id": "light-v4-open-010",
+    "id": "light-v7-spacious-025",
     "name": "Compartilhar o vazio",
     "hint": "Cada trajeto funciona sozinho. Compare o espaço que ocupam juntos.",
     "width": 800,
@@ -2286,6 +2308,15 @@ export const lightLevels = [
         "type": "mirror",
         "length": 124.8,
         "angle": 0
+      },
+      {
+        "type": "wall",
+        "x": 192.35681442524822,
+        "y": 240.1939161797494,
+        "length": 40,
+        "width": 12,
+        "angle": 191.20000000000005,
+        "purpose": "Parede absorvente em (192.4, 240.2) fecha um percurso adicional de gold pelo(s) espelho(s) E1→E5. Sem esta parede, o trajeto atinge o alvo; com ela, termina na parede. As 7 chegadas locais válidas das 4 configurações narrativas originais continuam válidas; a parede organiza o espaço sem substituir a dedução de compatibilidade por uma simples eliminação do domínio principal."
       }
     ],
     "sources": [
@@ -2332,14 +2363,16 @@ export const lightLevels = [
       "color": "gold"
     },
     "requiredBounces": 3,
-    "wallPurpose": [],
+    "wallPurpose": [
+      "Parede absorvente em (192.4, 240.2) fecha um percurso adicional de gold pelo(s) espelho(s) E1→E5. Sem esta parede, o trajeto atinge o alvo; com ela, termina na parede. As 7 chegadas locais válidas das 4 configurações narrativas originais continuam válidas; a parede organiza o espaço sem substituir a dedução de compatibilidade por uma simples eliminação do domínio principal."
+    ],
     "decoyCount": 2,
     "tutorial": "",
     "rules": "Leve cada cor ao seu alvo sem cruzar outras cores.",
     "number": 25,
     "campaignNumber": 25,
     "campaignBand": "apprentice",
-    "campaignRevision": "reflexos80-v6"
+    "campaignRevision": "reflexos80-spacious-v7"
   },
   {
     "sources": [
@@ -2350,8 +2383,8 @@ export const lightLevels = [
         "color": "gold"
       },
       {
-        "x": 543.4277812568218,
-        "y": 140.89493743562755,
+        "x": 546.754368309906,
+        "y": 156.54529904736845,
         "angle": 78,
         "color": "blue"
       },
@@ -2430,8 +2463,8 @@ export const lightLevels = [
       {
         "id": "p2a",
         "pairId": "p2b",
-        "x": 308.7,
-        "y": 86.2,
+        "x": 312.4557725022871,
+        "y": 79.1364192571286,
         "radius": 16,
         "colors": [
           "pink"
@@ -2480,7 +2513,7 @@ export const lightLevels = [
         "angle": 17.2
       }
     ],
-    "id": "light-v5-deduction-four-01",
+    "id": "light-v7-spacious-026",
     "name": "A curva depende da escolha",
     "hint": "A chegada ao último espelho muda quando o caminho anterior muda.",
     "solution": [
@@ -2504,7 +2537,7 @@ export const lightLevels = [
     "number": 26,
     "campaignNumber": 26,
     "campaignBand": "apprentice",
-    "campaignRevision": "reflexos80-v6"
+    "campaignRevision": "reflexos80-spacious-v7"
   },
   {
     "objects": [
@@ -2624,7 +2657,7 @@ export const lightLevels = [
     "campaignRevision": "reflexos80-v6"
   },
   {
-    "id": "light-v5-open-chain-003",
+    "id": "light-v7-spacious-028",
     "name": "Compatibilidade após a poda",
     "hint": "Uma alternativa pode decidir a passagem de uma segunda cor e limitar a terceira.",
     "width": 800,
@@ -2671,6 +2704,15 @@ export const lightLevels = [
         "type": "mirror",
         "length": 124.8,
         "angle": 0
+      },
+      {
+        "type": "wall",
+        "x": 236.67419383045726,
+        "y": 171.06675590445553,
+        "length": 54,
+        "width": 12,
+        "angle": -40.38392855188994,
+        "purpose": "Parede absorvente em (236.7, 171.1) fecha um percurso adicional de gold pelo(s) espelho(s) E1→E4. Sem esta parede, o trajeto atinge o alvo; com ela, termina na parede. As 6 chegadas locais válidas das 2 configurações narrativas originais continuam válidas; a parede organiza o espaço sem substituir a dedução de compatibilidade por uma simples eliminação do domínio principal."
       }
     ],
     "sources": [
@@ -2701,8 +2743,8 @@ export const lightLevels = [
         "color": "gold"
       },
       {
-        "x": 445.6,
-        "y": 268.1,
+        "x": 439.67960312887226,
+        "y": 282.964349998851,
         "radius": 22,
         "color": "blue"
       },
@@ -2730,14 +2772,16 @@ export const lightLevels = [
       "color": "gold"
     },
     "requiredBounces": 4,
-    "wallPurpose": [],
+    "wallPurpose": [
+      "Parede absorvente em (236.7, 171.1) fecha um percurso adicional de gold pelo(s) espelho(s) E1→E4. Sem esta parede, o trajeto atinge o alvo; com ela, termina na parede. As 6 chegadas locais válidas das 2 configurações narrativas originais continuam válidas; a parede organiza o espaço sem substituir a dedução de compatibilidade por uma simples eliminação do domínio principal."
+    ],
     "decoyCount": 2,
     "tutorial": "",
     "rules": "Leve cada cor ao seu alvo sem cruzar outras cores.",
     "number": 28,
     "campaignNumber": 28,
     "campaignBand": "apprentice",
-    "campaignRevision": "reflexos80-v6"
+    "campaignRevision": "reflexos80-spacious-v7"
   },
   {
     "id": "light-v3-60",
@@ -2843,8 +2887,8 @@ export const lightLevels = [
       },
       {
         "type": "mirror",
-        "x": 200,
-        "y": 230,
+        "x": 184.03897519584282,
+        "y": 231.11610357990602,
         "length": 124.8,
         "angle": -89.6
       },
@@ -2870,8 +2914,8 @@ export const lightLevels = [
         "color": "blue"
       },
       {
-        "x": 349.6346075389736,
-        "y": 363.5365289383812,
+        "x": 325.6930703327378,
+        "y": 365.2106843082402,
         "angle": 176,
         "color": "pink"
       }
@@ -2934,8 +2978,8 @@ export const lightLevels = [
         "id": "b1b",
         "pairId": "b1a",
         "label": "B",
-        "x": 610.2,
-        "y": 130.9,
+        "x": 618.1992201920744,
+        "y": 131.01169744271317,
         "radius": 16,
         "colors": [
           "blue"
@@ -2966,7 +3010,7 @@ export const lightLevels = [
     ],
     "width": 800,
     "height": 460,
-    "id": "light-v5-portal-030",
+    "id": "light-v7-spacious-030",
     "name": "O salto que não cruza 003",
     "hint": "Separe os trechos iluminados do salto entre portais.",
     "solution": [
@@ -2989,10 +3033,10 @@ export const lightLevels = [
     "number": 30,
     "campaignNumber": 30,
     "campaignBand": "apprentice",
-    "campaignRevision": "reflexos80-v6"
+    "campaignRevision": "reflexos80-spacious-v7"
   },
   {
-    "id": "light-v5-open-028",
+    "id": "light-v7-spacious-031",
     "name": "A chegada reservada",
     "hint": "Compare as aproximações do alvo com os trajetos que as outras cores precisam conservar.",
     "width": 800,
@@ -3013,7 +3057,7 @@ export const lightLevels = [
         "angle": 28.9
       },
       {
-        "x": 440.8,
+        "x": 448.8,
         "y": 271.9,
         "type": "mirror",
         "length": 124.8,
@@ -3027,11 +3071,20 @@ export const lightLevels = [
         "angle": 0
       },
       {
-        "x": 313.9,
-        "y": 243.9,
+        "x": 306.8759131583108,
+        "y": 247.72912575406048,
         "type": "mirror",
         "length": 124.8,
         "angle": 35.2
+      },
+      {
+        "type": "wall",
+        "x": 460.329509292597,
+        "y": 142.92382884945795,
+        "length": 40,
+        "width": 12,
+        "angle": 110.17530821894418,
+        "purpose": "Parede absorvente em (460.3, 142.9) fecha um percurso adicional de gold pelo(s) espelho(s) E1. Sem esta parede, o trajeto atinge o alvo; com ela, termina na parede. As 7 chegadas locais válidas das 4 configurações narrativas originais continuam válidas; a parede organiza o espaço sem substituir a dedução de compatibilidade por uma simples eliminação do domínio principal."
       }
     ],
     "sources": [
@@ -3056,8 +3109,8 @@ export const lightLevels = [
         "color": "gold"
       },
       {
-        "x": 365.7,
-        "y": 190,
+        "x": 370.56174510862706,
+        "y": 183.64677762873512,
         "radius": 22,
         "color": "blue"
       }
@@ -3078,14 +3131,16 @@ export const lightLevels = [
       "color": "gold"
     },
     "requiredBounces": 4,
-    "wallPurpose": [],
+    "wallPurpose": [
+      "Parede absorvente em (460.3, 142.9) fecha um percurso adicional de gold pelo(s) espelho(s) E1. Sem esta parede, o trajeto atinge o alvo; com ela, termina na parede. As 7 chegadas locais válidas das 4 configurações narrativas originais continuam válidas; a parede organiza o espaço sem substituir a dedução de compatibilidade por uma simples eliminação do domínio principal."
+    ],
     "decoyCount": 1,
     "tutorial": "",
     "rules": "Leve cada cor ao seu alvo sem cruzar outras cores.",
     "number": 31,
     "campaignNumber": 31,
     "campaignBand": "intermediate",
-    "campaignRevision": "reflexos80-v6"
+    "campaignRevision": "reflexos80-spacious-v7"
   },
   {
     "sources": [
@@ -3143,8 +3198,8 @@ export const lightLevels = [
       {
         "id": "p0b",
         "pairId": "p0a",
-        "x": 664.2,
-        "y": 84.9,
+        "x": 652.8862915010153,
+        "y": 73.58629150101524,
         "radius": 16,
         "colors": [
           "gold"
@@ -3154,8 +3209,8 @@ export const lightLevels = [
       {
         "id": "p1a",
         "pairId": "p1b",
-        "x": 593.5,
-        "y": 192.5,
+        "x": 608.5350819325745,
+        "y": 187.0276777067893,
         "radius": 16,
         "colors": [
           "blue"
@@ -3206,8 +3261,8 @@ export const lightLevels = [
       },
       {
         "type": "mirror",
-        "x": 590,
-        "y": 360,
+        "x": 597.5175409662872,
+        "y": 357.26383885339465,
         "length": 124.8,
         "angle": -15.9
       },
@@ -3259,7 +3314,7 @@ export const lightLevels = [
         "angle": 90
       }
     ],
-    "id": "light-v5-deduction-windows-04",
+    "id": "light-v7-spacious-032",
     "name": "Visibilidade entre regiões",
     "hint": "Compare o que cada abertura deixa passar.",
     "solution": [
@@ -3282,10 +3337,10 @@ export const lightLevels = [
     "number": 32,
     "campaignNumber": 32,
     "campaignBand": "intermediate",
-    "campaignRevision": "reflexos80-v6"
+    "campaignRevision": "reflexos80-spacious-v7"
   },
   {
-    "id": "light-v5-open-301",
+    "id": "light-v7-spacious-033",
     "name": "Antes do deslocamento",
     "hint": "Compare como os dois trajetos distribuem o espaço.",
     "width": 800,
@@ -3332,6 +3387,15 @@ export const lightLevels = [
         "type": "mirror",
         "length": 124.8,
         "angle": 85.1
+      },
+      {
+        "type": "wall",
+        "x": 400.5143462510339,
+        "y": 217.88122851812022,
+        "length": 54,
+        "width": 12,
+        "angle": 182.4000000000001,
+        "purpose": "Parede absorvente em (400.5, 217.9) fecha um percurso adicional de blue pelo(s) espelho(s) E2→E3→E4. Sem esta parede, o trajeto atinge o alvo; com ela, termina na parede. As 9 chegadas locais válidas das 5 configurações narrativas originais continuam válidas; a parede organiza o espaço sem substituir a dedução de compatibilidade por uma simples eliminação do domínio principal."
       }
     ],
     "sources": [
@@ -3379,14 +3443,16 @@ export const lightLevels = [
       "color": "gold"
     },
     "requiredBounces": 4,
-    "wallPurpose": [],
+    "wallPurpose": [
+      "Parede absorvente em (400.5, 217.9) fecha um percurso adicional de blue pelo(s) espelho(s) E2→E3→E4. Sem esta parede, o trajeto atinge o alvo; com ela, termina na parede. As 9 chegadas locais válidas das 5 configurações narrativas originais continuam válidas; a parede organiza o espaço sem substituir a dedução de compatibilidade por uma simples eliminação do domínio principal."
+    ],
     "decoyCount": 2,
     "tutorial": "",
     "rules": "Leve cada cor ao seu alvo sem cruzar outras cores.",
     "number": 33,
     "campaignNumber": 33,
     "campaignBand": "intermediate",
-    "campaignRevision": "reflexos80-v6"
+    "campaignRevision": "reflexos80-spacious-v7"
   },
   {
     "number": 34,
@@ -3505,7 +3571,7 @@ export const lightLevels = [
     "campaignRevision": "reflexos80-v6"
   },
   {
-    "id": "light-v4-open-065",
+    "id": "light-v7-spacious-035",
     "name": "Primeiro, para longe",
     "hint": "Uma saída que aponta para o alvo pode ocupar a chegada de outra cor.",
     "width": 800,
@@ -3533,7 +3599,7 @@ export const lightLevels = [
         "angle": -87
       },
       {
-        "x": 387.6,
+        "x": 395.6,
         "y": 233,
         "type": "mirror",
         "length": 124.8,
@@ -3552,6 +3618,15 @@ export const lightLevels = [
         "type": "mirror",
         "length": 124.8,
         "angle": 0
+      },
+      {
+        "type": "wall",
+        "x": 626.8812660235612,
+        "y": 307.13943906609893,
+        "length": 40,
+        "width": 12,
+        "angle": 160.59999999999997,
+        "purpose": "Parede absorvente em (626.9, 307.1) fecha um percurso adicional de pink pelo(s) espelho(s) E3→E4→E5. Sem esta parede, o trajeto atinge o alvo; com ela, termina na parede. As 13 chegadas locais válidas das 5 configurações narrativas originais continuam válidas; a parede organiza o espaço sem substituir a dedução de compatibilidade por uma simples eliminação do domínio principal."
       }
     ],
     "sources": [
@@ -3576,7 +3651,7 @@ export const lightLevels = [
     ],
     "targets": [
       {
-        "x": 516.7,
+        "x": 532.7,
         "y": 417.1,
         "radius": 22,
         "color": "gold"
@@ -3605,23 +3680,25 @@ export const lightLevels = [
     ],
     "sourceAngle": 0,
     "target": {
-      "x": 516.7,
+      "x": 532.7,
       "y": 417.1,
       "radius": 22,
       "color": "gold"
     },
     "requiredBounces": 5,
-    "wallPurpose": [],
+    "wallPurpose": [
+      "Parede absorvente em (626.9, 307.1) fecha um percurso adicional de pink pelo(s) espelho(s) E3→E4→E5. Sem esta parede, o trajeto atinge o alvo; com ela, termina na parede. As 13 chegadas locais válidas das 5 configurações narrativas originais continuam válidas; a parede organiza o espaço sem substituir a dedução de compatibilidade por uma simples eliminação do domínio principal."
+    ],
     "decoyCount": 1,
     "tutorial": "",
     "rules": "Leve cada cor ao seu alvo sem cruzar outras cores.",
     "number": 35,
     "campaignNumber": 35,
     "campaignBand": "intermediate",
-    "campaignRevision": "reflexos80-v6"
+    "campaignRevision": "reflexos80-spacious-v7"
   },
   {
-    "id": "light-v5-open-302",
+    "id": "light-v7-spacious-036",
     "name": "Uma metade diferente",
     "hint": "As peças se correspondem, mas a posição dos alvos não.",
     "width": 800,
@@ -3668,6 +3745,15 @@ export const lightLevels = [
         "type": "mirror",
         "length": 124.8,
         "angle": 85.1
+      },
+      {
+        "type": "wall",
+        "x": 400.50147578880984,
+        "y": 217.8819918511881,
+        "length": 54,
+        "width": 12,
+        "angle": 2.4000000000000057,
+        "purpose": "Parede absorvente em (400.5, 217.9) fecha um percurso adicional de gold pelo(s) espelho(s) E1→E4→E3. Sem esta parede, o trajeto atinge o alvo; com ela, termina na parede. As 10 chegadas locais válidas das 6 configurações narrativas originais continuam válidas; a parede organiza o espaço sem substituir a dedução de compatibilidade por uma simples eliminação do domínio principal."
       }
     ],
     "sources": [
@@ -3715,14 +3801,16 @@ export const lightLevels = [
       "color": "gold"
     },
     "requiredBounces": 4,
-    "wallPurpose": [],
+    "wallPurpose": [
+      "Parede absorvente em (400.5, 217.9) fecha um percurso adicional de gold pelo(s) espelho(s) E1→E4→E3. Sem esta parede, o trajeto atinge o alvo; com ela, termina na parede. As 10 chegadas locais válidas das 6 configurações narrativas originais continuam válidas; a parede organiza o espaço sem substituir a dedução de compatibilidade por uma simples eliminação do domínio principal."
+    ],
     "decoyCount": 2,
     "tutorial": "",
     "rules": "Leve cada cor ao seu alvo sem cruzar outras cores.",
     "number": 36,
     "campaignNumber": 36,
     "campaignBand": "intermediate",
-    "campaignRevision": "reflexos80-v6"
+    "campaignRevision": "reflexos80-spacious-v7"
   },
   {
     "sources": [
@@ -3743,8 +3831,8 @@ export const lightLevels = [
     ],
     "objects": [
       {
-        "x": 200,
-        "y": 330,
+        "x": 242.42640687119285,
+        "y": 364.42640687119285,
         "type": "mirror",
         "angle": 76,
         "length": 124.8
@@ -3807,7 +3895,7 @@ export const lightLevels = [
         "label": "B"
       }
     ],
-    "id": "light-v4-deduction-pilot-return",
+    "id": "light-v7-spacious-037",
     "name": "Volta pelo outro acesso",
     "hint": "O destino está deste lado, mas o acesso útil vem de fora.",
     "solution": [
@@ -3829,7 +3917,7 @@ export const lightLevels = [
     "number": 37,
     "campaignNumber": 37,
     "campaignBand": "intermediate",
-    "campaignRevision": "reflexos80-v6"
+    "campaignRevision": "reflexos80-spacious-v7"
   },
   {
     "sources": [
@@ -3860,8 +3948,8 @@ export const lightLevels = [
         "color": "gold"
       },
       {
-        "x": 650,
-        "y": 187.5,
+        "x": 654.473543227766,
+        "y": 194.13230058044033,
         "radius": 22,
         "color": "blue"
       },
@@ -3898,8 +3986,8 @@ export const lightLevels = [
       {
         "id": "s1a",
         "pairId": "s1b",
-        "x": 360,
-        "y": 390,
+        "x": 352.12153797590236,
+        "y": 388.61081457866453,
         "radius": 16,
         "colors": [
           "blue"
@@ -3977,7 +4065,7 @@ export const lightLevels = [
         "angle": -6.7
       }
     ],
-    "id": "light-v5-deduction-symmetry-02-base-reauthored",
+    "id": "light-v7-spacious-038",
     "name": "Dois pares e uma vizinha",
     "hint": "Uma escolha pode mudar o espaço disponível para a terceira cor.",
     "solution": [
@@ -4002,7 +4090,7 @@ export const lightLevels = [
     "number": 38,
     "campaignNumber": 38,
     "campaignBand": "intermediate",
-    "campaignRevision": "reflexos80-v6"
+    "campaignRevision": "reflexos80-spacious-v7"
   },
   {
     "sources": [
@@ -4013,8 +4101,8 @@ export const lightLevels = [
         "color": "gold"
       },
       {
-        "x": 440.821715694759,
-        "y": 125.67926949014802,
+        "x": 456.73406602065137,
+        "y": 124.00681407786556,
         "angle": 354,
         "color": "blue"
       },
@@ -4136,7 +4224,7 @@ export const lightLevels = [
         "angle": 63.8
       }
     ],
-    "id": "light-v5-deduction-open-016",
+    "id": "light-v7-spacious-039",
     "name": "Consequência 15",
     "hint": "Uma escolha pode decidir os caminhos das outras cores.",
     "solution": [
@@ -4159,7 +4247,7 @@ export const lightLevels = [
     "number": 39,
     "campaignNumber": 39,
     "campaignBand": "intermediate",
-    "campaignRevision": "reflexos80-v6"
+    "campaignRevision": "reflexos80-spacious-v7"
   },
   {
     "name": "O espelho em comum",
@@ -4167,14 +4255,14 @@ export const lightLevels = [
     "family": "superficie-compartilhada-condicional",
     "sources": [
       {
-        "x": 90,
+        "x": 100,
         "y": 234.5,
         "angle": 0,
         "color": "gold"
       },
       {
         "x": 335,
-        "y": 84.5,
+        "y": 114.5,
         "angle": 90,
         "color": "blue"
       },
@@ -4302,11 +4390,11 @@ export const lightLevels = [
     ],
     "decoyCount": 0,
     "tutorial": false,
-    "id": "light-v4-legacy-190-labels",
+    "id": "light-v7-spacious-040",
     "campaignNumber": 40,
     "number": 40,
     "campaignBand": "intermediate",
-    "campaignRevision": "reflexos80-v6"
+    "campaignRevision": "reflexos80-spacious-v7"
   },
   {
     "sources": [
@@ -4618,8 +4706,8 @@ export const lightLevels = [
         "color": "gold"
       },
       {
-        "x": 650,
-        "y": 187.5,
+        "x": 654.473543227766,
+        "y": 194.13230058044033,
         "radius": 22,
         "color": "blue"
       },
@@ -4656,8 +4744,8 @@ export const lightLevels = [
       {
         "id": "s1a",
         "pairId": "s1b",
-        "x": 360,
-        "y": 390,
+        "x": 352.12153797590236,
+        "y": 388.61081457866453,
         "radius": 16,
         "colors": [
           "gold"
@@ -4735,7 +4823,7 @@ export const lightLevels = [
         "angle": -6.7
       }
     ],
-    "id": "light-v5-deduction-symmetry-02-opposite-filter-reauthored",
+    "id": "light-v7-spacious-043",
     "name": "A diferença do outro lado",
     "hint": "Compare a marca da entrada com a fonte que se aproxima.",
     "solution": [
@@ -4760,7 +4848,7 @@ export const lightLevels = [
     "number": 43,
     "campaignNumber": 43,
     "campaignBand": "intermediate",
-    "campaignRevision": "reflexos80-v6"
+    "campaignRevision": "reflexos80-spacious-v7"
   },
   {
     "sources": [
@@ -4772,7 +4860,7 @@ export const lightLevels = [
       },
       {
         "x": 115,
-        "y": 225,
+        "y": 201,
         "angle": 86.42366562500266,
         "color": "gold"
       },
@@ -4860,7 +4948,7 @@ export const lightLevels = [
         "pairId": "C1",
         "label": "C",
         "x": 530,
-        "y": 410,
+        "y": 418,
         "radius": 16
       },
       {
@@ -4868,7 +4956,7 @@ export const lightLevels = [
         "pairId": "F2",
         "label": "F",
         "x": 700,
-        "y": 410,
+        "y": 418,
         "radius": 16,
         "colors": [
           "gold"
@@ -4889,8 +4977,8 @@ export const lightLevels = [
         "id": "R1",
         "pairId": "R2",
         "label": "R",
-        "x": 340,
-        "y": 250,
+        "x": 311.7157287525381,
+        "y": 278.2842712474619,
         "radius": 16
       },
       {
@@ -4898,7 +4986,7 @@ export const lightLevels = [
         "pairId": "R1",
         "label": "R",
         "x": 55,
-        "y": 300,
+        "y": 292,
         "radius": 16
       },
       {
@@ -4945,7 +5033,7 @@ export const lightLevels = [
       -45,
       45
     ],
-    "id": "light-v3-139",
+    "id": "light-v7-spacious-044",
     "campaignNumber": 44,
     "name": "Cadeia longa, resposta curta",
     "difficulty": 139,
@@ -4969,7 +5057,7 @@ export const lightLevels = [
     "hint": "Observe a chegada azul antes de decidir o trajeto dourado.",
     "number": 44,
     "campaignBand": "intermediate",
-    "campaignRevision": "reflexos80-v6"
+    "campaignRevision": "reflexos80-spacious-v7"
   },
   {
     "sources": [
@@ -5000,8 +5088,8 @@ export const lightLevels = [
         "color": "gold"
       },
       {
-        "x": 43.1,
-        "y": 383.9,
+        "x": 35.94676610528506,
+        "y": 387.4820727027101,
         "radius": 22,
         "color": "blue"
       },
@@ -5038,8 +5126,8 @@ export const lightLevels = [
       {
         "id": "p1a",
         "pairId": "p1b",
-        "x": 301.6,
-        "y": 67.4,
+        "x": 280.1402983158552,
+        "y": 78.14621810813048,
         "radius": 16,
         "colors": [
           "blue"
@@ -5103,7 +5191,7 @@ export const lightLevels = [
         "angle": 24.3
       }
     ],
-    "id": "light-v5-deduction-open-002",
+    "id": "light-v7-spacious-045",
     "name": "Hipótese 01",
     "hint": "Siga as consequências de uma hipótese antes de manter a primeira rota.",
     "solution": [
@@ -5126,7 +5214,7 @@ export const lightLevels = [
     "number": 45,
     "campaignNumber": 45,
     "campaignBand": "intermediate",
-    "campaignRevision": "reflexos80-v6"
+    "campaignRevision": "reflexos80-spacious-v7"
   },
   {
     "sources": [
@@ -5175,7 +5263,7 @@ export const lightLevels = [
         "type": "mirror",
         "x": 250,
         "y": 130,
-        "angle": 69,
+        "angle": 45,
         "length": 124.8
       },
       {
@@ -5218,7 +5306,7 @@ export const lightLevels = [
         "pairId": "A2",
         "label": "A",
         "x": 250,
-        "y": 210,
+        "y": 192,
         "radius": 16
       },
       {
@@ -5245,7 +5333,7 @@ export const lightLevels = [
         "pairId": "B1",
         "label": "B",
         "x": 250,
-        "y": 250,
+        "y": 262,
         "radius": 16,
         "colors": [
           "blue"
@@ -5311,7 +5399,7 @@ export const lightLevels = [
       -45,
       45
     ],
-    "id": "light-v3-135",
+    "id": "light-v7-spacious-046",
     "campaignNumber": 46,
     "name": "Encadear azul, simplificar rosa",
     "difficulty": 135,
@@ -5335,7 +5423,7 @@ export const lightLevels = [
     "hint": "Observe a chegada azul antes de decidir o trajeto dourado.",
     "number": 46,
     "campaignBand": "advanced",
-    "campaignRevision": "reflexos80-v6"
+    "campaignRevision": "reflexos80-spacious-v7"
   },
   {
     "number": 47,
@@ -5456,7 +5544,7 @@ export const lightLevels = [
       },
       {
         "x": 472.7927855765362,
-        "y": 189.4878896349809,
+        "y": 173.4878896349809,
         "angle": 328,
         "color": "blue"
       },
@@ -5502,8 +5590,8 @@ export const lightLevels = [
       {
         "id": "p0b",
         "pairId": "p0a",
-        "x": 712.9,
-        "y": 335,
+        "x": 741.1842712474619,
+        "y": 363.2842712474619,
         "radius": 16,
         "colors": [
           "gold"
@@ -5578,7 +5666,7 @@ export const lightLevels = [
         "angle": 56.5
       }
     ],
-    "id": "light-v5-deduction-open-031",
+    "id": "light-v7-spacious-048",
     "name": "Do outro lado 30",
     "hint": "Compare os caminhos completos, não apenas cada chegada isolada.",
     "solution": [
@@ -5601,10 +5689,10 @@ export const lightLevels = [
     "number": 48,
     "campaignNumber": 48,
     "campaignBand": "advanced",
-    "campaignRevision": "reflexos80-v6"
+    "campaignRevision": "reflexos80-spacious-v7"
   },
   {
-    "id": "light-v4-open-chain-014",
+    "id": "light-v7-spacious-049",
     "name": "Uma escolha atravessa três",
     "hint": "Uma alternativa pode decidir a passagem de uma segunda cor e limitar a terceira.",
     "width": 800,
@@ -5651,6 +5739,15 @@ export const lightLevels = [
         "type": "mirror",
         "angle": 0,
         "length": 124.8
+      },
+      {
+        "type": "wall",
+        "x": 225.82377577293002,
+        "y": 227.44359468324097,
+        "length": 54,
+        "width": 12,
+        "angle": 189.60000000000002,
+        "purpose": "Parede absorvente em (225.8, 227.4) fecha um percurso adicional de gold pelo(s) espelho(s) E1→E4→E6. Sem esta parede, o trajeto atinge o alvo; com ela, termina na parede. As 24 chegadas locais válidas das 8 configurações narrativas originais continuam válidas; a parede organiza o espaço sem substituir a dedução de compatibilidade por uma simples eliminação do domínio principal."
       }
     ],
     "sources": [
@@ -5675,8 +5772,8 @@ export const lightLevels = [
     ],
     "targets": [
       {
-        "x": 332.9,
-        "y": 306.7,
+        "x": 317.86491806742544,
+        "y": 301.2276777067893,
         "radius": 22,
         "color": "gold"
       },
@@ -5704,20 +5801,22 @@ export const lightLevels = [
     ],
     "sourceAngle": 0,
     "target": {
-      "x": 332.9,
-      "y": 306.7,
+      "x": 317.86491806742544,
+      "y": 301.2276777067893,
       "radius": 22,
       "color": "gold"
     },
     "requiredBounces": 4,
-    "wallPurpose": [],
+    "wallPurpose": [
+      "Parede absorvente em (225.8, 227.4) fecha um percurso adicional de gold pelo(s) espelho(s) E1→E4→E6. Sem esta parede, o trajeto atinge o alvo; com ela, termina na parede. As 24 chegadas locais válidas das 8 configurações narrativas originais continuam válidas; a parede organiza o espaço sem substituir a dedução de compatibilidade por uma simples eliminação do domínio principal."
+    ],
     "decoyCount": 2,
     "tutorial": "",
     "rules": "Leve cada cor ao seu alvo sem cruzar outras cores.",
     "number": 49,
     "campaignNumber": 49,
     "campaignBand": "advanced",
-    "campaignRevision": "reflexos80-v6"
+    "campaignRevision": "reflexos80-spacious-v7"
   },
   {
     "number": 50,
@@ -5732,8 +5831,8 @@ export const lightLevels = [
         "angle": 0
       },
       {
-        "x": 560,
-        "y": 50,
+        "x": 560.0099403164609,
+        "y": 42.00000617562059,
         "color": "blue",
         "angle": 77.47119229084849
       }
@@ -5865,10 +5964,10 @@ export const lightLevels = [
     "hint": "Mantenha a azul acesa ao avaliar G.",
     "tutorial": "",
     "rules": "Cada cor no seu alvo, sem cruzar outras trajetórias.",
-    "id": "light-v3-95",
+    "id": "light-v7-spacious-050",
     "campaignNumber": 50,
     "campaignBand": "advanced",
-    "campaignRevision": "reflexos80-v6"
+    "campaignRevision": "reflexos80-spacious-v7"
   },
   {
     "number": 51,
@@ -6003,7 +6102,7 @@ export const lightLevels = [
     "family": "superficie-compartilhada-condicional",
     "sources": [
       {
-        "x": 90,
+        "x": 98,
         "y": 234.5,
         "angle": 0,
         "color": "gold"
@@ -6122,8 +6221,8 @@ export const lightLevels = [
         "id": "Da",
         "pairId": "Db",
         "label": "D",
-        "x": 260,
-        "y": 144.5,
+        "x": 252,
+        "y": 160.5,
         "radius": 16
       },
       {
@@ -6154,11 +6253,11 @@ export const lightLevels = [
     ],
     "decoyCount": 0,
     "tutorial": false,
-    "id": "light-v4-legacy-180-labels",
+    "id": "light-v7-spacious-052",
     "campaignNumber": 52,
     "number": 52,
     "campaignBand": "advanced",
-    "campaignRevision": "reflexos80-v6"
+    "campaignRevision": "reflexos80-spacious-v7"
   },
   {
     "objects": [
@@ -6186,20 +6285,20 @@ export const lightLevels = [
     ],
     "sources": [
       {
-        "x": 645.7556720183617,
-        "y": 220.81910694487502,
+        "x": 636.9882490825801,
+        "y": 202.84322601889167,
         "angle": 244,
         "color": "gold"
       },
       {
-        "x": 367.7600426431961,
-        "y": 319.19959692931934,
+        "x": 420.7368982147317,
+        "y": 347.3678906964728,
         "angle": -152,
         "color": "blue"
       },
       {
-        "x": 340.95389311788625,
-        "y": 425.30302149885034,
+        "x": 303.3661882864499,
+        "y": 411.62221576582357,
         "angle": -160,
         "color": "pink"
       }
@@ -6284,7 +6383,7 @@ export const lightLevels = [
         "id": "b1b",
         "pairId": "b1a",
         "label": "C",
-        "x": 483.7,
+        "x": 453.7,
         "y": 216.1,
         "radius": 16,
         "colors": [
@@ -6338,7 +6437,7 @@ export const lightLevels = [
     ],
     "width": 800,
     "height": 460,
-    "id": "light-v5-portal-875",
+    "id": "light-v7-spacious-053",
     "name": "A volta pelo acesso útil 875",
     "hint": "Reconstrua a chegada e procure o acesso que permite voltar.",
     "solution": [
@@ -6361,7 +6460,7 @@ export const lightLevels = [
     "number": 53,
     "campaignNumber": 53,
     "campaignBand": "advanced",
-    "campaignRevision": "reflexos80-v6"
+    "campaignRevision": "reflexos80-spacious-v7"
   },
   {
     "objects": [
@@ -6446,8 +6545,8 @@ export const lightLevels = [
         "id": "g2b",
         "pairId": "g2a",
         "label": "B",
-        "x": 766,
-        "y": 241.2,
+        "x": 755.7393957002299,
+        "y": 269.39077862357726,
         "radius": 16,
         "colors": [
           "gold"
@@ -6478,7 +6577,7 @@ export const lightLevels = [
     ],
     "width": 800,
     "height": 460,
-    "id": "light-v5-portal-017",
+    "id": "light-v7-spacious-054",
     "name": "O salto que não cruza 017",
     "hint": "Separe os trechos iluminados do salto entre portais.",
     "solution": [
@@ -6500,7 +6599,7 @@ export const lightLevels = [
     "number": 54,
     "campaignNumber": 54,
     "campaignBand": "advanced",
-    "campaignRevision": "reflexos80-v6"
+    "campaignRevision": "reflexos80-spacious-v7"
   },
   {
     "sources": [
@@ -6580,8 +6679,8 @@ export const lightLevels = [
         "id": "Ua",
         "pairId": "Ub",
         "label": "A",
-        "x": 400,
-        "y": 280,
+        "x": 405.65685424949237,
+        "y": 285.65685424949237,
         "radius": 16
       },
       {
@@ -6638,11 +6737,11 @@ export const lightLevels = [
     "decoyCount": 0,
     "tutorial": "",
     "rules": "Leve todas as fontes aos alvos da mesma cor, sem cruzar nem encostar nos trechos físicos das outras luzes.",
-    "id": "light-v5-legacy-196",
+    "id": "light-v7-spacious-055",
     "campaignNumber": 55,
     "number": 55,
     "campaignBand": "advanced",
-    "campaignRevision": "reflexos80-v6"
+    "campaignRevision": "reflexos80-spacious-v7"
   },
   {
     "sources": [
@@ -6689,8 +6788,8 @@ export const lightLevels = [
       {
         "id": "p0a",
         "pairId": "p0b",
-        "x": 292.1,
-        "y": 198.5,
+        "x": 290.27319303911474,
+        "y": 206.2886312229853,
         "radius": 16,
         "colors": [
           "gold"
@@ -6711,8 +6810,8 @@ export const lightLevels = [
       {
         "id": "p1a",
         "pairId": "p1b",
-        "x": 524,
-        "y": 202.2,
+        "x": 525.9353751647974,
+        "y": 194.43763418979202,
         "radius": 16,
         "colors": [
           "blue"
@@ -6722,8 +6821,8 @@ export const lightLevels = [
       {
         "id": "p1b",
         "pairId": "p1a",
-        "x": 631.2,
-        "y": 199.8,
+        "x": 641.4417551917593,
+        "y": 212.0925363774964,
         "radius": 16,
         "colors": [
           "blue"
@@ -6783,7 +6882,7 @@ export const lightLevels = [
         "angle": 31.1
       }
     ],
-    "id": "light-v5-deduction-four-05",
+    "id": "light-v7-spacious-056",
     "name": "A curva depende da escolha",
     "hint": "A chegada ao último espelho muda quando o caminho anterior muda.",
     "solution": [
@@ -6807,7 +6906,7 @@ export const lightLevels = [
     "number": 56,
     "campaignNumber": 56,
     "campaignBand": "advanced",
-    "campaignRevision": "reflexos80-v6"
+    "campaignRevision": "reflexos80-spacious-v7"
   },
   {
     "sources": [
@@ -6996,7 +7095,7 @@ export const lightLevels = [
       },
       {
         "x": 480,
-        "y": 130,
+        "y": 146,
         "color": "gold",
         "radius": 22
       },
@@ -7043,8 +7142,8 @@ export const lightLevels = [
       {
         "id": "P2",
         "type": "mirror",
-        "x": 620,
-        "y": 70,
+        "x": 651.1126983722081,
+        "y": 85.11269837220809,
         "angle": 69,
         "length": 124.8
       },
@@ -7071,8 +7170,8 @@ export const lightLevels = [
         "id": "H1",
         "pairId": "H2",
         "label": "H",
-        "x": 530,
-        "y": 70,
+        "x": 574.1005057458066,
+        "y": 56.10380940790108,
         "radius": 16,
         "colors": [
           "pink"
@@ -7109,8 +7208,8 @@ export const lightLevels = [
         "id": "R1",
         "pairId": "R2",
         "label": "R",
-        "x": 555,
-        "y": 350,
+        "x": 583.2842712474619,
+        "y": 378.2842712474619,
         "radius": 16
       },
       {
@@ -7145,7 +7244,7 @@ export const lightLevels = [
       45,
       -45
     ],
-    "id": "light-v3-133",
+    "id": "light-v7-spacious-058",
     "campaignNumber": 58,
     "name": "Dois pares antes da última virada",
     "difficulty": 133,
@@ -7169,7 +7268,7 @@ export const lightLevels = [
     "hint": "Observe a chegada azul antes de decidir o trajeto dourado.",
     "number": 58,
     "campaignBand": "advanced",
-    "campaignRevision": "reflexos80-v6"
+    "campaignRevision": "reflexos80-spacious-v7"
   },
   {
     "objects": [
@@ -7197,14 +7296,14 @@ export const lightLevels = [
     ],
     "sources": [
       {
-        "x": 417.7618133675719,
-        "y": 129.92831762226072,
+        "x": 409.8104746996602,
+        "y": 129.04728789054215,
         "color": "gold",
         "angle": 186.32273555998253
       },
       {
-        "x": 642.2634032923661,
-        "y": 233.453353315075,
+        "x": 650.1110445351596,
+        "y": 231.89947850531522,
         "color": "blue",
         "angle": 246.68686644306962
       },
@@ -7229,8 +7328,8 @@ export const lightLevels = [
         "radius": 22
       },
       {
-        "x": 127.6,
-        "y": 169.7,
+        "x": 120.31954956372111,
+        "y": 173.01587717578417,
         "color": "pink",
         "radius": 22
       }
@@ -7259,8 +7358,8 @@ export const lightLevels = [
         ]
       },
       {
-        "x": 669.6,
-        "y": 59.9,
+        "x": 663.2679036488144,
+        "y": 45.20630897972533,
         "id": "blue1a",
         "pairId": "blue1b",
         "label": "B",
@@ -7270,8 +7369,8 @@ export const lightLevels = [
         ]
       },
       {
-        "x": 99.6,
-        "y": 309.3,
+        "x": 101.82676961536104,
+        "y": 293.4557109001349,
         "id": "blue1b",
         "pairId": "blue1a",
         "label": "B",
@@ -7314,8 +7413,8 @@ export const lightLevels = [
         ]
       },
       {
-        "x": 69,
-        "y": 215.8,
+        "x": 68.96128673207994,
+        "y": 223.79990632963205,
         "id": "blue2b",
         "pairId": "blue2a",
         "label": "D",
@@ -7354,7 +7453,7 @@ export const lightLevels = [
       21.1,
       -46.6
     ],
-    "id": "light-v5-master-reserve-011",
+    "id": "light-v7-spacious-059",
     "name": "Condições entre 2, 3, 3 rotas",
     "hint": "Considere uma rota de cada vez e siga o que ela exige das outras duas cores.",
     "sourceAngle": 186.32273555998253,
@@ -7372,7 +7471,7 @@ export const lightLevels = [
     "number": 59,
     "campaignNumber": 59,
     "campaignBand": "advanced",
-    "campaignRevision": "reflexos80-v6"
+    "campaignRevision": "reflexos80-spacious-v7"
   },
   {
     "objects": [
@@ -7400,14 +7499,14 @@ export const lightLevels = [
     ],
     "sources": [
       {
-        "x": 417.7618133675719,
-        "y": 129.92831762226072,
+        "x": 409.8104746996602,
+        "y": 129.04728789054215,
         "color": "gold",
         "angle": 186.32273555998253
       },
       {
-        "x": 642.2634032923661,
-        "y": 233.453353315075,
+        "x": 618.5180419754196,
+        "y": 178.352011989045,
         "color": "blue",
         "angle": 246.68686644306962
       },
@@ -7426,14 +7525,14 @@ export const lightLevels = [
         "radius": 22
       },
       {
-        "x": 299.2,
-        "y": 213.9,
+        "x": 291.24866133208826,
+        "y": 213.01897026828144,
         "color": "blue",
         "radius": 22
       },
       {
-        "x": 127.6,
-        "y": 169.7,
+        "x": 120.21898780742048,
+        "y": 172.78555651592907,
         "color": "pink",
         "radius": 22
       }
@@ -7462,8 +7561,8 @@ export const lightLevels = [
         ]
       },
       {
-        "x": 669.6,
-        "y": 59.9,
+        "x": 663.2679036488142,
+        "y": 45.206308979725335,
         "id": "blue1a",
         "pairId": "blue1b",
         "label": "B",
@@ -7473,8 +7572,8 @@ export const lightLevels = [
         ]
       },
       {
-        "x": 99.6,
-        "y": 309.3,
+        "x": 101.82676961536104,
+        "y": 293.4557109001349,
         "id": "blue1b",
         "pairId": "blue1a",
         "label": "B",
@@ -7517,8 +7616,8 @@ export const lightLevels = [
         ]
       },
       {
-        "x": 69,
-        "y": 215.8,
+        "x": 68.96128673207994,
+        "y": 223.79990632963205,
         "id": "blue2b",
         "pairId": "blue2a",
         "label": "D",
@@ -7557,7 +7656,7 @@ export const lightLevels = [
       22,
       -46.6
     ],
-    "id": "light-v5-master-contrast-002",
+    "id": "light-v7-spacious-060",
     "name": "O alvo mudou o acordo",
     "hint": "Compare a nova aproximação ao alvo com as rotas que antes eram compatíveis.",
     "sourceAngle": 186.32273555998253,
@@ -7575,7 +7674,7 @@ export const lightLevels = [
     "number": 60,
     "campaignNumber": 60,
     "campaignBand": "advanced",
-    "campaignRevision": "reflexos80-v6"
+    "campaignRevision": "reflexos80-spacious-v7"
   },
   {
     "objects": [
@@ -7603,14 +7702,14 @@ export const lightLevels = [
     ],
     "sources": [
       {
-        "x": 183.97723358332806,
-        "y": 243.65602632782355,
+        "x": 187.40244779221723,
+        "y": 236.42637159033964,
         "color": "gold",
         "angle": -64.64967572476624
       },
       {
-        "x": 456.5639980268078,
-        "y": 137.4018258393953,
+        "x": 464.05983341529657,
+        "y": 140.19690219410896,
         "color": "blue",
         "angle": 5.3930659506210645
       },
@@ -7654,8 +7753,8 @@ export const lightLevels = [
         ]
       },
       {
-        "x": 678.2,
-        "y": 288.9,
+        "x": 685.0504284177783,
+        "y": 274.44069052503215,
         "id": "gold1b",
         "pairId": "gold1a",
         "label": "A",
@@ -7716,7 +7815,7 @@ export const lightLevels = [
       39.7,
       -74.9
     ],
-    "id": "light-v5-master-003",
+    "id": "light-v7-spacious-061",
     "name": "As duas metades da escolha",
     "hint": "Considere uma rota de cada vez e siga o que ela exige das outras duas cores.",
     "sourceAngle": -64.64967572476624,
@@ -7734,7 +7833,7 @@ export const lightLevels = [
     "number": 61,
     "campaignNumber": 61,
     "campaignBand": "master",
-    "campaignRevision": "reflexos80-v6"
+    "campaignRevision": "reflexos80-spacious-v7"
   },
   {
     "objects": [
@@ -7761,8 +7860,8 @@ export const lightLevels = [
       },
       {
         "type": "mirror",
-        "x": 726.5,
-        "y": 259,
+        "x": 729.2493444502717,
+        "y": 251.48727046315653,
         "length": 124.8,
         "angle": 82.6
       },
@@ -7843,8 +7942,8 @@ export const lightLevels = [
         "radius": 22
       },
       {
-        "x": 59.6,
-        "y": 365.6,
+        "x": 56.39720773954483,
+        "y": 358.2690981635021,
         "color": "blue",
         "radius": 22
       },
@@ -7879,8 +7978,8 @@ export const lightLevels = [
         ]
       },
       {
-        "x": 145.6,
-        "y": 30.3,
+        "x": 153.59512661615275,
+        "y": 30.02080402637999,
         "id": "gold2a",
         "pairId": "gold2b",
         "label": "B",
@@ -7953,7 +8052,7 @@ export const lightLevels = [
       -57.8,
       -0.4
     ],
-    "id": "light-v5-deduction-master-window-16-1-reauthored",
+    "id": "light-v7-spacious-062",
     "name": "As janelas da última curva",
     "hint": "As duas entradas podem alcançar o mesmo espelho, mas não oferecem as mesmas chegadas.",
     "sourceAngle": -22.078133994588455,
@@ -7971,7 +8070,7 @@ export const lightLevels = [
     "number": 62,
     "campaignNumber": 62,
     "campaignBand": "master",
-    "campaignRevision": "reflexos80-v6"
+    "campaignRevision": "reflexos80-spacious-v7"
   },
   {
     "sources": [
@@ -7982,8 +8081,8 @@ export const lightLevels = [
         "color": "gold"
       },
       {
-        "x": 590,
-        "y": 290,
+        "x": 595.1208775958796,
+        "y": 296.1462681887482,
         "angle": 270,
         "color": "blue"
       },
@@ -8103,9 +8202,18 @@ export const lightLevels = [
         "y": 280,
         "length": 124.8,
         "angle": 65.2
+      },
+      {
+        "type": "wall",
+        "x": 439.65014500578854,
+        "y": 141.77357572726802,
+        "length": 40,
+        "width": 12,
+        "angle": -59.99999999999997,
+        "purpose": "Parede absorvente em (439.7, 141.8) fecha um percurso adicional de pink pelo(s) espelho(s) E3 e portal(is) p2b. Sem esta parede, o trajeto atinge o alvo; com ela, termina na parede. As 51 chegadas locais válidas das 17 configurações narrativas originais continuam válidas; a parede organiza o espaço sem substituir a dedução de compatibilidade por uma simples eliminação do domínio principal."
       }
     ],
-    "id": "light-v5-deduction-open-025",
+    "id": "light-v7-spacious-063",
     "name": "Consequência 24",
     "hint": "Uma escolha pode decidir os caminhos das outras cores.",
     "solution": [
@@ -8121,55 +8229,57 @@ export const lightLevels = [
       "color": "gold"
     },
     "requiredBounces": 3,
-    "wallPurpose": [],
+    "wallPurpose": [
+      "Parede absorvente em (439.7, 141.8) fecha um percurso adicional de pink pelo(s) espelho(s) E3 e portal(is) p2b. Sem esta parede, o trajeto atinge o alvo; com ela, termina na parede. As 51 chegadas locais válidas das 17 configurações narrativas originais continuam válidas; a parede organiza o espaço sem substituir a dedução de compatibilidade por uma simples eliminação do domínio principal."
+    ],
     "decoyCount": 0,
     "tutorial": "",
     "rules": "Leve cada cor ao alvo sem cruzar os feixes.",
     "number": 63,
     "campaignNumber": 63,
     "campaignBand": "master",
-    "campaignRevision": "reflexos80-v6"
+    "campaignRevision": "reflexos80-spacious-v7"
   },
   {
-    "id": "light-v6-recomposed-261",
+    "id": "light-v7-spacious-064",
     "campaignNumber": 64,
     "name": "Dois impactos, uma orientação",
     "sources": [
       {
-        "x": 240.79999999999998,
-        "y": 198.8,
+        "x": 193.03999999999996,
+        "y": 193.5,
         "angle": 0,
         "color": "gold"
       },
       {
-        "x": 559.2,
-        "y": 261.2,
+        "x": 606.96,
+        "y": 266.5,
         "angle": 180,
         "color": "blue"
       },
       {
-        "x": 605.2120245997385,
-        "y": 237.1704849184312,
+        "x": 666.77563197966,
+        "y": 239.3216303939606,
         "angle": 141,
         "color": "pink"
       }
     ],
     "targets": [
       {
-        "x": 368.8,
-        "y": 326,
+        "x": 363.5,
+        "y": 354.8,
         "radius": 22,
         "color": "gold"
       },
       {
-        "x": 431.2,
-        "y": 102,
+        "x": 436.5,
+        "y": 63.599999999999994,
         "radius": 22,
         "color": "blue"
       },
       {
-        "x": 304,
-        "y": 78,
+        "x": 275.2,
+        "y": 32.400000000000006,
         "radius": 22,
         "color": "pink"
       }
@@ -8186,8 +8296,8 @@ export const lightLevels = [
       {
         "type": "mirror",
         "id": "pink",
-        "x": 456,
-        "y": 358,
+        "x": 472.8,
+        "y": 396.4,
         "length": 124.8,
         "angle": -39.5
       }
@@ -8197,8 +8307,8 @@ export const lightLevels = [
         "id": "Ga",
         "pairId": "Gb",
         "label": "G",
-        "x": 520,
-        "y": 198.8,
+        "x": 556,
+        "y": 193.5,
         "radius": 16,
         "colors": [
           "gold"
@@ -8208,8 +8318,8 @@ export const lightLevels = [
         "id": "Gb",
         "pairId": "Ga",
         "label": "G",
-        "x": 256,
-        "y": 326,
+        "x": 212.79999999999998,
+        "y": 354.8,
         "radius": 16,
         "colors": [
           "gold"
@@ -8219,8 +8329,8 @@ export const lightLevels = [
         "id": "Ba",
         "pairId": "Bb",
         "label": "B",
-        "x": 280,
-        "y": 261.2,
+        "x": 244,
+        "y": 266.5,
         "radius": 16,
         "colors": [
           "blue"
@@ -8230,8 +8340,8 @@ export const lightLevels = [
         "id": "Bb",
         "pairId": "Ba",
         "label": "B",
-        "x": 544,
-        "y": 102,
+        "x": 587.2,
+        "y": 63.599999999999994,
         "radius": 16,
         "colors": [
           "blue"
@@ -8241,8 +8351,8 @@ export const lightLevels = [
         "id": "Ka",
         "pairId": "Kb",
         "label": "K",
-        "x": 387.2,
-        "y": 242.8,
+        "x": 379.86,
+        "y": 250.14000000000001,
         "radius": 16,
         "colors": [
           "pink"
@@ -8252,8 +8362,8 @@ export const lightLevels = [
         "id": "Kb",
         "pairId": "Ka",
         "label": "K",
-        "x": 352,
-        "y": 158,
+        "x": 337.6,
+        "y": 136.39999999999998,
         "radius": 16,
         "colors": [
           "pink"
@@ -8275,8 +8385,8 @@ export const lightLevels = [
     },
     "sourceAngle": 0,
     "target": {
-      "x": 361,
-      "y": 350,
+      "x": 363.5,
+      "y": 354.8,
       "radius": 22,
       "color": "gold"
     },
@@ -8287,7 +8397,7 @@ export const lightLevels = [
     "hint": "O espelho central recebe duas luzes em pontos diferentes.",
     "number": 64,
     "campaignBand": "master",
-    "campaignRevision": "reflexos80-v6"
+    "campaignRevision": "reflexos80-spacious-v7"
   },
   {
     "objects": [
@@ -8327,8 +8437,8 @@ export const lightLevels = [
         "color": "blue"
       },
       {
-        "x": 349.6346075389736,
-        "y": 363.5365289383812,
+        "x": 309.73204552858067,
+        "y": 366.3267878881462,
         "angle": 176,
         "color": "pink"
       }
@@ -8413,8 +8523,8 @@ export const lightLevels = [
         "id": "b1b",
         "pairId": "b1a",
         "label": "C",
-        "x": 176.6,
-        "y": 174.1,
+        "x": 182.25685424949236,
+        "y": 179.75685424949236,
         "radius": 16,
         "colors": [
           "blue"
@@ -8489,7 +8599,7 @@ export const lightLevels = [
     ],
     "width": 800,
     "height": 460,
-    "id": "light-v5-portal-931",
+    "id": "light-v7-spacious-065",
     "name": "A saída decide 931",
     "hint": "Compare o que acontece depois de cada saída.",
     "solution": [
@@ -8512,7 +8622,7 @@ export const lightLevels = [
     "number": 65,
     "campaignNumber": 65,
     "campaignBand": "master",
-    "campaignRevision": "reflexos80-v6"
+    "campaignRevision": "reflexos80-spacious-v7"
   },
   {
     "number": 66,
@@ -8541,7 +8651,7 @@ export const lightLevels = [
         "radius": 22
       },
       {
-        "x": 440,
+        "x": 448,
         "y": 350,
         "color": "blue",
         "radius": 22
@@ -8601,15 +8711,15 @@ export const lightLevels = [
       {
         "type": "mirror",
         "id": "c1",
-        "x": 330,
-        "y": 380,
+        "x": 313.02943725152284,
+        "y": 396.97056274847716,
         "length": 124.8,
         "angle": -12
       },
       {
         "type": "mirror",
         "id": "c2",
-        "x": 650,
+        "x": 658,
         "y": 350,
         "length": 124.8,
         "angle": 23
@@ -8645,10 +8755,10 @@ export const lightLevels = [
     "hint": "Os filtros não decidem: os dois pares são brancos.",
     "tutorial": "",
     "rules": "Cada cor no seu alvo, sem cruzar outras trajetórias.",
-    "id": "light-v3-76",
+    "id": "light-v7-spacious-066",
     "campaignNumber": 66,
     "campaignBand": "master",
-    "campaignRevision": "reflexos80-v6"
+    "campaignRevision": "reflexos80-spacious-v7"
   },
   {
     "sources": [
@@ -8665,8 +8775,8 @@ export const lightLevels = [
         "color": "blue"
       },
       {
-        "x": 230,
-        "y": 300,
+        "x": 253.63480541163048,
+        "y": 304.17084801381714,
         "angle": 10.007979801441339,
         "color": "pink"
       }
@@ -8674,7 +8784,7 @@ export const lightLevels = [
     "targets": [
       {
         "x": 560,
-        "y": 340,
+        "y": 332,
         "radius": 22,
         "color": "gold"
       },
@@ -8708,8 +8818,8 @@ export const lightLevels = [
       },
       {
         "type": "mirror",
-        "x": 400,
-        "y": 330,
+        "x": 413.5665782832905,
+        "y": 325.5415887859316,
         "length": 124.8,
         "angle": -15
       },
@@ -8815,7 +8925,7 @@ export const lightLevels = [
     "sourceAngle": 8.615648184164113,
     "target": {
       "x": 560,
-      "y": 340,
+      "y": 332,
       "radius": 22,
       "color": "gold"
     },
@@ -8826,17 +8936,17 @@ export const lightLevels = [
     "decoyCount": 0,
     "tutorial": "",
     "rules": "Leve todas as fontes aos alvos da mesma cor, sem cruzar nem encostar nos trechos físicos das outras luzes.",
-    "id": "light-v3-199",
+    "id": "light-v7-spacious-067",
     "campaignNumber": 67,
     "number": 67,
     "campaignBand": "master",
-    "campaignRevision": "reflexos80-v6"
+    "campaignRevision": "reflexos80-spacious-v7"
   },
   {
     "sources": [
       {
-        "x": 378.2482523734826,
-        "y": 135.05115817281182,
+        "x": 318.8321682489884,
+        "y": 126.70077211520788,
         "angle": -172,
         "color": "gold"
       },
@@ -8861,8 +8971,8 @@ export const lightLevels = [
         "color": "gold"
       },
       {
-        "x": 650,
-        "y": 187.5,
+        "x": 642.0778554500674,
+        "y": 186.38661519231948,
         "radius": 22,
         "color": "blue"
       },
@@ -8932,8 +9042,8 @@ export const lightLevels = [
       {
         "id": "pinkb",
         "pairId": "pinka",
-        "x": 413.1,
-        "y": 191.8,
+        "x": 441.3842712474619,
+        "y": 163.5157287525381,
         "radius": 16,
         "colors": [
           "pink"
@@ -8978,7 +9088,7 @@ export const lightLevels = [
         "angle": 60.9
       }
     ],
-    "id": "light-v5-deduction-symmetry-11-filter",
+    "id": "light-v7-spacious-068",
     "name": "A entrada diferente",
     "hint": "Compare a marca da entrada com a fonte que se aproxima.",
     "solution": [
@@ -9003,7 +9113,7 @@ export const lightLevels = [
     "number": 68,
     "campaignNumber": 68,
     "campaignBand": "master",
-    "campaignRevision": "reflexos80-v6"
+    "campaignRevision": "reflexos80-spacious-v7"
   },
   {
     "objects": [
@@ -9031,8 +9141,8 @@ export const lightLevels = [
     ],
     "sources": [
       {
-        "x": 327.2072144234639,
-        "y": 165.48788963498072,
+        "x": 313.6384448849611,
+        "y": 157.00918140724943,
         "angle": -148,
         "color": "gold"
       },
@@ -9074,8 +9184,8 @@ export const lightLevels = [
         "id": "g1a",
         "pairId": "g1b",
         "label": "A",
-        "x": 378,
-        "y": 104.7,
+        "x": 409.897712369182,
+        "y": 103.86207233628221,
         "radius": 16,
         "colors": [
           "gold"
@@ -9096,8 +9206,8 @@ export const lightLevels = [
         "id": "g2a",
         "pairId": "g2b",
         "label": "B",
-        "x": 47.9,
-        "y": 329.4,
+        "x": 31.901559615851134,
+        "y": 329.6233948854263,
         "radius": 16,
         "colors": [
           "gold"
@@ -9129,8 +9239,8 @@ export const lightLevels = [
         "id": "b1b",
         "pairId": "b1a",
         "label": "C",
-        "x": 176.6,
-        "y": 174.1,
+        "x": 165.28629150101523,
+        "y": 185.41370849898476,
         "radius": 16,
         "colors": [
           "blue"
@@ -9205,7 +9315,7 @@ export const lightLevels = [
     ],
     "width": 800,
     "height": 460,
-    "id": "light-v5-open-hard-chain-2",
+    "id": "light-v7-spacious-069",
     "name": "Três escolhas, uma consequência",
     "hint": "Uma chegada válida sozinha pode precisar de outra rota no conjunto.",
     "solution": [
@@ -9228,7 +9338,7 @@ export const lightLevels = [
     "number": 69,
     "campaignNumber": 69,
     "campaignBand": "master",
-    "campaignRevision": "reflexos80-v6"
+    "campaignRevision": "reflexos80-spacious-v7"
   },
   {
     "sources": [
@@ -9472,7 +9582,7 @@ export const lightLevels = [
         ]
       },
       {
-        "x": 678.2,
+        "x": 708.2,
         "y": 288.9,
         "id": "gold1b",
         "pairId": "gold1a",
@@ -9556,7 +9666,7 @@ export const lightLevels = [
       39.7,
       -74.9
     ],
-    "id": "light-v5-master-filter-001",
+    "id": "light-v7-spacious-071",
     "name": "Uma entrada, três consequências",
     "hint": "Uma entrada mudou de cor. Siga as consequências até encontrar a rota que respeita as duas outras luzes.",
     "sourceAngle": -64.64967572476624,
@@ -9574,13 +9684,13 @@ export const lightLevels = [
     "number": 71,
     "campaignNumber": 71,
     "campaignBand": "master",
-    "campaignRevision": "reflexos80-v6"
+    "campaignRevision": "reflexos80-spacious-v7"
   },
   {
     "objects": [
       {
-        "x": 199.1,
-        "y": 105.7,
+        "x": 204.7181409815723,
+        "y": 108.04305208013967,
         "type": "mirror",
         "length": 124.8,
         "angle": -76
@@ -9601,8 +9711,8 @@ export const lightLevels = [
       },
       {
         "type": "mirror",
-        "x": 127.6,
-        "y": 169.7,
+        "x": 116.78649916007755,
+        "y": 158.9579196135817,
         "length": 124.8,
         "angle": -19.4
       },
@@ -9665,14 +9775,14 @@ export const lightLevels = [
     ],
     "sources": [
       {
-        "x": 417.7618133675719,
-        "y": 129.92831762226072,
+        "x": 409.8104746996602,
+        "y": 129.04728789054215,
         "color": "gold",
         "angle": 186.32273555998253
       },
       {
-        "x": 642.2634032923661,
-        "y": 233.453353315075,
+        "x": 646.2391949805865,
+        "y": 240.39547694202642,
         "color": "blue",
         "angle": 246.68686644306962
       },
@@ -9727,8 +9837,8 @@ export const lightLevels = [
         ]
       },
       {
-        "x": 669.6,
-        "y": 59.9,
+        "x": 663.2679036488144,
+        "y": 45.20630897972533,
         "id": "blue1a",
         "pairId": "blue1b",
         "label": "B",
@@ -9738,8 +9848,8 @@ export const lightLevels = [
         ]
       },
       {
-        "x": 99.6,
-        "y": 309.3,
+        "x": 101.82676961536104,
+        "y": 293.4557109001349,
         "id": "blue1b",
         "pairId": "blue1a",
         "label": "B",
@@ -9782,8 +9892,8 @@ export const lightLevels = [
         ]
       },
       {
-        "x": 69,
-        "y": 215.8,
+        "x": 68.96128673207994,
+        "y": 223.79990632963205,
         "id": "blue2b",
         "pairId": "blue2a",
         "label": "D",
@@ -9823,7 +9933,7 @@ export const lightLevels = [
       -46.6,
       24.5
     ],
-    "id": "light-v5-deduction-master-window-1-1-reauthored",
+    "id": "light-v7-spacious-072",
     "name": "As janelas da última curva",
     "hint": "As duas entradas podem alcançar o mesmo espelho, mas não oferecem as mesmas chegadas.",
     "sourceAngle": 186.32273555998253,
@@ -9841,7 +9951,7 @@ export const lightLevels = [
     "number": 72,
     "campaignNumber": 72,
     "campaignBand": "master",
-    "campaignRevision": "reflexos80-v6"
+    "campaignRevision": "reflexos80-spacious-v7"
   },
   {
     "objects": [
@@ -9875,13 +9985,13 @@ export const lightLevels = [
         "color": "gold"
       },
       {
-        "x": 350,
+        "x": 334,
         "y": 230.00000000000003,
         "angle": -180,
         "color": "blue"
       },
       {
-        "x": 350,
+        "x": 374,
         "y": 374,
         "angle": -180,
         "color": "pink"
@@ -9977,7 +10087,7 @@ export const lightLevels = [
     ],
     "width": 800,
     "height": 460,
-    "id": "light-v5-portal-034",
+    "id": "light-v7-spacious-073",
     "name": "Uma hipótese, três consequências 034",
     "hint": "Teste uma rota e acompanhe o que ela exige das outras cores.",
     "solution": [
@@ -10000,12 +10110,12 @@ export const lightLevels = [
     "number": 73,
     "campaignNumber": 73,
     "campaignBand": "master",
-    "campaignRevision": "reflexos80-v6"
+    "campaignRevision": "reflexos80-spacious-v7"
   },
   {
     "objects": [
       {
-        "x": 207.5,
+        "x": 215.5,
         "y": 152.5,
         "type": "mirror",
         "length": 124.8,
@@ -10041,15 +10151,15 @@ export const lightLevels = [
       },
       {
         "x": 50,
-        "y": 230,
+        "y": 214,
         "color": "pink",
         "angle": -230
       }
     ],
     "targets": [
       {
-        "x": 516.8,
-        "y": 190.3,
+        "x": 533.7705627484771,
+        "y": 207.27056274847715,
         "color": "gold",
         "radius": 22
       },
@@ -10079,8 +10189,8 @@ export const lightLevels = [
         ]
       },
       {
-        "x": 660.4,
-        "y": 203.2,
+        "x": 661.5294329168318,
+        "y": 219.160087132794,
         "id": "gold1b",
         "pairId": "gold1a",
         "label": "A",
@@ -10101,8 +10211,8 @@ export const lightLevels = [
         ]
       },
       {
-        "x": 469.3,
-        "y": 76,
+        "x": 475.41687795401174,
+        "y": 90.78457994316122,
         "id": "gold2b",
         "pairId": "gold2a",
         "label": "B",
@@ -10123,8 +10233,8 @@ export const lightLevels = [
         ]
       },
       {
-        "x": 94.5,
-        "y": 239.6,
+        "x": 97.55843897700588,
+        "y": 246.9922899715806,
         "id": "blue1b",
         "pairId": "blue1a",
         "label": "C",
@@ -10178,8 +10288,8 @@ export const lightLevels = [
         ]
       },
       {
-        "x": 68.6034492462816,
-        "y": 70.67482527007068,
+        "x": 82.32912008940394,
+        "y": 62.45254092165138,
         "id": "angle-access-0a",
         "pairId": "angle-access-0b",
         "label": "J",
@@ -10200,8 +10310,8 @@ export const lightLevels = [
         ]
       },
       {
-        "x": 357.4129093468583,
-        "y": 415.46247236628284,
+        "x": 342.2708326701857,
+        "y": 410.29357365207227,
         "id": "angle-access-1a",
         "pairId": "angle-access-1b",
         "label": "K",
@@ -10211,7 +10321,7 @@ export const lightLevels = [
         ]
       },
       {
-        "x": 657.2886621371152,
+        "x": 673.2886621371152,
         "y": 147.18283058888173,
         "id": "angle-access-1b",
         "pairId": "angle-access-1a",
@@ -10251,13 +10361,13 @@ export const lightLevels = [
       -37.6,
       21.6
     ],
-    "id": "light-v5-master-contrast-001",
+    "id": "light-v7-spacious-074",
     "name": "O alvo mudou o acordo",
     "hint": "Compare a nova aproximação ao alvo com as rotas que antes eram compatíveis.",
     "sourceAngle": -30.923474991609613,
     "target": {
-      "x": 516.8,
-      "y": 190.3,
+      "x": 533.7705627484771,
+      "y": 207.27056274847715,
       "color": "gold",
       "radius": 22
     },
@@ -10269,7 +10379,7 @@ export const lightLevels = [
     "number": 74,
     "campaignNumber": 74,
     "campaignBand": "master",
-    "campaignRevision": "reflexos80-v6"
+    "campaignRevision": "reflexos80-spacious-v7"
   },
   {
     "sources": [
@@ -10353,7 +10463,7 @@ export const lightLevels = [
         "id": "U1a",
         "pairId": "U1b",
         "label": "A",
-        "x": 400,
+        "x": 416,
         "y": 360,
         "radius": 16
       },
@@ -10361,7 +10471,7 @@ export const lightLevels = [
         "id": "U1b",
         "pairId": "U1a",
         "label": "A",
-        "x": 350,
+        "x": 358,
         "y": 415,
         "radius": 16
       },
@@ -10407,8 +10517,8 @@ export const lightLevels = [
         "id": "Ra",
         "pairId": "Rb",
         "label": "D",
-        "x": 400,
-        "y": 150,
+        "x": 383.02943725152284,
+        "y": 133.02943725152286,
         "radius": 16
       },
       {
@@ -10445,14 +10555,14 @@ export const lightLevels = [
     "decoyCount": 1,
     "tutorial": "",
     "rules": "Leve todas as fontes aos alvos da mesma cor, sem cruzar nem encostar nos trechos físicos das outras luzes.",
-    "id": "light-v3-194",
+    "id": "light-v7-spacious-075",
     "campaignNumber": 75,
     "number": 75,
     "campaignBand": "master",
-    "campaignRevision": "reflexos80-v6"
+    "campaignRevision": "reflexos80-spacious-v7"
   },
   {
-    "id": "light-v5-open-chain-019",
+    "id": "light-v7-spacious-076",
     "name": "A volta da hipótese",
     "hint": "Se uma cor tomar o desvio, acompanhe o que isso força nas outras duas.",
     "width": 800,
@@ -10523,8 +10633,8 @@ export const lightLevels = [
     ],
     "targets": [
       {
-        "x": 544.5,
-        "y": 388.3,
+        "x": 538.8431457505076,
+        "y": 382.64314575050764,
         "radius": 22,
         "color": "gold"
       },
@@ -10552,8 +10662,8 @@ export const lightLevels = [
     ],
     "sourceAngle": 56.620700242879714,
     "target": {
-      "x": 544.5,
-      "y": 388.3,
+      "x": 538.8431457505076,
+      "y": 382.64314575050764,
       "radius": 22,
       "color": "gold"
     },
@@ -10565,7 +10675,7 @@ export const lightLevels = [
     "number": 76,
     "campaignNumber": 76,
     "campaignBand": "sage",
-    "campaignRevision": "reflexos80-v6"
+    "campaignRevision": "reflexos80-spacious-v7"
   },
   {
     "objects": [
@@ -10749,45 +10859,45 @@ export const lightLevels = [
     "campaignRevision": "reflexos80-v6"
   },
   {
-    "id": "light-v6-recomposed-398",
+    "id": "light-v7-spacious-078",
     "campaignNumber": 78,
     "name": "Uma orientação, dois impactos",
     "sources": [
       {
-        "x": 240.79999999999998,
-        "y": 198.8,
+        "x": 193.03999999999996,
+        "y": 193.5,
         "angle": 0,
         "color": "gold"
       },
       {
-        "x": 559.2,
-        "y": 261.2,
+        "x": 606.96,
+        "y": 266.5,
         "angle": 180,
         "color": "blue"
       },
       {
-        "x": 605.2120245997385,
-        "y": 237.1704849184312,
+        "x": 666.77563197966,
+        "y": 239.3216303939606,
         "angle": 141,
         "color": "pink"
       }
     ],
     "targets": [
       {
-        "x": 368.8,
-        "y": 326,
+        "x": 363.5,
+        "y": 354.8,
         "radius": 22,
         "color": "gold"
       },
       {
-        "x": 431.2,
-        "y": 102,
+        "x": 436.5,
+        "y": 63.599999999999994,
         "radius": 22,
         "color": "blue"
       },
       {
-        "x": 304,
-        "y": 78,
+        "x": 275.2,
+        "y": 32.400000000000006,
         "radius": 22,
         "color": "pink"
       }
@@ -10804,8 +10914,8 @@ export const lightLevels = [
       {
         "type": "mirror",
         "id": "pink",
-        "x": 456,
-        "y": 358,
+        "x": 472.8,
+        "y": 396.4,
         "length": 124.8,
         "angle": -39.5
       }
@@ -10815,8 +10925,8 @@ export const lightLevels = [
         "id": "Ga",
         "pairId": "Gb",
         "label": "G",
-        "x": 520,
-        "y": 198.8,
+        "x": 556,
+        "y": 193.5,
         "radius": 16,
         "colors": [
           "gold"
@@ -10826,8 +10936,8 @@ export const lightLevels = [
         "id": "Gb",
         "pairId": "Ga",
         "label": "G",
-        "x": 256,
-        "y": 326,
+        "x": 212.79999999999998,
+        "y": 354.8,
         "radius": 16,
         "colors": [
           "gold"
@@ -10837,8 +10947,8 @@ export const lightLevels = [
         "id": "Ba",
         "pairId": "Bb",
         "label": "B",
-        "x": 280,
-        "y": 261.2,
+        "x": 244,
+        "y": 266.5,
         "radius": 16,
         "colors": [
           "blue"
@@ -10848,8 +10958,8 @@ export const lightLevels = [
         "id": "Bb",
         "pairId": "Ba",
         "label": "B",
-        "x": 544,
-        "y": 102,
+        "x": 587.2,
+        "y": 63.599999999999994,
         "radius": 16,
         "colors": [
           "blue"
@@ -10859,8 +10969,8 @@ export const lightLevels = [
         "id": "Ka",
         "pairId": "Kb",
         "label": "K",
-        "x": 387.2,
-        "y": 242.8,
+        "x": 379.86,
+        "y": 250.14000000000001,
         "radius": 16,
         "colors": [
           "pink"
@@ -10870,8 +10980,8 @@ export const lightLevels = [
         "id": "Kb",
         "pairId": "Ka",
         "label": "K",
-        "x": 352,
-        "y": 158,
+        "x": 337.6,
+        "y": 136.39999999999998,
         "radius": 16,
         "colors": [
           "pink"
@@ -10881,8 +10991,8 @@ export const lightLevels = [
         "id": "La",
         "pairId": "Lb",
         "label": "L",
-        "x": 322.5888128943875,
-        "y": 303.80170523834494,
+        "x": 299.36545676270373,
+        "y": 325.94221680984845,
         "radius": 16,
         "colors": [
           "pink"
@@ -10892,8 +11002,8 @@ export const lightLevels = [
         "id": "Lb",
         "pairId": "La",
         "label": "L",
-        "x": 560,
-        "y": 182,
+        "x": 608,
+        "y": 167.6,
         "radius": 16,
         "colors": [
           "pink"
@@ -10915,8 +11025,8 @@ export const lightLevels = [
     },
     "sourceAngle": 0,
     "target": {
-      "x": 361,
-      "y": 350,
+      "x": 363.5,
+      "y": 354.8,
       "radius": 22,
       "color": "gold"
     },
@@ -10927,7 +11037,7 @@ export const lightLevels = [
     "hint": "Compare o que muda nas duas cores ao girar o espelho central.",
     "number": 78,
     "campaignBand": "sage",
-    "campaignRevision": "reflexos80-v6"
+    "campaignRevision": "reflexos80-spacious-v7"
   },
   {
     "sources": [
@@ -10939,7 +11049,7 @@ export const lightLevels = [
       },
       {
         "x": 115,
-        "y": 225,
+        "y": 201,
         "angle": 86.42366562500266,
         "color": "gold"
       },
@@ -10965,7 +11075,7 @@ export const lightLevels = [
       },
       {
         "x": 370.00000000000006,
-        "y": 115,
+        "y": 139,
         "color": "pink",
         "radius": 22
       }
@@ -11014,8 +11124,8 @@ export const lightLevels = [
       {
         "id": "P3",
         "type": "mirror",
-        "x": 370,
-        "y": 70,
+        "x": 353.02943725152284,
+        "y": 86.97056274847714,
         "angle": -69,
         "length": 124.8
       },
@@ -11059,7 +11169,7 @@ export const lightLevels = [
         "id": "F1",
         "pairId": "F2",
         "label": "F",
-        "x": 700,
+        "x": 708,
         "y": 410,
         "radius": 16,
         "colors": [
@@ -11090,7 +11200,7 @@ export const lightLevels = [
         "pairId": "R1",
         "label": "R",
         "x": 55,
-        "y": 300,
+        "y": 292,
         "radius": 16
       }
     ],
@@ -11117,7 +11227,7 @@ export const lightLevels = [
       45,
       -45
     ],
-    "id": "light-v6-recomposed-380",
+    "id": "light-v7-spacious-079",
     "campaignNumber": 79,
     "name": "Retornar pelo lado certo",
     "difficulty": 132,
@@ -11142,7 +11252,7 @@ export const lightLevels = [
     "hint": "Observe a chegada azul antes de decidir o trajeto dourado.",
     "number": 79,
     "campaignBand": "sage",
-    "campaignRevision": "reflexos80-v6"
+    "campaignRevision": "reflexos80-spacious-v7"
   },
   {
     "objects": [
@@ -11170,8 +11280,8 @@ export const lightLevels = [
     ],
     "sources": [
       {
-        "x": 417.7618133675719,
-        "y": 129.92831762226072,
+        "x": 409.8104746996602,
+        "y": 129.04728789054215,
         "color": "gold",
         "angle": 186.32273555998253
       },
@@ -11182,8 +11292,8 @@ export const lightLevels = [
         "angle": 246.68686644306962
       },
       {
-        "x": 231.18089305512495,
-        "y": 346.85567201836164,
+        "x": 246.04936053882395,
+        "y": 352.7657206379743,
         "color": "pink",
         "angle": -26
       }
@@ -11243,8 +11353,8 @@ export const lightLevels = [
         ]
       },
       {
-        "x": 99.6,
-        "y": 309.3,
+        "x": 114.46846748369899,
+        "y": 315.2100486196127,
         "id": "blue1b",
         "pairId": "blue1a",
         "label": "B",
@@ -11283,7 +11393,7 @@ export const lightLevels = [
       -67.9,
       89.5
     ],
-    "id": "light-v5-master-005",
+    "id": "light-v7-spacious-080",
     "name": "O acordo impossível",
     "hint": "Considere uma rota de cada vez e siga o que ela exige das outras duas cores.",
     "sourceAngle": 186.32273555998253,
@@ -11301,6 +11411,6 @@ export const lightLevels = [
     "number": 80,
     "campaignNumber": 80,
     "campaignBand": "sage",
-    "campaignRevision": "reflexos80-v6"
+    "campaignRevision": "reflexos80-spacious-v7"
   }
 ];

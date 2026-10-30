@@ -1,0 +1,488 @@
+{
+  "caseStatuses": 1678,
+  "individualTargetPaths": 4340,
+  "fullTargetPaths": 1092,
+  "errors": [],
+  "levels": [
+    {
+      "number": 1,
+      "caseStatuses": 4,
+      "targetPaths": 1,
+      "errors": []
+    },
+    {
+      "number": 2,
+      "caseStatuses": 4,
+      "targetPaths": 1,
+      "errors": []
+    },
+    {
+      "number": 3,
+      "caseStatuses": 4,
+      "targetPaths": 1,
+      "errors": []
+    },
+    {
+      "number": 4,
+      "caseStatuses": 2,
+      "targetPaths": 2,
+      "errors": []
+    },
+    {
+      "number": 5,
+      "caseStatuses": 4,
+      "targetPaths": 1,
+      "errors": []
+    },
+    {
+      "number": 6,
+      "caseStatuses": 3,
+      "targetPaths": 1,
+      "errors": []
+    },
+    {
+      "number": 7,
+      "caseStatuses": 4,
+      "targetPaths": 1,
+      "errors": []
+    },
+    {
+      "number": 8,
+      "caseStatuses": 6,
+      "targetPaths": 1,
+      "errors": []
+    },
+    {
+      "number": 9,
+      "caseStatuses": 6,
+      "targetPaths": 6,
+      "errors": []
+    },
+    {
+      "number": 10,
+      "caseStatuses": 31,
+      "targetPaths": 27,
+      "errors": []
+    },
+    {
+      "number": 11,
+      "caseStatuses": 12,
+      "targetPaths": 15,
+      "errors": []
+    },
+    {
+      "number": 12,
+      "caseStatuses": 4,
+      "targetPaths": 1,
+      "errors": []
+    },
+    {
+      "number": 13,
+      "caseStatuses": 8,
+      "targetPaths": 11,
+      "errors": []
+    },
+    {
+      "number": 14,
+      "caseStatuses": 8,
+      "targetPaths": 10,
+      "errors": []
+    },
+    {
+      "number": 15,
+      "caseStatuses": 6,
+      "targetPaths": 12,
+      "errors": []
+    },
+    {
+      "number": 16,
+      "caseStatuses": 11,
+      "targetPaths": 16,
+      "errors": []
+    },
+    {
+      "number": 17,
+      "caseStatuses": 9,
+      "targetPaths": 18,
+      "errors": []
+    },
+    {
+      "number": 18,
+      "caseStatuses": 4,
+      "targetPaths": 2,
+      "errors": []
+    },
+    {
+      "number": 19,
+      "caseStatuses": 11,
+      "targetPaths": 22,
+      "errors": []
+    },
+    {
+      "number": 20,
+      "caseStatuses": 6,
+      "targetPaths": 12,
+      "errors": []
+    },
+    {
+      "number": 21,
+      "caseStatuses": 7,
+      "targetPaths": 15,
+      "errors": []
+    },
+    {
+      "number": 22,
+      "caseStatuses": 4,
+      "targetPaths": 1,
+      "errors": []
+    },
+    {
+      "number": 23,
+      "caseStatuses": 11,
+      "targetPaths": 22,
+      "errors": []
+    },
+    {
+      "number": 24,
+      "caseStatuses": 14,
+      "targetPaths": 28,
+      "errors": []
+    },
+    {
+      "number": 25,
+      "caseStatuses": 7,
+      "targetPaths": 13,
+      "errors": []
+    },
+    {
+      "number": 26,
+      "caseStatuses": 34,
+      "targetPaths": 101,
+      "errors": []
+    },
+    {
+      "number": 27,
+      "caseStatuses": 9,
+      "targetPaths": 18,
+      "errors": []
+    },
+    {
+      "number": 28,
+      "caseStatuses": 7,
+      "targetPaths": 21,
+      "errors": []
+    },
+    {
+      "number": 29,
+      "caseStatuses": 6,
+      "targetPaths": 8,
+      "errors": []
+    },
+    {
+      "number": 30,
+      "caseStatuses": 14,
+      "targetPaths": 42,
+      "errors": []
+    },
+    {
+      "number": 31,
+      "caseStatuses": 8,
+      "targetPaths": 15,
+      "errors": []
+    },
+    {
+      "number": 32,
+      "caseStatuses": 33,
+      "targetPaths": 65,
+      "errors": []
+    },
+    {
+      "number": 33,
+      "caseStatuses": 8,
+      "targetPaths": 15,
+      "errors": []
+    },
+    {
+      "number": 34,
+      "caseStatuses": 8,
+      "targetPaths": 11,
+      "errors": []
+    },
+    {
+      "number": 35,
+      "caseStatuses": 10,
+      "targetPaths": 28,
+      "errors": []
+    },
+    {
+      "number": 36,
+      "caseStatuses": 9,
+      "targetPaths": 16,
+      "errors": []
+    },
+    {
+      "number": 37,
+      "caseStatuses": 3,
+      "targetPaths": 1,
+      "errors": []
+    },
+    {
+      "number": 38,
+      "caseStatuses": 33,
+      "targetPaths": 99,
+      "errors": []
+    },
+    {
+      "number": 39,
+      "caseStatuses": 42,
+      "targetPaths": 126,
+      "errors": []
+    },
+    {
+      "number": 40,
+      "caseStatuses": 8,
+      "targetPaths": 18,
+      "errors": []
+    },
+    {
+      "number": 41,
+      "caseStatuses": 34,
+      "targetPaths": 101,
+      "errors": []
+    },
+    {
+      "number": 42,
+      "caseStatuses": 39,
+      "targetPaths": 117,
+      "errors": []
+    },
+    {
+      "number": 43,
+      "caseStatuses": 33,
+      "targetPaths": 83,
+      "errors": []
+    },
+    {
+      "number": 44,
+      "caseStatuses": 9,
+      "targetPaths": 20,
+      "errors": []
+    },
+    {
+      "number": 45,
+      "caseStatuses": 43,
+      "targetPaths": 129,
+      "errors": []
+    },
+    {
+      "number": 46,
+      "caseStatuses": 9,
+      "targetPaths": 20,
+      "errors": []
+    },
+    {
+      "number": 47,
+      "caseStatuses": 8,
+      "targetPaths": 10,
+      "errors": []
+    },
+    {
+      "number": 48,
+      "caseStatuses": 33,
+      "targetPaths": 99,
+      "errors": []
+    },
+    {
+      "number": 49,
+      "caseStatuses": 39,
+      "targetPaths": 117,
+      "errors": []
+    },
+    {
+      "number": 50,
+      "caseStatuses": 9,
+      "targetPaths": 13,
+      "errors": []
+    },
+    {
+      "number": 51,
+      "caseStatuses": 6,
+      "targetPaths": 2,
+      "errors": []
+    },
+    {
+      "number": 52,
+      "caseStatuses": 8,
+      "targetPaths": 18,
+      "errors": []
+    },
+    {
+      "number": 53,
+      "caseStatuses": 18,
+      "targetPaths": 54,
+      "errors": []
+    },
+    {
+      "number": 54,
+      "caseStatuses": 11,
+      "targetPaths": 22,
+      "errors": []
+    },
+    {
+      "number": 55,
+      "caseStatuses": 13,
+      "targetPaths": 27,
+      "errors": []
+    },
+    {
+      "number": 56,
+      "caseStatuses": 34,
+      "targetPaths": 101,
+      "errors": []
+    },
+    {
+      "number": 57,
+      "caseStatuses": 42,
+      "targetPaths": 126,
+      "errors": []
+    },
+    {
+      "number": 58,
+      "caseStatuses": 11,
+      "targetPaths": 26,
+      "errors": []
+    },
+    {
+      "number": 59,
+      "caseStatuses": 73,
+      "targetPaths": 219,
+      "errors": []
+    },
+    {
+      "number": 60,
+      "caseStatuses": 73,
+      "targetPaths": 219,
+      "errors": []
+    },
+    {
+      "number": 61,
+      "caseStatuses": 33,
+      "targetPaths": 99,
+      "errors": []
+    },
+    {
+      "number": 62,
+      "caseStatuses": 52,
+      "targetPaths": 151,
+      "errors": []
+    },
+    {
+      "number": 63,
+      "caseStatuses": 42,
+      "targetPaths": 126,
+      "errors": []
+    },
+    {
+      "number": 64,
+      "caseStatuses": 8,
+      "targetPaths": 20,
+      "errors": []
+    },
+    {
+      "number": 65,
+      "caseStatuses": 64,
+      "targetPaths": 190,
+      "errors": []
+    },
+    {
+      "number": 66,
+      "caseStatuses": 5,
+      "targetPaths": 4,
+      "errors": []
+    },
+    {
+      "number": 67,
+      "caseStatuses": 14,
+      "targetPaths": 34,
+      "errors": []
+    },
+    {
+      "number": 68,
+      "caseStatuses": 33,
+      "targetPaths": 83,
+      "errors": []
+    },
+    {
+      "number": 69,
+      "caseStatuses": 75,
+      "targetPaths": 225,
+      "errors": []
+    },
+    {
+      "number": 70,
+      "caseStatuses": 34,
+      "targetPaths": 101,
+      "errors": []
+    },
+    {
+      "number": 71,
+      "caseStatuses": 85,
+      "targetPaths": 213,
+      "errors": []
+    },
+    {
+      "number": 72,
+      "caseStatuses": 76,
+      "targetPaths": 223,
+      "errors": []
+    },
+    {
+      "number": 73,
+      "caseStatuses": 14,
+      "targetPaths": 42,
+      "errors": []
+    },
+    {
+      "number": 74,
+      "caseStatuses": 22,
+      "targetPaths": 66,
+      "errors": []
+    },
+    {
+      "number": 75,
+      "caseStatuses": 12,
+      "targetPaths": 16,
+      "errors": []
+    },
+    {
+      "number": 76,
+      "caseStatuses": 39,
+      "targetPaths": 117,
+      "errors": []
+    },
+    {
+      "number": 77,
+      "caseStatuses": 49,
+      "targetPaths": 131,
+      "errors": []
+    },
+    {
+      "number": 78,
+      "caseStatuses": 10,
+      "targetPaths": 26,
+      "errors": []
+    },
+    {
+      "number": 79,
+      "caseStatuses": 11,
+      "targetPaths": 27,
+      "errors": []
+    },
+    {
+      "number": 80,
+      "caseStatuses": 33,
+      "targetPaths": 99,
+      "errors": []
+    }
+  ]
+}

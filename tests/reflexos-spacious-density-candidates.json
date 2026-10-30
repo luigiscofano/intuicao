@@ -1,0 +1,2040 @@
+[
+  {
+    "number": 40,
+    "level": {
+      "name": "O espelho em comum",
+      "difficulty": 190,
+      "family": "superficie-compartilhada-condicional",
+      "sources": [
+        {
+          "x": 100,
+          "y": 234.5,
+          "angle": 0,
+          "color": "gold"
+        },
+        {
+          "x": 335,
+          "y": 114.5,
+          "angle": 90,
+          "color": "blue"
+        },
+        {
+          "x": 730,
+          "y": 114.5,
+          "angle": 180,
+          "color": "pink"
+        }
+      ],
+      "targets": [
+        {
+          "x": 270,
+          "y": 354.5,
+          "radius": 22,
+          "color": "gold"
+        },
+        {
+          "x": 650,
+          "y": 299.5,
+          "radius": 22,
+          "color": "blue"
+        },
+        {
+          "x": 500,
+          "y": 424.5,
+          "radius": 22,
+          "color": "pink"
+        }
+      ],
+      "objects": [
+        {
+          "type": "mirror",
+          "x": 300,
+          "y": 264.5,
+          "length": 124.8,
+          "angle": 0
+        },
+        {
+          "type": "mirror",
+          "x": 500,
+          "y": 114.5,
+          "length": 124.8,
+          "angle": 12
+        }
+      ],
+      "portals": [
+        {
+          "id": "Aa",
+          "pairId": "Ab",
+          "label": "A",
+          "x": 330,
+          "y": 39.5,
+          "radius": 16,
+          "colors": [
+            "gold"
+          ]
+        },
+        {
+          "id": "Ab",
+          "pairId": "Aa",
+          "label": "A",
+          "x": 270,
+          "y": 424.5,
+          "radius": 16,
+          "colors": [
+            "gold"
+          ]
+        },
+        {
+          "id": "Ba",
+          "pairId": "Bb",
+          "label": "B",
+          "x": 40,
+          "y": 229.5,
+          "radius": 16,
+          "colors": [
+            "blue"
+          ]
+        },
+        {
+          "id": "Bb",
+          "pairId": "Ba",
+          "label": "B",
+          "x": 750,
+          "y": 299.5,
+          "radius": 16,
+          "colors": [
+            "blue"
+          ]
+        },
+        {
+          "id": "Ca",
+          "pairId": "Cb",
+          "label": "C",
+          "x": 590,
+          "y": 204.5,
+          "radius": 16
+        },
+        {
+          "id": "Cb",
+          "pairId": "Ca",
+          "label": "C",
+          "x": 430,
+          "y": 354.5,
+          "radius": 16
+        }
+      ],
+      "solution": [
+        45,
+        -67.5
+      ],
+      "hint": "Observe que dourado e azul atingem pontos diferentes da mesma superfície.",
+      "rules": "Todas as cores precisam chegar aos alvos sem cruzar os trechos físicos.",
+      "sourceAngle": 0,
+      "target": {
+        "x": 270,
+        "y": 354.5,
+        "radius": 22,
+        "color": "gold"
+      },
+      "requiredBounces": 3,
+      "wallPurpose": [
+        "Sem parede: a incompatibilidade nasce das trajetórias e da superfície compartilhada."
+      ],
+      "decoyCount": 0,
+      "tutorial": false,
+      "id": "light-v4-legacy-190-labels",
+      "campaignNumber": 40,
+      "number": 40,
+      "campaignBand": "intermediate",
+      "campaignRevision": "reflexos80-v6"
+    },
+    "moves": [
+      {
+        "id": "source:1",
+        "step": 30,
+        "direction": [
+          6.123233995736766e-17,
+          1
+        ],
+        "from": {
+          "x": 335,
+          "y": 84.5,
+          "angle": 90,
+          "color": "blue"
+        },
+        "to": {
+          "x": 335,
+          "y": 114.5,
+          "angle": 90,
+          "color": "blue"
+        }
+      },
+      {
+        "id": "source:0",
+        "step": 10,
+        "direction": [
+          1,
+          0
+        ],
+        "from": {
+          "x": 90,
+          "y": 234.5,
+          "angle": 0,
+          "color": "gold"
+        },
+        "to": {
+          "x": 100,
+          "y": 234.5,
+          "angle": 0,
+          "color": "gold"
+        }
+      }
+    ],
+    "before": {
+      "min": -15.9843902290593,
+      "energy": 1165.633790931447,
+      "worst": [
+        {
+          "a": "source:1",
+          "b": "portal:0",
+          "kinds": [
+            "source",
+            "portal"
+          ],
+          "clearance": -15.9843902290593
+        },
+        {
+          "a": "source:0",
+          "b": "portal:2",
+          "kinds": [
+            "source",
+            "portal"
+          ],
+          "clearance": 5.24937810560445
+        },
+        {
+          "a": "target:0",
+          "b": "portal:1",
+          "kinds": [
+            "target",
+            "portal"
+          ],
+          "clearance": 26
+        },
+        {
+          "a": "target:2",
+          "b": "portal:5",
+          "kinds": [
+            "target",
+            "portal"
+          ],
+          "clearance": 42.43126164151201
+        },
+        {
+          "a": "target:0",
+          "b": "mirror:0",
+          "kinds": [
+            "target",
+            "mirror"
+          ],
+          "clearance": 47.64118037242456
+        },
+        {
+          "a": "target:1",
+          "b": "portal:4",
+          "kinds": [
+            "target",
+            "portal"
+          ],
+          "clearance": 51.338751670982475
+        },
+        {
+          "a": "target:1",
+          "b": "portal:3",
+          "kinds": [
+            "target",
+            "portal"
+          ],
+          "clearance": 56
+        },
+        {
+          "a": "portal:5",
+          "b": "mirror:0",
+          "kinds": [
+            "portal",
+            "mirror"
+          ],
+          "clearance": 71.60640105020188
+        }
+      ]
+    },
+    "after": {
+      "minimum": 14.003289331319728,
+      "initial": 14.003289331319728,
+      "reference": 14.003289331319728,
+      "perturbed": 14.003289331319728,
+      "worst": [
+        {
+          "a": "source:1",
+          "b": "portal:0",
+          "kinds": [
+            "source",
+            "portal"
+          ],
+          "clearance": 14.003289331319728
+        },
+        {
+          "a": "source:0",
+          "b": "portal:2",
+          "kinds": [
+            "source",
+            "portal"
+          ],
+          "clearance": 15.207972893961468
+        },
+        {
+          "a": "target:0",
+          "b": "portal:1",
+          "kinds": [
+            "target",
+            "portal"
+          ],
+          "clearance": 26
+        },
+        {
+          "a": "target:2",
+          "b": "portal:5",
+          "kinds": [
+            "target",
+            "portal"
+          ],
+          "clearance": 42.43126164151201
+        },
+        {
+          "a": "target:0",
+          "b": "mirror:0",
+          "kinds": [
+            "target",
+            "mirror"
+          ],
+          "clearance": 47.64118037242456
+        },
+        {
+          "a": "target:1",
+          "b": "portal:4",
+          "kinds": [
+            "target",
+            "portal"
+          ],
+          "clearance": 51.338751670982475
+        },
+        {
+          "a": "target:1",
+          "b": "portal:3",
+          "kinds": [
+            "target",
+            "portal"
+          ],
+          "clearance": 56
+        },
+        {
+          "a": "portal:5",
+          "b": "mirror:0",
+          "kinds": [
+            "portal",
+            "mirror"
+          ],
+          "clearance": 71.60640105020188
+        }
+      ]
+    },
+    "validation": {
+      "issues": [],
+      "initialStatus": "collision",
+      "referenceStatus": "target",
+      "allDocumentedIsolatedTopologiesPreserved": true,
+      "changedCaseTopologies": [],
+      "conflictBefore": 2,
+      "conflictAfter": 2,
+      "minIncidence": 45,
+      "perturbation": {
+        "minIncidence": 44.5,
+        "minMirrorEndpointMargin": 12.464863196005773,
+        "minWallClearance": null,
+        "minTargetTransverseMargin": 15.886327077424443,
+        "minPortalTransverseMargin": 13.778671310831117,
+        "minDifferentColorPathDistance": 63.62945417022671
+      },
+      "tests": 8,
+      "failures": 0
+    },
+    "explanation": "Fontes deslocadas na sua linha de emissão; portais mantêm a direção de propagação e os mesmos itinerários da referência. Todos os estados finais dos casos documentados e contraprovas completas foram reproduzidos. Mudanças de distância não demonstram equivalência de todo o contínuo de ângulos."
+  },
+  {
+    "number": 46,
+    "level": {
+      "sources": [
+        {
+          "x": 70,
+          "y": 130,
+          "angle": 0,
+          "color": "blue"
+        },
+        {
+          "x": 115,
+          "y": 225,
+          "angle": 86.42366562500266,
+          "color": "gold"
+        },
+        {
+          "x": 780,
+          "y": 350,
+          "angle": 180,
+          "color": "pink"
+        }
+      ],
+      "targets": [
+        {
+          "x": 250,
+          "y": 350,
+          "color": "blue",
+          "radius": 22
+        },
+        {
+          "x": 480,
+          "y": 110,
+          "color": "gold",
+          "radius": 22
+        },
+        {
+          "x": 370,
+          "y": 175,
+          "color": "pink",
+          "radius": 22
+        }
+      ],
+      "objects": [
+        {
+          "id": "B",
+          "type": "mirror",
+          "x": 250,
+          "y": 130,
+          "angle": 45,
+          "length": 124.8
+        },
+        {
+          "id": "G1",
+          "type": "mirror",
+          "x": 125,
+          "y": 385,
+          "angle": 67.2,
+          "length": 124.8
+        },
+        {
+          "id": "G2",
+          "type": "mirror",
+          "x": 480,
+          "y": 385,
+          "angle": -21,
+          "length": 124.8
+        },
+        {
+          "id": "P1",
+          "type": "mirror",
+          "x": 620,
+          "y": 350,
+          "angle": 69,
+          "length": 124.8
+        },
+        {
+          "type": "wall",
+          "x": 170,
+          "y": 250,
+          "angle": 90,
+          "length": 60,
+          "width": 12,
+          "purpose": "Interrompe a saída do retorno R na região inicial; essa hipótese termina antes da região do alvo."
+        }
+      ],
+      "portals": [
+        {
+          "id": "A1",
+          "pairId": "A2",
+          "label": "A",
+          "x": 250,
+          "y": 192,
+          "radius": 16
+        },
+        {
+          "id": "A2",
+          "pairId": "A1",
+          "label": "A",
+          "x": 745,
+          "y": 50,
+          "radius": 16
+        },
+        {
+          "id": "B1",
+          "pairId": "B2",
+          "label": "B",
+          "x": 745,
+          "y": 190,
+          "radius": 16,
+          "colors": [
+            "blue"
+          ]
+        },
+        {
+          "id": "B2",
+          "pairId": "B1",
+          "label": "B",
+          "x": 250,
+          "y": 262,
+          "radius": 16,
+          "colors": [
+            "blue"
+          ]
+        },
+        {
+          "id": "R1",
+          "pairId": "R2",
+          "label": "R",
+          "x": 415,
+          "y": 100,
+          "radius": 16
+        },
+        {
+          "id": "R2",
+          "pairId": "R1",
+          "label": "R",
+          "x": 55,
+          "y": 250,
+          "radius": 16
+        },
+        {
+          "id": "K1",
+          "pairId": "K2",
+          "label": "K",
+          "x": 620,
+          "y": 200,
+          "radius": 16,
+          "colors": [
+            "pink"
+          ]
+        },
+        {
+          "id": "K2",
+          "pairId": "K1",
+          "label": "K",
+          "x": 370,
+          "y": 300,
+          "radius": 16,
+          "colors": [
+            "pink"
+          ]
+        }
+      ],
+      "design": {
+        "family": "desvio-rosa-compacto",
+        "dependency": "chain",
+        "blue": "chain",
+        "gold": "ground",
+        "pink": "compact",
+        "chainColor": "blue",
+        "returnAlternative": {
+          "color": "blue",
+          "mirror": "B",
+          "aim": "R1",
+          "portal": "R1",
+          "reason": "O par R devolve a luz à região inicial, onde a parede termina o percurso."
+        }
+      },
+      "solution": [
+        45,
+        43.2,
+        -45,
+        45
+      ],
+      "id": "light-v3-135",
+      "campaignNumber": 46,
+      "name": "Encadear azul, simplificar rosa",
+      "difficulty": 135,
+      "family": "desvio-rosa-compacto",
+      "width": 800,
+      "height": 460,
+      "sourceAngle": 0,
+      "target": {
+        "x": 250,
+        "y": 350,
+        "color": "blue",
+        "radius": 22
+      },
+      "requiredBounces": 4,
+      "wallPurpose": [
+        "Interrompe a saída do retorno R na região inicial; essa hipótese termina antes da região do alvo."
+      ],
+      "decoyCount": 1,
+      "rules": "Leve as três luzes aos respectivos alvos sem cruzar os feixes.",
+      "tutorial": "",
+      "hint": "Observe a chegada azul antes de decidir o trajeto dourado.",
+      "number": 46,
+      "campaignBand": "advanced",
+      "campaignRevision": "reflexos80-v6"
+    },
+    "moves": [
+      {
+        "id": "portal:0",
+        "from": {
+          "id": "A1",
+          "pairId": "A2",
+          "label": "A",
+          "x": 250,
+          "y": 210,
+          "radius": 16
+        },
+        "to": {
+          "id": "A1",
+          "pairId": "A2",
+          "label": "A",
+          "x": 250,
+          "y": 192,
+          "radius": 16
+        }
+      },
+      {
+        "id": "portal:3",
+        "from": {
+          "id": "B2",
+          "pairId": "B1",
+          "label": "B",
+          "x": 250,
+          "y": 250,
+          "radius": 16,
+          "colors": [
+            "blue"
+          ]
+        },
+        "to": {
+          "id": "B2",
+          "pairId": "B1",
+          "label": "B",
+          "x": 250,
+          "y": 262,
+          "radius": 16,
+          "colors": [
+            "blue"
+          ]
+        }
+      },
+      {
+        "id": "mirror:0 initial-angle-only",
+        "from": 69,
+        "to": 45
+      }
+    ],
+    "before": {
+      "min": -18,
+      "energy": 1403.7005738960179,
+      "worst": [
+        {
+          "a": "portal:0",
+          "b": "portal:3",
+          "kinds": [
+            "portal",
+            "portal"
+          ],
+          "clearance": -18
+        },
+        {
+          "a": "source:1",
+          "b": "portal:5",
+          "kinds": [
+            "source",
+            "portal"
+          ],
+          "clearance": 20
+        },
+        {
+          "a": "portal:0",
+          "b": "mirror:0",
+          "kinds": [
+            "portal",
+            "mirror"
+          ],
+          "clearance": 21.00272311112414
+        },
+        {
+          "a": "target:1",
+          "b": "portal:4",
+          "kinds": [
+            "target",
+            "portal"
+          ],
+          "clearance": 21.764732189829516
+        },
+        {
+          "a": "source:1",
+          "b": "wall:4",
+          "kinds": [
+            "source",
+            "wall"
+          ],
+          "clearance": 24.5
+        },
+        {
+          "a": "target:2",
+          "b": "portal:4",
+          "kinds": [
+            "target",
+            "portal"
+          ],
+          "clearance": 26.35838327984417
+        },
+        {
+          "a": "target:0",
+          "b": "portal:3",
+          "kinds": [
+            "target",
+            "portal"
+          ],
+          "clearance": 40
+        },
+        {
+          "a": "target:2",
+          "b": "mirror:0",
+          "kinds": [
+            "target",
+            "mirror"
+          ],
+          "clearance": 45.88640137427508
+        }
+      ]
+    },
+    "after": {
+      "minimum": 8.843446546652373,
+      "initial": 8.843446546652373,
+      "reference": 8.843446546652373,
+      "perturbed": 8.39703958199054,
+      "worst": [
+        {
+          "a": "portal:0",
+          "b": "mirror:0",
+          "kinds": [
+            "portal",
+            "mirror"
+          ],
+          "clearance": 8.843446546652373
+        },
+        {
+          "a": "portal:0",
+          "b": "portal:3",
+          "kinds": [
+            "portal",
+            "portal"
+          ],
+          "clearance": 12
+        },
+        {
+          "a": "source:1",
+          "b": "portal:5",
+          "kinds": [
+            "source",
+            "portal"
+          ],
+          "clearance": 20
+        },
+        {
+          "a": "target:1",
+          "b": "portal:4",
+          "kinds": [
+            "target",
+            "portal"
+          ],
+          "clearance": 21.764732189829516
+        },
+        {
+          "a": "source:1",
+          "b": "wall:4",
+          "kinds": [
+            "source",
+            "wall"
+          ],
+          "clearance": 24.5
+        },
+        {
+          "a": "target:2",
+          "b": "portal:4",
+          "kinds": [
+            "target",
+            "portal"
+          ],
+          "clearance": 26.35838327984417
+        },
+        {
+          "a": "target:0",
+          "b": "portal:3",
+          "kinds": [
+            "target",
+            "portal"
+          ],
+          "clearance": 28
+        },
+        {
+          "a": "target:2",
+          "b": "mirror:0",
+          "kinds": [
+            "target",
+            "mirror"
+          ],
+          "clearance": 45.88640137427508
+        }
+      ]
+    },
+    "validation": {
+      "issues": [],
+      "initialStatus": "miss",
+      "referenceStatus": "target",
+      "allDocumentedIsolatedTopologiesPreserved": true,
+      "changedCaseTopologies": [],
+      "conflictBefore": 2,
+      "conflictAfter": 2,
+      "minIncidence": 43.22366562500265,
+      "perturbation": {
+        "minIncidence": 42.723665625002646,
+        "minMirrorEndpointMargin": 53.18240463726053,
+        "minWallClearance": 45.47377060712661,
+        "minTargetTransverseMargin": 5.9469098649121115,
+        "minPortalTransverseMargin": 13.382139034407487,
+        "minDifferentColorPathDistance": 54.70693198392043
+      },
+      "tests": 24,
+      "failures": 0
+    },
+    "explanation": "Fontes deslocadas na sua linha de emissão; portais mantêm a direção de propagação e os mesmos itinerários da referência. Todos os estados finais dos casos documentados e contraprovas completas foram reproduzidos. Mudanças de distância não demonstram equivalência de todo o contínuo de ângulos."
+  },
+  {
+    "number": 53,
+    "level": {
+      "objects": [
+        {
+          "type": "mirror",
+          "x": 580,
+          "y": 86,
+          "length": 124.8,
+          "angle": -22.6
+        },
+        {
+          "type": "mirror",
+          "x": 200,
+          "y": 230,
+          "length": 124.8,
+          "angle": -68.2
+        },
+        {
+          "type": "mirror",
+          "x": 200,
+          "y": 374,
+          "length": 124.8,
+          "angle": -88.1
+        }
+      ],
+      "sources": [
+        {
+          "x": 636.9882490825801,
+          "y": 202.84322601889167,
+          "angle": 244,
+          "color": "gold"
+        },
+        {
+          "x": 420.7368982147317,
+          "y": 347.3678906964728,
+          "angle": -152,
+          "color": "blue"
+        },
+        {
+          "x": 303.3661882864499,
+          "y": 411.62221576582357,
+          "angle": -160,
+          "color": "pink"
+        }
+      ],
+      "targets": [
+        {
+          "x": 650,
+          "y": 286,
+          "radius": 22,
+          "color": "gold"
+        },
+        {
+          "x": 690,
+          "y": 366,
+          "radius": 22,
+          "color": "blue"
+        },
+        {
+          "x": 690,
+          "y": 232,
+          "radius": 22,
+          "color": "pink"
+        }
+      ],
+      "portals": [
+        {
+          "id": "g1a",
+          "pairId": "g1b",
+          "label": "A",
+          "x": 699.5,
+          "y": 104.9,
+          "radius": 16,
+          "colors": [
+            "gold"
+          ]
+        },
+        {
+          "id": "g1b",
+          "pairId": "g1a",
+          "label": "A",
+          "x": 416,
+          "y": 152,
+          "radius": 16,
+          "colors": [
+            "gold"
+          ]
+        },
+        {
+          "id": "g1c",
+          "pairId": "g1d",
+          "label": "B",
+          "x": 484.2,
+          "y": 162.8,
+          "radius": 16,
+          "colors": [
+            "gold"
+          ]
+        },
+        {
+          "id": "g1d",
+          "pairId": "g1c",
+          "label": "B",
+          "x": 487,
+          "y": 260.2,
+          "radius": 16,
+          "colors": [
+            "gold"
+          ]
+        },
+        {
+          "id": "b1a",
+          "pairId": "b1b",
+          "label": "C",
+          "x": 319.7,
+          "y": 317,
+          "radius": 16,
+          "colors": [
+            "blue"
+          ]
+        },
+        {
+          "id": "b1b",
+          "pairId": "b1a",
+          "label": "C",
+          "x": 453.7,
+          "y": 216.1,
+          "radius": 16,
+          "colors": [
+            "blue"
+          ]
+        },
+        {
+          "id": "b2a",
+          "pairId": "b2b",
+          "label": "D",
+          "x": 105.7,
+          "y": 334.8,
+          "radius": 16,
+          "colors": [
+            "blue"
+          ]
+        },
+        {
+          "id": "b2b",
+          "pairId": "b2a",
+          "label": "D",
+          "x": 778.3,
+          "y": 267.9,
+          "radius": 16,
+          "colors": [
+            "blue"
+          ]
+        },
+        {
+          "id": "p1a",
+          "pairId": "p1b",
+          "label": "E",
+          "x": 348.8,
+          "y": 381.8,
+          "radius": 16,
+          "colors": [
+            "pink"
+          ]
+        },
+        {
+          "id": "p1b",
+          "pairId": "p1a",
+          "label": "E",
+          "x": 539.2,
+          "y": 224.1,
+          "radius": 16,
+          "colors": [
+            "pink"
+          ]
+        }
+      ],
+      "width": 800,
+      "height": 460,
+      "id": "light-v5-portal-875",
+      "name": "A volta pelo acesso útil 875",
+      "hint": "Reconstrua a chegada e procure o acesso que permite voltar.",
+      "solution": [
+        -53.5,
+        -68.2,
+        -78.5
+      ],
+      "sourceAngle": 244,
+      "target": {
+        "x": 650,
+        "y": 286,
+        "radius": 22,
+        "color": "gold"
+      },
+      "requiredBounces": 3,
+      "wallPurpose": [],
+      "decoyCount": 0,
+      "tutorial": "",
+      "rules": "Leve todas as fontes aos alvos da mesma cor, sem cruzar nem encostar nos trechos físicos das outras luzes.",
+      "number": 53,
+      "campaignNumber": 53,
+      "campaignBand": "advanced",
+      "campaignRevision": "reflexos80-v6"
+    },
+    "moves": [
+      {
+        "id": "portal:5",
+        "step": -30,
+        "direction": [
+          1,
+          0
+        ],
+        "from": {
+          "id": "b1b",
+          "pairId": "b1a",
+          "label": "C",
+          "x": 483.7,
+          "y": 216.1,
+          "radius": 16,
+          "colors": [
+            "blue"
+          ]
+        },
+        "to": {
+          "id": "b1b",
+          "pairId": "b1a",
+          "label": "C",
+          "x": 453.7,
+          "y": 216.1,
+          "radius": 16,
+          "colors": [
+            "blue"
+          ]
+        }
+      },
+      {
+        "id": "source:2",
+        "step": 40,
+        "direction": [
+          -0.9396926207859083,
+          -0.3420201433256689
+        ],
+        "from": {
+          "x": 340.95389311788625,
+          "y": 425.30302149885034,
+          "angle": -160,
+          "color": "pink"
+        },
+        "to": {
+          "x": 303.3661882864499,
+          "y": 411.62221576582357,
+          "angle": -160,
+          "color": "pink"
+        }
+      },
+      {
+        "id": "source:0",
+        "step": 20,
+        "direction": [
+          -0.43837114678907774,
+          -0.8987940462991668
+        ],
+        "from": {
+          "x": 645.7556720183617,
+          "y": 220.81910694487502,
+          "angle": 244,
+          "color": "gold"
+        },
+        "to": {
+          "x": 636.9882490825801,
+          "y": 202.84322601889167,
+          "angle": 244,
+          "color": "gold"
+        }
+      },
+      {
+        "id": "source:1",
+        "step": -60,
+        "direction": [
+          -0.8829475928589268,
+          -0.4694715627858911
+        ],
+        "from": {
+          "x": 367.7600426431961,
+          "y": 319.19959692931934,
+          "angle": -152,
+          "color": "blue"
+        },
+        "to": {
+          "x": 420.7368982147317,
+          "y": 347.3678906964728,
+          "angle": -152,
+          "color": "blue"
+        }
+      }
+    ],
+    "before": {
+      "min": -16.686606814819903,
+      "energy": 2723.8727995151435,
+      "worst": [
+        {
+          "a": "source:2",
+          "b": "portal:8",
+          "kinds": [
+            "source",
+            "portal"
+          ],
+          "clearance": -16.686606814819903
+        },
+        {
+          "a": "portal:3",
+          "b": "portal:5",
+          "kinds": [
+            "portal",
+            "portal"
+          ],
+          "clearance": -13.900000000000006
+        },
+        {
+          "a": "portal:2",
+          "b": "portal:5",
+          "kinds": [
+            "portal",
+            "portal"
+          ],
+          "clearance": -4.700000000000017
+        },
+        {
+          "a": "source:0",
+          "b": "target:2",
+          "kinds": [
+            "source",
+            "target"
+          ],
+          "clearance": -1.3647841239145038
+        },
+        {
+          "a": "source:1",
+          "b": "portal:4",
+          "kinds": [
+            "source",
+            "portal"
+          ],
+          "clearance": 3.1103515422335803
+        },
+        {
+          "a": "portal:5",
+          "b": "portal:9",
+          "kinds": [
+            "portal",
+            "portal"
+          ],
+          "clearance": 14.073612332361876
+        },
+        {
+          "a": "portal:4",
+          "b": "portal:8",
+          "kinds": [
+            "portal",
+            "portal"
+          ],
+          "clearance": 16.12142238654119
+        },
+        {
+          "a": "source:0",
+          "b": "target:0",
+          "kinds": [
+            "source",
+            "target"
+          ],
+          "clearance": 18.318934004462733
+        }
+      ]
+    },
+    "after": {
+      "minimum": 8.662265591151336,
+      "initial": 8.662265591151336,
+      "reference": 8.662265591151336,
+      "perturbed": 8.662265591151336,
+      "worst": [
+        {
+          "a": "portal:3",
+          "b": "portal:5",
+          "kinds": [
+            "portal",
+            "portal"
+          ],
+          "clearance": 8.662265591151336
+        },
+        {
+          "a": "source:2",
+          "b": "portal:8",
+          "kinds": [
+            "source",
+            "portal"
+          ],
+          "clearance": 9.346994397166583
+        },
+        {
+          "a": "portal:2",
+          "b": "portal:5",
+          "kinds": [
+            "portal",
+            "portal"
+          ],
+          "clearance": 9.686967917994103
+        },
+        {
+          "a": "source:0",
+          "b": "target:2",
+          "kinds": [
+            "source",
+            "target"
+          ],
+          "clearance": 13.500935565625824
+        },
+        {
+          "a": "portal:4",
+          "b": "portal:8",
+          "kinds": [
+            "portal",
+            "portal"
+          ],
+          "clearance": 16.12142238654119
+        },
+        {
+          "a": "target:0",
+          "b": "target:2",
+          "kinds": [
+            "target",
+            "target"
+          ],
+          "clearance": 21.201190465645766
+        },
+        {
+          "a": "portal:3",
+          "b": "portal:9",
+          "kinds": [
+            "portal",
+            "portal"
+          ],
+          "clearance": 21.46692051769965
+        },
+        {
+          "a": "portal:1",
+          "b": "portal:5",
+          "kinds": [
+            "portal",
+            "portal"
+          ],
+          "clearance": 21.856154750513944
+        }
+      ]
+    },
+    "validation": {
+      "issues": [],
+      "initialStatus": "collision",
+      "referenceStatus": "target",
+      "allDocumentedIsolatedTopologiesPreserved": true,
+      "changedCaseTopologies": [],
+      "conflictBefore": 11,
+      "conflictAfter": 11,
+      "minIncidence": 62.500000000000036,
+      "perturbation": {
+        "minIncidence": 62.00000000000003,
+        "minMirrorEndpointMargin": 62.39999999999997,
+        "minWallClearance": null,
+        "minTargetTransverseMargin": 12.344570098821103,
+        "minPortalTransverseMargin": 13.397796658583184,
+        "minDifferentColorPathDistance": 24.65658560513872
+      },
+      "tests": 14,
+      "failures": 0
+    },
+    "explanation": "Fontes deslocadas na sua linha de emissão; portais mantêm a direção de propagação e os mesmos itinerários da referência. Todos os estados finais dos casos documentados e contraprovas completas foram reproduzidos. Mudanças de distância não demonstram equivalência de todo o contínuo de ângulos."
+  },
+  {
+    "number": 54,
+    "level": {
+      "objects": [
+        {
+          "type": "mirror",
+          "x": 200,
+          "y": 110,
+          "length": 124.8,
+          "angle": -67.5
+        },
+        {
+          "type": "mirror",
+          "x": 200,
+          "y": 350,
+          "length": 124.8,
+          "angle": 65.9
+        }
+      ],
+      "sources": [
+        {
+          "x": 340.95389311788625,
+          "y": 161.30302149885034,
+          "angle": -160,
+          "color": "gold"
+        },
+        {
+          "x": 337.0318186463901,
+          "y": 288.98950353862995,
+          "angle": 156,
+          "color": "blue"
+        }
+      ],
+      "targets": [
+        {
+          "x": 725,
+          "y": 354,
+          "radius": 22,
+          "color": "gold"
+        },
+        {
+          "x": 725,
+          "y": 114,
+          "radius": 22,
+          "color": "blue"
+        }
+      ],
+      "portals": [
+        {
+          "id": "g1a",
+          "pairId": "g1b",
+          "label": "A",
+          "x": 432.9,
+          "y": 101.9,
+          "radius": 16,
+          "colors": [
+            "gold"
+          ]
+        },
+        {
+          "id": "g1b",
+          "pairId": "g1a",
+          "label": "A",
+          "x": 621.1,
+          "y": 357.6,
+          "radius": 16,
+          "colors": [
+            "gold"
+          ]
+        },
+        {
+          "id": "g2a",
+          "pairId": "g2b",
+          "label": "B",
+          "x": 145.6,
+          "y": 259.4,
+          "radius": 16,
+          "colors": [
+            "gold"
+          ]
+        },
+        {
+          "id": "g2b",
+          "pairId": "g2a",
+          "label": "B",
+          "x": 755.7393957002299,
+          "y": 269.39077862357726,
+          "radius": 16,
+          "colors": [
+            "gold"
+          ]
+        },
+        {
+          "id": "b1a",
+          "pairId": "b1b",
+          "label": "C",
+          "x": 131.6,
+          "y": 171.7,
+          "radius": 16,
+          "colors": [
+            "blue"
+          ]
+        },
+        {
+          "id": "b1b",
+          "pairId": "b1a",
+          "label": "C",
+          "x": 756.2,
+          "y": 195.2,
+          "radius": 16,
+          "colors": [
+            "blue"
+          ]
+        }
+      ],
+      "width": 800,
+      "height": 460,
+      "id": "light-v5-portal-017",
+      "name": "O salto que não cruza 017",
+      "hint": "Separe os trechos iluminados do salto entre portais.",
+      "solution": [
+        -67.5,
+        22.5
+      ],
+      "sourceAngle": -160,
+      "target": {
+        "x": 725,
+        "y": 354,
+        "radius": 22,
+        "color": "gold"
+      },
+      "requiredBounces": 2,
+      "wallPurpose": [],
+      "decoyCount": 0,
+      "tutorial": "",
+      "rules": "Leve todas as fontes aos alvos da mesma cor, sem cruzar nem encostar nos trechos físicos das outras luzes.",
+      "number": 54,
+      "campaignNumber": 54,
+      "campaignBand": "advanced",
+      "campaignRevision": "reflexos80-v6"
+    },
+    "moves": [
+      {
+        "id": "portal:3",
+        "step": 30,
+        "direction": [
+          -0.34202014332566816,
+          0.9396926207859086
+        ],
+        "from": {
+          "id": "g2b",
+          "pairId": "g2a",
+          "label": "B",
+          "x": 766,
+          "y": 241.2,
+          "radius": 16,
+          "colors": [
+            "gold"
+          ]
+        },
+        "to": {
+          "id": "g2b",
+          "pairId": "g2a",
+          "label": "B",
+          "x": 755.7393957002299,
+          "y": 269.39077862357726,
+          "radius": 16,
+          "colors": [
+            "gold"
+          ]
+        }
+      }
+    ],
+    "before": {
+      "min": -10.55538416216281,
+      "energy": 688.6045628108849,
+      "worst": [
+        {
+          "a": "portal:3",
+          "b": "portal:5",
+          "kinds": [
+            "portal",
+            "portal"
+          ],
+          "clearance": -10.55538416216281
+        },
+        {
+          "a": "portal:4",
+          "b": "mirror:0",
+          "kinds": [
+            "portal",
+            "mirror"
+          ],
+          "clearance": 20.704379445096066
+        },
+        {
+          "a": "portal:2",
+          "b": "mirror:1",
+          "kinds": [
+            "portal",
+            "mirror"
+          ],
+          "clearance": 26.720553820418445
+        },
+        {
+          "a": "portal:2",
+          "b": "portal:4",
+          "kinds": [
+            "portal",
+            "portal"
+          ],
+          "clearance": 30.582361326329362
+        },
+        {
+          "a": "target:1",
+          "b": "portal:5",
+          "kinds": [
+            "target",
+            "portal"
+          ],
+          "clearance": 42.98781523868732
+        },
+        {
+          "a": "target:0",
+          "b": "portal:1",
+          "kinds": [
+            "target",
+            "portal"
+          ],
+          "clearance": 59.96234895384001
+        },
+        {
+          "a": "target:0",
+          "b": "portal:3",
+          "kinds": [
+            "target",
+            "portal"
+          ],
+          "clearance": 61.13019671913291
+        },
+        {
+          "a": "source:0",
+          "b": "portal:0",
+          "kinds": [
+            "source",
+            "portal"
+          ],
+          "clearance": 64.46600172642626
+        }
+      ]
+    },
+    "after": {
+      "minimum": 16.190778623577273,
+      "initial": 16.190778623577273,
+      "reference": 16.190778623577273,
+      "perturbed": 16.190778623577273,
+      "worst": [
+        {
+          "a": "portal:3",
+          "b": "portal:5",
+          "kinds": [
+            "portal",
+            "portal"
+          ],
+          "clearance": 16.190778623577273
+        },
+        {
+          "a": "portal:4",
+          "b": "mirror:0",
+          "kinds": [
+            "portal",
+            "mirror"
+          ],
+          "clearance": 20.704379445096066
+        },
+        {
+          "a": "portal:2",
+          "b": "mirror:1",
+          "kinds": [
+            "portal",
+            "mirror"
+          ],
+          "clearance": 26.720553820418445
+        },
+        {
+          "a": "portal:2",
+          "b": "portal:4",
+          "kinds": [
+            "portal",
+            "portal"
+          ],
+          "clearance": 30.582361326329362
+        },
+        {
+          "a": "target:0",
+          "b": "portal:3",
+          "kinds": [
+            "target",
+            "portal"
+          ],
+          "clearance": 31.361234779781007
+        },
+        {
+          "a": "target:1",
+          "b": "portal:5",
+          "kinds": [
+            "target",
+            "portal"
+          ],
+          "clearance": 42.98781523868732
+        },
+        {
+          "a": "target:0",
+          "b": "portal:1",
+          "kinds": [
+            "target",
+            "portal"
+          ],
+          "clearance": 59.96234895384001
+        },
+        {
+          "a": "source:0",
+          "b": "portal:0",
+          "kinds": [
+            "source",
+            "portal"
+          ],
+          "clearance": 64.46600172642626
+        }
+      ]
+    },
+    "validation": {
+      "issues": [],
+      "initialStatus": "collision",
+      "referenceStatus": "target",
+      "allDocumentedIsolatedTopologiesPreserved": true,
+      "changedCaseTopologies": [],
+      "conflictBefore": 3,
+      "conflictAfter": 3,
+      "minIncidence": 46.500000000000014,
+      "perturbation": {
+        "minIncidence": 46.000000000000014,
+        "minMirrorEndpointMargin": 62.399999999999956,
+        "minWallClearance": null,
+        "minTargetTransverseMargin": 11.16089523273107,
+        "minPortalTransverseMargin": 12.62702004631112,
+        "minDifferentColorPathDistance": 96.24040382704713
+      },
+      "tests": 8,
+      "failures": 0
+    },
+    "explanation": "Fontes deslocadas na sua linha de emissão; portais mantêm a direção de propagação e os mesmos itinerários da referência. Todos os estados finais dos casos documentados e contraprovas completas foram reproduzidos. Mudanças de distância não demonstram equivalência de todo o contínuo de ângulos."
+  },
+  {
+    "number": 71,
+    "level": {
+      "objects": [
+        {
+          "x": 248.2,
+          "y": 108.1,
+          "type": "mirror",
+          "length": 124.8,
+          "angle": -22.1
+        },
+        {
+          "x": 605.9,
+          "y": 151.5,
+          "type": "mirror",
+          "length": 124.8,
+          "angle": 86
+        },
+        {
+          "x": 422.6,
+          "y": 281.7,
+          "type": "mirror",
+          "length": 124.8,
+          "angle": -74.9
+        }
+      ],
+      "sources": [
+        {
+          "x": 183.97723358332806,
+          "y": 243.65602632782355,
+          "color": "gold",
+          "angle": -64.64967572476624
+        },
+        {
+          "x": 456.5639980268078,
+          "y": 137.4018258393953,
+          "color": "blue",
+          "angle": 5.3930659506210645
+        },
+        {
+          "x": 571.778284305241,
+          "y": 297.37926949014803,
+          "color": "pink",
+          "angle": -174
+        }
+      ],
+      "targets": [
+        {
+          "x": 552.9,
+          "y": 222.2,
+          "color": "gold",
+          "radius": 22
+        },
+        {
+          "x": 129.2,
+          "y": 265.5,
+          "color": "blue",
+          "radius": 22
+        },
+        {
+          "x": 512.1,
+          "y": 321.8,
+          "color": "pink",
+          "radius": 22
+        }
+      ],
+      "portals": [
+        {
+          "x": 89.4,
+          "y": 23.5,
+          "id": "gold1a",
+          "pairId": "gold1b",
+          "label": "A",
+          "radius": 16,
+          "colors": [
+            "blue"
+          ]
+        },
+        {
+          "x": 708.2,
+          "y": 288.9,
+          "id": "gold1b",
+          "pairId": "gold1a",
+          "label": "A",
+          "radius": 16,
+          "colors": [
+            "gold"
+          ]
+        },
+        {
+          "x": 660.8,
+          "y": 344.2,
+          "id": "blue1a",
+          "pairId": "blue1b",
+          "label": "B",
+          "radius": 16,
+          "colors": [
+            "blue"
+          ]
+        },
+        {
+          "x": 108.2,
+          "y": 191.7,
+          "id": "blue1b",
+          "pairId": "blue1a",
+          "label": "B",
+          "radius": 16,
+          "colors": [
+            "blue"
+          ]
+        },
+        {
+          "x": 443.7,
+          "y": 67.1,
+          "id": "pink1a",
+          "pairId": "pink1b",
+          "label": "C",
+          "radius": 16,
+          "colors": [
+            "pink"
+          ]
+        },
+        {
+          "x": 502,
+          "y": 424.7,
+          "id": "pink1b",
+          "pairId": "pink1a",
+          "label": "C",
+          "radius": 16,
+          "colors": [
+            "pink"
+          ]
+        },
+        {
+          "x": 343.2,
+          "y": 322.7,
+          "id": "pink2a",
+          "pairId": "pink2b",
+          "label": "D",
+          "radius": 16,
+          "colors": [
+            "pink"
+          ]
+        },
+        {
+          "x": 672.5,
+          "y": 239,
+          "id": "pink2b",
+          "pairId": "pink2a",
+          "label": "D",
+          "radius": 16,
+          "colors": [
+            "pink"
+          ]
+        }
+      ],
+      "width": 800,
+      "height": 460,
+      "solution": [
+        -22.1,
+        39.7,
+        -74.9
+      ],
+      "id": "light-v5-master-filter-001",
+      "name": "Uma entrada, três consequências",
+      "hint": "Uma entrada mudou de cor. Siga as consequências até encontrar a rota que respeita as duas outras luzes.",
+      "sourceAngle": -64.64967572476624,
+      "target": {
+        "x": 552.9,
+        "y": 222.2,
+        "color": "gold",
+        "radius": 22
+      },
+      "requiredBounces": 3,
+      "wallPurpose": [],
+      "decoyCount": 0,
+      "tutorial": false,
+      "rules": "Leve cada cor ao seu alvo sem cruzar ou encostar nos trechos físicos das outras luzes.",
+      "number": 71,
+      "campaignNumber": 71,
+      "campaignBand": "master",
+      "campaignRevision": "reflexos80-v6"
+    },
+    "moves": [
+      {
+        "id": "portal:1",
+        "step": 30,
+        "direction": [
+          1,
+          0
+        ],
+        "from": {
+          "x": 678.2,
+          "y": 288.9,
+          "id": "gold1b",
+          "pairId": "gold1a",
+          "label": "A",
+          "radius": 16,
+          "colors": [
+            "gold"
+          ]
+        },
+        "to": {
+          "x": 708.2,
+          "y": 288.9,
+          "id": "gold1b",
+          "pairId": "gold1a",
+          "label": "A",
+          "radius": 16,
+          "colors": [
+            "gold"
+          ]
+        }
+      }
+    ],
+    "before": {
+      "min": -8.044306270986507,
+      "energy": 602.2308719737279,
+      "worst": [
+        {
+          "a": "portal:1",
+          "b": "portal:7",
+          "kinds": [
+            "portal",
+            "portal"
+          ],
+          "clearance": -8.044306270986507
+        },
+        {
+          "a": "portal:1",
+          "b": "portal:2",
+          "kinds": [
+            "portal",
+            "portal"
+          ],
+          "clearance": 1.3897297884544102
+        },
+        {
+          "a": "source:1",
+          "b": "portal:4",
+          "kinds": [
+            "source",
+            "portal"
+          ],
+          "clearance": 10.336104427116666
+        },
+        {
+          "a": "source:0",
+          "b": "target:1",
+          "kinds": [
+            "source",
+            "target"
+          ],
+          "clearance": 11.972065461820328
+        },
+        {
+          "a": "target:1",
+          "b": "portal:3",
+          "kinds": [
+            "target",
+            "portal"
+          ],
+          "clearance": 17.329765682433624
+        },
+        {
+          "a": "source:2",
+          "b": "target:2",
+          "kinds": [
+            "source",
+            "target"
+          ],
+          "clearance": 17.481545392864007
+        },
+        {
+          "a": "portal:7",
+          "b": "mirror:1",
+          "kinds": [
+            "portal",
+            "mirror"
+          ],
+          "clearance": 24.69711558487507
+        },
+        {
+          "a": "source:2",
+          "b": "target:0",
+          "kinds": [
+            "source",
+            "target"
+          ],
+          "clearance": 30.51330324132634
+        }
+      ]
+    },
+    "after": {
+      "minimum": 10.336104427116666,
+      "initial": 10.336104427116666,
+      "reference": 10.336104427116666,
+      "perturbed": 10.336104427116666,
+      "worst": [
+        {
+          "a": "source:1",
+          "b": "portal:4",
+          "kinds": [
+            "source",
+            "portal"
+          ],
+          "clearance": 10.336104427116666
+        },
+        {
+          "a": "source:0",
+          "b": "target:1",
+          "kinds": [
+            "source",
+            "target"
+          ],
+          "clearance": 11.972065461820328
+        },
+        {
+          "a": "portal:1",
+          "b": "portal:7",
+          "kinds": [
+            "portal",
+            "portal"
+          ],
+          "clearance": 12.761664650902539
+        },
+        {
+          "a": "target:1",
+          "b": "portal:3",
+          "kinds": [
+            "target",
+            "portal"
+          ],
+          "clearance": 17.329765682433624
+        },
+        {
+          "a": "source:2",
+          "b": "target:2",
+          "kinds": [
+            "source",
+            "target"
+          ],
+          "clearance": 17.481545392864007
+        },
+        {
+          "a": "portal:7",
+          "b": "mirror:1",
+          "kinds": [
+            "portal",
+            "mirror"
+          ],
+          "clearance": 24.69711558487507
+        },
+        {
+          "a": "portal:1",
+          "b": "portal:2",
+          "kinds": [
+            "portal",
+            "portal"
+          ],
+          "clearance": 25.64011149214813
+        },
+        {
+          "a": "source:2",
+          "b": "target:0",
+          "kinds": [
+            "source",
+            "target"
+          ],
+          "clearance": 30.51330324132634
+        }
+      ]
+    },
+    "validation": {
+      "issues": [],
+      "initialStatus": "collision",
+      "referenceStatus": "target",
+      "allDocumentedIsolatedTopologiesPreserved": true,
+      "changedCaseTopologies": [],
+      "conflictBefore": 5,
+      "conflictAfter": 5,
+      "minIncidence": 34.306934049378945,
+      "perturbation": {
+        "minIncidence": 33.806934049378945,
+        "minMirrorEndpointMargin": 62.39999999999997,
+        "minWallClearance": null,
+        "minTargetTransverseMargin": 15.869830291510826,
+        "minPortalTransverseMargin": 12.185348103167701,
+        "minDifferentColorPathDistance": 41.751093869947084
+      },
+      "tests": 14,
+      "failures": 0
+    },
+    "explanation": "Fontes deslocadas na sua linha de emissão; portais mantêm a direção de propagação e os mesmos itinerários da referência. Todos os estados finais dos casos documentados e contraprovas completas foram reproduzidos. Mudanças de distância não demonstram equivalência de todo o contínuo de ângulos."
+  }
+]

@@ -1,0 +1,4505 @@
+[
+  {
+    "number": 14,
+    "level": {
+      "number": 14,
+      "name": "Entrar de lado exige um recuo",
+      "difficulty": 75,
+      "family": "entrada-preparada-afastando-do-alvo",
+      "sources": [
+        {
+          "x": 60,
+          "y": 100,
+          "color": "gold",
+          "angle": 0
+        },
+        {
+          "x": 400,
+          "y": 60,
+          "color": "blue",
+          "angle": 90
+        }
+      ],
+      "targets": [
+        {
+          "x": 650,
+          "y": 208,
+          "color": "gold",
+          "radius": 22
+        },
+        {
+          "x": 720,
+          "y": 250,
+          "color": "blue",
+          "radius": 22
+        }
+      ],
+      "portals": [
+        {
+          "id": "A1",
+          "x": 350,
+          "y": 370,
+          "pairId": "A2",
+          "radius": 16,
+          "label": "A"
+        },
+        {
+          "id": "A2",
+          "x": 480,
+          "y": 100,
+          "pairId": "A1",
+          "radius": 16,
+          "label": "A"
+        }
+      ],
+      "objects": [
+        {
+          "type": "mirror",
+          "id": "g1",
+          "x": 220,
+          "y": 100,
+          "length": 124.8,
+          "angle": 69
+        },
+        {
+          "type": "mirror",
+          "id": "g2",
+          "x": 220,
+          "y": 370,
+          "length": 124.8,
+          "angle": 16
+        },
+        {
+          "type": "mirror",
+          "id": "g3",
+          "x": 650,
+          "y": 100,
+          "length": 124.8,
+          "angle": 78
+        },
+        {
+          "type": "mirror",
+          "id": "c1",
+          "x": 400,
+          "y": 250,
+          "length": 124.8,
+          "angle": 23
+        }
+      ],
+      "solution": [
+        45,
+        45,
+        45,
+        45
+      ],
+      "sourceAngle": 0,
+      "target": {
+        "x": 650,
+        "y": 200,
+        "color": "gold",
+        "radius": 22
+      },
+      "requiredBounces": 4,
+      "wallPurpose": [],
+      "decoyCount": 0,
+      "hint": "A saída precisa chegar horizontalmente ao receptor.",
+      "tutorial": "",
+      "rules": "Cada cor no seu alvo, sem cruzar outras trajetórias.",
+      "id": "light-v3-75",
+      "campaignNumber": 14,
+      "campaignBand": "basic",
+      "campaignRevision": "reflexos80-v6"
+    },
+    "scoreBefore": 2.0687699128799006,
+    "scoreAfter": 0,
+    "initial": 20.400203340640985,
+    "reference": 35.6333265278342,
+    "edits": [
+      {
+        "round": 0,
+        "scoreBefore": 2.0687699128799006,
+        "scoreAfter": 0
+      }
+    ]
+  },
+  {
+    "number": 15,
+    "level": {
+      "id": "light-v5-open-018",
+      "name": "Compartilhar o vazio",
+      "hint": "Cada trajeto funciona sozinho. Compare o espaço que ocupam juntos.",
+      "width": 800,
+      "height": 460,
+      "objects": [
+        {
+          "x": 159.1,
+          "y": 369.4,
+          "type": "mirror",
+          "length": 124.8,
+          "angle": 23.2
+        },
+        {
+          "x": 346.8,
+          "y": 292.7,
+          "type": "mirror",
+          "length": 124.8,
+          "angle": -9
+        },
+        {
+          "x": 562.3,
+          "y": 240,
+          "type": "mirror",
+          "length": 124.8,
+          "angle": 0
+        },
+        {
+          "x": 624.2,
+          "y": 115.5,
+          "type": "mirror",
+          "length": 124.8,
+          "angle": 0
+        },
+        {
+          "x": 291.7,
+          "y": 132.7,
+          "type": "mirror",
+          "length": 124.8,
+          "angle": 0
+        }
+      ],
+      "sources": [
+        {
+          "x": 159.1,
+          "y": 25,
+          "angle": 90,
+          "color": "gold"
+        },
+        {
+          "x": 473.2,
+          "y": 118.8,
+          "angle": 126.01169792172452,
+          "color": "blue"
+        }
+      ],
+      "targets": [
+        {
+          "x": 388.38234948541555,
+          "y": 160.73192884831383,
+          "radius": 22,
+          "color": "gold"
+        },
+        {
+          "x": 253.6,
+          "y": 225.2,
+          "radius": 22,
+          "color": "blue"
+        }
+      ],
+      "portals": [],
+      "solution": [
+        14.6,
+        -9,
+        0,
+        0,
+        -22.3
+      ],
+      "sourceAngle": 90,
+      "target": {
+        "x": 380.7,
+        "y": 158.5,
+        "radius": 22,
+        "color": "gold"
+      },
+      "requiredBounces": 3,
+      "wallPurpose": [],
+      "decoyCount": 2,
+      "tutorial": "",
+      "rules": "Leve cada cor ao seu alvo sem cruzar outras cores.",
+      "number": 15,
+      "campaignNumber": 15,
+      "campaignBand": "basic",
+      "campaignRevision": "reflexos80-v6"
+    },
+    "scoreBefore": 44.12966239748483,
+    "scoreAfter": 0,
+    "initial": 14.997524970312547,
+    "reference": 30.371592497131076,
+    "edits": [
+      {
+        "round": 0,
+        "scoreBefore": 44.12966239748483,
+        "scoreAfter": 0
+      }
+    ]
+  },
+  {
+    "number": 16,
+    "level": {
+      "sources": [
+        {
+          "x": 366.6154105444736,
+          "y": 213.19122210819663,
+          "angle": -148,
+          "color": "gold"
+        },
+        {
+          "x": 307.06089701741735,
+          "y": 231.09682792361693,
+          "angle": 132,
+          "color": "blue"
+        }
+      ],
+      "targets": [
+        {
+          "x": 672.574263096701,
+          "y": 250.47499210841295,
+          "radius": 22,
+          "color": "gold"
+        },
+        {
+          "x": 659.9714817405313,
+          "y": 191.7895520205911,
+          "radius": 22,
+          "color": "blue"
+        }
+      ],
+      "portals": [
+        {
+          "id": "s0a",
+          "pairId": "s0b",
+          "x": 360,
+          "y": 70,
+          "radius": 16,
+          "colors": [
+            "blue"
+          ],
+          "label": "A"
+        },
+        {
+          "id": "s0b",
+          "pairId": "s0a",
+          "x": 540,
+          "y": 390,
+          "radius": 16,
+          "colors": [
+            "gold"
+          ],
+          "label": "A"
+        },
+        {
+          "id": "s1a",
+          "pairId": "s1b",
+          "x": 360,
+          "y": 390,
+          "radius": 16,
+          "colors": [
+            "blue"
+          ],
+          "label": "B"
+        },
+        {
+          "id": "s1b",
+          "pairId": "s1a",
+          "x": 540,
+          "y": 70,
+          "radius": 16,
+          "colors": [
+            "blue"
+          ],
+          "label": "B"
+        }
+      ],
+      "objects": [
+        {
+          "x": 200,
+          "y": 110,
+          "type": "mirror",
+          "length": 124.8,
+          "angle": -50
+        },
+        {
+          "x": 200,
+          "y": 350,
+          "type": "mirror",
+          "length": 124.8,
+          "angle": 82.4
+        },
+        {
+          "x": 650,
+          "y": 362.5,
+          "type": "mirror",
+          "length": 124.8,
+          "angle": -16
+        },
+        {
+          "x": 650,
+          "y": 97.5,
+          "type": "mirror",
+          "length": 124.8,
+          "angle": 56.3
+        }
+      ],
+      "id": "light-v5-deduction-pair-00-filter",
+      "name": "Parecidas, mas diferentes",
+      "hint": "Uma diferença visível decide qual caminho continua disponível.",
+      "solution": [
+        -59.4,
+        73,
+        -25.3,
+        47
+      ],
+      "sourceAngle": -148,
+      "target": {
+        "x": 672.574263096701,
+        "y": 234.47499210841295,
+        "radius": 22,
+        "color": "gold"
+      },
+      "requiredBounces": 4,
+      "wallPurpose": [],
+      "decoyCount": 0,
+      "tutorial": "",
+      "rules": "Leve cada cor ao alvo sem cruzar os feixes.",
+      "number": 16,
+      "campaignNumber": 16,
+      "campaignBand": "apprentice",
+      "campaignRevision": "reflexos80-v6"
+    },
+    "scoreBefore": 456.00698753528206,
+    "scoreAfter": 0,
+    "initial": 14.023420230879438,
+    "reference": 14.023420230879438,
+    "edits": [
+      {
+        "round": 0,
+        "scoreBefore": 456.00698753528206,
+        "scoreAfter": 206.85990378591157
+      },
+      {
+        "round": 1,
+        "scoreBefore": 206.85990378591157,
+        "scoreAfter": 20.170502161384785
+      },
+      {
+        "round": 2,
+        "scoreBefore": 20.170502161384785,
+        "scoreAfter": 0
+      }
+    ]
+  },
+  {
+    "number": 19,
+    "level": {
+      "objects": [
+        {
+          "type": "mirror",
+          "x": 200,
+          "y": 110,
+          "length": 124.8,
+          "angle": -77.9
+        },
+        {
+          "type": "mirror",
+          "x": 200,
+          "y": 350,
+          "length": 124.8,
+          "angle": 77.3
+        }
+      ],
+      "sources": [
+        {
+          "x": 334,
+          "y": 110.00000000000001,
+          "angle": -180,
+          "color": "gold"
+        },
+        {
+          "x": 350,
+          "y": 350,
+          "angle": -180,
+          "color": "blue"
+        }
+      ],
+      "targets": [
+        {
+          "x": 725,
+          "y": 347,
+          "radius": 22,
+          "color": "gold"
+        },
+        {
+          "x": 725,
+          "y": 100,
+          "radius": 22,
+          "color": "blue"
+        }
+      ],
+      "portals": [
+        {
+          "id": "g1a",
+          "pairId": "g1b",
+          "label": "A",
+          "x": 290,
+          "y": 206.5,
+          "radius": 16,
+          "colors": [
+            "gold"
+          ]
+        },
+        {
+          "id": "g1b",
+          "pairId": "g1a",
+          "label": "A",
+          "x": 540.9,
+          "y": 149.5,
+          "radius": 16,
+          "colors": [
+            "gold"
+          ]
+        },
+        {
+          "id": "g2a",
+          "pairId": "g2b",
+          "label": "B",
+          "x": 213.1,
+          "y": 234.3,
+          "radius": 16,
+          "colors": [
+            "gold"
+          ]
+        },
+        {
+          "id": "g2b",
+          "pairId": "g2a",
+          "label": "B",
+          "x": 714,
+          "y": 242.6,
+          "radius": 16,
+          "colors": [
+            "gold"
+          ]
+        },
+        {
+          "id": "b1a",
+          "pairId": "b1b",
+          "label": "C",
+          "x": 398.9,
+          "y": 104.4,
+          "radius": 16,
+          "colors": [
+            "blue"
+          ]
+        },
+        {
+          "id": "b1b",
+          "pairId": "b1a",
+          "label": "C",
+          "x": 640,
+          "y": 204.9,
+          "radius": 16,
+          "colors": [
+            "blue"
+          ]
+        }
+      ],
+      "width": 800,
+      "height": 460,
+      "id": "light-v5-portal-023",
+      "name": "A saída decide 023",
+      "hint": "Compare o que acontece depois de cada saída.",
+      "solution": [
+        -48,
+        77.3
+      ],
+      "sourceAngle": -180,
+      "target": {
+        "x": 725,
+        "y": 347,
+        "radius": 22,
+        "color": "gold"
+      },
+      "requiredBounces": 2,
+      "wallPurpose": [],
+      "decoyCount": 0,
+      "tutorial": "",
+      "rules": "Leve todas as fontes aos alvos da mesma cor, sem cruzar nem encostar nos trechos físicos das outras luzes.",
+      "number": 19,
+      "campaignNumber": 19,
+      "campaignBand": "apprentice",
+      "campaignRevision": "reflexos80-v6"
+    },
+    "scoreBefore": 191.3120605029629,
+    "scoreAfter": 0,
+    "initial": 20.141154426368573,
+    "reference": 20.141154426368573,
+    "edits": [
+      {
+        "round": 0,
+        "scoreBefore": 191.3120605029629,
+        "scoreAfter": 0
+      }
+    ]
+  },
+  {
+    "number": 22,
+    "level": {
+      "number": 22,
+      "name": "Sair longe para chegar perto",
+      "difficulty": 74,
+      "family": "salto-recuado-retorno-superior",
+      "sources": [
+        {
+          "x": 500,
+          "y": 350,
+          "color": "gold",
+          "angle": 0
+        }
+      ],
+      "targets": [
+        {
+          "x": 440,
+          "y": 80,
+          "color": "gold",
+          "radius": 22
+        }
+      ],
+      "portals": [
+        {
+          "id": "A1",
+          "x": 644.3431457505076,
+          "y": 274.34314575050763,
+          "pairId": "A2",
+          "radius": 16,
+          "label": "A"
+        },
+        {
+          "id": "A2",
+          "x": 180,
+          "y": 350,
+          "pairId": "A1",
+          "radius": 16,
+          "label": "A"
+        }
+      ],
+      "objects": [
+        {
+          "type": "mirror",
+          "id": "g1",
+          "x": 650,
+          "y": 350,
+          "length": 124.8,
+          "angle": -21
+        },
+        {
+          "type": "mirror",
+          "id": "g2",
+          "x": 180,
+          "y": 80,
+          "length": 124.8,
+          "angle": -74
+        },
+        {
+          "type": "wall",
+          "x": 400,
+          "y": 280,
+          "length": 360,
+          "angle": 90,
+          "width": 12,
+          "purpose": "Deixa livre apenas o contorno superior entre regiões."
+        },
+        {
+          "type": "wall",
+          "x": 610,
+          "y": 230,
+          "length": 280,
+          "angle": 0,
+          "width": 12,
+          "purpose": "Bloqueia a diagonal curta ao alvo, sem bloquear a entrada abaixo dela."
+        }
+      ],
+      "solution": [
+        -45,
+        -45
+      ],
+      "sourceAngle": 0,
+      "target": {
+        "x": 440,
+        "y": 80,
+        "color": "gold",
+        "radius": 22
+      },
+      "requiredBounces": 2,
+      "wallPurpose": [
+        "Deixa livre apenas o contorno superior entre regiões.",
+        "Bloqueia a diagonal curta ao alvo, sem bloquear a entrada abaixo dela."
+      ],
+      "decoyCount": 0,
+      "hint": "A saída distante pode ser a útil.",
+      "tutorial": "",
+      "rules": "Leve a luz ao alvo.",
+      "id": "light-v3-74",
+      "campaignNumber": 22,
+      "campaignBand": "apprentice",
+      "campaignRevision": "reflexos80-v6"
+    },
+    "scoreBefore": 34.035303466310665,
+    "scoreAfter": 0,
+    "initial": 15.946165846632034,
+    "reference": 14.237909926589378,
+    "edits": [
+      {
+        "round": 0,
+        "scoreBefore": 34.035303466310665,
+        "scoreAfter": 0
+      }
+    ]
+  },
+  {
+    "number": 26,
+    "level": {
+      "sources": [
+        {
+          "x": 46.62389615050998,
+          "y": 407.26576231490657,
+          "angle": -62,
+          "color": "gold"
+        },
+        {
+          "x": 546.754368309906,
+          "y": 156.54529904736845,
+          "angle": 78,
+          "color": "blue"
+        },
+        {
+          "x": 356.45405879205975,
+          "y": 35.346769270320635,
+          "angle": 76,
+          "color": "pink"
+        }
+      ],
+      "targets": [
+        {
+          "x": 710.2,
+          "y": 107.9,
+          "radius": 22,
+          "color": "gold"
+        },
+        {
+          "x": 530.4,
+          "y": 93.4,
+          "radius": 22,
+          "color": "blue"
+        },
+        {
+          "x": 152.8,
+          "y": 252.5,
+          "radius": 22,
+          "color": "pink"
+        }
+      ],
+      "portals": [
+        {
+          "id": "p0a",
+          "pairId": "p0b",
+          "x": 293.6,
+          "y": 211.7,
+          "radius": 16,
+          "colors": [
+            "gold"
+          ],
+          "label": "A"
+        },
+        {
+          "id": "p0b",
+          "pairId": "p0a",
+          "x": 583,
+          "y": 66.5,
+          "radius": 16,
+          "colors": [
+            "gold"
+          ],
+          "label": "A"
+        },
+        {
+          "id": "p1a",
+          "pairId": "p1b",
+          "x": 538,
+          "y": 253.4,
+          "radius": 16,
+          "colors": [
+            "blue"
+          ],
+          "label": "B"
+        },
+        {
+          "id": "p1b",
+          "pairId": "p1a",
+          "x": 592.3,
+          "y": 220.4,
+          "radius": 16,
+          "colors": [
+            "blue"
+          ],
+          "label": "B"
+        },
+        {
+          "id": "p2a",
+          "pairId": "p2b",
+          "x": 312.4557725022871,
+          "y": 79.1364192571286,
+          "radius": 16,
+          "colors": [
+            "pink"
+          ],
+          "label": "C"
+        },
+        {
+          "id": "p2b",
+          "pairId": "p2a",
+          "x": 225.3,
+          "y": 350.8,
+          "radius": 16,
+          "colors": [
+            "pink"
+          ],
+          "label": "C"
+        }
+      ],
+      "objects": [
+        {
+          "type": "mirror",
+          "x": 210,
+          "y": 100,
+          "length": 124.8,
+          "angle": 26.6
+        },
+        {
+          "type": "mirror",
+          "x": 590,
+          "y": 360,
+          "length": 124.8,
+          "angle": 18.7
+        },
+        {
+          "type": "mirror",
+          "x": 400,
+          "y": 210,
+          "length": 124.8,
+          "angle": 5.8
+        },
+        {
+          "type": "mirror",
+          "x": 693,
+          "y": 213.6,
+          "length": 124.8,
+          "angle": 17.2
+        }
+      ],
+      "id": "light-v5-deduction-four-01",
+      "name": "A curva depende da escolha",
+      "hint": "A chegada ao último espelho muda quando o caminho anterior muda.",
+      "solution": [
+        -4.4,
+        -12.3,
+        -25.2,
+        -13.8
+      ],
+      "sourceAngle": -62,
+      "target": {
+        "x": 710.2,
+        "y": 107.9,
+        "radius": 22,
+        "color": "gold"
+      },
+      "requiredBounces": 4,
+      "wallPurpose": [],
+      "decoyCount": 0,
+      "tutorial": "",
+      "rules": "Leve cada cor ao alvo sem cruzar os feixes.",
+      "number": 26,
+      "campaignNumber": 26,
+      "campaignBand": "apprentice",
+      "campaignRevision": "reflexos80-v6"
+    },
+    "scoreBefore": 279.695363000972,
+    "scoreAfter": 0,
+    "initial": 15.079353415554593,
+    "reference": 15.079353415554593,
+    "edits": [
+      {
+        "round": 0,
+        "scoreBefore": 279.695363000972,
+        "scoreAfter": 3.5368015858593163
+      },
+      {
+        "round": 1,
+        "scoreBefore": 3.5368015858593163,
+        "scoreAfter": 0
+      }
+    ]
+  },
+  {
+    "number": 28,
+    "level": {
+      "id": "light-v5-open-chain-003",
+      "name": "Compatibilidade após a poda",
+      "hint": "Uma alternativa pode decidir a passagem de uma segunda cor e limitar a terceira.",
+      "width": 800,
+      "height": 460,
+      "objects": [
+        {
+          "x": 335.2,
+          "y": 286.9,
+          "type": "mirror",
+          "length": 124.8,
+          "angle": -10.2
+        },
+        {
+          "x": 517,
+          "y": 89.3,
+          "type": "mirror",
+          "length": 124.8,
+          "angle": -18.9
+        },
+        {
+          "x": 521,
+          "y": 255.8,
+          "type": "mirror",
+          "length": 124.8,
+          "angle": 13.3
+        },
+        {
+          "x": 156.1,
+          "y": 76.2,
+          "type": "mirror",
+          "length": 124.8,
+          "angle": 0
+        },
+        {
+          "x": 326.2,
+          "y": 66,
+          "type": "mirror",
+          "length": 124.8,
+          "angle": 0
+        },
+        {
+          "x": 458.7,
+          "y": 387.5,
+          "type": "mirror",
+          "length": 124.8,
+          "angle": 0
+        }
+      ],
+      "sources": [
+        {
+          "x": 166.7,
+          "y": 230.9,
+          "angle": 18.383928551889905,
+          "color": "gold"
+        },
+        {
+          "x": 719.5,
+          "y": 208.5,
+          "angle": -149.51714704539538,
+          "color": "blue"
+        },
+        {
+          "x": 672.1,
+          "y": 418.6,
+          "angle": -132.86540159357008,
+          "color": "pink"
+        }
+      ],
+      "targets": [
+        {
+          "x": 662.2,
+          "y": 24,
+          "radius": 22,
+          "color": "gold"
+        },
+        {
+          "x": 439.67960312887226,
+          "y": 282.964349998851,
+          "radius": 22,
+          "color": "blue"
+        },
+        {
+          "x": 90.3,
+          "y": 417.1,
+          "radius": 22,
+          "color": "pink"
+        }
+      ],
+      "portals": [],
+      "solution": [
+        -37,
+        -18.9,
+        13.3,
+        0,
+        -49.7,
+        0
+      ],
+      "sourceAngle": 18.383928551889905,
+      "target": {
+        "x": 662.2,
+        "y": 24,
+        "radius": 22,
+        "color": "gold"
+      },
+      "requiredBounces": 4,
+      "wallPurpose": [],
+      "decoyCount": 2,
+      "tutorial": "",
+      "rules": "Leve cada cor ao seu alvo sem cruzar outras cores.",
+      "number": 28,
+      "campaignNumber": 28,
+      "campaignBand": "apprentice",
+      "campaignRevision": "reflexos80-v6"
+    },
+    "scoreBefore": 183.27969894212475,
+    "scoreAfter": 0,
+    "initial": 15.811595967189312,
+    "reference": 20.346297731488924,
+    "edits": [
+      {
+        "round": 0,
+        "scoreBefore": 183.27969894212475,
+        "scoreAfter": 0
+      }
+    ]
+  },
+  {
+    "number": 31,
+    "level": {
+      "id": "light-v5-open-028",
+      "name": "A chegada reservada",
+      "hint": "Compare as aproximações do alvo com os trajetos que as outras cores precisam conservar.",
+      "width": 800,
+      "height": 460,
+      "objects": [
+        {
+          "x": 275.2,
+          "y": 74.9,
+          "type": "mirror",
+          "length": 124.8,
+          "angle": 12.3
+        },
+        {
+          "x": 378.2,
+          "y": 391.1,
+          "type": "mirror",
+          "length": 124.8,
+          "angle": 28.9
+        },
+        {
+          "x": 448.8,
+          "y": 271.9,
+          "type": "mirror",
+          "length": 124.8,
+          "angle": 0
+        },
+        {
+          "x": 66,
+          "y": 151.7,
+          "type": "mirror",
+          "length": 124.8,
+          "angle": 0
+        },
+        {
+          "x": 306.8759131583108,
+          "y": 247.72912575406048,
+          "type": "mirror",
+          "length": 124.8,
+          "angle": 35.2
+        }
+      ],
+      "sources": [
+        {
+          "x": 48,
+          "y": 371.8,
+          "angle": -52.575308218944166,
+          "color": "gold"
+        },
+        {
+          "x": 698.3,
+          "y": 216.6,
+          "angle": 151.4033371765396,
+          "color": "blue"
+        }
+      ],
+      "targets": [
+        {
+          "x": 632.4,
+          "y": 206.3,
+          "radius": 22,
+          "color": "gold"
+        },
+        {
+          "x": 370.56174510862706,
+          "y": 183.64677762873512,
+          "radius": 22,
+          "color": "blue"
+        }
+      ],
+      "portals": [],
+      "solution": [
+        -1.3,
+        18.9,
+        15.5,
+        0,
+        -79.9
+      ],
+      "sourceAngle": -52.575308218944166,
+      "target": {
+        "x": 632.4,
+        "y": 206.3,
+        "radius": 22,
+        "color": "gold"
+      },
+      "requiredBounces": 4,
+      "wallPurpose": [],
+      "decoyCount": 1,
+      "tutorial": "",
+      "rules": "Leve cada cor ao seu alvo sem cruzar outras cores.",
+      "number": 31,
+      "campaignNumber": 31,
+      "campaignBand": "intermediate",
+      "campaignRevision": "reflexos80-v6"
+    },
+    "scoreBefore": 173.88436591937665,
+    "scoreAfter": 0,
+    "initial": 19.70007496247659,
+    "reference": 18.31814417574622,
+    "edits": [
+      {
+        "round": 0,
+        "scoreBefore": 173.88436591937665,
+        "scoreAfter": 7.208143094007228
+      },
+      {
+        "round": 1,
+        "scoreBefore": 7.208143094007228,
+        "scoreAfter": 2.615439230908983
+      },
+      {
+        "round": 2,
+        "scoreBefore": 2.615439230908983,
+        "scoreAfter": 0
+      }
+    ]
+  },
+  {
+    "number": 32,
+    "level": {
+      "sources": [
+        {
+          "x": 40.855328258536474,
+          "y": 161.56362579862036,
+          "angle": -20,
+          "color": "gold"
+        },
+        {
+          "x": 546.4540587920598,
+          "y": 185.34676927032064,
+          "angle": 76,
+          "color": "blue"
+        },
+        {
+          "x": 400,
+          "y": 30,
+          "angle": 90,
+          "color": "pink"
+        }
+      ],
+      "targets": [
+        {
+          "x": 693.1,
+          "y": 271.3,
+          "radius": 22,
+          "color": "gold"
+        },
+        {
+          "x": 208.7,
+          "y": 291.3,
+          "radius": 22,
+          "color": "blue"
+        },
+        {
+          "x": 669.5,
+          "y": 147.9,
+          "radius": 22,
+          "color": "pink"
+        }
+      ],
+      "portals": [
+        {
+          "id": "p0a",
+          "pairId": "p0b",
+          "x": 226.2,
+          "y": 204.9,
+          "radius": 16,
+          "colors": [
+            "gold"
+          ],
+          "label": "A"
+        },
+        {
+          "id": "p0b",
+          "pairId": "p0a",
+          "x": 652.8862915010153,
+          "y": 73.58629150101524,
+          "radius": 16,
+          "colors": [
+            "gold"
+          ],
+          "label": "A"
+        },
+        {
+          "id": "p1a",
+          "pairId": "p1b",
+          "x": 608.5350819325745,
+          "y": 187.0276777067893,
+          "radius": 16,
+          "colors": [
+            "blue"
+          ],
+          "label": "B"
+        },
+        {
+          "id": "p1b",
+          "pairId": "p1a",
+          "x": 206.7,
+          "y": 388.3,
+          "radius": 16,
+          "colors": [
+            "blue"
+          ],
+          "label": "B"
+        },
+        {
+          "id": "p2a",
+          "pairId": "p2b",
+          "x": 753.8,
+          "y": 232.3,
+          "radius": 16,
+          "colors": [
+            "pink"
+          ],
+          "label": "C"
+        },
+        {
+          "id": "p2b",
+          "pairId": "p2a",
+          "x": 478.9,
+          "y": 135.9,
+          "radius": 16,
+          "colors": [
+            "pink"
+          ],
+          "label": "C"
+        }
+      ],
+      "objects": [
+        {
+          "type": "mirror",
+          "x": 210,
+          "y": 100,
+          "length": 124.8,
+          "angle": 61.6
+        },
+        {
+          "type": "mirror",
+          "x": 597.5175409662872,
+          "y": 357.26383885339465,
+          "length": 124.8,
+          "angle": -15.9
+        },
+        {
+          "type": "mirror",
+          "x": 400,
+          "y": 210,
+          "length": 124.8,
+          "angle": 69.5
+        },
+        {
+          "type": "wall",
+          "x": 290,
+          "y": 137.51074010811098,
+          "length": 275.02148021622196,
+          "width": 12,
+          "angle": 90
+        },
+        {
+          "type": "wall",
+          "x": 290,
+          "y": 398.510740108111,
+          "length": 122.97851978377804,
+          "width": 12,
+          "angle": 90
+        },
+        {
+          "type": "wall",
+          "x": 510,
+          "y": 45.45,
+          "length": 90.9,
+          "width": 12,
+          "angle": 90
+        },
+        {
+          "type": "wall",
+          "x": 510,
+          "y": 265.1051135169236,
+          "length": 99.00122908147105,
+          "width": 12,
+          "angle": 90
+        },
+        {
+          "type": "wall",
+          "x": 510,
+          "y": 418.30286402882956,
+          "length": 83.39427194234088,
+          "width": 12,
+          "angle": 90
+        }
+      ],
+      "id": "light-v5-deduction-windows-04",
+      "name": "Visibilidade entre regiões",
+      "hint": "Compare o que cada abertura deixa passar.",
+      "solution": [
+        30.6,
+        -46.9,
+        38.5
+      ],
+      "sourceAngle": -20,
+      "target": {
+        "x": 693.1,
+        "y": 271.3,
+        "radius": 22,
+        "color": "gold"
+      },
+      "requiredBounces": 3,
+      "wallPurpose": [],
+      "decoyCount": 0,
+      "tutorial": "",
+      "rules": "Leve cada cor ao alvo sem cruzar os feixes.",
+      "number": 32,
+      "campaignNumber": 32,
+      "campaignBand": "intermediate",
+      "campaignRevision": "reflexos80-v6"
+    },
+    "scoreBefore": 514.3268296826525,
+    "scoreAfter": 0.00007370916536433321,
+    "initial": 16.230788617431358,
+    "reference": 13.991414595794936,
+    "edits": [
+      {
+        "round": 0,
+        "scoreBefore": 514.3268296826525,
+        "scoreAfter": 253.79773040589103
+      },
+      {
+        "round": 1,
+        "scoreBefore": 253.79773040589103,
+        "scoreAfter": 12.338837938031842
+      },
+      {
+        "round": 2,
+        "scoreBefore": 12.338837938031842,
+        "scoreAfter": 0.00007370916536433321
+      }
+    ]
+  },
+  {
+    "number": 35,
+    "level": {
+      "id": "light-v4-open-065",
+      "name": "Primeiro, para longe",
+      "hint": "Uma saída que aponta para o alvo pode ocupar a chegada de outra cor.",
+      "width": 800,
+      "height": 460,
+      "objects": [
+        {
+          "x": 241.81673681213206,
+          "y": 219.23832400667175,
+          "type": "mirror",
+          "length": 124.8,
+          "angle": -1
+        },
+        {
+          "x": 448.4,
+          "y": 102.2,
+          "type": "mirror",
+          "length": 124.8,
+          "angle": -85.1
+        },
+        {
+          "x": 441.6,
+          "y": 359,
+          "type": "mirror",
+          "length": 124.8,
+          "angle": -87
+        },
+        {
+          "x": 387.6,
+          "y": 233,
+          "type": "mirror",
+          "length": 124.8,
+          "angle": 0
+        },
+        {
+          "x": 592.4,
+          "y": 208.2,
+          "type": "mirror",
+          "length": 124.8,
+          "angle": 53.9
+        },
+        {
+          "x": 281,
+          "y": 381,
+          "type": "mirror",
+          "length": 124.8,
+          "angle": 0
+        }
+      ],
+      "sources": [
+        {
+          "x": 25,
+          "y": 220.6,
+          "angle": 0,
+          "color": "gold"
+        },
+        {
+          "x": 25,
+          "y": 102.2,
+          "angle": 0,
+          "color": "blue"
+        },
+        {
+          "x": 775,
+          "y": 359,
+          "angle": 180,
+          "color": "pink"
+        }
+      ],
+      "targets": [
+        {
+          "x": 532.7,
+          "y": 417.1,
+          "radius": 22,
+          "color": "gold"
+        },
+        {
+          "x": 117.6,
+          "y": 45.1,
+          "radius": 22,
+          "color": "blue"
+        },
+        {
+          "x": 653.6,
+          "y": 381.1,
+          "radius": 22,
+          "color": "pink"
+        }
+      ],
+      "portals": [],
+      "solution": [
+        39.5,
+        -85.1,
+        33.4,
+        -42,
+        0,
+        43.8
+      ],
+      "sourceAngle": 0,
+      "target": {
+        "x": 516.7,
+        "y": 417.1,
+        "radius": 22,
+        "color": "gold"
+      },
+      "requiredBounces": 5,
+      "wallPurpose": [],
+      "decoyCount": 1,
+      "tutorial": "",
+      "rules": "Leve cada cor ao seu alvo sem cruzar outras cores.",
+      "number": 35,
+      "campaignNumber": 35,
+      "campaignBand": "intermediate",
+      "campaignRevision": "reflexos80-v6"
+    },
+    "scoreBefore": 94.22894647836851,
+    "scoreAfter": 0,
+    "initial": 16.899557491689123,
+    "reference": 18.31168549381659,
+    "edits": [
+      {
+        "round": 0,
+        "scoreBefore": 94.22894647836851,
+        "scoreAfter": 22.437353720950256
+      },
+      {
+        "round": 1,
+        "scoreBefore": 22.437353720950256,
+        "scoreAfter": 0
+      }
+    ]
+  },
+  {
+    "number": 37,
+    "level": {
+      "sources": [
+        {
+          "x": 30,
+          "y": 330,
+          "angle": 0,
+          "color": "gold"
+        }
+      ],
+      "targets": [
+        {
+          "x": 100,
+          "y": 100,
+          "radius": 22,
+          "color": "gold"
+        }
+      ],
+      "objects": [
+        {
+          "x": 242.42640687119285,
+          "y": 364.42640687119285,
+          "type": "mirror",
+          "angle": 76,
+          "length": 124.8
+        },
+        {
+          "x": 600,
+          "y": 280,
+          "type": "mirror",
+          "angle": -14,
+          "length": 124.8
+        },
+        {
+          "type": "wall",
+          "x": 330,
+          "y": 230,
+          "length": 460,
+          "width": 12,
+          "angle": 90
+        },
+        {
+          "type": "wall",
+          "x": 160,
+          "y": 240,
+          "length": 320,
+          "width": 12,
+          "angle": 0
+        }
+      ],
+      "portals": [
+        {
+          "id": "a",
+          "pairId": "b",
+          "x": 200,
+          "y": 420,
+          "radius": 16,
+          "label": "A"
+        },
+        {
+          "id": "b",
+          "pairId": "a",
+          "x": 600,
+          "y": 100,
+          "radius": 16,
+          "label": "A"
+        },
+        {
+          "id": "c",
+          "pairId": "d",
+          "x": 450,
+          "y": 280,
+          "radius": 16,
+          "label": "B"
+        },
+        {
+          "id": "d",
+          "pairId": "c",
+          "x": 250,
+          "y": 100,
+          "radius": 16,
+          "label": "B"
+        }
+      ],
+      "id": "light-v4-deduction-pilot-return",
+      "name": "Volta pelo outro acesso",
+      "hint": "O destino está deste lado, mas o acesso útil vem de fora.",
+      "solution": [
+        45,
+        -45
+      ],
+      "sourceAngle": 0,
+      "target": {
+        "x": 100,
+        "y": 100,
+        "radius": 22,
+        "color": "gold"
+      },
+      "requiredBounces": 2,
+      "wallPurpose": [],
+      "decoyCount": 0,
+      "tutorial": "",
+      "rules": "Leve a luz ao alvo.",
+      "number": 37,
+      "campaignNumber": 37,
+      "campaignBand": "intermediate",
+      "campaignRevision": "reflexos80-v6"
+    },
+    "scoreBefore": 310.1058452108377,
+    "scoreAfter": 242,
+    "initial": 3,
+    "reference": 3,
+    "edits": [
+      {
+        "round": 0,
+        "scoreBefore": 310.1058452108377,
+        "scoreAfter": 246.51201921460634
+      },
+      {
+        "round": 1,
+        "scoreBefore": 246.51201921460634,
+        "scoreAfter": 242
+      }
+    ]
+  },
+  {
+    "number": 38,
+    "level": {
+      "sources": [
+        {
+          "x": 495.4423259036624,
+          "y": 162.09445330007907,
+          "angle": -170,
+          "color": "gold"
+        },
+        {
+          "x": 32.242128958775965,
+          "y": 101.28872823348749,
+          "angle": 56,
+          "color": "blue"
+        },
+        {
+          "x": 400.8759651440098,
+          "y": 433.54021031123557,
+          "angle": -98,
+          "color": "pink"
+        }
+      ],
+      "targets": [
+        {
+          "x": 650,
+          "y": 272.5,
+          "radius": 22,
+          "color": "gold"
+        },
+        {
+          "x": 654.473543227766,
+          "y": 194.13230058044033,
+          "radius": 22,
+          "color": "blue"
+        },
+        {
+          "x": 568,
+          "y": 308,
+          "radius": 22,
+          "color": "pink"
+        }
+      ],
+      "portals": [
+        {
+          "id": "s0a",
+          "pairId": "s0b",
+          "x": 360,
+          "y": 70,
+          "radius": 16,
+          "colors": [
+            "gold"
+          ],
+          "label": "A"
+        },
+        {
+          "id": "s0b",
+          "pairId": "s0a",
+          "x": 540,
+          "y": 390,
+          "radius": 16,
+          "colors": [
+            "gold"
+          ],
+          "label": "A"
+        },
+        {
+          "id": "s1a",
+          "pairId": "s1b",
+          "x": 352.12153797590236,
+          "y": 388.61081457866453,
+          "radius": 16,
+          "colors": [
+            "blue"
+          ],
+          "label": "B"
+        },
+        {
+          "id": "s1b",
+          "pairId": "s1a",
+          "x": 540,
+          "y": 70,
+          "radius": 16,
+          "colors": [
+            "blue"
+          ],
+          "label": "B"
+        },
+        {
+          "id": "pinka",
+          "pairId": "pinkb",
+          "x": 458.9,
+          "y": 369.1,
+          "radius": 16,
+          "colors": [
+            "pink"
+          ],
+          "label": "C"
+        },
+        {
+          "id": "pinkb",
+          "pairId": "pinka",
+          "x": 500,
+          "y": 235.6,
+          "radius": 16,
+          "colors": [
+            "pink"
+          ],
+          "label": "C"
+        }
+      ],
+      "objects": [
+        {
+          "x": 200,
+          "y": 110,
+          "type": "mirror",
+          "length": 124.8,
+          "angle": -61
+        },
+        {
+          "x": 200,
+          "y": 350,
+          "type": "mirror",
+          "length": 124.8,
+          "angle": 44.4
+        },
+        {
+          "x": 650,
+          "y": 362.5,
+          "type": "mirror",
+          "length": 124.8,
+          "angle": -21
+        },
+        {
+          "x": 650,
+          "y": 97.5,
+          "type": "mirror",
+          "length": 124.8,
+          "angle": 61.3
+        },
+        {
+          "type": "mirror",
+          "x": 380,
+          "y": 285,
+          "length": 124.8,
+          "angle": -6.7
+        }
+      ],
+      "id": "light-v5-deduction-symmetry-02-base-reauthored",
+      "name": "Dois pares e uma vizinha",
+      "hint": "Uma escolha pode mudar o espaço disponível para a terceira cor.",
+      "solution": [
+        88,
+        13.4,
+        -52,
+        30.3,
+        -45.5
+      ],
+      "sourceAngle": -170,
+      "target": {
+        "x": 650,
+        "y": 272.5,
+        "radius": 22,
+        "color": "gold"
+      },
+      "requiredBounces": 5,
+      "wallPurpose": [],
+      "decoyCount": 0,
+      "tutorial": "",
+      "rules": "Leve cada cor ao alvo sem cruzar os feixes.",
+      "number": 38,
+      "campaignNumber": 38,
+      "campaignBand": "intermediate",
+      "campaignRevision": "reflexos80-v6"
+    },
+    "scoreBefore": 2.83801909306007,
+    "scoreAfter": 0,
+    "initial": 17.234389269185982,
+    "reference": 20.800997824469945,
+    "edits": [
+      {
+        "round": 0,
+        "scoreBefore": 2.83801909306007,
+        "scoreAfter": 0.6716433672600142
+      },
+      {
+        "round": 1,
+        "scoreBefore": 0.6716433672600142,
+        "scoreAfter": 0
+      }
+    ]
+  },
+  {
+    "number": 39,
+    "level": {
+      "sources": [
+        {
+          "x": 246.28828433995017,
+          "y": 245.54435894139948,
+          "angle": -104,
+          "color": "gold"
+        },
+        {
+          "x": 456.73406602065137,
+          "y": 124.00681407786556,
+          "angle": 354,
+          "color": "blue"
+        },
+        {
+          "x": 558.4428909986513,
+          "y": 257.7323038463895,
+          "angle": -188,
+          "color": "pink"
+        }
+      ],
+      "targets": [
+        {
+          "x": 428.2,
+          "y": 69.2,
+          "radius": 22,
+          "color": "gold"
+        },
+        {
+          "x": 95.7,
+          "y": 340.4,
+          "radius": 22,
+          "color": "blue"
+        },
+        {
+          "x": 360.8,
+          "y": 147.4,
+          "radius": 22,
+          "color": "pink"
+        }
+      ],
+      "portals": [
+        {
+          "id": "p0a",
+          "pairId": "p0b",
+          "x": 515.6,
+          "y": 196.9,
+          "radius": 16,
+          "colors": [
+            "gold"
+          ],
+          "label": "A"
+        },
+        {
+          "id": "p0b",
+          "pairId": "p0a",
+          "x": 320.4,
+          "y": 35,
+          "radius": 16,
+          "colors": [
+            "gold"
+          ],
+          "label": "A"
+        },
+        {
+          "id": "p1a",
+          "pairId": "p1b",
+          "x": 684.5,
+          "y": 279.1,
+          "radius": 16,
+          "colors": [
+            "blue"
+          ],
+          "label": "B"
+        },
+        {
+          "id": "p1b",
+          "pairId": "p1a",
+          "x": 49.9,
+          "y": 258.4,
+          "radius": 16,
+          "colors": [
+            "blue"
+          ],
+          "label": "B"
+        },
+        {
+          "id": "p2a",
+          "pairId": "p2b",
+          "x": 677.7,
+          "y": 188.7,
+          "radius": 16,
+          "colors": [
+            "pink"
+          ],
+          "label": "C"
+        },
+        {
+          "id": "p2b",
+          "pairId": "p2a",
+          "x": 282.2,
+          "y": 173.2,
+          "radius": 16,
+          "colors": [
+            "pink"
+          ],
+          "label": "C"
+        }
+      ],
+      "objects": [
+        {
+          "type": "mirror",
+          "x": 210,
+          "y": 100,
+          "length": 124.8,
+          "angle": -25
+        },
+        {
+          "type": "mirror",
+          "x": 590,
+          "y": 110,
+          "length": 124.8,
+          "angle": 58.4
+        },
+        {
+          "type": "mirror",
+          "x": 400,
+          "y": 280,
+          "length": 124.8,
+          "angle": 63.8
+        }
+      ],
+      "id": "light-v5-deduction-open-016",
+      "name": "Consequência 15",
+      "hint": "Uma escolha pode decidir os caminhos das outras cores.",
+      "solution": [
+        -56,
+        27.4,
+        32.8
+      ],
+      "sourceAngle": -104,
+      "target": {
+        "x": 428.2,
+        "y": 69.2,
+        "radius": 22,
+        "color": "gold"
+      },
+      "requiredBounces": 3,
+      "wallPurpose": [],
+      "decoyCount": 0,
+      "tutorial": "",
+      "rules": "Leve cada cor ao alvo sem cruzar os feixes.",
+      "number": 39,
+      "campaignNumber": 39,
+      "campaignBand": "intermediate",
+      "campaignRevision": "reflexos80-v6"
+    },
+    "scoreBefore": 19.56366543633903,
+    "scoreAfter": 0,
+    "initial": 14.789803309580243,
+    "reference": 14.789803309580243,
+    "edits": [
+      {
+        "round": 0,
+        "scoreBefore": 19.56366543633903,
+        "scoreAfter": 0
+      }
+    ]
+  },
+  {
+    "number": 43,
+    "level": {
+      "sources": [
+        {
+          "x": 495.4423259036624,
+          "y": 162.09445330007907,
+          "angle": -170,
+          "color": "gold"
+        },
+        {
+          "x": 32.242128958775965,
+          "y": 101.28872823348749,
+          "angle": 56,
+          "color": "blue"
+        },
+        {
+          "x": 400.8759651440098,
+          "y": 433.54021031123557,
+          "angle": -98,
+          "color": "pink"
+        }
+      ],
+      "targets": [
+        {
+          "x": 650,
+          "y": 272.5,
+          "radius": 22,
+          "color": "gold"
+        },
+        {
+          "x": 654.473543227766,
+          "y": 194.13230058044033,
+          "radius": 22,
+          "color": "blue"
+        },
+        {
+          "x": 568,
+          "y": 308,
+          "radius": 22,
+          "color": "pink"
+        }
+      ],
+      "portals": [
+        {
+          "id": "s0a",
+          "pairId": "s0b",
+          "x": 360,
+          "y": 70,
+          "radius": 16,
+          "colors": [
+            "gold"
+          ],
+          "label": "A"
+        },
+        {
+          "id": "s0b",
+          "pairId": "s0a",
+          "x": 540,
+          "y": 390,
+          "radius": 16,
+          "colors": [
+            "gold"
+          ],
+          "label": "A"
+        },
+        {
+          "id": "s1a",
+          "pairId": "s1b",
+          "x": 352.12153797590236,
+          "y": 388.61081457866453,
+          "radius": 16,
+          "colors": [
+            "gold"
+          ],
+          "label": "B"
+        },
+        {
+          "id": "s1b",
+          "pairId": "s1a",
+          "x": 540,
+          "y": 70,
+          "radius": 16,
+          "colors": [
+            "blue"
+          ],
+          "label": "B"
+        },
+        {
+          "id": "pinka",
+          "pairId": "pinkb",
+          "x": 458.9,
+          "y": 369.1,
+          "radius": 16,
+          "colors": [
+            "pink"
+          ],
+          "label": "C"
+        },
+        {
+          "id": "pinkb",
+          "pairId": "pinka",
+          "x": 500,
+          "y": 235.6,
+          "radius": 16,
+          "colors": [
+            "pink"
+          ],
+          "label": "C"
+        }
+      ],
+      "objects": [
+        {
+          "x": 200,
+          "y": 110,
+          "type": "mirror",
+          "length": 124.8,
+          "angle": -61
+        },
+        {
+          "x": 200,
+          "y": 350,
+          "type": "mirror",
+          "length": 124.8,
+          "angle": 44.4
+        },
+        {
+          "x": 650,
+          "y": 362.5,
+          "type": "mirror",
+          "length": 124.8,
+          "angle": -21
+        },
+        {
+          "x": 650,
+          "y": 97.5,
+          "type": "mirror",
+          "length": 124.8,
+          "angle": 61.3
+        },
+        {
+          "type": "mirror",
+          "x": 380,
+          "y": 285,
+          "length": 124.8,
+          "angle": -6.7
+        }
+      ],
+      "id": "light-v5-deduction-symmetry-02-opposite-filter-reauthored",
+      "name": "A diferença do outro lado",
+      "hint": "Compare a marca da entrada com a fonte que se aproxima.",
+      "solution": [
+        88,
+        13.4,
+        -52,
+        30.3,
+        -45.5
+      ],
+      "sourceAngle": -170,
+      "target": {
+        "x": 650,
+        "y": 272.5,
+        "radius": 22,
+        "color": "gold"
+      },
+      "requiredBounces": 5,
+      "wallPurpose": [],
+      "decoyCount": 0,
+      "tutorial": "",
+      "rules": "Leve cada cor ao alvo sem cruzar os feixes.",
+      "number": 43,
+      "campaignNumber": 43,
+      "campaignBand": "intermediate",
+      "campaignRevision": "reflexos80-v6"
+    },
+    "scoreBefore": 2.83801909306007,
+    "scoreAfter": 0,
+    "initial": 17.234389269185982,
+    "reference": 20.800997824469945,
+    "edits": [
+      {
+        "round": 0,
+        "scoreBefore": 2.83801909306007,
+        "scoreAfter": 0.6716433672600142
+      },
+      {
+        "round": 1,
+        "scoreBefore": 0.6716433672600142,
+        "scoreAfter": 0
+      }
+    ]
+  },
+  {
+    "number": 49,
+    "level": {
+      "id": "light-v4-open-chain-014",
+      "name": "Uma escolha atravessa três",
+      "hint": "Uma alternativa pode decidir a passagem de uma segunda cor e limitar a terceira.",
+      "width": 800,
+      "height": 460,
+      "objects": [
+        {
+          "x": 248.8,
+          "y": 91.6,
+          "type": "mirror",
+          "angle": 34.3,
+          "length": 124.8
+        },
+        {
+          "x": 597.9,
+          "y": 89.3,
+          "type": "mirror",
+          "angle": -30.3,
+          "length": 124.8
+        },
+        {
+          "x": 407.8,
+          "y": 251.8,
+          "type": "mirror",
+          "angle": -42.2,
+          "length": 124.8
+        },
+        {
+          "x": 207.3,
+          "y": 338.7,
+          "type": "mirror",
+          "angle": 0,
+          "length": 124.8
+        },
+        {
+          "x": 629.6,
+          "y": 358.6,
+          "type": "mirror",
+          "angle": 0,
+          "length": 124.8
+        },
+        {
+          "x": 386.6,
+          "y": 79,
+          "type": "mirror",
+          "angle": 0,
+          "length": 124.8
+        }
+      ],
+      "sources": [
+        {
+          "x": 25,
+          "y": 91.6,
+          "angle": 0,
+          "color": "gold"
+        },
+        {
+          "x": 775,
+          "y": 89.3,
+          "angle": 180,
+          "color": "blue"
+        },
+        {
+          "x": 407.8,
+          "y": 440,
+          "angle": -90,
+          "color": "pink"
+        }
+      ],
+      "targets": [
+        {
+          "x": 317.86491806742544,
+          "y": 301.2276777067893,
+          "radius": 22,
+          "color": "gold"
+        },
+        {
+          "x": 477.5,
+          "y": 303.8,
+          "radius": 22,
+          "color": "blue"
+        },
+        {
+          "x": 578.6,
+          "y": 268.4,
+          "radius": 22,
+          "color": "pink"
+        }
+      ],
+      "portals": [],
+      "solution": [
+        34.3,
+        -48.4,
+        -42.2,
+        0,
+        -38.4,
+        0
+      ],
+      "sourceAngle": 0,
+      "target": {
+        "x": 332.9,
+        "y": 306.7,
+        "radius": 22,
+        "color": "gold"
+      },
+      "requiredBounces": 4,
+      "wallPurpose": [],
+      "decoyCount": 2,
+      "tutorial": "",
+      "rules": "Leve cada cor ao seu alvo sem cruzar outras cores.",
+      "number": 49,
+      "campaignNumber": 49,
+      "campaignBand": "advanced",
+      "campaignRevision": "reflexos80-v6"
+    },
+    "scoreBefore": 145.29083518527023,
+    "scoreAfter": 0,
+    "initial": 18.349753215027725,
+    "reference": 18.349753215027725,
+    "edits": [
+      {
+        "round": 0,
+        "scoreBefore": 145.29083518527023,
+        "scoreAfter": 0
+      }
+    ]
+  },
+  {
+    "number": 50,
+    "level": {
+      "number": 50,
+      "name": "O seletivo resolve só uma cor",
+      "difficulty": 95,
+      "family": "seletivo-local-cruza-inicio-alheio",
+      "sources": [
+        {
+          "x": 60,
+          "y": 104.58823529411764,
+          "color": "gold",
+          "angle": 0
+        },
+        {
+          "x": 560.0099403164609,
+          "y": 42.00000617562059,
+          "color": "blue",
+          "angle": 77.47119229084849
+        }
+      ],
+      "targets": [
+        {
+          "x": 350,
+          "y": 326.47058823529414,
+          "color": "gold",
+          "radius": 22
+        },
+        {
+          "x": 100,
+          "y": 258.94117647058823,
+          "color": "blue",
+          "radius": 22
+        }
+      ],
+      "portals": [
+        {
+          "id": "U1",
+          "x": 450,
+          "y": 230,
+          "pairId": "U2",
+          "radius": 16,
+          "label": "U"
+        },
+        {
+          "id": "U2",
+          "x": 300,
+          "y": 394,
+          "pairId": "U1",
+          "radius": 16,
+          "label": "U"
+        },
+        {
+          "id": "G1",
+          "x": 350,
+          "y": 104.58823529411764,
+          "pairId": "G2",
+          "colors": [
+            "gold"
+          ],
+          "radius": 16,
+          "label": "G"
+        },
+        {
+          "id": "G2",
+          "x": 550,
+          "y": 104.58823529411764,
+          "pairId": "G1",
+          "colors": [
+            "gold"
+          ],
+          "radius": 16,
+          "label": "G"
+        }
+      ],
+      "objects": [
+        {
+          "type": "mirror",
+          "id": "g1",
+          "x": 220,
+          "y": 104.58823529411764,
+          "length": 124.8,
+          "angle": 69
+        },
+        {
+          "type": "mirror",
+          "id": "g2",
+          "x": 220,
+          "y": 326.47058823529414,
+          "length": 124.8,
+          "angle": 16
+        },
+        {
+          "type": "mirror",
+          "id": "c1",
+          "x": 600,
+          "y": 230,
+          "length": 124.8,
+          "angle": -18.26440385457576
+        },
+        {
+          "type": "mirror",
+          "id": "c2",
+          "x": 100,
+          "y": 394,
+          "length": 124.8,
+          "angle": 23
+        },
+        {
+          "type": "mirror",
+          "id": "g3",
+          "x": 700,
+          "y": 104.58823529411764,
+          "length": 124.8,
+          "angle": 73.8
+        },
+        {
+          "type": "wall",
+          "x": 285,
+          "y": 215.52941176470588,
+          "length": 96.47058823529412,
+          "angle": 90,
+          "width": 12,
+          "purpose": "Bloqueia o atalho dourado ao alvo e torna necessário o contorno pela esquerda e por baixo."
+        }
+      ],
+      "solution": [
+        45,
+        45,
+        -51.3,
+        45,
+        73.8
+      ],
+      "sourceAngle": 0,
+      "target": {
+        "x": 350,
+        "y": 326.47058823529414,
+        "color": "gold",
+        "radius": 22
+      },
+      "requiredBounces": 4,
+      "wallPurpose": [
+        "Bloqueia o atalho dourado ao alvo e torna necessário o contorno pela esquerda e por baixo."
+      ],
+      "decoyCount": 1,
+      "hint": "Mantenha a azul acesa ao avaliar G.",
+      "tutorial": "",
+      "rules": "Cada cor no seu alvo, sem cruzar outras trajetórias.",
+      "id": "light-v3-95",
+      "campaignNumber": 50,
+      "campaignBand": "advanced",
+      "campaignRevision": "reflexos80-v6"
+    },
+    "scoreBefore": 24.547266956415182,
+    "scoreAfter": 0,
+    "initial": 18.383636132116862,
+    "reference": 17.306955387823137,
+    "edits": [
+      {
+        "round": 0,
+        "scoreBefore": 24.547266956415182,
+        "scoreAfter": 0
+      }
+    ]
+  },
+  {
+    "number": 52,
+    "level": {
+      "name": "A decisão depois da saída",
+      "difficulty": 180,
+      "family": "superficie-compartilhada-condicional",
+      "sources": [
+        {
+          "x": 98,
+          "y": 234.5,
+          "angle": 0,
+          "color": "gold"
+        },
+        {
+          "x": 260,
+          "y": 20.5,
+          "angle": 90,
+          "color": "blue"
+        },
+        {
+          "x": 730,
+          "y": 114.5,
+          "angle": 180,
+          "color": "pink"
+        }
+      ],
+      "targets": [
+        {
+          "x": 270,
+          "y": 354.5,
+          "radius": 22,
+          "color": "gold"
+        },
+        {
+          "x": 650,
+          "y": 264.5,
+          "radius": 22,
+          "color": "blue"
+        },
+        {
+          "x": 500,
+          "y": 424.5,
+          "radius": 22,
+          "color": "pink"
+        }
+      ],
+      "objects": [
+        {
+          "type": "mirror",
+          "x": 300,
+          "y": 264.5,
+          "length": 124.8,
+          "angle": 0
+        },
+        {
+          "type": "mirror",
+          "x": 500,
+          "y": 114.5,
+          "length": 124.8,
+          "angle": 12
+        }
+      ],
+      "portals": [
+        {
+          "id": "Aa",
+          "pairId": "Ab",
+          "label": "A",
+          "x": 330,
+          "y": 39.5,
+          "radius": 16,
+          "colors": [
+            "gold"
+          ]
+        },
+        {
+          "id": "Ab",
+          "pairId": "Aa",
+          "label": "A",
+          "x": 270,
+          "y": 424.5,
+          "radius": 16,
+          "colors": [
+            "gold"
+          ]
+        },
+        {
+          "id": "Ba",
+          "pairId": "Bb",
+          "label": "B",
+          "x": 40,
+          "y": 264.5,
+          "radius": 16,
+          "colors": [
+            "blue"
+          ]
+        },
+        {
+          "id": "Bb",
+          "pairId": "Ba",
+          "label": "B",
+          "x": 750,
+          "y": 264.5,
+          "radius": 16,
+          "colors": [
+            "blue"
+          ]
+        },
+        {
+          "id": "Ca",
+          "pairId": "Cb",
+          "label": "C",
+          "x": 590,
+          "y": 204.5,
+          "radius": 16
+        },
+        {
+          "id": "Cb",
+          "pairId": "Ca",
+          "label": "C",
+          "x": 430,
+          "y": 354.5,
+          "radius": 16
+        },
+        {
+          "id": "Da",
+          "pairId": "Db",
+          "label": "D",
+          "x": 252,
+          "y": 160.5,
+          "radius": 16
+        },
+        {
+          "id": "Db",
+          "pairId": "Da",
+          "label": "D",
+          "x": 300,
+          "y": 114.5,
+          "radius": 16
+        }
+      ],
+      "solution": [
+        45,
+        -67.5
+      ],
+      "hint": "A saída azul não termina a decisão: o próximo espelho também recebe a luz dourada.",
+      "rules": "Todas as cores precisam chegar aos alvos sem cruzar os trechos físicos.",
+      "sourceAngle": 0,
+      "target": {
+        "x": 270,
+        "y": 354.5,
+        "radius": 22,
+        "color": "gold"
+      },
+      "requiredBounces": 3,
+      "wallPurpose": [
+        "Sem parede: a incompatibilidade nasce das trajetórias e da superfície compartilhada."
+      ],
+      "decoyCount": 0,
+      "tutorial": false,
+      "id": "light-v4-legacy-180-labels",
+      "campaignNumber": 52,
+      "number": 52,
+      "campaignBand": "advanced",
+      "campaignRevision": "reflexos80-v6"
+    },
+    "scoreBefore": 145.45352816509092,
+    "scoreAfter": 0,
+    "initial": 14.654592972014136,
+    "reference": 14.654592972014136,
+    "edits": [
+      {
+        "round": 0,
+        "scoreBefore": 145.45352816509092,
+        "scoreAfter": 1.4535281650909107
+      },
+      {
+        "round": 1,
+        "scoreBefore": 1.4535281650909107,
+        "scoreAfter": 0.5
+      },
+      {
+        "round": 2,
+        "scoreBefore": 0.5,
+        "scoreAfter": 0
+      }
+    ]
+  },
+  {
+    "number": 55,
+    "level": {
+      "sources": [
+        {
+          "x": 220,
+          "y": 430,
+          "angle": -90,
+          "color": "gold"
+        },
+        {
+          "x": 580,
+          "y": 430,
+          "angle": -90,
+          "color": "blue"
+        },
+        {
+          "x": 770.4597814991466,
+          "y": 412.4213698429846,
+          "angle": -118.01689347810004,
+          "color": "pink"
+        }
+      ],
+      "targets": [
+        {
+          "x": 720,
+          "y": 100,
+          "radius": 22,
+          "color": "gold"
+        },
+        {
+          "x": 100,
+          "y": 100,
+          "radius": 22,
+          "color": "blue"
+        },
+        {
+          "x": 750,
+          "y": 200,
+          "radius": 22,
+          "color": "pink"
+        }
+      ],
+      "objects": [
+        {
+          "type": "mirror",
+          "x": 220,
+          "y": 280,
+          "length": 124.8,
+          "angle": -10
+        },
+        {
+          "type": "mirror",
+          "x": 580,
+          "y": 280,
+          "length": 124.8,
+          "angle": 15
+        },
+        {
+          "type": "mirror",
+          "x": 700,
+          "y": 280,
+          "length": 124.8,
+          "angle": 58.5
+        },
+        {
+          "type": "wall",
+          "x": 400,
+          "y": 210,
+          "length": 80,
+          "angle": 90,
+          "width": 12,
+          "purpose": "Bloqueia o atalho dourado e organiza o acesso central, preservando as entradas opostas no mesmo universal."
+        }
+      ],
+      "portals": [
+        {
+          "id": "Ua",
+          "pairId": "Ub",
+          "label": "A",
+          "x": 405.65685424949237,
+          "y": 285.65685424949237,
+          "radius": 16
+        },
+        {
+          "id": "Ub",
+          "pairId": "Ua",
+          "label": "A",
+          "x": 400,
+          "y": 100,
+          "radius": 16
+        },
+        {
+          "id": "Sa",
+          "pairId": "Sb",
+          "label": "B",
+          "x": 220,
+          "y": 150,
+          "radius": 16,
+          "colors": [
+            "gold"
+          ]
+        },
+        {
+          "id": "Sb",
+          "pairId": "Sa",
+          "label": "B",
+          "x": 720,
+          "y": 380,
+          "radius": 16,
+          "colors": [
+            "gold"
+          ]
+        }
+      ],
+      "solution": [
+        -45,
+        45,
+        -88
+      ],
+      "name": "Simetria interrompida",
+      "difficulty": 196,
+      "family": "v3-final-196",
+      "hint": "Compare o seletivo B com o trecho inicial rosa.",
+      "sourceAngle": -90,
+      "target": {
+        "x": 720,
+        "y": 100,
+        "radius": 22,
+        "color": "gold"
+      },
+      "requiredBounces": 3,
+      "wallPurpose": [
+        "Bloqueia o atalho dourado e organiza o acesso central, preservando as entradas opostas no mesmo universal."
+      ],
+      "decoyCount": 0,
+      "tutorial": "",
+      "rules": "Leve todas as fontes aos alvos da mesma cor, sem cruzar nem encostar nos trechos físicos das outras luzes.",
+      "id": "light-v5-legacy-196",
+      "campaignNumber": 55,
+      "number": 55,
+      "campaignBand": "advanced",
+      "campaignRevision": "reflexos80-v6"
+    },
+    "scoreBefore": 60.5,
+    "scoreAfter": 0,
+    "initial": 14.156854249492369,
+    "reference": 14.156854249492369,
+    "edits": [
+      {
+        "round": 0,
+        "scoreBefore": 60.5,
+        "scoreAfter": 0
+      }
+    ]
+  },
+  {
+    "number": 56,
+    "level": {
+      "sources": [
+        {
+          "x": 166.45405879205978,
+          "y": 274.65323072967936,
+          "angle": -76,
+          "color": "gold"
+        },
+        {
+          "x": 458.8876923044308,
+          "y": 434.5143490983756,
+          "angle": 292,
+          "color": "blue"
+        },
+        {
+          "x": 243.4963838825911,
+          "y": 246.73412946915852,
+          "angle": 12,
+          "color": "pink"
+        }
+      ],
+      "targets": [
+        {
+          "x": 737.9623892592501,
+          "y": 196.81422239453283,
+          "radius": 22,
+          "color": "gold"
+        },
+        {
+          "x": 539.1,
+          "y": 328.5,
+          "radius": 22,
+          "color": "blue"
+        },
+        {
+          "x": 407.8,
+          "y": 100.5,
+          "radius": 22,
+          "color": "pink"
+        }
+      ],
+      "portals": [
+        {
+          "id": "p0a",
+          "pairId": "p0b",
+          "x": 290.27319303911474,
+          "y": 206.2886312229853,
+          "radius": 16,
+          "colors": [
+            "gold"
+          ],
+          "label": "A"
+        },
+        {
+          "id": "p0b",
+          "pairId": "p0a",
+          "x": 585.5,
+          "y": 213.7,
+          "radius": 16,
+          "colors": [
+            "gold"
+          ],
+          "label": "A"
+        },
+        {
+          "id": "p1a",
+          "pairId": "p1b",
+          "x": 525.9353751647974,
+          "y": 194.43763418979202,
+          "radius": 16,
+          "colors": [
+            "blue"
+          ],
+          "label": "B"
+        },
+        {
+          "id": "p1b",
+          "pairId": "p1a",
+          "x": 641.4417551917593,
+          "y": 212.0925363774964,
+          "radius": 16,
+          "colors": [
+            "blue"
+          ],
+          "label": "B"
+        },
+        {
+          "id": "p2a",
+          "pairId": "p2b",
+          "x": 342.2,
+          "y": 178.3,
+          "radius": 16,
+          "colors": [
+            "pink"
+          ],
+          "label": "C"
+        },
+        {
+          "id": "p2b",
+          "pairId": "p2a",
+          "x": 502.5,
+          "y": 267.2,
+          "radius": 16,
+          "colors": [
+            "pink"
+          ],
+          "label": "C"
+        }
+      ],
+      "objects": [
+        {
+          "type": "mirror",
+          "x": 210,
+          "y": 100,
+          "length": 124.8,
+          "angle": 18.1
+        },
+        {
+          "type": "mirror",
+          "x": 590,
+          "y": 110,
+          "length": 124.8,
+          "angle": 48.6
+        },
+        {
+          "type": "mirror",
+          "x": 400,
+          "y": 280,
+          "length": 124.8,
+          "angle": -6.8
+        },
+        {
+          "type": "mirror",
+          "x": 654.4,
+          "y": 296.4,
+          "length": 124.8,
+          "angle": 31.1
+        }
+      ],
+      "id": "light-v5-deduction-four-05",
+      "name": "A curva depende da escolha",
+      "hint": "A chegada ao último espelho muda quando o caminho anterior muda.",
+      "solution": [
+        -12.9,
+        17.6,
+        -37.8,
+        0.1
+      ],
+      "sourceAngle": -76,
+      "target": {
+        "x": 737.9623892592501,
+        "y": 196.81422239453283,
+        "radius": 22,
+        "color": "gold"
+      },
+      "requiredBounces": 4,
+      "wallPurpose": [],
+      "decoyCount": 0,
+      "tutorial": "",
+      "rules": "Leve cada cor ao alvo sem cruzar os feixes.",
+      "number": 56,
+      "campaignNumber": 56,
+      "campaignBand": "advanced",
+      "campaignRevision": "reflexos80-v6"
+    },
+    "scoreBefore": 153.4737276642629,
+    "scoreAfter": 0.0024717011159849154,
+    "initial": 13.964845333766448,
+    "reference": 13.964845333766448,
+    "edits": [
+      {
+        "round": 0,
+        "scoreBefore": 153.4737276642629,
+        "scoreAfter": 17.916347704046
+      },
+      {
+        "round": 1,
+        "scoreBefore": 17.916347704046,
+        "scoreAfter": 7.851366868621964
+      },
+      {
+        "round": 2,
+        "scoreBefore": 7.851366868621964,
+        "scoreAfter": 0.0024717011159849154
+      }
+    ]
+  },
+  {
+    "number": 61,
+    "level": {
+      "objects": [
+        {
+          "x": 248.2,
+          "y": 108.1,
+          "type": "mirror",
+          "length": 124.8,
+          "angle": -22.1
+        },
+        {
+          "x": 605.9,
+          "y": 151.5,
+          "type": "mirror",
+          "length": 124.8,
+          "angle": 86
+        },
+        {
+          "x": 422.6,
+          "y": 281.7,
+          "type": "mirror",
+          "length": 124.8,
+          "angle": -74.9
+        }
+      ],
+      "sources": [
+        {
+          "x": 187.40244779221723,
+          "y": 236.42637159033964,
+          "color": "gold",
+          "angle": -64.64967572476624
+        },
+        {
+          "x": 464.05983341529657,
+          "y": 140.19690219410896,
+          "color": "blue",
+          "angle": 5.3930659506210645
+        },
+        {
+          "x": 571.778284305241,
+          "y": 297.37926949014803,
+          "color": "pink",
+          "angle": -174
+        }
+      ],
+      "targets": [
+        {
+          "x": 552.9,
+          "y": 222.2,
+          "color": "gold",
+          "radius": 22
+        },
+        {
+          "x": 129.2,
+          "y": 265.5,
+          "color": "blue",
+          "radius": 22
+        },
+        {
+          "x": 512.1,
+          "y": 321.8,
+          "color": "pink",
+          "radius": 22
+        }
+      ],
+      "portals": [
+        {
+          "x": 89.4,
+          "y": 23.5,
+          "id": "gold1a",
+          "pairId": "gold1b",
+          "label": "A",
+          "radius": 16,
+          "colors": [
+            "gold"
+          ]
+        },
+        {
+          "x": 685.0504284177783,
+          "y": 274.44069052503215,
+          "id": "gold1b",
+          "pairId": "gold1a",
+          "label": "A",
+          "radius": 16,
+          "colors": [
+            "gold"
+          ]
+        },
+        {
+          "x": 660.8,
+          "y": 344.2,
+          "id": "blue1a",
+          "pairId": "blue1b",
+          "label": "B",
+          "radius": 16,
+          "colors": [
+            "blue"
+          ]
+        },
+        {
+          "x": 108.2,
+          "y": 191.7,
+          "id": "blue1b",
+          "pairId": "blue1a",
+          "label": "B",
+          "radius": 16,
+          "colors": [
+            "blue"
+          ]
+        },
+        {
+          "x": 443.7,
+          "y": 67.1,
+          "id": "pink1a",
+          "pairId": "pink1b",
+          "label": "C",
+          "radius": 16,
+          "colors": [
+            "pink"
+          ]
+        },
+        {
+          "x": 502,
+          "y": 424.7,
+          "id": "pink1b",
+          "pairId": "pink1a",
+          "label": "C",
+          "radius": 16,
+          "colors": [
+            "pink"
+          ]
+        }
+      ],
+      "width": 800,
+      "height": 460,
+      "solution": [
+        -22.1,
+        39.7,
+        -74.9
+      ],
+      "id": "light-v5-master-003",
+      "name": "As duas metades da escolha",
+      "hint": "Considere uma rota de cada vez e siga o que ela exige das outras duas cores.",
+      "sourceAngle": -64.64967572476624,
+      "target": {
+        "x": 552.9,
+        "y": 222.2,
+        "color": "gold",
+        "radius": 22
+      },
+      "requiredBounces": 3,
+      "wallPurpose": [],
+      "decoyCount": 0,
+      "tutorial": false,
+      "rules": "Leve cada cor ao seu alvo sem cruzar ou encostar nos trechos físicos das outras luzes.",
+      "number": 61,
+      "campaignNumber": 61,
+      "campaignBand": "master",
+      "campaignRevision": "reflexos80-v6"
+    },
+    "scoreBefore": 353.1111281366602,
+    "scoreAfter": 0,
+    "initial": 15.427410059145735,
+    "reference": 15.427410059145735,
+    "edits": [
+      {
+        "round": 0,
+        "scoreBefore": 353.1111281366602,
+        "scoreAfter": 35.07329852027218
+      },
+      {
+        "round": 1,
+        "scoreBefore": 35.07329852027218,
+        "scoreAfter": 8.225036982283996
+      },
+      {
+        "round": 2,
+        "scoreBefore": 8.225036982283996,
+        "scoreAfter": 0
+      }
+    ]
+  },
+  {
+    "number": 62,
+    "level": {
+      "objects": [
+        {
+          "x": 181.2,
+          "y": 117.3,
+          "type": "mirror",
+          "length": 124.8,
+          "angle": -1.5
+        },
+        {
+          "x": 592.9,
+          "y": 104,
+          "type": "mirror",
+          "length": 124.8,
+          "angle": 42
+        },
+        {
+          "x": 393.6,
+          "y": 280.5,
+          "type": "mirror",
+          "length": 124.8,
+          "angle": -2.8
+        },
+        {
+          "type": "mirror",
+          "x": 729.2493444502717,
+          "y": 251.48727046315653,
+          "length": 124.8,
+          "angle": 82.6
+        },
+        {
+          "type": "wall",
+          "x": 100,
+          "y": 69.90106393716306,
+          "length": 139.80212787432612,
+          "width": 12,
+          "angle": 90
+        },
+        {
+          "type": "wall",
+          "x": 100,
+          "y": 247.60235665083061,
+          "length": 173.86573589099004,
+          "width": 12,
+          "angle": 90
+        },
+        {
+          "type": "wall",
+          "x": 100,
+          "y": 408.20704821432207,
+          "length": 103.58590357135586,
+          "width": 12,
+          "angle": 90
+        },
+        {
+          "type": "wall",
+          "x": 260,
+          "y": 67.23907497396148,
+          "length": 134.47814994792296,
+          "width": 12,
+          "angle": 90
+        },
+        {
+          "type": "wall",
+          "x": 260,
+          "y": 198.18165947510425,
+          "length": 87.10653006054181,
+          "width": 12,
+          "angle": 90
+        },
+        {
+          "type": "wall",
+          "x": 260,
+          "y": 394.8674622526876,
+          "length": 130.26507549462485,
+          "width": 12,
+          "angle": 90
+        }
+      ],
+      "sources": [
+        {
+          "x": 42.1991785068806,
+          "y": 173.68059616781258,
+          "color": "gold",
+          "angle": -22.078133994588455
+        },
+        {
+          "x": 541.349791557406,
+          "y": 244.86367881581506,
+          "color": "blue",
+          "angle": 290.10051016264254
+        },
+        {
+          "x": 243.69137594713567,
+          "y": 285.73492450537515,
+          "color": "pink",
+          "angle": -2
+        }
+      ],
+      "targets": [
+        {
+          "x": 474.1,
+          "y": 218.2,
+          "color": "gold",
+          "radius": 22
+        },
+        {
+          "x": 56.39720773954483,
+          "y": 358.2690981635021,
+          "color": "blue",
+          "radius": 22
+        },
+        {
+          "x": 672.4,
+          "y": 388.1,
+          "color": "pink",
+          "radius": 22
+        }
+      ],
+      "portals": [
+        {
+          "x": 162.2,
+          "y": 272.7,
+          "id": "gold1a",
+          "pairId": "gold1b",
+          "label": "A",
+          "radius": 16,
+          "colors": [
+            "gold"
+          ]
+        },
+        {
+          "x": 486.2,
+          "y": 119.5,
+          "id": "gold1b",
+          "pairId": "gold1a",
+          "label": "A",
+          "radius": 16,
+          "colors": [
+            "gold"
+          ]
+        },
+        {
+          "x": 153.59512661615275,
+          "y": 30.02080402637999,
+          "id": "gold2a",
+          "pairId": "gold2b",
+          "label": "B",
+          "radius": 16,
+          "colors": [
+            "gold"
+          ]
+        },
+        {
+          "x": 517.3,
+          "y": 323.6,
+          "id": "gold2b",
+          "pairId": "gold2a",
+          "label": "B",
+          "radius": 16,
+          "colors": [
+            "gold"
+          ]
+        },
+        {
+          "x": 650.9,
+          "y": 294.3,
+          "id": "blue1a",
+          "pairId": "blue1b",
+          "label": "C",
+          "radius": 16,
+          "colors": [
+            "blue"
+          ]
+        },
+        {
+          "x": 32.2,
+          "y": 275.8,
+          "id": "blue1b",
+          "pairId": "blue1a",
+          "label": "C",
+          "radius": 16,
+          "colors": [
+            "blue"
+          ]
+        },
+        {
+          "x": 325.6,
+          "y": 124.4,
+          "id": "pink1a",
+          "pairId": "pink1b",
+          "label": "D",
+          "radius": 16,
+          "colors": [
+            "pink"
+          ]
+        },
+        {
+          "x": 765.1,
+          "y": 347.5,
+          "id": "pink1b",
+          "pairId": "pink1a",
+          "label": "D",
+          "radius": 16,
+          "colors": [
+            "pink"
+          ]
+        }
+      ],
+      "width": 800,
+      "height": 460,
+      "solution": [
+        37.4,
+        1.6,
+        -57.8,
+        -0.4
+      ],
+      "id": "light-v5-deduction-master-window-16-1-reauthored",
+      "name": "As janelas da última curva",
+      "hint": "As duas entradas podem alcançar o mesmo espelho, mas não oferecem as mesmas chegadas.",
+      "sourceAngle": -22.078133994588455,
+      "target": {
+        "x": 474.1,
+        "y": 218.2,
+        "color": "gold",
+        "radius": 22
+      },
+      "requiredBounces": 4,
+      "wallPurpose": [],
+      "decoyCount": 0,
+      "tutorial": false,
+      "rules": "Leve cada cor ao seu alvo sem cruzar ou encostar nos trechos físicos das outras luzes.",
+      "number": 62,
+      "campaignNumber": 62,
+      "campaignBand": "master",
+      "campaignRevision": "reflexos80-v6"
+    },
+    "scoreBefore": 116.29766638684153,
+    "scoreAfter": 92.99113247588569,
+    "initial": 5.567819101271027,
+    "reference": 14.102792260455168,
+    "edits": [
+      {
+        "round": 0,
+        "scoreBefore": 116.29766638684153,
+        "scoreAfter": 97.0776663868415
+      },
+      {
+        "round": 1,
+        "scoreBefore": 97.0776663868415,
+        "scoreAfter": 94.40431010737525
+      },
+      {
+        "round": 2,
+        "scoreBefore": 94.40431010737525,
+        "scoreAfter": 92.99113247588569
+      }
+    ]
+  },
+  {
+    "number": 63,
+    "level": {
+      "sources": [
+        {
+          "x": 77.55786107116094,
+          "y": 170.42073441788364,
+          "angle": -28,
+          "color": "gold"
+        },
+        {
+          "x": 595.1208775958796,
+          "y": 296.1462681887482,
+          "angle": 270,
+          "color": "blue"
+        },
+        {
+          "x": 547.7211629518312,
+          "y": 253.95277334996044,
+          "angle": -190,
+          "color": "pink"
+        }
+      ],
+      "targets": [
+        {
+          "x": 228.5,
+          "y": 417.5,
+          "radius": 22,
+          "color": "gold"
+        },
+        {
+          "x": 190.5,
+          "y": 260.2,
+          "radius": 22,
+          "color": "blue"
+        },
+        {
+          "x": 364.7,
+          "y": 106.5,
+          "radius": 22,
+          "color": "pink"
+        }
+      ],
+      "portals": [
+        {
+          "id": "p0a",
+          "pairId": "p0b",
+          "x": 127.9,
+          "y": 365.3,
+          "radius": 16,
+          "colors": [
+            "gold"
+          ],
+          "label": "A"
+        },
+        {
+          "id": "p0b",
+          "pairId": "p0a",
+          "x": 251.6,
+          "y": 342.8,
+          "radius": 16,
+          "colors": [
+            "gold"
+          ],
+          "label": "A"
+        },
+        {
+          "id": "p1a",
+          "pairId": "p1b",
+          "x": 714.1,
+          "y": 259,
+          "radius": 16,
+          "colors": [
+            "blue"
+          ],
+          "label": "B"
+        },
+        {
+          "id": "p1b",
+          "pairId": "p1a",
+          "x": 137.1,
+          "y": 196.1,
+          "radius": 16,
+          "colors": [
+            "blue"
+          ],
+          "label": "B"
+        },
+        {
+          "id": "p2a",
+          "pairId": "p2b",
+          "x": 497.2,
+          "y": 175,
+          "radius": 16,
+          "colors": [
+            "pink"
+          ],
+          "label": "C"
+        },
+        {
+          "id": "p2b",
+          "pairId": "p2a",
+          "x": 275.1,
+          "y": 203.3,
+          "radius": 16,
+          "colors": [
+            "pink"
+          ],
+          "label": "C"
+        }
+      ],
+      "objects": [
+        {
+          "type": "mirror",
+          "x": 210,
+          "y": 100,
+          "length": 124.8,
+          "angle": 60.3
+        },
+        {
+          "type": "mirror",
+          "x": 590,
+          "y": 110,
+          "length": 124.8,
+          "angle": 11.1
+        },
+        {
+          "type": "mirror",
+          "x": 400,
+          "y": 280,
+          "length": 124.8,
+          "angle": 65.2
+        }
+      ],
+      "id": "light-v5-deduction-open-025",
+      "name": "Consequência 24",
+      "hint": "Uma escolha pode decidir os caminhos das outras cores.",
+      "solution": [
+        29.3,
+        -19.9,
+        34.2
+      ],
+      "sourceAngle": -28,
+      "target": {
+        "x": 228.5,
+        "y": 417.5,
+        "radius": 22,
+        "color": "gold"
+      },
+      "requiredBounces": 3,
+      "wallPurpose": [],
+      "decoyCount": 0,
+      "tutorial": "",
+      "rules": "Leve cada cor ao alvo sem cruzar os feixes.",
+      "number": 63,
+      "campaignNumber": 63,
+      "campaignBand": "master",
+      "campaignRevision": "reflexos80-v6"
+    },
+    "scoreBefore": 82.94974743709604,
+    "scoreAfter": 0,
+    "initial": 15.458836697878652,
+    "reference": 15.458836697878652,
+    "edits": [
+      {
+        "round": 0,
+        "scoreBefore": 82.94974743709604,
+        "scoreAfter": 0
+      }
+    ]
+  },
+  {
+    "number": 65,
+    "level": {
+      "objects": [
+        {
+          "type": "mirror",
+          "x": 200,
+          "y": 86,
+          "length": 124.8,
+          "angle": -55.3
+        },
+        {
+          "type": "mirror",
+          "x": 600,
+          "y": 230,
+          "length": 124.8,
+          "angle": 87.6
+        },
+        {
+          "type": "mirror",
+          "x": 200,
+          "y": 374,
+          "length": 124.8,
+          "angle": 73.1
+        }
+      ],
+      "sources": [
+        {
+          "x": 314.90666646784666,
+          "y": 182.41814145298093,
+          "angle": -140,
+          "color": "gold"
+        },
+        {
+          "x": 450.3653924610263,
+          "y": 240.46347106161872,
+          "angle": 356,
+          "color": "blue"
+        },
+        {
+          "x": 309.73204552858067,
+          "y": 366.3267878881462,
+          "angle": 176,
+          "color": "pink"
+        }
+      ],
+      "targets": [
+        {
+          "x": 710,
+          "y": 374,
+          "radius": 22,
+          "color": "gold"
+        },
+        {
+          "x": 90,
+          "y": 237,
+          "radius": 22,
+          "color": "blue"
+        },
+        {
+          "x": 710,
+          "y": 81,
+          "radius": 22,
+          "color": "pink"
+        }
+      ],
+      "portals": [
+        {
+          "id": "g1a",
+          "pairId": "g1b",
+          "label": "A",
+          "x": 401.7,
+          "y": 129.9,
+          "radius": 16,
+          "colors": [
+            "gold"
+          ]
+        },
+        {
+          "id": "g1b",
+          "pairId": "g1a",
+          "label": "A",
+          "x": 435.1,
+          "y": 314.1,
+          "radius": 16,
+          "colors": [
+            "gold"
+          ]
+        },
+        {
+          "id": "g2a",
+          "pairId": "g2b",
+          "label": "B",
+          "x": 46,
+          "y": 290.8,
+          "radius": 16,
+          "colors": [
+            "gold"
+          ]
+        },
+        {
+          "id": "g2b",
+          "pairId": "g2a",
+          "label": "B",
+          "x": 777.6,
+          "y": 284.1,
+          "radius": 16,
+          "colors": [
+            "gold"
+          ]
+        },
+        {
+          "id": "b1a",
+          "pairId": "b1b",
+          "label": "C",
+          "x": 348.4,
+          "y": 412.8,
+          "radius": 16,
+          "colors": [
+            "blue"
+          ]
+        },
+        {
+          "id": "b1b",
+          "pairId": "b1a",
+          "label": "C",
+          "x": 182.25685424949236,
+          "y": 179.75685424949236,
+          "radius": 16,
+          "colors": [
+            "blue"
+          ]
+        },
+        {
+          "id": "b2a",
+          "pairId": "b2b",
+          "label": "D",
+          "x": 505.6,
+          "y": 44.7,
+          "radius": 16,
+          "colors": [
+            "blue"
+          ]
+        },
+        {
+          "id": "b2b",
+          "pairId": "b2a",
+          "label": "D",
+          "x": 132.2,
+          "y": 319.9,
+          "radius": 16,
+          "colors": [
+            "blue"
+          ]
+        },
+        {
+          "id": "p1a",
+          "pairId": "p1b",
+          "label": "E",
+          "x": 334.6,
+          "y": 73,
+          "radius": 16,
+          "colors": [
+            "pink"
+          ]
+        },
+        {
+          "id": "p1b",
+          "pairId": "p1a",
+          "label": "E",
+          "x": 669.2,
+          "y": 172.4,
+          "radius": 16,
+          "colors": [
+            "pink"
+          ]
+        },
+        {
+          "id": "p2a",
+          "pairId": "p2b",
+          "label": "F",
+          "x": 511.2,
+          "y": 352.2,
+          "radius": 16,
+          "colors": [
+            "pink"
+          ]
+        },
+        {
+          "id": "p2b",
+          "pairId": "p2a",
+          "label": "F",
+          "x": 466.6,
+          "y": 98,
+          "radius": 16,
+          "colors": [
+            "pink"
+          ]
+        }
+      ],
+      "width": 800,
+      "height": 460,
+      "id": "light-v5-portal-931",
+      "name": "A saída decide 931",
+      "hint": "Compare o que acontece depois de cada saída.",
+      "solution": [
+        -63.9,
+        87.6,
+        86
+      ],
+      "sourceAngle": -140,
+      "target": {
+        "x": 710,
+        "y": 374,
+        "radius": 22,
+        "color": "gold"
+      },
+      "requiredBounces": 3,
+      "wallPurpose": [],
+      "decoyCount": 0,
+      "tutorial": "",
+      "rules": "Leve todas as fontes aos alvos da mesma cor, sem cruzar nem encostar nos trechos físicos das outras luzes.",
+      "number": 65,
+      "campaignNumber": 65,
+      "campaignBand": "master",
+      "campaignRevision": "reflexos80-v6"
+    },
+    "scoreBefore": 221.28171781853243,
+    "scoreAfter": 0,
+    "initial": 15.456349104102465,
+    "reference": 14.949444166287876,
+    "edits": [
+      {
+        "round": 0,
+        "scoreBefore": 221.28171781853243,
+        "scoreAfter": 32.283666983584766
+      },
+      {
+        "round": 1,
+        "scoreBefore": 32.283666983584766,
+        "scoreAfter": 0
+      }
+    ]
+  },
+  {
+    "number": 66,
+    "level": {
+      "number": 66,
+      "name": "A saída escolhe o par",
+      "difficulty": 76,
+      "family": "dois-universais-duas-regioes",
+      "sources": [
+        {
+          "x": 60,
+          "y": 100,
+          "color": "gold",
+          "angle": 0
+        },
+        {
+          "x": 60,
+          "y": 380,
+          "color": "blue",
+          "angle": 0
+        }
+      ],
+      "targets": [
+        {
+          "x": 730,
+          "y": 250,
+          "color": "gold",
+          "radius": 22
+        },
+        {
+          "x": 448,
+          "y": 350,
+          "color": "blue",
+          "radius": 22
+        }
+      ],
+      "portals": [
+        {
+          "id": "A1",
+          "x": 220,
+          "y": 230,
+          "pairId": "A2",
+          "radius": 16,
+          "label": "A"
+        },
+        {
+          "id": "A2",
+          "x": 550,
+          "y": 70,
+          "pairId": "A1",
+          "radius": 16,
+          "label": "A"
+        },
+        {
+          "id": "B1",
+          "x": 330,
+          "y": 270,
+          "pairId": "B2",
+          "radius": 16,
+          "label": "B"
+        },
+        {
+          "id": "B2",
+          "x": 650,
+          "y": 420,
+          "pairId": "B1",
+          "radius": 16,
+          "label": "B"
+        }
+      ],
+      "objects": [
+        {
+          "type": "mirror",
+          "id": "g1",
+          "x": 220,
+          "y": 100,
+          "length": 124.8,
+          "angle": 69
+        },
+        {
+          "type": "mirror",
+          "id": "g2",
+          "x": 550,
+          "y": 250,
+          "length": 124.8,
+          "angle": 16
+        },
+        {
+          "type": "mirror",
+          "id": "c1",
+          "x": 313.02943725152284,
+          "y": 396.97056274847716,
+          "length": 124.8,
+          "angle": -12
+        },
+        {
+          "type": "mirror",
+          "id": "c2",
+          "x": 658,
+          "y": 350,
+          "length": 124.8,
+          "angle": 23
+        },
+        {
+          "type": "wall",
+          "x": 400,
+          "y": 230,
+          "length": 460,
+          "angle": 90,
+          "width": 12,
+          "purpose": "A divisória elimina o caminho físico direto entre as salas; é necessário um portal."
+        }
+      ],
+      "solution": [
+        45,
+        45,
+        -45,
+        45
+      ],
+      "sourceAngle": 0,
+      "target": {
+        "x": 730,
+        "y": 250,
+        "color": "gold",
+        "radius": 22
+      },
+      "requiredBounces": 4,
+      "wallPurpose": [
+        "A divisória elimina o caminho físico direto entre as salas; é necessário um portal."
+      ],
+      "decoyCount": 0,
+      "hint": "Os filtros não decidem: os dois pares são brancos.",
+      "tutorial": "",
+      "rules": "Cada cor no seu alvo, sem cruzar outras trajetórias.",
+      "id": "light-v3-76",
+      "campaignNumber": 66,
+      "campaignBand": "master",
+      "campaignRevision": "reflexos80-v6"
+    },
+    "scoreBefore": 310.62503013976607,
+    "scoreAfter": 0,
+    "initial": 14.856887510319268,
+    "reference": 15.414219282529984,
+    "edits": [
+      {
+        "round": 0,
+        "scoreBefore": 310.62503013976607,
+        "scoreAfter": 46.895907667125826
+      },
+      {
+        "round": 1,
+        "scoreBefore": 46.895907667125826,
+        "scoreAfter": 22.395907667125826
+      },
+      {
+        "round": 2,
+        "scoreBefore": 22.395907667125826,
+        "scoreAfter": 0
+      }
+    ]
+  },
+  {
+    "number": 68,
+    "level": {
+      "sources": [
+        {
+          "x": 318.8321682489884,
+          "y": 126.70077211520788,
+          "angle": -172,
+          "color": "gold"
+        },
+        {
+          "x": 323.13229506513164,
+          "y": 192.3978492786556,
+          "angle": 128,
+          "color": "blue"
+        },
+        {
+          "x": 429.12403485599015,
+          "y": 428.54021031123557,
+          "angle": -82,
+          "color": "pink"
+        }
+      ],
+      "targets": [
+        {
+          "x": 650,
+          "y": 272.5,
+          "radius": 22,
+          "color": "gold"
+        },
+        {
+          "x": 642.0778554500674,
+          "y": 186.38661519231948,
+          "radius": 22,
+          "color": "blue"
+        },
+        {
+          "x": 292.4,
+          "y": 286.8,
+          "radius": 22,
+          "color": "pink"
+        }
+      ],
+      "portals": [
+        {
+          "id": "s0a",
+          "pairId": "s0b",
+          "x": 360,
+          "y": 70,
+          "radius": 16,
+          "colors": [
+            "blue"
+          ],
+          "label": "A"
+        },
+        {
+          "id": "s0b",
+          "pairId": "s0a",
+          "x": 540,
+          "y": 390,
+          "radius": 16,
+          "colors": [
+            "gold"
+          ],
+          "label": "A"
+        },
+        {
+          "id": "s1a",
+          "pairId": "s1b",
+          "x": 360,
+          "y": 390,
+          "radius": 16,
+          "colors": [
+            "blue"
+          ],
+          "label": "B"
+        },
+        {
+          "id": "s1b",
+          "pairId": "s1a",
+          "x": 540,
+          "y": 70,
+          "radius": 16,
+          "colors": [
+            "blue"
+          ],
+          "label": "B"
+        },
+        {
+          "id": "pinka",
+          "pairId": "pinkb",
+          "x": 302.6,
+          "y": 396,
+          "radius": 16,
+          "colors": [
+            "pink"
+          ],
+          "label": "C"
+        },
+        {
+          "id": "pinkb",
+          "pairId": "pinka",
+          "x": 441.3842712474619,
+          "y": 163.5157287525381,
+          "radius": 16,
+          "colors": [
+            "pink"
+          ],
+          "label": "C"
+        }
+      ],
+      "objects": [
+        {
+          "x": 200,
+          "y": 110,
+          "type": "mirror",
+          "length": 124.8,
+          "angle": -62
+        },
+        {
+          "x": 200,
+          "y": 350,
+          "type": "mirror",
+          "length": 124.8,
+          "angle": 80.4
+        },
+        {
+          "x": 650,
+          "y": 362.5,
+          "type": "mirror",
+          "length": 124.8,
+          "angle": -21
+        },
+        {
+          "x": 650,
+          "y": 97.5,
+          "type": "mirror",
+          "length": 124.8,
+          "angle": 61.3
+        },
+        {
+          "type": "mirror",
+          "x": 450,
+          "y": 280,
+          "length": 124.8,
+          "angle": 60.9
+        }
+      ],
+      "id": "light-v5-deduction-symmetry-11-filter",
+      "name": "A entrada diferente",
+      "hint": "Compare a marca da entrada com a fonte que se aproxima.",
+      "solution": [
+        -71.4,
+        71,
+        -30.3,
+        52,
+        47.8
+      ],
+      "sourceAngle": -172,
+      "target": {
+        "x": 650,
+        "y": 272.5,
+        "radius": 22,
+        "color": "gold"
+      },
+      "requiredBounces": 5,
+      "wallPurpose": [],
+      "decoyCount": 0,
+      "tutorial": "",
+      "rules": "Leve cada cor ao alvo sem cruzar os feixes.",
+      "number": 68,
+      "campaignNumber": 68,
+      "campaignBand": "master",
+      "campaignRevision": "reflexos80-v6"
+    },
+    "scoreBefore": 459.50342337348854,
+    "scoreAfter": 0,
+    "initial": 15.712736895766753,
+    "reference": 15.712736895766753,
+    "edits": [
+      {
+        "round": 0,
+        "scoreBefore": 459.50342337348854,
+        "scoreAfter": 92.0909432016154
+      },
+      {
+        "round": 1,
+        "scoreBefore": 92.0909432016154,
+        "scoreAfter": 0.6716433672600142
+      },
+      {
+        "round": 2,
+        "scoreBefore": 0.6716433672600142,
+        "scoreAfter": 0
+      }
+    ]
+  },
+  {
+    "number": 75,
+    "level": {
+      "sources": [
+        {
+          "x": 60,
+          "y": 90,
+          "angle": 0,
+          "color": "blue"
+        },
+        {
+          "x": 40,
+          "y": 230,
+          "angle": 0,
+          "color": "gold"
+        }
+      ],
+      "targets": [
+        {
+          "x": 750,
+          "y": 190,
+          "radius": 22,
+          "color": "blue"
+        },
+        {
+          "x": 620,
+          "y": 235,
+          "radius": 22,
+          "color": "gold"
+        }
+      ],
+      "objects": [
+        {
+          "type": "mirror",
+          "x": 270,
+          "y": 90,
+          "length": 124.8,
+          "angle": 14
+        },
+        {
+          "type": "mirror",
+          "x": 270,
+          "y": 360,
+          "length": 124.8,
+          "angle": 70
+        },
+        {
+          "type": "mirror",
+          "x": 190,
+          "y": 230,
+          "length": 124.8,
+          "angle": -25
+        },
+        {
+          "type": "mirror",
+          "x": 430,
+          "y": 235,
+          "length": 124.8,
+          "angle": 18
+        },
+        {
+          "type": "wall",
+          "x": 330,
+          "y": 231.62790697674419,
+          "length": 90,
+          "angle": 90,
+          "width": 12,
+          "purpose": "Impede o dourado de atravessar diretamente o setor azul; o acesso seletivo mantém a separação."
+        },
+        {
+          "type": "wall",
+          "x": 380,
+          "y": 300,
+          "length": 70,
+          "angle": 90,
+          "width": 12,
+          "purpose": "Elimina o atalho azul inferior–alvo; uma conexão por portal continua necessária."
+        }
+      ],
+      "portals": [
+        {
+          "id": "U1a",
+          "pairId": "U1b",
+          "label": "A",
+          "x": 416,
+          "y": 360,
+          "radius": 16
+        },
+        {
+          "id": "U1b",
+          "pairId": "U1a",
+          "label": "A",
+          "x": 358,
+          "y": 415,
+          "radius": 16
+        },
+        {
+          "id": "U2a",
+          "pairId": "U2b",
+          "label": "B",
+          "x": 500,
+          "y": 415,
+          "radius": 16
+        },
+        {
+          "id": "U2b",
+          "pairId": "U2a",
+          "label": "B",
+          "x": 550,
+          "y": 190,
+          "radius": 16
+        },
+        {
+          "id": "Ga",
+          "pairId": "Gb",
+          "label": "C",
+          "x": 190,
+          "y": 340,
+          "radius": 16,
+          "colors": [
+            "gold"
+          ]
+        },
+        {
+          "id": "Gb",
+          "pairId": "Ga",
+          "label": "C",
+          "x": 430,
+          "y": 80,
+          "radius": 16,
+          "colors": [
+            "gold"
+          ]
+        },
+        {
+          "id": "Ra",
+          "pairId": "Rb",
+          "label": "D",
+          "x": 383.02943725152284,
+          "y": 133.02943725152286,
+          "radius": 16
+        },
+        {
+          "id": "Rb",
+          "pairId": "Ra",
+          "label": "D",
+          "x": 65,
+          "y": 390,
+          "radius": 16
+        }
+      ],
+      "solution": [
+        45,
+        45,
+        45,
+        45
+      ],
+      "name": "A saída que não continua",
+      "difficulty": 194,
+      "family": "v3-final-194",
+      "hint": "Compare as saídas, não a proximidade das entradas.",
+      "sourceAngle": 0,
+      "target": {
+        "x": 750,
+        "y": 190,
+        "radius": 22,
+        "color": "blue"
+      },
+      "requiredBounces": 4,
+      "wallPurpose": [
+        "Impede o dourado de atravessar diretamente o setor azul; o acesso seletivo mantém a separação.",
+        "Elimina o atalho azul inferior–alvo; uma conexão por portal continua necessária."
+      ],
+      "decoyCount": 1,
+      "tutorial": "",
+      "rules": "Leve todas as fontes aos alvos da mesma cor, sem cruzar nem encostar nos trechos físicos das outras luzes.",
+      "id": "light-v3-194",
+      "campaignNumber": 75,
+      "number": 75,
+      "campaignBand": "master",
+      "campaignRevision": "reflexos80-v6"
+    },
+    "scoreBefore": 272.7053325771154,
+    "scoreAfter": 0,
+    "initial": 17.551248379533277,
+    "reference": 17.551248379533277,
+    "edits": [
+      {
+        "round": 0,
+        "scoreBefore": 272.7053325771154,
+        "scoreAfter": 101.78507468943553
+      },
+      {
+        "round": 1,
+        "scoreBefore": 101.78507468943553,
+        "scoreAfter": 8.024928747446028
+      },
+      {
+        "round": 2,
+        "scoreBefore": 8.024928747446028,
+        "scoreAfter": 0
+      }
+    ]
+  },
+  {
+    "number": 76,
+    "level": {
+      "id": "light-v5-open-chain-019",
+      "name": "A volta da hipótese",
+      "hint": "Se uma cor tomar o desvio, acompanhe o que isso força nas outras duas.",
+      "width": 800,
+      "height": 460,
+      "objects": [
+        {
+          "x": 615.4,
+          "y": 207.9,
+          "type": "mirror",
+          "length": 124.8,
+          "angle": 84
+        },
+        {
+          "x": 640.5,
+          "y": 394,
+          "type": "mirror",
+          "length": 124.8,
+          "angle": 4.8
+        },
+        {
+          "x": 172.6,
+          "y": 215.5,
+          "type": "mirror",
+          "length": 124.8,
+          "angle": 15.8
+        },
+        {
+          "x": 405.2,
+          "y": 358.3,
+          "type": "mirror",
+          "length": 124.8,
+          "angle": -22.4
+        },
+        {
+          "x": 372,
+          "y": 189.4,
+          "type": "mirror",
+          "length": 124.8,
+          "angle": 0
+        },
+        {
+          "x": 114,
+          "y": 383.9,
+          "type": "mirror",
+          "length": 124.8,
+          "angle": 0
+        }
+      ],
+      "sources": [
+        {
+          "x": 531,
+          "y": 79.8,
+          "angle": 56.620700242879714,
+          "color": "gold"
+        },
+        {
+          "x": 758.9,
+          "y": 280.1,
+          "angle": 136.1097665271965,
+          "color": "blue"
+        },
+        {
+          "x": 40,
+          "y": 36.9,
+          "angle": 53.40828503553196,
+          "color": "pink"
+        }
+      ],
+      "targets": [
+        {
+          "x": 538.8431457505076,
+          "y": 382.64314575050764,
+          "radius": 22,
+          "color": "gold"
+        },
+        {
+          "x": 531.6,
+          "y": 247.2,
+          "radius": 22,
+          "color": "blue"
+        },
+        {
+          "x": 468.9,
+          "y": 96.7,
+          "radius": 22,
+          "color": "pink"
+        }
+      ],
+      "portals": [],
+      "solution": [
+        -59.5,
+        4.8,
+        15.8,
+        -22.4,
+        -63.3,
+        0
+      ],
+      "sourceAngle": 56.620700242879714,
+      "target": {
+        "x": 544.5,
+        "y": 388.3,
+        "radius": 22,
+        "color": "gold"
+      },
+      "requiredBounces": 4,
+      "wallPurpose": [],
+      "decoyCount": 2,
+      "tutorial": "",
+      "rules": "Leve cada cor ao seu alvo sem cruzar outras cores.",
+      "number": 76,
+      "campaignNumber": 76,
+      "campaignBand": "sage",
+      "campaignRevision": "reflexos80-v6"
+    },
+    "scoreBefore": 76.32967006306518,
+    "scoreAfter": 0.0050729033830242565,
+    "initial": 13.949636802211216,
+    "reference": 13.949636802211216,
+    "edits": [
+      {
+        "round": 0,
+        "scoreBefore": 76.32967006306518,
+        "scoreAfter": 0.0050729033830242565
+      }
+    ]
+  }
+]
