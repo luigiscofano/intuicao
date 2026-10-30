@@ -283,3 +283,7 @@ body > footer::after{content:"";position:absolute;right:30px;top:18px;width:58px
  :is(#main > .lab, #collection > .collection-lab, #repasse > .repasse-lab, #orbita > .orbita-lab) > .lab-heading::before,:is(#main > .lab, #collection > .collection-lab, #repasse > .repasse-lab, #orbita > .orbita-lab) > .lab-heading::after{left:-1px;width:18px;height:18px}
  body > footer::after{right:18px;top:16px;width:42px;height:44px;background-size:30px 30px,21px 21px}
 }
+
+/* Give the footer signature breathing room inside the curved panel edge. */
+body > footer .footer-signature{padding-inline-start:24px;max-width:100%}
+@media(max-width:600px){body > footer .footer-signature{padding-inline-start:16px}}
