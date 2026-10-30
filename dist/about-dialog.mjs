@@ -56,16 +56,16 @@ if(trigger && dialog){
    piece.style.setProperty('--ay',`${originY}px`);
    piece.style.setProperty('--asize',`${size}px`);
    piece.style.setProperty('--arot',`${rotation}deg`);
-   const isolatedCrop=i%faunaFrames.length===11||i%faunaFrames.length===14;
+   const isolatedCrop=[8,11,14].includes(i%faunaFrames.length);
    piece.innerHTML=`<svg viewBox="${x} ${y} ${w} ${h}" aria-hidden="true" focusable="false"><defs>${isolatedCrop?`<clipPath id="fauna-crop-${i}"><rect x="${x}" y="${y}" width="${w}" height="${h}"/></clipPath>`:''}<filter id="fauna-paper-${i}" color-interpolation-filters="sRGB"><feColorMatrix type="matrix" values="1 0 0 0 0  0 1 0 0 0  0 0 1 0 0  -1 -1 -1 0 3"/></filter></defs><image ${isolatedCrop?`clip-path="url(#fauna-crop-${i})"`:''} href="platform-assets/fauna-green-original.png" width="1079" height="1458" filter="url(#fauna-paper-${i})"/></svg>`;
    fragment.append(piece);
    if(!reduced.matches){
-    const slow=i%3!==0,duration=(slow?8000:5800)+Math.random()*1400;
+    const slow=i%3!==0,duration=(slow?3000:800)+Math.random()*1400;
     const gap=Math.max(0,[r.left,vw-r.right,r.top,vh-r.bottom][edge]);
     // Settle in the outside margin instead of racing offscreen. A narrow mobile
     // margin keeps a visible portion of the PNG until its gentle final fade.
     const distance=inset+Math.min(220,gap*.8);
-    const tangent=(Math.random()-.5)*110,spin=(Math.random()-.5)*80;
+    const tangent=-35-Math.random()*65,spin=(Math.random()-.5)*80;
     const frames=Array.from({length:61},(_,frame)=>{
      const progress=frame/60;
      const outward=distance*(1-Math.exp(-7*progress))/(1-Math.exp(-7));
@@ -120,7 +120,7 @@ if(trigger && dialog){
   sparks.append(fragment);status.textContent='Viva cada pequena descoberta!';
   celebrateGreen();
   celebrateAnimals();
-  cleanupTimer=setTimeout(clearCelebration,reduced.matches?1100:10000);
+  cleanupTimer=setTimeout(clearCelebration,reduced.matches?1100:5000);
  });
  reduced.addEventListener('change',clearCelebration);
 }
