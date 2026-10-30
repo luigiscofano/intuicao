@@ -40,15 +40,18 @@ if(trigger && dialog){
   [80,1220,240,220],[405,1215,255,230],[720,1205,285,240]
  ];
  const celebrateAnimals=()=>{
-  const r=dialog.getBoundingClientRect(),vw=document.documentElement.clientWidth;
+  const r=dialog.getBoundingClientRect(),vw=document.documentElement.clientWidth,vh=window.innerHeight;
   const fragment=document.createDocumentFragment(),count=reduced.matches?8:28,flights=[];
   for(let i=0;i<count;i++){
    const [x,y,w,h]=faunaFrames[i%faunaFrames.length];
    const piece=document.createElement('span');piece.className='about-animal-confetti';
    const size=22+Math.random()*24,rotation=-35+Math.random()*70;
-   // Launch inside the panel, then let momentum carry the icons beyond its edges.
-   const originX=Math.max(4,Math.min(vw-size-4,r.left+r.width*(.2+Math.random()*.6)-size/2));
-   const originY=r.top+r.height*(.35+Math.random()*.25);
+   // Each icon leaves its nearest edge: no flight traverses the panel.
+   const edge=i%4,inset=size/2+8,t=.2+Math.random()*.6;
+   const cx=edge===0?r.left+inset:edge===1?r.right-inset:r.left+r.width*t;
+   const cy=edge===2?r.top+inset:edge===3?r.bottom-inset:r.top+r.height*t;
+   const originX=cx-size/2,originY=cy-size/2;
+   piece.setAttribute('data-exit-edge',String(edge));
    piece.style.setProperty('--ax',`${originX}px`);
    piece.style.setProperty('--ay',`${originY}px`);
    piece.style.setProperty('--asize',`${size}px`);
@@ -56,17 +59,22 @@ if(trigger && dialog){
    piece.innerHTML=`<svg viewBox="${x} ${y} ${w} ${h}" aria-hidden="true" focusable="false"><defs><filter id="fauna-paper-${i}" color-interpolation-filters="sRGB"><feColorMatrix type="matrix" values="1 0 0 0 0  0 1 0 0 0  0 0 1 0 0  -1 -1 -1 0 3"/></filter></defs><image href="platform-assets/fauna-green-original.png" width="1079" height="1458" filter="url(#fauna-paper-${i})"/></svg>`;
    fragment.append(piece);
    if(!reduced.matches){
-    const duration=2400+Math.random()*500,drag=.28+Math.random()*.25;
-    const vx=(i%2?-1:1)*(180+Math.random()*210),vy=-190-Math.random()*190;
-    const gravity=420+Math.random()*180,spin=(i%3?-1:1)*(80+Math.random()*170),flutter=8+Math.random()*13;
+    const slow=i%3!==0,duration=(slow?8000:5800)+Math.random()*1400;
+    const gap=Math.max(0,[r.left,vw-r.right,r.top,vh-r.bottom][edge]);
+    // Settle in the outside margin instead of racing offscreen. A narrow mobile
+    // margin keeps a visible portion of the PNG until its gentle final fade.
+    const distance=inset+Math.min(180,gap*.65);
+    const tangent=(Math.random()-.5)*70,spin=(Math.random()-.5)*80;
     const frames=Array.from({length:61},(_,frame)=>{
-     const progress=frame/60,t=progress*duration/1000;
-     const dx=vx*(1-Math.exp(-drag*t))/drag+Math.sin(t*5+i)*flutter*t;
-     const dy=vy*t+gravity*t*t/2;
-     return {offset:progress,opacity:progress<.06?progress/.06:progress>.82?(1-progress)/.18:1,
-      transform:`translate(${dx}px,${dy}px) rotate(${rotation+spin*t+Math.sin(t*4+i)*12}deg) scale(${.8+.2*Math.min(1,progress/.12)})`};
+     const progress=frame/60;
+     const outward=distance*(1-Math.exp(-3.2*progress))/(1-Math.exp(-3.2));
+     const drift=tangent*progress+Math.sin(progress*Math.PI*2)*4;
+     const dx=edge===0?-outward:edge===1?outward:drift;
+     const dy=edge===2?-outward:edge===3?outward:drift;
+     return {offset:progress,opacity:progress<.05?progress/.05:progress>.8?(1-progress)/.2:1,
+      transform:`translate(${dx}px,${dy}px) rotate(${rotation+spin*progress}deg)`};
     });
-    flights.push({piece,frames,duration,delay:Math.random()*120});
+    flights.push({piece,frames,duration,delay:Math.random()*500});
    }
   }
   greenLayer.append(fragment);
@@ -111,7 +119,7 @@ if(trigger && dialog){
   sparks.append(fragment);status.textContent='Viva cada pequena descoberta!';
   celebrateGreen();
   celebrateAnimals();
-  cleanupTimer=setTimeout(clearCelebration,reduced.matches?1100:3200);
+  cleanupTimer=setTimeout(clearCelebration,reduced.matches?1100:10000);
  });
  reduced.addEventListener('change',clearCelebration);
 }

@@ -46,9 +46,9 @@
 @media(max-width:680px){#sintonia .s-mechanism{inset:14%}#sintonia .s-mechanism b{font-size:7px;padding:1px 2px}#sintonia .s-gate>span{font-size:7px}}
 #sintonia .s-gate.oneway>span{display:grid;place-items:center;width:16px;height:16px;padding:1px;box-sizing:border-box;opacity:1}
 #sintonia .s-gate.oneway .s-scenery-icon{width:12px;height:12px;stroke-width:3}
-/* Slightly roomier cells (+11–14% when space permits). Keep the existing
+/* Roomier cells (+25% over the previous caps where space permits). Keep the existing
    proportional min() map sizing, column counts and mobile wrapping intact. */
-#sintonia .s-boards{--s-cell-max:60px;max-width:min(920px,calc((var(--s-max-cols) * var(--s-cell-max) + 4px) * var(--s-columns) + 28px))}
-#sintonia .s-boards[data-count="3"]{--s-cell-max:56px}
-#sintonia .s-boards[data-count="4"]{--s-cell-max:50px}
-#sintonia .s-animal-board{max-width:380px}
+#sintonia .s-boards{--s-cell-max:75px;max-width:min(1150px,calc((var(--s-max-cols) * var(--s-cell-max) + 4px) * var(--s-columns) + 28px))}
+#sintonia .s-boards[data-count="3"]{--s-cell-max:70px}
+#sintonia .s-boards[data-count="4"]{--s-cell-max:62.5px}
+#sintonia .s-animal-board{max-width:475px}
