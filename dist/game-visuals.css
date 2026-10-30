@@ -45,12 +45,12 @@
 #repasse .r-piece:active{background:#214a36}
 #repasse .r-arrow{color:#e5f3d6}
 #repasse .r-empty{background:#eef0e6;border-color:#bdc8b6}
-#repasse .r-edge-box{background:#f9e2ad;border-color:#b28b48;color:#56401c}
-#repasse .r-box-target{color:#725627}
+#repasse .r-edge-box{background:#ffe36b;border-color:#b68a16;color:#55420d}
+#repasse .r-box-target{color:#665017}
 #repasse .r-edge-box.exact{background:#b9dca6;border-color:#507b3d;color:#284b21}
 #repasse .exact .r-box-target{color:#385b2d}
-#repasse .r-edge-box.over{background:#f7c1a9;border-color:#ac5539;color:#702e1c}
-#repasse .over .r-box-target{color:#702e1c}
+#repasse .r-edge-box.over{background:#f28f88;border-color:#b43832;color:#6b1717}
+#repasse .over .r-box-target{color:#6b1717}
 #repasse .r-piece.r-preview-source{background:#27543d;border-color:#193d2b}
 #repasse .r-preview-target{outline:3px solid #b57524;outline-offset:1px}
 #repasse .r-receiving{box-shadow:inset 0 0 0 2px #6d953d}
