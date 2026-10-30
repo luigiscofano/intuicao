@@ -69,11 +69,11 @@ export function makeCircleTopologyV3({ringCount=3,intersections=4,variant=0,fami
  throw new Error(`No readable analytic circle arrangement for ${ringCount}/${intersections}/${variant}`);
 }
 export function validateCircleGeometryV3(level){
- const fail=error=>({valid:false,errors:[error]});if(!level||!Array.isArray(level.cells)||!Array.isArray(level.rings)||level.cells.length>80||level.rings.length<2||level.rings.length>5)return fail('Invalid circle collection');
+ const fail=error=>({valid:false,errors:[error]});if(!level||!Array.isArray(level.cells)||!Array.isArray(level.rings)||level.cells.length>80||level.rings.length<1||level.rings.length>5)return fail('Invalid circle collection');
  const width=level.layout?.width,height=level.layout?.height;if(!Number.isFinite(width)||!Number.isFinite(height)||width<100||height<100||width>16384||height>16384)return fail('Invalid circle layout');
  const cells=new Map(),owners=new Map(),errors=[],circles=[];
  for(const p of level.cells){if(!p||typeof p.id!=='string'||cells.has(p.id)||!Number.isFinite(p.x)||!Number.isFinite(p.y)||p.x<27||p.y<27||p.x>width-27||p.y>height-27)return fail('Invalid physical circle house');cells.set(p.id,p);owners.set(p.id,[]);}
- const ringIDs=new Set();for(const r of level.rings){const c=r?.geometry;if(!r||typeof r.id!=='string'||ringIDs.has(r.id)||r.path!==undefined||c?.type!=='circle'||![c.cx,c.cy,c.r,c.rx,c.ry].every(Number.isFinite)||c.r<=0||Math.abs(c.rx-c.r)>EPS||Math.abs(c.ry-c.r)>EPS)return fail('Every new rail must be a perfect analytic circle');ringIDs.add(r.id);circles.push(c);
+ const ringIDs=new Set();for(const r of level.rings){const c=r?.geometry;if(!r||typeof r.id!=='string'||ringIDs.has(r.id)||r.path!==undefined||c?.type!=='circle'||![c.cx,c.cy,c.r,c.rx??c.r,c.ry??c.r].every(Number.isFinite)||c.r<=0||Math.abs((c.rx??c.r)-c.r)>EPS||Math.abs((c.ry??c.r)-c.r)>EPS)return fail('Every new rail must be a perfect analytic circle');ringIDs.add(r.id);circles.push(c);
   if(c.cx-c.r<0||c.cy-c.r<0||c.cx+c.r>width||c.cy+c.r>height)return fail('Circle outside drawing bounds');
   if(!Array.isArray(r.cells)||r.cells.length<3||r.cells.length>32||new Set(r.cells).size!==r.cells.length)return fail('Invalid cyclic circle houses');
   const angles=[];for(const id of r.cells){const p=cells.get(id);if(!p)return fail('Missing circle house');owners.get(id).push(r.id);if(Math.abs(Math.hypot(p.x-c.cx,p.y-c.cy)-c.r)>1e-4)errors.push('House is not on its analytic circle');angles.push(mod(Math.atan2(p.y-c.cy,p.x-c.cx)));}

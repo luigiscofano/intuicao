@@ -1,5 +1,5 @@
 import {validateCircleGeometryV3} from './topology-circles-v3.mjs';
-import {CATALOG} from './catalog.mjs';
+import {CATALOG} from './catalog-legacy1000.mjs';
 import {validateLevel,replay,initialState,isWon,RULES_VERSION} from './engine.mjs';
 
 export const ENDLESS_VERSION='orbita-generator-3';
@@ -12,8 +12,8 @@ export function isCircularGeneration(level){
  if(!Array.isArray(level?.rings)||!level.rings.length||!level.rings.every(r=>Array.isArray(r?.cells)))return false;
  if(!level.rings.every(r=>{const g=r.geometry;return g?.type==='circle'&&[g.cx,g.cy,g.r].every(Number.isFinite)&&g.r>0&&Math.abs((g.rx??g.r)-g.r)<1e-6&&Math.abs((g.ry??g.r)-g.r)<1e-6;}))return false;
  if(!level.rings.every((r,i)=>level.rings.slice(i+1).every(s=>r.cells.filter(c=>s.cells.includes(c)).length<=2)))return false;
- if(level.catalogVersion>=3){try{return validateCircleGeometryV3(level).valid;}catch{return false;}}
- return true;
+ // All new/custom/generated definitions receive the same analytic audit; metadata is not a bypass.
+ try{return validateCircleGeometryV3(level).valid;}catch{return false;}
 }
 const normalizedSeed=value=>{if(Number.isSafeInteger(value))return value>>>0;let h=2166136261;for(const c of String(value??0)){h^=c.charCodeAt(0);h=Math.imul(h,16777619);}return h>>>0;};
 /** Seed selects a fully certified definition, never reinterprets an existing saved seed. */

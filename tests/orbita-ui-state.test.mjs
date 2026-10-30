@@ -5,7 +5,7 @@ import {initialState,stateKey,isWon,transition,commandStatus} from '../dist/orbi
 import {analyzePosition} from '../dist/orbita/analysis.mjs';
 import {ORBITA_STORAGE_KEY,freshOrbitaData,normalizeOrbitaData,restoreOrbitaSession,serializeOrbitaSession,commitOrbitaCommand,recordOrbitaCompletion,endlessOptions,movementPoint,ringPath,validateOrbitaPresentation,computeOrbitaBadgeLayout} from '../dist/orbita/ui.mjs';
 
-const example=CAMPAIGN[9];
+const example=CAMPAIGN.find(level=>level.id===10);
 const play=(level,moves)=>moves.reduce((session,move)=>commitOrbitaCommand(level,session,move).session,restoreOrbitaSession(level,null));
 
 test('quatro comandos do tutorial correspondem a quatro transações reversíveis',()=>{
@@ -32,7 +32,7 @@ test('snapshots adulterados ou incompatíveis recuperam só a tentativa atual',(
   const states=[{...structuredClone(valid),cursor:99},{...structuredClone(valid),rulesVersion:'outra'},{...structuredClone(valid),definition:'outra fase'},{...structuredClone(valid),levelId:500},{...structuredClone(valid),state:{...valid.state,moves:27}},{...structuredClone(valid),commands:[{command:'ausente',direction:1}]}];
   for(const saved of states){const recovered=restoreOrbitaSession(example,saved);assert.equal(recovered.restored,false);assert.equal(recovered.cursor,0);assert.deepEqual(recovered.states,[initialState(example)]);assert.ok(recovered.restoreIssue);}
   const data=normalizeOrbitaData({campaign:{lastId:10,completed:{10:{firstCompletedAt:'hoje',assisted:false}},sessions:{10:states[0]}}});
-  assert.ok(data.campaign.completed[10]);assert.equal(data.campaign.lastId,10);
+  assert.ok(data.legacyCampaignArchive[0].campaign.completed[10]);assert.equal(data.campaign.lastId,null);assert.equal(data.campaign.completed[10],undefined);
 });
 
 test('engrenagem e sensor persistem como comandos atômicos',()=>{
@@ -101,7 +101,7 @@ test('progressão Endless é limitada, retoma conceitos e conserva janela recent
 });
 
 test('apresentação de todas as fases mantém casas, trilhos, alvos e sensores dentro da área',()=>{
-  assert.equal(CAMPAIGN.length,1000);
+  assert.equal(CAMPAIGN.length,80);
   for(const level of CAMPAIGN){const checked=validateOrbitaPresentation(level);assert.equal(checked.valid,true,'fase '+level.id+': '+checked.errors.join(' '));}
 });
 
@@ -128,8 +128,9 @@ test('importação visual rejeita coordenadas ausentes, raios inválidos e atrib
 });
 
 test('sensores de todas as novas fases recebem espaço próprio sem cobrir alvos',()=>{
-  for(const number of CAMPAIGN.slice(200).filter(l=>l.commands.some(c=>c.requires.length)).map(l=>l.id)){
-    const level=CAMPAIGN[number-1],layout=computeOrbitaBadgeLayout(level);assert.equal(layout.valid,true);assert.ok(layout.sensors.length);
+  const sensors=CAMPAIGN.filter(l=>l.commands.some(c=>c.requires.length));assert.ok(sensors.length>0);
+  for(const level of sensors){
+    const number=level.editorialLevel,layout=computeOrbitaBadgeLayout(level);assert.equal(layout.valid,true);assert.ok(layout.sensors.length);
     for(const sensor of layout.sensors){
       assert.ok(sensor.x>=0&&sensor.y>=0&&sensor.x+sensor.width<=level.layout.width&&sensor.y+sensor.height<=level.layout.height);
       for(const target of layout.targets){const overlaps=sensor.x<target.x+target.width&&sensor.x+sensor.width>target.x&&sensor.y<target.y+target.height&&sensor.y+sensor.height>target.y;assert.equal(overlaps,false,'fase '+number+', '+sensor.cell+' e '+target.cell);}
