@@ -1,0 +1,1943 @@
+{
+  "generatedAt": "2026-10-30T03:33:30.675Z",
+  "engineHash": "af5e6278aa156d9652d1a4462c05fa083f8b0926bb6113a0c8502ca339425e3f",
+  "total": 80,
+  "validated": 80,
+  "complete": true,
+  "mechanicIntroductions": {
+    "turn": 10,
+    "straight": 13,
+    "passages": 16,
+    "forbiddenEdges": 24,
+    "counts": 31,
+    "distances": 39,
+    "neighbors": 46,
+    "order": 54,
+    "cuts": 61,
+    "exclusivePassages": 68
+  },
+  "method": "Production exact search from all legal cells; separately implemented DFS without production local propagation; reference answers used only for post-search equality.",
+  "humanPlaytesting": false,
+  "records": [
+    {
+      "number": 1,
+      "id": "elo-v2-001",
+      "levelHash": "f685725e1900085847afd9849bd5bd654844c8d2956768cd85c2d9a714e34478",
+      "families": [],
+      "dimensions": [
+        5,
+        5
+      ],
+      "independent": {
+        "count": 1,
+        "exhaustive": true,
+        "nodes": 5
+      },
+      "production": {
+        "count": 1,
+        "exhaustive": true,
+        "nodes": 11
+      },
+      "partialSubsets": 4,
+      "elapsedMs": 7
+    },
+    {
+      "number": 2,
+      "id": "elo-v2-008",
+      "levelHash": "8bc497093e37f4634a21ed21308ec10aeeda9bc9f5f713c6ccbec9e0195cbb24",
+      "families": [],
+      "dimensions": [
+        5,
+        5
+      ],
+      "independent": {
+        "count": 1,
+        "exhaustive": true,
+        "nodes": 11
+      },
+      "production": {
+        "count": 1,
+        "exhaustive": true,
+        "nodes": 13
+      },
+      "partialSubsets": 4,
+      "elapsedMs": 8
+    },
+    {
+      "number": 3,
+      "id": "elo-v2-017",
+      "levelHash": "5c8243c97edbab2d3fc9998b09ec7fa6f627e0220fd46d2404dabefe93420460",
+      "families": [],
+      "dimensions": [
+        5,
+        5
+      ],
+      "independent": {
+        "count": 1,
+        "exhaustive": true,
+        "nodes": 7
+      },
+      "production": {
+        "count": 1,
+        "exhaustive": true,
+        "nodes": 26
+      },
+      "partialSubsets": 4,
+      "elapsedMs": 4
+    },
+    {
+      "number": 4,
+      "id": "elo-v2-027",
+      "levelHash": "ce4039412699686fc5932a4473ed6bddabbbb7184f120e51fffc50afc058fdbf",
+      "families": [],
+      "dimensions": [
+        6,
+        6
+      ],
+      "independent": {
+        "count": 1,
+        "exhaustive": true,
+        "nodes": 11
+      },
+      "production": {
+        "count": 1,
+        "exhaustive": true,
+        "nodes": 23
+      },
+      "partialSubsets": 4,
+      "elapsedMs": 5
+    },
+    {
+      "number": 5,
+      "id": "elo-v2-020",
+      "levelHash": "2c96ec17ffe49e6faf880eda06632e34a1729bc16d554be886a1d5b665b56a38",
+      "families": [],
+      "dimensions": [
+        5,
+        5
+      ],
+      "independent": {
+        "count": 1,
+        "exhaustive": true,
+        "nodes": 46
+      },
+      "production": {
+        "count": 1,
+        "exhaustive": true,
+        "nodes": 205
+      },
+      "partialSubsets": 4,
+      "elapsedMs": 10
+    },
+    {
+      "number": 6,
+      "id": "elo-v2-040",
+      "levelHash": "ace2c06c33e51bd1536e99acd721052751a0bd3f325d9ac61d16d0718e437eba",
+      "families": [],
+      "dimensions": [
+        6,
+        6
+      ],
+      "independent": {
+        "count": 1,
+        "exhaustive": true,
+        "nodes": 34
+      },
+      "production": {
+        "count": 1,
+        "exhaustive": true,
+        "nodes": 129
+      },
+      "partialSubsets": 4,
+      "elapsedMs": 8
+    },
+    {
+      "number": 7,
+      "id": "elo-v2-024",
+      "levelHash": "8668161ae80460bd5bee7ea301ffe4fb6ffa9c9872954f39c6684a842c1149b2",
+      "families": [],
+      "dimensions": [
+        5,
+        5
+      ],
+      "independent": {
+        "count": 1,
+        "exhaustive": true,
+        "nodes": 49
+      },
+      "production": {
+        "count": 1,
+        "exhaustive": true,
+        "nodes": 133
+      },
+      "partialSubsets": 4,
+      "elapsedMs": 8
+    },
+    {
+      "number": 8,
+      "id": "elo-v2-048",
+      "levelHash": "8c203d3ad3911e8f36121fbedb584305e97b30e4e37a9ac8e0f32e41d1608ee7",
+      "families": [],
+      "dimensions": [
+        6,
+        6
+      ],
+      "independent": {
+        "count": 1,
+        "exhaustive": true,
+        "nodes": 43
+      },
+      "production": {
+        "count": 1,
+        "exhaustive": true,
+        "nodes": 205
+      },
+      "partialSubsets": 4,
+      "elapsedMs": 11
+    },
+    {
+      "number": 9,
+      "id": "elo-v2-056",
+      "levelHash": "d5501069da16abd7d9847454be2178cee5724a01f03d2876916f0a76cabda5ba",
+      "families": [],
+      "dimensions": [
+        6,
+        6
+      ],
+      "independent": {
+        "count": 1,
+        "exhaustive": true,
+        "nodes": 18
+      },
+      "production": {
+        "count": 1,
+        "exhaustive": true,
+        "nodes": 53
+      },
+      "partialSubsets": 4,
+      "elapsedMs": 8
+    },
+    {
+      "number": 10,
+      "id": "elo-v3-021",
+      "levelHash": "b0b8547a4f39dd9b529293837cecaf85cf5b6c6a933bbb1f449c9e3ce4a2df37",
+      "families": [
+        "turn"
+      ],
+      "dimensions": [
+        5,
+        5
+      ],
+      "independent": {
+        "count": 1,
+        "exhaustive": true,
+        "nodes": 45
+      },
+      "production": {
+        "count": 1,
+        "exhaustive": true,
+        "nodes": 123
+      },
+      "partialSubsets": 4,
+      "elapsedMs": 12
+    },
+    {
+      "number": 11,
+      "id": "elo-v3-037",
+      "levelHash": "abd8c7972c81fa45d8d28323fc0de247615c6bec3bf810dad81d62a62d6d1966",
+      "families": [
+        "turn"
+      ],
+      "dimensions": [
+        5,
+        5
+      ],
+      "independent": {
+        "count": 1,
+        "exhaustive": true,
+        "nodes": 96
+      },
+      "production": {
+        "count": 1,
+        "exhaustive": true,
+        "nodes": 233
+      },
+      "partialSubsets": 4,
+      "elapsedMs": 16
+    },
+    {
+      "number": 12,
+      "id": "elo-v2-062",
+      "levelHash": "d3abcb75ff40d33c008fc12fd35e74ebb75ff70281d823656fbf0449d8f173c3",
+      "families": [],
+      "dimensions": [
+        6,
+        6
+      ],
+      "independent": {
+        "count": 1,
+        "exhaustive": true,
+        "nodes": 44
+      },
+      "production": {
+        "count": 1,
+        "exhaustive": true,
+        "nodes": 159
+      },
+      "partialSubsets": 4,
+      "elapsedMs": 12
+    },
+    {
+      "number": 13,
+      "id": "elo-v3-022",
+      "levelHash": "23c21949c6c37bf93e51b288e9dc8642ea044db59a61f03e5a3f30bb7145dddc",
+      "families": [
+        "straight"
+      ],
+      "dimensions": [
+        6,
+        6
+      ],
+      "independent": {
+        "count": 1,
+        "exhaustive": true,
+        "nodes": 16
+      },
+      "production": {
+        "count": 1,
+        "exhaustive": true,
+        "nodes": 333
+      },
+      "partialSubsets": 4,
+      "elapsedMs": 12
+    },
+    {
+      "number": 14,
+      "id": "elo-v3-023",
+      "levelHash": "25a6dcf06cc591ff8130b0ded69ba27bf218b41d21c5a1276df31b93cf5ae989",
+      "families": [
+        "turn"
+      ],
+      "dimensions": [
+        6,
+        6
+      ],
+      "independent": {
+        "count": 1,
+        "exhaustive": true,
+        "nodes": 49
+      },
+      "production": {
+        "count": 1,
+        "exhaustive": true,
+        "nodes": 208
+      },
+      "partialSubsets": 4,
+      "elapsedMs": 9
+    },
+    {
+      "number": 15,
+      "id": "elo-v3-026",
+      "levelHash": "8d7eef4fe2eca821775ec3f4f3c2bb82d87e9c66106cc4c19b9e4b6ada3de219",
+      "families": [
+        "turn"
+      ],
+      "dimensions": [
+        6,
+        6
+      ],
+      "independent": {
+        "count": 1,
+        "exhaustive": true,
+        "nodes": 85
+      },
+      "production": {
+        "count": 1,
+        "exhaustive": true,
+        "nodes": 436
+      },
+      "partialSubsets": 4,
+      "elapsedMs": 18
+    },
+    {
+      "number": 16,
+      "id": "elo-v3-041",
+      "levelHash": "93816cf84da0207d12f8fff041313b70f29a7e1bd9d9ec43aeb9519d36ac9066",
+      "families": [
+        "turn",
+        "passages"
+      ],
+      "dimensions": [
+        5,
+        5
+      ],
+      "independent": {
+        "count": 1,
+        "exhaustive": true,
+        "nodes": 28
+      },
+      "production": {
+        "count": 1,
+        "exhaustive": true,
+        "nodes": 86
+      },
+      "partialSubsets": 4,
+      "elapsedMs": 7
+    },
+    {
+      "number": 17,
+      "id": "elo-v2-071",
+      "levelHash": "7ae1899f483acb941c6782251f288960f673f955461fc9cd61ac08aa2931f6a7",
+      "families": [],
+      "dimensions": [
+        6,
+        6
+      ],
+      "independent": {
+        "count": 1,
+        "exhaustive": true,
+        "nodes": 70
+      },
+      "production": {
+        "count": 1,
+        "exhaustive": true,
+        "nodes": 309
+      },
+      "partialSubsets": 4,
+      "elapsedMs": 14
+    },
+    {
+      "number": 18,
+      "id": "elo-v3-046",
+      "levelHash": "43df13df4b200ef9f34552d362ca0c245bcc51bf0d418a59f9526edb34ba477c",
+      "families": [
+        "passages"
+      ],
+      "dimensions": [
+        6,
+        6
+      ],
+      "independent": {
+        "count": 1,
+        "exhaustive": true,
+        "nodes": 1723
+      },
+      "production": {
+        "count": 1,
+        "exhaustive": true,
+        "nodes": 3485
+      },
+      "partialSubsets": 4,
+      "elapsedMs": 129
+    },
+    {
+      "number": 19,
+      "id": "elo-v3-038",
+      "levelHash": "4630bc9e94a73dc6ed0c02ad072178b196f892a60b714bc9532667a27a79af07",
+      "families": [
+        "turn"
+      ],
+      "dimensions": [
+        6,
+        6
+      ],
+      "independent": {
+        "count": 1,
+        "exhaustive": true,
+        "nodes": 146
+      },
+      "production": {
+        "count": 1,
+        "exhaustive": true,
+        "nodes": 518
+      },
+      "partialSubsets": 4,
+      "elapsedMs": 15
+    },
+    {
+      "number": 20,
+      "id": "elo-v3-042",
+      "levelHash": "6bbada5187ab7a3ecc91ff6e0e982c0ec9a9469e0c95cdd122a79c1acf52abd1",
+      "families": [
+        "turn",
+        "passages"
+      ],
+      "dimensions": [
+        6,
+        6
+      ],
+      "independent": {
+        "count": 1,
+        "exhaustive": true,
+        "nodes": 49
+      },
+      "production": {
+        "count": 1,
+        "exhaustive": true,
+        "nodes": 90
+      },
+      "partialSubsets": 4,
+      "elapsedMs": 10
+    },
+    {
+      "number": 21,
+      "id": "elo-v2-077",
+      "levelHash": "116d440640354882aad5ca0c43555915535e7425190f00a8e8f2a2ab024482c1",
+      "families": [],
+      "dimensions": [
+        7,
+        7
+      ],
+      "independent": {
+        "count": 1,
+        "exhaustive": true,
+        "nodes": 89
+      },
+      "production": {
+        "count": 1,
+        "exhaustive": true,
+        "nodes": 465
+      },
+      "partialSubsets": 4,
+      "elapsedMs": 14
+    },
+    {
+      "number": 22,
+      "id": "elo-v3-057",
+      "levelHash": "b9ef39ff025194aa12a9d61e935731dbe8dd8aeae187bccb0fcbcc70bf6931c7",
+      "families": [
+        "passages"
+      ],
+      "dimensions": [
+        5,
+        5
+      ],
+      "independent": {
+        "count": 1,
+        "exhaustive": true,
+        "nodes": 236
+      },
+      "production": {
+        "count": 1,
+        "exhaustive": true,
+        "nodes": 519
+      },
+      "partialSubsets": 4,
+      "elapsedMs": 22
+    },
+    {
+      "number": 23,
+      "id": "elo-v3-039",
+      "levelHash": "f494b16c829716596fb02136606b0e7a6d59bb10e6e7a43ea98e446d68a17ae1",
+      "families": [
+        "turn"
+      ],
+      "dimensions": [
+        6,
+        6
+      ],
+      "independent": {
+        "count": 1,
+        "exhaustive": true,
+        "nodes": 62
+      },
+      "production": {
+        "count": 1,
+        "exhaustive": true,
+        "nodes": 448
+      },
+      "partialSubsets": 4,
+      "elapsedMs": 15
+    },
+    {
+      "number": 24,
+      "id": "elo-v3-061",
+      "levelHash": "6a792a944069ab5b62bc8a54e5d8beca5c879e77c56842d7415f9def641b5bcd",
+      "families": [
+        "forbiddenEdges"
+      ],
+      "dimensions": [
+        5,
+        5
+      ],
+      "independent": {
+        "count": 1,
+        "exhaustive": true,
+        "nodes": 17
+      },
+      "production": {
+        "count": 1,
+        "exhaustive": true,
+        "nodes": 65
+      },
+      "partialSubsets": 4,
+      "elapsedMs": 9
+    },
+    {
+      "number": 25,
+      "id": "elo-v3-058",
+      "levelHash": "1e2a756f9dbc2c45a6f0cd1471281d52374e09a0de6caff7b66eaa1fcc59f1f4",
+      "families": [
+        "passages"
+      ],
+      "dimensions": [
+        6,
+        6
+      ],
+      "independent": {
+        "count": 1,
+        "exhaustive": true,
+        "nodes": 1259
+      },
+      "production": {
+        "count": 1,
+        "exhaustive": true,
+        "nodes": 701
+      },
+      "partialSubsets": 4,
+      "elapsedMs": 66
+    },
+    {
+      "number": 26,
+      "id": "elo-v3-062",
+      "levelHash": "5d2e6b40af6bd1a9e724b91c14de2aa6aee03405f7643eda2ddbacc8d3648198",
+      "families": [
+        "forbiddenEdges"
+      ],
+      "dimensions": [
+        6,
+        6
+      ],
+      "independent": {
+        "count": 1,
+        "exhaustive": true,
+        "nodes": 190
+      },
+      "production": {
+        "count": 1,
+        "exhaustive": true,
+        "nodes": 876
+      },
+      "partialSubsets": 4,
+      "elapsedMs": 17
+    },
+    {
+      "number": 27,
+      "id": "elo-v2-091",
+      "levelHash": "cab5683834811c26147900233d2bb80ec7b7c7f2fe3528b6a41e5666b48aea44",
+      "families": [],
+      "dimensions": [
+        7,
+        7
+      ],
+      "independent": {
+        "count": 1,
+        "exhaustive": true,
+        "nodes": 106
+      },
+      "production": {
+        "count": 1,
+        "exhaustive": true,
+        "nodes": 791
+      },
+      "partialSubsets": 4,
+      "elapsedMs": 17
+    },
+    {
+      "number": 28,
+      "id": "elo-v3-063",
+      "levelHash": "78c3c343765893c1ce5440738aa0078dd753cbd2642ed371202a485ed241ef57",
+      "families": [
+        "passages",
+        "forbiddenEdges"
+      ],
+      "dimensions": [
+        6,
+        6
+      ],
+      "independent": {
+        "count": 1,
+        "exhaustive": true,
+        "nodes": 145
+      },
+      "production": {
+        "count": 1,
+        "exhaustive": true,
+        "nodes": 853
+      },
+      "partialSubsets": 4,
+      "elapsedMs": 30
+    },
+    {
+      "number": 29,
+      "id": "elo-v4-029",
+      "levelHash": "57759d805b37ec9c1e8d454e1c9bc7762978e22e43c2ce9ed57bc863aa79477b",
+      "families": [
+        "passages",
+        "forbiddenEdges"
+      ],
+      "dimensions": [
+        6,
+        6
+      ],
+      "independent": {
+        "count": 1,
+        "exhaustive": true,
+        "nodes": 342
+      },
+      "production": {
+        "count": 1,
+        "exhaustive": true,
+        "nodes": 1206
+      },
+      "partialSubsets": 4,
+      "elapsedMs": 28
+    },
+    {
+      "number": 30,
+      "id": "elo-v3-077",
+      "levelHash": "b6bb826920b30614accf455f9aeebf463a520ff919abcef5a96d2065ee2c6786",
+      "families": [
+        "forbiddenEdges"
+      ],
+      "dimensions": [
+        5,
+        5
+      ],
+      "independent": {
+        "count": 1,
+        "exhaustive": true,
+        "nodes": 138
+      },
+      "production": {
+        "count": 1,
+        "exhaustive": true,
+        "nodes": 384
+      },
+      "partialSubsets": 4,
+      "elapsedMs": 9
+    },
+    {
+      "number": 31,
+      "id": "elo-v3-081",
+      "levelHash": "9b6a9b876653a080c92b4bfff80eba23849022295fc0095c2a3d0431c723bb08",
+      "families": [
+        "counts"
+      ],
+      "dimensions": [
+        5,
+        5
+      ],
+      "independent": {
+        "count": 1,
+        "exhaustive": true,
+        "nodes": 9
+      },
+      "production": {
+        "count": 1,
+        "exhaustive": true,
+        "nodes": 17
+      },
+      "partialSubsets": 4,
+      "elapsedMs": 3
+    },
+    {
+      "number": 32,
+      "id": "elo-v4-032",
+      "levelHash": "c01be4a6fb7496527b78133421b3633089b84b44b955c29103cc18fda11bd596",
+      "families": [
+        "counts"
+      ],
+      "dimensions": [
+        6,
+        6
+      ],
+      "independent": {
+        "count": 1,
+        "exhaustive": true,
+        "nodes": 7
+      },
+      "production": {
+        "count": 1,
+        "exhaustive": true,
+        "nodes": 26
+      },
+      "partialSubsets": 4,
+      "elapsedMs": 4
+    },
+    {
+      "number": 33,
+      "id": "elo-v2-106",
+      "levelHash": "348cbb93418fd7b561da5aeb3a9547aef71fcafbdae84632d53258824ed41327",
+      "families": [],
+      "dimensions": [
+        7,
+        7
+      ],
+      "independent": {
+        "count": 1,
+        "exhaustive": true,
+        "nodes": 29
+      },
+      "production": {
+        "count": 1,
+        "exhaustive": true,
+        "nodes": 79
+      },
+      "partialSubsets": 4,
+      "elapsedMs": 12
+    },
+    {
+      "number": 34,
+      "id": "elo-v3-097",
+      "levelHash": "ed496c6364339a294f4b83cedfdb1fd62c3e77ee27ffe7408b82c29d110aa4fa",
+      "families": [
+        "counts"
+      ],
+      "dimensions": [
+        5,
+        5
+      ],
+      "independent": {
+        "count": 1,
+        "exhaustive": true,
+        "nodes": 131
+      },
+      "production": {
+        "count": 1,
+        "exhaustive": true,
+        "nodes": 358
+      },
+      "partialSubsets": 4,
+      "elapsedMs": 15
+    },
+    {
+      "number": 35,
+      "id": "elo-v3-066",
+      "levelHash": "11a2f27891a1bf82023d9008be8e1d4aca635587553aca43915ad1e8b987f639",
+      "families": [
+        "forbiddenEdges"
+      ],
+      "dimensions": [
+        6,
+        6
+      ],
+      "independent": {
+        "count": 1,
+        "exhaustive": true,
+        "nodes": 112
+      },
+      "production": {
+        "count": 1,
+        "exhaustive": true,
+        "nodes": 125
+      },
+      "partialSubsets": 4,
+      "elapsedMs": 8
+    },
+    {
+      "number": 36,
+      "id": "elo-v3-084",
+      "levelHash": "b876d3655b17fcf37a78ff43cc478e129e76ef36ddb86d5854c6da3d94493289",
+      "families": [
+        "counts"
+      ],
+      "dimensions": [
+        7,
+        8
+      ],
+      "independent": {
+        "count": 1,
+        "exhaustive": true,
+        "nodes": 730
+      },
+      "production": {
+        "count": 1,
+        "exhaustive": true,
+        "nodes": 4532
+      },
+      "partialSubsets": 4,
+      "elapsedMs": 128
+    },
+    {
+      "number": 37,
+      "id": "elo-v3-053",
+      "levelHash": "51b78936b0312881f081a5214ba2ee9860b52ea3a0f05a396824061324ded93c",
+      "families": [
+        "passages"
+      ],
+      "dimensions": [
+        11,
+        10
+      ],
+      "independent": {
+        "count": 1,
+        "exhaustive": true,
+        "nodes": 1206
+      },
+      "production": {
+        "count": 1,
+        "exhaustive": true,
+        "nodes": 4749
+      },
+      "partialSubsets": 4,
+      "elapsedMs": 283
+    },
+    {
+      "number": 38,
+      "id": "elo-v4-038",
+      "levelHash": "ff57c69ad1a28e6e4fa268ac1fe4a8e88e5c2f4f3cd83fcdcec24aed580bc92a",
+      "families": [
+        "passages",
+        "forbiddenEdges",
+        "counts"
+      ],
+      "dimensions": [
+        6,
+        6
+      ],
+      "independent": {
+        "count": 1,
+        "exhaustive": true,
+        "nodes": 83
+      },
+      "production": {
+        "count": 1,
+        "exhaustive": true,
+        "nodes": 331
+      },
+      "partialSubsets": 4,
+      "elapsedMs": 10
+    },
+    {
+      "number": 39,
+      "id": "elo-v3-101",
+      "levelHash": "e8d3eb0904549a5b14aa499023595187aa66e8bed003a38a85ab1c68aaf40615",
+      "families": [
+        "distances"
+      ],
+      "dimensions": [
+        5,
+        5
+      ],
+      "independent": {
+        "count": 1,
+        "exhaustive": true,
+        "nodes": 23
+      },
+      "production": {
+        "count": 1,
+        "exhaustive": true,
+        "nodes": 49
+      },
+      "partialSubsets": 4,
+      "elapsedMs": 7
+    },
+    {
+      "number": 40,
+      "id": "elo-v3-102",
+      "levelHash": "686e4cce99ba9bb3009773f0f43e2d4cc46758e800c8fc1310d2afece2766ed6",
+      "families": [
+        "distances"
+      ],
+      "dimensions": [
+        6,
+        6
+      ],
+      "independent": {
+        "count": 1,
+        "exhaustive": true,
+        "nodes": 23
+      },
+      "production": {
+        "count": 1,
+        "exhaustive": true,
+        "nodes": 59
+      },
+      "partialSubsets": 4,
+      "elapsedMs": 5
+    },
+    {
+      "number": 41,
+      "id": "elo-v3-098",
+      "levelHash": "d98a70a132eaa114705b17348fd2e3ca21e9fb775e5a8f479536cc66b1ab14af",
+      "families": [
+        "forbiddenEdges",
+        "counts"
+      ],
+      "dimensions": [
+        6,
+        6
+      ],
+      "independent": {
+        "count": 1,
+        "exhaustive": true,
+        "nodes": 171
+      },
+      "production": {
+        "count": 1,
+        "exhaustive": true,
+        "nodes": 347
+      },
+      "partialSubsets": 4,
+      "elapsedMs": 25
+    },
+    {
+      "number": 42,
+      "id": "elo-v3-105",
+      "levelHash": "da9a15778366c7f42504573c82e3ffa1e68811612dd0ab83a09e4a6c974de691",
+      "families": [
+        "distances",
+        "counts"
+      ],
+      "dimensions": [
+        9,
+        7
+      ],
+      "independent": {
+        "count": 1,
+        "exhaustive": true,
+        "nodes": 193
+      },
+      "production": {
+        "count": 1,
+        "exhaustive": true,
+        "nodes": 16495
+      },
+      "partialSubsets": 4,
+      "elapsedMs": 224
+    },
+    {
+      "number": 43,
+      "id": "elo-v3-092",
+      "levelHash": "89a92fb2a146b3d446b5231e8cccea7b4c1a670679e12a836e5833f8af1ac438",
+      "families": [],
+      "dimensions": [
+        9,
+        7
+      ],
+      "independent": {
+        "count": 1,
+        "exhaustive": true,
+        "nodes": 198
+      },
+      "production": {
+        "count": 1,
+        "exhaustive": true,
+        "nodes": 1419
+      },
+      "partialSubsets": 4,
+      "elapsedMs": 32
+    },
+    {
+      "number": 44,
+      "id": "elo-v3-119",
+      "levelHash": "13446a75d88d977d05e7f1395d56df29dc6838009b864bdde0c9acfc5fbe0153",
+      "families": [
+        "passages",
+        "distances"
+      ],
+      "dimensions": [
+        6,
+        6
+      ],
+      "independent": {
+        "count": 1,
+        "exhaustive": true,
+        "nodes": 221
+      },
+      "production": {
+        "count": 1,
+        "exhaustive": true,
+        "nodes": 583
+      },
+      "partialSubsets": 4,
+      "elapsedMs": 23
+    },
+    {
+      "number": 45,
+      "id": "elo-v3-095",
+      "levelHash": "364a559649acba8e0a5716fa8def19e2900a8ea53519e870063678bc15650d30",
+      "families": [
+        "forbiddenEdges",
+        "counts"
+      ],
+      "dimensions": [
+        12,
+        12
+      ],
+      "independent": {
+        "count": 1,
+        "exhaustive": true,
+        "nodes": 408
+      },
+      "production": {
+        "count": 1,
+        "exhaustive": true,
+        "nodes": 6509
+      },
+      "partialSubsets": 4,
+      "elapsedMs": 279
+    },
+    {
+      "number": 46,
+      "id": "elo-v3-121",
+      "levelHash": "7bef78b02d2502b757e4dcab42908e77cdcb451d659cece1d01f2569be019056",
+      "families": [
+        "neighbors",
+        "counts"
+      ],
+      "dimensions": [
+        5,
+        5
+      ],
+      "independent": {
+        "count": 1,
+        "exhaustive": true,
+        "nodes": 8
+      },
+      "production": {
+        "count": 1,
+        "exhaustive": true,
+        "nodes": 21
+      },
+      "partialSubsets": 4,
+      "elapsedMs": 5
+    },
+    {
+      "number": 47,
+      "id": "elo-v3-122",
+      "levelHash": "5f82b5e8c645b580040b1f76adfecedd0f15c0519824f3e0acbe95d2d91e0504",
+      "families": [
+        "distances",
+        "neighbors"
+      ],
+      "dimensions": [
+        6,
+        6
+      ],
+      "independent": {
+        "count": 1,
+        "exhaustive": true,
+        "nodes": 15
+      },
+      "production": {
+        "count": 1,
+        "exhaustive": true,
+        "nodes": 37
+      },
+      "partialSubsets": 4,
+      "elapsedMs": 16
+    },
+    {
+      "number": 48,
+      "id": "elo-v3-054",
+      "levelHash": "af4125c82e26eec81415b410742bc900018d2bb4b09e8af371dd5eaae2571218",
+      "families": [
+        "turn",
+        "passages"
+      ],
+      "dimensions": [
+        12,
+        12
+      ],
+      "independent": {
+        "count": 1,
+        "exhaustive": true,
+        "nodes": 55295
+      },
+      "production": {
+        "count": 1,
+        "exhaustive": true,
+        "nodes": 79254
+      },
+      "partialSubsets": 4,
+      "elapsedMs": 10082
+    },
+    {
+      "number": 49,
+      "id": "elo-v3-126",
+      "levelHash": "82615e13f40ec353bbe5965e41a3820ebdba0baf2cefa5f73fac595a5ea259c6",
+      "families": [
+        "neighbors",
+        "counts"
+      ],
+      "dimensions": [
+        6,
+        6
+      ],
+      "independent": {
+        "count": 1,
+        "exhaustive": true,
+        "nodes": 60
+      },
+      "production": {
+        "count": 1,
+        "exhaustive": true,
+        "nodes": 77
+      },
+      "partialSubsets": 4,
+      "elapsedMs": 7
+    },
+    {
+      "number": 50,
+      "id": "elo-v3-118",
+      "levelHash": "777e1e6d3c9e4d50a08ff605e72103bd1d42fa6060ac6150eeb335b864926eb9",
+      "families": [
+        "distances"
+      ],
+      "dimensions": [
+        6,
+        6
+      ],
+      "independent": {
+        "count": 1,
+        "exhaustive": true,
+        "nodes": 1318
+      },
+      "production": {
+        "count": 1,
+        "exhaustive": true,
+        "nodes": 3226
+      },
+      "partialSubsets": 4,
+      "elapsedMs": 70
+    },
+    {
+      "number": 51,
+      "id": "elo-v2-173",
+      "levelHash": "69c917e5084a71802d6b2bfb606c3cf69d44bb837975c3030388a4378d30e9fa",
+      "families": [],
+      "dimensions": [
+        7,
+        7
+      ],
+      "independent": {
+        "count": 1,
+        "exhaustive": true,
+        "nodes": 271
+      },
+      "production": {
+        "count": 1,
+        "exhaustive": true,
+        "nodes": 1179
+      },
+      "partialSubsets": 4,
+      "elapsedMs": 40
+    },
+    {
+      "number": 52,
+      "id": "elo-v3-139",
+      "levelHash": "d8725b512c9aa7732068cf4753397d845a685e29798558b1469a43a1db9eaac3",
+      "families": [
+        "passages",
+        "neighbors"
+      ],
+      "dimensions": [
+        6,
+        6
+      ],
+      "independent": {
+        "count": 1,
+        "exhaustive": true,
+        "nodes": 576
+      },
+      "production": {
+        "count": 1,
+        "exhaustive": true,
+        "nodes": 1680
+      },
+      "partialSubsets": 4,
+      "elapsedMs": 36
+    },
+    {
+      "number": 53,
+      "id": "elo-v3-136",
+      "levelHash": "f3290c499299145da7d29bb44ed1e608acecd8dfae47d3ffea2a9fbad3a1f958",
+      "families": [
+        "forbiddenEdges",
+        "neighbors",
+        "counts"
+      ],
+      "dimensions": [
+        12,
+        12
+      ],
+      "independent": {
+        "count": 1,
+        "exhaustive": true,
+        "nodes": 7943
+      },
+      "production": {
+        "count": 1,
+        "exhaustive": true,
+        "nodes": 60766
+      },
+      "partialSubsets": 4,
+      "elapsedMs": 2666
+    },
+    {
+      "number": 54,
+      "id": "elo-v3-141",
+      "levelHash": "dd6fa7ebd9d9e8eb5674cd8ed35b7ef4dff830ed82c3ae1f37bcf1d999c18e6d",
+      "families": [
+        "order",
+        "counts"
+      ],
+      "dimensions": [
+        5,
+        5
+      ],
+      "independent": {
+        "count": 1,
+        "exhaustive": true,
+        "nodes": 33
+      },
+      "production": {
+        "count": 1,
+        "exhaustive": true,
+        "nodes": 77
+      },
+      "partialSubsets": 4,
+      "elapsedMs": 5
+    },
+    {
+      "number": 55,
+      "id": "elo-v3-142",
+      "levelHash": "0b6342883d137bc422d5226afdd48b30f74fabb02117cb240e13c915e29c32ab",
+      "families": [
+        "distances",
+        "order"
+      ],
+      "dimensions": [
+        6,
+        6
+      ],
+      "independent": {
+        "count": 1,
+        "exhaustive": true,
+        "nodes": 319
+      },
+      "production": {
+        "count": 1,
+        "exhaustive": true,
+        "nodes": 1613
+      },
+      "partialSubsets": 4,
+      "elapsedMs": 35
+    },
+    {
+      "number": 56,
+      "id": "elo-v3-138",
+      "levelHash": "07f21e813ada3941b48dfc011cc06e579576fde553177f32c9e0500220413a5f",
+      "families": [
+        "distances",
+        "neighbors"
+      ],
+      "dimensions": [
+        6,
+        6
+      ],
+      "independent": {
+        "count": 1,
+        "exhaustive": true,
+        "nodes": 214
+      },
+      "production": {
+        "count": 1,
+        "exhaustive": true,
+        "nodes": 217
+      },
+      "partialSubsets": 4,
+      "elapsedMs": 13
+    },
+    {
+      "number": 57,
+      "id": "elo-v3-143",
+      "levelHash": "eed34b37e336db1f7978396493e71b2c1f5d8a127528934b65a87b117a81b3c0",
+      "families": [
+        "order"
+      ],
+      "dimensions": [
+        6,
+        6
+      ],
+      "independent": {
+        "count": 1,
+        "exhaustive": true,
+        "nodes": 31
+      },
+      "production": {
+        "count": 1,
+        "exhaustive": true,
+        "nodes": 220
+      },
+      "partialSubsets": 4,
+      "elapsedMs": 23
+    },
+    {
+      "number": 58,
+      "id": "elo-v2-182",
+      "levelHash": "c4e557128904a3d823116f8226167a1e18b4edf84225d19793065449540270b9",
+      "families": [],
+      "dimensions": [
+        7,
+        7
+      ],
+      "independent": {
+        "count": 1,
+        "exhaustive": true,
+        "nodes": 367
+      },
+      "production": {
+        "count": 1,
+        "exhaustive": true,
+        "nodes": 1692
+      },
+      "partialSubsets": 4,
+      "elapsedMs": 108
+    },
+    {
+      "number": 59,
+      "id": "elo-v3-147",
+      "levelHash": "26815d39326600888c9909ebaa555619b3951cdce204b43b17a6ccafbb44b685",
+      "families": [
+        "passages",
+        "order",
+        "counts"
+      ],
+      "dimensions": [
+        7,
+        8
+      ],
+      "independent": {
+        "count": 1,
+        "exhaustive": true,
+        "nodes": 5365
+      },
+      "production": {
+        "count": 1,
+        "exhaustive": true,
+        "nodes": 22919
+      },
+      "partialSubsets": 4,
+      "elapsedMs": 580
+    },
+    {
+      "number": 60,
+      "id": "elo-v3-155",
+      "levelHash": "b976497d7d9d18526360b80944fad6dfeaa06d9d452d605c9cd41959353157fc",
+      "families": [
+        "order",
+        "counts"
+      ],
+      "dimensions": [
+        12,
+        12
+      ],
+      "independent": {
+        "count": 1,
+        "exhaustive": true,
+        "nodes": 234
+      },
+      "production": {
+        "count": 1,
+        "exhaustive": true,
+        "nodes": 3378
+      },
+      "partialSubsets": 4,
+      "elapsedMs": 58
+    },
+    {
+      "number": 61,
+      "id": "elo-v3-161",
+      "levelHash": "2fe221d8d44834f999f358ff4bdf95d5f42938da2b544a981dadd5e6cfc75ef0",
+      "families": [
+        "cuts"
+      ],
+      "dimensions": [
+        5,
+        5
+      ],
+      "independent": {
+        "count": 1,
+        "exhaustive": true,
+        "nodes": 20
+      },
+      "production": {
+        "count": 1,
+        "exhaustive": true,
+        "nodes": 78
+      },
+      "partialSubsets": 4,
+      "elapsedMs": 4
+    },
+    {
+      "number": 62,
+      "id": "elo-v3-162",
+      "levelHash": "b78c200c77d77e9e183e0c613c684f2704ecc52bf4056141ef36502aca071f89",
+      "families": [
+        "distances",
+        "cuts"
+      ],
+      "dimensions": [
+        6,
+        6
+      ],
+      "independent": {
+        "count": 1,
+        "exhaustive": true,
+        "nodes": 42
+      },
+      "production": {
+        "count": 1,
+        "exhaustive": true,
+        "nodes": 149
+      },
+      "partialSubsets": 4,
+      "elapsedMs": 8
+    },
+    {
+      "number": 63,
+      "id": "elo-v3-146",
+      "levelHash": "29f1453c9937ae66fc1cf7b6d806e0465178f7b9ecd8773b8bb50c214f3196f6",
+      "families": [
+        "forbiddenEdges",
+        "order"
+      ],
+      "dimensions": [
+        6,
+        6
+      ],
+      "independent": {
+        "count": 1,
+        "exhaustive": true,
+        "nodes": 367
+      },
+      "production": {
+        "count": 1,
+        "exhaustive": true,
+        "nodes": 1631
+      },
+      "partialSubsets": 4,
+      "elapsedMs": 32
+    },
+    {
+      "number": 64,
+      "id": "elo-v3-166",
+      "levelHash": "f3bdc58217e2290fc80bb9e44a6fa212f98dfca1966d0d58d06275c4f3a2d5ab",
+      "families": [
+        "passages",
+        "cuts"
+      ],
+      "dimensions": [
+        6,
+        6
+      ],
+      "independent": {
+        "count": 1,
+        "exhaustive": true,
+        "nodes": 477
+      },
+      "production": {
+        "count": 1,
+        "exhaustive": true,
+        "nodes": 1331
+      },
+      "partialSubsets": 4,
+      "elapsedMs": 46
+    },
+    {
+      "number": 65,
+      "id": "elo-v2-191",
+      "levelHash": "a98ee642d84066a3b4d1ef7e42cfa766c300ba0fae78d00711d0425e23eff531",
+      "families": [],
+      "dimensions": [
+        7,
+        7
+      ],
+      "independent": {
+        "count": 1,
+        "exhaustive": true,
+        "nodes": 58
+      },
+      "production": {
+        "count": 1,
+        "exhaustive": true,
+        "nodes": 440
+      },
+      "partialSubsets": 4,
+      "elapsedMs": 18
+    },
+    {
+      "number": 66,
+      "id": "elo-v3-169",
+      "levelHash": "d1be35e35fb14a6fbfc4d5959f5ae9574f4e4576cb1cbf61279e3fabeec2e16c",
+      "families": [
+        "distances",
+        "cuts"
+      ],
+      "dimensions": [
+        7,
+        8
+      ],
+      "independent": {
+        "count": 1,
+        "exhaustive": true,
+        "nodes": 1209
+      },
+      "production": {
+        "count": 1,
+        "exhaustive": true,
+        "nodes": 18570
+      },
+      "partialSubsets": 4,
+      "elapsedMs": 287
+    },
+    {
+      "number": 67,
+      "id": "elo-v3-177",
+      "levelHash": "370ef222a5f7afb076ae8c6d4e6d4c5727bed29e7f51764d3385c75b738b3ccd",
+      "families": [
+        "forbiddenEdges",
+        "cuts"
+      ],
+      "dimensions": [
+        5,
+        5
+      ],
+      "independent": {
+        "count": 1,
+        "exhaustive": true,
+        "nodes": 164
+      },
+      "production": {
+        "count": 1,
+        "exhaustive": true,
+        "nodes": 269
+      },
+      "partialSubsets": 4,
+      "elapsedMs": 8
+    },
+    {
+      "number": 68,
+      "id": "elo-v3-181",
+      "levelHash": "a80abc777210d7094ea3cb81fd7750bede1e838ecbb4943a09fc1e134de0afb2",
+      "families": [
+        "exclusivePassages"
+      ],
+      "dimensions": [
+        5,
+        5
+      ],
+      "independent": {
+        "count": 1,
+        "exhaustive": true,
+        "nodes": 14
+      },
+      "production": {
+        "count": 1,
+        "exhaustive": true,
+        "nodes": 81
+      },
+      "partialSubsets": 4,
+      "elapsedMs": 4
+    },
+    {
+      "number": 69,
+      "id": "elo-v3-182",
+      "levelHash": "dab524a1f92ea5428248e181898085c6e1801aaa67af80781864a5dc07573a03",
+      "families": [
+        "exclusivePassages"
+      ],
+      "dimensions": [
+        6,
+        6
+      ],
+      "independent": {
+        "count": 1,
+        "exhaustive": true,
+        "nodes": 12
+      },
+      "production": {
+        "count": 1,
+        "exhaustive": true,
+        "nodes": 158
+      },
+      "partialSubsets": 4,
+      "elapsedMs": 5
+    },
+    {
+      "number": 70,
+      "id": "elo-v3-178",
+      "levelHash": "5a9648fb6248d98cb550728dbb96999cd4d854f24146d08407fc4c659c95aea9",
+      "families": [
+        "cuts",
+        "counts"
+      ],
+      "dimensions": [
+        6,
+        6
+      ],
+      "independent": {
+        "count": 1,
+        "exhaustive": true,
+        "nodes": 345
+      },
+      "production": {
+        "count": 1,
+        "exhaustive": true,
+        "nodes": 1467
+      },
+      "partialSubsets": 4,
+      "elapsedMs": 37
+    },
+    {
+      "number": 71,
+      "id": "elo-v3-186",
+      "levelHash": "a336cb32c5febd41d81b95eedbd7f4fb926413eb651a99d53c61a70660b03692",
+      "families": [
+        "exclusivePassages"
+      ],
+      "dimensions": [
+        6,
+        6
+      ],
+      "independent": {
+        "count": 1,
+        "exhaustive": true,
+        "nodes": 322
+      },
+      "production": {
+        "count": 1,
+        "exhaustive": true,
+        "nodes": 1094
+      },
+      "partialSubsets": 4,
+      "elapsedMs": 33
+    },
+    {
+      "number": 72,
+      "id": "elo-v3-159",
+      "levelHash": "15003fc59d927f2fcd712efdac82df3d510e954aa453631e46836b1fcd749426",
+      "families": [
+        "passages",
+        "order"
+      ],
+      "dimensions": [
+        6,
+        6
+      ],
+      "independent": {
+        "count": 1,
+        "exhaustive": true,
+        "nodes": 851
+      },
+      "production": {
+        "count": 1,
+        "exhaustive": true,
+        "nodes": 1911
+      },
+      "partialSubsets": 4,
+      "elapsedMs": 70
+    },
+    {
+      "number": 73,
+      "id": "elo-v4-073",
+      "levelHash": "eb8e5596bd9992fae5995bba5bceadcc20ac95a2917fc5f98fbd896080badd24",
+      "families": [
+        "cuts",
+        "exclusivePassages"
+      ],
+      "dimensions": [
+        7,
+        8
+      ],
+      "independent": {
+        "count": 1,
+        "exhaustive": true,
+        "nodes": 2632
+      },
+      "production": {
+        "count": 1,
+        "exhaustive": true,
+        "nodes": 13043
+      },
+      "partialSubsets": 4,
+      "elapsedMs": 248
+    },
+    {
+      "number": 74,
+      "id": "elo-v2-200",
+      "levelHash": "f549f1f02eac03d1c251357a228e9bba9665c621738e872da2c7e07cc4ccc81c",
+      "families": [],
+      "dimensions": [
+        7,
+        7
+      ],
+      "independent": {
+        "count": 1,
+        "exhaustive": true,
+        "nodes": 414
+      },
+      "production": {
+        "count": 1,
+        "exhaustive": true,
+        "nodes": 1873
+      },
+      "partialSubsets": 4,
+      "elapsedMs": 50
+    },
+    {
+      "number": 75,
+      "id": "elo-v4-075",
+      "levelHash": "e7303a42d1382685373ab165c74d714ac41010c43b9f22df784112dc5904c237",
+      "families": [
+        "distances",
+        "counts"
+      ],
+      "dimensions": [
+        8,
+        9
+      ],
+      "independent": {
+        "count": 1,
+        "exhaustive": true,
+        "nodes": 127933
+      },
+      "production": {
+        "count": 1,
+        "exhaustive": true,
+        "nodes": 172249
+      },
+      "partialSubsets": 4,
+      "elapsedMs": 10661
+    },
+    {
+      "number": 76,
+      "id": "elo-v3-109",
+      "levelHash": "b998ff990dc605bb4ea6ce83f0d28c475a2a09391f5d47aafb814a039327c6ed",
+      "families": [
+        "distances",
+        "counts"
+      ],
+      "dimensions": [
+        7,
+        8
+      ],
+      "independent": {
+        "count": 1,
+        "exhaustive": true,
+        "nodes": 7090
+      },
+      "production": {
+        "count": 1,
+        "exhaustive": true,
+        "nodes": 35368
+      },
+      "partialSubsets": 4,
+      "elapsedMs": 713
+    },
+    {
+      "number": 77,
+      "id": "elo-v3-157",
+      "levelHash": "0766154e93d5bfb9fd58bda099b54ed7b34be6dce89a2c4e915ccdb5ad8e46ea",
+      "families": [
+        "neighbors",
+        "order"
+      ],
+      "dimensions": [
+        5,
+        5
+      ],
+      "independent": {
+        "count": 1,
+        "exhaustive": true,
+        "nodes": 233
+      },
+      "production": {
+        "count": 1,
+        "exhaustive": true,
+        "nodes": 414
+      },
+      "partialSubsets": 4,
+      "elapsedMs": 9
+    },
+    {
+      "number": 78,
+      "id": "elo-v3-171",
+      "levelHash": "1499a32d6cd686df8fafdfd40ee8aaaf8ae084eea142295ae9ca27202b93b6d3",
+      "families": [
+        "order",
+        "cuts",
+        "counts"
+      ],
+      "dimensions": [
+        9,
+        7
+      ],
+      "independent": {
+        "count": 1,
+        "exhaustive": true,
+        "nodes": 7078
+      },
+      "production": {
+        "count": 1,
+        "exhaustive": true,
+        "nodes": 18487
+      },
+      "partialSubsets": 4,
+      "elapsedMs": 489
+    },
+    {
+      "number": 79,
+      "id": "elo-v4-079",
+      "levelHash": "3f6f91601553391ab0f2a0122b10c4509bc3c5bf1c5edd9ac360f78117cbdf33",
+      "families": [
+        "distances",
+        "exclusivePassages"
+      ],
+      "dimensions": [
+        9,
+        7
+      ],
+      "independent": {
+        "count": 1,
+        "exhaustive": true,
+        "nodes": 1927
+      },
+      "production": {
+        "count": 1,
+        "exhaustive": true,
+        "nodes": 20926
+      },
+      "partialSubsets": 4,
+      "elapsedMs": 400
+    },
+    {
+      "number": 80,
+      "id": "elo-v4-080",
+      "levelHash": "700d362d9bb7abe8c4973fff362b12a1ca38055a314a5a3be43d7a025a42a4a4",
+      "families": [
+        "order",
+        "exclusivePassages"
+      ],
+      "dimensions": [
+        6,
+        6
+      ],
+      "independent": {
+        "count": 1,
+        "exhaustive": true,
+        "nodes": 319
+      },
+      "production": {
+        "count": 1,
+        "exhaustive": true,
+        "nodes": 642
+      },
+      "partialSubsets": 4,
+      "elapsedMs": 16
+    }
+  ]
+}

@@ -1,7 +1,12 @@
 /** Player-facing ELO clues. No reference answer or development trace is read. */
 const esc=x=>String(x??'').replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
 export const ELO_STAGES=Object.freeze([
- ['Fundamentos','Circuito clássico'],['Curvas e retas','∟ Curvas e ↔ retas'],['Passagens','○ Passagens obrigatórias'],['Trechos vedados','⊣ Intervalos vedados'],['Contagens','● Contagem de pontos'],['Distâncias','Σ Soma das duas ligações'],['Vizinhanças','A—B Vizinhança direta'],['Ordem no circuito','① Ordem relativa'],['Travessias','┆ Contagem de travessias'],['Escolhas interligadas','◇ Uma passagem por grupo']
+ ['Básico','Circuito clássico · ∟ Curvas e ↔ retas',1,15],
+ ['Aprendiz','○ Passagens · ⊣ Trechos vedados',16,30],
+ ['Intermediário','● Contagens · Σ Distâncias',31,45],
+ ['Avançado','A—B Vizinhanças · ① Ordem no circuito',46,60],
+ ['Mestre','┆ Travessias · ◇ Escolhas interligadas',61,75],
+ ['Modo Sábio','Cinco sínteses de dedução',76,80]
 ]);
 export function eloRegionName(region){let n=Number(region)+1,s='';while(n>0){n--;s=String.fromCharCode(65+n%26)+s;n=Math.floor(n/26);}return s||'?';}
 const coord=(l,c)=>`L${Math.floor(c/l.cols)+1}C${c%l.cols+1}`;

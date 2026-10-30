@@ -1,0 +1,109 @@
+{
+  "passed": true,
+  "results": [
+    {
+      "test": "elo80-regression.mjs",
+      "passed": true,
+      "exitCode": 0,
+      "elapsedMs": 28838,
+      "stdout": "PASS 1 elo-v2-001 independent 5 production 11\nPASS 2 elo-v2-008 independent 11 production 13\nPASS 3 elo-v2-017 independent 7 production 26\nPASS 4 elo-v2-027 independent 11 production 23\nPASS 5 elo-v2-020 independent 46 production 205\nPASS 6 elo-v2-040 independent 34 production 129\nPASS 7 elo-v2-024 independent 49 production 133\nPASS 8 elo-v2-048 independent 43 production 205\nPASS 9 elo-v2-056 independent 18 production 53\nPASS 10 elo-v3-021 independent 45 production 123\nPASS 11 elo-v3-037 independent 96 production 233\nPASS 12 elo-v2-062 independent 44 production 159\nPASS 13 elo-v3-022 independent 16 production 333\nPASS 14 elo-v3-023 independent 49 production 208\nPASS 15 elo-v3-026 independent 85 production 436\nPASS 16 elo-v3-041 independent 28 production 86\nPASS 17 elo-v2-071 independent 70 production 309\nPASS 18 elo-v3-046 independent 1723 production 3485\nPASS 19 elo-v3-038 independent 146 production 518\nPASS 20 elo-v3-042 independent 49 production 90\nPASS 21 elo-v2-077 independent 89 production 465\nPASS 22 elo-v3-057 independent 236 production 519\nPASS 23 elo-v3-039 independent 62 production 448\nPASS 24 elo-v3-061 independent 17 production 65\nPASS 25 elo-v3-058 independent 1259 production 701\nPASS 26 elo-v3-062 independent 190 production 876\nPASS 27 elo-v2-091 independent 106 production 791\nPASS 28 elo-v3-063 independent 145 production 853\nPASS 29 elo-v4-029 independent 342 production 1206\nPASS 30 elo-v3-077 independent 138 production 384\nPASS 31 elo-v3-081 independent 9 production 17\nPASS 32 elo-v4-032 independent 7 production 26\nPASS 33 elo-v2-106 independent 29 production 79\nPASS 34 elo-v3-097 independent 131 production 358\nPASS 35 elo-v3-066 independent 112 production 125\nPASS 36 elo-v3-084 independent 730 production 4532\nPASS 37 elo-v3-053 independent 1206 production 4749\nPASS 38 elo-v4-038 independent 83 production 331\nPASS 39 elo-v3-101 independent 23 production 49\nPASS 40 elo-v3-102 independent 23 production 59\nPASS 41 elo-v3-098 independent 171 production 347\nPASS 42 elo-v3-105 independent 193 production 16495\nPASS 43 elo-v3-092 independent 198 production 1419\nPASS 44 elo-v3-119 independent 221 production 583\nPASS 45 elo-v3-095 independent 408 production 6509\nPASS 46 elo-v3-121 independent 8 production 21\nPASS 47 elo-v3-122 independent 15 production 37\nPASS 48 elo-v3-054 independent 55295 production 79254\nPASS 49 elo-v3-126 independent 60 production 77\nPASS 50 elo-v3-118 independent 1318 production 3226\nPASS 51 elo-v2-173 independent 271 production 1179\nPASS 52 elo-v3-139 independent 576 production 1680\nPASS 53 elo-v3-136 independent 7943 production 60766\nPASS 54 elo-v3-141 independent 33 production 77\nPASS 55 elo-v3-142 independent 319 production 1613\nPASS 56 elo-v3-138 independent 214 production 217\nPASS 57 elo-v3-143 independent 31 production 220\nPASS 58 elo-v2-182 independent 367 production 1692\nPASS 59 elo-v3-147 independent 5365 production 22919\nPASS 60 elo-v3-155 independent 234 production 3378\nPASS 61 elo-v3-161 independent 20 production 78\nPASS 62 elo-v3-162 independent 42 production 149\nPASS 63 elo-v3-146 independent 367 production 1631\nPASS 64 elo-v3-166 independent 477 production 1331\nPASS 65 elo-v2-191 independent 58 production 440\nPASS 66 elo-v3-169 independent 1209 production 18570\nPASS 67 elo-v3-177 independent 164 production 269\nPASS 68 elo-v3-181 independent 14 production 81\nPASS 69 elo-v3-182 independent 12 production 158\nPASS 70 elo-v3-178 independent 345 production 1467\nPASS 71 elo-v3-186 independent 322 production 1094\nPASS 72 elo-v3-159 independent 851 production 1911\nPASS 73 elo-v4-073 independent 2632 production 13043\nPASS 74 elo-v2-200 independent 414 production 1873\nPASS 75 elo-v4-075 independent 127933 production 172249\nPASS 76 elo-v3-109 independent 7090 production 35368\nPASS 77 elo-v3-157 independent 233 production 414\nPASS 78 elo-v3-171 independent 7078 production 18487\nPASS 79 elo-v4-079 independent 1927 production 20926\nPASS 80 elo-v4-080 independent 319 production 642\n{\"passed\":true,\"total\":80,\"uniqueIndependently\":80,\"stages\":[15,15,15,15,15,5],\"partialSubsets\":320,\"output\":\"/workspace/scratch/9fd2016a15a9/elo80/tests/elo80-independent-validation.json\"}\n",
+      "stderr": ""
+    },
+    {
+      "test": "elo80-proof-replay.mjs",
+      "passed": true,
+      "exitCode": 0,
+      "elapsedMs": 8318,
+      "stdout": "PASS 1 elo-v2-001 6ms\nPASS 2 elo-v2-008 2ms\nPASS 3 elo-v2-017 1ms\nPASS 4 elo-v2-027 3ms\nPASS 5 elo-v2-020 11ms\nPASS 6 elo-v2-040 10ms\nPASS 7 elo-v2-024 5ms\nPASS 8 elo-v2-048 2ms\nPASS 9 elo-v2-056 3ms\nPASS 10 elo-v3-021 7ms\nPASS 11 elo-v3-037 38ms\nPASS 12 elo-v2-062 4ms\nPASS 13 elo-v3-022 1ms\nPASS 14 elo-v3-023 4ms\nPASS 15 elo-v3-026 21ms\nPASS 16 elo-v3-041 7ms\nPASS 17 elo-v2-071 6ms\nPASS 18 elo-v3-046 34ms\nPASS 19 elo-v3-038 23ms\nPASS 20 elo-v3-042 3ms\nPASS 21 elo-v2-077 23ms\nPASS 22 elo-v3-057 14ms\nPASS 23 elo-v3-039 12ms\nPASS 24 elo-v3-061 2ms\nPASS 25 elo-v3-058 17ms\nPASS 26 elo-v3-062 18ms\nPASS 27 elo-v2-091 1ms\nPASS 28 elo-v3-063 9ms\nPASS 29 elo-v4-029 18ms\nPASS 30 elo-v3-077 9ms\nPASS 31 elo-v3-081 2ms\nPASS 32 elo-v4-032 1ms\nPASS 33 elo-v2-106 5ms\nPASS 34 elo-v3-097 18ms\nPASS 35 elo-v3-066 3ms\nPASS 36 elo-v3-084 168ms\nPASS 37 elo-v3-053 129ms\nPASS 38 elo-v4-038 7ms\nPASS 39 elo-v3-101 3ms\nPASS 40 elo-v3-102 1ms\nPASS 41 elo-v3-098 11ms\nPASS 42 elo-v3-105 145ms\nPASS 43 elo-v3-092 15ms\nPASS 44 elo-v3-119 8ms\nPASS 45 elo-v3-095 50ms\nPASS 46 elo-v3-121 1ms\nPASS 47 elo-v3-122 1ms\nPASS 48 elo-v3-054 682ms\nPASS 49 elo-v3-126 3ms\nPASS 50 elo-v3-118 22ms\nPASS 51 elo-v2-173 46ms\nPASS 52 elo-v3-139 9ms\nPASS 53 elo-v3-136 82ms\nPASS 54 elo-v3-141 5ms\nPASS 55 elo-v3-142 57ms\nPASS 56 elo-v3-138 12ms\nPASS 57 elo-v3-143 2ms\nPASS 58 elo-v2-182 69ms\nPASS 59 elo-v3-147 1482ms\nPASS 60 elo-v3-155 49ms\nPASS 61 elo-v3-161 3ms\nPASS 62 elo-v3-162 4ms\nPASS 63 elo-v3-146 54ms\nPASS 64 elo-v3-166 31ms\nPASS 65 elo-v2-191 13ms\nPASS 66 elo-v3-169 37ms\nPASS 67 elo-v3-177 27ms\nPASS 68 elo-v3-181 2ms\nPASS 69 elo-v3-182 2ms\nPASS 70 elo-v3-178 59ms\nPASS 71 elo-v3-186 86ms\nPASS 72 elo-v3-159 82ms\nPASS 73 elo-v4-073 233ms\nPASS 74 elo-v2-200 64ms\nPASS 75 elo-v4-075 1299ms\nPASS 76 elo-v3-109 325ms\nPASS 77 elo-v3-157 62ms\nPASS 78 elo-v3-171 2266ms\nPASS 79 elo-v4-079 97ms\nPASS 80 elo-v4-080 15ms\n{\"passed\":true,\"replayed\":80,\"referenceAnswerImported\":false,\"artifact\":\"/workspace/scratch/9fd2016a15a9/elo80/tests/elo80-proof-replay-results.json\"}\n",
+      "stderr": ""
+    },
+    {
+      "test": "elo80-progress-tests.mjs",
+      "passed": true,
+      "exitCode": 0,
+      "elapsedMs": 78,
+      "stdout": "PASS ELO80 identity-safe archival, unchanged IDs, no ordinal mapping, custom/endless/other-game isolation, idempotence and unavailable storage.\n",
+      "stderr": ""
+    },
+    {
+      "test": "elo80-preservation-tests.mjs",
+      "passed": true,
+      "exitCode": 0,
+      "elapsedMs": 1618,
+      "stdout": "{\"passed\":true,\"byteIdenticalDistFiles\":221,\"unchanged\":\"all engines, physics, CSS, sprites, shared buttons, confirmation/check, hints policy, other campaigns, imports and Modo Sem Parar\"}\n",
+      "stderr": ""
+    },
+    {
+      "test": "elo80-campaign-ui-tests.mjs",
+      "passed": true,
+      "exitCode": 0,
+      "elapsedMs": 1498,
+      "stdout": "{\"passed\":true,\"campaignLevels\":80,\"confirmedFailures\":240,\"verifiedAnswers\":80,\"reloadChecks\":5,\"explicitWins\":80}\nPASS daily campaign bounds and other campaign grouping/count isolation\n",
+      "stderr": ""
+    },
+    {
+      "test": "elo-rules-tests.mjs",
+      "passed": true,
+      "exitCode": 0,
+      "elapsedMs": 1611,
+      "stdout": "PASS Classical visibility, straight points, region boundaries and alternative solutions\nPASS Curves and straight clues constrain directions, not point positions\nPASS Passages are strict interiors, never point positions or visibility walls\nPASS Forbidden unit intervals invalidate traversal without changing connections\nPASS Counts include fixed points but not traversing segments\nPASS Distance uses interval lengths and may shrink after subdivision\nPASS Mandatory neighbors require direct visibility, not merely a path\nPASS Order accepts rotations and reversal and ignores insertion order\nPASS Cuts lie between adjacent rows or columns and need even traversal counts\nPASS Exactly one exclusive passage is traversed and every option remains empty\nPASS A partial cycle is not rejected if remaining regions can subdivide it\nPASS Annotations do not alter truth, deductions or visibility\nPASS Search budgets are inconclusive, not a proof of zero solutions\nPASS Offline domain assumptions are explicit and never taken from player X marks\nPASS Geometry facade delegates ELO and local hints never search\nPASS Independent exhaustive oracle agrees on all mechanics and partial solution subsets\n{\"randomOracleBoards\":168,\"positiveBoards\":68,\"partialSolutionChecks\":2816}\nPASS Seeded connected region boards preserve every oracle solution under local deductions\n{\"passed\":true,\"tests\":17}\n",
+      "stderr": ""
+    },
+    {
+      "test": "elo-v3-independent-tests.mjs",
+      "passed": true,
+      "exitCode": 0,
+      "elapsedMs": 89,
+      "stdout": "PASS classic and alternative solution are accepted by rules\nPASS turns versus straights constrain the region point, not its coordinate\nPASS passage uses strict segment interior and remains point-free\nPASS forbidden unit interval is checked without hiding automatic edges\nPASS row and column counts count points, not crossed segments\nPASS distance is the sum of the two first-visible incident lengths\nPASS neighbors require a direct edge, not a path\nPASS order accepts cyclic rotation and reversal, not a permutation\nPASS cuts count links and do not act as walls\nPASS exclusive passage means exactly one, including unused alternatives\nPASS first visible point replaces a long direct edge\nPASS a partial closed loop can be completed by subdivision\nPASS distance in a partial graph can shorten after subdivision\nPASS unmet passages and counts in an incomplete board are pending\nPASS annotation X does not affect mathematical truth\nPASS bounded solver never labels a node-budget cutoff exhaustive\n{\"passed\":true,\"independentMechanicCases\":16}\n",
+      "stderr": ""
+    },
+    {
+      "test": "restart-collection-tests.mjs",
+      "passed": true,
+      "exitCode": 0,
+      "elapsedMs": 370,
+      "stdout": "PASS elo cancel/Escape/native cancel, focus/trap, duplicate, scoped reset, navigation, persisted counters/other sessions\nPASS prumo cancel/Escape/native cancel, focus/trap, duplicate, scoped reset, navigation, persisted counters/other sessions\nPASS pacto cancel/Escape/native cancel, focus/trap, duplicate, scoped reset, navigation, persisted counters/other sessions\nPASS desvio cancel/Escape/native cancel, focus/trap, duplicate, scoped reset, navigation, persisted counters/other sessions\nPASS competitive reset blocked, bot pauses and resumes\nPASS no duplicated dialog/listeners and no browser confirmation\nPASS elo Dicas label stable across tiers 1/2/3 and rerender, internal progression preserved\nPASS prumo Dicas label stable across tiers 1/2/3 and rerender, internal progression preserved\nPASS pacto Dicas label stable across tiers 1/2/3 and rerender, internal progression preserved\n",
+      "stderr": ""
+    },
+    {
+      "test": "middle-confirm-tests.mjs",
+      "passed": true,
+      "exitCode": 0,
+      "elapsedMs": 88,
+      "stdout": "PASS middle: one confirmation per gesture; native defaults suppressed; cancellation/movement/outside/blur/focus/chords/touch/links/other buttons/cleanup\n",
+      "stderr": ""
+    },
+    {
+      "test": "manual-check-tests.mjs",
+      "passed": true,
+      "exitCode": 0,
+      "elapsedMs": 476,
+      "stdout": "PASS 400 campaign answers/partials, real PRUMO alternative, PACTO alternative, neutral empty/unavailable, exhaustive-only errors, Worker deadline/repeat/stale/reset/failure\nPASS ELO/PRUMO UI, reference-free maps, counters/history unchanged, exact-board outline, 10s/repeated/edit/reset/undo/navigation and Endless advance; PACTO red outline\nPASS actual solver Worker accepts partial alternative; ELO full alternative and occupied-only error cells\n",
+      "stderr": ""
+    },
+    {
+      "test": "json-import-ui-tests.mjs",
+      "passed": true,
+      "exitCode": 0,
+      "elapsedMs": 487,
+      "stdout": "{\"passed\":true,\"collectionGames\":4,\"imports\":4,\"directEndless\":true,\"campaignAndCustomPreserved\":true,\"computedAnswers\":true,\"atomicErrors\":true,\"staleReadAndWorkerIgnored\":true,\"toolbarOrderAndSingleReset\":true}\n",
+      "stderr": ""
+    },
+    {
+      "test": "nonstop-visible-ui.test.mjs",
+      "passed": true,
+      "exitCode": 0,
+      "elapsedMs": 201,
+      "stdout": "PASS elo new/resumed visible copy and preserved identity/session keys\nPASS prumo new/resumed visible copy and preserved identity/session keys\nPASS pacto new/resumed visible copy and preserved identity/session keys\nPASS desvio new/resumed visible copy and preserved identity/session keys\n",
+      "stderr": ""
+    },
+    {
+      "test": "focused-game-controls.test.mjs",
+      "passed": true,
+      "exitCode": 0,
+      "elapsedMs": 105,
+      "stdout": "✔ three automatic-completion games change only confirm button visibility, not behavior (17.344049ms)\n✔ only PACTO exposes the hint button and follow-up application; rules and intrinsic clues unaffected (0.441357ms)\nℹ tests 2\nℹ suites 0\nℹ pass 2\nℹ fail 0\nℹ cancelled 0\nℹ skipped 0\nℹ todo 0\nℹ duration_ms 24.761553\n",
+      "stderr": ""
+    }
+  ]
+}

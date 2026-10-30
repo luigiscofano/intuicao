@@ -1,0 +1,283 @@
+{
+  "29": {
+    "constraints": {
+      "passages": [
+        21
+      ],
+      "forbiddenEdges": [
+        [
+          6,
+          7
+        ],
+        [
+          3,
+          4
+        ]
+      ]
+    },
+    "changes": [
+      {
+        "replace": {
+          "key": "passages",
+          "value": [
+            9
+          ]
+        },
+        "with": {
+          "family": "forbiddenEdges",
+          "key": "forbiddenEdges",
+          "value": [
+            [
+              6,
+              7
+            ]
+          ],
+          "label": "Nenhuma ligação pode percorrer o intervalo L2C1–L2C2."
+        }
+      },
+      {
+        "replace": {
+          "key": "passages",
+          "value": [
+            33
+          ]
+        },
+        "with": {
+          "family": "forbiddenEdges",
+          "key": "forbiddenEdges",
+          "value": [
+            [
+              3,
+              4
+            ]
+          ],
+          "label": "Nenhuma ligação pode percorrer o intervalo L1C4–L1C5."
+        }
+      }
+    ]
+  },
+  "32": {
+    "constraints": {
+      "rowCounts": {
+        "1": 2
+      },
+      "colCounts": {
+        "5": 2
+      }
+    },
+    "changes": [
+      {
+        "replace": {
+          "key": "passages",
+          "value": [
+            10
+          ]
+        },
+        "with": {
+          "family": "counts",
+          "key": "colCounts",
+          "value": {
+            "5": 2
+          },
+          "label": "A coluna 6 recebe exatamente 2 pontos."
+        }
+      }
+    ]
+  },
+  "38": {
+    "constraints": {
+      "passages": [
+        26
+      ],
+      "colCounts": {
+        "1": 2
+      },
+      "rowCounts": {
+        "0": 2
+      },
+      "forbiddenEdges": [
+        [
+          4,
+          5
+        ]
+      ]
+    },
+    "changes": [
+      {
+        "replace": {
+          "key": "passages",
+          "value": [
+            22
+          ]
+        },
+        "with": {
+          "family": "forbiddenEdges",
+          "key": "forbiddenEdges",
+          "value": [
+            [
+              4,
+              5
+            ]
+          ],
+          "label": "Nenhuma ligação pode percorrer o intervalo L1C5–L1C6."
+        }
+      }
+    ]
+  },
+  "73": {
+    "constraints": {
+      "exclusivePassages": [
+        {
+          "id": "X50_2",
+          "cells": [
+            5,
+            50
+          ]
+        }
+      ],
+      "cuts": [
+        {
+          "axis": "row",
+          "index": 0,
+          "count": 2
+        }
+      ]
+    },
+    "changes": [
+      {
+        "drop": {
+          "key": "exclusivePassages",
+          "value": [
+            {
+              "id": "X45_0",
+              "cells": [
+                45,
+                26
+              ]
+            }
+          ]
+        }
+      }
+    ]
+  },
+  "75": {
+    "constraints": {
+      "distances": {
+        "10": 2
+      },
+      "rowCounts": {
+        "5": 2
+      }
+    },
+    "changes": [
+      {
+        "replace": {
+          "key": "exclusivePassages",
+          "value": [
+            {
+              "id": "X65_1",
+              "cells": [
+                65,
+                33
+              ]
+            }
+          ]
+        },
+        "with": {
+          "family": "distances",
+          "key": "distances",
+          "value": {
+            "10": 2
+          },
+          "label": "As duas ligações da região 11 somam 2 intervalos."
+        }
+      },
+      {
+        "replace": {
+          "key": "exclusivePassages",
+          "value": [
+            {
+              "id": "X44_0",
+              "cells": [
+                12,
+                44
+              ]
+            }
+          ]
+        },
+        "with": {
+          "family": "counts",
+          "key": "rowCounts",
+          "value": {
+            "5": 2
+          },
+          "label": "A linha 6 recebe exatamente 2 pontos."
+        }
+      },
+      {
+        "drop": {
+          "key": "exclusivePassages",
+          "value": [
+            {
+              "id": "X20_2",
+              "cells": [
+                37,
+                39,
+                20
+              ]
+            }
+          ]
+        }
+      },
+      {
+        "drop": {
+          "key": "colCounts",
+          "value": {
+            "7": 1
+          }
+        }
+      }
+    ]
+  },
+  "79": {
+    "constraints": {
+      "exclusivePassages": [
+        {
+          "id": "X36_1",
+          "cells": [
+            54,
+            36
+          ]
+        }
+      ],
+      "distances": {
+        "4": 7,
+        "8": 10
+      }
+    },
+    "changes": [
+      {
+        "replace": {
+          "key": "exclusivePassages",
+          "value": [
+            {
+              "id": "X9_0",
+              "cells": [
+                57,
+                9
+              ]
+            }
+          ]
+        },
+        "with": {
+          "family": "distances",
+          "key": "distances",
+          "value": {
+            "8": 10
+          },
+          "label": "As duas ligações da região 9 somam 10 intervalos."
+        }
+      }
+    ]
+  }
+}
