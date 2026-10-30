@@ -30,3 +30,18 @@ for(const game of games){
 }
 assert.equal(scenes.size,7);
 console.log('PASS: 7 distinct victory scenes, real-win-only, dedup, static restoration, cleanup; original 2 exact markup/lifecycle/CSS preserved.');
+
+// Every newly won campaign phase gets the standard PARABÉNS overlay as well.
+for(const game of ['light','cut',...games.filter(g=>g!=='desvio')]){
+ const first=rig(createResultMotion);first.motion.show(game,true);
+ assert.match(first.host.innerHTML,/victory-celebration/);
+ assert.match(first.host.innerHTML,/PARABÉNS!/);
+ assert.ok(first.classes.has('result-success'));
+ first.motion.clear();assert.equal(first.tasks.size,0);
+ const replay=rig(createResultMotion);replay.motion.show(game,true);
+ assert.match(replay.host.innerHTML,/victory-celebration/,'fresh replay wins celebrate');
+ assert.doesNotMatch(resultMarkup(game,false),/victory-celebration/);
+}
+assert.doesNotMatch(resultMarkup('desvio',true),/victory-celebration/,'Desvio unaffected');
+for(const game of games.filter(g=>g!=='desvio'))assert.doesNotMatch(resultMarkup(game,true,{animate:false}),/victory-celebration/);
+console.log('PASS: PARABÉNS on all eight campaign wins and fresh replays; no false or restored-win trigger.');

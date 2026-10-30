@@ -20,7 +20,7 @@ export function resultMarkup(game,success,options={}){
  const outcome='win';
  if(distinctGames.has(game)){
   const copy={elo:'As ligações fecharam o circuito.',prumo:'Cada peça encontrou seu equilíbrio.',pacto:'As duplas estão em acordo.',sintonia:'Um comando, todos nos seus destinos.',repasse:'Cada repasse chegou à medida certa.',orbita:'Os giros alinharam todos os alvos.',desvio:'Seu caminho decidiu a partida.'};
-  return `<div class="result-badge result-${game} result-win${options.animate===false?' game-victory-static':''}" data-outcome="win">${gameVictoryMarkup(game)}<div><strong>${options.winner?'✓ Jogador '+options.winner+' venceu!':'✓ Vitória!'}</strong><span>${copy[game]}</span></div></div>${retry}`;
+  return `${game!=='desvio'&&options.animate!==false?celebrationMarkup():''}<div class="result-badge result-${game} result-win${options.animate===false?' game-victory-static':''}" data-outcome="win">${gameVictoryMarkup(game)}<div><strong>${options.winner?'✓ Jogador '+options.winner+' venceu!':'✓ Vitória!'}</strong><span>${copy[game]}</span></div></div>${retry}`;
  }
 
  const shapes={

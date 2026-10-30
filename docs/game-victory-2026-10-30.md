@@ -13,3 +13,6 @@ Validation:
 - Screenshots inspected for actual ELO game and seven-scene overview. A temporary same-CSS 320px iframe verified compact scene/text layout; fixture removed before packaging. Full-device mobile interactions and OS reduced-motion toggling were not available; media-query implementation and static final-state rendering were reviewed.
 
 Original Reflexos/Corte Certo SVGs, animation CSS and gameplay remain unchanged. Other existing art, confetti, controls and public access settings remain unchanged.
+
+## Follow-up: PARABÉNS on every campaign victory
+The distinct-scene branch had omitted the shared large PARABÉNS overlay. It now includes that exact existing overlay for the six additional campaigns, alongside their specific scene; original Reflexos/Corte Certo branches and Desvio are unchanged. Restored wins stay static. Eight-game trigger tests cover real wins, fresh replays, losses and cleanup. Native browser confirmed a restarted Sintonia level 1 win displays both the animated PARABÉNS overlay and its specific scene (screenshot inspected).
