@@ -1,3 +1,4 @@
+import {prumoBalanceMarkup} from './prumo-balance.mjs';
 import {eloRegionColors} from './elo-region-colors.mjs';
 import {validateCollectionJSON,COLLECTION_JSON_EXAMPLES,COLLECTION_JSON_HELP} from './collection-json.mjs';
 import {getRulesContext} from './rules-context.mjs';
@@ -193,7 +194,7 @@ export function initCollection({hideOriginal}){
   $('c-hint-apply').onclick=()=>{if(hintTier!==3||!hintPlan?.action)return;const action=hintPlan.action;progress().assist(answerKey());dispatchAction(action);message='Dedução aplicada. A conclusão da fase continua dependendo de Confirmar resposta.';renderStatus();};
  }
  function updateDirectStatus(){if(game==='desvio'){const competitive=duelMode==='competitive';for(const id of ['c-undo','c-redo','c-advanced-toggle'])if($(id))$(id).hidden=competitive;if(competitive)$('c-advanced').hidden=true;for(const id of ['c-reset','c-rematch'])if($(id))$(id).hidden=competitive&&current().winner===null;}if($('c-hint-apply'))$('c-hint-apply').hidden=!(hintTier===3&&hintPlan?.action);
-  if(game==='prumo'){$('c-details').hidden=!showMoments||selected<0;$('c-details').textContent=showMoments&&selected>=0?(()=>{const m=validateGeometry(level,current()).moments[selected];return `Momentos exatos da peça ${String.fromCharCode(65+selected)}: horizontal ${m.x}; vertical ${m.y} (coordenadas duplicadas).`;})():'';}
+  if(game==='prumo'){$('c-details').hidden=!showMoments;$('c-details').innerHTML=showMoments?(selected>=0?prumoBalanceMarkup(level,current(),selected,validateGeometry(level,current()).moments[selected]):'<p class="pb-selection-help" role="status">Escolha um apoio para visualizar o equilíbrio da sua peça.</p>'):'';}
   if(game==='pacto'){$('c-details').hidden=true;$('c-details').textContent='';}
  }
  function navigateLevel(delta){if(endless){nextEndless();return;}const next=index+delta;if(game==='desvio'||next<0||next>=catalogue[game].length)return;persist();daily=false;start(next);}

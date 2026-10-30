@@ -1,0 +1,7 @@
+# PRUMO real balance visualization
+
+Momentos exatos keeps the existing toggle, icon and location beside Checar. When enabled it shows a small diagram of the selected piece's actual painted cells, the fixed support (diamond), actual centre of mass (circle), horizontal/vertical guide projections and signed direction readings. Both moments from the existing validator remain visible and accessible in a polite live region. The displacement in cell units is moment/(2×cell count), so the geometric centre exactly matches the existing doubled-coordinate moment calculation. No game engine or victory criterion changed.
+
+No decorative animation or timers: reduced-motion users receive the same static, immediately updated information. The display follows selection, painting, undo and redo. Empty pieces explicitly have no centre, even when numerical moments are zero. No selection prompts the user to choose an existing support. Turning off removes the diagram and its reserved space. No overlay covers the board.
+
+Tests: nine positive/zero/negative horizontal/vertical combinations, empty-piece case, accurate COM, state immutability, toggle/selection/edit/undo/redo integration all pass. Existing400-case manual-check suite, four-game JSON imports and80-level ELO UI regressions pass. Native browser verified a two-axis negative displacement (-2,-2; -0.5,-0.5 cells) and balanced state. Desktop screenshot and320px embedded viewport inspected; card fits within243px with no horizontal overflow. Temporary QA page removed.
