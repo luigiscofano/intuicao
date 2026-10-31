@@ -54,3 +54,7 @@
 @media(prefers-reduced-motion:reduce){#trama *,#trama *::before,#trama *::after{animation:none!important;transition:none!important}}
 /* Em telas estreitas, recuperar o respiro local mantém casas de toque confortáveis. */
 @media(max-width:360px){#trama .tr-lab{padding-inline:0}#trama .tr-board-wrap{padding:2px}}
+/* As identidades dos cartões não herdam as proporções das peças do tabuleiro. */
+#trama .tr-identities .tr-player-card{flex-direction:row;align-items:center;gap:12px}
+#trama .tr-player-card .tr-piece.tr-player-1{width:16px;height:16px;flex:0 0 16px}
+@media(max-width:500px){#trama .tr-player-card .tr-piece.tr-player-1{width:13px;height:13px;flex-basis:13px}}
