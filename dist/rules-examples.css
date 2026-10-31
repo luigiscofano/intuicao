@@ -1,0 +1,17 @@
+/* One finite explanatory motion. Every diagram retains its readable final state. */
+.rpx-beam path{stroke-dasharray:60;animation:rpx-draw 1.4s .8s both}
+.rpx-circuit path{stroke-dasharray:60;animation:rpx-draw 1.4s .8s both}
+.rpx-cut-fill{animation:rpx-cut-fill 1.4s .8s both;transform-box:fill-box;transform-origin:left center}
+.rpx-cut-line{animation:rpx-cut-line 1.4s .8s both}
+.rpx-add-house,.rpx-pair{animation:rpx-appear 1.2s .8s both;transform-box:fill-box;transform-origin:center}
+.rpx-animal-step{animation:rpx-step 1.4s .8s both}
+.rpx-orbit-turn{transform-origin:183px 70px;animation:rpx-orbit 1.4s .8s both}
+.rpx-transfer{animation:rpx-transfer 1.6s .8s both}
+@keyframes rpx-draw{from{stroke-dashoffset:60}to{stroke-dashoffset:0}}
+@keyframes rpx-cut-fill{from{transform:scaleX(.5)}to{transform:scaleX(1)}}
+@keyframes rpx-cut-line{from{transform:translateX(-19px)}to{transform:translateX(0)}}
+@keyframes rpx-appear{from{opacity:0;transform:scale(.65)}to{opacity:1;transform:scale(1)}}
+@keyframes rpx-step{from{transform:translateX(-25px)}to{transform:translateX(0)}}
+@keyframes rpx-orbit{from{transform:rotate(-90deg)}to{transform:rotate(0)}}
+@keyframes rpx-transfer{0%{transform:translateX(0);opacity:0}15%{opacity:1}80%{transform:translateX(51px);opacity:1}100%{transform:translateX(51px);opacity:0}}
+@media(prefers-reduced-motion:reduce){.rpx-beam path,.rpx-circuit path,.rpx-cut-fill,.rpx-cut-line,.rpx-add-house,.rpx-pair,.rpx-animal-step,.rpx-orbit-turn,.rpx-transfer{animation:none}.rpx-transfer{display:none}}
