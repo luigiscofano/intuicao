@@ -23,9 +23,9 @@ test('stale worker callback cannot terminate newer TRAMA search',async()=>{
  try{const service=createTramaSearch(),old=service.search(createTrama()),aborted=assert.rejects(old,{name:'AbortError'}),next=service.search(createTrama(1));await aborted;workers[0].onerror();assert(!workers[1].terminated);workers[1].onmessage({data:{id:workers[1].request.id,result:{move:0}}});assert.deepEqual(await next,{move:0});service.cancel();}finally{globalThis.Worker=original;}
 });
 const ui=readFileSync(new URL('../dist/trama/ui.mjs',import.meta.url),'utf8');
-test('UI keeps actual scores during preview, separate inspection and no mascots',()=>{
+test('UI keeps actual scores during preview, separate inspection and team identities',()=>{
  assert(ui.includes('state.maxSizes[p]'));assert(ui.includes('preview?.state||state'));assert(ui.includes('inspectTramaComponent(state,cell)'));assert(ui.includes('onfocusin'));
- assert(!/FAUNA|ANIMAL_SPRITES|mascot|Time Verde|Time Amarelo/.test(ui));assert(ui.includes('undoTramaToHuman(state)'));assert(ui.includes('token!==revision||id!==matchId||state!==origin'));assert(ui.includes('if(!state||invalidSave)return'));assert(ui.includes('celebrate&&!draw&&!reduced'));assert(ui.includes("config.mode==='training'"));
+ assert(!/ANIMAL_SPRITES|Time Verde|Time Amarelo/.test(ui));assert(ui.includes('undoTramaToHuman(state)'));assert(ui.includes('token!==revision||id!==matchId||state!==origin'));assert(ui.includes('if(!state||invalidSave)return'));assert(ui.includes('celebrate&&!draw&&!reduced'));assert(ui.includes("config.mode==='training'"));
 });
 test('SVG crossings receive a gap without adding a node',async()=>{
  const extracted=ui.slice(ui.indexOf('export function tramaEdgesMarkup'),ui.indexOf('export function initTrama'));const {tramaEdgesMarkup}=await import('data:text/javascript;base64,'+Buffer.from('const key=e=>`${e.owner}:${e.from}:${e.to}`;'+extracted).toString('base64'));

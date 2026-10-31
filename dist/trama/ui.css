@@ -13,7 +13,7 @@
 #trama .tr-player-card{border:1px solid var(--tr-edge);border-radius:14px;background:var(--tr-base);color:var(--tr-ink);padding:10px 12px;display:flex;flex-direction:column;gap:6px;font-size:13px;min-width:0}
 #trama .tr-player-card>div{display:flex;align-items:center;gap:10px}
 #trama .tr-player-card.tr-current{outline:2px solid var(--tr-ink);outline-offset:2px}
-#trama .tr-player-card .tr-piece{width:20px;height:20px;flex:0 0 20px}
+#trama .tr-player-card .tr-piece{width:24px;height:24px;flex:0 0 24px}
 #trama .tr-player-card>span{font-size:12px}
 #trama .tr-player-card b{font-size:21px;line-height:1.1;font-variant-numeric:tabular-nums}
 #trama .tr-setup-controls{display:flex;align-items:end;flex-wrap:wrap;gap:14px}
@@ -27,8 +27,8 @@
 #trama .tr-cell.tr-selected{outline:2px solid #456d3d;outline-offset:-3px;background:#e8f1df66}
 #trama .tr-cell.tr-component{background:#fff4c966}
 #trama .tr-empty{color:#b4bea8;font-size:18px;line-height:1;pointer-events:none}
-#trama .tr-piece{display:block;position:relative;width:44%;height:44%;aspect-ratio:1;box-sizing:border-box;background:var(--tr-base);border:2px solid var(--tr-ink);border-radius:50%;z-index:3;box-shadow:0 0 0 2px #f9faf5}
-#trama .tr-piece.tr-player-1{width:36%;height:36%;border-radius:4px;transform:rotate(45deg)}
+#trama .tr-piece{display:flex;align-items:center;justify-content:center;position:relative;width:min(76%,40px);height:auto;aspect-ratio:1;box-sizing:border-box;padding:2px;background:#fff;border:2px solid var(--tr-ink);border-radius:8px;z-index:3;box-shadow:0 0 0 2px #f9faf5;pointer-events:none}
+#trama .tr-piece.tr-player-1{border-style:double;border-width:3px;transform:none}
 #trama .tr-ghost{opacity:.55}
 #trama .tr-connections{position:absolute;inset:0;width:100%;height:100%;pointer-events:none;overflow:visible;z-index:1}
 #trama .tr-edge{stroke:var(--tr-ink);stroke-width:4;stroke-linecap:round;fill:none;opacity:.85}
@@ -50,11 +50,21 @@
 #trama .tr-example-grid>span{display:flex;align-items:center;justify-content:center;aspect-ratio:1;border:1px solid #d7dfce;border-radius:6px;position:relative;z-index:2}
 #trama [hidden]{display:none!important}
 @keyframes trama-place{from{opacity:.2;scale:.75}to{opacity:1;scale:1}}
-@media(max-width:500px){#trama .tr-lab,#trama .tr-selection{padding:16px 4px}#trama .tr-surface{padding:8px 0}#trama .tr-scores,#trama .tr-identities{gap:8px}#trama .tr-player-card{padding:8px 7px;font-size:12px}#trama .tr-player-card>div{gap:6px}#trama .tr-player-card .tr-piece{width:16px;height:16px;flex-basis:16px}#trama .tr-player-card>span{font-size:11px}#trama .tr-player-card b{font-size:19px}#trama .tr-board-wrap{padding:3px}#trama .tr-turn{font-size:14px}#trama .tr-status{font-size:12px;min-height:58px}#trama .stage-tools{gap:12px}}
+@media(max-width:500px){#trama .tr-lab,#trama .tr-selection{padding:16px 4px}#trama .tr-surface{padding:8px 0}#trama .tr-scores,#trama .tr-identities{gap:8px}#trama .tr-player-card{padding:8px 7px;font-size:12px}#trama .tr-player-card>div{gap:6px}#trama .tr-player-card .tr-piece{width:24px;height:24px;flex-basis:24px}#trama .tr-player-card>span{font-size:11px}#trama .tr-player-card b{font-size:19px}#trama .tr-board-wrap{padding:3px}#trama .tr-turn{font-size:14px}#trama .tr-status{font-size:12px;min-height:58px}#trama .stage-tools{gap:12px}}
 @media(prefers-reduced-motion:reduce){#trama *,#trama *::before,#trama *::after{animation:none!important;transition:none!important}}
 /* Em telas estreitas, recuperar o respiro local mantém casas de toque confortáveis. */
 @media(max-width:360px){#trama .tr-lab{padding-inline:0}#trama .tr-board-wrap{padding:2px}}
 /* As identidades dos cartões não herdam as proporções das peças do tabuleiro. */
-#trama .tr-identities .tr-player-card{flex-direction:row;align-items:center;gap:12px}
-#trama .tr-player-card .tr-piece.tr-player-1{width:16px;height:16px;flex:0 0 16px}
-@media(max-width:500px){#trama .tr-player-card .tr-piece.tr-player-1{width:13px;height:13px;flex-basis:13px}}
+#trama .tr-identities .tr-player-card{flex-direction:column;align-items:stretch;gap:12px}
+#trama .tr-player-card .tr-piece.tr-player-1{width:24px;height:24px;flex:0 0 24px}
+@media(max-width:500px){#trama .tr-player-card .tr-piece.tr-player-1{width:24px;height:24px;flex-basis:24px}}
+
+/* Personagens oficiais, sem rotação ou mudanças na geometria lógica. */
+#trama .tr-piece>.vs-mascot{display:block;width:100%;height:100%;max-width:32px;max-height:32px;flex:1;min-width:0;overflow:hidden}
+#trama .tr-owner-mark{position:absolute;right:-3px;bottom:-3px;display:flex;align-items:center;justify-content:center;width:11px;height:11px;border-radius:3px;background:#fff;color:var(--tr-ink);font-size:8px;line-height:1;box-shadow:0 0 0 1px var(--tr-edge)}
+#trama .tr-player-card .tr-owner-mark{width:9px;height:9px;font-size:6px;right:-2px;bottom:-2px}
+#trama .tr-identities label{display:grid;gap:5px;font-size:11px;line-height:1.4;min-width:0}
+#trama .tr-identities select{width:100%;max-width:100%;min-width:0;min-height:44px;font-size:12px}
+#trama [data-tr-mascot-preview]{display:flex;flex:0 0 24px}
+#trama .tr-result-badge>.tr-piece{width:24px;height:24px;flex:0 0 24px}
+#trama .tr-example-grid .tr-piece{width:min(76%,32px)}

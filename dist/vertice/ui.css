@@ -34,8 +34,8 @@
 #vertice .ve-point.ve-support{background:#f3e8be66}
 #vertice .ve-point.ve-winning{outline:2px solid #baab61;outline-offset:-5px}
 #vertice .ve-point.ve-released{outline:2px dotted #7d8c70;outline-offset:-5px}
-#vertice .ve-piece{display:block;position:relative;width:34px;height:34px;box-sizing:border-box;background:var(--ve-base);border:2px solid var(--ve-ink);border-radius:50%;z-index:3;box-shadow:0 0 0 2px #fafbf7}
-#vertice .ve-piece.ve-player-1{width:29px;height:29px;border-radius:4px;transform:rotate(45deg)}
+#vertice .ve-piece{display:flex;align-items:center;justify-content:center;position:relative;width:46px;height:46px;box-sizing:border-box;background:#fff;border:2px solid var(--ve-ink);border-radius:11px;padding:3px;z-index:3;box-shadow:0 0 0 2px #fafbf7;overflow:visible}
+
 #vertice .ve-empty{display:block;position:relative;width:13px;height:13px;border:2px solid #9ba78d;border-radius:50%;background:#fafbf7;box-sizing:border-box;z-index:3;box-shadow:0 0 0 3px #fafbf7}
 #vertice .ve-empty.ve-controlled{width:28px;height:28px;border-color:var(--ve-ink);background:#fafbf7}
 #vertice .ve-empty.ve-controlled>small{position:absolute;left:100%;top:100%;font-size:10px;line-height:1;color:var(--ve-ink)}
@@ -55,16 +55,21 @@
 #vertice .rules-more{margin-top:12px}
 #vertice .ve-example-mesh{position:relative;isolation:isolate;max-width:260px;aspect-ratio:1;margin:10px 0;background:#fafbf7;border-radius:12px;border:1px solid #d6decc}
 #vertice .ve-demo-point{position:absolute;transform:translate(-50%,-50%);display:flex;align-items:center;justify-content:center;width:44px;height:44px;z-index:2}
-#vertice .ve-demo-point .ve-piece{width:26px;height:26px}
-#vertice .ve-demo-point .ve-piece.ve-player-1{width:22px;height:22px}
+#vertice .ve-demo-point .ve-piece{width:32px;height:32px}
+
 #vertice .ve-demo-point .ve-empty.ve-controlled,#vertice .ve-demo-point .ve-empty.ve-disputed{width:23px;height:23px}
 #vertice [hidden]{display:none!important}
 @keyframes vertice-arrive{from{opacity:.3;scale:.78}to{opacity:1;scale:1}}
-@media(max-width:500px){#vertice .ve-lab,#vertice .ve-selection{padding:16px 8px}#vertice .ve-surface{padding:8px 0}#vertice .ve-scores,#vertice .ve-identities{gap:8px}#vertice .ve-player-card{padding:8px 7px;font-size:12px}#vertice .ve-player-card>div{gap:6px}#vertice .ve-player-card .ve-piece{width:16px;height:16px;flex-basis:16px}#vertice .ve-player-card>span{font-size:11px}#vertice .ve-player-card b{font-size:19px}#vertice .ve-board-wrap{padding:4px}#vertice .ve-point{width:48px;height:48px;min-width:48px;min-height:48px}#vertice .ve-point .ve-piece{width:29px;height:29px}#vertice .ve-point .ve-piece.ve-player-1{width:25px;height:25px}#vertice .ve-turn{font-size:14px}#vertice .ve-status{font-size:12px;min-height:58px}#vertice .stage-tools{gap:12px}}
+@media(max-width:500px){#vertice .ve-lab,#vertice .ve-selection{padding:16px 8px}#vertice .ve-surface{padding:8px 0}#vertice .ve-scores,#vertice .ve-identities{gap:8px}#vertice .ve-player-card{padding:8px 7px;font-size:12px}#vertice .ve-player-card>div{gap:6px}#vertice .ve-player-card .ve-piece{width:16px;height:16px;flex-basis:16px}#vertice .ve-player-card>span{font-size:11px}#vertice .ve-player-card b{font-size:19px}#vertice .ve-board-wrap{padding:4px}#vertice .ve-point{width:48px;height:48px;min-width:48px;min-height:48px}#vertice .ve-point .ve-piece{width:35px;height:35px}#vertice .ve-turn{font-size:14px}#vertice .ve-status{font-size:12px;min-height:58px}#vertice .stage-tools{gap:12px}}
 @media(prefers-reduced-motion:reduce){#vertice *,#vertice *::before,#vertice *::after{animation:none!important;transition:none!important}}
 
-/* As peças dos cartões têm tamanho próprio, independente dos pontos do jogo. */
-#vertice .ve-identities .ve-player-card{flex-direction:row;align-items:center;gap:10px}
-#vertice .ve-player-card .ve-piece.ve-player-0{width:20px;height:20px;flex:0 0 20px}
-#vertice .ve-player-card .ve-piece.ve-player-1{width:16px;height:16px;flex:0 0 16px}
-@media(max-width:500px){#vertice .ve-player-card .ve-piece.ve-player-0{width:16px;height:16px;flex-basis:16px}#vertice .ve-player-card .ve-piece.ve-player-1{width:13px;height:13px;flex-basis:13px}}
+/* Os personagens preservam as cores dos times e não alteram os halos vazios. */
+#vertice .ve-piece .vs-mascot{display:block;width:100%;height:100%;min-width:0;overflow:hidden;pointer-events:none}
+#vertice .ve-piece-mark{position:absolute;right:-4px;bottom:-4px;display:grid;place-items:center;min-width:13px;height:13px;line-height:1;font-size:10px;font-weight:800;color:var(--ve-ink);background:#fff;border-radius:50%;box-shadow:0 0 0 1px var(--ve-edge)}
+#vertice .ve-identities .ve-player-card{flex-direction:column;align-items:stretch;gap:10px}
+#vertice .ve-identities .ve-identity-heading{display:flex;align-items:center;gap:10px}
+#vertice .ve-identities label{display:grid;gap:5px;min-width:0;font-size:12px}
+#vertice .ve-identities select{width:100%;min-width:0;max-width:100%;min-height:44px;font-size:13px}
+#vertice .ve-player-card .ve-piece{width:24px;height:24px;flex:0 0 24px;border-radius:6px;padding:1px}
+#vertice .ve-player-card .ve-piece-mark{min-width:10px;height:10px;font-size:8px;right:-3px;bottom:-3px}
+#vertice .ve-result-badge .ve-piece{display:inline-flex;width:24px;height:24px;border-radius:6px;margin-right:10px;vertical-align:middle;padding:1px}
