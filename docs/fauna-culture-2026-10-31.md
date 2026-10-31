@@ -15,3 +15,7 @@ Conteúdo pesquisado em fontes públicas e revisado antes da publicação. A ref
 
 ## Complemento: nome faixa coral
 Confirmada a referência nominal à cobra-coral na seção Coral Belt 7 da Pinnacle Martial Arts: https://pinnacle-ma.com/brazilian-jiu-jitsu-belt-rankings/ . Acrescentada a fonte e substituída a ressalva histórica pelo texto aprovado sobre o nome popular, sem inventar criador/data. Trecho Biltre e IBJJF preservados. Repetição do QA: 812 verificações nativas sem falhas (45 modais em 1366/390/320 px), inspeção visual Cobra-coral 320 px; 2 testes Node passaram. Alteração de produção limitada à entrada coral no módulo de conteúdo.
+
+## Moldura e tópicos
+15 seções receberam contorno completo de 1 px (#c5d2bc) e cantos de 16 px. Cobra-coral separada em dois itens sem alterar palavras: música e jiu-jítsu. As outras 14 mantêm um parágrafo, pois tratam de uma curiosidade cada. Fonte/screenshot do usuário inspecionada antes da edição. Teste de igualdade textual e fontes mantém conteúdo verificado intacto.
+QA: 3 testes Node passaram; 902 verificações nativas sem falhas nos 45 modais (1366/390/320 px), incluindo quatro bordas, raio, listas semânticas, foco/fechar, mapas/imagens e ausência de overflow. Inspeção visual: Cobra-coral 320 px e Tamanduá desktop. Saves restaurados exatamente e fixture retirada da publicação.
