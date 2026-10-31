@@ -1,0 +1,1421 @@
+[
+  {
+    "name": "Tuiuiú",
+    "shape": "corte-fauna-v3-mestre-tuiuiu-side",
+    "target": 36,
+    "angle": 60,
+    "lockedAngle": false,
+    "family": "Reta",
+    "amplitude": 89,
+    "frequency": 2,
+    "stage": 5,
+    "permissions": {
+      "x": true,
+      "y": true,
+      "rotate": true,
+      "amplitude": true,
+      "frequency": false,
+      "offset": true
+    },
+    "centerX": 430,
+    "centerY": 210,
+    "initialOffset": 0,
+    "entry": "Deslocamento em direção fixa de 60°; ajuste fino disponível na aba Controles da curva.",
+    "id": "corte-fauna-v3-mestre-tuiuiu-side",
+    "removedFraction": 0,
+    "basicDirection": 60,
+    "basicOrigin": {
+      "x": 430,
+      "y": 210
+    },
+    "initialTravel": 19.2,
+    "holes": [],
+    "hasEdgeOpening": false,
+    "holeDescription": "Ícone de lado com 2 recortes internos de formas variadas. Os espaços brancos não entram na área.",
+    "basicMin": -242,
+    "basicMax": 237,
+    "basicRange": [
+      -242,
+      237
+    ],
+    "solutionTravel": -37.00267197517678,
+    "basicSolution": -37.00267197517678,
+    "number": 61,
+    "tier": "Mestre",
+    "discovery": "A vista muda e novos recortes retiram área: considere apenas o preenchimento restante.",
+    "origin": {
+      "id": "corte-fauna-v2-mestre-tuiuiu-side",
+      "number": 61,
+      "kind": "fauna-varied-holes-v3",
+      "changes": [
+        "shape",
+        "holeForms",
+        "solution",
+        "certificate"
+      ]
+    },
+    "certificate": {
+      "travel": -37,
+      "percent": 36.00245661493604,
+      "errorPP": 0,
+      "initialPercent": 77.31695128763295,
+      "usableWidth": 6.534007674083114,
+      "wholeStepTravel": -37,
+      "usefulArea": 28013.5084005225,
+      "wholeStepPercent": 36.00245661493604,
+      "sourceSha256": "7734238fa8be8d183402da21a9007259ab690cc6c4e7ad59f658894f4aa8f765",
+      "view": "side",
+      "addedHoles": 2,
+      "basePixelArea": 23884,
+      "pixelArea": 22844
+    }
+  },
+  {
+    "name": "Capivara",
+    "shape": "corte-fauna-v3-mestre-capivara-front",
+    "target": 68,
+    "angle": 180,
+    "lockedAngle": true,
+    "family": "Seno",
+    "amplitude": -58,
+    "frequency": 2,
+    "stage": 5,
+    "permissions": {
+      "x": true,
+      "y": true,
+      "rotate": true,
+      "amplitude": false,
+      "frequency": true,
+      "offset": true
+    },
+    "centerX": 370,
+    "centerY": 210,
+    "initialOffset": 0,
+    "entry": "Deslocamento em direção fixa de 180°; ajuste fino disponível na aba Controles da curva.",
+    "id": "corte-fauna-v3-mestre-capivara-front",
+    "removedFraction": 0,
+    "basicDirection": 180,
+    "basicOrigin": {
+      "x": 370,
+      "y": 210
+    },
+    "initialTravel": -6.3,
+    "holes": [],
+    "hasEdgeOpening": false,
+    "holeDescription": "Ícone de frente com 2 recortes internos de formas variadas. Os espaços brancos não entram na área.",
+    "basicMin": -353,
+    "basicMax": 293,
+    "basicRange": [
+      -353,
+      293
+    ],
+    "solutionTravel": 25.296766354702413,
+    "basicSolution": 25.296766354702413,
+    "number": 62,
+    "tier": "Mestre",
+    "discovery": "A vista muda e novos recortes retiram área: considere apenas o preenchimento restante.",
+    "origin": {
+      "id": "corte-fauna-v2-mestre-capivara-front",
+      "number": 62,
+      "kind": "fauna-varied-holes-v3",
+      "changes": [
+        "shape",
+        "holeForms",
+        "solution",
+        "certificate"
+      ]
+    },
+    "certificate": {
+      "travel": 25,
+      "percent": 67.88797922289746,
+      "errorPP": 0.0014532205489285876,
+      "initialPercent": 57.523785219724935,
+      "usableWidth": 15.8849784899503,
+      "wholeStepTravel": 25,
+      "usefulArea": 67197.27091451733,
+      "wholeStepPercent": 67.88797922289746,
+      "sourceSha256": "b3616f1c1d48d13083194c2a6e09155ea59b1261b4f2c05ec603cc54d4e2c7cb",
+      "view": "front",
+      "addedHoles": 2,
+      "basePixelArea": 48428,
+      "pixelArea": 47346
+    }
+  },
+  {
+    "name": "Bem-te-vi",
+    "shape": "corte-fauna-v3-mestre-bemtevi-side",
+    "target": 68,
+    "angle": 180,
+    "lockedAngle": true,
+    "family": "Cúbica",
+    "amplitude": -68,
+    "frequency": 0.5,
+    "stage": 5,
+    "permissions": {
+      "x": true,
+      "y": true,
+      "rotate": true,
+      "amplitude": false,
+      "frequency": false,
+      "offset": true
+    },
+    "centerX": 370,
+    "centerY": 210,
+    "initialOffset": 0,
+    "entry": "Deslocamento em direção fixa de 180°; ajuste fino disponível na aba Controles da curva.",
+    "id": "corte-fauna-v3-mestre-bemtevi-side",
+    "removedFraction": 0,
+    "basicDirection": 180,
+    "basicOrigin": {
+      "x": 370,
+      "y": 210
+    },
+    "initialTravel": -67,
+    "holes": [],
+    "hasEdgeOpening": false,
+    "holeDescription": "Ícone de lado com 2 recortes internos de formas variadas. Os espaços brancos não entram na área.",
+    "basicMin": -329,
+    "basicMax": 227,
+    "basicRange": [
+      -329,
+      227
+    ],
+    "solutionTravel": -23.913262529298663,
+    "basicSolution": -23.913262529298663,
+    "number": 63,
+    "tier": "Mestre",
+    "discovery": "A vista muda e novos recortes retiram área: considere apenas o preenchimento restante.",
+    "origin": {
+      "id": "corte-fauna-v2-mestre-bemtevi-side",
+      "number": 63,
+      "kind": "fauna-varied-holes-v3",
+      "changes": [
+        "shape",
+        "holeForms",
+        "solution",
+        "certificate"
+      ]
+    },
+    "certificate": {
+      "travel": -24,
+      "percent": 67.9641383013092,
+      "errorPP": 0.00018665332793582444,
+      "initialPercent": 48.33809338636176,
+      "usableWidth": 15.622513491660357,
+      "wholeStepTravel": -24,
+      "usefulArea": 46147.58873456789,
+      "wholeStepPercent": 67.9641383013092,
+      "sourceSha256": "7734238fa8be8d183402da21a9007259ab690cc6c4e7ad59f658894f4aa8f765",
+      "view": "side",
+      "addedHoles": 2,
+      "basePixelArea": 20183,
+      "pixelArea": 19771
+    }
+  },
+  {
+    "name": "Mico",
+    "shape": "corte-fauna-v3-mestre-mico-front",
+    "target": 24,
+    "angle": 35,
+    "lockedAngle": false,
+    "family": "Parábola",
+    "amplitude": -87,
+    "frequency": 0.5,
+    "stage": 5,
+    "permissions": {
+      "x": true,
+      "y": true,
+      "rotate": true,
+      "amplitude": true,
+      "frequency": false,
+      "offset": true
+    },
+    "centerX": 430,
+    "centerY": 210,
+    "initialOffset": 0,
+    "entry": "Deslocamento em direção fixa de 35°; ajuste fino disponível na aba Controles da curva.",
+    "id": "corte-fauna-v3-mestre-mico-front",
+    "removedFraction": 0,
+    "basicDirection": 35,
+    "basicOrigin": {
+      "x": 430,
+      "y": 210
+    },
+    "initialTravel": -0.1,
+    "holes": [],
+    "hasEdgeOpening": false,
+    "holeDescription": "Ícone de frente com 2 recortes internos de formas variadas. Os espaços brancos não entram na área.",
+    "basicMin": -200,
+    "basicMax": 330,
+    "basicRange": [
+      -200,
+      330
+    ],
+    "solutionTravel": -100.91889963950962,
+    "basicSolution": -100.91889963950962,
+    "number": 64,
+    "tier": "Mestre",
+    "discovery": "A vista muda e novos recortes retiram área: considere apenas o preenchimento restante.",
+    "origin": {
+      "id": "corte-fauna-v2-mestre-mico-front",
+      "number": 64,
+      "kind": "fauna-varied-holes-v3",
+      "changes": [
+        "shape",
+        "holeForms",
+        "solution",
+        "certificate"
+      ]
+    },
+    "certificate": {
+      "travel": -101,
+      "percent": 23.982645633549744,
+      "errorPP": 0.00003702444702642594,
+      "initialPercent": 45.75345794177796,
+      "usableWidth": 26.540930774062872,
+      "wholeStepTravel": -101,
+      "usefulArea": 60706.078125,
+      "wholeStepPercent": 23.982645633549744,
+      "sourceSha256": "b3616f1c1d48d13083194c2a6e09155ea59b1261b4f2c05ec603cc54d4e2c7cb",
+      "view": "front",
+      "addedHoles": 2,
+      "basePixelArea": 33438,
+      "pixelArea": 32109
+    }
+  },
+  {
+    "name": "Mico-leão-dourado",
+    "shape": "corte-fauna-v3-mestre-micoLeao-side",
+    "target": 68,
+    "angle": 180,
+    "lockedAngle": true,
+    "family": "Cosseno",
+    "amplitude": -78,
+    "frequency": 1,
+    "stage": 5,
+    "permissions": {
+      "x": true,
+      "y": true,
+      "rotate": true,
+      "amplitude": false,
+      "frequency": true,
+      "offset": true
+    },
+    "centerX": 370,
+    "centerY": 210,
+    "initialOffset": 0,
+    "entry": "Deslocamento em direção fixa de 180°; ajuste fino disponível na aba Controles da curva.",
+    "id": "corte-fauna-v3-mestre-micoLeao-side",
+    "removedFraction": 0,
+    "basicDirection": 180,
+    "basicOrigin": {
+      "x": 370,
+      "y": 210
+    },
+    "initialTravel": -39.1,
+    "holes": [],
+    "hasEdgeOpening": false,
+    "holeDescription": "Ícone de lado com 2 recortes internos de formas variadas. Os espaços brancos não entram na área.",
+    "basicMin": -323,
+    "basicMax": 263,
+    "basicRange": [
+      -323,
+      263
+    ],
+    "solutionTravel": 29.792299604974687,
+    "basicSolution": 29.792299604974687,
+    "number": 65,
+    "tier": "Mestre",
+    "discovery": "A vista muda e novos recortes retiram área: considere apenas o preenchimento restante.",
+    "origin": {
+      "id": "corte-fauna-v2-mestre-micoLeao-side",
+      "number": 65,
+      "kind": "fauna-varied-holes-v3",
+      "changes": [
+        "shape",
+        "holeForms",
+        "solution",
+        "certificate"
+      ]
+    },
+    "certificate": {
+      "travel": 30,
+      "percent": 68.05268385332154,
+      "errorPP": 0.0004828458416365253,
+      "initialPercent": 43.92900453551883,
+      "usableWidth": 22.52901372127235,
+      "wholeStepTravel": 30,
+      "usefulArea": 46971.42857142857,
+      "wholeStepPercent": 68.05268385332154,
+      "sourceSha256": "7734238fa8be8d183402da21a9007259ab690cc6c4e7ad59f658894f4aa8f765",
+      "view": "side",
+      "addedHoles": 2,
+      "basePixelArea": 23514,
+      "pixelArea": 23016
+    }
+  },
+  {
+    "name": "Tatu-bola",
+    "shape": "corte-fauna-v3-mestre-tatu-front",
+    "target": 81,
+    "angle": 240,
+    "lockedAngle": false,
+    "family": "Dupla curva",
+    "amplitude": 102,
+    "frequency": 1,
+    "stage": 5,
+    "permissions": {
+      "x": true,
+      "y": true,
+      "rotate": true,
+      "amplitude": false,
+      "frequency": false,
+      "offset": true
+    },
+    "centerX": 370,
+    "centerY": 250,
+    "initialOffset": 0,
+    "entry": "Deslocamento em direção fixa de 240°; ajuste fino disponível na aba Controles da curva.",
+    "id": "corte-fauna-v3-mestre-tatu-front",
+    "removedFraction": 0,
+    "basicDirection": 240,
+    "basicOrigin": {
+      "x": 370,
+      "y": 250
+    },
+    "initialTravel": 41.1,
+    "holes": [],
+    "hasEdgeOpening": false,
+    "holeDescription": "Ícone de frente com 2 recortes internos de formas variadas. Os espaços brancos não entram na área.",
+    "basicMin": -379,
+    "basicMax": 261,
+    "basicRange": [
+      -379,
+      261
+    ],
+    "solutionTravel": 100.66779559850693,
+    "basicSolution": 100.66779559850693,
+    "number": 66,
+    "tier": "Mestre",
+    "discovery": "A vista muda e novos recortes retiram área: considere apenas o preenchimento restante.",
+    "origin": {
+      "id": "corte-fauna-v2-mestre-tatu-front",
+      "number": 66,
+      "kind": "fauna-varied-holes-v3",
+      "changes": [
+        "shape",
+        "holeForms",
+        "solution",
+        "certificate"
+      ]
+    },
+    "certificate": {
+      "travel": 101,
+      "percent": 81.08421282776177,
+      "errorPP": 0.00002942763000572969,
+      "initialPercent": 59.05525302469711,
+      "usableWidth": 22.008787393569946,
+      "wholeStepTravel": 101,
+      "usefulArea": 53834.911242603535,
+      "wholeStepPercent": 81.08421282776177,
+      "sourceSha256": "b3616f1c1d48d13083194c2a6e09155ea59b1261b4f2c05ec603cc54d4e2c7cb",
+      "view": "front",
+      "addedHoles": 2,
+      "basePixelArea": 41424,
+      "pixelArea": 40436
+    }
+  },
+  {
+    "name": "Onça-pintada",
+    "shape": "corte-fauna-v3-mestre-onca-side",
+    "target": 24,
+    "angle": 35,
+    "lockedAngle": false,
+    "family": "Seno",
+    "amplitude": -67,
+    "frequency": 1.5,
+    "stage": 5,
+    "permissions": {
+      "x": true,
+      "y": true,
+      "rotate": true,
+      "amplitude": true,
+      "frequency": true,
+      "offset": true
+    },
+    "centerX": 430,
+    "centerY": 210,
+    "initialOffset": 0,
+    "entry": "Deslocamento em direção fixa de 35°; ajuste fino disponível na aba Controles da curva.",
+    "id": "corte-fauna-v3-mestre-onca-side",
+    "removedFraction": 0,
+    "basicDirection": 35,
+    "basicOrigin": {
+      "x": 430,
+      "y": 210
+    },
+    "initialTravel": -3.1,
+    "basicMin": -288,
+    "basicMax": 262,
+    "basicRange": [
+      -288,
+      262
+    ],
+    "solutionTravel": -40.247102721594274,
+    "basicSolution": -40.247102721594274,
+    "holeDescription": "Ícone de lado com 4 recortes internos de formas variadas. Os espaços brancos não entram na área.",
+    "hasEdgeOpening": false,
+    "number": 67,
+    "tier": "Mestre",
+    "discovery": "A vista muda e novos recortes retiram área: considere apenas o preenchimento restante.",
+    "origin": {
+      "id": "corte-fauna-v2-mestre-onca-side",
+      "number": 67,
+      "kind": "fauna-varied-holes-v3",
+      "changes": [
+        "shape",
+        "holeForms",
+        "solution",
+        "certificate"
+      ]
+    },
+    "certificate": {
+      "travel": -40,
+      "percent": 24.115458044213607,
+      "errorPP": 0.00006164079003253754,
+      "initialPercent": 44.08021826305314,
+      "usableWidth": 12.848970666527748,
+      "wholeStepTravel": -40,
+      "usefulArea": 46939.0625,
+      "wholeStepPercent": 24.115458044213607,
+      "sourceSha256": "7734238fa8be8d183402da21a9007259ab690cc6c4e7ad59f658894f4aa8f765",
+      "view": "side",
+      "addedHoles": 4,
+      "basePixelArea": 31223,
+      "pixelArea": 30041
+    },
+    "holes": []
+  },
+  {
+    "name": "Lobo-guará",
+    "shape": "corte-fauna-v3-mestre-lobo-front",
+    "target": 37,
+    "angle": 215,
+    "lockedAngle": false,
+    "family": "Cúbica",
+    "amplitude": 83,
+    "frequency": 1,
+    "stage": 5,
+    "permissions": {
+      "x": true,
+      "y": true,
+      "rotate": true,
+      "amplitude": true,
+      "frequency": false,
+      "offset": true
+    },
+    "centerX": 430,
+    "centerY": 250,
+    "initialOffset": 0,
+    "entry": "Deslocamento em direção fixa de 215°; ajuste fino disponível na aba Controles da curva.",
+    "id": "corte-fauna-v3-mestre-lobo-front",
+    "removedFraction": 0,
+    "basicDirection": 215,
+    "basicOrigin": {
+      "x": 430,
+      "y": 250
+    },
+    "initialTravel": 60.9,
+    "holes": [],
+    "hasEdgeOpening": false,
+    "holeDescription": "Ícone de frente com 2 recortes internos de formas variadas. Os espaços brancos não entram na área.",
+    "basicMin": -241,
+    "basicMax": 324,
+    "basicRange": [
+      -241,
+      324
+    ],
+    "solutionTravel": 3.787789259571582,
+    "basicSolution": 3.787789259571582,
+    "number": 68,
+    "tier": "Mestre",
+    "discovery": "A vista muda e novos recortes retiram área: considere apenas o preenchimento restante.",
+    "origin": {
+      "id": "corte-fauna-v2-mestre-lobo-front",
+      "number": 68,
+      "kind": "fauna-varied-holes-v3",
+      "changes": [
+        "shape",
+        "holeForms",
+        "solution",
+        "certificate"
+      ]
+    },
+    "certificate": {
+      "travel": 4,
+      "percent": 37.09726322569329,
+      "errorPP": 0.00009108828380617629,
+      "initialPercent": 64.93921284363495,
+      "usableWidth": 12.9300557076931,
+      "wholeStepTravel": 4,
+      "usefulArea": 43102.18938605618,
+      "wholeStepPercent": 37.09726322569329,
+      "sourceSha256": "b3616f1c1d48d13083194c2a6e09155ea59b1261b4f2c05ec603cc54d4e2c7cb",
+      "view": "front",
+      "addedHoles": 2,
+      "basePixelArea": 39262,
+      "pixelArea": 38036
+    }
+  },
+  {
+    "name": "Cobra-coral",
+    "shape": "corte-fauna-v3-mestre-coral-side",
+    "target": 63,
+    "angle": 325,
+    "lockedAngle": true,
+    "family": "Parábola",
+    "amplitude": -56,
+    "frequency": 2,
+    "stage": 5,
+    "permissions": {
+      "x": true,
+      "y": true,
+      "rotate": true,
+      "amplitude": false,
+      "frequency": false,
+      "offset": true
+    },
+    "centerX": 370,
+    "centerY": 210,
+    "initialOffset": 0,
+    "entry": "Deslocamento em direção fixa de 325°; ajuste fino disponível na aba Controles da curva.",
+    "id": "corte-fauna-v3-mestre-coral-side",
+    "removedFraction": 0,
+    "basicDirection": 325,
+    "basicOrigin": {
+      "x": 370,
+      "y": 210
+    },
+    "initialTravel": 18.7,
+    "basicMin": -263,
+    "basicMax": 380,
+    "basicRange": [
+      -263,
+      380
+    ],
+    "solutionTravel": 101.94783843541518,
+    "basicSolution": 101.94783843541518,
+    "holeDescription": "Ícone de lado com 2 recortes internos de formas variadas. Os espaços brancos não entram na área.",
+    "hasEdgeOpening": false,
+    "number": 69,
+    "tier": "Mestre",
+    "discovery": "A vista muda e novos recortes retiram área: considere apenas o preenchimento restante.",
+    "origin": {
+      "id": "corte-fauna-v2-mestre-coral-side",
+      "number": 69,
+      "kind": "fauna-varied-holes-v3",
+      "changes": [
+        "shape",
+        "holeForms",
+        "solution",
+        "certificate"
+      ]
+    },
+    "certificate": {
+      "travel": 102,
+      "percent": 63.012049006330905,
+      "errorPP": 0.00006280112423103081,
+      "initialPercent": 45.57461968048025,
+      "usableWidth": 26.351717377081513,
+      "wholeStepTravel": 102,
+      "usefulArea": 63868.73267825649,
+      "wholeStepPercent": 63.012049006330905,
+      "sourceSha256": "7734238fa8be8d183402da21a9007259ab690cc6c4e7ad59f658894f4aa8f765",
+      "view": "side",
+      "addedHoles": 2,
+      "basePixelArea": 21544,
+      "pixelArea": 20950
+    },
+    "holes": []
+  },
+  {
+    "name": "Jacaré-do-papo-amarelo",
+    "shape": "corte-fauna-v3-mestre-jacare-front",
+    "target": 76,
+    "angle": 145,
+    "lockedAngle": false,
+    "family": "Cosseno",
+    "amplitude": 60,
+    "frequency": 1.5,
+    "stage": 5,
+    "permissions": {
+      "x": true,
+      "y": true,
+      "rotate": true,
+      "amplitude": false,
+      "frequency": false,
+      "offset": true
+    },
+    "centerX": 370,
+    "centerY": 210,
+    "initialOffset": 0,
+    "entry": "Deslocamento em direção fixa de 145°; ajuste fino disponível na aba Controles da curva.",
+    "id": "corte-fauna-v3-mestre-jacare-front",
+    "removedFraction": 0,
+    "basicDirection": 145,
+    "basicOrigin": {
+      "x": 370,
+      "y": 210
+    },
+    "initialTravel": 29.2,
+    "holes": [],
+    "hasEdgeOpening": false,
+    "holeDescription": "Ícone de frente com 2 recortes internos de formas variadas. Os espaços brancos não entram na área.",
+    "basicMin": -301,
+    "basicMax": 323,
+    "basicRange": [
+      -301,
+      323
+    ],
+    "solutionTravel": 62.12892607599497,
+    "basicSolution": 62.12892607599497,
+    "number": 70,
+    "tier": "Mestre",
+    "discovery": "A vista muda e novos recortes retiram área: considere apenas o preenchimento restante.",
+    "origin": {
+      "id": "corte-fauna-v2-mestre-jacare-front",
+      "number": 70,
+      "kind": "fauna-varied-holes-v3",
+      "changes": [
+        "shape",
+        "holeForms",
+        "solution",
+        "certificate"
+      ]
+    },
+    "certificate": {
+      "travel": 62,
+      "percent": 75.95728146193073,
+      "errorPP": 0.00006064371076097821,
+      "initialPercent": 64.62913792729378,
+      "usableWidth": 18.712495252490044,
+      "wholeStepTravel": 62,
+      "usefulArea": 71473.95918367346,
+      "wholeStepPercent": 75.95728146193073,
+      "sourceSha256": "b3616f1c1d48d13083194c2a6e09155ea59b1261b4f2c05ec603cc54d4e2c7cb",
+      "view": "front",
+      "addedHoles": 2,
+      "basePixelArea": 41151,
+      "pixelArea": 39396
+    }
+  },
+  {
+    "name": "Arara-azul",
+    "shape": "corte-fauna-v3-mestre-arara-side",
+    "target": 63,
+    "angle": 325,
+    "lockedAngle": false,
+    "family": "Reta",
+    "amplitude": -86,
+    "frequency": 1.5,
+    "stage": 5,
+    "permissions": {
+      "x": true,
+      "y": true,
+      "rotate": true,
+      "amplitude": false,
+      "frequency": false,
+      "offset": true
+    },
+    "centerX": 370,
+    "centerY": 210,
+    "initialOffset": 0,
+    "entry": "Deslocamento em direção fixa de 325°; ajuste fino disponível na aba Controles da curva.",
+    "id": "corte-fauna-v3-mestre-arara-side",
+    "removedFraction": 0,
+    "basicDirection": 325,
+    "basicOrigin": {
+      "x": 370,
+      "y": 210
+    },
+    "initialTravel": 30.1,
+    "holes": [],
+    "hasEdgeOpening": false,
+    "holeDescription": "Ícone de lado com 4 recortes internos de formas variadas. Os espaços brancos não entram na área.",
+    "basicMin": -233,
+    "basicMax": 184,
+    "basicRange": [
+      -233,
+      184
+    ],
+    "solutionTravel": 92.8787277690135,
+    "basicSolution": 92.8787277690135,
+    "number": 71,
+    "tier": "Mestre",
+    "discovery": "A vista muda e novos recortes retiram área: considere apenas o preenchimento restante.",
+    "origin": {
+      "id": "corte-fauna-v2-mestre-arara-side",
+      "number": 71,
+      "kind": "fauna-varied-holes-v3",
+      "changes": [
+        "shape",
+        "holeForms",
+        "solution",
+        "certificate"
+      ]
+    },
+    "certificate": {
+      "travel": 93,
+      "percent": 63.03158727835396,
+      "errorPP": 0,
+      "initialPercent": 45.07881512278688,
+      "usableWidth": 21.606245423667133,
+      "wholeStepTravel": 93,
+      "usefulArea": 31033.091413783637,
+      "wholeStepPercent": 63.03158727835396,
+      "sourceSha256": "7734238fa8be8d183402da21a9007259ab690cc6c4e7ad59f658894f4aa8f765",
+      "view": "side",
+      "addedHoles": 4,
+      "basePixelArea": 20727,
+      "pixelArea": 19711
+    }
+  },
+  {
+    "name": "Peixe-boi-da-Amazônia",
+    "shape": "corte-fauna-v3-mestre-peixeBoi-front",
+    "target": 37,
+    "angle": 215,
+    "lockedAngle": false,
+    "family": "Seno",
+    "amplitude": 93,
+    "frequency": 1.5,
+    "stage": 5,
+    "permissions": {
+      "x": true,
+      "y": true,
+      "rotate": true,
+      "amplitude": true,
+      "frequency": true,
+      "offset": true
+    },
+    "centerX": 430,
+    "centerY": 185,
+    "initialOffset": 0,
+    "entry": "Deslocamento em direção fixa de 215°; ajuste fino disponível na aba Controles da curva.",
+    "id": "corte-fauna-v3-mestre-peixeBoi-front",
+    "removedFraction": 0,
+    "basicDirection": 215,
+    "basicOrigin": {
+      "x": 430,
+      "y": 185
+    },
+    "initialTravel": 26.4,
+    "holes": [],
+    "hasEdgeOpening": false,
+    "holeDescription": "Ícone de frente com 2 recortes internos de formas variadas. Os espaços brancos não entram na área.",
+    "basicMin": -333,
+    "basicMax": 329,
+    "basicRange": [
+      -333,
+      329
+    ],
+    "solutionTravel": -83.39462644699961,
+    "basicSolution": -83.39462644699961,
+    "number": 72,
+    "tier": "Mestre",
+    "discovery": "A vista muda e novos recortes retiram área: considere apenas o preenchimento restante.",
+    "origin": {
+      "id": "corte-fauna-v2-mestre-peixeBoi-front",
+      "number": 72,
+      "kind": "fauna-varied-holes-v3",
+      "changes": [
+        "shape",
+        "holeForms",
+        "solution",
+        "certificate"
+      ]
+    },
+    "certificate": {
+      "travel": -83,
+      "percent": 37.13015247402997,
+      "errorPP": 0.000047822685546093896,
+      "initialPercent": 62.22962748537062,
+      "usableWidth": 18.50722130946815,
+      "wholeStepTravel": -83,
+      "usefulArea": 63578.953626634946,
+      "wholeStepPercent": 37.13015247402997,
+      "sourceSha256": "b3616f1c1d48d13083194c2a6e09155ea59b1261b4f2c05ec603cc54d4e2c7cb",
+      "view": "front",
+      "addedHoles": 2,
+      "basePixelArea": 32506,
+      "pixelArea": 31424
+    }
+  },
+  {
+    "name": "Piranha-vermelha",
+    "shape": "corte-fauna-v3-mestre-piranha-side",
+    "target": 63,
+    "angle": 325,
+    "lockedAngle": false,
+    "family": "Cúbica",
+    "amplitude": -96,
+    "frequency": 2,
+    "stage": 5,
+    "permissions": {
+      "x": true,
+      "y": true,
+      "rotate": true,
+      "amplitude": false,
+      "frequency": false,
+      "offset": true
+    },
+    "centerX": 370,
+    "centerY": 210,
+    "initialOffset": 0,
+    "entry": "Deslocamento em direção fixa de 325°; ajuste fino disponível na aba Controles da curva.",
+    "id": "corte-fauna-v3-mestre-piranha-side",
+    "removedFraction": 0,
+    "basicDirection": 325,
+    "basicOrigin": {
+      "x": 370,
+      "y": 210
+    },
+    "initialTravel": -42.4,
+    "holes": [],
+    "hasEdgeOpening": false,
+    "holeDescription": "Ícone de lado com 2 recortes internos de formas variadas. Os espaços brancos não entram na área.",
+    "basicMin": -254,
+    "basicMax": 394,
+    "basicRange": [
+      -254,
+      394
+    ],
+    "solutionTravel": 81.81285113468766,
+    "basicSolution": 81.81285113468766,
+    "number": 73,
+    "tier": "Mestre",
+    "discovery": "A vista muda e novos recortes retiram área: considere apenas o preenchimento restante.",
+    "origin": {
+      "id": "corte-fauna-v2-mestre-piranha-side",
+      "number": 73,
+      "kind": "fauna-varied-holes-v3",
+      "changes": [
+        "shape",
+        "holeForms",
+        "solution",
+        "certificate"
+      ]
+    },
+    "certificate": {
+      "travel": 82,
+      "percent": 63.059200768251664,
+      "errorPP": 0.00005242535037507209,
+      "initialPercent": 27.83717072292146,
+      "usableWidth": 18.602529153227806,
+      "wholeStepTravel": 82,
+      "usefulArea": 64401.66608437419,
+      "wholeStepPercent": 63.059200768251664,
+      "sourceSha256": "7734238fa8be8d183402da21a9007259ab690cc6c4e7ad59f658894f4aa8f765",
+      "view": "side",
+      "addedHoles": 2,
+      "basePixelArea": 28449,
+      "pixelArea": 27083
+    }
+  },
+  {
+    "name": "Tucano-toco",
+    "shape": "corte-fauna-v3-mestre-tucano-front",
+    "target": 32,
+    "angle": 145,
+    "lockedAngle": false,
+    "family": "Dupla curva",
+    "amplitude": -60,
+    "frequency": 1,
+    "stage": 5,
+    "permissions": {
+      "x": true,
+      "y": true,
+      "rotate": true,
+      "amplitude": false,
+      "frequency": false,
+      "offset": true
+    },
+    "centerX": 370,
+    "centerY": 210,
+    "initialOffset": 0,
+    "entry": "Deslocamento em direção fixa de 145°; ajuste fino disponível na aba Controles da curva.",
+    "id": "corte-fauna-v3-mestre-tucano-front",
+    "removedFraction": 0,
+    "basicDirection": 145,
+    "basicOrigin": {
+      "x": 370,
+      "y": 210
+    },
+    "initialTravel": -27.3,
+    "holes": [],
+    "hasEdgeOpening": false,
+    "holeDescription": "Ícone de frente com 2 recortes internos de formas variadas. Os espaços brancos não entram na área.",
+    "basicMin": -199,
+    "basicMax": 283,
+    "basicRange": [
+      -199,
+      283
+    ],
+    "solutionTravel": -68.07598078902811,
+    "basicSolution": -68.07598078902811,
+    "number": 74,
+    "tier": "Mestre",
+    "discovery": "A vista muda e novos recortes retiram área: considere apenas o preenchimento restante.",
+    "origin": {
+      "id": "corte-fauna-v2-mestre-tucano-front",
+      "number": 74,
+      "kind": "fauna-varied-holes-v3",
+      "changes": [
+        "shape",
+        "holeForms",
+        "solution",
+        "certificate"
+      ]
+    },
+    "certificate": {
+      "travel": -68,
+      "percent": 32.03456705008759,
+      "errorPP": 0.00009148061969525709,
+      "initialPercent": 52.00169861763647,
+      "usableWidth": 13.143906779587269,
+      "wholeStepTravel": -68,
+      "usefulArea": 54010.03703391971,
+      "wholeStepPercent": 32.03456705008759,
+      "sourceSha256": "b3616f1c1d48d13083194c2a6e09155ea59b1261b4f2c05ec603cc54d4e2c7cb",
+      "view": "front",
+      "addedHoles": 2,
+      "basePixelArea": 23894,
+      "pixelArea": 23570
+    }
+  },
+  {
+    "name": "Tamanduá-bandeira",
+    "shape": "corte-fauna-v3-mestre-tamandua-side",
+    "target": 63,
+    "angle": 325,
+    "lockedAngle": false,
+    "family": "Cosseno",
+    "amplitude": -66,
+    "frequency": 0.5,
+    "stage": 5,
+    "permissions": {
+      "x": true,
+      "y": true,
+      "rotate": true,
+      "amplitude": false,
+      "frequency": false,
+      "offset": true
+    },
+    "centerX": 370,
+    "centerY": 210,
+    "initialOffset": 0,
+    "entry": "Deslocamento em direção fixa de 325°; ajuste fino disponível na aba Controles da curva.",
+    "id": "corte-fauna-v3-mestre-tamandua-side",
+    "removedFraction": 0,
+    "basicDirection": 325,
+    "basicOrigin": {
+      "x": 370,
+      "y": 210
+    },
+    "initialTravel": 22,
+    "holes": [],
+    "hasEdgeOpening": false,
+    "holeDescription": "Ícone de lado com 2 recortes internos de formas variadas. Os espaços brancos não entram na área.",
+    "basicMin": -226,
+    "basicMax": 294,
+    "basicRange": [
+      -226,
+      294
+    ],
+    "solutionTravel": 84.20902650430799,
+    "basicSolution": 84.20902650430799,
+    "number": 75,
+    "tier": "Mestre",
+    "discovery": "A vista muda e novos recortes retiram área: considere apenas o preenchimento restante.",
+    "origin": {
+      "id": "corte-fauna-v2-mestre-tamandua-side",
+      "number": 75,
+      "kind": "fauna-varied-holes-v3",
+      "changes": [
+        "shape",
+        "holeForms",
+        "solution",
+        "certificate"
+      ]
+    },
+    "certificate": {
+      "travel": 84,
+      "percent": 62.92855446961696,
+      "errorPP": 0.00006310780469678023,
+      "initialPercent": 42.204827968160195,
+      "usableWidth": 17.86036230623722,
+      "wholeStepTravel": 84,
+      "usefulArea": 60698.95795346094,
+      "wholeStepPercent": 62.92855446961696,
+      "sourceSha256": "7734238fa8be8d183402da21a9007259ab690cc6c4e7ad59f658894f4aa8f765",
+      "view": "side",
+      "addedHoles": 2,
+      "basePixelArea": 29507,
+      "pixelArea": 28931
+    }
+  },
+  {
+    "name": "Capivara",
+    "shape": "corte-fauna-v3-sabio-capivara-side",
+    "target": 29,
+    "angle": 35,
+    "lockedAngle": true,
+    "family": "Dupla curva",
+    "amplitude": 72,
+    "frequency": 1,
+    "stage": 6,
+    "centerX": 400,
+    "centerY": 230,
+    "permissions": {
+      "x": true,
+      "y": true,
+      "rotate": true,
+      "amplitude": false,
+      "frequency": false,
+      "offset": true
+    },
+    "entry": "Deslocamento em direção fixa de 50°; ajuste fino disponível na aba Controles da curva.",
+    "id": "corte-fauna-v3-sabio-capivara-side",
+    "removedFraction": 0,
+    "basicDirection": 35,
+    "basicOrigin": {
+      "x": 400,
+      "y": 230
+    },
+    "initialTravel": 42.1,
+    "holes": [],
+    "hasEdgeOpening": false,
+    "holeDescription": "Ícone de lado com 4 recortes internos de formas variadas. Os espaços brancos não entram na área.",
+    "basicMin": -500,
+    "basicMax": 500,
+    "basicRange": [
+      -500,
+      500
+    ],
+    "solutionTravel": -73.48036905750632,
+    "basicSolution": -73.48036905750632,
+    "number": 76,
+    "tier": "Modo Sábio",
+    "discovery": "Recortes assimétricos e áreas desiguais: compare a massa que permanece em cada lado da curva.",
+    "origin": {
+      "id": "corte-fauna-v2-sabio-capivara-side",
+      "number": 76,
+      "kind": "fauna-varied-holes-v3",
+      "changes": [
+        "shape",
+        "holeForms",
+        "solution",
+        "certificate"
+      ]
+    },
+    "certificate": {
+      "travel": -73,
+      "percent": 29.11157633933789,
+      "errorPP": 0.00004264491234418513,
+      "initialPercent": 66.46508350574724,
+      "usableWidth": 27.42716483771801,
+      "wholeStepTravel": -73,
+      "usefulArea": 73182.77551020408,
+      "wholeStepPercent": 29.11157633933789,
+      "sourceSha256": "7734238fa8be8d183402da21a9007259ab690cc6c4e7ad59f658894f4aa8f765",
+      "view": "side",
+      "addedHoles": 4,
+      "basePixelArea": 33455,
+      "pixelArea": 29636
+    }
+  },
+  {
+    "name": "Onça-pintada",
+    "shape": "corte-fauna-v3-sabio-onca-front",
+    "target": 37,
+    "angle": 145,
+    "lockedAngle": false,
+    "family": "Cúbica",
+    "amplitude": -82,
+    "frequency": 1,
+    "stage": 6,
+    "permissions": {
+      "x": true,
+      "y": true,
+      "rotate": true,
+      "amplitude": true,
+      "frequency": true,
+      "offset": true
+    },
+    "centerX": 430,
+    "centerY": 210,
+    "initialOffset": 0,
+    "entry": "Deslocamento em direção fixa de 60°; ajuste fino disponível na aba Controles da curva.",
+    "id": "corte-fauna-v3-sabio-onca-front",
+    "removedFraction": 0,
+    "basicDirection": 145,
+    "basicOrigin": {
+      "x": 430,
+      "y": 210
+    },
+    "initialTravel": 55,
+    "holes": [],
+    "hasEdgeOpening": false,
+    "holeDescription": "Ícone de frente com 3 recortes internos de formas variadas. Os espaços brancos não entram na área.",
+    "basicMin": -500,
+    "basicMax": 500,
+    "basicRange": [
+      -500,
+      500
+    ],
+    "solutionTravel": -22.251687478274107,
+    "basicSolution": -22.251687478274107,
+    "number": 77,
+    "tier": "Modo Sábio",
+    "discovery": "Recortes assimétricos e áreas desiguais: compare a massa que permanece em cada lado da curva.",
+    "origin": {
+      "id": "corte-fauna-v2-sabio-onca-front",
+      "number": 77,
+      "kind": "fauna-varied-holes-v3",
+      "changes": [
+        "shape",
+        "holeForms",
+        "solution",
+        "certificate"
+      ]
+    },
+    "certificate": {
+      "travel": -22,
+      "percent": 37.07970857545364,
+      "errorPP": 0.00003956480054179281,
+      "initialPercent": 56.910681452906644,
+      "usableWidth": 19.305451773107052,
+      "wholeStepTravel": -22,
+      "usefulArea": 62398.65432098766,
+      "wholeStepPercent": 37.07970857545364,
+      "sourceSha256": "b3616f1c1d48d13083194c2a6e09155ea59b1261b4f2c05ec603cc54d4e2c7cb",
+      "view": "front",
+      "addedHoles": 3,
+      "basePixelArea": 43900,
+      "pixelArea": 41771
+    }
+  },
+  {
+    "name": "Peixe-boi-da-Amazônia",
+    "shape": "corte-fauna-v3-sabio-peixeBoi-side",
+    "target": 43,
+    "angle": 65,
+    "lockedAngle": false,
+    "family": "Seno",
+    "amplitude": 88,
+    "frequency": 1.5,
+    "stage": 6,
+    "permissions": {
+      "x": true,
+      "y": true,
+      "rotate": true,
+      "amplitude": true,
+      "frequency": false,
+      "offset": true
+    },
+    "centerX": 430,
+    "centerY": 210,
+    "initialOffset": 0,
+    "entry": "Deslocamento em direção fixa de 60°; ajuste fino disponível na aba Controles da curva.",
+    "id": "corte-fauna-v3-sabio-peixeBoi-side",
+    "removedFraction": 0,
+    "basicDirection": 65,
+    "basicOrigin": {
+      "x": 430,
+      "y": 210
+    },
+    "initialTravel": -79.3,
+    "holes": [],
+    "hasEdgeOpening": false,
+    "holeDescription": "Ícone de lado com 4 recortes internos de formas variadas. Os espaços brancos não entram na área.",
+    "basicMin": -500,
+    "basicMax": 500,
+    "basicRange": [
+      -500,
+      500
+    ],
+    "solutionTravel": -35.042567644268274,
+    "basicSolution": -35.042567644268274,
+    "number": 78,
+    "tier": "Modo Sábio",
+    "discovery": "Recortes assimétricos e áreas desiguais: compare a massa que permanece em cada lado da curva.",
+    "origin": {
+      "id": "corte-fauna-v2-sabio-peixeBoi-side",
+      "number": 78,
+      "kind": "fauna-varied-holes-v3",
+      "changes": [
+        "shape",
+        "holeForms",
+        "solution",
+        "certificate"
+      ]
+    },
+    "certificate": {
+      "travel": -35,
+      "percent": 43.02165026660895,
+      "errorPP": 0.00006968270435163399,
+      "initialPercent": 21.572653834562924,
+      "usableWidth": 11.805443093180656,
+      "wholeStepTravel": -35,
+      "usefulArea": 62888.50915707449,
+      "wholeStepPercent": 43.02165026660895,
+      "sourceSha256": "7734238fa8be8d183402da21a9007259ab690cc6c4e7ad59f658894f4aa8f765",
+      "view": "side",
+      "addedHoles": 4,
+      "basePixelArea": 26795,
+      "pixelArea": 23519
+    }
+  },
+  {
+    "name": "Jacaré-do-papo-amarelo",
+    "shape": "corte-fauna-v3-sabio-jacare-front",
+    "target": 63,
+    "angle": 215,
+    "lockedAngle": true,
+    "family": "Parábola",
+    "amplitude": -90,
+    "frequency": 1,
+    "stage": 6,
+    "permissions": {
+      "x": true,
+      "y": true,
+      "rotate": true,
+      "amplitude": true,
+      "frequency": false,
+      "offset": true
+    },
+    "centerX": 430,
+    "centerY": 250,
+    "initialOffset": 0,
+    "entry": "Deslocamento em direção fixa de 0°; ajuste fino disponível na aba Controles da curva.",
+    "id": "corte-fauna-v3-sabio-jacare-front",
+    "removedFraction": 0,
+    "basicDirection": 215,
+    "basicOrigin": {
+      "x": 430,
+      "y": 250
+    },
+    "initialTravel": -53.2,
+    "holes": [],
+    "hasEdgeOpening": false,
+    "holeDescription": "Ícone de frente com 3 recortes internos de formas variadas. Os espaços brancos não entram na área.",
+    "basicMin": -500,
+    "basicMax": 500,
+    "basicRange": [
+      -500,
+      500
+    ],
+    "solutionTravel": 109.14257867261767,
+    "basicSolution": 109.14257867261767,
+    "number": 79,
+    "tier": "Modo Sábio",
+    "discovery": "Recortes assimétricos e áreas desiguais: compare a massa que permanece em cada lado da curva.",
+    "origin": {
+      "id": "corte-fauna-v2-sabio-jacare-front",
+      "number": 79,
+      "kind": "fauna-varied-holes-v3",
+      "changes": [
+        "shape",
+        "holeForms",
+        "solution",
+        "certificate"
+      ]
+    },
+    "certificate": {
+      "travel": 109,
+      "percent": 62.93732195992586,
+      "errorPP": 0.00008634796321550217,
+      "initialPercent": 12.493369326563796,
+      "usableWidth": 13.618461787700653,
+      "wholeStepTravel": 109,
+      "usefulArea": 68494.97042898792,
+      "wholeStepPercent": 62.93732195992586,
+      "sourceSha256": "b3616f1c1d48d13083194c2a6e09155ea59b1261b4f2c05ec603cc54d4e2c7cb",
+      "view": "front",
+      "addedHoles": 3,
+      "basePixelArea": 41151,
+      "pixelArea": 37754
+    }
+  },
+  {
+    "name": "Tamanduá-bandeira",
+    "shape": "corte-fauna-v3-sabio-tamandua-side",
+    "target": 71,
+    "angle": 205,
+    "lockedAngle": false,
+    "family": "Cosseno",
+    "amplitude": -98,
+    "frequency": 1.5,
+    "stage": 6,
+    "permissions": {
+      "x": true,
+      "y": true,
+      "rotate": true,
+      "amplitude": true,
+      "frequency": true,
+      "offset": true
+    },
+    "centerX": 430,
+    "centerY": 210,
+    "initialOffset": 0,
+    "entry": "Deslocamento em direção fixa de 60°; ajuste fino disponível na aba Controles da curva.",
+    "id": "corte-fauna-v3-sabio-tamandua-side",
+    "removedFraction": 0,
+    "basicDirection": 205,
+    "basicOrigin": {
+      "x": 430,
+      "y": 210
+    },
+    "initialTravel": -65.3,
+    "holes": [],
+    "hasEdgeOpening": false,
+    "holeDescription": "Ícone de lado com 4 recortes internos de formas variadas. Os espaços brancos não entram na área.",
+    "basicMin": -500,
+    "basicMax": 500,
+    "basicRange": [
+      -500,
+      500
+    ],
+    "solutionTravel": 106.7231330089271,
+    "basicSolution": 106.7231330089271,
+    "number": 80,
+    "tier": "Modo Sábio",
+    "discovery": "Recortes assimétricos e áreas desiguais: compare a massa que permanece em cada lado da curva.",
+    "origin": {
+      "id": "corte-fauna-v2-sabio-tamandua-side",
+      "number": 80,
+      "kind": "fauna-varied-holes-v3",
+      "changes": [
+        "shape",
+        "holeForms",
+        "solution",
+        "certificate"
+      ]
+    },
+    "certificate": {
+      "travel": 107,
+      "percent": 71.077950739144,
+      "errorPP": 0.00005098784716040717,
+      "initialPercent": 24.92320696079115,
+      "usableWidth": 21.507849916815758,
+      "wholeStepTravel": 107,
+      "usefulArea": 58909.31324244845,
+      "wholeStepPercent": 71.077950739144,
+      "sourceSha256": "7734238fa8be8d183402da21a9007259ab690cc6c4e7ad59f658894f4aa8f765",
+      "view": "side",
+      "addedHoles": 4,
+      "basePixelArea": 29507,
+      "pixelArea": 28078
+    }
+  }
+]
