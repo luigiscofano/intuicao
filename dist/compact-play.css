@@ -84,3 +84,9 @@ body #collection .elo-tools-row>.stage-tools>.rules-card{max-width:100%}
  body #collection .elo-tools-row>.stage-tools{width:100%;justify-content:flex-start;margin-left:0}
  body #collection .elo-tools-row>.stage-tools>.rules-card>summary{flex-wrap:wrap}
 }
+/* Continuous game footer surface across all nine games; board frames stay intact. */
+body #main :is(.lab,.collection-lab,.sintonia-lab,.repasse-lab,.orbita-lab) :is(.workspace,.collection-workspace)>:is(.experiment,.collection-surface){background-color:#f8f9f3;background-image:none;padding-bottom:8px}
+body #main :is(.lab,.collection-lab,.sintonia-lab,.repasse-lab,.orbita-lab) :is(.workspace,.collection-workspace)>:is(.experiment,.collection-surface)>:is(.level-actions,.board-check-controls,.readout,.collection-feedback,.collection-replay,.level-notes){background-color:#f8f9f3;background-image:none}
+body #main :is(.lab,.collection-lab,.sintonia-lab,.repasse-lab,.orbita-lab) :is(.workspace,.collection-workspace)>:is(.experiment,.collection-surface)>.level-actions{min-height:0;margin:0;padding:8px 12px;gap:8px}
+body #main :is(.lab,.collection-lab,.sintonia-lab,.repasse-lab,.orbita-lab) :is(.workspace,.collection-workspace)>:is(.experiment,.collection-surface)>.collection-feedback{min-height:0}
+body #main :is(.lab,.collection-lab,.sintonia-lab,.repasse-lab,.orbita-lab) :is(.workspace,.collection-workspace)>:is(.experiment,.collection-surface)>.collection-replay:empty{display:none}

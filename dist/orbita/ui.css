@@ -174,3 +174,4 @@
 #orbita #o-board .o-ring-tag text{pointer-events:none}
 #orbita #o-board .o-ring-tag:focus-visible>circle:not(.o-label-hit){stroke:#263244;stroke-width:3}
 #orbita #o-board .o-rail.o-active-rail{stroke:#365a85;stroke-width:4}
+#orbita .o-readout>#o-status{text-align:center;justify-self:stretch}

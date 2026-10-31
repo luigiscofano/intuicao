@@ -140,3 +140,5 @@
 #repasse .r-board-surface{border-radius:18px;outline:2px solid #b3c1a8;outline-offset:-1px}
 /* Reserve room above every collector, including its status and preview badges. */
 #repasse .r-surface .r-board-scroll{padding-top:24px}
+/* Remove the legacy white bottom-gradient strip, keeping the goal legend intact. */
+#repasse>.repasse-lab .r-surface{background-image:none;background-color:#f8f9f3}

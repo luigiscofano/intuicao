@@ -1,0 +1,4 @@
+import test from 'node:test';import assert from 'node:assert/strict';import fs from 'node:fs';
+import {CAMPAIGN} from '../dist/orbita/campaign.mjs';import {replay} from '../dist/orbita/engine.mjs';
+test('both documented arrows use existing rotation flow without a board-only focus restriction',()=>{const s=fs.readFileSync('dist/orbita/ui.mjs','utf8');assert.ok(!s.includes("if(!event.target.closest?.('#o-board,#o-board-scroll,.o-orbit-controls'))return;"));assert.ok(s.includes("direction:event.key==='ArrowRight'?1:-1"));assert.ok(s.includes('aria-keyshortcuts="ArrowLeft"'));assert.ok(s.includes('aria-keyshortcuts="ArrowRight"'));assert.ok(s.includes("if(animating||guided||!commandStatus(level,current(),selectedCommand().id).allowed)return;"));});
+test('all80 campaign certificates still replay',()=>{for(const l of CAMPAIGN){const r=replay(l,l.solution);assert.ok(r.valid&&r.solved,l.id);}});
