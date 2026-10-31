@@ -12,3 +12,6 @@ Conteúdo pesquisado em fontes públicas e revisado antes da publicação. A ref
 - Inspeção visual: Cobra-coral desktop e Piranha-vermelha compacta; seção legível e integrada ao modal com rolagem normal.
 - Biltre: títulos confirmados; Piranha descrita como versão, não composição atribuída à banda. A faixa coral tem semelhança visual explicitada, não origem histórica presumida. Não foi testada reprodução de vídeos externos.
 - Fixture de teste retirada do pacote publicado. Nenhuma mecânica, save, mapa ou arte alterada.
+
+## Complemento: nome faixa coral
+Confirmada a referência nominal à cobra-coral na seção Coral Belt 7 da Pinnacle Martial Arts: https://pinnacle-ma.com/brazilian-jiu-jitsu-belt-rankings/ . Acrescentada a fonte e substituída a ressalva histórica pelo texto aprovado sobre o nome popular, sem inventar criador/data. Trecho Biltre e IBJJF preservados. Repetição do QA: 812 verificações nativas sem falhas (45 modais em 1366/390/320 px), inspeção visual Cobra-coral 320 px; 2 testes Node passaram. Alteração de produção limitada à entrada coral no módulo de conteúdo.

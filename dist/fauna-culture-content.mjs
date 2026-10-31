@@ -94,7 +94,7 @@ export const FAUNA_CULTURE={
   },
   "coral": {
     "paragraphs": [
-      "A cobra-coral também ganhou música: “Cobra Coral”, da banda BILTRE, leva o animal e suas cores para o universo inventivo da música brasileira. Nos tatames, o vermelho e o preto da faixa coral do jiu-jítsu lembram os anéis de algumas cobras-corais; essa faixa corresponde ao sétimo grau da faixa preta. É uma aproximação visual entre natureza e esporte, sem confundir a semelhança com uma origem histórica comprovada."
+      "A cobra-coral também ganhou música: “Cobra Coral”, da banda BILTRE, leva o animal e suas cores para o universo inventivo da música brasileira. No jiu-jítsu brasileiro, o nome popular “faixa coral” faz referência à cobra-coral: o vermelho e o preto alternados lembram seus anéis coloridos. Na graduação da IBJJF, essa faixa corresponde ao sétimo grau da faixa preta."
     ],
     "sources": [
       {
@@ -104,6 +104,10 @@ export const FAUNA_CULTURE={
       {
         "label": "IBJJF — Sistema oficial de graduação",
         "url": "https://ibjjf.com/graduation-system"
+      },
+      {
+        "label": "Pinnacle Martial Arts — nome da faixa coral",
+        "url": "https://pinnacle-ma.com/brazilian-jiu-jitsu-belt-rankings/"
       }
     ]
   },
