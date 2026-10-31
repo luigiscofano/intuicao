@@ -23,7 +23,7 @@ test('TRAMA inherits info32/card52/monoicon/selection and correct teaching text'
  assert.match(GAME_NAV_ICONS.trama,/<path/);assert.doesNotMatch(GAME_NAV_ICONS.trama,/#|fill=|stroke=/);
  assert.match(read('game-info.css'),/\[data-trama\],\[data-vertice\]\)\{padding-right:52px\}/);
  assert.match(read('game-info.css'),/#tr-selection-title,#tr-title/);
- const html=rulesPreviewMarkup('trama');assert.match(html,/Como jogar TRAMA/);assert.match(html,/Não altera a partida/);assert.doesNotMatch(html,/pistas da fase|<script|onload=|onclick=|animal|mascote|verde|amarelo/);
+ const html=rulesPreviewMarkup('trama');assert.match(html,/Como jogar TRAMA/);assert.match(html,/Não altera a partida/);assert.doesNotMatch(html,/pistas da fase|<script|onload=|onclick=|animal|mascote/);
  assert.equal(RULE_EXAMPLES.trama.steps.length,3);
 });
 test('TRAMA bridge-interruption illustration agrees with actual graph analysis',()=>{

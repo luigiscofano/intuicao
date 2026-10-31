@@ -6,8 +6,8 @@
 #trama .tr-surface{padding:10px 12px;background:#f8f9f3;background-image:none;border:0;min-width:0;box-shadow:none}
 #trama .stage-tools{display:flex;flex-wrap:wrap;align-items:center;gap:14px;margin:0 0 24px}
 #trama .stage-tools>button,#trama .stage-tools summary{min-height:44px}
-#trama .tr-player-0{--tr-ink:#416e9b;--tr-base:#dbe9f6;--tr-edge:#91b4d4}
-#trama .tr-player-1{--tr-ink:#81579c;--tr-base:#ece0f5;--tr-edge:#bda2d2}
+#trama .tr-player-0{--tr-ink:#315e35;--tr-base:#e1edce;--tr-edge:#73965e}
+#trama .tr-player-1{--tr-ink:#705a1d;--tr-base:#f5e7b2;--tr-edge:#b99b46}
 #trama .tr-identities,#trama .tr-scores{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:12px;max-width:560px;margin:0 auto}
 #trama .tr-identities{margin:16px 0}
 #trama .tr-player-card{border:1px solid var(--tr-edge);border-radius:14px;background:var(--tr-base);color:var(--tr-ink);padding:10px 12px;display:flex;flex-direction:column;gap:6px;font-size:13px;min-width:0}
@@ -27,7 +27,7 @@
 #trama .tr-cell.tr-selected{outline:2px solid #456d3d;outline-offset:-3px;background:#e8f1df66}
 #trama .tr-cell.tr-component{background:#fff4c966}
 #trama .tr-empty{color:#b4bea8;font-size:18px;line-height:1;pointer-events:none}
-#trama .tr-piece{display:flex;align-items:center;justify-content:center;position:relative;width:min(76%,40px);height:auto;aspect-ratio:1;box-sizing:border-box;padding:2px;background:#fff;border:2px solid var(--tr-ink);border-radius:8px;z-index:3;box-shadow:0 0 0 2px #f9faf5;pointer-events:none}
+#trama .tr-piece{display:flex;align-items:center;justify-content:center;position:relative;width:min(76%,40px);height:auto;aspect-ratio:1;box-sizing:border-box;padding:4px;background:var(--tr-base);border:1.5px solid var(--tr-edge);border-radius:8px;z-index:3;box-shadow:0 0 0 2px #f9faf5;pointer-events:none}
 #trama .tr-piece.tr-player-1{border-style:double;border-width:3px;transform:none}
 #trama .tr-ghost{opacity:.55}
 #trama .tr-connections{position:absolute;inset:0;width:100%;height:100%;pointer-events:none;overflow:visible;z-index:1}
@@ -61,10 +61,13 @@
 
 /* Personagens oficiais, sem rotação ou mudanças na geometria lógica. */
 #trama .tr-piece>.vs-mascot{display:block;width:100%;height:100%;max-width:32px;max-height:32px;flex:1;min-width:0;overflow:hidden}
-#trama .tr-owner-mark{position:absolute;right:-3px;bottom:-3px;display:flex;align-items:center;justify-content:center;width:11px;height:11px;border-radius:3px;background:#fff;color:var(--tr-ink);font-size:8px;line-height:1;box-shadow:0 0 0 1px var(--tr-edge)}
+#trama .tr-owner-mark{position:absolute;right:-3px;bottom:-3px;display:flex;align-items:center;justify-content:center;width:11px;height:11px;border-radius:3px;background:var(--tr-base);color:var(--tr-ink);font-size:8px;line-height:1;box-shadow:0 0 0 1px var(--tr-edge)}
 #trama .tr-player-card .tr-owner-mark{width:9px;height:9px;font-size:6px;right:-2px;bottom:-2px}
 #trama .tr-identities label{display:grid;gap:5px;font-size:11px;line-height:1.4;min-width:0}
 #trama .tr-identities select{width:100%;max-width:100%;min-width:0;min-height:44px;font-size:12px}
 #trama [data-tr-mascot-preview]{display:flex;flex:0 0 24px}
 #trama .tr-result-badge>.tr-piece{width:24px;height:24px;flex:0 0 24px}
 #trama .tr-example-grid .tr-piece{width:min(76%,32px)}
+/* Mesmo acabamento de CERCO: cor de fundo e borda dupla distinguem os times. */
+#trama .tr-piece.tr-player-1{border-style:double;border-width:3px;padding:2.5px}
+#trama .tr-piece .vs-mascot{background:#fff;border-radius:4px}
