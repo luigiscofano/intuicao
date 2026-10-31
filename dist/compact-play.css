@@ -58,3 +58,8 @@ body .rules-sidebar{position:static;max-height:none;overflow:visible}
 
 /* Dense ELO boards retain44px cells, without unnecessary desktop enlargement. */
 #collection .board-elo.elo-large{max-width:calc(var(--cols)*44px)}
+/* Separate wrapped tool rows; remove the old negative margin above the toolbar. */
+body #collection .board-options{margin:8px auto 12px;padding-inline:12px}
+body .experiment>.stage-top>.stage-tools{gap:12px}
+body .experiment>.collection-toolbar,body .level-actions>.collection-toolbar{gap:12px}
+body .board-check-controls,body .level-actions>.actions{gap:12px}

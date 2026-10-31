@@ -14,3 +14,9 @@ Native Chrome measurements:
 Regression: Repasse state/UI tests and full80certified-layout audit retained. Source-only preservation test confirms sole runtime diff is Repasse CSS.
 
 Verification limit: the older repasse80-ui.mjs mock lacks Element.after(), used by the already-deployed compact layout, so that legacy harness cannot run. This is not a browser failure or a runtime change in this CSS-only update. The10Repasse state tests and80layout/solution audit pass; native browser verifies the current DOM/controls.
+
+Additional user refinements integrated before publication:
+- ELO's Marcar células bloqueadas overlap came from an old -12px bottom margin. It now has a positive12px margin, giving20px to the following toolbar buttons. Shared wrapped tool/check/action rows use12px gaps. Native audit9games×desktop/320px found zero overlapping controls and minimum12px inter-button gaps, no page overflow.
+- Repasse board surface has an18px rounded2px outline, including all objective collectors. Outline does not change dimensions or clip/intercept input.
+- Home categories now have the exact heading “ESCOLHA SEU ESTILO DE PUZZLE:” immediately above the three buttons (18px gap on desktop), hidden together with the category selector while inside a group/game.
+- Final runtime diff limited to Repasse CSS, shared compact-control spacing, category CSS and the exact home heading. No JavaScript behavior changed in this update.

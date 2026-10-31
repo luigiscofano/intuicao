@@ -32,3 +32,5 @@
 #main > .category-heading{margin:0;padding-block:24px}
 #main > .category-heading + .games{margin-top:0}
 @media(max-width:760px){#main > .category-heading{padding-block:20px}}
+
+.category-choices>.category-prompt{grid-column:1/-1;margin:0;font:650 16px/1.5 system-ui,sans-serif;letter-spacing:.04em;color:#405e49}

@@ -136,3 +136,5 @@
 #repasse #r-catalog>.r-chapter:last-child .level-group{margin-bottom:12px}
 #repasse .repasse-selection>.json-import-disclosure{margin-top:12px}
 @media(max-width:600px){#repasse .r-workspace>#r-rules-sidebar{padding:14px 16px}}
+/* Non-clipping frame includes playable pieces and all edge goals. */
+#repasse .r-board-surface{border-radius:18px;outline:2px solid #b3c1a8;outline-offset:-1px}
