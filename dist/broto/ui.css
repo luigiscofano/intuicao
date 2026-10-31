@@ -20,7 +20,7 @@
 #broto .b-score-details{display:flex;justify-content:space-between;gap:8px;font-size:12px;flex-wrap:wrap}
 #broto .b-turn{text-align:center;font-weight:700;margin:13px 0 10px;line-height:1.4}
 #broto .b-board-wrap{width:min(100%,344px);margin:0 auto;padding:6px;border:1px solid #b8c3ad;border-radius:17px;background:#fff}
-#broto .b-board{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:5px;position:relative;isolation:isolate}
+#broto .b-board{display:grid;grid-template-columns:repeat(var(--b-cols,4),minmax(0,1fr));gap:5px;position:relative;isolation:isolate}
 #broto .b-cell{position:relative;display:flex;align-items:center;justify-content:center;aspect-ratio:1;min-height:0;min-width:0;width:100%;padding:2px;border:1px solid #d8dece;border-radius:10px;background:#f8f9f3;cursor:pointer;box-shadow:none;transform:none;color:#425e3d;touch-action:manipulation}
 #broto .b-cell[aria-disabled="true"]{cursor:default;opacity:1}
 #broto .b-cell:focus-visible{outline:3px solid #334f30;outline-offset:2px;z-index:4}
@@ -60,3 +60,22 @@
 @keyframes broto-flower{from{transform:scale(.7)}to{transform:scale(1)}}
 @media(max-width:500px){#broto .b-lab,#broto .b-selection{padding:16px 10px}#broto .b-surface{padding:8px 0}#broto .b-score{gap:8px}#broto .b-player{padding:8px}#broto .b-player-name{font-size:12px}#broto .b-avatar{width:27px;height:27px;flex-basis:27px}#broto .b-score-main>strong{font-size:27px}#broto .b-score-main>span{font-size:10px}#broto .b-score-details{font-size:11px;gap:5px}#broto .b-round{font-size:14px}#broto .b-turn{font-size:13px}#broto .b-board-wrap{padding:5px}#broto .b-board{gap:4px}#broto .b-axes{gap:3px}#broto .b-axes>span{width:20px;height:18px;font-size:16px}#broto .b-status{font-size:12px;min-height:54px}#broto .stage-tools{gap:12px}}
 @media(prefers-reduced-motion:reduce){#broto *,#broto *::before,#broto *::after{animation:none!important;transition:none!important}}
+
+/* A geometria muda; o jardim clássico mantém seus tamanhos originais. */
+#broto .b-map-setup{margin:16px 0;padding:12px;border:1px solid #d5dfca;border-radius:14px;background:#f4f7ee;max-width:560px}
+#broto .b-map-setup>label{display:grid;gap:6px;font-size:14px;font-weight:700;max-width:300px}
+#broto .b-map-setup select{min-height:44px;width:100%;min-width:0}
+#broto #b-map-preview{display:flex;align-items:center;gap:14px;margin-top:12px}
+#broto #b-map-preview>p{font-size:13px;line-height:1.5;margin:0;flex:1;min-width:0}
+#broto .b-map-mini{display:grid;grid-template-columns:repeat(var(--b-map-cols),1fr);gap:3px;width:96px;flex:0 0 96px}
+#broto .b-map-mini>span{aspect-ratio:1;border-radius:3px}
+#broto .b-map-ground{background:#edf2e3;border:1px solid #b9c8a6}
+#broto .b-map-wall,#broto .b-wall{background:repeating-linear-gradient(135deg,#ccd1bd 0 6px,#b4bea4 6px 8px);border:1px solid #8d9c7c}
+#broto .b-outside,#broto .b-wall{aspect-ratio:1;min-width:0;border-radius:10px;box-sizing:border-box}
+#broto .b-outside,#broto .b-map-outside{visibility:hidden;pointer-events:none}
+#broto .b-dense .b-cell{min-height:44px}
+#broto .b-dense .b-axes{gap:2px;margin-top:1px}
+#broto .b-dense .b-axes>span{width:16px;height:15px;font-size:13px}
+#broto .b-dense .b-sprout,#broto .b-dense .b-flower{min-height:18px;max-height:31px}
+#broto .b-dense .b-owner-symbol{font-size:9px;right:1px}
+@media(max-width:360px){#broto .b-board-wrap:has(.b-dense){padding:3px}#broto .b-dense{gap:3px}#broto #b-map-preview{gap:10px}#broto .b-map-mini{width:80px;flex-basis:80px}}

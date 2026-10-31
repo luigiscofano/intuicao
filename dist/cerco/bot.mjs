@@ -4,8 +4,8 @@ const next=(s,m)=>applyCercoMove(s,m).state;
 const mobility=(s,p)=>legalCercoMoves({...s,over:false},p).length;
 function features(s,p){
  const pieces=s.board.flatMap((x,i)=>x===p?[i]:[]),seen=new Set(pieces),queue=[...pieces];let exits=0;
- for(const c of pieces)for(const d of cercoNeighbors(c))if(s.board[d]===null)exits+=cercoNeighbors(d).filter(n=>n!==c&&s.board[n]===null).length;
- for(let i=0;i<queue.length;i++)for(const d of cercoNeighbors(queue[i]))if(s.board[d]===null&&!seen.has(d)){seen.add(d);queue.push(d);}
+ for(const c of pieces)for(const d of cercoNeighbors(c,s))if(s.board[d]===null)exits+=cercoNeighbors(d,s).filter(n=>n!==c&&s.board[n]===null).length;
+ for(let i=0;i<queue.length;i++)for(const d of cercoNeighbors(queue[i],s))if(s.board[d]===null&&!seen.has(d)){seen.add(d);queue.push(d);}
  return {mobility:mobility(s,p),exits,region:seen.size-pieces.length};
 }
 export function evaluateCerco(s,p){if(s.over)return s.winner===p?10000:-10000;const a=features(s,p),b=features(s,1-p);return 12*(a.mobility-b.mobility)+3*(a.exits-b.exits)+2*(a.region-b.region);}

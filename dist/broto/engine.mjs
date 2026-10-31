@@ -1,24 +1,30 @@
+import {BROTO_MAPS,getBrotoMap} from './maps.mjs';
+export {BROTO_MAPS,getBrotoMap};
 /** BROTO rules v1. Pure, deterministic, zero-based cells and owners. No UI/storage effects. */
 export const BROTO_RULES_VERSION = 1;
 const frozen = value => { if(value && typeof value==='object'){Object.values(value).forEach(frozen);Object.freeze(value);}return value; };
 const copy = value => structuredClone(value);
 const playerOK = n => n===0||n===1;
-const cellOK = n => Number.isInteger(n)&&n>=0&&n<16;
+const cellOK = (n,map) => Number.isInteger(n)&&n>=0&&n<map.rows*map.cols;
 const fail = message => {throw new Error(message);};
-function base(starter,round=1,firstStarter=starter,completedRounds=[]){
- return {rulesVersion:BROTO_RULES_VERSION,board:Array(16).fill(null),reserves:[8,8],scores:[0,0],totals:completedRounds.reduce((a,r)=>a.map((n,p)=>n+r.scores[p]),[0,0]),player:starter,turn:0,round,starter,firstStarter,roundOver:false,duelOver:false,winner:null,completedRounds:copy(completedRounds),history:[],future:[]};
+// Os saves clássicos antigos conservam seu esquema, inclusive após histórico e reinício.
+const matchSchema=(next,reference)=>{if(!Object.hasOwn(reference,'mapId')){delete next.mapId;delete next.mapVersion;}return next;};
+function base(starter,round=1,firstStarter=starter,completedRounds=[],mapId='classic'){
+ const map=getBrotoMap(mapId),board=Array(map.rows*map.cols).fill(null);for(const c of map.walls)board[c]='wall';for(const c of map.outside)board[c]='outside';
+ return {rulesVersion:BROTO_RULES_VERSION,mapId:map.id,mapVersion:map.version,board,reserves:[8,8],scores:[0,0],totals:completedRounds.reduce((a,r)=>a.map((n,p)=>n+r.scores[p]),[0,0]),player:starter,turn:0,round,starter,firstStarter,roundOver:false,duelOver:false,winner:null,completedRounds:copy(completedRounds),history:[],future:[]};
 }
-export function createBroto(starter=0){if(!playerOK(starter))fail('Iniciador inválido.');return frozen(base(starter));}
+export function createBroto(starter=0,mapId='classic'){if(!playerOK(starter))fail('Iniciador inválido.');return frozen(base(starter,1,starter,[],mapId));}
 export function legalBrotoMoves(state){return state.roundOver||state.reserves[state.player]<=0?[]:state.board.flatMap((piece,cell)=>piece===null?[cell]:[]);}
 /** All four ray endpoints are found in one snapshot before any mark/removal. */
 function resolve(state,cell){
- if(state.roundOver||!cellOK(cell)||state.board[cell]!==null||state.reserves[state.player]<=0)fail('Escolha uma casa vazia durante sua vez.');
+ const map=getBrotoMap(state);
+ if(state.roundOver||!cellOK(cell,map)||state.board[cell]!==null||state.reserves[state.player]<=0)fail('Escolha uma casa vazia durante sua vez.');
  const next=copy(state),owner=state.player;next.future=[];
  next.board[cell]={owner,h:false,v:false};next.reserves[owner]--;
  const receivers=[];
  for(const [dr,dc,axis] of [[-1,0,'v'],[1,0,'v'],[0,-1,'h'],[0,1,'h']]){
-  let row=Math.floor(cell/4)+dr,col=cell%4+dc;const path=[];
-  while(row>=0&&row<4&&col>=0&&col<4){const target=row*4+col;path.push(target);const piece=next.board[target];if(piece){receivers.push({cell:target,owner:piece.owner,axis,from:cell,to:target,path,alreadyReceived:piece[axis]});break;}row+=dr;col+=dc;}
+  let row=Math.floor(cell/map.cols)+dr,col=cell%map.cols+dc;const path=[];
+  while(row>=0&&row<map.rows&&col>=0&&col<map.cols){const target=row*map.cols+col;const piece=next.board[target];if(piece==='wall'||piece==='outside')break;path.push(target);if(piece){receivers.push({cell:target,owner:piece.owner,axis,from:cell,to:target,path,alreadyReceived:piece[axis]});break;}row+=dr;col+=dc;}
  }
  for(const hit of receivers)next.board[hit.cell][hit.axis]=true;
  const blooms=receivers.filter(hit=>next.board[hit.cell].h&&next.board[hit.cell].v).map(hit=>({cell:hit.cell,...next.board[hit.cell]}));
@@ -33,25 +39,25 @@ export function applyBrotoMove(state,cell,{expectedPlayer=state.player,expectedT
  return frozen(resolve(state,cell));
 }
 export function previewBrotoMove(state,cell,guards){return applyBrotoMove(state,cell,guards);}
-function replayRound(starter,moves,round=1,firstStarter=starter,completedRounds=[]){
- let state=base(starter,round,firstStarter,completedRounds);for(const cell of moves)state=resolve(state,cell).state;return state;
+function replayRound(starter,moves,round=1,firstStarter=starter,completedRounds=[],mapId='classic'){
+ let state=base(starter,round,firstStarter,completedRounds,mapId);for(const cell of moves)state=resolve(state,cell).state;return state;
 }
 export function undoBroto(state){
  if(!state.history.length)return state;
- const history=state.history.slice(0,-1),next=replayRound(state.starter,history,state.round,state.firstStarter,state.completedRounds);
- next.future=[state.history.at(-1),...state.future];return frozen(next);
+ const history=state.history.slice(0,-1),next=replayRound(state.starter,history,state.round,state.firstStarter,state.completedRounds,getBrotoMap(state).id);
+ next.future=[state.history.at(-1),...state.future];return frozen(matchSchema(next,state));
 }
 export function redoBroto(state){
  if(!state.future.length)return state;
  const next=resolve(state,state.future[0]).state;next.future=state.future.slice(1);return frozen(next);
 }
-export function resetBrotoRound(state){return frozen(base(state.starter,state.round,state.firstStarter,state.completedRounds));}
+export function resetBrotoRound(state){return frozen(matchSchema(base(state.starter,state.round,state.firstStarter,state.completedRounds,getBrotoMap(state).id),state));}
 export function nextBrotoRound(state){
  if(state.round!==1||!state.roundOver)fail('Conclua a primeira rodada antes de avançar.');
  const record={starter:state.starter,history:[...state.history],scores:[...state.scores]};
- return frozen(base(1-state.starter,2,state.firstStarter,[record]));
+ return frozen(matchSchema(base(1-state.starter,2,state.firstStarter,[record],getBrotoMap(state).id),state));
 }
-export function rematchBroto(state){if(!state.duelOver)fail('Conclua o duelo antes da revanche.');return createBroto(1-state.firstStarter);}
+export function rematchBroto(state){if(!state.duelOver)fail('Conclua o duelo antes da revanche.');return frozen(matchSchema(base(1-state.firstStarter,1,1-state.firstStarter,[],getBrotoMap(state).id),state));}
 function equal(a,b){
  if(a===b)return true;if(!a||!b||typeof a!=='object'||typeof b!=='object'||Array.isArray(a)!==Array.isArray(b))return false;
  const keys=Object.keys(a);return keys.length===Object.keys(b).length&&keys.every(k=>Object.hasOwn(b,k)&&equal(a[k],b[k]));
@@ -59,12 +65,15 @@ function equal(a,b){
 /** Replay both rounds and redo branch, then compare every field; never trust saved points/marks. */
 export function restoreBroto(raw){
  try{
-  const s=typeof raw==='string'?JSON.parse(raw):raw;
+  let s=typeof raw==='string'?JSON.parse(raw):raw;
+  if(!s||typeof s!=='object')return null;
+  const hasId=Object.hasOwn(s,'mapId'),hasVersion=Object.hasOwn(s,'mapVersion');if(hasId!==hasVersion)return null;
+  const map=getBrotoMap(s);
   if(!s||s.rulesVersion!==BROTO_RULES_VERSION||!playerOK(s.firstStarter)||![1,2].includes(s.round)||!Array.isArray(s.history)||!Array.isArray(s.future)||s.history.length+s.future.length>16||!Array.isArray(s.completedRounds)||s.completedRounds.length!==s.round-1)return null;
   let completed=[];
-  if(s.round===2){const old=s.completedRounds[0];if(!old||old.starter!==s.firstStarter||!Array.isArray(old.history)||old.history.length!==16)return null;const previous=replayRound(s.firstStarter,old.history);const record={starter:s.firstStarter,history:old.history,scores:previous.scores};if(!equal(old,record))return null;completed=[record];}
+  if(s.round===2){const old=s.completedRounds[0];if(!old||old.starter!==s.firstStarter||!Array.isArray(old.history)||old.history.length!==16)return null;const previous=replayRound(s.firstStarter,old.history,1,s.firstStarter,[],map.id);const record={starter:s.firstStarter,history:old.history,scores:previous.scores};if(!equal(old,record))return null;completed=[record];}
   const starter=s.round===1?s.firstStarter:1-s.firstStarter;
-  const canonical=replayRound(starter,s.history,s.round,s.firstStarter,completed);
+  const canonical=matchSchema(replayRound(starter,s.history,s.round,s.firstStarter,completed,map.id),s);
   let futureState=canonical;for(const cell of s.future)futureState=resolve(futureState,cell).state;
   canonical.future=[...s.future];return equal(s,canonical)?frozen(canonical):null;
  }catch{return null;}

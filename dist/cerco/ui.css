@@ -22,7 +22,7 @@
 #cerco .ce-team-card.ce-current{outline:2px solid var(--ce-ink);outline-offset:2px}
 #cerco .ce-turn{text-align:center;margin:14px 0 10px;line-height:1.4;font-weight:750}
 #cerco .ce-board-wrap{width:min(100%,374px);margin:0 auto;padding:6px;border:1px solid #b6c3a8;border-radius:17px;background:#fff;overflow:visible;min-width:0}
-#cerco .ce-board{display:grid;grid-template-columns:repeat(5,minmax(0,1fr));gap:4px;width:100%;position:relative;isolation:isolate;background:transparent;border:0;padding:0;min-width:0}
+#cerco .ce-board{display:grid;grid-template-columns:repeat(var(--ce-cols,5),minmax(0,1fr));gap:4px;width:100%;position:relative;isolation:isolate;background:transparent;border:0;padding:0;min-width:0}
 #cerco .ce-cell{position:relative;aspect-ratio:1;display:flex;align-items:center;justify-content:center;min-width:0;min-height:0;width:100%;height:auto;margin:0;padding:3px;border:1px solid #d5decb;border-radius:9px;background:#f8faf3;box-shadow:none;transform:none;touch-action:manipulation;overflow:visible}
 #cerco .ce-cell:focus-visible{outline:3px solid #42693a;outline-offset:2px;z-index:4}
 #cerco .ce-selected{outline:2px solid #3f6b38;outline-offset:1px;z-index:2}
@@ -60,3 +60,23 @@
 @media(prefers-reduced-motion:reduce){#cerco *,#cerco *::before,#cerco *::after{animation:none!important;transition:none!important}}
 
 #cerco .ce-result-badge.ce-result-loss{background:#f1eee7;color:#5d6255}
+
+/* Mapas são configurações fixas; o contorno nunca encobre casas jogáveis. */
+#cerco .ce-map-setup{max-width:650px;margin:18px 0;padding:15px;border:1px solid #d5decb;border-radius:15px;background:#f1f4e9;display:grid;grid-template-columns:1fr;gap:8px}
+#cerco .ce-map-setup>label{font-weight:750;color:#39563a}
+#cerco .ce-map-setup>select{width:100%;max-width:360px;min-height:44px}
+#cerco .ce-map-preview{display:grid;grid-template-columns:112px minmax(0,1fr);column-gap:18px;align-items:center}
+#cerco .ce-map-preview p{margin:0;line-height:1.5;font-size:14px}
+#cerco .ce-map-preview small{grid-column:2;font-size:11px;color:#56614e}
+#cerco .ce-map-mini{grid-row:span 2;display:grid;grid-template-columns:repeat(var(--ce-map-cols),1fr);gap:3px;width:112px}
+#cerco .ce-map-mini>span{aspect-ratio:1;display:flex;align-items:center;justify-content:center;border:1px solid #d5decb;border-radius:4px;background:#fff;font-size:11px;color:#315e35}
+#cerco .ce-map-mini>.ce-map-green{background:#e1edce;border-color:#73965e}
+#cerco .ce-map-mini>.ce-map-yellow{background:#f5e7b2;border-color:#b99b46;color:#705a1d}
+#cerco .ce-map-mini>.ce-map-wall{background:#cbd2c1;border-color:#9ba78f;border-radius:6px 3px 5px 4px}
+#cerco .ce-map-mini>.ce-map-outside{background:transparent;border-color:transparent}
+#cerco .ce-map-hole{aspect-ratio:1;pointer-events:none}
+#cerco .ce-natural-wall{background:#e4e8dc;border-color:#b9c3ad;pointer-events:none}
+#cerco .ce-natural-wall svg{width:75%;height:75%;fill:#c4cdb8;stroke:#8d9c7e;stroke-width:1.3;stroke-linejoin:round}
+#cerco .ce-active-map{font-weight:700;color:#49663e;margin-left:6px}
+#cerco .ce-map-rule{font-size:14px}
+@media(max-width:500px){#cerco .ce-map-setup{padding:12px}#cerco .ce-map-preview{grid-template-columns:88px minmax(0,1fr);gap:8px 12px}#cerco .ce-map-mini{width:88px;gap:2px}#cerco .ce-map-mini>span{font-size:9px}#cerco .ce-map-preview p{font-size:12px}#cerco .ce-map-preview small{grid-column:1/-1}}
