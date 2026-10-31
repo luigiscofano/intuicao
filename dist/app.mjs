@@ -1,3 +1,5 @@
+import {legacyCutSelectionIds} from './cut-campaign.mjs';
+import {isFaunaShape,getFaunaGeometry} from './cut-fauna-geometry.mjs';
 import {rulesPreviewMarkup} from './rules-preview.mjs';
 import {initCategoryNavigation} from './category-navigation.mjs';
 import {parseLevelJSON} from './level-json-common.mjs';
@@ -206,7 +208,7 @@ function cutCampaignSelection(){
  for(const [band,name,first,last] of lightCampaignBands){
   html+=`<h3 class="stage-heading" data-campaign-band="${band}">${name} · ${first}–${last}</h3><div class="level-group" data-campaign-band="${band}">`;
   for(let i=first-1;i<Math.min(last,catalogue.cut.length);i++){
-   const l=catalogue.cut[i],done=progress.completedIds.has(l.id),assisted=answerProgress.get(`cut:${l.id}`).assisted,current=progress.lastLevelId===l.id;
+   const l=catalogue.cut[i],done=progress.completedIds.has(l.id),assisted=answerProgress.get(`cut:${l.id}`).assisted,current=(legacyCutSelectionIds[progress.lastLevelId]??progress.lastLevelId)===l.id;
    html+=`<button class="level-tile ${done?'done':''}" data-level="${i}" aria-current="${current}" aria-label="Nível ${i+1}: ${l.name}${done?', concluído':''}${assisted?', assistido por gabarito':''}${current?', atual':''}"><span>${i+1}</span><small>${done?(assisted?'✓ com gabarito':'✓ concluído'):assisted?'com gabarito':current?'atual':'explorar'}</small></button>`;
   }
   html+='</div>';
@@ -480,7 +482,12 @@ function draw(){
  if(game==='cut'){
   const poly=shapePolygon(state.shape),c=phase==='result'?evaluation.cut:curvedCut(poly,state),p={x:state.centerX+c.n.x*state.offset,y:state.centerY+c.n.y*state.offset};
   const holes=state.holes.map(r=>`<polygon points="${points(r)}" fill="black"/>`).join('');
+  if(isFaunaShape(state.shape)){
+   const path=getFaunaGeometry(state.shape).path;
+   svg+=`<defs><mask id="shape-mask" maskUnits="userSpaceOnUse" x="0" y="0" width="800" height="460"><rect width="800" height="460" fill="black"/><path d="${path}" fill="white" fill-rule="evenodd"/></mask><clipPath id="outer-clip"><path d="${path}" clip-rule="evenodd"/></clipPath></defs><g mask="url(#shape-mask)"><path data-shape="cut-region" d="${path}" fill="#e5e8df" fill-rule="evenodd"/><polygon points="${points(c.region)}" fill="#a89bc9"/></g><polyline points="${points(c.curve)}" fill="none" stroke="#584976" stroke-width="3" stroke-dasharray="9 6"/>`;
+  }else{
   svg+=`<defs><mask id="shape-mask" maskUnits="userSpaceOnUse" x="0" y="0" width="800" height="460"><rect width="800" height="460" fill="black"/><polygon points="${points(poly)}" fill="white"/>${holes}</mask><clipPath id="outer-clip"><polygon points="${points(poly)}"/></clipPath></defs><g mask="url(#shape-mask)"><polygon data-shape="cut-region" points="${points(poly)}" fill="#e5e8df"/><polygon points="${points(c.region)}" fill="#a89bc9"/></g><polyline points="${points(c.curve)}" fill="none" stroke="#584976" stroke-width="3" stroke-dasharray="9 6"/>`;
+  }
   if(!free&&cutMode==='basic'){
    const d=cutDirection(),h={x:clamp(p.x,48,752),y:clamp(p.y,48,398)};
    svg+=`<g class="cut-direction" aria-hidden="true"><line x1="${h.x-d.x*48}" y1="${h.y-d.y*48}" x2="${h.x+d.x*48}" y2="${h.y+d.y*48}" stroke="#75618d" stroke-width="2" stroke-dasharray="3 5"/><path transform="translate(${h.x} ${h.y}) rotate(${currentLevel().basicDirection})" d="M-48 0 l8-5 m-8 5 l8 5 M48 0 l-8-5 m8 5 l-8 5" fill="none" stroke="#75618d" stroke-width="2"/></g>${cutHandle('basic-cut',h.x,h.y,'Mover no eixo',`Única direção liberada: ${currentLevel().basicDirection} graus. Arraste ou use as setas.`,'offset',currentLevel().basicDirection)}`;

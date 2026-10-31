@@ -1,3 +1,4 @@
+import {isFaunaShape} from './cut-fauna-geometry.mjs';
 /** Contextual rules from public puzzle metadata only.
  * This module is deliberately stateless: callers choose when a round starts,
  * retain the player's toggle during that round, and may suppress already-seen
@@ -55,7 +56,7 @@ export function rulesMechanics(game,level={}){
  }else if(game==='cut'){
   const family=`family:${level.family??'Reta'}`;
   if(Object.hasOwn(TEXT,family))active.push(family);
-  if(level.holes?.length)active.push('holes');
+  if(level.holes?.length||isFaunaShape(level.shape))active.push('holes');
  }else if(game==='elo'){
   // Curves arrive at 21, straight clues at 22: one family is not one debut.
   const shapes=objectValues(level.constraints?.shapes);

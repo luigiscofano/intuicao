@@ -4,6 +4,7 @@ import {validateOriginalLevel,originalLevelState,originalLevelAnswer,originalJSO
 import {lightLevels,cutLevels} from '../dist/levels.mjs';
 import {traceLightWorld} from '../dist/light-world.mjs';
 import {curvedCut,shapePolygon} from '../dist/curves.mjs';
+import {isFaunaShape} from '../dist/cut-fauna-geometry.mjs';
 import {cutSuccess} from '../dist/math.mjs';
 const clone=structuredClone;
 let checks=0;const rejects=(game,change,pattern)=>{const value=originalJSONExample(game);change(value);assert.throws(()=>validateOriginalLevel(parseLevelJSON(JSON.stringify(value),game),game),pattern);checks++;};
@@ -24,7 +25,7 @@ for(const game of ['light','cut']){
 }
 for(const [game,levels] of Object.entries({light:lightLevels,cut:cutLevels})){
  const before=JSON.stringify(levels);
- for(const level of levels){const normalized=validateOriginalLevel({...clone(level),game},game);const again=validateOriginalLevel(exportOriginalLevel(normalized),game);assert.deepEqual(again,normalized);checks++;}
+ for(const level of levels){if(game==='cut'&&isFaunaShape(level.shape)){assert.throws(()=>validateOriginalLevel({...clone(level),game},game),/shape:/);checks++;continue;}const normalized=validateOriginalLevel({...clone(level),game},game);const again=validateOriginalLevel(exportOriginalLevel(normalized),game);assert.deepEqual(again,normalized);checks++;}
  assert.equal(JSON.stringify(levels),before);
 }
 for(const [game,field] of [['light','objects'],['cut','holes']]){rejects(game,v=>{v[field]={};});rejects(game,v=>{v[field]=null;});}
@@ -62,4 +63,4 @@ assert.throws(()=>parseLevelJSON(JSON.stringify(originalJSONExample('cut')),'lig
 assert.throws(()=>parseLevelJSON(' '.repeat(200001),'light'));checks++;
 assert.throws(()=>validateOriginalLevel({...originalJSONExample('light'),solution:()=>[-45]},'light'));checks++;
 assert.throws(()=>customIdentity('light',{x:NaN}));checks++;
-console.log(JSON.stringify({passed:true,checks,campaignsRoundTripped:300}));
+console.log(JSON.stringify({passed:true,checks,campaignsRoundTripped:lightLevels.length+cutLevels.filter(l=>!isFaunaShape(l.shape)).length,campaignOnlyFauna:cutLevels.filter(l=>isFaunaShape(l.shape)).length}));

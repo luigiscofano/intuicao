@@ -1,8 +1,10 @@
+import {isFaunaShape,getFaunaGeometry,cutFaunaArea} from './cut-fauna-geometry.mjs';
 // Referência IA. Curvas como gráficos em uma base ortonormal, sem autointerseções.
 import {polygon,regularPolygon,clipHalfPlane,area,cut,dot} from './math.mjs';
 export const families=['Reta','Parábola','Seno','Cúbica','Cosseno','Dupla curva'];
 export const shapes=['Retângulo','Quadrado','Triângulo','Trapézio','Paralelogramo','Losango','Pentágono','Hexágono','Heptágono','Octógono','Decágono','Dodecágono','Hexágono irregular','Triângulo largo','Trapézio estreito','Pentágono alongado','Octógono achatado'];
 export function shapePolygon(name){
+ if(isFaunaShape(name))return getFaunaGeometry(name).envelope;
  const variants={'Triângulo largo':['Triângulo',1.35,.8],'Trapézio estreito':['Trapézio',.7,1.2],'Pentágono alongado':['Pentágono',.8,1.15],'Octógono achatado':['Octógono',1.3,.7]};if(variants[name]){const [base,sx,sy]=variants[name];return shapePolygon(base).map(p=>({x:400+(p.x-400)*sx,y:230+(p.y-230)*sy}));}
  const custom={Trapézio:[[235,110],[565,110],[650,350],[150,350]],Paralelogramo:[[270,100],[620,100],[530,360],[180,360]],Losango:[[400,65],[620,230],[400,395],[180,230]],'Hexágono irregular':[[280,75],[505,90],[620,210],[535,365],[310,385],[175,250]]};
  if(custom[name])return custom[name].map(([x,y])=>({x,y}));
@@ -82,6 +84,13 @@ export function basicCutState(level,travel=level.initialTravel??0){
  centerX:origin.x+Math.cos(a)*travel,centerY:origin.y+Math.sin(a)*travel,offset:level.initialOffset??0,holes:structuredClone(level.holes??[]),basicTravel:travel};
 }
 export function curvedCut(poly,config,step=1){
+ if(isFaunaShape(config.shape)){
+  const geometry=getFaunaGeometry(config.shape),rad=(config.angle??0)*Math.PI/180,t={x:-Math.sin(rad),y:Math.cos(rad)},u=geometry.envelope.map(p=>t.x*(p.x-(config.centerX??400))+t.y*(p.y-(config.centerY??230))),lo=Math.min(...u),hi=Math.max(...u);
+  const M=secondBound(config.family??'Reta',config.amplitude??60,config.frequency??1,Math.max(Math.abs(lo),Math.abs(hi)));
+  const visualStep=M>0?Math.min(step,Math.sqrt(.0001*geometry.totalArea*8/((hi-lo)*M))):step;
+  const visual=cutSolid(geometry.envelope,config,visualStep);
+  return {...visual,...cutFaunaArea(config.shape,config),cells:[],visualErrorPP:visual.errorPP*area(geometry.envelope)/geometry.totalArea};
+ }
  const geometry=regionGeometry(poly,config.holes??[]),{pieces,totalArea}=geometry;
  const result=cutSolid(poly,config,step);
  let selectedArea=0,error=0;const cells=[];

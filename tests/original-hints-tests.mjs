@@ -5,6 +5,7 @@ import {lightLevels,cutLevels} from '../dist/levels.mjs';
 import {curvedCut,shapePolygon,basicCutState} from '../dist/curves.mjs';
 import {traceLightWorld,traceLightAttempt} from '../dist/light-world.mjs';
 import {generateOriginalEndless} from '../dist/endless-original.mjs';
+import {isFaunaShape} from '../dist/cut-fauna-geometry.mjs';
 import {cutSuccess} from '../dist/math.mjs';
 let checks=0,maxMilliseconds=0;
 const freeze=value=>{if(value&&typeof value==='object'){Object.freeze(value);Object.values(value).forEach(freeze);}return value;};
@@ -21,7 +22,7 @@ const lightState=l=>({objects:structuredClone(l.objects),sources:structuredClone
 const signatures=new Set();
 for(const l of lightLevels){const s=lightState(l),before=traceLightWorld(s);const h=hint('light',l,s,{phase:'editing',selected:0});signatures.add(JSON.stringify(h));assert.deepEqual(traceLightWorld(s),before);assert.match(h.explanation,/ainda precisa ser observado/);assert.doesNotMatch(JSON.stringify(h),/termina na|se cruzam|último que|atingiu o limite/);}
 assert.ok(signatures.size>30,'The campaign must not receive one generic light hint');
-for(const l of cutLevels){const s=basicCutState(l),r=curvedCut(shapePolygon(s.shape),s),h=hint('cut',l,s,{cutMode:'basic'});assert.match(h.focusText,new RegExp(String(s.target)));assert.ok(h.focusText.includes(s.shape));assert.ok(h.focusText.includes(s.family==='Reta'?'reta':s.family));assert.match(h.nextStep,r.ratio*100<s.target?/Aumente/:/Diminua/);if(s.holes.length)assert.match(h.explanation,/vazio/);assert.deepEqual(curvedCut(shapePolygon(s.shape),s),r);}
+for(const l of cutLevels){const s=basicCutState(l),r=curvedCut(shapePolygon(s.shape),s),h=hint('cut',l,s,{cutMode:'basic'});assert.match(h.focusText,new RegExp(String(s.target)));assert.ok(h.focusText.includes(isFaunaShape(s.shape)?l.name:s.shape));assert.ok(h.focusText.includes(s.family==='Reta'?'reta':s.family));assert.match(h.nextStep,r.ratio*100<s.target?/Aumente/:/Diminua/);if(s.holes.length)assert.match(h.explanation,/vazio/);assert.deepEqual(curvedCut(shapePolygon(s.shape),s),r);}
 const source=(x,y,angle,color='gold')=>({x,y,angle,color});
 const target=(x,y,color='gold')=>({x,y,color,radius:22});
 const collision={objects:[],sources:[source(100,200,0),source(400,50,90,'blue')],targets:[target(700,200),target(400,400,'blue')],portals:[]};

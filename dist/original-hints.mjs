@@ -1,3 +1,4 @@
+import {isFaunaShape} from './cut-fauna-geometry.mjs';
 // Orientações sobre a configuração atual, nunca uma busca por uma resposta.
 // Usa apenas rastros já disparados ou um recorte de área; sem alterar a partida.
 import {lightScene} from './light-world.mjs';
@@ -56,10 +57,11 @@ function lightHint(level,state,context){
 function cutHint(level,state,context){
  const shape=state.shape??level.shape,family=state.family??'Reta',holes=state.holes??[],basic=!context.free&&context.cutMode!=='advanced';
  if(holes.length>32||holes.some(h=>h.length>128))return plan(`Observe a parte preenchida do ${shape}.`,'Este recorte excede o limite da análise local de dicas. Os espaços vazios continuam fora da proporção.','Faça um pequeno ajuste e confirme para comparar o resultado com a meta; nenhuma solução foi procurada.');
+ const animal=isFaunaShape(shape),shapeLabel=animal?`ícone de lado de ${level.name}`:shape;
  const cut=curvedCut(shapePolygon(shape),state),percent=cut.ratio*100,near=cutSuccess(percent,state.target),increase=percent<state.target;
  const shapeIdea=/Triângulo|Trapézio|Pentágono|irregular/.test(shape)?'A largura da figura muda ao longo do corte: distâncias iguais podem acrescentar áreas diferentes.':/Losango|Hexágono|Heptágono|Octógono|Decágono|Dodecágono/.test(shape)?'Observe as pontas e as partes mais largas: o meio da largura não representa necessariamente a proporção pedida.':'Compare a área preenchida de cada lado, não o comprimento da linha que separa as partes.';
  const curveIdea=family==='Reta'?'A reta desloca uma fronteira inteira.':family==='Parábola'?'O arco da parábola seleciona larguras diferentes em cada altura.':family==='Seno'||family==='Cosseno'?'Os vales e as cristas da onda entram juntos na soma da área roxa.':family==='Cúbica'?'Os dois braços do S devem ser considerados juntos na soma da área roxa.':'As duas curvaturas contribuem para a área total; observe a parte preenchida entre elas.';
- const emptyIdea=holes.length?` ${holes.length===1?'O espaço vazio não conta':'Os espaços vazios não contam'} em nenhum dos lados${level.hasEdgeOpening?', inclusive os recortes abertos na borda':''}.`:'';
+ const emptyIdea=animal?' Os espaços brancos do ícone não contam em nenhum dos lados.':holes.length?` ${holes.length===1?'O espaço vazio não conta':'Os espaços vazios não contam'} em nenhum dos lados${level.hasEdgeOpening?', inclusive os recortes abertos na borda':''}.`:'';
  const relation=near?'Seu ajuste está perto da meta; concentre-se em movimentos pequenos e use Confirmar resposta para avaliar.':`Neste ajuste, há área roxa ${increase?'de menos':'demais'} para a meta de ${state.target}%.`;
  let adjustment;
  if(near)adjustment='Antes de mexer mais, confirme a configuração atual. A margem aceita é de 3 pontos percentuais para cada lado da meta, incluindo o limite.';
@@ -67,7 +69,7 @@ function cutHint(level,state,context){
   const direction=typeof level.basicDirection==='number'?level.basicDirection:level.basicDirection?.angle??state.angle,aligned=Math.cos((direction-state.angle)*Math.PI/180)>.999999;
   adjustment=aligned?`${increase?'Aumente':'Diminua'} um pouco o deslocamento no eixo de ${direction}°, usando a alça ou o controle básico. Isso ${increase?'acrescenta':'retira'} área roxa; compare e reduza o tamanho dos ajustes ao se aproximar da meta.`:'Mantenha o eixo indicado nesta fase. Faça um deslocamento pequeno, compare a área roxa e inverta o sentido se ela se afastar da meta.';
  }else adjustment=`Na alça Deslizar curva, ${increase?'aumentar':'diminuir'} o deslocamento ${increase?'acrescenta':'retira'} área roxa sem mudar a ${family==='Reta'?'inclinação da reta':'família da curva'}. Experimente passos pequenos antes de combinar esse movimento com Mover ou Girar.`;
- return plan(`No ${shape}, observe como ${family==='Reta'?'a reta':`a curva ${family}`} separa a meta de ${state.target}% no lado roxo${holes.length?' sem contar os vazios':''}.`,`${relation} ${shapeIdea} ${curveIdea}${emptyIdea}`,adjustment);
+ return plan(`No ${shapeLabel}, observe como ${family==='Reta'?'a reta':`a curva ${family}`} separa a meta de ${state.target}% no lado roxo${animal||holes.length?' sem contar os vazios':''}.`,`${relation} ${shapeIdea} ${curveIdea}${emptyIdea}`,adjustment);
 }
 export function buildOriginalHint(game,level,state,context={}){
  if(game==='light')return lightHint(level,state,context);
