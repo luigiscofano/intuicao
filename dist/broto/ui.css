@@ -97,3 +97,9 @@
 /* A preparação permanece no lugar e cabe na largura útil, incluindo a barra de rolagem. */
 #broto .b-selection .collection-toolbar>label{min-width:0;max-width:100%}
 #broto .b-selection #b-mode{min-width:0;max-width:100%;box-sizing:border-box}
+
+/* Moldura da área jogável, com o mesmo contorno discreto de Repasse. */
+#broto .b-surface{border-radius:18px;outline:2px solid #b3c1a8;outline-offset:-1px;padding:16px 14px;overflow:visible}
+@media(max-width:500px){#broto .b-surface{padding:12px 8px}}
+/* Em telas estreitas, reutiliza a margem externa para manter alvos confortáveis. */
+@media(max-width:360px){#broto .b-lab{padding-inline:3px}}

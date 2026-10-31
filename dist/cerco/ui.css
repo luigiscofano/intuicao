@@ -95,3 +95,8 @@
 #cerco #ce-map-preview p{margin:0;font-size:13px;line-height:1.5}
 #cerco #ce-map-preview small{display:block;margin-top:5px}
 @media(max-width:600px){#cerco .ce-map-cards{grid-template-columns:repeat(2,minmax(0,1fr))}}
+
+/* Moldura da área jogável, sem incluir a seleção de mapas ou as regras abaixo. */
+#cerco .ce-surface{border-radius:18px;outline:2px solid #b3c1a8;outline-offset:-1px;padding:16px 14px;overflow:visible}
+@media(max-width:500px){#cerco .ce-surface{padding:12px 8px}}
+@media(max-width:360px){#cerco .ce-lab{padding-inline:3px}}
