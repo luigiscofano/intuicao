@@ -1,0 +1,30 @@
+import assert from 'node:assert/strict';
+import {CAMPAIGN,CAMPAIGN_VERSION}from'../dist/orbita/campaign.mjs';
+import {CATALOG as OLD}from'../dist/orbita/catalog.mjs';
+import {COMPACT_REPLACEMENT_REPORT}from'../dist/orbita/compact-catalog.mjs';
+import {projectOrbita,presentationBadges,presentationRingLabels,compactOrbitaAudit}from'../dist/orbita/presentation-fit.mjs';
+import {normalizeOrbitaData,serializeOrbitaSession,restoreOrbitaSession,commitOrbitaCommand,recoverOrbitaEndless,circularRecoverySeed,renderOrbitaBoardMarkup,movementPoint}from'../dist/orbita/ui.mjs';
+import {selectCertifiedV2}from'../dist/orbita/endless-v2.mjs';
+import {initialState,replay,transition}from'../dist/orbita/engine.mjs';
+const before=JSON.stringify(CAMPAIGN);let min=Infinity;
+for(const width of [265,335,648,900])for(const level of CAMPAIGN){
+ const p=projectOrbita(level,width),l=p.level,b=presentationBadges(l),labels=presentationRingLabels(l,b);assert.ok(b.valid);assert.ok(p.minDistance>=28);min=Math.min(min,p.minDistance);assert.equal(labels.length,level.rings.length);assert.ok(labels.every(x=>!x.unplaced));
+ for(const c of l.cells)assert.ok(c.x>=14&&c.y>=14&&c.x<=l.layout.width-14&&c.y<=l.layout.height-14);
+ const all=[...b.targets,...b.sensors];for(const badge of all){assert.ok(badge.x>=0&&badge.y>=0&&badge.x+badge.width<=l.layout.width&&badge.y+badge.height<=l.layout.height);}
+ for(const label of labels){assert.ok(l.cells.every(c=>Math.hypot(c.x-label.x,c.y-label.y)>=28));assert.ok(all.every(r=>{const x=Math.max(r.x,Math.min(label.x,r.x+r.width)),y=Math.max(r.y,Math.min(label.y,r.y+r.height));return Math.hypot(label.x-x,label.y-y)>=13;}));}
+ const markup=renderOrbitaBoardMarkup(level,initialState(level),level.commands[0],width);assert.equal((markup.match(/data-o-piece=/g)||[]).length,level.cells.length);assert.equal((markup.match(/data-o-target=/g)||[]).length,Object.keys(level.targets).length);assert.equal((markup.match(/data-o-ring=/g)||[]).length,level.rings.length);
+ const first=transition(level,initialState(level),level.solution[0]);for(const m of first.movements){const pos=p.point(movementPoint(level,m,1)),target=l.cells.find(c=>c.id===m.to);assert.ok(Math.hypot(pos.x-target.x,pos.y-target.y)<1e-6);}
+}
+assert.equal(JSON.stringify(CAMPAIGN),before);
+const old={catalogVersion:'orbita-campaign-80-v1',campaign:{lastId:OLD[79].id,completed:{},sessions:{}}};
+for(const level of OLD){const session=commitOrbitaCommand(level,restoreOrbitaSession(level,null),level.solution[0]).session;old.campaign.sessions[level.id]=serializeOrbitaSession(level,session);old.campaign.completed[level.id]={firstCompletedAt:'test',assisted:false};}
+const data=normalizeOrbitaData(old),changed=new Set(COMPACT_REPLACEMENT_REPORT.map(x=>x.oldId));assert.equal(data.catalogVersion,CAMPAIGN_VERSION);assert.equal(Object.keys(data.campaign.sessions).length,72);assert.equal(Object.keys(data.campaign.completed).length,72);assert.equal(Object.keys(data.legacyCampaignArchive.at(-1).campaign.sessions).length,8);
+for(const level of OLD)if(!changed.has(level.id))assert.deepEqual(data.campaign.sessions[level.id],old.campaign.sessions[level.id]);assert.equal(normalizeOrbitaData(data).legacyCampaignArchive.length,1);
+const newSession=serializeOrbitaSession(CAMPAIGN[79],restoreOrbitaSession(CAMPAIGN[79],null));data.campaign.sessions[CAMPAIGN[79].id]=newSession;data.campaign.lastId=CAMPAIGN[79].id;assert.deepEqual(normalizeOrbitaData(data).campaign.sessions[CAMPAIGN[79].id],newSession);assert.equal(normalizeOrbitaData(data).campaign.lastId,CAMPAIGN[79].id);
+let generated=0;for(let difficulty=0;difficulty<5;difficulty++)for(let i=0;i<100;i++){const seed=999+i*37+difficulty*10000,a=selectCertifiedV2(seed,{difficulty}),b=selectCertifiedV2(seed,{difficulty});assert.equal(a.signature,b.signature);assert.ok(compactOrbitaAudit(a.level).valid);assert.ok(replay(a.level,a.level.solution).solved);generated++;}
+const oldRun={level:OLD[79],seed:123,generatorVersion:'orbita-generator-3',session:old.campaign.sessions[OLD[79].id]};const recoveryData=normalizeOrbitaData({catalogVersion:CAMPAIGN_VERSION,endless:{baseSeed:9,startDifficulty:4,number:12,solved:11,current:oldRun}});const result=selectCertifiedV2(circularRecoverySeed(123),{difficulty:4});const recovery=recoverOrbitaEndless(recoveryData,result);assert.equal(recovery.reason,'compact-layout-v1');assert.deepEqual(recoveryData.legacyEndlessArchive[0].current,oldRun);assert.equal(recoveryData.endless.solved,11);assert.equal(recoveryData.endless.number,12);assert.ok(recovery.notice);
+console.log(JSON.stringify({passed:true,viewports:4,campaigns:80,minCenterDistance:min,migrated:72,archived:8,endless:generated,oldEndlessArchive:true}));
+
+let consecutive=0;for(let difficulty=0;difficulty<5;difficulty++){const signatures=[],families=[],topologies=[];for(let i=0;i<100;i++){const r=selectCertifiedV2(45291+i*9283+difficulty*100000,{difficulty,recentSignatures:signatures.slice(-30),recentFamilies:families.slice(-30),recentTopologies:topologies.slice(-30)});assert.ok(compactOrbitaAudit(r.level).valid);assert.notEqual(r.signature,signatures.at(-1));signatures.push(r.signature);families.push(r.level.family);topologies.push(r.topology);consecutive++;}}console.log({passed:true,consecutiveEndless:consecutive,window:30,noImmediateRepeat:true});
+
+for(const item of COMPACT_REPLACEMENT_REPORT){const level=CAMPAIGN[item.phase-1];let session=restoreOrbitaSession(level,null);for(const move of level.solution)session=commitOrbitaCommand(level,session,move).session;const saved=serializeOrbitaSession(level,session),complete={firstCompletedAt:'today',assisted:false};const round=normalizeOrbitaData(JSON.parse(JSON.stringify({catalogVersion:CAMPAIGN_VERSION,campaign:{lastId:level.id,sessions:{[level.id]:saved},completed:{[level.id]:complete}}})));assert.equal(round.campaign.lastId,level.id);assert.deepEqual(round.campaign.sessions[level.id],saved);assert.deepEqual(round.campaign.completed[level.id],complete);assert.ok(restoreOrbitaSession(level,round.campaign.sessions[level.id]).restored);}console.log({passed:true,newIDsPersistAll8:true});

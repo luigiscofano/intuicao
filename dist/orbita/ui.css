@@ -112,3 +112,41 @@
 #orbita .o-turn:disabled{opacity:.45;cursor:not-allowed}
 #orbita .o-rail-group:has(.o-rail-hit:hover) .o-rail:not(.o-active-rail){stroke:#57796b;stroke-width:3.5}
 #orbita .o-command-label::before{content:'GIRAR';display:block;font-size:9px;font-weight:600;letter-spacing:.12em;color:#61766b;margin-bottom:3px}
+/* Clean, vivid screen-space board. Fixed glyph sizes; every ring remains visible. */
+#orbita .o-board-scroll{overflow:visible;max-height:none;padding:0;touch-action:pan-y}
+#orbita #o-board-holder{min-width:0;width:100%}
+#orbita #o-board{width:100%;min-width:0;max-width:var(--o-board-width);overflow:visible;background:#fff;touch-action:pan-y}
+#orbita #o-board .o-rail-base{stroke:#fff;stroke-width:7}
+#orbita #o-board .o-rail{stroke:#c9cdd3;stroke-width:2}
+#orbita #o-board .o-rail.o-active-rail{stroke:#47556b;stroke-width:3}
+#orbita #o-board .o-house{fill:#fff;stroke:#d9dde2;stroke-width:1}
+#orbita #o-board .o-shared-house{stroke:#8691a1;stroke-width:1.5}
+#orbita #o-board .o-piece circle{fill:var(--o-piece-color);stroke:#ffffff;stroke-width:2}
+#orbita #o-board .o-piece text{fill:#18202c;font:750 16px/1 system-ui,sans-serif}
+#orbita #o-board .o-neutral circle{fill:#f0f1f3;stroke:#d6dbe1;stroke-width:1}
+#orbita #o-board .o-neutral text{fill:#87909c}
+#orbita #o-board .o-target rect{fill:#fff;stroke:var(--o-piece-color);stroke-width:2}
+#orbita #o-board .o-target text{fill:#263244;font:750 13px/1 system-ui,sans-serif}
+#orbita #o-board .o-matched .o-target rect{fill:var(--o-piece-color);stroke:#2f6148;stroke-width:2}
+#orbita #o-board .o-badge-connector{fill:none;stroke:#aeb7c3;stroke-width:1;stroke-dasharray:2 2;pointer-events:none}
+#orbita #o-board .o-ring-tag circle{fill:#fff;stroke:#9da6b3;stroke-width:1}
+#orbita #o-board .o-ring-tag text{fill:#4d5869;font:750 12px/1 system-ui,sans-serif}
+#orbita #o-board .o-selected-tag circle{fill:#44546a;stroke:#44546a}
+#orbita #o-board .o-selected-tag text{fill:#fff}
+#orbita #o-board .o-sensor rect{fill:#fff2c6;stroke:#b38618;stroke-width:1}
+#orbita #o-board .o-sensor text{fill:#55410c;font:750 11px/1 system-ui,sans-serif}
+#orbita #o-board .o-sensor-ready rect{fill:#cceedd;stroke:#35846b}
+#orbita .o-board-surface{border:1px solid #d9dde2;border-radius:14px;box-shadow:none;background:#fff}
+#orbita .o-orbit-controls{background:#f7f8fa;border:1px solid #dce0e5;box-shadow:none}
+#orbita .o-ring-choices button[aria-pressed=true]{background:#426da6;border-color:#426da6;box-shadow:0 0 0 2px #fff,0 0 0 3px #426da6}
+#orbita .o-board-legend{color:#4d5869}
+@media(max-width:600px){#orbita .o-board-scroll{max-height:none;padding:0}#orbita .o-board-navigation:has(>.level-arrow){padding:0 2px;gap:4px}#orbita .o-board-surface{border-radius:10px}}
+#orbita .o-surface .o-orbit-controls{background:#f7f8fa;border:1px solid #dce0e5;border-radius:14px;box-shadow:none}
+#orbita .o-surface .o-turn{background:#fff;border:1px solid #bbc6d3;color:#263244;border-radius:10px;box-shadow:none}
+#orbita .o-surface .o-turn>span:first-child{color:#426da6}
+#orbita .o-surface .o-ring-choices button{background:#fff;border-color:#c9d0d9;color:#354155;box-shadow:none}
+#orbita .o-surface .o-ring-choices button[aria-pressed=true]{background:#426da6;border-color:#426da6;color:#fff;box-shadow:0 0 0 2px #fff,0 0 0 3px #426da6}
+#orbita .o-surface .o-command-label,#orbita .o-surface #o-command-status{color:#45556c}
+#orbita .o-surface .o-board-legend .o-legend-piece{background:#438de3;color:#18202c;border-color:#438de3}
+#orbita .o-surface .o-board-legend .o-legend-target{background:#fff;color:#263244;border:2px solid #438de3}
+#orbita .o-surface .o-board-legend .o-legend-junction{border-color:#8691a1;box-shadow:inset 0 0 0 2px #fff,inset 0 0 0 3px #8691a1}

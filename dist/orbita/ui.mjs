@@ -1,3 +1,5 @@
+import {COMPACT_REPLACEMENT_REPORT} from './compact-catalog.mjs';
+import {projectOrbita,presentationBadges,presentationRingLabels,compactOrbitaAudit,orbitaColor} from './presentation-fit.mjs';
 import {rulesPreviewMarkup} from '../rules-preview.mjs';
 import {validateCircleGeometryV3} from './topology-circles-v3.mjs';
 import {validateGeometryV2} from './topology-v2.mjs';
@@ -45,12 +47,19 @@ export function normalizeOrbitaData(value){
   const data=freshOrbitaData();if(!record(value))return data;
   if(record(value.prefs))for(const key of Object.keys(data.prefs))if(typeof value.prefs[key]==='boolean')data.prefs[key]=value.prefs[key];
   if(record(value.campaign)){
-    data.campaign.lastId=bounded(value.campaign.lastId,1,1000,null);
-    for(const key of ['completed','sessions'])if(record(value.campaign[key]))data.campaign[key]=Object.fromEntries(Object.entries(value.campaign[key]).filter(([id,item])=>/^[1-9][0-9]{0,3}$/.test(id)&&Number(id)<=1000&&record(item)));
+    const validIDs=new Set(CAMPAIGN.map(level=>level.id));if(value.catalogVersion==='orbita-campaign-80-v1')for(const item of COMPACT_REPLACEMENT_REPORT)validIDs.add(item.oldId);
+    data.campaign.lastId=Number.isInteger(value.campaign.lastId)&&validIDs.has(value.campaign.lastId)?value.campaign.lastId:null;
+    for(const key of ['completed','sessions'])if(record(value.campaign[key]))data.campaign[key]=Object.fromEntries(Object.entries(value.campaign[key]).filter(([id,item])=>/^[1-9][0-9]*$/.test(id)&&validIDs.has(Number(id))&&record(item)));
   }
   data.legacyCampaignArchive=Array.isArray(value.legacyCampaignArchive)?value.legacyCampaignArchive.filter(record):[];
   data.campaignMigrationNotice=typeof value.campaignMigrationNotice==='string'?value.campaignMigrationNotice:'';
-  if(value.catalogVersion!==CAMPAIGN_VERSION&&record(value.campaign)){
+  if(value.catalogVersion==='orbita-campaign-80-v1'&&record(value.campaign)){
+    const changed=new Set(COMPACT_REPLACEMENT_REPORT.map(item=>String(item.oldId))),archived={lastId:changed.has(String(value.campaign.lastId))?value.campaign.lastId:null,completed:{},sessions:{}};
+    for(const key of ['completed','sessions'])for(const id of changed)if(record(data.campaign[key][id])){archived[key][id]=clone(data.campaign[key][id]);delete data.campaign[key][id];}
+    if(changed.has(String(data.campaign.lastId)))data.campaign.lastId=null;
+    data.legacyCampaignArchive.push({catalogVersion:value.catalogVersion,campaign:archived,reason:'compact-eight-layouts'});
+    data.campaignMigrationNotice='Oito fases ganharam tabuleiros compactos. As tentativas dessas fases foram arquivadas; seu progresso nas outras 72 foi preservado.';
+  }else if(value.catalogVersion!==CAMPAIGN_VERSION&&record(value.campaign)){
     // Never assign an old completion/history to a recomposed level on ID alone.
     const previous=clone(value.campaign),kept={lastId:null,completed:{},sessions:{}};
     for(const candidate of CAMPAIGN){
@@ -80,9 +89,9 @@ export function circularRecoverySeed(seed){return (bounded(seed,0,0xffffffff)^0x
 /** Commit only after the replacement is certified; retain the complete original snapshot. */
 export function recoverOrbitaEndless(data,result,parameters={}){
  const run=data.endless,old=run?.current;
- if(!old?.level||isCircularGeneration(old.level))throw Error('Não há uma tentativa antiga para recuperar.');
- if(result?.generatorVersion!==ENDLESS_VERSION||!isCircularGeneration(result?.level)||result.seed!==circularRecoverySeed(old.seed)||result.level.seed!==result.seed||result.level.generation?.version!==3||!validateLevel(result.level).valid||isWon(result.level,initialState(result.level))||!replay(result.level,result.level.solution).solved)throw Error('A recuperação circular não passou pela verificação.');
- const recovery={reason:'circle-only-v3',originalSeed:old.seed,replacementSeed:result.seed,originalGeneratorVersion:old.generatorVersion,originalLevelId:old.level.id,notice:CIRCULAR_RECOVERY_NOTICE};
+ if(!old?.level||(isCircularGeneration(old.level)&&compactOrbitaAudit(old.level).valid))throw Error('Não há uma tentativa antiga para recuperar.');
+ if(result?.generatorVersion!==ENDLESS_VERSION||!isCircularGeneration(result?.level)||!compactOrbitaAudit(result.level).valid||result.seed!==circularRecoverySeed(old.seed)||result.level.seed!==result.seed||result.level.generation?.version!==3||!validateLevel(result.level).valid||isWon(result.level,initialState(result.level))||!replay(result.level,result.level.solution).solved)throw Error('A recuperação circular não passou pela verificação.');
+ const compact=isCircularGeneration(old.level);const recovery={reason:compact?'compact-layout-v1':'circle-only-v3',originalSeed:old.seed,replacementSeed:result.seed,originalGeneratorVersion:old.generatorVersion,originalLevelId:old.level.id,notice:compact?'Sua tentativa anterior foi arquivada com a seed e o histórico porque o tabuleiro era denso demais para o celular. O novo desafio compacto preserva seu total de conclusões.':CIRCULAR_RECOVERY_NOTICE};
  data.legacyEndlessArchive=[...(data.legacyEndlessArchive??[]),{current:clone(old),recovery:clone(recovery),runHistory:{baseSeed:run.baseSeed,startDifficulty:run.startDifficulty,number:run.number,solved:run.solved,recentSignatures:clone(run.recentSignatures??[]),recentFamilies:clone(run.recentFamilies??[]),recentTopologies:clone(run.recentTopologies??[])}}];
  run.current={level:clone(result.level),seed:result.seed,parameters:clone(parameters),signature:result.signature,generatorVersion:result.generatorVersion,rulesVersion:RULES_VERSION,session:null,completed:false,recovery};
  run.recentSignatures=[...(run.recentSignatures??[]),result.signature].slice(-30);run.recentFamilies=[...(run.recentFamilies??[]),result.level.family].slice(-30);run.recentTopologies=[...(run.recentTopologies??[]),result.topology??topologyRecency(result.level)].slice(-30);
@@ -228,23 +237,18 @@ export function ringLabelPosition(level,ring){
   }
 
 /** Pure SVG presentation used by the interactive board and visual regression checks. */
-export function renderOrbitaBoardMarkup(level,displayState,command){
-    const symbol=type=>orbitaSymbol(level,type),typeName=type=>orbitaTypeName(level,type);
-    const radius=level.layout?.pieceRadius??19,width=level.layout?.width??Math.max(...level.cells.map(cell=>cell.x))+52,height=level.layout?.height??Math.max(...level.cells.map(cell=>cell.y))+60;
-    const activeRings=new Set(command.turns.map(turn=>turn.ring)),activeCells=new Set(command.turns.flatMap(turn=>level.rings.find(ring=>ring.id===turn.ring).cells));
-    const badgeLayout=computeOrbitaBadgeLayout(level),sensorCells=new Map(badgeLayout.sensors.map(badge=>[badge.cell,badge]));
-    const paths=level.rings.map(ring=>'<g class="o-rail-group"><path class="o-rail-base" d="'+ringPath(level,ring)+'"/><path class="o-rail '+(activeRings.has(ring.id)?'o-active-rail':'')+'" data-o-ring="'+esc(ring.id)+'" d="'+ringPath(level,ring)+'"/><path class="o-rail-hit" data-o-select-ring="'+esc(ring.id)+'" d="'+ringPath(level,ring)+'"><title>Selecionar anel '+esc(ring.id)+'</title></path></g>').join('');
-    const labels=level.rings.map(ring=>{const point=ringLabelPosition(level,ring);return '<g class="o-ring-tag '+(activeRings.has(ring.id)?'o-selected-tag':'')+'" transform="translate('+point.x+' '+point.y+')" aria-hidden="true"><circle r="13"/><text text-anchor="middle" dominant-baseline="central">'+esc(ring.id)+'</text></g>';}).join('');
-    const cells=level.cells.map((cell,i)=>{
-      const membership=level.rings.filter(ring=>ring.cells.includes(cell.id)).map(ring=>ring.id),target=level.targets[cell.id],matched=target!==undefined&&displayState.occupancy[cell.id]===target,sensor=sensorCells.get(cell.id);
-      return '<g class="o-fixed-cell '+(activeCells.has(cell.id)?'o-affected ':'')+(membership.length>1?'o-junction ':'')+(matched?'o-matched':'')+'" data-o-cell="'+esc(cell.id)+'" transform="translate('+cell.x+' '+cell.y+')" role="img" aria-label="Casa '+(i+1)+', '+(membership.length>1?'encontro dos anéis ':'anel ')+membership.join(' e ')+(target!==undefined?', alvo '+esc(typeName(target))+(matched?', completo':', incompleto'):', sem alvo')+'"><circle class="o-house" r="'+(radius+4)+'"/>'+(membership.length>1?'<circle class="o-shared-house" r="'+(radius+8)+'"/>':'')+(target!==undefined?'<g class="o-target" data-o-target="'+esc(cell.id)+'" transform="translate(0 '+(radius+13)+')"><rect x="-18" y="-10" width="36" height="20" rx="5"/><text text-anchor="middle" dominant-baseline="central">'+esc(symbol(target))+(matched?' ✓':'')+'</text></g>':'')+(sensor?'<path class="o-sensor-connector" d="M '+(sensor.connector.x1-cell.x)+' '+(sensor.connector.y1-cell.y)+' L '+(sensor.connector.x2-cell.x)+' '+(sensor.connector.y2-cell.y)+'"/><g class="o-sensor '+(sensor.types.includes(displayState.occupancy[cell.id])?'o-sensor-ready':'')+'" data-o-sensor="'+esc(cell.id)+'" transform="translate('+(sensor.cx-cell.x)+' '+(sensor.cy-cell.y)+')"><rect x="'+(-sensor.width/2)+'" y="-10" width="'+sensor.width+'" height="20" rx="6"/><text text-anchor="middle" dominant-baseline="central">'+esc(sensor.label)+'</text></g>':'')+'</g>';
-    }).join('');
-    const pieces=level.cells.map((cell,i)=>{
-      const type=displayState.occupancy[cell.id],definition=level.pieceTypes.find(piece=>piece.id===type),neutral=definition?.neutral===true||type==='neutral'||type==='n'||type==='0';
-      return '<g id="o-chip-'+i+'" class="o-piece '+(neutral?'o-neutral':'')+'" data-o-piece="'+esc(cell.id)+'" data-o-type="'+esc(type)+'" transform="translate('+cell.x+' '+cell.y+')" role="img" aria-label="Casa '+(i+1)+', peça '+esc(typeName(type))+'"><circle r="'+radius+'"/><text text-anchor="middle" dominant-baseline="central">'+esc(symbol(type))+'</text></g>';
-    }).join('');
-    const minimum=Math.max(280,width*30/(radius*2));
-    return '<svg id="o-board" class="o-board" data-o-selection="'+esc(command.id)+'" viewBox="0 0 '+width+' '+height+'" style="--o-board-width:'+width+'px;--o-board-min:'+minimum+'px" role="group" tabindex="0" aria-label="Tabuleiro de ÓRBITA, '+level.rings.length+' anéis e '+level.cells.length+' casas" aria-describedby="o-keyboard-help"><g class="o-rails">'+paths+'</g>'+labels+'<g class="o-houses">'+cells+'</g><g class="o-pieces">'+pieces+'</g></svg>';
+export function renderOrbitaBoardMarkup(canonical,displayState,command,width=600){
+ const projection=projectOrbita(canonical,width),level=projection.level,radius=13;
+ const symbol=type=>orbitaSymbol(level,type),active=new Set(command.turns.map(t=>t.ring));
+ const badges=presentationBadges(level),targetMap=new Map(badges.targets.map(b=>[b.cell,b]));
+ const paths=level.rings.map(r=>'<g class="o-rail-group"><path class="o-rail-base" d="'+ringPath(level,r)+'"/><path class="o-rail '+(active.has(r.id)?'o-active-rail':'')+'" data-o-ring="'+esc(r.id)+'" d="'+ringPath(level,r)+'"/><path class="o-rail-hit" data-o-select-ring="'+esc(r.id)+'" d="'+ringPath(level,r)+'"><title>Selecionar anel '+esc(r.id)+'</title></path></g>').join('');
+ const ringLabels=presentationRingLabels(level,badges);
+ const labels=level.rings.map(r=>{const p=ringLabels.find(label=>label.id===r.id);return '<g class="o-ring-tag '+(active.has(r.id)?'o-selected-tag':'')+'" transform="translate('+p.x+' '+p.y+')" aria-hidden="true"><circle r="11"/><text text-anchor="middle" dominant-baseline="central">'+esc(r.id)+'</text></g>';}).join('');
+ const connector=b=>'<path class="o-badge-connector" d="M'+b.connector.x1+' '+b.connector.y1+'L'+b.connector.x2+' '+b.connector.y2+'"/>';
+ const cells=level.cells.map((c,i)=>{const membership=level.rings.filter(r=>r.cells.includes(c.id)),target=level.targets[c.id],matched=target!==undefined&&displayState.occupancy[c.id]===target,b=targetMap.get(c.id);return '<g class="o-fixed-cell '+(membership.length>1?'o-junction ':'')+(matched?'o-matched':'')+'" data-o-cell="'+esc(c.id)+'" role="img" aria-label="Casa '+(i+1)+(target!==undefined?', alvo '+esc(orbitaTypeName(level,target))+(matched?', completo':', incompleto'):', sem alvo')+'"><circle class="o-house" cx="'+c.x+'" cy="'+c.y+'" r="14"/>'+(membership.length>1?'<circle class="o-shared-house" cx="'+c.x+'" cy="'+c.y+'" r="14"/>':'')+(b?connector(b)+'<g class="o-target" data-o-target="'+esc(c.id)+'" style="--o-piece-color:'+orbitaColor(level,target)+'" transform="translate('+b.cx+' '+b.cy+')"><rect x="-11" y="-9" width="22" height="18" rx="4"/><text text-anchor="middle" dominant-baseline="central">'+esc(symbol(target))+'</text></g>':'')+'</g>';}).join('');
+ const sensors=badges.sensors.map(b=>connector(b)+'<g class="o-sensor '+(b.types.includes(displayState.occupancy[b.cell])?'o-sensor-ready':'')+'" data-o-sensor="'+esc(b.cell)+'" transform="translate('+b.cx+' '+b.cy+')"><rect x="-12" y="-9" width="24" height="18" rx="4"/><text text-anchor="middle" dominant-baseline="central">'+b.label+'</text></g>').join('');
+ const pieces=level.cells.map((c,i)=>{const type=displayState.occupancy[c.id],def=level.pieceTypes.find(p=>p.id===type),neutral=def?.neutral===true||['n','neutral','0'].includes(type);return '<g id="o-chip-'+i+'" class="o-piece '+(neutral?'o-neutral':'')+'" data-o-piece="'+esc(c.id)+'" data-o-type="'+esc(type)+'" style="--o-piece-color:'+orbitaColor(level,type)+'" transform="translate('+c.x+' '+c.y+')" role="img" aria-label="Casa '+(i+1)+', peça '+esc(orbitaTypeName(level,type))+'"><circle r="'+radius+'"/><text text-anchor="middle" dominant-baseline="central">'+esc(symbol(type))+'</text></g>';}).join('');
+ return '<svg id="o-board" class="o-board o-clean-board" data-o-selection="'+esc(command.id)+'" viewBox="0 0 '+level.layout.width+' '+level.layout.height+'" style="--o-board-width:'+level.layout.width+'px" role="group" tabindex="0" aria-label="Tabuleiro de ÓRBITA, '+level.rings.length+' anéis e '+level.cells.length+' casas" aria-describedby="o-keyboard-help"><g class="o-rails">'+paths+'</g>'+labels+'<g class="o-houses">'+cells+'</g>'+sensors+'<g class="o-pieces">'+pieces+'</g></svg>';
 }
 
 export function initOrbita({hideOthers=()=>{}}={}){
@@ -253,6 +257,7 @@ export function initOrbita({hideOthers=()=>{}}={}){
   let data;try{data=normalizeOrbitaData(JSON.parse(localStorage.getItem(ORBITA_STORAGE_KEY)||'null'));}catch{data=freshOrbitaData();}
   let level=null,session=null,mode='campaign',index=0,screen='selection',daily=false,selected=null;
   let rulesOpen=true,advanced=data.prefs.advanced,message='',hintText='',hintTier=0,hintPlan=null,answerPlan=null,hintBusy=false,storageWarning=false,motion=null;
+  let displayProjection=null,displayWidth=0;
   let revision=0,hintRevision=0,generationRevision=0,importRevision=0,animationRevision=0;
   let generationBusy=false,prefetch=null,prefetchTask=null,autoTimer=null,animationFrame=null,animating=false,animationResolve=null,guided=false,scrollObserver=null;
   const generator=createOrbitaService(),advisor=createOrbitaService(),restart=createRestartConfirmation('restart-orbita');
@@ -332,14 +337,14 @@ export function initOrbita({hideOthers=()=>{}}={}){
   }
   function resumeEndless(){
     const run=data.endless;if(!run?.current?.level)return newEndless(campaignDifficulty());
-    if(!isCircularGeneration(run.current.level))return recoverVisibleEndless();
+    if(!isCircularGeneration(run.current.level)||!compactOrbitaAudit(run.current.level).valid)return recoverVisibleEndless();
     if(!certified(run.current.level)){selection();$('o-selection-status').textContent='O desafio salvo usa dados incompatíveis. Seu progresso continua guardado; escolha Explorar modo livre para começar outro.';run.current=null;save();return;}
     cancelGeneration();daily=false;start(run.current.level,{mode:'endless',saved:run.current.session});
   }
   async function recoverVisibleEndless(){
     if(generationBusy)return;selection();const run=data.endless;if(!run?.current?.level)return;
     const seed=circularRecoverySeed(run.current.seed),options=endlessOptions(run.startDifficulty,run.solved,run.recentSignatures,run.recentFamilies,run.recentTopologies),token=generationRevision;
-    generationBusy=true;generationStatus('Recuperando sua tentativa em um desafio com anéis circulares. O histórico antigo e as conclusões serão preservados…');
+    generationBusy=true;generationStatus('Preparando um desafio circular compacto. O histórico antigo e as conclusões serão preservados…');
     try{const result=await generator.generate(seed,options);if(token!==generationRevision||data.endless!==run||host.hidden)return;verifyGenerated(result);recoverOrbitaEndless(data,result,options);generationBusy=false;save();daily=false;start(result.level,{mode:'endless',fresh:true});}
     catch(error){if(token!==generationRevision)return;generationBusy=false;generationStatus('Não foi possível recuperar agora. A tentativa antiga e seu progresso continuam guardados e intactos. Tente abrir o modo livre novamente. '+safeError(error));}
   }
@@ -417,14 +422,15 @@ export function initOrbita({hideOthers=()=>{}}={}){
   function renderBoard(displayState=current()){
     const holder=$('o-board-holder');if(!holder)return;
     const oldBoard=$('o-board'),boardHadFocus=oldBoard?.contains(document.activeElement)===true,selectionChanged=oldBoard?.dataset.oSelection!==selected;
-    holder.innerHTML=renderOrbitaBoardMarkup(level,displayState,selectedCommand());
+    const scroll=$('o-board-scroll'),width=scroll.clientWidth||600;
+    displayWidth=width;displayProjection=projectOrbita(level,width);
+    holder.innerHTML=renderOrbitaBoardMarkup(level,displayState,selectedCommand(),width);
     holder.querySelectorAll('[data-o-select-ring]').forEach(path=>path.onclick=()=>{const next=level.commands.find(item=>item.turns.some(turn=>turn.ring===path.dataset.oSelectRing));if(next)selectCommand(next.id);});
-    const scroll=$('o-board-scroll');scroll.setAttribute('aria-label','Tabuleiro de ÓRBITA. Se necessário, deslize para ver os outros anéis.');
-    const updateScrollHelp=()=>{const help=$('o-scroll-help');if(help)help.hidden=scroll.scrollWidth<=scroll.clientWidth+2&&scroll.scrollHeight<=scroll.clientHeight+2;};
-    scrollObserver?.disconnect();if(globalThis.ResizeObserver){scrollObserver=new ResizeObserver(updateScrollHelp);scrollObserver.observe(scroll);scrollObserver.observe($('o-board'));}updateScrollHelp();
-    // Keep the selected letter visible without shrinking dense boards or changing geometry.
-    // Do not recenter after a move: manual panning remains stable within one selection.
-    if(selectionChanged){const board=$('o-board'),bounds=board.getBoundingClientRect(),viewport=scroll.getBoundingClientRect(),ring=level.rings.find(item=>item.id===selectedCommand().turns[0].ring),point=ringLabelPosition(level,ring),scale=bounds.width/board.viewBox.baseVal.width;scroll.scrollTo({left:Math.max(0,scroll.scrollLeft+bounds.left-viewport.left+point.x*scale-scroll.clientWidth/2),top:Math.max(0,scroll.scrollTop+bounds.top-viewport.top+point.y*scale-scroll.clientHeight/2),behavior:'instant'});}
+    scroll.setAttribute('aria-label','Tabuleiro completo de ÓRBITA');
+    $('o-scroll-help').hidden=true;
+    const sensorInfo=presentationBadges(displayProjection.level).sensors.map(b=>b.label+': casa '+(level.cells.findIndex(c=>c.id===b.cell)+1)+' pede '+b.types.map(type=>orbitaSymbol(level,type)).join(' ou '));
+    let sensorLegend=$('o-sensor-legend');if(!sensorLegend){sensorLegend=document.createElement('p');sensorLegend.id='o-sensor-legend';sensorLegend.className='o-board-legend';scroll.parentElement.append(sensorLegend);}sensorLegend.textContent=sensorInfo.join(' · ');sensorLegend.hidden=!sensorInfo.length;
+    scrollObserver?.disconnect();if(globalThis.ResizeObserver){scrollObserver=new ResizeObserver(()=>{if(!animating&&Math.abs(scroll.clientWidth-displayWidth)>1)renderBoard();});scrollObserver.observe(scroll);}
     updateControls();if(boardHadFocus&&!host.hidden)$('o-board')?.focus({preventScroll:true});
   }
   async function animateMove(result,previous){
@@ -438,7 +444,7 @@ export function initOrbita({hideOthers=()=>{}}={}){
       const frame=now=>{
         if(token!==animationRevision||host.hidden){animationResolve=null;resolve(false);return;}
         const fraction=Math.min(1,(now-started)/duration),eased=fraction*fraction*(3-2*fraction);
-        for(const {movement,element} of pieces){const point=movementPoint(level,movement,eased);element?.setAttribute('transform','translate('+point.x+' '+point.y+')');}
+        for(const {movement,element} of pieces){const point=displayProjection.point(movementPoint(level,movement,eased));element?.setAttribute('transform','translate('+point.x+' '+point.y+')');}
         if(fraction<1)animationFrame=requestAnimationFrame(frame);else{animationFrame=null;animationResolve=null;animating=false;renderBoard();resolve(true);}
       };animationFrame=requestAnimationFrame(frame);
     });
