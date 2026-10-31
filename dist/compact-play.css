@@ -69,8 +69,12 @@ body :is(.workspace,.collection-workspace)>:is(.experiment,.collection-surface){
 body :is(.workspace,.collection-workspace)>.rules-sidebar{grid-column:1!important;grid-row:2!important;position:static;max-height:none;overflow:visible;border-left:0;border-top:1px solid var(--line);padding:16px 24px;background:#f8f9f3}
 body :is(.workspace,.collection-workspace)>.controls{grid-column:1!important;grid-row:3!important;border-left:0;border-top:1px solid var(--line)}
 @media(max-width:600px){body :is(.workspace,.collection-workspace)>.rules-sidebar{padding:14px 16px}}
-/* Inset the complete SINTONIA command group without resizing maps or frame. */
-@media(min-width:1100px){#sintonia .s-board-surface>.s-command-row{position:relative;right:clamp(8px,calc((100vw - 1100px)*.09),24px)}}
+/* Reserve actual layout space for SINTONIA commands: an offset would overlap the
+   play-area focus frame. The right inset remains, but is now real padding. */
+@media(min-width:1100px){
+ #sintonia .s-board-surface{column-gap:24px;padding-right:calc(10px + clamp(8px,calc((100vw - 1100px)*.09),24px))}
+ #sintonia .s-board-surface>.s-command-row{position:static;right:auto;min-width:0}
+}
 /* ELO's marking toggle follows the board's own left edge, including its pan gutter. */
 body #collection .elo-board-surface>.board-options{display:flex;justify-content:flex-start;margin:0 0 12px;padding:0}
 body #collection .elo-board-surface:is(.elo-has-gutter,:has(.elo-large,.elo-board-label))>.board-options{margin-bottom:32px}
