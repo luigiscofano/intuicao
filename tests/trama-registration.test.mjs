@@ -10,18 +10,18 @@ import {selectionSelector} from '../dist/game-nav-scroll.mjs';
 import {analyzeBoard} from '../dist/trama/engine.mjs';
 const read=name=>readFileSync(new URL('../dist/'+name,import.meta.url),'utf8');
 test('TRAMA is appended after CERCO with exact card and objective',()=>{
- assert.deepEqual(CATEGORY_GAMES.versus,['desvio','broto','cerco','trama']);
+ assert.deepEqual(CATEGORY_GAMES.versus,['desvio','broto','cerco','trama','vertice']);
  const html=read('index.html');assert.equal((html.match(/data-trama="trama"/g)||[]).length,1);assert.equal((html.match(/id="trama"/g)||[]).length,1);
  assert.ok(html.indexOf('data-cerco="cerco"')<html.indexOf('data-trama="trama"'));
  assert.match(html,/TRAMA <small>Conecte seis peças e interrompa as pontes do adversário\.<\/small>/);
  assert.equal(GAME_INFO.trama.summary,'Forme uma única rede com pelo menos seis peças suas.');
- assert.equal((read('app.mjs').match(/trama\.hide\(\)/g)||[]).length,8);
+ assert.equal((read('app.mjs').match(/trama\.hide\(\)/g)||[]).length,9);
 });
 test('TRAMA inherits info32/card52/monoicon/selection and correct teaching text',()=>{
  assert.equal(selectionSelector({dataset:{trama:'trama'}}),'#trama > .level-screen');
  assert.equal(selectionSelector({dataset:{trama:'trama',infoGame:'trama'}}),null);
  assert.match(GAME_NAV_ICONS.trama,/<path/);assert.doesNotMatch(GAME_NAV_ICONS.trama,/#|fill=|stroke=/);
- assert.match(read('game-info.css'),/\[data-trama\]\)\{padding-right:52px\}/);
+ assert.match(read('game-info.css'),/\[data-trama\],\[data-vertice\]\)\{padding-right:52px\}/);
  assert.match(read('game-info.css'),/#tr-selection-title,#tr-title/);
  const html=rulesPreviewMarkup('trama');assert.match(html,/Como jogar TRAMA/);assert.match(html,/Não altera a partida/);assert.doesNotMatch(html,/pistas da fase|<script|onload=|onclick=|animal|mascote|verde|amarelo/);
  assert.equal(RULE_EXAMPLES.trama.steps.length,3);

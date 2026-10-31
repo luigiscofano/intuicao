@@ -11,19 +11,19 @@ import {rulesPreviewMarkup} from '../dist/rules-preview.mjs';
 import {selectionSelector} from '../dist/game-nav-scroll.mjs';
 const read=name=>readFileSync(new URL('../dist/'+name,import.meta.url),'utf8');
 test('CERCO is appended after existing Versus games with exact description',()=>{
- assert.deepEqual(CATEGORY_GAMES,{intuicao:['light','cut'],logica:['elo','prumo','pacto','sintonia','repasse','orbita'],versus:['desvio','broto','cerco','trama']});
+ assert.deepEqual(CATEGORY_GAMES,{intuicao:['light','cut'],logica:['elo','prumo','pacto','sintonia','repasse','orbita'],versus:['desvio','broto','cerco','trama','vertice']});
  const html=read('index.html');assert.equal((html.match(/data-cerco="cerco"/g)||[]).length,1);assert.equal((html.match(/id="cerco"/g)||[]).length,1);
  assert.ok(html.indexOf('data-broto="broto"')<html.indexOf('data-cerco="cerco"'));
  assert.match(html,/CERCO <small>Mova suas peças, feche caminhos e deixe o adversário sem saída\.<\/small>/);
  assert.match(html,/href="cerco\/ui.css"/);assert.match(read('app.mjs'),/createCercoRoute\(\{hideOthers\(\)/);
- assert.equal((read('app.mjs').match(/cerco\.hide\(\)/g)||[]).length,8);
+ assert.equal((read('app.mjs').match(/cerco\.hide\(\)/g)||[]).length,9);
 });
 test('CERCO reuses card icons, info32, padding52, preview and navigation contracts',()=>{
  assert.equal(selectionSelector({dataset:{cerco:'cerco'}}),'#cerco > .level-screen');
  assert.equal(selectionSelector({dataset:{cerco:'cerco',infoGame:'cerco'}}),null);
  assert.match(GAME_NAV_ICONS.cerco,/<path/);assert.doesNotMatch(GAME_NAV_ICONS.cerco,/#|fill=|stroke=/);
  assert.equal(GAME_INFO.cerco.summary,'Faça a última jogada: quem ficar sem movimentos na sua vez perde.');
- assert.match(read('game-info.css'),/\[data-cerco\],\[data-trama\]\)\{padding-right:52px\}/);
+ assert.match(read('game-info.css'),/\[data-cerco\],\[data-trama\],\[data-vertice\]\)\{padding-right:52px\}/);
  assert.match(read('game-info.css'),/#ce-selection-title,#ce-title/);
  const html=rulesPreviewMarkup('cerco');assert.match(html,/Como jogar CERCO/);assert.match(html,/Não altera a partida/);assert.doesNotMatch(html,/pistas da fase|<script|onload=|onclick=/);
  assert.equal(RULE_EXAMPLES.cerco.steps.length,3);assert.match(html,/L1C3 → L2C3/);assert.match(html,/seis peças permanecem/);
@@ -35,7 +35,7 @@ test('Existing ten illustrations, information texts and pictograms are unchanged
   assert.equal(Object.keys(prev).length,10);for(const name of Object.keys(prev))assert.deepEqual(next[name],prev[name],name);
  }
  const oldCSS=execFileSync('git',['show',base+':dist/platform.css'],{encoding:'utf8'});
- assert.equal(read('platform.css').replaceAll(', #trama > .level-screen','').replaceAll(', #trama:not([hidden]) > .level-screen','').replaceAll(', #cerco > .level-screen','').replaceAll(', #cerco:not([hidden]) > .level-screen',''),oldCSS);
+ assert.equal(read('platform.css').replaceAll(', #vertice > .level-screen','').replaceAll(', #vertice:not([hidden]) > .level-screen','').replaceAll(', #trama > .level-screen','').replaceAll(', #trama:not([hidden]) > .level-screen','').replaceAll(', #cerco > .level-screen','').replaceAll(', #cerco:not([hidden]) > .level-screen',''),oldCSS);
 });
 
 test('CERCO illustrated example executes in the actual engine',()=>{

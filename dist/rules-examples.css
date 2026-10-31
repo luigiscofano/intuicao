@@ -34,3 +34,7 @@
 /* TRAMA: a peça intermediária aparece e a ponte deixa de existir. */
 .rpx-trama-block{animation:rpx-appear .5s .6s both}
 @media(prefers-reduced-motion:reduce){.rpx-trama-block{animation:none}}
+
+/* VÉRTICE: destaque finito dos dois apoios perpendiculares, sem mover peças. */
+.rpx-vertice-support{animation:rpx-appear .65s .5s both}
+@media(prefers-reduced-motion:reduce){.rpx-vertice-support{animation:none}}

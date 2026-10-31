@@ -55,7 +55,7 @@ test('registration preserves all nine existing information, illustrations and ic
  [GAME_NAV_ICONS,'a3dd0753da93030ceb5833e82371b720a20638092ef49edc51881e3a526afcab']]){
   const prior=Object.fromEntries(Object.entries(object).filter(([key])=>['light','cut','elo','prumo','pacto','desvio','sintonia','repasse','orbita'].includes(key)));assert.equal(createHash('sha256').update(JSON.stringify(prior)).digest('hex'),expected);assert(object.broto);
  }
- assert.deepEqual(CATEGORY_GAMES,{intuicao:['light','cut'],logica:['elo','prumo','pacto','sintonia','repasse','orbita'],versus:['desvio','broto','cerco','trama']});
+ assert.deepEqual(CATEGORY_GAMES,{intuicao:['light','cut'],logica:['elo','prumo','pacto','sintonia','repasse','orbita'],versus:['desvio','broto','cerco','trama','vertice']});
  assert.equal(GAME_INFO.broto.description,'Plante sementes, complete estímulos e escolha quem floresce.');
 });
 test('UI reuses applicable contracts and keeps storage and styles scoped',()=>{
