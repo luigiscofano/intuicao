@@ -539,7 +539,7 @@ applyControlsVisibility();
 $('confirm').onclick=confirmAnswer;
 function navigateLevel(delta){const next=level+delta;if(free||customLevel||next<0||next>=catalogue[game].length)return;finishOriginalGesture(false);endDrag();saveCampaign();level=next;start();}
 $('level-prev').onclick=()=>navigateLevel(-1);$('level-next').onclick=()=>navigateLevel(1);
-$('next').onclick=()=>navigateLevel(1);$('hint').onclick=showOriginalHint;
+$('next').onclick=()=>{if(game==='cut'&&!free&&!customLevel&&level===catalogue.cut.length-1){showSelection();return;}navigateLevel(1);};$('hint').onclick=showOriginalHint;
 showSelection();
 
 function hideOriginalForSibling(){finishOriginalGesture(false);endDrag();saveCampaign();saveCustom();campaignActive=null;customLevel=null;customId='';customImportRevision++;customStorage.hidden=true;customExport.hidden=true;saveEndless();free=false;endlessPanel.hidden=true;restartConfirmation.dismiss();restartRevision++;invalidate();document.querySelector('.lab').hidden=true;$('selection').hidden=true;}
