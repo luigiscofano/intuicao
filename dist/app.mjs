@@ -12,6 +12,7 @@ import {createRepasseRoute} from './repasse/route.mjs';
 import {createOrbitaRoute} from './orbita/route.mjs';
 import {createBrotoRoute} from './broto/route.mjs';
 import {createCercoRoute} from './cerco/route.mjs';
+import {createTramaRoute} from './trama/route.mjs';
 import {traceLightWorld,traceLightAttempt,lightAttemptFrame,lightScene} from './light-world.mjs';
 import {worldRaysSVG,portalSVG,lightEndpointsSVG,beamName} from './light-world-render.mjs';
 import {createResultMotion} from './result-motion.mjs';
@@ -517,7 +518,7 @@ scene.addEventListener('keydown',e=>{
  if(game==='light'){if(id==='target'||(state.objects[Number(id)].type==='wall'))return;selected=Number(id);state.objects[selected].angle=clamp(state.objects[selected].angle+step,-90,90);}
  if(game==='cut'){if(id==='basic-cut'&&!free&&cutMode==='basic')setBasicTravel((state.basicTravel??0)+step);else if(id==='rotate-curve'&&allowed('rotate'))state.angle=(state.angle+step+360)%360;else if(id==='move-curve'){if(['ArrowLeft','ArrowRight'].includes(e.key)&&allowed('x'))state.centerX=clamp(state.centerX+step,-400,1200);if(['ArrowUp','ArrowDown'].includes(e.key)&&allowed('y'))state.centerY=clamp(state.centerY+(e.key==='ArrowUp'?-1:1),-400,860);}else if(allowed('offset'))state.offset=clamp(state.offset+step,-600,600);}commitOriginalEdit(before);editor();draw();drawing.querySelector(`[data-item="${id}"]`)?.focus();
 });
-document.querySelectorAll('[data-game]').forEach(b=>b.onclick=()=>{if(!catalogue[b.dataset.game])return;cerco.hide();broto.hide();orbita.hide();repasse.hide();sintonia.hide();saveEndless();collection.hide();free=false;game=b.dataset.game;showSelection();});
+document.querySelectorAll('[data-game]').forEach(b=>b.onclick=()=>{if(!catalogue[b.dataset.game])return;trama.hide();cerco.hide();broto.hide();orbita.hide();repasse.hide();sintonia.hide();saveEndless();collection.hide();free=false;game=b.dataset.game;showSelection();});
 $('free').textContent='Modo Sem Parar';$('free').onclick=enterEndless;$('challenge').onclick=()=>{free=false;showSelection();};$('level').onchange=e=>{saveCampaign();level=Number(e.target.value);start();};$('reset').onclick=()=>{finishOriginalGesture(true);endDrag();middleConfirm?.cancel();clearTimeout(endlessTimer);endlessTimer=null;const revision=restartRevision;restartConfirmation.open({trigger:$('reset'),isCurrent:()=>revision===restartRevision&&!document.querySelector('.lab').hidden,onConfirm:restartOriginalNow,onCancel:()=>{updateOriginalHistoryButtons();scheduleEndlessAdvance();}});updateOriginalHistoryButtons();};
 $('selection-free').onclick=enterEndless;$('back-selection').onclick=showSelection;
 $('toggle-controls').onclick=toggleControls;
@@ -536,12 +537,13 @@ $('next').onclick=()=>navigateLevel(1);$('hint').onclick=showOriginalHint;
 showSelection();
 
 function hideOriginalForSibling(){finishOriginalGesture(false);endDrag();saveCampaign();saveCustom();campaignActive=null;customLevel=null;customId='';customImportRevision++;customStorage.hidden=true;customExport.hidden=true;saveEndless();free=false;endlessPanel.hidden=true;restartConfirmation.dismiss();restartRevision++;invalidate();document.querySelector('.lab').hidden=true;$('selection').hidden=true;}
-const collection=initCollection({hideOriginal(){cerco.hide();broto.hide();orbita.hide();repasse.hide();sintonia.hide();hideOriginalForSibling();}});
-const sintonia=createSintoniaRoute({hideOtherGames(){cerco.hide();broto.hide();orbita.hide();repasse.hide();collection.hide();hideOriginalForSibling();}});
-const repasse=createRepasseRoute({hideOthers(){cerco.hide();broto.hide();orbita.hide();sintonia.hide();collection.hide();hideOriginalForSibling();}});
-const orbita=createOrbitaRoute({hideOthers(){cerco.hide();broto.hide();repasse.hide();sintonia.hide();collection.hide();hideOriginalForSibling();}});
-const broto=createBrotoRoute({hideOthers(){cerco.hide();orbita.hide();repasse.hide();sintonia.hide();collection.hide();hideOriginalForSibling();}});
-const cerco=createCercoRoute({hideOthers(){broto.hide();orbita.hide();repasse.hide();sintonia.hide();collection.hide();hideOriginalForSibling();}});
-initCategoryNavigation({hideGames(){cerco.hide();broto.hide();orbita.hide();repasse.hide();sintonia.hide();collection.hide();hideOriginalForSibling();}});
+const collection=initCollection({hideOriginal(){trama.hide();cerco.hide();broto.hide();orbita.hide();repasse.hide();sintonia.hide();hideOriginalForSibling();}});
+const sintonia=createSintoniaRoute({hideOtherGames(){trama.hide();cerco.hide();broto.hide();orbita.hide();repasse.hide();collection.hide();hideOriginalForSibling();}});
+const repasse=createRepasseRoute({hideOthers(){trama.hide();cerco.hide();broto.hide();orbita.hide();sintonia.hide();collection.hide();hideOriginalForSibling();}});
+const orbita=createOrbitaRoute({hideOthers(){trama.hide();cerco.hide();broto.hide();repasse.hide();sintonia.hide();collection.hide();hideOriginalForSibling();}});
+const broto=createBrotoRoute({hideOthers(){trama.hide();cerco.hide();orbita.hide();repasse.hide();sintonia.hide();collection.hide();hideOriginalForSibling();}});
+const cerco=createCercoRoute({hideOthers(){trama.hide();broto.hide();orbita.hide();repasse.hide();sintonia.hide();collection.hide();hideOriginalForSibling();}});
+const trama=createTramaRoute({hideOthers(){cerco.hide();broto.hide();orbita.hide();repasse.hide();sintonia.hide();collection.hide();hideOriginalForSibling();}});
+initCategoryNavigation({hideGames(){trama.hide();cerco.hide();broto.hide();orbita.hide();repasse.hide();sintonia.hide();collection.hide();hideOriginalForSibling();}});
 
 globalThis.addEventListener?.('pagehide',()=>{saveCampaign();saveCustom();saveEndless();});

@@ -9,7 +9,7 @@ import {rulesPreviewMarkup} from '../dist/rules-preview.mjs';
 import {selectionSelector} from '../dist/game-nav-scroll.mjs';
 const read=name=>readFileSync(new URL('../dist/'+name,import.meta.url),'utf8');
 test('BROTO is the second Versus game without reorganizing existing categories',()=>{
- assert.deepEqual(CATEGORY_GAMES,{intuicao:['light','cut'],logica:['elo','prumo','pacto','sintonia','repasse','orbita'],versus:['desvio','broto','cerco']});
+ assert.deepEqual(CATEGORY_GAMES,{intuicao:['light','cut'],logica:['elo','prumo','pacto','sintonia','repasse','orbita'],versus:['desvio','broto','cerco','trama']});
  const html=read('index.html');assert.equal((html.match(/data-broto="broto"/g)||[]).length,1);assert.equal((html.match(/id="broto"/g)||[]).length,1);
  assert.match(html,/BROTO <small>Plante sementes, complete estímulos e escolha quem floresce\.<\/small>/);
  assert.match(html,/href="broto\/ui.css"/);assert.match(read('app.mjs'),/createBrotoRoute\(\{hideOthers\(\)/);
@@ -24,6 +24,6 @@ test('BROTO reuses navigation, mono pictogram, information and instructional com
  assert.equal(RULE_EXAMPLES.broto.steps.length,3);assert.match(html,/rpx-broto-flower/);
 });
 test('BROTO routes participate in hide and information title contracts',()=>{
- const app=read('app.mjs');assert.equal((app.match(/broto\.hide\(\)/g)||[]).length,7);
+ const app=read('app.mjs');assert.equal((app.match(/broto\.hide\(\)/g)||[]).length,8);
  const info=read('game-info.mjs');assert.match(info,/#b-selection-title,#b-title/);assert.match(info,/'#broto'/);assert.match(info,/dataset\.broto/);
 });

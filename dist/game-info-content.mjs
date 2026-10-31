@@ -157,3 +157,19 @@ GAME_INFO.cerco={
  purpose:'Praticar planejamento por turnos e leitura de caminhos, observando como a casa abandonada altera as opções de ambos os times.',
  why:'A proposta é tornar visíveis as consequências de uma decisão: mover uma peça também fecha uma passagem, e cada equipe precisa conservar alguma saída para sua próxima vez.'
 };
+
+// TRAMA: conexões automáticas entre peças abstratas, sem mascotes.
+GAME_INFO.trama={
+ name:'TRAMA',
+ description:'Conecte seis peças e interrompa as pontes do adversário.',
+ summary:'Forme uma única rede com pelo menos seis peças suas.',
+ rules:[
+  'Na sua vez, coloque uma peça em uma casa vazia da grade 6 × 6. Observe a prévia e confirme. As peças colocadas não se movem, não saem e não mudam de jogador.',
+  'Peças suas se ligam automaticamente na horizontal e na vertical quando estão lado a lado ou separadas por exatamente uma casa vazia. Não há ligações diagonais nem pontes sobre duas casas vazias.',
+  'Uma peça adversária no meio rompe a ponte. Uma peça própria no meio une os extremos em dois segmentos curtos, sem um terceiro fio longo passando por cima dela.',
+  'Fios que se cruzam em uma casa vazia não conectam as redes. Só uma peça real pode ser um nó; qualquer jogador pode ocupar uma casa atravessada por fios.',
+  'Vence quem formar uma única rede com pelo menos seis peças distintas. Grupos separados não são somados. Se as 36 casas forem preenchidas sem rede vencedora, há empate; uma vitória na última casa vale normalmente.'
+ ],
+ purpose:'Praticar leitura de conexões e planejamento por turnos, distinguindo proximidade, cruzamento visual e pertencimento à mesma rede.',
+ why:'A proposta é explorar como uma colocação pode aproximar grupos próprios e, ao mesmo tempo, interromper uma ponte adversária. As redes são recalculadas para os dois jogadores após cada jogada.'
+};

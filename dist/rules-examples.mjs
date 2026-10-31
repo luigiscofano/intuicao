@@ -71,3 +71,14 @@ RULE_EXAMPLES.cerco={steps:[
  `<g class="rpx-cerco-barrier">${rect(177,28,14,14,'#d4dacd')}${line(180,32,188,32,'#7c8973',1)}${line(180,37,188,37,'#7c8973',1)}</g>`+
  `<g class="rpx-cerco-move">${cercoExamplePiece(184,51,'V')}</g>`+
  txt(120,120,'Verde: L1C3 → L2C3. A origem fecha.',9)+txt(120,134,'As seis peças permanecem no tabuleiro.',9))};
+
+// Recorte de linha: círculo . círculo; um losango intermediário rompe a ponte.
+RULE_EXAMPLES.trama={steps:[
+ 'Coloque uma peça em uma casa vazia e confirme. Peças suas se conectam na horizontal e na vertical se forem vizinhas ou tiverem exatamente uma casa vazia entre elas.',
+ 'Uma peça adversária no meio interrompe a ponte. Fios cruzados em uma casa vazia não unem redes; somente peças reais podem formar uma junção.',
+ 'Forme uma única rede com pelo menos seis peças suas. Conte peças, não fios nem grupos separados. As peças ficam onde foram colocadas; tabuleiro cheio sem vencedor dá empate.'
+],svg:wrap(txt(56,18,'Ponte: rede de 2',10)+txt(184,18,'Ponte interrompida',10)+
+ [0,1,2].map(c=>rect(14+c*28,43,28,34,'#fafbf7')).join('')+line(28,60,84,60,'#608cae',2)+circle(28,60,8,'#91cbd9')+circle(84,60,8,'#91cbd9')+arrow()+
+ [0,1,2].map(c=>rect(142+c*28,43,28,34,'#fafbf7')).join('')+circle(156,60,8,'#91cbd9')+circle(212,60,8,'#91cbd9')+
+ `<g class="rpx-trama-block"><path d="m184 51 9 9-9 9-9-9z" fill="${purple}" stroke="#675187" stroke-width="1.5"/></g>`+
+ txt(184,96,'Duas redes azuis de 1',9)+txt(56,96,'O meio está vazio',9)+txt(120,125,'Colocar no meio separa os círculos.',10))};

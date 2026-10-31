@@ -33,13 +33,13 @@ export function initGameInfo(doc=document){
  },hideTip);
  const triggerFor=target=>target?.closest?.('button[data-info-game]');
  const makeTrigger=(game)=>{const b=doc.createElement('button');b.type='button';b.className='game-info-trigger';b.dataset.infoGame=game;b.textContent='i';b.setAttribute('aria-label',`Informações sobre ${GAME_INFO[game].name}`);b.setAttribute('aria-haspopup','dialog');b.setAttribute('aria-controls',dialog.id);return b;};
- const cards=[...nav.querySelectorAll('[data-game],[data-collection],[data-sintonia],[data-repasse],[data-orbita],[data-broto],[data-cerco]')];
- for(const card of cards){const game=card.dataset.game||card.dataset.collection||card.dataset.sintonia||card.dataset.repasse||card.dataset.orbita||card.dataset.broto||card.dataset.cerco;const b=makeTrigger(game);b.classList.add('game-info-nav');nav.append(b);}
- const placeNav=()=>{for(const card of cards){const game=card.dataset.game||card.dataset.collection||card.dataset.sintonia||card.dataset.repasse||card.dataset.orbita||card.dataset.broto||card.dataset.cerco;const b=nav.querySelector(`[data-info-game="${game}"]`);b.hidden=card.hidden;b.style.left=`${card.offsetLeft+card.offsetWidth-40}px`;b.style.top=`${card.offsetTop+card.offsetHeight/2-16}px`;}};
- const activeGame=()=>{const c=cards.find(e=>e.getAttribute('aria-pressed')==='true');return c?.dataset.game||c?.dataset.collection||c?.dataset.sintonia||c?.dataset.repasse||c?.dataset.orbita||c?.dataset.broto||c?.dataset.cerco;};
+ const cards=[...nav.querySelectorAll('[data-game],[data-collection],[data-sintonia],[data-repasse],[data-orbita],[data-broto],[data-cerco],[data-trama]')];
+ for(const card of cards){const game=card.dataset.game||card.dataset.collection||card.dataset.sintonia||card.dataset.repasse||card.dataset.orbita||card.dataset.broto||card.dataset.cerco||card.dataset.trama;const b=makeTrigger(game);b.classList.add('game-info-nav');nav.append(b);}
+ const placeNav=()=>{for(const card of cards){const game=card.dataset.game||card.dataset.collection||card.dataset.sintonia||card.dataset.repasse||card.dataset.orbita||card.dataset.broto||card.dataset.cerco||card.dataset.trama;const b=nav.querySelector(`[data-info-game="${game}"]`);b.hidden=card.hidden;b.style.left=`${card.offsetLeft+card.offsetWidth-40}px`;b.style.top=`${card.offsetTop+card.offsetHeight/2-16}px`;}};
+ const activeGame=()=>{const c=cards.find(e=>e.getAttribute('aria-pressed')==='true');return c?.dataset.game||c?.dataset.collection||c?.dataset.sintonia||c?.dataset.repasse||c?.dataset.orbita||c?.dataset.broto||c?.dataset.cerco||c?.dataset.trama;};
  const syncTitles=()=>{
   const game=activeGame();if(!GAME_INFO[game])return;
-  for(const h of doc.querySelectorAll('#selection-title,#game-title,#collection-title,#c-title,#s-selection-title,#s-title,#r-selection-title,#r-title,#o-selection-title,#o-title,#b-selection-title,#b-title,#ce-selection-title,#ce-title')){
+  for(const h of doc.querySelectorAll('#selection-title,#game-title,#collection-title,#c-title,#s-selection-title,#s-title,#r-selection-title,#r-title,#o-selection-title,#o-title,#b-selection-title,#b-title,#ce-selection-title,#ce-title,#tr-selection-title,#tr-title')){
    let b=h.querySelector('.game-info-trigger');if(b?.dataset.infoGame===game)continue;
    b?.remove();h.append(makeTrigger(game));
   }
@@ -49,7 +49,7 @@ export function initGameInfo(doc=document){
  // Watch route/title hosts only, never the game grid or per-move status updates.
  const observer=new MutationObserver(()=>{dwell.cancel();syncTitles();});
  observer.observe(nav,{attributes:true,subtree:true,attributeFilter:['aria-pressed']});
- for(const selector of ['#collection','#sintonia','#repasse','#orbita','#broto','#cerco']){const host=doc.querySelector(selector);if(host)observer.observe(host,{childList:true});}
+ for(const selector of ['#collection','#sintonia','#repasse','#orbita','#broto','#cerco','#trama']){const host=doc.querySelector(selector);if(host)observer.observe(host,{childList:true});}
  for(const h of doc.querySelectorAll('#selection-title,#game-title'))observer.observe(h,{childList:true});
  // Appending one missing icon triggers at most one extra no-op observer pass.
  new ResizeObserver(()=>{dwell.cancel();placeNav();}).observe(nav);
