@@ -1,6 +1,7 @@
-/** ELO presentation only: four-colour the real shared-edge region graph.
+/** ELO presentation only: unique colours where possible on the shared-edge graph.
  * Valid campaign/import/endless regions are connected planar map regions.
- * The exact search has no budget cutoff: those graphs always admit four colours.
+ * The exact four-colour safety fallback has no budget cutoff; unique-colour
+ * search is bounded to keep interaction responsive on adversarial input.
  * IDs, cells, clues and solutions are never mutated. Non-neighbours may reuse a colour.
  */
 // Exact PRUMO tones, copied without tinting; the regression test checks its source palette.
@@ -8,7 +9,15 @@ export const PRUMO_REGION_PALETTE=Object.freeze(['#a9d69b','#c6b0e4','#f0bf80','
 // Maximin quartet among all210 subsets: gold, salmon, sea-green and lilac.
 // Its weakest pair is ΔE76=37.140044; a45 threshold is impossible for four
 // mutually adjacent regions with the unchanged PRUMO palette.
-export const ELO_REGION_PALETTE=Object.freeze([4,5,7,9].map(i=>PRUMO_REGION_PALETTE[i]));
+export const ELO_REGION_BASE_PALETTE=Object.freeze([4,5,7,9].map(i=>PRUMO_REGION_PALETTE[i]));
+// Preserve all ten PRUMO tones and add soft, light colours in the same family.
+// Every colour contrasts >=4.5:1 against the existing region lettering.
+export const ELO_REGION_PALETTE=Object.freeze([
+ ...ELO_REGION_BASE_PALETTE,...PRUMO_REGION_PALETTE.filter(c=>!ELO_REGION_BASE_PALETTE.includes(c)),
+ '#f098c8','#f0c0d8','#80e8b8','#d8d8b0','#d8a0f0','#c8e088',
+ '#f0a080','#c8c080','#a0b890','#98b0f0','#b8e0c0','#80c8f0',
+ '#80c880','#80c098','#f0b8f0','#e8a0b8','#80e8e0','#f0c0b0'
+]);
 export const ELO_REGION_MIN_DELTA_E=37; // CIELAB 1976, D65; not a colour-blindness guarantee.
 const cache=new WeakMap();
 const linear=v=>(v/=255)<=.04045?v/12.92:((v+.055)/1.055)**2.4;
@@ -30,6 +39,23 @@ export function eloRegionAdjacency(level){
  return graph.map(neighbors=>[...neighbors].sort((a,b)=>a-b));
 }
 const distances=ELO_REGION_PALETTE.map(a=>ELO_REGION_PALETTE.map(b=>eloColorDistance(a,b)));
+// First seek a different colour for every region, while retaining the same
+// hard perceptual boundary constraint. MRV + future-neighbour freedom ordering
+// keep the bounded search fast; fallback never sacrifices valid-map contrast.
+function uniqueColor(graph){
+ const assigned=Array(graph.length).fill(-1),used=new Set();let visits=0;
+ function allowed(region,color){return !used.has(color)&&graph[region].every(n=>assigned[n]<0||distances[color][assigned[n]]>=ELO_REGION_MIN_DELTA_E);}
+ function search(left){
+  if(!left)return true;if(++visits>12000)return false;
+  let region=-1,choices=null;
+  for(let r=0;r<graph.length;r++)if(assigned[r]<0){const available=ELO_REGION_PALETTE.map((_,i)=>i).filter(c=>allowed(r,c));if(!available.length)return false;if(choices===null||available.length<choices.length||available.length===choices.length&&graph[r].length>graph[region].length){region=r;choices=available;}}
+  const freedom=color=>graph[region].filter(n=>assigned[n]<0).reduce((sum,n)=>sum+ELO_REGION_PALETTE.filter((_,c)=>c!==color&&distances[color][c]>=ELO_REGION_MIN_DELTA_E&&allowed(n,c)).length,0);
+  const scores=new Map(choices.map(c=>[c,freedom(c)]));choices.sort((a,b)=>scores.get(b)-scores.get(a)||a-b);
+  for(const c of choices){assigned[region]=c;used.add(c);if(search(left-1))return true;used.delete(c);assigned[region]=-1;}
+  return false;
+ }
+ return {indices:graph.length<=ELO_REGION_PALETTE.length&&search(graph.length)?assigned:null,visits};
+}
 function fourColor(graph){
  const assigned=Array(graph.length).fill(-1),uses=Array(4).fill(0);let visits=0;
  function search(left){
@@ -64,11 +90,11 @@ function invalidGraphFallback(graph){
 export function eloRegionColorReport(level){
  const signature=`${level.rows}x${level.cols}:${level.regions.join(',')}`;
  const old=cache.get(level);if(old?.signature===signature)return old.report;
- const graph=eloRegionAdjacency(level),result=fourColor(graph),fallback=result.indices===null;
+ const graph=eloRegionAdjacency(level),unique=uniqueColor(graph),result=unique.indices?unique:fourColor(graph),fallback=result.indices===null;
  const colors=Object.freeze(fallback?invalidGraphFallback(graph):result.indices.map(c=>ELO_REGION_PALETTE[c]));
  let minDeltaE=Infinity,edges=0,adjacentDuplicates=0;
  graph.forEach((neighbors,r)=>neighbors.forEach(n=>{if(n>r){edges++;minDeltaE=Math.min(minDeltaE,eloColorDistance(colors[r],colors[n]));if(colors[r]===colors[n])adjacentDuplicates++;}}));
- const report=Object.freeze({colors,edges,minDeltaE,minimumTextContrast:Math.min(...colors.map(c=>eloTextContrast(c))),passesThreshold:minDeltaE>=ELO_REGION_MIN_DELTA_E&&adjacentDuplicates===0,fallback,searchNodes:result.visits,adjacentDuplicates});
+ const report=Object.freeze({colors,edges,minDeltaE,minimumTextContrast:Math.min(...colors.map(c=>eloTextContrast(c))),passesThreshold:minDeltaE>=ELO_REGION_MIN_DELTA_E&&adjacentDuplicates===0,fallback,searchNodes:unique.visits+(unique.indices?0:result.visits),adjacentDuplicates,uniqueRegions:new Set(colors).size,regionCount:graph.length,varietyComplete:new Set(colors).size===graph.length});
  cache.set(level,{signature,report});return report;
 }
 export function eloRegionColors(level){return eloRegionColorReport(level).colors;}

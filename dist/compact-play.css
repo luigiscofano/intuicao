@@ -71,3 +71,6 @@ body :is(.workspace,.collection-workspace)>.controls{grid-column:1!important;gri
 @media(max-width:600px){body :is(.workspace,.collection-workspace)>.rules-sidebar{padding:14px 16px}}
 /* Inset the complete SINTONIA command group without resizing maps or frame. */
 @media(min-width:1100px){#sintonia .s-board-surface>.s-command-row{position:relative;right:clamp(8px,calc((100vw - 1100px)*.09),24px)}}
+/* ELO's marking toggle follows the board's own left edge, including its pan gutter. */
+body #collection .elo-board-surface>.board-options{display:flex;justify-content:flex-start;margin:0 0 12px;padding:0}
+body #collection .elo-board-surface:is(.elo-has-gutter,:has(.elo-large,.elo-board-label))>.board-options{margin-bottom:32px}
