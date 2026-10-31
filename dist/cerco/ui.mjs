@@ -5,7 +5,8 @@ import {createRestartConfirmation} from '../restart-confirmation.mjs';
 import {rulesPreviewMarkup} from '../rules-preview.mjs';
 import {celebrationMarkup} from '../result-motion.mjs';
 import {bindMiddleConfirm} from '../middle-confirm.mjs';
-import {FAUNA_ART,FAUNA_ASSETS} from '../fauna-art.mjs';
+import {FAUNA_ART} from '../fauna-art.mjs';
+import {versusFrontIcon} from '../versus-mascot-art.mjs';
 import {FAUNA_INFO} from '../fauna-info-content.mjs';
 export const CERCO_STORAGE_KEY='intuicao.cerco.v1';
 const teamNames=['Time Verde','Time Amarelo'],marks=['●','◆'];
@@ -14,7 +15,7 @@ const ids=FAUNA_ART.map(a=>a.id),esc=x=>String(x).replace(/[&<>"']/g,c=>({'&':'&
 const coord=(cell,cols=5)=>`L${Math.floor(cell/cols)+1}C${cell%cols+1}`;
 const defaultConfig=()=>({mode:'local',difficulty:'intermediate',mascots:[ids.includes('capivara')?'capivara':ids[0],ids.includes('onca')?'onca':ids[1]||ids[0]]});
 function validConfig(c){return c&&modes.includes(c.mode)&&difficulties.includes(c.difficulty)&&Array.isArray(c.mascots)&&c.mascots.length===2&&c.mascots.every(id=>ids.includes(id));}
-function icon(id){const a=FAUNA_ART.find(a=>a.id===id),s=FAUNA_ASSETS.front;return `<svg class="ce-mascot" viewBox="${a.front.join(' ')}" preserveAspectRatio="xMidYMid meet" aria-hidden="true"><image href="${s.url}" width="${s.width}" height="${s.height}"/></svg>`;}
+function icon(id){return versusFrontIcon(id,'ce-mascot');}
 function piece(player,config,ghost=false){return `<span class="ce-piece ce-team-${player}${ghost?' ce-ghost':''}" aria-hidden="true">${icon(config.mascots[player])}<span class="ce-team-mark">${marks[player]}</span></span>`;}
 const retryIcon='<svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M3 12a9 9 0 1 0 9-9 9.75 9.75 0 0 0-6.74 2.74L3 8"/><path d="M3 3v5h5"/></svg>';
 export function initCerco(){
