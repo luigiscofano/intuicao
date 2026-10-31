@@ -1,60 +1,62 @@
-/* União apenas visual: sem espaço novo ou mudanças nas raízes curvas,
-   nas flores, na posição da marca ou nas folhas interativas. Os painéis
-   claros dos jogos se dissolvem suavemente no branco do rodapé. */
+/* Rodapé único em todas as rotas: painel separado e raízes originais até o chão.
+   Só a pintura externa muda; marca, folhas e controles mantêm suas medidas. */
 body > footer{
-  position:relative;
-  --footer-join-color:transparent;
-  --footer-join-inset:40px;
-  --footer-join-height:54px;
-  --footer-join-gap:0px;
+  position:relative!important;
+  isolation:isolate;
+  z-index:1;
+  background:transparent!important;
+  border-top:0!important;
+  border-bottom-color:transparent!important;
+  box-shadow:none!important;
+  margin-top:24px!important;
+  --footer-inset:40px;
+  --footer-floor:112px;
+  --footer-flare:max(38px,calc((100vw - 1280px)/2 + 28px));
 }
-body:has(
-  #main > .lab:not([hidden]),
-  #collection:not([hidden]) > .collection-lab:not([hidden]),
-  #sintonia:not([hidden]) > .collection-lab:not([hidden]),
-  #repasse:not([hidden]) > .collection-lab:not([hidden]),
-  #orbita:not([hidden]) > .collection-lab:not([hidden]),
-  :is(#broto,#cerco,#vertice):not([hidden])
-) > footer{--footer-join-color:#f8f9f3}
-/* O espaço já existente sob as seleções é pintado, nunca aumentado. */
-body:has(:is(#broto,#cerco,#vertice):not([hidden]) > .level-screen) > footer{--footer-join-gap:34px}
+/* Uma única origem para o contorno: não depende do jogo ou do modo aberto. */
+body > footer::before{
+  content:""!important;
+  position:absolute;
+  top:14px!important;
+  bottom:calc(-1 * var(--footer-floor))!important;
+  left:calc(var(--footer-inset) - var(--footer-flare) + .5px)!important;
+  width:calc(100% - 2 * var(--footer-inset) + 2 * var(--footer-flare) - 1px)!important;
+  background:url("platform-assets/continuous-root-left.svg") left/var(--footer-flare) 100% no-repeat,
+    url("platform-assets/continuous-root-right.svg") right/var(--footer-flare) 100% no-repeat,
+    linear-gradient(#fff,#fff) center/calc(100% - 2 * var(--footer-flare)) 100% no-repeat!important;
+  filter:drop-shadow(0 2px 4px #34452a12);
+  clip-path:none!important;
+  mask:none!important;
+  pointer-events:none;
+  user-select:none;
+  z-index:-1;
+}
+/* Tampa arredondada tangente ao início das duas curvas, sem máscara sobre elas. */
 body > footer .footer-signature::before{
   content:"";
   position:absolute;
-  top:calc(-2px - var(--footer-join-gap));
-  left:calc(var(--footer-join-inset) + 1px);
-  right:calc(var(--footer-join-inset) + 1px);
-  height:calc(var(--footer-join-height) + var(--footer-join-gap));
-  background:linear-gradient(to bottom,var(--footer-join-color) 0 var(--footer-join-gap),transparent 100%);
+  top:0;
+  left:var(--footer-inset);
+  right:var(--footer-inset);
+  height:15px;
+  border:1px solid #b3c1a8;
+  border-bottom:0;
+  border-radius:14px 14px 0 0;
+  background:#fff;
   pointer-events:none;
   user-select:none;
-  z-index:0;
+  z-index:-1;
 }
+body > footer .footer-signature::after{content:none!important}
 body > footer .footer-signature > :is(.brand,small){position:relative;z-index:1}
-@media(max-width:760px){body > footer{--footer-join-inset:16px;--footer-join-height:40px}}
-
-/* Na abertura por categorias, o rodapé é um painel separado. A pequena
-   moldura arredonda somente sua entrada; a curva do chão continua intacta.
-   Os dois recortes da cor da página cobrem as quinas da base branca antiga. */
-body:not(:has(#main > section:not(.intro):not([hidden]))) > footer .footer-signature::after{
-  content:"";
-  position:absolute;
-  top:-2px;
-  left:var(--footer-join-inset);
-  right:var(--footer-join-inset);
-  height:54px;
-  background:
-    radial-gradient(circle at 100% 100%,transparent 13px,#b3c1a8 13px 14px,var(--paper,#f6f4ef) 14px) left top/14px 14px no-repeat,
-    radial-gradient(circle at 0 100%,transparent 13px,#b3c1a8 13px 14px,var(--paper,#f6f4ef) 14px) right top/14px 14px no-repeat,
-    linear-gradient(#b3c1a8,#b3c1a8) center top/calc(100% - 28px) 1px no-repeat,
-    linear-gradient(#b3c1a8,#b3c1a8) left bottom/1px calc(100% - 14px) no-repeat,
-    linear-gradient(#b3c1a8,#b3c1a8) right bottom/1px calc(100% - 14px) no-repeat;
-  -webkit-mask-image:linear-gradient(#000 0 22px,transparent 100%);
-  mask-image:linear-gradient(#000 0 22px,transparent 100%);
-  pointer-events:none;
-  user-select:none;
-  z-index:0;
+/* Os painéis terminam com suas próprias bordas, sem raízes duplicadas atrás do rodapé. */
+:is(#selection,#collection > .level-screen,#sintonia > .level-screen,#repasse > .level-screen,#orbita > .level-screen,#broto > .level-screen,#cerco > .level-screen,#vertice > .level-screen)::after{content:none!important}
+:is(#selection,#main > .lab,#collection > .collection-lab,#sintonia > .collection-lab,#repasse > .repasse-lab,#orbita > .orbita-lab,#broto > .b-lab,#cerco > .ce-lab,#vertice > .ve-lab,#collection > .level-screen,#sintonia > .level-screen,#repasse > .level-screen,#orbita > .level-screen,#broto > .level-screen,#cerco > .level-screen,#vertice > .level-screen){
+  border-bottom-color:#b3c1a8!important;
+  border-bottom-left-radius:19px!important;
+  border-bottom-right-radius:19px!important;
+  margin-bottom:0!important;
 }
 @media(max-width:760px){
-  body:not(:has(#main > section:not(.intro):not([hidden]))) > footer .footer-signature::after{height:40px}
+  body > footer{--footer-inset:16px;--footer-floor:84px;--footer-flare:14px;margin-top:20px!important}
 }
