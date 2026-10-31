@@ -5,7 +5,7 @@
 #broto .b-round{font-size:16px;font-weight:750;white-space:nowrap}
 #broto .b-workspace{display:grid!important;grid-template-columns:minmax(0,1fr)!important;gap:12px;align-items:start}
 #broto .b-surface{padding:10px 12px;background:#f8f9f3;background-image:none;min-width:0;border:0;box-shadow:none}
-#broto .stage-tools{display:flex;flex-wrap:wrap;align-items:center;gap:10px;margin:0 0 12px}
+#broto .stage-tools{display:flex;flex-wrap:wrap;align-items:center;gap:14px;margin:0 0 24px}
 #broto .stage-tools>button,#broto .stage-tools summary{min-height:44px}
 #broto .b-score{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:10px;max-width:600px;margin:0 auto}
 #broto .b-owner-0{--b-ink:#376840;--b-soft:#e5efd8;--b-edge:#a9c192}
@@ -58,5 +58,5 @@
 #broto [hidden]{display:none!important}
 @keyframes broto-ray{to{stroke-dashoffset:0}}
 @keyframes broto-flower{from{transform:scale(.7)}to{transform:scale(1)}}
-@media(max-width:500px){#broto .b-lab,#broto .b-selection{padding:16px 10px}#broto .b-surface{padding:8px 0}#broto .b-score{gap:8px}#broto .b-player{padding:8px}#broto .b-player-name{font-size:12px}#broto .b-avatar{width:27px;height:27px;flex-basis:27px}#broto .b-score-main>strong{font-size:27px}#broto .b-score-main>span{font-size:10px}#broto .b-score-details{font-size:11px;gap:5px}#broto .b-round{font-size:14px}#broto .b-turn{font-size:13px}#broto .b-board-wrap{padding:5px}#broto .b-board{gap:4px}#broto .b-axes{gap:3px}#broto .b-axes>span{width:20px;height:18px;font-size:16px}#broto .b-status{font-size:12px;min-height:54px}#broto .stage-tools{gap:8px}}
+@media(max-width:500px){#broto .b-lab,#broto .b-selection{padding:16px 10px}#broto .b-surface{padding:8px 0}#broto .b-score{gap:8px}#broto .b-player{padding:8px}#broto .b-player-name{font-size:12px}#broto .b-avatar{width:27px;height:27px;flex-basis:27px}#broto .b-score-main>strong{font-size:27px}#broto .b-score-main>span{font-size:10px}#broto .b-score-details{font-size:11px;gap:5px}#broto .b-round{font-size:14px}#broto .b-turn{font-size:13px}#broto .b-board-wrap{padding:5px}#broto .b-board{gap:4px}#broto .b-axes{gap:3px}#broto .b-axes>span{width:20px;height:18px;font-size:16px}#broto .b-status{font-size:12px;min-height:54px}#broto .stage-tools{gap:12px}}
 @media(prefers-reduced-motion:reduce){#broto *,#broto *::before,#broto *::after{animation:none!important;transition:none!important}}
