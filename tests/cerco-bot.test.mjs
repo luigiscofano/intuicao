@@ -1,0 +1,12 @@
+import test from 'node:test';
+import assert from 'node:assert/strict';
+import {createCerco,legalCercoMoves,applyCercoMove} from '../dist/cerco/engine.mjs';
+import {chooseCercoMove,chooseCercoMoveAsync,evaluateCerco} from '../dist/cerco/bot.mjs';
+const apply=(s,m)=>applyCercoMove(s,m).state;
+const wins=s=>legalCercoMoves(s).filter(m=>apply(s,m).over);
+const safe=s=>legalCercoMoves(s).filter(m=>{const n=apply(s,m);return n.over||!wins(n).length;});
+test('three actual difficulties return legal moves with bounded reported search',()=>{for(const difficulty of ['beginner','intermediate','strong'])for(const starter of [0,1]){const s=createCerco(starter),r=chooseCercoMove(s,{difficulty,nodeBudget:700,seed:5});assert(legalCercoMoves(s).some(m=>JSON.stringify(m)===JSON.stringify(r.move)));assert(r.nodes<=r.nodeBudget);assert(r.nodeBudget<=700);assert.equal(r.limited,true);assert(Number.isFinite(evaluateCerco(s,0)));}});
+test('intermediate and strong take immediate wins and avoid one-ply losses when possible',()=>{let seed=99,checkedWins=0,checkedDefense=0;for(let i=0;i<100;i++){let s=createCerco(i%2);while(!s.over){const ws=wins(s),ss=safe(s),moves=legalCercoMoves(s);if(ws.length||ss.length&&ss.length<moves.length){for(const difficulty of ['intermediate','strong']){const r=chooseCercoMove(s,{difficulty,nodeBudget:600});assert(r.nodes<=r.nodeBudget);if(ws.length){assert(apply(s,r.move).over);checkedWins++;}else{assert(!wins(apply(s,r.move)).length);checkedDefense++;}}}seed=(Math.imul(seed,1664525)+1013904223)>>>0;s=apply(s,moves[seed%moves.length]);}}assert(checkedWins>0);assert(checkedDefense>0);});
+test('async fallback matches synchronous search and yields to event loop',async()=>{const s=createCerco(),options={difficulty:'strong',nodeBudget:1000};let yielded=false;const timer=setTimeout(()=>{yielded=true;},0);const r=await chooseCercoMoveAsync(s,options);clearTimeout(timer);assert(yielded);assert.deepEqual(r,chooseCercoMove(s,options));});
+test('async fallback cancellation returns AbortError, never a stale move',async()=>{const controller=new AbortController();const promise=chooseCercoMoveAsync(createCerco(),{difficulty:'strong',nodeBudget:12000,signal:controller.signal});controller.abort();await assert.rejects(promise,{name:'AbortError'});});
+test('closed game produces no bot move',()=>{let s=createCerco();while(!s.over)s=apply(s,legalCercoMoves(s)[0]);assert.equal(chooseCercoMove(s).move,null);});

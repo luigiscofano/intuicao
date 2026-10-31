@@ -53,9 +53,9 @@ test('registration preserves all nine existing information, illustrations and ic
  [GAME_INFO,'b40b3cc2a94ee10fcd1953d7f6e7a226d870a85f4a1d215d9e886f8c79de659f'],
  [RULE_EXAMPLES,'a2d1b40c86b5024daed15bc787e83f3912aa2a54f929a5d72f06a211d55aec56'],
  [GAME_NAV_ICONS,'a3dd0753da93030ceb5833e82371b720a20638092ef49edc51881e3a526afcab']]){
-  const prior=Object.fromEntries(Object.entries(object).filter(([key])=>key!=='broto'));assert.equal(createHash('sha256').update(JSON.stringify(prior)).digest('hex'),expected);assert(object.broto);
+  const prior=Object.fromEntries(Object.entries(object).filter(([key])=>['light','cut','elo','prumo','pacto','desvio','sintonia','repasse','orbita'].includes(key)));assert.equal(createHash('sha256').update(JSON.stringify(prior)).digest('hex'),expected);assert(object.broto);
  }
- assert.deepEqual(CATEGORY_GAMES,{intuicao:['light','cut'],logica:['elo','prumo','pacto','sintonia','repasse','orbita'],versus:['desvio','broto']});
+ assert.deepEqual(CATEGORY_GAMES,{intuicao:['light','cut'],logica:['elo','prumo','pacto','sintonia','repasse','orbita'],versus:['desvio','broto','cerco']});
  assert.equal(GAME_INFO.broto.description,'Plante sementes, complete estímulos e escolha quem floresce.');
 });
 test('UI reuses applicable contracts and keeps storage and styles scoped',()=>{

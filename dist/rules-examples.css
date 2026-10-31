@@ -24,3 +24,9 @@
 @keyframes rpx-broto-pulse{0%,100%{opacity:0}30%,70%{opacity:1}}
 @keyframes rpx-broto-harvest{0%{opacity:0}20%,75%{opacity:1}100%{opacity:0}}
 @media(prefers-reduced-motion:reduce){.rpx-broto-plant,.rpx-broto-point{animation:none}.rpx-broto-ray,.rpx-broto-flower{animation:none;display:none}}
+
+/* CERCO: um deslocamento ortogonal e somente a origem fechada. */
+.rpx-cerco-move{animation:rpx-cerco-step .6s .5s both}
+.rpx-cerco-barrier{animation:rpx-appear .35s 1.1s both}
+@keyframes rpx-cerco-step{from{transform:translateY(-16px)}to{transform:translateY(0)}}
+@media(prefers-reduced-motion:reduce){.rpx-cerco-move,.rpx-cerco-barrier{animation:none}}

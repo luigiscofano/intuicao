@@ -55,31 +55,31 @@ body > footer .brand-dot{color:#997838}
 :where(body:not(:has(.lab:not([hidden]), #collection:not([hidden]) > .collection-lab))) > footer > span{font-family:Georgia,"Times New Roman",serif;font-size:26px;font-style:italic;letter-spacing:-.5px;font-weight:700}
 
 /* Shared selection roots. Play screens never match these. */
-:is(#selection, #collection > .level-screen, #repasse > .level-screen, #orbita > .level-screen, #broto > .level-screen){background:#fafbf7;border:1px solid #b3c1a8;border-radius:7px;padding:30px;box-shadow:0 3px #e7ebe2;color:#3b342e;margin-bottom:34px}
-:is(#selection, #collection > .level-screen, #repasse > .level-screen, #orbita > .level-screen, #broto > .level-screen) .eyebrow{color:#405e49;font-family:"Courier New",monospace;font-size:10px;letter-spacing:1.6px}
-:is(#selection, #collection > .level-screen, #repasse > .level-screen, #orbita > .level-screen, #broto > .level-screen) h2{font-family:Georgia,"Times New Roman",serif;font-weight:400;font-size:35px;line-height:1.3;letter-spacing:-.7px;color:#405e49}
-:is(#selection, #collection > .level-screen, #repasse > .level-screen, #orbita > .level-screen, #broto > .level-screen) > p:not(.eyebrow){font-size:14px;line-height:1.75;max-width:880px;color:#585644}
-:is(#selection, #collection > .level-screen, #repasse > .level-screen, #orbita > .level-screen, #broto > .level-screen) .stage-heading{font-family:"Courier New",monospace;font-size:14px;line-height:1.6;font-weight:600;letter-spacing:.4px;border-bottom:1px solid #cbd4c3;padding-bottom:10px;color:#405e49}
-:is(#selection, #collection > .level-screen, #repasse > .level-screen, #orbita > .level-screen, #broto > .level-screen) :is(button,select,.file-button){border:1px solid #b3c1a8;border-radius:5px;background:#ffffff;color:#3b342e;box-shadow:0 2px #e3e9dd}
-:is(#selection, #collection > .level-screen, #repasse > .level-screen, #orbita > .level-screen, #broto > .level-screen) :is(button,select,.file-button):not(.level-tile){font-family:system-ui,-apple-system,"Segoe UI",sans-serif;font-size:12px;line-height:1.6;font-weight:600;min-height:44px}
-:is(#selection, #collection > .level-screen, #repasse > .level-screen, #orbita > .level-screen, #broto > .level-screen) .primary{background:#405e49;color:#ffffff;border-color:#405e49;box-shadow:0 2px #354b3a}
-:is(#selection, #collection > .level-screen, #repasse > .level-screen, #orbita > .level-screen, #broto > .level-screen) .level-group{grid-template-columns:repeat(auto-fill,minmax(68px,1fr));gap:8px;margin:14px 0 22px}
-:is(#selection, #collection > .level-screen, #repasse > .level-screen, #orbita > .level-screen, #broto > .level-screen) .level-tile{border-radius:24%;min-height:64px;padding:5px;background:#f3f6ef;border-color:#c0cbb7;color:#3b342e;gap:4px;box-shadow:0 2px #dfe7d8}
-:is(#selection, #collection > .level-screen, #repasse > .level-screen, #orbita > .level-screen, #broto > .level-screen) .level-tile > span{font-family:"Courier New",monospace;font-size:22px;line-height:1.25;font-weight:400}
-:is(#selection, #collection > .level-screen, #repasse > .level-screen, #orbita > .level-screen, #broto > .level-screen) .level-tile > small{font-family:system-ui,sans-serif;font-size:10px;line-height:1.5;color:#62604c}
-:is(#selection, #collection > .level-screen, #repasse > .level-screen, #orbita > .level-screen, #broto > .level-screen) .level-tile.done{background:#486c4d;color:#fff;border-color:#405e49;box-shadow:0 2px #354b3a}
-:is(#selection, #collection > .level-screen, #repasse > .level-screen, #orbita > .level-screen, #broto > .level-screen) .level-tile.done > small{color:#fff}
-:is(#selection, #collection > .level-screen, #repasse > .level-screen, #orbita > .level-screen, #broto > .level-screen) .level-tile[aria-current=true]{outline:2px solid #997838;outline-offset:2px}
-:is(#selection, #collection > .level-screen, #repasse > .level-screen, #orbita > .level-screen, #broto > .level-screen) .duel-maps > button{background:#f3f6ef}
-:is(#selection, #collection > .level-screen, #repasse > .level-screen, #orbita > .level-screen, #broto > .level-screen) .duel-maps > button small{font-family:system-ui,sans-serif;color:#585644}
+:is(#selection, #collection > .level-screen, #repasse > .level-screen, #orbita > .level-screen, #broto > .level-screen, #cerco > .level-screen){background:#fafbf7;border:1px solid #b3c1a8;border-radius:7px;padding:30px;box-shadow:0 3px #e7ebe2;color:#3b342e;margin-bottom:34px}
+:is(#selection, #collection > .level-screen, #repasse > .level-screen, #orbita > .level-screen, #broto > .level-screen, #cerco > .level-screen) .eyebrow{color:#405e49;font-family:"Courier New",monospace;font-size:10px;letter-spacing:1.6px}
+:is(#selection, #collection > .level-screen, #repasse > .level-screen, #orbita > .level-screen, #broto > .level-screen, #cerco > .level-screen) h2{font-family:Georgia,"Times New Roman",serif;font-weight:400;font-size:35px;line-height:1.3;letter-spacing:-.7px;color:#405e49}
+:is(#selection, #collection > .level-screen, #repasse > .level-screen, #orbita > .level-screen, #broto > .level-screen, #cerco > .level-screen) > p:not(.eyebrow){font-size:14px;line-height:1.75;max-width:880px;color:#585644}
+:is(#selection, #collection > .level-screen, #repasse > .level-screen, #orbita > .level-screen, #broto > .level-screen, #cerco > .level-screen) .stage-heading{font-family:"Courier New",monospace;font-size:14px;line-height:1.6;font-weight:600;letter-spacing:.4px;border-bottom:1px solid #cbd4c3;padding-bottom:10px;color:#405e49}
+:is(#selection, #collection > .level-screen, #repasse > .level-screen, #orbita > .level-screen, #broto > .level-screen, #cerco > .level-screen) :is(button,select,.file-button){border:1px solid #b3c1a8;border-radius:5px;background:#ffffff;color:#3b342e;box-shadow:0 2px #e3e9dd}
+:is(#selection, #collection > .level-screen, #repasse > .level-screen, #orbita > .level-screen, #broto > .level-screen, #cerco > .level-screen) :is(button,select,.file-button):not(.level-tile){font-family:system-ui,-apple-system,"Segoe UI",sans-serif;font-size:12px;line-height:1.6;font-weight:600;min-height:44px}
+:is(#selection, #collection > .level-screen, #repasse > .level-screen, #orbita > .level-screen, #broto > .level-screen, #cerco > .level-screen) .primary{background:#405e49;color:#ffffff;border-color:#405e49;box-shadow:0 2px #354b3a}
+:is(#selection, #collection > .level-screen, #repasse > .level-screen, #orbita > .level-screen, #broto > .level-screen, #cerco > .level-screen) .level-group{grid-template-columns:repeat(auto-fill,minmax(68px,1fr));gap:8px;margin:14px 0 22px}
+:is(#selection, #collection > .level-screen, #repasse > .level-screen, #orbita > .level-screen, #broto > .level-screen, #cerco > .level-screen) .level-tile{border-radius:24%;min-height:64px;padding:5px;background:#f3f6ef;border-color:#c0cbb7;color:#3b342e;gap:4px;box-shadow:0 2px #dfe7d8}
+:is(#selection, #collection > .level-screen, #repasse > .level-screen, #orbita > .level-screen, #broto > .level-screen, #cerco > .level-screen) .level-tile > span{font-family:"Courier New",monospace;font-size:22px;line-height:1.25;font-weight:400}
+:is(#selection, #collection > .level-screen, #repasse > .level-screen, #orbita > .level-screen, #broto > .level-screen, #cerco > .level-screen) .level-tile > small{font-family:system-ui,sans-serif;font-size:10px;line-height:1.5;color:#62604c}
+:is(#selection, #collection > .level-screen, #repasse > .level-screen, #orbita > .level-screen, #broto > .level-screen, #cerco > .level-screen) .level-tile.done{background:#486c4d;color:#fff;border-color:#405e49;box-shadow:0 2px #354b3a}
+:is(#selection, #collection > .level-screen, #repasse > .level-screen, #orbita > .level-screen, #broto > .level-screen, #cerco > .level-screen) .level-tile.done > small{color:#fff}
+:is(#selection, #collection > .level-screen, #repasse > .level-screen, #orbita > .level-screen, #broto > .level-screen, #cerco > .level-screen) .level-tile[aria-current=true]{outline:2px solid #997838;outline-offset:2px}
+:is(#selection, #collection > .level-screen, #repasse > .level-screen, #orbita > .level-screen, #broto > .level-screen, #cerco > .level-screen) .duel-maps > button{background:#f3f6ef}
+:is(#selection, #collection > .level-screen, #repasse > .level-screen, #orbita > .level-screen, #broto > .level-screen, #cerco > .level-screen) .duel-maps > button small{font-family:system-ui,sans-serif;color:#585644}
 /* Existing preview symbols preserved exactly, not recolored or pixelized. */
-:is(#selection, #collection > .level-screen, #repasse > .level-screen, #orbita > .level-screen, #broto > .level-screen) .map-preview{color:#25372e}
-:is(#selection, #collection > .level-screen, #repasse > .level-screen, #orbita > .level-screen, #broto > .level-screen) .collection-small{font-family:system-ui,sans-serif}
-:is(#selection, #collection > .level-screen, #repasse > .level-screen, #orbita > .level-screen, #broto > .level-screen) :is(button,select,.file-button):hover:not(:disabled){border-color:#405e49;box-shadow:inset 0 0 0 1px #71865b,0 2px #b7c09b}
+:is(#selection, #collection > .level-screen, #repasse > .level-screen, #orbita > .level-screen, #broto > .level-screen, #cerco > .level-screen) .map-preview{color:#25372e}
+:is(#selection, #collection > .level-screen, #repasse > .level-screen, #orbita > .level-screen, #broto > .level-screen, #cerco > .level-screen) .collection-small{font-family:system-ui,sans-serif}
+:is(#selection, #collection > .level-screen, #repasse > .level-screen, #orbita > .level-screen, #broto > .level-screen, #cerco > .level-screen) :is(button,select,.file-button):hover:not(:disabled){border-color:#405e49;box-shadow:inset 0 0 0 1px #71865b,0 2px #b7c09b}
 #main > .games > button:hover{border-color:#405e49}
-:is(#selection, #collection > .level-screen, #repasse > .level-screen, #orbita > .level-screen, #broto > .level-screen) button:active:not(:disabled), #main > .games > button:active{box-shadow:inset 2px 2px #3b342e33}
-:is(#selection, #collection > .level-screen, #repasse > .level-screen, #orbita > .level-screen, #broto > .level-screen) :is(button,select,input):focus-visible, #main > .games > button:focus-visible, body > header a:focus-visible{outline:3px solid #405e49;outline-offset:4px}
-:is(#selection, #collection > .level-screen, #repasse > .level-screen, #orbita > .level-screen, #broto > .level-screen) button:disabled{opacity:.45}
+:is(#selection, #collection > .level-screen, #repasse > .level-screen, #orbita > .level-screen, #broto > .level-screen, #cerco > .level-screen) button:active:not(:disabled), #main > .games > button:active{box-shadow:inset 2px 2px #3b342e33}
+:is(#selection, #collection > .level-screen, #repasse > .level-screen, #orbita > .level-screen, #broto > .level-screen, #cerco > .level-screen) :is(button,select,input):focus-visible, #main > .games > button:focus-visible, body > header a:focus-visible{outline:3px solid #405e49;outline-offset:4px}
+:is(#selection, #collection > .level-screen, #repasse > .level-screen, #orbita > .level-screen, #broto > .level-screen, #cerco > .level-screen) button:disabled{opacity:.45}
 
 @media(max-width:1050px){
  #main > .intro h1{font-size:58px}
@@ -99,13 +99,13 @@ body > footer .brand-dot{color:#997838}
  :where(body:not(:has(.lab:not([hidden]), #collection:not([hidden]) > .collection-lab))) #main > .games > button{font-size:14px;padding:14px 12px;line-height:1.5}
  :where(body:not(:has(.lab:not([hidden]), #collection:not([hidden]) > .collection-lab))) #main > .games > button > span{font-size:11px;display:block;margin-bottom:2px}
  :where(body:not(:has(.lab:not([hidden]), #collection:not([hidden]) > .collection-lab))) #main > .games > button small{font-size:10px;margin:3px 0 0}
- :is(#selection, #collection > .level-screen, #repasse > .level-screen, #orbita > .level-screen, #broto > .level-screen){padding:22px 14px;box-shadow:0 3px #e7ebe2}
- :is(#selection, #collection > .level-screen, #repasse > .level-screen, #orbita > .level-screen, #broto > .level-screen) h2{font-size:28px}
- :is(#selection, #collection > .level-screen, #repasse > .level-screen, #orbita > .level-screen, #broto > .level-screen) > p:not(.eyebrow){font-size:13px}
- :is(#selection, #collection > .level-screen, #repasse > .level-screen, #orbita > .level-screen, #broto > .level-screen) .stage-heading{font-size:13px}
- :is(#selection, #collection > .level-screen, #repasse > .level-screen, #orbita > .level-screen, #broto > .level-screen) .level-group{grid-template-columns:repeat(4,minmax(0,1fr));gap:6px}
- :is(#selection, #collection > .level-screen, #repasse > .level-screen, #orbita > .level-screen, #broto > .level-screen) .level-tile > span{font-size:20px}
- :is(#selection, #collection > .level-screen, #repasse > .level-screen, #orbita > .level-screen, #broto > .level-screen) .level-tile > small{font-size:9px}
+ :is(#selection, #collection > .level-screen, #repasse > .level-screen, #orbita > .level-screen, #broto > .level-screen, #cerco > .level-screen){padding:22px 14px;box-shadow:0 3px #e7ebe2}
+ :is(#selection, #collection > .level-screen, #repasse > .level-screen, #orbita > .level-screen, #broto > .level-screen, #cerco > .level-screen) h2{font-size:28px}
+ :is(#selection, #collection > .level-screen, #repasse > .level-screen, #orbita > .level-screen, #broto > .level-screen, #cerco > .level-screen) > p:not(.eyebrow){font-size:13px}
+ :is(#selection, #collection > .level-screen, #repasse > .level-screen, #orbita > .level-screen, #broto > .level-screen, #cerco > .level-screen) .stage-heading{font-size:13px}
+ :is(#selection, #collection > .level-screen, #repasse > .level-screen, #orbita > .level-screen, #broto > .level-screen, #cerco > .level-screen) .level-group{grid-template-columns:repeat(4,minmax(0,1fr));gap:6px}
+ :is(#selection, #collection > .level-screen, #repasse > .level-screen, #orbita > .level-screen, #broto > .level-screen, #cerco > .level-screen) .level-tile > span{font-size:20px}
+ :is(#selection, #collection > .level-screen, #repasse > .level-screen, #orbita > .level-screen, #broto > .level-screen, #cerco > .level-screen) .level-tile > small{font-size:9px}
 }
 @media(max-width:370px){
  #main > .intro{padding-bottom:26px}
@@ -116,12 +116,12 @@ body > footer .brand-dot{color:#997838}
 /* Delicate inner frames, platform only. They do not consume layout space. */
 #main > .games > button{box-shadow:inset 0 -2px #e8ede3,0 1px #dce4d4}
 #main > .games > button[aria-pressed=true]{box-shadow:inset 0 -2px #314d39,0 1px #303f32}
-:is(#selection, #collection > .level-screen, #repasse > .level-screen, #orbita > .level-screen, #broto > .level-screen){box-shadow:inset 0 0 0 5px #fafbf7,inset 0 0 0 6px #e5eadd,0 3px #e3e9dd}
-:is(#selection, #collection > .level-screen, #repasse > .level-screen, #orbita > .level-screen, #broto > .level-screen) .duel-maps > button{box-shadow:inset 0 -2px #e8ede3,0 1px #dce4d4}
+:is(#selection, #collection > .level-screen, #repasse > .level-screen, #orbita > .level-screen, #broto > .level-screen, #cerco > .level-screen){box-shadow:inset 0 0 0 5px #fafbf7,inset 0 0 0 6px #e5eadd,0 3px #e3e9dd}
+:is(#selection, #collection > .level-screen, #repasse > .level-screen, #orbita > .level-screen, #broto > .level-screen, #cerco > .level-screen) .duel-maps > button{box-shadow:inset 0 -2px #e8ede3,0 1px #dce4d4}
 /* Keep the established menu header and mobile tile metrics unchanged. */
 :where(body:not(:has(.lab:not([hidden]), #collection:not([hidden]) > .collection-lab))) > header{position:relative;z-index:1}
 @media(max-width:760px){
- :is(#selection, #collection > .level-screen, #repasse > .level-screen, #orbita > .level-screen, #broto > .level-screen) .level-tile{min-height:58px}
+ :is(#selection, #collection > .level-screen, #repasse > .level-screen, #orbita > .level-screen, #broto > .level-screen, #cerco > .level-screen) .level-tile{min-height:58px}
 }
 /* Pressed feedback follows frame styles and remains metric-neutral. */
 #main > .games > button:active{box-shadow:inset 2px 2px #3b342e33}
@@ -207,17 +207,17 @@ body > header::before{content:"";position:absolute;inset:-28px 0 -1px;pointer-ev
 
 /* Continuous tree perimeter. Replace the former closed rectangles and detached
    accents with tangent joins; decorations never change the content box. */
-:is(#selection, #collection > .level-screen, #repasse > .level-screen, #orbita > .level-screen, #broto > .level-screen){position:relative;--frame-flare:max(38px,calc((100vw - 1280px)/2 + 28px));background:#fff;border-bottom-color:transparent;border-bottom-left-radius:0;border-bottom-right-radius:0;box-shadow:none;filter:drop-shadow(0 2px 4px #34452a12)}
-:is(#selection, #collection > .level-screen, #repasse > .level-screen, #orbita > .level-screen, #broto > .level-screen)::before{content:none}
-body:has(#selection:not([hidden]), #collection:not([hidden]) > .level-screen, #repasse:not([hidden]) > .level-screen, #orbita:not([hidden]) > .level-screen, #broto:not([hidden]) > .level-screen) > footer{position:relative;z-index:1;background:transparent;border-top-color:transparent;border-bottom-color:transparent;box-shadow:none}
-:is(#selection, #collection > .level-screen, #repasse > .level-screen, #orbita > .level-screen, #broto > .level-screen)::after{content:"";position:absolute;left:calc(-1 * var(--frame-flare) - .5px);width:calc(100% + 2 * var(--frame-flare) + 1px);bottom:-246px;height:247px;pointer-events:none;user-select:none;background:url("platform-assets/continuous-root-left.svg") left/var(--frame-flare) 100% no-repeat,url("platform-assets/continuous-root-right.svg") right/var(--frame-flare) 100% no-repeat,linear-gradient(#fff,#fff) center/calc(100% - 2 * var(--frame-flare)) 100% no-repeat}
+:is(#selection, #collection > .level-screen, #repasse > .level-screen, #orbita > .level-screen, #broto > .level-screen, #cerco > .level-screen){position:relative;--frame-flare:max(38px,calc((100vw - 1280px)/2 + 28px));background:#fff;border-bottom-color:transparent;border-bottom-left-radius:0;border-bottom-right-radius:0;box-shadow:none;filter:drop-shadow(0 2px 4px #34452a12)}
+:is(#selection, #collection > .level-screen, #repasse > .level-screen, #orbita > .level-screen, #broto > .level-screen, #cerco > .level-screen)::before{content:none}
+body:has(#selection:not([hidden]), #collection:not([hidden]) > .level-screen, #repasse:not([hidden]) > .level-screen, #orbita:not([hidden]) > .level-screen, #broto:not([hidden]) > .level-screen, #cerco:not([hidden]) > .level-screen) > footer{position:relative;z-index:1;background:transparent;border-top-color:transparent;border-bottom-color:transparent;box-shadow:none}
+:is(#selection, #collection > .level-screen, #repasse > .level-screen, #orbita > .level-screen, #broto > .level-screen, #cerco > .level-screen)::after{content:"";position:absolute;left:calc(-1 * var(--frame-flare) - .5px);width:calc(100% + 2 * var(--frame-flare) + 1px);bottom:-246px;height:247px;pointer-events:none;user-select:none;background:url("platform-assets/continuous-root-left.svg") left/var(--frame-flare) 100% no-repeat,url("platform-assets/continuous-root-right.svg") right/var(--frame-flare) 100% no-repeat,linear-gradient(#fff,#fff) center/calc(100% - 2 * var(--frame-flare)) 100% no-repeat}
 
 #main > .intro{--hero-flare:max(14px,calc((100vw - 1280px)/2 + 4px))}
 #main > .intro::before{inset:101px -24.5px 0;background:#fff;border:1px solid #b3c1a8;border-top:0;border-radius:0 0 12px 12px;box-shadow:none}
 #main > .intro::after{content:"";position:absolute;top:8px;left:calc(-24px - var(--hero-flare));width:calc(100% + 48px + 2 * var(--hero-flare));height:94px;background:url("platform-assets/soft-crown-left.svg") left/var(--hero-flare) 100% no-repeat,url("platform-assets/soft-crown-right.svg") right/var(--hero-flare) 100% no-repeat,linear-gradient(#fff,#fff) center/calc(100% - 2 * var(--hero-flare)) 100% no-repeat;pointer-events:none;user-select:none;z-index:-1}
 @media(max-width:760px){
- :is(#selection, #collection > .level-screen, #repasse > .level-screen, #orbita > .level-screen, #broto > .level-screen){--frame-flare:14px}
- :is(#selection, #collection > .level-screen, #repasse > .level-screen, #orbita > .level-screen, #broto > .level-screen)::after{bottom:-202px;height:203px}
+ :is(#selection, #collection > .level-screen, #repasse > .level-screen, #orbita > .level-screen, #broto > .level-screen, #cerco > .level-screen){--frame-flare:14px}
+ :is(#selection, #collection > .level-screen, #repasse > .level-screen, #orbita > .level-screen, #broto > .level-screen, #cerco > .level-screen)::after{bottom:-202px;height:203px}
  #main > .intro{--hero-flare:6px}
  #main > .intro::before{inset:45px -8.5px 0;border-radius:0 0 9px 9px}
  #main > .intro::after{top:6px;left:calc(-8px - var(--hero-flare));width:calc(100% + 16px + 2 * var(--hero-flare));height:40px}
@@ -270,7 +270,7 @@ body:has(.lab:not([hidden]), #collection:not([hidden]) > .collection-lab) #main 
 #main > .intro h1::before,#main > .intro h1::after{content:"";position:absolute;pointer-events:none;user-select:none;background:url("platform-assets/flower-green-original.png") center/contain no-repeat;opacity:.55}
 #main > .intro h1::before{right:-8px;top:18px;width:42px;height:42px;transform:rotate(12deg)}
 #main > .intro h1::after{right:-5px;top:53px;width:26px;height:26px;transform:rotate(-22deg);opacity:.36}
-:is(#selection, #collection > .level-screen, #repasse > .level-screen, #orbita > .level-screen, #broto > .level-screen)::before{content:"";position:absolute;right:4px;top:6px;width:48px;height:56px;background:url("platform-assets/flower-green-original.png") right top/34px 34px no-repeat,url("platform-assets/flower-green-original.png") left bottom/23px 23px no-repeat;pointer-events:none;user-select:none;opacity:.5}
+:is(#selection, #collection > .level-screen, #repasse > .level-screen, #orbita > .level-screen, #broto > .level-screen, #cerco > .level-screen)::before{content:"";position:absolute;right:4px;top:6px;width:48px;height:56px;background:url("platform-assets/flower-green-original.png") right top/34px 34px no-repeat,url("platform-assets/flower-green-original.png") left bottom/23px 23px no-repeat;pointer-events:none;user-select:none;opacity:.5}
 :is(#main > .lab, #collection > .collection-lab, #repasse > .repasse-lab, #orbita > .orbita-lab) > .lab-heading{position:relative}
 :is(#main > .lab, #collection > .collection-lab, #repasse > .repasse-lab, #orbita > .orbita-lab) > .lab-heading::before,:is(#main > .lab, #collection > .collection-lab, #repasse > .repasse-lab, #orbita > .orbita-lab) > .lab-heading::after{content:"";position:absolute;left:1px;width:24px;height:24px;background:url("platform-assets/flower-green-original.png") center/contain no-repeat;pointer-events:none;user-select:none;opacity:.52}
 :is(#main > .lab, #collection > .collection-lab, #repasse > .repasse-lab, #orbita > .orbita-lab) > .lab-heading::before{top:2px;transform:rotate(-18deg)}
@@ -279,7 +279,7 @@ body > footer::after{content:"";position:absolute;right:30px;top:18px;width:58px
 @media(max-width:760px){
  #main > .intro h1::before{right:-8px;top:6px;width:28px;height:28px}
  #main > .intro h1::after{right:-5px;top:30px;width:20px;height:20px}
- :is(#selection, #collection > .level-screen, #repasse > .level-screen, #orbita > .level-screen, #broto > .level-screen)::before{right:1px;top:2px;width:30px;height:42px;background-size:25px 25px,18px 18px}
+ :is(#selection, #collection > .level-screen, #repasse > .level-screen, #orbita > .level-screen, #broto > .level-screen, #cerco > .level-screen)::before{right:1px;top:2px;width:30px;height:42px;background-size:25px 25px,18px 18px}
  :is(#main > .lab, #collection > .collection-lab, #repasse > .repasse-lab, #orbita > .orbita-lab) > .lab-heading::before,:is(#main > .lab, #collection > .collection-lab, #repasse > .repasse-lab, #orbita > .orbita-lab) > .lab-heading::after{left:-1px;width:18px;height:18px}
  body > footer::after{right:18px;top:16px;width:42px;height:44px;background-size:30px 30px,21px 21px}
 }

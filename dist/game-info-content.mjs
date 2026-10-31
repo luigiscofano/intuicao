@@ -141,3 +141,19 @@ GAME_INFO.broto={
  purpose:'Praticar antecipação e planejamento por turnos, acompanhando os efeitos imediatos de um plantio e as possibilidades que ele deixa para a próxima pessoa.',
  why:'A proposta é explorar decisões com consequências compartilhadas: uma semente pode preparar um broto próprio, completar uma flor adversária ou abrir passagem para uma jogada futura.'
 };
+
+// CERCO: conteúdo local, sem modificar as descrições dos jogos anteriores.
+GAME_INFO.cerco={
+ name:'CERCO',
+ description:'Mova suas peças, feche caminhos e deixe o adversário sem saída.',
+ summary:'Faça a última jogada: quem ficar sem movimentos na sua vez perde.',
+ rules:[
+  'Cada time controla três peças em uma grade 5 × 5. Escolha uma peça sua e mova exatamente uma casa para cima, baixo, esquerda ou direita, para um destino vazio e sem barreira.',
+  'Selecione a peça, escolha um destino, observe a prévia e confirme. A casa de origem vira uma barreira neutra e permanente para os dois times; só a origem fica bloqueada.',
+  'Não há diagonais, saltos, empurrões ou capturas. As seis peças permanecem no tabuleiro. Não é permitido passar a vez.',
+  'Depois de cada jogada, confira o próximo time: se nenhuma de suas três peças puder se mover, ele perde. Uma peça presa não encerra o jogo enquanto outra do mesmo time tiver uma saída.',
+  'O Verde começa a primeira partida. A revanche alterna o iniciador e mantém as equipes e os mascotes. Todos os mascotes têm exatamente os mesmos movimentos: a escolha é apenas visual.'
+ ],
+ purpose:'Praticar planejamento por turnos e leitura de caminhos, observando como a casa abandonada altera as opções de ambos os times.',
+ why:'A proposta é tornar visíveis as consequências de uma decisão: mover uma peça também fecha uma passagem, e cada equipe precisa conservar alguma saída para sua próxima vez.'
+};

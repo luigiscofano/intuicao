@@ -58,3 +58,16 @@ RULE_EXAMPLES.broto={steps:[
  `<g class="rpx-broto-flower"><path d="M183 29c-7-9-14 1-6 6-11 3-5 14 3 8 1 11 13 8 9-2 10 4 13-8 3-9 6-8-5-14-9-3Z" fill="${green}"/><circle cx="183" cy="36" r="4" fill="${gold}"/></g>`+
  `<g class="rpx-broto-point">${txt(183,48,'+1 ao dono',10)}</g>`+
  txt(120,116,'A flor sai; a semente nova fica sem marcas.',9)+txt(120,132,'A prévia não altera a partida.',9))};
+
+// Exemplo CERCO reproduzível: abertura oficial, Verde L1C3 → L2C3.
+const cercoExampleGrid=x=>Array.from({length:25},(_,i)=>rect(x+(i%5)*16,27+Math.floor(i/5)*16,16,16,'#fafbf7')).join('');
+const cercoExamplePiece=(x,y,team)=>circle(x,y,5.5,team==='V'?green:gold)+`<text x="${x}" y="${y+2.5}" text-anchor="middle" font-size="7" font-family="system-ui" style="fill:${team==='V'?'#fff':ink}">${team}</text>`;
+const cercoExampleTeam=(x,after)=>[0,2,4].map(c=>(after&&c===2?'':cercoExamplePiece(x+c*16+8,35,'V'))+cercoExamplePiece(x+c*16+8,99,'A')).join('');
+RULE_EXAMPLES.cerco={steps:[
+ 'Mova uma peça sua uma casa para cima, baixo, esquerda ou direita. Escolha um destino vazio e sem barreira, observe a prévia e confirme.',
+ 'A casa que a peça deixou vira uma barreira para os dois times. Não há saltos, diagonais ou capturas: as seis peças continuam no tabuleiro.',
+ 'Quem começar a própria vez sem nenhum movimento perde. Uma peça presa não basta: outra peça do mesmo time ainda pode ter saída.'
+],svg:wrap(txt(54,15,'Antes',10)+txt(184,15,'Depois',10)+cercoExampleGrid(14)+cercoExampleTeam(14,false)+arrow()+cercoExampleGrid(144)+cercoExampleTeam(144,true)+
+ `<g class="rpx-cerco-barrier">${rect(177,28,14,14,'#d4dacd')}${line(180,32,188,32,'#7c8973',1)}${line(180,37,188,37,'#7c8973',1)}</g>`+
+ `<g class="rpx-cerco-move">${cercoExamplePiece(184,51,'V')}</g>`+
+ txt(120,120,'Verde: L1C3 → L2C3. A origem fecha.',9)+txt(120,134,'As seis peças permanecem no tabuleiro.',9))};

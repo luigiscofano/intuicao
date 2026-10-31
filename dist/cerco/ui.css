@@ -1,0 +1,62 @@
+/* CERCO não modifica tabuleiros, controles ou mascotes dos outros jogos. */
+#cerco .ce-lab,#cerco .ce-selection{padding:20px 22px;background:#f8f9f3}
+#cerco .lab-heading{margin:12px 0}
+#cerco .ce-objective{margin:3px 0 10px;color:#52634e}
+#cerco .ce-workspace{display:grid!important;grid-template-columns:minmax(0,1fr)!important;gap:12px;align-items:start}
+#cerco .ce-surface{padding:10px 12px;background:#f8f9f3;background-image:none;border:0;min-width:0;box-shadow:none}
+#cerco .stage-tools{display:flex;flex-wrap:wrap;align-items:center;gap:14px;margin:0 0 24px}
+#cerco .stage-tools>button,#cerco .stage-tools summary{min-height:44px}
+#cerco .ce-team-0{--ce-base:#e1edce;--ce-edge:#73965e;--ce-ink:#315e35}
+#cerco .ce-team-1{--ce-base:#f5e7b2;--ce-edge:#b99b46;--ce-ink:#705a1d}
+#cerco .ce-setup-teams{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:14px;max-width:650px;margin:16px 0}
+#cerco .ce-setup-team{padding:14px;border:1px solid var(--ce-edge);border-radius:15px;background:var(--ce-base);color:var(--ce-ink)}
+#cerco .ce-setup-team label{display:grid;gap:6px;font-size:13px}
+#cerco .ce-setup-team select{max-width:100%;width:100%;min-width:0;min-height:44px}
+#cerco .ce-setup-piece{width:65px;height:65px;margin:10px 0}
+#cerco .ce-setup-controls{display:flex;align-items:end;flex-wrap:wrap;gap:14px}
+#cerco .ce-setup-controls label{display:grid;gap:6px}
+#cerco .ce-setup-controls select,#cerco .ce-setup-controls button{min-height:44px;max-width:100%}
+#cerco .ce-teams{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));max-width:560px;margin:0 auto;gap:12px}
+#cerco .ce-team-card{display:flex;gap:10px;align-items:center;background:var(--ce-base);border:1px solid var(--ce-edge);border-radius:14px;padding:8px 12px;color:var(--ce-ink);font-size:14px;min-width:0}
+#cerco .ce-team-card .ce-piece{width:38px;height:38px;flex:0 0 38px}
+#cerco .ce-team-card.ce-current{outline:2px solid var(--ce-ink);outline-offset:2px}
+#cerco .ce-turn{text-align:center;margin:14px 0 10px;line-height:1.4;font-weight:750}
+#cerco .ce-board-wrap{width:min(100%,374px);margin:0 auto;padding:6px;border:1px solid #b6c3a8;border-radius:17px;background:#fff;overflow:visible;min-width:0}
+#cerco .ce-board{display:grid;grid-template-columns:repeat(5,minmax(0,1fr));gap:4px;width:100%;position:relative;isolation:isolate;background:transparent;border:0;padding:0;min-width:0}
+#cerco .ce-cell{position:relative;aspect-ratio:1;display:flex;align-items:center;justify-content:center;min-width:0;min-height:0;width:100%;height:auto;margin:0;padding:3px;border:1px solid #d5decb;border-radius:9px;background:#f8faf3;box-shadow:none;transform:none;touch-action:manipulation;overflow:visible}
+#cerco .ce-cell:focus-visible{outline:3px solid #42693a;outline-offset:2px;z-index:4}
+#cerco .ce-selected{outline:2px solid #3f6b38;outline-offset:1px;z-index:2}
+#cerco .ce-cell.ce-legal{background:#edf4e4;border:2px dashed #96ae78}
+#cerco .ce-cell.ce-preview{border:2px solid #4e7042;background:#f0f6e7}
+#cerco .ce-piece{position:relative;display:flex;align-items:center;justify-content:center;box-sizing:border-box;width:100%;height:100%;background:var(--ce-base);border:1.5px solid var(--ce-edge);border-radius:9px;padding:5px;color:var(--ce-ink)}
+#cerco .ce-team-1.ce-piece{border-style:double;border-width:3px;padding:3.5px}
+#cerco .ce-mascot{width:100%;height:100%;display:block;background:#fff;border-radius:4px;overflow:hidden}
+#cerco .ce-team-mark{position:absolute;right:1px;bottom:0;font-size:10px;line-height:1.2;background:var(--ce-base);border-radius:3px;padding:0 1px;color:var(--ce-ink)}
+#cerco .ce-ghost{opacity:.55}
+#cerco .ce-empty{font-size:20px;color:#b1bea2;line-height:1}
+#cerco .ce-barrier{background:repeating-linear-gradient(135deg,#e2e5dd 0 5px,#d9ded2 5px 7px);border-color:#c0c8b7;color:#727e67}
+#cerco .ce-barrier-mark{font-size:24px;font-weight:700;line-height:1;color:#7b8670}
+#cerco .ce-future-barrier{background:#e3e7dc;border:2px dashed #8c9780}
+#cerco .ce-future-barrier>.ce-piece{opacity:.3}
+#cerco .ce-future-mark{position:absolute;font-size:26px;font-weight:700;color:#697860;pointer-events:none}
+#cerco .ce-moving-origin{z-index:3}
+#cerco .ce-moving-origin>.ce-piece{animation:cerco-step .3s ease-in-out forwards}
+#cerco .ce-check{display:flex;justify-content:center;align-items:center;flex-wrap:wrap;gap:12px;padding:12px 0 4px;border:0;background:transparent;min-height:54px}
+#cerco .ce-check>button{min-height:44px}
+#cerco .ce-status{font-size:13px;line-height:1.5;min-height:42px;margin:5px auto 0;text-align:center;max-width:620px}
+#cerco .ce-help{margin:10px auto;max-width:620px;text-align:center}
+#cerco .ce-help .hint{font-size:13px;line-height:1.55}
+#cerco .ce-result-badge{margin:12px auto;max-width:620px;background:#eaf1df;color:#375e3e}
+#cerco .level-actions{display:flex;justify-content:center;flex-wrap:wrap;gap:12px;margin:0;padding:8px 0;border:0;background:transparent;min-height:0}
+#cerco .rules-sidebar{grid-column:1;position:static;max-height:none;overflow:visible;border-top:0;background:#f8f9f3;min-width:0}
+#cerco .rules-more{margin-top:12px}
+#cerco .ce-example-grid{display:grid;grid-template-columns:repeat(5,minmax(0,1fr));gap:3px;max-width:280px;margin:10px 0}
+#cerco .ce-example-grid>span{display:flex;align-items:center;justify-content:center;aspect-ratio:1;border:1px solid #cbd6c1;border-radius:8px;padding:3px;background:#fafcf5}
+#cerco .ce-example-grid>.ce-barrier{background:#dce1d4}
+#cerco .ce-example-grid>.ce-legal{background:#e5f0d8;border:2px dashed #98b17c}
+#cerco [hidden]{display:none!important}
+@keyframes cerco-step{to{transform:translate(var(--ce-dx),var(--ce-dy))}}
+@media(max-width:500px){#cerco .ce-lab,#cerco .ce-selection{padding:16px 8px}#cerco .ce-surface{padding:8px 0}#cerco .ce-teams{gap:8px}#cerco .ce-team-card{padding:7px 6px;font-size:11px;gap:4px}#cerco .ce-team-card .ce-piece{width:30px;height:30px;flex-basis:30px;padding:3px}#cerco .ce-board-wrap{padding:5px}#cerco .ce-cell{padding:2px}#cerco .ce-piece{padding:3px;border-radius:7px}#cerco .ce-team-1.ce-piece{padding:1.5px}#cerco .ce-team-mark{font-size:9px}#cerco .ce-turn{font-size:14px}#cerco .ce-status{font-size:12px;min-height:54px}#cerco .ce-setup-teams{gap:8px}#cerco .ce-setup-team{padding:9px;font-size:13px}#cerco .ce-setup-team select{font-size:12px}#cerco .stage-tools{gap:12px}}
+@media(prefers-reduced-motion:reduce){#cerco *,#cerco *::before,#cerco *::after{animation:none!important;transition:none!important}}
+
+#cerco .ce-result-badge.ce-result-loss{background:#f1eee7;color:#5d6255}
