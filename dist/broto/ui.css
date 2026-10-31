@@ -63,8 +63,6 @@
 
 /* A geometria muda; o jardim clássico mantém seus tamanhos originais. */
 #broto .b-map-setup{margin:16px 0;padding:12px;border:1px solid #d5dfca;border-radius:14px;background:#f4f7ee;max-width:560px}
-#broto .b-map-setup>label{display:grid;gap:6px;font-size:14px;font-weight:700;max-width:300px}
-#broto .b-map-setup select{min-height:44px;width:100%;min-width:0}
 #broto #b-map-preview{display:flex;align-items:center;gap:14px;margin-top:12px}
 #broto #b-map-preview>p{font-size:13px;line-height:1.5;margin:0;flex:1;min-width:0}
 #broto .b-map-mini{display:grid;grid-template-columns:repeat(var(--b-map-cols),1fr);gap:3px;width:96px;flex:0 0 96px}
@@ -79,3 +77,23 @@
 #broto .b-dense .b-sprout,#broto .b-dense .b-flower{min-height:18px;max-height:31px}
 #broto .b-dense .b-owner-symbol{font-size:9px;right:1px}
 @media(max-width:360px){#broto .b-board-wrap:has(.b-dense){padding:3px}#broto .b-dense{gap:3px}#broto #b-map-preview{gap:10px}#broto .b-map-mini{width:80px;flex-basis:80px}}
+
+/* Escolha compacta por cartões; os controles de preparação continuam no mesmo bloco. */
+#broto .b-map-setup>h3{font-size:15px;line-height:1.3;margin:0 0 10px}
+#broto .b-map-cards{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:8px;min-width:0}
+#broto .b-map-cards>button{display:flex;flex-direction:column;align-items:center;justify-content:flex-start;gap:6px;min-width:0;min-height:44px;padding:9px 6px 7px;border:1px solid #c4cfb7;border-radius:14px;background:#fff;color:#354d32;text-align:center;box-shadow:none;cursor:pointer}
+#broto .b-map-cards>button:hover{background:#f1f6e9;border-color:#79966a}
+#broto .b-map-cards>button[aria-pressed="true"]{background:#e8f0dd;border:2px solid #42673a;padding:8px 5px 6px;box-shadow:0 0 0 1px #e8f0dd}
+#broto .b-map-cards>button:focus-visible{outline:3px solid #42673a;outline-offset:3px}
+#broto .b-map-cards strong{display:block;font-size:12px;line-height:1.3;min-height:31px;max-width:100%;overflow-wrap:anywhere}
+#broto .b-map-choice{font-size:10px;line-height:1.3;white-space:nowrap;color:#5c7150}
+#broto .b-map-cards>button[aria-pressed="true"] .b-map-choice{font-weight:800;color:#315e35}
+#broto .b-map-cards .b-map-mini{width:72px;height:72px;flex:0 0 72px;grid-row:auto;gap:2px;pointer-events:none}
+#broto .b-map-cards .b-map-mini>span{min-width:0;font-size:8px;line-height:1}
+#broto #b-map-preview{display:block;margin-top:12px}
+#broto #b-map-preview p{margin:0;font-size:13px;line-height:1.5}
+#broto #b-map-preview small{display:block;margin-top:5px}
+@media(max-width:600px){#broto .b-map-cards{grid-template-columns:repeat(2,minmax(0,1fr))}}
+/* A preparação permanece no lugar e cabe na largura útil, incluindo a barra de rolagem. */
+#broto .b-selection .collection-toolbar>label{min-width:0;max-width:100%}
+#broto .b-selection #b-mode{min-width:0;max-width:100%;box-sizing:border-box}
