@@ -100,3 +100,19 @@
 #cerco .ce-surface{border-radius:18px;outline:2px solid #b3c1a8;outline-offset:-1px;padding:16px 14px;overflow:visible}
 @media(max-width:500px){#cerco .ce-surface{padding:12px 8px}}
 @media(max-width:360px){#cerco .ce-lab{padding-inline:3px}}
+
+/* O resultado final divide o centro com o tabuleiro, sem coluna vazia durante a partida. */
+#cerco .ce-surface{container-type:inline-size}
+#cerco .ce-duel-layout{width:100%;max-width:620px;margin:0 auto;display:grid;grid-template-columns:minmax(0,1fr);gap:0;align-items:center}
+#cerco .ce-play-column{min-width:0}
+#cerco #ce-result:empty{display:none}
+#cerco .has-duel-result #ce-result{min-width:0;width:100%;margin:12px auto 0}
+#cerco .has-duel-result #ce-result .level-actions{gap:10px}
+#cerco .has-duel-result #ce-result .level-actions>button{max-width:100%;white-space:normal}
+@container(min-width:714px){
+ #cerco .ce-duel-layout.has-duel-result{max-width:714px;grid-template-columns:minmax(0,390px) minmax(0,300px);gap:24px}
+ #cerco .has-duel-result #ce-result{margin:0}
+}
+#cerco .has-duel-result #ce-result .versus-victory{flex-direction:column;gap:10px;text-align:center}
+#cerco .has-duel-result #ce-result .vv-emblem{flex-basis:auto}
+#cerco .has-duel-result #ce-result .vv-copy{width:100%}

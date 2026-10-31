@@ -103,3 +103,19 @@
 @media(max-width:500px){#broto .b-surface{padding:12px 8px}}
 /* Em telas estreitas, reutiliza a margem externa para manter alvos confortáveis. */
 @media(max-width:360px){#broto .b-lab{padding-inline:3px}}
+
+/* O resultado final divide o centro com o tabuleiro, sem coluna vazia durante a partida. */
+#broto .b-surface{container-type:inline-size}
+#broto .b-duel-layout{width:100%;max-width:620px;margin:0 auto;display:grid;grid-template-columns:minmax(0,1fr);gap:0;align-items:center}
+#broto .b-play-column{min-width:0}
+#broto #b-result:empty{display:none}
+#broto .has-duel-result #b-result{min-width:0;width:100%;margin:12px auto 0}
+#broto .has-duel-result #b-result .level-actions{gap:10px}
+#broto .has-duel-result #b-result .level-actions>button{max-width:100%;white-space:normal}
+@container(min-width:714px){
+ #broto .b-duel-layout.has-duel-result{max-width:714px;grid-template-columns:minmax(0,390px) minmax(0,300px);gap:24px}
+ #broto .has-duel-result #b-result{margin:0}
+}
+#broto .has-duel-result #b-result .versus-victory{flex-direction:column;gap:10px;text-align:center}
+#broto .has-duel-result #b-result .vv-emblem{flex-basis:auto}
+#broto .has-duel-result #b-result .vv-copy{width:100%}
