@@ -118,3 +118,21 @@
 #repasse .r-surface .r-box-total{gap:1px;font-size:9px}
 #repasse .r-surface .r-box-current{font-size:14px;line-height:1}
 #repasse .r-surface .r-box-state{top:-3px;left:-3px;background:#fff;border-radius:50%;line-height:10px;min-width:10px}
+/* Give the board more presence where there is room; compact touch geometry stays intact. */
+@media(min-width:681px){
+ #repasse .r-surface .r-board{width:min(100%,calc(var(--r-inner-cols)*76px + 88px + (var(--r-inner-cols) + 1)*6px));grid-template-columns:44px repeat(var(--r-inner-cols),minmax(var(--r-cell-min,44px),1fr)) 44px;grid-template-rows:44px repeat(var(--r-inner-rows),auto) 44px;gap:6px}
+ #repasse .r-surface .r-edge-box{min-height:44px;padding:2px 4px}
+ #repasse .r-surface .r-piece-value{font-size:clamp(20px,30cqi,26px)}
+ #repasse .r-surface .r-arrow{width:14px;height:14px}
+ #repasse .r-surface .r-box-current{font-size:20px}
+ #repasse .r-surface .r-box-total{font-size:11px;gap:2px}
+}
+/* Keep useful rules in normal flow, instead of stretching an empty game column. */
+#repasse .r-workspace.rules-open{grid-template-columns:minmax(0,1fr);align-items:start}
+#repasse .r-workspace>.r-surface{grid-column:1;grid-row:1;align-self:start;padding-bottom:8px}
+#repasse .r-workspace>#r-rules-sidebar{grid-column:1;grid-row:2;border-left:0;border-top:1px solid var(--line);padding:16px 24px}
+#repasse .r-workspace>#r-advanced{grid-column:1;grid-row:3}
+#repasse .repasse-selection{padding-bottom:16px}
+#repasse #r-catalog>.r-chapter:last-child .level-group{margin-bottom:12px}
+#repasse .repasse-selection>.json-import-disclosure{margin-top:12px}
+@media(max-width:600px){#repasse .r-workspace>#r-rules-sidebar{padding:14px 16px}}
