@@ -97,3 +97,10 @@
   #repasse .r-transfer{animation:none;transform:translate(calc(-50% + var(--r-travel-x)),calc(-50% + var(--r-travel-y)))}
   #repasse .r-transfer-static{transform:translate(-50%,-100%)}
 }
+
+/* One continuous surface; no empty statistics band. */
+#repasse .r-surface>.level-actions{background:transparent}
+#repasse .r-feedback{margin:0;padding:16px 24px;border-top:1px solid var(--line);line-height:1.65}
+#repasse .r-feedback:empty{display:none}
+#repasse .r-feedback.r-overrun{color:#85402a}
+@media(max-width:600px){#repasse .r-feedback{padding:14px 16px}}

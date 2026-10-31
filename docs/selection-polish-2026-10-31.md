@@ -1,0 +1,15 @@
+# Selection text and presentation polish
+
+User scope: remove only standalone messages about total level quantity/availability, not rules or active phase counters. Removed the original Reflexos/Corte Certo paragraph node completely; removed only total/availability clauses in six logical-game selection descriptions and hidden campaign eyebrows. Preserved difficulty calibration, local-save notices, completed-progress counts, stage ranges, all Como jogar panels and DESAFIO N / TOTAL. Desvio had no such quantity notice and is unchanged.
+
+Repasse: removed both statistic widgets below the board and their display-only calculations. Functional status remains as a separate empty-collapsing live paragraph. Next-level action area is transparent over the existing off-white surface, eliminating the white band. Buttons, objective boxes, gameplay, success/error feedback and phase counter remain.
+
+Phase-navigation arrows: exclusively .board-navigation > .level-arrow; desktop52×52px with32px bold glyph, compact48×48px with30px glyph, stronger border/contrast. Undo/redo and movement direction arrows untouched. Disabled behavior unchanged. Órbita compact arrows already occupy their own row, so its265px usable board width is retained.
+
+Playable frames: nine-game audit found Reflexos/Corte Certo scene-wrap and Sintonia's outer surface missing visible boundaries. Added18px corner outline without layout dimensions, clipping or pointer interception. Sintonia inner grids and the existing Órbita frame retained; ELO, PRUMO, PACTO, REPASSE and DESVIO grids untouched.
+
+Fauna: all15 tooltips/descriptions explicitly link animals to Brazilian occurrence/biomes; conservative taxonomy retained. Source additions documented within each modal. Icons/sprites/captions unchanged.
+
+QA: native Chrome eight campaigns desktop1200 and compact320:52/48px arrow dimensions confirmed, no page horizontal overflow, first-level previous disabled/next enabled. Native selection checks retained80buttons per campaign and16Desvio maps, Como jogar present and quantity notice absent. Repasse solved first level, success feedback and next button worked; surface background continuous. Reflexos/Sintonia next arrow advanced to DESAFIO02/80; outline visible and overflow remained visible, grids intact. Targeted source-preservation/tests cover rules art, campaigns, original sprites and15exact modal/gameplay sprite mappings. Existing repasse80 test expectation updated for authorized quantity-text removal;11Repasse state/UI tests pass.
+
+PACTO automatic victory: completed valid states enter the shared success flow immediately after actual value edits, without manual confirmation or failure increments for partial/invalid states. State/token dedup prevents repeated celebrations on annotation/rerender; restoring a solved save is static. Manual Checar remains available for feedback. Native Chrome filled the first phase using symbol keys and observed status 'Correto! Todas as regras foram satisfeitas.' plus PARABÉNS and the Pacto-specific victory, without pressing confirmation. Como jogar/game-information text now describes automatic completion; SVG artwork unchanged.

@@ -62,7 +62,7 @@ export const GAME_INFO = {
       'Complete a grade 8 × 8 com círculo, triângulo, quadrado e losango, sem alterar as pistas fixas.',
       'Cada linha e cada coluna deve conter exatamente dois de cada símbolo.',
       'Cada casa deve ter exatamente um vizinho igual pelos lados. Diagonais não contam: os símbolos formam duplas, nunca trios ou grupos maiores.',
-      'Cruze as contagens com as possibilidades de parceria. Marcações a lápis são apenas anotações; preencha as casas e confirme a resposta para concluir.'
+      'Cruze as contagens com as possibilidades de parceria. Marcações a lápis são apenas anotações; a vitória é reconhecida automaticamente quando a grade está completa e correta.'
     ],
     purpose: 'Praticar contagem, exclusão de possibilidades e dedução, combinando uma regra de vizinhança com restrições de linhas e colunas.',
     why: 'A proposta pedagógica é mostrar como regras simples se complementam: uma dupla possível num canto pode mudar as opções de toda uma linha ou coluna.'

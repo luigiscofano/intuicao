@@ -1,0 +1,14 @@
+/* Previous/next phase only: never undo/redo or gameplay direction controls. */
+body .board-navigation>.level-arrow{width:52px;min-width:52px;height:52px;min-height:52px;flex-basis:52px;padding:0;font-size:32px;font-weight:750;line-height:1;color:#344e3c;background:#f0f4e9;border:2px solid #829579;border-radius:14px;box-shadow:0 2px 0 #d8e0d0}
+body .board-navigation:has(>.level-arrow:not([hidden])){grid-template-columns:52px minmax(0,1fr) 52px}
+body .board-navigation>.level-arrow:hover:not(:disabled){background:#e3ecd8;border-color:#405e49}
+body .board-navigation>.level-arrow:disabled{opacity:.4;box-shadow:none}
+#sintonia .s-board-navigation:has(>.level-arrow){grid-template-columns:52px minmax(0,1fr) 52px}
+#sintonia .s-board-navigation>.level-arrow{width:52px;min-width:52px;height:52px;min-height:52px;border-radius:14px}
+@media(max-width:600px){
+ body .board-navigation>.level-arrow,#sintonia .s-board-navigation>.level-arrow{width:48px;min-width:48px;height:48px;min-height:48px;font-size:30px}
+ body .board-navigation:has(>.level-arrow:not([hidden])),#repasse .r-board-navigation:has(>.level-arrow),#orbita .o-board-navigation:has(>.level-arrow){grid-template-columns:48px minmax(0,1fr) 48px}
+ #sintonia .s-board-navigation:has(>.level-arrow){grid-template-columns:1fr 1fr}
+}
+/* Rounded playable frames: outline never changes board geometry or clips artwork. */
+.board-navigation>.scene-wrap,#sintonia .s-board-surface{border-radius:18px;outline:2px solid #b3c1a8;outline-offset:-1px}

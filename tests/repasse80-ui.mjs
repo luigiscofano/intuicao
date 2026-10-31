@@ -14,7 +14,7 @@ assert.deepEqual(DIFFICULTIES,CHAPTERS);
 const app=initRepasse();app.activate();
 assert.equal(host.querySelectorAll('[data-r-level]').length,80);
 assert.equal(host.querySelectorAll('.r-chapter').length,6);
-assert.match(host.innerHTML,/80 níveis em seis faixas/);
+assert.doesNotMatch(host.innerHTML,/80 níveis em seis faixas/);
 assert.match(host.innerHTML,/Níveis 76–80/);
 assert.doesNotMatch(host.innerHTML,/500 níveis|20 capítulos/);
 for(let i=0;i<CAMPAIGN.length;i++){
