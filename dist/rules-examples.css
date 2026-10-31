@@ -15,3 +15,12 @@
 @keyframes rpx-orbit{from{transform:rotate(-90deg)}to{transform:rotate(0)}}
 @keyframes rpx-transfer{0%{transform:translateX(0);opacity:0}15%{opacity:1}80%{transform:translateX(51px);opacity:1}100%{transform:translateX(51px);opacity:0}}
 @media(prefers-reduced-motion:reduce){.rpx-beam path,.rpx-circuit path,.rpx-cut-fill,.rpx-cut-line,.rpx-add-house,.rpx-pair,.rpx-animal-step,.rpx-orbit-turn,.rpx-transfer{animation:none}.rpx-transfer{display:none}}
+
+/* BROTO-only finite teaching sequence: plant, vertical stimulus, bloom, harvest. */
+.rpx-broto-plant{animation:rpx-appear .35s .3s both}
+.rpx-broto-ray{animation:rpx-broto-pulse .6s .65s both}
+.rpx-broto-flower{animation:rpx-broto-harvest 1.1s 1.15s both}
+.rpx-broto-point{animation:rpx-appear .4s 2.3s both}
+@keyframes rpx-broto-pulse{0%,100%{opacity:0}30%,70%{opacity:1}}
+@keyframes rpx-broto-harvest{0%{opacity:0}20%,75%{opacity:1}100%{opacity:0}}
+@media(prefers-reduced-motion:reduce){.rpx-broto-plant,.rpx-broto-point{animation:none}.rpx-broto-ray,.rpx-broto-flower{animation:none;display:none}}

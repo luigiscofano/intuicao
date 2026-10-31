@@ -2,7 +2,7 @@ import {RULE_EXAMPLES} from './rules-examples.mjs';
 import {GAME_INFO} from './game-info-content.mjs';
 export function rulesPreviewMarkup(game){
  const example=RULE_EXAMPLES[game];if(!example)return '';
- return `<section class="rules-preview" aria-label="Como jogar ${GAME_INFO[game].name}"><div class="rp-copy"><h3>Como jogar</h3><ol>${example.steps.map(step=>`<li>${step}</li>`).join('')}</ol><p class="rp-note">Exemplo simples. Confira também as pistas da fase.</p></div><div class="rp-example" aria-hidden="true">${example.svg}</div></section>`;
+ return `<section class="rules-preview" aria-label="Como jogar ${GAME_INFO[game].name}"><div class="rp-copy"><h3>Como jogar</h3><ol>${example.steps.map(step=>`<li>${step}</li>`).join('')}</ol><p class="rp-note">${game==='broto'?'Exemplo ilustrativo. Não altera a partida.':'Exemplo simples. Confira também as pistas da fase.'}</p></div><div class="rp-example" aria-hidden="true">${example.svg}</div></section>`;
 }
 
 // Start the short example only when it enters view, not while a user is still

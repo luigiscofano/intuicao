@@ -1,5 +1,6 @@
 // Monochrome pictograms for navigation only. No state, rules or level selectors.
 export const GAME_NAV_ICONS={
+ broto:'<path d="M16 28V15M16 19C6 20 4 13 4 9c8-1 12 3 12 10ZM16 15C16 7 22 4 28 5c0 7-4 11-12 10ZM7 28h18"/>',
  light:'<path d="M3 23h13V5M10 29l12-12"/><circle cx="16" cy="4" r="2"/><path d="M2 20l3 3-3 3"/>',
  cut:'<rect x="4" y="5" width="24" height="22" rx="2"/><path d="M7 30L25 2M5 22l8 4M5 16l11 6M5 10l14 7"/>',
  elo:'<path d="M6 7h20v18H6z"/><circle cx="6" cy="7" r="3"/><circle cx="26" cy="7" r="3"/><circle cx="26" cy="25" r="3"/><circle cx="6" cy="25" r="3"/>',
@@ -11,9 +12,9 @@ export const GAME_NAV_ICONS={
  desvio:'<rect x="3" y="3" width="26" height="26" rx="3"/><path d="M3 12h26M3 21h26M12 3v26M21 3v26M5 16.5h5m-2-2 2 2-2 2M16.5 23v4m-2-2 2 2 2-2"/>'
 };
 export function initGameNavIcons(doc=document){
- const cards=doc.querySelectorAll('.games > button[data-game],.games > button[data-collection],.games > button[data-sintonia],.games > button[data-repasse],.games > button[data-orbita]');
+ const cards=doc.querySelectorAll('.games > button[data-game],.games > button[data-collection],.games > button[data-sintonia],.games > button[data-repasse],.games > button[data-orbita],.games > button[data-broto]');
  for(const card of cards){
-  const key=card.dataset.game||card.dataset.collection||card.dataset.sintonia||card.dataset.repasse||card.dataset.orbita;
+  const key=card.dataset.game||card.dataset.collection||card.dataset.sintonia||card.dataset.repasse||card.dataset.orbita||card.dataset.broto;
   if(!GAME_NAV_ICONS[key]||card.querySelector('.game-nav-icon'))continue;
   const mark=doc.createElement('i');mark.className='game-nav-icon';mark.setAttribute('aria-hidden','true');
   mark.innerHTML=`<svg viewBox="0 0 32 32" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" focusable="false" aria-hidden="true">${GAME_NAV_ICONS[key]}</svg>`;

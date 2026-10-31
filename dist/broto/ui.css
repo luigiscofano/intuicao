@@ -1,0 +1,62 @@
+/* BROTO only: shared platform components retain their existing contracts. */
+#broto .b-lab,#broto .b-selection{padding:20px 22px;background:#f8f9f3}
+#broto .b-tagline{margin:4px 0 10px;color:#52634e;font-size:16px}
+#broto .lab-heading{display:flex;align-items:center;justify-content:space-between;gap:12px;margin:12px 0}
+#broto .b-round{font-size:16px;font-weight:750;white-space:nowrap}
+#broto .b-workspace{display:grid!important;grid-template-columns:minmax(0,1fr)!important;gap:12px;align-items:start}
+#broto .b-surface{padding:10px 12px;background:#f8f9f3;background-image:none;min-width:0;border:0;box-shadow:none}
+#broto .stage-tools{display:flex;flex-wrap:wrap;align-items:center;gap:10px;margin:0 0 12px}
+#broto .stage-tools>button,#broto .stage-tools summary{min-height:44px}
+#broto .b-score{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:10px;max-width:600px;margin:0 auto}
+#broto .b-owner-0{--b-ink:#376840;--b-soft:#e5efd8;--b-edge:#a9c192}
+#broto .b-owner-1{--b-ink:#76529b;--b-soft:#eee5f6;--b-edge:#c6b0e4}
+#broto .b-player{border:1px solid var(--b-edge);border-radius:15px;padding:9px 12px;background:var(--b-soft);color:var(--b-ink)}
+#broto .b-player.b-current{outline:2px solid var(--b-ink);outline-offset:2px}
+#broto .b-player-name{display:flex;align-items:center;gap:5px;font-size:13px}
+#broto .b-avatar{display:inline-block;flex:0 0 32px;width:32px;height:32px;background-repeat:no-repeat;image-rendering:pixelated}
+#broto .b-score-main{display:flex;align-items:baseline;gap:7px;margin:0 0 5px}
+#broto .b-score-main>strong{font-size:30px;line-height:1;font-variant-numeric:tabular-nums}
+#broto .b-score-main>span{font-size:11px}
+#broto .b-score-details{display:flex;justify-content:space-between;gap:8px;font-size:12px;flex-wrap:wrap}
+#broto .b-turn{text-align:center;font-weight:700;margin:13px 0 10px;line-height:1.4}
+#broto .b-board-wrap{width:min(100%,344px);margin:0 auto;padding:6px;border:1px solid #b8c3ad;border-radius:17px;background:#fff}
+#broto .b-board{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:5px;position:relative;isolation:isolate}
+#broto .b-cell{position:relative;display:flex;align-items:center;justify-content:center;aspect-ratio:1;min-height:0;min-width:0;width:100%;padding:2px;border:1px solid #d8dece;border-radius:10px;background:#f8f9f3;cursor:pointer;box-shadow:none;transform:none;color:#425e3d;touch-action:manipulation}
+#broto .b-cell[aria-disabled="true"]{cursor:default;opacity:1}
+#broto .b-cell:focus-visible{outline:3px solid #334f30;outline-offset:2px;z-index:4}
+#broto .b-cell.b-selected{border:2px solid #4b7344;background:#edf3e5}
+#broto .b-cell.b-receiver{border-style:dashed;border-color:#7e956c}
+#broto .b-cell.b-will-bloom{box-shadow:inset 0 0 0 2px #d9bc69;background:#fff9e9}
+#broto .b-empty{font-size:20px;color:#b2bd9f;line-height:1}
+#broto .b-piece{color:var(--b-ink);width:100%;height:100%;display:flex;align-items:center;justify-content:center;flex-direction:column;position:relative;z-index:2}
+#broto .b-sprout,#broto .b-flower{width:46%;height:47%;max-height:40px;min-height:23px;display:block;overflow:visible}
+#broto .b-owner-symbol{position:absolute;right:3px;top:1px;font-size:11px;line-height:1.3}
+#broto .b-axes{display:flex;gap:5px;margin-top:2px}
+#broto .b-axes>span{display:flex;align-items:center;justify-content:center;font-size:17px;font-weight:750;line-height:1;width:23px;height:20px;border:1px solid #b8c2ae;border-radius:5px;color:#66725c;background:#fff}
+#broto .b-axes>.received{background:var(--b-ink);border-color:var(--b-ink);color:#fff}
+#broto .b-ghost{opacity:.52}
+#broto .b-rays{position:absolute;inset:0;width:100%;height:100%;pointer-events:none;z-index:1;overflow:visible}
+#broto .b-rays line{stroke:#79965e;stroke-width:3;stroke-linecap:round;stroke-dasharray:5 7;opacity:.65}
+#broto .b-rays.b-phase-0 line{stroke-dasharray:400;stroke-dashoffset:400;animation:broto-ray .24s .08s ease-out forwards}
+#broto .b-rays.b-phase-2{opacity:.3}
+#broto .b-flowering .b-flower{animation:broto-flower .25s ease-out both}
+#broto .b-check{display:flex;justify-content:center;flex-wrap:wrap;gap:10px;padding:12px 0 4px;background:transparent;border:0;min-height:56px}
+#broto .b-check>button{min-height:44px}
+#broto .b-status{margin:4px auto 0;min-height:44px;max-width:620px;text-align:center;font-size:13px;line-height:1.5}
+#broto .b-result-badge{max-width:620px;margin:10px auto;color:#375d3f;background:#eaf1df}
+#broto .b-result-flower{width:54px;height:54px;display:flex;align-items:center;justify-content:center;flex:0 0 54px}
+#broto .b-result-flower svg{width:46px;height:46px;max-height:none}
+#broto #b-result>p{text-align:center;margin:8px auto;max-width:620px}
+#broto .level-actions{display:flex;justify-content:center;gap:10px;flex-wrap:wrap;margin:0;padding:8px 0;background:transparent;border:0;min-height:0}
+#broto .rules-sidebar{grid-column:1;position:static;max-height:none;overflow:visible;background:#f8f9f3;border-top:0;min-width:0}
+#broto .rules-more{margin-top:12px}
+#broto .b-example-grid{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:4px;max-width:260px;margin:10px 0}
+#broto .b-example-grid>span{aspect-ratio:1;border:1px solid #d4ddc6;border-radius:8px;background:#fff;padding:2px}
+#broto .b-example-grid .b-owner-symbol{font-size:9px}
+#broto .b-example-grid .b-axes>span{width:18px;height:17px;font-size:14px}
+#broto .b-example-grid .b-sprout{min-height:20px}
+#broto [hidden]{display:none!important}
+@keyframes broto-ray{to{stroke-dashoffset:0}}
+@keyframes broto-flower{from{transform:scale(.7)}to{transform:scale(1)}}
+@media(max-width:500px){#broto .b-lab,#broto .b-selection{padding:16px 10px}#broto .b-surface{padding:8px 0}#broto .b-score{gap:8px}#broto .b-player{padding:8px}#broto .b-player-name{font-size:12px}#broto .b-avatar{width:27px;height:27px;flex-basis:27px}#broto .b-score-main>strong{font-size:27px}#broto .b-score-main>span{font-size:10px}#broto .b-score-details{font-size:11px;gap:5px}#broto .b-round{font-size:14px}#broto .b-turn{font-size:13px}#broto .b-board-wrap{padding:5px}#broto .b-board{gap:4px}#broto .b-axes{gap:3px}#broto .b-axes>span{width:20px;height:18px;font-size:16px}#broto .b-status{font-size:12px;min-height:54px}#broto .stage-tools{gap:8px}}
+@media(prefers-reduced-motion:reduce){#broto *,#broto *::before,#broto *::after{animation:none!important;transition:none!important}}

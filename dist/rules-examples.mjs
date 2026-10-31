@@ -42,3 +42,19 @@ export const RULE_EXAMPLES={
  [0,1,2].flatMap(r=>[0,1,2].map(c=>rect(148+c*24,30+r*24,24,24,r===1&&c!==1?pale:'#fafbf7')+txt(160+c*24,47+r*24,r===1&&c===1?'×':'↕',13))).join(''),
  'Escolha ↔: o rival só joga nessa linha.')}
 };
+
+// BROTO: the upper sprout already has H; planting below adds V and harvests it.
+RULE_EXAMPLES.broto={steps:[
+ 'Escolha uma casa vazia, observe a prévia e confirme. A semente nova estimula o primeiro broto em cada direção, mesmo distante e de qualquer jogador.',
+ 'Horizontal ↔ e vertical ↕ juntos fazem o broto florescer: um ponto para seu dono, e a peça sai. Repetir um eixo não basta; a colheita não continua o estímulo nem devolve sementes.',
+ 'Cada pessoa planta oito sementes por rodada. Joguem duas rodadas, alternando quem começa. Vence quem somar mais flores; brotos restantes não pontuam e totais iguais dão empate.'
+],svg:wrap(
+ txt(120,14,'Já tem ↔. Plante abaixo para dar ↕.',10)+
+ rect(29,25,50,36)+rect(29,61,50,36,'#fafbf7')+
+ `<path d="M54 47V35m0 6c-9 0-11-5-10-8 7 0 10 3 10 8m0-3c0-7 7-10 11-8 0 6-5 9-11 8" fill="none" stroke="${green}" stroke-width="2"/>`+txt(54,57,'↔',11)+
+ `<g class="rpx-broto-plant">${circle(54,81,6,purple)}${txt(54,95,'nova',8)}</g>`+
+ `<g class="rpx-broto-ray">${line(54,74,54,62,purple,2)}</g>`+arrow()+
+ rect(158,25,50,36,'#fafbf7')+rect(158,61,50,36,'#fafbf7')+circle(183,81,6,purple)+
+ `<g class="rpx-broto-flower"><path d="M183 29c-7-9-14 1-6 6-11 3-5 14 3 8 1 11 13 8 9-2 10 4 13-8 3-9 6-8-5-14-9-3Z" fill="${green}"/><circle cx="183" cy="36" r="4" fill="${gold}"/></g>`+
+ `<g class="rpx-broto-point">${txt(183,48,'+1 ao dono',10)}</g>`+
+ txt(120,116,'A flor sai; a semente nova fica sem marcas.',9)+txt(120,132,'A prévia não altera a partida.',9))};
