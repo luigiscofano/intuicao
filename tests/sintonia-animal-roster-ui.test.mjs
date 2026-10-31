@@ -10,8 +10,8 @@ globalThis.Worker=class{
   terminate(){}
   postMessage(message){if(message.type==='hint')queueMicrotask(()=>this.onmessage?.({data:{id:message.id,ok:true,result:{status:'solved',solution:message.level.solution}}}));}
 };
-const key='intuicao.sintonia.v1',level=CAMPAIGN[0],roster=['quati','arara'];
-const session={...serializeSintoniaSession(restoreSintoniaSession(level,null)),animalRoster:roster};
+const key='intuicao.sintonia.v1',level=CAMPAIGN[0],roster=['peixeboi','arara'];
+const session={...serializeSintoniaSession(restoreSintoniaSession(level,null)),animalRoster:['anta','arara']};
 const read=()=>JSON.parse(store.get(key));
 const checkRendered=expected=>{
   const html=$('s-boards').innerHTML;
@@ -24,7 +24,7 @@ const saved=()=>read().campaign.sessions[level.id];
 assert.deepEqual(saved().level,persistableSintoniaLevel(level));
 // Named hint follows the rendered identity, including filtered moving boards.
 $('s-hint').click();await Promise.resolve();await Promise.resolve();$('s-hint').click();
-assert.match($('s-hint-text').textContent,/Quati/);assert.match($('s-hint-text').textContent,/Arara-azul/);
+assert.match($('s-hint-text').textContent,/Peixe-boi-da-Amazônia/);assert.match($('s-hint-text').textContent,/Arara-azul/);
 host.querySelector(`[data-s-direction="${level.solution[0]}"]`).click();assert.equal(saved().cursor,1);
 $('s-undo').click();assert.equal(saved().cursor,0);checkRendered(roster);
 $('s-redo').click();assert.equal(saved().cursor,1);assert.deepEqual(saved().animalRoster,roster);
@@ -34,14 +34,14 @@ $('s-level-prev').click();checkRendered(roster);
 app.hide();const data=read();data.lastView={active:true,screen:'play',mode:'campaign'};store.set(key,JSON.stringify(data));
 app=initSintonia({hideOtherGames(){}});assert.equal(app.restoreOnLoad(),true);checkRendered(roster);app.hide();
 // Cosmetic migration does not discard an old saved move history.
-const old=serializeSintoniaSession(restoreSintoniaSession(level,null));
+const old={...serializeSintoniaSession(restoreSintoniaSession(level,null)),animalRoster:['anta','arara']};
 for(const mode of ['endless','custom']){
   const data={version:1,prefs:{autoAdvance:false},lastView:{active:true,screen:'play',mode}};
   if(mode==='endless')data.endless={version:1,baseSeed:1,number:7,solved:3,startDifficulty:0,current:{level,seed:2,session:old}};
   else data.custom={level,session:old};
   store.set(key,JSON.stringify(data));app=initSintonia({hideOtherGames(){}});assert.equal(app.restoreOnLoad(),true);
   const current=()=>mode==='endless'?read().endless.current:read().custom;
-  const cast=current().session.animalRoster;
+  const cast=current().session.animalRoster;assert.deepEqual(cast,['peixeboi','arara']);
   assert.equal(new Set(cast).size,level.boards.length);checkRendered(cast);
   host.querySelector(`[data-s-direction="${level.solution[0]}"]`).click();
   $('s-reset').click();$('restart-sintonia-confirm').click();

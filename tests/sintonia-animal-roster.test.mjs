@@ -3,7 +3,7 @@ import assert from 'node:assert/strict';
 import fs from 'node:fs';
 import crypto from 'node:crypto';
 import {fileURLToPath} from 'node:url';
-import {ANIMAL_IDS,ANIMAL_SPRITES,resolveAnimalRoster} from '../dist/sintonia/animal-roster.mjs';
+import {ANIMAL_IDS,ANIMAL_SPRITES,resolveAnimalRoster,normalizeAnimalId} from '../dist/sintonia/animal-roster.mjs';
 import {CAMPAIGN} from '../dist/sintonia/campaign.mjs';
 
 const hash=data=>crypto.createHash('sha256').update(data).digest('hex');
@@ -18,7 +18,7 @@ test('the exact user-attached sheet supplies all 16 frames, embedded once withou
   assert.equal(embedded.length,1);assert.equal(hash(Buffer.from(embedded[0][1],'base64')),source.sourceSHA256);
   assert.doesNotMatch(svg,/<script|<foreignObject|xlink:href="https?:/);
   const paths=[...svg.matchAll(/<path data-animal="([a-z]+)" d="([^"]+)"\/>/g)];
-  assert.deepEqual(paths.map(match=>match[1]),ANIMAL_IDS);
+  assert.deepEqual(paths.map(match=>normalizeAnimalId(match[1])),ANIMAL_IDS);
   for(const [frame,[id,sprite]] of Object.entries(ANIMAL_SPRITES).entries()){
     assert.equal(sprite.url,ANIMAL_SPRITES.tuiuiu.url);assert.equal(sprite.columns,4);assert.equal(sprite.rows,4);assert.equal(sprite.frame,frame);
     const rects=[...paths[frame][2].matchAll(/M(\d+) (\d+)h(\d+)v(\d+)h-\d+z/g)];
@@ -37,7 +37,7 @@ test('the game renderer selects the right row and column for every approved anim
   }
 });
 
-test('500 phase-sized draws use the complete roster, without duplicates or map changes',()=>{
+test('80 campaign phase-sized draws use the complete roster, without duplicates or map changes',()=>{
   let seed=157;const random=()=>((seed=(Math.imul(seed,1664525)+1013904223)>>>0)/2**32);
   const before=JSON.stringify(CAMPAIGN),seen=new Set(),groups=new Set();
   for(const level of CAMPAIGN){
@@ -45,7 +45,7 @@ test('500 phase-sized draws use the complete roster, without duplicates or map c
     assert.equal(roster.length,level.boards.length);assert.equal(new Set(roster).size,roster.length);
     roster.forEach(id=>{assert.ok(ANIMAL_IDS.includes(id));seen.add(id);});groups.add(roster.join(','));
   }
-  assert.equal(seen.size,16);assert.ok(groups.size>100);assert.equal(JSON.stringify(CAMPAIGN),before);
+  assert.equal(seen.size,16);assert.ok(groups.size>40);assert.equal(JSON.stringify(CAMPAIGN),before);
   // Each animal can be selected first; no fixed initial pair.
   for(let i=0;i<16;i++)assert.equal(resolveAnimalRoster(2,null,()=> (i+.5)/16)[0],ANIMAL_IDS[i]);
 });
@@ -58,4 +58,10 @@ test('saved identities survive reload; malformed cosmetic data is safely replace
     const roster=resolveAnimalRoster(2,invalid,()=>0);
     assert.equal(new Set(roster).size,2);assert.ok(roster.every(id=>ANIMAL_IDS.includes(id)));
   }
+});
+
+test('legacy anta identity migrates in place without random draw; 500 endless-sized casts remain unique',()=>{
+  const old=['anta','mico','quati'];assert.deepEqual(resolveAnimalRoster(3,old,()=>{throw Error('No redraw');}),['peixeboi','mico','quati']);assert.equal(old[0],'anta');
+  for(let n=0;n<500;n++){const count=2+n%3,cast=resolveAnimalRoster(count,null);assert.equal(new Set(cast).size,count);assert.ok(cast.every(id=>ANIMAL_IDS.includes(id)));assert.ok(!cast.includes('anta'));}
+  assert.equal(ANIMAL_SPRITES.peixeboi.frame,11);
 });
