@@ -1,3 +1,7 @@
+## Catálogo ativo · 31/10/2026
+
+Intuição: Reflexos e Corte certo. Raciocínio lógico: ELO, PRUMO, PACTO, SINTONIA, REPASSE e ÓRBITA. Versus: DESVIO, BROTO, CERCO e VÉRTICE. São 12 jogos disponíveis. Registros de jogos retirados permanecem guardados no navegador; as seções abaixo são histórico de revisões.
+
 # Atualização PRUMO80 · 30/10/2026
 
 ## Atualização PACTO80 — campanha ativa

@@ -13,12 +13,12 @@
 /* Resultado não modal: só o reinício explícito recebe cliques. */
 .result-motion{min-height:var(--result-reserved-height,86px);padding:0 24px;pointer-events:none;user-select:none}
 .result-retry-actions{display:flex;align-items:center;justify-content:center;min-height:76px;padding:10px 0;box-sizing:border-box}
-.result-motion .result-retry,:is(#cerco,#trama,#vertice) .result-retry{display:grid;place-items:center;flex:0 0 52px;width:52px;height:52px;min-width:52px;min-height:52px;padding:0;border:1px solid #304b37;border-radius:50%;background:#405e49;color:#fffefa;box-shadow:0 3px 0 #263f2e26;cursor:pointer;pointer-events:auto;touch-action:manipulation}
-.result-motion .result-retry:hover,:is(#cerco,#trama,#vertice) .result-retry:hover{background:#304b37;box-shadow:0 4px 8px #263f2e26}
-.result-motion .result-retry:active,:is(#cerco,#trama,#vertice) .result-retry:active{transform:translateY(1px);box-shadow:0 1px 0 #263f2e26}
-.result-motion .result-retry:focus-visible,:is(#cerco,#trama,#vertice) .result-retry:focus-visible{outline:3px solid #b17c45;outline-offset:4px}
-.result-motion .result-retry:disabled,:is(#cerco,#trama,#vertice) .result-retry:disabled{opacity:.65;cursor:default}
-.result-motion .result-retry svg,:is(#cerco,#trama,#vertice) .result-retry svg{width:26px;height:26px;fill:none;stroke:currentColor;stroke-width:2;stroke-linecap:round;stroke-linejoin:round;pointer-events:none}
+.result-motion .result-retry,:is(#cerco,#vertice) .result-retry{display:grid;place-items:center;flex:0 0 52px;width:52px;height:52px;min-width:52px;min-height:52px;padding:0;border:1px solid #304b37;border-radius:50%;background:#405e49;color:#fffefa;box-shadow:0 3px 0 #263f2e26;cursor:pointer;pointer-events:auto;touch-action:manipulation}
+.result-motion .result-retry:hover,:is(#cerco,#vertice) .result-retry:hover{background:#304b37;box-shadow:0 4px 8px #263f2e26}
+.result-motion .result-retry:active,:is(#cerco,#vertice) .result-retry:active{transform:translateY(1px);box-shadow:0 1px 0 #263f2e26}
+.result-motion .result-retry:focus-visible,:is(#cerco,#vertice) .result-retry:focus-visible{outline:3px solid #b17c45;outline-offset:4px}
+.result-motion .result-retry:disabled,:is(#cerco,#vertice) .result-retry:disabled{opacity:.65;cursor:default}
+.result-motion .result-retry svg,:is(#cerco,#vertice) .result-retry svg{width:26px;height:26px;fill:none;stroke:currentColor;stroke-width:2;stroke-linecap:round;stroke-linejoin:round;pointer-events:none}
 .board-navigation:has(.result-motion[data-retry="true"]),#collection .board-navigation:has(#c-motion[data-retry="true"]),:is(#sintonia,#repasse,#orbita) .board-navigation:has(.result-motion[data-retry="true"]){--result-reserved-height:76px}
 .result-badge{display:flex;align-items:center;gap:12px;min-height:80px;color:var(--green)}
 .result-badge>svg{width:76px;height:68px;flex:0 0 76px;overflow:visible}
