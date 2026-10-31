@@ -150,3 +150,10 @@
 #orbita .o-surface .o-board-legend .o-legend-piece{background:#438de3;color:#18202c;border-color:#438de3}
 #orbita .o-surface .o-board-legend .o-legend-target{background:#fff;color:#263244;border:2px solid #438de3}
 #orbita .o-surface .o-board-legend .o-legend-junction{border-color:#8691a1;box-shadow:inset 0 0 0 2px #fff,inset 0 0 0 3px #8691a1}
+
+/* Actions remain adjacent to the complete, height-aware board. */
+#orbita .o-surface>.level-actions{margin:6px 0 0;padding:10px 16px;border-top:0;background:transparent}
+#orbita .o-surface .o-orbit-controls{margin:8px auto;padding:8px 12px;gap:6px}
+#orbita .o-surface .o-ring-choices{gap:6px}
+#orbita .o-surface .o-ring-choices button{min-height:44px;padding:5px 10px}
+#orbita .o-surface .o-board-legend{margin-top:6px;margin-bottom:8px}

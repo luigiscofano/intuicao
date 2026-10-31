@@ -104,3 +104,17 @@
 #repasse .r-feedback:empty{display:none}
 #repasse .r-feedback.r-overrun{color:#85402a}
 @media(max-width:600px){#repasse .r-feedback{padding:14px 16px}}
+
+/* Compact board: full-size interactive pieces, quieter noninteractive collectors. */
+#repasse .r-surface .r-board{grid-template-columns:32px repeat(var(--r-inner-cols),minmax(var(--r-cell-min,44px),1fr)) 32px;grid-template-rows:32px repeat(var(--r-inner-rows),auto) 32px;gap:4px;aspect-ratio:auto}
+#repasse .r-surface .r-piece,#repasse .r-surface .r-empty{aspect-ratio:1;min-height:44px}
+#repasse .r-surface .r-edge-box{min-height:32px}
+#repasse .r-surface .r-board-scroll{padding:2px 0;max-height:none}
+#repasse .r-surface .r-scroll-help{display:none}
+#repasse .r-surface>.level-actions{margin:6px 0 0;padding:10px 16px;border-top:0}
+#repasse .r-surface .r-box-legend{margin-top:6px;margin-bottom:8px}
+@media(max-width:600px){#repasse .r-surface .r-board-navigation:has(>.level-arrow){padding:0 2px}}
+#repasse .r-surface .r-edge-box{padding:1px 2px}
+#repasse .r-surface .r-box-total{gap:1px;font-size:9px}
+#repasse .r-surface .r-box-current{font-size:14px;line-height:1}
+#repasse .r-surface .r-box-state{top:-3px;left:-3px;background:#fff;border-radius:50%;line-height:10px;min-width:10px}

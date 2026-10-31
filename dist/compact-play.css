@@ -1,0 +1,60 @@
+/* Compact playing surfaces; never scale input hit geometry with transforms. */
+body .lab-heading{padding:14px 18px;gap:10px}
+body .lab-heading h2{margin-block:0}
+body .experiment,body .collection-surface{--play-surface:#f8f9f3;background:var(--play-surface)}
+body .experiment>.stage-top,body .collection-surface>.stage-top{width:100%!important;max-width:none!important;margin:0!important;padding:8px 12px!important;gap:8px}
+body .experiment>.stage-top>.stage-tools{width:auto;flex:1;justify-content:flex-end;margin-left:auto;gap:6px}
+body .stage-top>.stage-tools>button{min-height:44px}
+body .experiment>.level-actions,body .collection-surface>.level-actions,body .experiment>.readout,body .collection-surface>.readout,body #main>.lab .level-notes{background:var(--play-surface,#f8f9f3)}
+body .experiment>.level-actions,body .collection-surface>.level-actions{padding:8px 12px;gap:8px;min-height:0;margin:0;align-items:center}
+body .level-actions>.actions{display:flex;flex-wrap:wrap;gap:8px;margin:0;align-items:center}
+body .level-actions .confirm,body .board-check-controls .confirm{width:auto;min-width:0;min-height:44px;margin:0;flex:0 1 auto}
+body .level-actions .hint:empty,body .level-actions .collection-small:empty{display:none}
+body .experiment>.readout,body .collection-surface>.readout{min-height:0;padding:8px 12px;gap:10px}
+body .experiment>.readout strong{font-size:20px}
+body .board-check-controls{display:flex;justify-content:center;align-items:center;flex-wrap:wrap;gap:8px;padding:8px 12px;margin:0;background:var(--play-surface,#f8f9f3)}
+body .board-check-controls>button{min-height:44px}
+body .board-navigation{--result-reserved-height:0px}
+body .board-navigation:not(:has(.result-motion[data-outcome="win"],.result-motion[data-retry="true"]))>.level-arrow{margin-bottom:0}
+body .board-navigation .result-motion[data-state="idle"],body .board-navigation .result-motion:empty{min-height:0;padding:0}
+body .experiment>.board-navigation:has(>.scene-wrap){width:100%;max-width:820px;margin:0 auto}
+body #collection .board-navigation{max-width:700px;margin:0 auto}
+body #collection .collection-board-wrap:not(.elo-board-surface){min-height:0;padding:10px 8px;overflow:visible}
+body #collection .board-desvio{max-width:410px;margin-inline:auto}
+body .rules-sidebar{position:static;max-height:none;overflow:visible}
+@media(min-width:901px) and (max-height:850px){
+ body .experiment>.board-navigation:has(>.scene-wrap){max-width:min(820px,calc((100svh - 330px)*1.74 + 120px))}
+ body #collection .board-navigation:not(:has(.elo-large,.elo-board-label)){max-width:650px}
+}
+@media(max-width:680px){
+ body .lab-heading{padding:12px 14px}
+ body .experiment>.stage-top>.stage-tools{width:100%;justify-content:center;margin:0}
+ body .experiment>.stage-top{justify-content:center}
+ body .experiment>.stage-top .level-stepper{width:100%;text-align:center}
+ body .board-navigation:has(>.level-arrow:not([hidden])){grid-template-columns:48px minmax(0,1fr) 48px!important;gap:6px 8px;padding:0 6px}
+ body .board-navigation:has(>.level-arrow:not([hidden]))>:is(.scene-wrap,.collection-board-wrap){grid-column:1/-1;grid-row:1}
+ body .board-navigation>.level-arrow{grid-row:2;margin:0!important;align-self:center}
+ body .board-navigation>.level-arrow:first-child{grid-column:1}
+ body .board-navigation>.level-arrow:last-child{grid-column:3}
+ body #collection .collection-board-wrap:not(.elo-board-surface){padding:8px 2px}
+ body .board-navigation+.level-actions,body .board-navigation+.board-check-controls{border-top:0}
+ body .level-actions{justify-content:center}
+ body .level-actions>.actions{justify-content:center;flex:1 1 auto}
+}
+@media(min-width:681px){
+ body #collection .board-navigation:has(.board-pacto){max-width:570px}
+ body #collection .board-navigation:has(.board-prumo){max-width:600px}
+ body #collection .board-navigation:has(.board-elo):not(:has(.elo-large,.elo-board-label)){max-width:600px}
+}
+/* Preserve wide ELO clue gutters instead of introducing new desktop scrolling. */
+@media(min-width:681px){body #collection .board-navigation:has(.elo-large,.elo-board-label){max-width:796px}}
+/* On wide screens the shared commands sit beside, not beneath, the animal maps. */
+@media(min-width:1100px){
+ #sintonia .s-board-surface{display:grid;grid-template-columns:minmax(0,1fr) 290px;gap:12px;align-items:center}
+ #sintonia .s-board-surface>.s-play-area{grid-column:1;grid-row:1;min-width:0;width:100%}
+ #sintonia .s-board-surface>.s-command-row{grid-column:2;grid-row:1;margin:0;padding:8px 0;border-top:0;column-gap:14px;grid-template-columns:146px 130px}
+ #sintonia .s-board-surface>.result-motion{grid-column:1/-1}
+}
+
+/* Dense ELO boards retain44px cells, without unnecessary desktop enlargement. */
+#collection .board-elo.elo-large{max-width:calc(var(--cols)*44px)}

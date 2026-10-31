@@ -3,8 +3,8 @@ export const ORBITA_COLORS=['#f4b942','#438de3','#eb6683','#35b597','#a477db','#
 export function orbitaColor(level,type){const list=(level.pieceTypes??[]).filter(x=>!x.neutral&&!['n','neutral','0'].includes(x.id));return ORBITA_COLORS[Math.max(0,list.findIndex(x=>x.id===type))%ORBITA_COLORS.length];}
 const corners=l=>l.rings.map(r=>r.geometry);
 function extent(level,angle){const c=Math.cos(angle),s=Math.sin(angle),p=corners(level).map(g=>({x:g.cx*c-g.cy*s,y:g.cx*s+g.cy*c,r:g.r}));const left=Math.min(...p.map(g=>g.x-g.r)),right=Math.max(...p.map(g=>g.x+g.r)),top=Math.min(...p.map(g=>g.y-g.r)),bottom=Math.max(...p.map(g=>g.y+g.r));return {left,top,width:right-left,height:bottom-top,c,s};}
-export function projectOrbita(level,width=600){
- width=Math.max(224,Math.min(680,Number(width)||600));const maxHeight=width<380?650:600;let best=null;
+function projectAtHeight(level,width=600,heightBudget){
+ width=Math.max(224,Math.min(680,Number(width)||600));const maxHeight=heightBudget??(width<380?650:600);let best=null;
  for(let d=0;d<180;d++){const b=extent(level,d*Math.PI/180),scale=Math.min((width-44)/b.width,(maxHeight-64)/b.height);if(!best||scale>best.scale)best={...b,scale,angle:d};}
  const {c,s,scale}=best,ox=(width-best.width*scale)/2-best.left*scale,oy=32-best.top*scale;
  const point=p=>({x:(p.x*c-p.y*s)*scale+ox,y:(p.x*s+p.y*c)*scale+oy});
@@ -12,6 +12,21 @@ export function projectOrbita(level,width=600){
  const projected={...level,cells,rings:level.rings.map(r=>{const q=point({x:r.geometry.cx,y:r.geometry.cy}),radius=r.geometry.r*scale;return {...r,geometry:{...r.geometry,cx:q.x,cy:q.y,r:radius,rx:radius,ry:radius}};}),layout:{...level.layout,width,height:Math.ceil(best.height*scale+64),pieceRadius:13},presentation:true};
  const minDistance=Math.min(...cells.flatMap((a,i)=>cells.slice(i+1).map(b=>Math.hypot(a.x-b.x,a.y-b.y))));
  return {level:projected,point,angle:best.angle,scale,minDistance};
+}
+// Short viewports may request a smaller scene, never smaller glyphs or crowded houses.
+const heightFitCache=new WeakMap();
+export function projectOrbita(level,width=600,heightBudget){
+ if(!Number.isFinite(heightBudget))return projectAtHeight(level,width);
+ width=Math.max(224,Math.min(680,Number(width)||600));
+ const maximum=width<380?650:600,minimum=Math.max(240,Math.min(maximum,heightBudget));
+ const key=width+':'+minimum;let cache=heightFitCache.get(level);if(!cache){cache=new Map();heightFitCache.set(level,cache);}if(cache.has(key))return cache.get(key);
+ let result;
+ for(let h=minimum;;h=Math.min(maximum,h+20)){
+  result=projectAtHeight(level,width,h);
+  if(result.minDistance>=28){const badges=presentationBadges(result.level);if(badges.valid&&presentationRingLabels(result.level,badges).every(label=>!label.unplaced))break;}
+  if(h===maximum)break;
+ }
+ cache.set(key,result);return result;
 }
 export function presentationBadges(level){
  const radius=level.layout.pieceRadius,width=level.layout.width,height=level.layout.height,targets=[],sensors=[],errors=[];
