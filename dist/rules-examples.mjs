@@ -71,17 +71,3 @@ RULE_EXAMPLES.cerco={steps:[
  `<g class="rpx-cerco-barrier">${rect(177,28,14,14,'#d4dacd')}${line(180,32,188,32,'#7c8973',1)}${line(180,37,188,37,'#7c8973',1)}</g>`+
  `<g class="rpx-cerco-move">${cercoExamplePiece(184,51,'V')}</g>`+
  txt(120,120,'Verde: L1C3 → L2C3. A origem fecha.',9)+txt(120,134,'As seis peças permanecem no tabuleiro.',9))};
-
-
-// Dois recortes da malha: apoio em L e o centro disputado da abertura oficial.
-const verticeDemoMesh=x=>[0,1,2].map(i=>line(x,35+i*27,x+54,35+i*27,'#b2bca9',1.3)+line(x+i*27,35,x+i*27,89,'#b2bca9',1.3)).join('')+Array.from({length:9},(_,i)=>`<circle cx="${x+i%3*27}" cy="${35+Math.floor(i/3)*27}" r="3" fill="#fafbf7" stroke="#7f8f75"/>`).join('');
-const verticeDemoPieces=(x,p,q)=>p.map(i=>circle(x+i%3*27,35+Math.floor(i/3)*27,6,'#91cbd9')).join('')+q.map(i=>`<path d="m${x+i%3*27} ${29+Math.floor(i/3)*27} 6 6-6 6-6-6z" fill="${purple}"/>`).join('');
-RULE_EXAMPLES.vertice={steps:[
- 'Mova uma peça sua por um segmento até um ponto vizinho vazio. As seis peças ficam no tabuleiro; não há saltos nem diagonais.',
- 'Dois apoios seus controlam um vazio se o adversário tiver menos de dois. Apoios em linha reta ou em L valem. Dois de cada lado deixam o centro disputado; ponto ocupado não pontua.',
- 'Controle os três vazios ao mesmo tempo para vencer. O controle muda a cada jogada. Sem vitória, a partida empata por bloqueio, terceira repetição com a mesma vez ou 60 jogadas.'
-],svg:wrap(txt(57,16,'Apoios em L valem',10)+txt(184,16,'Abertura: disputado',10)+verticeDemoMesh(30)+verticeDemoPieces(30,[0,2,4],[6,7,8])+[1,5].map(i=>`<circle cx="${30+i%3*27}" cy="${35+Math.floor(i/3)*27}" r="8" fill="#fafbf7" stroke="#608cae" stroke-width="2"/>`).join('')+
- `<g class="rpx-vertice-support">${line(30,35,30,62,'#608cae',2.5)}${line(30,62,57,62,'#608cae',2.5)}<circle cx="30" cy="62" r="8" fill="#fafbf7" stroke="#608cae" stroke-width="2"/></g>`+
- verticeDemoMesh(157)+verticeDemoPieces(157,[0,1,3],[5,7,8])+
- `<circle cx="184" cy="62" r="8" fill="#fafbf7" stroke="#608cae" stroke-width="2"/><path d="M184 54a8 8 0 0 1 0 16" fill="none" stroke="${purple}" stroke-width="2"/>`+
- txt(57,108,'O aro continua vazio',9)+txt(184,108,'2 apoios de cada lado',9)+txt(120,130,'Ocupado não conta. Controle não se acumula.',9))};

@@ -157,20 +157,3 @@ GAME_INFO.cerco={
  purpose:'Praticar planejamento por turnos e leitura de caminhos, observando como a casa abandonada altera as opções de ambos os times.',
  why:'A proposta é tornar visíveis as consequências de uma decisão: mover uma peça também fecha uma passagem, e cada equipe precisa conservar alguma saída para sua próxima vez.'
 };
-
-
-// VÉRTICE: controle exclusivo de pontos vazios, recalculado a cada movimento.
-GAME_INFO.vertice={
- name:'VÉRTICE',
- description:'Mova suas peças e controle três pontos de encontro.',
- summary:'Controle simultaneamente os três pontos vazios do tabuleiro.',
- rules:[
-  'Cada jogador tem três peças em uma malha de nove pontos. Mova uma peça sua por um segmento até um ponto vizinho vazio; não há diagonais, saltos ou capturas.',
-  'Um ponto vazio é controlado por você quando toca pelo menos duas peças suas e menos de duas do adversário. Os apoios podem estar em lados opostos ou formar uma curva de 90 graus.',
-  'Dois apoios de cada jogador tornam o centro disputado: ele não vale ponto para ninguém. Um ponto ocupado nunca pontua, e três apoios sobre um vazio continuam valendo apenas um ponto.',
-  'Qualquer vazio pode receber uma peça, mesmo controlado ou disputado. Após a jogada, o controle de ambos os jogadores é recalculado: não há conquista permanente nem pontos acumulados.',
-  'Vence quem controlar os três vazios ao mesmo tempo, inclusive se a jogada adversária criar essa situação. Sem vitória, há empate se o próximo jogador não puder mover, na terceira repetição da mesma posição com a mesma vez, ou após 60 jogadas. Vitória na última jogada tem prioridade.'
- ],
- purpose:'Praticar leitura de vizinhança e planejamento por turnos, observando como mover um apoio altera o controle dos pontos que continuam vazios.',
- why:'A proposta é explorar controle indireto: uma peça pode apoiar mais de um vazio, mas ocupar um ponto o retira da pontuação. É preciso acompanhar os apoios dos dois jogadores.'
-};

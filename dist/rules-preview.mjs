@@ -3,8 +3,8 @@ import {GAME_INFO} from './game-info-content.mjs';
 export function rulesPreviewMarkup(game){
  const example=RULE_EXAMPLES[game];if(!example)return '';
  // Só a identidade cromática muda; geometrias e exemplos aprovados permanecem.
- const svg=['vertice'].includes(game)?example.svg.replaceAll('#91cbd9','#73965e').replaceAll('#608cae','#315e35').replaceAll('#8b78b4','#b99b46').replaceAll('#675187','#705a1d').replaceAll('azuis','verdes'):example.svg;
- return `<section class="rules-preview" aria-label="Como jogar ${GAME_INFO[game].name}"><div class="rp-copy"><h3>Como jogar</h3><ol>${example.steps.map(step=>`<li>${step}</li>`).join('')}</ol><p class="rp-note">${['broto','cerco','vertice'].includes(game)?'Exemplo ilustrativo. Não altera a partida.':'Exemplo simples. Confira também as pistas da fase.'}</p></div><div class="rp-example" aria-hidden="true">${svg}</div></section>`;
+ const svg=example.svg;
+ return `<section class="rules-preview" aria-label="Como jogar ${GAME_INFO[game].name}"><div class="rp-copy"><h3>Como jogar</h3><ol>${example.steps.map(step=>`<li>${step}</li>`).join('')}</ol><p class="rp-note">${['broto','cerco'].includes(game)?'Exemplo ilustrativo. Não altera a partida.':'Exemplo simples. Confira também as pistas da fase.'}</p></div><div class="rp-example" aria-hidden="true">${svg}</div></section>`;
 }
 
 // Start the short example only when it enters view, not while a user is still

@@ -50,8 +50,8 @@ body > footer .footer-signature::before{
 body > footer .footer-signature::after{content:none!important}
 body > footer .footer-signature > :is(.brand,small){position:relative;z-index:1}
 /* Os painéis terminam com suas próprias bordas, sem raízes duplicadas atrás do rodapé. */
-:is(#selection,#collection > .level-screen,#sintonia > .level-screen,#repasse > .level-screen,#orbita > .level-screen,#broto > .level-screen,#cerco > .level-screen,#vertice > .level-screen)::after{content:none!important}
-:is(#selection,#main > .lab,#collection > .collection-lab,#sintonia > .collection-lab,#repasse > .repasse-lab,#orbita > .orbita-lab,#broto > .b-lab,#cerco > .ce-lab,#vertice > .ve-lab,#collection > .level-screen,#sintonia > .level-screen,#repasse > .level-screen,#orbita > .level-screen,#broto > .level-screen,#cerco > .level-screen,#vertice > .level-screen){
+:is(#selection,#collection > .level-screen,#sintonia > .level-screen,#repasse > .level-screen,#orbita > .level-screen,#broto > .level-screen,#cerco > .level-screen)::after{content:none!important}
+:is(#selection,#main > .lab,#collection > .collection-lab,#sintonia > .collection-lab,#repasse > .repasse-lab,#orbita > .orbita-lab,#broto > .b-lab,#cerco > .ce-lab,#collection > .level-screen,#sintonia > .level-screen,#repasse > .level-screen,#orbita > .level-screen,#broto > .level-screen,#cerco > .level-screen){
   border-bottom-color:#b3c1a8!important;
   border-bottom-left-radius:19px!important;
   border-bottom-right-radius:19px!important;

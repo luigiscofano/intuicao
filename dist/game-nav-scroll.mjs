@@ -8,7 +8,6 @@ export function selectionSelector(button) {
  if (COLLECTIONS.has(button?.dataset?.collection)) return '#collection > .level-screen';
  if (button?.dataset?.sintonia !== undefined) return '#sintonia > .level-screen';
  if (button?.dataset?.repasse !== undefined) return '#repasse > .level-screen';
- if (button?.dataset?.vertice !== undefined) return '#vertice > .level-screen';
  if (button?.dataset?.cerco !== undefined) return '#cerco > .level-screen';
  if (button?.dataset?.broto !== undefined) return '#broto > .level-screen';
  if (button?.dataset?.orbita !== undefined) return '#orbita > .level-screen';
@@ -36,7 +35,7 @@ export function initGameNavScroll(doc = document, win = window) {
  const instant = (top, left = win.scrollX) => win.scrollTo({top, left, behavior: 'instant'});
  const reduced = () => win.matchMedia?.('(prefers-reduced-motion: reduce)').matches;
  const onClick = event => {
-  const button = event.target?.closest?.('button[data-game], button[data-collection], button[data-sintonia], button[data-repasse], button[data-orbita], button[data-broto], button[data-cerco], button[data-vertice]');
+  const button = event.target?.closest?.('button[data-game], button[data-collection], button[data-sintonia], button[data-repasse], button[data-orbita], button[data-broto], button[data-cerco]');
   const selector = button && nav.contains(button) && !button.disabled && selectionSelector(button);
   cancel();
   if (!selector || (event.button !== undefined && event.button !== 0)) return;
