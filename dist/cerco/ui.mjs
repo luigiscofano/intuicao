@@ -14,7 +14,7 @@ const teamNames=['Time Verde','Time Amarelo'],marks=['●','◆'];
 const modes=['local','competitive','bot','training'],difficulties=['beginner','intermediate','strong'];
 const ids=FAUNA_ART.map(a=>a.id),esc=x=>String(x).replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
 const coord=(cell,cols=5)=>`L${Math.floor(cell/cols)+1}C${cell%cols+1}`;
-const defaultConfig=()=>({mode:'local',difficulty:'intermediate',mascots:[ids.includes('capivara')?'capivara':ids[0],ids.includes('onca')?'onca':ids[1]||ids[0]]});
+const defaultConfig=()=>({mode:'local',difficulty:'intermediate',mascots:[ids.includes('coral')?'coral':ids[0],ids.includes('piranha')?'piranha':ids[1]||ids[0]]});
 function validConfig(c){return c&&modes.includes(c.mode)&&difficulties.includes(c.difficulty)&&Array.isArray(c.mascots)&&c.mascots.length===2&&c.mascots.every(id=>ids.includes(id));}
 function icon(id){return versusFrontIcon(id,'ce-mascot');}
 function piece(player,config,ghost=false){return `<span class="ce-piece ce-team-${player}${ghost?' ce-ghost':''}" aria-hidden="true">${icon(config.mascots[player])}<span class="ce-team-mark">${marks[player]}</span></span>`;}
