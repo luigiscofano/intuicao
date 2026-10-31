@@ -11,9 +11,9 @@ import {curvedCut,shapePolygon,basicCutState} from '../dist/curves.mjs';
 import {getFaunaGeometry} from '../dist/cut-fauna-geometry.mjs';
 import {buildOriginalHint} from '../dist/original-hints.mjs';
 import {createCutCampaignProgress,CUT_CAMPAIGN_PROGRESS_KEY} from '../dist/cut-campaign-progress.mjs';
-const BASELINE='eb22d3088fa9de23c9e4ea38a62623bef5d05ad4',root=new URL('../',import.meta.url);
+const BASELINE='97a05b215c7d962faf51a9725cfabbb12ec4b29a',root=new URL('../',import.meta.url);
 const git=(...args)=>execFileSync('git',args,{cwd:root,maxBuffer:32*1024*1024});
-const dir=mkdtempSync(join(tmpdir(),'cut-varied-baseline-'));after(()=>rmSync(dir,{recursive:true,force:true}));
+const dir=mkdtempSync(join(tmpdir(),'cut-open-baseline-'));after(()=>rmSync(dir,{recursive:true,force:true}));
 for(const file of ['curves.mjs','math.mjs','cut-campaign.mjs','cut-fauna-data.mjs','cut-fauna-levels.mjs','cut-fauna-geometry.mjs','cut-fauna-master-data.mjs','cut-fauna-master-levels.mjs','original-hints.mjs','light-world.mjs'])writeFileSync(join(dir,file),git('show',BASELINE+':dist/'+file));
 const {cutLevels:old,legacyCutSelectionIds:oldAliases}=await import(pathToFileURL(join(dir,'cut-campaign.mjs')));
 const {curvedCut:oldCut,shapePolygon:oldPolygon,basicCutState:oldState}=await import(pathToFileURL(join(dir,'curves.mjs')));
@@ -25,7 +25,7 @@ test('primeiras 60 definições, 120 avaliações e dicas permanecem iguais',()=
  assert.deepEqual(buildOriginalHint('cut',cutLevels[i],basicCutState(cutLevels[i])),oldHint('cut',old[i],oldState(old[i])));}
 });
 test('20 novas identidades usam área real, certificados e vista correta nas dicas',()=>{
- assert.equal(Object.keys(legacyCutSelectionIds).length,55);
+ assert.equal(Object.keys(legacyCutSelectionIds).length,75);
  for(let i=60;i<80;i++){const l=cutLevels[i];assert.notEqual(l.id,old[i].id);assert.equal(legacyCutSelectionIds[old[i].id],l.id);const g=getFaunaGeometry(l.shape);assert(g.source.view==='front'||g.source.view==='side');
  for(const travel of [l.initialTravel,l.certificate.travel]){const s=basicCutState(l,travel),r=curvedCut(shapePolygon(s.shape),s);assert(r.errorPP<.01);assert(r.visualErrorPP<=.01000001);assert(r.solidPieces.length>0);assert.equal(Math.abs(r.ratio*100-l.target)<=3,travel===l.certificate.travel);}
  const text=JSON.stringify(buildOriginalHint('cut',l,basicCutState(l)));assert(text.includes(g.source.view==='front'?'ícone de frente':'ícone de lado'));assert(text.includes('Os espaços brancos'));assert(!text.includes(l.id));}
@@ -42,10 +42,10 @@ test('somente os dois dados de silhuetas e aliases de seleção mudam; app termi
  // Inclusive desenho app, animação solo, outras rotas, 15 animais avançados e PNGs.
 });
 
-test('35 aliases anteriores são preservados e 20 v2 apontam somente para seleção v3',()=>{
- assert.equal(Object.keys(oldAliases).length,35);
+test('55 aliases anteriores são preservados e 20 v3 apontam somente para seleção v4',()=>{
+ assert.equal(Object.keys(oldAliases).length,55);
  for(const [id,target] of Object.entries(oldAliases)){
   const at=old.findIndex(l=>l.id===target);assert(at>=0);assert.equal(legacyCutSelectionIds[id],cutLevels[at].id);
  }
- for(let i=60;i<80;i++){assert(old[i].id.startsWith('corte-fauna-v2-'));assert(cutLevels[i].id.startsWith('corte-fauna-v3-'));assert.equal(legacyCutSelectionIds[old[i].id],cutLevels[i].id);assert.equal(cutLevels[i].name,old[i].name);assert.equal(getFaunaGeometry(cutLevels[i].shape).source.view,oldGeometry(old[i].shape).source.view);}
+ for(let i=60;i<80;i++){assert(old[i].id.startsWith('corte-fauna-v3-'));assert(cutLevels[i].id.startsWith('corte-fauna-v4-'));assert.equal(legacyCutSelectionIds[old[i].id],cutLevels[i].id);assert.equal(cutLevels[i].name,old[i].name);assert.equal(getFaunaGeometry(cutLevels[i].shape).source.view,oldGeometry(old[i].shape).source.view);}
 });

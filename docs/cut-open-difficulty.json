@@ -1,0 +1,2848 @@
+{
+  "version": 4,
+  "displayReference": {
+    "viewportWidth": 320,
+    "boardWidth": 273,
+    "svgWidth": 800
+  },
+  "minOpenMouthAt273px": 8.40292479108635,
+  "levels": [
+    {
+      "level": 61,
+      "id": "corte-fauna-v4-mestre-tuiuiu-side",
+      "previousId": "corte-fauna-v3-mestre-tuiuiu-side",
+      "family": "Reta",
+      "target": 36,
+      "angle": 60,
+      "removedFraction": 0.06355719309998326,
+      "selectedRemovedFraction": 0,
+      "holesPurple": 0,
+      "holesNeutral": 2,
+      "holesCrossed": 0,
+      "openCutCount": 1,
+      "internalCutCount": 1,
+      "grossCutterArea": 1886,
+      "actualRemovedUnion": 1518,
+      "overlapArea": 0,
+      "minOpenMouthAt273px": 10.581040268456377,
+      "forms": [
+        "oval",
+        "losango"
+      ],
+      "minAddedHoleWidthAt273px": 10.402311382550337,
+      "minClearance": 1,
+      "usableWidth": 6.360656309872866,
+      "holes": [
+        {
+          "kind": "ellipse",
+          "form": "oval",
+          "cx": 103,
+          "cy": 156,
+          "rx": 19.116,
+          "ry": 13.763520000000002,
+          "rotation": 0,
+          "minWidthSource": 27.527040000000003,
+          "boundingRadius": 19.116,
+          "type": "internal",
+          "interiorRemovedSample": [
+            103.5,
+            156.5
+          ],
+          "grossPixelArea": 829,
+          "pixelArea": 829,
+          "uniqueRemovedPixelArea": 829,
+          "outsidePixelArea": 0,
+          "sourceClearance": 31.622776601683793,
+          "originalBoundaryPixelsRemoved": 0,
+          "selectedFraction": 0,
+          "uniqueSelectedPixelArea": 0,
+          "side": "neutro",
+          "minWidthAt273px": 10.402311382550337
+        },
+        {
+          "kind": "polygon",
+          "form": "losango",
+          "cx": 128,
+          "cy": 196,
+          "vertices": [
+            [
+              141.66977675,
+              176.82282975
+            ],
+            [
+              143.7252795,
+              212.67045975000002
+            ],
+            [
+              114.33022325,
+              215.17717025
+            ],
+            [
+              112.2747205,
+              179.32954024999998
+            ]
+          ],
+          "minWidthSource": 29.490350503978814,
+          "boundingRadius": 25.410000000000004,
+          "type": "open",
+          "interiorRemovedSample": [
+            113.5,
+            180.5
+          ],
+          "outsideBoundarySample": [
+            142.5,
+            188.5
+          ],
+          "mouthWidthAt273px": 10.581040268456377,
+          "grossPixelArea": 1057,
+          "pixelArea": 689,
+          "uniqueRemovedPixelArea": 689,
+          "outsidePixelArea": 368,
+          "sourceClearance": 1,
+          "originalBoundaryPixelsRemoved": 34,
+          "selectedFraction": 0,
+          "uniqueSelectedPixelArea": 0,
+          "side": "neutro",
+          "minWidthAt273px": 11.14423522191045
+        }
+      ]
+    },
+    {
+      "level": 62,
+      "id": "corte-fauna-v4-mestre-capivara-front",
+      "previousId": "corte-fauna-v3-mestre-capivara-front",
+      "family": "Seno",
+      "target": 68,
+      "angle": 180,
+      "removedFraction": 0.025956058478566118,
+      "selectedRemovedFraction": 0.7156992170181045,
+      "holesPurple": 0,
+      "holesNeutral": 0,
+      "holesCrossed": 2,
+      "openCutCount": 0,
+      "internalCutCount": 2,
+      "grossCutterArea": 1257,
+      "actualRemovedUnion": 1257,
+      "overlapArea": 0,
+      "minOpenMouthAt273px": null,
+      "forms": [
+        "triangulo",
+        "pentagono"
+      ],
+      "minAddedHoleWidthAt273px": 9.372495388729789,
+      "minClearance": 17.72004514666935,
+      "usableWidth": 16.000935696065426,
+      "holes": [
+        {
+          "kind": "polygon",
+          "form": "triangulo",
+          "cx": 147,
+          "cy": 74,
+          "vertices": [
+            [
+              154.57827468,
+              49.21258087999999
+            ],
+            [
+              164.67739788,
+              92.95668812
+            ],
+            [
+              121.74432743999999,
+              79.830731
+            ]
+          ],
+          "minWidthSource": 38.87999981933075,
+          "boundingRadius": 25.92,
+          "type": "internal",
+          "interiorRemovedSample": [
+            147.5,
+            74.5
+          ],
+          "grossPixelArea": 871,
+          "pixelArea": 871,
+          "uniqueRemovedPixelArea": 871,
+          "outsidePixelArea": 0,
+          "sourceClearance": 20.615528128088304,
+          "originalBoundaryPixelsRemoved": 0,
+          "selectedFraction": 0.8611028114767441,
+          "uniqueSelectedPixelArea": 750.020548796244,
+          "side": "cruzado",
+          "minWidthAt273px": 15.806404258680086
+        },
+        {
+          "kind": "polygon",
+          "form": "pentagono",
+          "cx": 104,
+          "cy": 61,
+          "vertices": [
+            [
+              114.80752544,
+              54.246709239999994
+            ],
+            [
+              113.76246992,
+              69.19168552000001
+            ],
+            [
+              99.22601336000001,
+              72.81603052
+            ],
+            [
+              91.28704352000001,
+              60.11102392
+            ],
+            [
+              100.91694776,
+              48.6345508
+            ]
+          ],
+          "minWidthSource": 23.054112311494293,
+          "boundingRadius": 12.744,
+          "type": "internal",
+          "interiorRemovedSample": [
+            114.5,
+            64.5
+          ],
+          "grossPixelArea": 386,
+          "pixelArea": 386,
+          "uniqueRemovedPixelArea": 386,
+          "outsidePixelArea": 0,
+          "sourceClearance": 17.72004514666935,
+          "originalBoundaryPixelsRemoved": 0,
+          "selectedFraction": 0.3875993963614332,
+          "uniqueSelectedPixelArea": 149.61336699551322,
+          "side": "cruzado",
+          "minWidthAt273px": 9.372495388729789
+        }
+      ]
+    },
+    {
+      "level": 63,
+      "id": "corte-fauna-v4-mestre-bemtevi-side",
+      "previousId": "corte-fauna-v3-mestre-bemtevi-side",
+      "family": "Cúbica",
+      "target": 68,
+      "angle": 180,
+      "removedFraction": 0.03592131992270723,
+      "selectedRemovedFraction": 0.6262068965516306,
+      "holesPurple": 1,
+      "holesNeutral": 1,
+      "holesCrossed": 0,
+      "openCutCount": 1,
+      "internalCutCount": 1,
+      "grossCutterArea": 808,
+      "actualRemovedUnion": 725,
+      "overlapArea": 0,
+      "minOpenMouthAt273px": 8.863020833333332,
+      "forms": [
+        "losango",
+        "hexagono"
+      ],
+      "minAddedHoleWidthAt273px": 7.803823469700422,
+      "minClearance": 1,
+      "usableWidth": 16.03896338120103,
+      "holes": [
+        {
+          "kind": "polygon",
+          "form": "losango",
+          "cx": 126,
+          "cy": 96,
+          "vertices": [
+            [
+              131.88322871999998,
+              85.36311672
+            ],
+            [
+              134.72224416,
+              103.17466896
+            ],
+            [
+              120.11677128,
+              106.63688328
+            ],
+            [
+              117.27775584000001,
+              88.82533104
+            ]
+          ],
+          "minWidthSource": 14.968372689135675,
+          "boundingRadius": 12.830400000000001,
+          "type": "internal",
+          "interiorRemovedSample": [
+            126.5,
+            96.5
+          ],
+          "grossPixelArea": 271,
+          "pixelArea": 271,
+          "uniqueRemovedPixelArea": 271,
+          "outsidePixelArea": 0,
+          "sourceClearance": 16.64331697709324,
+          "originalBoundaryPixelsRemoved": 0,
+          "selectedFraction": 0,
+          "uniqueSelectedPixelArea": 0,
+          "side": "neutro",
+          "minWidthAt273px": 7.803823469700422
+        },
+        {
+          "kind": "polygon",
+          "form": "hexagono",
+          "cx": 173,
+          "cy": 88,
+          "vertices": [
+            [
+              186.96245725,
+              84.25877125
+            ],
+            [
+              183.2212285,
+              98.2212285
+            ],
+            [
+              169.25877125,
+              101.96245724999999
+            ],
+            [
+              159.03754275,
+              91.74122875
+            ],
+            [
+              162.7787715,
+              77.7787715
+            ],
+            [
+              176.74122875,
+              74.03754274999999
+            ]
+          ],
+          "minWidthSource": 25.036792845194686,
+          "boundingRadius": 14.455,
+          "type": "open",
+          "interiorRemovedSample": [
+            186.5,
+            84.5
+          ],
+          "outsideBoundarySample": [
+            172.5,
+            86.5
+          ],
+          "mouthWidthAt273px": 8.863020833333332,
+          "grossPixelArea": 537,
+          "pixelArea": 454,
+          "uniqueRemovedPixelArea": 454,
+          "outsidePixelArea": 83,
+          "sourceClearance": 1,
+          "originalBoundaryPixelsRemoved": 28,
+          "selectedFraction": 0.9999999999998507,
+          "uniqueSelectedPixelArea": 453.9999999999322,
+          "side": "roxo",
+          "minWidthAt273px": 13.053036269812434
+        }
+      ]
+    },
+    {
+      "level": 64,
+      "id": "corte-fauna-v4-mestre-mico-front",
+      "previousId": "corte-fauna-v3-mestre-mico-front",
+      "family": "Parábola",
+      "target": 24,
+      "angle": 35,
+      "removedFraction": 0.046294634846581736,
+      "selectedRemovedFraction": 0.5116279069767328,
+      "holesPurple": 1,
+      "holesNeutral": 1,
+      "holesCrossed": 0,
+      "openCutCount": 0,
+      "internalCutCount": 2,
+      "grossCutterArea": 1548,
+      "actualRemovedUnion": 1548,
+      "overlapArea": 0,
+      "minOpenMouthAt273px": null,
+      "forms": [
+        "pentagono",
+        "irregular"
+      ],
+      "minAddedHoleWidthAt273px": 15.144390666454585,
+      "minClearance": 20.808652046684813,
+      "usableWidth": 26.73038518987596,
+      "holes": [
+        {
+          "kind": "polygon",
+          "form": "pentagono",
+          "cx": 269,
+          "cy": 64,
+          "vertices": [
+            [
+              282.86552708000005,
+              52.77191716
+            ],
+            [
+              283.96322504,
+              73.71723196
+            ],
+            [
+              264.38225372,
+              81.2336626
+            ],
+            [
+              251.18285120000002,
+              64.9337572
+            ],
+            [
+              262.60614188,
+              47.343431079999995
+            ]
+          ],
+          "minWidthSource": 32.275757664105676,
+          "boundingRadius": 17.8416,
+          "type": "internal",
+          "interiorRemovedSample": [
+            269.5,
+            64.5
+          ],
+          "grossPixelArea": 756,
+          "pixelArea": 756,
+          "uniqueRemovedPixelArea": 756,
+          "outsidePixelArea": 0,
+          "sourceClearance": 25.495097567963924,
+          "originalBoundaryPixelsRemoved": 0,
+          "selectedFraction": 0,
+          "uniqueSelectedPixelArea": 0,
+          "side": "neutro",
+          "minWidthAt273px": 15.144390666454585
+        },
+        {
+          "kind": "polygon",
+          "form": "irregular",
+          "cx": 50,
+          "cy": 63,
+          "vertices": [
+            [
+              64.13026964,
+              46.54871747999999
+            ],
+            [
+              66.7172336,
+              69.51443148
+            ],
+            [
+              51.94761044,
+              80.01273456
+            ],
+            [
+              49.00604576,
+              67.20147108
+            ],
+            [
+              34.32507332,
+              75.16116072
+            ],
+            [
+              33.46006784,
+              51.4083438
+            ],
+            [
+              47.14708496,
+              47.65012416
+            ]
+          ],
+          "minWidthSource": 32.47862463630841,
+          "boundingRadius": 16.934400000000004,
+          "type": "internal",
+          "interiorRemovedSample": [
+            50.5,
+            63.5
+          ],
+          "grossPixelArea": 792,
+          "pixelArea": 792,
+          "uniqueRemovedPixelArea": 792,
+          "outsidePixelArea": 0,
+          "sourceClearance": 20.808652046684813,
+          "originalBoundaryPixelsRemoved": 0,
+          "selectedFraction": 0.9999999999999776,
+          "uniqueSelectedPixelArea": 791.9999999999823,
+          "side": "roxo",
+          "minWidthAt273px": 15.239579653567839
+        }
+      ]
+    },
+    {
+      "level": 65,
+      "id": "corte-fauna-v4-mestre-micoLeao-side",
+      "previousId": "corte-fauna-v3-mestre-micoLeao-side",
+      "family": "Cosseno",
+      "target": 68,
+      "angle": 180,
+      "removedFraction": 0.03427745173088373,
+      "selectedRemovedFraction": 0.20317461815872442,
+      "holesPurple": 0,
+      "holesNeutral": 0,
+      "holesCrossed": 2,
+      "openCutCount": 1,
+      "internalCutCount": 1,
+      "grossCutterArea": 968,
+      "actualRemovedUnion": 806,
+      "overlapArea": 0,
+      "minOpenMouthAt273px": 11.212500000000002,
+      "forms": [
+        "hexagono",
+        "oval"
+      ],
+      "minAddedHoleWidthAt273px": 9.68464092631435,
+      "minClearance": 1,
+      "usableWidth": 23.778600631281734,
+      "holes": [
+        {
+          "kind": "polygon",
+          "form": "hexagono",
+          "cx": 126,
+          "cy": 108,
+          "vertices": [
+            [
+              136.63442844,
+              103.70341223999999
+            ],
+            [
+              135.03816792,
+              115.061391
+            ],
+            [
+              124.40374055999999,
+              119.35797876000001
+            ],
+            [
+              115.36557155999999,
+              112.29658776000001
+            ],
+            [
+              116.96183208,
+              100.938609
+            ],
+            [
+              127.59625944000001,
+              96.64202123999999
+            ]
+          ],
+          "minWidthSource": 19.865930105260205,
+          "boundingRadius": 11.4696,
+          "type": "internal",
+          "interiorRemovedSample": [
+            126.5,
+            108.5
+          ],
+          "grossPixelArea": 345,
+          "pixelArea": 345,
+          "uniqueRemovedPixelArea": 345,
+          "outsidePixelArea": 0,
+          "sourceClearance": 17.11724276862369,
+          "originalBoundaryPixelsRemoved": 0,
+          "selectedFraction": 0.1436968323507096,
+          "uniqueSelectedPixelArea": 49.57540716099481,
+          "side": "cruzado",
+          "minWidthAt273px": 9.68464092631435
+        },
+        {
+          "kind": "ellipse",
+          "form": "oval",
+          "cx": 95,
+          "cy": 143,
+          "rx": 16.52,
+          "ry": 11.8944,
+          "rotation": 109,
+          "minWidthSource": 23.7888,
+          "boundingRadius": 16.52,
+          "type": "open",
+          "interiorRemovedSample": [
+            90.5,
+            130.5
+          ],
+          "outsideBoundarySample": [
+            107.5,
+            137.5
+          ],
+          "mouthWidthAt273px": 11.212500000000002,
+          "grossPixelArea": 623,
+          "pixelArea": 461,
+          "uniqueRemovedPixelArea": 461,
+          "outsidePixelArea": 162,
+          "sourceClearance": 1,
+          "originalBoundaryPixelsRemoved": 45,
+          "selectedFraction": 0.24768619322112168,
+          "uniqueSelectedPixelArea": 114.18333507493709,
+          "side": "cruzado",
+          "minWidthAt273px": 11.59704
+        }
+      ]
+    },
+    {
+      "level": 66,
+      "id": "corte-fauna-v4-mestre-tatu-front",
+      "previousId": "corte-fauna-v3-mestre-tatu-front",
+      "family": "Dupla curva",
+      "target": 81,
+      "angle": 240,
+      "removedFraction": 0.02783410583236771,
+      "selectedRemovedFraction": 0.9999999999998506,
+      "holesPurple": 2,
+      "holesNeutral": 0,
+      "holesCrossed": 0,
+      "openCutCount": 0,
+      "internalCutCount": 2,
+      "grossCutterArea": 1153,
+      "actualRemovedUnion": 1153,
+      "overlapArea": 0,
+      "minOpenMouthAt273px": null,
+      "forms": [
+        "irregular",
+        "triangulo"
+      ],
+      "minAddedHoleWidthAt273px": 11.226599775685925,
+      "minClearance": 16.76305461424021,
+      "usableWidth": 22.110279202461243,
+      "holes": [
+        {
+          "kind": "polygon",
+          "form": "irregular",
+          "cx": 147,
+          "cy": 204,
+          "vertices": [
+            [
+              158.16146304,
+              187.23863219999998
+            ],
+            [
+              163.14463919999997,
+              208.11223068
+            ],
+            [
+              150.72025116,
+              219.45938676
+            ],
+            [
+              146.55937836,
+              207.98476584
+            ],
+            [
+              133.9294134,
+              216.9821778
+            ],
+            [
+              130.44420803999998,
+              195.18828108
+            ],
+            [
+              142.63355136,
+              190.17563496
+            ]
+          ],
+          "minWidthSource": 30.15872358557705,
+          "boundingRadius": 15.724800000000004,
+          "type": "internal",
+          "interiorRemovedSample": [
+            147.5,
+            204.5
+          ],
+          "grossPixelArea": 684,
+          "pixelArea": 684,
+          "uniqueRemovedPixelArea": 684,
+          "outsidePixelArea": 0,
+          "sourceClearance": 22.02271554554524,
+          "originalBoundaryPixelsRemoved": 0,
+          "selectedFraction": 0.9999999999998551,
+          "uniqueSelectedPixelArea": 683.9999999999009,
+          "side": "roxo",
+          "minWidthAt273px": 11.874997411820962
+        },
+        {
+          "kind": "polygon",
+          "form": "triangulo",
+          "cx": 147,
+          "cy": 154,
+          "vertices": [
+            [
+              162.37779491999999,
+              165.1726216
+            ],
+            [
+              129.63532800000002,
+              161.7312502
+            ],
+            [
+              148.98687708,
+              135.0961282
+            ]
+          ],
+          "minWidthSource": 28.511999430313463,
+          "boundingRadius": 19.008000000000003,
+          "type": "internal",
+          "interiorRemovedSample": [
+            147.5,
+            154.5
+          ],
+          "grossPixelArea": 469,
+          "pixelArea": 469,
+          "uniqueRemovedPixelArea": 469,
+          "outsidePixelArea": 0,
+          "sourceClearance": 16.76305461424021,
+          "originalBoundaryPixelsRemoved": 0,
+          "selectedFraction": 0.9999999999998441,
+          "uniqueSelectedPixelArea": 468.9999999999269,
+          "side": "roxo",
+          "minWidthAt273px": 11.226599775685925
+        }
+      ]
+    },
+    {
+      "level": 67,
+      "id": "corte-fauna-v4-mestre-onca-side",
+      "previousId": "corte-fauna-v3-mestre-onca-side",
+      "family": "Seno",
+      "target": 24,
+      "angle": 35,
+      "removedFraction": 0.05662492393427922,
+      "selectedRemovedFraction": 0,
+      "holesPurple": 0,
+      "holesNeutral": 4,
+      "holesCrossed": 0,
+      "openCutCount": 1,
+      "internalCutCount": 3,
+      "grossCutterArea": 1882,
+      "actualRemovedUnion": 1768,
+      "overlapArea": 0,
+      "minOpenMouthAt273px": 10.2375,
+      "forms": [
+        "oval",
+        "losango",
+        "hexagono"
+      ],
+      "minAddedHoleWidthAt273px": 6.719116059972733,
+      "minClearance": 1,
+      "usableWidth": 12.809264846146107,
+      "holes": [
+        {
+          "kind": "ellipse",
+          "form": "oval",
+          "cx": 211,
+          "cy": 116,
+          "rx": 14.0184,
+          "ry": 10.093247999999999,
+          "rotation": 102,
+          "minWidthSource": 20.186495999999998,
+          "boundingRadius": 14.0184,
+          "type": "internal",
+          "interiorRemovedSample": [
+            211.5,
+            116.5
+          ],
+          "grossPixelArea": 449,
+          "pixelArea": 449,
+          "uniqueRemovedPixelArea": 449,
+          "outsidePixelArea": 0,
+          "sourceClearance": 12.727922061357855,
+          "originalBoundaryPixelsRemoved": 0,
+          "selectedFraction": 0,
+          "uniqueSelectedPixelArea": 0,
+          "side": "neutro",
+          "minWidthAt273px": 8.6108022
+        },
+        {
+          "kind": "polygon",
+          "form": "losango",
+          "cx": 166,
+          "cy": 123,
+          "vertices": [
+            [
+              172.68182716,
+              133.81351728
+            ],
+            [
+              157.13291596,
+              131.14856976000002
+            ],
+            [
+              159.31817284,
+              112.18648271999999
+            ],
+            [
+              174.86708404,
+              114.85143024
+            ]
+          ],
+          "minWidthSource": 15.75177391348919,
+          "boundingRadius": 13.53999044433827,
+          "type": "internal",
+          "interiorRemovedSample": [
+            166.5,
+            123.5
+          ],
+          "grossPixelArea": 301,
+          "pixelArea": 301,
+          "uniqueRemovedPixelArea": 301,
+          "outsidePixelArea": 0,
+          "sourceClearance": 9.899494936611665,
+          "originalBoundaryPixelsRemoved": 0,
+          "selectedFraction": 0,
+          "uniqueSelectedPixelArea": 0,
+          "side": "neutro",
+          "minWidthAt273px": 6.719116059972733
+        },
+        {
+          "kind": "polygon",
+          "form": "hexagono",
+          "cx": 141,
+          "cy": 190,
+          "vertices": [
+            [
+              141.80007912,
+              178.55833959999998
+            ],
+            [
+              151.30880844,
+              184.97205784
+            ],
+            [
+              150.50872932000001,
+              196.41371931999998
+            ],
+            [
+              140.19992088,
+              201.44166040000002
+            ],
+            [
+              130.69119156,
+              195.02794216
+            ],
+            [
+              131.49127067999999,
+              183.58628068000002
+            ]
+          ],
+          "minWidthSource": 19.865929961905827,
+          "boundingRadius": 11.4696,
+          "type": "internal",
+          "interiorRemovedSample": [
+            142.5,
+            197.5
+          ],
+          "grossPixelArea": 343,
+          "pixelArea": 343,
+          "uniqueRemovedPixelArea": 343,
+          "outsidePixelArea": 0,
+          "sourceClearance": 10.295630140987,
+          "originalBoundaryPixelsRemoved": 0,
+          "selectedFraction": 0,
+          "uniqueSelectedPixelArea": 0,
+          "side": "neutro",
+          "minWidthAt273px": 8.474060749375456
+        },
+        {
+          "kind": "ellipse",
+          "form": "oval",
+          "cx": 159,
+          "cy": 173,
+          "rx": 18.584999999999997,
+          "ry": 13.381199999999998,
+          "rotation": 45,
+          "minWidthSource": 26.762399999999996,
+          "boundingRadius": 18.584999999999997,
+          "type": "open",
+          "interiorRemovedSample": [
+            160.5,
+            158.5
+          ],
+          "outsideBoundarySample": [
+            149.5,
+            170.5
+          ],
+          "mouthWidthAt273px": 10.2375,
+          "grossPixelArea": 789,
+          "pixelArea": 675,
+          "uniqueRemovedPixelArea": 675,
+          "outsidePixelArea": 114,
+          "sourceClearance": 1,
+          "originalBoundaryPixelsRemoved": 48,
+          "selectedFraction": 0,
+          "uniqueSelectedPixelArea": 0,
+          "side": "neutro",
+          "minWidthAt273px": 11.415836249999998
+        }
+      ]
+    },
+    {
+      "level": 68,
+      "id": "corte-fauna-v4-mestre-lobo-front",
+      "previousId": "corte-fauna-v3-mestre-lobo-front",
+      "family": "Cúbica",
+      "target": 37,
+      "angle": 215,
+      "removedFraction": 0.03644745555498956,
+      "selectedRemovedFraction": 0.07246215533468743,
+      "holesPurple": 0,
+      "holesNeutral": 1,
+      "holesCrossed": 1,
+      "openCutCount": 0,
+      "internalCutCount": 2,
+      "grossCutterArea": 1431,
+      "actualRemovedUnion": 1431,
+      "overlapArea": 0,
+      "minOpenMouthAt273px": null,
+      "forms": [
+        "triangulo",
+        "pentagono"
+      ],
+      "minAddedHoleWidthAt273px": 10.049733729539065,
+      "minClearance": 19.1049731745428,
+      "usableWidth": 13.04467199370265,
+      "holes": [
+        {
+          "kind": "polygon",
+          "form": "triangulo",
+          "cx": 126,
+          "cy": 144,
+          "vertices": [
+            [
+              148.67014283999998,
+              156.56626548000003
+            ],
+            [
+              103.7822238,
+              157.34978712
+            ],
+            [
+              125.54763336,
+              118.0839474
+            ]
+          ],
+          "minWidthSource": 38.87999986755221,
+          "boundingRadius": 25.92,
+          "type": "internal",
+          "interiorRemovedSample": [
+            126.5,
+            144.5
+          ],
+          "grossPixelArea": 872,
+          "pixelArea": 872,
+          "uniqueRemovedPixelArea": 872,
+          "outsidePixelArea": 0,
+          "sourceClearance": 19.1049731745428,
+          "originalBoundaryPixelsRemoved": 0,
+          "selectedFraction": 0,
+          "uniqueSelectedPixelArea": 0,
+          "side": "neutro",
+          "minWidthAt273px": 14.123787048660395
+        },
+        {
+          "kind": "polygon",
+          "form": "pentagono",
+          "cx": 126,
+          "cy": 201,
+          "vertices": [
+            [
+              131.2304454,
+              215.37053184
+            ],
+            [
+              113.94910944,
+              210.41518728000003
+            ],
+            [
+              113.32169424,
+              192.44837424
+            ],
+            [
+              130.215267,
+              186.29961672
+            ],
+            [
+              141.28348392,
+              200.46628884
+            ]
+          ],
+          "minWidthSource": 27.66493467560982,
+          "boundingRadius": 15.292800000000002,
+          "type": "internal",
+          "interiorRemovedSample": [
+            126.5,
+            201.5
+          ],
+          "grossPixelArea": 559,
+          "pixelArea": 559,
+          "uniqueRemovedPixelArea": 559,
+          "outsidePixelArea": 0,
+          "sourceClearance": 23.706539182259394,
+          "originalBoundaryPixelsRemoved": 0,
+          "selectedFraction": 0.18549793252940555,
+          "uniqueSelectedPixelArea": 103.6933442839377,
+          "side": "cruzado",
+          "minWidthAt273px": 10.049733729539065
+        }
+      ]
+    },
+    {
+      "level": 69,
+      "id": "corte-fauna-v4-mestre-coral-side",
+      "previousId": "corte-fauna-v3-mestre-coral-side",
+      "family": "Parábola",
+      "target": 63,
+      "angle": 325,
+      "removedFraction": 0.036901225399183064,
+      "selectedRemovedFraction": 0.9999999999999237,
+      "holesPurple": 2,
+      "holesNeutral": 0,
+      "holesCrossed": 0,
+      "openCutCount": 1,
+      "internalCutCount": 1,
+      "grossCutterArea": 1126,
+      "actualRemovedUnion": 795,
+      "overlapArea": 0,
+      "minOpenMouthAt273px": 17.279166666666665,
+      "forms": [
+        "losango",
+        "hexagono"
+      ],
+      "minAddedHoleWidthAt273px": 10.835916882781223,
+      "minClearance": 1,
+      "usableWidth": 23.320042261853814,
+      "holes": [
+        {
+          "kind": "polygon",
+          "form": "losango",
+          "cx": 114,
+          "cy": 149,
+          "vertices": [
+            [
+              122.93255040000001,
+              160.28039912
+            ],
+            [
+              104.75007324,
+              159.8933552
+            ],
+            [
+              105.06744959999999,
+              137.71960088
+            ],
+            [
+              123.24992676,
+              138.1066448
+            ]
+          ],
+          "minWidthSource": 18.18615420886359,
+          "boundingRadius": 15.681600000000003,
+          "type": "internal",
+          "interiorRemovedSample": [
+            114.5,
+            149.5
+          ],
+          "grossPixelArea": 417,
+          "pixelArea": 417,
+          "uniqueRemovedPixelArea": 417,
+          "outsidePixelArea": 0,
+          "sourceClearance": 21.095023109728988,
+          "originalBoundaryPixelsRemoved": 0,
+          "selectedFraction": 0.9999999999999234,
+          "uniqueSelectedPixelArea": 416.99999999996805,
+          "side": "roxo",
+          "minWidthAt273px": 10.835916882781223
+        },
+        {
+          "kind": "polygon",
+          "form": "hexagono",
+          "cx": 100,
+          "cy": 180,
+          "vertices": [
+            [
+              100.86458925000002,
+              196.49736025
+            ],
+            [
+              86.14516250000003,
+              188.997436
+            ],
+            [
+              85.28057150000001,
+              172.5000775
+            ],
+            [
+              99.13541074999998,
+              163.50263975
+            ],
+            [
+              113.85483749999997,
+              171.002564
+            ],
+            [
+              114.71942849999999,
+              187.4999225
+            ]
+          ],
+          "minWidthSource": 28.613479086361345,
+          "boundingRadius": 16.52,
+          "type": "open",
+          "interiorRemovedSample": [
+            99.5,
+            164.5
+          ],
+          "outsideBoundarySample": [
+            86.5,
+            179.5
+          ],
+          "mouthWidthAt273px": 17.279166666666665,
+          "grossPixelArea": 709,
+          "pixelArea": 378,
+          "uniqueRemovedPixelArea": 378,
+          "outsidePixelArea": 331,
+          "sourceClearance": 1,
+          "originalBoundaryPixelsRemoved": 29,
+          "selectedFraction": 0.9999999999999242,
+          "uniqueSelectedPixelArea": 377.99999999997135,
+          "side": "roxo",
+          "minWidthAt273px": 17.0488646222903
+        }
+      ]
+    },
+    {
+      "level": 70,
+      "id": "corte-fauna-v4-mestre-jacare-front",
+      "previousId": "corte-fauna-v3-mestre-jacare-front",
+      "family": "Cosseno",
+      "target": 76,
+      "angle": 145,
+      "removedFraction": 0.049767927875385774,
+      "selectedRemovedFraction": 0.999999999999928,
+      "holesPurple": 2,
+      "holesNeutral": 0,
+      "holesCrossed": 0,
+      "openCutCount": 0,
+      "internalCutCount": 2,
+      "grossCutterArea": 2048,
+      "actualRemovedUnion": 2048,
+      "overlapArea": 0,
+      "minOpenMouthAt273px": null,
+      "forms": [
+        "pentagono",
+        "irregular"
+      ],
+      "minAddedHoleWidthAt273px": 14.928567545628756,
+      "minClearance": 25.80697580112788,
+      "usableWidth": 18.636244922876358,
+      "holes": [
+        {
+          "kind": "polygon",
+          "form": "pentagono",
+          "cx": 138,
+          "cy": 91,
+          "vertices": [
+            [
+              148.41417864,
+              111.43897731999999
+            ],
+            [
+              121.77953616,
+              107.22046384
+            ],
+            [
+              117.56102268000001,
+              80.58582136
+            ],
+            [
+              141.58848143999998,
+              68.34322
+            ],
+            [
+              160.65678,
+              87.41151856
+            ]
+          ],
+          "minWidthSource": 41.497402288748184,
+          "boundingRadius": 22.9392,
+          "type": "internal",
+          "interiorRemovedSample": [
+            138.5,
+            91.5
+          ],
+          "grossPixelArea": 1256,
+          "pixelArea": 1256,
+          "uniqueRemovedPixelArea": 1256,
+          "outsidePixelArea": 0,
+          "sourceClearance": 49,
+          "originalBoundaryPixelsRemoved": 0,
+          "selectedFraction": 0.999999999999938,
+          "uniqueSelectedPixelArea": 1255.9999999999222,
+          "side": "roxo",
+          "minWidthAt273px": 19.073984552006753
+        },
+        {
+          "kind": "polygon",
+          "form": "irregular",
+          "cx": 199,
+          "cy": 86,
+          "vertices": [
+            [
+              185.84606548000002,
+              68.75809699999999
+            ],
+            [
+              208.84778344,
+              71.00250439999999
+            ],
+            [
+              216.04589596000002,
+              87.632096
+            ],
+            [
+              202.90300335999999,
+              87.84576968
+            ],
+            [
+              207.63641008000002,
+              103.8608402
+            ],
+            [
+              184.22280388,
+              99.76845452
+            ],
+            [
+              183.3924016,
+              85.59915368
+            ]
+          ],
+          "minWidthSource": 32.478624030893954,
+          "boundingRadius": 16.934400000000004,
+          "type": "internal",
+          "interiorRemovedSample": [
+            184.5,
+            91.5
+          ],
+          "grossPixelArea": 792,
+          "pixelArea": 792,
+          "uniqueRemovedPixelArea": 792,
+          "outsidePixelArea": 0,
+          "sourceClearance": 25.80697580112788,
+          "originalBoundaryPixelsRemoved": 0,
+          "selectedFraction": 0.9999999999999118,
+          "uniqueSelectedPixelArea": 791.9999999999302,
+          "side": "roxo",
+          "minWidthAt273px": 14.928567545628756
+        }
+      ]
+    },
+    {
+      "level": 71,
+      "id": "corte-fauna-v4-mestre-arara-side",
+      "previousId": "corte-fauna-v3-mestre-arara-side",
+      "family": "Reta",
+      "target": 63,
+      "angle": 325,
+      "removedFraction": 0.0666763159164375,
+      "selectedRemovedFraction": 1,
+      "holesPurple": 4,
+      "holesNeutral": 0,
+      "holesCrossed": 0,
+      "openCutCount": 1,
+      "internalCutCount": 3,
+      "grossCutterArea": 1530,
+      "actualRemovedUnion": 1382,
+      "overlapArea": 0,
+      "minOpenMouthAt273px": 11.132794676806085,
+      "forms": [
+        "hexagono",
+        "oval",
+        "losango"
+      ],
+      "minAddedHoleWidthAt273px": 6.642,
+      "minClearance": 1,
+      "usableWidth": 18.647467017173767,
+      "holes": [
+        {
+          "kind": "polygon",
+          "form": "hexagono",
+          "cx": 172,
+          "cy": 94,
+          "vertices": [
+            [
+              174.21297184,
+              106.55038948
+            ],
+            [
+              162.23753008,
+              102.19168552000001
+            ],
+            [
+              160.02455716,
+              89.64129496
+            ],
+            [
+              169.78702816,
+              81.44961052
+            ],
+            [
+              181.76246992,
+              85.80831447999999
+            ],
+            [
+              183.97544284,
+              98.35870504
+            ]
+          ],
+          "minWidthSource": 22.07325505261811,
+          "boundingRadius": 12.744,
+          "type": "internal",
+          "interiorRemovedSample": [
+            172.5,
+            94.5
+          ],
+          "grossPixelArea": 423,
+          "pixelArea": 423,
+          "uniqueRemovedPixelArea": 423,
+          "outsidePixelArea": 0,
+          "sourceClearance": 12.529964086141668,
+          "originalBoundaryPixelsRemoved": 0,
+          "selectedFraction": 1,
+          "uniqueSelectedPixelArea": 423,
+          "side": "roxo",
+          "minWidthAt273px": 9.451423705752688
+        },
+        {
+          "kind": "ellipse",
+          "form": "oval",
+          "cx": 149,
+          "cy": 115,
+          "rx": 10.772227772227772,
+          "ry": 7.756003996003996,
+          "rotation": 31,
+          "minWidthSource": 15.512007992007993,
+          "boundingRadius": 10.772227772227772,
+          "type": "internal",
+          "interiorRemovedSample": [
+            155.5,
+            110.5
+          ],
+          "grossPixelArea": 263,
+          "pixelArea": 263,
+          "uniqueRemovedPixelArea": 263,
+          "outsidePixelArea": 0,
+          "sourceClearance": 10.295630140987,
+          "originalBoundaryPixelsRemoved": 0,
+          "selectedFraction": 1,
+          "uniqueSelectedPixelArea": 263,
+          "side": "roxo",
+          "minWidthAt273px": 6.642
+        },
+        {
+          "kind": "polygon",
+          "form": "losango",
+          "cx": 187,
+          "cy": 149,
+          "vertices": [
+            [
+              197.51938468,
+              144.83176160000002
+            ],
+            [
+              190.41795592,
+              161.82851864
+            ],
+            [
+              176.48061532,
+              153.16823839999998
+            ],
+            [
+              183.58204408,
+              136.17148136
+            ]
+          ],
+          "minWidthSource": 16.198673213043374,
+          "boundingRadius": 13.488702601746082,
+          "type": "internal",
+          "interiorRemovedSample": [
+            187.5,
+            149.5
+          ],
+          "grossPixelArea": 299,
+          "pixelArea": 299,
+          "uniqueRemovedPixelArea": 299,
+          "outsidePixelArea": 0,
+          "sourceClearance": 6.708203932499369,
+          "originalBoundaryPixelsRemoved": 0,
+          "selectedFraction": 1,
+          "uniqueSelectedPixelArea": 299,
+          "side": "roxo",
+          "minWidthAt273px": 6.936019342980408
+        },
+        {
+          "kind": "polygon",
+          "form": "hexagono",
+          "cx": 126,
+          "cy": 151,
+          "vertices": [
+            [
+              139.3585865,
+              156.67038325
+            ],
+            [
+              127.76859725,
+              165.40406625
+            ],
+            [
+              114.41001075,
+              159.73368299999998
+            ],
+            [
+              112.6414135,
+              145.32961675
+            ],
+            [
+              124.23140275,
+              136.59593375
+            ],
+            [
+              137.58998925,
+              142.26631700000002
+            ]
+          ],
+          "minWidthSource": 25.135934062086086,
+          "boundingRadius": 14.512239108082063,
+          "type": "open",
+          "interiorRemovedSample": [
+            125.5,
+            138.5
+          ],
+          "outsideBoundarySample": [
+            138.5,
+            146.5
+          ],
+          "mouthWidthAt273px": 11.132794676806085,
+          "grossPixelArea": 545,
+          "pixelArea": 397,
+          "uniqueRemovedPixelArea": 397,
+          "outsidePixelArea": 148,
+          "sourceClearance": 1,
+          "originalBoundaryPixelsRemoved": 47,
+          "selectedFraction": 1,
+          "uniqueSelectedPixelArea": 397,
+          "side": "roxo",
+          "minWidthAt273px": 10.762815112420796
+        }
+      ]
+    },
+    {
+      "level": 72,
+      "id": "corte-fauna-v4-mestre-peixeBoi-front",
+      "previousId": "corte-fauna-v3-mestre-peixeBoi-front",
+      "family": "Seno",
+      "target": 37,
+      "angle": 215,
+      "removedFraction": 0.038762074693902665,
+      "selectedRemovedFraction": 0,
+      "holesPurple": 0,
+      "holesNeutral": 2,
+      "holesCrossed": 0,
+      "openCutCount": 0,
+      "internalCutCount": 2,
+      "grossCutterArea": 1260,
+      "actualRemovedUnion": 1260,
+      "overlapArea": 0,
+      "minOpenMouthAt273px": null,
+      "forms": [
+        "irregular",
+        "triangulo"
+      ],
+      "minAddedHoleWidthAt273px": 13.83968814072582,
+      "minClearance": 22.360679774997898,
+      "usableWidth": 18.190973717719316,
+      "holes": [
+        {
+          "kind": "polygon",
+          "form": "irregular",
+          "cx": 170,
+          "cy": 48,
+          "vertices": [
+            [
+              154.84285340000002,
+              32.4896772
+            ],
+            [
+              177.9466454,
+              31.914150599999996
+            ],
+            [
+              187.1177408,
+              47.54255844
+            ],
+            [
+              174.0988538,
+              49.35635472
+            ],
+            [
+              180.74872484000002,
+              64.6751946
+            ],
+            [
+              157.01090264,
+              63.466713479999996
+            ],
+            [
+              154.45988648,
+              49.5042294
+            ]
+          ],
+          "minWidthSource": 32.478624780811884,
+          "boundingRadius": 16.934400000000004,
+          "type": "internal",
+          "interiorRemovedSample": [
+            170.5,
+            48.5
+          ],
+          "grossPixelArea": 791,
+          "pixelArea": 791,
+          "uniqueRemovedPixelArea": 791,
+          "outsidePixelArea": 0,
+          "sourceClearance": 25.317977802344327,
+          "originalBoundaryPixelsRemoved": 0,
+          "selectedFraction": 0,
+          "uniqueSelectedPixelArea": 0,
+          "side": "neutro",
+          "minWidthAt273px": 15.765082470384387
+        },
+        {
+          "kind": "polygon",
+          "form": "triangulo",
+          "cx": 121,
+          "cy": 47,
+          "vertices": [
+            [
+              135.12569692,
+              34.28116508
+            ],
+            [
+              124.95198567999999,
+              65.59262984
+            ],
+            [
+              102.9223174,
+              41.12620508
+            ]
+          ],
+          "minWidthSource": 28.51200043199814,
+          "boundingRadius": 19.008000000000003,
+          "type": "internal",
+          "interiorRemovedSample": [
+            130.5,
+            49.5
+          ],
+          "grossPixelArea": 469,
+          "pixelArea": 469,
+          "uniqueRemovedPixelArea": 469,
+          "outsidePixelArea": 0,
+          "sourceClearance": 22.360679774997898,
+          "originalBoundaryPixelsRemoved": 0,
+          "selectedFraction": 0,
+          "uniqueSelectedPixelArea": 0,
+          "side": "neutro",
+          "minWidthAt273px": 13.83968814072582
+        }
+      ]
+    },
+    {
+      "level": 73,
+      "id": "corte-fauna-v4-mestre-piranha-side",
+      "previousId": "corte-fauna-v3-mestre-piranha-side",
+      "family": "Cúbica",
+      "target": 63,
+      "angle": 325,
+      "removedFraction": 0.06077542268621041,
+      "selectedRemovedFraction": 0.9999999999999466,
+      "holesPurple": 2,
+      "holesNeutral": 0,
+      "holesCrossed": 0,
+      "openCutCount": 1,
+      "internalCutCount": 1,
+      "grossCutterArea": 2250,
+      "actualRemovedUnion": 1729,
+      "overlapArea": 0,
+      "minOpenMouthAt273px": 18.417932242990656,
+      "forms": [
+        "oval",
+        "losango"
+      ],
+      "minAddedHoleWidthAt273px": 15.812170248236203,
+      "minClearance": 1,
+      "usableWidth": 17.322178825736046,
+      "holes": [
+        {
+          "kind": "ellipse",
+          "form": "oval",
+          "cx": 125,
+          "cy": 113,
+          "rx": 22.9392,
+          "ry": 16.516223999999998,
+          "rotation": 24,
+          "minWidthSource": 33.032447999999995,
+          "boundingRadius": 22.9392,
+          "type": "internal",
+          "interiorRemovedSample": [
+            125.5,
+            113.5
+          ],
+          "grossPixelArea": 1189,
+          "pixelArea": 1189,
+          "uniqueRemovedPixelArea": 1189,
+          "outsidePixelArea": 0,
+          "sourceClearance": 34,
+          "originalBoundaryPixelsRemoved": 0,
+          "selectedFraction": 0.9999999999999495,
+          "uniqueSelectedPixelArea": 1188.99999999994,
+          "side": "roxo",
+          "minWidthAt273px": 17.382553973831776
+        },
+        {
+          "kind": "polygon",
+          "form": "losango",
+          "cx": 93,
+          "cy": 67,
+          "vertices": [
+            [
+              111.88401025,
+              56.26127025000001
+            ],
+            [
+              101.80575849999998,
+              90.02928075
+            ],
+            [
+              74.11598975,
+              77.73872974999999
+            ],
+            [
+              84.19424150000002,
+              43.97071925
+            ]
+          ],
+          "minWidthSource": 30.04821341434163,
+          "boundingRadius": 25.410000000000004,
+          "type": "open",
+          "interiorRemovedSample": [
+            102.5,
+            89.5
+          ],
+          "outsideBoundarySample": [
+            84.5,
+            45.5
+          ],
+          "mouthWidthAt273px": 18.417932242990656,
+          "grossPixelArea": 1061,
+          "pixelArea": 540,
+          "uniqueRemovedPixelArea": 540,
+          "outsidePixelArea": 521,
+          "sourceClearance": 1,
+          "originalBoundaryPixelsRemoved": 35,
+          "selectedFraction": 0.9999999999999402,
+          "uniqueSelectedPixelArea": 539.9999999999677,
+          "side": "roxo",
+          "minWidthAt273px": 15.812170248236203
+        }
+      ]
+    },
+    {
+      "level": 74,
+      "id": "corte-fauna-v4-mestre-tucano-front",
+      "previousId": "corte-fauna-v3-mestre-tucano-front",
+      "family": "Dupla curva",
+      "target": 32,
+      "angle": 145,
+      "removedFraction": 0.01598727714070478,
+      "selectedRemovedFraction": 0.30313505037488325,
+      "holesPurple": 0,
+      "holesNeutral": 1,
+      "holesCrossed": 1,
+      "openCutCount": 0,
+      "internalCutCount": 2,
+      "grossCutterArea": 382,
+      "actualRemovedUnion": 382,
+      "overlapArea": 0,
+      "minOpenMouthAt273px": null,
+      "forms": [
+        "triangulo",
+        "pentagono"
+      ],
+      "minAddedHoleWidthAt273px": 8.336361732794169,
+      "minClearance": 11.704699910719626,
+      "usableWidth": 13.200229946523905,
+      "holes": [
+        {
+          "kind": "polygon",
+          "form": "triangulo",
+          "cx": 192,
+          "cy": 152,
+          "vertices": [
+            [
+              199.93568987999998,
+              142.87103324
+            ],
+            [
+              195.93807204,
+              163.43699264
+            ],
+            [
+              180.12623808,
+              149.69197412000003
+            ]
+          ],
+          "minWidthSource": 18.143999354885423,
+          "boundingRadius": 12.096000000000002,
+          "type": "internal",
+          "interiorRemovedSample": [
+            192.5,
+            152.5
+          ],
+          "grossPixelArea": 190,
+          "pixelArea": 190,
+          "uniqueRemovedPixelArea": 190,
+          "outsidePixelArea": 0,
+          "sourceClearance": 11.704699910719626,
+          "originalBoundaryPixelsRemoved": 0,
+          "selectedFraction": 0.6094609960168705,
+          "uniqueSelectedPixelArea": 115.7975892432054,
+          "side": "cruzado",
+          "minWidthAt273px": 9.372665721798324
+        },
+        {
+          "kind": "polygon",
+          "form": "pentagono",
+          "cx": 46,
+          "cy": 153,
+          "vertices": [
+            [
+              54.83398312,
+              151.75846439999998
+            ],
+            [
+              49.910621680000006,
+              161.01796212
+            ],
+            [
+              39.582913239999996,
+              159.19690824
+            ],
+            [
+              38.12340124,
+              148.8119382
+            ],
+            [
+              47.54908072,
+              144.21472703999999
+            ]
+          ],
+          "minWidthSource": 16.1378786346909,
+          "boundingRadius": 8.9208,
+          "type": "internal",
+          "interiorRemovedSample": [
+            46.5,
+            153.5
+          ],
+          "grossPixelArea": 192,
+          "pixelArea": 192,
+          "uniqueRemovedPixelArea": 192,
+          "outsidePixelArea": 0,
+          "sourceClearance": 14.560219778561036,
+          "originalBoundaryPixelsRemoved": 0,
+          "selectedFraction": 0,
+          "uniqueSelectedPixelArea": 0,
+          "side": "neutro",
+          "minWidthAt273px": 8.336361732794169
+        }
+      ]
+    },
+    {
+      "level": 75,
+      "id": "corte-fauna-v4-mestre-tamandua-side",
+      "previousId": "corte-fauna-v3-mestre-tamandua-side",
+      "family": "Cosseno",
+      "target": 63,
+      "angle": 325,
+      "removedFraction": 0.03504253228047582,
+      "selectedRemovedFraction": 0.9972918091494896,
+      "holesPurple": 2,
+      "holesNeutral": 0,
+      "holesCrossed": 0,
+      "openCutCount": 1,
+      "internalCutCount": 1,
+      "grossCutterArea": 1114,
+      "actualRemovedUnion": 1034,
+      "overlapArea": 0,
+      "minOpenMouthAt273px": 8.897214484679665,
+      "forms": [
+        "losango",
+        "hexagono"
+      ],
+      "minAddedHoleWidthAt273px": 9.064225931613644,
+      "minClearance": 1,
+      "usableWidth": 17.613488398492336,
+      "holes": [
+        {
+          "kind": "polygon",
+          "form": "losango",
+          "cx": 158,
+          "cy": 69,
+          "vertices": [
+            [
+              168.90497599999998,
+              60.690017759999996
+            ],
+            [
+              164.81418548,
+              82.29875064000001
+            ],
+            [
+              147.09502400000002,
+              77.30998224000001
+            ],
+            [
+              151.18581452,
+              55.701249360000006
+            ]
+          ],
+          "minWidthSource": 18.337881710055218,
+          "boundingRadius": 15.681600000000003,
+          "type": "internal",
+          "interiorRemovedSample": [
+            158.5,
+            69.5
+          ],
+          "grossPixelArea": 403,
+          "pixelArea": 403,
+          "uniqueRemovedPixelArea": 403,
+          "outsidePixelArea": 0,
+          "sourceClearance": 18.867962264113206,
+          "originalBoundaryPixelsRemoved": 0,
+          "selectedFraction": 0.9930514408452537,
+          "uniqueSelectedPixelArea": 400.1997306606372,
+          "side": "roxo",
+          "minWidthAt273px": 9.064225931613644
+        },
+        {
+          "kind": "polygon",
+          "form": "hexagono",
+          "cx": 123,
+          "cy": 76,
+          "vertices": [
+            [
+              139.31661150000002,
+              78.58429675
+            ],
+            [
+              128.92023775,
+              91.42274825
+            ],
+            [
+              112.60362800000001,
+              88.8384515
+            ],
+            [
+              106.68338849999999,
+              73.41570325
+            ],
+            [
+              117.07976225,
+              60.57725175
+            ],
+            [
+              133.39637199999999,
+              63.161548499999995
+            ]
+          ],
+          "minWidthSource": 28.613478191216938,
+          "boundingRadius": 16.52,
+          "type": "open",
+          "interiorRemovedSample": [
+            117.5,
+            61.5
+          ],
+          "outsideBoundarySample": [
+            126.5,
+            74.5
+          ],
+          "mouthWidthAt273px": 8.897214484679665,
+          "grossPixelArea": 711,
+          "pixelArea": 631,
+          "uniqueRemovedPixelArea": 631,
+          "outsidePixelArea": 80,
+          "sourceClearance": 1,
+          "originalBoundaryPixelsRemoved": 34,
+          "selectedFraction": 0.999999999999897,
+          "uniqueSelectedPixelArea": 630.999999999935,
+          "side": "roxo",
+          "minWidthAt273px": 14.143347367775613
+        }
+      ]
+    },
+    {
+      "level": 76,
+      "id": "corte-fauna-v4-sabio-capivara-side",
+      "previousId": "corte-fauna-v3-sabio-capivara-side",
+      "family": "Dupla curva",
+      "target": 29,
+      "angle": 35,
+      "removedFraction": 0.1752204453743835,
+      "selectedRemovedFraction": 0.45321504850820865,
+      "holesPurple": 1,
+      "holesNeutral": 1,
+      "holesCrossed": 2,
+      "openCutCount": 2,
+      "internalCutCount": 2,
+      "grossCutterArea": 7848,
+      "actualRemovedUnion": 5862,
+      "overlapArea": 0,
+      "minOpenMouthAt273px": 22.5225,
+      "forms": [
+        "pentagono",
+        "irregular",
+        "triangulo"
+      ],
+      "minAddedHoleWidthAt273px": 21.194880564786377,
+      "minClearance": 1,
+      "usableWidth": 34.31614860892296,
+      "holes": [
+        {
+          "kind": "polygon",
+          "form": "pentagono",
+          "cx": 97,
+          "cy": 100,
+          "vertices": [
+            [
+              125.83674909999999,
+              92.2732167
+            ],
+            [
+              113.25965335000001,
+              125.0376712
+            ],
+            [
+              78.21226945,
+              123.20091534999999
+            ],
+            [
+              69.1288898,
+              89.3012832
+            ],
+            [
+              98.56243715000001,
+              70.18691355
+            ]
+          ],
+          "minWidthSource": 54.00639257509159,
+          "boundingRadius": 29.853999999999996,
+          "type": "internal",
+          "interiorRemovedSample": [
+            97.5,
+            100.5
+          ],
+          "grossPixelArea": 2119,
+          "pixelArea": 2119,
+          "uniqueRemovedPixelArea": 2119,
+          "outsidePixelArea": 0,
+          "sourceClearance": 35.90264614203248,
+          "originalBoundaryPixelsRemoved": 0,
+          "selectedFraction": 0.4704486662519891,
+          "uniqueSelectedPixelArea": 996.8807237879649,
+          "side": "cruzado",
+          "minWidthAt273px": 28.960928018392863
+        },
+        {
+          "kind": "polygon",
+          "form": "irregular",
+          "cx": 167,
+          "cy": 84,
+          "vertices": [
+            [
+              190.85183030000002,
+              72.70481385000001
+            ],
+            [
+              182.36046374999998,
+              99.51677405
+            ],
+            [
+              160.74439905,
+              103.87744064999998
+            ],
+            [
+              163.81539469999998,
+              88.17888955
+            ],
+            [
+              143.55442215,
+              89.7612033
+            ],
+            [
+              154.34972170000003,
+              62.9265214
+            ],
+            [
+              171.4260878,
+              65.52309604999999
+            ]
+          ],
+          "minWidthSource": 39.52425280146644,
+          "boundingRadius": 20.608,
+          "type": "internal",
+          "interiorRemovedSample": [
+            162.5,
+            88.5
+          ],
+          "grossPixelArea": 1173,
+          "pixelArea": 1173,
+          "uniqueRemovedPixelArea": 1173,
+          "outsidePixelArea": 0,
+          "sourceClearance": 26.90724809414742,
+          "originalBoundaryPixelsRemoved": 0,
+          "selectedFraction": 0,
+          "uniqueSelectedPixelArea": 0,
+          "side": "neutro",
+          "minWidthAt273px": 21.194880564786377
+        },
+        {
+          "kind": "polygon",
+          "form": "triangulo",
+          "cx": 126,
+          "cy": 43,
+          "vertices": [
+            [
+              144.50502644999997,
+              86.59510939999998
+            ],
+            [
+              78.99301514999999,
+              37.22826825
+            ],
+            [
+              154.50196025,
+              5.176622349999988
+            ]
+          ],
+          "minWidthSource": 71.03999912410741,
+          "boundingRadius": 47.36000000000001,
+          "type": "open",
+          "interiorRemovedSample": [
+            144.5,
+            86.5
+          ],
+          "outsideBoundarySample": [
+            153.5,
+            6.5
+          ],
+          "mouthWidthAt273px": 38.07375,
+          "grossPixelArea": 2914,
+          "pixelArea": 1741,
+          "uniqueRemovedPixelArea": 1741,
+          "outsidePixelArea": 1173,
+          "sourceClearance": 1,
+          "originalBoundaryPixelsRemoved": 87,
+          "selectedFraction": 0.47723485960205764,
+          "uniqueSelectedPixelArea": 830.8658905671823,
+          "side": "cruzado",
+          "minWidthAt273px": 38.0951995303026
+        },
+        {
+          "kind": "polygon",
+          "form": "pentagono",
+          "cx": 57,
+          "cy": 45,
+          "vertices": [
+            [
+              65.09500985,
+              20.086123999999998
+            ],
+            [
+              83.196,
+              45
+            ],
+            [
+              65.09500985,
+              69.913876
+            ],
+            [
+              35.806990150000004,
+              60.39762214999999
+            ],
+            [
+              35.806990150000004,
+              29.60237785000001
+            ]
+          ],
+          "minWidthSource": 47.3890085240023,
+          "boundingRadius": 26.196,
+          "type": "open",
+          "interiorRemovedSample": [
+            65.5,
+            69.5
+          ],
+          "outsideBoundarySample": [
+            63.5,
+            21.5
+          ],
+          "mouthWidthAt273px": 22.5225,
+          "grossPixelArea": 1642,
+          "pixelArea": 829,
+          "uniqueRemovedPixelArea": 829,
+          "outsidePixelArea": 813,
+          "sourceClearance": 1,
+          "originalBoundaryPixelsRemoved": 42,
+          "selectedFraction": 0.999999999999966,
+          "uniqueSelectedPixelArea": 828.9999999999718,
+          "side": "roxo",
+          "minWidthAt273px": 25.412355820996236
+        }
+      ]
+    },
+    {
+      "level": 77,
+      "id": "corte-fauna-v4-sabio-onca-front",
+      "previousId": "corte-fauna-v3-sabio-onca-front",
+      "family": "Cúbica",
+      "target": 37,
+      "angle": 145,
+      "removedFraction": 0.06963553530751708,
+      "selectedRemovedFraction": 0.3010458514942376,
+      "holesPurple": 1,
+      "holesNeutral": 1,
+      "holesCrossed": 1,
+      "openCutCount": 2,
+      "internalCutCount": 1,
+      "grossCutterArea": 3905,
+      "actualRemovedUnion": 3057,
+      "overlapArea": 0,
+      "minOpenMouthAt273px": 10.427083333333336,
+      "forms": [
+        "hexagono",
+        "oval",
+        "losango"
+      ],
+      "minAddedHoleWidthAt273px": 11.377500000000003,
+      "minClearance": 1,
+      "usableWidth": 21.814304403960705,
+      "holes": [
+        {
+          "kind": "polygon",
+          "form": "hexagono",
+          "cx": 153,
+          "cy": 99,
+          "vertices": [
+            [
+              181.47964075,
+              99.99453150000001
+            ],
+            [
+              166.37853075,
+              124.16135715
+            ],
+            [
+              137.89889115000003,
+              123.16682680000001
+            ],
+            [
+              124.52035925,
+              98.00546849999999
+            ],
+            [
+              139.62146925,
+              73.83864285
+            ],
+            [
+              168.10110884999997,
+              74.83317319999999
+            ]
+          ],
+          "minWidthSource": 49.35825164213478,
+          "boundingRadius": 28.496999999999996,
+          "type": "internal",
+          "interiorRemovedSample": [
+            153.5,
+            99.5
+          ],
+          "grossPixelArea": 2107,
+          "pixelArea": 2107,
+          "uniqueRemovedPixelArea": 2107,
+          "outsidePixelArea": 0,
+          "sourceClearance": 18.601075237738275,
+          "originalBoundaryPixelsRemoved": 0,
+          "selectedFraction": 0,
+          "uniqueSelectedPixelArea": 0,
+          "side": "neutro",
+          "minWidthAt273px": 20.58650412240705
+        },
+        {
+          "kind": "ellipse",
+          "form": "oval",
+          "cx": 235,
+          "cy": 224,
+          "rx": 18.943556443556446,
+          "ry": 13.63936063936064,
+          "rotation": 133,
+          "minWidthSource": 27.27872127872128,
+          "boundingRadius": 18.943556443556446,
+          "type": "open",
+          "interiorRemovedSample": [
+            243.5,
+            208.5
+          ],
+          "outsideBoundarySample": [
+            249.5,
+            222.5
+          ],
+          "mouthWidthAt273px": 13.346666666666668,
+          "grossPixelArea": 817,
+          "pixelArea": 460,
+          "uniqueRemovedPixelArea": 460,
+          "outsidePixelArea": 357,
+          "sourceClearance": 1,
+          "originalBoundaryPixelsRemoved": 35,
+          "selectedFraction": 0.9354286261262146,
+          "uniqueSelectedPixelArea": 430.2971680180587,
+          "side": "cruzado",
+          "minWidthAt273px": 11.377500000000003
+        },
+        {
+          "kind": "polygon",
+          "form": "losango",
+          "cx": 273,
+          "cy": 209,
+          "vertices": [
+            [
+              275.0931196,
+              233.28622465
+            ],
+            [
+              253.08529575,
+              211.5525856
+            ],
+            [
+              270.9068804,
+              184.71377535
+            ],
+            [
+              292.91470425,
+              206.4474144
+            ]
+          ],
+          "minWidthSource": 30.35645169282849,
+          "boundingRadius": 24.42,
+          "type": "open",
+          "interiorRemovedSample": [
+            265.5,
+            194.5
+          ],
+          "outsideBoundarySample": [
+            285.5,
+            199.5
+          ],
+          "mouthWidthAt273px": 10.427083333333336,
+          "grossPixelArea": 981,
+          "pixelArea": 490,
+          "uniqueRemovedPixelArea": 490,
+          "outsidePixelArea": 491,
+          "sourceClearance": 1,
+          "originalBoundaryPixelsRemoved": 26,
+          "selectedFraction": 0.9999999999996441,
+          "uniqueSelectedPixelArea": 489.9999999998256,
+          "side": "roxo",
+          "minWidthAt273px": 12.661170060217216
+        }
+      ]
+    },
+    {
+      "level": 78,
+      "id": "corte-fauna-v4-sabio-peixeBoi-side",
+      "previousId": "corte-fauna-v3-sabio-peixeBoi-side",
+      "family": "Seno",
+      "target": 43,
+      "angle": 65,
+      "removedFraction": 0.18585557006904274,
+      "selectedRemovedFraction": 0.4371511024726614,
+      "holesPurple": 2,
+      "holesNeutral": 2,
+      "holesCrossed": 0,
+      "openCutCount": 2,
+      "internalCutCount": 2,
+      "grossCutterArea": 6179,
+      "actualRemovedUnion": 4980,
+      "overlapArea": 0,
+      "minOpenMouthAt273px": 10.60235849056604,
+      "forms": [
+        "irregular",
+        "triangulo",
+        "pentagono"
+      ],
+      "minAddedHoleWidthAt273px": 17.740114595163643,
+      "minClearance": 1,
+      "usableWidth": 10.587316006422043,
+      "holes": [
+        {
+          "kind": "polygon",
+          "form": "irregular",
+          "cx": 203,
+          "cy": 53,
+          "vertices": [
+            [
+              233.65907015000002,
+              33.5880253
+            ],
+            [
+              226.5633597,
+              71.6025748
+            ],
+            [
+              197.79353254999998,
+              81.1760097
+            ],
+            [
+              199.35406415,
+              59.2367881
+            ],
+            [
+              171.96803315,
+              64.7913916
+            ],
+            [
+              182.2042303,
+              26.359761250000002
+            ],
+            [
+              205.94432659999998,
+              27.041947
+            ]
+          ],
+          "minWidthSource": 54.34584761642808,
+          "boundingRadius": 28.336,
+          "type": "internal",
+          "interiorRemovedSample": [
+            203.5,
+            53.5
+          ],
+          "grossPixelArea": 2222,
+          "pixelArea": 2222,
+          "uniqueRemovedPixelArea": 2222,
+          "outsidePixelArea": 0,
+          "sourceClearance": 18.027756377319946,
+          "originalBoundaryPixelsRemoved": 0,
+          "selectedFraction": 0.03780940158141632,
+          "uniqueSelectedPixelArea": 84.01249031390705,
+          "side": "neutro",
+          "minWidthAt273px": 30.326008363318124
+        },
+        {
+          "kind": "polygon",
+          "form": "triangulo",
+          "cx": 140,
+          "cy": 77,
+          "vertices": [
+            [
+              153.8,
+              100.9023015
+            ],
+            [
+              112.4,
+              77
+            ],
+            [
+              153.8,
+              53.0976985
+            ]
+          ],
+          "minWidthSource": 41.4,
+          "boundingRadius": 27.599999999999998,
+          "type": "internal",
+          "interiorRemovedSample": [
+            153.5,
+            67.5
+          ],
+          "grossPixelArea": 975,
+          "pixelArea": 975,
+          "uniqueRemovedPixelArea": 975,
+          "outsidePixelArea": 0,
+          "sourceClearance": 19.6468827043885,
+          "originalBoundaryPixelsRemoved": 0,
+          "selectedFraction": 0.9999999999999616,
+          "uniqueSelectedPixelArea": 974.9999999999626,
+          "side": "roxo",
+          "minWidthAt273px": 23.10198113207547
+        },
+        {
+          "kind": "polygon",
+          "form": "pentagono",
+          "cx": 129,
+          "cy": 27,
+          "vertices": [
+            [
+              134.83150525,
+              -3.0004898500000046
+            ],
+            [
+              159.3341947,
+              23.275428299999994
+            ],
+            [
+              141.91605990000002,
+              54.69857925000001
+            ],
+            [
+              106.64836844999999,
+              47.843234050000014
+            ],
+            [
+              102.2698717,
+              12.183248249999993
+            ]
+          ],
+          "minWidthSource": 55.28717696809038,
+          "boundingRadius": 30.562,
+          "type": "open",
+          "interiorRemovedSample": [
+            142.5,
+            54.5
+          ],
+          "outsideBoundarySample": [
+            129.5,
+            0.5
+          ],
+          "mouthWidthAt273px": 25.110849056603776,
+          "grossPixelArea": 2222,
+          "pixelArea": 1118,
+          "uniqueRemovedPixelArea": 1118,
+          "outsidePixelArea": 1104,
+          "sourceClearance": 1,
+          "originalBoundaryPixelsRemoved": 45,
+          "selectedFraction": 0.999999999999986,
+          "uniqueSelectedPixelArea": 1117.9999999999843,
+          "side": "roxo",
+          "minWidthAt273px": 30.85128790247685
+        },
+        {
+          "kind": "polygon",
+          "form": "irregular",
+          "cx": 191,
+          "cy": 97,
+          "vertices": [
+            [
+              191.2444479,
+              75.7737697
+            ],
+            [
+              207.63388834999998,
+              91.36651875
+            ],
+            [
+              203.16451405,
+              108.53128495000001
+            ],
+            [
+              192.89819805,
+              100.775776
+            ],
+            [
+              186.8980431,
+              115.9812331
+            ],
+            [
+              171.30455035,
+              98.7148612
+            ],
+            [
+              179.20290334999999,
+              87.28518195000001
+            ]
+          ],
+          "minWidthSource": 31.791245090234085,
+          "boundingRadius": 16.576000000000004,
+          "type": "open",
+          "interiorRemovedSample": [
+            190.5,
+            77.5
+          ],
+          "outsideBoundarySample": [
+            191.5,
+            98.5
+          ],
+          "mouthWidthAt273px": 10.60235849056604,
+          "grossPixelArea": 760,
+          "pixelArea": 665,
+          "uniqueRemovedPixelArea": 665,
+          "outsidePixelArea": 95,
+          "sourceClearance": 1,
+          "originalBoundaryPixelsRemoved": 32,
+          "selectedFraction": 0,
+          "uniqueSelectedPixelArea": 0,
+          "side": "neutro",
+          "minWidthAt273px": 17.740114595163643
+        }
+      ]
+    },
+    {
+      "level": 79,
+      "id": "corte-fauna-v4-sabio-jacare-front",
+      "previousId": "corte-fauna-v3-sabio-jacare-front",
+      "family": "Parábola",
+      "target": 63,
+      "angle": 215,
+      "removedFraction": 0.1318315472284999,
+      "selectedRemovedFraction": 0.6742857142856566,
+      "holesPurple": 2,
+      "holesNeutral": 1,
+      "holesCrossed": 0,
+      "openCutCount": 2,
+      "internalCutCount": 1,
+      "grossCutterArea": 5969,
+      "actualRemovedUnion": 5425,
+      "overlapArea": 0,
+      "minOpenMouthAt273px": 12.410357142857144,
+      "forms": [
+        "oval",
+        "losango",
+        "hexagono"
+      ],
+      "minAddedHoleWidthAt273px": 19.12400693929052,
+      "minClearance": 1,
+      "usableWidth": 12.910268269479275,
+      "holes": [
+        {
+          "kind": "ellipse",
+          "form": "oval",
+          "cx": 139,
+          "cy": 91,
+          "rx": 29.853999999999996,
+          "ry": 21.494879999999995,
+          "rotation": 126,
+          "minWidthSource": 42.98975999999999,
+          "boundingRadius": 29.853999999999996,
+          "type": "internal",
+          "interiorRemovedSample": [
+            138.5,
+            91.5
+          ],
+          "grossPixelArea": 2015,
+          "pixelArea": 2015,
+          "uniqueRemovedPixelArea": 2015,
+          "outsidePixelArea": 0,
+          "sourceClearance": 42.5205832509386,
+          "originalBoundaryPixelsRemoved": 0,
+          "selectedFraction": 0.999999999999945,
+          "uniqueSelectedPixelArea": 2014.9999999998893,
+          "side": "roxo",
+          "minWidthAt273px": 19.759936114285708
+        },
+        {
+          "kind": "polygon",
+          "form": "losango",
+          "cx": 227,
+          "cy": 128,
+          "vertices": [
+            [
+              233.3063133,
+              161.31176415000002
+            ],
+            [
+              199.6843541,
+              135.69062575
+            ],
+            [
+              220.6936867,
+              94.68823584999998
+            ],
+            [
+              254.3156459,
+              120.30937425
+            ]
+          ],
+          "minWidthSource": 41.60623110335156,
+          "boundingRadius": 34.188,
+          "type": "open",
+          "interiorRemovedSample": [
+            221.5,
+            95.5
+          ],
+          "outsideBoundarySample": [
+            228.5,
+            118.5
+          ],
+          "mouthWidthAt273px": 17.466428571428573,
+          "grossPixelArea": 1917,
+          "pixelArea": 1643,
+          "uniqueRemovedPixelArea": 1643,
+          "outsidePixelArea": 274,
+          "sourceClearance": 1,
+          "originalBoundaryPixelsRemoved": 59,
+          "selectedFraction": 0.9999999999998772,
+          "uniqueSelectedPixelArea": 1642.9999999997983,
+          "side": "roxo",
+          "minWidthAt273px": 19.12400693929052
+        },
+        {
+          "kind": "polygon",
+          "form": "hexagono",
+          "cx": 46,
+          "cy": 119,
+          "vertices": [
+            [
+              59.156940000000006,
+              94.25539375
+            ],
+            [
+              74.0079275,
+              118.02194125
+            ],
+            [
+              60.85098749999999,
+              142.7665475
+            ],
+            [
+              32.843059999999994,
+              143.74460625
+            ],
+            [
+              17.992072500000006,
+              119.97805875
+            ],
+            [
+              31.149012500000012,
+              95.2334525
+            ]
+          ],
+          "minWidthSource": 48.54072322282377,
+          "boundingRadius": 28.025,
+          "type": "open",
+          "interiorRemovedSample": [
+            34.5,
+            96.5
+          ],
+          "outsideBoundarySample": [
+            48.5,
+            118.5
+          ],
+          "mouthWidthAt273px": 12.410357142857144,
+          "grossPixelArea": 2037,
+          "pixelArea": 1767,
+          "uniqueRemovedPixelArea": 1767,
+          "outsidePixelArea": 270,
+          "sourceClearance": 1,
+          "originalBoundaryPixelsRemoved": 50,
+          "selectedFraction": 0,
+          "uniqueSelectedPixelArea": 0,
+          "side": "neutro",
+          "minWidthAt273px": 22.311396709919354
+        }
+      ]
+    },
+    {
+      "level": 80,
+      "id": "corte-fauna-v4-sabio-tamandua-side",
+      "previousId": "corte-fauna-v3-sabio-tamandua-side",
+      "family": "Cosseno",
+      "target": 71,
+      "angle": 205,
+      "removedFraction": 0.08577625648151287,
+      "selectedRemovedFraction": 0.43978261532131563,
+      "holesPurple": 1,
+      "holesNeutral": 1,
+      "holesCrossed": 2,
+      "openCutCount": 2,
+      "internalCutCount": 2,
+      "grossCutterArea": 2865,
+      "actualRemovedUnion": 2531,
+      "overlapArea": 39,
+      "minOpenMouthAt273px": 8.40292479108635,
+      "forms": [
+        "triangulo",
+        "pentagono",
+        "irregular"
+      ],
+      "minAddedHoleWidthAt273px": 9.707201456159186,
+      "minClearance": 1,
+      "usableWidth": 22.22059667110443,
+      "holes": [
+        {
+          "kind": "polygon",
+          "form": "triangulo",
+          "cx": 158,
+          "cy": 69,
+          "vertices": [
+            [
+              174.61009514999998,
+              91.04233980000001
+            ],
+            [
+              130.6057258,
+              72.3635936
+            ],
+            [
+              168.78417904999998,
+              43.594066600000005
+            ]
+          ],
+          "minWidthSource": 41.399999176839515,
+          "boundingRadius": 27.599999999999998,
+          "type": "internal",
+          "interiorRemovedSample": [
+            158.5,
+            69.5
+          ],
+          "grossPixelArea": 989,
+          "pixelArea": 989,
+          "uniqueRemovedPixelArea": 989,
+          "outsidePixelArea": 0,
+          "sourceClearance": 6.324555320336759,
+          "originalBoundaryPixelsRemoved": 0,
+          "selectedFraction": 0.16630166182266468,
+          "uniqueSelectedPixelArea": 164.47234354261536,
+          "side": "cruzado",
+          "minWidthAt273px": 20.463592907883484
+        },
+        {
+          "kind": "polygon",
+          "form": "pentagono",
+          "cx": 110,
+          "cy": 55,
+          "vertices": [
+            [
+              110.75727615,
+              44.170444249999996
+            ],
+            [
+              120.53353080000001,
+              52.37369555
+            ],
+            [
+              115.7528037,
+              64.2064101
+            ],
+            [
+              103.02189775000001,
+              63.316179
+            ],
+            [
+              99.9344916,
+              50.933271100000006
+            ]
+          ],
+          "minWidthSource": 19.6386887729566,
+          "boundingRadius": 10.855999999999998,
+          "type": "internal",
+          "interiorRemovedSample": [
+            103.5,
+            59.5
+          ],
+          "grossPixelArea": 281,
+          "pixelArea": 281,
+          "uniqueRemovedPixelArea": 281,
+          "outsidePixelArea": 0,
+          "sourceClearance": 14.866068747318506,
+          "originalBoundaryPixelsRemoved": 0,
+          "selectedFraction": 0,
+          "uniqueSelectedPixelArea": 0,
+          "side": "neutro",
+          "minWidthAt273px": 9.707201456159186
+        },
+        {
+          "kind": "polygon",
+          "form": "irregular",
+          "cx": 119,
+          "cy": 84,
+          "vertices": [
+            [
+              116.06974984999998,
+              57.62774495
+            ],
+            [
+              138.77919175,
+              74.47668655
+            ],
+            [
+              135.84893975000003,
+              96.45356545
+            ],
+            [
+              121.93025015000002,
+              88.39537614999999
+            ],
+            [
+              116.80231284999999,
+              108.17456605
+            ],
+            [
+              94.82543395000002,
+              89.12793915
+            ],
+            [
+              102.8836214,
+              73.74412355
+            ]
+          ],
+          "minWidthSource": 39.739058040072436,
+          "boundingRadius": 20.720000000000002,
+          "type": "open",
+          "interiorRemovedSample": [
+            95.5,
+            89.5
+          ],
+          "outsideBoundarySample": [
+            126.5,
+            74.5
+          ],
+          "mouthWidthAt273px": 16.311559888579385,
+          "grossPixelArea": 1187,
+          "pixelArea": 1045,
+          "uniqueRemovedPixelArea": 1006,
+          "outsidePixelArea": 142,
+          "sourceClearance": 1,
+          "originalBoundaryPixelsRemoved": 50,
+          "selectedFraction": 0.6637487615652252,
+          "uniqueSelectedPixelArea": 693.6174558356604,
+          "side": "cruzado",
+          "minWidthAt273px": 19.642606822314356
+        },
+        {
+          "kind": "polygon",
+          "form": "triangulo",
+          "cx": 196,
+          "cy": 94,
+          "vertices": [
+            [
+              213.71673775,
+              92.76112529999999
+            ],
+            [
+              188.21452845000002,
+              109.96258255
+            ],
+            [
+              186.0687338,
+              79.27629215
+            ]
+          ],
+          "minWidthSource": 26.64000029664588,
+          "boundingRadius": 17.760000000000005,
+          "type": "open",
+          "interiorRemovedSample": [
+            187.5,
+            80.5
+          ],
+          "outsideBoundarySample": [
+            200.5,
+            94.5
+          ],
+          "mouthWidthAt273px": 8.40292479108635,
+          "grossPixelArea": 408,
+          "pixelArea": 255,
+          "uniqueRemovedPixelArea": 255,
+          "outsidePixelArea": 153,
+          "sourceClearance": 1,
+          "originalBoundaryPixelsRemoved": 22,
+          "selectedFraction": 0.9999999999998982,
+          "uniqueSelectedPixelArea": 254.99999999997405,
+          "side": "roxo",
+          "minWidthAt273px": 13.167877583954908
+        }
+      ]
+    }
+  ]
+}

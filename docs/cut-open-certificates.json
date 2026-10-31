@@ -1,0 +1,759 @@
+{
+  "version": 4,
+  "status": "staging certified; production execution follows integration",
+  "baselineCommit": "97a05b215c7d962faf51a9725cfabbb12ec4b29a",
+  "baselineFirst60Sha256": "83705f3aefdce59cfad01b87eec7e40bd2bbd5f9722e13217516257749e5e22f",
+  "numericalOracleCommit": "ff222574",
+  "sourceRasterProof": "Final silhouette is original green mask AND NOT union of declared cutters. Gross cutter area outside the original silhouette never adds or removes nonexistent fill.",
+  "preservation": "Every original connected component remains. Original boundary removal is permitted only under declared open cutters. All original enclosed negative-space features have a4px Euclidean protection margin.",
+  "distribution": {
+    "masterOpenLevels": 8,
+    "masterInternalOnlyLevels": 7,
+    "sageOpenLevels": 5,
+    "sageOpenCutsPerLevel": 2
+  },
+  "minOpenMouthAt273px": 8.40292479108635,
+  "minNominalCutterWidthAt273px": 6.642,
+  "overlapExample": {
+    "level": 80,
+    "overlappingOriginalPixels": 39,
+    "policy": "Count once in union; each cutter also records uniqueRemovedPixelArea."
+  },
+  "checks": {
+    "tests": 26,
+    "oracleComparisons": 80,
+    "randomControlCases": 600,
+    "campaignSolutions": 80,
+    "preservedComponentCounts": 20,
+    "externalConnectivity": "4-neighbor floodfill from crop perimeter; all removed pixels of each open cutter are reached."
+  },
+  "certificates": [
+    {
+      "number": 61,
+      "id": "corte-fauna-v4-mestre-tuiuiu-side",
+      "previousId": "corte-fauna-v3-mestre-tuiuiu-side",
+      "source": "platform-assets/fauna-side-original.png",
+      "sourceSha256": "7734238fa8be8d183402da21a9007259ab690cc6c4e7ad59f658894f4aa8f765",
+      "certificate": {
+        "travel": -38,
+        "percent": 35.831671581451594,
+        "errorPP": 0,
+        "initialPercent": 79.49394431212787,
+        "usableWidth": 6.360656309872866,
+        "wholeStepTravel": -38,
+        "usefulArea": 27427.338858609975,
+        "wholeStepPercent": 35.831671581451594,
+        "sourceSha256": "7734238fa8be8d183402da21a9007259ab690cc6c4e7ad59f658894f4aa8f765",
+        "view": "side",
+        "addedHoles": 2,
+        "basePixelArea": 23884,
+        "pixelArea": 22366,
+        "holeDistribution": {
+          "removedFraction": 0.06355719309998326,
+          "selectedRemovedFraction": 0,
+          "purple": 0,
+          "neutral": 2,
+          "crossed": 0,
+          "forms": [
+            "oval",
+            "losango"
+          ],
+          "openCutCount": 1,
+          "actualRemovedUnion": 1518,
+          "overlapArea": 0
+        }
+      }
+    },
+    {
+      "number": 62,
+      "id": "corte-fauna-v4-mestre-capivara-front",
+      "previousId": "corte-fauna-v3-mestre-capivara-front",
+      "source": "platform-assets/fauna-green-original.png",
+      "sourceSha256": "b3616f1c1d48d13083194c2a6e09155ea59b1261b4f2c05ec603cc54d4e2c7cb",
+      "certificate": {
+        "travel": 25,
+        "percent": 67.8975118103417,
+        "errorPP": 0.0014409638049059268,
+        "initialPercent": 57.65179983498415,
+        "usableWidth": 16.000935696065426,
+        "wholeStepTravel": 25,
+        "usefulArea": 66948.89676654199,
+        "wholeStepPercent": 67.8975118103417,
+        "sourceSha256": "b3616f1c1d48d13083194c2a6e09155ea59b1261b4f2c05ec603cc54d4e2c7cb",
+        "view": "front",
+        "addedHoles": 2,
+        "basePixelArea": 48428,
+        "pixelArea": 47171,
+        "holeDistribution": {
+          "removedFraction": 0.025956058478566118,
+          "selectedRemovedFraction": 0.7156992170181045,
+          "purple": 0,
+          "neutral": 0,
+          "crossed": 2,
+          "forms": [
+            "triangulo",
+            "pentagono"
+          ],
+          "openCutCount": 0,
+          "actualRemovedUnion": 1257,
+          "overlapArea": 0
+        }
+      }
+    },
+    {
+      "number": 63,
+      "id": "corte-fauna-v4-mestre-bemtevi-side",
+      "previousId": "corte-fauna-v3-mestre-bemtevi-side",
+      "source": "platform-assets/fauna-side-original.png",
+      "sourceSha256": "7734238fa8be8d183402da21a9007259ab690cc6c4e7ad59f658894f4aa8f765",
+      "certificate": {
+        "travel": -23,
+        "percent": 68.06790589510385,
+        "errorPP": 0.0001794041254355241,
+        "initialPercent": 47.96927912023692,
+        "usableWidth": 16.03896338120103,
+        "wholeStepTravel": -23,
+        "usefulArea": 45417.01388888888,
+        "wholeStepPercent": 68.06790589510385,
+        "sourceSha256": "7734238fa8be8d183402da21a9007259ab690cc6c4e7ad59f658894f4aa8f765",
+        "view": "side",
+        "addedHoles": 2,
+        "basePixelArea": 20183,
+        "pixelArea": 19458,
+        "holeDistribution": {
+          "removedFraction": 0.03592131992270723,
+          "selectedRemovedFraction": 0.6262068965516306,
+          "purple": 1,
+          "neutral": 1,
+          "crossed": 0,
+          "forms": [
+            "losango",
+            "hexagono"
+          ],
+          "openCutCount": 1,
+          "actualRemovedUnion": 725,
+          "overlapArea": 0
+        }
+      }
+    },
+    {
+      "number": 64,
+      "id": "corte-fauna-v4-mestre-mico-front",
+      "previousId": "corte-fauna-v3-mestre-mico-front",
+      "source": "platform-assets/fauna-green-original.png",
+      "sourceSha256": "b3616f1c1d48d13083194c2a6e09155ea59b1261b4f2c05ec603cc54d4e2c7cb",
+      "certificate": {
+        "travel": -100,
+        "percent": 24.00971400436321,
+        "errorPP": 0.0000363480529188297,
+        "initialPercent": 45.716456161347494,
+        "usableWidth": 26.73038518987596,
+        "wholeStepTravel": -100,
+        "usefulArea": 60292.03125,
+        "wholeStepPercent": 24.00971400436321,
+        "sourceSha256": "b3616f1c1d48d13083194c2a6e09155ea59b1261b4f2c05ec603cc54d4e2c7cb",
+        "view": "front",
+        "addedHoles": 2,
+        "basePixelArea": 33438,
+        "pixelArea": 31890,
+        "holeDistribution": {
+          "removedFraction": 0.046294634846581736,
+          "selectedRemovedFraction": 0.5116279069767328,
+          "purple": 1,
+          "neutral": 1,
+          "crossed": 0,
+          "forms": [
+            "pentagono",
+            "irregular"
+          ],
+          "openCutCount": 0,
+          "actualRemovedUnion": 1548,
+          "overlapArea": 0
+        }
+      }
+    },
+    {
+      "number": 65,
+      "id": "corte-fauna-v4-mestre-micoLeao-side",
+      "previousId": "corte-fauna-v3-mestre-micoLeao-side",
+      "source": "platform-assets/fauna-side-original.png",
+      "sourceSha256": "7734238fa8be8d183402da21a9007259ab690cc6c4e7ad59f658894f4aa8f765",
+      "certificate": {
+        "travel": 25,
+        "percent": 68.01486467195446,
+        "errorPP": 0.0004611286242235325,
+        "initialPercent": 44.89688579991207,
+        "usableWidth": 23.778600631281734,
+        "wholeStepTravel": 25,
+        "usefulArea": 46342.857142857145,
+        "wholeStepPercent": 68.01486467195446,
+        "sourceSha256": "7734238fa8be8d183402da21a9007259ab690cc6c4e7ad59f658894f4aa8f765",
+        "view": "side",
+        "addedHoles": 2,
+        "basePixelArea": 23514,
+        "pixelArea": 22708,
+        "holeDistribution": {
+          "removedFraction": 0.03427745173088373,
+          "selectedRemovedFraction": 0.20317461815872442,
+          "purple": 0,
+          "neutral": 0,
+          "crossed": 2,
+          "forms": [
+            "hexagono",
+            "oval"
+          ],
+          "openCutCount": 1,
+          "actualRemovedUnion": 806,
+          "overlapArea": 0
+        }
+      }
+    },
+    {
+      "number": 66,
+      "id": "corte-fauna-v4-mestre-tatu-front",
+      "previousId": "corte-fauna-v3-mestre-tatu-front",
+      "source": "platform-assets/fauna-green-original.png",
+      "sourceSha256": "b3616f1c1d48d13083194c2a6e09155ea59b1261b4f2c05ec603cc54d4e2c7cb",
+      "certificate": {
+        "travel": 101,
+        "percent": 81.00671028540086,
+        "errorPP": 0.000029548202103540652,
+        "initialPercent": 58.887492523856,
+        "usableWidth": 22.110279202461243,
+        "wholeStepTravel": 101,
+        "usefulArea": 53615.236686390526,
+        "wholeStepPercent": 81.00671028540086,
+        "sourceSha256": "b3616f1c1d48d13083194c2a6e09155ea59b1261b4f2c05ec603cc54d4e2c7cb",
+        "view": "front",
+        "addedHoles": 2,
+        "basePixelArea": 41424,
+        "pixelArea": 40271,
+        "holeDistribution": {
+          "removedFraction": 0.02783410583236771,
+          "selectedRemovedFraction": 0.9999999999998506,
+          "purple": 2,
+          "neutral": 0,
+          "crossed": 0,
+          "forms": [
+            "irregular",
+            "triangulo"
+          ],
+          "openCutCount": 0,
+          "actualRemovedUnion": 1153,
+          "overlapArea": 0
+        }
+      }
+    },
+    {
+      "number": 67,
+      "id": "corte-fauna-v4-mestre-onca-side",
+      "previousId": "corte-fauna-v3-mestre-onca-side",
+      "source": "platform-assets/fauna-side-original.png",
+      "sourceSha256": "7734238fa8be8d183402da21a9007259ab690cc6c4e7ad59f658894f4aa8f765",
+      "certificate": {
+        "travel": -41,
+        "percent": 24.120851067153897,
+        "errorPP": 0.00006090239863206329,
+        "initialPercent": 45.33373841813677,
+        "usableWidth": 12.809264846146107,
+        "wholeStepTravel": -41,
+        "usefulArea": 46023.4375,
+        "wholeStepPercent": 24.120851067153897,
+        "sourceSha256": "7734238fa8be8d183402da21a9007259ab690cc6c4e7ad59f658894f4aa8f765",
+        "view": "side",
+        "addedHoles": 4,
+        "basePixelArea": 31223,
+        "pixelArea": 29455,
+        "holeDistribution": {
+          "removedFraction": 0.05662492393427922,
+          "selectedRemovedFraction": 0,
+          "purple": 0,
+          "neutral": 4,
+          "crossed": 0,
+          "forms": [
+            "oval",
+            "losango",
+            "hexagono"
+          ],
+          "openCutCount": 1,
+          "actualRemovedUnion": 1768,
+          "overlapArea": 0
+        }
+      }
+    },
+    {
+      "number": 68,
+      "id": "corte-fauna-v4-mestre-lobo-front",
+      "previousId": "corte-fauna-v3-mestre-lobo-front",
+      "source": "platform-assets/fauna-green-original.png",
+      "sourceSha256": "b3616f1c1d48d13083194c2a6e09155ea59b1261b4f2c05ec603cc54d4e2c7cb",
+      "certificate": {
+        "travel": 3,
+        "percent": 36.776015166558885,
+        "errorPP": 0.00008891916535343188,
+        "initialPercent": 64.74922451486633,
+        "usableWidth": 13.04467199370265,
+        "wholeStepTravel": 3,
+        "usefulArea": 42869.884495317376,
+        "wholeStepPercent": 36.776015166558885,
+        "sourceSha256": "b3616f1c1d48d13083194c2a6e09155ea59b1261b4f2c05ec603cc54d4e2c7cb",
+        "view": "front",
+        "addedHoles": 2,
+        "basePixelArea": 39262,
+        "pixelArea": 37831,
+        "holeDistribution": {
+          "removedFraction": 0.03644745555498956,
+          "selectedRemovedFraction": 0.07246215533468743,
+          "purple": 0,
+          "neutral": 1,
+          "crossed": 1,
+          "forms": [
+            "triangulo",
+            "pentagono"
+          ],
+          "openCutCount": 0,
+          "actualRemovedUnion": 1431,
+          "overlapArea": 0
+        }
+      }
+    },
+    {
+      "number": 69,
+      "id": "corte-fauna-v4-mestre-coral-side",
+      "previousId": "corte-fauna-v3-mestre-coral-side",
+      "source": "platform-assets/fauna-side-original.png",
+      "sourceSha256": "7734238fa8be8d183402da21a9007259ab690cc6c4e7ad59f658894f4aa8f765",
+      "certificate": {
+        "travel": 108,
+        "percent": 63.07787735359762,
+        "errorPP": 0.00007255816364532402,
+        "initialPercent": 43.9051706670694,
+        "usableWidth": 23.320042261853814,
+        "wholeStepTravel": 108,
+        "usefulArea": 63255.958679768206,
+        "wholeStepPercent": 63.07787735359762,
+        "sourceSha256": "7734238fa8be8d183402da21a9007259ab690cc6c4e7ad59f658894f4aa8f765",
+        "view": "side",
+        "addedHoles": 2,
+        "basePixelArea": 21544,
+        "pixelArea": 20749,
+        "holeDistribution": {
+          "removedFraction": 0.036901225399183064,
+          "selectedRemovedFraction": 0.9999999999999237,
+          "purple": 2,
+          "neutral": 0,
+          "crossed": 0,
+          "forms": [
+            "losango",
+            "hexagono"
+          ],
+          "openCutCount": 1,
+          "actualRemovedUnion": 795,
+          "overlapArea": 0
+        }
+      }
+    },
+    {
+      "number": 70,
+      "id": "corte-fauna-v4-mestre-jacare-front",
+      "previousId": "corte-fauna-v3-mestre-jacare-front",
+      "source": "platform-assets/fauna-green-original.png",
+      "sourceSha256": "b3616f1c1d48d13083194c2a6e09155ea59b1261b4f2c05ec603cc54d4e2c7cb",
+      "certificate": {
+        "travel": 63,
+        "percent": 76.1137767051264,
+        "errorPP": 0.0000625848033351866,
+        "initialPercent": 64.3641029877605,
+        "usableWidth": 18.636244922876358,
+        "wholeStepTravel": 63,
+        "usefulArea": 70942.3856726364,
+        "wholeStepPercent": 76.1137767051264,
+        "sourceSha256": "b3616f1c1d48d13083194c2a6e09155ea59b1261b4f2c05ec603cc54d4e2c7cb",
+        "view": "front",
+        "addedHoles": 2,
+        "basePixelArea": 41151,
+        "pixelArea": 39103,
+        "holeDistribution": {
+          "removedFraction": 0.049767927875385774,
+          "selectedRemovedFraction": 0.999999999999928,
+          "purple": 2,
+          "neutral": 0,
+          "crossed": 0,
+          "forms": [
+            "pentagono",
+            "irregular"
+          ],
+          "openCutCount": 0,
+          "actualRemovedUnion": 2048,
+          "overlapArea": 0
+        }
+      }
+    },
+    {
+      "number": 71,
+      "id": "corte-fauna-v4-mestre-arara-side",
+      "previousId": "corte-fauna-v3-mestre-arara-side",
+      "source": "platform-assets/fauna-side-original.png",
+      "sourceSha256": "7734238fa8be8d183402da21a9007259ab690cc6c4e7ad59f658894f4aa8f765",
+      "certificate": {
+        "travel": 96,
+        "percent": 63.06803417822405,
+        "errorPP": 0,
+        "initialPercent": 43.74185954030523,
+        "usableWidth": 18.647467017173767,
+        "wholeStepTravel": 96,
+        "usefulArea": 30456.85928667467,
+        "wholeStepPercent": 63.06803417822405,
+        "sourceSha256": "7734238fa8be8d183402da21a9007259ab690cc6c4e7ad59f658894f4aa8f765",
+        "view": "side",
+        "addedHoles": 4,
+        "basePixelArea": 20727,
+        "pixelArea": 19345,
+        "holeDistribution": {
+          "removedFraction": 0.0666763159164375,
+          "selectedRemovedFraction": 1,
+          "purple": 4,
+          "neutral": 0,
+          "crossed": 0,
+          "forms": [
+            "hexagono",
+            "oval",
+            "losango"
+          ],
+          "openCutCount": 1,
+          "actualRemovedUnion": 1382,
+          "overlapArea": 0
+        }
+      }
+    },
+    {
+      "number": 72,
+      "id": "corte-fauna-v4-mestre-peixeBoi-front",
+      "previousId": "corte-fauna-v3-mestre-peixeBoi-front",
+      "source": "platform-assets/fauna-green-original.png",
+      "sourceSha256": "b3616f1c1d48d13083194c2a6e09155ea59b1261b4f2c05ec603cc54d4e2c7cb",
+      "certificate": {
+        "travel": -84,
+        "percent": 37.00868775030962,
+        "errorPP": 0.000048901951515276244,
+        "initialPercent": 62.22888693332078,
+        "usableWidth": 18.190973717719316,
+        "wholeStepTravel": -84,
+        "usefulArea": 63218.8131688466,
+        "wholeStepPercent": 37.00868775030962,
+        "sourceSha256": "b3616f1c1d48d13083194c2a6e09155ea59b1261b4f2c05ec603cc54d4e2c7cb",
+        "view": "front",
+        "addedHoles": 2,
+        "basePixelArea": 32506,
+        "pixelArea": 31246,
+        "holeDistribution": {
+          "removedFraction": 0.038762074693902665,
+          "selectedRemovedFraction": 0,
+          "purple": 0,
+          "neutral": 2,
+          "crossed": 0,
+          "forms": [
+            "irregular",
+            "triangulo"
+          ],
+          "openCutCount": 0,
+          "actualRemovedUnion": 1260,
+          "overlapArea": 0
+        }
+      }
+    },
+    {
+      "number": 73,
+      "id": "corte-fauna-v4-mestre-piranha-side",
+      "previousId": "corte-fauna-v3-mestre-piranha-side",
+      "source": "platform-assets/fauna-side-original.png",
+      "sourceSha256": "7734238fa8be8d183402da21a9007259ab690cc6c4e7ad59f658894f4aa8f765",
+      "certificate": {
+        "travel": 84,
+        "percent": 63.165744393399706,
+        "errorPP": 0.000052133775259730074,
+        "initialPercent": 28.21099448458187,
+        "usableWidth": 17.322178825736046,
+        "wholeStepTravel": 84,
+        "usefulArea": 63538.47497598043,
+        "wholeStepPercent": 63.165744393399706,
+        "sourceSha256": "7734238fa8be8d183402da21a9007259ab690cc6c4e7ad59f658894f4aa8f765",
+        "view": "side",
+        "addedHoles": 2,
+        "basePixelArea": 28449,
+        "pixelArea": 26720,
+        "holeDistribution": {
+          "removedFraction": 0.06077542268621041,
+          "selectedRemovedFraction": 0.9999999999999466,
+          "purple": 2,
+          "neutral": 0,
+          "crossed": 0,
+          "forms": [
+            "oval",
+            "losango"
+          ],
+          "openCutCount": 1,
+          "actualRemovedUnion": 1729,
+          "overlapArea": 0
+        }
+      }
+    },
+    {
+      "number": 74,
+      "id": "corte-fauna-v4-mestre-tucano-front",
+      "previousId": "corte-fauna-v3-mestre-tucano-front",
+      "source": "platform-assets/fauna-green-original.png",
+      "sourceSha256": "b3616f1c1d48d13083194c2a6e09155ea59b1261b4f2c05ec603cc54d4e2c7cb",
+      "certificate": {
+        "travel": -68,
+        "percent": 32.05217041821193,
+        "errorPP": 0.00009095124405111775,
+        "initialPercent": 52.010889606060374,
+        "usableWidth": 13.200229946523905,
+        "wholeStepTravel": -68,
+        "usefulArea": 53877.13155458295,
+        "wholeStepPercent": 32.05217041821193,
+        "sourceSha256": "b3616f1c1d48d13083194c2a6e09155ea59b1261b4f2c05ec603cc54d4e2c7cb",
+        "view": "front",
+        "addedHoles": 2,
+        "basePixelArea": 23894,
+        "pixelArea": 23512,
+        "holeDistribution": {
+          "removedFraction": 0.01598727714070478,
+          "selectedRemovedFraction": 0.30313505037488325,
+          "purple": 0,
+          "neutral": 1,
+          "crossed": 1,
+          "forms": [
+            "triangulo",
+            "pentagono"
+          ],
+          "openCutCount": 0,
+          "actualRemovedUnion": 382,
+          "overlapArea": 0
+        }
+      }
+    },
+    {
+      "number": 75,
+      "id": "corte-fauna-v4-mestre-tamandua-side",
+      "previousId": "corte-fauna-v3-mestre-tamandua-side",
+      "source": "platform-assets/fauna-side-original.png",
+      "sourceSha256": "7734238fa8be8d183402da21a9007259ab690cc6c4e7ad59f658894f4aa8f765",
+      "certificate": {
+        "travel": 86,
+        "percent": 63.04141708451958,
+        "errorPP": 0.00006213475265376723,
+        "initialPercent": 42.42049941373356,
+        "usableWidth": 17.613488398492336,
+        "wholeStepTravel": 86,
+        "usefulArea": 59738.04672527369,
+        "wholeStepPercent": 63.04141708451958,
+        "sourceSha256": "7734238fa8be8d183402da21a9007259ab690cc6c4e7ad59f658894f4aa8f765",
+        "view": "side",
+        "addedHoles": 2,
+        "basePixelArea": 29507,
+        "pixelArea": 28473,
+        "holeDistribution": {
+          "removedFraction": 0.03504253228047582,
+          "selectedRemovedFraction": 0.9972918091494896,
+          "purple": 2,
+          "neutral": 0,
+          "crossed": 0,
+          "forms": [
+            "losango",
+            "hexagono"
+          ],
+          "openCutCount": 1,
+          "actualRemovedUnion": 1034,
+          "overlapArea": 0
+        }
+      }
+    },
+    {
+      "number": 76,
+      "id": "corte-fauna-v4-sabio-capivara-side",
+      "previousId": "corte-fauna-v3-sabio-capivara-side",
+      "source": "platform-assets/fauna-side-original.png",
+      "sourceSha256": "7734238fa8be8d183402da21a9007259ab690cc6c4e7ad59f658894f4aa8f765",
+      "certificate": {
+        "travel": -61,
+        "percent": 29.001782686539237,
+        "errorPP": 0.00003465950800960395,
+        "initialPercent": 63.71014407517956,
+        "usableWidth": 34.31614860892296,
+        "wholeStepTravel": -61,
+        "usefulArea": 68137.8163265306,
+        "wholeStepPercent": 29.001782686539237,
+        "sourceSha256": "7734238fa8be8d183402da21a9007259ab690cc6c4e7ad59f658894f4aa8f765",
+        "view": "side",
+        "addedHoles": 4,
+        "basePixelArea": 33455,
+        "pixelArea": 27593,
+        "holeDistribution": {
+          "removedFraction": 0.1752204453743835,
+          "selectedRemovedFraction": 0.45321504850820865,
+          "purple": 1,
+          "neutral": 1,
+          "crossed": 2,
+          "forms": [
+            "pentagono",
+            "irregular",
+            "triangulo"
+          ],
+          "openCutCount": 2,
+          "actualRemovedUnion": 5862,
+          "overlapArea": 0
+        }
+      }
+    },
+    {
+      "number": 77,
+      "id": "corte-fauna-v4-sabio-onca-front",
+      "previousId": "corte-fauna-v3-sabio-onca-front",
+      "source": "platform-assets/fauna-green-original.png",
+      "sourceSha256": "b3616f1c1d48d13083194c2a6e09155ea59b1261b4f2c05ec603cc54d4e2c7cb",
+      "certificate": {
+        "travel": -20,
+        "percent": 37.02538743055851,
+        "errorPP": 0.00003403262363416017,
+        "initialPercent": 55.351372518485306,
+        "usableWidth": 21.814304403960705,
+        "wholeStepTravel": -20,
+        "usefulArea": 61012.38271604939,
+        "wholeStepPercent": 37.02538743055851,
+        "sourceSha256": "b3616f1c1d48d13083194c2a6e09155ea59b1261b4f2c05ec603cc54d4e2c7cb",
+        "view": "front",
+        "addedHoles": 3,
+        "basePixelArea": 43900,
+        "pixelArea": 40843,
+        "holeDistribution": {
+          "removedFraction": 0.06963553530751708,
+          "selectedRemovedFraction": 0.3010458514942376,
+          "purple": 1,
+          "neutral": 1,
+          "crossed": 1,
+          "forms": [
+            "hexagono",
+            "oval",
+            "losango"
+          ],
+          "openCutCount": 2,
+          "actualRemovedUnion": 3057,
+          "overlapArea": 0
+        }
+      }
+    },
+    {
+      "number": 78,
+      "id": "corte-fauna-v4-sabio-peixeBoi-side",
+      "previousId": "corte-fauna-v3-sabio-peixeBoi-side",
+      "source": "platform-assets/fauna-side-original.png",
+      "sourceSha256": "7734238fa8be8d183402da21a9007259ab690cc6c4e7ad59f658894f4aa8f765",
+      "certificate": {
+        "travel": -32,
+        "percent": 42.826928232889586,
+        "errorPP": 0.00007604807424689164,
+        "initialPercent": 17.634841913256366,
+        "usableWidth": 10.587316006422043,
+        "wholeStepTravel": -32,
+        "usefulArea": 58332.107116015985,
+        "wholeStepPercent": 42.826928232889586,
+        "sourceSha256": "7734238fa8be8d183402da21a9007259ab690cc6c4e7ad59f658894f4aa8f765",
+        "view": "side",
+        "addedHoles": 4,
+        "basePixelArea": 26795,
+        "pixelArea": 21815,
+        "holeDistribution": {
+          "removedFraction": 0.18585557006904274,
+          "selectedRemovedFraction": 0.4371511024726614,
+          "purple": 2,
+          "neutral": 2,
+          "crossed": 0,
+          "forms": [
+            "irregular",
+            "triangulo",
+            "pentagono"
+          ],
+          "openCutCount": 2,
+          "actualRemovedUnion": 4980,
+          "overlapArea": 0
+        }
+      }
+    },
+    {
+      "number": 79,
+      "id": "corte-fauna-v4-sabio-jacare-front",
+      "previousId": "corte-fauna-v3-sabio-jacare-front",
+      "source": "platform-assets/fauna-green-original.png",
+      "sourceSha256": "b3616f1c1d48d13083194c2a6e09155ea59b1261b4f2c05ec603cc54d4e2c7cb",
+      "certificate": {
+        "travel": 106,
+        "percent": 62.81690097438882,
+        "errorPP": 0.00007603107120935257,
+        "initialPercent": 11.28631885033019,
+        "usableWidth": 12.910268269479275,
+        "wholeStepTravel": 106,
+        "usefulArea": 64815.68346522282,
+        "wholeStepPercent": 62.81690097438882,
+        "sourceSha256": "b3616f1c1d48d13083194c2a6e09155ea59b1261b4f2c05ec603cc54d4e2c7cb",
+        "view": "front",
+        "addedHoles": 3,
+        "basePixelArea": 41151,
+        "pixelArea": 35726,
+        "holeDistribution": {
+          "removedFraction": 0.1318315472284999,
+          "selectedRemovedFraction": 0.6742857142856566,
+          "purple": 2,
+          "neutral": 1,
+          "crossed": 0,
+          "forms": [
+            "oval",
+            "losango",
+            "hexagono"
+          ],
+          "openCutCount": 2,
+          "actualRemovedUnion": 5425,
+          "overlapArea": 0
+        }
+      }
+    },
+    {
+      "number": 80,
+      "id": "corte-fauna-v4-sabio-tamandua-side",
+      "previousId": "corte-fauna-v3-sabio-tamandua-side",
+      "source": "platform-assets/fauna-side-original.png",
+      "sourceSha256": "7734238fa8be8d183402da21a9007259ab690cc6c4e7ad59f658894f4aa8f765",
+      "certificate": {
+        "travel": 104,
+        "percent": 70.9289299427264,
+        "errorPP": 0.00007094684074620968,
+        "initialPercent": 27.08475735886509,
+        "usableWidth": 22.22059667110443,
+        "wholeStepTravel": 104,
+        "usefulArea": 56597.25172833853,
+        "wholeStepPercent": 70.9289299427264,
+        "sourceSha256": "7734238fa8be8d183402da21a9007259ab690cc6c4e7ad59f658894f4aa8f765",
+        "view": "side",
+        "addedHoles": 4,
+        "basePixelArea": 29507,
+        "pixelArea": 26976,
+        "holeDistribution": {
+          "removedFraction": 0.08577625648151287,
+          "selectedRemovedFraction": 0.43978261532131563,
+          "purple": 1,
+          "neutral": 1,
+          "crossed": 2,
+          "forms": [
+            "triangulo",
+            "pentagono",
+            "irregular"
+          ],
+          "openCutCount": 2,
+          "actualRemovedUnion": 2531,
+          "overlapArea": 39
+        }
+      }
+    }
+  ]
+}
