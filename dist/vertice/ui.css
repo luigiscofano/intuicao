@@ -37,9 +37,9 @@
 #vertice .ve-piece{display:flex;align-items:center;justify-content:center;position:relative;width:46px;height:46px;box-sizing:border-box;background:var(--ve-base);border:1.5px solid var(--ve-edge);border-radius:11px;padding:5px;z-index:3;box-shadow:0 0 0 2px #fafbf7;overflow:visible}
 
 #vertice .ve-empty{display:block;position:relative;width:13px;height:13px;border:2px solid #9ba78d;border-radius:50%;background:#fafbf7;box-sizing:border-box;z-index:3;box-shadow:0 0 0 3px #fafbf7}
-#vertice .ve-empty.ve-controlled{width:28px;height:28px;border-color:var(--ve-ink);background:#fafbf7}
-#vertice .ve-empty.ve-controlled>small{position:absolute;left:100%;top:100%;font-size:10px;line-height:1;color:var(--ve-ink)}
-#vertice .ve-empty.ve-disputed{width:28px;height:28px;border-width:3px;border-top-color:#315e35;border-right-color:#315e35;border-bottom-color:#705a1d;border-left-color:#705a1d;background:#fafbf7}
+#vertice .ve-empty.ve-controlled{width:36px;height:36px;border:3px solid var(--ve-ink);background:#fff;box-shadow:0 0 0 3px var(--ve-soft),0 0 0 4px #fafbf7}
+#vertice .ve-control-badge{position:absolute;left:50%;top:calc(100% - 1px);transform:translateX(-50%);display:block;white-space:nowrap;padding:1px 5px;border:1px solid var(--ve-edge,#9ba78d);border-radius:5px;background:var(--ve-soft,#f0f1e9);color:var(--ve-ink,#52614b);font-size:11px;font-weight:800;line-height:14px;letter-spacing:.01em;box-shadow:0 1px 0 #fff;pointer-events:none}
+#vertice .ve-empty.ve-disputed{width:36px;height:36px;border-width:3px;border-top-color:#315e35;border-right-color:#315e35;border-bottom-color:#705a1d;border-left-color:#705a1d;background:#fff}
 #vertice .ve-ghost{opacity:.5}
 #vertice .ve-arriving .ve-piece{animation:vertice-arrive .28s ease-out}
 #vertice .ve-empty{transition:border-color .2s ease, width .2s ease,height .2s ease}
@@ -57,7 +57,8 @@
 #vertice .ve-demo-point{position:absolute;transform:translate(-50%,-50%);display:flex;align-items:center;justify-content:center;width:44px;height:44px;z-index:2}
 #vertice .ve-demo-point .ve-piece{width:32px;height:32px}
 
-#vertice .ve-demo-point .ve-empty.ve-controlled,#vertice .ve-demo-point .ve-empty.ve-disputed{width:23px;height:23px}
+#vertice .ve-demo-point .ve-empty.ve-controlled,#vertice .ve-demo-point .ve-empty.ve-disputed{width:28px;height:28px}
+#vertice .ve-demo-point .ve-control-badge{font-size:9px;line-height:12px;padding:0 3px}
 #vertice [hidden]{display:none!important}
 @keyframes vertice-arrive{from{opacity:.3;scale:.78}to{opacity:1;scale:1}}
 @media(max-width:500px){#vertice .ve-lab,#vertice .ve-selection{padding:16px 8px}#vertice .ve-surface{padding:8px 0}#vertice .ve-scores,#vertice .ve-identities{gap:8px}#vertice .ve-player-card{padding:8px 7px;font-size:12px}#vertice .ve-player-card>div{gap:6px}#vertice .ve-player-card .ve-piece{width:16px;height:16px;flex-basis:16px}#vertice .ve-player-card>span{font-size:11px}#vertice .ve-player-card b{font-size:19px}#vertice .ve-board-wrap{padding:4px}#vertice .ve-point{width:48px;height:48px;min-width:48px;min-height:48px}#vertice .ve-point .ve-piece{width:35px;height:35px}#vertice .ve-turn{font-size:14px}#vertice .ve-status{font-size:12px;min-height:58px}#vertice .stage-tools{gap:12px}}
@@ -76,3 +77,7 @@
 /* Mesmo acabamento de CERCO: cor de fundo e borda dupla distinguem os times. */
 #vertice .ve-piece.ve-player-1{border-style:double;border-width:3px;padding:2.5px}
 #vertice .ve-piece .vs-mascot{background:#fff;border-radius:4px}
+
+/* Rótulos de controle ficam fora do centro: o ponto continua claramente vazio. */
+#vertice .ve-control-help{font-size:12px;line-height:1.5;display:block;margin-top:3px;color:#52634e}
+@media(max-width:500px){#vertice .ve-point .ve-empty.ve-controlled,#vertice .ve-point .ve-empty.ve-disputed{width:32px;height:32px}#vertice .ve-point .ve-control-badge{font-size:10px;line-height:12px;padding:0 4px}}
