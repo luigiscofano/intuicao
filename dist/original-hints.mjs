@@ -1,4 +1,4 @@
-import {isFaunaShape} from './cut-fauna-geometry.mjs';
+import {isFaunaShape,getFaunaGeometry} from './cut-fauna-geometry.mjs';
 // Orientações sobre a configuração atual, nunca uma busca por uma resposta.
 // Usa apenas rastros já disparados ou um recorte de área; sem alterar a partida.
 import {lightScene} from './light-world.mjs';
@@ -57,7 +57,7 @@ function lightHint(level,state,context){
 function cutHint(level,state,context){
  const shape=state.shape??level.shape,family=state.family??'Reta',holes=state.holes??[],basic=!context.free&&context.cutMode!=='advanced';
  if(holes.length>32||holes.some(h=>h.length>128))return plan(`Observe a parte preenchida do ${shape}.`,'Este recorte excede o limite da análise local de dicas. Os espaços vazios continuam fora da proporção.','Faça um pequeno ajuste e confirme para comparar o resultado com a meta; nenhuma solução foi procurada.');
- const animal=isFaunaShape(shape),shapeLabel=animal?`ícone de lado de ${level.name}`:shape;
+ const animal=isFaunaShape(shape),shapeLabel=animal?`ícone ${getFaunaGeometry(shape).source.view==='front'?'de frente':'de lado'} de ${level.name}`:shape;
  const cut=curvedCut(shapePolygon(shape),state),percent=cut.ratio*100,near=cutSuccess(percent,state.target),increase=percent<state.target;
  const shapeIdea=/Triângulo|Trapézio|Pentágono|irregular/.test(shape)?'A largura da figura muda ao longo do corte: distâncias iguais podem acrescentar áreas diferentes.':/Losango|Hexágono|Heptágono|Octógono|Decágono|Dodecágono/.test(shape)?'Observe as pontas e as partes mais largas: o meio da largura não representa necessariamente a proporção pedida.':'Compare a área preenchida de cada lado, não o comprimento da linha que separa as partes.';
  const curveIdea=family==='Reta'?'A reta desloca uma fronteira inteira.':family==='Parábola'?'O arco da parábola seleciona larguras diferentes em cada altura.':family==='Seno'||family==='Cosseno'?'Os vales e as cristas da onda entram juntos na soma da área roxa.':family==='Cúbica'?'Os dois braços do S devem ser considerados juntos na soma da área roxa.':'As duas curvaturas contribuem para a área total; observe a parte preenchida entre elas.';

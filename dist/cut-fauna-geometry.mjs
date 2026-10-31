@@ -1,8 +1,9 @@
+import {cutMasterShapes} from './cut-fauna-master-data.mjs';
 // Partição exata da máscara original; somente figuras de fauna usam este caminho.
 import {cutFaunaData} from './cut-fauna-data.mjs';
 import {area,clipHalfPlane,cut} from './math.mjs';
 import {curveValue,secondBound} from './curves.mjs';
-const entries=new Map(cutFaunaData.shapes.map(s=>[s.id,s])),cache=new Map();
+const entries=new Map([...cutFaunaData.shapes,...cutMasterShapes].map(s=>[s.id,s])),cache=new Map();
 export const isFaunaShape=id=>entries.has(id);
 export function getFaunaGeometry(id){
  if(cache.has(id))return cache.get(id);const source=entries.get(id);if(!source)throw Error('Silhueta de fauna desconhecida');

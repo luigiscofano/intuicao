@@ -1,0 +1,859 @@
+{
+  "displayReference": {
+    "viewportWidth": 320,
+    "boardWidth": 273,
+    "svgWidth": 800
+  },
+  "minDiameter": 5.839166666666667,
+  "maxDiameter": 24.552830188679245,
+  "levels": [
+    {
+      "level": 61,
+      "id": "corte-fauna-v2-mestre-tuiuiu-side",
+      "family": "Reta",
+      "target": 36,
+      "angle": 60,
+      "removedFraction": 0.04546977055769553,
+      "selectedRemovedFraction": 0,
+      "holesPurple": 0,
+      "holesNeutral": 2,
+      "holesCrossed": 0,
+      "minAddedHoleDiameterSource": 22,
+      "usableWidth": 6.523472493514419,
+      "holes": [
+        {
+          "cx": 103,
+          "cy": 156,
+          "radius": 15,
+          "sourceClearance": 46.61544808322666,
+          "pixelArea": 709,
+          "selectedFraction": 0,
+          "side": "neutro"
+        },
+        {
+          "cx": 59,
+          "cy": 176,
+          "radius": 11,
+          "sourceClearance": 33.54101966249684,
+          "pixelArea": 377,
+          "selectedFraction": 0,
+          "side": "neutro"
+        }
+      ],
+      "minAddedHoleDiameterAt273px": 8.313674496644294,
+      "maxAddedHoleDiameterAt273px": 11.336828859060402,
+      "minSourceCollar": 22.541019662496844
+    },
+    {
+      "level": 62,
+      "id": "corte-fauna-v2-mestre-capivara-front",
+      "family": "Seno",
+      "target": 68,
+      "angle": 180,
+      "removedFraction": 0.02118609069133559,
+      "selectedRemovedFraction": 0.7559850141285173,
+      "holesPurple": 0,
+      "holesNeutral": 0,
+      "holesCrossed": 2,
+      "minAddedHoleDiameterSource": 20,
+      "usableWidth": 15.973135374486446,
+      "holes": [
+        {
+          "cx": 147,
+          "cy": 74,
+          "radius": 15,
+          "sourceClearance": 45.5411901469428,
+          "pixelArea": 709,
+          "selectedFraction": 0.9222962695080107,
+          "side": "cruzado"
+        },
+        {
+          "cx": 104,
+          "cy": 61,
+          "radius": 10,
+          "sourceClearance": 29.698484809834994,
+          "pixelArea": 317,
+          "selectedFraction": 0.3840144145573472,
+          "side": "cruzado"
+        }
+      ],
+      "minAddedHoleDiameterAt273px": 8.13086642599278,
+      "maxAddedHoleDiameterAt273px": 12.19629963898917,
+      "minSourceCollar": 19.698484809834994
+    },
+    {
+      "level": 63,
+      "id": "corte-fauna-v2-mestre-bemtevi-side",
+      "family": "Cúbica",
+      "target": 68,
+      "angle": 180,
+      "removedFraction": 0.01991775256403904,
+      "selectedRemovedFraction": 0.37064676616907577,
+      "holesPurple": 1,
+      "holesNeutral": 1,
+      "holesCrossed": 0,
+      "minAddedHoleDiameterSource": 14,
+      "usableWidth": 15.662347991019487,
+      "holes": [
+        {
+          "cx": 126,
+          "cy": 96,
+          "radius": 9,
+          "sourceClearance": 26.92582403567252,
+          "pixelArea": 253,
+          "selectedFraction": 0,
+          "side": "neutro"
+        },
+        {
+          "cx": 185,
+          "cy": 122,
+          "radius": 7,
+          "sourceClearance": 22.02271554554524,
+          "pixelArea": 149,
+          "selectedFraction": 0.9999999999997883,
+          "side": "roxo"
+        }
+      ],
+      "minAddedHoleDiameterAt273px": 7.298958333333332,
+      "maxAddedHoleDiameterAt273px": 9.384375,
+      "minSourceCollar": 15.022715545545239
+    },
+    {
+      "level": 64,
+      "id": "corte-fauna-v2-mestre-mico-front",
+      "family": "Parábola",
+      "target": 24,
+      "angle": 35,
+      "removedFraction": 0.03666487230097494,
+      "selectedRemovedFraction": 0.4999999999999913,
+      "holesPurple": 1,
+      "holesNeutral": 1,
+      "holesCrossed": 0,
+      "minAddedHoleDiameterSource": 28,
+      "usableWidth": 26.35977872647345,
+      "holes": [
+        {
+          "cx": 269,
+          "cy": 64,
+          "radius": 14,
+          "sourceClearance": 42.04759208325728,
+          "pixelArea": 613,
+          "selectedFraction": 0,
+          "side": "neutro"
+        },
+        {
+          "cx": 50,
+          "cy": 63,
+          "radius": 14,
+          "sourceClearance": 41.43669871020132,
+          "pixelArea": 613,
+          "selectedFraction": 0.9999999999999826,
+          "side": "roxo"
+        }
+      ],
+      "minAddedHoleDiameterAt273px": 13.138125,
+      "maxAddedHoleDiameterAt273px": 13.138125,
+      "minSourceCollar": 27.43669871020132
+    },
+    {
+      "level": 65,
+      "id": "corte-fauna-v2-mestre-micoLeao-side",
+      "family": "Cosseno",
+      "target": 68,
+      "angle": 180,
+      "removedFraction": 0.01913753508548099,
+      "selectedRemovedFraction": 0.6024687740404301,
+      "holesPurple": 1,
+      "holesNeutral": 0,
+      "holesCrossed": 1,
+      "minAddedHoleDiameterSource": 16,
+      "usableWidth": 22.181294636800885,
+      "holes": [
+        {
+          "cx": 126,
+          "cy": 108,
+          "radius": 9,
+          "sourceClearance": 28.284271247461902,
+          "pixelArea": 253,
+          "selectedFraction": 0.29292864947910174,
+          "side": "cruzado"
+        },
+        {
+          "cx": 159,
+          "cy": 131,
+          "radius": 8,
+          "sourceClearance": 23.769728648009426,
+          "pixelArea": 197,
+          "selectedFraction": 0.9999999999999027,
+          "side": "roxo"
+        }
+      ],
+      "minAddedHoleDiameterAt273px": 7.8,
+      "maxAddedHoleDiameterAt273px": 8.775,
+      "minSourceCollar": 15.769728648009426
+    },
+    {
+      "level": 66,
+      "id": "corte-fauna-v2-mestre-tatu-front",
+      "family": "Dupla curva",
+      "target": 81,
+      "angle": 240,
+      "removedFraction": 0.02187137891077636,
+      "selectedRemovedFraction": 0.999999999999873,
+      "holesPurple": 2,
+      "holesNeutral": 0,
+      "holesCrossed": 0,
+      "minAddedHoleDiameterSource": 22,
+      "usableWidth": 21.961872577667236,
+      "holes": [
+        {
+          "cx": 147,
+          "cy": 204,
+          "radius": 13,
+          "sourceClearance": 40,
+          "pixelArea": 529,
+          "selectedFraction": 0.9999999999998461,
+          "side": "roxo"
+        },
+        {
+          "cx": 147,
+          "cy": 154,
+          "radius": 11,
+          "sourceClearance": 34.88552708502482,
+          "pixelArea": 377,
+          "selectedFraction": 0.9999999999999108,
+          "side": "roxo"
+        }
+      ],
+      "minAddedHoleDiameterAt273px": 8.6625,
+      "maxAddedHoleDiameterAt273px": 10.237499999999999,
+      "minSourceCollar": 23.88552708502482
+    },
+    {
+      "level": 67,
+      "id": "corte-fauna-v2-mestre-onca-side",
+      "family": "Seno",
+      "target": 24,
+      "angle": 35,
+      "removedFraction": 0.036383435288088906,
+      "selectedRemovedFraction": 0,
+      "holesPurple": 0,
+      "holesNeutral": 4,
+      "holesCrossed": 0,
+      "minAddedHoleDiameterSource": 18,
+      "usableWidth": 12.852923013269901,
+      "holes": [
+        {
+          "cx": 211,
+          "cy": 116,
+          "radius": 11,
+          "sourceClearance": 25.298221281347036,
+          "pixelArea": 377,
+          "selectedFraction": 0,
+          "side": "neutro"
+        },
+        {
+          "cx": 166,
+          "cy": 123,
+          "radius": 9,
+          "sourceClearance": 21.213203435596427,
+          "pixelArea": 253,
+          "selectedFraction": 0,
+          "side": "neutro"
+        },
+        {
+          "cx": 141,
+          "cy": 190,
+          "radius": 9,
+          "sourceClearance": 20.808652046684813,
+          "pixelArea": 253,
+          "selectedFraction": 0,
+          "side": "neutro"
+        },
+        {
+          "cx": 100,
+          "cy": 151,
+          "radius": 9,
+          "sourceClearance": 20.12461179749811,
+          "pixelArea": 253,
+          "selectedFraction": 0,
+          "side": "neutro"
+        }
+      ],
+      "minAddedHoleDiameterAt273px": 7.678125,
+      "maxAddedHoleDiameterAt273px": 9.384375,
+      "minSourceCollar": 11.124611797498108
+    },
+    {
+      "level": 68,
+      "id": "corte-fauna-v2-mestre-lobo-front",
+      "family": "Cúbica",
+      "target": 37,
+      "angle": 215,
+      "removedFraction": 0.029290408028118792,
+      "selectedRemovedFraction": 0.06109903651487457,
+      "holesPurple": 0,
+      "holesNeutral": 1,
+      "holesCrossed": 1,
+      "minAddedHoleDiameterSource": 24,
+      "usableWidth": 12.88381612394005,
+      "holes": [
+        {
+          "cx": 126,
+          "cy": 144,
+          "radius": 15,
+          "sourceClearance": 44.40720662234904,
+          "pixelArea": 709,
+          "selectedFraction": 0,
+          "side": "neutro"
+        },
+        {
+          "cx": 126,
+          "cy": 201,
+          "radius": 12,
+          "sourceClearance": 38,
+          "pixelArea": 441,
+          "selectedFraction": 0.15932855327008108,
+          "side": "cruzado"
+        }
+      ],
+      "minAddedHoleDiameterAt273px": 8.718387096774192,
+      "maxAddedHoleDiameterAt273px": 10.897983870967742,
+      "minSourceCollar": 26
+    },
+    {
+      "level": 69,
+      "id": "corte-fauna-v2-mestre-coral-side",
+      "family": "Parábola",
+      "target": 63,
+      "angle": 325,
+      "removedFraction": 0.0266431489045674,
+      "selectedRemovedFraction": 0.6567944250870348,
+      "holesPurple": 1,
+      "holesNeutral": 1,
+      "holesCrossed": 0,
+      "minAddedHoleDiameterSource": 16,
+      "usableWidth": 26.048794551752508,
+      "holes": [
+        {
+          "cx": 114,
+          "cy": 149,
+          "radius": 11,
+          "sourceClearance": 33,
+          "pixelArea": 377,
+          "selectedFraction": 0.9999999999998885,
+          "side": "roxo"
+        },
+        {
+          "cx": 215,
+          "cy": 106,
+          "radius": 8,
+          "sourceClearance": 24.758836806279895,
+          "pixelArea": 197,
+          "selectedFraction": 0,
+          "side": "neutro"
+        }
+      ],
+      "minAddedHoleDiameterAt273px": 9.533333333333333,
+      "maxAddedHoleDiameterAt273px": 13.108333333333333,
+      "minSourceCollar": 16.758836806279895
+    },
+    {
+      "level": 70,
+      "id": "corte-fauna-v2-mestre-jacare-front",
+      "family": "Cosseno",
+      "target": 76,
+      "angle": 145,
+      "removedFraction": 0.039415810065369004,
+      "selectedRemovedFraction": 0.9999999999999055,
+      "holesPurple": 2,
+      "holesNeutral": 0,
+      "holesCrossed": 0,
+      "minAddedHoleDiameterSource": 28,
+      "usableWidth": 18.748319372534752,
+      "holes": [
+        {
+          "cx": 138,
+          "cy": 91,
+          "radius": 18,
+          "sourceClearance": 71,
+          "pixelArea": 1009,
+          "selectedFraction": 0.9999999999999064,
+          "side": "roxo"
+        },
+        {
+          "cx": 199,
+          "cy": 86,
+          "radius": 14,
+          "sourceClearance": 43.18564576337837,
+          "pixelArea": 613,
+          "selectedFraction": 0.9999999999999043,
+          "side": "roxo"
+        }
+      ],
+      "minAddedHoleDiameterAt273px": 12.87,
+      "maxAddedHoleDiameterAt273px": 16.547142857142855,
+      "minSourceCollar": 29.185645763378368
+    },
+    {
+      "level": 71,
+      "id": "corte-fauna-v2-mestre-arara-side",
+      "family": "Reta",
+      "target": 63,
+      "angle": 325,
+      "removedFraction": 0.03917595406957109,
+      "selectedRemovedFraction": 0.9374940968277571,
+      "holesPurple": 3,
+      "holesNeutral": 0,
+      "holesCrossed": 1,
+      "minAddedHoleDiameterSource": 14,
+      "usableWidth": 21.42488409206271,
+      "holes": [
+        {
+          "cx": 172,
+          "cy": 94,
+          "radius": 10,
+          "sourceClearance": 24.041630560342615,
+          "pixelArea": 317,
+          "selectedFraction": 1,
+          "side": "roxo"
+        },
+        {
+          "cx": 149,
+          "cy": 115,
+          "radius": 8,
+          "sourceClearance": 20.591260281974,
+          "pixelArea": 197,
+          "selectedFraction": 1,
+          "side": "roxo"
+        },
+        {
+          "cx": 187,
+          "cy": 149,
+          "radius": 7,
+          "sourceClearance": 18.35755975068582,
+          "pixelArea": 149,
+          "selectedFraction": 1,
+          "side": "roxo"
+        },
+        {
+          "cx": 214,
+          "cy": 122,
+          "radius": 7,
+          "sourceClearance": 17.029386365926403,
+          "pixelArea": 149,
+          "selectedFraction": 0.659363802846569,
+          "side": "cruzado"
+        }
+      ],
+      "minAddedHoleDiameterAt273px": 5.99458174904943,
+      "maxAddedHoleDiameterAt273px": 8.563688212927756,
+      "minSourceCollar": 10.029386365926403
+    },
+    {
+      "level": 72,
+      "id": "corte-fauna-v2-mestre-peixeBoi-front",
+      "family": "Seno",
+      "target": 37,
+      "angle": 215,
+      "removedFraction": 0.03045591583092352,
+      "selectedRemovedFraction": 0,
+      "holesPurple": 0,
+      "holesNeutral": 2,
+      "holesCrossed": 0,
+      "minAddedHoleDiameterSource": 22,
+      "usableWidth": 18.678277863189578,
+      "holes": [
+        {
+          "cx": 170,
+          "cy": 48,
+          "radius": 14,
+          "sourceClearance": 42.190046219457976,
+          "pixelArea": 613,
+          "selectedFraction": 0,
+          "side": "neutro"
+        },
+        {
+          "cx": 121,
+          "cy": 47,
+          "radius": 11,
+          "sourceClearance": 34.655446902326915,
+          "pixelArea": 377,
+          "selectedFraction": 0,
+          "side": "neutro"
+        }
+      ],
+      "minAddedHoleDiameterAt273px": 10.678771551724138,
+      "maxAddedHoleDiameterAt273px": 13.591163793103446,
+      "minSourceCollar": 23.655446902326915
+    },
+    {
+      "level": 73,
+      "id": "corte-fauna-v2-mestre-piranha-side",
+      "family": "Cúbica",
+      "target": 63,
+      "angle": 325,
+      "removedFraction": 0.04871875988611199,
+      "selectedRemovedFraction": 0.9805282303761015,
+      "holesPurple": 1,
+      "holesNeutral": 0,
+      "holesCrossed": 1,
+      "minAddedHoleDiameterSource": 22,
+      "usableWidth": 18.756655655801296,
+      "holes": [
+        {
+          "cx": 125,
+          "cy": 113,
+          "radius": 18,
+          "sourceClearance": 56,
+          "pixelArea": 1009,
+          "selectedFraction": 0.9999999999999534,
+          "side": "roxo"
+        },
+        {
+          "cx": 159,
+          "cy": 74,
+          "radius": 11,
+          "sourceClearance": 33.95585369269929,
+          "pixelArea": 377,
+          "selectedFraction": 0.9284141307727419,
+          "side": "cruzado"
+        }
+      ],
+      "minAddedHoleDiameterAt273px": 11.576985981308413,
+      "maxAddedHoleDiameterAt273px": 18.944158878504673,
+      "minSourceCollar": 22.955853692699293
+    },
+    {
+      "level": 74,
+      "id": "corte-fauna-v2-mestre-tucano-front",
+      "family": "Dupla curva",
+      "target": 32,
+      "angle": 145,
+      "removedFraction": 0.01247175023018331,
+      "selectedRemovedFraction": 0.34112656830797167,
+      "holesPurple": 0,
+      "holesNeutral": 1,
+      "holesCrossed": 1,
+      "minAddedHoleDiameterSource": 14,
+      "usableWidth": 13.091861605644226,
+      "holes": [
+        {
+          "cx": 192,
+          "cy": 152,
+          "radius": 7,
+          "sourceClearance": 22.80350850198276,
+          "pixelArea": 149,
+          "selectedFraction": 0.6822531366159433,
+          "side": "cruzado"
+        },
+        {
+          "cx": 46,
+          "cy": 153,
+          "radius": 7,
+          "sourceClearance": 22.80350850198276,
+          "pixelArea": 149,
+          "selectedFraction": 0,
+          "side": "neutro"
+        }
+      ],
+      "minAddedHoleDiameterAt273px": 7.231995412844036,
+      "maxAddedHoleDiameterAt273px": 7.231995412844036,
+      "minSourceCollar": 15.803508501982758
+    },
+    {
+      "level": 75,
+      "id": "corte-fauna-v2-mestre-tamandua-side",
+      "family": "Cosseno",
+      "target": 63,
+      "angle": 325,
+      "removedFraction": 0.019453011149896636,
+      "selectedRemovedFraction": 0.998005319807345,
+      "holesPurple": 2,
+      "holesNeutral": 0,
+      "holesCrossed": 0,
+      "minAddedHoleDiameterSource": 16,
+      "usableWidth": 18.07204592972994,
+      "holes": [
+        {
+          "cx": 158,
+          "cy": 69,
+          "radius": 11,
+          "sourceClearance": 32.38826948140329,
+          "pixelArea": 377,
+          "selectedFraction": 0.9969630068154524,
+          "side": "roxo"
+        },
+        {
+          "cx": 110,
+          "cy": 55,
+          "radius": 8,
+          "sourceClearance": 24.839484696748443,
+          "pixelArea": 197,
+          "selectedFraction": 0.9999999999999514,
+          "side": "roxo"
+        }
+      ],
+      "minAddedHoleDiameterAt273px": 7.908635097493036,
+      "maxAddedHoleDiameterAt273px": 10.874373259052925,
+      "minSourceCollar": 16.839484696748443
+    },
+    {
+      "level": 76,
+      "id": "corte-fauna-v2-sabio-capivara-side",
+      "family": "Dupla curva",
+      "target": 29,
+      "angle": 35,
+      "removedFraction": 0.10617247048273801,
+      "selectedRemovedFraction": 0.23383313340257378,
+      "holesPurple": 1,
+      "holesNeutral": 2,
+      "holesCrossed": 1,
+      "minAddedHoleDiameterSource": 24,
+      "usableWidth": 27.192333713173866,
+      "holes": [
+        {
+          "cx": 97,
+          "cy": 100,
+          "radius": 22,
+          "sourceClearance": 64.4980619863884,
+          "pixelArea": 1517,
+          "selectedFraction": 0.2568063875055911,
+          "side": "cruzado"
+        },
+        {
+          "cx": 167,
+          "cy": 84,
+          "radius": 16,
+          "sourceClearance": 49.4064773081425,
+          "pixelArea": 797,
+          "selectedFraction": 0,
+          "side": "neutro"
+        },
+        {
+          "cx": 146,
+          "cy": 129,
+          "radius": 16,
+          "sourceClearance": 34,
+          "pixelArea": 797,
+          "selectedFraction": 0,
+          "side": "neutro"
+        },
+        {
+          "cx": 43,
+          "cy": 123,
+          "radius": 12,
+          "sourceClearance": 36.76955262170047,
+          "pixelArea": 441,
+          "selectedFraction": 0.9999999999999103,
+          "side": "roxo"
+        }
+      ],
+      "minAddedHoleDiameterAt273px": 12.87,
+      "maxAddedHoleDiameterAt273px": 23.595,
+      "minSourceCollar": 18
+    },
+    {
+      "level": 77,
+      "id": "corte-fauna-v2-sabio-onca-front",
+      "family": "Cúbica",
+      "target": 37,
+      "angle": 145,
+      "removedFraction": 0.04189066059225512,
+      "selectedRemovedFraction": 0.17237629146271027,
+      "holesPurple": 1,
+      "holesNeutral": 2,
+      "holesCrossed": 0,
+      "minAddedHoleDiameterSource": 14,
+      "usableWidth": 19.487179815769196,
+      "holes": [
+        {
+          "cx": 153,
+          "cy": 99,
+          "radius": 21,
+          "sourceClearance": 43.829214001622255,
+          "pixelArea": 1373,
+          "selectedFraction": 0,
+          "side": "neutro"
+        },
+        {
+          "cx": 56,
+          "cy": 198,
+          "radius": 7,
+          "sourceClearance": 20.591260281974,
+          "pixelArea": 149,
+          "selectedFraction": 0,
+          "side": "neutro"
+        },
+        {
+          "cx": 252,
+          "cy": 197,
+          "radius": 10,
+          "sourceClearance": 21.587033144922902,
+          "pixelArea": 317,
+          "selectedFraction": 0.9999999999997607,
+          "side": "roxo"
+        }
+      ],
+      "minAddedHoleDiameterAt273px": 5.839166666666667,
+      "maxAddedHoleDiameterAt273px": 17.5175,
+      "minSourceCollar": 11.587033144922902
+    },
+    {
+      "level": 78,
+      "id": "corte-fauna-v2-sabio-peixeBoi-side",
+      "family": "Seno",
+      "target": 43,
+      "angle": 65,
+      "removedFraction": 0.11330472103004292,
+      "selectedRemovedFraction": 0.313353113054669,
+      "holesPurple": 2,
+      "holesNeutral": 1,
+      "holesCrossed": 1,
+      "minAddedHoleDiameterSource": 16,
+      "usableWidth": 11.67690847069025,
+      "holes": [
+        {
+          "cx": 203,
+          "cy": 53,
+          "radius": 22,
+          "sourceClearance": 46.32493928760188,
+          "pixelArea": 1517,
+          "selectedFraction": 0,
+          "side": "neutro"
+        },
+        {
+          "cx": 140,
+          "cy": 77,
+          "radius": 15,
+          "sourceClearance": 45.5411901469428,
+          "pixelArea": 709,
+          "selectedFraction": 0.9999999999999615,
+          "side": "roxo"
+        },
+        {
+          "cx": 103,
+          "cy": 102,
+          "radius": 14,
+          "sourceClearance": 29.68164415931166,
+          "pixelArea": 613,
+          "selectedFraction": 0.07396419450898897,
+          "side": "cruzado"
+        },
+        {
+          "cx": 157,
+          "cy": 40,
+          "radius": 8,
+          "sourceClearance": 25.942243542145693,
+          "pixelArea": 197,
+          "selectedFraction": 0.9999999999999596,
+          "side": "roxo"
+        }
+      ],
+      "minAddedHoleDiameterAt273px": 8.928301886792454,
+      "maxAddedHoleDiameterAt273px": 24.552830188679245,
+      "minSourceCollar": 15.68164415931166
+    },
+    {
+      "level": 79,
+      "id": "corte-fauna-v2-sabio-jacare-front",
+      "family": "Parábola",
+      "target": 63,
+      "angle": 215,
+      "removedFraction": 0.07919613132123156,
+      "selectedRemovedFraction": 0.8119054924823076,
+      "holesPurple": 2,
+      "holesNeutral": 1,
+      "holesCrossed": 0,
+      "minAddedHoleDiameterSource": 28,
+      "usableWidth": 13.675513677299023,
+      "holes": [
+        {
+          "cx": 139,
+          "cy": 91,
+          "radius": 22,
+          "sourceClearance": 71,
+          "pixelArea": 1517,
+          "selectedFraction": 0.9999999999999462,
+          "side": "roxo"
+        },
+        {
+          "cx": 75,
+          "cy": 85,
+          "radius": 14,
+          "sourceClearance": 42,
+          "pixelArea": 613,
+          "selectedFraction": 0,
+          "side": "neutro"
+        },
+        {
+          "cx": 202,
+          "cy": 85,
+          "radius": 19,
+          "sourceClearance": 41.43669871020132,
+          "pixelArea": 1129,
+          "selectedFraction": 0.9999999999999309,
+          "side": "roxo"
+        }
+      ],
+      "minAddedHoleDiameterAt273px": 12.87,
+      "maxAddedHoleDiameterAt273px": 20.224285714285713,
+      "minSourceCollar": 22.43669871020132
+    },
+    {
+      "level": 80,
+      "id": "corte-fauna-v2-sabio-tamandua-side",
+      "family": "Cosseno",
+      "target": 71,
+      "angle": 205,
+      "removedFraction": 0.04527739180533433,
+      "selectedRemovedFraction": 0.38046558733728136,
+      "holesPurple": 1,
+      "holesNeutral": 1,
+      "holesCrossed": 2,
+      "minAddedHoleDiameterSource": 12,
+      "usableWidth": 21.626201458275318,
+      "holes": [
+        {
+          "cx": 158,
+          "cy": 69,
+          "radius": 15,
+          "sourceClearance": 32.38826948140329,
+          "pixelArea": 709,
+          "selectedFraction": 0.13953879202384992,
+          "side": "cruzado"
+        },
+        {
+          "cx": 110,
+          "cy": 55,
+          "radius": 8,
+          "sourceClearance": 24.839484696748443,
+          "pixelArea": 197,
+          "selectedFraction": 0,
+          "side": "neutro"
+        },
+        {
+          "cx": 245,
+          "cy": 36,
+          "radius": 10,
+          "sourceClearance": 21.02379604162864,
+          "pixelArea": 317,
+          "selectedFraction": 0.9999999999998388,
+          "side": "roxo"
+        },
+        {
+          "cx": 191,
+          "cy": 77,
+          "radius": 6,
+          "sourceClearance": 18.681541692269406,
+          "pixelArea": 113,
+          "selectedFraction": 0.8174249658207912,
+          "side": "cruzado"
+        }
+      ],
+      "minAddedHoleDiameterAt273px": 5.931476323119778,
+      "maxAddedHoleDiameterAt273px": 14.828690807799441,
+      "minSourceCollar": 11.02379604162864
+    }
+  ]
+}
