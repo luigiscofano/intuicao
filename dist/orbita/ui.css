@@ -167,3 +167,10 @@
 #orbita .o-readout>#o-status{grid-column:1/-1}
 #orbita #o-status:empty{display:none}
 @media(max-width:380px){#orbita .o-readout>div{min-height:80px;padding:10px 8px}#orbita .o-readout strong{font-size:32px}}
+/* Direct ring selection follows the rail, not a disk covering neighbouring rings. */
+#orbita .o-rail-hit{stroke-width:36}
+#orbita #o-board .o-ring-tag{pointer-events:all;cursor:pointer;outline:none}
+#orbita #o-board .o-ring-tag .o-label-hit{fill:transparent;stroke:none}
+#orbita #o-board .o-ring-tag text{pointer-events:none}
+#orbita #o-board .o-ring-tag:focus-visible>circle:not(.o-label-hit){stroke:#263244;stroke-width:3}
+#orbita #o-board .o-rail.o-active-rail{stroke:#365a85;stroke-width:4}

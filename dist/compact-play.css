@@ -74,3 +74,13 @@ body :is(.workspace,.collection-workspace)>.controls{grid-column:1!important;gri
 /* ELO's marking toggle follows the board's own left edge, including its pan gutter. */
 body #collection .elo-board-surface>.board-options{display:flex;justify-content:flex-start;margin:0 0 12px;padding:0}
 body #collection .elo-board-surface:is(.elo-has-gutter,:has(.elo-large,.elo-board-label))>.board-options{margin-bottom:32px}
+/* ELO: shared actions align with Pontos/Descartes, not the board marking toggle. */
+body #collection .elo-tools-row{display:flex;flex-wrap:wrap;align-items:center;justify-content:space-between;gap:12px;padding:8px 12px}
+body #collection .elo-tools-row>#c-tools{margin:0;gap:12px;min-width:0;flex:0 1 auto}
+body #collection .elo-tools-row>.stage-tools{display:flex;flex-wrap:wrap;align-items:center;justify-content:flex-end;gap:12px;min-width:0;max-width:100%;margin-left:auto}
+body #collection .elo-tools-row>.stage-tools>button{min-width:44px;min-height:44px}
+body #collection .elo-tools-row>.stage-tools>.rules-card{max-width:100%}
+@media(max-width:680px){
+ body #collection .elo-tools-row>.stage-tools{width:100%;justify-content:flex-start;margin-left:0}
+ body #collection .elo-tools-row>.stage-tools>.rules-card>summary{flex-wrap:wrap}
+}
