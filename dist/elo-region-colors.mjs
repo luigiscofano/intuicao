@@ -3,8 +3,13 @@
  * The exact search has no budget cutoff: those graphs always admit four colours.
  * IDs, cells, clues and solutions are never mutated. Non-neighbours may reuse a colour.
  */
-export const ELO_REGION_PALETTE=Object.freeze(['#f5d56b','#83b5ee','#f09fbc','#71cda3']);
-export const ELO_REGION_MIN_DELTA_E=45; // CIELAB 1976, D65; not a colour-blindness guarantee.
+// Exact PRUMO tones, copied without tinting; the regression test checks its source palette.
+export const PRUMO_REGION_PALETTE=Object.freeze(['#a9d69b','#c6b0e4','#f0bf80','#91cbd9','#e3d173','#e7a4a0','#aabfe3','#86cbbb','#d5b18b','#b9a4da']);
+// Maximin quartet among all210 subsets: gold, salmon, sea-green and lilac.
+// Its weakest pair is ΔE76=37.140044; a45 threshold is impossible for four
+// mutually adjacent regions with the unchanged PRUMO palette.
+export const ELO_REGION_PALETTE=Object.freeze([4,5,7,9].map(i=>PRUMO_REGION_PALETTE[i]));
+export const ELO_REGION_MIN_DELTA_E=37; // CIELAB 1976, D65; not a colour-blindness guarantee.
 const cache=new WeakMap();
 const linear=v=>(v/=255)<=.04045?v/12.92:((v+.055)/1.055)**2.4;
 const rgb=hex=>hex.slice(1).match(/../g).map(x=>parseInt(x,16));
@@ -43,19 +48,16 @@ function fourColor(graph){
  return {indices:search(graph.length)?assigned:null,visits};
 }
 function invalidGraphFallback(graph){
- // Unvalidated disconnected regions may form a non-planar graph. Never alias a
- // neighbouring colour: use a deterministic distinct fallback and report the
- // measured threshold, rather than silently claiming the planar guarantee.
- const candidates=[...ELO_REGION_PALETTE];
- for(const r of [128,160,192,224,255])for(const g of [128,160,192,224,255])for(const b of [128,160,192,224,255]){
-  const hex='#'+[r,g,b].map(n=>n.toString(16).padStart(2,'0')).join('');if(eloTextContrast(hex)>=4.5&&!candidates.includes(hex))candidates.push(hex);
- }
+ // Only unvalidated/disconnected maps can reach this fallback. Keep the exact
+ // PRUMO colours even here and report threshold/duplicate failures explicitly;
+ // do not invent extra tones or silently promise contrast for an invalid map.
+ const candidates=[...PRUMO_REGION_PALETTE];
  const colors=[];
  for(let region=0;region<graph.length;region++){
   const neighbors=graph[region].filter(n=>n<region).map(n=>colors[n]);
   const available=candidates.filter(c=>!neighbors.includes(c));
   available.sort((a,b)=>{const score=c=>neighbors.length?Math.min(...neighbors.map(n=>eloColorDistance(c,n))):0;return score(b)-score(a)||candidates.indexOf(a)-candidates.indexOf(b);});
-  colors.push(available[0]??'#fffefa');
+  colors.push(available[0]??candidates[region%candidates.length]);
  }
  return colors;
 }

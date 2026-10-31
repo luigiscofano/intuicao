@@ -1,0 +1,7 @@
+# Gameplay rules below every board
+
+User requested the REPASSE layout globally. Shared late CSS now gives every gameplay workspace one column, with playing surface (including confirm/next/feedback) first, rules second and advanced options third. Sidebars have no sticky/internal scroll or reserved side column, and do not stretch the board surface. Rules share the standard scene background. Existing board width/cell caps remain unchanged, including REPASSE's 76px desktop cells and 24px top inset.
+
+All entry handlers already opened rules: originals configureOriginalRules, collection entryRulesOpen (ELO/PRUMO/PACTO/DESVIO), and SINTONIA/REPASSE/ÓRBITA start handlers. No behavioral changes needed; the existing accessible details controls still collapse/reopen the rules. Pre-selection Como jogar diagrams and text are untouched.
+
+Native browser QA used the actual app in 1366x768, 390x844, and 320x844 iframe viewports. All nine routes, both first and final selectable level/map (54 cases): rules initially open, rules top below complete playing surface, confirmation/action controls before rules, exactly one grid column, zero page horizontal overflow, and successful collapse. First-level next arrows reopen rules in all eight campaigns (24 checks); DESVIO has no level arrow. Each viewport/route reload re-entered the game from its selection and opened rules. Large ELO's existing internal pan remains, not introduced by this change. Test fixtures removed before publication.

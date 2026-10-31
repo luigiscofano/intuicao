@@ -1,12 +1,14 @@
 import assert from 'node:assert/strict';
+import {readFileSync} from 'node:fs';
 import {GEOMETRY_LEVELS} from '../dist/geometry-levels.mjs';
 import {generateCollectionEndless} from '../dist/endless-collection.mjs';
 import {normalizeCollectionLevel,COLLECTION_JSON_EXAMPLES} from '../dist/collection-json.mjs';
-import {eloRegionColors,eloRegionAdjacency,eloRegionColorReport,ELO_REGION_MIN_DELTA_E} from '../dist/elo-region-colors.mjs';
+import {eloRegionColors,eloRegionAdjacency,eloRegionColorReport,ELO_REGION_MIN_DELTA_E,ELO_REGION_PALETTE,PRUMO_REGION_PALETTE,eloColorDistance} from '../dist/elo-region-colors.mjs';
 const start=performance.now(),summary={campaigns:0,endless:0,normalizedImports:0,borders:0,minDeltaE:Infinity,minTextContrast:Infinity,maxSearchNodes:0};
 function check(level,kind){
  const snapshot=JSON.stringify(level),report=eloRegionColorReport(level),colors=eloRegionColors(level);
  assert.equal(JSON.stringify(level),snapshot,'colouring must not mutate any game data');
+ assert.ok(colors.every(c=>PRUMO_REGION_PALETTE.includes(c)),'every fill is an exact PRUMO tone');
  assert.equal(report.fallback,false,'valid planar region map uses exact four-colour result');
  assert.equal(report.passesThreshold,true);assert.equal(report.adjacentDuplicates,0);
  assert.ok(report.minDeltaE>=ELO_REGION_MIN_DELTA_E);assert.ok(report.minimumTextContrast>=4.5);
@@ -40,7 +42,20 @@ assert.equal(fallback.passesThreshold,fallback.minDeltaE>=ELO_REGION_MIN_DELTA_E
 // Extreme invalid K16 cannot meet the four-colour promise; diagnostics must not hide it.
 const crowded=[];for(let a=0;a<16;a++)for(let b=a+1;b<16;b++)crowded.push(a,b);
 const crowdedReport=eloRegionColorReport({rows:15,cols:16,regions:crowded});
-assert.equal(crowdedReport.fallback,true);assert.equal(crowdedReport.adjacentDuplicates,0);assert.equal(crowdedReport.passesThreshold,false);
+assert.equal(crowdedReport.fallback,true);assert.ok(crowdedReport.adjacentDuplicates>0);assert.equal(crowdedReport.passesThreshold,false);assert.ok(crowdedReport.colors.every(c=>PRUMO_REGION_PALETTE.includes(c)));
 // A diagonal-only touch is not a shared boundary.
 assert.deepEqual(eloRegionAdjacency({rows:2,cols:2,regions:[0,1,2,3]}),[[1,2],[0,3],[0,3],[1,2]]);
 console.log(JSON.stringify({...summary,threshold:ELO_REGION_MIN_DELTA_E,fallbackMinDeltaE:fallback.minDeltaE,durationMs:Math.round(performance.now()-start)},null,2));
+
+// Guard exact source parity and prove the maximin choice over every possible quartet.
+const ui=readFileSync(new URL('../dist/collection-ui.mjs',import.meta.url),'utf8');
+const originalPalette=ui.match(/COLORS=\[([^\]]+)\]/)[1].match(/#[0-9a-f]{6}/g);
+assert.deepEqual(PRUMO_REGION_PALETTE,originalPalette,'never alter or drift from PRUMO tones');
+const separation=q=>Math.min(...q.flatMap((a,i)=>q.slice(i+1).map(b=>eloColorDistance(a,b))));
+const optimal=separation(ELO_REGION_PALETTE);
+for(let a=0;a<10;a++)for(let b=a+1;b<10;b++)for(let c=b+1;c<10;c++)for(let d=c+1;d<10;d++)assert.ok(separation([a,b,c,d].map(i=>PRUMO_REGION_PALETTE[i]))<=optimal+1e-9);
+// Hover/focus/selection decorate the border, never wash out the region fill.
+const css=readFileSync(new URL('../dist/style.css',import.meta.url),'utf8');
+const interactive=css.match(/[^{}]*grid-cell[^{}]*(?:hover|focus|active-cell)[^{}]*\{[^{}]*\}/g)??[];
+assert.ok(interactive.length>=3);for(const rule of interactive)assert.doesNotMatch(rule,/background|opacity|filter:/);
+console.log('PASS exact PRUMO palette; optimal quartet of210; hover/focus/selection preserve fills.');
