@@ -57,7 +57,7 @@ export function nextBrotoRound(state){
  const record={starter:state.starter,history:[...state.history],scores:[...state.scores]};
  return frozen(matchSchema(base(1-state.starter,2,state.firstStarter,[record],getBrotoMap(state).id),state));
 }
-export function rematchBroto(state){if(!state.duelOver)fail('Conclua o duelo antes da revanche.');return frozen(matchSchema(base(1-state.firstStarter,1,1-state.firstStarter,[],getBrotoMap(state).id),state));}
+export function rematchBroto(state){if(!state.duelOver)fail('Conclua o duelo antes da revanche.');return frozen(matchSchema(base(0,1,0,[],getBrotoMap(state).id),state));}
 function equal(a,b){
  if(a===b)return true;if(!a||!b||typeof a!=='object'||typeof b!=='object'||Array.isArray(a)!==Array.isArray(b))return false;
  const keys=Object.keys(a);return keys.length===Object.keys(b).length&&keys.every(k=>Object.hasOwn(b,k)&&equal(a[k],b[k]));

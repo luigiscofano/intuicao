@@ -47,9 +47,9 @@ test('sixteenth move resolves effects then ends; leftovers receive no closing ha
 test('next round alternates starter, preserves finalized first result, resets board/reserves',()=>{
  const first=finish(createBroto()),second=nextBrotoRound(first);assert.equal(second.round,2);assert.equal(second.player,1);assert.equal(second.starter,1);assert.deepEqual(second.board,Array(16).fill(null));assert.deepEqual(second.reserves,[8,8]);assert.deepEqual(second.scores,[0,0]);assert.deepEqual(second.totals,first.scores);assert.deepEqual(second.completedRounds[0].history,first.history);assert.equal(undoBroto(second),second);assert.throws(()=>nextBrotoRound(second));
 });
-test('duel result totals are idempotent on serialization/reopen; rematch reverses first starter',()=>{
+test('duel result totals are idempotent on serialization/reopen; rematch begins with player1',()=>{
  const end=finish(nextBrotoRound(finish(createBroto())));assert(end.duelOver);assert.equal(end.winner,end.totals[0]===end.totals[1]?'draw':end.totals[0]>end.totals[1]?0:1);
- const a=restoreBroto(serializeBroto(end)),b=restoreBroto(serializeBroto(a));assert.deepEqual(b,end);const rematch=rematchBroto(end);assert.equal(rematch.firstStarter,1);assert.equal(rematch.player,1);assert.deepEqual(rematch.totals,[0,0]);assert.deepEqual(rematch.completedRounds,[]);assert.throws(()=>rematchBroto(createBroto()));
+ const a=restoreBroto(serializeBroto(end)),b=restoreBroto(serializeBroto(a));assert.deepEqual(b,end);const rematch=rematchBroto(end);assert.equal(rematch.firstStarter,0);assert.equal(rematch.player,0);assert.deepEqual(rematch.totals,[0,0]);assert.deepEqual(rematch.completedRounds,[]);assert.throws(()=>rematchBroto(createBroto()));
 });
 test('undo/redo restores complete harvested state; new branch discards redo',()=>{
  const before=moves([1,5,7,6]),after=applyBrotoMove(before,3).state,undo=undoBroto(after);assert.deepEqual({...undo,future:[]},before);assert.deepEqual(redoBroto(undo),after);assert(restoreBroto(undo));const branch=applyBrotoMove(undo,0).state;assert.deepEqual(branch.future,[]);assert.equal(redoBroto(branch),branch);

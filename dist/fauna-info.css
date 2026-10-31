@@ -23,3 +23,11 @@
 @media(max-width:600px){#fauna-dialog{width:calc(100vw - 20px);max-height:calc(100dvh - 20px)}.fauna-shell{max-height:calc(100dvh - 22px)}.fauna-heading{padding:16px;gap:8px}#fauna-title{font-size:25px}.fauna-copy{padding:14px 16px;font-size:13px}.fauna-art-grid{gap:7px;padding:8px}.fauna-art-grid figcaption{font-size:10px}.fauna-actions{padding:10px 16px}}
 
 .fauna-sintonia-sprite{display:block;width:100%;height:100%;background-repeat:no-repeat;image-rendering:pixelated}
+
+/* Mapa ilustrativo de ocorrência: a arte original do animal permanece acima. */
+#fauna-dialog .fauna-range-map{margin:12px 0 18px;padding:14px;border:1px solid #d8e1cf;border-radius:14px;background:#fafcf6;display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:14px;align-items:center}
+#fauna-dialog .fauna-range-map figcaption{min-width:0;font-size:12px;line-height:1.55}
+#fauna-dialog .fauna-range-legend{font-size:13px;line-height:1.4;display:block;color:#365c38}
+#fauna-dialog .fauna-range-caveat,#fauna-dialog .fauna-range-sources{font-size:11px;color:#5d6b56;line-height:1.5}
+#fauna-dialog .fauna-range-sources a{color:#365c38;text-underline-offset:3px;overflow-wrap:anywhere}
+@media(max-width:600px){#fauna-dialog .fauna-range-map{grid-template-columns:minmax(0,1fr);gap:8px;padding:12px}#fauna-dialog .fauna-range-svg{max-width:230px!important}}
