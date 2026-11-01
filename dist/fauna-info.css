@@ -42,3 +42,6 @@
 #fauna-dialog .fauna-culture-topics{margin:0 0 12px;padding-left:20px;line-height:1.75}
 #fauna-dialog .fauna-culture-topics li+li{margin-top:12px}
 #fauna-dialog .fauna-culture-topics li::marker{color:#56734e}
+
+/* Moldura individual: preserva os recortes e dá respiro às extremidades. */
+#fauna-dialog .fauna-art-view{box-sizing:border-box;border:1px solid #c5d2bc;border-radius:12px;padding:clamp(4px,.8vw,8px)}
