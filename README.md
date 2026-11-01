@@ -92,7 +92,7 @@ Cada manual explica o problema específico do jogo, sua representação, os arqu
 
 Na preparação desta organização, os cinco conjuntos de motor de BROTO, CERCO, SINTONIA, REPASSE e ÓRBITA passaram **95 testes, sem falhas**, usando Node 24.22.1. Esse recorte não é a suíte completa. O diagnóstico amplo registrado do baseline tem falhas históricas; há também uma pendência real de migração SINTONIA documentada na revisão ainda não recuperada.
 
-As verificações desta organização e seus limites estão em [qualidade](docs/qualidade/README.md). Não há CI remota comprovada enquanto o repositório não for criado e os workflows não executarem no GitHub.
+As verificações desta organização e seus limites estão em [qualidade](docs/qualidade/README.md). A [validação documental](https://github.com/luigiscofano/intuicao/actions/runs/41322568127) e o [recorte de motores](https://github.com/luigiscofano/intuicao/actions/runs/41322454090) passaram no GitHub Actions. Esses checks não representam a suíte completa.
 
 ## Progresso, privacidade e hospedagem
 

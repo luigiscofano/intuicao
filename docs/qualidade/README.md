@@ -1,4 +1,4 @@
-# Qualidade da preparação para GitHub
+# Qualidade da publicação no GitHub
 
 ## Base e alcance
 
@@ -13,7 +13,7 @@ Base: `2354a3cd4d0a06ed66b665ca853a635b64e3a0a7`. Organização documental reali
 | 536 testes da revisão f0e7fcf | Apenas registro externo; revisão ausente, não incorporada |
 | Links e inventário da documentação nova | Verificação por `node scripts/check-docs.mjs`; consultar registro final |
 | Integridade do código executável e ativos | Comparação com baseline registrada no fechamento |
-| CI do GitHub | Preparada, ainda não executada remotamente |
+| CI do GitHub | [Documentação aprovada](https://github.com/luigiscofano/intuicao/actions/runs/41322568127) e [motores aprovados](https://github.com/luigiscofano/intuicao/actions/runs/41322454090) |
 | Navegador, visual e acessibilidade | Não reexecutados durante esta alteração documental |
 
 ## O que o recorte de motores não prova
@@ -36,7 +36,5 @@ Consulte o [fechamento da organização](fechamento.md) para as verificações e
 - Recuperar a cópia revisada `f0e7fcf` com seu histórico e seus testes.
 - Resolver a incorporação da correção de idempotência da migração SINTONIA.
 - Reconciliar os manuais novos com a revisão recuperada.
-- Criar o repositório privado e enviar branches; abrir os PRs preparados.
-- Executar a CI no GitHub e registrar seus links reais.
 
 O [plano de integração](../github/README.md) mantém as dependências de revisão explícitas.

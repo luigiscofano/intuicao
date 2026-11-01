@@ -32,6 +32,8 @@ O histórico de 183 commits do baseline é ancestral das novas branches. Não fo
 
 O [PR #20](https://github.com/luigiscofano/intuicao/pull/20) conclui a apresentação inicial: remove a cópia antiga de `.github/README.md` restaurada durante a integração, preservando o guia em `.github/guias/README.md`.
 
+O [PR #21](https://github.com/luigiscofano/intuicao/pull/21) registra as execuções aprovadas de documentação e motores e atualiza o guia de clone para o repositório privado publicado.
+
 ## Processo realizado
 
 1. Criação do repositório privado, sem licença aberta.
