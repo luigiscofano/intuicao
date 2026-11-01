@@ -264,9 +264,9 @@ Antes de ampliar a execução, leia o [guia de testes](tests/README.md). A pasta
 
 **Como contribuir?** Leia [CONTRIBUTING.md](CONTRIBUTING.md), use uma branch para uma mudança bem delimitada e abra um PR descrevendo o problema, a solução e a validação realizada. Para mudanças em fases, IDs ou saves, consulte também o [guia de manutenção](docs/manutencao/README.md).
 
-## Preparação para publicação
+## Publicação e segurança
 
-O projeto está em desenvolvimento. A [revisão de segurança e publicação](docs/seguranca/README.md) registra o escopo examinado e o que falta resolver. O [inventário de recursos visuais](docs/recursos/README.md) identifica 133 arquivos e separa origem técnica de autorização de redistribuição. A [declaração de autoria](docs/recursos/declaracao-autoria.md) registra a confirmação do titular para os elementos autorais e sua autorização para manter o e-mail nos commits antigos. O histórico foi preservado. Os créditos de fontes externas e a separação entre MIT do código e direitos das artes continuam válidos.
+O repositório está **público desde 01/11/2026**, com histórico preservado e proteção da branch `main` por PRs e verificações obrigatórias. O projeto continua em desenvolvimento. A [revisão de segurança e publicação](docs/seguranca/README.md) registra o escopo examinado e o que falta resolver. O [inventário de recursos visuais](docs/recursos/README.md) identifica 133 arquivos e separa origem técnica de autorização de redistribuição. A [declaração de autoria](docs/recursos/declaracao-autoria.md) registra a confirmação do titular para os elementos autorais e sua autorização para manter o e-mail nos commits antigos. O histórico foi preservado. Os créditos de fontes externas e a separação entre MIT do código e direitos das artes continuam válidos.
 
 ## Autoria e licença
 
@@ -276,4 +276,4 @@ O código e a documentação autorais do Intuição são disponibilizados sob a 
 
 Imagens, sprites, fontes, logos e demais recursos visuais têm seus direitos tratados separadamente e não estão incluídos automaticamente nessa licença. Materiais de terceiros conservam suas licenças e créditos próprios. Consulte o [guia dos recursos](dist/platform-assets/README.md) e o [inventário de direitos](docs/recursos/README.md) antes de redistribuí-los.
 
-O repositório permanece privado; a adoção da MIT não altera suas permissões de acesso nem publica uma nova versão do site.
+A abertura do repositório não publica uma nova versão do site nem altera as licenças dos recursos visuais.

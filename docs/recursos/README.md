@@ -35,4 +35,4 @@ O primeiro comando valida cobertura e integridade do inventário. O segundo tamb
 
 A declaração inclui os elementos autorais nas versões anteriores e os **16 caminhos visuais antigos** listados em [arquivos históricos](arquivos-historicos.json). O histórico, os arquivos e seus hashes foram preservados. O titular também autorizou manter o e-mail nos commits antigos; não foi criada uma cópia com histórico novo.
 
-As 11 imagens ilustrativas dos jogos permanecem no README. O repositório continua privado.
+As 11 imagens ilustrativas dos jogos permanecem no README. O repositório foi tornado público em 01/11/2026, com autorização do titular e histórico preservado.
