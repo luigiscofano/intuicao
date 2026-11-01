@@ -4,7 +4,7 @@
 
 **Branch de origem:** `ci/documentacao`  
 **Base planejada:** `main`  
-**Commit próprio:** `b77bfaf5740f78939b7328ce5438d46185866aba`
+**Commit inicial:** `b77bfaf5740f78939b7328ce5438d46185866aba`
 
 ## Problema e resultado
 
@@ -17,6 +17,8 @@ Preparar validação documental e recorte manual de motores. A mudança oferece 
 - `scripts/README.md`
 - `.github/workflows/documentation.yml`
 - `.github/workflows/engine-smoke.yml`
+
+- Ajuste complementar: índice provisório de integração para que os links já passem antes do PR 19.
 
 ## Dependência
 
