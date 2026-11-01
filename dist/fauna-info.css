@@ -45,3 +45,10 @@
 
 /* Moldura individual: preserva os recortes e dá respiro às extremidades. */
 #fauna-dialog .fauna-art-view{box-sizing:border-box;border:1px solid #c5d2bc;border-radius:12px;padding:clamp(4px,.8vw,8px)}
+
+/* Convite visível só na galeria que abre as fichas, sem mover os animais. */
+.hero-fauna .hero-fauna-hint{position:absolute;top:calc(100% + 10px);left:0;right:0;margin:0;color:#52634a;font:500 11px/1.4 system-ui,sans-serif;text-align:center;pointer-events:none;user-select:text}
+.fauna-hint-touch{display:none}
+@media(hover:none),(pointer:coarse){.fauna-hint-click{display:none}.fauna-hint-touch{display:inline}}
+.hero-fauna > button.hero-fauna-cell:focus-visible,.hero-fauna > button.hero-fauna-cell:active{background:#edf3e7;box-shadow:0 0 0 4px #edf3e7}
+@media(max-width:1100px){.hero-fauna{margin-bottom:29px}}

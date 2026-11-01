@@ -13,6 +13,7 @@ export function initFaunaInfo(doc=document){
  const gallery=doc.querySelector('.hero-fauna');if(!gallery||doc.getElementById('fauna-dialog'))return;
  const cells=[...gallery.querySelectorAll('.hero-fauna-cell')];if(cells.length!==FAUNA_ART.length)return;
  gallery.removeAttribute('aria-hidden');gallery.removeAttribute('inert');gallery.setAttribute('aria-label','Conheça os animais do Intuição');
+ const hint=doc.createElement('p');hint.id='hero-fauna-hint';hint.className='hero-fauna-hint';hint.innerHTML='<span class="fauna-hint-click">Clique nos animais para conhecer</span><span class="fauna-hint-touch">Toque nos animais para conhecer</span>';gallery.append(hint);gallery.setAttribute('aria-describedby',hint.id);
  const dialog=doc.createElement('dialog');dialog.id='fauna-dialog';dialog.setAttribute('aria-labelledby','fauna-title');dialog.setAttribute('aria-modal','true');
  dialog.innerHTML='<div class="fauna-shell"><div class="fauna-heading"><div><h2 id="fauna-title" tabindex="-1"></h2><p id="fauna-subtitle"></p></div><button type="button" data-fauna-close class="fauna-close" aria-label="Fechar informações do animal">×</button></div><div class="fauna-copy" tabindex="0" role="region" aria-label="Sobre o animal"></div><div class="fauna-actions"><button type="button" data-fauna-close>Fechar</button></div></div>';
  const tip=doc.createElement('div');tip.id='fauna-tip';tip.setAttribute('role','tooltip');tip.setAttribute('popover','manual');tip.hidden=true;doc.body.append(dialog,tip);
