@@ -1,7 +1,9 @@
 import test from 'node:test';
 import assert from 'node:assert/strict';
-import {CERCO_MAPS,getCercoMap,createCerco,cercoNeighbors,legalCercoMoves,applyCercoMove,previewCercoMove,undoCerco,redoCerco,resetCerco,rematchCerco,restoreCerco,serializeCerco} from '../dist/cerco/engine.mjs';
+import {CERCO_MAPS as ALL_CERCO_MAPS,getCercoMap,createCerco,cercoNeighbors,legalCercoMoves,applyCercoMove,previewCercoMove,undoCerco,redoCerco,resetCerco,rematchCerco,restoreCerco,serializeCerco} from '../dist/cerco/engine.mjs';
 import {chooseCercoMove} from '../dist/cerco/bot.mjs';
+// Preserva o corpus original de sete mapas 5×5; tamanhos novos têm suíte própria.
+const CERCO_MAPS=ALL_CERCO_MAPS.filter(m=>m.rows===5);
 const clone=x=>structuredClone(x);
 test('seven curated maps: immutable, distinct, connected, rotation-symmetric and all six pieces initially mobile',()=>{
  assert.equal(CERCO_MAPS.length,7);assert.equal(new Set(CERCO_MAPS.map(m=>JSON.stringify([m.walls,m.outside]))).size,7);

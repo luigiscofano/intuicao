@@ -1,5 +1,6 @@
 import {CERCO_MAPS,getCercoMap} from './maps.mjs';
 export {CERCO_MAPS,getCercoMap};
+export {CERCO_GRID_SIZES,getCercoMapsForSize,getCercoMapVariant} from './maps.mjs';
 /** CERCO: motor puro. Casas e equipes usam índices a partir de zero. */
 export const CERCO_RULES_VERSION='cerco-1';
 const freeze=x=>{if(x&&typeof x==='object'){Object.values(x).forEach(freeze);Object.freeze(x);}return x;};
