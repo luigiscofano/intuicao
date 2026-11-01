@@ -6,6 +6,7 @@
     ".github/PULL_REQUEST_TEMPLATE.md",
     ".github/guias/README.md",
     "CONTRIBUTING.md",
+    "LICENSE",
     "README.md",
     "dist/README.md",
     "dist/broto/README.md",
