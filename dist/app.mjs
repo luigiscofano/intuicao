@@ -491,7 +491,7 @@ function draw(){
    const d=cutDirection(),h={x:clamp(p.x,48,752),y:clamp(p.y,48,398)};
    svg+=`<g class="cut-direction" aria-hidden="true"><line x1="${h.x-d.x*48}" y1="${h.y-d.y*48}" x2="${h.x+d.x*48}" y2="${h.y+d.y*48}" stroke="#75618d" stroke-width="2" stroke-dasharray="3 5"/><path transform="translate(${h.x} ${h.y}) rotate(${currentLevel().basicDirection})" d="M-48 0 l8-5 m-8 5 l8 5 M48 0 l-8-5 m8 5 l-8 5" fill="none" stroke="#75618d" stroke-width="2"/></g>${cutHandle('basic-cut',h.x,h.y,'Mover no eixo',`Única direção liberada: ${currentLevel().basicDirection} graus. Arraste ou use as setas.`,'offset',currentLevel().basicDirection)}`;
   }else svg+=advancedCutHandles(c,p);
-  svg+=`<text x="24" y="430" font-size="13">Lado roxo · meta ${state.target}%${!free&&cutMode==='basic'?' · um único eixo':''}</text>`;
+  $('cut-goal-caption').innerHTML=`<span>Lado roxo · meta <strong>${state.target}%</strong></span>${!free&&cutMode==='basic'?' <span class="cut-axis-note">Um único eixo</span>':''}`;
   const err=c.ratio*100-state.target, ok=cutSuccess(c.ratio*100,state.target);status('Área roxa',fmt(c.ratio*100)+'%',ok?'Corte encontrado! Dentro de ±3 pontos percentuais (limite incluído).':`Fora da margem de ±3 pp: ${fmt(Math.abs(err),2)} pontos percentuais ${err>0?'acima':'abaixo'} da meta.`,ok);
  }
  saveEndless();saveCustom();updateOriginalHistoryButtons();

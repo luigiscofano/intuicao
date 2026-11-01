@@ -1,0 +1,9 @@
+/* Meta e leitura do Corte Certo legíveis sem depender da escala do SVG. */
+.cut-goal-caption{display:none}
+body:has(.games [data-game="cut"][aria-pressed="true"]) .cut-goal-caption{display:flex;flex-wrap:wrap;align-items:center;justify-content:center;gap:4px 14px;margin:0 12px 10px;padding:9px 12px;border:1px solid #c6bcd9;border-radius:12px;background:#eee9f5;color:#514264;font-size:16px;font-weight:650;line-height:1.35;text-align:center}
+body:has(.games [data-game="cut"][aria-pressed="true"]) .cut-goal-caption strong{font-size:24px;font-weight:800;white-space:nowrap}
+.cut-axis-note{font-size:12px;font-weight:550}
+body:has(.games [data-game="cut"][aria-pressed="true"]) .experiment>.readout>div{padding:10px 16px;border:1px solid #c6bcd9;border-radius:13px;background:#eee9f5;min-width:134px}
+body:has(.games [data-game="cut"][aria-pressed="true"]) .experiment>.readout .metric-label{font-size:12px;font-weight:750;letter-spacing:.8px;color:#655278}
+body:has(.games [data-game="cut"][aria-pressed="true"]) .experiment>.readout strong{display:block;font-size:36px;font-weight:800;line-height:1.15;color:#514264;font-variant-numeric:tabular-nums}
+@media(max-width:480px){body:has(.games [data-game="cut"][aria-pressed="true"]) .cut-goal-caption{margin:0 5px 8px;padding:7px 8px;font-size:14px;gap:2px 8px}body:has(.games [data-game="cut"][aria-pressed="true"]) .cut-goal-caption strong{font-size:22px}body:has(.games [data-game="cut"][aria-pressed="true"]) .experiment>.readout{flex-wrap:wrap}body:has(.games [data-game="cut"][aria-pressed="true"]) .experiment>.readout strong{font-size:32px}}
