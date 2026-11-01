@@ -148,3 +148,9 @@
  #cerco .ce-duel-layout:not([data-ce-size="5"]) .ce-team-mark{font-size:8px;right:0}
  #cerco .ce-duel-layout:not([data-ce-size="5"]) .ce-future-mark{font-size:20px}
 }
+
+/* Retomar é uma escolha explícita, depois de todas as opções da preparação. */
+#cerco .ce-resume-card{margin-top:22px;padding:14px 16px;border:1px solid #c6d1bb;border-radius:14px;background:#f1f5eb;display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:12px;max-width:100%;box-sizing:border-box}
+#cerco .ce-resume-card p{margin:0;font-size:14px;line-height:1.5;color:#43593b}
+#cerco .ce-resume-card button{min-height:44px;max-width:100%;white-space:normal;padding:10px 14px}
+@media(max-width:500px){#cerco .ce-resume-card{padding:12px}#cerco .ce-resume-card button{width:100%}}

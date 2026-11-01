@@ -119,3 +119,9 @@
 #broto .has-duel-result #b-result .versus-victory{flex-direction:column;gap:10px;text-align:center}
 #broto .has-duel-result #b-result .vv-emblem{flex-basis:auto}
 #broto .has-duel-result #b-result .vv-copy{width:100%}
+
+/* A retomada é opcional e fica abaixo de todas as escolhas de preparação. */
+#broto .b-resume-panel{margin-top:20px;padding:14px 16px;border:1px solid #c5d0ba;border-radius:14px;background:#f8faf4;max-width:560px}
+#broto .b-resume-panel p{margin:0 0 10px;color:#52634e;font-size:14px;line-height:1.5}
+#broto .b-resume-panel button{min-height:44px;max-width:100%;white-space:normal;text-align:center}
+@media(max-width:500px){#broto .b-resume-panel{padding:12px}#broto .b-resume-panel button{width:100%;font-size:13px}}
