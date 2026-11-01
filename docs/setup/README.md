@@ -6,7 +6,15 @@ Para jogar, use Python 3 e um navegador com módulos ES, SVG, workers e armazena
 
 ## Obter a cópia
 
-O repositório privado ainda precisa ser criado no GitHub. Não há um endereço remoto confirmado para clone nesta entrega. Se você recebeu um arquivo `intuicao-organizado.bundle`, ele contém os objetos Git e as branches locais:
+Com sua conta autorizada no GitHub, clone o repositório privado:
+
+```bash
+git clone https://github.com/luigiscofano/intuicao.git
+cd intuicao
+git switch main
+```
+
+Como alternativa de recuperação, o arquivo `intuicao-organizado.bundle` preserva o pacote original da organização, anterior aos ajustes finais feitos por PR no GitHub:
 
 ```bash
 git bundle verify intuicao-organizado.bundle
