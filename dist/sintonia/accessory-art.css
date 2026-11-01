@@ -1,7 +1,7 @@
 /* Somente a arte dos mecanismos: nenhuma alteração no tamanho dos tabuleiros. */
 #sintonia .s-accessory-icon{display:block;width:100%;height:100%;object-fit:contain;image-rendering:pixelated;pointer-events:none;user-select:none}
 #sintonia .s-wall-art{position:absolute;inset:0;width:100%;height:100%;z-index:1;pointer-events:none}
-#sintonia .s-tile.wall{border-color:transparent;background:#78975a;background-image:none}
+#sintonia .s-tile.wall{border-color:transparent;background:#a3bd7b;background-image:none}
 #sintonia .s-tile.wall::after{display:none}
 #sintonia .s-mechanism,#sintonia .s-box{inset:0;border:0;border-radius:0;background:transparent;box-shadow:none;padding:0}
 #sintonia .s-plate.active,#sintonia .s-switch.active,#sintonia .s-portal{border:0;background:transparent;box-shadow:none}

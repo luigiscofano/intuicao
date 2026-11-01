@@ -13,10 +13,10 @@ export function accessoryIcon(name,state=0){
 }
 export function accessoryEdgeIcon({open=false,oneway=false,direction='right',vertical=true}={}){
  if(oneway)return accessoryIcon(direction);
- // A cancela ocupa a divisória. Aberta: barras recolhidas, passagem livre.
- const closed='<rect x="2" y="8" width="8" height="4" fill="#b77b43"/><rect x="2" y="20" width="8" height="4" fill="#b77b43"/><rect x="4" y="12" width="4" height="8" fill="#e6b94f"/>';
- const opened='<rect x="2" y="3" width="2" height="8" fill="#b77b43"/><rect x="8" y="21" width="2" height="8" fill="#b77b43"/>';
- const art='<rect x="0" y="1" width="3" height="30" fill="#403c31"/><rect x="9" y="1" width="3" height="30" fill="#403c31"/><rect x="1" y="3" width="1" height="26" fill="#e8b975"/><rect x="10" y="3" width="1" height="26" fill="#e8b975"/>'+(open?opened:closed);
+ // Postes e barras leves; a abertura ainda libera o centro da divisória.
+ const closed='<rect x="2" y="10" width="8" height="2" fill="#b77b43"/><rect x="2" y="21" width="8" height="2" fill="#b77b43"/><rect x="5" y="11" width="2" height="11" fill="#e6b94f"/>';
+ const opened='<rect x="2" y="5" width="1" height="6" fill="#b77b43"/><rect x="9" y="21" width="1" height="6" fill="#b77b43"/>';
+ const art='<rect x="0" y="4" width="2" height="24" fill="#403c31"/><rect x="10" y="4" width="2" height="24" fill="#403c31"/><rect x="1" y="5" width="1" height="22" fill="#e8b975"/><rect x="11" y="5" width="1" height="22" fill="#e8b975"/>'+(open?opened:closed);
  return `<svg class="s-accessory-edge s-gate-art" viewBox="0 0 ${vertical?'12 32':'32 12'}" preserveAspectRatio="none" shape-rendering="crispEdges" aria-hidden="true" focusable="false">${vertical?art:`<g transform="translate(32 0) rotate(90)">${art}</g>`}</svg>`;
 }
 const cache=new Map();
@@ -30,11 +30,11 @@ export function wallOverlay(board){
  const color=(x,y)=>{
   if(!inside(x,y))return null;
   if([[1,0],[-1,0],[0,1],[0,-1],[2,0],[-2,0],[0,2],[0,-2]].some(([dx,dy])=>!inside(x+dx,y+dy)))return '#34443a';
-  if(!inside(x,y-4))return '#b9cc91';
-  if(!inside(x+4,y)||!inside(x,y+4))return '#587447';
-  let c='#78975a';if(y%14===10)c='#66834e';
-  if((x+(Math.floor(y/14)%2?14:0))%29===24&&y%14<10)c='#66834e';
-  if((x+7*y)%71<5&&(y%14===3||y%14===4))c='#98b570';return c;
+  if(!inside(x,y-4))return '#d6e5b1';
+  if(!inside(x+4,y)||!inside(x,y+4))return '#7d9861';
+  let c='#a3bd7b';if(y%14===10)c='#92ac70';
+  if((x+(Math.floor(y/14)%2?14:0))%29===24&&y%14<10)c='#92ac70';
+  if((x+7*y)%71<5&&(y%14===3||y%14===4))c='#bed493';return c;
  };
  const paths=new Map();
  for(let y=0;y<h;y++){let x=0;while(x<w){const c=color(x,y),start=x;while(x<w&&color(x,y)===c)x++;if(c)paths.set(c,(paths.get(c)||'')+`M${start} ${y}h${x-start}v1h-${x-start}z`);}}

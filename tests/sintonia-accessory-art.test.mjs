@@ -5,7 +5,7 @@ import {createHash} from 'node:crypto';
 import {accessoryIcon,accessoryEdgeIcon,wallOverlay} from '../dist/sintonia/accessory-art.mjs';
 import {CAMPAIGN} from '../dist/sintonia/campaign.mjs';
 import {replay,validateLevel} from '../dist/sintonia/engine.mjs';
-// Hashes da prancha aprovada; sem dependência de arquivos externos ao repositório.
+// Hashes vigentes: 17 artes aprovadas + 4 refinamentos autorizados de interruptor/cancela.
 const APPROVED = {
   "box-0.png": "b322b15d372c8166c7a262201e36daeb6ae08a0250b0d92ab58f026e91f721dc",
   "box-1.png": "6d3b2d2dede58a9f1b8bea50d21d84f6923b857640a9a8e9a92a085dbd14dea0",
@@ -13,8 +13,8 @@ const APPROVED = {
   "bridge-1.png": "576809aa455028cb1467c962bd5390e4d7c1d58f31feeebbee636af7b1c3e905",
   "delivery-0.png": "e0ebf1420ced5c73e91c3fd7a3eb940f7734683da417d474fa65f2fb774f5d11",
   "delivery-1.png": "87f0e6b44e356e1c49049fdd3e569e991982063465c2b946ee916b8809a56b35",
-  "gate-0.png": "51539ef5c261888c63da34166082d76a5490c34276233575f3991acaf1138a5b",
-  "gate-1.png": "7a1b7990e84017dc6f7de26d7f8bff2007dcd0a2836e45c5f850d4ca95143297",
+  "gate-0.png": "6cd00debb9486d32dd74bbe282bf7bacee2b6a4608e8a18969fc9cee77be43a8",
+  "gate-1.png": "037cf3d09296ae61fa9ba89541c4339b2340cd82bf74bfa6343a2a6b890d8974",
   "goal-0.png": "6f8a877e56b8e97ce7e25a15dbad7da3ed142247ad4e88b3e67731fef7ed18cc",
   "goal-1.png": "3c4a37af54446813a9030b59f24cc1cc918717bbe52504ed9f8f2bf6014915ed",
   "ice-0.png": "79b2ae0fe8203cd2ee34a15a480a540a05b5cb2ab501cee6bdeed87711252cfb",
@@ -26,8 +26,8 @@ const APPROVED = {
   "portal-0.png": "0ca630d398965d0627f7d38588009bf585e81e4ef57b3b88c8cc4109262d949d",
   "selector-0.png": "e2d50f46493d5f2e3822bc1481e10db06db32aa567ecaa219b9d5b252f600c5b",
   "selector-1.png": "33d2f17f9cd3dc1e301522288e589e1f887b5f8a13c57bb826c4a986f952e47b",
-  "switch-0.png": "36515d2e9e1b09e953dd1f0ba43858d469061a1b4b09b248a66f5b3e6e883d34",
-  "switch-1.png": "5dcc5ae2b8a0b26f441b710c09708c2a15f778bccd170b9cf37c7ffa5a4226b0"
+  "switch-0.png": "eb791a2f8b1114550cc92c3937d91ef20363f20d66812615aeaa275bf04a961e",
+  "switch-1.png": "76be05325ce9fdf0a0028147587ee80132c4d4b85a5487153f1bca015bd8dda9"
 };
 function coverage(svg){
  const pixels=new Set();
@@ -48,7 +48,7 @@ function assertCoverage(board){
  assert.equal(JSON.stringify(board),snapshot,'render não altera tabuleiro');
  assert.equal(wallOverlay(board),svg,'render determinístico');
 }
-test('21 sprites aprovados permanecem byte-idênticos e 32×32',()=>{
+test('21 sprites vigentes permanecem verificados e 32×32',()=>{
  const base=new URL('../dist/sintonia/assets/accessories/',import.meta.url);
  assert.equal(readdirSync(base).filter(n=>n.endsWith('.png')).length,21);
  for(const [name,hash] of Object.entries(APPROVED)){
