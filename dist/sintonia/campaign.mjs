@@ -1,8 +1,8 @@
-/** 80 curated SINTONIA levels; exact engine definitions retained or newly certified. Build: tests/sintonia-build-80.mjs. */
-export const CONTENT_REVISION = 'sintonia-content-3';
-export const DIFFICULTIES = Object.freeze(["Básico","Aprendiz","Intermediário","Avançado","Mestre","Modo Sábio"]);
-export const CHAPTERS = DIFFICULTIES;
-export const CAMPAIGN = [
+/** SINTONIA80: 50 unchanged definitions and 30 independently certified recompositions. */
+export const CONTENT_REVISION='sintonia-content-4';
+export const DIFFICULTIES=Object.freeze(["Básico","Aprendiz","Intermediário","Avançado","Mestre","Modo Sábio"]);
+export const CHAPTERS=DIFFICULTIES;
+export const CAMPAIGN=[
   {
     "id": "sintonia-0001",
     "version": 1,
@@ -10061,7 +10061,7 @@ export const CAMPAIGN = [
     "actorIntroduction": null
   },
   {
-    "id": "sintonia-0176",
+    "id": "sintonia80-0034-v4",
     "version": 1,
     "rulesVersion": 1,
     "boards": [
@@ -10069,138 +10069,897 @@ export const CAMPAIGN = [
         "id": "b0",
         "animal": "capivara",
         "rows": 4,
-        "cols": 5,
+        "cols": 3,
         "walkable": [
-          5,
+          0,
+          1,
+          2,
+          4,
           6,
           7,
           8,
           9,
-          13,
-          18
+          11
         ],
-        "start": 8,
-        "goal": 6,
-        "boxes": [
-          {
-            "id": "box0",
-            "cell": 13
-          }
-        ],
+        "start": 0,
+        "goal": 4,
         "plates": [
           {
-            "id": "weight",
-            "cell": 18
-          }
-        ],
-        "gates": [
-          {
-            "id": "weight-gate",
-            "from": 7,
-            "to": 6,
-            "condition": {
-              "type": "plate",
-              "id": "weight"
-            }
+            "id": "support",
+            "cell": 9
           }
         ]
       },
       {
         "id": "b1",
         "animal": "tuiuiu",
-        "rows": 3,
-        "cols": 3,
+        "rows": 4,
+        "cols": 4,
         "walkable": [
-          1,
-          2,
-          3,
-          4,
           5,
-          6,
-          7
+          8,
+          9,
+          10,
+          11,
+          12,
+          15
         ],
-        "start": 7,
-        "goal": 5
+        "start": 15,
+        "goal": 8,
+        "gates": [
+          {
+            "id": "plate-gate",
+            "from": 9,
+            "to": 8,
+            "condition": {
+              "type": "plate",
+              "id": "support"
+            }
+          }
+        ]
       }
     ],
     "mechanics": [
       "walls",
-      "plate",
-      "box"
+      "plate"
     ],
     "initialSwitches": {},
     "initialSelectors": {},
-    "family": "support-handoff",
+    "family": "remote-support",
     "secondaryFamilies": [
       "final-command",
-      "unequal-loop"
+      "goal-transit"
     ],
-    "name": "Um apoio que fica",
-    "lesson": "Empurre uma caixa por vez. Uma caixa pode sustentar uma placa; só bloqueia quando não pode ser empurrada. Deixe um apoio preparado para liberar quem precisa continuar.",
-    "discovery": "Aqui o jogador precisa descobrir que uma caixa pode sustentar a condição enquanto o animal segue para outra tarefa.",
+    "name": "Uma passagem para o outro",
+    "lesson": "Prepare a placa que abre o caminho do outro animal.",
+    "discovery": "Aqui o jogador precisa descobrir que a ocupação de uma placa prepara a passagem de outro tabuleiro.",
     "hints": [
-      "A caixa pode substituir um animal sobre a placa.",
-      "Empurre o peso até o apoio e preserve um caminho para sair.",
-      "Peça uma dica concreta para a configuração atual."
+      "Encontre a placa e a cancela com o mesmo símbolo.",
+      "O estado no início da seta decide a travessia: é possível sair da placa enquanto o outro atravessa.",
+      "Na configuração inicial, comece para cima; observe quem avança e quem espera."
     ],
-    "generatorVersion": 2,
-    "seed": "sintonia-campaign-v1:0176:0",
+    "generatorVersion": 3,
+    "contentRevision": "sintonia-content-4",
+    "seed": "sintonia-content4:34:0",
     "difficulty": 2,
     "solution": [
-      "down",
       "up",
-      "up",
-      "left",
-      "left",
-      "left",
       "right",
-      "down"
+      "right",
+      "left",
+      "down",
+      "down",
+      "left",
+      "down",
+      "left",
+      "up",
+      "right",
+      "up"
     ],
-    "signature": "st1-e4dd32cd-365",
+    "signature": "st1-8daf2263-337",
     "prerequisites": [
       "walls",
       "plate"
     ],
-    "introduction": [
-      "box"
-    ],
+    "introduction": [],
     "parameters": {
       "difficulty": 2,
       "animals": 2,
-      "primary": "box",
+      "primary": "plate",
       "secondary": null,
-      "role": "focus"
+      "role": "varied",
+      "pattern": null
     },
     "certificate": {
       "method": "breadth-first-witness-and-engine-replay",
       "rulesVersion": 1,
-      "commands": 8,
+      "commands": 12,
       "optimal": true,
-      "visited": 53,
+      "visited": 49,
       "replayed": true,
-      "engine": "unchanged-rules-1"
+      "engine": "unchanged-rules-1",
+      "firstVictoryAt": 12
     },
     "editorial": {
       "source": "procedural-structure-and-automatic-curation",
+      "design": null,
+      "purpose": {
+        "valid": true,
+        "won": true,
+        "evidenceScope": "supplied-command-sequence",
+        "commands": 12,
+        "boxes": [],
+        "dependencies": [
+          {
+            "gateId": "plate-gate",
+            "receiverBoard": 1,
+            "condition": {
+              "type": "plate",
+              "id": "support"
+            },
+            "controllers": [
+              {
+                "type": "plate",
+                "id": "support",
+                "board": 0,
+                "cell": 9
+              }
+            ],
+            "crossingCommands": [
+              9
+            ]
+          }
+        ],
+        "boardRoles": [
+          {
+            "board": 0,
+            "moved": 10,
+            "waited": 2,
+            "goalDepartures": 1
+          },
+          {
+            "board": 1,
+            "moved": 4,
+            "waited": 8,
+            "goalDepartures": 0
+          }
+        ],
+        "caveat": "Uso neste certificado não prova necessidade. Consulte tests/sintonia-purpose-audit.json para ablações e limites."
+      },
+      "rubric": {
+        "status": "human-review-pending",
+        "dimensions": [
+          "purpose",
+          "discovery",
+          "interdependence",
+          "causal-clarity",
+          "spatial-economy",
+          "variety"
+        ],
+        "scores": null,
+        "humanPlaytesting": false,
+        "reason": "Replay e ablações são evidências automáticas, não substitutos de avaliação editorial e testes humanos."
+      },
       "humanPlaytested": false,
-      "discovery": "Aqui o jogador precisa descobrir que uma caixa pode sustentar a condição enquanto o animal segue para outra tarefa.",
+      "discovery": "Aqui o jogador precisa descobrir que a ocupação de uma placa prepara a passagem de outro tabuleiro.",
       "reasoning": {
         "used": [
-          "box-support-gate",
-          "plate-gate",
-          "push"
+          "plate-gate"
         ],
-        "partialBlocks": 6,
+        "partialBlocks": 10,
         "goalDepartures": [
           true,
           false
         ],
-        "unequalLoops": 7,
-        "directionChanges": 4,
-        "earlyTurns": 1,
-        "occupiedBoxPlate": true,
+        "unequalLoops": 8,
+        "directionChanges": 9,
+        "earlyTurns": 2,
+        "occupiedBoxPlate": false,
         "boxAsStopAfterSupport": false,
         "finalApproach": [
+          false,
+          true
+        ]
+      },
+      "sweep": {
+        "status": "complete",
+        "visited": 8,
+        "resistant": true
+      },
+      "compatibility": "validated",
+      "alternatives": "Uma sequência verificada é fornecida; outras soluções podem existir.",
+      "deadEnds": "Mudanças de configuração podem exigir retornar a uma posição anterior.",
+      "role": "varied",
+      "decision": "recompose",
+      "curriculumReason": "Sustentar a passagem e escolher quando liberar o apoio.",
+      "retentionReason": "Sustentar a passagem e escolher quando liberar o apoio.",
+      "antiSpam": {
+        "singleDirection": {
+          "tested": 4,
+          "winningDirections": []
+        },
+        "sweeps": {
+          "status": "complete",
+          "visited": 8,
+          "solves": false
+        },
+        "shortCycles": {
+          "tested": 40,
+          "winningPatterns": []
+        },
+        "biasedRandom": {
+          "runs": 24,
+          "commandsPerRun": 128,
+          "wins": 0
+        },
+        "uniformRandom": {
+          "runs": 24,
+          "commandsPerRun": 128,
+          "wins": 5
+        },
+        "interpretation": "Diagnóstico automático; ciclos curtos e acertos aleatórios não provam ausência de raciocínio. A varredura testa vitória após cada movimento."
+      },
+      "necessity": [
+        {
+          "avoid": {
+            "type": "helper-participation",
+            "board": 0
+          },
+          "result": {
+            "scope": "all-winning-solutions-avoiding-event",
+            "optimalScope": "avoiding-predicate-only",
+            "avoid": {
+              "type": "helper-participation",
+              "board": 0
+            },
+            "budget": {
+              "maxStates": 90000,
+              "maxMs": 12000,
+              "maxDepth": null
+            },
+            "status": "unsolvable",
+            "visited": 42,
+            "optimal": false,
+            "exhaustive": true
+          }
+        }
+      ],
+      "causalityReport": "tests/sintonia-v4-editorial.json"
+    },
+    "number": 34,
+    "chapter": 3,
+    "originNumber": 34,
+    "origin": {
+      "kind": "recomposed-removed-mechanics",
+      "catalog": "sintonia-content-3",
+      "id": "sintonia-0176",
+      "number": 34,
+      "version": 1,
+      "reason": "Sustentar a passagem e escolher quando liberar o apoio."
+    },
+    "actorIntroduction": null,
+    "topologySignature": "top1-7115ad84-112"
+  },
+  {
+    "id": "sintonia80-0035-v4",
+    "version": 1,
+    "rulesVersion": 1,
+    "boards": [
+      {
+        "id": "b0",
+        "animal": "capivara",
+        "rows": 4,
+        "cols": 4,
+        "walkable": [
+          0,
+          1,
+          2,
+          3,
+          4,
+          6,
+          8,
+          12
+        ],
+        "start": 3,
+        "goal": 12,
+        "switches": [
+          {
+            "id": "prepare",
+            "cell": 6,
+            "group": "prepare"
+          }
+        ],
+        "gates": []
+      },
+      {
+        "id": "b1",
+        "animal": "tuiuiu",
+        "rows": 4,
+        "cols": 3,
+        "walkable": [
+          4,
+          5,
+          6,
+          8,
+          9,
+          10,
+          11
+        ],
+        "start": 9,
+        "goal": 5,
+        "gates": [
+          {
+            "id": "preparation-remote",
+            "from": 10,
+            "to": 11,
+            "condition": {
+              "type": "switch",
+              "id": "prepare",
+              "value": true
+            }
+          }
+        ]
+      }
+    ],
+    "mechanics": [
+      "walls",
+      "switch"
+    ],
+    "initialSwitches": {},
+    "initialSelectors": {},
+    "family": "scenario-choice",
+    "secondaryFamilies": [
+      "wall-adjust",
+      "priority-change"
+    ],
+    "name": "Uma escolha que permanece",
+    "lesson": "Entre no interruptor para preparar a configuração das passagens.",
+    "discovery": "Aqui o jogador precisa descobrir que o desvio de preparação libera o outro animal, mudando qual caminho precisa de atenção.",
+    "hints": [
+      "O interruptor alterna a passagem quando o animal entra e termina sobre ele.",
+      "Depois de preparar a abertura, você pode sair do interruptor sem perder essa configuração.",
+      "Na configuração inicial, comece para a esquerda; observe quem avança e quem espera."
+    ],
+    "generatorVersion": 3,
+    "contentRevision": "sintonia-content-4",
+    "seed": "sintonia-content4:35:0",
+    "difficulty": 2,
+    "solution": [
+      "left",
+      "down",
+      "right",
+      "right",
+      "up",
+      "up",
+      "left",
+      "left",
+      "down",
+      "down",
+      "down",
+      "right"
+    ],
+    "signature": "st1-6bfb5a61-378",
+    "prerequisites": [
+      "walls",
+      "switch"
+    ],
+    "introduction": [],
+    "parameters": {
+      "difficulty": 2,
+      "animals": 2,
+      "primary": "switch",
+      "secondary": null,
+      "role": "varied",
+      "pattern": "switch-fork-before-exit"
+    },
+    "certificate": {
+      "method": "breadth-first-witness-and-engine-replay",
+      "rulesVersion": 1,
+      "commands": 12,
+      "optimal": true,
+      "visited": 103,
+      "replayed": true,
+      "engine": "unchanged-rules-1",
+      "firstVictoryAt": 12
+    },
+    "editorial": {
+      "source": "role-first-structure-and-automatic-curation",
+      "design": {
+        "preparationControl": "switch",
+        "pattern": "switch-fork-before-exit",
+        "discovery": "o desvio de preparação libera o outro animal, mudando qual caminho precisa de atenção",
+        "roles": [
+          {
+            "board": 0,
+            "role": "preparer-and-committer",
+            "control": 6,
+            "commit": null,
+            "goalRegion": [
+              12
+            ]
+          },
+          {
+            "board": 1,
+            "role": "receiver-and-aligner",
+            "goalRegion": [
+              11,
+              8,
+              5,
+              4
+            ]
+          }
+        ],
+        "structures": [
+          {
+            "board": 0,
+            "role": "prepare",
+            "cells": [
+              3,
+              2,
+              6
+            ]
+          },
+          {
+            "board": 0,
+            "role": "separate",
+            "edge": [
+              2,
+              1
+            ]
+          },
+          {
+            "board": 0,
+            "role": "exit",
+            "edge": [
+              8,
+              12
+            ]
+          },
+          {
+            "board": 1,
+            "role": "remote-exit",
+            "edge": [
+              10,
+              11
+            ]
+          }
+        ],
+        "dependencies": [
+          {
+            "fromBoard": 0,
+            "toBoard": 1,
+            "control": "prepare",
+            "role": "prepare-remote-exit"
+          }
+        ],
+        "order": [
+          "visit-side-branch",
+          "leave-control-with-configuration",
+          "cross-exits",
+          "joint-arrival"
+        ],
+        "counterfactual": "Opening the preparation gate removes the obligation to visit the side branch.",
+        "proofStatus": "structural-design-hypothesis; replay and budgeted ablations recorded separately"
+      },
+      "purpose": {
+        "valid": true,
+        "won": true,
+        "evidenceScope": "supplied-command-sequence",
+        "commands": 12,
+        "boxes": [],
+        "dependencies": [
+          {
+            "gateId": "preparation-remote",
+            "receiverBoard": 1,
+            "condition": {
+              "type": "switch",
+              "id": "prepare",
+              "value": true
+            },
+            "controllers": [
+              {
+                "type": "switch",
+                "id": "prepare",
+                "board": 0,
+                "cell": 6
+              }
+            ],
+            "crossingCommands": [
+              4
+            ]
+          }
+        ],
+        "boardRoles": [
+          {
+            "board": 0,
+            "moved": 8,
+            "waited": 4,
+            "goalDepartures": 0
+          },
+          {
+            "board": 1,
+            "moved": 6,
+            "waited": 6,
+            "goalDepartures": 1
+          }
+        ],
+        "caveat": "Uso neste certificado não prova necessidade. Consulte tests/sintonia-purpose-audit.json para ablações e limites."
+      },
+      "rubric": {
+        "status": "human-review-pending",
+        "dimensions": [
+          "purpose",
+          "discovery",
+          "interdependence",
+          "causal-clarity",
+          "spatial-economy",
+          "variety"
+        ],
+        "scores": null,
+        "humanPlaytesting": false,
+        "reason": "Replay e ablações são evidências automáticas, não substitutos de avaliação editorial e testes humanos."
+      },
+      "humanPlaytested": false,
+      "discovery": "Aqui o jogador precisa descobrir que o desvio de preparação libera o outro animal, mudando qual caminho precisa de atenção.",
+      "reasoning": {
+        "used": [
+          "switch",
+          "switch-gate"
+        ],
+        "partialBlocks": 10,
+        "goalDepartures": [
+          false,
+          true
+        ],
+        "unequalLoops": 11,
+        "directionChanges": 6,
+        "earlyTurns": 1,
+        "occupiedBoxPlate": false,
+        "boxAsStopAfterSupport": false,
+        "finalApproach": [
+          true,
+          false
+        ]
+      },
+      "sweep": {
+        "status": "complete",
+        "visited": 8,
+        "resistant": true
+      },
+      "compatibility": "validated",
+      "alternatives": "Uma sequência verificada é fornecida; outras soluções podem existir.",
+      "deadEnds": "Mudanças de configuração podem exigir retornar a uma posição anterior.",
+      "role": "varied",
+      "decision": "recompose",
+      "curriculumReason": "Configurar a cancela antes de retornar ao percurso final.",
+      "retentionReason": "Configurar a cancela antes de retornar ao percurso final.",
+      "antiSpam": {
+        "singleDirection": {
+          "tested": 4,
+          "winningDirections": []
+        },
+        "sweeps": {
+          "status": "complete",
+          "visited": 8,
+          "solves": false
+        },
+        "shortCycles": {
+          "tested": 40,
+          "winningPatterns": []
+        },
+        "biasedRandom": {
+          "runs": 24,
+          "commandsPerRun": 128,
+          "wins": 0
+        },
+        "uniformRandom": {
+          "runs": 24,
+          "commandsPerRun": 128,
+          "wins": 2
+        },
+        "interpretation": "Diagnóstico automático; ciclos curtos e acertos aleatórios não provam ausência de raciocínio. A varredura testa vitória após cada movimento."
+      },
+      "necessity": [
+        {
+          "avoid": {
+            "type": "helper-participation",
+            "board": 0
+          },
+          "result": {
+            "scope": "all-winning-solutions-avoiding-event",
+            "optimalScope": "avoiding-predicate-only",
+            "avoid": {
+              "type": "helper-participation",
+              "board": 0
+            },
+            "budget": {
+              "maxStates": 90000,
+              "maxMs": 12000,
+              "maxDepth": null
+            },
+            "status": "unsolvable",
+            "visited": 44,
+            "optimal": false,
+            "exhaustive": true
+          }
+        }
+      ],
+      "causalityReport": "tests/sintonia-v4-editorial.json"
+    },
+    "number": 35,
+    "chapter": 3,
+    "originNumber": 35,
+    "origin": {
+      "kind": "recomposed-removed-mechanics",
+      "catalog": "sintonia-content-3",
+      "id": "sintonia-0179",
+      "number": 35,
+      "version": 1,
+      "reason": "Configurar a cancela antes de retornar ao percurso final."
+    },
+    "actorIntroduction": null,
+    "topologySignature": "top1-ee7aab2c-113"
+  },
+  {
+    "id": "sintonia80-0036-v4",
+    "version": 1,
+    "rulesVersion": 1,
+    "boards": [
+      {
+        "id": "b0",
+        "animal": "capivara",
+        "rows": 4,
+        "cols": 4,
+        "walkable": [
+          2,
+          3,
+          5,
+          6,
+          7,
+          8,
+          9,
+          11,
+          13,
+          14
+        ],
+        "start": 6,
+        "goal": 14,
+        "plates": [
+          {
+            "id": "support",
+            "cell": 14
+          }
+        ]
+      },
+      {
+        "id": "b1",
+        "animal": "tuiuiu",
+        "rows": 4,
+        "cols": 4,
+        "walkable": [
+          5,
+          6,
+          7,
+          10,
+          12,
+          13,
+          14,
+          15
+        ],
+        "start": 12,
+        "goal": 15,
+        "gates": [
+          {
+            "id": "plate-gate",
+            "from": 14,
+            "to": 15,
+            "condition": {
+              "type": "plate",
+              "id": "support"
+            }
+          },
+          {
+            "id": "auxiliary-gate-2",
+            "from": 14,
+            "to": 13,
+            "condition": {
+              "type": "plate",
+              "id": "auxiliary-2"
+            }
+          }
+        ]
+      },
+      {
+        "id": "b2",
+        "animal": "bemtevi",
+        "rows": 3,
+        "cols": 4,
+        "walkable": [
+          2,
+          4,
+          6,
+          7,
+          8,
+          9,
+          10
+        ],
+        "start": 4,
+        "goal": 6,
+        "plates": [
+          {
+            "id": "auxiliary-2",
+            "cell": 7
+          }
+        ]
+      }
+    ],
+    "mechanics": [
+      "walls",
+      "plate"
+    ],
+    "initialSwitches": {},
+    "initialSelectors": {},
+    "family": "remote-support",
+    "secondaryFamilies": [
+      "axis-order",
+      "wall-adjust"
+    ],
+    "name": "Uma passagem para o outro",
+    "lesson": "Prepare a placa que abre o caminho do outro animal.",
+    "discovery": "Aqui o jogador precisa descobrir que a ocupação de uma placa prepara a passagem de outro tabuleiro.",
+    "hints": [
+      "Encontre a placa e a cancela com o mesmo símbolo.",
+      "O estado no início da seta decide a travessia: é possível sair da placa enquanto o outro atravessa.",
+      "Na configuração inicial, comece para a esquerda; observe quem avança e quem espera."
+    ],
+    "generatorVersion": 3,
+    "contentRevision": "sintonia-content-4",
+    "seed": "sintonia-content4:36:0",
+    "difficulty": 2,
+    "solution": [
+      "left",
+      "down",
+      "right",
+      "down",
+      "right",
+      "up",
+      "right",
+      "right",
+      "up",
+      "left",
+      "down",
+      "right",
+      "right",
+      "up"
+    ],
+    "signature": "st1-eb5ee269-537",
+    "prerequisites": [
+      "walls",
+      "plate"
+    ],
+    "introduction": [],
+    "parameters": {
+      "difficulty": 2,
+      "animals": 3,
+      "primary": "plate",
+      "secondary": null,
+      "role": "varied",
+      "pattern": null
+    },
+    "certificate": {
+      "method": "breadth-first-witness-and-engine-replay",
+      "rulesVersion": 1,
+      "commands": 14,
+      "optimal": true,
+      "visited": 310,
+      "replayed": true,
+      "engine": "unchanged-rules-1",
+      "firstVictoryAt": 14
+    },
+    "editorial": {
+      "source": "procedural-structure-and-automatic-curation",
+      "design": null,
+      "purpose": {
+        "valid": true,
+        "won": true,
+        "evidenceScope": "supplied-command-sequence",
+        "commands": 14,
+        "boxes": [],
+        "dependencies": [
+          {
+            "gateId": "plate-gate",
+            "receiverBoard": 1,
+            "condition": {
+              "type": "plate",
+              "id": "support"
+            },
+            "controllers": [
+              {
+                "type": "plate",
+                "id": "support",
+                "board": 0,
+                "cell": 14
+              }
+            ],
+            "crossingCommands": [
+              13
+            ]
+          },
+          {
+            "gateId": "auxiliary-gate-2",
+            "receiverBoard": 1,
+            "condition": {
+              "type": "plate",
+              "id": "auxiliary-2"
+            },
+            "controllers": [
+              {
+                "type": "plate",
+                "id": "auxiliary-2",
+                "board": 2,
+                "cell": 7
+              }
+            ],
+            "crossingCommands": [
+              8
+            ]
+          }
+        ],
+        "boardRoles": [
+          {
+            "board": 0,
+            "moved": 6,
+            "waited": 8,
+            "goalDepartures": 1
+          },
+          {
+            "board": 1,
+            "moved": 5,
+            "waited": 9,
+            "goalDepartures": 0
+          },
+          {
+            "board": 2,
+            "moved": 8,
+            "waited": 6,
+            "goalDepartures": 2
+          }
+        ],
+        "caveat": "Uso neste certificado não prova necessidade. Consulte tests/sintonia-purpose-audit.json para ablações e limites."
+      },
+      "rubric": {
+        "status": "human-review-pending",
+        "dimensions": [
+          "purpose",
+          "discovery",
+          "interdependence",
+          "causal-clarity",
+          "spatial-economy",
+          "variety"
+        ],
+        "scores": null,
+        "humanPlaytesting": false,
+        "reason": "Replay e ablações são evidências automáticas, não substitutos de avaliação editorial e testes humanos."
+      },
+      "humanPlaytested": false,
+      "discovery": "Aqui o jogador precisa descobrir que a ocupação de uma placa prepara a passagem de outro tabuleiro.",
+      "reasoning": {
+        "used": [
+          "plate-gate"
+        ],
+        "partialBlocks": 14,
+        "goalDepartures": [
+          true,
+          false,
+          true
+        ],
+        "unequalLoops": 28,
+        "directionChanges": 11,
+        "earlyTurns": 5,
+        "occupiedBoxPlate": false,
+        "boxAsStopAfterSupport": false,
+        "finalApproach": [
+          true,
           true,
           false
         ]
@@ -10212,12 +10971,11 @@ export const CAMPAIGN = [
       },
       "compatibility": "validated",
       "alternatives": "Uma sequência verificada é fornecida; outras soluções podem existir.",
-      "deadEnds": "A fase permite estados sem saída; desfazer e reiniciar são livres.",
-      "role": "focus",
-      "prerequisiteChapters": [
-        1,
-        2
-      ],
+      "deadEnds": "Mudanças de configuração podem exigir retornar a uma posição anterior.",
+      "role": "varied",
+      "decision": "recompose",
+      "curriculumReason": "Distribuir a preparação entre três animais sem um painel decorativo.",
+      "retentionReason": "Distribuir a preparação entre três animais sem um painel decorativo.",
       "antiSpam": {
         "singleDirection": {
           "tested": 4,
@@ -10233,1692 +10991,138 @@ export const CAMPAIGN = [
           "winningPatterns": []
         },
         "biasedRandom": {
-          "runs": 12,
+          "runs": 24,
+          "commandsPerRun": 128,
+          "wins": 0
+        },
+        "uniformRandom": {
+          "runs": 24,
           "commandsPerRun": 128,
           "wins": 2
         },
-        "uniformRandom": {
-          "runs": 12,
-          "commandsPerRun": 128,
-          "wins": 5
-        },
         "interpretation": "Diagnóstico automático; ciclos curtos e acertos aleatórios não provam ausência de raciocínio. A varredura testa vitória após cada movimento."
       },
-      "repetition": {
-        "structuralSignature": "st1-e4dd32cd-365",
-        "topologySignature": "top1-f85535ae-107",
-        "globallyRotatedOrReflectedDuplicate": false
-      },
-      "decision": "retain-logical-definition",
-      "retentionReason": "A caixa assume a placa e libera seu animal: um empurrão introdutório com função de acesso.",
-      "purpose": {
-        "valid": true,
-        "won": true,
-        "evidenceScope": "supplied-command-sequence",
-        "commands": 8,
-        "boxes": [
-          {
-            "id": "box0",
-            "origin": {
-              "id": "box0",
-              "board": 0,
-              "cell": 13
-            },
-            "final": {
-              "id": "box0",
-              "board": 0,
-              "cell": 18
-            },
-            "pushes": [
-              {
-                "command": 1,
-                "direction": "down",
-                "board": 0,
-                "from": 13,
-                "to": 18
-              }
-            ],
-            "directionChanges": 0,
-            "deliveries": [],
-            "postDeliveryPushes": [],
-            "plateEntries": [
-              {
-                "command": 1,
-                "plateId": "weight"
-              }
-            ],
-            "plateReleases": [],
-            "supportUses": [
-              {
-                "command": 5,
-                "plateId": "weight",
-                "gateId": "weight-gate",
-                "receiverBoard": 0
-              }
-            ],
-            "observedRoles": [
-              "gate-support"
-            ]
-          }
-        ],
-        "dependencies": [
-          {
-            "gateId": "weight-gate",
-            "receiverBoard": 0,
-            "condition": {
-              "type": "plate",
-              "id": "weight"
-            },
-            "controllers": [
-              {
-                "type": "plate",
-                "id": "weight",
-                "board": 0,
-                "cell": 18
-              }
-            ],
-            "crossingCommands": [
-              5
-            ]
-          }
-        ],
-        "boardRoles": [
-          {
-            "board": 0,
-            "moved": 6,
-            "waited": 2,
-            "goalDepartures": 1
-          },
-          {
-            "board": 1,
-            "moved": 4,
-            "waited": 4,
-            "goalDepartures": 0
-          }
-        ],
-        "caveat": "Uso neste certificado não prova necessidade. Consulte tests/sintonia-purpose-audit.json para ablações e limites."
-      },
-      "rubric": {
-        "status": "human-review-pending",
-        "dimensions": [
-          "purpose",
-          "discovery",
-          "interdependence",
-          "causal-clarity",
-          "spatial-economy",
-          "variety"
-        ],
-        "scores": null,
-        "humanPlaytesting": false,
-        "reason": "Replay e ablações são evidências automáticas, não substitutos de avaliação editorial e testes humanos."
-      },
-      "curriculumReason": "A caixa assume a placa e libera seu animal: um empurrão introdutório com função de acesso.",
-      "animalRoles": [
+      "necessity": [
         {
-          "board": 0,
-          "logicalAnimal": "capivara",
-          "role": "Preparar plate weight para painel 1. Aproveitar weight-gate nos comandos 5. Usar bloqueios como esperas enquanto os parceiros avançam. Abandonar temporariamente o destino para completar o ajuste conjunto.",
-          "controls": [
-            {
-              "id": "weight",
-              "type": "plate",
-              "receiverBoard": 0
-            }
-          ],
-          "goal": 6
+          "avoid": {
+            "type": "helper-participation",
+            "board": 0
+          },
+          "result": {
+            "scope": "all-winning-solutions-avoiding-event",
+            "optimalScope": "avoiding-predicate-only",
+            "avoid": {
+              "type": "helper-participation",
+              "board": 0
+            },
+            "budget": {
+              "maxStates": 90000,
+              "maxMs": 12000,
+              "maxDepth": null
+            },
+            "status": "unsolvable",
+            "visited": 334,
+            "optimal": false,
+            "exhaustive": true
+          }
         },
         {
-          "board": 1,
-          "logicalAnimal": "tuiuiu",
-          "role": "Usar bloqueios como esperas enquanto os parceiros avançam. Preparar a chegada conjunta sem depender de congelar no destino.",
-          "controls": [],
-          "goal": 5
+          "avoid": {
+            "type": "helper-participation",
+            "board": 2
+          },
+          "result": {
+            "scope": "all-winning-solutions-avoiding-event",
+            "optimalScope": "avoiding-predicate-only",
+            "avoid": {
+              "type": "helper-participation",
+              "board": 2
+            },
+            "budget": {
+              "maxStates": 90000,
+              "maxMs": 12000,
+              "maxDepth": null
+            },
+            "status": "unsolvable",
+            "visited": 97,
+            "optimal": false,
+            "exhaustive": true
+          }
         }
       ],
-      "objectRoles": [
-        {
-          "board": 0,
-          "type": "boxes",
-          "id": "box0",
-          "definition": {
-            "id": "box0",
-            "cell": 13
-          },
-          "role": [
-            "gate-support"
-          ],
-          "evidenceScope": "definition-and-certified-witness; necessity requires separate audit"
-        },
-        {
-          "board": 0,
-          "type": "plates",
-          "id": "weight",
-          "definition": {
-            "id": "weight",
-            "cell": 18
-          },
-          "role": "Ocupação por animal ou caixa controla a passagem no estado anterior ao comando.",
-          "evidenceScope": "definition-and-certified-witness; necessity requires separate audit"
-        },
-        {
-          "board": 0,
-          "type": "gates",
-          "id": "weight-gate",
-          "definition": {
-            "id": "weight-gate",
-            "from": 7,
-            "to": 6,
-            "condition": {
-              "type": "plate",
-              "id": "weight"
-            }
-          },
-          "role": {
-            "condition": {
-              "type": "plate",
-              "id": "weight"
-            },
-            "crossings": [
-              5
-            ]
-          },
-          "evidenceScope": "definition-and-certified-witness; necessity requires separate audit"
-        }
-      ],
-      "causalityReport": "tests/sintonia80-purpose-audit.json"
-    },
-    "number": 34,
-    "chapter": 3,
-    "topologySignature": "top1-f85535ae-107",
-    "contentRevision": "sintonia-content-3",
-    "originNumber": 176,
-    "origin": {
-      "kind": "curated-identical-logical-definition",
-      "catalog": "sintonia-content-2",
-      "number": 176,
-      "id": "sintonia-0176",
-      "version": 1,
-      "reason": "A caixa assume a placa e libera seu animal: um empurrão introdutório com função de acesso."
-    },
-    "actorIntroduction": null,
-    "ruleExplanation": "Empurre uma caixa por vez. Uma caixa pode sustentar uma placa; só bloqueia quando não pode ser empurrada."
-  },
-  {
-    "id": "sintonia-0179",
-    "version": 1,
-    "rulesVersion": 1,
-    "boards": [
-      {
-        "id": "b0",
-        "animal": "capivara",
-        "rows": 5,
-        "cols": 5,
-        "walkable": [
-          2,
-          3,
-          6,
-          7,
-          8,
-          9,
-          11,
-          12,
-          13,
-          16,
-          17,
-          18
-        ],
-        "start": 13,
-        "goal": 9,
-        "boxes": [
-          {
-            "id": "box0",
-            "cell": 12
-          }
-        ],
-        "plates": [
-          {
-            "id": "weight",
-            "cell": 6
-          }
-        ],
-        "gates": [
-          {
-            "id": "weight-gate",
-            "from": 8,
-            "to": 9,
-            "condition": {
-              "type": "plate",
-              "id": "weight"
-            }
-          },
-          {
-            "id": "prepare-cut-11",
-            "from": 17,
-            "to": 16,
-            "condition": {
-              "type": "plate",
-              "id": "prepare-1"
-            }
-          },
-          {
-            "id": "prepare-cut-12",
-            "from": 12,
-            "to": 11,
-            "condition": {
-              "type": "plate",
-              "id": "prepare-1"
-            }
-          },
-          {
-            "id": "prepare-cut-13",
-            "from": 7,
-            "to": 6,
-            "condition": {
-              "type": "plate",
-              "id": "prepare-1"
-            }
-          }
-        ]
-      },
-      {
-        "id": "b1",
-        "animal": "tuiuiu",
-        "rows": 3,
-        "cols": 2,
-        "walkable": [
-          0,
-          2,
-          3,
-          4
-        ],
-        "start": 4,
-        "goal": 3,
-        "plates": [
-          {
-            "id": "prepare-1",
-            "cell": 2
-          }
-        ],
-        "gates": [
-          {
-            "id": "helper-exit-1",
-            "from": 2,
-            "to": 3,
-            "condition": {
-              "type": "plate",
-              "id": "weight"
-            }
-          }
-        ]
-      }
-    ],
-    "mechanics": [
-      "walls",
-      "plate",
-      "box"
-    ],
-    "initialSwitches": {},
-    "initialSelectors": {},
-    "family": "support-handoff",
-    "secondaryFamilies": [
-      "priority-change",
-      "waiting-place"
-    ],
-    "name": "A face certa",
-    "lesson": "Contorne a caixa para mudar a direção do empurrão antes de preparar o apoio.",
-    "discovery": "Aqui o jogador precisa descobrir que alcançar a face correta da caixa vem antes de sustentar a passagem.",
-    "hints": [
-      "Compare a posição da placa com as faces da caixa.",
-      "Prepare o contorno: empurrar sempre na mesma direção não alcança esse apoio.",
-      "Depois de apoiar, preserve a passagem que permite sair sem retirar a caixa."
-    ],
-    "generatorVersion": 2,
-    "contentRevision": "sintonia-content-3",
-    "seed": "sintonia-campaign-v2:0179:0",
-    "difficulty": 2,
-    "solution": [
-      "down",
-      "left",
-      "up",
-      "right",
-      "up",
-      "up",
-      "down",
-      "left",
-      "right",
-      "right"
-    ],
-    "signature": "st1-52505dd0-765",
-    "prerequisites": [
-      "walls",
-      "plate",
-      "box"
-    ],
-    "introduction": [],
-    "parameters": {
-      "difficulty": 2,
-      "animals": 2,
-      "primary": "box",
-      "secondary": null,
-      "role": "compact",
-      "pattern": "turn-and-support"
-    },
-    "certificate": {
-      "method": "breadth-first-witness-and-engine-replay",
-      "rulesVersion": 1,
-      "commands": 10,
-      "optimal": true,
-      "visited": 134,
-      "replayed": true,
-      "engine": "unchanged-rules-1"
-    },
-    "editorial": {
-      "source": "role-first-structure-and-automatic-curation",
-      "design": {
-        "pattern": "turn-and-support",
-        "name": "A face certa",
-        "lesson": "Contorne a caixa para mudar a direção do empurrão antes de preparar o apoio.",
-        "discovery": "Aqui o jogador precisa descobrir que alcançar a face correta da caixa vem antes de sustentar a passagem.",
-        "hints": [
-          "Compare a posição da placa com as faces da caixa.",
-          "Prepare o contorno: empurrar sempre na mesma direção não alcança esse apoio.",
-          "Depois de apoiar, preserve a passagem que permite sair sem retirar a caixa."
-        ],
-        "boxRoles": [
-          "reorientar",
-          "sustentar"
-        ],
-        "roles": [
-          "Preparar o objeto, manter acesso e concluir a própria chegada.",
-          "Preparar o acesso 1, depois abandonar a placa graças ao apoio da caixa."
-        ]
-      },
-      "purpose": {
-        "valid": true,
-        "won": true,
-        "evidenceScope": "supplied-command-sequence",
-        "commands": 10,
-        "boxes": [
-          {
-            "id": "box0",
-            "origin": {
-              "id": "box0",
-              "board": 0,
-              "cell": 12
-            },
-            "final": {
-              "id": "box0",
-              "board": 0,
-              "cell": 6
-            },
-            "pushes": [
-              {
-                "command": 3,
-                "direction": "up",
-                "board": 0,
-                "from": 12,
-                "to": 7
-              },
-              {
-                "command": 8,
-                "direction": "left",
-                "board": 0,
-                "from": 7,
-                "to": 6
-              }
-            ],
-            "directionChanges": 1,
-            "deliveries": [],
-            "postDeliveryPushes": [],
-            "plateEntries": [
-              {
-                "command": 8,
-                "plateId": "weight"
-              }
-            ],
-            "plateReleases": [],
-            "supportUses": [
-              {
-                "command": 9,
-                "plateId": "weight",
-                "gateId": "helper-exit-1",
-                "receiverBoard": 1
-              },
-              {
-                "command": 10,
-                "plateId": "weight",
-                "gateId": "weight-gate",
-                "receiverBoard": 0
-              }
-            ],
-            "observedRoles": [
-              "directional-reposition",
-              "gate-support"
-            ]
-          }
-        ],
-        "dependencies": [
-          {
-            "gateId": "weight-gate",
-            "receiverBoard": 0,
-            "condition": {
-              "type": "plate",
-              "id": "weight"
-            },
-            "controllers": [
-              {
-                "type": "plate",
-                "id": "weight",
-                "board": 0,
-                "cell": 6
-              }
-            ],
-            "crossingCommands": [
-              10
-            ]
-          },
-          {
-            "gateId": "prepare-cut-11",
-            "receiverBoard": 0,
-            "condition": {
-              "type": "plate",
-              "id": "prepare-1"
-            },
-            "controllers": [
-              {
-                "type": "plate",
-                "id": "prepare-1",
-                "board": 1,
-                "cell": 2
-              }
-            ],
-            "crossingCommands": []
-          },
-          {
-            "gateId": "prepare-cut-12",
-            "receiverBoard": 0,
-            "condition": {
-              "type": "plate",
-              "id": "prepare-1"
-            },
-            "controllers": [
-              {
-                "type": "plate",
-                "id": "prepare-1",
-                "board": 1,
-                "cell": 2
-              }
-            ],
-            "crossingCommands": []
-          },
-          {
-            "gateId": "prepare-cut-13",
-            "receiverBoard": 0,
-            "condition": {
-              "type": "plate",
-              "id": "prepare-1"
-            },
-            "controllers": [
-              {
-                "type": "plate",
-                "id": "prepare-1",
-                "board": 1,
-                "cell": 2
-              }
-            ],
-            "crossingCommands": [
-              8
-            ]
-          },
-          {
-            "gateId": "helper-exit-1",
-            "receiverBoard": 1,
-            "condition": {
-              "type": "plate",
-              "id": "weight"
-            },
-            "controllers": [
-              {
-                "type": "plate",
-                "id": "weight",
-                "board": 0,
-                "cell": 6
-              }
-            ],
-            "crossingCommands": [
-              9
-            ]
-          }
-        ],
-        "boardRoles": [
-          {
-            "board": 0,
-            "moved": 10,
-            "waited": 0,
-            "goalDepartures": 0
-          },
-          {
-            "board": 1,
-            "moved": 4,
-            "waited": 6,
-            "goalDepartures": 0
-          }
-        ],
-        "caveat": "Uso neste certificado não prova necessidade. Consulte tests/sintonia-purpose-audit.json para ablações e limites."
-      },
-      "rubric": {
-        "status": "human-review-pending",
-        "dimensions": [
-          "purpose",
-          "discovery",
-          "interdependence",
-          "causal-clarity",
-          "spatial-economy",
-          "variety"
-        ],
-        "scores": null,
-        "humanPlaytesting": false,
-        "reason": "Replay e ablações são evidências automáticas, não substitutos de avaliação editorial e testes humanos."
-      },
-      "humanPlaytested": false,
-      "discovery": "Aqui o jogador precisa descobrir que alcançar a face correta da caixa vem antes de sustentar a passagem.",
-      "reasoning": {
-        "used": [
-          "box-support-gate",
-          "plate-gate",
-          "push"
-        ],
-        "partialBlocks": 6,
-        "goalDepartures": [
-          false,
-          false
-        ],
-        "unequalLoops": 9,
-        "directionChanges": 7,
-        "earlyTurns": 2,
-        "occupiedBoxPlate": true,
-        "boxAsStopAfterSupport": false,
-        "finalApproach": [
-          false,
-          true
-        ]
-      },
-      "sweep": {
-        "status": "complete",
-        "visited": 15,
-        "resistant": true
-      },
-      "compatibility": "validated",
-      "alternatives": "Uma sequência verificada é fornecida; outras soluções podem existir.",
-      "deadEnds": "A fase permite estados sem saída; desfazer e reiniciar são livres.",
-      "decision": "retain-logical-definition",
-      "retentionReason": "Mudar de face orienta a caixa para um apoio necessário.",
-      "role": "revisit",
-      "prerequisiteChapters": [
-        1,
-        2,
-        3
-      ],
-      "antiSpam": {
-        "singleDirection": {
-          "tested": 4,
-          "winningDirections": []
-        },
-        "sweeps": {
-          "status": "complete",
-          "visited": 15,
-          "solves": false
-        },
-        "shortCycles": {
-          "tested": 40,
-          "winningPatterns": []
-        },
-        "biasedRandom": {
-          "runs": 12,
-          "commandsPerRun": 128,
-          "wins": 0
-        },
-        "uniformRandom": {
-          "runs": 12,
-          "commandsPerRun": 128,
-          "wins": 0
-        },
-        "interpretation": "Diagnóstico automático; ciclos curtos e acertos aleatórios não provam ausência de raciocínio. A varredura testa vitória após cada movimento."
-      },
-      "repetition": {
-        "structuralSignature": "st1-52505dd0-765",
-        "topologySignature": "top1-eabf0829-114",
-        "globallyRotatedOrReflectedDuplicate": false
-      },
-      "curriculumReason": "Mudar de face orienta a caixa para um apoio necessário.",
-      "animalRoles": [
-        {
-          "board": 0,
-          "logicalAnimal": "capivara",
-          "role": "Preparar o objeto, manter acesso e concluir a própria chegada.",
-          "controls": [
-            {
-              "id": "weight",
-              "type": "plate",
-              "receiverBoard": 0
-            },
-            {
-              "id": "weight",
-              "type": "plate",
-              "receiverBoard": 1
-            }
-          ],
-          "goal": 9
-        },
-        {
-          "board": 1,
-          "logicalAnimal": "tuiuiu",
-          "role": "Preparar o acesso 1, depois abandonar a placa graças ao apoio da caixa.",
-          "controls": [
-            {
-              "id": "prepare-1",
-              "type": "plate",
-              "receiverBoard": 0
-            },
-            {
-              "id": "prepare-1",
-              "type": "plate",
-              "receiverBoard": 0
-            },
-            {
-              "id": "prepare-1",
-              "type": "plate",
-              "receiverBoard": 0
-            }
-          ],
-          "goal": 3
-        }
-      ],
-      "objectRoles": [
-        {
-          "board": 0,
-          "type": "boxes",
-          "id": "box0",
-          "definition": {
-            "id": "box0",
-            "cell": 12
-          },
-          "role": [
-            "reorientar",
-            "sustentar"
-          ],
-          "evidenceScope": "definition-and-certified-witness; necessity requires separate audit"
-        },
-        {
-          "board": 0,
-          "type": "plates",
-          "id": "weight",
-          "definition": {
-            "id": "weight",
-            "cell": 6
-          },
-          "role": "Ocupação por animal ou caixa controla a passagem no estado anterior ao comando.",
-          "evidenceScope": "definition-and-certified-witness; necessity requires separate audit"
-        },
-        {
-          "board": 0,
-          "type": "gates",
-          "id": "weight-gate",
-          "definition": {
-            "id": "weight-gate",
-            "from": 8,
-            "to": 9,
-            "condition": {
-              "type": "plate",
-              "id": "weight"
-            }
-          },
-          "role": {
-            "condition": {
-              "type": "plate",
-              "id": "weight"
-            },
-            "crossings": [
-              10
-            ]
-          },
-          "evidenceScope": "definition-and-certified-witness; necessity requires separate audit"
-        },
-        {
-          "board": 0,
-          "type": "gates",
-          "id": "prepare-cut-11",
-          "definition": {
-            "id": "prepare-cut-11",
-            "from": 17,
-            "to": 16,
-            "condition": {
-              "type": "plate",
-              "id": "prepare-1"
-            }
-          },
-          "role": {
-            "condition": {
-              "type": "plate",
-              "id": "prepare-1"
-            },
-            "crossings": []
-          },
-          "evidenceScope": "definition-and-certified-witness; necessity requires separate audit"
-        },
-        {
-          "board": 0,
-          "type": "gates",
-          "id": "prepare-cut-12",
-          "definition": {
-            "id": "prepare-cut-12",
-            "from": 12,
-            "to": 11,
-            "condition": {
-              "type": "plate",
-              "id": "prepare-1"
-            }
-          },
-          "role": {
-            "condition": {
-              "type": "plate",
-              "id": "prepare-1"
-            },
-            "crossings": []
-          },
-          "evidenceScope": "definition-and-certified-witness; necessity requires separate audit"
-        },
-        {
-          "board": 0,
-          "type": "gates",
-          "id": "prepare-cut-13",
-          "definition": {
-            "id": "prepare-cut-13",
-            "from": 7,
-            "to": 6,
-            "condition": {
-              "type": "plate",
-              "id": "prepare-1"
-            }
-          },
-          "role": {
-            "condition": {
-              "type": "plate",
-              "id": "prepare-1"
-            },
-            "crossings": [
-              8
-            ]
-          },
-          "evidenceScope": "definition-and-certified-witness; necessity requires separate audit"
-        },
-        {
-          "board": 1,
-          "type": "plates",
-          "id": "prepare-1",
-          "definition": {
-            "id": "prepare-1",
-            "cell": 2
-          },
-          "role": "Ocupação por animal ou caixa controla a passagem no estado anterior ao comando.",
-          "evidenceScope": "definition-and-certified-witness; necessity requires separate audit"
-        },
-        {
-          "board": 1,
-          "type": "gates",
-          "id": "helper-exit-1",
-          "definition": {
-            "id": "helper-exit-1",
-            "from": 2,
-            "to": 3,
-            "condition": {
-              "type": "plate",
-              "id": "weight"
-            }
-          },
-          "role": {
-            "condition": {
-              "type": "plate",
-              "id": "weight"
-            },
-            "crossings": [
-              9
-            ]
-          },
-          "evidenceScope": "definition-and-certified-witness; necessity requires separate audit"
-        }
-      ],
-      "causalityReport": "tests/sintonia80-purpose-audit.json"
-    },
-    "number": 35,
-    "chapter": 3,
-    "topologySignature": "top1-eabf0829-114",
-    "originNumber": 179,
-    "origin": {
-      "kind": "curated-identical-logical-definition",
-      "catalog": "sintonia-content-2",
-      "number": 179,
-      "id": "sintonia-0179",
-      "version": 1,
-      "reason": "Mudar de face orienta a caixa para um apoio necessário."
-    },
-    "actorIntroduction": null
-  },
-  {
-    "id": "sintonia-0177",
-    "version": 1,
-    "rulesVersion": 1,
-    "boards": [
-      {
-        "id": "b0",
-        "animal": "capivara",
-        "rows": 6,
-        "cols": 5,
-        "walkable": [
-          2,
-          7,
-          11,
-          12,
-          13,
-          15,
-          16,
-          17,
-          18,
-          22,
-          23
-        ],
-        "start": 7,
-        "goal": 15,
-        "boxes": [
-          {
-            "id": "box0",
-            "cell": 12
-          }
-        ],
-        "plates": [
-          {
-            "id": "weight",
-            "cell": 7
-          }
-        ],
-        "gates": [
-          {
-            "id": "weight-gate",
-            "from": 16,
-            "to": 15,
-            "condition": {
-              "type": "plate",
-              "id": "weight"
-            }
-          },
-          {
-            "id": "prepare-cut-11",
-            "from": 18,
-            "to": 23,
-            "condition": {
-              "type": "plate",
-              "id": "prepare-1"
-            }
-          },
-          {
-            "id": "prepare-cut-12",
-            "from": 17,
-            "to": 22,
-            "condition": {
-              "type": "plate",
-              "id": "prepare-1"
-            }
-          }
-        ]
-      },
-      {
-        "id": "b1",
-        "animal": "tuiuiu",
-        "rows": 2,
-        "cols": 3,
-        "walkable": [
-          0,
-          1,
-          2,
-          4,
-          5
-        ],
-        "start": 0,
-        "goal": 4,
-        "plates": [
-          {
-            "id": "prepare-1",
-            "cell": 1
-          }
-        ],
-        "gates": [
-          {
-            "id": "helper-exit-1",
-            "from": 1,
-            "to": 4,
-            "condition": {
-              "type": "plate",
-              "id": "weight"
-            }
-          }
-        ]
-      },
-      {
-        "id": "b2",
-        "animal": "bemtevi",
-        "rows": 3,
-        "cols": 3,
-        "walkable": [
-          0,
-          1,
-          2,
-          4,
-          7
-        ],
-        "start": 2,
-        "goal": 7,
-        "plates": [
-          {
-            "id": "prepare-2",
-            "cell": 4
-          }
-        ],
-        "gates": [
-          {
-            "id": "helper-exit-2",
-            "from": 4,
-            "to": 7,
-            "condition": {
-              "type": "plate",
-              "id": "weight"
-            }
-          }
-        ]
-      }
-    ],
-    "mechanics": [
-      "walls",
-      "plate",
-      "box"
-    ],
-    "initialSwitches": {},
-    "initialSelectors": {},
-    "family": "preserve-access",
-    "secondaryFamilies": [
-      "priority-change",
-      "waiting-place"
-    ],
-    "name": "Guardar para recuperar",
-    "lesson": "Afaste a caixa primeiro para alcançar o outro lado e trazê-la de volta ao apoio.",
-    "discovery": "Aqui o jogador precisa descobrir que afastar provisoriamente a caixa da placa libera o acesso para devolvê-la pelo lado correto.",
-    "hints": [
-      "A placa está atrás da posição inicial da caixa.",
-      "O primeiro estacionamento precisa permitir contornar; um canto terminal perde a recuperação.",
-      "Entre na área de contorno, alcance a face oposta e traga a caixa de volta para sustentar a saída."
-    ],
-    "generatorVersion": 2,
-    "contentRevision": "sintonia-content-3",
-    "seed": "sintonia-campaign-v2:0177:0",
-    "difficulty": 2,
-    "solution": [
-      "down",
-      "right",
-      "down",
-      "down",
-      "right",
-      "left",
-      "up",
-      "up",
-      "down",
-      "down",
-      "left",
-      "left"
-    ],
-    "signature": "st1-2ca975ca-876",
-    "prerequisites": [
-      "walls",
-      "plate",
-      "box"
-    ],
-    "introduction": [],
-    "parameters": {
-      "difficulty": 2,
-      "animals": 3,
-      "primary": "box",
-      "secondary": null,
-      "role": "mix",
-      "pattern": "park-and-retrieve"
-    },
-    "certificate": {
-      "method": "breadth-first-witness-and-engine-replay",
-      "rulesVersion": 1,
-      "commands": 12,
-      "optimal": true,
-      "visited": 634,
-      "replayed": true,
-      "engine": "unchanged-rules-1"
-    },
-    "editorial": {
-      "source": "role-first-structure-and-automatic-curation",
-      "design": {
-        "pattern": "park-and-retrieve",
-        "name": "Guardar para recuperar",
-        "lesson": "Afaste a caixa primeiro para alcançar o outro lado e trazê-la de volta ao apoio.",
-        "discovery": "Aqui o jogador precisa descobrir que afastar provisoriamente a caixa da placa libera o acesso para devolvê-la pelo lado correto.",
-        "hints": [
-          "A placa está atrás da posição inicial da caixa.",
-          "O primeiro estacionamento precisa permitir contornar; um canto terminal perde a recuperação.",
-          "Entre na área de contorno, alcance a face oposta e traga a caixa de volta para sustentar a saída."
-        ],
-        "boxRoles": [
-          "liberar-acesso",
-          "estacionar-provisoriamente",
-          "recuperar",
-          "sustentar"
-        ],
-        "roles": [
-          "Preparar o objeto, manter acesso e concluir a própria chegada.",
-          "Preparar o acesso 1, depois abandonar a placa graças ao apoio da caixa.",
-          "Preparar o acesso 2, depois abandonar a placa graças ao apoio da caixa."
-        ]
-      },
-      "purpose": {
-        "valid": true,
-        "won": true,
-        "evidenceScope": "supplied-command-sequence",
-        "commands": 12,
-        "boxes": [
-          {
-            "id": "box0",
-            "origin": {
-              "id": "box0",
-              "board": 0,
-              "cell": 12
-            },
-            "final": {
-              "id": "box0",
-              "board": 0,
-              "cell": 7
-            },
-            "pushes": [
-              {
-                "command": 1,
-                "direction": "down",
-                "board": 0,
-                "from": 12,
-                "to": 17
-              },
-              {
-                "command": 7,
-                "direction": "up",
-                "board": 0,
-                "from": 17,
-                "to": 12
-              },
-              {
-                "command": 8,
-                "direction": "up",
-                "board": 0,
-                "from": 12,
-                "to": 7
-              }
-            ],
-            "directionChanges": 1,
-            "deliveries": [],
-            "postDeliveryPushes": [],
-            "plateEntries": [
-              {
-                "command": 8,
-                "plateId": "weight"
-              }
-            ],
-            "plateReleases": [],
-            "supportUses": [
-              {
-                "command": 9,
-                "plateId": "weight",
-                "gateId": "helper-exit-1",
-                "receiverBoard": 1
-              },
-              {
-                "command": 10,
-                "plateId": "weight",
-                "gateId": "helper-exit-2",
-                "receiverBoard": 2
-              },
-              {
-                "command": 12,
-                "plateId": "weight",
-                "gateId": "weight-gate",
-                "receiverBoard": 0
-              }
-            ],
-            "observedRoles": [
-              "directional-reposition",
-              "gate-support"
-            ]
-          }
-        ],
-        "dependencies": [
-          {
-            "gateId": "weight-gate",
-            "receiverBoard": 0,
-            "condition": {
-              "type": "plate",
-              "id": "weight"
-            },
-            "controllers": [
-              {
-                "type": "plate",
-                "id": "weight",
-                "board": 0,
-                "cell": 7
-              }
-            ],
-            "crossingCommands": [
-              12
-            ]
-          },
-          {
-            "gateId": "prepare-cut-11",
-            "receiverBoard": 0,
-            "condition": {
-              "type": "plate",
-              "id": "prepare-1"
-            },
-            "controllers": [
-              {
-                "type": "plate",
-                "id": "prepare-1",
-                "board": 1,
-                "cell": 1
-              }
-            ],
-            "crossingCommands": [
-              4
-            ]
-          },
-          {
-            "gateId": "prepare-cut-12",
-            "receiverBoard": 0,
-            "condition": {
-              "type": "plate",
-              "id": "prepare-1"
-            },
-            "controllers": [
-              {
-                "type": "plate",
-                "id": "prepare-1",
-                "board": 1,
-                "cell": 1
-              }
-            ],
-            "crossingCommands": [
-              7
-            ]
-          },
-          {
-            "gateId": "helper-exit-1",
-            "receiverBoard": 1,
-            "condition": {
-              "type": "plate",
-              "id": "weight"
-            },
-            "controllers": [
-              {
-                "type": "plate",
-                "id": "weight",
-                "board": 0,
-                "cell": 7
-              }
-            ],
-            "crossingCommands": [
-              9
-            ]
-          },
-          {
-            "gateId": "helper-exit-2",
-            "receiverBoard": 2,
-            "condition": {
-              "type": "plate",
-              "id": "weight"
-            },
-            "controllers": [
-              {
-                "type": "plate",
-                "id": "weight",
-                "board": 0,
-                "cell": 7
-              }
-            ],
-            "crossingCommands": [
-              10
-            ]
-          }
-        ],
-        "boardRoles": [
-          {
-            "board": 0,
-            "moved": 10,
-            "waited": 2,
-            "goalDepartures": 0
-          },
-          {
-            "board": 1,
-            "moved": 4,
-            "waited": 8,
-            "goalDepartures": 0
-          },
-          {
-            "board": 2,
-            "moved": 3,
-            "waited": 9,
-            "goalDepartures": 0
-          }
-        ],
-        "caveat": "Uso neste certificado não prova necessidade. Consulte tests/sintonia-purpose-audit.json para ablações e limites."
-      },
-      "rubric": {
-        "status": "human-review-pending",
-        "dimensions": [
-          "purpose",
-          "discovery",
-          "interdependence",
-          "causal-clarity",
-          "spatial-economy",
-          "variety"
-        ],
-        "scores": null,
-        "humanPlaytesting": false,
-        "reason": "Replay e ablações são evidências automáticas, não substitutos de avaliação editorial e testes humanos."
-      },
-      "humanPlaytested": false,
-      "discovery": "Aqui o jogador precisa descobrir que afastar provisoriamente a caixa da placa libera o acesso para devolvê-la pelo lado correto.",
-      "reasoning": {
-        "used": [
-          "box-support-gate",
-          "plate-gate",
-          "push"
-        ],
-        "partialBlocks": 10,
-        "goalDepartures": [
-          false,
-          false,
-          false
-        ],
-        "unequalLoops": 25,
-        "directionChanges": 7,
-        "earlyTurns": 3,
-        "occupiedBoxPlate": true,
-        "boxAsStopAfterSupport": false,
-        "finalApproach": [
-          false,
-          true,
-          true
-        ]
-      },
-      "sweep": {
-        "status": "complete",
-        "visited": 40,
-        "resistant": true
-      },
-      "compatibility": "validated",
-      "alternatives": "Uma sequência verificada é fornecida; outras soluções podem existir.",
-      "deadEnds": "A fase permite estados sem saída; desfazer e reiniciar são livres.",
-      "decision": "retain-logical-definition",
-      "retentionReason": "Estacionar e recuperar preserva a face de empurrão: decisão da antiga 177.",
-      "role": "mix",
-      "prerequisiteChapters": [
-        1,
-        2,
-        3
-      ],
-      "antiSpam": {
-        "singleDirection": {
-          "tested": 4,
-          "winningDirections": []
-        },
-        "sweeps": {
-          "status": "complete",
-          "visited": 40,
-          "solves": false
-        },
-        "shortCycles": {
-          "tested": 40,
-          "winningPatterns": []
-        },
-        "biasedRandom": {
-          "runs": 12,
-          "commandsPerRun": 128,
-          "wins": 0
-        },
-        "uniformRandom": {
-          "runs": 12,
-          "commandsPerRun": 128,
-          "wins": 0
-        },
-        "interpretation": "Diagnóstico automático; ciclos curtos e acertos aleatórios não provam ausência de raciocínio. A varredura testa vitória após cada movimento."
-      },
-      "repetition": {
-        "structuralSignature": "st1-2ca975ca-876",
-        "topologySignature": "top1-c3740c33-156",
-        "globallyRotatedOrReflectedDuplicate": false
-      },
-      "curriculumReason": "Estacionar e recuperar preserva a face de empurrão: decisão da antiga 177.",
-      "animalRoles": [
-        {
-          "board": 0,
-          "logicalAnimal": "capivara",
-          "role": "Preparar o objeto, manter acesso e concluir a própria chegada.",
-          "controls": [
-            {
-              "id": "weight",
-              "type": "plate",
-              "receiverBoard": 0
-            },
-            {
-              "id": "weight",
-              "type": "plate",
-              "receiverBoard": 1
-            },
-            {
-              "id": "weight",
-              "type": "plate",
-              "receiverBoard": 2
-            }
-          ],
-          "goal": 15
-        },
-        {
-          "board": 1,
-          "logicalAnimal": "tuiuiu",
-          "role": "Preparar o acesso 1, depois abandonar a placa graças ao apoio da caixa.",
-          "controls": [
-            {
-              "id": "prepare-1",
-              "type": "plate",
-              "receiverBoard": 0
-            },
-            {
-              "id": "prepare-1",
-              "type": "plate",
-              "receiverBoard": 0
-            }
-          ],
-          "goal": 4
-        },
-        {
-          "board": 2,
-          "logicalAnimal": "bemtevi",
-          "role": "Preparar o acesso 2, depois abandonar a placa graças ao apoio da caixa.",
-          "controls": [],
-          "goal": 7
-        }
-      ],
-      "objectRoles": [
-        {
-          "board": 0,
-          "type": "boxes",
-          "id": "box0",
-          "definition": {
-            "id": "box0",
-            "cell": 12
-          },
-          "role": [
-            "liberar-acesso",
-            "estacionar-provisoriamente",
-            "recuperar",
-            "sustentar"
-          ],
-          "evidenceScope": "definition-and-certified-witness; necessity requires separate audit"
-        },
-        {
-          "board": 0,
-          "type": "plates",
-          "id": "weight",
-          "definition": {
-            "id": "weight",
-            "cell": 7
-          },
-          "role": "Ocupação por animal ou caixa controla a passagem no estado anterior ao comando.",
-          "evidenceScope": "definition-and-certified-witness; necessity requires separate audit"
-        },
-        {
-          "board": 0,
-          "type": "gates",
-          "id": "weight-gate",
-          "definition": {
-            "id": "weight-gate",
-            "from": 16,
-            "to": 15,
-            "condition": {
-              "type": "plate",
-              "id": "weight"
-            }
-          },
-          "role": {
-            "condition": {
-              "type": "plate",
-              "id": "weight"
-            },
-            "crossings": [
-              12
-            ]
-          },
-          "evidenceScope": "definition-and-certified-witness; necessity requires separate audit"
-        },
-        {
-          "board": 0,
-          "type": "gates",
-          "id": "prepare-cut-11",
-          "definition": {
-            "id": "prepare-cut-11",
-            "from": 18,
-            "to": 23,
-            "condition": {
-              "type": "plate",
-              "id": "prepare-1"
-            }
-          },
-          "role": {
-            "condition": {
-              "type": "plate",
-              "id": "prepare-1"
-            },
-            "crossings": [
-              4
-            ]
-          },
-          "evidenceScope": "definition-and-certified-witness; necessity requires separate audit"
-        },
-        {
-          "board": 0,
-          "type": "gates",
-          "id": "prepare-cut-12",
-          "definition": {
-            "id": "prepare-cut-12",
-            "from": 17,
-            "to": 22,
-            "condition": {
-              "type": "plate",
-              "id": "prepare-1"
-            }
-          },
-          "role": {
-            "condition": {
-              "type": "plate",
-              "id": "prepare-1"
-            },
-            "crossings": [
-              7
-            ]
-          },
-          "evidenceScope": "definition-and-certified-witness; necessity requires separate audit"
-        },
-        {
-          "board": 1,
-          "type": "plates",
-          "id": "prepare-1",
-          "definition": {
-            "id": "prepare-1",
-            "cell": 1
-          },
-          "role": "Ocupação por animal ou caixa controla a passagem no estado anterior ao comando.",
-          "evidenceScope": "definition-and-certified-witness; necessity requires separate audit"
-        },
-        {
-          "board": 1,
-          "type": "gates",
-          "id": "helper-exit-1",
-          "definition": {
-            "id": "helper-exit-1",
-            "from": 1,
-            "to": 4,
-            "condition": {
-              "type": "plate",
-              "id": "weight"
-            }
-          },
-          "role": {
-            "condition": {
-              "type": "plate",
-              "id": "weight"
-            },
-            "crossings": [
-              9
-            ]
-          },
-          "evidenceScope": "definition-and-certified-witness; necessity requires separate audit"
-        },
-        {
-          "board": 2,
-          "type": "plates",
-          "id": "prepare-2",
-          "definition": {
-            "id": "prepare-2",
-            "cell": 4
-          },
-          "role": "Ocupação por animal ou caixa controla a passagem no estado anterior ao comando.",
-          "evidenceScope": "definition-and-certified-witness; necessity requires separate audit"
-        },
-        {
-          "board": 2,
-          "type": "gates",
-          "id": "helper-exit-2",
-          "definition": {
-            "id": "helper-exit-2",
-            "from": 4,
-            "to": 7,
-            "condition": {
-              "type": "plate",
-              "id": "weight"
-            }
-          },
-          "role": {
-            "condition": {
-              "type": "plate",
-              "id": "weight"
-            },
-            "crossings": [
-              10
-            ]
-          },
-          "evidenceScope": "definition-and-certified-witness; necessity requires separate audit"
-        }
-      ],
-      "causalityReport": "tests/sintonia80-purpose-audit.json"
+      "causalityReport": "tests/sintonia-v4-editorial.json"
     },
     "number": 36,
     "chapter": 3,
-    "topologySignature": "top1-c3740c33-156",
-    "originNumber": 177,
+    "originNumber": 36,
     "origin": {
-      "kind": "curated-identical-logical-definition",
-      "catalog": "sintonia-content-2",
-      "number": 177,
+      "kind": "recomposed-removed-mechanics",
+      "catalog": "sintonia-content-3",
       "id": "sintonia-0177",
+      "number": 36,
       "version": 1,
-      "reason": "Estacionar e recuperar preserva a face de empurrão: decisão da antiga 177."
+      "reason": "Distribuir a preparação entre três animais sem um painel decorativo."
     },
-    "actorIntroduction": null
+    "actorIntroduction": null,
+    "topologySignature": "top1-3ca3c59d-168"
   },
   {
-    "id": "sintonia-0193",
+    "id": "sintonia80-0037-v4",
     "version": 1,
     "rulesVersion": 1,
     "boards": [
       {
         "id": "b0",
         "animal": "capivara",
-        "rows": 5,
-        "cols": 5,
+        "rows": 4,
+        "cols": 4,
         "walkable": [
+          0,
           1,
-          2,
           3,
+          5,
           6,
           7,
           8,
           9,
           11,
-          12,
           13,
-          16,
-          17
+          15
         ],
-        "start": 13,
-        "goal": 6,
-        "boxes": [
-          {
-            "id": "box0",
-            "cell": 12
-          }
-        ],
-        "plates": [
-          {
-            "id": "weight",
-            "cell": 6
-          }
-        ],
-        "gates": [
-          {
-            "id": "weight-gate",
-            "from": 8,
-            "to": 9,
-            "condition": {
-              "type": "plate",
-              "id": "weight"
-            }
-          }
-        ],
+        "start": 11,
+        "goal": 0,
         "keys": [
           {
-            "id": "release-key",
-            "cell": 9
+            "id": "prepare",
+            "cell": 8
           }
-        ]
+        ],
+        "gates": []
       },
       {
         "id": "b1",
         "animal": "tuiuiu",
-        "rows": 2,
-        "cols": 3,
+        "rows": 3,
+        "cols": 4,
         "walkable": [
+          0,
           1,
-          3,
-          4,
-          5
+          5,
+          8,
+          9,
+          10,
+          11
         ],
-        "start": 3,
-        "goal": 1,
+        "start": 1,
+        "goal": 10,
         "gates": [
           {
-            "id": "helper-exit-1",
-            "from": 4,
-            "to": 1,
+            "id": "preparation-remote",
+            "from": 5,
+            "to": 9,
             "condition": {
               "type": "key",
-              "id": "release-key"
+              "id": "prepare"
             }
           }
         ]
@@ -11926,232 +11130,186 @@ export const CAMPAIGN = [
     ],
     "mechanics": [
       "walls",
-      "plate",
-      "box",
       "key"
     ],
     "initialSwitches": {},
     "initialSelectors": {},
-    "family": "dual-use-object",
+    "family": "priority-change",
     "secondaryFamilies": [
-      "goal-transit",
-      "waiting-place"
+      "unequal-loop",
+      "goal-transit"
     ],
-    "name": "O apoio já cumpriu seu papel",
-    "lesson": "Use a caixa para buscar a chave; depois libere a casa de apoio para a chegada.",
-    "discovery": "Aqui o jogador precisa descobrir que o apoio da caixa é temporário: depois da chave, a mesma casa precisa ficar livre para o animal.",
+    "name": "Caminho liberado",
+    "lesson": "Recolha a chave antes de coordenar a travessia da cancela.",
+    "discovery": "Aqui o jogador precisa descobrir que o desvio de preparação libera o outro animal, mudando qual caminho precisa de atenção.",
     "hints": [
-      "O destino ocupa a casa que primeiro precisa sustentar a passagem.",
-      "A chave fica além da cancela do apoio: obtenha essa mudança permanente antes de retirar a caixa.",
-      "Volte pelo contorno e empurre a caixa para fora da placa; agora a ajuda pode terminar."
+      "Encontre a chave e a cancela que compartilham o símbolo.",
+      "Termine um movimento sobre a chave; depois, prepare o outro percurso com a passagem liberada.",
+      "Na configuração inicial, comece para cima; observe quem avança e quem espera."
     ],
-    "generatorVersion": 2,
-    "contentRevision": "sintonia-content-3",
-    "seed": "sintonia-campaign-v2:0193:0",
+    "generatorVersion": 3,
+    "contentRevision": "sintonia-content-4",
+    "seed": "sintonia-content4:37:0",
     "difficulty": 2,
     "solution": [
+      "up",
+      "up",
+      "down",
+      "left",
       "left",
       "down",
       "left",
-      "up",
-      "right",
-      "up",
-      "right",
-      "right",
-      "left",
-      "up",
-      "left",
-      "left",
       "down",
-      "down",
-      "up"
+      "right",
+      "up",
+      "up",
+      "right",
+      "left"
     ],
-    "signature": "st1-8b4fb442-507",
+    "signature": "st1-a669c54f-346",
     "prerequisites": [
       "walls",
-      "plate",
-      "box",
       "key"
     ],
     "introduction": [],
     "parameters": {
       "difficulty": 2,
       "animals": 2,
-      "primary": "box",
+      "primary": "key",
       "secondary": null,
-      "role": "compact",
-      "pattern": "support-then-release"
+      "role": "varied",
+      "pattern": "key-fork-before-exit"
     },
     "certificate": {
       "method": "breadth-first-witness-and-engine-replay",
       "rulesVersion": 1,
-      "commands": 15,
+      "commands": 13,
       "optimal": true,
-      "visited": 279,
+      "visited": 101,
       "replayed": true,
-      "engine": "unchanged-rules-1"
+      "engine": "unchanged-rules-1",
+      "firstVictoryAt": 13
     },
     "editorial": {
       "source": "role-first-structure-and-automatic-curation",
       "design": {
-        "pattern": "support-then-release",
-        "name": "O apoio já cumpriu seu papel",
-        "lesson": "Use a caixa para buscar a chave; depois libere a casa de apoio para a chegada.",
-        "discovery": "Aqui o jogador precisa descobrir que o apoio da caixa é temporário: depois da chave, a mesma casa precisa ficar livre para o animal.",
-        "hints": [
-          "O destino ocupa a casa que primeiro precisa sustentar a passagem.",
-          "A chave fica além da cancela do apoio: obtenha essa mudança permanente antes de retirar a caixa.",
-          "Volte pelo contorno e empurre a caixa para fora da placa; agora a ajuda pode terminar."
-        ],
-        "boxRoles": [
-          "reorientar",
-          "sustentar",
-          "liberar-destino"
-        ],
+        "preparationControl": "key",
+        "pattern": "key-fork-before-exit",
+        "discovery": "o desvio de preparação libera o outro animal, mudando qual caminho precisa de atenção",
         "roles": [
-          "Preparar o objeto, manter acesso e concluir a própria chegada.",
-          "Esperar a chave obtida com apoio e atravessar a passagem permanente."
-        ]
-      },
-      "purpose": {
-        "valid": true,
-        "won": true,
-        "evidenceScope": "supplied-command-sequence",
-        "commands": 15,
-        "boxes": [
           {
-            "id": "box0",
-            "origin": {
-              "id": "box0",
-              "board": 0,
-              "cell": 12
-            },
-            "final": {
-              "id": "box0",
-              "board": 0,
-              "cell": 16
-            },
-            "pushes": [
-              {
-                "command": 1,
-                "direction": "left",
-                "board": 0,
-                "from": 12,
-                "to": 11
-              },
-              {
-                "command": 4,
-                "direction": "up",
-                "board": 0,
-                "from": 11,
-                "to": 6
-              },
-              {
-                "command": 13,
-                "direction": "down",
-                "board": 0,
-                "from": 6,
-                "to": 11
-              },
-              {
-                "command": 14,
-                "direction": "down",
-                "board": 0,
-                "from": 11,
-                "to": 16
-              }
-            ],
-            "directionChanges": 2,
-            "deliveries": [],
-            "postDeliveryPushes": [],
-            "plateEntries": [
-              {
-                "command": 4,
-                "plateId": "weight"
-              }
-            ],
-            "plateReleases": [
-              {
-                "command": 13,
-                "plateId": "weight",
-                "afterGateSupport": true
-              }
-            ],
-            "supportUses": [
-              {
-                "command": 8,
-                "plateId": "weight",
-                "gateId": "weight-gate",
-                "receiverBoard": 0
-              },
-              {
-                "command": 9,
-                "plateId": "weight",
-                "gateId": "weight-gate",
-                "receiverBoard": 0
-              }
-            ],
-            "observedRoles": [
-              "directional-reposition",
-              "gate-support",
-              "release-after-support"
+            "board": 0,
+            "role": "preparer-and-committer",
+            "control": 8,
+            "commit": null,
+            "goalRegion": [
+              0
+            ]
+          },
+          {
+            "board": 1,
+            "role": "receiver-and-aligner",
+            "goalRegion": [
+              9,
+              10,
+              8,
+              11
+            ]
+          }
+        ],
+        "structures": [
+          {
+            "board": 0,
+            "role": "prepare",
+            "cells": [
+              11,
+              7,
+              6,
+              5,
+              9,
+              8
+            ]
+          },
+          {
+            "board": 0,
+            "role": "separate",
+            "edge": [
+              5,
+              1
+            ]
+          },
+          {
+            "board": 0,
+            "role": "exit",
+            "edge": [
+              1,
+              0
+            ]
+          },
+          {
+            "board": 1,
+            "role": "remote-exit",
+            "edge": [
+              5,
+              9
             ]
           }
         ],
         "dependencies": [
           {
-            "gateId": "weight-gate",
-            "receiverBoard": 0,
-            "condition": {
-              "type": "plate",
-              "id": "weight"
-            },
-            "controllers": [
-              {
-                "type": "plate",
-                "id": "weight",
-                "board": 0,
-                "cell": 6
-              }
-            ],
-            "crossingCommands": [
-              8,
-              9
-            ]
-          },
+            "fromBoard": 0,
+            "toBoard": 1,
+            "control": "prepare",
+            "role": "prepare-remote-exit"
+          }
+        ],
+        "order": [
+          "visit-side-branch",
+          "leave-control-with-configuration",
+          "cross-exits",
+          "joint-arrival"
+        ],
+        "counterfactual": "Opening the preparation gate removes the obligation to visit the side branch.",
+        "proofStatus": "structural-design-hypothesis; replay and budgeted ablations recorded separately"
+      },
+      "purpose": {
+        "valid": true,
+        "won": true,
+        "evidenceScope": "supplied-command-sequence",
+        "commands": 13,
+        "boxes": [],
+        "dependencies": [
           {
-            "gateId": "helper-exit-1",
+            "gateId": "preparation-remote",
             "receiverBoard": 1,
             "condition": {
               "type": "key",
-              "id": "release-key"
+              "id": "prepare"
             },
             "controllers": [
               {
                 "type": "key",
-                "id": "release-key",
+                "id": "prepare",
                 "board": 0,
-                "cell": 9
+                "cell": 8
               }
             ],
             "crossingCommands": [
-              10,
-              13,
-              15
+              8
             ]
           }
         ],
         "boardRoles": [
           {
             "board": 0,
-            "moved": 15,
-            "waited": 0,
-            "goalDepartures": 1
+            "moved": 11,
+            "waited": 2,
+            "goalDepartures": 0
           },
           {
             "board": 1,
-            "moved": 6,
-            "waited": 9,
+            "moved": 5,
+            "waited": 8,
             "goalDepartures": 1
           }
         ],
@@ -12172,24 +11330,21 @@ export const CAMPAIGN = [
         "reason": "Replay e ablações são evidências automáticas, não substitutos de avaliação editorial e testes humanos."
       },
       "humanPlaytested": false,
-      "discovery": "Aqui o jogador precisa descobrir que o apoio da caixa é temporário: depois da chave, a mesma casa precisa ficar livre para o animal.",
+      "discovery": "Aqui o jogador precisa descobrir que o desvio de preparação libera o outro animal, mudando qual caminho precisa de atenção.",
       "reasoning": {
         "used": [
-          "box-support-gate",
           "key",
-          "key-gate",
-          "plate-gate",
-          "push"
+          "key-gate"
         ],
-        "partialBlocks": 9,
+        "partialBlocks": 10,
         "goalDepartures": [
-          true,
+          false,
           true
         ],
-        "unequalLoops": 17,
-        "directionChanges": 11,
-        "earlyTurns": 4,
-        "occupiedBoxPlate": true,
+        "unequalLoops": 14,
+        "directionChanges": 9,
+        "earlyTurns": 3,
+        "occupiedBoxPlate": false,
         "boxAsStopAfterSupport": false,
         "finalApproach": [
           false,
@@ -12198,20 +11353,16 @@ export const CAMPAIGN = [
       },
       "sweep": {
         "status": "complete",
-        "visited": 43,
+        "visited": 7,
         "resistant": true
       },
       "compatibility": "validated",
       "alternatives": "Uma sequência verificada é fornecida; outras soluções podem existir.",
-      "deadEnds": "A fase permite estados sem saída; desfazer e reiniciar são livres.",
-      "decision": "retain-logical-definition",
-      "retentionReason": "Apoiar e depois retirar libera o destino, em dupla.",
-      "role": "focus",
-      "prerequisiteChapters": [
-        1,
-        2,
-        3
-      ],
+      "deadEnds": "Mudanças de configuração podem exigir retornar a uma posição anterior.",
+      "role": "varied",
+      "decision": "recompose",
+      "curriculumReason": "Fazer o desvio da chave antes da chegada conjunta.",
+      "retentionReason": "Fazer o desvio da chave antes da chegada conjunta.",
       "antiSpam": {
         "singleDirection": {
           "tested": 4,
@@ -12219,7 +11370,7 @@ export const CAMPAIGN = [
         },
         "sweeps": {
           "status": "complete",
-          "visited": 43,
+          "visited": 7,
           "solves": false
         },
         "shortCycles": {
@@ -12227,155 +11378,57 @@ export const CAMPAIGN = [
           "winningPatterns": []
         },
         "biasedRandom": {
-          "runs": 12,
+          "runs": 24,
           "commandsPerRun": 128,
           "wins": 0
         },
         "uniformRandom": {
-          "runs": 12,
+          "runs": 24,
           "commandsPerRun": 128,
-          "wins": 1
+          "wins": 2
         },
         "interpretation": "Diagnóstico automático; ciclos curtos e acertos aleatórios não provam ausência de raciocínio. A varredura testa vitória após cada movimento."
       },
-      "repetition": {
-        "structuralSignature": "st1-8b4fb442-507",
-        "topologySignature": "top1-23e953c5-113",
-        "globallyRotatedOrReflectedDuplicate": false
-      },
-      "curriculumReason": "Apoiar e depois retirar libera o destino, em dupla.",
-      "animalRoles": [
+      "necessity": [
         {
-          "board": 0,
-          "logicalAnimal": "capivara",
-          "role": "Preparar o objeto, manter acesso e concluir a própria chegada.",
-          "controls": [
-            {
-              "id": "weight",
-              "type": "plate",
-              "receiverBoard": 0
+          "avoid": {
+            "type": "helper-participation",
+            "board": 0
+          },
+          "result": {
+            "scope": "all-winning-solutions-avoiding-event",
+            "optimalScope": "avoiding-predicate-only",
+            "avoid": {
+              "type": "helper-participation",
+              "board": 0
             },
-            {
-              "id": "release-key",
-              "type": "key",
-              "receiverBoard": 1
-            }
-          ],
-          "goal": 6
-        },
-        {
-          "board": 1,
-          "logicalAnimal": "tuiuiu",
-          "role": "Esperar a chave obtida com apoio e atravessar a passagem permanente.",
-          "controls": [],
-          "goal": 1
+            "budget": {
+              "maxStates": 90000,
+              "maxMs": 12000,
+              "maxDepth": null
+            },
+            "status": "unsolvable",
+            "visited": 55,
+            "optimal": false,
+            "exhaustive": true
+          }
         }
       ],
-      "objectRoles": [
-        {
-          "board": 0,
-          "type": "boxes",
-          "id": "box0",
-          "definition": {
-            "id": "box0",
-            "cell": 12
-          },
-          "role": [
-            "reorientar",
-            "sustentar",
-            "liberar-destino"
-          ],
-          "evidenceScope": "definition-and-certified-witness; necessity requires separate audit"
-        },
-        {
-          "board": 0,
-          "type": "plates",
-          "id": "weight",
-          "definition": {
-            "id": "weight",
-            "cell": 6
-          },
-          "role": "Ocupação por animal ou caixa controla a passagem no estado anterior ao comando.",
-          "evidenceScope": "definition-and-certified-witness; necessity requires separate audit"
-        },
-        {
-          "board": 0,
-          "type": "keys",
-          "id": "release-key",
-          "definition": {
-            "id": "release-key",
-            "cell": 9
-          },
-          "role": "Aquisição pelo animal mantém a abertura até reiniciar.",
-          "evidenceScope": "definition-and-certified-witness; necessity requires separate audit"
-        },
-        {
-          "board": 0,
-          "type": "gates",
-          "id": "weight-gate",
-          "definition": {
-            "id": "weight-gate",
-            "from": 8,
-            "to": 9,
-            "condition": {
-              "type": "plate",
-              "id": "weight"
-            }
-          },
-          "role": {
-            "condition": {
-              "type": "plate",
-              "id": "weight"
-            },
-            "crossings": [
-              8,
-              9
-            ]
-          },
-          "evidenceScope": "definition-and-certified-witness; necessity requires separate audit"
-        },
-        {
-          "board": 1,
-          "type": "gates",
-          "id": "helper-exit-1",
-          "definition": {
-            "id": "helper-exit-1",
-            "from": 4,
-            "to": 1,
-            "condition": {
-              "type": "key",
-              "id": "release-key"
-            }
-          },
-          "role": {
-            "condition": {
-              "type": "key",
-              "id": "release-key"
-            },
-            "crossings": [
-              10,
-              13,
-              15
-            ]
-          },
-          "evidenceScope": "definition-and-certified-witness; necessity requires separate audit"
-        }
-      ],
-      "causalityReport": "tests/sintonia80-purpose-audit.json"
+      "causalityReport": "tests/sintonia-v4-editorial.json"
     },
     "number": 37,
     "chapter": 3,
-    "topologySignature": "top1-23e953c5-113",
-    "originNumber": 193,
+    "originNumber": 37,
     "origin": {
-      "kind": "curated-identical-logical-definition",
-      "catalog": "sintonia-content-2",
-      "number": 193,
+      "kind": "recomposed-removed-mechanics",
+      "catalog": "sintonia-content-3",
       "id": "sintonia-0193",
+      "number": 37,
       "version": 1,
-      "reason": "Apoiar e depois retirar libera o destino, em dupla."
+      "reason": "Fazer o desvio da chave antes da chegada conjunta."
     },
-    "actorIntroduction": null
+    "actorIntroduction": null,
+    "topologySignature": "top1-f41a0e17-119"
   },
   {
     "id": "sintonia-0201",
@@ -13564,7 +12617,7 @@ export const CAMPAIGN = [
     "actorIntroduction": null
   },
   {
-    "id": "sintonia-0247",
+    "id": "sintonia80-0042-v4",
     "version": 1,
     "rulesVersion": 1,
     "boards": [
@@ -13572,34 +12625,22 @@ export const CAMPAIGN = [
         "id": "b0",
         "animal": "capivara",
         "rows": 3,
-        "cols": 6,
+        "cols": 4,
         "walkable": [
           0,
-          1,
+          2,
+          3,
           4,
-          5,
-          6,
           7,
-          11,
-          12,
-          13,
-          16,
-          17
+          8,
+          9,
+          10,
+          11
         ],
-        "start": 12,
-        "goal": 0,
-        "portals": [
-          {
-            "id": "preparation-portal",
-            "a": 13,
-            "b": 16
-          }
-        ],
-        "keys": [
-          {
-            "id": "prepare",
-            "cell": 4
-          }
+        "start": 0,
+        "goal": 10,
+        "ice": [
+          9
         ]
       },
       {
@@ -13608,204 +12649,99 @@ export const CAMPAIGN = [
         "rows": 4,
         "cols": 4,
         "walkable": [
-          0,
-          2,
-          3,
           4,
-          5,
-          6,
+          8,
           9,
           11,
-          12,
           13,
           14,
           15
         ],
-        "start": 12,
-        "goal": 9,
-        "gates": [
-          {
-            "id": "preparation-remote",
-            "from": 13,
-            "to": 9,
-            "condition": {
-              "type": "key",
-              "id": "prepare"
-            }
-          }
-        ]
+        "start": 11,
+        "goal": 4
       }
     ],
     "mechanics": [
       "walls",
-      "key",
-      "portal"
+      "ice"
     ],
     "initialSwitches": {},
     "initialSelectors": {},
-    "family": "waiting-place",
+    "family": "intermediate-stop",
     "secondaryFamilies": [
-      "wall-adjust",
+      "waiting-place",
       "final-command"
     ],
-    "name": "Do outro lado",
-    "lesson": "Entrar em um portal leva ao seu par no mesmo tabuleiro e encerra aquele deslocamento. Use a entrada e a saída do portal para preparar o alinhamento conjunto.",
-    "discovery": "Aqui o jogador precisa descobrir que o portal serve para buscar a preparação e voltar; a chegada precisa ser alinhada na região inicial.",
+    "name": "Distâncias diferentes",
+    "lesson": "Prepare a entrada no gelo pensando na posição em que o animal vai parar.",
+    "discovery": "Aqui o jogador precisa descobrir que o gelo permite deslocamentos de comprimentos diferentes com a mesma seta.",
     "hints": [
-      "Os dois portais com o mesmo símbolo formam um par neste tabuleiro.",
-      "Entrar no portal encerra esse deslocamento na saída; prepare a posição dos outros animais antes da entrada.",
-      "Na configuração inicial, comece para a direita; observe quem avança e quem espera."
+      "No gelo, o animal segue até o primeiro piso comum ou bloqueio.",
+      "Você não precisa interromper o deslizamento. Ajuste a posição de entrada para coordenar a chegada.",
+      "Na configuração inicial, comece para baixo; observe quem avança e quem espera."
     ],
-    "generatorVersion": 2,
-    "contentRevision": "sintonia-content-3",
-    "seed": "sintonia-campaign-v2:0247:0",
+    "generatorVersion": 3,
+    "contentRevision": "sintonia-content-4",
+    "seed": "sintonia-content4:42:0",
     "difficulty": 2,
     "solution": [
-      "right",
-      "right",
-      "up",
-      "up",
-      "right",
-      "left",
-      "right",
       "down",
       "down",
       "left",
+      "left",
       "up",
+      "left",
+      "down",
+      "right",
+      "right",
       "left",
       "up"
     ],
-    "signature": "st1-ee0ede4a-413",
+    "signature": "st1-a4fb2522-220",
     "prerequisites": [
       "walls",
-      "key"
+      "ice"
     ],
-    "introduction": [
-      "portal"
-    ],
+    "introduction": [],
     "parameters": {
-      "difficulty": 3,
+      "difficulty": 2,
       "animals": 2,
-      "primary": "portal",
+      "primary": "ice",
       "secondary": null,
-      "role": "compact",
-      "pattern": "portal-retrieve-and-return"
+      "role": "varied",
+      "pattern": null
     },
     "certificate": {
       "method": "breadth-first-witness-and-engine-replay",
       "rulesVersion": 1,
-      "commands": 13,
+      "commands": 11,
       "optimal": true,
-      "visited": 172,
+      "visited": 52,
       "replayed": true,
-      "engine": "unchanged-rules-1"
+      "engine": "unchanged-rules-1",
+      "firstVictoryAt": 11
     },
     "editorial": {
-      "source": "role-first-structure-and-automatic-curation",
-      "design": {
-        "pattern": "portal-retrieve-and-return",
-        "discovery": "o portal serve para buscar a preparação e voltar; a chegada precisa ser alinhada na região inicial",
-        "roles": [
-          {
-            "board": 0,
-            "role": "retriever-and-returner",
-            "goalRegion": [
-              0
-            ]
-          },
-          {
-            "board": 1,
-            "role": "receiver-and-aligner",
-            "goalRegion": [
-              9,
-              5,
-              6,
-              4,
-              2,
-              0,
-              3
-            ]
-          }
-        ],
-        "structures": [
-          {
-            "board": 0,
-            "role": "reorganize-access",
-            "cells": [
-              13,
-              16
-            ]
-          },
-          {
-            "board": 0,
-            "role": "prepare",
-            "cells": [
-              4
-            ]
-          },
-          {
-            "board": 0,
-            "role": "return-home",
-            "cells": [
-              0
-            ]
-          }
-        ],
-        "dependencies": [
-          {
-            "fromBoard": 0,
-            "toBoard": 1,
-            "control": "prepare",
-            "role": "unlock-recipient"
-          }
-        ],
-        "order": [
-          "enter-portal",
-          "retrieve-key",
-          "return-through-portal",
-          "joint-arrival"
-        ],
-        "counterfactual": "Without the portal the key component is disconnected. Fixing the key gate open removes the need to retrieve and return.",
-        "proofStatus": "structural-design-hypothesis; replay and budgeted ablations recorded separately"
-      },
+      "source": "procedural-structure-and-automatic-curation",
+      "design": null,
       "purpose": {
         "valid": true,
         "won": true,
         "evidenceScope": "supplied-command-sequence",
-        "commands": 13,
+        "commands": 11,
         "boxes": [],
-        "dependencies": [
-          {
-            "gateId": "preparation-remote",
-            "receiverBoard": 1,
-            "condition": {
-              "type": "key",
-              "id": "prepare"
-            },
-            "controllers": [
-              {
-                "type": "key",
-                "id": "prepare",
-                "board": 0,
-                "cell": 4
-              }
-            ],
-            "crossingCommands": [
-              13
-            ]
-          }
-        ],
+        "dependencies": [],
         "boardRoles": [
           {
             "board": 0,
-            "moved": 12,
-            "waited": 1,
-            "goalDepartures": 0
+            "moved": 7,
+            "waited": 4,
+            "goalDepartures": 1
           },
           {
             "board": 1,
             "moved": 8,
-            "waited": 5,
+            "waited": 3,
             "goalDepartures": 0
           }
         ],
@@ -13826,43 +12762,38 @@ export const CAMPAIGN = [
         "reason": "Replay e ablações são evidências automáticas, não substitutos de avaliação editorial e testes humanos."
       },
       "humanPlaytested": false,
-      "discovery": "Aqui o jogador precisa descobrir que o portal serve para buscar a preparação e voltar; a chegada precisa ser alinhada na região inicial.",
+      "discovery": "Aqui o jogador precisa descobrir que o gelo permite deslocamentos de comprimentos diferentes com a mesma seta.",
       "reasoning": {
         "used": [
-          "key",
-          "key-gate",
-          "portal"
+          "ice"
         ],
-        "partialBlocks": 6,
+        "partialBlocks": 7,
         "goalDepartures": [
-          false,
+          true,
           false
         ],
         "unequalLoops": 12,
-        "directionChanges": 9,
-        "earlyTurns": 5,
+        "directionChanges": 7,
+        "earlyTurns": 2,
         "occupiedBoxPlate": false,
         "boxAsStopAfterSupport": false,
         "finalApproach": [
-          false,
+          true,
           false
         ]
       },
       "sweep": {
         "status": "complete",
-        "visited": 30,
+        "visited": 21,
         "resistant": true
       },
       "compatibility": "validated",
       "alternatives": "Uma sequência verificada é fornecida; outras soluções podem existir.",
       "deadEnds": "Mudanças de configuração podem exigir retornar a uma posição anterior.",
-      "decision": "retain-logical-definition",
-      "retentionReason": "Portal em dupla: transportar dentro do painel para preparar a chave e retornar.",
-      "role": "focus",
-      "prerequisiteChapters": [
-        1,
-        2
-      ],
+      "role": "varied",
+      "decision": "recompose",
+      "curriculumReason": "Escolher a parada que permite sincronizar o parceiro.",
+      "retentionReason": "Escolher a parada que permite sincronizar o parceiro.",
       "antiSpam": {
         "singleDirection": {
           "tested": 4,
@@ -13870,7 +12801,7 @@ export const CAMPAIGN = [
         },
         "sweeps": {
           "status": "complete",
-          "visited": 30,
+          "visited": 21,
           "solves": false
         },
         "shortCycles": {
@@ -13878,131 +12809,60 @@ export const CAMPAIGN = [
           "winningPatterns": []
         },
         "biasedRandom": {
-          "runs": 12,
+          "runs": 24,
           "commandsPerRun": 128,
           "wins": 0
         },
         "uniformRandom": {
-          "runs": 12,
+          "runs": 24,
           "commandsPerRun": 128,
-          "wins": 0
+          "wins": 2
         },
         "interpretation": "Diagnóstico automático; ciclos curtos e acertos aleatórios não provam ausência de raciocínio. A varredura testa vitória após cada movimento."
       },
-      "repetition": {
-        "structuralSignature": "st1-ee0ede4a-413",
-        "topologySignature": "top1-27d19c16-133",
-        "globallyRotatedOrReflectedDuplicate": false
-      },
-      "curriculumReason": "Portal em dupla: transportar dentro do painel para preparar a chave e retornar.",
-      "animalRoles": [
+      "necessity": [
         {
-          "board": 0,
-          "logicalAnimal": "capivara",
-          "role": {
-            "board": 0,
-            "role": "retriever-and-returner",
-            "goalRegion": [
-              0
-            ]
+          "avoid": {
+            "type": "event",
+            "eventType": "ice"
           },
-          "controls": [
-            {
-              "id": "prepare",
-              "type": "key",
-              "receiverBoard": 1
-            }
-          ],
-          "goal": 0
-        },
-        {
-          "board": 1,
-          "logicalAnimal": "tuiuiu",
-          "role": {
-            "board": 1,
-            "role": "receiver-and-aligner",
-            "goalRegion": [
-              9,
-              5,
-              6,
-              4,
-              2,
-              0,
-              3
-            ]
-          },
-          "controls": [],
-          "goal": 9
-        }
-      ],
-      "objectRoles": [
-        {
-          "board": 0,
-          "type": "keys",
-          "id": "prepare",
-          "definition": {
-            "id": "prepare",
-            "cell": 4
-          },
-          "role": "Aquisição pelo animal mantém a abertura até reiniciar.",
-          "evidenceScope": "definition-and-certified-witness; necessity requires separate audit"
-        },
-        {
-          "board": 0,
-          "type": "portals",
-          "id": "preparation-portal",
-          "definition": {
-            "id": "preparation-portal",
-            "a": 13,
-            "b": 16
-          },
-          "role": "Transporta uma vez dentro do painel e encerra o deslocamento.",
-          "evidenceScope": "definition-and-certified-witness; necessity requires separate audit"
-        },
-        {
-          "board": 1,
-          "type": "gates",
-          "id": "preparation-remote",
-          "definition": {
-            "id": "preparation-remote",
-            "from": 13,
-            "to": 9,
-            "condition": {
-              "type": "key",
-              "id": "prepare"
-            }
-          },
-          "role": {
-            "condition": {
-              "type": "key",
-              "id": "prepare"
+          "result": {
+            "scope": "all-winning-solutions-avoiding-event",
+            "optimalScope": "avoiding-predicate-only",
+            "avoid": {
+              "type": "event",
+              "eventType": "ice"
             },
-            "crossings": [
-              13
-            ]
-          },
-          "evidenceScope": "definition-and-certified-witness; necessity requires separate audit"
+            "budget": {
+              "maxStates": 90000,
+              "maxMs": 12000,
+              "maxDepth": null
+            },
+            "status": "unsolvable",
+            "visited": 18,
+            "optimal": false,
+            "exhaustive": true
+          }
         }
       ],
-      "causalityReport": "tests/sintonia80-purpose-audit.json"
+      "causalityReport": "tests/sintonia-v4-editorial.json"
     },
     "number": 42,
     "chapter": 3,
-    "topologySignature": "top1-27d19c16-133",
-    "originNumber": 247,
+    "originNumber": 42,
     "origin": {
-      "kind": "curated-identical-logical-definition",
-      "catalog": "sintonia-content-2",
-      "number": 247,
+      "kind": "recomposed-removed-mechanics",
+      "catalog": "sintonia-content-3",
       "id": "sintonia-0247",
+      "number": 42,
       "version": 1,
-      "reason": "Portal em dupla: transportar dentro do painel para preparar a chave e retornar."
+      "reason": "Escolher a parada que permite sincronizar o parceiro."
     },
     "actorIntroduction": null,
-    "ruleExplanation": "Entrar em um portal leva ao seu par no mesmo tabuleiro e encerra aquele deslocamento."
+    "topologySignature": "top1-c5b3ac05-114"
   },
   {
-    "id": "sintonia-0237",
+    "id": "sintonia80-0043-v4",
     "version": 1,
     "rulesVersion": 1,
     "boards": [
@@ -14010,61 +12870,52 @@ export const CAMPAIGN = [
         "id": "b0",
         "animal": "capivara",
         "rows": 3,
-        "cols": 6,
+        "cols": 4,
         "walkable": [
-          0,
           1,
+          2,
+          3,
           4,
           5,
-          6,
           7,
-          10,
-          11,
-          12,
-          16,
-          17
+          8
         ],
-        "start": 0,
-        "goal": 12,
-        "portals": [
-          {
-            "id": "preparation-portal",
-            "a": 1,
-            "b": 4
-          }
-        ],
+        "start": 2,
+        "goal": 8,
         "keys": [
           {
             "id": "prepare",
-            "cell": 17
+            "cell": 3
           }
-        ]
+        ],
+        "gates": []
       },
       {
         "id": "b1",
         "animal": "tuiuiu",
-        "rows": 5,
-        "cols": 5,
+        "rows": 4,
+        "cols": 4,
         "walkable": [
           0,
-          1,
           2,
           3,
-          6,
-          10,
+          4,
+          5,
+          7,
+          8,
           11,
-          16,
-          17,
-          18,
-          23
+          12,
+          13,
+          14,
+          15
         ],
-        "start": 18,
-        "goal": 6,
+        "start": 3,
+        "goal": 5,
         "gates": [
           {
             "id": "preparation-remote",
-            "from": 17,
-            "to": 16,
+            "from": 7,
+            "to": 11,
             "condition": {
               "type": "key",
               "id": "prepare"
@@ -14075,117 +12926,130 @@ export const CAMPAIGN = [
     ],
     "mechanics": [
       "walls",
-      "key",
-      "portal"
+      "key"
     ],
     "initialSwitches": {},
     "initialSelectors": {},
-    "family": "waiting-place",
+    "family": "priority-change",
     "secondaryFamilies": [
-      "axis-order",
-      "final-command"
+      "wall-adjust",
+      "axis-order"
     ],
-    "name": "Do outro lado",
-    "lesson": "Use a entrada e a saída do portal para preparar o alinhamento conjunto.",
-    "discovery": "Aqui o jogador precisa descobrir que o portal serve para buscar a preparação e voltar; a chegada precisa ser alinhada na região inicial.",
+    "name": "Caminho liberado",
+    "lesson": "Recolha a chave antes de coordenar a travessia da cancela.",
+    "discovery": "Aqui o jogador precisa descobrir que o desvio de preparação libera o outro animal, mudando qual caminho precisa de atenção.",
     "hints": [
-      "Os dois portais com o mesmo símbolo formam um par neste tabuleiro.",
-      "Entrar no portal encerra esse deslocamento na saída; prepare a posição dos outros animais antes da entrada.",
-      "Na configuração inicial, comece para a direita; observe quem avança e quem espera."
+      "Encontre a chave e a cancela que compartilham o símbolo.",
+      "Termine um movimento sobre a chave; depois, prepare o outro percurso com a passagem liberada.",
+      "Na configuração inicial, comece para baixo; observe quem avança e quem espera."
     ],
-    "generatorVersion": 2,
-    "contentRevision": "sintonia-content-3",
-    "seed": "sintonia-campaign-v2:0237:0",
+    "generatorVersion": 3,
+    "contentRevision": "sintonia-content-4",
+    "seed": "sintonia-content4:43:0",
     "difficulty": 2,
     "solution": [
+      "down",
       "right",
-      "right",
+      "left",
       "down",
       "down",
-      "up",
       "left",
-      "left",
-      "up",
-      "up",
-      "up",
-      "right",
       "down",
       "left",
-      "down"
+      "left",
+      "up",
+      "up",
+      "up",
+      "down",
+      "right"
     ],
-    "signature": "st1-b5319ab7-415",
+    "signature": "st1-d537d137-353",
     "prerequisites": [
       "walls",
-      "key",
-      "portal"
+      "key"
     ],
     "introduction": [],
     "parameters": {
-      "difficulty": 3,
+      "difficulty": 2,
       "animals": 2,
-      "primary": "portal",
+      "primary": "key",
       "secondary": null,
-      "role": "compact",
-      "pattern": "portal-retrieve-and-return"
+      "role": "varied",
+      "pattern": "key-fork-before-exit"
     },
     "certificate": {
       "method": "breadth-first-witness-and-engine-replay",
       "rulesVersion": 1,
       "commands": 14,
       "optimal": true,
-      "visited": 132,
+      "visited": 90,
       "replayed": true,
-      "engine": "unchanged-rules-1"
+      "engine": "unchanged-rules-1",
+      "firstVictoryAt": 14
     },
     "editorial": {
       "source": "role-first-structure-and-automatic-curation",
       "design": {
-        "pattern": "portal-retrieve-and-return",
-        "discovery": "o portal serve para buscar a preparação e voltar; a chegada precisa ser alinhada na região inicial",
+        "preparationControl": "key",
+        "pattern": "key-fork-before-exit",
+        "discovery": "o desvio de preparação libera o outro animal, mudando qual caminho precisa de atenção",
         "roles": [
           {
             "board": 0,
-            "role": "retriever-and-returner",
+            "role": "preparer-and-committer",
+            "control": 3,
+            "commit": null,
             "goalRegion": [
-              12
+              8
             ]
           },
           {
             "board": 1,
             "role": "receiver-and-aligner",
             "goalRegion": [
-              16,
               11,
-              10,
-              6,
-              1,
-              2,
+              15,
+              14,
+              13,
+              12,
+              8,
+              4,
               0,
-              3
+              5
             ]
           }
         ],
         "structures": [
           {
             "board": 0,
-            "role": "reorganize-access",
-            "cells": [
-              1,
-              4
-            ]
-          },
-          {
-            "board": 0,
             "role": "prepare",
             "cells": [
-              17
+              2,
+              3
             ]
           },
           {
             "board": 0,
-            "role": "return-home",
-            "cells": [
-              12
+            "role": "separate",
+            "edge": [
+              1,
+              5
+            ]
+          },
+          {
+            "board": 0,
+            "role": "exit",
+            "edge": [
+              4,
+              8
+            ]
+          },
+          {
+            "board": 1,
+            "role": "remote-exit",
+            "edge": [
+              7,
+              11
             ]
           }
         ],
@@ -14194,16 +13058,16 @@ export const CAMPAIGN = [
             "fromBoard": 0,
             "toBoard": 1,
             "control": "prepare",
-            "role": "unlock-recipient"
+            "role": "prepare-remote-exit"
           }
         ],
         "order": [
-          "enter-portal",
-          "retrieve-key",
-          "return-through-portal",
+          "visit-side-branch",
+          "leave-control-with-configuration",
+          "cross-exits",
           "joint-arrival"
         ],
-        "counterfactual": "Without the portal the key component is disconnected. Fixing the key gate open removes the need to retrieve and return.",
+        "counterfactual": "Opening the preparation gate removes the obligation to visit the side branch.",
         "proofStatus": "structural-design-hypothesis; replay and budgeted ablations recorded separately"
       },
       "purpose": {
@@ -14225,25 +13089,729 @@ export const CAMPAIGN = [
                 "type": "key",
                 "id": "prepare",
                 "board": 0,
-                "cell": 17
+                "cell": 3
               }
             ],
             "crossingCommands": [
-              7
+              4
             ]
           }
         ],
         "boardRoles": [
           {
             "board": 0,
-            "moved": 10,
-            "waited": 4,
+            "moved": 6,
+            "waited": 8,
             "goalDepartures": 0
           },
           {
             "board": 1,
-            "moved": 10,
+            "moved": 11,
+            "waited": 3,
+            "goalDepartures": 0
+          }
+        ],
+        "caveat": "Uso neste certificado não prova necessidade. Consulte tests/sintonia-purpose-audit.json para ablações e limites."
+      },
+      "rubric": {
+        "status": "human-review-pending",
+        "dimensions": [
+          "purpose",
+          "discovery",
+          "interdependence",
+          "causal-clarity",
+          "spatial-economy",
+          "variety"
+        ],
+        "scores": null,
+        "humanPlaytesting": false,
+        "reason": "Replay e ablações são evidências automáticas, não substitutos de avaliação editorial e testes humanos."
+      },
+      "humanPlaytested": false,
+      "discovery": "Aqui o jogador precisa descobrir que o desvio de preparação libera o outro animal, mudando qual caminho precisa de atenção.",
+      "reasoning": {
+        "used": [
+          "key",
+          "key-gate"
+        ],
+        "partialBlocks": 11,
+        "goalDepartures": [
+          false,
+          false
+        ],
+        "unequalLoops": 13,
+        "directionChanges": 9,
+        "earlyTurns": 3,
+        "occupiedBoxPlate": false,
+        "boxAsStopAfterSupport": false,
+        "finalApproach": [
+          true,
+          false
+        ]
+      },
+      "sweep": {
+        "status": "complete",
+        "visited": 36,
+        "resistant": true
+      },
+      "compatibility": "validated",
+      "alternatives": "Uma sequência verificada é fornecida; outras soluções podem existir.",
+      "deadEnds": "Mudanças de configuração podem exigir retornar a uma posição anterior.",
+      "role": "varied",
+      "decision": "recompose",
+      "curriculumReason": "Preparar abertura permanente e depois corrigir a defasagem.",
+      "retentionReason": "Preparar abertura permanente e depois corrigir a defasagem.",
+      "antiSpam": {
+        "singleDirection": {
+          "tested": 4,
+          "winningDirections": []
+        },
+        "sweeps": {
+          "status": "complete",
+          "visited": 36,
+          "solves": false
+        },
+        "shortCycles": {
+          "tested": 40,
+          "winningPatterns": []
+        },
+        "biasedRandom": {
+          "runs": 24,
+          "commandsPerRun": 128,
+          "wins": 0
+        },
+        "uniformRandom": {
+          "runs": 24,
+          "commandsPerRun": 128,
+          "wins": 1
+        },
+        "interpretation": "Diagnóstico automático; ciclos curtos e acertos aleatórios não provam ausência de raciocínio. A varredura testa vitória após cada movimento."
+      },
+      "necessity": [
+        {
+          "avoid": {
+            "type": "helper-participation",
+            "board": 0
+          },
+          "result": {
+            "scope": "all-winning-solutions-avoiding-event",
+            "optimalScope": "avoiding-predicate-only",
+            "avoid": {
+              "type": "helper-participation",
+              "board": 0
+            },
+            "budget": {
+              "maxStates": 90000,
+              "maxMs": 12000,
+              "maxDepth": null
+            },
+            "status": "unsolvable",
+            "visited": 32,
+            "optimal": false,
+            "exhaustive": true
+          }
+        }
+      ],
+      "causalityReport": "tests/sintonia-v4-editorial.json"
+    },
+    "number": 43,
+    "chapter": 3,
+    "originNumber": 43,
+    "origin": {
+      "kind": "recomposed-removed-mechanics",
+      "catalog": "sintonia-content-3",
+      "id": "sintonia-0237",
+      "number": 43,
+      "version": 1,
+      "reason": "Preparar abertura permanente e depois corrigir a defasagem."
+    },
+    "actorIntroduction": null,
+    "topologySignature": "top1-e0f059f5-123"
+  },
+  {
+    "id": "sintonia80-0044-v4",
+    "version": 1,
+    "rulesVersion": 1,
+    "boards": [
+      {
+        "id": "b0",
+        "animal": "capivara",
+        "rows": 4,
+        "cols": 4,
+        "walkable": [
+          0,
+          4,
+          5,
+          8,
+          10,
+          12,
+          13,
+          14,
+          15
+        ],
+        "start": 0,
+        "goal": 10,
+        "switches": [
+          {
+            "id": "prepare",
+            "cell": 5,
+            "group": "prepare"
+          }
+        ],
+        "gates": []
+      },
+      {
+        "id": "b1",
+        "animal": "tuiuiu",
+        "rows": 4,
+        "cols": 4,
+        "walkable": [
+          0,
+          1,
+          2,
+          4,
+          8,
+          9,
+          13,
+          14
+        ],
+        "start": 2,
+        "goal": 9,
+        "gates": [
+          {
+            "id": "preparation-remote",
+            "from": 1,
+            "to": 0,
+            "condition": {
+              "type": "switch",
+              "id": "prepare",
+              "value": true
+            }
+          }
+        ]
+      }
+    ],
+    "mechanics": [
+      "walls",
+      "switch"
+    ],
+    "initialSwitches": {},
+    "initialSelectors": {},
+    "family": "scenario-choice",
+    "secondaryFamilies": [
+      "intermediate-stop",
+      "final-command"
+    ],
+    "name": "Uma escolha que permanece",
+    "lesson": "Entre no interruptor para preparar a configuração das passagens.",
+    "discovery": "Aqui o jogador precisa descobrir que o desvio de preparação libera o outro animal, mudando qual caminho precisa de atenção.",
+    "hints": [
+      "O interruptor alterna a passagem quando o animal entra e termina sobre ele.",
+      "Depois de preparar a abertura, você pode sair do interruptor sem perder essa configuração.",
+      "Na configuração inicial, comece para baixo; observe quem avança e quem espera."
+    ],
+    "generatorVersion": 3,
+    "contentRevision": "sintonia-content-4",
+    "seed": "sintonia-content4:44:0",
+    "difficulty": 2,
+    "solution": [
+      "down",
+      "right",
+      "left",
+      "left",
+      "down",
+      "down",
+      "right",
+      "right",
+      "up"
+    ],
+    "signature": "st1-51fd96a3-384",
+    "prerequisites": [
+      "walls",
+      "switch"
+    ],
+    "introduction": [],
+    "parameters": {
+      "difficulty": 2,
+      "animals": 2,
+      "primary": "switch",
+      "secondary": null,
+      "role": "varied",
+      "pattern": "switch-fork-before-exit"
+    },
+    "certificate": {
+      "method": "breadth-first-witness-and-engine-replay",
+      "rulesVersion": 1,
+      "commands": 9,
+      "optimal": true,
+      "visited": 127,
+      "replayed": true,
+      "engine": "unchanged-rules-1",
+      "firstVictoryAt": 9
+    },
+    "editorial": {
+      "source": "role-first-structure-and-automatic-curation",
+      "design": {
+        "preparationControl": "switch",
+        "pattern": "switch-fork-before-exit",
+        "discovery": "o desvio de preparação libera o outro animal, mudando qual caminho precisa de atenção",
+        "roles": [
+          {
+            "board": 0,
+            "role": "preparer-and-committer",
+            "control": 5,
+            "commit": null,
+            "goalRegion": [
+              10
+            ]
+          },
+          {
+            "board": 1,
+            "role": "receiver-and-aligner",
+            "goalRegion": [
+              0,
+              4,
+              8,
+              9,
+              13,
+              14
+            ]
+          }
+        ],
+        "structures": [
+          {
+            "board": 0,
+            "role": "prepare",
+            "cells": [
+              0,
+              4,
+              5
+            ]
+          },
+          {
+            "board": 0,
+            "role": "separate",
+            "edge": [
+              4,
+              8
+            ]
+          },
+          {
+            "board": 0,
+            "role": "exit",
+            "edge": [
+              14,
+              10
+            ]
+          },
+          {
+            "board": 1,
+            "role": "remote-exit",
+            "edge": [
+              1,
+              0
+            ]
+          }
+        ],
+        "dependencies": [
+          {
+            "fromBoard": 0,
+            "toBoard": 1,
+            "control": "prepare",
+            "role": "prepare-remote-exit"
+          }
+        ],
+        "order": [
+          "visit-side-branch",
+          "leave-control-with-configuration",
+          "cross-exits",
+          "joint-arrival"
+        ],
+        "counterfactual": "Opening the preparation gate removes the obligation to visit the side branch.",
+        "proofStatus": "structural-design-hypothesis; replay and budgeted ablations recorded separately"
+      },
+      "purpose": {
+        "valid": true,
+        "won": true,
+        "evidenceScope": "supplied-command-sequence",
+        "commands": 9,
+        "boxes": [],
+        "dependencies": [
+          {
+            "gateId": "preparation-remote",
+            "receiverBoard": 1,
+            "condition": {
+              "type": "switch",
+              "id": "prepare",
+              "value": true
+            },
+            "controllers": [
+              {
+                "type": "switch",
+                "id": "prepare",
+                "board": 0,
+                "cell": 5
+              }
+            ],
+            "crossingCommands": [
+              4
+            ]
+          }
+        ],
+        "boardRoles": [
+          {
+            "board": 0,
+            "moved": 8,
+            "waited": 1,
+            "goalDepartures": 0
+          },
+          {
+            "board": 1,
+            "moved": 5,
             "waited": 4,
+            "goalDepartures": 0
+          }
+        ],
+        "caveat": "Uso neste certificado não prova necessidade. Consulte tests/sintonia-purpose-audit.json para ablações e limites."
+      },
+      "rubric": {
+        "status": "human-review-pending",
+        "dimensions": [
+          "purpose",
+          "discovery",
+          "interdependence",
+          "causal-clarity",
+          "spatial-economy",
+          "variety"
+        ],
+        "scores": null,
+        "humanPlaytesting": false,
+        "reason": "Replay e ablações são evidências automáticas, não substitutos de avaliação editorial e testes humanos."
+      },
+      "humanPlaytested": false,
+      "discovery": "Aqui o jogador precisa descobrir que o desvio de preparação libera o outro animal, mudando qual caminho precisa de atenção.",
+      "reasoning": {
+        "used": [
+          "switch",
+          "switch-gate"
+        ],
+        "partialBlocks": 5,
+        "goalDepartures": [
+          false,
+          false
+        ],
+        "unequalLoops": 4,
+        "directionChanges": 5,
+        "earlyTurns": 2,
+        "occupiedBoxPlate": false,
+        "boxAsStopAfterSupport": false,
+        "finalApproach": [
+          false,
+          true
+        ]
+      },
+      "sweep": {
+        "status": "complete",
+        "visited": 5,
+        "resistant": true
+      },
+      "compatibility": "validated",
+      "alternatives": "Uma sequência verificada é fornecida; outras soluções podem existir.",
+      "deadEnds": "Mudanças de configuração podem exigir retornar a uma posição anterior.",
+      "role": "varied",
+      "decision": "recompose",
+      "curriculumReason": "Alternar a configuração sem perder a rota de retorno.",
+      "retentionReason": "Alternar a configuração sem perder a rota de retorno.",
+      "antiSpam": {
+        "singleDirection": {
+          "tested": 4,
+          "winningDirections": []
+        },
+        "sweeps": {
+          "status": "complete",
+          "visited": 5,
+          "solves": false
+        },
+        "shortCycles": {
+          "tested": 40,
+          "winningPatterns": []
+        },
+        "biasedRandom": {
+          "runs": 24,
+          "commandsPerRun": 128,
+          "wins": 1
+        },
+        "uniformRandom": {
+          "runs": 24,
+          "commandsPerRun": 128,
+          "wins": 6
+        },
+        "interpretation": "Diagnóstico automático; ciclos curtos e acertos aleatórios não provam ausência de raciocínio. A varredura testa vitória após cada movimento."
+      },
+      "necessity": [
+        {
+          "avoid": {
+            "type": "helper-participation",
+            "board": 0
+          },
+          "result": {
+            "scope": "all-winning-solutions-avoiding-event",
+            "optimalScope": "avoiding-predicate-only",
+            "avoid": {
+              "type": "helper-participation",
+              "board": 0
+            },
+            "budget": {
+              "maxStates": 90000,
+              "maxMs": 12000,
+              "maxDepth": null
+            },
+            "status": "unsolvable",
+            "visited": 32,
+            "optimal": false,
+            "exhaustive": true
+          }
+        }
+      ],
+      "causalityReport": "tests/sintonia-v4-editorial.json"
+    },
+    "number": 44,
+    "chapter": 3,
+    "originNumber": 44,
+    "origin": {
+      "kind": "recomposed-removed-mechanics",
+      "catalog": "sintonia-content-3",
+      "id": "sintonia-0187",
+      "number": 44,
+      "version": 1,
+      "reason": "Alternar a configuração sem perder a rota de retorno."
+    },
+    "actorIntroduction": null,
+    "topologySignature": "top1-22a8aaab-119"
+  },
+  {
+    "id": "sintonia80-0045-v4",
+    "version": 1,
+    "rulesVersion": 1,
+    "boards": [
+      {
+        "id": "b0",
+        "animal": "capivara",
+        "rows": 3,
+        "cols": 3,
+        "walkable": [
+          0,
+          1,
+          2,
+          4,
+          5,
+          6,
+          7,
+          8
+        ],
+        "start": 0,
+        "goal": 5,
+        "plates": [
+          {
+            "id": "support",
+            "cell": 5
+          }
+        ]
+      },
+      {
+        "id": "b1",
+        "animal": "tuiuiu",
+        "rows": 3,
+        "cols": 4,
+        "walkable": [
+          0,
+          1,
+          2,
+          5,
+          8,
+          9,
+          10,
+          11
+        ],
+        "start": 0,
+        "goal": 10,
+        "gates": [
+          {
+            "id": "plate-gate",
+            "from": 5,
+            "to": 9,
+            "condition": {
+              "type": "plate",
+              "id": "support"
+            }
+          },
+          {
+            "id": "auxiliary-gate-2",
+            "from": 5,
+            "to": 1,
+            "condition": {
+              "type": "plate",
+              "id": "auxiliary-2"
+            }
+          }
+        ]
+      },
+      {
+        "id": "b2",
+        "animal": "bemtevi",
+        "rows": 3,
+        "cols": 4,
+        "walkable": [
+          0,
+          1,
+          2,
+          3,
+          6,
+          7,
+          8,
+          9,
+          10
+        ],
+        "start": 2,
+        "goal": 1,
+        "plates": [
+          {
+            "id": "auxiliary-2",
+            "cell": 3
+          }
+        ]
+      }
+    ],
+    "mechanics": [
+      "walls",
+      "plate"
+    ],
+    "initialSwitches": {},
+    "initialSelectors": {},
+    "family": "remote-support",
+    "secondaryFamilies": [
+      "unequal-loop",
+      "priority-change"
+    ],
+    "name": "Uma passagem para o outro",
+    "lesson": "Prepare a placa que abre o caminho do outro animal.",
+    "discovery": "Aqui o jogador precisa descobrir que a ocupação de uma placa prepara a passagem de outro tabuleiro.",
+    "hints": [
+      "Encontre a placa e a cancela com o mesmo símbolo.",
+      "O estado no início da seta decide a travessia: é possível sair da placa enquanto o outro atravessa.",
+      "Na configuração inicial, comece para a direita; observe quem avança e quem espera."
+    ],
+    "generatorVersion": 3,
+    "contentRevision": "sintonia-content-4",
+    "seed": "sintonia-content4:45:0",
+    "difficulty": 2,
+    "solution": [
+      "right",
+      "down",
+      "right",
+      "down",
+      "right",
+      "right",
+      "left",
+      "down",
+      "right",
+      "up",
+      "up",
+      "left",
+      "down",
+      "left",
+      "right"
+    ],
+    "signature": "st1-6a58d976-536",
+    "prerequisites": [
+      "walls",
+      "plate"
+    ],
+    "introduction": [],
+    "parameters": {
+      "difficulty": 2,
+      "animals": 3,
+      "primary": "plate",
+      "secondary": null,
+      "role": "varied",
+      "pattern": null
+    },
+    "certificate": {
+      "method": "breadth-first-witness-and-engine-replay",
+      "rulesVersion": 1,
+      "commands": 15,
+      "optimal": true,
+      "visited": 302,
+      "replayed": true,
+      "engine": "unchanged-rules-1",
+      "firstVictoryAt": 15
+    },
+    "editorial": {
+      "source": "procedural-structure-and-automatic-curation",
+      "design": null,
+      "purpose": {
+        "valid": true,
+        "won": true,
+        "evidenceScope": "supplied-command-sequence",
+        "commands": 15,
+        "boxes": [],
+        "dependencies": [
+          {
+            "gateId": "plate-gate",
+            "receiverBoard": 1,
+            "condition": {
+              "type": "plate",
+              "id": "support"
+            },
+            "controllers": [
+              {
+                "type": "plate",
+                "id": "support",
+                "board": 0,
+                "cell": 5
+              }
+            ],
+            "crossingCommands": [
+              4
+            ]
+          },
+          {
+            "gateId": "auxiliary-gate-2",
+            "receiverBoard": 1,
+            "condition": {
+              "type": "plate",
+              "id": "auxiliary-2"
+            },
+            "controllers": [
+              {
+                "type": "plate",
+                "id": "auxiliary-2",
+                "board": 2,
+                "cell": 3
+              }
+            ],
+            "crossingCommands": [
+              2
+            ]
+          }
+        ],
+        "boardRoles": [
+          {
+            "board": 0,
+            "moved": 11,
+            "waited": 4,
+            "goalDepartures": 2
+          },
+          {
+            "board": 1,
+            "moved": 10,
+            "waited": 5,
+            "goalDepartures": 3
+          },
+          {
+            "board": 2,
+            "moved": 9,
+            "waited": 6,
             "goalDepartures": 1
           }
         ],
@@ -14264,1227 +13832,40 @@ export const CAMPAIGN = [
         "reason": "Replay e ablações são evidências automáticas, não substitutos de avaliação editorial e testes humanos."
       },
       "humanPlaytested": false,
-      "discovery": "Aqui o jogador precisa descobrir que o portal serve para buscar a preparação e voltar; a chegada precisa ser alinhada na região inicial.",
+      "discovery": "Aqui o jogador precisa descobrir que a ocupação de uma placa prepara a passagem de outro tabuleiro.",
       "reasoning": {
         "used": [
-          "key",
-          "key-gate",
-          "portal"
+          "plate-gate"
         ],
-        "partialBlocks": 8,
+        "partialBlocks": 10,
         "goalDepartures": [
-          false,
+          true,
+          true,
           true
-        ],
-        "unequalLoops": 10,
-        "directionChanges": 8,
-        "earlyTurns": 3,
-        "occupiedBoxPlate": false,
-        "boxAsStopAfterSupport": false,
-        "finalApproach": [
-          false,
-          false
-        ]
-      },
-      "sweep": {
-        "status": "complete",
-        "visited": 42,
-        "resistant": true
-      },
-      "compatibility": "validated",
-      "alternatives": "Uma sequência verificada é fornecida; outras soluções podem existir.",
-      "deadEnds": "Mudanças de configuração podem exigir retornar a uma posição anterior.",
-      "decision": "retain-logical-definition",
-      "retentionReason": "Consolidar ida e volta pelo portal com a preparação permanente.",
-      "role": "revisit",
-      "prerequisiteChapters": [
-        1,
-        2,
-        3
-      ],
-      "antiSpam": {
-        "singleDirection": {
-          "tested": 4,
-          "winningDirections": []
-        },
-        "sweeps": {
-          "status": "complete",
-          "visited": 42,
-          "solves": false
-        },
-        "shortCycles": {
-          "tested": 40,
-          "winningPatterns": []
-        },
-        "biasedRandom": {
-          "runs": 12,
-          "commandsPerRun": 128,
-          "wins": 0
-        },
-        "uniformRandom": {
-          "runs": 12,
-          "commandsPerRun": 128,
-          "wins": 0
-        },
-        "interpretation": "Diagnóstico automático; ciclos curtos e acertos aleatórios não provam ausência de raciocínio. A varredura testa vitória após cada movimento."
-      },
-      "repetition": {
-        "structuralSignature": "st1-b5319ab7-415",
-        "topologySignature": "top1-5b78e195-133",
-        "globallyRotatedOrReflectedDuplicate": false
-      },
-      "curriculumReason": "Consolidar ida e volta pelo portal com a preparação permanente.",
-      "animalRoles": [
-        {
-          "board": 0,
-          "logicalAnimal": "capivara",
-          "role": {
-            "board": 0,
-            "role": "retriever-and-returner",
-            "goalRegion": [
-              12
-            ]
-          },
-          "controls": [
-            {
-              "id": "prepare",
-              "type": "key",
-              "receiverBoard": 1
-            }
-          ],
-          "goal": 12
-        },
-        {
-          "board": 1,
-          "logicalAnimal": "tuiuiu",
-          "role": {
-            "board": 1,
-            "role": "receiver-and-aligner",
-            "goalRegion": [
-              16,
-              11,
-              10,
-              6,
-              1,
-              2,
-              0,
-              3
-            ]
-          },
-          "controls": [],
-          "goal": 6
-        }
-      ],
-      "objectRoles": [
-        {
-          "board": 0,
-          "type": "keys",
-          "id": "prepare",
-          "definition": {
-            "id": "prepare",
-            "cell": 17
-          },
-          "role": "Aquisição pelo animal mantém a abertura até reiniciar.",
-          "evidenceScope": "definition-and-certified-witness; necessity requires separate audit"
-        },
-        {
-          "board": 0,
-          "type": "portals",
-          "id": "preparation-portal",
-          "definition": {
-            "id": "preparation-portal",
-            "a": 1,
-            "b": 4
-          },
-          "role": "Transporta uma vez dentro do painel e encerra o deslocamento.",
-          "evidenceScope": "definition-and-certified-witness; necessity requires separate audit"
-        },
-        {
-          "board": 1,
-          "type": "gates",
-          "id": "preparation-remote",
-          "definition": {
-            "id": "preparation-remote",
-            "from": 17,
-            "to": 16,
-            "condition": {
-              "type": "key",
-              "id": "prepare"
-            }
-          },
-          "role": {
-            "condition": {
-              "type": "key",
-              "id": "prepare"
-            },
-            "crossings": [
-              7
-            ]
-          },
-          "evidenceScope": "definition-and-certified-witness; necessity requires separate audit"
-        }
-      ],
-      "causalityReport": "tests/sintonia80-purpose-audit.json"
-    },
-    "number": 43,
-    "chapter": 3,
-    "topologySignature": "top1-5b78e195-133",
-    "originNumber": 237,
-    "origin": {
-      "kind": "curated-identical-logical-definition",
-      "catalog": "sintonia-content-2",
-      "number": 237,
-      "id": "sintonia-0237",
-      "version": 1,
-      "reason": "Consolidar ida e volta pelo portal com a preparação permanente."
-    },
-    "actorIntroduction": null
-  },
-  {
-    "id": "sintonia-0187",
-    "version": 1,
-    "rulesVersion": 1,
-    "boards": [
-      {
-        "id": "b0",
-        "animal": "capivara",
-        "rows": 5,
-        "cols": 5,
-        "walkable": [
-          1,
-          2,
-          5,
-          6,
-          7,
-          8,
-          11,
-          12,
-          13,
-          16,
-          17,
-          18
-        ],
-        "start": 11,
-        "goal": 5,
-        "boxes": [
-          {
-            "id": "box0",
-            "cell": 12
-          }
-        ],
-        "plates": [
-          {
-            "id": "weight",
-            "cell": 8
-          }
-        ],
-        "gates": [
-          {
-            "id": "weight-gate",
-            "from": 6,
-            "to": 5,
-            "condition": {
-              "type": "plate",
-              "id": "weight"
-            }
-          },
-          {
-            "id": "prepare-cut-11",
-            "from": 17,
-            "to": 18,
-            "condition": {
-              "type": "plate",
-              "id": "prepare-1"
-            }
-          },
-          {
-            "id": "prepare-cut-12",
-            "from": 12,
-            "to": 13,
-            "condition": {
-              "type": "plate",
-              "id": "prepare-1"
-            }
-          },
-          {
-            "id": "prepare-cut-13",
-            "from": 7,
-            "to": 8,
-            "condition": {
-              "type": "plate",
-              "id": "prepare-1"
-            }
-          }
-        ]
-      },
-      {
-        "id": "b1",
-        "animal": "tuiuiu",
-        "rows": 2,
-        "cols": 3,
-        "walkable": [
-          1,
-          2,
-          3,
-          4,
-          5
-        ],
-        "start": 5,
-        "goal": 1,
-        "plates": [
-          {
-            "id": "prepare-1",
-            "cell": 4
-          }
-        ],
-        "gates": [
-          {
-            "id": "helper-exit-1",
-            "from": 4,
-            "to": 1,
-            "condition": {
-              "type": "plate",
-              "id": "weight"
-            }
-          }
-        ]
-      }
-    ],
-    "mechanics": [
-      "walls",
-      "plate",
-      "box"
-    ],
-    "initialSwitches": {},
-    "initialSelectors": {},
-    "family": "support-handoff",
-    "secondaryFamilies": [
-      "wall-adjust",
-      "intermediate-stop"
-    ],
-    "name": "A face certa",
-    "lesson": "Contorne a caixa para mudar a direção do empurrão antes de preparar o apoio.",
-    "discovery": "Aqui o jogador precisa descobrir que alcançar a face correta da caixa vem antes de sustentar a passagem.",
-    "hints": [
-      "Compare a posição da placa com as faces da caixa.",
-      "Prepare o contorno: empurrar sempre na mesma direção não alcança esse apoio.",
-      "Depois de apoiar, preserve a passagem que permite sair sem retirar a caixa."
-    ],
-    "generatorVersion": 2,
-    "contentRevision": "sintonia-content-3",
-    "seed": "sintonia-campaign-v2:0187:0",
-    "difficulty": 2,
-    "solution": [
-      "down",
-      "right",
-      "up",
-      "down",
-      "left",
-      "up",
-      "up",
-      "right",
-      "down",
-      "up",
-      "left",
-      "left"
-    ],
-    "signature": "st1-94d35624-767",
-    "prerequisites": [
-      "walls",
-      "plate",
-      "box"
-    ],
-    "introduction": [],
-    "parameters": {
-      "difficulty": 2,
-      "animals": 2,
-      "primary": "box",
-      "secondary": null,
-      "role": "compact",
-      "pattern": "turn-and-support"
-    },
-    "certificate": {
-      "method": "breadth-first-witness-and-engine-replay",
-      "rulesVersion": 1,
-      "commands": 12,
-      "optimal": true,
-      "visited": 291,
-      "replayed": true,
-      "engine": "unchanged-rules-1"
-    },
-    "editorial": {
-      "source": "role-first-structure-and-automatic-curation",
-      "design": {
-        "pattern": "turn-and-support",
-        "name": "A face certa",
-        "lesson": "Contorne a caixa para mudar a direção do empurrão antes de preparar o apoio.",
-        "discovery": "Aqui o jogador precisa descobrir que alcançar a face correta da caixa vem antes de sustentar a passagem.",
-        "hints": [
-          "Compare a posição da placa com as faces da caixa.",
-          "Prepare o contorno: empurrar sempre na mesma direção não alcança esse apoio.",
-          "Depois de apoiar, preserve a passagem que permite sair sem retirar a caixa."
-        ],
-        "boxRoles": [
-          "reorientar",
-          "sustentar"
-        ],
-        "roles": [
-          "Preparar o objeto, manter acesso e concluir a própria chegada.",
-          "Preparar o acesso 1, depois abandonar a placa graças ao apoio da caixa."
-        ]
-      },
-      "purpose": {
-        "valid": true,
-        "won": true,
-        "evidenceScope": "supplied-command-sequence",
-        "commands": 12,
-        "boxes": [
-          {
-            "id": "box0",
-            "origin": {
-              "id": "box0",
-              "board": 0,
-              "cell": 12
-            },
-            "final": {
-              "id": "box0",
-              "board": 0,
-              "cell": 8
-            },
-            "pushes": [
-              {
-                "command": 3,
-                "direction": "up",
-                "board": 0,
-                "from": 12,
-                "to": 7
-              },
-              {
-                "command": 8,
-                "direction": "right",
-                "board": 0,
-                "from": 7,
-                "to": 8
-              }
-            ],
-            "directionChanges": 1,
-            "deliveries": [],
-            "postDeliveryPushes": [],
-            "plateEntries": [
-              {
-                "command": 8,
-                "plateId": "weight"
-              }
-            ],
-            "plateReleases": [],
-            "supportUses": [
-              {
-                "command": 12,
-                "plateId": "weight",
-                "gateId": "weight-gate",
-                "receiverBoard": 0
-              }
-            ],
-            "observedRoles": [
-              "directional-reposition",
-              "gate-support"
-            ]
-          }
-        ],
-        "dependencies": [
-          {
-            "gateId": "weight-gate",
-            "receiverBoard": 0,
-            "condition": {
-              "type": "plate",
-              "id": "weight"
-            },
-            "controllers": [
-              {
-                "type": "plate",
-                "id": "weight",
-                "board": 0,
-                "cell": 8
-              }
-            ],
-            "crossingCommands": [
-              12
-            ]
-          },
-          {
-            "gateId": "prepare-cut-11",
-            "receiverBoard": 0,
-            "condition": {
-              "type": "plate",
-              "id": "prepare-1"
-            },
-            "controllers": [
-              {
-                "type": "plate",
-                "id": "prepare-1",
-                "board": 1,
-                "cell": 4
-              }
-            ],
-            "crossingCommands": []
-          },
-          {
-            "gateId": "prepare-cut-12",
-            "receiverBoard": 0,
-            "condition": {
-              "type": "plate",
-              "id": "prepare-1"
-            },
-            "controllers": [
-              {
-                "type": "plate",
-                "id": "prepare-1",
-                "board": 1,
-                "cell": 4
-              }
-            ],
-            "crossingCommands": []
-          },
-          {
-            "gateId": "prepare-cut-13",
-            "receiverBoard": 0,
-            "condition": {
-              "type": "plate",
-              "id": "prepare-1"
-            },
-            "controllers": [
-              {
-                "type": "plate",
-                "id": "prepare-1",
-                "board": 1,
-                "cell": 4
-              }
-            ],
-            "crossingCommands": [
-              8
-            ]
-          },
-          {
-            "gateId": "helper-exit-1",
-            "receiverBoard": 1,
-            "condition": {
-              "type": "plate",
-              "id": "weight"
-            },
-            "controllers": [
-              {
-                "type": "plate",
-                "id": "weight",
-                "board": 0,
-                "cell": 8
-              }
-            ],
-            "crossingCommands": []
-          }
-        ],
-        "boardRoles": [
-          {
-            "board": 0,
-            "moved": 12,
-            "waited": 0,
-            "goalDepartures": 0
-          },
-          {
-            "board": 1,
-            "moved": 6,
-            "waited": 6,
-            "goalDepartures": 0
-          }
-        ],
-        "caveat": "Uso neste certificado não prova necessidade. Consulte tests/sintonia-purpose-audit.json para ablações e limites."
-      },
-      "rubric": {
-        "status": "human-review-pending",
-        "dimensions": [
-          "purpose",
-          "discovery",
-          "interdependence",
-          "causal-clarity",
-          "spatial-economy",
-          "variety"
-        ],
-        "scores": null,
-        "humanPlaytesting": false,
-        "reason": "Replay e ablações são evidências automáticas, não substitutos de avaliação editorial e testes humanos."
-      },
-      "humanPlaytested": false,
-      "discovery": "Aqui o jogador precisa descobrir que alcançar a face correta da caixa vem antes de sustentar a passagem.",
-      "reasoning": {
-        "used": [
-          "box-support-gate",
-          "plate-gate",
-          "push"
-        ],
-        "partialBlocks": 6,
-        "goalDepartures": [
-          false,
-          false
-        ],
-        "unequalLoops": 12,
-        "directionChanges": 9,
-        "earlyTurns": 5,
-        "occupiedBoxPlate": true,
-        "boxAsStopAfterSupport": false,
-        "finalApproach": [
-          false,
-          true
-        ]
-      },
-      "sweep": {
-        "status": "complete",
-        "visited": 92,
-        "resistant": true
-      },
-      "compatibility": "validated",
-      "alternatives": "Uma sequência verificada é fornecida; outras soluções podem existir.",
-      "deadEnds": "A fase permite estados sem saída; desfazer e reiniciar são livres.",
-      "decision": "retain-logical-definition",
-      "retentionReason": "Retomar orientação e apoio da caixa entre problemas de portal.",
-      "role": "deep",
-      "prerequisiteChapters": [
-        1,
-        2,
-        3
-      ],
-      "antiSpam": {
-        "singleDirection": {
-          "tested": 4,
-          "winningDirections": []
-        },
-        "sweeps": {
-          "status": "complete",
-          "visited": 92,
-          "solves": false
-        },
-        "shortCycles": {
-          "tested": 40,
-          "winningPatterns": []
-        },
-        "biasedRandom": {
-          "runs": 12,
-          "commandsPerRun": 128,
-          "wins": 0
-        },
-        "uniformRandom": {
-          "runs": 12,
-          "commandsPerRun": 128,
-          "wins": 0
-        },
-        "interpretation": "Diagnóstico automático; ciclos curtos e acertos aleatórios não provam ausência de raciocínio. A varredura testa vitória após cada movimento."
-      },
-      "repetition": {
-        "structuralSignature": "st1-94d35624-767",
-        "topologySignature": "top1-38008bbd-115",
-        "globallyRotatedOrReflectedDuplicate": false
-      },
-      "curriculumReason": "Retomar orientação e apoio da caixa entre problemas de portal.",
-      "animalRoles": [
-        {
-          "board": 0,
-          "logicalAnimal": "capivara",
-          "role": "Preparar o objeto, manter acesso e concluir a própria chegada.",
-          "controls": [
-            {
-              "id": "weight",
-              "type": "plate",
-              "receiverBoard": 0
-            },
-            {
-              "id": "weight",
-              "type": "plate",
-              "receiverBoard": 1
-            }
-          ],
-          "goal": 5
-        },
-        {
-          "board": 1,
-          "logicalAnimal": "tuiuiu",
-          "role": "Preparar o acesso 1, depois abandonar a placa graças ao apoio da caixa.",
-          "controls": [
-            {
-              "id": "prepare-1",
-              "type": "plate",
-              "receiverBoard": 0
-            },
-            {
-              "id": "prepare-1",
-              "type": "plate",
-              "receiverBoard": 0
-            },
-            {
-              "id": "prepare-1",
-              "type": "plate",
-              "receiverBoard": 0
-            }
-          ],
-          "goal": 1
-        }
-      ],
-      "objectRoles": [
-        {
-          "board": 0,
-          "type": "boxes",
-          "id": "box0",
-          "definition": {
-            "id": "box0",
-            "cell": 12
-          },
-          "role": [
-            "reorientar",
-            "sustentar"
-          ],
-          "evidenceScope": "definition-and-certified-witness; necessity requires separate audit"
-        },
-        {
-          "board": 0,
-          "type": "plates",
-          "id": "weight",
-          "definition": {
-            "id": "weight",
-            "cell": 8
-          },
-          "role": "Ocupação por animal ou caixa controla a passagem no estado anterior ao comando.",
-          "evidenceScope": "definition-and-certified-witness; necessity requires separate audit"
-        },
-        {
-          "board": 0,
-          "type": "gates",
-          "id": "weight-gate",
-          "definition": {
-            "id": "weight-gate",
-            "from": 6,
-            "to": 5,
-            "condition": {
-              "type": "plate",
-              "id": "weight"
-            }
-          },
-          "role": {
-            "condition": {
-              "type": "plate",
-              "id": "weight"
-            },
-            "crossings": [
-              12
-            ]
-          },
-          "evidenceScope": "definition-and-certified-witness; necessity requires separate audit"
-        },
-        {
-          "board": 0,
-          "type": "gates",
-          "id": "prepare-cut-11",
-          "definition": {
-            "id": "prepare-cut-11",
-            "from": 17,
-            "to": 18,
-            "condition": {
-              "type": "plate",
-              "id": "prepare-1"
-            }
-          },
-          "role": {
-            "condition": {
-              "type": "plate",
-              "id": "prepare-1"
-            },
-            "crossings": []
-          },
-          "evidenceScope": "definition-and-certified-witness; necessity requires separate audit"
-        },
-        {
-          "board": 0,
-          "type": "gates",
-          "id": "prepare-cut-12",
-          "definition": {
-            "id": "prepare-cut-12",
-            "from": 12,
-            "to": 13,
-            "condition": {
-              "type": "plate",
-              "id": "prepare-1"
-            }
-          },
-          "role": {
-            "condition": {
-              "type": "plate",
-              "id": "prepare-1"
-            },
-            "crossings": []
-          },
-          "evidenceScope": "definition-and-certified-witness; necessity requires separate audit"
-        },
-        {
-          "board": 0,
-          "type": "gates",
-          "id": "prepare-cut-13",
-          "definition": {
-            "id": "prepare-cut-13",
-            "from": 7,
-            "to": 8,
-            "condition": {
-              "type": "plate",
-              "id": "prepare-1"
-            }
-          },
-          "role": {
-            "condition": {
-              "type": "plate",
-              "id": "prepare-1"
-            },
-            "crossings": [
-              8
-            ]
-          },
-          "evidenceScope": "definition-and-certified-witness; necessity requires separate audit"
-        },
-        {
-          "board": 1,
-          "type": "plates",
-          "id": "prepare-1",
-          "definition": {
-            "id": "prepare-1",
-            "cell": 4
-          },
-          "role": "Ocupação por animal ou caixa controla a passagem no estado anterior ao comando.",
-          "evidenceScope": "definition-and-certified-witness; necessity requires separate audit"
-        },
-        {
-          "board": 1,
-          "type": "gates",
-          "id": "helper-exit-1",
-          "definition": {
-            "id": "helper-exit-1",
-            "from": 4,
-            "to": 1,
-            "condition": {
-              "type": "plate",
-              "id": "weight"
-            }
-          },
-          "role": {
-            "condition": {
-              "type": "plate",
-              "id": "weight"
-            },
-            "crossings": []
-          },
-          "evidenceScope": "definition-and-certified-witness; necessity requires separate audit"
-        }
-      ],
-      "causalityReport": "tests/sintonia80-purpose-audit.json"
-    },
-    "number": 44,
-    "chapter": 3,
-    "topologySignature": "top1-38008bbd-115",
-    "originNumber": 187,
-    "origin": {
-      "kind": "curated-identical-logical-definition",
-      "catalog": "sintonia-content-2",
-      "number": 187,
-      "id": "sintonia-0187",
-      "version": 1,
-      "reason": "Retomar orientação e apoio da caixa entre problemas de portal."
-    },
-    "actorIntroduction": null
-  },
-  {
-    "id": "sintonia-0231",
-    "version": 1,
-    "rulesVersion": 1,
-    "boards": [
-      {
-        "id": "b0",
-        "animal": "capivara",
-        "rows": 6,
-        "cols": 3,
-        "walkable": [
-          0,
-          1,
-          2,
-          3,
-          4,
-          12,
-          13,
-          14,
-          15,
-          16,
-          17
-        ],
-        "start": 0,
-        "goal": 2,
-        "portals": [
-          {
-            "id": "preparation-portal",
-            "a": 3,
-            "b": 12
-          }
-        ],
-        "keys": [
-          {
-            "id": "prepare",
-            "cell": 17
-          }
-        ]
-      },
-      {
-        "id": "b1",
-        "animal": "tuiuiu",
-        "rows": 4,
-        "cols": 4,
-        "walkable": [
-          1,
-          2,
-          3,
-          7,
-          8,
-          9,
-          10,
-          11,
-          14
-        ],
-        "start": 8,
-        "goal": 3,
-        "gates": [
-          {
-            "id": "preparation-remote",
-            "from": 9,
-            "to": 10,
-            "condition": {
-              "type": "key",
-              "id": "prepare"
-            }
-          },
-          {
-            "id": "contributor-gate-2",
-            "from": 9,
-            "to": 8,
-            "condition": {
-              "type": "key",
-              "id": "contributor-2"
-            }
-          }
-        ]
-      },
-      {
-        "id": "b2",
-        "animal": "bemtevi",
-        "rows": 3,
-        "cols": 3,
-        "walkable": [
-          0,
-          1,
-          2,
-          3,
-          5,
-          6,
-          7,
-          8
-        ],
-        "start": 3,
-        "goal": 1,
-        "keys": [
-          {
-            "id": "contributor-2",
-            "cell": 8
-          }
-        ]
-      }
-    ],
-    "mechanics": [
-      "walls",
-      "key",
-      "portal"
-    ],
-    "initialSwitches": {},
-    "initialSelectors": {},
-    "family": "waiting-place",
-    "secondaryFamilies": [
-      "wall-adjust",
-      "priority-change"
-    ],
-    "name": "Do outro lado",
-    "lesson": "Use a entrada e a saída do portal para preparar o alinhamento conjunto.",
-    "discovery": "Aqui o jogador precisa descobrir que o portal serve para buscar a preparação e voltar; a chegada precisa ser alinhada na região inicial.",
-    "hints": [
-      "Os dois portais com o mesmo símbolo formam um par neste tabuleiro.",
-      "Entrar no portal encerra esse deslocamento na saída; prepare a posição dos outros animais antes da entrada.",
-      "Na configuração inicial, comece para baixo; observe quem avança e quem espera."
-    ],
-    "generatorVersion": 2,
-    "contentRevision": "sintonia-content-3",
-    "seed": "sintonia-campaign-v2:0231:0",
-    "difficulty": 2,
-    "solution": [
-      "down",
-      "right",
-      "right",
-      "down",
-      "left",
-      "left",
-      "up",
-      "right",
-      "right",
-      "up",
-      "right",
-      "up",
-      "up"
-    ],
-    "signature": "st1-042ca0ad-612",
-    "prerequisites": [
-      "walls",
-      "key",
-      "portal"
-    ],
-    "introduction": [],
-    "parameters": {
-      "difficulty": 3,
-      "animals": 3,
-      "primary": "portal",
-      "secondary": null,
-      "role": "mix",
-      "pattern": "portal-retrieve-and-return"
-    },
-    "certificate": {
-      "method": "breadth-first-witness-and-engine-replay",
-      "rulesVersion": 1,
-      "commands": 13,
-      "optimal": true,
-      "visited": 797,
-      "replayed": true,
-      "engine": "unchanged-rules-1"
-    },
-    "editorial": {
-      "source": "role-first-structure-and-automatic-curation",
-      "design": {
-        "pattern": "portal-retrieve-and-return",
-        "discovery": "o portal serve para buscar a preparação e voltar; a chegada precisa ser alinhada na região inicial",
-        "roles": [
-          {
-            "board": 0,
-            "role": "retriever-and-returner",
-            "goalRegion": [
-              2
-            ]
-          },
-          {
-            "board": 1,
-            "role": "receiver-and-aligner",
-            "goalRegion": [
-              10,
-              14,
-              11,
-              7,
-              3,
-              2,
-              1
-            ]
-          },
-          {
-            "board": 2,
-            "role": "independent-preparer-and-aligner",
-            "control": 8,
-            "goalRegion": [
-              0,
-              6,
-              1,
-              7,
-              2,
-              5
-            ]
-          }
-        ],
-        "structures": [
-          {
-            "board": 0,
-            "role": "reorganize-access",
-            "cells": [
-              3,
-              12
-            ]
-          },
-          {
-            "board": 0,
-            "role": "prepare",
-            "cells": [
-              17
-            ]
-          },
-          {
-            "board": 0,
-            "role": "return-home",
-            "cells": [
-              2
-            ]
-          },
-          {
-            "board": 2,
-            "role": "prepare",
-            "cells": [
-              8
-            ]
-          },
-          {
-            "board": 1,
-            "role": "contributor-exit",
-            "edge": [
-              9,
-              8
-            ]
-          }
-        ],
-        "dependencies": [
-          {
-            "fromBoard": 0,
-            "toBoard": 1,
-            "control": "prepare",
-            "role": "unlock-recipient"
-          },
-          {
-            "fromBoard": 2,
-            "toBoard": 1,
-            "control": "contributor-2",
-            "role": "prepare-separate-cut"
-          }
-        ],
-        "order": [
-          "enter-portal",
-          "retrieve-key",
-          "return-through-portal",
-          "joint-arrival"
-        ],
-        "counterfactual": "Without the portal the key component is disconnected. Fixing the key gate open removes the need to retrieve and return.",
-        "proofStatus": "structural-design-hypothesis; replay and budgeted ablations recorded separately"
-      },
-      "purpose": {
-        "valid": true,
-        "won": true,
-        "evidenceScope": "supplied-command-sequence",
-        "commands": 13,
-        "boxes": [],
-        "dependencies": [
-          {
-            "gateId": "preparation-remote",
-            "receiverBoard": 1,
-            "condition": {
-              "type": "key",
-              "id": "prepare"
-            },
-            "controllers": [
-              {
-                "type": "key",
-                "id": "prepare",
-                "board": 0,
-                "cell": 17
-              }
-            ],
-            "crossingCommands": [
-              9
-            ]
-          },
-          {
-            "gateId": "contributor-gate-2",
-            "receiverBoard": 1,
-            "condition": {
-              "type": "key",
-              "id": "contributor-2"
-            },
-            "controllers": [
-              {
-                "type": "key",
-                "id": "contributor-2",
-                "board": 2,
-                "cell": 8
-              }
-            ],
-            "crossingCommands": [
-              8
-            ]
-          }
-        ],
-        "boardRoles": [
-          {
-            "board": 0,
-            "moved": 10,
-            "waited": 3,
-            "goalDepartures": 0
-          },
-          {
-            "board": 1,
-            "moved": 5,
-            "waited": 8,
-            "goalDepartures": 0
-          },
-          {
-            "board": 2,
-            "moved": 8,
-            "waited": 5,
-            "goalDepartures": 0
-          }
-        ],
-        "caveat": "Uso neste certificado não prova necessidade. Consulte tests/sintonia-purpose-audit.json para ablações e limites."
-      },
-      "rubric": {
-        "status": "human-review-pending",
-        "dimensions": [
-          "purpose",
-          "discovery",
-          "interdependence",
-          "causal-clarity",
-          "spatial-economy",
-          "variety"
-        ],
-        "scores": null,
-        "humanPlaytesting": false,
-        "reason": "Replay e ablações são evidências automáticas, não substitutos de avaliação editorial e testes humanos."
-      },
-      "humanPlaytested": false,
-      "discovery": "Aqui o jogador precisa descobrir que o portal serve para buscar a preparação e voltar; a chegada precisa ser alinhada na região inicial.",
-      "reasoning": {
-        "used": [
-          "key",
-          "key-gate",
-          "portal"
-        ],
-        "partialBlocks": 12,
-        "goalDepartures": [
-          false,
-          false,
-          false
         ],
         "unequalLoops": 22,
-        "directionChanges": 8,
-        "earlyTurns": 5,
+        "directionChanges": 12,
+        "earlyTurns": 6,
         "occupiedBoxPlate": false,
         "boxAsStopAfterSupport": false,
         "finalApproach": [
-          true,
           false,
-          true
+          false,
+          false
         ]
       },
       "sweep": {
         "status": "complete",
-        "visited": 42,
+        "visited": 15,
         "resistant": true
       },
       "compatibility": "validated",
       "alternatives": "Uma sequência verificada é fornecida; outras soluções podem existir.",
       "deadEnds": "Mudanças de configuração podem exigir retornar a uma posição anterior.",
-      "decision": "retain-logical-definition",
-      "retentionReason": "Trio com portal: cada acesso possui preparação conhecida.",
-      "role": "synthesis",
-      "prerequisiteChapters": [
-        1,
-        2,
-        3
-      ],
+      "role": "varied",
+      "decision": "recompose",
+      "curriculumReason": "O terceiro animal prepara a passagem de outro painel.",
+      "retentionReason": "O terceiro animal prepara a passagem de outro painel.",
       "antiSpam": {
         "singleDirection": {
           "tested": 4,
@@ -15492,7 +13873,7 @@ export const CAMPAIGN = [
         },
         "sweeps": {
           "status": "complete",
-          "visited": 42,
+          "visited": 15,
           "solves": false
         },
         "shortCycles": {
@@ -15500,249 +13881,137 @@ export const CAMPAIGN = [
           "winningPatterns": []
         },
         "biasedRandom": {
-          "runs": 12,
+          "runs": 24,
           "commandsPerRun": 128,
           "wins": 0
         },
         "uniformRandom": {
-          "runs": 12,
+          "runs": 24,
           "commandsPerRun": 128,
-          "wins": 1
+          "wins": 0
         },
         "interpretation": "Diagnóstico automático; ciclos curtos e acertos aleatórios não provam ausência de raciocínio. A varredura testa vitória após cada movimento."
       },
-      "repetition": {
-        "structuralSignature": "st1-042ca0ad-612",
-        "topologySignature": "top1-de4e1bbb-176",
-        "globallyRotatedOrReflectedDuplicate": false
-      },
-      "curriculumReason": "Trio com portal: cada acesso possui preparação conhecida.",
-      "animalRoles": [
+      "necessity": [
         {
-          "board": 0,
-          "logicalAnimal": "capivara",
-          "role": {
-            "board": 0,
-            "role": "retriever-and-returner",
-            "goalRegion": [
-              2
-            ]
+          "avoid": {
+            "type": "helper-participation",
+            "board": 0
           },
-          "controls": [
-            {
-              "id": "prepare",
-              "type": "key",
-              "receiverBoard": 1
-            }
-          ],
-          "goal": 2
+          "result": {
+            "scope": "all-winning-solutions-avoiding-event",
+            "optimalScope": "avoiding-predicate-only",
+            "avoid": {
+              "type": "helper-participation",
+              "board": 0
+            },
+            "budget": {
+              "maxStates": 90000,
+              "maxMs": 12000,
+              "maxDepth": null
+            },
+            "status": "unsolvable",
+            "visited": 151,
+            "optimal": false,
+            "exhaustive": true
+          }
         },
         {
-          "board": 1,
-          "logicalAnimal": "tuiuiu",
-          "role": {
-            "board": 1,
-            "role": "receiver-and-aligner",
-            "goalRegion": [
-              10,
-              14,
-              11,
-              7,
-              3,
-              2,
-              1
-            ]
+          "avoid": {
+            "type": "helper-participation",
+            "board": 2
           },
-          "controls": [],
-          "goal": 3
-        },
-        {
-          "board": 2,
-          "logicalAnimal": "bemtevi",
-          "role": {
-            "board": 2,
-            "role": "independent-preparer-and-aligner",
-            "control": 8,
-            "goalRegion": [
-              0,
-              6,
-              1,
-              7,
-              2,
-              5
-            ]
-          },
-          "controls": [
-            {
-              "id": "contributor-2",
-              "type": "key",
-              "receiverBoard": 1
-            }
-          ],
-          "goal": 1
+          "result": {
+            "scope": "all-winning-solutions-avoiding-event",
+            "optimalScope": "avoiding-predicate-only",
+            "avoid": {
+              "type": "helper-participation",
+              "board": 2
+            },
+            "budget": {
+              "maxStates": 90000,
+              "maxMs": 12000,
+              "maxDepth": null
+            },
+            "status": "unsolvable",
+            "visited": 89,
+            "optimal": false,
+            "exhaustive": true
+          }
         }
       ],
-      "objectRoles": [
-        {
-          "board": 0,
-          "type": "keys",
-          "id": "prepare",
-          "definition": {
-            "id": "prepare",
-            "cell": 17
-          },
-          "role": "Aquisição pelo animal mantém a abertura até reiniciar.",
-          "evidenceScope": "definition-and-certified-witness; necessity requires separate audit"
-        },
-        {
-          "board": 0,
-          "type": "portals",
-          "id": "preparation-portal",
-          "definition": {
-            "id": "preparation-portal",
-            "a": 3,
-            "b": 12
-          },
-          "role": "Transporta uma vez dentro do painel e encerra o deslocamento.",
-          "evidenceScope": "definition-and-certified-witness; necessity requires separate audit"
-        },
-        {
-          "board": 1,
-          "type": "gates",
-          "id": "preparation-remote",
-          "definition": {
-            "id": "preparation-remote",
-            "from": 9,
-            "to": 10,
-            "condition": {
-              "type": "key",
-              "id": "prepare"
-            }
-          },
-          "role": {
-            "condition": {
-              "type": "key",
-              "id": "prepare"
-            },
-            "crossings": [
-              9
-            ]
-          },
-          "evidenceScope": "definition-and-certified-witness; necessity requires separate audit"
-        },
-        {
-          "board": 1,
-          "type": "gates",
-          "id": "contributor-gate-2",
-          "definition": {
-            "id": "contributor-gate-2",
-            "from": 9,
-            "to": 8,
-            "condition": {
-              "type": "key",
-              "id": "contributor-2"
-            }
-          },
-          "role": {
-            "condition": {
-              "type": "key",
-              "id": "contributor-2"
-            },
-            "crossings": [
-              8
-            ]
-          },
-          "evidenceScope": "definition-and-certified-witness; necessity requires separate audit"
-        },
-        {
-          "board": 2,
-          "type": "keys",
-          "id": "contributor-2",
-          "definition": {
-            "id": "contributor-2",
-            "cell": 8
-          },
-          "role": "Aquisição pelo animal mantém a abertura até reiniciar.",
-          "evidenceScope": "definition-and-certified-witness; necessity requires separate audit"
-        }
-      ],
-      "causalityReport": "tests/sintonia80-purpose-audit.json"
+      "causalityReport": "tests/sintonia-v4-editorial.json"
     },
     "number": 45,
     "chapter": 3,
-    "topologySignature": "top1-de4e1bbb-176",
-    "originNumber": 231,
+    "originNumber": 45,
     "origin": {
-      "kind": "curated-identical-logical-definition",
-      "catalog": "sintonia-content-2",
-      "number": 231,
+      "kind": "recomposed-removed-mechanics",
+      "catalog": "sintonia-content-3",
       "id": "sintonia-0231",
+      "number": 45,
       "version": 1,
-      "reason": "Trio com portal: cada acesso possui preparação conhecida."
+      "reason": "O terceiro animal prepara a passagem de outro painel."
     },
-    "actorIntroduction": null
+    "actorIntroduction": null,
+    "topologySignature": "top1-0ad9a3ce-163"
   },
   {
-    "id": "sintonia-0268",
+    "id": "sintonia80-0046-v4",
     "version": 1,
     "rulesVersion": 1,
     "boards": [
       {
         "id": "b0",
         "animal": "capivara",
-        "rows": 4,
+        "rows": 3,
         "cols": 4,
         "walkable": [
           0,
-          1,
           2,
-          3,
           4,
+          5,
+          6,
+          7,
           8,
-          9,
-          10,
-          11,
-          13
+          10
         ],
-        "start": 10,
-        "goal": 2,
+        "start": 2,
+        "goal": 0,
         "keys": [
           {
             "id": "prepare",
-            "cell": 13
+            "cell": 7
           }
         ],
-        "gates": [],
-        "oneWays": [
-          {
-            "from": 4,
-            "to": 0
-          }
-        ]
+        "gates": []
       },
       {
         "id": "b1",
         "animal": "tuiuiu",
-        "rows": 5,
-        "cols": 5,
+        "rows": 4,
+        "cols": 4,
         "walkable": [
           0,
-          1,
           2,
+          3,
+          4,
+          5,
           6,
+          8,
           10,
           11,
           12,
           13,
           15
         ],
-        "start": 10,
-        "goal": 6,
+        "start": 13,
+        "goal": 2,
         "gates": [
           {
             "id": "preparation-remote",
-            "from": 11,
-            "to": 6,
+            "from": 12,
+            "to": 8,
             "condition": {
               "type": "key",
               "id": "prepare"
@@ -15753,91 +14022,93 @@ export const CAMPAIGN = [
     ],
     "mechanics": [
       "walls",
-      "key",
-      "oneway"
+      "key"
     ],
     "initialSwitches": {},
     "initialSelectors": {},
-    "family": "preserve-access",
+    "family": "priority-change",
     "secondaryFamilies": [
-      "unequal-loop",
-      "priority-change"
+      "waiting-place",
+      "wall-adjust"
     ],
-    "name": "Escolha a travessia",
-    "lesson": "A seta na divisória permite atravessar apenas no sentido indicado. Ela não move o animal sozinha. Prepare os outros caminhos antes de cruzar a passagem de sentido único.",
-    "discovery": "Aqui o jogador precisa descobrir que o controle no desvio precisa estar preparado antes de abandonar seu acesso.",
+    "name": "Caminho liberado",
+    "lesson": "Recolha a chave antes de coordenar a travessia da cancela.",
+    "discovery": "Aqui o jogador precisa descobrir que o desvio de preparação libera o outro animal, mudando qual caminho precisa de atenção.",
     "hints": [
-      "A seta está na divisória: ela permite cruzar somente no sentido indicado.",
-      "Confira o alinhamento dos outros animais antes de atravessar, porque o caminho de volta é limitado.",
-      "Na configuração inicial, comece para a esquerda; observe quem avança e quem espera."
+      "Encontre a chave e a cancela que compartilham o símbolo.",
+      "Termine um movimento sobre a chave; depois, prepare o outro percurso com a passagem liberada.",
+      "Na configuração inicial, comece para baixo; observe quem avança e quem espera."
     ],
-    "generatorVersion": 2,
-    "contentRevision": "sintonia-content-3",
-    "seed": "sintonia-campaign-v2:0268:0",
+    "generatorVersion": 3,
+    "contentRevision": "sintonia-content-4",
+    "seed": "sintonia-content4:46:0",
     "difficulty": 3,
     "solution": [
-      "left",
       "down",
-      "up",
+      "right",
+      "left",
       "left",
       "up",
+      "left",
       "up",
       "right",
-      "up",
-      "right"
+      "right",
+      "up"
     ],
-    "signature": "st1-b34cdb4b-381",
+    "signature": "st1-7ae286fd-350",
     "prerequisites": [
       "walls",
       "key"
     ],
-    "introduction": [
-      "oneway"
-    ],
+    "introduction": [],
     "parameters": {
       "difficulty": 3,
       "animals": 2,
-      "primary": "oneway",
+      "primary": "key",
       "secondary": null,
-      "role": "compact",
-      "pattern": "oneway-prepare-before-commit"
+      "role": "varied",
+      "pattern": "key-fork-before-exit"
     },
     "certificate": {
       "method": "breadth-first-witness-and-engine-replay",
       "rulesVersion": 1,
-      "commands": 9,
+      "commands": 10,
       "optimal": true,
-      "visited": 131,
+      "visited": 106,
       "replayed": true,
-      "engine": "unchanged-rules-1"
+      "engine": "unchanged-rules-1",
+      "firstVictoryAt": 10
     },
     "editorial": {
       "source": "role-first-structure-and-automatic-curation",
       "design": {
         "preparationControl": "key",
-        "pattern": "oneway-prepare-before-commit",
-        "discovery": "o controle no desvio precisa estar preparado antes de abandonar seu acesso",
+        "pattern": "key-fork-before-exit",
+        "discovery": "o desvio de preparação libera o outro animal, mudando qual caminho precisa de atenção",
         "roles": [
           {
             "board": 0,
             "role": "preparer-and-committer",
-            "control": 13,
-            "commit": [
-              4,
-              0
-            ],
+            "control": 7,
+            "commit": null,
             "goalRegion": [
-              2
+              0
             ]
           },
           {
             "board": 1,
             "role": "receiver-and-aligner",
             "goalRegion": [
+              8,
+              4,
+              5,
+              0,
               6,
-              1,
+              10,
               2,
-              0
+              11,
+              3,
+              15
             ]
           }
         ],
@@ -15846,33 +14117,33 @@ export const CAMPAIGN = [
             "board": 0,
             "role": "prepare",
             "cells": [
-              10,
-              9,
-              13
+              2,
+              6,
+              7
             ]
           },
           {
             "board": 0,
-            "role": "preserve-access",
+            "role": "separate",
             "edge": [
-              4,
-              0
+              5,
+              4
             ]
           },
           {
             "board": 0,
             "role": "exit",
             "edge": [
-              1,
-              2
+              4,
+              0
             ]
           },
           {
             "board": 1,
             "role": "remote-exit",
             "edge": [
-              11,
-              6
+              12,
+              8
             ]
           }
         ],
@@ -15885,19 +14156,19 @@ export const CAMPAIGN = [
           }
         ],
         "order": [
-          "prepare-control",
-          "commit-access",
-          "cross-prepared-exits",
+          "visit-side-branch",
+          "leave-control-with-configuration",
+          "cross-exits",
           "joint-arrival"
         ],
-        "counterfactual": "Crossing before preparation strands the control behind a one-way edge or collapsed bridge; verify the specific prefix on the final definition.",
+        "counterfactual": "Opening the preparation gate removes the obligation to visit the side branch.",
         "proofStatus": "structural-design-hypothesis; replay and budgeted ablations recorded separately"
       },
       "purpose": {
         "valid": true,
         "won": true,
         "evidenceScope": "supplied-command-sequence",
-        "commands": 9,
+        "commands": 10,
         "boxes": [],
         "dependencies": [
           {
@@ -15912,25 +14183,25 @@ export const CAMPAIGN = [
                 "type": "key",
                 "id": "prepare",
                 "board": 0,
-                "cell": 13
+                "cell": 7
               }
             ],
             "crossingCommands": [
-              8
+              5
             ]
           }
         ],
         "boardRoles": [
           {
             "board": 0,
-            "moved": 8,
-            "waited": 1,
+            "moved": 6,
+            "waited": 4,
             "goalDepartures": 0
           },
           {
             "board": 1,
-            "moved": 4,
-            "waited": 5,
+            "moved": 6,
+            "waited": 4,
             "goalDepartures": 0
           }
         ],
@@ -15951,26 +14222,270 @@ export const CAMPAIGN = [
         "reason": "Replay e ablações são evidências automáticas, não substitutos de avaliação editorial e testes humanos."
       },
       "humanPlaytested": false,
-      "discovery": "Aqui o jogador precisa descobrir que o controle no desvio precisa estar preparado antes de abandonar seu acesso.",
+      "discovery": "Aqui o jogador precisa descobrir que o desvio de preparação libera o outro animal, mudando qual caminho precisa de atenção.",
       "reasoning": {
         "used": [
           "key",
-          "key-gate",
-          "oneway"
+          "key-gate"
         ],
-        "partialBlocks": 6,
+        "partialBlocks": 8,
         "goalDepartures": [
           false,
           false
         ],
-        "unequalLoops": 10,
+        "unequalLoops": 5,
         "directionChanges": 7,
-        "earlyTurns": 3,
+        "earlyTurns": 4,
         "occupiedBoxPlate": false,
         "boxAsStopAfterSupport": false,
         "finalApproach": [
+          true,
+          false
+        ]
+      },
+      "sweep": {
+        "status": "complete",
+        "visited": 4,
+        "resistant": true
+      },
+      "compatibility": "validated",
+      "alternatives": "Uma sequência verificada é fornecida; outras soluções podem existir.",
+      "deadEnds": "Mudanças de configuração podem exigir retornar a uma posição anterior.",
+      "role": "varied",
+      "decision": "recompose",
+      "curriculumReason": "Separar preparação permanente de posicionamento final.",
+      "retentionReason": "Separar preparação permanente de posicionamento final.",
+      "antiSpam": {
+        "singleDirection": {
+          "tested": 4,
+          "winningDirections": []
+        },
+        "sweeps": {
+          "status": "complete",
+          "visited": 4,
+          "solves": false
+        },
+        "shortCycles": {
+          "tested": 40,
+          "winningPatterns": []
+        },
+        "biasedRandom": {
+          "runs": 24,
+          "commandsPerRun": 128,
+          "wins": 1
+        },
+        "uniformRandom": {
+          "runs": 24,
+          "commandsPerRun": 128,
+          "wins": 10
+        },
+        "interpretation": "Diagnóstico automático; ciclos curtos e acertos aleatórios não provam ausência de raciocínio. A varredura testa vitória após cada movimento."
+      },
+      "necessity": [
+        {
+          "avoid": {
+            "type": "helper-participation",
+            "board": 0
+          },
+          "result": {
+            "scope": "all-winning-solutions-avoiding-event",
+            "optimalScope": "avoiding-predicate-only",
+            "avoid": {
+              "type": "helper-participation",
+              "board": 0
+            },
+            "budget": {
+              "maxStates": 90000,
+              "maxMs": 12000,
+              "maxDepth": null
+            },
+            "status": "unsolvable",
+            "visited": 29,
+            "optimal": false,
+            "exhaustive": true
+          }
+        }
+      ],
+      "causalityReport": "tests/sintonia-v4-editorial.json"
+    },
+    "number": 46,
+    "chapter": 4,
+    "originNumber": 46,
+    "origin": {
+      "kind": "recomposed-removed-mechanics",
+      "catalog": "sintonia-content-3",
+      "id": "sintonia-0268",
+      "number": 46,
+      "version": 1,
+      "reason": "Separar preparação permanente de posicionamento final."
+    },
+    "actorIntroduction": null,
+    "topologySignature": "top1-033ee1a7-124"
+  },
+  {
+    "id": "sintonia80-0047-v4",
+    "version": 1,
+    "rulesVersion": 1,
+    "boards": [
+      {
+        "id": "b0",
+        "animal": "capivara",
+        "rows": 4,
+        "cols": 4,
+        "walkable": [
+          3,
+          5,
+          6,
+          7,
+          8,
+          9,
+          11,
+          12,
+          14,
+          15
+        ],
+        "start": 14,
+        "goal": 12,
+        "ice": [
+          6
+        ]
+      },
+      {
+        "id": "b1",
+        "animal": "tuiuiu",
+        "rows": 3,
+        "cols": 4,
+        "walkable": [
+          1,
+          4,
+          5,
+          8,
+          9,
+          10,
+          11
+        ],
+        "start": 11,
+        "goal": 4
+      }
+    ],
+    "mechanics": [
+      "walls",
+      "ice"
+    ],
+    "initialSwitches": {},
+    "initialSelectors": {},
+    "family": "intermediate-stop",
+    "secondaryFamilies": [
+      "wall-adjust",
+      "priority-change"
+    ],
+    "name": "Distâncias diferentes",
+    "lesson": "Prepare a entrada no gelo pensando na posição em que o animal vai parar.",
+    "discovery": "Aqui o jogador precisa descobrir que o gelo permite deslocamentos de comprimentos diferentes com a mesma seta.",
+    "hints": [
+      "No gelo, o animal segue até o primeiro piso comum ou bloqueio.",
+      "Você não precisa interromper o deslizamento. Ajuste a posição de entrada para coordenar a chegada.",
+      "Na configuração inicial, comece para a direita; observe quem avança e quem espera."
+    ],
+    "generatorVersion": 3,
+    "contentRevision": "sintonia-content-4",
+    "seed": "sintonia-content4:47:0",
+    "difficulty": 3,
+    "solution": [
+      "right",
+      "up",
+      "up",
+      "left",
+      "down",
+      "left",
+      "up",
+      "up",
+      "down",
+      "left"
+    ],
+    "signature": "st1-f4638d29-225",
+    "prerequisites": [
+      "walls",
+      "ice"
+    ],
+    "introduction": [],
+    "parameters": {
+      "difficulty": 3,
+      "animals": 2,
+      "primary": "ice",
+      "secondary": null,
+      "role": "varied",
+      "pattern": null
+    },
+    "certificate": {
+      "method": "breadth-first-witness-and-engine-replay",
+      "rulesVersion": 1,
+      "commands": 10,
+      "optimal": true,
+      "visited": 60,
+      "replayed": true,
+      "engine": "unchanged-rules-1",
+      "firstVictoryAt": 10
+    },
+    "editorial": {
+      "source": "procedural-structure-and-automatic-curation",
+      "design": null,
+      "purpose": {
+        "valid": true,
+        "won": true,
+        "evidenceScope": "supplied-command-sequence",
+        "commands": 10,
+        "boxes": [],
+        "dependencies": [],
+        "boardRoles": [
+          {
+            "board": 0,
+            "moved": 7,
+            "waited": 3,
+            "goalDepartures": 0
+          },
+          {
+            "board": 1,
+            "moved": 6,
+            "waited": 4,
+            "goalDepartures": 0
+          }
+        ],
+        "caveat": "Uso neste certificado não prova necessidade. Consulte tests/sintonia-purpose-audit.json para ablações e limites."
+      },
+      "rubric": {
+        "status": "human-review-pending",
+        "dimensions": [
+          "purpose",
+          "discovery",
+          "interdependence",
+          "causal-clarity",
+          "spatial-economy",
+          "variety"
+        ],
+        "scores": null,
+        "humanPlaytesting": false,
+        "reason": "Replay e ablações são evidências automáticas, não substitutos de avaliação editorial e testes humanos."
+      },
+      "humanPlaytested": false,
+      "discovery": "Aqui o jogador precisa descobrir que o gelo permite deslocamentos de comprimentos diferentes com a mesma seta.",
+      "reasoning": {
+        "used": [
+          "ice"
+        ],
+        "partialBlocks": 7,
+        "goalDepartures": [
           false,
-          true
+          false
+        ],
+        "unequalLoops": 5,
+        "directionChanges": 7,
+        "earlyTurns": 4,
+        "occupiedBoxPlate": false,
+        "boxAsStopAfterSupport": false,
+        "finalApproach": [
+          true,
+          false
         ]
       },
       "sweep": {
@@ -15980,14 +14495,11 @@ export const CAMPAIGN = [
       },
       "compatibility": "validated",
       "alternatives": "Uma sequência verificada é fornecida; outras soluções podem existir.",
-      "deadEnds": "A fase permite estados sem saída; desfazer e reiniciar são livres.",
-      "decision": "retain-logical-definition",
-      "retentionReason": "Sentido único em dupla: preparar o controle antes de abandonar seu acesso.",
-      "role": "focus",
-      "prerequisiteChapters": [
-        1,
-        2
-      ],
+      "deadEnds": "Mudanças de configuração podem exigir retornar a uma posição anterior.",
+      "role": "varied",
+      "decision": "recompose",
+      "curriculumReason": "Usar deslizamento e recuo para obter a parada intermediária.",
+      "retentionReason": "Usar deslizamento e recuo para obter a parada intermediária.",
       "antiSpam": {
         "singleDirection": {
           "tested": 4,
@@ -16003,630 +14515,57 @@ export const CAMPAIGN = [
           "winningPatterns": []
         },
         "biasedRandom": {
-          "runs": 12,
+          "runs": 24,
           "commandsPerRun": 128,
           "wins": 0
         },
         "uniformRandom": {
-          "runs": 12,
-          "commandsPerRun": 128,
-          "wins": 5
-        },
-        "interpretation": "Diagnóstico automático; ciclos curtos e acertos aleatórios não provam ausência de raciocínio. A varredura testa vitória após cada movimento."
-      },
-      "repetition": {
-        "structuralSignature": "st1-b34cdb4b-381",
-        "topologySignature": "top1-0d4eaf79-122",
-        "globallyRotatedOrReflectedDuplicate": false
-      },
-      "curriculumReason": "Sentido único em dupla: preparar o controle antes de abandonar seu acesso.",
-      "animalRoles": [
-        {
-          "board": 0,
-          "logicalAnimal": "capivara",
-          "role": {
-            "board": 0,
-            "role": "preparer-and-committer",
-            "control": 13,
-            "commit": [
-              4,
-              0
-            ],
-            "goalRegion": [
-              2
-            ]
-          },
-          "controls": [
-            {
-              "id": "prepare",
-              "type": "key",
-              "receiverBoard": 1
-            }
-          ],
-          "goal": 2
-        },
-        {
-          "board": 1,
-          "logicalAnimal": "tuiuiu",
-          "role": {
-            "board": 1,
-            "role": "receiver-and-aligner",
-            "goalRegion": [
-              6,
-              1,
-              2,
-              0
-            ]
-          },
-          "controls": [],
-          "goal": 6
-        }
-      ],
-      "objectRoles": [
-        {
-          "board": 0,
-          "type": "keys",
-          "id": "prepare",
-          "definition": {
-            "id": "prepare",
-            "cell": 13
-          },
-          "role": "Aquisição pelo animal mantém a abertura até reiniciar.",
-          "evidenceScope": "definition-and-certified-witness; necessity requires separate audit"
-        },
-        {
-          "board": 0,
-          "type": "oneWays",
-          "id": "oneWays-0",
-          "definition": {
-            "from": 4,
-            "to": 0
-          },
-          "role": "Restringe a travessia ao sentido indicado.",
-          "evidenceScope": "definition-and-certified-witness; necessity requires separate audit"
-        },
-        {
-          "board": 1,
-          "type": "gates",
-          "id": "preparation-remote",
-          "definition": {
-            "id": "preparation-remote",
-            "from": 11,
-            "to": 6,
-            "condition": {
-              "type": "key",
-              "id": "prepare"
-            }
-          },
-          "role": {
-            "condition": {
-              "type": "key",
-              "id": "prepare"
-            },
-            "crossings": [
-              8
-            ]
-          },
-          "evidenceScope": "definition-and-certified-witness; necessity requires separate audit"
-        }
-      ],
-      "causalityReport": "tests/sintonia80-purpose-audit.json"
-    },
-    "number": 46,
-    "chapter": 4,
-    "topologySignature": "top1-0d4eaf79-122",
-    "originNumber": 268,
-    "origin": {
-      "kind": "curated-identical-logical-definition",
-      "catalog": "sintonia-content-2",
-      "number": 268,
-      "id": "sintonia-0268",
-      "version": 1,
-      "reason": "Sentido único em dupla: preparar o controle antes de abandonar seu acesso."
-    },
-    "actorIntroduction": null,
-    "ruleExplanation": "A seta na divisória permite atravessar apenas no sentido indicado. Ela não move o animal sozinha."
-  },
-  {
-    "id": "sintonia-0399",
-    "version": 1,
-    "rulesVersion": 1,
-    "boards": [
-      {
-        "id": "b0",
-        "animal": "capivara",
-        "rows": 4,
-        "cols": 4,
-        "walkable": [
-          4,
-          5,
-          6,
-          7,
-          8,
-          9,
-          10,
-          11
-        ],
-        "start": 6,
-        "goal": 7,
-        "keys": [
-          {
-            "id": "prepare",
-            "cell": 4
-          }
-        ],
-        "oneWays": [
-          {
-            "from": 6,
-            "to": 5
-          }
-        ],
-        "gates": [
-          {
-            "id": "prepared-return",
-            "from": 10,
-            "to": 9,
-            "condition": {
-              "type": "key",
-              "id": "prepare"
-            }
-          }
-        ]
-      },
-      {
-        "id": "b1",
-        "animal": "tuiuiu",
-        "rows": 5,
-        "cols": 5,
-        "walkable": [
-          1,
-          3,
-          5,
-          6,
-          8,
-          11,
-          12,
-          13,
-          14,
-          18,
-          21,
-          22,
-          23
-        ],
-        "start": 6,
-        "goal": 23,
-        "gates": [
-          {
-            "id": "preparation-remote",
-            "from": 11,
-            "to": 12,
-            "condition": {
-              "type": "key",
-              "id": "prepare"
-            }
-          }
-        ]
-      }
-    ],
-    "mechanics": [
-      "walls",
-      "key",
-      "oneway"
-    ],
-    "initialSwitches": {},
-    "initialSelectors": {},
-    "family": "preserve-access",
-    "secondaryFamilies": [
-      "goal-transit",
-      "unequal-loop"
-    ],
-    "name": "Escolha a travessia",
-    "lesson": "Prepare os outros caminhos antes de cruzar a passagem de sentido único.",
-    "discovery": "Aqui o jogador precisa descobrir que depois da passagem de sentido único, o retorno usa uma saída diferente, liberada pela chave.",
-    "hints": [
-      "A seta está na divisória: ela permite cruzar somente no sentido indicado.",
-      "Confira o alinhamento dos outros animais antes de atravessar, porque o caminho de volta é limitado.",
-      "Na configuração inicial, comece para a esquerda; observe quem avança e quem espera."
-    ],
-    "generatorVersion": 2,
-    "contentRevision": "sintonia-content-3",
-    "seed": "sintonia-campaign-v2:0399:0",
-    "difficulty": 3,
-    "solution": [
-      "left",
-      "left",
-      "right",
-      "down",
-      "right",
-      "right",
-      "down",
-      "down",
-      "left",
-      "up",
-      "right"
-    ],
-    "signature": "st1-bd2fcc56-479",
-    "prerequisites": [
-      "walls",
-      "key",
-      "oneway"
-    ],
-    "introduction": [],
-    "parameters": {
-      "difficulty": 4,
-      "animals": 2,
-      "primary": "oneway",
-      "secondary": null,
-      "role": "revisit",
-      "pattern": "oneway-independent-return"
-    },
-    "certificate": {
-      "method": "breadth-first-witness-and-engine-replay",
-      "rulesVersion": 1,
-      "commands": 11,
-      "optimal": true,
-      "visited": 101,
-      "replayed": true,
-      "engine": "unchanged-rules-1"
-    },
-    "editorial": {
-      "source": "role-first-structure-and-automatic-curation",
-      "design": {
-        "pattern": "oneway-independent-return",
-        "discovery": "depois da passagem de sentido único, o retorno usa uma saída diferente, liberada pela chave",
-        "roles": [
-          {
-            "board": 0,
-            "role": "committer-and-returner",
-            "goalRegion": [
-              7
-            ]
-          },
-          {
-            "board": 1,
-            "role": "receiver-and-aligner",
-            "goalRegion": [
-              12,
-              13,
-              14,
-              8,
-              18,
-              3,
-              23,
-              22,
-              21
-            ]
-          }
-        ],
-        "structures": [
-          {
-            "board": 0,
-            "role": "commit",
-            "edge": [
-              6,
-              5
-            ]
-          },
-          {
-            "board": 0,
-            "role": "preserve-return",
-            "edge": [
-              10,
-              9
-            ]
-          },
-          {
-            "board": 0,
-            "role": "prepare",
-            "cells": [
-              4
-            ]
-          }
-        ],
-        "dependencies": [
-          {
-            "fromBoard": 0,
-            "toBoard": 0,
-            "control": "prepare",
-            "role": "open-independent-return"
-          },
-          {
-            "fromBoard": 0,
-            "toBoard": 1,
-            "control": "prepare",
-            "role": "open-recipient"
-          }
-        ],
-        "order": [
-          "commit-outward",
-          "collect-key",
-          "return-by-other-edge",
-          "joint-arrival"
-        ],
-        "counterfactual": "Removing the directed restriction permits a direct return from the key instead of the independent return branch.",
-        "proofStatus": "structural-design-hypothesis; replay and budgeted ablations recorded separately"
-      },
-      "purpose": {
-        "valid": true,
-        "won": true,
-        "evidenceScope": "supplied-command-sequence",
-        "commands": 11,
-        "boxes": [],
-        "dependencies": [
-          {
-            "gateId": "prepared-return",
-            "receiverBoard": 0,
-            "condition": {
-              "type": "key",
-              "id": "prepare"
-            },
-            "controllers": [
-              {
-                "type": "key",
-                "id": "prepare",
-                "board": 0,
-                "cell": 4
-              }
-            ],
-            "crossingCommands": [
-              5
-            ]
-          },
-          {
-            "gateId": "preparation-remote",
-            "receiverBoard": 1,
-            "condition": {
-              "type": "key",
-              "id": "prepare"
-            },
-            "controllers": [
-              {
-                "type": "key",
-                "id": "prepare",
-                "board": 0,
-                "cell": 4
-              }
-            ],
-            "crossingCommands": [
-              5
-            ]
-          }
-        ],
-        "boardRoles": [
-          {
-            "board": 0,
-            "moved": 9,
-            "waited": 2,
-            "goalDepartures": 0
-          },
-          {
-            "board": 1,
-            "moved": 9,
-            "waited": 2,
-            "goalDepartures": 1
-          }
-        ],
-        "caveat": "Uso neste certificado não prova necessidade. Consulte tests/sintonia-purpose-audit.json para ablações e limites."
-      },
-      "rubric": {
-        "status": "human-review-pending",
-        "dimensions": [
-          "purpose",
-          "discovery",
-          "interdependence",
-          "causal-clarity",
-          "spatial-economy",
-          "variety"
-        ],
-        "scores": null,
-        "humanPlaytesting": false,
-        "reason": "Replay e ablações são evidências automáticas, não substitutos de avaliação editorial e testes humanos."
-      },
-      "humanPlaytested": false,
-      "discovery": "Aqui o jogador precisa descobrir que depois da passagem de sentido único, o retorno usa uma saída diferente, liberada pela chave.",
-      "reasoning": {
-        "used": [
-          "key",
-          "key-gate",
-          "oneway"
-        ],
-        "partialBlocks": 4,
-        "goalDepartures": [
-          false,
-          true
-        ],
-        "unequalLoops": 5,
-        "directionChanges": 7,
-        "earlyTurns": 2,
-        "occupiedBoxPlate": false,
-        "boxAsStopAfterSupport": false,
-        "finalApproach": [
-          false,
-          false
-        ]
-      },
-      "sweep": {
-        "status": "complete",
-        "visited": 21,
-        "resistant": true
-      },
-      "compatibility": "validated",
-      "alternatives": "Uma sequência verificada é fornecida; outras soluções podem existir.",
-      "deadEnds": "A fase permite estados sem saída; desfazer e reiniciar são livres.",
-      "decision": "retain-logical-definition",
-      "retentionReason": "Retorno por outro caminho contrasta com o compromisso sem volta.",
-      "role": "variation",
-      "prerequisiteChapters": [
-        1,
-        2,
-        4
-      ],
-      "antiSpam": {
-        "singleDirection": {
-          "tested": 4,
-          "winningDirections": []
-        },
-        "sweeps": {
-          "status": "complete",
-          "visited": 21,
-          "solves": false
-        },
-        "shortCycles": {
-          "tested": 40,
-          "winningPatterns": []
-        },
-        "biasedRandom": {
-          "runs": 12,
-          "commandsPerRun": 128,
-          "wins": 0
-        },
-        "uniformRandom": {
-          "runs": 12,
+          "runs": 24,
           "commandsPerRun": 128,
           "wins": 0
         },
         "interpretation": "Diagnóstico automático; ciclos curtos e acertos aleatórios não provam ausência de raciocínio. A varredura testa vitória após cada movimento."
       },
-      "repetition": {
-        "structuralSignature": "st1-bd2fcc56-479",
-        "topologySignature": "top1-5e494ea8-128",
-        "globallyRotatedOrReflectedDuplicate": false
-      },
-      "curriculumReason": "Retorno por outro caminho contrasta com o compromisso sem volta.",
-      "animalRoles": [
+      "necessity": [
         {
-          "board": 0,
-          "logicalAnimal": "capivara",
-          "role": {
-            "board": 0,
-            "role": "committer-and-returner",
-            "goalRegion": [
-              7
-            ]
+          "avoid": {
+            "type": "event",
+            "eventType": "ice"
           },
-          "controls": [
-            {
-              "id": "prepare",
-              "type": "key",
-              "receiverBoard": 0
+          "result": {
+            "scope": "all-winning-solutions-avoiding-event",
+            "optimalScope": "avoiding-predicate-only",
+            "avoid": {
+              "type": "event",
+              "eventType": "ice"
             },
-            {
-              "id": "prepare",
-              "type": "key",
-              "receiverBoard": 1
-            }
-          ],
-          "goal": 7
-        },
-        {
-          "board": 1,
-          "logicalAnimal": "tuiuiu",
-          "role": {
-            "board": 1,
-            "role": "receiver-and-aligner",
-            "goalRegion": [
-              12,
-              13,
-              14,
-              8,
-              18,
-              3,
-              23,
-              22,
-              21
-            ]
-          },
-          "controls": [],
-          "goal": 23
+            "budget": {
+              "maxStates": 90000,
+              "maxMs": 12000,
+              "maxDepth": null
+            },
+            "status": "unsolvable",
+            "visited": 34,
+            "optimal": false,
+            "exhaustive": true
+          }
         }
       ],
-      "objectRoles": [
-        {
-          "board": 0,
-          "type": "keys",
-          "id": "prepare",
-          "definition": {
-            "id": "prepare",
-            "cell": 4
-          },
-          "role": "Aquisição pelo animal mantém a abertura até reiniciar.",
-          "evidenceScope": "definition-and-certified-witness; necessity requires separate audit"
-        },
-        {
-          "board": 0,
-          "type": "gates",
-          "id": "prepared-return",
-          "definition": {
-            "id": "prepared-return",
-            "from": 10,
-            "to": 9,
-            "condition": {
-              "type": "key",
-              "id": "prepare"
-            }
-          },
-          "role": {
-            "condition": {
-              "type": "key",
-              "id": "prepare"
-            },
-            "crossings": [
-              5
-            ]
-          },
-          "evidenceScope": "definition-and-certified-witness; necessity requires separate audit"
-        },
-        {
-          "board": 0,
-          "type": "oneWays",
-          "id": "oneWays-0",
-          "definition": {
-            "from": 6,
-            "to": 5
-          },
-          "role": "Restringe a travessia ao sentido indicado.",
-          "evidenceScope": "definition-and-certified-witness; necessity requires separate audit"
-        },
-        {
-          "board": 1,
-          "type": "gates",
-          "id": "preparation-remote",
-          "definition": {
-            "id": "preparation-remote",
-            "from": 11,
-            "to": 12,
-            "condition": {
-              "type": "key",
-              "id": "prepare"
-            }
-          },
-          "role": {
-            "condition": {
-              "type": "key",
-              "id": "prepare"
-            },
-            "crossings": [
-              5
-            ]
-          },
-          "evidenceScope": "definition-and-certified-witness; necessity requires separate audit"
-        }
-      ],
-      "causalityReport": "tests/sintonia80-purpose-audit.json"
+      "causalityReport": "tests/sintonia-v4-editorial.json"
     },
     "number": 47,
     "chapter": 4,
-    "topologySignature": "top1-5e494ea8-128",
-    "originNumber": 399,
+    "originNumber": 47,
     "origin": {
-      "kind": "curated-identical-logical-definition",
-      "catalog": "sintonia-content-2",
-      "number": 399,
+      "kind": "recomposed-removed-mechanics",
+      "catalog": "sintonia-content-3",
       "id": "sintonia-0399",
+      "number": 47,
       "version": 1,
-      "reason": "Retorno por outro caminho contrasta com o compromisso sem volta."
+      "reason": "Usar deslizamento e recuo para obter a parada intermediária."
     },
-    "actorIntroduction": null
+    "actorIntroduction": null,
+    "topologySignature": "top1-37f96aca-117"
   },
   {
     "id": "sintonia-0224",
@@ -17056,7 +14995,7 @@ export const CAMPAIGN = [
     "actorIntroduction": null
   },
   {
-    "id": "sintonia-0251",
+    "id": "sintonia80-0049-v4",
     "version": 1,
     "rulesVersion": 1,
     "boards": [
@@ -17064,41 +15003,36 @@ export const CAMPAIGN = [
         "id": "b0",
         "animal": "capivara",
         "rows": 4,
-        "cols": 3,
+        "cols": 4,
         "walkable": [
-          0,
-          1,
           2,
-          4,
-          6,
+          3,
           7,
-          8,
-          11
+          10,
+          11,
+          12,
+          13,
+          14
         ],
-        "start": 1,
-        "goal": 11,
-        "gates": [
-          {
-            "id": "contributor-gate-2",
-            "from": 7,
-            "to": 8,
-            "condition": {
-              "type": "key",
-              "id": "contributor-2"
-            }
-          }
-        ],
-        "oneWays": [
-          {
-            "from": 4,
-            "to": 7
-          }
-        ],
+        "start": 3,
+        "goal": 13,
         "switches": [
           {
             "id": "prepare",
-            "cell": 0,
+            "cell": 2,
             "group": "prepare"
+          }
+        ],
+        "gates": [
+          {
+            "id": "contributor-gate-2",
+            "from": 10,
+            "to": 11,
+            "condition": {
+              "type": "switch",
+              "id": "contributor-2",
+              "value": true
+            }
           }
         ]
       },
@@ -17109,23 +15043,21 @@ export const CAMPAIGN = [
         "cols": 4,
         "walkable": [
           0,
-          1,
-          2,
-          3,
           4,
-          6,
-          10,
+          5,
+          8,
+          12,
           13,
           14,
           15
         ],
-        "start": 4,
-        "goal": 2,
+        "start": 13,
+        "goal": 8,
         "gates": [
           {
             "id": "preparation-remote",
-            "from": 0,
-            "to": 1,
+            "from": 12,
+            "to": 8,
             "condition": {
               "type": "switch",
               "id": "prepare",
@@ -17143,135 +15075,127 @@ export const CAMPAIGN = [
           0,
           1,
           2,
+          3,
           4,
           5,
-          6,
           7,
           8,
           9,
-          10
+          10,
+          11
         ],
-        "start": 4,
-        "goal": 5,
-        "keys": [
+        "start": 11,
+        "goal": 0,
+        "switches": [
           {
             "id": "contributor-2",
-            "cell": 7
+            "cell": 10,
+            "group": "contributor-2"
           }
         ]
       }
     ],
     "mechanics": [
       "walls",
-      "key",
-      "oneway",
       "switch"
     ],
     "initialSwitches": {},
     "initialSelectors": {},
-    "family": "preserve-access",
+    "family": "scenario-choice",
     "secondaryFamilies": [
-      "wall-adjust",
-      "goal-transit"
+      "intermediate-stop",
+      "waiting-place"
     ],
-    "name": "Escolha a travessia",
-    "lesson": "Prepare o interruptor antes de atravessar o trecho sem retorno.",
-    "discovery": "Aqui o jogador precisa descobrir que o interruptor deve preparar a passagem remota antes de abandonar seu acesso pelo sentido único.",
+    "name": "Uma escolha que permanece",
+    "lesson": "Entre no interruptor para preparar a configuração das passagens.",
+    "discovery": "Aqui o jogador precisa descobrir que o desvio de preparação libera o outro animal, mudando qual caminho precisa de atenção.",
     "hints": [
-      "Localize o interruptor que abre a passagem do outro animal.",
-      "Depois do sentido único, não há retorno ao controle: configure a passagem antes de atravessar.",
-      "Antes de descer pelo sentido único, entre no interruptor à esquerda da posição inicial."
+      "O interruptor alterna a passagem quando o animal entra e termina sobre ele.",
+      "Depois de preparar a abertura, você pode sair do interruptor sem perder essa configuração.",
+      "Na configuração inicial, comece para a esquerda; observe quem avança e quem espera."
     ],
-    "generatorVersion": 2,
-    "contentRevision": "sintonia-content-3",
-    "seed": "sintonia-campaign-v2:0251:0",
+    "generatorVersion": 3,
+    "contentRevision": "sintonia-content-4",
+    "seed": "sintonia-content4:49:0",
     "difficulty": 3,
     "solution": [
+      "left",
       "up",
       "left",
-      "right",
-      "down",
-      "right",
-      "right",
-      "down",
-      "right",
-      "left",
+      "up",
       "up",
       "right",
       "down",
-      "left"
+      "down",
+      "left",
+      "down",
+      "left",
+      "up"
     ],
-    "signature": "st1-1b4ce404-638",
+    "signature": "st1-2f021492-648",
     "prerequisites": [
       "walls",
-      "key",
-      "oneway",
       "switch"
     ],
     "introduction": [],
     "parameters": {
       "difficulty": 3,
       "animals": 3,
-      "primary": "oneway",
+      "primary": "switch",
       "secondary": null,
-      "role": "focus",
-      "pattern": "oneway-prepare-before-commit"
+      "role": "varied",
+      "pattern": "switch-fork-before-exit"
     },
     "certificate": {
       "method": "breadth-first-witness-and-engine-replay",
       "rulesVersion": 1,
-      "commands": 13,
+      "commands": 12,
       "optimal": true,
-      "visited": 1255,
+      "visited": 2163,
       "replayed": true,
-      "engine": "unchanged-rules-1"
+      "engine": "unchanged-rules-1",
+      "firstVictoryAt": 12
     },
     "editorial": {
       "source": "role-first-structure-and-automatic-curation",
       "design": {
         "preparationControl": "switch",
-        "pattern": "oneway-prepare-before-commit",
-        "discovery": "o controle no desvio precisa estar preparado antes de abandonar seu acesso",
+        "pattern": "switch-fork-before-exit",
+        "discovery": "o desvio de preparação libera o outro animal, mudando qual caminho precisa de atenção",
         "roles": [
           {
             "board": 0,
             "role": "preparer-and-committer",
-            "control": 0,
-            "commit": [
-              4,
-              7
-            ],
+            "control": 2,
+            "commit": null,
             "goalRegion": [
-              11
+              13
             ]
           },
           {
             "board": 1,
             "role": "receiver-and-aligner",
             "goalRegion": [
-              1,
-              2,
-              3,
-              6,
-              10,
-              14,
-              13,
-              15
+              8,
+              4,
+              5,
+              0
             ]
           },
           {
             "board": 2,
             "role": "independent-preparer-and-aligner",
-            "control": 7,
+            "control": 10,
             "goalRegion": [
               8,
               9,
-              10,
+              4,
               5,
-              6,
+              7,
               0,
               1,
-              2
+              2,
+              3
             ]
           }
         ],
@@ -17280,47 +15204,47 @@ export const CAMPAIGN = [
             "board": 0,
             "role": "prepare",
             "cells": [
-              1,
-              0
+              3,
+              2
             ]
           },
           {
             "board": 0,
-            "role": "preserve-access",
+            "role": "separate",
             "edge": [
-              4,
-              7
+              7,
+              11
             ]
           },
           {
             "board": 0,
             "role": "exit",
             "edge": [
-              8,
-              11
+              14,
+              13
             ]
           },
           {
             "board": 1,
             "role": "remote-exit",
             "edge": [
-              0,
-              1
+              12,
+              8
             ]
           },
           {
             "board": 2,
             "role": "prepare",
             "cells": [
-              7
+              10
             ]
           },
           {
             "board": 0,
             "role": "contributor-exit",
             "edge": [
-              7,
-              8
+              10,
+              11
             ]
           }
         ],
@@ -17339,43 +15263,39 @@ export const CAMPAIGN = [
           }
         ],
         "order": [
-          "prepare-control",
-          "commit-access",
-          "cross-prepared-exits",
+          "visit-side-branch",
+          "leave-control-with-configuration",
+          "cross-exits",
           "joint-arrival"
         ],
-        "counterfactual": "Crossing before preparation strands the control behind a one-way edge or collapsed bridge; verify the specific prefix on the final definition.",
-        "proofStatus": "prefix-counterfactual-in-tests/sintonia-commitment-evidence.json",
-        "secondaryPatterns": [
-          "configure-before-oneway-commit"
-        ]
+        "counterfactual": "Opening the preparation gate removes the obligation to visit the side branch.",
+        "proofStatus": "structural-design-hypothesis; replay and budgeted ablations recorded separately"
       },
       "purpose": {
         "valid": true,
         "won": true,
         "evidenceScope": "supplied-command-sequence",
-        "commands": 13,
+        "commands": 12,
         "boxes": [],
         "dependencies": [
           {
             "gateId": "contributor-gate-2",
             "receiverBoard": 0,
             "condition": {
-              "type": "key",
-              "id": "contributor-2"
+              "type": "switch",
+              "id": "contributor-2",
+              "value": true
             },
             "controllers": [
               {
-                "type": "key",
+                "type": "switch",
                 "id": "contributor-2",
                 "board": 2,
-                "cell": 7
+                "cell": 10
               }
             ],
             "crossingCommands": [
-              8,
-              9,
-              11
+              9
             ]
           },
           {
@@ -17391,32 +15311,34 @@ export const CAMPAIGN = [
                 "type": "switch",
                 "id": "prepare",
                 "board": 0,
-                "cell": 0
+                "cell": 2
               }
             ],
             "crossingCommands": [
-              3
+              2,
+              10,
+              12
             ]
           }
         ],
         "boardRoles": [
           {
             "board": 0,
-            "moved": 8,
+            "moved": 7,
             "waited": 5,
             "goalDepartures": 0
           },
           {
             "board": 1,
-            "moved": 7,
-            "waited": 6,
+            "moved": 8,
+            "waited": 4,
             "goalDepartures": 2
           },
           {
             "board": 2,
             "moved": 9,
-            "waited": 4,
-            "goalDepartures": 1
+            "waited": 3,
+            "goalDepartures": 0
           }
         ],
         "caveat": "Uso neste certificado não prova necessidade. Consulte tests/sintonia-purpose-audit.json para ablações e limites."
@@ -17436,24 +15358,21 @@ export const CAMPAIGN = [
         "reason": "Replay e ablações são evidências automáticas, não substitutos de avaliação editorial e testes humanos."
       },
       "humanPlaytested": false,
-      "discovery": "Aqui o jogador precisa descobrir que o interruptor deve preparar a passagem remota antes de abandonar seu acesso pelo sentido único.",
+      "discovery": "Aqui o jogador precisa descobrir que o desvio de preparação libera o outro animal, mudando qual caminho precisa de atenção.",
       "reasoning": {
         "used": [
-          "key",
-          "key-gate",
-          "oneway",
           "switch",
           "switch-gate"
         ],
-        "partialBlocks": 11,
+        "partialBlocks": 10,
         "goalDepartures": [
           false,
           true,
-          true
+          false
         ],
-        "unequalLoops": 17,
-        "directionChanges": 11,
-        "earlyTurns": 4,
+        "unequalLoops": 16,
+        "directionChanges": 9,
+        "earlyTurns": 8,
         "occupiedBoxPlate": false,
         "boxAsStopAfterSupport": false,
         "finalApproach": [
@@ -17464,20 +15383,16 @@ export const CAMPAIGN = [
       },
       "sweep": {
         "status": "complete",
-        "visited": 32,
+        "visited": 101,
         "resistant": true
       },
       "compatibility": "validated",
       "alternatives": "Uma sequência verificada é fornecida; outras soluções podem existir.",
-      "deadEnds": "A fase permite estados sem saída; desfazer e reiniciar são livres.",
-      "decision": "retain-logical-definition",
-      "retentionReason": "Configurar interruptor antes do compromisso; conserva a prova temporal da antiga 251.",
-      "role": "compact",
-      "prerequisiteChapters": [
-        1,
-        2,
-        4
-      ],
+      "deadEnds": "Mudanças de configuração podem exigir retornar a uma posição anterior.",
+      "role": "varied",
+      "decision": "recompose",
+      "curriculumReason": "Distribuir controle e espera entre três percursos.",
+      "retentionReason": "Distribuir controle e espera entre três percursos.",
       "antiSpam": {
         "singleDirection": {
           "tested": 4,
@@ -17485,7 +15400,7 @@ export const CAMPAIGN = [
         },
         "sweeps": {
           "status": "complete",
-          "visited": 50,
+          "visited": 101,
           "solves": false
         },
         "shortCycles": {
@@ -17493,199 +15408,80 @@ export const CAMPAIGN = [
           "winningPatterns": []
         },
         "biasedRandom": {
-          "runs": 12,
+          "runs": 24,
           "commandsPerRun": 128,
           "wins": 0
         },
         "uniformRandom": {
-          "runs": 12,
+          "runs": 24,
           "commandsPerRun": 128,
-          "wins": 3
+          "wins": 0
         },
         "interpretation": "Diagnóstico automático; ciclos curtos e acertos aleatórios não provam ausência de raciocínio. A varredura testa vitória após cada movimento."
       },
-      "repetition": {
-        "structuralSignature": "st1-1b4ce404-638",
-        "topologySignature": "top1-c7dc4957-174",
-        "globallyRotatedOrReflectedDuplicate": false
-      },
-      "curriculumReason": "Configurar interruptor antes do compromisso; conserva a prova temporal da antiga 251.",
-      "animalRoles": [
+      "necessity": [
         {
-          "board": 0,
-          "logicalAnimal": "capivara",
-          "role": {
-            "board": 0,
-            "role": "preparer-and-committer",
-            "control": 0,
-            "commit": [
-              4,
-              7
-            ],
-            "goalRegion": [
-              11
-            ]
+          "avoid": {
+            "type": "helper-participation",
+            "board": 2
           },
-          "controls": [
-            {
-              "id": "prepare",
-              "type": "switch",
-              "receiverBoard": 1
-            }
-          ],
-          "goal": 11
+          "result": {
+            "scope": "all-winning-solutions-avoiding-event",
+            "optimalScope": "avoiding-predicate-only",
+            "avoid": {
+              "type": "helper-participation",
+              "board": 2
+            },
+            "budget": {
+              "maxStates": 90000,
+              "maxMs": 12000,
+              "maxDepth": null
+            },
+            "status": "unsolvable",
+            "visited": 1070,
+            "optimal": false,
+            "exhaustive": true
+          }
         },
         {
-          "board": 1,
-          "logicalAnimal": "tuiuiu",
-          "role": {
-            "board": 1,
-            "role": "receiver-and-aligner",
-            "goalRegion": [
-              1,
-              2,
-              3,
-              6,
-              10,
-              14,
-              13,
-              15
-            ]
+          "avoid": {
+            "type": "helper-participation",
+            "board": 0
           },
-          "controls": [],
-          "goal": 2
-        },
-        {
-          "board": 2,
-          "logicalAnimal": "bemtevi",
-          "role": {
-            "board": 2,
-            "role": "independent-preparer-and-aligner",
-            "control": 7,
-            "goalRegion": [
-              8,
-              9,
-              10,
-              5,
-              6,
-              0,
-              1,
-              2
-            ]
-          },
-          "controls": [
-            {
-              "id": "contributor-2",
-              "type": "key",
-              "receiverBoard": 0
-            }
-          ],
-          "goal": 5
+          "result": {
+            "scope": "all-winning-solutions-avoiding-event",
+            "optimalScope": "avoiding-predicate-only",
+            "avoid": {
+              "type": "helper-participation",
+              "board": 0
+            },
+            "budget": {
+              "maxStates": 90000,
+              "maxMs": 12000,
+              "maxDepth": null
+            },
+            "status": "unsolvable",
+            "visited": 1055,
+            "optimal": false,
+            "exhaustive": true
+          }
         }
       ],
-      "objectRoles": [
-        {
-          "board": 0,
-          "type": "switches",
-          "id": "prepare",
-          "definition": {
-            "id": "prepare",
-            "cell": 0,
-            "group": "prepare"
-          },
-          "role": "Entrada e permanência final alternam a configuração, preservada ao sair.",
-          "evidenceScope": "definition-and-certified-witness; necessity requires separate audit"
-        },
-        {
-          "board": 0,
-          "type": "gates",
-          "id": "contributor-gate-2",
-          "definition": {
-            "id": "contributor-gate-2",
-            "from": 7,
-            "to": 8,
-            "condition": {
-              "type": "key",
-              "id": "contributor-2"
-            }
-          },
-          "role": {
-            "condition": {
-              "type": "key",
-              "id": "contributor-2"
-            },
-            "crossings": [
-              8,
-              9,
-              11
-            ]
-          },
-          "evidenceScope": "definition-and-certified-witness; necessity requires separate audit"
-        },
-        {
-          "board": 0,
-          "type": "oneWays",
-          "id": "oneWays-0",
-          "definition": {
-            "from": 4,
-            "to": 7
-          },
-          "role": "Restringe a travessia ao sentido indicado.",
-          "evidenceScope": "definition-and-certified-witness; necessity requires separate audit"
-        },
-        {
-          "board": 1,
-          "type": "gates",
-          "id": "preparation-remote",
-          "definition": {
-            "id": "preparation-remote",
-            "from": 0,
-            "to": 1,
-            "condition": {
-              "type": "switch",
-              "id": "prepare",
-              "value": true
-            }
-          },
-          "role": {
-            "condition": {
-              "type": "switch",
-              "id": "prepare",
-              "value": true
-            },
-            "crossings": [
-              3
-            ]
-          },
-          "evidenceScope": "definition-and-certified-witness; necessity requires separate audit"
-        },
-        {
-          "board": 2,
-          "type": "keys",
-          "id": "contributor-2",
-          "definition": {
-            "id": "contributor-2",
-            "cell": 7
-          },
-          "role": "Aquisição pelo animal mantém a abertura até reiniciar.",
-          "evidenceScope": "definition-and-certified-witness; necessity requires separate audit"
-        }
-      ],
-      "causalityReport": "tests/sintonia80-purpose-audit.json"
+      "causalityReport": "tests/sintonia-v4-editorial.json"
     },
     "number": 49,
     "chapter": 4,
-    "topologySignature": "top1-c7dc4957-174",
-    "originNumber": 251,
+    "originNumber": 49,
     "origin": {
-      "kind": "curated-identical-logical-definition",
-      "catalog": "sintonia-content-2",
-      "number": 251,
+      "kind": "recomposed-removed-mechanics",
+      "catalog": "sintonia-content-3",
       "id": "sintonia-0251",
+      "number": 49,
       "version": 1,
-      "reason": "Configurar interruptor antes do compromisso; conserva a prova temporal da antiga 251."
+      "reason": "Distribuir controle e espera entre três percursos."
     },
-    "actorIntroduction": null
+    "actorIntroduction": null,
+    "topologySignature": "top1-c636288c-172"
   },
   {
     "id": "sintonia-0287",
@@ -18484,79 +16280,35 @@ export const CAMPAIGN = [
     "actorIntroduction": null
   },
   {
-    "id": "sintonia-0210",
+    "id": "sintonia80-0052-v4",
     "version": 1,
     "rulesVersion": 1,
     "boards": [
       {
         "id": "b0",
         "animal": "capivara",
-        "rows": 5,
-        "cols": 5,
+        "rows": 4,
+        "cols": 4,
         "walkable": [
-          1,
+          2,
+          3,
           5,
           6,
           7,
           8,
+          9,
           10,
           11,
           12,
           13,
-          15,
-          16,
-          17
+          15
         ],
-        "start": 7,
-        "goal": 1,
-        "boxes": [
-          {
-            "id": "box0",
-            "cell": 12
-          }
-        ],
+        "start": 13,
+        "goal": 2,
         "plates": [
           {
-            "id": "weight",
-            "cell": 16
-          }
-        ],
-        "gates": [
-          {
-            "id": "weight-gate",
-            "from": 6,
-            "to": 1,
-            "condition": {
-              "type": "plate",
-              "id": "weight"
-            }
-          },
-          {
-            "id": "prepare-cut-12",
-            "from": 12,
-            "to": 17,
-            "condition": {
-              "type": "plate",
-              "id": "prepare-1"
-            }
-          },
-          {
-            "id": "prepare-cut-13",
-            "from": 11,
-            "to": 16,
-            "condition": {
-              "type": "plate",
-              "id": "prepare-1"
-            }
-          },
-          {
-            "id": "prepare-cut-14",
-            "from": 10,
-            "to": 15,
-            "condition": {
-              "type": "plate",
-              "id": "prepare-1"
-            }
+            "id": "support",
+            "cell": 7
           }
         ]
       },
@@ -18564,30 +16316,26 @@ export const CAMPAIGN = [
         "id": "b1",
         "animal": "tuiuiu",
         "rows": 3,
-        "cols": 2,
+        "cols": 4,
         "walkable": [
-          1,
+          0,
           2,
-          3,
           4,
-          5
+          5,
+          6,
+          8,
+          10
         ],
-        "start": 1,
-        "goal": 2,
-        "plates": [
-          {
-            "id": "prepare-1",
-            "cell": 3
-          }
-        ],
+        "start": 0,
+        "goal": 10,
         "gates": [
           {
-            "id": "helper-exit-1",
-            "from": 3,
-            "to": 2,
+            "id": "plate-gate",
+            "from": 6,
+            "to": 10,
             "condition": {
               "type": "plate",
-              "id": "weight"
+              "id": "support"
             }
           }
         ]
@@ -18595,241 +16343,90 @@ export const CAMPAIGN = [
     ],
     "mechanics": [
       "walls",
-      "plate",
-      "box"
+      "plate"
     ],
     "initialSwitches": {},
     "initialSelectors": {},
-    "family": "support-handoff",
+    "family": "remote-support",
     "secondaryFamilies": [
-      "intermediate-stop",
-      "waiting-place"
+      "wall-adjust",
+      "priority-change"
     ],
-    "name": "A face certa",
-    "lesson": "Contorne a caixa para mudar a direção do empurrão antes de preparar o apoio.",
-    "discovery": "Aqui o jogador precisa descobrir que alcançar a face correta da caixa vem antes de sustentar a passagem.",
+    "name": "Uma passagem para o outro",
+    "lesson": "Prepare a placa que abre o caminho do outro animal.",
+    "discovery": "Aqui o jogador precisa descobrir que a ocupação de uma placa prepara a passagem de outro tabuleiro.",
     "hints": [
-      "Compare a posição da placa com as faces da caixa.",
-      "Prepare o contorno: empurrar sempre na mesma direção não alcança esse apoio.",
-      "Depois de apoiar, preserve a passagem que permite sair sem retirar a caixa."
+      "Encontre a placa e a cancela com o mesmo símbolo.",
+      "O estado no início da seta decide a travessia: é possível sair da placa enquanto o outro atravessa.",
+      "Na configuração inicial, comece para cima; observe quem avança e quem espera."
     ],
-    "generatorVersion": 2,
-    "contentRevision": "sintonia-content-3",
-    "seed": "sintonia-campaign-v2:0210:0",
+    "generatorVersion": 3,
+    "contentRevision": "sintonia-content-4",
+    "seed": "sintonia-content4:52:0",
     "difficulty": 3,
     "solution": [
-      "right",
-      "down",
-      "left",
       "up",
-      "left",
+      "up",
       "down",
-      "down",
+      "right",
       "up",
       "right",
+      "down",
+      "up",
       "left",
       "up"
     ],
-    "signature": "st1-72d2d2b3-766",
+    "signature": "st1-70c3e01b-341",
     "prerequisites": [
       "walls",
-      "plate",
-      "box"
+      "plate"
     ],
     "introduction": [],
     "parameters": {
-      "difficulty": 2,
+      "difficulty": 3,
       "animals": 2,
-      "primary": "box",
+      "primary": "plate",
       "secondary": null,
-      "role": "revisit",
-      "pattern": "turn-and-support"
+      "role": "varied",
+      "pattern": null
     },
     "certificate": {
       "method": "breadth-first-witness-and-engine-replay",
       "rulesVersion": 1,
-      "commands": 11,
+      "commands": 10,
       "optimal": true,
-      "visited": 257,
+      "visited": 75,
       "replayed": true,
-      "engine": "unchanged-rules-1"
+      "engine": "unchanged-rules-1",
+      "firstVictoryAt": 10
     },
     "editorial": {
-      "source": "role-first-structure-and-automatic-curation",
-      "design": {
-        "pattern": "turn-and-support",
-        "name": "A face certa",
-        "lesson": "Contorne a caixa para mudar a direção do empurrão antes de preparar o apoio.",
-        "discovery": "Aqui o jogador precisa descobrir que alcançar a face correta da caixa vem antes de sustentar a passagem.",
-        "hints": [
-          "Compare a posição da placa com as faces da caixa.",
-          "Prepare o contorno: empurrar sempre na mesma direção não alcança esse apoio.",
-          "Depois de apoiar, preserve a passagem que permite sair sem retirar a caixa."
-        ],
-        "boxRoles": [
-          "reorientar",
-          "sustentar"
-        ],
-        "roles": [
-          "Preparar o objeto, manter acesso e concluir a própria chegada.",
-          "Preparar o acesso 1, depois abandonar a placa graças ao apoio da caixa."
-        ]
-      },
+      "source": "procedural-structure-and-automatic-curation",
+      "design": null,
       "purpose": {
         "valid": true,
         "won": true,
         "evidenceScope": "supplied-command-sequence",
-        "commands": 11,
-        "boxes": [
-          {
-            "id": "box0",
-            "origin": {
-              "id": "box0",
-              "board": 0,
-              "cell": 12
-            },
-            "final": {
-              "id": "box0",
-              "board": 0,
-              "cell": 16
-            },
-            "pushes": [
-              {
-                "command": 3,
-                "direction": "left",
-                "board": 0,
-                "from": 12,
-                "to": 11
-              },
-              {
-                "command": 7,
-                "direction": "down",
-                "board": 0,
-                "from": 11,
-                "to": 16
-              }
-            ],
-            "directionChanges": 1,
-            "deliveries": [],
-            "postDeliveryPushes": [],
-            "plateEntries": [
-              {
-                "command": 7,
-                "plateId": "weight"
-              }
-            ],
-            "plateReleases": [],
-            "supportUses": [
-              {
-                "command": 10,
-                "plateId": "weight",
-                "gateId": "helper-exit-1",
-                "receiverBoard": 1
-              },
-              {
-                "command": 11,
-                "plateId": "weight",
-                "gateId": "weight-gate",
-                "receiverBoard": 0
-              }
-            ],
-            "observedRoles": [
-              "directional-reposition",
-              "gate-support",
-              "local-stop"
-            ]
-          }
-        ],
+        "commands": 10,
+        "boxes": [],
         "dependencies": [
           {
-            "gateId": "weight-gate",
-            "receiverBoard": 0,
+            "gateId": "plate-gate",
+            "receiverBoard": 1,
             "condition": {
               "type": "plate",
-              "id": "weight"
+              "id": "support"
             },
             "controllers": [
               {
                 "type": "plate",
-                "id": "weight",
+                "id": "support",
                 "board": 0,
-                "cell": 16
-              }
-            ],
-            "crossingCommands": [
-              11
-            ]
-          },
-          {
-            "gateId": "prepare-cut-12",
-            "receiverBoard": 0,
-            "condition": {
-              "type": "plate",
-              "id": "prepare-1"
-            },
-            "controllers": [
-              {
-                "type": "plate",
-                "id": "prepare-1",
-                "board": 1,
-                "cell": 3
-              }
-            ],
-            "crossingCommands": []
-          },
-          {
-            "gateId": "prepare-cut-13",
-            "receiverBoard": 0,
-            "condition": {
-              "type": "plate",
-              "id": "prepare-1"
-            },
-            "controllers": [
-              {
-                "type": "plate",
-                "id": "prepare-1",
-                "board": 1,
-                "cell": 3
+                "cell": 7
               }
             ],
             "crossingCommands": [
               7
-            ]
-          },
-          {
-            "gateId": "prepare-cut-14",
-            "receiverBoard": 0,
-            "condition": {
-              "type": "plate",
-              "id": "prepare-1"
-            },
-            "controllers": [
-              {
-                "type": "plate",
-                "id": "prepare-1",
-                "board": 1,
-                "cell": 3
-              }
-            ],
-            "crossingCommands": []
-          },
-          {
-            "gateId": "helper-exit-1",
-            "receiverBoard": 1,
-            "condition": {
-              "type": "plate",
-              "id": "weight"
-            },
-            "controllers": [
-              {
-                "type": "plate",
-                "id": "weight",
-                "board": 0,
-                "cell": 16
-              }
-            ],
-            "crossingCommands": [
-              10
             ]
           }
         ],
@@ -18837,13 +16434,13 @@ export const CAMPAIGN = [
           {
             "board": 0,
             "moved": 10,
-            "waited": 1,
+            "waited": 0,
             "goalDepartures": 0
           },
           {
             "board": 1,
-            "moved": 6,
-            "waited": 5,
+            "moved": 4,
+            "waited": 6,
             "goalDepartures": 0
           }
         ],
@@ -18864,22 +16461,20 @@ export const CAMPAIGN = [
         "reason": "Replay e ablações são evidências automáticas, não substitutos de avaliação editorial e testes humanos."
       },
       "humanPlaytested": false,
-      "discovery": "Aqui o jogador precisa descobrir que alcançar a face correta da caixa vem antes de sustentar a passagem.",
+      "discovery": "Aqui o jogador precisa descobrir que a ocupação de uma placa prepara a passagem de outro tabuleiro.",
       "reasoning": {
         "used": [
-          "box-support-gate",
-          "plate-gate",
-          "push"
+          "plate-gate"
         ],
         "partialBlocks": 6,
         "goalDepartures": [
           false,
           false
         ],
-        "unequalLoops": 14,
-        "directionChanges": 9,
+        "unequalLoops": 7,
+        "directionChanges": 8,
         "earlyTurns": 6,
-        "occupiedBoxPlate": true,
+        "occupiedBoxPlate": false,
         "boxAsStopAfterSupport": false,
         "finalApproach": [
           false,
@@ -18888,20 +16483,16 @@ export const CAMPAIGN = [
       },
       "sweep": {
         "status": "complete",
-        "visited": 85,
+        "visited": 14,
         "resistant": true
       },
       "compatibility": "validated",
       "alternatives": "Uma sequência verificada é fornecida; outras soluções podem existir.",
-      "deadEnds": "A fase permite estados sem saída; desfazer e reiniciar são livres.",
-      "decision": "retain-logical-definition",
-      "retentionReason": "Retomar outra face de empurrão e apoio em dupla.",
-      "role": "focus",
-      "prerequisiteChapters": [
-        1,
-        2,
-        3
-      ],
+      "deadEnds": "Mudanças de configuração podem exigir retornar a uma posição anterior.",
+      "role": "varied",
+      "decision": "recompose",
+      "curriculumReason": "Abandonar o apoio somente depois da travessia do parceiro.",
+      "retentionReason": "Abandonar o apoio somente depois da travessia do parceiro.",
       "antiSpam": {
         "singleDirection": {
           "tested": 4,
@@ -18909,7 +16500,7 @@ export const CAMPAIGN = [
         },
         "sweeps": {
           "status": "complete",
-          "visited": 85,
+          "visited": 14,
           "solves": false
         },
         "shortCycles": {
@@ -18917,235 +16508,57 @@ export const CAMPAIGN = [
           "winningPatterns": []
         },
         "biasedRandom": {
-          "runs": 12,
+          "runs": 24,
           "commandsPerRun": 128,
           "wins": 0
         },
         "uniformRandom": {
-          "runs": 12,
+          "runs": 24,
           "commandsPerRun": 128,
-          "wins": 0
+          "wins": 4
         },
         "interpretation": "Diagnóstico automático; ciclos curtos e acertos aleatórios não provam ausência de raciocínio. A varredura testa vitória após cada movimento."
       },
-      "repetition": {
-        "structuralSignature": "st1-72d2d2b3-766",
-        "topologySignature": "top1-386ce47e-115",
-        "globallyRotatedOrReflectedDuplicate": false
-      },
-      "curriculumReason": "Retomar outra face de empurrão e apoio em dupla.",
-      "animalRoles": [
+      "necessity": [
         {
-          "board": 0,
-          "logicalAnimal": "capivara",
-          "role": "Preparar o objeto, manter acesso e concluir a própria chegada.",
-          "controls": [
-            {
-              "id": "weight",
-              "type": "plate",
-              "receiverBoard": 0
+          "avoid": {
+            "type": "helper-participation",
+            "board": 0
+          },
+          "result": {
+            "scope": "all-winning-solutions-avoiding-event",
+            "optimalScope": "avoiding-predicate-only",
+            "avoid": {
+              "type": "helper-participation",
+              "board": 0
             },
-            {
-              "id": "weight",
-              "type": "plate",
-              "receiverBoard": 1
-            }
-          ],
-          "goal": 1
-        },
-        {
-          "board": 1,
-          "logicalAnimal": "tuiuiu",
-          "role": "Preparar o acesso 1, depois abandonar a placa graças ao apoio da caixa.",
-          "controls": [
-            {
-              "id": "prepare-1",
-              "type": "plate",
-              "receiverBoard": 0
+            "budget": {
+              "maxStates": 90000,
+              "maxMs": 12000,
+              "maxDepth": null
             },
-            {
-              "id": "prepare-1",
-              "type": "plate",
-              "receiverBoard": 0
-            },
-            {
-              "id": "prepare-1",
-              "type": "plate",
-              "receiverBoard": 0
-            }
-          ],
-          "goal": 2
+            "status": "unsolvable",
+            "visited": 63,
+            "optimal": false,
+            "exhaustive": true
+          }
         }
       ],
-      "objectRoles": [
-        {
-          "board": 0,
-          "type": "boxes",
-          "id": "box0",
-          "definition": {
-            "id": "box0",
-            "cell": 12
-          },
-          "role": [
-            "reorientar",
-            "sustentar"
-          ],
-          "evidenceScope": "definition-and-certified-witness; necessity requires separate audit"
-        },
-        {
-          "board": 0,
-          "type": "plates",
-          "id": "weight",
-          "definition": {
-            "id": "weight",
-            "cell": 16
-          },
-          "role": "Ocupação por animal ou caixa controla a passagem no estado anterior ao comando.",
-          "evidenceScope": "definition-and-certified-witness; necessity requires separate audit"
-        },
-        {
-          "board": 0,
-          "type": "gates",
-          "id": "weight-gate",
-          "definition": {
-            "id": "weight-gate",
-            "from": 6,
-            "to": 1,
-            "condition": {
-              "type": "plate",
-              "id": "weight"
-            }
-          },
-          "role": {
-            "condition": {
-              "type": "plate",
-              "id": "weight"
-            },
-            "crossings": [
-              11
-            ]
-          },
-          "evidenceScope": "definition-and-certified-witness; necessity requires separate audit"
-        },
-        {
-          "board": 0,
-          "type": "gates",
-          "id": "prepare-cut-12",
-          "definition": {
-            "id": "prepare-cut-12",
-            "from": 12,
-            "to": 17,
-            "condition": {
-              "type": "plate",
-              "id": "prepare-1"
-            }
-          },
-          "role": {
-            "condition": {
-              "type": "plate",
-              "id": "prepare-1"
-            },
-            "crossings": []
-          },
-          "evidenceScope": "definition-and-certified-witness; necessity requires separate audit"
-        },
-        {
-          "board": 0,
-          "type": "gates",
-          "id": "prepare-cut-13",
-          "definition": {
-            "id": "prepare-cut-13",
-            "from": 11,
-            "to": 16,
-            "condition": {
-              "type": "plate",
-              "id": "prepare-1"
-            }
-          },
-          "role": {
-            "condition": {
-              "type": "plate",
-              "id": "prepare-1"
-            },
-            "crossings": [
-              7
-            ]
-          },
-          "evidenceScope": "definition-and-certified-witness; necessity requires separate audit"
-        },
-        {
-          "board": 0,
-          "type": "gates",
-          "id": "prepare-cut-14",
-          "definition": {
-            "id": "prepare-cut-14",
-            "from": 10,
-            "to": 15,
-            "condition": {
-              "type": "plate",
-              "id": "prepare-1"
-            }
-          },
-          "role": {
-            "condition": {
-              "type": "plate",
-              "id": "prepare-1"
-            },
-            "crossings": []
-          },
-          "evidenceScope": "definition-and-certified-witness; necessity requires separate audit"
-        },
-        {
-          "board": 1,
-          "type": "plates",
-          "id": "prepare-1",
-          "definition": {
-            "id": "prepare-1",
-            "cell": 3
-          },
-          "role": "Ocupação por animal ou caixa controla a passagem no estado anterior ao comando.",
-          "evidenceScope": "definition-and-certified-witness; necessity requires separate audit"
-        },
-        {
-          "board": 1,
-          "type": "gates",
-          "id": "helper-exit-1",
-          "definition": {
-            "id": "helper-exit-1",
-            "from": 3,
-            "to": 2,
-            "condition": {
-              "type": "plate",
-              "id": "weight"
-            }
-          },
-          "role": {
-            "condition": {
-              "type": "plate",
-              "id": "weight"
-            },
-            "crossings": [
-              10
-            ]
-          },
-          "evidenceScope": "definition-and-certified-witness; necessity requires separate audit"
-        }
-      ],
-      "causalityReport": "tests/sintonia80-purpose-audit.json"
+      "causalityReport": "tests/sintonia-v4-editorial.json"
     },
     "number": 52,
     "chapter": 4,
-    "topologySignature": "top1-386ce47e-115",
-    "originNumber": 210,
+    "originNumber": 52,
     "origin": {
-      "kind": "curated-identical-logical-definition",
-      "catalog": "sintonia-content-2",
-      "number": 210,
+      "kind": "recomposed-removed-mechanics",
+      "catalog": "sintonia-content-3",
       "id": "sintonia-0210",
+      "number": 52,
       "version": 1,
-      "reason": "Retomar outra face de empurrão e apoio em dupla."
+      "reason": "Abandonar o apoio somente depois da travessia do parceiro."
     },
-    "actorIntroduction": null
+    "actorIntroduction": null,
+    "topologySignature": "top1-35b494f4-120"
   },
   {
     "id": "sintonia-0296",
@@ -19606,77 +17019,64 @@ export const CAMPAIGN = [
     "actorIntroduction": null
   },
   {
-    "id": "sintonia-0312",
+    "id": "sintonia80-0054-v4",
     "version": 1,
     "rulesVersion": 1,
     "boards": [
       {
         "id": "b0",
         "animal": "capivara",
-        "rows": 5,
-        "cols": 5,
+        "rows": 4,
+        "cols": 4,
         "walkable": [
-          3,
+          0,
+          2,
+          4,
           5,
-          8,
-          10,
+          6,
+          7,
+          9,
           11,
-          12,
           13,
-          14,
-          15,
-          17,
-          19,
-          20,
-          21,
-          24
+          15
         ],
-        "start": 3,
-        "goal": 24,
-        "switches": [
+        "start": 0,
+        "goal": 15,
+        "keys": [
           {
             "id": "prepare",
-            "cell": 17,
-            "group": "prepare"
+            "cell": 9
           }
         ],
-        "gates": [],
-        "fragile": [
-          19
-        ]
+        "gates": []
       },
       {
         "id": "b1",
         "animal": "tuiuiu",
-        "rows": 5,
-        "cols": 5,
+        "rows": 4,
+        "cols": 4,
         "walkable": [
           0,
+          1,
           2,
-          5,
+          3,
+          4,
           6,
-          7,
+          9,
           10,
-          14,
-          15,
-          16,
-          17,
-          18,
-          19,
-          21,
-          24
+          11,
+          13
         ],
-        "start": 10,
-        "goal": 7,
+        "start": 9,
+        "goal": 1,
         "gates": [
           {
             "id": "preparation-remote",
-            "from": 5,
+            "from": 10,
             "to": 6,
             "condition": {
-              "type": "switch",
-              "id": "prepare",
-              "value": true
+              "type": "key",
+              "id": "prepare"
             }
           }
         ]
@@ -19684,82 +17084,80 @@ export const CAMPAIGN = [
     ],
     "mechanics": [
       "walls",
-      "switch",
-      "fragile"
+      "key"
     ],
     "initialSwitches": {},
     "initialSelectors": {},
-    "family": "preserve-access",
+    "family": "priority-change",
     "secondaryFamilies": [
-      "final-command",
-      "wall-adjust"
+      "intermediate-stop",
+      "axis-order"
     ],
-    "name": "Antes de partir",
-    "lesson": "A ponte permanece enquanto o animal está nela. Quando ele sai, a casa desaparece. Desfazer restaura a ponte. Prepare o restante antes de sair da ponte frágil.",
-    "discovery": "Aqui o jogador precisa descobrir que o controle no desvio precisa estar preparado antes de abandonar seu acesso.",
+    "name": "Caminho liberado",
+    "lesson": "Recolha a chave antes de coordenar a travessia da cancela.",
+    "discovery": "Aqui o jogador precisa descobrir que o desvio de preparação libera o outro animal, mudando qual caminho precisa de atenção.",
     "hints": [
-      "A ponte não desaparece enquanto o animal fica sobre ela.",
-      "Ao sair, essa casa deixa de existir. Prepare o que precisa ser feito antes; desfazer restaura a ponte.",
-      "Na configuração inicial, comece para baixo; observe quem avança e quem espera."
+      "Encontre a chave e a cancela que compartilham o símbolo.",
+      "Termine um movimento sobre a chave; depois, prepare o outro percurso com a passagem liberada.",
+      "Na configuração inicial, comece para a direita; observe quem avança e quem espera."
     ],
-    "generatorVersion": 2,
-    "contentRevision": "sintonia-content-3",
-    "seed": "sintonia-campaign-v2:0312:0",
+    "generatorVersion": 3,
+    "contentRevision": "sintonia-content-4",
+    "seed": "sintonia-content4:54:0",
     "difficulty": 3,
     "solution": [
+      "right",
+      "down",
+      "right",
+      "down",
+      "left",
+      "up",
+      "up",
+      "right",
+      "right",
       "down",
       "down",
       "left",
-      "down",
-      "up",
-      "up",
-      "right",
-      "right",
-      "down",
-      "down"
+      "left"
     ],
-    "signature": "st1-8bb1f4b7-436",
+    "signature": "st1-84569d6f-352",
     "prerequisites": [
       "walls",
-      "switch"
+      "key"
     ],
-    "introduction": [
-      "fragile"
-    ],
+    "introduction": [],
     "parameters": {
       "difficulty": 3,
       "animals": 2,
-      "primary": "fragile",
+      "primary": "key",
       "secondary": null,
-      "role": "compact",
-      "pattern": "fragile-prepare-before-commit"
+      "role": "varied",
+      "pattern": "key-fork-before-exit"
     },
     "certificate": {
       "method": "breadth-first-witness-and-engine-replay",
       "rulesVersion": 1,
-      "commands": 10,
+      "commands": 13,
       "optimal": true,
-      "visited": 689,
+      "visited": 126,
       "replayed": true,
-      "engine": "unchanged-rules-1"
+      "engine": "unchanged-rules-1",
+      "firstVictoryAt": 13
     },
     "editorial": {
       "source": "role-first-structure-and-automatic-curation",
       "design": {
-        "preparationControl": "switch",
-        "pattern": "fragile-prepare-before-commit",
-        "discovery": "o controle no desvio precisa estar preparado antes de abandonar seu acesso",
+        "preparationControl": "key",
+        "pattern": "key-fork-before-exit",
+        "discovery": "o desvio de preparação libera o outro animal, mudando qual caminho precisa de atenção",
         "roles": [
           {
             "board": 0,
             "role": "preparer-and-committer",
-            "control": 17,
-            "commit": [
-              14,
-              19
-            ],
+            "control": 9,
+            "commit": null,
             "goalRegion": [
-              24
+              15
             ]
           },
           {
@@ -19767,8 +17165,11 @@ export const CAMPAIGN = [
             "role": "receiver-and-aligner",
             "goalRegion": [
               6,
-              7,
-              2
+              2,
+              1,
+              3,
+              0,
+              4
             ]
           }
         ],
@@ -19777,34 +17178,33 @@ export const CAMPAIGN = [
             "board": 0,
             "role": "prepare",
             "cells": [
-              3,
-              8,
-              13,
-              12,
-              17
+              0,
+              4,
+              5,
+              9
             ]
           },
           {
             "board": 0,
-            "role": "preserve-access",
+            "role": "separate",
             "edge": [
-              14,
-              19
+              7,
+              11
             ]
           },
           {
             "board": 0,
             "role": "exit",
             "edge": [
-              19,
-              24
+              11,
+              15
             ]
           },
           {
             "board": 1,
             "role": "remote-exit",
             "edge": [
-              5,
+              10,
               6
             ]
           }
@@ -19818,52 +17218,51 @@ export const CAMPAIGN = [
           }
         ],
         "order": [
-          "prepare-control",
-          "commit-access",
-          "cross-prepared-exits",
+          "visit-side-branch",
+          "leave-control-with-configuration",
+          "cross-exits",
           "joint-arrival"
         ],
-        "counterfactual": "Crossing before preparation strands the control behind a one-way edge or collapsed bridge; verify the specific prefix on the final definition.",
+        "counterfactual": "Opening the preparation gate removes the obligation to visit the side branch.",
         "proofStatus": "structural-design-hypothesis; replay and budgeted ablations recorded separately"
       },
       "purpose": {
         "valid": true,
         "won": true,
         "evidenceScope": "supplied-command-sequence",
-        "commands": 10,
+        "commands": 13,
         "boxes": [],
         "dependencies": [
           {
             "gateId": "preparation-remote",
             "receiverBoard": 1,
             "condition": {
-              "type": "switch",
-              "id": "prepare",
-              "value": true
+              "type": "key",
+              "id": "prepare"
             },
             "controllers": [
               {
-                "type": "switch",
+                "type": "key",
                 "id": "prepare",
                 "board": 0,
-                "cell": 17
+                "cell": 9
               }
             ],
             "crossingCommands": [
-              7
+              6
             ]
           }
         ],
         "boardRoles": [
           {
             "board": 0,
-            "moved": 9,
-            "waited": 1,
+            "moved": 8,
+            "waited": 5,
             "goalDepartures": 0
           },
           {
             "board": 1,
-            "moved": 5,
+            "moved": 8,
             "waited": 5,
             "goalDepartures": 0
           }
@@ -19885,43 +17284,39 @@ export const CAMPAIGN = [
         "reason": "Replay e ablações são evidências automáticas, não substitutos de avaliação editorial e testes humanos."
       },
       "humanPlaytested": false,
-      "discovery": "Aqui o jogador precisa descobrir que o controle no desvio precisa estar preparado antes de abandonar seu acesso.",
+      "discovery": "Aqui o jogador precisa descobrir que o desvio de preparação libera o outro animal, mudando qual caminho precisa de atenção.",
       "reasoning": {
         "used": [
-          "fragile",
-          "switch",
-          "switch-gate"
+          "key",
+          "key-gate"
         ],
-        "partialBlocks": 6,
+        "partialBlocks": 10,
         "goalDepartures": [
           false,
           false
         ],
-        "unequalLoops": 8,
-        "directionChanges": 5,
-        "earlyTurns": 2,
+        "unequalLoops": 9,
+        "directionChanges": 8,
+        "earlyTurns": 4,
         "occupiedBoxPlate": false,
         "boxAsStopAfterSupport": false,
         "finalApproach": [
-          false,
-          true
+          true,
+          false
         ]
       },
       "sweep": {
         "status": "complete",
-        "visited": 17,
+        "visited": 11,
         "resistant": true
       },
       "compatibility": "validated",
       "alternatives": "Uma sequência verificada é fornecida; outras soluções podem existir.",
-      "deadEnds": "A fase permite estados sem saída; desfazer e reiniciar são livres.",
-      "decision": "retain-logical-definition",
-      "retentionReason": "Ponte frágil em dupla: preparar antes de abandonar o acesso que desaparece.",
-      "role": "focus",
-      "prerequisiteChapters": [
-        1,
-        2
-      ],
+      "deadEnds": "Mudanças de configuração podem exigir retornar a uma posição anterior.",
+      "role": "varied",
+      "decision": "recompose",
+      "curriculumReason": "Antecipar a aquisição da chave e preservar tempo para ajustar o outro animal.",
+      "retentionReason": "Antecipar a aquisição da chave e preservar tempo para ajustar o outro animal.",
       "antiSpam": {
         "singleDirection": {
           "tested": 4,
@@ -19929,7 +17324,7 @@ export const CAMPAIGN = [
         },
         "sweeps": {
           "status": "complete",
-          "visited": 17,
+          "visited": 11,
           "solves": false
         },
         "shortCycles": {
@@ -19937,131 +17332,60 @@ export const CAMPAIGN = [
           "winningPatterns": []
         },
         "biasedRandom": {
-          "runs": 12,
-          "commandsPerRun": 128,
-          "wins": 1
-        },
-        "uniformRandom": {
-          "runs": 12,
+          "runs": 24,
           "commandsPerRun": 128,
           "wins": 0
         },
+        "uniformRandom": {
+          "runs": 24,
+          "commandsPerRun": 128,
+          "wins": 2
+        },
         "interpretation": "Diagnóstico automático; ciclos curtos e acertos aleatórios não provam ausência de raciocínio. A varredura testa vitória após cada movimento."
       },
-      "repetition": {
-        "structuralSignature": "st1-8bb1f4b7-436",
-        "topologySignature": "top1-87a7529f-149",
-        "globallyRotatedOrReflectedDuplicate": false
-      },
-      "curriculumReason": "Ponte frágil em dupla: preparar antes de abandonar o acesso que desaparece.",
-      "animalRoles": [
+      "necessity": [
         {
-          "board": 0,
-          "logicalAnimal": "capivara",
-          "role": {
-            "board": 0,
-            "role": "preparer-and-committer",
-            "control": 17,
-            "commit": [
-              14,
-              19
-            ],
-            "goalRegion": [
-              24
-            ]
+          "avoid": {
+            "type": "helper-participation",
+            "board": 0
           },
-          "controls": [
-            {
-              "id": "prepare",
-              "type": "switch",
-              "receiverBoard": 1
-            }
-          ],
-          "goal": 24
-        },
-        {
-          "board": 1,
-          "logicalAnimal": "tuiuiu",
-          "role": {
-            "board": 1,
-            "role": "receiver-and-aligner",
-            "goalRegion": [
-              6,
-              7,
-              2
-            ]
-          },
-          "controls": [],
-          "goal": 7
-        }
-      ],
-      "objectRoles": [
-        {
-          "board": 0,
-          "type": "switches",
-          "id": "prepare",
-          "definition": {
-            "id": "prepare",
-            "cell": 17,
-            "group": "prepare"
-          },
-          "role": "Entrada e permanência final alternam a configuração, preservada ao sair.",
-          "evidenceScope": "definition-and-certified-witness; necessity requires separate audit"
-        },
-        {
-          "board": 0,
-          "type": "fragile",
-          "id": "fragile-0",
-          "definition": 19,
-          "role": "Desaparece ao abandonar a casa; exige preservar a preparação.",
-          "evidenceScope": "definition-and-certified-witness; necessity requires separate audit"
-        },
-        {
-          "board": 1,
-          "type": "gates",
-          "id": "preparation-remote",
-          "definition": {
-            "id": "preparation-remote",
-            "from": 5,
-            "to": 6,
-            "condition": {
-              "type": "switch",
-              "id": "prepare",
-              "value": true
-            }
-          },
-          "role": {
-            "condition": {
-              "type": "switch",
-              "id": "prepare",
-              "value": true
+          "result": {
+            "scope": "all-winning-solutions-avoiding-event",
+            "optimalScope": "avoiding-predicate-only",
+            "avoid": {
+              "type": "helper-participation",
+              "board": 0
             },
-            "crossings": [
-              7
-            ]
-          },
-          "evidenceScope": "definition-and-certified-witness; necessity requires separate audit"
+            "budget": {
+              "maxStates": 90000,
+              "maxMs": 12000,
+              "maxDepth": null
+            },
+            "status": "unsolvable",
+            "visited": 68,
+            "optimal": false,
+            "exhaustive": true
+          }
         }
       ],
-      "causalityReport": "tests/sintonia80-purpose-audit.json"
+      "causalityReport": "tests/sintonia-v4-editorial.json"
     },
     "number": 54,
     "chapter": 4,
-    "topologySignature": "top1-87a7529f-149",
-    "originNumber": 312,
+    "originNumber": 54,
     "origin": {
-      "kind": "curated-identical-logical-definition",
-      "catalog": "sintonia-content-2",
-      "number": 312,
+      "kind": "recomposed-removed-mechanics",
+      "catalog": "sintonia-content-3",
       "id": "sintonia-0312",
+      "number": 54,
       "version": 1,
-      "reason": "Ponte frágil em dupla: preparar antes de abandonar o acesso que desaparece."
+      "reason": "Antecipar a aquisição da chave e preservar tempo para ajustar o outro animal."
     },
     "actorIntroduction": null,
-    "ruleExplanation": "A ponte permanece enquanto o animal está nela. Quando ele sai, a casa desaparece. Desfazer restaura a ponte."
+    "topologySignature": "top1-fa4bb5f3-124"
   },
   {
-    "id": "sintonia-0304",
+    "id": "sintonia80-0055-v4",
     "version": 1,
     "rulesVersion": 1,
     "boards": [
@@ -20069,58 +17393,298 @@ export const CAMPAIGN = [
         "id": "b0",
         "animal": "capivara",
         "rows": 4,
-        "cols": 5,
+        "cols": 3,
         "walkable": [
+          0,
+          1,
+          2,
           3,
-          8,
-          11,
-          13,
-          16,
-          17,
-          18,
-          19
+          6,
+          9,
+          10
         ],
-        "start": 17,
-        "goal": 3,
-        "switches": [
-          {
-            "id": "prepare",
-            "cell": 11,
-            "group": "prepare"
-          }
-        ],
-        "gates": [],
-        "fragile": [
-          13
+        "start": 2,
+        "goal": 6,
+        "ice": [
+          3
         ]
       },
       {
         "id": "b1",
         "animal": "tuiuiu",
-        "rows": 5,
-        "cols": 5,
+        "rows": 3,
+        "cols": 3,
+        "walkable": [
+          0,
+          1,
+          2,
+          3,
+          4,
+          6,
+          7,
+          8
+        ],
+        "start": 8,
+        "goal": 2
+      }
+    ],
+    "mechanics": [
+      "walls",
+      "ice"
+    ],
+    "initialSwitches": {},
+    "initialSelectors": {},
+    "family": "intermediate-stop",
+    "secondaryFamilies": [
+      "goal-transit",
+      "final-command"
+    ],
+    "name": "Distâncias diferentes",
+    "lesson": "Prepare a entrada no gelo pensando na posição em que o animal vai parar.",
+    "discovery": "Aqui o jogador precisa descobrir que o gelo permite deslocamentos de comprimentos diferentes com a mesma seta.",
+    "hints": [
+      "No gelo, o animal segue até o primeiro piso comum ou bloqueio.",
+      "Você não precisa interromper o deslizamento. Ajuste a posição de entrada para coordenar a chegada.",
+      "Na configuração inicial, comece para a esquerda; observe quem avança e quem espera."
+    ],
+    "generatorVersion": 3,
+    "contentRevision": "sintonia-content-4",
+    "seed": "sintonia-content4:55:0",
+    "difficulty": 3,
+    "solution": [
+      "left",
+      "left",
+      "down",
+      "down",
+      "right",
+      "up",
+      "left",
+      "up",
+      "right",
+      "right"
+    ],
+    "signature": "st1-0e436d2e-216",
+    "prerequisites": [
+      "walls",
+      "ice"
+    ],
+    "introduction": [],
+    "parameters": {
+      "difficulty": 3,
+      "animals": 2,
+      "primary": "ice",
+      "secondary": null,
+      "role": "varied",
+      "pattern": null
+    },
+    "certificate": {
+      "method": "breadth-first-witness-and-engine-replay",
+      "rulesVersion": 1,
+      "commands": 10,
+      "optimal": true,
+      "visited": 42,
+      "replayed": true,
+      "engine": "unchanged-rules-1",
+      "firstVictoryAt": 10
+    },
+    "editorial": {
+      "source": "procedural-structure-and-automatic-curation",
+      "design": null,
+      "purpose": {
+        "valid": true,
+        "won": true,
+        "evidenceScope": "supplied-command-sequence",
+        "commands": 10,
+        "boxes": [],
+        "dependencies": [],
+        "boardRoles": [
+          {
+            "board": 0,
+            "moved": 7,
+            "waited": 3,
+            "goalDepartures": 1
+          },
+          {
+            "board": 1,
+            "moved": 8,
+            "waited": 2,
+            "goalDepartures": 0
+          }
+        ],
+        "caveat": "Uso neste certificado não prova necessidade. Consulte tests/sintonia-purpose-audit.json para ablações e limites."
+      },
+      "rubric": {
+        "status": "human-review-pending",
+        "dimensions": [
+          "purpose",
+          "discovery",
+          "interdependence",
+          "causal-clarity",
+          "spatial-economy",
+          "variety"
+        ],
+        "scores": null,
+        "humanPlaytesting": false,
+        "reason": "Replay e ablações são evidências automáticas, não substitutos de avaliação editorial e testes humanos."
+      },
+      "humanPlaytested": false,
+      "discovery": "Aqui o jogador precisa descobrir que o gelo permite deslocamentos de comprimentos diferentes com a mesma seta.",
+      "reasoning": {
+        "used": [
+          "ice"
+        ],
+        "partialBlocks": 5,
+        "goalDepartures": [
+          true,
+          false
+        ],
+        "unequalLoops": 6,
+        "directionChanges": 6,
+        "earlyTurns": 3,
+        "occupiedBoxPlate": false,
+        "boxAsStopAfterSupport": false,
+        "finalApproach": [
+          true,
+          false
+        ]
+      },
+      "sweep": {
+        "status": "complete",
+        "visited": 6,
+        "resistant": true
+      },
+      "compatibility": "validated",
+      "alternatives": "Uma sequência verificada é fornecida; outras soluções podem existir.",
+      "deadEnds": "Mudanças de configuração podem exigir retornar a uma posição anterior.",
+      "role": "varied",
+      "decision": "recompose",
+      "curriculumReason": "Planejar a saída do gelo antes de fixar a chegada do parceiro.",
+      "retentionReason": "Planejar a saída do gelo antes de fixar a chegada do parceiro.",
+      "antiSpam": {
+        "singleDirection": {
+          "tested": 4,
+          "winningDirections": []
+        },
+        "sweeps": {
+          "status": "complete",
+          "visited": 6,
+          "solves": false
+        },
+        "shortCycles": {
+          "tested": 40,
+          "winningPatterns": []
+        },
+        "biasedRandom": {
+          "runs": 24,
+          "commandsPerRun": 128,
+          "wins": 0
+        },
+        "uniformRandom": {
+          "runs": 24,
+          "commandsPerRun": 128,
+          "wins": 0
+        },
+        "interpretation": "Diagnóstico automático; ciclos curtos e acertos aleatórios não provam ausência de raciocínio. A varredura testa vitória após cada movimento."
+      },
+      "necessity": [
+        {
+          "avoid": {
+            "type": "event",
+            "eventType": "ice"
+          },
+          "result": {
+            "scope": "all-winning-solutions-avoiding-event",
+            "optimalScope": "avoiding-predicate-only",
+            "avoid": {
+              "type": "event",
+              "eventType": "ice"
+            },
+            "budget": {
+              "maxStates": 90000,
+              "maxMs": 12000,
+              "maxDepth": null
+            },
+            "status": "unsolvable",
+            "visited": 14,
+            "optimal": false,
+            "exhaustive": true
+          }
+        }
+      ],
+      "causalityReport": "tests/sintonia-v4-editorial.json"
+    },
+    "number": 55,
+    "chapter": 4,
+    "originNumber": 55,
+    "origin": {
+      "kind": "recomposed-removed-mechanics",
+      "catalog": "sintonia-content-3",
+      "id": "sintonia-0304",
+      "number": 55,
+      "version": 1,
+      "reason": "Planejar a saída do gelo antes de fixar a chegada do parceiro."
+    },
+    "actorIntroduction": null,
+    "topologySignature": "top1-eda44c37-109"
+  },
+  {
+    "id": "sintonia80-0056-v4",
+    "version": 1,
+    "rulesVersion": 1,
+    "boards": [
+      {
+        "id": "b0",
+        "animal": "capivara",
+        "rows": 4,
+        "cols": 4,
         "walkable": [
           1,
           2,
           3,
-          6,
+          5,
+          7,
           8,
-          9,
+          11,
+          12,
           13,
-          16,
-          17,
-          18,
-          19,
-          22,
-          24
+          14,
+          15
         ],
-        "start": 2,
+        "start": 1,
+        "goal": 13,
+        "switches": [
+          {
+            "id": "prepare",
+            "cell": 5,
+            "group": "prepare"
+          }
+        ],
+        "gates": []
+      },
+      {
+        "id": "b1",
+        "animal": "tuiuiu",
+        "rows": 4,
+        "cols": 4,
+        "walkable": [
+          0,
+          2,
+          4,
+          5,
+          6,
+          7,
+          8,
+          10,
+          12,
+          13
+        ],
+        "start": 7,
         "goal": 8,
         "gates": [
           {
             "id": "preparation-remote",
-            "from": 3,
-            "to": 8,
+            "from": 6,
+            "to": 5,
             "condition": {
               "type": "switch",
               "id": "prepare",
@@ -20132,97 +17696,91 @@ export const CAMPAIGN = [
     ],
     "mechanics": [
       "walls",
-      "switch",
-      "fragile"
+      "switch"
     ],
     "initialSwitches": {},
     "initialSelectors": {},
-    "family": "preserve-access",
+    "family": "scenario-choice",
     "secondaryFamilies": [
-      "wall-adjust",
-      "axis-order"
+      "goal-transit",
+      "priority-change"
     ],
-    "name": "Antes de partir",
-    "lesson": "Prepare o restante antes de sair da ponte frágil.",
-    "discovery": "Aqui o jogador precisa descobrir que o controle no desvio precisa estar preparado antes de abandonar seu acesso.",
+    "name": "Uma escolha que permanece",
+    "lesson": "Entre no interruptor para preparar a configuração das passagens.",
+    "discovery": "Aqui o jogador precisa descobrir que o desvio de preparação libera o outro animal, mudando qual caminho precisa de atenção.",
     "hints": [
-      "A ponte não desaparece enquanto o animal fica sobre ela.",
-      "Ao sair, essa casa deixa de existir. Prepare o que precisa ser feito antes; desfazer restaura a ponte.",
-      "Na configuração inicial, comece para a esquerda; observe quem avança e quem espera."
+      "O interruptor alterna a passagem quando o animal entra e termina sobre ele.",
+      "Depois de preparar a abertura, você pode sair do interruptor sem perder essa configuração.",
+      "Na configuração inicial, comece para baixo; observe quem avança e quem espera."
     ],
-    "generatorVersion": 2,
-    "contentRevision": "sintonia-content-3",
-    "seed": "sintonia-campaign-v2:0304:0",
+    "generatorVersion": 3,
+    "contentRevision": "sintonia-content-4",
+    "seed": "sintonia-content4:56:0",
     "difficulty": 3,
     "solution": [
-      "left",
+      "down",
       "up",
       "right",
       "right",
       "down",
-      "right",
-      "right",
-      "up",
-      "up",
-      "up",
-      "left"
+      "down",
+      "down",
+      "left",
+      "left",
+      "left",
+      "down",
+      "right"
     ],
-    "signature": "st1-ae39ef1b-412",
+    "signature": "st1-3ed979ef-394",
     "prerequisites": [
       "walls",
-      "switch",
-      "fragile"
+      "switch"
     ],
     "introduction": [],
     "parameters": {
       "difficulty": 3,
       "animals": 2,
-      "primary": "fragile",
+      "primary": "switch",
       "secondary": null,
-      "role": "compact",
-      "pattern": "fragile-prepare-before-commit"
+      "role": "varied",
+      "pattern": "switch-fork-before-exit"
     },
     "certificate": {
       "method": "breadth-first-witness-and-engine-replay",
       "rulesVersion": 1,
-      "commands": 11,
+      "commands": 12,
       "optimal": true,
-      "visited": 304,
+      "visited": 206,
       "replayed": true,
-      "engine": "unchanged-rules-1"
+      "engine": "unchanged-rules-1",
+      "firstVictoryAt": 12
     },
     "editorial": {
       "source": "role-first-structure-and-automatic-curation",
       "design": {
         "preparationControl": "switch",
-        "pattern": "fragile-prepare-before-commit",
-        "discovery": "o controle no desvio precisa estar preparado antes de abandonar seu acesso",
+        "pattern": "switch-fork-before-exit",
+        "discovery": "o desvio de preparação libera o outro animal, mudando qual caminho precisa de atenção",
         "roles": [
           {
             "board": 0,
             "role": "preparer-and-committer",
-            "control": 11,
-            "commit": [
-              18,
-              13
-            ],
+            "control": 5,
+            "commit": null,
             "goalRegion": [
-              3
+              13
             ]
           },
           {
             "board": 1,
             "role": "receiver-and-aligner",
             "goalRegion": [
+              5,
+              4,
               8,
-              9,
-              13,
-              18,
-              19,
-              17,
-              24,
-              22,
-              16
+              0,
+              12,
+              13
             ]
           }
         ],
@@ -20231,33 +17789,32 @@ export const CAMPAIGN = [
             "board": 0,
             "role": "prepare",
             "cells": [
-              17,
-              16,
-              11
+              1,
+              5
             ]
           },
           {
             "board": 0,
-            "role": "preserve-access",
+            "role": "separate",
             "edge": [
-              18,
-              13
+              3,
+              7
             ]
           },
           {
             "board": 0,
             "role": "exit",
             "edge": [
-              8,
-              3
+              14,
+              13
             ]
           },
           {
             "board": 1,
             "role": "remote-exit",
             "edge": [
-              3,
-              8
+              6,
+              5
             ]
           }
         ],
@@ -20270,19 +17827,19 @@ export const CAMPAIGN = [
           }
         ],
         "order": [
-          "prepare-control",
-          "commit-access",
-          "cross-prepared-exits",
+          "visit-side-branch",
+          "leave-control-with-configuration",
+          "cross-exits",
           "joint-arrival"
         ],
-        "counterfactual": "Crossing before preparation strands the control behind a one-way edge or collapsed bridge; verify the specific prefix on the final definition.",
+        "counterfactual": "Opening the preparation gate removes the obligation to visit the side branch.",
         "proofStatus": "structural-design-hypothesis; replay and budgeted ablations recorded separately"
       },
       "purpose": {
         "valid": true,
         "won": true,
         "evidenceScope": "supplied-command-sequence",
-        "commands": 11,
+        "commands": 12,
         "boxes": [],
         "dependencies": [
           {
@@ -20298,26 +17855,26 @@ export const CAMPAIGN = [
                 "type": "switch",
                 "id": "prepare",
                 "board": 0,
-                "cell": 11
+                "cell": 5
               }
             ],
             "crossingCommands": [
-              5
+              9
             ]
           }
         ],
         "boardRoles": [
           {
             "board": 0,
-            "moved": 8,
-            "waited": 3,
-            "goalDepartures": 0
+            "moved": 11,
+            "waited": 1,
+            "goalDepartures": 1
           },
           {
             "board": 1,
-            "moved": 6,
-            "waited": 5,
-            "goalDepartures": 1
+            "moved": 4,
+            "waited": 8,
+            "goalDepartures": 0
           }
         ],
         "caveat": "Uso neste certificado não prova necessidade. Consulte tests/sintonia-purpose-audit.json para ablações e limites."
@@ -20337,549 +17894,39 @@ export const CAMPAIGN = [
         "reason": "Replay e ablações são evidências automáticas, não substitutos de avaliação editorial e testes humanos."
       },
       "humanPlaytested": false,
-      "discovery": "Aqui o jogador precisa descobrir que o controle no desvio precisa estar preparado antes de abandonar seu acesso.",
+      "discovery": "Aqui o jogador precisa descobrir que o desvio de preparação libera o outro animal, mudando qual caminho precisa de atenção.",
       "reasoning": {
         "used": [
-          "fragile",
           "switch",
           "switch-gate"
         ],
-        "partialBlocks": 8,
+        "partialBlocks": 9,
         "goalDepartures": [
-          false,
-          true
+          true,
+          false
         ],
-        "unequalLoops": 11,
+        "unequalLoops": 20,
         "directionChanges": 6,
-        "earlyTurns": 2,
+        "earlyTurns": 1,
         "occupiedBoxPlate": false,
         "boxAsStopAfterSupport": false,
         "finalApproach": [
-          true,
-          false
-        ]
-      },
-      "sweep": {
-        "status": "complete",
-        "visited": 41,
-        "resistant": true
-      },
-      "compatibility": "validated",
-      "alternatives": "Uma sequência verificada é fornecida; outras soluções podem existir.",
-      "deadEnds": "A fase permite estados sem saída; desfazer e reiniciar são livres.",
-      "decision": "retain-logical-definition",
-      "retentionReason": "Consolidar a perda de acesso e a preparação do interruptor.",
-      "role": "revisit",
-      "prerequisiteChapters": [
-        1,
-        2,
-        4
-      ],
-      "antiSpam": {
-        "singleDirection": {
-          "tested": 4,
-          "winningDirections": []
-        },
-        "sweeps": {
-          "status": "complete",
-          "visited": 41,
-          "solves": false
-        },
-        "shortCycles": {
-          "tested": 40,
-          "winningPatterns": []
-        },
-        "biasedRandom": {
-          "runs": 12,
-          "commandsPerRun": 128,
-          "wins": 0
-        },
-        "uniformRandom": {
-          "runs": 12,
-          "commandsPerRun": 128,
-          "wins": 2
-        },
-        "interpretation": "Diagnóstico automático; ciclos curtos e acertos aleatórios não provam ausência de raciocínio. A varredura testa vitória após cada movimento."
-      },
-      "repetition": {
-        "structuralSignature": "st1-ae39ef1b-412",
-        "topologySignature": "top1-7488bd28-129",
-        "globallyRotatedOrReflectedDuplicate": false
-      },
-      "curriculumReason": "Consolidar a perda de acesso e a preparação do interruptor.",
-      "animalRoles": [
-        {
-          "board": 0,
-          "logicalAnimal": "capivara",
-          "role": {
-            "board": 0,
-            "role": "preparer-and-committer",
-            "control": 11,
-            "commit": [
-              18,
-              13
-            ],
-            "goalRegion": [
-              3
-            ]
-          },
-          "controls": [
-            {
-              "id": "prepare",
-              "type": "switch",
-              "receiverBoard": 1
-            }
-          ],
-          "goal": 3
-        },
-        {
-          "board": 1,
-          "logicalAnimal": "tuiuiu",
-          "role": {
-            "board": 1,
-            "role": "receiver-and-aligner",
-            "goalRegion": [
-              8,
-              9,
-              13,
-              18,
-              19,
-              17,
-              24,
-              22,
-              16
-            ]
-          },
-          "controls": [],
-          "goal": 8
-        }
-      ],
-      "objectRoles": [
-        {
-          "board": 0,
-          "type": "switches",
-          "id": "prepare",
-          "definition": {
-            "id": "prepare",
-            "cell": 11,
-            "group": "prepare"
-          },
-          "role": "Entrada e permanência final alternam a configuração, preservada ao sair.",
-          "evidenceScope": "definition-and-certified-witness; necessity requires separate audit"
-        },
-        {
-          "board": 0,
-          "type": "fragile",
-          "id": "fragile-0",
-          "definition": 13,
-          "role": "Desaparece ao abandonar a casa; exige preservar a preparação.",
-          "evidenceScope": "definition-and-certified-witness; necessity requires separate audit"
-        },
-        {
-          "board": 1,
-          "type": "gates",
-          "id": "preparation-remote",
-          "definition": {
-            "id": "preparation-remote",
-            "from": 3,
-            "to": 8,
-            "condition": {
-              "type": "switch",
-              "id": "prepare",
-              "value": true
-            }
-          },
-          "role": {
-            "condition": {
-              "type": "switch",
-              "id": "prepare",
-              "value": true
-            },
-            "crossings": [
-              5
-            ]
-          },
-          "evidenceScope": "definition-and-certified-witness; necessity requires separate audit"
-        }
-      ],
-      "causalityReport": "tests/sintonia80-purpose-audit.json"
-    },
-    "number": 55,
-    "chapter": 4,
-    "topologySignature": "top1-7488bd28-129",
-    "originNumber": 304,
-    "origin": {
-      "kind": "curated-identical-logical-definition",
-      "catalog": "sintonia-content-2",
-      "number": 304,
-      "id": "sintonia-0304",
-      "version": 1,
-      "reason": "Consolidar a perda de acesso e a preparação do interruptor."
-    },
-    "actorIntroduction": null
-  },
-  {
-    "id": "sintonia-0197",
-    "version": 1,
-    "rulesVersion": 1,
-    "boards": [
-      {
-        "id": "b0",
-        "animal": "capivara",
-        "rows": 5,
-        "cols": 5,
-        "walkable": [
-          6,
-          7,
-          8,
-          11,
-          12,
-          13,
-          16,
-          17,
-          18,
-          19,
-          21,
-          22,
-          23
-        ],
-        "start": 13,
-        "goal": 16,
-        "boxes": [
-          {
-            "id": "box0",
-            "cell": 12
-          }
-        ],
-        "plates": [
-          {
-            "id": "weight",
-            "cell": 16
-          }
-        ],
-        "gates": [
-          {
-            "id": "weight-gate",
-            "from": 18,
-            "to": 19,
-            "condition": {
-              "type": "plate",
-              "id": "weight"
-            }
-          }
-        ],
-        "keys": [
-          {
-            "id": "release-key",
-            "cell": 19
-          }
-        ]
-      },
-      {
-        "id": "b1",
-        "animal": "tuiuiu",
-        "rows": 2,
-        "cols": 3,
-        "walkable": [
-          0,
-          1,
-          2,
-          4
-        ],
-        "start": 0,
-        "goal": 4,
-        "gates": [
-          {
-            "id": "helper-exit-1",
-            "from": 1,
-            "to": 4,
-            "condition": {
-              "type": "key",
-              "id": "release-key"
-            }
-          }
-        ]
-      }
-    ],
-    "mechanics": [
-      "walls",
-      "plate",
-      "box",
-      "key"
-    ],
-    "initialSwitches": {},
-    "initialSelectors": {},
-    "family": "dual-use-object",
-    "secondaryFamilies": [
-      "waiting-place",
-      "unequal-loop"
-    ],
-    "name": "O apoio já cumpriu seu papel",
-    "lesson": "Use a caixa para buscar a chave; depois libere a casa de apoio para a chegada.",
-    "discovery": "Aqui o jogador precisa descobrir que o apoio da caixa é temporário: depois da chave, a mesma casa precisa ficar livre para o animal.",
-    "hints": [
-      "O destino ocupa a casa que primeiro precisa sustentar a passagem.",
-      "A chave fica além da cancela do apoio: obtenha essa mudança permanente antes de retirar a caixa.",
-      "Volte pelo contorno e empurre a caixa para fora da placa; agora a ajuda pode terminar."
-    ],
-    "generatorVersion": 2,
-    "contentRevision": "sintonia-content-3",
-    "seed": "sintonia-campaign-v2:0197:0",
-    "difficulty": 3,
-    "solution": [
-      "up",
-      "left",
-      "down",
-      "right",
-      "down",
-      "left",
-      "right",
-      "right",
-      "left",
-      "up",
-      "up",
-      "down",
-      "left",
-      "left",
-      "down"
-    ],
-    "signature": "st1-34f98317-509",
-    "prerequisites": [
-      "walls",
-      "plate",
-      "box",
-      "key"
-    ],
-    "introduction": [],
-    "parameters": {
-      "difficulty": 2,
-      "animals": 2,
-      "primary": "box",
-      "secondary": null,
-      "role": "compact",
-      "pattern": "support-then-release"
-    },
-    "certificate": {
-      "method": "breadth-first-witness-and-engine-replay",
-      "rulesVersion": 1,
-      "commands": 15,
-      "optimal": true,
-      "visited": 272,
-      "replayed": true,
-      "engine": "unchanged-rules-1"
-    },
-    "editorial": {
-      "source": "role-first-structure-and-automatic-curation",
-      "design": {
-        "pattern": "support-then-release",
-        "name": "O apoio já cumpriu seu papel",
-        "lesson": "Use a caixa para buscar a chave; depois libere a casa de apoio para a chegada.",
-        "discovery": "Aqui o jogador precisa descobrir que o apoio da caixa é temporário: depois da chave, a mesma casa precisa ficar livre para o animal.",
-        "hints": [
-          "O destino ocupa a casa que primeiro precisa sustentar a passagem.",
-          "A chave fica além da cancela do apoio: obtenha essa mudança permanente antes de retirar a caixa.",
-          "Volte pelo contorno e empurre a caixa para fora da placa; agora a ajuda pode terminar."
-        ],
-        "boxRoles": [
-          "reorientar",
-          "sustentar",
-          "liberar-destino"
-        ],
-        "roles": [
-          "Preparar o objeto, manter acesso e concluir a própria chegada.",
-          "Esperar a chave obtida com apoio e atravessar a passagem permanente."
-        ]
-      },
-      "purpose": {
-        "valid": true,
-        "won": true,
-        "evidenceScope": "supplied-command-sequence",
-        "commands": 15,
-        "boxes": [
-          {
-            "id": "box0",
-            "origin": {
-              "id": "box0",
-              "board": 0,
-              "cell": 12
-            },
-            "final": {
-              "id": "box0",
-              "board": 0,
-              "cell": 21
-            },
-            "pushes": [
-              {
-                "command": 3,
-                "direction": "down",
-                "board": 0,
-                "from": 12,
-                "to": 17
-              },
-              {
-                "command": 6,
-                "direction": "left",
-                "board": 0,
-                "from": 17,
-                "to": 16
-              },
-              {
-                "command": 15,
-                "direction": "down",
-                "board": 0,
-                "from": 16,
-                "to": 21
-              }
-            ],
-            "directionChanges": 2,
-            "deliveries": [],
-            "postDeliveryPushes": [],
-            "plateEntries": [
-              {
-                "command": 6,
-                "plateId": "weight"
-              }
-            ],
-            "plateReleases": [
-              {
-                "command": 15,
-                "plateId": "weight",
-                "afterGateSupport": true
-              }
-            ],
-            "supportUses": [
-              {
-                "command": 8,
-                "plateId": "weight",
-                "gateId": "weight-gate",
-                "receiverBoard": 0
-              },
-              {
-                "command": 9,
-                "plateId": "weight",
-                "gateId": "weight-gate",
-                "receiverBoard": 0
-              }
-            ],
-            "observedRoles": [
-              "directional-reposition",
-              "gate-support",
-              "release-after-support"
-            ]
-          }
-        ],
-        "dependencies": [
-          {
-            "gateId": "weight-gate",
-            "receiverBoard": 0,
-            "condition": {
-              "type": "plate",
-              "id": "weight"
-            },
-            "controllers": [
-              {
-                "type": "plate",
-                "id": "weight",
-                "board": 0,
-                "cell": 16
-              }
-            ],
-            "crossingCommands": [
-              8,
-              9
-            ]
-          },
-          {
-            "gateId": "helper-exit-1",
-            "receiverBoard": 1,
-            "condition": {
-              "type": "key",
-              "id": "release-key"
-            },
-            "controllers": [
-              {
-                "type": "key",
-                "id": "release-key",
-                "board": 0,
-                "cell": 19
-              }
-            ],
-            "crossingCommands": [
-              12
-            ]
-          }
-        ],
-        "boardRoles": [
-          {
-            "board": 0,
-            "moved": 15,
-            "waited": 0,
-            "goalDepartures": 0
-          },
-          {
-            "board": 1,
-            "moved": 6,
-            "waited": 9,
-            "goalDepartures": 0
-          }
-        ],
-        "caveat": "Uso neste certificado não prova necessidade. Consulte tests/sintonia-purpose-audit.json para ablações e limites."
-      },
-      "rubric": {
-        "status": "human-review-pending",
-        "dimensions": [
-          "purpose",
-          "discovery",
-          "interdependence",
-          "causal-clarity",
-          "spatial-economy",
-          "variety"
-        ],
-        "scores": null,
-        "humanPlaytesting": false,
-        "reason": "Replay e ablações são evidências automáticas, não substitutos de avaliação editorial e testes humanos."
-      },
-      "humanPlaytested": false,
-      "discovery": "Aqui o jogador precisa descobrir que o apoio da caixa é temporário: depois da chave, a mesma casa precisa ficar livre para o animal.",
-      "reasoning": {
-        "used": [
-          "box-support-gate",
-          "key",
-          "key-gate",
-          "plate-gate",
-          "push"
-        ],
-        "partialBlocks": 9,
-        "goalDepartures": [
-          false,
-          false
-        ],
-        "unequalLoops": 19,
-        "directionChanges": 11,
-        "earlyTurns": 6,
-        "occupiedBoxPlate": true,
-        "boxAsStopAfterSupport": false,
-        "finalApproach": [
           false,
           true
         ]
       },
       "sweep": {
         "status": "complete",
-        "visited": 30,
+        "visited": 48,
         "resistant": true
       },
       "compatibility": "validated",
       "alternatives": "Uma sequência verificada é fornecida; outras soluções podem existir.",
-      "deadEnds": "A fase permite estados sem saída; desfazer e reiniciar são livres.",
-      "decision": "retain-logical-definition",
-      "retentionReason": "A caixa sustenta e depois deixa a casa necessária ao destino.",
-      "role": "mix",
-      "prerequisiteChapters": [
-        1,
-        2,
-        3
-      ],
+      "deadEnds": "Mudanças de configuração podem exigir retornar a uma posição anterior.",
+      "role": "varied",
+      "decision": "recompose",
+      "curriculumReason": "Controlar a ordem das alternâncias e do retorno.",
+      "retentionReason": "Controlar a ordem das alternâncias e do retorno.",
       "antiSpam": {
         "singleDirection": {
           "tested": 4,
@@ -20887,7 +17934,7 @@ export const CAMPAIGN = [
         },
         "sweeps": {
           "status": "complete",
-          "visited": 30,
+          "visited": 48,
           "solves": false
         },
         "shortCycles": {
@@ -20895,153 +17942,57 @@ export const CAMPAIGN = [
           "winningPatterns": []
         },
         "biasedRandom": {
-          "runs": 12,
+          "runs": 24,
           "commandsPerRun": 128,
           "wins": 0
         },
         "uniformRandom": {
-          "runs": 12,
+          "runs": 24,
           "commandsPerRun": 128,
-          "wins": 1
+          "wins": 5
         },
         "interpretation": "Diagnóstico automático; ciclos curtos e acertos aleatórios não provam ausência de raciocínio. A varredura testa vitória após cada movimento."
       },
-      "repetition": {
-        "structuralSignature": "st1-34f98317-509",
-        "topologySignature": "top1-02399961-115",
-        "globallyRotatedOrReflectedDuplicate": false
-      },
-      "curriculumReason": "A caixa sustenta e depois deixa a casa necessária ao destino.",
-      "animalRoles": [
+      "necessity": [
         {
-          "board": 0,
-          "logicalAnimal": "capivara",
-          "role": "Preparar o objeto, manter acesso e concluir a própria chegada.",
-          "controls": [
-            {
-              "id": "weight",
-              "type": "plate",
-              "receiverBoard": 0
+          "avoid": {
+            "type": "helper-participation",
+            "board": 0
+          },
+          "result": {
+            "scope": "all-winning-solutions-avoiding-event",
+            "optimalScope": "avoiding-predicate-only",
+            "avoid": {
+              "type": "helper-participation",
+              "board": 0
             },
-            {
-              "id": "release-key",
-              "type": "key",
-              "receiverBoard": 1
-            }
-          ],
-          "goal": 16
-        },
-        {
-          "board": 1,
-          "logicalAnimal": "tuiuiu",
-          "role": "Esperar a chave obtida com apoio e atravessar a passagem permanente.",
-          "controls": [],
-          "goal": 4
+            "budget": {
+              "maxStates": 90000,
+              "maxMs": 12000,
+              "maxDepth": null
+            },
+            "status": "unsolvable",
+            "visited": 84,
+            "optimal": false,
+            "exhaustive": true
+          }
         }
       ],
-      "objectRoles": [
-        {
-          "board": 0,
-          "type": "boxes",
-          "id": "box0",
-          "definition": {
-            "id": "box0",
-            "cell": 12
-          },
-          "role": [
-            "reorientar",
-            "sustentar",
-            "liberar-destino"
-          ],
-          "evidenceScope": "definition-and-certified-witness; necessity requires separate audit"
-        },
-        {
-          "board": 0,
-          "type": "plates",
-          "id": "weight",
-          "definition": {
-            "id": "weight",
-            "cell": 16
-          },
-          "role": "Ocupação por animal ou caixa controla a passagem no estado anterior ao comando.",
-          "evidenceScope": "definition-and-certified-witness; necessity requires separate audit"
-        },
-        {
-          "board": 0,
-          "type": "keys",
-          "id": "release-key",
-          "definition": {
-            "id": "release-key",
-            "cell": 19
-          },
-          "role": "Aquisição pelo animal mantém a abertura até reiniciar.",
-          "evidenceScope": "definition-and-certified-witness; necessity requires separate audit"
-        },
-        {
-          "board": 0,
-          "type": "gates",
-          "id": "weight-gate",
-          "definition": {
-            "id": "weight-gate",
-            "from": 18,
-            "to": 19,
-            "condition": {
-              "type": "plate",
-              "id": "weight"
-            }
-          },
-          "role": {
-            "condition": {
-              "type": "plate",
-              "id": "weight"
-            },
-            "crossings": [
-              8,
-              9
-            ]
-          },
-          "evidenceScope": "definition-and-certified-witness; necessity requires separate audit"
-        },
-        {
-          "board": 1,
-          "type": "gates",
-          "id": "helper-exit-1",
-          "definition": {
-            "id": "helper-exit-1",
-            "from": 1,
-            "to": 4,
-            "condition": {
-              "type": "key",
-              "id": "release-key"
-            }
-          },
-          "role": {
-            "condition": {
-              "type": "key",
-              "id": "release-key"
-            },
-            "crossings": [
-              12
-            ]
-          },
-          "evidenceScope": "definition-and-certified-witness; necessity requires separate audit"
-        }
-      ],
-      "causalityReport": "tests/sintonia80-purpose-audit.json"
+      "causalityReport": "tests/sintonia-v4-editorial.json"
     },
     "number": 56,
     "chapter": 4,
-    "topologySignature": "top1-02399961-115",
-    "originNumber": 197,
+    "originNumber": 56,
     "origin": {
-      "kind": "curated-identical-logical-definition",
-      "catalog": "sintonia-content-2",
-      "number": 197,
+      "kind": "recomposed-removed-mechanics",
+      "catalog": "sintonia-content-3",
       "id": "sintonia-0197",
+      "number": 56,
       "version": 1,
-      "reason": "A caixa sustenta e depois deixa a casa necessária ao destino."
+      "reason": "Controlar a ordem das alternâncias e do retorno."
     },
-    "actorIntroduction": null
+    "actorIntroduction": null,
+    "topologySignature": "top1-db959f2f-128"
   },
   {
     "id": "sintonia-0337",
@@ -22218,84 +19169,13 @@ export const CAMPAIGN = [
     "actorIntroduction": null
   },
   {
-    "id": "sintonia-0350",
+    "id": "sintonia80-0060-v4",
     "version": 1,
     "rulesVersion": 1,
     "boards": [
       {
         "id": "b0",
         "animal": "capivara",
-        "rows": 4,
-        "cols": 3,
-        "walkable": [
-          0,
-          2,
-          3,
-          5,
-          6,
-          7,
-          8,
-          10,
-          11
-        ],
-        "start": 2,
-        "goal": 0,
-        "plates": [
-          {
-            "id": "relay-a",
-            "cell": 10
-          }
-        ],
-        "gates": [
-          {
-            "id": "relay-return",
-            "from": 7,
-            "to": 6,
-            "condition": {
-              "type": "plate",
-              "id": "relay-b"
-            }
-          }
-        ]
-      },
-      {
-        "id": "b1",
-        "animal": "tuiuiu",
-        "rows": 3,
-        "cols": 3,
-        "walkable": [
-          0,
-          1,
-          2,
-          4,
-          5,
-          6,
-          7,
-          8
-        ],
-        "start": 0,
-        "goal": 6,
-        "plates": [
-          {
-            "id": "relay-b",
-            "cell": 6
-          }
-        ],
-        "gates": [
-          {
-            "id": "relay-out",
-            "from": 7,
-            "to": 6,
-            "condition": {
-              "type": "plate",
-              "id": "relay-a"
-            }
-          }
-        ]
-      },
-      {
-        "id": "b2",
-        "animal": "bemtevi",
         "rows": 3,
         "cols": 4,
         "walkable": [
@@ -22308,12 +19188,82 @@ export const CAMPAIGN = [
           7,
           8,
           9,
-          10
+          10,
+          11
         ],
-        "start": 8,
-        "goal": 7,
-        "fragile": [
-          6
+        "start": 0,
+        "goal": 3,
+        "plates": [
+          {
+            "id": "relay-a",
+            "cell": 5
+          }
+        ],
+        "gates": [
+          {
+            "id": "relay-return",
+            "from": 7,
+            "to": 3,
+            "condition": {
+              "type": "plate",
+              "id": "relay-b"
+            }
+          }
+        ]
+      },
+      {
+        "id": "b1",
+        "animal": "tuiuiu",
+        "rows": 4,
+        "cols": 4,
+        "walkable": [
+          0,
+          2,
+          4,
+          5,
+          6,
+          7,
+          9,
+          13
+        ],
+        "start": 13,
+        "goal": 2,
+        "plates": [
+          {
+            "id": "relay-b",
+            "cell": 2
+          }
+        ],
+        "gates": [
+          {
+            "id": "relay-out",
+            "from": 6,
+            "to": 2,
+            "condition": {
+              "type": "plate",
+              "id": "relay-a"
+            }
+          }
+        ]
+      },
+      {
+        "id": "b2",
+        "animal": "bemtevi",
+        "rows": 4,
+        "cols": 4,
+        "walkable": [
+          5,
+          6,
+          10,
+          12,
+          13,
+          14,
+          15
+        ],
+        "start": 5,
+        "goal": 12,
+        "ice": [
+          13
         ]
       }
     ],
@@ -22321,14 +19271,14 @@ export const CAMPAIGN = [
       "walls",
       "plate",
       "handoff",
-      "fragile"
+      "ice"
     ],
     "initialSwitches": {},
     "initialSelectors": {},
     "family": "support-handoff",
     "secondaryFamilies": [
-      "axis-order",
-      "wall-adjust"
+      "final-command",
+      "axis-order"
     ],
     "name": "Ajuda em revezamento",
     "lesson": "Quem atravessou pode assumir a próxima ajuda entre os animais.",
@@ -22336,52 +19286,52 @@ export const CAMPAIGN = [
     "hints": [
       "Uma das placas está numa região que a outra ajuda a abrir.",
       "Prepare a primeira placa, atravesse e ocupe a próxima para que o primeiro ajudante possa continuar.",
-      "Na configuração inicial, comece para a direita; observe quem avança e quem espera."
+      "Na configuração inicial, comece para cima; observe quem avança e quem espera."
     ],
-    "generatorVersion": 2,
-    "contentRevision": "sintonia-content-3",
-    "seed": "sintonia-campaign-v2:0350:0",
+    "generatorVersion": 3,
+    "contentRevision": "sintonia-content-4",
+    "seed": "sintonia-content4:60:0",
     "difficulty": 3,
     "solution": [
-      "right",
-      "down",
-      "down",
-      "down",
-      "left",
-      "left",
       "up",
-      "left",
-      "down",
       "up",
       "right",
+      "down",
+      "up",
+      "down",
+      "right",
+      "down",
       "right",
       "up",
-      "right"
+      "up",
+      "left",
+      "left"
     ],
-    "signature": "st1-a287e76d-553",
+    "signature": "st1-fda63c17-551",
     "prerequisites": [
       "walls",
       "plate",
       "handoff",
-      "fragile"
+      "ice"
     ],
     "introduction": [],
     "parameters": {
       "difficulty": 3,
       "animals": 3,
       "primary": "handoff",
-      "secondary": "fragile",
-      "role": "synthesis",
+      "secondary": "ice",
+      "role": "varied",
       "pattern": null
     },
     "certificate": {
       "method": "breadth-first-witness-and-engine-replay",
       "rulesVersion": 1,
-      "commands": 14,
+      "commands": 13,
       "optimal": true,
-      "visited": 385,
+      "visited": 326,
       "replayed": true,
-      "engine": "unchanged-rules-1"
+      "engine": "unchanged-rules-1",
+      "firstVictoryAt": 13
     },
     "editorial": {
       "source": "procedural-structure-and-automatic-curation",
@@ -22390,7 +19340,7 @@ export const CAMPAIGN = [
         "valid": true,
         "won": true,
         "evidenceScope": "supplied-command-sequence",
-        "commands": 14,
+        "commands": 13,
         "boxes": [],
         "dependencies": [
           {
@@ -22405,11 +19355,11 @@ export const CAMPAIGN = [
                 "type": "plate",
                 "id": "relay-b",
                 "board": 1,
-                "cell": 6
+                "cell": 2
               }
             ],
             "crossingCommands": [
-              8
+              11
             ]
           },
           {
@@ -22424,31 +19374,31 @@ export const CAMPAIGN = [
                 "type": "plate",
                 "id": "relay-a",
                 "board": 0,
-                "cell": 10
+                "cell": 5
               }
             ],
             "crossingCommands": [
-              6
+              5
             ]
           }
         ],
         "boardRoles": [
           {
             "board": 0,
-            "moved": 8,
-            "waited": 6,
+            "moved": 9,
+            "waited": 4,
             "goalDepartures": 0
           },
           {
             "board": 1,
             "moved": 4,
-            "waited": 10,
+            "waited": 9,
             "goalDepartures": 0
           },
           {
             "board": 2,
             "moved": 8,
-            "waited": 6,
+            "waited": 5,
             "goalDepartures": 0
           }
         ],
@@ -22472,18 +19422,18 @@ export const CAMPAIGN = [
       "discovery": "Aqui o jogador precisa descobrir que um animal precisa atravessar e ocupar a próxima placa para liberar quem o ajudou.",
       "reasoning": {
         "used": [
-          "fragile",
           "handoff-0",
           "handoff-1",
+          "ice",
           "plate-gate"
         ],
-        "partialBlocks": 14,
+        "partialBlocks": 11,
         "goalDepartures": [
           false,
           false,
           false
         ],
-        "unequalLoops": 32,
+        "unequalLoops": 29,
         "directionChanges": 9,
         "earlyTurns": 4,
         "occupiedBoxPlate": false,
@@ -22496,20 +19446,16 @@ export const CAMPAIGN = [
       },
       "sweep": {
         "status": "complete",
-        "visited": 78,
+        "visited": 34,
         "resistant": true
       },
       "compatibility": "validated",
       "alternatives": "Uma sequência verificada é fornecida; outras soluções podem existir.",
-      "deadEnds": "A fase permite estados sem saída; desfazer e reiniciar são livres.",
-      "decision": "retain-logical-definition",
-      "retentionReason": "Síntese de revezamento com perda de acesso já apresentada.",
-      "role": "synthesis",
-      "prerequisiteChapters": [
-        1,
-        2,
-        4
-      ],
+      "deadEnds": "Mudanças de configuração podem exigir retornar a uma posição anterior.",
+      "role": "varied",
+      "decision": "recompose",
+      "curriculumReason": "Passar a responsabilidade de apoio entre animais.",
+      "retentionReason": "Passar a responsabilidade de apoio entre animais.",
       "antiSpam": {
         "singleDirection": {
           "tested": 4,
@@ -22517,7 +19463,7 @@ export const CAMPAIGN = [
         },
         "sweeps": {
           "status": "complete",
-          "visited": 78,
+          "visited": 34,
           "solves": false
         },
         "shortCycles": {
@@ -22525,153 +19471,103 @@ export const CAMPAIGN = [
           "winningPatterns": []
         },
         "biasedRandom": {
-          "runs": 12,
+          "runs": 24,
           "commandsPerRun": 128,
           "wins": 0
         },
         "uniformRandom": {
-          "runs": 12,
+          "runs": 24,
           "commandsPerRun": 128,
           "wins": 0
         },
         "interpretation": "Diagnóstico automático; ciclos curtos e acertos aleatórios não provam ausência de raciocínio. A varredura testa vitória após cada movimento."
       },
-      "repetition": {
-        "structuralSignature": "st1-a287e76d-553",
-        "topologySignature": "top1-0ed6a398-168",
-        "globallyRotatedOrReflectedDuplicate": false
-      },
-      "curriculumReason": "Síntese de revezamento com perda de acesso já apresentada.",
-      "animalRoles": [
+      "necessity": [
         {
-          "board": 0,
-          "logicalAnimal": "capivara",
-          "role": "Preparar plate relay-a para painel 2. Aproveitar relay-return nos comandos 8. Usar bloqueios como esperas enquanto os parceiros avançam. Preparar a chegada conjunta sem depender de congelar no destino.",
-          "controls": [
-            {
-              "id": "relay-a",
-              "type": "plate",
-              "receiverBoard": 1
-            }
-          ],
-          "goal": 0
+          "avoid": {
+            "type": "helper-participation",
+            "board": 1
+          },
+          "result": {
+            "scope": "all-winning-solutions-avoiding-event",
+            "optimalScope": "avoiding-predicate-only",
+            "avoid": {
+              "type": "helper-participation",
+              "board": 1
+            },
+            "budget": {
+              "maxStates": 90000,
+              "maxMs": 12000,
+              "maxDepth": null
+            },
+            "status": "unsolvable",
+            "visited": 323,
+            "optimal": false,
+            "exhaustive": true
+          }
         },
         {
-          "board": 1,
-          "logicalAnimal": "tuiuiu",
-          "role": "Preparar plate relay-b para painel 1. Aproveitar relay-out nos comandos 6. Usar bloqueios como esperas enquanto os parceiros avançam. Preparar a chegada conjunta sem depender de congelar no destino.",
-          "controls": [
-            {
-              "id": "relay-b",
-              "type": "plate",
-              "receiverBoard": 0
-            }
-          ],
-          "goal": 6
+          "avoid": {
+            "type": "helper-participation",
+            "board": 0
+          },
+          "result": {
+            "scope": "all-winning-solutions-avoiding-event",
+            "optimalScope": "avoiding-predicate-only",
+            "avoid": {
+              "type": "helper-participation",
+              "board": 0
+            },
+            "budget": {
+              "maxStates": 90000,
+              "maxMs": 12000,
+              "maxDepth": null
+            },
+            "status": "unsolvable",
+            "visited": 271,
+            "optimal": false,
+            "exhaustive": true
+          }
         },
         {
-          "board": 2,
-          "logicalAnimal": "bemtevi",
-          "role": "Usar bloqueios como esperas enquanto os parceiros avançam. Preparar a chegada conjunta sem depender de congelar no destino.",
-          "controls": [],
-          "goal": 7
+          "avoid": {
+            "type": "event",
+            "eventType": "ice"
+          },
+          "result": {
+            "scope": "all-winning-solutions-avoiding-event",
+            "optimalScope": "avoiding-predicate-only",
+            "avoid": {
+              "type": "event",
+              "eventType": "ice"
+            },
+            "budget": {
+              "maxStates": 90000,
+              "maxMs": 12000,
+              "maxDepth": null
+            },
+            "status": "unsolvable",
+            "visited": 264,
+            "optimal": false,
+            "exhaustive": true
+          }
         }
       ],
-      "objectRoles": [
-        {
-          "board": 0,
-          "type": "plates",
-          "id": "relay-a",
-          "definition": {
-            "id": "relay-a",
-            "cell": 10
-          },
-          "role": "Ocupação por animal ou caixa controla a passagem no estado anterior ao comando.",
-          "evidenceScope": "definition-and-certified-witness; necessity requires separate audit"
-        },
-        {
-          "board": 0,
-          "type": "gates",
-          "id": "relay-return",
-          "definition": {
-            "id": "relay-return",
-            "from": 7,
-            "to": 6,
-            "condition": {
-              "type": "plate",
-              "id": "relay-b"
-            }
-          },
-          "role": {
-            "condition": {
-              "type": "plate",
-              "id": "relay-b"
-            },
-            "crossings": [
-              8
-            ]
-          },
-          "evidenceScope": "definition-and-certified-witness; necessity requires separate audit"
-        },
-        {
-          "board": 1,
-          "type": "plates",
-          "id": "relay-b",
-          "definition": {
-            "id": "relay-b",
-            "cell": 6
-          },
-          "role": "Ocupação por animal ou caixa controla a passagem no estado anterior ao comando.",
-          "evidenceScope": "definition-and-certified-witness; necessity requires separate audit"
-        },
-        {
-          "board": 1,
-          "type": "gates",
-          "id": "relay-out",
-          "definition": {
-            "id": "relay-out",
-            "from": 7,
-            "to": 6,
-            "condition": {
-              "type": "plate",
-              "id": "relay-a"
-            }
-          },
-          "role": {
-            "condition": {
-              "type": "plate",
-              "id": "relay-a"
-            },
-            "crossings": [
-              6
-            ]
-          },
-          "evidenceScope": "definition-and-certified-witness; necessity requires separate audit"
-        },
-        {
-          "board": 2,
-          "type": "fragile",
-          "id": "fragile-0",
-          "definition": 6,
-          "role": "Desaparece ao abandonar a casa; exige preservar a preparação.",
-          "evidenceScope": "definition-and-certified-witness; necessity requires separate audit"
-        }
-      ],
-      "causalityReport": "tests/sintonia80-purpose-audit.json"
+      "causalityReport": "tests/sintonia-v4-editorial.json"
     },
     "number": 60,
     "chapter": 4,
-    "topologySignature": "top1-0ed6a398-168",
-    "originNumber": 350,
+    "originNumber": 60,
     "origin": {
-      "kind": "curated-identical-logical-definition",
-      "catalog": "sintonia-content-2",
-      "number": 350,
+      "kind": "recomposed-removed-mechanics",
+      "catalog": "sintonia-content-3",
       "id": "sintonia-0350",
+      "number": 60,
       "version": 1,
-      "reason": "Síntese de revezamento com perda de acesso já apresentada."
+      "reason": "Passar a responsabilidade de apoio entre animais."
     },
-    "actorIntroduction": null
+    "actorIntroduction": null,
+    "topologySignature": "top1-712b507f-168"
   },
   {
     "id": "sintonia-0354",
@@ -23488,78 +20384,79 @@ export const CAMPAIGN = [
     "actorIntroduction": null
   },
   {
-    "id": "sintonia-0490",
+    "id": "sintonia80-0063-v4",
     "version": 1,
     "rulesVersion": 1,
     "boards": [
       {
         "id": "b0",
         "animal": "capivara",
-        "rows": 3,
-        "cols": 5,
+        "rows": 5,
+        "cols": 4,
         "walkable": [
           0,
           1,
-          3,
-          4,
           5,
-          7,
           8,
           9,
-          10,
           11,
           12,
-          14
+          13,
+          14,
+          15,
+          17,
+          19
         ],
-        "start": 11,
-        "goal": 14,
-        "keys": [
+        "start": 15,
+        "goal": 5,
+        "switches": [
           {
-            "id": "prepare",
-            "cell": 10
-          }
-        ],
-        "gates": [],
-        "oneWays": [
-          {
-            "from": 7,
-            "to": 8
+            "id": "sky",
+            "cell": 19,
+            "group": "sky"
           }
         ]
       },
       {
         "id": "b1",
         "animal": "tuiuiu",
-        "rows": 4,
-        "cols": 5,
+        "rows": 5,
+        "cols": 3,
         "walkable": [
           0,
-          1,
           2,
           3,
           4,
           5,
           6,
-          7,
+          8,
           9,
-          11,
+          10,
+          12,
           13,
-          14,
-          15,
-          16,
-          17,
-          19
+          14
         ],
         "start": 2,
-        "goal": 13,
+        "goal": 14,
         "gates": [
           {
-            "id": "preparation-remote",
-            "from": 3,
-            "to": 4,
+            "id": "moon",
+            "from": 2,
+            "to": 5,
             "condition": {
-              "type": "key",
-              "id": "prepare"
+              "type": "switch",
+              "id": "sky",
+              "value": false
+            }
+          },
+          {
+            "id": "sun",
+            "from": 4,
+            "to": 3,
+            "condition": {
+              "type": "switch",
+              "id": "sky",
+              "value": true
             }
           }
         ]
@@ -23567,183 +20464,129 @@ export const CAMPAIGN = [
     ],
     "mechanics": [
       "walls",
-      "key",
-      "oneway"
+      "switch",
+      "alternate"
     ],
     "initialSwitches": {},
     "initialSelectors": {},
-    "family": "preserve-access",
+    "family": "scenario-choice",
     "secondaryFamilies": [
-      "priority-change",
-      "wall-adjust"
+      "intermediate-stop",
+      "waiting-place"
     ],
-    "name": "Escolha a travessia",
-    "lesson": "Prepare os outros caminhos antes de cruzar a passagem de sentido único.",
-    "discovery": "Aqui o jogador precisa descobrir que o controle no desvio precisa estar preparado antes de abandonar seu acesso.",
+    "name": "Entre sol e lua",
+    "lesson": "Atravesse uma etapa e mude a configuração para preparar a seguinte.",
+    "discovery": "Aqui o jogador precisa descobrir que as passagens de sol e lua precisam ser atravessadas em configurações diferentes.",
     "hints": [
-      "A seta está na divisória: ela permite cruzar somente no sentido indicado.",
-      "Confira o alinhamento dos outros animais antes de atravessar, porque o caminho de volta é limitado.",
-      "Na configuração inicial, comece para a esquerda; observe quem avança e quem espera."
+      "O mesmo interruptor troca quais cancelas de sol e lua estão abertas.",
+      "Prepare a primeira travessia antes de alternar para a configuração que abre o próximo trecho.",
+      "Na configuração inicial, comece para baixo; observe quem avança e quem espera."
     ],
-    "generatorVersion": 2,
-    "contentRevision": "sintonia-content-3",
-    "seed": "sintonia-campaign-v2:0490:0",
+    "generatorVersion": 3,
+    "contentRevision": "sintonia-content-4",
+    "seed": "sintonia-content4:63:0",
     "difficulty": 4,
     "solution": [
+      "down",
+      "up",
       "left",
+      "left",
+      "down",
+      "down",
       "right",
+      "down",
       "right",
       "up",
-      "right",
-      "right",
-      "down",
-      "down",
-      "left"
+      "up",
+      "up"
     ],
-    "signature": "st1-89d8d16b-405",
+    "signature": "st1-e42b1a33-464",
     "prerequisites": [
       "walls",
-      "key",
-      "oneway"
+      "switch",
+      "alternate"
     ],
     "introduction": [],
     "parameters": {
-      "difficulty": 5,
+      "difficulty": 4,
       "animals": 2,
-      "primary": "oneway",
+      "primary": "alternate",
       "secondary": null,
-      "role": "revisit",
-      "pattern": "oneway-prepare-before-commit"
+      "role": "varied",
+      "pattern": null
     },
     "certificate": {
       "method": "breadth-first-witness-and-engine-replay",
       "rulesVersion": 1,
-      "commands": 9,
+      "commands": 12,
       "optimal": true,
-      "visited": 261,
+      "visited": 251,
       "replayed": true,
-      "engine": "unchanged-rules-1"
+      "engine": "unchanged-rules-1",
+      "firstVictoryAt": 12
     },
     "editorial": {
-      "source": "role-first-structure-and-automatic-curation",
-      "design": {
-        "preparationControl": "key",
-        "pattern": "oneway-prepare-before-commit",
-        "discovery": "o controle no desvio precisa estar preparado antes de abandonar seu acesso",
-        "roles": [
-          {
-            "board": 0,
-            "role": "preparer-and-committer",
-            "control": 10,
-            "commit": [
-              7,
-              8
-            ],
-            "goalRegion": [
-              14
-            ]
-          },
-          {
-            "board": 1,
-            "role": "receiver-and-aligner",
-            "goalRegion": [
-              4,
-              9,
-              14,
-              13,
-              19
-            ]
-          }
-        ],
-        "structures": [
-          {
-            "board": 0,
-            "role": "prepare",
-            "cells": [
-              11,
-              10
-            ]
-          },
-          {
-            "board": 0,
-            "role": "preserve-access",
-            "edge": [
-              7,
-              8
-            ]
-          },
-          {
-            "board": 0,
-            "role": "exit",
-            "edge": [
-              9,
-              14
-            ]
-          },
-          {
-            "board": 1,
-            "role": "remote-exit",
-            "edge": [
-              3,
-              4
-            ]
-          }
-        ],
-        "dependencies": [
-          {
-            "fromBoard": 0,
-            "toBoard": 1,
-            "control": "prepare",
-            "role": "prepare-remote-exit"
-          }
-        ],
-        "order": [
-          "prepare-control",
-          "commit-access",
-          "cross-prepared-exits",
-          "joint-arrival"
-        ],
-        "counterfactual": "Crossing before preparation strands the control behind a one-way edge or collapsed bridge; verify the specific prefix on the final definition.",
-        "proofStatus": "structural-design-hypothesis; replay and budgeted ablations recorded separately"
-      },
+      "source": "procedural-structure-and-automatic-curation",
+      "design": null,
       "purpose": {
         "valid": true,
         "won": true,
         "evidenceScope": "supplied-command-sequence",
-        "commands": 9,
+        "commands": 12,
         "boxes": [],
         "dependencies": [
           {
-            "gateId": "preparation-remote",
+            "gateId": "moon",
             "receiverBoard": 1,
             "condition": {
-              "type": "key",
-              "id": "prepare"
+              "type": "switch",
+              "id": "sky",
+              "value": false
             },
             "controllers": [
               {
-                "type": "key",
-                "id": "prepare",
+                "type": "switch",
+                "id": "sky",
                 "board": 0,
-                "cell": 10
+                "cell": 19
               }
             ],
             "crossingCommands": [
-              5
+              1
+            ]
+          },
+          {
+            "gateId": "sun",
+            "receiverBoard": 1,
+            "condition": {
+              "type": "switch",
+              "id": "sky",
+              "value": true
+            },
+            "controllers": [
+              {
+                "type": "switch",
+                "id": "sky",
+                "board": 0,
+                "cell": 19
+              }
+            ],
+            "crossingCommands": [
+              4
             ]
           }
         ],
         "boardRoles": [
           {
             "board": 0,
-            "moved": 7,
-            "waited": 2,
+            "moved": 8,
+            "waited": 4,
             "goalDepartures": 0
           },
           {
             "board": 1,
-            "moved": 7,
-            "waited": 2,
+            "moved": 8,
+            "waited": 4,
             "goalDepartures": 0
           }
         ],
@@ -23764,44 +20607,41 @@ export const CAMPAIGN = [
         "reason": "Replay e ablações são evidências automáticas, não substitutos de avaliação editorial e testes humanos."
       },
       "humanPlaytested": false,
-      "discovery": "Aqui o jogador precisa descobrir que o controle no desvio precisa estar preparado antes de abandonar seu acesso.",
+      "discovery": "Aqui o jogador precisa descobrir que as passagens de sol e lua precisam ser atravessadas em configurações diferentes.",
       "reasoning": {
         "used": [
-          "key",
-          "key-gate",
-          "oneway"
+          "moon-gate",
+          "sun-gate",
+          "switch",
+          "switch-gate"
         ],
-        "partialBlocks": 4,
+        "partialBlocks": 8,
         "goalDepartures": [
           false,
           false
         ],
-        "unequalLoops": 1,
-        "directionChanges": 5,
-        "earlyTurns": 3,
+        "unequalLoops": 11,
+        "directionChanges": 7,
+        "earlyTurns": 4,
         "occupiedBoxPlate": false,
         "boxAsStopAfterSupport": false,
         "finalApproach": [
-          true,
-          false
+          false,
+          true
         ]
       },
       "sweep": {
         "status": "complete",
-        "visited": 46,
+        "visited": 26,
         "resistant": true
       },
       "compatibility": "validated",
       "alternatives": "Uma sequência verificada é fornecida; outras soluções podem existir.",
-      "deadEnds": "A fase permite estados sem saída; desfazer e reiniciar são livres.",
-      "decision": "retain-logical-definition",
-      "retentionReason": "Retomar dupla compacta de preparação antes de compromisso.",
-      "role": "mix",
-      "prerequisiteChapters": [
-        1,
-        2,
-        4
-      ],
+      "deadEnds": "Mudanças de configuração podem exigir retornar a uma posição anterior.",
+      "role": "varied",
+      "decision": "recompose",
+      "curriculumReason": "Escolher a ordem sol/lua e o momento de trocar a configuração.",
+      "retentionReason": "Escolher a ordem sol/lua e o momento de trocar a configuração.",
       "antiSpam": {
         "singleDirection": {
           "tested": 4,
@@ -23809,7 +20649,7 @@ export const CAMPAIGN = [
         },
         "sweeps": {
           "status": "complete",
-          "visited": 46,
+          "visited": 26,
           "solves": false
         },
         "shortCycles": {
@@ -23817,129 +20657,57 @@ export const CAMPAIGN = [
           "winningPatterns": []
         },
         "biasedRandom": {
-          "runs": 12,
+          "runs": 24,
           "commandsPerRun": 128,
           "wins": 0
         },
         "uniformRandom": {
-          "runs": 12,
+          "runs": 24,
           "commandsPerRun": 128,
-          "wins": 0
+          "wins": 5
         },
         "interpretation": "Diagnóstico automático; ciclos curtos e acertos aleatórios não provam ausência de raciocínio. A varredura testa vitória após cada movimento."
       },
-      "repetition": {
-        "structuralSignature": "st1-89d8d16b-405",
-        "topologySignature": "top1-fe8eb1b5-146",
-        "globallyRotatedOrReflectedDuplicate": false
-      },
-      "curriculumReason": "Retomar dupla compacta de preparação antes de compromisso.",
-      "animalRoles": [
+      "necessity": [
         {
-          "board": 0,
-          "logicalAnimal": "capivara",
-          "role": {
-            "board": 0,
-            "role": "preparer-and-committer",
-            "control": 10,
-            "commit": [
-              7,
-              8
-            ],
-            "goalRegion": [
-              14
-            ]
+          "avoid": {
+            "type": "helper-participation",
+            "board": 0
           },
-          "controls": [
-            {
-              "id": "prepare",
-              "type": "key",
-              "receiverBoard": 1
-            }
-          ],
-          "goal": 14
-        },
-        {
-          "board": 1,
-          "logicalAnimal": "tuiuiu",
-          "role": {
-            "board": 1,
-            "role": "receiver-and-aligner",
-            "goalRegion": [
-              4,
-              9,
-              14,
-              13,
-              19
-            ]
-          },
-          "controls": [],
-          "goal": 13
-        }
-      ],
-      "objectRoles": [
-        {
-          "board": 0,
-          "type": "keys",
-          "id": "prepare",
-          "definition": {
-            "id": "prepare",
-            "cell": 10
-          },
-          "role": "Aquisição pelo animal mantém a abertura até reiniciar.",
-          "evidenceScope": "definition-and-certified-witness; necessity requires separate audit"
-        },
-        {
-          "board": 0,
-          "type": "oneWays",
-          "id": "oneWays-0",
-          "definition": {
-            "from": 7,
-            "to": 8
-          },
-          "role": "Restringe a travessia ao sentido indicado.",
-          "evidenceScope": "definition-and-certified-witness; necessity requires separate audit"
-        },
-        {
-          "board": 1,
-          "type": "gates",
-          "id": "preparation-remote",
-          "definition": {
-            "id": "preparation-remote",
-            "from": 3,
-            "to": 4,
-            "condition": {
-              "type": "key",
-              "id": "prepare"
-            }
-          },
-          "role": {
-            "condition": {
-              "type": "key",
-              "id": "prepare"
+          "result": {
+            "scope": "all-winning-solutions-avoiding-event",
+            "optimalScope": "avoiding-predicate-only",
+            "avoid": {
+              "type": "helper-participation",
+              "board": 0
             },
-            "crossings": [
-              5
-            ]
-          },
-          "evidenceScope": "definition-and-certified-witness; necessity requires separate audit"
+            "budget": {
+              "maxStates": 90000,
+              "maxMs": 12000,
+              "maxDepth": null
+            },
+            "status": "unsolvable",
+            "visited": 10,
+            "optimal": false,
+            "exhaustive": true
+          }
         }
       ],
-      "causalityReport": "tests/sintonia80-purpose-audit.json"
+      "causalityReport": "tests/sintonia-v4-editorial.json"
     },
     "number": 63,
     "chapter": 5,
-    "topologySignature": "top1-fe8eb1b5-146",
-    "originNumber": 490,
+    "originNumber": 63,
     "origin": {
-      "kind": "curated-identical-logical-definition",
-      "catalog": "sintonia-content-2",
-      "number": 490,
+      "kind": "recomposed-removed-mechanics",
+      "catalog": "sintonia-content-3",
       "id": "sintonia-0490",
+      "number": 63,
       "version": 1,
-      "reason": "Retomar dupla compacta de preparação antes de compromisso."
+      "reason": "Escolher a ordem sol/lua e o momento de trocar a configuração."
     },
-    "actorIntroduction": null
+    "actorIntroduction": null,
+    "topologySignature": "top1-ba19f8eb-134"
   },
   {
     "id": "sintonia-0376",
@@ -24489,141 +21257,93 @@ export const CAMPAIGN = [
     "actorIntroduction": 4
   },
   {
-    "id": "sintonia-0388",
+    "id": "sintonia80-0065-v4",
     "version": 1,
     "rulesVersion": 1,
     "boards": [
       {
         "id": "b0",
         "animal": "capivara",
-        "rows": 6,
+        "rows": 5,
         "cols": 5,
         "walkable": [
-          6,
-          7,
-          8,
+          0,
+          5,
           10,
-          11,
           12,
-          13,
+          15,
           16,
           17,
           18,
+          19,
+          20,
+          21,
           22,
-          27
+          24
         ],
-        "start": 22,
+        "start": 16,
         "goal": 10,
-        "boxes": [
-          {
-            "id": "box0",
-            "cell": 17
-          }
-        ],
         "plates": [
           {
-            "id": "weight",
-            "cell": 22
-          }
-        ],
-        "gates": [
-          {
-            "id": "weight-gate",
-            "from": 11,
-            "to": 10,
-            "condition": {
-              "type": "plate",
-              "id": "weight"
-            }
-          },
-          {
-            "id": "prepare-cut-11",
-            "from": 13,
-            "to": 8,
-            "condition": {
-              "type": "plate",
-              "id": "prepare-1"
-            }
-          },
-          {
-            "id": "prepare-cut-12",
-            "from": 12,
-            "to": 7,
-            "condition": {
-              "type": "plate",
-              "id": "prepare-1"
-            }
-          },
-          {
-            "id": "prepare-cut-13",
-            "from": 11,
-            "to": 6,
-            "condition": {
-              "type": "plate",
-              "id": "prepare-1"
-            }
+            "id": "first",
+            "cell": 5
           }
         ]
       },
       {
         "id": "b1",
         "animal": "tuiuiu",
-        "rows": 2,
+        "rows": 3,
         "cols": 3,
         "walkable": [
+          0,
           1,
-          3,
+          2,
           4,
-          5
+          5,
+          6,
+          7,
+          8
         ],
-        "start": 3,
+        "start": 0,
         "goal": 1,
         "plates": [
           {
-            "id": "prepare-1",
-            "cell": 4
-          }
-        ],
-        "gates": [
-          {
-            "id": "helper-exit-1",
-            "from": 4,
-            "to": 1,
-            "condition": {
-              "type": "plate",
-              "id": "weight"
-            }
+            "id": "second",
+            "cell": 6
           }
         ]
       },
       {
         "id": "b2",
         "animal": "bemtevi",
-        "rows": 3,
-        "cols": 3,
+        "rows": 4,
+        "cols": 5,
         "walkable": [
-          2,
-          3,
+          1,
           4,
           5,
-          8
+          6,
+          7,
+          8,
+          9,
+          12,
+          14,
+          17
         ],
-        "start": 8,
-        "goal": 3,
-        "plates": [
-          {
-            "id": "prepare-2",
-            "cell": 4
-          }
-        ],
+        "start": 17,
+        "goal": 4,
         "gates": [
           {
-            "id": "helper-exit-2",
-            "from": 4,
-            "to": 3,
+            "id": "together",
+            "from": 9,
+            "to": 4,
             "condition": {
-              "type": "plate",
-              "id": "weight"
+              "type": "all",
+              "ids": [
+                "first",
+                "second"
+              ]
             }
           }
         ]
@@ -24632,276 +21352,109 @@ export const CAMPAIGN = [
     "mechanics": [
       "walls",
       "plate",
-      "box"
+      "and"
     ],
     "initialSwitches": {},
     "initialSelectors": {},
-    "family": "preserve-access",
+    "family": "remote-support",
     "secondaryFamilies": [
-      "axis-order",
-      "intermediate-stop"
+      "final-command",
+      "waiting-place"
     ],
-    "name": "Guardar para recuperar",
-    "lesson": "Afaste a caixa primeiro para alcançar o outro lado e trazê-la de volta ao apoio.",
-    "discovery": "Aqui o jogador precisa descobrir que afastar provisoriamente a caixa da placa libera o acesso para devolvê-la pelo lado correto.",
+    "name": "Dois apoios juntos",
+    "lesson": "Prepare as duas placas ao mesmo tempo para abrir a cancela.",
+    "discovery": "Aqui o jogador precisa descobrir que dois animais precisam sustentar simultaneamente as condições de uma passagem.",
     "hints": [
-      "A placa está atrás da posição inicial da caixa.",
-      "O primeiro estacionamento precisa permitir contornar; um canto terminal perde a recuperação.",
-      "Entre na área de contorno, alcance a face oposta e traga a caixa de volta para sustentar a saída."
+      "A cancela precisa das duas placas indicadas ocupadas, não apenas de uma.",
+      "Prepare as duas posições de apoio antes de tentar a travessia.",
+      "Na configuração inicial, comece para cima; observe quem avança e quem espera."
     ],
-    "generatorVersion": 2,
-    "contentRevision": "sintonia-content-3",
-    "seed": "sintonia-campaign-v2:0388:0",
+    "generatorVersion": 3,
+    "contentRevision": "sintonia-content-4",
+    "seed": "sintonia-content4:65:0",
     "difficulty": 4,
     "solution": [
       "up",
+      "up",
+      "right",
+      "right",
+      "down",
+      "down",
+      "left",
+      "left",
+      "left",
+      "up",
+      "up",
+      "up",
       "right",
       "up",
       "up",
-      "right",
       "left",
       "down",
       "down",
-      "up",
-      "left",
-      "left"
+      "right"
     ],
-    "signature": "st1-f8c4b741-965",
+    "signature": "st1-4ddac9cf-471",
     "prerequisites": [
       "walls",
       "plate",
-      "box"
+      "and"
     ],
     "introduction": [],
     "parameters": {
       "difficulty": 4,
       "animals": 3,
-      "primary": "box",
+      "primary": "and",
       "secondary": null,
-      "role": "focus",
-      "pattern": "park-and-retrieve"
+      "role": "varied",
+      "pattern": null
     },
     "certificate": {
       "method": "breadth-first-witness-and-engine-replay",
       "rulesVersion": 1,
-      "commands": 11,
+      "commands": 19,
       "optimal": true,
-      "visited": 507,
+      "visited": 720,
       "replayed": true,
-      "engine": "unchanged-rules-1"
+      "engine": "unchanged-rules-1",
+      "firstVictoryAt": 19
     },
     "editorial": {
-      "source": "role-first-structure-and-automatic-curation",
-      "design": {
-        "pattern": "park-and-retrieve",
-        "name": "Guardar para recuperar",
-        "lesson": "Afaste a caixa primeiro para alcançar o outro lado e trazê-la de volta ao apoio.",
-        "discovery": "Aqui o jogador precisa descobrir que afastar provisoriamente a caixa da placa libera o acesso para devolvê-la pelo lado correto.",
-        "hints": [
-          "A placa está atrás da posição inicial da caixa.",
-          "O primeiro estacionamento precisa permitir contornar; um canto terminal perde a recuperação.",
-          "Entre na área de contorno, alcance a face oposta e traga a caixa de volta para sustentar a saída."
-        ],
-        "boxRoles": [
-          "liberar-acesso",
-          "estacionar-provisoriamente",
-          "recuperar",
-          "sustentar"
-        ],
-        "roles": [
-          "Preparar o objeto, manter acesso e concluir a própria chegada.",
-          "Preparar o acesso 1, depois abandonar a placa graças ao apoio da caixa.",
-          "Preparar o acesso 2, depois abandonar a placa graças ao apoio da caixa."
-        ]
-      },
+      "source": "procedural-structure-and-automatic-curation",
+      "design": null,
       "purpose": {
         "valid": true,
         "won": true,
         "evidenceScope": "supplied-command-sequence",
-        "commands": 11,
-        "boxes": [
-          {
-            "id": "box0",
-            "origin": {
-              "id": "box0",
-              "board": 0,
-              "cell": 17
-            },
-            "final": {
-              "id": "box0",
-              "board": 0,
-              "cell": 22
-            },
-            "pushes": [
-              {
-                "command": 1,
-                "direction": "up",
-                "board": 0,
-                "from": 17,
-                "to": 12
-              },
-              {
-                "command": 7,
-                "direction": "down",
-                "board": 0,
-                "from": 12,
-                "to": 17
-              },
-              {
-                "command": 8,
-                "direction": "down",
-                "board": 0,
-                "from": 17,
-                "to": 22
-              }
-            ],
-            "directionChanges": 1,
-            "deliveries": [],
-            "postDeliveryPushes": [],
-            "plateEntries": [
-              {
-                "command": 8,
-                "plateId": "weight"
-              }
-            ],
-            "plateReleases": [],
-            "supportUses": [
-              {
-                "command": 9,
-                "plateId": "weight",
-                "gateId": "helper-exit-1",
-                "receiverBoard": 1
-              },
-              {
-                "command": 11,
-                "plateId": "weight",
-                "gateId": "weight-gate",
-                "receiverBoard": 0
-              },
-              {
-                "command": 11,
-                "plateId": "weight",
-                "gateId": "helper-exit-2",
-                "receiverBoard": 2
-              }
-            ],
-            "observedRoles": [
-              "directional-reposition",
-              "gate-support"
-            ]
-          }
-        ],
+        "commands": 19,
+        "boxes": [],
         "dependencies": [
           {
-            "gateId": "weight-gate",
-            "receiverBoard": 0,
-            "condition": {
-              "type": "plate",
-              "id": "weight"
-            },
-            "controllers": [
-              {
-                "type": "plate",
-                "id": "weight",
-                "board": 0,
-                "cell": 22
-              }
-            ],
-            "crossingCommands": [
-              11
-            ]
-          },
-          {
-            "gateId": "prepare-cut-11",
-            "receiverBoard": 0,
-            "condition": {
-              "type": "plate",
-              "id": "prepare-1"
-            },
-            "controllers": [
-              {
-                "type": "plate",
-                "id": "prepare-1",
-                "board": 1,
-                "cell": 4
-              }
-            ],
-            "crossingCommands": [
-              4
-            ]
-          },
-          {
-            "gateId": "prepare-cut-12",
-            "receiverBoard": 0,
-            "condition": {
-              "type": "plate",
-              "id": "prepare-1"
-            },
-            "controllers": [
-              {
-                "type": "plate",
-                "id": "prepare-1",
-                "board": 1,
-                "cell": 4
-              }
-            ],
-            "crossingCommands": [
-              7
-            ]
-          },
-          {
-            "gateId": "prepare-cut-13",
-            "receiverBoard": 0,
-            "condition": {
-              "type": "plate",
-              "id": "prepare-1"
-            },
-            "controllers": [
-              {
-                "type": "plate",
-                "id": "prepare-1",
-                "board": 1,
-                "cell": 4
-              }
-            ],
-            "crossingCommands": []
-          },
-          {
-            "gateId": "helper-exit-1",
-            "receiverBoard": 1,
-            "condition": {
-              "type": "plate",
-              "id": "weight"
-            },
-            "controllers": [
-              {
-                "type": "plate",
-                "id": "weight",
-                "board": 0,
-                "cell": 22
-              }
-            ],
-            "crossingCommands": [
-              9
-            ]
-          },
-          {
-            "gateId": "helper-exit-2",
+            "gateId": "together",
             "receiverBoard": 2,
             "condition": {
-              "type": "plate",
-              "id": "weight"
+              "type": "all",
+              "ids": [
+                "first",
+                "second"
+              ]
             },
             "controllers": [
               {
                 "type": "plate",
-                "id": "weight",
+                "id": "first",
                 "board": 0,
-                "cell": 22
+                "cell": 5
+              },
+              {
+                "type": "plate",
+                "id": "second",
+                "board": 1,
+                "cell": 6
               }
             ],
             "crossingCommands": [
-              11
+              12
             ]
           }
         ],
@@ -24909,19 +21462,19 @@ export const CAMPAIGN = [
           {
             "board": 0,
             "moved": 10,
-            "waited": 1,
-            "goalDepartures": 0
+            "waited": 9,
+            "goalDepartures": 1
           },
           {
             "board": 1,
-            "moved": 4,
-            "waited": 7,
-            "goalDepartures": 0
+            "moved": 11,
+            "waited": 8,
+            "goalDepartures": 2
           },
           {
             "board": 2,
             "moved": 7,
-            "waited": 4,
+            "waited": 12,
             "goalDepartures": 0
           }
         ],
@@ -24942,46 +21495,40 @@ export const CAMPAIGN = [
         "reason": "Replay e ablações são evidências automáticas, não substitutos de avaliação editorial e testes humanos."
       },
       "humanPlaytested": false,
-      "discovery": "Aqui o jogador precisa descobrir que afastar provisoriamente a caixa da placa libera o acesso para devolvê-la pelo lado correto.",
+      "discovery": "Aqui o jogador precisa descobrir que dois animais precisam sustentar simultaneamente as condições de uma passagem.",
       "reasoning": {
         "used": [
-          "box-support-gate",
-          "plate-gate",
-          "push"
+          "and-gate"
         ],
-        "partialBlocks": 10,
+        "partialBlocks": 17,
         "goalDepartures": [
-          false,
-          false,
-          false
-        ],
-        "unequalLoops": 15,
-        "directionChanges": 7,
-        "earlyTurns": 5,
-        "occupiedBoxPlate": true,
-        "boxAsStopAfterSupport": false,
-        "finalApproach": [
-          false,
+          true,
           true,
           false
+        ],
+        "unequalLoops": 39,
+        "directionChanges": 9,
+        "earlyTurns": 3,
+        "occupiedBoxPlate": false,
+        "boxAsStopAfterSupport": false,
+        "finalApproach": [
+          true,
+          false,
+          true
         ]
       },
       "sweep": {
         "status": "complete",
-        "visited": 32,
+        "visited": 49,
         "resistant": true
       },
       "compatibility": "validated",
       "alternatives": "Uma sequência verificada é fornecida; outras soluções podem existir.",
-      "deadEnds": "A fase permite estados sem saída; desfazer e reiniciar são livres.",
-      "decision": "retain-logical-definition",
-      "retentionReason": "Trio retoma estacionar e recuperar a caixa.",
-      "role": "revisit",
-      "prerequisiteChapters": [
-        1,
-        2,
-        3
-      ],
+      "deadEnds": "Mudanças de configuração podem exigir retornar a uma posição anterior.",
+      "role": "varied",
+      "decision": "recompose",
+      "curriculumReason": "Preparar dois apoios simultâneos antes da travessia.",
+      "retentionReason": "Preparar dois apoios simultâneos antes da travessia.",
       "antiSpam": {
         "singleDirection": {
           "tested": 4,
@@ -24989,7 +21536,7 @@ export const CAMPAIGN = [
         },
         "sweeps": {
           "status": "complete",
-          "visited": 32,
+          "visited": 49,
           "solves": false
         },
         "shortCycles": {
@@ -24997,286 +21544,80 @@ export const CAMPAIGN = [
           "winningPatterns": []
         },
         "biasedRandom": {
-          "runs": 12,
+          "runs": 24,
           "commandsPerRun": 128,
           "wins": 0
         },
         "uniformRandom": {
-          "runs": 12,
+          "runs": 24,
           "commandsPerRun": 128,
           "wins": 0
         },
         "interpretation": "Diagnóstico automático; ciclos curtos e acertos aleatórios não provam ausência de raciocínio. A varredura testa vitória após cada movimento."
       },
-      "repetition": {
-        "structuralSignature": "st1-f8c4b741-965",
-        "topologySignature": "top1-6e61566b-157",
-        "globallyRotatedOrReflectedDuplicate": false
-      },
-      "curriculumReason": "Trio retoma estacionar e recuperar a caixa.",
-      "animalRoles": [
+      "necessity": [
         {
-          "board": 0,
-          "logicalAnimal": "capivara",
-          "role": "Preparar o objeto, manter acesso e concluir a própria chegada.",
-          "controls": [
-            {
-              "id": "weight",
-              "type": "plate",
-              "receiverBoard": 0
+          "avoid": {
+            "type": "helper-participation",
+            "board": 0
+          },
+          "result": {
+            "scope": "all-winning-solutions-avoiding-event",
+            "optimalScope": "avoiding-predicate-only",
+            "avoid": {
+              "type": "helper-participation",
+              "board": 0
             },
-            {
-              "id": "weight",
-              "type": "plate",
-              "receiverBoard": 1
+            "budget": {
+              "maxStates": 90000,
+              "maxMs": 12000,
+              "maxDepth": null
             },
-            {
-              "id": "weight",
-              "type": "plate",
-              "receiverBoard": 2
-            }
-          ],
-          "goal": 10
+            "status": "unsolvable",
+            "visited": 665,
+            "optimal": false,
+            "exhaustive": true
+          }
         },
         {
-          "board": 1,
-          "logicalAnimal": "tuiuiu",
-          "role": "Preparar o acesso 1, depois abandonar a placa graças ao apoio da caixa.",
-          "controls": [
-            {
-              "id": "prepare-1",
-              "type": "plate",
-              "receiverBoard": 0
+          "avoid": {
+            "type": "helper-participation",
+            "board": 1
+          },
+          "result": {
+            "scope": "all-winning-solutions-avoiding-event",
+            "optimalScope": "avoiding-predicate-only",
+            "avoid": {
+              "type": "helper-participation",
+              "board": 1
             },
-            {
-              "id": "prepare-1",
-              "type": "plate",
-              "receiverBoard": 0
+            "budget": {
+              "maxStates": 90000,
+              "maxMs": 12000,
+              "maxDepth": null
             },
-            {
-              "id": "prepare-1",
-              "type": "plate",
-              "receiverBoard": 0
-            }
-          ],
-          "goal": 1
-        },
-        {
-          "board": 2,
-          "logicalAnimal": "bemtevi",
-          "role": "Preparar o acesso 2, depois abandonar a placa graças ao apoio da caixa.",
-          "controls": [],
-          "goal": 3
+            "status": "unsolvable",
+            "visited": 665,
+            "optimal": false,
+            "exhaustive": true
+          }
         }
       ],
-      "objectRoles": [
-        {
-          "board": 0,
-          "type": "boxes",
-          "id": "box0",
-          "definition": {
-            "id": "box0",
-            "cell": 17
-          },
-          "role": [
-            "liberar-acesso",
-            "estacionar-provisoriamente",
-            "recuperar",
-            "sustentar"
-          ],
-          "evidenceScope": "definition-and-certified-witness; necessity requires separate audit"
-        },
-        {
-          "board": 0,
-          "type": "plates",
-          "id": "weight",
-          "definition": {
-            "id": "weight",
-            "cell": 22
-          },
-          "role": "Ocupação por animal ou caixa controla a passagem no estado anterior ao comando.",
-          "evidenceScope": "definition-and-certified-witness; necessity requires separate audit"
-        },
-        {
-          "board": 0,
-          "type": "gates",
-          "id": "weight-gate",
-          "definition": {
-            "id": "weight-gate",
-            "from": 11,
-            "to": 10,
-            "condition": {
-              "type": "plate",
-              "id": "weight"
-            }
-          },
-          "role": {
-            "condition": {
-              "type": "plate",
-              "id": "weight"
-            },
-            "crossings": [
-              11
-            ]
-          },
-          "evidenceScope": "definition-and-certified-witness; necessity requires separate audit"
-        },
-        {
-          "board": 0,
-          "type": "gates",
-          "id": "prepare-cut-11",
-          "definition": {
-            "id": "prepare-cut-11",
-            "from": 13,
-            "to": 8,
-            "condition": {
-              "type": "plate",
-              "id": "prepare-1"
-            }
-          },
-          "role": {
-            "condition": {
-              "type": "plate",
-              "id": "prepare-1"
-            },
-            "crossings": [
-              4
-            ]
-          },
-          "evidenceScope": "definition-and-certified-witness; necessity requires separate audit"
-        },
-        {
-          "board": 0,
-          "type": "gates",
-          "id": "prepare-cut-12",
-          "definition": {
-            "id": "prepare-cut-12",
-            "from": 12,
-            "to": 7,
-            "condition": {
-              "type": "plate",
-              "id": "prepare-1"
-            }
-          },
-          "role": {
-            "condition": {
-              "type": "plate",
-              "id": "prepare-1"
-            },
-            "crossings": [
-              7
-            ]
-          },
-          "evidenceScope": "definition-and-certified-witness; necessity requires separate audit"
-        },
-        {
-          "board": 0,
-          "type": "gates",
-          "id": "prepare-cut-13",
-          "definition": {
-            "id": "prepare-cut-13",
-            "from": 11,
-            "to": 6,
-            "condition": {
-              "type": "plate",
-              "id": "prepare-1"
-            }
-          },
-          "role": {
-            "condition": {
-              "type": "plate",
-              "id": "prepare-1"
-            },
-            "crossings": []
-          },
-          "evidenceScope": "definition-and-certified-witness; necessity requires separate audit"
-        },
-        {
-          "board": 1,
-          "type": "plates",
-          "id": "prepare-1",
-          "definition": {
-            "id": "prepare-1",
-            "cell": 4
-          },
-          "role": "Ocupação por animal ou caixa controla a passagem no estado anterior ao comando.",
-          "evidenceScope": "definition-and-certified-witness; necessity requires separate audit"
-        },
-        {
-          "board": 1,
-          "type": "gates",
-          "id": "helper-exit-1",
-          "definition": {
-            "id": "helper-exit-1",
-            "from": 4,
-            "to": 1,
-            "condition": {
-              "type": "plate",
-              "id": "weight"
-            }
-          },
-          "role": {
-            "condition": {
-              "type": "plate",
-              "id": "weight"
-            },
-            "crossings": [
-              9
-            ]
-          },
-          "evidenceScope": "definition-and-certified-witness; necessity requires separate audit"
-        },
-        {
-          "board": 2,
-          "type": "plates",
-          "id": "prepare-2",
-          "definition": {
-            "id": "prepare-2",
-            "cell": 4
-          },
-          "role": "Ocupação por animal ou caixa controla a passagem no estado anterior ao comando.",
-          "evidenceScope": "definition-and-certified-witness; necessity requires separate audit"
-        },
-        {
-          "board": 2,
-          "type": "gates",
-          "id": "helper-exit-2",
-          "definition": {
-            "id": "helper-exit-2",
-            "from": 4,
-            "to": 3,
-            "condition": {
-              "type": "plate",
-              "id": "weight"
-            }
-          },
-          "role": {
-            "condition": {
-              "type": "plate",
-              "id": "weight"
-            },
-            "crossings": [
-              11
-            ]
-          },
-          "evidenceScope": "definition-and-certified-witness; necessity requires separate audit"
-        }
-      ],
-      "causalityReport": "tests/sintonia80-purpose-audit.json"
+      "causalityReport": "tests/sintonia-v4-editorial.json"
     },
     "number": 65,
     "chapter": 5,
-    "topologySignature": "top1-6e61566b-157",
-    "originNumber": 388,
+    "originNumber": 65,
     "origin": {
-      "kind": "curated-identical-logical-definition",
-      "catalog": "sintonia-content-2",
-      "number": 388,
+      "kind": "recomposed-removed-mechanics",
+      "catalog": "sintonia-content-3",
       "id": "sintonia-0388",
+      "number": 65,
       "version": 1,
-      "reason": "Trio retoma estacionar e recuperar a caixa."
+      "reason": "Preparar dois apoios simultâneos antes da travessia."
     },
-    "actorIntroduction": null
+    "actorIntroduction": null,
+    "topologySignature": "top1-5b0c4a30-188"
   },
   {
     "id": "sintonia-0424",
@@ -25676,442 +22017,7 @@ export const CAMPAIGN = [
     "actorIntroduction": null
   },
   {
-    "id": "sintonia80-0067-v3",
-    "version": 1,
-    "rulesVersion": 1,
-    "boards": [
-      {
-        "id": "b0",
-        "animal": "capivara",
-        "rows": 3,
-        "cols": 3,
-        "walkable": [
-          1,
-          3,
-          4,
-          6,
-          7,
-          8
-        ],
-        "start": 6,
-        "goal": 1,
-        "plates": [
-          {
-            "id": "choice-plate",
-            "cell": 1
-          }
-        ],
-        "selectors": [
-          {
-            "id": "choice",
-            "cell": 3,
-            "group": "choice"
-          }
-        ]
-      },
-      {
-        "id": "b1",
-        "animal": "tuiuiu",
-        "rows": 4,
-        "cols": 3,
-        "walkable": [
-          0,
-          2,
-          3,
-          4,
-          5,
-          6,
-          7,
-          9,
-          10,
-          11
-        ],
-        "start": 11,
-        "goal": 2,
-        "gates": [
-          {
-            "id": "choice-left",
-            "from": 11,
-            "to": 10,
-            "condition": {
-              "type": "selected",
-              "plate": "choice-plate",
-              "selector": "choice",
-              "value": 0
-            }
-          },
-          {
-            "id": "choice-right",
-            "from": 4,
-            "to": 5,
-            "condition": {
-              "type": "selected",
-              "plate": "choice-plate",
-              "selector": "choice",
-              "value": 1
-            }
-          }
-        ]
-      }
-    ],
-    "mechanics": [
-      "walls",
-      "plate",
-      "selector"
-    ],
-    "initialSwitches": {},
-    "initialSelectors": {},
-    "family": "help-recipient",
-    "secondaryFamilies": [
-      "wall-adjust",
-      "waiting-place"
-    ],
-    "name": "Escolher a ligação",
-    "lesson": "Entrar no seletor muda qual cancela recebe a ajuda da placa. A nova ligação vale no próximo comando. Mude a ligação para que a mesma placa ajude passagens diferentes.",
-    "discovery": "Aqui o jogador precisa descobrir que a placa precisa ajudar uma passagem antes de ser ligada à outra.",
-    "hints": [
-      "Siga o símbolo da placa até a cancela selecionada.",
-      "Prepare uma travessia, entre no seletor e volte a sustentar a placa para a próxima ligação.",
-      "Na configuração inicial, comece para a direita; observe quem avança e quem espera."
-    ],
-    "generatorVersion": 2,
-    "contentRevision": "sintonia-content-3",
-    "seed": "sintonia80-curated:67:0",
-    "difficulty": 4,
-    "solution": [
-      "right",
-      "up",
-      "up",
-      "left",
-      "down",
-      "left",
-      "up",
-      "right",
-      "up",
-      "right",
-      "up"
-    ],
-    "signature": "st1-f6cdfba2-559",
-    "prerequisites": [
-      "walls",
-      "plate"
-    ],
-    "introduction": [
-      "selector"
-    ],
-    "parameters": {
-      "difficulty": 4,
-      "animals": 2,
-      "primary": "selector",
-      "secondary": null,
-      "role": "focus",
-      "pattern": null
-    },
-    "certificate": {
-      "method": "breadth-first-witness-and-engine-replay",
-      "rulesVersion": 1,
-      "commands": 11,
-      "optimal": true,
-      "visited": 81,
-      "replayed": true,
-      "engine": "unchanged-rules-1"
-    },
-    "editorial": {
-      "source": "procedural-structure-and-automatic-curation",
-      "design": null,
-      "purpose": {
-        "valid": true,
-        "won": true,
-        "evidenceScope": "supplied-command-sequence",
-        "commands": 11,
-        "boxes": [],
-        "dependencies": [
-          {
-            "gateId": "choice-left",
-            "receiverBoard": 1,
-            "condition": {
-              "type": "selected",
-              "plate": "choice-plate",
-              "selector": "choice",
-              "value": 0
-            },
-            "controllers": [
-              {
-                "type": "plate",
-                "id": "choice-plate",
-                "board": 0,
-                "cell": 1
-              },
-              {
-                "type": "selector",
-                "id": "choice",
-                "board": 0,
-                "cell": 3
-              }
-            ],
-            "crossingCommands": [
-              4
-            ]
-          },
-          {
-            "gateId": "choice-right",
-            "receiverBoard": 1,
-            "condition": {
-              "type": "selected",
-              "plate": "choice-plate",
-              "selector": "choice",
-              "value": 1
-            },
-            "controllers": [
-              {
-                "type": "plate",
-                "id": "choice-plate",
-                "board": 0,
-                "cell": 1
-              },
-              {
-                "type": "selector",
-                "id": "choice",
-                "board": 0,
-                "cell": 3
-              }
-            ],
-            "crossingCommands": [
-              10
-            ]
-          }
-        ],
-        "boardRoles": [
-          {
-            "board": 0,
-            "moved": 7,
-            "waited": 4,
-            "goalDepartures": 1
-          },
-          {
-            "board": 1,
-            "moved": 7,
-            "waited": 4,
-            "goalDepartures": 0
-          }
-        ],
-        "caveat": "Uso neste certificado não prova necessidade. Consulte tests/sintonia-purpose-audit.json para ablações e limites."
-      },
-      "rubric": {
-        "status": "human-review-pending",
-        "dimensions": [
-          "purpose",
-          "discovery",
-          "interdependence",
-          "causal-clarity",
-          "spatial-economy",
-          "variety"
-        ],
-        "scores": null,
-        "humanPlaytesting": false,
-        "reason": "Replay e ablações são evidências automáticas, não substitutos de avaliação editorial e testes humanos."
-      },
-      "humanPlaytested": false,
-      "discovery": "Aqui o jogador precisa descobrir que a placa precisa ajudar uma passagem antes de ser ligada à outra.",
-      "reasoning": {
-        "used": [
-          "selected-0",
-          "selected-1",
-          "selector"
-        ],
-        "partialBlocks": 8,
-        "goalDepartures": [
-          true,
-          false
-        ],
-        "unequalLoops": 10,
-        "directionChanges": 9,
-        "earlyTurns": 4,
-        "occupiedBoxPlate": false,
-        "boxAsStopAfterSupport": false,
-        "finalApproach": [
-          true,
-          false
-        ]
-      },
-      "sweep": {
-        "status": "complete",
-        "visited": 29,
-        "resistant": true
-      },
-      "compatibility": "validated",
-      "alternatives": "Uma sequência verificada é fornecida; outras soluções podem existir.",
-      "deadEnds": "Mudanças de configuração podem exigir retornar a uma posição anterior.",
-      "antiSpam": {
-        "singleDirection": {
-          "tested": 4,
-          "winningDirections": []
-        },
-        "sweeps": {
-          "status": "complete",
-          "visited": 29,
-          "solves": false
-        },
-        "shortCycles": {
-          "tested": 40,
-          "winningPatterns": []
-        },
-        "biasedRandom": {
-          "runs": 12,
-          "commandsPerRun": 128,
-          "wins": 0
-        },
-        "uniformRandom": {
-          "runs": 12,
-          "commandsPerRun": 128,
-          "wins": 0
-        },
-        "interpretation": "Diagnóstico automático; ciclos curtos e acertos aleatórios não provam ausência de raciocínio. A varredura testa vitória após cada movimento."
-      },
-      "role": "focus",
-      "decision": "recompose",
-      "retentionReason": "Seletor em dupla: escolher A/B não substitui a ocupação da placa.",
-      "curriculumReason": "Seletor em dupla: escolher A/B não substitui a ocupação da placa.",
-      "prerequisiteChapters": [
-        1,
-        2
-      ],
-      "animalRoles": [
-        {
-          "board": 0,
-          "logicalAnimal": "capivara",
-          "role": "Preparar plate choice-plate, selector choice para painel 2. Usar bloqueios como esperas enquanto os parceiros avançam. Abandonar temporariamente o destino para completar o ajuste conjunto.",
-          "controls": [
-            {
-              "id": "choice-plate",
-              "type": "plate",
-              "receiverBoard": 1
-            },
-            {
-              "id": "choice",
-              "type": "selector",
-              "receiverBoard": 1
-            },
-            {
-              "id": "choice-plate",
-              "type": "plate",
-              "receiverBoard": 1
-            },
-            {
-              "id": "choice",
-              "type": "selector",
-              "receiverBoard": 1
-            }
-          ],
-          "goal": 1
-        },
-        {
-          "board": 1,
-          "logicalAnimal": "tuiuiu",
-          "role": "Aproveitar choice-left nos comandos 4; choice-right nos comandos 10. Usar bloqueios como esperas enquanto os parceiros avançam. Preparar a chegada conjunta sem depender de congelar no destino.",
-          "controls": [],
-          "goal": 2
-        }
-      ],
-      "objectRoles": [
-        {
-          "board": 0,
-          "type": "plates",
-          "id": "choice-plate",
-          "definition": {
-            "id": "choice-plate",
-            "cell": 1
-          },
-          "role": "Ocupação por animal ou caixa controla a passagem no estado anterior ao comando.",
-          "evidenceScope": "definition-and-certified-witness; necessity requires separate audit"
-        },
-        {
-          "board": 0,
-          "type": "selectors",
-          "id": "choice",
-          "definition": {
-            "id": "choice",
-            "cell": 3,
-            "group": "choice"
-          },
-          "role": "Escolhe conexão A/B; a placa correspondente ainda precisa de ocupação.",
-          "evidenceScope": "definition-and-certified-witness; necessity requires separate audit"
-        },
-        {
-          "board": 1,
-          "type": "gates",
-          "id": "choice-left",
-          "definition": {
-            "id": "choice-left",
-            "from": 11,
-            "to": 10,
-            "condition": {
-              "type": "selected",
-              "plate": "choice-plate",
-              "selector": "choice",
-              "value": 0
-            }
-          },
-          "role": {
-            "condition": {
-              "type": "selected",
-              "plate": "choice-plate",
-              "selector": "choice",
-              "value": 0
-            },
-            "crossings": [
-              4
-            ]
-          },
-          "evidenceScope": "definition-and-certified-witness; necessity requires separate audit"
-        },
-        {
-          "board": 1,
-          "type": "gates",
-          "id": "choice-right",
-          "definition": {
-            "id": "choice-right",
-            "from": 4,
-            "to": 5,
-            "condition": {
-              "type": "selected",
-              "plate": "choice-plate",
-              "selector": "choice",
-              "value": 1
-            }
-          },
-          "role": {
-            "condition": {
-              "type": "selected",
-              "plate": "choice-plate",
-              "selector": "choice",
-              "value": 1
-            },
-            "crossings": [
-              10
-            ]
-          },
-          "evidenceScope": "definition-and-certified-witness; necessity requires separate audit"
-        }
-      ],
-      "causalityReport": "tests/sintonia80-purpose-audit.json"
-    },
-    "originNumber": null,
-    "origin": {
-      "kind": "role-first-new-composition",
-      "catalog": null,
-      "number": null,
-      "id": null,
-      "version": null,
-      "reason": "Seletor em dupla: escolher A/B não substitui a ocupação da placa."
-    },
-    "number": 67,
-    "chapter": 5,
-    "actorIntroduction": null,
-    "ruleExplanation": "Entrar no seletor muda qual cancela recebe a ajuda da placa. A nova ligação vale no próximo comando."
-  },
-  {
-    "id": "sintonia-0422",
+    "id": "sintonia80-0067-v4",
     "version": 1,
     "rulesVersion": 1,
     "boards": [
@@ -26119,180 +22025,207 @@ export const CAMPAIGN = [
         "id": "b0",
         "animal": "capivara",
         "rows": 5,
-        "cols": 3,
+        "cols": 5,
         "walkable": [
-          0,
           1,
+          2,
           3,
           4,
-          5,
-          6,
-          7,
           8,
-          9,
           11,
           12,
-          14
+          13,
+          14,
+          18,
+          20,
+          21,
+          22,
+          23
         ],
-        "start": 11,
-        "goal": 8,
-        "plates": [
+        "start": 18,
+        "goal": 2,
+        "keys": [
           {
-            "id": "choice-plate",
-            "cell": 4
+            "id": "prepare",
+            "cell": 20
           }
         ],
-        "selectors": [
-          {
-            "id": "choice",
-            "cell": 5,
-            "group": "choice"
-          }
-        ]
+        "gates": []
       },
       {
         "id": "b1",
         "animal": "tuiuiu",
-        "rows": 4,
-        "cols": 5,
+        "rows": 5,
+        "cols": 4,
         "walkable": [
           2,
-          6,
-          7,
-          8,
-          10,
-          12,
-          15,
-          16,
-          17
-        ],
-        "start": 10,
-        "goal": 12,
-        "gates": [
-          {
-            "id": "choice-left",
-            "from": 10,
-            "to": 15,
-            "condition": {
-              "type": "selected",
-              "plate": "choice-plate",
-              "selector": "choice",
-              "value": 0
-            }
-          },
-          {
-            "id": "choice-right",
-            "from": 16,
-            "to": 17,
-            "condition": {
-              "type": "selected",
-              "plate": "choice-plate",
-              "selector": "choice",
-              "value": 1
-            }
-          },
-          {
-            "id": "auxiliary-gate-2",
-            "from": 16,
-            "to": 15,
-            "condition": {
-              "type": "plate",
-              "id": "auxiliary-2"
-            }
-          }
-        ]
-      },
-      {
-        "id": "b2",
-        "animal": "bemtevi",
-        "rows": 3,
-        "cols": 3,
-        "walkable": [
-          0,
-          1,
-          3,
           4,
           5,
           6,
           7,
-          8
+          9,
+          11,
+          15
         ],
-        "start": 8,
-        "goal": 4,
-        "plates": [
+        "start": 4,
+        "goal": 2,
+        "gates": [
           {
-            "id": "auxiliary-2",
-            "cell": 7
+            "id": "preparation-remote",
+            "from": 5,
+            "to": 6,
+            "condition": {
+              "type": "key",
+              "id": "prepare"
+            }
           }
         ]
       }
     ],
     "mechanics": [
       "walls",
-      "plate",
-      "selector"
+      "key"
     ],
     "initialSwitches": {},
     "initialSelectors": {},
-    "family": "help-recipient",
+    "family": "priority-change",
     "secondaryFamilies": [
-      "priority-change",
-      "intermediate-stop"
+      "waiting-place",
+      "final-command"
     ],
-    "name": "Quem recebe a ajuda",
-    "lesson": "Mude a ligação para que a mesma placa ajude passagens diferentes.",
-    "discovery": "Aqui o jogador precisa descobrir que a placa precisa ajudar uma passagem antes de ser ligada à outra.",
+    "name": "Caminho liberado",
+    "lesson": "Recolha a chave antes de coordenar a travessia da cancela.",
+    "discovery": "Aqui o jogador precisa descobrir que o desvio de preparação libera o outro animal, mudando qual caminho precisa de atenção.",
     "hints": [
-      "Siga o símbolo da placa até a cancela selecionada.",
-      "Prepare uma travessia, entre no seletor e volte a sustentar a placa para a próxima ligação.",
-      "Na configuração inicial, comece para cima; observe quem avança e quem espera."
+      "Encontre a chave e a cancela que compartilham o símbolo.",
+      "Termine um movimento sobre a chave; depois, prepare o outro percurso com a passagem liberada.",
+      "Na configuração inicial, comece para baixo; observe quem avança e quem espera."
     ],
-    "generatorVersion": 2,
-    "contentRevision": "sintonia-content-3",
-    "seed": "sintonia-campaign-v2:0422:0",
+    "generatorVersion": 3,
+    "contentRevision": "sintonia-content-4",
+    "seed": "sintonia-content4:67:0",
     "difficulty": 4,
     "solution": [
-      "up",
+      "down",
       "left",
-      "up",
-      "down",
-      "down",
-      "right",
-      "up",
+      "left",
       "left",
       "right",
-      "down",
-      "down",
-      "left",
-      "up"
+      "right",
+      "up",
+      "right",
+      "up",
+      "up",
+      "up",
+      "up",
+      "left"
     ],
-    "signature": "st1-233d928d-774",
+    "signature": "st1-d143fd9d-361",
     "prerequisites": [
       "walls",
-      "plate",
-      "selector"
+      "key"
     ],
     "introduction": [],
     "parameters": {
       "difficulty": 4,
-      "animals": 3,
-      "primary": "selector",
+      "animals": 2,
+      "primary": "key",
       "secondary": null,
-      "role": "compact",
-      "pattern": null
+      "role": "varied",
+      "pattern": "key-fork-before-exit"
     },
     "certificate": {
       "method": "breadth-first-witness-and-engine-replay",
       "rulesVersion": 1,
       "commands": 13,
       "optimal": true,
-      "visited": 1012,
+      "visited": 147,
       "replayed": true,
-      "engine": "unchanged-rules-1"
+      "engine": "unchanged-rules-1",
+      "firstVictoryAt": 13
     },
     "editorial": {
-      "source": "procedural-structure-and-automatic-curation",
-      "design": null,
+      "source": "role-first-structure-and-automatic-curation",
+      "design": {
+        "preparationControl": "key",
+        "pattern": "key-fork-before-exit",
+        "discovery": "o desvio de preparação libera o outro animal, mudando qual caminho precisa de atenção",
+        "roles": [
+          {
+            "board": 0,
+            "role": "preparer-and-committer",
+            "control": 20,
+            "commit": null,
+            "goalRegion": [
+              2
+            ]
+          },
+          {
+            "board": 1,
+            "role": "receiver-and-aligner",
+            "goalRegion": [
+              6,
+              7,
+              2,
+              11,
+              15
+            ]
+          }
+        ],
+        "structures": [
+          {
+            "board": 0,
+            "role": "prepare",
+            "cells": [
+              18,
+              23,
+              22,
+              21,
+              20
+            ]
+          },
+          {
+            "board": 0,
+            "role": "separate",
+            "edge": [
+              13,
+              8
+            ]
+          },
+          {
+            "board": 0,
+            "role": "exit",
+            "edge": [
+              3,
+              2
+            ]
+          },
+          {
+            "board": 1,
+            "role": "remote-exit",
+            "edge": [
+              5,
+              6
+            ]
+          }
+        ],
+        "dependencies": [
+          {
+            "fromBoard": 0,
+            "toBoard": 1,
+            "control": "prepare",
+            "role": "prepare-remote-exit"
+          }
+        ],
+        "order": [
+          "visit-side-branch",
+          "leave-control-with-configuration",
+          "cross-exits",
+          "joint-arrival"
+        ],
+        "counterfactual": "Opening the preparation gate removes the obligation to visit the side branch.",
+        "proofStatus": "structural-design-hypothesis; replay and budgeted ablations recorded separately"
+      },
       "purpose": {
         "valid": true,
         "won": true,
@@ -26301,72 +22234,18 @@ export const CAMPAIGN = [
         "boxes": [],
         "dependencies": [
           {
-            "gateId": "choice-left",
+            "gateId": "preparation-remote",
             "receiverBoard": 1,
             "condition": {
-              "type": "selected",
-              "plate": "choice-plate",
-              "selector": "choice",
-              "value": 0
+              "type": "key",
+              "id": "prepare"
             },
             "controllers": [
               {
-                "type": "plate",
-                "id": "choice-plate",
+                "type": "key",
+                "id": "prepare",
                 "board": 0,
-                "cell": 4
-              },
-              {
-                "type": "selector",
-                "id": "choice",
-                "board": 0,
-                "cell": 5
-              }
-            ],
-            "crossingCommands": [
-              4
-            ]
-          },
-          {
-            "gateId": "choice-right",
-            "receiverBoard": 1,
-            "condition": {
-              "type": "selected",
-              "plate": "choice-plate",
-              "selector": "choice",
-              "value": 1
-            },
-            "controllers": [
-              {
-                "type": "plate",
-                "id": "choice-plate",
-                "board": 0,
-                "cell": 4
-              },
-              {
-                "type": "selector",
-                "id": "choice",
-                "board": 0,
-                "cell": 5
-              }
-            ],
-            "crossingCommands": [
-              9
-            ]
-          },
-          {
-            "gateId": "auxiliary-gate-2",
-            "receiverBoard": 1,
-            "condition": {
-              "type": "plate",
-              "id": "auxiliary-2"
-            },
-            "controllers": [
-              {
-                "type": "plate",
-                "id": "auxiliary-2",
-                "board": 2,
-                "cell": 7
+                "cell": 20
               }
             ],
             "crossingCommands": [
@@ -26377,21 +22256,15 @@ export const CAMPAIGN = [
         "boardRoles": [
           {
             "board": 0,
-            "moved": 11,
-            "waited": 2,
-            "goalDepartures": 3
-          },
-          {
-            "board": 1,
-            "moved": 4,
-            "waited": 9,
+            "moved": 12,
+            "waited": 1,
             "goalDepartures": 0
           },
           {
-            "board": 2,
-            "moved": 12,
-            "waited": 1,
-            "goalDepartures": 3
+            "board": 1,
+            "moved": 3,
+            "waited": 10,
+            "goalDepartures": 0
           }
         ],
         "caveat": "Uso neste certificado não prova necessidade. Consulte tests/sintonia-purpose-audit.json para ablações e limites."
@@ -26411,22 +22284,413 @@ export const CAMPAIGN = [
         "reason": "Replay e ablações são evidências automáticas, não substitutos de avaliação editorial e testes humanos."
       },
       "humanPlaytested": false,
-      "discovery": "Aqui o jogador precisa descobrir que a placa precisa ajudar uma passagem antes de ser ligada à outra.",
+      "discovery": "Aqui o jogador precisa descobrir que o desvio de preparação libera o outro animal, mudando qual caminho precisa de atenção.",
       "reasoning": {
         "used": [
-          "plate-gate",
-          "selected-0",
-          "selected-1",
-          "selector"
+          "key",
+          "key-gate"
         ],
-        "partialBlocks": 9,
+        "partialBlocks": 11,
         "goalDepartures": [
-          true,
+          false,
+          false
+        ],
+        "unequalLoops": 24,
+        "directionChanges": 6,
+        "earlyTurns": 1,
+        "occupiedBoxPlate": false,
+        "boxAsStopAfterSupport": false,
+        "finalApproach": [
           false,
           true
+        ]
+      },
+      "sweep": {
+        "status": "complete",
+        "visited": 27,
+        "resistant": true
+      },
+      "compatibility": "validated",
+      "alternatives": "Uma sequência verificada é fornecida; outras soluções podem existir.",
+      "deadEnds": "Mudanças de configuração podem exigir retornar a uma posição anterior.",
+      "role": "varied",
+      "decision": "recompose",
+      "curriculumReason": "Revisitar prioridade permanente com geometria de espera mais articulada.",
+      "retentionReason": "Revisitar prioridade permanente com geometria de espera mais articulada.",
+      "antiSpam": {
+        "singleDirection": {
+          "tested": 4,
+          "winningDirections": []
+        },
+        "sweeps": {
+          "status": "complete",
+          "visited": 27,
+          "solves": false
+        },
+        "shortCycles": {
+          "tested": 40,
+          "winningPatterns": []
+        },
+        "biasedRandom": {
+          "runs": 24,
+          "commandsPerRun": 128,
+          "wins": 1
+        },
+        "uniformRandom": {
+          "runs": 24,
+          "commandsPerRun": 128,
+          "wins": 5
+        },
+        "interpretation": "Diagnóstico automático; ciclos curtos e acertos aleatórios não provam ausência de raciocínio. A varredura testa vitória após cada movimento."
+      },
+      "necessity": [
+        {
+          "avoid": {
+            "type": "helper-participation",
+            "board": 0
+          },
+          "result": {
+            "scope": "all-winning-solutions-avoiding-event",
+            "optimalScope": "avoiding-predicate-only",
+            "avoid": {
+              "type": "helper-participation",
+              "board": 0
+            },
+            "budget": {
+              "maxStates": 90000,
+              "maxMs": 12000,
+              "maxDepth": null
+            },
+            "status": "unsolvable",
+            "visited": 77,
+            "optimal": false,
+            "exhaustive": true
+          }
+        }
+      ],
+      "causalityReport": "tests/sintonia-v4-editorial.json"
+    },
+    "number": 67,
+    "chapter": 5,
+    "originNumber": 67,
+    "origin": {
+      "kind": "recomposed-removed-mechanics",
+      "catalog": "sintonia-content-3",
+      "id": "sintonia80-0067-v3",
+      "number": 67,
+      "version": 1,
+      "reason": "Revisitar prioridade permanente com geometria de espera mais articulada."
+    },
+    "actorIntroduction": null,
+    "topologySignature": "top1-ef21078b-131"
+  },
+  {
+    "id": "sintonia80-0068-v4",
+    "version": 1,
+    "rulesVersion": 1,
+    "boards": [
+      {
+        "id": "b0",
+        "animal": "capivara",
+        "rows": 5,
+        "cols": 4,
+        "walkable": [
+          1,
+          2,
+          3,
+          4,
+          5,
+          7,
+          9,
+          10,
+          12,
+          13,
+          16
         ],
-        "unequalLoops": 20,
-        "directionChanges": 10,
+        "start": 7,
+        "goal": 9,
+        "plates": [
+          {
+            "id": "relay-a",
+            "cell": 1
+          }
+        ],
+        "gates": [
+          {
+            "id": "relay-return",
+            "from": 5,
+            "to": 9,
+            "condition": {
+              "type": "plate",
+              "id": "relay-b"
+            }
+          },
+          {
+            "id": "auxiliary-gate-2",
+            "from": 3,
+            "to": 7,
+            "condition": {
+              "type": "plate",
+              "id": "auxiliary-2"
+            }
+          }
+        ]
+      },
+      {
+        "id": "b1",
+        "animal": "tuiuiu",
+        "rows": 5,
+        "cols": 5,
+        "walkable": [
+          3,
+          4,
+          6,
+          7,
+          8,
+          13,
+          18,
+          22,
+          23
+        ],
+        "start": 6,
+        "goal": 13,
+        "plates": [
+          {
+            "id": "relay-b",
+            "cell": 8
+          }
+        ],
+        "gates": [
+          {
+            "id": "relay-out",
+            "from": 7,
+            "to": 8,
+            "condition": {
+              "type": "plate",
+              "id": "relay-a"
+            }
+          }
+        ]
+      },
+      {
+        "id": "b2",
+        "animal": "bemtevi",
+        "rows": 5,
+        "cols": 5,
+        "walkable": [
+          2,
+          3,
+          7,
+          12,
+          13,
+          17,
+          19,
+          20,
+          21,
+          22,
+          23,
+          24
+        ],
+        "start": 7,
+        "goal": 19,
+        "plates": [
+          {
+            "id": "auxiliary-2",
+            "cell": 21
+          }
+        ]
+      }
+    ],
+    "mechanics": [
+      "walls",
+      "plate",
+      "handoff"
+    ],
+    "initialSwitches": {},
+    "initialSelectors": {},
+    "family": "support-handoff",
+    "secondaryFamilies": [
+      "priority-change",
+      "goal-transit"
+    ],
+    "name": "Ajuda em revezamento",
+    "lesson": "Quem atravessou pode assumir a próxima ajuda entre os animais.",
+    "discovery": "Aqui o jogador precisa descobrir que um animal precisa atravessar e ocupar a próxima placa para liberar quem o ajudou.",
+    "hints": [
+      "Uma das placas está numa região que a outra ajuda a abrir.",
+      "Prepare a primeira placa, atravesse e ocupe a próxima para que o primeiro ajudante possa continuar.",
+      "Na configuração inicial, comece para baixo; observe quem avança e quem espera."
+    ],
+    "generatorVersion": 3,
+    "contentRevision": "sintonia-content-4",
+    "seed": "sintonia-content4:68:0",
+    "difficulty": 4,
+    "solution": [
+      "down",
+      "down",
+      "down",
+      "left",
+      "up",
+      "right",
+      "up",
+      "left",
+      "left",
+      "down",
+      "right",
+      "up",
+      "right",
+      "up",
+      "left",
+      "down",
+      "down",
+      "down",
+      "up"
+    ],
+    "signature": "st1-978dd8df-704",
+    "prerequisites": [
+      "walls",
+      "plate",
+      "handoff"
+    ],
+    "introduction": [],
+    "parameters": {
+      "difficulty": 4,
+      "animals": 3,
+      "primary": "handoff",
+      "secondary": null,
+      "role": "varied",
+      "pattern": null
+    },
+    "certificate": {
+      "method": "breadth-first-witness-and-engine-replay",
+      "rulesVersion": 1,
+      "commands": 19,
+      "optimal": true,
+      "visited": 570,
+      "replayed": true,
+      "engine": "unchanged-rules-1",
+      "firstVictoryAt": 19
+    },
+    "editorial": {
+      "source": "procedural-structure-and-automatic-curation",
+      "design": null,
+      "purpose": {
+        "valid": true,
+        "won": true,
+        "evidenceScope": "supplied-command-sequence",
+        "commands": 19,
+        "boxes": [],
+        "dependencies": [
+          {
+            "gateId": "relay-return",
+            "receiverBoard": 0,
+            "condition": {
+              "type": "plate",
+              "id": "relay-b"
+            },
+            "controllers": [
+              {
+                "type": "plate",
+                "id": "relay-b",
+                "board": 1,
+                "cell": 8
+              }
+            ],
+            "crossingCommands": [
+              17
+            ]
+          },
+          {
+            "gateId": "auxiliary-gate-2",
+            "receiverBoard": 0,
+            "condition": {
+              "type": "plate",
+              "id": "auxiliary-2"
+            },
+            "controllers": [
+              {
+                "type": "plate",
+                "id": "auxiliary-2",
+                "board": 2,
+                "cell": 21
+              }
+            ],
+            "crossingCommands": [
+              5
+            ]
+          },
+          {
+            "gateId": "relay-out",
+            "receiverBoard": 1,
+            "condition": {
+              "type": "plate",
+              "id": "relay-a"
+            },
+            "controllers": [
+              {
+                "type": "plate",
+                "id": "relay-a",
+                "board": 0,
+                "cell": 1
+              }
+            ],
+            "crossingCommands": [
+              13
+            ]
+          }
+        ],
+        "boardRoles": [
+          {
+            "board": 0,
+            "moved": 11,
+            "waited": 8,
+            "goalDepartures": 1
+          },
+          {
+            "board": 1,
+            "moved": 9,
+            "waited": 10,
+            "goalDepartures": 1
+          },
+          {
+            "board": 2,
+            "moved": 12,
+            "waited": 7,
+            "goalDepartures": 1
+          }
+        ],
+        "caveat": "Uso neste certificado não prova necessidade. Consulte tests/sintonia-purpose-audit.json para ablações e limites."
+      },
+      "rubric": {
+        "status": "human-review-pending",
+        "dimensions": [
+          "purpose",
+          "discovery",
+          "interdependence",
+          "causal-clarity",
+          "spatial-economy",
+          "variety"
+        ],
+        "scores": null,
+        "humanPlaytesting": false,
+        "reason": "Replay e ablações são evidências automáticas, não substitutos de avaliação editorial e testes humanos."
+      },
+      "humanPlaytested": false,
+      "discovery": "Aqui o jogador precisa descobrir que um animal precisa atravessar e ocupar a próxima placa para liberar quem o ajudou.",
+      "reasoning": {
+        "used": [
+          "handoff-0",
+          "handoff-1",
+          "plate-gate"
+        ],
+        "partialBlocks": 16,
+        "goalDepartures": [
+          true,
+          true,
+          true
+        ],
+        "unequalLoops": 43,
+        "directionChanges": 13,
         "earlyTurns": 6,
         "occupiedBoxPlate": false,
         "boxAsStopAfterSupport": false,
@@ -26438,20 +22702,16 @@ export const CAMPAIGN = [
       },
       "sweep": {
         "status": "complete",
-        "visited": 131,
+        "visited": 12,
         "resistant": true
       },
       "compatibility": "validated",
       "alternatives": "Uma sequência verificada é fornecida; outras soluções podem existir.",
       "deadEnds": "Mudanças de configuração podem exigir retornar a uma posição anterior.",
-      "decision": "retain-logical-definition",
-      "retentionReason": "Trio consolida escolha da conexão e preparação da chegada.",
-      "role": "variation",
-      "prerequisiteChapters": [
-        1,
-        2,
-        5
-      ],
+      "role": "varied",
+      "decision": "recompose",
+      "curriculumReason": "Trocar quem ajuda e quem atravessa sem encerrar uma chegada cedo demais.",
+      "retentionReason": "Trocar quem ajuda e quem atravessa sem encerrar uma chegada cedo demais.",
       "antiSpam": {
         "singleDirection": {
           "tested": 4,
@@ -26459,7 +22719,7 @@ export const CAMPAIGN = [
         },
         "sweeps": {
           "status": "complete",
-          "visited": 131,
+          "visited": 12,
           "solves": false
         },
         "shortCycles": {
@@ -26467,207 +22727,106 @@ export const CAMPAIGN = [
           "winningPatterns": []
         },
         "biasedRandom": {
-          "runs": 12,
+          "runs": 24,
           "commandsPerRun": 128,
           "wins": 0
         },
         "uniformRandom": {
-          "runs": 12,
+          "runs": 24,
           "commandsPerRun": 128,
           "wins": 0
         },
         "interpretation": "Diagnóstico automático; ciclos curtos e acertos aleatórios não provam ausência de raciocínio. A varredura testa vitória após cada movimento."
       },
-      "repetition": {
-        "structuralSignature": "st1-233d928d-774",
-        "topologySignature": "top1-4cc5ca19-176",
-        "globallyRotatedOrReflectedDuplicate": false
-      },
-      "curriculumReason": "Trio consolida escolha da conexão e preparação da chegada.",
-      "animalRoles": [
+      "necessity": [
         {
-          "board": 0,
-          "logicalAnimal": "capivara",
-          "role": "Preparar plate choice-plate, selector choice para painel 2. Usar bloqueios como esperas enquanto os parceiros avançam. Abandonar temporariamente o destino para completar o ajuste conjunto.",
-          "controls": [
-            {
-              "id": "choice-plate",
-              "type": "plate",
-              "receiverBoard": 1
+          "avoid": {
+            "type": "helper-participation",
+            "board": 1
+          },
+          "result": {
+            "scope": "all-winning-solutions-avoiding-event",
+            "optimalScope": "avoiding-predicate-only",
+            "avoid": {
+              "type": "helper-participation",
+              "board": 1
             },
-            {
-              "id": "choice",
-              "type": "selector",
-              "receiverBoard": 1
+            "budget": {
+              "maxStates": 90000,
+              "maxMs": 12000,
+              "maxDepth": null
             },
-            {
-              "id": "choice-plate",
-              "type": "plate",
-              "receiverBoard": 1
-            },
-            {
-              "id": "choice",
-              "type": "selector",
-              "receiverBoard": 1
-            }
-          ],
-          "goal": 8
+            "status": "unsolvable",
+            "visited": 390,
+            "optimal": false,
+            "exhaustive": true
+          }
         },
         {
-          "board": 1,
-          "logicalAnimal": "tuiuiu",
-          "role": "Aproveitar choice-left nos comandos 4; choice-right nos comandos 9; auxiliary-gate-2 nos comandos 6. Usar bloqueios como esperas enquanto os parceiros avançam. Preparar a chegada conjunta sem depender de congelar no destino.",
-          "controls": [],
-          "goal": 12
+          "avoid": {
+            "type": "helper-participation",
+            "board": 2
+          },
+          "result": {
+            "scope": "all-winning-solutions-avoiding-event",
+            "optimalScope": "avoiding-predicate-only",
+            "avoid": {
+              "type": "helper-participation",
+              "board": 2
+            },
+            "budget": {
+              "maxStates": 90000,
+              "maxMs": 12000,
+              "maxDepth": null
+            },
+            "status": "unsolvable",
+            "visited": 21,
+            "optimal": false,
+            "exhaustive": true
+          }
         },
         {
-          "board": 2,
-          "logicalAnimal": "bemtevi",
-          "role": "Preparar plate auxiliary-2 para painel 2. Usar bloqueios como esperas enquanto os parceiros avançam. Abandonar temporariamente o destino para completar o ajuste conjunto.",
-          "controls": [
-            {
-              "id": "auxiliary-2",
-              "type": "plate",
-              "receiverBoard": 1
-            }
-          ],
-          "goal": 4
+          "avoid": {
+            "type": "helper-participation",
+            "board": 0
+          },
+          "result": {
+            "scope": "all-winning-solutions-avoiding-event",
+            "optimalScope": "avoiding-predicate-only",
+            "avoid": {
+              "type": "helper-participation",
+              "board": 0
+            },
+            "budget": {
+              "maxStates": 90000,
+              "maxMs": 12000,
+              "maxDepth": null
+            },
+            "status": "unsolvable",
+            "visited": 97,
+            "optimal": false,
+            "exhaustive": true
+          }
         }
       ],
-      "objectRoles": [
-        {
-          "board": 0,
-          "type": "plates",
-          "id": "choice-plate",
-          "definition": {
-            "id": "choice-plate",
-            "cell": 4
-          },
-          "role": "Ocupação por animal ou caixa controla a passagem no estado anterior ao comando.",
-          "evidenceScope": "definition-and-certified-witness; necessity requires separate audit"
-        },
-        {
-          "board": 0,
-          "type": "selectors",
-          "id": "choice",
-          "definition": {
-            "id": "choice",
-            "cell": 5,
-            "group": "choice"
-          },
-          "role": "Escolhe conexão A/B; a placa correspondente ainda precisa de ocupação.",
-          "evidenceScope": "definition-and-certified-witness; necessity requires separate audit"
-        },
-        {
-          "board": 1,
-          "type": "gates",
-          "id": "choice-left",
-          "definition": {
-            "id": "choice-left",
-            "from": 10,
-            "to": 15,
-            "condition": {
-              "type": "selected",
-              "plate": "choice-plate",
-              "selector": "choice",
-              "value": 0
-            }
-          },
-          "role": {
-            "condition": {
-              "type": "selected",
-              "plate": "choice-plate",
-              "selector": "choice",
-              "value": 0
-            },
-            "crossings": [
-              4
-            ]
-          },
-          "evidenceScope": "definition-and-certified-witness; necessity requires separate audit"
-        },
-        {
-          "board": 1,
-          "type": "gates",
-          "id": "choice-right",
-          "definition": {
-            "id": "choice-right",
-            "from": 16,
-            "to": 17,
-            "condition": {
-              "type": "selected",
-              "plate": "choice-plate",
-              "selector": "choice",
-              "value": 1
-            }
-          },
-          "role": {
-            "condition": {
-              "type": "selected",
-              "plate": "choice-plate",
-              "selector": "choice",
-              "value": 1
-            },
-            "crossings": [
-              9
-            ]
-          },
-          "evidenceScope": "definition-and-certified-witness; necessity requires separate audit"
-        },
-        {
-          "board": 1,
-          "type": "gates",
-          "id": "auxiliary-gate-2",
-          "definition": {
-            "id": "auxiliary-gate-2",
-            "from": 16,
-            "to": 15,
-            "condition": {
-              "type": "plate",
-              "id": "auxiliary-2"
-            }
-          },
-          "role": {
-            "condition": {
-              "type": "plate",
-              "id": "auxiliary-2"
-            },
-            "crossings": [
-              6
-            ]
-          },
-          "evidenceScope": "definition-and-certified-witness; necessity requires separate audit"
-        },
-        {
-          "board": 2,
-          "type": "plates",
-          "id": "auxiliary-2",
-          "definition": {
-            "id": "auxiliary-2",
-            "cell": 7
-          },
-          "role": "Ocupação por animal ou caixa controla a passagem no estado anterior ao comando.",
-          "evidenceScope": "definition-and-certified-witness; necessity requires separate audit"
-        }
-      ],
-      "causalityReport": "tests/sintonia80-purpose-audit.json"
+      "causalityReport": "tests/sintonia-v4-editorial.json"
     },
     "number": 68,
     "chapter": 5,
-    "topologySignature": "top1-4cc5ca19-176",
-    "originNumber": 422,
+    "originNumber": 68,
     "origin": {
-      "kind": "curated-identical-logical-definition",
-      "catalog": "sintonia-content-2",
-      "number": 422,
+      "kind": "recomposed-removed-mechanics",
+      "catalog": "sintonia-content-3",
       "id": "sintonia-0422",
+      "number": 68,
       "version": 1,
-      "reason": "Trio consolida escolha da conexão e preparação da chegada."
+      "reason": "Trocar quem ajuda e quem atravessa sem encerrar uma chegada cedo demais."
     },
-    "actorIntroduction": null
+    "actorIntroduction": null,
+    "topologySignature": "top1-b05f8cc0-191"
   },
   {
-    "id": "sintonia-0415",
+    "id": "sintonia80-0069-v4",
     "version": 1,
     "rulesVersion": 1,
     "boards": [
@@ -26675,379 +22834,121 @@ export const CAMPAIGN = [
         "id": "b0",
         "animal": "capivara",
         "rows": 5,
-        "cols": 5,
+        "cols": 3,
         "walkable": [
-          1,
+          3,
           5,
           6,
-          7,
           8,
-          10,
+          9,
           11,
           12,
           13,
-          15,
-          16,
-          17,
-          18
+          14
         ],
-        "start": 7,
-        "goal": 1,
-        "boxes": [
-          {
-            "id": "box0",
-            "cell": 12
-          }
-        ],
-        "plates": [
-          {
-            "id": "weight",
-            "cell": 16
-          }
-        ],
-        "gates": [
-          {
-            "id": "weight-gate",
-            "from": 6,
-            "to": 1,
-            "condition": {
-              "type": "plate",
-              "id": "weight"
-            }
-          },
-          {
-            "id": "prepare-cut-11",
-            "from": 13,
-            "to": 18,
-            "condition": {
-              "type": "plate",
-              "id": "prepare-1"
-            }
-          },
-          {
-            "id": "prepare-cut-12",
-            "from": 12,
-            "to": 17,
-            "condition": {
-              "type": "plate",
-              "id": "prepare-1"
-            }
-          },
-          {
-            "id": "prepare-cut-13",
-            "from": 11,
-            "to": 16,
-            "condition": {
-              "type": "plate",
-              "id": "prepare-1"
-            }
-          },
-          {
-            "id": "prepare-cut-14",
-            "from": 10,
-            "to": 15,
-            "condition": {
-              "type": "plate",
-              "id": "prepare-1"
-            }
-          }
+        "start": 5,
+        "goal": 13,
+        "ice": [
+          8
         ]
       },
       {
         "id": "b1",
         "animal": "tuiuiu",
-        "rows": 2,
-        "cols": 3,
+        "rows": 4,
+        "cols": 4,
         "walkable": [
           0,
-          1,
-          3,
+          2,
           4,
-          5
+          5,
+          6,
+          9,
+          12,
+          13,
+          14,
+          15
         ],
-        "start": 3,
-        "goal": 1,
-        "plates": [
-          {
-            "id": "prepare-1",
-            "cell": 4
-          }
-        ],
-        "gates": [
-          {
-            "id": "helper-exit-1",
-            "from": 4,
-            "to": 1,
-            "condition": {
-              "type": "plate",
-              "id": "weight"
-            }
-          }
-        ]
+        "start": 13,
+        "goal": 2
       }
     ],
     "mechanics": [
       "walls",
-      "plate",
-      "box"
+      "ice"
     ],
     "initialSwitches": {},
     "initialSelectors": {},
-    "family": "support-handoff",
+    "family": "intermediate-stop",
     "secondaryFamilies": [
-      "intermediate-stop",
-      "axis-order"
+      "goal-transit",
+      "final-command"
     ],
-    "name": "A face certa",
-    "lesson": "Contorne a caixa para mudar a direção do empurrão antes de preparar o apoio.",
-    "discovery": "Aqui o jogador precisa descobrir que alcançar a face correta da caixa vem antes de sustentar a passagem.",
+    "name": "Distâncias diferentes",
+    "lesson": "Prepare a entrada no gelo pensando na posição em que o animal vai parar.",
+    "discovery": "Aqui o jogador precisa descobrir que o gelo permite deslocamentos de comprimentos diferentes com a mesma seta.",
     "hints": [
-      "Compare a posição da placa com as faces da caixa.",
-      "Prepare o contorno: empurrar sempre na mesma direção não alcança esse apoio.",
-      "Depois de apoiar, preserve a passagem que permite sair sem retirar a caixa."
+      "No gelo, o animal segue até o primeiro piso comum ou bloqueio.",
+      "Você não precisa interromper o deslizamento. Ajuste a posição de entrada para coordenar a chegada.",
+      "Na configuração inicial, comece para a direita; observe quem avança e quem espera."
     ],
-    "generatorVersion": 2,
-    "contentRevision": "sintonia-content-3",
-    "seed": "sintonia-campaign-v2:0415:0",
+    "generatorVersion": 3,
+    "contentRevision": "sintonia-content-4",
+    "seed": "sintonia-content4:69:0",
     "difficulty": 4,
     "solution": [
       "right",
-      "right",
+      "down",
       "down",
       "left",
       "up",
       "left",
-      "left",
+      "up",
       "right",
       "down",
-      "up",
+      "right",
       "up"
     ],
-    "signature": "st1-a8b6024d-857",
+    "signature": "st1-51fd94ea-227",
     "prerequisites": [
       "walls",
-      "plate",
-      "box"
+      "ice"
     ],
     "introduction": [],
     "parameters": {
       "difficulty": 4,
       "animals": 2,
-      "primary": "box",
+      "primary": "ice",
       "secondary": null,
-      "role": "revisit",
-      "pattern": "turn-and-support"
+      "role": "varied",
+      "pattern": null
     },
     "certificate": {
       "method": "breadth-first-witness-and-engine-replay",
       "rulesVersion": 1,
       "commands": 11,
       "optimal": true,
-      "visited": 213,
+      "visited": 80,
       "replayed": true,
-      "engine": "unchanged-rules-1"
+      "engine": "unchanged-rules-1",
+      "firstVictoryAt": 11
     },
     "editorial": {
-      "source": "role-first-structure-and-automatic-curation",
-      "design": {
-        "pattern": "turn-and-support",
-        "name": "A face certa",
-        "lesson": "Contorne a caixa para mudar a direção do empurrão antes de preparar o apoio.",
-        "discovery": "Aqui o jogador precisa descobrir que alcançar a face correta da caixa vem antes de sustentar a passagem.",
-        "hints": [
-          "Compare a posição da placa com as faces da caixa.",
-          "Prepare o contorno: empurrar sempre na mesma direção não alcança esse apoio.",
-          "Depois de apoiar, preserve a passagem que permite sair sem retirar a caixa."
-        ],
-        "boxRoles": [
-          "reorientar",
-          "sustentar"
-        ],
-        "roles": [
-          "Preparar o objeto, manter acesso e concluir a própria chegada.",
-          "Preparar o acesso 1, depois abandonar a placa graças ao apoio da caixa."
-        ]
-      },
+      "source": "procedural-structure-and-automatic-curation",
+      "design": null,
       "purpose": {
         "valid": true,
         "won": true,
         "evidenceScope": "supplied-command-sequence",
         "commands": 11,
-        "boxes": [
-          {
-            "id": "box0",
-            "origin": {
-              "id": "box0",
-              "board": 0,
-              "cell": 12
-            },
-            "final": {
-              "id": "box0",
-              "board": 0,
-              "cell": 16
-            },
-            "pushes": [
-              {
-                "command": 4,
-                "direction": "left",
-                "board": 0,
-                "from": 12,
-                "to": 11
-              },
-              {
-                "command": 9,
-                "direction": "down",
-                "board": 0,
-                "from": 11,
-                "to": 16
-              }
-            ],
-            "directionChanges": 1,
-            "deliveries": [],
-            "postDeliveryPushes": [],
-            "plateEntries": [
-              {
-                "command": 9,
-                "plateId": "weight"
-              }
-            ],
-            "plateReleases": [],
-            "supportUses": [
-              {
-                "command": 10,
-                "plateId": "weight",
-                "gateId": "helper-exit-1",
-                "receiverBoard": 1
-              },
-              {
-                "command": 11,
-                "plateId": "weight",
-                "gateId": "weight-gate",
-                "receiverBoard": 0
-              }
-            ],
-            "observedRoles": [
-              "directional-reposition",
-              "gate-support"
-            ]
-          }
-        ],
-        "dependencies": [
-          {
-            "gateId": "weight-gate",
-            "receiverBoard": 0,
-            "condition": {
-              "type": "plate",
-              "id": "weight"
-            },
-            "controllers": [
-              {
-                "type": "plate",
-                "id": "weight",
-                "board": 0,
-                "cell": 16
-              }
-            ],
-            "crossingCommands": [
-              11
-            ]
-          },
-          {
-            "gateId": "prepare-cut-11",
-            "receiverBoard": 0,
-            "condition": {
-              "type": "plate",
-              "id": "prepare-1"
-            },
-            "controllers": [
-              {
-                "type": "plate",
-                "id": "prepare-1",
-                "board": 1,
-                "cell": 4
-              }
-            ],
-            "crossingCommands": []
-          },
-          {
-            "gateId": "prepare-cut-12",
-            "receiverBoard": 0,
-            "condition": {
-              "type": "plate",
-              "id": "prepare-1"
-            },
-            "controllers": [
-              {
-                "type": "plate",
-                "id": "prepare-1",
-                "board": 1,
-                "cell": 4
-              }
-            ],
-            "crossingCommands": []
-          },
-          {
-            "gateId": "prepare-cut-13",
-            "receiverBoard": 0,
-            "condition": {
-              "type": "plate",
-              "id": "prepare-1"
-            },
-            "controllers": [
-              {
-                "type": "plate",
-                "id": "prepare-1",
-                "board": 1,
-                "cell": 4
-              }
-            ],
-            "crossingCommands": [
-              9
-            ]
-          },
-          {
-            "gateId": "prepare-cut-14",
-            "receiverBoard": 0,
-            "condition": {
-              "type": "plate",
-              "id": "prepare-1"
-            },
-            "controllers": [
-              {
-                "type": "plate",
-                "id": "prepare-1",
-                "board": 1,
-                "cell": 4
-              }
-            ],
-            "crossingCommands": []
-          },
-          {
-            "gateId": "helper-exit-1",
-            "receiverBoard": 1,
-            "condition": {
-              "type": "plate",
-              "id": "weight"
-            },
-            "controllers": [
-              {
-                "type": "plate",
-                "id": "weight",
-                "board": 0,
-                "cell": 16
-              }
-            ],
-            "crossingCommands": [
-              10
-            ]
-          }
-        ],
+        "boxes": [],
+        "dependencies": [],
         "boardRoles": [
           {
             "board": 0,
-            "moved": 10,
-            "waited": 1,
-            "goalDepartures": 0
+            "moved": 7,
+            "waited": 4,
+            "goalDepartures": 1
           },
           {
             "board": 1,
@@ -27073,44 +22974,38 @@ export const CAMPAIGN = [
         "reason": "Replay e ablações são evidências automáticas, não substitutos de avaliação editorial e testes humanos."
       },
       "humanPlaytested": false,
-      "discovery": "Aqui o jogador precisa descobrir que alcançar a face correta da caixa vem antes de sustentar a passagem.",
+      "discovery": "Aqui o jogador precisa descobrir que o gelo permite deslocamentos de comprimentos diferentes com a mesma seta.",
       "reasoning": {
         "used": [
-          "box-support-gate",
-          "plate-gate",
-          "push"
+          "ice"
         ],
-        "partialBlocks": 6,
+        "partialBlocks": 9,
         "goalDepartures": [
-          false,
+          true,
           false
         ],
-        "unequalLoops": 11,
-        "directionChanges": 7,
-        "earlyTurns": 2,
-        "occupiedBoxPlate": true,
+        "unequalLoops": 7,
+        "directionChanges": 9,
+        "earlyTurns": 5,
+        "occupiedBoxPlate": false,
         "boxAsStopAfterSupport": false,
         "finalApproach": [
-          false,
-          true
+          true,
+          false
         ]
       },
       "sweep": {
         "status": "complete",
-        "visited": 25,
+        "visited": 19,
         "resistant": true
       },
       "compatibility": "validated",
       "alternatives": "Uma sequência verificada é fornecida; outras soluções podem existir.",
-      "deadEnds": "A fase permite estados sem saída; desfazer e reiniciar são livres.",
-      "decision": "retain-logical-definition",
-      "retentionReason": "Retomada de dupla com orientação de caixa antes de outra escolha de destinatário.",
-      "role": "deep",
-      "prerequisiteChapters": [
-        1,
-        2,
-        3
-      ],
+      "deadEnds": "Mudanças de configuração podem exigir retornar a uma posição anterior.",
+      "role": "varied",
+      "decision": "recompose",
+      "curriculumReason": "Síntese compacta de parada, espera e comando final.",
+      "retentionReason": "Síntese compacta de parada, espera e comando final.",
       "antiSpam": {
         "singleDirection": {
           "tested": 4,
@@ -27118,7 +23013,7 @@ export const CAMPAIGN = [
         },
         "sweeps": {
           "status": "complete",
-          "visited": 25,
+          "visited": 19,
           "solves": false
         },
         "shortCycles": {
@@ -27126,265 +23021,60 @@ export const CAMPAIGN = [
           "winningPatterns": []
         },
         "biasedRandom": {
-          "runs": 12,
+          "runs": 24,
           "commandsPerRun": 128,
           "wins": 0
         },
         "uniformRandom": {
-          "runs": 12,
+          "runs": 24,
           "commandsPerRun": 128,
           "wins": 0
         },
         "interpretation": "Diagnóstico automático; ciclos curtos e acertos aleatórios não provam ausência de raciocínio. A varredura testa vitória após cada movimento."
       },
-      "repetition": {
-        "structuralSignature": "st1-a8b6024d-857",
-        "topologySignature": "top1-1f7a45c4-118",
-        "globallyRotatedOrReflectedDuplicate": false
-      },
-      "curriculumReason": "Retomada de dupla com orientação de caixa antes de outra escolha de destinatário.",
-      "animalRoles": [
+      "necessity": [
         {
-          "board": 0,
-          "logicalAnimal": "capivara",
-          "role": "Preparar o objeto, manter acesso e concluir a própria chegada.",
-          "controls": [
-            {
-              "id": "weight",
-              "type": "plate",
-              "receiverBoard": 0
+          "avoid": {
+            "type": "event",
+            "eventType": "ice"
+          },
+          "result": {
+            "scope": "all-winning-solutions-avoiding-event",
+            "optimalScope": "avoiding-predicate-only",
+            "avoid": {
+              "type": "event",
+              "eventType": "ice"
             },
-            {
-              "id": "weight",
-              "type": "plate",
-              "receiverBoard": 1
-            }
-          ],
-          "goal": 1
-        },
-        {
-          "board": 1,
-          "logicalAnimal": "tuiuiu",
-          "role": "Preparar o acesso 1, depois abandonar a placa graças ao apoio da caixa.",
-          "controls": [
-            {
-              "id": "prepare-1",
-              "type": "plate",
-              "receiverBoard": 0
+            "budget": {
+              "maxStates": 90000,
+              "maxMs": 12000,
+              "maxDepth": null
             },
-            {
-              "id": "prepare-1",
-              "type": "plate",
-              "receiverBoard": 0
-            },
-            {
-              "id": "prepare-1",
-              "type": "plate",
-              "receiverBoard": 0
-            },
-            {
-              "id": "prepare-1",
-              "type": "plate",
-              "receiverBoard": 0
-            }
-          ],
-          "goal": 1
+            "status": "unsolvable",
+            "visited": 10,
+            "optimal": false,
+            "exhaustive": true
+          }
         }
       ],
-      "objectRoles": [
-        {
-          "board": 0,
-          "type": "boxes",
-          "id": "box0",
-          "definition": {
-            "id": "box0",
-            "cell": 12
-          },
-          "role": [
-            "reorientar",
-            "sustentar"
-          ],
-          "evidenceScope": "definition-and-certified-witness; necessity requires separate audit"
-        },
-        {
-          "board": 0,
-          "type": "plates",
-          "id": "weight",
-          "definition": {
-            "id": "weight",
-            "cell": 16
-          },
-          "role": "Ocupação por animal ou caixa controla a passagem no estado anterior ao comando.",
-          "evidenceScope": "definition-and-certified-witness; necessity requires separate audit"
-        },
-        {
-          "board": 0,
-          "type": "gates",
-          "id": "weight-gate",
-          "definition": {
-            "id": "weight-gate",
-            "from": 6,
-            "to": 1,
-            "condition": {
-              "type": "plate",
-              "id": "weight"
-            }
-          },
-          "role": {
-            "condition": {
-              "type": "plate",
-              "id": "weight"
-            },
-            "crossings": [
-              11
-            ]
-          },
-          "evidenceScope": "definition-and-certified-witness; necessity requires separate audit"
-        },
-        {
-          "board": 0,
-          "type": "gates",
-          "id": "prepare-cut-11",
-          "definition": {
-            "id": "prepare-cut-11",
-            "from": 13,
-            "to": 18,
-            "condition": {
-              "type": "plate",
-              "id": "prepare-1"
-            }
-          },
-          "role": {
-            "condition": {
-              "type": "plate",
-              "id": "prepare-1"
-            },
-            "crossings": []
-          },
-          "evidenceScope": "definition-and-certified-witness; necessity requires separate audit"
-        },
-        {
-          "board": 0,
-          "type": "gates",
-          "id": "prepare-cut-12",
-          "definition": {
-            "id": "prepare-cut-12",
-            "from": 12,
-            "to": 17,
-            "condition": {
-              "type": "plate",
-              "id": "prepare-1"
-            }
-          },
-          "role": {
-            "condition": {
-              "type": "plate",
-              "id": "prepare-1"
-            },
-            "crossings": []
-          },
-          "evidenceScope": "definition-and-certified-witness; necessity requires separate audit"
-        },
-        {
-          "board": 0,
-          "type": "gates",
-          "id": "prepare-cut-13",
-          "definition": {
-            "id": "prepare-cut-13",
-            "from": 11,
-            "to": 16,
-            "condition": {
-              "type": "plate",
-              "id": "prepare-1"
-            }
-          },
-          "role": {
-            "condition": {
-              "type": "plate",
-              "id": "prepare-1"
-            },
-            "crossings": [
-              9
-            ]
-          },
-          "evidenceScope": "definition-and-certified-witness; necessity requires separate audit"
-        },
-        {
-          "board": 0,
-          "type": "gates",
-          "id": "prepare-cut-14",
-          "definition": {
-            "id": "prepare-cut-14",
-            "from": 10,
-            "to": 15,
-            "condition": {
-              "type": "plate",
-              "id": "prepare-1"
-            }
-          },
-          "role": {
-            "condition": {
-              "type": "plate",
-              "id": "prepare-1"
-            },
-            "crossings": []
-          },
-          "evidenceScope": "definition-and-certified-witness; necessity requires separate audit"
-        },
-        {
-          "board": 1,
-          "type": "plates",
-          "id": "prepare-1",
-          "definition": {
-            "id": "prepare-1",
-            "cell": 4
-          },
-          "role": "Ocupação por animal ou caixa controla a passagem no estado anterior ao comando.",
-          "evidenceScope": "definition-and-certified-witness; necessity requires separate audit"
-        },
-        {
-          "board": 1,
-          "type": "gates",
-          "id": "helper-exit-1",
-          "definition": {
-            "id": "helper-exit-1",
-            "from": 4,
-            "to": 1,
-            "condition": {
-              "type": "plate",
-              "id": "weight"
-            }
-          },
-          "role": {
-            "condition": {
-              "type": "plate",
-              "id": "weight"
-            },
-            "crossings": [
-              10
-            ]
-          },
-          "evidenceScope": "definition-and-certified-witness; necessity requires separate audit"
-        }
-      ],
-      "causalityReport": "tests/sintonia80-purpose-audit.json"
+      "causalityReport": "tests/sintonia-v4-editorial.json"
     },
     "number": 69,
     "chapter": 5,
-    "topologySignature": "top1-1f7a45c4-118",
-    "originNumber": 415,
+    "originNumber": 69,
     "origin": {
-      "kind": "curated-identical-logical-definition",
-      "catalog": "sintonia-content-2",
-      "number": 415,
+      "kind": "recomposed-removed-mechanics",
+      "catalog": "sintonia-content-3",
       "id": "sintonia-0415",
+      "number": 69,
       "version": 1,
-      "reason": "Retomada de dupla com orientação de caixa antes de outra escolha de destinatário."
+      "reason": "Síntese compacta de parada, espera e comando final."
     },
-    "actorIntroduction": null
+    "actorIntroduction": null,
+    "topologySignature": "top1-ed076b58-120"
   },
   {
-    "id": "sintonia-0418",
+    "id": "sintonia80-0070-v4",
     "version": 1,
     "rulesVersion": 1,
     "boards": [
@@ -27392,33 +23082,1133 @@ export const CAMPAIGN = [
         "id": "b0",
         "animal": "capivara",
         "rows": 4,
-        "cols": 5,
+        "cols": 4,
         "walkable": [
+          0,
+          1,
           2,
+          4,
+          6,
+          8,
+          10,
+          12,
+          13,
+          14
+        ],
+        "start": 6,
+        "goal": 0,
+        "switches": [
+          {
+            "id": "sky",
+            "cell": 12,
+            "group": "sky"
+          }
+        ]
+      },
+      {
+        "id": "b1",
+        "animal": "tuiuiu",
+        "rows": 4,
+        "cols": 4,
+        "walkable": [
+          0,
+          1,
+          2,
+          3,
           5,
           7,
           8,
           9,
+          11,
+          15
+        ],
+        "start": 15,
+        "goal": 8,
+        "gates": [
+          {
+            "id": "moon",
+            "from": 3,
+            "to": 2,
+            "condition": {
+              "type": "switch",
+              "id": "sky",
+              "value": false
+            }
+          },
+          {
+            "id": "sun",
+            "from": 1,
+            "to": 5,
+            "condition": {
+              "type": "switch",
+              "id": "sky",
+              "value": true
+            }
+          }
+        ]
+      },
+      {
+        "id": "b2",
+        "animal": "bemtevi",
+        "rows": 5,
+        "cols": 3,
+        "walkable": [
+          0,
+          1,
+          2,
+          3,
+          5,
+          6,
+          7,
+          9
+        ],
+        "start": 5,
+        "goal": 9,
+        "ice": [
+          6
+        ]
+      }
+    ],
+    "mechanics": [
+      "walls",
+      "switch",
+      "alternate",
+      "ice"
+    ],
+    "initialSwitches": {},
+    "initialSelectors": {},
+    "family": "scenario-choice",
+    "secondaryFamilies": [
+      "goal-transit",
+      "priority-change"
+    ],
+    "name": "Entre sol e lua",
+    "lesson": "Atravesse uma etapa e mude a configuração para preparar a seguinte.",
+    "discovery": "Aqui o jogador precisa descobrir que as passagens de sol e lua precisam ser atravessadas em configurações diferentes.",
+    "hints": [
+      "O mesmo interruptor troca quais cancelas de sol e lua estão abertas.",
+      "Prepare a primeira travessia antes de alternar para a configuração que abre o próximo trecho.",
+      "Na configuração inicial, comece para cima; observe quem avança e quem espera."
+    ],
+    "generatorVersion": 3,
+    "contentRevision": "sintonia-content-4",
+    "seed": "sintonia-content4:70:0",
+    "difficulty": 4,
+    "solution": [
+      "up",
+      "up",
+      "up",
+      "left",
+      "left",
+      "down",
+      "down",
+      "down",
+      "right",
+      "right",
+      "up",
+      "up",
+      "up",
+      "left",
+      "down",
+      "down",
+      "left"
+    ],
+    "signature": "st1-b0e2319e-530",
+    "prerequisites": [
+      "walls",
+      "switch",
+      "alternate",
+      "ice"
+    ],
+    "introduction": [],
+    "parameters": {
+      "difficulty": 4,
+      "animals": 3,
+      "primary": "alternate",
+      "secondary": "ice",
+      "role": "varied",
+      "pattern": null
+    },
+    "certificate": {
+      "method": "breadth-first-witness-and-engine-replay",
+      "rulesVersion": 1,
+      "commands": 17,
+      "optimal": true,
+      "visited": 1023,
+      "replayed": true,
+      "engine": "unchanged-rules-1",
+      "firstVictoryAt": 17
+    },
+    "editorial": {
+      "source": "procedural-structure-and-automatic-curation",
+      "design": null,
+      "purpose": {
+        "valid": true,
+        "won": true,
+        "evidenceScope": "supplied-command-sequence",
+        "commands": 17,
+        "boxes": [],
+        "dependencies": [
+          {
+            "gateId": "moon",
+            "receiverBoard": 1,
+            "condition": {
+              "type": "switch",
+              "id": "sky",
+              "value": false
+            },
+            "controllers": [
+              {
+                "type": "switch",
+                "id": "sky",
+                "board": 0,
+                "cell": 12
+              }
+            ],
+            "crossingCommands": [
+              4
+            ]
+          },
+          {
+            "gateId": "sun",
+            "receiverBoard": 1,
+            "condition": {
+              "type": "switch",
+              "id": "sky",
+              "value": true
+            },
+            "controllers": [
+              {
+                "type": "switch",
+                "id": "sky",
+                "board": 0,
+                "cell": 12
+              }
+            ],
+            "crossingCommands": [
+              15
+            ]
+          }
+        ],
+        "boardRoles": [
+          {
+            "board": 0,
+            "moved": 13,
+            "waited": 4,
+            "goalDepartures": 1
+          },
+          {
+            "board": 1,
+            "moved": 10,
+            "waited": 7,
+            "goalDepartures": 0
+          },
+          {
+            "board": 2,
+            "moved": 9,
+            "waited": 8,
+            "goalDepartures": 1
+          }
+        ],
+        "caveat": "Uso neste certificado não prova necessidade. Consulte tests/sintonia-purpose-audit.json para ablações e limites."
+      },
+      "rubric": {
+        "status": "human-review-pending",
+        "dimensions": [
+          "purpose",
+          "discovery",
+          "interdependence",
+          "causal-clarity",
+          "spatial-economy",
+          "variety"
+        ],
+        "scores": null,
+        "humanPlaytesting": false,
+        "reason": "Replay e ablações são evidências automáticas, não substitutos de avaliação editorial e testes humanos."
+      },
+      "humanPlaytested": false,
+      "discovery": "Aqui o jogador precisa descobrir que as passagens de sol e lua precisam ser atravessadas em configurações diferentes.",
+      "reasoning": {
+        "used": [
+          "ice",
+          "moon-gate",
+          "sun-gate",
+          "switch",
+          "switch-gate"
+        ],
+        "partialBlocks": 14,
+        "goalDepartures": [
+          true,
+          false,
+          true
+        ],
+        "unequalLoops": 21,
+        "directionChanges": 7,
+        "earlyTurns": 3,
+        "occupiedBoxPlate": false,
+        "boxAsStopAfterSupport": false,
+        "finalApproach": [
+          false,
+          false,
+          true
+        ]
+      },
+      "sweep": {
+        "status": "complete",
+        "visited": 31,
+        "resistant": true
+      },
+      "compatibility": "validated",
+      "alternatives": "Uma sequência verificada é fornecida; outras soluções podem existir.",
+      "deadEnds": "Mudanças de configuração podem exigir retornar a uma posição anterior.",
+      "role": "varied",
+      "decision": "recompose",
+      "curriculumReason": "Trocar sol/lua enquanto o terceiro percurso exige uma parada útil.",
+      "retentionReason": "Trocar sol/lua enquanto o terceiro percurso exige uma parada útil.",
+      "antiSpam": {
+        "singleDirection": {
+          "tested": 4,
+          "winningDirections": []
+        },
+        "sweeps": {
+          "status": "complete",
+          "visited": 31,
+          "solves": false
+        },
+        "shortCycles": {
+          "tested": 40,
+          "winningPatterns": []
+        },
+        "biasedRandom": {
+          "runs": 24,
+          "commandsPerRun": 128,
+          "wins": 0
+        },
+        "uniformRandom": {
+          "runs": 24,
+          "commandsPerRun": 128,
+          "wins": 0
+        },
+        "interpretation": "Diagnóstico automático; ciclos curtos e acertos aleatórios não provam ausência de raciocínio. A varredura testa vitória após cada movimento."
+      },
+      "necessity": [
+        {
+          "avoid": {
+            "type": "helper-participation",
+            "board": 0
+          },
+          "result": {
+            "scope": "all-winning-solutions-avoiding-event",
+            "optimalScope": "avoiding-predicate-only",
+            "avoid": {
+              "type": "helper-participation",
+              "board": 0
+            },
+            "budget": {
+              "maxStates": 90000,
+              "maxMs": 12000,
+              "maxDepth": null
+            },
+            "status": "unsolvable",
+            "visited": 350,
+            "optimal": false,
+            "exhaustive": true
+          }
+        },
+        {
+          "avoid": {
+            "type": "event",
+            "eventType": "ice"
+          },
+          "result": {
+            "scope": "all-winning-solutions-avoiding-event",
+            "optimalScope": "avoiding-predicate-only",
+            "avoid": {
+              "type": "event",
+              "eventType": "ice"
+            },
+            "budget": {
+              "maxStates": 90000,
+              "maxMs": 12000,
+              "maxDepth": null
+            },
+            "status": "unsolvable",
+            "visited": 835,
+            "optimal": false,
+            "exhaustive": true
+          }
+        }
+      ],
+      "causalityReport": "tests/sintonia-v4-editorial.json"
+    },
+    "number": 70,
+    "chapter": 5,
+    "originNumber": 70,
+    "origin": {
+      "kind": "recomposed-removed-mechanics",
+      "catalog": "sintonia-content-3",
+      "id": "sintonia-0418",
+      "number": 70,
+      "version": 1,
+      "reason": "Trocar sol/lua enquanto o terceiro percurso exige uma parada útil."
+    },
+    "actorIntroduction": null,
+    "topologySignature": "top1-2b17b146-171"
+  },
+  {
+    "id": "sintonia80-0071-v4",
+    "version": 1,
+    "rulesVersion": 1,
+    "boards": [
+      {
+        "id": "b0",
+        "animal": "capivara",
+        "rows": 3,
+        "cols": 5,
+        "walkable": [
+          0,
+          2,
+          3,
+          4,
+          5,
+          6,
+          9,
           10,
           11,
           12,
+          13,
           14
         ],
-        "start": 7,
-        "goal": 9,
-        "plates": [
+        "start": 6,
+        "goal": 3,
+        "switches": [
           {
-            "id": "choice-plate",
-            "cell": 14
+            "id": "prepare",
+            "cell": 0,
+            "group": "prepare"
           }
         ],
-        "selectors": [
+        "gates": []
+      },
+      {
+        "id": "b1",
+        "animal": "tuiuiu",
+        "rows": 3,
+        "cols": 5,
+        "walkable": [
+          0,
+          1,
+          2,
+          3,
+          4,
+          6,
+          8,
+          10,
+          11,
+          13,
+          14
+        ],
+        "start": 1,
+        "goal": 8,
+        "gates": [
           {
-            "id": "choice",
-            "cell": 8,
-            "group": "choice"
+            "id": "preparation-remote",
+            "from": 2,
+            "to": 3,
+            "condition": {
+              "type": "switch",
+              "id": "prepare",
+              "value": true
+            }
           }
         ]
+      }
+    ],
+    "mechanics": [
+      "walls",
+      "switch"
+    ],
+    "initialSwitches": {},
+    "initialSelectors": {},
+    "family": "scenario-choice",
+    "secondaryFamilies": [
+      "unequal-loop",
+      "final-command"
+    ],
+    "name": "Uma escolha que permanece",
+    "lesson": "Entre no interruptor para preparar a configuração das passagens.",
+    "discovery": "Aqui o jogador precisa descobrir que o desvio de preparação libera o outro animal, mudando qual caminho precisa de atenção.",
+    "hints": [
+      "O interruptor alterna a passagem quando o animal entra e termina sobre ele.",
+      "Depois de preparar a abertura, você pode sair do interruptor sem perder essa configuração.",
+      "Na configuração inicial, comece para a esquerda; observe quem avança e quem espera."
+    ],
+    "generatorVersion": 3,
+    "contentRevision": "sintonia-content-4",
+    "seed": "sintonia-content4:71:0",
+    "difficulty": 4,
+    "solution": [
+      "left",
+      "up",
+      "down",
+      "down",
+      "right",
+      "right",
+      "right",
+      "right",
+      "up",
+      "up",
+      "left",
+      "down"
+    ],
+    "signature": "st1-58ca5481-399",
+    "prerequisites": [
+      "walls",
+      "switch"
+    ],
+    "introduction": [],
+    "parameters": {
+      "difficulty": 4,
+      "animals": 2,
+      "primary": "switch",
+      "secondary": null,
+      "role": "varied",
+      "pattern": "switch-fork-before-exit"
+    },
+    "certificate": {
+      "method": "breadth-first-witness-and-engine-replay",
+      "rulesVersion": 1,
+      "commands": 12,
+      "optimal": true,
+      "visited": 245,
+      "replayed": true,
+      "engine": "unchanged-rules-1",
+      "firstVictoryAt": 12
+    },
+    "editorial": {
+      "source": "role-first-structure-and-automatic-curation",
+      "design": {
+        "preparationControl": "switch",
+        "pattern": "switch-fork-before-exit",
+        "discovery": "o desvio de preparação libera o outro animal, mudando qual caminho precisa de atenção",
+        "roles": [
+          {
+            "board": 0,
+            "role": "preparer-and-committer",
+            "control": 0,
+            "commit": null,
+            "goalRegion": [
+              3
+            ]
+          },
+          {
+            "board": 1,
+            "role": "receiver-and-aligner",
+            "goalRegion": [
+              3,
+              8,
+              4,
+              13,
+              14
+            ]
+          }
+        ],
+        "structures": [
+          {
+            "board": 0,
+            "role": "prepare",
+            "cells": [
+              6,
+              5,
+              0
+            ]
+          },
+          {
+            "board": 0,
+            "role": "separate",
+            "edge": [
+              11,
+              12
+            ]
+          },
+          {
+            "board": 0,
+            "role": "exit",
+            "edge": [
+              4,
+              3
+            ]
+          },
+          {
+            "board": 1,
+            "role": "remote-exit",
+            "edge": [
+              2,
+              3
+            ]
+          }
+        ],
+        "dependencies": [
+          {
+            "fromBoard": 0,
+            "toBoard": 1,
+            "control": "prepare",
+            "role": "prepare-remote-exit"
+          }
+        ],
+        "order": [
+          "visit-side-branch",
+          "leave-control-with-configuration",
+          "cross-exits",
+          "joint-arrival"
+        ],
+        "counterfactual": "Opening the preparation gate removes the obligation to visit the side branch.",
+        "proofStatus": "structural-design-hypothesis; replay and budgeted ablations recorded separately"
+      },
+      "purpose": {
+        "valid": true,
+        "won": true,
+        "evidenceScope": "supplied-command-sequence",
+        "commands": 12,
+        "boxes": [],
+        "dependencies": [
+          {
+            "gateId": "preparation-remote",
+            "receiverBoard": 1,
+            "condition": {
+              "type": "switch",
+              "id": "prepare",
+              "value": true
+            },
+            "controllers": [
+              {
+                "type": "switch",
+                "id": "prepare",
+                "board": 0,
+                "cell": 0
+              }
+            ],
+            "crossingCommands": [
+              7
+            ]
+          }
+        ],
+        "boardRoles": [
+          {
+            "board": 0,
+            "moved": 11,
+            "waited": 1,
+            "goalDepartures": 0
+          },
+          {
+            "board": 1,
+            "moved": 7,
+            "waited": 5,
+            "goalDepartures": 0
+          }
+        ],
+        "caveat": "Uso neste certificado não prova necessidade. Consulte tests/sintonia-purpose-audit.json para ablações e limites."
+      },
+      "rubric": {
+        "status": "human-review-pending",
+        "dimensions": [
+          "purpose",
+          "discovery",
+          "interdependence",
+          "causal-clarity",
+          "spatial-economy",
+          "variety"
+        ],
+        "scores": null,
+        "humanPlaytesting": false,
+        "reason": "Replay e ablações são evidências automáticas, não substitutos de avaliação editorial e testes humanos."
+      },
+      "humanPlaytested": false,
+      "discovery": "Aqui o jogador precisa descobrir que o desvio de preparação libera o outro animal, mudando qual caminho precisa de atenção.",
+      "reasoning": {
+        "used": [
+          "switch",
+          "switch-gate"
+        ],
+        "partialBlocks": 6,
+        "goalDepartures": [
+          false,
+          false
+        ],
+        "unequalLoops": 5,
+        "directionChanges": 6,
+        "earlyTurns": 1,
+        "occupiedBoxPlate": false,
+        "boxAsStopAfterSupport": false,
+        "finalApproach": [
+          true,
+          false
+        ]
+      },
+      "sweep": {
+        "status": "complete",
+        "visited": 52,
+        "resistant": true
+      },
+      "compatibility": "validated",
+      "alternatives": "Uma sequência verificada é fornecida; outras soluções podem existir.",
+      "deadEnds": "Mudanças de configuração podem exigir retornar a uma posição anterior.",
+      "role": "varied",
+      "decision": "recompose",
+      "curriculumReason": "Preparar estado persistente e reordenar o retorno.",
+      "retentionReason": "Preparar estado persistente e reordenar o retorno.",
+      "antiSpam": {
+        "singleDirection": {
+          "tested": 4,
+          "winningDirections": []
+        },
+        "sweeps": {
+          "status": "complete",
+          "visited": 52,
+          "solves": false
+        },
+        "shortCycles": {
+          "tested": 40,
+          "winningPatterns": []
+        },
+        "biasedRandom": {
+          "runs": 24,
+          "commandsPerRun": 128,
+          "wins": 0
+        },
+        "uniformRandom": {
+          "runs": 24,
+          "commandsPerRun": 128,
+          "wins": 1
+        },
+        "interpretation": "Diagnóstico automático; ciclos curtos e acertos aleatórios não provam ausência de raciocínio. A varredura testa vitória após cada movimento."
+      },
+      "necessity": [
+        {
+          "avoid": {
+            "type": "helper-participation",
+            "board": 0
+          },
+          "result": {
+            "scope": "all-winning-solutions-avoiding-event",
+            "optimalScope": "avoiding-predicate-only",
+            "avoid": {
+              "type": "helper-participation",
+              "board": 0
+            },
+            "budget": {
+              "maxStates": 90000,
+              "maxMs": 12000,
+              "maxDepth": null
+            },
+            "status": "unsolvable",
+            "visited": 142,
+            "optimal": false,
+            "exhaustive": true
+          }
+        }
+      ],
+      "causalityReport": "tests/sintonia-v4-editorial.json"
+    },
+    "number": 71,
+    "chapter": 5,
+    "originNumber": 71,
+    "origin": {
+      "kind": "recomposed-removed-mechanics",
+      "catalog": "sintonia-content-3",
+      "id": "sintonia-0426",
+      "number": 71,
+      "version": 1,
+      "reason": "Preparar estado persistente e reordenar o retorno."
+    },
+    "actorIntroduction": null,
+    "topologySignature": "top1-bb86915f-132"
+  },
+  {
+    "id": "sintonia80-0072-v4",
+    "version": 1,
+    "rulesVersion": 1,
+    "boards": [
+      {
+        "id": "b0",
+        "animal": "capivara",
+        "rows": 5,
+        "cols": 4,
+        "walkable": [
+          0,
+          4,
+          5,
+          6,
+          9,
+          12,
+          13,
+          14,
+          16,
+          17,
+          18,
+          19
+        ],
+        "start": 16,
+        "goal": 4,
+        "plates": [
+          {
+            "id": "first",
+            "cell": 9
+          }
+        ]
+      },
+      {
+        "id": "b1",
+        "animal": "tuiuiu",
+        "rows": 4,
+        "cols": 4,
+        "walkable": [
+          1,
+          2,
+          3,
+          6,
+          9,
+          10,
+          11,
+          14
+        ],
+        "start": 2,
+        "goal": 10,
+        "plates": [
+          {
+            "id": "second",
+            "cell": 6
+          }
+        ]
+      },
+      {
+        "id": "b2",
+        "animal": "bemtevi",
+        "rows": 5,
+        "cols": 5,
+        "walkable": [
+          3,
+          8,
+          12,
+          13,
+          14,
+          16,
+          17,
+          21
+        ],
+        "start": 3,
+        "goal": 14,
+        "gates": [
+          {
+            "id": "together",
+            "from": 8,
+            "to": 13,
+            "condition": {
+              "type": "all",
+              "ids": [
+                "first",
+                "second"
+              ]
+            }
+          }
+        ]
+      }
+    ],
+    "mechanics": [
+      "walls",
+      "plate",
+      "and"
+    ],
+    "initialSwitches": {},
+    "initialSelectors": {},
+    "family": "remote-support",
+    "secondaryFamilies": [
+      "intermediate-stop",
+      "waiting-place"
+    ],
+    "name": "Dois apoios juntos",
+    "lesson": "Prepare as duas placas ao mesmo tempo para abrir a cancela.",
+    "discovery": "Aqui o jogador precisa descobrir que dois animais precisam sustentar simultaneamente as condições de uma passagem.",
+    "hints": [
+      "A cancela precisa das duas placas indicadas ocupadas, não apenas de uma.",
+      "Prepare as duas posições de apoio antes de tentar a travessia.",
+      "Na configuração inicial, comece para cima; observe quem avança e quem espera."
+    ],
+    "generatorVersion": 3,
+    "contentRevision": "sintonia-content-4",
+    "seed": "sintonia-content4:72:0",
+    "difficulty": 4,
+    "solution": [
+      "up",
+      "right",
+      "up",
+      "left",
+      "up",
+      "down",
+      "down",
+      "up",
+      "right",
+      "up",
+      "left",
+      "up",
+      "right",
+      "down",
+      "down"
+    ],
+    "signature": "st1-9be79b4a-463",
+    "prerequisites": [
+      "walls",
+      "plate",
+      "and"
+    ],
+    "introduction": [],
+    "parameters": {
+      "difficulty": 4,
+      "animals": 3,
+      "primary": "and",
+      "secondary": null,
+      "role": "varied",
+      "pattern": null
+    },
+    "certificate": {
+      "method": "breadth-first-witness-and-engine-replay",
+      "rulesVersion": 1,
+      "commands": 15,
+      "optimal": true,
+      "visited": 590,
+      "replayed": true,
+      "engine": "unchanged-rules-1",
+      "firstVictoryAt": 15
+    },
+    "editorial": {
+      "source": "procedural-structure-and-automatic-curation",
+      "design": null,
+      "purpose": {
+        "valid": true,
+        "won": true,
+        "evidenceScope": "supplied-command-sequence",
+        "commands": 15,
+        "boxes": [],
+        "dependencies": [
+          {
+            "gateId": "together",
+            "receiverBoard": 2,
+            "condition": {
+              "type": "all",
+              "ids": [
+                "first",
+                "second"
+              ]
+            },
+            "controllers": [
+              {
+                "type": "plate",
+                "id": "first",
+                "board": 0,
+                "cell": 9
+              },
+              {
+                "type": "plate",
+                "id": "second",
+                "board": 1,
+                "cell": 6
+              }
+            ],
+            "crossingCommands": [
+              7
+            ]
+          }
+        ],
+        "boardRoles": [
+          {
+            "board": 0,
+            "moved": 11,
+            "waited": 4,
+            "goalDepartures": 1
+          },
+          {
+            "board": 1,
+            "moved": 10,
+            "waited": 5,
+            "goalDepartures": 1
+          },
+          {
+            "board": 2,
+            "moved": 5,
+            "waited": 10,
+            "goalDepartures": 1
+          }
+        ],
+        "caveat": "Uso neste certificado não prova necessidade. Consulte tests/sintonia-purpose-audit.json para ablações e limites."
+      },
+      "rubric": {
+        "status": "human-review-pending",
+        "dimensions": [
+          "purpose",
+          "discovery",
+          "interdependence",
+          "causal-clarity",
+          "spatial-economy",
+          "variety"
+        ],
+        "scores": null,
+        "humanPlaytesting": false,
+        "reason": "Replay e ablações são evidências automáticas, não substitutos de avaliação editorial e testes humanos."
+      },
+      "humanPlaytested": false,
+      "discovery": "Aqui o jogador precisa descobrir que dois animais precisam sustentar simultaneamente as condições de uma passagem.",
+      "reasoning": {
+        "used": [
+          "and-gate"
+        ],
+        "partialBlocks": 12,
+        "goalDepartures": [
+          true,
+          true,
+          true
+        ],
+        "unequalLoops": 35,
+        "directionChanges": 12,
+        "earlyTurns": 7,
+        "occupiedBoxPlate": false,
+        "boxAsStopAfterSupport": false,
+        "finalApproach": [
+          true,
+          false,
+          true
+        ]
+      },
+      "sweep": {
+        "status": "complete",
+        "visited": 12,
+        "resistant": true
+      },
+      "compatibility": "validated",
+      "alternatives": "Uma sequência verificada é fornecida; outras soluções podem existir.",
+      "deadEnds": "Mudanças de configuração podem exigir retornar a uma posição anterior.",
+      "role": "varied",
+      "decision": "recompose",
+      "curriculumReason": "Sincronizar duas condições com diferentes percursos de aproximação.",
+      "retentionReason": "Sincronizar duas condições com diferentes percursos de aproximação.",
+      "antiSpam": {
+        "singleDirection": {
+          "tested": 4,
+          "winningDirections": []
+        },
+        "sweeps": {
+          "status": "complete",
+          "visited": 12,
+          "solves": false
+        },
+        "shortCycles": {
+          "tested": 40,
+          "winningPatterns": []
+        },
+        "biasedRandom": {
+          "runs": 24,
+          "commandsPerRun": 128,
+          "wins": 0
+        },
+        "uniformRandom": {
+          "runs": 24,
+          "commandsPerRun": 128,
+          "wins": 0
+        },
+        "interpretation": "Diagnóstico automático; ciclos curtos e acertos aleatórios não provam ausência de raciocínio. A varredura testa vitória após cada movimento."
+      },
+      "necessity": [
+        {
+          "avoid": {
+            "type": "helper-participation",
+            "board": 0
+          },
+          "result": {
+            "scope": "all-winning-solutions-avoiding-event",
+            "optimalScope": "avoiding-predicate-only",
+            "avoid": {
+              "type": "helper-participation",
+              "board": 0
+            },
+            "budget": {
+              "maxStates": 90000,
+              "maxMs": 12000,
+              "maxDepth": null
+            },
+            "status": "unsolvable",
+            "visited": 148,
+            "optimal": false,
+            "exhaustive": true
+          }
+        },
+        {
+          "avoid": {
+            "type": "helper-participation",
+            "board": 1
+          },
+          "result": {
+            "scope": "all-winning-solutions-avoiding-event",
+            "optimalScope": "avoiding-predicate-only",
+            "avoid": {
+              "type": "helper-participation",
+              "board": 1
+            },
+            "budget": {
+              "maxStates": 90000,
+              "maxMs": 12000,
+              "maxDepth": null
+            },
+            "status": "unsolvable",
+            "visited": 148,
+            "optimal": false,
+            "exhaustive": true
+          }
+        }
+      ],
+      "causalityReport": "tests/sintonia-v4-editorial.json"
+    },
+    "number": 72,
+    "chapter": 5,
+    "originNumber": 72,
+    "origin": {
+      "kind": "recomposed-removed-mechanics",
+      "catalog": "sintonia-content-3",
+      "id": "sintonia-0437",
+      "number": 72,
+      "version": 1,
+      "reason": "Sincronizar duas condições com diferentes percursos de aproximação."
+    },
+    "actorIntroduction": null,
+    "topologySignature": "top1-b1a14faf-180"
+  },
+  {
+    "id": "sintonia80-0073-v4",
+    "version": 1,
+    "rulesVersion": 1,
+    "boards": [
+      {
+        "id": "b0",
+        "animal": "capivara",
+        "rows": 5,
+        "cols": 4,
+        "walkable": [
+          5,
+          9,
+          11,
+          12,
+          13,
+          14,
+          15,
+          19
+        ],
+        "start": 15,
+        "goal": 5,
+        "keys": [
+          {
+            "id": "prepare",
+            "cell": 19
+          }
+        ],
+        "gates": []
       },
       {
         "id": "b1",
@@ -27427,45 +24217,412 @@ export const CAMPAIGN = [
         "cols": 5,
         "walkable": [
           2,
-          3,
+          5,
+          6,
           7,
           11,
-          12,
           13,
           14,
           15,
           16,
+          17,
           18
         ],
-        "start": 15,
-        "goal": 3,
+        "start": 2,
+        "goal": 14,
         "gates": [
           {
-            "id": "choice-left",
-            "from": 15,
-            "to": 16,
+            "id": "preparation-remote",
+            "from": 7,
+            "to": 6,
             "condition": {
-              "type": "selected",
-              "plate": "choice-plate",
-              "selector": "choice",
-              "value": 0
+              "type": "key",
+              "id": "prepare"
             }
+          }
+        ]
+      }
+    ],
+    "mechanics": [
+      "walls",
+      "key"
+    ],
+    "initialSwitches": {},
+    "initialSelectors": {},
+    "family": "priority-change",
+    "secondaryFamilies": [
+      "axis-order",
+      "intermediate-stop"
+    ],
+    "name": "Caminho liberado",
+    "lesson": "Recolha a chave antes de coordenar a travessia da cancela.",
+    "discovery": "Aqui o jogador precisa descobrir que o desvio de preparação libera o outro animal, mudando qual caminho precisa de atenção.",
+    "hints": [
+      "Encontre a chave e a cancela que compartilham o símbolo.",
+      "Termine um movimento sobre a chave; depois, prepare o outro percurso com a passagem liberada.",
+      "Na configuração inicial, comece para baixo; observe quem avança e quem espera."
+    ],
+    "generatorVersion": 3,
+    "contentRevision": "sintonia-content-4",
+    "seed": "sintonia-content4:73:0",
+    "difficulty": 4,
+    "solution": [
+      "down",
+      "left",
+      "down",
+      "down",
+      "right",
+      "right",
+      "up",
+      "left",
+      "left",
+      "up",
+      "up",
+      "right"
+    ],
+    "signature": "st1-4835cdbe-356",
+    "prerequisites": [
+      "walls",
+      "key"
+    ],
+    "introduction": [],
+    "parameters": {
+      "difficulty": 4,
+      "animals": 2,
+      "primary": "key",
+      "secondary": null,
+      "role": "varied",
+      "pattern": "key-fork-before-exit"
+    },
+    "certificate": {
+      "method": "breadth-first-witness-and-engine-replay",
+      "rulesVersion": 1,
+      "commands": 12,
+      "optimal": true,
+      "visited": 98,
+      "replayed": true,
+      "engine": "unchanged-rules-1",
+      "firstVictoryAt": 12
+    },
+    "editorial": {
+      "source": "role-first-structure-and-automatic-curation",
+      "design": {
+        "preparationControl": "key",
+        "pattern": "key-fork-before-exit",
+        "discovery": "o desvio de preparação libera o outro animal, mudando qual caminho precisa de atenção",
+        "roles": [
+          {
+            "board": 0,
+            "role": "preparer-and-committer",
+            "control": 19,
+            "commit": null,
+            "goalRegion": [
+              5
+            ]
           },
           {
-            "id": "choice-right",
-            "from": 11,
-            "to": 12,
+            "board": 1,
+            "role": "receiver-and-aligner",
+            "goalRegion": [
+              6,
+              11,
+              5,
+              16,
+              15,
+              17,
+              18,
+              13,
+              14
+            ]
+          }
+        ],
+        "structures": [
+          {
+            "board": 0,
+            "role": "prepare",
+            "cells": [
+              15,
+              19
+            ]
+          },
+          {
+            "board": 0,
+            "role": "separate",
+            "edge": [
+              13,
+              9
+            ]
+          },
+          {
+            "board": 0,
+            "role": "exit",
+            "edge": [
+              9,
+              5
+            ]
+          },
+          {
+            "board": 1,
+            "role": "remote-exit",
+            "edge": [
+              7,
+              6
+            ]
+          }
+        ],
+        "dependencies": [
+          {
+            "fromBoard": 0,
+            "toBoard": 1,
+            "control": "prepare",
+            "role": "prepare-remote-exit"
+          }
+        ],
+        "order": [
+          "visit-side-branch",
+          "leave-control-with-configuration",
+          "cross-exits",
+          "joint-arrival"
+        ],
+        "counterfactual": "Opening the preparation gate removes the obligation to visit the side branch.",
+        "proofStatus": "structural-design-hypothesis; replay and budgeted ablations recorded separately"
+      },
+      "purpose": {
+        "valid": true,
+        "won": true,
+        "evidenceScope": "supplied-command-sequence",
+        "commands": 12,
+        "boxes": [],
+        "dependencies": [
+          {
+            "gateId": "preparation-remote",
+            "receiverBoard": 1,
             "condition": {
-              "type": "selected",
-              "plate": "choice-plate",
-              "selector": "choice",
-              "value": 1
+              "type": "key",
+              "id": "prepare"
+            },
+            "controllers": [
+              {
+                "type": "key",
+                "id": "prepare",
+                "board": 0,
+                "cell": 19
+              }
+            ],
+            "crossingCommands": [
+              2
+            ]
+          }
+        ],
+        "boardRoles": [
+          {
+            "board": 0,
+            "moved": 6,
+            "waited": 6,
+            "goalDepartures": 0
+          },
+          {
+            "board": 1,
+            "moved": 8,
+            "waited": 4,
+            "goalDepartures": 0
+          }
+        ],
+        "caveat": "Uso neste certificado não prova necessidade. Consulte tests/sintonia-purpose-audit.json para ablações e limites."
+      },
+      "rubric": {
+        "status": "human-review-pending",
+        "dimensions": [
+          "purpose",
+          "discovery",
+          "interdependence",
+          "causal-clarity",
+          "spatial-economy",
+          "variety"
+        ],
+        "scores": null,
+        "humanPlaytesting": false,
+        "reason": "Replay e ablações são evidências automáticas, não substitutos de avaliação editorial e testes humanos."
+      },
+      "humanPlaytested": false,
+      "discovery": "Aqui o jogador precisa descobrir que o desvio de preparação libera o outro animal, mudando qual caminho precisa de atenção.",
+      "reasoning": {
+        "used": [
+          "key",
+          "key-gate"
+        ],
+        "partialBlocks": 10,
+        "goalDepartures": [
+          false,
+          false
+        ],
+        "unequalLoops": 16,
+        "directionChanges": 7,
+        "earlyTurns": 3,
+        "occupiedBoxPlate": false,
+        "boxAsStopAfterSupport": false,
+        "finalApproach": [
+          true,
+          false
+        ]
+      },
+      "sweep": {
+        "status": "complete",
+        "visited": 10,
+        "resistant": true
+      },
+      "compatibility": "validated",
+      "alternatives": "Uma sequência verificada é fornecida; outras soluções podem existir.",
+      "deadEnds": "Mudanças de configuração podem exigir retornar a uma posição anterior.",
+      "role": "varied",
+      "decision": "recompose",
+      "curriculumReason": "Compor prioridade e volta desigual sem mecanismos novos.",
+      "retentionReason": "Compor prioridade e volta desigual sem mecanismos novos.",
+      "antiSpam": {
+        "singleDirection": {
+          "tested": 4,
+          "winningDirections": []
+        },
+        "sweeps": {
+          "status": "complete",
+          "visited": 10,
+          "solves": false
+        },
+        "shortCycles": {
+          "tested": 40,
+          "winningPatterns": []
+        },
+        "biasedRandom": {
+          "runs": 24,
+          "commandsPerRun": 128,
+          "wins": 0
+        },
+        "uniformRandom": {
+          "runs": 24,
+          "commandsPerRun": 128,
+          "wins": 1
+        },
+        "interpretation": "Diagnóstico automático; ciclos curtos e acertos aleatórios não provam ausência de raciocínio. A varredura testa vitória após cada movimento."
+      },
+      "necessity": [
+        {
+          "avoid": {
+            "type": "helper-participation",
+            "board": 0
+          },
+          "result": {
+            "scope": "all-winning-solutions-avoiding-event",
+            "optimalScope": "avoiding-predicate-only",
+            "avoid": {
+              "type": "helper-participation",
+              "board": 0
+            },
+            "budget": {
+              "maxStates": 90000,
+              "maxMs": 12000,
+              "maxDepth": null
+            },
+            "status": "unsolvable",
+            "visited": 25,
+            "optimal": false,
+            "exhaustive": true
+          }
+        }
+      ],
+      "causalityReport": "tests/sintonia-v4-editorial.json"
+    },
+    "number": 73,
+    "chapter": 5,
+    "originNumber": 73,
+    "origin": {
+      "kind": "recomposed-removed-mechanics",
+      "catalog": "sintonia-content-3",
+      "id": "sintonia-0449",
+      "number": 73,
+      "version": 1,
+      "reason": "Compor prioridade e volta desigual sem mecanismos novos."
+    },
+    "actorIntroduction": null,
+    "topologySignature": "top1-a002a8d0-126"
+  },
+  {
+    "id": "sintonia80-0074-v4",
+    "version": 1,
+    "rulesVersion": 1,
+    "boards": [
+      {
+        "id": "b0",
+        "animal": "capivara",
+        "rows": 4,
+        "cols": 4,
+        "walkable": [
+          3,
+          5,
+          6,
+          7,
+          8,
+          9,
+          11,
+          14,
+          15
+        ],
+        "start": 14,
+        "goal": 3,
+        "plates": [
+          {
+            "id": "relay-a",
+            "cell": 7
+          }
+        ],
+        "gates": [
+          {
+            "id": "relay-return",
+            "from": 7,
+            "to": 3,
+            "condition": {
+              "type": "plate",
+              "id": "relay-b"
+            }
+          }
+        ]
+      },
+      {
+        "id": "b1",
+        "animal": "tuiuiu",
+        "rows": 3,
+        "cols": 4,
+        "walkable": [
+          1,
+          3,
+          4,
+          5,
+          6,
+          7,
+          9,
+          11
+        ],
+        "start": 1,
+        "goal": 3,
+        "plates": [
+          {
+            "id": "relay-b",
+            "cell": 3
+          }
+        ],
+        "gates": [
+          {
+            "id": "relay-out",
+            "from": 7,
+            "to": 3,
+            "condition": {
+              "type": "plate",
+              "id": "relay-a"
             }
           },
           {
             "id": "auxiliary-gate-2",
-            "from": 16,
-            "to": 11,
+            "from": 1,
+            "to": 5,
             "condition": {
               "type": "plate",
               "id": "auxiliary-2"
@@ -27477,7 +24634,7 @@ export const CAMPAIGN = [
         "id": "b2",
         "animal": "bemtevi",
         "rows": 3,
-        "cols": 5,
+        "cols": 3,
         "walkable": [
           0,
           1,
@@ -27486,89 +24643,109 @@ export const CAMPAIGN = [
           4,
           6,
           7,
-          8,
-          9,
-          12,
-          13
+          8
         ],
-        "start": 12,
-        "goal": 3,
+        "start": 7,
+        "goal": 4,
         "plates": [
           {
             "id": "auxiliary-2",
-            "cell": 6
+            "cell": 4
           }
+        ]
+      },
+      {
+        "id": "b3",
+        "animal": "mico",
+        "rows": 4,
+        "cols": 4,
+        "walkable": [
+          0,
+          2,
+          4,
+          5,
+          6,
+          10,
+          12,
+          13,
+          14
+        ],
+        "start": 0,
+        "goal": 13,
+        "ice": [
+          5
         ]
       }
     ],
     "mechanics": [
       "walls",
       "plate",
-      "selector"
+      "handoff",
+      "ice"
     ],
     "initialSwitches": {},
     "initialSelectors": {},
-    "family": "help-recipient",
+    "family": "support-handoff",
     "secondaryFamilies": [
-      "goal-transit",
-      "priority-change"
+      "waiting-place",
+      "goal-transit"
     ],
-    "name": "Quem recebe a ajuda",
-    "lesson": "Mude a ligação para que a mesma placa ajude passagens diferentes.",
-    "discovery": "Aqui o jogador precisa descobrir que a placa precisa ajudar uma passagem antes de ser ligada à outra.",
+    "name": "Ajuda em revezamento",
+    "lesson": "Quem atravessou pode assumir a próxima ajuda entre os animais.",
+    "discovery": "Aqui o jogador precisa descobrir que um animal precisa atravessar e ocupar a próxima placa para liberar quem o ajudou.",
     "hints": [
-      "Siga o símbolo da placa até a cancela selecionada.",
-      "Prepare uma travessia, entre no seletor e volte a sustentar a placa para a próxima ligação.",
-      "Na configuração inicial, comece para a direita; observe quem avança e quem espera."
+      "Uma das placas está numa região que a outra ajuda a abrir.",
+      "Prepare a primeira placa, atravesse e ocupe a próxima para que o primeiro ajudante possa continuar.",
+      "Na configuração inicial, comece para cima; observe quem avança e quem espera."
     ],
-    "generatorVersion": 2,
-    "contentRevision": "sintonia-content-3",
-    "seed": "sintonia-campaign-v2:0418:0",
+    "generatorVersion": 3,
+    "contentRevision": "sintonia-content-4",
+    "seed": "sintonia-content4:74:0",
     "difficulty": 4,
     "solution": [
-      "right",
-      "right",
-      "left",
-      "right",
-      "down",
-      "right",
-      "up",
-      "up",
-      "left",
-      "right",
-      "down",
-      "left",
-      "left",
       "up",
       "down",
       "right",
+      "right",
+      "down",
+      "down",
+      "left",
+      "left",
+      "right",
       "up",
       "up",
-      "right"
+      "up",
+      "left",
+      "down",
+      "down",
+      "right",
+      "up"
     ],
-    "signature": "st1-1655764b-786",
+    "signature": "st1-7b8a3e12-745",
     "prerequisites": [
       "walls",
       "plate",
-      "selector"
+      "handoff",
+      "ice"
     ],
     "introduction": [],
     "parameters": {
       "difficulty": 4,
-      "animals": 3,
-      "primary": "selector",
-      "secondary": null,
-      "role": "compact",
+      "animals": 4,
+      "primary": "handoff",
+      "secondary": "ice",
+      "role": "varied",
       "pattern": null
     },
     "certificate": {
       "method": "breadth-first-witness-and-engine-replay",
       "rulesVersion": 1,
-      "commands": 19,
+      "commands": 17,
       "optimal": true,
-      "visited": 1016,
+      "visited": 2007,
       "replayed": true,
-      "engine": "unchanged-rules-1"
+      "engine": "unchanged-rules-1",
+      "firstVictoryAt": 17
     },
     "editorial": {
       "source": "procedural-structure-and-automatic-curation",
@@ -27577,61 +24754,45 @@ export const CAMPAIGN = [
         "valid": true,
         "won": true,
         "evidenceScope": "supplied-command-sequence",
-        "commands": 19,
+        "commands": 17,
         "boxes": [],
         "dependencies": [
           {
-            "gateId": "choice-left",
-            "receiverBoard": 1,
+            "gateId": "relay-return",
+            "receiverBoard": 0,
             "condition": {
-              "type": "selected",
-              "plate": "choice-plate",
-              "selector": "choice",
-              "value": 0
+              "type": "plate",
+              "id": "relay-b"
             },
             "controllers": [
               {
                 "type": "plate",
-                "id": "choice-plate",
-                "board": 0,
-                "cell": 14
-              },
-              {
-                "type": "selector",
-                "id": "choice",
-                "board": 0,
-                "cell": 8
+                "id": "relay-b",
+                "board": 1,
+                "cell": 3
               }
             ],
             "crossingCommands": [
-              6
+              17
             ]
           },
           {
-            "gateId": "choice-right",
+            "gateId": "relay-out",
             "receiverBoard": 1,
             "condition": {
-              "type": "selected",
-              "plate": "choice-plate",
-              "selector": "choice",
-              "value": 1
+              "type": "plate",
+              "id": "relay-a"
             },
             "controllers": [
               {
                 "type": "plate",
-                "id": "choice-plate",
+                "id": "relay-a",
                 "board": 0,
-                "cell": 14
-              },
-              {
-                "type": "selector",
-                "id": "choice",
-                "board": 0,
-                "cell": 8
+                "cell": 7
               }
             ],
             "crossingCommands": [
-              16
+              12
             ]
           },
           {
@@ -27646,31 +24807,37 @@ export const CAMPAIGN = [
                 "type": "plate",
                 "id": "auxiliary-2",
                 "board": 2,
-                "cell": 6
+                "cell": 4
               }
             ],
             "crossingCommands": [
-              14
+              2
             ]
           }
         ],
         "boardRoles": [
           {
             "board": 0,
-            "moved": 12,
-            "waited": 7,
-            "goalDepartures": 5
+            "moved": 8,
+            "waited": 9,
+            "goalDepartures": 0
           },
           {
             "board": 1,
             "moved": 6,
-            "waited": 13,
+            "waited": 11,
             "goalDepartures": 0
           },
           {
             "board": 2,
-            "moved": 15,
+            "moved": 13,
             "waited": 4,
+            "goalDepartures": 2
+          },
+          {
+            "board": 3,
+            "moved": 9,
+            "waited": 8,
             "goalDepartures": 2
           }
         ],
@@ -27691,47 +24858,45 @@ export const CAMPAIGN = [
         "reason": "Replay e ablações são evidências automáticas, não substitutos de avaliação editorial e testes humanos."
       },
       "humanPlaytested": false,
-      "discovery": "Aqui o jogador precisa descobrir que a placa precisa ajudar uma passagem antes de ser ligada à outra.",
+      "discovery": "Aqui o jogador precisa descobrir que um animal precisa atravessar e ocupar a próxima placa para liberar quem o ajudou.",
       "reasoning": {
         "used": [
-          "plate-gate",
-          "selected-0",
-          "selected-1",
-          "selector"
+          "handoff-0",
+          "handoff-1",
+          "ice",
+          "plate-gate"
         ],
-        "partialBlocks": 17,
+        "partialBlocks": 16,
         "goalDepartures": [
-          true,
           false,
+          false,
+          true,
           true
         ],
-        "unequalLoops": 50,
-        "directionChanges": 14,
+        "unequalLoops": 37,
+        "directionChanges": 10,
         "earlyTurns": 6,
         "occupiedBoxPlate": false,
         "boxAsStopAfterSupport": false,
         "finalApproach": [
+          false,
           true,
           false,
-          false
+          true
         ]
       },
       "sweep": {
         "status": "complete",
-        "visited": 28,
+        "visited": 92,
         "resistant": true
       },
       "compatibility": "validated",
       "alternatives": "Uma sequência verificada é fornecida; outras soluções podem existir.",
       "deadEnds": "Mudanças de configuração podem exigir retornar a uma posição anterior.",
-      "decision": "retain-logical-definition",
-      "retentionReason": "Escolher destinatário em trio sem somar mecanismo novo.",
-      "role": "revisit",
-      "prerequisiteChapters": [
-        1,
-        2,
-        5
-      ],
+      "role": "varied",
+      "decision": "recompose",
+      "curriculumReason": "Distribuir apoios e acessos entre quatro responsabilidades.",
+      "retentionReason": "Distribuir apoios e acessos entre quatro responsabilidades.",
       "antiSpam": {
         "singleDirection": {
           "tested": 4,
@@ -27739,7 +24904,7 @@ export const CAMPAIGN = [
         },
         "sweeps": {
           "status": "complete",
-          "visited": 28,
+          "visited": 92,
           "solves": false
         },
         "shortCycles": {
@@ -27747,3013 +24912,126 @@ export const CAMPAIGN = [
           "winningPatterns": []
         },
         "biasedRandom": {
-          "runs": 12,
+          "runs": 24,
           "commandsPerRun": 128,
           "wins": 0
         },
         "uniformRandom": {
-          "runs": 12,
+          "runs": 24,
           "commandsPerRun": 128,
           "wins": 0
         },
         "interpretation": "Diagnóstico automático; ciclos curtos e acertos aleatórios não provam ausência de raciocínio. A varredura testa vitória após cada movimento."
       },
-      "repetition": {
-        "structuralSignature": "st1-1655764b-786",
-        "topologySignature": "top1-e8cf8204-180",
-        "globallyRotatedOrReflectedDuplicate": false
-      },
-      "curriculumReason": "Escolher destinatário em trio sem somar mecanismo novo.",
-      "animalRoles": [
+      "necessity": [
         {
-          "board": 0,
-          "logicalAnimal": "capivara",
-          "role": "Preparar plate choice-plate, selector choice para painel 2. Usar bloqueios como esperas enquanto os parceiros avançam. Abandonar temporariamente o destino para completar o ajuste conjunto.",
-          "controls": [
-            {
-              "id": "choice-plate",
-              "type": "plate",
-              "receiverBoard": 1
+          "avoid": {
+            "type": "helper-participation",
+            "board": 1
+          },
+          "result": {
+            "scope": "all-winning-solutions-avoiding-event",
+            "optimalScope": "avoiding-predicate-only",
+            "avoid": {
+              "type": "helper-participation",
+              "board": 1
             },
-            {
-              "id": "choice",
-              "type": "selector",
-              "receiverBoard": 1
+            "budget": {
+              "maxStates": 90000,
+              "maxMs": 12000,
+              "maxDepth": null
             },
-            {
-              "id": "choice-plate",
-              "type": "plate",
-              "receiverBoard": 1
-            },
-            {
-              "id": "choice",
-              "type": "selector",
-              "receiverBoard": 1
-            }
-          ],
-          "goal": 9
+            "status": "unsolvable",
+            "visited": 1942,
+            "optimal": false,
+            "exhaustive": true
+          }
         },
         {
-          "board": 1,
-          "logicalAnimal": "tuiuiu",
-          "role": "Aproveitar choice-left nos comandos 6; choice-right nos comandos 16; auxiliary-gate-2 nos comandos 14. Usar bloqueios como esperas enquanto os parceiros avançam. Preparar a chegada conjunta sem depender de congelar no destino.",
-          "controls": [],
-          "goal": 3
+          "avoid": {
+            "type": "helper-participation",
+            "board": 0
+          },
+          "result": {
+            "scope": "all-winning-solutions-avoiding-event",
+            "optimalScope": "avoiding-predicate-only",
+            "avoid": {
+              "type": "helper-participation",
+              "board": 0
+            },
+            "budget": {
+              "maxStates": 90000,
+              "maxMs": 12000,
+              "maxDepth": null
+            },
+            "status": "unsolvable",
+            "visited": 1728,
+            "optimal": false,
+            "exhaustive": true
+          }
         },
         {
-          "board": 2,
-          "logicalAnimal": "bemtevi",
-          "role": "Preparar plate auxiliary-2 para painel 2. Usar bloqueios como esperas enquanto os parceiros avançam. Abandonar temporariamente o destino para completar o ajuste conjunto.",
-          "controls": [
-            {
-              "id": "auxiliary-2",
-              "type": "plate",
-              "receiverBoard": 1
-            }
-          ],
-          "goal": 3
+          "avoid": {
+            "type": "helper-participation",
+            "board": 2
+          },
+          "result": {
+            "scope": "all-winning-solutions-avoiding-event",
+            "optimalScope": "avoiding-predicate-only",
+            "avoid": {
+              "type": "helper-participation",
+              "board": 2
+            },
+            "budget": {
+              "maxStates": 90000,
+              "maxMs": 12000,
+              "maxDepth": null
+            },
+            "status": "unsolvable",
+            "visited": 330,
+            "optimal": false,
+            "exhaustive": true
+          }
+        },
+        {
+          "avoid": {
+            "type": "event",
+            "eventType": "ice"
+          },
+          "result": {
+            "scope": "all-winning-solutions-avoiding-event",
+            "optimalScope": "avoiding-predicate-only",
+            "avoid": {
+              "type": "event",
+              "eventType": "ice"
+            },
+            "budget": {
+              "maxStates": 90000,
+              "maxMs": 12000,
+              "maxDepth": null
+            },
+            "status": "unsolvable",
+            "visited": 367,
+            "optimal": false,
+            "exhaustive": true
+          }
         }
       ],
-      "objectRoles": [
-        {
-          "board": 0,
-          "type": "plates",
-          "id": "choice-plate",
-          "definition": {
-            "id": "choice-plate",
-            "cell": 14
-          },
-          "role": "Ocupação por animal ou caixa controla a passagem no estado anterior ao comando.",
-          "evidenceScope": "definition-and-certified-witness; necessity requires separate audit"
-        },
-        {
-          "board": 0,
-          "type": "selectors",
-          "id": "choice",
-          "definition": {
-            "id": "choice",
-            "cell": 8,
-            "group": "choice"
-          },
-          "role": "Escolhe conexão A/B; a placa correspondente ainda precisa de ocupação.",
-          "evidenceScope": "definition-and-certified-witness; necessity requires separate audit"
-        },
-        {
-          "board": 1,
-          "type": "gates",
-          "id": "choice-left",
-          "definition": {
-            "id": "choice-left",
-            "from": 15,
-            "to": 16,
-            "condition": {
-              "type": "selected",
-              "plate": "choice-plate",
-              "selector": "choice",
-              "value": 0
-            }
-          },
-          "role": {
-            "condition": {
-              "type": "selected",
-              "plate": "choice-plate",
-              "selector": "choice",
-              "value": 0
-            },
-            "crossings": [
-              6
-            ]
-          },
-          "evidenceScope": "definition-and-certified-witness; necessity requires separate audit"
-        },
-        {
-          "board": 1,
-          "type": "gates",
-          "id": "choice-right",
-          "definition": {
-            "id": "choice-right",
-            "from": 11,
-            "to": 12,
-            "condition": {
-              "type": "selected",
-              "plate": "choice-plate",
-              "selector": "choice",
-              "value": 1
-            }
-          },
-          "role": {
-            "condition": {
-              "type": "selected",
-              "plate": "choice-plate",
-              "selector": "choice",
-              "value": 1
-            },
-            "crossings": [
-              16
-            ]
-          },
-          "evidenceScope": "definition-and-certified-witness; necessity requires separate audit"
-        },
-        {
-          "board": 1,
-          "type": "gates",
-          "id": "auxiliary-gate-2",
-          "definition": {
-            "id": "auxiliary-gate-2",
-            "from": 16,
-            "to": 11,
-            "condition": {
-              "type": "plate",
-              "id": "auxiliary-2"
-            }
-          },
-          "role": {
-            "condition": {
-              "type": "plate",
-              "id": "auxiliary-2"
-            },
-            "crossings": [
-              14
-            ]
-          },
-          "evidenceScope": "definition-and-certified-witness; necessity requires separate audit"
-        },
-        {
-          "board": 2,
-          "type": "plates",
-          "id": "auxiliary-2",
-          "definition": {
-            "id": "auxiliary-2",
-            "cell": 6
-          },
-          "role": "Ocupação por animal ou caixa controla a passagem no estado anterior ao comando.",
-          "evidenceScope": "definition-and-certified-witness; necessity requires separate audit"
-        }
-      ],
-      "causalityReport": "tests/sintonia80-purpose-audit.json"
-    },
-    "number": 70,
-    "chapter": 5,
-    "topologySignature": "top1-e8cf8204-180",
-    "originNumber": 418,
-    "origin": {
-      "kind": "curated-identical-logical-definition",
-      "catalog": "sintonia-content-2",
-      "number": 418,
-      "id": "sintonia-0418",
-      "version": 1,
-      "reason": "Escolher destinatário em trio sem somar mecanismo novo."
-    },
-    "actorIntroduction": null
-  },
-  {
-    "id": "sintonia-0426",
-    "version": 1,
-    "rulesVersion": 1,
-    "boards": [
-      {
-        "id": "b0",
-        "animal": "capivara",
-        "rows": 6,
-        "cols": 6,
-        "walkable": [
-          12,
-          13,
-          14,
-          15,
-          16
-        ],
-        "start": 12,
-        "goal": 16,
-        "boxes": [
-          {
-            "id": "parcel",
-            "cell": 13
-          }
-        ],
-        "gates": [
-          {
-            "id": "delivery-gate",
-            "from": 14,
-            "to": 15,
-            "condition": {
-              "type": "plate",
-              "id": "arrival"
-            }
-          },
-          {
-            "id": "delivery-final",
-            "from": 15,
-            "to": 16,
-            "condition": {
-              "type": "plate",
-              "id": "arrival"
-            }
-          }
-        ]
-      },
-      {
-        "id": "b1",
-        "animal": "tuiuiu",
-        "rows": 6,
-        "cols": 6,
-        "walkable": [
-          7,
-          8,
-          9,
-          10,
-          13,
-          14,
-          15,
-          16,
-          19,
-          20,
-          21,
-          22,
-          25,
-          26,
-          28
-        ],
-        "start": 20,
-        "goal": 28,
-        "plates": [
-          {
-            "id": "arrival",
-            "cell": 15
-          }
-        ],
-        "gates": [
-          {
-            "id": "delivery-home",
-            "from": 22,
-            "to": 28,
-            "condition": {
-              "type": "plate",
-              "id": "arrival"
-            }
-          }
-        ]
-      }
-    ],
-    "mechanics": [
-      "walls",
-      "plate",
-      "box",
-      "delivery"
-    ],
-    "initialSwitches": {},
-    "initialSelectors": {},
-    "channels": [
-      {
-        "id": "parcel-channel",
-        "fromBoard": 0,
-        "entry": 14,
-        "toBoard": 1,
-        "exit": 20
-      }
-    ],
-    "family": "support-handoff",
-    "secondaryFamilies": [
-      "intermediate-stop",
-      "priority-change"
-    ],
-    "name": "Preparar a entrega",
-    "lesson": "Empurre a caixa na entrada para enviá-la a outro tabuleiro. Se a saída não estiver livre, o empurrão inteiro é bloqueado. Libere a saída do canal e reposicione a caixa recebida antes de usar o apoio.",
-    "discovery": "Aqui o jogador precisa descobrir que preparar a saída do canal e depois mudar a face de empurrão transforma o recurso recebido em apoio para os dois caminhos.",
-    "hints": [
-      "O canal precisa de uma saída livre antes do envio.",
-      "Receber ainda não basta: encontre a face que permite orientar a caixa para a placa.",
-      "Prepare as ajudas de retorno antes de abandonar uma placa."
-    ],
-    "generatorVersion": 2,
-    "contentRevision": "sintonia-content-3",
-    "seed": "sintonia-campaign-v2:0426:0",
-    "difficulty": 4,
-    "solution": [
-      "down",
-      "right",
-      "up",
-      "left",
-      "up",
-      "right",
-      "down",
-      "right",
-      "right",
-      "right",
-      "down"
-    ],
-    "signature": "st1-bdedf254-633",
-    "prerequisites": [
-      "walls",
-      "plate",
-      "box"
-    ],
-    "introduction": [
-      "delivery"
-    ],
-    "parameters": {
-      "difficulty": 4,
-      "animals": 2,
-      "primary": "delivery",
-      "secondary": null,
-      "role": "focus",
-      "pattern": "receive-turn-support"
-    },
-    "certificate": {
-      "method": "breadth-first-witness-and-engine-replay",
-      "rulesVersion": 1,
-      "commands": 11,
-      "optimal": true,
-      "visited": 501,
-      "replayed": true,
-      "engine": "unchanged-rules-1"
-    },
-    "editorial": {
-      "source": "role-first-structure-and-automatic-curation",
-      "design": {
-        "requiredReceiverPushes": 2,
-        "senderApproach": "ready-to-send after receiver preparation",
-        "structures": {
-          "channel": "redistribute one finite box resource",
-          "receiverCircuit": "reach a different pushing face, not extend a corridor",
-          "receiverGate": "prevent animal occupancy from replacing persistent box support",
-          "helperChain": "two interdependent animals"
-        },
-        "causalClaim": "Receiver begins on the channel exit. The exit must be cleared before transmission; the delivered box must be repositioned before supporting the final dependencies.",
-        "roles": [
-          "send resource, then wait for returned support",
-          "clear receiving space, reach the useful pushing face, and sustain support"
-        ],
-        "boxRoles": [
-          "transferred-resource",
-          "reoriented-support"
-        ],
-        "dependencies": [
-          {
-            "from": 0,
-            "to": 1,
-            "kind": "resource-delivery"
-          },
-          {
-            "from": 1,
-            "to": 0,
-            "kind": "persistent-box-support"
-          }
-        ],
-        "errors": [
-          "Sending while the receiver still occupies the exit does not transfer the box.",
-          "Pushing into a terminal corner can lose access to the next pushing face; undo remains available."
-        ],
-        "evidenceScope": "Claims describe the construction. Replay and controlled ablation are recorded separately; no human playtest or unique-solution claim.",
-        "pattern": "receive-turn-support",
-        "discovery": "preparar a saída do canal e depois mudar a face de empurrão transforma o recurso recebido em apoio para os dois caminhos"
-      },
-      "purpose": {
-        "valid": true,
-        "won": true,
-        "evidenceScope": "supplied-command-sequence",
-        "commands": 11,
-        "boxes": [
-          {
-            "id": "parcel",
-            "origin": {
-              "id": "parcel",
-              "board": 0,
-              "cell": 13
-            },
-            "final": {
-              "id": "parcel",
-              "board": 1,
-              "cell": 15
-            },
-            "pushes": [
-              {
-                "command": 2,
-                "direction": "right",
-                "board": 0,
-                "from": 13,
-                "to": 14
-              },
-              {
-                "command": 3,
-                "direction": "up",
-                "board": 1,
-                "from": 20,
-                "to": 14
-              },
-              {
-                "command": 6,
-                "direction": "right",
-                "board": 1,
-                "from": 14,
-                "to": 15
-              }
-            ],
-            "directionChanges": 2,
-            "deliveries": [
-              {
-                "command": 2,
-                "channelId": "parcel-channel",
-                "fromBoard": 0,
-                "toBoard": 1,
-                "entry": 14,
-                "exit": 20
-              }
-            ],
-            "postDeliveryPushes": [
-              {
-                "command": 3,
-                "direction": "up",
-                "board": 1,
-                "from": 20,
-                "to": 14
-              },
-              {
-                "command": 6,
-                "direction": "right",
-                "board": 1,
-                "from": 14,
-                "to": 15
-              }
-            ],
-            "plateEntries": [
-              {
-                "command": 6,
-                "plateId": "arrival"
-              }
-            ],
-            "plateReleases": [],
-            "supportUses": [
-              {
-                "command": 9,
-                "plateId": "arrival",
-                "gateId": "delivery-gate",
-                "receiverBoard": 0
-              },
-              {
-                "command": 10,
-                "plateId": "arrival",
-                "gateId": "delivery-final",
-                "receiverBoard": 0
-              },
-              {
-                "command": 11,
-                "plateId": "arrival",
-                "gateId": "delivery-home",
-                "receiverBoard": 1
-              }
-            ],
-            "observedRoles": [
-              "directional-reposition",
-              "gate-support",
-              "transferred-resource",
-              "recipient-reposition"
-            ]
-          }
-        ],
-        "dependencies": [
-          {
-            "gateId": "delivery-gate",
-            "receiverBoard": 0,
-            "condition": {
-              "type": "plate",
-              "id": "arrival"
-            },
-            "controllers": [
-              {
-                "type": "plate",
-                "id": "arrival",
-                "board": 1,
-                "cell": 15
-              }
-            ],
-            "crossingCommands": [
-              9
-            ]
-          },
-          {
-            "gateId": "delivery-final",
-            "receiverBoard": 0,
-            "condition": {
-              "type": "plate",
-              "id": "arrival"
-            },
-            "controllers": [
-              {
-                "type": "plate",
-                "id": "arrival",
-                "board": 1,
-                "cell": 15
-              }
-            ],
-            "crossingCommands": [
-              10
-            ]
-          },
-          {
-            "gateId": "delivery-home",
-            "receiverBoard": 1,
-            "condition": {
-              "type": "plate",
-              "id": "arrival"
-            },
-            "controllers": [
-              {
-                "type": "plate",
-                "id": "arrival",
-                "board": 1,
-                "cell": 15
-              }
-            ],
-            "crossingCommands": [
-              11
-            ]
-          }
-        ],
-        "boardRoles": [
-          {
-            "board": 0,
-            "moved": 6,
-            "waited": 5,
-            "goalDepartures": 0
-          },
-          {
-            "board": 1,
-            "moved": 9,
-            "waited": 2,
-            "goalDepartures": 0
-          }
-        ],
-        "caveat": "Uso neste certificado não prova necessidade. Consulte tests/sintonia-purpose-audit.json para ablações e limites."
-      },
-      "rubric": {
-        "status": "human-review-pending",
-        "dimensions": [
-          "purpose",
-          "discovery",
-          "interdependence",
-          "causal-clarity",
-          "spatial-economy",
-          "variety"
-        ],
-        "scores": null,
-        "humanPlaytesting": false,
-        "reason": "Replay e ablações são evidências automáticas, não substitutos de avaliação editorial e testes humanos."
-      },
-      "humanPlaytested": false,
-      "discovery": "Aqui o jogador precisa descobrir que preparar a saída do canal e depois mudar a face de empurrão transforma o recurso recebido em apoio para os dois caminhos.",
-      "reasoning": {
-        "used": [
-          "delivery",
-          "delivery-gate",
-          "plate-gate",
-          "push"
-        ],
-        "partialBlocks": 7,
-        "goalDepartures": [
-          false,
-          false
-        ],
-        "unequalLoops": 8,
-        "directionChanges": 8,
-        "earlyTurns": 5,
-        "occupiedBoxPlate": true,
-        "boxAsStopAfterSupport": false,
-        "finalApproach": [
-          true,
-          false
-        ]
-      },
-      "sweep": {
-        "status": "complete",
-        "visited": 101,
-        "resistant": true
-      },
-      "compatibility": "validated",
-      "alternatives": "Uma sequência verificada é fornecida; outras soluções podem existir.",
-      "deadEnds": "A fase permite estados sem saída; desfazer e reiniciar são livres.",
-      "decision": "retain-logical-definition",
-      "retentionReason": "Entrega em dupla: liberar saída antes, enviar, alcançar outra face e apoiar depois.",
-      "role": "focus",
-      "prerequisiteChapters": [
-        1,
-        2,
-        3
-      ],
-      "antiSpam": {
-        "singleDirection": {
-          "tested": 4,
-          "winningDirections": []
-        },
-        "sweeps": {
-          "status": "complete",
-          "visited": 101,
-          "solves": false
-        },
-        "shortCycles": {
-          "tested": 40,
-          "winningPatterns": []
-        },
-        "biasedRandom": {
-          "runs": 12,
-          "commandsPerRun": 128,
-          "wins": 0
-        },
-        "uniformRandom": {
-          "runs": 12,
-          "commandsPerRun": 128,
-          "wins": 0
-        },
-        "interpretation": "Diagnóstico automático; ciclos curtos e acertos aleatórios não provam ausência de raciocínio. A varredura testa vitória após cada movimento."
-      },
-      "repetition": {
-        "structuralSignature": "st1-bdedf254-633",
-        "topologySignature": "top1-a318b2fc-123",
-        "globallyRotatedOrReflectedDuplicate": false
-      },
-      "curriculumReason": "Entrega em dupla: liberar saída antes, enviar, alcançar outra face e apoiar depois.",
-      "animalRoles": [
-        {
-          "board": 0,
-          "logicalAnimal": "capivara",
-          "role": "send resource, then wait for returned support",
-          "controls": [],
-          "goal": 16
-        },
-        {
-          "board": 1,
-          "logicalAnimal": "tuiuiu",
-          "role": "clear receiving space, reach the useful pushing face, and sustain support",
-          "controls": [
-            {
-              "id": "arrival",
-              "type": "plate",
-              "receiverBoard": 0
-            },
-            {
-              "id": "arrival",
-              "type": "plate",
-              "receiverBoard": 0
-            },
-            {
-              "id": "arrival",
-              "type": "plate",
-              "receiverBoard": 1
-            }
-          ],
-          "goal": 28
-        }
-      ],
-      "objectRoles": [
-        {
-          "board": 0,
-          "type": "boxes",
-          "id": "parcel",
-          "definition": {
-            "id": "parcel",
-            "cell": 13
-          },
-          "role": [
-            "transferred-resource",
-            "reoriented-support"
-          ],
-          "evidenceScope": "definition-and-certified-witness; necessity requires separate audit"
-        },
-        {
-          "board": 0,
-          "type": "gates",
-          "id": "delivery-gate",
-          "definition": {
-            "id": "delivery-gate",
-            "from": 14,
-            "to": 15,
-            "condition": {
-              "type": "plate",
-              "id": "arrival"
-            }
-          },
-          "role": {
-            "condition": {
-              "type": "plate",
-              "id": "arrival"
-            },
-            "crossings": [
-              9
-            ]
-          },
-          "evidenceScope": "definition-and-certified-witness; necessity requires separate audit"
-        },
-        {
-          "board": 0,
-          "type": "gates",
-          "id": "delivery-final",
-          "definition": {
-            "id": "delivery-final",
-            "from": 15,
-            "to": 16,
-            "condition": {
-              "type": "plate",
-              "id": "arrival"
-            }
-          },
-          "role": {
-            "condition": {
-              "type": "plate",
-              "id": "arrival"
-            },
-            "crossings": [
-              10
-            ]
-          },
-          "evidenceScope": "definition-and-certified-witness; necessity requires separate audit"
-        },
-        {
-          "board": 1,
-          "type": "plates",
-          "id": "arrival",
-          "definition": {
-            "id": "arrival",
-            "cell": 15
-          },
-          "role": "Ocupação por animal ou caixa controla a passagem no estado anterior ao comando.",
-          "evidenceScope": "definition-and-certified-witness; necessity requires separate audit"
-        },
-        {
-          "board": 1,
-          "type": "gates",
-          "id": "delivery-home",
-          "definition": {
-            "id": "delivery-home",
-            "from": 22,
-            "to": 28,
-            "condition": {
-              "type": "plate",
-              "id": "arrival"
-            }
-          },
-          "role": {
-            "condition": {
-              "type": "plate",
-              "id": "arrival"
-            },
-            "crossings": [
-              11
-            ]
-          },
-          "evidenceScope": "definition-and-certified-witness; necessity requires separate audit"
-        },
-        {
-          "type": "channel",
-          "id": "parcel-channel",
-          "definition": {
-            "id": "parcel-channel",
-            "fromBoard": 0,
-            "entry": 14,
-            "toBoard": 1,
-            "exit": 20
-          },
-          "role": "Preparar saída livre antes do comando; enviar somente a caixa, receber, alcançar outra face e usar o apoio no destino. Entrega é atômica, sem prioridade entre painéis.",
-          "evidenceScope": "definition-and-certified-witness; necessity requires separate audit"
-        }
-      ],
-      "causalityReport": "tests/sintonia80-purpose-audit.json"
-    },
-    "number": 71,
-    "chapter": 5,
-    "topologySignature": "top1-a318b2fc-123",
-    "originNumber": 426,
-    "origin": {
-      "kind": "curated-identical-logical-definition",
-      "catalog": "sintonia-content-2",
-      "number": 426,
-      "id": "sintonia-0426",
-      "version": 1,
-      "reason": "Entrega em dupla: liberar saída antes, enviar, alcançar outra face e apoiar depois."
-    },
-    "actorIntroduction": null,
-    "ruleExplanation": "Empurre a caixa na entrada para enviá-la a outro tabuleiro. Se a saída não estiver livre, o empurrão inteiro é bloqueado."
-  },
-  {
-    "id": "sintonia-0437",
-    "version": 1,
-    "rulesVersion": 1,
-    "boards": [
-      {
-        "id": "b0",
-        "animal": "capivara",
-        "rows": 6,
-        "cols": 6,
-        "walkable": [
-          3,
-          9,
-          15,
-          21,
-          27
-        ],
-        "start": 3,
-        "goal": 27,
-        "boxes": [
-          {
-            "id": "parcel",
-            "cell": 9
-          }
-        ],
-        "gates": [
-          {
-            "id": "delivery-gate",
-            "from": 15,
-            "to": 21,
-            "condition": {
-              "type": "plate",
-              "id": "arrival"
-            }
-          },
-          {
-            "id": "delivery-final",
-            "from": 21,
-            "to": 27,
-            "condition": {
-              "type": "plate",
-              "id": "helper-release"
-            }
-          }
-        ],
-        "plates": [
-          {
-            "id": "sender-release",
-            "cell": 15
-          }
-        ]
-      },
-      {
-        "id": "b1",
-        "animal": "tuiuiu",
-        "rows": 6,
-        "cols": 6,
-        "walkable": [
-          7,
-          8,
-          9,
-          10,
-          13,
-          14,
-          15,
-          16,
-          19,
-          20,
-          21,
-          22,
-          25,
-          26,
-          28
-        ],
-        "start": 20,
-        "goal": 28,
-        "plates": [
-          {
-            "id": "arrival",
-            "cell": 9
-          }
-        ],
-        "gates": [
-          {
-            "id": "delivery-home",
-            "from": 22,
-            "to": 28,
-            "condition": {
-              "type": "plate",
-              "id": "sender-release"
-            }
-          }
-        ]
-      },
-      {
-        "id": "b2",
-        "animal": "bemtevi",
-        "rows": 3,
-        "cols": 3,
-        "walkable": [
-          0,
-          1,
-          2,
-          4,
-          6,
-          7
-        ],
-        "start": 2,
-        "goal": 6,
-        "plates": [
-          {
-            "id": "helper-release",
-            "cell": 4
-          }
-        ],
-        "gates": [
-          {
-            "id": "helper-exit",
-            "from": 4,
-            "to": 7,
-            "condition": {
-              "type": "plate",
-              "id": "arrival"
-            }
-          }
-        ]
-      }
-    ],
-    "mechanics": [
-      "walls",
-      "plate",
-      "box",
-      "delivery"
-    ],
-    "initialSwitches": {},
-    "initialSelectors": {},
-    "channels": [
-      {
-        "id": "parcel-channel",
-        "fromBoard": 0,
-        "entry": 15,
-        "toBoard": 1,
-        "exit": 20
-      }
-    ],
-    "family": "support-handoff",
-    "secondaryFamilies": [
-      "waiting-place",
-      "final-command"
-    ],
-    "name": "Preparar a entrega",
-    "lesson": "Libere a saída do canal e reposicione a caixa recebida antes de usar o apoio.",
-    "discovery": "Aqui o jogador precisa descobrir que receber e orientar a caixa ainda não basta: o remetente precisa sustentar o retorno do receptor antes de abandonar a ajuda.",
-    "hints": [
-      "O canal precisa de uma saída livre antes do envio.",
-      "Receber ainda não basta: encontre a face que permite orientar a caixa para a placa.",
-      "Prepare as ajudas de retorno antes de abandonar uma placa."
-    ],
-    "generatorVersion": 2,
-    "contentRevision": "sintonia-content-3",
-    "seed": "sintonia-campaign-v2:0437:0",
-    "difficulty": 4,
-    "solution": [
-      "down",
-      "down",
-      "up",
-      "up",
-      "left",
-      "up",
-      "right",
-      "down",
-      "right",
-      "right",
-      "down",
-      "down",
-      "left",
-      "down",
-      "down",
-      "left"
-    ],
-    "signature": "st1-8e5d03bc-888",
-    "prerequisites": [
-      "walls",
-      "plate",
-      "box",
-      "delivery"
-    ],
-    "introduction": [],
-    "parameters": {
-      "difficulty": 4,
-      "animals": 3,
-      "primary": "delivery",
-      "secondary": null,
-      "role": "compact",
-      "pattern": "receive-hold-return"
-    },
-    "certificate": {
-      "method": "breadth-first-witness-and-engine-replay",
-      "rulesVersion": 1,
-      "commands": 16,
-      "optimal": true,
-      "visited": 1282,
-      "replayed": true,
-      "engine": "unchanged-rules-1"
-    },
-    "editorial": {
-      "source": "role-first-structure-and-automatic-curation",
-      "design": {
-        "requiredReceiverPushes": 2,
-        "senderApproach": "ready-to-send after receiver preparation",
-        "structures": {
-          "channel": "redistribute one finite box resource",
-          "receiverCircuit": "reach a different pushing face, not extend a corridor",
-          "receiverGate": "return while sender still holds its plate",
-          "helperChain": "give each extra animal a necessary support recipient"
-        },
-        "causalClaim": "Receiver begins on the channel exit. The exit must be cleared before transmission; the delivered box must be repositioned before supporting the final dependencies.",
-        "roles": [
-          "send resource, then wait for returned support",
-          "clear receiving space, reach the useful pushing face, and sustain support",
-          "hold the sender’s final passage before leaving through the box-supported passage"
-        ],
-        "boxRoles": [
-          "transferred-resource",
-          "multi-direction-support",
-          "reciprocal-release"
-        ],
-        "dependencies": [
-          {
-            "from": 0,
-            "to": 1,
-            "kind": "resource-delivery"
-          },
-          {
-            "from": 1,
-            "to": 0,
-            "kind": "persistent-box-support"
-          },
-          {
-            "from": 2,
-            "to": 0,
-            "kind": "temporary-helper-support"
-          },
-          {
-            "from": 1,
-            "to": 2,
-            "kind": "returned-box-support"
-          },
-          {
-            "from": 0,
-            "to": 1,
-            "kind": "hold-return-before-final-crossing"
-          }
-        ],
-        "errors": [
-          "Sending while the receiver still occupies the exit does not transfer the box.",
-          "Pushing into a terminal corner can lose access to the next pushing face; undo remains available."
-        ],
-        "evidenceScope": "Claims describe the construction. Replay and controlled ablation are recorded separately; no human playtest or unique-solution claim.",
-        "pattern": "receive-hold-return",
-        "discovery": "receber e orientar a caixa ainda não basta: o remetente precisa sustentar o retorno do receptor antes de abandonar a ajuda"
-      },
-      "purpose": {
-        "valid": true,
-        "won": true,
-        "evidenceScope": "supplied-command-sequence",
-        "commands": 16,
-        "boxes": [
-          {
-            "id": "parcel",
-            "origin": {
-              "id": "parcel",
-              "board": 0,
-              "cell": 9
-            },
-            "final": {
-              "id": "parcel",
-              "board": 1,
-              "cell": 9
-            },
-            "pushes": [
-              {
-                "command": 2,
-                "direction": "down",
-                "board": 0,
-                "from": 9,
-                "to": 15
-              },
-              {
-                "command": 3,
-                "direction": "up",
-                "board": 1,
-                "from": 20,
-                "to": 14
-              },
-              {
-                "command": 4,
-                "direction": "up",
-                "board": 1,
-                "from": 14,
-                "to": 8
-              },
-              {
-                "command": 7,
-                "direction": "right",
-                "board": 1,
-                "from": 8,
-                "to": 9
-              }
-            ],
-            "directionChanges": 2,
-            "deliveries": [
-              {
-                "command": 2,
-                "channelId": "parcel-channel",
-                "fromBoard": 0,
-                "toBoard": 1,
-                "entry": 15,
-                "exit": 20
-              }
-            ],
-            "postDeliveryPushes": [
-              {
-                "command": 3,
-                "direction": "up",
-                "board": 1,
-                "from": 20,
-                "to": 14
-              },
-              {
-                "command": 4,
-                "direction": "up",
-                "board": 1,
-                "from": 14,
-                "to": 8
-              },
-              {
-                "command": 7,
-                "direction": "right",
-                "board": 1,
-                "from": 8,
-                "to": 9
-              }
-            ],
-            "plateEntries": [
-              {
-                "command": 7,
-                "plateId": "arrival"
-              }
-            ],
-            "plateReleases": [],
-            "supportUses": [
-              {
-                "command": 12,
-                "plateId": "arrival",
-                "gateId": "delivery-gate",
-                "receiverBoard": 0
-              },
-              {
-                "command": 15,
-                "plateId": "arrival",
-                "gateId": "helper-exit",
-                "receiverBoard": 2
-              }
-            ],
-            "observedRoles": [
-              "directional-reposition",
-              "gate-support",
-              "transferred-resource",
-              "recipient-reposition"
-            ]
-          }
-        ],
-        "dependencies": [
-          {
-            "gateId": "delivery-gate",
-            "receiverBoard": 0,
-            "condition": {
-              "type": "plate",
-              "id": "arrival"
-            },
-            "controllers": [
-              {
-                "type": "plate",
-                "id": "arrival",
-                "board": 1,
-                "cell": 9
-              }
-            ],
-            "crossingCommands": [
-              12
-            ]
-          },
-          {
-            "gateId": "delivery-final",
-            "receiverBoard": 0,
-            "condition": {
-              "type": "plate",
-              "id": "helper-release"
-            },
-            "controllers": [
-              {
-                "type": "plate",
-                "id": "helper-release",
-                "board": 2,
-                "cell": 4
-              }
-            ],
-            "crossingCommands": [
-              15
-            ]
-          },
-          {
-            "gateId": "delivery-home",
-            "receiverBoard": 1,
-            "condition": {
-              "type": "plate",
-              "id": "sender-release"
-            },
-            "controllers": [
-              {
-                "type": "plate",
-                "id": "sender-release",
-                "board": 0,
-                "cell": 15
-              }
-            ],
-            "crossingCommands": [
-              12
-            ]
-          },
-          {
-            "gateId": "helper-exit",
-            "receiverBoard": 2,
-            "condition": {
-              "type": "plate",
-              "id": "arrival"
-            },
-            "controllers": [
-              {
-                "type": "plate",
-                "id": "arrival",
-                "board": 1,
-                "cell": 9
-              }
-            ],
-            "crossingCommands": [
-              15
-            ]
-          }
-        ],
-        "boardRoles": [
-          {
-            "board": 0,
-            "moved": 6,
-            "waited": 10,
-            "goalDepartures": 0
-          },
-          {
-            "board": 1,
-            "moved": 11,
-            "waited": 5,
-            "goalDepartures": 0
-          },
-          {
-            "board": 2,
-            "moved": 6,
-            "waited": 10,
-            "goalDepartures": 0
-          }
-        ],
-        "caveat": "Uso neste certificado não prova necessidade. Consulte tests/sintonia-purpose-audit.json para ablações e limites."
-      },
-      "rubric": {
-        "status": "human-review-pending",
-        "dimensions": [
-          "purpose",
-          "discovery",
-          "interdependence",
-          "causal-clarity",
-          "spatial-economy",
-          "variety"
-        ],
-        "scores": null,
-        "humanPlaytesting": false,
-        "reason": "Replay e ablações são evidências automáticas, não substitutos de avaliação editorial e testes humanos."
-      },
-      "humanPlaytested": false,
-      "discovery": "Aqui o jogador precisa descobrir que receber e orientar a caixa ainda não basta: o remetente precisa sustentar o retorno do receptor antes de abandonar a ajuda.",
-      "reasoning": {
-        "used": [
-          "delivery",
-          "delivery-gate",
-          "plate-gate",
-          "push"
-        ],
-        "partialBlocks": 16,
-        "goalDepartures": [
-          false,
-          false,
-          false
-        ],
-        "unequalLoops": 39,
-        "directionChanges": 10,
-        "earlyTurns": 5,
-        "occupiedBoxPlate": true,
-        "boxAsStopAfterSupport": false,
-        "finalApproach": [
-          true,
-          true,
-          false
-        ]
-      },
-      "sweep": {
-        "status": "complete",
-        "visited": 59,
-        "resistant": true
-      },
-      "compatibility": "validated",
-      "alternatives": "Uma sequência verificada é fornecida; outras soluções podem existir.",
-      "deadEnds": "A fase permite estados sem saída; desfazer e reiniciar são livres.",
-      "decision": "retain-logical-definition",
-      "retentionReason": "Trio combina entrega com apoio do remetente para o retorno.",
-      "role": "compact",
-      "prerequisiteChapters": [
-        1,
-        2,
-        3,
-        5
-      ],
-      "antiSpam": {
-        "singleDirection": {
-          "tested": 4,
-          "winningDirections": []
-        },
-        "sweeps": {
-          "status": "complete",
-          "visited": 59,
-          "solves": false
-        },
-        "shortCycles": {
-          "tested": 40,
-          "winningPatterns": []
-        },
-        "biasedRandom": {
-          "runs": 12,
-          "commandsPerRun": 128,
-          "wins": 0
-        },
-        "uniformRandom": {
-          "runs": 12,
-          "commandsPerRun": 128,
-          "wins": 0
-        },
-        "interpretation": "Diagnóstico automático; ciclos curtos e acertos aleatórios não provam ausência de raciocínio. A varredura testa vitória após cada movimento."
-      },
-      "repetition": {
-        "structuralSignature": "st1-8e5d03bc-888",
-        "topologySignature": "top1-566149c0-168",
-        "globallyRotatedOrReflectedDuplicate": false
-      },
-      "curriculumReason": "Trio combina entrega com apoio do remetente para o retorno.",
-      "animalRoles": [
-        {
-          "board": 0,
-          "logicalAnimal": "capivara",
-          "role": "send resource, then wait for returned support",
-          "controls": [
-            {
-              "id": "sender-release",
-              "type": "plate",
-              "receiverBoard": 1
-            }
-          ],
-          "goal": 27
-        },
-        {
-          "board": 1,
-          "logicalAnimal": "tuiuiu",
-          "role": "clear receiving space, reach the useful pushing face, and sustain support",
-          "controls": [
-            {
-              "id": "arrival",
-              "type": "plate",
-              "receiverBoard": 0
-            },
-            {
-              "id": "arrival",
-              "type": "plate",
-              "receiverBoard": 2
-            }
-          ],
-          "goal": 28
-        },
-        {
-          "board": 2,
-          "logicalAnimal": "bemtevi",
-          "role": "hold the sender’s final passage before leaving through the box-supported passage",
-          "controls": [
-            {
-              "id": "helper-release",
-              "type": "plate",
-              "receiverBoard": 0
-            }
-          ],
-          "goal": 6
-        }
-      ],
-      "objectRoles": [
-        {
-          "board": 0,
-          "type": "boxes",
-          "id": "parcel",
-          "definition": {
-            "id": "parcel",
-            "cell": 9
-          },
-          "role": [
-            "transferred-resource",
-            "multi-direction-support",
-            "reciprocal-release"
-          ],
-          "evidenceScope": "definition-and-certified-witness; necessity requires separate audit"
-        },
-        {
-          "board": 0,
-          "type": "plates",
-          "id": "sender-release",
-          "definition": {
-            "id": "sender-release",
-            "cell": 15
-          },
-          "role": "Ocupação por animal ou caixa controla a passagem no estado anterior ao comando.",
-          "evidenceScope": "definition-and-certified-witness; necessity requires separate audit"
-        },
-        {
-          "board": 0,
-          "type": "gates",
-          "id": "delivery-gate",
-          "definition": {
-            "id": "delivery-gate",
-            "from": 15,
-            "to": 21,
-            "condition": {
-              "type": "plate",
-              "id": "arrival"
-            }
-          },
-          "role": {
-            "condition": {
-              "type": "plate",
-              "id": "arrival"
-            },
-            "crossings": [
-              12
-            ]
-          },
-          "evidenceScope": "definition-and-certified-witness; necessity requires separate audit"
-        },
-        {
-          "board": 0,
-          "type": "gates",
-          "id": "delivery-final",
-          "definition": {
-            "id": "delivery-final",
-            "from": 21,
-            "to": 27,
-            "condition": {
-              "type": "plate",
-              "id": "helper-release"
-            }
-          },
-          "role": {
-            "condition": {
-              "type": "plate",
-              "id": "helper-release"
-            },
-            "crossings": [
-              15
-            ]
-          },
-          "evidenceScope": "definition-and-certified-witness; necessity requires separate audit"
-        },
-        {
-          "board": 1,
-          "type": "plates",
-          "id": "arrival",
-          "definition": {
-            "id": "arrival",
-            "cell": 9
-          },
-          "role": "Ocupação por animal ou caixa controla a passagem no estado anterior ao comando.",
-          "evidenceScope": "definition-and-certified-witness; necessity requires separate audit"
-        },
-        {
-          "board": 1,
-          "type": "gates",
-          "id": "delivery-home",
-          "definition": {
-            "id": "delivery-home",
-            "from": 22,
-            "to": 28,
-            "condition": {
-              "type": "plate",
-              "id": "sender-release"
-            }
-          },
-          "role": {
-            "condition": {
-              "type": "plate",
-              "id": "sender-release"
-            },
-            "crossings": [
-              12
-            ]
-          },
-          "evidenceScope": "definition-and-certified-witness; necessity requires separate audit"
-        },
-        {
-          "board": 2,
-          "type": "plates",
-          "id": "helper-release",
-          "definition": {
-            "id": "helper-release",
-            "cell": 4
-          },
-          "role": "Ocupação por animal ou caixa controla a passagem no estado anterior ao comando.",
-          "evidenceScope": "definition-and-certified-witness; necessity requires separate audit"
-        },
-        {
-          "board": 2,
-          "type": "gates",
-          "id": "helper-exit",
-          "definition": {
-            "id": "helper-exit",
-            "from": 4,
-            "to": 7,
-            "condition": {
-              "type": "plate",
-              "id": "arrival"
-            }
-          },
-          "role": {
-            "condition": {
-              "type": "plate",
-              "id": "arrival"
-            },
-            "crossings": [
-              15
-            ]
-          },
-          "evidenceScope": "definition-and-certified-witness; necessity requires separate audit"
-        },
-        {
-          "type": "channel",
-          "id": "parcel-channel",
-          "definition": {
-            "id": "parcel-channel",
-            "fromBoard": 0,
-            "entry": 15,
-            "toBoard": 1,
-            "exit": 20
-          },
-          "role": "Preparar saída livre antes do comando; enviar somente a caixa, receber, alcançar outra face e usar o apoio no destino. Entrega é atômica, sem prioridade entre painéis.",
-          "evidenceScope": "definition-and-certified-witness; necessity requires separate audit"
-        }
-      ],
-      "causalityReport": "tests/sintonia80-purpose-audit.json"
-    },
-    "number": 72,
-    "chapter": 5,
-    "topologySignature": "top1-566149c0-168",
-    "originNumber": 437,
-    "origin": {
-      "kind": "curated-identical-logical-definition",
-      "catalog": "sintonia-content-2",
-      "number": 437,
-      "id": "sintonia-0437",
-      "version": 1,
-      "reason": "Trio combina entrega com apoio do remetente para o retorno."
-    },
-    "actorIntroduction": null
-  },
-  {
-    "id": "sintonia-0449",
-    "version": 1,
-    "rulesVersion": 1,
-    "boards": [
-      {
-        "id": "b0",
-        "animal": "capivara",
-        "rows": 3,
-        "cols": 5,
-        "walkable": [
-          0,
-          1,
-          2,
-          4,
-          5,
-          7,
-          8,
-          9,
-          10,
-          12,
-          14
-        ],
-        "start": 9,
-        "goal": 10,
-        "keys": [
-          {
-            "id": "prepare",
-            "cell": 4
-          }
-        ],
-        "gates": [],
-        "fragile": [
-          0
-        ]
-      },
-      {
-        "id": "b1",
-        "animal": "tuiuiu",
-        "rows": 3,
-        "cols": 5,
-        "walkable": [
-          0,
-          1,
-          3,
-          4,
-          5,
-          6,
-          7,
-          8,
-          10,
-          13,
-          14
-        ],
-        "start": 14,
-        "goal": 5,
-        "gates": [
-          {
-            "id": "preparation-remote",
-            "from": 13,
-            "to": 8,
-            "condition": {
-              "type": "key",
-              "id": "prepare"
-            }
-          }
-        ]
-      }
-    ],
-    "mechanics": [
-      "walls",
-      "key",
-      "fragile"
-    ],
-    "initialSwitches": {},
-    "initialSelectors": {},
-    "family": "preserve-access",
-    "secondaryFamilies": [
-      "priority-change",
-      "wall-adjust"
-    ],
-    "name": "Antes de partir",
-    "lesson": "Prepare o restante antes de sair da ponte frágil.",
-    "discovery": "Aqui o jogador precisa descobrir que o controle no desvio precisa estar preparado antes de abandonar seu acesso.",
-    "hints": [
-      "A ponte não desaparece enquanto o animal fica sobre ela.",
-      "Ao sair, essa casa deixa de existir. Prepare o que precisa ser feito antes; desfazer restaura a ponte.",
-      "Na configuração inicial, comece para cima; observe quem avança e quem espera."
-    ],
-    "generatorVersion": 2,
-    "contentRevision": "sintonia-content-3",
-    "seed": "sintonia-campaign-v2:0449:0",
-    "difficulty": 4,
-    "solution": [
-      "up",
-      "down",
-      "left",
-      "left",
-      "up",
-      "left",
-      "left",
-      "down",
-      "down",
-      "left"
-    ],
-    "signature": "st1-c672b9c3-375",
-    "prerequisites": [
-      "walls",
-      "key",
-      "fragile"
-    ],
-    "introduction": [],
-    "parameters": {
-      "difficulty": 4,
-      "animals": 2,
-      "primary": "fragile",
-      "secondary": null,
-      "role": "revisit",
-      "pattern": "fragile-prepare-before-commit"
-    },
-    "certificate": {
-      "method": "breadth-first-witness-and-engine-replay",
-      "rulesVersion": 1,
-      "commands": 10,
-      "optimal": true,
-      "visited": 223,
-      "replayed": true,
-      "engine": "unchanged-rules-1"
-    },
-    "editorial": {
-      "source": "role-first-structure-and-automatic-curation",
-      "design": {
-        "preparationControl": "key",
-        "pattern": "fragile-prepare-before-commit",
-        "discovery": "o controle no desvio precisa estar preparado antes de abandonar seu acesso",
-        "roles": [
-          {
-            "board": 0,
-            "role": "preparer-and-committer",
-            "control": 4,
-            "commit": [
-              1,
-              0
-            ],
-            "goalRegion": [
-              10
-            ]
-          },
-          {
-            "board": 1,
-            "role": "receiver-and-aligner",
-            "goalRegion": [
-              8,
-              3,
-              7,
-              4,
-              6,
-              1,
-              5,
-              0,
-              10
-            ]
-          }
-        ],
-        "structures": [
-          {
-            "board": 0,
-            "role": "prepare",
-            "cells": [
-              9,
-              4
-            ]
-          },
-          {
-            "board": 0,
-            "role": "preserve-access",
-            "edge": [
-              1,
-              0
-            ]
-          },
-          {
-            "board": 0,
-            "role": "exit",
-            "edge": [
-              5,
-              10
-            ]
-          },
-          {
-            "board": 1,
-            "role": "remote-exit",
-            "edge": [
-              13,
-              8
-            ]
-          }
-        ],
-        "dependencies": [
-          {
-            "fromBoard": 0,
-            "toBoard": 1,
-            "control": "prepare",
-            "role": "prepare-remote-exit"
-          }
-        ],
-        "order": [
-          "prepare-control",
-          "commit-access",
-          "cross-prepared-exits",
-          "joint-arrival"
-        ],
-        "counterfactual": "Crossing before preparation strands the control behind a one-way edge or collapsed bridge; verify the specific prefix on the final definition.",
-        "proofStatus": "structural-design-hypothesis; replay and budgeted ablations recorded separately"
-      },
-      "purpose": {
-        "valid": true,
-        "won": true,
-        "evidenceScope": "supplied-command-sequence",
-        "commands": 10,
-        "boxes": [],
-        "dependencies": [
-          {
-            "gateId": "preparation-remote",
-            "receiverBoard": 1,
-            "condition": {
-              "type": "key",
-              "id": "prepare"
-            },
-            "controllers": [
-              {
-                "type": "key",
-                "id": "prepare",
-                "board": 0,
-                "cell": 4
-              }
-            ],
-            "crossingCommands": [
-              5
-            ]
-          }
-        ],
-        "boardRoles": [
-          {
-            "board": 0,
-            "moved": 9,
-            "waited": 1,
-            "goalDepartures": 0
-          },
-          {
-            "board": 1,
-            "moved": 5,
-            "waited": 5,
-            "goalDepartures": 0
-          }
-        ],
-        "caveat": "Uso neste certificado não prova necessidade. Consulte tests/sintonia-purpose-audit.json para ablações e limites."
-      },
-      "rubric": {
-        "status": "human-review-pending",
-        "dimensions": [
-          "purpose",
-          "discovery",
-          "interdependence",
-          "causal-clarity",
-          "spatial-economy",
-          "variety"
-        ],
-        "scores": null,
-        "humanPlaytesting": false,
-        "reason": "Replay e ablações são evidências automáticas, não substitutos de avaliação editorial e testes humanos."
-      },
-      "humanPlaytested": false,
-      "discovery": "Aqui o jogador precisa descobrir que o controle no desvio precisa estar preparado antes de abandonar seu acesso.",
-      "reasoning": {
-        "used": [
-          "fragile",
-          "key",
-          "key-gate"
-        ],
-        "partialBlocks": 6,
-        "goalDepartures": [
-          false,
-          false
-        ],
-        "unequalLoops": 1,
-        "directionChanges": 6,
-        "earlyTurns": 3,
-        "occupiedBoxPlate": false,
-        "boxAsStopAfterSupport": false,
-        "finalApproach": [
-          true,
-          false
-        ]
-      },
-      "sweep": {
-        "status": "complete",
-        "visited": 26,
-        "resistant": true
-      },
-      "compatibility": "validated",
-      "alternatives": "Uma sequência verificada é fornecida; outras soluções podem existir.",
-      "deadEnds": "A fase permite estados sem saída; desfazer e reiniciar são livres.",
-      "decision": "retain-logical-definition",
-      "retentionReason": "Dupla retoma ponte e preparação sem entrega.",
-      "role": "revisit",
-      "prerequisiteChapters": [
-        1,
-        2,
-        4
-      ],
-      "antiSpam": {
-        "singleDirection": {
-          "tested": 4,
-          "winningDirections": []
-        },
-        "sweeps": {
-          "status": "complete",
-          "visited": 26,
-          "solves": false
-        },
-        "shortCycles": {
-          "tested": 40,
-          "winningPatterns": []
-        },
-        "biasedRandom": {
-          "runs": 12,
-          "commandsPerRun": 128,
-          "wins": 0
-        },
-        "uniformRandom": {
-          "runs": 12,
-          "commandsPerRun": 128,
-          "wins": 5
-        },
-        "interpretation": "Diagnóstico automático; ciclos curtos e acertos aleatórios não provam ausência de raciocínio. A varredura testa vitória após cada movimento."
-      },
-      "repetition": {
-        "structuralSignature": "st1-c672b9c3-375",
-        "topologySignature": "top1-b1708105-130",
-        "globallyRotatedOrReflectedDuplicate": false
-      },
-      "curriculumReason": "Dupla retoma ponte e preparação sem entrega.",
-      "animalRoles": [
-        {
-          "board": 0,
-          "logicalAnimal": "capivara",
-          "role": {
-            "board": 0,
-            "role": "preparer-and-committer",
-            "control": 4,
-            "commit": [
-              1,
-              0
-            ],
-            "goalRegion": [
-              10
-            ]
-          },
-          "controls": [
-            {
-              "id": "prepare",
-              "type": "key",
-              "receiverBoard": 1
-            }
-          ],
-          "goal": 10
-        },
-        {
-          "board": 1,
-          "logicalAnimal": "tuiuiu",
-          "role": {
-            "board": 1,
-            "role": "receiver-and-aligner",
-            "goalRegion": [
-              8,
-              3,
-              7,
-              4,
-              6,
-              1,
-              5,
-              0,
-              10
-            ]
-          },
-          "controls": [],
-          "goal": 5
-        }
-      ],
-      "objectRoles": [
-        {
-          "board": 0,
-          "type": "keys",
-          "id": "prepare",
-          "definition": {
-            "id": "prepare",
-            "cell": 4
-          },
-          "role": "Aquisição pelo animal mantém a abertura até reiniciar.",
-          "evidenceScope": "definition-and-certified-witness; necessity requires separate audit"
-        },
-        {
-          "board": 0,
-          "type": "fragile",
-          "id": "fragile-0",
-          "definition": 0,
-          "role": "Desaparece ao abandonar a casa; exige preservar a preparação.",
-          "evidenceScope": "definition-and-certified-witness; necessity requires separate audit"
-        },
-        {
-          "board": 1,
-          "type": "gates",
-          "id": "preparation-remote",
-          "definition": {
-            "id": "preparation-remote",
-            "from": 13,
-            "to": 8,
-            "condition": {
-              "type": "key",
-              "id": "prepare"
-            }
-          },
-          "role": {
-            "condition": {
-              "type": "key",
-              "id": "prepare"
-            },
-            "crossings": [
-              5
-            ]
-          },
-          "evidenceScope": "definition-and-certified-witness; necessity requires separate audit"
-        }
-      ],
-      "causalityReport": "tests/sintonia80-purpose-audit.json"
-    },
-    "number": 73,
-    "chapter": 5,
-    "topologySignature": "top1-b1708105-130",
-    "originNumber": 449,
-    "origin": {
-      "kind": "curated-identical-logical-definition",
-      "catalog": "sintonia-content-2",
-      "number": 449,
-      "id": "sintonia-0449",
-      "version": 1,
-      "reason": "Dupla retoma ponte e preparação sem entrega."
-    },
-    "actorIntroduction": null
-  },
-  {
-    "id": "sintonia-0439",
-    "version": 1,
-    "rulesVersion": 1,
-    "boards": [
-      {
-        "id": "b0",
-        "animal": "capivara",
-        "rows": 6,
-        "cols": 6,
-        "walkable": [
-          9,
-          15,
-          21,
-          27,
-          33
-        ],
-        "start": 33,
-        "goal": 9,
-        "boxes": [
-          {
-            "id": "parcel",
-            "cell": 27
-          }
-        ],
-        "gates": [
-          {
-            "id": "delivery-gate",
-            "from": 21,
-            "to": 15,
-            "condition": {
-              "type": "plate",
-              "id": "arrival"
-            }
-          },
-          {
-            "id": "delivery-final",
-            "from": 15,
-            "to": 9,
-            "condition": {
-              "type": "plate",
-              "id": "helper-release"
-            }
-          }
-        ]
-      },
-      {
-        "id": "b1",
-        "animal": "tuiuiu",
-        "rows": 6,
-        "cols": 6,
-        "walkable": [
-          7,
-          8,
-          9,
-          10,
-          14,
-          15,
-          16,
-          19,
-          20,
-          21,
-          22,
-          25,
-          26,
-          27,
-          28
-        ],
-        "start": 20,
-        "goal": 7,
-        "plates": [
-          {
-            "id": "arrival",
-            "cell": 15
-          }
-        ],
-        "gates": [
-          {
-            "id": "delivery-home",
-            "from": 8,
-            "to": 7,
-            "condition": {
-              "type": "plate",
-              "id": "arrival"
-            }
-          }
-        ]
-      },
-      {
-        "id": "b2",
-        "animal": "bemtevi",
-        "rows": 3,
-        "cols": 3,
-        "walkable": [
-          0,
-          1,
-          4,
-          6,
-          7,
-          8
-        ],
-        "start": 8,
-        "goal": 0,
-        "plates": [
-          {
-            "id": "helper-release",
-            "cell": 4
-          }
-        ],
-        "gates": [
-          {
-            "id": "helper-exit",
-            "from": 4,
-            "to": 1,
-            "condition": {
-              "type": "plate",
-              "id": "arrival"
-            }
-          },
-          {
-            "id": "prepare-helper",
-            "from": 7,
-            "to": 4,
-            "condition": {
-              "type": "plate",
-              "id": "prepare"
-            }
-          }
-        ]
-      },
-      {
-        "id": "b3",
-        "animal": "mico",
-        "rows": 3,
-        "cols": 3,
-        "walkable": [
-          2,
-          4,
-          5,
-          6,
-          7
-        ],
-        "start": 2,
-        "goal": 6,
-        "plates": [
-          {
-            "id": "prepare",
-            "cell": 5
-          }
-        ],
-        "gates": [
-          {
-            "id": "preparer-exit",
-            "from": 7,
-            "to": 6,
-            "condition": {
-              "type": "plate",
-              "id": "arrival"
-            }
-          }
-        ]
-      }
-    ],
-    "mechanics": [
-      "walls",
-      "plate",
-      "box",
-      "delivery"
-    ],
-    "initialSwitches": {},
-    "initialSelectors": {},
-    "channels": [
-      {
-        "id": "parcel-channel",
-        "fromBoard": 0,
-        "entry": 21,
-        "toBoard": 1,
-        "exit": 20
-      }
-    ],
-    "family": "support-handoff",
-    "secondaryFamilies": [
-      "waiting-place",
-      "priority-change"
-    ],
-    "name": "Preparar a entrega",
-    "lesson": "Libere a saída do canal e reposicione a caixa recebida antes de usar o apoio.",
-    "discovery": "Aqui o jogador precisa descobrir que preparar a saída do canal e depois mudar a face de empurrão transforma o recurso recebido em apoio para os dois caminhos.",
-    "hints": [
-      "O canal precisa de uma saída livre antes do envio.",
-      "Receber ainda não basta: encontre a face que permite orientar a caixa para a placa.",
-      "Prepare as ajudas de retorno antes de abandonar uma placa."
-    ],
-    "generatorVersion": 2,
-    "contentRevision": "sintonia-content-3",
-    "seed": "sintonia-campaign-v2:0439:0",
-    "difficulty": 4,
-    "solution": [
-      "left",
-      "up",
-      "up",
-      "right",
-      "down",
-      "right",
-      "up",
-      "left",
-      "up",
-      "down",
-      "up",
-      "up",
-      "left",
-      "down",
-      "left",
-      "down",
-      "left"
-    ],
-    "signature": "st1-87abc95a-1115",
-    "prerequisites": [
-      "walls",
-      "plate",
-      "box",
-      "delivery"
-    ],
-    "introduction": [],
-    "parameters": {
-      "difficulty": 4,
-      "animals": 4,
-      "primary": "delivery",
-      "secondary": null,
-      "role": "mix",
-      "pattern": "receive-turn-support"
-    },
-    "certificate": {
-      "method": "breadth-first-witness-and-engine-replay",
-      "rulesVersion": 1,
-      "commands": 17,
-      "optimal": true,
-      "visited": 9427,
-      "replayed": true,
-      "engine": "unchanged-rules-1"
-    },
-    "editorial": {
-      "source": "role-first-structure-and-automatic-curation",
-      "design": {
-        "requiredReceiverPushes": 2,
-        "senderApproach": "ready-to-send after receiver preparation",
-        "structures": {
-          "channel": "redistribute one finite box resource",
-          "receiverCircuit": "reach a different pushing face, not extend a corridor",
-          "receiverGate": "prevent animal occupancy from replacing persistent box support",
-          "helperChain": "give each extra animal a necessary support recipient"
-        },
-        "causalClaim": "Receiver begins on the channel exit. The exit must be cleared before transmission; the delivered box must be repositioned before supporting the final dependencies.",
-        "roles": [
-          "send resource, then wait for returned support",
-          "clear receiving space, reach the useful pushing face, and sustain support",
-          "hold the sender’s final passage before leaving through the box-supported passage",
-          "prepare the helper’s entrance before using the returned box support"
-        ],
-        "boxRoles": [
-          "transferred-resource",
-          "reoriented-support"
-        ],
-        "dependencies": [
-          {
-            "from": 0,
-            "to": 1,
-            "kind": "resource-delivery"
-          },
-          {
-            "from": 1,
-            "to": 0,
-            "kind": "persistent-box-support"
-          },
-          {
-            "from": 2,
-            "to": 0,
-            "kind": "temporary-helper-support"
-          },
-          {
-            "from": 1,
-            "to": 2,
-            "kind": "returned-box-support"
-          },
-          {
-            "from": 3,
-            "to": 2,
-            "kind": "prepare-helper"
-          },
-          {
-            "from": 1,
-            "to": 3,
-            "kind": "returned-box-support"
-          }
-        ],
-        "errors": [
-          "Sending while the receiver still occupies the exit does not transfer the box.",
-          "Pushing into a terminal corner can lose access to the next pushing face; undo remains available."
-        ],
-        "evidenceScope": "Claims describe the construction. Replay and controlled ablation are recorded separately; no human playtest or unique-solution claim.",
-        "pattern": "receive-turn-support",
-        "discovery": "preparar a saída do canal e depois mudar a face de empurrão transforma o recurso recebido em apoio para os dois caminhos"
-      },
-      "purpose": {
-        "valid": true,
-        "won": true,
-        "evidenceScope": "supplied-command-sequence",
-        "commands": 17,
-        "boxes": [
-          {
-            "id": "parcel",
-            "origin": {
-              "id": "parcel",
-              "board": 0,
-              "cell": 27
-            },
-            "final": {
-              "id": "parcel",
-              "board": 1,
-              "cell": 15
-            },
-            "pushes": [
-              {
-                "command": 2,
-                "direction": "up",
-                "board": 0,
-                "from": 27,
-                "to": 21
-              },
-              {
-                "command": 4,
-                "direction": "right",
-                "board": 1,
-                "from": 20,
-                "to": 21
-              },
-              {
-                "command": 7,
-                "direction": "up",
-                "board": 1,
-                "from": 21,
-                "to": 15
-              }
-            ],
-            "directionChanges": 2,
-            "deliveries": [
-              {
-                "command": 2,
-                "channelId": "parcel-channel",
-                "fromBoard": 0,
-                "toBoard": 1,
-                "entry": 21,
-                "exit": 20
-              }
-            ],
-            "postDeliveryPushes": [
-              {
-                "command": 4,
-                "direction": "right",
-                "board": 1,
-                "from": 20,
-                "to": 21
-              },
-              {
-                "command": 7,
-                "direction": "up",
-                "board": 1,
-                "from": 21,
-                "to": 15
-              }
-            ],
-            "plateEntries": [
-              {
-                "command": 7,
-                "plateId": "arrival"
-              }
-            ],
-            "plateReleases": [],
-            "supportUses": [
-              {
-                "command": 9,
-                "plateId": "arrival",
-                "gateId": "delivery-gate",
-                "receiverBoard": 0
-              },
-              {
-                "command": 10,
-                "plateId": "arrival",
-                "gateId": "delivery-gate",
-                "receiverBoard": 0
-              },
-              {
-                "command": 11,
-                "plateId": "arrival",
-                "gateId": "delivery-gate",
-                "receiverBoard": 0
-              },
-              {
-                "command": 12,
-                "plateId": "arrival",
-                "gateId": "helper-exit",
-                "receiverBoard": 2
-              },
-              {
-                "command": 13,
-                "plateId": "arrival",
-                "gateId": "delivery-home",
-                "receiverBoard": 1
-              },
-              {
-                "command": 17,
-                "plateId": "arrival",
-                "gateId": "preparer-exit",
-                "receiverBoard": 3
-              }
-            ],
-            "observedRoles": [
-              "directional-reposition",
-              "gate-support",
-              "transferred-resource",
-              "recipient-reposition"
-            ]
-          }
-        ],
-        "dependencies": [
-          {
-            "gateId": "delivery-gate",
-            "receiverBoard": 0,
-            "condition": {
-              "type": "plate",
-              "id": "arrival"
-            },
-            "controllers": [
-              {
-                "type": "plate",
-                "id": "arrival",
-                "board": 1,
-                "cell": 15
-              }
-            ],
-            "crossingCommands": [
-              9,
-              10,
-              11
-            ]
-          },
-          {
-            "gateId": "delivery-final",
-            "receiverBoard": 0,
-            "condition": {
-              "type": "plate",
-              "id": "helper-release"
-            },
-            "controllers": [
-              {
-                "type": "plate",
-                "id": "helper-release",
-                "board": 2,
-                "cell": 4
-              }
-            ],
-            "crossingCommands": [
-              12
-            ]
-          },
-          {
-            "gateId": "delivery-home",
-            "receiverBoard": 1,
-            "condition": {
-              "type": "plate",
-              "id": "arrival"
-            },
-            "controllers": [
-              {
-                "type": "plate",
-                "id": "arrival",
-                "board": 1,
-                "cell": 15
-              }
-            ],
-            "crossingCommands": [
-              13
-            ]
-          },
-          {
-            "gateId": "helper-exit",
-            "receiverBoard": 2,
-            "condition": {
-              "type": "plate",
-              "id": "arrival"
-            },
-            "controllers": [
-              {
-                "type": "plate",
-                "id": "arrival",
-                "board": 1,
-                "cell": 15
-              }
-            ],
-            "crossingCommands": [
-              12
-            ]
-          },
-          {
-            "gateId": "prepare-helper",
-            "receiverBoard": 2,
-            "condition": {
-              "type": "plate",
-              "id": "prepare"
-            },
-            "controllers": [
-              {
-                "type": "plate",
-                "id": "prepare",
-                "board": 3,
-                "cell": 5
-              }
-            ],
-            "crossingCommands": [
-              11
-            ]
-          },
-          {
-            "gateId": "preparer-exit",
-            "receiverBoard": 3,
-            "condition": {
-              "type": "plate",
-              "id": "arrival"
-            },
-            "controllers": [
-              {
-                "type": "plate",
-                "id": "arrival",
-                "board": 1,
-                "cell": 15
-              }
-            ],
-            "crossingCommands": [
-              17
-            ]
-          }
-        ],
-        "boardRoles": [
-          {
-            "board": 0,
-            "moved": 8,
-            "waited": 9,
-            "goalDepartures": 0
-          },
-          {
-            "board": 1,
-            "moved": 11,
-            "waited": 6,
-            "goalDepartures": 0
-          },
-          {
-            "board": 2,
-            "moved": 6,
-            "waited": 11,
-            "goalDepartures": 0
-          },
-          {
-            "board": 3,
-            "moved": 8,
-            "waited": 9,
-            "goalDepartures": 0
-          }
-        ],
-        "caveat": "Uso neste certificado não prova necessidade. Consulte tests/sintonia-purpose-audit.json para ablações e limites."
-      },
-      "rubric": {
-        "status": "human-review-pending",
-        "dimensions": [
-          "purpose",
-          "discovery",
-          "interdependence",
-          "causal-clarity",
-          "spatial-economy",
-          "variety"
-        ],
-        "scores": null,
-        "humanPlaytesting": false,
-        "reason": "Replay e ablações são evidências automáticas, não substitutos de avaliação editorial e testes humanos."
-      },
-      "humanPlaytested": false,
-      "discovery": "Aqui o jogador precisa descobrir que preparar a saída do canal e depois mudar a face de empurrão transforma o recurso recebido em apoio para os dois caminhos.",
-      "reasoning": {
-        "used": [
-          "delivery",
-          "delivery-gate",
-          "plate-gate",
-          "push"
-        ],
-        "partialBlocks": 16,
-        "goalDepartures": [
-          false,
-          false,
-          false,
-          false
-        ],
-        "unequalLoops": 48,
-        "directionChanges": 14,
-        "earlyTurns": 8,
-        "occupiedBoxPlate": true,
-        "boxAsStopAfterSupport": false,
-        "finalApproach": [
-          true,
-          true,
-          true,
-          false
-        ]
-      },
-      "sweep": {
-        "status": "complete",
-        "visited": 131,
-        "resistant": true
-      },
-      "compatibility": "validated",
-      "alternatives": "Uma sequência verificada é fornecida; outras soluções podem existir.",
-      "deadEnds": "A fase permite estados sem saída; desfazer e reiniciar são livres.",
-      "decision": "retain-logical-definition",
-      "retentionReason": "Quarteto usa a entrega já conhecida e distribui as ajudas de acesso.",
-      "role": "deep",
-      "prerequisiteChapters": [
-        1,
-        2,
-        3,
-        5
-      ],
-      "antiSpam": {
-        "singleDirection": {
-          "tested": 4,
-          "winningDirections": []
-        },
-        "sweeps": {
-          "status": "complete",
-          "visited": 131,
-          "solves": false
-        },
-        "shortCycles": {
-          "tested": 40,
-          "winningPatterns": []
-        },
-        "biasedRandom": {
-          "runs": 12,
-          "commandsPerRun": 128,
-          "wins": 0
-        },
-        "uniformRandom": {
-          "runs": 12,
-          "commandsPerRun": 128,
-          "wins": 0
-        },
-        "interpretation": "Diagnóstico automático; ciclos curtos e acertos aleatórios não provam ausência de raciocínio. A varredura testa vitória após cada movimento."
-      },
-      "repetition": {
-        "structuralSignature": "st1-87abc95a-1115",
-        "topologySignature": "top1-3d3c9016-212",
-        "globallyRotatedOrReflectedDuplicate": false
-      },
-      "curriculumReason": "Quarteto usa a entrega já conhecida e distribui as ajudas de acesso.",
-      "animalRoles": [
-        {
-          "board": 0,
-          "logicalAnimal": "capivara",
-          "role": "send resource, then wait for returned support",
-          "controls": [],
-          "goal": 9
-        },
-        {
-          "board": 1,
-          "logicalAnimal": "tuiuiu",
-          "role": "clear receiving space, reach the useful pushing face, and sustain support",
-          "controls": [
-            {
-              "id": "arrival",
-              "type": "plate",
-              "receiverBoard": 0
-            },
-            {
-              "id": "arrival",
-              "type": "plate",
-              "receiverBoard": 1
-            },
-            {
-              "id": "arrival",
-              "type": "plate",
-              "receiverBoard": 2
-            },
-            {
-              "id": "arrival",
-              "type": "plate",
-              "receiverBoard": 3
-            }
-          ],
-          "goal": 7
-        },
-        {
-          "board": 2,
-          "logicalAnimal": "bemtevi",
-          "role": "hold the sender’s final passage before leaving through the box-supported passage",
-          "controls": [
-            {
-              "id": "helper-release",
-              "type": "plate",
-              "receiverBoard": 0
-            }
-          ],
-          "goal": 0
-        },
-        {
-          "board": 3,
-          "logicalAnimal": "mico",
-          "role": "prepare the helper’s entrance before using the returned box support",
-          "controls": [
-            {
-              "id": "prepare",
-              "type": "plate",
-              "receiverBoard": 2
-            }
-          ],
-          "goal": 6
-        }
-      ],
-      "objectRoles": [
-        {
-          "board": 0,
-          "type": "boxes",
-          "id": "parcel",
-          "definition": {
-            "id": "parcel",
-            "cell": 27
-          },
-          "role": [
-            "transferred-resource",
-            "reoriented-support"
-          ],
-          "evidenceScope": "definition-and-certified-witness; necessity requires separate audit"
-        },
-        {
-          "board": 0,
-          "type": "gates",
-          "id": "delivery-gate",
-          "definition": {
-            "id": "delivery-gate",
-            "from": 21,
-            "to": 15,
-            "condition": {
-              "type": "plate",
-              "id": "arrival"
-            }
-          },
-          "role": {
-            "condition": {
-              "type": "plate",
-              "id": "arrival"
-            },
-            "crossings": [
-              9,
-              10,
-              11
-            ]
-          },
-          "evidenceScope": "definition-and-certified-witness; necessity requires separate audit"
-        },
-        {
-          "board": 0,
-          "type": "gates",
-          "id": "delivery-final",
-          "definition": {
-            "id": "delivery-final",
-            "from": 15,
-            "to": 9,
-            "condition": {
-              "type": "plate",
-              "id": "helper-release"
-            }
-          },
-          "role": {
-            "condition": {
-              "type": "plate",
-              "id": "helper-release"
-            },
-            "crossings": [
-              12
-            ]
-          },
-          "evidenceScope": "definition-and-certified-witness; necessity requires separate audit"
-        },
-        {
-          "board": 1,
-          "type": "plates",
-          "id": "arrival",
-          "definition": {
-            "id": "arrival",
-            "cell": 15
-          },
-          "role": "Ocupação por animal ou caixa controla a passagem no estado anterior ao comando.",
-          "evidenceScope": "definition-and-certified-witness; necessity requires separate audit"
-        },
-        {
-          "board": 1,
-          "type": "gates",
-          "id": "delivery-home",
-          "definition": {
-            "id": "delivery-home",
-            "from": 8,
-            "to": 7,
-            "condition": {
-              "type": "plate",
-              "id": "arrival"
-            }
-          },
-          "role": {
-            "condition": {
-              "type": "plate",
-              "id": "arrival"
-            },
-            "crossings": [
-              13
-            ]
-          },
-          "evidenceScope": "definition-and-certified-witness; necessity requires separate audit"
-        },
-        {
-          "board": 2,
-          "type": "plates",
-          "id": "helper-release",
-          "definition": {
-            "id": "helper-release",
-            "cell": 4
-          },
-          "role": "Ocupação por animal ou caixa controla a passagem no estado anterior ao comando.",
-          "evidenceScope": "definition-and-certified-witness; necessity requires separate audit"
-        },
-        {
-          "board": 2,
-          "type": "gates",
-          "id": "helper-exit",
-          "definition": {
-            "id": "helper-exit",
-            "from": 4,
-            "to": 1,
-            "condition": {
-              "type": "plate",
-              "id": "arrival"
-            }
-          },
-          "role": {
-            "condition": {
-              "type": "plate",
-              "id": "arrival"
-            },
-            "crossings": [
-              12
-            ]
-          },
-          "evidenceScope": "definition-and-certified-witness; necessity requires separate audit"
-        },
-        {
-          "board": 2,
-          "type": "gates",
-          "id": "prepare-helper",
-          "definition": {
-            "id": "prepare-helper",
-            "from": 7,
-            "to": 4,
-            "condition": {
-              "type": "plate",
-              "id": "prepare"
-            }
-          },
-          "role": {
-            "condition": {
-              "type": "plate",
-              "id": "prepare"
-            },
-            "crossings": [
-              11
-            ]
-          },
-          "evidenceScope": "definition-and-certified-witness; necessity requires separate audit"
-        },
-        {
-          "board": 3,
-          "type": "plates",
-          "id": "prepare",
-          "definition": {
-            "id": "prepare",
-            "cell": 5
-          },
-          "role": "Ocupação por animal ou caixa controla a passagem no estado anterior ao comando.",
-          "evidenceScope": "definition-and-certified-witness; necessity requires separate audit"
-        },
-        {
-          "board": 3,
-          "type": "gates",
-          "id": "preparer-exit",
-          "definition": {
-            "id": "preparer-exit",
-            "from": 7,
-            "to": 6,
-            "condition": {
-              "type": "plate",
-              "id": "arrival"
-            }
-          },
-          "role": {
-            "condition": {
-              "type": "plate",
-              "id": "arrival"
-            },
-            "crossings": [
-              17
-            ]
-          },
-          "evidenceScope": "definition-and-certified-witness; necessity requires separate audit"
-        },
-        {
-          "type": "channel",
-          "id": "parcel-channel",
-          "definition": {
-            "id": "parcel-channel",
-            "fromBoard": 0,
-            "entry": 21,
-            "toBoard": 1,
-            "exit": 20
-          },
-          "role": "Preparar saída livre antes do comando; enviar somente a caixa, receber, alcançar outra face e usar o apoio no destino. Entrega é atômica, sem prioridade entre painéis.",
-          "evidenceScope": "definition-and-certified-witness; necessity requires separate audit"
-        }
-      ],
-      "causalityReport": "tests/sintonia80-purpose-audit.json"
+      "causalityReport": "tests/sintonia-v4-editorial.json"
     },
     "number": 74,
     "chapter": 5,
-    "topologySignature": "top1-3d3c9016-212",
-    "originNumber": 439,
+    "originNumber": 74,
     "origin": {
-      "kind": "curated-identical-logical-definition",
-      "catalog": "sintonia-content-2",
-      "number": 439,
+      "kind": "recomposed-removed-mechanics",
+      "catalog": "sintonia-content-3",
       "id": "sintonia-0439",
+      "number": 74,
       "version": 1,
-      "reason": "Quarteto usa a entrega já conhecida e distribui as ajudas de acesso."
+      "reason": "Distribuir apoios e acessos entre quatro responsabilidades."
     },
-    "actorIntroduction": null
+    "actorIntroduction": null,
+    "topologySignature": "top1-0bc16931-221"
   },
   {
     "id": "sintonia-0470",
@@ -31473,7 +25751,7 @@ export const CAMPAIGN = [
     "actorIntroduction": null
   },
   {
-    "id": "sintonia-0200",
+    "id": "sintonia80-0077-v4",
     "version": 1,
     "rulesVersion": 1,
     "boards": [
@@ -31481,143 +25759,87 @@ export const CAMPAIGN = [
         "id": "b0",
         "animal": "capivara",
         "rows": 5,
-        "cols": 5,
+        "cols": 3,
         "walkable": [
+          0,
+          1,
+          2,
+          3,
+          5,
           6,
           7,
-          8,
+          9,
           11,
           12,
           13,
-          15,
-          16,
-          17,
-          18,
-          21,
-          22,
-          23
+          14
         ],
-        "start": 11,
-        "goal": 18,
-        "boxes": [
-          {
-            "id": "box0",
-            "cell": 12
-          }
-        ],
+        "start": 14,
+        "goal": 13,
         "plates": [
           {
-            "id": "weight",
-            "cell": 18
-          }
-        ],
-        "gates": [
-          {
-            "id": "weight-gate",
-            "from": 16,
-            "to": 15,
-            "condition": {
-              "type": "plate",
-              "id": "weight"
-            }
-          },
-          {
-            "id": "prepare-2-6",
-            "from": 8,
-            "to": 7,
-            "condition": {
-              "type": "plate",
-              "id": "prepare-2"
-            }
-          },
-          {
-            "id": "prepare-2-7",
-            "from": 13,
-            "to": 12,
-            "condition": {
-              "type": "plate",
-              "id": "prepare-2"
-            }
-          },
-          {
-            "id": "prepare-2-8",
-            "from": 18,
-            "to": 17,
-            "condition": {
-              "type": "plate",
-              "id": "prepare-2"
-            }
-          },
-          {
-            "id": "prepare-2-9",
-            "from": 23,
-            "to": 22,
-            "condition": {
-              "type": "plate",
-              "id": "prepare-2"
-            }
-          }
-        ],
-        "keys": [
-          {
-            "id": "release-key",
-            "cell": 15
+            "id": "first",
+            "cell": 11
           }
         ]
       },
       {
         "id": "b1",
         "animal": "tuiuiu",
-        "rows": 2,
+        "rows": 5,
         "cols": 3,
         "walkable": [
           0,
-          1,
           2,
-          4
+          3,
+          4,
+          5,
+          7,
+          8,
+          10,
+          12,
+          13,
+          14
         ],
-        "start": 0,
-        "goal": 4,
-        "gates": [
+        "start": 7,
+        "goal": 0,
+        "plates": [
           {
-            "id": "helper-exit-1",
-            "from": 1,
-            "to": 4,
-            "condition": {
-              "type": "key",
-              "id": "release-key"
-            }
+            "id": "second",
+            "cell": 2
           }
         ]
       },
       {
         "id": "b2",
         "animal": "bemtevi",
-        "rows": 3,
-        "cols": 3,
+        "rows": 5,
+        "cols": 5,
         "walkable": [
           0,
-          1,
-          3,
+          2,
           4,
-          7
+          5,
+          7,
+          8,
+          9,
+          10,
+          11,
+          12
         ],
         "start": 0,
-        "goal": 7,
-        "plates": [
-          {
-            "id": "prepare-2",
-            "cell": 4
-          }
-        ],
+        "goal": 2,
         "gates": [
           {
-            "id": "helper-exit-2",
-            "from": 4,
-            "to": 7,
+            "id": "together",
+            "from": 11,
+            "to": 12,
             "condition": {
-              "type": "plate",
-              "id": "weight"
+              "type": "all",
+              "ids": [
+                "first",
+                "second"
+              ]
             }
           }
         ]
@@ -31626,329 +25848,127 @@ export const CAMPAIGN = [
     "mechanics": [
       "walls",
       "plate",
-      "box",
-      "key"
+      "and"
     ],
     "initialSwitches": {},
     "initialSelectors": {},
-    "family": "dual-use-object",
+    "family": "remote-support",
     "secondaryFamilies": [
-      "final-command",
-      "waiting-place"
+      "unequal-loop",
+      "goal-transit"
     ],
-    "name": "O apoio já cumpriu seu papel",
-    "lesson": "Use a caixa para buscar a chave; depois libere a casa de apoio para a chegada.",
-    "discovery": "Aqui o jogador precisa descobrir que o apoio da caixa é temporário: depois da chave, a mesma casa precisa ficar livre para o animal.",
+    "name": "Dois apoios juntos",
+    "lesson": "Prepare as duas placas ao mesmo tempo para abrir a cancela.",
+    "discovery": "Aqui o jogador precisa descobrir que dois animais precisam sustentar simultaneamente as condições de uma passagem.",
     "hints": [
-      "O destino ocupa a casa que primeiro precisa sustentar a passagem.",
-      "A chave fica além da cancela do apoio: obtenha essa mudança permanente antes de retirar a caixa.",
-      "Volte pelo contorno e empurre a caixa para fora da placa; agora a ajuda pode terminar."
+      "A cancela precisa das duas placas indicadas ocupadas, não apenas de uma.",
+      "Prepare as duas posições de apoio antes de tentar a travessia.",
+      "Na configuração inicial, comece para a direita; observe quem avança e quem espera."
     ],
-    "generatorVersion": 2,
-    "contentRevision": "sintonia-content-3",
-    "seed": "sintonia-campaign-v2:0200:0",
+    "generatorVersion": 3,
+    "contentRevision": "sintonia-content-4",
+    "seed": "sintonia-content4:77:0",
     "difficulty": 5,
     "solution": [
-      "up",
       "right",
       "down",
-      "left",
       "down",
-      "right",
-      "right",
-      "left",
-      "left",
       "right",
       "up",
       "up",
+      "right",
       "down",
-      "right",
-      "right",
-      "down"
+      "down",
+      "up",
+      "left",
+      "up",
+      "left",
+      "down",
+      "left",
+      "up"
     ],
-    "signature": "st1-6014c27f-1040",
+    "signature": "st1-4e672aea-473",
     "prerequisites": [
       "walls",
       "plate",
-      "box",
-      "key"
+      "and"
     ],
     "introduction": [],
     "parameters": {
-      "difficulty": 2,
+      "difficulty": 5,
       "animals": 3,
-      "primary": "box",
+      "primary": "and",
       "secondary": null,
       "role": "synthesis",
-      "pattern": "support-then-release"
+      "pattern": null
     },
     "certificate": {
       "method": "breadth-first-witness-and-engine-replay",
       "rulesVersion": 1,
       "commands": 16,
       "optimal": true,
-      "visited": 848,
+      "visited": 1057,
       "replayed": true,
-      "engine": "unchanged-rules-1"
+      "engine": "unchanged-rules-1",
+      "firstVictoryAt": 16
     },
     "editorial": {
-      "source": "role-first-structure-and-automatic-curation",
-      "design": {
-        "pattern": "support-then-release",
-        "name": "O apoio já cumpriu seu papel",
-        "lesson": "Use a caixa para buscar a chave; depois libere a casa de apoio para a chegada.",
-        "discovery": "Aqui o jogador precisa descobrir que o apoio da caixa é temporário: depois da chave, a mesma casa precisa ficar livre para o animal.",
-        "hints": [
-          "O destino ocupa a casa que primeiro precisa sustentar a passagem.",
-          "A chave fica além da cancela do apoio: obtenha essa mudança permanente antes de retirar a caixa.",
-          "Volte pelo contorno e empurre a caixa para fora da placa; agora a ajuda pode terminar."
-        ],
-        "boxRoles": [
-          "reorientar",
-          "sustentar",
-          "liberar-destino"
-        ],
-        "roles": [
-          "Preparar o objeto, manter acesso e concluir a própria chegada.",
-          "Esperar a chave obtida com apoio e atravessar a passagem permanente.",
-          "Preparar o acesso 2, depois abandonar a placa graças ao apoio da caixa."
-        ]
-      },
+      "source": "procedural-structure-and-automatic-curation",
+      "design": null,
       "purpose": {
         "valid": true,
         "won": true,
         "evidenceScope": "supplied-command-sequence",
         "commands": 16,
-        "boxes": [
-          {
-            "id": "box0",
-            "origin": {
-              "id": "box0",
-              "board": 0,
-              "cell": 12
-            },
-            "final": {
-              "id": "box0",
-              "board": 0,
-              "cell": 23
-            },
-            "pushes": [
-              {
-                "command": 3,
-                "direction": "down",
-                "board": 0,
-                "from": 12,
-                "to": 17
-              },
-              {
-                "command": 7,
-                "direction": "right",
-                "board": 0,
-                "from": 17,
-                "to": 18
-              },
-              {
-                "command": 16,
-                "direction": "down",
-                "board": 0,
-                "from": 18,
-                "to": 23
-              }
-            ],
-            "directionChanges": 2,
-            "deliveries": [],
-            "postDeliveryPushes": [],
-            "plateEntries": [
-              {
-                "command": 7,
-                "plateId": "weight"
-              }
-            ],
-            "plateReleases": [
-              {
-                "command": 16,
-                "plateId": "weight",
-                "afterGateSupport": true
-              }
-            ],
-            "supportUses": [
-              {
-                "command": 9,
-                "plateId": "weight",
-                "gateId": "weight-gate",
-                "receiverBoard": 0
-              },
-              {
-                "command": 10,
-                "plateId": "weight",
-                "gateId": "weight-gate",
-                "receiverBoard": 0
-              },
-              {
-                "command": 16,
-                "plateId": "weight",
-                "gateId": "helper-exit-2",
-                "receiverBoard": 2
-              }
-            ],
-            "observedRoles": [
-              "directional-reposition",
-              "gate-support",
-              "release-after-support",
-              "local-stop"
-            ]
-          }
-        ],
+        "boxes": [],
         "dependencies": [
           {
-            "gateId": "weight-gate",
-            "receiverBoard": 0,
+            "gateId": "together",
+            "receiverBoard": 2,
             "condition": {
-              "type": "plate",
-              "id": "weight"
+              "type": "all",
+              "ids": [
+                "first",
+                "second"
+              ]
             },
             "controllers": [
               {
                 "type": "plate",
-                "id": "weight",
+                "id": "first",
                 "board": 0,
-                "cell": 18
-              }
-            ],
-            "crossingCommands": [
-              9,
-              10
-            ]
-          },
-          {
-            "gateId": "prepare-2-6",
-            "receiverBoard": 0,
-            "condition": {
-              "type": "plate",
-              "id": "prepare-2"
-            },
-            "controllers": [
+                "cell": 11
+              },
               {
                 "type": "plate",
-                "id": "prepare-2",
-                "board": 2,
-                "cell": 4
-              }
-            ],
-            "crossingCommands": []
-          },
-          {
-            "gateId": "prepare-2-7",
-            "receiverBoard": 0,
-            "condition": {
-              "type": "plate",
-              "id": "prepare-2"
-            },
-            "controllers": [
-              {
-                "type": "plate",
-                "id": "prepare-2",
-                "board": 2,
-                "cell": 4
-              }
-            ],
-            "crossingCommands": [
-              15
-            ]
-          },
-          {
-            "gateId": "prepare-2-8",
-            "receiverBoard": 0,
-            "condition": {
-              "type": "plate",
-              "id": "prepare-2"
-            },
-            "controllers": [
-              {
-                "type": "plate",
-                "id": "prepare-2",
-                "board": 2,
-                "cell": 4
+                "id": "second",
+                "board": 1,
+                "cell": 2
               }
             ],
             "crossingCommands": [
               7
-            ]
-          },
-          {
-            "gateId": "prepare-2-9",
-            "receiverBoard": 0,
-            "condition": {
-              "type": "plate",
-              "id": "prepare-2"
-            },
-            "controllers": [
-              {
-                "type": "plate",
-                "id": "prepare-2",
-                "board": 2,
-                "cell": 4
-              }
-            ],
-            "crossingCommands": []
-          },
-          {
-            "gateId": "helper-exit-1",
-            "receiverBoard": 1,
-            "condition": {
-              "type": "key",
-              "id": "release-key"
-            },
-            "controllers": [
-              {
-                "type": "key",
-                "id": "release-key",
-                "board": 0,
-                "cell": 15
-              }
-            ],
-            "crossingCommands": [
-              13
-            ]
-          },
-          {
-            "gateId": "helper-exit-2",
-            "receiverBoard": 2,
-            "condition": {
-              "type": "plate",
-              "id": "weight"
-            },
-            "controllers": [
-              {
-                "type": "plate",
-                "id": "weight",
-                "board": 0,
-                "cell": 18
-              }
-            ],
-            "crossingCommands": [
-              16
             ]
           }
         ],
         "boardRoles": [
           {
             "board": 0,
-            "moved": 15,
-            "waited": 1,
+            "moved": 5,
+            "waited": 11,
             "goalDepartures": 0
           },
           {
             "board": 1,
-            "moved": 8,
-            "waited": 8,
+            "moved": 9,
+            "waited": 7,
             "goalDepartures": 0
           },
           {
             "board": 2,
-            "moved": 9,
-            "waited": 7,
-            "goalDepartures": 0
+            "moved": 8,
+            "waited": 8,
+            "goalDepartures": 1
           }
         ],
         "caveat": "Uso neste certificado não prova necessidade. Consulte tests/sintonia-purpose-audit.json para ablações e limites."
@@ -31968,48 +25988,40 @@ export const CAMPAIGN = [
         "reason": "Replay e ablações são evidências automáticas, não substitutos de avaliação editorial e testes humanos."
       },
       "humanPlaytested": false,
-      "discovery": "Aqui o jogador precisa descobrir que o apoio da caixa é temporário: depois da chave, a mesma casa precisa ficar livre para o animal.",
+      "discovery": "Aqui o jogador precisa descobrir que dois animais precisam sustentar simultaneamente as condições de uma passagem.",
       "reasoning": {
         "used": [
-          "box-support-gate",
-          "key",
-          "key-gate",
-          "plate-gate",
-          "push"
+          "and-gate"
         ],
-        "partialBlocks": 11,
+        "partialBlocks": 15,
         "goalDepartures": [
           false,
           false,
-          false
+          true
         ],
-        "unequalLoops": 30,
-        "directionChanges": 11,
-        "earlyTurns": 5,
-        "occupiedBoxPlate": true,
+        "unequalLoops": 37,
+        "directionChanges": 12,
+        "earlyTurns": 4,
+        "occupiedBoxPlate": false,
         "boxAsStopAfterSupport": false,
         "finalApproach": [
-          false,
           true,
+          false,
           false
         ]
       },
       "sweep": {
         "status": "complete",
-        "visited": 45,
+        "visited": 82,
         "resistant": true
       },
       "compatibility": "validated",
       "alternatives": "Uma sequência verificada é fornecida; outras soluções podem existir.",
-      "deadEnds": "A fase permite estados sem saída; desfazer e reiniciar são livres.",
-      "decision": "retain-logical-definition",
-      "retentionReason": "A caixa assume e depois deixa apoio; chave e retorno tornam a retirada significativa.",
+      "deadEnds": "Mudanças de configuração podem exigir retornar a uma posição anterior.",
       "role": "synthesis",
-      "prerequisiteChapters": [
-        1,
-        2,
-        3
-      ],
+      "decision": "recompose",
+      "curriculumReason": "Sintetizar preparação de dois apoios, travessia e chegada conjunta.",
+      "retentionReason": "Sintetizar preparação de dois apoios, travessia e chegada conjunta.",
       "antiSpam": {
         "singleDirection": {
           "tested": 4,
@@ -32017,7 +26029,7 @@ export const CAMPAIGN = [
         },
         "sweeps": {
           "status": "complete",
-          "visited": 45,
+          "visited": 82,
           "solves": false
         },
         "shortCycles": {
@@ -32025,316 +26037,83 @@ export const CAMPAIGN = [
           "winningPatterns": []
         },
         "biasedRandom": {
-          "runs": 12,
+          "runs": 24,
           "commandsPerRun": 128,
           "wins": 0
         },
         "uniformRandom": {
-          "runs": 12,
+          "runs": 24,
           "commandsPerRun": 128,
           "wins": 0
         },
         "interpretation": "Diagnóstico automático; ciclos curtos e acertos aleatórios não provam ausência de raciocínio. A varredura testa vitória após cada movimento."
       },
-      "repetition": {
-        "structuralSignature": "st1-6014c27f-1040",
-        "topologySignature": "top1-619f0940-160",
-        "globallyRotatedOrReflectedDuplicate": false
-      },
-      "curriculumReason": "A caixa assume e depois deixa apoio; chave e retorno tornam a retirada significativa.",
-      "animalRoles": [
+      "necessity": [
         {
-          "board": 0,
-          "logicalAnimal": "capivara",
-          "role": "Preparar o objeto, manter acesso e concluir a própria chegada.",
-          "controls": [
-            {
-              "id": "weight",
-              "type": "plate",
-              "receiverBoard": 0
+          "avoid": {
+            "type": "helper-participation",
+            "board": 0
+          },
+          "result": {
+            "scope": "all-winning-solutions-avoiding-event",
+            "optimalScope": "avoiding-predicate-only",
+            "avoid": {
+              "type": "helper-participation",
+              "board": 0
             },
-            {
-              "id": "release-key",
-              "type": "key",
-              "receiverBoard": 1
+            "budget": {
+              "maxStates": 90000,
+              "maxMs": 12000,
+              "maxDepth": null
             },
-            {
-              "id": "weight",
-              "type": "plate",
-              "receiverBoard": 2
-            }
-          ],
-          "goal": 18
+            "status": "unsolvable",
+            "visited": 418,
+            "optimal": false,
+            "exhaustive": true
+          }
         },
         {
-          "board": 1,
-          "logicalAnimal": "tuiuiu",
-          "role": "Esperar a chave obtida com apoio e atravessar a passagem permanente.",
-          "controls": [],
-          "goal": 4
-        },
-        {
-          "board": 2,
-          "logicalAnimal": "bemtevi",
-          "role": "Preparar o acesso 2, depois abandonar a placa graças ao apoio da caixa.",
-          "controls": [
-            {
-              "id": "prepare-2",
-              "type": "plate",
-              "receiverBoard": 0
+          "avoid": {
+            "type": "helper-participation",
+            "board": 1
+          },
+          "result": {
+            "scope": "all-winning-solutions-avoiding-event",
+            "optimalScope": "avoiding-predicate-only",
+            "avoid": {
+              "type": "helper-participation",
+              "board": 1
             },
-            {
-              "id": "prepare-2",
-              "type": "plate",
-              "receiverBoard": 0
+            "budget": {
+              "maxStates": 90000,
+              "maxMs": 12000,
+              "maxDepth": null
             },
-            {
-              "id": "prepare-2",
-              "type": "plate",
-              "receiverBoard": 0
-            },
-            {
-              "id": "prepare-2",
-              "type": "plate",
-              "receiverBoard": 0
-            }
-          ],
-          "goal": 7
+            "status": "unsolvable",
+            "visited": 418,
+            "optimal": false,
+            "exhaustive": true
+          }
         }
       ],
-      "objectRoles": [
-        {
-          "board": 0,
-          "type": "boxes",
-          "id": "box0",
-          "definition": {
-            "id": "box0",
-            "cell": 12
-          },
-          "role": [
-            "reorientar",
-            "sustentar",
-            "liberar-destino"
-          ],
-          "evidenceScope": "definition-and-certified-witness; necessity requires separate audit"
-        },
-        {
-          "board": 0,
-          "type": "plates",
-          "id": "weight",
-          "definition": {
-            "id": "weight",
-            "cell": 18
-          },
-          "role": "Ocupação por animal ou caixa controla a passagem no estado anterior ao comando.",
-          "evidenceScope": "definition-and-certified-witness; necessity requires separate audit"
-        },
-        {
-          "board": 0,
-          "type": "keys",
-          "id": "release-key",
-          "definition": {
-            "id": "release-key",
-            "cell": 15
-          },
-          "role": "Aquisição pelo animal mantém a abertura até reiniciar.",
-          "evidenceScope": "definition-and-certified-witness; necessity requires separate audit"
-        },
-        {
-          "board": 0,
-          "type": "gates",
-          "id": "weight-gate",
-          "definition": {
-            "id": "weight-gate",
-            "from": 16,
-            "to": 15,
-            "condition": {
-              "type": "plate",
-              "id": "weight"
-            }
-          },
-          "role": {
-            "condition": {
-              "type": "plate",
-              "id": "weight"
-            },
-            "crossings": [
-              9,
-              10
-            ]
-          },
-          "evidenceScope": "definition-and-certified-witness; necessity requires separate audit"
-        },
-        {
-          "board": 0,
-          "type": "gates",
-          "id": "prepare-2-6",
-          "definition": {
-            "id": "prepare-2-6",
-            "from": 8,
-            "to": 7,
-            "condition": {
-              "type": "plate",
-              "id": "prepare-2"
-            }
-          },
-          "role": {
-            "condition": {
-              "type": "plate",
-              "id": "prepare-2"
-            },
-            "crossings": []
-          },
-          "evidenceScope": "definition-and-certified-witness; necessity requires separate audit"
-        },
-        {
-          "board": 0,
-          "type": "gates",
-          "id": "prepare-2-7",
-          "definition": {
-            "id": "prepare-2-7",
-            "from": 13,
-            "to": 12,
-            "condition": {
-              "type": "plate",
-              "id": "prepare-2"
-            }
-          },
-          "role": {
-            "condition": {
-              "type": "plate",
-              "id": "prepare-2"
-            },
-            "crossings": [
-              15
-            ]
-          },
-          "evidenceScope": "definition-and-certified-witness; necessity requires separate audit"
-        },
-        {
-          "board": 0,
-          "type": "gates",
-          "id": "prepare-2-8",
-          "definition": {
-            "id": "prepare-2-8",
-            "from": 18,
-            "to": 17,
-            "condition": {
-              "type": "plate",
-              "id": "prepare-2"
-            }
-          },
-          "role": {
-            "condition": {
-              "type": "plate",
-              "id": "prepare-2"
-            },
-            "crossings": [
-              7
-            ]
-          },
-          "evidenceScope": "definition-and-certified-witness; necessity requires separate audit"
-        },
-        {
-          "board": 0,
-          "type": "gates",
-          "id": "prepare-2-9",
-          "definition": {
-            "id": "prepare-2-9",
-            "from": 23,
-            "to": 22,
-            "condition": {
-              "type": "plate",
-              "id": "prepare-2"
-            }
-          },
-          "role": {
-            "condition": {
-              "type": "plate",
-              "id": "prepare-2"
-            },
-            "crossings": []
-          },
-          "evidenceScope": "definition-and-certified-witness; necessity requires separate audit"
-        },
-        {
-          "board": 1,
-          "type": "gates",
-          "id": "helper-exit-1",
-          "definition": {
-            "id": "helper-exit-1",
-            "from": 1,
-            "to": 4,
-            "condition": {
-              "type": "key",
-              "id": "release-key"
-            }
-          },
-          "role": {
-            "condition": {
-              "type": "key",
-              "id": "release-key"
-            },
-            "crossings": [
-              13
-            ]
-          },
-          "evidenceScope": "definition-and-certified-witness; necessity requires separate audit"
-        },
-        {
-          "board": 2,
-          "type": "plates",
-          "id": "prepare-2",
-          "definition": {
-            "id": "prepare-2",
-            "cell": 4
-          },
-          "role": "Ocupação por animal ou caixa controla a passagem no estado anterior ao comando.",
-          "evidenceScope": "definition-and-certified-witness; necessity requires separate audit"
-        },
-        {
-          "board": 2,
-          "type": "gates",
-          "id": "helper-exit-2",
-          "definition": {
-            "id": "helper-exit-2",
-            "from": 4,
-            "to": 7,
-            "condition": {
-              "type": "plate",
-              "id": "weight"
-            }
-          },
-          "role": {
-            "condition": {
-              "type": "plate",
-              "id": "weight"
-            },
-            "crossings": [
-              16
-            ]
-          },
-          "evidenceScope": "definition-and-certified-witness; necessity requires separate audit"
-        }
-      ],
-      "causalityReport": "tests/sintonia80-purpose-audit.json"
+      "causalityReport": "tests/sintonia-v4-editorial.json"
     },
     "number": 77,
     "chapter": 6,
-    "topologySignature": "top1-619f0940-160",
-    "originNumber": 200,
+    "originNumber": 77,
     "origin": {
-      "kind": "curated-identical-logical-definition",
-      "catalog": "sintonia-content-2",
-      "number": 200,
+      "kind": "recomposed-removed-mechanics",
+      "catalog": "sintonia-content-3",
       "id": "sintonia-0200",
+      "number": 77,
       "version": 1,
-      "reason": "A caixa assume e depois deixa apoio; chave e retorno tornam a retirada significativa."
+      "reason": "Sintetizar preparação de dois apoios, travessia e chegada conjunta."
     },
-    "actorIntroduction": null
+    "actorIntroduction": null,
+    "topologySignature": "top1-2bcdb70f-188"
   },
   {
-    "id": "sintonia-0423",
+    "id": "sintonia80-0078-v4",
     "version": 1,
     "rulesVersion": 1,
     "boards": [
@@ -32350,70 +26129,55 @@ export const CAMPAIGN = [
           3,
           4,
           5,
-          6,
           7,
-          8,
-          11
+          8
         ],
-        "start": 1,
-        "goal": 5,
-        "plates": [
+        "start": 5,
+        "goal": 7,
+        "switches": [
           {
-            "id": "choice-plate",
-            "cell": 7
-          }
-        ],
-        "selectors": [
-          {
-            "id": "choice",
-            "cell": 11,
-            "group": "choice"
+            "id": "sky",
+            "cell": 2,
+            "group": "sky"
           }
         ]
       },
       {
         "id": "b1",
         "animal": "tuiuiu",
-        "rows": 4,
-        "cols": 5,
+        "rows": 5,
+        "cols": 3,
         "walkable": [
           0,
           1,
-          3,
+          2,
           4,
           6,
           7,
-          8,
-          12,
-          14,
-          16,
-          17,
-          18,
-          19
+          9,
+          12
         ],
-        "start": 14,
-        "goal": 8,
+        "start": 12,
+        "goal": 2,
         "gates": [
           {
-            "id": "choice-left",
-            "from": 14,
-            "to": 19,
+            "id": "moon",
+            "from": 6,
+            "to": 7,
             "condition": {
-              "type": "selected",
-              "plate": "choice-plate",
-              "selector": "choice",
-              "value": 0
+              "type": "switch",
+              "id": "sky",
+              "value": false
             }
           },
           {
-            "id": "choice-right",
-            "from": 17,
-            "to": 12,
+            "id": "sun",
+            "from": 4,
+            "to": 1,
             "condition": {
-              "type": "selected",
-              "plate": "choice-plate",
-              "selector": "choice",
-              "value": 1
+              "type": "switch",
+              "id": "sky",
+              "value": true
             }
           }
         ]
@@ -32422,320 +26186,165 @@ export const CAMPAIGN = [
         "id": "b2",
         "animal": "bemtevi",
         "rows": 5,
-        "cols": 5,
+        "cols": 4,
         "walkable": [
+          0,
           1,
-          6,
-          7,
+          5,
           8,
+          9,
           10,
           11,
           12,
-          13,
-          15,
           16,
-          17,
-          18
+          17
         ],
-        "start": 7,
-        "goal": 1,
-        "boxes": [
-          {
-            "id": "box0",
-            "cell": 12
-          }
-        ],
-        "plates": [
-          {
-            "id": "weight",
-            "cell": 16
-          }
-        ],
-        "gates": [
-          {
-            "id": "weight-gate",
-            "from": 6,
-            "to": 1,
-            "condition": {
-              "type": "plate",
-              "id": "weight"
-            }
-          }
+        "start": 0,
+        "goal": 17,
+        "ice": [
+          5
         ]
       }
     ],
     "mechanics": [
       "walls",
-      "plate",
-      "selector",
-      "box"
+      "switch",
+      "alternate",
+      "ice"
     ],
     "initialSwitches": {},
     "initialSelectors": {},
-    "family": "help-recipient",
+    "family": "scenario-choice",
     "secondaryFamilies": [
-      "dual-use-object",
-      "waiting-place"
+      "goal-transit",
+      "intermediate-stop"
     ],
-    "name": "Quem recebe a ajuda",
-    "lesson": "Mude o destinatário da placa e use a caixa preparada como apoio e ponto de espera.",
-    "discovery": "Aqui o jogador precisa descobrir que a placa muda de destinatário enquanto a caixa, depois de sustentar a passagem, também precisa separar os movimentos por bloqueio.",
+    "name": "Entre sol e lua",
+    "lesson": "Atravesse uma etapa e mude a configuração para preparar a seguinte.",
+    "discovery": "Aqui o jogador precisa descobrir que as passagens de sol e lua precisam ser atravessadas em configurações diferentes.",
     "hints": [
-      "A placa e o seletor atendem duas etapas; a caixa do bem-te-vi também participa do alinhamento.",
-      "Depois de sustentar a cancela, preserve a caixa na placa. Ela pode segurar uma seta quando não existe espaço para empurrá-la.",
-      "Após usar a cancela, coloque o bem-te-vi acima da caixa: a seta para baixo o mantém parado enquanto os outros se ajustam."
+      "O mesmo interruptor troca quais cancelas de sol e lua estão abertas.",
+      "Prepare a primeira travessia antes de alternar para a configuração que abre o próximo trecho.",
+      "Na configuração inicial, comece para a esquerda; observe quem avança e quem espera."
     ],
-    "generatorVersion": 2,
-    "contentRevision": "sintonia-content-3",
-    "seed": "sintonia-campaign-v2:0423:0",
+    "generatorVersion": 3,
+    "contentRevision": "sintonia-content-4",
+    "seed": "sintonia-content4:78:0",
     "difficulty": 5,
     "solution": [
-      "down",
-      "down",
-      "down",
-      "right",
-      "down",
-      "left",
-      "up",
       "left",
       "up",
       "up",
       "right",
       "down",
+      "left",
       "down",
       "down",
       "right",
+      "up",
+      "left",
       "left",
       "up",
-      "up",
-      "right"
+      "right",
+      "down",
+      "left",
+      "right",
+      "down"
     ],
-    "signature": "st1-07f8ea11-828",
+    "signature": "st1-57ad014c-528",
     "prerequisites": [
       "walls",
-      "plate",
-      "selector",
-      "box"
+      "switch",
+      "alternate",
+      "ice"
     ],
     "introduction": [],
     "parameters": {
-      "difficulty": 4,
+      "difficulty": 5,
       "animals": 3,
-      "primary": "selector",
-      "secondary": "box",
-      "role": "deep",
+      "primary": "alternate",
+      "secondary": "ice",
+      "role": "synthesis",
       "pattern": null
     },
     "certificate": {
       "method": "breadth-first-witness-and-engine-replay",
       "rulesVersion": 1,
-      "commands": 19,
+      "commands": 18,
       "optimal": true,
-      "visited": 12453,
+      "visited": 640,
       "replayed": true,
-      "engine": "unchanged-rules-1"
+      "engine": "unchanged-rules-1",
+      "firstVictoryAt": 18
     },
     "editorial": {
       "source": "procedural-structure-and-automatic-curation",
-      "design": {
-        "pattern": "selector-recipient-with-supported-stop",
-        "secondaryPatterns": [
-          "support-and-necessary-stop"
-        ],
-        "discovery": "A placa ajuda destinatários sucessivos; depois de sustentar a própria cancela, a caixa também precisa oferecer uma espera física para o alinhamento.",
-        "roles": [
-          "Capivara: sustentar a placa e alternar o destinatário.",
-          "Tuiuiú: atravessar as duas configurações e preparar a chegada.",
-          "Bem-te-vi: orientar a caixa, usar seu apoio, voltar para esperar contra ela e retornar ao destino."
-        ],
-        "structures": {
-          "selector": "Escolher qual etapa recebe a ajuda da placa.",
-          "box": "Mudar de direção até a placa, sustentar a cancela e bloquear um empurrão sem destino transitável.",
-          "returnRoute": "Permitir sair do destino para alinhar os outros animais e voltar."
-        },
-        "preconditions": [
-          "A caixa precisa sustentar uma travessia antes de cumprir o bloqueio analisado.",
-          "O animal deve poder alcançar a caixa: uma cancela entre eles não conta como bloqueio da caixa."
-        ],
-        "proofStatus": "exhaustive-predicate-evidence-in-offline-audit",
-        "evidence": {
-          "report": "tests/sintonia-purpose-audit.json",
-          "query": "box-supported-stop:box0",
-          "witnessSupportCommands": [
-            10,
-            12,
-            18
-          ],
-          "witnessStopCommand": 14
-        },
-        "caveat": "A prova é sobre o predicado exato de bloqueio após apoio; não declara solução única nem dificuldade humana."
-      },
+      "design": null,
       "purpose": {
         "valid": true,
         "won": true,
         "evidenceScope": "supplied-command-sequence",
-        "commands": 19,
-        "boxes": [
-          {
-            "id": "box0",
-            "origin": {
-              "id": "box0",
-              "board": 2,
-              "cell": 12
-            },
-            "final": {
-              "id": "box0",
-              "board": 2,
-              "cell": 16
-            },
-            "pushes": [
-              {
-                "command": 1,
-                "direction": "down",
-                "board": 2,
-                "from": 12,
-                "to": 17
-              },
-              {
-                "command": 6,
-                "direction": "left",
-                "board": 2,
-                "from": 17,
-                "to": 16
-              }
-            ],
-            "directionChanges": 1,
-            "deliveries": [],
-            "postDeliveryPushes": [],
-            "plateEntries": [
-              {
-                "command": 6,
-                "plateId": "weight"
-              }
-            ],
-            "plateReleases": [],
-            "supportUses": [
-              {
-                "command": 10,
-                "plateId": "weight",
-                "gateId": "weight-gate",
-                "receiverBoard": 2
-              },
-              {
-                "command": 12,
-                "plateId": "weight",
-                "gateId": "weight-gate",
-                "receiverBoard": 2
-              },
-              {
-                "command": 18,
-                "plateId": "weight",
-                "gateId": "weight-gate",
-                "receiverBoard": 2
-              }
-            ],
-            "observedRoles": [
-              "directional-reposition",
-              "gate-support",
-              "local-stop",
-              "support-then-stop"
-            ]
-          }
-        ],
+        "commands": 18,
+        "boxes": [],
         "dependencies": [
           {
-            "gateId": "choice-left",
+            "gateId": "moon",
             "receiverBoard": 1,
             "condition": {
-              "type": "selected",
-              "plate": "choice-plate",
-              "selector": "choice",
-              "value": 0
+              "type": "switch",
+              "id": "sky",
+              "value": false
             },
             "controllers": [
               {
-                "type": "plate",
-                "id": "choice-plate",
+                "type": "switch",
+                "id": "sky",
                 "board": 0,
-                "cell": 7
-              },
-              {
-                "type": "selector",
-                "id": "choice",
-                "board": 0,
-                "cell": 11
+                "cell": 2
               }
             ],
             "crossingCommands": [
-              3
+              4
             ]
           },
           {
-            "gateId": "choice-right",
+            "gateId": "sun",
             "receiverBoard": 1,
             "condition": {
-              "type": "selected",
-              "plate": "choice-plate",
-              "selector": "choice",
-              "value": 1
+              "type": "switch",
+              "id": "sky",
+              "value": true
             },
             "controllers": [
               {
-                "type": "plate",
-                "id": "choice-plate",
+                "type": "switch",
+                "id": "sky",
                 "board": 0,
-                "cell": 7
-              },
-              {
-                "type": "selector",
-                "id": "choice",
-                "board": 0,
-                "cell": 11
+                "cell": 2
               }
             ],
             "crossingCommands": [
-              9
-            ]
-          },
-          {
-            "gateId": "weight-gate",
-            "receiverBoard": 2,
-            "condition": {
-              "type": "plate",
-              "id": "weight"
-            },
-            "controllers": [
-              {
-                "type": "plate",
-                "id": "weight",
-                "board": 2,
-                "cell": 16
-              }
-            ],
-            "crossingCommands": [
-              10,
-              12,
-              18
+              13
             ]
           }
         ],
         "boardRoles": [
           {
             "board": 0,
-            "moved": 14,
-            "waited": 5,
+            "moved": 16,
+            "waited": 2,
             "goalDepartures": 1
           },
           {
             "board": 1,
             "moved": 8,
-            "waited": 11,
+            "waited": 10,
             "goalDepartures": 1
           },
           {
             "board": 2,
-            "moved": 14,
-            "waited": 5,
+            "moved": 10,
+            "waited": 8,
             "goalDepartures": 1
           }
         ],
@@ -32756,51 +26365,44 @@ export const CAMPAIGN = [
         "reason": "Replay e ablações são evidências automáticas, não substitutos de avaliação editorial e testes humanos."
       },
       "humanPlaytested": false,
-      "discovery": "Aqui o jogador precisa descobrir que a placa muda de destinatário enquanto a caixa, depois de sustentar a passagem, também precisa separar os movimentos por bloqueio.",
+      "discovery": "Aqui o jogador precisa descobrir que as passagens de sol e lua precisam ser atravessadas em configurações diferentes.",
       "reasoning": {
         "used": [
-          "box-support-gate",
-          "plate-gate",
-          "push",
-          "selected-0",
-          "selected-1",
-          "selector"
+          "ice",
+          "moon-gate",
+          "sun-gate",
+          "switch",
+          "switch-gate"
         ],
-        "partialBlocks": 16,
+        "partialBlocks": 15,
         "goalDepartures": [
           true,
           true,
           true
         ],
-        "unequalLoops": 29,
-        "directionChanges": 12,
-        "earlyTurns": 6,
-        "occupiedBoxPlate": true,
-        "boxAsStopAfterSupport": true,
+        "unequalLoops": 31,
+        "directionChanges": 14,
+        "earlyTurns": 9,
+        "occupiedBoxPlate": false,
+        "boxAsStopAfterSupport": false,
         "finalApproach": [
-          true,
           false,
+          true,
           true
         ]
       },
       "sweep": {
         "status": "complete",
-        "visited": 169,
+        "visited": 128,
         "resistant": true
       },
       "compatibility": "validated",
       "alternatives": "Uma sequência verificada é fornecida; outras soluções podem existir.",
-      "deadEnds": "A fase permite estados sem saída; desfazer e reiniciar são livres.",
-      "decision": "retain-logical-definition",
-      "retentionReason": "Configurar o destinatário e preservar o retorno; caixa apoia e depois oferece espera física comprovável.",
-      "secondaryPattern": "support-and-necessary-stop",
+      "deadEnds": "Mudanças de configuração podem exigir retornar a uma posição anterior.",
       "role": "synthesis",
-      "prerequisiteChapters": [
-        1,
-        2,
-        5,
-        3
-      ],
+      "decision": "recompose",
+      "curriculumReason": "Reordenar configurações e paradas entre três percursos.",
+      "retentionReason": "Reordenar configurações e paradas entre três percursos.",
       "antiSpam": {
         "singleDirection": {
           "tested": 4,
@@ -32808,7 +26410,7 @@ export const CAMPAIGN = [
         },
         "sweeps": {
           "status": "complete",
-          "visited": 169,
+          "visited": 128,
           "solves": false
         },
         "shortCycles": {
@@ -32816,313 +26418,165 @@ export const CAMPAIGN = [
           "winningPatterns": []
         },
         "biasedRandom": {
-          "runs": 12,
+          "runs": 24,
           "commandsPerRun": 128,
           "wins": 0
         },
         "uniformRandom": {
-          "runs": 12,
+          "runs": 24,
           "commandsPerRun": 128,
           "wins": 0
         },
         "interpretation": "Diagnóstico automático; ciclos curtos e acertos aleatórios não provam ausência de raciocínio. A varredura testa vitória após cada movimento."
       },
-      "repetition": {
-        "structuralSignature": "st1-07f8ea11-828",
-        "topologySignature": "top1-a8f95f59-194",
-        "globallyRotatedOrReflectedDuplicate": false
-      },
-      "curriculumReason": "Configurar o destinatário e preservar o retorno; caixa apoia e depois oferece espera física comprovável.",
-      "animalRoles": [
+      "necessity": [
         {
-          "board": 0,
-          "logicalAnimal": "capivara",
-          "role": "Capivara: sustentar a placa e alternar o destinatário.",
-          "controls": [
-            {
-              "id": "choice-plate",
-              "type": "plate",
-              "receiverBoard": 1
+          "avoid": {
+            "type": "helper-participation",
+            "board": 0
+          },
+          "result": {
+            "scope": "all-winning-solutions-avoiding-event",
+            "optimalScope": "avoiding-predicate-only",
+            "avoid": {
+              "type": "helper-participation",
+              "board": 0
             },
-            {
-              "id": "choice",
-              "type": "selector",
-              "receiverBoard": 1
+            "budget": {
+              "maxStates": 90000,
+              "maxMs": 12000,
+              "maxDepth": null
             },
-            {
-              "id": "choice-plate",
-              "type": "plate",
-              "receiverBoard": 1
-            },
-            {
-              "id": "choice",
-              "type": "selector",
-              "receiverBoard": 1
-            }
-          ],
-          "goal": 5
+            "status": "unsolvable",
+            "visited": 204,
+            "optimal": false,
+            "exhaustive": true
+          }
         },
         {
-          "board": 1,
-          "logicalAnimal": "tuiuiu",
-          "role": "Tuiuiú: atravessar as duas configurações e preparar a chegada.",
-          "controls": [],
-          "goal": 8
-        },
-        {
-          "board": 2,
-          "logicalAnimal": "bemtevi",
-          "role": "Bem-te-vi: orientar a caixa, usar seu apoio, voltar para esperar contra ela e retornar ao destino.",
-          "controls": [
-            {
-              "id": "weight",
-              "type": "plate",
-              "receiverBoard": 2
-            }
-          ],
-          "goal": 1
+          "avoid": {
+            "type": "event",
+            "eventType": "ice"
+          },
+          "result": {
+            "scope": "all-winning-solutions-avoiding-event",
+            "optimalScope": "avoiding-predicate-only",
+            "avoid": {
+              "type": "event",
+              "eventType": "ice"
+            },
+            "budget": {
+              "maxStates": 90000,
+              "maxMs": 12000,
+              "maxDepth": null
+            },
+            "status": "unsolvable",
+            "visited": 122,
+            "optimal": false,
+            "exhaustive": true
+          }
         }
       ],
-      "objectRoles": [
-        {
-          "board": 0,
-          "type": "plates",
-          "id": "choice-plate",
-          "definition": {
-            "id": "choice-plate",
-            "cell": 7
-          },
-          "role": "Ocupação por animal ou caixa controla a passagem no estado anterior ao comando.",
-          "evidenceScope": "definition-and-certified-witness; necessity requires separate audit"
-        },
-        {
-          "board": 0,
-          "type": "selectors",
-          "id": "choice",
-          "definition": {
-            "id": "choice",
-            "cell": 11,
-            "group": "choice"
-          },
-          "role": "Escolhe conexão A/B; a placa correspondente ainda precisa de ocupação.",
-          "evidenceScope": "definition-and-certified-witness; necessity requires separate audit"
-        },
-        {
-          "board": 1,
-          "type": "gates",
-          "id": "choice-left",
-          "definition": {
-            "id": "choice-left",
-            "from": 14,
-            "to": 19,
-            "condition": {
-              "type": "selected",
-              "plate": "choice-plate",
-              "selector": "choice",
-              "value": 0
-            }
-          },
-          "role": {
-            "condition": {
-              "type": "selected",
-              "plate": "choice-plate",
-              "selector": "choice",
-              "value": 0
-            },
-            "crossings": [
-              3
-            ]
-          },
-          "evidenceScope": "definition-and-certified-witness; necessity requires separate audit"
-        },
-        {
-          "board": 1,
-          "type": "gates",
-          "id": "choice-right",
-          "definition": {
-            "id": "choice-right",
-            "from": 17,
-            "to": 12,
-            "condition": {
-              "type": "selected",
-              "plate": "choice-plate",
-              "selector": "choice",
-              "value": 1
-            }
-          },
-          "role": {
-            "condition": {
-              "type": "selected",
-              "plate": "choice-plate",
-              "selector": "choice",
-              "value": 1
-            },
-            "crossings": [
-              9
-            ]
-          },
-          "evidenceScope": "definition-and-certified-witness; necessity requires separate audit"
-        },
-        {
-          "board": 2,
-          "type": "boxes",
-          "id": "box0",
-          "definition": {
-            "id": "box0",
-            "cell": 12
-          },
-          "role": [
-            "directional-reposition",
-            "gate-support",
-            "local-stop",
-            "support-then-stop"
-          ],
-          "evidenceScope": "definition-and-certified-witness; necessity requires separate audit"
-        },
-        {
-          "board": 2,
-          "type": "plates",
-          "id": "weight",
-          "definition": {
-            "id": "weight",
-            "cell": 16
-          },
-          "role": "Ocupação por animal ou caixa controla a passagem no estado anterior ao comando.",
-          "evidenceScope": "definition-and-certified-witness; necessity requires separate audit"
-        },
-        {
-          "board": 2,
-          "type": "gates",
-          "id": "weight-gate",
-          "definition": {
-            "id": "weight-gate",
-            "from": 6,
-            "to": 1,
-            "condition": {
-              "type": "plate",
-              "id": "weight"
-            }
-          },
-          "role": {
-            "condition": {
-              "type": "plate",
-              "id": "weight"
-            },
-            "crossings": [
-              10,
-              12,
-              18
-            ]
-          },
-          "evidenceScope": "definition-and-certified-witness; necessity requires separate audit"
-        }
-      ],
-      "causalityReport": "tests/sintonia80-purpose-audit.json"
+      "causalityReport": "tests/sintonia-v4-editorial.json"
     },
     "number": 78,
     "chapter": 6,
-    "topologySignature": "top1-a8f95f59-194",
-    "originNumber": 423,
+    "originNumber": 78,
     "origin": {
-      "kind": "curated-identical-logical-definition",
-      "catalog": "sintonia-content-2",
-      "number": 423,
+      "kind": "recomposed-removed-mechanics",
+      "catalog": "sintonia-content-3",
       "id": "sintonia-0423",
+      "number": 78,
       "version": 1,
-      "reason": "Configurar o destinatário e preservar o retorno; caixa apoia e depois oferece espera física comprovável."
+      "reason": "Reordenar configurações e paradas entre três percursos."
     },
-    "actorIntroduction": null
+    "actorIntroduction": null,
+    "topologySignature": "top1-f9fcdfb3-170"
   },
   {
-    "id": "sintonia-0473",
+    "id": "sintonia80-0079-v4",
     "version": 1,
     "rulesVersion": 1,
     "boards": [
       {
         "id": "b0",
         "animal": "capivara",
-        "rows": 6,
-        "cols": 6,
+        "rows": 3,
+        "cols": 4,
         "walkable": [
-          19,
-          20,
-          21,
-          22,
-          23
+          0,
+          1,
+          2,
+          3,
+          4,
+          5,
+          6,
+          7,
+          8,
+          9,
+          11
         ],
-        "start": 23,
-        "goal": 19,
-        "boxes": [
+        "start": 0,
+        "goal": 11,
+        "plates": [
           {
-            "id": "parcel",
-            "cell": 22
+            "id": "relay-a",
+            "cell": 6
           }
         ],
         "gates": [
           {
-            "id": "delivery-gate",
-            "from": 21,
-            "to": 20,
+            "id": "relay-return",
+            "from": 7,
+            "to": 11,
             "condition": {
               "type": "plate",
-              "id": "arrival"
+              "id": "relay-b"
             }
-          },
-          {
-            "id": "delivery-final",
-            "from": 20,
-            "to": 19,
-            "condition": {
-              "type": "plate",
-              "id": "helper-release"
-            }
-          }
-        ],
-        "plates": [
-          {
-            "id": "sender-release",
-            "cell": 21
           }
         ]
       },
       {
         "id": "b1",
         "animal": "tuiuiu",
-        "rows": 6,
-        "cols": 6,
+        "rows": 5,
+        "cols": 3,
         "walkable": [
+          3,
+          5,
+          6,
           7,
           8,
           9,
-          10,
-          13,
-          14,
-          15,
-          16,
-          19,
-          20,
-          21,
-          22,
-          25,
-          27,
-          28
+          11,
+          12,
+          13
         ],
-        "start": 21,
-        "goal": 25,
+        "start": 5,
+        "goal": 11,
         "plates": [
           {
-            "id": "arrival",
-            "cell": 8
+            "id": "relay-b",
+            "cell": 11
           }
         ],
         "gates": [
           {
-            "id": "delivery-home",
-            "from": 19,
-            "to": 25,
+            "id": "relay-out",
+            "from": 8,
+            "to": 11,
             "condition": {
               "type": "plate",
-              "id": "sender-release"
+              "id": "relay-a"
+            }
+          },
+          {
+            "id": "auxiliary-gate-2",
+            "from": 5,
+            "to": 8,
+            "condition": {
+              "type": "plate",
+              "id": "auxiliary-2"
             }
           }
         ]
@@ -33130,33 +26584,24 @@ export const CAMPAIGN = [
       {
         "id": "b2",
         "animal": "bemtevi",
-        "rows": 3,
-        "cols": 3,
+        "rows": 4,
+        "cols": 4,
         "walkable": [
           0,
           1,
+          2,
           4,
           6,
-          7,
-          8
+          8,
+          9,
+          12
         ],
-        "start": 8,
-        "goal": 0,
+        "start": 2,
+        "goal": 4,
         "plates": [
           {
-            "id": "helper-release",
-            "cell": 4
-          }
-        ],
-        "gates": [
-          {
-            "id": "helper-exit",
-            "from": 4,
-            "to": 1,
-            "condition": {
-              "type": "plate",
-              "id": "arrival"
-            }
+            "id": "auxiliary-2",
+            "cell": 12
           }
         ]
       }
@@ -33164,349 +26609,158 @@ export const CAMPAIGN = [
     "mechanics": [
       "walls",
       "plate",
-      "box",
-      "delivery"
+      "handoff"
     ],
     "initialSwitches": {},
     "initialSelectors": {},
-    "channels": [
-      {
-        "id": "parcel-channel",
-        "fromBoard": 0,
-        "entry": 21,
-        "toBoard": 1,
-        "exit": 21
-      }
-    ],
     "family": "support-handoff",
     "secondaryFamilies": [
-      "final-command",
-      "wall-adjust"
+      "wall-adjust",
+      "goal-transit"
     ],
-    "name": "Preparar a entrega",
-    "lesson": "Libere a saída do canal e reposicione a caixa recebida antes de usar o apoio.",
-    "discovery": "Aqui o jogador precisa descobrir que receber e orientar a caixa ainda não basta: o remetente precisa sustentar o retorno do receptor antes de abandonar a ajuda.",
+    "name": "Ajuda em revezamento",
+    "lesson": "Quem atravessou pode assumir a próxima ajuda entre os animais.",
+    "discovery": "Aqui o jogador precisa descobrir que um animal precisa atravessar e ocupar a próxima placa para liberar quem o ajudou.",
     "hints": [
-      "O canal precisa de uma saída livre antes do envio.",
-      "Receber ainda não basta: encontre a face que permite orientar a caixa para a placa.",
-      "Prepare as ajudas de retorno antes de abandonar uma placa."
+      "Uma das placas está numa região que a outra ajuda a abrir.",
+      "Prepare a primeira placa, atravesse e ocupe a próxima para que o primeiro ajudante possa continuar.",
+      "Na configuração inicial, comece para a esquerda; observe quem avança e quem espera."
     ],
-    "generatorVersion": 2,
-    "contentRevision": "sintonia-content-3",
-    "seed": "sintonia-campaign-v2:0473:0",
+    "generatorVersion": 3,
+    "contentRevision": "sintonia-content-4",
+    "seed": "sintonia-content4:79:0",
     "difficulty": 5,
     "solution": [
-      "down",
       "left",
-      "up",
-      "right",
-      "up",
-      "left",
-      "down",
-      "left",
-      "left",
-      "right",
-      "up",
-      "down",
       "left",
       "down",
       "right",
+      "right",
+      "down",
+      "down",
+      "down",
+      "down",
+      "right",
       "up",
-      "left",
-      "left",
-      "left",
       "up",
-      "left"
+      "up",
+      "right",
+      "down",
+      "down",
+      "left",
+      "down"
     ],
-    "signature": "st1-c44f523a-888",
+    "signature": "st1-47d5d009-673",
     "prerequisites": [
       "walls",
       "plate",
-      "box",
-      "delivery"
+      "handoff"
     ],
     "introduction": [],
     "parameters": {
       "difficulty": 5,
       "animals": 3,
-      "primary": "delivery",
+      "primary": "handoff",
       "secondary": null,
-      "role": "deep",
-      "pattern": "receive-hold-return"
+      "role": "synthesis",
+      "pattern": null
     },
     "certificate": {
       "method": "breadth-first-witness-and-engine-replay",
       "rulesVersion": 1,
-      "commands": 21,
+      "commands": 18,
       "optimal": true,
-      "visited": 3883,
+      "visited": 517,
       "replayed": true,
-      "engine": "unchanged-rules-1"
+      "engine": "unchanged-rules-1",
+      "firstVictoryAt": 18
     },
     "editorial": {
-      "source": "role-first-structure-and-automatic-curation",
-      "design": {
-        "requiredReceiverPushes": 2,
-        "senderApproach": "ready-to-send after receiver preparation",
-        "structures": {
-          "channel": "redistribute one finite box resource",
-          "receiverCircuit": "reach a different pushing face, not extend a corridor",
-          "receiverGate": "return while sender still holds its plate",
-          "helperChain": "give each extra animal a necessary support recipient"
-        },
-        "causalClaim": "Receiver begins on the channel exit. The exit must be cleared before transmission; the delivered box must be repositioned before supporting the final dependencies.",
-        "roles": [
-          "send resource, then wait for returned support",
-          "clear receiving space, reach the useful pushing face, and sustain support",
-          "hold the sender’s final passage before leaving through the box-supported passage"
-        ],
-        "boxRoles": [
-          "transferred-resource",
-          "multi-direction-support",
-          "reciprocal-release"
-        ],
-        "dependencies": [
-          {
-            "from": 0,
-            "to": 1,
-            "kind": "resource-delivery"
-          },
-          {
-            "from": 1,
-            "to": 0,
-            "kind": "persistent-box-support"
-          },
-          {
-            "from": 2,
-            "to": 0,
-            "kind": "temporary-helper-support"
-          },
-          {
-            "from": 1,
-            "to": 2,
-            "kind": "returned-box-support"
-          },
-          {
-            "from": 0,
-            "to": 1,
-            "kind": "hold-return-before-final-crossing"
-          }
-        ],
-        "errors": [
-          "Sending while the receiver still occupies the exit does not transfer the box.",
-          "Pushing into a terminal corner can lose access to the next pushing face; undo remains available."
-        ],
-        "evidenceScope": "Claims describe the construction. Replay and controlled ablation are recorded separately; no human playtest or unique-solution claim.",
-        "pattern": "receive-hold-return",
-        "discovery": "receber e orientar a caixa ainda não basta: o remetente precisa sustentar o retorno do receptor antes de abandonar a ajuda"
-      },
+      "source": "procedural-structure-and-automatic-curation",
+      "design": null,
       "purpose": {
         "valid": true,
         "won": true,
         "evidenceScope": "supplied-command-sequence",
-        "commands": 21,
-        "boxes": [
-          {
-            "id": "parcel",
-            "origin": {
-              "id": "parcel",
-              "board": 0,
-              "cell": 22
-            },
-            "final": {
-              "id": "parcel",
-              "board": 1,
-              "cell": 8
-            },
-            "pushes": [
-              {
-                "command": 2,
-                "direction": "left",
-                "board": 0,
-                "from": 22,
-                "to": 21
-              },
-              {
-                "command": 3,
-                "direction": "up",
-                "board": 1,
-                "from": 21,
-                "to": 15
-              },
-              {
-                "command": 6,
-                "direction": "left",
-                "board": 1,
-                "from": 15,
-                "to": 14
-              },
-              {
-                "command": 11,
-                "direction": "up",
-                "board": 1,
-                "from": 14,
-                "to": 8
-              }
-            ],
-            "directionChanges": 3,
-            "deliveries": [
-              {
-                "command": 2,
-                "channelId": "parcel-channel",
-                "fromBoard": 0,
-                "toBoard": 1,
-                "entry": 21,
-                "exit": 21
-              }
-            ],
-            "postDeliveryPushes": [
-              {
-                "command": 3,
-                "direction": "up",
-                "board": 1,
-                "from": 21,
-                "to": 15
-              },
-              {
-                "command": 6,
-                "direction": "left",
-                "board": 1,
-                "from": 15,
-                "to": 14
-              },
-              {
-                "command": 11,
-                "direction": "up",
-                "board": 1,
-                "from": 14,
-                "to": 8
-              }
-            ],
-            "plateEntries": [
-              {
-                "command": 11,
-                "plateId": "arrival"
-              }
-            ],
-            "plateReleases": [],
-            "supportUses": [
-              {
-                "command": 18,
-                "plateId": "arrival",
-                "gateId": "delivery-gate",
-                "receiverBoard": 0
-              },
-              {
-                "command": 20,
-                "plateId": "arrival",
-                "gateId": "helper-exit",
-                "receiverBoard": 2
-              }
-            ],
-            "observedRoles": [
-              "directional-reposition",
-              "gate-support",
-              "transferred-resource",
-              "recipient-reposition"
-            ]
-          }
-        ],
+        "commands": 18,
+        "boxes": [],
         "dependencies": [
           {
-            "gateId": "delivery-gate",
+            "gateId": "relay-return",
             "receiverBoard": 0,
             "condition": {
               "type": "plate",
-              "id": "arrival"
+              "id": "relay-b"
             },
             "controllers": [
               {
                 "type": "plate",
-                "id": "arrival",
+                "id": "relay-b",
                 "board": 1,
-                "cell": 8
+                "cell": 11
               }
             ],
             "crossingCommands": [
-              18
+              16
             ]
           },
           {
-            "gateId": "delivery-final",
-            "receiverBoard": 0,
-            "condition": {
-              "type": "plate",
-              "id": "helper-release"
-            },
-            "controllers": [
-              {
-                "type": "plate",
-                "id": "helper-release",
-                "board": 2,
-                "cell": 4
-              }
-            ],
-            "crossingCommands": [
-              19
-            ]
-          },
-          {
-            "gateId": "delivery-home",
+            "gateId": "relay-out",
             "receiverBoard": 1,
             "condition": {
               "type": "plate",
-              "id": "sender-release"
+              "id": "relay-a"
             },
             "controllers": [
               {
                 "type": "plate",
-                "id": "sender-release",
+                "id": "relay-a",
                 "board": 0,
-                "cell": 21
+                "cell": 6
               }
             ],
             "crossingCommands": [
-              14
+              9
             ]
           },
           {
-            "gateId": "helper-exit",
-            "receiverBoard": 2,
+            "gateId": "auxiliary-gate-2",
+            "receiverBoard": 1,
             "condition": {
               "type": "plate",
-              "id": "arrival"
+              "id": "auxiliary-2"
             },
             "controllers": [
               {
                 "type": "plate",
-                "id": "arrival",
-                "board": 1,
-                "cell": 8
+                "id": "auxiliary-2",
+                "board": 2,
+                "cell": 12
               }
             ],
             "crossingCommands": [
-              20
+              8
             ]
           }
         ],
         "boardRoles": [
           {
             "board": 0,
-            "moved": 10,
+            "moved": 7,
             "waited": 11,
             "goalDepartures": 0
           },
           {
             "board": 1,
-            "moved": 13,
-            "waited": 8,
+            "moved": 2,
+            "waited": 16,
             "goalDepartures": 0
           },
           {
             "board": 2,
-            "moved": 12,
-            "waited": 9,
-            "goalDepartures": 0
+            "moved": 11,
+            "waited": 7,
+            "goalDepartures": 2
           }
         ],
         "caveat": "Uso neste certificado não prova necessidade. Consulte tests/sintonia-purpose-audit.json para ablações e limites."
@@ -33526,24 +26780,23 @@ export const CAMPAIGN = [
         "reason": "Replay e ablações são evidências automáticas, não substitutos de avaliação editorial e testes humanos."
       },
       "humanPlaytested": false,
-      "discovery": "Aqui o jogador precisa descobrir que receber e orientar a caixa ainda não basta: o remetente precisa sustentar o retorno do receptor antes de abandonar a ajuda.",
+      "discovery": "Aqui o jogador precisa descobrir que um animal precisa atravessar e ocupar a próxima placa para liberar quem o ajudou.",
       "reasoning": {
         "used": [
-          "delivery",
-          "delivery-gate",
-          "plate-gate",
-          "push"
+          "handoff-0",
+          "handoff-1",
+          "plate-gate"
         ],
         "partialBlocks": 18,
         "goalDepartures": [
           false,
           false,
-          false
+          true
         ],
-        "unequalLoops": 51,
-        "directionChanges": 17,
-        "earlyTurns": 10,
-        "occupiedBoxPlate": true,
+        "unequalLoops": 58,
+        "directionChanges": 9,
+        "earlyTurns": 3,
+        "occupiedBoxPlate": false,
         "boxAsStopAfterSupport": false,
         "finalApproach": [
           true,
@@ -33553,21 +26806,16 @@ export const CAMPAIGN = [
       },
       "sweep": {
         "status": "complete",
-        "visited": 88,
+        "visited": 26,
         "resistant": true
       },
       "compatibility": "validated",
       "alternatives": "Uma sequência verificada é fornecida; outras soluções podem existir.",
-      "deadEnds": "A fase permite estados sem saída; desfazer e reiniciar são livres.",
-      "decision": "retain-logical-definition",
-      "retentionReason": "Entrega com reorientação e ajuda entre três animais; o remetente preserva o retorno.",
+      "deadEnds": "Mudanças de configuração podem exigir retornar a uma posição anterior.",
       "role": "synthesis",
-      "prerequisiteChapters": [
-        1,
-        2,
-        3,
-        5
-      ],
+      "decision": "recompose",
+      "curriculumReason": "Encadear apoios de ida e retorno sem congelar animais no destino.",
+      "retentionReason": "Encadear apoios de ida e retorno sem congelar animais no destino.",
       "antiSpam": {
         "singleDirection": {
           "tested": 4,
@@ -33575,7 +26823,7 @@ export const CAMPAIGN = [
         },
         "sweeps": {
           "status": "complete",
-          "visited": 88,
+          "visited": 26,
           "solves": false
         },
         "shortCycles": {
@@ -33583,379 +26831,200 @@ export const CAMPAIGN = [
           "winningPatterns": []
         },
         "biasedRandom": {
-          "runs": 12,
+          "runs": 24,
           "commandsPerRun": 128,
           "wins": 0
         },
         "uniformRandom": {
-          "runs": 12,
+          "runs": 24,
           "commandsPerRun": 128,
           "wins": 0
         },
         "interpretation": "Diagnóstico automático; ciclos curtos e acertos aleatórios não provam ausência de raciocínio. A varredura testa vitória após cada movimento."
       },
-      "repetition": {
-        "structuralSignature": "st1-c44f523a-888",
-        "topologySignature": "top1-97eb276b-169",
-        "globallyRotatedOrReflectedDuplicate": false
-      },
-      "curriculumReason": "Entrega com reorientação e ajuda entre três animais; o remetente preserva o retorno.",
-      "animalRoles": [
+      "necessity": [
         {
-          "board": 0,
-          "logicalAnimal": "capivara",
-          "role": "send resource, then wait for returned support",
-          "controls": [
-            {
-              "id": "sender-release",
-              "type": "plate",
-              "receiverBoard": 1
-            }
-          ],
-          "goal": 19
-        },
-        {
-          "board": 1,
-          "logicalAnimal": "tuiuiu",
-          "role": "clear receiving space, reach the useful pushing face, and sustain support",
-          "controls": [
-            {
-              "id": "arrival",
-              "type": "plate",
-              "receiverBoard": 0
+          "avoid": {
+            "type": "helper-participation",
+            "board": 1
+          },
+          "result": {
+            "scope": "all-winning-solutions-avoiding-event",
+            "optimalScope": "avoiding-predicate-only",
+            "avoid": {
+              "type": "helper-participation",
+              "board": 1
             },
-            {
-              "id": "arrival",
-              "type": "plate",
-              "receiverBoard": 2
-            }
-          ],
-          "goal": 25
+            "budget": {
+              "maxStates": 90000,
+              "maxMs": 12000,
+              "maxDepth": null
+            },
+            "status": "unsolvable",
+            "visited": 508,
+            "optimal": false,
+            "exhaustive": true
+          }
         },
         {
-          "board": 2,
-          "logicalAnimal": "bemtevi",
-          "role": "hold the sender’s final passage before leaving through the box-supported passage",
-          "controls": [
-            {
-              "id": "helper-release",
-              "type": "plate",
-              "receiverBoard": 0
-            }
-          ],
-          "goal": 0
+          "avoid": {
+            "type": "helper-participation",
+            "board": 0
+          },
+          "result": {
+            "scope": "all-winning-solutions-avoiding-event",
+            "optimalScope": "avoiding-predicate-only",
+            "avoid": {
+              "type": "helper-participation",
+              "board": 0
+            },
+            "budget": {
+              "maxStates": 90000,
+              "maxMs": 12000,
+              "maxDepth": null
+            },
+            "status": "unsolvable",
+            "visited": 441,
+            "optimal": false,
+            "exhaustive": true
+          }
+        },
+        {
+          "avoid": {
+            "type": "helper-participation",
+            "board": 2
+          },
+          "result": {
+            "scope": "all-winning-solutions-avoiding-event",
+            "optimalScope": "avoiding-predicate-only",
+            "avoid": {
+              "type": "helper-participation",
+              "board": 2
+            },
+            "budget": {
+              "maxStates": 90000,
+              "maxMs": 12000,
+              "maxDepth": null
+            },
+            "status": "unsolvable",
+            "visited": 66,
+            "optimal": false,
+            "exhaustive": true
+          }
         }
       ],
-      "objectRoles": [
-        {
-          "board": 0,
-          "type": "boxes",
-          "id": "parcel",
-          "definition": {
-            "id": "parcel",
-            "cell": 22
-          },
-          "role": [
-            "transferred-resource",
-            "multi-direction-support",
-            "reciprocal-release"
-          ],
-          "evidenceScope": "definition-and-certified-witness; necessity requires separate audit"
-        },
-        {
-          "board": 0,
-          "type": "plates",
-          "id": "sender-release",
-          "definition": {
-            "id": "sender-release",
-            "cell": 21
-          },
-          "role": "Ocupação por animal ou caixa controla a passagem no estado anterior ao comando.",
-          "evidenceScope": "definition-and-certified-witness; necessity requires separate audit"
-        },
-        {
-          "board": 0,
-          "type": "gates",
-          "id": "delivery-gate",
-          "definition": {
-            "id": "delivery-gate",
-            "from": 21,
-            "to": 20,
-            "condition": {
-              "type": "plate",
-              "id": "arrival"
-            }
-          },
-          "role": {
-            "condition": {
-              "type": "plate",
-              "id": "arrival"
-            },
-            "crossings": [
-              18
-            ]
-          },
-          "evidenceScope": "definition-and-certified-witness; necessity requires separate audit"
-        },
-        {
-          "board": 0,
-          "type": "gates",
-          "id": "delivery-final",
-          "definition": {
-            "id": "delivery-final",
-            "from": 20,
-            "to": 19,
-            "condition": {
-              "type": "plate",
-              "id": "helper-release"
-            }
-          },
-          "role": {
-            "condition": {
-              "type": "plate",
-              "id": "helper-release"
-            },
-            "crossings": [
-              19
-            ]
-          },
-          "evidenceScope": "definition-and-certified-witness; necessity requires separate audit"
-        },
-        {
-          "board": 1,
-          "type": "plates",
-          "id": "arrival",
-          "definition": {
-            "id": "arrival",
-            "cell": 8
-          },
-          "role": "Ocupação por animal ou caixa controla a passagem no estado anterior ao comando.",
-          "evidenceScope": "definition-and-certified-witness; necessity requires separate audit"
-        },
-        {
-          "board": 1,
-          "type": "gates",
-          "id": "delivery-home",
-          "definition": {
-            "id": "delivery-home",
-            "from": 19,
-            "to": 25,
-            "condition": {
-              "type": "plate",
-              "id": "sender-release"
-            }
-          },
-          "role": {
-            "condition": {
-              "type": "plate",
-              "id": "sender-release"
-            },
-            "crossings": [
-              14
-            ]
-          },
-          "evidenceScope": "definition-and-certified-witness; necessity requires separate audit"
-        },
-        {
-          "board": 2,
-          "type": "plates",
-          "id": "helper-release",
-          "definition": {
-            "id": "helper-release",
-            "cell": 4
-          },
-          "role": "Ocupação por animal ou caixa controla a passagem no estado anterior ao comando.",
-          "evidenceScope": "definition-and-certified-witness; necessity requires separate audit"
-        },
-        {
-          "board": 2,
-          "type": "gates",
-          "id": "helper-exit",
-          "definition": {
-            "id": "helper-exit",
-            "from": 4,
-            "to": 1,
-            "condition": {
-              "type": "plate",
-              "id": "arrival"
-            }
-          },
-          "role": {
-            "condition": {
-              "type": "plate",
-              "id": "arrival"
-            },
-            "crossings": [
-              20
-            ]
-          },
-          "evidenceScope": "definition-and-certified-witness; necessity requires separate audit"
-        },
-        {
-          "type": "channel",
-          "id": "parcel-channel",
-          "definition": {
-            "id": "parcel-channel",
-            "fromBoard": 0,
-            "entry": 21,
-            "toBoard": 1,
-            "exit": 21
-          },
-          "role": "Preparar saída livre antes do comando; enviar somente a caixa, receber, alcançar outra face e usar o apoio no destino. Entrega é atômica, sem prioridade entre painéis.",
-          "evidenceScope": "definition-and-certified-witness; necessity requires separate audit"
-        }
-      ],
-      "causalityReport": "tests/sintonia80-purpose-audit.json"
+      "causalityReport": "tests/sintonia-v4-editorial.json"
     },
     "number": 79,
     "chapter": 6,
-    "topologySignature": "top1-97eb276b-169",
-    "originNumber": 473,
+    "originNumber": 79,
     "origin": {
-      "kind": "curated-identical-logical-definition",
-      "catalog": "sintonia-content-2",
-      "number": 473,
+      "kind": "recomposed-removed-mechanics",
+      "catalog": "sintonia-content-3",
       "id": "sintonia-0473",
+      "number": 79,
       "version": 1,
-      "reason": "Entrega com reorientação e ajuda entre três animais; o remetente preserva o retorno."
+      "reason": "Encadear apoios de ida e retorno sem congelar animais no destino."
     },
-    "actorIntroduction": null
+    "actorIntroduction": null,
+    "topologySignature": "top1-a1c0b227-170"
   },
   {
-    "id": "sintonia-0500",
+    "id": "sintonia80-0080-v4",
     "version": 1,
     "rulesVersion": 1,
     "boards": [
       {
         "id": "b0",
         "animal": "capivara",
-        "rows": 6,
-        "cols": 6,
-        "walkable": [
-          6,
-          7,
-          8,
-          12,
-          13,
-          14,
-          15,
-          16
-        ],
-        "start": 14,
-        "goal": 16,
-        "boxes": [
-          {
-            "id": "parcel",
-            "cell": 13
-          }
-        ],
-        "gates": [
-          {
-            "id": "delivery-gate",
-            "from": 14,
-            "to": 15,
-            "condition": {
-              "type": "plate",
-              "id": "arrival"
-            }
-          },
-          {
-            "id": "delivery-final",
-            "from": 15,
-            "to": 16,
-            "condition": {
-              "type": "plate",
-              "id": "helper-release"
-            }
-          }
-        ],
-        "plates": [
-          {
-            "id": "sender-release",
-            "cell": 14
-          }
-        ]
-      },
-      {
-        "id": "b1",
-        "animal": "tuiuiu",
-        "rows": 6,
-        "cols": 6,
-        "walkable": [
-          7,
-          8,
-          9,
-          10,
-          13,
-          14,
-          15,
-          16,
-          19,
-          20,
-          21,
-          22,
-          25,
-          26,
-          28
-        ],
-        "start": 20,
-        "goal": 28,
-        "plates": [
-          {
-            "id": "arrival",
-            "cell": 9
-          }
-        ],
-        "gates": [
-          {
-            "id": "delivery-home",
-            "from": 22,
-            "to": 28,
-            "condition": {
-              "type": "plate",
-              "id": "sender-release"
-            }
-          }
-        ]
-      },
-      {
-        "id": "b2",
-        "animal": "bemtevi",
         "rows": 3,
         "cols": 3,
         "walkable": [
           0,
           1,
           2,
+          3,
           4,
+          6,
           7,
           8
         ],
-        "start": 0,
-        "goal": 8,
+        "start": 6,
+        "goal": 1,
         "plates": [
           {
-            "id": "helper-release",
-            "cell": 4
+            "id": "first",
+            "cell": 2
           }
+        ]
+      },
+      {
+        "id": "b1",
+        "animal": "tuiuiu",
+        "rows": 4,
+        "cols": 4,
+        "walkable": [
+          0,
+          3,
+          4,
+          5,
+          6,
+          7,
+          8,
+          12,
+          13,
+          14
         ],
+        "start": 13,
+        "goal": 5,
+        "plates": [
+          {
+            "id": "second",
+            "cell": 7
+          }
+        ]
+      },
+      {
+        "id": "b2",
+        "animal": "bemtevi",
+        "rows": 4,
+        "cols": 4,
+        "walkable": [
+          0,
+          3,
+          4,
+          5,
+          6,
+          7,
+          8,
+          10,
+          12,
+          13,
+          14,
+          15
+        ],
+        "start": 0,
+        "goal": 15,
         "gates": [
           {
-            "id": "helper-exit",
-            "from": 4,
-            "to": 7,
+            "id": "together",
+            "from": 14,
+            "to": 15,
             "condition": {
-              "type": "plate",
-              "id": "arrival"
+              "type": "all",
+              "ids": [
+                "first",
+                "second"
+              ]
             }
           },
           {
-            "id": "prepare-helper",
-            "from": 1,
-            "to": 4,
+            "id": "auxiliary-gate-3",
+            "from": 4,
+            "to": 0,
             "condition": {
               "type": "plate",
-              "id": "prepare"
+              "id": "auxiliary-3"
             }
           }
         ]
@@ -33968,27 +27037,19 @@ export const CAMPAIGN = [
         "walkable": [
           0,
           1,
+          2,
+          3,
           4,
           5,
-          8
+          6,
+          7
         ],
-        "start": 0,
-        "goal": 8,
+        "start": 2,
+        "goal": 4,
         "plates": [
           {
-            "id": "prepare",
-            "cell": 1
-          }
-        ],
-        "gates": [
-          {
-            "id": "preparer-exit",
-            "from": 5,
-            "to": 8,
-            "condition": {
-              "type": "plate",
-              "id": "arrival"
-            }
+            "id": "auxiliary-3",
+            "cell": 7
           }
         ]
       }
@@ -33996,432 +27057,160 @@ export const CAMPAIGN = [
     "mechanics": [
       "walls",
       "plate",
-      "box",
-      "delivery"
+      "and"
     ],
     "initialSwitches": {},
     "initialSelectors": {},
-    "channels": [
-      {
-        "id": "parcel-channel",
-        "fromBoard": 0,
-        "entry": 14,
-        "toBoard": 1,
-        "exit": 20
-      }
-    ],
-    "family": "support-handoff",
+    "family": "remote-support",
     "secondaryFamilies": [
-      "priority-change",
-      "final-command"
+      "axis-order",
+      "intermediate-stop"
     ],
-    "name": "Preparar a entrega",
-    "lesson": "Libere a saída do canal e reposicione a caixa recebida antes de usar o apoio.",
-    "discovery": "Aqui o jogador precisa descobrir que receber e orientar a caixa ainda não basta: o remetente precisa sustentar o retorno do receptor antes de abandonar a ajuda.",
+    "name": "Dois apoios juntos",
+    "lesson": "Prepare as duas placas ao mesmo tempo para abrir a cancela.",
+    "discovery": "Aqui o jogador precisa descobrir que dois animais precisam sustentar simultaneamente as condições de uma passagem.",
     "hints": [
-      "O canal precisa de uma saída livre antes do envio.",
-      "Receber ainda não basta: encontre a face que permite orientar a caixa para a placa.",
-      "Prepare as ajudas de retorno antes de abandonar uma placa."
+      "A cancela precisa das duas placas indicadas ocupadas, não apenas de uma.",
+      "Prepare as duas posições de apoio antes de tentar a travessia.",
+      "Na configuração inicial, comece para baixo; observe quem avança e quem espera."
     ],
-    "generatorVersion": 2,
-    "contentRevision": "sintonia-content-3",
-    "seed": "sintonia-campaign-v2:0500:0",
+    "generatorVersion": 3,
+    "contentRevision": "sintonia-content-4",
+    "seed": "sintonia-content4:80:0",
     "difficulty": 5,
     "solution": [
+      "down",
+      "left",
+      "down",
+      "down",
+      "down",
+      "up",
+      "up",
+      "right",
+      "right",
+      "down",
+      "right",
+      "down",
+      "right",
       "up",
       "left",
       "down",
       "left",
-      "down",
-      "right",
-      "up",
       "up",
       "left",
-      "up",
-      "right",
-      "down",
-      "down",
-      "down",
-      "up",
-      "right",
-      "right",
-      "up",
       "left",
-      "down",
-      "right",
-      "down",
       "right",
       "right",
       "down",
-      "right"
+      "left"
     ],
-    "signature": "st1-42420cc7-1169",
+    "signature": "st1-295a6659-664",
     "prerequisites": [
       "walls",
       "plate",
-      "box",
-      "delivery"
+      "and"
     ],
     "introduction": [],
     "parameters": {
       "difficulty": 5,
       "animals": 4,
-      "primary": "delivery",
+      "primary": "and",
       "secondary": null,
       "role": "synthesis",
-      "pattern": "receive-hold-return"
+      "pattern": null
     },
     "certificate": {
       "method": "breadth-first-witness-and-engine-replay",
       "rulesVersion": 1,
-      "commands": 26,
+      "commands": 24,
       "optimal": true,
-      "visited": 12253,
+      "visited": 3519,
       "replayed": true,
-      "engine": "unchanged-rules-1"
+      "engine": "unchanged-rules-1",
+      "firstVictoryAt": 24
     },
     "editorial": {
-      "source": "role-first-structure-and-automatic-curation",
-      "design": {
-        "requiredReceiverPushes": 2,
-        "senderApproach": "start-on-wrong-face; preserve upper bypass before sending",
-        "structures": {
-          "channel": "redistribute one finite box resource",
-          "receiverCircuit": "reach a different pushing face, not extend a corridor",
-          "receiverGate": "return while sender still holds its plate",
-          "helperChain": "give each extra animal a necessary support recipient"
-        },
-        "causalClaim": "Receiver begins on the channel exit. The exit must be cleared before transmission; the delivered box must be repositioned before supporting the final dependencies.",
-        "roles": [
-          "send resource, then wait for returned support",
-          "clear receiving space, reach the useful pushing face, and sustain support",
-          "hold the sender’s final passage before leaving through the box-supported passage",
-          "prepare the helper’s entrance before using the returned box support"
-        ],
-        "boxRoles": [
-          "transferred-resource",
-          "multi-direction-support",
-          "reciprocal-release"
-        ],
-        "dependencies": [
-          {
-            "from": 0,
-            "to": 1,
-            "kind": "resource-delivery"
-          },
-          {
-            "from": 1,
-            "to": 0,
-            "kind": "persistent-box-support"
-          },
-          {
-            "from": 2,
-            "to": 0,
-            "kind": "temporary-helper-support"
-          },
-          {
-            "from": 1,
-            "to": 2,
-            "kind": "returned-box-support"
-          },
-          {
-            "from": 3,
-            "to": 2,
-            "kind": "prepare-helper"
-          },
-          {
-            "from": 1,
-            "to": 3,
-            "kind": "returned-box-support"
-          },
-          {
-            "from": 0,
-            "to": 1,
-            "kind": "hold-return-before-final-crossing"
-          }
-        ],
-        "errors": [
-          "Sending while the receiver still occupies the exit does not transfer the box.",
-          "Pushing into a terminal corner can lose access to the next pushing face; undo remains available."
-        ],
-        "evidenceScope": "Claims describe the construction. Replay and controlled ablation are recorded separately; no human playtest or unique-solution claim.",
-        "pattern": "receive-hold-return",
-        "discovery": "receber e orientar a caixa ainda não basta: o remetente precisa sustentar o retorno do receptor antes de abandonar a ajuda"
-      },
+      "source": "procedural-structure-and-automatic-curation",
+      "design": null,
       "purpose": {
         "valid": true,
         "won": true,
         "evidenceScope": "supplied-command-sequence",
-        "commands": 26,
-        "boxes": [
-          {
-            "id": "parcel",
-            "origin": {
-              "id": "parcel",
-              "board": 0,
-              "cell": 13
-            },
-            "final": {
-              "id": "parcel",
-              "board": 1,
-              "cell": 9
-            },
-            "pushes": [
-              {
-                "command": 6,
-                "direction": "right",
-                "board": 0,
-                "from": 13,
-                "to": 14
-              },
-              {
-                "command": 7,
-                "direction": "up",
-                "board": 1,
-                "from": 20,
-                "to": 14
-              },
-              {
-                "command": 8,
-                "direction": "up",
-                "board": 1,
-                "from": 14,
-                "to": 8
-              },
-              {
-                "command": 11,
-                "direction": "right",
-                "board": 1,
-                "from": 8,
-                "to": 9
-              }
-            ],
-            "directionChanges": 2,
-            "deliveries": [
-              {
-                "command": 6,
-                "channelId": "parcel-channel",
-                "fromBoard": 0,
-                "toBoard": 1,
-                "entry": 14,
-                "exit": 20
-              }
-            ],
-            "postDeliveryPushes": [
-              {
-                "command": 7,
-                "direction": "up",
-                "board": 1,
-                "from": 20,
-                "to": 14
-              },
-              {
-                "command": 8,
-                "direction": "up",
-                "board": 1,
-                "from": 14,
-                "to": 8
-              },
-              {
-                "command": 11,
-                "direction": "right",
-                "board": 1,
-                "from": 8,
-                "to": 9
-              }
-            ],
-            "plateEntries": [
-              {
-                "command": 11,
-                "plateId": "arrival"
-              }
-            ],
-            "plateReleases": [],
-            "supportUses": [
-              {
-                "command": 13,
-                "plateId": "arrival",
-                "gateId": "helper-exit",
-                "receiverBoard": 2
-              },
-              {
-                "command": 15,
-                "plateId": "arrival",
-                "gateId": "helper-exit",
-                "receiverBoard": 2
-              },
-              {
-                "command": 23,
-                "plateId": "arrival",
-                "gateId": "delivery-gate",
-                "receiverBoard": 0
-              },
-              {
-                "command": 25,
-                "plateId": "arrival",
-                "gateId": "helper-exit",
-                "receiverBoard": 2
-              },
-              {
-                "command": 25,
-                "plateId": "arrival",
-                "gateId": "preparer-exit",
-                "receiverBoard": 3
-              }
-            ],
-            "observedRoles": [
-              "directional-reposition",
-              "gate-support",
-              "transferred-resource",
-              "recipient-reposition",
-              "local-stop"
-            ]
-          }
-        ],
+        "commands": 24,
+        "boxes": [],
         "dependencies": [
           {
-            "gateId": "delivery-gate",
-            "receiverBoard": 0,
+            "gateId": "together",
+            "receiverBoard": 2,
             "condition": {
-              "type": "plate",
-              "id": "arrival"
+              "type": "all",
+              "ids": [
+                "first",
+                "second"
+              ]
             },
             "controllers": [
               {
                 "type": "plate",
-                "id": "arrival",
-                "board": 1,
-                "cell": 9
-              }
-            ],
-            "crossingCommands": [
-              23
-            ]
-          },
-          {
-            "gateId": "delivery-final",
-            "receiverBoard": 0,
-            "condition": {
-              "type": "plate",
-              "id": "helper-release"
-            },
-            "controllers": [
-              {
-                "type": "plate",
-                "id": "helper-release",
-                "board": 2,
-                "cell": 4
-              }
-            ],
-            "crossingCommands": [
-              24
-            ]
-          },
-          {
-            "gateId": "delivery-home",
-            "receiverBoard": 1,
-            "condition": {
-              "type": "plate",
-              "id": "sender-release"
-            },
-            "controllers": [
-              {
-                "type": "plate",
-                "id": "sender-release",
+                "id": "first",
                 "board": 0,
-                "cell": 14
-              }
-            ],
-            "crossingCommands": [
-              22
-            ]
-          },
-          {
-            "gateId": "helper-exit",
-            "receiverBoard": 2,
-            "condition": {
-              "type": "plate",
-              "id": "arrival"
-            },
-            "controllers": [
+                "cell": 2
+              },
               {
                 "type": "plate",
-                "id": "arrival",
+                "id": "second",
                 "board": 1,
-                "cell": 9
+                "cell": 7
               }
             ],
             "crossingCommands": [
-              13,
-              15,
-              25
+              13
             ]
           },
           {
-            "gateId": "prepare-helper",
+            "gateId": "auxiliary-gate-3",
             "receiverBoard": 2,
             "condition": {
               "type": "plate",
-              "id": "prepare"
+              "id": "auxiliary-3"
             },
             "controllers": [
               {
                 "type": "plate",
-                "id": "prepare",
+                "id": "auxiliary-3",
                 "board": 3,
-                "cell": 1
+                "cell": 7
               }
             ],
             "crossingCommands": [
-              12,
-              18,
-              22
-            ]
-          },
-          {
-            "gateId": "preparer-exit",
-            "receiverBoard": 3,
-            "condition": {
-              "type": "plate",
-              "id": "arrival"
-            },
-            "controllers": [
-              {
-                "type": "plate",
-                "id": "arrival",
-                "board": 1,
-                "cell": 9
-              }
-            ],
-            "crossingCommands": [
-              25
+              4
             ]
           }
         ],
         "boardRoles": [
           {
             "board": 0,
-            "moved": 16,
-            "waited": 10,
-            "goalDepartures": 0
+            "moved": 11,
+            "waited": 13,
+            "goalDepartures": 3
           },
           {
             "board": 1,
-            "moved": 21,
-            "waited": 5,
-            "goalDepartures": 0
+            "moved": 14,
+            "waited": 10,
+            "goalDepartures": 3
           },
           {
             "board": 2,
-            "moved": 12,
-            "waited": 14,
+            "moved": 8,
+            "waited": 16,
             "goalDepartures": 0
           },
           {
             "board": 3,
-            "moved": 10,
-            "waited": 16,
-            "goalDepartures": 0
+            "moved": 16,
+            "waited": 8,
+            "goalDepartures": 3
           }
         ],
         "caveat": "Uso neste certificado não prova necessidade. Consulte tests/sintonia-purpose-audit.json para ablações e limites."
@@ -34441,50 +27230,43 @@ export const CAMPAIGN = [
         "reason": "Replay e ablações são evidências automáticas, não substitutos de avaliação editorial e testes humanos."
       },
       "humanPlaytested": false,
-      "discovery": "Aqui o jogador precisa descobrir que receber e orientar a caixa ainda não basta: o remetente precisa sustentar o retorno do receptor antes de abandonar a ajuda.",
+      "discovery": "Aqui o jogador precisa descobrir que dois animais precisam sustentar simultaneamente as condições de uma passagem.",
       "reasoning": {
         "used": [
-          "delivery",
-          "delivery-gate",
-          "plate-gate",
-          "push"
+          "and-gate",
+          "plate-gate"
         ],
-        "partialBlocks": 19,
+        "partialBlocks": 22,
         "goalDepartures": [
-          false,
-          false,
-          false,
-          false
-        ],
-        "unequalLoops": 53,
-        "directionChanges": 20,
-        "earlyTurns": 10,
-        "occupiedBoxPlate": true,
-        "boxAsStopAfterSupport": false,
-        "finalApproach": [
           true,
           true,
           false,
           true
+        ],
+        "unequalLoops": 66,
+        "directionChanges": 17,
+        "earlyTurns": 9,
+        "occupiedBoxPlate": false,
+        "boxAsStopAfterSupport": false,
+        "finalApproach": [
+          false,
+          false,
+          true,
+          false
         ]
       },
       "sweep": {
         "status": "complete",
-        "visited": 151,
+        "visited": 41,
         "resistant": true
       },
       "compatibility": "validated",
       "alternatives": "Uma sequência verificada é fornecida; outras soluções podem existir.",
-      "deadEnds": "A fase permite estados sem saída; desfazer e reiniciar são livres.",
-      "decision": "retain-logical-definition",
-      "retentionReason": "Quatro responsabilidades distintas: preparar, enviar, receber, devolver apoio e chegar conjuntamente.",
+      "deadEnds": "Mudanças de configuração podem exigir retornar a uma posição anterior.",
       "role": "synthesis",
-      "prerequisiteChapters": [
-        1,
-        2,
-        3,
-        5
-      ],
+      "decision": "recompose",
+      "curriculumReason": "Coordenar quatro papéis e duas condições sem acrescentar mecanismos.",
+      "retentionReason": "Coordenar quatro papéis e duas condições sem acrescentar mecanismos.",
       "antiSpam": {
         "singleDirection": {
           "tested": 4,
@@ -34492,7 +27274,7 @@ export const CAMPAIGN = [
         },
         "sweeps": {
           "status": "complete",
-          "visited": 151,
+          "visited": 41,
           "solves": false
         },
         "shortCycles": {
@@ -34500,323 +27282,102 @@ export const CAMPAIGN = [
           "winningPatterns": []
         },
         "biasedRandom": {
-          "runs": 12,
+          "runs": 24,
           "commandsPerRun": 128,
           "wins": 0
         },
         "uniformRandom": {
-          "runs": 12,
+          "runs": 24,
           "commandsPerRun": 128,
           "wins": 0
         },
         "interpretation": "Diagnóstico automático; ciclos curtos e acertos aleatórios não provam ausência de raciocínio. A varredura testa vitória após cada movimento."
       },
-      "repetition": {
-        "structuralSignature": "st1-42420cc7-1169",
-        "topologySignature": "top1-aa78f8f2-218",
-        "globallyRotatedOrReflectedDuplicate": false
-      },
-      "curriculumReason": "Quatro responsabilidades distintas: preparar, enviar, receber, devolver apoio e chegar conjuntamente.",
-      "animalRoles": [
+      "necessity": [
         {
-          "board": 0,
-          "logicalAnimal": "capivara",
-          "role": "send resource, then wait for returned support",
-          "controls": [
-            {
-              "id": "sender-release",
-              "type": "plate",
-              "receiverBoard": 1
-            }
-          ],
-          "goal": 16
-        },
-        {
-          "board": 1,
-          "logicalAnimal": "tuiuiu",
-          "role": "clear receiving space, reach the useful pushing face, and sustain support",
-          "controls": [
-            {
-              "id": "arrival",
-              "type": "plate",
-              "receiverBoard": 0
+          "avoid": {
+            "type": "helper-participation",
+            "board": 0
+          },
+          "result": {
+            "scope": "all-winning-solutions-avoiding-event",
+            "optimalScope": "avoiding-predicate-only",
+            "avoid": {
+              "type": "helper-participation",
+              "board": 0
             },
-            {
-              "id": "arrival",
-              "type": "plate",
-              "receiverBoard": 2
+            "budget": {
+              "maxStates": 90000,
+              "maxMs": 12000,
+              "maxDepth": null
             },
-            {
-              "id": "arrival",
-              "type": "plate",
-              "receiverBoard": 3
-            }
-          ],
-          "goal": 28
+            "status": "unsolvable",
+            "visited": 3167,
+            "optimal": false,
+            "exhaustive": true
+          }
         },
         {
-          "board": 2,
-          "logicalAnimal": "bemtevi",
-          "role": "hold the sender’s final passage before leaving through the box-supported passage",
-          "controls": [
-            {
-              "id": "helper-release",
-              "type": "plate",
-              "receiverBoard": 0
-            }
-          ],
-          "goal": 8
+          "avoid": {
+            "type": "helper-participation",
+            "board": 1
+          },
+          "result": {
+            "scope": "all-winning-solutions-avoiding-event",
+            "optimalScope": "avoiding-predicate-only",
+            "avoid": {
+              "type": "helper-participation",
+              "board": 1
+            },
+            "budget": {
+              "maxStates": 90000,
+              "maxMs": 12000,
+              "maxDepth": null
+            },
+            "status": "unsolvable",
+            "visited": 3167,
+            "optimal": false,
+            "exhaustive": true
+          }
         },
         {
-          "board": 3,
-          "logicalAnimal": "mico",
-          "role": "prepare the helper’s entrance before using the returned box support",
-          "controls": [
-            {
-              "id": "prepare",
-              "type": "plate",
-              "receiverBoard": 2
-            }
-          ],
-          "goal": 8
+          "avoid": {
+            "type": "helper-participation",
+            "board": 3
+          },
+          "result": {
+            "scope": "all-winning-solutions-avoiding-event",
+            "optimalScope": "avoiding-predicate-only",
+            "avoid": {
+              "type": "helper-participation",
+              "board": 3
+            },
+            "budget": {
+              "maxStates": 90000,
+              "maxMs": 12000,
+              "maxDepth": null
+            },
+            "status": "unsolvable",
+            "visited": 377,
+            "optimal": false,
+            "exhaustive": true
+          }
         }
       ],
-      "objectRoles": [
-        {
-          "board": 0,
-          "type": "boxes",
-          "id": "parcel",
-          "definition": {
-            "id": "parcel",
-            "cell": 13
-          },
-          "role": [
-            "transferred-resource",
-            "multi-direction-support",
-            "reciprocal-release"
-          ],
-          "evidenceScope": "definition-and-certified-witness; necessity requires separate audit"
-        },
-        {
-          "board": 0,
-          "type": "plates",
-          "id": "sender-release",
-          "definition": {
-            "id": "sender-release",
-            "cell": 14
-          },
-          "role": "Ocupação por animal ou caixa controla a passagem no estado anterior ao comando.",
-          "evidenceScope": "definition-and-certified-witness; necessity requires separate audit"
-        },
-        {
-          "board": 0,
-          "type": "gates",
-          "id": "delivery-gate",
-          "definition": {
-            "id": "delivery-gate",
-            "from": 14,
-            "to": 15,
-            "condition": {
-              "type": "plate",
-              "id": "arrival"
-            }
-          },
-          "role": {
-            "condition": {
-              "type": "plate",
-              "id": "arrival"
-            },
-            "crossings": [
-              23
-            ]
-          },
-          "evidenceScope": "definition-and-certified-witness; necessity requires separate audit"
-        },
-        {
-          "board": 0,
-          "type": "gates",
-          "id": "delivery-final",
-          "definition": {
-            "id": "delivery-final",
-            "from": 15,
-            "to": 16,
-            "condition": {
-              "type": "plate",
-              "id": "helper-release"
-            }
-          },
-          "role": {
-            "condition": {
-              "type": "plate",
-              "id": "helper-release"
-            },
-            "crossings": [
-              24
-            ]
-          },
-          "evidenceScope": "definition-and-certified-witness; necessity requires separate audit"
-        },
-        {
-          "board": 1,
-          "type": "plates",
-          "id": "arrival",
-          "definition": {
-            "id": "arrival",
-            "cell": 9
-          },
-          "role": "Ocupação por animal ou caixa controla a passagem no estado anterior ao comando.",
-          "evidenceScope": "definition-and-certified-witness; necessity requires separate audit"
-        },
-        {
-          "board": 1,
-          "type": "gates",
-          "id": "delivery-home",
-          "definition": {
-            "id": "delivery-home",
-            "from": 22,
-            "to": 28,
-            "condition": {
-              "type": "plate",
-              "id": "sender-release"
-            }
-          },
-          "role": {
-            "condition": {
-              "type": "plate",
-              "id": "sender-release"
-            },
-            "crossings": [
-              22
-            ]
-          },
-          "evidenceScope": "definition-and-certified-witness; necessity requires separate audit"
-        },
-        {
-          "board": 2,
-          "type": "plates",
-          "id": "helper-release",
-          "definition": {
-            "id": "helper-release",
-            "cell": 4
-          },
-          "role": "Ocupação por animal ou caixa controla a passagem no estado anterior ao comando.",
-          "evidenceScope": "definition-and-certified-witness; necessity requires separate audit"
-        },
-        {
-          "board": 2,
-          "type": "gates",
-          "id": "helper-exit",
-          "definition": {
-            "id": "helper-exit",
-            "from": 4,
-            "to": 7,
-            "condition": {
-              "type": "plate",
-              "id": "arrival"
-            }
-          },
-          "role": {
-            "condition": {
-              "type": "plate",
-              "id": "arrival"
-            },
-            "crossings": [
-              13,
-              15,
-              25
-            ]
-          },
-          "evidenceScope": "definition-and-certified-witness; necessity requires separate audit"
-        },
-        {
-          "board": 2,
-          "type": "gates",
-          "id": "prepare-helper",
-          "definition": {
-            "id": "prepare-helper",
-            "from": 1,
-            "to": 4,
-            "condition": {
-              "type": "plate",
-              "id": "prepare"
-            }
-          },
-          "role": {
-            "condition": {
-              "type": "plate",
-              "id": "prepare"
-            },
-            "crossings": [
-              12,
-              18,
-              22
-            ]
-          },
-          "evidenceScope": "definition-and-certified-witness; necessity requires separate audit"
-        },
-        {
-          "board": 3,
-          "type": "plates",
-          "id": "prepare",
-          "definition": {
-            "id": "prepare",
-            "cell": 1
-          },
-          "role": "Ocupação por animal ou caixa controla a passagem no estado anterior ao comando.",
-          "evidenceScope": "definition-and-certified-witness; necessity requires separate audit"
-        },
-        {
-          "board": 3,
-          "type": "gates",
-          "id": "preparer-exit",
-          "definition": {
-            "id": "preparer-exit",
-            "from": 5,
-            "to": 8,
-            "condition": {
-              "type": "plate",
-              "id": "arrival"
-            }
-          },
-          "role": {
-            "condition": {
-              "type": "plate",
-              "id": "arrival"
-            },
-            "crossings": [
-              25
-            ]
-          },
-          "evidenceScope": "definition-and-certified-witness; necessity requires separate audit"
-        },
-        {
-          "type": "channel",
-          "id": "parcel-channel",
-          "definition": {
-            "id": "parcel-channel",
-            "fromBoard": 0,
-            "entry": 14,
-            "toBoard": 1,
-            "exit": 20
-          },
-          "role": "Preparar saída livre antes do comando; enviar somente a caixa, receber, alcançar outra face e usar o apoio no destino. Entrega é atômica, sem prioridade entre painéis.",
-          "evidenceScope": "definition-and-certified-witness; necessity requires separate audit"
-        }
-      ],
-      "causalityReport": "tests/sintonia80-purpose-audit.json"
+      "causalityReport": "tests/sintonia-v4-editorial.json"
     },
     "number": 80,
     "chapter": 6,
-    "topologySignature": "top1-aa78f8f2-218",
-    "originNumber": 500,
+    "originNumber": 80,
     "origin": {
-      "kind": "curated-identical-logical-definition",
-      "catalog": "sintonia-content-2",
-      "number": 500,
+      "kind": "recomposed-removed-mechanics",
+      "catalog": "sintonia-content-3",
       "id": "sintonia-0500",
+      "number": 80,
       "version": 1,
-      "reason": "Quatro responsabilidades distintas: preparar, enviar, receber, devolver apoio e chegar conjuntamente."
+      "reason": "Coordenar quatro papéis e duas condições sem acrescentar mecanismos."
     },
-    "actorIntroduction": null
+    "actorIntroduction": null,
+    "topologySignature": "top1-8e7cd9f6-228"
   }
 ];

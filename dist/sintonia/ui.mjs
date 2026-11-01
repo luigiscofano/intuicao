@@ -1,9 +1,11 @@
 import {rulesPreviewMarkup} from '../rules-preview.mjs';
+import {selectAccessoryPalette} from './accessory-palette.mjs';
 import {sceneryIcon} from './scenery.mjs';
 import {accessoryIcon,accessoryEdgeIcon,wallOverlay} from './accessory-art.mjs';
-import {CAMPAIGN, CHAPTERS, DIFFICULTIES} from './campaign.mjs';
-import {RULES_VERSION, DIRECTIONS, initialState, transition, isWon, stateKey, validateLevel, replay, gateIsOpen} from './engine.mjs';
-import {createSintoniaService, restoreSintoniaSession, serializeSintoniaSession, commitSintoniaCommand, resolveSintoniaCampaignAttempt, isRetainedSintoniaAttempt, levelContentRevision, previouslyLearnedSintoniaMechanics, resolveArchivedSintoniaAttempt, archivedSintoniaLevel, sintoniaDefinitionKey} from './service.mjs';
+import {CAMPAIGN, CHAPTERS, DIFFICULTIES, CONTENT_REVISION} from './campaign.mjs';
+import {removedSintoniaMechanics,validateActiveSintoniaLevel} from './active-rules.mjs';
+import {RULES_VERSION, DIRECTIONS, initialState, transition, isWon, stateKey, replay, gateIsOpen} from './engine.mjs';
+import {createSintoniaService, restoreSintoniaSession, serializeSintoniaSession, commitSintoniaCommand, resolveSintoniaCampaignAttempt, isRetainedSintoniaAttempt, levelContentRevision, previouslyLearnedSintoniaMechanics, resolveArchivedSintoniaAttempt, archivedSintoniaLevel, sintoniaDefinitionKey, persistableSintoniaLevel} from './service.mjs';
 export {restoreSintoniaSession, serializeSintoniaSession, commitSintoniaCommand} from './service.mjs';
 import {ANIMAL_SPRITES, ANIMAL_NAMES, resolveAnimalRoster} from './animal-roster.mjs';
 import {createRestartConfirmation} from '../restart-confirmation.mjs';
@@ -20,53 +22,65 @@ const STORE = 'intuicao.sintonia.v1';
 const DIRECTIONS_UI = {up:['↑','cima'],right:['→','direita'],down:['↓','baixo'],left:['←','esquerda']};
 const MECHANIC_TEXT = {
   walls:['Paredes e recuos','Uma parede mantém um animal parado naquela direção, enquanto os outros continuam.'],
-  plate:['Placas de pressão','Animal ou caixa sobre uma placa mantém a cancela correspondente aberta. A abertura deste comando é a que existia antes de todos se moverem.'],
+  plate:['Placas de pressão','Um animal sobre uma placa mantém a cancela correspondente aberta. A abertura deste comando é a que existia antes de todos se moverem.'],
   switch:['Interruptores','Entrar e terminar sobre o interruptor alterna sua cancela. Sair não desfaz a mudança; ficar parado não aciona de novo.'],
   key:['Chaves','Terminar sobre uma chave abre sua cancela permanentemente nesta tentativa. Desfazer também restaura a chave.'],
-  box:['Caixas','Empurre uma caixa por vez. Sem espaço atrás, ela vira um apoio para parar; com espaço, ela se move. Caixas também sustentam placas.'],
   ice:['Gelo','Ao entrar no gelo, o animal desliza na direção escolhida até a primeira casa comum ou um bloqueio. Tudo conta como um comando.'],
-  portal:['Portais','Entrar em um portal leva ao seu par no mesmo tabuleiro e encerra o movimento daquele animal.'],
-  oneway:['Passagem de sentido único','A seta na divisória permite passar somente naquele sentido. Ela não move o animal automaticamente.'],
   alternate:['Cancelas alternativas','O mesmo interruptor alterna dois grupos: sol e lua. Quando um abre, o outro fecha.'],
-  fragile:['Pontes frágeis','A ponte desaparece depois que o animal sai dela. Pode esperar sobre ela à vontade; desfazer restaura a passagem.'],
-  handoff:['Revezamento','Um animal ou caixa pode assumir o apoio que outro precisa abandonar. Prepare a troca antes de sair.'],
+  handoff:['Revezamento','Um animal pode assumir o apoio que outro precisa abandonar. Prepare a troca antes de sair.'],
   and:['Duas condições','Esta cancela só abre quando as duas placas indicadas estão ocupadas ao mesmo tempo.'],
-  selector:['Seletores de conexão','Entrar e terminar no seletor troca qual cancela recebe a ajuda da placa. A nova conexão vale a partir do próximo comando.'],
-  delivery:['Entrega de caixas','Empurre a caixa para a entrada para enviá-la ao outro tabuleiro. Se a saída estiver ocupada ou for disputada, remetente e caixa ficam onde estavam.']
 };
 const esc = value => String(value ?? '').replace(/[&<>"']/g, char => ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[char]));
 const clone = value => structuredClone(value);
 const bounded = (value, min, max, fallback=min) => Number.isInteger(value) && value>=min && value<=max ? value : fallback;
 const coordinate = (cell, board) => `linha ${Math.floor(cell/board.cols)+1}, coluna ${cell%board.cols+1}`;
 const shortNumber = value => String(value).padStart(2,'0');
-const lessonText = level => String(level.lesson??'Prepare os caminhos em conjunto.').replace(/^Aqui o jogador precisa descobrir que\s+/i,'Descoberta deste nível: ');
+const lessonText = level => String(level.lesson??'Prepare os caminhos em conjunto.').replace(/^Aqui o jogador precisa descobrir que\s+/i,'Descoberta deste nível: ').replace(/Animal ou caixa sobre uma placa/g,'Um animal sobre uma placa');
+
+/** Apenas navegação editorial: não transfere histórico nem conclusões. */
+export function updatedSintoniaCampaignIndex(id,saved){
+  const current=CAMPAIGN.findIndex(item=>item.id===id);if(current>=0)return current;
+  const old=(saved?archivedSintoniaLevel(id,saved):null)??archivedSintoniaLevel(id,{contentRevision:'sintonia-content-3'});
+  const number=Number(old?.number);
+  return Number.isInteger(number)&&number>=1&&number<=CAMPAIGN.length?number-1:0;
+}
 
 export function freshSintoniaData() {
-  return {version:1,rulesVersion:RULES_VERSION,contentRevision:levelContentRevision(CAMPAIGN[0]),prefs:{advanced:false,rulesOpen:true,coordinates:false,autoAdvance:true},campaign:{lastId:null,completed:{},sessions:{},archivedCompleted:{}},endless:null,custom:null,learnedMechanics:[],events:[],lastView:{active:false,screen:'selection',mode:'campaign'}};
+  return {version:1,rulesVersion:RULES_VERSION,contentRevision:CONTENT_REVISION,prefs:{advanced:false,rulesOpen:true,coordinates:false,autoAdvance:true},campaign:{lastId:null,completed:{},sessions:{},archivedCompleted:{}},archivedAttempts:{},endless:null,custom:null,learnedMechanics:[],events:[],lastView:{active:false,screen:'selection',mode:'campaign'}};
 }
 
 export function normalizeSintoniaData(value) {
   const data=freshSintoniaData();
   if (!value || value.version!==1 || typeof value!=='object') return data;
+  data.archivedAttempts=value.archivedAttempts&&typeof value.archivedAttempts==='object'&&!Array.isArray(value.archivedAttempts)?clone(value.archivedAttempts):{};
   data.prefs={...data.prefs,...Object.fromEntries(Object.entries(value.prefs??{}).filter(([key,val])=>key in data.prefs&&typeof val==='boolean'))};
   if (value.campaign && typeof value.campaign==='object') {
     data.campaign.lastId=typeof value.campaign.lastId==='string'?value.campaign.lastId:null;
     data.campaign.completed=value.campaign.completed && typeof value.campaign.completed==='object' && !Array.isArray(value.campaign.completed)?value.campaign.completed:{};
     data.campaign.archivedCompleted=value.campaign.archivedCompleted && typeof value.campaign.archivedCompleted==='object' && !Array.isArray(value.campaign.archivedCompleted)?{...value.campaign.archivedCompleted}:{};
     data.campaign.completed={...data.campaign.completed};
-    for(const current of CAMPAIGN){
-      const completed=data.campaign.completed[current.id];if(!completed)continue;
-      const source=value.contentRevision===levelContentRevision(current)?current:archivedSintoniaLevel(current.id,{contentRevision:value.contentRevision});
+    for(const [id,completed] of Object.entries(data.campaign.completed)){
+      const current=CAMPAIGN.find(item=>item.id===id);
+      const source=value.contentRevision===CONTENT_REVISION?current:archivedSintoniaLevel(id,{contentRevision:value.contentRevision});
       const definitionKey=completed.definitionKey??(source?sintoniaDefinitionKey(source):null);
-      if(!definitionKey||definitionKey!==sintoniaDefinitionKey(current)){
-        data.campaign.archivedCompleted[`${value.contentRevision??'sintonia-content-1'}:${current.id}`]={id:current.id,contentRevision:value.contentRevision??'sintonia-content-1',definitionKey,result:completed};
-        delete data.campaign.completed[current.id];
-      }
+      if(!current||!definitionKey||definitionKey!==sintoniaDefinitionKey(current)){
+        data.campaign.archivedCompleted[`${value.contentRevision??'sintonia-content-1'}:${id}`]={id,contentRevision:value.contentRevision??'sintonia-content-1',definitionKey,result:completed};
+        delete data.campaign.completed[id];
+      }else data.campaign.completed[id]={...completed,definitionKey};
     }
     data.campaign.sessions=value.campaign.sessions && typeof value.campaign.sessions==='object' && !Array.isArray(value.campaign.sessions)?value.campaign.sessions:{};
   }
   if (value.endless && typeof value.endless==='object' && value.endless.current?.level) data.endless={...value.endless,version:1,baseSeed:bounded(value.endless.baseSeed,0,0xffffffff),startDifficulty:bounded(value.endless.startDifficulty,0,5),number:bounded(value.endless.number,1,Number.MAX_SAFE_INTEGER,1),solved:bounded(value.endless.solved,0,Number.MAX_SAFE_INTEGER),recentSignatures:Array.isArray(value.endless.recentSignatures)?value.endless.recentSignatures.filter(value=>typeof value==='string').slice(-24):[],recentFamilies:Array.isArray(value.endless.recentFamilies)?value.endless.recentFamilies.filter(value=>typeof value==='string').slice(-24):typeof value.endless.current.level.family==='string'?[value.endless.current.level.family]:[]};
   if (value.custom && typeof value.custom==='object') data.custom=value.custom;
+  // Arquivos nunca são reinterpretados como fases reformuladas. O conteúdo fica inerte.
+  for(const [id,saved] of Object.entries(data.campaign.sessions)){
+    const old=archivedSintoniaLevel(id,saved),current=CAMPAIGN.find(item=>item.id===id);
+    if(!current||!old||removedSintoniaMechanics(old).length||sintoniaDefinitionKey(old)!==sintoniaDefinitionKey(current)){const key=`campaign:${saved.contentRevision??value.contentRevision??'legacy'}:${id}`;data.archivedAttempts[key]??={kind:'campaign',id,source:'campaign.sessions',...(!saved.level&&old?{level:persistableSintoniaLevel(old)}:{})};}
+  }
+  for(const kind of ['endless','custom']){
+    const record=data[kind],old=kind==='endless'?record?.current?.level:record?.level;
+    if(old&&removedSintoniaMechanics(old).length)data.archivedAttempts[`${kind}:${levelContentRevision(old)}:${old.id}`]={kind,record:clone(record)};
+  }
   data.learnedMechanics=previouslyLearnedSintoniaMechanics(value,CAMPAIGN).filter(x=>typeof x==='string'&&x in MECHANIC_TEXT);
   data.events=Array.isArray(value.events)?value.events.slice(-500):[];
   if(value.lastView && typeof value.lastView==='object') data.lastView={active:value.lastView.active===true,screen:value.lastView.screen==='play'?'play':'selection',mode:['campaign','endless','custom','archive'].includes(value.lastView.mode)?value.lastView.mode:'campaign'};
@@ -120,7 +134,7 @@ export function initSintonia({hideOtherGames}) {
   try{data=normalizeSintoniaData(JSON.parse(localStorage.getItem(STORE)||'null'));}catch{data=freshSintoniaData();}
   let level=null,session=null,mode='campaign',index=0,screen='selection',daily=false;
   // Cosmetic identities stay separate from the certified level and history.
-  let animalRoster=[];
+  let animalRoster=[],accessoryPalette='C';
   const animalKey=board=>animalRoster[level?.boards.indexOf(board)]??board.animal;
   const animalName=board=>ANIMAL_NAMES[animalKey(board)]??'Animal';
   let rulesOpen=true,advanced=data.prefs.advanced,motion=null,storageWarning=false;
@@ -141,7 +155,7 @@ export function initSintonia({hideOtherGames}) {
   function save() {
     if(level&&session){
       const saved={...serializeSintoniaSession(session),animalRoster:animalRoster.slice()};
-      if(mode==='campaign'||mode==='archive'){data.campaign.lastId=level.id;data.campaign.sessions[level.id]=saved;}
+      if(mode==='campaign'||mode==='archive'){for(const record of Object.values(data.archivedAttempts)){if(record.source==='campaign.sessions'&&record.id===level.id&&data.campaign.sessions[level.id]){record.saved=clone(data.campaign.sessions[level.id]);delete record.source;if(record.saved.level)delete record.level;}}data.campaign.lastId=level.id;data.campaign.sessions[level.id]=saved;}
       else if(mode==='endless'&&data.endless?.current?.level?.id===level.id)data.endless.current.session=saved;
       else if(mode==='custom')data.custom={level:clone(level),session:saved};
     }
@@ -173,20 +187,21 @@ export function initSintonia({hideOtherGames}) {
     const viewMode=data.lastView.mode;
     showHost();
     if(viewMode==='endless'&&data.endless?.current?.level){resumeEndless();return true;}
-    if(viewMode==='custom'&&data.custom?.level){const verified=validateLevel(data.custom.level);if(verified.valid){start(data.custom.level,{mode:'custom',saved:data.custom.session});return true;}}
+    if(viewMode==='custom'&&data.custom?.level){const verified=validateActiveSintoniaLevel(data.custom.level);if(verified.valid){start(data.custom.level,{mode:'custom',saved:data.custom.session});return true;}selection();$('s-selection-status').textContent='Sua fase personalizada foi preservada em arquivo inerte. '+verified.errors.join(' ')+' Escolha uma fase atual ou importe outra definição.';return true;}
     const last=CAMPAIGN.findIndex(item=>item.id===data.campaign.lastId);
     if(last>=0){startCampaign(last);return true;}
     const archived=resolveArchivedSintoniaAttempt(data.campaign.lastId,data.campaign.sessions[data.campaign.lastId]);
-    if(archived.status==='resumed'){start(archived.level,{mode:'archive',saved:archived.saved});return true;}
-    selection();return true;
+    selection();if(archived.status==='blocked')$('s-selection-status').textContent='Sua tentativa anterior foi preservada em arquivo inerte. Os elementos retirados não podem mais ser jogados; escolha uma fase atual abaixo.';return true;
   }
 
   function selection() {
     save();cancelGeneration();invalidate();screen='selection';level=null;session=null;data.lastView={active:true,screen,mode:'campaign'};
     const completed=Object.keys(data.campaign.completed).filter(id=>CAMPAIGN.some(l=>l.id===id)).length;
-    const endlessSaved=!!data.endless?.current?.level;
-    host.innerHTML=`<div class="level-screen sintonia-selection"><p class="eyebrow">COLEÇÃO LÓGICA</p><h2 id="s-selection-title" tabindex="-1">SINTONIA ·</h2><p>Um comando, vários caminhos. Leve todos os animais aos seus destinos usando as mesmas setas.</p><div class="collection-toolbar selection-actions" role="group" aria-label="Ações do jogo"><button id="s-endless-entry" class="primary">Explorar modo livre</button><button id="s-daily" class="primary">Desafio de hoje</button></div><p class="collection-small">${completed} concluídos. Progresso salvo neste navegador.</p><p id="s-selection-status" role="status" aria-live="polite"></p>${rulesPreviewMarkup('sintonia')}<div id="s-catalog">${CHAPTERS.map((name,chapter)=>`<section class="s-chapter" aria-label="${esc(name)}"><h3 class="stage-heading">${shortNumber(chapter+1)} · ${esc(name)} <small>Níveis ${chapter*15+1}–${Math.min(chapter*15+15,CAMPAIGN.length)}</small></h3><div class="level-group">${CAMPAIGN.slice(chapter*15,chapter*15+15).map((item,offset)=>{const number=chapter*15+offset+1,done=data.campaign.completed[item.id],current=item.id===data.campaign.lastId;return `<button class="level-tile ${done?'done':''}" data-s-level="${number-1}" aria-label="Nível ${number}, ${esc(item.name)}, ${esc(difficultyName(item.difficulty))}, ${item.boards.length} animais, ${done?'concluído':'disponível'}" ${current?'aria-current="true"':''}><span>${number}</span><small>${done?(done.assisted?'✓ assistido':'✓ concluído'):current?'atual':'explorar'}</small></button>`;}).join('')}</div></section>`).join('')}</div>${importPanel()}</div>`;
+    const endlessSaved=!!data.endless?.current?.level&&validateActiveSintoniaLevel(data.endless.current.level).valid;
+    const archivedCount=Object.keys(data.archivedAttempts).length;
+    host.innerHTML=`<div class="level-screen sintonia-selection"><p class="eyebrow">COLEÇÃO LÓGICA</p><h2 id="s-selection-title" tabindex="-1">SINTONIA ·</h2><p>Um comando, vários caminhos. Leve todos os animais aos seus destinos usando as mesmas setas.</p><div class="collection-toolbar selection-actions" role="group" aria-label="Ações do jogo"><button id="s-endless-entry" class="primary">Explorar modo livre</button><button id="s-daily" class="primary">Desafio de hoje</button></div><p class="collection-small">${completed} concluídos. Progresso salvo neste navegador.</p><p id="s-selection-status" role="status" aria-live="polite">${archivedCount?'Tentativas anteriores preservadas em arquivo inerte. As fases reformuladas começam sem herdar conclusões; escolha um desafio atual para jogar.':''}</p>${archivedCount?'<button id="s-current-entry" type="button">Abrir uma fase atual</button>':''}${rulesPreviewMarkup('sintonia')}<div id="s-catalog">${CHAPTERS.map((name,chapter)=>`<section class="s-chapter" aria-label="${esc(name)}"><h3 class="stage-heading">${shortNumber(chapter+1)} · ${esc(name)} <small>Níveis ${chapter*15+1}–${Math.min(chapter*15+15,CAMPAIGN.length)}</small></h3><div class="level-group">${CAMPAIGN.slice(chapter*15,chapter*15+15).map((item,offset)=>{const number=chapter*15+offset+1,done=data.campaign.completed[item.id],current=item.id===data.campaign.lastId;return `<button class="level-tile ${done?'done':''}" data-s-level="${number-1}" aria-label="Nível ${number}, ${esc(item.name)}, ${esc(difficultyName(item.difficulty))}, ${item.boards.length} animais, ${done?'concluído':'disponível'}" ${current?'aria-current="true"':''}><span>${number}</span><small>${done?(done.assisted?'✓ assistido':'✓ concluído'):current?'atual':'explorar'}</small></button>`;}).join('')}</div></section>`).join('')}</div>${importPanel()}</div>`;
     host.querySelectorAll('[data-s-level]').forEach(button=>button.onclick=()=>startCampaign(Number(button.dataset.sLevel)));
+    if($('s-current-entry'))$('s-current-entry').onclick=()=>startCampaign(updatedSintoniaCampaignIndex(data.campaign.lastId,data.campaign.sessions[data.campaign.lastId]));
     $('s-daily').onclick=()=>startCampaign(dailyIndex('sintonia',new Date().toLocaleDateString('sv-SE'),CAMPAIGN.length),true);
     $('s-endless-entry').onclick=()=>endlessSaved?resumeEndless():newEndless(bounded(data.endless?.startDifficulty,0,5));
     bindImport();save();$('s-selection-title').focus({preventScroll:true});
@@ -207,9 +222,11 @@ export function initSintonia({hideOtherGames}) {
   }
 
   function start(next,{mode:nextMode='campaign',saved=null,fresh=false,notice=''}={}) {
+    const activeCheck=validateActiveSintoniaLevel(next);if(!activeCheck.valid){selection();$('s-selection-status').textContent='Tentativa preservada em arquivo inerte. '+activeCheck.errors.join(' ')+' Escolha uma fase atual para jogar.';return;}
     invalidate();level=next;mode=nextMode;screen='play';model=relationModel(level);recentDirection='';
     session=restoreSintoniaSession(level,fresh?null:saved);
     animalRoster=resolveAnimalRoster(level.boards.length,fresh?null:saved?.animalRoster);
+    accessoryPalette=selectAccessoryPalette(level,animalRoster);
     const unknown=(level.mechanics??[]).filter(id=>id in MECHANIC_TEXT&&!data.learnedMechanics.includes(id));
     rulesOpen=true;
     data.learnedMechanics=[...new Set([...data.learnedMechanics,...(level.mechanics??[]).filter(id=>id in MECHANIC_TEXT)])];
@@ -224,7 +241,7 @@ export function initSintonia({hideOtherGames}) {
   function resumeEndless() {
     const saved=data.endless?.current;
     if(!saved?.level){newEndless(0);return;}
-    const checked=validateLevel(saved.level);
+    const checked=validateActiveSintoniaLevel(saved.level);
     if(!checked.valid){selection();$('s-selection-status').textContent='Esta partida foi criada com uma definição incompatível. O histórico foi preservado; comece uma nova sequência para continuar.';return;}
     save();cancelGeneration();daily=false;start(saved.level,{mode:'endless',saved:saved.session});
   }
@@ -250,7 +267,7 @@ export function initSintonia({hideOtherGames}) {
 
   function verifyGenerated(result) {
     if(!result?.level)throw Error('Não foi possível preparar um desafio verificado.');
-    const check=validateLevel(result.level),solution=result.solution??result.level.solution;
+    const check=validateActiveSintoniaLevel(result.level),solution=result.solution??result.level.solution;
     if(!check.valid||!Array.isArray(solution)||!replay(result.level,solution).won)throw Error('O desafio não passou na verificação.');
     result.level.solution=solution;
   }
@@ -476,12 +493,12 @@ export function initSintonia({hideOtherGames}) {
     $('s-editor-check').onclick=()=>verifyCustom($('s-editor-json'),$('s-editor-status'),false);
     $('s-editor-play').onclick=()=>verifyCustom($('s-editor-json'),$('s-editor-status'),true);
     $('s-export').onclick=()=>download(`${level.id}.json`,cleanLevel(level));
-    $('s-export-stats').onclick=()=>{save();download('sintonia-metricas-locais.json',{version:1,game:'sintonia',exportedAt:new Date().toISOString(),completed:data.campaign.completed,campaignArchive:{currentIds:CAMPAIGN.map(item=>item.id),completed:data.campaign.archivedCompleted,sessions:data.campaign.sessions,learnedMechanics:data.learnedMechanics},endless:{solved:data.endless?.solved??0,number:data.endless?.number??0},events:data.events});};
+    $('s-export-stats').onclick=()=>{save();download('sintonia-metricas-locais.json',{version:1,game:'sintonia',exportedAt:new Date().toISOString(),completed:data.campaign.completed,campaignArchive:{inertAttempts:data.archivedAttempts,currentIds:CAMPAIGN.map(item=>item.id),completed:data.campaign.archivedCompleted,sessions:data.campaign.sessions,learnedMechanics:data.learnedMechanics},endless:{solved:data.endless?.solved??0,number:data.endless?.number??0},events:data.events});};
     $('s-show-coordinates').onchange=event=>{data.prefs.coordinates=event.target.checked;save();renderBoards();};
   }
 
   function importPanel() {
-    return `<details class="level-json-import json-import-disclosure" aria-labelledby="s-import-title"><summary id="s-import-title">Adicionar seu próprio nível em JSON</summary><p>Escolha um arquivo de SINTONIA. A verificação acontece neste navegador. Um arquivo inválido preserva sua partida anterior.</p><label class="file-button">Importar fase JSON<input id="s-import-file" type="file" accept="application/json,.json" aria-describedby="s-import-help s-import-status"></label><p id="s-import-help" class="collection-small">Máximo de 200 KB. Entre dois e quatro tabuleiros de até 8 × 8. Uma solução precisa ser verificada antes de jogar.</p><details><summary>Formato e exemplo de SINTONIA</summary><p>O exemplo inclui mapas, destinos, regras e uma sequência de solução. As casas são números começando em zero, em ordem de linha. Mantenha uma casa inicial e um destino por tabuleiro.</p><pre>${esc(JSON.stringify(cleanLevel(CAMPAIGN[0]),null,2))}</pre><button id="s-import-example">Baixar exemplo JSON</button></details><details><summary>Colar JSON</summary><label for="s-import-json">Dados do nível personalizado</label><textarea id="s-import-json" rows="10" maxlength="200000" spellcheck="false"></textarea><button id="s-import-paste">Verificar e jogar JSON</button></details><p id="s-import-status" role="status" aria-live="polite"></p></details>`;
+    return `<details class="level-json-import json-import-disclosure" aria-labelledby="s-import-title"><summary id="s-import-title">Adicionar seu próprio nível em JSON</summary><p>Escolha um arquivo de SINTONIA. A verificação acontece neste navegador. Um arquivo inválido preserva sua partida anterior.</p><label class="file-button">Importar fase JSON<input id="s-import-file" type="file" accept="application/json,.json" aria-describedby="s-import-help s-import-status"></label><p id="s-import-help" class="collection-small">Máximo de 200 KB. Entre dois e quatro tabuleiros de até 8 × 8. Uma solução precisa ser verificada antes de jogar. Use somente paredes, gelo, placas, interruptores, chaves e cancelas (incluindo sol e lua).</p><details><summary>Formato e exemplo de SINTONIA</summary><p>O exemplo inclui mapas, destinos, regras e uma sequência de solução. As casas são números começando em zero, em ordem de linha. Mantenha uma casa inicial e um destino por tabuleiro.</p><pre>${esc(JSON.stringify(cleanLevel(CAMPAIGN[0]),null,2))}</pre><button id="s-import-example">Baixar exemplo JSON</button></details><details><summary>Colar JSON</summary><label for="s-import-json">Dados do nível personalizado</label><textarea id="s-import-json" rows="10" maxlength="200000" spellcheck="false"></textarea><button id="s-import-paste">Verificar e jogar JSON</button></details><p id="s-import-status" role="status" aria-live="polite"></p></details>`;
   }
 
   function bindImport() {
@@ -500,7 +517,7 @@ export function initSintonia({hideOtherGames}) {
       if(!candidate||typeof candidate!=='object'||Array.isArray(candidate))throw Error('O JSON precisa conter a definição de um nível de SINTONIA.');
       if(candidate.game&&candidate.game!=='sintonia')throw Error('Este arquivo pertence a outro jogo. Use um nível de SINTONIA.');
       if(!Array.isArray(candidate.boards)||candidate.boards.some(board=>!board||typeof board!=='object'||!Number.isInteger(board.rows)||!Number.isInteger(board.cols)||board.rows<1||board.cols<1||board.rows>8||board.cols>8))throw Error('Cada tabuleiro precisa informar linhas e colunas inteiras entre 1 e 8.');
-      const checked=validateLevel(candidate);if(!checked.valid)throw Error(checked.errors.slice(0,4).join(' '));
+      const checked=validateActiveSintoniaLevel(candidate);if(!checked.valid)throw Error(checked.errors.slice(0,4).join(' '));
       let solution=candidate.solution;
       if(!Array.isArray(solution)||!replay(candidate,solution).won){
         const answer=await advisor.hint(candidate,initialState(candidate));if(!currentRequest())return;
@@ -542,8 +559,8 @@ export function initSintonia({hideOtherGames}) {
         const relations=[...(plate?[`plate:${plate.id}`]:[]),...(sw?[`switch:${sw.group}`]:[]),...(key?[`key:${key.id}`]:[]),...(selector?[`selector:${selector.group}`]:[]),...(portal?[`portal:${board.id}:${portal.id}`]:[]),...(channelIn?[`delivery:${channelIn.id}`]:[]),...(channelOut?[`delivery:${channelOut.id}`]:[])];
         const selected=relations.includes(inspectKey);
         let mark='';
-        if(plate)mark=`<span class="s-mechanism s-plate ${plateOccupied(plate.id)?'active':''}">${accessoryIcon('plate',plateOccupied(plate.id))}<b>${esc(model.labels.get(`plate:${plate.id}`))}</b></span>`;
-        else if(sw)mark=`<span class="s-mechanism s-switch ${state.switches[sw.group]?'active':''}">${accessoryIcon('switch',state.switches[sw.group])}<b>${esc(model.labels.get(`switch:${sw.group}`))} · ${state.switches[sw.group]?'☀':'☾'}</b></span>`;
+        if(plate)mark=`<span class="s-mechanism s-plate ${plateOccupied(plate.id)?'active':''}">${accessoryIcon('plate',plateOccupied(plate.id),accessoryPalette)}<b>${esc(model.labels.get(`plate:${plate.id}`))}</b></span>`;
+        else if(sw)mark=`<span class="s-mechanism s-switch ${state.switches[sw.group]?'active':''}">${accessoryIcon('switch',state.switches[sw.group],accessoryPalette)}<b>${esc(model.labels.get(`switch:${sw.group}`))} · ${state.switches[sw.group]?'☀':'☾'}</b></span>`;
         else if(key&&!state.keys.includes(key.id))mark=`<span class="s-mechanism s-key">${accessoryIcon('key')}<b>${esc(model.labels.get(`key:${key.id}`))}</b></span>`;
         else if(selector)mark=`<span class="s-mechanism s-selector">${accessoryIcon('selector',state.selectors[selector.group])}<b>${esc(model.labels.get(`selector:${selector.group}`))} · ${state.selectors[selector.group]?'B':'A'}</b></span>`;
         else if(portal)mark=`<span class="s-mechanism s-portal">${accessoryIcon('portal')}<b>${esc(model.labels.get(`portal:${board.id}:${portal.id}`))}</b></span>`;
@@ -553,7 +570,7 @@ export function initSintonia({hideOtherGames}) {
         cells.push(`<span class="s-tile ${blocked?'wall':'floor'} ${broken?'collapsed':''} ${ice.has(cell)?'ice':''} ${fragile.has(cell)?'fragile':''} ${goal?'goal':''} ${arrived&&goal?'goal-occupied':''} ${selected?'s-highlight':''}" role="img" aria-label="${esc(title)}" title="${esc(title)}" ${relations.length?`data-s-inspect="${esc(relations[0])}"`:''}><span class="s-terrain" aria-hidden="true">${ice.has(cell)?`<span class="s-floor-art">${accessoryIcon('ice')}</span>`:''}${fragile.has(cell)?`<span class="s-floor-art">${accessoryIcon('bridge',broken)}</span>`:''}${goal?`<span class="s-goal-ring">${accessoryIcon('goal',arrived)}</span>`:''}${mark}${box?`<span class="s-box">${accessoryIcon('box',!!plate)}</span>`:''}${data.prefs.coordinates&&!blocked?`<span class="s-coord">${Math.floor(cell/board.cols)+1},${cell%board.cols+1}</span>`:''}</span>${animal?spriteMarkup(board):''}</span>`);
       }
       const edges=(board.gates??[]).map(gate=>edgeMarkup(board,gate,gateIsOpen(level,state,gate),conditionLabel(gate.condition,model),conditionKeys(gate.condition))).join('')+(board.oneWays??[]).map(edge=>edgeMarkup(board,edge,true,edge.to-edge.from===1?'→':edge.to-edge.from===-1?'←':edge.to>edge.from?'↓':'↑',[],true)).join('');
-      const description=`${animalName(board)}: ${coordinate(state.positions[boardIndex],board)}. Destino: ${coordinate(board.goal,board)}. ${arrived?'Está no destino.':'Ainda fora do destino.'} Tabuleiro de ${board.rows} linhas por ${board.cols} colunas. ${state.boxes.filter(box=>box.board===boardIndex).length} caixas.`;
+      const description=`${animalName(board)}: ${coordinate(state.positions[boardIndex],board)}. Destino: ${coordinate(board.goal,board)}. ${arrived?'Está no destino.':'Ainda fora do destino.'} Tabuleiro de ${board.rows} linhas por ${board.cols} colunas. `;
       const edgeDescriptions=(board.gates??[]).map(gate=>`Cancela ${conditionLabel(gate.condition,model)} entre ${coordinate(gate.from,board)} e ${coordinate(gate.to,board)}: ${gateIsOpen(level,state,gate)?'aberta':'fechada'}.`).concat((board.oneWays??[]).map(edge=>`Sentido único de ${coordinate(edge.from,board)} para ${coordinate(edge.to,board)}.`));
       return `<section class="s-animal-board ${arrived?'arrived':''}" style="--cols:${board.cols};--rows:${board.rows}" aria-labelledby="s-animal-${boardIndex}"><div class="s-board-heading"><h3 id="s-animal-${boardIndex}">${esc(animalName(board))}</h3><span>${arrived?'✓ no destino':'○ a caminho'}</span></div><div class="s-map" role="group" aria-label="${esc(description)}">${cells.join('')}${wallOverlay(board)}<div class="s-edge-overlay" aria-hidden="true">${edges}</div></div><p class="sr-only">${esc(edgeDescriptions.join(' '))}</p></section>`;
     }).join('');

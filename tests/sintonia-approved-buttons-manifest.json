@@ -1,0 +1,140 @@
+{
+  "palettes": {
+    "C": {
+      "name": "Terracota",
+      "base": "#cf957d",
+      "light": "#f0ccb8",
+      "shade": "#a76f59"
+    },
+    "D": {
+      "name": "Azul-petróleo",
+      "base": "#7faaa9",
+      "light": "#c4dfd8",
+      "shade": "#557f80"
+    },
+    "E": {
+      "name": "Lilás suave",
+      "base": "#b09bc5",
+      "light": "#dfd2ea",
+      "shade": "#88749e"
+    }
+  },
+  "unchanged": {
+    "outline": "#34443a",
+    "woodDark": "#77543b",
+    "wood": "#b77b43",
+    "woodLight": "#e8b975",
+    "offIndicator": "#587447",
+    "onIndicator": "#d6b86b"
+  },
+  "files": [
+    {
+      "filename": "C-plate-0.png",
+      "sha256": "1ffe524b5d6286168e2214c70b54cabba4387e0264d697ab01018d1e452eda31"
+    },
+    {
+      "filename": "C-plate-0.svg",
+      "sha256": "e7f9e083de76b22d2bc0aa5d85d16203f63e4898cfa3c3096030d9c9d852d766"
+    },
+    {
+      "filename": "C-plate-1.png",
+      "sha256": "f8a679fb1ddb2c45a70e731e324f46cf85b0b0dba7cc5883d85faf7dc95da9c9"
+    },
+    {
+      "filename": "C-plate-1.svg",
+      "sha256": "91e11f0d4f53038cc2064cf4cf6b28f888d42fd3525fb0537122bea01b2354d7"
+    },
+    {
+      "filename": "C-switch-0.png",
+      "sha256": "81f211b6e62952627045b335ea0e5031f399ffebc51305539afdc06bf28ee368"
+    },
+    {
+      "filename": "C-switch-0.svg",
+      "sha256": "40fbcd32b27cbf4a261ec7314647019bdb2fbe382973bb2b9522e4ef832063c4"
+    },
+    {
+      "filename": "C-switch-1.png",
+      "sha256": "a71db5cdfc19443768949d5a9a7b50253fc88ba3c2444c70eadcc4a610e11c73"
+    },
+    {
+      "filename": "C-switch-1.svg",
+      "sha256": "edacd8ea25a855c85cab869635e1d8ad6bba259c77907a7bcc83f06019f9ddda"
+    },
+    {
+      "filename": "D-plate-0.png",
+      "sha256": "20d4c129673a14b331c79912b3afbdb714e522e2fce436fa8a95e38d880ceb95"
+    },
+    {
+      "filename": "D-plate-0.svg",
+      "sha256": "703ff4f6f15a0a2dec984c1715ded412d2656df10ee491197ea3ce3a8cd83998"
+    },
+    {
+      "filename": "D-plate-1.png",
+      "sha256": "5b2d43d5606d9c09320743d9e7f2af05d47283649a76d4ecc9e5b12f4dd86ef3"
+    },
+    {
+      "filename": "D-plate-1.svg",
+      "sha256": "3688dc4b7245d6123576173b9f7d495efc94dbc904f9a5255fb83ea233c7ab6f"
+    },
+    {
+      "filename": "D-switch-0.png",
+      "sha256": "8415fbc57d14ef3f75edcfe28a4bffc4613b02b14870ee47b3a2e4c1f940180f"
+    },
+    {
+      "filename": "D-switch-0.svg",
+      "sha256": "b45bfbe99d27eb93018336275715920d3c6c5ff004c9bcb1614983aed0f1eea3"
+    },
+    {
+      "filename": "D-switch-1.png",
+      "sha256": "ec89279b8815b7893fc5cdf5eb354d06299fc75a5836cb9f706eb189c1ebcda2"
+    },
+    {
+      "filename": "D-switch-1.svg",
+      "sha256": "a8e9e4a9770f8fd672459714252234b58181bad456c2ee3e6a2aaf5038bf86b6"
+    },
+    {
+      "filename": "E-plate-0.png",
+      "sha256": "b2944cb12381d14f92e913d75d3f9818582cb322a9caf9010524cd7cea5b54db"
+    },
+    {
+      "filename": "E-plate-0.svg",
+      "sha256": "b4db2b696f19ba1bcc50bf186cbc105b27a86af3fe8355651bbffca5cfc96cb7"
+    },
+    {
+      "filename": "E-plate-1.png",
+      "sha256": "41d788587ba16c15b37991b2748929ecf984ddb9fa6211faf33029a723518edc"
+    },
+    {
+      "filename": "E-plate-1.svg",
+      "sha256": "8c7f6222490cd6adb374b07e2c677cafa49a03e7eedf72aa4e808ef03ec16034"
+    },
+    {
+      "filename": "E-switch-0.png",
+      "sha256": "5367715d7429675dcd8eae2290447c9068b71880ff4e9da3eee1d596da348afe"
+    },
+    {
+      "filename": "E-switch-0.svg",
+      "sha256": "61f320d10f3de5f48262752751503aaddb92de52e16832028c0bd20579fc8718"
+    },
+    {
+      "filename": "E-switch-1.png",
+      "sha256": "b01962459d0f65330ddbe0431d8f144ee844b81a4cd621c9d838658f2bd90f7a"
+    },
+    {
+      "filename": "E-switch-1.svg",
+      "sha256": "eb2b1d570e8ca550968ac6159ce786ba0685ee1a9d68e609e9dd61640c4b805b"
+    }
+  ],
+  "qa": {
+    "pngCount": 12,
+    "svgCount": 12,
+    "nativeSize": [
+      32,
+      32
+    ],
+    "sourceBytesPreserved": true,
+    "geometryIdentical": true,
+    "alphaMasksIdentical": true,
+    "proposalLibrary": "libfile_431da6cd5604819187b9b57ebc6973a1"
+  }
+}

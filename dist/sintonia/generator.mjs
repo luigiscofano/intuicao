@@ -1,29 +1,23 @@
 /** Seeded SINTONIA authoring and Endless generation. Every returned level is replay-certified. */
 import {RULES_VERSION, DIRECTIONS, initialState, transition, stateKey, isWon, validateLevel, replay, solveLevel} from './engine.mjs';
 
-import {buildBoxBoard,buildBoxDesign} from './box-design.mjs';
-import {buildDeliveryDesign} from './delivery-design.mjs';
-import {buildObstacleDesign,OBSTACLE_PRIMARIES} from './obstacle-design.mjs';
+import {validateActiveSintoniaLevel} from './active-rules.mjs';
+
+import {buildObstacleDesign} from './obstacle-design.mjs';
 import {analyzePurpose,findAvoidingSolution} from './purpose.mjs';
-export const GENERATOR_VERSION = 2;
-export const CONTENT_REVISION = 'sintonia-content-2';
-export const DIFFICULTIES = Object.freeze(['Muito fácil','Básico','Intermediário','Avançado','Especialista','Mestre']);
-export const CHAPTERS = Object.freeze(['Primeiros passos','Paredes que ajudam','Ir para voltar','Um ajuda o outro','O cenário muda','Preparar caminhos','A terceira voz','Construir apoios','Distâncias diferentes','Atalhos','Escolher quando passar','Dois caminhos','Antes de voltar','Revezamento','Duas condições','A quarta voz','Conexões','Um recurso compartilhado','Tudo se encaixa','Sintonia']);
+export const GENERATOR_VERSION = 3;
+export const CONTENT_REVISION = 'sintonia-content-4';
+export const DIFFICULTIES = Object.freeze(['Básico','Aprendiz','Intermediário','Avançado','Mestre','Modo Sábio']);
+export const CHAPTERS = DIFFICULTIES;
 export const MECHANICS = Object.freeze([
   {id:'walls',label:'Paredes e recuos',description:'Todos recebem a mesma seta. Quem encontra uma parede fica parado.',introducedChapter:1,difficulty:0},
-  {id:'plate',label:'Placas de pressão',description:'Animal ou caixa sobre uma placa mantém aberta a cancela com o mesmo símbolo. A posição final vale para o próximo comando.',introducedChapter:4,difficulty:1},
+  {id:'plate',label:'Placas de pressão',description:'Animal sobre uma placa mantém aberta a cancela com o mesmo símbolo. A posição final vale para o próximo comando.',introducedChapter:4,difficulty:1},
   {id:'switch',label:'Interruptores',description:'Entrar no interruptor alterna a cancela. Sair preserva a configuração; ficar parado não aciona novamente.',introducedChapter:5,difficulty:2},
   {id:'key',label:'Chaves',description:'Terminar sobre uma chave libera permanentemente a cancela com o mesmo símbolo.',introducedChapter:6,difficulty:2},
-  {id:'box',label:'Caixas',description:'Empurre uma caixa por vez. Uma caixa pode sustentar uma placa; só bloqueia quando não pode ser empurrada.',introducedChapter:8,difficulty:2},
   {id:'ice',label:'Gelo',description:'Ao entrar no gelo, o animal segue na direção da seta até o primeiro piso comum ou bloqueio.',introducedChapter:9,difficulty:2},
-  {id:'portal',label:'Portais',description:'Entrar em um portal leva ao seu par no mesmo tabuleiro e encerra aquele deslocamento.',introducedChapter:10,difficulty:3},
-  {id:'oneway',label:'Sentido único',description:'A seta na divisória permite atravessar apenas no sentido indicado. Ela não move o animal sozinha.',introducedChapter:11,difficulty:3},
   {id:'alternate',label:'Sol e lua',description:'Um interruptor alterna dois conjuntos de cancelas: enquanto um abre, o outro fecha.',introducedChapter:12,difficulty:3},
-  {id:'fragile',label:'Pontes frágeis',description:'A ponte permanece enquanto o animal está nela. Quando ele sai, a casa desaparece. Desfazer restaura a ponte.',introducedChapter:13,difficulty:3},
   {id:'handoff',label:'Revezamento',description:'Uma ajuda prepara a seguinte: atravesse, ocupe a próxima placa e libere o caminho de quem ajudou.',introducedChapter:14,difficulty:3},
   {id:'and',label:'Duas condições',description:'A cancela só abre quando as duas placas indicadas estão ocupadas. Observe os dois símbolos.',introducedChapter:15,difficulty:4},
-  {id:'selector',label:'Seletores',description:'Entrar no seletor muda qual cancela recebe a ajuda da placa. A nova ligação vale no próximo comando.',introducedChapter:17,difficulty:4},
-  {id:'delivery',label:'Entrega de caixas',description:'Empurre a caixa na entrada para enviá-la a outro tabuleiro. Se a saída não estiver livre, o empurrão inteiro é bloqueado.',introducedChapter:18,difficulty:4}
 ]);
 export const REASONING_FAMILIES = Object.freeze([
   'wall-adjust','waiting-place','intermediate-stop','unequal-loop','axis-order','goal-transit','priority-change','final-command','remote-support','support-handoff','dual-use-object','preserve-access','scenario-choice','help-recipient'
@@ -91,9 +85,7 @@ function decorateGrowth(rng,board,protectedEdges=[],extra=3){
   }
   board.walkable.sort((a,b)=>a-b);return board;
 }
-function boxBoard(rng,index,difficulty){
-  return buildBoxBoard(rng,index,{pattern:pick(rng,['turn-and-support','park-and-retrieve'])});
-}
+
 function portalBoard(rng,index,difficulty){
   const rows=integer(rng,3,4),cols=5;
   const board={id:`b${index}`,animal:ANIMALS[index],rows,cols,walkable:[],start:0,goal:4};
@@ -130,30 +122,19 @@ function candidate(rng,{difficulty,animals,primary,secondary,introduction=false,
     if(type==='key'){helper.keys=[{id:'key0',cell:cellFor(rng,helper)}];condition={type:'key',id:'key0'};}
     receiver.gates=[{id:`${type}-gate`,from:edge.from,to:edge.to,condition}];putConstraint(1,edge.far);used.add(0);used.add(1);addMechanic(type);
   };
-  if(OBSTACLE_PRIMARIES.includes(primary))applyDesign(buildObstacleDesign(rng,{primary,animals,difficulty,introduction,makeBoard,preparationControl}));
+  if(['key','switch'].includes(primary))applyDesign(buildObstacleDesign(rng,{primary,animals,difficulty,introduction,makeBoard,preparationControl}));
   else if(['plate','switch','key'].includes(primary))ordinaryPair(primary);
-  else if(primary==='box'){
-    applyDesign(buildBoxDesign(rng,{animals,difficulty,pattern,includeSupportedStop}));
-  }else if(primary==='portal'){
-    const {board,region}=portalBoard(rng,0,difficulty);level.boards[0]=board;putConstraint(0,region);used.add(0);addMechanic('portal');
-  }else if(['ice','fragile'].includes(primary)){
-    const {board,region}=straightSpecialBoard(rng,0,difficulty,primary);level.boards[0]=board;putConstraint(0,region);used.add(0);addMechanic(primary);
-  }else if(primary==='oneway'){
-    const {board}=replacePath(0,5),edge=gateTarget(rng,board);board.oneWays=[{from:edge.from,to:edge.to}];putConstraint(0,edge.far);used.add(0);addMechanic(primary);
-  }else if(primary==='alternate'||primary==='selector'){
+  else if(primary==='ice'){
+    const {board,region}=straightSpecialBoard(rng,0,difficulty,'ice');level.boards[0]=board;putConstraint(0,region);used.add(0);addMechanic('ice');
+  }else if(primary==='alternate'){
     const helper=level.boards[0],{board,path}=replacePath(1,6);
     const edges=bridges(board).map(({a,b})=>[a,b]).filter(([a,b])=>path.includes(a)&&path.includes(b));
     if(edges.length<3)throw new Error('no-serial-gates');
     const firstIndex=integer(rng,1,Math.max(1,path.length-4)),lastIndex=integer(rng,firstIndex+2,path.length-2);
     const first=[path[firstIndex-1],path[firstIndex]],last=[path[lastIndex-1],path[lastIndex]];
     if(reachable(board,board.start,[first]).has(path.at(-1))||reachable(board,board.start,[last]).has(path.at(-1)))throw new Error('serial-gate-bypass');
-    if(primary==='alternate'){
       helper.switches=[{id:'sky',cell:cellFor(rng,helper),group:'sky'}];
       board.gates=[{id:'moon',from:first[0],to:first[1],condition:{type:'switch',id:'sky',value:false}},{id:'sun',from:last[0],to:last[1],condition:{type:'switch',id:'sky',value:true}}];addMechanic('switch');
-    }else{
-      helper.plates=[{id:'choice-plate',cell:cellFor(rng,helper)}];helper.selectors=[{id:'choice',cell:cellFor(rng,helper),group:'choice'}];
-      board.gates=[{id:'choice-left',from:first[0],to:first[1],condition:{type:'selected',plate:'choice-plate',selector:'choice',value:0}},{id:'choice-right',from:last[0],to:last[1],condition:{type:'selected',plate:'choice-plate',selector:'choice',value:1}}];addMechanic('plate');
-    }
     addMechanic(primary);putConstraint(1,reachable(board,last[1],[last]));used.add(0);used.add(1);
   }else if(primary==='handoff'){
     const {board:a}=replacePath(0,5),{board:b}=replacePath(1,5),ea=gateTarget(rng,a),eb=gateTarget(rng,b);
@@ -163,34 +144,26 @@ function candidate(rng,{difficulty,animals,primary,secondary,introduction=false,
     a.gates=[{id:'relay-return',from:ea.from,to:ea.to,condition:{type:'plate',id:'relay-b'}}];b.gates=[{id:'relay-out',from:eb.from,to:eb.to,condition:{type:'plate',id:'relay-a'}}];
     putConstraint(0,ea.far);putConstraint(1,eb.far);used.add(0);used.add(1);addMechanic('plate');addMechanic('handoff');
   }else if(primary==='and'){
-    if(animals===2){
-      const {board,region}=boxBoard(rng,0,difficulty);board.gates[0].condition={type:'all',ids:['weight','second']};level.boards[0]=board;level.boards[1].plates=[{id:'second',cell:cellFor(rng,level.boards[1])}];putConstraint(0,region);addMechanic('box');
-    }else{
+    if(animals<3)throw new Error('and-requires-three-animals');
+
       level.boards[0].plates=[{id:'first',cell:cellFor(rng,level.boards[0])}];level.boards[1].plates=[{id:'second',cell:cellFor(rng,level.boards[1])}];const {board}=replacePath(2,5),edge=gateTarget(rng,board);board.gates=[{id:'together',from:edge.from,to:edge.to,condition:{type:'all',ids:['first','second']}}];putConstraint(2,edge.far);used.add(2);
-    }
     used.add(0);used.add(1);addMechanic('plate');addMechanic('and');
-  }else if(primary==='delivery'){
-    applyDesign(buildDeliveryDesign(rng,{animals,difficulty,introduction,variant:pattern,prepareSender}));
   }
+
   // Secondary concepts occupy another board, or a separate uncomplicated
   // corridor. Never place box-accessible ice, portals or fragile tiles.
   if(secondary&&secondary!==primary){
     const free=Array.from({length:animals},(_,i)=>i).filter(i=>!used.has(i));
     const index=free.length?pick(rng,free):null;
-    if(index!==null&&['ice','fragile','portal','oneway'].includes(secondary)){
-      if(secondary==='portal'){const result=portalBoard(rng,index,difficulty);level.boards[index]=result.board;putConstraint(index,result.region);}
-      else if(secondary==='oneway'){const {board}=replacePath(index,5),edge=gateTarget(rng,board);board.oneWays=[{from:edge.from,to:edge.to}];putConstraint(index,edge.far);}
-      else{const result=straightSpecialBoard(rng,index,difficulty,secondary);level.boards[index]=result.board;putConstraint(index,result.region);}
-      addMechanic(secondary);required.add(secondary);used.add(index);
-    }else if(index!==null&&secondary==='box'){
-      const result=boxBoard(rng,index,difficulty);level.boards[index]=result.board;putConstraint(index,result.region);addMechanic('plate');addMechanic('box');required.add('box-support-gate');used.add(index);
+    if(index!==null&&secondary==='ice'){
+      const result=straightSpecialBoard(rng,index,difficulty,'ice');level.boards[index]=result.board;putConstraint(index,result.region);addMechanic('ice');required.add('ice');used.add(index);
     }else if(primary==='walls'&&['plate','switch','key'].includes(secondary)){
       ordinaryPair(secondary);for(const item of PRIMARY_REQUIRED[secondary])required.add(item);
     }
   }
   // Every additional animal in a control composition owns a preparation cut.
   // Do not leave a fourth panel as a copy or a decorative independent corridor.
-  if(['plate','alternate','selector','handoff','and'].includes(primary))for(let index=0;index<animals;index++)if(!used.has(index)){
+  if(['plate','alternate','handoff','and'].includes(primary))for(let index=0;index<animals;index++)if(!used.has(index)){
     const available=[];
     for(const [target,goals] of constraints){const board=level.boards[target];for(const edge of bridges(board)){
       const near=edge.side.has(board.start)?edge.side:edge.other,far=edge.side.has(board.start)?edge.other:edge.side;
@@ -458,7 +431,7 @@ export function antiSpamAudit(level,{maxMs=2000,sweep=true,randomRuns=16}={}){
 }
 
 function chooseMechanics(rng,difficulty,learnedMechanics,requested,recentFamilies=[]){
-  if(requested)return {primary:requested.primary||'walls',secondary:requested.secondary||null,introduction:requested.introduction||false};
+  if(requested){for(const id of [requested.primary||'walls',requested.secondary].filter(Boolean))if(!MECHANICS.some(m=>m.id===id)){const e=new Error('Mecânica indisponível nesta versão de SINTONIA.');e.code='REMOVED_MECHANIC';throw e;}return {primary:requested.primary||'walls',secondary:requested.secondary||null,introduction:requested.introduction||false};}
   const unlocked=MECHANICS.filter(m=>m.difficulty<=difficulty).map(m=>m.id),learned=Array.isArray(learnedMechanics)?new Set(['walls',...learnedMechanics]):null;
   const available=learned?unlocked.filter(m=>learned.has(m)):unlocked;
   const unknown=learned?unlocked.filter(m=>!learned.has(m)):[];
@@ -466,17 +439,20 @@ function chooseMechanics(rng,difficulty,learnedMechanics,requested,recentFamilie
   // remains available immediately, but does not silently require several rules.
   const mechanicFamilies=mechanic=>mechanic==='walls'?WALL_FAMILIES:[FAMILY_BY_MECHANIC[mechanic]];
   const primary=unknown.length?unknown[0]:preferUnrecent(rng,available.length?available:['walls'],recentFamilies,mechanicFamilies);
-  const secondary=!unknown.length&&difficulty>=2&&rng()<.65?preferUnrecent(rng,available.filter(m=>m!==primary&&['box','ice','portal','oneway','fragile'].includes(m)),recentFamilies,mechanicFamilies):null;
+  const secondary=!unknown.length&&difficulty>=2&&rng()<.65?preferUnrecent(rng,available.filter(m=>m!==primary&&['ice'].includes(m)),recentFamilies,mechanicFamilies):null;
   return {primary,secondary,introduction:unknown.length>0};
 }
 
 /** Generate a complete definition. A timeout throws; it is never interpreted as
  * a proof of impossibility and no unverified candidate escapes this function. */
+export function assertActiveGenerationOptions({profile,animals}={}){if(profile){for(const id of [profile.primary||'walls',profile.secondary].filter(Boolean))if(!MECHANICS.some(m=>m.id===id)){const e=new Error('Mecânica indisponível nesta versão de SINTONIA.');e.code='REMOVED_MECHANIC';throw e;}if(profile.primary==='and'&&Number(animals)===2){const e=new Error('Duas condições exige ao menos três animais, sem caixas.');e.code='AND_REQUIRES_THREE_ANIMALS';throw e;}}}
 export function generateLevel(seed,{difficulty=0,animals,learnedMechanics,recentSignatures=[],recentFamilies=[],maxStates=18000,maxMs=6500,profile,strictSweep=false}={}){
+  assertActiveGenerationOptions({profile,animals});
   difficulty=clamp(Math.floor(Number(difficulty)||0),0,5);
   if(!Number.isFinite(maxStates)||maxStates<16||!Number.isFinite(maxMs)||maxMs<=0)throw new Error('generation-budget');
   const rng=seededRandom(`${GENERATOR_VERSION}:${seed}`),choice=chooseMechanics(rng,difficulty,learnedMechanics,profile,recentFamilies);
-  const count=clamp(Number(animals)|| (choice.introduction||difficulty<2?2:difficulty<4?(rng()<.55?3:2):(rng()<.3?4:rng()<.65?3:2)),2,4);
+  let count=clamp(Number(animals)|| (choice.introduction||difficulty<2?2:difficulty<4?(rng()<.55?3:2):(rng()<.3?4:rng()<.65?3:2)),2,4);
+  if(choice.primary==='and'&&count<3){if(profile?.primary==='and'&&Number(animals)===2){const e=new Error('Duas condições exige ao menos três animais, sem caixas.');e.code='AND_REQUIRES_THREE_ANIMALS';throw e;}if(Number(animals)===2)choice.primary='plate';else count=3;}
   const shapeDifficulty=profile?.shapeDifficulty??(choice.introduction?Math.min(2,Math.max(0,difficulty-1)):count===4?Math.min(2,difficulty):difficulty);
   const depthRanges=[[1,7],[5,12],[7,18],[9,24],[11,28],[13,32]];
   let [minDepth,maxDepth]=depthRanges[difficulty];
@@ -489,7 +465,7 @@ export function generateLevel(seed,{difficulty=0,animals,learnedMechanics,recent
   while(attempts++<100&&clock()<deadline){
     try{
       const built=candidate(rng,{difficulty:shapeDifficulty,animals:count,primary:choice.primary,secondary:choice.secondary,introduction:choice.introduction,pattern:profile?.pattern,orientations:profile?.orientations,prepareSender:profile?.prepareSender,includeSupportedStop:!profile,preparationControl:profile?.preparationControl??(!profile&&choice.primary==='oneway'?(rng()<.5?'switch':'key'):undefined)});
-      const valid=validateLevel(built.level);if(!valid.valid)throw new Error(`invalid:${valid.errors[0]}`);
+      const valid=validateActiveSintoniaLevel(built.level);if(!valid.valid)throw new Error(`invalid:${valid.errors[0]}`);
       const result=searchTargets(built.level,built.constraints,built.required,{rng,minDepth:built.design?.pattern==='support-and-necessary-stop'?Math.min(8,minDepth):minDepth,maxDepth,maxStates,maxMs:Math.max(30,Math.min(deadline-clock(),5000)),avoidSweep:strictSweep||difficulty>0||minDepth>=4,strictSweep});
       const signature=structuralSignature(result.level);if(recent.has(signature)||recent.has(structuralSignature(result.level,{topologyOnly:true})))throw new Error('recent-repeat');
       const checked=replay(result.level,result.solution);if(!checked.valid||!checked.won)throw new Error('certificate-replay-failed');

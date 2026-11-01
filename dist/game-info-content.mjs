@@ -76,7 +76,7 @@ export const GAME_INFO = {
       'Todos precisam ocupar seus destinos ao final de um comando. Chegar antes não prende ninguém: um animal pode sair do destino e voltar depois.',
       'Observe os símbolos das placas, cancelas e objetos. Uma passagem aberta no início do comando pode ser atravessada enquanto outro animal sai da placa que a mantinha aberta.',
       'As mecânicas aparecem aos poucos, com explicações na própria fase. Desfaça e reinicie livremente; não há cronômetro, vidas ou limite obrigatório de movimentos.',
-      'Explore 500 desafios em 20 capítulos ou escolha o Modo Sem Parar para continuar com novas combinações. As dicas consideram a configuração atual dos tabuleiros.'
+      'Explore 80 desafios em seis faixas ou escolha o Modo Sem Parar para continuar com novas combinações. Paredes, placas, interruptores, chaves e gelo criam apoios e revezamentos; as dicas consideram a configuração atual dos tabuleiros.'
     ],
     purpose: 'Praticar planejamento, antecipação de consequências e raciocínio espacial, articulando objetivos individuais com uma condição conjunta.',
     why: 'Cada seta pode ajudar um animal e afastar outro do destino. Experimentar paredes, apoios e sequências convida a pensar nas relações entre os caminhos.'

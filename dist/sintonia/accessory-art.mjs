@@ -1,14 +1,15 @@
 // Arte aprovada em 32 px; animais e regras permanecem em seus módulos originais.
 const states={key:2,gate:2,plate:2,switch:2,box:2,portal:1,oneway:1,selector:2,delivery:2,bridge:2,ice:1,goal:2};
 const rotations={right:0,down:90,left:180,up:270};
-export function accessoryIcon(name,state=0){
+export function accessoryIcon(name,state=0,palette='C'){
  if(name==='switchOn'){name='switch';state=1;}
  if(name==='deliveryIn'){name='delivery';state=0;}
  if(name==='deliveryOut'){name='delivery';state=1;}
  let turn=0;if(Object.hasOwn(rotations,name)){turn=rotations[name];name='oneway';}
  if(!Object.hasOwn(states,name))throw new Error('Acessório desconhecido');
  const frame=states[name]>1&&state?1:0;
- const src=new URL(`./assets/accessories/${name}-${frame}.png`,import.meta.url).href;
+ const variant=['plate','switch'].includes(name)?`palettes/${['C','D','E'].includes(palette)?palette:'C'}/`:'';
+ const src=new URL(`./assets/accessories/${variant}${name}-${frame}.png`,import.meta.url).href;
  return `<img class="s-accessory-icon s-accessory-art" src="${src}" width="32" height="32" alt="" aria-hidden="true" draggable="false"${turn?` style="transform:rotate(${turn}deg)"`:''}>`;
 }
 export function accessoryEdgeIcon({open=false,oneway=false,direction='right',vertical=true}={}){

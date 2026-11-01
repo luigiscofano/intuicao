@@ -1,3 +1,4 @@
+import {validateActiveSintoniaLevel} from './active-rules.mjs';
 import {initialState, stateKey, transition, isWon, validateLevel, validateState, replay, solveLevel} from './engine.mjs';
 
 // A stored witness is useful only when the complete current logical state lies
@@ -39,7 +40,7 @@ export function analyzePosition(level, state, {allowSearch = true, maxStates = 7
 }
 
 export function verifyGenerated(result) {
-  if (!result?.level || !validateLevel(result.level).valid) throw new Error('A fase gerada não passou pela validação.');
+  if (!result?.level || !validateActiveSintoniaLevel(result.level).valid) throw new Error('A fase gerada não passou pela validação.');
   const solution = result.solution ?? result.level.solution;
   if (!Array.isArray(solution) || solution.length > 10000) throw new Error('Falta uma solução verificável para esta fase.');
   const check = replay(result.level, solution);
