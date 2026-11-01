@@ -60,3 +60,7 @@ body > footer .footer-signature > :is(.brand,small){position:relative;z-index:1}
 @media(max-width:760px){
   body > footer{--footer-inset:16px;--footer-floor:84px;--footer-flare:14px;margin-top:20px!important}
 }
+
+/* Aviso comum a todas as rotas, separado da marca e sem alterar o contorno. */
+body > footer .footer-copyright{position:relative;z-index:1;margin:0 0 0 20px;padding-inline:24px;max-width:480px;color:#52604b;font:400 12px/1.6 system-ui,-apple-system,"Segoe UI",sans-serif;letter-spacing:0;text-align:right;overflow-wrap:anywhere}
+@media(max-width:760px){body > footer .footer-copyright{margin:18px 0 0;padding-inline:16px;text-align:left;max-width:100%}}
