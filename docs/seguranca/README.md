@@ -4,10 +4,18 @@ Revisão de **1º de novembro de 2026**, partindo de `ae8cad7aed23b974d742a4b088
 
 | Cuidado | Trabalho realizado | Pendência antes da abertura |
 | --- | --- | --- |
-| Direitos dos recursos | Inventário individual com SHA-256 de 133 arquivos, evidências de origem e 16 caminhos visuais históricos | Titular confirmar autoria e permissão das artes/fontes, incluindo versões antigas |
-| Segredos e privacidade | Histórico, branches, PRs, logs, metadados de commits e referências internas revisados | Decidir sobre a exposição do e-mail pessoal existente em 42 commits |
+| Direitos dos recursos | Inventário individual com SHA-256 de 133 arquivos, evidências de origem e 16 caminhos visuais históricos | Autoria declarada pelo titular; ver atualização abaixo. Recursos visuais continuam fora da MIT |
+| Segredos e privacidade | Histórico, branches, PRs, logs, metadados de commits e referências internas revisados | Titular autorizou manter o e-mail e preservar o histórico; ver atualização abaixo |
 | Automação | Motores em PRs/pushes, verificação de segredos, inventário, actions fixadas por SHA e Dependabot | Confirmar aplicação das regras de branch e recursos nativos de segurança após a mudança de visibilidade |
 | Apresentação | README e guias atualizados com alcance dos testes, limitações e critérios de publicação | Não apresentar pendências como resolvidas nem equiparar site e GitHub |
+
+## Atualização após declaração do titular — 01/11/2026
+
+Luigi Scofano de Araujo declarou a autoria dos elementos do Intuição e autorizou a manutenção do e-mail pessoal nos commits existentes. A [declaração](../recursos/declaracao-autoria.md) foi registrada e vinculada às 133 entradas do inventário e aos caminhos históricos. Os créditos e termos de materiais externos, como Natural Earth, permanecem preservados.
+
+As pendências documentais de autoria e a decisão de privacidade foram resolvidas com base nessa declaração, sem certificação independente. O histórico e os e-mails antigos serão mantidos. Não foi criada uma cópia com histórico novo nem alterada a visibilidade.
+
+Os resultados abaixo descrevem a auditoria anterior, com seus limites e revisão de referência.
 
 ## Escopo e resultados da auditoria
 
@@ -24,7 +32,7 @@ Não houve revogação de credenciais, porque nenhuma foi confirmada como expost
 
 ## Recursos e licenças
 
-Consulte [origem e direitos dos recursos](../recursos/README.md). As 133 entradas permanecem `pending` quando não há evidência suficiente para autorizar redistribuição. Não foi atribuída licença MIT a imagens, fontes ou marcas por inferência. O contorno cartográfico atribuído ao Natural Earth tem termos de domínio público identificados separadamente.
+Consulte [origem e direitos dos recursos](../recursos/README.md). Na auditoria inicial, as 133 entradas ficaram `pending`; após a confirmação do titular, passaram a `cleared` com base na declaração de autoria. Esse estado se refere à documentação dos elementos autorais para publicação pelo titular, sem conceder licença aberta de reutilização das artes. Não foi atribuída licença MIT a imagens, fontes ou marcas por inferência. O contorno cartográfico atribuído ao Natural Earth tem termos de domínio público identificados separadamente.
 
 As imagens originais, os recortes, os jogos e a galeria de 11 capturas foram preservados. Os metadados da fonte indicam criação para Intuição, mas não identificam sozinhos o titular nem uma autorização de redistribuição. As capturas do site também dependem dos direitos dos elementos retratados.
 
@@ -45,8 +53,8 @@ Não adicionar uma aprovação obrigatória do próprio autor como solução: o 
 
 ## Antes de tornar público
 
-1. **Resolver direitos:** preencher titular, licença e evidência dos recursos; cobrir também versões históricas. `node scripts/check-assets.mjs --release` deve concluir sem pendências. O verificador é documental e não substitui a análise dos comprovantes.
-2. **Decidir sobre o histórico:** aceitar conscientemente a exposição do e-mail antigo e das referências internas ou preparar uma cópia pública limpa, mantendo o original privado. Não realizar force push ou reescrita automática; isso mudaria hashes e afetaria PRs e clones.
+1. **Autoria registrada:** a declaração do titular cobre os elementos autorais atuais e históricos. O inventário aponta a evidência e mantém os materiais externos sob seus termos. Executar `node scripts/check-assets.mjs --release` ao preparar a publicação; o verificador é documental e não certifica a autoria.
+2. **Preservar o histórico:** o titular autorizou manter o e-mail pessoal nos commits antigos. Essa exposição foi aceita para eventual abertura. Manter commits, branches e PRs; não realizar force push, reescrita ou criar cópia com histórico novo.
 3. **Revisar o PR e os checks:** nenhuma falha deve ser ignorada por `continue-on-error`. A suíte ampla ainda não foi reconciliada; o recorte verde não é um selo de release completa.
 4. **Confirmar a mudança de visibilidade:** depois das decisões acima, revisar os avisos em Settings → General → Danger Zone → Change visibility. A mudança precisa de uma decisão explícita do titular.
 5. **Conferir imediatamente as proteções disponíveis:** em Rulesets, proteger `main` com PR obrigatório, checks `links`, `engines`, `secret-scan`, `asset-inventory`, resolução de conversas, bloqueio de exclusão e de force push. Em Security, verificar secret scanning, push protection, CodeQL e private vulnerability reporting conforme disponibilidade. Não comprar plano nem ativar cobrança automaticamente.

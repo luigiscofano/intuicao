@@ -16,6 +16,6 @@ O workflow documental executa este comando em pull requests e em pushes para mai
 
 ## Conferir recursos visuais
 
-`node scripts/check-assets.mjs` verifica cobertura, hashes e campos do inventário. `node scripts/check-assets.mjs --release` também exige permissões documentadas; deve falhar enquanto houver pendências. Isso não constitui validação jurídica.
+`node scripts/check-assets.mjs` verifica cobertura, hashes e campos do inventário. `node scripts/check-assets.mjs --release` também exige declarações/licenças documentadas; deve falhar enquanto houver pendências. O registro de autoria não concede licença aberta às artes. Isso não constitui validação jurídica.
 
 Não existe aqui o runner `scripts/test.mjs` da revisão externa f0e7fcf. Ele só deve ser incorporado junto da revisão real e de seu manifesto.

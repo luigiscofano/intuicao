@@ -27,11 +27,11 @@ for (const name of tracked) if (!seen.has(name)) failures.push(`Recurso sem inve
 for (const group of Object.values(manifest.groups)) for (const evidence of group.evidence) {
   if (!fs.existsSync(path.join(root, evidence))) failures.push(`Evidência ausente: ${evidence}`);
 }
-if (process.argv.includes('--release') && pending) failures.push(`${pending} recursos sem autorização de redistribuição comprovada. Publicação pendente.`);
+if (process.argv.includes('--release') && pending) failures.push(`${pending} recursos sem documentação de direitos registrada. Revisão pendente.`);
 if (failures.length) {
   console.error(failures.join('\n'));
   process.exitCode = 1;
 } else {
-  console.log(`${tracked.length} recursos inventariados; ${pending} permissões pendentes.`);
-  console.log('Cobertura e hashes verificados. Isso não valida juridicamente uma licença nem autoriza versões históricas.');
+  console.log(`${tracked.length} recursos inventariados; ${pending} registros de direitos pendentes.`);
+  console.log('Cobertura e hashes verificados. Declarações e licenças são documentais; não há certificação jurídica nem mudança de visibilidade.');
 }
