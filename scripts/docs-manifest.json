@@ -55,6 +55,9 @@
     "docs/qualidade/fechamento.md",
     "docs/setup/README.md",
     "scripts/README.md",
-    "tests/README.md"
+    "tests/README.md",
+    "SECURITY.md",
+    "docs/seguranca/README.md",
+    "docs/recursos/README.md"
   ]
 }

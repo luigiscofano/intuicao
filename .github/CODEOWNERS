@@ -1,0 +1,8 @@
+# Revisão de segurança, licenças e automação pelo mantenedor.
+/.github/ @luigiscofano
+/.gitleaksignore @luigiscofano
+/LICENSE @luigiscofano
+/SECURITY.md @luigiscofano
+/docs/seguranca/ @luigiscofano
+/docs/recursos/ @luigiscofano
+/scripts/check-assets.mjs @luigiscofano

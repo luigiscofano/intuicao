@@ -1,6 +1,6 @@
 # BROTO independent review — 2026-10-31
 
-Read all 558 lines of the supplied implementation prompt (Library `libfile_d4fb627d98ec8191a4059435045f1e33`). Review scope: pure rules, state boundaries, integrated UI contracts, and preservation of the existing platform. Browser checks are reported separately by the publication owner, not inferred from source tests.
+Read all 558 lines of the supplied implementation prompt (Library `referencia-privada-omitida`). Review scope: pure rules, state boundaries, integrated UI contracts, and preservation of the existing platform. Browser checks are reported separately by the publication owner, not inferred from source tests.
 
 ## Independent checks completed
 

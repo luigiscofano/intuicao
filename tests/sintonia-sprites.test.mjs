@@ -44,7 +44,7 @@ test('the exact uploaded PNG is embedded once, with no redraw, external dependen
  assert.equal(embedded.length,1,'One shared source image, not four duplicated copies');
  assert.equal(sha256(Buffer.from(embedded[0][1],'base64')),USER_SPRITE_CHANGE.sourceSHA256);
  assert.equal(provenance.sourceSHA256,USER_SPRITE_CHANGE.sourceSHA256);
- assert.equal(provenance.sourceLibraryFileId,'libfile_8a210bf8f6008191873c2b2786ed652f');
+ assert.equal(provenance.sourceFilename,'sprites_chibi_ituicao.png');
  assert.equal(provenance.sourceLibraryVersion,0);
  assert.equal(sha256(svg),provenance.atlasSHA256);
  assert.match(svg,/width="1254" height="313\.5" viewBox="0 0 1254 313\.5"/);

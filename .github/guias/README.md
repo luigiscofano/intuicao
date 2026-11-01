@@ -7,6 +7,6 @@ O repositório usa modelos de contribuição e workflows de validação. Os PRs 
 - [Proposta de melhoria](../ISSUE_TEMPLATE/feature_request.md): objetivo, escopo e aceitação.
 - [Melhoria de documentação](../ISSUE_TEMPLATE/documentation.md): dúvida concreta e referências.
 
-Os workflows validam documentação ou executam um recorte de motores manualmente. Nenhum deles publica o site, altera permissões ou cria uma licença. Proteções de branch não foram configuradas nesta entrega.
+Os workflows validam documentação, cinco motores, segredos e inventário visual em PRs. Nenhum publica o site ou altera a visibilidade. As actions são fixadas por SHA e acompanhadas pelo [Dependabot](../dependabot.yml). Veja o [estado das proteções e próximos passos](../../docs/seguranca/README.md).
 
 [Contribuição](../../CONTRIBUTING.md) · [Plano dos PRs](../../docs/github/README.md)

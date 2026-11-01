@@ -11,3 +11,12 @@ __pycache__/
 *.log
 *.bundle
 coverage/
+
+# Credenciais locais e relatórios de varredura (podem conter dados sensíveis).
+*.pem
+*.key
+*.p12
+*.pfx
+id_rsa
+id_ed25519
+gitleaks-report*.json

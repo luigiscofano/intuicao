@@ -56,6 +56,6 @@ for frame, animal in enumerate(names):
 svg='<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="1254" height="1254" viewBox="0 0 1254 1254"><defs><clipPath id="animals">'+''.join(clips)+'</clipPath></defs><image width="1254" height="1254" style="image-rendering:pixelated" clip-path="url(#animals)" xlink:href="data:image/png;base64,'+base64.b64encode(raw).decode()+'"/></svg>\n'
 target=root/'dist/sintonia/assets/chibi-user-roster.svg'
 target.write_text(svg)
-provenance={'sourceFilename':source.name,'sourceLibraryFileId':'libfile_c8e90fb42ca48191bdd126cc3f7638bc','sourceSHA256':hashlib.sha256(raw).hexdigest(),'sourceSize':[1254,1254],'asset':str(target.relative_to(root)),'assetSHA256':hashlib.sha256(svg.encode()).hexdigest(),'method':'Original attached PNG embedded unchanged once; SVG clipping selects all 16 original silhouettes. No resampling, repainting or substituted artwork.','animals':records}
+provenance={'sourceFilename':source.name,'sourceSHA256':hashlib.sha256(raw).hexdigest(),'sourceSize':[1254,1254],'asset':str(target.relative_to(root)),'assetSHA256':hashlib.sha256(svg.encode()).hexdigest(),'method':'Original attached PNG embedded unchanged once; SVG clipping selects all 16 original silhouettes. No resampling, repainting or substituted artwork.','animals':records}
 (root/'docs/sintonia-sprites/roster-sources.json').write_text(json.dumps(provenance,ensure_ascii=False,indent=2)+'\n')
 print('Packaged the 16 exact animals from the attached sheet.')

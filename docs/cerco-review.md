@@ -1,6 +1,6 @@
 # CERCO independent review — 2026-10-31
 
-Read all 259 lines of the supplied implementation prompt (Library `libfile_700f00e9d2fc8191a73c1aaf475d77ac`). Current approved platform layout takes precedence over the older right-sidebar wording: rules remain below gameplay, open by default.
+Read all 259 lines of the supplied implementation prompt (Library `referencia-privada-omitida`). Current approved platform layout takes precedence over the older right-sidebar wording: rules remain below gameplay, open by default.
 
 ## Independent verification completed
 
