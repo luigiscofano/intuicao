@@ -266,7 +266,7 @@ Antes de ampliar a execução, leia o [guia de testes](tests/README.md). A pasta
 
 ## Preparação para publicação
 
-O projeto está em desenvolvimento. A [revisão de segurança e publicação](docs/seguranca/README.md) registra o escopo examinado e o que falta resolver. O [inventário de recursos visuais](docs/recursos/README.md) identifica 133 arquivos e separa origem técnica de autorização de redistribuição. Há pendências de direitos das artes/fontes e uma decisão sobre e-mail pessoal no histórico antes da abertura ao público.
+O projeto está em desenvolvimento. A [revisão de segurança e publicação](docs/seguranca/README.md) registra o escopo examinado e o que falta resolver. O [inventário de recursos visuais](docs/recursos/README.md) identifica 133 arquivos e separa origem técnica de autorização de redistribuição. A [declaração de autoria](docs/recursos/declaracao-autoria.md) registra a confirmação do titular para os elementos autorais e sua autorização para manter o e-mail nos commits antigos. O histórico foi preservado. Os créditos de fontes externas e a separação entre MIT do código e direitos das artes continuam válidos.
 
 ## Autoria e licença
 

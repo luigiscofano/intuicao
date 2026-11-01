@@ -4,48 +4,55 @@
   "groups": {
     "identidade": {
       "evidence": [
-        "dist/platform-assets/README.md"
+        "dist/platform-assets/README.md",
+        "docs/recursos/declaracao-autoria.md"
       ],
-      "source": "Logo, folhas, molduras e flores existentes no projeto; autoria e termos ainda não comprovados por documento de licença."
+      "source": "Logo, folhas, molduras e flores existentes no projeto; autoria declarada pelo titular em 2026-11-01."
     },
     "fauna": {
       "evidence": [
-        "docs/fauna-interactions-2026-10-31.md"
+        "docs/fauna-interactions-2026-10-31.md",
+        "docs/recursos/declaracao-autoria.md"
       ],
       "source": "Pranchas de fauna recebidas pelo projeto; nomes e dimensões registrados na documentação."
     },
     "fonte": {
       "evidence": [
-        "dist/platform-assets/intuicao-pixel.woff"
+        "dist/platform-assets/intuicao-pixel.woff",
+        "docs/recursos/declaracao-autoria.md"
       ],
-      "source": "Tabela name da fonte: Original bitmap alphabet created for Intuição, 2026. Metadado não substitui declaração de titularidade/licença."
+      "source": "Metadados da fonte indicam criação para Intuição em 2026; autoria confirmada por declaração do titular em 2026-11-01."
     },
     "sintonia": {
       "evidence": [
         "docs/sintonia-art.md",
         "docs/sintonia-sprites/asset-provenance.json",
-        "docs/sintonia-sprites/roster-sources.json"
+        "docs/sintonia-sprites/roster-sources.json",
+        "docs/recursos/declaracao-autoria.md"
       ],
       "source": "Atlas extraídos de arquivos fornecidos ao projeto; fontes e SHA-256 registrados. Inclui os PNGs incorporados nos SVGs."
     },
     "acessorios": {
       "evidence": [
         "docs/sintonia-approved-accessories-2026-11-01.md",
-        "docs/sintonia-accessory-palette.md"
+        "docs/sintonia-accessory-palette.md",
+        "docs/recursos/declaracao-autoria.md"
       ],
-      "source": "Acessórios e variantes de paleta preservados na documentação; falta autorização explícita de redistribuição."
+      "source": "Acessórios e variantes de paleta documentados; autoria declarada pelo titular em 2026-11-01."
     },
     "galeria": {
       "evidence": [
-        "docs/imagens/jogos/README.md"
+        "docs/imagens/jogos/README.md",
+        "docs/recursos/declaracao-autoria.md"
       ],
       "source": "Capturas do site em 2026-11-01. O direito de fazer a captura não resolve os direitos dos elementos retratados."
     },
     "documentacao": {
       "evidence": [
-        "docs/README.md"
+        "docs/README.md",
+        "docs/recursos/declaracao-autoria.md"
       ],
-      "source": "Capturas e diagramas de evidências técnicas. Verificar autoria e recursos retratados antes da publicação."
+      "source": "Capturas e diagramas técnicos; declaração abrange sua composição e elementos autorais, preservados os direitos de componentes externos."
     }
   },
   "assets": [
@@ -53,1198 +60,1339 @@
       "path": "dist/platform-assets/active-flower.svg",
       "sha256": "6f68f0aba69d63be53952963ba3074e182d9d45d085c3eae354bce208fc0baf7",
       "group": "identidade",
-      "status": "pending",
-      "rightsHolder": null,
-      "license": null,
-      "permissionEvidence": null
+      "status": "cleared",
+      "rightsHolder": "Luigi Scofano de Araujo (elementos autorais)",
+      "license": "Direitos reservados; recursos visuais excluídos da licença MIT do código.",
+      "permissionEvidence": "docs/recursos/declaracao-autoria.md",
+      "reviewBasis": "owner-declaration"
     },
     {
       "path": "dist/platform-assets/content-frame-curve-left.svg",
       "sha256": "d28d972590f8d3fda45de0361540a4ee091a4ad8387bec78e74e62d60977f096",
       "group": "identidade",
-      "status": "pending",
-      "rightsHolder": null,
-      "license": null,
-      "permissionEvidence": null
+      "status": "cleared",
+      "rightsHolder": "Luigi Scofano de Araujo (elementos autorais)",
+      "license": "Direitos reservados; recursos visuais excluídos da licença MIT do código.",
+      "permissionEvidence": "docs/recursos/declaracao-autoria.md",
+      "reviewBasis": "owner-declaration"
     },
     {
       "path": "dist/platform-assets/content-frame-curve-right.svg",
       "sha256": "7f5cdcf4a1ce03a34640686a65cccd58e3cb6d7c3bf986b7b3aaec21fd5afda4",
       "group": "identidade",
-      "status": "pending",
-      "rightsHolder": null,
-      "license": null,
-      "permissionEvidence": null
+      "status": "cleared",
+      "rightsHolder": "Luigi Scofano de Araujo (elementos autorais)",
+      "license": "Direitos reservados; recursos visuais excluídos da licença MIT do código.",
+      "permissionEvidence": "docs/recursos/declaracao-autoria.md",
+      "reviewBasis": "owner-declaration"
     },
     {
       "path": "dist/platform-assets/continuous-crown-left.svg",
       "sha256": "9ff9932b4b1fd4fee06dec320ccf43c448ea0083bc0ccb20d50eb6d079921c71",
       "group": "identidade",
-      "status": "pending",
-      "rightsHolder": null,
-      "license": null,
-      "permissionEvidence": null
+      "status": "cleared",
+      "rightsHolder": "Luigi Scofano de Araujo (elementos autorais)",
+      "license": "Direitos reservados; recursos visuais excluídos da licença MIT do código.",
+      "permissionEvidence": "docs/recursos/declaracao-autoria.md",
+      "reviewBasis": "owner-declaration"
     },
     {
       "path": "dist/platform-assets/continuous-crown-right.svg",
       "sha256": "739af451e3edcdd1436f7cee12232888bf17bf01ca87e77a28fc7c47abd00bb9",
       "group": "identidade",
-      "status": "pending",
-      "rightsHolder": null,
-      "license": null,
-      "permissionEvidence": null
+      "status": "cleared",
+      "rightsHolder": "Luigi Scofano de Araujo (elementos autorais)",
+      "license": "Direitos reservados; recursos visuais excluídos da licença MIT do código.",
+      "permissionEvidence": "docs/recursos/declaracao-autoria.md",
+      "reviewBasis": "owner-declaration"
     },
     {
       "path": "dist/platform-assets/continuous-root-left.svg",
       "sha256": "d6423c3c635f9cf9672c6ba26ede53cfc69b266119ef36e37e59bd07716f6d30",
       "group": "identidade",
-      "status": "pending",
-      "rightsHolder": null,
-      "license": null,
-      "permissionEvidence": null
+      "status": "cleared",
+      "rightsHolder": "Luigi Scofano de Araujo (elementos autorais)",
+      "license": "Direitos reservados; recursos visuais excluídos da licença MIT do código.",
+      "permissionEvidence": "docs/recursos/declaracao-autoria.md",
+      "reviewBasis": "owner-declaration"
     },
     {
       "path": "dist/platform-assets/continuous-root-right.svg",
       "sha256": "9982e07b9b369878ce7a5316c1ada8235e774a4896d112dbc101223efca59753",
       "group": "identidade",
-      "status": "pending",
-      "rightsHolder": null,
-      "license": null,
-      "permissionEvidence": null
+      "status": "cleared",
+      "rightsHolder": "Luigi Scofano de Araujo (elementos autorais)",
+      "license": "Direitos reservados; recursos visuais excluídos da licença MIT do código.",
+      "permissionEvidence": "docs/recursos/declaracao-autoria.md",
+      "reviewBasis": "owner-declaration"
     },
     {
       "path": "dist/platform-assets/fauna-green-original.png",
       "sha256": "b3616f1c1d48d13083194c2a6e09155ea59b1261b4f2c05ec603cc54d4e2c7cb",
       "group": "fauna",
-      "status": "pending",
-      "rightsHolder": null,
-      "license": null,
-      "permissionEvidence": null
+      "status": "cleared",
+      "rightsHolder": "Luigi Scofano de Araujo (elementos autorais)",
+      "license": "Direitos reservados; recursos visuais excluídos da licença MIT do código.",
+      "permissionEvidence": "docs/recursos/declaracao-autoria.md",
+      "reviewBasis": "owner-declaration"
     },
     {
       "path": "dist/platform-assets/fauna-side-original.png",
       "sha256": "7734238fa8be8d183402da21a9007259ab690cc6c4e7ad59f658894f4aa8f765",
       "group": "fauna",
-      "status": "pending",
-      "rightsHolder": null,
-      "license": null,
-      "permissionEvidence": null
+      "status": "cleared",
+      "rightsHolder": "Luigi Scofano de Araujo (elementos autorais)",
+      "license": "Direitos reservados; recursos visuais excluídos da licença MIT do código.",
+      "permissionEvidence": "docs/recursos/declaracao-autoria.md",
+      "reviewBasis": "owner-declaration"
     },
     {
       "path": "dist/platform-assets/fauna-sprites-original.png",
       "sha256": "6cc3fad96b10f4b7cd2f3280355aef8220810a00aa3e11850daeb46e4541fb00",
       "group": "fauna",
-      "status": "pending",
-      "rightsHolder": null,
-      "license": null,
-      "permissionEvidence": null
+      "status": "cleared",
+      "rightsHolder": "Luigi Scofano de Araujo (elementos autorais)",
+      "license": "Direitos reservados; recursos visuais excluídos da licença MIT do código.",
+      "permissionEvidence": "docs/recursos/declaracao-autoria.md",
+      "reviewBasis": "owner-declaration"
     },
     {
       "path": "dist/platform-assets/flower-green-original.png",
       "sha256": "4651cd8603999ad9ff6abb6ada2b8bd83c721719f8df899a83504a4cec8b42df",
       "group": "identidade",
-      "status": "pending",
-      "rightsHolder": null,
-      "license": null,
-      "permissionEvidence": null
+      "status": "cleared",
+      "rightsHolder": "Luigi Scofano de Araujo (elementos autorais)",
+      "license": "Direitos reservados; recursos visuais excluídos da licença MIT do código.",
+      "permissionEvidence": "docs/recursos/declaracao-autoria.md",
+      "reviewBasis": "owner-declaration"
     },
     {
       "path": "dist/platform-assets/flower-white-original.png",
       "sha256": "29f33ef8990e5bda53f566ab687b8336e84de0d95523cf7235031dd0852a35fc",
       "group": "identidade",
-      "status": "pending",
-      "rightsHolder": null,
-      "license": null,
-      "permissionEvidence": null
+      "status": "cleared",
+      "rightsHolder": "Luigi Scofano de Araujo (elementos autorais)",
+      "license": "Direitos reservados; recursos visuais excluídos da licença MIT do código.",
+      "permissionEvidence": "docs/recursos/declaracao-autoria.md",
+      "reviewBasis": "owner-declaration"
     },
     {
       "path": "dist/platform-assets/foliage-shape-1.svg",
       "sha256": "d53f19c6e44566d5422bcd2c0291873271b676fd90d1e100ffbaecbcb641c07b",
       "group": "identidade",
-      "status": "pending",
-      "rightsHolder": null,
-      "license": null,
-      "permissionEvidence": null
+      "status": "cleared",
+      "rightsHolder": "Luigi Scofano de Araujo (elementos autorais)",
+      "license": "Direitos reservados; recursos visuais excluídos da licença MIT do código.",
+      "permissionEvidence": "docs/recursos/declaracao-autoria.md",
+      "reviewBasis": "owner-declaration"
     },
     {
       "path": "dist/platform-assets/foliage-shape-2.svg",
       "sha256": "8dfcb8e0a0accd08bced603f82b78aeb9921d5831a945643f5825cd52b0145ce",
       "group": "identidade",
-      "status": "pending",
-      "rightsHolder": null,
-      "license": null,
-      "permissionEvidence": null
+      "status": "cleared",
+      "rightsHolder": "Luigi Scofano de Araujo (elementos autorais)",
+      "license": "Direitos reservados; recursos visuais excluídos da licença MIT do código.",
+      "permissionEvidence": "docs/recursos/declaracao-autoria.md",
+      "reviewBasis": "owner-declaration"
     },
     {
       "path": "dist/platform-assets/foliage-shape-3.svg",
       "sha256": "844787cce027929a6f5e3ae5ca4f94a65edc775a2c80ffe2aa56a4c0d7a6b148",
       "group": "identidade",
-      "status": "pending",
-      "rightsHolder": null,
-      "license": null,
-      "permissionEvidence": null
+      "status": "cleared",
+      "rightsHolder": "Luigi Scofano de Araujo (elementos autorais)",
+      "license": "Direitos reservados; recursos visuais excluídos da licença MIT do código.",
+      "permissionEvidence": "docs/recursos/declaracao-autoria.md",
+      "reviewBasis": "owner-declaration"
     },
     {
       "path": "dist/platform-assets/foliage-shape-4.svg",
       "sha256": "9cd3707869872bdea902302de78ecd1c19198029196239c9c31bf357a4476a85",
       "group": "identidade",
-      "status": "pending",
-      "rightsHolder": null,
-      "license": null,
-      "permissionEvidence": null
+      "status": "cleared",
+      "rightsHolder": "Luigi Scofano de Araujo (elementos autorais)",
+      "license": "Direitos reservados; recursos visuais excluídos da licença MIT do código.",
+      "permissionEvidence": "docs/recursos/declaracao-autoria.md",
+      "reviewBasis": "owner-declaration"
     },
     {
       "path": "dist/platform-assets/foliage-shape-5.svg",
       "sha256": "4b4d19839d021a2ff5099969ae53205e9f68eb84c452177af32e79feae4c5500",
       "group": "identidade",
-      "status": "pending",
-      "rightsHolder": null,
-      "license": null,
-      "permissionEvidence": null
+      "status": "cleared",
+      "rightsHolder": "Luigi Scofano de Araujo (elementos autorais)",
+      "license": "Direitos reservados; recursos visuais excluídos da licença MIT do código.",
+      "permissionEvidence": "docs/recursos/declaracao-autoria.md",
+      "reviewBasis": "owner-declaration"
     },
     {
       "path": "dist/platform-assets/header-tree-frame.svg",
       "sha256": "2905f656215c19c7c95ddae3357e02886aed8f8262e922ff23f0cecf19aaeaa9",
       "group": "identidade",
-      "status": "pending",
-      "rightsHolder": null,
-      "license": null,
-      "permissionEvidence": null
+      "status": "cleared",
+      "rightsHolder": "Luigi Scofano de Araujo (elementos autorais)",
+      "license": "Direitos reservados; recursos visuais excluídos da licença MIT do código.",
+      "permissionEvidence": "docs/recursos/declaracao-autoria.md",
+      "reviewBasis": "owner-declaration"
     },
     {
       "path": "dist/platform-assets/hero-frame-curve-left.svg",
       "sha256": "0507968edf0b6a89f47a5c135b46f3c10546af3dca489d6f3bfdb9b7dd4300f7",
       "group": "identidade",
-      "status": "pending",
-      "rightsHolder": null,
-      "license": null,
-      "permissionEvidence": null
+      "status": "cleared",
+      "rightsHolder": "Luigi Scofano de Araujo (elementos autorais)",
+      "license": "Direitos reservados; recursos visuais excluídos da licença MIT do código.",
+      "permissionEvidence": "docs/recursos/declaracao-autoria.md",
+      "reviewBasis": "owner-declaration"
     },
     {
       "path": "dist/platform-assets/hero-frame-curve-right.svg",
       "sha256": "9fbaa2bb48e821658d37cd0e57548fd09432801000991dfe36a3e33e7ea6da31",
       "group": "identidade",
-      "status": "pending",
-      "rightsHolder": null,
-      "license": null,
-      "permissionEvidence": null
+      "status": "cleared",
+      "rightsHolder": "Luigi Scofano de Araujo (elementos autorais)",
+      "license": "Direitos reservados; recursos visuais excluídos da licença MIT do código.",
+      "permissionEvidence": "docs/recursos/declaracao-autoria.md",
+      "reviewBasis": "owner-declaration"
     },
     {
       "path": "dist/platform-assets/intuicao-logo-original.png",
       "sha256": "4a82a6005a4003ccda9f415e38907d810163da5ec368174720c80da5d111e14a",
       "group": "identidade",
-      "status": "pending",
-      "rightsHolder": null,
-      "license": null,
-      "permissionEvidence": null
+      "status": "cleared",
+      "rightsHolder": "Luigi Scofano de Araujo (elementos autorais)",
+      "license": "Direitos reservados; recursos visuais excluídos da licença MIT do código.",
+      "permissionEvidence": "docs/recursos/declaracao-autoria.md",
+      "reviewBasis": "owner-declaration"
     },
     {
       "path": "dist/platform-assets/intuicao-pixel.woff",
       "sha256": "d2b25bb285a654f02951b64a2beff2c7653879e3adcee7409738ee571e06d31b",
       "group": "fonte",
-      "status": "pending",
-      "rightsHolder": null,
-      "license": null,
-      "permissionEvidence": null
+      "status": "cleared",
+      "rightsHolder": "Luigi Scofano de Araujo (elementos autorais)",
+      "license": "Direitos reservados; recursos visuais excluídos da licença MIT do código.",
+      "permissionEvidence": "docs/recursos/declaracao-autoria.md",
+      "reviewBasis": "owner-declaration"
     },
     {
       "path": "dist/platform-assets/leaf-clay.svg",
       "sha256": "3f32557c3a6db1e04b99a9d9488e56407ba64e2a8e2db1a89c28881e1b73ba7c",
       "group": "identidade",
-      "status": "pending",
-      "rightsHolder": null,
-      "license": null,
-      "permissionEvidence": null
+      "status": "cleared",
+      "rightsHolder": "Luigi Scofano de Araujo (elementos autorais)",
+      "license": "Direitos reservados; recursos visuais excluídos da licença MIT do código.",
+      "permissionEvidence": "docs/recursos/declaracao-autoria.md",
+      "reviewBasis": "owner-declaration"
     },
     {
       "path": "dist/platform-assets/leaf-floor.svg",
       "sha256": "509ecc448f4edaddc19269af8ed617e890b3d9fc8a9a32caae69a7814d11c932",
       "group": "identidade",
-      "status": "pending",
-      "rightsHolder": null,
-      "license": null,
-      "permissionEvidence": null
+      "status": "cleared",
+      "rightsHolder": "Luigi Scofano de Araujo (elementos autorais)",
+      "license": "Direitos reservados; recursos visuais excluídos da licença MIT do código.",
+      "permissionEvidence": "docs/recursos/declaracao-autoria.md",
+      "reviewBasis": "owner-declaration"
     },
     {
       "path": "dist/platform-assets/leaf-honey.svg",
       "sha256": "237cb11e348821e01beb1702869d88bfeab91c8b24ade953e12518189cd619ae",
       "group": "identidade",
-      "status": "pending",
-      "rightsHolder": null,
-      "license": null,
-      "permissionEvidence": null
+      "status": "cleared",
+      "rightsHolder": "Luigi Scofano de Araujo (elementos autorais)",
+      "license": "Direitos reservados; recursos visuais excluídos da licença MIT do código.",
+      "permissionEvidence": "docs/recursos/declaracao-autoria.md",
+      "reviewBasis": "owner-declaration"
     },
     {
       "path": "dist/platform-assets/leaf-pile-growth-1.svg",
       "sha256": "6334088dd9dccc3d0dab5fa2f4dd6d7c54e7c57003303c6b62ad46a078112eb4",
       "group": "identidade",
-      "status": "pending",
-      "rightsHolder": null,
-      "license": null,
-      "permissionEvidence": null
+      "status": "cleared",
+      "rightsHolder": "Luigi Scofano de Araujo (elementos autorais)",
+      "license": "Direitos reservados; recursos visuais excluídos da licença MIT do código.",
+      "permissionEvidence": "docs/recursos/declaracao-autoria.md",
+      "reviewBasis": "owner-declaration"
     },
     {
       "path": "dist/platform-assets/leaf-pile-growth-2.svg",
       "sha256": "4230c60ba7d8a6b87a7ec21d95ce9c4c7a0fbdab748e4516986b83bdc910834d",
       "group": "identidade",
-      "status": "pending",
-      "rightsHolder": null,
-      "license": null,
-      "permissionEvidence": null
+      "status": "cleared",
+      "rightsHolder": "Luigi Scofano de Araujo (elementos autorais)",
+      "license": "Direitos reservados; recursos visuais excluídos da licença MIT do código.",
+      "permissionEvidence": "docs/recursos/declaracao-autoria.md",
+      "reviewBasis": "owner-declaration"
     },
     {
       "path": "dist/platform-assets/leaf-pile-growth-3.svg",
       "sha256": "18db105c1c2a9a2e8cfd2d32a5c98e6e36a243616f7434f0823eb01bd7abb173",
       "group": "identidade",
-      "status": "pending",
-      "rightsHolder": null,
-      "license": null,
-      "permissionEvidence": null
+      "status": "cleared",
+      "rightsHolder": "Luigi Scofano de Araujo (elementos autorais)",
+      "license": "Direitos reservados; recursos visuais excluídos da licença MIT do código.",
+      "permissionEvidence": "docs/recursos/declaracao-autoria.md",
+      "reviewBasis": "owner-declaration"
     },
     {
       "path": "dist/platform-assets/leaf-pile-growth-4.svg",
       "sha256": "0ec8ecc635f9d30fba75f9151ce46955b0a0a2aeb2e2a526d1775f88a558e64e",
       "group": "identidade",
-      "status": "pending",
-      "rightsHolder": null,
-      "license": null,
-      "permissionEvidence": null
+      "status": "cleared",
+      "rightsHolder": "Luigi Scofano de Araujo (elementos autorais)",
+      "license": "Direitos reservados; recursos visuais excluídos da licença MIT do código.",
+      "permissionEvidence": "docs/recursos/declaracao-autoria.md",
+      "reviewBasis": "owner-declaration"
     },
     {
       "path": "dist/platform-assets/leaf-pile-growth-5.svg",
       "sha256": "10a58e0639f8cd0b9321a57256152e6847bb27d20bbd489bf99e25fb1a3118a6",
       "group": "identidade",
-      "status": "pending",
-      "rightsHolder": null,
-      "license": null,
-      "permissionEvidence": null
+      "status": "cleared",
+      "rightsHolder": "Luigi Scofano de Araujo (elementos autorais)",
+      "license": "Direitos reservados; recursos visuais excluídos da licença MIT do código.",
+      "permissionEvidence": "docs/recursos/declaracao-autoria.md",
+      "reviewBasis": "owner-declaration"
     },
     {
       "path": "dist/platform-assets/leaf-pile-growth-6.svg",
       "sha256": "87dc72f80590d332fadcffe3fd3af35cd5a198f36672f85380d8ad10b587cbda",
       "group": "identidade",
-      "status": "pending",
-      "rightsHolder": null,
-      "license": null,
-      "permissionEvidence": null
+      "status": "cleared",
+      "rightsHolder": "Luigi Scofano de Araujo (elementos autorais)",
+      "license": "Direitos reservados; recursos visuais excluídos da licença MIT do código.",
+      "permissionEvidence": "docs/recursos/declaracao-autoria.md",
+      "reviewBasis": "owner-declaration"
     },
     {
       "path": "dist/platform-assets/leaf-piles-base.svg",
       "sha256": "57def29bfb6431000501d7ee476dd0d81995e693c302e8ac85cc9f7be5b6c164",
       "group": "identidade",
-      "status": "pending",
-      "rightsHolder": null,
-      "license": null,
-      "permissionEvidence": null
+      "status": "cleared",
+      "rightsHolder": "Luigi Scofano de Araujo (elementos autorais)",
+      "license": "Direitos reservados; recursos visuais excluídos da licença MIT do código.",
+      "permissionEvidence": "docs/recursos/declaracao-autoria.md",
+      "reviewBasis": "owner-declaration"
     },
     {
       "path": "dist/platform-assets/leaf-sage.svg",
       "sha256": "e11a9be7b5fe4897737082c28af3105ecb837e076dad89ab4c4def17cfca5e24",
       "group": "identidade",
-      "status": "pending",
-      "rightsHolder": null,
-      "license": null,
-      "permissionEvidence": null
+      "status": "cleared",
+      "rightsHolder": "Luigi Scofano de Araujo (elementos autorais)",
+      "license": "Direitos reservados; recursos visuais excluídos da licença MIT do código.",
+      "permissionEvidence": "docs/recursos/declaracao-autoria.md",
+      "reviewBasis": "owner-declaration"
     },
     {
       "path": "dist/platform-assets/leaf-seal.svg",
       "sha256": "783ebad5b01919a1cbbe361645983c7099b2f6d7b58449ca92cc6ecb54ff621e",
       "group": "identidade",
-      "status": "pending",
-      "rightsHolder": null,
-      "license": null,
-      "permissionEvidence": null
+      "status": "cleared",
+      "rightsHolder": "Luigi Scofano de Araujo (elementos autorais)",
+      "license": "Direitos reservados; recursos visuais excluídos da licença MIT do código.",
+      "permissionEvidence": "docs/recursos/declaracao-autoria.md",
+      "reviewBasis": "owner-declaration"
     },
     {
       "path": "dist/platform-assets/leaf.svg",
       "sha256": "317117d843319247662c7e977bc75a6eda8556c48a0eaef4e598a3650a2edca1",
       "group": "identidade",
-      "status": "pending",
-      "rightsHolder": null,
-      "license": null,
-      "permissionEvidence": null
+      "status": "cleared",
+      "rightsHolder": "Luigi Scofano de Araujo (elementos autorais)",
+      "license": "Direitos reservados; recursos visuais excluídos da licença MIT do código.",
+      "permissionEvidence": "docs/recursos/declaracao-autoria.md",
+      "reviewBasis": "owner-declaration"
     },
     {
       "path": "dist/platform-assets/paper-marks.svg",
       "sha256": "4fca27f70866cc7bb85bf5325f8d0f5271fdd21982eda9055b40bb3fb527e534",
       "group": "identidade",
-      "status": "pending",
-      "rightsHolder": null,
-      "license": null,
-      "permissionEvidence": null
+      "status": "cleared",
+      "rightsHolder": "Luigi Scofano de Araujo (elementos autorais)",
+      "license": "Direitos reservados; recursos visuais excluídos da licença MIT do código.",
+      "permissionEvidence": "docs/recursos/declaracao-autoria.md",
+      "reviewBasis": "owner-declaration"
     },
     {
       "path": "dist/platform-assets/quiet-garden.svg",
       "sha256": "6af3f9a28fcdb81112855a325d2c00ab0362f20b7d9a15028f3e4265f2e6926e",
       "group": "identidade",
-      "status": "pending",
-      "rightsHolder": null,
-      "license": null,
-      "permissionEvidence": null
+      "status": "cleared",
+      "rightsHolder": "Luigi Scofano de Araujo (elementos autorais)",
+      "license": "Direitos reservados; recursos visuais excluídos da licença MIT do código.",
+      "permissionEvidence": "docs/recursos/declaracao-autoria.md",
+      "reviewBasis": "owner-declaration"
     },
     {
       "path": "dist/platform-assets/soft-crown-left.svg",
       "sha256": "9116fdd70cd5a33f4b21c322eeb36634d4a3d07a0b2c9263284bb36a30c7d3ff",
       "group": "identidade",
-      "status": "pending",
-      "rightsHolder": null,
-      "license": null,
-      "permissionEvidence": null
+      "status": "cleared",
+      "rightsHolder": "Luigi Scofano de Araujo (elementos autorais)",
+      "license": "Direitos reservados; recursos visuais excluídos da licença MIT do código.",
+      "permissionEvidence": "docs/recursos/declaracao-autoria.md",
+      "reviewBasis": "owner-declaration"
     },
     {
       "path": "dist/platform-assets/soft-crown-right.svg",
       "sha256": "4ada816ca1ca7372d0bfd53e27e223c9345198bda2923d7857155623cba17e6c",
       "group": "identidade",
-      "status": "pending",
-      "rightsHolder": null,
-      "license": null,
-      "permissionEvidence": null
+      "status": "cleared",
+      "rightsHolder": "Luigi Scofano de Araujo (elementos autorais)",
+      "license": "Direitos reservados; recursos visuais excluídos da licença MIT do código.",
+      "permissionEvidence": "docs/recursos/declaracao-autoria.md",
+      "reviewBasis": "owner-declaration"
     },
     {
       "path": "dist/platform-assets/tree-canopy-diverse.svg",
       "sha256": "7103957ba26b5c44f3c91c83dc69ed53e795e7fb2950191ae20a01924183b893",
       "group": "identidade",
-      "status": "pending",
-      "rightsHolder": null,
-      "license": null,
-      "permissionEvidence": null
+      "status": "cleared",
+      "rightsHolder": "Luigi Scofano de Araujo (elementos autorais)",
+      "license": "Direitos reservados; recursos visuais excluídos da licença MIT do código.",
+      "permissionEvidence": "docs/recursos/declaracao-autoria.md",
+      "reviewBasis": "owner-declaration"
     },
     {
       "path": "dist/platform-assets/tree-canopy-natural-filled.svg",
       "sha256": "518a4dadae57d5dd59114ea4821654ea33b5e31d8a59ab090bd61edb01e8abb8",
       "group": "identidade",
-      "status": "pending",
-      "rightsHolder": null,
-      "license": null,
-      "permissionEvidence": null
+      "status": "cleared",
+      "rightsHolder": "Luigi Scofano de Araujo (elementos autorais)",
+      "license": "Direitos reservados; recursos visuais excluídos da licença MIT do código.",
+      "permissionEvidence": "docs/recursos/declaracao-autoria.md",
+      "reviewBasis": "owner-declaration"
     },
     {
       "path": "dist/platform-assets/tree-canopy-pixel.svg",
       "sha256": "2b14f54bfa476ce509656456a8f81855126e71bbf0d762e82f303913968fb44f",
       "group": "identidade",
-      "status": "pending",
-      "rightsHolder": null,
-      "license": null,
-      "permissionEvidence": null
+      "status": "cleared",
+      "rightsHolder": "Luigi Scofano de Araujo (elementos autorais)",
+      "license": "Direitos reservados; recursos visuais excluídos da licença MIT do código.",
+      "permissionEvidence": "docs/recursos/declaracao-autoria.md",
+      "reviewBasis": "owner-declaration"
     },
     {
       "path": "dist/platform-assets/tree-canopy-softedge-fine.svg",
       "sha256": "656e22b5e13ce6902e0b286645bdb69452427749e70ba8e1914d39d1babd8e81",
       "group": "identidade",
-      "status": "pending",
-      "rightsHolder": null,
-      "license": null,
-      "permissionEvidence": null
+      "status": "cleared",
+      "rightsHolder": "Luigi Scofano de Araujo (elementos autorais)",
+      "license": "Direitos reservados; recursos visuais excluídos da licença MIT do código.",
+      "permissionEvidence": "docs/recursos/declaracao-autoria.md",
+      "reviewBasis": "owner-declaration"
     },
     {
       "path": "dist/platform-assets/tree-canopy-softedge.svg",
       "sha256": "cc2638e55c567b4f1b1f83446cc2e42260d60d508b656c60cbbf0f6c224f8753",
       "group": "identidade",
-      "status": "pending",
-      "rightsHolder": null,
-      "license": null,
-      "permissionEvidence": null
+      "status": "cleared",
+      "rightsHolder": "Luigi Scofano de Araujo (elementos autorais)",
+      "license": "Direitos reservados; recursos visuais excluídos da licença MIT do código.",
+      "permissionEvidence": "docs/recursos/declaracao-autoria.md",
+      "reviewBasis": "owner-declaration"
     },
     {
       "path": "dist/platform-assets/tree-canopy-varied.svg",
       "sha256": "05a4c7ccd8b12489224fcb5c6d1345c82de4165a253641e7ebf0c1ba0421dbf8",
       "group": "identidade",
-      "status": "pending",
-      "rightsHolder": null,
-      "license": null,
-      "permissionEvidence": null
+      "status": "cleared",
+      "rightsHolder": "Luigi Scofano de Araujo (elementos autorais)",
+      "license": "Direitos reservados; recursos visuais excluídos da licença MIT do código.",
+      "permissionEvidence": "docs/recursos/declaracao-autoria.md",
+      "reviewBasis": "owner-declaration"
     },
     {
       "path": "dist/platform-assets/tree-canopy.svg",
       "sha256": "3b3ef825dfb5b488609d912e617eafd731c3e5978cf3e38fff91ee00a6896fc9",
       "group": "identidade",
-      "status": "pending",
-      "rightsHolder": null,
-      "license": null,
-      "permissionEvidence": null
+      "status": "cleared",
+      "rightsHolder": "Luigi Scofano de Araujo (elementos autorais)",
+      "license": "Direitos reservados; recursos visuais excluídos da licença MIT do código.",
+      "permissionEvidence": "docs/recursos/declaracao-autoria.md",
+      "reviewBasis": "owner-declaration"
     },
     {
       "path": "dist/sintonia/assets/accessories/box-0.png",
       "sha256": "b322b15d372c8166c7a262201e36daeb6ae08a0250b0d92ab58f026e91f721dc",
       "group": "acessorios",
-      "status": "pending",
-      "rightsHolder": null,
-      "license": null,
-      "permissionEvidence": null
+      "status": "cleared",
+      "rightsHolder": "Luigi Scofano de Araujo (elementos autorais)",
+      "license": "Direitos reservados; recursos visuais excluídos da licença MIT do código.",
+      "permissionEvidence": "docs/recursos/declaracao-autoria.md",
+      "reviewBasis": "owner-declaration"
     },
     {
       "path": "dist/sintonia/assets/accessories/box-1.png",
       "sha256": "6d3b2d2dede58a9f1b8bea50d21d84f6923b857640a9a8e9a92a085dbd14dea0",
       "group": "acessorios",
-      "status": "pending",
-      "rightsHolder": null,
-      "license": null,
-      "permissionEvidence": null
+      "status": "cleared",
+      "rightsHolder": "Luigi Scofano de Araujo (elementos autorais)",
+      "license": "Direitos reservados; recursos visuais excluídos da licença MIT do código.",
+      "permissionEvidence": "docs/recursos/declaracao-autoria.md",
+      "reviewBasis": "owner-declaration"
     },
     {
       "path": "dist/sintonia/assets/accessories/bridge-0.png",
       "sha256": "910b84998fbd2d2e2d2dccf745054b258a4a63b0a71ed2c0839f7bcb4d33e805",
       "group": "acessorios",
-      "status": "pending",
-      "rightsHolder": null,
-      "license": null,
-      "permissionEvidence": null
+      "status": "cleared",
+      "rightsHolder": "Luigi Scofano de Araujo (elementos autorais)",
+      "license": "Direitos reservados; recursos visuais excluídos da licença MIT do código.",
+      "permissionEvidence": "docs/recursos/declaracao-autoria.md",
+      "reviewBasis": "owner-declaration"
     },
     {
       "path": "dist/sintonia/assets/accessories/bridge-1.png",
       "sha256": "576809aa455028cb1467c962bd5390e4d7c1d58f31feeebbee636af7b1c3e905",
       "group": "acessorios",
-      "status": "pending",
-      "rightsHolder": null,
-      "license": null,
-      "permissionEvidence": null
+      "status": "cleared",
+      "rightsHolder": "Luigi Scofano de Araujo (elementos autorais)",
+      "license": "Direitos reservados; recursos visuais excluídos da licença MIT do código.",
+      "permissionEvidence": "docs/recursos/declaracao-autoria.md",
+      "reviewBasis": "owner-declaration"
     },
     {
       "path": "dist/sintonia/assets/accessories/delivery-0.png",
       "sha256": "e0ebf1420ced5c73e91c3fd7a3eb940f7734683da417d474fa65f2fb774f5d11",
       "group": "acessorios",
-      "status": "pending",
-      "rightsHolder": null,
-      "license": null,
-      "permissionEvidence": null
+      "status": "cleared",
+      "rightsHolder": "Luigi Scofano de Araujo (elementos autorais)",
+      "license": "Direitos reservados; recursos visuais excluídos da licença MIT do código.",
+      "permissionEvidence": "docs/recursos/declaracao-autoria.md",
+      "reviewBasis": "owner-declaration"
     },
     {
       "path": "dist/sintonia/assets/accessories/delivery-1.png",
       "sha256": "87f0e6b44e356e1c49049fdd3e569e991982063465c2b946ee916b8809a56b35",
       "group": "acessorios",
-      "status": "pending",
-      "rightsHolder": null,
-      "license": null,
-      "permissionEvidence": null
+      "status": "cleared",
+      "rightsHolder": "Luigi Scofano de Araujo (elementos autorais)",
+      "license": "Direitos reservados; recursos visuais excluídos da licença MIT do código.",
+      "permissionEvidence": "docs/recursos/declaracao-autoria.md",
+      "reviewBasis": "owner-declaration"
     },
     {
       "path": "dist/sintonia/assets/accessories/gate-0.png",
       "sha256": "6cd00debb9486d32dd74bbe282bf7bacee2b6a4608e8a18969fc9cee77be43a8",
       "group": "acessorios",
-      "status": "pending",
-      "rightsHolder": null,
-      "license": null,
-      "permissionEvidence": null
+      "status": "cleared",
+      "rightsHolder": "Luigi Scofano de Araujo (elementos autorais)",
+      "license": "Direitos reservados; recursos visuais excluídos da licença MIT do código.",
+      "permissionEvidence": "docs/recursos/declaracao-autoria.md",
+      "reviewBasis": "owner-declaration"
     },
     {
       "path": "dist/sintonia/assets/accessories/gate-1.png",
       "sha256": "037cf3d09296ae61fa9ba89541c4339b2340cd82bf74bfa6343a2a6b890d8974",
       "group": "acessorios",
-      "status": "pending",
-      "rightsHolder": null,
-      "license": null,
-      "permissionEvidence": null
+      "status": "cleared",
+      "rightsHolder": "Luigi Scofano de Araujo (elementos autorais)",
+      "license": "Direitos reservados; recursos visuais excluídos da licença MIT do código.",
+      "permissionEvidence": "docs/recursos/declaracao-autoria.md",
+      "reviewBasis": "owner-declaration"
     },
     {
       "path": "dist/sintonia/assets/accessories/goal-0.png",
       "sha256": "6f8a877e56b8e97ce7e25a15dbad7da3ed142247ad4e88b3e67731fef7ed18cc",
       "group": "acessorios",
-      "status": "pending",
-      "rightsHolder": null,
-      "license": null,
-      "permissionEvidence": null
+      "status": "cleared",
+      "rightsHolder": "Luigi Scofano de Araujo (elementos autorais)",
+      "license": "Direitos reservados; recursos visuais excluídos da licença MIT do código.",
+      "permissionEvidence": "docs/recursos/declaracao-autoria.md",
+      "reviewBasis": "owner-declaration"
     },
     {
       "path": "dist/sintonia/assets/accessories/goal-1.png",
       "sha256": "3c4a37af54446813a9030b59f24cc1cc918717bbe52504ed9f8f2bf6014915ed",
       "group": "acessorios",
-      "status": "pending",
-      "rightsHolder": null,
-      "license": null,
-      "permissionEvidence": null
+      "status": "cleared",
+      "rightsHolder": "Luigi Scofano de Araujo (elementos autorais)",
+      "license": "Direitos reservados; recursos visuais excluídos da licença MIT do código.",
+      "permissionEvidence": "docs/recursos/declaracao-autoria.md",
+      "reviewBasis": "owner-declaration"
     },
     {
       "path": "dist/sintonia/assets/accessories/ice-0.png",
       "sha256": "79b2ae0fe8203cd2ee34a15a480a540a05b5cb2ab501cee6bdeed87711252cfb",
       "group": "acessorios",
-      "status": "pending",
-      "rightsHolder": null,
-      "license": null,
-      "permissionEvidence": null
+      "status": "cleared",
+      "rightsHolder": "Luigi Scofano de Araujo (elementos autorais)",
+      "license": "Direitos reservados; recursos visuais excluídos da licença MIT do código.",
+      "permissionEvidence": "docs/recursos/declaracao-autoria.md",
+      "reviewBasis": "owner-declaration"
     },
     {
       "path": "dist/sintonia/assets/accessories/key-0.png",
       "sha256": "4b6d6cc0feb89eb844519ec24b44e561aad4dc90be8ead76398854a234efa036",
       "group": "acessorios",
-      "status": "pending",
-      "rightsHolder": null,
-      "license": null,
-      "permissionEvidence": null
+      "status": "cleared",
+      "rightsHolder": "Luigi Scofano de Araujo (elementos autorais)",
+      "license": "Direitos reservados; recursos visuais excluídos da licença MIT do código.",
+      "permissionEvidence": "docs/recursos/declaracao-autoria.md",
+      "reviewBasis": "owner-declaration"
     },
     {
       "path": "dist/sintonia/assets/accessories/key-1.png",
       "sha256": "ece0651c71b04cb8ef705589d0b2860b37865ab79b6023a60d659f64ac025cc7",
       "group": "acessorios",
-      "status": "pending",
-      "rightsHolder": null,
-      "license": null,
-      "permissionEvidence": null
+      "status": "cleared",
+      "rightsHolder": "Luigi Scofano de Araujo (elementos autorais)",
+      "license": "Direitos reservados; recursos visuais excluídos da licença MIT do código.",
+      "permissionEvidence": "docs/recursos/declaracao-autoria.md",
+      "reviewBasis": "owner-declaration"
     },
     {
       "path": "dist/sintonia/assets/accessories/oneway-0.png",
       "sha256": "bb06fbf5f9d790bcbbebe6f6dd99770326b4680dbe02920ff4ca3f5d8ccd4f39",
       "group": "acessorios",
-      "status": "pending",
-      "rightsHolder": null,
-      "license": null,
-      "permissionEvidence": null
+      "status": "cleared",
+      "rightsHolder": "Luigi Scofano de Araujo (elementos autorais)",
+      "license": "Direitos reservados; recursos visuais excluídos da licença MIT do código.",
+      "permissionEvidence": "docs/recursos/declaracao-autoria.md",
+      "reviewBasis": "owner-declaration"
     },
     {
       "path": "dist/sintonia/assets/accessories/palettes/C/plate-0.png",
       "sha256": "1ffe524b5d6286168e2214c70b54cabba4387e0264d697ab01018d1e452eda31",
       "group": "acessorios",
-      "status": "pending",
-      "rightsHolder": null,
-      "license": null,
-      "permissionEvidence": null
+      "status": "cleared",
+      "rightsHolder": "Luigi Scofano de Araujo (elementos autorais)",
+      "license": "Direitos reservados; recursos visuais excluídos da licença MIT do código.",
+      "permissionEvidence": "docs/recursos/declaracao-autoria.md",
+      "reviewBasis": "owner-declaration"
     },
     {
       "path": "dist/sintonia/assets/accessories/palettes/C/plate-1.png",
       "sha256": "f8a679fb1ddb2c45a70e731e324f46cf85b0b0dba7cc5883d85faf7dc95da9c9",
       "group": "acessorios",
-      "status": "pending",
-      "rightsHolder": null,
-      "license": null,
-      "permissionEvidence": null
+      "status": "cleared",
+      "rightsHolder": "Luigi Scofano de Araujo (elementos autorais)",
+      "license": "Direitos reservados; recursos visuais excluídos da licença MIT do código.",
+      "permissionEvidence": "docs/recursos/declaracao-autoria.md",
+      "reviewBasis": "owner-declaration"
     },
     {
       "path": "dist/sintonia/assets/accessories/palettes/C/switch-0.png",
       "sha256": "81f211b6e62952627045b335ea0e5031f399ffebc51305539afdc06bf28ee368",
       "group": "acessorios",
-      "status": "pending",
-      "rightsHolder": null,
-      "license": null,
-      "permissionEvidence": null
+      "status": "cleared",
+      "rightsHolder": "Luigi Scofano de Araujo (elementos autorais)",
+      "license": "Direitos reservados; recursos visuais excluídos da licença MIT do código.",
+      "permissionEvidence": "docs/recursos/declaracao-autoria.md",
+      "reviewBasis": "owner-declaration"
     },
     {
       "path": "dist/sintonia/assets/accessories/palettes/C/switch-1.png",
       "sha256": "a71db5cdfc19443768949d5a9a7b50253fc88ba3c2444c70eadcc4a610e11c73",
       "group": "acessorios",
-      "status": "pending",
-      "rightsHolder": null,
-      "license": null,
-      "permissionEvidence": null
+      "status": "cleared",
+      "rightsHolder": "Luigi Scofano de Araujo (elementos autorais)",
+      "license": "Direitos reservados; recursos visuais excluídos da licença MIT do código.",
+      "permissionEvidence": "docs/recursos/declaracao-autoria.md",
+      "reviewBasis": "owner-declaration"
     },
     {
       "path": "dist/sintonia/assets/accessories/palettes/D/plate-0.png",
       "sha256": "20d4c129673a14b331c79912b3afbdb714e522e2fce436fa8a95e38d880ceb95",
       "group": "acessorios",
-      "status": "pending",
-      "rightsHolder": null,
-      "license": null,
-      "permissionEvidence": null
+      "status": "cleared",
+      "rightsHolder": "Luigi Scofano de Araujo (elementos autorais)",
+      "license": "Direitos reservados; recursos visuais excluídos da licença MIT do código.",
+      "permissionEvidence": "docs/recursos/declaracao-autoria.md",
+      "reviewBasis": "owner-declaration"
     },
     {
       "path": "dist/sintonia/assets/accessories/palettes/D/plate-1.png",
       "sha256": "5b2d43d5606d9c09320743d9e7f2af05d47283649a76d4ecc9e5b12f4dd86ef3",
       "group": "acessorios",
-      "status": "pending",
-      "rightsHolder": null,
-      "license": null,
-      "permissionEvidence": null
+      "status": "cleared",
+      "rightsHolder": "Luigi Scofano de Araujo (elementos autorais)",
+      "license": "Direitos reservados; recursos visuais excluídos da licença MIT do código.",
+      "permissionEvidence": "docs/recursos/declaracao-autoria.md",
+      "reviewBasis": "owner-declaration"
     },
     {
       "path": "dist/sintonia/assets/accessories/palettes/D/switch-0.png",
       "sha256": "8415fbc57d14ef3f75edcfe28a4bffc4613b02b14870ee47b3a2e4c1f940180f",
       "group": "acessorios",
-      "status": "pending",
-      "rightsHolder": null,
-      "license": null,
-      "permissionEvidence": null
+      "status": "cleared",
+      "rightsHolder": "Luigi Scofano de Araujo (elementos autorais)",
+      "license": "Direitos reservados; recursos visuais excluídos da licença MIT do código.",
+      "permissionEvidence": "docs/recursos/declaracao-autoria.md",
+      "reviewBasis": "owner-declaration"
     },
     {
       "path": "dist/sintonia/assets/accessories/palettes/D/switch-1.png",
       "sha256": "ec89279b8815b7893fc5cdf5eb354d06299fc75a5836cb9f706eb189c1ebcda2",
       "group": "acessorios",
-      "status": "pending",
-      "rightsHolder": null,
-      "license": null,
-      "permissionEvidence": null
+      "status": "cleared",
+      "rightsHolder": "Luigi Scofano de Araujo (elementos autorais)",
+      "license": "Direitos reservados; recursos visuais excluídos da licença MIT do código.",
+      "permissionEvidence": "docs/recursos/declaracao-autoria.md",
+      "reviewBasis": "owner-declaration"
     },
     {
       "path": "dist/sintonia/assets/accessories/palettes/E/plate-0.png",
       "sha256": "b2944cb12381d14f92e913d75d3f9818582cb322a9caf9010524cd7cea5b54db",
       "group": "acessorios",
-      "status": "pending",
-      "rightsHolder": null,
-      "license": null,
-      "permissionEvidence": null
+      "status": "cleared",
+      "rightsHolder": "Luigi Scofano de Araujo (elementos autorais)",
+      "license": "Direitos reservados; recursos visuais excluídos da licença MIT do código.",
+      "permissionEvidence": "docs/recursos/declaracao-autoria.md",
+      "reviewBasis": "owner-declaration"
     },
     {
       "path": "dist/sintonia/assets/accessories/palettes/E/plate-1.png",
       "sha256": "41d788587ba16c15b37991b2748929ecf984ddb9fa6211faf33029a723518edc",
       "group": "acessorios",
-      "status": "pending",
-      "rightsHolder": null,
-      "license": null,
-      "permissionEvidence": null
+      "status": "cleared",
+      "rightsHolder": "Luigi Scofano de Araujo (elementos autorais)",
+      "license": "Direitos reservados; recursos visuais excluídos da licença MIT do código.",
+      "permissionEvidence": "docs/recursos/declaracao-autoria.md",
+      "reviewBasis": "owner-declaration"
     },
     {
       "path": "dist/sintonia/assets/accessories/palettes/E/switch-0.png",
       "sha256": "5367715d7429675dcd8eae2290447c9068b71880ff4e9da3eee1d596da348afe",
       "group": "acessorios",
-      "status": "pending",
-      "rightsHolder": null,
-      "license": null,
-      "permissionEvidence": null
+      "status": "cleared",
+      "rightsHolder": "Luigi Scofano de Araujo (elementos autorais)",
+      "license": "Direitos reservados; recursos visuais excluídos da licença MIT do código.",
+      "permissionEvidence": "docs/recursos/declaracao-autoria.md",
+      "reviewBasis": "owner-declaration"
     },
     {
       "path": "dist/sintonia/assets/accessories/palettes/E/switch-1.png",
       "sha256": "b01962459d0f65330ddbe0431d8f144ee844b81a4cd621c9d838658f2bd90f7a",
       "group": "acessorios",
-      "status": "pending",
-      "rightsHolder": null,
-      "license": null,
-      "permissionEvidence": null
+      "status": "cleared",
+      "rightsHolder": "Luigi Scofano de Araujo (elementos autorais)",
+      "license": "Direitos reservados; recursos visuais excluídos da licença MIT do código.",
+      "permissionEvidence": "docs/recursos/declaracao-autoria.md",
+      "reviewBasis": "owner-declaration"
     },
     {
       "path": "dist/sintonia/assets/accessories/plate-0.png",
       "sha256": "a4340ce491f179b3d78cf124be226fb79dc4ce82a4adc6dee815fb4931d680c6",
       "group": "acessorios",
-      "status": "pending",
-      "rightsHolder": null,
-      "license": null,
-      "permissionEvidence": null
+      "status": "cleared",
+      "rightsHolder": "Luigi Scofano de Araujo (elementos autorais)",
+      "license": "Direitos reservados; recursos visuais excluídos da licença MIT do código.",
+      "permissionEvidence": "docs/recursos/declaracao-autoria.md",
+      "reviewBasis": "owner-declaration"
     },
     {
       "path": "dist/sintonia/assets/accessories/plate-1.png",
       "sha256": "d57dee139f17aca2790809580c3c17e8a84478978800226c9d8ac7bb842a80e2",
       "group": "acessorios",
-      "status": "pending",
-      "rightsHolder": null,
-      "license": null,
-      "permissionEvidence": null
+      "status": "cleared",
+      "rightsHolder": "Luigi Scofano de Araujo (elementos autorais)",
+      "license": "Direitos reservados; recursos visuais excluídos da licença MIT do código.",
+      "permissionEvidence": "docs/recursos/declaracao-autoria.md",
+      "reviewBasis": "owner-declaration"
     },
     {
       "path": "dist/sintonia/assets/accessories/portal-0.png",
       "sha256": "0ca630d398965d0627f7d38588009bf585e81e4ef57b3b88c8cc4109262d949d",
       "group": "acessorios",
-      "status": "pending",
-      "rightsHolder": null,
-      "license": null,
-      "permissionEvidence": null
+      "status": "cleared",
+      "rightsHolder": "Luigi Scofano de Araujo (elementos autorais)",
+      "license": "Direitos reservados; recursos visuais excluídos da licença MIT do código.",
+      "permissionEvidence": "docs/recursos/declaracao-autoria.md",
+      "reviewBasis": "owner-declaration"
     },
     {
       "path": "dist/sintonia/assets/accessories/selector-0.png",
       "sha256": "e2d50f46493d5f2e3822bc1481e10db06db32aa567ecaa219b9d5b252f600c5b",
       "group": "acessorios",
-      "status": "pending",
-      "rightsHolder": null,
-      "license": null,
-      "permissionEvidence": null
+      "status": "cleared",
+      "rightsHolder": "Luigi Scofano de Araujo (elementos autorais)",
+      "license": "Direitos reservados; recursos visuais excluídos da licença MIT do código.",
+      "permissionEvidence": "docs/recursos/declaracao-autoria.md",
+      "reviewBasis": "owner-declaration"
     },
     {
       "path": "dist/sintonia/assets/accessories/selector-1.png",
       "sha256": "33d2f17f9cd3dc1e301522288e589e1f887b5f8a13c57bb826c4a986f952e47b",
       "group": "acessorios",
-      "status": "pending",
-      "rightsHolder": null,
-      "license": null,
-      "permissionEvidence": null
+      "status": "cleared",
+      "rightsHolder": "Luigi Scofano de Araujo (elementos autorais)",
+      "license": "Direitos reservados; recursos visuais excluídos da licença MIT do código.",
+      "permissionEvidence": "docs/recursos/declaracao-autoria.md",
+      "reviewBasis": "owner-declaration"
     },
     {
       "path": "dist/sintonia/assets/accessories/switch-0.png",
       "sha256": "a32e61335bba6b865857af08aab42f822cd2885074b0954be36a28ddcbeee558",
       "group": "acessorios",
-      "status": "pending",
-      "rightsHolder": null,
-      "license": null,
-      "permissionEvidence": null
+      "status": "cleared",
+      "rightsHolder": "Luigi Scofano de Araujo (elementos autorais)",
+      "license": "Direitos reservados; recursos visuais excluídos da licença MIT do código.",
+      "permissionEvidence": "docs/recursos/declaracao-autoria.md",
+      "reviewBasis": "owner-declaration"
     },
     {
       "path": "dist/sintonia/assets/accessories/switch-1.png",
       "sha256": "e2da0f6605d43f824ded663244bfaf81d34bd7a8c1dd32294d065b3ca5e89937",
       "group": "acessorios",
-      "status": "pending",
-      "rightsHolder": null,
-      "license": null,
-      "permissionEvidence": null
+      "status": "cleared",
+      "rightsHolder": "Luigi Scofano de Araujo (elementos autorais)",
+      "license": "Direitos reservados; recursos visuais excluídos da licença MIT do código.",
+      "permissionEvidence": "docs/recursos/declaracao-autoria.md",
+      "reviewBasis": "owner-declaration"
     },
     {
       "path": "dist/sintonia/assets/bemtevi.png",
       "sha256": "7fa6c886f520ce92c934e7d7602488dbede88d8f9e80a31b379fa76d5146b720",
       "group": "sintonia",
-      "status": "pending",
-      "rightsHolder": null,
-      "license": null,
-      "permissionEvidence": null
+      "status": "cleared",
+      "rightsHolder": "Luigi Scofano de Araujo (elementos autorais)",
+      "license": "Direitos reservados; recursos visuais excluídos da licença MIT do código.",
+      "permissionEvidence": "docs/recursos/declaracao-autoria.md",
+      "reviewBasis": "owner-declaration"
     },
     {
       "path": "dist/sintonia/assets/capivara.png",
       "sha256": "ba48ab391bdd05c577acabb93d0cf6e2dc2c82a26e20094f119bcb274d5a167c",
       "group": "sintonia",
-      "status": "pending",
-      "rightsHolder": null,
-      "license": null,
-      "permissionEvidence": null
+      "status": "cleared",
+      "rightsHolder": "Luigi Scofano de Araujo (elementos autorais)",
+      "license": "Direitos reservados; recursos visuais excluídos da licença MIT do código.",
+      "permissionEvidence": "docs/recursos/declaracao-autoria.md",
+      "reviewBasis": "owner-declaration"
     },
     {
       "path": "dist/sintonia/assets/chibi-user-atlas.svg",
       "sha256": "097a3b06f44666066c888f6338981d62fb894d515bc2781304659f9781d8c3e0",
       "group": "sintonia",
-      "status": "pending",
-      "rightsHolder": null,
-      "license": null,
-      "permissionEvidence": null
+      "status": "cleared",
+      "rightsHolder": "Luigi Scofano de Araujo (elementos autorais)",
+      "license": "Direitos reservados; recursos visuais excluídos da licença MIT do código.",
+      "permissionEvidence": "docs/recursos/declaracao-autoria.md",
+      "reviewBasis": "owner-declaration"
     },
     {
       "path": "dist/sintonia/assets/chibi-user-roster.svg",
       "sha256": "d7d4b80f054b8f16d44c0d0b8805bf0f5074caaae443e69394156ccc84211b18",
       "group": "sintonia",
-      "status": "pending",
-      "rightsHolder": null,
-      "license": null,
-      "permissionEvidence": null
+      "status": "cleared",
+      "rightsHolder": "Luigi Scofano de Araujo (elementos autorais)",
+      "license": "Direitos reservados; recursos visuais excluídos da licença MIT do código.",
+      "permissionEvidence": "docs/recursos/declaracao-autoria.md",
+      "reviewBasis": "owner-declaration"
     },
     {
       "path": "dist/sintonia/assets/mico.png",
       "sha256": "05380b52a6b6ba6b5d330f43709d901c496c5cb2c8b16fff0469a930aa98e795",
       "group": "sintonia",
-      "status": "pending",
-      "rightsHolder": null,
-      "license": null,
-      "permissionEvidence": null
+      "status": "cleared",
+      "rightsHolder": "Luigi Scofano de Araujo (elementos autorais)",
+      "license": "Direitos reservados; recursos visuais excluídos da licença MIT do código.",
+      "permissionEvidence": "docs/recursos/declaracao-autoria.md",
+      "reviewBasis": "owner-declaration"
     },
     {
       "path": "dist/sintonia/assets/tuiuiu.png",
       "sha256": "ddd125545befd4dba8a1ca161c1a198f33cc00fbbc65b79a200a80ba26dfa6d7",
       "group": "sintonia",
-      "status": "pending",
-      "rightsHolder": null,
-      "license": null,
-      "permissionEvidence": null
+      "status": "cleared",
+      "rightsHolder": "Luigi Scofano de Araujo (elementos autorais)",
+      "license": "Direitos reservados; recursos visuais excluídos da licença MIT do código.",
+      "permissionEvidence": "docs/recursos/declaracao-autoria.md",
+      "reviewBasis": "owner-declaration"
     },
     {
       "path": "docs/imagens/jogos/broto.jpg",
       "sha256": "4a4dd972e97b0da048d913ebde867cd6ba0297dd689872268013739424f6e2a7",
       "group": "galeria",
-      "status": "pending",
-      "rightsHolder": null,
-      "license": null,
-      "permissionEvidence": null
+      "status": "cleared",
+      "rightsHolder": "Luigi Scofano de Araujo (elementos autorais)",
+      "license": "Direitos reservados; recursos visuais excluídos da licença MIT do código.",
+      "permissionEvidence": "docs/recursos/declaracao-autoria.md",
+      "reviewBasis": "owner-declaration"
     },
     {
       "path": "docs/imagens/jogos/cerco.jpg",
       "sha256": "cdbdce774079020f3d8625c7bcab5c474c8315347376a89bb0061a74f70161f8",
       "group": "galeria",
-      "status": "pending",
-      "rightsHolder": null,
-      "license": null,
-      "permissionEvidence": null
+      "status": "cleared",
+      "rightsHolder": "Luigi Scofano de Araujo (elementos autorais)",
+      "license": "Direitos reservados; recursos visuais excluídos da licença MIT do código.",
+      "permissionEvidence": "docs/recursos/declaracao-autoria.md",
+      "reviewBasis": "owner-declaration"
     },
     {
       "path": "docs/imagens/jogos/corte.jpg",
       "sha256": "aed20e82ab5029d42cc23f74cc9be2a7e28f1887d6663561c04266edb76f3d6a",
       "group": "galeria",
-      "status": "pending",
-      "rightsHolder": null,
-      "license": null,
-      "permissionEvidence": null
+      "status": "cleared",
+      "rightsHolder": "Luigi Scofano de Araujo (elementos autorais)",
+      "license": "Direitos reservados; recursos visuais excluídos da licença MIT do código.",
+      "permissionEvidence": "docs/recursos/declaracao-autoria.md",
+      "reviewBasis": "owner-declaration"
     },
     {
       "path": "docs/imagens/jogos/desvio.jpg",
       "sha256": "f2b18c717f5feb119ff716487583310c560cb6bf677e327f446769b913f9a20a",
       "group": "galeria",
-      "status": "pending",
-      "rightsHolder": null,
-      "license": null,
-      "permissionEvidence": null
+      "status": "cleared",
+      "rightsHolder": "Luigi Scofano de Araujo (elementos autorais)",
+      "license": "Direitos reservados; recursos visuais excluídos da licença MIT do código.",
+      "permissionEvidence": "docs/recursos/declaracao-autoria.md",
+      "reviewBasis": "owner-declaration"
     },
     {
       "path": "docs/imagens/jogos/elo.jpg",
       "sha256": "e72def4850962467016be12d55302cba012e5a768b4c51dfe25790ab2a443165",
       "group": "galeria",
-      "status": "pending",
-      "rightsHolder": null,
-      "license": null,
-      "permissionEvidence": null
+      "status": "cleared",
+      "rightsHolder": "Luigi Scofano de Araujo (elementos autorais)",
+      "license": "Direitos reservados; recursos visuais excluídos da licença MIT do código.",
+      "permissionEvidence": "docs/recursos/declaracao-autoria.md",
+      "reviewBasis": "owner-declaration"
     },
     {
       "path": "docs/imagens/jogos/orbita.jpg",
       "sha256": "c6ab9f96f1759da415fcd01da6cb79051053f5f6caee262f67a300a3e70176f2",
       "group": "galeria",
-      "status": "pending",
-      "rightsHolder": null,
-      "license": null,
-      "permissionEvidence": null
+      "status": "cleared",
+      "rightsHolder": "Luigi Scofano de Araujo (elementos autorais)",
+      "license": "Direitos reservados; recursos visuais excluídos da licença MIT do código.",
+      "permissionEvidence": "docs/recursos/declaracao-autoria.md",
+      "reviewBasis": "owner-declaration"
     },
     {
       "path": "docs/imagens/jogos/pacto.jpg",
       "sha256": "10768b87a2c5634d2df5ca31c427c879df14f8c4a08857469b67ab6ac9491f86",
       "group": "galeria",
-      "status": "pending",
-      "rightsHolder": null,
-      "license": null,
-      "permissionEvidence": null
+      "status": "cleared",
+      "rightsHolder": "Luigi Scofano de Araujo (elementos autorais)",
+      "license": "Direitos reservados; recursos visuais excluídos da licença MIT do código.",
+      "permissionEvidence": "docs/recursos/declaracao-autoria.md",
+      "reviewBasis": "owner-declaration"
     },
     {
       "path": "docs/imagens/jogos/prumo.jpg",
       "sha256": "595d8a07f5d78614f9702f78850427f864a470f76245509a8f156aeb5b87d338",
       "group": "galeria",
-      "status": "pending",
-      "rightsHolder": null,
-      "license": null,
-      "permissionEvidence": null
+      "status": "cleared",
+      "rightsHolder": "Luigi Scofano de Araujo (elementos autorais)",
+      "license": "Direitos reservados; recursos visuais excluídos da licença MIT do código.",
+      "permissionEvidence": "docs/recursos/declaracao-autoria.md",
+      "reviewBasis": "owner-declaration"
     },
     {
       "path": "docs/imagens/jogos/reflexos.jpg",
       "sha256": "20764cc46c1e050f62dbc0bbdbe4b86afb02cf34f5c4d295c27ad0b798432620",
       "group": "galeria",
-      "status": "pending",
-      "rightsHolder": null,
-      "license": null,
-      "permissionEvidence": null
+      "status": "cleared",
+      "rightsHolder": "Luigi Scofano de Araujo (elementos autorais)",
+      "license": "Direitos reservados; recursos visuais excluídos da licença MIT do código.",
+      "permissionEvidence": "docs/recursos/declaracao-autoria.md",
+      "reviewBasis": "owner-declaration"
     },
     {
       "path": "docs/imagens/jogos/repasse.jpg",
       "sha256": "529886e8f35258ab747836817e12deab71f2230faeedfb383de22080eb7c8fc4",
       "group": "galeria",
-      "status": "pending",
-      "rightsHolder": null,
-      "license": null,
-      "permissionEvidence": null
+      "status": "cleared",
+      "rightsHolder": "Luigi Scofano de Araujo (elementos autorais)",
+      "license": "Direitos reservados; recursos visuais excluídos da licença MIT do código.",
+      "permissionEvidence": "docs/recursos/declaracao-autoria.md",
+      "reviewBasis": "owner-declaration"
     },
     {
       "path": "docs/imagens/jogos/sintonia.jpg",
       "sha256": "f5d03edfc08af750941c7b7a485bb8c4f123878e4bf001974028ea41e77bcebb",
       "group": "galeria",
-      "status": "pending",
-      "rightsHolder": null,
-      "license": null,
-      "permissionEvidence": null
+      "status": "cleared",
+      "rightsHolder": "Luigi Scofano de Araujo (elementos autorais)",
+      "license": "Direitos reservados; recursos visuais excluídos da licença MIT do código.",
+      "permissionEvidence": "docs/recursos/declaracao-autoria.md",
+      "reviewBasis": "owner-declaration"
     },
     {
       "path": "docs/intuicao-botoes-lado-a-lado-1792946069816.jpg",
       "sha256": "2726f2e25b1f8003e39d0ea05de0b2b1476c4e21ebcb260ad808cb4b3bfd5554",
       "group": "documentacao",
-      "status": "pending",
-      "rightsHolder": null,
-      "license": null,
-      "permissionEvidence": null
+      "status": "cleared",
+      "rightsHolder": "Luigi Scofano de Araujo (elementos autorais)",
+      "license": "Direitos reservados; recursos visuais excluídos da licença MIT do código.",
+      "permissionEvidence": "docs/recursos/declaracao-autoria.md",
+      "reviewBasis": "owner-declaration"
     },
     {
       "path": "docs/intuicao-cabecalho-unificado-1792953556927.jpg",
       "sha256": "b6b85b5324e50f34d0f3acf9d78013fdd2397cc858f5f23c5bc1cf91019a52d3",
       "group": "documentacao",
-      "status": "pending",
-      "rightsHolder": null,
-      "license": null,
-      "permissionEvidence": null
+      "status": "cleared",
+      "rightsHolder": "Luigi Scofano de Araujo (elementos autorais)",
+      "license": "Direitos reservados; recursos visuais excluídos da licença MIT do código.",
+      "permissionEvidence": "docs/recursos/declaracao-autoria.md",
+      "reviewBasis": "owner-declaration"
     },
     {
       "path": "docs/intuicao-regras-abertas-1792953584595.jpg",
       "sha256": "154b7dfbf7894368dbb899d59aca7d3d77efc5881733f59cc706681621201d89",
       "group": "documentacao",
-      "status": "pending",
-      "rightsHolder": null,
-      "license": null,
-      "permissionEvidence": null
+      "status": "cleared",
+      "rightsHolder": "Luigi Scofano de Araujo (elementos autorais)",
+      "license": "Direitos reservados; recursos visuais excluídos da licença MIT do código.",
+      "permissionEvidence": "docs/recursos/declaracao-autoria.md",
+      "reviewBasis": "owner-declaration"
     },
     {
       "path": "docs/intuicao-reinicio-instantaneo-1792950788305.jpg",
       "sha256": "f1da90237cea3ab8b7c51d51260a2be1a88921dd68bef4ea796718e3154f93ed",
       "group": "documentacao",
-      "status": "pending",
-      "rightsHolder": null,
-      "license": null,
-      "permissionEvidence": null
+      "status": "cleared",
+      "rightsHolder": "Luigi Scofano de Araujo (elementos autorais)",
+      "license": "Direitos reservados; recursos visuais excluídos da licença MIT do código.",
+      "permissionEvidence": "docs/recursos/declaracao-autoria.md",
+      "reviewBasis": "owner-declaration"
     },
     {
       "path": "docs/orbita-desktop-2026-10-25.jpg",
       "sha256": "2a899a34ba4cef5d3f8f68a8bd27184800cb8c710f3a6c55ef4de05370851d69",
       "group": "documentacao",
-      "status": "pending",
-      "rightsHolder": null,
-      "license": null,
-      "permissionEvidence": null
+      "status": "cleared",
+      "rightsHolder": "Luigi Scofano de Araujo (elementos autorais)",
+      "license": "Direitos reservados; recursos visuais excluídos da licença MIT do código.",
+      "permissionEvidence": "docs/recursos/declaracao-autoria.md",
+      "reviewBasis": "owner-declaration"
     },
     {
       "path": "docs/orbita-simbolos-2026-10-25.jpg",
       "sha256": "e4d195f2300acb5af3fad884494dad5afa695d96dfc07d3e71ef067b6020dcf1",
       "group": "documentacao",
-      "status": "pending",
-      "rightsHolder": null,
-      "license": null,
-      "permissionEvidence": null
+      "status": "cleared",
+      "rightsHolder": "Luigi Scofano de Araujo (elementos autorais)",
+      "license": "Direitos reservados; recursos visuais excluídos da licença MIT do código.",
+      "permissionEvidence": "docs/recursos/declaracao-autoria.md",
+      "reviewBasis": "owner-declaration"
     },
     {
       "path": "docs/orbita-v2/contact-sheet-1.png",
       "sha256": "5c038eeec8bfa445d75459bce58f1e223fc402e13323540db163eba8e9ec0f43",
       "group": "documentacao",
-      "status": "pending",
-      "rightsHolder": null,
-      "license": null,
-      "permissionEvidence": null
+      "status": "cleared",
+      "rightsHolder": "Luigi Scofano de Araujo (elementos autorais)",
+      "license": "Direitos reservados; recursos visuais excluídos da licença MIT do código.",
+      "permissionEvidence": "docs/recursos/declaracao-autoria.md",
+      "reviewBasis": "owner-declaration"
     },
     {
       "path": "docs/orbita-v2/contact-sheet-1.svg",
       "sha256": "1162c43c4d6ac77e934d54909c01fb4789751b06a4e439b2fa43f9e3bf742810",
       "group": "documentacao",
-      "status": "pending",
-      "rightsHolder": null,
-      "license": null,
-      "permissionEvidence": null
+      "status": "cleared",
+      "rightsHolder": "Luigi Scofano de Araujo (elementos autorais)",
+      "license": "Direitos reservados; recursos visuais excluídos da licença MIT do código.",
+      "permissionEvidence": "docs/recursos/declaracao-autoria.md",
+      "reviewBasis": "owner-declaration"
     },
     {
       "path": "docs/orbita-v2/contact-sheet-2.png",
       "sha256": "fbf3447a568c2bc9d4f4af58138d1e25319a52f1af0ba1000f0ba81a991af33b",
       "group": "documentacao",
-      "status": "pending",
-      "rightsHolder": null,
-      "license": null,
-      "permissionEvidence": null
+      "status": "cleared",
+      "rightsHolder": "Luigi Scofano de Araujo (elementos autorais)",
+      "license": "Direitos reservados; recursos visuais excluídos da licença MIT do código.",
+      "permissionEvidence": "docs/recursos/declaracao-autoria.md",
+      "reviewBasis": "owner-declaration"
     },
     {
       "path": "docs/orbita-v2/contact-sheet-2.svg",
       "sha256": "2252759e8850f40dee52be2c7092dc48be7881323d4f8a51314615e2280f3e75",
       "group": "documentacao",
-      "status": "pending",
-      "rightsHolder": null,
-      "license": null,
-      "permissionEvidence": null
+      "status": "cleared",
+      "rightsHolder": "Luigi Scofano de Araujo (elementos autorais)",
+      "license": "Direitos reservados; recursos visuais excluídos da licença MIT do código.",
+      "permissionEvidence": "docs/recursos/declaracao-autoria.md",
+      "reviewBasis": "owner-declaration"
     },
     {
       "path": "docs/orbita-v2/contact-sheet-3.png",
       "sha256": "3c10ef97572c8489dfd164b55d07ed4b6ce2f4dd8b74f7863d77b4bc6d3d3162",
       "group": "documentacao",
-      "status": "pending",
-      "rightsHolder": null,
-      "license": null,
-      "permissionEvidence": null
+      "status": "cleared",
+      "rightsHolder": "Luigi Scofano de Araujo (elementos autorais)",
+      "license": "Direitos reservados; recursos visuais excluídos da licença MIT do código.",
+      "permissionEvidence": "docs/recursos/declaracao-autoria.md",
+      "reviewBasis": "owner-declaration"
     },
     {
       "path": "docs/orbita-v2/contact-sheet-3.svg",
       "sha256": "2806739bf8eade5967c39f89dc3449c5463b7a02631ef6dbd6e4580acaf0dfc2",
       "group": "documentacao",
-      "status": "pending",
-      "rightsHolder": null,
-      "license": null,
-      "permissionEvidence": null
+      "status": "cleared",
+      "rightsHolder": "Luigi Scofano de Araujo (elementos autorais)",
+      "license": "Direitos reservados; recursos visuais excluídos da licença MIT do código.",
+      "permissionEvidence": "docs/recursos/declaracao-autoria.md",
+      "reviewBasis": "owner-declaration"
     },
     {
       "path": "docs/orbita-v2/contact-sheet-4.png",
       "sha256": "a03f1d07cb09a603c9a6c854c442ae32b27684a76a330ef9c4ac7d9d54cfd77d",
       "group": "documentacao",
-      "status": "pending",
-      "rightsHolder": null,
-      "license": null,
-      "permissionEvidence": null
+      "status": "cleared",
+      "rightsHolder": "Luigi Scofano de Araujo (elementos autorais)",
+      "license": "Direitos reservados; recursos visuais excluídos da licença MIT do código.",
+      "permissionEvidence": "docs/recursos/declaracao-autoria.md",
+      "reviewBasis": "owner-declaration"
     },
     {
       "path": "docs/orbita-v2/contact-sheet-4.svg",
       "sha256": "c5a9f8fe2b829cc7b407fd4931e0b28abf3c069af086e429c6532836852ecdd6",
       "group": "documentacao",
-      "status": "pending",
-      "rightsHolder": null,
-      "license": null,
-      "permissionEvidence": null
+      "status": "cleared",
+      "rightsHolder": "Luigi Scofano de Araujo (elementos autorais)",
+      "license": "Direitos reservados; recursos visuais excluídos da licença MIT do código.",
+      "permissionEvidence": "docs/recursos/declaracao-autoria.md",
+      "reviewBasis": "owner-declaration"
     },
     {
       "path": "docs/orbita-v3/contact-sheet-1.png",
       "sha256": "5f5741b23e590ddc9e1f8c87ff739eb4087e0dcc2989d2e1a53a395ca3a377b7",
       "group": "documentacao",
-      "status": "pending",
-      "rightsHolder": null,
-      "license": null,
-      "permissionEvidence": null
+      "status": "cleared",
+      "rightsHolder": "Luigi Scofano de Araujo (elementos autorais)",
+      "license": "Direitos reservados; recursos visuais excluídos da licença MIT do código.",
+      "permissionEvidence": "docs/recursos/declaracao-autoria.md",
+      "reviewBasis": "owner-declaration"
     },
     {
       "path": "docs/orbita-v3/contact-sheet-1.svg",
       "sha256": "063b6fd12326d653348839d7300019f0590a14050a398a66e55a575c5401b146",
       "group": "documentacao",
-      "status": "pending",
-      "rightsHolder": null,
-      "license": null,
-      "permissionEvidence": null
+      "status": "cleared",
+      "rightsHolder": "Luigi Scofano de Araujo (elementos autorais)",
+      "license": "Direitos reservados; recursos visuais excluídos da licença MIT do código.",
+      "permissionEvidence": "docs/recursos/declaracao-autoria.md",
+      "reviewBasis": "owner-declaration"
     },
     {
       "path": "docs/orbita-v3/contact-sheet-2.png",
       "sha256": "8343bfe92672fbfe997ef0f250a3f7ea6f0e8c4df6a9d98f7a79ff635b8230a9",
       "group": "documentacao",
-      "status": "pending",
-      "rightsHolder": null,
-      "license": null,
-      "permissionEvidence": null
+      "status": "cleared",
+      "rightsHolder": "Luigi Scofano de Araujo (elementos autorais)",
+      "license": "Direitos reservados; recursos visuais excluídos da licença MIT do código.",
+      "permissionEvidence": "docs/recursos/declaracao-autoria.md",
+      "reviewBasis": "owner-declaration"
     },
     {
       "path": "docs/orbita-v3/contact-sheet-2.svg",
       "sha256": "788264334544339c392678fee667e97269b63b74eac674d52700769322ed2bc5",
       "group": "documentacao",
-      "status": "pending",
-      "rightsHolder": null,
-      "license": null,
-      "permissionEvidence": null
+      "status": "cleared",
+      "rightsHolder": "Luigi Scofano de Araujo (elementos autorais)",
+      "license": "Direitos reservados; recursos visuais excluídos da licença MIT do código.",
+      "permissionEvidence": "docs/recursos/declaracao-autoria.md",
+      "reviewBasis": "owner-declaration"
     },
     {
       "path": "docs/orbita-v3/contact-sheet-3.png",
       "sha256": "ceac0a255b660e220913763200256c855cd94191805b767da8d224f07945288e",
       "group": "documentacao",
-      "status": "pending",
-      "rightsHolder": null,
-      "license": null,
-      "permissionEvidence": null
+      "status": "cleared",
+      "rightsHolder": "Luigi Scofano de Araujo (elementos autorais)",
+      "license": "Direitos reservados; recursos visuais excluídos da licença MIT do código.",
+      "permissionEvidence": "docs/recursos/declaracao-autoria.md",
+      "reviewBasis": "owner-declaration"
     },
     {
       "path": "docs/orbita-v3/contact-sheet-3.svg",
       "sha256": "95a9c2105cbc6800cb9e199a849fda1c95940c1e039573a018e8894eb7194399",
       "group": "documentacao",
-      "status": "pending",
-      "rightsHolder": null,
-      "license": null,
-      "permissionEvidence": null
+      "status": "cleared",
+      "rightsHolder": "Luigi Scofano de Araujo (elementos autorais)",
+      "license": "Direitos reservados; recursos visuais excluídos da licença MIT do código.",
+      "permissionEvidence": "docs/recursos/declaracao-autoria.md",
+      "reviewBasis": "owner-declaration"
     },
     {
       "path": "docs/prumo80-10x10-desktop.png",
       "sha256": "df7207f2d27032f2d36f1901e8abc91a5803c970236a4c51cf0c2e7396cc528c",
       "group": "documentacao",
-      "status": "pending",
-      "rightsHolder": null,
-      "license": null,
-      "permissionEvidence": null
+      "status": "cleared",
+      "rightsHolder": "Luigi Scofano de Araujo (elementos autorais)",
+      "license": "Direitos reservados; recursos visuais excluídos da licença MIT do código.",
+      "permissionEvidence": "docs/recursos/declaracao-autoria.md",
+      "reviewBasis": "owner-declaration"
     },
     {
       "path": "docs/prumo80-10x10-win.png",
       "sha256": "0a96cc999d9b2d0d167d458c2910347e8c473a40d938ade7b53134e1f7afa4b2",
       "group": "documentacao",
-      "status": "pending",
-      "rightsHolder": null,
-      "license": null,
-      "permissionEvidence": null
+      "status": "cleared",
+      "rightsHolder": "Luigi Scofano de Araujo (elementos autorais)",
+      "license": "Direitos reservados; recursos visuais excluídos da licença MIT do código.",
+      "permissionEvidence": "docs/recursos/declaracao-autoria.md",
+      "reviewBasis": "owner-declaration"
     },
     {
       "path": "docs/reflexos-spacious/comparacao-15.svg",
       "sha256": "cabbfa84d850ac8b629dae352a0105e98895d689292170d07d239e0ad614f707",
       "group": "documentacao",
-      "status": "pending",
-      "rightsHolder": null,
-      "license": null,
-      "permissionEvidence": null
+      "status": "cleared",
+      "rightsHolder": "Luigi Scofano de Araujo (elementos autorais)",
+      "license": "Direitos reservados; recursos visuais excluídos da licença MIT do código.",
+      "permissionEvidence": "docs/recursos/declaracao-autoria.md",
+      "reviewBasis": "owner-declaration"
     },
     {
       "path": "docs/reflexos-spacious/comparacao-31.svg",
       "sha256": "920eed195dc3e77ee29798828d6f5d335f81fa92bcdd03398a71bed9708e01e9",
       "group": "documentacao",
-      "status": "pending",
-      "rightsHolder": null,
-      "license": null,
-      "permissionEvidence": null
+      "status": "cleared",
+      "rightsHolder": "Luigi Scofano de Araujo (elementos autorais)",
+      "license": "Direitos reservados; recursos visuais excluídos da licença MIT do código.",
+      "permissionEvidence": "docs/recursos/declaracao-autoria.md",
+      "reviewBasis": "owner-declaration"
     },
     {
       "path": "docs/reflexos-spacious/comparacao-46.svg",
       "sha256": "dc8d31faa6dd5e41fca0e77dbd2efdcfe2d97b4dd00cd6de02219495288815c7",
       "group": "documentacao",
-      "status": "pending",
-      "rightsHolder": null,
-      "license": null,
-      "permissionEvidence": null
+      "status": "cleared",
+      "rightsHolder": "Luigi Scofano de Araujo (elementos autorais)",
+      "license": "Direitos reservados; recursos visuais excluídos da licença MIT do código.",
+      "permissionEvidence": "docs/recursos/declaracao-autoria.md",
+      "reviewBasis": "owner-declaration"
     },
     {
       "path": "docs/reflexos-spacious/comparacao-53.svg",
       "sha256": "8fc1ef07b84f94163fb4c2cb508f213c35b94ab6b9fe872e201c5f9387e813e9",
       "group": "documentacao",
-      "status": "pending",
-      "rightsHolder": null,
-      "license": null,
-      "permissionEvidence": null
+      "status": "cleared",
+      "rightsHolder": "Luigi Scofano de Araujo (elementos autorais)",
+      "license": "Direitos reservados; recursos visuais excluídos da licença MIT do código.",
+      "permissionEvidence": "docs/recursos/declaracao-autoria.md",
+      "reviewBasis": "owner-declaration"
     },
     {
       "path": "docs/reflexos-spacious/comparacao-64.svg",
       "sha256": "3b3efb8f96b3f0968c99be5389eca397cdd583d3614c4f850afbf199e8ae9f93",
       "group": "documentacao",
-      "status": "pending",
-      "rightsHolder": null,
-      "license": null,
-      "permissionEvidence": null
+      "status": "cleared",
+      "rightsHolder": "Luigi Scofano de Araujo (elementos autorais)",
+      "license": "Direitos reservados; recursos visuais excluídos da licença MIT do código.",
+      "permissionEvidence": "docs/recursos/declaracao-autoria.md",
+      "reviewBasis": "owner-declaration"
     },
     {
       "path": "docs/reflexos-spacious/comparacao-72.svg",
       "sha256": "c57d222d91710ec6a4133a2efa89cbafc8e7f1d4c594e2e803bd4c408565cf3f",
       "group": "documentacao",
-      "status": "pending",
-      "rightsHolder": null,
-      "license": null,
-      "permissionEvidence": null
+      "status": "cleared",
+      "rightsHolder": "Luigi Scofano de Araujo (elementos autorais)",
+      "license": "Direitos reservados; recursos visuais excluídos da licença MIT do código.",
+      "permissionEvidence": "docs/recursos/declaracao-autoria.md",
+      "reviewBasis": "owner-declaration"
     },
     {
       "path": "docs/reflexos-spacious/comparacao-78.svg",
       "sha256": "26dbead756dd430d31c28d19db4af8a65e7f10c8b6084d4f62301933ac082cf4",
       "group": "documentacao",
-      "status": "pending",
-      "rightsHolder": null,
-      "license": null,
-      "permissionEvidence": null
+      "status": "cleared",
+      "rightsHolder": "Luigi Scofano de Araujo (elementos autorais)",
+      "license": "Direitos reservados; recursos visuais excluídos da licença MIT do código.",
+      "permissionEvidence": "docs/recursos/declaracao-autoria.md",
+      "reviewBasis": "owner-declaration"
     },
     {
       "path": "docs/repasse-desktop-1792949728100.jpg",
       "sha256": "37188f0be2efb1111dff62efbbbdba409031c6f734cb7755f30e00a749842500",
       "group": "documentacao",
-      "status": "pending",
-      "rightsHolder": null,
-      "license": null,
-      "permissionEvidence": null
+      "status": "cleared",
+      "rightsHolder": "Luigi Scofano de Araujo (elementos autorais)",
+      "license": "Direitos reservados; recursos visuais excluídos da licença MIT do código.",
+      "permissionEvidence": "docs/recursos/declaracao-autoria.md",
+      "reviewBasis": "owner-declaration"
     },
     {
       "path": "docs/repasse-mobile-1792949692761.jpg",
       "sha256": "7c12a82d0208a42bbf6087516d09ab5329da97b67299b67d60d2a96d709d4878",
       "group": "documentacao",
-      "status": "pending",
-      "rightsHolder": null,
-      "license": null,
-      "permissionEvidence": null
+      "status": "cleared",
+      "rightsHolder": "Luigi Scofano de Araujo (elementos autorais)",
+      "license": "Direitos reservados; recursos visuais excluídos da licença MIT do código.",
+      "permissionEvidence": "docs/recursos/declaracao-autoria.md",
+      "reviewBasis": "owner-declaration"
     },
     {
       "path": "docs/repasse-sem-inspecao-1792952020746.jpg",
       "sha256": "1e839f0205605a8890ef6ce74aa02abda487c1221ac38dd14232bf4b37684536",
       "group": "documentacao",
-      "status": "pending",
-      "rightsHolder": null,
-      "license": null,
-      "permissionEvidence": null
+      "status": "cleared",
+      "rightsHolder": "Luigi Scofano de Araujo (elementos autorais)",
+      "license": "Direitos reservados; recursos visuais excluídos da licença MIT do código.",
+      "permissionEvidence": "docs/recursos/declaracao-autoria.md",
+      "reviewBasis": "owner-declaration"
     },
     {
       "path": "docs/repasse-sem-inspecao-1792952031800.jpg",
       "sha256": "b898cb2ab47a71fe54c49ba5a874ce849c8b913095cdd2da3617fbdbd985d189",
       "group": "documentacao",
-      "status": "pending",
-      "rightsHolder": null,
-      "license": null,
-      "permissionEvidence": null
+      "status": "cleared",
+      "rightsHolder": "Luigi Scofano de Araujo (elementos autorais)",
+      "license": "Direitos reservados; recursos visuais excluídos da licença MIT do código.",
+      "permissionEvidence": "docs/recursos/declaracao-autoria.md",
+      "reviewBasis": "owner-declaration"
     },
     {
       "path": "docs/repasse-sem-textos-auxiliares-1792954802846.jpg",
       "sha256": "81d02ebd3ea36c1fad07d90b7baa67c0e559f46e1616a17f66eef726fb42fd35",
       "group": "documentacao",
-      "status": "pending",
-      "rightsHolder": null,
-      "license": null,
-      "permissionEvidence": null
+      "status": "cleared",
+      "rightsHolder": "Luigi Scofano de Araujo (elementos autorais)",
+      "license": "Direitos reservados; recursos visuais excluídos da licença MIT do código.",
+      "permissionEvidence": "docs/recursos/declaracao-autoria.md",
+      "reviewBasis": "owner-declaration"
     },
     {
       "path": "docs/sintonia-interface-simplificada-1792954298756.jpg",
       "sha256": "2aa875d4d56f14e14f6f0a8857f07916327b7a854691315ad89f65dc69aaf6be",
       "group": "documentacao",
-      "status": "pending",
-      "rightsHolder": null,
-      "license": null,
-      "permissionEvidence": null
+      "status": "cleared",
+      "rightsHolder": "Luigi Scofano de Araujo (elementos autorais)",
+      "license": "Direitos reservados; recursos visuais excluídos da licença MIT do código.",
+      "permissionEvidence": "docs/recursos/declaracao-autoria.md",
+      "reviewBasis": "owner-declaration"
     },
     {
       "path": "docs/sintonia-preview-1792944343794.jpg",
       "sha256": "981ca3c03b0b5ed00c8b362af46755c5361248b47da9decd81da27b23e63fddf",
       "group": "documentacao",
-      "status": "pending",
-      "rightsHolder": null,
-      "license": null,
-      "permissionEvidence": null
+      "status": "cleared",
+      "rightsHolder": "Luigi Scofano de Araujo (elementos autorais)",
+      "license": "Direitos reservados; recursos visuais excluídos da licença MIT do código.",
+      "permissionEvidence": "docs/recursos/declaracao-autoria.md",
+      "reviewBasis": "owner-declaration"
     },
     {
       "path": "docs/sintonia-selecao-1792945221804.jpg",
       "sha256": "82e3fad973534b5c9f0feddf766db2aec0b9c6803fd376aed17d4517d4488bd3",
       "group": "documentacao",
-      "status": "pending",
-      "rightsHolder": null,
-      "license": null,
-      "permissionEvidence": null
+      "status": "cleared",
+      "rightsHolder": "Luigi Scofano de Araujo (elementos autorais)",
+      "license": "Direitos reservados; recursos visuais excluídos da licença MIT do código.",
+      "permissionEvidence": "docs/recursos/declaracao-autoria.md",
+      "reviewBasis": "owner-declaration"
     }
-  ]
+  ],
+  "rightsReview": {
+    "date": "2026-11-01",
+    "basis": "owner-declaration",
+    "declarant": "Luigi Scofano de Araujo",
+    "evidence": "docs/recursos/declaracao-autoria.md",
+    "scope": "Elementos autorais; direitos e créditos de materiais externos permanecem preservados.",
+    "publicVisibilityChanged": false
+  }
 }
