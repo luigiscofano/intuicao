@@ -14,11 +14,11 @@ export function accessoryIcon(name,state=0,palette='C'){
 }
 export function accessoryEdgeIcon({open=false,oneway=false,direction='right',vertical=true}={}){
  if(oneway)return accessoryIcon(direction);
- // Postes e barras leves; a abertura ainda libera o centro da divisória.
- const closed='<rect x="2" y="10" width="8" height="2" fill="#b77b43"/><rect x="2" y="21" width="8" height="2" fill="#b77b43"/><rect x="5" y="11" width="2" height="11" fill="#e6b94f"/>';
- const opened='<rect x="2" y="5" width="1" height="6" fill="#b77b43"/><rect x="9" y="21" width="1" height="6" fill="#b77b43"/>';
- const art='<rect x="0" y="4" width="2" height="24" fill="#403c31"/><rect x="10" y="4" width="2" height="24" fill="#403c31"/><rect x="1" y="5" width="1" height="22" fill="#e8b975"/><rect x="11" y="5" width="1" height="22" fill="#e8b975"/>'+(open?opened:closed);
- return `<svg class="s-accessory-edge s-gate-art" viewBox="0 0 ${vertical?'12 32':'32 12'}" preserveAspectRatio="none" shape-rendering="crispEdges" aria-hidden="true" focusable="false">${vertical?art:`<g transform="translate(32 0) rotate(90)">${art}</g>`}</svg>`;
+ // Opção B aprovada: os retângulos originais são preservados em 16 × 32.
+ const closed='<rect x="5" y="1" width="6" height="4" fill="#34443a"/><rect x="6" y="2" width="4" height="2" fill="#a3bd7b"/><rect x="6" y="2" width="4" height="1" fill="#d6e5b1"/><rect x="5" y="27" width="6" height="4" fill="#34443a"/><rect x="6" y="28" width="4" height="2" fill="#a3bd7b"/><rect x="6" y="28" width="4" height="1" fill="#d6e5b1"/><rect x="6" y="5" width="4" height="11" fill="#77543b"/><rect x="7" y="5" width="2" height="10" fill="#b77b43"/><rect x="7" y="6" width="1" height="8" fill="#e8b975"/><rect x="6" y="17" width="4" height="10" fill="#77543b"/><rect x="7" y="18" width="2" height="9" fill="#b77b43"/><rect x="7" y="19" width="1" height="7" fill="#e8b975"/><rect x="5" y="15" width="6" height="3" fill="#7d9861"/><rect x="6" y="16" width="4" height="1" fill="#d6e5b1"/>';
+ const opened='<rect x="5" y="1" width="6" height="4" fill="#34443a"/><rect x="6" y="2" width="4" height="2" fill="#a3bd7b"/><rect x="6" y="2" width="4" height="1" fill="#d6e5b1"/><rect x="5" y="27" width="6" height="4" fill="#34443a"/><rect x="6" y="28" width="4" height="2" fill="#a3bd7b"/><rect x="6" y="28" width="4" height="1" fill="#d6e5b1"/><rect x="9" y="5" width="6" height="3" fill="#77543b"/><rect x="10" y="5" width="4" height="1" fill="#e8b975"/><rect x="1" y="24" width="6" height="3" fill="#77543b"/><rect x="2" y="24" width="4" height="1" fill="#e8b975"/>';
+ const art=open?opened:closed;
+ return `<svg class="s-accessory-edge s-gate-art" viewBox="0 0 ${vertical?'16 32':'32 16'}" preserveAspectRatio="xMidYMid meet" shape-rendering="crispEdges" aria-hidden="true" focusable="false">${vertical?art:`<g transform="translate(32 0) rotate(90)">${art}</g>`}</svg>`;
 }
 const cache=new Map();
 // Mesmo mosaico da prancha: vizinhos compartilham pixels, sem linhas entre casas.

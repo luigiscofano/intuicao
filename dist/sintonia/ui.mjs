@@ -581,7 +581,7 @@ export function initSintonia({hideOtherGames}) {
     const ax=edge.from%board.cols,ay=Math.floor(edge.from/board.cols),bx=edge.to%board.cols,by=Math.floor(edge.to/board.cols);
     const vertical=ay===by,left=(ax+bx+1)/2/board.cols*100,top=(ay+by+1)/2/board.rows*100;
     const selected=relations.includes(inspectKey);
-    return `<span class="s-gate ${vertical?'vertical':'horizontal'} ${open?'open':'closed'} ${oneway?'oneway':''} ${selected?'s-highlight':''}" style="left:${left}%;top:${top}%;--edge-span:${vertical?100/board.rows:100/board.cols}%;--edge-cross:${vertical?37.5/board.cols:37.5/board.rows}%" ${relations.length?`data-s-inspect="${esc(relations[0])}"`:''}>${oneway?`<span>${accessoryEdgeIcon({oneway:true,direction:({'→':'right','←':'left','↓':'down','↑':'up'})[label],vertical})}</span>`:`${accessoryEdgeIcon({open,vertical})}<span>${esc(label)}</span>`}</span>`;
+    return `<span class="s-gate ${vertical?'vertical':'horizontal'} ${open?'open':'closed'} ${oneway?'oneway':''} ${selected?'s-highlight':''}" style="left:${left}%;top:${top}%;--edge-span:${vertical?100/board.rows:100/board.cols}%;--edge-cross:${vertical?50/board.cols:50/board.rows}%" ${relations.length?`data-s-inspect="${esc(relations[0])}"`:''}>${oneway?`<span>${accessoryEdgeIcon({oneway:true,direction:({'→':'right','←':'left','↓':'down','↑':'up'})[label],vertical})}</span>`:`${accessoryEdgeIcon({open,vertical})}<span>${esc(label)}</span>`}</span>`;
   }
 
   function renderStatus() {
