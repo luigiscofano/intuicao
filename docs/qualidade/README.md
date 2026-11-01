@@ -29,6 +29,8 @@ Não prova que todos os testes históricos passam, que todos os catálogos são 
 5. Testar no navegador quando tocar layout, eventos ou acessibilidade.
 6. Rever o diff e confirmar que nenhum artefato gerado alterou dados sem intenção.
 
+Consulte o [fechamento da organização](fechamento.md) para as verificações e os totais da entrega.
+
 ## Pendências reais
 
 - Recuperar a cópia revisada `f0e7fcf` com seu histórico e seus testes.
