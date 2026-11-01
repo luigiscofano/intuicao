@@ -1,6 +1,6 @@
 # docs: criar apresentação e guia de execução do Intuição
 
-**Estado:** descrição preparada localmente; PR ainda não aberto no GitHub.
+**Estado:** integrado em `main` pelo [PR #1](https://github.com/luigiscofano/intuicao/pull/1).
 
 **Branch de origem:** `docs/entrada`  
 **Base planejada:** `main`  
@@ -23,7 +23,7 @@ Primeiro PR documental; base é main no commit 2354a3c.
 
 ## Validação
 
-A preparação integrada verifica links locais dos documentos novos e preservação de código/ativos em relação ao baseline. O recorte de cinco motores passou 95 testes antes da alteração documental. Esses resultados não substituem uma execução de CI neste PR; a CI remota ainda não aconteceu.
+A preparação integrada verifica links locais dos documentos novos e preservação de código/ativos em relação ao baseline. O recorte de cinco motores passou 95 testes antes da alteração documental. Esses resultados registram a preparação local. Os resultados remotos ficam associados à revisão correspondente no GitHub Actions; não implicam aprovação da suíte completa.
 
 ## Limites
 

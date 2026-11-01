@@ -1,6 +1,6 @@
 # ci: preparar validação documental e recorte manual de motores
 
-**Estado:** descrição preparada localmente; PR ainda não aberto no GitHub.
+**Estado:** integrado em `main` pelo [PR #18](https://github.com/luigiscofano/intuicao/pull/18).
 
 **Branch de origem:** `ci/documentacao`  
 **Base planejada:** `main`  
@@ -26,7 +26,7 @@ Integrar primeiro os 17 PRs documentais anteriores. Esta branch foi criada sobre
 
 ## Validação
 
-A preparação integrada verifica links locais dos documentos novos e preservação de código/ativos em relação ao baseline. O recorte de cinco motores passou 95 testes antes da alteração documental. Esses resultados não substituem uma execução de CI neste PR; a CI remota ainda não aconteceu.
+A preparação integrada verifica links locais dos documentos novos e preservação de código/ativos em relação ao baseline. O recorte de cinco motores passou 95 testes antes da alteração documental. Esses resultados registram a preparação local. Os resultados remotos ficam associados à revisão correspondente no GitHub Actions; não implicam aprovação da suíte completa.
 
 ## Limites
 

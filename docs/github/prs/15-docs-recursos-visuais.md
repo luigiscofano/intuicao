@@ -1,6 +1,6 @@
 # docs: inventariar arte e orientar manutenção visual
 
-**Estado:** descrição preparada localmente; PR ainda não aberto no GitHub.
+**Estado:** integrado em `main` pelo [PR #15](https://github.com/luigiscofano/intuicao/pull/15).
 
 **Branch de origem:** `docs/recursos-visuais`  
 **Base planejada:** `main`  
@@ -20,7 +20,7 @@ Integrar docs/entrada antes deste PR; revisar novamente o diff contra main.
 
 ## Validação
 
-A preparação integrada verifica links locais dos documentos novos e preservação de código/ativos em relação ao baseline. O recorte de cinco motores passou 95 testes antes da alteração documental. Esses resultados não substituem uma execução de CI neste PR; a CI remota ainda não aconteceu.
+A preparação integrada verifica links locais dos documentos novos e preservação de código/ativos em relação ao baseline. O recorte de cinco motores passou 95 testes antes da alteração documental. Esses resultados registram a preparação local. Os resultados remotos ficam associados à revisão correspondente no GitHub Actions; não implicam aprovação da suíte completa.
 
 ## Limites
 
