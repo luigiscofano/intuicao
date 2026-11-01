@@ -221,3 +221,8 @@ body:has(#sintonia:not([hidden])>.level-screen)>footer{position:relative;z-index
  #sintonia .s-progress-row,#sintonia .s-surface:has(.s-board-navigation>.level-arrow)>.s-progress-row{padding-inline:8px;gap:8px}
 }
 #sintonia #s-keyboard-help{line-height:1.5}
+
+/* Nome e estado têm linhas próprias: chegar ou sair nunca empurra o mapa. */
+#sintonia .s-board-heading{display:grid;grid-template-columns:minmax(0,1fr);grid-template-rows:auto 14px;align-items:start;justify-content:normal;gap:2px;min-height:0}
+#sintonia .s-board-heading h3{min-width:0;overflow-wrap:anywhere}
+#sintonia .s-board-heading>span{display:block;height:14px;line-height:14px;font-weight:750;white-space:nowrap}

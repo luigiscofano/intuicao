@@ -373,6 +373,10 @@ function configureOriginalRules(){
 }
 $('original-rules-panel').ontoggle=syncOriginalRules;
 function render(){
+ // A leitura do corte acompanha a meta no palco; Reflexos mantém seu lugar original.
+ const metricHost=game==='cut'?$('cut-board-summary'):$('feedback').parentElement;
+ if($('original-metric').parentElement!==metricHost){if(game==='cut')metricHost.append($('original-metric'));else metricHost.insertBefore($('original-metric'),$('feedback'));}
+
  renderEndlessPanel();document.querySelector('.level-picker').hidden=free||!!customLevel;customExport.hidden=!customLevel;customStorage.hidden=!customLevel||!customStorageWarning;
  document.querySelectorAll('[data-game]').forEach(b=>b.setAttribute('aria-pressed',String(b.dataset.game===game)));
  $('challenge').setAttribute('aria-pressed',String(!free));$('free').setAttribute('aria-pressed',String(free));
