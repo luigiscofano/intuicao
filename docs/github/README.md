@@ -30,6 +30,8 @@ O histórico de 183 commits do baseline é ancestral das novas branches. Não fo
 | 18 | `ci/documentacao` | [ci: preparar validação documental e recorte manual de motores](prs/18-ci-documentacao.md) | [PR #18 integrado](https://github.com/luigiscofano/intuicao/pull/18) |
 | 19 | `docs/plano-prs` | [Plano e fechamento](prs/19-docs-plano-prs.md) | [PR #19 integrado](https://github.com/luigiscofano/intuicao/pull/19) |
 
+O [PR #20](https://github.com/luigiscofano/intuicao/pull/20) conclui a apresentação inicial: remove a cópia antiga de `.github/README.md` restaurada durante a integração, preservando o guia em `.github/guias/README.md`.
+
 ## Processo realizado
 
 1. Criação do repositório privado, sem licença aberta.
