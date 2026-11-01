@@ -1,0 +1,40 @@
+name: Importar histórico preservado do Intuição
+on:
+  workflow_dispatch:
+permissions:
+  contents: write
+jobs:
+  import:
+    if: github.repository == 'luigiscofano/intuicao' && github.ref == 'refs/heads/import/bootstrap'
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+      - name: Conferir e importar todos os commits e branches
+        shell: bash
+        env:
+          BOOTSTRAP_SHA: ${{ github.sha }}
+        run: |
+          set -euo pipefail
+          test "$(git rev-parse HEAD)" = "$BOOTSTRAP_SHA"
+          cat intuicao.bundle.part00 intuicao.bundle.part01 intuicao.bundle.part02 > "$RUNNER_TEMP/intuicao.bundle"
+          echo "5f38ae1653d60767090ffb3db77e9f099a6e754ea632044279ebcf41da062461  $RUNNER_TEMP/intuicao.bundle" | sha256sum -c -
+          git bundle verify "$RUNNER_TEMP/intuicao.bundle"
+          git fetch "$RUNNER_TEMP/intuicao.bundle" 'refs/heads/*:refs/remotes/imported/*'
+          test "$(git rev-parse refs/remotes/imported/main)" = 2354a3cd4d0a06ed66b665ca853a635b64e3a0a7
+          test "$(git rev-list --count refs/remotes/imported/main)" = 183
+          test "$(git for-each-ref --format='%(refname)' refs/remotes/imported/ | wc -l)" = 21
+          while IFS= read -r ref; do
+            name="${ref#refs/remotes/imported/}"
+            result=0
+            git ls-remote --exit-code --heads origin "refs/heads/$name" || result=$?
+            if [ "$result" -eq 0 ]; then
+              echo "Destino já existe: $name. Importação interrompida sem sobrescrever."
+              exit 1
+            fi
+            test "$result" -eq 2
+          done < <(git for-each-ref --format='%(refname)' refs/remotes/imported/)
+          git push --atomic origin 'refs/remotes/imported/*:refs/heads/*'
+          echo 'Histórico original e branches importados; etapa temporária preservada em import/bootstrap.'
