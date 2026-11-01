@@ -70,6 +70,8 @@ Uma imagem maior pode conter vários recortes. Alterar dimensões, margens ou or
 
 ## Direitos
 
-Não foi adicionada uma licença aberta. A presença de um arquivo neste repositório privado não estabelece, por si só, permissão de redistribuição pública. Antes de publicar, revisar fonte, imagens e arte separadamente e manter os créditos exigidos. Nenhuma afirmação de proveniência deve ser inventada para completar uma tabela.
+O código e a documentação autorais do projeto usam a [licença MIT](../../LICENSE), com Copyright (c) 2026 Luigi Scofano de Araujo. Essa licença não inclui automaticamente imagens, sprites, fontes, logos e demais recursos visuais deste inventário.
+
+A presença de um recurso visual no repositório não estabelece, por si só, permissão de redistribuição. Antes de reutilizá-lo ou publicá-lo, confira sua origem, titularidade e autorização específica, mantendo as licenças e os créditos de terceiros. Nenhuma afirmação de proveniência deve ser inventada para completar uma tabela.
 
 [Arquitetura](../../docs/arquitetura/README.md) · [Manutenção](../../docs/manutencao/README.md)

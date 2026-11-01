@@ -1,6 +1,6 @@
 # Como contribuir
 
-O repositório está sendo preparado para acesso privado. Não há licença aberta nem convite automático à redistribuição. Este guia organiza o trabalho dos colaboradores autorizados.
+O repositório é privado. O código e a documentação autorais são disponibilizados sob a [licença MIT](LICENSE), com Copyright (c) 2026 Luigi Scofano de Araujo. Recursos visuais e materiais de terceiros seguem os direitos descritos no [guia dos recursos](dist/platform-assets/README.md). Este guia organiza o trabalho dos colaboradores autorizados.
 
 ## Antes de editar
 

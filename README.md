@@ -102,4 +102,10 @@ O [site hospedado existente](https://intuicao-luigi-minigames.luigiscofano.chatg
 
 ## Direitos e distribuição
 
-Nenhuma licença aberta foi adicionada. Este repositório permanece privado. Antes de distribuição pública, revisar separadamente a licença do código e a proveniência dos recursos visuais; não presumir que todos os arquivos tenham os mesmos direitos. Consulte o [guia dos recursos](dist/platform-assets/README.md).
+Copyright (c) 2026 **Luigi Scofano de Araujo**.
+
+O código e a documentação autorais do Intuição são disponibilizados sob a **[licença MIT](LICENSE)**. Ela permite uso, cópia, modificação e distribuição, inclusive comercial, desde que o aviso de direitos autorais e o texto da licença sejam preservados nas cópias ou partes substanciais. O software é fornecido sem garantias, conforme os termos da licença.
+
+Imagens, sprites, fontes, logos e demais recursos visuais têm seus direitos tratados separadamente e não estão incluídos automaticamente nessa licença. Materiais de terceiros conservam suas licenças e créditos próprios. Consulte o [guia dos recursos](dist/platform-assets/README.md) antes de redistribuí-los.
+
+O repositório permanece privado; a adoção da MIT não altera suas permissões de acesso nem publica uma nova versão do site.
