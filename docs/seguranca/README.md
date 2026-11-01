@@ -39,7 +39,7 @@ As imagens originais, os recortes, os jogos e a galeria de 11 capturas foram pre
 
 Os workflows usam `contents: read`, checkout sem persistir credenciais e limites de tempo. Não usam `pull_request_target`, não fazem deploy e não precisam de segredos. Checkout e setup-node estão fixados em commits oficiais; o Dependabot acompanha atualizações de GitHub Actions semanalmente. A versão e o checksum do binário Gitleaks exigem revisão explícita quando forem atualizados.
 
-Foram ativados no GitHub **Dependency graph**, **Dependabot alerts** e **Dependabot security updates**. A tela de regras informa que elas **não são aplicadas a este repositório privado no plano atual**. Secret scanning nativo, push protection e private vulnerability reporting não foram apresentados nessa tela de segurança; não são declarados ativos.
+Foram ativados no GitHub **Dependency graph**, **Dependabot alerts** e **Dependabot security updates**. A tela de regras informa que elas **não são aplicadas a este repositório privado no plano atual**. O formulário de proteção foi preparado com PR obrigatório, resolução de conversas, branches atualizadas e os quatro checks acima, sem permitir force push ou exclusão. Ao salvar, o GitHub exigiu confirmação de identidade por GitHub Mobile ou e-mail; a criação da regra não foi concluída. Secret scanning nativo, push protection e private vulnerability reporting não foram apresentados nessa tela de segurança; não são declarados ativos.
 
 Não adicionar uma aprovação obrigatória do próprio autor como solução: o autor não pode aprovar o próprio PR. Para manutenção individual, usar PR obrigatório, checks obrigatórios, resolução de conversas e bloqueio de force push/exclusão. Acrescentar aprovação independente quando houver outro revisor.
 
