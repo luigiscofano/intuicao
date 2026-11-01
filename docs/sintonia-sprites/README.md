@@ -3,7 +3,7 @@
 ## Scope and provenance
 
 The user asked to replace Sintonia's animal sprites with their uploaded sheet,
-`sprites_chibi_ituicao.png` (Library `libfile_8a210bf8f6008191873c2b2786ed652f`,
+`sprites_chibi_ituicao.png` (Library `referencia-privada-omitida`,
 version 0). The existing four animal identities use the sheet's top row:
 
 | Existing identity | Top-row column / atlas frame |

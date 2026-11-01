@@ -1,5 +1,12 @@
 # Qualidade da publicação no GitHub
 
+## Atualização da preparação de publicação — 01/11/2026
+
+Na base `ae8cad7`, o recorte dos cinco motores foi reexecutado com Node.js 24.22.1: **95 aprovados, zero falhas**. A preparação adiciona execução em PRs/pushes, auditoria de segredos e inventário visual. A [revisão de publicação](../seguranca/README.md) detalha o escopo e as pendências. Isso não incorpora a revisão ausente `f0e7fcf`, não revalida o site hospedado e não resolve as falhas da suíte ampla descritas abaixo.
+
+Os registros seguintes documentam a organização anterior e mantêm seu contexto histórico.
+
+
 ## Base e alcance
 
 Base: `2354a3cd4d0a06ed66b665ca853a635b64e3a0a7`. Organização documental realizada em 1 de novembro de 2026. A alteração não substitui o site publicado e não incorpora a revisão ausente `f0e7fcf`.

@@ -68,6 +68,10 @@ Uma imagem maior pode conter vários recortes. Alterar dimensões, margens ou or
 5. Registre origem do novo ativo, autorização de uso e modificações realizadas.
 6. Reexecute testes de preservação aplicáveis e explique qualquer hash atualizado.
 
+## Registro de origem e permissões
+
+O [inventário completo](../../docs/recursos/README.md) inclui os arquivos desta pasta, atlas de SINTONIA, acessórios, capturas e diagramas. Origem conhecida não significa autorização de redistribuição.
+
 ## Direitos
 
 O código e a documentação autorais do projeto usam a [licença MIT](../../LICENSE), com Copyright (c) 2026 Luigi Scofano de Araujo. Essa licença não inclui automaticamente imagens, sprites, fontes, logos e demais recursos visuais deste inventário.

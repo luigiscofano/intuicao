@@ -13,7 +13,7 @@ test('the exact user-attached sheet supplies all 16 frames, embedded once withou
   const svg=fs.readFileSync(fileURLToPath(ANIMAL_SPRITES.tuiuiu.url),'utf8');
   assert.equal(hash(svg),source.assetSHA256);
   assert.equal(source.sourceSHA256,'86d64f23b418243f573acfad6e14b06d750a1156c4adc901a3fb13b349f90f0e');
-  assert.equal(source.sourceLibraryFileId,'libfile_c8e90fb42ca48191bdd126cc3f7638bc');
+  assert.equal(source.sourceFilename,'sprites_chibi_ituicao.png');
   const embedded=[...svg.matchAll(/base64,([^" ]+)/g)];
   assert.equal(embedded.length,1);assert.equal(hash(Buffer.from(embedded[0][1],'base64')),source.sourceSHA256);
   assert.doesNotMatch(svg,/<script|<foreignObject|xlink:href="https?:/);

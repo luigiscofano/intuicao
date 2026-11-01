@@ -1,0 +1,21 @@
+{
+  "scope": "Caminhos visuais encontrados no histórico que não existem na árvore auditada. A ausência em main não impede sua exposição ao publicar o repositório. Variantes anteriores dos caminhos atuais também precisam de autorização.",
+  "paths": [
+    "dist/sintonia/assets/roster/01_tuiuiu.svg",
+    "dist/sintonia/assets/roster/02_capivara.svg",
+    "dist/sintonia/assets/roster/03_bem_te_vi.svg",
+    "dist/sintonia/assets/roster/04_mico_leao_dourado.svg",
+    "dist/sintonia/assets/roster/05_tamandua_bandeira.svg",
+    "dist/sintonia/assets/roster/06_onca_pintada.svg",
+    "dist/sintonia/assets/roster/07_lobo_guara.svg",
+    "dist/sintonia/assets/roster/08_cobra_coral.svg",
+    "dist/sintonia/assets/roster/09_jacare_do_papo_amarelo.svg",
+    "dist/sintonia/assets/roster/10_tatu_bola.svg",
+    "dist/sintonia/assets/roster/11_arara_azul.svg",
+    "dist/sintonia/assets/roster/12_anta.svg",
+    "dist/sintonia/assets/roster/13_piranha_vermelha.svg",
+    "dist/sintonia/assets/roster/14_tucano.svg",
+    "dist/sintonia/assets/roster/15_macaco.svg",
+    "dist/sintonia/assets/roster/16_quati.svg"
+  ]
+}

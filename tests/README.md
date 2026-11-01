@@ -12,7 +12,7 @@ Node.js 24.22.1, sem instalar pacotes npm. Execute os comandos na raiz do reposi
 node --test tests/broto-engine.test.mjs tests/cerco-engine.test.mjs tests/sintonia-engine.test.mjs tests/repasse-engine.test.mjs tests/orbita-engine.test.mjs
 ```
 
-Resultado nesta preparação: **95 testes aprovados, zero falhas**, em cerca de 11,3 segundos. São cinco arquivos; isso não equivale a aprovar todos os jogos, todas as fases ou todas as migrações.
+Reexecução na preparação de publicação de 01/11/2026, base `ae8cad7`, Node.js 24.22.1: **95 testes aprovados, zero falhas**, em cerca de 18,8 segundos. O mesmo recorte agora roda automaticamente em PRs e pushes para main. São cinco arquivos; isso não equivale a aprovar todos os jogos, todas as fases ou todas as migrações.
 
 ## Diagnóstico amplo
 

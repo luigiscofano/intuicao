@@ -5,10 +5,10 @@ All 15 existing front icons are now semantic buttons without changing their orig
 Modal presents original front, side and sprite sheet crops, researched Portuguese descriptions, origins/distribution, project/nature connection and expandable source links. Generic Mico, Cobra-coral and Tatu-bola are not falsely identified to species. Arara-azul explicitly introduces arara-azul-grande as the factual reference. Editorial connections describe the project's already-approved nature theme, not undocumented personal selection motives.
 
 ## Original assets
-- Ordering: fauna manual v5 p2, Library libfile_f56b0687e6f48191bfa1ee0a66fe8842.
+- Ordering: fauna manual v5 p2, Library referencia-privada-omitida.
 - Front: existing fauna-green-original.png unchanged.
-- Side: original Intuicao_Icones_Fauna_Lado_Verde_sobre_Branco.png, 971×1620, libfile_49bed935d6d08191bf91b386de6de919.
-- Sprite: original Neotropical Wildlife Pixel Sprite Sheet.png, 1983×793, libfile_ef8335be83d881918bb31b7b5775bea0. Correct manatee and separate dark primate included. No generated or repainted animals. CSS crops/polygons prevent neighboring art leaking into each viewport.
+- Side: original Intuicao_Icones_Fauna_Lado_Verde_sobre_Branco.png, 971×1620, referencia-privada-omitida.
+- Sprite: original Neotropical Wildlife Pixel Sprite Sheet.png, 1983×793, referencia-privada-omitida. Correct manatee and separate dark primate included. No generated or repainted animals. CSS crops/polygons prevent neighboring art leaking into each viewport.
 
 ## Verification
 - Native Chrome desktop: tooltip shown, placement within viewport, keyboard Enter opens; focus enters dialog and Tab reaches close; three original illustrations visually inspected.

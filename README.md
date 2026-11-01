@@ -139,7 +139,7 @@ A aplicação roda no navegador. O Python apenas entrega os arquivos locais por 
 
 ### 2. Baixe o projeto
 
-Com sua conta autorizada no repositório privado, abra um terminal e execute:
+Enquanto o repositório estiver privado, é necessário acesso autorizado. Com acesso ao projeto, abra um terminal e execute:
 
 ```bash
 git clone https://github.com/luigiscofano/intuicao.git
@@ -223,11 +223,11 @@ O projeto permite estudar geometria computacional, grafos, busca de estados, má
 | Duelos | Partidas locais e recursos de bot/análise nos jogos que os implementam. |
 | Progresso e exploração | Salvamento, Desfazer e Refazer nos fluxos que oferecem essas funções. |
 | Documentação | README inicial, manuais individuais, instalação, arquitetura e manutenção. |
-| Testes de motores | Recorte de cinco suítes com **95 testes aprovados** na preparação documentada. |
+| Testes de motores | **95 testes aprovados** na revisão de 01/11/2026; execução automática em PRs e pushes para `main`. |
 | Qualidade ampla | Há falhas históricas e pendências; esse recorte não aprova toda a aplicação. |
 | Revisão técnica posterior | A revisão `f0e7fcf` ainda precisa ser recuperada e incorporada, incluindo a correção de migração de SINTONIA ali descrita. |
 
-A contagem de testes acima é uma **evidência registrada da preparação**, não uma nova execução provocada por esta edição do README. Consulte [qualidade e limitações](docs/qualidade/README.md) e as [execuções do GitHub Actions](https://github.com/luigiscofano/intuicao/actions).
+O recorte de 95 testes foi reexecutado nesta preparação com Node.js 24.22.1, sem falhas. Os checks de segredos e inventário visual complementam a CI; não certificam toda a aplicação nem autorizam a redistribuição das artes. Consulte [qualidade e limitações](docs/qualidade/README.md) e as [execuções do GitHub Actions](https://github.com/luigiscofano/intuicao/actions).
 
 <details>
 <summary><strong>Histórico preservado e revisão ainda não incorporada</strong></summary>
@@ -264,12 +264,16 @@ Antes de ampliar a execução, leia o [guia de testes](tests/README.md). A pasta
 
 **Como contribuir?** Leia [CONTRIBUTING.md](CONTRIBUTING.md), use uma branch para uma mudança bem delimitada e abra um PR descrevendo o problema, a solução e a validação realizada. Para mudanças em fases, IDs ou saves, consulte também o [guia de manutenção](docs/manutencao/README.md).
 
+## Preparação para publicação
+
+O projeto está em desenvolvimento. A [revisão de segurança e publicação](docs/seguranca/README.md) registra o escopo examinado e o que falta resolver. O [inventário de recursos visuais](docs/recursos/README.md) identifica 133 arquivos e separa origem técnica de autorização de redistribuição. Há pendências de direitos das artes/fontes e uma decisão sobre e-mail pessoal no histórico antes da abertura ao público.
+
 ## Autoria e licença
 
 Copyright (c) 2026 **Luigi Scofano de Araujo**.
 
 O código e a documentação autorais do Intuição são disponibilizados sob a **[licença MIT](LICENSE)**. Ela permite uso, cópia, modificação e distribuição, inclusive comercial, desde que o aviso de direitos autorais e o texto da licença sejam preservados nas cópias ou partes substanciais. O software é fornecido sem garantias, conforme os termos da licença.
 
-Imagens, sprites, fontes, logos e demais recursos visuais têm seus direitos tratados separadamente e não estão incluídos automaticamente nessa licença. Materiais de terceiros conservam suas licenças e créditos próprios. Consulte o [guia dos recursos](dist/platform-assets/README.md) antes de redistribuí-los.
+Imagens, sprites, fontes, logos e demais recursos visuais têm seus direitos tratados separadamente e não estão incluídos automaticamente nessa licença. Materiais de terceiros conservam suas licenças e créditos próprios. Consulte o [guia dos recursos](dist/platform-assets/README.md) e o [inventário de direitos](docs/recursos/README.md) antes de redistribuí-los.
 
 O repositório permanece privado; a adoção da MIT não altera suas permissões de acesso nem publica uma nova versão do site.
