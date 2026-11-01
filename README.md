@@ -30,19 +30,41 @@ O site mantém seu próprio controle de acesso. Para jogar com a cópia deste re
 
 ## Os jogos em imagens
 
-As capturas abaixo são **registros reais de versões anteriores**, já preservados no repositório. Elas ilustram as mecânicas; a disposição dos controles e contagens como “500” pertencem à época da captura. O catálogo desta versão tem **80 fases por campanha solo**.
+**Uma imagem de cada um dos 11 jogos**, capturada diretamente no [site hospedado](https://intuicao-luigi-minigames.luigiscofano.chatgpt.site/) em **1º de novembro de 2026**. Clique em uma imagem para ampliar e use o link da legenda para abrir o manual.
 
-Clique em uma imagem para abri-la em tamanho maior.
+As capturas mostram o site nessa data; o site e o código deste repositório têm atualizações separadas. O [registro das imagens](docs/imagens/jogos/README.md) identifica a fase ou partida de cada captura.
 
-| SINTONIA — um comando, vários caminhos | ÓRBITA — planejar giros e transferências |
+### Intuição
+
+| Reflexos | Corte certo |
 | --- | --- |
-| [![Captura histórica de SINTONIA: capivara e tuiuiú em tabuleiros separados, com placa, cancela e destinos.](docs/sintonia-preview-1792944343794.jpg)](docs/sintonia-preview-1792944343794.jpg) | [![Captura histórica de ÓRBITA: dois anéis compartilham uma casa para transferir peças entre percursos.](docs/orbita-desktop-2026-10-25.jpg)](docs/orbita-desktop-2026-10-25.jpg) |
-| Todos recebem a mesma direção, mas as paredes fazem cada animal percorrer um caminho diferente. [Ler as regras](docs/jogos/sintonia/README.md). | Girar um anel move suas peças juntas. O desafio é completar todos os alvos ao mesmo tempo. [Ler as regras](docs/jogos/orbita/README.md). |
+| [![Reflexos: dois raios coloridos refletidos por espelhos durante uma tentativa da fase 9.](docs/imagens/jogos/reflexos.jpg)](docs/imagens/jogos/reflexos.jpg) | [![Corte certo: silhueta de capivara dividida por uma curva, com meta de 76 por cento no lado roxo.](docs/imagens/jogos/corte.jpg)](docs/imagens/jogos/corte.jpg) |
+| Gire espelhos para levar cada raio ao alvo correspondente. [Manual](docs/jogos/reflexos/README.md). | Ajuste o corte até separar a porcentagem pedida da figura. [Manual](docs/jogos/corte/README.md). |
 
-| PRUMO — desenhar peças em equilíbrio | REPASSE — escolher a ordem de retirada |
+### Raciocínio lógico
+
+| ELO | PRUMO |
 | --- | --- |
-| [![Captura histórica de PRUMO: grade 10 por 10 com apoios identificados por letras e regiões coloridas.](docs/prumo80-10x10-desktop.png)](docs/prumo80-10x10-desktop.png) | [![Captura histórica de REPASSE: peças numeradas com setas e caixas de metas nas bordas.](docs/repasse-sem-textos-auxiliares-1792954802846.jpg)](docs/repasse-sem-textos-auxiliares-1792954802846.jpg) |
-| Cada região deve ficar conectada e equilibrada sobre seu apoio. [Ler as regras](docs/jogos/prumo/README.md). | Retirar uma peça envia seu valor para outras peças ou para as bordas. A ordem muda o resultado. [Ler as regras](docs/jogos/repasse/README.md). |
+| [![ELO: grade de regiões coloridas com pontos e duas ligações horizontais automáticas.](docs/imagens/jogos/elo.jpg)](docs/imagens/jogos/elo.jpg) | [![PRUMO: grade 4 por 4 com apoios A a G e peças coloridas que devem ficar equilibradas.](docs/imagens/jogos/prumo.jpg)](docs/imagens/jogos/prumo.jpg) |
+| Posicione um ponto por região e forme um único circuito. [Manual](docs/jogos/elo/README.md). | Desenhe peças conectadas e equilibradas sobre seus apoios. [Manual](docs/jogos/prumo/README.md). |
+
+| PACTO | SINTONIA |
+| --- | --- |
+| [![PACTO: grade 8 por 8 com círculos, quadrados, triângulos e losangos, pistas fixas e pares.](docs/imagens/jogos/pacto.jpg)](docs/imagens/jogos/pacto.jpg) | [![SINTONIA: tucano, quati e cobra-coral em três tabuleiros, com placas, cancelas e controle direcional comum.](docs/imagens/jogos/sintonia.jpg)](docs/imagens/jogos/sintonia.jpg) |
+| Complete as contagens e dê exatamente um parceiro a cada símbolo. [Manual](docs/jogos/pacto/README.md). | Um comando move todos; leve os animais aos destinos ao mesmo tempo. [Manual](docs/jogos/sintonia/README.md). |
+
+| REPASSE | ÓRBITA |
+| --- | --- |
+| [![REPASSE: peças de valores 1, 2 e 3 com setas e caixas de metas ao redor do tabuleiro.](docs/imagens/jogos/repasse.jpg)](docs/imagens/jogos/repasse.jpg) | [![ÓRBITA: dois anéis conectados, peças coloridas e alvos fixos identificados por símbolos.](docs/imagens/jogos/orbita.jpg)](docs/imagens/jogos/orbita.jpg) |
+| Retire peças na ordem certa para completar as metas das bordas. [Manual](docs/jogos/repasse/README.md). | Gire anéis, transfira peças e complete todos os alvos. [Manual](docs/jogos/orbita/README.md). |
+
+### Versus
+
+| DESVIO | BROTO | CERCO |
+| --- | --- | --- |
+| [![DESVIO: tabuleiro 4 por 4 de setas horizontais e verticais, com prévia da escolha na linha 2, coluna 2.](docs/imagens/jogos/desvio.jpg)](docs/imagens/jogos/desvio.jpg) | [![BROTO: dois brotos plantados e prévia de uma semente que completa os estímulos horizontal e vertical de uma flor.](docs/imagens/jogos/broto.jpg)](docs/imagens/jogos/broto.jpg) | [![CERCO: tabuleiro 5 por 5, duas equipes de três animais e uma barreira deixada após mover uma peça.](docs/imagens/jogos/cerco.jpg)](docs/imagens/jogos/cerco.jpg) |
+| Sua escolha define a linha ou coluna da próxima jogada adversária. [Manual](docs/jogos/desvio/README.md). | Cada plantio pode fazer florescer um broto seu ou do adversário. [Manual](docs/jogos/broto/README.md). | Mova suas peças e transforme as casas abandonadas em barreiras. [Manual](docs/jogos/cerco/README.md). |
+
 
 ## Como jogar pela primeira vez
 
