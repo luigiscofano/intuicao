@@ -188,7 +188,7 @@ export const FAUNA_CULTURE={
   "arara": {
     "paragraphs": [
       "No Pantanal, a conservação da arara-azul também se encontra com o fazer artístico. O Instituto Arara Azul promove oficinas de artesanato e empreendedorismo com comunidades, aproximando cuidado com a biodiversidade, criação e geração de renda.",
-      "Na Praça das Araras, em Campo Grande, a arara-azul ganhou forma em uma obra de Cleir Ávila, criada em 1996. O monumento aproxima arte pública e preservação, levando a imagem da ave para a memória afetiva da cidade."
+      "A animação Rio (2011) levou aves azuis às telas em uma aventura ambientada no Rio de Janeiro, aproximando a fauna brasileira do cinema. Blu e Jade são ararinhas-azuis (Cyanopsitta spixii), uma espécie diferente da arara-azul-grande (Anodorhynchus hyacinthinus) representada neste jogo."
     ],
     "sources": [
       {
@@ -196,8 +196,16 @@ export const FAUNA_CULTURE={
         "url": "https://www.institutoararaazul.org.br/educacaoambiental/"
       },
       {
-        "label": "Prefeitura de Campo Grande — Praça das Araras",
-        "url": "https://www.campogrande.ms.gov.br/cgnoticias/noticia/exposicao-de-miniaturas-de-monumentos-historicos-continuam-na-galeria-e-vidro/"
+        "label": "Netflix — Rio (2011)",
+        "url": "https://www.netflix.com/pr/title/70138804"
+      },
+      {
+        "label": "ICMBio — Ararinha-azul (Cyanopsitta spixii)",
+        "url": "https://www.gov.br/icmbio/pt-br/assuntos/biodiversidade/programa-de-manejo-populacional/pmp-ararinha-azul/ficha-cyanopsitta-spixii.pdf"
+      },
+      {
+        "label": "Instituto Arara Azul — Arara-azul-grande",
+        "url": "https://www.institutoararaazul.org.br/especies/arara-azul/"
       }
     ]
   },
@@ -260,7 +268,8 @@ export const FAUNA_CULTURE={
   "tamandua": {
     "paragraphs": [
       "O tamanduá-bandeira entrou no esporte brasileiro como Dudu, mascote eleito em 2025 pela Confederação Brasileira de Desportos de Deficientes Visuais. O personagem aproxima a fauna nacional de valores como dedicação e inclusão, mostrando que os animais também podem ajudar a contar histórias de pertencimento.",
-      "O tamanduá-bandeira ganhou também o nome de Labareda, personagem do Prevfogo/Ibama que aparece em histórias em quadrinhos, desenhos animados e jogos educativos. Adotado após o grande incêndio de Roraima em 1998, ele usa a linguagem lúdica para aproximar as comunidades da prevenção aos incêndios florestais."
+      "O tamanduá-bandeira ganhou também o nome de Labareda, personagem do Prevfogo/Ibama que aparece em histórias em quadrinhos, desenhos animados e jogos educativos. Adotado após o grande incêndio de Roraima em 1998, ele usa a linguagem lúdica para aproximar as comunidades da prevenção aos incêndios florestais.",
+      "O tamanduá-bandeira também aparece em ‘Palavra Gambiarra’, de Airam Capuani, faixa do álbum Maria ao contrário (2024). Na canção, o animal participa de uma imagem poética ligada ao divino, aproximando a fauna brasileira de um universo de música, cotidiano e imaginação."
     ],
     "sources": [
       {
@@ -270,6 +279,18 @@ export const FAUNA_CULTURE={
       {
         "label": "Ibama — Labareda e sua turma",
         "url": "https://www.gov.br/ibama/pt-br/assuntos/fiscalizacao-e-protecao-ambiental/manejo-integrado-do-fogo/prevfogo"
+      },
+      {
+        "label": "Airam Capuani — Palavra Gambiarra (gravação oficial)",
+        "url": "https://www.youtube.com/watch?v=hJfqOdMexOk"
+      },
+      {
+        "label": "Apple Music — Palavra Gambiarra",
+        "url": "https://music.apple.com/us/song/palavra-gambiarra/1742106154"
+      },
+      {
+        "label": "Ouvir Música — referência ao tamanduá na canção",
+        "url": "https://www.ouvirmusica.com.br/airam-capuani/palavra-gambiarra/"
       }
     ]
   }
