@@ -19,8 +19,8 @@ test('all removed structural fields reject import even if editorial mechanic tag
 });
 test('v3 campaign and independent runs migrate losslessly, without inherited wins',()=>{
  const source={version:1,contentRevision:'sintonia-content-3',campaign:{lastId:removed[0].id,sessions:Object.fromEntries(OLD.map(l=>[l.id,saved(l)])),completed:Object.fromEntries(OLD.map(l=>[l.id,{moves:7,assisted:false}]))},endless:{current:{level:removed[0],session:saved(removed[0])},number:3,solved:2},custom:{level:removed[1],session:saved(removed[1])}};
- const before=structuredClone(source),data=normalizeSintoniaData(source);assert.deepEqual(source,before);assert.equal(data.contentRevision,CONTENT_REVISION);assert.deepEqual(data.campaign.sessions,source.campaign.sessions);assert.deepEqual(data.endless.current,source.endless.current);assert.deepEqual(data.custom,source.custom);assert.equal(Object.keys(data.archivedAttempts).length,32);
- for(const l of retained){const current=CAMPAIGN.find(x=>x.id===l.id);assert(current);assert.equal(sintoniaDefinitionKey(current),sintoniaDefinitionKey(l));assert(data.campaign.completed[l.id]);assert.equal(resolveSintoniaCampaignAttempt(current,saved(l)).status,'resumed');}
+ const before=structuredClone(source),data=normalizeSintoniaData(source);assert.deepEqual(source,before);assert.equal(data.contentRevision,CONTENT_REVISION);assert.deepEqual(data.campaign.sessions,source.campaign.sessions);assert.deepEqual(data.endless.current,source.endless.current);assert.deepEqual(data.custom,source.custom);assert.equal(Object.keys(data.archivedAttempts).length,OLD.filter(old=>!CAMPAIGN.some(current=>current.id===old.id)||!validateActiveSintoniaLevel(old).valid).length+2);
+ for(const l of retained){const current=CAMPAIGN.find(x=>x.id===l.id);if(!current){assert(!data.campaign.completed[l.id]);continue;}assert.equal(sintoniaDefinitionKey(current),sintoniaDefinitionKey(l));assert(data.campaign.completed[l.id]);assert.equal(resolveSintoniaCampaignAttempt(current,saved(l)).status,validateActiveSintoniaLevel(current).valid?'resumed':'blocked');}
  if(CONTENT_REVISION==='sintonia-content-4'){assert.equal(Object.keys(data.campaign.completed).length,50);assert.equal(Object.keys(data.campaign.archivedCompleted).length,30);for(const l of removed)assert(!data.campaign.completed[l.id]);}
  const twice=normalizeSintoniaData(data);assert.deepEqual(twice.campaign.completed,data.campaign.completed);assert.deepEqual(twice.archivedAttempts,data.archivedAttempts);
 });
@@ -28,7 +28,7 @@ test('definition-free v3 saves resolve original maps and archive references do n
  const records=Object.fromEntries(OLD.map(l=>{const record=saved(l);delete record.level;return [l.id,record];}));
  const source={version:1,contentRevision:'sintonia-content-3',campaign:{sessions:records,completed:{}}};
  const data=normalizeSintoniaData(source),twice=normalizeSintoniaData(data);
- for(const l of retained)assert.equal(resolveSintoniaCampaignAttempt(CAMPAIGN.find(x=>x.id===l.id),records[l.id]).status,'resumed');
+ for(const l of retained){const current=CAMPAIGN.find(x=>x.id===l.id);if(current&&validateActiveSintoniaLevel(current).valid)assert.equal(resolveSintoniaCampaignAttempt(current,records[l.id]).status,'resumed');}
  for(const record of Object.values(data.archivedAttempts)){assert.equal(record.source,'campaign.sessions');assert(!record.saved);assert(!record.level?.editorial);assert.deepEqual(data.campaign.sessions[record.id],records[record.id]);}
  assert.deepEqual(twice.archivedAttempts,data.archivedAttempts);
  console.log('Arquivo sem definições embutidas:',Buffer.byteLength(JSON.stringify(data)),'bytes; normalizações repetidas sem duplicação.');

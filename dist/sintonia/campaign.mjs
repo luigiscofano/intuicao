@@ -1,5 +1,5 @@
-/** SINTONIA80: 50 unchanged definitions and 30 independently certified recompositions. */
-export const CONTENT_REVISION='sintonia-content-4';
+/** 71 exact retained definitions; 9 goal/button separation revisions. */
+export const CONTENT_REVISION='sintonia-content-5';
 export const DIFFICULTIES=Object.freeze(["Básico","Aprendiz","Intermediário","Avançado","Mestre","Modo Sábio"]);
 export const CHAPTERS=DIFFICULTIES;
 export const CAMPAIGN=[
@@ -3413,57 +3413,58 @@ export const CAMPAIGN=[
     "actorIntroduction": null
   },
   {
-    "id": "sintonia-0076",
+    "id": "sintonia80-0016-v5",
     "version": 1,
     "rulesVersion": 1,
     "boards": [
       {
         "id": "b0",
         "animal": "capivara",
-        "rows": 2,
+        "rows": 4,
         "cols": 4,
         "walkable": [
-          0,
-          1,
           2,
-          3,
           4,
-          5,
-          7
+          6,
+          8,
+          9,
+          10,
+          11,
+          13,
+          15
         ],
-        "start": 0,
-        "goal": 1,
+        "start": 10,
+        "goal": 11,
         "plates": [
           {
             "id": "support",
-            "cell": 1
+            "cell": 9
           }
         ]
       },
       {
         "id": "b1",
         "animal": "tuiuiu",
-        "rows": 3,
+        "rows": 4,
         "cols": 4,
         "walkable": [
-          0,
           1,
           2,
-          4,
           5,
-          6,
-          7,
           8,
           9,
-          11
+          10,
+          11,
+          12,
+          14
         ],
         "start": 11,
-        "goal": 6,
+        "goal": 12,
         "gates": [
           {
             "id": "plate-gate",
-            "from": 7,
-            "to": 6,
+            "from": 8,
+            "to": 12,
             "condition": {
               "type": "plate",
               "id": "support"
@@ -3480,28 +3481,33 @@ export const CAMPAIGN=[
     "initialSelectors": {},
     "family": "remote-support",
     "secondaryFamilies": [
-      "wall-adjust",
-      "goal-transit"
+      "priority-change",
+      "intermediate-stop"
     ],
     "name": "Uma passagem para o outro",
-    "lesson": "Animal ou caixa sobre uma placa mantém aberta a cancela com o mesmo símbolo. A posição final vale para o próximo comando. Prepare a placa que abre o caminho do outro animal.",
+    "lesson": "Prepare a placa que abre o caminho do outro animal.",
     "discovery": "Aqui o jogador precisa descobrir que a ocupação de uma placa prepara a passagem de outro tabuleiro.",
     "hints": [
       "Encontre a placa e a cancela com o mesmo símbolo.",
       "O estado no início da seta decide a travessia: é possível sair da placa enquanto o outro atravessa.",
       "Na configuração inicial, comece para cima; observe quem avança e quem espera."
     ],
-    "generatorVersion": 2,
-    "contentRevision": "sintonia-content-3",
-    "seed": "sintonia-campaign-v2:0076:0",
+    "generatorVersion": 4,
+    "contentRevision": "sintonia-content-5",
+    "seed": "goals-v5:16:12",
     "difficulty": 1,
     "solution": [
       "up",
-      "right",
       "left",
+      "left",
+      "down",
+      "left",
+      "down",
+      "up",
+      "right",
       "right"
     ],
-    "signature": "st1-b97806b0-338",
+    "signature": "st1-939d50c8-344",
     "prerequisites": [
       "walls"
     ],
@@ -3519,20 +3525,21 @@ export const CAMPAIGN=[
     "certificate": {
       "method": "breadth-first-witness-and-engine-replay",
       "rulesVersion": 1,
-      "commands": 4,
+      "commands": 9,
       "optimal": true,
-      "visited": 28,
+      "visited": 79,
       "replayed": true,
+      "firstVictoryAt": 9,
       "engine": "unchanged-rules-1"
     },
     "editorial": {
-      "source": "procedural-structure-and-automatic-curation",
+      "source": "goal-button-separation-v5",
       "design": null,
       "purpose": {
         "valid": true,
         "won": true,
         "evidenceScope": "supplied-command-sequence",
-        "commands": 4,
+        "commands": 9,
         "boxes": [],
         "dependencies": [
           {
@@ -3547,25 +3554,25 @@ export const CAMPAIGN=[
                 "type": "plate",
                 "id": "support",
                 "board": 0,
-                "cell": 1
+                "cell": 9
               }
             ],
             "crossingCommands": [
-              3
+              6
             ]
           }
         ],
         "boardRoles": [
           {
             "board": 0,
-            "moved": 3,
-            "waited": 1,
-            "goalDepartures": 1
+            "moved": 7,
+            "waited": 2,
+            "goalDepartures": 0
           },
           {
             "board": 1,
-            "moved": 2,
-            "waited": 2,
+            "moved": 4,
+            "waited": 5,
             "goalDepartures": 0
           }
         ],
@@ -3591,14 +3598,14 @@ export const CAMPAIGN=[
         "used": [
           "plate-gate"
         ],
-        "partialBlocks": 3,
+        "partialBlocks": 7,
         "goalDepartures": [
-          true,
+          false,
           false
         ],
-        "unequalLoops": 3,
-        "directionChanges": 3,
-        "earlyTurns": 2,
+        "unequalLoops": 7,
+        "directionChanges": 6,
+        "earlyTurns": 4,
         "occupiedBoxPlate": false,
         "boxAsStopAfterSupport": false,
         "finalApproach": [
@@ -3606,19 +3613,33 @@ export const CAMPAIGN=[
           true
         ]
       },
-      "sweep": {
-        "status": "complete",
-        "visited": 21,
-        "resistant": true
-      },
       "compatibility": "validated",
       "alternatives": "Uma sequência verificada é fornecida; outras soluções podem existir.",
       "deadEnds": "Mudanças de configuração podem exigir retornar a uma posição anterior.",
-      "decision": "retain-logical-definition",
-      "retentionReason": "Placa em dupla: ocupar agora autoriza a passagem no comando seguinte.",
-      "role": "focus",
-      "prerequisiteChapters": [
-        1
+      "necessity": [
+        {
+          "avoid": {
+            "type": "helper-participation",
+            "board": 0
+          },
+          "result": {
+            "scope": "all-winning-solutions-avoiding-event",
+            "optimalScope": "avoiding-predicate-only",
+            "avoid": {
+              "type": "helper-participation",
+              "board": 0
+            },
+            "budget": {
+              "maxStates": 120000,
+              "maxMs": 15000,
+              "maxDepth": null
+            },
+            "status": "unsolvable",
+            "visited": 70,
+            "optimal": false,
+            "exhaustive": true
+          }
+        }
       ],
       "antiSpam": {
         "singleDirection": {
@@ -3627,7 +3648,7 @@ export const CAMPAIGN=[
         },
         "sweeps": {
           "status": "complete",
-          "visited": 21,
+          "visited": 12,
           "solves": false
         },
         "shortCycles": {
@@ -3635,98 +3656,32 @@ export const CAMPAIGN=[
           "winningPatterns": []
         },
         "biasedRandom": {
-          "runs": 12,
+          "runs": 16,
           "commandsPerRun": 128,
-          "wins": 2
+          "wins": 1
         },
         "uniformRandom": {
-          "runs": 12,
+          "runs": 16,
           "commandsPerRun": 128,
-          "wins": 9
+          "wins": 4
         },
         "interpretation": "Diagnóstico automático; ciclos curtos e acertos aleatórios não provam ausência de raciocínio. A varredura testa vitória após cada movimento."
       },
-      "repetition": {
-        "structuralSignature": "st1-b97806b0-338",
-        "topologySignature": "top1-7f3b6457-114",
-        "globallyRotatedOrReflectedDuplicate": false
-      },
-      "curriculumReason": "Placa em dupla: ocupar agora autoriza a passagem no comando seguinte.",
-      "animalRoles": [
-        {
-          "board": 0,
-          "logicalAnimal": "capivara",
-          "role": "Preparar plate support para painel 2. Usar bloqueios como esperas enquanto os parceiros avançam. Abandonar temporariamente o destino para completar o ajuste conjunto.",
-          "controls": [
-            {
-              "id": "support",
-              "type": "plate",
-              "receiverBoard": 1
-            }
-          ],
-          "goal": 1
-        },
-        {
-          "board": 1,
-          "logicalAnimal": "tuiuiu",
-          "role": "Aproveitar plate-gate nos comandos 3. Usar bloqueios como esperas enquanto os parceiros avançam. Preparar a chegada conjunta sem depender de congelar no destino.",
-          "controls": [],
-          "goal": 6
-        }
-      ],
-      "objectRoles": [
-        {
-          "board": 0,
-          "type": "plates",
-          "id": "support",
-          "definition": {
-            "id": "support",
-            "cell": 1
-          },
-          "role": "Ocupação por animal ou caixa controla a passagem no estado anterior ao comando.",
-          "evidenceScope": "definition-and-certified-witness; necessity requires separate audit"
-        },
-        {
-          "board": 1,
-          "type": "gates",
-          "id": "plate-gate",
-          "definition": {
-            "id": "plate-gate",
-            "from": 7,
-            "to": 6,
-            "condition": {
-              "type": "plate",
-              "id": "support"
-            }
-          },
-          "role": {
-            "condition": {
-              "type": "plate",
-              "id": "support"
-            },
-            "crossings": [
-              3
-            ]
-          },
-          "evidenceScope": "definition-and-certified-witness; necessity requires separate audit"
-        }
-      ],
-      "causalityReport": "tests/sintonia80-purpose-audit.json"
+      "goalButtonSeparation": true,
+      "causalityReport": "docs/sintonia-goals-v5-certificates.json"
     },
     "number": 16,
     "chapter": 2,
-    "topologySignature": "top1-7f3b6457-114",
-    "originNumber": 76,
+    "originNumber": 16,
     "origin": {
-      "kind": "curated-identical-logical-definition",
-      "catalog": "sintonia-content-2",
-      "number": 76,
+      "kind": "separate-goals-from-buttons",
+      "catalog": "sintonia-content-4",
       "id": "sintonia-0076",
-      "version": 1,
-      "reason": "Placa em dupla: ocupar agora autoriza a passagem no comando seguinte."
+      "number": 16,
+      "version": 1
     },
-    "actorIntroduction": null,
-    "ruleExplanation": "Animal ou caixa sobre uma placa mantém aberta a cancela com o mesmo símbolo. A posição final vale para o próximo comando."
+    "topologySignature": "top1-d6b94bd5-120",
+    "actorIntroduction": null
   },
   {
     "id": "sintonia-0078",
@@ -8633,7 +8588,7 @@ export const CAMPAIGN=[
     "actorIntroduction": null
   },
   {
-    "id": "sintonia-0151",
+    "id": "sintonia80-0031-v5",
     "version": 1,
     "rulesVersion": 1,
     "boards": [
@@ -8718,7 +8673,7 @@ export const CAMPAIGN=[
           9
         ],
         "start": 3,
-        "goal": 7,
+        "goal": 1,
         "plates": [
           {
             "id": "auxiliary-2",
@@ -8746,8 +8701,8 @@ export const CAMPAIGN=[
       "O estado no início da seta decide a travessia: é possível sair da placa enquanto o outro atravessa.",
       "Na configuração inicial, comece para a direita; observe quem avança e quem espera."
     ],
-    "generatorVersion": 2,
-    "contentRevision": "sintonia-content-3",
+    "generatorVersion": 4,
+    "contentRevision": "sintonia-content-5",
     "seed": "sintonia-campaign-v2:0151:0",
     "difficulty": 2,
     "solution": [
@@ -8756,12 +8711,17 @@ export const CAMPAIGN=[
       "up",
       "up",
       "up",
-      "right",
+      "left",
       "down",
+      "left",
+      "left",
+      "down",
+      "right",
+      "up",
       "right",
       "down"
     ],
-    "signature": "st1-42588e08-549",
+    "signature": "st1-d475643d-549",
     "prerequisites": [
       "walls",
       "plate"
@@ -8778,20 +8738,21 @@ export const CAMPAIGN=[
     "certificate": {
       "method": "breadth-first-witness-and-engine-replay",
       "rulesVersion": 1,
-      "commands": 9,
+      "commands": 14,
       "optimal": true,
-      "visited": 455,
+      "visited": 446,
       "replayed": true,
-      "engine": "unchanged-rules-1"
+      "engine": "unchanged-rules-1",
+      "firstVictoryAt": 14
     },
     "editorial": {
-      "source": "procedural-structure-and-automatic-curation",
+      "source": "goal-button-separation-v5",
       "design": null,
       "purpose": {
         "valid": true,
         "won": true,
         "evidenceScope": "supplied-command-sequence",
-        "commands": 9,
+        "commands": 14,
         "boxes": [],
         "dependencies": [
           {
@@ -8836,19 +8797,19 @@ export const CAMPAIGN=[
         "boardRoles": [
           {
             "board": 0,
-            "moved": 5,
-            "waited": 4,
+            "moved": 11,
+            "waited": 3,
             "goalDepartures": 1
           },
           {
             "board": 1,
             "moved": 6,
-            "waited": 3,
+            "waited": 8,
             "goalDepartures": 0
           },
           {
             "board": 2,
-            "moved": 3,
+            "moved": 8,
             "waited": 6,
             "goalDepartures": 1
           }
@@ -8875,15 +8836,15 @@ export const CAMPAIGN=[
         "used": [
           "plate-gate"
         ],
-        "partialBlocks": 8,
+        "partialBlocks": 12,
         "goalDepartures": [
           true,
           false,
           true
         ],
-        "unequalLoops": 17,
-        "directionChanges": 6,
-        "earlyTurns": 2,
+        "unequalLoops": 22,
+        "directionChanges": 10,
+        "earlyTurns": 6,
         "occupiedBoxPlate": false,
         "boxAsStopAfterSupport": false,
         "finalApproach": [
@@ -8891,11 +8852,6 @@ export const CAMPAIGN=[
           false,
           true
         ]
-      },
-      "sweep": {
-        "status": "complete",
-        "visited": 33,
-        "resistant": true
       },
       "compatibility": "validated",
       "alternatives": "Uma sequência verificada é fornecida; outras soluções podem existir.",
@@ -8922,14 +8878,14 @@ export const CAMPAIGN=[
           "winningPatterns": []
         },
         "biasedRandom": {
-          "runs": 12,
+          "runs": 16,
           "commandsPerRun": 128,
           "wins": 0
         },
         "uniformRandom": {
-          "runs": 12,
+          "runs": 16,
           "commandsPerRun": 128,
-          "wins": 1
+          "wins": 0
         },
         "interpretation": "Diagnóstico automático; ciclos curtos e acertos aleatórios não provam ausência de raciocínio. A varredura testa vitória após cada movimento."
       },
@@ -9046,19 +9002,67 @@ export const CAMPAIGN=[
           "evidenceScope": "definition-and-certified-witness; necessity requires separate audit"
         }
       ],
-      "causalityReport": "tests/sintonia80-purpose-audit.json"
+      "causalityReport": "docs/sintonia-goals-v5-certificates.json",
+      "necessity": [
+        {
+          "avoid": {
+            "type": "helper-participation",
+            "board": 0
+          },
+          "result": {
+            "scope": "all-winning-solutions-avoiding-event",
+            "optimalScope": "avoiding-predicate-only",
+            "avoid": {
+              "type": "helper-participation",
+              "board": 0
+            },
+            "budget": {
+              "maxStates": 120000,
+              "maxMs": 15000,
+              "maxDepth": null
+            },
+            "status": "unsolvable",
+            "visited": 151,
+            "optimal": false,
+            "exhaustive": true
+          }
+        },
+        {
+          "avoid": {
+            "type": "helper-participation",
+            "board": 2
+          },
+          "result": {
+            "scope": "all-winning-solutions-avoiding-event",
+            "optimalScope": "avoiding-predicate-only",
+            "avoid": {
+              "type": "helper-participation",
+              "board": 2
+            },
+            "budget": {
+              "maxStates": 120000,
+              "maxMs": 15000,
+              "maxDepth": null
+            },
+            "status": "unsolvable",
+            "visited": 61,
+            "optimal": false,
+            "exhaustive": true
+          }
+        }
+      ],
+      "goalButtonSeparation": true
     },
     "number": 31,
     "chapter": 3,
     "topologySignature": "top1-58f5ced3-169",
-    "originNumber": 151,
+    "originNumber": 31,
     "origin": {
-      "kind": "curated-identical-logical-definition",
-      "catalog": "sintonia-content-2",
-      "number": 151,
+      "kind": "separate-goals-from-buttons",
+      "catalog": "sintonia-content-4",
       "id": "sintonia-0151",
-      "version": 1,
-      "reason": "Primeiro trio com placas já conhecidas; somente a quantidade de responsabilidades é nova."
+      "number": 31,
+      "version": 1
     },
     "actorIntroduction": 3
   },
@@ -10701,7 +10705,7 @@ export const CAMPAIGN=[
     "topologySignature": "top1-ee7aab2c-113"
   },
   {
-    "id": "sintonia80-0036-v4",
+    "id": "sintonia80-0036-v5",
     "version": 1,
     "rulesVersion": 1,
     "boards": [
@@ -10709,50 +10713,52 @@ export const CAMPAIGN=[
         "id": "b0",
         "animal": "capivara",
         "rows": 4,
-        "cols": 4,
+        "cols": 5,
         "walkable": [
+          0,
+          1,
           2,
-          3,
           5,
           6,
-          7,
-          8,
-          9,
+          10,
           11,
+          12,
           13,
-          14
+          14,
+          15,
+          17
         ],
-        "start": 6,
-        "goal": 14,
+        "start": 11,
+        "goal": 2,
         "plates": [
           {
             "id": "support",
-            "cell": 14
+            "cell": 10
           }
         ]
       },
       {
         "id": "b1",
         "animal": "tuiuiu",
-        "rows": 4,
-        "cols": 4,
+        "rows": 3,
+        "cols": 3,
         "walkable": [
+          0,
+          1,
+          2,
+          3,
+          4,
           5,
           6,
-          7,
-          10,
-          12,
-          13,
-          14,
-          15
+          8
         ],
-        "start": 12,
-        "goal": 15,
+        "start": 6,
+        "goal": 8,
         "gates": [
           {
             "id": "plate-gate",
-            "from": 14,
-            "to": 15,
+            "from": 5,
+            "to": 8,
             "condition": {
               "type": "plate",
               "id": "support"
@@ -10760,8 +10766,8 @@ export const CAMPAIGN=[
           },
           {
             "id": "auxiliary-gate-2",
-            "from": 14,
-            "to": 13,
+            "from": 6,
+            "to": 3,
             "condition": {
               "type": "plate",
               "id": "auxiliary-2"
@@ -10772,23 +10778,28 @@ export const CAMPAIGN=[
       {
         "id": "b2",
         "animal": "bemtevi",
-        "rows": 3,
-        "cols": 4,
+        "rows": 5,
+        "cols": 5,
         "walkable": [
           2,
-          4,
-          6,
           7,
-          8,
           9,
-          10
+          12,
+          13,
+          14,
+          18,
+          19,
+          21,
+          22,
+          23,
+          24
         ],
-        "start": 4,
-        "goal": 6,
+        "start": 14,
+        "goal": 9,
         "plates": [
           {
             "id": "auxiliary-2",
-            "cell": 7
+            "cell": 12
           }
         ]
       }
@@ -10801,8 +10812,8 @@ export const CAMPAIGN=[
     "initialSelectors": {},
     "family": "remote-support",
     "secondaryFamilies": [
-      "axis-order",
-      "wall-adjust"
+      "goal-transit",
+      "intermediate-stop"
     ],
     "name": "Uma passagem para o outro",
     "lesson": "Prepare a placa que abre o caminho do outro animal.",
@@ -10812,30 +10823,31 @@ export const CAMPAIGN=[
       "O estado no início da seta decide a travessia: é possível sair da placa enquanto o outro atravessa.",
       "Na configuração inicial, comece para a esquerda; observe quem avança e quem espera."
     ],
-    "generatorVersion": 3,
-    "contentRevision": "sintonia-content-4",
-    "seed": "sintonia-content4:36:0",
+    "generatorVersion": 4,
+    "contentRevision": "sintonia-content-5",
+    "seed": "goals-v5:36:12",
     "difficulty": 2,
     "solution": [
       "left",
-      "down",
-      "right",
-      "down",
-      "right",
-      "up",
-      "right",
-      "right",
-      "up",
       "left",
       "down",
+      "up",
+      "down",
       "right",
       "right",
-      "up"
+      "up",
+      "up",
+      "down",
+      "down",
+      "up",
+      "right",
+      "up",
+      "up",
+      "right"
     ],
-    "signature": "st1-eb5ee269-537",
+    "signature": "st1-e78804af-564",
     "prerequisites": [
-      "walls",
-      "plate"
+      "walls"
     ],
     "introduction": [],
     "parameters": {
@@ -10849,21 +10861,21 @@ export const CAMPAIGN=[
     "certificate": {
       "method": "breadth-first-witness-and-engine-replay",
       "rulesVersion": 1,
-      "commands": 14,
+      "commands": 16,
       "optimal": true,
-      "visited": 310,
+      "visited": 745,
       "replayed": true,
-      "engine": "unchanged-rules-1",
-      "firstVictoryAt": 14
+      "firstVictoryAt": 16,
+      "engine": "unchanged-rules-1"
     },
     "editorial": {
-      "source": "procedural-structure-and-automatic-curation",
+      "source": "goal-button-separation-v5",
       "design": null,
       "purpose": {
         "valid": true,
         "won": true,
         "evidenceScope": "supplied-command-sequence",
-        "commands": 14,
+        "commands": 16,
         "boxes": [],
         "dependencies": [
           {
@@ -10878,11 +10890,11 @@ export const CAMPAIGN=[
                 "type": "plate",
                 "id": "support",
                 "board": 0,
-                "cell": 14
+                "cell": 10
               }
             ],
             "crossingCommands": [
-              13
+              11
             ]
           },
           {
@@ -10897,32 +10909,32 @@ export const CAMPAIGN=[
                 "type": "plate",
                 "id": "auxiliary-2",
                 "board": 2,
-                "cell": 7
+                "cell": 12
               }
             ],
             "crossingCommands": [
-              8
+              4
             ]
           }
         ],
         "boardRoles": [
           {
             "board": 0,
-            "moved": 6,
-            "waited": 8,
-            "goalDepartures": 1
+            "moved": 13,
+            "waited": 3,
+            "goalDepartures": 0
           },
           {
             "board": 1,
-            "moved": 5,
-            "waited": 9,
+            "moved": 6,
+            "waited": 10,
             "goalDepartures": 0
           },
           {
             "board": 2,
-            "moved": 8,
-            "waited": 6,
-            "goalDepartures": 2
+            "moved": 11,
+            "waited": 5,
+            "goalDepartures": 1
           }
         ],
         "caveat": "Uso neste certificado não prova necessidade. Consulte tests/sintonia-purpose-audit.json para ablações e limites."
@@ -10947,61 +10959,26 @@ export const CAMPAIGN=[
         "used": [
           "plate-gate"
         ],
-        "partialBlocks": 14,
+        "partialBlocks": 12,
         "goalDepartures": [
-          true,
+          false,
           false,
           true
         ],
-        "unequalLoops": 28,
-        "directionChanges": 11,
-        "earlyTurns": 5,
+        "unequalLoops": 37,
+        "directionChanges": 10,
+        "earlyTurns": 6,
         "occupiedBoxPlate": false,
         "boxAsStopAfterSupport": false,
         "finalApproach": [
+          false,
           true,
-          true,
-          false
+          true
         ]
-      },
-      "sweep": {
-        "status": "complete",
-        "visited": 22,
-        "resistant": true
       },
       "compatibility": "validated",
       "alternatives": "Uma sequência verificada é fornecida; outras soluções podem existir.",
       "deadEnds": "Mudanças de configuração podem exigir retornar a uma posição anterior.",
-      "role": "varied",
-      "decision": "recompose",
-      "curriculumReason": "Distribuir a preparação entre três animais sem um painel decorativo.",
-      "retentionReason": "Distribuir a preparação entre três animais sem um painel decorativo.",
-      "antiSpam": {
-        "singleDirection": {
-          "tested": 4,
-          "winningDirections": []
-        },
-        "sweeps": {
-          "status": "complete",
-          "visited": 22,
-          "solves": false
-        },
-        "shortCycles": {
-          "tested": 40,
-          "winningPatterns": []
-        },
-        "biasedRandom": {
-          "runs": 24,
-          "commandsPerRun": 128,
-          "wins": 0
-        },
-        "uniformRandom": {
-          "runs": 24,
-          "commandsPerRun": 128,
-          "wins": 2
-        },
-        "interpretation": "Diagnóstico automático; ciclos curtos e acertos aleatórios não provam ausência de raciocínio. A varredura testa vitória após cada movimento."
-      },
       "necessity": [
         {
           "avoid": {
@@ -11016,12 +10993,12 @@ export const CAMPAIGN=[
               "board": 0
             },
             "budget": {
-              "maxStates": 90000,
-              "maxMs": 12000,
+              "maxStates": 120000,
+              "maxMs": 15000,
               "maxDepth": null
             },
             "status": "unsolvable",
-            "visited": 334,
+            "visited": 590,
             "optimal": false,
             "exhaustive": true
           }
@@ -11039,32 +11016,58 @@ export const CAMPAIGN=[
               "board": 2
             },
             "budget": {
-              "maxStates": 90000,
-              "maxMs": 12000,
+              "maxStates": 120000,
+              "maxMs": 15000,
               "maxDepth": null
             },
             "status": "unsolvable",
-            "visited": 97,
+            "visited": 104,
             "optimal": false,
             "exhaustive": true
           }
         }
       ],
-      "causalityReport": "tests/sintonia-v4-editorial.json"
+      "antiSpam": {
+        "singleDirection": {
+          "tested": 4,
+          "winningDirections": []
+        },
+        "sweeps": {
+          "status": "complete",
+          "visited": 35,
+          "solves": false
+        },
+        "shortCycles": {
+          "tested": 40,
+          "winningPatterns": []
+        },
+        "biasedRandom": {
+          "runs": 16,
+          "commandsPerRun": 128,
+          "wins": 0
+        },
+        "uniformRandom": {
+          "runs": 16,
+          "commandsPerRun": 128,
+          "wins": 0
+        },
+        "interpretation": "Diagnóstico automático; ciclos curtos e acertos aleatórios não provam ausência de raciocínio. A varredura testa vitória após cada movimento."
+      },
+      "goalButtonSeparation": true,
+      "causalityReport": "docs/sintonia-goals-v5-certificates.json"
     },
     "number": 36,
     "chapter": 3,
     "originNumber": 36,
     "origin": {
-      "kind": "recomposed-removed-mechanics",
-      "catalog": "sintonia-content-3",
-      "id": "sintonia-0177",
+      "kind": "separate-goals-from-buttons",
+      "catalog": "sintonia-content-4",
+      "id": "sintonia80-0036-v4",
       "number": 36,
-      "version": 1,
-      "reason": "Distribuir a preparação entre três animais sem um painel decorativo."
+      "version": 1
     },
-    "actorIntroduction": null,
-    "topologySignature": "top1-3ca3c59d-168"
+    "topologySignature": "top1-0fb7034d-190",
+    "actorIntroduction": null
   },
   {
     "id": "sintonia80-0037-v4",
@@ -13590,7 +13593,7 @@ export const CAMPAIGN=[
     "topologySignature": "top1-22a8aaab-119"
   },
   {
-    "id": "sintonia80-0045-v4",
+    "id": "sintonia80-0045-v5",
     "version": 1,
     "rulesVersion": 1,
     "boards": [
@@ -13610,7 +13613,7 @@ export const CAMPAIGN=[
           8
         ],
         "start": 0,
-        "goal": 5,
+        "goal": 4,
         "plates": [
           {
             "id": "support",
@@ -13701,8 +13704,8 @@ export const CAMPAIGN=[
       "O estado no início da seta decide a travessia: é possível sair da placa enquanto o outro atravessa.",
       "Na configuração inicial, comece para a direita; observe quem avança e quem espera."
     ],
-    "generatorVersion": 3,
-    "contentRevision": "sintonia-content-4",
+    "generatorVersion": 4,
+    "contentRevision": "sintonia-content-5",
     "seed": "sintonia-content4:45:0",
     "difficulty": 2,
     "solution": [
@@ -13718,11 +13721,9 @@ export const CAMPAIGN=[
       "up",
       "up",
       "left",
-      "down",
-      "left",
-      "right"
+      "down"
     ],
-    "signature": "st1-6a58d976-536",
+    "signature": "st1-2946b983-536",
     "prerequisites": [
       "walls",
       "plate"
@@ -13739,21 +13740,21 @@ export const CAMPAIGN=[
     "certificate": {
       "method": "breadth-first-witness-and-engine-replay",
       "rulesVersion": 1,
-      "commands": 15,
+      "commands": 13,
       "optimal": true,
       "visited": 302,
       "replayed": true,
       "engine": "unchanged-rules-1",
-      "firstVictoryAt": 15
+      "firstVictoryAt": 13
     },
     "editorial": {
-      "source": "procedural-structure-and-automatic-curation",
+      "source": "goal-button-separation-v5",
       "design": null,
       "purpose": {
         "valid": true,
         "won": true,
         "evidenceScope": "supplied-command-sequence",
-        "commands": 15,
+        "commands": 13,
         "boxes": [],
         "dependencies": [
           {
@@ -13798,21 +13799,21 @@ export const CAMPAIGN=[
         "boardRoles": [
           {
             "board": 0,
-            "moved": 11,
-            "waited": 4,
-            "goalDepartures": 2
+            "moved": 10,
+            "waited": 3,
+            "goalDepartures": 1
           },
           {
             "board": 1,
-            "moved": 10,
+            "moved": 8,
             "waited": 5,
-            "goalDepartures": 3
+            "goalDepartures": 2
           },
           {
             "board": 2,
-            "moved": 9,
+            "moved": 7,
             "waited": 6,
-            "goalDepartures": 1
+            "goalDepartures": 0
           }
         ],
         "caveat": "Uso neste certificado não prova necessidade. Consulte tests/sintonia-purpose-audit.json para ablações e limites."
@@ -13837,27 +13838,22 @@ export const CAMPAIGN=[
         "used": [
           "plate-gate"
         ],
-        "partialBlocks": 10,
+        "partialBlocks": 9,
         "goalDepartures": [
           true,
           true,
-          true
+          false
         ],
-        "unequalLoops": 22,
-        "directionChanges": 12,
-        "earlyTurns": 6,
+        "unequalLoops": 19,
+        "directionChanges": 10,
+        "earlyTurns": 4,
         "occupiedBoxPlate": false,
         "boxAsStopAfterSupport": false,
         "finalApproach": [
           false,
-          false,
-          false
+          true,
+          true
         ]
-      },
-      "sweep": {
-        "status": "complete",
-        "visited": 15,
-        "resistant": true
       },
       "compatibility": "validated",
       "alternatives": "Uma sequência verificada é fornecida; outras soluções podem existir.",
@@ -13881,12 +13877,12 @@ export const CAMPAIGN=[
           "winningPatterns": []
         },
         "biasedRandom": {
-          "runs": 24,
+          "runs": 16,
           "commandsPerRun": 128,
           "wins": 0
         },
         "uniformRandom": {
-          "runs": 24,
+          "runs": 16,
           "commandsPerRun": 128,
           "wins": 0
         },
@@ -13906,8 +13902,8 @@ export const CAMPAIGN=[
               "board": 0
             },
             "budget": {
-              "maxStates": 90000,
-              "maxMs": 12000,
+              "maxStates": 120000,
+              "maxMs": 15000,
               "maxDepth": null
             },
             "status": "unsolvable",
@@ -13929,8 +13925,8 @@ export const CAMPAIGN=[
               "board": 2
             },
             "budget": {
-              "maxStates": 90000,
-              "maxMs": 12000,
+              "maxStates": 120000,
+              "maxMs": 15000,
               "maxDepth": null
             },
             "status": "unsolvable",
@@ -13940,18 +13936,18 @@ export const CAMPAIGN=[
           }
         }
       ],
-      "causalityReport": "tests/sintonia-v4-editorial.json"
+      "causalityReport": "docs/sintonia-goals-v5-certificates.json",
+      "goalButtonSeparation": true
     },
     "number": 45,
     "chapter": 3,
     "originNumber": 45,
     "origin": {
-      "kind": "recomposed-removed-mechanics",
-      "catalog": "sintonia-content-3",
-      "id": "sintonia-0231",
+      "kind": "separate-goals-from-buttons",
+      "catalog": "sintonia-content-4",
+      "id": "sintonia80-0045-v4",
       "number": 45,
-      "version": 1,
-      "reason": "O terceiro animal prepara a passagem de outro painel."
+      "version": 1
     },
     "actorIntroduction": null,
     "topologySignature": "top1-0ad9a3ce-163"
@@ -17995,7 +17991,7 @@ export const CAMPAIGN=[
     "topologySignature": "top1-db959f2f-128"
   },
   {
-    "id": "sintonia-0337",
+    "id": "sintonia80-0057-v5",
     "version": 1,
     "rulesVersion": 1,
     "boards": [
@@ -18003,30 +17999,33 @@ export const CAMPAIGN=[
         "id": "b0",
         "animal": "capivara",
         "rows": 5,
-        "cols": 5,
+        "cols": 3,
         "walkable": [
+          0,
+          1,
           2,
+          4,
+          6,
           7,
+          8,
+          9,
+          11,
           12,
-          16,
-          17,
-          18,
-          23,
-          24
+          14
         ],
         "start": 2,
-        "goal": 24,
+        "goal": 12,
         "plates": [
           {
             "id": "relay-a",
-            "cell": 18
+            "cell": 9
           }
         ],
         "gates": [
           {
             "id": "relay-return",
-            "from": 23,
-            "to": 24,
+            "from": 9,
+            "to": 12,
             "condition": {
               "type": "plate",
               "id": "relay-b"
@@ -18037,33 +18036,33 @@ export const CAMPAIGN=[
       {
         "id": "b1",
         "animal": "tuiuiu",
-        "rows": 5,
-        "cols": 3,
+        "rows": 4,
+        "cols": 5,
         "walkable": [
-          0,
-          1,
-          3,
+          4,
           5,
-          6,
-          7,
-          8,
           9,
+          10,
           11,
-          12
+          12,
+          13,
+          14,
+          15,
+          18
         ],
-        "start": 5,
-        "goal": 12,
+        "start": 4,
+        "goal": 5,
         "plates": [
           {
             "id": "relay-b",
-            "cell": 12
+            "cell": 11
           }
         ],
         "gates": [
           {
             "id": "relay-out",
             "from": 9,
-            "to": 12,
+            "to": 14,
             "condition": {
               "type": "plate",
               "id": "relay-a"
@@ -18081,32 +18080,36 @@ export const CAMPAIGN=[
     "initialSelectors": {},
     "family": "support-handoff",
     "secondaryFamilies": [
-      "final-command",
-      "axis-order"
+      "priority-change",
+      "unequal-loop"
     ],
     "name": "Ajuda em revezamento",
-    "lesson": "Uma ajuda prepara a seguinte: atravesse, ocupe a próxima placa e libere o caminho de quem ajudou. Quem atravessou pode assumir a próxima ajuda entre os animais.",
+    "lesson": "Quem atravessou pode assumir a próxima ajuda entre os animais.",
     "discovery": "Aqui o jogador precisa descobrir que um animal precisa atravessar e ocupar a próxima placa para liberar quem o ajudou.",
     "hints": [
       "Uma das placas está numa região que a outra ajuda a abrir.",
       "Prepare a primeira placa, atravesse e ocupe a próxima para que o primeiro ajudante possa continuar.",
-      "Na configuração inicial, comece para baixo; observe quem avança e quem espera."
+      "Na configuração inicial, comece para a esquerda; observe quem avança e quem espera."
     ],
-    "generatorVersion": 2,
-    "contentRevision": "sintonia-content-3",
-    "seed": "sintonia-campaign-v2:0337:0",
+    "generatorVersion": 4,
+    "contentRevision": "sintonia-content-5",
+    "seed": "goals-v5:57:12",
     "difficulty": 3,
     "solution": [
+      "left",
+      "down",
       "down",
       "left",
       "down",
+      "down",
+      "left",
+      "left",
       "left",
       "down",
-      "right",
-      "down",
-      "right"
+      "left",
+      "up"
     ],
-    "signature": "st1-a6f414a8-480",
+    "signature": "st1-cafeb219-486",
     "prerequisites": [
       "walls",
       "plate"
@@ -18125,20 +18128,21 @@ export const CAMPAIGN=[
     "certificate": {
       "method": "breadth-first-witness-and-engine-replay",
       "rulesVersion": 1,
-      "commands": 8,
+      "commands": 12,
       "optimal": true,
-      "visited": 52,
+      "visited": 96,
       "replayed": true,
+      "firstVictoryAt": 12,
       "engine": "unchanged-rules-1"
     },
     "editorial": {
-      "source": "procedural-structure-and-automatic-curation",
+      "source": "goal-button-separation-v5",
       "design": null,
       "purpose": {
         "valid": true,
         "won": true,
         "evidenceScope": "supplied-command-sequence",
-        "commands": 8,
+        "commands": 12,
         "boxes": [],
         "dependencies": [
           {
@@ -18153,11 +18157,391 @@ export const CAMPAIGN=[
                 "type": "plate",
                 "id": "relay-b",
                 "board": 1,
-                "cell": 12
+                "cell": 11
               }
             ],
             "crossingCommands": [
-              8
+              10
+            ]
+          },
+          {
+            "gateId": "relay-out",
+            "receiverBoard": 1,
+            "condition": {
+              "type": "plate",
+              "id": "relay-a"
+            },
+            "controllers": [
+              {
+                "type": "plate",
+                "id": "relay-a",
+                "board": 0,
+                "cell": 9
+              }
+            ],
+            "crossingCommands": [
+              6
+            ]
+          }
+        ],
+        "boardRoles": [
+          {
+            "board": 0,
+            "moved": 6,
+            "waited": 6,
+            "goalDepartures": 0
+          },
+          {
+            "board": 1,
+            "moved": 7,
+            "waited": 5,
+            "goalDepartures": 0
+          }
+        ],
+        "caveat": "Uso neste certificado não prova necessidade. Consulte tests/sintonia-purpose-audit.json para ablações e limites."
+      },
+      "rubric": {
+        "status": "human-review-pending",
+        "dimensions": [
+          "purpose",
+          "discovery",
+          "interdependence",
+          "causal-clarity",
+          "spatial-economy",
+          "variety"
+        ],
+        "scores": null,
+        "humanPlaytesting": false,
+        "reason": "Replay e ablações são evidências automáticas, não substitutos de avaliação editorial e testes humanos."
+      },
+      "humanPlaytested": false,
+      "discovery": "Aqui o jogador precisa descobrir que um animal precisa atravessar e ocupar a próxima placa para liberar quem o ajudou.",
+      "reasoning": {
+        "used": [
+          "handoff-0",
+          "handoff-1",
+          "plate-gate"
+        ],
+        "partialBlocks": 11,
+        "goalDepartures": [
+          false,
+          false
+        ],
+        "unequalLoops": 10,
+        "directionChanges": 7,
+        "earlyTurns": 2,
+        "occupiedBoxPlate": false,
+        "boxAsStopAfterSupport": false,
+        "finalApproach": [
+          true,
+          false
+        ]
+      },
+      "compatibility": "validated",
+      "alternatives": "Uma sequência verificada é fornecida; outras soluções podem existir.",
+      "deadEnds": "Mudanças de configuração podem exigir retornar a uma posição anterior.",
+      "necessity": [
+        {
+          "avoid": {
+            "type": "helper-participation",
+            "board": 1
+          },
+          "result": {
+            "scope": "all-winning-solutions-avoiding-event",
+            "optimalScope": "avoiding-predicate-only",
+            "avoid": {
+              "type": "helper-participation",
+              "board": 1
+            },
+            "budget": {
+              "maxStates": 120000,
+              "maxMs": 15000,
+              "maxDepth": null
+            },
+            "status": "unsolvable",
+            "visited": 94,
+            "optimal": false,
+            "exhaustive": true
+          }
+        },
+        {
+          "avoid": {
+            "type": "helper-participation",
+            "board": 0
+          },
+          "result": {
+            "scope": "all-winning-solutions-avoiding-event",
+            "optimalScope": "avoiding-predicate-only",
+            "avoid": {
+              "type": "helper-participation",
+              "board": 0
+            },
+            "budget": {
+              "maxStates": 120000,
+              "maxMs": 15000,
+              "maxDepth": null
+            },
+            "status": "unsolvable",
+            "visited": 18,
+            "optimal": false,
+            "exhaustive": true
+          }
+        }
+      ],
+      "antiSpam": {
+        "singleDirection": {
+          "tested": 4,
+          "winningDirections": []
+        },
+        "sweeps": {
+          "status": "complete",
+          "visited": 4,
+          "solves": false
+        },
+        "shortCycles": {
+          "tested": 40,
+          "winningPatterns": []
+        },
+        "biasedRandom": {
+          "runs": 16,
+          "commandsPerRun": 128,
+          "wins": 0
+        },
+        "uniformRandom": {
+          "runs": 16,
+          "commandsPerRun": 128,
+          "wins": 1
+        },
+        "interpretation": "Diagnóstico automático; ciclos curtos e acertos aleatórios não provam ausência de raciocínio. A varredura testa vitória após cada movimento."
+      },
+      "goalButtonSeparation": true,
+      "causalityReport": "docs/sintonia-goals-v5-certificates.json"
+    },
+    "number": 57,
+    "chapter": 4,
+    "originNumber": 57,
+    "origin": {
+      "kind": "separate-goals-from-buttons",
+      "catalog": "sintonia-content-4",
+      "id": "sintonia-0337",
+      "number": 57,
+      "version": 1
+    },
+    "topologySignature": "top1-c9949d80-130",
+    "actorIntroduction": null
+  },
+  {
+    "id": "sintonia80-0058-v5",
+    "version": 1,
+    "rulesVersion": 1,
+    "boards": [
+      {
+        "id": "b0",
+        "animal": "capivara",
+        "rows": 5,
+        "cols": 4,
+        "walkable": [
+          0,
+          1,
+          2,
+          3,
+          4,
+          5,
+          6,
+          8,
+          10,
+          13,
+          14,
+          15,
+          18
+        ],
+        "start": 0,
+        "goal": 8,
+        "plates": [
+          {
+            "id": "relay-a",
+            "cell": 18
+          }
+        ],
+        "gates": [
+          {
+            "id": "relay-return",
+            "from": 4,
+            "to": 8,
+            "condition": {
+              "type": "plate",
+              "id": "relay-b"
+            }
+          }
+        ]
+      },
+      {
+        "id": "b1",
+        "animal": "tuiuiu",
+        "rows": 4,
+        "cols": 4,
+        "walkable": [
+          1,
+          2,
+          3,
+          7,
+          8,
+          9,
+          10,
+          11,
+          12,
+          14
+        ],
+        "start": 1,
+        "goal": 12,
+        "plates": [
+          {
+            "id": "relay-b",
+            "cell": 8
+          }
+        ],
+        "gates": [
+          {
+            "id": "relay-out",
+            "from": 3,
+            "to": 7,
+            "condition": {
+              "type": "plate",
+              "id": "relay-a"
+            }
+          },
+          {
+            "id": "auxiliary-gate-2",
+            "from": 2,
+            "to": 3,
+            "condition": {
+              "type": "plate",
+              "id": "auxiliary-2"
+            }
+          }
+        ]
+      },
+      {
+        "id": "b2",
+        "animal": "bemtevi",
+        "rows": 5,
+        "cols": 5,
+        "walkable": [
+          2,
+          4,
+          7,
+          9,
+          11,
+          12,
+          13,
+          14,
+          16,
+          18,
+          23
+        ],
+        "start": 7,
+        "goal": 16,
+        "plates": [
+          {
+            "id": "auxiliary-2",
+            "cell": 23
+          }
+        ]
+      }
+    ],
+    "mechanics": [
+      "walls",
+      "plate",
+      "handoff"
+    ],
+    "initialSwitches": {},
+    "initialSelectors": {},
+    "family": "support-handoff",
+    "secondaryFamilies": [
+      "final-command",
+      "unequal-loop"
+    ],
+    "name": "Ajuda em revezamento",
+    "lesson": "Quem atravessou pode assumir a próxima ajuda entre os animais.",
+    "discovery": "Aqui o jogador precisa descobrir que um animal precisa atravessar e ocupar a próxima placa para liberar quem o ajudou.",
+    "hints": [
+      "Uma das placas está numa região que a outra ajuda a abrir.",
+      "Prepare a primeira placa, atravesse e ocupe a próxima para que o primeiro ajudante possa continuar.",
+      "Na configuração inicial, comece para a direita; observe quem avança e quem espera."
+    ],
+    "generatorVersion": 4,
+    "contentRevision": "sintonia-content-5",
+    "seed": "goals-v5:58:12",
+    "difficulty": 3,
+    "solution": [
+      "right",
+      "down",
+      "right",
+      "down",
+      "down",
+      "down",
+      "right",
+      "down",
+      "down",
+      "left",
+      "up",
+      "up",
+      "up",
+      "left",
+      "left",
+      "down"
+    ],
+    "signature": "st1-f6ed2fd9-701",
+    "prerequisites": [
+      "walls",
+      "plate"
+    ],
+    "introduction": [],
+    "parameters": {
+      "difficulty": 3,
+      "animals": 3,
+      "primary": "handoff",
+      "secondary": null,
+      "role": "focus",
+      "pattern": null
+    },
+    "certificate": {
+      "method": "breadth-first-witness-and-engine-replay",
+      "rulesVersion": 1,
+      "commands": 16,
+      "optimal": true,
+      "visited": 904,
+      "replayed": true,
+      "firstVictoryAt": 16,
+      "engine": "unchanged-rules-1"
+    },
+    "editorial": {
+      "source": "goal-button-separation-v5",
+      "design": null,
+      "purpose": {
+        "valid": true,
+        "won": true,
+        "evidenceScope": "supplied-command-sequence",
+        "commands": 16,
+        "boxes": [],
+        "dependencies": [
+          {
+            "gateId": "relay-return",
+            "receiverBoard": 0,
+            "condition": {
+              "type": "plate",
+              "id": "relay-b"
+            },
+            "controllers": [
+              {
+                "type": "plate",
+                "id": "relay-b",
+                "board": 1,
+                "cell": 8
+              }
+            ],
+            "crossingCommands": [
+              16
             ]
           },
           {
@@ -18176,430 +18560,12 @@ export const CAMPAIGN=[
               }
             ],
             "crossingCommands": [
-              7
-            ]
-          }
-        ],
-        "boardRoles": [
-          {
-            "board": 0,
-            "moved": 6,
-            "waited": 2,
-            "goalDepartures": 0
-          },
-          {
-            "board": 1,
-            "moved": 5,
-            "waited": 3,
-            "goalDepartures": 0
-          }
-        ],
-        "caveat": "Uso neste certificado não prova necessidade. Consulte tests/sintonia-purpose-audit.json para ablações e limites."
-      },
-      "rubric": {
-        "status": "human-review-pending",
-        "dimensions": [
-          "purpose",
-          "discovery",
-          "interdependence",
-          "causal-clarity",
-          "spatial-economy",
-          "variety"
-        ],
-        "scores": null,
-        "humanPlaytesting": false,
-        "reason": "Replay e ablações são evidências automáticas, não substitutos de avaliação editorial e testes humanos."
-      },
-      "humanPlaytested": false,
-      "discovery": "Aqui o jogador precisa descobrir que um animal precisa atravessar e ocupar a próxima placa para liberar quem o ajudou.",
-      "reasoning": {
-        "used": [
-          "handoff-0",
-          "handoff-1",
-          "plate-gate"
-        ],
-        "partialBlocks": 5,
-        "goalDepartures": [
-          false,
-          false
-        ],
-        "unequalLoops": 0,
-        "directionChanges": 7,
-        "earlyTurns": 3,
-        "occupiedBoxPlate": false,
-        "boxAsStopAfterSupport": false,
-        "finalApproach": [
-          false,
-          true
-        ]
-      },
-      "sweep": {
-        "status": "complete",
-        "visited": 7,
-        "resistant": true
-      },
-      "compatibility": "validated",
-      "alternatives": "Uma sequência verificada é fornecida; outras soluções podem existir.",
-      "deadEnds": "Mudanças de configuração podem exigir retornar a uma posição anterior.",
-      "decision": "retain-logical-definition",
-      "retentionReason": "Revezamento em dupla: o primeiro apoio permite alcançar o apoio de retorno.",
-      "role": "focus",
-      "prerequisiteChapters": [
-        1,
-        2
-      ],
-      "antiSpam": {
-        "singleDirection": {
-          "tested": 4,
-          "winningDirections": []
-        },
-        "sweeps": {
-          "status": "complete",
-          "visited": 7,
-          "solves": false
-        },
-        "shortCycles": {
-          "tested": 40,
-          "winningPatterns": []
-        },
-        "biasedRandom": {
-          "runs": 12,
-          "commandsPerRun": 128,
-          "wins": 0
-        },
-        "uniformRandom": {
-          "runs": 12,
-          "commandsPerRun": 128,
-          "wins": 2
-        },
-        "interpretation": "Diagnóstico automático; ciclos curtos e acertos aleatórios não provam ausência de raciocínio. A varredura testa vitória após cada movimento."
-      },
-      "repetition": {
-        "structuralSignature": "st1-a6f414a8-480",
-        "topologySignature": "top1-f2c46c95-121",
-        "globallyRotatedOrReflectedDuplicate": false
-      },
-      "curriculumReason": "Revezamento em dupla: o primeiro apoio permite alcançar o apoio de retorno.",
-      "animalRoles": [
-        {
-          "board": 0,
-          "logicalAnimal": "capivara",
-          "role": "Preparar plate relay-a para painel 2. Aproveitar relay-return nos comandos 8. Usar bloqueios como esperas enquanto os parceiros avançam. Preparar a chegada conjunta sem depender de congelar no destino.",
-          "controls": [
-            {
-              "id": "relay-a",
-              "type": "plate",
-              "receiverBoard": 1
-            }
-          ],
-          "goal": 24
-        },
-        {
-          "board": 1,
-          "logicalAnimal": "tuiuiu",
-          "role": "Preparar plate relay-b para painel 1. Aproveitar relay-out nos comandos 7. Usar bloqueios como esperas enquanto os parceiros avançam. Preparar a chegada conjunta sem depender de congelar no destino.",
-          "controls": [
-            {
-              "id": "relay-b",
-              "type": "plate",
-              "receiverBoard": 0
-            }
-          ],
-          "goal": 12
-        }
-      ],
-      "objectRoles": [
-        {
-          "board": 0,
-          "type": "plates",
-          "id": "relay-a",
-          "definition": {
-            "id": "relay-a",
-            "cell": 18
-          },
-          "role": "Ocupação por animal ou caixa controla a passagem no estado anterior ao comando.",
-          "evidenceScope": "definition-and-certified-witness; necessity requires separate audit"
-        },
-        {
-          "board": 0,
-          "type": "gates",
-          "id": "relay-return",
-          "definition": {
-            "id": "relay-return",
-            "from": 23,
-            "to": 24,
-            "condition": {
-              "type": "plate",
-              "id": "relay-b"
-            }
-          },
-          "role": {
-            "condition": {
-              "type": "plate",
-              "id": "relay-b"
-            },
-            "crossings": [
               8
-            ]
-          },
-          "evidenceScope": "definition-and-certified-witness; necessity requires separate audit"
-        },
-        {
-          "board": 1,
-          "type": "plates",
-          "id": "relay-b",
-          "definition": {
-            "id": "relay-b",
-            "cell": 12
-          },
-          "role": "Ocupação por animal ou caixa controla a passagem no estado anterior ao comando.",
-          "evidenceScope": "definition-and-certified-witness; necessity requires separate audit"
-        },
-        {
-          "board": 1,
-          "type": "gates",
-          "id": "relay-out",
-          "definition": {
-            "id": "relay-out",
-            "from": 9,
-            "to": 12,
-            "condition": {
-              "type": "plate",
-              "id": "relay-a"
-            }
-          },
-          "role": {
-            "condition": {
-              "type": "plate",
-              "id": "relay-a"
-            },
-            "crossings": [
-              7
-            ]
-          },
-          "evidenceScope": "definition-and-certified-witness; necessity requires separate audit"
-        }
-      ],
-      "causalityReport": "tests/sintonia80-purpose-audit.json"
-    },
-    "number": 57,
-    "chapter": 4,
-    "topologySignature": "top1-f2c46c95-121",
-    "originNumber": 337,
-    "origin": {
-      "kind": "curated-identical-logical-definition",
-      "catalog": "sintonia-content-2",
-      "number": 337,
-      "id": "sintonia-0337",
-      "version": 1,
-      "reason": "Revezamento em dupla: o primeiro apoio permite alcançar o apoio de retorno."
-    },
-    "actorIntroduction": null,
-    "ruleExplanation": "Uma ajuda prepara a seguinte: atravesse, ocupe a próxima placa e libere o caminho de quem ajudou."
-  },
-  {
-    "id": "sintonia-0326",
-    "version": 1,
-    "rulesVersion": 1,
-    "boards": [
-      {
-        "id": "b0",
-        "animal": "capivara",
-        "rows": 3,
-        "cols": 3,
-        "walkable": [
-          0,
-          2,
-          3,
-          4,
-          5,
-          6,
-          7,
-          8
-        ],
-        "start": 0,
-        "goal": 2,
-        "plates": [
-          {
-            "id": "relay-a",
-            "cell": 7
-          }
-        ],
-        "gates": [
-          {
-            "id": "relay-return",
-            "from": 5,
-            "to": 2,
-            "condition": {
-              "type": "plate",
-              "id": "relay-b"
-            }
-          },
-          {
-            "id": "auxiliary-gate-2",
-            "from": 0,
-            "to": 3,
-            "condition": {
-              "type": "plate",
-              "id": "auxiliary-2"
-            }
-          }
-        ]
-      },
-      {
-        "id": "b1",
-        "animal": "tuiuiu",
-        "rows": 4,
-        "cols": 4,
-        "walkable": [
-          0,
-          3,
-          4,
-          5,
-          7,
-          9,
-          10,
-          11,
-          12,
-          13,
-          15
-        ],
-        "start": 0,
-        "goal": 12,
-        "plates": [
-          {
-            "id": "relay-b",
-            "cell": 12
-          }
-        ],
-        "gates": [
-          {
-            "id": "relay-out",
-            "from": 13,
-            "to": 12,
-            "condition": {
-              "type": "plate",
-              "id": "relay-a"
-            }
-          }
-        ]
-      },
-      {
-        "id": "b2",
-        "animal": "bemtevi",
-        "rows": 3,
-        "cols": 3,
-        "walkable": [
-          1,
-          2,
-          3,
-          5,
-          6,
-          7,
-          8
-        ],
-        "start": 1,
-        "goal": 5,
-        "plates": [
-          {
-            "id": "auxiliary-2",
-            "cell": 2
-          }
-        ]
-      }
-    ],
-    "mechanics": [
-      "walls",
-      "plate",
-      "handoff"
-    ],
-    "initialSwitches": {},
-    "initialSelectors": {},
-    "family": "support-handoff",
-    "secondaryFamilies": [
-      "goal-transit",
-      "unequal-loop"
-    ],
-    "name": "Ajuda em revezamento",
-    "lesson": "Quem atravessou pode assumir a próxima ajuda entre os animais.",
-    "discovery": "Aqui o jogador precisa descobrir que um animal precisa atravessar e ocupar a próxima placa para liberar quem o ajudou.",
-    "hints": [
-      "Uma das placas está numa região que a outra ajuda a abrir.",
-      "Prepare a primeira placa, atravesse e ocupe a próxima para que o primeiro ajudante possa continuar.",
-      "Na configuração inicial, comece para a direita; observe quem avança e quem espera."
-    ],
-    "generatorVersion": 2,
-    "contentRevision": "sintonia-content-3",
-    "seed": "sintonia-campaign-v2:0326:0",
-    "difficulty": 3,
-    "solution": [
-      "right",
-      "down",
-      "right",
-      "down",
-      "down",
-      "left",
-      "up",
-      "right",
-      "right",
-      "up"
-    ],
-    "signature": "st1-2843a863-673",
-    "prerequisites": [
-      "walls",
-      "plate",
-      "handoff"
-    ],
-    "introduction": [],
-    "parameters": {
-      "difficulty": 3,
-      "animals": 3,
-      "primary": "handoff",
-      "secondary": null,
-      "role": "focus",
-      "pattern": null
-    },
-    "certificate": {
-      "method": "breadth-first-witness-and-engine-replay",
-      "rulesVersion": 1,
-      "commands": 10,
-      "optimal": true,
-      "visited": 310,
-      "replayed": true,
-      "engine": "unchanged-rules-1"
-    },
-    "editorial": {
-      "source": "procedural-structure-and-automatic-curation",
-      "design": null,
-      "purpose": {
-        "valid": true,
-        "won": true,
-        "evidenceScope": "supplied-command-sequence",
-        "commands": 10,
-        "boxes": [],
-        "dependencies": [
-          {
-            "gateId": "relay-return",
-            "receiverBoard": 0,
-            "condition": {
-              "type": "plate",
-              "id": "relay-b"
-            },
-            "controllers": [
-              {
-                "type": "plate",
-                "id": "relay-b",
-                "board": 1,
-                "cell": 12
-              }
-            ],
-            "crossingCommands": [
-              10
             ]
           },
           {
             "gateId": "auxiliary-gate-2",
-            "receiverBoard": 0,
+            "receiverBoard": 1,
             "condition": {
               "type": "plate",
               "id": "auxiliary-2"
@@ -18609,51 +18575,32 @@ export const CAMPAIGN=[
                 "type": "plate",
                 "id": "auxiliary-2",
                 "board": 2,
-                "cell": 2
+                "cell": 23
               }
             ],
             "crossingCommands": [
-              2
-            ]
-          },
-          {
-            "gateId": "relay-out",
-            "receiverBoard": 1,
-            "condition": {
-              "type": "plate",
-              "id": "relay-a"
-            },
-            "controllers": [
-              {
-                "type": "plate",
-                "id": "relay-a",
-                "board": 0,
-                "cell": 7
-              }
-            ],
-            "crossingCommands": [
-              6
+              7
             ]
           }
         ],
         "boardRoles": [
           {
             "board": 0,
-            "moved": 8,
-            "waited": 2,
+            "moved": 12,
+            "waited": 4,
             "goalDepartures": 0
           },
           {
             "board": 1,
-            "moved": 5,
-            "waited": 5,
+            "moved": 8,
+            "waited": 8,
             "goalDepartures": 0
           },
           {
             "board": 2,
-            "moved": 6,
-            "waited": 4,
-            "goalDepartures": 1
+            "moved": 9,
+            "waited": 7,
+            "goalDepartures": 0
           }
         ],
         "caveat": "Uso neste certificado não prova necessidade. Consulte tests/sintonia-purpose-audit.json para ablações e limites."
@@ -18680,38 +18627,96 @@ export const CAMPAIGN=[
           "handoff-1",
           "plate-gate"
         ],
-        "partialBlocks": 7,
+        "partialBlocks": 13,
         "goalDepartures": [
           false,
           false,
-          true
+          false
         ],
-        "unequalLoops": 12,
-        "directionChanges": 7,
-        "earlyTurns": 3,
+        "unequalLoops": 24,
+        "directionChanges": 9,
+        "earlyTurns": 4,
         "occupiedBoxPlate": false,
         "boxAsStopAfterSupport": false,
         "finalApproach": [
           false,
-          true,
+          false,
           false
         ]
-      },
-      "sweep": {
-        "status": "complete",
-        "visited": 38,
-        "resistant": true
       },
       "compatibility": "validated",
       "alternatives": "Uma sequência verificada é fornecida; outras soluções podem existir.",
       "deadEnds": "Mudanças de configuração podem exigir retornar a uma posição anterior.",
-      "decision": "retain-logical-definition",
-      "retentionReason": "Trio consolida a cadeia de ajuda sem introduzir outro símbolo.",
-      "role": "revisit",
-      "prerequisiteChapters": [
-        1,
-        2,
-        4
+      "necessity": [
+        {
+          "avoid": {
+            "type": "helper-participation",
+            "board": 1
+          },
+          "result": {
+            "scope": "all-winning-solutions-avoiding-event",
+            "optimalScope": "avoiding-predicate-only",
+            "avoid": {
+              "type": "helper-participation",
+              "board": 1
+            },
+            "budget": {
+              "maxStates": 120000,
+              "maxMs": 15000,
+              "maxDepth": null
+            },
+            "status": "unsolvable",
+            "visited": 1017,
+            "optimal": false,
+            "exhaustive": true
+          }
+        },
+        {
+          "avoid": {
+            "type": "helper-participation",
+            "board": 0
+          },
+          "result": {
+            "scope": "all-winning-solutions-avoiding-event",
+            "optimalScope": "avoiding-predicate-only",
+            "avoid": {
+              "type": "helper-participation",
+              "board": 0
+            },
+            "budget": {
+              "maxStates": 120000,
+              "maxMs": 15000,
+              "maxDepth": null
+            },
+            "status": "unsolvable",
+            "visited": 322,
+            "optimal": false,
+            "exhaustive": true
+          }
+        },
+        {
+          "avoid": {
+            "type": "helper-participation",
+            "board": 2
+          },
+          "result": {
+            "scope": "all-winning-solutions-avoiding-event",
+            "optimalScope": "avoiding-predicate-only",
+            "avoid": {
+              "type": "helper-participation",
+              "board": 2
+            },
+            "budget": {
+              "maxStates": 120000,
+              "maxMs": 15000,
+              "maxDepth": null
+            },
+            "status": "unsolvable",
+            "visited": 193,
+            "optimal": false,
+            "exhaustive": true
+          }
+        }
       ],
       "antiSpam": {
         "singleDirection": {
@@ -18720,7 +18725,7 @@ export const CAMPAIGN=[
         },
         "sweeps": {
           "status": "complete",
-          "visited": 38,
+          "visited": 22,
           "solves": false
         },
         "shortCycles": {
@@ -18728,185 +18733,31 @@ export const CAMPAIGN=[
           "winningPatterns": []
         },
         "biasedRandom": {
-          "runs": 12,
+          "runs": 16,
           "commandsPerRun": 128,
           "wins": 0
         },
         "uniformRandom": {
-          "runs": 12,
+          "runs": 16,
           "commandsPerRun": 128,
-          "wins": 1
+          "wins": 0
         },
         "interpretation": "Diagnóstico automático; ciclos curtos e acertos aleatórios não provam ausência de raciocínio. A varredura testa vitória após cada movimento."
       },
-      "repetition": {
-        "structuralSignature": "st1-2843a863-673",
-        "topologySignature": "top1-61c0850a-167",
-        "globallyRotatedOrReflectedDuplicate": false
-      },
-      "curriculumReason": "Trio consolida a cadeia de ajuda sem introduzir outro símbolo.",
-      "animalRoles": [
-        {
-          "board": 0,
-          "logicalAnimal": "capivara",
-          "role": "Preparar plate relay-a para painel 2. Aproveitar relay-return nos comandos 10; auxiliary-gate-2 nos comandos 2. Usar bloqueios como esperas enquanto os parceiros avançam. Preparar a chegada conjunta sem depender de congelar no destino.",
-          "controls": [
-            {
-              "id": "relay-a",
-              "type": "plate",
-              "receiverBoard": 1
-            }
-          ],
-          "goal": 2
-        },
-        {
-          "board": 1,
-          "logicalAnimal": "tuiuiu",
-          "role": "Preparar plate relay-b para painel 1. Aproveitar relay-out nos comandos 6. Usar bloqueios como esperas enquanto os parceiros avançam. Preparar a chegada conjunta sem depender de congelar no destino.",
-          "controls": [
-            {
-              "id": "relay-b",
-              "type": "plate",
-              "receiverBoard": 0
-            }
-          ],
-          "goal": 12
-        },
-        {
-          "board": 2,
-          "logicalAnimal": "bemtevi",
-          "role": "Preparar plate auxiliary-2 para painel 1. Usar bloqueios como esperas enquanto os parceiros avançam. Abandonar temporariamente o destino para completar o ajuste conjunto.",
-          "controls": [
-            {
-              "id": "auxiliary-2",
-              "type": "plate",
-              "receiverBoard": 0
-            }
-          ],
-          "goal": 5
-        }
-      ],
-      "objectRoles": [
-        {
-          "board": 0,
-          "type": "plates",
-          "id": "relay-a",
-          "definition": {
-            "id": "relay-a",
-            "cell": 7
-          },
-          "role": "Ocupação por animal ou caixa controla a passagem no estado anterior ao comando.",
-          "evidenceScope": "definition-and-certified-witness; necessity requires separate audit"
-        },
-        {
-          "board": 0,
-          "type": "gates",
-          "id": "relay-return",
-          "definition": {
-            "id": "relay-return",
-            "from": 5,
-            "to": 2,
-            "condition": {
-              "type": "plate",
-              "id": "relay-b"
-            }
-          },
-          "role": {
-            "condition": {
-              "type": "plate",
-              "id": "relay-b"
-            },
-            "crossings": [
-              10
-            ]
-          },
-          "evidenceScope": "definition-and-certified-witness; necessity requires separate audit"
-        },
-        {
-          "board": 0,
-          "type": "gates",
-          "id": "auxiliary-gate-2",
-          "definition": {
-            "id": "auxiliary-gate-2",
-            "from": 0,
-            "to": 3,
-            "condition": {
-              "type": "plate",
-              "id": "auxiliary-2"
-            }
-          },
-          "role": {
-            "condition": {
-              "type": "plate",
-              "id": "auxiliary-2"
-            },
-            "crossings": [
-              2
-            ]
-          },
-          "evidenceScope": "definition-and-certified-witness; necessity requires separate audit"
-        },
-        {
-          "board": 1,
-          "type": "plates",
-          "id": "relay-b",
-          "definition": {
-            "id": "relay-b",
-            "cell": 12
-          },
-          "role": "Ocupação por animal ou caixa controla a passagem no estado anterior ao comando.",
-          "evidenceScope": "definition-and-certified-witness; necessity requires separate audit"
-        },
-        {
-          "board": 1,
-          "type": "gates",
-          "id": "relay-out",
-          "definition": {
-            "id": "relay-out",
-            "from": 13,
-            "to": 12,
-            "condition": {
-              "type": "plate",
-              "id": "relay-a"
-            }
-          },
-          "role": {
-            "condition": {
-              "type": "plate",
-              "id": "relay-a"
-            },
-            "crossings": [
-              6
-            ]
-          },
-          "evidenceScope": "definition-and-certified-witness; necessity requires separate audit"
-        },
-        {
-          "board": 2,
-          "type": "plates",
-          "id": "auxiliary-2",
-          "definition": {
-            "id": "auxiliary-2",
-            "cell": 2
-          },
-          "role": "Ocupação por animal ou caixa controla a passagem no estado anterior ao comando.",
-          "evidenceScope": "definition-and-certified-witness; necessity requires separate audit"
-        }
-      ],
-      "causalityReport": "tests/sintonia80-purpose-audit.json"
+      "goalButtonSeparation": true,
+      "causalityReport": "docs/sintonia-goals-v5-certificates.json"
     },
     "number": 58,
     "chapter": 4,
-    "topologySignature": "top1-61c0850a-167",
-    "originNumber": 326,
+    "originNumber": 58,
     "origin": {
-      "kind": "curated-identical-logical-definition",
-      "catalog": "sintonia-content-2",
-      "number": 326,
+      "kind": "separate-goals-from-buttons",
+      "catalog": "sintonia-content-4",
       "id": "sintonia-0326",
-      "version": 1,
-      "reason": "Trio consolida a cadeia de ajuda sem introduzir outro símbolo."
+      "number": 58,
+      "version": 1
     },
+    "topologySignature": "top1-94084587-193",
     "actorIntroduction": null
   },
   {
@@ -19169,41 +19020,43 @@ export const CAMPAIGN=[
     "actorIntroduction": null
   },
   {
-    "id": "sintonia80-0060-v4",
+    "id": "sintonia80-0060-v5",
     "version": 1,
     "rulesVersion": 1,
     "boards": [
       {
         "id": "b0",
         "animal": "capivara",
-        "rows": 3,
+        "rows": 5,
         "cols": 4,
         "walkable": [
           0,
           1,
-          3,
-          4,
-          5,
+          2,
           6,
           7,
-          8,
           9,
           10,
-          11
+          12,
+          14,
+          16,
+          17,
+          18,
+          19
         ],
         "start": 0,
-        "goal": 3,
+        "goal": 12,
         "plates": [
           {
             "id": "relay-a",
-            "cell": 5
+            "cell": 6
           }
         ],
         "gates": [
           {
             "id": "relay-return",
-            "from": 7,
-            "to": 3,
+            "from": 16,
+            "to": 12,
             "condition": {
               "type": "plate",
               "id": "relay-b"
@@ -19218,27 +19071,27 @@ export const CAMPAIGN=[
         "cols": 4,
         "walkable": [
           0,
+          1,
           2,
-          4,
+          3,
           5,
-          6,
           7,
           9,
-          13
+          11
         ],
-        "start": 13,
-        "goal": 2,
+        "start": 9,
+        "goal": 7,
         "plates": [
           {
             "id": "relay-b",
-            "cell": 2
+            "cell": 0
           }
         ],
         "gates": [
           {
             "id": "relay-out",
-            "from": 6,
-            "to": 2,
+            "from": 5,
+            "to": 1,
             "condition": {
               "type": "plate",
               "id": "relay-a"
@@ -19249,21 +19102,24 @@ export const CAMPAIGN=[
       {
         "id": "b2",
         "animal": "bemtevi",
-        "rows": 4,
-        "cols": 4,
+        "rows": 5,
+        "cols": 5,
         "walkable": [
+          1,
           5,
           6,
-          10,
+          11,
           12,
           13,
-          14,
-          15
+          15,
+          16,
+          21,
+          22
         ],
-        "start": 5,
-        "goal": 12,
+        "start": 13,
+        "goal": 11,
         "ice": [
-          13
+          12
         ]
       }
     ],
@@ -19277,8 +19133,8 @@ export const CAMPAIGN=[
     "initialSelectors": {},
     "family": "support-handoff",
     "secondaryFamilies": [
-      "final-command",
-      "axis-order"
+      "wall-adjust",
+      "priority-change"
     ],
     "name": "Ajuda em revezamento",
     "lesson": "Quem atravessou pode assumir a próxima ajuda entre os animais.",
@@ -19286,32 +19142,36 @@ export const CAMPAIGN=[
     "hints": [
       "Uma das placas está numa região que a outra ajuda a abrir.",
       "Prepare a primeira placa, atravesse e ocupe a próxima para que o primeiro ajudante possa continuar.",
-      "Na configuração inicial, comece para cima; observe quem avança e quem espera."
+      "Na configuração inicial, comece para a direita; observe quem avança e quem espera."
     ],
-    "generatorVersion": 3,
-    "contentRevision": "sintonia-content-4",
-    "seed": "sintonia-content4:60:0",
+    "generatorVersion": 4,
+    "contentRevision": "sintonia-content-5",
+    "seed": "goals-v5:60:12",
     "difficulty": 3,
     "solution": [
+      "right",
+      "right",
+      "down",
+      "down",
       "up",
       "up",
       "right",
       "down",
-      "up",
       "down",
-      "right",
       "down",
-      "right",
-      "up",
-      "up",
+      "down",
       "left",
-      "left"
+      "left",
+      "up",
+      "right",
+      "right",
+      "right",
+      "down"
     ],
-    "signature": "st1-fda63c17-551",
+    "signature": "st1-f028654c-568",
     "prerequisites": [
       "walls",
       "plate",
-      "handoff",
       "ice"
     ],
     "introduction": [],
@@ -19326,21 +19186,21 @@ export const CAMPAIGN=[
     "certificate": {
       "method": "breadth-first-witness-and-engine-replay",
       "rulesVersion": 1,
-      "commands": 13,
+      "commands": 18,
       "optimal": true,
-      "visited": 326,
+      "visited": 744,
       "replayed": true,
-      "engine": "unchanged-rules-1",
-      "firstVictoryAt": 13
+      "firstVictoryAt": 18,
+      "engine": "unchanged-rules-1"
     },
     "editorial": {
-      "source": "procedural-structure-and-automatic-curation",
+      "source": "goal-button-separation-v5",
       "design": null,
       "purpose": {
         "valid": true,
         "won": true,
         "evidenceScope": "supplied-command-sequence",
-        "commands": 13,
+        "commands": 18,
         "boxes": [],
         "dependencies": [
           {
@@ -19355,11 +19215,11 @@ export const CAMPAIGN=[
                 "type": "plate",
                 "id": "relay-b",
                 "board": 1,
-                "cell": 2
+                "cell": 0
               }
             ],
             "crossingCommands": [
-              11
+              14
             ]
           },
           {
@@ -19374,32 +19234,32 @@ export const CAMPAIGN=[
                 "type": "plate",
                 "id": "relay-a",
                 "board": 0,
-                "cell": 5
+                "cell": 6
               }
             ],
             "crossingCommands": [
-              5
+              6
             ]
           }
         ],
         "boardRoles": [
           {
             "board": 0,
-            "moved": 9,
-            "waited": 4,
+            "moved": 13,
+            "waited": 5,
             "goalDepartures": 0
           },
           {
             "board": 1,
-            "moved": 4,
+            "moved": 9,
             "waited": 9,
             "goalDepartures": 0
           },
           {
             "board": 2,
-            "moved": 8,
-            "waited": 5,
-            "goalDepartures": 0
+            "moved": 3,
+            "waited": 15,
+            "goalDepartures": 1
           }
         ],
         "caveat": "Uso neste certificado não prova necessidade. Consulte tests/sintonia-purpose-audit.json para ablações e limites."
@@ -19427,61 +19287,26 @@ export const CAMPAIGN=[
           "ice",
           "plate-gate"
         ],
-        "partialBlocks": 11,
+        "partialBlocks": 17,
         "goalDepartures": [
           false,
           false,
-          false
+          true
         ],
-        "unequalLoops": 29,
-        "directionChanges": 9,
-        "earlyTurns": 4,
+        "unequalLoops": 52,
+        "directionChanges": 8,
+        "earlyTurns": 3,
         "occupiedBoxPlate": false,
         "boxAsStopAfterSupport": false,
         "finalApproach": [
           true,
-          true,
+          false,
           false
         ]
-      },
-      "sweep": {
-        "status": "complete",
-        "visited": 34,
-        "resistant": true
       },
       "compatibility": "validated",
       "alternatives": "Uma sequência verificada é fornecida; outras soluções podem existir.",
       "deadEnds": "Mudanças de configuração podem exigir retornar a uma posição anterior.",
-      "role": "varied",
-      "decision": "recompose",
-      "curriculumReason": "Passar a responsabilidade de apoio entre animais.",
-      "retentionReason": "Passar a responsabilidade de apoio entre animais.",
-      "antiSpam": {
-        "singleDirection": {
-          "tested": 4,
-          "winningDirections": []
-        },
-        "sweeps": {
-          "status": "complete",
-          "visited": 34,
-          "solves": false
-        },
-        "shortCycles": {
-          "tested": 40,
-          "winningPatterns": []
-        },
-        "biasedRandom": {
-          "runs": 24,
-          "commandsPerRun": 128,
-          "wins": 0
-        },
-        "uniformRandom": {
-          "runs": 24,
-          "commandsPerRun": 128,
-          "wins": 0
-        },
-        "interpretation": "Diagnóstico automático; ciclos curtos e acertos aleatórios não provam ausência de raciocínio. A varredura testa vitória após cada movimento."
-      },
       "necessity": [
         {
           "avoid": {
@@ -19496,12 +19321,12 @@ export const CAMPAIGN=[
               "board": 1
             },
             "budget": {
-              "maxStates": 90000,
-              "maxMs": 12000,
+              "maxStates": 120000,
+              "maxMs": 15000,
               "maxDepth": null
             },
             "status": "unsolvable",
-            "visited": 323,
+            "visited": 701,
             "optimal": false,
             "exhaustive": true
           }
@@ -19519,12 +19344,12 @@ export const CAMPAIGN=[
               "board": 0
             },
             "budget": {
-              "maxStates": 90000,
-              "maxMs": 12000,
+              "maxStates": 120000,
+              "maxMs": 15000,
               "maxDepth": null
             },
             "status": "unsolvable",
-            "visited": 271,
+            "visited": 178,
             "optimal": false,
             "exhaustive": true
           }
@@ -19542,32 +19367,58 @@ export const CAMPAIGN=[
               "eventType": "ice"
             },
             "budget": {
-              "maxStates": 90000,
-              "maxMs": 12000,
+              "maxStates": 120000,
+              "maxMs": 15000,
               "maxDepth": null
             },
             "status": "unsolvable",
-            "visited": 264,
+            "visited": 42,
             "optimal": false,
             "exhaustive": true
           }
         }
       ],
-      "causalityReport": "tests/sintonia-v4-editorial.json"
+      "antiSpam": {
+        "singleDirection": {
+          "tested": 4,
+          "winningDirections": []
+        },
+        "sweeps": {
+          "status": "complete",
+          "visited": 56,
+          "solves": false
+        },
+        "shortCycles": {
+          "tested": 40,
+          "winningPatterns": []
+        },
+        "biasedRandom": {
+          "runs": 16,
+          "commandsPerRun": 128,
+          "wins": 0
+        },
+        "uniformRandom": {
+          "runs": 16,
+          "commandsPerRun": 128,
+          "wins": 0
+        },
+        "interpretation": "Diagnóstico automático; ciclos curtos e acertos aleatórios não provam ausência de raciocínio. A varredura testa vitória após cada movimento."
+      },
+      "goalButtonSeparation": true,
+      "causalityReport": "docs/sintonia-goals-v5-certificates.json"
     },
     "number": 60,
     "chapter": 4,
     "originNumber": 60,
     "origin": {
-      "kind": "recomposed-removed-mechanics",
-      "catalog": "sintonia-content-3",
-      "id": "sintonia-0350",
+      "kind": "separate-goals-from-buttons",
+      "catalog": "sintonia-content-4",
+      "id": "sintonia80-0060-v4",
       "number": 60,
-      "version": 1,
-      "reason": "Passar a responsabilidade de apoio entre animais."
+      "version": 1
     },
-    "actorIntroduction": null,
-    "topologySignature": "top1-712b507f-168"
+    "topologySignature": "top1-76faeefb-186",
+    "actorIntroduction": null
   },
   {
     "id": "sintonia-0354",
@@ -24546,39 +24397,39 @@ export const CAMPAIGN=[
     "topologySignature": "top1-a002a8d0-126"
   },
   {
-    "id": "sintonia80-0074-v4",
+    "id": "sintonia80-0074-v5",
     "version": 1,
     "rulesVersion": 1,
     "boards": [
       {
         "id": "b0",
         "animal": "capivara",
-        "rows": 4,
+        "rows": 3,
         "cols": 4,
         "walkable": [
-          3,
+          1,
+          4,
           5,
           6,
           7,
           8,
           9,
-          11,
-          14,
-          15
+          10,
+          11
         ],
-        "start": 14,
-        "goal": 3,
+        "start": 8,
+        "goal": 1,
         "plates": [
           {
             "id": "relay-a",
-            "cell": 7
+            "cell": 10
           }
         ],
         "gates": [
           {
             "id": "relay-return",
-            "from": 7,
-            "to": 3,
+            "from": 5,
+            "to": 1,
             "condition": {
               "type": "plate",
               "id": "relay-b"
@@ -24589,31 +24440,32 @@ export const CAMPAIGN=[
       {
         "id": "b1",
         "animal": "tuiuiu",
-        "rows": 3,
-        "cols": 4,
+        "rows": 4,
+        "cols": 3,
         "walkable": [
+          0,
           1,
+          2,
           3,
-          4,
-          5,
           6,
-          7,
+          8,
           9,
+          10,
           11
         ],
-        "start": 1,
-        "goal": 3,
+        "start": 2,
+        "goal": 8,
         "plates": [
           {
             "id": "relay-b",
-            "cell": 3
+            "cell": 11
           }
         ],
         "gates": [
           {
             "id": "relay-out",
-            "from": 7,
-            "to": 3,
+            "from": 1,
+            "to": 0,
             "condition": {
               "type": "plate",
               "id": "relay-a"
@@ -24622,7 +24474,7 @@ export const CAMPAIGN=[
           {
             "id": "auxiliary-gate-2",
             "from": 1,
-            "to": 5,
+            "to": 2,
             "condition": {
               "type": "plate",
               "id": "auxiliary-2"
@@ -24633,24 +24485,27 @@ export const CAMPAIGN=[
       {
         "id": "b2",
         "animal": "bemtevi",
-        "rows": 3,
+        "rows": 4,
         "cols": 3,
         "walkable": [
           0,
-          1,
           2,
           3,
           4,
+          5,
           6,
           7,
-          8
+          8,
+          9,
+          10,
+          11
         ],
-        "start": 7,
-        "goal": 4,
+        "start": 6,
+        "goal": 3,
         "plates": [
           {
             "id": "auxiliary-2",
-            "cell": 4
+            "cell": 10
           }
         ]
       },
@@ -24661,19 +24516,21 @@ export const CAMPAIGN=[
         "cols": 4,
         "walkable": [
           0,
-          2,
-          4,
+          1,
+          3,
           5,
-          6,
-          10,
-          12,
+          7,
+          8,
+          9,
+          11,
           13,
-          14
+          14,
+          15
         ],
         "start": 0,
-        "goal": 13,
+        "goal": 3,
         "ice": [
-          5
+          9
         ]
       }
     ],
@@ -24687,8 +24544,8 @@ export const CAMPAIGN=[
     "initialSelectors": {},
     "family": "support-handoff",
     "secondaryFamilies": [
-      "waiting-place",
-      "goal-transit"
+      "priority-change",
+      "waiting-place"
     ],
     "name": "Ajuda em revezamento",
     "lesson": "Quem atravessou pode assumir a próxima ajuda entre os animais.",
@@ -24696,36 +24553,41 @@ export const CAMPAIGN=[
     "hints": [
       "Uma das placas está numa região que a outra ajuda a abrir.",
       "Prepare a primeira placa, atravesse e ocupe a próxima para que o primeiro ajudante possa continuar.",
-      "Na configuração inicial, comece para cima; observe quem avança e quem espera."
+      "Na configuração inicial, comece para a direita; observe quem avança e quem espera."
     ],
-    "generatorVersion": 3,
-    "contentRevision": "sintonia-content-4",
-    "seed": "sintonia-content4:74:0",
+    "generatorVersion": 4,
+    "contentRevision": "sintonia-content-5",
+    "seed": "goals-v5:74:12",
     "difficulty": 4,
     "solution": [
-      "up",
-      "down",
       "right",
       "right",
-      "down",
+      "right",
       "down",
       "left",
       "left",
       "right",
-      "up",
-      "up",
-      "up",
       "left",
       "down",
       "down",
+      "down",
       "right",
-      "up"
+      "right",
+      "up",
+      "up",
+      "left",
+      "left",
+      "down",
+      "left",
+      "up",
+      "right",
+      "up",
+      "left"
     ],
-    "signature": "st1-7b8a3e12-745",
+    "signature": "st1-025d5483-766",
     "prerequisites": [
       "walls",
       "plate",
-      "handoff",
       "ice"
     ],
     "introduction": [],
@@ -24740,21 +24602,21 @@ export const CAMPAIGN=[
     "certificate": {
       "method": "breadth-first-witness-and-engine-replay",
       "rulesVersion": 1,
-      "commands": 17,
+      "commands": 23,
       "optimal": true,
-      "visited": 2007,
+      "visited": 3158,
       "replayed": true,
-      "engine": "unchanged-rules-1",
-      "firstVictoryAt": 17
+      "firstVictoryAt": 23,
+      "engine": "unchanged-rules-1"
     },
     "editorial": {
-      "source": "procedural-structure-and-automatic-curation",
+      "source": "goal-button-separation-v5",
       "design": null,
       "purpose": {
         "valid": true,
         "won": true,
         "evidenceScope": "supplied-command-sequence",
-        "commands": 17,
+        "commands": 23,
         "boxes": [],
         "dependencies": [
           {
@@ -24769,11 +24631,11 @@ export const CAMPAIGN=[
                 "type": "plate",
                 "id": "relay-b",
                 "board": 1,
-                "cell": 3
+                "cell": 11
               }
             ],
             "crossingCommands": [
-              17
+              22
             ]
           },
           {
@@ -24788,11 +24650,11 @@ export const CAMPAIGN=[
                 "type": "plate",
                 "id": "relay-a",
                 "board": 0,
-                "cell": 7
+                "cell": 10
               }
             ],
             "crossingCommands": [
-              12
+              8
             ]
           },
           {
@@ -24807,38 +24669,38 @@ export const CAMPAIGN=[
                 "type": "plate",
                 "id": "auxiliary-2",
                 "board": 2,
-                "cell": 4
+                "cell": 10
               }
             ],
             "crossingCommands": [
-              2
+              6
             ]
           }
         ],
         "boardRoles": [
           {
             "board": 0,
-            "moved": 8,
-            "waited": 9,
+            "moved": 17,
+            "waited": 6,
             "goalDepartures": 0
           },
           {
             "board": 1,
-            "moved": 6,
+            "moved": 12,
             "waited": 11,
-            "goalDepartures": 0
+            "goalDepartures": 1
           },
           {
             "board": 2,
-            "moved": 13,
-            "waited": 4,
+            "moved": 17,
+            "waited": 6,
             "goalDepartures": 2
           },
           {
             "board": 3,
-            "moved": 9,
-            "waited": 8,
-            "goalDepartures": 2
+            "moved": 10,
+            "waited": 13,
+            "goalDepartures": 0
           }
         ],
         "caveat": "Uso neste certificado não prova necessidade. Consulte tests/sintonia-purpose-audit.json para ablações e limites."
@@ -24866,63 +24728,28 @@ export const CAMPAIGN=[
           "ice",
           "plate-gate"
         ],
-        "partialBlocks": 16,
+        "partialBlocks": 19,
         "goalDepartures": [
           false,
-          false,
           true,
-          true
+          true,
+          false
         ],
-        "unequalLoops": 37,
-        "directionChanges": 10,
-        "earlyTurns": 6,
+        "unequalLoops": 42,
+        "directionChanges": 14,
+        "earlyTurns": 10,
         "occupiedBoxPlate": false,
         "boxAsStopAfterSupport": false,
         "finalApproach": [
-          false,
+          true,
           true,
           false,
           true
         ]
       },
-      "sweep": {
-        "status": "complete",
-        "visited": 92,
-        "resistant": true
-      },
       "compatibility": "validated",
       "alternatives": "Uma sequência verificada é fornecida; outras soluções podem existir.",
       "deadEnds": "Mudanças de configuração podem exigir retornar a uma posição anterior.",
-      "role": "varied",
-      "decision": "recompose",
-      "curriculumReason": "Distribuir apoios e acessos entre quatro responsabilidades.",
-      "retentionReason": "Distribuir apoios e acessos entre quatro responsabilidades.",
-      "antiSpam": {
-        "singleDirection": {
-          "tested": 4,
-          "winningDirections": []
-        },
-        "sweeps": {
-          "status": "complete",
-          "visited": 92,
-          "solves": false
-        },
-        "shortCycles": {
-          "tested": 40,
-          "winningPatterns": []
-        },
-        "biasedRandom": {
-          "runs": 24,
-          "commandsPerRun": 128,
-          "wins": 0
-        },
-        "uniformRandom": {
-          "runs": 24,
-          "commandsPerRun": 128,
-          "wins": 0
-        },
-        "interpretation": "Diagnóstico automático; ciclos curtos e acertos aleatórios não provam ausência de raciocínio. A varredura testa vitória após cada movimento."
-      },
       "necessity": [
         {
           "avoid": {
@@ -24937,12 +24764,12 @@ export const CAMPAIGN=[
               "board": 1
             },
             "budget": {
-              "maxStates": 90000,
-              "maxMs": 12000,
+              "maxStates": 120000,
+              "maxMs": 15000,
               "maxDepth": null
             },
             "status": "unsolvable",
-            "visited": 1942,
+            "visited": 3120,
             "optimal": false,
             "exhaustive": true
           }
@@ -24960,12 +24787,12 @@ export const CAMPAIGN=[
               "board": 0
             },
             "budget": {
-              "maxStates": 90000,
-              "maxMs": 12000,
+              "maxStates": 120000,
+              "maxMs": 15000,
               "maxDepth": null
             },
             "status": "unsolvable",
-            "visited": 1728,
+            "visited": 914,
             "optimal": false,
             "exhaustive": true
           }
@@ -24983,12 +24810,12 @@ export const CAMPAIGN=[
               "board": 2
             },
             "budget": {
-              "maxStates": 90000,
-              "maxMs": 12000,
+              "maxStates": 120000,
+              "maxMs": 15000,
               "maxDepth": null
             },
             "status": "unsolvable",
-            "visited": 330,
+            "visited": 455,
             "optimal": false,
             "exhaustive": true
           }
@@ -25006,32 +24833,58 @@ export const CAMPAIGN=[
               "eventType": "ice"
             },
             "budget": {
-              "maxStates": 90000,
-              "maxMs": 12000,
+              "maxStates": 120000,
+              "maxMs": 15000,
               "maxDepth": null
             },
             "status": "unsolvable",
-            "visited": 367,
+            "visited": 1066,
             "optimal": false,
             "exhaustive": true
           }
         }
       ],
-      "causalityReport": "tests/sintonia-v4-editorial.json"
+      "antiSpam": {
+        "singleDirection": {
+          "tested": 4,
+          "winningDirections": []
+        },
+        "sweeps": {
+          "status": "complete",
+          "visited": 43,
+          "solves": false
+        },
+        "shortCycles": {
+          "tested": 40,
+          "winningPatterns": []
+        },
+        "biasedRandom": {
+          "runs": 16,
+          "commandsPerRun": 128,
+          "wins": 0
+        },
+        "uniformRandom": {
+          "runs": 16,
+          "commandsPerRun": 128,
+          "wins": 0
+        },
+        "interpretation": "Diagnóstico automático; ciclos curtos e acertos aleatórios não provam ausência de raciocínio. A varredura testa vitória após cada movimento."
+      },
+      "goalButtonSeparation": true,
+      "causalityReport": "docs/sintonia-goals-v5-certificates.json"
     },
     "number": 74,
     "chapter": 5,
     "originNumber": 74,
     "origin": {
-      "kind": "recomposed-removed-mechanics",
-      "catalog": "sintonia-content-3",
-      "id": "sintonia-0439",
+      "kind": "separate-goals-from-buttons",
+      "catalog": "sintonia-content-4",
+      "id": "sintonia80-0074-v4",
       "number": 74,
-      "version": 1,
-      "reason": "Distribuir apoios e acessos entre quatro responsabilidades."
+      "version": 1
     },
-    "actorIntroduction": null,
-    "topologySignature": "top1-0bc16931-221"
+    "topologySignature": "top1-e833631c-231",
+    "actorIntroduction": null
   },
   {
     "id": "sintonia-0470",
@@ -26494,7 +26347,7 @@ export const CAMPAIGN=[
     "topologySignature": "top1-f9fcdfb3-170"
   },
   {
-    "id": "sintonia80-0079-v4",
+    "id": "sintonia80-0079-v5",
     "version": 1,
     "rulesVersion": 1,
     "boards": [
@@ -26505,30 +26358,28 @@ export const CAMPAIGN=[
         "cols": 4,
         "walkable": [
           0,
-          1,
           2,
           3,
           4,
-          5,
-          6,
           7,
           8,
           9,
+          10,
           11
         ],
-        "start": 0,
-        "goal": 11,
+        "start": 2,
+        "goal": 8,
         "plates": [
           {
             "id": "relay-a",
-            "cell": 6
+            "cell": 3
           }
         ],
         "gates": [
           {
             "id": "relay-return",
-            "from": 7,
-            "to": 11,
+            "from": 11,
+            "to": 10,
             "condition": {
               "type": "plate",
               "id": "relay-b"
@@ -26539,32 +26390,33 @@ export const CAMPAIGN=[
       {
         "id": "b1",
         "animal": "tuiuiu",
-        "rows": 5,
-        "cols": 3,
+        "rows": 4,
+        "cols": 5,
         "walkable": [
+          0,
+          1,
+          2,
           3,
           5,
-          6,
-          7,
           8,
           9,
-          11,
-          12,
-          13
+          10,
+          15,
+          16
         ],
-        "start": 5,
-        "goal": 11,
+        "start": 9,
+        "goal": 10,
         "plates": [
           {
             "id": "relay-b",
-            "cell": 11
+            "cell": 16
           }
         ],
         "gates": [
           {
             "id": "relay-out",
-            "from": 8,
-            "to": 11,
+            "from": 1,
+            "to": 0,
             "condition": {
               "type": "plate",
               "id": "relay-a"
@@ -26572,8 +26424,8 @@ export const CAMPAIGN=[
           },
           {
             "id": "auxiliary-gate-2",
-            "from": 5,
-            "to": 8,
+            "from": 1,
+            "to": 2,
             "condition": {
               "type": "plate",
               "id": "auxiliary-2"
@@ -26584,24 +26436,27 @@ export const CAMPAIGN=[
       {
         "id": "b2",
         "animal": "bemtevi",
-        "rows": 4,
-        "cols": 4,
+        "rows": 5,
+        "cols": 3,
         "walkable": [
-          0,
           1,
           2,
+          3,
           4,
+          5,
           6,
+          7,
           8,
-          9,
-          12
+          10,
+          11,
+          14
         ],
-        "start": 2,
-        "goal": 4,
+        "start": 3,
+        "goal": 11,
         "plates": [
           {
             "id": "auxiliary-2",
-            "cell": 12
+            "cell": 4
           }
         ]
       }
@@ -26615,8 +26470,8 @@ export const CAMPAIGN=[
     "initialSelectors": {},
     "family": "support-handoff",
     "secondaryFamilies": [
-      "wall-adjust",
-      "goal-transit"
+      "axis-order",
+      "wall-adjust"
     ],
     "name": "Ajuda em revezamento",
     "lesson": "Quem atravessou pode assumir a próxima ajuda entre os animais.",
@@ -26626,35 +26481,37 @@ export const CAMPAIGN=[
       "Prepare a primeira placa, atravesse e ocupe a próxima para que o primeiro ajudante possa continuar.",
       "Na configuração inicial, comece para a esquerda; observe quem avança e quem espera."
     ],
-    "generatorVersion": 3,
-    "contentRevision": "sintonia-content-4",
-    "seed": "sintonia-content4:79:0",
+    "generatorVersion": 4,
+    "contentRevision": "sintonia-content-5",
+    "seed": "goals-v5:79:12",
     "difficulty": 5,
     "solution": [
       "left",
+      "up",
+      "right",
+      "right",
       "left",
-      "down",
-      "right",
-      "right",
-      "down",
-      "down",
-      "down",
-      "down",
-      "right",
-      "up",
-      "up",
-      "up",
-      "right",
-      "down",
-      "down",
       "left",
+      "right",
+      "left",
+      "right",
+      "down",
+      "right",
+      "down",
+      "down",
+      "right",
+      "left",
+      "up",
+      "left",
+      "left",
+      "up",
+      "right",
       "down"
     ],
-    "signature": "st1-47d5d009-673",
+    "signature": "st1-d581e0ee-689",
     "prerequisites": [
       "walls",
-      "plate",
-      "handoff"
+      "plate"
     ],
     "introduction": [],
     "parameters": {
@@ -26668,21 +26525,21 @@ export const CAMPAIGN=[
     "certificate": {
       "method": "breadth-first-witness-and-engine-replay",
       "rulesVersion": 1,
-      "commands": 18,
+      "commands": 21,
       "optimal": true,
-      "visited": 517,
+      "visited": 377,
       "replayed": true,
-      "engine": "unchanged-rules-1",
-      "firstVictoryAt": 18
+      "firstVictoryAt": 21,
+      "engine": "unchanged-rules-1"
     },
     "editorial": {
-      "source": "procedural-structure-and-automatic-curation",
+      "source": "goal-button-separation-v5",
       "design": null,
       "purpose": {
         "valid": true,
         "won": true,
         "evidenceScope": "supplied-command-sequence",
-        "commands": 18,
+        "commands": 21,
         "boxes": [],
         "dependencies": [
           {
@@ -26697,11 +26554,11 @@ export const CAMPAIGN=[
                 "type": "plate",
                 "id": "relay-b",
                 "board": 1,
-                "cell": 11
+                "cell": 16
               }
             ],
             "crossingCommands": [
-              16
+              15
             ]
           },
           {
@@ -26716,11 +26573,11 @@ export const CAMPAIGN=[
                 "type": "plate",
                 "id": "relay-a",
                 "board": 0,
-                "cell": 6
+                "cell": 3
               }
             ],
             "crossingCommands": [
-              9
+              8
             ]
           },
           {
@@ -26735,31 +26592,31 @@ export const CAMPAIGN=[
                 "type": "plate",
                 "id": "auxiliary-2",
                 "board": 2,
-                "cell": 12
+                "cell": 4
               }
             ],
             "crossingCommands": [
-              8
+              6
             ]
           }
         ],
         "boardRoles": [
           {
             "board": 0,
-            "moved": 7,
-            "waited": 11,
-            "goalDepartures": 0
+            "moved": 12,
+            "waited": 9,
+            "goalDepartures": 1
           },
           {
             "board": 1,
-            "moved": 2,
-            "waited": 16,
-            "goalDepartures": 0
+            "moved": 13,
+            "waited": 8,
+            "goalDepartures": 2
           },
           {
             "board": 2,
-            "moved": 11,
-            "waited": 7,
+            "moved": 16,
+            "waited": 5,
             "goalDepartures": 2
           }
         ],
@@ -26787,61 +26644,26 @@ export const CAMPAIGN=[
           "handoff-1",
           "plate-gate"
         ],
-        "partialBlocks": 18,
+        "partialBlocks": 15,
         "goalDepartures": [
-          false,
-          false,
+          true,
+          true,
           true
         ],
-        "unequalLoops": 58,
-        "directionChanges": 9,
-        "earlyTurns": 3,
+        "unequalLoops": 28,
+        "directionChanges": 16,
+        "earlyTurns": 6,
         "occupiedBoxPlate": false,
         "boxAsStopAfterSupport": false,
         "finalApproach": [
-          true,
-          true,
+          false,
+          false,
           false
         ]
-      },
-      "sweep": {
-        "status": "complete",
-        "visited": 26,
-        "resistant": true
       },
       "compatibility": "validated",
       "alternatives": "Uma sequência verificada é fornecida; outras soluções podem existir.",
       "deadEnds": "Mudanças de configuração podem exigir retornar a uma posição anterior.",
-      "role": "synthesis",
-      "decision": "recompose",
-      "curriculumReason": "Encadear apoios de ida e retorno sem congelar animais no destino.",
-      "retentionReason": "Encadear apoios de ida e retorno sem congelar animais no destino.",
-      "antiSpam": {
-        "singleDirection": {
-          "tested": 4,
-          "winningDirections": []
-        },
-        "sweeps": {
-          "status": "complete",
-          "visited": 26,
-          "solves": false
-        },
-        "shortCycles": {
-          "tested": 40,
-          "winningPatterns": []
-        },
-        "biasedRandom": {
-          "runs": 24,
-          "commandsPerRun": 128,
-          "wins": 0
-        },
-        "uniformRandom": {
-          "runs": 24,
-          "commandsPerRun": 128,
-          "wins": 0
-        },
-        "interpretation": "Diagnóstico automático; ciclos curtos e acertos aleatórios não provam ausência de raciocínio. A varredura testa vitória após cada movimento."
-      },
       "necessity": [
         {
           "avoid": {
@@ -26856,12 +26678,12 @@ export const CAMPAIGN=[
               "board": 1
             },
             "budget": {
-              "maxStates": 90000,
-              "maxMs": 12000,
+              "maxStates": 120000,
+              "maxMs": 15000,
               "maxDepth": null
             },
             "status": "unsolvable",
-            "visited": 508,
+            "visited": 217,
             "optimal": false,
             "exhaustive": true
           }
@@ -26879,12 +26701,12 @@ export const CAMPAIGN=[
               "board": 0
             },
             "budget": {
-              "maxStates": 90000,
-              "maxMs": 12000,
+              "maxStates": 120000,
+              "maxMs": 15000,
               "maxDepth": null
             },
             "status": "unsolvable",
-            "visited": 441,
+            "visited": 114,
             "optimal": false,
             "exhaustive": true
           }
@@ -26902,32 +26724,58 @@ export const CAMPAIGN=[
               "board": 2
             },
             "budget": {
-              "maxStates": 90000,
-              "maxMs": 12000,
+              "maxStates": 120000,
+              "maxMs": 15000,
               "maxDepth": null
             },
             "status": "unsolvable",
-            "visited": 66,
+            "visited": 81,
             "optimal": false,
             "exhaustive": true
           }
         }
       ],
-      "causalityReport": "tests/sintonia-v4-editorial.json"
+      "antiSpam": {
+        "singleDirection": {
+          "tested": 4,
+          "winningDirections": []
+        },
+        "sweeps": {
+          "status": "complete",
+          "visited": 43,
+          "solves": false
+        },
+        "shortCycles": {
+          "tested": 40,
+          "winningPatterns": []
+        },
+        "biasedRandom": {
+          "runs": 16,
+          "commandsPerRun": 128,
+          "wins": 0
+        },
+        "uniformRandom": {
+          "runs": 16,
+          "commandsPerRun": 128,
+          "wins": 0
+        },
+        "interpretation": "Diagnóstico automático; ciclos curtos e acertos aleatórios não provam ausência de raciocínio. A varredura testa vitória após cada movimento."
+      },
+      "goalButtonSeparation": true,
+      "causalityReport": "docs/sintonia-goals-v5-certificates.json"
     },
     "number": 79,
     "chapter": 6,
     "originNumber": 79,
     "origin": {
-      "kind": "recomposed-removed-mechanics",
-      "catalog": "sintonia-content-3",
-      "id": "sintonia-0473",
+      "kind": "separate-goals-from-buttons",
+      "catalog": "sintonia-content-4",
+      "id": "sintonia80-0079-v4",
       "number": 79,
-      "version": 1,
-      "reason": "Encadear apoios de ida e retorno sem congelar animais no destino."
+      "version": 1
     },
-    "actorIntroduction": null,
-    "topologySignature": "top1-a1c0b227-170"
+    "topologySignature": "top1-8e264c2f-182",
+    "actorIntroduction": null
   },
   {
     "id": "sintonia80-0080-v4",

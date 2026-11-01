@@ -13,8 +13,21 @@ export function removedSintoniaMechanics(level){
  for(const tag of Array.isArray(level?.mechanics)?level.mechanics:[])if(tags[tag])found.add(tags[tag]);
  return [...found];
 }
+/** Destinos nunca compartilham a casa de uma placa ou interruptor. */
+export function goalButtonSintoniaOverlaps(level){
+ const found=[];
+ for(const [index,board] of (Array.isArray(level?.boards)?level.boards:[]).entries()){
+  if(!Number.isInteger(board?.goal))continue;
+  for(const [field,kind] of [['plates','placa de pressão'],['switches','interruptor']]){
+   for(const item of Array.isArray(board[field])?board[field]:[])if(item?.cell===board.goal)found.push({board:index,boardId:board.id,cell:board.goal,kind});
+  }
+ }
+ return found;
+}
 export function validateActiveSintoniaLevel(level){
  const banned=removedSintoniaMechanics(level);
  if(banned.length)return {valid:false,errors:[`Este nível usa elementos retirados de SINTONIA: ${banned.join(', ')}. Use paredes, gelo, placas, interruptores, chaves e cancelas.`],removedMechanics:banned};
+ const overlaps=goalButtonSintoniaOverlaps(level);
+ if(overlaps.length)return {valid:false,errors:overlaps.map(item=>`Tabuleiro ${item.board+1}: o destino ocupa a mesma célula que ${item.kind==='interruptor'?'um interruptor':'uma placa de pressão'} (${item.cell}). Separe o destino dos botões; o arquivo não foi alterado.`),goalButtonOverlaps:overlaps};
  return validateLevel(level);
 }

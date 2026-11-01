@@ -1,0 +1,1076 @@
+{
+  "contentRevision": "sintonia-content-5",
+  "generatorVersion": 4,
+  "unchanged": 71,
+  "changed": [
+    {
+      "number": 16,
+      "previousId": "sintonia-0076",
+      "id": "sintonia80-0016-v5",
+      "sameGeometry": false,
+      "animals": 2,
+      "mechanics": [
+        "walls",
+        "plate"
+      ],
+      "oldGoals": [
+        1,
+        6
+      ],
+      "newGoals": [
+        11,
+        12
+      ],
+      "oldCommands": 4,
+      "commands": 9,
+      "necessity": [
+        {
+          "avoid": {
+            "type": "helper-participation",
+            "board": 0
+          },
+          "result": {
+            "scope": "all-winning-solutions-avoiding-event",
+            "optimalScope": "avoiding-predicate-only",
+            "avoid": {
+              "type": "helper-participation",
+              "board": 0
+            },
+            "budget": {
+              "maxStates": 120000,
+              "maxMs": 15000,
+              "maxDepth": null
+            },
+            "status": "unsolvable",
+            "visited": 70,
+            "optimal": false,
+            "exhaustive": true
+          }
+        }
+      ],
+      "antiSpam": {
+        "singleDirection": {
+          "tested": 4,
+          "winningDirections": []
+        },
+        "sweeps": {
+          "status": "complete",
+          "visited": 12,
+          "solves": false
+        },
+        "shortCycles": {
+          "tested": 40,
+          "winningPatterns": []
+        },
+        "biasedRandom": {
+          "runs": 16,
+          "commandsPerRun": 128,
+          "wins": 1
+        },
+        "uniformRandom": {
+          "runs": 16,
+          "commandsPerRun": 128,
+          "wins": 4
+        },
+        "interpretation": "Diagnóstico automático; ciclos curtos e acertos aleatórios não provam ausência de raciocínio. A varredura testa vitória após cada movimento."
+      },
+      "idea": "Aprender que apoiar a passagem e chegar ao destino são ações separadas.",
+      "certificate": {
+        "method": "breadth-first-witness-and-engine-replay",
+        "rulesVersion": 1,
+        "commands": 9,
+        "optimal": true,
+        "visited": 79,
+        "replayed": true,
+        "firstVictoryAt": 9,
+        "engine": "unchanged-rules-1"
+      }
+    },
+    {
+      "number": 31,
+      "previousId": "sintonia-0151",
+      "id": "sintonia80-0031-v5",
+      "sameGeometry": true,
+      "animals": 3,
+      "mechanics": [
+        "walls",
+        "plate"
+      ],
+      "oldGoals": [
+        8,
+        6,
+        7
+      ],
+      "newGoals": [
+        8,
+        6,
+        1
+      ],
+      "oldCommands": 9,
+      "commands": 14,
+      "necessity": [
+        {
+          "avoid": {
+            "type": "helper-participation",
+            "board": 0
+          },
+          "result": {
+            "scope": "all-winning-solutions-avoiding-event",
+            "optimalScope": "avoiding-predicate-only",
+            "avoid": {
+              "type": "helper-participation",
+              "board": 0
+            },
+            "budget": {
+              "maxStates": 120000,
+              "maxMs": 15000,
+              "maxDepth": null
+            },
+            "status": "unsolvable",
+            "visited": 151,
+            "optimal": false,
+            "exhaustive": true
+          }
+        },
+        {
+          "avoid": {
+            "type": "helper-participation",
+            "board": 2
+          },
+          "result": {
+            "scope": "all-winning-solutions-avoiding-event",
+            "optimalScope": "avoiding-predicate-only",
+            "avoid": {
+              "type": "helper-participation",
+              "board": 2
+            },
+            "budget": {
+              "maxStates": 120000,
+              "maxMs": 15000,
+              "maxDepth": null
+            },
+            "status": "unsolvable",
+            "visited": 61,
+            "optimal": false,
+            "exhaustive": true
+          }
+        }
+      ],
+      "antiSpam": {
+        "singleDirection": {
+          "tested": 4,
+          "winningDirections": []
+        },
+        "sweeps": {
+          "status": "complete",
+          "visited": 33,
+          "solves": false
+        },
+        "shortCycles": {
+          "tested": 40,
+          "winningPatterns": []
+        },
+        "biasedRandom": {
+          "runs": 16,
+          "commandsPerRun": 128,
+          "wins": 0
+        },
+        "uniformRandom": {
+          "runs": 16,
+          "commandsPerRun": 128,
+          "wins": 0
+        },
+        "interpretation": "Diagnóstico automático; ciclos curtos e acertos aleatórios não provam ausência de raciocínio. A varredura testa vitória após cada movimento."
+      },
+      "idea": "Coordenar dois apoios remotos e depois reposicionar três animais para destinos livres.",
+      "certificate": {
+        "method": "breadth-first-witness-and-engine-replay",
+        "rulesVersion": 1,
+        "commands": 14,
+        "optimal": true,
+        "visited": 446,
+        "replayed": true,
+        "engine": "unchanged-rules-1",
+        "firstVictoryAt": 14
+      }
+    },
+    {
+      "number": 36,
+      "previousId": "sintonia80-0036-v4",
+      "id": "sintonia80-0036-v5",
+      "sameGeometry": false,
+      "animals": 3,
+      "mechanics": [
+        "walls",
+        "plate"
+      ],
+      "oldGoals": [
+        14,
+        15,
+        6
+      ],
+      "newGoals": [
+        2,
+        8,
+        9
+      ],
+      "oldCommands": 14,
+      "commands": 16,
+      "necessity": [
+        {
+          "avoid": {
+            "type": "helper-participation",
+            "board": 0
+          },
+          "result": {
+            "scope": "all-winning-solutions-avoiding-event",
+            "optimalScope": "avoiding-predicate-only",
+            "avoid": {
+              "type": "helper-participation",
+              "board": 0
+            },
+            "budget": {
+              "maxStates": 120000,
+              "maxMs": 15000,
+              "maxDepth": null
+            },
+            "status": "unsolvable",
+            "visited": 590,
+            "optimal": false,
+            "exhaustive": true
+          }
+        },
+        {
+          "avoid": {
+            "type": "helper-participation",
+            "board": 2
+          },
+          "result": {
+            "scope": "all-winning-solutions-avoiding-event",
+            "optimalScope": "avoiding-predicate-only",
+            "avoid": {
+              "type": "helper-participation",
+              "board": 2
+            },
+            "budget": {
+              "maxStates": 120000,
+              "maxMs": 15000,
+              "maxDepth": null
+            },
+            "status": "unsolvable",
+            "visited": 104,
+            "optimal": false,
+            "exhaustive": true
+          }
+        }
+      ],
+      "antiSpam": {
+        "singleDirection": {
+          "tested": 4,
+          "winningDirections": []
+        },
+        "sweeps": {
+          "status": "complete",
+          "visited": 35,
+          "solves": false
+        },
+        "shortCycles": {
+          "tested": 40,
+          "winningPatterns": []
+        },
+        "biasedRandom": {
+          "runs": 16,
+          "commandsPerRun": 128,
+          "wins": 0
+        },
+        "uniformRandom": {
+          "runs": 16,
+          "commandsPerRun": 128,
+          "wins": 0
+        },
+        "interpretation": "Diagnóstico automático; ciclos curtos e acertos aleatórios não provam ausência de raciocínio. A varredura testa vitória após cada movimento."
+      },
+      "idea": "Preparar a passagem com três papéis úteis, abandonando a placa no momento certo.",
+      "certificate": {
+        "method": "breadth-first-witness-and-engine-replay",
+        "rulesVersion": 1,
+        "commands": 16,
+        "optimal": true,
+        "visited": 745,
+        "replayed": true,
+        "firstVictoryAt": 16,
+        "engine": "unchanged-rules-1"
+      }
+    },
+    {
+      "number": 45,
+      "previousId": "sintonia80-0045-v4",
+      "id": "sintonia80-0045-v5",
+      "sameGeometry": true,
+      "animals": 3,
+      "mechanics": [
+        "walls",
+        "plate"
+      ],
+      "oldGoals": [
+        5,
+        10,
+        1
+      ],
+      "newGoals": [
+        4,
+        10,
+        1
+      ],
+      "oldCommands": 15,
+      "commands": 13,
+      "necessity": [
+        {
+          "avoid": {
+            "type": "helper-participation",
+            "board": 0
+          },
+          "result": {
+            "scope": "all-winning-solutions-avoiding-event",
+            "optimalScope": "avoiding-predicate-only",
+            "avoid": {
+              "type": "helper-participation",
+              "board": 0
+            },
+            "budget": {
+              "maxStates": 120000,
+              "maxMs": 15000,
+              "maxDepth": null
+            },
+            "status": "unsolvable",
+            "visited": 151,
+            "optimal": false,
+            "exhaustive": true
+          }
+        },
+        {
+          "avoid": {
+            "type": "helper-participation",
+            "board": 2
+          },
+          "result": {
+            "scope": "all-winning-solutions-avoiding-event",
+            "optimalScope": "avoiding-predicate-only",
+            "avoid": {
+              "type": "helper-participation",
+              "board": 2
+            },
+            "budget": {
+              "maxStates": 120000,
+              "maxMs": 15000,
+              "maxDepth": null
+            },
+            "status": "unsolvable",
+            "visited": 89,
+            "optimal": false,
+            "exhaustive": true
+          }
+        }
+      ],
+      "antiSpam": {
+        "singleDirection": {
+          "tested": 4,
+          "winningDirections": []
+        },
+        "sweeps": {
+          "status": "complete",
+          "visited": 15,
+          "solves": false
+        },
+        "shortCycles": {
+          "tested": 40,
+          "winningPatterns": []
+        },
+        "biasedRandom": {
+          "runs": 16,
+          "commandsPerRun": 128,
+          "wins": 0
+        },
+        "uniformRandom": {
+          "runs": 16,
+          "commandsPerRun": 128,
+          "wins": 0
+        },
+        "interpretation": "Diagnóstico automático; ciclos curtos e acertos aleatórios não provam ausência de raciocínio. A varredura testa vitória após cada movimento."
+      },
+      "idea": "Liberar apoio somente após a travessia; manter o percurso existente e concluir fora da placa.",
+      "certificate": {
+        "method": "breadth-first-witness-and-engine-replay",
+        "rulesVersion": 1,
+        "commands": 13,
+        "optimal": true,
+        "visited": 302,
+        "replayed": true,
+        "engine": "unchanged-rules-1",
+        "firstVictoryAt": 13
+      }
+    },
+    {
+      "number": 57,
+      "previousId": "sintonia-0337",
+      "id": "sintonia80-0057-v5",
+      "sameGeometry": false,
+      "animals": 2,
+      "mechanics": [
+        "walls",
+        "plate",
+        "handoff"
+      ],
+      "oldGoals": [
+        24,
+        12
+      ],
+      "newGoals": [
+        12,
+        5
+      ],
+      "oldCommands": 8,
+      "commands": 12,
+      "necessity": [
+        {
+          "avoid": {
+            "type": "helper-participation",
+            "board": 1
+          },
+          "result": {
+            "scope": "all-winning-solutions-avoiding-event",
+            "optimalScope": "avoiding-predicate-only",
+            "avoid": {
+              "type": "helper-participation",
+              "board": 1
+            },
+            "budget": {
+              "maxStates": 120000,
+              "maxMs": 15000,
+              "maxDepth": null
+            },
+            "status": "unsolvable",
+            "visited": 94,
+            "optimal": false,
+            "exhaustive": true
+          }
+        },
+        {
+          "avoid": {
+            "type": "helper-participation",
+            "board": 0
+          },
+          "result": {
+            "scope": "all-winning-solutions-avoiding-event",
+            "optimalScope": "avoiding-predicate-only",
+            "avoid": {
+              "type": "helper-participation",
+              "board": 0
+            },
+            "budget": {
+              "maxStates": 120000,
+              "maxMs": 15000,
+              "maxDepth": null
+            },
+            "status": "unsolvable",
+            "visited": 18,
+            "optimal": false,
+            "exhaustive": true
+          }
+        }
+      ],
+      "antiSpam": {
+        "singleDirection": {
+          "tested": 4,
+          "winningDirections": []
+        },
+        "sweeps": {
+          "status": "complete",
+          "visited": 4,
+          "solves": false
+        },
+        "shortCycles": {
+          "tested": 40,
+          "winningPatterns": []
+        },
+        "biasedRandom": {
+          "runs": 16,
+          "commandsPerRun": 128,
+          "wins": 0
+        },
+        "uniformRandom": {
+          "runs": 16,
+          "commandsPerRun": 128,
+          "wins": 1
+        },
+        "interpretation": "Diagnóstico automático; ciclos curtos e acertos aleatórios não provam ausência de raciocínio. A varredura testa vitória após cada movimento."
+      },
+      "idea": "Trocar o responsável pelo apoio entre ida e retorno antes das duas chegadas.",
+      "certificate": {
+        "method": "breadth-first-witness-and-engine-replay",
+        "rulesVersion": 1,
+        "commands": 12,
+        "optimal": true,
+        "visited": 96,
+        "replayed": true,
+        "firstVictoryAt": 12,
+        "engine": "unchanged-rules-1"
+      }
+    },
+    {
+      "number": 58,
+      "previousId": "sintonia-0326",
+      "id": "sintonia80-0058-v5",
+      "sameGeometry": false,
+      "animals": 3,
+      "mechanics": [
+        "walls",
+        "plate",
+        "handoff"
+      ],
+      "oldGoals": [
+        2,
+        12,
+        5
+      ],
+      "newGoals": [
+        8,
+        12,
+        16
+      ],
+      "oldCommands": 10,
+      "commands": 16,
+      "necessity": [
+        {
+          "avoid": {
+            "type": "helper-participation",
+            "board": 1
+          },
+          "result": {
+            "scope": "all-winning-solutions-avoiding-event",
+            "optimalScope": "avoiding-predicate-only",
+            "avoid": {
+              "type": "helper-participation",
+              "board": 1
+            },
+            "budget": {
+              "maxStates": 120000,
+              "maxMs": 15000,
+              "maxDepth": null
+            },
+            "status": "unsolvable",
+            "visited": 1017,
+            "optimal": false,
+            "exhaustive": true
+          }
+        },
+        {
+          "avoid": {
+            "type": "helper-participation",
+            "board": 0
+          },
+          "result": {
+            "scope": "all-winning-solutions-avoiding-event",
+            "optimalScope": "avoiding-predicate-only",
+            "avoid": {
+              "type": "helper-participation",
+              "board": 0
+            },
+            "budget": {
+              "maxStates": 120000,
+              "maxMs": 15000,
+              "maxDepth": null
+            },
+            "status": "unsolvable",
+            "visited": 322,
+            "optimal": false,
+            "exhaustive": true
+          }
+        },
+        {
+          "avoid": {
+            "type": "helper-participation",
+            "board": 2
+          },
+          "result": {
+            "scope": "all-winning-solutions-avoiding-event",
+            "optimalScope": "avoiding-predicate-only",
+            "avoid": {
+              "type": "helper-participation",
+              "board": 2
+            },
+            "budget": {
+              "maxStates": 120000,
+              "maxMs": 15000,
+              "maxDepth": null
+            },
+            "status": "unsolvable",
+            "visited": 193,
+            "optimal": false,
+            "exhaustive": true
+          }
+        }
+      ],
+      "antiSpam": {
+        "singleDirection": {
+          "tested": 4,
+          "winningDirections": []
+        },
+        "sweeps": {
+          "status": "complete",
+          "visited": 22,
+          "solves": false
+        },
+        "shortCycles": {
+          "tested": 40,
+          "winningPatterns": []
+        },
+        "biasedRandom": {
+          "runs": 16,
+          "commandsPerRun": 128,
+          "wins": 0
+        },
+        "uniformRandom": {
+          "runs": 16,
+          "commandsPerRun": 128,
+          "wins": 0
+        },
+        "interpretation": "Diagnóstico automático; ciclos curtos e acertos aleatórios não provam ausência de raciocínio. A varredura testa vitória após cada movimento."
+      },
+      "idea": "Distribuir duas passagens de apoio e um papel auxiliar entre três animais.",
+      "certificate": {
+        "method": "breadth-first-witness-and-engine-replay",
+        "rulesVersion": 1,
+        "commands": 16,
+        "optimal": true,
+        "visited": 904,
+        "replayed": true,
+        "firstVictoryAt": 16,
+        "engine": "unchanged-rules-1"
+      }
+    },
+    {
+      "number": 60,
+      "previousId": "sintonia80-0060-v4",
+      "id": "sintonia80-0060-v5",
+      "sameGeometry": false,
+      "animals": 3,
+      "mechanics": [
+        "walls",
+        "plate",
+        "handoff",
+        "ice"
+      ],
+      "oldGoals": [
+        3,
+        2,
+        12
+      ],
+      "newGoals": [
+        12,
+        7,
+        11
+      ],
+      "oldCommands": 13,
+      "commands": 18,
+      "necessity": [
+        {
+          "avoid": {
+            "type": "helper-participation",
+            "board": 1
+          },
+          "result": {
+            "scope": "all-winning-solutions-avoiding-event",
+            "optimalScope": "avoiding-predicate-only",
+            "avoid": {
+              "type": "helper-participation",
+              "board": 1
+            },
+            "budget": {
+              "maxStates": 120000,
+              "maxMs": 15000,
+              "maxDepth": null
+            },
+            "status": "unsolvable",
+            "visited": 701,
+            "optimal": false,
+            "exhaustive": true
+          }
+        },
+        {
+          "avoid": {
+            "type": "helper-participation",
+            "board": 0
+          },
+          "result": {
+            "scope": "all-winning-solutions-avoiding-event",
+            "optimalScope": "avoiding-predicate-only",
+            "avoid": {
+              "type": "helper-participation",
+              "board": 0
+            },
+            "budget": {
+              "maxStates": 120000,
+              "maxMs": 15000,
+              "maxDepth": null
+            },
+            "status": "unsolvable",
+            "visited": 178,
+            "optimal": false,
+            "exhaustive": true
+          }
+        },
+        {
+          "avoid": {
+            "type": "event",
+            "eventType": "ice"
+          },
+          "result": {
+            "scope": "all-winning-solutions-avoiding-event",
+            "optimalScope": "avoiding-predicate-only",
+            "avoid": {
+              "type": "event",
+              "eventType": "ice"
+            },
+            "budget": {
+              "maxStates": 120000,
+              "maxMs": 15000,
+              "maxDepth": null
+            },
+            "status": "unsolvable",
+            "visited": 42,
+            "optimal": false,
+            "exhaustive": true
+          }
+        }
+      ],
+      "antiSpam": {
+        "singleDirection": {
+          "tested": 4,
+          "winningDirections": []
+        },
+        "sweeps": {
+          "status": "complete",
+          "visited": 56,
+          "solves": false
+        },
+        "shortCycles": {
+          "tested": 40,
+          "winningPatterns": []
+        },
+        "biasedRandom": {
+          "runs": 16,
+          "commandsPerRun": 128,
+          "wins": 0
+        },
+        "uniformRandom": {
+          "runs": 16,
+          "commandsPerRun": 128,
+          "wins": 0
+        },
+        "interpretation": "Diagnóstico automático; ciclos curtos e acertos aleatórios não provam ausência de raciocínio. A varredura testa vitória após cada movimento."
+      },
+      "idea": "Combinar troca de apoio e parada no gelo, sem usar a placa como chegada.",
+      "certificate": {
+        "method": "breadth-first-witness-and-engine-replay",
+        "rulesVersion": 1,
+        "commands": 18,
+        "optimal": true,
+        "visited": 744,
+        "replayed": true,
+        "firstVictoryAt": 18,
+        "engine": "unchanged-rules-1"
+      }
+    },
+    {
+      "number": 74,
+      "previousId": "sintonia80-0074-v4",
+      "id": "sintonia80-0074-v5",
+      "sameGeometry": false,
+      "animals": 4,
+      "mechanics": [
+        "walls",
+        "plate",
+        "handoff",
+        "ice"
+      ],
+      "oldGoals": [
+        3,
+        3,
+        4,
+        13
+      ],
+      "newGoals": [
+        1,
+        8,
+        3,
+        3
+      ],
+      "oldCommands": 17,
+      "commands": 23,
+      "necessity": [
+        {
+          "avoid": {
+            "type": "helper-participation",
+            "board": 1
+          },
+          "result": {
+            "scope": "all-winning-solutions-avoiding-event",
+            "optimalScope": "avoiding-predicate-only",
+            "avoid": {
+              "type": "helper-participation",
+              "board": 1
+            },
+            "budget": {
+              "maxStates": 120000,
+              "maxMs": 15000,
+              "maxDepth": null
+            },
+            "status": "unsolvable",
+            "visited": 3120,
+            "optimal": false,
+            "exhaustive": true
+          }
+        },
+        {
+          "avoid": {
+            "type": "helper-participation",
+            "board": 0
+          },
+          "result": {
+            "scope": "all-winning-solutions-avoiding-event",
+            "optimalScope": "avoiding-predicate-only",
+            "avoid": {
+              "type": "helper-participation",
+              "board": 0
+            },
+            "budget": {
+              "maxStates": 120000,
+              "maxMs": 15000,
+              "maxDepth": null
+            },
+            "status": "unsolvable",
+            "visited": 914,
+            "optimal": false,
+            "exhaustive": true
+          }
+        },
+        {
+          "avoid": {
+            "type": "helper-participation",
+            "board": 2
+          },
+          "result": {
+            "scope": "all-winning-solutions-avoiding-event",
+            "optimalScope": "avoiding-predicate-only",
+            "avoid": {
+              "type": "helper-participation",
+              "board": 2
+            },
+            "budget": {
+              "maxStates": 120000,
+              "maxMs": 15000,
+              "maxDepth": null
+            },
+            "status": "unsolvable",
+            "visited": 455,
+            "optimal": false,
+            "exhaustive": true
+          }
+        },
+        {
+          "avoid": {
+            "type": "event",
+            "eventType": "ice"
+          },
+          "result": {
+            "scope": "all-winning-solutions-avoiding-event",
+            "optimalScope": "avoiding-predicate-only",
+            "avoid": {
+              "type": "event",
+              "eventType": "ice"
+            },
+            "budget": {
+              "maxStates": 120000,
+              "maxMs": 15000,
+              "maxDepth": null
+            },
+            "status": "unsolvable",
+            "visited": 1066,
+            "optimal": false,
+            "exhaustive": true
+          }
+        }
+      ],
+      "antiSpam": {
+        "singleDirection": {
+          "tested": 4,
+          "winningDirections": []
+        },
+        "sweeps": {
+          "status": "complete",
+          "visited": 43,
+          "solves": false
+        },
+        "shortCycles": {
+          "tested": 40,
+          "winningPatterns": []
+        },
+        "biasedRandom": {
+          "runs": 16,
+          "commandsPerRun": 128,
+          "wins": 0
+        },
+        "uniformRandom": {
+          "runs": 16,
+          "commandsPerRun": 128,
+          "wins": 0
+        },
+        "interpretation": "Diagnóstico automático; ciclos curtos e acertos aleatórios não provam ausência de raciocínio. A varredura testa vitória após cada movimento."
+      },
+      "idea": "Coordenar quatro percursos, apoio auxiliar e gelo antes do alinhamento final.",
+      "certificate": {
+        "method": "breadth-first-witness-and-engine-replay",
+        "rulesVersion": 1,
+        "commands": 23,
+        "optimal": true,
+        "visited": 3158,
+        "replayed": true,
+        "firstVictoryAt": 23,
+        "engine": "unchanged-rules-1"
+      }
+    },
+    {
+      "number": 79,
+      "previousId": "sintonia80-0079-v4",
+      "id": "sintonia80-0079-v5",
+      "sameGeometry": false,
+      "animals": 3,
+      "mechanics": [
+        "walls",
+        "plate",
+        "handoff"
+      ],
+      "oldGoals": [
+        11,
+        11,
+        4
+      ],
+      "newGoals": [
+        8,
+        10,
+        11
+      ],
+      "oldCommands": 18,
+      "commands": 21,
+      "necessity": [
+        {
+          "avoid": {
+            "type": "helper-participation",
+            "board": 1
+          },
+          "result": {
+            "scope": "all-winning-solutions-avoiding-event",
+            "optimalScope": "avoiding-predicate-only",
+            "avoid": {
+              "type": "helper-participation",
+              "board": 1
+            },
+            "budget": {
+              "maxStates": 120000,
+              "maxMs": 15000,
+              "maxDepth": null
+            },
+            "status": "unsolvable",
+            "visited": 217,
+            "optimal": false,
+            "exhaustive": true
+          }
+        },
+        {
+          "avoid": {
+            "type": "helper-participation",
+            "board": 0
+          },
+          "result": {
+            "scope": "all-winning-solutions-avoiding-event",
+            "optimalScope": "avoiding-predicate-only",
+            "avoid": {
+              "type": "helper-participation",
+              "board": 0
+            },
+            "budget": {
+              "maxStates": 120000,
+              "maxMs": 15000,
+              "maxDepth": null
+            },
+            "status": "unsolvable",
+            "visited": 114,
+            "optimal": false,
+            "exhaustive": true
+          }
+        },
+        {
+          "avoid": {
+            "type": "helper-participation",
+            "board": 2
+          },
+          "result": {
+            "scope": "all-winning-solutions-avoiding-event",
+            "optimalScope": "avoiding-predicate-only",
+            "avoid": {
+              "type": "helper-participation",
+              "board": 2
+            },
+            "budget": {
+              "maxStates": 120000,
+              "maxMs": 15000,
+              "maxDepth": null
+            },
+            "status": "unsolvable",
+            "visited": 81,
+            "optimal": false,
+            "exhaustive": true
+          }
+        }
+      ],
+      "antiSpam": {
+        "singleDirection": {
+          "tested": 4,
+          "winningDirections": []
+        },
+        "sweeps": {
+          "status": "complete",
+          "visited": 43,
+          "solves": false
+        },
+        "shortCycles": {
+          "tested": 40,
+          "winningPatterns": []
+        },
+        "biasedRandom": {
+          "runs": 16,
+          "commandsPerRun": 128,
+          "wins": 0
+        },
+        "uniformRandom": {
+          "runs": 16,
+          "commandsPerRun": 128,
+          "wins": 0
+        },
+        "interpretation": "Diagnóstico automático; ciclos curtos e acertos aleatórios não provam ausência de raciocínio. A varredura testa vitória após cada movimento."
+      },
+      "idea": "Sintetizar dependências de ida e retorno entre três animais, separando chegada e sustentação.",
+      "certificate": {
+        "method": "breadth-first-witness-and-engine-replay",
+        "rulesVersion": 1,
+        "commands": 21,
+        "optimal": true,
+        "visited": 377,
+        "replayed": true,
+        "firstVictoryAt": 21,
+        "engine": "unchanged-rules-1"
+      }
+    }
+  ]
+}

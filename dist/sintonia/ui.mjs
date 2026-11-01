@@ -40,7 +40,7 @@ const lessonText = level => String(level.lesson??'Prepare os caminhos em conjunt
 /** Apenas navegação editorial: não transfere histórico nem conclusões. */
 export function updatedSintoniaCampaignIndex(id,saved){
   const current=CAMPAIGN.findIndex(item=>item.id===id);if(current>=0)return current;
-  const old=(saved?archivedSintoniaLevel(id,saved):null)??archivedSintoniaLevel(id,{contentRevision:'sintonia-content-3'});
+  const old=(saved?archivedSintoniaLevel(id,saved):null)??archivedSintoniaLevel(id,{contentRevision:'sintonia-content-4'})??archivedSintoniaLevel(id,{contentRevision:'sintonia-content-3'});
   const number=Number(old?.number);
   return Number.isInteger(number)&&number>=1&&number<=CAMPAIGN.length?number-1:0;
 }
@@ -75,11 +75,11 @@ export function normalizeSintoniaData(value) {
   // Arquivos nunca são reinterpretados como fases reformuladas. O conteúdo fica inerte.
   for(const [id,saved] of Object.entries(data.campaign.sessions)){
     const old=archivedSintoniaLevel(id,saved),current=CAMPAIGN.find(item=>item.id===id);
-    if(!current||!old||removedSintoniaMechanics(old).length||sintoniaDefinitionKey(old)!==sintoniaDefinitionKey(current)){const key=`campaign:${saved.contentRevision??value.contentRevision??'legacy'}:${id}`;data.archivedAttempts[key]??={kind:'campaign',id,source:'campaign.sessions',...(!saved.level&&old?{level:persistableSintoniaLevel(old)}:{})};}
+    if(!current||!old||!validateActiveSintoniaLevel(old).valid||sintoniaDefinitionKey(old)!==sintoniaDefinitionKey(current)){const key=`campaign:${saved.contentRevision??value.contentRevision??'legacy'}:${id}`;data.archivedAttempts[key]??={kind:'campaign',id,source:'campaign.sessions',...(!saved.level&&old?{level:persistableSintoniaLevel(old)}:{})};}
   }
   for(const kind of ['endless','custom']){
     const record=data[kind],old=kind==='endless'?record?.current?.level:record?.level;
-    if(old&&removedSintoniaMechanics(old).length)data.archivedAttempts[`${kind}:${levelContentRevision(old)}:${old.id}`]={kind,record:clone(record)};
+    if(old&&!validateActiveSintoniaLevel(old).valid)data.archivedAttempts[`${kind}:${levelContentRevision(old)}:${old.id}`]={kind,record:clone(record)};
   }
   data.learnedMechanics=previouslyLearnedSintoniaMechanics(value,CAMPAIGN).filter(x=>typeof x==='string'&&x in MECHANIC_TEXT);
   data.events=Array.isArray(value.events)?value.events.slice(-500):[];
@@ -191,7 +191,7 @@ export function initSintonia({hideOtherGames}) {
     const last=CAMPAIGN.findIndex(item=>item.id===data.campaign.lastId);
     if(last>=0){startCampaign(last);return true;}
     const archived=resolveArchivedSintoniaAttempt(data.campaign.lastId,data.campaign.sessions[data.campaign.lastId]);
-    selection();if(archived.status==='blocked')$('s-selection-status').textContent='Sua tentativa anterior foi preservada em arquivo inerte. Os elementos retirados não podem mais ser jogados; escolha uma fase atual abaixo.';return true;
+    selection();if(archived.status==='blocked')$('s-selection-status').textContent='Sua tentativa anterior foi preservada em arquivo inerte. Esse mapa não segue mais as regras atuais; escolha uma fase atual abaixo.';return true;
   }
 
   function selection() {
@@ -498,7 +498,7 @@ export function initSintonia({hideOtherGames}) {
   }
 
   function importPanel() {
-    return `<details class="level-json-import json-import-disclosure" aria-labelledby="s-import-title"><summary id="s-import-title">Adicionar seu próprio nível em JSON</summary><p>Escolha um arquivo de SINTONIA. A verificação acontece neste navegador. Um arquivo inválido preserva sua partida anterior.</p><label class="file-button">Importar fase JSON<input id="s-import-file" type="file" accept="application/json,.json" aria-describedby="s-import-help s-import-status"></label><p id="s-import-help" class="collection-small">Máximo de 200 KB. Entre dois e quatro tabuleiros de até 8 × 8. Uma solução precisa ser verificada antes de jogar. Use somente paredes, gelo, placas, interruptores, chaves e cancelas (incluindo sol e lua).</p><details><summary>Formato e exemplo de SINTONIA</summary><p>O exemplo inclui mapas, destinos, regras e uma sequência de solução. As casas são números começando em zero, em ordem de linha. Mantenha uma casa inicial e um destino por tabuleiro.</p><pre>${esc(JSON.stringify(cleanLevel(CAMPAIGN[0]),null,2))}</pre><button id="s-import-example">Baixar exemplo JSON</button></details><details><summary>Colar JSON</summary><label for="s-import-json">Dados do nível personalizado</label><textarea id="s-import-json" rows="10" maxlength="200000" spellcheck="false"></textarea><button id="s-import-paste">Verificar e jogar JSON</button></details><p id="s-import-status" role="status" aria-live="polite"></p></details>`;
+    return `<details class="level-json-import json-import-disclosure" aria-labelledby="s-import-title"><summary id="s-import-title">Adicionar seu próprio nível em JSON</summary><p>Escolha um arquivo de SINTONIA. A verificação acontece neste navegador. Um arquivo inválido preserva sua partida anterior.</p><label class="file-button">Importar fase JSON<input id="s-import-file" type="file" accept="application/json,.json" aria-describedby="s-import-help s-import-status"></label><p id="s-import-help" class="collection-small">Máximo de 200 KB. Entre dois e quatro tabuleiros de até 8 × 8. Uma solução precisa ser verificada antes de jogar. Use somente paredes, gelo, placas, interruptores, chaves e cancelas (incluindo sol e lua). O destino não pode ficar sobre uma placa ou interruptor.</p><details><summary>Formato e exemplo de SINTONIA</summary><p>O exemplo inclui mapas, destinos, regras e uma sequência de solução. As casas são números começando em zero, em ordem de linha. Mantenha uma casa inicial e um destino por tabuleiro.</p><pre>${esc(JSON.stringify(cleanLevel(CAMPAIGN[0]),null,2))}</pre><button id="s-import-example">Baixar exemplo JSON</button></details><details><summary>Colar JSON</summary><label for="s-import-json">Dados do nível personalizado</label><textarea id="s-import-json" rows="10" maxlength="200000" spellcheck="false"></textarea><button id="s-import-paste">Verificar e jogar JSON</button></details><p id="s-import-status" role="status" aria-live="polite"></p></details>`;
   }
 
   function bindImport() {

@@ -2,11 +2,13 @@ import {RULES_VERSION, DIRECTIONS, initialState, transition, stateKey, validateL
 import {LEGACY_CAMPAIGN, LEGACY_CONTENT_REVISION} from './campaign-v1.mjs';
 import {CAMPAIGN as V2_CAMPAIGN} from './campaign-v2.mjs';
 import {CAMPAIGN as V3_CAMPAIGN} from './campaign-v3.mjs';
+import {CAMPAIGN as V4_CAMPAIGN} from './campaign-v4.mjs';
 import {removedSintoniaMechanics,validateActiveSintoniaLevel} from './active-rules.mjs';
 import * as generatorCatalog from './generator.mjs';
 
 const clone = value => structuredClone(value);
 const bounded = (value, min, max, fallback=min) => Number.isInteger(value) && value>=min && value<=max ? value : fallback;
+const v4ById = new Map(V4_CAMPAIGN.map(level => [level.id, level]));
 const v3ById = new Map(V3_CAMPAIGN.map(level => [level.id, level]));
 const v2ById = new Map(V2_CAMPAIGN.map(level => [level.id, level]));
 const legacyById = new Map(LEGACY_CAMPAIGN.map(level => [level.id, level]));
@@ -39,7 +41,7 @@ export function persistableSintoniaLevel(level) {
 
 export function restoreSintoniaSession(level, saved) {
   const empty = restoreIssue => ({level,contentRevision:levelContentRevision(level),commands:[],cursor:0,states:[initialState(level)],assisted:false,failures:0,winRecorded:false,...(restoreIssue?{restoreIssue}:{})});
-  if (removedSintoniaMechanics(level).length) return empty('removed-mechanics');
+  if (!validateActiveSintoniaLevel(level).valid) return empty(removedSintoniaMechanics(level).length?'removed-mechanics':'inactive-definition');
   if (!saved) return empty();
   if (saved.rulesVersion!==RULES_VERSION || !Array.isArray(saved.commands)) return empty('invalid-history');
   try {
@@ -69,7 +71,7 @@ export function serializeSintoniaSession(session) {
 }
 
 export function commitSintoniaCommand(level, session, direction) {
-  if(removedSintoniaMechanics(level).length)throw Error('Esta tentativa está arquivada e usa elementos retirados de SINTONIA. Abra uma fase atual.');
+  if(!validateActiveSintoniaLevel(level).valid)throw Error('Esta tentativa está arquivada e não segue as regras atuais de SINTONIA. Abra uma fase atual.');
   const next=transition(level,session.states[session.cursor],direction);
   if (!next.changed) return {session,transition:next};
   return {session:{...session,commands:[...session.commands.slice(0,session.cursor),direction],states:[...session.states.slice(0,session.cursor+1),next.state],cursor:session.cursor+1},transition:next};
@@ -79,7 +81,7 @@ export function commitSintoniaCommand(level, session, direction) {
 export function archivedSintoniaLevel(id, saved) {
   if (saved?.level) return saved.level;
   const revision=saved?.contentRevision??LEGACY_CONTENT_REVISION;
-  return revision===LEGACY_CONTENT_REVISION?legacyById.get(id):revision==='sintonia-content-2'?v2ById.get(id):revision==='sintonia-content-3'?v3ById.get(id):null;
+  return revision===LEGACY_CONTENT_REVISION?legacyById.get(id):revision==='sintonia-content-2'?v2ById.get(id):revision==='sintonia-content-3'?v3ById.get(id):revision==='sintonia-content-4'?v4ById.get(id):null;
 }
 
 /** Recover learning evidence, not campaign completion, from old definitions. */
@@ -91,7 +93,7 @@ export function previouslyLearnedSintoniaMechanics(data,currentLevels=[]) {
   }
   for(const id of Object.keys(data?.campaign?.completed??{})) {
     const revision=data?.contentRevision??LEGACY_CONTENT_REVISION;
-    const level=revision===LEGACY_CONTENT_REVISION?legacyById.get(id):revision==='sintonia-content-2'?v2ById.get(id):revision==='sintonia-content-3'?v3ById.get(id):currentLevels.find(item=>item.id===id)??v2ById.get(id);
+    const level=revision===LEGACY_CONTENT_REVISION?legacyById.get(id):revision==='sintonia-content-2'?v2ById.get(id):revision==='sintonia-content-3'?v3ById.get(id):revision==='sintonia-content-4'?v4ById.get(id):currentLevels.find(item=>item.id===id)??v2ById.get(id);
     for(const mechanic of level?.mechanics??[])result.add(mechanic);
   }
   return [...result];
@@ -105,13 +107,13 @@ export function resolveArchivedSintoniaAttempt(id,saved) {
 
 /** Resolve before replay or save; blocked attempts must not be overwritten. */
 export function resolveSintoniaCampaignAttempt(currentLevel, saved) {
-  if (!validateActiveSintoniaLevel(currentLevel).valid)return {status:'blocked',reason:'removed-mechanics'};
+  if (!validateActiveSintoniaLevel(currentLevel).valid)return {status:'blocked',reason:removedSintoniaMechanics(currentLevel).length?'removed-mechanics':'inactive-definition'};
   if (!saved) return {level:currentLevel,saved:null,retained:false,status:'new'};
   const savedRevision=saved.contentRevision??levelContentRevision(saved.level);
   const level=archivedSintoniaLevel(currentLevel.id,saved);
   try {
     if (!level || level.id!==currentLevel.id || !validateLevel(level).valid) return {status:'blocked',reason:'missing-definition'};
-    if(removedSintoniaMechanics(level).length)return {status:'blocked',reason:'removed-mechanics',level};
+    if(!validateActiveSintoniaLevel(level).valid)return {status:'blocked',reason:removedSintoniaMechanics(level).length?'removed-mechanics':'inactive-definition',level};
     if(isRetainedSintoniaAttempt(level,currentLevel))return {status:'blocked',reason:'archived-definition',level};
     const session=restoreSintoniaSession(level,saved);
     if (session.restoreIssue) return {status:'blocked',reason:session.restoreIssue};

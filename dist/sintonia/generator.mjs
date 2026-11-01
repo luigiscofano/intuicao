@@ -5,8 +5,8 @@ import {validateActiveSintoniaLevel} from './active-rules.mjs';
 
 import {buildObstacleDesign} from './obstacle-design.mjs';
 import {analyzePurpose,findAvoidingSolution} from './purpose.mjs';
-export const GENERATOR_VERSION = 3;
-export const CONTENT_REVISION = 'sintonia-content-4';
+export const GENERATOR_VERSION = 4;
+export const CONTENT_REVISION = 'sintonia-content-5';
 export const DIFFICULTIES = Object.freeze(['Básico','Aprendiz','Intermediário','Avançado','Mestre','Modo Sábio']);
 export const CHAPTERS = DIFFICULTIES;
 export const MECHANICS = Object.freeze([
@@ -265,9 +265,10 @@ export function sweepReachability(level,{maxStates=1800,maxSteps=64,maxMs=1500}=
   return {status:'complete',positions,visited:seen.size,operations};
 }
 
-function searchTargets(level,constraints,required,{rng,minDepth,maxDepth,maxStates,maxMs,avoidSweep,strictSweep}){
+export function searchTargets(level,constraints,required,{rng,minDepth,maxDepth,maxStates,maxMs,avoidSweep,strictSweep}){
   if(constraints.size===level.boards.length&&[...constraints.values()].every(cells=>cells.size===1)){
     const fixed=clone(level);fixed.boards.forEach((board,i)=>board.goal=[...constraints.get(i)][0]);
+    if(fixed.boards.some(b=>[...(b.plates||[]),...(b.switches||[])].some(p=>p.cell===b.goal)))throw new Error('fixed-goal-button-overlap');
     const solved=solveLevel(fixed,{maxStates,maxMs,maxDepth});if(solved.status==='inconclusive'){if(solved.reason==='time-budget')throw timeout();throw new Error('fixed-goal-budget');}if(solved.status!=='solved')throw new Error('fixed-goal-unsolvable');
     if(solved.solution.length<minDepth||solved.solution.length>maxDepth)throw new Error('fixed-goal-depth');
     const analysis=analyzeSolution(fixed,solved.solution);if(!hasFlags(new Set(analysis.used),required))throw new Error('fixed-goal-unused-role');
@@ -279,7 +280,7 @@ function searchTargets(level,constraints,required,{rng,minDepth,maxDepth,maxStat
   const sweep=avoidSweep?sweepReachability(level,{maxStates:Math.min(maxStates,2000),maxMs:Math.min(maxMs*.25,900)}):null;
   if(sweep?.reason==='time')throw timeout();
   if(strictSweep&&sweep?.status!=='complete')throw new Error('sweep-budget');
-  const bannedGoals=level.boards.map(board=>new Set([...(board.switches||[]).map(x=>x.cell),...(board.keys||[]).map(x=>x.cell),...(board.selectors||[]).map(x=>x.cell),...(board.portals||[]).flatMap(x=>[x.a,x.b]),...(board.ice||[]),...(board.fragile||[])]));
+  const bannedGoals=level.boards.map(board=>new Set([...(board.plates||[]).map(x=>x.cell),...(board.switches||[]).map(x=>x.cell),...(board.keys||[]).map(x=>x.cell),...(board.selectors||[]).map(x=>x.cell),...(board.portals||[]).flatMap(x=>[x.a,x.b]),...(board.ice||[]),...(board.fragile||[])]));
   let depthLimited=false,stateLimited=false;
   for(let head=0;head<nodes.length;head++){
     if(clock()>deadline)throw timeout();
@@ -468,6 +469,7 @@ export function generateLevel(seed,{difficulty=0,animals,learnedMechanics,recent
       const valid=validateActiveSintoniaLevel(built.level);if(!valid.valid)throw new Error(`invalid:${valid.errors[0]}`);
       const result=searchTargets(built.level,built.constraints,built.required,{rng,minDepth:built.design?.pattern==='support-and-necessary-stop'?Math.min(8,minDepth):minDepth,maxDepth,maxStates,maxMs:Math.max(30,Math.min(deadline-clock(),5000)),avoidSweep:strictSweep||difficulty>0||minDepth>=4,strictSweep});
       const signature=structuralSignature(result.level);if(recent.has(signature)||recent.has(structuralSignature(result.level,{topologyOnly:true})))throw new Error('recent-repeat');
+      if(result.level.boards.some(b=>[...(b.plates||[]),...(b.switches||[])].some(p=>p.cell===b.goal)))throw new Error('goal-button-overlap');
       const checked=replay(result.level,result.solution);if(!checked.valid||!checked.won)throw new Error('certificate-replay-failed');
       const analysis=analyzeSolution(result.level,result.solution),reasoning=reasoningFor(result.level,analysis,choice.primary,rng,recentFamilies),purpose=analyzePurpose(result.level,result.solution);
       if(built.design){
