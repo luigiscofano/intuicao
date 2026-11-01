@@ -1,0 +1,27 @@
+/* Somente a arte dos mecanismos: nenhuma alteração no tamanho dos tabuleiros. */
+#sintonia .s-accessory-icon{display:block;width:100%;height:100%;object-fit:contain;image-rendering:pixelated;pointer-events:none;user-select:none}
+#sintonia .s-wall-art{position:absolute;inset:0;width:100%;height:100%;z-index:1;pointer-events:none}
+#sintonia .s-tile.wall{border-color:transparent;background:#78975a;background-image:none}
+#sintonia .s-tile.wall::after{display:none}
+#sintonia .s-mechanism,#sintonia .s-box{inset:0;border:0;border-radius:0;background:transparent;box-shadow:none;padding:0}
+#sintonia .s-plate.active,#sintonia .s-switch.active,#sintonia .s-portal{border:0;background:transparent;box-shadow:none}
+#sintonia .s-mechanism b{right:1%;bottom:0;font-size:clamp(7px,.8vw,10px);z-index:2;padding:0 2px;line-height:1.15;background:#fffaf0;border:1px solid #748467;border-radius:2px;color:#34443a}
+#sintonia .s-goal-ring,#sintonia .s-fragile-lines{inset:0;border:0;background:transparent;box-shadow:none;transform:none;border-radius:0}
+#sintonia .s-goal-ring::after,#sintonia .s-fragile-lines::after,#sintonia .s-tile.ice::before,#sintonia .s-tile.collapsed::before,#sintonia .s-tile.collapsed::after{display:none}
+#sintonia .goal-occupied .s-goal-ring{background:transparent;border:0;box-shadow:none}
+#sintonia .s-tile.ice,#sintonia .s-tile.collapsed{background:#fffaf0;border-color:#d1d6bf;background-image:none}
+#sintonia .s-accessory-ground{position:absolute;inset:0;pointer-events:none}
+#sintonia .s-gate.closed,#sintonia .s-gate.open,#sintonia .s-gate.oneway{background:transparent;border:0;box-shadow:none}
+#sintonia .s-gate.closed::after{display:none}
+#sintonia .s-gate.vertical{width:var(--edge-cross);height:var(--edge-span)}
+#sintonia .s-gate.horizontal{height:var(--edge-cross);width:var(--edge-span)}
+#sintonia .s-accessory-edge{display:block;width:100%;height:100%;overflow:visible;pointer-events:none}
+#sintonia .s-gate>span{z-index:1}
+#sintonia .s-gate.oneway>span{width:24px;height:24px;padding:0;border:0;background:transparent;box-shadow:none}
+#sintonia .s-gate.oneway .s-accessory-icon{width:24px;height:24px}
+
+#sintonia .s-floor-art{position:absolute;inset:0;width:100%;height:100%;pointer-events:none;image-rendering:pixelated;object-fit:contain}
+#sintonia .s-floor-art .s-accessory-art{width:100%;height:100%}
+/* Os códigos ficam dentro da extensão da cancela, inclusive junto à borda. */
+#sintonia .s-gate.vertical:not(.oneway)>span{top:0}
+#sintonia .s-gate.horizontal:not(.oneway)>span{right:0}
