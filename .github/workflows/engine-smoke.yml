@@ -1,0 +1,18 @@
+name: Motores — recorte explícito
+on:
+  workflow_dispatch:
+permissions:
+  contents: read
+jobs:
+  engines:
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '24'
+      - name: Verificar cinco motores (não é a suíte completa)
+        run: node --test tests/broto-engine.test.mjs tests/cerco-engine.test.mjs tests/sintonia-engine.test.mjs tests/repasse-engine.test.mjs tests/orbita-engine.test.mjs

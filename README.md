@@ -6,7 +6,7 @@
 
 Projeto de Luigi Scofano de Araujo. A proposta é aprender fazendo: observar um tabuleiro, formular uma hipótese, experimentar uma ação e usar o resultado para repensar a solução. A identidade visual aproxima os desafios da fauna brasileira, com animais, folhas e ilustrações em pixel art.
 
-Esta edição organiza a base `2354a3c`, com seus **183 commits anteriores preservados**. A organização está preparada localmente para um repositório privado; os PRs ainda não foram abertos no GitHub. A revisão técnica `f0e7fcf`, registrada em documentação externa, **ainda não foi recuperada nem incorporada**. Os resultados de teste daquela revisão não descrevem automaticamente esta cópia.
+Esta edição organiza a base `2354a3c`, com seus **183 commits anteriores preservados**. O código e a documentação estão publicados no repositório privado [luigiscofano/intuicao](https://github.com/luigiscofano/intuicao), com branches temáticas e PRs integrados em `main`. Consulte o [registro de integração](docs/github/README.md). A revisão técnica `f0e7fcf`, registrada em documentação externa, **ainda não foi recuperada nem incorporada**. Os resultados de teste daquela revisão não descrevem automaticamente esta cópia.
 
 ## Comece por aqui
 
@@ -78,7 +78,7 @@ O comportamento de conclusão varia: PACTO, SINTONIA, REPASSE e ÓRBITA reconhec
 | [docs/](docs/README.md) | Manuais atuais, arquitetura, manutenção e relatórios históricos |
 | [tests/](tests/README.md) | Testes de motores, integração, preservação e evidências de revisões |
 | [scripts/](scripts/README.md) | Ferramentas de verificação da documentação |
-| [.github/](.github/README.md) | Modelos de issues/PRs e fluxos de validação preparados |
+| [.github/](.github/guias/README.md) | Modelos de issues/PRs e fluxos de validação preparados |
 
 O nome `dist` é herdado do projeto: **aqui ele contém o próprio código-fonte servido**, não um artefato descartável. Não execute uma limpeza de build que apague essa pasta. Os caminhos foram mantidos para preservar imports, testes e histórico.
 
@@ -102,4 +102,4 @@ O [site hospedado existente](https://intuicao-luigi-minigames.luigiscofano.chatg
 
 ## Direitos e distribuição
 
-Nenhuma licença aberta foi adicionada. Esta preparação destina-se a um repositório privado. Antes de distribuição pública, revisar separadamente a licença do código e a proveniência dos recursos visuais; não presumir que todos os arquivos tenham os mesmos direitos. Consulte o [guia dos recursos](dist/platform-assets/README.md).
+Nenhuma licença aberta foi adicionada. Este repositório permanece privado. Antes de distribuição pública, revisar separadamente a licença do código e a proveniência dos recursos visuais; não presumir que todos os arquivos tenham os mesmos direitos. Consulte o [guia dos recursos](dist/platform-assets/README.md).
