@@ -1,106 +1,248 @@
+<p align="center">
+  <img src="dist/platform-assets/intuicao-logo-original.png" alt="intuicao — identidade visual do projeto" width="460">
+</p>
+
 # intuicao
 
-![Identidade visual do Intuição](dist/platform-assets/intuicao-logo-original.png)
+**Jogos de lógica, geometria e estratégia para aprender experimentando.**
 
-**Um laboratório de jogos educativos para experimentar lógica, geometria e estratégia.**
+O **Intuição**, projeto de **Luigi Scofano de Araujo**, reúne 11 jogos que funcionam no navegador. Você pode guiar raios de luz com espelhos, equilibrar formas, coordenar animais ou disputar um tabuleiro com outra pessoa. Cada jogo tem regras próprias, explicações na interface e um manual neste repositório.
 
-Projeto de Luigi Scofano de Araujo. A proposta é aprender fazendo: observar um tabuleiro, formular uma hipótese, experimentar uma ação e usar o resultado para repensar a solução. A identidade visual aproxima os desafios da fauna brasileira, com animais, folhas e ilustrações em pixel art.
+A ideia é transformar conceitos abstratos em escolhas visíveis: observar, imaginar uma solução, testar e entender o que mudou. Folhas, molduras e animais brasileiros em pixel art dão identidade à experiência.
 
-Esta edição organiza a base `2354a3c`, com seus **183 commits anteriores preservados**. O código e a documentação estão publicados no repositório privado [luigiscofano/intuicao](https://github.com/luigiscofano/intuicao), com branches temáticas e PRs integrados em `main`. Consulte o [registro de integração](docs/github/README.md). A revisão técnica `f0e7fcf`, registrada em documentação externa, **ainda não foi recuperada nem incorporada**. Os resultados de teste daquela revisão não descrevem automaticamente esta cópia.
+> **A curiosidade é a primeira lição.**
+
+**11 jogos · 8 campanhas solo · 640 fases · 3 jogos Versus**
+
+[Abrir o site](https://intuicao-luigi-minigames.luigiscofano.chatgpt.site) · [Executar no computador](#executar-no-computador) · [Conhecer os jogos](#conheça-os-11-jogos) · [Manuais completos](docs/jogos/README.md)
+
+O site mantém seu próprio controle de acesso. Para jogar com a cópia deste repositório, siga a instalação local abaixo.
 
 ## Comece por aqui
 
-- **Quero jogar:** siga a execução rápida abaixo.
-- **Quero entender os jogos:** abra o [catálogo de manuais](docs/jogos/README.md).
-- **Quero estudar o código:** consulte a [arquitetura](docs/arquitetura/README.md).
-- **Quero verificar qualidade:** veja os [testes e limites](tests/README.md).
-- **Quero contribuir:** leia [CONTRIBUTING.md](CONTRIBUTING.md).
-- **Quero revisar a entrega:** consulte o [plano de branches e PRs](docs/github/README.md).
+| O que você quer fazer? | Por onde começar |
+| --- | --- |
+| **Jogar pela primeira vez** | [Abra o projeto](#executar-no-computador) e siga [Como jogar](#como-jogar-pela-primeira-vez). |
+| **Escolher um jogo** | Veja a [galeria](#os-jogos-em-imagens) e o [catálogo com os objetivos](#conheça-os-11-jogos). |
+| **Entender uma regra** | Abra o [manual do jogo](docs/jogos/README.md): há regras, exemplos e arquivos relacionados. |
+| **Estudar ou modificar o código** | Comece pelo [mapa do projeto](#como-o-projeto-está-organizado) e pela [arquitetura](docs/arquitetura/README.md). |
+| **Conferir testes e pendências** | Consulte o [estado do projeto](#o-que-funciona-e-o-que-ainda-está-pendente). |
 
-## O problema que o projeto explora
+## Os jogos em imagens
 
-Explicações abstratas de proporção, equilíbrio, conectividade e planejamento ficam mais acessíveis quando uma escolha produz uma consequência visível. O Intuição transforma esses conceitos em problemas pequenos, exploráveis e reversíveis. O objetivo educacional é oferecer prática e descoberta; não há alegação de ganho cognitivo comprovado nem calibração completa da dificuldade com jogadores.
+As capturas abaixo são **registros reais de versões anteriores**, já preservados no repositório. Elas ilustram as mecânicas; a disposição dos controles e contagens como “500” pertencem à época da captura. O catálogo desta versão tem **80 fases por campanha solo**.
 
-## Os 11 jogos
+Clique em uma imagem para abri-la em tamanho maior.
 
-| Jogo | Categoria | O que explora | Formato atual |
-| --- | --- | --- | --- |
-| [Reflexos](docs/jogos/reflexos/README.md) | Intuição | Luz, reflexão e planejamento de trajetórias | 80 fases |
-| [Corte certo](docs/jogos/corte/README.md) | Intuição | Estimativa de áreas, porcentagens e geometria | 80 fases |
-| [ELO](docs/jogos/elo/README.md) | Raciocínio lógico | Regiões, grafos e restrições locais e globais | 80 fases |
-| [PRUMO](docs/jogos/prumo/README.md) | Raciocínio lógico | Partição conectada e centro de massa | 80 fases |
-| [PACTO](docs/jogos/pacto/README.md) | Raciocínio lógico | Contagem, propagação de restrições e parcerias | 80 fases |
-| [SINTONIA](docs/jogos/sintonia/README.md) | Raciocínio lógico | Comandos simultâneos e coordenação de estados | 80 fases |
-| [REPASSE](docs/jogos/repasse/README.md) | Raciocínio lógico | Ordem de remoção e propagação de valores | 80 fases |
-| [ÓRBITA](docs/jogos/orbita/README.md) | Raciocínio lógico | Permutações em anéis e objetivos simultâneos | 80 fases |
-| [DESVIO](docs/jogos/desvio/README.md) | Versus | Jogo por turnos e espaço de possibilidades | Duelo |
-| [BROTO](docs/jogos/broto/README.md) | Versus | Estímulos por eixos e efeitos compartilhados | Duelo |
-| [CERCO](docs/jogos/cerco/README.md) | Versus | Mobilidade coletiva e bloqueios permanentes | Duelo |
+| SINTONIA — um comando, vários caminhos | ÓRBITA — planejar giros e transferências |
+| --- | --- |
+| [![Captura histórica de SINTONIA: capivara e tuiuiú em tabuleiros separados, com placa, cancela e destinos.](docs/sintonia-preview-1792944343794.jpg)](docs/sintonia-preview-1792944343794.jpg) | [![Captura histórica de ÓRBITA: dois anéis compartilham uma casa para transferir peças entre percursos.](docs/orbita-desktop-2026-10-25.jpg)](docs/orbita-desktop-2026-10-25.jpg) |
+| Todos recebem a mesma direção, mas as paredes fazem cada animal percorrer um caminho diferente. [Ler as regras](docs/jogos/sintonia/README.md). | Girar um anel move suas peças juntas. O desafio é completar todos os alvos ao mesmo tempo. [Ler as regras](docs/jogos/orbita/README.md). |
 
-As oito campanhas solo totalizam **640 fases**. Cada campanha tem seis faixas: Básico (1–15), Aprendiz (16–30), Intermediário (31–45), Avançado (46–60), Mestre (61–75) e Modo Sábio (76–80). Modo livre, geração de desafios e duelos não aumentam essa contagem. TRAMA e VÉRTICE não estão no catálogo ativo; seus registros históricos permanecem no projeto.
+| PRUMO — desenhar peças em equilíbrio | REPASSE — escolher a ordem de retirada |
+| --- | --- |
+| [![Captura histórica de PRUMO: grade 10 por 10 com apoios identificados por letras e regiões coloridas.](docs/prumo80-10x10-desktop.png)](docs/prumo80-10x10-desktop.png) | [![Captura histórica de REPASSE: peças numeradas com setas e caixas de metas nas bordas.](docs/repasse-sem-textos-auxiliares-1792954802846.jpg)](docs/repasse-sem-textos-auxiliares-1792954802846.jpg) |
+| Cada região deve ficar conectada e equilibrada sobre seu apoio. [Ler as regras](docs/jogos/prumo/README.md). | Retirar uma peça envia seu valor para outras peças ou para as bordas. A ordem muda o resultado. [Ler as regras](docs/jogos/repasse/README.md). |
 
-## Executar em poucos minutos
+## Como jogar pela primeira vez
 
-Você precisa de Python 3 para servir os arquivos e de um navegador com módulos JavaScript. Não há instalação npm, compilação nem banco de dados para jogar localmente.
+1. **Escolha uma categoria:** Intuição, Raciocínio lógico ou Versus.
+2. **Abra um jogo:** nas campanhas solo, comece pela faixa **Básico**; nos duelos, configure a partida conforme as opções do jogo.
+3. **Leia o objetivo e as regras junto ao tabuleiro.** Observe o que pode mover e qual configuração precisa alcançar.
+4. **Experimente uma ação e acompanhe o efeito.** Use Desfazer ou Reiniciar quando esses controles estiverem disponíveis.
+5. **Conclua o desafio.** Alguns jogos reconhecem a vitória automaticamente; outros pedem Checar ou Confirmar. Nos duelos, confirme a jogada e acompanhe a vez de cada pessoa.
 
-Na raiz desta pasta:
+**Um exemplo em SINTONIA:** ao pressionar a seta para a direita, todos os animais tentam andar. Um animal encostado na parede fica parado; outro, com caminho livre, avança. Você usa essa diferença para ajustar suas posições até que todos ocupem seus destinos simultaneamente.
+
+Para uma primeira exploração, experimente **Corte certo** para estimar áreas, **SINTONIA** para coordenar movimentos ou **BROTO** para jogar em dupla. Os manuais explicam cada regra com mais exemplos.
+
+## Conheça os 11 jogos
+
+### Intuição: observar formas e trajetórias
+
+| Jogo | O que você faz para resolver | O que explora |
+| --- | --- | --- |
+| **[Reflexos](docs/jogos/reflexos/README.md)** | Gira espelhos para levar cada raio ao alvo da mesma cor e símbolo, evitando contato entre trajetórias de cores diferentes. | Reflexão, ângulos e planejamento de caminhos. |
+| **[Corte certo](docs/jogos/corte/README.md)** | Ajusta uma linha ou curva até separar a porcentagem pedida da área útil de uma figura. Buracos não entram na conta. | Estimativa de áreas, proporções e porcentagens. |
+
+### Raciocínio lógico: combinar regras e planejar ações
+
+| Jogo | O que você faz para resolver | O que explora |
+| --- | --- | --- |
+| **[ELO](docs/jogos/elo/README.md)** | Coloca um ponto por região para que as ligações automáticas formem um único circuito fechado, respeitando as pistas. | Conectividade, dedução e condições locais e globais. |
+| **[PRUMO](docs/jogos/prumo/README.md)** | Divide a grade em peças conectadas, cada uma com o centro de massa exatamente sobre seu apoio. | Equilíbrio, geometria e distribuição de massa. |
+| **[PACTO](docs/jogos/pacto/README.md)** | Completa a grade com dois de cada símbolo por linha e coluna; cada casa precisa ter exatamente um vizinho igual pelos lados. | Contagem, exclusão de possibilidades e formação de pares. |
+| **[SINTONIA](docs/jogos/sintonia/README.md)** | Usa comandos compartilhados para levar animais de tabuleiros diferentes aos seus destinos ao mesmo tempo. | Coordenação, obstáculos e planejamento de sequências. |
+| **[REPASSE](docs/jogos/repasse/README.md)** | Retira todas as peças na ordem certa para que os valores enviados atinjam exatamente as metas das bordas. | Dependência entre ações, propagação de valores e ordem. |
+| **[ÓRBITA](docs/jogos/orbita/README.md)** | Gira anéis conectados para transferir peças e completar todos os alvos simultaneamente. | Orientação espacial, permutações e objetivos simultâneos. |
+
+### Versus: antecipar a próxima jogada
+
+| Jogo | Como funciona a disputa | Condição de vitória |
+| --- | --- | --- |
+| **[DESVIO](docs/jogos/desvio/README.md)** | A casa escolhida determina a linha ou coluna em que o adversário terá de jogar. Há duelo local, bot e treino com análise. | Deixar o adversário sem escolha legal. |
+| **[BROTO](docs/jogos/broto/README.md)** | Cada plantio estimula brotos nas direções horizontal e vertical e pode completar flores de qualquer pessoa. | Somar mais flores ao final das duas rodadas; empate é possível. |
+| **[CERCO](docs/jogos/cerco/README.md)** | Move uma de suas três peças; a casa abandonada vira uma barreira permanente para os dois times. | Deixar todas as peças do adversário sem movimento na vez dele. |
+
+Os duelos locais acontecem **no mesmo aparelho**. Não há salas multiplayer online nesta base. TRAMA e VÉRTICE aparecem em registros históricos, mas não fazem parte do catálogo ativo.
+
+### Como as fases estão organizadas
+
+Cada uma das oito campanhas solo tem **80 fases**, distribuídas da mesma forma:
+
+| Faixa | Fases | Quantidade |
+| --- | --- | ---: |
+| Básico | 1–15 | 15 |
+| Aprendiz | 16–30 | 15 |
+| Intermediário | 31–45 | 15 |
+| Avançado | 46–60 | 15 |
+| Mestre | 61–75 | 15 |
+| Modo Sábio | 76–80 | 5 |
+| **Total por campanha** | **1–80** | **80** |
+
+São **8 × 80 = 640 fases solo**. Modos livres, desafios gerados e partidas Versus ficam fora dessa contagem. A proposta é oferecer prática e descoberta; a curva de dificuldade ainda não tem calibração completa com jogadores.
+
+## Executar no computador
+
+A aplicação roda no navegador. O Python apenas entrega os arquivos locais por HTTP; **não é necessário instalar pacotes npm, compilar o projeto ou configurar um banco de dados**.
+
+### 1. Prepare o ambiente
+
+| Ferramenta | Para que serve |
+| --- | --- |
+| **Navegador atualizado** | Abre os jogos e executa HTML, CSS e JavaScript. |
+| **Python 3** | Inicia o servidor local de arquivos. |
+| **Git** | Baixa o repositório e preserva seu histórico. Pode ser substituído pelo ZIP para jogar. |
+| **Node.js 24** | Necessário apenas para as verificações e os testes descritos abaixo. |
+
+### 2. Baixe o projeto
+
+Com sua conta autorizada no repositório privado, abra um terminal e execute:
+
+```bash
+git clone https://github.com/luigiscofano/intuicao.git
+cd intuicao
+```
+
+**Sem Git:** no GitHub, use **Code → Download ZIP**, extraia o arquivo e abra o terminal na pasta extraída. Para jogar, a pasta correta é aquela que contém este `README.md` e a subpasta `dist`. Alguns testes históricos exigem um clone com o histórico Git.
+
+### 3. Inicie o servidor
+
+**macOS ou Linux**, na pasta do projeto:
 
 ```bash
 python3 -m http.server 8766 --bind 127.0.0.1 --directory dist
 ```
 
-No Windows:
+**Windows**, na pasta do projeto:
 
 ```powershell
 py -m http.server 8766 --bind 127.0.0.1 --directory dist
 ```
 
-Abra **http://127.0.0.1:8766/**. Mantenha o terminal aberto; `Ctrl+C` encerra o servidor. A opção `--bind 127.0.0.1` limita esse servidor ao próprio computador. Não abra `index.html` diretamente por `file://`: módulos e workers precisam de uma origem HTTP apropriada.
+### 4. Abra no navegador
 
-Para opções, diagnóstico de problemas e recuperação a partir de um bundle Git, leia o [guia de instalação](docs/setup/README.md).
+Acesse **[http://127.0.0.1:8766/](http://127.0.0.1:8766/)** e escolha um jogo.
 
-## O que já existe
+Mantenha o terminal aberto enquanto joga. Para encerrar o servidor, pressione **Ctrl+C**. O endereço `127.0.0.1` restringe o acesso ao próprio computador.
 
-- Navegação por categorias, seleção de desafios, regras junto ao tabuleiro e controles de interação.
-- Motores de regras, catálogos, soluções de referência e testes automatizados de diferentes épocas.
-- Desfazer/refazer e persistência nos fluxos que os oferecem; modos competitivos podem restringir essas ações.
-- Duelos locais, com recursos de bot/análise nos jogos que os implementam.
-- Arte, personagens e informações culturais sobre animais brasileiros.
+> Abra o endereço HTTP acima. Clicar diretamente em `dist/index.html` usa `file://`, que não oferece a origem necessária aos módulos e workers.
 
-O comportamento de conclusão varia: PACTO, SINTONIA, REPASSE e ÓRBITA reconhecem configurações vencedoras automaticamente; Reflexos, Corte certo, ELO e PRUMO mantêm seus fluxos de confirmação. DESVIO, BROTO e CERCO têm confirmação e encerramento próprios de duelo.
+### Se algo não funcionar
 
-## Organização do código
-
-| Local | Responsabilidade |
+| Situação | O que conferir |
 | --- | --- |
-| [dist/](dist/README.md) | Aplicação estática editável, módulos, estilos e dados servidos ao navegador |
-| [dist/platform-assets/](dist/platform-assets/README.md) | Logos, fontes, folhas, sprites e demais recursos visuais |
-| [docs/](docs/README.md) | Manuais atuais, arquitetura, manutenção e relatórios históricos |
-| [tests/](tests/README.md) | Testes de motores, integração, preservação e evidências de revisões |
-| [scripts/](scripts/README.md) | Ferramentas de verificação da documentação |
-| [.github/](.github/guias/README.md) | Modelos de issues/PRs e fluxos de validação preparados |
+| O terminal não encontra `python3` ou `py` | Confirme que o Python 3 está instalado e disponível no terminal. Reabra o terminal após instalar. |
+| Aparece uma lista de arquivos em vez dos jogos | Execute o comando na raiz do projeto e mantenha `--directory dist`. |
+| A porta 8766 está ocupada | Troque `8766` por `8767` no comando e no endereço do navegador. |
+| Aparecem erros ao abrir o HTML | Acesse pelo servidor HTTP, sem usar `file://`. |
+| Imagens ou módulos não carregam | Confira se o download está completo e se os nomes e as pastas foram preservados. |
+| O progresso parece ter desaparecido | Use o mesmo endereço, porta e perfil de navegador da sessão anterior. |
 
-O nome `dist` é herdado do projeto: **aqui ele contém o próprio código-fonte servido**, não um artefato descartável. Não execute uma limpeza de build que apague essa pasta. Os caminhos foram mantidos para preservar imports, testes e histórico.
+Mais opções e diagnóstico: **[guia de instalação](docs/setup/README.md)**.
 
-## Tecnologias e conceitos exercitados
+## Como o projeto está organizado
 
-HTML, CSS, JavaScript em módulos `.mjs`, SVG, Web Workers e armazenamento local. Os testes usam Node.js. Entre os conceitos presentes estão geometria computacional, grafos, busca de estados, restrições, máquinas de estado, interfaces responsivas e migração de dados.
+| Onde procurar | O que você encontra |
+| --- | --- |
+| **[dist/](dist/README.md)** | A aplicação: HTML, estilos, módulos JavaScript, regras e catálogos. |
+| **[dist/index.html](dist/index.html)** | A estrutura inicial da página e as entradas dos módulos. |
+| **[dist/app.mjs](dist/app.mjs)** | Parte da integração dos jogos e da navegação. |
+| **[dist/platform-assets/](dist/platform-assets/README.md)** | Logo, fonte, folhas, sprites e outros recursos visuais. |
+| **[docs/jogos/](docs/jogos/README.md)** | Um manual por jogo, com regras, exemplos e caminhos para o código. |
+| **[docs/arquitetura/](docs/arquitetura/README.md)** | Como navegação, regras, conteúdo, persistência e apresentação se relacionam. |
+| **[tests/](tests/README.md)** | Testes de regras, integração e preservação, além de evidências históricas. |
+| **[scripts/](scripts/README.md)** | Ferramentas para verificar a documentação. |
+| **[.github/](.github/guias/README.md)** | Modelos de issues e PRs e verificações do GitHub Actions. |
 
-Cada manual explica o problema específico do jogo, sua representação, os arquivos principais e exemplos de raciocínio. Essa documentação descreve o projeto e os temas que ele permite estudar; não substitui um registro pessoal de aprendizado ou uma avaliação acadêmica.
+**Atenção ao nome `dist`: aqui ela contém o código-fonte editável do projeto.** Não a apague como se fosse uma pasta temporária de compilação.
 
-## Qualidade e estado desta entrega
+Para acompanhar um jogo do começo ao fim, leia seu manual, localize os arquivos indicados e compare as regras com os testes correspondentes. SINTONIA, REPASSE, ÓRBITA, BROTO e CERCO têm subpastas próprias; os demais também usam módulos compartilhados no nível principal de `dist`.
 
-Na preparação desta organização, os cinco conjuntos de motor de BROTO, CERCO, SINTONIA, REPASSE e ÓRBITA passaram **95 testes, sem falhas**, usando Node 24.22.1. Esse recorte não é a suíte completa. O diagnóstico amplo registrado do baseline tem falhas históricas; há também uma pendência real de migração SINTONIA documentada na revisão ainda não recuperada.
+### Tecnologias e decisões de implementação
 
-As verificações desta organização e seus limites estão em [qualidade](docs/qualidade/README.md). A [validação documental](https://github.com/luigiscofano/intuicao/actions/runs/41322568127) e o [recorte de motores](https://github.com/luigiscofano/intuicao/actions/runs/41322454090) passaram no GitHub Actions. Esses checks não representam a suíte completa.
+| Tecnologia ou recurso | Papel no Intuição |
+| --- | --- |
+| **HTML e CSS** | Estrutura das telas, controles, molduras e adaptação do layout. |
+| **JavaScript em módulos `.mjs`** | Regras, estados, interação, navegação e integração dos jogos. |
+| **SVG e imagens raster** | Tabuleiros, formas, símbolos, cenários e personagens. |
+| **Web Workers** | Processamento separado da interface em rotinas de análise e geração que os utilizam. |
+| **Armazenamento local** | Progresso no navegador, nos fluxos que oferecem persistência. |
+| **Node.js e GitHub Actions** | Execução de testes e verificação dos documentos. |
 
-## Progresso, privacidade e hospedagem
+O projeto permite estudar geometria computacional, grafos, busca de estados, máquinas de estado, restrições e compatibilidade de dados salvos. Uma decisão central é distinguir **a regra do jogo**, **o estado da tentativa** e **a forma de exibir o resultado**. O [guia de arquitetura](docs/arquitetura/README.md) mostra onde essas responsabilidades aparecem.
 
-O progresso é local ao navegador e à origem. `localhost`, `127.0.0.1` e o domínio hospedado são origens diferentes, portanto podem mostrar saves diferentes. Limpar os dados do navegador pode apagar esse progresso. Não há promessa de sincronização entre aparelhos ou salas multiplayer online.
+## O que funciona e o que ainda está pendente
 
-O [site hospedado existente](https://intuicao-luigi-minigames.luigiscofano.chatgpt.site) mantém seu controle de acesso. A preparação para GitHub não publica uma nova versão do site. Os workflows incluídos nesta entrega também não fazem deploy.
+| Área | Estado desta cópia |
+| --- | --- |
+| Catálogo e navegação | 11 jogos ativos, seleção de desafios e regras na interface. |
+| Campanhas solo | Oito campanhas de 80 fases; recursos adicionais variam por jogo. |
+| Duelos | Partidas locais e recursos de bot/análise nos jogos que os implementam. |
+| Progresso e exploração | Salvamento, Desfazer e Refazer nos fluxos que oferecem essas funções. |
+| Documentação | README inicial, manuais individuais, instalação, arquitetura e manutenção. |
+| Testes de motores | Recorte de cinco suítes com **95 testes aprovados** na preparação documentada. |
+| Qualidade ampla | Há falhas históricas e pendências; esse recorte não aprova toda a aplicação. |
+| Revisão técnica posterior | A revisão `f0e7fcf` ainda precisa ser recuperada e incorporada, incluindo a correção de migração de SINTONIA ali descrita. |
 
-## Direitos e distribuição
+A contagem de testes acima é uma **evidência registrada da preparação**, não uma nova execução provocada por esta edição do README. Consulte [qualidade e limitações](docs/qualidade/README.md) e as [execuções do GitHub Actions](https://github.com/luigiscofano/intuicao/actions).
+
+<details>
+<summary><strong>Histórico preservado e revisão ainda não incorporada</strong></summary>
+
+Esta edição organiza a base `2354a3c`, preservando seus **183 commits anteriores**. As alterações posteriores foram organizadas em branches temáticas e PRs integrados em `main`; o [registro de integração](docs/github/README.md) detalha o processo.
+
+A revisão `f0e7fcf` é conhecida por documentação externa, mas seu código não foi recuperado nesta cópia. Por isso, seus resultados de teste não são apresentados como validação do código disponível. A recuperação deve preservar o histórico e permitir a revisão das diferenças.
+
+</details>
+
+### Verificar a documentação e os motores
+
+Com Node.js 24, execute os comandos na raiz do repositório.
+
+**Links locais da documentação:**
+
+```bash
+node scripts/check-docs.mjs
+```
+
+**Recorte dos motores de BROTO, CERCO, SINTONIA, REPASSE e ÓRBITA:**
+
+```bash
+node --test tests/broto-engine.test.mjs tests/cerco-engine.test.mjs tests/sintonia-engine.test.mjs tests/repasse-engine.test.mjs tests/orbita-engine.test.mjs
+```
+
+Antes de ampliar a execução, leia o [guia de testes](tests/README.md). A pasta também contém scripts de geração e verificações de revisões antigas; nem todo arquivo `.mjs` é um teste sem efeitos colaterais.
+
+## Progresso, hospedagem e contribuição
+
+**Onde fica meu progresso?** No navegador e no endereço usados para jogar, conforme a persistência de cada jogo. `localhost`, `127.0.0.1`, portas diferentes e o site hospedado são origens diferentes e podem mostrar saves diferentes. Limpar os dados do navegador pode apagar o progresso. Não há sincronização automática entre aparelhos.
+
+**Uma alteração no GitHub atualiza o site?** Não. O [site hospedado](https://intuicao-luigi-minigames.luigiscofano.chatgpt.site) e a cópia deste repositório têm atualização separada. Os workflows presentes não fazem deploy.
+
+**Como contribuir?** Leia [CONTRIBUTING.md](CONTRIBUTING.md), use uma branch para uma mudança bem delimitada e abra um PR descrevendo o problema, a solução e a validação realizada. Para mudanças em fases, IDs ou saves, consulte também o [guia de manutenção](docs/manutencao/README.md).
+
+## Autoria e licença
 
 Copyright (c) 2026 **Luigi Scofano de Araujo**.
 
