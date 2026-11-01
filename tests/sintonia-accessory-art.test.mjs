@@ -26,8 +26,8 @@ const APPROVED = {
   "portal-0.png": "0ca630d398965d0627f7d38588009bf585e81e4ef57b3b88c8cc4109262d949d",
   "selector-0.png": "e2d50f46493d5f2e3822bc1481e10db06db32aa567ecaa219b9d5b252f600c5b",
   "selector-1.png": "33d2f17f9cd3dc1e301522288e589e1f887b5f8a13c57bb826c4a986f952e47b",
-  "switch-0.png": "eb791a2f8b1114550cc92c3937d91ef20363f20d66812615aeaa275bf04a961e",
-  "switch-1.png": "76be05325ce9fdf0a0028147587ee80132c4d4b85a5487153f1bca015bd8dda9"
+  "switch-0.png": "a32e61335bba6b865857af08aab42f822cd2885074b0954be36a28ddcbeee558",
+  "switch-1.png": "e2da0f6605d43f824ded663244bfaf81d34bd7a8c1dd32294d065b3ca5e89937"
 };
 function coverage(svg){
  const pixels=new Set();
