@@ -4,7 +4,7 @@ O Intuição é uma aplicação estática em desenvolvimento. O código em `main
 
 ## Comunicar uma vulnerabilidade
 
-Não publique tokens, dados pessoais, saves reais ou instruções de exploração com dados sensíveis em issues, PRs ou comentários públicos. Quando o GitHub disponibilizar o botão **Security → Report a vulnerability**, use esse canal privado. Enquanto ele não estiver habilitado, utilize um canal privado já estabelecido com o mantenedor; não abra uma issue pública para enviar o conteúdo confidencial.
+Não publique tokens, dados pessoais, saves reais ou instruções de exploração com dados sensíveis em issues, PRs ou comentários públicos. O canal privado está habilitado: abra [Security](https://github.com/luigiscofano/intuicao/security) → **Report a vulnerability**. Se ele estiver indisponível, utilize um canal privado já estabelecido com o mantenedor; não abra uma issue pública para enviar o conteúdo confidencial.
 
 Inclua a revisão afetada, passos mínimos de reprodução com dados fictícios, impacto e eventual correção. Não há prazo de resposta ou programa de recompensa garantidos.
 

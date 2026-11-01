@@ -31,6 +31,6 @@ A configuração `noreply` já usada nas alterações recentes pode continuar; e
 
 ## Situação da publicação
 
-Este registro atualiza a documentação de autoria e a decisão sobre privacidade. **O repositório continua privado.** A mudança de visibilidade e a conclusão das configurações de proteção permanecem etapas separadas.
+Este registro foi criado enquanto o repositório era privado. Em **01/11/2026**, após esclarecimento sobre a exposição dos endereços de e-mail dos commits, o titular autorizou expressamente: **“então pode tornar público sim.”** A visibilidade foi alterada para pública, mantendo o histórico. As proteções aplicadas estão registradas no [guia de segurança](../seguranca/README.md).
 
 Novos arquivos, alterações de conteúdo ou materiais recebidos de colaboradores exigem atualização do inventário e da respectiva declaração/licença.

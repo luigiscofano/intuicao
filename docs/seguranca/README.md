@@ -1,19 +1,19 @@
-# Preparação para publicação
+# Segurança e publicação
 
-Revisão de **1º de novembro de 2026**, partindo de `ae8cad7aed23b974d742a4b0889bfc1e1c5efe3e`. O repositório permanece **privado**. A preparação não publica o site nem atesta ausência de toda vulnerabilidade.
+Revisão de **1º de novembro de 2026**, partindo de `ae8cad7aed23b974d742a4b0889bfc1e1c5efe3e`. O repositório foi tornado **público em 01/11/2026**, após autorização explícita do titular, na revisão `71cf0a6ae0abf1f60db76189d8c520064e97144b`. O histórico foi preservado. Essa mudança não publica uma nova versão do site nem atesta ausência de toda vulnerabilidade.
 
-| Cuidado | Trabalho realizado | Pendência antes da abertura |
+| Cuidado | Trabalho realizado | Situação após a abertura |
 | --- | --- | --- |
 | Direitos dos recursos | Inventário individual com SHA-256 de 133 arquivos, evidências de origem e 16 caminhos visuais históricos | Autoria declarada pelo titular; ver atualização abaixo. Recursos visuais continuam fora da MIT |
 | Segredos e privacidade | Histórico, branches, PRs, logs, metadados de commits e referências internas revisados | Titular autorizou manter o e-mail e preservar o histórico; ver atualização abaixo |
-| Automação | Motores em PRs/pushes, verificação de segredos, inventário, actions fixadas por SHA e Dependabot | Confirmar aplicação das regras de branch e recursos nativos de segurança após a mudança de visibilidade |
+| Automação | Motores em PRs/pushes, verificação de segredos, inventário, actions fixadas por SHA e Dependabot | Proteção de `main` confirmada; detecção de segredos, push protection e relatos privados habilitados |
 | Apresentação | README e guias atualizados com alcance dos testes, limitações e critérios de publicação | Não apresentar pendências como resolvidas nem equiparar site e GitHub |
 
 ## Atualização após declaração do titular — 01/11/2026
 
 Luigi Scofano de Araujo declarou a autoria dos elementos do Intuição e autorizou a manutenção do e-mail pessoal nos commits existentes. A [declaração](../recursos/declaracao-autoria.md) foi registrada e vinculada às 133 entradas do inventário e aos caminhos históricos. Os créditos e termos de materiais externos, como Natural Earth, permanecem preservados.
 
-As pendências documentais de autoria e a decisão de privacidade foram resolvidas com base nessa declaração, sem certificação independente. O histórico e os e-mails antigos serão mantidos. Não foi criada uma cópia com histórico novo nem alterada a visibilidade.
+As pendências documentais de autoria e a decisão de privacidade foram resolvidas com base nessa declaração, sem certificação independente. Naquela etapa, o histórico e os e-mails antigos foram mantidos sem mudança de visibilidade. A abertura foi autorizada e realizada posteriormente, conforme o registro no início deste documento.
 
 Os resultados abaixo descrevem a auditoria anterior, com seus limites e revisão de referência.
 
@@ -47,17 +47,21 @@ As imagens originais, os recortes, os jogos e a galeria de 11 capturas foram pre
 
 Os workflows usam `contents: read`, checkout sem persistir credenciais e limites de tempo. Não usam `pull_request_target`, não fazem deploy e não precisam de segredos. Checkout e setup-node estão fixados em commits oficiais; o Dependabot acompanha atualizações de GitHub Actions semanalmente. A versão e o checksum do binário Gitleaks exigem revisão explícita quando forem atualizados.
 
-Foram ativados no GitHub **Dependency graph**, **Dependabot alerts** e **Dependabot security updates**. A tela de regras informa que elas **não são aplicadas a este repositório privado no plano atual**. O formulário de proteção foi preparado com PR obrigatório, resolução de conversas, branches atualizadas e os quatro checks acima, sem permitir force push ou exclusão. Ao salvar, o GitHub exigiu confirmação de identidade por GitHub Mobile ou e-mail; a criação da regra não foi concluída. Secret scanning nativo, push protection e private vulnerability reporting não foram apresentados nessa tela de segurança; não são declarados ativos.
+Foram ativados no GitHub **Dependency graph**, **Dependabot alerts**, **Malware alerts** e **Dependabot security updates**. Após a confirmação de acesso pelo titular, a regra [main - PRs e verificacoes](https://github.com/luigiscofano/intuicao/rules/26331597) foi salva. A limitação de aplicação enquanto o repositório era privado deixou de se aplicar após a abertura: a API confirmou `protected: true` para `main` e o ruleset está ativo.
+
+A regra exige PR, resolução de conversas, branch atualizada e os quatro checks acima, vinculados ao GitHub Actions. Ela bloqueia exclusão e force push, sem lista de bypass. O número de aprovações independentes é zero para permitir manutenção individual; as verificações continuam obrigatórias.
+
+Também foram habilitados **Secret Protection / secret scanning**, **Push protection** e **Private vulnerability reporting**. A configuração padrão do **CodeQL** foi solicitada para GitHub Actions, JavaScript/TypeScript e Python, em runner padrão do GitHub; consulte as [execuções](https://github.com/luigiscofano/intuicao/actions) para acompanhar a conclusão da análise inicial. Nenhuma assinatura paga foi contratada.
 
 Não adicionar uma aprovação obrigatória do próprio autor como solução: o autor não pode aprovar o próprio PR. Para manutenção individual, usar PR obrigatório, checks obrigatórios, resolução de conversas e bloqueio de force push/exclusão. Acrescentar aprovação independente quando houver outro revisor.
 
-## Antes de tornar público
+## Registro da abertura e manutenção
 
 1. **Autoria registrada:** a declaração do titular cobre os elementos autorais atuais e históricos. O inventário aponta a evidência e mantém os materiais externos sob seus termos. Executar `node scripts/check-assets.mjs --release` ao preparar a publicação; o verificador é documental e não certifica a autoria.
 2. **Preservar o histórico:** o titular autorizou manter o e-mail pessoal nos commits antigos. Essa exposição foi aceita para eventual abertura. Manter commits, branches e PRs; não realizar force push, reescrita ou criar cópia com histórico novo.
 3. **Revisar o PR e os checks:** nenhuma falha deve ser ignorada por `continue-on-error`. A suíte ampla ainda não foi reconciliada; o recorte verde não é um selo de release completa.
-4. **Confirmar a mudança de visibilidade:** depois das decisões acima, revisar os avisos em Settings → General → Danger Zone → Change visibility. A mudança precisa de uma decisão explícita do titular.
-5. **Conferir imediatamente as proteções disponíveis:** em Rulesets, proteger `main` com PR obrigatório, checks `links`, `engines`, `secret-scan`, `asset-inventory`, resolução de conversas, bloqueio de exclusão e de force push. Em Security, verificar secret scanning, push protection, CodeQL e private vulnerability reporting conforme disponibilidade. Não comprar plano nem ativar cobrança automaticamente.
+4. **Visibilidade confirmada:** o titular autorizou a abertura após esclarecer que os e-mails antigos são metadados dos commits. A visibilidade pública foi confirmada na interface e na API do GitHub.
+5. **Proteções conferidas:** `main` está protegida pelo ruleset descrito acima. Secret scanning, push protection e private vulnerability reporting estão habilitados; acompanhar as análises e alertas de CodeQL, Gitleaks e Dependabot. Mudanças nessas configurações exigem nova conferência.
 6. **Testar a apresentação externa:** abrir o GitHub sem autenticação e verificar README, imagens, licença e instruções. Só depois substituir o destaque do LinkedIn por um link acessível. Tornar o GitHub público não muda automaticamente o acesso do site nem garante a geração de prévia pelo LinkedIn.
 
 ## Limites e repetição
