@@ -1,10 +1,67 @@
-import fs from 'node:fs';import {cutLevels} from '../dist/levels.mjs';
-const qa=JSON.parse(fs.readFileSync('tests/corte80-independent-validation.json'));if(cutLevels.length!==80||qa.rows.length!==80)throw Error('80 definitions and certificates required');
-const names=['Básico','Aprendiz','Intermediário','Avançado','Mestre','Modo Sábio'];const full=cutLevels.map((l,i)=>({number:i+1,band:names[Math.min(5,Math.floor(i/15))],...l,certificate:qa.rows[i]}));
-fs.writeFileSync('docs/corte80/80-niveis-certificados.json',JSON.stringify(full,null,2));
-const cols=['número','ID','faixa','família','figura','direção básica °','meta %','vazios','descoberta','origem','gabarito deslocamento','área útil','erro gabarito independente pp','efeito sem vazios pp','sensibilidade modificada','certificado'];
-const cell=x=>'"'+(typeof x==='object'?JSON.stringify(x):String(x??'')).replaceAll('"','""')+'"';
-const rows=full.map(l=>[l.number,l.id,l.band,l.family,l.shape,l.basicDirection,l.target,l.holeDescription??`${l.holes?.length??0} vazios`,l.discovery??l.lesson,l.origin,l.certificate.roundedTravel,l.certificate.area,Math.abs(l.certificate.oraclePP-l.target),l.certificate.holeEffectPP,l.certificate.sensitivityRelativeChange,'Eixo fixo; passos inteiros ±2; gabarito arredondado; início fora; união recortada validada']);
-fs.writeFileSync('docs/corte80/80-niveis-tabela.csv','\uFEFF'+[cols,...rows].map(r=>r.map(cell).join(';')).join('\n')+'\n');
-fs.writeFileSync('docs/corte80/indice.md','# Corte certo — 80 níveis\n\n|Nº|Faixa|Família|Figura|Meta|Direção|\n|---|---|---|---|---|---|\n'+full.map(l=>`|${l.number}|${l.band}|${l.family}|${l.shape}|${l.target}%|${l.basicDirection}°|`).join('\n')+'\n\nDetalhes de vazios, descoberta, origem e certificado estão na tabela CSV e no JSON.\n');
+// Registro de evidências de Corte certo.
+import fs from 'node:fs';
+import { cutLevels } from '../dist/levels.mjs';
+const qa = JSON.parse(fs.readFileSync('tests/corte80-independent-validation.json'));
+if (cutLevels.length !== 80 || qa.rows.length !== 80)
+  throw Error('80 definitions and certificates required');
+const names = ['Básico', 'Aprendiz', 'Intermediário', 'Avançado', 'Mestre', 'Modo Sábio'];
+const full = cutLevels.map((l, i) => ({
+  number: i + 1,
+  band: names[Math.min(5, Math.floor(i / 15))],
+  ...l,
+  certificate: qa.rows[i],
+}));
+fs.writeFileSync('docs/corte80/80-niveis-certificados.json', JSON.stringify(full, null, 2));
+const cols = [
+  'número',
+  'ID',
+  'faixa',
+  'família',
+  'figura',
+  'direção básica °',
+  'meta %',
+  'vazios',
+  'descoberta',
+  'origem',
+  'gabarito deslocamento',
+  'área útil',
+  'erro gabarito independente pp',
+  'efeito sem vazios pp',
+  'sensibilidade modificada',
+  'certificado',
+];
+const cell = (x) =>
+  '"' + (typeof x === 'object' ? JSON.stringify(x) : String(x ?? '')).replaceAll('"', '""') + '"';
+const rows = full.map((l) => [
+  l.number,
+  l.id,
+  l.band,
+  l.family,
+  l.shape,
+  l.basicDirection,
+  l.target,
+  l.holeDescription ?? `${l.holes?.length ?? 0} vazios`,
+  l.discovery ?? l.lesson,
+  l.origin,
+  l.certificate.roundedTravel,
+  l.certificate.area,
+  Math.abs(l.certificate.oraclePP - l.target),
+  l.certificate.holeEffectPP,
+  l.certificate.sensitivityRelativeChange,
+  'Eixo fixo; passos inteiros ±2; gabarito arredondado; início fora; união recortada validada',
+]);
+fs.writeFileSync(
+  'docs/corte80/80-niveis-tabela.csv',
+  '\uFEFF' + [cols, ...rows].map((r) => r.map(cell).join(';')).join('\n') + '\n',
+);
+fs.writeFileSync(
+  'docs/corte80/indice.md',
+  '# Corte certo — 80 níveis\n\n|Nº|Faixa|Família|Figura|Meta|Direção|\n|---|---|---|---|---|---|\n' +
+    full
+      .map(
+        (l) => `|${l.number}|${l.band}|${l.family}|${l.shape}|${l.target}%|${l.basicDirection}°|`,
+      )
+      .join('\n') +
+    '\n\nDetalhes de vazios, descoberta, origem e certificado estão na tabela CSV e no JSON.\n',
+);
 console.log('80 levels documented');

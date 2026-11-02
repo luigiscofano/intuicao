@@ -1,3 +1,22 @@
-import test from'node:test';import assert from'node:assert/strict';import{execFileSync}from'node:child_process';import{readFileSync}from'node:fs';
-const base='d0ab13894dae7c44f2eb659497ed2734f8aa9aa5',git=(...args)=>execFileSync('git',args,{encoding:'utf8'}).trim();
-test('molduras individuais limitadas ao modal; nenhum conteúdo ou imagem alterados',()=>{for(const line of git('ls-tree','-r',base,'--','dist').split('\n')){const[meta,path]=line.split('\t');if(path==='dist/fauna-info.css'||path==='dist/fauna-info.mjs')continue;assert.equal(git('hash-object',path),meta.split(' ')[2],path);}const css=readFileSync('dist/fauna-info.css','utf8'),old=git('show',base+':dist/fauna-info.css');assert(css.startsWith(old));assert(css.includes('#fauna-dialog .fauna-art-view{box-sizing:border-box;border:1px solid #c5d2bc;border-radius:12px;padding:clamp(4px,.8vw,8px)}'));});
+// Testes e verificações de informações e arte da fauna.
+import test from 'node:test';
+import assert from 'node:assert/strict';
+import { execFileSync } from 'node:child_process';
+import { readFileSync } from 'node:fs';
+const base = 'd0ab13894dae7c44f2eb659497ed2734f8aa9aa5',
+  git = (...args) => execFileSync('git', args, { encoding: 'utf8' }).trim();
+test('molduras individuais limitadas ao modal; nenhum conteúdo ou imagem alterados', () => {
+  for (const line of git('ls-tree', '-r', base, '--', 'dist').split('\n')) {
+    const [meta, path] = line.split('\t');
+    if (path === 'dist/fauna-info.css' || path === 'dist/fauna-info.mjs') continue;
+    assert.equal(git('hash-object', path), meta.split(' ')[2], path);
+  }
+  const css = readFileSync('dist/fauna-info.css', 'utf8'),
+    old = git('show', base + ':dist/fauna-info.css');
+  assert(css.startsWith(old));
+  assert(
+    css.includes(
+      '#fauna-dialog .fauna-art-view{box-sizing:border-box;border:1px solid #c5d2bc;border-radius:12px;padding:clamp(4px,.8vw,8px)}',
+    ),
+  );
+});

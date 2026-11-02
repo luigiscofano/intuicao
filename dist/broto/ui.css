@@ -1,133 +1,746 @@
+/* Tabuleiro, controles e estados visuais de BROTO. */
 /* BROTO only: shared platform components retain their existing contracts. */
-#broto .b-lab,#broto .b-selection{padding:20px 22px;background:#f8f9f3}
-#broto .b-tagline{margin:4px 0 10px;color:#52634e;font-size:16px}
-#broto .lab-heading{display:flex;align-items:center;justify-content:space-between;gap:12px;margin:12px 0}
-#broto .b-round{font-size:16px;font-weight:750;white-space:nowrap}
-#broto .b-workspace{display:grid!important;grid-template-columns:minmax(0,1fr)!important;gap:12px;align-items:start}
-#broto .b-surface{padding:10px 12px;background:#f8f9f3;background-image:none;min-width:0;border:0;box-shadow:none}
-#broto .stage-tools{display:flex;flex-wrap:wrap;align-items:center;gap:14px;margin:0 0 24px}
-#broto .stage-tools>button,#broto .stage-tools summary{min-height:44px}
-#broto .b-score{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:10px;max-width:600px;margin:0 auto}
-#broto .b-owner-0{--b-ink:#376840;--b-soft:#e5efd8;--b-edge:#a9c192}
-#broto .b-owner-1{--b-ink:#76529b;--b-soft:#eee5f6;--b-edge:#c6b0e4}
-#broto .b-player{border:1px solid var(--b-edge);border-radius:15px;padding:9px 12px;background:var(--b-soft);color:var(--b-ink)}
-#broto .b-player.b-current{outline:2px solid var(--b-ink);outline-offset:2px}
-#broto .b-player-name{display:flex;align-items:center;gap:5px;font-size:13px}
-#broto .b-avatar{display:inline-block;flex:0 0 32px;width:32px;height:32px;background-repeat:no-repeat;image-rendering:pixelated}
-#broto .b-score-main{display:flex;align-items:baseline;gap:7px;margin:0 0 5px}
-#broto .b-score-main>strong{font-size:30px;line-height:1;font-variant-numeric:tabular-nums}
-#broto .b-score-main>span{font-size:11px}
-#broto .b-score-details{display:flex;justify-content:space-between;gap:8px;font-size:12px;flex-wrap:wrap}
-#broto .b-turn{text-align:center;font-weight:700;margin:13px 0 10px;line-height:1.4}
-#broto .b-board-wrap{width:min(100%,344px);margin:0 auto;padding:6px;border:1px solid #b8c3ad;border-radius:17px;background:#fff}
-#broto .b-board{display:grid;grid-template-columns:repeat(var(--b-cols,4),minmax(0,1fr));gap:5px;position:relative;isolation:isolate}
-#broto .b-cell{position:relative;display:flex;align-items:center;justify-content:center;aspect-ratio:1;min-height:0;min-width:0;width:100%;padding:2px;border:1px solid #d8dece;border-radius:10px;background:#f8f9f3;cursor:pointer;box-shadow:none;transform:none;color:#425e3d;touch-action:manipulation}
-#broto .b-cell[aria-disabled="true"]{cursor:default;opacity:1}
-#broto .b-cell:focus-visible{outline:3px solid #334f30;outline-offset:2px;z-index:4}
-#broto .b-cell.b-selected{border:2px solid #4b7344;background:#edf3e5}
-#broto .b-cell.b-receiver{border-style:dashed;border-color:#7e956c}
-#broto .b-cell.b-will-bloom{box-shadow:inset 0 0 0 2px #d9bc69;background:#fff9e9}
-#broto .b-empty{font-size:20px;color:#b2bd9f;line-height:1}
-#broto .b-piece{color:var(--b-ink);width:100%;height:100%;display:flex;align-items:center;justify-content:center;flex-direction:column;position:relative;z-index:2}
-#broto .b-sprout,#broto .b-flower{width:46%;height:47%;max-height:40px;min-height:23px;display:block;overflow:visible}
-#broto .b-owner-symbol{position:absolute;right:3px;top:1px;font-size:11px;line-height:1.3}
-#broto .b-axes{display:flex;gap:5px;margin-top:2px}
-#broto .b-axes>span{display:flex;align-items:center;justify-content:center;font-size:17px;font-weight:750;line-height:1;width:23px;height:20px;border:1px solid #b8c2ae;border-radius:5px;color:#66725c;background:#fff}
-#broto .b-axes>.received{background:var(--b-ink);border-color:var(--b-ink);color:#fff}
-#broto .b-ghost{opacity:.52}
-#broto .b-rays{position:absolute;inset:0;width:100%;height:100%;pointer-events:none;z-index:1;overflow:visible}
-#broto .b-rays line{stroke:#79965e;stroke-width:3;stroke-linecap:round;stroke-dasharray:5 7;opacity:.65}
-#broto .b-rays.b-phase-0 line{stroke-dasharray:400;stroke-dashoffset:400;animation:broto-ray .24s .08s ease-out forwards}
-#broto .b-rays.b-phase-2{opacity:.3}
-#broto .b-flowering .b-flower{animation:broto-flower .25s ease-out both}
-#broto .b-check{display:flex;justify-content:center;flex-wrap:wrap;gap:10px;padding:12px 0 4px;background:transparent;border:0;min-height:56px}
-#broto .b-check>button{min-height:44px}
-#broto .b-status{margin:4px auto 0;min-height:44px;max-width:620px;text-align:center;font-size:13px;line-height:1.5}
-#broto .b-result-badge{max-width:620px;margin:10px auto;color:#375d3f;background:#eaf1df}
-#broto .b-result-flower{width:54px;height:54px;display:flex;align-items:center;justify-content:center;flex:0 0 54px}
-#broto .b-result-flower svg{width:46px;height:46px;max-height:none}
-#broto #b-result>p{text-align:center;margin:8px auto;max-width:620px}
-#broto .level-actions{display:flex;justify-content:center;gap:10px;flex-wrap:wrap;margin:0;padding:8px 0;background:transparent;border:0;min-height:0}
-#broto .rules-sidebar{grid-column:1;position:static;max-height:none;overflow:visible;background:#f8f9f3;border-top:0;min-width:0}
-#broto .rules-more{margin-top:12px}
-#broto .b-example-grid{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:4px;max-width:260px;margin:10px 0}
-#broto .b-example-grid>span{aspect-ratio:1;border:1px solid #d4ddc6;border-radius:8px;background:#fff;padding:2px}
-#broto .b-example-grid .b-owner-symbol{font-size:9px}
-#broto .b-example-grid .b-axes>span{width:18px;height:17px;font-size:14px}
-#broto .b-example-grid .b-sprout{min-height:20px}
-#broto [hidden]{display:none!important}
-@keyframes broto-ray{to{stroke-dashoffset:0}}
-@keyframes broto-flower{from{transform:scale(.7)}to{transform:scale(1)}}
-@media(max-width:500px){#broto .b-lab,#broto .b-selection{padding:16px 10px}#broto .b-surface{padding:8px 0}#broto .b-score{gap:8px}#broto .b-player{padding:8px}#broto .b-player-name{font-size:12px}#broto .b-avatar{width:27px;height:27px;flex-basis:27px}#broto .b-score-main>strong{font-size:27px}#broto .b-score-main>span{font-size:10px}#broto .b-score-details{font-size:11px;gap:5px}#broto .b-round{font-size:14px}#broto .b-turn{font-size:13px}#broto .b-board-wrap{padding:5px}#broto .b-board{gap:4px}#broto .b-axes{gap:3px}#broto .b-axes>span{width:20px;height:18px;font-size:16px}#broto .b-status{font-size:12px;min-height:54px}#broto .stage-tools{gap:12px}}
-@media(prefers-reduced-motion:reduce){#broto *,#broto *::before,#broto *::after{animation:none!important;transition:none!important}}
-
-/* A geometria muda; o jardim clássico mantém seus tamanhos originais. */
-#broto .b-map-setup{margin:16px 0;padding:12px;border:1px solid #d5dfca;border-radius:14px;background:#f4f7ee;max-width:none;width:100%;box-sizing:border-box}
-#broto #b-map-preview{display:flex;align-items:center;gap:14px;margin-top:12px}
-#broto #b-map-preview>p{font-size:13px;line-height:1.5;margin:0;flex:1;min-width:0}
-#broto .b-map-mini{display:grid;grid-template-columns:repeat(var(--b-map-cols),1fr);gap:3px;width:96px;flex:0 0 96px}
-#broto .b-map-mini>span{aspect-ratio:1;border-radius:3px}
-#broto .b-map-ground{background:#edf2e3;border:1px solid #b9c8a6}
-#broto .b-map-wall,#broto .b-wall{background:repeating-linear-gradient(135deg,#ccd1bd 0 6px,#b4bea4 6px 8px);border:1px solid #8d9c7c}
-#broto .b-outside,#broto .b-wall{aspect-ratio:1;min-width:0;border-radius:10px;box-sizing:border-box}
-#broto .b-outside,#broto .b-map-outside{visibility:hidden;pointer-events:none}
-#broto .b-dense .b-cell{min-height:44px}
-#broto .b-dense .b-axes{gap:2px;margin-top:1px}
-#broto .b-dense .b-axes>span{width:16px;height:15px;font-size:13px}
-#broto .b-dense .b-sprout,#broto .b-dense .b-flower{min-height:18px;max-height:31px}
-#broto .b-dense .b-owner-symbol{font-size:9px;right:1px}
-@media(max-width:360px){#broto .b-board-wrap:has(.b-dense){padding:3px}#broto .b-dense{gap:3px}#broto #b-map-preview{gap:10px}#broto .b-map-mini{width:80px;flex-basis:80px}}
-
-/* Escolha compacta por cartões; os controles de preparação continuam no mesmo bloco. */
-#broto .b-map-setup>h3{font-size:15px;line-height:1.3;margin:0 0 10px}
-#broto .b-map-cards{display:grid;grid-template-columns:repeat(auto-fit,minmax(125px,1fr));gap:8px;min-width:0}
-#broto .b-map-cards>button{display:flex;flex-direction:column;align-items:center;justify-content:flex-start;gap:6px;min-width:0;min-height:44px;padding:9px 6px 7px;border:1px solid #c4cfb7;border-radius:14px;background:#fff;color:#354d32;text-align:center;box-shadow:none;cursor:pointer}
-#broto .b-map-cards>button:hover{background:#f1f6e9;border-color:#79966a}
-#broto .b-map-cards>button[aria-pressed="true"]{background:#e8f0dd;border:2px solid #42673a;padding:8px 5px 6px;box-shadow:0 0 0 1px #e8f0dd}
-#broto .b-map-cards>button:focus-visible{outline:3px solid #42673a;outline-offset:3px}
-#broto .b-map-cards strong{display:block;font-size:12px;line-height:1.3;min-height:31px;max-width:100%;overflow-wrap:anywhere}
-#broto .b-map-choice{font-size:10px;line-height:1.3;white-space:nowrap;color:#5c7150}
-#broto .b-map-cards>button[aria-pressed="true"] .b-map-choice{font-weight:800;color:#315e35}
-#broto .b-map-cards .b-map-mini{width:72px;height:72px;flex:0 0 72px;grid-row:auto;gap:2px;pointer-events:none}
-#broto .b-map-cards .b-map-mini>span{min-width:0;font-size:8px;line-height:1}
-#broto #b-map-preview{display:block;margin-top:12px}
-#broto #b-map-preview p{margin:0;font-size:13px;line-height:1.5}
-#broto #b-map-preview small{display:block;margin-top:5px}
-@media(max-width:600px){#broto .b-map-cards{grid-template-columns:repeat(2,minmax(0,1fr))}}
-/* A preparação permanece no lugar e cabe na largura útil, incluindo a barra de rolagem. */
-#broto .b-selection .collection-toolbar>label{min-width:0;max-width:100%}
-#broto .b-selection #b-mode{min-width:0;max-width:100%;box-sizing:border-box}
-
-/* Moldura da área jogável, com o mesmo contorno discreto de Repasse. */
-#broto .b-surface{border-radius:18px;outline:2px solid #b3c1a8;outline-offset:-1px;padding:16px 14px;overflow:visible}
-@media(max-width:500px){#broto .b-surface{padding:12px 8px}}
-/* Em telas estreitas, reutiliza a margem externa para manter alvos confortáveis. */
-@media(max-width:360px){#broto .b-lab{padding-inline:3px}}
-
-/* O resultado final divide o centro com o tabuleiro, sem coluna vazia durante a partida. */
-#broto .b-surface{container-type:inline-size}
-#broto .b-duel-layout{width:100%;max-width:620px;margin:0 auto;display:grid;grid-template-columns:minmax(0,1fr);gap:0;align-items:center}
-#broto .b-play-column{min-width:0}
-#broto #b-result:empty{display:none}
-#broto .has-duel-result #b-result{min-width:0;width:100%;margin:12px auto 0}
-#broto .has-duel-result #b-result .level-actions{gap:10px}
-#broto .has-duel-result #b-result .level-actions>button{max-width:100%;white-space:normal}
-@container(min-width:714px){
- #broto .b-duel-layout.has-duel-result{max-width:714px;grid-template-columns:minmax(0,390px) minmax(0,300px);gap:24px}
- #broto .has-duel-result #b-result{margin:0}
+#broto .b-lab,#broto .b-selection {
+  padding: 20px 22px;
+  background: #f8f9f3;
 }
-#broto .has-duel-result #b-result .versus-victory{flex-direction:column;gap:10px;text-align:center}
-#broto .has-duel-result #b-result .vv-emblem{flex-basis:auto}
-#broto .has-duel-result #b-result .vv-copy{width:100%}
-
+#broto .b-tagline {
+  margin: 4px 0 10px;
+  color: #52634e;
+  font-size: 16px;
+}
+#broto .lab-heading {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  margin: 12px 0;
+}
+#broto .b-round {
+  font-size: 16px;
+  font-weight: 750;
+  white-space: nowrap;
+}
+#broto .b-workspace {
+  display: grid!important;
+  grid-template-columns: minmax(0,1fr)!important;
+  gap: 12px;
+  align-items: start;
+}
+#broto .b-surface {
+  padding: 10px 12px;
+  background: #f8f9f3;
+  background-image: none;
+  min-width: 0;
+  border: 0;
+  box-shadow: none;
+}
+#broto .stage-tools {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 14px;
+  margin: 0 0 24px;
+}
+#broto .stage-tools>button,#broto .stage-tools summary {
+  min-height: 44px;
+}
+#broto .b-score {
+  display: grid;
+  grid-template-columns: repeat(2,minmax(0,1fr));
+  gap: 10px;
+  max-width: 600px;
+  margin: 0 auto;
+}
+#broto .b-owner-0 {
+  --b-ink:#376840;
+  --b-soft:#e5efd8;
+  --b-edge:#a9c192;
+}
+#broto .b-owner-1 {
+  --b-ink:#76529b;
+  --b-soft:#eee5f6;
+  --b-edge:#c6b0e4;
+}
+#broto .b-player {
+  border: 1px solid var(--b-edge);
+  border-radius: 15px;
+  padding: 9px 12px;
+  background: var(--b-soft);
+  color: var(--b-ink);
+}
+#broto .b-player.b-current {
+  outline: 2px solid var(--b-ink);
+  outline-offset: 2px;
+}
+#broto .b-player-name {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+  font-size: 13px;
+}
+#broto .b-avatar {
+  display: inline-block;
+  flex: 0 0 32px;
+  width: 32px;
+  height: 32px;
+  background-repeat: no-repeat;
+  image-rendering: pixelated;
+}
+#broto .b-score-main {
+  display: flex;
+  align-items: baseline;
+  gap: 7px;
+  margin: 0 0 5px;
+}
+#broto .b-score-main>strong {
+  font-size: 30px;
+  line-height: 1;
+  font-variant-numeric: tabular-nums;
+}
+#broto .b-score-main>span {
+  font-size: 11px;
+}
+#broto .b-score-details {
+  display: flex;
+  justify-content: space-between;
+  gap: 8px;
+  font-size: 12px;
+  flex-wrap: wrap;
+}
+#broto .b-turn {
+  text-align: center;
+  font-weight: 700;
+  margin: 13px 0 10px;
+  line-height: 1.4;
+}
+#broto .b-board-wrap {
+  width: min(100%,344px);
+  margin: 0 auto;
+  padding: 6px;
+  border: 1px solid #b8c3ad;
+  border-radius: 17px;
+  background: #fff;
+}
+#broto .b-board {
+  display: grid;
+  grid-template-columns: repeat(var(--b-cols,4),minmax(0,1fr));
+  gap: 5px;
+  position: relative;
+  isolation: isolate;
+}
+#broto .b-cell {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  aspect-ratio: 1;
+  min-height: 0;
+  min-width: 0;
+  width: 100%;
+  padding: 2px;
+  border: 1px solid #d8dece;
+  border-radius: 10px;
+  background: #f8f9f3;
+  cursor: pointer;
+  box-shadow: none;
+  transform: none;
+  color: #425e3d;
+  touch-action: manipulation;
+}
+#broto .b-cell[aria-disabled="true"] {
+  cursor: default;
+  opacity: 1;
+}
+#broto .b-cell:focus-visible {
+  outline: 3px solid #334f30;
+  outline-offset: 2px;
+  z-index: 4;
+}
+#broto .b-cell.b-selected {
+  border: 2px solid #4b7344;
+  background: #edf3e5;
+}
+#broto .b-cell.b-receiver {
+  border-style: dashed;
+  border-color: #7e956c;
+}
+#broto .b-cell.b-will-bloom {
+  box-shadow: inset 0 0 0 2px #d9bc69;
+  background: #fff9e9;
+}
+#broto .b-empty {
+  font-size: 20px;
+  color: #b2bd9f;
+  line-height: 1;
+}
+#broto .b-piece {
+  color: var(--b-ink);
+  width: 100%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  position: relative;
+  z-index: 2;
+}
+#broto .b-sprout,#broto .b-flower {
+  width: 46%;
+  height: 47%;
+  max-height: 40px;
+  min-height: 23px;
+  display: block;
+  overflow: visible;
+}
+#broto .b-owner-symbol {
+  position: absolute;
+  right: 3px;
+  top: 1px;
+  font-size: 11px;
+  line-height: 1.3;
+}
+#broto .b-axes {
+  display: flex;
+  gap: 5px;
+  margin-top: 2px;
+}
+#broto .b-axes>span {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 17px;
+  font-weight: 750;
+  line-height: 1;
+  width: 23px;
+  height: 20px;
+  border: 1px solid #b8c2ae;
+  border-radius: 5px;
+  color: #66725c;
+  background: #fff;
+}
+#broto .b-axes>.received {
+  background: var(--b-ink);
+  border-color: var(--b-ink);
+  color: #fff;
+}
+#broto .b-ghost {
+  opacity: .52;
+}
+#broto .b-rays {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+  z-index: 1;
+  overflow: visible;
+}
+#broto .b-rays line {
+  stroke: #79965e;
+  stroke-width: 3;
+  stroke-linecap: round;
+  stroke-dasharray: 5 7;
+  opacity: .65;
+}
+#broto .b-rays.b-phase-0 line {
+  stroke-dasharray: 400;
+  stroke-dashoffset: 400;
+  animation: broto-ray .24s .08s ease-out forwards;
+}
+#broto .b-rays.b-phase-2 {
+  opacity: .3;
+}
+#broto .b-flowering .b-flower {
+  animation: broto-flower .25s ease-out both;
+}
+#broto .b-check {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 10px;
+  padding: 12px 0 4px;
+  background: transparent;
+  border: 0;
+  min-height: 56px;
+}
+#broto .b-check>button {
+  min-height: 44px;
+}
+#broto .b-status {
+  margin: 4px auto 0;
+  min-height: 44px;
+  max-width: 620px;
+  text-align: center;
+  font-size: 13px;
+  line-height: 1.5;
+}
+#broto .b-result-badge {
+  max-width: 620px;
+  margin: 10px auto;
+  color: #375d3f;
+  background: #eaf1df;
+}
+#broto .b-result-flower {
+  width: 54px;
+  height: 54px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex: 0 0 54px;
+}
+#broto .b-result-flower svg {
+  width: 46px;
+  height: 46px;
+  max-height: none;
+}
+#broto #b-result>p {
+  text-align: center;
+  margin: 8px auto;
+  max-width: 620px;
+}
+#broto .level-actions {
+  display: flex;
+  justify-content: center;
+  gap: 10px;
+  flex-wrap: wrap;
+  margin: 0;
+  padding: 8px 0;
+  background: transparent;
+  border: 0;
+  min-height: 0;
+}
+#broto .rules-sidebar {
+  grid-column: 1;
+  position: static;
+  max-height: none;
+  overflow: visible;
+  background: #f8f9f3;
+  border-top: 0;
+  min-width: 0;
+}
+#broto .rules-more {
+  margin-top: 12px;
+}
+#broto .b-example-grid {
+  display: grid;
+  grid-template-columns: repeat(4,minmax(0,1fr));
+  gap: 4px;
+  max-width: 260px;
+  margin: 10px 0;
+}
+#broto .b-example-grid>span {
+  aspect-ratio: 1;
+  border: 1px solid #d4ddc6;
+  border-radius: 8px;
+  background: #fff;
+  padding: 2px;
+}
+#broto .b-example-grid .b-owner-symbol {
+  font-size: 9px;
+}
+#broto .b-example-grid .b-axes>span {
+  width: 18px;
+  height: 17px;
+  font-size: 14px;
+}
+#broto .b-example-grid .b-sprout {
+  min-height: 20px;
+}
+#broto [hidden] {
+  display: none!important;
+}
+@keyframes broto-ray {
+  to {
+    stroke-dashoffset: 0;
+  }
+}
+@keyframes broto-flower {
+  from {
+    transform: scale(.7);
+  }
+  to {
+    transform: scale(1);
+  }
+}
+@media(max-width:500px) {
+  #broto .b-lab,#broto .b-selection {
+    padding: 16px 10px;
+  }
+  #broto .b-surface {
+    padding: 8px 0;
+  }
+  #broto .b-score {
+    gap: 8px;
+  }
+  #broto .b-player {
+    padding: 8px;
+  }
+  #broto .b-player-name {
+    font-size: 12px;
+  }
+  #broto .b-avatar {
+    width: 27px;
+    height: 27px;
+    flex-basis: 27px;
+  }
+  #broto .b-score-main>strong {
+    font-size: 27px;
+  }
+  #broto .b-score-main>span {
+    font-size: 10px;
+  }
+  #broto .b-score-details {
+    font-size: 11px;
+    gap: 5px;
+  }
+  #broto .b-round {
+    font-size: 14px;
+  }
+  #broto .b-turn {
+    font-size: 13px;
+  }
+  #broto .b-board-wrap {
+    padding: 5px;
+  }
+  #broto .b-board {
+    gap: 4px;
+  }
+  #broto .b-axes {
+    gap: 3px;
+  }
+  #broto .b-axes>span {
+    width: 20px;
+    height: 18px;
+    font-size: 16px;
+  }
+  #broto .b-status {
+    font-size: 12px;
+    min-height: 54px;
+  }
+  #broto .stage-tools {
+    gap: 12px;
+  }
+}
+@media(prefers-reduced-motion:reduce) {
+  #broto *,#broto *::before,#broto *::after {
+    animation: none!important;
+    transition: none!important;
+  }
+}
+/* A geometria muda; o jardim clássico mantém seus tamanhos originais. */
+#broto .b-map-setup {
+  margin: 16px 0;
+  padding: 12px;
+  border: 1px solid #d5dfca;
+  border-radius: 14px;
+  background: #f4f7ee;
+  max-width: none;
+  width: 100%;
+  box-sizing: border-box;
+}
+#broto #b-map-preview {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  margin-top: 12px;
+}
+#broto #b-map-preview>p {
+  font-size: 13px;
+  line-height: 1.5;
+  margin: 0;
+  flex: 1;
+  min-width: 0;
+}
+#broto .b-map-mini {
+  display: grid;
+  grid-template-columns: repeat(var(--b-map-cols),1fr);
+  gap: 3px;
+  width: 96px;
+  flex: 0 0 96px;
+}
+#broto .b-map-mini>span {
+  aspect-ratio: 1;
+  border-radius: 3px;
+}
+#broto .b-map-ground {
+  background: #edf2e3;
+  border: 1px solid #b9c8a6;
+}
+#broto .b-map-wall,#broto .b-wall {
+  background: repeating-linear-gradient(135deg,#ccd1bd 0 6px,#b4bea4 6px 8px);
+  border: 1px solid #8d9c7c;
+}
+#broto .b-outside,#broto .b-wall {
+  aspect-ratio: 1;
+  min-width: 0;
+  border-radius: 10px;
+  box-sizing: border-box;
+}
+#broto .b-outside,#broto .b-map-outside {
+  visibility: hidden;
+  pointer-events: none;
+}
+#broto .b-dense .b-cell {
+  min-height: 44px;
+}
+#broto .b-dense .b-axes {
+  gap: 2px;
+  margin-top: 1px;
+}
+#broto .b-dense .b-axes>span {
+  width: 16px;
+  height: 15px;
+  font-size: 13px;
+}
+#broto .b-dense .b-sprout,#broto .b-dense .b-flower {
+  min-height: 18px;
+  max-height: 31px;
+}
+#broto .b-dense .b-owner-symbol {
+  font-size: 9px;
+  right: 1px;
+}
+@media(max-width:360px) {
+  #broto .b-board-wrap:has(.b-dense) {
+    padding: 3px;
+  }
+  #broto .b-dense {
+    gap: 3px;
+  }
+  #broto #b-map-preview {
+    gap: 10px;
+  }
+  #broto .b-map-mini {
+    width: 80px;
+    flex-basis: 80px;
+  }
+}
+/* Escolha compacta por cartões; os controles de preparação continuam no mesmo bloco. */
+#broto .b-map-setup>h3 {
+  font-size: 15px;
+  line-height: 1.3;
+  margin: 0 0 10px;
+}
+#broto .b-map-cards {
+  display: grid;
+  grid-template-columns: repeat(auto-fit,minmax(125px,1fr));
+  gap: 8px;
+  min-width: 0;
+}
+#broto .b-map-cards>button {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-start;
+  gap: 6px;
+  min-width: 0;
+  min-height: 44px;
+  padding: 9px 6px 7px;
+  border: 1px solid #c4cfb7;
+  border-radius: 14px;
+  background: #fff;
+  color: #354d32;
+  text-align: center;
+  box-shadow: none;
+  cursor: pointer;
+}
+#broto .b-map-cards>button:hover {
+  background: #f1f6e9;
+  border-color: #79966a;
+}
+#broto .b-map-cards>button[aria-pressed="true"] {
+  background: #e8f0dd;
+  border: 2px solid #42673a;
+  padding: 8px 5px 6px;
+  box-shadow: 0 0 0 1px #e8f0dd;
+}
+#broto .b-map-cards>button:focus-visible {
+  outline: 3px solid #42673a;
+  outline-offset: 3px;
+}
+#broto .b-map-cards strong {
+  display: block;
+  font-size: 12px;
+  line-height: 1.3;
+  min-height: 31px;
+  max-width: 100%;
+  overflow-wrap: anywhere;
+}
+#broto .b-map-choice {
+  font-size: 10px;
+  line-height: 1.3;
+  white-space: nowrap;
+  color: #5c7150;
+}
+#broto .b-map-cards>button[aria-pressed="true"] .b-map-choice {
+  font-weight: 800;
+  color: #315e35;
+}
+#broto .b-map-cards .b-map-mini {
+  width: 72px;
+  height: 72px;
+  flex: 0 0 72px;
+  grid-row: auto;
+  gap: 2px;
+  pointer-events: none;
+}
+#broto .b-map-cards .b-map-mini>span {
+  min-width: 0;
+  font-size: 8px;
+  line-height: 1;
+}
+#broto #b-map-preview {
+  display: block;
+  margin-top: 12px;
+}
+#broto #b-map-preview p {
+  margin: 0;
+  font-size: 13px;
+  line-height: 1.5;
+}
+#broto #b-map-preview small {
+  display: block;
+  margin-top: 5px;
+}
+@media(max-width:600px) {
+  #broto .b-map-cards {
+    grid-template-columns: repeat(2,minmax(0,1fr));
+  }
+}
+/* A preparação permanece no lugar e cabe na largura útil, incluindo a barra de rolagem. */
+#broto .b-selection .collection-toolbar>label {
+  min-width: 0;
+  max-width: 100%;
+}
+#broto .b-selection #b-mode {
+  min-width: 0;
+  max-width: 100%;
+  box-sizing: border-box;
+}
+/* Moldura da área jogável, com o mesmo contorno discreto de Repasse. */
+#broto .b-surface {
+  border-radius: 18px;
+  outline: 2px solid #b3c1a8;
+  outline-offset: -1px;
+  padding: 16px 14px;
+  overflow: visible;
+}
+@media(max-width:500px) {
+  #broto .b-surface {
+    padding: 12px 8px;
+  }
+}
+/* Em telas estreitas, reutiliza a margem externa para manter alvos confortáveis. */
+@media(max-width:360px) {
+  #broto .b-lab {
+    padding-inline: 3px;
+  }
+}
+/* O resultado final divide o centro com o tabuleiro, sem coluna vazia durante a partida. */
+#broto .b-surface {
+  container-type: inline-size;
+}
+#broto .b-duel-layout {
+  width: 100%;
+  max-width: 620px;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: minmax(0,1fr);
+  gap: 0;
+  align-items: center;
+}
+#broto .b-play-column {
+  min-width: 0;
+}
+#broto #b-result:empty {
+  display: none;
+}
+#broto .has-duel-result #b-result {
+  min-width: 0;
+  width: 100%;
+  margin: 12px auto 0;
+}
+#broto .has-duel-result #b-result .level-actions {
+  gap: 10px;
+}
+#broto .has-duel-result #b-result .level-actions>button {
+  max-width: 100%;
+  white-space: normal;
+}
+@container(min-width:714px) {
+  #broto .b-duel-layout.has-duel-result {
+    max-width: 714px;
+    grid-template-columns: minmax(0,390px) minmax(0,300px);
+    gap: 24px;
+  }
+  #broto .has-duel-result #b-result {
+    margin: 0;
+  }
+}
+#broto .has-duel-result #b-result .versus-victory {
+  flex-direction: column;
+  gap: 10px;
+  text-align: center;
+}
+#broto .has-duel-result #b-result .vv-emblem {
+  flex-basis: auto;
+}
+#broto .has-duel-result #b-result .vv-copy {
+  width: 100%;
+}
 /* A retomada é opcional e fica abaixo de todas as escolhas de preparação. */
-#broto .b-resume-panel{margin-top:20px;padding:14px 16px;border:1px solid #c5d0ba;border-radius:14px;background:#f8faf4;max-width:560px}
-#broto .b-resume-panel p{margin:0 0 10px;color:#52634e;font-size:14px;line-height:1.5}
-#broto .b-resume-panel button{min-height:44px;max-width:100%;white-space:normal;text-align:center}
-@media(max-width:500px){#broto .b-resume-panel{padding:12px}#broto .b-resume-panel button{width:100%;font-size:13px}}
-
+#broto .b-resume-panel {
+  margin-top: 20px;
+  padding: 14px 16px;
+  border: 1px solid #c5d0ba;
+  border-radius: 14px;
+  background: #f8faf4;
+  max-width: 560px;
+}
+#broto .b-resume-panel p {
+  margin: 0 0 10px;
+  color: #52634e;
+  font-size: 14px;
+  line-height: 1.5;
+}
+#broto .b-resume-panel button {
+  min-height: 44px;
+  max-width: 100%;
+  white-space: normal;
+  text-align: center;
+}
+@media(max-width:500px) {
+  #broto .b-resume-panel {
+    padding: 12px;
+  }
+  #broto .b-resume-panel button {
+    width: 100%;
+    font-size: 13px;
+  }
+}
 /* A passagem de rodada pertence à moldura do jardim, junto às casas. */
-#broto .b-round-result:not([hidden]){display:grid;gap:10px;padding:12px 6px 6px;margin-top:12px;border-top:1px solid #d8e0cf;text-align:center;min-width:0}
-#broto .b-round-result p{margin:0;color:#43593b;font-size:14px;line-height:1.5;overflow-wrap:anywhere}
-#broto .b-round-result .level-actions{padding:0}
-#broto .b-round-result button{min-height:44px;max-width:100%;white-space:normal}
+#broto .b-round-result:not([hidden]) {
+  display: grid;
+  gap: 10px;
+  padding: 12px 6px 6px;
+  margin-top: 12px;
+  border-top: 1px solid #d8e0cf;
+  text-align: center;
+  min-width: 0;
+}
+#broto .b-round-result p {
+  margin: 0;
+  color: #43593b;
+  font-size: 14px;
+  line-height: 1.5;
+  overflow-wrap: anywhere;
+}
+#broto .b-round-result .level-actions {
+  padding: 0;
+}
+#broto .b-round-result button {
+  min-height: 44px;
+  max-width: 100%;
+  white-space: normal;
+}

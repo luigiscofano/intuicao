@@ -1,41 +1,131 @@
+// Testes e verificações de ELO.
 import assert from 'node:assert/strict';
 import fs from 'node:fs';
-import {createHash} from 'node:crypto';
-import {ELO_CAMPAIGN as levels} from '../dist/elo-campaign.mjs';
-import {ELO_CAMPAIGN_ANSWERS as answers} from '../dist/elo-campaign-answers.mjs';
-import {GEOMETRY_LEVELS} from '../dist/geometry-levels.mjs';
-import {GEOMETRY_ANSWERS} from '../dist/geometry-answers.mjs';
-import {validateElo,eloEdges,analyzeEloLocal} from '../dist/elo-rules.mjs';
-import {canonical,validConstraints,families} from './elo-campaign-build.mjs';
-import {levelHash,reasoningEngineHash,reasoningMethodVersion} from './elo-campaign-reasoning.mjs';
-const sha=x=>createHash('sha256').update(x).digest('hex');
-const certificates=JSON.parse(fs.readFileSync(new URL('./elo-campaign-certificates.json',import.meta.url))).levels;
-const audit=JSON.parse(fs.readFileSync(new URL('./elo-campaign-audit.json',import.meta.url)));
-assert.equal(levels.length,200);assert.equal(new Set(levels.map(l=>l.id)).size,200);assert.equal(Object.keys(answers).length,200);
-assert.deepEqual(GEOMETRY_LEVELS.elo,levels);
-assert.equal(sha(JSON.stringify(GEOMETRY_LEVELS.prumo)),'712fdd4fd8f5f7c31cbcffbadf402fa6a345f1ad32fe89200032efb419bd45b1');
-assert.equal(sha(JSON.stringify(Object.fromEntries(Object.entries(GEOMETRY_ANSWERS).filter(([k])=>k.startsWith('prumo'))))),'4772c04d6e6902f5179c596e1e2e5f04d7596a0b9e7c5ab539fca3aea82a84d9');
-const baseline=JSON.parse(fs.readFileSync(new URL('./elo-v3-baseline-sha256.json',import.meta.url))).sha256;
-for(const name of ['geometry-levels.mjs','geometry-answers.mjs']){const full=fs.readFileSync(new URL('../dist/'+name,import.meta.url),'utf8'),boundary=full.indexOf('\n// ELO v3 campaign overlay:');assert.ok(boundary>=0);assert.equal(sha(full.slice(0,boundary)),baseline['dist/'+name],'Original bytes changed in '+name);}
-for(let stage=1;stage<=10;stage++)assert.equal(levels.filter(l=>l.stage===stage).length,20);
-const compact=levels.filter(l=>l.rows<=6&&l.cols<=6),large=levels.filter(l=>l.rows>=10&&l.cols>=10);assert.ok(compact.length>=60);assert.ok(large.length>=40);assert.ok(compact.filter(l=>l.campaignNumber>80).length>=30);
-assert.equal(new Set(levels.map(canonical)).size,200,'Rotation/reflection-equivalent region layout');
-for(const [i,l]of levels.entries()){
- assert.equal(l.campaignNumber,i+1);assert.equal(l.stage,Math.floor(i/20)+1);assert.ok(l.stageName&&l.logicIdea&&l.reasoningTrace&&l.difficulty);
- assert.equal(l.uniqueness.status,'unique');assert.equal(l.uniqueness.count,1);assert.equal(l.uniqueness.exhaustive,true);
- const p=answers[l.id],v=validateElo(l,p);assert.ok(v.complete,l.id+': '+JSON.stringify(v.violations));assert.ok(validConstraints(l,p,true));assert.deepEqual(p,GEOMETRY_ANSWERS[l.id]);
- assert.equal(p.length,Math.max(...l.regions)+1);assert.equal(new Set(p).size,p.length);p.forEach((c,r)=>assert.equal(l.regions[c],r));
- for(const[r,c]of Object.entries(l.fixed||{}))assert.equal(p[r],c);
- const banned=[...(l.constraints?.passages||[]),...(l.constraints?.exclusivePassages||[]).flatMap(g=>g.cells)];assert.ok(!banned.some(c=>p.includes(c)));
- for(const cut of l.constraints?.cuts||[])assert.equal(cut.count%2,0,'Odd crossing count');
- if(l.constraints?.order)assert.ok(l.constraints.order.length>=4);
- for(const e of l.constraints?.forbiddenEdges||[])assert.equal(Math.abs(e[0]%l.cols-e[1]%l.cols)+Math.abs(Math.floor(e[0]/l.cols)-Math.floor(e[1]/l.cols)),1);
- const proof=certificates[l.id];assert.ok(proof?.solved&&!proof.limited&&!proof.contradiction,l.id+' missing complete proof');assert.equal(proof.levelHash,levelHash(l));assert.equal(proof.engineHash,reasoningEngineHash);assert.equal(proof.methodVersion,reasoningMethodVersion);assert.deepEqual(proof.remainingDomains.map(d=>{assert.equal(d.length,1);return d[0]}),p);
- assert.equal(l.reasoningTrace.status,'complete');assert.equal(l.reasoningTrace.levelHash,levelHash(l));
- if(l.stage>1&&l.mechanics.length>1)assert.ok(l.mechanics.includes(families[l.stage-1]));
- l.mechanics.forEach(m=>assert.ok(families.indexOf(m)<l.stage,'Future mechanic at '+l.id));
- if(l.campaignNumber>20)assert.ok(Object.keys(l.fixed||{}).length<p.length/2,'Too many fixed points at '+l.id);
- const local=analyzeEloLocal(l,{}, {maxMs:Infinity,maxOperations:Infinity});assert.equal(local.contradiction,false);p.forEach((c,r)=>assert.ok(local.candidates[r].includes(c)));
+import { createHash } from 'node:crypto';
+import { ELO_CAMPAIGN as levels } from '../dist/elo-campaign.mjs';
+import { ELO_CAMPAIGN_ANSWERS as answers } from '../dist/elo-campaign-answers.mjs';
+import { GEOMETRY_LEVELS } from '../dist/geometry-levels.mjs';
+import { GEOMETRY_ANSWERS } from '../dist/geometry-answers.mjs';
+import { validateElo, eloEdges, analyzeEloLocal } from '../dist/elo-rules.mjs';
+import { canonical, validConstraints, families } from './elo-campaign-build.mjs';
+import {
+  levelHash,
+  reasoningEngineHash,
+  reasoningMethodVersion,
+} from './elo-campaign-reasoning.mjs';
+const sha = (x) => createHash('sha256').update(x).digest('hex');
+const certificates = JSON.parse(
+  fs.readFileSync(new URL('./elo-campaign-certificates.json', import.meta.url)),
+).levels;
+const audit = JSON.parse(fs.readFileSync(new URL('./elo-campaign-audit.json', import.meta.url)));
+assert.equal(levels.length, 200);
+assert.equal(new Set(levels.map((l) => l.id)).size, 200);
+assert.equal(Object.keys(answers).length, 200);
+assert.deepEqual(GEOMETRY_LEVELS.elo, levels);
+assert.equal(
+  sha(JSON.stringify(GEOMETRY_LEVELS.prumo)),
+  '712fdd4fd8f5f7c31cbcffbadf402fa6a345f1ad32fe89200032efb419bd45b1',
+);
+assert.equal(
+  sha(
+    JSON.stringify(
+      Object.fromEntries(Object.entries(GEOMETRY_ANSWERS).filter(([k]) => k.startsWith('prumo'))),
+    ),
+  ),
+  '4772c04d6e6902f5179c596e1e2e5f04d7596a0b9e7c5ab539fca3aea82a84d9',
+);
+const baseline = JSON.parse(
+  fs.readFileSync(new URL('./elo-v3-baseline-sha256.json', import.meta.url)),
+).sha256;
+for (const name of ['geometry-levels.mjs', 'geometry-answers.mjs']) {
+  const full = fs.readFileSync(new URL('../dist/' + name, import.meta.url), 'utf8'),
+    boundary = full.indexOf('\n// ELO v3 campaign overlay:');
+  assert.ok(boundary >= 0);
+  assert.equal(
+    sha(full.slice(0, boundary)),
+    baseline['dist/' + name],
+    'Original bytes changed in ' + name,
+  );
 }
-assert.equal(audit.summary.total,200);assert.equal(audit.summary.completeReasoningCertificates,200);assert.equal(audit.summary.partialReasoningCertificates,0);
-console.log(JSON.stringify({passed:true,levels:200,completeCertificates:200,compact:compact.length,large:large.length,prumoData:'unchanged',legacyBytes:'unchanged'}));
+for (let stage = 1; stage <= 10; stage++)
+  assert.equal(levels.filter((l) => l.stage === stage).length, 20);
+const compact = levels.filter((l) => l.rows <= 6 && l.cols <= 6),
+  large = levels.filter((l) => l.rows >= 10 && l.cols >= 10);
+assert.ok(compact.length >= 60);
+assert.ok(large.length >= 40);
+assert.ok(compact.filter((l) => l.campaignNumber > 80).length >= 30);
+assert.equal(
+  new Set(levels.map(canonical)).size,
+  200,
+  'Rotation/reflection-equivalent region layout',
+);
+for (const [i, l] of levels.entries()) {
+  assert.equal(l.campaignNumber, i + 1);
+  assert.equal(l.stage, Math.floor(i / 20) + 1);
+  assert.ok(l.stageName && l.logicIdea && l.reasoningTrace && l.difficulty);
+  assert.equal(l.uniqueness.status, 'unique');
+  assert.equal(l.uniqueness.count, 1);
+  assert.equal(l.uniqueness.exhaustive, true);
+  const p = answers[l.id],
+    v = validateElo(l, p);
+  assert.ok(v.complete, l.id + ': ' + JSON.stringify(v.violations));
+  assert.ok(validConstraints(l, p, true));
+  assert.deepEqual(p, GEOMETRY_ANSWERS[l.id]);
+  assert.equal(p.length, Math.max(...l.regions) + 1);
+  assert.equal(new Set(p).size, p.length);
+  p.forEach((c, r) => assert.equal(l.regions[c], r));
+  for (const [r, c] of Object.entries(l.fixed || {})) assert.equal(p[r], c);
+  const banned = [
+    ...(l.constraints?.passages || []),
+    ...(l.constraints?.exclusivePassages || []).flatMap((g) => g.cells),
+  ];
+  assert.ok(!banned.some((c) => p.includes(c)));
+  for (const cut of l.constraints?.cuts || []) assert.equal(cut.count % 2, 0, 'Odd crossing count');
+  if (l.constraints?.order) assert.ok(l.constraints.order.length >= 4);
+  for (const e of l.constraints?.forbiddenEdges || [])
+    assert.equal(
+      Math.abs((e[0] % l.cols) - (e[1] % l.cols)) +
+        Math.abs(Math.floor(e[0] / l.cols) - Math.floor(e[1] / l.cols)),
+      1,
+    );
+  const proof = certificates[l.id];
+  assert.ok(
+    proof?.solved && !proof.limited && !proof.contradiction,
+    l.id + ' missing complete proof',
+  );
+  assert.equal(proof.levelHash, levelHash(l));
+  assert.equal(proof.engineHash, reasoningEngineHash);
+  assert.equal(proof.methodVersion, reasoningMethodVersion);
+  assert.deepEqual(
+    proof.remainingDomains.map((d) => {
+      assert.equal(d.length, 1);
+      return d[0];
+    }),
+    p,
+  );
+  assert.equal(l.reasoningTrace.status, 'complete');
+  assert.equal(l.reasoningTrace.levelHash, levelHash(l));
+  if (l.stage > 1 && l.mechanics.length > 1) assert.ok(l.mechanics.includes(families[l.stage - 1]));
+  l.mechanics.forEach((m) =>
+    assert.ok(families.indexOf(m) < l.stage, 'Future mechanic at ' + l.id),
+  );
+  if (l.campaignNumber > 20)
+    assert.ok(Object.keys(l.fixed || {}).length < p.length / 2, 'Too many fixed points at ' + l.id);
+  const local = analyzeEloLocal(l, {}, { maxMs: Infinity, maxOperations: Infinity });
+  assert.equal(local.contradiction, false);
+  p.forEach((c, r) => assert.ok(local.candidates[r].includes(c)));
+}
+assert.equal(audit.summary.total, 200);
+assert.equal(audit.summary.completeReasoningCertificates, 200);
+assert.equal(audit.summary.partialReasoningCertificates, 0);
+console.log(
+  JSON.stringify({
+    passed: true,
+    levels: 200,
+    completeCertificates: 200,
+    compact: compact.length,
+    large: large.length,
+    prumoData: 'unchanged',
+    legacyBytes: 'unchanged',
+  }),
+);

@@ -1,3 +1,4 @@
+// Confere a existência dos documentos e os destinos de seus links locais.
 import fs from 'node:fs';
 import path from 'node:path';
 import { fileURLToPath } from 'node:url';
@@ -9,7 +10,10 @@ const failures = [];
 let links = 0;
 for (const name of manifest.files) {
   const absolute = path.resolve(root, name);
-  if (!fs.existsSync(absolute)) { failures.push(`${name}: arquivo ausente`); continue; }
+  if (!fs.existsSync(absolute)) {
+    failures.push(`${name}: arquivo ausente`);
+    continue;
+  }
   const source = fs.readFileSync(absolute, 'utf8');
   // Blocos de código podem conter exemplos de Markdown que não são links da página.
   const prose = source.replace(/^```[^\n]*\n[\s\S]*?^```\s*$/gm, '');
@@ -19,7 +23,8 @@ for (const name of manifest.files) {
     const relative = decodeURIComponent(target.split('#')[0]);
     const resolved = path.resolve(path.dirname(absolute), relative);
     links++;
-    if (!resolved.startsWith(root + path.sep) && resolved !== root) failures.push(`${name}: link fora do repositório: ${target}`);
+    if (!resolved.startsWith(root + path.sep) && resolved !== root)
+      failures.push(`${name}: link fora do repositório: ${target}`);
     else if (!fs.existsSync(resolved)) failures.push(`${name}: link quebrado: ${target}`);
   }
 }

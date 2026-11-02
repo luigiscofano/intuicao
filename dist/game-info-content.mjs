@@ -1,5 +1,8 @@
+// Objetivos, descrições e orientações apresentados nos cartões dos jogos.
 // Textos de orientação baseados nas regras atuais dos jogos.
 // Os objetivos descrevem propostas de prática, não benefícios comprovados.
+// Dados materializados: valores e ordem preservados.
+// prettier-ignore
 export const GAME_INFO = {
   light: {
     name: 'Reflexos',
@@ -127,33 +130,36 @@ export const GAME_INFO = {
 };
 
 // BROTO is registered independently; the existing game descriptions are unchanged.
-GAME_INFO.broto={
- name:'BROTO',
- description:'Plante sementes, complete estímulos e escolha quem floresce.',
- summary:'Você planta. Mas quem floresce? Um duelo local para duas pessoas: cada plantio pode completar flores suas ou do adversário.',
- rules:[
-  'Plante uma semente em qualquer casa vazia do tabuleiro 4 × 4. Escolha a casa, observe a prévia e confirme a jogada.',
-  'A semente nova estimula somente o primeiro broto encontrado em cada direção horizontal e vertical, atravessando casas vazias. Não há estímulos diagonais nem devolução de estímulos.',
-  'Um broto floresce quando recebe os dois eixos: horizontal ↔ e vertical ↕. Repetir um eixo não substitui o outro. A flor vale um ponto para o dono da peça, mesmo quando o adversário a completa.',
-  'Todas as peças atingidas são determinadas antes da colheita. A peça colhida sai do tabuleiro; a passagem aberta só vale em jogadas futuras. Colher não devolve sementes.',
-  'Cada pessoa tem oito sementes por rodada. Depois dos dezesseis plantios, os brotos restantes não pontuam. O duelo tem duas rodadas, com iniciador alternado; vence quem somar mais flores. Totais iguais dão empate.'
- ],
- purpose:'Praticar antecipação e planejamento por turnos, acompanhando os efeitos imediatos de um plantio e as possibilidades que ele deixa para a próxima pessoa.',
- why:'A proposta é explorar decisões com consequências compartilhadas: uma semente pode preparar um broto próprio, completar uma flor adversária ou abrir passagem para uma jogada futura.'
+GAME_INFO.broto = {
+  name: 'BROTO',
+  description: 'Plante sementes, complete estímulos e escolha quem floresce.',
+  summary:
+    'Você planta. Mas quem floresce? Um duelo local para duas pessoas: cada plantio pode completar flores suas ou do adversário.',
+  rules: [
+    'Plante uma semente em qualquer casa vazia do tabuleiro 4 × 4. Escolha a casa, observe a prévia e confirme a jogada.',
+    'A semente nova estimula somente o primeiro broto encontrado em cada direção horizontal e vertical, atravessando casas vazias. Não há estímulos diagonais nem devolução de estímulos.',
+    'Um broto floresce quando recebe os dois eixos: horizontal ↔ e vertical ↕. Repetir um eixo não substitui o outro. A flor vale um ponto para o dono da peça, mesmo quando o adversário a completa.',
+    'Todas as peças atingidas são determinadas antes da colheita. A peça colhida sai do tabuleiro; a passagem aberta só vale em jogadas futuras. Colher não devolve sementes.',
+    'Cada pessoa tem oito sementes por rodada. Depois dos dezesseis plantios, os brotos restantes não pontuam. O duelo tem duas rodadas, com iniciador alternado; vence quem somar mais flores. Totais iguais dão empate.',
+  ],
+  purpose:
+    'Praticar antecipação e planejamento por turnos, acompanhando os efeitos imediatos de um plantio e as possibilidades que ele deixa para a próxima pessoa.',
+  why: 'A proposta é explorar decisões com consequências compartilhadas: uma semente pode preparar um broto próprio, completar uma flor adversária ou abrir passagem para uma jogada futura.',
 };
 
 // CERCO: conteúdo local, sem modificar as descrições dos jogos anteriores.
-GAME_INFO.cerco={
- name:'CERCO',
- description:'Mova suas peças, feche caminhos e deixe o adversário sem saída.',
- summary:'Faça a última jogada: quem ficar sem movimentos na sua vez perde.',
- rules:[
-  'Cada time controla três peças. Na preparação, escolha uma grade de 5 × 5 a 8 × 8, com sete mapas por tamanho. Escolha uma peça sua e mova exatamente uma casa para cima, baixo, esquerda ou direita, para um destino vazio e sem barreira.',
-  'Selecione a peça, escolha um destino, observe a prévia e confirme. A casa de origem vira uma barreira neutra e permanente para os dois times; só a origem fica bloqueada.',
-  'Não há diagonais, saltos, empurrões ou capturas. As seis peças permanecem no tabuleiro. Não é permitido passar a vez.',
-  'Depois de cada jogada, confira o próximo time: se nenhuma de suas três peças puder se mover, ele perde. Uma peça presa não encerra o jogo enquanto outra do mesmo time tiver uma saída.',
-  'O Verde começa a primeira partida. A revanche alterna o iniciador e mantém as equipes e os mascotes. Todos os mascotes têm exatamente os mesmos movimentos: a escolha é apenas visual.'
- ],
- purpose:'Praticar planejamento por turnos e leitura de caminhos, observando como a casa abandonada altera as opções de ambos os times.',
- why:'A proposta é tornar visíveis as consequências de uma decisão: mover uma peça também fecha uma passagem, e cada equipe precisa conservar alguma saída para sua próxima vez.'
+GAME_INFO.cerco = {
+  name: 'CERCO',
+  description: 'Mova suas peças, feche caminhos e deixe o adversário sem saída.',
+  summary: 'Faça a última jogada: quem ficar sem movimentos na sua vez perde.',
+  rules: [
+    'Cada time controla três peças. Na preparação, escolha uma grade de 5 × 5 a 8 × 8, com sete mapas por tamanho. Escolha uma peça sua e mova exatamente uma casa para cima, baixo, esquerda ou direita, para um destino vazio e sem barreira.',
+    'Selecione a peça, escolha um destino, observe a prévia e confirme. A casa de origem vira uma barreira neutra e permanente para os dois times; só a origem fica bloqueada.',
+    'Não há diagonais, saltos, empurrões ou capturas. As seis peças permanecem no tabuleiro. Não é permitido passar a vez.',
+    'Depois de cada jogada, confira o próximo time: se nenhuma de suas três peças puder se mover, ele perde. Uma peça presa não encerra o jogo enquanto outra do mesmo time tiver uma saída.',
+    'O Verde começa a primeira partida. A revanche alterna o iniciador e mantém as equipes e os mascotes. Todos os mascotes têm exatamente os mesmos movimentos: a escolha é apenas visual.',
+  ],
+  purpose:
+    'Praticar planejamento por turnos e leitura de caminhos, observando como a casa abandonada altera as opções de ambos os times.',
+  why: 'A proposta é tornar visíveis as consequências de uma decisão: mover uma peça também fecha uma passagem, e cada equipe precisa conservar alguma saída para sua próxima vez.',
 };

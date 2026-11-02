@@ -1,3 +1,16 @@
-import test from 'node:test';import assert from 'node:assert/strict';import fs from'node:fs';
-test('every registered card type reserves description room for its separate info action',()=>{const css=fs.readFileSync('dist/game-info.css','utf8');assert.match(css,/button:is\(\[data-game\],\[data-collection\],\[data-sintonia\],\[data-repasse\],\[data-orbita\],\[data-broto\],\[data-cerco\],\[data-trama\],\[data-vertice\]\)\{padding-right:52px\}/)});
-test('BROTO toolbar breathes above player panels without resizing cards/buttons',()=>{const css=fs.readFileSync('dist/broto/ui.css','utf8');assert.match(css,/#broto \.stage-tools\{[^}]*gap:14px;margin:0 0 24px/);assert.match(css,/#broto \.stage-tools\{gap:12px\}/)});
+// Testes e verificações de componentes compartilhados do Intuição.
+import test from 'node:test';
+import assert from 'node:assert/strict';
+import fs from 'node:fs';
+test('every registered card type reserves description room for its separate info action', () => {
+  const css = fs.readFileSync('dist/game-info.css', 'utf8');
+  assert.match(
+    css,
+    /button:is\(\[data-game\],\[data-collection\],\[data-sintonia\],\[data-repasse\],\[data-orbita\],\[data-broto\],\[data-cerco\],\[data-trama\],\[data-vertice\]\)\{padding-right:52px\}/,
+  );
+});
+test('BROTO toolbar breathes above player panels without resizing cards/buttons', () => {
+  const css = fs.readFileSync('dist/broto/ui.css', 'utf8');
+  assert.match(css, /#broto \.stage-tools\{[^}]*gap:14px;margin:0 0 24px/);
+  assert.match(css, /#broto \.stage-tools\{gap:12px\}/);
+});

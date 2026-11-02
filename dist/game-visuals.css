@@ -1,78 +1,300 @@
+/* Apresentação dos elementos dos tabuleiros. */
 /* Board-only refresh. Reflexos, Corte certo, PACTO and the shared identity are untouched.
    Shape, lettering, outlines and existing state markers remain the primary cues. */
-:is(.board-elo,.board-prumo,.board-desvio){border-color:#344d40;background:#fffdf5}
-:is(.board-elo,.board-prumo) .grid-cell{border-color:#465d4d;color:#203b2c}
-.board-elo .region-letter{opacity:1;font-weight:700;color:#344633}
-.board-elo .elo-token{color:#173e30;text-shadow:0 1px 0 #fff,1px 0 0 #fff,-1px 0 0 #fff,0 -1px 0 #fff}
-.board-elo .elo-edge{stroke:#173e30;filter:drop-shadow(0 1px 0 #fffdf5)}
-.board-elo .discarded{color:#3d4940;opacity:.8}
-.board-elo .elo-passage{color:#774509}
-.board-elo .elo-exclusive{color:#683681}
-.board-elo .fixed-dot,.board-prumo .fixed-dot{color:#203b2c}
-.board-prumo .assignment-letter{opacity:1;font-weight:650;color:#29402e}
-.board-prumo .support-marker circle{fill:#fff9e5;stroke:#3d5341;stroke-width:3}
-.board-prumo .support-marker text{fill:#263f2e}
-.board-prumo .selected-support circle,.board-prumo .support-marker:focus-visible circle{fill:#ffe2a1;stroke:#82521b;stroke-width:5}
-.board-desvio .grid-cell{border-color:#6f8172}
-.board-desvio .grid-cell.legal{background:#b5d99b!important;color:#254d35}
-.board-desvio .grid-cell.unavailable.available{background:#edf0e6!important;color:#778373}
-.board-desvio .grid-cell.consumed{background:#dce2d5!important;color:#697665;opacity:1}
-.board-desvio .consumed-arrow{opacity:.3}
-.board-desvio .grid-cell.preview{outline:4px solid #895424;outline-offset:-5px;box-shadow:inset 0 0 0 7px #ffdfa0}
-.board-desvio .grid-cell.next-region:not(.preview){box-shadow:inset 0 0 0 3px #8660a2}
+:is(.board-elo,.board-prumo,.board-desvio) {
+  border-color: #344d40;
+  background: #fffdf5;
+}
+:is(.board-elo,.board-prumo) .grid-cell {
+  border-color: #465d4d;
+  color: #203b2c;
+}
+.board-elo .region-letter {
+  opacity: 1;
+  font-weight: 700;
+  color: #344633;
+}
+.board-elo .elo-token {
+  color: #173e30;
+  text-shadow: 0 1px 0 #fff,1px 0 0 #fff,-1px 0 0 #fff,0 -1px 0 #fff;
+}
+.board-elo .elo-edge {
+  stroke: #173e30;
+  filter: drop-shadow(0 1px 0 #fffdf5);
+}
+.board-elo .discarded {
+  color: #3d4940;
+  opacity: .8;
+}
+.board-elo .elo-passage {
+  color: #774509;
+}
+.board-elo .elo-exclusive {
+  color: #683681;
+}
+.board-elo .fixed-dot,.board-prumo .fixed-dot {
+  color: #203b2c;
+}
+.board-prumo .assignment-letter {
+  opacity: 1;
+  font-weight: 650;
+  color: #29402e;
+}
+.board-prumo .support-marker circle {
+  fill: #fff9e5;
+  stroke: #3d5341;
+  stroke-width: 3;
+}
+.board-prumo .support-marker text {
+  fill: #263f2e;
+}
+.board-prumo .selected-support circle,.board-prumo .support-marker:focus-visible circle {
+  fill: #ffe2a1;
+  stroke: #82521b;
+  stroke-width: 5;
+}
+.board-desvio .grid-cell {
+  border-color: #6f8172;
+}
+.board-desvio .grid-cell.legal {
+  background: #b5d99b!important;
+  color: #254d35;
+}
+.board-desvio .grid-cell.unavailable.available {
+  background: #edf0e6!important;
+  color: #778373;
+}
+.board-desvio .grid-cell.consumed {
+  background: #dce2d5!important;
+  color: #697665;
+  opacity: 1;
+}
+.board-desvio .consumed-arrow {
+  opacity: .3;
+}
+.board-desvio .grid-cell.preview {
+  outline: 4px solid #895424;
+  outline-offset: -5px;
+  box-shadow: inset 0 0 0 7px #ffdfa0;
+}
+.board-desvio .grid-cell.next-region:not(.preview) {
+  box-shadow: inset 0 0 0 3px #8660a2;
+}
 /* SINTONIA: warm grass, inked paths and distinct terrain; original sprites unchanged. */
-#sintonia .s-map{border-color:#375b3f;background:#678d4c;box-shadow:0 3px 0 #375b3f26}
-#sintonia .s-tile{background:#fff7df;border-color:#b8bd91}
-#sintonia .s-tile.wall{background:#69974e;border-color:#5c8744;background-image:linear-gradient(135deg,#ffffff0d 25%,transparent 25%,transparent 75%,#36572a12 75%)}
-#sintonia .s-tile.ice{background-color:#abdce8;border-color:#6caaba}
-#sintonia .s-tile.collapsed{background-color:#c7b59c;border-color:#94836d}
-#sintonia .s-goal-ring{border-color:#47762e;background:#bfdf8280}
-#sintonia .s-goal-ring::after{border-color:#65953f}
-#sintonia .goal-occupied .s-goal-ring{background:#9ed464cc;border-color:#2e632b;box-shadow:0 0 0 2px #467a3333}
-#sintonia .s-box{background:#dca959;border-color:#88602a;color:#654312;box-shadow:inset 0 0 0 3px #ffe1a899,0 2px 0 #7f65462b}
-#sintonia .s-plate{background:#d1b4e8;border-color:#8552a1;color:#513465}
-#sintonia .s-plate.active{background:#a775c6;border-color:#63407c;color:#fff}
-#sintonia .s-switch{background:#f4d282;border-color:#99702a;color:#614615}
-#sintonia .s-switch.active{background:#ffbd46}
-#sintonia .s-selector{background:#9ed6d5;border-color:#3f8389;color:#24555d}
-#sintonia .s-gate.closed{background:#8552a1}
-#sintonia .s-gate.open{border-color:#8552a1}
-#sintonia .s-dpad button{background:#e7f1d8;border-color:#64884d;color:#305732;box-shadow:0 2px 0 #46633326}
-#sintonia .s-dpad button:active{background:#bada97}
+#sintonia .s-map {
+  border-color: #375b3f;
+  background: #678d4c;
+  box-shadow: 0 3px 0 #375b3f26;
+}
+#sintonia .s-tile {
+  background: #fff7df;
+  border-color: #b8bd91;
+}
+#sintonia .s-tile.wall {
+  background: #69974e;
+  border-color: #5c8744;
+  background-image: linear-gradient(135deg,#ffffff0d 25%,transparent 25%,transparent 75%,#36572a12 75%);
+}
+#sintonia .s-tile.ice {
+  background-color: #abdce8;
+  border-color: #6caaba;
+}
+#sintonia .s-tile.collapsed {
+  background-color: #c7b59c;
+  border-color: #94836d;
+}
+#sintonia .s-goal-ring {
+  border-color: #47762e;
+  background: #bfdf8280;
+}
+#sintonia .s-goal-ring::after {
+  border-color: #65953f;
+}
+#sintonia .goal-occupied .s-goal-ring {
+  background: #9ed464cc;
+  border-color: #2e632b;
+  box-shadow: 0 0 0 2px #467a3333;
+}
+#sintonia .s-box {
+  background: #dca959;
+  border-color: #88602a;
+  color: #654312;
+  box-shadow: inset 0 0 0 3px #ffe1a899,0 2px 0 #7f65462b;
+}
+#sintonia .s-plate {
+  background: #d1b4e8;
+  border-color: #8552a1;
+  color: #513465;
+}
+#sintonia .s-plate.active {
+  background: #a775c6;
+  border-color: #63407c;
+  color: #fff;
+}
+#sintonia .s-switch {
+  background: #f4d282;
+  border-color: #99702a;
+  color: #614615;
+}
+#sintonia .s-switch.active {
+  background: #ffbd46;
+}
+#sintonia .s-selector {
+  background: #9ed6d5;
+  border-color: #3f8389;
+  color: #24555d;
+}
+#sintonia .s-gate.closed {
+  background: #8552a1;
+}
+#sintonia .s-gate.open {
+  border-color: #8552a1;
+}
+#sintonia .s-dpad button {
+  background: #e7f1d8;
+  border-color: #64884d;
+  color: #305732;
+  box-shadow: 0 2px 0 #46633326;
+}
+#sintonia .s-dpad button:active {
+  background: #bada97;
+}
 /* REPASSE: playable tiles in forest ink, destinations in honey, exact totals in green. */
-#repasse .r-piece{background:#356850;border-color:#244c39;color:#fff;box-shadow:0 2px 0 #234a3920}
-#repasse .r-piece:hover{background:#2c5943;border-color:#183d2b}
-#repasse .r-piece:active{background:#214a36}
-#repasse .r-arrow{color:#e5f3d6}
-#repasse .r-empty{background:#eef0e6;border-color:#bdc8b6}
-#repasse .r-edge-box{background:#f5dfa0;border-color:#b99a52;color:#55420d}
-#repasse .r-box-target{color:#665017}
-#repasse .r-edge-box.exact{background:#b9dca6;border-color:#507b3d;color:#284b21}
-#repasse .exact .r-box-target{color:#385b2d}
-#repasse .r-edge-box.over{background:#f28f88;border-color:#b43832;color:#6b1717}
-#repasse .over .r-box-target{color:#6b1717}
-#repasse .r-piece.r-preview-source{background:#27543d;border-color:#193d2b}
-#repasse .r-preview-target{outline:3px solid #b57524;outline-offset:1px}
-#repasse .r-receiving{box-shadow:inset 0 0 0 2px #6d953d}
+#repasse .r-piece {
+  background: #356850;
+  border-color: #244c39;
+  color: #fff;
+  box-shadow: 0 2px 0 #234a3920;
+}
+#repasse .r-piece:hover {
+  background: #2c5943;
+  border-color: #183d2b;
+}
+#repasse .r-piece:active {
+  background: #214a36;
+}
+#repasse .r-arrow {
+  color: #e5f3d6;
+}
+#repasse .r-empty {
+  background: #eef0e6;
+  border-color: #bdc8b6;
+}
+#repasse .r-edge-box {
+  background: #f5dfa0;
+  border-color: #b99a52;
+  color: #55420d;
+}
+#repasse .r-box-target {
+  color: #665017;
+}
+#repasse .r-edge-box.exact {
+  background: #b9dca6;
+  border-color: #507b3d;
+  color: #284b21;
+}
+#repasse .exact .r-box-target {
+  color: #385b2d;
+}
+#repasse .r-edge-box.over {
+  background: #f28f88;
+  border-color: #b43832;
+  color: #6b1717;
+}
+#repasse .over .r-box-target {
+  color: #6b1717;
+}
+#repasse .r-piece.r-preview-source {
+  background: #27543d;
+  border-color: #193d2b;
+}
+#repasse .r-preview-target {
+  outline: 3px solid #b57524;
+  outline-offset: 1px;
+}
+#repasse .r-receiving {
+  box-shadow: inset 0 0 0 2px #6d953d;
+}
 /* ÓRBITA: terracotta moving discs, forest rails, honey targets. */
-#orbita .o-board-surface{background:#fffdf6;border-color:#afbcaa}
-#orbita .o-rail{stroke:#7e9a77;stroke-width:3}
-#orbita .o-rail.o-active-rail{stroke:#315a40;stroke-width:4}
-#orbita .o-house{fill:#fffdf6;stroke:#8ba180;stroke-width:1.8}
-#orbita .o-shared-house{stroke:#466c49;stroke-width:2.5}
-#orbita .o-affected>.o-house{stroke:#315a40;stroke-width:2.5}
-#orbita .o-piece circle{fill:#b15e37;stroke:#874323;stroke-width:1.5}
-#orbita .o-neutral circle{fill:#e0e7d7;stroke:#96aa89}
-#orbita .o-neutral text{fill:#5a7050}
-#orbita .o-target rect{fill:#ffe0a0;stroke:#af7c2d;stroke-width:1.8}
-#orbita .o-target text{fill:#674719}
-#orbita .o-matched .o-target rect{fill:#b7dba4;stroke:#497c3c}
-#orbita .o-matched .o-target text{fill:#2c5426}
-#orbita .o-sensor rect{fill:#f9e6bd;stroke:#a37637}
-#orbita .o-sensor-ready rect{fill:#b7dba4;stroke:#497c3c}
-#orbita .o-orbit-controls{background:#eef3e4;border-color:#b6c4a9}
-#orbita .o-turn{background:#fff8e6;border-color:#a3b28e}
-#orbita .o-legend-piece{background:#b15e37}
-#orbita .o-legend-target{background:#ffe0a0;border-color:#af7c2d;color:#674719}
-#repasse .r-piece .r-coordinate{color:#edf5df}
-#sintonia .s-plate.active{color:#382047}
+#orbita .o-board-surface {
+  background: #fffdf6;
+  border-color: #afbcaa;
+}
+#orbita .o-rail {
+  stroke: #7e9a77;
+  stroke-width: 3;
+}
+#orbita .o-rail.o-active-rail {
+  stroke: #315a40;
+  stroke-width: 4;
+}
+#orbita .o-house {
+  fill: #fffdf6;
+  stroke: #8ba180;
+  stroke-width: 1.8;
+}
+#orbita .o-shared-house {
+  stroke: #466c49;
+  stroke-width: 2.5;
+}
+#orbita .o-affected>.o-house {
+  stroke: #315a40;
+  stroke-width: 2.5;
+}
+#orbita .o-piece circle {
+  fill: #b15e37;
+  stroke: #874323;
+  stroke-width: 1.5;
+}
+#orbita .o-neutral circle {
+  fill: #e0e7d7;
+  stroke: #96aa89;
+}
+#orbita .o-neutral text {
+  fill: #5a7050;
+}
+#orbita .o-target rect {
+  fill: #ffe0a0;
+  stroke: #af7c2d;
+  stroke-width: 1.8;
+}
+#orbita .o-target text {
+  fill: #674719;
+}
+#orbita .o-matched .o-target rect {
+  fill: #b7dba4;
+  stroke: #497c3c;
+}
+#orbita .o-matched .o-target text {
+  fill: #2c5426;
+}
+#orbita .o-sensor rect {
+  fill: #f9e6bd;
+  stroke: #a37637;
+}
+#orbita .o-sensor-ready rect {
+  fill: #b7dba4;
+  stroke: #497c3c;
+}
+#orbita .o-orbit-controls {
+  background: #eef3e4;
+  border-color: #b6c4a9;
+}
+#orbita .o-turn {
+  background: #fff8e6;
+  border-color: #a3b28e;
+}
+#orbita .o-legend-piece {
+  background: #b15e37;
+}
+#orbita .o-legend-target {
+  background: #ffe0a0;
+  border-color: #af7c2d;
+  color: #674719;
+}
+#repasse .r-piece .r-coordinate {
+  color: #edf5df;
+}
+#sintonia .s-plate.active {
+  color: #382047;
+}

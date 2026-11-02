@@ -1,30 +1,112 @@
+// Testes e verificações de Corte certo.
 import assert from 'node:assert/strict';
 import fs from 'node:fs';
-import {root,store,$,timers,Element} from './direct-ui-harness.mjs';
-import {cutLevels} from '../dist/levels.mjs';
-import {basicCutState} from '../dist/curves.mjs';
-import {createCutCampaignProgress,CUT_CAMPAIGN_PROGRESS_KEY as KEY} from '../dist/cut-campaign-progress.mjs';
+import { root, store, $, timers, Element } from './direct-ui-harness.mjs';
+import { cutLevels } from '../dist/levels.mjs';
+import { basicCutState } from '../dist/curves.mjs';
+import {
+  createCutCampaignProgress,
+  CUT_CAMPAIGN_PROGRESS_KEY as KEY,
+} from '../dist/cut-campaign-progress.mjs';
 // Synthetic IDs deliberately model reordering and recomposition. Never changes source catalogue.
-const old=structuredClone(cutLevels[0]);old.id='corte-v2-1';const draft=basicCutState(old,12.3);
-cutLevels.splice(0,cutLevels.length,...Array.from({length:80},(_,i)=>({...structuredClone(old),id:i===24?old.id:`corte80-fixture-${i+1}`})));
-const oldRecord={state:draft,cutMode:'basic',cutDrafts:{basic:draft,advanced:null}};
-const retiredRecord={state:{untouched:'archived'},cutMode:'basic'};
-store.set('intuicao.campaign.original.v1',JSON.stringify({['cut:'+old.id]:oldRecord,'cut:retired':retiredRecord,'light:retained':{state:{other:'game'}}}));
-store.set(KEY,JSON.stringify({version:1,completedIds:[old.id,'corte-v2-retired'],lastLevelId:old.id}));
-store.set('intuicao.answers.v1',JSON.stringify({['cut:'+old.id]:{failures:3,assisted:true},'cut:retired':{failures:5,assisted:true}}));
-store.set('intuicao.endless.original.v1',JSON.stringify({cut:{seed:301,count:7}}));store.set('intuicao.custom.original.v1',JSON.stringify({retained:{unmodified:true}}));
-const isolated=new Map(['intuicao.endless.original.v1','intuicao.custom.original.v1'].map(k=>[k,store.get(k)]));
-for(const key of ['min','max','type'])Object.defineProperty(Element.prototype,key,{get(){return this.attrs[key]??'';},set(value){this.attrs[key]=String(value);},configurable:true});
-root.innerHTML=fs.readFileSync(new URL('../dist/index.html',import.meta.url),'utf8');document.body=root;
-globalThis.cancelAnimationFrame=id=>timers.delete(id);globalThis.matchMedia=()=>({matches:true});
-await import('../dist/app.mjs');root.querySelector('[data-game="cut"]').click();
-const tile=i=>$('level-grid').querySelector(`[data-level="${i}"]`);
-assert.ok(tile(24).attrs.class.includes('done'));assert.equal(tile(24).attrs['aria-current'],'true');assert.ok(!tile(0).attrs.class.includes('done'));
-tile(24).click();assert.equal(Number($('basicTravel').value),12.3);assert.equal($('answer-key').hidden,false);assert.equal($('answer-key').dataset.assisted,'true');
-$('level').dispatch('change',{target:{value:0}});assert.equal(Number($('basicTravel').value),old.initialTravel);assert.equal($('answer-key').hidden,true);
-for(const i of [14,29,44,59,74]){$('level').dispatch('change',{target:{value:i}});$('level-next').click();assert.equal($('stage-label').textContent,`DESAFIO ${String(i+2).padStart(2,'0')} / 80`);$('level-prev').click();assert.equal($('stage-label').textContent,`DESAFIO ${String(i+1).padStart(2,'0')} / 80`);}
-$('back-selection').click();assert.deepEqual(JSON.parse(store.get('intuicao.campaign.original.v1'))['cut:retired'],retiredRecord);assert.ok(JSON.parse(store.get(KEY)).completedIds.includes('corte-v2-retired'));
-for(const [key,raw] of isolated)assert.equal(store.get(key),raw);
-const a=createCutCampaignProgress(),b=createCutCampaignProgress();a.complete('a');b.complete('b');assert.ok(a.snapshot().completedIds.has('b'));assert.ok(b.snapshot().completedIds.has('a'));
-const broken=new Map([[KEY,'{broken']]);const bad=createCutCampaignProgress({getItem:k=>broken.get(k),setItem:(k,v)=>broken.set(k,v)});bad.complete('safe');assert.equal(broken.get(KEY),'{broken','malformed historical records are not overwritten');
-console.log(JSON.stringify({passed:true,stableIdReorder:true,newIdentityDoesNotReuseNumber:true,retiredRecordsPreserved:true,adjacentTiers:5,storageIsolation:true}));
+const old = structuredClone(cutLevels[0]);
+old.id = 'corte-v2-1';
+const draft = basicCutState(old, 12.3);
+cutLevels.splice(
+  0,
+  cutLevels.length,
+  ...Array.from({ length: 80 }, (_, i) => ({
+    ...structuredClone(old),
+    id: i === 24 ? old.id : `corte80-fixture-${i + 1}`,
+  })),
+);
+const oldRecord = { state: draft, cutMode: 'basic', cutDrafts: { basic: draft, advanced: null } };
+const retiredRecord = { state: { untouched: 'archived' }, cutMode: 'basic' };
+store.set(
+  'intuicao.campaign.original.v1',
+  JSON.stringify({
+    ['cut:' + old.id]: oldRecord,
+    'cut:retired': retiredRecord,
+    'light:retained': { state: { other: 'game' } },
+  }),
+);
+store.set(
+  KEY,
+  JSON.stringify({ version: 1, completedIds: [old.id, 'corte-v2-retired'], lastLevelId: old.id }),
+);
+store.set(
+  'intuicao.answers.v1',
+  JSON.stringify({
+    ['cut:' + old.id]: { failures: 3, assisted: true },
+    'cut:retired': { failures: 5, assisted: true },
+  }),
+);
+store.set('intuicao.endless.original.v1', JSON.stringify({ cut: { seed: 301, count: 7 } }));
+store.set('intuicao.custom.original.v1', JSON.stringify({ retained: { unmodified: true } }));
+const isolated = new Map(
+  ['intuicao.endless.original.v1', 'intuicao.custom.original.v1'].map((k) => [k, store.get(k)]),
+);
+for (const key of ['min', 'max', 'type'])
+  Object.defineProperty(Element.prototype, key, {
+    get() {
+      return this.attrs[key] ?? '';
+    },
+    set(value) {
+      this.attrs[key] = String(value);
+    },
+    configurable: true,
+  });
+root.innerHTML = fs.readFileSync(new URL('../dist/index.html', import.meta.url), 'utf8');
+document.body = root;
+globalThis.cancelAnimationFrame = (id) => timers.delete(id);
+globalThis.matchMedia = () => ({ matches: true });
+await import('../dist/app.mjs');
+root.querySelector('[data-game="cut"]').click();
+const tile = (i) => $('level-grid').querySelector(`[data-level="${i}"]`);
+assert.ok(tile(24).attrs.class.includes('done'));
+assert.equal(tile(24).attrs['aria-current'], 'true');
+assert.ok(!tile(0).attrs.class.includes('done'));
+tile(24).click();
+assert.equal(Number($('basicTravel').value), 12.3);
+assert.equal($('answer-key').hidden, false);
+assert.equal($('answer-key').dataset.assisted, 'true');
+$('level').dispatch('change', { target: { value: 0 } });
+assert.equal(Number($('basicTravel').value), old.initialTravel);
+assert.equal($('answer-key').hidden, true);
+for (const i of [14, 29, 44, 59, 74]) {
+  $('level').dispatch('change', { target: { value: i } });
+  $('level-next').click();
+  assert.equal($('stage-label').textContent, `DESAFIO ${String(i + 2).padStart(2, '0')} / 80`);
+  $('level-prev').click();
+  assert.equal($('stage-label').textContent, `DESAFIO ${String(i + 1).padStart(2, '0')} / 80`);
+}
+$('back-selection').click();
+assert.deepEqual(
+  JSON.parse(store.get('intuicao.campaign.original.v1'))['cut:retired'],
+  retiredRecord,
+);
+assert.ok(JSON.parse(store.get(KEY)).completedIds.includes('corte-v2-retired'));
+for (const [key, raw] of isolated) assert.equal(store.get(key), raw);
+const a = createCutCampaignProgress(),
+  b = createCutCampaignProgress();
+a.complete('a');
+b.complete('b');
+assert.ok(a.snapshot().completedIds.has('b'));
+assert.ok(b.snapshot().completedIds.has('a'));
+const broken = new Map([[KEY, '{broken']]);
+const bad = createCutCampaignProgress({
+  getItem: (k) => broken.get(k),
+  setItem: (k, v) => broken.set(k, v),
+});
+bad.complete('safe');
+assert.equal(broken.get(KEY), '{broken', 'malformed historical records are not overwritten');
+console.log(
+  JSON.stringify({
+    passed: true,
+    stableIdReorder: true,
+    newIdentityDoesNotReuseNumber: true,
+    retiredRecordsPreserved: true,
+    adjacentTiers: 5,
+    storageIsolation: true,
+  }),
+);

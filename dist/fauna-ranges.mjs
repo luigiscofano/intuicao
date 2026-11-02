@@ -1,5 +1,8 @@
+// Regiões aproximadas de ocorrência dos animais e fontes das informações.
 // Manchas didáticas autoradas em lon/lat a partir das regiões descritas nas fontes.
 // NÃO são limites biológicos/GIS; não utilizar como orientação de campo.
+// Dados materializados: valores e ordem preservados.
+// prettier-ignore
 export const FAUNA_RANGES={
   "tuiuiu": {
     "id": "tuiuiu",

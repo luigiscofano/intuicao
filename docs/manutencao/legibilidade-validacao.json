@@ -1,0 +1,36 @@
+{
+  "baseCommit": "0532b17f900adc815d605ed5502dd98d5105b94f",
+  "status": "Rascunho parcial; não integrar automaticamente.",
+  "structuralComparison": {
+    "base": "0532b17f900adc815d605ed5502dd98d5105b94f",
+    "files": 928,
+    "javascript": 267,
+    "css": 26,
+    "html": 1,
+    "python": 1,
+    "immutable": 0,
+    "unchanged": 633,
+    "failures": 0
+  },
+  "engineTests": {
+    "tests": 95,
+    "pass": 95,
+    "fail": 0
+  },
+  "assets": {
+    "count": 133,
+    "hashesUnchanged": true
+  },
+  "documentation": {
+    "documents": 60,
+    "localLinks": 599
+  },
+  "remainingFiles": 299,
+  "remainingManifest": "legibilidade-pendentes.json",
+  "mainChanged": false,
+  "siteDeployed": false,
+  "historicalSuite": {
+    "runOnThisPartialDraft": false,
+    "note": "Os resultados da revisão completa estão explicados no documento de legibilidade. Não representam aprovação da suíte ampla deste rascunho."
+  }
+}
