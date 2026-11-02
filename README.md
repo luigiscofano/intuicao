@@ -20,6 +20,46 @@ A ideia é transformar conceitos abstratos em escolhas visíveis: observar, imag
 
 O site mantém seu próprio controle de acesso. Para jogar com a cópia deste repositório, siga a instalação local abaixo.
 
+## Coleção de manuais em PDF
+
+**19 PDFs revisados · 278 páginas**, por **Luigi Scofano de Araujo**. Clique em um título para abrir o arquivo no GitHub e use a opção de download para guardar uma cópia.
+
+Os PDFs registram a edição documental de **1º de novembro de 2026**. Complementam os guias em Markdown e preservam o contexto dessa revisão; não substituem o histórico de alterações posteriores do código.
+
+### Manuais dos 11 jogos
+
+| Manual | Páginas |
+| --- | ---: |
+| [Reflexos](docs/pdfs/jogos/Intuicao_Manual_Reflexos_2026-11-01.pdf) | 13 |
+| [Corte certo](docs/pdfs/jogos/Intuicao_Manual_Corte_2026-11-01.pdf) | 13 |
+| [ELO](docs/pdfs/jogos/Intuicao_Manual_Elo_2026-11-01.pdf) | 14 |
+| [PRUMO](docs/pdfs/jogos/Intuicao_Manual_Prumo_2026-11-01.pdf) | 13 |
+| [PACTO](docs/pdfs/jogos/Intuicao_Manual_Pacto_2026-11-01.pdf) | 13 |
+| [SINTONIA](docs/pdfs/jogos/Intuicao_Manual_Sintonia_2026-11-01.pdf) | 14 |
+| [REPASSE](docs/pdfs/jogos/Intuicao_Manual_Repasse_2026-11-01.pdf) | 14 |
+| [ÓRBITA](docs/pdfs/jogos/Intuicao_Manual_Orbita_2026-11-01.pdf) | 14 |
+| [DESVIO](docs/pdfs/jogos/Intuicao_Manual_Desvio_2026-11-01.pdf) | 11 |
+| [BROTO](docs/pdfs/jogos/Intuicao_Manual_Broto_2026-11-01.pdf) | 11 |
+| [CERCO](docs/pdfs/jogos/Intuicao_Manual_Cerco_2026-11-01.pdf) | 11 |
+
+### Marca, arte e recursos
+
+| Manual | Páginas |
+| --- | ---: |
+| [Manual da marca](docs/pdfs/marca-e-arte/01-manual-marca-intuicao.pdf) | 16 |
+| [Design visual e artístico](docs/pdfs/marca-e-arte/02-manual-design-visual-artistico.pdf) | 19 |
+| [Catálogo de sprites, ícones e acessórios](docs/pdfs/marca-e-arte/03-catalogo-sprites-icones-acessorios.pdf) | 37 |
+| [Inventário de recursos e proveniência](docs/pdfs/marca-e-arte/04-inventario-recursos-proveniencia.pdf) | 23 |
+
+### Implementação, design e manutenção
+
+| Manual | Páginas |
+| --- | ---: |
+| [Arquitetura e implementação](docs/pdfs/tecnicos/16-arquitetura-implementacao-intuicao.pdf) | 12 |
+| [Game design e level design](docs/pdfs/tecnicos/17-game-design-level-design-intuicao.pdf) | 12 |
+| [QA e manutenção](docs/pdfs/tecnicos/18-qa-manutencao-intuicao.pdf) | 11 |
+| [Visão geral e guia da coleção](docs/pdfs/tecnicos/19-visao-geral-guia-colecao-intuicao.pdf) | 7 |
+
 ## Comece por aqui
 
 | O que você quer fazer? | Por onde começar |
