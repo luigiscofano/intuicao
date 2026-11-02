@@ -6,13 +6,15 @@
 
 **Jogos de lógica, geometria e estratégia para aprender experimentando.**
 
-O **Intuição**, projeto de **Luigi Scofano de Araujo**, reúne 11 jogos que funcionam no navegador. Você pode guiar raios de luz com espelhos, equilibrar formas, coordenar animais ou disputar um tabuleiro com outra pessoa. Cada jogo tem regras próprias, explicações na interface e um manual neste repositório.
+O **Intuição**, projeto de **Luigi Scofano de Araujo**, reúne 11 jogos que funcionam no navegador. Você pode guiar raios de luz com espelhos, equilibrar formas, coordenar animais ou disputar um tabuleiro com outra pessoa ou com os bots de DESVIO e CERCO. Cada jogo tem regras próprias, explicações na interface e um manual neste repositório.
 
 A ideia é transformar conceitos abstratos em escolhas visíveis: observar, imaginar uma solução, testar e entender o que mudou. Folhas, molduras e animais brasileiros em pixel art dão identidade à experiência.
 
 > **A curiosidade é a primeira lição.**
 
-**11 jogos · 8 campanhas solo · 640 fases · 3 jogos Versus**
+**11 jogos · 8 campanhas solo · 640 fases · 3 jogos Versus · IA em DESVIO e CERCO**
+
+**Inteligência artificial aplicada a jogos:** DESVIO usa busca exata de posições; CERCO combina antecipação de jogadas e avaliação estratégica. [Entenda como os bots decidem](#ia-nos-bots-dos-jogos-versus).
 
 [Abrir o site](https://intuicao-luigi-minigames.luigiscofano.chatgpt.site) · [Executar no computador](#executar-no-computador) · [Conhecer os jogos](#conheça-os-11-jogos) · [Manuais completos](docs/jogos/README.md)
 
@@ -23,48 +25,25 @@ O site mantém seu próprio controle de acesso. Para jogar com a cópia deste re
 | O que você quer fazer? | Por onde começar |
 | --- | --- |
 | **Jogar pela primeira vez** | [Abra o projeto](#executar-no-computador) e siga [Como jogar](#como-jogar-pela-primeira-vez). |
-| **Escolher um jogo** | Veja a [galeria](#os-jogos-em-imagens) e o [catálogo com os objetivos](#conheça-os-11-jogos). |
+| **Escolher um jogo** | Veja a [explicação de cada jogo com sua imagem](#conheça-os-11-jogos). |
+| **Entender a IA dos bots** | Compare as [estratégias de DESVIO e CERCO](#ia-nos-bots-dos-jogos-versus) e encontre os módulos que escolhem as jogadas. |
 | **Entender uma regra** | Abra o [manual do jogo](docs/jogos/README.md): há regras, exemplos e arquivos relacionados. |
 | **Estudar ou modificar o código** | Comece pelo [mapa do projeto](#como-o-projeto-está-organizado) e pela [arquitetura](docs/arquitetura/README.md). |
 | **Conferir testes e pendências** | Consulte o [estado do projeto](#o-que-funciona-e-o-que-ainda-está-pendente). |
 
-## Os jogos em imagens
+## IA nos bots dos jogos Versus
 
-**Uma imagem de cada um dos 11 jogos**, capturada diretamente no [site hospedado](https://intuicao-luigi-minigames.luigiscofano.chatgpt.site/) em **1º de novembro de 2026**. Clique em uma imagem para ampliar e use o link da legenda para abrir o manual.
+**Os bots de DESVIO e CERCO usam IA clássica para jogos:** examinam o estado do tabuleiro, simulam jogadas permitidas e consideram as respostas do adversário. A decisão é calculada no próprio navegador, com algoritmos de busca e regras de avaliação; não exige uma API de IA ou um modelo treinado.
 
-As capturas mostram o site nessa data; o site e o código deste repositório têm atualizações separadas. O [registro das imagens](docs/imagens/jogos/README.md) identifica a fase ou partida de cada captura.
-
-### Intuição
-
-| Reflexos | Corte certo |
-| --- | --- |
-| [![Reflexos: dois raios coloridos refletidos por espelhos durante uma tentativa da fase 9.](docs/imagens/jogos/reflexos.jpg)](docs/imagens/jogos/reflexos.jpg) | [![Corte certo: silhueta de capivara dividida por uma curva, com meta de 76 por cento no lado roxo.](docs/imagens/jogos/corte.jpg)](docs/imagens/jogos/corte.jpg) |
-| Gire espelhos para levar cada raio ao alvo correspondente. [Manual](docs/jogos/reflexos/README.md). | Ajuste o corte até separar a porcentagem pedida da figura. [Manual](docs/jogos/corte/README.md). |
-
-### Raciocínio lógico
-
-| ELO | PRUMO |
-| --- | --- |
-| [![ELO: grade de regiões coloridas com pontos e duas ligações horizontais automáticas.](docs/imagens/jogos/elo.jpg)](docs/imagens/jogos/elo.jpg) | [![PRUMO: grade 4 por 4 com apoios A a G e peças coloridas que devem ficar equilibradas.](docs/imagens/jogos/prumo.jpg)](docs/imagens/jogos/prumo.jpg) |
-| Posicione um ponto por região e forme um único circuito. [Manual](docs/jogos/elo/README.md). | Desenhe peças conectadas e equilibradas sobre seus apoios. [Manual](docs/jogos/prumo/README.md). |
-
-| PACTO | SINTONIA |
-| --- | --- |
-| [![PACTO: grade 8 por 8 com círculos, quadrados, triângulos e losangos, pistas fixas e pares.](docs/imagens/jogos/pacto.jpg)](docs/imagens/jogos/pacto.jpg) | [![SINTONIA: tucano, quati e cobra-coral em três tabuleiros, com placas, cancelas e controle direcional comum.](docs/imagens/jogos/sintonia.jpg)](docs/imagens/jogos/sintonia.jpg) |
-| Complete as contagens e dê exatamente um parceiro a cada símbolo. [Manual](docs/jogos/pacto/README.md). | Um comando move todos; leve os animais aos destinos ao mesmo tempo. [Manual](docs/jogos/sintonia/README.md). |
-
-| REPASSE | ÓRBITA |
-| --- | --- |
-| [![REPASSE: peças de valores 1, 2 e 3 com setas e caixas de metas ao redor do tabuleiro.](docs/imagens/jogos/repasse.jpg)](docs/imagens/jogos/repasse.jpg) | [![ÓRBITA: dois anéis conectados, peças coloridas e alvos fixos identificados por símbolos.](docs/imagens/jogos/orbita.jpg)](docs/imagens/jogos/orbita.jpg) |
-| Retire peças na ordem certa para completar as metas das bordas. [Manual](docs/jogos/repasse/README.md). | Gire anéis, transfira peças e complete todos os alvos. [Manual](docs/jogos/orbita/README.md). |
-
-### Versus
-
-| DESVIO | BROTO | CERCO |
+| Jogo | Como a IA escolhe | O que esperar |
 | --- | --- | --- |
-| [![DESVIO: tabuleiro 4 por 4 de setas horizontais e verticais, com prévia da escolha na linha 2, coluna 2.](docs/imagens/jogos/desvio.jpg)](docs/imagens/jogos/desvio.jpg) | [![BROTO: dois brotos plantados e prévia de uma semente que completa os estímulos horizontal e vertical de uma flor.](docs/imagens/jogos/broto.jpg)](docs/imagens/jogos/broto.jpg) | [![CERCO: tabuleiro 5 por 5, duas equipes de três animais e uma barreira deixada após mover uma peça.](docs/imagens/jogos/cerco.jpg)](docs/imagens/jogos/cerco.jpg) |
-| Sua escolha define a linha ou coluna da próxima jogada adversária. [Manual](docs/jogos/desvio/README.md). | Cada plantio pode fazer florescer um broto seu ou do adversário. [Manual](docs/jogos/broto/README.md). | Mova suas peças e transforme as casas abandonadas em barreiras. [Manual](docs/jogos/cerco/README.md). |
+| **[DESVIO](#desvio)** | Busca exata com **memoização**: guarda o resultado de posições já analisadas para reutilizá-lo. Nos níveis mais simples, usa escolha pseudoaleatória ou verificações táticas. | O modo **Exato · jogo perfeito** identifica vitórias forçadas nos mapas suportados, de até 16 casas. Uma posição já perdida contra respostas perfeitas continua perdida. |
+| **[CERCO](#cerco)** | Busca **minimax com poda alfa-beta**, aprofundamento progressivo e **heurísticas** de mobilidade, saídas e espaço alcançável. | O modo **Avançado · busca limitada** olha mais adiante dentro do orçamento de busca. Sua avaliação é uma estimativa estratégica, sem garantia de jogo perfeito. |
+| **[BROTO](#broto)** | Duelo local entre duas pessoas; esta versão não implementa bot. | A estratégia está nas decisões dos jogadores sobre quais brotos estimular e quais flores completar. |
 
+Uma **heurística** atribui uma nota à posição para comparar alternativas sem precisar resolver a partida inteira. No **minimax**, o bot considera tanto a sua melhor escolha quanto a melhor resposta do adversário. A **poda alfa-beta** evita explorar continuações que já não podem melhorar a decisão daquela busca.
+
+As dificuldades e os exemplos de decisão estão junto às imagens de [DESVIO](#desvio) e [CERCO](#cerco), abaixo. Os duelos locais acontecem **no mesmo aparelho**; esta base não oferece salas multiplayer online.
 
 ## Como jogar pela primeira vez
 
@@ -78,35 +57,177 @@ As capturas mostram o site nessa data; o site e o código deste repositório tê
 
 Para uma primeira exploração, experimente **Corte certo** para estimar áreas, **SINTONIA** para coordenar movimentos ou **BROTO** para jogar em dupla. Os manuais explicam cada regra com mais exemplos.
 
+<a id="os-jogos-em-imagens"></a>
+
 ## Conheça os 11 jogos
+
+Cada jogo tem **uma captura real da interface junto à explicação de sua mecânica**. Clique na imagem para ampliar. As capturas foram feitas no site hospedado em **1º de novembro de 2026**; o [registro das imagens](docs/imagens/jogos/README.md) identifica cada fase ou partida. Algumas mostram tentativas ou prévias, e não soluções concluídas.
+
+| Categoria | Vá direto ao jogo |
+| --- | --- |
+| Intuição | [Reflexos](#reflexos) · [Corte certo](#corte-certo) |
+| Raciocínio lógico | [ELO](#elo) · [PRUMO](#prumo) · [PACTO](#pacto) · [SINTONIA](#sintonia) · [REPASSE](#repasse) · [ÓRBITA](#órbita) |
+| Versus | [DESVIO](#desvio) · [BROTO](#broto) · [CERCO](#cerco) |
 
 ### Intuição: observar formas e trajetórias
 
-| Jogo | O que você faz para resolver | O que explora |
-| --- | --- | --- |
-| **[Reflexos](docs/jogos/reflexos/README.md)** | Gira espelhos para levar cada raio ao alvo da mesma cor e símbolo, evitando contato entre trajetórias de cores diferentes. | Reflexão, ângulos e planejamento de caminhos. |
-| **[Corte certo](docs/jogos/corte/README.md)** | Ajusta uma linha ou curva até separar a porcentagem pedida da área útil de uma figura. Buracos não entram na conta. | Estimativa de áreas, proporções e porcentagens. |
+#### Reflexos
+
+**Guie a luz até o destino.** Gire os espelhos para levar cada raio ao alvo da mesma cor e símbolo. As trajetórias de cores diferentes não podem se cruzar nem se tocar. O desafio combina reflexão, ângulos e planejamento de caminhos.
+
+[![Reflexos: dois raios coloridos refletidos por espelhos durante uma tentativa da fase 9.](docs/imagens/jogos/reflexos.jpg)](docs/imagens/jogos/reflexos.jpg)
+
+*Na imagem: fase 9, “Duas cores, dois destinos”. Os raios foram disparados para mostrar o efeito dos ângulos escolhidos; os dois alvos ainda precisam ser alcançados.*
+
+**O que observar:** ao girar um espelho, você altera a direção do raio refletido. Planeje o percurso de cada cor e depois confira se os caminhos respeitam as restrições entre si.
+
+[Regras, exemplos e código de Reflexos](docs/jogos/reflexos/README.md)
+
+#### Corte certo
+
+**Divida uma figura na proporção pedida.** Ajuste uma linha ou curva para separar a porcentagem indicada da área útil da figura. Buracos ficam fora da conta. A atividade explora estimativa visual, áreas, proporções e porcentagens.
+
+[![Corte certo: silhueta de capivara dividida por uma curva, com meta de 76 por cento no lado roxo.](docs/imagens/jogos/corte.jpg)](docs/imagens/jogos/corte.jpg)
+
+*Na imagem: fase 47, “Capivara”, com curva em S e meta de 76% para o lado roxo. O corte está sendo preparado antes da confirmação.*
+
+**O que observar:** a porcentagem depende da área ocupada pela figura, incluindo seus contornos irregulares; mover o corte pela mesma distância nem sempre desloca a mesma quantidade de área.
+
+[Regras, exemplos e código de Corte certo](docs/jogos/corte/README.md)
 
 ### Raciocínio lógico: combinar regras e planejar ações
 
-| Jogo | O que você faz para resolver | O que explora |
-| --- | --- | --- |
-| **[ELO](docs/jogos/elo/README.md)** | Coloca um ponto por região para que as ligações automáticas formem um único circuito fechado, respeitando as pistas. | Conectividade, dedução e condições locais e globais. |
-| **[PRUMO](docs/jogos/prumo/README.md)** | Divide a grade em peças conectadas, cada uma com o centro de massa exatamente sobre seu apoio. | Equilíbrio, geometria e distribuição de massa. |
-| **[PACTO](docs/jogos/pacto/README.md)** | Completa a grade com dois de cada símbolo por linha e coluna; cada casa precisa ter exatamente um vizinho igual pelos lados. | Contagem, exclusão de possibilidades e formação de pares. |
-| **[SINTONIA](docs/jogos/sintonia/README.md)** | Usa comandos compartilhados para levar animais de tabuleiros diferentes aos seus destinos ao mesmo tempo. | Coordenação, obstáculos e planejamento de sequências. |
-| **[REPASSE](docs/jogos/repasse/README.md)** | Retira todas as peças na ordem certa para que os valores enviados atinjam exatamente as metas das bordas. | Dependência entre ações, propagação de valores e ordem. |
-| **[ÓRBITA](docs/jogos/orbita/README.md)** | Gira anéis conectados para transferir peças e completar todos os alvos simultaneamente. | Orientação espacial, permutações e objetivos simultâneos. |
+#### ELO
+
+**Transforme pontos em um único circuito.** Posicione um ponto por região para que as ligações automáticas formem um circuito fechado, respeitando as pistas. Você combina deduções locais com uma condição global: todos os pontos precisam participar da mesma volta.
+
+[![ELO: regiões coloridas, pontos e duas ligações horizontais em uma tentativa da fase 8.](docs/imagens/jogos/elo.jpg)](docs/imagens/jogos/elo.jpg)
+
+*Na imagem: fase 8, “Circuito clássico”. Os pontos adicionados demonstram duas ligações horizontais; o circuito ainda está incompleto.*
+
+**O que observar:** uma escolha que parece funcionar em uma região pode impedir o fechamento do circuito completo. Compare as possibilidades das regiões vizinhas antes de confirmar.
+
+[Regras, exemplos e código de ELO](docs/jogos/elo/README.md)
+
+#### PRUMO
+
+**Construa peças que se sustentem sobre seus apoios.** Divida a grade em peças conectadas, cada uma com o centro de massa exatamente sobre o apoio correspondente. O problema une geometria, equilíbrio e distribuição de massa.
+
+[![PRUMO: grade 4 por 4 com sete apoios de A a G e pistas coloridas da fase 9.](docs/imagens/jogos/prumo.jpg)](docs/imagens/jogos/prumo.jpg)
+
+*Na imagem: fase 9, com grade 4 × 4 e sete apoios. As cores identificam as peças que precisam ser completadas.*
+
+**O que observar:** acrescentar uma casa de um lado do apoio desloca o centro de massa. A peça precisa equilibrar sua distribuição de casas e continuar conectada.
+
+[Regras, exemplos e código de PRUMO](docs/jogos/prumo/README.md)
+
+#### PACTO
+
+**Complete a grade e forme pares exatos.** Cada linha e coluna deve ter dois de cada símbolo. Além disso, cada casa precisa tocar exatamente uma casa igual pelos lados; diagonais não contam. As pistas iniciais permanecem fixas.
+
+[![PACTO: grade 8 por 8 com pistas de círculos, quadrados, triângulos e losangos na fase 8.](docs/imagens/jogos/pacto.jpg)](docs/imagens/jogos/pacto.jpg)
+
+*Na imagem: configuração inicial da fase 8. As ligações indicam pares já formados entre símbolos iguais.*
+
+**O que observar:** satisfazer a contagem de uma linha não basta se a jogada cria um trio ou deixa um símbolo sem parceiro. Contagem e vizinhança precisam funcionar juntas.
+
+[Regras, exemplos e código de PACTO](docs/jogos/pacto/README.md)
+
+#### SINTONIA
+
+**Um comando, vários animais.** Use as mesmas direções para conduzir animais em tabuleiros diferentes até seus destinos ao mesmo tempo. Paredes e outros elementos fazem um mesmo comando produzir resultados diferentes em cada tabuleiro.
+
+[![SINTONIA: tucano, quati e cobra-coral em três tabuleiros com placas, cancelas e controle direcional compartilhado.](docs/imagens/jogos/sintonia.jpg)](docs/imagens/jogos/sintonia.jpg)
+
+*Na imagem: fase 31, “Uma passagem para o outro”, antes do primeiro movimento. Placas de pressão e cancelas conectam as decisões entre os tabuleiros.*
+
+**O que observar:** um animal pode ficar parado contra uma parede enquanto os demais avançam. Use essa diferença para ajustar as posições; a vitória exige todos nos destinos ao final do mesmo comando.
+
+[Regras, exemplos e código de SINTONIA](docs/jogos/sintonia/README.md)
+
+#### REPASSE
+
+**A ordem das retiradas muda o resultado.** Ao retirar uma peça, cada seta envia seu valor atual inteiro ao primeiro receptor naquela direção ou à caixa da borda. Quem recebe soma esse valor e permanece no tabuleiro. Retire tudo e alcance exatamente todas as metas.
+
+[![REPASSE: três peças de valores 1, 2 e 3 com setas e metas nas bordas na fase 16.](docs/imagens/jogos/repasse.jpg)](docs/imagens/jogos/repasse.jpg)
+
+*Na imagem: fase 16, “Juntar no centro”. As peças laterais podem contribuir para o valor da peça central antes de ela sair.*
+
+**O que observar:** retirar a peça central cedo demais muda quem receberá os próximos repasses. Planeje a sequência para completar as metas sem ultrapassá-las, incluindo as metas zero.
+
+[Regras, exemplos e código de REPASSE](docs/jogos/repasse/README.md)
+
+#### ÓRBITA
+
+**Gire anéis e coordene transferências.** As peças se deslocam pelos anéis, enquanto os alvos permanecem fixos. Use as casas compartilhadas entre anéis para transferir peças e preencher todos os alvos simultaneamente.
+
+[![ÓRBITA: dois anéis conectados, peças móveis coloridas e seis alvos fixos na fase 24.](docs/imagens/jogos/orbita.jpg)](docs/imagens/jogos/orbita.jpg)
+
+*Na imagem: fase 24, com dois anéis e seis alvos. Os símbolos distinguem as peças móveis dos marcadores de destino.*
+
+**O que observar:** um giro pode aproximar uma peça do destino e afastar outra que já estava correta. Planeje transferência e retorno para ajustar o conjunto.
+
+[Regras, exemplos e código de ÓRBITA](docs/jogos/orbita/README.md)
 
 ### Versus: antecipar a próxima jogada
 
-| Jogo | Como funciona a disputa | Condição de vitória |
-| --- | --- | --- |
-| **[DESVIO](docs/jogos/desvio/README.md)** | A casa escolhida determina a linha ou coluna em que o adversário terá de jogar. Há duelo local, bot e treino com análise. | Deixar o adversário sem escolha legal. |
-| **[BROTO](docs/jogos/broto/README.md)** | Cada plantio estimula brotos nas direções horizontal e vertical e pode completar flores de qualquer pessoa. | Somar mais flores ao final das duas rodadas; empate é possível. |
-| **[CERCO](docs/jogos/cerco/README.md)** | Move uma de suas três peças; a casa abandonada vira uma barreira permanente para os dois times. | Deixar todas as peças do adversário sem movimento na vez dele. |
+#### DESVIO
 
-Os duelos locais acontecem **no mesmo aparelho**. Não há salas multiplayer online nesta base. TRAMA e VÉRTICE aparecem em registros históricos, mas não fazem parte do catálogo ativo.
+**Escolha agora onde o adversário poderá jogar depois.** Uma casa com ↔ envia o próximo jogador à mesma linha; uma casa com ↕ o envia à mesma coluna. A casa escolhida é consumida. Quem ficar sem uma escolha legal na sua vez perde.
+
+[![DESVIO: tabuleiro 4 por 4 com setas horizontais e verticais e prévia de escolha na linha 2, coluna 2.](docs/imagens/jogos/desvio.jpg)](docs/imagens/jogos/desvio.jpg)
+
+*Na imagem: mapa 1, “Referência do manual”. Confirmar a prévia em L2C2 enviaria o adversário à linha 2, com três opções restantes.*
+
+**IA do bot — busca exata e análise de respostas.** No modo Exato, o algoritmo percorre as continuações legais até o fim da partida e reutiliza posições já calculadas por memoização. Ele identifica jogadas que entregam uma posição perdedora ao adversário e prefere uma vitória mais curta; se a derrota for inevitável contra jogo perfeito, prefere adiá-la.
+
+| Dificuldade exibida | Estratégia implementada |
+| --- | --- |
+| **Explorador** | Escolhe entre jogadas legais com uma sequência pseudoaleatória reproduzível a partir da posição e da semente. |
+| **Intermediário** | Prioriza vitória imediata e, quando possível, evita permitir que o adversário vença na resposta seguinte. |
+| **Exato · jogo perfeito** | Resolve a posição por busca exata nos mapas suportados, de até 16 casas, considerando respostas perfeitas dos dois lados. |
+
+O **treino com análise** também mostra respostas e permite investigar decisões da partida. Uma jogada com muitas opções disponíveis para o adversário pode ser melhor que outra com poucas: o que importa é a sequência que essas opções permitem.
+
+[Manual de DESVIO](docs/jogos/desvio/README.md) · [Motor, análise e escolha do bot](dist/desvio.mjs)
+
+#### BROTO
+
+**Você planta, mas quem floresce?** Cada semente estimula o primeiro broto encontrado em cada direção horizontal e vertical. Um broto que recebe os dois eixos floresce e pontua para seu dono, mesmo que o adversário tenha completado o estímulo.
+
+[![BROTO: jardim clássico com dois brotos e prévia de um plantio que completa uma flor do Jogador 1.](docs/imagens/jogos/broto.jpg)](docs/imagens/jogos/broto.jpg)
+
+*Na imagem: jardim clássico, rodada 1. A prévia em L4C2 completa o estímulo vertical do broto em L2C2 e indica uma flor para o Jogador 1.*
+
+**Estratégia entre duas pessoas:** observe quais brotos já receberam um eixo antes de plantar. Uma ação pode beneficiar o adversário; a passagem aberta por uma flor colhida só afeta jogadas futuras. O duelo tem duas rodadas, alterna o iniciador e soma as flores para determinar o vencedor; pode haver empate.
+
+**Modos disponíveis:** Amistoso e Competitivo, para duas pessoas no mesmo aparelho. **BROTO ainda não tem bot nesta versão.**
+
+[Regras, exemplos e código de BROTO](docs/jogos/broto/README.md)
+
+#### CERCO
+
+**Cada passo fecha um caminho.** Mova uma das suas três peças para uma casa livre vizinha, na horizontal ou vertical. A casa abandonada vira uma barreira permanente para as duas equipes. Vence quem deixa o adversário sem nenhum movimento no início da vez dele.
+
+[![CERCO: mapa clássico 5 por 5 com duas equipes de animais e uma barreira deixada pelo movimento do Time Verde.](docs/imagens/jogos/cerco.jpg)](docs/imagens/jogos/cerco.jpg)
+
+*Na imagem: mapa Clássico 5 × 5, após Verde jogar de L1C3 para L2C3. A origem virou barreira e agora é a vez do Time Amarelo.*
+
+**IA do bot — antecipação e avaliação estratégica.** Nos níveis Intermediário e Avançado, o bot procura vitórias imediatas, verifica respostas que poderiam causar derrota imediata e compara as continuações por minimax com poda alfa-beta. A busca aprofunda progressivamente dentro de limites de profundidade e orçamento.
+
+A avaliação considera **mobilidade** (quantas jogadas cada equipe tem), **saídas** (possibilidades de continuar andando) e **região alcançável** (espaço livre acessível). Assim, a IA tenta preservar suas opções enquanto reduz as do adversário.
+
+| Dificuldade exibida | Estratégia implementada |
+| --- | --- |
+| **Explorador** | Seleciona uma jogada legal a partir de uma semente; não executa a busca estratégica dos demais níveis. |
+| **Intermediário** | Combina verificação tática, avaliação de posições e busca com profundidade padrão de até 2 jogadas. |
+| **Avançado · busca limitada** | Amplia o orçamento e usa profundidade padrão de até 5 jogadas; o limite de busca pode impedir alcançar toda essa profundidade. |
+
+A busca usa um **Web Worker** quando disponível, com alternativa cooperativa no navegador para permitir que a interface continue respondendo. O bot joga com as mesmas regras das pessoas. A busca limitada não prova que uma posição seja vencedora nem garante jogo perfeito.
+
+[Manual de CERCO](docs/jogos/cerco/README.md) · [Algoritmo do bot](dist/cerco/bot.mjs) · [Worker e cancelamento da busca](dist/cerco/service.mjs)
+
+TRAMA e VÉRTICE aparecem em registros históricos, mas não fazem parte do catálogo ativo.
 
 ### Como as fases estão organizadas
 
@@ -139,7 +260,7 @@ A aplicação roda no navegador. O Python apenas entrega os arquivos locais por 
 
 ### 2. Baixe o projeto
 
-Enquanto o repositório estiver privado, é necessário acesso autorizado. Com acesso ao projeto, abra um terminal e execute:
+Abra um terminal e baixe o repositório público:
 
 ```bash
 git clone https://github.com/luigiscofano/intuicao.git
@@ -201,7 +322,7 @@ Mais opções e diagnóstico: **[guia de instalação](docs/setup/README.md)**.
 
 Para acompanhar um jogo do começo ao fim, leia seu manual, localize os arquivos indicados e compare as regras com os testes correspondentes. SINTONIA, REPASSE, ÓRBITA, BROTO e CERCO têm subpastas próprias; os demais também usam módulos compartilhados no nível principal de `dist`.
 
-Esta branch contém um rascunho parcial de formatação e comentários em português. O [registro da revisão](docs/manutencao/legibilidade.md) explica o escopo, as verificações realizadas e os arquivos ainda pendentes. Não houve integração à `main` nem publicação no site.
+A primeira parte da reforma de formatação e comentários em português foi integrada à `main` pelo [PR #30](https://github.com/luigiscofano/intuicao/pull/30). O [registro da revisão](docs/manutencao/legibilidade.md) documenta a etapa de rascunho e os 299 arquivos ainda pendentes da reforma. O merge não publicou alterações no site.
 
 ### Tecnologias e decisões de implementação
 
@@ -210,7 +331,8 @@ Esta branch contém um rascunho parcial de formatação e comentários em portug
 | **HTML e CSS** | Estrutura das telas, controles, molduras e adaptação do layout. |
 | **JavaScript em módulos `.mjs`** | Regras, estados, interação, navegação e integração dos jogos. |
 | **SVG e imagens raster** | Tabuleiros, formas, símbolos, cenários e personagens. |
-| **Web Workers** | Processamento separado da interface em rotinas de análise e geração que os utilizam. |
+| **IA para jogos** | Busca exata com memoização em DESVIO; minimax, poda alfa-beta e heurísticas em CERCO. |
+| **Web Workers** | Processamento separado da interface, incluindo a busca do bot de CERCO, com cancelamento e alternativa local. |
 | **Armazenamento local** | Progresso no navegador, nos fluxos que oferecem persistência. |
 | **Node.js e GitHub Actions** | Execução de testes e verificação dos documentos. |
 
@@ -222,7 +344,7 @@ O projeto permite estudar geometria computacional, grafos, busca de estados, má
 | --- | --- |
 | Catálogo e navegação | 11 jogos ativos, seleção de desafios e regras na interface. |
 | Campanhas solo | Oito campanhas de 80 fases; recursos adicionais variam por jogo. |
-| Duelos | Partidas locais e recursos de bot/análise nos jogos que os implementam. |
+| Duelos e IA | Bots em DESVIO e CERCO; BROTO para duas pessoas no mesmo aparelho. |
 | Progresso e exploração | Salvamento, Desfazer e Refazer nos fluxos que oferecem essas funções. |
 | Documentação | README inicial, manuais individuais, instalação, arquitetura e manutenção. |
 | Testes de motores | **95 testes aprovados** na revisão de 01/11/2026; execução automática em PRs e pushes para `main`. |
