@@ -10,6 +10,14 @@ Mova suas peças, feche caminhos e deixe o adversário sem saída.
 
 Faça a última jogada: quem ficar sem movimentos na sua vez perde.
 
+## O jogo em imagem
+
+[![CERCO: mapa clássico 5 por 5 com duas equipes de animais e uma barreira deixada pelo movimento do Time Verde.](../../imagens/jogos/cerco.jpg)](../../imagens/jogos/cerco.jpg)
+
+*Na imagem: mapa Clássico 5 × 5, após Verde jogar de L1C3 para L2C3. A origem virou barreira e agora é a vez do Time Amarelo.*
+
+Clique na imagem para ampliar. Captura real do site em **1º de novembro de 2026**; [origem e contexto das imagens](../../imagens/jogos/README.md).
+
 ## Problema e proposta pedagógica
 
 Praticar planejamento por turnos e leitura de caminhos, observando como a casa abandonada altera as opções de ambos os times.

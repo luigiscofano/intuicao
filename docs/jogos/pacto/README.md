@@ -10,6 +10,14 @@ Um puzzle de dedução em que quatro símbolos precisam formar parcerias numa gr
 
 Complete a grade com quatro símbolos: dois de cada por linha e coluna. Cada casa deve tocar exatamente uma casa igual pelos lados.
 
+## O jogo em imagem
+
+[![PACTO: grade 8 por 8 com pistas de círculos, quadrados, triângulos e losangos na fase 8.](../../imagens/jogos/pacto.jpg)](../../imagens/jogos/pacto.jpg)
+
+*Na imagem: configuração inicial da fase 8. As ligações indicam pares já formados entre símbolos iguais.*
+
+Clique na imagem para ampliar. Captura real do site em **1º de novembro de 2026**; [origem e contexto das imagens](../../imagens/jogos/README.md).
+
 ## Problema e proposta pedagógica
 
 Praticar contagem, exclusão de possibilidades e dedução, combinando uma regra de vizinhança com restrições de linhas e colunas.

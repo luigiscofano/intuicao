@@ -10,6 +10,14 @@ Um puzzle de lógica em que pontos de regiões diferentes formam um circuito fec
 
 Coloque um ponto por região para formar um único circuito. As ligações são automáticas; observe também as pistas especiais de cada fase.
 
+## O jogo em imagem
+
+[![ELO: regiões coloridas, pontos e duas ligações horizontais em uma tentativa da fase 8.](../../imagens/jogos/elo.jpg)](../../imagens/jogos/elo.jpg)
+
+*Na imagem: fase 8, “Circuito clássico”. Os pontos adicionados demonstram duas ligações horizontais; o circuito ainda está incompleto.*
+
+Clique na imagem para ampliar. Captura real do site em **1º de novembro de 2026**; [origem e contexto das imagens](../../imagens/jogos/README.md).
+
 ## Problema e proposta pedagógica
 
 Praticar dedução lógica, visão espacial e articulação entre condições locais e globais, acompanhando como mover um ponto altera o circuito inteiro.

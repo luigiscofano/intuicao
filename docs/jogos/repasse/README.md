@@ -10,6 +10,14 @@ Um puzzle de planejamento em que retirar uma peça transforma os valores e os ca
 
 Retire todas as peças e complete exatamente as metas das bordas. Decida quem precisa receber, esperar ou sair para abrir passagem.
 
+## O jogo em imagem
+
+[![REPASSE: três peças de valores 1, 2 e 3 com setas e metas nas bordas na fase 16.](../../imagens/jogos/repasse.jpg)](../../imagens/jogos/repasse.jpg)
+
+*Na imagem: fase 16, “Juntar no centro”. As peças laterais podem contribuir para o valor da peça central antes de ela sair.*
+
+Clique na imagem para ampliar. Captura real do site em **1º de novembro de 2026**; [origem e contexto das imagens](../../imagens/jogos/README.md).
+
 ## Problema e proposta pedagógica
 
 Praticar planejamento de ordem, antecipação de consequências e leitura de relações entre valores, receptores e metas.

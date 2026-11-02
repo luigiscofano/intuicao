@@ -10,6 +10,14 @@ Um puzzle de equilíbrio em que você desenha peças ao redor de seus apoios.
 
 Divida a grade em peças conectadas e equilibradas. O centro de massa de cada peça deve coincidir com seu apoio.
 
+## O jogo em imagem
+
+[![PRUMO: grade 4 por 4 com sete apoios de A a G e pistas coloridas da fase 9.](../../imagens/jogos/prumo.jpg)](../../imagens/jogos/prumo.jpg)
+
+*Na imagem: fase 9, com grade 4 × 4 e sete apoios. As cores identificam as peças que precisam ser completadas.*
+
+Clique na imagem para ampliar. Captura real do site em **1º de novembro de 2026**; [origem e contexto das imagens](../../imagens/jogos/README.md).
+
 ## Problema e proposta pedagógica
 
 Praticar raciocínio espacial e explorar centro de massa, equilíbrio e compensação entre quantidade e distância.

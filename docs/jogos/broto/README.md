@@ -10,6 +10,14 @@ Plante sementes, complete estímulos e escolha quem floresce.
 
 Você planta. Mas quem floresce? Um duelo local para duas pessoas: cada plantio pode completar flores suas ou do adversário.
 
+## O jogo em imagem
+
+[![BROTO: jardim clássico com dois brotos e prévia de um plantio que completa uma flor do Jogador 1.](../../imagens/jogos/broto.jpg)](../../imagens/jogos/broto.jpg)
+
+*Na imagem: jardim clássico, rodada 1. A prévia em L4C2 completa o estímulo vertical do broto em L2C2 e indica uma flor para o Jogador 1.*
+
+Clique na imagem para ampliar. Captura real do site em **1º de novembro de 2026**; [origem e contexto das imagens](../../imagens/jogos/README.md).
+
 ## Problema e proposta pedagógica
 
 Praticar antecipação e planejamento por turnos, acompanhando os efeitos imediatos de um plantio e as possibilidades que ele deixa para a próxima pessoa.
