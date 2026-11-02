@@ -1,15 +1,188 @@
+// Testes e verificações de CERCO.
 import test from 'node:test';
 import assert from 'node:assert/strict';
-import {createCerco,applyCercoMove,previewCercoMove,legalCercoMoves,undoCerco,redoCerco,resetCerco,rematchCerco,restoreCerco,serializeCerco,CERCO_ISOLATED_EXAMPLE} from '../dist/cerco/engine.mjs';
-const play=(moves,s=createCerco())=>moves.reduce((state,move)=>applyCercoMove(state,move).state,s);
-const invariants=s=>{assert.equal(s.board.length,25);assert.equal(s.board.filter(x=>x===0).length,3);assert.equal(s.board.filter(x=>x===1).length,3);assert.equal(s.board.filter(x=>x==='barrier').length,s.turn);assert.equal(s.board.filter(x=>x===null).length,19-s.turn);assert(s.turn<=19);};
-test('opening has exact six pieces, 19 empty cells and both teams mobile',()=>{const s=createCerco();assert.deepEqual(s.board,Array.from({length:25},(_,c)=>[0,2,4].includes(c)?0:[20,22,24].includes(c)?1:null));assert(legalCercoMoves(s,0).length);assert(legalCercoMoves(s,1).length);invariants(s);});
-test('L1C3 to L2C3 creates only origin barrier, switches team, preserves six pieces',()=>{const s=createCerco(),r=applyCercoMove(s,{from:2,to:7});assert.equal(r.state.board[2],'barrier');assert.equal(r.state.board[7],0);assert.equal(r.state.player,1);assert.equal(r.state.turn,1);assert.deepEqual(r.events,{moved:{from:2,to:7,owner:0},barrier:2,over:false,winner:null});assert.equal(s.board[2],0);invariants(r.state);});
-test('diagonal/jump/occupied/opponent/outside and stale actions reject without mutation',()=>{const s=createCerco(),before=serializeCerco(s);for(const move of [{from:2,to:8},{from:2,to:12},{from:2,to:4},{from:0,to:20},{from:0,to:-1},{from:4,to:5},{from:20,to:15},{from:1,to:6}])assert.throws(()=>applyCercoMove(s,move));assert.throws(()=>applyCercoMove(s,{from:2,to:7},{expectedPlayer:1}));assert.throws(()=>applyCercoMove(s,{from:2,to:7},{expectedTurn:1}));assert.equal(serializeCerco(s),before);const after=play([{from:2,to:7},{from:20,to:15}]);assert.throws(()=>applyCercoMove(after,{from:7,to:2}));});
-test('one isolated piece does not end turn when other team pieces can move; tutorial is legal',()=>{const s=play(CERCO_ISOLATED_EXAMPLE);assert.equal(s.player,1);assert.equal(s.board[21],1);assert(!s.over);assert(!legalCercoMoves(s).some(m=>m.from===21));assert(legalCercoMoves(s).some(m=>m.from===16));assert(legalCercoMoves(s).some(m=>m.from===24));assert(restoreCerco(s));});
-test('simultaneous immobility awards last mover, not draw',()=>{const board=Array(25).fill('barrier');for(const c of [0,2,4])board[c]=0;for(const c of [20,22,24])board[c]=1;board[1]=null;const s={...createCerco(),board};const r=applyCercoMove(s,{from:0,to:1});assert.equal(r.state.winner,0);assert(r.state.over);assert.equal(r.state.player,1);assert.equal(legalCercoMoves({...r.state,over:false},0).length,0);assert.equal(legalCercoMoves({...r.state,over:false},1).length,0);});
-test('preview cancellation preserves exact game and confirmed move equals preview',()=>{const s=play(CERCO_ISOLATED_EXAMPLE),raw=serializeCerco(s),move=legalCercoMoves(s)[0],p=previewCercoMove(s,move);assert.equal(serializeCerco(s),raw);assert.deepEqual(p,applyCercoMove(s,move));assert(Object.isFrozen(p.state.board));});
-test('undo redo restores every field and branch replacement discards only future',()=>{const s=play(CERCO_ISOLATED_EXAMPLE),move=legalCercoMoves(s)[0],after=applyCercoMove(s,move).state,u=undoCerco(after);assert.deepEqual({...u,future:[]},s);assert.deepEqual(redoCerco(u),after);assert(restoreCerco(u));const branch=applyCercoMove(u,legalCercoMoves(u).at(-1)).state;assert.deepEqual(branch.future,[]);assert.equal(redoCerco(branch),branch);});
-test('reset preserves starter and logical state excludes all mascots/configuration',()=>{for(const starter of [0,1]){const initial=createCerco(starter),s=applyCercoMove(initial,legalCercoMoves(initial)[0]).state;assert.deepEqual(resetCerco(s),initial);assert(!Object.keys(s).some(k=>/mascot|animal|size|color|mode/i.test(k)));const a={mascots:['tatu','tatu'],state:s},b={mascots:['tucano','capivara'],state:s};assert.deepEqual(legalCercoMoves(a.state),legalCercoMoves(b.state));}});
-test('strict canonical restore rejects tampered cells, turn, result, history and future',()=>{const s=play(CERCO_ISOLATED_EXAMPLE);for(const alter of [x=>x.board[0]=null,x=>x.player=1-x.player,x=>x.turn++,x=>x.winner=1,x=>x.over=true,x=>x.rulesVersion='other',x=>x.history[0].to=24,x=>x.future=[{from:0,to:24}],x=>x.extra='cosmetic']){const bad=structuredClone(s);alter(bad);const raw=JSON.stringify(bad);assert.equal(restoreCerco(bad),null);assert.equal(JSON.stringify(bad),raw);}for(const raw of ['bad',{},null,'null'])assert.equal(restoreCerco(raw),null);assert.deepEqual(restoreCerco(serializeCerco(s)),s);});
-test('2000 seeded games alternate starters: legal paths, wins both sides, max19, replay and rematch',()=>{let seed=67,winners=[0,0],min=19,max=0;for(let i=0;i<2000;i++){let s=createCerco(i%2);while(!s.over){seed=(Math.imul(seed,1664525)+1013904223)>>>0;const ms=legalCercoMoves(s);assert(ms.length);const move=ms[seed%ms.length],before=s;s=applyCercoMove(s,move).state;invariants(s);assert.deepEqual(redoCerco(undoCerco(s)),s);if(s.over){assert.equal(s.winner,before.player);assert.equal(legalCercoMoves({...s,over:false},s.player).length,0);}}winners[s.winner]++;min=Math.min(min,s.turn);max=Math.max(max,s.turn);assert.deepEqual(restoreCerco(serializeCerco(s)),s);assert.deepEqual(rematchCerco(s),createCerco(1-s.starter));const undo=undoCerco(s);assert(!undo.over);assert.equal(undo.winner,null);}assert(winners.every(n=>n>0));assert(max<=19);assert(min<19);});
+import {
+  createCerco,
+  applyCercoMove,
+  previewCercoMove,
+  legalCercoMoves,
+  undoCerco,
+  redoCerco,
+  resetCerco,
+  rematchCerco,
+  restoreCerco,
+  serializeCerco,
+  CERCO_ISOLATED_EXAMPLE,
+} from '../dist/cerco/engine.mjs';
+const play = (moves, s = createCerco()) =>
+  moves.reduce((state, move) => applyCercoMove(state, move).state, s);
+const invariants = (s) => {
+  assert.equal(s.board.length, 25);
+  assert.equal(s.board.filter((x) => x === 0).length, 3);
+  assert.equal(s.board.filter((x) => x === 1).length, 3);
+  assert.equal(s.board.filter((x) => x === 'barrier').length, s.turn);
+  assert.equal(s.board.filter((x) => x === null).length, 19 - s.turn);
+  assert(s.turn <= 19);
+};
+test('opening has exact six pieces, 19 empty cells and both teams mobile', () => {
+  const s = createCerco();
+  assert.deepEqual(
+    s.board,
+    Array.from({ length: 25 }, (_, c) =>
+      [0, 2, 4].includes(c) ? 0 : [20, 22, 24].includes(c) ? 1 : null,
+    ),
+  );
+  assert(legalCercoMoves(s, 0).length);
+  assert(legalCercoMoves(s, 1).length);
+  invariants(s);
+});
+test('L1C3 to L2C3 creates only origin barrier, switches team, preserves six pieces', () => {
+  const s = createCerco(),
+    r = applyCercoMove(s, { from: 2, to: 7 });
+  assert.equal(r.state.board[2], 'barrier');
+  assert.equal(r.state.board[7], 0);
+  assert.equal(r.state.player, 1);
+  assert.equal(r.state.turn, 1);
+  assert.deepEqual(r.events, {
+    moved: { from: 2, to: 7, owner: 0 },
+    barrier: 2,
+    over: false,
+    winner: null,
+  });
+  assert.equal(s.board[2], 0);
+  invariants(r.state);
+});
+test('diagonal/jump/occupied/opponent/outside and stale actions reject without mutation', () => {
+  const s = createCerco(),
+    before = serializeCerco(s);
+  for (const move of [
+    { from: 2, to: 8 },
+    { from: 2, to: 12 },
+    { from: 2, to: 4 },
+    { from: 0, to: 20 },
+    { from: 0, to: -1 },
+    { from: 4, to: 5 },
+    { from: 20, to: 15 },
+    { from: 1, to: 6 },
+  ])
+    assert.throws(() => applyCercoMove(s, move));
+  assert.throws(() => applyCercoMove(s, { from: 2, to: 7 }, { expectedPlayer: 1 }));
+  assert.throws(() => applyCercoMove(s, { from: 2, to: 7 }, { expectedTurn: 1 }));
+  assert.equal(serializeCerco(s), before);
+  const after = play([
+    { from: 2, to: 7 },
+    { from: 20, to: 15 },
+  ]);
+  assert.throws(() => applyCercoMove(after, { from: 7, to: 2 }));
+});
+test('one isolated piece does not end turn when other team pieces can move; tutorial is legal', () => {
+  const s = play(CERCO_ISOLATED_EXAMPLE);
+  assert.equal(s.player, 1);
+  assert.equal(s.board[21], 1);
+  assert(!s.over);
+  assert(!legalCercoMoves(s).some((m) => m.from === 21));
+  assert(legalCercoMoves(s).some((m) => m.from === 16));
+  assert(legalCercoMoves(s).some((m) => m.from === 24));
+  assert(restoreCerco(s));
+});
+test('simultaneous immobility awards last mover, not draw', () => {
+  const board = Array(25).fill('barrier');
+  for (const c of [0, 2, 4]) board[c] = 0;
+  for (const c of [20, 22, 24]) board[c] = 1;
+  board[1] = null;
+  const s = { ...createCerco(), board };
+  const r = applyCercoMove(s, { from: 0, to: 1 });
+  assert.equal(r.state.winner, 0);
+  assert(r.state.over);
+  assert.equal(r.state.player, 1);
+  assert.equal(legalCercoMoves({ ...r.state, over: false }, 0).length, 0);
+  assert.equal(legalCercoMoves({ ...r.state, over: false }, 1).length, 0);
+});
+test('preview cancellation preserves exact game and confirmed move equals preview', () => {
+  const s = play(CERCO_ISOLATED_EXAMPLE),
+    raw = serializeCerco(s),
+    move = legalCercoMoves(s)[0],
+    p = previewCercoMove(s, move);
+  assert.equal(serializeCerco(s), raw);
+  assert.deepEqual(p, applyCercoMove(s, move));
+  assert(Object.isFrozen(p.state.board));
+});
+test('undo redo restores every field and branch replacement discards only future', () => {
+  const s = play(CERCO_ISOLATED_EXAMPLE),
+    move = legalCercoMoves(s)[0],
+    after = applyCercoMove(s, move).state,
+    u = undoCerco(after);
+  assert.deepEqual({ ...u, future: [] }, s);
+  assert.deepEqual(redoCerco(u), after);
+  assert(restoreCerco(u));
+  const branch = applyCercoMove(u, legalCercoMoves(u).at(-1)).state;
+  assert.deepEqual(branch.future, []);
+  assert.equal(redoCerco(branch), branch);
+});
+test('reset preserves starter and logical state excludes all mascots/configuration', () => {
+  for (const starter of [0, 1]) {
+    const initial = createCerco(starter),
+      s = applyCercoMove(initial, legalCercoMoves(initial)[0]).state;
+    assert.deepEqual(resetCerco(s), initial);
+    assert(!Object.keys(s).some((k) => /mascot|animal|size|color|mode/i.test(k)));
+    const a = { mascots: ['tatu', 'tatu'], state: s },
+      b = { mascots: ['tucano', 'capivara'], state: s };
+    assert.deepEqual(legalCercoMoves(a.state), legalCercoMoves(b.state));
+  }
+});
+test('strict canonical restore rejects tampered cells, turn, result, history and future', () => {
+  const s = play(CERCO_ISOLATED_EXAMPLE);
+  for (const alter of [
+    (x) => (x.board[0] = null),
+    (x) => (x.player = 1 - x.player),
+    (x) => x.turn++,
+    (x) => (x.winner = 1),
+    (x) => (x.over = true),
+    (x) => (x.rulesVersion = 'other'),
+    (x) => (x.history[0].to = 24),
+    (x) => (x.future = [{ from: 0, to: 24 }]),
+    (x) => (x.extra = 'cosmetic'),
+  ]) {
+    const bad = structuredClone(s);
+    alter(bad);
+    const raw = JSON.stringify(bad);
+    assert.equal(restoreCerco(bad), null);
+    assert.equal(JSON.stringify(bad), raw);
+  }
+  for (const raw of ['bad', {}, null, 'null']) assert.equal(restoreCerco(raw), null);
+  assert.deepEqual(restoreCerco(serializeCerco(s)), s);
+});
+test('2000 seeded games alternate starters: legal paths, wins both sides, max19, replay and rematch', () => {
+  let seed = 67,
+    winners = [0, 0],
+    min = 19,
+    max = 0;
+  for (let i = 0; i < 2000; i++) {
+    let s = createCerco(i % 2);
+    while (!s.over) {
+      seed = (Math.imul(seed, 1664525) + 1013904223) >>> 0;
+      const ms = legalCercoMoves(s);
+      assert(ms.length);
+      const move = ms[seed % ms.length],
+        before = s;
+      s = applyCercoMove(s, move).state;
+      invariants(s);
+      assert.deepEqual(redoCerco(undoCerco(s)), s);
+      if (s.over) {
+        assert.equal(s.winner, before.player);
+        assert.equal(legalCercoMoves({ ...s, over: false }, s.player).length, 0);
+      }
+    }
+    winners[s.winner]++;
+    min = Math.min(min, s.turn);
+    max = Math.max(max, s.turn);
+    assert.deepEqual(restoreCerco(serializeCerco(s)), s);
+    assert.deepEqual(rematchCerco(s), createCerco(1 - s.starter));
+    const undo = undoCerco(s);
+    assert(!undo.over);
+    assert.equal(undo.winner, null);
+  }
+  assert(winners.every((n) => n > 0));
+  assert(max <= 19);
+  assert(min < 19);
+});

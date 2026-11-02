@@ -1,6 +1,31 @@
-import {restoreBoardAlignmentFile} from './board-alignment-history.mjs';
-import assert from 'node:assert/strict';import fs from 'node:fs';import crypto from 'node:crypto';import {restoreBoardToolbarFile} from './board-toolbar-history.mjs';
-const m=JSON.parse(fs.readFileSync(new URL('./board-toolbar-authorized-change.json',import.meta.url))),sha=x=>crypto.createHash('sha256').update(x).digest('hex');
-assert.deepEqual(Object.keys(m.files).sort(),['collection-ui.mjs','index.html','style.css']);
-for(const [file,c] of Object.entries(m.files)){const text=restoreBoardAlignmentFile(file,fs.readFileSync(new URL('../dist/'+file,import.meta.url),'utf8'));assert.equal(sha(text),c.afterSha256);const old=restoreBoardToolbarFile(file,text);assert.equal(sha(old),c.beforeSha256);assert.equal(restoreBoardToolbarFile(file,old),old);let rebuilt=old;for(const b of c.blocks){assert.equal(rebuilt.split(b.before).length-1,1);rebuilt=rebuilt.replace(b.before,b.after);}assert.equal(rebuilt,text);assert.notEqual(sha(restoreBoardToolbarFile(file,text+' ')),c.beforeSha256);}
-console.log('PASS exact board-toolbar/hint layer above published JSON and touch fix; prior bytes/hashes preserved.');
+// Testes e verificações de componentes compartilhados do Intuição.
+import { restoreBoardAlignmentFile } from './board-alignment-history.mjs';
+import assert from 'node:assert/strict';
+import fs from 'node:fs';
+import crypto from 'node:crypto';
+import { restoreBoardToolbarFile } from './board-toolbar-history.mjs';
+const m = JSON.parse(
+    fs.readFileSync(new URL('./board-toolbar-authorized-change.json', import.meta.url)),
+  ),
+  sha = (x) => crypto.createHash('sha256').update(x).digest('hex');
+assert.deepEqual(Object.keys(m.files).sort(), ['collection-ui.mjs', 'index.html', 'style.css']);
+for (const [file, c] of Object.entries(m.files)) {
+  const text = restoreBoardAlignmentFile(
+    file,
+    fs.readFileSync(new URL('../dist/' + file, import.meta.url), 'utf8'),
+  );
+  assert.equal(sha(text), c.afterSha256);
+  const old = restoreBoardToolbarFile(file, text);
+  assert.equal(sha(old), c.beforeSha256);
+  assert.equal(restoreBoardToolbarFile(file, old), old);
+  let rebuilt = old;
+  for (const b of c.blocks) {
+    assert.equal(rebuilt.split(b.before).length - 1, 1);
+    rebuilt = rebuilt.replace(b.before, b.after);
+  }
+  assert.equal(rebuilt, text);
+  assert.notEqual(sha(restoreBoardToolbarFile(file, text + ' ')), c.beforeSha256);
+}
+console.log(
+  'PASS exact board-toolbar/hint layer above published JSON and touch fix; prior bytes/hashes preserved.',
+);

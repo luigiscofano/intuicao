@@ -1,4 +1,39 @@
-import test from 'node:test';import assert from 'node:assert/strict';import{readFileSync}from'node:fs';import{execFileSync}from'node:child_process';import{FAUNA_ART}from'../dist/fauna-art.mjs';import{FAUNA_INFO}from'../dist/fauna-info-content.mjs';
-const base='c3c758e41745f8ae31b863fbbeb20225cd2470af',path='dist/cerco/ui.mjs';
-test('padrão coral/piranha existe no catálogo e corresponde aos nomes',()=>{const s=readFileSync(path,'utf8'),ids=FAUNA_ART.map(x=>x.id);assert(ids.includes('coral')&&ids.includes('piranha'));assert.match(FAUNA_INFO.coral.name,/coral/i);assert.match(FAUNA_INFO.piranha.name,/piranha.*vermelha/i);assert(s.includes("mascots:[ids.includes('coral')?'coral':ids[0],ids.includes('piranha')?'piranha':ids[1]||ids[0]]"));});
-test('única mudança de produção é o padrão; restauração e escolhas continuam exatas',()=>{const old=execFileSync('git',['show',base+':'+path],{encoding:'utf8'}),now=readFileSync(path,'utf8');assert.equal(now,old.replace("mascots:[ids.includes('capivara')?'capivara':ids[0],ids.includes('onca')?'onca':ids[1]||ids[0]]","mascots:[ids.includes('coral')?'coral':ids[0],ids.includes('piranha')?'piranha':ids[1]||ids[0]]"));assert.deepEqual(execFileSync('git',['diff','--name-only',base,'--','dist'],{encoding:'utf8'}).trim().split('\n').filter(x=>x&&!x.includes('/__')),[path]);});
+// Testes e verificações de CERCO.
+import test from 'node:test';
+import assert from 'node:assert/strict';
+import { readFileSync } from 'node:fs';
+import { execFileSync } from 'node:child_process';
+import { FAUNA_ART } from '../dist/fauna-art.mjs';
+import { FAUNA_INFO } from '../dist/fauna-info-content.mjs';
+const base = 'c3c758e41745f8ae31b863fbbeb20225cd2470af',
+  path = 'dist/cerco/ui.mjs';
+test('padrão coral/piranha existe no catálogo e corresponde aos nomes', () => {
+  const s = readFileSync(path, 'utf8'),
+    ids = FAUNA_ART.map((x) => x.id);
+  assert(ids.includes('coral') && ids.includes('piranha'));
+  assert.match(FAUNA_INFO.coral.name, /coral/i);
+  assert.match(FAUNA_INFO.piranha.name, /piranha.*vermelha/i);
+  assert(
+    s.includes(
+      "mascots:[ids.includes('coral')?'coral':ids[0],ids.includes('piranha')?'piranha':ids[1]||ids[0]]",
+    ),
+  );
+});
+test('única mudança de produção é o padrão; restauração e escolhas continuam exatas', () => {
+  const old = execFileSync('git', ['show', base + ':' + path], { encoding: 'utf8' }),
+    now = readFileSync(path, 'utf8');
+  assert.equal(
+    now,
+    old.replace(
+      "mascots:[ids.includes('capivara')?'capivara':ids[0],ids.includes('onca')?'onca':ids[1]||ids[0]]",
+      "mascots:[ids.includes('coral')?'coral':ids[0],ids.includes('piranha')?'piranha':ids[1]||ids[0]]",
+    ),
+  );
+  assert.deepEqual(
+    execFileSync('git', ['diff', '--name-only', base, '--', 'dist'], { encoding: 'utf8' })
+      .trim()
+      .split('\n')
+      .filter((x) => x && !x.includes('/__')),
+    [path],
+  );
+});

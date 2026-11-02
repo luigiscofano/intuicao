@@ -1,4 +1,7 @@
+// Textos e fontes das curiosidades culturais sobre os animais.
 // Curiosidades culturais documentadas; sem reprodução de letras de músicas.
+// Dados materializados: valores e ordem preservados.
+// prettier-ignore
 export const FAUNA_CULTURE={
   "tuiuiu": {
     "paragraphs": [

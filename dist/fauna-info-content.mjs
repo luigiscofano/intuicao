@@ -1,4 +1,7 @@
+// Nomes, descrições e fontes das informações sobre a fauna.
 // Fatos verificados em fontes públicas; nomes do manual original.
+// Dados materializados: valores e ordem preservados.
+// prettier-ignore
 export const FAUNA_INFO={
   "tuiuiu": {
     "name": "Tuiuiú",

@@ -1,31 +1,124 @@
+/* Painéis de regras ao lado ou abaixo do tabuleiro. */
 /* Rules reserve their own column: never an overlay on the playable board. */
-.rules-sidebar{min-width:0;background:#fffefa;border-left:1px solid #ccd5c5;padding:24px 20px;color:#354e3d;font-size:13px;line-height:1.65;align-self:start;position:sticky;top:16px;max-height:calc(100vh - 32px);overflow:auto;overscroll-behavior:contain}
-.rules-sidebar[hidden]{display:none}
-.rules-sidebar h3{font-size:16px;line-height:1.4;margin:0 0 12px}
-.rules-sidebar .rules-context{margin:0 0 18px;padding-bottom:16px;border-bottom:1px solid #dce2d6;white-space:pre-line}
-.rules-sidebar .rules-body{padding:0}
-.rules-sidebar .rules-body p{margin-top:0}
-.rules-sidebar .collection-notes{padding:0}
-.workspace.rules-open,.collection-workspace.rules-open{grid-template-columns:minmax(0,1fr) minmax(260px,300px)}
-.workspace.rules-open>.experiment,.collection-workspace.rules-open>.collection-surface{grid-column:1;grid-row:1}
-.workspace.rules-open>.rules-sidebar,.collection-workspace.rules-open>.rules-sidebar{grid-column:2;grid-row:1}
-.workspace.rules-open>#advanced-controls,.collection-workspace.rules-open>#c-advanced{grid-column:1 / -1;grid-row:2;border-left:0;border-top:1px solid var(--line)}
-@media(max-width:1050px){
- .workspace.rules-open,.collection-workspace.rules-open{grid-template-columns:minmax(0,1fr)}
- .workspace.rules-open>.rules-sidebar,.collection-workspace.rules-open>.rules-sidebar{grid-column:1;grid-row:2;position:static;max-height:none;border-left:0;border-top:1px solid #ccd5c5}
- .workspace.rules-open>#advanced-controls,.collection-workspace.rules-open>#c-advanced{grid-row:3}
+.rules-sidebar {
+  min-width: 0;
+  background: #fffefa;
+  border-left: 1px solid #ccd5c5;
+  padding: 24px 20px;
+  color: #354e3d;
+  font-size: 13px;
+  line-height: 1.65;
+  align-self: start;
+  position: sticky;
+  top: 16px;
+  max-height: calc(100vh - 32px);
+  overflow: auto;
+  overscroll-behavior: contain;
 }
-@media(max-width:600px){.rules-sidebar{padding:20px 16px}}
-
+.rules-sidebar[hidden] {
+  display: none;
+}
+.rules-sidebar h3 {
+  font-size: 16px;
+  line-height: 1.4;
+  margin: 0 0 12px;
+}
+.rules-sidebar .rules-context {
+  margin: 0 0 18px;
+  padding-bottom: 16px;
+  border-bottom: 1px solid #dce2d6;
+  white-space: pre-line;
+}
+.rules-sidebar .rules-body {
+  padding: 0;
+}
+.rules-sidebar .rules-body p {
+  margin-top: 0;
+}
+.rules-sidebar .collection-notes {
+  padding: 0;
+}
+.workspace.rules-open,.collection-workspace.rules-open {
+  grid-template-columns: minmax(0,1fr) minmax(260px,300px);
+}
+.workspace.rules-open>.experiment,.collection-workspace.rules-open>.collection-surface {
+  grid-column: 1;
+  grid-row: 1;
+}
+.workspace.rules-open>.rules-sidebar,.collection-workspace.rules-open>.rules-sidebar {
+  grid-column: 2;
+  grid-row: 1;
+}
+.workspace.rules-open>#advanced-controls,.collection-workspace.rules-open>#c-advanced {
+  grid-column: 1 / -1;
+  grid-row: 2;
+  border-left: 0;
+  border-top: 1px solid var(--line);
+}
+@media(max-width:1050px) {
+  .workspace.rules-open,.collection-workspace.rules-open {
+    grid-template-columns: minmax(0,1fr);
+  }
+  .workspace.rules-open>.rules-sidebar,.collection-workspace.rules-open>.rules-sidebar {
+    grid-column: 1;
+    grid-row: 2;
+    position: static;
+    max-height: none;
+    border-left: 0;
+    border-top: 1px solid #ccd5c5;
+  }
+  .workspace.rules-open>#advanced-controls,.collection-workspace.rules-open>#c-advanced {
+    grid-row: 3;
+  }
+}
+@media(max-width:600px) {
+  .rules-sidebar {
+    padding: 20px 16px;
+  }
+}
 /* Compact native disclosure sits immediately before the existing advanced toggle. */
-.rules-heading-tools,.stage-tools{display:flex;align-items:center;justify-content:flex-end;gap:8px;flex-wrap:wrap}
-.rules-heading-tools{flex-shrink:0}
-.rules-heading-tools>.rules-card,.stage-tools>.rules-card{margin:0;border-radius:11px;box-shadow:none;overflow:visible;flex:0 0 auto}
-.rules-heading-tools>.rules-card>summary,.stage-tools>.rules-card>summary{min-height:44px;padding:10px 12px;gap:8px;font-size:12px;cursor:pointer}
-.rules-heading-tools>.rules-card .rules-show,.rules-heading-tools>.rules-card .rules-hide,.stage-tools>.rules-card .rules-show,.stage-tools>.rules-card .rules-hide{font-size:11px;padding:2px 7px}
-@media(max-width:600px){
- .rules-heading-tools{width:100%;justify-content:flex-start;flex-shrink:1}
- .stage-tools{justify-content:flex-start}
- .rules-heading-tools>.rules-card,.stage-tools>.rules-card{max-width:100%}
- .rules-heading-tools>.rules-card>summary,.stage-tools>.rules-card>summary{font-size:11px;padding:9px 10px}
+.rules-heading-tools,.stage-tools {
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  gap: 8px;
+  flex-wrap: wrap;
+}
+.rules-heading-tools {
+  flex-shrink: 0;
+}
+.rules-heading-tools>.rules-card,.stage-tools>.rules-card {
+  margin: 0;
+  border-radius: 11px;
+  box-shadow: none;
+  overflow: visible;
+  flex: 0 0 auto;
+}
+.rules-heading-tools>.rules-card>summary,.stage-tools>.rules-card>summary {
+  min-height: 44px;
+  padding: 10px 12px;
+  gap: 8px;
+  font-size: 12px;
+  cursor: pointer;
+}
+.rules-heading-tools>.rules-card .rules-show,.rules-heading-tools>.rules-card .rules-hide,.stage-tools>.rules-card .rules-show,.stage-tools>.rules-card .rules-hide {
+  font-size: 11px;
+  padding: 2px 7px;
+}
+@media(max-width:600px) {
+  .rules-heading-tools {
+    width: 100%;
+    justify-content: flex-start;
+    flex-shrink: 1;
+  }
+  .stage-tools {
+    justify-content: flex-start;
+  }
+  .rules-heading-tools>.rules-card,.stage-tools>.rules-card {
+    max-width: 100%;
+  }
+  .rules-heading-tools>.rules-card>summary,.stage-tools>.rules-card>summary {
+    font-size: 11px;
+    padding: 9px 10px;
+  }
 }

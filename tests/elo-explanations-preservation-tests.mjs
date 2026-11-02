@@ -1,7 +1,59 @@
-import {restoreLightCampaignFile} from './light-v4-history.mjs';
-import assert from 'node:assert/strict';import fs from 'node:fs';import crypto from 'node:crypto';import {execFileSync} from 'node:child_process';import {restoreEloExplanationsFile} from './elo-explanations-history.mjs';
-const m=JSON.parse(fs.readFileSync(new URL('./elo-explanations-authorized-change.json',import.meta.url))),sha=x=>crypto.createHash('sha256').update(x).digest('hex');
-assert.deepEqual(Object.keys(m.files).sort(),['collection-ui.mjs','elo-presentation.mjs','style.css']);
-for(const [name,c]of Object.entries(m.files)){const text=fs.readFileSync(new URL('../dist/'+name,import.meta.url),'utf8'),old=execFileSync('git',['show',m.baseCommit+':dist/'+name],{encoding:'utf8'});assert.equal(sha(text),c.afterSha256);assert.equal(sha(old),c.beforeSha256);assert.equal(restoreEloExplanationsFile(name,text),old);assert.equal(restoreEloExplanationsFile(name,old),old);assert.equal(restoreEloExplanationsFile(name,text+' '),text+' ');assert.equal(restoreEloExplanationsFile(name,Buffer.from(text)).toString(),old);let rebuilt=old;for(const b of c.blocks){assert.equal(rebuilt.split(b.before).length-1,1);rebuilt=rebuilt.replace(b.before,b.after);}assert.equal(rebuilt,text);}
-for(const name of ['elo-rules.mjs','elo-progress.mjs','geometry-games.mjs','geometry-levels.mjs','geometry-answers.mjs','direct-hints.mjs','collection-state.mjs','collection-json.mjs','app.mjs','index.html','rules-context.mjs','rules-sidebar.css','platform.css','about-dialog.mjs','about-dialog.css']){const current=restoreLightCampaignFile(name,fs.readFileSync(new URL('../dist/'+name,import.meta.url))),prior=execFileSync('git',['show',m.baseCommit+':dist/'+name]);assert.equal(sha(current),sha(prior),name+' untouched by ELO clue explanations');}
-console.log('PASS exact three-file ELO explanations layer above 0866506; immutable solver/rules/levels/answers/hints/saves/importer/other games/site decoration and tamper rejection.');
+// Testes e verificações de ELO.
+import { restoreLightCampaignFile } from './light-v4-history.mjs';
+import assert from 'node:assert/strict';
+import fs from 'node:fs';
+import crypto from 'node:crypto';
+import { execFileSync } from 'node:child_process';
+import { restoreEloExplanationsFile } from './elo-explanations-history.mjs';
+const m = JSON.parse(
+    fs.readFileSync(new URL('./elo-explanations-authorized-change.json', import.meta.url)),
+  ),
+  sha = (x) => crypto.createHash('sha256').update(x).digest('hex');
+assert.deepEqual(Object.keys(m.files).sort(), [
+  'collection-ui.mjs',
+  'elo-presentation.mjs',
+  'style.css',
+]);
+for (const [name, c] of Object.entries(m.files)) {
+  const text = fs.readFileSync(new URL('../dist/' + name, import.meta.url), 'utf8'),
+    old = execFileSync('git', ['show', m.baseCommit + ':dist/' + name], { encoding: 'utf8' });
+  assert.equal(sha(text), c.afterSha256);
+  assert.equal(sha(old), c.beforeSha256);
+  assert.equal(restoreEloExplanationsFile(name, text), old);
+  assert.equal(restoreEloExplanationsFile(name, old), old);
+  assert.equal(restoreEloExplanationsFile(name, text + ' '), text + ' ');
+  assert.equal(restoreEloExplanationsFile(name, Buffer.from(text)).toString(), old);
+  let rebuilt = old;
+  for (const b of c.blocks) {
+    assert.equal(rebuilt.split(b.before).length - 1, 1);
+    rebuilt = rebuilt.replace(b.before, b.after);
+  }
+  assert.equal(rebuilt, text);
+}
+for (const name of [
+  'elo-rules.mjs',
+  'elo-progress.mjs',
+  'geometry-games.mjs',
+  'geometry-levels.mjs',
+  'geometry-answers.mjs',
+  'direct-hints.mjs',
+  'collection-state.mjs',
+  'collection-json.mjs',
+  'app.mjs',
+  'index.html',
+  'rules-context.mjs',
+  'rules-sidebar.css',
+  'platform.css',
+  'about-dialog.mjs',
+  'about-dialog.css',
+]) {
+  const current = restoreLightCampaignFile(
+      name,
+      fs.readFileSync(new URL('../dist/' + name, import.meta.url)),
+    ),
+    prior = execFileSync('git', ['show', m.baseCommit + ':dist/' + name]);
+  assert.equal(sha(current), sha(prior), name + ' untouched by ELO clue explanations');
+}
+console.log(
+  'PASS exact three-file ELO explanations layer above 0866506; immutable solver/rules/levels/answers/hints/saves/importer/other games/site decoration and tamper rejection.',
+);

@@ -1,6 +1,87 @@
-import test from'node:test';import assert from'node:assert/strict';import{execFileSync}from'node:child_process';import{readFileSync}from'node:fs';import{FAUNA_ART}from'../dist/fauna-art.mjs';import{FAUNA_CULTURE}from'../dist/fauna-culture-content.mjs';import{faunaCultureMarkup}from'../dist/fauna-culture.mjs';
-const base='aa22128fa054ca6a7fdf39b72d8863a2dcc47981',git=(...a)=>execFileSync('git',a,{encoding:'utf8'}).trim();
-test('quinze curiosidades com texto, fontes públicas e seção acessível',()=>{assert.deepEqual(Object.keys(FAUNA_CULTURE).sort(),FAUNA_ART.map(a=>a.id).sort());for(const {id}of FAUNA_ART){const c=FAUNA_CULTURE[id];assert(c.paragraphs.length&&c.paragraphs.every(p=>typeof p==='string'&&p.length>20));assert(c.sources.length);for(const s of c.sources){assert(s.label);assert.equal(new URL(s.url).protocol,'https:');}const html=faunaCultureMarkup(id);assert(html.includes('Curiosidade cultural'));assert(html.includes('aria-labelledby="fauna-culture-title"'));assert(html.includes('rel="noopener noreferrer"'));assert(!/undefined|<script/.test(html));}});
-test('mapas, artes, sprites, descrições e todos os jogos permanecem exatos',()=>{const allow=new Set(['dist/fauna-info.mjs','dist/fauna-info.css']);for(const line of git('ls-tree','-r',base,'--','dist').split('\n')){const[meta,path]=line.split('\t');if(allow.has(path))continue;assert.equal(git('hash-object',path),meta.split(' ')[2],path);}const now=readFileSync('dist/fauna-info.mjs','utf8'),old=git('show',base+':dist/fauna-info.mjs');assert.equal(now.replace("import {faunaCultureMarkup} from './fauna-culture.mjs';\n",'').replace('${faunaCultureMarkup(id)}','').replace(/^ const hint=doc.createElement\('p'\);.*\n/m,'').trim(),old);});
-test('uma nova curiosidade por animal, todas anteriores e fontes preservadas',async()=>{const previous=execFileSync('git',['show','ff04d302b816030e7ac556cda52438a22636d40d:dist/fauna-culture-content.mjs'],{encoding:'utf8'});const{FAUNA_CULTURE:old}=await import('data:text/javascript;base64,'+Buffer.from(previous).toString('base64'));for(const{id}of FAUNA_ART){const entry=FAUNA_CULTURE[id];assert.equal(entry.paragraphs.length,old[id].paragraphs.length+1,id);assert.deepEqual(entry.paragraphs.slice(0,-1),old[id].paragraphs,id);assert.deepEqual(entry.sources.slice(0,old[id].sources.length),old[id].sources,id);assert(entry.sources.length>old[id].sources.length,id);const html=faunaCultureMarkup(id);assert(html.includes('<ul'));assert.equal((html.match(/<li>/g)||[]).length,id==='coral'?3:2);}const css=readFileSync('dist/fauna-info.css','utf8');assert(css.includes('border:1px solid #c5d2bc;border-radius:16px'));});
-test('produção cultural e moldura isoladas dos demais arquivos',()=>{for(const line of git('ls-tree','-r','ff04d302b816030e7ac556cda52438a22636d40d','--','dist').split('\n')){const[meta,path]=line.split('\t');if(path==='dist/fauna-culture-content.mjs'||path==='dist/fauna-info.css'||path==='dist/fauna-info.mjs')continue;assert.equal(git('hash-object',path),meta.split(' ')[2],path);}});
+// Testes e verificações de informações e arte da fauna.
+import test from 'node:test';
+import assert from 'node:assert/strict';
+import { execFileSync } from 'node:child_process';
+import { readFileSync } from 'node:fs';
+import { FAUNA_ART } from '../dist/fauna-art.mjs';
+import { FAUNA_CULTURE } from '../dist/fauna-culture-content.mjs';
+import { faunaCultureMarkup } from '../dist/fauna-culture.mjs';
+const base = 'aa22128fa054ca6a7fdf39b72d8863a2dcc47981',
+  git = (...a) => execFileSync('git', a, { encoding: 'utf8' }).trim();
+test('quinze curiosidades com texto, fontes públicas e seção acessível', () => {
+  assert.deepEqual(Object.keys(FAUNA_CULTURE).sort(), FAUNA_ART.map((a) => a.id).sort());
+  for (const { id } of FAUNA_ART) {
+    const c = FAUNA_CULTURE[id];
+    assert(
+      c.paragraphs.length && c.paragraphs.every((p) => typeof p === 'string' && p.length > 20),
+    );
+    assert(c.sources.length);
+    for (const s of c.sources) {
+      assert(s.label);
+      assert.equal(new URL(s.url).protocol, 'https:');
+    }
+    const html = faunaCultureMarkup(id);
+    assert(html.includes('Curiosidade cultural'));
+    assert(html.includes('aria-labelledby="fauna-culture-title"'));
+    assert(html.includes('rel="noopener noreferrer"'));
+    assert(!/undefined|<script/.test(html));
+  }
+});
+test('mapas, artes, sprites, descrições e todos os jogos permanecem exatos', () => {
+  const allow = new Set(['dist/fauna-info.mjs', 'dist/fauna-info.css']);
+  for (const line of git('ls-tree', '-r', base, '--', 'dist').split('\n')) {
+    const [meta, path] = line.split('\t');
+    if (allow.has(path)) continue;
+    assert.equal(git('hash-object', path), meta.split(' ')[2], path);
+  }
+  const now = readFileSync('dist/fauna-info.mjs', 'utf8'),
+    old = git('show', base + ':dist/fauna-info.mjs');
+  assert.equal(
+    now
+      .replace("import {faunaCultureMarkup} from './fauna-culture.mjs';\n", '')
+      .replace('${faunaCultureMarkup(id)}', '')
+      .replace(/^ const hint=doc.createElement\('p'\);.*\n/m, '')
+      .trim(),
+    old,
+  );
+});
+test('uma nova curiosidade por animal, todas anteriores e fontes preservadas', async () => {
+  const previous = execFileSync(
+    'git',
+    ['show', 'ff04d302b816030e7ac556cda52438a22636d40d:dist/fauna-culture-content.mjs'],
+    { encoding: 'utf8' },
+  );
+  const { FAUNA_CULTURE: old } = await import(
+    'data:text/javascript;base64,' + Buffer.from(previous).toString('base64')
+  );
+  for (const { id } of FAUNA_ART) {
+    const entry = FAUNA_CULTURE[id];
+    assert.equal(entry.paragraphs.length, old[id].paragraphs.length + 1, id);
+    assert.deepEqual(entry.paragraphs.slice(0, -1), old[id].paragraphs, id);
+    assert.deepEqual(entry.sources.slice(0, old[id].sources.length), old[id].sources, id);
+    assert(entry.sources.length > old[id].sources.length, id);
+    const html = faunaCultureMarkup(id);
+    assert(html.includes('<ul'));
+    assert.equal((html.match(/<li>/g) || []).length, id === 'coral' ? 3 : 2);
+  }
+  const css = readFileSync('dist/fauna-info.css', 'utf8');
+  assert(css.includes('border:1px solid #c5d2bc;border-radius:16px'));
+});
+test('produção cultural e moldura isoladas dos demais arquivos', () => {
+  for (const line of git(
+    'ls-tree',
+    '-r',
+    'ff04d302b816030e7ac556cda52438a22636d40d',
+    '--',
+    'dist',
+  ).split('\n')) {
+    const [meta, path] = line.split('\t');
+    if (
+      path === 'dist/fauna-culture-content.mjs' ||
+      path === 'dist/fauna-info.css' ||
+      path === 'dist/fauna-info.mjs'
+    )
+      continue;
+    assert.equal(git('hash-object', path), meta.split(' ')[2], path);
+  }
+});

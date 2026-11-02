@@ -1,173 +1,893 @@
+/* Tabuleiro, controles e estados visuais de CERCO. */
 /* CERCO não modifica tabuleiros, controles ou mascotes dos outros jogos. */
-#cerco .ce-lab,#cerco .ce-selection{padding:20px 22px;background:#f8f9f3}
-#cerco .lab-heading{margin:12px 0}
-#cerco .ce-objective{margin:3px 0 10px;color:#52634e}
-#cerco .ce-workspace{display:grid!important;grid-template-columns:minmax(0,1fr)!important;gap:12px;align-items:start}
-#cerco .ce-surface{padding:10px 12px;background:#f8f9f3;background-image:none;border:0;min-width:0;box-shadow:none}
-#cerco .stage-tools{display:flex;flex-wrap:wrap;align-items:center;gap:14px;margin:0 0 24px}
-#cerco .stage-tools>button,#cerco .stage-tools summary{min-height:44px}
-#cerco .ce-team-0{--ce-base:#e1edce;--ce-edge:#73965e;--ce-ink:#315e35}
-#cerco .ce-team-1{--ce-base:#f5e7b2;--ce-edge:#b99b46;--ce-ink:#705a1d}
-#cerco .ce-setup-teams{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:14px;max-width:650px;margin:16px 0}
-#cerco .ce-setup-team{padding:14px;border:1px solid var(--ce-edge);border-radius:15px;background:var(--ce-base);color:var(--ce-ink)}
-#cerco .ce-setup-team label{display:grid;gap:6px;font-size:13px}
-#cerco .ce-setup-team select{max-width:100%;width:100%;min-width:0;min-height:44px}
-#cerco .ce-setup-piece{width:65px;height:65px;margin:10px 0}
-#cerco .ce-setup-controls{display:flex;align-items:end;flex-wrap:wrap;gap:14px}
-#cerco .ce-setup-controls label{display:grid;gap:6px}
-#cerco .ce-setup-controls select,#cerco .ce-setup-controls button{min-height:44px;max-width:100%}
-#cerco .ce-teams{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));max-width:560px;margin:0 auto;gap:12px}
-#cerco .ce-team-card{display:flex;gap:10px;align-items:center;background:var(--ce-base);border:1px solid var(--ce-edge);border-radius:14px;padding:8px 12px;color:var(--ce-ink);font-size:14px;min-width:0}
-#cerco .ce-team-card .ce-piece{width:38px;height:38px;flex:0 0 38px}
-#cerco .ce-team-card.ce-current{outline:2px solid var(--ce-ink);outline-offset:2px}
-#cerco .ce-turn{text-align:center;margin:14px 0 10px;line-height:1.4;font-weight:750}
-#cerco .ce-board-wrap{width:min(100%,374px);margin:0 auto;padding:6px;border:1px solid #b6c3a8;border-radius:17px;background:#fff;overflow:visible;min-width:0}
-#cerco .ce-board{display:grid;grid-template-columns:repeat(var(--ce-cols,5),minmax(0,1fr));gap:4px;width:100%;position:relative;isolation:isolate;background:transparent;border:0;padding:0;min-width:0}
-#cerco .ce-cell{position:relative;aspect-ratio:1;display:flex;align-items:center;justify-content:center;min-width:0;min-height:0;width:100%;height:auto;margin:0;padding:3px;border:1px solid #d5decb;border-radius:9px;background:#f8faf3;box-shadow:none;transform:none;touch-action:manipulation;overflow:visible}
-#cerco .ce-cell:focus-visible{outline:3px solid #42693a;outline-offset:2px;z-index:4}
-#cerco .ce-selected{outline:2px solid #3f6b38;outline-offset:1px;z-index:2}
-#cerco .ce-cell.ce-legal{background:#edf4e4;border:2px dashed #96ae78}
-#cerco .ce-cell.ce-preview{border:2px solid #4e7042;background:#f0f6e7}
-#cerco .ce-piece{position:relative;display:flex;align-items:center;justify-content:center;box-sizing:border-box;width:100%;height:100%;background:var(--ce-base);border:1.5px solid var(--ce-edge);border-radius:9px;padding:5px;color:var(--ce-ink)}
-#cerco .ce-team-1.ce-piece{border-style:double;border-width:3px;padding:3.5px}
-#cerco .ce-mascot{width:100%;height:100%;display:block;background:#fff;border-radius:4px;overflow:hidden}
-#cerco .ce-team-mark{position:absolute;right:1px;bottom:0;font-size:10px;line-height:1.2;background:var(--ce-base);border-radius:3px;padding:0 1px;color:var(--ce-ink)}
-#cerco .ce-ghost{opacity:.55}
-#cerco .ce-empty{font-size:20px;color:#b1bea2;line-height:1}
-#cerco .ce-barrier{background:repeating-linear-gradient(135deg,#e2e5dd 0 5px,#d9ded2 5px 7px);border-color:#c0c8b7;color:#727e67}
-#cerco .ce-barrier-mark{font-size:24px;font-weight:700;line-height:1;color:#7b8670}
-#cerco .ce-future-barrier{background:#e3e7dc;border:2px dashed #8c9780}
-#cerco .ce-future-barrier>.ce-piece{opacity:.3}
-#cerco .ce-future-mark{position:absolute;font-size:26px;font-weight:700;color:#697860;pointer-events:none}
-#cerco .ce-moving-origin{z-index:3}
-#cerco .ce-moving-origin>.ce-piece{animation:cerco-step .3s ease-in-out forwards}
-#cerco .ce-check{display:flex;justify-content:center;align-items:center;flex-wrap:wrap;gap:12px;padding:12px 0 4px;border:0;background:transparent;min-height:54px}
-#cerco .ce-check>button{min-height:44px}
-#cerco .ce-status{font-size:13px;line-height:1.5;min-height:42px;margin:5px auto 0;text-align:center;max-width:620px}
-#cerco .ce-help{margin:10px auto;max-width:620px;text-align:center}
-#cerco .ce-help .hint{font-size:13px;line-height:1.55}
-#cerco .ce-result-badge{margin:12px auto;max-width:620px;background:#eaf1df;color:#375e3e}
-#cerco .level-actions{display:flex;justify-content:center;flex-wrap:wrap;gap:12px;margin:0;padding:8px 0;border:0;background:transparent;min-height:0}
-#cerco .rules-sidebar{grid-column:1;position:static;max-height:none;overflow:visible;border-top:0;background:#f8f9f3;min-width:0}
-#cerco .rules-more{margin-top:12px}
-#cerco .ce-example-grid{display:grid;grid-template-columns:repeat(5,minmax(0,1fr));gap:3px;max-width:280px;margin:10px 0}
-#cerco .ce-example-grid>span{display:flex;align-items:center;justify-content:center;aspect-ratio:1;border:1px solid #cbd6c1;border-radius:8px;padding:3px;background:#fafcf5}
-#cerco .ce-example-grid>.ce-barrier{background:#dce1d4}
-#cerco .ce-example-grid>.ce-legal{background:#e5f0d8;border:2px dashed #98b17c}
-#cerco [hidden]{display:none!important}
-@keyframes cerco-step{to{transform:translate(var(--ce-dx),var(--ce-dy))}}
-@media(max-width:500px){#cerco .ce-lab,#cerco .ce-selection{padding:16px 8px}#cerco .ce-surface{padding:8px 0}#cerco .ce-teams{gap:8px}#cerco .ce-team-card{padding:7px 6px;font-size:11px;gap:4px}#cerco .ce-team-card .ce-piece{width:30px;height:30px;flex-basis:30px;padding:3px}#cerco .ce-board-wrap{padding:5px}#cerco .ce-cell{padding:2px}#cerco .ce-piece{padding:3px;border-radius:7px}#cerco .ce-team-1.ce-piece{padding:1.5px}#cerco .ce-team-mark{font-size:9px}#cerco .ce-turn{font-size:14px}#cerco .ce-status{font-size:12px;min-height:54px}#cerco .ce-setup-teams{gap:8px}#cerco .ce-setup-team{padding:9px;font-size:13px}#cerco .ce-setup-team select{font-size:12px}#cerco .stage-tools{gap:12px}}
-@media(prefers-reduced-motion:reduce){#cerco *,#cerco *::before,#cerco *::after{animation:none!important;transition:none!important}}
-
-#cerco .ce-result-badge.ce-result-loss{background:#f1eee7;color:#5d6255}
-
+#cerco .ce-lab,#cerco .ce-selection {
+  padding: 20px 22px;
+  background: #f8f9f3;
+}
+#cerco .lab-heading {
+  margin: 12px 0;
+}
+#cerco .ce-objective {
+  margin: 3px 0 10px;
+  color: #52634e;
+}
+#cerco .ce-workspace {
+  display: grid!important;
+  grid-template-columns: minmax(0,1fr)!important;
+  gap: 12px;
+  align-items: start;
+}
+#cerco .ce-surface {
+  padding: 10px 12px;
+  background: #f8f9f3;
+  background-image: none;
+  border: 0;
+  min-width: 0;
+  box-shadow: none;
+}
+#cerco .stage-tools {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 14px;
+  margin: 0 0 24px;
+}
+#cerco .stage-tools>button,#cerco .stage-tools summary {
+  min-height: 44px;
+}
+#cerco .ce-team-0 {
+  --ce-base:#e1edce;
+  --ce-edge:#73965e;
+  --ce-ink:#315e35;
+}
+#cerco .ce-team-1 {
+  --ce-base:#f5e7b2;
+  --ce-edge:#b99b46;
+  --ce-ink:#705a1d;
+}
+#cerco .ce-setup-teams {
+  display: grid;
+  grid-template-columns: repeat(2,minmax(0,1fr));
+  gap: 14px;
+  max-width: 650px;
+  margin: 16px 0;
+}
+#cerco .ce-setup-team {
+  padding: 14px;
+  border: 1px solid var(--ce-edge);
+  border-radius: 15px;
+  background: var(--ce-base);
+  color: var(--ce-ink);
+}
+#cerco .ce-setup-team label {
+  display: grid;
+  gap: 6px;
+  font-size: 13px;
+}
+#cerco .ce-setup-team select {
+  max-width: 100%;
+  width: 100%;
+  min-width: 0;
+  min-height: 44px;
+}
+#cerco .ce-setup-piece {
+  width: 65px;
+  height: 65px;
+  margin: 10px 0;
+}
+#cerco .ce-setup-controls {
+  display: flex;
+  align-items: end;
+  flex-wrap: wrap;
+  gap: 14px;
+}
+#cerco .ce-setup-controls label {
+  display: grid;
+  gap: 6px;
+}
+#cerco .ce-setup-controls select,#cerco .ce-setup-controls button {
+  min-height: 44px;
+  max-width: 100%;
+}
+#cerco .ce-teams {
+  display: grid;
+  grid-template-columns: repeat(2,minmax(0,1fr));
+  max-width: 560px;
+  margin: 0 auto;
+  gap: 12px;
+}
+#cerco .ce-team-card {
+  display: flex;
+  gap: 10px;
+  align-items: center;
+  background: var(--ce-base);
+  border: 1px solid var(--ce-edge);
+  border-radius: 14px;
+  padding: 8px 12px;
+  color: var(--ce-ink);
+  font-size: 14px;
+  min-width: 0;
+}
+#cerco .ce-team-card .ce-piece {
+  width: 38px;
+  height: 38px;
+  flex: 0 0 38px;
+}
+#cerco .ce-team-card.ce-current {
+  outline: 2px solid var(--ce-ink);
+  outline-offset: 2px;
+}
+#cerco .ce-turn {
+  text-align: center;
+  margin: 14px 0 10px;
+  line-height: 1.4;
+  font-weight: 750;
+}
+#cerco .ce-board-wrap {
+  width: min(100%,374px);
+  margin: 0 auto;
+  padding: 6px;
+  border: 1px solid #b6c3a8;
+  border-radius: 17px;
+  background: #fff;
+  overflow: visible;
+  min-width: 0;
+}
+#cerco .ce-board {
+  display: grid;
+  grid-template-columns: repeat(var(--ce-cols,5),minmax(0,1fr));
+  gap: 4px;
+  width: 100%;
+  position: relative;
+  isolation: isolate;
+  background: transparent;
+  border: 0;
+  padding: 0;
+  min-width: 0;
+}
+#cerco .ce-cell {
+  position: relative;
+  aspect-ratio: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-width: 0;
+  min-height: 0;
+  width: 100%;
+  height: auto;
+  margin: 0;
+  padding: 3px;
+  border: 1px solid #d5decb;
+  border-radius: 9px;
+  background: #f8faf3;
+  box-shadow: none;
+  transform: none;
+  touch-action: manipulation;
+  overflow: visible;
+}
+#cerco .ce-cell:focus-visible {
+  outline: 3px solid #42693a;
+  outline-offset: 2px;
+  z-index: 4;
+}
+#cerco .ce-selected {
+  outline: 2px solid #3f6b38;
+  outline-offset: 1px;
+  z-index: 2;
+}
+#cerco .ce-cell.ce-legal {
+  background: #edf4e4;
+  border: 2px dashed #96ae78;
+}
+#cerco .ce-cell.ce-preview {
+  border: 2px solid #4e7042;
+  background: #f0f6e7;
+}
+#cerco .ce-piece {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-sizing: border-box;
+  width: 100%;
+  height: 100%;
+  background: var(--ce-base);
+  border: 1.5px solid var(--ce-edge);
+  border-radius: 9px;
+  padding: 5px;
+  color: var(--ce-ink);
+}
+#cerco .ce-team-1.ce-piece {
+  border-style: double;
+  border-width: 3px;
+  padding: 3.5px;
+}
+#cerco .ce-mascot {
+  width: 100%;
+  height: 100%;
+  display: block;
+  background: #fff;
+  border-radius: 4px;
+  overflow: hidden;
+}
+#cerco .ce-team-mark {
+  position: absolute;
+  right: 1px;
+  bottom: 0;
+  font-size: 10px;
+  line-height: 1.2;
+  background: var(--ce-base);
+  border-radius: 3px;
+  padding: 0 1px;
+  color: var(--ce-ink);
+}
+#cerco .ce-ghost {
+  opacity: .55;
+}
+#cerco .ce-empty {
+  font-size: 20px;
+  color: #b1bea2;
+  line-height: 1;
+}
+#cerco .ce-barrier {
+  background: repeating-linear-gradient(135deg,#e2e5dd 0 5px,#d9ded2 5px 7px);
+  border-color: #c0c8b7;
+  color: #727e67;
+}
+#cerco .ce-barrier-mark {
+  font-size: 24px;
+  font-weight: 700;
+  line-height: 1;
+  color: #7b8670;
+}
+#cerco .ce-future-barrier {
+  background: #e3e7dc;
+  border: 2px dashed #8c9780;
+}
+#cerco .ce-future-barrier>.ce-piece {
+  opacity: .3;
+}
+#cerco .ce-future-mark {
+  position: absolute;
+  font-size: 26px;
+  font-weight: 700;
+  color: #697860;
+  pointer-events: none;
+}
+#cerco .ce-moving-origin {
+  z-index: 3;
+}
+#cerco .ce-moving-origin>.ce-piece {
+  animation: cerco-step .3s ease-in-out forwards;
+}
+#cerco .ce-check {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 12px;
+  padding: 12px 0 4px;
+  border: 0;
+  background: transparent;
+  min-height: 54px;
+}
+#cerco .ce-check>button {
+  min-height: 44px;
+}
+#cerco .ce-status {
+  font-size: 13px;
+  line-height: 1.5;
+  min-height: 42px;
+  margin: 5px auto 0;
+  text-align: center;
+  max-width: 620px;
+}
+#cerco .ce-help {
+  margin: 10px auto;
+  max-width: 620px;
+  text-align: center;
+}
+#cerco .ce-help .hint {
+  font-size: 13px;
+  line-height: 1.55;
+}
+#cerco .ce-result-badge {
+  margin: 12px auto;
+  max-width: 620px;
+  background: #eaf1df;
+  color: #375e3e;
+}
+#cerco .level-actions {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 12px;
+  margin: 0;
+  padding: 8px 0;
+  border: 0;
+  background: transparent;
+  min-height: 0;
+}
+#cerco .rules-sidebar {
+  grid-column: 1;
+  position: static;
+  max-height: none;
+  overflow: visible;
+  border-top: 0;
+  background: #f8f9f3;
+  min-width: 0;
+}
+#cerco .rules-more {
+  margin-top: 12px;
+}
+#cerco .ce-example-grid {
+  display: grid;
+  grid-template-columns: repeat(5,minmax(0,1fr));
+  gap: 3px;
+  max-width: 280px;
+  margin: 10px 0;
+}
+#cerco .ce-example-grid>span {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  aspect-ratio: 1;
+  border: 1px solid #cbd6c1;
+  border-radius: 8px;
+  padding: 3px;
+  background: #fafcf5;
+}
+#cerco .ce-example-grid>.ce-barrier {
+  background: #dce1d4;
+}
+#cerco .ce-example-grid>.ce-legal {
+  background: #e5f0d8;
+  border: 2px dashed #98b17c;
+}
+#cerco [hidden] {
+  display: none!important;
+}
+@keyframes cerco-step {
+  to {
+    transform: translate(var(--ce-dx),var(--ce-dy));
+  }
+}
+@media(max-width:500px) {
+  #cerco .ce-lab,#cerco .ce-selection {
+    padding: 16px 8px;
+  }
+  #cerco .ce-surface {
+    padding: 8px 0;
+  }
+  #cerco .ce-teams {
+    gap: 8px;
+  }
+  #cerco .ce-team-card {
+    padding: 7px 6px;
+    font-size: 11px;
+    gap: 4px;
+  }
+  #cerco .ce-team-card .ce-piece {
+    width: 30px;
+    height: 30px;
+    flex-basis: 30px;
+    padding: 3px;
+  }
+  #cerco .ce-board-wrap {
+    padding: 5px;
+  }
+  #cerco .ce-cell {
+    padding: 2px;
+  }
+  #cerco .ce-piece {
+    padding: 3px;
+    border-radius: 7px;
+  }
+  #cerco .ce-team-1.ce-piece {
+    padding: 1.5px;
+  }
+  #cerco .ce-team-mark {
+    font-size: 9px;
+  }
+  #cerco .ce-turn {
+    font-size: 14px;
+  }
+  #cerco .ce-status {
+    font-size: 12px;
+    min-height: 54px;
+  }
+  #cerco .ce-setup-teams {
+    gap: 8px;
+  }
+  #cerco .ce-setup-team {
+    padding: 9px;
+    font-size: 13px;
+  }
+  #cerco .ce-setup-team select {
+    font-size: 12px;
+  }
+  #cerco .stage-tools {
+    gap: 12px;
+  }
+}
+@media(prefers-reduced-motion:reduce) {
+  #cerco *,#cerco *::before,#cerco *::after {
+    animation: none!important;
+    transition: none!important;
+  }
+}
+#cerco .ce-result-badge.ce-result-loss {
+  background: #f1eee7;
+  color: #5d6255;
+}
 /* Mapas são configurações fixas; o contorno nunca encobre casas jogáveis. */
-#cerco .ce-map-setup{max-width:none;width:100%;box-sizing:border-box;margin:18px 0;padding:15px;border:1px solid #d5decb;border-radius:15px;background:#f1f4e9;display:grid;grid-template-columns:1fr;gap:8px}
-#cerco .ce-map-preview{display:grid;grid-template-columns:112px minmax(0,1fr);column-gap:18px;align-items:center}
-#cerco .ce-map-preview p{margin:0;line-height:1.5;font-size:14px}
-#cerco .ce-map-preview small{grid-column:2;font-size:11px;color:#56614e}
-#cerco .ce-map-mini{grid-row:span 2;display:grid;grid-template-columns:repeat(var(--ce-map-cols),1fr);gap:3px;width:112px}
-#cerco .ce-map-mini>span{aspect-ratio:1;display:flex;align-items:center;justify-content:center;border:1px solid #d5decb;border-radius:4px;background:#fff;font-size:11px;color:#315e35}
-#cerco .ce-map-mini>.ce-map-green{background:#e1edce;border-color:#73965e}
-#cerco .ce-map-mini>.ce-map-yellow{background:#f5e7b2;border-color:#b99b46;color:#705a1d}
-#cerco .ce-map-mini>.ce-map-wall{background:#cbd2c1;border-color:#9ba78f;border-radius:6px 3px 5px 4px}
-#cerco .ce-map-mini>.ce-map-outside{background:transparent;border-color:transparent}
-#cerco .ce-map-hole{aspect-ratio:1;pointer-events:none}
-#cerco .ce-natural-wall{background:#e4e8dc;border-color:#b9c3ad;pointer-events:none}
-#cerco .ce-natural-wall svg{width:75%;height:75%;fill:#c4cdb8;stroke:#8d9c7e;stroke-width:1.3;stroke-linejoin:round}
-#cerco .ce-active-map{font-weight:700;color:#49663e;margin-left:6px}
-#cerco .ce-map-rule{font-size:14px}
-@media(max-width:500px){#cerco .ce-map-setup{padding:12px}#cerco .ce-map-preview{grid-template-columns:88px minmax(0,1fr);gap:8px 12px}#cerco .ce-map-mini{width:88px;gap:2px}#cerco .ce-map-mini>span{font-size:9px}#cerco .ce-map-preview p{font-size:12px}#cerco .ce-map-preview small{grid-column:1/-1}}
-
+#cerco .ce-map-setup {
+  max-width: none;
+  width: 100%;
+  box-sizing: border-box;
+  margin: 18px 0;
+  padding: 15px;
+  border: 1px solid #d5decb;
+  border-radius: 15px;
+  background: #f1f4e9;
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 8px;
+}
+#cerco .ce-map-preview {
+  display: grid;
+  grid-template-columns: 112px minmax(0,1fr);
+  column-gap: 18px;
+  align-items: center;
+}
+#cerco .ce-map-preview p {
+  margin: 0;
+  line-height: 1.5;
+  font-size: 14px;
+}
+#cerco .ce-map-preview small {
+  grid-column: 2;
+  font-size: 11px;
+  color: #56614e;
+}
+#cerco .ce-map-mini {
+  grid-row: span 2;
+  display: grid;
+  grid-template-columns: repeat(var(--ce-map-cols),1fr);
+  gap: 3px;
+  width: 112px;
+}
+#cerco .ce-map-mini>span {
+  aspect-ratio: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: 1px solid #d5decb;
+  border-radius: 4px;
+  background: #fff;
+  font-size: 11px;
+  color: #315e35;
+}
+#cerco .ce-map-mini>.ce-map-green {
+  background: #e1edce;
+  border-color: #73965e;
+}
+#cerco .ce-map-mini>.ce-map-yellow {
+  background: #f5e7b2;
+  border-color: #b99b46;
+  color: #705a1d;
+}
+#cerco .ce-map-mini>.ce-map-wall {
+  background: #cbd2c1;
+  border-color: #9ba78f;
+  border-radius: 6px 3px 5px 4px;
+}
+#cerco .ce-map-mini>.ce-map-outside {
+  background: transparent;
+  border-color: transparent;
+}
+#cerco .ce-map-hole {
+  aspect-ratio: 1;
+  pointer-events: none;
+}
+#cerco .ce-natural-wall {
+  background: #e4e8dc;
+  border-color: #b9c3ad;
+  pointer-events: none;
+}
+#cerco .ce-natural-wall svg {
+  width: 75%;
+  height: 75%;
+  fill: #c4cdb8;
+  stroke: #8d9c7e;
+  stroke-width: 1.3;
+  stroke-linejoin: round;
+}
+#cerco .ce-active-map {
+  font-weight: 700;
+  color: #49663e;
+  margin-left: 6px;
+}
+#cerco .ce-map-rule {
+  font-size: 14px;
+}
+@media(max-width:500px) {
+  #cerco .ce-map-setup {
+    padding: 12px;
+  }
+  #cerco .ce-map-preview {
+    grid-template-columns: 88px minmax(0,1fr);
+    gap: 8px 12px;
+  }
+  #cerco .ce-map-mini {
+    width: 88px;
+    gap: 2px;
+  }
+  #cerco .ce-map-mini>span {
+    font-size: 9px;
+  }
+  #cerco .ce-map-preview p {
+    font-size: 12px;
+  }
+  #cerco .ce-map-preview small {
+    grid-column: 1/-1;
+  }
+}
 /* Escolha compacta por cartões; os controles de preparação continuam no mesmo bloco. */
-#cerco .ce-map-setup>h3{font-size:15px;line-height:1.3;margin:0 0 10px}
-#cerco .ce-map-cards{display:grid;grid-template-columns:repeat(auto-fit,minmax(125px,1fr));gap:8px;min-width:0}
-#cerco .ce-map-cards>button{display:flex;flex-direction:column;align-items:center;justify-content:flex-start;gap:6px;min-width:0;min-height:44px;padding:9px 6px 7px;border:1px solid #c4cfb7;border-radius:14px;background:#fff;color:#354d32;text-align:center;box-shadow:none;cursor:pointer}
-#cerco .ce-map-cards>button:hover{background:#f1f6e9;border-color:#79966a}
-#cerco .ce-map-cards>button[aria-pressed="true"]{background:#e8f0dd;border:2px solid #42673a;padding:8px 5px 6px;box-shadow:0 0 0 1px #e8f0dd}
-#cerco .ce-map-cards>button:focus-visible{outline:3px solid #42673a;outline-offset:3px}
-#cerco .ce-map-cards strong{display:block;font-size:12px;line-height:1.3;min-height:31px;max-width:100%;overflow-wrap:anywhere}
-#cerco .ce-map-choice{font-size:10px;line-height:1.3;white-space:nowrap;color:#5c7150}
-#cerco .ce-map-cards>button[aria-pressed="true"] .ce-map-choice{font-weight:800;color:#315e35}
-#cerco .ce-map-cards .ce-map-mini{width:72px;height:72px;flex:0 0 72px;grid-row:auto;gap:2px;pointer-events:none}
-#cerco .ce-map-cards .ce-map-mini>span{min-width:0;font-size:8px;line-height:1}
-#cerco #ce-map-preview{display:block;margin-top:12px}
-#cerco #ce-map-preview p{margin:0;font-size:13px;line-height:1.5}
-#cerco #ce-map-preview small{display:block;margin-top:5px}
-@media(max-width:600px){#cerco .ce-map-cards{grid-template-columns:repeat(2,minmax(0,1fr))}}
-
+#cerco .ce-map-setup>h3 {
+  font-size: 15px;
+  line-height: 1.3;
+  margin: 0 0 10px;
+}
+#cerco .ce-map-cards {
+  display: grid;
+  grid-template-columns: repeat(auto-fit,minmax(125px,1fr));
+  gap: 8px;
+  min-width: 0;
+}
+#cerco .ce-map-cards>button {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-start;
+  gap: 6px;
+  min-width: 0;
+  min-height: 44px;
+  padding: 9px 6px 7px;
+  border: 1px solid #c4cfb7;
+  border-radius: 14px;
+  background: #fff;
+  color: #354d32;
+  text-align: center;
+  box-shadow: none;
+  cursor: pointer;
+}
+#cerco .ce-map-cards>button:hover {
+  background: #f1f6e9;
+  border-color: #79966a;
+}
+#cerco .ce-map-cards>button[aria-pressed="true"] {
+  background: #e8f0dd;
+  border: 2px solid #42673a;
+  padding: 8px 5px 6px;
+  box-shadow: 0 0 0 1px #e8f0dd;
+}
+#cerco .ce-map-cards>button:focus-visible {
+  outline: 3px solid #42673a;
+  outline-offset: 3px;
+}
+#cerco .ce-map-cards strong {
+  display: block;
+  font-size: 12px;
+  line-height: 1.3;
+  min-height: 31px;
+  max-width: 100%;
+  overflow-wrap: anywhere;
+}
+#cerco .ce-map-choice {
+  font-size: 10px;
+  line-height: 1.3;
+  white-space: nowrap;
+  color: #5c7150;
+}
+#cerco .ce-map-cards>button[aria-pressed="true"] .ce-map-choice {
+  font-weight: 800;
+  color: #315e35;
+}
+#cerco .ce-map-cards .ce-map-mini {
+  width: 72px;
+  height: 72px;
+  flex: 0 0 72px;
+  grid-row: auto;
+  gap: 2px;
+  pointer-events: none;
+}
+#cerco .ce-map-cards .ce-map-mini>span {
+  min-width: 0;
+  font-size: 8px;
+  line-height: 1;
+}
+#cerco #ce-map-preview {
+  display: block;
+  margin-top: 12px;
+}
+#cerco #ce-map-preview p {
+  margin: 0;
+  font-size: 13px;
+  line-height: 1.5;
+}
+#cerco #ce-map-preview small {
+  display: block;
+  margin-top: 5px;
+}
+@media(max-width:600px) {
+  #cerco .ce-map-cards {
+    grid-template-columns: repeat(2,minmax(0,1fr));
+  }
+}
 /* Moldura da área jogável, sem incluir a seleção de mapas ou as regras abaixo. */
-#cerco .ce-surface{border-radius:18px;outline:2px solid #b3c1a8;outline-offset:-1px;padding:16px 14px;overflow:visible}
-@media(max-width:500px){#cerco .ce-surface{padding:12px 8px}}
-@media(max-width:360px){#cerco .ce-lab{padding-inline:3px}}
-
+#cerco .ce-surface {
+  border-radius: 18px;
+  outline: 2px solid #b3c1a8;
+  outline-offset: -1px;
+  padding: 16px 14px;
+  overflow: visible;
+}
+@media(max-width:500px) {
+  #cerco .ce-surface {
+    padding: 12px 8px;
+  }
+}
+@media(max-width:360px) {
+  #cerco .ce-lab {
+    padding-inline: 3px;
+  }
+}
 /* O resultado final divide o centro com o tabuleiro, sem coluna vazia durante a partida. */
-#cerco .ce-surface{container-type:inline-size}
-#cerco .ce-duel-layout{width:100%;max-width:620px;margin:0 auto;display:grid;grid-template-columns:minmax(0,1fr);gap:0;align-items:center}
-#cerco .ce-play-column{min-width:0}
-#cerco #ce-result:empty{display:none}
-#cerco .has-duel-result #ce-result{min-width:0;width:100%;margin:12px auto 0}
-#cerco .has-duel-result #ce-result .level-actions{gap:10px}
-#cerco .has-duel-result #ce-result .level-actions>button{max-width:100%;white-space:normal}
-@container(min-width:714px){
- #cerco .ce-duel-layout.has-duel-result{max-width:698px;grid-template-columns:minmax(0,374px) minmax(0,300px);gap:24px}
- #cerco .has-duel-result #ce-result{margin:0}
+#cerco .ce-surface {
+  container-type: inline-size;
 }
-#cerco .has-duel-result #ce-result .versus-victory{flex-direction:column;gap:10px;text-align:center}
-#cerco .has-duel-result #ce-result .vv-emblem{flex-basis:auto}
-#cerco .has-duel-result #ce-result .vv-copy{width:100%}
-
+#cerco .ce-duel-layout {
+  width: 100%;
+  max-width: 620px;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: minmax(0,1fr);
+  gap: 0;
+  align-items: center;
+}
+#cerco .ce-play-column {
+  min-width: 0;
+}
+#cerco #ce-result:empty {
+  display: none;
+}
+#cerco .has-duel-result #ce-result {
+  min-width: 0;
+  width: 100%;
+  margin: 12px auto 0;
+}
+#cerco .has-duel-result #ce-result .level-actions {
+  gap: 10px;
+}
+#cerco .has-duel-result #ce-result .level-actions>button {
+  max-width: 100%;
+  white-space: normal;
+}
+@container(min-width:714px) {
+  #cerco .ce-duel-layout.has-duel-result {
+    max-width: 698px;
+    grid-template-columns: minmax(0,374px) minmax(0,300px);
+    gap: 24px;
+  }
+  #cerco .has-duel-result #ce-result {
+    margin: 0;
+  }
+}
+#cerco .has-duel-result #ce-result .versus-victory {
+  flex-direction: column;
+  gap: 10px;
+  text-align: center;
+}
+#cerco .has-duel-result #ce-result .vv-emblem {
+  flex-basis: auto;
+}
+#cerco .has-duel-result #ce-result .vv-copy {
+  width: 100%;
+}
 /* O tamanho altera o catálogo, não as regras nem a partida em andamento. */
-#cerco .ce-size-control{display:flex;flex-wrap:wrap;align-items:center;gap:10px 18px;margin:0 0 12px}
-#cerco #ce-size-label{font-size:13px;font-weight:700;color:#43593b}
-#cerco .ce-sizes{display:flex;flex-wrap:wrap;gap:8px}
-#cerco .ce-sizes button{min-width:64px;min-height:44px;padding:8px 12px;border:1px solid #bac9ad;border-radius:11px;background:#fff;color:#43593b;font-weight:700}
-#cerco .ce-sizes button[aria-pressed="true"]{background:#dfeccd;border:2px solid #42673a;color:#2d542d;padding:7px 11px}
-#cerco .ce-sizes button:focus-visible{outline:3px solid #42673a;outline-offset:3px}
-#cerco .ce-duel-layout .ce-board-wrap{width:min(100%,var(--ce-board-max,374px))}
-#cerco .ce-duel-layout:not([data-ce-size="5"]) .ce-cell{padding:2px}
-#cerco .ce-duel-layout:not([data-ce-size="5"]) .ce-piece{padding:3px}
+#cerco .ce-size-control {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 10px 18px;
+  margin: 0 0 12px;
+}
+#cerco #ce-size-label {
+  font-size: 13px;
+  font-weight: 700;
+  color: #43593b;
+}
+#cerco .ce-sizes {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+#cerco .ce-sizes button {
+  min-width: 64px;
+  min-height: 44px;
+  padding: 8px 12px;
+  border: 1px solid #bac9ad;
+  border-radius: 11px;
+  background: #fff;
+  color: #43593b;
+  font-weight: 700;
+}
+#cerco .ce-sizes button[aria-pressed="true"] {
+  background: #dfeccd;
+  border: 2px solid #42673a;
+  color: #2d542d;
+  padding: 7px 11px;
+}
+#cerco .ce-sizes button:focus-visible {
+  outline: 3px solid #42673a;
+  outline-offset: 3px;
+}
+#cerco .ce-duel-layout .ce-board-wrap {
+  width: min(100%,var(--ce-board-max,374px));
+}
+#cerco .ce-duel-layout:not([data-ce-size="5"]) .ce-cell {
+  padding: 2px;
+}
+#cerco .ce-duel-layout:not([data-ce-size="5"]) .ce-piece {
+  padding: 3px;
+}
 /* Em telas médias, o resultado fica abaixo para não comprimir os tabuleiros maiores. */
-@container(min-width:714px){
- #cerco .ce-duel-layout.has-duel-result:not([data-ce-size="5"]){max-width:620px;grid-template-columns:minmax(0,1fr);gap:0}
- #cerco .ce-duel-layout.has-duel-result:not([data-ce-size="5"]) #ce-result{margin:12px auto 0;max-width:620px}
+@container(min-width:714px) {
+  #cerco .ce-duel-layout.has-duel-result:not([data-ce-size="5"]) {
+    max-width: 620px;
+    grid-template-columns: minmax(0,1fr);
+    gap: 0;
+  }
+  #cerco .ce-duel-layout.has-duel-result:not([data-ce-size="5"]) #ce-result {
+    margin: 12px auto 0;
+    max-width: 620px;
+  }
 }
-@container(min-width:900px){
- #cerco .ce-duel-layout.has-duel-result:not([data-ce-size="5"]){max-width:884px;grid-template-columns:minmax(0,var(--ce-board-max)) minmax(0,300px);gap:24px;justify-content:center}
- #cerco .ce-duel-layout.has-duel-result:not([data-ce-size="5"]) #ce-result{margin:0}
+@container(min-width:900px) {
+  #cerco .ce-duel-layout.has-duel-result:not([data-ce-size="5"]) {
+    max-width: 884px;
+    grid-template-columns: minmax(0,var(--ce-board-max)) minmax(0,300px);
+    gap: 24px;
+    justify-content: center;
+  }
+  #cerco .ce-duel-layout.has-duel-result:not([data-ce-size="5"]) #ce-result {
+    margin: 0;
+  }
 }
-@media(max-width:500px){
- #cerco .ce-size-control{gap:8px}
- #cerco .ce-sizes{gap:6px;width:100%}
- #cerco .ce-sizes button{min-width:0;flex:1;padding-inline:7px}
- #cerco .ce-duel-layout:not([data-ce-size="5"]) .ce-board-wrap{padding:3px;border-radius:13px}
- #cerco .ce-duel-layout:not([data-ce-size="5"]) .ce-board{gap:2px}
- #cerco .ce-duel-layout:not([data-ce-size="5"]) .ce-cell{padding:1px;border-radius:5px}
- #cerco .ce-duel-layout:not([data-ce-size="5"]) .ce-piece{padding:1px;border-radius:4px;border-width:1px}
- #cerco .ce-duel-layout:not([data-ce-size="5"]) .ce-team-1.ce-piece{border-width:2px;padding:0}
- #cerco .ce-duel-layout:not([data-ce-size="5"]) .ce-team-mark{font-size:8px;right:0}
- #cerco .ce-duel-layout:not([data-ce-size="5"]) .ce-future-mark{font-size:20px}
+@media(max-width:500px) {
+  #cerco .ce-size-control {
+    gap: 8px;
+  }
+  #cerco .ce-sizes {
+    gap: 6px;
+    width: 100%;
+  }
+  #cerco .ce-sizes button {
+    min-width: 0;
+    flex: 1;
+    padding-inline: 7px;
+  }
+  #cerco .ce-duel-layout:not([data-ce-size="5"]) .ce-board-wrap {
+    padding: 3px;
+    border-radius: 13px;
+  }
+  #cerco .ce-duel-layout:not([data-ce-size="5"]) .ce-board {
+    gap: 2px;
+  }
+  #cerco .ce-duel-layout:not([data-ce-size="5"]) .ce-cell {
+    padding: 1px;
+    border-radius: 5px;
+  }
+  #cerco .ce-duel-layout:not([data-ce-size="5"]) .ce-piece {
+    padding: 1px;
+    border-radius: 4px;
+    border-width: 1px;
+  }
+  #cerco .ce-duel-layout:not([data-ce-size="5"]) .ce-team-1.ce-piece {
+    border-width: 2px;
+    padding: 0;
+  }
+  #cerco .ce-duel-layout:not([data-ce-size="5"]) .ce-team-mark {
+    font-size: 8px;
+    right: 0;
+  }
+  #cerco .ce-duel-layout:not([data-ce-size="5"]) .ce-future-mark {
+    font-size: 20px;
+  }
 }
-
 /* Retomar é uma escolha explícita, depois de todas as opções da preparação. */
-#cerco .ce-resume-card{margin-top:22px;padding:14px 16px;border:1px solid #c6d1bb;border-radius:14px;background:#f1f5eb;display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:12px;max-width:100%;box-sizing:border-box}
-#cerco .ce-resume-card p{margin:0;font-size:14px;line-height:1.5;color:#43593b}
-#cerco .ce-resume-card button{min-height:44px;max-width:100%;white-space:normal;padding:10px 14px}
-@media(max-width:500px){#cerco .ce-resume-card{padding:12px}#cerco .ce-resume-card button{width:100%}}
-
-/* O eixo da vitória acompanha o tabuleiro, sem contar controles ou mensagens. */
-#cerco .ce-board-extras{min-width:0}
-@container(min-width:714px){
- #cerco .ce-duel-layout.has-duel-result[data-ce-size="5"]{grid-template-rows:auto auto;row-gap:0}
- #cerco .has-duel-result[data-ce-size="5"] .ce-play-column{grid-area:1 / 1 / 3 / 2;display:grid;grid-template-rows:subgrid;align-self:stretch}
- #cerco .has-duel-result[data-ce-size="5"] .ce-board-wrap{grid-row:1;align-self:center}
- #cerco .has-duel-result[data-ce-size="5"] .ce-board-extras{grid-row:2}
- #cerco .has-duel-result[data-ce-size="5"] #ce-result{grid-area:1 / 2 / 2 / 3;align-self:center}
+#cerco .ce-resume-card {
+  margin-top: 22px;
+  padding: 14px 16px;
+  border: 1px solid #c6d1bb;
+  border-radius: 14px;
+  background: #f1f5eb;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 12px;
+  max-width: 100%;
+  box-sizing: border-box;
 }
-@container(min-width:900px){
- #cerco .ce-duel-layout.has-duel-result{grid-template-rows:auto auto;row-gap:0}
- #cerco .has-duel-result .ce-play-column{grid-area:1 / 1 / 3 / 2;display:grid;grid-template-rows:subgrid;align-self:stretch}
- #cerco .has-duel-result .ce-board-wrap{grid-row:1;align-self:center}
- #cerco .has-duel-result .ce-board-extras{grid-row:2}
- #cerco .has-duel-result #ce-result{grid-area:1 / 2 / 2 / 3;align-self:center}
+#cerco .ce-resume-card p {
+  margin: 0;
+  font-size: 14px;
+  line-height: 1.5;
+  color: #43593b;
+}
+#cerco .ce-resume-card button {
+  min-height: 44px;
+  max-width: 100%;
+  white-space: normal;
+  padding: 10px 14px;
+}
+@media(max-width:500px) {
+  #cerco .ce-resume-card {
+    padding: 12px;
+  }
+  #cerco .ce-resume-card button {
+    width: 100%;
+  }
+}
+/* O eixo da vitória acompanha o tabuleiro, sem contar controles ou mensagens. */
+#cerco .ce-board-extras {
+  min-width: 0;
+}
+@container(min-width:714px) {
+  #cerco .ce-duel-layout.has-duel-result[data-ce-size="5"] {
+    grid-template-rows: auto auto;
+    row-gap: 0;
+  }
+  #cerco .has-duel-result[data-ce-size="5"] .ce-play-column {
+    grid-area: 1 / 1 / 3 / 2;
+    display: grid;
+    grid-template-rows: subgrid;
+    align-self: stretch;
+  }
+  #cerco .has-duel-result[data-ce-size="5"] .ce-board-wrap {
+    grid-row: 1;
+    align-self: center;
+  }
+  #cerco .has-duel-result[data-ce-size="5"] .ce-board-extras {
+    grid-row: 2;
+  }
+  #cerco .has-duel-result[data-ce-size="5"] #ce-result {
+    grid-area: 1 / 2 / 2 / 3;
+    align-self: center;
+  }
+}
+@container(min-width:900px) {
+  #cerco .ce-duel-layout.has-duel-result {
+    grid-template-rows: auto auto;
+    row-gap: 0;
+  }
+  #cerco .has-duel-result .ce-play-column {
+    grid-area: 1 / 1 / 3 / 2;
+    display: grid;
+    grid-template-rows: subgrid;
+    align-self: stretch;
+  }
+  #cerco .has-duel-result .ce-board-wrap {
+    grid-row: 1;
+    align-self: center;
+  }
+  #cerco .has-duel-result .ce-board-extras {
+    grid-row: 2;
+  }
+  #cerco .has-duel-result #ce-result {
+    grid-area: 1 / 2 / 2 / 3;
+    align-self: center;
+  }
 }

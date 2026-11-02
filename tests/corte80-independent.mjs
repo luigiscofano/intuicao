@@ -1,40 +1,331 @@
+// Testes e verificações de Corte certo.
 // Independent oracle: interval-union sweep, not production polygon clipping/triangulation.
 import assert from 'node:assert/strict';
 import fs from 'node:fs';
-import {cutSuccess} from '../dist/math.mjs';
-import {cutLevels} from '../dist/levels.mjs';
-import {shapePolygon,regionGeometry,curvedCut,basicCutState} from '../dist/curves.mjs';
-const round=x=>Math.round(x*1e6)/1e6;
-function formula(u,l){const z=u/160,a=l.amplitude??60,f=l.frequency??1;switch(l.family){case 'Reta':return 0;case 'Parábola':return a*z*z;case 'Seno':return a*Math.sin(f*Math.PI*z);case 'Cosseno':return a*Math.cos(f*Math.PI*z);case 'Cúbica':return a*z*z*z;case 'Dupla curva':return a*(z*z*z*z-z*z);default:throw Error(l.family);}}
-function intervals(poly,u){const hits=[];for(let i=0;i<poly.length;i++){const a=poly[i],b=poly[(i+1)%poly.length];if((a.x<=u&&b.x>u)||(b.x<=u&&a.x>u))hits.push(a.y+(b.y-a.y)*(u-a.x)/(b.x-a.x));}hits.sort((a,b)=>a-b);const out=[];for(let i=0;i<hits.length;i+=2)out.push([hits[i],hits[i+1]]);return out;}
-function union(xs){const out=[];for(const x of xs.sort((a,b)=>a[0]-b[0])){const p=out.at(-1);if(p&&x[0]<=p[1])p[1]=Math.max(p[1],x[1]);else out.push([...x]);}return out;}
-function subtract(xs,holes){for(const h of holes){const out=[];for(const [a,b]of xs){if(h[1]<=a||h[0]>=b)out.push([a,b]);else{if(a<h[0])out.push([a,h[0]]);if(b>h[1])out.push([h[1],b]);}}xs=out;}return xs;}
-function simpson(f,a,b,eps=1e-5){const c=(a+b)/2,fa=f(a),fb=f(b),fc=f(c),s=(b-a)*(fa+4*fc+fb)/6;function rec(a,b,fa,fb,fc,s,eps,n){const c=(a+b)/2,d=(a+c)/2,e=(c+b)/2,fd=f(d),fe=f(e),l=(c-a)*(fa+4*fd+fc)/6,r=(b-c)*(fc+4*fe+fb)/6,v=l+r;if(n===0||Math.abs(v-s)<15*eps)return v+(v-s)/15;return rec(a,c,fa,fc,fd,l,eps/2,n-1)+rec(c,b,fc,fb,fe,r,eps/2,n-1);}return rec(a,b,fa,fb,fc,s,eps,18);}
-function oracle(poly,holes,l,travel){const r=l.angle*Math.PI/180,n={x:Math.cos(r),y:Math.sin(r)},t={x:-n.y,y:n.x},d=(typeof l.basicDirection==='number'?l.basicDirection:l.basicDirection?.angle??l.angle)*Math.PI/180,o=l.basicOrigin??{x:l.centerX??400,y:l.centerY??230},cx=o.x+Math.cos(d)*travel,cy=o.y+Math.sin(d)*travel;
- const cv=p=>({x:(p.x-cx)*t.x+(p.y-cy)*t.y,y:(p.x-cx)*n.x+(p.y-cy)*n.y});const ps=[poly,...holes].map(p=>p.map(cv));const edges=ps.flatMap(p=>p.map((a,i)=>[a,p[(i+1)%p.length]]));const cuts=ps.flatMap(p=>p.map(q=>q.x));
- // All topology/order changes are vertices or edge intersections. Width is linear between cuts.
- for(let i=0;i<edges.length;i++)for(let j=i+1;j<edges.length;j++){const [a,b]=edges[i],[c,d]=edges[j],dx=b.x-a.x,dy=b.y-a.y,ex=d.x-c.x,ey=d.y-c.y,den=dx*ey-dy*ex;if(Math.abs(den)<1e-10)continue;const qx=c.x-a.x,qy=c.y-a.y,s=(qx*ey-qy*ex)/den,v=(qx*dy-qy*dx)/den;if(s>0&&s<1&&v>0&&v<1)cuts.push(a.x+s*dx);}
- const lo=Math.min(...ps[0].map(p=>p.x)),hi=Math.max(...ps[0].map(p=>p.x)),cs=[...new Set(cuts.filter(x=>x>=lo&&x<=hi))].sort((a,b)=>a-b),solid=u=>subtract(intervals(ps[0],u),union(ps.slice(1).flatMap(p=>intervals(p,u))));let useful=0,selected=0;
- for(let i=1;i<cs.length;i++){const a=cs[i-1],b=cs[i];if(b-a<1e-9)continue;const mid=(a+b)/2;useful+=(b-a)*solid(mid).reduce((s,[v,w])=>s+w-v,0);const f=u=>solid(Math.min(b-1e-10,Math.max(a+1e-10,u))).reduce((s,[v,w])=>s+Math.max(0,Math.min(w,(l.initialOffset??0)+formula(u,l))-v),0);selected+=simpson(f,a,b);}
- return {useful,selected,percent:100*selected/useful};}
-const rect=(x,y,w,h)=>[{x,y},{x:x+w,y},{x:x+w,y:y+h},{x,y:y+h}];
-const cases=[['clipped',[rect(5,5,10,10)],75],['overlap',[rect(0,0,5,10),rect(2,0,5,10)],30],['duplicate',[rect(2,2,3,3),rect(2,2,3,3)],91],['outside',[rect(20,20,5,5)],100],['nested',[rect(2,2,6,6),rect(3,3,2,2)],64],['concave',[[{x:1,y:1},{x:7,y:1},{x:7,y:3},{x:3,y:3},{x:3,y:7},{x:1,y:7}]],80]];
-for(const [name,holes,expected]of cases){const p=rect(0,0,10,10),l={family:'Reta',angle:0,basicDirection:0,basicOrigin:{x:5,y:5}};const q=oracle(p,holes,l,0);assert.ok(Math.abs(q.useful-expected)<1e-6,name);assert.ok(Math.abs(regionGeometry(p,holes).totalArea-expected)<1e-6,name);}
-for(const target of [20,25,40,50,75,80]){assert.ok(cutSuccess(target-3,target));assert.ok(cutSuccess(target+3,target));assert.ok(!cutSuccess(target-3.001,target));assert.ok(!cutSuccess(target+3.001,target));}
-assert.equal(cutLevels.length,80,'campaign must be ready');
-const expectedDebuts={'Reta':1,'Parábola':7,'Seno':16,'Cúbica':31,'Cosseno':39,'Dupla curva':46};
-for(const [family,level]of Object.entries(expectedDebuts)){assert.equal(cutLevels.findIndex(l=>l.family===family)+1,level,`debut ${family}`);assert.ok(cutLevels.slice(60).some(l=>l.family===family),`upper tier ${family}`);}
-for(let i=6;i<cutLevels.length;i++)if(i>=8)assert.ok(!(cutLevels[i].family===cutLevels[i-1].family&&cutLevels[i].family===cutLevels[i-2].family),`three consecutive ${i+1}`);
-assert.equal(cutLevels.findIndex(l=>l.holes?.length)+1,11);assert.ok(cutLevels.slice(60).some(l=>!l.holes?.length));assert.ok(cutLevels.slice(45).some(l=>l.family==='Reta'));
-const rows=[];for(const [i,l]of cutLevels.entries()){
- const p=shapePolygon(l.shape),hs=l.holes??[],travel=Math.round(l.solutionTravel*10)/10,q=oracle(p,hs,l,travel),initial=oracle(p,hs,l,l.initialTravel),production=curvedCut(p,basicCutState(l,travel)),g=regionGeometry(p,hs),full=oracle(p,[],l,travel),minus=oracle(p,hs,l,travel-1),plus=oracle(p,hs,l,travel+1),fullminus=oracle(p,[],l,travel-1),fullplus=oracle(p,[],l,travel+1),slope=(plus.percent-minus.percent)/2,fullslope=(fullplus.percent-fullminus.percent)/2;
- assert.ok(q.useful>0);assert.ok(Math.abs(q.useful-g.totalArea)<.0001,`area ${i+1}`);assert.ok(Math.abs(q.percent-production.ratio*100)<.025,`oracle percent ${i+1}`);assert.ok(Math.abs(q.percent-l.target)<=3,`answer ${i+1}`);assert.ok(Math.abs(initial.percent-l.target)>3,`initial ${i+1}`);assert.ok(production.errorPP<=.010001);
- const s=basicCutState(l,travel),s2=basicCutState(l,travel+1),d=(typeof l.basicDirection==='number'?l.basicDirection:l.basicDirection.angle)*Math.PI/180;assert.ok(Math.abs(s2.centerX-s.centerX-Math.cos(d))<1e-8);assert.ok(Math.abs(s2.centerY-s.centerY-Math.sin(d))<1e-8);for(const k of ['family','angle','amplitude','frequency','offset'])assert.equal(s[k],s2[k]);
- // Existing integer handle steps and 0.1 slider steps must both comfortably solve it.
- const integer=oracle(p,hs,l,Math.round(l.solutionTravel));assert.ok(Math.abs(integer.percent-l.target)<3,`integer step ${i+1}`);let width=0;for(const dt of [-2,-1,0,1,2]){const v=dt===-1?minus.percent:dt===1?plus.percent:dt===0?q.percent:oracle(p,hs,l,travel+dt).percent;if(Math.abs(v-l.target)<=3)width++;}assert.equal(width,5,`comfortable ±2 steps ${i+1}`);
- const individualRemoved=hs.reduce((sum,h)=>sum+full.useful-oracle(p,[h],l,travel).useful,0),overlapArea=individualRemoved-(full.useful-q.useful),edgeOpening=hs.some(h=>regionGeometry(p,[h]).removedArea<Math.abs(h.reduce((v,a,j)=>v+a.x*h[(j+1)%h.length].y-a.y*h[(j+1)%h.length].x,0)/2)-.01);
- const gap=Math.abs(full.percent-q.percent),relative=Math.abs(slope-fullslope)/Math.max(fullslope,1e-9),causal=!hs.length||gap>=.75||relative>=.1;
- rows.push({level:i+1,id:l.id,area:round(q.useful),removedFraction:round(1-q.useful/full.useful),overlapArea:round(overlapArea),edgeOpening,roundedTravel:travel,oraclePP:round(q.percent),productionDifferencePP:round(Math.abs(q.percent-production.ratio*100)),initialErrorPP:round(Math.abs(initial.percent-l.target)),integerErrorPP:round(Math.abs(integer.percent-l.target)),fiveIntegerPositionsPass:true,holeEffectPP:round(gap),sensitivityRelativeChange:round(relative),holesCausal:causal});console.log(i+1,l.family,round(q.percent),hs.length?`hole effect ${round(gap)} / sensitivity ${round(relative)}`:'no holes');
+import { cutSuccess } from '../dist/math.mjs';
+import { cutLevels } from '../dist/levels.mjs';
+import { shapePolygon, regionGeometry, curvedCut, basicCutState } from '../dist/curves.mjs';
+const round = (x) => Math.round(x * 1e6) / 1e6;
+function formula(u, l) {
+  const z = u / 160,
+    a = l.amplitude ?? 60,
+    f = l.frequency ?? 1;
+  switch (l.family) {
+    case 'Reta':
+      return 0;
+    case 'Parábola':
+      return a * z * z;
+    case 'Seno':
+      return a * Math.sin(f * Math.PI * z);
+    case 'Cosseno':
+      return a * Math.cos(f * Math.PI * z);
+    case 'Cúbica':
+      return a * z * z * z;
+    case 'Dupla curva':
+      return a * (z * z * z * z - z * z);
+    default:
+      throw Error(l.family);
+  }
 }
-assert.deepEqual(rows.filter(r=>!r.holesCausal).map(r=>r.level),[],'all holes must change estimation or sensitivity');
-const result={passed:true,method:'Independent interval-union sweep in curve coordinates. Polygon useful area exact between all edge-intersection breakpoints; selected area adaptive Simpson with independent six-family formulas. No production polygon subtraction or clipping reused.',fixtures:cases.map(c=>c[0]),levels:rows.length,introException:'Levels 1–6 explicitly teach straight lines; no three consecutive family repetitions after that six-level introduction.',overlapLevels:rows.filter(r=>r.overlapArea>.01).map(r=>r.level),edgeOpeningLevels:rows.filter(r=>r.edgeOpening).map(r=>r.level),weakHoles:rows.filter(r=>!r.holesCausal).map(r=>r.level),maximumProductionDifferencePP:Math.max(...rows.map(r=>r.productionDifferencePP)),minimumInitialErrorPP:Math.min(...rows.map(r=>r.initialErrorPP)),maximumIntegerErrorPP:Math.max(...rows.map(r=>r.integerErrorPP)),browser:'Not run: existing native ATSPI unavailable and DevTools organization-denied; no bypass.',rows};fs.writeFileSync('tests/corte80-independent-validation.json',JSON.stringify(result,null,2)+'\n');console.log(JSON.stringify({...result,rows:undefined},null,2));
+function intervals(poly, u) {
+  const hits = [];
+  for (let i = 0; i < poly.length; i++) {
+    const a = poly[i],
+      b = poly[(i + 1) % poly.length];
+    if ((a.x <= u && b.x > u) || (b.x <= u && a.x > u))
+      hits.push(a.y + ((b.y - a.y) * (u - a.x)) / (b.x - a.x));
+  }
+  hits.sort((a, b) => a - b);
+  const out = [];
+  for (let i = 0; i < hits.length; i += 2) out.push([hits[i], hits[i + 1]]);
+  return out;
+}
+function union(xs) {
+  const out = [];
+  for (const x of xs.sort((a, b) => a[0] - b[0])) {
+    const p = out.at(-1);
+    if (p && x[0] <= p[1]) p[1] = Math.max(p[1], x[1]);
+    else out.push([...x]);
+  }
+  return out;
+}
+function subtract(xs, holes) {
+  for (const h of holes) {
+    const out = [];
+    for (const [a, b] of xs) {
+      if (h[1] <= a || h[0] >= b) out.push([a, b]);
+      else {
+        if (a < h[0]) out.push([a, h[0]]);
+        if (b > h[1]) out.push([h[1], b]);
+      }
+    }
+    xs = out;
+  }
+  return xs;
+}
+function simpson(f, a, b, eps = 1e-5) {
+  const c = (a + b) / 2,
+    fa = f(a),
+    fb = f(b),
+    fc = f(c),
+    s = ((b - a) * (fa + 4 * fc + fb)) / 6;
+  function rec(a, b, fa, fb, fc, s, eps, n) {
+    const c = (a + b) / 2,
+      d = (a + c) / 2,
+      e = (c + b) / 2,
+      fd = f(d),
+      fe = f(e),
+      l = ((c - a) * (fa + 4 * fd + fc)) / 6,
+      r = ((b - c) * (fc + 4 * fe + fb)) / 6,
+      v = l + r;
+    if (n === 0 || Math.abs(v - s) < 15 * eps) return v + (v - s) / 15;
+    return rec(a, c, fa, fc, fd, l, eps / 2, n - 1) + rec(c, b, fc, fb, fe, r, eps / 2, n - 1);
+  }
+  return rec(a, b, fa, fb, fc, s, eps, 18);
+}
+function oracle(poly, holes, l, travel) {
+  const r = (l.angle * Math.PI) / 180,
+    n = { x: Math.cos(r), y: Math.sin(r) },
+    t = { x: -n.y, y: n.x },
+    d =
+      ((typeof l.basicDirection === 'number'
+        ? l.basicDirection
+        : (l.basicDirection?.angle ?? l.angle)) *
+        Math.PI) /
+      180,
+    o = l.basicOrigin ?? { x: l.centerX ?? 400, y: l.centerY ?? 230 },
+    cx = o.x + Math.cos(d) * travel,
+    cy = o.y + Math.sin(d) * travel;
+  const cv = (p) => ({
+    x: (p.x - cx) * t.x + (p.y - cy) * t.y,
+    y: (p.x - cx) * n.x + (p.y - cy) * n.y,
+  });
+  const ps = [poly, ...holes].map((p) => p.map(cv));
+  const edges = ps.flatMap((p) => p.map((a, i) => [a, p[(i + 1) % p.length]]));
+  const cuts = ps.flatMap((p) => p.map((q) => q.x));
+  // All topology/order changes are vertices or edge intersections. Width is linear between cuts.
+  for (let i = 0; i < edges.length; i++)
+    for (let j = i + 1; j < edges.length; j++) {
+      const [a, b] = edges[i],
+        [c, d] = edges[j],
+        dx = b.x - a.x,
+        dy = b.y - a.y,
+        ex = d.x - c.x,
+        ey = d.y - c.y,
+        den = dx * ey - dy * ex;
+      if (Math.abs(den) < 1e-10) continue;
+      const qx = c.x - a.x,
+        qy = c.y - a.y,
+        s = (qx * ey - qy * ex) / den,
+        v = (qx * dy - qy * dx) / den;
+      if (s > 0 && s < 1 && v > 0 && v < 1) cuts.push(a.x + s * dx);
+    }
+  const lo = Math.min(...ps[0].map((p) => p.x)),
+    hi = Math.max(...ps[0].map((p) => p.x)),
+    cs = [...new Set(cuts.filter((x) => x >= lo && x <= hi))].sort((a, b) => a - b),
+    solid = (u) =>
+      subtract(intervals(ps[0], u), union(ps.slice(1).flatMap((p) => intervals(p, u))));
+  let useful = 0,
+    selected = 0;
+  for (let i = 1; i < cs.length; i++) {
+    const a = cs[i - 1],
+      b = cs[i];
+    if (b - a < 1e-9) continue;
+    const mid = (a + b) / 2;
+    useful += (b - a) * solid(mid).reduce((s, [v, w]) => s + w - v, 0);
+    const f = (u) =>
+      solid(Math.min(b - 1e-10, Math.max(a + 1e-10, u))).reduce(
+        (s, [v, w]) => s + Math.max(0, Math.min(w, (l.initialOffset ?? 0) + formula(u, l)) - v),
+        0,
+      );
+    selected += simpson(f, a, b);
+  }
+  return { useful, selected, percent: (100 * selected) / useful };
+}
+const rect = (x, y, w, h) => [
+  { x, y },
+  { x: x + w, y },
+  { x: x + w, y: y + h },
+  { x, y: y + h },
+];
+const cases = [
+  ['clipped', [rect(5, 5, 10, 10)], 75],
+  ['overlap', [rect(0, 0, 5, 10), rect(2, 0, 5, 10)], 30],
+  ['duplicate', [rect(2, 2, 3, 3), rect(2, 2, 3, 3)], 91],
+  ['outside', [rect(20, 20, 5, 5)], 100],
+  ['nested', [rect(2, 2, 6, 6), rect(3, 3, 2, 2)], 64],
+  [
+    'concave',
+    [
+      [
+        { x: 1, y: 1 },
+        { x: 7, y: 1 },
+        { x: 7, y: 3 },
+        { x: 3, y: 3 },
+        { x: 3, y: 7 },
+        { x: 1, y: 7 },
+      ],
+    ],
+    80,
+  ],
+];
+for (const [name, holes, expected] of cases) {
+  const p = rect(0, 0, 10, 10),
+    l = { family: 'Reta', angle: 0, basicDirection: 0, basicOrigin: { x: 5, y: 5 } };
+  const q = oracle(p, holes, l, 0);
+  assert.ok(Math.abs(q.useful - expected) < 1e-6, name);
+  assert.ok(Math.abs(regionGeometry(p, holes).totalArea - expected) < 1e-6, name);
+}
+for (const target of [20, 25, 40, 50, 75, 80]) {
+  assert.ok(cutSuccess(target - 3, target));
+  assert.ok(cutSuccess(target + 3, target));
+  assert.ok(!cutSuccess(target - 3.001, target));
+  assert.ok(!cutSuccess(target + 3.001, target));
+}
+assert.equal(cutLevels.length, 80, 'campaign must be ready');
+const expectedDebuts = {
+  'Reta': 1,
+  'Parábola': 7,
+  'Seno': 16,
+  'Cúbica': 31,
+  'Cosseno': 39,
+  'Dupla curva': 46,
+};
+for (const [family, level] of Object.entries(expectedDebuts)) {
+  assert.equal(cutLevels.findIndex((l) => l.family === family) + 1, level, `debut ${family}`);
+  assert.ok(
+    cutLevels.slice(60).some((l) => l.family === family),
+    `upper tier ${family}`,
+  );
+}
+for (let i = 6; i < cutLevels.length; i++)
+  if (i >= 8)
+    assert.ok(
+      !(
+        cutLevels[i].family === cutLevels[i - 1].family &&
+        cutLevels[i].family === cutLevels[i - 2].family
+      ),
+      `three consecutive ${i + 1}`,
+    );
+assert.equal(cutLevels.findIndex((l) => l.holes?.length) + 1, 11);
+assert.ok(cutLevels.slice(60).some((l) => !l.holes?.length));
+assert.ok(cutLevels.slice(45).some((l) => l.family === 'Reta'));
+const rows = [];
+for (const [i, l] of cutLevels.entries()) {
+  const p = shapePolygon(l.shape),
+    hs = l.holes ?? [],
+    travel = Math.round(l.solutionTravel * 10) / 10,
+    q = oracle(p, hs, l, travel),
+    initial = oracle(p, hs, l, l.initialTravel),
+    production = curvedCut(p, basicCutState(l, travel)),
+    g = regionGeometry(p, hs),
+    full = oracle(p, [], l, travel),
+    minus = oracle(p, hs, l, travel - 1),
+    plus = oracle(p, hs, l, travel + 1),
+    fullminus = oracle(p, [], l, travel - 1),
+    fullplus = oracle(p, [], l, travel + 1),
+    slope = (plus.percent - minus.percent) / 2,
+    fullslope = (fullplus.percent - fullminus.percent) / 2;
+  assert.ok(q.useful > 0);
+  assert.ok(Math.abs(q.useful - g.totalArea) < 0.0001, `area ${i + 1}`);
+  assert.ok(Math.abs(q.percent - production.ratio * 100) < 0.025, `oracle percent ${i + 1}`);
+  assert.ok(Math.abs(q.percent - l.target) <= 3, `answer ${i + 1}`);
+  assert.ok(Math.abs(initial.percent - l.target) > 3, `initial ${i + 1}`);
+  assert.ok(production.errorPP <= 0.010001);
+  const s = basicCutState(l, travel),
+    s2 = basicCutState(l, travel + 1),
+    d =
+      ((typeof l.basicDirection === 'number' ? l.basicDirection : l.basicDirection.angle) *
+        Math.PI) /
+      180;
+  assert.ok(Math.abs(s2.centerX - s.centerX - Math.cos(d)) < 1e-8);
+  assert.ok(Math.abs(s2.centerY - s.centerY - Math.sin(d)) < 1e-8);
+  for (const k of ['family', 'angle', 'amplitude', 'frequency', 'offset'])
+    assert.equal(s[k], s2[k]);
+  // Existing integer handle steps and 0.1 slider steps must both comfortably solve it.
+  const integer = oracle(p, hs, l, Math.round(l.solutionTravel));
+  assert.ok(Math.abs(integer.percent - l.target) < 3, `integer step ${i + 1}`);
+  let width = 0;
+  for (const dt of [-2, -1, 0, 1, 2]) {
+    const v =
+      dt === -1
+        ? minus.percent
+        : dt === 1
+          ? plus.percent
+          : dt === 0
+            ? q.percent
+            : oracle(p, hs, l, travel + dt).percent;
+    if (Math.abs(v - l.target) <= 3) width++;
+  }
+  assert.equal(width, 5, `comfortable ±2 steps ${i + 1}`);
+  const individualRemoved = hs.reduce(
+      (sum, h) => sum + full.useful - oracle(p, [h], l, travel).useful,
+      0,
+    ),
+    overlapArea = individualRemoved - (full.useful - q.useful),
+    edgeOpening = hs.some(
+      (h) =>
+        regionGeometry(p, [h]).removedArea <
+        Math.abs(
+          h.reduce(
+            (v, a, j) => v + a.x * h[(j + 1) % h.length].y - a.y * h[(j + 1) % h.length].x,
+            0,
+          ) / 2,
+        ) -
+          0.01,
+    );
+  const gap = Math.abs(full.percent - q.percent),
+    relative = Math.abs(slope - fullslope) / Math.max(fullslope, 1e-9),
+    causal = !hs.length || gap >= 0.75 || relative >= 0.1;
+  rows.push({
+    level: i + 1,
+    id: l.id,
+    area: round(q.useful),
+    removedFraction: round(1 - q.useful / full.useful),
+    overlapArea: round(overlapArea),
+    edgeOpening,
+    roundedTravel: travel,
+    oraclePP: round(q.percent),
+    productionDifferencePP: round(Math.abs(q.percent - production.ratio * 100)),
+    initialErrorPP: round(Math.abs(initial.percent - l.target)),
+    integerErrorPP: round(Math.abs(integer.percent - l.target)),
+    fiveIntegerPositionsPass: true,
+    holeEffectPP: round(gap),
+    sensitivityRelativeChange: round(relative),
+    holesCausal: causal,
+  });
+  console.log(
+    i + 1,
+    l.family,
+    round(q.percent),
+    hs.length ? `hole effect ${round(gap)} / sensitivity ${round(relative)}` : 'no holes',
+  );
+}
+assert.deepEqual(
+  rows.filter((r) => !r.holesCausal).map((r) => r.level),
+  [],
+  'all holes must change estimation or sensitivity',
+);
+const result = {
+  passed: true,
+  method:
+    'Independent interval-union sweep in curve coordinates. Polygon useful area exact between all edge-intersection breakpoints; selected area adaptive Simpson with independent six-family formulas. No production polygon subtraction or clipping reused.',
+  fixtures: cases.map((c) => c[0]),
+  levels: rows.length,
+  introException:
+    'Levels 1–6 explicitly teach straight lines; no three consecutive family repetitions after that six-level introduction.',
+  overlapLevels: rows.filter((r) => r.overlapArea > 0.01).map((r) => r.level),
+  edgeOpeningLevels: rows.filter((r) => r.edgeOpening).map((r) => r.level),
+  weakHoles: rows.filter((r) => !r.holesCausal).map((r) => r.level),
+  maximumProductionDifferencePP: Math.max(...rows.map((r) => r.productionDifferencePP)),
+  minimumInitialErrorPP: Math.min(...rows.map((r) => r.initialErrorPP)),
+  maximumIntegerErrorPP: Math.max(...rows.map((r) => r.integerErrorPP)),
+  browser:
+    'Not run: existing native ATSPI unavailable and DevTools organization-denied; no bypass.',
+  rows,
+};
+fs.writeFileSync(
+  'tests/corte80-independent-validation.json',
+  JSON.stringify(result, null, 2) + '\n',
+);
+console.log(JSON.stringify({ ...result, rows: undefined }, null, 2));

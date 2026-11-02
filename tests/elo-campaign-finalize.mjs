@@ -1,60 +1,412 @@
+// Testes e verificações de ELO.
 import fs from 'node:fs';
-import {createHash} from 'node:crypto';
-import {validateElo,solveElo,analyzeEloLocal} from '../dist/elo-rules.mjs';
-import {canonical,validConstraints,families,productionSolve} from './elo-campaign-build.mjs';
-import {explainElo,levelHash,reasoningEngineHash,reasoningMethodVersion} from './elo-campaign-reasoning.mjs';
-const file=name=>new URL(name,import.meta.url);
-const inputs=[['/tmp/elo-campaign-a-final.json',[1,2]],['/tmp/elo-repair-intro.json',[2]],['/tmp/elo-campaign-stage3.json',[3]],['/tmp/elo-campaign-stage4.json',[4]],['/tmp/elo-campaign-b-final.json',[5,6,7]],['/tmp/elo-campaign-c-final-before164.json',[8]],['/tmp/elo-campaign-c-final.json',[9]],['/tmp/elo-campaign-stage10-final.json',[10]],['/tmp/elo-repair-165.json',[9]],['/tmp/elo-repair-167.json',[9]],['/tmp/elo-repair-184.json',[10]]];
-const savedSource=file('./elo-campaign-candidates.json');const saved=fs.existsSync(savedSource)?JSON.parse(fs.readFileSync(savedSource)):null;const effectiveInputs=saved?.status==='approved-final'&&!process.env.ELO_REBUILD_INPUTS?[[savedSource,[1,2,3,4,5,6,7,8,9,10]]]:inputs;
-const byNumber=new Map(),answers={},sourceAudits=new Map();
-for(const[path,stages] of effectiveInputs){const data=JSON.parse(fs.readFileSync(path));for(const l of data.levels)if(stages.includes(l.stage)){byNumber.set(l.campaignNumber,structuredClone(l));answers[l.id]=data.answers[l.id];sourceAudits.set(l.id,data.audit?.find(a=>a.id===l.id));}}
-const levels=[...byNumber.values()].sort((a,b)=>a.campaignNumber-b.campaignNumber);
-if(levels.length!==200||levels.some((l,i)=>l.campaignNumber!==i+1))throw Error('Campaign is incomplete: '+levels.length);
-const seen=new Map();for(const l of levels){const key=canonical(l);if(seen.has(key))throw Error(`Equivalent region layouts ${l.id} / ${seen.get(key)}`);seen.set(key,l.id);}
-const finalAnswers=Object.fromEntries(levels.map(l=>[l.id,answers[l.id]])),audit=[],certificates={};
-const previousPath=file('./elo-campaign-certificates.json');const previous=fs.existsSync(previousPath)?JSON.parse(fs.readFileSync(previousPath)).levels||{}:{};
-const editorial={
- 21:{idea:'A curva fixa da região 2 precisa sair para baixo. Colocar a região 1 na segunda linha exigiria uma horizontal que cruzaria essa saída; isso força o alinhamento superior e desencadeia as regiões de baixo.',observations:['Hipótese R1=L2C1 exige R4=L2C5 e R6 abaixo; a curva fixa R2=L1C3 precisa sair para baixo e cruza a horizontal em L2C3. Logo R1=L1C1.','R3 em L4C2 ficaria sem segunda direção; alternativas de R6 criam cruzamento ou circuito incapaz de incorporar R4.']},
- 22:{idea:'A reta da região 7 só pode formar duas direções opostas em L5C2. Ela exige a região 2 à esquerda e transmite o alinhamento às demais regiões.',observations:['Reta R7=L5C2 obriga R2=L5C1; a cadeia seguinte é propagação direta.']},
- 81:{idea:'As cotas de coluna e linha compartilham regiões: a coluna 1 determina as regiões 1 e 5, e a linha 4 restringe as regiões 2 e 3.',observations:['Introdução curta de contagens, com consequências concretas nas duas direções.']},
- 93:{idea:'As passagens restringem a região 12; escolhas das regiões 2 e 4 alteram a cota da coluna 7 e propagam consequências até as regiões 10 e 1 no topo.',observations:['Dependência entre áreas afastadas, não apenas aumento de grade.']},
- 128:{idea:'A região 7 já precisa das regiões 10 e 1 como vizinhas diretas. Isso exclui concorrentes alinhados e, combinado à soma 6 da região 1, restringe a região 5; a volta restante deve evitar um circuito isolado.',difficulty:'intermediário',observations:['Combinação global revisada; não foi classificada como especialista pelo tamanho da grade.']},
- 146:{idea:'As regiões 8 e 2 não podem ser marcos consecutivos no circuito. Rejeitar ligações locais que violam essa ordem força o lado esquerdo; depois outras adjacências marcadas restringem o lado direito.',difficulty:'avançado'},
- 159:{idea:'A passagem restringe a região 7. As posições da parte de baixo se distinguem por consequências na ordem global e por cruzamentos em regiões distantes.',difficulty:'avançado'},
- 163:{idea:'A cota de duas travessias compete com a volta esquerda. Alternativas localmente plausíveis falham depois de propagar aos pontos fixos da direita e à conexão superior restante.',difficulty:'avançado'},
- 171:{idea:'Três cortes de quatro travessias, duas cotas de linha e a ordem dos marcos ligam topo, meio e base. As alternativas da região 2 esgotam a cota da linha 4 ou tornam marcos indevidamente consecutivos; a volta inferior ainda deve cumprir a linha 7.',difficulty:'especialista'},
- 117:{idea:'A soma 2 da região 1 restringe a região 8. Testar R2 em L2C5 esgota as duas candidatas da região 4 por soma 6 ou terceira direção, e a exclusão inicia uma cascata.',difficulty:'avançado',observations:['Classificação ajustada de especialista para avançado após revisão da cadeia concreta.']}
-};
-const editorialPath=file('./elo-campaign-editorial.json');if(fs.existsSync(editorialPath))Object.assign(editorial,JSON.parse(fs.readFileSync(editorialPath)));
-function semanticAblation(l){const family=families[l.stage-1];if(l.mechanics.length===1)return {status:'not-applicable',necessary:null};const q=structuredClone(l),banned=[];if(family==='counts'){delete q.constraints.rowCounts;delete q.constraints.colCounts;}else{if(family==='passages')banned.push(...(q.constraints.passages||[]));if(family==='exclusivePassages')banned.push(...(q.constraints.exclusivePassages||[]).flatMap(g=>g.cells));delete q.constraints[family];}const ban=new Set(banned),domains=l.mechanics.includes(family)?Array.from({length:Math.max(...l.regions)+1},(_,r)=>l.regions.flatMap((v,c)=>v===r&&!ban.has(c)?[c]:[])):undefined;const local=analyzeEloLocal(q,{}, {domains,maxMs:Infinity,maxOperations:Infinity}),r=solveElo(q,{},2,{domains:local.candidates,maxNodes:1500000,maxMs:7000});return {status:r.count>=2?'essential':r.exhaustive&&r.count===1?'redundant-to-uniqueness':'inconclusive',necessary:r.count>=2?true:r.exhaustive?false:null,count:r.count,exhaustive:r.exhaustive,cutoffReason:r.cutoffReason,method:'Remove only the semantic rule; passage cells remain unavailable to points.',witnesses:r.solutions};}
-for(const l of levels){const p=finalAnswers[l.id],hash=levelHash(l),start=performance.now();
- const check=validateElo(l,p);if(!check.complete)throw Error(l.id+' invalid '+JSON.stringify(check));if(!validConstraints(l,p,true))throw Error(l.id+' independent check disagrees');
- if(p.some((c,r)=>l.regions[c]!==r)||new Set(p).size!==p.length)throw Error('wrong region '+l.id);
- const old=previous[l.id],proof=old?.solved&&!old?.limited&&old?.levelHash===hash&&old.engineHash===reasoningEngineHash&&old.methodVersion===reasoningMethodVersion?old:{...explainElo(l,{maxEvaluations:10000}),levelHash:hash,engineHash:reasoningEngineHash,methodVersion:reasoningMethodVersion};
- certificates[l.id]=proof;if(!proof.solved||proof.contradiction||proof.limited)throw Error(`${l.id}: bounded proof incomplete; ${JSON.stringify({solved:proof.solved,limited:proof.limited,evaluations:proof.evaluations})}`);
- const local=analyzeEloLocal(l,{}, {maxMs:Infinity,maxOperations:Infinity}),result=solveElo(l,{},2,{domains:local.candidates,maxNodes:2000000,maxMs:Infinity});if(!result.exhaustive||result.count!==1)throw Error(`${l.id}: uniqueness ${result.count} / ${result.exhaustive}`);
- l.uniqueness={status:'unique',count:1,exhaustive:true,method:'Exhaustive search after sound local propagation; reference answer never used.',nodes:result.stats.nodes};
- l.validation={solutionVerified:true,solutionCount:1,method:'Independent full-rule check and production-engine validation',levelHash:hash};
- const semantic=semanticAblation(l);if(l.designAudit)l.designAudit.mainFamilyEssential=semantic.necessary;
- l.designAudit={...l.designAudit,semanticNecessity:semantic.status,explanationStatus:'complete-bounded-certificate',review:'Mathematical and assisted editorial review; no claim of playtesting with people.'};
- const moves=Math.max(...l.regions)+1-Object.keys(l.fixed||{}).length;
- if(l.stage===1&&l.stagePosition<=2)l.difficulty='inicial';else if(l.stagePosition<=2)l.difficulty=l.stage<5?'inicial':'intermediário';else if(proof.maxSimultaneousHypotheses>=2&&proof.refutations>=4)l.difficulty='especialista';else if(proof.maxSimultaneousHypotheses>=1||proof.rounds>=5||l.stage>=5&&moves>=7)l.difficulty='avançado';else l.difficulty='intermediário';
- const summary=[];for(const s of proof.steps){if(s.kind==='local-propagation'){for(const e of s.eliminations.slice(0,2))summary.push({kind:'rule-elimination',region:e.index,cell:e.value,rule:e.technique,text:e.explanation});}else summary.push({kind:s.kind,region:s.region,cell:s.cell,text:s.explanation,consequence:s.proof?.diagnostic?.message||'As propagações registradas esgotam um domínio ou violam uma regra.'});if(summary.length>=5)break;}
- l.reasoningTrace={status:'complete',summary:summary.slice(0,5),certificate:`tests/elo-campaign-certificates.json#${l.id}`,levelHash:hash};
- l.profile.boundedReasoning={solved:true,maxSimultaneousHypotheses:proof.maxSimultaneousHypotheses,convention:'Explicit nested hypotheses beyond direct necessary-rule tests of individual candidates.',evaluations:proof.evaluations,rounds:proof.rounds,eliminations:proof.eliminations,refutations:proof.refutations,humanCalibration:false};
- l.profile.localDeduction={solved:local.solved,forcedMoves:local.forced.length,eliminations:local.eliminations.length,rounds:local.rounds};
- l.profile.searchProfile={nodes:result.stats.nodes,branches:result.stats.branches,requiredAfterLocalPropagation:!local.solved,scope:'Computational audit only; search cost does not measure human difficulty.'};
- if(l.mechanics.length===1&&l.stage>1){l.lesson='Integre alinhamentos, primeira peça visível, grau dois e circuito único sem regras adicionais.';l.logicIdea=l.lesson;}
- if(!editorial[l.campaignNumber]&&!l.logicIdea.includes('A cadeia registrada elimina')&&!l.logicIdea.includes('Primeira exclusão verificável')){const ref=proof.steps.find(s=>s.kind==='hypothesis-refutation');const direct=summary.find(s=>s.kind==='rule-elimination');if(ref)l.logicIdea+=' A cadeia registrada elimina a hipótese da região '+(ref.region+1)+' em L'+(Math.floor(ref.cell/l.cols)+1)+'C'+(ref.cell%l.cols+1)+' por '+(ref.proof?.diagnostic?.message||'propagação até uma contradição concreta, documentada no certificado')+'.';else if(direct)l.logicIdea+=' Primeira exclusão verificável: '+direct.text;}
- if(editorial[l.campaignNumber]){if(editorial[l.campaignNumber].hashPrefix&&!hash.startsWith(editorial[l.campaignNumber].hashPrefix))throw Error('Stale editorial review for '+l.id);l.logicIdea=editorial[l.campaignNumber].idea;if(editorial[l.campaignNumber].difficulty)l.difficulty=editorial[l.campaignNumber].difficulty;}
- audit.push({...sourceAudits.get(l.id),id:l.id,campaignNumber:l.campaignNumber,stage:l.stage,stageName:l.stageName,dimensions:[l.rows,l.cols],regions:p.length,fixed:Object.keys(l.fixed||{}).length,movable:moves,mechanics:l.mechanics,difficulty:l.difficulty,logicIdea:l.logicIdea,reasoningTrace:l.reasoningTrace,levelHash:hash,correctness:{engine:true,independent:true},uniqueness:l.uniqueness,semanticAblation:semantic,reasoning:{complete:proof.solved,depth:proof.maxSimultaneousHypotheses,rounds:proof.rounds,refutations:proof.refutations,certificate:l.reasoningTrace.certificate},editorialReview:editorial[l.campaignNumber]||null,answerReference:`dist/elo-campaign-answers.mjs#${l.id}`});
- fs.writeFileSync(previousPath,JSON.stringify({methodVersion:reasoningMethodVersion,engineHash:reasoningEngineHash,humanCalibration:false,levels:certificates}));
- console.log('verified',l.id,hash.slice(0,8),'proof depth',proof.maxSimultaneousHypotheses,'main',semantic.status,'ms',Math.round(performance.now()-start));
+import { createHash } from 'node:crypto';
+import { validateElo, solveElo, analyzeEloLocal } from '../dist/elo-rules.mjs';
+import { canonical, validConstraints, families, productionSolve } from './elo-campaign-build.mjs';
+import {
+  explainElo,
+  levelHash,
+  reasoningEngineHash,
+  reasoningMethodVersion,
+} from './elo-campaign-reasoning.mjs';
+const file = (name) => new URL(name, import.meta.url);
+const inputs = [
+  ['/tmp/elo-campaign-a-final.json', [1, 2]],
+  ['/tmp/elo-repair-intro.json', [2]],
+  ['/tmp/elo-campaign-stage3.json', [3]],
+  ['/tmp/elo-campaign-stage4.json', [4]],
+  ['/tmp/elo-campaign-b-final.json', [5, 6, 7]],
+  ['/tmp/elo-campaign-c-final-before164.json', [8]],
+  ['/tmp/elo-campaign-c-final.json', [9]],
+  ['/tmp/elo-campaign-stage10-final.json', [10]],
+  ['/tmp/elo-repair-165.json', [9]],
+  ['/tmp/elo-repair-167.json', [9]],
+  ['/tmp/elo-repair-184.json', [10]],
+];
+const savedSource = file('./elo-campaign-candidates.json');
+const saved = fs.existsSync(savedSource) ? JSON.parse(fs.readFileSync(savedSource)) : null;
+const effectiveInputs =
+  saved?.status === 'approved-final' && !process.env.ELO_REBUILD_INPUTS
+    ? [[savedSource, [1, 2, 3, 4, 5, 6, 7, 8, 9, 10]]]
+    : inputs;
+const byNumber = new Map(),
+  answers = {},
+  sourceAudits = new Map();
+for (const [path, stages] of effectiveInputs) {
+  const data = JSON.parse(fs.readFileSync(path));
+  for (const l of data.levels)
+    if (stages.includes(l.stage)) {
+      byNumber.set(l.campaignNumber, structuredClone(l));
+      answers[l.id] = data.answers[l.id];
+      sourceAudits.set(
+        l.id,
+        data.audit?.find((a) => a.id === l.id),
+      );
+    }
 }
-const summary={total:levels.length,stages:Array.from({length:10},(_,i)=>({stage:i+1,count:levels.filter(l=>l.stage===i+1).length,introduction:(i*20)+1})),compact:levels.filter(l=>l.rows<=6&&l.cols<=6).length,large:levels.filter(l=>l.rows>=10&&l.cols>=10).length,compactAfter80:levels.filter(l=>l.campaignNumber>80&&l.rows<=6&&l.cols<=6).length,rectangular:levels.filter(l=>l.rows!==l.cols).length,unique:200,completeReasoningCertificates:200,partialReasoningCertificates:0,humanPlaytesting:false,semanticNecessity:audit.reduce((o,a)=>(o[a.semanticAblation.status]=(o[a.semanticAblation.status]||0)+1,o),{}),difficulty:levels.reduce((o,l)=>(o[l.difficulty]=(o[l.difficulty]||0)+1,o),{}),prumoPreservation:{levelDataHash:'712fdd4fd8f5f7c31cbcffbadf402fa6a345f1ad32fe89200032efb419bd45b1',answerDataHash:'4772c04d6e6902f5179c596e1e2e5f04d7596a0b9e7c5ab539fca3aea82a84d9'}};
-if(summary.compact<60||summary.large<40||summary.compactAfter80<30)throw Error('Quotas failed '+JSON.stringify(summary));
-fs.writeFileSync(file('../dist/elo-campaign.mjs'),'// Offline-selected ELO v3 campaign. Detailed reasoning certificates remain in development tests.\nexport const ELO_CAMPAIGN = '+JSON.stringify(levels)+';\n');
-fs.writeFileSync(file('../dist/elo-campaign-answers.mjs'),'// Verified answers. Not imported by ordinary rendering, rule validation, or hints.\nexport const ELO_CAMPAIGN_ANSWERS = '+JSON.stringify(finalAnswers)+';\n');
-fs.writeFileSync(file('./elo-campaign-audit.json'),JSON.stringify({summary,engineHash:reasoningEngineHash,generatedAt:new Date().toISOString(),levels:audit},null,2));
-fs.writeFileSync(file('./elo-campaign-candidates.json'),JSON.stringify({status:'approved-final',levels,answers:finalAnswers,audit}));
-console.log('FINAL',JSON.stringify(summary));
+const levels = [...byNumber.values()].sort((a, b) => a.campaignNumber - b.campaignNumber);
+if (levels.length !== 200 || levels.some((l, i) => l.campaignNumber !== i + 1))
+  throw Error('Campaign is incomplete: ' + levels.length);
+const seen = new Map();
+for (const l of levels) {
+  const key = canonical(l);
+  if (seen.has(key)) throw Error(`Equivalent region layouts ${l.id} / ${seen.get(key)}`);
+  seen.set(key, l.id);
+}
+const finalAnswers = Object.fromEntries(levels.map((l) => [l.id, answers[l.id]])),
+  audit = [],
+  certificates = {};
+const previousPath = file('./elo-campaign-certificates.json');
+const previous = fs.existsSync(previousPath)
+  ? JSON.parse(fs.readFileSync(previousPath)).levels || {}
+  : {};
+const editorial = {
+  21: {
+    idea: 'A curva fixa da região 2 precisa sair para baixo. Colocar a região 1 na segunda linha exigiria uma horizontal que cruzaria essa saída; isso força o alinhamento superior e desencadeia as regiões de baixo.',
+    observations: [
+      'Hipótese R1=L2C1 exige R4=L2C5 e R6 abaixo; a curva fixa R2=L1C3 precisa sair para baixo e cruza a horizontal em L2C3. Logo R1=L1C1.',
+      'R3 em L4C2 ficaria sem segunda direção; alternativas de R6 criam cruzamento ou circuito incapaz de incorporar R4.',
+    ],
+  },
+  22: {
+    idea: 'A reta da região 7 só pode formar duas direções opostas em L5C2. Ela exige a região 2 à esquerda e transmite o alinhamento às demais regiões.',
+    observations: ['Reta R7=L5C2 obriga R2=L5C1; a cadeia seguinte é propagação direta.'],
+  },
+  81: {
+    idea: 'As cotas de coluna e linha compartilham regiões: a coluna 1 determina as regiões 1 e 5, e a linha 4 restringe as regiões 2 e 3.',
+    observations: ['Introdução curta de contagens, com consequências concretas nas duas direções.'],
+  },
+  93: {
+    idea: 'As passagens restringem a região 12; escolhas das regiões 2 e 4 alteram a cota da coluna 7 e propagam consequências até as regiões 10 e 1 no topo.',
+    observations: ['Dependência entre áreas afastadas, não apenas aumento de grade.'],
+  },
+  128: {
+    idea: 'A região 7 já precisa das regiões 10 e 1 como vizinhas diretas. Isso exclui concorrentes alinhados e, combinado à soma 6 da região 1, restringe a região 5; a volta restante deve evitar um circuito isolado.',
+    difficulty: 'intermediário',
+    observations: [
+      'Combinação global revisada; não foi classificada como especialista pelo tamanho da grade.',
+    ],
+  },
+  146: {
+    idea: 'As regiões 8 e 2 não podem ser marcos consecutivos no circuito. Rejeitar ligações locais que violam essa ordem força o lado esquerdo; depois outras adjacências marcadas restringem o lado direito.',
+    difficulty: 'avançado',
+  },
+  159: {
+    idea: 'A passagem restringe a região 7. As posições da parte de baixo se distinguem por consequências na ordem global e por cruzamentos em regiões distantes.',
+    difficulty: 'avançado',
+  },
+  163: {
+    idea: 'A cota de duas travessias compete com a volta esquerda. Alternativas localmente plausíveis falham depois de propagar aos pontos fixos da direita e à conexão superior restante.',
+    difficulty: 'avançado',
+  },
+  171: {
+    idea: 'Três cortes de quatro travessias, duas cotas de linha e a ordem dos marcos ligam topo, meio e base. As alternativas da região 2 esgotam a cota da linha 4 ou tornam marcos indevidamente consecutivos; a volta inferior ainda deve cumprir a linha 7.',
+    difficulty: 'especialista',
+  },
+  117: {
+    idea: 'A soma 2 da região 1 restringe a região 8. Testar R2 em L2C5 esgota as duas candidatas da região 4 por soma 6 ou terceira direção, e a exclusão inicia uma cascata.',
+    difficulty: 'avançado',
+    observations: [
+      'Classificação ajustada de especialista para avançado após revisão da cadeia concreta.',
+    ],
+  },
+};
+const editorialPath = file('./elo-campaign-editorial.json');
+if (fs.existsSync(editorialPath))
+  Object.assign(editorial, JSON.parse(fs.readFileSync(editorialPath)));
+function semanticAblation(l) {
+  const family = families[l.stage - 1];
+  if (l.mechanics.length === 1) return { status: 'not-applicable', necessary: null };
+  const q = structuredClone(l),
+    banned = [];
+  if (family === 'counts') {
+    delete q.constraints.rowCounts;
+    delete q.constraints.colCounts;
+  } else {
+    if (family === 'passages') banned.push(...(q.constraints.passages || []));
+    if (family === 'exclusivePassages')
+      banned.push(...(q.constraints.exclusivePassages || []).flatMap((g) => g.cells));
+    delete q.constraints[family];
+  }
+  const ban = new Set(banned),
+    domains = l.mechanics.includes(family)
+      ? Array.from({ length: Math.max(...l.regions) + 1 }, (_, r) =>
+          l.regions.flatMap((v, c) => (v === r && !ban.has(c) ? [c] : [])),
+        )
+      : undefined;
+  const local = analyzeEloLocal(q, {}, { domains, maxMs: Infinity, maxOperations: Infinity }),
+    r = solveElo(q, {}, 2, { domains: local.candidates, maxNodes: 1500000, maxMs: 7000 });
+  return {
+    status:
+      r.count >= 2
+        ? 'essential'
+        : r.exhaustive && r.count === 1
+          ? 'redundant-to-uniqueness'
+          : 'inconclusive',
+    necessary: r.count >= 2 ? true : r.exhaustive ? false : null,
+    count: r.count,
+    exhaustive: r.exhaustive,
+    cutoffReason: r.cutoffReason,
+    method: 'Remove only the semantic rule; passage cells remain unavailable to points.',
+    witnesses: r.solutions,
+  };
+}
+for (const l of levels) {
+  const p = finalAnswers[l.id],
+    hash = levelHash(l),
+    start = performance.now();
+  const check = validateElo(l, p);
+  if (!check.complete) throw Error(l.id + ' invalid ' + JSON.stringify(check));
+  if (!validConstraints(l, p, true)) throw Error(l.id + ' independent check disagrees');
+  if (p.some((c, r) => l.regions[c] !== r) || new Set(p).size !== p.length)
+    throw Error('wrong region ' + l.id);
+  const old = previous[l.id],
+    proof =
+      old?.solved &&
+      !old?.limited &&
+      old?.levelHash === hash &&
+      old.engineHash === reasoningEngineHash &&
+      old.methodVersion === reasoningMethodVersion
+        ? old
+        : {
+            ...explainElo(l, { maxEvaluations: 10000 }),
+            levelHash: hash,
+            engineHash: reasoningEngineHash,
+            methodVersion: reasoningMethodVersion,
+          };
+  certificates[l.id] = proof;
+  if (!proof.solved || proof.contradiction || proof.limited)
+    throw Error(
+      `${l.id}: bounded proof incomplete; ${JSON.stringify({ solved: proof.solved, limited: proof.limited, evaluations: proof.evaluations })}`,
+    );
+  const local = analyzeEloLocal(l, {}, { maxMs: Infinity, maxOperations: Infinity }),
+    result = solveElo(l, {}, 2, { domains: local.candidates, maxNodes: 2000000, maxMs: Infinity });
+  if (!result.exhaustive || result.count !== 1)
+    throw Error(`${l.id}: uniqueness ${result.count} / ${result.exhaustive}`);
+  l.uniqueness = {
+    status: 'unique',
+    count: 1,
+    exhaustive: true,
+    method: 'Exhaustive search after sound local propagation; reference answer never used.',
+    nodes: result.stats.nodes,
+  };
+  l.validation = {
+    solutionVerified: true,
+    solutionCount: 1,
+    method: 'Independent full-rule check and production-engine validation',
+    levelHash: hash,
+  };
+  const semantic = semanticAblation(l);
+  if (l.designAudit) l.designAudit.mainFamilyEssential = semantic.necessary;
+  l.designAudit = {
+    ...l.designAudit,
+    semanticNecessity: semantic.status,
+    explanationStatus: 'complete-bounded-certificate',
+    review: 'Mathematical and assisted editorial review; no claim of playtesting with people.',
+  };
+  const moves = Math.max(...l.regions) + 1 - Object.keys(l.fixed || {}).length;
+  if (l.stage === 1 && l.stagePosition <= 2) l.difficulty = 'inicial';
+  else if (l.stagePosition <= 2) l.difficulty = l.stage < 5 ? 'inicial' : 'intermediário';
+  else if (proof.maxSimultaneousHypotheses >= 2 && proof.refutations >= 4)
+    l.difficulty = 'especialista';
+  else if (
+    proof.maxSimultaneousHypotheses >= 1 ||
+    proof.rounds >= 5 ||
+    (l.stage >= 5 && moves >= 7)
+  )
+    l.difficulty = 'avançado';
+  else l.difficulty = 'intermediário';
+  const summary = [];
+  for (const s of proof.steps) {
+    if (s.kind === 'local-propagation') {
+      for (const e of s.eliminations.slice(0, 2))
+        summary.push({
+          kind: 'rule-elimination',
+          region: e.index,
+          cell: e.value,
+          rule: e.technique,
+          text: e.explanation,
+        });
+    } else
+      summary.push({
+        kind: s.kind,
+        region: s.region,
+        cell: s.cell,
+        text: s.explanation,
+        consequence:
+          s.proof?.diagnostic?.message ||
+          'As propagações registradas esgotam um domínio ou violam uma regra.',
+      });
+    if (summary.length >= 5) break;
+  }
+  l.reasoningTrace = {
+    status: 'complete',
+    summary: summary.slice(0, 5),
+    certificate: `tests/elo-campaign-certificates.json#${l.id}`,
+    levelHash: hash,
+  };
+  l.profile.boundedReasoning = {
+    solved: true,
+    maxSimultaneousHypotheses: proof.maxSimultaneousHypotheses,
+    convention:
+      'Explicit nested hypotheses beyond direct necessary-rule tests of individual candidates.',
+    evaluations: proof.evaluations,
+    rounds: proof.rounds,
+    eliminations: proof.eliminations,
+    refutations: proof.refutations,
+    humanCalibration: false,
+  };
+  l.profile.localDeduction = {
+    solved: local.solved,
+    forcedMoves: local.forced.length,
+    eliminations: local.eliminations.length,
+    rounds: local.rounds,
+  };
+  l.profile.searchProfile = {
+    nodes: result.stats.nodes,
+    branches: result.stats.branches,
+    requiredAfterLocalPropagation: !local.solved,
+    scope: 'Computational audit only; search cost does not measure human difficulty.',
+  };
+  if (l.mechanics.length === 1 && l.stage > 1) {
+    l.lesson =
+      'Integre alinhamentos, primeira peça visível, grau dois e circuito único sem regras adicionais.';
+    l.logicIdea = l.lesson;
+  }
+  if (
+    !editorial[l.campaignNumber] &&
+    !l.logicIdea.includes('A cadeia registrada elimina') &&
+    !l.logicIdea.includes('Primeira exclusão verificável')
+  ) {
+    const ref = proof.steps.find((s) => s.kind === 'hypothesis-refutation');
+    const direct = summary.find((s) => s.kind === 'rule-elimination');
+    if (ref)
+      l.logicIdea +=
+        ' A cadeia registrada elimina a hipótese da região ' +
+        (ref.region + 1) +
+        ' em L' +
+        (Math.floor(ref.cell / l.cols) + 1) +
+        'C' +
+        ((ref.cell % l.cols) + 1) +
+        ' por ' +
+        (ref.proof?.diagnostic?.message ||
+          'propagação até uma contradição concreta, documentada no certificado') +
+        '.';
+    else if (direct) l.logicIdea += ' Primeira exclusão verificável: ' + direct.text;
+  }
+  if (editorial[l.campaignNumber]) {
+    if (
+      editorial[l.campaignNumber].hashPrefix &&
+      !hash.startsWith(editorial[l.campaignNumber].hashPrefix)
+    )
+      throw Error('Stale editorial review for ' + l.id);
+    l.logicIdea = editorial[l.campaignNumber].idea;
+    if (editorial[l.campaignNumber].difficulty)
+      l.difficulty = editorial[l.campaignNumber].difficulty;
+  }
+  audit.push({
+    ...sourceAudits.get(l.id),
+    id: l.id,
+    campaignNumber: l.campaignNumber,
+    stage: l.stage,
+    stageName: l.stageName,
+    dimensions: [l.rows, l.cols],
+    regions: p.length,
+    fixed: Object.keys(l.fixed || {}).length,
+    movable: moves,
+    mechanics: l.mechanics,
+    difficulty: l.difficulty,
+    logicIdea: l.logicIdea,
+    reasoningTrace: l.reasoningTrace,
+    levelHash: hash,
+    correctness: { engine: true, independent: true },
+    uniqueness: l.uniqueness,
+    semanticAblation: semantic,
+    reasoning: {
+      complete: proof.solved,
+      depth: proof.maxSimultaneousHypotheses,
+      rounds: proof.rounds,
+      refutations: proof.refutations,
+      certificate: l.reasoningTrace.certificate,
+    },
+    editorialReview: editorial[l.campaignNumber] || null,
+    answerReference: `dist/elo-campaign-answers.mjs#${l.id}`,
+  });
+  fs.writeFileSync(
+    previousPath,
+    JSON.stringify({
+      methodVersion: reasoningMethodVersion,
+      engineHash: reasoningEngineHash,
+      humanCalibration: false,
+      levels: certificates,
+    }),
+  );
+  console.log(
+    'verified',
+    l.id,
+    hash.slice(0, 8),
+    'proof depth',
+    proof.maxSimultaneousHypotheses,
+    'main',
+    semantic.status,
+    'ms',
+    Math.round(performance.now() - start),
+  );
+}
+const summary = {
+  total: levels.length,
+  stages: Array.from({ length: 10 }, (_, i) => ({
+    stage: i + 1,
+    count: levels.filter((l) => l.stage === i + 1).length,
+    introduction: i * 20 + 1,
+  })),
+  compact: levels.filter((l) => l.rows <= 6 && l.cols <= 6).length,
+  large: levels.filter((l) => l.rows >= 10 && l.cols >= 10).length,
+  compactAfter80: levels.filter((l) => l.campaignNumber > 80 && l.rows <= 6 && l.cols <= 6).length,
+  rectangular: levels.filter((l) => l.rows !== l.cols).length,
+  unique: 200,
+  completeReasoningCertificates: 200,
+  partialReasoningCertificates: 0,
+  humanPlaytesting: false,
+  semanticNecessity: audit.reduce(
+    (o, a) => ((o[a.semanticAblation.status] = (o[a.semanticAblation.status] || 0) + 1), o),
+    {},
+  ),
+  difficulty: levels.reduce((o, l) => ((o[l.difficulty] = (o[l.difficulty] || 0) + 1), o), {}),
+  prumoPreservation: {
+    levelDataHash: '712fdd4fd8f5f7c31cbcffbadf402fa6a345f1ad32fe89200032efb419bd45b1',
+    answerDataHash: '4772c04d6e6902f5179c596e1e2e5f04d7596a0b9e7c5ab539fca3aea82a84d9',
+  },
+};
+if (summary.compact < 60 || summary.large < 40 || summary.compactAfter80 < 30)
+  throw Error('Quotas failed ' + JSON.stringify(summary));
+fs.writeFileSync(
+  file('../dist/elo-campaign.mjs'),
+  '// Offline-selected ELO v3 campaign. Detailed reasoning certificates remain in development tests.\nexport const ELO_CAMPAIGN = ' +
+    JSON.stringify(levels) +
+    ';\n',
+);
+fs.writeFileSync(
+  file('../dist/elo-campaign-answers.mjs'),
+  '// Verified answers. Not imported by ordinary rendering, rule validation, or hints.\nexport const ELO_CAMPAIGN_ANSWERS = ' +
+    JSON.stringify(finalAnswers) +
+    ';\n',
+);
+fs.writeFileSync(
+  file('./elo-campaign-audit.json'),
+  JSON.stringify(
+    {
+      summary,
+      engineHash: reasoningEngineHash,
+      generatedAt: new Date().toISOString(),
+      levels: audit,
+    },
+    null,
+    2,
+  ),
+);
+fs.writeFileSync(
+  file('./elo-campaign-candidates.json'),
+  JSON.stringify({ status: 'approved-final', levels, answers: finalAnswers, audit }),
+);
+console.log('FINAL', JSON.stringify(summary));

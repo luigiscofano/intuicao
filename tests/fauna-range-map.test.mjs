@@ -1,8 +1,74 @@
-import test from'node:test';import assert from'node:assert/strict';import{BRAZIL_OUTLINE,BRAZIL_OUTLINE_PATH,projectBrazilPoint,brazilPolygonPath,faunaRangeMapMarkup}from'../dist/fauna-range-map.mjs';
-const example={id:'test',name:'Animal <exemplo>',description:'Região de teste, não ocorrência real.',polygons:[[[-60,-1],[-48,-1],[-48,-12],[-60,-12]]],sources:[{label:'Fonte de teste',url:'https://example.com/'}]};
-test('contorno geográfico original de203 pontos fechado e projetado dentro do mapa',()=>{assert.equal(BRAZIL_OUTLINE.length,203);assert.deepEqual(BRAZIL_OUTLINE[0],BRAZIL_OUTLINE.at(-1));for(const p of BRAZIL_OUTLINE){const[x,y]=projectBrazilPoint(p);assert(x>=18&&x<=302&&y>=18&&y<=302)}assert(BRAZIL_OUTLINE_PATH.startsWith('M'));assert(BRAZIL_OUTLINE_PATH.endsWith('Z'));});
-test('orientação norte e leste correta',()=>{const west=projectBrazilPoint([-60,-15]),east=projectBrazilPoint([-40,-15]),north=projectBrazilPoint([-60,0]);assert(east[0]>west[0]);assert(north[1]<west[1]);});
-test('hachura clipada ao Brasil, texto acessível e fontes',()=>{const s=faunaRangeMapMarkup(example);assert(s.includes('clip-path="url(#fauna-range-test-'));assert(s.includes('role="img"'));assert(s.includes('Ocorrência aproximada no Brasil'));assert(s.includes('Animal &lt;exemplo&gt;'));assert(s.includes('Natural Earth'));assert(s.includes('não presença contínua'));assert(!s.includes('<exemplo>'));});
-test('IDs não colidem entre mapas iguais',()=>{const a=faunaRangeMapMarkup(example),b=faunaRangeMapMarkup(example);assert.notEqual(a.match(/<clipPath id="([^"]+)/)[1],b.match(/<clipPath id="([^"]+)/)[1]);});
-test('não admite mapa sem fonte ou geometrias inválidas',()=>{assert.throws(()=>faunaRangeMapMarkup({...example,sources:[]}));assert.throws(()=>faunaRangeMapMarkup({...example,polygons:[]}));assert.throws(()=>brazilPolygonPath([[0,0]]));assert.throws(()=>projectBrazilPoint([NaN,3]));assert.throws(()=>faunaRangeMapMarkup({...example,sources:[{url:'javascript:alert(1)'}]}));});
-test('marcador opcional de área restrita é vazio e ressalvado',()=>{const s=faunaRangeMapMarkup({...example,locator:{point:[-42.5,-22.5],label:'baixada do Rio de Janeiro'}});assert(s.includes('class="fauna-range-locator"'));assert(s.includes('não amplia a ocorrência'));assert(s.includes('fill="none" stroke="#2d593c"'));});
+// Testes e verificações de informações e arte da fauna.
+import test from 'node:test';
+import assert from 'node:assert/strict';
+import {
+  BRAZIL_OUTLINE,
+  BRAZIL_OUTLINE_PATH,
+  projectBrazilPoint,
+  brazilPolygonPath,
+  faunaRangeMapMarkup,
+} from '../dist/fauna-range-map.mjs';
+const example = {
+  id: 'test',
+  name: 'Animal <exemplo>',
+  description: 'Região de teste, não ocorrência real.',
+  polygons: [
+    [
+      [-60, -1],
+      [-48, -1],
+      [-48, -12],
+      [-60, -12],
+    ],
+  ],
+  sources: [{ label: 'Fonte de teste', url: 'https://example.com/' }],
+};
+test('contorno geográfico original de203 pontos fechado e projetado dentro do mapa', () => {
+  assert.equal(BRAZIL_OUTLINE.length, 203);
+  assert.deepEqual(BRAZIL_OUTLINE[0], BRAZIL_OUTLINE.at(-1));
+  for (const p of BRAZIL_OUTLINE) {
+    const [x, y] = projectBrazilPoint(p);
+    assert(x >= 18 && x <= 302 && y >= 18 && y <= 302);
+  }
+  assert(BRAZIL_OUTLINE_PATH.startsWith('M'));
+  assert(BRAZIL_OUTLINE_PATH.endsWith('Z'));
+});
+test('orientação norte e leste correta', () => {
+  const west = projectBrazilPoint([-60, -15]),
+    east = projectBrazilPoint([-40, -15]),
+    north = projectBrazilPoint([-60, 0]);
+  assert(east[0] > west[0]);
+  assert(north[1] < west[1]);
+});
+test('hachura clipada ao Brasil, texto acessível e fontes', () => {
+  const s = faunaRangeMapMarkup(example);
+  assert(s.includes('clip-path="url(#fauna-range-test-'));
+  assert(s.includes('role="img"'));
+  assert(s.includes('Ocorrência aproximada no Brasil'));
+  assert(s.includes('Animal &lt;exemplo&gt;'));
+  assert(s.includes('Natural Earth'));
+  assert(s.includes('não presença contínua'));
+  assert(!s.includes('<exemplo>'));
+});
+test('IDs não colidem entre mapas iguais', () => {
+  const a = faunaRangeMapMarkup(example),
+    b = faunaRangeMapMarkup(example);
+  assert.notEqual(a.match(/<clipPath id="([^"]+)/)[1], b.match(/<clipPath id="([^"]+)/)[1]);
+});
+test('não admite mapa sem fonte ou geometrias inválidas', () => {
+  assert.throws(() => faunaRangeMapMarkup({ ...example, sources: [] }));
+  assert.throws(() => faunaRangeMapMarkup({ ...example, polygons: [] }));
+  assert.throws(() => brazilPolygonPath([[0, 0]]));
+  assert.throws(() => projectBrazilPoint([NaN, 3]));
+  assert.throws(() =>
+    faunaRangeMapMarkup({ ...example, sources: [{ url: 'javascript:alert(1)' }] }),
+  );
+});
+test('marcador opcional de área restrita é vazio e ressalvado', () => {
+  const s = faunaRangeMapMarkup({
+    ...example,
+    locator: { point: [-42.5, -22.5], label: 'baixada do Rio de Janeiro' },
+  });
+  assert(s.includes('class="fauna-range-locator"'));
+  assert(s.includes('não amplia a ocorrência'));
+  assert(s.includes('fill="none" stroke="#2d593c"'));
+});

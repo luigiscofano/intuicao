@@ -1,17 +1,105 @@
+/* Disposição das prévias ilustradas de regras. */
 /* Scoped, finite instructional motion. No timers or game-state dependencies. */
-.rules-preview{display:grid;grid-template-columns:minmax(0,1fr) 240px;align-items:center;gap:24px;margin:20px 0 26px;padding:20px 22px;border:1px solid #bacbb1;border-radius:14px;background:#f1f5e9;color:#304c38}
-.rules-preview .rp-copy h3{margin:0 0 10px;font-size:18px;font-weight:750;letter-spacing:0}
-.rules-preview ol{margin:0;padding-left:21px;display:grid;gap:6px;font-size:14px;line-height:1.5}
-.rules-preview li{padding-left:3px}
-.rules-preview li::marker{font-weight:750;color:#405e49}
-.rules-preview .rp-note{font-size:11px;line-height:1.5;color:#52634b;margin:12px 0 0}
-.rules-preview .rp-example{width:240px;max-width:100%;justify-self:center}
-.rules-preview svg{display:block;width:100%;height:auto;overflow:visible}
-.rules-preview svg text{font-family:system-ui,sans-serif;fill:#304c38}
-.rules-preview .rpd-result{animation:rp-result 2.4s ease-out both}
-.rules-preview .rpd-action{animation:rp-action 1.2s ease-out both}
-@keyframes rp-result{0%,30%{opacity:.15}100%{opacity:1}}
-@keyframes rp-action{from{opacity:.25}to{opacity:1}}
-@media(max-width:600px){.rules-preview{grid-template-columns:1fr;gap:14px;padding:16px;margin:18px 0 22px}.rules-preview ol{font-size:13px;gap:5px}.rules-preview .rp-copy h3{font-size:17px}.rules-preview .rp-example{width:220px}}
-@media(prefers-reduced-motion:reduce){.rules-preview .rpd-result,.rules-preview .rpd-action{animation:none;opacity:1}}
-.rules-preview:not(.rp-playing) .rp-example *{animation-play-state:paused}
+.rules-preview {
+  display: grid;
+  grid-template-columns: minmax(0,1fr) 240px;
+  align-items: center;
+  gap: 24px;
+  margin: 20px 0 26px;
+  padding: 20px 22px;
+  border: 1px solid #bacbb1;
+  border-radius: 14px;
+  background: #f1f5e9;
+  color: #304c38;
+}
+.rules-preview .rp-copy h3 {
+  margin: 0 0 10px;
+  font-size: 18px;
+  font-weight: 750;
+  letter-spacing: 0;
+}
+.rules-preview ol {
+  margin: 0;
+  padding-left: 21px;
+  display: grid;
+  gap: 6px;
+  font-size: 14px;
+  line-height: 1.5;
+}
+.rules-preview li {
+  padding-left: 3px;
+}
+.rules-preview li::marker {
+  font-weight: 750;
+  color: #405e49;
+}
+.rules-preview .rp-note {
+  font-size: 11px;
+  line-height: 1.5;
+  color: #52634b;
+  margin: 12px 0 0;
+}
+.rules-preview .rp-example {
+  width: 240px;
+  max-width: 100%;
+  justify-self: center;
+}
+.rules-preview svg {
+  display: block;
+  width: 100%;
+  height: auto;
+  overflow: visible;
+}
+.rules-preview svg text {
+  font-family: system-ui,sans-serif;
+  fill: #304c38;
+}
+.rules-preview .rpd-result {
+  animation: rp-result 2.4s ease-out both;
+}
+.rules-preview .rpd-action {
+  animation: rp-action 1.2s ease-out both;
+}
+@keyframes rp-result {
+  0%,30% {
+    opacity: .15;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+@keyframes rp-action {
+  from {
+    opacity: .25;
+  }
+  to {
+    opacity: 1;
+  }
+}
+@media(max-width:600px) {
+  .rules-preview {
+    grid-template-columns: 1fr;
+    gap: 14px;
+    padding: 16px;
+    margin: 18px 0 22px;
+  }
+  .rules-preview ol {
+    font-size: 13px;
+    gap: 5px;
+  }
+  .rules-preview .rp-copy h3 {
+    font-size: 17px;
+  }
+  .rules-preview .rp-example {
+    width: 220px;
+  }
+}
+@media(prefers-reduced-motion:reduce) {
+  .rules-preview .rpd-result,.rules-preview .rpd-action {
+    animation: none;
+    opacity: 1;
+  }
+}
+.rules-preview:not(.rp-playing) .rp-example * {
+  animation-play-state: paused;
+}

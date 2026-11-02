@@ -1,66 +1,96 @@
+/* Aparência do rodapé e sua transição com os elementos decorativos. */
 /* Rodapé único em todas as rotas: painel separado e raízes originais até o chão.
    Só a pintura externa muda; marca, folhas e controles mantêm suas medidas. */
-body > footer{
-  position:relative!important;
-  isolation:isolate;
-  z-index:1;
-  background:transparent!important;
-  border-top:0!important;
-  border-bottom-color:transparent!important;
-  box-shadow:none!important;
-  margin-top:24px!important;
+body > footer {
+  position: relative!important;
+  isolation: isolate;
+  z-index: 1;
+  background: transparent!important;
+  border-top: 0!important;
+  border-bottom-color: transparent!important;
+  box-shadow: none!important;
+  margin-top: 24px!important;
   --footer-inset:40px;
   --footer-floor:112px;
   --footer-flare:max(38px,calc((100vw - 1280px)/2 + 28px));
 }
 /* Uma única origem para o contorno: não depende do jogo ou do modo aberto. */
-body > footer::before{
-  content:""!important;
-  position:absolute;
-  top:14px!important;
-  bottom:calc(-1 * var(--footer-floor))!important;
-  left:calc(var(--footer-inset) - var(--footer-flare) + .5px)!important;
-  width:calc(100% - 2 * var(--footer-inset) + 2 * var(--footer-flare) - 1px)!important;
-  background:url("platform-assets/continuous-root-left.svg") left/var(--footer-flare) 100% no-repeat,
+body > footer::before {
+  content: ""!important;
+  position: absolute;
+  top: 14px!important;
+  bottom: calc(-1 * var(--footer-floor))!important;
+  left: calc(var(--footer-inset) - var(--footer-flare) + .5px)!important;
+  width: calc(100% - 2 * var(--footer-inset) + 2 * var(--footer-flare) - 1px)!important;
+  background: url("platform-assets/continuous-root-left.svg") left/var(--footer-flare) 100% no-repeat,
     url("platform-assets/continuous-root-right.svg") right/var(--footer-flare) 100% no-repeat,
     linear-gradient(#fff,#fff) center/calc(100% - 2 * var(--footer-flare)) 100% no-repeat!important;
-  filter:drop-shadow(0 2px 4px #34452a12);
-  clip-path:none!important;
-  mask:none!important;
-  pointer-events:none;
-  user-select:none;
-  z-index:-1;
+  filter: drop-shadow(0 2px 4px #34452a12);
+  clip-path: none!important;
+  mask: none!important;
+  pointer-events: none;
+  user-select: none;
+  z-index: -1;
 }
 /* Tampa arredondada tangente ao início das duas curvas, sem máscara sobre elas. */
-body > footer .footer-signature::before{
-  content:"";
-  position:absolute;
-  top:0;
-  left:var(--footer-inset);
-  right:var(--footer-inset);
-  height:15px;
-  border:1px solid #b3c1a8;
-  border-bottom:0;
-  border-radius:14px 14px 0 0;
-  background:#fff;
-  pointer-events:none;
-  user-select:none;
-  z-index:-1;
+body > footer .footer-signature::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: var(--footer-inset);
+  right: var(--footer-inset);
+  height: 15px;
+  border: 1px solid #b3c1a8;
+  border-bottom: 0;
+  border-radius: 14px 14px 0 0;
+  background: #fff;
+  pointer-events: none;
+  user-select: none;
+  z-index: -1;
 }
-body > footer .footer-signature::after{content:none!important}
-body > footer .footer-signature > :is(.brand,small){position:relative;z-index:1}
+body > footer .footer-signature::after {
+  content: none!important;
+}
+body > footer .footer-signature > :is(.brand,small) {
+  position: relative;
+  z-index: 1;
+}
 /* Os painéis terminam com suas próprias bordas, sem raízes duplicadas atrás do rodapé. */
-:is(#selection,#collection > .level-screen,#sintonia > .level-screen,#repasse > .level-screen,#orbita > .level-screen,#broto > .level-screen,#cerco > .level-screen)::after{content:none!important}
-:is(#selection,#main > .lab,#collection > .collection-lab,#sintonia > .collection-lab,#repasse > .repasse-lab,#orbita > .orbita-lab,#broto > .b-lab,#cerco > .ce-lab,#collection > .level-screen,#sintonia > .level-screen,#repasse > .level-screen,#orbita > .level-screen,#broto > .level-screen,#cerco > .level-screen){
-  border-bottom-color:#b3c1a8!important;
-  border-bottom-left-radius:19px!important;
-  border-bottom-right-radius:19px!important;
-  margin-bottom:0!important;
+:is(#selection,#collection > .level-screen,#sintonia > .level-screen,#repasse > .level-screen,#orbita > .level-screen,#broto > .level-screen,#cerco > .level-screen)::after {
+  content: none!important;
 }
-@media(max-width:760px){
-  body > footer{--footer-inset:16px;--footer-floor:84px;--footer-flare:14px;margin-top:20px!important}
+:is(#selection,#main > .lab,#collection > .collection-lab,#sintonia > .collection-lab,#repasse > .repasse-lab,#orbita > .orbita-lab,#broto > .b-lab,#cerco > .ce-lab,#collection > .level-screen,#sintonia > .level-screen,#repasse > .level-screen,#orbita > .level-screen,#broto > .level-screen,#cerco > .level-screen) {
+  border-bottom-color: #b3c1a8!important;
+  border-bottom-left-radius: 19px!important;
+  border-bottom-right-radius: 19px!important;
+  margin-bottom: 0!important;
 }
-
+@media(max-width:760px) {
+  body > footer {
+    --footer-inset:16px;
+    --footer-floor:84px;
+    --footer-flare:14px;
+    margin-top: 20px!important;
+  }
+}
 /* Aviso comum a todas as rotas, separado da marca e sem alterar o contorno. */
-body > footer .footer-copyright{position:relative;z-index:1;margin:0 0 0 20px;padding-inline:24px;max-width:480px;color:#52604b;font:400 12px/1.6 system-ui,-apple-system,"Segoe UI",sans-serif;letter-spacing:0;text-align:right;overflow-wrap:anywhere}
-@media(max-width:760px){body > footer .footer-copyright{margin:18px 0 0;padding-inline:16px;text-align:left;max-width:100%}}
+body > footer .footer-copyright {
+  position: relative;
+  z-index: 1;
+  margin: 0 0 0 20px;
+  padding-inline: 24px;
+  max-width: 480px;
+  color: #52604b;
+  font: 400 12px/1.6 system-ui,-apple-system,"Segoe UI",sans-serif;
+  letter-spacing: 0;
+  text-align: right;
+  overflow-wrap: anywhere;
+}
+@media(max-width:760px) {
+  body > footer .footer-copyright {
+    margin: 18px 0 0;
+    padding-inline: 16px;
+    text-align: left;
+    max-width: 100%;
+  }
+}

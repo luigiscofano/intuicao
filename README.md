@@ -201,6 +201,8 @@ Mais opções e diagnóstico: **[guia de instalação](docs/setup/README.md)**.
 
 Para acompanhar um jogo do começo ao fim, leia seu manual, localize os arquivos indicados e compare as regras com os testes correspondentes. SINTONIA, REPASSE, ÓRBITA, BROTO e CERCO têm subpastas próprias; os demais também usam módulos compartilhados no nível principal de `dist`.
 
+Esta branch contém um rascunho parcial de formatação e comentários em português. O [registro da revisão](docs/manutencao/legibilidade.md) explica o escopo, as verificações realizadas e os arquivos ainda pendentes. Não houve integração à `main` nem publicação no site.
+
 ### Tecnologias e decisões de implementação
 
 | Tecnologia ou recurso | Papel no Intuição |

@@ -1,28 +1,167 @@
+// Testes e verificações de ELO.
 import assert from 'node:assert/strict';
-import {host,store,$} from './direct-ui-harness.mjs';
-import {GEOMETRY_LEVELS} from '../dist/geometry-levels.mjs';
-import {initCollection} from '../dist/collection-ui.mjs';
-const fixture={game:'elo',id:'elo-v3-ui-fixture',stage:10,stageName:'Escolhas interligadas',difficulty:'alta',rows:5,cols:5,regions:Array.from({length:25},(_,i)=>(i%5<2?0:1)+(i<10?0:2)),fixed:{},constraints:{shapes:{0:'turn',1:'turn'},passages:[2,10],forbiddenEdges:[[6,7]],rowCounts:{0:2},colCounts:{0:2},distances:{0:8},neighbors:[[0,1]],order:[0,1,3,2],cuts:[{axis:'row',index:1,count:2}],exclusivePassages:[{id:'X',cells:[14,12]}]},solution:[0,4,20,24],logicIdea:'PRIVATE_LOGIC',profile:{trace:'PRIVATE_TRACE'}};
-const wide={game:'elo',id:'elo-v3-ui-wide',stage:9,rows:10,cols:12,regions:Array.from({length:120},(_,i)=>(i%12<6?0:1)+(i<60?0:2)),fixed:{0:0,1:11,2:108},constraints:{rowCounts:{9:2},colCounts:{11:2}}};
-GEOMETRY_LEVELS.elo[190]=fixture;GEOMETRY_LEVELS.elo[191]=wide;
-const legacyId='elo-v2-999',oldState={positions:[0,4,20,24],discarded:[1]},oldSession={history:{present:oldState,past:[oldState],future:[oldState]}};
-store.set('intuicao.collection.v1',JSON.stringify({version:1,completed:[legacyId],sessions:{[legacyId]:oldSession},events:[]}));store.set('intuicao.answers.v1',JSON.stringify({['elo:'+legacyId]:{failures:3,assisted:true}}));
-const app=initCollection({hideOriginal(){}});app.activate('elo');
-assert.equal(host.querySelectorAll('[data-new-level]').length,200);assert.equal(host.querySelectorAll('.elo-stage').length,10);assert.equal(host.querySelectorAll('.level-group').length,10);assert.ok(host.querySelectorAll('[data-new-level]').every(b=>!b.disabled));
-host.querySelector('[data-new-level="190"]').click();let level=fixture;
-const saved=()=>JSON.parse(store.get('intuicao.collection.v1')),history=()=>saved().sessions[level.id].history,state=()=>history().present;
-const cell=i=>$('c-board').querySelector(`[data-cell="${i}"]`),xy=i=>({clientX:(i%level.cols)*100+50,clientY:Math.floor(i/level.cols)*100+50});
-const ev=(type,i,extra={})=>cell(i).dispatch(type,{...xy(i),...extra});
-const click=(i,extra={})=>{ev('pointerdown',i,extra);ev('pointerup',i,extra);};
-assert.equal(host.querySelectorAll('.elo-region-chip').length,4);assert.equal($('c-board').querySelectorAll('.elo-forbidden').length,1);assert.equal($('c-board').querySelectorAll('.elo-cut').length,1);assert.equal($('c-board').querySelectorAll('.elo-passage-cell').length,4);
-assert.match(cell(2).attrs['aria-label'],/passagem obrigatória, sem ponto/);assert.match(cell(0).attrs['aria-label'],/curva: duas ligações/);assert.doesNotMatch($('c-editor-json').value,/solution|PRIVATE_LOGIC|PRIVATE_TRACE|logicIdea/);assert.deepEqual(JSON.parse($('c-editor-json').value).constraints,fixture.constraints);
-click(3);let before=history();click(2);assert.deepEqual(history(),before);ev('pointerdown',3);ev('pointermove',2);ev('pointerup',2);assert.deepEqual(history(),before,'invalid drop keeps source and undo intact');
-click(2,{shiftKey:true});assert.ok(state().discarded.includes(2));const withX=state();ev('keydown',2,{key:'Enter'});assert.deepEqual(state(),withX,'keyboard cannot put point in passage');ev('keydown',2,{key:'x'});assert.ok(!state().discarded.includes(2));
-click(5);click(9);const edgeCount=$('c-board').querySelectorAll('.elo-edge').length;assert.ok(edgeCount>0);assert.match($('c-live-errors').textContent,/vedado/);assert.ok($('c-board').querySelectorAll('.elo-edge').length===edgeCount,'forbidden segment remains visible');
-$('c-reset').click();$('restart-collection-cancel').click();assert.equal(state().positions[0],5);$('c-reset').click();$('restart-collection-confirm').click();assert.deepEqual(state().positions,[-1,-1,-1,-1]);
-for(const i of fixture.solution)click(i);assert.ok(!saved().completed.includes(fixture.id));assert.notEqual($('c-motion').dataset.outcome,'win');$('c-confirm').click();assert.equal($('c-motion').dataset.outcome,'win');assert.ok(saved().completed.includes(fixture.id));
-const preserved=history();$('c-level-next').click();level=wide;assert.match($('c-board').className,/elo-large/);assert.equal($('c-board').querySelectorAll('[data-cell]').length,120);assert.deepEqual(saved().sessions[fixture.id].history,preserved,'navigating retains ELO undo history');assert.deepEqual(saved().sessions[legacyId],oldSession);assert.ok(saved().completed.includes(legacyId));assert.equal(JSON.parse(store.get('intuicao.answers.v1'))['elo:'+legacyId].failures,3);
-const start=state();$('c-hint').click();assert.equal($('c-hint-apply').hidden,true);$('c-hint').click();assert.equal($('c-hint-apply').hidden,true);$('c-hint').click();assert.equal($('c-hint-apply').hidden,false);assert.deepEqual(state(),start);$('c-hint-apply').click();assert.equal(state().positions[3],119);assert.notEqual($('c-motion').dataset.outcome,'win');$('c-undo').click();assert.deepEqual(state(),start);$('c-redo').click();assert.equal(state().positions[3],119);
-$('c-level-prev').click();level=fixture;assert.deepEqual(history(),preserved);$('c-back').click();assert.equal(host.querySelectorAll('.elo-stage').length,10);
-app.activate('prumo');assert.equal(host.querySelectorAll('.elo-stage').length,0);assert.equal(host.querySelectorAll('.level-group').length,4,'other campaign grouping is unchanged');
-console.log('PASS ELO UI: 10×20, all clue families, accessible passages, atomic invalid drop, X, visible forbidden edges, reset cancel, explicit victory, navigation, saved history, 120-cell hints/undo/redo, PRUMO isolation');
+import { host, store, $ } from './direct-ui-harness.mjs';
+import { GEOMETRY_LEVELS } from '../dist/geometry-levels.mjs';
+import { initCollection } from '../dist/collection-ui.mjs';
+const fixture = {
+  game: 'elo',
+  id: 'elo-v3-ui-fixture',
+  stage: 10,
+  stageName: 'Escolhas interligadas',
+  difficulty: 'alta',
+  rows: 5,
+  cols: 5,
+  regions: Array.from({ length: 25 }, (_, i) => (i % 5 < 2 ? 0 : 1) + (i < 10 ? 0 : 2)),
+  fixed: {},
+  constraints: {
+    shapes: { 0: 'turn', 1: 'turn' },
+    passages: [2, 10],
+    forbiddenEdges: [[6, 7]],
+    rowCounts: { 0: 2 },
+    colCounts: { 0: 2 },
+    distances: { 0: 8 },
+    neighbors: [[0, 1]],
+    order: [0, 1, 3, 2],
+    cuts: [{ axis: 'row', index: 1, count: 2 }],
+    exclusivePassages: [{ id: 'X', cells: [14, 12] }],
+  },
+  solution: [0, 4, 20, 24],
+  logicIdea: 'PRIVATE_LOGIC',
+  profile: { trace: 'PRIVATE_TRACE' },
+};
+const wide = {
+  game: 'elo',
+  id: 'elo-v3-ui-wide',
+  stage: 9,
+  rows: 10,
+  cols: 12,
+  regions: Array.from({ length: 120 }, (_, i) => (i % 12 < 6 ? 0 : 1) + (i < 60 ? 0 : 2)),
+  fixed: { 0: 0, 1: 11, 2: 108 },
+  constraints: { rowCounts: { 9: 2 }, colCounts: { 11: 2 } },
+};
+GEOMETRY_LEVELS.elo[190] = fixture;
+GEOMETRY_LEVELS.elo[191] = wide;
+const legacyId = 'elo-v2-999',
+  oldState = { positions: [0, 4, 20, 24], discarded: [1] },
+  oldSession = { history: { present: oldState, past: [oldState], future: [oldState] } };
+store.set(
+  'intuicao.collection.v1',
+  JSON.stringify({
+    version: 1,
+    completed: [legacyId],
+    sessions: { [legacyId]: oldSession },
+    events: [],
+  }),
+);
+store.set(
+  'intuicao.answers.v1',
+  JSON.stringify({ ['elo:' + legacyId]: { failures: 3, assisted: true } }),
+);
+const app = initCollection({ hideOriginal() {} });
+app.activate('elo');
+assert.equal(host.querySelectorAll('[data-new-level]').length, 200);
+assert.equal(host.querySelectorAll('.elo-stage').length, 10);
+assert.equal(host.querySelectorAll('.level-group').length, 10);
+assert.ok(host.querySelectorAll('[data-new-level]').every((b) => !b.disabled));
+host.querySelector('[data-new-level="190"]').click();
+let level = fixture;
+const saved = () => JSON.parse(store.get('intuicao.collection.v1')),
+  history = () => saved().sessions[level.id].history,
+  state = () => history().present;
+const cell = (i) => $('c-board').querySelector(`[data-cell="${i}"]`),
+  xy = (i) => ({
+    clientX: (i % level.cols) * 100 + 50,
+    clientY: Math.floor(i / level.cols) * 100 + 50,
+  });
+const ev = (type, i, extra = {}) => cell(i).dispatch(type, { ...xy(i), ...extra });
+const click = (i, extra = {}) => {
+  ev('pointerdown', i, extra);
+  ev('pointerup', i, extra);
+};
+assert.equal(host.querySelectorAll('.elo-region-chip').length, 4);
+assert.equal($('c-board').querySelectorAll('.elo-forbidden').length, 1);
+assert.equal($('c-board').querySelectorAll('.elo-cut').length, 1);
+assert.equal($('c-board').querySelectorAll('.elo-passage-cell').length, 4);
+assert.match(cell(2).attrs['aria-label'], /passagem obrigatória, sem ponto/);
+assert.match(cell(0).attrs['aria-label'], /curva: duas ligações/);
+assert.doesNotMatch($('c-editor-json').value, /solution|PRIVATE_LOGIC|PRIVATE_TRACE|logicIdea/);
+assert.deepEqual(JSON.parse($('c-editor-json').value).constraints, fixture.constraints);
+click(3);
+let before = history();
+click(2);
+assert.deepEqual(history(), before);
+ev('pointerdown', 3);
+ev('pointermove', 2);
+ev('pointerup', 2);
+assert.deepEqual(history(), before, 'invalid drop keeps source and undo intact');
+click(2, { shiftKey: true });
+assert.ok(state().discarded.includes(2));
+const withX = state();
+ev('keydown', 2, { key: 'Enter' });
+assert.deepEqual(state(), withX, 'keyboard cannot put point in passage');
+ev('keydown', 2, { key: 'x' });
+assert.ok(!state().discarded.includes(2));
+click(5);
+click(9);
+const edgeCount = $('c-board').querySelectorAll('.elo-edge').length;
+assert.ok(edgeCount > 0);
+assert.match($('c-live-errors').textContent, /vedado/);
+assert.ok(
+  $('c-board').querySelectorAll('.elo-edge').length === edgeCount,
+  'forbidden segment remains visible',
+);
+$('c-reset').click();
+$('restart-collection-cancel').click();
+assert.equal(state().positions[0], 5);
+$('c-reset').click();
+$('restart-collection-confirm').click();
+assert.deepEqual(state().positions, [-1, -1, -1, -1]);
+for (const i of fixture.solution) click(i);
+assert.ok(!saved().completed.includes(fixture.id));
+assert.notEqual($('c-motion').dataset.outcome, 'win');
+$('c-confirm').click();
+assert.equal($('c-motion').dataset.outcome, 'win');
+assert.ok(saved().completed.includes(fixture.id));
+const preserved = history();
+$('c-level-next').click();
+level = wide;
+assert.match($('c-board').className, /elo-large/);
+assert.equal($('c-board').querySelectorAll('[data-cell]').length, 120);
+assert.deepEqual(
+  saved().sessions[fixture.id].history,
+  preserved,
+  'navigating retains ELO undo history',
+);
+assert.deepEqual(saved().sessions[legacyId], oldSession);
+assert.ok(saved().completed.includes(legacyId));
+assert.equal(JSON.parse(store.get('intuicao.answers.v1'))['elo:' + legacyId].failures, 3);
+const start = state();
+$('c-hint').click();
+assert.equal($('c-hint-apply').hidden, true);
+$('c-hint').click();
+assert.equal($('c-hint-apply').hidden, true);
+$('c-hint').click();
+assert.equal($('c-hint-apply').hidden, false);
+assert.deepEqual(state(), start);
+$('c-hint-apply').click();
+assert.equal(state().positions[3], 119);
+assert.notEqual($('c-motion').dataset.outcome, 'win');
+$('c-undo').click();
+assert.deepEqual(state(), start);
+$('c-redo').click();
+assert.equal(state().positions[3], 119);
+$('c-level-prev').click();
+level = fixture;
+assert.deepEqual(history(), preserved);
+$('c-back').click();
+assert.equal(host.querySelectorAll('.elo-stage').length, 10);
+app.activate('prumo');
+assert.equal(host.querySelectorAll('.elo-stage').length, 0);
+assert.equal(
+  host.querySelectorAll('.level-group').length,
+  4,
+  'other campaign grouping is unchanged',
+);
+console.log(
+  'PASS ELO UI: 10×20, all clue families, accessible passages, atomic invalid drop, X, visible forbidden edges, reset cancel, explicit victory, navigation, saved history, 120-cell hints/undo/redo, PRUMO isolation',
+);
