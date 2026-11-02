@@ -10,6 +10,14 @@ Um puzzle de estimativa de áreas em que uma linha ou curva divide uma figura.
 
 Ajuste a linha ou curva até que o lado roxo tenha a porcentagem pedida da área útil da figura. Espaços vazios não contam.
 
+## O jogo em imagem
+
+[![Corte certo: silhueta de capivara dividida por uma curva, com meta de 76 por cento no lado roxo.](../../imagens/jogos/corte.jpg)](../../imagens/jogos/corte.jpg)
+
+*Na imagem: fase 47, “Capivara”, com curva em S e meta de 76% para o lado roxo. O corte está sendo preparado antes da confirmação.*
+
+Clique na imagem para ampliar. Captura real do site em **1º de novembro de 2026**; [origem e contexto das imagens](../../imagens/jogos/README.md).
+
 ## Problema e proposta pedagógica
 
 Praticar estimativa de áreas, proporções e porcentagens, comparando a impressão visual com a medida apresentada pelo jogo.

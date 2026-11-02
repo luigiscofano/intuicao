@@ -10,6 +10,14 @@ Um duelo de estratégia por turnos em que cada escolha limita as opções do adv
 
 Escolha uma casa e envie o adversário para a linha ou coluna indicada. Quem ficar sem jogada disponível perde.
 
+## O jogo em imagem
+
+[![DESVIO: tabuleiro 4 por 4 com setas horizontais e verticais e prévia de escolha na linha 2, coluna 2.](../../imagens/jogos/desvio.jpg)](../../imagens/jogos/desvio.jpg)
+
+*Na imagem: mapa 1, “Referência do manual”. Confirmar a prévia em L2C2 enviaria o adversário à linha 2, com três opções restantes.*
+
+Clique na imagem para ampliar. Captura real do site em **1º de novembro de 2026**; [origem e contexto das imagens](../../imagens/jogos/README.md).
+
 ## Problema e proposta pedagógica
 
 Praticar antecipação, planejamento por turnos e comparação de alternativas, considerando não só a própria jogada, mas também as respostas do adversário.

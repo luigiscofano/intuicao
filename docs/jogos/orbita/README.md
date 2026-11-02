@@ -10,6 +10,14 @@ Um puzzle de planejamento em que peças circulam por anéis conectados e precisa
 
 Gire um anel para mover todas as suas peças juntas. Use as casas compartilhadas para preparar transferências e restaurar o que já estava certo.
 
+## O jogo em imagem
+
+[![ÓRBITA: dois anéis conectados, peças móveis coloridas e seis alvos fixos na fase 24.](../../imagens/jogos/orbita.jpg)](../../imagens/jogos/orbita.jpg)
+
+*Na imagem: fase 24, com dois anéis e seis alvos. Os símbolos distinguem as peças móveis dos marcadores de destino.*
+
+Clique na imagem para ampliar. Captura real do site em **1º de novembro de 2026**; [origem e contexto das imagens](../../imagens/jogos/README.md).
+
 ## Problema e proposta pedagógica
 
 Praticar planejamento de sequências, orientação espacial e antecipação de efeitos sobre objetivos simultâneos, usando posições temporárias e movimentos reversíveis.

@@ -10,6 +10,14 @@ Um puzzle de luz e espelhos em que você constrói percursos para raios colorido
 
 Gire espelhos para levar cada raio ao alvo da mesma cor e símbolo, sem encostar nas trajetórias de outras cores.
 
+## O jogo em imagem
+
+[![Reflexos: dois raios coloridos refletidos por espelhos durante uma tentativa da fase 9.](../../imagens/jogos/reflexos.jpg)](../../imagens/jogos/reflexos.jpg)
+
+*Na imagem: fase 9, “Duas cores, dois destinos”. Os raios foram disparados para mostrar o efeito dos ângulos escolhidos; os dois alvos ainda precisam ser alcançados.*
+
+Clique na imagem para ampliar. Captura real do site em **1º de novembro de 2026**; [origem e contexto das imagens](../../imagens/jogos/README.md).
+
 ## Problema e proposta pedagógica
 
 Praticar orientação espacial, leitura de ângulos e planejamento de trajetórias. Observar uma tentativa e ajustar os espelhos convida a formular e revisar hipóteses.

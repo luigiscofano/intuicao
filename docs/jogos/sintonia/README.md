@@ -10,6 +10,14 @@ Um puzzle de coordenação em que um único comando move vários animais, cada u
 
 Leve todos aos seus destinos na mesma configuração. Use paredes e mecanismos para combinar os caminhos.
 
+## O jogo em imagem
+
+[![SINTONIA: tucano, quati e cobra-coral em três tabuleiros com placas, cancelas e controle direcional compartilhado.](../../imagens/jogos/sintonia.jpg)](../../imagens/jogos/sintonia.jpg)
+
+*Na imagem: fase 31, “Uma passagem para o outro”, antes do primeiro movimento. Placas de pressão e cancelas conectam as decisões entre os tabuleiros.*
+
+Clique na imagem para ampliar. Captura real do site em **1º de novembro de 2026**; [origem e contexto das imagens](../../imagens/jogos/README.md).
+
 ## Problema e proposta pedagógica
 
 Praticar planejamento, antecipação de consequências e raciocínio espacial, articulando objetivos individuais com uma condição conjunta.
