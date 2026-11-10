@@ -1,0 +1,15 @@
+/* Biblioteca Terra e Mata: the original game buttons and their routes stay intact. */
+.library-navigation{display:flex;gap:8px;border-bottom:1px solid #87977c;margin:28px 0 22px;padding-bottom:12px;flex-wrap:wrap}
+.library-navigation button{display:flex;align-items:center;gap:16px;border:1px solid transparent;background:transparent;color:#30412f;border-radius:12px;padding:14px 20px;min-height:48px;font:700 18px/1.4 system-ui,sans-serif}
+.library-navigation button[aria-current=page]{background:#30412f;color:#fffaf0}
+.library-navigation button span{font-size:13px;border:1px solid currentColor;border-radius:20px;padding:2px 8px}
+.library-navigation button:hover{border-color:#30412f}
+#main > .category-choices{display:flex;flex-wrap:wrap;gap:8px;margin:0 0 4px}
+#main > .category-choices > button{font:600 14px/1.4 system-ui,sans-serif;min-height:44px;padding:10px 16px;border-radius:30px;border:1px solid #87977c;background:transparent;color:#30412f}
+#main > .category-choices > button::before{display:none}
+#main > .category-choices > button[aria-pressed=true]{background:#e9d18a;border-color:#856a22}
+#main > .category-heading{padding-block:22px}
+#main > .games > .game-section-title{font-size:13px;letter-spacing:.12em;color:#445440}
+#achievements[hidden]{display:none!important}
+.library-navigation button:focus-visible,#categories button:focus-visible{outline:3px solid #bd4e2c;outline-offset:4px}
+@media(max-width:480px){.library-navigation{gap:6px}.library-navigation button{font-size:16px;padding:12px;gap:9px}#main > .category-choices > button{font-size:13px;padding:10px 13px}}
