@@ -1,3 +1,4 @@
+import { writeProgress } from '../progress-write-guard.mjs';
 // Preparação e interface de BROTO: prévia, confirmação, tabuleiro e placar.
 import {
   createBroto,
@@ -89,7 +90,7 @@ export function initBroto() {
   function persist() {
     if (!state) return;
     try {
-      localStorage.setItem(BROTO_STORAGE_KEY, JSON.stringify(currentRecord()));
+      writeProgress(localStorage, BROTO_STORAGE_KEY, JSON.stringify(currentRecord()));
       storageWarning = false;
     } catch {
       storageWarning = true;

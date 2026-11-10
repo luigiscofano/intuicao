@@ -1,3 +1,4 @@
+import { writeProgress } from './progress-write-guard.mjs';
 // Persistência das conclusões e da última fase de Corte certo, por identidade da fase.
 // Apenas conclusões e última fase da campanha Corte certo, sempre pela identidade.
 // Rascunhos, gabaritos, outros jogos, fases próprias e Endless têm stores próprios.
@@ -62,7 +63,7 @@ export function createCutCampaignProgress(storage) {
         lastLevelId,
       });
       if (raw !== lastRaw) {
-        storage.setItem(CUT_CAMPAIGN_PROGRESS_KEY, raw);
+        writeProgress(storage, CUT_CAMPAIGN_PROGRESS_KEY, raw);
         lastRaw = raw;
       }
       return true;

@@ -1,3 +1,4 @@
+import { writeProgress } from '../progress-write-guard.mjs';
 // Interface de ÓRBITA: sessões, anéis, animação, dicas, importação e progresso.
 import { pickOrbitaRing, commandForOrbitaRing } from './ring-selection.mjs';
 import { COMPACT_REPLACEMENT_REPORT } from './compact-catalog.mjs';
@@ -1087,7 +1088,7 @@ export function initOrbita({ hideOthers = () => {} } = {}) {
     }
     data.prefs.advanced = advanced;
     try {
-      localStorage.setItem(ORBITA_STORAGE_KEY, JSON.stringify(data));
+      writeProgress(localStorage, ORBITA_STORAGE_KEY, JSON.stringify(data));
       storageWarning = false;
     } catch {
       storageWarning = true;

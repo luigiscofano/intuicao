@@ -1,3 +1,4 @@
+import { writeProgress } from '../progress-write-guard.mjs';
 // Preparação e interface de CERCO: seleção, movimentos, bot, dicas e resultado.
 import {
   createCerco,
@@ -116,7 +117,7 @@ export function initCerco() {
   function persist() {
     if (!state || invalidSave) return;
     try {
-      localStorage.setItem(
+      writeProgress(localStorage,
         CERCO_STORAGE_KEY,
         JSON.stringify({
           version: 1,

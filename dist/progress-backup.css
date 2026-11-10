@@ -1,0 +1,68 @@
+/* Proteção local: controles simples e texto legível também em telas pequenas. */
+.progress-backup {
+  margin: 24px 0;
+  padding: 18px;
+  border: 1px solid #87977c;
+  border-radius: 16px;
+  background: #fffaf0;
+  color: #30412f;
+}
+.progress-backup summary {
+  cursor: pointer;
+  font-weight: 700;
+}
+.progress-backup p,
+.backup-dialog p {
+  line-height: 1.6;
+}
+.backup-file {
+  display: block;
+  margin-top: 18px;
+}
+.backup-file input {
+  display: block;
+  max-width: 100%;
+  margin-top: 10px;
+}
+.backup-dialog {
+  width: min(680px, calc(100% - 32px));
+  max-height: 85dvh;
+  overflow: auto;
+  box-sizing: border-box;
+  border: 1px solid #87977c;
+  border-radius: 18px;
+  padding: 24px;
+  background: #fffaf0;
+  color: #30412f;
+}
+.backup-dialog::backdrop {
+  background: #18291fcc;
+}
+.backup-dialog ul {
+  overflow-wrap: anywhere;
+  padding-left: 22px;
+  line-height: 1.7;
+}
+.backup-dialog label {
+  display: block;
+  margin: 20px 0;
+  line-height: 1.5;
+}
+.backup-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+}
+.progress-backup button,
+.backup-dialog button {
+  min-height: 44px;
+}
+
+.backup-dialog li {
+  margin-block: 12px;
+}
+.backup-dialog li small {
+  display: block;
+  color: #52614d;
+  font-size: 0.8rem;
+}

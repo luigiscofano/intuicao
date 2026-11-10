@@ -1,3 +1,4 @@
+import { writeProgress } from '../progress-write-guard.mjs';
 // Carregamento sob demanda de REPASSE e abertura ou retomada da partida.
 // Catalog and game code load only when REPASSE is opened or resumed.
 export function createRepasseRoute({ hideOthers }) {
@@ -52,7 +53,7 @@ export function createRepasseRoute({ hideOthers }) {
           const data = JSON.parse(raw);
           if (data?.lastView?.active) {
             data.lastView.active = false;
-            localStorage.setItem('intuicao.repasse.v1', JSON.stringify(data));
+            writeProgress(localStorage, 'intuicao.repasse.v1', JSON.stringify(data));
           }
         }
       } catch {

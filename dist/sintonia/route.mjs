@@ -1,3 +1,4 @@
+import { writeProgress } from '../progress-write-guard.mjs';
 // Load the 80-level catalog only when SINTONIA is opened or resumed.
 // The other six games retain their initial loading path.
 export function createSintoniaRoute({hideOtherGames}) {
@@ -33,7 +34,7 @@ export function createSintoniaRoute({hideOtherGames}) {
       host.hidden = true;
       try {
         const raw = localStorage.getItem('intuicao.sintonia.v1');
-        if (raw) {const data = JSON.parse(raw); if (data?.lastView?.active) {data.lastView.active = false; localStorage.setItem('intuicao.sintonia.v1', JSON.stringify(data));}}
+        if (raw) {const data = JSON.parse(raw); if (data?.lastView?.active) {data.lastView.active = false; writeProgress(localStorage, 'intuicao.sintonia.v1', JSON.stringify(data));}}
       } catch { /* A disabled store must not block navigation. */ }
     }
     setActive(false);
