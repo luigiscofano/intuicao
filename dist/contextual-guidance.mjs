@@ -7,7 +7,7 @@ export const GAME_GUIDANCE = Object.freeze({
   pacto: 'Complete a grade respeitando as pistas. Dicas e regras ajudam a interpretar as relações entre as casas.',
   sintonia: 'Um comando move vários personagens. Observe como paredes e caminhos afetam cada um antes de agir.',
   repasse: 'A ordem dos repasses faz diferença. Experimente uma ação de cada vez e acompanhe quem recebe.',
-  orbita: 'Escolha o anel e o sentido do giro. Observe as conexões antes de confirmar sua resposta.',
+  orbita: 'Escolha o anel e o sentido do giro. Observe como cada movimento aproxima as peças dos alvos.',
   desvio: 'Observe o turno e prepare sua jogada. Confirme depois de conferir a posição escolhida.',
   broto: 'Selecione uma casa vazia para preparar o plantio. Confira a prévia e use Confirmar jogada.',
   cerco: 'Selecione uma peça e uma casa vizinha livre. Confira o destino antes de confirmar a jogada.'
