@@ -1,3 +1,4 @@
+import { displayCampaignName } from './campaign-display-names.mjs';
 import { writeProgress } from './progress-write-guard.mjs';
 // Integração de Reflexos e Corte certo: seleção, edição, histórico e apresentação.
 import { legacyCutSelectionIds } from './cut-campaign.mjs';
@@ -593,7 +594,7 @@ function lightCampaignSelection() {
       const done = progress.completedIds.has(l.id),
         assisted = answerProgress.get(`light:${l.id ?? i}`).assisted,
         current = progress.lastLevelId === l.id;
-      html += `<button class="level-tile ${done ? 'done' : ''}" data-level="${i}" aria-current="${current}" aria-label="Nível ${number}: ${l.name}${done ? ', concluído' : ''}${assisted ? ', assistido por gabarito' : ''}${current ? ', atual' : ''}"><span>${number}</span><small>${done ? (assisted ? '✓ com gabarito' : '✓ concluído') : assisted ? 'com gabarito' : current ? 'atual' : 'explorar'}</small></button>`;
+      html += `<button class="level-tile ${done ? 'done' : ''}" data-level="${i}" aria-current="${current}" aria-label="Nível ${number}: ${displayCampaignName(l)}${done ? ', concluído' : ''}${assisted ? ', assistido por gabarito' : ''}${current ? ', atual' : ''}"><span>${number}</span><small>${done ? (assisted ? '✓ com gabarito' : '✓ concluído') : assisted ? 'com gabarito' : current ? 'atual' : 'explorar'}</small></button>`;
     }
     if (groupOpen) html += '</div>';
   }
@@ -609,7 +610,7 @@ function cutCampaignSelection() {
         done = progress.completedIds.has(l.id),
         assisted = answerProgress.get(`cut:${l.id}`).assisted,
         current = (legacyCutSelectionIds[progress.lastLevelId] ?? progress.lastLevelId) === l.id;
-      html += `<button class="level-tile ${done ? 'done' : ''}" data-level="${i}" aria-current="${current}" aria-label="Nível ${i + 1}: ${l.name}${done ? ', concluído' : ''}${assisted ? ', assistido por gabarito' : ''}${current ? ', atual' : ''}"><span>${i + 1}</span><small>${done ? (assisted ? '✓ com gabarito' : '✓ concluído') : assisted ? 'com gabarito' : current ? 'atual' : 'explorar'}</small></button>`;
+      html += `<button class="level-tile ${done ? 'done' : ''}" data-level="${i}" aria-current="${current}" aria-label="Nível ${i + 1}: ${displayCampaignName(l)}${done ? ', concluído' : ''}${assisted ? ', assistido por gabarito' : ''}${current ? ', atual' : ''}"><span>${i + 1}</span><small>${done ? (assisted ? '✓ com gabarito' : '✓ concluído') : assisted ? 'com gabarito' : current ? 'atual' : 'explorar'}</small></button>`;
     }
     html += '</div>';
   }
@@ -1145,7 +1146,7 @@ function render() {
   $('level').innerHTML = catalogue[game]
     .map(
       (l, i) =>
-        `<option value="${i}">${game === 'light' ? lightCampaignNumber(l, i) : i + 1}. ${l.name}</option>`,
+        `<option value="${i}">${game === 'light' ? lightCampaignNumber(l, i) : i + 1}. ${displayCampaignName(l)}</option>`,
     )
     .join('');
   $('level').value = level;
