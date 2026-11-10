@@ -79,7 +79,7 @@ export function initCategoryNavigation({ hideGames }) {
         (game) => game.id === cardGame(card),
       );
       summary.textContent = campaign
-        ? `${campaign.completed} / ${campaign.total} níveis concluídos`
+        ? `Campanha · ${campaign.completed} / ${campaign.total} concluídos`
         : "Partida local · sem histórico acumulado";
     }
   }

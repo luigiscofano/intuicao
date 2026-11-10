@@ -1,0 +1,48 @@
+/* Ajuda recolhível, fora do tabuleiro e sem cobrir os controles reais. */
+.contextual-guidance {
+  background: #f4eddd;
+  border: 1px solid #c9cbb5;
+  border-left: 4px solid #244B63;
+  border-radius: 10px;
+  padding: 12px 16px;
+  margin: 0 0 16px;
+  color: #30412f;
+  font: 400 14px/1.6 system-ui, sans-serif;
+}
+.contextual-guidance > summary {
+  cursor: pointer;
+  font-weight: 700;
+  min-height: 28px;
+}
+.contextual-guidance > p {
+  margin: 10px 0;
+  max-width: 72ch;
+}
+.contextual-guidance > button {
+  min-height: 44px;
+  padding: 8px 16px;
+}
+.contextual-guidance > summary:focus-visible,
+.contextual-guidance > button:focus-visible {
+  outline: 3px solid #244B63;
+  outline-offset: 3px;
+}
+/* Check decorativo: preserva o nome acessível e o texto específico da confirmação. */
+#main button.confirm::before {
+  content: '';
+  display: inline-block;
+  width: 7px;
+  height: 13px;
+  border: solid currentColor;
+  border-width: 0 2px 2px 0;
+  transform: rotate(45deg);
+  margin: 0 12px 3px 2px;
+  vertical-align: middle;
+}
+/* As setas já possuem handlers opostos. Só ampliamos glifos, sem criar ações. */
+#main button[aria-label='Desfazer'],
+#main button[aria-label='Refazer'] {
+  font-size: 24px;
+  min-width: 44px;
+  min-height: 44px;
+}
