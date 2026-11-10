@@ -33,7 +33,7 @@ export function initContextualGuidance(doc = document, win = window) {
     const surfaces = main.querySelectorAll('.collection-surface, .workspace > .experiment');
     const surface = [...surfaces].find(node => !node.closest('[hidden]'));
     if (!surface) return;
-    const existing = surface.querySelector('.contextual-guidance');
+    const existing = (surface.closest('.approved-workspace') || surface).querySelector('.contextual-guidance');
     if (existing?.dataset.game === game) return;
     existing?.remove();
 
