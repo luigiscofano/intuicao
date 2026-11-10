@@ -1,3 +1,4 @@
+import { writeProgress } from '../progress-write-guard.mjs';
 // Interface de REPASSE: sessões, retiradas, prévias, animações e progresso.
 import { rulesPreviewMarkup } from '../rules-preview.mjs';
 import { CAMPAIGN, CHAPTERS, DIFFICULTIES, CONCEPTS } from './campaign.mjs';
@@ -472,7 +473,7 @@ export function initRepasse({ hideOthers = () => {} } = {}) {
     }
     data.prefs.advanced = advanced;
     try {
-      localStorage.setItem(REPASSE_STORAGE_KEY, JSON.stringify(data));
+      writeProgress(localStorage, REPASSE_STORAGE_KEY, JSON.stringify(data));
       storageWarning = false;
     } catch {
       storageWarning = true;

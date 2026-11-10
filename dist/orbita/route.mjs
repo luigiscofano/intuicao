@@ -1,3 +1,4 @@
+import { writeProgress } from '../progress-write-guard.mjs';
 // Carregamento de ÓRBITA sob demanda e retomada da tela solicitada.
 // The catalog, solver and game load only when ÓRBITA is opened or resumed.
 export function createOrbitaRoute({ hideOthers }) {
@@ -50,7 +51,7 @@ export function createOrbitaRoute({ hideOthers }) {
           const data = JSON.parse(raw);
           if (data?.lastView?.active) {
             data.lastView.active = false;
-            localStorage.setItem('intuicao.orbita.v1', JSON.stringify(data));
+            writeProgress(localStorage, 'intuicao.orbita.v1', JSON.stringify(data));
           }
         }
       } catch {

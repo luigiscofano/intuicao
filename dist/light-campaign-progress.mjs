@@ -1,3 +1,4 @@
+import { writeProgress } from './progress-write-guard.mjs';
 // Persistência das conclusões e da última fase de Reflexos, por identidade.
 // Apenas conclusões e última fase da campanha Reflexos, sempre pela identidade.
 // Rascunhos, gabaritos, outros jogos, fases próprias e Endless têm stores próprios.
@@ -62,7 +63,7 @@ export function createLightCampaignProgress(storage) {
         lastLevelId,
       });
       if (raw !== lastRaw) {
-        storage.setItem(LIGHT_CAMPAIGN_PROGRESS_KEY, raw);
+        writeProgress(storage, LIGHT_CAMPAIGN_PROGRESS_KEY, raw);
         lastRaw = raw;
       }
       return true;

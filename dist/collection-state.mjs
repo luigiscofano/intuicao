@@ -1,3 +1,4 @@
+import { writeProgress } from './progress-write-guard.mjs';
 // Histórico de alterações, progresso persistente e registro de eventos da coleção.
 // Histórico independente da interface: cada transação inclui valores, lápis e marcas.
 export function createHistory(initial) {
@@ -44,7 +45,7 @@ export function loadCollection(store = globalThis.localStorage) {
 }
 export function saveCollection(data, store = globalThis.localStorage) {
   try {
-    store?.setItem('intuicao.collection.v1', JSON.stringify(data));
+    writeProgress(store, 'intuicao.collection.v1', JSON.stringify(data));
     return true;
   } catch {
     return false;

@@ -1,3 +1,4 @@
+import { writeProgress } from './progress-write-guard.mjs';
 // Integração de Reflexos e Corte certo: seleção, edição, histórico e apresentação.
 import { legacyCutSelectionIds } from './cut-campaign.mjs';
 import { isFaunaShape, getFaunaGeometry } from './cut-fauna-geometry.mjs';
@@ -77,7 +78,7 @@ function saveEndless() {
     const raw = JSON.stringify(endlessSaved);
     if (raw !== endlessLastRaw) {
       if (!globalThis.localStorage) throw Error('storage');
-      globalThis.localStorage.setItem(endlessStoreKey, raw);
+      writeProgress(globalThis.localStorage, endlessStoreKey, raw);
       endlessLastRaw = raw;
     }
     endlessStorageWarning = false;
@@ -254,7 +255,7 @@ function saveCampaign() {
     cutDrafts: structuredClone(historyGesture?.before.cutDrafts ?? cutDrafts),
   };
   try {
-    globalThis.localStorage?.setItem(campaignStoreKey, JSON.stringify(campaignSaved));
+    writeProgress(globalThis.localStorage, campaignStoreKey, JSON.stringify(campaignSaved));
   } catch {}
 }
 
@@ -283,7 +284,7 @@ function saveCustom() {
   while (keys.length > 20) delete customSaved[keys.shift()];
   try {
     if (!globalThis.localStorage) throw Error('storage');
-    globalThis.localStorage.setItem(customStoreKey, JSON.stringify(customSaved));
+    writeProgress(globalThis.localStorage, customStoreKey, JSON.stringify(customSaved));
     customStorageWarning = false;
   } catch {
     customStorageWarning = true;
@@ -504,7 +505,7 @@ function toggleControls() {
   controlsHidden = !controlsHidden;
   applyControlsVisibility();
   try {
-    globalThis.localStorage?.setItem('intuicao.advanced-hidden', String(controlsHidden));
+    writeProgress(globalThis.localStorage, 'intuicao.advanced-hidden', String(controlsHidden));
   } catch {}
 }
 let placementMessage = '',
