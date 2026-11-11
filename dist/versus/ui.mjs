@@ -1,3 +1,4 @@
+import { rulesPreviewMarkup } from '../rules-preview.mjs';
 import { FAUNA_ART } from "../fauna-art.mjs";
 import { FAUNA_INFO } from "../fauna-info-content.mjs";
 import { VERSUS_FRONT_CROPS } from "../versus-mascot-art.mjs";
@@ -135,7 +136,7 @@ export function initVersusGames() {
     return `
       <details class="nv-rules" open>
         <summary>Regras e como jogar</summary>
-        <ol>${game.rules.map((rule) => `<li>${esc(rule)}</li>`).join("")}</ol>
+        ${rulesPreviewMarkup(game.id)}
         <p class="nv-control-help">Use Tab para percorrer os controles e Enter ou espaço para selecionar. Confira a prévia e clique ou toque novamente na mesma escolha para confirmar. Em jogadas com etapas, complete todas primeiro. Enter ou espaço também seleciona e confirma; o botão Confirmar jogada fica junto ao tabuleiro. Escape cancela a seleção.</p>
         <details class="nv-help-more">
           <summary>Modos e análise do computador</summary>
@@ -176,6 +177,7 @@ export function initVersusGames() {
           ${versusIcon(game.id, "nv-game-icon")}
           <div><p class="eyebrow">VERSUS · DOIS JOGADORES</p><h2 id="nv-selection-title" tabindex="-1">${esc(game.name)}</h2><p>${esc(game.tagline)}</p></div>
         </div>
+        ${rulesMarkup()}
         <div class="nv-preparation">
           <div class="nv-setup-board" inert aria-hidden="true">${preview}</div>
           <div class="nv-setup-options">
@@ -203,7 +205,6 @@ export function initVersusGames() {
             <p id="nv-storage-warning" class="nv-warning" role="status" hidden></p>
           </div>
         </div>
-        ${rulesMarkup()}
       </section>`;
     renderStorageWarning();
     find("selection-title").focus({ preventScroll: true });

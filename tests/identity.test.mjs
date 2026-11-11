@@ -84,6 +84,9 @@ test('movimento e vitórias Versus aprovados preservam todos os arquivos fora do
     'broto/ui.mjs', 'cerco/ui.mjs', 'collection-ui.mjs',
     // Correção responsiva solicitada em 11/11: apresentação e texto de ajuda.
     'board-fit.css', 'board-fit.mjs', 'repasse/ui.mjs',
+    // Como jogar em 25 jogos: somente texto, exemplos e integração de apresentação.
+    'rules-examples.css', 'rules-examples.mjs', 'rules-preview.css', 'rules-preview.mjs',
+    'rules-logic-examples.mjs', 'rules-versus-examples.mjs', 'logica/ui.mjs',
     // Botões de campanha e confirmação próxima/repetida em Versus, aprovados depois.
     'campaign-action-buttons.css', 'approved-game-shell.css', 'approved-game-shell.mjs',
     'versus/README.md', 'versus/repeat-choice.mjs',

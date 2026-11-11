@@ -1,3 +1,4 @@
+import { rulesPreviewMarkup } from '../rules-preview.mjs';
 import { createRestartConfirmation } from '../restart-confirmation.mjs';
 import { createResultMotion } from '../result-motion.mjs';
 import { DIFFICULTIES, LOGIC_GAMES, loadLogicGame, escapeHTML as esc } from './metadata.mjs';
@@ -46,7 +47,7 @@ export function initLogicGames() {
   }
 
   function rulesMarkup() {
-    return `<section class="logic-rules" aria-labelledby="lg-rules-title"><h3 id="lg-rules-title">Como jogar</h3><ol>${adapter.GAME.rules.map(rule => `<li>${esc(rule)}</li>`).join('')}</ol><p class="logic-control-help">${esc(adapter.GAME.instructions)} Use Tab para navegar e Enter ou espaço para marcar. Desfazer: Ctrl/⌘ Z. Refazer: Ctrl/⌘ Shift Z.</p></section>`;
+    return `<section class="logic-rules" aria-label="Orientações de ${metadata.name}">${rulesPreviewMarkup(metadata.id)}<p class="logic-control-help">${esc(adapter.GAME.instructions)} Use Tab para navegar e Enter ou espaço para marcar. Desfazer: Ctrl/⌘ Z. Refazer: Ctrl/⌘ Shift Z.</p></section>`;
   }
 
   function showSelection() {
@@ -65,7 +66,7 @@ export function initLogicGames() {
       const levels = adapter.CAMPAIGN.filter(item => item.difficulty === difficulty);
       return `<section class="logic-tier" aria-labelledby="lg-tier-${difficulty}"><div class="logic-tier-heading"><h3 id="lg-tier-${difficulty}">${name}</h3><span>${levels.filter(isCompleted).length} / ${levels.length}</span></div><div class="logic-level-grid">${levels.map(item => `<button type="button" class="logic-level${isCompleted(item) ? ' completed' : ''}" data-level-id="${esc(item.id)}" aria-label="Fase ${item.number}, ${esc(item.name)}, ${name}${isCompleted(item) ? ', concluída' : ''}"><strong>${item.number}</strong><span>${esc(item.name)}</span>${isCompleted(item) ? '<i aria-hidden="true">✓</i>' : ''}</button>`).join('')}</div></section>`;
     }).join('');
-    host.innerHTML = `<section class="level-screen logic-selection"><div class="logic-selection-heading"><div><p class="eyebrow">CAMPANHA · 80 FASES</p><h2 id="lg-selection-title" tabindex="-1">${metadata.name}</h2><p>${esc(adapter.GAME.description)}</p></div><p class="logic-progress">${completed} <span>/ 80 concluídas</span></p></div><div class="logic-mode-actions">${resume ? `<button type="button" class="primary" data-level-id="${esc(resume.id)}">Retomar fase ${resume.number}</button>` : ''}<button type="button" data-logic-daily>Desafio do dia</button><button type="button" data-logic-random>Surpreenda-me</button></div><p class="logic-selection-note">Todas as fases estão disponíveis. Escolha uma faixa ou continue de onde parou.</p><p id="lg-storage-warning" class="logic-storage-warning" role="status" hidden></p>${bands}${rulesMarkup()}</section>`;
+    host.innerHTML = `<section class="level-screen logic-selection"><div class="logic-selection-heading"><div><p class="eyebrow">CAMPANHA · 80 FASES</p><h2 id="lg-selection-title" tabindex="-1">${metadata.name}</h2><p>${esc(adapter.GAME.description)}</p></div><p class="logic-progress">${completed} <span>/ 80 concluídas</span></p></div><div class="logic-mode-actions">${resume ? `<button type="button" class="primary" data-level-id="${esc(resume.id)}">Retomar fase ${resume.number}</button>` : ''}<button type="button" data-logic-daily>Desafio do dia</button><button type="button" data-logic-random>Surpreenda-me</button></div><p class="logic-selection-note">Todas as fases estão disponíveis. Escolha uma faixa ou continue de onde parou.</p><p id="lg-storage-warning" class="logic-storage-warning" role="status" hidden></p>${rulesMarkup()}${bands}</section>`;
     save();
     find('selection-title')?.focus({ preventScroll: true });
   }
