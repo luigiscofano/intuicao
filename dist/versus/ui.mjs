@@ -15,6 +15,8 @@ import { createSearchService } from "./search-service.mjs";
 import { createDuelConfirmation } from "./confirmation.mjs";
 import { escapeHTML as esc, playerMark, playerName } from "./shared/markup.mjs";
 import { versusIcon } from "./icons.mjs";
+import { evaluateVersusMissions } from "../achievements/versus-missions.mjs";
+import { recordMissionUnlocks } from "../achievements/mission-store.mjs";
 
 const MODES = Object.freeze({
   local: "Dois jogadores locais",
@@ -39,11 +41,11 @@ function defaultConfig() {
 function validConfig(config) {
   return Boolean(
     config &&
-      Object.hasOwn(MODES, config.mode) &&
-      Object.hasOwn(DIFFICULTIES, config.difficulty) &&
-      Array.isArray(config.mascots) &&
-      config.mascots.length === 2 &&
-      config.mascots.every((id) => Object.hasOwn(VERSUS_FRONT_CROPS, id)),
+    Object.hasOwn(MODES, config.mode) &&
+    Object.hasOwn(DIFFICULTIES, config.difficulty) &&
+    Array.isArray(config.mascots) &&
+    config.mascots.length === 2 &&
+    config.mascots.every((id) => Object.hasOwn(VERSUS_FRONT_CROPS, id)),
   );
 }
 
@@ -349,7 +351,7 @@ export function initVersusGames() {
     renderPosition();
   }
 
-  function commit(move) {
+  function commit(move, { computer = false } = {}) {
     const before = state();
     const nextSession = applySessionMove(game.engine, session, move);
     message = game.view.describeMove(before, move, currentState(nextSession));
@@ -357,6 +359,20 @@ export function initVersusGames() {
     clearPreview();
     renderPosition();
     save();
+    // Conquistas nascem da confirmação humana, nunca da prévia ou da busca do bot.
+    if (!computer) {
+      recordMissionUnlocks(
+        evaluateVersusMissions({
+          gameId: game.id,
+          before,
+          after: currentState(session),
+          move,
+          actor: before.player,
+          config: playConfig,
+          engine: game.engine,
+        }),
+      );
+    }
     scheduleComputer();
   }
 
@@ -437,7 +453,7 @@ export function initVersusGames() {
       thinking = false;
       if (!answer.move)
         throw new Error("Não foi encontrada uma ação para esta posição.");
-      if (forComputer) commit(answer.move);
+      if (forComputer) commit(answer.move, { computer: true });
       else {
         selection = game.view.selectionForMove?.(state(), answer.move) ?? null;
         pendingMove = answer.move;

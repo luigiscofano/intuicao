@@ -11,6 +11,7 @@ import {
 } from "./progress-write-guard.mjs";
 
 const RECORD_NAMES = Object.freeze({
+  "intuicao.missions.v1": "Conquistas · missões específicas dos jogos",
   "intuicao.advanced-hidden": "Preferência de opções avançadas",
   "intuicao.answers.v1": "Dicas e respostas consultadas",
   "intuicao.versus.v1": "Novos versus · partidas e preferências",

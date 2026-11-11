@@ -21,7 +21,11 @@ jobs:
       - name: Verificar cinco motores (não é a suíte completa)
         run: node --test tests/broto-engine.test.mjs tests/cerco-engine.test.mjs tests/sintonia-engine.test.mjs tests/repasse-engine.test.mjs tests/orbita-engine.test.mjs
       - name: Verificar família lógica e integração com a plataforma
-        run: node --test tests/logica/*.test.mjs tests/approved-opening.test.mjs tests/approved-game-shell.test.mjs tests/contextual-guidance.test.mjs tests/library-navigation.test.mjs tests/achievements.test.mjs tests/progress-backup.test.mjs
+        run: node --test tests/logica/*.test.mjs tests/approved-opening.test.mjs tests/approved-game-shell.test.mjs tests/contextual-guidance.test.mjs tests/library-navigation.test.mjs tests/achievements*.test.mjs tests/progress-backup.test.mjs
 
       - name: Verificar oito duelos, histórico, busca e backup
         run: node --test tests/versus/*.test.mjs
+
+      - name: Conferir índice das missões específicas
+        run: node scripts/build-achievement-index.mjs --check
+
