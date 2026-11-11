@@ -1,5 +1,7 @@
 import { VERSUS_GAME_IDS } from "./versus/metadata.mjs";
 import { renderAchievements, readAchievements } from "./achievements.mjs";
+import { initMissionNotifications } from "./achievements/notifications.mjs";
+import { MISSION_UNLOCK_EVENT } from "./achievements/mission-store.mjs";
 
 // A navegação controla somente a tela. Cada jogo continua responsável pelo save.
 export const CATEGORY_GAMES = Object.freeze({
@@ -40,6 +42,7 @@ const cardGame = (card) =>
   card.dataset.versus;
 
 export function initCategoryNavigation({ hideGames }) {
+  initMissionNotifications();
   const navigation = document.querySelector("#main > .games");
   const categories = document.getElementById("categories");
   const back = document.getElementById("category-back");
@@ -96,7 +99,7 @@ export function initCategoryNavigation({ hideGames }) {
       );
       summary.textContent = campaign
         ? `Campanha · ${campaign.completed} / ${campaign.total} concluídos`
-        : "Partida local · sem histórico acumulado";
+        : `Missões · ${progress.missions.filter((mission) => mission.gameId === cardGame(card) && mission.unlocked).length} / 2 conquistadas`;
     }
   }
 
@@ -199,6 +202,9 @@ export function initCategoryNavigation({ hideGames }) {
   window.addEventListener("storage", () => {
     if (!achievements.hidden) renderAchievements(achievements);
     else if (!navigation.hidden) refreshCardProgress();
+  });
+  window.addEventListener(MISSION_UNLOCK_EVENT, () => {
+    if (!achievements.hidden) renderAchievements(achievements);
   });
   restoreRoute();
 }

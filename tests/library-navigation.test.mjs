@@ -128,6 +128,8 @@ function harness(url = "https://example.test/") {
     URL,
     URLSearchParams,
     VERSUS_GAME_IDS: VERSUS_IDS,
+    MISSION_UNLOCK_EVENT: "intuicao:missions-unlocked",
+    initMissionNotifications() {},
     location: new URL(url),
     history: {
       pushState(_, __, u) {
@@ -142,6 +144,7 @@ function harness(url = "https://example.test/") {
     },
     readAchievements() {
       return {
+        missions: [],
         games: ids
           .filter(
             (id) => !["desvio", "broto", "cerco", ...VERSUS_IDS].includes(id),

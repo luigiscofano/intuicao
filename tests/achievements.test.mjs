@@ -8,7 +8,16 @@ import {
 import { CONTENT_REVISION } from "../dist/sintonia/campaign.mjs";
 import { CAMPAIGN_VERSION } from "../dist/orbita/campaign.mjs";
 const LOGIC_IDS = ["divisa", "pulso", "foz", "refugio", "mirante", "renovo"];
-const ORIGINAL_CAMPAIGNS = ["light", "cut", "elo", "prumo", "pacto", "sintonia", "repasse", "orbita"];
+const ORIGINAL_CAMPAIGNS = [
+  "light",
+  "cut",
+  "elo",
+  "prumo",
+  "pacto",
+  "sintonia",
+  "repasse",
+  "orbita",
+];
 const game = (id) => ACHIEVEMENT_GAMES.find((g) => g.id === id);
 function storage(data = {}) {
   const map = new Map(
@@ -56,12 +65,24 @@ function completeAll() {
     };
   data["intuicao.logica.v1"] = {
     version: 1,
-    games: Object.fromEntries(LOGIC_IDS.map(id => [id, {
-      completed: Object.fromEntries(game(id).levels.map(level => [level.id, {
-        version: level.version, assisted: true, completedAt: "2026-11-10T12:00:00Z",
-      }])),
-      sessions: {},
-    }])),
+    games: Object.fromEntries(
+      LOGIC_IDS.map((id) => [
+        id,
+        {
+          completed: Object.fromEntries(
+            game(id).levels.map((level) => [
+              level.id,
+              {
+                version: level.version,
+                assisted: true,
+                completedAt: "2026-11-10T12:00:00Z",
+              },
+            ]),
+          ),
+          sessions: {},
+        },
+      ]),
+    ),
   };
   return data;
 }
@@ -70,7 +91,10 @@ test("navegador vazio tem 14 campanhas e 1.120 níveis, sem progresso inventado"
   assert.equal(result.available, 1120);
   assert.equal(result.total, 0);
   assert.equal(result.games.length, 14);
-  assert.deepEqual(result.games.map(item => item.id).sort(), [...ORIGINAL_CAMPAIGNS, ...LOGIC_IDS].sort());
+  assert.deepEqual(
+    result.games.map((item) => item.id).sort(),
+    [...ORIGINAL_CAMPAIGNS, ...LOGIC_IDS].sort(),
+  );
   for (const item of result.games) assert.equal(item.total, 80);
   assert(result.achievements.every((a) => !a.unlocked));
 });
@@ -93,30 +117,47 @@ test("os saves anteriores continuam comprovando exatamente as oito campanhas ori
   assert.equal(result.total, 640);
   assert.equal(result.hard, 280);
   assert.equal(result.finishedCampaigns, 8);
-  for (const id of LOGIC_IDS) assert.equal(result.games.find(item => item.id === id).completed, 0);
+  for (const id of LOGIC_IDS)
+    assert.equal(result.games.find((item) => item.id === id).completed, 0);
 });
 
 test("as seis campanhas lógicas contam apenas a identidade e a versão atuais dentro do jogo correto", () => {
-  const savedGames = Object.fromEntries(LOGIC_IDS.map((id, index) => {
-    const [first, second, third, fourth] = game(id).levels;
-    const foreign = game(LOGIC_IDS[(index + 1) % LOGIC_IDS.length]).levels[0];
-    return [id, { completed: {
-      [first.id]: { version: first.version, assisted: true },
-      [second.id]: { version: second.version + 1 },
-      [third.id]: null,
-      [fourth.id]: {},
-      [foreign.id]: { version: foreign.version },
-      [`${id}-retired`]: { version: 1 },
-    } }];
-  }));
-  const store = storage({ "intuicao.logica.v1": { version: 1, games: savedGames } });
-  const before = [...store.map], result = readAchievements(store);
+  const savedGames = Object.fromEntries(
+    LOGIC_IDS.map((id, index) => {
+      const [first, second, third, fourth] = game(id).levels;
+      const foreign = game(LOGIC_IDS[(index + 1) % LOGIC_IDS.length]).levels[0];
+      return [
+        id,
+        {
+          completed: {
+            [first.id]: { version: first.version, assisted: true },
+            [second.id]: { version: second.version + 1 },
+            [third.id]: null,
+            [fourth.id]: {},
+            [foreign.id]: { version: foreign.version },
+            [`${id}-retired`]: { version: 1 },
+          },
+        },
+      ];
+    }),
+  );
+  const store = storage({
+    "intuicao.logica.v1": { version: 1, games: savedGames },
+  });
+  const before = [...store.map],
+    result = readAchievements(store);
   assert.equal(result.total, 6);
   assert.equal(result.hard, 0);
   assert.equal(result.explored, 6);
-  for (const id of LOGIC_IDS) assert.equal(result.games.find(item => item.id === id).completed, 1);
+  for (const id of LOGIC_IDS)
+    assert.equal(result.games.find((item) => item.id === id).completed, 1);
   assert.deepEqual([...store.map], before);
-  assert.equal(readAchievements(storage({ "intuicao.logica.v1": { version: 2, games: savedGames } })).total, 0);
+  assert.equal(
+    readAchievements(
+      storage({ "intuicao.logica.v1": { version: 2, games: savedGames } }),
+    ).total,
+    0,
+  );
 });
 test("duplicate, retired, unknown and imported IDs do not inflate totals", () => {
   const id = game("light").levels[0].id;
@@ -147,10 +188,27 @@ test("attempts, gabaritos, endless totals and versus wins are not conclusions", 
         events: [{ type: "win" }],
       },
       "intuicao.broto.v1": { wins: 999 },
-      "intuicao.logica.v1": { version: 1, games: Object.fromEntries(LOGIC_IDS.map(id => [id, {
-        completed: {},
-        sessions: { [game(id).levels[0].id]: { levelId: game(id).levels[0].id, levelVersion: 1, assisted: true, failures: 3, states: [{ solved: true }], cursor: 0 } },
-      }])) },
+      "intuicao.logica.v1": {
+        version: 1,
+        games: Object.fromEntries(
+          LOGIC_IDS.map((id) => [
+            id,
+            {
+              completed: {},
+              sessions: {
+                [game(id).levels[0].id]: {
+                  levelId: game(id).levels[0].id,
+                  levelVersion: 1,
+                  assisted: true,
+                  failures: 3,
+                  states: [{ solved: true }],
+                  cursor: 0,
+                },
+              },
+            },
+          ]),
+        ),
+      },
     }),
   );
   assert.equal(result.total, 0);
@@ -211,14 +269,22 @@ test("UI includes labelled progress, honest criteria, empty state and every camp
   const host = { innerHTML: "" };
   renderAchievements(host, storage());
   assert.match(host.innerHTML, /id="achievements-title" tabindex="-1"/);
-  assert.equal((host.innerHTML.match(/<progress /g) || []).length, 10);
-  const campaignLinks = [...host.innerHTML.matchAll(/href="\?game=([^"]+)"/g)].map(match => match[1]);
-  assert.deepEqual(campaignLinks.sort(), [...ORIGINAL_CAMPAIGNS, ...LOGIC_IDS].sort());
+  assert.equal((host.innerHTML.match(/<progress /g) || []).length, 50);
+  const campaignSection = host.innerHTML.match(
+    /<details class="achievement-campaigns">([\s\S]*?)<\/details>/,
+  )[1];
+  const campaignLinks = [
+    ...campaignSection.matchAll(/href="\?game=([^"]+)"/g),
+  ].map((match) => match[1]);
+  assert.deepEqual(
+    campaignLinks.sort(),
+    [...ORIGINAL_CAMPAIGNS, ...LOGIC_IDS].sort(),
+  );
   assert.match(host.innerHTML, /nível das 14 campanhas atuais/);
   assert.match(host.innerHTML, /0<span> \/ 1120<\/span>/);
   assert.match(host.innerHTML, /Conclusões assistidas também contam/);
   assert.match(host.innerHTML, /Modo Sem Parar/);
-  assert.match(host.innerHTML, /Em descoberta/);
+  assert.match(host.innerHTML, /A descobrir/);
   for (const g of ACHIEVEMENT_GAMES)
     assert(host.innerHTML.includes(`href="?game=${g.id}"`));
 });
@@ -228,7 +294,9 @@ test("varied milestones use current completion evidence only", () => {
   assert.equal(all.finishedCampaigns, 14);
   assert.equal(all.exploredTiers, 6);
   assert.equal(all.achievements.length, 10);
-  assert.equal(new Set(all.achievements.map((a) => a.symbol)).size, 10);
+  assert.equal(new Set(all.achievements.map((a) => a.icon)).size, 10);
+  assert.equal(all.missions.length, 50);
+  assert.equal(all.missions.filter((mission) => mission.unlocked).length, 28);
   const one = readAchievements(
     storage({
       "intuicao.campaign.light.progress.v1": {

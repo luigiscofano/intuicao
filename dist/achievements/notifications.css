@@ -1,0 +1,72 @@
+.mission-notice {
+  position: fixed;
+  z-index: 3000;
+  right: 24px;
+  bottom: 24px;
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  width: min(460px, calc(100vw - 32px));
+  padding: 18px;
+  border: 2px solid #39654c;
+  border-radius: 22px;
+  background: #fffaf0;
+  color: #30412f;
+  box-shadow: 0 12px 36px #263f2826;
+}
+.mission-notice[hidden] {
+  display: none;
+}
+.mission-notice-icon {
+  flex: 0 0 58px;
+}
+.mission-notice-icon svg {
+  display: block;
+  width: 58px;
+  height: 58px;
+}
+.mission-notice-content {
+  flex: 1;
+  min-width: 0;
+}
+.mission-notice-label {
+  margin: 0 0 5px;
+  font-size: 10px;
+  letter-spacing: 0.1em;
+  font-weight: 800;
+}
+.mission-notice-message {
+  margin: 0 0 7px;
+  font-weight: 750;
+  font-size: 16px;
+  line-height: 1.4;
+}
+.mission-notice a {
+  color: #30412f;
+  font-size: 13px;
+  text-underline-offset: 3px;
+}
+.mission-notice button {
+  align-self: flex-start;
+  width: 32px;
+  min-height: 32px;
+  padding: 0;
+  font-size: 22px;
+  border: 0;
+  border-radius: 50%;
+  background: #e8dfcb;
+  color: #30412f;
+  cursor: pointer;
+}
+.mission-notice :focus-visible {
+  outline: 3px solid #8c6628;
+  outline-offset: 3px;
+}
+@media (max-width: 600px) {
+  .mission-notice {
+    right: 16px;
+    bottom: 16px;
+    padding: 14px;
+    gap: 10px;
+  }
+}
