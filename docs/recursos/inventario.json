@@ -72,6 +72,13 @@
         "docs/versus/VERIFICACAO.md"
       ],
       "source": "Captura da interface implementada, realizada pela navegação real na prévia local em 2026-11-11; usa elementos vetoriais do próprio jogo LASTRO."
+    },
+    "conquistas-emblemas": {
+      "evidence": [
+        "docs/conquistas/README.md",
+        "dist/achievements/icons.mjs"
+      ],
+      "source": "Emblemas SVG originais desenhados por código para as missões do Intuição em 2026-11-11, sem imagens externas; prancha e captura real da galeria implementada."
     }
   },
   "assets": [
@@ -1527,6 +1534,20 @@
       "group": "versus-interface",
       "status": "pending",
       "reviewBasis": "implementation-preview-capture"
+    },
+    {
+      "path": "docs/imagens/conquistas/galeria.png",
+      "sha256": "dea5b5465c43e668694544962367e73095c56cc354abf2e575e0b609c18816fd",
+      "group": "conquistas-emblemas",
+      "status": "pending",
+      "reviewBasis": "implementation-preview-capture"
+    },
+    {
+      "path": "docs/imagens/conquistas/emblemas.svg",
+      "sha256": "2d8c666442d67cacfe7be62df838fe2ce003841c834c91ec54fdab0d6d86a881",
+      "group": "conquistas-emblemas",
+      "status": "pending",
+      "reviewBasis": "original-vector-emblems"
     }
   ],
   "rightsReview": {
