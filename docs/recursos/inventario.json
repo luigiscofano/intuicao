@@ -60,6 +60,12 @@
         "tools/logica/render-gallery.mjs"
       ],
       "source": "Diagramas dos estados iniciais gerados por código das views da família lógica, sob a identidade CERCO aprovada; sem recursos visuais externos."
+    },
+    "versus-conceitos": {
+      "evidence": [
+        "docs/versus/README.md"
+      ],
+      "source": "Pranchas conceituais elaboradas na conversa de design dos oito jogos Versus e incorporadas por solicitação do titular em 2026-11-11; distinguem-se de capturas da interface implementada."
     }
   },
   "assets": [
@@ -1452,6 +1458,62 @@
       "license": "Direitos reservados; recursos visuais excluídos da licença MIT do código.",
       "permissionEvidence": "docs/logica/README.md",
       "reviewBasis": "generated-from-project-code; existing-visual-rights-policy"
+    },
+    {
+      "path": "docs/imagens/versus/acorde.png",
+      "sha256": "8fc7b3a8e84151c97b5e145a76d1874db42f5ae9339d727205950da1a4f5a601",
+      "group": "versus-conceitos",
+      "status": "pending",
+      "reviewBasis": "concept-plates-requested-by-owner"
+    },
+    {
+      "path": "docs/imagens/versus/dobra.png",
+      "sha256": "bc8f3579430236a338246bb1b35ef2e053c838907f0339c9a67d5011ef900d99",
+      "group": "versus-conceitos",
+      "status": "pending",
+      "reviewBasis": "concept-plates-requested-by-owner"
+    },
+    {
+      "path": "docs/imagens/versus/enlace.png",
+      "sha256": "abed16b92ff26736ccc051773cdb92ddcb1b241071bab4b4aa8e7ac051e69a98",
+      "group": "versus-conceitos",
+      "status": "pending",
+      "reviewBasis": "concept-plates-requested-by-owner"
+    },
+    {
+      "path": "docs/imagens/versus/estalo.png",
+      "sha256": "4ca80c810ec01e52797e1bc2d8d6d9b6ee069a765ed5d8c0118303f9b3d0c71b",
+      "group": "versus-conceitos",
+      "status": "pending",
+      "reviewBasis": "concept-plates-requested-by-owner"
+    },
+    {
+      "path": "docs/imagens/versus/lastro.png",
+      "sha256": "991a8df7e2867b53dcbf7ef67fb4330e638e1fc867e6f2a790bf45734f93ccb5",
+      "group": "versus-conceitos",
+      "status": "pending",
+      "reviewBasis": "concept-plates-requested-by-owner"
+    },
+    {
+      "path": "docs/imagens/versus/mosaico.png",
+      "sha256": "2aa5c53faa220638604bc9cda1d6e85d2f7c26f42f9e763cb6ae35c640b64635",
+      "group": "versus-conceitos",
+      "status": "pending",
+      "reviewBasis": "concept-plates-requested-by-owner"
+    },
+    {
+      "path": "docs/imagens/versus/quinhao.png",
+      "sha256": "12e225f0957a1f0e4d3e0f38a2166bb1d4283cfd2e9ee1c0edc91d3cbbf1b0c6",
+      "group": "versus-conceitos",
+      "status": "pending",
+      "reviewBasis": "concept-plates-requested-by-owner"
+    },
+    {
+      "path": "docs/imagens/versus/vazante.png",
+      "sha256": "7ddba5e89d1d3b627c8d283bbda0ad41d163718fe72ad27a12c4622bbd4d601a",
+      "group": "versus-conceitos",
+      "status": "pending",
+      "reviewBasis": "concept-plates-requested-by-owner"
     }
   ],
   "rightsReview": {

@@ -32,6 +32,14 @@ Os metadados de navegação não importam motores. A rota carrega a interface e 
 
 O progresso tem chave própria (`intuicao.logica.v1`), integra o backup e preserva ID/versão, tentativa e marca assistida. O histórico possui limite de memória; tentativas antigas mantêm seu estado atual. Comentários nos módulos explicam as invariantes de armazenamento, as regras menos evidentes e os limites dos algoritmos.
 
+## Família Versus de oito duelos
+
+[`dist/versus/`](../../dist/versus/README.md) separa cada jogo em motor puro, view, CSS e metadados. A interface comum controla preparação, prévia, confirmação, histórico, salvamento e busca. Nenhum motor conhece o DOM, os mascotes ou o armazenamento do navegador.
+
+Os registros guardam ações e cursor de histórico na chave `intuicao.versus.v1`. Retomar significa reproduzir essas ações pelo motor, incluindo o futuro disponível para Refazer. O armazenamento relê o envelope antes de escrever e usa a proteção global contra gravações de abas anteriores a uma restauração.
+
+A análise minimax executa em Worker, tem orçamento por nível e é cancelada ao sair, reiniciar ou mudar de posição. QUINHÃO mantém explicitamente o decisor atual; LASTRO mantém a pausa entre rodadas sem antecipar o resultado final. O [contrato](../../dist/versus/CONTRACT.md) descreve os pontos de extensão.
+
 ## Estado e transição
 
 Uma definição de nível descreve a configuração do desafio: geometria, pistas, alvos ou peças. Um estado descreve o andamento da tentativa: ocupação, jogadas, contadores ou turno. A transição valida uma ação e produz o próximo estado segundo as regras. A interface apresenta o resultado e, quando aplicável, o persiste.
@@ -71,4 +79,5 @@ git diff 2354a3c -- dist
 ```
 
 Use a [manutenção](../manutencao/README.md) para planejar alterações de conteúdo e a [qualidade](../qualidade/README.md) para documentar evidências.
+
 
