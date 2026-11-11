@@ -1,0 +1,282 @@
+#versus-games .dobra-area {
+  width: 100%;
+  color: #30412f;
+}
+#versus-games .dobra-steps {
+  display: flex;
+  gap: 9px;
+  justify-content: center;
+  flex-wrap: wrap;
+  margin: 0 auto 13px;
+}
+#versus-games .dobra-steps span {
+  border: 1px solid #d5decb;
+  border-radius: 99px;
+  padding: 7px 12px;
+  font-size: 0.84rem;
+  color: #63705d;
+  background: #fffcf3;
+}
+#versus-games .dobra-steps .is-current {
+  background: #e1edce;
+  color: #30412f;
+  border-color: #73965e;
+  font-weight: 700;
+}
+#versus-games .dobra-steps .is-done {
+  color: #39674a;
+}
+#versus-games .dobra-map-heading {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 20px;
+  margin: 10px auto;
+  font-size: 0.9rem;
+}
+#versus-games .dobra-map-heading > span {
+  color: #63705d;
+}
+#versus-games .dobra-map {
+  width: 100%;
+  margin: 0 auto;
+}
+#versus-games .dobra-column-labels {
+  display: grid;
+  grid-template-columns: repeat(var(--dobra-columns), minmax(0, 1fr));
+  height: 26px;
+  margin-left: 22px;
+  text-align: center;
+  color: #63705d;
+  font-weight: 700;
+}
+#versus-games .dobra-map-row {
+  display: flex;
+  align-items: stretch;
+}
+#versus-games .dobra-row-labels {
+  flex: 0 0 22px;
+  display: grid;
+  grid-template-rows: repeat(var(--dobra-rows), minmax(0, 1fr));
+  width: 22px;
+  color: #63705d;
+  font-weight: 700;
+  text-align: center;
+}
+#versus-games .dobra-row-labels > span {
+  display: grid;
+  place-items: center;
+}
+#versus-games .dobra-grid {
+  width: calc(100% - 22px);
+  padding: 5px;
+  display: grid;
+  grid-template-columns: repeat(var(--dobra-columns), minmax(0, 1fr));
+  gap: 5px;
+  border: 1px solid #b4c0a7;
+  border-radius: 14px;
+  background: #fffdf7;
+}
+#versus-games .dobra-tile {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 4px;
+  aspect-ratio: 1;
+  min-width: 0;
+  padding: 6px 2px;
+  border: 1px solid #c4ccb8;
+  border-radius: 8px;
+  background: #f8faf3;
+  color: #30412f;
+  box-shadow: calc(var(--dobra-layers) * 0.6px)
+    calc(var(--dobra-layers) * 1.4px) 0 #d8d8c8;
+  cursor: pointer;
+}
+#versus-games .dobra-tile:disabled {
+  opacity: 1;
+  cursor: default;
+}
+#versus-games .dobra-tile:not(:disabled):hover {
+  border-color: #39674a;
+  background: #edf3e1;
+}
+#versus-games .dobra-tile.is-selected {
+  outline: 3px dashed #39674a;
+  outline-offset: -3px;
+}
+#versus-games .dobra-tile:focus-visible,
+#versus-games .dobra-edge:focus-visible {
+  outline: 3px solid #30412f;
+  outline-offset: 2px;
+}
+#versus-games .dobra-owner-0 {
+  border-color: #39674a;
+  background: #e1edce;
+}
+#versus-games .dobra-owner-1 {
+  border-color: #b99b46;
+  background: #f5e7b2;
+}
+#versus-games .dobra-area-number {
+  font-size: clamp(23px, 4vw, 36px);
+  line-height: 1.1;
+  font-weight: 800;
+}
+#versus-games .dobra-seals {
+  display: flex;
+  gap: 8px;
+  align-items: center;
+  justify-content: center;
+  font-size: clamp(10px, 1.7vw, 15px);
+  line-height: 1.3;
+}
+#versus-games .dobra-seals > span {
+  white-space: nowrap;
+}
+#versus-games .dobra-no-seal {
+  color: #718066;
+  font-size: clamp(9px, 1.5vw, 12px);
+}
+#versus-games .dobra-player-0 {
+  color: #39674a;
+}
+#versus-games .dobra-player-1 {
+  color: #705a1d;
+}
+#versus-games .dobra-new-seal {
+  position: absolute;
+  right: 1px;
+  top: 1px;
+  padding: 2px 4px;
+  border-radius: 8px;
+  background: #fffcf3;
+  font-size: 13px;
+  font-weight: 700;
+}
+#versus-games .dobra-reserves {
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+  flex-wrap: wrap;
+  margin: 13px auto 6px;
+  font-size: 0.88rem;
+}
+#versus-games .dobra-tip,
+#versus-games .dobra-preview-note {
+  max-width: 640px;
+  margin: 10px auto 13px;
+  text-align: center;
+  line-height: 1.5;
+  font-size: 0.9rem;
+}
+#versus-games .dobra-tip {
+  color: #63705d;
+}
+#versus-games .dobra-preview-note {
+  padding: 10px 14px;
+  background: #eaf0db;
+  border-radius: 11px;
+}
+#versus-games .dobra-edge-controls {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 9px;
+  max-width: 570px;
+  margin: 0 auto;
+}
+#versus-games .dobra-edge {
+  display: grid;
+  gap: 3px;
+  justify-items: center;
+  align-content: center;
+  min-height: 88px;
+  padding: 9px 4px;
+  border: 2px solid #b7c4a9;
+  border-radius: 12px;
+  background: #fffdf7;
+  color: #30412f;
+  cursor: pointer;
+}
+#versus-games .dobra-edge-arrow {
+  font-size: 25px;
+  line-height: 1;
+}
+#versus-games .dobra-edge small {
+  color: #63705d;
+}
+#versus-games .dobra-edge:disabled {
+  cursor: default;
+  opacity: 0.45;
+}
+#versus-games .dobra-edge.is-selected {
+  background: #e1edce;
+  border-color: #39674a;
+}
+#versus-games .dobra-result-scene {
+  max-width: 350px;
+  margin: 10px auto;
+  text-align: center;
+}
+#versus-games .dobra-result-scene > div {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 8px;
+  margin: 10px auto;
+  width: min(100%, 260px);
+}
+#versus-games .dobra-result-tile {
+  display: grid;
+  place-items: center;
+  gap: 6px;
+  padding: 10px;
+  min-height: 76px;
+  border: 1px solid #b4c0a7;
+  border-radius: 8px;
+}
+#versus-games .dobra-result-tile > b {
+  font-size: 28px;
+}
+#versus-games .dobra-result-scene p {
+  font-size: 0.9rem;
+  line-height: 1.4;
+  color: #63705d;
+}
+@media (max-width: 500px) {
+  #versus-games .dobra-grid {
+    padding: 3px;
+    gap: 3px;
+  }
+  #versus-games .dobra-tile {
+    padding: 4px 1px;
+    gap: 3px;
+    border-radius: 6px;
+  }
+  #versus-games .dobra-seals {
+    gap: 4px;
+  }
+  #versus-games .dobra-edge-controls {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 7px;
+  }
+  #versus-games .dobra-edge {
+    min-height: 72px;
+    grid-template-columns: 30px 1fr;
+    grid-template-rows: 1fr 1fr;
+    column-gap: 4px;
+    padding: 7px 10px;
+  }
+  #versus-games .dobra-edge-arrow {
+    grid-row: 1 / 3;
+    align-self: center;
+  }
+  #versus-games .dobra-map-heading {
+    gap: 12px;
+    font-size: 0.83rem;
+  }
+  #versus-games .dobra-new-seal {
+    font-size: 10px;
+  }
+}

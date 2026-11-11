@@ -1,0 +1,278 @@
+#versus-games .mosaico-layout {
+  width: 100%;
+  color: #30412f;
+}
+#versus-games .mosaico-orientation-controls {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 0.6rem;
+  max-width: 420px;
+  margin: 0 auto 0.6rem;
+}
+#versus-games .mosaico-orientation {
+  display: grid;
+  justify-items: center;
+  gap: 0.25rem;
+  border: 1px solid #c4ceb6;
+  border-radius: 14px;
+  padding: 0.5rem;
+  background: #f7f8ef;
+  color: #30412f;
+  cursor: pointer;
+  min-height: 90px;
+}
+#versus-games .mosaico-orientation .mosaico-tile {
+  width: 54px;
+  max-width: 100%;
+}
+#versus-games .mosaico-orientation span {
+  text-transform: capitalize;
+  font-size: 0.8rem;
+  font-weight: 700;
+}
+#versus-games .mosaico-orientation-selected {
+  outline: 2px solid #39674a;
+  outline-offset: 2px;
+  background: #e5eed6;
+}
+#versus-games .mosaico-orientation:focus-visible {
+  outline: 3px solid #30412f;
+  outline-offset: 3px;
+}
+#versus-games .mosaico-instruction {
+  text-align: center;
+  line-height: 1.5;
+  margin: 0.7rem auto 1.1rem;
+  max-width: 42rem;
+  min-height: 1.5em;
+}
+#versus-games .mosaico-board-wrap {
+  position: relative;
+  width: min(calc(100% - 26px), 650px);
+  margin: 2rem auto 1rem;
+}
+#versus-games .mosaico-board {
+  position: relative;
+  padding: 0;
+  border: 2px solid #c3cdb6;
+  border-radius: 17px;
+  background: #fdfbf2;
+  box-shadow:
+    0 0 0 5px #fffcf3,
+    0 0 0 6px #d6ddcb;
+}
+#versus-games .mosaico-grid {
+  display: grid;
+  grid-template-columns: repeat(5, minmax(0, 1fr));
+  aspect-ratio: 1;
+}
+#versus-games .mosaico-cell {
+  position: relative;
+  margin: 3px;
+  padding: 0;
+  border: 0;
+  border-radius: 9px;
+  background: transparent;
+  min-width: 0;
+  min-height: 0;
+  aspect-ratio: 1;
+  cursor: pointer;
+  box-shadow: none;
+}
+#versus-games .mosaico-cell:disabled {
+  opacity: 1;
+  cursor: default;
+}
+#versus-games .mosaico-cell:focus-visible {
+  outline: 3px solid #30412f;
+  outline-offset: -3px;
+  z-index: 2;
+}
+#versus-games .mosaico-empty {
+  background: #f1f4e9;
+  border: 1px solid #d7decc;
+}
+#versus-games .mosaico-empty:not(:disabled):hover {
+  background: #e4edd7;
+  border-color: #73965e;
+}
+#versus-games .mosaico-empty-center {
+  color: #aebba0;
+  font-size: clamp(1rem, 3vw, 1.7rem);
+}
+#versus-games .mosaico-cell-name {
+  position: absolute;
+  left: 50%;
+  top: 5%;
+  transform: translateX(-50%);
+  font-size: clamp(0.55rem, 1.25vw, 0.75rem);
+  color: #63705d;
+  line-height: 1;
+  pointer-events: none;
+}
+#versus-games .mosaico-empty .mosaico-cell-name {
+  top: auto;
+  bottom: 8%;
+  color: #84917b;
+}
+#versus-games .mosaico-pending {
+  outline: 3px dashed #39674a;
+  outline-offset: -3px;
+  z-index: 1;
+}
+#versus-games .mosaico-tile {
+  width: 100%;
+  height: 100%;
+  display: block;
+  overflow: visible;
+}
+#versus-games .mosaico-tile-body {
+  fill: #fffcf3;
+  stroke: #b6bda9;
+  stroke-width: 1.3;
+}
+#versus-games .mosaico-corner > :first-child {
+  fill: #39674a;
+}
+#versus-games .mosaico-corner.mosaico-color-1 > :first-child {
+  fill: #b99b46;
+}
+#versus-games .mosaico-corner > :nth-child(2) {
+  fill: #fffdf6;
+}
+#versus-games .mosaico-tile-center {
+  fill: none;
+  stroke: #c6cebb;
+  stroke-width: 1.1;
+}
+#versus-games .mosaico-column-labels {
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: -1.8rem;
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  text-align: center;
+  color: #63705d;
+  font-weight: 700;
+  font-size: 0.9rem;
+}
+#versus-games .mosaico-row-labels {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: -1.45rem;
+  display: grid;
+  grid-template-rows: repeat(5, 1fr);
+  align-items: center;
+  color: #63705d;
+  font-weight: 700;
+  font-size: 0.9rem;
+}
+#versus-games .mosaico-seals {
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+}
+#versus-games .mosaico-seal {
+  position: absolute;
+  transform: translate(-50%, -50%);
+  display: grid;
+  place-items: center;
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  color: #adb9a1;
+  font-size: 0.75rem;
+  line-height: 1;
+}
+#versus-games .mosaico-seal-complete {
+  width: clamp(16px, 3vw, 25px);
+  height: clamp(16px, 3vw, 25px);
+  background: #fffcf3;
+  border: 2px solid #b4bea8;
+  color: #84917b;
+  z-index: 3;
+  box-shadow: 0 1px 3px #30412f20;
+}
+#versus-games .mosaico-seal[data-owner="0"] {
+  border-color: #39674a;
+  color: #39674a;
+}
+#versus-games .mosaico-seal[data-owner="1"] {
+  border-color: #b99b46;
+  color: #8b7027;
+}
+#versus-games .mosaico-new-seal {
+  outline: 3px solid #e0e9ca;
+  outline-offset: 2px;
+}
+#versus-games .mosaico-tools {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.7rem;
+  justify-content: center;
+  align-items: center;
+  margin: 1rem 0;
+  font-size: 0.9rem;
+}
+#versus-games .mosaico-tools button {
+  min-height: 44px;
+  border: 1px solid #b4c0a7;
+  border-radius: 10px;
+  background: #f1f3e7;
+  color: #30412f;
+  padding: 0.5rem 0.9rem;
+  cursor: pointer;
+}
+#versus-games .mosaico-tools button:focus-visible {
+  outline: 3px solid #39674a;
+  outline-offset: 2px;
+}
+#versus-games .mosaico-key {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 0.55rem 1rem;
+  font-size: 0.82rem;
+  color: #63705d;
+}
+#versus-games .mosaico-key span:first-child {
+  color: #39674a;
+  font-weight: 700;
+}
+#versus-games .mosaico-key span:nth-child(2) {
+  color: #705a1d;
+  font-weight: 700;
+}
+#versus-games .mosaico-result {
+  display: grid;
+  justify-items: center;
+  gap: 0.4rem;
+  text-align: center;
+}
+#versus-games .mosaico-result-tile {
+  width: 80px;
+  height: 80px;
+  transform: rotate(8deg);
+  margin-bottom: 0.4rem;
+}
+#versus-games .mosaico-result span {
+  font-size: 0.9rem;
+  color: #63705d;
+}
+@media (max-width: 480px) {
+  #versus-games .mosaico-orientation-controls {
+    gap: 0.4rem;
+  }
+  #versus-games .mosaico-orientation {
+    padding: 0.35rem;
+    min-height: 83px;
+  }
+  #versus-games .mosaico-orientation span {
+    font-size: 0.72rem;
+  }
+  #versus-games .mosaico-cell {
+    margin: 2px;
+  }
+}

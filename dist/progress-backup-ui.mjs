@@ -13,6 +13,7 @@ import {
 const RECORD_NAMES = Object.freeze({
   "intuicao.advanced-hidden": "Preferência de opções avançadas",
   "intuicao.answers.v1": "Dicas e respostas consultadas",
+  "intuicao.versus.v1": "Novos versus · partidas e preferências",
   "intuicao.broto.v1": "Broto · partida e preferências",
   "intuicao.campaign.cut.progress.v1": "Campanha Corte certo · conclusões",
   "intuicao.campaign.light.progress.v1": "Campanha Reflexos · conclusões",

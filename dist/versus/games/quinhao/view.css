@@ -1,0 +1,242 @@
+#versus-games .quinhao-area {
+  width: 100%;
+  color: #30412f;
+}
+#versus-games .quinhao-plot {
+  position: relative;
+  width: min(100%, 690px);
+  aspect-ratio: 1;
+  margin: 0 auto;
+}
+#versus-games .quinhao-rope {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+}
+#versus-games .quinhao-basket {
+  position: absolute;
+  display: grid;
+  grid-template-rows: 14px 1fr;
+  width: clamp(36px, 8.4%, 58px);
+  aspect-ratio: 1 / 1.16;
+  padding: 0;
+  transform: translate(-50%, -50%);
+  border: 2px solid transparent;
+  border-radius: 50%;
+  background: #fffcf3;
+  color: #63705d;
+  cursor: pointer;
+}
+#versus-games .quinhao-basket:disabled {
+  opacity: 1;
+  cursor: default;
+}
+#versus-games .quinhao-basket:not(:disabled):hover {
+  background: #e1edce;
+  border-color: #73965e;
+}
+#versus-games .quinhao-basket:focus-visible,
+#versus-games .quinhao-choice:focus-visible {
+  outline: 3px solid #30412f;
+  outline-offset: 3px;
+}
+#versus-games .quinhao-basket.is-offered {
+  border: 2px dashed #39674a;
+  background: #eaf0db;
+}
+#versus-games .quinhao-basket-number {
+  font-family: inherit;
+  font-size: 12px;
+  font-weight: 700;
+  line-height: 14px;
+  text-align: center;
+}
+#versus-games .quinhao-fruit {
+  display: block;
+  width: 100%;
+  height: 100%;
+  overflow: visible;
+}
+#versus-games .quinhao-center {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 52%;
+  transform: translate(-50%, -50%);
+  display: grid;
+  gap: 9px;
+}
+#versus-games .quinhao-stage {
+  color: #63705d;
+  font-size: 0.85rem;
+  font-weight: 700;
+  text-align: center;
+}
+#versus-games .quinhao-deposit {
+  padding: 10px 12px;
+  border: 1px solid #b4c0a7;
+  border-radius: 13px;
+  background: #fffdf7;
+  box-shadow: 0 2px 0 #e4e4d8;
+}
+#versus-games .quinhao-player-0 {
+  border-color: #73965e;
+}
+#versus-games .quinhao-player-1 {
+  border-color: #b99b46;
+}
+#versus-games .quinhao-deposit-heading {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 4px;
+  font-size: 0.9rem;
+}
+#versus-games .quinhao-player-0 strong {
+  color: #39674a;
+}
+#versus-games .quinhao-player-1 strong {
+  color: #705a1d;
+}
+#versus-games .quinhao-deposit-heading > span {
+  color: #63705d;
+  font-size: 0.8rem;
+}
+#versus-games .quinhao-counts {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 3px;
+  margin-top: 4px;
+}
+#versus-games .quinhao-counts > span {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-width: 0;
+}
+#versus-games .quinhao-counts .quinhao-fruit {
+  width: 33px;
+  height: 33px;
+}
+#versus-games .quinhao-counts b {
+  min-width: 1ch;
+  font-size: 1rem;
+}
+#versus-games .quinhao-center > p {
+  margin: 0;
+  font-size: 0.8rem;
+  text-align: center;
+  color: #63705d;
+}
+#versus-games .quinhao-tip,
+#versus-games .quinhao-preview-note {
+  max-width: 650px;
+  margin: 10px auto;
+  text-align: center;
+  line-height: 1.5;
+  font-size: 0.9rem;
+}
+#versus-games .quinhao-tip {
+  color: #63705d;
+}
+#versus-games .quinhao-preview-note {
+  padding: 10px 14px;
+  border-radius: 10px;
+  background: #eaf0db;
+  color: #30412f;
+}
+#versus-games .quinhao-choice-label {
+  margin: 14px 0 8px;
+  text-align: center;
+  font-weight: 700;
+}
+#versus-games .quinhao-choices {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 10px;
+  max-width: 430px;
+  margin: 0 auto 12px;
+}
+#versus-games .quinhao-choice {
+  display: grid;
+  justify-items: center;
+  padding: 9px;
+  border: 2px solid #c5cdbb;
+  border-radius: 14px;
+  color: #30412f;
+  background: #fffcf3;
+  cursor: pointer;
+}
+#versus-games .quinhao-choice .quinhao-fruit {
+  width: 60px;
+  height: 60px;
+}
+#versus-games .quinhao-choice > span {
+  font-size: 0.76rem;
+}
+#versus-games .quinhao-choice.is-selected {
+  border-color: #39674a;
+  background: #e1edce;
+}
+#versus-games .quinhao-choice:disabled {
+  cursor: default;
+  opacity: 0.7;
+}
+#versus-games .quinhao-plot.is-finished {
+  aspect-ratio: auto;
+  min-height: 290px;
+}
+#versus-games .quinhao-plot.is-finished .quinhao-center {
+  width: min(360px, 90%);
+}
+#versus-games .quinhao-result-scene {
+  margin: 10px auto;
+  max-width: 420px;
+  text-align: center;
+}
+#versus-games .quinhao-result-scene > div {
+  display: flex;
+  justify-content: center;
+  gap: 12px;
+  height: 68px;
+}
+#versus-games .quinhao-result-scene .quinhao-fruit {
+  width: 68px;
+}
+#versus-games .quinhao-result-scene p {
+  margin: 6px 0;
+  color: #63705d;
+}
+@media (max-width: 500px) {
+  #versus-games .quinhao-plot {
+    aspect-ratio: 0.79;
+  }
+  #versus-games .quinhao-center {
+    width: 51%;
+    gap: 6px;
+  }
+  #versus-games .quinhao-deposit {
+    padding: 7px 6px;
+  }
+  #versus-games .quinhao-deposit-heading {
+    font-size: 0.74rem;
+  }
+  #versus-games .quinhao-deposit-heading > span {
+    font-size: 0.68rem;
+  }
+  #versus-games .quinhao-counts .quinhao-fruit {
+    width: 23px;
+    height: 25px;
+  }
+  #versus-games .quinhao-counts b {
+    font-size: 0.82rem;
+  }
+  #versus-games .quinhao-center > p {
+    font-size: 0.68rem;
+  }
+  #versus-games .quinhao-stage {
+    font-size: 0.76rem;
+  }
+}

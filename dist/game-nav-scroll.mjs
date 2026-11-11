@@ -1,18 +1,22 @@
-// Rolagem e foco ao navegar entre cartões, sem alterar a partida.
-// Navigation-only enhancement: never changes a game, progress, or level state.
-const ORIGINALS = new Set(['light', 'cut']);
-const COLLECTIONS = new Set(['elo', 'prumo', 'pacto', 'desvio']);
+// A rolagem da navegação não altera partidas, progresso ou estados de níveis.
+const ORIGINALS = new Set(["light", "cut"]);
+const COLLECTIONS = new Set(["elo", "prumo", "pacto", "desvio"]);
 
 export function selectionSelector(button) {
- if (button?.dataset?.logic !== undefined) return '#logic-games > .level-screen';
+  if (button?.dataset?.versus !== undefined)
+    return "#versus-games > .level-screen";
+  if (button?.dataset?.logic !== undefined)
+    return "#logic-games > .level-screen";
   if (button?.dataset?.infoGame !== undefined) return null;
-  if (ORIGINALS.has(button?.dataset?.game)) return '#selection';
-  if (COLLECTIONS.has(button?.dataset?.collection)) return '#collection > .level-screen';
-  if (button?.dataset?.sintonia !== undefined) return '#sintonia > .level-screen';
-  if (button?.dataset?.repasse !== undefined) return '#repasse > .level-screen';
-  if (button?.dataset?.cerco !== undefined) return '#cerco > .level-screen';
-  if (button?.dataset?.broto !== undefined) return '#broto > .level-screen';
-  if (button?.dataset?.orbita !== undefined) return '#orbita > .level-screen';
+  if (ORIGINALS.has(button?.dataset?.game)) return "#selection";
+  if (COLLECTIONS.has(button?.dataset?.collection))
+    return "#collection > .level-screen";
+  if (button?.dataset?.sintonia !== undefined)
+    return "#sintonia > .level-screen";
+  if (button?.dataset?.repasse !== undefined) return "#repasse > .level-screen";
+  if (button?.dataset?.cerco !== undefined) return "#cerco > .level-screen";
+  if (button?.dataset?.broto !== undefined) return "#broto > .level-screen";
+  if (button?.dataset?.orbita !== undefined) return "#orbita > .level-screen";
   return null;
 }
 
@@ -26,7 +30,7 @@ export function easeNavigation(progress) {
 }
 
 export function initGameNavScroll(doc = document, win = window) {
-  const nav = doc.querySelector('#main > .games');
+  const nav = doc.querySelector("#main > .games");
   if (!nav) return () => {};
   let revision = 0,
     frame = null;
@@ -35,42 +39,65 @@ export function initGameNavScroll(doc = document, win = window) {
     if (frame !== null) win.cancelAnimationFrame(frame);
     frame = null;
   };
-  const instant = (top, left = win.scrollX) => win.scrollTo({ top, left, behavior: 'instant' });
-  const reduced = () => win.matchMedia?.('(prefers-reduced-motion: reduce)').matches;
+  const instant = (top, left = win.scrollX) =>
+    win.scrollTo({ top, left, behavior: "instant" });
+  const reduced = () =>
+    win.matchMedia?.("(prefers-reduced-motion: reduce)").matches;
   const onClick = (event) => {
     const button = event.target?.closest?.(
-      'button[data-game], button[data-collection], button[data-sintonia], button[data-repasse], button[data-orbita], button[data-broto], button[data-cerco], button[data-logic]',
+      "button[data-game], button[data-collection], button[data-sintonia], button[data-repasse], button[data-orbita], button[data-broto], button[data-cerco], button[data-logic], button[data-versus]",
     );
     const selector =
-      button && nav.contains(button) && !button.disabled && selectionSelector(button);
+      button &&
+      nav.contains(button) &&
+      !button.disabled &&
+      selectionSelector(button);
     cancel();
     if (!selector || (event.button !== undefined && event.button !== 0)) return;
     const token = revision,
       originY = win.scrollY,
       originX = win.scrollX;
-    // The existing synchronous onclick renders and focuses its own heading. Restore
-    // only that click's scroll before painting, preserving focus and every handler.
+    // A abertura do jogo define seu próprio foco. A rolagem preserva os handlers
+    // e usa somente o deslocamento associado a este clique.
     win.queueMicrotask(() => {
       if (revision !== token) return;
-      if (win.scrollY !== originY || win.scrollX !== originX) instant(originY, originX);
+      if (win.scrollY !== originY || win.scrollX !== originX)
+        instant(originY, originX);
       frame = win.requestAnimationFrame(() => {
         frame = win.requestAnimationFrame(() => {
           frame = null;
-          if (revision !== token || button.getAttribute('aria-pressed') !== 'true') return;
+          if (
+            revision !== token ||
+            button.getAttribute("aria-pressed") !== "true"
+          )
+            return;
           const target = doc.querySelector(selector);
-          if (!target || target.closest('[hidden]') || !target.getClientRects().length) return;
+          if (
+            !target ||
+            target.closest("[hidden]") ||
+            !target.getClientRects().length
+          )
+            return;
           const maximum = Math.max(
             0,
-            (doc.scrollingElement || doc.documentElement).scrollHeight - win.innerHeight,
+            (doc.scrollingElement || doc.documentElement).scrollHeight -
+              win.innerHeight,
           );
-          const end = selectionScrollTop(target.getBoundingClientRect().top, win.scrollY, maximum);
+          const end = selectionScrollTop(
+            target.getBoundingClientRect().top,
+            win.scrollY,
+            maximum,
+          );
           const start = win.scrollY,
             distance = end - start;
           if (reduced() || Math.abs(distance) < 1) {
             instant(end);
             return;
           }
-          const duration = Math.min(760, Math.max(420, Math.abs(distance) * 0.45));
+          const duration = Math.min(
+            760,
+            Math.max(420, Math.abs(distance) * 0.45),
+          );
           let began;
           const step = (now) => {
             frame = null;
@@ -89,21 +116,29 @@ export function initGameNavScroll(doc = document, win = window) {
       });
     });
   };
-  // Capture records the viewport before the application's target onclick focuses.
-  doc.addEventListener('click', onClick, true);
-  const interruptions = ['wheel', 'touchstart', 'touchmove', 'pointerdown', 'keydown'];
+  // A captura registra a posição antes de o jogo mover o foco para seu título.
+  doc.addEventListener("click", onClick, true);
+  const interruptions = [
+    "wheel",
+    "touchstart",
+    "touchmove",
+    "pointerdown",
+    "keydown",
+  ];
   for (const type of interruptions)
     win.addEventListener(type, cancel, { capture: true, passive: true });
   return () => {
     cancel();
-    doc.removeEventListener('click', onClick, true);
-    for (const type of interruptions) win.removeEventListener(type, cancel, true);
+    doc.removeEventListener("click", onClick, true);
+    for (const type of interruptions)
+      win.removeEventListener(type, cancel, true);
   };
 }
 
-if (typeof document !== 'undefined' && typeof window !== 'undefined') {
-  if (document.readyState === 'loading')
-    document.addEventListener('DOMContentLoaded', () => initGameNavScroll(), { once: true });
+if (typeof document !== "undefined" && typeof window !== "undefined") {
+  if (document.readyState === "loading")
+    document.addEventListener("DOMContentLoaded", () => initGameNavScroll(), {
+      once: true,
+    });
   else initGameNavScroll();
 }
-

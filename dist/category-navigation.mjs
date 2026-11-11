@@ -1,14 +1,28 @@
+import { VERSUS_GAME_IDS } from "./versus/metadata.mjs";
 import { renderAchievements, readAchievements } from "./achievements.mjs";
 
 // A navegação controla somente a tela. Cada jogo continua responsável pelo save.
 export const CATEGORY_GAMES = Object.freeze({
   intuicao: ["light", "cut"],
-  logica: ["elo", "prumo", "pacto", "sintonia", "repasse", "orbita", "divisa", "pulso", "foz", "refugio", "mirante", "renovo"],
-  versus: ["desvio", "broto", "cerco"],
+  logica: [
+    "elo",
+    "prumo",
+    "pacto",
+    "sintonia",
+    "repasse",
+    "orbita",
+    "divisa",
+    "pulso",
+    "foz",
+    "refugio",
+    "mirante",
+    "renovo",
+  ],
+  versus: ["desvio", "broto", "cerco", ...VERSUS_GAME_IDS],
 });
 
 const CARD_SELECTOR =
-  "[data-game],[data-collection],[data-sintonia],[data-repasse],[data-orbita],[data-broto],[data-cerco],[data-logic]";
+  "[data-game],[data-collection],[data-sintonia],[data-repasse],[data-orbita],[data-broto],[data-cerco],[data-logic],[data-versus]";
 const CATEGORY_NAMES = {
   intuicao: "Intuição",
   logica: "Raciocínio lógico",
@@ -21,7 +35,9 @@ const cardGame = (card) =>
   card.dataset.repasse ||
   card.dataset.orbita ||
   card.dataset.broto ||
-  card.dataset.cerco || card.dataset.logic;
+  card.dataset.cerco ||
+  card.dataset.logic ||
+  card.dataset.versus;
 
 export function initCategoryNavigation({ hideGames }) {
   const navigation = document.querySelector("#main > .games");
@@ -186,4 +202,3 @@ export function initCategoryNavigation({ hideGames }) {
   });
   restoreRoute();
 }
-
