@@ -7,9 +7,9 @@ A implementação parte da versão 188 do site. No GitHub, preserva a revisão
 mudanças de apresentação que já compõem o site. Os oito jogos novos passam a
 ocupar as posições 18 a 25 do catálogo.
 
-Foram aprovados **345 testes selecionados**, sem falhas: 339 testes de motores,
-campanhas e plataforma, mais seis testes de cancelamento e contingência do
-serviço de busca. O recorte é reproduzido pelos comandos abaixo e pela CI.
+Foram aprovados **341 testes selecionados**, sem falhas: 247 testes dos motores
+anteriores, campanhas e plataforma, mais 94 testes dos novos duelos e serviços
+compartilhados, incluindo seis de cancelamento e contingência da busca. O recorte é reproduzido pelos comandos abaixo e pela CI.
 
 ```bash
 node --test tests/broto-engine.test.mjs tests/cerco-engine.test.mjs tests/sintonia-engine.test.mjs tests/repasse-engine.test.mjs tests/orbita-engine.test.mjs
@@ -55,6 +55,14 @@ O treino preserva a seleção das sugestões para permitir editar giro, borda ou
 destino antes de confirmar. Em LASTRO, a prévia sugerida E2→3 pôde ser trocada
 por E2→2, sem consumir ajuste. O computador também respondeu legalmente a E1→2.
 A navegação de volta aos jogos anteriores foi conferida em PRUMO.
+
+## Captura da interface implementada
+
+A captura abaixo foi feita na prévia local durante a conferência real de LASTRO.
+Ela mostra uma sugestão editada antes da confirmação: o aparelho continua com
+zero ajustes, enquanto a prévia apresenta as novas cargas e o desvio.
+
+![LASTRO na interface: prévia de E2 da marca 1 para 2, com desvio de −2 e confirmação disponível](../imagens/versus/lastro-interface.png)
 
 ## Limites da verificação
 

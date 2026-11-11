@@ -15,7 +15,7 @@ import {
 import { chooseMove } from "../../dist/versus/search.mjs";
 import {
   createVersusStorage,
-  VERSUS_STORAGE_KEY,
+  VERSUS_STORAGE_ID,
 } from "../../dist/versus/storage.mjs";
 import {
   createProgressBackup,
@@ -155,11 +155,11 @@ test("oito partidas reais sobrevivem a backup e restauração, incluindo o futur
     records.set(id, record);
     assert.equal(save.save(id, record), true);
   }
-  const raw = source.getItem(VERSUS_STORAGE_KEY);
+  const raw = source.getItem(VERSUS_STORAGE_ID);
   const backup = createProgressBackup(source);
   const target = memoryStorage();
   applyProgressRestore(backup, previewProgressRestore(backup, target), target);
-  assert.equal(target.getItem(VERSUS_STORAGE_KEY), raw);
+  assert.equal(target.getItem(VERSUS_STORAGE_ID), raw);
   const restored = createVersusStorage(target);
   for (const [id, record] of records) {
     const { engine } = await loadVersusGame(id);
@@ -185,11 +185,11 @@ test("salvar relê o envelope e conserva alterações de outro jogo em outra aba
 
 test("registro corrompido ou futuro permanece intacto e falha de quota é comunicada", () => {
   for (const raw of ["{incompleto", '{"version":2,"games":{}}']) {
-    const storage = memoryStorage({ [VERSUS_STORAGE_KEY]: raw });
+    const storage = memoryStorage({ [VERSUS_STORAGE_ID]: raw });
     const save = createVersusStorage(storage);
     assert.equal(save.read("acorde"), null);
     assert.equal(save.save("acorde", {}), false);
-    assert.equal(storage.getItem(VERSUS_STORAGE_KEY), raw);
+    assert.equal(storage.getItem(VERSUS_STORAGE_ID), raw);
     assert.ok(save.warning);
   }
   const storage = memoryStorage();

@@ -66,6 +66,12 @@
         "docs/versus/README.md"
       ],
       "source": "Pranchas conceituais elaboradas na conversa de design dos oito jogos Versus e incorporadas por solicitação do titular em 2026-11-11; distinguem-se de capturas da interface implementada."
+    },
+    "versus-interface": {
+      "evidence": [
+        "docs/versus/VERIFICACAO.md"
+      ],
+      "source": "Captura da interface implementada, realizada pela navegação real na prévia local em 2026-11-11; usa elementos vetoriais do próprio jogo LASTRO."
     }
   },
   "assets": [
@@ -1514,6 +1520,13 @@
       "group": "versus-conceitos",
       "status": "pending",
       "reviewBasis": "concept-plates-requested-by-owner"
+    },
+    {
+      "path": "docs/imagens/versus/lastro-interface.png",
+      "sha256": "712834eec27c8d3c1941ed875c456d9f3583229345ffef243a13031f782cbfd8",
+      "group": "versus-interface",
+      "status": "pending",
+      "reviewBasis": "implementation-preview-capture"
     }
   ],
   "rightsReview": {

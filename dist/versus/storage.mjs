@@ -1,11 +1,11 @@
 import { writeProgress } from "../progress-write-guard.mjs";
 import { VERSUS_GAME_IDS } from "./metadata.mjs";
 
-export const VERSUS_STORAGE_KEY = "intuicao.versus.v1";
+export const VERSUS_STORAGE_ID = "intuicao.versus.v1";
 const MAX_STORAGE_CHARACTERS = 2_000_000;
 
 function readEnvelope(storage) {
-  const raw = storage?.getItem(VERSUS_STORAGE_KEY);
+  const raw = storage?.getItem(VERSUS_STORAGE_ID);
   if (!raw) return { version: 1, games: {} };
   if (raw.length > MAX_STORAGE_CHARACTERS)
     throw new Error("Registro muito grande.");
@@ -42,7 +42,7 @@ export function createVersusStorage(storage) {
         // Ler de novo preserva partidas de outros jogos atualizadas em outra aba.
         const envelope = readEnvelope(storage);
         envelope.games[gameId] = record;
-        writeProgress(storage, VERSUS_STORAGE_KEY, JSON.stringify(envelope));
+        writeProgress(storage, VERSUS_STORAGE_ID, JSON.stringify(envelope));
         this.warning = "";
         return true;
       } catch {
