@@ -1,3 +1,5 @@
+import { LOGIC_CAMPAIGNS } from './logica/catalog-summary.mjs';
+import { normalizeLogicData, LOGIC_STORAGE_KEY } from './logica/storage.mjs';
 // Projeção somente de leitura: preserva saves e compara identidades, nunca posições.
 import { lightLevels, cutLevels } from "./levels.mjs";
 import { GEOMETRY_LEVELS } from "./geometry-levels.mjs";
@@ -32,6 +34,7 @@ const lightBands = [
   "sage",
 ];
 export const ACHIEVEMENT_GAMES = Object.freeze([
+  ...LOGIC_CAMPAIGNS.map(game => ({ ...game, tier: level => tiers[level.difficulty] })),
   {
     id: "light",
     name: "Reflexos",
@@ -78,6 +81,9 @@ export const ACHIEVEMENT_GAMES = Object.freeze([
     tier: (_, i) => campaignTier(i + 1)?.name,
   },
 ]);
+const campaignCount = ACHIEVEMENT_GAMES.length;
+const totalCampaignLevels = ACHIEVEMENT_GAMES.reduce((total, game) => total + game.levels.length, 0);
+const halfwayTarget = Math.ceil(totalCampaignLevels / 2);
 const definitions = [
   [
     "first",
@@ -122,8 +128,8 @@ const definitions = [
   [
     "all-games",
     "Muitas formas de pensar",
-    "Conclua ao menos 1 nível em cada uma das 8 campanhas.",
-    8,
+    `Conclua ao menos 1 nível em cada uma das ${campaignCount} campanhas.`,
+    campaignCount,
     "explored",
     "⊞",
   ],
@@ -146,16 +152,16 @@ const definitions = [
   [
     "half",
     "Metade do laboratório",
-    "Conclua 320 níveis diferentes das campanhas atuais.",
-    320,
+    `Conclua ${halfwayTarget} níveis diferentes das campanhas atuais.`,
+    halfwayTarget,
     "total",
     "◐",
   ],
   [
     "collection",
     "Um laboratório inteiro",
-    "Conclua os 640 níveis das campanhas atuais.",
-    640,
+    `Conclua os ${totalCampaignLevels} níveis das campanhas atuais.`,
+    totalCampaignLevels,
     "total",
     "✳",
   ],
@@ -219,6 +225,11 @@ export function readAchievements(storage) {
         "Um registro de campanha não pôde ser interpretado. Ele foi preservado.",
       );
     }
+  }
+  const logic = normalizeLogicData(read(LOGIC_STORAGE_KEY));
+  for (const game of LOGIC_CAMPAIGNS) {
+    const records = logic.games[game.id]?.completed ?? {};
+    completed[game.id] = new Set(game.levels.filter(level => records[level.id]?.version === level.version).map(level => level.id));
   }
   let total = 0,
     hard = 0,
@@ -285,6 +296,7 @@ export function renderAchievements(container, storage) {
   const data =
     arguments.length > 1 ? readAchievements(storage) : readAchievements();
   const unlocked = data.achievements.filter((item) => item.unlocked).length;
-  container.innerHTML = `<div class="achievement-heading"><p class="eyebrow">CADA DESCOBERTA CONTA</p><h2 id="achievements-title" tabindex="-1">Suas conquistas</h2><p>Um registro do que você já descobriu, no seu ritmo.</p></div><div class="achievement-summary" aria-label="Resumo do progresso"><div><strong>${data.total}<span> / ${data.available}</span></strong><p>Níveis concluídos</p></div><div><strong>${unlocked}<span> / ${data.achievements.length}</span></strong><p>Conquistas desbloqueadas</p></div><div><strong>${data.hard}</strong><p>Desafios avançados concluídos</p></div></div>${data.warnings.map((w) => `<p class="achievement-warning" role="status">${esc(w)}</p>`).join("")}<ul class="achievement-grid" aria-label="Conquistas">${data.achievements.map((a) => `<li class="achievement-card ${a.unlocked ? "is-unlocked" : ""}"><span class="achievement-symbol" aria-hidden="true">${a.symbol}</span><p class="achievement-state">${a.unlocked ? "Desbloqueada" : "Em descoberta"}</p><h3>${a.name}</h3><p>${a.description}</p><label for="achievement-${a.id}">${a.current} de ${a.target}</label><progress id="achievement-${a.id}" value="${a.current}" max="${a.target}">${a.current} de ${a.target}</progress></li>`).join("")}</ul><section class="achievement-campaigns" aria-labelledby="achievement-campaign-title"><h3 id="achievement-campaign-title">Seu caminho em cada jogo</h3><ul>${data.games.map((g) => `<li><a href="?game=${g.id}">${g.name}<span>${g.completed} / ${g.total} concluídos <span aria-hidden="true">→</span></span></a></li>`).join("")}</ul></section><details class="achievement-criteria"><summary>Como as conquistas são contadas</summary><p>Contamos uma vez cada nível das 8 campanhas atuais cuja conclusão está salva neste navegador. Repetir o nível não aumenta o total. Conclusões assistidas também contam.</p><p>Desafios avançados são os níveis das etapas Avançado, Mestre e Modo Sábio, conforme a classificação editorial de cada jogo. Não significa dificuldade calibrada com jogadores.</p><p>Modo Sem Parar, fases importadas, campanhas antigas arquivadas e partidas Versus não entram nesta contagem. Não inferimos conclusões a partir de tentativas, acesso a gabaritos ou níveis visitados. As conquistas refletem os registros existentes, sem inventar a data da descoberta.</p><p>Seu progresso continua local: não é sincronizado entre dispositivos. Limpar os dados do navegador pode removê-lo. Abrir esta tela não altera nem apaga seus saves.</p></details>`;
+  container.innerHTML = `<div class="achievement-heading"><p class="eyebrow">CADA DESCOBERTA CONTA</p><h2 id="achievements-title" tabindex="-1">Suas conquistas</h2><p>Um registro do que você já descobriu, no seu ritmo.</p></div><div class="achievement-summary" aria-label="Resumo do progresso"><div><strong>${data.total}<span> / ${data.available}</span></strong><p>Níveis concluídos</p></div><div><strong>${unlocked}<span> / ${data.achievements.length}</span></strong><p>Conquistas desbloqueadas</p></div><div><strong>${data.hard}</strong><p>Desafios avançados concluídos</p></div></div>${data.warnings.map((w) => `<p class="achievement-warning" role="status">${esc(w)}</p>`).join("")}<ul class="achievement-grid" aria-label="Conquistas">${data.achievements.map((a) => `<li class="achievement-card ${a.unlocked ? "is-unlocked" : ""}"><span class="achievement-symbol" aria-hidden="true">${a.symbol}</span><p class="achievement-state">${a.unlocked ? "Desbloqueada" : "Em descoberta"}</p><h3>${a.name}</h3><p>${a.description}</p><label for="achievement-${a.id}">${a.current} de ${a.target}</label><progress id="achievement-${a.id}" value="${a.current}" max="${a.target}">${a.current} de ${a.target}</progress></li>`).join("")}</ul><section class="achievement-campaigns" aria-labelledby="achievement-campaign-title"><h3 id="achievement-campaign-title">Seu caminho em cada jogo</h3><ul>${data.games.map((g) => `<li><a href="?game=${g.id}">${g.name}<span>${g.completed} / ${g.total} concluídos <span aria-hidden="true">→</span></span></a></li>`).join("")}</ul></section><details class="achievement-criteria"><summary>Como as conquistas são contadas</summary><p>Contamos uma vez cada nível das ${data.games.length} campanhas atuais cuja conclusão está salva neste navegador. Repetir o nível não aumenta o total. Conclusões assistidas também contam.</p><p>Desafios avançados são os níveis das etapas Avançado, Mestre e Modo Sábio, conforme a classificação editorial de cada jogo. Não significa dificuldade calibrada com jogadores.</p><p>Modo Sem Parar, fases importadas, campanhas antigas arquivadas e partidas Versus não entram nesta contagem. Não inferimos conclusões a partir de tentativas, acesso a gabaritos ou níveis visitados. As conquistas refletem os registros existentes, sem inventar a data da descoberta.</p><p>Seu progresso continua local: não é sincronizado entre dispositivos. Limpar os dados do navegador pode removê-lo. Abrir esta tela não altera nem apaga seus saves.</p></details>`;
   return data;
 }
+

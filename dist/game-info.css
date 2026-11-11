@@ -3,10 +3,10 @@
 #main > .games {
   position: relative;
 }
-#main > .games > button:is([data-game],[data-collection],[data-sintonia],[data-repasse],[data-orbita],[data-broto],[data-cerco]) {
+#main > .games > button:is([data-game],[data-collection],[data-sintonia],[data-repasse],[data-orbita],[data-broto],[data-cerco],[data-logic]) {
   padding-right: 52px;
 }
-button.game-info-trigger,#main :is(#selection-title,#game-title,#collection-title,#c-title,#r-selection-title,#r-title,#o-selection-title,#o-title,#b-selection-title,#b-title,#ce-selection-title,#ce-title,#tr-selection-title,#tr-title)>button.game-info-trigger {
+button.game-info-trigger,#main :is(#selection-title,#game-title,#collection-title,#c-title,#r-selection-title,#r-title,#o-selection-title,#o-title,#b-selection-title,#b-title,#ce-selection-title,#ce-title,#lg-selection-title,#lg-title,#tr-selection-title,#tr-title)>button.game-info-trigger {
   display: inline-flex;
   align-items: center;
   justify-content: center;
@@ -42,7 +42,7 @@ button.game-info-trigger,#main :is(#selection-title,#game-title,#collection-titl
   box-shadow: none;
   text-align: center;
 }
-#main :is(#selection-title,#game-title,#collection-title,#c-title,#r-selection-title,#r-title,#o-selection-title,#o-title,#b-selection-title,#b-title,#ce-selection-title,#ce-title,#tr-selection-title,#tr-title)>button.game-info-trigger:hover,button.game-info-trigger:hover,#main > .games > button.game-info-nav:hover {
+#main :is(#selection-title,#game-title,#collection-title,#c-title,#r-selection-title,#r-title,#o-selection-title,#o-title,#b-selection-title,#b-title,#ce-selection-title,#ce-title,#lg-selection-title,#lg-title,#tr-selection-title,#tr-title)>button.game-info-trigger:hover,button.game-info-trigger:hover,#main > .games > button.game-info-nav:hover {
   background: #edf2e8;
   border-color: #71865b;
   box-shadow: none;
@@ -182,3 +182,4 @@ button.game-info-trigger:focus-visible {
     font-size: 28px;
   }
 }
+

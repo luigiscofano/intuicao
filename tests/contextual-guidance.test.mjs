@@ -2,6 +2,8 @@ import test from 'node:test';
 import assert from 'node:assert/strict';
 import {readFileSync} from 'node:fs';
 import {GAME_GUIDANCE, guidanceForGame, initContextualGuidance} from '../dist/contextual-guidance.mjs';
+const LOGIC_IDS = ['divisa', 'pulso', 'foz', 'refugio', 'mirante', 'renovo'];
+const ORIGINAL_IDS = ['light', 'cut', 'elo', 'prumo', 'pacto', 'sintonia', 'repasse', 'orbita', 'desvio', 'broto', 'cerco'];
 
 function fixture(game = 'light') {
   const element = tag => ({
@@ -33,12 +35,32 @@ function fixture(game = 'light') {
   return {surface, win, doc, update: () => callback(), disconnected: () => disconnected};
 }
 
-test('each of the eleven games has guidance without inventing a new control', () => {
-  assert.equal(Object.keys(GAME_GUIDANCE).length, 11);
+test('os 17 jogos têm orientação sem inventar controles', () => {
+  assert.equal(Object.keys(GAME_GUIDANCE).length, 17);
+  assert.deepEqual(Object.keys(GAME_GUIDANCE).sort(), [...ORIGINAL_IDS, ...LOGIC_IDS].sort());
   assert.equal(guidanceForGame('missing'), null);
   assert.match(guidanceForGame('light'), /Confirmar todos/);
   assert.match(guidanceForGame('prumo'), /Momentos exatos/);
 });
+
+for (const game of LOGIC_IDS) {
+  test(`${game}: orientação da rota direta aparece e conserva o reconhecimento durante rerenders`, () => {
+    const f = fixture(game);
+    const cleanup = initContextualGuidance(f.doc, f.win);
+    const guide = f.surface.current;
+    assert.equal(guide.dataset.game, game);
+    assert.equal(guide.children[1].textContent, guidanceForGame(game));
+    assert.ok(guide.children[1].textContent.length > 30);
+    guide.children[2].listeners.click();
+    f.surface.current = null;
+    f.update();
+    assert.equal(f.surface.current.open, false);
+    assert.equal(f.surface.current.dataset.game, game);
+    assert.equal(f.surface.current.children[1].textContent, guidanceForGame(game));
+    cleanup();
+    assert.equal(f.disconnected(), true);
+  });
+}
 
 test('guidance can close, reopen and survive rerenders without saving any data', () => {
   const f = fixture();

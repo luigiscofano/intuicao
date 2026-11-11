@@ -1,7 +1,9 @@
+import { LOGIC_GAMES } from './logica/metadata.mjs';
 import { GAME_GUIDANCE } from "./contextual-guidance.mjs";
 
 // A composição visual reutiliza os nós dos controles: não duplica ações nem saves.
 export const GAME_PRESENTATION = Object.freeze({
+  ...Object.fromEntries(LOGIC_GAMES.map(game => [game.id, { ...game, category: "Raciocínio lógico", prefix: "lg" }])),
   light: {
     name: "Reflexos",
     number: "01",
@@ -230,7 +232,7 @@ export function initApprovedGameShell(doc = document, win = window) {
               selectedLevel.selectedIndex
             ]?.textContent?.replace(/^\d+\.\s*/, "")
           : section
-              .querySelector(".s-level-name, .r-level-name, .o-level-name")
+              .querySelector(".s-level-name, .r-level-name, .o-level-name, .logic-level-name")
               ?.childNodes[0]?.textContent?.trim();
       const title = levelName || presentation.name;
       const contextTitle =
@@ -301,3 +303,4 @@ export function initApprovedGameShell(doc = document, win = window) {
 
 if (typeof document !== "undefined" && typeof window !== "undefined")
   initApprovedGameShell();
+

@@ -1,0 +1,67 @@
+@import url('./games/divisa/view.css');
+@import url('./games/pulso/view.css');
+@import url('./games/foz/view.css');
+@import url('./games/refugio/view.css');
+@import url('./games/mirante/view.css');
+@import url('./games/renovo/view.css');
+
+/* A moldura geral é a mesma do CERCO. Este arquivo cuida somente dos seis puzzles. */
+.logic-selection, .logic-lab { color: #30412f; }
+.logic-selection { background: #fffaf0; border: 1px solid #b6c3a8; border-radius: 18px; padding: clamp(16px, 3vw, 32px); }
+.logic-selection-heading, .logic-tier-heading { display: flex; align-items: center; justify-content: space-between; gap: 20px; }
+.logic-selection-heading h2 { margin: 8px 0; font: 750 clamp(28px, 4vw, 42px)/1.15 system-ui, sans-serif; }
+.logic-selection-heading p { max-width: 62ch; }
+.logic-progress { flex-shrink: 0; color: #39674a; font-size: 30px; font-weight: 750; }
+.logic-progress span { display: block; font-size: 13px; font-weight: 500; }
+.logic-mode-actions { display: flex; flex-wrap: wrap; gap: 10px; margin: 20px 0 8px; }
+.logic-mode-actions button { min-height: 44px; }
+.logic-selection-note { color: #68775e; font-size: 14px; }
+.logic-tier { padding: 22px 0; border-bottom: 1px solid #d5decb; }
+.logic-tier-heading { margin-bottom: 12px; }
+.logic-tier-heading h3 { margin: 0; font-size: 20px; }
+.logic-tier-heading > span { font-variant-numeric: tabular-nums; color: #68775e; }
+.logic-level-grid { display: grid; grid-template-columns: repeat(5, minmax(0, 1fr)); gap: 10px; }
+.logic-level { position: relative; display: flex; gap: 12px; align-items: center; text-align: left; padding: 12px; min-height: 68px; background: #f8faf3; border: 1px solid #b6c3a8; border-radius: 10px; color: #30412f; }
+.logic-level strong { font-size: 20px; font-variant-numeric: tabular-nums; }
+.logic-level > span { font-size: 13px; line-height: 1.3; overflow-wrap: anywhere; }
+.logic-level.completed { background: #e1edce; border-color: #73965e; }
+.logic-level i { position: absolute; right: 5px; top: 3px; font-style: normal; font-size: 12px; }
+.logic-surface { position: relative; min-width: 0; }
+.logic-lab > .lab-heading[hidden] { display: none !important; }
+.logic-tools { display: flex; flex-wrap: wrap; justify-content: center; gap: 7px; padding: 0 0 18px; }
+.logic-tool { min-height: 42px; padding: 8px 13px; border: 1px solid #b6c3a8; border-radius: 9px; background: #fffaf0; color: #30412f; }
+.logic-tool[aria-pressed="true"] { background: #e1edce; outline: 2px solid #73965e; outline-offset: 1px; font-weight: 700; }
+.logic-board { width: 100%; min-width: 0; max-width: 700px; margin: 0 auto; overflow-x: auto; }
+.logic-board > svg, .logic-board svg { display: block; width: 100%; height: auto; max-height: 70vh; margin: 0 auto; font-family: system-ui, sans-serif; }
+.logic-board [data-cell] { cursor: pointer; -webkit-tap-highlight-color: transparent; }
+.logic-board [data-cell]:focus-visible { outline: 3px solid #244b60; outline-offset: -3px; }
+.logic-board [data-cell][aria-disabled="true"] { cursor: default; }
+.logic-feedback { min-height: 1.5em; text-align: center; font-size: 15px; line-height: 1.5; }
+.logic-feedback[data-outcome="win"] { color: #39674a; font-weight: 700; }
+.logic-feedback[data-outcome="loss"] { color: #86413b; }
+.logic-storage-warning { border-left: 3px solid #b99b46; padding: 8px 12px; background: #f5e7b2; color: #705a1d; }
+.logic-level-arrow { min-width: 48px; min-height: 44px; font-size: 24px; }
+.logic-rules { padding: 22px 2px; font-size: 15px; line-height: 1.65; }
+.logic-rules h3 { font-size: 22px; margin: 0 0 12px; }
+.logic-rules ol { padding-left: 24px; margin: 0; }
+.logic-rules li + li { margin-top: 8px; }
+.logic-control-help { color: #68775e; margin: 14px 0 0; }
+.logic-lab .board-check-controls { display: flex; flex-wrap: wrap; gap: 8px; justify-content: center; }
+.logic-lab button:focus-visible, .logic-selection button:focus-visible { outline: 3px solid #244b60; outline-offset: 3px; }
+.logic-lab .result-motion { position: relative; }
+.logic-context-source[hidden] { display: none !important; }
+@media (max-width: 760px) {
+  .logic-level-grid { grid-template-columns: repeat(3, minmax(0, 1fr)); }
+  .logic-selection-heading { align-items: flex-start; }
+  .logic-progress { font-size: 24px; }
+  .logic-board svg { max-height: none; }
+  .logic-tools { gap: 6px; }
+}
+@media (max-width: 440px) {
+  .logic-level-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+  .logic-selection-heading { flex-direction: column; gap: 0; }
+  .logic-progress span { display: inline; margin-left: 5px; }
+  .logic-tool { padding: 8px 10px; }
+  .logic-level { min-height: 64px; }
+  .logic-rules { font-size: 14px; }
+}
