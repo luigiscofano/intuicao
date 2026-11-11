@@ -40,7 +40,12 @@ export function initMissionNotifications() {
     if (!missions.length) return;
     clearTimeout(dismissTimer);
     notice.querySelector(".mission-notice-icon").innerHTML =
-      renderAchievementIcon(missions[0].icon);
+      `<span class="mission-notice-emblem">
+        ${renderAchievementIcon(missions[0].icon)}
+        <svg class="mission-notice-light" viewBox="0 0 64 64" aria-hidden="true" focusable="false">
+          <circle cx="32" cy="25.5" r="23" pathLength="1" />
+        </svg>
+      </span>`;
     notice.querySelector(".mission-notice-message").textContent = missions
       .map((mission) => `${mission.name} · ${mission.gameName}`)
       .join(" e ");

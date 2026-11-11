@@ -116,10 +116,11 @@ function harness() {
     link,
     close,
     message,
+    icon,
     document,
     outside,
-    unlock(id) {
-      window.dispatch("intuicao:missions-unlocked", { detail: { ids: [id] } });
+    unlock(...ids) {
+      window.dispatch("intuicao:missions-unlocked", { detail: { ids } });
     },
     focus(element) {
       document.activeElement = element;
@@ -184,4 +185,72 @@ test("fechar o aviso cancela o descarte pendente e permite uma notificação pos
   assert.equal(ui.notice.hidden, false);
   ui.clock.advance(1);
   assert.equal(ui.notice.hidden, true);
+});
+
+
+test("iniciar ou visitar a galeria não anuncia conquistas antigas", () => {
+  const ui = harness();
+  assert.equal(ui.notice.hidden, true);
+  assert.equal(ui.icon.innerHTML, "");
+  assert.equal(ui.message.textContent, "");
+  assert.equal(ui.clock.pendingCount, 0);
+  ui.unlock("unknown");
+  assert.equal(ui.notice.hidden, true);
+  assert.equal(ui.clock.pendingCount, 0);
+});
+
+test("a celebração usa o ícone real e mantém os textos de múltiplas missões", () => {
+  const ui = harness();
+  ui.unlock("first", "unknown", "second");
+  assert.equal(ui.message.textContent, "Corrente acesa · ENLACE e Volta ao centro · LASTRO");
+  assert.match(ui.icon.innerHTML, /data-icon="first"/);
+  assert.match(ui.icon.innerHTML, /class="mission-notice-emblem"/);
+  assert.match(ui.icon.innerHTML, /class="mission-notice-light"/);
+  assert.match(ui.icon.innerHTML, /aria-hidden="true" focusable="false"/);
+  assert.equal(ui.document.activeElement, ui.outside);
+  assert.equal(ui.clock.pendingCount, 1);
+  ui.clock.advance(1100);
+  assert.equal(ui.notice.hidden, false);
+  ui.clock.advance(8899);
+  assert.equal(ui.notice.hidden, false);
+  ui.clock.advance(1);
+  assert.equal(ui.notice.hidden, true);
+});
+
+test("atualizar um aviso visível preserva controles, foco e dez segundos de leitura", () => {
+  const ui = harness();
+  const markup = ui.notice.innerHTML;
+  ui.unlock("first");
+  ui.clock.advance(9000);
+  ui.unlock("second");
+  assert.match(ui.icon.innerHTML, /data-icon="second"/);
+  assert.equal(ui.notice.innerHTML, markup);
+  assert.equal(ui.notice.className, "mission-notice");
+  assert.equal(ui.document.activeElement, ui.outside);
+  ui.clock.advance(9999);
+  assert.equal(ui.notice.hidden, false);
+  ui.clock.advance(1);
+  assert.equal(ui.notice.hidden, true);
+});
+
+const css = readFileSync(new URL("../dist/achievements/notifications.css", import.meta.url), "utf8");
+
+test("movimento é local, finito e desligado pelas duas preferências", () => {
+  assert.match(css, /\.mission-notice:not\(\[hidden\]\)\s*\{\s*animation: mission-notice-enter 300ms/);
+  assert.match(css, /animation: mission-emblem-enter 480ms/);
+  assert.match(css, /animation: mission-light-draw 1100ms/);
+  assert.doesNotMatch(css, /infinite/);
+  assert.match(css, /html\[data-ui-reduced-motion="true"\] \.mission-notice,[\s\S]*?animation: none;/);
+  assert.match(css, /@media \(prefers-reduced-motion: reduce\)[\s\S]*?animation: none;/);
+  assert.match(css, /100% \{ stroke-dashoffset: 0; opacity: 0; \}/);
+  assert.match(css, /pointer-events: none/);
+});
+
+test("aviso mantém largura móvel, conteúdo longo rolável e fechamento disponível", () => {
+  assert.match(css, /box-sizing: border-box/);
+  assert.match(css, /width: min\(460px, calc\(100vw - 32px\)\)/);
+  assert.match(css, /max-height: min\(40vh, 280px\)/);
+  assert.match(css, /overflow-y: auto/);
+  assert.match(css, /overflow-wrap: anywhere/);
+  assert.match(css, /\.mission-notice button \{[^}]*flex-shrink: 0/);
 });

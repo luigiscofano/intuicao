@@ -63,3 +63,7 @@ A CI mantém os cinco motores anteriores e acrescenta este recorte. Não executa
 ## Identidade transversal
 
 `node --test tests/identity.test.mjs` verifica o acabamento CSS, seu carregamento e o retrato de integridade da entrega sobre o PR 52. O teste faz parte do recorte de integração da CI; não substitui revisão visual. Veja [escopo, resultados e limites](../docs/identidade/VERIFICACAO-2026-11-11.md).
+
+## Movimento aprovado
+
+A edição de 11/11/2026 acrescenta `ui-motion.test.mjs`, `victory-tiles.test.mjs` e `motion-preference.test.mjs` ao recorte de integração. O retrato de identidade passa a aceitar somente os dez arquivos de apresentação aprovados, preservando o restante de `dist/` byte a byte em relação ao PR 53. As expectativas históricas de confetes/zoom das campanhas são substituídas pela opção A; o resultado Versus continua intacto. Veja [escopo, 519 testes e limites visuais](../docs/movimento/VERIFICACAO-2026-11-11.md).

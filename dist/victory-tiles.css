@@ -1,0 +1,87 @@
+/* Opção A aprovada: celebração curta, sempre na faixa de resultado. */
+.victory-tiles {
+  display: block;
+  width: 72px;
+  height: 72px;
+  flex: 0 0 72px;
+  overflow: visible;
+  pointer-events: none;
+  user-select: none;
+}
+.result-badge > .victory-tiles {
+  width: 72px;
+  height: 72px;
+  stroke: none;
+  position: static;
+}
+.result-badge .victory-tiles path,
+.victory-tiles path {
+  stroke: none;
+}
+.victory-tiles .victory-tile-blue { fill: #244b63; }
+.victory-tiles .victory-tile-green { fill: #39654c; }
+.victory-tiles .victory-tile-gold { fill: #cca034; }
+.victory-tiles .victory-dot { fill: #cca034; opacity: 0; stroke: none; }
+.victory-tiles .victory-dot:nth-child(even) { fill: #39654c; }
+.result-badge.tile-victory {
+  gap: 14px;
+  padding: 10px 16px;
+  margin: 8px 0;
+  min-height: 92px;
+  border: 1px solid #bac7a9;
+  border-radius: 16px;
+  background: #e9eddc;
+  color: #30412f;
+  animation: none;
+}
+.result-badge.tile-victory > div { min-width: 0; }
+.result-badge.tile-victory strong { font-size: 20px; line-height: 1.3; }
+.result-badge.tile-victory span { color: #59664e; font-size: 13px; }
+@media (prefers-reduced-motion: no-preference) {
+  html:not([data-ui-reduced-motion='true']) .victory-tiles-animate .victory-tile {
+    animation: victory-tile-arrive 500ms var(--tile-delay, 0ms) cubic-bezier(.2,.75,.25,1) both;
+  }
+  .victory-tile-0 { --tile-x: -12px; --tile-y: -12px; --tile-turn: -18deg; }
+  .victory-tile-1 { --tile-x: 12px; --tile-y: -12px; --tile-turn: 18deg; --tile-delay: 55ms; }
+  .victory-tile-2 { --tile-x: -12px; --tile-y: 12px; --tile-turn: -18deg; --tile-delay: 110ms; }
+  .victory-tile-3 { --tile-x: 12px; --tile-y: 12px; --tile-turn: 18deg; --tile-delay: 165ms; }
+  html:not([data-ui-reduced-motion='true']) .victory-tiles-animate .victory-dot {
+    transform-origin: 40px 40px;
+    animation: victory-dot-away 900ms 250ms ease-out both;
+  }
+  html:not([data-ui-reduced-motion='true']) .tile-victory:has(.victory-tiles-animate) {
+    animation: victory-band-arrive 300ms ease-out both;
+  }
+}
+@keyframes victory-tile-arrive {
+  from { opacity: 0; transform: translate(var(--tile-x),var(--tile-y)) rotate(var(--tile-turn)); }
+  to { opacity: 1; transform: none; }
+}
+@keyframes victory-dot-away {
+  0% { opacity: 0; transform: scale(.8); }
+  15% { opacity: .8; }
+  100% { opacity: 0; transform: scale(1.3); }
+}
+@keyframes victory-band-arrive {
+  from { opacity: 0; transform: translateY(8px); }
+  to { opacity: 1; transform: none; }
+}
+@media (max-width: 600px) {
+  .result-badge.tile-victory { padding: 10px; gap: 8px; }
+  .result-badge.tile-victory strong { font-size: 17px; }
+  .result-badge.tile-victory > .victory-tiles { width: 56px; height: 56px; flex-basis: 56px; }
+}
+@media (prefers-reduced-motion: reduce) {
+  .victory-tiles *, .tile-victory { animation: none !important; }
+  .victory-tiles .victory-dot { opacity: 0; }
+}
+html[data-ui-reduced-motion='true'] .victory-tiles *,
+html[data-ui-reduced-motion='true'] .tile-victory { animation: none !important; }
+html[data-ui-reduced-motion='true'] .victory-tiles .victory-dot { opacity: 0; }
+
+/* Controle acessível, separado das ações do jogo e do progresso. */
+.motion-preferences { margin: 16px 24px 0; padding: 14px 0; border-top: 1px solid #c8ccb8; }
+.motion-preferences label { display: flex; align-items: center; gap: 9px; min-height: 44px; font-size: 14px; font-weight: 650; }
+.motion-preferences input { width: 20px; height: 20px; margin: 0; accent-color: #39654c; }
+.motion-preferences p { margin: 4px 0 0; color: #59664e; font-size: 13px; line-height: 1.5; }
+.motion-preferences input:focus-visible { outline: 3px solid #244b63; outline-offset: 4px; }

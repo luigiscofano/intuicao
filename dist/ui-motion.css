@@ -1,0 +1,97 @@
+/* Camada visual opcional. Tabuleiros, peças e geometria não são selecionados. */
+html[data-ui-motion] {
+  --ui-card-time: 160ms;
+  --ui-press-time: 120ms;
+  --ui-info-time: 180ms;
+  --ui-progress-time: 240ms;
+  --ui-notice-time: 300ms;
+  --ui-card-lift: -3px;
+  --ui-button-press: 2px;
+}
+html[data-ui-motion] #main > .games > button:is([data-game], [data-collection], [data-sintonia], [data-repasse], [data-orbita], [data-broto], [data-cerco], [data-logic], [data-versus]) {
+  transition: translate var(--ui-card-time) ease-out, border-color var(--ui-card-time) ease-out;
+}
+@media (hover: hover) {
+  html[data-ui-motion] #main > .games > button:is([data-game], [data-collection], [data-sintonia], [data-repasse], [data-orbita], [data-broto], [data-cerco], [data-logic], [data-versus]):hover {
+    translate: 0 var(--ui-card-lift);
+    border-color: #39654c;
+  }
+}
+html[data-ui-motion] #main > .games > button:is([data-game], [data-collection], [data-sintonia], [data-repasse], [data-orbita], [data-broto], [data-cerco], [data-logic], [data-versus]):focus-visible {
+  translate: 0 var(--ui-card-lift);
+  outline: 3px solid #8c6628;
+  outline-offset: 3px;
+}
+html[data-ui-motion] :is(.approved-real-actions, .stage-tools, #library-navigation, #categories, .game-info-actions, .mission-notice, #progress-backup-panel) button {
+  transition: translate var(--ui-press-time) ease-out;
+}
+html[data-ui-motion] :is(.approved-real-actions, .stage-tools, #library-navigation, #categories, .game-info-actions, .mission-notice, #progress-backup-panel) button:active:not(:disabled) {
+  translate: 0 var(--ui-button-press);
+}
+html[data-ui-motion] :is(#game-info-dialog[open] .game-info-shell, #fauna-dialog[open] .fauna-shell, .contextual-guidance[open] > :not(summary), .rules-more[open] > :not(summary)) {
+  animation: ui-info-reveal var(--ui-info-time) ease-out 1;
+}
+/* O elemento nativo continua acessível, com value/max e rótulo imediatos. */
+html[data-ui-motion] .achievement-card progress.ui-progress-native {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  overflow: hidden;
+  clip-path: inset(50%);
+}
+.ui-progress-track { display: none; }
+html[data-ui-motion] .ui-progress-track {
+  display: block;
+  height: 6px;
+  overflow: hidden;
+  border-radius: 6px;
+  background: #e3e7d9;
+}
+html[data-ui-motion] .ui-progress-fill {
+  display: block;
+  width: 100%;
+  height: 100%;
+  background: #39654c;
+  transform-origin: left center;
+}
+@media (forced-colors: active) {
+  html[data-ui-motion] .ui-progress-track { background: Canvas; border: 1px solid CanvasText; }
+  html[data-ui-motion] .ui-progress-fill { background: Highlight; }
+}
+/* Use a classe OU animateUIMotion(notice, 'notice'), não os dois juntos. */
+html[data-ui-motion] .ui-motion-notice:not([hidden]) {
+  animation: ui-notice-reveal var(--ui-notice-time) ease-out 1;
+}
+@keyframes ui-info-reveal { from { opacity: 0; } to { opacity: 1; } }
+@keyframes ui-notice-reveal {
+  from { opacity: 0; translate: 0 6px; }
+  to { opacity: 1; translate: 0 0; }
+}
+html[data-ui-reduced-motion="true"] {
+  --ui-card-time: 0ms;
+  --ui-press-time: 0ms;
+  --ui-info-time: 0ms;
+  --ui-progress-time: 0ms;
+  --ui-notice-time: 0ms;
+  --ui-card-lift: 0px;
+  --ui-button-press: 0px;
+}
+/* A preferência manual também interrompe as folhas decorativas legadas. */
+html[data-ui-reduced-motion="true"] body > :is(.platform-leaf-layer, .platform-leaf-foreground) > :is(.platform-leaf, .platform-pile) {
+  animation: none !important;
+}
+@media (prefers-reduced-motion: reduce) {
+  html[data-ui-motion] {
+    --ui-card-time: 0ms;
+    --ui-press-time: 0ms;
+    --ui-info-time: 0ms;
+    --ui-progress-time: 0ms;
+    --ui-notice-time: 0ms;
+    --ui-card-lift: 0px;
+    --ui-button-press: 0px;
+  }
+  html[data-ui-motion] body > :is(.platform-leaf-layer, .platform-leaf-foreground) > :is(.platform-leaf, .platform-pile) {
+    animation: none !important;
+  }
+}
