@@ -144,6 +144,32 @@ const arrowSVG = (a) =>
 const clone = (x) => structuredClone(x),
   $ = (id) => document.getElementById(id),
   coord = (i, l) => `L${Math.floor(i / l.cols) + 1}C${(i % l.cols) + 1}`;
+
+// Seletores e dados salvos só podem escolher as opções publicadas do jogo.
+function normalizeDuelMode(value) {
+  switch (value) {
+    case "competitive":
+      return "competitive";
+    case "bot":
+      return "bot";
+    case "training":
+      return "training";
+    default:
+      return "local";
+  }
+}
+
+function normalizeBotDifficulty(value) {
+  switch (value) {
+    case "easy":
+      return "easy";
+    case "medium":
+      return "medium";
+    default:
+      return "perfect";
+  }
+}
+
 export function initCollection({ hideOriginal }) {
   const host = $("collection"),
     catalogue = { ...SYMBOL_LEVELS, ...GEOMETRY_LEVELS };
@@ -384,8 +410,12 @@ export function initCollection({ hideOriginal }) {
       };
     } else {
       $("c-tactical").onclick = () => startDuel(-1);
-      $("c-duel-mode").onchange = (e) => (duelMode = e.target.value);
-      $("c-bot-difficulty").onchange = (e) => (botDifficulty = e.target.value);
+      $("c-duel-mode").onchange = (e) => {
+        duelMode = normalizeDuelMode(e.target.value);
+      };
+      $("c-bot-difficulty").onchange = (e) => {
+        botDifficulty = normalizeBotDifficulty(e.target.value);
+      };
     }
     $("c-free").onclick = () => startEndless();
     $("c-import").onchange = importFile;
@@ -464,8 +494,10 @@ export function initCollection({ hideOriginal }) {
     const provided = { ...generated.level, endless: true };
     if (game === "desvio") {
       if (saved && !next && !options) {
-        duelMode = saved.duelMode ?? duelMode;
-        botDifficulty = saved.botDifficulty ?? botDifficulty;
+        duelMode = normalizeDuelMode(saved.duelMode ?? duelMode);
+        botDifficulty = normalizeBotDifficulty(
+          saved.botDifficulty ?? botDifficulty,
+        );
       }
       startDuel(0, next ? 1 - (history?.present?.starter ?? 1) : 0, {
         fresh: regenerate,
@@ -565,8 +597,10 @@ export function initCollection({ hideOriginal }) {
           spec.type === "checkbox" ? node.checked : node.value;
       }
       if (game === "desvio") {
-        duelMode = $("c-endless-duel-mode").value;
-        botDifficulty = $("c-endless-bot-difficulty").value;
+        duelMode = normalizeDuelMode($("c-endless-duel-mode").value);
+        botDifficulty = normalizeBotDifficulty(
+          $("c-endless-bot-difficulty").value,
+        );
       }
       startEndless({ options });
     };
@@ -824,6 +858,7 @@ export function initCollection({ hideOriginal }) {
     level = clone(provided ?? (i < 0 ? DESVIO_CHALLENGE_MAP : DESVIO_MAPS[i]));
     daily = false;
     rulesOpen = entryRulesOpen();
+    // Índice previsível do progresso local; não autentica nem autoriza acesso.
     sessionKey = endless
       ? `endless:${game}`
       : `${custom ? "custom:" : ""}desvio:${level.id}:${duelMode}`;
