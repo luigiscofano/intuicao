@@ -20,3 +20,8 @@ coverage/
 id_rsa
 id_ed25519
 gitleaks-report*.json
+
+
+# Intermediários reproduzíveis da curadoria e inspeção dos puzzles.
+tools/logica/*-pool.json
+tests/logica/*-visual/

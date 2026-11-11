@@ -1,0 +1,650 @@
+{
+  "game": "mirante",
+  "method": "Enumeração independente de todas as distribuições do estoque, sem consulta ao gabarito para validar.",
+  "levels": 80,
+  "assignments": 1038124,
+  "unique": true,
+  "witnessesEssential": 35,
+  "results": [
+    {
+      "id": "mirante-2bd2c504fa5146",
+      "number": 1,
+      "assignments": 756,
+      "solutions": 1,
+      "withoutWitnesses": 1,
+      "exhaustive": true
+    },
+    {
+      "id": "mirante-21cf1ab62eedfe",
+      "number": 2,
+      "assignments": 756,
+      "solutions": 1,
+      "withoutWitnesses": 1,
+      "exhaustive": true
+    },
+    {
+      "id": "mirante-5c64766220b302",
+      "number": 3,
+      "assignments": 756,
+      "solutions": 1,
+      "withoutWitnesses": 1,
+      "exhaustive": true
+    },
+    {
+      "id": "mirante-dd0b56e70a6e01",
+      "number": 4,
+      "assignments": 756,
+      "solutions": 1,
+      "withoutWitnesses": 1,
+      "exhaustive": true
+    },
+    {
+      "id": "mirante-de01d98e64cd62",
+      "number": 5,
+      "assignments": 756,
+      "solutions": 1,
+      "withoutWitnesses": 1,
+      "exhaustive": true
+    },
+    {
+      "id": "mirante-4efbc1af7af28f",
+      "number": 6,
+      "assignments": 756,
+      "solutions": 1,
+      "withoutWitnesses": 1,
+      "exhaustive": true
+    },
+    {
+      "id": "mirante-10b32ff8dc5bb5",
+      "number": 7,
+      "assignments": 756,
+      "solutions": 1,
+      "withoutWitnesses": 1,
+      "exhaustive": true
+    },
+    {
+      "id": "mirante-43cdc4f28e9b8c",
+      "number": 8,
+      "assignments": 2970,
+      "solutions": 1,
+      "withoutWitnesses": 1,
+      "exhaustive": true
+    },
+    {
+      "id": "mirante-95dbfa52dbfe5f",
+      "number": 9,
+      "assignments": 7920,
+      "solutions": 1,
+      "withoutWitnesses": 1,
+      "exhaustive": true
+    },
+    {
+      "id": "mirante-35b6b762c983e9",
+      "number": 10,
+      "assignments": 2970,
+      "solutions": 1,
+      "withoutWitnesses": 1,
+      "exhaustive": true
+    },
+    {
+      "id": "mirante-acb9c3c6386c00",
+      "number": 11,
+      "assignments": 7920,
+      "solutions": 1,
+      "withoutWitnesses": 1,
+      "exhaustive": true
+    },
+    {
+      "id": "mirante-0b80ba741c493a",
+      "number": 12,
+      "assignments": 756,
+      "solutions": 1,
+      "withoutWitnesses": 1,
+      "exhaustive": true
+    },
+    {
+      "id": "mirante-c08daab98278be",
+      "number": 13,
+      "assignments": 7920,
+      "solutions": 1,
+      "withoutWitnesses": 1,
+      "exhaustive": true
+    },
+    {
+      "id": "mirante-4fe253ecae791d",
+      "number": 14,
+      "assignments": 7920,
+      "solutions": 1,
+      "withoutWitnesses": 1,
+      "exhaustive": true
+    },
+    {
+      "id": "mirante-95b9a1ded921af",
+      "number": 15,
+      "assignments": 7920,
+      "solutions": 1,
+      "withoutWitnesses": 1,
+      "exhaustive": true
+    },
+    {
+      "id": "mirante-69467ecb0f6b37",
+      "number": 16,
+      "assignments": 756,
+      "solutions": 1,
+      "withoutWitnesses": 1,
+      "exhaustive": true
+    },
+    {
+      "id": "mirante-c1167a4ed0b243",
+      "number": 17,
+      "assignments": 7920,
+      "solutions": 1,
+      "withoutWitnesses": 1,
+      "exhaustive": true
+    },
+    {
+      "id": "mirante-a36cc26998d781",
+      "number": 18,
+      "assignments": 7920,
+      "solutions": 1,
+      "withoutWitnesses": 1,
+      "exhaustive": true
+    },
+    {
+      "id": "mirante-a29cf66a563f18",
+      "number": 19,
+      "assignments": 7920,
+      "solutions": 1,
+      "withoutWitnesses": 1,
+      "exhaustive": true
+    },
+    {
+      "id": "mirante-7a25a33569a648",
+      "number": 20,
+      "assignments": 7920,
+      "solutions": 1,
+      "withoutWitnesses": 1,
+      "exhaustive": true
+    },
+    {
+      "id": "mirante-adc0f31df25688",
+      "number": 21,
+      "assignments": 7920,
+      "solutions": 1,
+      "withoutWitnesses": 1,
+      "exhaustive": true
+    },
+    {
+      "id": "mirante-29b46cddc1f273",
+      "number": 22,
+      "assignments": 7920,
+      "solutions": 1,
+      "withoutWitnesses": 1,
+      "exhaustive": true
+    },
+    {
+      "id": "mirante-870a1f103d89f9",
+      "number": 23,
+      "assignments": 7920,
+      "solutions": 1,
+      "withoutWitnesses": 1,
+      "exhaustive": true
+    },
+    {
+      "id": "mirante-92b378845f5fcd",
+      "number": 24,
+      "assignments": 7920,
+      "solutions": 1,
+      "withoutWitnesses": 1,
+      "exhaustive": true
+    },
+    {
+      "id": "mirante-e162f717a4fd90",
+      "number": 25,
+      "assignments": 13860,
+      "solutions": 1,
+      "withoutWitnesses": 1,
+      "exhaustive": true
+    },
+    {
+      "id": "mirante-6e9c41a80b1785",
+      "number": 26,
+      "assignments": 7920,
+      "solutions": 1,
+      "withoutWitnesses": 1,
+      "exhaustive": true
+    },
+    {
+      "id": "mirante-64475c1c3432cc",
+      "number": 27,
+      "assignments": 7920,
+      "solutions": 1,
+      "withoutWitnesses": 1,
+      "exhaustive": true
+    },
+    {
+      "id": "mirante-3b2c49ffec32a3",
+      "number": 28,
+      "assignments": 18480,
+      "solutions": 1,
+      "withoutWitnesses": 1,
+      "exhaustive": true
+    },
+    {
+      "id": "mirante-52d41c32678fce",
+      "number": 29,
+      "assignments": 7920,
+      "solutions": 1,
+      "withoutWitnesses": 1,
+      "exhaustive": true
+    },
+    {
+      "id": "mirante-d39e6747046a0b",
+      "number": 30,
+      "assignments": 13860,
+      "solutions": 1,
+      "withoutWitnesses": 1,
+      "exhaustive": true
+    },
+    {
+      "id": "mirante-acfe885a247f54",
+      "number": 31,
+      "assignments": 18480,
+      "solutions": 1,
+      "withoutWitnesses": 1,
+      "exhaustive": true
+    },
+    {
+      "id": "mirante-982472d1a70b23",
+      "number": 32,
+      "assignments": 13860,
+      "solutions": 1,
+      "withoutWitnesses": 1,
+      "exhaustive": true
+    },
+    {
+      "id": "mirante-6bf388607c05c5",
+      "number": 33,
+      "assignments": 13860,
+      "solutions": 1,
+      "withoutWitnesses": 1,
+      "exhaustive": true
+    },
+    {
+      "id": "mirante-e3e88f974c221f",
+      "number": 34,
+      "assignments": 160160,
+      "solutions": 1,
+      "withoutWitnesses": 1,
+      "exhaustive": true
+    },
+    {
+      "id": "mirante-a3c8d444618303",
+      "number": 35,
+      "assignments": 504,
+      "solutions": 1,
+      "withoutWitnesses": 1,
+      "exhaustive": true
+    },
+    {
+      "id": "mirante-6f3e4afe064b3d",
+      "number": 36,
+      "assignments": 18480,
+      "solutions": 1,
+      "withoutWitnesses": 1,
+      "exhaustive": true
+    },
+    {
+      "id": "mirante-94b9038d5f1e11",
+      "number": 37,
+      "assignments": 18480,
+      "solutions": 1,
+      "withoutWitnesses": 1,
+      "exhaustive": true
+    },
+    {
+      "id": "mirante-48ffe2fda27024",
+      "number": 38,
+      "assignments": 7920,
+      "solutions": 1,
+      "withoutWitnesses": 1,
+      "exhaustive": true
+    },
+    {
+      "id": "mirante-c4a0f6b3c3c3e4",
+      "number": 39,
+      "assignments": 18480,
+      "solutions": 1,
+      "withoutWitnesses": 1,
+      "exhaustive": true
+    },
+    {
+      "id": "mirante-9b5fd3939bad49",
+      "number": 40,
+      "assignments": 7920,
+      "solutions": 1,
+      "withoutWitnesses": 1,
+      "exhaustive": true
+    },
+    {
+      "id": "mirante-18a8debba9477c",
+      "number": 41,
+      "assignments": 7920,
+      "solutions": 1,
+      "withoutWitnesses": 1,
+      "exhaustive": true
+    },
+    {
+      "id": "mirante-eaa103aec2b559",
+      "number": 42,
+      "assignments": 13860,
+      "solutions": 1,
+      "withoutWitnesses": 1,
+      "exhaustive": true
+    },
+    {
+      "id": "mirante-d2f0928c7e1ceb",
+      "number": 43,
+      "assignments": 18480,
+      "solutions": 1,
+      "withoutWitnesses": 1,
+      "exhaustive": true
+    },
+    {
+      "id": "mirante-785329216bbafb",
+      "number": 44,
+      "assignments": 13860,
+      "solutions": 1,
+      "withoutWitnesses": 1,
+      "exhaustive": true
+    },
+    {
+      "id": "mirante-0c35e69ac9f1fe",
+      "number": 45,
+      "assignments": 13860,
+      "solutions": 1,
+      "withoutWitnesses": 1,
+      "exhaustive": true
+    },
+    {
+      "id": "mirante-7cd2de2a120dd7",
+      "number": 46,
+      "assignments": 7920,
+      "solutions": 1,
+      "withoutWitnesses": 2,
+      "exhaustive": true
+    },
+    {
+      "id": "mirante-1451dbdd4bae18",
+      "number": 47,
+      "assignments": 18480,
+      "solutions": 1,
+      "withoutWitnesses": 19,
+      "exhaustive": true
+    },
+    {
+      "id": "mirante-e06c39c38d6ce8",
+      "number": 48,
+      "assignments": 18480,
+      "solutions": 1,
+      "withoutWitnesses": 5,
+      "exhaustive": true
+    },
+    {
+      "id": "mirante-af562496bcf935",
+      "number": 49,
+      "assignments": 756,
+      "solutions": 1,
+      "withoutWitnesses": 4,
+      "exhaustive": true
+    },
+    {
+      "id": "mirante-997d8ef6cd636e",
+      "number": 50,
+      "assignments": 756,
+      "solutions": 1,
+      "withoutWitnesses": 10,
+      "exhaustive": true
+    },
+    {
+      "id": "mirante-85bd882e575e8b",
+      "number": 51,
+      "assignments": 504,
+      "solutions": 1,
+      "withoutWitnesses": 3,
+      "exhaustive": true
+    },
+    {
+      "id": "mirante-571517f574f39c",
+      "number": 52,
+      "assignments": 7920,
+      "solutions": 1,
+      "withoutWitnesses": 2,
+      "exhaustive": true
+    },
+    {
+      "id": "mirante-e8afe50b3bd959",
+      "number": 53,
+      "assignments": 13860,
+      "solutions": 1,
+      "withoutWitnesses": 7,
+      "exhaustive": true
+    },
+    {
+      "id": "mirante-59a47f09fb1863",
+      "number": 54,
+      "assignments": 18480,
+      "solutions": 1,
+      "withoutWitnesses": 4,
+      "exhaustive": true
+    },
+    {
+      "id": "mirante-05d36a93f63c44",
+      "number": 55,
+      "assignments": 504,
+      "solutions": 1,
+      "withoutWitnesses": 3,
+      "exhaustive": true
+    },
+    {
+      "id": "mirante-f9c63db4ed446b",
+      "number": 56,
+      "assignments": 13860,
+      "solutions": 1,
+      "withoutWitnesses": 7,
+      "exhaustive": true
+    },
+    {
+      "id": "mirante-81103ba39bb7bb",
+      "number": 57,
+      "assignments": 7920,
+      "solutions": 1,
+      "withoutWitnesses": 8,
+      "exhaustive": true
+    },
+    {
+      "id": "mirante-286258e4c2fdb8",
+      "number": 58,
+      "assignments": 7920,
+      "solutions": 1,
+      "withoutWitnesses": 10,
+      "exhaustive": true
+    },
+    {
+      "id": "mirante-9a5d12e5e2ac3d",
+      "number": 59,
+      "assignments": 3960,
+      "solutions": 1,
+      "withoutWitnesses": 7,
+      "exhaustive": true
+    },
+    {
+      "id": "mirante-ff024ef350457c",
+      "number": 60,
+      "assignments": 7920,
+      "solutions": 1,
+      "withoutWitnesses": 26,
+      "exhaustive": true
+    },
+    {
+      "id": "mirante-1f1cb7ada17634",
+      "number": 61,
+      "assignments": 7920,
+      "solutions": 1,
+      "withoutWitnesses": 21,
+      "exhaustive": true
+    },
+    {
+      "id": "mirante-17c8acb6603ecd",
+      "number": 62,
+      "assignments": 13860,
+      "solutions": 1,
+      "withoutWitnesses": 3,
+      "exhaustive": true
+    },
+    {
+      "id": "mirante-1d31adfcf2908b",
+      "number": 63,
+      "assignments": 13860,
+      "solutions": 1,
+      "withoutWitnesses": 7,
+      "exhaustive": true
+    },
+    {
+      "id": "mirante-355f9670dafda5",
+      "number": 64,
+      "assignments": 18480,
+      "solutions": 1,
+      "withoutWitnesses": 5,
+      "exhaustive": true
+    },
+    {
+      "id": "mirante-30ed0328e1f029",
+      "number": 65,
+      "assignments": 18480,
+      "solutions": 1,
+      "withoutWitnesses": 3,
+      "exhaustive": true
+    },
+    {
+      "id": "mirante-77fb6c7db6d56d",
+      "number": 66,
+      "assignments": 13860,
+      "solutions": 1,
+      "withoutWitnesses": 9,
+      "exhaustive": true
+    },
+    {
+      "id": "mirante-43cc587bbed77d",
+      "number": 67,
+      "assignments": 504,
+      "solutions": 1,
+      "withoutWitnesses": 5,
+      "exhaustive": true
+    },
+    {
+      "id": "mirante-bbb3ba0d793fee",
+      "number": 68,
+      "assignments": 13860,
+      "solutions": 1,
+      "withoutWitnesses": 25,
+      "exhaustive": true
+    },
+    {
+      "id": "mirante-72518802869c94",
+      "number": 69,
+      "assignments": 7920,
+      "solutions": 1,
+      "withoutWitnesses": 4,
+      "exhaustive": true
+    },
+    {
+      "id": "mirante-48dea7f0087dad",
+      "number": 70,
+      "assignments": 5544,
+      "solutions": 1,
+      "withoutWitnesses": 11,
+      "exhaustive": true
+    },
+    {
+      "id": "mirante-d108110a497201",
+      "number": 71,
+      "assignments": 160160,
+      "solutions": 1,
+      "withoutWitnesses": 40,
+      "exhaustive": true
+    },
+    {
+      "id": "mirante-7e388da0316cd1",
+      "number": 72,
+      "assignments": 13860,
+      "solutions": 1,
+      "withoutWitnesses": 14,
+      "exhaustive": true
+    },
+    {
+      "id": "mirante-68083a0b7e5017",
+      "number": 73,
+      "assignments": 13860,
+      "solutions": 1,
+      "withoutWitnesses": 25,
+      "exhaustive": true
+    },
+    {
+      "id": "mirante-4d676ec88ed7c4",
+      "number": 74,
+      "assignments": 13860,
+      "solutions": 1,
+      "withoutWitnesses": 15,
+      "exhaustive": true
+    },
+    {
+      "id": "mirante-2e4c57ffb2e16c",
+      "number": 75,
+      "assignments": 13860,
+      "solutions": 1,
+      "withoutWitnesses": 10,
+      "exhaustive": true
+    },
+    {
+      "id": "mirante-d98bdb4eb8ccf8",
+      "number": 76,
+      "assignments": 18480,
+      "solutions": 1,
+      "withoutWitnesses": 26,
+      "exhaustive": true
+    },
+    {
+      "id": "mirante-5b9b6666b3cef9",
+      "number": 77,
+      "assignments": 504,
+      "solutions": 1,
+      "withoutWitnesses": 10,
+      "exhaustive": true
+    },
+    {
+      "id": "mirante-b965d1b18f29db",
+      "number": 78,
+      "assignments": 504,
+      "solutions": 1,
+      "withoutWitnesses": 4,
+      "exhaustive": true
+    },
+    {
+      "id": "mirante-5286e6da6f26e9",
+      "number": 79,
+      "assignments": 13860,
+      "solutions": 1,
+      "withoutWitnesses": 49,
+      "exhaustive": true
+    },
+    {
+      "id": "mirante-8dc557c13b693d",
+      "number": 80,
+      "assignments": 13860,
+      "solutions": 1,
+      "withoutWitnesses": 27,
+      "exhaustive": true
+    }
+  ]
+}

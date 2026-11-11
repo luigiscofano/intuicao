@@ -1,0 +1,648 @@
+{
+  "game": "pulso",
+  "method": "Enumeração independente de todos os trios compatíveis com pistas fixas e cotas. Nenhuma hipótese é descartada por orçamento.",
+  "levels": 80,
+  "unique": true,
+  "results": [
+    {
+      "id": "pulso-097a130504acc3",
+      "number": 1,
+      "solutions": 1,
+      "nodes": 12,
+      "combinationsBeforeQuotas": 540,
+      "exhaustive": true
+    },
+    {
+      "id": "pulso-0042a0f0954313",
+      "number": 2,
+      "solutions": 1,
+      "nodes": 5,
+      "combinationsBeforeQuotas": 12,
+      "exhaustive": true
+    },
+    {
+      "id": "pulso-27d010fb1a859e",
+      "number": 3,
+      "solutions": 1,
+      "nodes": 9,
+      "combinationsBeforeQuotas": 96,
+      "exhaustive": true
+    },
+    {
+      "id": "pulso-c92b5dc1970ad5",
+      "number": 4,
+      "solutions": 1,
+      "nodes": 8,
+      "combinationsBeforeQuotas": 216,
+      "exhaustive": true
+    },
+    {
+      "id": "pulso-2c730be658fa31",
+      "number": 5,
+      "solutions": 1,
+      "nodes": 8,
+      "combinationsBeforeQuotas": 48,
+      "exhaustive": true
+    },
+    {
+      "id": "pulso-a0589555ce4f9a",
+      "number": 6,
+      "solutions": 1,
+      "nodes": 6,
+      "combinationsBeforeQuotas": 216,
+      "exhaustive": true
+    },
+    {
+      "id": "pulso-a797258b50b3ae",
+      "number": 7,
+      "solutions": 1,
+      "nodes": 6,
+      "combinationsBeforeQuotas": 648,
+      "exhaustive": true
+    },
+    {
+      "id": "pulso-6b7b3f6bcb636f",
+      "number": 8,
+      "solutions": 1,
+      "nodes": 15,
+      "combinationsBeforeQuotas": 1512,
+      "exhaustive": true
+    },
+    {
+      "id": "pulso-7d7e1c8f3f5f69",
+      "number": 9,
+      "solutions": 1,
+      "nodes": 13,
+      "combinationsBeforeQuotas": 720,
+      "exhaustive": true
+    },
+    {
+      "id": "pulso-86c84f41cac2a5",
+      "number": 10,
+      "solutions": 1,
+      "nodes": 6,
+      "combinationsBeforeQuotas": 2592,
+      "exhaustive": true
+    },
+    {
+      "id": "pulso-4290737eb60b58",
+      "number": 11,
+      "solutions": 1,
+      "nodes": 9,
+      "combinationsBeforeQuotas": 1296,
+      "exhaustive": true
+    },
+    {
+      "id": "pulso-fe0e6004160951",
+      "number": 12,
+      "solutions": 1,
+      "nodes": 20,
+      "combinationsBeforeQuotas": 2592,
+      "exhaustive": true
+    },
+    {
+      "id": "pulso-6dced855422a08",
+      "number": 13,
+      "solutions": 1,
+      "nodes": 6,
+      "combinationsBeforeQuotas": 729,
+      "exhaustive": true
+    },
+    {
+      "id": "pulso-8ce9e928349c7c",
+      "number": 14,
+      "solutions": 1,
+      "nodes": 8,
+      "combinationsBeforeQuotas": 1200,
+      "exhaustive": true
+    },
+    {
+      "id": "pulso-981159290fc8c1",
+      "number": 15,
+      "solutions": 1,
+      "nodes": 21,
+      "combinationsBeforeQuotas": 6075,
+      "exhaustive": true
+    },
+    {
+      "id": "pulso-1cf0e9cfba4ca5",
+      "number": 16,
+      "solutions": 1,
+      "nodes": 12,
+      "combinationsBeforeQuotas": 2916,
+      "exhaustive": true
+    },
+    {
+      "id": "pulso-d19bd929666bee",
+      "number": 17,
+      "solutions": 1,
+      "nodes": 12,
+      "combinationsBeforeQuotas": 5832,
+      "exhaustive": true
+    },
+    {
+      "id": "pulso-72ecb88f4ee949",
+      "number": 18,
+      "solutions": 1,
+      "nodes": 12,
+      "combinationsBeforeQuotas": 7776,
+      "exhaustive": true
+    },
+    {
+      "id": "pulso-9e994b4d596417",
+      "number": 19,
+      "solutions": 1,
+      "nodes": 28,
+      "combinationsBeforeQuotas": 12288,
+      "exhaustive": true
+    },
+    {
+      "id": "pulso-4241eafefac941",
+      "number": 20,
+      "solutions": 1,
+      "nodes": 16,
+      "combinationsBeforeQuotas": 17280,
+      "exhaustive": true
+    },
+    {
+      "id": "pulso-399989ba788a9f",
+      "number": 21,
+      "solutions": 1,
+      "nodes": 15,
+      "combinationsBeforeQuotas": 5760,
+      "exhaustive": true
+    },
+    {
+      "id": "pulso-15bac6c9201578",
+      "number": 22,
+      "solutions": 1,
+      "nodes": 16,
+      "combinationsBeforeQuotas": 2304,
+      "exhaustive": true
+    },
+    {
+      "id": "pulso-180c9ab473b58f",
+      "number": 23,
+      "solutions": 1,
+      "nodes": 9,
+      "combinationsBeforeQuotas": 11520,
+      "exhaustive": true
+    },
+    {
+      "id": "pulso-b526f5628c320b",
+      "number": 24,
+      "solutions": 1,
+      "nodes": 26,
+      "combinationsBeforeQuotas": 23040,
+      "exhaustive": true
+    },
+    {
+      "id": "pulso-5143a8592f8d3b",
+      "number": 25,
+      "solutions": 1,
+      "nodes": 13,
+      "combinationsBeforeQuotas": 9720,
+      "exhaustive": true
+    },
+    {
+      "id": "pulso-b7d7f0472eb787",
+      "number": 26,
+      "solutions": 1,
+      "nodes": 36,
+      "combinationsBeforeQuotas": 9600,
+      "exhaustive": true
+    },
+    {
+      "id": "pulso-d71a12dac61e04",
+      "number": 27,
+      "solutions": 1,
+      "nodes": 14,
+      "combinationsBeforeQuotas": 8640,
+      "exhaustive": true
+    },
+    {
+      "id": "pulso-45f347d4378f79",
+      "number": 28,
+      "solutions": 1,
+      "nodes": 26,
+      "combinationsBeforeQuotas": 16128,
+      "exhaustive": true
+    },
+    {
+      "id": "pulso-9dc0478732dfe2",
+      "number": 29,
+      "solutions": 1,
+      "nodes": 10,
+      "combinationsBeforeQuotas": 12096,
+      "exhaustive": true
+    },
+    {
+      "id": "pulso-29ff8edcd5fb98",
+      "number": 30,
+      "solutions": 1,
+      "nodes": 20,
+      "combinationsBeforeQuotas": 20736,
+      "exhaustive": true
+    },
+    {
+      "id": "pulso-614f52babc3619",
+      "number": 31,
+      "solutions": 1,
+      "nodes": 16,
+      "combinationsBeforeQuotas": 15360,
+      "exhaustive": true
+    },
+    {
+      "id": "pulso-4513d40925edd4",
+      "number": 32,
+      "solutions": 1,
+      "nodes": 21,
+      "combinationsBeforeQuotas": 23328,
+      "exhaustive": true
+    },
+    {
+      "id": "pulso-18d9d7e9c5f34d",
+      "number": 33,
+      "solutions": 1,
+      "nodes": 35,
+      "combinationsBeforeQuotas": 7680,
+      "exhaustive": true
+    },
+    {
+      "id": "pulso-5c203404381f1a",
+      "number": 34,
+      "solutions": 1,
+      "nodes": 17,
+      "combinationsBeforeQuotas": 82944,
+      "exhaustive": true
+    },
+    {
+      "id": "pulso-ce07ec1314c6e3",
+      "number": 35,
+      "solutions": 1,
+      "nodes": 48,
+      "combinationsBeforeQuotas": 9216,
+      "exhaustive": true
+    },
+    {
+      "id": "pulso-5c0379baf4151d",
+      "number": 36,
+      "solutions": 1,
+      "nodes": 26,
+      "combinationsBeforeQuotas": 18432,
+      "exhaustive": true
+    },
+    {
+      "id": "pulso-e7106f78aba8ab",
+      "number": 37,
+      "solutions": 1,
+      "nodes": 30,
+      "combinationsBeforeQuotas": 15360,
+      "exhaustive": true
+    },
+    {
+      "id": "pulso-ad5008847aa99f",
+      "number": 38,
+      "solutions": 1,
+      "nodes": 22,
+      "combinationsBeforeQuotas": 64000,
+      "exhaustive": true
+    },
+    {
+      "id": "pulso-3397cff17eb63a",
+      "number": 39,
+      "solutions": 1,
+      "nodes": 64,
+      "combinationsBeforeQuotas": 53760,
+      "exhaustive": true
+    },
+    {
+      "id": "pulso-df1b0a9031badf",
+      "number": 40,
+      "solutions": 1,
+      "nodes": 12,
+      "combinationsBeforeQuotas": 64512,
+      "exhaustive": true
+    },
+    {
+      "id": "pulso-0cf716b23e6d02",
+      "number": 41,
+      "solutions": 1,
+      "nodes": 58,
+      "combinationsBeforeQuotas": 92160,
+      "exhaustive": true
+    },
+    {
+      "id": "pulso-5095c3d014bcc5",
+      "number": 42,
+      "solutions": 1,
+      "nodes": 19,
+      "combinationsBeforeQuotas": 184320,
+      "exhaustive": true
+    },
+    {
+      "id": "pulso-4fa4be7e1a6f48",
+      "number": 43,
+      "solutions": 1,
+      "nodes": 32,
+      "combinationsBeforeQuotas": 276480,
+      "exhaustive": true
+    },
+    {
+      "id": "pulso-13caf2f7f3294e",
+      "number": 44,
+      "solutions": 1,
+      "nodes": 30,
+      "combinationsBeforeQuotas": 552960,
+      "exhaustive": true
+    },
+    {
+      "id": "pulso-e93d45d7b845e5",
+      "number": 45,
+      "solutions": 1,
+      "nodes": 10,
+      "combinationsBeforeQuotas": 1310720,
+      "exhaustive": true
+    },
+    {
+      "id": "pulso-0426d657b2e8cc",
+      "number": 46,
+      "solutions": 1,
+      "nodes": 10,
+      "combinationsBeforeQuotas": 540,
+      "exhaustive": true
+    },
+    {
+      "id": "pulso-2f6287484478b9",
+      "number": 47,
+      "solutions": 1,
+      "nodes": 6,
+      "combinationsBeforeQuotas": 162,
+      "exhaustive": true
+    },
+    {
+      "id": "pulso-5bf379f9983bbe",
+      "number": 48,
+      "solutions": 1,
+      "nodes": 11,
+      "combinationsBeforeQuotas": 6720,
+      "exhaustive": true
+    },
+    {
+      "id": "pulso-9d13764f819fed",
+      "number": 49,
+      "solutions": 1,
+      "nodes": 36,
+      "combinationsBeforeQuotas": 5760,
+      "exhaustive": true
+    },
+    {
+      "id": "pulso-f9e22bb7155be0",
+      "number": 50,
+      "solutions": 1,
+      "nodes": 27,
+      "combinationsBeforeQuotas": 3888,
+      "exhaustive": true
+    },
+    {
+      "id": "pulso-3ded8bc5f7317c",
+      "number": 51,
+      "solutions": 1,
+      "nodes": 28,
+      "combinationsBeforeQuotas": 7776,
+      "exhaustive": true
+    },
+    {
+      "id": "pulso-519ec83016a622",
+      "number": 52,
+      "solutions": 1,
+      "nodes": 16,
+      "combinationsBeforeQuotas": 9600,
+      "exhaustive": true
+    },
+    {
+      "id": "pulso-610132888589e6",
+      "number": 53,
+      "solutions": 1,
+      "nodes": 11,
+      "combinationsBeforeQuotas": 720,
+      "exhaustive": true
+    },
+    {
+      "id": "pulso-319200fd1ec469",
+      "number": 54,
+      "solutions": 1,
+      "nodes": 12,
+      "combinationsBeforeQuotas": 11520,
+      "exhaustive": true
+    },
+    {
+      "id": "pulso-69ffd91099b180",
+      "number": 55,
+      "solutions": 1,
+      "nodes": 52,
+      "combinationsBeforeQuotas": 322560,
+      "exhaustive": true
+    },
+    {
+      "id": "pulso-71fafa5c61c49f",
+      "number": 56,
+      "solutions": 1,
+      "nodes": 26,
+      "combinationsBeforeQuotas": 24576,
+      "exhaustive": true
+    },
+    {
+      "id": "pulso-4348f208bf8405",
+      "number": 57,
+      "solutions": 1,
+      "nodes": 50,
+      "combinationsBeforeQuotas": 38400,
+      "exhaustive": true
+    },
+    {
+      "id": "pulso-08edd7cd5b516b",
+      "number": 58,
+      "solutions": 1,
+      "nodes": 134,
+      "combinationsBeforeQuotas": 138240,
+      "exhaustive": true
+    },
+    {
+      "id": "pulso-6036382eafa2d8",
+      "number": 59,
+      "solutions": 1,
+      "nodes": 59,
+      "combinationsBeforeQuotas": 204800,
+      "exhaustive": true
+    },
+    {
+      "id": "pulso-710324dd3faecb",
+      "number": 60,
+      "solutions": 1,
+      "nodes": 128,
+      "combinationsBeforeQuotas": 31104,
+      "exhaustive": true
+    },
+    {
+      "id": "pulso-a3520f5d945d13",
+      "number": 61,
+      "solutions": 1,
+      "nodes": 25,
+      "combinationsBeforeQuotas": 9072,
+      "exhaustive": true
+    },
+    {
+      "id": "pulso-78e25be09f5aec",
+      "number": 62,
+      "solutions": 1,
+      "nodes": 16,
+      "combinationsBeforeQuotas": 92160,
+      "exhaustive": true
+    },
+    {
+      "id": "pulso-6b8ea565ad93cd",
+      "number": 63,
+      "solutions": 1,
+      "nodes": 44,
+      "combinationsBeforeQuotas": 589824,
+      "exhaustive": true
+    },
+    {
+      "id": "pulso-675e3c617b2297",
+      "number": 64,
+      "solutions": 1,
+      "nodes": 93,
+      "combinationsBeforeQuotas": 41472,
+      "exhaustive": true
+    },
+    {
+      "id": "pulso-7bea56a66604ad",
+      "number": 65,
+      "solutions": 1,
+      "nodes": 31,
+      "combinationsBeforeQuotas": 110592,
+      "exhaustive": true
+    },
+    {
+      "id": "pulso-9bae374192b958",
+      "number": 66,
+      "solutions": 1,
+      "nodes": 31,
+      "combinationsBeforeQuotas": 82944,
+      "exhaustive": true
+    },
+    {
+      "id": "pulso-8dd9d94c68f440",
+      "number": 67,
+      "solutions": 1,
+      "nodes": 44,
+      "combinationsBeforeQuotas": 27648,
+      "exhaustive": true
+    },
+    {
+      "id": "pulso-d500fde35a0731",
+      "number": 68,
+      "solutions": 1,
+      "nodes": 48,
+      "combinationsBeforeQuotas": 497664,
+      "exhaustive": true
+    },
+    {
+      "id": "pulso-38e831bba08975",
+      "number": 69,
+      "solutions": 1,
+      "nodes": 10,
+      "combinationsBeforeQuotas": 73728,
+      "exhaustive": true
+    },
+    {
+      "id": "pulso-2f9b72d6203c58",
+      "number": 70,
+      "solutions": 1,
+      "nodes": 272,
+      "combinationsBeforeQuotas": 442368,
+      "exhaustive": true
+    },
+    {
+      "id": "pulso-01c1a1fe09ad04",
+      "number": 71,
+      "solutions": 1,
+      "nodes": 25,
+      "combinationsBeforeQuotas": 2016,
+      "exhaustive": true
+    },
+    {
+      "id": "pulso-773242f5cb2157",
+      "number": 72,
+      "solutions": 1,
+      "nodes": 55,
+      "combinationsBeforeQuotas": 15360,
+      "exhaustive": true
+    },
+    {
+      "id": "pulso-6a7121cf03ec3a",
+      "number": 73,
+      "solutions": 1,
+      "nodes": 19,
+      "combinationsBeforeQuotas": 30720,
+      "exhaustive": true
+    },
+    {
+      "id": "pulso-e69fb6627aeb6b",
+      "number": 74,
+      "solutions": 1,
+      "nodes": 44,
+      "combinationsBeforeQuotas": 13824,
+      "exhaustive": true
+    },
+    {
+      "id": "pulso-72fbbf17c99103",
+      "number": 75,
+      "solutions": 1,
+      "nodes": 28,
+      "combinationsBeforeQuotas": 7776,
+      "exhaustive": true
+    },
+    {
+      "id": "pulso-ff98392775ad21",
+      "number": 76,
+      "solutions": 1,
+      "nodes": 27,
+      "combinationsBeforeQuotas": 4608,
+      "exhaustive": true
+    },
+    {
+      "id": "pulso-a4138a4b95232f",
+      "number": 77,
+      "solutions": 1,
+      "nodes": 36,
+      "combinationsBeforeQuotas": 10368,
+      "exhaustive": true
+    },
+    {
+      "id": "pulso-29ce6a45a3aee6",
+      "number": 78,
+      "solutions": 1,
+      "nodes": 84,
+      "combinationsBeforeQuotas": 122880,
+      "exhaustive": true
+    },
+    {
+      "id": "pulso-89bdcab8f77935",
+      "number": 79,
+      "solutions": 1,
+      "nodes": 57,
+      "combinationsBeforeQuotas": 290304,
+      "exhaustive": true
+    },
+    {
+      "id": "pulso-b33570fac9d333",
+      "number": 80,
+      "solutions": 1,
+      "nodes": 108,
+      "combinationsBeforeQuotas": 110592,
+      "exhaustive": true
+    }
+  ]
+}

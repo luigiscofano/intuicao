@@ -1,0 +1,49 @@
+{
+  "game": "mirante",
+  "seed": "0x4d495241",
+  "attempts": 45000,
+  "pool": 174,
+  "levels": 80,
+  "unique": 80,
+  "uniqueUpToRotationReflectionAndShapeExchange": 80,
+  "witnessesEssential": 35,
+  "tiers": [
+    {
+      "tier": 0,
+      "count": 15,
+      "minScore": 4,
+      "maxScore": 7
+    },
+    {
+      "tier": 1,
+      "count": 15,
+      "minScore": 7,
+      "maxScore": 11
+    },
+    {
+      "tier": 2,
+      "count": 15,
+      "minScore": 11,
+      "maxScore": 15
+    },
+    {
+      "tier": 3,
+      "count": 15,
+      "minScore": 33,
+      "maxScore": 40
+    },
+    {
+      "tier": 4,
+      "count": 15,
+      "minScore": 40,
+      "maxScore": 87
+    },
+    {
+      "tier": 5,
+      "count": 5,
+      "minScore": 89,
+      "maxScore": 178
+    }
+  ],
+  "limitations": "Faixas por métricas do solver e uso indispensável de testemunhas. Não equivalem a dificuldade humana calibrada nem a roteiro de deduções humanas de cada fase."
+}

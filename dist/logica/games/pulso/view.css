@@ -1,0 +1,6 @@
+.pulso-board-wrap { max-width: 100%; overflow-x: auto; overscroll-behavior-x: contain; padding: 2px; }
+.pulso-board { display: block; max-width: 640px; height: auto; margin-inline: auto; touch-action: manipulation; }
+.pulso-cols-8, .pulso-cols-9 { min-width: 480px; }
+.pulso-cell[role="button"] { cursor: pointer; outline: none; }
+.pulso-cell[role="button"]:focus-visible > rect:first-of-type { stroke: #B99B46; stroke-width: 3; stroke-dasharray: 5 3; }
+.pulso-cell[role="button"]:hover > rect:first-of-type { fill: #F5E7B2; }

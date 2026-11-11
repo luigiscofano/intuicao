@@ -1,0 +1,37 @@
+/* Rolagem fica no tabuleiro para manter peças legíveis em telas estreitas. */
+.foz-board {
+  width: 100%;
+  overflow-x: auto;
+  overscroll-behavior-x: contain;
+}
+
+.foz-svg {
+  display: block;
+  max-width: 710px;
+  margin: auto;
+  height: auto;
+  background: #FFFAF0;
+  border-radius: 12px;
+}
+
+.foz-board--wide .foz-svg {
+  min-width: 460px;
+}
+
+.foz-board [data-cell]:not([aria-disabled="true"]) {
+  cursor: pointer;
+}
+
+.foz-board [data-cell]:focus-visible {
+  outline: none;
+}
+
+.foz-board [data-cell]:focus-visible .foz-focus {
+  stroke: #30412F;
+  stroke-width: 3;
+}
+
+.foz-board [data-cell]:hover:not([aria-disabled="true"]) .foz-focus {
+  stroke: #73965E;
+  stroke-width: 2;
+}
