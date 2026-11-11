@@ -1,101 +1,204 @@
-// Navegação entre categorias e jogos, com sincronização da URL e do botão Voltar.
-// Navigation only. Game route handlers retain ownership of state and saving.
-export const CATEGORY_GAMES = {
-  intuicao: ['light', 'cut'],
-  logica: ['elo', 'prumo', 'pacto', 'sintonia', 'repasse', 'orbita'],
-  versus: ['desvio', 'broto', 'cerco'],
+import { VERSUS_GAME_IDS } from "./versus/metadata.mjs";
+import { renderAchievements, readAchievements } from "./achievements.mjs";
+
+// A navegação controla somente a tela. Cada jogo continua responsável pelo save.
+export const CATEGORY_GAMES = Object.freeze({
+  intuicao: ["light", "cut"],
+  logica: [
+    "elo",
+    "prumo",
+    "pacto",
+    "sintonia",
+    "repasse",
+    "orbita",
+    "divisa",
+    "pulso",
+    "foz",
+    "refugio",
+    "mirante",
+    "renovo",
+  ],
+  versus: ["desvio", "broto", "cerco", ...VERSUS_GAME_IDS],
+});
+
+const CARD_SELECTOR =
+  "[data-game],[data-collection],[data-sintonia],[data-repasse],[data-orbita],[data-broto],[data-cerco],[data-logic],[data-versus]";
+const CATEGORY_NAMES = {
+  intuicao: "Intuição",
+  logica: "Raciocínio lógico",
+  versus: "Versus",
 };
+const cardGame = (card) =>
+  card.dataset.game ||
+  card.dataset.collection ||
+  card.dataset.sintonia ||
+  card.dataset.repasse ||
+  card.dataset.orbita ||
+  card.dataset.broto ||
+  card.dataset.cerco ||
+  card.dataset.logic ||
+  card.dataset.versus;
+
 export function initCategoryNavigation({ hideGames }) {
-  const nav = document.querySelector('#main > .games'),
-    categories = document.getElementById('categories'),
-    back = document.getElementById('category-back'),
-    title = document.getElementById('category-title');
-  const cards = [
-    ...nav.querySelectorAll(
-      '[data-game],[data-collection],[data-sintonia],[data-repasse],[data-orbita],[data-broto],[data-cerco]',
-    ),
-  ];
-  const id = (b) =>
-    b.dataset.game ||
-    b.dataset.collection ||
-    b.dataset.sintonia ||
-    b.dataset.repasse ||
-    b.dataset.orbita ||
-    b.dataset.broto ||
-    b.dataset.cerco;
-  const names = { intuicao: 'Intuição', logica: 'Raciocínio lógico', versus: 'Versus' };
-  let current = null,
-    restoring = false;
-  function locationState() {
-    const p = new URLSearchParams(location.search),
-      game = p.get('game');
-    if (
-      ['trama', 'vertice'].includes(game) ||
+  const navigation = document.querySelector("#main > .games");
+  const categories = document.getElementById("categories");
+  const back = document.getElementById("category-back");
+  const title = document.getElementById("category-title");
+  const achievements = document.getElementById("achievements");
+  const tabs = document.getElementById("library-navigation");
+  // Permite montar os jogos isoladamente, inclusive nos testes legados.
+  if (!navigation || !categories || !back || !title || !achievements || !tabs)
+    return;
+
+  const cards = [...navigation.querySelectorAll(CARD_SELECTOR)];
+  let currentCategory = null;
+  let restoring = false;
+
+  function routeFromLocation() {
+    const parameters = new URLSearchParams(location.search);
+    const game = parameters.get("game");
+    if (parameters.get("screen") === "achievements")
+      return { screen: "achievements" };
+    const retiredRoute =
+      ["trama", "vertice"].includes(game) ||
       /\/(?:trama|vertice)\/?$/i.test(location.pathname) ||
-      (!game && /^#(?:game=)?(?:trama|vertice)(?:$|[/?&])/i.test(location.hash))
-    )
-      return { game: null, category: 'versus' };
+      (!game &&
+        /^#(?:game=)?(?:trama|vertice)(?:$|[/?&])/i.test(location.hash));
+    if (retiredRoute) return { category: "versus" };
     return {
-      game: cards.some((b) => id(b) === game) ? game : null,
-      category:
-        Object.keys(CATEGORY_GAMES).find((k) => CATEGORY_GAMES[k].includes(game)) ||
-        (CATEGORY_GAMES[p.get('category')] ? p.get('category') : null),
+      game: cards.some((card) => cardGame(card) === game) ? game : null,
+      category: CATEGORY_GAMES[parameters.get("category")]
+        ? parameters.get("category")
+        : null,
     };
   }
-  function record(category, game = null) {
-    const u = new URL(location.href);
-    if (/\/(?:trama|vertice)\/?$/i.test(u.pathname))
-      u.pathname = u.pathname.replace(/(?:trama|vertice)\/?$/i, '');
-    if (/^#(?:game=)?(?:trama|vertice)(?:$|[/?&])/i.test(u.hash)) u.hash = '';
-    u.searchParams.delete('game');
-    u.searchParams.delete('category');
-    if (game) u.searchParams.set('game', game);
-    else if (category) u.searchParams.set('category', category);
-    history.pushState(null, '', u);
+
+  function recordRoute(category, game = null, screen = null) {
+    const url = new URL(location.href);
+    url.pathname = url.pathname.replace(/(?:trama|vertice)\/?$/i, "");
+    if (/^#(?:game=)?(?:trama|vertice)(?:$|[/?&])/i.test(url.hash))
+      url.hash = "";
+    for (const key of ["game", "category", "screen"])
+      url.searchParams.delete(key);
+    if (game) url.searchParams.set("game", game);
+    if (category) url.searchParams.set("category", category);
+    if (screen) url.searchParams.set("screen", screen);
+    if (url.href !== location.href) history.pushState(null, "", url);
   }
-  function view(category, { focus = true } = {}) {
-    current = category;
-    categories.hidden = !!category;
-    nav.hidden = !category;
-    back.hidden = !category;
-    title.hidden = !category;
-    title.textContent = names[category] || '';
-    for (const b of cards) b.hidden = !CATEGORY_GAMES[category]?.includes(id(b));
-    nav.querySelectorAll('.game-section-title').forEach((h) => (h.hidden = true));
-    nav
-      .querySelectorAll('[data-info-game]')
-      .forEach((b) => (b.hidden = !CATEGORY_GAMES[category]?.includes(b.dataset.infoGame)));
-    if (focus)
-      (category ? title : categories.querySelector('button')).focus({ preventScroll: true });
+
+  function refreshCardProgress() {
+    const progress = readAchievements();
+    for (const card of cards) {
+      const summary = card.querySelector?.(".game-card-progress");
+      if (!summary) continue;
+      const campaign = progress.games.find(
+        (game) => game.id === cardGame(card),
+      );
+      summary.textContent = campaign
+        ? `Campanha · ${campaign.completed} / ${campaign.total} concluídos`
+        : "Partida local · sem histórico acumulado";
+    }
   }
-  categories.addEventListener('click', (e) => {
-    const b = e.target.closest('[data-category]');
-    if (!b) return;
+
+  function showView(
+    category,
+    { focus = true, screen = null, game = null } = {},
+  ) {
+    currentCategory = category;
+    const showingAchievements = screen === "achievements";
+    const playing = Boolean(game);
+    categories.hidden = showingAchievements || playing;
+    navigation.hidden = showingAchievements || playing;
+    back.hidden = showingAchievements || (!category && !playing);
+    title.hidden = showingAchievements || playing;
+    achievements.hidden = !showingAchievements;
+    const backupPanel = document.getElementById("progress-backup-panel");
+    if (backupPanel) backupPanel.hidden = playing;
+    title.textContent = CATEGORY_NAMES[category] || "Todos os jogos";
+    document
+      .querySelector("#main > .intro")
+      ?.classList?.toggle("library-intro-collapsed", playing);
+
+    for (const card of cards)
+      card.hidden =
+        Boolean(category) &&
+        !CATEGORY_GAMES[category]?.includes(cardGame(card));
+    navigation.querySelectorAll(".game-section-title").forEach((heading) => {
+      heading.hidden = Boolean(category);
+    });
+    navigation.querySelectorAll("[data-info-game]").forEach((button) => {
+      button.hidden =
+        Boolean(category) &&
+        !CATEGORY_GAMES[category]?.includes(button.dataset.infoGame);
+    });
+    categories.querySelectorAll("[data-category]").forEach((button) => {
+      button.setAttribute(
+        "aria-pressed",
+        String((button.dataset.category || null) === category),
+      );
+    });
+    tabs.querySelectorAll("[data-screen]").forEach((button) => {
+      const selected =
+        (button.dataset.screen === "achievements") === showingAchievements;
+      button.setAttribute("aria-current", selected ? "page" : "false");
+    });
+    if (showingAchievements) renderAchievements(achievements);
+    else if (!playing) refreshCardProgress();
+    if (focus && !playing)
+      (showingAchievements ? achievements.querySelector("h2") : title)?.focus({
+        preventScroll: true,
+      });
+  }
+
+  function returnToLibrary(category = null) {
     hideGames();
-    record(b.dataset.category);
-    view(b.dataset.category);
+    recordRoute(category);
+    showView(category);
+  }
+
+  categories.addEventListener("click", (event) => {
+    const button = event.target.closest("[data-category]");
+    if (button) returnToLibrary(button.dataset.category || null);
   });
-  back.onclick = () => {
+  back.onclick = () => returnToLibrary();
+  tabs.addEventListener("click", (event) => {
+    const button = event.target.closest("[data-screen]");
+    if (!button) return;
     hideGames();
-    record(null);
-    view(null);
-  };
-  nav.addEventListener('click', (e) => {
-    const b = e.target.closest(
-      '[data-game],[data-collection],[data-sintonia],[data-repasse],[data-orbita],[data-broto],[data-cerco]',
-    );
-    if (b && !restoring) record(current, id(b));
+    const screen =
+      button.dataset.screen === "achievements" ? "achievements" : null;
+    recordRoute(null, null, screen);
+    showView(null, { screen });
   });
-  function restore() {
-    const route = locationState();
+  navigation.addEventListener("click", (event) => {
+    const card = event.target.closest(CARD_SELECTOR);
+    if (!card) return;
+    const game = cardGame(card);
+    if (!restoring) recordRoute(currentCategory, game);
+    showView(currentCategory, { focus: false, game });
+  });
+
+  function restoreRoute() {
+    const route = routeFromLocation();
     hideGames();
-    view(route.category, { focus: false });
-    if (route.game) {
-      restoring = true;
-      cards.find((b) => id(b) === route.game).click();
+    showView(route.category || null, {
+      focus: false,
+      screen: route.screen,
+      game: route.game,
+    });
+    if (!route.game) return;
+    restoring = true;
+    try {
+      cards.find((card) => cardGame(card) === route.game).click();
+    } finally {
       restoring = false;
     }
   }
-  window.addEventListener('popstate', restore);
-  restore();
+
+  window.addEventListener("popstate", restoreRoute);
+  window.addEventListener("storage", () => {
+    if (!achievements.hidden) renderAchievements(achievements);
+    else if (!navigation.hidden) refreshCardProgress();
+  });
+  restoreRoute();
 }

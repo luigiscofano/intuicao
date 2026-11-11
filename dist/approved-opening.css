@@ -1,0 +1,151 @@
+/* Composição da prévia aprovada. A arte original permanece intacta. */
+#main > .intro[data-approved-opening] {
+  isolation: auto;
+  min-height: 280px;
+  padding: 24px 0 70px;
+  margin-bottom: 0;
+  border-bottom: 1px solid #d9d5bf;
+}
+#main > .intro[data-approved-opening]::after {
+  inset: 26px 0 auto auto;
+  background-color: transparent;
+}
+#main > .intro[data-approved-opening] h1,
+#main > .intro[data-approved-opening] > p { max-width: 64%; }
+#main > .intro[data-approved-opening] .hero-fauna {
+  position: absolute;
+  inset: 166px 0 auto auto !important;
+  width: 324px;
+  max-width: 36%;
+  grid-template-columns: repeat(6, minmax(0,1fr));
+  gap: 10px;
+  padding: 0;
+  margin: 0;
+  border: 0;
+  mix-blend-mode: multiply;
+}
+#main > .intro[data-approved-opening] .hero-fauna-cell { width: 44px; height: 44px; }
+#main > .intro[data-approved-opening] .hero-fauna-crop { border-radius: 0; }
+#main > .intro[data-approved-opening] .hero-fauna-cell[hidden] { display: none !important; }
+#main > .intro[data-approved-opening] .opening-fauna-toggle {
+  position: absolute;
+  right: 0;
+  top: 212px;
+  padding: 8px 0 8px 12px;
+  min-height: 44px;
+  border: 0;
+  border-radius: 5px;
+  background: transparent;
+  box-shadow: none;
+  color: #244b63;
+  font: 650 14px/1.4 system-ui,sans-serif;
+}
+.opening-fauna-toggle:hover { text-decoration: underline; text-underline-offset: 4px; }
+.opening-fauna-toggle:focus-visible { outline: 3px solid #bd4e2c; outline-offset: 4px; }
+#main > .intro[data-approved-opening].opening-fauna-expanded { min-height: 420px; }
+#main > .intro[data-approved-opening].opening-fauna-expanded .opening-fauna-toggle { top: 334px; }
+#library-controls {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  align-items: center;
+  gap: 16px 24px;
+  padding: 24px 0 16px;
+  border-bottom: 1px solid #a6b198;
+}
+#library-controls > .library-navigation {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  gap: 8px;
+}
+#library-controls > .category-choices {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin: 0;
+}
+#library-controls > .category-choices > button {
+  font: 400 14px/1.4 system-ui,sans-serif;
+  min-height: 44px;
+  padding: 10px 17px;
+  border: 1px solid #87977c;
+  border-radius: 30px;
+  background: transparent;
+  color: #30412f;
+  box-shadow: none;
+}
+#library-controls > .category-choices > button::before { display: none; }
+#library-controls > .category-choices > button[aria-pressed='true'] { background: #e9d18a; border-color: #856a22; }
+#library-controls > .category-choices > button:hover { background: #eadeb8; }
+#library-controls > .category-choices[hidden],
+#library-controls:has(> .category-choices[hidden]):not(:has(> .library-navigation)) { display: none; }
+#main > .games > .game-section-title {
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+  gap: 12px;
+}
+.opening-category-count { font: 400 12px/1.4 system-ui,sans-serif; letter-spacing: 0; text-transform: none; }
+#main > .games > button:not(.game-info-nav) > span:not(.game-nav-icon) { display: none; }
+#main > .games > button:not(.game-info-nav) { font-family: system-ui,sans-serif; }
+@media(min-width: 761px) {
+  #main > .games { grid-template-columns: repeat(6,minmax(0,1fr)); }
+  #main > .games > button:not(.game-info-nav) { grid-column: span 2; }
+  #main > .games > button[data-game] { grid-column: span 3; }
+}
+@media(max-width: 1000px) and (min-width: 761px) {
+  #main > .intro[data-approved-opening] h1 { font-size: 46px; }
+  #main > .intro[data-approved-opening] .hero-fauna { max-width: 34%; gap: 4px; }
+  #main > .intro[data-approved-opening] .hero-fauna-cell { width: 37px; height: 44px; }
+}
+@media(max-width:760px) {
+  #main > .intro[data-approved-opening] {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    min-height: 0;
+    padding: 28px 4px 20px;
+  }
+  #main > .intro[data-approved-opening] h1,
+  #main > .intro[data-approved-opening] > p { max-width: 100%; }
+  #main > .intro[data-approved-opening]::after {
+    position: relative;
+    order: 1;
+    inset: auto;
+    margin: 24px 0 20px auto;
+  }
+  #main > .intro[data-approved-opening] .hero-fauna {
+    position: relative;
+    order: 2;
+    inset: auto !important;
+    width: min(100%,324px);
+    max-width: none;
+    margin: 0 0 0 auto;
+    gap: 10px;
+  }
+  #main > .intro[data-approved-opening] .opening-fauna-toggle {
+    position: static;
+    order: 3;
+    align-self: flex-end;
+    margin-top: 4px;
+  }
+  #main > .intro[data-approved-opening].opening-fauna-expanded { min-height: 0; }
+  #library-controls { gap: 16px; padding: 20px 0 16px; }
+  #library-controls > .category-choices { gap: 7px; }
+  #library-controls > .category-choices > button { padding: 10px 12px; font-size: 13px; }
+  #main > .games > button:not(.game-info-nav) { padding-left: 48px; }
+  #main > .games > button.has-game-nav-icon > .game-nav-icon { left: 14px; }
+}
+@media(max-width:480px) {
+  #main > .games { grid-template-columns: minmax(0,1fr); }
+  #main > .games > button:not(.game-info-nav) { min-height: 118px; }
+}
+
+/* Na biblioteca, a última rota não deve parecer uma seleção ativa. */
+#main > .games:not([hidden]) > button:not(.game-info-nav)[aria-pressed='true'] {
+  background: #fffaf0;
+  border-color: #87977c;
+  color: #30412f;
+}
+#main > .games:not([hidden]) > button[aria-pressed='true'] small { color: #445440; }

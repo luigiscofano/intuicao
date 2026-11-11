@@ -178,3 +178,8 @@ c439caef5a576f3227570672141fc39b0f89bdf2:tests/repasse80-ui.mjs:generic-api-key:
 0ea60be4554c118c96f531f1d26b3f0dfc603ca5:tests/prumo80-build-audit.json:generic-api-key:965
 0ea60be4554c118c96f531f1d26b3f0dfc603ca5:tests/prumo80-build-audit.json:generic-api-key:9785
 0ea60be4554c118c96f531f1d26b3f0dfc603ca5:tests/prumo80-independent-input.json:generic-api-key:1
+
+# Falso positivo histórico: nome público do registro localStorage, sem credencial.
+# A constante foi renomeada para VERSUS_STORAGE_ID; somente este achado antigo é excluído.
+d296bcb315306831df845fe59bb6292324a4c3cf:dist/versus/storage.mjs:generic-api-key:4
+

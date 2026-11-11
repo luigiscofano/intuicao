@@ -1,3 +1,4 @@
+import { writeProgress } from '../progress-write-guard.mjs';
 // Carregamento de BROTO e abertura da preparação ou da retomada do duelo.
 // BROTO abre sempre a preparação; retomar o duelo exige escolha explícita.
 export function createBrotoRoute({ hideOthers }) {
@@ -50,7 +51,7 @@ export function createBrotoRoute({ hideOthers }) {
         const raw = JSON.parse(localStorage.getItem('intuicao.broto.v1') || 'null');
         if (raw?.lastView?.active) {
           raw.lastView.active = false;
-          localStorage.setItem('intuicao.broto.v1', JSON.stringify(raw));
+          writeProgress(localStorage, 'intuicao.broto.v1', JSON.stringify(raw));
         }
       } catch {}
     }

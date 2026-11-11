@@ -1,3 +1,4 @@
+import { writeProgress } from '../progress-write-guard.mjs';
 // Interface de SINTONIA: tabuleiros, comandos, mecanismos, dicas e progresso.
 import { rulesPreviewMarkup } from '../rules-preview.mjs';
 import { selectAccessoryPalette } from './accessory-palette.mjs';
@@ -430,7 +431,7 @@ export function initSintonia({ hideOtherGames }) {
     }
     data.prefs.advanced = advanced;
     try {
-      localStorage.setItem(STORE, JSON.stringify(data));
+      writeProgress(localStorage, STORE, JSON.stringify(data));
       storageWarning = false;
     } catch {
       storageWarning = true;

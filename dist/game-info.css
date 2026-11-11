@@ -1,12 +1,43 @@
-/* Controles de informação e explicações dos cartões de jogos. */
-/* Information UI is separate from card actions and game surfaces. */
+/* Os controles informativos ficam separados das ações dos cartões e tabuleiros. */
 #main > .games {
   position: relative;
 }
-#main > .games > button:is([data-game],[data-collection],[data-sintonia],[data-repasse],[data-orbita],[data-broto],[data-cerco]) {
+#main
+  > .games
+  > button:is(
+    [data-game],
+    [data-collection],
+    [data-sintonia],
+    [data-repasse],
+    [data-orbita],
+    [data-broto],
+    [data-cerco],
+    [data-logic],
+    [data-versus]
+  ) {
   padding-right: 52px;
 }
-button.game-info-trigger,#main :is(#selection-title,#game-title,#collection-title,#c-title,#r-selection-title,#r-title,#o-selection-title,#o-title,#b-selection-title,#b-title,#ce-selection-title,#ce-title,#tr-selection-title,#tr-title)>button.game-info-trigger {
+button.game-info-trigger,
+#main
+  :is(
+    #selection-title,
+    #game-title,
+    #collection-title,
+    #c-title,
+    #r-selection-title,
+    #r-title,
+    #o-selection-title,
+    #o-title,
+    #b-selection-title,
+    #b-title,
+    #ce-selection-title,
+    #ce-title,
+    #lg-selection-title,
+    #lg-title,
+    #tr-selection-title,
+    #tr-title
+  )
+  > button.game-info-trigger {
   display: inline-flex;
   align-items: center;
   justify-content: center;
@@ -21,7 +52,9 @@ button.game-info-trigger,#main :is(#selection-title,#game-title,#collection-titl
   border-radius: 50%;
   background: #fff;
   color: #405e49;
-  font: italic 700 18px/1 Georgia,serif;
+  font:
+    italic 700 18px/1 Georgia,
+    serif;
   letter-spacing: 0;
   box-shadow: none;
   cursor: pointer;
@@ -38,11 +71,34 @@ button.game-info-trigger,#main :is(#selection-title,#game-title,#collection-titl
   border-radius: 50%;
   background: #fff;
   color: #405e49;
-  font: italic 700 18px/1 Georgia,serif;
+  font:
+    italic 700 18px/1 Georgia,
+    serif;
   box-shadow: none;
   text-align: center;
 }
-#main :is(#selection-title,#game-title,#collection-title,#c-title,#r-selection-title,#r-title,#o-selection-title,#o-title,#b-selection-title,#b-title,#ce-selection-title,#ce-title,#tr-selection-title,#tr-title)>button.game-info-trigger:hover,button.game-info-trigger:hover,#main > .games > button.game-info-nav:hover {
+#main
+  :is(
+    #selection-title,
+    #game-title,
+    #collection-title,
+    #c-title,
+    #r-selection-title,
+    #r-title,
+    #o-selection-title,
+    #o-title,
+    #b-selection-title,
+    #b-title,
+    #ce-selection-title,
+    #ce-title,
+    #lg-selection-title,
+    #lg-title,
+    #tr-selection-title,
+    #tr-title
+  )
+  > button.game-info-trigger:hover,
+button.game-info-trigger:hover,
+#main > .games > button.game-info-nav:hover {
   background: #edf2e8;
   border-color: #71865b;
   box-shadow: none;
@@ -56,20 +112,24 @@ button.game-info-trigger:focus-visible {
   inset: auto;
   margin: 0;
   box-sizing: border-box;
-  width: min(300px,calc(100vw - 24px));
+  width: min(300px, calc(100vw - 24px));
   padding: 16px 18px;
   border: 1px solid #b3c1a8;
   border-radius: 12px;
   background: #fff;
   color: #3b342e;
   box-shadow: 0 8px 26px #34452a20;
-  font: 13px/1.55 system-ui,sans-serif;
+  font:
+    13px/1.55 system-ui,
+    sans-serif;
   pointer-events: none;
   overflow-wrap: anywhere;
 }
 #game-info-tip strong {
   display: block;
-  font: 600 17px/1.3 Georgia,serif;
+  font:
+    600 17px/1.3 Georgia,
+    serif;
   color: #405e49;
 }
 #game-info-tip p {
@@ -81,7 +141,7 @@ button.game-info-trigger:focus-visible {
 }
 #game-info-dialog {
   box-sizing: border-box;
-  width: min(660px,calc(100vw - 32px));
+  width: min(660px, calc(100vw - 32px));
   max-width: none;
   max-height: calc(100dvh - 40px);
   padding: 0;
@@ -111,7 +171,9 @@ button.game-info-trigger:focus-visible {
   flex-shrink: 0;
 }
 #game-info-title {
-  font: 400 34px/1.2 Georgia,serif;
+  font:
+    400 34px/1.2 Georgia,
+    serif;
   color: #405e49;
   margin: 0;
   flex: 1;
@@ -121,10 +183,14 @@ button.game-info-trigger:focus-visible {
   overscroll-behavior: contain;
   min-height: 0;
   padding: 6px 28px 18px;
-  font: 14px/1.75 system-ui,sans-serif;
+  font:
+    14px/1.75 system-ui,
+    sans-serif;
 }
 .game-info-copy h3 {
-  font: 600 17px/1.4 Georgia,serif;
+  font:
+    600 17px/1.4 Georgia,
+    serif;
   color: #405e49;
   margin: 20px 0 10px;
 }
@@ -153,7 +219,9 @@ button.game-info-trigger:focus-visible {
   border-radius: 7px;
   background: #fff;
   color: #405e49;
-  font: 600 13px/1.4 system-ui,sans-serif;
+  font:
+    600 13px/1.4 system-ui,
+    sans-serif;
 }
 #game-info-dialog .game-info-x {
   width: 44px;
@@ -161,7 +229,7 @@ button.game-info-trigger:focus-visible {
   font-size: 25px;
   line-height: 1;
 }
-@media(max-width:600px) {
+@media (max-width: 600px) {
   #game-info-dialog {
     width: calc(100vw - 24px);
     max-height: calc(100dvh - 24px);

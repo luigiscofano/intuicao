@@ -1,0 +1,268 @@
+#versus-games .enlace-layout {
+  --enlace-green: #39674a;
+  --enlace-amber: #b99b46;
+  color: #30412f;
+  width: 100%;
+}
+#versus-games .enlace-steps {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 0.55rem;
+  padding: 0;
+  margin: 0 0 0.8rem;
+  list-style: none;
+}
+#versus-games .enlace-steps li {
+  display: flex;
+  align-items: center;
+  gap: 0.45rem;
+  border: 1px solid #d5decb;
+  border-radius: 999px;
+  padding: 0.42rem 0.8rem;
+  font-size: 0.86rem;
+  color: #63705d;
+  background: #f7f8ef;
+}
+#versus-games .enlace-steps li span {
+  display: inline-grid;
+  place-items: center;
+  width: 1.35rem;
+  height: 1.35rem;
+  border-radius: 50%;
+  background: #e4e9d9;
+  font-weight: 700;
+}
+#versus-games .enlace-steps .enlace-step-active {
+  border-color: #39674a;
+  background: #e7efd9;
+  color: #30412f;
+  font-weight: 700;
+}
+#versus-games .enlace-steps .enlace-step-done {
+  color: #39674a;
+}
+#versus-games .enlace-instruction {
+  text-align: center;
+  margin: 0.5rem auto;
+  max-width: 44rem;
+  min-height: 2.8em;
+  line-height: 1.5;
+}
+#versus-games .enlace-board {
+  width: min(100%, 700px);
+  position: relative;
+  margin: 0 auto;
+  aspect-ratio: 1;
+}
+#versus-games .enlace-graph {
+  display: block;
+  width: 100%;
+  height: 100%;
+  overflow: visible;
+}
+#versus-games .enlace-tear {
+  fill: #f4f3e5;
+  stroke: #c7cfb7;
+  stroke-width: 2;
+}
+#versus-games .enlace-source {
+  stroke-width: 2;
+}
+#versus-games .enlace-source-0 {
+  fill: #dfeaca;
+  stroke: #39674a;
+}
+#versus-games .enlace-source-1 {
+  fill: #f4e8b5;
+  stroke: #b99b46;
+}
+#versus-games .enlace-exit {
+  fill: none;
+  stroke-width: 2;
+}
+#versus-games .enlace-exit-0 {
+  stroke: #39674a;
+}
+#versus-games .enlace-exit-1 {
+  stroke: #b99b46;
+}
+#versus-games .enlace-axis {
+  text-anchor: middle;
+  fill: #63705d;
+  font-size: 24px;
+  font-weight: 700;
+}
+#versus-games .enlace-margin-label {
+  text-anchor: middle;
+  fill: #63705d;
+  font-size: 17px;
+}
+#versus-games .enlace-empty-wire {
+  stroke: #d0d6c7;
+  stroke-width: 2;
+  fill: none;
+}
+#versus-games .enlace-wire {
+  --enlace-wire-color: #39674a;
+}
+#versus-games .enlace-wire.enlace-team-1 {
+  --enlace-wire-color: #b99b46;
+}
+#versus-games .enlace-wire-body {
+  stroke: var(--enlace-wire-color);
+  stroke-width: 10;
+  stroke-linecap: round;
+  fill: none;
+}
+#versus-games .enlace-wire-light {
+  stroke: #fffbdd;
+  stroke-width: 3;
+  stroke-linecap: round;
+  fill: none;
+}
+#versus-games .enlace-wire-mark {
+  fill: var(--enlace-wire-color);
+  stroke: #fffcf3;
+  stroke-width: 1.5;
+}
+#versus-games .enlace-pending-wire .enlace-wire-body {
+  stroke-dasharray: 12 7;
+}
+#versus-games .enlace-partial-wire {
+  stroke: #39674a;
+  stroke-width: 8;
+  stroke-dasharray: 10 7;
+  stroke-linecap: round;
+  fill: none;
+}
+#versus-games .enlace-peg {
+  fill: #fffcf3;
+  stroke: #aebba0;
+  stroke-width: 2.5;
+}
+#versus-games .enlace-peg-center {
+  fill: #d5ddc6;
+}
+#versus-games .enlace-lit-0,
+#versus-games .enlace-lit-1 {
+  fill: none;
+  stroke-width: 4.5;
+  stroke-linecap: round;
+}
+#versus-games .enlace-lit-0 {
+  stroke: #39674a;
+}
+#versus-games .enlace-lit-1 {
+  stroke: #b99b46;
+}
+#versus-games .enlace-pin {
+  position: absolute;
+  transform: translate(-50%, -50%);
+  width: 46px;
+  height: 46px;
+  min-width: 44px;
+  min-height: 44px;
+  padding: 0;
+  border: 2px solid transparent;
+  border-radius: 50%;
+  background: transparent;
+  box-shadow: none;
+  cursor: pointer;
+}
+#versus-games .enlace-pin:disabled {
+  opacity: 1;
+  cursor: default;
+}
+#versus-games .enlace-pin:not(:disabled):hover {
+  border-color: #73965e;
+  background: #dfeaca44;
+}
+#versus-games .enlace-pin.enlace-selected {
+  outline: 3px solid #39674a;
+  outline-offset: 3px;
+}
+#versus-games .enlace-pin.enlace-endpoint {
+  border-color: #73965e;
+}
+#versus-games .enlace-pin.enlace-candidate:not(:disabled) {
+  box-shadow: 0 0 0 1px #73965e55;
+}
+#versus-games .enlace-pin:focus-visible {
+  outline: 3px solid #30412f;
+  outline-offset: 4px;
+}
+#versus-games .enlace-tools {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.6rem;
+  justify-content: center;
+  align-items: center;
+  margin: 0.6rem 0;
+  font-size: 0.88rem;
+}
+#versus-games .enlace-tools button {
+  min-height: 44px;
+  border: 1px solid #b4c0a7;
+  border-radius: 10px;
+  background: #f1f3e7;
+  color: #30412f;
+  padding: 0.5rem 0.9rem;
+  cursor: pointer;
+}
+#versus-games .enlace-tools button:focus-visible {
+  outline: 3px solid #39674a;
+  outline-offset: 2px;
+}
+#versus-games .enlace-key {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 0.9rem;
+  font-size: 0.82rem;
+  color: #63705d;
+}
+#versus-games .enlace-key span:first-child {
+  color: #39674a;
+  font-weight: 700;
+}
+#versus-games .enlace-key span:nth-child(2) {
+  color: #705a1d;
+  font-weight: 700;
+}
+#versus-games .enlace-board[data-winner="0"] .enlace-exit-0 {
+  fill: #dfeaca;
+  stroke-width: 4;
+}
+#versus-games .enlace-board[data-winner="1"] .enlace-exit-1 {
+  fill: #f4e8b5;
+  stroke-width: 4;
+}
+#versus-games .enlace-result {
+  display: grid;
+  justify-items: center;
+  gap: 0.5rem;
+  color: #39674a;
+}
+#versus-games .enlace-result[data-winner="1"] {
+  color: #705a1d;
+}
+#versus-games .enlace-result-lights {
+  font-size: clamp(1.1rem, 4vw, 2rem);
+  letter-spacing: 0.12em;
+}
+@media (max-width: 480px) {
+  #versus-games .enlace-steps {
+    gap: 0.35rem;
+  }
+  #versus-games .enlace-steps li {
+    padding: 0.35rem 0.45rem;
+    font-size: 0.73rem;
+  }
+  #versus-games .enlace-margin-label {
+    font-size: 18px;
+  }
+  #versus-games .enlace-axis {
+    font-size: 26px;
+  }
+}

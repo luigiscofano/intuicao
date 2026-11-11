@@ -1,0 +1,397 @@
+#versus-games .vazante-layout {
+  width: 100%;
+  color: #30412f;
+}
+#versus-games .vazante-instruction {
+  text-align: center;
+  line-height: 1.5;
+  max-width: 43rem;
+  margin: 0 auto 1rem;
+  min-height: 2.5em;
+}
+#versus-games .vazante-river-frame {
+  width: min(calc(100% - 30px), 650px);
+  margin: 0 auto;
+}
+#versus-games .vazante-bank {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  gap: 0.3rem 0.65rem;
+  color: #705a1d;
+  margin-bottom: 0.3rem;
+  font-size: 0.82rem;
+}
+#versus-games .vazante-bank strong {
+  font-size: 0.95rem;
+}
+#versus-games .vazante-bank[data-player="0"] {
+  color: #39674a;
+}
+#versus-games .vazante-bank-south {
+  margin-top: 0.3rem;
+  margin-bottom: 0;
+}
+#versus-games .vazante-bank-ticks {
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  width: 100%;
+  height: 7px;
+  gap: 0;
+}
+#versus-games .vazante-bank-ticks i {
+  display: block;
+  width: 47%;
+  margin: 0 auto;
+  border: 1px solid #b99b46;
+  border-radius: 3px;
+  background: #f4e8b5;
+}
+#versus-games .vazante-bank[data-player="0"] .vazante-bank-ticks i {
+  border-color: #73965e;
+  background: #dfeaca;
+}
+#versus-games .vazante-coordinate-area {
+  position: relative;
+  margin-top: 1.7rem;
+}
+#versus-games .vazante-column-labels {
+  position: absolute;
+  top: -1.5rem;
+  left: 0;
+  right: 0;
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  text-align: center;
+  font-weight: 700;
+  color: #63705d;
+  font-size: 0.85rem;
+}
+#versus-games .vazante-row-labels {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: -1.4rem;
+  display: grid;
+  grid-template-rows: repeat(5, 1fr);
+  align-items: center;
+  color: #63705d;
+  font-weight: 700;
+  font-size: 0.85rem;
+}
+#versus-games .vazante-board {
+  position: relative;
+  border: 2px solid #c3cdb6;
+  border-radius: 18px;
+  background: #fffcf3;
+  padding: 0;
+  box-shadow:
+    0 0 0 4px #fffcf3,
+    0 0 0 5px #d8dfce;
+}
+#versus-games .vazante-grid {
+  display: grid;
+  grid-template-columns: repeat(5, minmax(0, 1fr));
+  aspect-ratio: 1;
+}
+#versus-games .vazante-cell {
+  position: relative;
+  display: grid;
+  place-items: center;
+  margin: 3px;
+  padding: 0;
+  min-width: 0;
+  min-height: 0;
+  aspect-ratio: 1;
+  border: 1px solid #d4dfcc;
+  border-radius: 11px;
+  background: #edf3e8;
+  box-shadow: none;
+  cursor: pointer;
+}
+#versus-games .vazante-cell:disabled {
+  opacity: 1;
+  cursor: default;
+}
+#versus-games .vazante-cell:not(:disabled):hover {
+  background: #e2edd8;
+  border-color: #73965e;
+}
+#versus-games .vazante-cell:focus-visible {
+  outline: 3px solid #30412f;
+  outline-offset: -3px;
+  z-index: 2;
+}
+#versus-games .vazante-selected {
+  border: 2px solid #39674a;
+  background: #e4eed9;
+}
+#versus-games .vazante-destination {
+  outline: 2px dashed #73965e;
+  outline-offset: -5px;
+  background: #e4eed9;
+}
+#versus-games .vazante-vacated {
+  background: #f0f4eb;
+  border-style: dashed;
+}
+#versus-games .vazante-water-dot {
+  color: #aebfa6;
+  font-size: 1.4rem;
+}
+#versus-games .vazante-cell-name {
+  position: absolute;
+  left: 50%;
+  bottom: 4%;
+  transform: translateX(-50%);
+  font-size: clamp(0.52rem, 1.15vw, 0.7rem);
+  color: #6f8066;
+  line-height: 1;
+  pointer-events: none;
+}
+#versus-games .vazante-boat {
+  --vazante-team: #39674a;
+  --vazante-pale: #e1edce;
+  display: block;
+  position: relative;
+  width: 87%;
+  height: 87%;
+  aspect-ratio: 1;
+  flex: none;
+}
+#versus-games .vazante-boat[data-player="1"] {
+  --vazante-team: #ad903e;
+  --vazante-pale: #f5e7b2;
+}
+#versus-games .vazante-hull {
+  display: block;
+  width: 100%;
+  height: 100%;
+  overflow: visible;
+}
+#versus-games .vazante-boat-shadow {
+  fill: #cbd7c0;
+  opacity: 0.65;
+}
+#versus-games .vazante-boat-body {
+  fill: var(--vazante-pale);
+  stroke: var(--vazante-team);
+  stroke-width: 2.8;
+}
+#versus-games .vazante-cockpit {
+  fill: #fff;
+  stroke: var(--vazante-team);
+  stroke-width: 1.4;
+}
+#versus-games .vazante-bow {
+  fill: none;
+  stroke: var(--vazante-team);
+  stroke-width: 2.4;
+  stroke-linecap: round;
+}
+#versus-games .vazante-tie {
+  fill: #fffcf3;
+  stroke: var(--vazante-team);
+  stroke-width: 1.5;
+}
+#versus-games .vazante-passenger {
+  position: absolute;
+  left: 23%;
+  top: 22%;
+  width: 54%;
+  height: 51%;
+  display: block;
+  overflow: hidden;
+}
+#versus-games .vazante-passenger > .vs-mascot {
+  display: block;
+  width: 100%;
+  height: 100%;
+  max-width: none;
+  max-height: none;
+  margin: 0;
+  overflow: hidden;
+}
+#versus-games .vazante-team-mark {
+  position: absolute;
+  right: 13%;
+  bottom: 12%;
+  color: var(--vazante-team);
+  font-size: clamp(0.7rem, 2vw, 1.15rem);
+  line-height: 1;
+  text-shadow: 0 0 2px #fffcf3;
+}
+#versus-games .vazante-boat-selected::after {
+  content: "";
+  position: absolute;
+  inset: -3%;
+  border: 2px solid var(--vazante-team);
+  border-radius: 48%;
+  pointer-events: none;
+}
+#versus-games .vazante-boat-towed::after {
+  content: "";
+  position: absolute;
+  inset: -3%;
+  border: 2px dashed var(--vazante-team);
+  border-radius: 48%;
+  pointer-events: none;
+}
+#versus-games .vazante-trails {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+  overflow: visible;
+}
+#versus-games .vazante-trail {
+  fill: none;
+  stroke-width: 3.3;
+  stroke-linecap: round;
+  stroke-dasharray: 5 4;
+}
+#versus-games .vazante-trail-0 {
+  stroke: #39674a;
+}
+#versus-games .vazante-trail-1 {
+  stroke: #967a2d;
+}
+#versus-games .vazante-last-trails {
+  animation: vazante-wake-settles 2.6s ease-out forwards;
+}
+#versus-games .vazante-tools {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.6rem 1rem;
+  justify-content: center;
+  align-items: center;
+  margin: 1rem auto;
+  font-size: 0.86rem;
+  color: #63705d;
+}
+#versus-games .vazante-tools button {
+  min-height: 44px;
+  border: 1px solid #b4c0a7;
+  border-radius: 10px;
+  background: #f1f3e7;
+  color: #30412f;
+  padding: 0.5rem 0.9rem;
+  cursor: pointer;
+}
+#versus-games .vazante-tools button:focus-visible {
+  outline: 3px solid #39674a;
+  outline-offset: 2px;
+}
+#versus-games .vazante-deliveries {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 0.8rem;
+  max-width: 650px;
+  margin: 0.8rem auto;
+}
+#versus-games .vazante-delivery-row {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  gap: 0.5rem;
+  padding: 0.65rem;
+  border: 1px solid #c3cdb6;
+  border-radius: 13px;
+  background: #f0f3e6;
+}
+#versus-games .vazante-delivery-row[data-player="1"] {
+  background: #f6f0da;
+  border-color: #d4c699;
+}
+#versus-games .vazante-delivery-row strong {
+  display: block;
+  color: #39674a;
+  font-size: 0.85rem;
+}
+#versus-games .vazante-delivery-row[data-player="1"] strong {
+  color: #705a1d;
+}
+#versus-games .vazante-delivery-row small {
+  display: block;
+  font-size: 0.76rem;
+  color: #63705d;
+  margin-top: 0.2rem;
+}
+#versus-games .vazante-delivery-slots {
+  display: flex;
+  gap: 0.3rem;
+}
+#versus-games .vazante-delivery-slot {
+  display: grid;
+  place-items: center;
+  width: clamp(33px, 5vw, 50px);
+  aspect-ratio: 1;
+  border: 1px dashed #bcc8ae;
+  border-radius: 8px;
+  color: #a5b395;
+}
+#versus-games .vazante-arrived {
+  border-style: solid;
+  background: #fffcf3;
+}
+#versus-games .vazante-arrival-preview {
+  outline: 2px dashed #73965e;
+  outline-offset: 2px;
+}
+#versus-games .vazante-delivery-slot .vazante-team-mark {
+  font-size: 0.55rem;
+}
+#versus-games .vazante-key {
+  text-align: center;
+  font-size: 0.82rem;
+  color: #63705d;
+  line-height: 1.5;
+}
+#versus-games .vazante-result {
+  display: grid;
+  justify-items: center;
+  gap: 0.4rem;
+  text-align: center;
+}
+#versus-games .vazante-result-water {
+  color: #577988;
+  font-size: 2.5rem;
+  letter-spacing: 0.4em;
+}
+#versus-games .vazante-result > span:last-child {
+  font-size: 0.9rem;
+  color: #63705d;
+}
+@keyframes vazante-wake-settles {
+  0%,
+  55% {
+    opacity: 0.8;
+  }
+  100% {
+    opacity: 0;
+  }
+}
+@media (prefers-reduced-motion: reduce) {
+  #versus-games .vazante-last-trails {
+    animation: none;
+    opacity: 0.35;
+  }
+}
+@media (max-width: 480px) {
+  #versus-games .vazante-cell {
+    margin: 2px;
+    border-radius: 8px;
+  }
+  #versus-games .vazante-bank {
+    font-size: 0.7rem;
+  }
+  #versus-games .vazante-bank strong {
+    font-size: 0.82rem;
+  }
+  #versus-games .vazante-delivery-row {
+    padding: 0.5rem;
+  }
+}

@@ -1,0 +1,42 @@
+/* Rolagem fica no tabuleiro para manter peças legíveis em telas estreitas. */
+.renovo-board {
+  width: 100%;
+  overflow-x: auto;
+  overscroll-behavior-x: contain;
+}
+
+.renovo-svg {
+  display: block;
+  max-width: 790px;
+  margin: auto;
+  height: auto;
+  min-width: 360px;
+  background: #FFFAF0;
+  border-radius: 12px;
+}
+
+.renovo-board--wide .renovo-svg {
+  min-width: 540px;
+}
+
+.renovo-board [data-cell] {
+  cursor: pointer;
+}
+
+.renovo-board [data-cell]:focus-visible {
+  outline: none;
+}
+
+.renovo-board [data-cell]:focus-visible .renovo-focus {
+  stroke: #30412F;
+  stroke-width: 3;
+}
+
+.renovo-board [data-cell]:hover .renovo-focus {
+  stroke: #73965E;
+  stroke-width: 2;
+}
+
+.renovo-board--very-wide .renovo-svg {
+  min-width: 720px;
+}

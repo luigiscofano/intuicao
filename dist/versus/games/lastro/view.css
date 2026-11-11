@@ -1,0 +1,429 @@
+#versus-games .lastro-game {
+  width: min(100%, 780px);
+  margin-inline: auto;
+  color: #30412f;
+  font-variant-numeric: tabular-nums;
+}
+
+#versus-games .lastro-round-heading {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  gap: 0.35rem 1rem;
+  margin-bottom: 0.7rem;
+  font-size: 0.9rem;
+}
+
+#versus-games .lastro-meter {
+  display: grid;
+  grid-template-columns: 1fr 1.2fr 1fr;
+  gap: 0.45rem;
+  margin-bottom: 1rem;
+  padding: 0.7rem 0.8rem 0.55rem;
+  border: 1px solid #cbd7be;
+  border-radius: 13px;
+  background: #f4f5e9;
+}
+
+#versus-games .lastro-load,
+#versus-games .lastro-delta {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  min-width: 0;
+  padding: 0.35rem 0.2rem;
+  border: 1px solid #dde1cb;
+  border-radius: 8px;
+  background: #fffdf2;
+  text-align: center;
+}
+
+#versus-games .lastro-load > span,
+#versus-games .lastro-delta > span {
+  font-size: 0.72rem;
+  line-height: 1.35;
+}
+
+#versus-games .lastro-load strong {
+  font-size: 1.35rem;
+}
+
+#versus-games .lastro-delta {
+  border-color: #a4ba88;
+  background: #e5edcf;
+}
+
+#versus-games .lastro-delta strong {
+  font-size: 1.65rem;
+}
+
+#versus-games .lastro-load-preview {
+  color: #526e3e;
+  font-size: 0.75em;
+  white-space: nowrap;
+}
+
+#versus-games .lastro-safe-band {
+  display: flex;
+  position: relative;
+  grid-column: 1 / -1;
+  justify-content: space-between;
+  margin: 0.55rem 0.9rem 0;
+  padding-top: 0.4rem;
+  border-top: 6px solid #c9d7b3;
+  font-size: 0.74rem;
+  font-weight: 700;
+}
+
+#versus-games .lastro-gauge-pointer,
+#versus-games .lastro-gauge-preview {
+  position: absolute;
+  top: -11px;
+  width: 10px;
+  height: 14px;
+  border: 2px solid #365f40;
+  border-radius: 3px;
+  background: #365f40;
+  transform: translateX(-50%);
+}
+
+#versus-games .lastro-gauge-preview {
+  top: -12px;
+  width: 12px;
+  height: 16px;
+  border-style: dashed;
+  background: #fffcf0;
+}
+
+#versus-games .lastro-instrument {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) 30px minmax(0, 1fr);
+  gap: 0.35rem;
+  padding: 0.7rem;
+  border: 1px solid #d1d9c2;
+  border-radius: 16px;
+  background: #f8f7ed;
+}
+
+#versus-games .lastro-arm {
+  min-width: 0;
+}
+
+#versus-games .lastro-arm h4 {
+  margin: 0 0 0.55rem;
+  color: #647452;
+  font-size: 0.76rem;
+  text-align: center;
+}
+
+#versus-games .lastro-rail {
+  margin-top: 0.35rem;
+  padding: 0.3rem 0.2rem 0.45rem;
+  border: 1px solid transparent;
+  border-radius: 10px;
+}
+
+#versus-games .lastro-rail--selected {
+  border-color: #a4ba88;
+  background: #eff3e1;
+}
+
+#versus-games .lastro-rail-caption {
+  display: flex;
+  justify-content: space-between;
+  gap: 0.2rem;
+  padding-inline: 0.25rem;
+  color: #53634b;
+  font-size: 0.7rem;
+}
+
+#versus-games .lastro-rail-caption span {
+  font-size: 0.64rem;
+}
+
+#versus-games .lastro-marks {
+  display: grid;
+  position: relative;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  align-items: stretch;
+  gap: 0.18rem;
+  margin-top: 0.2rem;
+  isolation: isolate;
+}
+
+#versus-games .lastro-marks::before {
+  content: "";
+  position: absolute;
+  z-index: -1;
+  top: 45%;
+  right: 0.4rem;
+  left: 0.4rem;
+  border-top: 3px solid #acb996;
+}
+
+#versus-games .lastro-mark {
+  appearance: none;
+  display: flex;
+  position: relative;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  min-width: 0;
+  min-height: 88px;
+  padding: 0.1rem;
+  border: 1px solid transparent;
+  border-radius: 7px;
+  background: transparent;
+  color: #30412f;
+  font: inherit;
+}
+
+#versus-games button.lastro-mark {
+  cursor: pointer;
+}
+
+#versus-games button.lastro-mark:disabled {
+  opacity: 1;
+  cursor: default;
+}
+
+#versus-games .lastro-mark--selected {
+  outline: 2px solid #3c6b46;
+  outline-offset: -1px;
+  background: #eef3df;
+}
+
+#versus-games .lastro-mark--legal {
+  border: 2px dashed #698c56;
+  background: #fbfcf2;
+}
+
+#versus-games button.lastro-mark:not(:disabled):hover {
+  background: #e5edd4;
+}
+
+#versus-games .lastro-mark:focus-visible,
+#versus-games .lastro-next-round:focus-visible,
+#versus-games .lastro-calculation summary:focus-visible {
+  outline: 3px solid #4b7184;
+  outline-offset: 3px;
+}
+
+#versus-games .lastro-weight {
+  display: block;
+  width: min(100%, 60px);
+  height: 64px;
+  overflow: visible;
+  fill: #fffdf2;
+  stroke: #869c6f;
+  stroke-width: 2;
+  stroke-linejoin: round;
+}
+
+#versus-games .lastro-weight--ghost {
+  opacity: 0.58;
+  box-sizing: border-box;
+  padding-top: 10px;
+}
+
+#versus-games .lastro-weight text {
+  stroke: none;
+  fill: #30412f;
+  font-family: inherit;
+}
+
+#versus-games .lastro-weight-value {
+  font-size: 29px;
+  font-weight: 750;
+}
+
+#versus-games .lastro-weight-code {
+  font-size: 11px;
+  font-weight: 600;
+}
+
+#versus-games .lastro-mark-tooth {
+  display: grid;
+  place-items: center;
+  width: 100%;
+  height: 64px;
+  color: #84936e;
+  font-size: 1.8rem;
+  font-weight: 700;
+}
+
+#versus-games .lastro-mark--passed .lastro-mark-tooth {
+  color: #b7bea6;
+}
+
+#versus-games .lastro-distance {
+  padding: 0 0.15rem;
+  border-radius: 3px;
+  background: #f8f7ed;
+  color: #45563b;
+  font-size: 0.8rem;
+  font-weight: 700;
+}
+
+#versus-games .lastro-destination-delta {
+  position: absolute;
+  top: 0.2rem;
+  right: 0.1rem;
+  left: 0.1rem;
+  color: #365f40;
+  font-size: 0.66rem;
+  font-weight: 700;
+  text-align: center;
+}
+
+#versus-games .lastro-fulcrum {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: end;
+  padding-top: 1.5rem;
+}
+
+#versus-games .lastro-fulcrum > span {
+  width: 11px;
+  height: 100%;
+  border: 1px solid #aabb95;
+  border-radius: 5px;
+  background: #dfe6cf;
+}
+
+#versus-games .lastro-fulcrum svg {
+  width: 38px;
+  height: 35px;
+  overflow: visible;
+  fill: #d3ddbf;
+  stroke: #8ba575;
+  stroke-width: 2;
+}
+
+#versus-games .lastro-preview-description {
+  min-height: 2.8em;
+  margin: 0.8rem 0;
+  padding: 0.6rem 0.75rem;
+  border-radius: 9px;
+  background: #eff3e7;
+  font-size: 0.88rem;
+  line-height: 1.5;
+}
+
+#versus-games .lastro-round-break {
+  padding: 0.8rem;
+  margin-block: 0.7rem;
+  border: 1px solid #acbb90;
+  border-radius: 11px;
+  background: #f5f1df;
+}
+
+#versus-games .lastro-round-break p {
+  margin: 0.4rem 0 0.7rem;
+  font-size: 0.9rem;
+  line-height: 1.5;
+}
+
+#versus-games .lastro-next-round {
+  appearance: none;
+  min-height: 44px;
+  padding: 0.6rem 0.8rem;
+  border: 1px solid #3c6849;
+  border-radius: 8px;
+  background: #39674a;
+  color: #fffcf0;
+  font: inherit;
+  font-weight: 700;
+  cursor: pointer;
+}
+
+#versus-games .lastro-calculation {
+  font-size: 0.84rem;
+  line-height: 1.5;
+}
+
+#versus-games .lastro-calculation summary {
+  cursor: pointer;
+  padding-block: 0.4rem;
+  font-weight: 650;
+}
+
+#versus-games .lastro-calculation p {
+  margin-block: 0.4rem;
+}
+
+#versus-games .lastro-shared-note {
+  margin-block: 0.5rem 0;
+  color: #66735b;
+  font-size: 0.8rem;
+}
+
+#versus-games .lastro-result-scene {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.8rem;
+  color: #39674a;
+  font-size: 1.35rem;
+  font-weight: 700;
+}
+
+#versus-games .lastro-result-scene svg {
+  width: 140px;
+  height: 90px;
+  fill: #e5edcf;
+  stroke: #68875a;
+  stroke-width: 3;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+}
+
+@media (max-width: 620px) {
+  #versus-games .lastro-instrument {
+    grid-template-columns: 1fr;
+    gap: 0.8rem;
+  }
+
+  #versus-games .lastro-arm--right {
+    border-top: 1px solid #cbd7bc;
+    padding-top: 0.75rem;
+  }
+
+  #versus-games .lastro-fulcrum {
+    display: none;
+  }
+
+  #versus-games .lastro-arm h4 {
+    font-size: 0.82rem;
+    text-align: start;
+  }
+
+  #versus-games .lastro-rail-caption {
+    font-size: 0.78rem;
+  }
+
+  #versus-games .lastro-rail-caption span {
+    font-size: 0.72rem;
+  }
+
+  #versus-games .lastro-mark {
+    min-height: 84px;
+  }
+}
+
+@media (max-width: 380px) {
+  #versus-games .lastro-meter {
+    padding-inline: 0.45rem;
+    gap: 0.25rem;
+  }
+
+  #versus-games .lastro-load > span,
+  #versus-games .lastro-delta > span {
+    font-size: 0.64rem;
+  }
+
+  #versus-games .lastro-delta strong {
+    font-size: 1.4rem;
+  }
+}

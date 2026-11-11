@@ -6,19 +6,35 @@
 
 **Jogos de lógica, geometria e estratégia para aprender experimentando.**
 
-O **Intuição**, projeto de **Luigi Scofano de Araujo**, reúne 11 jogos que funcionam no navegador. Você pode guiar raios de luz com espelhos, equilibrar formas, coordenar animais ou disputar um tabuleiro com outra pessoa ou com os bots de DESVIO e CERCO. Cada jogo tem regras próprias, explicações na interface e um manual neste repositório.
+O **Intuição**, projeto de **Luigi Scofano de Araujo**, reúne 25 jogos que funcionam no navegador. Você pode guiar raios de luz com espelhos, equilibrar formas, coordenar animais ou disputar um tabuleiro com outra pessoa ou com os bots de DESVIO, CERCO e dos oito novos duelos. Cada jogo tem regras próprias, explicações na interface e um manual neste repositório.
 
 A ideia é transformar conceitos abstratos em escolhas visíveis: observar, imaginar uma solução, testar e entender o que mudou. Folhas, molduras e animais brasileiros em pixel art dão identidade à experiência.
 
 > **A curiosidade é a primeira lição.**
 
-**11 jogos · 8 campanhas solo · 640 fases · 3 jogos Versus · IA em DESVIO e CERCO**
+**25 jogos · 14 campanhas solo · 1.120 fases · 11 jogos Versus · 10 jogos com computador**
 
 **Inteligência artificial aplicada a jogos:** DESVIO usa busca exata de posições; CERCO combina antecipação de jogadas e avaliação estratégica. [Entenda como os bots decidem](#ia-nos-bots-dos-jogos-versus).
 
-[Jogar no navegador · acesso público](https://intuicao-luigi-minigames.luigiscofano.chatgpt.site) · [Executar no computador](#executar-no-computador) · [Conhecer os jogos](#conheça-os-11-jogos) · [Manuais completos](docs/jogos/README.md)
+[Jogar no navegador · acesso público](https://intuicao-luigi-minigames.luigiscofano.chatgpt.site) · [Executar no computador](#executar-no-computador) · [Conhecer os jogos](#conheça-os-25-jogos) · [Manuais completos](docs/jogos/README.md)
 
 O site está **aberto ao público desde 03/11/2026**: qualquer pessoa com o link pode jogar no navegador. Para executar uma cópia deste repositório, siga a instalação local abaixo.
+
+## Oito novos duelos · edição de 11/11/2026
+
+**ENLACE, VAZANTE, MOSAICO, QUINHÃO, ESTALO, DOBRA, ACORDE e LASTRO** ampliam a categoria Versus. Cada jogo inclui tabuleiro interativo, prévia da jogada, confirmação explícita, regras completas e retomada da partida. Há modos local, competitivo, contra o computador e treino com análise.
+
+Os motores são puros e separados das telas. Navegação, histórico, persistência e busca ficam em módulos compartilhados, com comentários em português nas decisões e invariantes relevantes. Os oito jogos carregam sob demanda; nenhuma instalação ou serviço de IA é necessário para jogar.
+
+[Descrições e pranchas ilustrativas](docs/versus/README.md) · [Arquitetura dos duelos](dist/versus/README.md) · [Verificações desta edição](docs/versus/VERIFICACAO.md)
+
+## Seis novos jogos · edição de 10/11/2026
+
+**DIVISA, PULSO, FOZ, REFÚGIO, MIRANTE e RENOVO** entram em Raciocínio lógico, com a identidade visual de CERCO e **80 fases por jogo**. LAÇO e RODÍZIO ficam fora do catálogo. As 480 novas fases possuem soluções únicas certificadas; a dificuldade é editorial e ainda não foi calibrada com jogadores.
+
+A família compartilha seleção por faixa, retomada de tentativa, desfazer/refazer, checagem de regras, gabarito após três checagens sem sucesso, backup e conquistas. Desafio do dia e Surpreenda-me escolhem fases do catálogo existente. Os motores e campanhas são carregados sob demanda; a geração e a certificação ocorrem fora do navegador.
+
+[Regras e galeria dos seis jogos](docs/logica/README.md) · [Arquitetura e contratos](dist/logica/README.md) · [Testes e limites](tests/README.md#seis-jogos-lógicos-e-integração)
 
 ## Coleção de manuais em PDF
 
@@ -65,7 +81,7 @@ Os PDFs registram a edição documental de **1º de novembro de 2026**. Compleme
 | O que você quer fazer? | Por onde começar |
 | --- | --- |
 | **Jogar pela primeira vez** | [Abra o projeto](#executar-no-computador) e siga [Como jogar](#como-jogar-pela-primeira-vez). |
-| **Escolher um jogo** | Veja a [explicação de cada jogo com sua imagem](#conheça-os-11-jogos). |
+| **Escolher um jogo** | Veja a [explicação de cada jogo com sua imagem](#conheça-os-25-jogos). |
 | **Entender a IA dos bots** | Compare as [estratégias de DESVIO e CERCO](#ia-nos-bots-dos-jogos-versus) e encontre os módulos que escolhem as jogadas. |
 | **Entender uma regra** | Abra o [manual do jogo](docs/jogos/README.md): há regras, exemplos e arquivos relacionados. |
 | **Estudar ou modificar o código** | Comece pelo [mapa do projeto](#como-o-projeto-está-organizado) e pela [arquitetura](docs/arquitetura/README.md). |
@@ -80,6 +96,8 @@ Os PDFs registram a edição documental de **1º de novembro de 2026**. Compleme
 | **[DESVIO](#desvio)** | Busca exata com **memoização**: guarda o resultado de posições já analisadas para reutilizá-lo. Nos níveis mais simples, usa escolha pseudoaleatória ou verificações táticas. | O modo **Exato · jogo perfeito** identifica vitórias forçadas nos mapas suportados, de até 16 casas. Uma posição já perdida contra respostas perfeitas continua perdida. |
 | **[CERCO](#cerco)** | Busca **minimax com poda alfa-beta**, aprofundamento progressivo e **heurísticas** de mobilidade, saídas e espaço alcançável. | O modo **Avançado · busca limitada** olha mais adiante dentro do orçamento de busca. Sua avaliação é uma estimativa estratégica, sem garantia de jogo perfeito. |
 | **[BROTO](#broto)** | Duelo local entre duas pessoas; esta versão não implementa bot. | A estratégia está nas decisões dos jogadores sobre quais brotos estimular e quais flores completar. |
+
+Os oito novos duelos usam minimax com poda alfa-beta e aprofundamento progressivo em um Web Worker. A busca respeita o jogador que realmente decide em cada estado: em QUINHÃO, escolher um cesto e preparar a próxima oferta podem pertencer à mesma pessoa. Os níveis têm limites de tempo, nós e alternativas; o nível avançado não promete jogo perfeito. O treino apresenta a jogada sugerida como prévia para o jogador confirmar ou descartar.
 
 Uma **heurística** atribui uma nota à posição para comparar alternativas sem precisar resolver a partida inteira. No **minimax**, o bot considera tanto a sua melhor escolha quanto a melhor resposta do adversário. A **poda alfa-beta** evita explorar continuações que já não podem melhorar a decisão daquela busca.
 
@@ -99,15 +117,15 @@ Para uma primeira exploração, experimente **Corte certo** para estimar áreas,
 
 <a id="os-jogos-em-imagens"></a>
 
-## Conheça os 11 jogos
+## Conheça os 25 jogos
 
-Cada jogo tem **uma captura real da interface junto à explicação de sua mecânica**. Clique na imagem para ampliar. As capturas foram feitas no site hospedado em **1º de novembro de 2026**; o [registro das imagens](docs/imagens/jogos/README.md) identifica cada fase ou partida. Algumas mostram tentativas ou prévias, e não soluções concluídas.
+Os onze jogos anteriores têm **uma captura real da interface junto à explicação de sua mecânica**. Os seis novos puzzles apresentam SVGs do estado inicial, gerados pela mesma view do jogo e identificados como tal. Clique na imagem para ampliar. As capturas foram feitas no site hospedado em **1º de novembro de 2026**; o [registro das imagens](docs/imagens/jogos/README.md) identifica cada fase ou partida. Algumas mostram tentativas ou prévias, e não soluções concluídas.
 
 | Categoria | Vá direto ao jogo |
 | --- | --- |
 | Intuição | [Reflexos](#reflexos) · [Corte certo](#corte-certo) |
-| Raciocínio lógico | [ELO](#elo) · [PRUMO](#prumo) · [PACTO](#pacto) · [SINTONIA](#sintonia) · [REPASSE](#repasse) · [ÓRBITA](#órbita) |
-| Versus | [DESVIO](#desvio) · [BROTO](#broto) · [CERCO](#cerco) |
+| Raciocínio lógico | [ELO](#elo) · [PRUMO](#prumo) · [PACTO](#pacto) · [SINTONIA](#sintonia) · [REPASSE](#repasse) · [ÓRBITA](#órbita) · [DIVISA](#divisa) · [PULSO](#pulso) · [FOZ](#foz) · [REFÚGIO](#refúgio) · [MIRANTE](#mirante) · [RENOVO](#renovo) |
+| Versus | [DESVIO](#desvio) · [BROTO](#broto) · [CERCO](#cerco) · [ENLACE](#enlace) · [VAZANTE](#vazante) · [MOSAICO](#mosaico) · [QUINHÃO](#quinhão) · [ESTALO](#estalo) · [DOBRA](#dobra) · [ACORDE](#acorde) · [LASTRO](#lastro) |
 
 ### Intuição: observar formas e trajetórias
 
@@ -209,6 +227,66 @@ Cada jogo tem **uma captura real da interface junto à explicação de sua mecâ
 
 [Regras, exemplos e código de ÓRBITA](docs/jogos/orbita/README.md)
 
+#### DIVISA
+
+**Reparta o terreno e conte as fronteiras.** Cada letra forma um território conectado; os lados compartilhados entre cada par devem alcançar as cotas.
+
+![DIVISA: fase 1 no estado inicial, renderizada pelo código do jogo](docs/imagens/logica/divisa.svg)
+
+*Diagrama programático da fase 1, antes de jogar. A view e os dados são os mesmos usados no site.*
+
+[Regras, implementação e certificação de DIVISA](dist/logica/games/divisa/README.md)
+
+#### PULSO
+
+**Encontre três batidas igualmente espaçadas por linha.** Cruze os intervalos das linhas com as cotas de cada coluna e preserve as pistas fixas.
+
+![PULSO: fase 1 no estado inicial, renderizada pelo código do jogo](docs/imagens/logica/pulso.svg)
+
+*Diagrama programático da fase 1, antes de jogar. A view e os dados são os mesmos usados no site.*
+
+[Regras, implementação e certificação de PULSO](dist/logica/games/pulso/README.md)
+
+#### FOZ
+
+**Oriente todos os caminhos até a foz.** Escolha setas pelos canais, respeite as distâncias indicadas e evite ciclos. Os caminhos podem se unir.
+
+![FOZ: fase 1 no estado inicial, renderizada pelo código do jogo](docs/imagens/logica/foz.svg)
+
+*Diagrama programático da fase 1, antes de jogar. A view e os dados são os mesmos usados no site.*
+
+[Regras, implementação e certificação de FOZ](dist/logica/games/foz/README.md)
+
+#### REFÚGIO
+
+**Dê uma região a cada marco.** Cada barreira toca exatamente duas regiões livres distintas, e cada região livre contém um marco.
+
+![REFÚGIO: fase 1 no estado inicial, renderizada pelo código do jogo](docs/imagens/logica/refugio.svg)
+
+*Diagrama programático da fase 1, antes de jogar. A view e os dados são os mesmos usados no site.*
+
+[Regras, implementação e certificação de REFÚGIO](dist/logica/games/refugio/README.md)
+
+#### MIRANTE
+
+**Cruze as primeiras vistas dos observadores.** Use o estoque de formas, satisfaça cada olhar e garanta que toda peça seja vista por pelo menos dois observadores.
+
+![MIRANTE: fase 1 no estado inicial, renderizada pelo código do jogo](docs/imagens/logica/mirante.svg)
+
+*Diagrama programático da fase 1, antes de jogar. A view e os dados são os mesmos usados no site.*
+
+[Regras, implementação e certificação de MIRANTE](dist/logica/games/mirante/README.md)
+
+#### RENOVO
+
+**Ligue semente, botão e folha.** As duas ligações do botão são perpendiculares, usam todas as peças e não podem atravessar peças nem cruzar outros segmentos.
+
+![RENOVO: fase 1 no estado inicial, renderizada pelo código do jogo](docs/imagens/logica/renovo.svg)
+
+*Diagrama programático da fase 1, antes de jogar. A view e os dados são os mesmos usados no site.*
+
+[Regras, implementação e certificação de RENOVO](dist/logica/games/renovo/README.md)
+
 ### Versus: antecipar a próxima jogada
 
 #### DESVIO
@@ -269,9 +347,91 @@ A busca usa um **Web Worker** quando disponível, com alternativa cooperativa no
 
 TRAMA e VÉRTICE aparecem em registros históricos, mas não fazem parte do catálogo ativo.
 
+#### ENLACE
+
+![ENLACE: prancha conceitual das regras e do tabuleiro](docs/imagens/versus/enlace.png)
+
+Construa uma rede em um tear 5×5. Cada presilha coloca dois fios perpendiculares: um verde e um âmbar. O Verde atravessa da esquerda para a direita; o Âmbar, de cima para baixo. Cada lance também entrega um fio ao rival, e as duas redes podem vencer simultaneamente.
+
+A interface orienta a escolha do pino e dos dois braços, destaca a conectividade prevista e permite trocar as cores antes de confirmar.
+
+[Regras e implementação de ENLACE](dist/versus/games/enlace/README.md)
+
+#### VAZANTE
+
+![VAZANTE: prancha conceitual das regras e do tabuleiro](docs/imagens/versus/vazante.png)
+
+Conduza três barcos por um estuário 5×5. Uma remada ortogonal move o barco escolhido e reboca a fila contínua atrás dele, incluindo barcos adversários. Vence quem entregar dois barcos na margem oposta.
+
+Os mascotes oficiais podem ser escolhidos na preparação; são elementos visuais. A prévia mostra o comboio inteiro e as entregas provocadas pelo movimento.
+
+[Regras e implementação de VAZANTE](dist/versus/games/vazante/README.md)
+
+#### MOSAICO
+
+![MOSAICO: prancha conceitual das regras e do tabuleiro](docs/imagens/versus/mosaico.png)
+
+Preencha um painel 5×5 com azulejos de dois cantos verdes e dois âmbar. Ao completar uma junção de quatro azulejos, três ou quatro cantos da mesma cor concedem um selo à equipe; uma divisão 2–2 fica neutra. O placar final só é decidido após os 25 azulejos.
+
+Escolha a orientação e a casa, compare as junções concluídas na prévia e confirme a colocação.
+
+[Regras e implementação de MOSAICO](dist/versus/games/mosaico/README.md)
+
+#### QUINHÃO
+
+![QUINHÃO: prancha conceitual das regras e do tabuleiro](docs/imagens/versus/quinhao.png)
+
+Ofereça três cestos consecutivos de um anel de 24 frutas. O rival escolhe um; quem fez a oferta recebe os outros dois. Depois, o anel fecha a lacuna e o papel de ofertante troca. Trios de frutas diferentes valem cinco pontos e pares de tipos diferentes restantes valem dois.
+
+A interface separa oferta e escolha, identifica quem decide em cada etapa e mostra a decomposição da pontuação.
+
+[Regras e implementação de QUINHÃO](dist/versus/games/quinhao/README.md)
+
+#### ESTALO
+
+![ESTALO: prancha conceitual das regras e do tabuleiro](docs/imagens/versus/estalo.png)
+
+Escolha uma vagem fechada da sua cor, mantenha a seta ou gire-a um quarto de volta e dispare uma cadeia. Cada vagem aberta segue sua seta para a próxima casa, até encontrar borda ou vagem já aberta.
+
+A cadeia inteira aparece na prévia. Só depois de resolvê-la são verificadas as oito vagens de cada cor; uma reação pode favorecer o adversário ou terminar empatada.
+
+[Regras e implementação de ESTALO](dist/versus/games/estalo/README.md)
+
+#### DOBRA
+
+![DOBRA: prancha conceitual das regras e do tabuleiro](docs/imagens/versus/dobra.png)
+
+Marque um painel de um atlas 6×6 e dobre uma borda inteira sobre a faixa adjacente. Áreas e selos se somam nas pilhas. Após oito dobras, o mapa chega a 2×2: a maioria estrita de selos controla toda a área da pilha, enquanto empates permanecem neutros.
+
+O atlas preserva exatamente 36 unidades de área. A prévia mostra a nova geometria e os totais de ambas as equipes antes da confirmação.
+
+[Regras e implementação de DOBRA](dist/versus/games/dobra/README.md)
+
+#### ACORDE
+
+![ACORDE: prancha conceitual das regras e do tabuleiro](docs/imagens/versus/acorde.png)
+
+Reúna três tipos diferentes de pares entre folha, gota, onda e sol. O Verde escolhe um sino na linha ativa; o Âmbar escolhe na coluna. A casa recolhida define o eixo da resposta adversária.
+
+O caminho pode atravessar casas vazias ou outros sinos sem recolhê-los. Coleções e eixos ficam visíveis, e os passes só aparecem quando obrigatórios.
+
+[Regras e implementação de ACORDE](dist/versus/games/acorde/README.md)
+
+#### LASTRO
+
+![LASTRO: prancha conceitual das regras e do tabuleiro](docs/imagens/versus/lastro.png)
+
+Avance um dos seis contrapesos compartilhados uma ou duas marcas para fora, mantendo o desvio da balança entre −4 e +4. Quem deixa o rival sem ajuste legal vence a rodada. São duas rodadas com início alternado; o duelo pode terminar 2–0 ou 1–1.
+
+A interface apresenta cargas, desvio e cálculo expandível. A configuração aprovada tem vantagem forçada para quem começa sob jogo perfeito; a alternância de duas rodadas preserva a regra, sem afirmar equilíbrio estratégico.
+
+[Regras e implementação de LASTRO](dist/versus/games/lastro/README.md)
+
+As imagens dos oito duelos acima são pranchas conceituais aprovadas para explicar as regras; a apresentação interativa é a versão executada em `dist/versus/`.
+
 ### Como as fases estão organizadas
 
-Cada uma das oito campanhas solo tem **80 fases**, distribuídas da mesma forma:
+Cada uma das quatorze campanhas solo tem **80 fases**, distribuídas da mesma forma:
 
 | Faixa | Fases | Quantidade |
 | --- | --- | ---: |
@@ -283,7 +443,7 @@ Cada uma das oito campanhas solo tem **80 fases**, distribuídas da mesma forma:
 | Modo Sábio | 76–80 | 5 |
 | **Total por campanha** | **1–80** | **80** |
 
-São **8 × 80 = 640 fases solo**. Modos livres, desafios gerados e partidas Versus ficam fora dessa contagem. A proposta é oferecer prática e descoberta; a curva de dificuldade ainda não tem calibração completa com jogadores.
+São **14 × 80 = 1.120 fases solo**. Modos livres, desafios gerados e partidas Versus ficam fora dessa contagem. A proposta é oferecer prática e descoberta; a curva de dificuldade ainda não tem calibração completa com jogadores.
 
 ## Executar no computador
 
@@ -360,7 +520,7 @@ Mais opções e diagnóstico: **[guia de instalação](docs/setup/README.md)**.
 
 **Atenção ao nome `dist`: aqui ela contém o código-fonte editável do projeto.** Não a apague como se fosse uma pasta temporária de compilação.
 
-Para acompanhar um jogo do começo ao fim, leia seu manual, localize os arquivos indicados e compare as regras com os testes correspondentes. SINTONIA, REPASSE, ÓRBITA, BROTO e CERCO têm subpastas próprias; os demais também usam módulos compartilhados no nível principal de `dist`.
+Para acompanhar um jogo do começo ao fim, leia seu manual, localize os arquivos indicados e compare as regras com os testes correspondentes. SINTONIA, REPASSE, ÓRBITA, BROTO e CERCO têm subpastas próprias. Os seis novos puzzles ficam em [`dist/logica/games/`](dist/logica/README.md), com motores puros e uma interface compartilhada. Os oito novos duelos ficam em [`dist/versus/games/`](dist/versus/README.md), separados de seus serviços comuns. Os jogos anteriores também usam módulos no nível principal de `dist`.
 
 A primeira parte da reforma de formatação e comentários em português foi integrada à `main` pelo [PR #30](https://github.com/luigiscofano/intuicao/pull/30). O [registro da revisão](docs/manutencao/legibilidade.md) documenta a etapa de rascunho e os 299 arquivos ainda pendentes da reforma. O merge não publicou alterações no site.
 
@@ -382,12 +542,13 @@ O projeto permite estudar geometria computacional, grafos, busca de estados, má
 
 | Área | Estado desta cópia |
 | --- | --- |
-| Catálogo e navegação | 11 jogos ativos, seleção de desafios e regras na interface. |
-| Campanhas solo | Oito campanhas de 80 fases; recursos adicionais variam por jogo. |
-| Duelos e IA | Bots em DESVIO e CERCO; BROTO para duas pessoas no mesmo aparelho. |
+| Catálogo e navegação | 25 jogos ativos, seleção de desafios e regras na interface. |
+| Campanhas solo | Quatorze campanhas de 80 fases; recursos adicionais variam por jogo. |
+| Duelos e IA | Onze jogos Versus: bots em DESVIO, CERCO e nos oito novos duelos; BROTO permanece local. |
 | Progresso e exploração | Salvamento, Desfazer e Refazer nos fluxos que oferecem essas funções. |
 | Documentação | README inicial, manuais individuais, instalação, arquitetura e manutenção. |
 | Testes de motores | **95 testes aprovados** na revisão de 01/11/2026; execução automática em PRs e pushes para `main`. |
+| Recorte da edição de 10/11/2026 | **224 testes aprovados, zero falhas**, cobrindo os motores anteriores, seis puzzles e integração; [evidências e limites](docs/logica/VERIFICACAO.md). |
 | Qualidade ampla | Há falhas históricas e pendências; esse recorte não aprova toda a aplicação. |
 | Revisão técnica posterior | A revisão `f0e7fcf` ainda precisa ser recuperada e incorporada, incluindo a correção de migração de SINTONIA ali descrita. |
 
@@ -418,6 +579,18 @@ node scripts/check-docs.mjs
 node --test tests/broto-engine.test.mjs tests/cerco-engine.test.mjs tests/sintonia-engine.test.mjs tests/repasse-engine.test.mjs tests/orbita-engine.test.mjs
 ```
 
+**Seis novos motores, histórico e integração com a plataforma:**
+
+```bash
+node --test tests/logica/*.test.mjs tests/approved-game-shell.test.mjs tests/contextual-guidance.test.mjs tests/library-navigation.test.mjs tests/achievements.test.mjs tests/progress-backup.test.mjs
+```
+
+Para os oito duelos e seus serviços compartilhados:
+
+```bash
+node --test tests/versus/*.test.mjs
+```
+
 Antes de ampliar a execução, leia o [guia de testes](tests/README.md). A pasta também contém scripts de geração e verificações de revisões antigas; nem todo arquivo `.mjs` é um teste sem efeitos colaterais.
 
 ## Progresso, hospedagem e contribuição
@@ -441,3 +614,5 @@ O código e a documentação autorais do Intuição são disponibilizados sob a 
 Imagens, sprites, fontes, logos e demais recursos visuais têm seus direitos tratados separadamente e não estão incluídos automaticamente nessa licença. Materiais de terceiros conservam suas licenças e créditos próprios. Consulte o [guia dos recursos](dist/platform-assets/README.md) e o [inventário de direitos](docs/recursos/README.md) antes de redistribuí-los.
 
 A abertura do repositório não publica uma nova versão do site nem altera as licenças dos recursos visuais.
+
+

@@ -1,0 +1,76 @@
+[
+  {
+    "rows": 3,
+    "cols": 3,
+    "letters": [
+      "A",
+      "B",
+      "C"
+    ],
+    "givens": [
+      "A",
+      "A",
+      "B",
+      null,
+      null,
+      "B",
+      null,
+      "A",
+      "C"
+    ],
+    "contacts": {
+      "AB": 2,
+      "AC": 1,
+      "BC": 1
+    },
+    "solution": [
+      "A",
+      "A",
+      "B",
+      "A",
+      "A",
+      "B",
+      "A",
+      "A",
+      "C"
+    ],
+    "fixture": "divisa_0"
+  },
+  {
+    "rows": 3,
+    "cols": 3,
+    "letters": [
+      "A",
+      "B",
+      "C"
+    ],
+    "givens": [
+      "A",
+      null,
+      "B",
+      "A",
+      null,
+      null,
+      "A",
+      "A",
+      "C"
+    ],
+    "contacts": {
+      "AB": 4,
+      "AC": 1,
+      "BC": 1
+    },
+    "solution": [
+      "A",
+      "A",
+      "B",
+      "A",
+      "B",
+      "B",
+      "A",
+      "A",
+      "C"
+    ],
+    "fixture": "divisa_1"
+  }
+]

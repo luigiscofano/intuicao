@@ -1,0 +1,14 @@
+{
+  "game": "divisa",
+  "before": {
+    "dist/logica/games/divisa/campaign.mjs": "c0c8fe8be40b095ae94edd18a7e6c9dc1f10eb4e1c75fe1fb0e9015c36cfc773",
+    "tests/logica/divisa-certificates.json": "93782acce6bb14bfa19f0ed34857add736a4e796eb59aa0465f9831307398bd0",
+    "tests/logica/divisa-fixtures.json": "2e646c2f8e1df6ed43cfbb11d706ad56a31ba3be90b5c5f5235263bd751e89ec"
+  },
+  "after": {
+    "dist/logica/games/divisa/campaign.mjs": "c0c8fe8be40b095ae94edd18a7e6c9dc1f10eb4e1c75fe1fb0e9015c36cfc773",
+    "tests/logica/divisa-certificates.json": "93782acce6bb14bfa19f0ed34857add736a4e796eb59aa0465f9831307398bd0",
+    "tests/logica/divisa-fixtures.json": "2e646c2f8e1df6ed43cfbb11d706ad56a31ba3be90b5c5f5235263bd751e89ec"
+  },
+  "identical": true
+}

@@ -59,6 +59,27 @@
     "SECURITY.md",
     "docs/seguranca/README.md",
     "docs/recursos/README.md",
-    "docs/recursos/declaracao-autoria.md"
+    "docs/recursos/declaracao-autoria.md",
+    "dist/logica/README.md",
+    "docs/logica/README.md",
+    "docs/logica/VERIFICACAO.md",
+    "dist/logica/games/divisa/README.md",
+    "dist/logica/games/foz/README.md",
+    "dist/logica/games/mirante/README.md",
+    "dist/logica/games/pulso/README.md",
+    "dist/logica/games/refugio/README.md",
+    "dist/logica/games/renovo/README.md",
+    "dist/versus/README.md",
+    "dist/versus/CONTRACT.md",
+    "docs/versus/README.md",
+    "docs/versus/VERIFICACAO.md",
+    "dist/versus/games/enlace/README.md",
+    "dist/versus/games/vazante/README.md",
+    "dist/versus/games/mosaico/README.md",
+    "dist/versus/games/quinhao/README.md",
+    "dist/versus/games/estalo/README.md",
+    "dist/versus/games/dobra/README.md",
+    "dist/versus/games/acorde/README.md",
+    "dist/versus/games/lastro/README.md"
   ]
 }

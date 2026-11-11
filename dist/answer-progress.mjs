@@ -1,3 +1,4 @@
+import { writeProgress } from './progress-write-guard.mjs';
 // Contagem de tentativas e desbloqueio de respostas, separados do estado do tabuleiro.
 // Contadores independentes do tabuleiro. Recomeçar não apaga o desbloqueio.
 const STORE = 'intuicao.answers.v1';
@@ -39,7 +40,7 @@ export function createAnswerProgress(storage = globalThis.localStorage) {
     records[key] = value;
     try {
       const raw = JSON.stringify(records);
-      storage?.setItem(STORE, raw);
+      writeProgress(storage, STORE, raw);
       lastRaw = raw;
     } catch {}
     return { ...value };

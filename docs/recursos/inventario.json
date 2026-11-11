@@ -53,6 +53,25 @@
         "docs/recursos/declaracao-autoria.md"
       ],
       "source": "Capturas e diagramas técnicos; declaração abrange sua composição e elementos autorais, preservados os direitos de componentes externos."
+    },
+    "logica-programatica": {
+      "evidence": [
+        "docs/logica/README.md",
+        "tools/logica/render-gallery.mjs"
+      ],
+      "source": "Diagramas dos estados iniciais gerados por código das views da família lógica, sob a identidade CERCO aprovada; sem recursos visuais externos."
+    },
+    "versus-conceitos": {
+      "evidence": [
+        "docs/versus/README.md"
+      ],
+      "source": "Pranchas conceituais elaboradas na conversa de design dos oito jogos Versus e incorporadas por solicitação do titular em 2026-11-11; distinguem-se de capturas da interface implementada."
+    },
+    "versus-interface": {
+      "evidence": [
+        "docs/versus/VERIFICACAO.md"
+      ],
+      "source": "Captura da interface implementada, realizada pela navegação real na prévia local em 2026-11-11; usa elementos vetoriais do próprio jogo LASTRO."
     }
   },
   "assets": [
@@ -1385,6 +1404,129 @@
       "license": "Direitos reservados; recursos visuais excluídos da licença MIT do código.",
       "permissionEvidence": "docs/recursos/declaracao-autoria.md",
       "reviewBasis": "owner-declaration"
+    },
+    {
+      "path": "docs/imagens/logica/divisa.svg",
+      "sha256": "e5e774e49a9c04c4176dab5876481cfc716cad8c26ade8413430ac49588664be",
+      "group": "logica-programatica",
+      "status": "cleared",
+      "rightsHolder": "Luigi Scofano de Araujo (elementos autorais do projeto)",
+      "license": "Direitos reservados; recursos visuais excluídos da licença MIT do código.",
+      "permissionEvidence": "docs/logica/README.md",
+      "reviewBasis": "generated-from-project-code; existing-visual-rights-policy"
+    },
+    {
+      "path": "docs/imagens/logica/foz.svg",
+      "sha256": "a72185786edca561fa86d0391c578f1e151bf58d85ec31b96df9e423ce948124",
+      "group": "logica-programatica",
+      "status": "cleared",
+      "rightsHolder": "Luigi Scofano de Araujo (elementos autorais do projeto)",
+      "license": "Direitos reservados; recursos visuais excluídos da licença MIT do código.",
+      "permissionEvidence": "docs/logica/README.md",
+      "reviewBasis": "generated-from-project-code; existing-visual-rights-policy"
+    },
+    {
+      "path": "docs/imagens/logica/mirante.svg",
+      "sha256": "216ae2cb2248f48c8cfea13fc5882d6de4f5c095041caa070d0a97fbc118ac78",
+      "group": "logica-programatica",
+      "status": "cleared",
+      "rightsHolder": "Luigi Scofano de Araujo (elementos autorais do projeto)",
+      "license": "Direitos reservados; recursos visuais excluídos da licença MIT do código.",
+      "permissionEvidence": "docs/logica/README.md",
+      "reviewBasis": "generated-from-project-code; existing-visual-rights-policy"
+    },
+    {
+      "path": "docs/imagens/logica/pulso.svg",
+      "sha256": "a50452650d44d359f02563bd78f2d203610db9fcfce5d3caa1085a2fa9a1103c",
+      "group": "logica-programatica",
+      "status": "cleared",
+      "rightsHolder": "Luigi Scofano de Araujo (elementos autorais do projeto)",
+      "license": "Direitos reservados; recursos visuais excluídos da licença MIT do código.",
+      "permissionEvidence": "docs/logica/README.md",
+      "reviewBasis": "generated-from-project-code; existing-visual-rights-policy"
+    },
+    {
+      "path": "docs/imagens/logica/refugio.svg",
+      "sha256": "335b9aa30b6c42db7185b4503a69ef12db4f99e34e4bbae67ff87d0dafae3b96",
+      "group": "logica-programatica",
+      "status": "cleared",
+      "rightsHolder": "Luigi Scofano de Araujo (elementos autorais do projeto)",
+      "license": "Direitos reservados; recursos visuais excluídos da licença MIT do código.",
+      "permissionEvidence": "docs/logica/README.md",
+      "reviewBasis": "generated-from-project-code; existing-visual-rights-policy"
+    },
+    {
+      "path": "docs/imagens/logica/renovo.svg",
+      "sha256": "4530f3d80c7127913e782f135f90ad36877abf38038733b5e6ae160d9534acb3",
+      "group": "logica-programatica",
+      "status": "cleared",
+      "rightsHolder": "Luigi Scofano de Araujo (elementos autorais do projeto)",
+      "license": "Direitos reservados; recursos visuais excluídos da licença MIT do código.",
+      "permissionEvidence": "docs/logica/README.md",
+      "reviewBasis": "generated-from-project-code; existing-visual-rights-policy"
+    },
+    {
+      "path": "docs/imagens/versus/acorde.png",
+      "sha256": "8fc7b3a8e84151c97b5e145a76d1874db42f5ae9339d727205950da1a4f5a601",
+      "group": "versus-conceitos",
+      "status": "pending",
+      "reviewBasis": "concept-plates-requested-by-owner"
+    },
+    {
+      "path": "docs/imagens/versus/dobra.png",
+      "sha256": "bc8f3579430236a338246bb1b35ef2e053c838907f0339c9a67d5011ef900d99",
+      "group": "versus-conceitos",
+      "status": "pending",
+      "reviewBasis": "concept-plates-requested-by-owner"
+    },
+    {
+      "path": "docs/imagens/versus/enlace.png",
+      "sha256": "abed16b92ff26736ccc051773cdb92ddcb1b241071bab4b4aa8e7ac051e69a98",
+      "group": "versus-conceitos",
+      "status": "pending",
+      "reviewBasis": "concept-plates-requested-by-owner"
+    },
+    {
+      "path": "docs/imagens/versus/estalo.png",
+      "sha256": "4ca80c810ec01e52797e1bc2d8d6d9b6ee069a765ed5d8c0118303f9b3d0c71b",
+      "group": "versus-conceitos",
+      "status": "pending",
+      "reviewBasis": "concept-plates-requested-by-owner"
+    },
+    {
+      "path": "docs/imagens/versus/lastro.png",
+      "sha256": "991a8df7e2867b53dcbf7ef67fb4330e638e1fc867e6f2a790bf45734f93ccb5",
+      "group": "versus-conceitos",
+      "status": "pending",
+      "reviewBasis": "concept-plates-requested-by-owner"
+    },
+    {
+      "path": "docs/imagens/versus/mosaico.png",
+      "sha256": "2aa5c53faa220638604bc9cda1d6e85d2f7c26f42f9e763cb6ae35c640b64635",
+      "group": "versus-conceitos",
+      "status": "pending",
+      "reviewBasis": "concept-plates-requested-by-owner"
+    },
+    {
+      "path": "docs/imagens/versus/quinhao.png",
+      "sha256": "12e225f0957a1f0e4d3e0f38a2166bb1d4283cfd2e9ee1c0edc91d3cbbf1b0c6",
+      "group": "versus-conceitos",
+      "status": "pending",
+      "reviewBasis": "concept-plates-requested-by-owner"
+    },
+    {
+      "path": "docs/imagens/versus/vazante.png",
+      "sha256": "7ddba5e89d1d3b627c8d283bbda0ad41d163718fe72ad27a12c4622bbd4d601a",
+      "group": "versus-conceitos",
+      "status": "pending",
+      "reviewBasis": "concept-plates-requested-by-owner"
+    },
+    {
+      "path": "docs/imagens/versus/lastro-interface.png",
+      "sha256": "712834eec27c8d3c1941ed875c456d9f3583229345ffef243a13031f782cbfd8",
+      "group": "versus-interface",
+      "status": "pending",
+      "reviewBasis": "implementation-preview-capture"
     }
   ],
   "rightsReview": {

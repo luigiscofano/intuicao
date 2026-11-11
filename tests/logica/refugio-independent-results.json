@@ -1,0 +1,487 @@
+{
+  "method": "Enumeração literal de todos os estados binários compatíveis com pistas, usando componentes por bitsets, sem o propagador do gerador.",
+  "levels": 80,
+  "assignmentsEnumerated": 1624720,
+  "records": [
+    {
+      "id": "refugio-08e27f759b381ecc",
+      "solutionCount": 1,
+      "assignmentsEnumerated": 1024,
+      "searchExhausted": true
+    },
+    {
+      "id": "refugio-2c1a2c0d48bcc5f8",
+      "solutionCount": 1,
+      "assignmentsEnumerated": 16,
+      "searchExhausted": true
+    },
+    {
+      "id": "refugio-6a4a565805e4f369",
+      "solutionCount": 1,
+      "assignmentsEnumerated": 8,
+      "searchExhausted": true
+    },
+    {
+      "id": "refugio-5d8eed7368d2132c",
+      "solutionCount": 1,
+      "assignmentsEnumerated": 8,
+      "searchExhausted": true
+    },
+    {
+      "id": "refugio-0247243a53541c44",
+      "solutionCount": 1,
+      "assignmentsEnumerated": 32,
+      "searchExhausted": true
+    },
+    {
+      "id": "refugio-4b4db8a97ccc2b51",
+      "solutionCount": 1,
+      "assignmentsEnumerated": 32,
+      "searchExhausted": true
+    },
+    {
+      "id": "refugio-cb3efc06e003d172",
+      "solutionCount": 1,
+      "assignmentsEnumerated": 32,
+      "searchExhausted": true
+    },
+    {
+      "id": "refugio-4e7e00b515036651",
+      "solutionCount": 1,
+      "assignmentsEnumerated": 128,
+      "searchExhausted": true
+    },
+    {
+      "id": "refugio-b1ce1d07ac7200ea",
+      "solutionCount": 1,
+      "assignmentsEnumerated": 128,
+      "searchExhausted": true
+    },
+    {
+      "id": "refugio-faae3b55ae026bee",
+      "solutionCount": 1,
+      "assignmentsEnumerated": 128,
+      "searchExhausted": true
+    },
+    {
+      "id": "refugio-23c92874555bd4da",
+      "solutionCount": 1,
+      "assignmentsEnumerated": 128,
+      "searchExhausted": true
+    },
+    {
+      "id": "refugio-5eef4a256bc6f75c",
+      "solutionCount": 1,
+      "assignmentsEnumerated": 32,
+      "searchExhausted": true
+    },
+    {
+      "id": "refugio-949098a9039eea78",
+      "solutionCount": 1,
+      "assignmentsEnumerated": 16,
+      "searchExhausted": true
+    },
+    {
+      "id": "refugio-b37b9e2d18e1977d",
+      "solutionCount": 1,
+      "assignmentsEnumerated": 128,
+      "searchExhausted": true
+    },
+    {
+      "id": "refugio-aa1735f6825746b4",
+      "solutionCount": 1,
+      "assignmentsEnumerated": 32,
+      "searchExhausted": true
+    },
+    {
+      "id": "refugio-3820d306dc28d5e4",
+      "solutionCount": 1,
+      "assignmentsEnumerated": 256,
+      "searchExhausted": true
+    },
+    {
+      "id": "refugio-609e0dfbad3a8f74",
+      "solutionCount": 1,
+      "assignmentsEnumerated": 256,
+      "searchExhausted": true
+    },
+    {
+      "id": "refugio-43d9fb4ae94192f9",
+      "solutionCount": 1,
+      "assignmentsEnumerated": 128,
+      "searchExhausted": true
+    },
+    {
+      "id": "refugio-73e04264b4627dca",
+      "solutionCount": 1,
+      "assignmentsEnumerated": 64,
+      "searchExhausted": true
+    },
+    {
+      "id": "refugio-75d59aeb4ea1f5e6",
+      "solutionCount": 1,
+      "assignmentsEnumerated": 256,
+      "searchExhausted": true
+    },
+    {
+      "id": "refugio-f19da8de8910229e",
+      "solutionCount": 1,
+      "assignmentsEnumerated": 256,
+      "searchExhausted": true
+    },
+    {
+      "id": "refugio-45946ecc34b2d591",
+      "solutionCount": 1,
+      "assignmentsEnumerated": 1024,
+      "searchExhausted": true
+    },
+    {
+      "id": "refugio-92b36b61bef150cc",
+      "solutionCount": 1,
+      "assignmentsEnumerated": 128,
+      "searchExhausted": true
+    },
+    {
+      "id": "refugio-e4b0bb3b08fcb0d1",
+      "solutionCount": 1,
+      "assignmentsEnumerated": 512,
+      "searchExhausted": true
+    },
+    {
+      "id": "refugio-4766210b7ab2940f",
+      "solutionCount": 1,
+      "assignmentsEnumerated": 1024,
+      "searchExhausted": true
+    },
+    {
+      "id": "refugio-fea19d6ff11ee439",
+      "solutionCount": 1,
+      "assignmentsEnumerated": 512,
+      "searchExhausted": true
+    },
+    {
+      "id": "refugio-431764b618a3ebb2",
+      "solutionCount": 1,
+      "assignmentsEnumerated": 512,
+      "searchExhausted": true
+    },
+    {
+      "id": "refugio-a60ef144bede3939",
+      "solutionCount": 1,
+      "assignmentsEnumerated": 512,
+      "searchExhausted": true
+    },
+    {
+      "id": "refugio-3a19e88a4c27e4c5",
+      "solutionCount": 1,
+      "assignmentsEnumerated": 256,
+      "searchExhausted": true
+    },
+    {
+      "id": "refugio-83755f0fc3cd3c27",
+      "solutionCount": 1,
+      "assignmentsEnumerated": 256,
+      "searchExhausted": true
+    },
+    {
+      "id": "refugio-193e061ea57799af",
+      "solutionCount": 1,
+      "assignmentsEnumerated": 1024,
+      "searchExhausted": true
+    },
+    {
+      "id": "refugio-bba7decca66f9824",
+      "solutionCount": 1,
+      "assignmentsEnumerated": 8192,
+      "searchExhausted": true
+    },
+    {
+      "id": "refugio-0f97bfb171d02ca3",
+      "solutionCount": 1,
+      "assignmentsEnumerated": 2048,
+      "searchExhausted": true
+    },
+    {
+      "id": "refugio-d247bc59fc5a0a19",
+      "solutionCount": 1,
+      "assignmentsEnumerated": 8192,
+      "searchExhausted": true
+    },
+    {
+      "id": "refugio-b5c0000caf3bf4f2",
+      "solutionCount": 1,
+      "assignmentsEnumerated": 2048,
+      "searchExhausted": true
+    },
+    {
+      "id": "refugio-11bcfecad19df4c8",
+      "solutionCount": 1,
+      "assignmentsEnumerated": 4096,
+      "searchExhausted": true
+    },
+    {
+      "id": "refugio-b01666741a1a075a",
+      "solutionCount": 1,
+      "assignmentsEnumerated": 2048,
+      "searchExhausted": true
+    },
+    {
+      "id": "refugio-8a2a2afac8d3ad38",
+      "solutionCount": 1,
+      "assignmentsEnumerated": 2048,
+      "searchExhausted": true
+    },
+    {
+      "id": "refugio-a37aba1b4e2a3612",
+      "solutionCount": 1,
+      "assignmentsEnumerated": 2048,
+      "searchExhausted": true
+    },
+    {
+      "id": "refugio-bd06fa142e37f7f9",
+      "solutionCount": 1,
+      "assignmentsEnumerated": 2048,
+      "searchExhausted": true
+    },
+    {
+      "id": "refugio-37af3f323ef02f93",
+      "solutionCount": 1,
+      "assignmentsEnumerated": 8192,
+      "searchExhausted": true
+    },
+    {
+      "id": "refugio-a7e7a9c2c19f836f",
+      "solutionCount": 1,
+      "assignmentsEnumerated": 1024,
+      "searchExhausted": true
+    },
+    {
+      "id": "refugio-26fbffa6f7787f7c",
+      "solutionCount": 1,
+      "assignmentsEnumerated": 2048,
+      "searchExhausted": true
+    },
+    {
+      "id": "refugio-17c130807e464fbc",
+      "solutionCount": 1,
+      "assignmentsEnumerated": 2048,
+      "searchExhausted": true
+    },
+    {
+      "id": "refugio-74157c87ea15b9f6",
+      "solutionCount": 1,
+      "assignmentsEnumerated": 4096,
+      "searchExhausted": true
+    },
+    {
+      "id": "refugio-cc330c53c0a87472",
+      "solutionCount": 1,
+      "assignmentsEnumerated": 8192,
+      "searchExhausted": true
+    },
+    {
+      "id": "refugio-985ab07ef03f5350",
+      "solutionCount": 1,
+      "assignmentsEnumerated": 32768,
+      "searchExhausted": true
+    },
+    {
+      "id": "refugio-75be457567fdb66d",
+      "solutionCount": 1,
+      "assignmentsEnumerated": 2048,
+      "searchExhausted": true
+    },
+    {
+      "id": "refugio-7d0537863bba26ab",
+      "solutionCount": 1,
+      "assignmentsEnumerated": 1024,
+      "searchExhausted": true
+    },
+    {
+      "id": "refugio-5837bdc9747c4682",
+      "solutionCount": 1,
+      "assignmentsEnumerated": 4096,
+      "searchExhausted": true
+    },
+    {
+      "id": "refugio-b4a5e0b2d913fa07",
+      "solutionCount": 1,
+      "assignmentsEnumerated": 8192,
+      "searchExhausted": true
+    },
+    {
+      "id": "refugio-8641595ee1a1ca55",
+      "solutionCount": 1,
+      "assignmentsEnumerated": 16384,
+      "searchExhausted": true
+    },
+    {
+      "id": "refugio-2f7a12a6a711c95a",
+      "solutionCount": 1,
+      "assignmentsEnumerated": 8192,
+      "searchExhausted": true
+    },
+    {
+      "id": "refugio-f5074470367546e8",
+      "solutionCount": 1,
+      "assignmentsEnumerated": 8192,
+      "searchExhausted": true
+    },
+    {
+      "id": "refugio-ec5434a7f1a59bf6",
+      "solutionCount": 1,
+      "assignmentsEnumerated": 32768,
+      "searchExhausted": true
+    },
+    {
+      "id": "refugio-7162c8009f274640",
+      "solutionCount": 1,
+      "assignmentsEnumerated": 4096,
+      "searchExhausted": true
+    },
+    {
+      "id": "refugio-445c564c4b73cebd",
+      "solutionCount": 1,
+      "assignmentsEnumerated": 2048,
+      "searchExhausted": true
+    },
+    {
+      "id": "refugio-e5640ed7ac2df2e8",
+      "solutionCount": 1,
+      "assignmentsEnumerated": 8192,
+      "searchExhausted": true
+    },
+    {
+      "id": "refugio-87ac90c687e6eadd",
+      "solutionCount": 1,
+      "assignmentsEnumerated": 8192,
+      "searchExhausted": true
+    },
+    {
+      "id": "refugio-cca4c7fde9f91433",
+      "solutionCount": 1,
+      "assignmentsEnumerated": 2048,
+      "searchExhausted": true
+    },
+    {
+      "id": "refugio-a1a050cb47352948",
+      "solutionCount": 1,
+      "assignmentsEnumerated": 32768,
+      "searchExhausted": true
+    },
+    {
+      "id": "refugio-be6af41e0a564d0c",
+      "solutionCount": 1,
+      "assignmentsEnumerated": 16384,
+      "searchExhausted": true
+    },
+    {
+      "id": "refugio-aac4b0161e77b0db",
+      "solutionCount": 1,
+      "assignmentsEnumerated": 262144,
+      "searchExhausted": true
+    },
+    {
+      "id": "refugio-c6eb54c0eb20ca67",
+      "solutionCount": 1,
+      "assignmentsEnumerated": 2048,
+      "searchExhausted": true
+    },
+    {
+      "id": "refugio-bdfa68c295eb64a7",
+      "solutionCount": 1,
+      "assignmentsEnumerated": 16384,
+      "searchExhausted": true
+    },
+    {
+      "id": "refugio-32ad97cdc8eea6e8",
+      "solutionCount": 1,
+      "assignmentsEnumerated": 32768,
+      "searchExhausted": true
+    },
+    {
+      "id": "refugio-4d8dadda9b036a93",
+      "solutionCount": 1,
+      "assignmentsEnumerated": 8192,
+      "searchExhausted": true
+    },
+    {
+      "id": "refugio-45cb69e28c7ab71b",
+      "solutionCount": 1,
+      "assignmentsEnumerated": 32768,
+      "searchExhausted": true
+    },
+    {
+      "id": "refugio-b399e76aee779dfa",
+      "solutionCount": 1,
+      "assignmentsEnumerated": 32768,
+      "searchExhausted": true
+    },
+    {
+      "id": "refugio-857e489dab22f52e",
+      "solutionCount": 1,
+      "assignmentsEnumerated": 16384,
+      "searchExhausted": true
+    },
+    {
+      "id": "refugio-fccf8432812bfe1c",
+      "solutionCount": 1,
+      "assignmentsEnumerated": 16384,
+      "searchExhausted": true
+    },
+    {
+      "id": "refugio-698ea06c7f960ded",
+      "solutionCount": 1,
+      "assignmentsEnumerated": 32768,
+      "searchExhausted": true
+    },
+    {
+      "id": "refugio-a9acb2eb46dfbcd9",
+      "solutionCount": 1,
+      "assignmentsEnumerated": 16384,
+      "searchExhausted": true
+    },
+    {
+      "id": "refugio-72c4dacbbc7a99c1",
+      "solutionCount": 1,
+      "assignmentsEnumerated": 16384,
+      "searchExhausted": true
+    },
+    {
+      "id": "refugio-b43cbcc22245fb29",
+      "solutionCount": 1,
+      "assignmentsEnumerated": 32768,
+      "searchExhausted": true
+    },
+    {
+      "id": "refugio-bbeab2f1aaf2b9cc",
+      "solutionCount": 1,
+      "assignmentsEnumerated": 65536,
+      "searchExhausted": true
+    },
+    {
+      "id": "refugio-309427ca583975cf",
+      "solutionCount": 1,
+      "assignmentsEnumerated": 262144,
+      "searchExhausted": true
+    },
+    {
+      "id": "refugio-26120261861bdf90",
+      "solutionCount": 1,
+      "assignmentsEnumerated": 131072,
+      "searchExhausted": true
+    },
+    {
+      "id": "refugio-60314a3006b73c76",
+      "solutionCount": 1,
+      "assignmentsEnumerated": 262144,
+      "searchExhausted": true
+    },
+    {
+      "id": "refugio-686930d6134d6c86",
+      "solutionCount": 1,
+      "assignmentsEnumerated": 131072,
+      "searchExhausted": true
+    }
+  ]
+}
