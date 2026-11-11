@@ -1,5 +1,5 @@
-// Cada desenho representa a ação da conquista, em vez de repetir uma medalha.
-// O traço permanece vetorial e legível nos cartões e nos avisos de descoberta.
+// Cada pictograma preserva a ação da conquista dentro da roseta aprovada.
+// A moldura é compartilhada pelos cartões e pelos avisos de descoberta.
 const ICON_DRAWINGS = {
   "light-light-jump": `<ellipse cx="15" cy="31" rx="7" ry="20" class="ai-tint"/><ellipse cx="49" cy="31" rx="7" ry="20" class="ai-tint"/><path d="M3 45h12l8-26 12 26 14-26h12M18 15l10 8M30 49l10-8M44 15l10 8"/><circle cx="59" cy="19" r="3" class="ai-accent"/>`,
   "prumo-unlikely-balance": `<path d="M5 22h18v-9h12v22h24v9H5Z" class="ai-tint"/><path d="m30 46-9 13h18Z" class="ai-accent"/><path d="M9 50h9M43 50h12M30 26v13"/><circle cx="30" cy="42" r="3" class="ai-fill"/>`,
@@ -392,8 +392,56 @@ const ICON_DRAWINGS = {
 
 export const ACHIEVEMENT_ICON_IDS = Object.freeze(Object.keys(ICON_DRAWINGS));
 
+// A geometria usa a mesma prancheta de 128 unidades da opção C aprovada.
+// O grupo externo reduz tudo pela metade sem alterar o espaço ocupado no layout.
+function rosetteOutline(centerY, outerRadius, innerRadius) {
+  const points = Array.from({ length: 32 }, (_, index) => {
+    const angle = -Math.PI / 2 + index * Math.PI / 16;
+    const radius = index % 2 === 0 ? outerRadius : innerRadius;
+    const x = (64 + radius * Math.cos(angle)).toFixed(2);
+    const y = (centerY + radius * Math.sin(angle)).toFixed(2);
+    return `${x},${y}`;
+  });
+  return `M${points.join(" L")}Z`;
+}
+
+function rosetteRays() {
+  return Array.from({ length: 17 }, (_, index) => {
+    const angle = index * 22 * Math.PI / 180;
+    const point = (radius) =>
+      `${(64 + radius * Math.cos(angle)).toFixed(2)} ${(51 + radius * Math.sin(angle)).toFixed(2)}`;
+    return `M${point(41)} L${point(46)}`;
+  }).join(" ");
+}
+
+// Calculada uma única vez: não depende do progresso nem modifica o pictograma.
+const ROSETTE_FRAME = `
+  <g class="ai-rosette" stroke="var(--medal-edge)" stroke-width="1.1">
+    <path d="M35 74 29 120 46 111 57 124 62 87Z" fill="var(--medal-blue)"/>
+    <path d="M67 83 75 124 86 111 104 120 94 73Z" fill="var(--medal-green)"/>
+    <path d="M38 94 35 110M88 94 96 110" stroke="var(--medal-gold)" stroke-width="2"/>
+    <path d="${rosetteOutline(53, 50, 43)}" fill="var(--medal-edge)" stroke="none"/>
+    <path d="${rosetteOutline(51, 50, 43)}" fill="var(--medal-gold)" stroke-width="1"/>
+    <path d="${rosetteOutline(51, 44, 39)}" fill="var(--medal-mid)" stroke="var(--medal-pale)" stroke-width="0.6"/>
+    <circle cx="64" cy="51" r="36" fill="var(--medal-blue)" stroke-width="0.8"/>
+    <circle cx="64" cy="51" r="32" fill="var(--medal-pale)" stroke="var(--medal-gold)" stroke-width="1.5"/>
+    <path d="${rosetteRays()}" stroke-width="0.8"/>
+    <g fill="var(--medal-gold)" stroke="none">
+      <circle cx="64" cy="16" r="1.5"/>
+      <circle cx="29" cy="51" r="1.5"/>
+      <circle cx="99" cy="51" r="1.5"/>
+      <circle cx="64" cy="86" r="1.5"/>
+    </g>
+  </g>
+`;
+
 export function renderAchievementIcon(id) {
   const drawing = ICON_DRAWINGS[id] ?? ICON_DRAWINGS.first;
 
-  return `<svg class="achievement-icon" viewBox="0 0 64 64" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false">${drawing}</svg>`;
+  return `<svg class="achievement-icon" viewBox="0 0 64 64" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false">
+    <g transform="scale(0.5)">
+      ${ROSETTE_FRAME}
+      <g class="ai-pictogram" transform="translate(40 27) scale(0.75)" stroke-width="3.1">${drawing}</g>
+    </g>
+  </svg>`;
 }

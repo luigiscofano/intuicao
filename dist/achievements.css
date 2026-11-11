@@ -226,11 +226,41 @@
 
 /* Os mesmos SVGs também aparecem nos avisos discretos de nova conquista. */
 .achievement-icon {
+  /* Paleta discreta da roseta ainda não conquistada. */
+  --medal-green: #a5b29d;
+  --medal-blue: #aab6aa;
+  --medal-gold: #bdc5ad;
+  --medal-edge: #8a9683;
+  --medal-pale: #e4e8db;
+  --medal-mid: #d5ddc9;
+  --achievement-tint: #d8dece;
+  --achievement-fill: #bac6b1;
+  --achievement-accent: #c5c9ad;
+  --achievement-highlight: #979e86;
+  --achievement-paper: #edf0e6;
+  color: #7d8879;
   display: block;
   width: 64px;
   height: 64px;
   max-width: 100%;
   max-height: 100%;
+}
+
+/* O aviso só existe após a descoberta e usa o mesmo acabamento conquistado. */
+.is-unlocked .achievement-icon,
+.mission-notice-icon .achievement-icon {
+  --medal-green: #3e7050;
+  --medal-blue: #3d6e85;
+  --medal-gold: #dbb651;
+  --medal-edge: #8c702a;
+  --medal-pale: #fff4cb;
+  --medal-mid: #ebcd78;
+  --achievement-tint: #d9e7c5;
+  --achievement-fill: #6b9462;
+  --achievement-accent: #efc655;
+  --achievement-highlight: #2f6680;
+  --achievement-paper: #fff9e5;
+  color: #315c43;
 }
 
 .achievement-icon .ai-tint {
