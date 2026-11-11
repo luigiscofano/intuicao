@@ -22,13 +22,15 @@ O site está **aberto ao público desde 03/11/2026**: qualquer pessoa com o link
 
 ## Conquistas com missões próprias de cada jogo
 
-**60 conquistas com emblemas SVG distintos:** as dez gerais continuam acompanhando a campanha, e cinquenta missões exploram decisões específicas dos 25 jogos. Em MOSAICO, por exemplo, uma missão pede dois selos próprios no mesmo lance; em LASTRO, outra pede devolver um desvio não nulo a zero.
+**74 conquistas com emblemas SVG distintos:** as dez gerais continuam acompanhando a campanha, e sessenta e quatro missões exploram decisões específicas dos 25 jogos. Em MOSAICO, por exemplo, uma missão pede dois selos próprios no mesmo lance; em LASTRO, outra pede devolver um desvio não nulo a zero.
 
-A galeria permite filtrar por jogo e por conquistas obtidas ou ainda por descobrir. Missões de campanha aproveitam conclusões atuais verificáveis; missões Versus reconhecem jogadas humanas confirmadas. O progresso participa do backup local.
+A [ampliação aprovada](docs/conquistas/MISSOES-APROVADAS-2026-11-11.md) acrescenta precisão, eficiência e sequências humanas, preservando as conquistas anteriores.
+
+A galeria permite filtrar por jogo e por conquistas obtidas ou ainda por descobrir. Missões retroativas aproveitam conclusões atuais verificáveis; as missões de ação reconhecem jogadas humanas confirmadas. O progresso participa do backup local.
 
 ![Galeria de conquistas com emblemas próprios e filtros por jogo](docs/imagens/conquistas/galeria.png)
 
-[Lista das 50 missões e critérios](docs/conquistas/README.md) · [Prancha dos 60 emblemas](docs/imagens/conquistas/emblemas.svg) · [Arquitetura e preservação do progresso](dist/achievements/README.md)
+[Catálogo e critérios das missões](docs/conquistas/README.md) · [Prancha da edição inicial de 60 emblemas](docs/imagens/conquistas/emblemas.svg) · [Arquitetura e preservação do progresso](dist/achievements/README.md)
 
 ## Oito novos duelos · edição de 11/11/2026
 

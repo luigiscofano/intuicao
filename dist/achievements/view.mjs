@@ -39,7 +39,8 @@ export function filterAchievements(data, filters = DEFAULT_FILTERS) {
       filters.kind === "general" ||
       filters.gameId === "all" ||
       !filters.gameId ||
-      entry.gameId === filters.gameId;
+      entry.gameId === filters.gameId ||
+      entry.gameIds?.includes(filters.gameId);
     const matchesStatus =
       !filters.status ||
       filters.status === "all" ||
@@ -135,13 +136,13 @@ function renderCard(achievement, kind) {
   const progressText = isMission
     ? achievement.unlocked
       ? "Condição cumprida"
-      : "Condição ainda não atingida"
+      : achievement.target > 1 ? `${achievement.current} de ${achievement.target} fases` : "Condição ainda não atingida"
     : `${achievement.current} de ${achievement.target}`;
   const gameLabel = isMission
     ? `<p class="achievement-game">${escapeHtml(achievement.gameName)}</p>`
     : "";
   const gameLink = isMission
-    ? `<a class="achievement-play" href="?game=${encodeURIComponent(achievement.gameId)}" aria-label="Jogar ${escapeHtml(achievement.gameName)} para explorar ${escapeHtml(achievement.name)}">Jogar ${escapeHtml(achievement.gameName)} <svg class="achievement-play-arrow" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M5 19 19 5M7 5h12v12"/></svg></a>`
+    ? (achievement.games ?? [{id: achievement.gameId, name: achievement.gameName}]).map(game => `<a class="achievement-play" href="?game=${encodeURIComponent(game.id)}" aria-label="Jogar ${escapeHtml(game.name)} para explorar ${escapeHtml(achievement.name)}">Jogar ${escapeHtml(game.name)} <svg class="achievement-play-arrow" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M5 19 19 5M7 5h12v12"/></svg></a>`).join('')
     : "";
 
   return `
@@ -230,6 +231,7 @@ function renderCriteria(data) {
       <p>As conquistas gerais contam uma vez cada nível das ${data.games.length} campanhas atuais cuja conclusão está salva neste navegador. Repetir o nível não aumenta o total. Conclusões assistidas também contam.</p>
       <p>Nas missões de campanha, a conclusão precisa corresponder a uma fase oficial com a característica descrita. Registros de fases atuais já concluídas podem comprovar essas missões.</p>
       <p>As missões de jogadas reconhecem ações confirmadas de uma pessoa, inclusive no treino. A ajuda pode orientar sua escolha: é a jogada confirmada que conta. Prévias e ações do computador não desbloqueiam essas missões.</p>
+      <p>As missões de precisão e eficiência registram novas rodadas em fases oficiais. Primeira confirmação não significa primeira visita: é permitido ajustar antes de confirmar. Aplicar uma solução automaticamente não comprova uma tentativa humana. O progresso anterior continua preservado.</p>
       <p>Cada missão é conquistada uma única vez. Desfazer uma jogada não remove uma descoberta já registrada.</p>
       <p>Desafios avançados são os níveis das etapas Avançado, Mestre e Modo Sábio, conforme a classificação editorial de cada jogo. Modo Sem Parar, fases importadas e campanhas antigas arquivadas não aumentam a contagem geral.</p>
       <p>Seu progresso continua local: não é sincronizado entre dispositivos. Limpar os dados do navegador pode removê-lo. Use o backup do progresso para guardar suas conquistas. Abrir esta tela não altera nem apaga seus saves.</p>

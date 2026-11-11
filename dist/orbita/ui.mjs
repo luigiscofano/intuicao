@@ -1,3 +1,6 @@
+import {createMovementAttempt,startMovementAttempt,serializeMovementAttempt,movementHistory,observeMovement,finishMovement,newlyFinishedMovementBest} from '../achievements/movement-missions.mjs';
+import {recordMissionUnlocks} from '../achievements/mission-store.mjs';
+import {solve as proveMinimum} from './analysis.mjs';
 import { writeProgress } from '../progress-write-guard.mjs';
 // Interface de ÓRBITA: sessões, anéis, animação, dicas, importação e progresso.
 import { pickOrbitaRing, commandForOrbitaRing } from './ring-selection.mjs';
@@ -404,6 +407,8 @@ export function recordOrbitaCompletion(data, level, session, mode, now = new Dat
     const previous = data.campaign.completed[level.id];
     recorded = recorded || !!previous;
     data.campaign.completed[level.id] = {
+      ...(Number.isSafeInteger(previous?.humanBestMoves) && previous.humanBestMoves > 0
+        ? { humanBestMoves: previous.humanBestMoves } : {}),
       firstCompletedAt: previous?.firstCompletedAt ?? now,
       assisted: previous ? previous.assisted === true && session.assisted : session.assisted,
     };
@@ -1078,7 +1083,10 @@ export function initOrbita({ hideOthers = () => {} } = {}) {
   // Grava o progresso e as preferências da sessão atual.
   function save() {
     if (level && session) {
-      const saved = serializeOrbitaSession(level, session);
+      const saved = {
+        ...serializeOrbitaSession(level, session),
+        movementMission: serializeMovementAttempt(missionAttempt, { session, definition: definitionKey(level) }),
+      };
       if (mode === 'campaign') {
         data.campaign.lastId = level.id;
         data.campaign.sessions[level.id] = saved;
@@ -1346,6 +1354,8 @@ export function initOrbita({ hideOthers = () => {} } = {}) {
     start(CAMPAIGN[next], { mode: 'campaign', saved: data.campaign.sessions[CAMPAIGN[next].id] });
   }
   // Prepara a fase selecionada e sua apresentação.
+  let missionAttempt = null;
+  const missionMinimums = new WeakMap();
   function start(next, { mode: nextMode = 'campaign', saved = null, fresh = false } = {}) {
     if (!isCircularGeneration(next)) {
       selection();
@@ -1360,6 +1370,11 @@ export function initOrbita({ hideOthers = () => {} } = {}) {
     rulesOpen = true;
     session = restoreOrbitaSession(level, fresh ? null : saved);
     selected = level.commands[0]?.id;
+    missionAttempt = startMovementAttempt({
+      session, saved, reset: fresh, definition: definitionKey(level),
+      official: mode === 'campaign' && CAMPAIGN.includes(level),
+      priorBest: data.campaign.completed[level.id]?.humanBestMoves,
+    });
     if (mode === 'endless' && data.endless?.current?.completed === true) session.winRecorded = true;
     const unknown = mechanics(level).filter((key) => !data.learnedMechanics.includes(key));
     data.learnedMechanics = [...new Set([...data.learnedMechanics, ...mechanics(level)])];
@@ -2089,6 +2104,22 @@ export function initOrbita({ hideOthers = () => {} } = {}) {
     selected = command.command;
     session = next.session;
     if (assisted) session.assisted = true;
+    observeMovement(missionAttempt, { cursor: session.cursor, human: !assisted && !fromGuide });
+    if (isWon(level, current()) && missionAttempt?.official && missionAttempt.eligible) {
+      if (!missionMinimums.has(level)) {
+        const proof = proveMinimum(level, undefined, { maxStates: 20000, timeoutMs: 50, maxDepth: session.cursor });
+        missionMinimums.set(level, proof.status === 'solved' && proof.optimal === true && proof.proof?.allShorterPathsExhausted === true ? proof.proof.minimumLength : null);
+      }
+      const wasFinished = missionAttempt.finished;
+      const ids = finishMovement(missionAttempt, { game: 'orbita', won: true, cursor: session.cursor, provenMinimum: missionMinimums.get(level) });
+      recordMissionUnlocks(ids);
+      const best = newlyFinishedMovementBest(missionAttempt, { wasFinished, cursor: session.cursor });
+      if (best !== null) {
+        // Registra a vitória real antes do recorde, inclusive se a animação for interrompida.
+        recordWin();
+        data.campaign.completed[level.id] = { ...data.campaign.completed[level.id], humanBestMoves: best };
+      }
+    }
     message = moveName(command) + '. Todas as peças afetadas se moveram juntas.';
     log('rotate', { command: clone(command), moves: session.cursor });
     save();
@@ -2112,6 +2143,7 @@ export function initOrbita({ hideOthers = () => {} } = {}) {
     const next = session.cursor + delta;
     if (next < 0 || next >= session.states.length) return;
     const restoreFocus = preserveInteractionFocus();
+    movementHistory(missionAttempt);
     invalidate();
     session.cursor = next;
     message =
@@ -2128,6 +2160,10 @@ export function initOrbita({ hideOthers = () => {} } = {}) {
   // Reinicia a tentativa depois da confirmação, preservando o progresso acumulado.
   function restartCurrentImmediately() {
     if (!session || host.hidden || screen !== 'play') return;
+    missionAttempt = createMovementAttempt({
+      official: missionAttempt?.official, fresh: true, clean: isWon(level, current()),
+      priorBest: data.campaign.completed[level.id]?.humanBestMoves,
+    });
     const old = session;
     cancelGeneration();
     invalidate();

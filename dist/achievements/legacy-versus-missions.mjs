@@ -10,7 +10,7 @@ export const LEGACY_VERSUS_MISSIONS = Object.freeze([
     "broto",
     "BROTO",
     "double-harvest",
-    "Colheita em dobro",
+    "Colheita dupla",
     "Colha duas ou mais flores da sua equipe em um único plantio.",
   ),
   mission(

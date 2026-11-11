@@ -1,3 +1,5 @@
+import {createMovementAttempt,startMovementAttempt,serializeMovementAttempt,movementHistory,observeMovement,finishMovement,sintoniaBatonPass} from '../achievements/movement-missions.mjs';
+import {recordMissionUnlocks} from '../achievements/mission-store.mjs';
 import { writeProgress } from '../progress-write-guard.mjs';
 // Interface de SINTONIA: tabuleiros, comandos, mecanismos, dicas e progresso.
 import { rulesPreviewMarkup } from '../rules-preview.mjs';
@@ -351,6 +353,7 @@ export function initSintonia({ hideOtherGames }) {
   } catch {
     data = freshSintoniaData();
   }
+  let missionAttempt = null;
   let level = null,
     session = null,
     mode = 'campaign',
@@ -410,7 +413,10 @@ export function initSintonia({ hideOtherGames }) {
   // Grava o progresso e as preferências da sessão atual.
   function save() {
     if (level && session) {
-      const saved = { ...serializeSintoniaSession(session), animalRoster: animalRoster.slice() };
+      const saved = {
+        ...serializeSintoniaSession(session), animalRoster: animalRoster.slice(),
+        movementMission: serializeMovementAttempt(missionAttempt, { session, definition: sintoniaDefinitionKey(level) }),
+      };
       if (mode === 'campaign' || mode === 'archive') {
         for (const record of Object.values(data.archivedAttempts)) {
           if (
@@ -643,6 +649,11 @@ export function initSintonia({ hideOtherGames }) {
     model = relationModel(level);
     recentDirection = '';
     session = restoreSintoniaSession(level, fresh ? null : saved);
+    missionAttempt = startMovementAttempt({
+      session, saved, reset: fresh, definition: sintoniaDefinitionKey(level),
+      validateBaton: (i) => sintoniaBatonPass(level, session.states[i], transition(level, session.states[i], session.commands[i])),
+      official: mode === 'campaign' && CAMPAIGN.some((item) => item.id === level.id && sintoniaDefinitionKey(item) === sintoniaDefinitionKey(level)),
+    });
     animalRoster = resolveAnimalRoster(level.boards.length, fresh ? null : saved?.animalRoster);
     accessoryPalette = selectAccessoryPalette(level, animalRoster);
     const unknown = (level.mechanics ?? []).filter(
@@ -934,6 +945,7 @@ export function initSintonia({ hideOtherGames }) {
     answerPlan = null;
     hintTier = 0;
     hintText = '';
+    const before = current();
     const result = commitSintoniaCommand(level, session, direction);
     recentDirection = direction;
     if (!result.transition.changed) {
@@ -948,6 +960,10 @@ export function initSintonia({ hideOtherGames }) {
     message = result.transition.won
       ? 'Em sintonia! Todos chegaram aos seus destinos.'
       : `${statusCount()} de ${level.boards.length} animais no destino. Quem chegou continua recebendo os comandos.`;
+    observeMovement(missionAttempt, { cursor: session.cursor, human: !assisted && !silent, baton: sintoniaBatonPass(level, before, result.transition) });
+    const certificate = CAMPAIGN.find((item) => item.id === level.id)?.certificate;
+    const minimum = certificate?.optimal === true && certificate?.replayed === true && certificate?.rulesVersion === RULES_VERSION && certificate?.method === 'breadth-first-witness-and-engine-replay' ? certificate.commands : null;
+    recordMissionUnlocks(finishMovement(missionAttempt, { game: 'sintonia', won: result.transition.won, cursor: session.cursor, levelId: level.id, provenMinimum: minimum }));
     log('move', { direction, moves: session.cursor });
     if (result.transition.won) recordWin();
     else save();
@@ -966,6 +982,7 @@ export function initSintonia({ hideOtherGames }) {
     if (!session || restart.isOpen) return;
     const next = session.cursor + delta;
     if (next < 0 || next >= session.states.length) return;
+    movementHistory(missionAttempt);
     invalidate();
     session.cursor = next;
     message =
@@ -992,6 +1009,8 @@ export function initSintonia({ hideOtherGames }) {
       });
       return;
     }
+    const wasWon = isWon(level, current());
+    missionAttempt = createMovementAttempt({ official: missionAttempt?.official, fresh: true, clean: wasWon });
     const recorded = session.winRecorded,
       failures = session.failures,
       assisted = session.assisted;

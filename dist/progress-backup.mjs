@@ -9,6 +9,7 @@ const MAX_RECORD_BYTES = 8 * 1024 * 1024;
 // Versões do envelope de cada store, não das regras nem do catálogo interno.
 // Órbita evoluiu até v3; versões anteriores continuam sob a migração do jogo.
 const STORAGE_VERSIONS = Object.freeze({
+  "intuicao.approved-attempts.v1": [1],
   "intuicao.missions.v1": [1],
   "intuicao.versus.v1": [1],
   "intuicao.logica.v1": [1],
@@ -22,6 +23,7 @@ const STORAGE_VERSIONS = Object.freeze({
   "intuicao.sintonia.v1": [1],
 });
 export const PROGRESS_KEYS = Object.freeze([
+  "intuicao.approved-attempts.v1",
   "intuicao.missions.v1",
   "intuicao.versus.v1",
   "intuicao.logica.v1",

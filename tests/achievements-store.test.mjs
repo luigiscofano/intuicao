@@ -38,9 +38,9 @@ const secondMission = () => ACTION_MISSIONS[1].id;
 const firstDate = new Date("2026-11-11T14:00:00Z");
 const laterDate = new Date("2026-11-12T14:00:00Z");
 
-test("o catálogo contém duas missões distintas por cada um dos 25 jogos", () => {
-  assert.equal(MISSION_CATALOG.length, 50);
-  assert.equal(new Set(MISSION_CATALOG.map(({ id }) => id)).size, 50);
+test("o catálogo preserva 50 missões e acrescenta 14 sem duplicar Colheita dupla", () => {
+  assert.equal(MISSION_CATALOG.length, 64);
+  assert.equal(new Set(MISSION_CATALOG.map(({ id }) => id)).size, 64);
   const counts = new Map();
   for (const mission of MISSION_CATALOG) {
     counts.set(mission.gameId, (counts.get(mission.gameId) ?? 0) + 1);
@@ -49,7 +49,7 @@ test("o catálogo contém duas missões distintas por cada um dos 25 jogos", () 
     assert.equal(mission.icon, mission.id);
   }
   assert.equal(counts.size, 25);
-  assert([...counts.values()].every((count) => count === 2));
+  assert([...counts.values()].every((count) => count >= 2));
 });
 
 test("ler um navegador vazio não grava nem inventa conquistas", () => {

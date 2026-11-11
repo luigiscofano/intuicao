@@ -1,3 +1,4 @@
+import { createCercoMissionRound, invalidateCercoMissionRound, observeCercoMission } from "../achievements/approved-collection.mjs";
 import { recordMissionUnlocks } from "../achievements/mission-store.mjs";
 import { legacyVersusMissionUnlocks } from "../achievements/legacy-versus-missions.mjs";
 import { writeProgress } from "../progress-write-guard.mjs";
@@ -83,6 +84,7 @@ export function initCerco() {
     restart = createRestartConfirmation("restart-cerco"),
     search = createCercoSearch();
   const resultLayout = createDuelResultLayout(host, "ce");
+  let missionRound = createCercoMissionRound();
   let state = null,
     config = defaultConfig(),
     screen = "selection",
@@ -264,6 +266,7 @@ export function initCerco() {
         return;
       cancelWork();
       state = createCerco(0, selectedMap);
+      missionRound = createCercoMissionRound();
       matchId = newId();
       invalidSave = false;
       enterPlay();
@@ -450,6 +453,7 @@ export function initCerco() {
     $("ce-rematch").onclick = () => {
       cancelWork();
       state = rematchCerco(state);
+      missionRound = createCercoMissionRound();
       matchId = newId();
       enterPlay();
     };
@@ -566,6 +570,10 @@ export function initCerco() {
           opponentMovesAfter: legalCercoMoves(state, 1 - before.player),
         }),
       );
+    recordMissionUnlocks(observeCercoMission(missionRound, {
+      confirmed: true, computer, mode: config.mode, before, after: state,
+      legalBefore: legalCercoMoves(before),
+    }));
     message = `${teamNames[before.player]}: ${coord(move.from, getCercoMap(state).cols)} → ${coord(move.to, getCercoMap(state).cols)}. A origem virou barreira.${state.over ? ` ${teamNames[state.winner]} venceu.` : ""}`;
     persist();
     const token = revision,
@@ -675,6 +683,7 @@ export function initCerco() {
     )
       return;
     cancelWork();
+    invalidateCercoMissionRound(missionRound);
     state = redo ? redoCerco(state) : undoCerco(state);
     if (config.mode === "bot") {
       while (
@@ -695,6 +704,7 @@ export function initCerco() {
   function resetNow() {
     cancelWork();
     state = resetCerco(state);
+    missionRound = createCercoMissionRound();
     matchId = newId();
     enterPlay();
   }

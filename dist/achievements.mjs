@@ -16,6 +16,7 @@ import { CAMPAIGN as orbita, campaignTier } from "./orbita/campaign.mjs";
 import { normalizeSintoniaData } from "./sintonia/ui.mjs";
 import { normalizeRepasseData } from "./repasse/ui.mjs";
 import { normalizeOrbitaData } from "./orbita/ui.mjs";
+import { readApprovedAttempts } from "./achievements/approved-store.mjs";
 import { MISSION_CATALOG } from "./achievements/catalog.mjs";
 import { campaignMissionUnlocks } from "./achievements/campaign-missions.mjs";
 import { readMissionLedger } from "./achievements/mission-store.mjs";
@@ -271,6 +272,8 @@ export function readAchievements(storage) {
   };
   const ledger = readMissionLedger(storage);
   if (ledger.warning) warnings.push(ledger.warning);
+  const attempts = readApprovedAttempts(storage);
+  if (attempts.warning) warnings.push(attempts.warning);
   const missions = MISSION_CATALOG.map((mission) => {
     const unlocked =
       completedMissionIds.has(mission.id) ||
@@ -280,26 +283,18 @@ export function readAchievements(storage) {
       kind: "mission",
       gameId: mission.gameId,
       gameName: mission.gameName,
+      gameIds: mission.gameIds ?? [mission.gameId],
+      games: mission.games ?? [{id: mission.gameId, name: mission.gameName}],
       name: mission.name,
       description: mission.description,
       icon: mission.icon,
-      target: 1,
-      current: Number(unlocked),
+      target: mission.id === "precision-three-first-tries" ? 3 : 1,
+      current: mission.id === "precision-three-first-tries" ? (unlocked ? 3 : attempts.firstWins.length) : Number(unlocked),
       unlocked,
       unlockedAt: ledger.unlocked[mission.id]?.unlockedAt ?? null,
     };
   });
-  const missionGames = [
-    ...new Map(
-      missions.map((mission) => [
-        mission.gameId,
-        {
-          id: mission.gameId,
-          name: mission.gameName,
-        },
-      ]),
-    ).values(),
-  ];
+  const missionGames = [...new Map(missions.flatMap(mission => mission.games).map(game => [game.id, game])).values()];
   return {
     ...stats,
     available: games.reduce((sum, g) => sum + g.total, 0),

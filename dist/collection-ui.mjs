@@ -1,4 +1,6 @@
 // Interface compartilhada de ELO, PRUMO, PACTO e DESVIO: seleção, comandos e resultados.
+import { recordApprovedAttemptWin } from "./achievements/approved-store.mjs";
+import { createCollectionMissionRound, observePuzzleConfirmation, observePactoEdit, resetPactoSequence, approvedCollectionUnlocks } from "./achievements/approved-collection.mjs";
 import { recordMissionUnlocks } from "./achievements/mission-store.mjs";
 import { legacyVersusMissionUnlocks } from "./achievements/legacy-versus-missions.mjs";
 import { rulesPreviewMarkup } from "./rules-preview.mjs";
@@ -222,6 +224,7 @@ export function initCollection({ hideOriginal }) {
     jsonRevision = 0,
     jsonAbort = null;
   let eloExplanationsShown = true;
+  let missionRound = createCollectionMissionRound();
   let pactoWonKey = null,
     pactoVictoryToken = null;
   const cancelJSONImport = () => {
@@ -298,6 +301,8 @@ export function initCollection({ hideOriginal }) {
           }
       data.sessions[sessionKey] = {
         rulesVersion: 2,
+        missionConfirmations: missionRound.confirmations,
+        missionAssisted: missionRound.assisted,
         selectedSupport: game === "prumo" ? selected : undefined,
         assistance: progress().get(answerKey()).assisted,
         history: {
@@ -732,6 +737,11 @@ export function initCollection({ hideOriginal }) {
     const saved = fresh ? null : data.sessions[sessionKey]?.history;
     const restored = restoreHistory(saved);
     if (restored) history = restored;
+    missionRound = createCollectionMissionRound({
+      restored: !!restored,
+      assisted: restored ? data.sessions[sessionKey]?.missionAssisted : undefined,
+      confirmations: restored ? data.sessions[sessionKey]?.missionConfirmations : undefined,
+    });
     if (!fresh && data.sessions[sessionKey]?.assistance)
       progress().assist(answerKey());
     if (game === "prumo") {
@@ -908,15 +918,16 @@ export function initCollection({ hideOriginal }) {
     autoWinPacto();
   }
   // Estado visual e gestos não pertencem ao histórico de soluções.
-  function dispatchAction(action) {
+  function dispatchAction(action, { human = true } = {}) {
     const next = applyDirectAction(game, level, current(), action);
     if (JSON.stringify(next) === JSON.stringify(current())) return;
+    if (game === "pacto") observePactoEdit(missionRound, level, current(), next, { human });
     clearResult();
     history = commitHistory(history, next);
     persist();
     renderBoard();
     renderStatus();
-    autoWinPacto();
+    if (autoWinPacto() && human) recordApprovedPuzzleWin(false);
   }
   function selectSupport(value) {
     if (!Number.isInteger(value) || value < 0 || value >= level.supports.length)
@@ -1458,7 +1469,8 @@ export function initCollection({ hideOriginal }) {
       if (hintTier !== 3 || !hintPlan?.action) return;
       const action = hintPlan.action;
       progress().assist(answerKey());
-      dispatchAction(action);
+      missionRound.assisted = true;
+      dispatchAction(action, { human: false });
       if (!(game === "pacto" && evaluated?.complete && evaluated.valid))
         message =
           game === "pacto"
@@ -2231,7 +2243,12 @@ export function initCollection({ hideOriginal }) {
       }
       return;
     }
-    if (game === "pacto" && autoWinPacto()) return;
+    const firstConfirmation = observePuzzleConfirmation(missionRound);
+    if (game === "pacto" && autoWinPacto()) {
+      recordApprovedPuzzleWin(firstConfirmation);
+      persist();
+      return;
+    }
     pactoCheck.reset();
     hintText = "";
     evaluated = isSymbol()
@@ -2239,6 +2256,7 @@ export function initCollection({ hideOriginal }) {
       : validateGeometry(level, current());
     const success = evaluated.complete && evaluated.valid;
     if (success) {
+      recordApprovedPuzzleWin(firstConfirmation);
       finishPuzzleWin();
     } else {
       progress().fail(answerKey());
@@ -2255,6 +2273,15 @@ export function initCollection({ hideOriginal }) {
     persist();
     renderBoard();
     renderStatus();
+  }
+  function recordApprovedPuzzleWin(firstConfirmation) {
+    const official = !custom && !endless && catalogue[game]?.some(item => item.id === level.id);
+    if (!official || missionRound.assisted) return;
+    if (game === "elo" || game === "prumo")
+      recordApprovedAttemptWin({ gameId: game, levelId: level.id, firstConfirmation });
+    recordMissionUnlocks(approvedCollectionUnlocks(game, {
+      confirmed: true, official, success: true, level, state: current(), round: missionRound,
+    }));
   }
   // Aplica a resposta de referência após as verificações de disponibilidade.
   function applyAnswer() {
@@ -2299,6 +2326,8 @@ export function initCollection({ hideOriginal }) {
     pactoCheck.reset();
     clearResult();
     history = commitHistory(history, next);
+    resetPactoSequence(missionRound);
+    missionRound.assisted = true;
     progress().assist(answerKey());
     message =
       "Gabarito aplicado. Confirme a resposta para conferir. Esta resolução é assistida.";
@@ -2393,6 +2422,7 @@ export function initCollection({ hideOriginal }) {
     pactoFeedback.reset();
     pactoCheck.reset();
     clearResult();
+    resetPactoSequence(missionRound);
     history = redo ? redoHistory(history) : undoHistory(history);
     if (game === "desvio" && duelMode === "bot") {
       if (

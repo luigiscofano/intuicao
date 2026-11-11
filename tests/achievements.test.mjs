@@ -269,7 +269,7 @@ test("UI includes labelled progress, honest criteria, empty state and every camp
   const host = { innerHTML: "" };
   renderAchievements(host, storage());
   assert.match(host.innerHTML, /id="achievements-title" tabindex="-1"/);
-  assert.equal((host.innerHTML.match(/<progress /g) || []).length, 50);
+  assert.equal((host.innerHTML.match(/<progress /g) || []).length, 64);
   const campaignSection = host.innerHTML.match(
     /<details class="achievement-campaigns">([\s\S]*?)<\/details>/,
   )[1];
@@ -295,7 +295,7 @@ test("varied milestones use current completion evidence only", () => {
   assert.equal(all.exploredTiers, 6);
   assert.equal(all.achievements.length, 10);
   assert.equal(new Set(all.achievements.map((a) => a.icon)).size, 10);
-  assert.equal(all.missions.length, 50);
+  assert.equal(all.missions.length, 64);
   assert.equal(all.missions.filter((mission) => mission.unlocked).length, 28);
   const one = readAchievements(
     storage({

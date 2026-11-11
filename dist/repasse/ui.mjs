@@ -1,3 +1,5 @@
+import {recordMissionUnlocks} from '../achievements/mission-store.mjs';
+import {createRepasseMissionAttempt, invalidateRepasseMissionAttempt, observeRepasseMissionCommand} from '../achievements/repasse-action-missions.mjs';
 import { writeProgress } from '../progress-write-guard.mjs';
 // Interface de REPASSE: sessões, retiradas, prévias, animações e progresso.
 import { rulesPreviewMarkup } from '../rules-preview.mjs';
@@ -400,6 +402,7 @@ export function initRepasse({ hideOthers = () => {} } = {}) {
   } catch {
     data = freshRepasseData();
   }
+  let missionAttempt = null;
   let level = null,
     session = null,
     mode = 'campaign',
@@ -692,6 +695,7 @@ export function initRepasse({ hideOthers = () => {} } = {}) {
     screen = 'play';
     rulesOpen = true;
     session = restoreRepasseSession(level, fresh ? null : saved);
+    missionAttempt = createRepasseMissionAttempt(level, { mode, resumed: session.cursor > 0 });
     if (mode === 'endless' && data.endless?.current?.completed === true) session.winRecorded = true;
     activePiece = level.pieces.find((piece, i) => current().values[i] > 0)?.id ?? null;
     const configurations = pieceConfigurations(level),
@@ -932,6 +936,7 @@ export function initRepasse({ hideOthers = () => {} } = {}) {
   // Retira a peça escolhida e apresenta as transferências calculadas pelo motor.
   function removePiece(pieceId, { assisted = false, silent = false } = {}) {
     if (!level || host.hidden || restart.isOpen) return;
+    const before = current();
     const next = commitRepasseCommand(level, session, pieceId);
     if (!next.transition.changed) return;
     cancelAuto();
@@ -946,6 +951,7 @@ export function initRepasse({ hideOthers = () => {} } = {}) {
     motion?.clear();
     session = next.session;
     if (assisted) session.assisted = true;
+    recordMissionUnlocks(observeRepasseMissionCommand(missionAttempt, { before, after: current(), pieceId, human: !assisted && !silent }));
     const piece = next.transition.removed;
     message =
       'Retirada a peça da ' +
@@ -991,6 +997,7 @@ export function initRepasse({ hideOthers = () => {} } = {}) {
     if (!session || restart.isOpen) return;
     const next = session.cursor + delta;
     if (next < 0 || next >= session.states.length) return;
+    invalidateRepasseMissionAttempt(missionAttempt);
     const restoredId = delta < 0 ? session.commands[session.cursor - 1] : null;
     invalidate();
     session.cursor = next;
@@ -1017,6 +1024,7 @@ export function initRepasse({ hideOthers = () => {} } = {}) {
     cancelGeneration();
     invalidate();
     session = restoreRepasseSession(level, null);
+    missionAttempt = createRepasseMissionAttempt(level, { mode });
     session.winRecorded = old.winRecorded;
     session.failures = old.failures;
     session.assisted = old.assisted;

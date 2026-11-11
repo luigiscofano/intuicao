@@ -2,7 +2,7 @@
 
 **Luigi Scofano de Araujo**
 
-Este módulo reúne dez conquistas gerais e cinquenta missões específicas dos 25 jogos. A galeria usa sessenta emblemas SVG distintos. As regras dos jogos continuam em seus motores; o sistema de conquistas observa evidências que esses motores e os registros de campanha já oferecem.
+Este módulo reúne dez conquistas gerais e sessenta e quatro missões específicas dos 25 jogos. A galeria usa setenta e quatro emblemas SVG distintos. As regras dos jogos continuam em seus motores; o sistema de conquistas observa evidências que esses motores e os registros de campanha já oferecem.
 
 ## Responsabilidades
 
@@ -15,7 +15,7 @@ Este módulo reúne dez conquistas gerais e cinquenta missões específicas dos 
 | `versus-missions.mjs` | Avaliar dezesseis missões dos oito novos duelos. |
 | `catalog.mjs` | Reunir metadados e identificadores permitidos sem importar motores de jogos. |
 | `mission-store.mjs` | Ler, validar e registrar a primeira conquista de cada missão de ação. |
-| `icons.mjs` | Desenhar os sessenta emblemas como SVGs independentes de fonte. |
+| `icons.mjs` | Desenhar os setenta e quatro emblemas como SVGs independentes de fonte. |
 | `view.mjs` | Renderizar a galeria, aplicar filtros e preservar o controle com foco. |
 | `notifications.mjs` | Anunciar novas missões sem mover o foco ou interromper a partida. |
 
@@ -29,7 +29,7 @@ Cada descoberta pertence ao navegador, inclusive quando duas pessoas jogam local
 
 ## Armazenamento e backup
 
-O registro `intuicao.missions.v1` contém `{ version: 1, unlocked: { id: { unlockedAt } } }`. Só são aceitos os 22 identificadores conhecidos de missões de ação e datas válidas. As 28 missões de campanha permanecem derivadas dos saves originais.
+O registro `intuicao.missions.v1` contém `{ version: 1, unlocked: { id: { unlockedAt } } }`. Só são aceitos os 36 identificadores conhecidos de missões de ação e datas válidas. As 28 missões de campanha permanecem derivadas dos saves originais.
 
 Cada escrita relê o registro atual para conservar descobertas de outras abas. A proteção de escrita existente bloqueia abas antigas depois de uma restauração. Dados incompatíveis ou ilegíveis não são sobrescritos silenciosamente; falhas de armazenamento não interrompem o jogo. O backup compartilhado inclui a nova chave e continua aceitando arquivos antigos que não a possuem.
 
@@ -50,6 +50,10 @@ O índice é gerado pelos mesmos predicados e conserva a identidade e a versão 
 node --test tests/achievements*.test.mjs tests/progress-backup.test.mjs tests/library-navigation.test.mjs
 ```
 
-Os testes incluem uma sequência legal para cada missão de ação, uma fase oficial para cada missão de campanha, isolamento de versões, ausência de desbloqueio por prévia/bot, preservação de dados, backup, filtros, cobertura dos sessenta emblemas e temporizadores acessíveis dos avisos. A CI também executa os recortes de motores e da plataforma.
+Os testes incluem uma sequência legal para cada missão de ação, uma fase oficial para cada missão de campanha, isolamento de versões, ausência de desbloqueio por prévia/bot, preservação de dados, backup, filtros, cobertura dos setenta e quatro emblemas e temporizadores acessíveis dos avisos. A CI também executa os recortes de motores e da plataforma.
 
-[Requisitos e lista das cinquenta missões](../../docs/conquistas/README.md)
+[Missões aprovadas, evidências e preservação](../../docs/conquistas/MISSOES-APROVADAS-2026-11-11.md)
+
+## Ampliação de precisão e eficiência
+
+`approved-catalog.mjs` acrescenta quatorze missões; Colheita dupla reutiliza o ID anterior. Os avaliadores `approved-original.mjs`, `approved-collection.mjs`, `movement-missions.mjs` e `repasse-action-missions.mjs` observam rodadas humanas. `approved-store.mjs` conserva até três identidades de fase para Três certeiros, também incluídas no backup. Missões compartilhadas aparecem em todos os filtros elegíveis.
