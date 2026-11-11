@@ -59,3 +59,7 @@ Os certificados, fixtures dos exemplos aprovados e auditores estão em `tests/lo
 O catálogo resumido de conquistas é conferido contra os seis catálogos completos. Saves incompatíveis, abas desatualizadas, bifurcação do histórico e perda de progresso ao percorrer as 80 fases têm casos específicos de regressão. Os testes de navegação do GitHub continuam usando suas fixtures versionadas; os da origem do site preservam seu baseline próprio.
 
 A CI mantém os cinco motores anteriores e acrescenta este recorte. Não executa scripts de geração por curinga e não afirma que toda a suíte histórica está verde.
+
+## Identidade transversal
+
+`node --test tests/identity.test.mjs` verifica o acabamento CSS, seu carregamento e o retrato de integridade da entrega sobre o PR 52. O teste faz parte do recorte de integração da CI; não substitui revisão visual. Veja [escopo, resultados e limites](../docs/identidade/VERIFICACAO-2026-11-11.md).

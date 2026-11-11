@@ -1,0 +1,273 @@
+/* Identidade transversal aprovada em 11/11/2026. */
+
+/* Paleta compartilhada. Somente acabamento; motores, saves e artes permanecem intactos. */
+:root {
+  --identity-green: #39654c;
+  --identity-gold: #cca034;
+  --identity-blue: #244b63;
+  --identity-paper: #fffaf0;
+  --identity-cream: #f4eddd;
+  --identity-line: #c8ccb8;
+}
+
+/* Catálogo: fragmentos nas categorias, sem mudar ordem ou conteúdo. */
+#library-controls>.category-choices>button {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+}
+#library-controls>.category-choices>button[data-category]:not([data-category=''])::before {
+  content: '';
+  display: block;
+  position: static;
+  width: 14px;
+  height: 14px;
+  min-width: 14px;
+  border-radius: 0 0 100% 0;
+  background: var(--identity-green);
+  pointer-events: none;
+}
+#library-controls>.category-choices>button[data-category='logica']:not([data-category=''])::before {
+  background: var(--identity-blue);
+  border-radius: 100% 0 0 0;
+  pointer-events: none;
+}
+#library-controls>.category-choices>button[data-category='versus']:not([data-category=''])::before {
+  background: var(--identity-gold);
+  border-radius: 0 100% 0 0;
+  pointer-events: none;
+}
+#main>.games>.game-section-title {
+  position: relative;
+  padding-left: 26px;
+  align-items: center;
+}
+#main>.games>.game-section-title::before {
+  content: '';
+  position: absolute;
+  left: 0;
+  top: 50%;
+  width: 16px;
+  height: 16px;
+  transform: translateY(-50%);
+  background: var(--identity-green);
+  border-radius: 0 0 100% 0;
+  pointer-events: none;
+}
+#main>.games>#games-logica::before {
+  background: var(--identity-blue);
+  border-radius: 100% 0 0 0;
+  pointer-events: none;
+}
+#main>.games>#games-versus::before {
+  background: var(--identity-gold);
+  border-radius: 0 100% 0 0;
+  pointer-events: none;
+}
+
+/* Campanhas: papel creme e marcas nas etapas. */
+body #main .level-screen {
+  background: var(--identity-paper);
+  border-color: #a1ad91;
+  box-shadow: none;
+}
+body #main .level-screen .stage-heading {
+  font-family: system-ui,sans-serif;
+  letter-spacing: 0.02em;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  color: #30412f;
+}
+body #main .level-screen .stage-heading::before {
+  content: '';
+  display: inline-block;
+  width: 16px;
+  height: 16px;
+  background: var(--identity-blue);
+  border-radius: 100% 0 0 0;
+  pointer-events: none;
+}
+body #main .level-tile {
+  background: #f4eddd;
+  border: 1px solid #afb89e;
+  box-shadow: none;
+  border-radius: 12px;
+  font-family: system-ui,sans-serif;
+}
+body #main .level-tile small {
+  font-family: system-ui,sans-serif;
+  color: #52624a;
+}
+body #main .level-tile[aria-current='true'] {
+  outline: 2px solid var(--identity-blue);
+  outline-offset: 2px;
+}
+body #main .level-tile.done {
+  background: #e1ead9;
+}
+body #main .selection-rules-preview {
+  background: #eef1e6;
+}
+
+/* Jogo: ornamentos somente no painel lateral, nunca no tabuleiro. */
+body.approved-game-view #main .approved-action-panel {
+  position: relative;
+}
+body.approved-game-view #main .approved-action-panel::before {
+  content: '';
+  display: block;
+  position: absolute;
+  top: 0;
+  left: 26px;
+  width: 72px;
+  height: 5px;
+  background: linear-gradient(to right,var(--identity-green) 0 33.33%,var(--identity-gold) 33.33% 66.66%,var(--identity-blue) 66.66%);
+  pointer-events: none;
+}
+body.approved-game-view #main .approved-action-panel::after {
+  content: '';
+  align-self: flex-end;
+  width: 54px;
+  height: 27px;
+  margin: 24px 0 0;
+  background: radial-gradient(ellipse at 100% 100%,#244b63 70%,transparent 71%) 0 0/25px 25px no-repeat,radial-gradient(ellipse at 0 0,#cca034 70%,transparent 71%) 29px 0/25px 25px no-repeat;
+  opacity: .65;
+  pointer-events: none;
+}
+body.approved-game-view #main .approved-real-actions .action-hint {
+  background: var(--identity-blue);
+  border-color: var(--identity-blue);
+  color: var(--identity-paper);
+}
+
+/* Conquistas: cabeçalho e acentos; rosetas e pictogramas preservados. */
+#achievements .achievement-heading {
+  border-left: 0;
+  padding-left: 0;
+  position: relative;
+  padding-right: 130px;
+}
+#achievements .achievement-heading::after {
+  content: '';
+  position: absolute;
+  right: 0;
+  top: 18px;
+  width: 104px;
+  height: 50px;
+  background: radial-gradient(ellipse at 100% 100%,#244b63 70%,transparent 71%) 0 0/23px 23px no-repeat,radial-gradient(ellipse at 0 0,#cca034 70%,transparent 71%) 27px 0/23px 23px no-repeat,radial-gradient(ellipse at 100% 100%,#cca034 70%,transparent 71%) 54px 0/23px 23px no-repeat,radial-gradient(ellipse at 0 0,#39654c 70%,transparent 71%) 81px 0/23px 23px no-repeat,radial-gradient(ellipse at 0 0,#39654c 70%,transparent 71%) 0 27px/23px 23px no-repeat,radial-gradient(ellipse at 100% 100%,#244b63 70%,transparent 71%) 27px 27px/23px 23px no-repeat,radial-gradient(ellipse at 0 0,#39654c 70%,transparent 71%) 54px 27px/23px 23px no-repeat,radial-gradient(ellipse at 100% 100%,#cca034 70%,transparent 71%) 81px 27px/23px 23px no-repeat;
+  pointer-events: none;
+}
+#achievements .achievement-summary>div:nth-child(1) {
+  border-color: var(--identity-green);
+}
+#achievements .achievement-summary>div:nth-child(2) {
+  border-color: var(--identity-gold);
+}
+#achievements .achievement-summary>div:nth-child(3) {
+  border-color: var(--identity-blue);
+}
+#achievements .achievement-card {
+  border-radius: 16px;
+  box-shadow: none;
+}
+#achievements .achievement-tabs button[aria-pressed='true'] span {
+  background: #e9d18a;
+}
+
+/* Fauna: moldura e tipografia; recortes e sprites existentes. */
+#fauna-dialog {
+  background: var(--identity-paper);
+  border-color: #9ca98e;
+  border-radius: 18px;
+  color: #30412f;
+}
+#fauna-title {
+  font: 750 30px/1.2 system-ui,sans-serif;
+  color: #30412f;
+}
+#fauna-dialog .fauna-heading {
+  border-top: 0;
+  background: var(--identity-cream);
+  border-bottom: 1px solid var(--identity-line);
+  position: relative;
+  padding-top: 34px;
+}
+#fauna-dialog .fauna-heading::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 10px;
+  background: radial-gradient(ellipse at 100% 100%,#244b63 70%,transparent 71%) 0 0/20px 10px repeat-x,radial-gradient(ellipse at 0 0,#cca034 70%,transparent 71%) 10px 0/20px 10px repeat-x;
+  background-color: #e7ddc3;
+  pointer-events: none;
+}
+#fauna-dialog .fauna-copy h3 {
+  color: var(--identity-blue);
+  font-weight: 700;
+}
+#fauna-dialog .fauna-art-grid {
+  background: var(--identity-cream);
+  border-color: var(--identity-line);
+}
+#fauna-dialog .fauna-art-view {
+  background: var(--identity-paper);
+  border-color: #bac3aa;
+  border-radius: 10px;
+}
+#fauna-dialog .fauna-sheet-crop {
+  mix-blend-mode: multiply;
+}
+#fauna-dialog .fauna-actions {
+  background: var(--identity-cream);
+  border-color: var(--identity-line);
+}
+#fauna-dialog .fauna-actions button {
+  background: var(--identity-green);
+  color: var(--identity-paper);
+  border-color: var(--identity-green);
+}
+#fauna-dialog .fauna-close {
+  background: transparent;
+}
+
+/* Rodapé: friso discreto; folhas e assinatura permanecem na camada original. */
+body>footer {
+  border-top: 1px solid #a6b198 !important;
+  margin-top: 40px !important;
+  padding-top: 34px !important;
+  padding-bottom: 40px !important;
+}
+body>footer::after {
+  content: '' !important;
+  display: block !important;
+  position: absolute;
+  left: 40px;
+  top: -6px;
+  height: 12px;
+  width: 160px;
+  background: radial-gradient(ellipse at 100% 100%,#244b63 70%,transparent 71%) 0 0/24px 12px repeat-x,radial-gradient(ellipse at 0 0,#cca034 70%,transparent 71%) 12px 0/24px 12px repeat-x;
+  border: 0;
+  box-shadow: none;
+  background-color: var(--identity-cream);
+  pointer-events: none;
+}
+
+/* Em telas estreitas, o fragmento não disputa espaço com o título. */
+@media (max-width: 620px) {
+  #achievements .achievement-heading {
+    padding-right: 0;
+  }
+  #achievements .achievement-heading::after {
+    position: static;
+    display: block;
+    margin-top: 16px;
+  }
+}
+@media (max-width: 760px) {
+  body>footer::after {
+    left: 20px;
+  }
+}
