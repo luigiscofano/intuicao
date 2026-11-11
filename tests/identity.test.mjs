@@ -13,6 +13,11 @@ const git = (...args) => execFileSync('git', args, { cwd: root, encoding: 'utf8'
 const clean = css.replace(/\/\*[\s\S]*?\*\//g, '');
 const rules = [...clean.matchAll(/([^{}]+)\{([^{}]*)\}/g)]
   .map(([, selector, declarations]) => [selector.trim(), declarations]);
+// A aprovação posterior de 11/11 altera só o rodapé. As demais superfícies
+// continuam byte a byte iguais à identidade original.
+const withoutFooter = source => source
+  .replace(/\/\* Rodapé:[^]*?(?=\/\* Em telas estreitas,)/, '')
+  .replace(/@media \(max-width: 760px\) {\n  body>footer::after {\n    left: 20px;\n  }\n}\n$/, '');
 const rule = (selector) => rules.find(([candidate]) => candidate === selector)?.[1] || '';
 
 test('a camada visual carrega uma vez, após os estilos existentes, sem sessão de demonstração', () => {
@@ -30,7 +35,7 @@ test('a camada visual carrega uma vez, após os estilos existentes, sem sessão 
     .replace('    <script type="module" src="motion-preference.mjs"></script>\n', '');
   assert.equal(beforeMotion, git('show', `${motionBaseline}:dist/index.html`));
   assert.equal(beforeMotion.replace('    <link rel="stylesheet" href="identity.css" />\n', ''), git('show', `${baseline}:dist/index.html`));
-  assert.equal(css, git('show', `${motionBaseline}:dist/identity.css`));
+  assert.equal(withoutFooter(css), withoutFooter(git('show', `${motionBaseline}:dist/identity.css`)));
   assert.ok(html.indexOf('identity.css') > html.indexOf('versus/ui.css'));
   assert.doesNotMatch(html, /identity-preview|preview-session/);
   assert.equal(existsSync(new URL('dist/preview-session.js', root)), false);
@@ -63,7 +68,8 @@ test('marcas, cores de apoio e frisos preservam a identidade aprovada', () => {
     assert.match(rule(selector), /pointer-events: none/);
   }
   assert.match(css, /@media \(max-width: 620px\)[\s\S]*padding-right: 0;[\s\S]*position: static;/);
-  assert.match(css, /@media \(max-width: 760px\)[\s\S]*left: 20px;/);
+  assert.match(rule('body>footer::after'), /inset: -9px auto auto 50%/);
+  assert.doesNotMatch(css, /@media \(max-width: 760px\)[\s\S]*left: 20px;/);
 });
 
 test('movimento e vitórias Versus aprovados preservam todos os arquivos fora do escopo', () => {
@@ -89,8 +95,27 @@ test('movimento e vitórias Versus aprovados preservam todos os arquivos fora do
     ...approved.map(path => `:(exclude)${path}`)), '');
   const extras = git('ls-files', '--others', '--exclude-standard', '--', 'dist').trim().split('\n').filter(Boolean);
   assert.deepEqual(extras.filter(path => !approved.includes(path)), []);
-  assert.equal(css, git('show', `${motionBaseline}:dist/identity.css`));
+  assert.equal(withoutFooter(css), withoutFooter(git('show', `${motionBaseline}:dist/identity.css`)));
   const approvedVersus = approved.filter(path => path.startsWith('dist/versus/'));
   assert.equal(git('diff', '--name-only', motionBaseline, '--', 'dist/versus',
     ...approvedVersus.map(path => `:(exclude)${path}`)), '');
+});
+
+
+test('o mosaico aprovado fecha a divisória sem corte, repetição ou captura de eventos', () => {
+  const footer = rule('body>footer');
+  const ornament = rule('body>footer::after');
+  assert.match(footer, /border-top: 1px solid var\(--identity-line\) !important/);
+  assert.match(ornament, /width: 100px/);
+  assert.match(ornament, /height: 18px/);
+  assert.match(ornament, /transform: translateX\(-50%\)/);
+  assert.match(ornament, /background-size: 16px 16px/);
+  assert.match(ornament, /background-position: 12px 1px,32px 1px,52px 1px,72px 1px/);
+  assert.match(ornament, /background-repeat: no-repeat/);
+  assert.match(ornament, /background-color: var\(--identity-cream\)/);
+  assert.match(ornament, /opacity: 1/);
+  assert.match(ornament, /pointer-events: none/);
+  assert.match(ornament, /user-select: none/);
+  assert.equal((ornament.match(/radial-gradient/g) || []).length, 4);
+  assert.doesNotMatch(ornament, /repeat-x|24px 12px|left: 20px|left: 40px/);
 });
