@@ -373,6 +373,8 @@ export function initBroto() {
         emblem: state.winner === "draw" ? "" : avatar(state.winner),
         draw: state.winner === "draw",
         animate: celebrate,
+        mode,
+        resultKey: state,
       });
       $("b-rematch").onclick = () => {
         stopEffects();

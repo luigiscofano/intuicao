@@ -1,32 +1,81 @@
-// Ilustrações de encerramento dos duelos, independentes do cálculo do vencedor.
-// Celebração exclusiva dos duelos. Não decide resultados nem altera partidas.
-const esc = (value) =>
-  String(value ?? '').replace(
-    /[&<>"']/g,
-    (c) => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&#39;' })[c],
-  );
-const scenes = {
-  desvio: `<g class="vv-path-grid"><circle cx="24" cy="18" r="5"/><circle cx="65" cy="18" r="5"/><circle cx="65" cy="48" r="5"/><circle cx="135" cy="48" r="5"/><circle cx="135" cy="18" r="5"/></g><path class="vv-route" pathLength="100" d="M24 18H65V48H135V18"/><path class="vv-arrival" d="m128 26 7-8 7 8"/>`,
-  broto: `<g class="vv-grow"><path class="vv-stem" d="M90 67V30"/><path class="vv-leaf-shape" d="M90 52Q60 53 64 34Q85 32 90 52ZM90 44Q114 45 118 26Q96 22 90 44Z"/></g><g class="vv-flower"><path d="M90 14C78 0 67 15 79 23C65 34 82 45 90 32C99 45 115 32 102 23C116 10 97 1 90 14Z"/><circle cx="90" cy="23" r="5"/></g><g class="vv-harvest vv-harvest-a"><path d="M34 42v18m-9-9h18m-15-6 12 12m0-12-12 12"/><circle cx="34" cy="51" r="3"/></g><g class="vv-harvest vv-harvest-b"><path d="M146 37v18m-9-9h18m-15-6 12 12m0-12-12 12"/><circle cx="146" cy="46" r="3"/></g>`,
-  cerco: `<rect class="vv-mini-board" x="43" y="5" width="94" height="66" rx="5"/><path class="vv-grid-lines" d="M74 5v66m32-66v66M43 27h94M43 49h94"/><circle class="vv-blocked-piece" cx="90" cy="38" r="7"/><g class="vv-wall vv-wall-a"><rect x="78" y="8" width="24" height="15" rx="3"/><path d="M82 15h16"/></g><g class="vv-wall vv-wall-b"><rect x="47" y="30" width="23" height="15" rx="3"/><path d="M51 37h15"/></g><g class="vv-wall vv-wall-c"><rect x="110" y="30" width="23" height="15" rx="3"/><path d="M114 37h15"/></g><g class="vv-wall vv-wall-d"><rect x="78" y="52" width="24" height="15" rx="3"/><path d="M82 59h16"/></g>`,
-};
-const sceneMarkup = (game, draw) =>
-  `<svg class="vv-scene vv-scene-${game}" viewBox="0 0 180 100" fill="none" aria-hidden="true" focusable="false">${draw ? '<path d="M55 27h70M55 44h70"/>' : scenes[game]}</svg>`;
-export function renderVersusVictory(
-  host,
-  {
-    game = 'desvio',
-    winnerName = '',
-    owner = 0,
-    emblem = '',
-    draw = false,
-    lost = false,
-    animate = false,
-  } = {},
-) {
+/** Apresentação dos onze duelos. O motor e o chamador fornecem o resultado real. */
+import { VERSUS_VICTORY_IDS, versusVictoryMotif } from './versus-victory-art.mjs';
+import { VERSUS_FRONT_CROPS } from './versus-mascot-art.mjs';
+import { prefersReducedUIMotion } from './ui-motion.mjs';
+
+const esc = value => String(value ?? '').replace(/[&<>"']/g,
+  c => ({ '&':'&amp;', '<':'&lt;', '>':'&gt;', '"':'&quot;', "'":'&#39;' })[c]);
+const running = new WeakMap();
+const celebrated = new WeakSet();
+export const VERSUS_VICTORY_DURATION = 1200;
+
+/** Descarta somente a animação visual, sem acesso a estado, histórico ou saves. */
+export function stopVersusVictory(host) {
+  running.get(host)?.();
+}
+
+export function renderVersusVictory(host, {
+  game = 'desvio', winnerName = '', owner = 0, draw = false, lost = false,
+  animate = false, mode = 'local', context = '', reason = '', mascot = null,
+  resultKey = null,
+} = {}) {
   if (!host) return;
-  if (!Object.hasOwn(scenes, game)) game = 'desvio';
-  const reduced = globalThis.matchMedia?.('(prefers-reduced-motion: reduce)').matches;
-  const moving = animate && !draw && !lost && !reduced;
-  host.innerHTML = `<section class="versus-victory vv-game-${game} vv-owner-${owner === 1 ? 1 : 0} ${draw ? 'vv-draw' : lost ? 'vv-loss' : 'vv-win'} ${moving ? 'vv-animate' : 'vv-static'}" aria-label="${esc(draw ? 'Empate no duelo' : winnerName + ' venceu o duelo')}"><div class="vv-emblem" aria-hidden="true">${sceneMarkup(game, draw)}<span class="vv-medal">${draw ? '<span class="vv-equal">=</span>' : emblem || `<span class="vv-player-mark">${owner === 1 ? '◆' : '●'}</span>`}</span></div><div class="vv-copy"><span class="vv-kicker">${draw ? 'DUELO EM EQUILÍBRIO' : lost ? 'DUELO CONCLUÍDO' : 'PARABÉNS!'}</span><strong class="vv-winner">${draw ? 'Empate' : esc(winnerName)}</strong><span class="vv-caption">${draw ? 'Duas estratégias, o mesmo resultado.' : lost ? 'O adversário venceu esta partida.' : { desvio: 'Um caminho até a última escolha.', broto: 'Cada flor fez parte da conquista.', cerco: 'As passagens decidiram o duelo.' }[game]}</span></div></section>`;
+  stopVersusVictory(host);
+  if (!VERSUS_VICTORY_IDS.includes(game)) return;
+  const player = owner === 1 ? 1 : 0;
+  const validMascot = Object.hasOwn(VERSUS_FRONT_CROPS, mascot) ? mascot : null;
+  const doc = host.ownerDocument;
+  const win = doc?.defaultView;
+  const key = resultKey && typeof resultKey === 'object' ? resultKey : null;
+  const fresh = Boolean(animate && (!key || !celebrated.has(key)));
+  // Consumir também em movimento reduzido impede festa tardia ao mudar a preferência.
+  if (fresh && key) celebrated.add(key);
+  const moving = fresh && mode !== 'training' && !prefersReducedUIMotion(doc, win) &&
+    Boolean(win?.requestAnimationFrame && host.querySelector);
+  const label = draw ? 'Empate' : `${winnerName} venceu`;
+  const subtitle = context || (draw ? 'Nenhum vencedor.' : mode === 'bot'
+    ? player === 0 ? 'Você · contra o computador' : 'Computador · adversário'
+    : 'Partida entre duas pessoas');
+  const art = time => versusVictoryMotif(game, time, player, false, draw, validMascot);
+  const finalArt = art(2);
+  host.innerHTML = `<section class="versus-victory vv-game-${game} vv-owner-${player} ${draw ? 'vv-draw' : lost ? 'vv-loss' : 'vv-win'} ${moving ? 'vv-animate' : 'vv-static'}" role="status" aria-label="${esc(label)}">
+    <div class="vv-emblem" aria-hidden="true">${moving ? art(0) : finalArt}</div>
+    <div class="vv-copy"><span class="vv-kicker">${draw ? 'RESULTADO DO DUELO' : 'VENCEDOR DO DUELO'}</span>
+      <strong class="vv-winner">${draw ? '' : `<span class="vv-player-mark" aria-hidden="true">${player === 0 ? '●' : '◆'}</span> `}${esc(label)}</strong>
+      <span class="vv-caption">${esc(subtitle)}</span>${reason ? `<span class="vv-reason">${esc(reason)}</span>` : ''}
+    </div></section>`;
+  if (!moving) return;
+  const emblem = host.querySelector('.vv-emblem');
+  const section = host.querySelector('.versus-victory');
+  if (!emblem || !section) return;
+  let frame = null;
+  let cancelled = false;
+  let previousTick = -1;
+  const start = win.performance.now();
+  const finish = () => {
+    if (cancelled) return;
+    cancelled = true;
+    if (frame !== null) win.cancelAnimationFrame(frame);
+    // Um redraw mais novo não pode ser alterado por um quadro da apresentação antiga.
+    if (section.parentNode === host) {
+      emblem.innerHTML = finalArt;
+      section.classList.remove('vv-animate');
+      section.classList.add('vv-static');
+    }
+    running.delete(host);
+  };
+  running.set(host, finish);
+  const step = now => {
+    if (cancelled) return;
+    const elapsed = Math.max(0, now - start);
+    if (!emblem.isConnected || section.parentNode !== host || doc.hidden ||
+        host.closest('[hidden]') || prefersReducedUIMotion(doc, win) || elapsed >= VERSUS_VICTORY_DURATION) {
+      finish(); return;
+    }
+    // Mesma cadência dos vídeos aprovados, sem manter um ciclo após o gesto.
+    const tick = Math.floor(elapsed * 24 / 1000);
+    if (tick !== previousTick) { emblem.innerHTML = art(tick / 24); previousTick = tick; }
+    frame = win.requestAnimationFrame(step);
+  };
+  frame = win.requestAnimationFrame(step);
 }

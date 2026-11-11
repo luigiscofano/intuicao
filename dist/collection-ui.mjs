@@ -2142,15 +2142,12 @@ export function initCollection({ hideOriginal }) {
     panel.innerHTML = '<div id="c-duel-victory"></div>';
     renderVersusVictory($("c-duel-victory"), {
       game: "desvio",
-      winnerName:
-        duelMode === "bot"
-          ? winner === 0
-            ? "Jogador 1 · você"
-            : "Jogador 2 · computador"
-          : "Jogador " + (winner + 1),
+      winnerName: "Jogador " + (winner + 1),
       owner: winner,
       lost,
       animate,
+      mode: duelMode,
+      resultKey: current(),
     });
     if (duelMode !== "bot" || lost) {
       panel.insertAdjacentHTML(

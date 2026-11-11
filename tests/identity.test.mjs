@@ -62,19 +62,21 @@ test('marcas, cores de apoio e frisos preservam a identidade aprovada', () => {
   assert.match(css, /@media \(max-width: 760px\)[\s\S]*left: 20px;/);
 });
 
-test('movimento aprovado preserva todos os arquivos fora do escopo, inclusive Versus', () => {
-  // A autorização amplia só a apresentação solo, conquistas e microinterações.
-  // Motores, saves, artes, campanhas e resultados Versus continuam protegidos.
+test('movimento e vitórias Versus aprovados preservam todos os arquivos fora do escopo', () => {
+  // Aprovação posterior amplia os emblemas e quatro integrações Versus.
+  // Motores, saves, artes de origem e campanhas continuam protegidos.
   const approved = [
     'index.html', 'result-motion.mjs', 'achievements/notifications.mjs',
     'achievements/notifications.css', 'achievements/view.mjs', 'ui-motion.mjs',
     'ui-motion.css', 'motion-preference.mjs', 'victory-tiles.mjs',
-    'victory-tiles.css', 'identity.css',
+    'victory-tiles.css', 'identity.css', 'versus-victory.mjs',
+    'versus-victory-art.mjs', 'versus-victory.css', 'versus/ui.mjs',
+    'broto/ui.mjs', 'cerco/ui.mjs', 'collection-ui.mjs',
   ].map(path => `dist/${path}`);
   assert.equal(git('diff', '--name-only', motionBaseline, '--', 'dist',
     ...approved.map(path => `:(exclude)${path}`)), '');
   const extras = git('ls-files', '--others', '--exclude-standard', '--', 'dist').trim().split('\n').filter(Boolean);
   assert.deepEqual(extras.filter(path => !approved.includes(path)), []);
   assert.equal(css, git('show', `${motionBaseline}:dist/identity.css`));
-  assert.equal(git('diff', '--name-only', motionBaseline, '--', 'dist/versus', 'dist/versus-victory.mjs', 'dist/versus-victory.css'), '');
+  assert.equal(git('diff', '--name-only', motionBaseline, '--', 'dist/versus', ':(exclude)dist/versus/ui.mjs'), '');
 });
