@@ -4,6 +4,7 @@ const ORIGINALS = new Set(['light', 'cut']);
 const COLLECTIONS = new Set(['elo', 'prumo', 'pacto', 'desvio']);
 
 export function selectionSelector(button) {
+ if (button?.dataset?.logic !== undefined) return '#logic-games > .level-screen';
   if (button?.dataset?.infoGame !== undefined) return null;
   if (ORIGINALS.has(button?.dataset?.game)) return '#selection';
   if (COLLECTIONS.has(button?.dataset?.collection)) return '#collection > .level-screen';
@@ -38,7 +39,7 @@ export function initGameNavScroll(doc = document, win = window) {
   const reduced = () => win.matchMedia?.('(prefers-reduced-motion: reduce)').matches;
   const onClick = (event) => {
     const button = event.target?.closest?.(
-      'button[data-game], button[data-collection], button[data-sintonia], button[data-repasse], button[data-orbita], button[data-broto], button[data-cerco]',
+      'button[data-game], button[data-collection], button[data-sintonia], button[data-repasse], button[data-orbita], button[data-broto], button[data-cerco], button[data-logic]',
     );
     const selector =
       button && nav.contains(button) && !button.disabled && selectionSelector(button);
@@ -105,3 +106,4 @@ if (typeof document !== 'undefined' && typeof window !== 'undefined') {
     document.addEventListener('DOMContentLoaded', () => initGameNavScroll(), { once: true });
   else initGameNavScroll();
 }
+

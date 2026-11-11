@@ -12,6 +12,8 @@ import {
   RESTORE_REVISION_KEY,
   writeProgress,
 } from "../dist/progress-write-guard.mjs";
+import { LOGIC_GAME_IDS, loadLogicGame } from "../dist/logica/metadata.mjs";
+import { LOGIC_STORAGE_KEY } from "../dist/logica/storage.mjs";
 
 function storage(initial = {}) {
   const values = new Map(Object.entries(initial));
@@ -40,7 +42,14 @@ test("export preserves raw unicode, archives and extra fields without writes", (
   const backup = createProgressBackup(store);
   assert.deepEqual(backup.records, [{ key, raw }]);
   assert.equal(store.writes.length, 0);
-  assert.equal(PROGRESS_KEYS.length, 13);
+  assert.equal(PROGRESS_KEYS.length, 14);
+  assert.deepEqual([...PROGRESS_KEYS].sort(), [
+    "intuicao.logica.v1", "intuicao.advanced-hidden", "intuicao.answers.v1",
+    "intuicao.broto.v1", "intuicao.campaign.cut.progress.v1", "intuicao.campaign.light.progress.v1",
+    "intuicao.campaign.original.v1", "intuicao.cerco.v1", "intuicao.collection.v1",
+    "intuicao.custom.original.v1", "intuicao.endless.original.v1", "intuicao.orbita.v1",
+    "intuicao.repasse.v1", "intuicao.sintonia.v1",
+  ].sort());
 });
 
 test("preview is read-only, absent records never remove existing stores", () => {
@@ -106,7 +115,7 @@ test("quota failure on second record rolls back earlier replacement and addition
     () => applyProgressRestore(backup, preview, store),
     (error) => {
       assert.deepEqual(error.rollbackFailures, []);
-      assert.equal(error.recovery.records.length, 13);
+      assert.equal(error.recovery.records.length, 14);
       return true;
     },
   );
@@ -192,8 +201,8 @@ test("rollback failures retain a complete downloadable recovery in the error", (
   );
 });
 
-test("backup sintético com Órbita v3 preserva versões e registros no round-trip", () => {
-  // Dados construídos no teste: nenhum snapshot de navegador ou sessão pessoal.
+test("backup sintético das 14 chaves preserva Órbita v3 e lógica v1 no round-trip", () => {
+  // Cada store conserva sua versão; os dados são construídos pelo teste.
   const records = PROGRESS_KEYS.map((key) => ({
     key,
     raw: key === "intuicao.advanced-hidden"
@@ -205,12 +214,69 @@ test("backup sintético com Órbita v3 preserva versões e registros no round-tr
     (record) => record.key === "intuicao.orbita.v1",
   );
   assert.equal(JSON.parse(orbita.raw).version, 3);
+  assert.equal(JSON.parse(backup.records.find(record => record.key === LOGIC_STORAGE_KEY).raw).version, 1);
   const store = storage();
   applyProgressRestore(backup, previewProgressRestore(backup, store), store);
   for (const record of backup.records)
     assert.equal(store.getItem(record.key), record.raw);
   const roundtrip = createProgressBackup(store);
   assert.deepEqual(roundtrip.records, backup.records);
+});
+
+test("os seis jogos lógicos preservam sessões reais, pistas, histórico e conclusões no backup compartilhado", async () => {
+  assert.deepEqual([...LOGIC_GAME_IDS], ["divisa", "pulso", "foz", "refugio", "mirante", "renovo"]);
+  const adapters = new Map(), games = {};
+  for (const id of LOGIC_GAME_IDS) {
+    const adapter = await loadLogicGame(id), level = adapter.CAMPAIGN[0];
+    adapters.set(id, adapter);
+    games[id] = {
+      completed: { [level.id]: { version: level.version, assisted: true, completedAt: "2026-11-10T12:00:00Z" } },
+      sessions: { [level.id]: {
+        levelId: level.id, levelVersion: level.version,
+        states: [adapter.initialState(level), adapter.solutionState(level)], cursor: 0,
+        failures: 3, assisted: true,
+      } },
+      lastLevelId: level.id,
+    };
+  }
+  const raw = JSON.stringify({ version: 1, games, lastView: { game: "refugio", levelId: games.refugio.lastLevelId, screen: "play", active: true }, extra: { "ação": "✓" } }, null, 2);
+  const source = storage({ [LOGIC_STORAGE_KEY]: raw });
+  const exported = createProgressBackup(source);
+  assert.deepEqual(exported.records, [{ key: LOGIC_STORAGE_KEY, raw }]);
+  assert.equal(source.writes.length, 0);
+  const backup = parseProgressBackup(JSON.stringify(exported));
+  const target = storage({ "intuicao.cerco.v1": '{"version":1,"kept":true}', "intuicao.orbita.v1": '{"version":3,"kept":true}' });
+  const before = [...target.values], preview = previewProgressRestore(backup, target);
+  assert.equal(target.writes.length, 0);
+  const { recovery } = applyProgressRestore(backup, preview, target);
+  assert.equal(target.getItem(LOGIC_STORAGE_KEY), raw);
+  for (const [name, value] of before) assert.equal(target.getItem(name), value);
+  const restored = JSON.parse(target.getItem(LOGIC_STORAGE_KEY));
+  for (const id of LOGIC_GAME_IDS) {
+    const adapter = adapters.get(id), level = adapter.CAMPAIGN[0];
+    const session = restored.games[id].sessions[level.id];
+    assert.equal(session.cursor, 0); assert.equal(session.failures, 3); assert.equal(session.assisted, true);
+    assert.ok(session.states.every(state => adapter.isStateValid(level, state)));
+    assert.equal(adapter.checkState(level, session.states[1]).valid, true);
+    assert.deepEqual(session.states[0], adapter.initialState(level));
+    assert.equal(restored.games[id].completed[level.id].version, level.version);
+  }
+  assert.equal(recovery.records.length, 14);
+  const decoded = parseProgressBackup(JSON.stringify(recovery));
+  applyProgressRestore(decoded, previewProgressRestore(decoded, target), target);
+  assert.deepEqual([...target.values].filter(([name]) => name !== RESTORE_REVISION_KEY), before);
+});
+
+test("o store lógico aceita versão 1 e rejeita versões futuras e chaves separadas inventadas", () => {
+  const raw = '{"version":1,"games":{}}';
+  const backup = parseProgressBackup(JSON.stringify(envelope([{ key: LOGIC_STORAGE_KEY, raw }])));
+  assert.equal(backup.records[0].raw, raw);
+  for (const version of [0, 2, 99, "1", null]) {
+    assert.throws(() => parseProgressBackup(JSON.stringify(envelope([{ key: LOGIC_STORAGE_KEY, raw: JSON.stringify({ version, games: {} }) }]))));
+  }
+  for (const id of LOGIC_GAME_IDS) {
+    assert.throws(() => parseProgressBackup(JSON.stringify(envelope([{ key: `intuicao.${id}.v1`, raw }]))));
+  }
 });
 
 test("Orbita historical store versions remain raw and future versions are rejected", () => {

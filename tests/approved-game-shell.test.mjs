@@ -6,6 +6,8 @@ import {
   initApprovedGameShell,
 } from "../dist/approved-game-shell.mjs";
 import { GAME_GUIDANCE } from "../dist/contextual-guidance.mjs";
+const LOGIC_IDS = ["divisa", "pulso", "foz", "refugio", "mirante", "renovo"];
+const ORIGINAL_IDS = ["light", "cut", "elo", "prumo", "pacto", "sintonia", "repasse", "orbita", "desvio", "broto", "cerco"];
 
 // DOM mínimo: movimenta os mesmos nós e mantém propriedades e handlers reais.
 class Node {
@@ -104,6 +106,7 @@ class Node {
 }
 
 function fixture(game = "light") {
+  const logicGame = LOGIC_IDS.includes(game);
   const body = new Node("body");
   const header = new Node("header");
   const about = new Node("button", "", "about-open");
@@ -111,9 +114,9 @@ function fixture(game = "light") {
   const main = new Node("main", "", "main");
   const navigation = new Node("nav", "", "library-navigation");
   const category = new Node("div", "category-heading");
-  const section = new Node("section", "lab");
-  const workspace = new Node("div", "workspace");
-  const surface = new Node("div", "experiment");
+  const section = new Node("section", logicGame ? "collection-lab logic-lab" : "lab");
+  const workspace = new Node("div", logicGame ? "collection-workspace" : "workspace");
+  const surface = new Node("div", logicGame ? "collection-surface logic-surface" : "experiment");
   const tools = new Node("div", "stage-tools");
   const actions = new Node("div", "level-actions");
   const checks = new Node("div", "board-check-controls");
@@ -124,7 +127,7 @@ function fixture(game = "light") {
     "confirm",
     "undo",
     "redo",
-    "reset",
+    ...(logicGame ? ["restart", "answer"] : ["reset"]),
     "stage-label",
     "rules-context-title",
     "rules-context-text",
@@ -133,19 +136,22 @@ function fixture(game = "light") {
     node.textContent = name;
     node.onclick = () => name;
     controls[name] = node;
-    (name === "confirm" ? checks : tools).append(node);
+    (name === "confirm" || (logicGame && ["undo", "redo", "restart", "answer"].includes(name)) ? checks : tools).append(node);
   }
   controls.undo.disabled = true;
   controls.redo.hidden = true;
-  const advanced = new Node(
+  if (logicGame) controls.answer.hidden = true;
+  const advanced = logicGame ? null : new Node(
     "button",
     "",
     prefix ? `${prefix}-advanced-toggle` : "toggle-controls",
   );
-  tools.append(advanced);
+  if (advanced) tools.append(advanced);
   surface.append(tools, checks, actions);
-  workspace.append(surface, rules);
+  workspace.append(surface);
+  if (!logicGame) workspace.append(rules);
   section.append(workspace);
+  if (logicGame) section.append(rules);
   main.append(navigation, category, section);
   body.append(header, main);
   const doc = {
@@ -198,16 +204,22 @@ function fixture(game = "light") {
   };
 }
 
-test("eleven presentations match the guidance roster and have unique numbers", () => {
-  assert.equal(Object.keys(GAME_PRESENTATION).length, 11);
+test("as 17 apresentações cobrem o catálogo e têm numeração única", () => {
+  assert.equal(Object.keys(GAME_PRESENTATION).length, 17);
+  assert.deepEqual(Object.keys(GAME_PRESENTATION).sort(), [...ORIGINAL_IDS, ...LOGIC_IDS].sort());
   assert.deepEqual(
     Object.keys(GAME_PRESENTATION).sort(),
     Object.keys(GAME_GUIDANCE).sort(),
   );
   assert.equal(
     new Set(Object.values(GAME_PRESENTATION).map((value) => value.number)).size,
-    11,
+    17,
   );
+  for (const [index, id] of LOGIC_IDS.entries()) {
+    assert.equal(GAME_PRESENTATION[id].number, String(index + 12));
+    assert.equal(GAME_PRESENTATION[id].prefix, "lg");
+    assert.equal(GAME_PRESENTATION[id].category, "Raciocínio lógico");
+  }
 });
 
 for (const game of Object.keys(GAME_PRESENTATION)) {
@@ -232,11 +244,14 @@ for (const game of Object.keys(GAME_PRESENTATION)) {
     assert.equal(f.controls.confirm.onclick(), "confirm");
     assert.equal(f.controls.undo.disabled, true);
     assert.equal(f.controls.redo.hidden, true);
-    assert.equal(f.rules.parentElement, f.workspace);
-    assert.equal(
-      f.advanced.parentElement.className,
-      "approved-secondary-actions",
-    );
+    assert.equal(f.rules.parentElement, LOGIC_IDS.includes(game) ? f.section : f.workspace);
+    if (f.advanced) assert.equal(f.advanced.parentElement.className, "approved-secondary-actions");
+    else {
+      assert.equal(f.main.querySelector("#lg-advanced-toggle"), null);
+      assert.equal(f.controls.restart.onclick(), "restart");
+      assert.equal(f.controls.restart.parentElement.parentElement.className, "approved-secondary-actions");
+      assert.equal(f.controls.answer.hidden, true);
+    }
     assert.equal(f.navigation.parentElement, f.header);
     f.update();
     f.update();
@@ -291,5 +306,5 @@ test("presentation module has no persistence, network or game-engine dependency"
   const imports = [
     ...source.matchAll(/^import .* from ['"]([^'"]+)['"]/gm),
   ].map((match) => match[1]);
-  assert.deepEqual(imports, ["./contextual-guidance.mjs"]);
+  assert.deepEqual(imports, ["./logica/metadata.mjs", "./contextual-guidance.mjs"]);
 });

@@ -8,6 +8,26 @@ const source = readFileSync(
   new URL("dist/category-navigation.mjs", root),
   "utf8",
 );
+const ORIGINAL_IDS = ["light", "cut", "elo", "prumo", "pacto", "sintonia", "repasse", "orbita", "desvio", "broto", "cerco"];
+const LOGIC_IDS = ["divisa", "pulso", "foz", "refugio", "mirante", "renovo"];
+const ALL_IDS = [...ORIGINAL_IDS, ...LOGIC_IDS];
+const cardId = card => Object.values(card.dataset)[0];
+
+function cardDataset(id) {
+  if (LOGIC_IDS.includes(id)) return { logic: id };
+  if (["light", "cut"].includes(id)) return { game: id };
+  if (["elo", "prumo", "pacto", "desvio"].includes(id)) return { collection: id };
+  return { [id]: id };
+}
+
+function originalNavigation(markup) {
+  const body = markup.replaceAll('<small class="game-card-progress"></small>', "")
+    .match(/<nav(?: hidden)? class="games"[^>]*>([\s\S]*?)<\/nav>/)[1];
+  // Só estes seis cartões são retirados; o restante continua comparado integralmente.
+  const added = new RegExp(`<button\\b[^>]*\\bdata-logic="(?:${LOGIC_IDS.join("|")})"[^>]*>[\\s\\S]*?<\\/button>\\r?\\n?`, "g");
+  return body.replace(added, "");
+}
+
 function harness(url = "https://example.test/") {
   const el = (dataset = {}) => ({
     dataset,
@@ -28,20 +48,13 @@ function harness(url = "https://example.test/") {
       nav.events.click({ target: { closest: () => this } });
     },
   });
-  const ids = [
-    "light",
-    "cut",
-    "elo",
-    "prumo",
-    "pacto",
-    "sintonia",
-    "repasse",
-    "orbita",
-    "desvio",
-    "broto",
-    "cerco",
-  ];
-  const cards = ids.map((x) => el({ game: x })),
+  const ids = ALL_IDS;
+  const cards = ids.map((id) => {
+    const card = el(cardDataset(id));
+    card.progress = el();
+    card.querySelector = selector => selector === ".game-card-progress" ? card.progress : null;
+    return card;
+  }),
     heads = [el(), el(), el()],
     infos = ids.map((x) => el({ infoGame: x }));
   const nav = el();
@@ -50,7 +63,10 @@ function harness(url = "https://example.test/") {
       ? heads
       : s === "[data-info-game]"
         ? infos
-        : cards;
+        : cards.filter(card => s.split(",").some(selector => {
+          const attribute = selector.trim().match(/^\[data-([a-z]+)\]$/)?.[1];
+          return attribute && Object.hasOwn(card.dataset, attribute);
+        }));
   const filters = ["", "intuicao", "logica", "versus"].map((x) =>
       el({ category: x }),
     ),
@@ -88,7 +104,7 @@ function harness(url = "https://example.test/") {
       },
     },
     readAchievements() {
-      return { games: [] };
+      return { games: ids.filter(id => !["desvio", "broto", "cerco"].includes(id)).map(id => ({ id, completed: 3, total: 80 })) };
     },
     renderAchievements() {
       renders++;
@@ -128,16 +144,15 @@ function harness(url = "https://example.test/") {
     },
   };
 }
-test("home displays all eleven original cards unchanged", () => {
+test("a biblioteca mostra 17 jogos e preserva integralmente os 11 cartões originais", () => {
   // A referência do GitHub é independente do histórico de publicação do Sites.
   const prior = readFileSync(new URL("tests/fixtures/library-github-baseline.html", root), "utf8");
-  const body = (s) =>
-    s
-      .replaceAll('<small class="game-card-progress"></small>', "")
-      .match(/<nav(?: hidden)? class="games"[^>]*>([\s\S]*?)<\/nav>/)[1];
-  assert.equal(body(html), body(prior));
+  assert.equal(originalNavigation(html), originalNavigation(prior));
+  const currentCards = [...html.matchAll(/<button\b[^>]*\bdata-logic="([^"]+)"[^>]*>[\s\S]*?<\/button>/g)];
+  assert.deepEqual(currentCards.map(match => match[1]).sort(), [...LOGIC_IDS].sort());
+  assert.equal((originalNavigation(html).match(/<button\b/g) || []).length, 11);
   const h = harness();
-  assert.equal(h.cards.filter((x) => !x.hidden).length, 11);
+  assert.equal(h.cards.filter((x) => !x.hidden).length, 17);
   assert.equal(h.title.textContent, "Todos os jogos");
   assert.ok(h.awards.hidden);
   assert.equal(h.cards.filter((x) => x.clicked).length, 0);
@@ -146,9 +161,9 @@ test("filters and all-games return preserve cards and info visibility", () => {
   const h = harness();
   for (const [i, n] of [
     [1, 2],
-    [2, 6],
+    [2, 12],
     [3, 3],
-    [0, 11],
+    [0, 17],
   ]) {
     h.click(h.categories, h.filters[i]);
     assert.equal(h.cards.filter((x) => !x.hidden).length, n);
@@ -167,35 +182,24 @@ test("achievements closes games, refreshes on every entry and storage, and suppo
   assert.equal(h.renders, 2);
   h.click(h.tabs, h.buttons[0]);
   assert.ok(h.awards.hidden);
-  assert.equal(h.cards.filter((x) => !x.hidden).length, 11);
+  assert.equal(h.cards.filter((x) => !x.hidden).length, 17);
   h.context.location = new URL("https://example.test/?screen=achievements");
   h.context.window.popstate();
   assert.equal(h.renders, 3);
 });
-test("direct game URLs restore each of eleven game handlers once", () => {
-  for (const game of [
-    "light",
-    "cut",
-    "elo",
-    "prumo",
-    "pacto",
-    "sintonia",
-    "repasse",
-    "orbita",
-    "desvio",
-    "broto",
-    "cerco",
-  ]) {
+test("as rotas diretas dos 17 jogos acionam exatamente o handler correspondente", () => {
+  for (const game of ALL_IDS) {
     const h = harness(`https://example.test/?game=${game}`);
-    assert.equal(h.cards.find((x) => x.dataset.game === game).clicked, 1);
-    assert.equal(h.cards.filter((x) => !x.hidden).length, 11);
+    assert.equal(h.cards.find((x) => cardId(x) === game).clicked, 1);
+    assert.equal(h.cards.filter((x) => x.clicked).length, 1);
+    assert.equal(h.cards.filter((x) => !x.hidden).length, 17);
   }
 });
 test("filtered game links, old removed-game routes, invalid filters and reload remain safe", () => {
   const h = harness("https://example.test/?game=elo&category=logica");
-  assert.equal(h.cards.filter((x) => !x.hidden).length, 6);
+  assert.equal(h.cards.filter((x) => !x.hidden).length, 12);
   h.back.onclick();
-  assert.equal(h.cards.filter((x) => !x.hidden).length, 11);
+  assert.equal(h.cards.filter((x) => !x.hidden).length, 17);
   assert.equal(h.context.location.search, "");
   assert.equal(
     harness("https://example.test/?game=trama").cards.filter((x) => !x.hidden)
@@ -206,8 +210,31 @@ test("filtered game links, old removed-game routes, invalid filters and reload r
     harness("https://example.test/?category=invalid").cards.filter(
       (x) => !x.hidden,
     ).length,
-    11,
+    17,
   );
+});
+
+test("os seis data-logic participam do filtro, progresso, clique e retorno à biblioteca", () => {
+  for (const game of LOGIC_IDS) {
+    const h = harness();
+    const card = h.cards.find(item => item.dataset.logic === game);
+    assert.ok(card);
+    assert.equal(card.dataset.game, undefined);
+    assert.equal(card.progress.textContent, "Campanha · 3 / 80 concluídos");
+    h.click(h.categories, h.filters[2]);
+    assert.equal(card.hidden, false);
+    h.click(h.nav, card);
+    assert.equal(h.context.location.searchParams.get("game"), game);
+    assert.equal(h.context.location.searchParams.get("category"), "logica");
+    assert.equal(h.nav.hidden, true);
+    h.back.onclick();
+    assert.equal(h.cards.filter(item => !item.hidden).length, 17);
+    assert.equal(h.infos.filter(item => !item.hidden).length, 17);
+    assert.equal(h.context.location.search, "");
+    const direct = harness(`https://example.test/?game=${game}&category=logica`);
+    assert.equal(direct.cards.find(item => item.dataset.logic === game).clicked, 1);
+    assert.equal(direct.cards.filter(item => !item.hidden).length, 12);
+  }
 });
 
 test("game navigation collapses library and return restores it", () => {

@@ -20,5 +20,5 @@ jobs:
           node-version: '24'
       - name: Verificar cinco motores (não é a suíte completa)
         run: node --test tests/broto-engine.test.mjs tests/cerco-engine.test.mjs tests/sintonia-engine.test.mjs tests/repasse-engine.test.mjs tests/orbita-engine.test.mjs
-      - name: Verificar seis novos motores e seus catálogos
-        run: node --test tests/logica/divisa.test.mjs tests/logica/pulso-engine.test.mjs tests/logica/foz-engine.test.mjs tests/logica/refugio.test.mjs tests/logica/mirante-engine.test.mjs tests/logica/renovo-engine.test.mjs
+      - name: Verificar família lógica e integração com a plataforma
+        run: node --test tests/logica/*.test.mjs tests/approved-game-shell.test.mjs tests/contextual-guidance.test.mjs tests/library-navigation.test.mjs tests/achievements.test.mjs tests/progress-backup.test.mjs

@@ -1,3 +1,4 @@
+import { createLogicRoute } from './logica/route.mjs';
 import { displayCampaignName } from './campaign-display-names.mjs';
 import { writeProgress } from './progress-write-guard.mjs';
 // Integração de Reflexos e Corte certo: seleção, edição, histórico e apresentação.
@@ -1593,6 +1594,7 @@ document.querySelectorAll('[data-game]').forEach(
   (b) =>
     (b.onclick = () => {
       if (!catalogue[b.dataset.game]) return;
+  logic.hide();
       cerco.hide();
       broto.hide();
       orbita.hide();
@@ -1705,6 +1707,7 @@ function hideOriginalForSibling() {
 }
 const collection = initCollection({
   hideOriginal() {
+    logic.hide();
     cerco.hide();
     broto.hide();
     orbita.hide();
@@ -1715,6 +1718,7 @@ const collection = initCollection({
 });
 const sintonia = createSintoniaRoute({
   hideOtherGames() {
+    logic.hide();
     cerco.hide();
     broto.hide();
     orbita.hide();
@@ -1725,6 +1729,7 @@ const sintonia = createSintoniaRoute({
 });
 const repasse = createRepasseRoute({
   hideOthers() {
+    logic.hide();
     cerco.hide();
     broto.hide();
     orbita.hide();
@@ -1735,6 +1740,7 @@ const repasse = createRepasseRoute({
 });
 const orbita = createOrbitaRoute({
   hideOthers() {
+    logic.hide();
     cerco.hide();
     broto.hide();
     repasse.hide();
@@ -1745,6 +1751,7 @@ const orbita = createOrbitaRoute({
 });
 const broto = createBrotoRoute({
   hideOthers() {
+    logic.hide();
     cerco.hide();
     orbita.hide();
     repasse.hide();
@@ -1755,6 +1762,7 @@ const broto = createBrotoRoute({
 });
 const cerco = createCercoRoute({
   hideOthers() {
+    logic.hide();
     broto.hide();
     orbita.hide();
     repasse.hide();
@@ -1763,8 +1771,15 @@ const cerco = createCercoRoute({
     hideOriginalForSibling();
   },
 });
+const logic = createLogicRoute({
+  hideOthers() {
+    cerco.hide(); broto.hide(); orbita.hide(); repasse.hide(); sintonia.hide(); collection.hide();
+    hideOriginalForSibling();
+  },
+});
 initCategoryNavigation({
   hideGames() {
+    logic.hide();
     cerco.hide();
     broto.hide();
     orbita.hide();
@@ -1780,3 +1795,4 @@ globalThis.addEventListener?.('pagehide', () => {
   saveCustom();
   saveEndless();
 });
+

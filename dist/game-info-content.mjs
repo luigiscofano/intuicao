@@ -1,9 +1,11 @@
+import { LOGIC_GAME_INFO } from './logica/info.mjs';
 // Objetivos, descrições e orientações apresentados nos cartões dos jogos.
 // Textos de orientação baseados nas regras atuais dos jogos.
 // Os objetivos descrevem propostas de prática, não benefícios comprovados.
 // Dados materializados: valores e ordem preservados.
 // prettier-ignore
 export const GAME_INFO = {
+  ...LOGIC_GAME_INFO,
   light: {
     name: 'Reflexos',
     description: 'Um puzzle de luz e espelhos em que você constrói percursos para raios coloridos.',
@@ -163,3 +165,4 @@ GAME_INFO.cerco = {
     'Praticar planejamento por turnos e leitura de caminhos, observando como a casa abandonada altera as opções de ambos os times.',
   why: 'A proposta é tornar visíveis as consequências de uma decisão: mover uma peça também fecha uma passagem, e cada equipe precisa conservar alguma saída para sua próxima vez.',
 };
+

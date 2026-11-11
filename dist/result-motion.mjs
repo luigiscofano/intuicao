@@ -1,3 +1,4 @@
+import { LOGIC_GAMES } from './logica/metadata.mjs';
 // Ciclo das animações de resultado e limpeza dos efeitos ao trocar de partida.
 import { gameVictoryMarkup } from './game-victory.mjs';
 const distinctGames = new Set(['elo', 'prumo', 'pacto', 'sintonia', 'repasse', 'orbita', 'desvio']);
@@ -5,6 +6,7 @@ const celebratedStates = new WeakSet();
 // Feedback visual de resultado. Não calcula física nem decide se a resposta venceu.
 // Cada confirmação troca o conteúdo: efeitos CSS reiniciam sem timers acumulados.
 const names = {
+  ...Object.fromEntries(LOGIC_GAMES.map(game => [game.id, game.name])),
   light: 'Reflexos',
   cut: 'Corte certo',
   elo: 'ELO',
@@ -159,3 +161,4 @@ export function createResultMotion(
     },
   };
 }
+

@@ -84,7 +84,7 @@ export function initGameInfo(doc = document) {
   };
   const cards = [
     ...nav.querySelectorAll(
-      '[data-game],[data-collection],[data-sintonia],[data-repasse],[data-orbita],[data-broto],[data-cerco]',
+      '[data-game],[data-collection],[data-sintonia],[data-repasse],[data-orbita],[data-broto],[data-cerco],[data-logic]',
     ),
   ];
   for (const card of cards) {
@@ -95,7 +95,7 @@ export function initGameInfo(doc = document) {
       card.dataset.repasse ||
       card.dataset.orbita ||
       card.dataset.broto ||
-      card.dataset.cerco;
+      card.dataset.cerco || card.dataset.logic;
     const b = makeTrigger(game);
     b.classList.add('game-info-nav');
     nav.append(b);
@@ -109,7 +109,7 @@ export function initGameInfo(doc = document) {
         card.dataset.repasse ||
         card.dataset.orbita ||
         card.dataset.broto ||
-        card.dataset.cerco;
+        card.dataset.cerco || card.dataset.logic;
       const b = nav.querySelector(`[data-info-game="${game}"]`);
       b.hidden = card.hidden;
       b.style.left = `${card.offsetLeft + card.offsetWidth - 40}px`;
@@ -125,14 +125,14 @@ export function initGameInfo(doc = document) {
       c?.dataset.repasse ||
       c?.dataset.orbita ||
       c?.dataset.broto ||
-      c?.dataset.cerco
+      c?.dataset.cerco || c?.dataset.logic
     );
   };
   const syncTitles = () => {
     const game = activeGame();
     if (!GAME_INFO[game]) return;
     for (const h of doc.querySelectorAll(
-      '#selection-title,#game-title,#collection-title,#c-title,#s-selection-title,#s-title,#r-selection-title,#r-title,#o-selection-title,#o-title,#b-selection-title,#b-title,#ce-selection-title,#ce-title,#tr-selection-title,#tr-title',
+      '#selection-title,#game-title,#collection-title,#c-title,#s-selection-title,#s-title,#r-selection-title,#r-title,#o-selection-title,#o-title,#b-selection-title,#b-title,#ce-selection-title,#ce-title,#lg-selection-title,#lg-title,#tr-selection-title,#tr-title',
     )) {
       let b = h.querySelector('.game-info-trigger');
       if (b?.dataset.infoGame === game) continue;
@@ -148,7 +148,7 @@ export function initGameInfo(doc = document) {
     syncTitles();
   });
   observer.observe(nav, { attributes: true, subtree: true, attributeFilter: ['aria-pressed'] });
-  for (const selector of ['#collection', '#sintonia', '#repasse', '#orbita', '#broto', '#cerco']) {
+  for (const selector of ['#collection', '#sintonia', '#repasse', '#orbita', '#broto', '#cerco', '#logic-games']) {
     const host = doc.querySelector(selector);
     if (host) observer.observe(host, { childList: true });
   }
@@ -263,3 +263,4 @@ export function initGameInfo(doc = document) {
   });
 }
 if (typeof document !== 'undefined') initGameInfo();
+

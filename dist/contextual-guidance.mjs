@@ -1,5 +1,7 @@
+import { LOGIC_GUIDANCE } from './logica/info.mjs';
 /** Orientações curtas complementam as regras, sem alterar o estado do jogo. */
 export const GAME_GUIDANCE = Object.freeze({
+  ...LOGIC_GUIDANCE,
   light: 'Gire os espelhos pelas alças. Dispare uma fonte por vez ou use Confirmar todos para testar o conjunto.',
   cut: 'Ajuste a linha no tabuleiro e compare as áreas. Use Confirmar resposta para testar sua divisão.',
   elo: 'Observe as pistas e escolha a ferramenta antes de editar a grade. As regras explicam as restrições deste nível.',
@@ -70,3 +72,4 @@ export function initContextualGuidance(doc = document, win = window) {
 if (typeof document !== 'undefined' && typeof window !== 'undefined') {
   initContextualGuidance();
 }
+
