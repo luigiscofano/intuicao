@@ -1,0 +1,110 @@
+/* Botões de campanha aprovados em 11/11/2026.
+ * Gate da rota no shell: apenas Intuição e Raciocínio lógico.
+ * Não altera nós, textos, eventos, hidden, disabled, regras ou progresso.
+ * SVGs decorativos em CSS continuam presentes quando o motor atualiza o texto. */
+
+body.approved-campaign-actions #main :is(#confirm, #c-confirm, #s-confirm, #r-confirm, #o-confirm, #lg-confirm, #c-check, #undo, #c-undo, #s-undo, #r-undo, #o-undo, #lg-undo, #redo, #c-redo, #s-redo, #r-redo, #o-redo, #lg-redo, #reset, #c-reset, #s-reset, #r-reset, #o-reset, #lg-restart) {
+  min-height: 46px;
+  max-width: 100%;
+  min-width: 0;
+  align-items: center;
+  justify-content: flex-start;
+  gap: 9px;
+  padding: 10px 13px;
+  border: 1.5px solid;
+  border-radius: 10px;
+  font: 700 15px/1.4 system-ui, sans-serif;
+  white-space: normal;
+  text-align: left;
+  box-shadow: none;
+}
+body.approved-campaign-actions #main :is(#confirm, #c-confirm, #s-confirm, #r-confirm, #o-confirm, #lg-confirm, #c-check, #undo, #c-undo, #s-undo, #r-undo, #o-undo, #lg-undo, #redo, #c-redo, #s-redo, #r-redo, #o-redo, #lg-redo, #reset, #c-reset, #s-reset, #r-reset, #o-reset, #lg-restart):not([hidden]) { display: inline-flex; }
+body.approved-campaign-actions #main :is(#confirm, #c-confirm, #s-confirm, #r-confirm, #o-confirm, #lg-confirm, #c-check, #undo, #c-undo, #s-undo, #r-undo, #o-undo, #lg-undo, #redo, #c-redo, #s-redo, #r-redo, #o-redo, #lg-redo, #reset, #c-reset, #s-reset, #r-reset, #o-reset, #lg-restart)[hidden] { display: none !important; }
+body.approved-campaign-actions #main :is(#confirm, #c-confirm, #s-confirm, #r-confirm, #o-confirm, #lg-confirm, #c-check, #undo, #c-undo, #s-undo, #r-undo, #o-undo, #lg-undo, #redo, #c-redo, #s-redo, #r-redo, #o-redo, #lg-redo, #reset, #c-reset, #s-reset, #r-reset, #o-reset, #lg-restart)::before {
+  content: '';
+  display: inline-block;
+  position: static;
+  width: 20px;
+  height: 20px;
+  flex: 0 0 20px;
+  margin: 0;
+  background: currentColor;
+  pointer-events: none;
+  -webkit-mask: var(--campaign-action-icon) center / contain no-repeat;
+  mask: var(--campaign-action-icon) center / contain no-repeat;
+}
+
+body.approved-campaign-actions #main :is(#confirm, #c-confirm, #s-confirm, #r-confirm, #o-confirm, #lg-confirm) {
+  --campaign-action-icon: url("data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20viewBox%3D%220%200%2024%2024%22%20fill%3D%22none%22%20stroke%3D%22black%22%20stroke-width%3D%221.8%22%20stroke-linecap%3D%22round%22%20stroke-linejoin%3D%22round%22%3E%3Cpath%20d%3D%22m6%2012%204%204%208-8%22%2F%3E%3Ccircle%20cx%3D%2212%22%20cy%3D%2212%22%20r%3D%229%22%2F%3E%3C%2Fsvg%3E");
+  background: #39654c;
+  color: #fffaf0;
+  border-color: #39654c;
+}
+
+body.approved-campaign-actions #main :is(#c-check) {
+  --campaign-action-icon: url("data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20viewBox%3D%220%200%2024%2024%22%20fill%3D%22none%22%20stroke%3D%22black%22%20stroke-width%3D%221.8%22%20stroke-linecap%3D%22round%22%20stroke-linejoin%3D%22round%22%3E%3Cpath%20d%3D%22m6%2012%204%204%208-8%22%2F%3E%3Ccircle%20cx%3D%2212%22%20cy%3D%2212%22%20r%3D%229%22%2F%3E%3C%2Fsvg%3E");
+  background: #e3eadb;
+  color: #304b39;
+  border-color: #39654c;
+}
+
+body.approved-campaign-actions #main :is(#undo, #c-undo, #s-undo, #r-undo, #o-undo, #lg-undo) {
+  --campaign-action-icon: url("data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20viewBox%3D%220%200%2024%2024%22%20fill%3D%22none%22%20stroke%3D%22black%22%20stroke-width%3D%221.8%22%20stroke-linecap%3D%22round%22%20stroke-linejoin%3D%22round%22%3E%3Cpath%20d%3D%22m9%205-5%205%205%205M4%2010h9a6%206%200%200%201%200%2012%22%20transform%3D%22translate(0%20-2)%22%2F%3E%3C%2Fsvg%3E");
+  background: #e7edf0;
+  color: #244b63;
+  border-color: #718c9a;
+}
+
+body.approved-campaign-actions #main :is(#redo, #c-redo, #s-redo, #r-redo, #o-redo, #lg-redo) {
+  --campaign-action-icon: url("data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20viewBox%3D%220%200%2024%2024%22%20fill%3D%22none%22%20stroke%3D%22black%22%20stroke-width%3D%221.8%22%20stroke-linecap%3D%22round%22%20stroke-linejoin%3D%22round%22%3E%3Cpath%20d%3D%22m15%205%205%205-5%205M20%2010h-9a6%206%200%200%200%200%2012%22%20transform%3D%22translate(0%20-2)%22%2F%3E%3C%2Fsvg%3E");
+  background: #f4e7bb;
+  color: #624a13;
+  border-color: #ab8429;
+}
+
+body.approved-campaign-actions #main :is(#reset, #c-reset, #s-reset, #r-reset, #o-reset, #lg-restart) {
+  --campaign-action-icon: url("data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20viewBox%3D%220%200%2024%2024%22%20fill%3D%22none%22%20stroke%3D%22black%22%20stroke-width%3D%221.8%22%20stroke-linecap%3D%22round%22%20stroke-linejoin%3D%22round%22%3E%3Cpath%20d%3D%22M3%2010a9%209%200%201%201%202%208M3%204v6h6%22%2F%3E%3C%2Fsvg%3E");
+  background: #fffaf0;
+  color: #8a4732;
+  border-color: #a5674c;
+}
+
+/* Os controles legados já têm setas no texto. Substituímos só o desenho
+ * visual: texto e nomes acessíveis reais ficam intactos. */
+body.approved-campaign-actions #main :is(#undo, #c-undo, #s-undo, #r-undo, #o-undo, #redo, #c-redo, #s-redo, #r-redo, #o-redo, #reset, #c-reset, #s-reset, #r-reset, #o-reset) { font-size: 0; gap: 0; }
+body.approved-campaign-actions #main :is(#undo, #c-undo, #s-undo, #r-undo, #o-undo, #redo, #c-redo, #s-redo, #r-redo, #o-redo, #reset, #c-reset, #s-reset, #r-reset, #o-reset)::before { margin-right: 9px; }
+body.approved-campaign-actions #main :is(#undo, #c-undo, #s-undo, #r-undo, #o-undo, #redo, #c-redo, #s-redo, #r-redo, #o-redo, #reset, #c-reset, #s-reset, #r-reset, #o-reset)::after { font: 700 15px/1.4 system-ui, sans-serif; }
+body.approved-campaign-actions #main :is(#undo, #c-undo, #s-undo, #r-undo, #o-undo)::after { content: 'Desfazer'; }
+body.approved-campaign-actions #main :is(#redo, #c-redo, #s-redo, #r-redo, #o-redo)::after { content: 'Refazer'; }
+body.approved-campaign-actions #main :is(#reset, #c-reset, #s-reset, #r-reset, #o-reset)::after { content: 'Reiniciar'; }
+
+body.approved-campaign-actions #main :is(#confirm, #c-confirm, #s-confirm, #r-confirm, #o-confirm, #lg-confirm, #c-check, #undo, #c-undo, #s-undo, #r-undo, #o-undo, #lg-undo, #redo, #c-redo, #s-redo, #r-redo, #o-redo, #lg-redo, #reset, #c-reset, #s-reset, #r-reset, #o-reset, #lg-restart):disabled {
+  background: #ebe9df;
+  color: #85877b;
+  border-color: #c8c9bb;
+  opacity: 1;
+  cursor: not-allowed;
+  box-shadow: none;
+}
+body.approved-campaign-actions #main :is(#confirm, #c-confirm, #s-confirm, #r-confirm, #o-confirm, #lg-confirm, #c-check, #undo, #c-undo, #s-undo, #r-undo, #o-undo, #lg-undo, #redo, #c-redo, #s-redo, #r-redo, #o-redo, #lg-redo, #reset, #c-reset, #s-reset, #r-reset, #o-reset, #lg-restart):not(:disabled):focus-visible {
+  outline: 3px solid #244b63;
+  outline-offset: 3px;
+}
+body.approved-campaign-actions #main .approved-history-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+}
+body.approved-campaign-actions #main .approved-history-actions > :is(#undo, #redo, #c-undo, #c-redo, #s-undo, #s-redo, #r-undo, #r-redo, #o-undo, #o-redo, #lg-undo, #lg-redo) {
+  flex: 1 1 124px;
+  min-width: 0;
+}
+
+/* Alto contraste continua distinguindo as ações pelo texto e pelo ícone. */
+@media (forced-colors: active) {
+  body.approved-campaign-actions #main :is(#confirm, #c-confirm, #s-confirm, #r-confirm, #o-confirm, #lg-confirm, #c-check, #undo, #c-undo, #s-undo, #r-undo, #o-undo, #lg-undo, #redo, #c-redo, #s-redo, #r-redo, #o-redo, #lg-redo, #reset, #c-reset, #s-reset, #r-reset, #o-reset, #lg-restart) { border-color: ButtonText; }
+  body.approved-campaign-actions #main :is(#confirm, #c-confirm, #s-confirm, #r-confirm, #o-confirm, #lg-confirm, #c-check, #undo, #c-undo, #s-undo, #r-undo, #o-undo, #lg-undo, #redo, #c-redo, #s-redo, #r-redo, #o-redo, #lg-redo, #reset, #c-reset, #s-reset, #r-reset, #o-reset, #lg-restart)::before { background: ButtonText; }
+  body.approved-campaign-actions #main :is(#confirm, #c-confirm, #s-confirm, #r-confirm, #o-confirm, #lg-confirm, #c-check, #undo, #c-undo, #s-undo, #r-undo, #o-undo, #lg-undo, #redo, #c-redo, #s-redo, #r-redo, #o-redo, #lg-redo, #reset, #c-reset, #s-reset, #r-reset, #o-reset, #lg-restart):disabled { color: GrayText; border-color: GrayText; }
+  body.approved-campaign-actions #main :is(#confirm, #c-confirm, #s-confirm, #r-confirm, #o-confirm, #lg-confirm, #c-check, #undo, #c-undo, #s-undo, #r-undo, #o-undo, #lg-undo, #redo, #c-redo, #s-redo, #r-redo, #o-redo, #lg-redo, #reset, #c-reset, #s-reset, #r-reset, #o-reset, #lg-restart):disabled::before { background: GrayText; }
+  body.approved-campaign-actions #main :is(#confirm, #c-confirm, #s-confirm, #r-confirm, #o-confirm, #lg-confirm, #c-check, #undo, #c-undo, #s-undo, #r-undo, #o-undo, #lg-undo, #redo, #c-redo, #s-redo, #r-redo, #o-redo, #lg-redo, #reset, #c-reset, #s-reset, #r-reset, #o-reset, #lg-restart):focus-visible { outline-color: Highlight; }
+}

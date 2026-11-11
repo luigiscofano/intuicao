@@ -274,12 +274,29 @@ for (const game of Object.keys(GAME_PRESENTATION)) {
     );
     assert.equal(
       f.controls.confirm.parentElement.className,
-      "approved-primary-action",
+      GAME_PRESENTATION[game].category === "Versus" ? "board-check-controls" : "approved-primary-action",
     );
+    if (GAME_PRESENTATION[game].category === "Versus") {
+      assert.equal(f.controls.confirm.parentElement.parentElement, f.surface);
+      assert.equal(f.surface.classList.contains("approved-versus-surface"), true);
+    }
     assert.equal(
       f.controls.undo.parentElement.className,
       "approved-history-actions",
     );
+    assert.equal(
+      f.body.classList.contains("approved-campaign-actions"),
+      GAME_PRESENTATION[game].category !== "Versus",
+    );
+    assert.equal(f.controls.confirm.textContent, "confirm");
+    assert.equal(f.controls.undo.textContent, "undo");
+    assert.equal(f.controls.redo.textContent, "redo");
+    if (f.controls.reset) {
+      assert.equal(
+        f.controls.reset.attrs["aria-label"],
+        GAME_PRESENTATION[game].category === "Versus" ? undefined : "Reiniciar",
+      );
+    }
     assert.equal(f.controls.confirm.onclick, originalHandler);
     assert.equal(f.controls.confirm.onclick(), "confirm");
     assert.equal(f.controls.undo.disabled, true);
@@ -330,6 +347,7 @@ test("return to library and achievements restores navigation and hides game hero
     assert.equal(f.navigation.parentElement, f.main);
     assert.equal(f.navigation.nextSibling, f.category);
     assert.equal(f.body.classList.contains("approved-game-view"), false);
+    assert.equal(f.body.classList.contains("approved-campaign-actions"), false);
     assert.equal(f.doc.getElementById("approved-game-hero").hidden, true);
   }
 });

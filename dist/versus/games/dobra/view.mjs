@@ -81,11 +81,11 @@ export function renderBoard(state, context = {}) {
     : '<p class="dobra-tip">O número é a área. A maioria de selos controla a pilha; empate deixa a região neutra.</p>';
   return `<section class="dobra-area" aria-label="Atlas de papel">
     ${steps}
+    ${state.result ? "" : edgeControls(state, context.selection, pending, disabled)}
     <div class="dobra-map-heading"><strong>${stage}</strong><span>Área total: 36</span></div>
     <div class="dobra-map" style="--dobra-columns:${display.columns};--dobra-rows:${display.rows};max-width:${Math.max(320, display.columns * 105)}px"><div class="dobra-column-labels" aria-hidden="true">${Array.from({ length: display.columns }, (_, column) => `<span>${String.fromCharCode(65 + column)}</span>`).join("")}</div><div class="dobra-map-row"><div class="dobra-row-labels" aria-hidden="true">${Array.from({ length: display.rows }, (_, row) => `<span>${row + 1}</span>`).join("")}</div><div class="dobra-grid${preview ? " is-preview" : ""}">${cells}</div></div></div>
     <div class="dobra-reserves" aria-label="Selos restantes">${display.reserves.map((count, player) => `<span class="dobra-player-${player}">${playerMark(player)} ${playerName(player)}: <b>${count}</b> ${count === 1 ? "selo" : "selos"}</span>`).join("")}</div>
     ${note}
-    ${state.result ? "" : edgeControls(state, context.selection, pending, disabled)}
   </section>`;
 }
 

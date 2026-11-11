@@ -126,12 +126,12 @@ export function renderBoard(state, context = {}) {
     <div class="mosaico-orientation-controls" role="group" aria-label="Orientação do azulejo: posição dos cantos verdes">
       ${orientationNames.map((name, index) => `<button type="button" class="mosaico-orientation${orientation === index ? " mosaico-orientation-selected" : ""}" ${actionAttributes({ type: "orientation", orientation: index })} aria-pressed="${orientation === index}" aria-label="Verdes para ${name}" ${disabled || state.result ? "disabled" : ""}>${tileArtwork(index)}<span>${orientationArrows[index]} ${name}</span></button>`).join("")}
     </div>
-    <p class="mosaico-instruction">${state.result ? "O painel está concluído." : pendingMove ? `Prévia em ${coord(pendingMove.cell)}. Você pode girar o azulejo antes de confirmar.` : "Escolha uma orientação e uma casa vazia do painel."}</p>
     <div class="mosaico-board-wrap">
       <div class="mosaico-column-labels" aria-hidden="true">${["A", "B", "C", "D", "E"].map((letter) => `<span>${letter}</span>`).join("")}</div>
       <div class="mosaico-row-labels" aria-hidden="true">${[1, 2, 3, 4, 5].map((row) => `<span>${row}</span>`).join("")}</div>
       <div class="mosaico-board"><div class="mosaico-grid">${cells}</div><div class="mosaico-seals">${sealsMarkup}</div></div>
     </div>
+    <p class="mosaico-instruction">${state.result ? "O painel está concluído." : pendingMove ? `Prévia em ${coord(pendingMove.cell)}. Você pode girar o azulejo antes de confirmar.` : "Escolha uma orientação e uma casa vazia do painel."}</p>
     <div class="mosaico-tools"><span>Reserva comum: <strong>${25 - state.moveCount}</strong> ${25 - state.moveCount === 1 ? "azulejo" : "azulejos"}</span>${pendingMove ? `<button type="button" ${actionAttributes({ type: "reset" })} ${disabled ? "disabled" : ""}>Escolher outra colocação</button>` : ""}</div>
     <div class="mosaico-key"><span>● Verde</span><span>◆ Âmbar</span><span>3 a 1 ou 4 a 0: 1 selo</span><span>2 a 2: sem assinatura</span></div>
   </div>`;

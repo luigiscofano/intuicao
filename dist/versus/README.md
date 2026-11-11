@@ -30,7 +30,19 @@ nos nomes. O código usa módulos ES nativos, sem dependências adicionais de ru
 Selecionar uma peça ou destino modifica somente a seleção da interface. Quando
 há uma ação completa, o motor calcula um estado previsto usando a mesma função
 que confirma a jogada. A prévia não altera turno, placar ou histórico persistido.
-Confirmar acrescenta a ação ao histórico; Escape ou Cancelar prévia a descarta.
+Repetir a mesma escolha completa (segundo clique, toque, Enter ou espaço) confirma
+sua prévia e acrescenta a ação ao histórico. Escolher outra opção apenas atualiza
+a prévia. Em ENLACE, VAZANTE, ESTALO, DOBRA e LASTRO, selecionar uma origem ou
+peça não basta: complete primeiro os destinos, direção ou borda necessários.
+Trocar as cores em ENLACE continua trocando cores, sem confirmar.
+
+O botão Confirmar jogada e Cancelar prévia permanecem junto ao tabuleiro nos onze
+Versus, inclusive DESVIO, BROTO e CERCO. Escape ou Cancelar prévia descarta a
+seleção. Segurar uma tecla não confirma; é preciso soltá-la e ativar novamente.
+QUINHÃO mantém os cestos no lugar durante a prévia; a remoção ocorre somente ao
+confirmar. Legendas que mudam com a prévia ficam depois dos alvos clicáveis, para
+não deslocar pinos, casas, destinos ou cestos entre os dois toques. DOBRA e ESTALO mantêm o controle de escolha final antes dos textos ou
+mapas que mudam com a prévia, evitando que o segundo toque atinja outro lugar.
 
 Os controles usam botões nativos, nomes acessíveis, foco de teclado e indicações
 que combinam cor com símbolos. As animações respeitam a preferência por movimento

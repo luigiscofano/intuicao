@@ -166,6 +166,10 @@ export function initApprovedGameShell(doc = document, win = window) {
       );
       hero.hidden = !active;
       doc.body.classList.toggle("approved-game-view", active);
+      doc.body.classList.toggle(
+        "approved-campaign-actions",
+        active && presentation.category !== "Versus",
+      );
       if (
         navigation &&
         header &&
@@ -204,6 +208,12 @@ export function initApprovedGameShell(doc = document, win = window) {
       const prefix = presentation.prefix;
       const control = (name) =>
         section.querySelector(`#${prefix ? `${prefix}-` : ""}${name}`);
+
+      // O desenho CSS substitui a seta legada. Um nome explícito evita
+      // que leitores de tela somem o rótulo do pseudo-elemento ao texto original.
+      if (presentation.category !== "Versus" && prefix !== "lg") {
+        control("reset")?.setAttribute("aria-label", "Reiniciar");
+      }
 
       let heading = section.querySelector(".approved-game-heading");
       if (!heading) {
@@ -279,7 +289,11 @@ export function initApprovedGameShell(doc = document, win = window) {
       if (stage) stage.classList.add("approved-stage-metadata");
 
       // Reaproveitar os elementos mantém disabled, hidden, foco e eventos originais.
-      move(control("confirm"), panel.querySelector(".approved-primary-action"));
+      const versus = presentation.category === "Versus";
+      surface.classList.toggle("approved-versus-surface", versus);
+      // Versus precisa da confirmação ao lado do tabuleiro, inclusive no celular.
+      if (!versus)
+        move(control("confirm"), panel.querySelector(".approved-primary-action"));
       for (const name of ["undo", "redo"])
         move(control(name), panel.querySelector(".approved-history-actions"));
       const secondary = panel.querySelector(".approved-secondary-actions");
@@ -287,8 +301,10 @@ export function initApprovedGameShell(doc = document, win = window) {
         ...surface.querySelectorAll(
           ":scope > .level-actions, :scope > .board-check-controls",
         ),
-      ])
+      ]) {
+        if (versus && group.querySelector(`#${prefix}-confirm`)) continue;
         move(group, secondary);
+      }
       move(
         prefix === ""
           ? doc.getElementById("toggle-controls")
