@@ -86,10 +86,10 @@ test('avanço tem pausa para resultado, não duplica e cancela callbacks obsolet
   assert.equal(advancement.schedule(() => calls++), true);
 });
 
-test('UI anuncia ciclo existente, oferece modo e cancela avanço ao mudar de contexto', () => {
+test('UI remove o aviso explicativo, oferece modo e cancela avanço ao mudar de contexto', () => {
   const ui = readFileSync(new URL('../../dist/logica/ui.mjs', import.meta.url), 'utf8');
   assert.match(ui, /data-presentation-mode="endless" data-logic-endless>Modo sem parar/);
-  assert.match(ui, /80 fases existentes e repete o ciclo/);
+  assert.doesNotMatch(ui, /80 fases existentes e repete o ciclo/);
   assert.match(ui, /id="lg-stage-label">.*Sem parar · ciclo/);
   assert.doesNotMatch(ui, /logic-endless-status/);
   assert.match(ui, /onCancel: \(\) => \{\s+if \(mode !== 'endless' \|\| outcome !== 'win'\) return;\s+const result = adapter.checkState\(level, currentState\(session\)\);\s+if \(result.valid\) complete\(result, \{ animate: false \}\);/);

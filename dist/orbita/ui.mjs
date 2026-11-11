@@ -1263,15 +1263,8 @@ export function initOrbita({ hideOthers = () => {} } = {}) {
     level = null;
     session = null;
     data.lastView = { active: true, screen, mode: 'campaign', daily: false };
-    const completed = Object.keys(data.campaign.completed).filter((id) =>
-      CAMPAIGN.some((item) => String(item.id) === id),
-    ).length;
     host.innerHTML =
-      '<div class="level-screen orbita-selection"><p class="eyebrow">COLEÇÃO LÓGICA</p><h2 id="o-selection-title" tabindex="-1">ÓRBITA ·</h2><p>Um giro prepara o próximo. Transfira as peças entre os anéis e encontre um lugar para todos os símbolos.</p><div class="collection-toolbar selection-actions" role="group" aria-label="Ações do jogo"><button id="o-endless-entry" class="primary">Modo Sem Parar</button><button id="o-daily" class="primary">Desafio de hoje</button></div><p class="collection-small">' +
-      completed +
-      ' ' +
-      (completed === 1 ? 'concluído' : 'concluídos') +
-      '. Progresso salvo neste navegador.</p><p id="o-selection-status" role="status" aria-live="polite"></p>' +
+      '<div class="level-screen orbita-selection"><p class="eyebrow">COLEÇÃO LÓGICA</p><h2 id="o-selection-title" tabindex="-1">ÓRBITA ·</h2><p>Um giro prepara o próximo. Transfira as peças entre os anéis e encontre um lugar para todos os símbolos.</p><div class="collection-toolbar selection-actions" role="group" aria-label="Ações do jogo"><button id="o-endless-entry" class="primary">Modo Sem Parar</button><button id="o-daily" class="primary">Desafio de hoje</button></div><p id="o-selection-status" role="status" aria-live="polite"></p>' +
       rulesPreviewMarkup('orbita') +
       '<div id="o-catalog">' +
       CAMPAIGN_TIERS.map(

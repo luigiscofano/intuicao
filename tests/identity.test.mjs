@@ -79,6 +79,8 @@ test('movimento e vitórias Versus aprovados preservam todos os arquivos fora do
   // Aprovação posterior amplia os emblemas e quatro integrações Versus.
   // Motores, saves, artes de origem e campanhas continuam protegidos.
   const approved = [
+    // Contadores de campanha: remoções pontuais protegidas em campaign-progress-scope.test.mjs.
+    'orbita/ui.mjs', 'sintonia/ui.mjs',
     // Seleção unificada, diário original e sessão contínua lógica aprovados depois.
     'app.mjs', 'collection-ui.mjs', 'daily-challenge.mjs', 'logica/storage.mjs',
     'logica/endless.mjs', 'selection-presentation.mjs', 'selection-presentation.css',
