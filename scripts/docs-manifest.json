@@ -59,6 +59,15 @@
     "SECURITY.md",
     "docs/seguranca/README.md",
     "docs/recursos/README.md",
-    "docs/recursos/declaracao-autoria.md"
+    "docs/recursos/declaracao-autoria.md",
+    "dist/logica/README.md",
+    "docs/logica/README.md",
+    "docs/logica/VERIFICACAO.md",
+    "dist/logica/games/divisa/README.md",
+    "dist/logica/games/foz/README.md",
+    "dist/logica/games/mirante/README.md",
+    "dist/logica/games/pulso/README.md",
+    "dist/logica/games/refugio/README.md",
+    "dist/logica/games/renovo/README.md"
   ]
 }

@@ -6,19 +6,27 @@
 
 **Jogos de lógica, geometria e estratégia para aprender experimentando.**
 
-O **Intuição**, projeto de **Luigi Scofano de Araujo**, reúne 11 jogos que funcionam no navegador. Você pode guiar raios de luz com espelhos, equilibrar formas, coordenar animais ou disputar um tabuleiro com outra pessoa ou com os bots de DESVIO e CERCO. Cada jogo tem regras próprias, explicações na interface e um manual neste repositório.
+O **Intuição**, projeto de **Luigi Scofano de Araujo**, reúne 17 jogos que funcionam no navegador. Você pode guiar raios de luz com espelhos, equilibrar formas, coordenar animais ou disputar um tabuleiro com outra pessoa ou com os bots de DESVIO e CERCO. Cada jogo tem regras próprias, explicações na interface e um manual neste repositório.
 
 A ideia é transformar conceitos abstratos em escolhas visíveis: observar, imaginar uma solução, testar e entender o que mudou. Folhas, molduras e animais brasileiros em pixel art dão identidade à experiência.
 
 > **A curiosidade é a primeira lição.**
 
-**11 jogos · 8 campanhas solo · 640 fases · 3 jogos Versus · IA em DESVIO e CERCO**
+**17 jogos · 14 campanhas solo · 1.120 fases · 3 jogos Versus · IA em DESVIO e CERCO**
 
 **Inteligência artificial aplicada a jogos:** DESVIO usa busca exata de posições; CERCO combina antecipação de jogadas e avaliação estratégica. [Entenda como os bots decidem](#ia-nos-bots-dos-jogos-versus).
 
-[Jogar no navegador · acesso público](https://intuicao-luigi-minigames.luigiscofano.chatgpt.site) · [Executar no computador](#executar-no-computador) · [Conhecer os jogos](#conheça-os-11-jogos) · [Manuais completos](docs/jogos/README.md)
+[Jogar no navegador · acesso público](https://intuicao-luigi-minigames.luigiscofano.chatgpt.site) · [Executar no computador](#executar-no-computador) · [Conhecer os jogos](#conheça-os-17-jogos) · [Manuais completos](docs/jogos/README.md)
 
 O site está **aberto ao público desde 03/11/2026**: qualquer pessoa com o link pode jogar no navegador. Para executar uma cópia deste repositório, siga a instalação local abaixo.
+
+## Seis novos jogos · edição de 10/11/2026
+
+**DIVISA, PULSO, FOZ, REFÚGIO, MIRANTE e RENOVO** entram em Raciocínio lógico, com a identidade visual de CERCO e **80 fases por jogo**. LAÇO e RODÍZIO ficam fora do catálogo. As 480 novas fases possuem soluções únicas certificadas; a dificuldade é editorial e ainda não foi calibrada com jogadores.
+
+A família compartilha seleção por faixa, retomada de tentativa, desfazer/refazer, checagem de regras, gabarito após três checagens sem sucesso, backup e conquistas. Desafio do dia e Surpreenda-me escolhem fases do catálogo existente. Os motores e campanhas são carregados sob demanda; a geração e a certificação ocorrem fora do navegador.
+
+[Regras e galeria dos seis jogos](docs/logica/README.md) · [Arquitetura e contratos](dist/logica/README.md) · [Testes e limites](tests/README.md#seis-jogos-lógicos-e-integração)
 
 ## Coleção de manuais em PDF
 
@@ -65,7 +73,7 @@ Os PDFs registram a edição documental de **1º de novembro de 2026**. Compleme
 | O que você quer fazer? | Por onde começar |
 | --- | --- |
 | **Jogar pela primeira vez** | [Abra o projeto](#executar-no-computador) e siga [Como jogar](#como-jogar-pela-primeira-vez). |
-| **Escolher um jogo** | Veja a [explicação de cada jogo com sua imagem](#conheça-os-11-jogos). |
+| **Escolher um jogo** | Veja a [explicação de cada jogo com sua imagem](#conheça-os-17-jogos). |
 | **Entender a IA dos bots** | Compare as [estratégias de DESVIO e CERCO](#ia-nos-bots-dos-jogos-versus) e encontre os módulos que escolhem as jogadas. |
 | **Entender uma regra** | Abra o [manual do jogo](docs/jogos/README.md): há regras, exemplos e arquivos relacionados. |
 | **Estudar ou modificar o código** | Comece pelo [mapa do projeto](#como-o-projeto-está-organizado) e pela [arquitetura](docs/arquitetura/README.md). |
@@ -99,14 +107,14 @@ Para uma primeira exploração, experimente **Corte certo** para estimar áreas,
 
 <a id="os-jogos-em-imagens"></a>
 
-## Conheça os 11 jogos
+## Conheça os 17 jogos
 
-Cada jogo tem **uma captura real da interface junto à explicação de sua mecânica**. Clique na imagem para ampliar. As capturas foram feitas no site hospedado em **1º de novembro de 2026**; o [registro das imagens](docs/imagens/jogos/README.md) identifica cada fase ou partida. Algumas mostram tentativas ou prévias, e não soluções concluídas.
+Os onze jogos anteriores têm **uma captura real da interface junto à explicação de sua mecânica**. Os seis novos puzzles apresentam SVGs do estado inicial, gerados pela mesma view do jogo e identificados como tal. Clique na imagem para ampliar. As capturas foram feitas no site hospedado em **1º de novembro de 2026**; o [registro das imagens](docs/imagens/jogos/README.md) identifica cada fase ou partida. Algumas mostram tentativas ou prévias, e não soluções concluídas.
 
 | Categoria | Vá direto ao jogo |
 | --- | --- |
 | Intuição | [Reflexos](#reflexos) · [Corte certo](#corte-certo) |
-| Raciocínio lógico | [ELO](#elo) · [PRUMO](#prumo) · [PACTO](#pacto) · [SINTONIA](#sintonia) · [REPASSE](#repasse) · [ÓRBITA](#órbita) |
+| Raciocínio lógico | [ELO](#elo) · [PRUMO](#prumo) · [PACTO](#pacto) · [SINTONIA](#sintonia) · [REPASSE](#repasse) · [ÓRBITA](#órbita) · [DIVISA](#divisa) · [PULSO](#pulso) · [FOZ](#foz) · [REFÚGIO](#refúgio) · [MIRANTE](#mirante) · [RENOVO](#renovo) |
 | Versus | [DESVIO](#desvio) · [BROTO](#broto) · [CERCO](#cerco) |
 
 ### Intuição: observar formas e trajetórias
@@ -209,6 +217,66 @@ Cada jogo tem **uma captura real da interface junto à explicação de sua mecâ
 
 [Regras, exemplos e código de ÓRBITA](docs/jogos/orbita/README.md)
 
+#### DIVISA
+
+**Reparta o terreno e conte as fronteiras.** Cada letra forma um território conectado; os lados compartilhados entre cada par devem alcançar as cotas.
+
+![DIVISA: fase 1 no estado inicial, renderizada pelo código do jogo](docs/imagens/logica/divisa.svg)
+
+*Diagrama programático da fase 1, antes de jogar. A view e os dados são os mesmos usados no site.*
+
+[Regras, implementação e certificação de DIVISA](dist/logica/games/divisa/README.md)
+
+#### PULSO
+
+**Encontre três batidas igualmente espaçadas por linha.** Cruze os intervalos das linhas com as cotas de cada coluna e preserve as pistas fixas.
+
+![PULSO: fase 1 no estado inicial, renderizada pelo código do jogo](docs/imagens/logica/pulso.svg)
+
+*Diagrama programático da fase 1, antes de jogar. A view e os dados são os mesmos usados no site.*
+
+[Regras, implementação e certificação de PULSO](dist/logica/games/pulso/README.md)
+
+#### FOZ
+
+**Oriente todos os caminhos até a foz.** Escolha setas pelos canais, respeite as distâncias indicadas e evite ciclos. Os caminhos podem se unir.
+
+![FOZ: fase 1 no estado inicial, renderizada pelo código do jogo](docs/imagens/logica/foz.svg)
+
+*Diagrama programático da fase 1, antes de jogar. A view e os dados são os mesmos usados no site.*
+
+[Regras, implementação e certificação de FOZ](dist/logica/games/foz/README.md)
+
+#### REFÚGIO
+
+**Dê uma região a cada marco.** Cada barreira toca exatamente duas regiões livres distintas, e cada região livre contém um marco.
+
+![REFÚGIO: fase 1 no estado inicial, renderizada pelo código do jogo](docs/imagens/logica/refugio.svg)
+
+*Diagrama programático da fase 1, antes de jogar. A view e os dados são os mesmos usados no site.*
+
+[Regras, implementação e certificação de REFÚGIO](dist/logica/games/refugio/README.md)
+
+#### MIRANTE
+
+**Cruze as primeiras vistas dos observadores.** Use o estoque de formas, satisfaça cada olhar e garanta que toda peça seja vista por pelo menos dois observadores.
+
+![MIRANTE: fase 1 no estado inicial, renderizada pelo código do jogo](docs/imagens/logica/mirante.svg)
+
+*Diagrama programático da fase 1, antes de jogar. A view e os dados são os mesmos usados no site.*
+
+[Regras, implementação e certificação de MIRANTE](dist/logica/games/mirante/README.md)
+
+#### RENOVO
+
+**Ligue semente, botão e folha.** As duas ligações do botão são perpendiculares, usam todas as peças e não podem atravessar peças nem cruzar outros segmentos.
+
+![RENOVO: fase 1 no estado inicial, renderizada pelo código do jogo](docs/imagens/logica/renovo.svg)
+
+*Diagrama programático da fase 1, antes de jogar. A view e os dados são os mesmos usados no site.*
+
+[Regras, implementação e certificação de RENOVO](dist/logica/games/renovo/README.md)
+
 ### Versus: antecipar a próxima jogada
 
 #### DESVIO
@@ -271,7 +339,7 @@ TRAMA e VÉRTICE aparecem em registros históricos, mas não fazem parte do cat�
 
 ### Como as fases estão organizadas
 
-Cada uma das oito campanhas solo tem **80 fases**, distribuídas da mesma forma:
+Cada uma das quatorze campanhas solo tem **80 fases**, distribuídas da mesma forma:
 
 | Faixa | Fases | Quantidade |
 | --- | --- | ---: |
@@ -283,7 +351,7 @@ Cada uma das oito campanhas solo tem **80 fases**, distribuídas da mesma forma:
 | Modo Sábio | 76–80 | 5 |
 | **Total por campanha** | **1–80** | **80** |
 
-São **8 × 80 = 640 fases solo**. Modos livres, desafios gerados e partidas Versus ficam fora dessa contagem. A proposta é oferecer prática e descoberta; a curva de dificuldade ainda não tem calibração completa com jogadores.
+São **14 × 80 = 1.120 fases solo**. Modos livres, desafios gerados e partidas Versus ficam fora dessa contagem. A proposta é oferecer prática e descoberta; a curva de dificuldade ainda não tem calibração completa com jogadores.
 
 ## Executar no computador
 
@@ -360,7 +428,7 @@ Mais opções e diagnóstico: **[guia de instalação](docs/setup/README.md)**.
 
 **Atenção ao nome `dist`: aqui ela contém o código-fonte editável do projeto.** Não a apague como se fosse uma pasta temporária de compilação.
 
-Para acompanhar um jogo do começo ao fim, leia seu manual, localize os arquivos indicados e compare as regras com os testes correspondentes. SINTONIA, REPASSE, ÓRBITA, BROTO e CERCO têm subpastas próprias; os demais também usam módulos compartilhados no nível principal de `dist`.
+Para acompanhar um jogo do começo ao fim, leia seu manual, localize os arquivos indicados e compare as regras com os testes correspondentes. SINTONIA, REPASSE, ÓRBITA, BROTO e CERCO têm subpastas próprias. Os seis novos puzzles ficam em [`dist/logica/games/`](dist/logica/README.md), com motores puros e uma interface compartilhada. Os jogos anteriores também usam módulos no nível principal de `dist`.
 
 A primeira parte da reforma de formatação e comentários em português foi integrada à `main` pelo [PR #30](https://github.com/luigiscofano/intuicao/pull/30). O [registro da revisão](docs/manutencao/legibilidade.md) documenta a etapa de rascunho e os 299 arquivos ainda pendentes da reforma. O merge não publicou alterações no site.
 
@@ -382,12 +450,13 @@ O projeto permite estudar geometria computacional, grafos, busca de estados, má
 
 | Área | Estado desta cópia |
 | --- | --- |
-| Catálogo e navegação | 11 jogos ativos, seleção de desafios e regras na interface. |
-| Campanhas solo | Oito campanhas de 80 fases; recursos adicionais variam por jogo. |
+| Catálogo e navegação | 17 jogos ativos, seleção de desafios e regras na interface. |
+| Campanhas solo | Quatorze campanhas de 80 fases; recursos adicionais variam por jogo. |
 | Duelos e IA | Bots em DESVIO e CERCO; BROTO para duas pessoas no mesmo aparelho. |
 | Progresso e exploração | Salvamento, Desfazer e Refazer nos fluxos que oferecem essas funções. |
 | Documentação | README inicial, manuais individuais, instalação, arquitetura e manutenção. |
 | Testes de motores | **95 testes aprovados** na revisão de 01/11/2026; execução automática em PRs e pushes para `main`. |
+| Recorte da edição de 10/11/2026 | **224 testes aprovados, zero falhas**, cobrindo os motores anteriores, seis puzzles e integração; [evidências e limites](docs/logica/VERIFICACAO.md). |
 | Qualidade ampla | Há falhas históricas e pendências; esse recorte não aprova toda a aplicação. |
 | Revisão técnica posterior | A revisão `f0e7fcf` ainda precisa ser recuperada e incorporada, incluindo a correção de migração de SINTONIA ali descrita. |
 
@@ -418,6 +487,12 @@ node scripts/check-docs.mjs
 node --test tests/broto-engine.test.mjs tests/cerco-engine.test.mjs tests/sintonia-engine.test.mjs tests/repasse-engine.test.mjs tests/orbita-engine.test.mjs
 ```
 
+**Seis novos motores, histórico e integração com a plataforma:**
+
+```bash
+node --test tests/logica/*.test.mjs tests/approved-game-shell.test.mjs tests/contextual-guidance.test.mjs tests/library-navigation.test.mjs tests/achievements.test.mjs tests/progress-backup.test.mjs
+```
+
 Antes de ampliar a execução, leia o [guia de testes](tests/README.md). A pasta também contém scripts de geração e verificações de revisões antigas; nem todo arquivo `.mjs` é um teste sem efeitos colaterais.
 
 ## Progresso, hospedagem e contribuição
@@ -441,3 +516,4 @@ O código e a documentação autorais do Intuição são disponibilizados sob a 
 Imagens, sprites, fontes, logos e demais recursos visuais têm seus direitos tratados separadamente e não estão incluídos automaticamente nessa licença. Materiais de terceiros conservam suas licenças e créditos próprios. Consulte o [guia dos recursos](dist/platform-assets/README.md) e o [inventário de direitos](docs/recursos/README.md) antes de redistribuí-los.
 
 A abertura do repositório não publica uma nova versão do site nem altera as licenças dos recursos visuais.
+

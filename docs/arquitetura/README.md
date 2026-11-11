@@ -4,7 +4,7 @@
 
 ## Visão geral
 
-O Intuição é uma aplicação estática modular. O navegador carrega HTML, CSS, JavaScript e dados diretamente de `dist`. Não há etapa de empacotamento obrigatória nem backend de partidas nesta base. O Python usado no desenvolvimento apenas serve arquivos.
+O Intuição é uma aplicação estática modular. O navegador carrega HTML, CSS, JavaScript e dados diretamente de `dist`. Não há etapa de empacotamento obrigatória nem backend de partidas nesta base. Python pode servir arquivos locais e executar os geradores offline dos novos puzzles; não faz parte do runtime do site.
 
 ## Mapa de responsabilidades
 
@@ -23,6 +23,14 @@ O Intuição é uma aplicação estática modular. O navegador carrega HTML, CSS
 Reflexos e Corte certo usam a estrutura inicial da aplicação e módulos no nível superior de `dist`. ELO e PRUMO compartilham parte da infraestrutura geométrica. PACTO usa o motor de símbolos. DESVIO participa da coleção compartilhada, mas tem motor próprio. SINTONIA, REPASSE, ÓRBITA, BROTO e CERCO têm subpastas e rotas dedicadas.
 
 Essa organização reflete a evolução do projeto. A documentação cria pontos de entrada sem fazer uma refatoração física ampla, que exigiria revisar imports, estilos, catálogos e testes de preservação.
+
+## Família lógica de seis campanhas
+
+[`dist/logica/`](../../dist/logica/README.md) concentra DIVISA, PULSO, FOZ, REFÚGIO, MIRANTE e RENOVO. Cada pasta de jogo contém um motor puro, uma campanha certificada offline, uma view SVG e um adaptador público. Uma única interface compartilha seleção, eventos, histórico, ajuda e apresentação do resultado.
+
+Os metadados de navegação não importam motores. A rota carrega a interface e o jogo sob demanda, invalidando respostas assíncronas antigas. As conquistas usam um resumo de IDs/versões em vez de carregar os seis catálogos completos. Os geradores e auditores ficam em `tools/logica/` e `tests/logica/`, fora do runtime.
+
+O progresso tem chave própria (`intuicao.logica.v1`), integra o backup e preserva ID/versão, tentativa e marca assistida. O histórico possui limite de memória; tentativas antigas mantêm seu estado atual. Comentários nos módulos explicam as invariantes de armazenamento, as regras menos evidentes e os limites dos algoritmos.
 
 ## Estado e transição
 
@@ -63,3 +71,4 @@ git diff 2354a3c -- dist
 ```
 
 Use a [manutenção](../manutencao/README.md) para planejar alterações de conteúdo e a [qualidade](../qualidade/README.md) para documentar evidências.
+

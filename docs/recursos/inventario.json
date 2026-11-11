@@ -53,6 +53,13 @@
         "docs/recursos/declaracao-autoria.md"
       ],
       "source": "Capturas e diagramas técnicos; declaração abrange sua composição e elementos autorais, preservados os direitos de componentes externos."
+    },
+    "logica-programatica": {
+      "evidence": [
+        "docs/logica/README.md",
+        "tools/logica/render-gallery.mjs"
+      ],
+      "source": "Diagramas dos estados iniciais gerados por código das views da família lógica, sob a identidade CERCO aprovada; sem recursos visuais externos."
     }
   },
   "assets": [
@@ -1385,6 +1392,66 @@
       "license": "Direitos reservados; recursos visuais excluídos da licença MIT do código.",
       "permissionEvidence": "docs/recursos/declaracao-autoria.md",
       "reviewBasis": "owner-declaration"
+    },
+    {
+      "path": "docs/imagens/logica/divisa.svg",
+      "sha256": "e5e774e49a9c04c4176dab5876481cfc716cad8c26ade8413430ac49588664be",
+      "group": "logica-programatica",
+      "status": "cleared",
+      "rightsHolder": "Luigi Scofano de Araujo (elementos autorais do projeto)",
+      "license": "Direitos reservados; recursos visuais excluídos da licença MIT do código.",
+      "permissionEvidence": "docs/logica/README.md",
+      "reviewBasis": "generated-from-project-code; existing-visual-rights-policy"
+    },
+    {
+      "path": "docs/imagens/logica/foz.svg",
+      "sha256": "a72185786edca561fa86d0391c578f1e151bf58d85ec31b96df9e423ce948124",
+      "group": "logica-programatica",
+      "status": "cleared",
+      "rightsHolder": "Luigi Scofano de Araujo (elementos autorais do projeto)",
+      "license": "Direitos reservados; recursos visuais excluídos da licença MIT do código.",
+      "permissionEvidence": "docs/logica/README.md",
+      "reviewBasis": "generated-from-project-code; existing-visual-rights-policy"
+    },
+    {
+      "path": "docs/imagens/logica/mirante.svg",
+      "sha256": "216ae2cb2248f48c8cfea13fc5882d6de4f5c095041caa070d0a97fbc118ac78",
+      "group": "logica-programatica",
+      "status": "cleared",
+      "rightsHolder": "Luigi Scofano de Araujo (elementos autorais do projeto)",
+      "license": "Direitos reservados; recursos visuais excluídos da licença MIT do código.",
+      "permissionEvidence": "docs/logica/README.md",
+      "reviewBasis": "generated-from-project-code; existing-visual-rights-policy"
+    },
+    {
+      "path": "docs/imagens/logica/pulso.svg",
+      "sha256": "a50452650d44d359f02563bd78f2d203610db9fcfce5d3caa1085a2fa9a1103c",
+      "group": "logica-programatica",
+      "status": "cleared",
+      "rightsHolder": "Luigi Scofano de Araujo (elementos autorais do projeto)",
+      "license": "Direitos reservados; recursos visuais excluídos da licença MIT do código.",
+      "permissionEvidence": "docs/logica/README.md",
+      "reviewBasis": "generated-from-project-code; existing-visual-rights-policy"
+    },
+    {
+      "path": "docs/imagens/logica/refugio.svg",
+      "sha256": "335b9aa30b6c42db7185b4503a69ef12db4f99e34e4bbae67ff87d0dafae3b96",
+      "group": "logica-programatica",
+      "status": "cleared",
+      "rightsHolder": "Luigi Scofano de Araujo (elementos autorais do projeto)",
+      "license": "Direitos reservados; recursos visuais excluídos da licença MIT do código.",
+      "permissionEvidence": "docs/logica/README.md",
+      "reviewBasis": "generated-from-project-code; existing-visual-rights-policy"
+    },
+    {
+      "path": "docs/imagens/logica/renovo.svg",
+      "sha256": "4530f3d80c7127913e782f135f90ad36877abf38038733b5e6ae160d9534acb3",
+      "group": "logica-programatica",
+      "status": "cleared",
+      "rightsHolder": "Luigi Scofano de Araujo (elementos autorais do projeto)",
+      "license": "Direitos reservados; recursos visuais excluídos da licença MIT do código.",
+      "permissionEvidence": "docs/logica/README.md",
+      "reviewBasis": "generated-from-project-code; existing-visual-rights-policy"
     }
   ],
   "rightsReview": {
