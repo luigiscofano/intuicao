@@ -1,0 +1,103 @@
+/* Tabuleiros cabem no espaço disponível. Tamanho de fonte da página, regras,
+   coordenadas lógicas e zoom de acessibilidade do navegador são preservados. */
+body #main :is(.board-navigation, .collection-board-wrap, .s-play-area, .r-board-scroll, .o-board-scroll, .logic-board, .nv-board) {
+  min-width: 0;
+  box-sizing: border-box;
+}
+body #main #c-board {
+  width: min(100%, calc((100svh - clamp(64px, 14svh, 120px)) * var(--cols) / var(--rows)));
+  min-width: 0;
+  margin-inline: auto;
+  grid-template-rows: repeat(var(--rows), minmax(0, 1fr));
+}
+body #main #c-board .grid-cell { min-width: 0; min-height: 0; }
+body #main #c-board.board-elo { container-type: inline-size; }
+body #main #c-board.board-elo .elo-token { font-size: clamp(14px, calc(65cqi / var(--cols)), 30px); }
+body #main #c-board.board-elo .region-letter { font-size: clamp(9px, calc(30cqi / var(--cols)), 12px); }
+body #main #c-board.board-elo .elo-cell-mark { font-size: clamp(10px, calc(46cqi / var(--cols)), 19px); }
+body #main #c-board-surface { min-height: 0; }
+/* Pistas laterais continuam fora da grade, mas sem o antigo mínimo de 44 px por casa. */
+body #main #c-board-surface.elo-board-surface {
+  overflow: visible;
+  padding: 14px 10px;
+}
+body #main #c-board-surface.elo-board-surface:is(.elo-has-gutter, :has(.elo-board-label)) {
+  padding: 28px 12px 22px 52px;
+}
+body #main #c-board-surface.elo-board-surface > .board-options {
+  margin-bottom: 30px;
+}
+body #main #c-board-surface.elo-board-surface:not(.elo-has-gutter):not(:has(.elo-board-label)) > .board-options {
+  margin-bottom: 12px;
+}
+body #main :is(#scene, #o-board, .logic-board svg) {
+  display: block;
+  height: auto;
+  min-width: 0;
+  margin-inline: auto;
+}
+body #main :is(#scene, #o-board, .logic-board svg) { max-height: calc(100svh - clamp(64px, 14svh, 120px)); }
+/* REPASSE: coletores compactos e peças quadradas, sem rolagem horizontal obrigatória. */
+body #main #repasse .r-surface .r-board {
+  --r-fit-edge: clamp(24px, 4vw, 36px);
+  min-width: 0;
+  grid-template-columns: var(--r-fit-edge) repeat(var(--r-inner-cols), minmax(0, 1fr)) var(--r-fit-edge);
+  grid-template-rows: var(--r-fit-edge) repeat(var(--r-inner-rows), auto) var(--r-fit-edge);
+  gap: 3px;
+}
+body #main #repasse .r-surface :is(.r-piece, .r-empty, .r-edge-box) { min-height: 0; min-width: 0; }
+body #main #repasse .r-piece-value { font-size: clamp(12px, 34cqi, 22px); }
+body #main #repasse .r-surface .r-box-current { font-size: 14px; }
+body #main #repasse .r-surface .r-box-total { font-size: 9px; }
+body #main #repasse .r-surface .r-arrow { width: 9px; height: 9px; }
+body #main #repasse .r-board-scroll { overflow: visible; }
+body #main #sintonia .s-boards { width: 100%; }
+body #main #versus-games :is(.acorde-board, .lastro-instrument) { margin-inline: auto; }
+/* Setas ficam abaixo da área em telas estreitas, liberando largura para as peças. */
+@media (max-width: 850px) {
+  body #main .board-navigation:has(> .level-arrow:not([hidden])) {
+    grid-template-columns: 48px minmax(0, 1fr) 48px !important;
+    gap: 8px 4px;
+    padding-inline: 2px;
+  }
+  body #main .board-navigation:has(> .level-arrow:not([hidden])) > :not(.level-arrow) {
+    grid-column: 1 / -1;
+    grid-row: 1;
+  }
+  body #main .board-navigation > .level-arrow { grid-row: 2; margin: 0 !important; }
+  body #main .board-navigation > .level-arrow:first-child { grid-column: 1; }
+  body #main .board-navigation > .level-arrow:last-child { grid-column: 3; }
+}
+@media (max-width: 400px) {
+  body.approved-game-view > main { padding-inline: 10px; }
+  body #main #c-board-surface.elo-board-surface:is(.elo-has-gutter, :has(.elo-board-label)) { padding-left: 46px; padding-right: 8px; }
+}
+
+body #main .logic-board :is(.pulso-board-wrap, .foz-board, .mirante-board-wrap, .renovo-board) { overflow: visible; min-width: 0; }
+
+/* DOBRA preserva números e selos em grades densas, sem mínimos de conteúdo. */
+body #main #versus-games .dobra-grid { container-type: inline-size; }
+body #main #versus-games .dobra-tile { min-height: 0; padding: 2px 1px; gap: 1px; }
+body #main #versus-games .dobra-area-number { font-size: clamp(16px, calc(55cqi / var(--dobra-columns)), 36px); }
+body #main #versus-games .dobra-seals { font-size: clamp(9px, calc(22cqi / var(--dobra-columns)), 15px); gap: 3px; }
+/* Trilhos de LASTRO mantêm marcas e rótulos visíveis também em telas baixas. */
+@media (max-width: 620px), (max-height: 700px) {
+  body #main #versus-games .lastro-instrument { padding: 6px; gap: 6px; }
+  body #main #versus-games .lastro-arm h4 { margin-bottom: 4px; font-size: 12px; line-height: 1.2; }
+  body #main #versus-games .lastro-arm--right { padding-top: 4px; }
+  body #main #versus-games .lastro-rail { margin-top: 2px; padding: 2px; }
+  body #main #versus-games .lastro-rail-caption { font-size: 11px; line-height: 1.15; }
+  body #main #versus-games .lastro-rail-caption span { font-size: 10px; }
+  body #main #versus-games .lastro-mark { min-height: clamp(38px, 8svh, 60px); }
+  body #main #versus-games :is(.lastro-weight, .lastro-mark-tooth) { height: clamp(22px, 4.5svh, 32px); line-height: 1; }
+  body #main #versus-games .lastro-weight--ghost { padding-top: 2px; }
+  body #main #versus-games .lastro-distance { font-size: 11px; line-height: 1.1; }
+}
+
+@media (max-height: 500px) {
+  body #main #versus-games .vazante-bank { display: grid; grid-template-columns: 1fr; gap: 2px; font-size: 11px; line-height: 1.15; text-align: center; }
+  body #main #versus-games .vazante-bank strong { font-size: 12px; }
+  body #main #versus-games .vazante-bank-ticks { height: 4px; }
+  body #main #versus-games .vazante-coordinate-area { margin-top: 20px; }
+  body #main #versus-games .vazante-column-labels { top: -18px; font-size: 12px; }
+}
