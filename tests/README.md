@@ -44,3 +44,18 @@ Não adicionar `continue-on-error` para esconder falhas de um gate obrigatório.
 A documentação externa relata 536 testes atuais aprovados na revisão `f0e7fcf`, com triagem própria. Seu código e manifesto não estão nesta cópia. O comando `node scripts/test.mjs` daquela revisão não existe aqui e não deve ser apresentado como comando disponível.
 
 Veja [qualidade](../docs/qualidade/README.md) para a matriz da preparação e os limites de evidência.
+
+
+## Seis jogos lógicos e integração
+
+A edição de 10/11/2026 acrescenta testes dos seis motores e das 480 fases, histórico/ajuda, preservação das tentativas, chaves do backup, conquistas, navegação e shell compartilhado:
+
+```sh
+node --test tests/logica/*.test.mjs tests/approved-game-shell.test.mjs tests/contextual-guidance.test.mjs tests/library-navigation.test.mjs tests/achievements.test.mjs tests/progress-backup.test.mjs
+```
+
+Os certificados, fixtures dos exemplos aprovados e auditores estão em `tests/logica/`; os geradores ficam em `tools/logica/`. O [guia da família](../docs/logica/README.md#campanhas-progressão-e-certificação) distingue unicidade comprovada, dedução registrada e dificuldade editorial. Não houve calibração com jogadores.
+
+O catálogo resumido de conquistas é conferido contra os seis catálogos completos. Saves incompatíveis, abas desatualizadas, bifurcação do histórico e perda de progresso ao percorrer as 80 fases têm casos específicos de regressão. Os testes de navegação do GitHub continuam usando suas fixtures versionadas; os da origem do site preservam seu baseline próprio.
+
+A CI mantém os cinco motores anteriores e acrescenta este recorte. Não executa scripts de geração por curinga e não afirma que toda a suíte histórica está verde.
