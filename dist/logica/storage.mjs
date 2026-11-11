@@ -30,10 +30,13 @@ export function normalizeLogicData(value) {
       if (safeId(id) && isObject(session)) sessions[id] = session; // A restauração passa pelo motor da fase antes de usar estes dados.
     }
     data.games[game] = { completed, sessions, lastLevelId: safeId(source.lastLevelId) ? source.lastLevelId : null };
+    if (isObject(source.endless) && Number.isSafeInteger(source.endless.step) && source.endless.step >= 0) {
+      data.games[game].endless = { step: source.endless.step, session: isObject(source.endless.session) ? structuredClone(source.endless.session) : null };
+    }
   }
   const view = value.lastView;
   if (isObject(view) && LOGIC_GAME_IDS.includes(view.game)) {
-    data.lastView = { game: view.game, levelId: safeId(view.levelId) ? view.levelId : null, screen: view.screen === 'play' ? 'play' : 'selection', active: view.active === true };
+    data.lastView = { game: view.game, levelId: safeId(view.levelId) ? view.levelId : null, screen: view.screen === 'play' ? 'play' : 'selection', active: view.active === true, mode: view.mode === 'endless' ? 'endless' : 'campaign' };
   }
   return data;
 }
@@ -103,4 +106,9 @@ export function createLogicStorage(storage = globalThis.localStorage) {
       }
     },
   };
+}
+
+// Não altera sessões, última fase ou conclusões da campanha.
+export function saveEndless(data, game, run) {
+  gameProgress(data, game).endless = structuredClone(run);
 }

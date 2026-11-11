@@ -3,6 +3,7 @@ import { recordApprovedAttemptWin } from "./achievements/approved-store.mjs";
 import { recordMissionUnlocks } from "./achievements/mission-store.mjs";
 import { createVersusRoute } from "./versus/route.mjs";
 import { createLogicRoute } from "./logica/route.mjs";
+import { dailyChallenge } from "./daily-challenge.mjs";
 import { displayCampaignName } from "./campaign-display-names.mjs";
 import { writeProgress } from "./progress-write-guard.mjs";
 // Integração de Reflexos e Corte certo: seleção, edição, histórico e apresentação.
@@ -124,6 +125,7 @@ function newSeed() {
 }
 // Abre o modo livre com o estado salvo ou um novo desafio.
 function enterEndless() {
+  dailyEntry = null;
   finishOriginalGesture(false);
   endDrag();
   saveCampaign();
@@ -408,6 +410,7 @@ function loadOriginalJSON(raw, expectedGame = game) {
   saveCustom();
   campaignActive = null;
   free = false;
+  dailyEntry = null;
   customLevel = prepared;
   customId = identity;
   const saved = customSaved[identity];
@@ -595,6 +598,7 @@ function toggleControls() {
 }
 let placementMessage = "",
   pendingSlot = null;
+let dailyEntry = null;
 let game = "light",
   free = false,
   level = 0,
@@ -712,6 +716,7 @@ function cutCampaignSelection() {
 }
 // Abre a seleção de desafios e atualiza os controles de navegação.
 function showSelection() {
+  dailyEntry = null;
   finishOriginalGesture(false);
   endDrag();
   saveCampaign();
@@ -759,6 +764,15 @@ function showSelection() {
     );
   renderOriginalImport();
   $("selection-title").focus();
+}
+
+// O diário é uma entrada para a campanha: preserva a tentativa e seus registros.
+function enterDaily() {
+  const challenge = dailyChallenge(game, new Date(), catalogue[game].length);
+  showSelection();
+  level = challenge.index;
+  dailyEntry = challenge;
+  start();
 }
 
 let phase = "editing",
@@ -1347,6 +1361,8 @@ function render() {
     : free
       ? `Modo Sem Parar · DESAFIO ${endlessRun.count + 1}`
       : `DESAFIO ${String(game === "light" ? lightCampaignNumber(currentLevel(), level) : level + 1).padStart(2, "0")} / ${String(catalogue[game].length).padStart(2, "0")}`;
+  if (dailyEntry && !free && !customLevel)
+    $("stage-label").textContent = `Desafio diário · ${dailyEntry.day.split("-").reverse().join("/")} · ${$("stage-label").textContent}`;
   $("mission").textContent =
     game === "light"
       ? free
@@ -1877,6 +1893,7 @@ $("challenge").onclick = () => {
   showSelection();
 };
 $("level").onchange = (e) => {
+  dailyEntry = null;
   saveCampaign();
   level = Number(e.target.value);
   start();
@@ -1901,6 +1918,7 @@ $("reset").onclick = () => {
   updateOriginalHistoryButtons();
 };
 $("selection-free").onclick = enterEndless;
+if ($("selection-daily")) $("selection-daily").onclick = enterDaily;
 $("back-selection").onclick = showSelection;
 $("toggle-controls").onclick = toggleControls;
 $("undo").onclick = () => travelOriginalHistory(-1);
@@ -1935,6 +1953,7 @@ function navigateLevel(delta) {
   finishOriginalGesture(false);
   endDrag();
   saveCampaign();
+  dailyEntry = null;
   level = next;
   start();
 }
@@ -1956,6 +1975,7 @@ $("hint").onclick = showOriginalHint;
 showSelection();
 
 function hideOriginalForSibling() {
+  dailyEntry = null;
   finishOriginalGesture(false);
   endDrag();
   saveCampaign();

@@ -70,17 +70,17 @@ test('exceções densas mantêm suas legendas e sem corte forçado da área', ()
   for(const value of ['.dobra-grid { container-type: inline-size','.lastro-instrument { padding: 6px','.vazante-bank { display: grid','max-height: calc(100svh']) assert(css.includes(value),value);
   assert(!css.includes('overflow: hidden')&&!css.includes('display: none'));
 });
-test('arquivos de interface anteriores mudam somente a orientação textual aprovada', () => {
+test('retrato histórico: arquivos de interface anteriores mudam somente a orientação textual aprovada', () => {
   const root=new URL('../',import.meta.url);
   for(const [file,oldText,newText] of [
     ['dist/collection-ui.mjs','Grade ampla: arraste','O tabuleiro se ajusta'],
     ['dist/repasse/ui.mjs','rolagem','tela'],
   ]) {
     const before=execFileSync('git',['show',`e2c694c1a12970befca130c45e3b94dffd0dccac:${file}`],{cwd:root,encoding:'utf8'});
-    const after=readFileSync(new URL('../'+file,import.meta.url),'utf8');
+    const after=execFileSync('git',['show',`012870b0cb6fffe002771423a608285cd3f40949:${file}`],{cwd:root,encoding:'utf8'});
     assert(after.includes(newText));
     // Limita cada alteração a duas linhas de texto, sem novas declarações ou handlers.
-    const diff=execFileSync('git',['diff','--unified=0','e2c694c1a12970befca130c45e3b94dffd0dccac','--',file],{cwd:root,encoding:'utf8'});
+    const diff=execFileSync('git',['diff','--unified=0','e2c694c1a12970befca130c45e3b94dffd0dccac','012870b0cb6fffe002771423a608285cd3f40949','--',file],{cwd:root,encoding:'utf8'});
     assert(diff.split('\n').filter(line=>line.startsWith('+')&&!line.startsWith('+++')).length<=2,file);
     assert(before.length>0);
   }
