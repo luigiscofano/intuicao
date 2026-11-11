@@ -20,11 +20,11 @@ export function rulesPreviewMarkup(game) {
  const example = RULE_EXAMPLES[game];
  if (!example || !GAME_INFO[game]) return '';
  const name = escape(GAME_INFO[game].name);
- return `<section class="rules-preview" data-rules-game="${escape(game)}" aria-label="Como jogar ${name}"><div class="rp-copy"><h3>Como jogar</h3><ol>${example.steps.map(step => `<li>${escape(step)}</li>`).join('')}</ol><p class="rp-note">Exemplo ilustrativo. Não altera a partida. Confira também as pistas e os controles do jogo.</p></div><figure class="rp-illustration"><div class="rp-example" aria-hidden="true">${example.svg}</div><figcaption class="rp-description">${escape(example.description || descriptions[game])}</figcaption><button type="button" class="rp-motion-toggle" aria-pressed="false" aria-label="Pausar exemplo de ${name}">Pausar exemplo</button><span class="rp-reduced-note">Exemplo estático · movimento reduzido</span></figure></section>`;
+ return `<section class="rules-preview" data-rules-game="${escape(game)}" aria-label="Como jogar ${name}"><div class="rp-copy"><h3>Como jogar</h3><ol>${example.steps.map(step => `<li>${escape(step)}</li>`).join('')}</ol><p class="rp-note">Exemplo ilustrativo. Não altera a partida. Confira também as pistas e os controles do jogo.</p></div><figure class="rp-illustration"><div class="rp-example" aria-hidden="true">${example.svg}</div><figcaption class="rp-description">${escape(example.description || descriptions[game])}</figcaption><span class="rp-reduced-note">Exemplo estático · movimento reduzido</span></figure></section>`;
 }
 
 const instances = new WeakMap();
-// A ilustração repete só enquanto visível. Pausar nunca toca em dados de partida.
+// A ilustração repete automaticamente enquanto visível, sem tocar na partida.
 export function initRulesPreviews(doc = globalThis.document, win = doc?.defaultView) {
  const root = doc?.getElementById('main');
  if (!root) return () => {};
@@ -49,15 +49,6 @@ export function initRulesPreviews(doc = globalThis.document, win = doc?.defaultV
   if (observer) observer.observe(panel); else { visible.add(panel); sync(panel); }
  };
  const remove = panel => { panels.delete(panel); visible.delete(panel); observer?.unobserve(panel); };
- const click = event => {
-  const button = event.target.closest?.('.rp-motion-toggle');
-  if (!button || !root.contains(button)) return;
-  const panel = button.closest('.rules-preview');
-  const paused = panel.classList.toggle('rp-paused');
-  button.setAttribute('aria-pressed', String(paused));
-  button.textContent = paused ? 'Retomar exemplo' : 'Pausar exemplo';
-  button.setAttribute('aria-label', `${paused ? 'Retomar' : 'Pausar'} exemplo de ${GAME_INFO[panel.dataset.rulesGame]?.name || ''}`);
- };
  const pageVisibility = () => panels.forEach(sync);
  eachPanel(root, watch);
  const mutations = win?.MutationObserver ? new win.MutationObserver(records => {
@@ -67,11 +58,10 @@ export function initRulesPreviews(doc = globalThis.document, win = doc?.defaultV
   }
  }) : null;
  mutations?.observe(root, { childList: true, subtree: true });
- root.addEventListener('click', click);
  doc.addEventListener('visibilitychange', pageVisibility);
  const cleanup = () => {
   observer?.disconnect(); mutations?.disconnect();
-  root.removeEventListener('click', click); doc.removeEventListener('visibilitychange', pageVisibility);
+  doc.removeEventListener('visibilitychange', pageVisibility);
   panels.forEach(panel => panel.classList.remove('rp-playing'));
   panels.clear(); instances.delete(doc);
  };

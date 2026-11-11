@@ -6,6 +6,10 @@ const git = args => execFileSync('git', args, {cwd:new URL('../',import.meta.url
 // Árvore de PR58/v201: referência independente da identidade do commit local.
 const base='34ca285ba6812a9dc15e23daf8caf2131af399c8';
 const allowed=['rules-examples.css','rules-examples.mjs','rules-preview.css','rules-preview.mjs','rules-logic-examples.mjs','rules-versus-examples.mjs','logica/ui.mjs','versus/ui.mjs'].map(p=>'dist/'+p);
+test('retirar o controle de pausa preserva toda a distribuição restante de v202',()=>{
+ const v202='be8b58d9efbc05f553f5fd72a1f4cb527ecc6894';
+ assert.equal(git(['diff','--name-only',v202,'--','dist',':(exclude)dist/rules-preview.css',':(exclude)dist/rules-preview.mjs']),'');
+});
 test('25 cartões não alteram motores, saves, campanhas, arte ou demais superfícies',()=>{
  assert.equal(git(['diff','--name-only',base,'--','dist',...allowed.map(p=>':(exclude)'+p)]),'');
  const normalize=source=>source.replace("import { rulesPreviewMarkup } from '../rules-preview.mjs';\n",'')

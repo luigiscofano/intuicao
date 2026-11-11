@@ -13,8 +13,8 @@ for(const key of Object.keys(previous.RULE_EXAMPLES)){
  assert.equal(RULE_EXAMPLES[key].steps.length,3);
  assert.ok(RULE_EXAMPLES[key].steps.join('').length<=500);
 }
-// Pedido explícito de 11/11: o CSS antes finito agora repete, com pausa e redução.
+// Pedido explícito de 11/11: o CSS antes finito agora repete, respeita redução de movimento e não exibe controle de pausa.
 const css=readFileSync('dist/rules-preview.css','utf8')+readFileSync('dist/rules-examples.css','utf8');
 assert.match(css,/infinite/);assert.match(css,/prefers-reduced-motion/);
-assert.match(css,/data-ui-reduced-motion/);assert.match(css,/rp-paused/);
+assert.match(css,/data-ui-reduced-motion/);assert.doesNotMatch(css,/rp-paused|rp-motion-toggle/);
 console.log('PASS original SVG preservation and authorized looping-motion contract');
