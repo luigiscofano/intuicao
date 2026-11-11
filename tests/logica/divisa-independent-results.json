@@ -1,0 +1,566 @@
+{
+  "method": "Atribuição direta em JavaScript, sem domínios do gerador. Podas somente por excesso de contato e impossibilidade de conectar letras já atribuídas. Busca completa para cada solução única.",
+  "levels": 80,
+  "records": [
+    {
+      "id": "divisa-a66a3b2755d173ad",
+      "solutionCount": 1,
+      "searchExhausted": true,
+      "nodes": 4,
+      "fullAssignmentsChecked": 1
+    },
+    {
+      "id": "divisa-d80590e73d037b97",
+      "solutionCount": 1,
+      "searchExhausted": true,
+      "nodes": 6,
+      "fullAssignmentsChecked": 2
+    },
+    {
+      "id": "divisa-7f31e9dbd6d612b5",
+      "solutionCount": 1,
+      "searchExhausted": true,
+      "nodes": 6,
+      "fullAssignmentsChecked": 1
+    },
+    {
+      "id": "divisa-370a8d369445d27f",
+      "solutionCount": 1,
+      "searchExhausted": true,
+      "nodes": 5,
+      "fullAssignmentsChecked": 1
+    },
+    {
+      "id": "divisa-e78778e8d4fd0c80",
+      "solutionCount": 1,
+      "searchExhausted": true,
+      "nodes": 9,
+      "fullAssignmentsChecked": 2
+    },
+    {
+      "id": "divisa-fb670609331e6e80",
+      "solutionCount": 1,
+      "searchExhausted": true,
+      "nodes": 7,
+      "fullAssignmentsChecked": 1
+    },
+    {
+      "id": "divisa-adc6d316b4f85fb9",
+      "solutionCount": 1,
+      "searchExhausted": true,
+      "nodes": 6,
+      "fullAssignmentsChecked": 1
+    },
+    {
+      "id": "divisa-7eff1016e5710dc5",
+      "solutionCount": 1,
+      "searchExhausted": true,
+      "nodes": 5,
+      "fullAssignmentsChecked": 1
+    },
+    {
+      "id": "divisa-da50d0887622fdb6",
+      "solutionCount": 1,
+      "searchExhausted": true,
+      "nodes": 8,
+      "fullAssignmentsChecked": 1
+    },
+    {
+      "id": "divisa-3aa9b40650545ade",
+      "solutionCount": 1,
+      "searchExhausted": true,
+      "nodes": 5,
+      "fullAssignmentsChecked": 1
+    },
+    {
+      "id": "divisa-1eb99b4acf9a35c7",
+      "solutionCount": 1,
+      "searchExhausted": true,
+      "nodes": 17,
+      "fullAssignmentsChecked": 4
+    },
+    {
+      "id": "divisa-163dd233a0d69b09",
+      "solutionCount": 1,
+      "searchExhausted": true,
+      "nodes": 6,
+      "fullAssignmentsChecked": 1
+    },
+    {
+      "id": "divisa-1cd1d0d0a80c9381",
+      "solutionCount": 1,
+      "searchExhausted": true,
+      "nodes": 6,
+      "fullAssignmentsChecked": 2
+    },
+    {
+      "id": "divisa-e3c05d4b00bd04ab",
+      "solutionCount": 1,
+      "searchExhausted": true,
+      "nodes": 12,
+      "fullAssignmentsChecked": 2
+    },
+    {
+      "id": "divisa-e2dc6a57f95e87b8",
+      "solutionCount": 1,
+      "searchExhausted": true,
+      "nodes": 28,
+      "fullAssignmentsChecked": 5
+    },
+    {
+      "id": "divisa-cbb16d9950e356cc",
+      "solutionCount": 1,
+      "searchExhausted": true,
+      "nodes": 17,
+      "fullAssignmentsChecked": 2
+    },
+    {
+      "id": "divisa-5d3cd308208b119f",
+      "solutionCount": 1,
+      "searchExhausted": true,
+      "nodes": 18,
+      "fullAssignmentsChecked": 1
+    },
+    {
+      "id": "divisa-f7847bf145af1172",
+      "solutionCount": 1,
+      "searchExhausted": true,
+      "nodes": 8,
+      "fullAssignmentsChecked": 1
+    },
+    {
+      "id": "divisa-3c05e03c1eea2d28",
+      "solutionCount": 1,
+      "searchExhausted": true,
+      "nodes": 10,
+      "fullAssignmentsChecked": 1
+    },
+    {
+      "id": "divisa-c49c909869b3e8e0",
+      "solutionCount": 1,
+      "searchExhausted": true,
+      "nodes": 26,
+      "fullAssignmentsChecked": 3
+    },
+    {
+      "id": "divisa-4e4d9b0ae63521d7",
+      "solutionCount": 1,
+      "searchExhausted": true,
+      "nodes": 9,
+      "fullAssignmentsChecked": 1
+    },
+    {
+      "id": "divisa-873735b41906048e",
+      "solutionCount": 1,
+      "searchExhausted": true,
+      "nodes": 9,
+      "fullAssignmentsChecked": 1
+    },
+    {
+      "id": "divisa-20b03496d6ee78ca",
+      "solutionCount": 1,
+      "searchExhausted": true,
+      "nodes": 8,
+      "fullAssignmentsChecked": 1
+    },
+    {
+      "id": "divisa-7957a3626d6c32ed",
+      "solutionCount": 1,
+      "searchExhausted": true,
+      "nodes": 9,
+      "fullAssignmentsChecked": 1
+    },
+    {
+      "id": "divisa-dac5ad21910f61f7",
+      "solutionCount": 1,
+      "searchExhausted": true,
+      "nodes": 12,
+      "fullAssignmentsChecked": 2
+    },
+    {
+      "id": "divisa-ce33bb0bd536ee09",
+      "solutionCount": 1,
+      "searchExhausted": true,
+      "nodes": 10,
+      "fullAssignmentsChecked": 1
+    },
+    {
+      "id": "divisa-ad00d5ffe5288002",
+      "solutionCount": 1,
+      "searchExhausted": true,
+      "nodes": 19,
+      "fullAssignmentsChecked": 2
+    },
+    {
+      "id": "divisa-3360e649091ff950",
+      "solutionCount": 1,
+      "searchExhausted": true,
+      "nodes": 10,
+      "fullAssignmentsChecked": 1
+    },
+    {
+      "id": "divisa-1f2e27341dfbc8d4",
+      "solutionCount": 1,
+      "searchExhausted": true,
+      "nodes": 10,
+      "fullAssignmentsChecked": 1
+    },
+    {
+      "id": "divisa-034a73f47c7cfffa",
+      "solutionCount": 1,
+      "searchExhausted": true,
+      "nodes": 11,
+      "fullAssignmentsChecked": 1
+    },
+    {
+      "id": "divisa-0b54a9c2be42ddfe",
+      "solutionCount": 1,
+      "searchExhausted": true,
+      "nodes": 11,
+      "fullAssignmentsChecked": 4
+    },
+    {
+      "id": "divisa-8eedfe81258c5b8e",
+      "solutionCount": 1,
+      "searchExhausted": true,
+      "nodes": 18,
+      "fullAssignmentsChecked": 1
+    },
+    {
+      "id": "divisa-fbaac9f754f02ba7",
+      "solutionCount": 1,
+      "searchExhausted": true,
+      "nodes": 33,
+      "fullAssignmentsChecked": 2
+    },
+    {
+      "id": "divisa-2174ce5b587d1d80",
+      "solutionCount": 1,
+      "searchExhausted": true,
+      "nodes": 24,
+      "fullAssignmentsChecked": 6
+    },
+    {
+      "id": "divisa-78306e90d35b0b83",
+      "solutionCount": 1,
+      "searchExhausted": true,
+      "nodes": 32,
+      "fullAssignmentsChecked": 1
+    },
+    {
+      "id": "divisa-cae5c2de841aca8e",
+      "solutionCount": 1,
+      "searchExhausted": true,
+      "nodes": 22,
+      "fullAssignmentsChecked": 4
+    },
+    {
+      "id": "divisa-2cddd55bf521c137",
+      "solutionCount": 1,
+      "searchExhausted": true,
+      "nodes": 23,
+      "fullAssignmentsChecked": 2
+    },
+    {
+      "id": "divisa-eaeb876739b512d3",
+      "solutionCount": 1,
+      "searchExhausted": true,
+      "nodes": 25,
+      "fullAssignmentsChecked": 4
+    },
+    {
+      "id": "divisa-c7c10b1ac8eebe3a",
+      "solutionCount": 1,
+      "searchExhausted": true,
+      "nodes": 38,
+      "fullAssignmentsChecked": 2
+    },
+    {
+      "id": "divisa-97010e172d003c07",
+      "solutionCount": 1,
+      "searchExhausted": true,
+      "nodes": 21,
+      "fullAssignmentsChecked": 2
+    },
+    {
+      "id": "divisa-77f7fec1440d6fa2",
+      "solutionCount": 1,
+      "searchExhausted": true,
+      "nodes": 42,
+      "fullAssignmentsChecked": 4
+    },
+    {
+      "id": "divisa-bc8a3f268e32baa6",
+      "solutionCount": 1,
+      "searchExhausted": true,
+      "nodes": 26,
+      "fullAssignmentsChecked": 4
+    },
+    {
+      "id": "divisa-1cdab9f2ad46c2fe",
+      "solutionCount": 1,
+      "searchExhausted": true,
+      "nodes": 47,
+      "fullAssignmentsChecked": 1
+    },
+    {
+      "id": "divisa-d06144cf0bf75b8d",
+      "solutionCount": 1,
+      "searchExhausted": true,
+      "nodes": 12,
+      "fullAssignmentsChecked": 2
+    },
+    {
+      "id": "divisa-5aaca2d18de0e650",
+      "solutionCount": 1,
+      "searchExhausted": true,
+      "nodes": 19,
+      "fullAssignmentsChecked": 2
+    },
+    {
+      "id": "divisa-439994dc90fc4ec5",
+      "solutionCount": 1,
+      "searchExhausted": true,
+      "nodes": 137,
+      "fullAssignmentsChecked": 24
+    },
+    {
+      "id": "divisa-319b8a22b16ce39a",
+      "solutionCount": 1,
+      "searchExhausted": true,
+      "nodes": 107,
+      "fullAssignmentsChecked": 1
+    },
+    {
+      "id": "divisa-1ec98eb921d7c336",
+      "solutionCount": 1,
+      "searchExhausted": true,
+      "nodes": 102,
+      "fullAssignmentsChecked": 3
+    },
+    {
+      "id": "divisa-1266448c1ec082e2",
+      "solutionCount": 1,
+      "searchExhausted": true,
+      "nodes": 24,
+      "fullAssignmentsChecked": 1
+    },
+    {
+      "id": "divisa-017a09a739bf402d",
+      "solutionCount": 1,
+      "searchExhausted": true,
+      "nodes": 106,
+      "fullAssignmentsChecked": 4
+    },
+    {
+      "id": "divisa-4db272503a895e70",
+      "solutionCount": 1,
+      "searchExhausted": true,
+      "nodes": 28,
+      "fullAssignmentsChecked": 1
+    },
+    {
+      "id": "divisa-e2e91cd112d9a6a9",
+      "solutionCount": 1,
+      "searchExhausted": true,
+      "nodes": 58,
+      "fullAssignmentsChecked": 4
+    },
+    {
+      "id": "divisa-6ddad124d0513228",
+      "solutionCount": 1,
+      "searchExhausted": true,
+      "nodes": 179,
+      "fullAssignmentsChecked": 18
+    },
+    {
+      "id": "divisa-87845371bf8e0e67",
+      "solutionCount": 1,
+      "searchExhausted": true,
+      "nodes": 108,
+      "fullAssignmentsChecked": 2
+    },
+    {
+      "id": "divisa-565296234da03650",
+      "solutionCount": 1,
+      "searchExhausted": true,
+      "nodes": 45,
+      "fullAssignmentsChecked": 1
+    },
+    {
+      "id": "divisa-7cdb70652c935503",
+      "solutionCount": 1,
+      "searchExhausted": true,
+      "nodes": 142,
+      "fullAssignmentsChecked": 10
+    },
+    {
+      "id": "divisa-8f6373464b5bf626",
+      "solutionCount": 1,
+      "searchExhausted": true,
+      "nodes": 39,
+      "fullAssignmentsChecked": 2
+    },
+    {
+      "id": "divisa-18c7291a6c1dcf76",
+      "solutionCount": 1,
+      "searchExhausted": true,
+      "nodes": 75,
+      "fullAssignmentsChecked": 3
+    },
+    {
+      "id": "divisa-26af8431eed50e50",
+      "solutionCount": 1,
+      "searchExhausted": true,
+      "nodes": 37,
+      "fullAssignmentsChecked": 1
+    },
+    {
+      "id": "divisa-c75d7b51a91c8843",
+      "solutionCount": 1,
+      "searchExhausted": true,
+      "nodes": 69,
+      "fullAssignmentsChecked": 1
+    },
+    {
+      "id": "divisa-1b6995b1adf51bf4",
+      "solutionCount": 1,
+      "searchExhausted": true,
+      "nodes": 153,
+      "fullAssignmentsChecked": 6
+    },
+    {
+      "id": "divisa-ecab909b4685059d",
+      "solutionCount": 1,
+      "searchExhausted": true,
+      "nodes": 403,
+      "fullAssignmentsChecked": 25
+    },
+    {
+      "id": "divisa-ebc1210a17565d63",
+      "solutionCount": 1,
+      "searchExhausted": true,
+      "nodes": 450,
+      "fullAssignmentsChecked": 55
+    },
+    {
+      "id": "divisa-13171e81c0148495",
+      "solutionCount": 1,
+      "searchExhausted": true,
+      "nodes": 33,
+      "fullAssignmentsChecked": 1
+    },
+    {
+      "id": "divisa-48d0e51e15c754d9",
+      "solutionCount": 1,
+      "searchExhausted": true,
+      "nodes": 55,
+      "fullAssignmentsChecked": 1
+    },
+    {
+      "id": "divisa-bda8d87cf0f165f2",
+      "solutionCount": 1,
+      "searchExhausted": true,
+      "nodes": 94,
+      "fullAssignmentsChecked": 1
+    },
+    {
+      "id": "divisa-6549a3cc453c91f5",
+      "solutionCount": 1,
+      "searchExhausted": true,
+      "nodes": 656,
+      "fullAssignmentsChecked": 39
+    },
+    {
+      "id": "divisa-dc2416e7a99d1aa2",
+      "solutionCount": 1,
+      "searchExhausted": true,
+      "nodes": 61,
+      "fullAssignmentsChecked": 1
+    },
+    {
+      "id": "divisa-e524958f7e000ea5",
+      "solutionCount": 1,
+      "searchExhausted": true,
+      "nodes": 55,
+      "fullAssignmentsChecked": 4
+    },
+    {
+      "id": "divisa-9a6c5e2a622994d7",
+      "solutionCount": 1,
+      "searchExhausted": true,
+      "nodes": 51,
+      "fullAssignmentsChecked": 1
+    },
+    {
+      "id": "divisa-1b57c3ec30c99db6",
+      "solutionCount": 1,
+      "searchExhausted": true,
+      "nodes": 174,
+      "fullAssignmentsChecked": 1
+    },
+    {
+      "id": "divisa-3487bc2902e58537",
+      "solutionCount": 1,
+      "searchExhausted": true,
+      "nodes": 160,
+      "fullAssignmentsChecked": 3
+    },
+    {
+      "id": "divisa-41018929d12fb6b2",
+      "solutionCount": 1,
+      "searchExhausted": true,
+      "nodes": 225,
+      "fullAssignmentsChecked": 5
+    },
+    {
+      "id": "divisa-274241f775aa5e20",
+      "solutionCount": 1,
+      "searchExhausted": true,
+      "nodes": 79,
+      "fullAssignmentsChecked": 2
+    },
+    {
+      "id": "divisa-4bcc4a20239b2af3",
+      "solutionCount": 1,
+      "searchExhausted": true,
+      "nodes": 156,
+      "fullAssignmentsChecked": 11
+    },
+    {
+      "id": "divisa-6853016ef6282294",
+      "solutionCount": 1,
+      "searchExhausted": true,
+      "nodes": 188,
+      "fullAssignmentsChecked": 1
+    },
+    {
+      "id": "divisa-7a8d9d361576316a",
+      "solutionCount": 1,
+      "searchExhausted": true,
+      "nodes": 308,
+      "fullAssignmentsChecked": 4
+    },
+    {
+      "id": "divisa-2936d72dc3ae6c5f",
+      "solutionCount": 1,
+      "searchExhausted": true,
+      "nodes": 165,
+      "fullAssignmentsChecked": 2
+    },
+    {
+      "id": "divisa-698c4a24806dbe4e",
+      "solutionCount": 1,
+      "searchExhausted": true,
+      "nodes": 46,
+      "fullAssignmentsChecked": 2
+    },
+    {
+      "id": "divisa-1c313f55603825ca",
+      "solutionCount": 1,
+      "searchExhausted": true,
+      "nodes": 1722,
+      "fullAssignmentsChecked": 153
+    }
+  ]
+}

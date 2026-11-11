@@ -1,0 +1,5 @@
+.mirante-board-wrap { max-width: 100%; overflow-x: auto; padding: 2px; }
+.mirante-board { display: block; width: 100%; max-width: 580px; min-width: 330px; height: auto; margin-inline: auto; touch-action: manipulation; }
+.mirante-cell { cursor: pointer; outline: none; }
+.mirante-cell:focus-visible > rect:first-of-type { stroke: #B99B46; stroke-width: 3; stroke-dasharray: 5 3; }
+.mirante-cell:hover > rect:first-of-type { fill: #F5E7B2; }

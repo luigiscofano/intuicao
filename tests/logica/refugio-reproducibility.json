@@ -1,0 +1,14 @@
+{
+  "game": "refugio",
+  "before": {
+    "dist/logica/games/refugio/campaign.mjs": "46667f47f07f02c690504d3607c2cd6939743afdec4a0800ba545f30f3904007",
+    "tests/logica/refugio-certificates.json": "1bcd387eaacfc01b642480b8350f3e679360393996267dde061b0274f2a8b202",
+    "tests/logica/refugio-fixtures.json": "a5c7df8209b31454ad7bf72d499eb60b42dc2e340c49387376e3aaa322c8efe1"
+  },
+  "after": {
+    "dist/logica/games/refugio/campaign.mjs": "46667f47f07f02c690504d3607c2cd6939743afdec4a0800ba545f30f3904007",
+    "tests/logica/refugio-certificates.json": "1bcd387eaacfc01b642480b8350f3e679360393996267dde061b0274f2a8b202",
+    "tests/logica/refugio-fixtures.json": "a5c7df8209b31454ad7bf72d499eb60b42dc2e340c49387376e3aaa322c8efe1"
+  },
+  "identical": true
+}

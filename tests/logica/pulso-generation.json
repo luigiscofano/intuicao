@@ -1,0 +1,62 @@
+{
+  "game": "pulso",
+  "seed": "0x50554c53",
+  "attempts": 3913,
+  "pool": 2351,
+  "levels": 80,
+  "unique": 80,
+  "uniqueUpToRowPermutationAndHorizontalReflection": 80,
+  "techniques": [
+    {
+      "strength": 0,
+      "count": 45
+    },
+    {
+      "strength": 1,
+      "count": 25
+    },
+    {
+      "strength": 2,
+      "count": 10
+    }
+  ],
+  "tiers": [
+    {
+      "tier": 0,
+      "count": 15,
+      "minScore": 42,
+      "maxScore": 107
+    },
+    {
+      "tier": 1,
+      "count": 15,
+      "minScore": 110,
+      "maxScore": 143
+    },
+    {
+      "tier": 2,
+      "count": 15,
+      "minScore": 146,
+      "maxScore": 234
+    },
+    {
+      "tier": 3,
+      "count": 15,
+      "minScore": 1052,
+      "maxScore": 1108
+    },
+    {
+      "tier": 4,
+      "count": 15,
+      "minScore": 1111,
+      "maxScore": 2097
+    },
+    {
+      "tier": 5,
+      "count": 5,
+      "minScore": 2104,
+      "maxScore": 2148
+    }
+  ],
+  "limitations": "As faixas iniciais variam a extensão das cadeias; Avançado exige comparar duas colunas, e as últimas dez fases exigem três. Não houve calibração com jogadores."
+}

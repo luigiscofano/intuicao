@@ -1,0 +1,6 @@
+.divisa-board { display: block; max-width: 35rem; height: auto; margin-inline: auto; touch-action: manipulation; }
+.divisa-board [data-cell] { cursor: pointer; }
+.divisa-board [data-cell][aria-disabled="true"] { cursor: default; }
+.divisa-board [data-cell]:focus { outline: none; }
+.divisa-board [data-cell]:focus-visible .divisa-hit { stroke: #30412F; stroke-dasharray: 2 2; }
+@media (prefers-reduced-motion: no-preference) { .divisa-board [data-cell] { transition: opacity .1s ease; } }

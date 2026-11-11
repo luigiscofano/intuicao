@@ -1,0 +1,6 @@
+.refugio-board { display: block; max-width: 35rem; height: auto; margin-inline: auto; touch-action: manipulation; }
+.refugio-board [data-cell] { cursor: pointer; }
+.refugio-board [data-cell][aria-disabled="true"] { cursor: default; }
+.refugio-board [data-cell]:focus { outline: none; }
+.refugio-board [data-cell]:focus-visible .refugio-hit { stroke: #30412F; stroke-dasharray: 2 2; }
+@media (prefers-reduced-motion: no-preference) { .refugio-board [data-cell] { transition: opacity .1s ease; } }
