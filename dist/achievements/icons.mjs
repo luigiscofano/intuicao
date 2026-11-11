@@ -1,6 +1,20 @@
 // Cada desenho representa a ação da conquista, em vez de repetir uma medalha.
 // O traço permanece vetorial e legível nos cartões e nos avisos de descoberta.
 const ICON_DRAWINGS = {
+  "light-light-jump": `<ellipse cx="15" cy="31" rx="7" ry="20" class="ai-tint"/><ellipse cx="49" cy="31" rx="7" ry="20" class="ai-tint"/><path d="M3 45h12l8-26 12 26 14-26h12M18 15l10 8M30 49l10-8M44 15l10 8"/><circle cx="59" cy="19" r="3" class="ai-accent"/>`,
+  "prumo-unlikely-balance": `<path d="M5 22h18v-9h12v22h24v9H5Z" class="ai-tint"/><path d="m30 46-9 13h18Z" class="ai-accent"/><path d="M9 50h9M43 50h12M30 26v13"/><circle cx="30" cy="42" r="3" class="ai-fill"/>`,
+  "pacto-quartet": `<circle cx="14" cy="14" r="7" class="ai-tint"/><circle cx="14" cy="34" r="7" class="ai-tint"/><path d="m33 7 7 14H26Zm0 20 7 14H26Z" class="ai-accent"/><path d="m51 9 6 6-6 6-6-6Zm0 20 6 6-6 6-6-6Z" class="ai-fill"/><path d="M9 48h11v11H9Zm21 0h11v11H30ZM14 22v4M33 22v4M51 22v5M21 53h8M44 53h13l-5-5m5 5-5 5"/>`,
+  "sintonia-baton-pass": `<path d="M6 49h20V15h30v34H38" class="ai-tint"/><path d="M27 15v34M43 22v20M3 34h18m-6-6 6 6-6 6M34 34h26m-6-6 6 6-6 6"/><circle cx="10" cy="20" r="5" class="ai-fill"/><circle cx="42" cy="54" r="5" class="ai-accent"/>`,
+  "repasse-chain-inheritance": `<path d="M4 12h15v15H4Zm21 12h15v15H25Zm20 12h15v15H45Z" class="ai-tint"/><path d="M11 19h12v12h21v12h12M56 54v6H7M17 56l-6 4 6 4"/><circle cx="11" cy="19" r="3" class="ai-fill"/><circle cx="33" cy="31" r="3" class="ai-accent"/>`,
+  "cerco-last-exit": `<path d="M8 8h48v48H38M8 8v48h16M16 16h32v32H34M16 16v32h10M24 24h16v16H24Z"/><path d="M32 32v29m-5-6 5 6 5-6" class="ai-highlight"/><circle cx="32" cy="32" r="4" class="ai-fill"/><path d="M7 61h3m5 0h3m5 0h3"/>`,
+  "precision-first-try": `<path d="M7 48h25V19h10"/><path d="m47 8 4 10 11 1-9 7 3 11-9-6-10 6 3-11-9-7 11-1Z" class="ai-accent"/><path d="m8 36 7-6v26M9 56h12"/>`,
+  "precision-three-first-tries": `<path d="M5 48h54M10 41V18h10v23M27 41V10h10v31M44 41V18h10v23" class="ai-tint"/><path d="m11 29 3 3 5-7m10-4 3 3 5-7m9 12 3 3 5-7" class="ai-highlight"/><path d="M12 56h40"/>`,
+  "sintonia-four-command-plan": `<path d="M7 56V44h12V32h12V20h12V8h14v48Z" class="ai-tint"/><path d="M10 52h9V40h12V28h12V16h11m-5-5 5 5-5 5" class="ai-highlight"/>`,
+  "efficiency-proven-minimum": `<path d="M9 47V15h46v32H9" stroke-dasharray="3 5"/><path d="M9 47h46m-7-7 7 7-7 7"/><circle cx="9" cy="47" r="5" class="ai-fill"/><circle cx="55" cy="47" r="5" class="ai-accent"/><path d="m25 27 6 6 12-14" class="ai-highlight"/>`,
+  "orbita-personal-best": `<path d="M6 50V14h17v20h18V14h17v36" stroke-dasharray="3 4"/><path d="M6 50h52m-7-7 7 7-7 7"/><circle cx="6" cy="50" r="4" class="ai-fill"/><path d="M25 8h11v8H25Zm0 19h11v8H25Z" class="ai-accent"/>`,
+  "efficiency-clean-plan": `<path d="M12 49V18q0-9 9-9h22q9 0 9 9v28q0 9-9 9H23q-8 0-8-8t8-8h16V25H25v8" class="ai-tint"/><path d="m22 29 3 4 4-4M35 21l4 4 4-4" class="ai-highlight"/><circle cx="12" cy="49" r="3" class="ai-accent"/>`,
+  "cut-millimetric-eye": `<path d="M7 32q25-30 50 0-25 30-50 0Z" class="ai-tint"/><circle cx="32" cy="32" r="10"/><path d="M32 4v56M25 9h14M25 55h14M13 28v8M51 28v8"/><circle cx="32" cy="32" r="3" class="ai-accent"/>`,
+  "repasse-arrival-account": `<path d="M6 8v16l26 14M32 8v30M58 8v16L32 38M16 42h32v16H16Z" class="ai-tint"/><path d="M32 38v12m-5-6 5 6 5-6"/><circle cx="6" cy="8" r="4" class="ai-fill"/><circle cx="32" cy="8" r="4" class="ai-accent"/><circle cx="58" cy="8" r="4" class="ai-fill"/>`,
   first: `
     <path d="M32 53V29M32 38C16 40 12 29 13 22c13-1 20 5 19 16Z" class="ai-tint"/>
     <path d="M32 29C31 16 40 11 51 13c0 11-7 18-19 16Z" class="ai-fill"/>

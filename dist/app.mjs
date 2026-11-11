@@ -1,3 +1,6 @@
+import { originalMissionRound, confirmOriginalMissionRound, evaluateApprovedOriginal } from "./achievements/approved-original.mjs";
+import { recordApprovedAttemptWin } from "./achievements/approved-store.mjs";
+import { recordMissionUnlocks } from "./achievements/mission-store.mjs";
 import { createVersusRoute } from "./versus/route.mjs";
 import { createLogicRoute } from "./logica/route.mjs";
 import { displayCampaignName } from "./campaign-display-names.mjs";
@@ -277,6 +280,7 @@ let customLevel = null,
   customImportRevision = 0;
 const currentLevel = () => customLevel ?? catalogue[game][level];
 const campaignStoreKey = "intuicao.campaign.original.v1";
+let missionRound = originalMissionRound();
 let campaignSaved = {},
   campaignActive = null;
 try {
@@ -292,6 +296,7 @@ function saveCampaign() {
   if (!campaignActive || customLevel || free) return;
   const key = `${campaignActive.game}:${campaignActive.id}`;
   campaignSaved[key] = {
+    missionRound: { ...missionRound },
     state: structuredClone(historyGesture?.before.state ?? state),
     cutMode: historyGesture?.before.cutMode ?? cutMode,
     cutDrafts: structuredClone(historyGesture?.before.cutDrafts ?? cutDrafts),
@@ -553,6 +558,8 @@ function applyAnswerKey() {
   selected =
     game === "light" ? state.objects.findIndex((o) => o.type === "mirror") : 0;
   commitOriginalEdit(before);
+  missionRound.assisted = true;
+  saveCampaign();
   answerProgress.assist(answerKey());
   $("hint-text").textContent =
     "Gabarito aplicado. Este desafio está marcado como assistido. Confira a configuração e clique em Confirmar resposta para testar.";
@@ -793,6 +800,23 @@ function finishResult() {
   if (!success && !evaluation.counted) {
     answerProgress.fail(answerKey());
     evaluation.counted = true;
+  }
+  // Esta função só recebe resultados de confirmações humanas, nunca de render/histórico.
+  if (!evaluation.missionsCounted) {
+    evaluation.missionsCounted = true;
+    const official = !free && !customLevel && !!campaignActive;
+    const firstConfirmation = confirmOriginalMissionRound(missionRound);
+    saveCampaign();
+    if (official && success && !missionRound.assisted) {
+      if (game === "cut") recordApprovedAttemptWin({
+        gameId: "cut", levelId: currentLevel().id, firstConfirmation,
+      });
+      recordMissionUnlocks(evaluateApprovedOriginal({
+        gameId: game, official, humanConfirmed: true, assisted: missionRound.assisted,
+        success, firstConfirmation, ray: evaluation.ray,
+        ratio: evaluation.cut?.ratio, target: evaluation.snapshot.target,
+      }));
+    }
   }
   phase = "result";
   scene.setAttribute("aria-busy", "false");
@@ -1125,6 +1149,8 @@ function start(resumeCustom = false, fresh = false) {
   document.querySelector(".lab").hidden = false;
   selected = 0;
   const l = currentLevel();
+  const missionSaved = !free && !customLevel ? campaignSaved[`${game}:${l.id ?? level}`] : null;
+  missionRound = originalMissionRound(missionSaved?.missionRound, { fresh, resumed: !!missionSaved });
   campaignActive = !free && !customLevel ? { game, id: l.id ?? level } : null;
   if (campaignActive)
     (game === "light" ? lightCampaignProgress : cutCampaignProgress).visit(
@@ -1217,6 +1243,7 @@ function start(resumeCustom = false, fresh = false) {
     if (game === "light")
       selected = state.objects.findIndex((o) => o.type === "mirror");
   }
+  if (fresh) saveCampaign();
   configureOriginalRules();
   $("hint-text").textContent = answerProgress.get(answerKey()).assisted
     ? "Este desafio está marcado como assistido por gabarito."

@@ -209,7 +209,7 @@ export const CAMPAIGN_MISSIONS = Object.freeze([
   mission(
     "prumo",
     "asymmetric",
-    "Equilíbrio improvável",
+    "Possibilidades assimétricas",
     "Conclua uma fase que admite uma partição equilibrada com pelo menos uma peça assimétrica.",
     (level) =>
       level.designEvidence?.pieces?.some((piece) => piece.asymmetric === true),

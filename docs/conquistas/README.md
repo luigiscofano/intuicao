@@ -2,7 +2,9 @@
 
 **Luigi Scofano de Araujo · edição de 11 de novembro de 2026**
 
-O sistema reúne **60 conquistas**: dez marcos gerais e **duas missões específicas para cada um dos 25 jogos**. Os emblemas são SVGs próprios, com formas diferentes relacionadas ao requisito: portais, fios, barcos, selos, vagens, dobras, sinos e contrapesos.
+O sistema reúne **74 conquistas**: dez marcos gerais e **64 missões**. A [ampliação aprovada](MISSOES-APROVADAS-2026-11-11.md) acrescenta quatorze objetivos aos cinquenta originais; Colheita dupla reutiliza a missão de BROTO existente.
+
+As tabelas abaixo documentam as cinquenta missões da edição inicial. A imagem da galeria e a prancha registram essa edição de 60 emblemas, não a galeria ampliada. Os emblemas atuais são SVGs próprios, com formas diferentes relacionadas ao requisito: portais, fios, barcos, selos, vagens, dobras, sinos e contrapesos.
 
 ![Galeria implementada, com emblemas e filtros](../imagens/conquistas/galeria.png)
 
@@ -16,7 +18,7 @@ Abra **Conquistas** na navegação do site. A tela começa em **Missões dos jog
 
 As **28 missões de campanha** usam a conclusão salva de uma fase oficial atual que possui a característica indicada. Conclusões assistidas também contam. Não são inferidas velocidade, número de tentativas ou decisões que o registro antigo não contém. As seis campanhas lógicas usam um índice leve com identidade e versão da fase; o índice é gerado e comparado com os catálogos completos na verificação automatizada.
 
-As **22 missões Versus** observam a transição produzida por uma jogada humana confirmada. Valem as decisões de qualquer participante humano no mesmo navegador e as jogadas confirmadas em treino. Sugestões podem orientar a escolha; prévias, ações automáticas do computador, retomadas e desfazer/refazer não registram descobertas. Mapas importados dos jogos antigos ficam excluídos; os mapas de DESVIO gerados pelo próprio site podem contar.
+As **22 missões Versus originais** observam a transição produzida por uma jogada humana confirmada. Valem as decisões de qualquer participante humano no mesmo navegador e as jogadas confirmadas em treino. Sugestões podem orientar a escolha; prévias, ações automáticas do computador, retomadas e desfazer/refazer não registram descobertas. Mapas importados dos jogos antigos ficam excluídos; os mapas de DESVIO gerados pelo próprio site podem contar.
 
 Uma missão de ação é registrada uma única vez. Desfazer depois não remove o registro, e repetir o feito não cria uma conquista duplicada. Partidas antigas não comprovam retroativamente ações específicas que nunca foram registradas.
 
@@ -32,7 +34,7 @@ O progresso pertence ao navegador e integra o backup existente. Abrir a galeria 
 | CORTE CERTO | **A medida da onda** | Acerte a área pedida usando uma curva Seno ou Cosseno. |
 | ELO | **Elo sob medida** | Feche um circuito em uma fase com pistas de distância entre as peças. |
 | ELO | **Uma passagem, uma escolha** | Feche um circuito em uma fase com um grupo de passagens exclusivas. |
-| PRUMO | **Equilíbrio improvável** | Conclua uma fase que admite uma partição equilibrada com pelo menos uma peça assimétrica. |
+| PRUMO | **Possibilidades assimétricas** | Conclua uma fase que admite uma partição equilibrada com pelo menos uma peça assimétrica. |
 | PRUMO | **Quem fica com a ponte?** | Conclua uma fase em que duas formas equilibradas candidatas disputam o mesmo corredor. |
 | PACTO | **Pares do zero** | Complete um tabuleiro em que nenhum dos quatro símbolos começa com um par pronto nas pistas. |
 | PACTO | **Linha em branco** | Complete um tabuleiro que começa com uma linha inteira sem pistas. |
@@ -59,7 +61,7 @@ O progresso pertence ao navegador e integra o backup existente. Abrir a galeria 
 
 | Jogo | Missão | Condição |
 | --- | --- | --- |
-| BROTO | **Colheita em dobro** | Colha duas ou mais flores da sua equipe em um único plantio. |
+| BROTO | **Colheita dupla** | Colha duas ou mais flores da sua equipe em um único plantio. |
 | BROTO | **Quatro ventos** | Alcance um broto em cada uma das quatro direções com um único plantio. |
 | CERCO | **Porta fechada** | Deixe uma peça adversária sem saída, enquanto outra peça da mesma equipe ainda pode jogar. |
 | CERCO | **Última fresta** | Vença uma partida quando sua equipe tinha exatamente um movimento legal antes da jogada final. |

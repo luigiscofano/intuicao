@@ -1,3 +1,4 @@
+import { APPROVED_MISSIONS } from "./approved-catalog.mjs";
 import { CAMPAIGN_MISSIONS } from "./campaign-missions.mjs";
 import { LEGACY_VERSUS_MISSIONS } from "./legacy-versus-missions.mjs";
 import { VERSUS_MISSIONS } from "./versus-missions.mjs";
@@ -6,6 +7,7 @@ import { VERSUS_MISSIONS } from "./versus-missions.mjs";
 export const ACTION_MISSIONS = Object.freeze([
   ...LEGACY_VERSUS_MISSIONS,
   ...VERSUS_MISSIONS,
+  ...APPROVED_MISSIONS,
 ]);
 
 export const MISSION_CATALOG = Object.freeze([

@@ -121,17 +121,17 @@ function host() {
   };
 }
 
-test("todas as 50 missões e dez conquistas gerais possuem símbolos vetoriais distintos", () => {
+test("todas as 64 missões e dez conquistas gerais possuem símbolos vetoriais distintos", () => {
   const expectedIds = [
     ...GENERAL_IDS,
     ...MISSION_CATALOG.map((mission) => mission.icon),
   ];
-  assert.equal(MISSION_CATALOG.length, 50);
-  assert.equal(new Set(expectedIds).size, 60);
+  assert.equal(MISSION_CATALOG.length, 64);
+  assert.equal(new Set(expectedIds).size, 74);
   assert.deepEqual([...ACHIEVEMENT_ICON_IDS].sort(), expectedIds.sort());
 
   const drawings = expectedIds.map(renderAchievementIcon);
-  assert.equal(new Set(drawings).size, 60);
+  assert.equal(new Set(drawings).size, 74);
   for (const drawing of drawings) {
     assert.match(drawing, /viewBox="0 0 64 64"/);
     assert.match(drawing, /aria-hidden="true"/);

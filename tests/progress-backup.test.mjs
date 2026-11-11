@@ -42,10 +42,11 @@ test("export preserves raw unicode, archives and extra fields without writes", (
   const backup = createProgressBackup(store);
   assert.deepEqual(backup.records, [{ key, raw }]);
   assert.equal(store.writes.length, 0);
-  assert.equal(PROGRESS_KEYS.length, 16);
+  assert.equal(PROGRESS_KEYS.length, 17);
   assert.deepEqual(
     [...PROGRESS_KEYS].sort(),
     [
+      "intuicao.approved-attempts.v1",
       "intuicao.missions.v1",
       "intuicao.logica.v1",
       "intuicao.advanced-hidden",
@@ -129,7 +130,7 @@ test("quota failure on second record rolls back earlier replacement and addition
     () => applyProgressRestore(backup, preview, store),
     (error) => {
       assert.deepEqual(error.rollbackFailures, []);
-      assert.equal(error.recovery.records.length, 16);
+      assert.equal(error.recovery.records.length, 17);
       return true;
     },
   );
@@ -214,7 +215,7 @@ test("rollback failures retain a complete downloadable recovery in the error", (
   );
 });
 
-test("backup sintético das 16 chaves preserva Órbita v3 e lógica v1 no round-trip", () => {
+test("backup sintético das 17 chaves preserva Órbita v3 e lógica v1 no round-trip", () => {
   // Cada store conserva sua versão; os dados são construídos pelo teste.
   const records = PROGRESS_KEYS.map((key) => ({
     key,
@@ -327,7 +328,7 @@ test("os seis jogos lógicos preservam sessões reais, pistas, histórico e conc
     assert.deepEqual(session.states[0], adapter.initialState(level));
     assert.equal(restored.games[id].completed[level.id].version, level.version);
   }
-  assert.equal(recovery.records.length, 16);
+  assert.equal(recovery.records.length, 17);
   const decoded = parseProgressBackup(JSON.stringify(recovery));
   applyProgressRestore(
     decoded,
