@@ -96,26 +96,28 @@ test("inicialização é idempotente e reutiliza os botões informativos existen
   assert.deepEqual(h.animals, original);
   assert.equal(h.hint.removed, true);
 });
-test("as três categorias e todos os 25 jogos permanecem contados pelo catálogo", () => {
+test("as três categorias e todos os 23 jogos permanecem contados pelo catálogo", () => {
   const h = harness();
   initApprovedOpening(h.doc);
   assert.deepEqual(
     Object.values(h.headings).map((h) => h.children[0].textContent),
-    ["2 jogos", "12 jogos", "11 jogos"],
+    ["2 jogos", "10 jogos", "11 jogos"],
   );
-  assert.equal(Object.values(CATEGORY_GAMES).flat().length, 25);
+  assert.equal(Object.values(CATEGORY_GAMES).flat().length, 23);
 });
 test("controles compartilham a linha e se montam antes da casca dos jogos", () => {
   assert.match(
     html,
     /<div id="library-controls">\s*<nav\s+id="library-navigation"/,
   );
-  assert.match(html, /<\/nav>\s*<\/div>\s*<div class="category-heading">/);
+  assert.match(html, /id="library-filters"/);
+  assert.ok(html.indexOf('id="library-filters"') > html.indexOf('id="library-navigation"'));
+  assert.ok(html.indexOf('class="category-heading"') > html.indexOf('id="library-filters"'));
   assert.ok(
     html.indexOf('src="approved-opening.mjs"') <
       html.indexOf('src="approved-game-shell.mjs"'),
   );
-  assert.match(html, />\s*Jogos\s*<span>25<\/span>/);
+  assert.match(html, />\s*Jogos\s*<span>23<\/span>/);
 });
 test("fundo da fauna é removido por composição CSS, sem alterar recursos originais", () => {
   assert.match(css, /isolation: auto/);
