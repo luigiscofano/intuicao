@@ -54,7 +54,7 @@ export const VERSUS_MISSIONS = Object.freeze(
       gameName: "QUINHÃO",
       name: "O fruto que faltava",
       description:
-        "Escolha um fruto que complete um novo trio de castanha, pitanga e jabuticaba na sua colheita.",
+        "Escolha um fruto que complete um novo trio de castanha-do-pará, pitanga e jabuticaba na sua colheita.",
     },
     {
       id: "quinhao-oferta-diversa",
