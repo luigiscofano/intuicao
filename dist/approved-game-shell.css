@@ -739,3 +739,8 @@ body.approved-game-view .approved-versus-surface .grid-cell {
 .approved-tiles.approved-tiles--mirante > span {
   display: none;
 }
+
+
+/* AIIJ aprovada do Refúgio; o visual normal mantém o mosaico anterior. */
+.approved-tiles.approved-tiles--refugio { aspect-ratio: 300 / 210; background: url("./platform-assets/refugio-aiij-folhas.svg") center/contain no-repeat; transform: none; }
+.approved-tiles.approved-tiles--refugio > span { display: none; }

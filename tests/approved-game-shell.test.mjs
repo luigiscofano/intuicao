@@ -376,6 +376,7 @@ test("presentation module has no persistence, network or game-engine dependency"
     ...source.matchAll(/^import .* from ['"]([^'"]+)['"]/gm),
   ].map((match) => match[1]);
   assert.deepEqual(imports, [
+    "./logica/games/refugio/skin.mjs",
     "./versus/metadata.mjs",
     "./logica/metadata.mjs",
     "./contextual-guidance.mjs",

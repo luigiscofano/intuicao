@@ -1,3 +1,4 @@
+import { readRefugioSkin, writeRefugioSkin } from './games/refugio/skin.mjs';
 import { rulesPreviewMarkup } from '../rules-preview.mjs';
 import { createRestartConfirmation } from '../restart-confirmation.mjs';
 import { createResultMotion } from '../result-motion.mjs';
@@ -125,7 +126,7 @@ export function initLogicGames() {
 
   function renderBoard(focusIndex = null) {
     renovoTrace.cancel();
-    find('board').innerHTML = adapter.renderBoard(level, currentState(session), { selectedTool });
+    find('board').innerHTML = adapter.renderBoard(level, currentState(session), { selectedTool, skin: metadata.id === 'refugio' ? readRefugioSkin() : undefined });
     if (focusIndex !== null) find('board').querySelector(`[data-cell="${focusIndex}"]`)?.focus({ preventScroll: true });
   }
 
@@ -262,6 +263,15 @@ export function initLogicGames() {
 
   host.addEventListener('click', event => {
     if (!active || !adapter || restart.isOpen) return;
+    const refugioSkinButton = event.target.closest('button[data-refugio-skin]');
+    if (metadata.id === 'refugio' && screen === 'play' && refugioSkinButton) {
+      if (writeRefugioSkin(refugioSkinButton.dataset.refugioSkin)) {
+        renderBoard();
+        find('board').querySelector(`[data-refugio-skin="${refugioSkinButton.dataset.refugioSkin}"]`)?.focus({ preventScroll: true });
+        globalThis.dispatchEvent(new Event('refugio-skin-change'));
+      }
+      return; // A preferência não cria jogadas, saves de campanha nem vitórias.
+    }
     const target = event.target.closest('[data-level-id],[data-logic-daily],[data-logic-endless],[data-logic-random],[data-logic-tool],[data-cell],[data-logic-check],[data-logic-undo],[data-logic-redo],[data-logic-restart],[data-logic-answer],[data-logic-prev],[data-logic-next],[data-logic-levels]');
     if (!target || target.disabled) return;
     if (target.dataset.levelId) start(adapter.CAMPAIGN.find(item => item.id === target.dataset.levelId));
@@ -350,3 +360,4 @@ export function initLogicGames() {
     },
   };
 }
+
