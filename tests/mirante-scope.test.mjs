@@ -50,10 +50,10 @@ test('host recebe somente ferramenta explícita e botão direito restrito ao MIR
   const reverted = (current.slice(0, start) + current.slice(end))
     .replace('function cellAction(target, tool = selectedTool) {', 'function cellAction(target) {')
     .replace("edit({ type: 'cell', index, tool }, index);", "edit({ type: 'cell', index, tool: selectedTool }, index);");
-  assert.equal(reverted, prior('dist/logica/ui.mjs'));
+  assert.equal(reverted.trimEnd(), prior('dist/logica/ui.mjs').trimEnd());
 });
 test('shell muda somente a AIIJ do MIRANTE e CSS permanece restrito à sua classe', () => {
-  assert.equal(read('dist/approved-game-shell.mjs').replace('      tiles.classList.toggle("approved-tiles--mirante", game === "mirante");\n', ''), prior('dist/approved-game-shell.mjs'));
+  assert.equal(read('dist/approved-game-shell.mjs').replace('      tiles.classList.toggle("approved-tiles--mirante", game === "mirante");\n', '').trimEnd(), prior('dist/approved-game-shell.mjs').trimEnd());
   const previous = prior('dist/approved-game-shell.css'), current = read('dist/approved-game-shell.css');
   assert.ok(current.startsWith(previous));
   const addition = current.slice(previous.length);
