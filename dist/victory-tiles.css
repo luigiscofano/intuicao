@@ -85,3 +85,46 @@ html[data-ui-reduced-motion='true'] .victory-tiles .victory-dot { opacity: 0; }
 .motion-preferences input { width: 20px; height: 20px; margin: 0; accent-color: #39654c; }
 .motion-preferences p { margin: 4px 0 0; color: #59664e; font-size: 13px; line-height: 1.5; }
 .motion-preferences input:focus-visible { outline: 3px solid #244b63; outline-offset: 4px; }
+
+/* Cada campanha responde com sua própria mecânica, apenas na faixa de resultado. */
+.result-badge > .campaign-motion {
+  display: block; width: 100px; height: 70px; flex: 0 0 100px;
+  pointer-events: none; overflow: visible;
+}
+.result-badge .campaign-motion :is(path,circle,ellipse) {
+  fill: none; stroke: #244b63; stroke-width: 2.5;
+  stroke-linecap: round; stroke-linejoin: round;
+}
+.result-badge .campaign-motion .cm-guide { stroke: #c8ccb8; }
+.result-badge .campaign-motion .cm-paper { fill: #fffaf0; stroke: #c8ccb8; }
+.result-badge .campaign-motion .cm-fill { fill: #39654c; stroke: #39654c; }
+.result-badge .campaign-motion .cm-blue-fill { fill: #244b63; }
+.result-badge .campaign-motion .cm-accent { fill: #cca034; stroke: #cca034; }
+.result-badge .campaign-motion .cm-gold { stroke: #cca034; }
+.campaign-motion { --cm-delay: 0ms; }
+.campaign-motion .cm-delay { --cm-delay: 140ms; }
+.campaign-motion .cm-delay-two { --cm-delay: 280ms; }
+@media (prefers-reduced-motion: no-preference) {
+  html:not([data-ui-reduced-motion='true']) .campaign-motion-animate .cm-trace {
+    stroke-dasharray: 100; animation: cm-trace 550ms var(--cm-delay) ease-out both;
+  }
+  html:not([data-ui-reduced-motion='true']) .campaign-motion-animate :is(.cm-settle,.cm-beat,.cm-reveal) {
+    transform-box: fill-box; transform-origin: center;
+    animation: cm-settle 380ms var(--cm-delay) ease-out both;
+  }
+  html:not([data-ui-reduced-motion='true']) .campaign-motion-animate .cm-balance {
+    transform-origin: 60px 53px; animation: cm-balance 700ms ease-out both;
+  }
+  html:not([data-ui-reduced-motion='true']) .campaign-motion-animate :is(.cm-together,.cm-transfer) {
+    animation: cm-transfer 550ms ease-out both;
+  }
+}
+@keyframes cm-trace { from { stroke-dashoffset: 100; } to { stroke-dashoffset: 0; } }
+@keyframes cm-settle { from { opacity: .3; transform: scale(.75); } to { opacity: 1; transform: none; } }
+@keyframes cm-balance { from { transform: rotate(-8deg); } to { transform: none; } }
+@keyframes cm-transfer { from { opacity: .3; transform: translateX(-20px); } to { opacity: 1; transform: none; } }
+@media(max-width:600px) {
+  .result-badge > .campaign-motion { width: 74px; height: 56px; flex-basis: 74px; }
+}
+@media(prefers-reduced-motion:reduce) { .campaign-motion * { animation: none !important; } }
+html[data-ui-reduced-motion='true'] .campaign-motion * { animation: none !important; }
