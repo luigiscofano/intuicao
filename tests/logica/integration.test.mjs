@@ -5,6 +5,7 @@ import { LOGIC_GAME_IDS, LOGIC_GAMES, loadLogicGame } from '../../dist/logica/me
 import { LOGIC_CAMPAIGNS } from '../../dist/logica/catalog-summary.mjs';
 import { GAME_PRESENTATION } from '../../dist/approved-game-shell.mjs';
 import { GAME_GUIDANCE } from '../../dist/contextual-guidance.mjs';
+import { isRetiredGame } from '../../dist/retired-games.mjs';
 import { GAME_INFO } from '../../dist/game-info-content.mjs';
 
 test('seis jogos têm catálogo completo e identidades iguais ao resumo de conquistas', async () => {
@@ -28,7 +29,7 @@ test('seis jogos têm catálogo completo e identidades iguais ao resumo de conqu
 test('cada entrada da biblioteca possui apresentação, orientação, informação e estilo de tabuleiro', () => {
   const html = readFileSync(new URL('../../dist/index.html', import.meta.url), 'utf8');
   const css = readFileSync(new URL('../../dist/logica/ui.css', import.meta.url), 'utf8');
-  for (const game of LOGIC_GAMES) {
+  for (const game of LOGIC_GAMES.filter(game => !isRetiredGame(game.id))) {
     assert.equal((html.match(new RegExp(`data-logic="${game.id}"`, 'g')) || []).length, 1);
     assert.ok(GAME_PRESENTATION[game.id]);
     assert.ok(GAME_GUIDANCE[game.id]);
