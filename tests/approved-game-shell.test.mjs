@@ -16,7 +16,7 @@ const VERSUS_IDS = [
   "acorde",
   "lastro",
 ];
-const LOGIC_IDS = ["divisa", "pulso", "foz", "refugio", "mirante", "renovo"];
+const LOGIC_IDS = ["pulso", "foz", "refugio", "mirante", "renovo"];
 const ORIGINAL_IDS = [
   "light",
   "cut",
@@ -25,7 +25,6 @@ const ORIGINAL_IDS = [
   "pacto",
   "sintonia",
   "repasse",
-  "orbita",
   "desvio",
   "broto",
   "cerco",
@@ -241,22 +240,22 @@ function fixture(game = "light") {
   };
 }
 
-test("as 25 apresentações cobrem o catálogo e têm numeração única", () => {
-  assert.equal(Object.keys(GAME_PRESENTATION).length, 25);
+test("as 23 apresentações cobrem o catálogo e têm numeração única", () => {
+  assert.equal(Object.keys(GAME_PRESENTATION).length, 23);
   assert.deepEqual(
     Object.keys(GAME_PRESENTATION).sort(),
     [...ORIGINAL_IDS, ...LOGIC_IDS, ...VERSUS_IDS].sort(),
   );
   assert.deepEqual(
     Object.keys(GAME_PRESENTATION).sort(),
-    Object.keys(GAME_GUIDANCE).sort(),
+    Object.keys(GAME_GUIDANCE).filter(id => !["divisa", "orbita"].includes(id)).sort(),
   );
   assert.equal(
     new Set(Object.values(GAME_PRESENTATION).map((value) => value.number)).size,
-    25,
+    23,
   );
   for (const [index, id] of LOGIC_IDS.entries()) {
-    assert.equal(GAME_PRESENTATION[id].number, String(index + 12));
+    assert.equal(GAME_PRESENTATION[id].number, String(index + 13));
     assert.equal(GAME_PRESENTATION[id].prefix, "lg");
     assert.equal(GAME_PRESENTATION[id].category, "Raciocínio lógico");
   }
@@ -333,6 +332,7 @@ for (const game of Object.keys(GAME_PRESENTATION)) {
     assert.equal(f.observer.disconnected, true);
     assert.equal(f.events.popstate, undefined);
     assert.equal(f.events["pulso-skin-change"], undefined);
+    assert.equal(f.events["refugio-skin-change"], undefined);
   });
 }
 
@@ -378,6 +378,7 @@ test("presentation module only reads visual preference, without progress writes,
   ].map((match) => match[1]);
   assert.deepEqual(imports, [
     "./logica/games/pulso/skin.mjs",
+    "./logica/games/refugio/skin.mjs",
     "./versus/metadata.mjs",
     "./logica/metadata.mjs",
     "./contextual-guidance.mjs",
@@ -395,3 +396,43 @@ test('AIIJ FOZ aparece só na rota FOZ e some ao alternar jogos ou histórico', 
  }
 });
 
+
+test('campanhas mantêm Reiniciar em um local estável depois do histórico', () => {
+  for (const game of ['light', 'elo', 'sintonia', 'pulso', 'refugio']) {
+    const f = fixture(game);
+    initApprovedGameShell(f.doc, f.win);
+    const restart = f.controls.restart || f.controls.reset;
+    assert.equal(restart.parentElement.className, 'approved-restart-action');
+    assert.equal(restart.parentElement.parentElement.className, 'approved-secondary-actions');
+    assert.equal(restart.attrs['aria-label'], 'Reiniciar');
+    assert.equal(f.controls.undo.attrs['aria-label'], 'Desfazer');
+    assert.equal(f.controls.redo.attrs['aria-label'], 'Refazer');
+    const handler = restart.onclick;
+    f.update();
+    f.update();
+    assert.equal(restart.onclick, handler);
+    assert.equal(f.main.querySelectorAll('.approved-restart-action').length, 1);
+  }
+});
+
+test('a ajuda é recolhida uma vez e respeita a reabertura feita pelo jogador', () => {
+  const f = fixture('pulso');
+  const guidance = new Node('details', 'contextual-guidance');
+  guidance.open = true;
+  f.surface.append(guidance);
+  initApprovedGameShell(f.doc, f.win);
+  assert.equal(guidance.open, false);
+  guidance.open = true;
+  // Outro organizador pode mover o mesmo nó, sem invalidar a escolha do jogador.
+  f.surface.append(guidance);
+  f.update();
+  assert.equal(guidance.open, true);
+  assert.equal(guidance.parentElement.className, 'approved-secondary-actions');
+});
+
+test('normalização não desloca Reiniciar nos duelos', () => {
+  const f = fixture('cerco');
+  initApprovedGameShell(f.doc, f.win);
+  assert.notEqual(f.controls.reset.parentElement.className, 'approved-restart-action');
+  assert.equal(f.controls.reset.attrs['aria-label'], undefined);
+});

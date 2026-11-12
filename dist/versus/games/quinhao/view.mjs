@@ -4,19 +4,8 @@ import {
   playerMark,
   playerName,
 } from "../../shared/markup.mjs";
-import { FRUITS, getOfferIds, getScores, scoreInventory } from "./engine.mjs";
-
-function fruitArt(fruit, basket = false) {
-  const shapes = [
-    '<path d="M31 21C8 37 21 73 47 75C77 76 88 37 62 16Z" fill="#B89462" stroke="#725D3F" stroke-width="3"/><path d="M43 23Q59 47 43 67" fill="none" stroke="#F0D5A6" stroke-width="5" stroke-linecap="round"/>',
-    '<g fill="#D88959" stroke="#A85C3D" stroke-width="2"><ellipse cx="35" cy="48" rx="19" ry="25"/><ellipse cx="50" cy="45" rx="19" ry="27"/><ellipse cx="65" cy="48" rx="19" ry="25"/></g><path d="M39 24Q50 15 61 24M51 21L56 9" fill="none" stroke="#39674A" stroke-width="4" stroke-linecap="round"/>',
-    '<circle cx="50" cy="48" r="28" fill="#776487" stroke="#574663" stroke-width="3"/><ellipse cx="41" cy="37" rx="7" ry="5" fill="#B0A1B9"/><path d="M40 22L50 14L60 22" fill="none" stroke="#39674A" stroke-width="4" stroke-linecap="round"/>',
-  ];
-  const bowl = basket
-    ? '<ellipse cx="50" cy="76" rx="39" ry="17" fill="#E7D6AF" stroke="#A39775" stroke-width="3"/><path d="M13 70Q50 99 87 70" fill="none" stroke="#BCA577" stroke-width="3"/>'
-    : "";
-  return `<svg class="quinhao-fruit" viewBox="0 0 100 100" aria-hidden="true">${bowl}${shapes[fruit]}</svg>`;
-}
+import { getOfferIds, getScores, scoreInventory } from "./engine.mjs";
+import { FRUIT_LABELS as FRUITS, renderFruitArt as fruitArt } from "./fruit-art.mjs";
 
 function deposits(inventories) {
   return inventories

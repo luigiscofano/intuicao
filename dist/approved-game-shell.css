@@ -740,6 +740,26 @@ body.approved-game-view .approved-versus-surface .grid-cell {
   display: none;
 }
 
-/* AIIJ B do Pulso: azulejos com três batidas, fundo vazado. */
-.approved-tiles.approved-tiles--pulso{display:block;aspect-ratio:320 / 200;background:url("./platform-assets/pulso-aiij-azulejo.svg") center/contain no-repeat;transform:none}
-.approved-tiles.approved-tiles--pulso > span{display:none}
+
+/* AIIJ aprovada do Refúgio; o visual normal mantém o mosaico anterior. */
+.approved-tiles.approved-tiles--refugio { aspect-ratio: 300 / 210; background: url("./platform-assets/refugio-aiij-folhas.svg") center/contain no-repeat; transform: none; }
+.approved-tiles.approved-tiles--refugio > span { display: none; }
+
+/* Ações de campanha: reinício sempre depois do histórico, sem mudar ações de duelo. */
+.approved-restart-action { width: 100%; }
+body.approved-game-view #main .approved-restart-action > button {
+  width: 100%;
+  background: var(--approved-paper);
+  color: var(--approved-blue);
+  border-color: var(--approved-blue);
+}
+
+
+/* AIIJ B do Pulso: proporção explícita mantém a arte visível. */
+.approved-tiles.approved-tiles--pulso {
+  display: block;
+  aspect-ratio: 320 / 200;
+  background: url("./platform-assets/pulso-aiij-azulejo.svg") center/contain no-repeat;
+  transform: none;
+}
+.approved-tiles.approved-tiles--pulso > span { display: none; }

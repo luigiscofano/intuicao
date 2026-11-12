@@ -58,8 +58,8 @@ test('estilo não alcança outros jogos quando o host está escondido',()=>{
 // O fundo precisa de altura própria quando os azulejos decorativos são ocultados.
 test('AIIJ Pulso preserva a proporção do SVG sem depender dos filhos',()=>{
  const css=readFileSync(new URL('../../dist/approved-game-shell.css',import.meta.url),'utf8');
- const rule=css.match(/\.approved-tiles\.approved-tiles--pulso\{([^}]+)\}/)?.[1];
+ const rule=css.match(/\.approved-tiles\.approved-tiles--pulso\s*\{([^}]+)\}/)?.[1];
  assert.ok(rule);
- assert.match(rule,/display:block/);
- assert.match(rule,/aspect-ratio:320 \/ 200/);
+ assert.match(rule,/display:\s*block/);
+ assert.match(rule,/aspect-ratio:\s*320 \/ 200/);
 });

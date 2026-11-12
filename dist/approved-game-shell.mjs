@@ -1,4 +1,5 @@
 import { readPulsoSkin } from './logica/games/pulso/skin.mjs';
+import { readRefugioSkin } from './logica/games/refugio/skin.mjs';
 import { VERSUS_GAMES } from "./versus/metadata.mjs";
 import { LOGIC_GAMES } from "./logica/metadata.mjs";
 import { GAME_GUIDANCE } from "./contextual-guidance.mjs";
@@ -12,7 +13,7 @@ export const GAME_PRESENTATION = Object.freeze({
     ]),
   ),
   ...Object.fromEntries(
-    LOGIC_GAMES.map((game) => [
+    LOGIC_GAMES.filter((game) => game.id !== "divisa").map((game) => [
       game.id,
       { ...game, category: "Raciocínio lógico", prefix: "lg" },
     ]),
@@ -73,13 +74,6 @@ export const GAME_PRESENTATION = Object.freeze({
     headline: "Observe a ordem.\nTransforme o caminho.",
     prefix: "r",
   },
-  orbita: {
-    name: "Órbita",
-    number: "09",
-    category: "Raciocínio lógico",
-    headline: "Gire as possibilidades.\nEncontre as conexões.",
-    prefix: "o",
-  },
   broto: {
     name: "Broto",
     number: "10",
@@ -139,6 +133,8 @@ export function initApprovedGameShell(doc = document, win = window) {
   hero.append(copy, tiles, band);
   main.insertBefore(hero, doc.querySelector(".category-heading"));
 
+  // Não recolher novamente uma ajuda que o jogador decidiu abrir.
+  const incorporatedGuidance = new WeakSet();
   let queued = false;
   const observer = new win.MutationObserver(() => {
     if (queued) return;
@@ -197,6 +193,7 @@ export function initApprovedGameShell(doc = document, win = window) {
       tiles.classList.toggle("approved-tiles--renovo", game === "renovo");
       tiles.classList.toggle("approved-tiles--mirante", game === "mirante");
       tiles.classList.toggle("approved-tiles--pulso", game === "pulso" && readPulsoSkin() === "identity");
+      tiles.classList.toggle("approved-tiles--refugio", game === "refugio" && readRefugioSkin() === "identity");
       setText(number, presentation.number);
       setText(category, `${presentation.category} · ${presentation.name}`);
 
@@ -303,6 +300,22 @@ export function initApprovedGameShell(doc = document, win = window) {
       for (const name of ["undo", "redo"])
         move(control(name), panel.querySelector(".approved-history-actions"));
       const secondary = panel.querySelector(".approved-secondary-actions");
+      // Reiniciar tem dois nomes históricos; ambos preservam o mesmo elemento e handler.
+      if (!versus) {
+        for (const [name, label] of [["undo", "Desfazer"], ["redo", "Refazer"]]) {
+          control(name)?.setAttribute("aria-label", label);
+        }
+        const restart = control("restart") || control("reset");
+        if (restart) {
+          let restartSlot = secondary.querySelector(".approved-restart-action");
+          if (!restartSlot) {
+            restartSlot = element(doc, "div", "approved-restart-action");
+            secondary.insertBefore(restartSlot, secondary.firstChild || null);
+          }
+          restart.setAttribute("aria-label", "Reiniciar");
+          move(restart, restartSlot);
+        }
+      }
       for (const group of [
         ...surface.querySelectorAll(
           ":scope > .level-actions, :scope > .board-check-controls",
@@ -322,7 +335,10 @@ export function initApprovedGameShell(doc = document, win = window) {
       // Ajuda já foi incorporada no painel; o disclosure continua disponível e recolhido.
       const guidance = surface.querySelector(".contextual-guidance");
       if (guidance) {
-        guidance.open = false;
+        if (!incorporatedGuidance.has(guidance)) {
+          guidance.open = false;
+          incorporatedGuidance.add(guidance);
+        }
         move(guidance, secondary);
       }
     } finally {
@@ -332,10 +348,12 @@ export function initApprovedGameShell(doc = document, win = window) {
   update();
   win.addEventListener("popstate", update);
   win.addEventListener("pulso-skin-change", update);
+  win.addEventListener("refugio-skin-change", update);
   return () => {
     observer.disconnect();
     win.removeEventListener("popstate", update);
     win.removeEventListener("pulso-skin-change", update);
+    win.removeEventListener("refugio-skin-change", update);
   };
 }
 

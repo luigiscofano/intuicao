@@ -1,7 +1,12 @@
+import { isRetiredGame } from "../retired-games.mjs";
 import { writeProgress } from '../progress-write-guard.mjs';
 // Carregamento de ÓRBITA sob demanda e retomada da tela solicitada.
 // The catalog, solver and game load only when ÓRBITA is opened or resumed.
 export function createOrbitaRoute({ hideOthers }) {
+  // Mantém os saves antigos, mas não reabre um jogo retirado da biblioteca.
+  if (isRetiredGame("orbita")) {
+    return { open() {}, hide() {}, restoreOnLoad: () => false, isOpen: () => false };
+  }
   let ui = null,
     loading = null,
     revision = 0,
@@ -75,3 +80,4 @@ export function createOrbitaRoute({ hideOthers }) {
   if (nav) nav.onclick = () => open();
   return { open, hide, restoreOnLoad, isOpen: () => visible };
 }
+

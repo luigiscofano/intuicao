@@ -4,3 +4,9 @@
 .refugio-board [data-cell]:focus { outline: none; }
 .refugio-board [data-cell]:focus-visible .refugio-hit { stroke: #30412F; stroke-dasharray: 2 2; }
 @media (prefers-reduced-motion: no-preference) { .refugio-board [data-cell] { transition: opacity .1s ease; } }
+
+/* Seletor visual independente das ferramentas e do progresso do jogador. */
+.refugio-skin-picker { display: flex; align-items: center; justify-content: center; flex-wrap: wrap; gap: 6px; margin: 0 0 8px; font-size: 12px; }
+.refugio-skin-picker button { min-height: 32px; padding: 4px 10px; font: inherit; border: 1px solid #B6C3A8; border-radius: 6px; background: #FFFAF0; color: #30412F; }
+.refugio-skin-picker button[aria-pressed="true"] { background: #E1EDCE; border-color: #73965E; font-weight: 700; }
+.refugio-skin-picker button:focus-visible { outline: 2px solid #244b63; outline-offset: 2px; }

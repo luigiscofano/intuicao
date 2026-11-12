@@ -1,12 +1,17 @@
 import test from "node:test";
 import assert from "node:assert/strict";
 import { readFileSync } from "node:fs";
+import { CATEGORY_GAMES } from "../dist/category-navigation.mjs";
 import { GAME_PRESENTATION } from "../dist/approved-game-shell.mjs";
-test("exatamente quatorze jogos do catálogo possuem navegação de níveis", () => {
+test("as doze campanhas ativas possuem navegação de níveis e excluem os onze duelos", () => {
   const games = Object.entries(GAME_PRESENTATION)
     .filter(([, g]) => g.category !== "Versus")
     .map(([id]) => id);
-  assert.equal(games.length, 14);
+  assert.equal(games.length, 12);
+  const active = [...CATEGORY_GAMES.intuicao, ...CATEGORY_GAMES.logica];
+  assert.deepEqual(games.slice().sort(), active.slice().sort());
+  assert.ok(!games.includes("divisa") && !games.includes("orbita"));
+  assert.deepEqual(Object.keys(GAME_PRESENTATION).sort(), Object.values(CATEGORY_GAMES).flat().sort());
   assert.equal(Object.keys(GAME_PRESENTATION).length - games.length, 11);
 });
 test("setas lógicas ficam fora do tabuleiro nas faixas responsivas comuns", () => {

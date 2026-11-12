@@ -1,0 +1,62 @@
+/* Coesão aprovada: identidade existente, sem trocar tabuleiros nem criar novas skins. */
+:root { --ui-control-radius: 7px; --ui-focus: #244b63; }
+body :is(button, a, input, select, summary):focus-visible { outline-color: var(--ui-focus); }
+#library-filters { display:flex; flex-wrap:wrap; gap:8px; margin:12px 0 20px; align-items:center; }
+#library-filters [aria-pressed="true"] { background:#244b63; color:#fffaf0; border-color:#244b63; }
+#favorites-edit { margin-left:auto; }
+#library-empty { padding:18px; border-left:3px solid #cca034; background:#fffaf0; }
+#main > .games > button.is-favorite::after { content:'★'; color:#a47a16; margin-left:8px; }
+#main > .games.library-filtered { display:flex; flex-wrap:wrap; }
+#main > .games.library-filtered > button { flex:1 1 280px; max-width:calc(33.333% - 10px); }
+/* Compacta apenas os cards da biblioteca; ícones, descrições e alvos de toque permanecem. */
+#main > .games > button:not(.game-info-nav) {
+  min-height: 116px;
+  padding-block: 18px;
+  font-size: 21px;
+}
+#main > .games > button:not(.game-info-nav) small {
+  margin-top: 8px;
+}
+#main > .games > button.has-game-nav-icon > .game-nav-icon {
+  top: 20px;
+}
+@media (max-width: 760px) {
+  #main > .games > button:not(.game-info-nav) {
+    min-height: 108px;
+    padding-block: 16px;
+    font-size: 20px;
+  }
+  #main > .games > button.has-game-nav-icon > .game-nav-icon {
+    top: 19px;
+  }
+}
+/* Mantém a ordem DOM e a ordem visual iguais na lista Recentes, aplicada pelo controlador. */
+#favorites-dialog, #preferences-dialog { color:#30412f; background:#fffaf0; border:1px solid #9eae95; border-radius:12px; width:min(760px,calc(100vw - 28px)); max-height:calc(100dvh - 32px); overflow:auto; padding:24px; }
+#favorites-dialog::backdrop, #preferences-dialog::backdrop { background:#20372b88; }
+#favorites-dialog [data-favorites-list] { display:grid; grid-template-columns:repeat(2,minmax(0,1fr)); gap:10px; margin:20px 0; }
+#favorites-dialog label { display:flex; align-items:center; gap:10px; min-height:44px; border:1px solid #c8ccb8; padding:8px 12px; border-radius:7px; }
+#favorites-dialog input { accent-color:#39654c; width:18px; height:18px; }
+.preferences-heading { display:flex; justify-content:space-between; align-items:center; gap:16px; }
+#preferences-dialog section { border-top:1px solid #c8ccb8; padding:18px 0; }
+#preferences-dialog h3 { margin:0 0 12px; color:#244b63; font-size:19px; }
+#preferences-dialog p { font-size:15px; line-height:1.6; }
+.preferences-options { display:flex; flex-wrap:wrap; gap:8px; }
+.preferences-options [aria-pressed="true"] { background:#39654c; color:#fffaf0; border-color:#39654c; }
+#preferences-dialog .motion-preferences { border:0; padding:0; background:transparent; }
+#preferences-dialog .motion-preferences label { display:flex; gap:12px; align-items:center; min-height:44px; }
+#preferences-dialog #progress-backup-panel { margin:0; padding:0; }
+#preferences-dialog .progress-backup { margin:0; }
+#preferences-open { margin-left:0; white-space:nowrap; }
+body > header { flex-wrap:wrap; }
+body :is(.approved-real-actions,.selection-section,.library-navigation,.category-choices,.library-filters) button { border-radius:var(--ui-control-radius); }
+/* A folha decorativa pertence à descoberta; pistas e peças não recebem sobreposição. */
+body.approved-game-view :is(.decor-piles,.leaf-floor) { pointer-events:none; }
+html[data-interface-size="large"] :is(#preferences-dialog,#favorites-dialog,#library-filters,.approved-real-actions) :is(button,select) { font-size:1rem; }
+html[data-interface-size="large"] :is(#preferences-dialog,#favorites-dialog,#library-filters,.approved-real-actions) :is(button,select,summary) { min-height:48px; }
+@media(max-width:760px) {
+  #main > .games.library-filtered > button { max-width:none; flex-basis:100%; }
+  #favorites-edit { margin-left:0; }
+  #favorites-dialog [data-favorites-list] { grid-template-columns:1fr; }
+  #favorites-dialog, #preferences-dialog { padding:18px; }
+  #preferences-open { min-height:44px; }
+}
