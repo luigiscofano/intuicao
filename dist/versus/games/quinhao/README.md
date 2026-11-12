@@ -36,3 +36,17 @@ A visualização prepara a ação ao tocar no cesto. Ela não altera o motor; co
 Execute `node --test tests/versus/quinhao.test.mjs` a partir da raiz do projeto. Os testes usam estados congelados e partilhas completas para conferir que nenhum fruto desaparece, que os totais por tipo permanecem em oito e que finais de vitória e empate seguem a pontuação.
 
 Equilíbrio e frequência de empates exigem partidas com pessoas. As regras aprovadas foram mantidas; a implementação não introduz novos pesos ou desempates.
+
+## Identidade dos frutos (revisão aprovada)
+
+A castanha é agora identificada como **castanha-do-pará (*Bertholletia excelsa*)**,
+representada sem casca dura, com polpa marfim e película marrom irregular.
+A pitanga (*Eugenia uniflora*) mantém o estilo de formas simples e contornos finos,
+com gomos mais estreitos e vermelho claro. A jabuticaba não mudou.
+
+`fruit-art.mjs` compartilha os vetores entre os cestos, depósitos, escolhas e
+celebração de vitória. Os SVGs decorativos não duplicam o nome acessível dos
+controles. Índices numéricos, saves, pontuação, ordem dos frutos e regras são
+inalterados; o nome interno genérico do motor continua compatível.
+
+![Arte aprovada do Quinhão](../../../docs/quinhao-frutos.svg)
