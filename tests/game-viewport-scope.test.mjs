@@ -18,7 +18,8 @@ test('viewport preserva motores, campanhas, saves, geradores, PNGs e FOZ fora do
   for (const file of [...changed, ...added]) assert.ok(allowed.includes(file), file);
 });
 test('index adiciona somente os dois includes de viewport', () => {
-  const stripped = read('dist/index.html')
+  // As setas posteriores têm contrato separado; conserva-se a entrega do viewport.
+  const stripped = git('show', `${viewportRelease}:dist/index.html`)
     .replace('    <link rel="stylesheet" href="game-viewport.css" />\n', '')
     .replace('    <script type="module" src="game-viewport.mjs"></script>\n', '');
   assert.equal(stripped, prior('dist/index.html'));

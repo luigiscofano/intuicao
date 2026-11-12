@@ -41,10 +41,8 @@ test('remoções nas interfaces individuais não alteram ações, campanhas ou g
       assert.ok(previous.includes(snippet), path);
       previous = previous.replace(snippet, '');
     }
-    // RENOVO altera depois a UI lógica; seu delta atual tem contrato próprio.
-    const actual = path === 'logica/ui.mjs'
-      ? git('show', `938709655ecbf248469e106fa740586c25b7ac97:dist/${path}`)
-      : read('dist/' + path);
+    // Os contratos seguintes protegem RENOVO e setas sem alterar este retrato.
+    const actual = git('show', `938709655ecbf248469e106fa740586c25b7ac97:dist/${path}`);
     assert.equal(actual, previous, path);
   }
 });
