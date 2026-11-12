@@ -4,7 +4,7 @@ export function victoryTilesMarkup({ animate = true } = {}) {
     ['blue', 14, 14, 0], ['gold', 41, 14, 180],
     ['green', 14, 41, 0], ['gold', 41, 41, 180],
   ].map(([color, x, y, rotation], index) =>
-    `<g class="victory-tile victory-tile-${index}"><path class="victory-tile-${color}" d="M0 0H25A25 25 0 0 1 0 25Z" transform="translate(${x} ${y}) rotate(${rotation} 12.5 12.5)"/></g>`,
+    `<g class="victory-tile victory-tile-${index}"><image class="victory-tile-${color}" href="platform-assets/tiles/${color}-tl.png" width="25" height="25" transform="translate(${x} ${y}) rotate(${rotation} 12.5 12.5)"/></g>`,
   ).join('');
   const dots = [[8,20], [40,5], [72,20], [73,60], [40,75], [7,60]]
     .map(([cx, cy], index) => `<circle class="victory-dot victory-dot-${index}" cx="${cx}" cy="${cy}" r="2"/>`).join('');

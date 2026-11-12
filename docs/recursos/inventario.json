@@ -79,6 +79,13 @@
         "dist/achievements/icons.mjs"
       ],
       "source": "Emblemas SVG originais desenhados por código para as missões do Intuição em 2026-11-11, sem imagens externas; prancha e captura real da galeria implementada."
+    },
+    "azulejos-geometricos": {
+      "evidence": [
+        "docs/transparent-tiles-2026-11-12.md",
+        "scripts/build-transparent-tiles.mjs"
+      ],
+      "source": "Rasterização programática dos ornamentos geométricos já presentes no código do projeto, sem imagens externas. Conversão solicitada pelo titular em 12/11/2026."
     }
   },
   "assets": [
@@ -1548,6 +1555,106 @@
       "group": "conquistas-emblemas",
       "status": "pending",
       "reviewBasis": "original-vector-emblems"
+    },
+    {
+      "path": "dist/platform-assets/tiles/blue-br.png",
+      "sha256": "a4f9507a742ab46125d0e7a44961c19a657a3e5630cdab967b1ecd6004a2331d",
+      "group": "azulejos-geometricos",
+      "status": "cleared",
+      "rightsHolder": "Luigi Scofano de Araujo (elementos autorais do projeto)",
+      "license": "Direitos reservados; recursos visuais excluídos da licença MIT do código.",
+      "permissionEvidence": "docs/transparent-tiles-2026-11-12.md",
+      "reviewBasis": "generated-from-project-code; existing-visual-rights-policy"
+    },
+    {
+      "path": "dist/platform-assets/tiles/blue-tl.png",
+      "sha256": "09176be237dadff8d7f520409b72da3c20e701b2087c60b7dd6dde83db9216e5",
+      "group": "azulejos-geometricos",
+      "status": "cleared",
+      "rightsHolder": "Luigi Scofano de Araujo (elementos autorais do projeto)",
+      "license": "Direitos reservados; recursos visuais excluídos da licença MIT do código.",
+      "permissionEvidence": "docs/transparent-tiles-2026-11-12.md",
+      "reviewBasis": "generated-from-project-code; existing-visual-rights-policy"
+    },
+    {
+      "path": "dist/platform-assets/tiles/game-gold-br.png",
+      "sha256": "2440d190d6bbe03af05c312feb8c493895eb3cbc4a58f4fc3f3528b4b8350c40",
+      "group": "azulejos-geometricos",
+      "status": "cleared",
+      "rightsHolder": "Luigi Scofano de Araujo (elementos autorais do projeto)",
+      "license": "Direitos reservados; recursos visuais excluídos da licença MIT do código.",
+      "permissionEvidence": "docs/transparent-tiles-2026-11-12.md",
+      "reviewBasis": "generated-from-project-code; existing-visual-rights-policy"
+    },
+    {
+      "path": "dist/platform-assets/tiles/game-gold-tl.png",
+      "sha256": "21c31e435da849b8d7ea18e35a464ca5a65657d433116d306d9d32980ba66182",
+      "group": "azulejos-geometricos",
+      "status": "cleared",
+      "rightsHolder": "Luigi Scofano de Araujo (elementos autorais do projeto)",
+      "license": "Direitos reservados; recursos visuais excluídos da licença MIT do código.",
+      "permissionEvidence": "docs/transparent-tiles-2026-11-12.md",
+      "reviewBasis": "generated-from-project-code; existing-visual-rights-policy"
+    },
+    {
+      "path": "dist/platform-assets/tiles/game-green-tl.png",
+      "sha256": "df682a0bb0ef2872f9bc2bcf9b7bc614c7bf7abafffef18e539d80e12aebc075",
+      "group": "azulejos-geometricos",
+      "status": "cleared",
+      "rightsHolder": "Luigi Scofano de Araujo (elementos autorais do projeto)",
+      "license": "Direitos reservados; recursos visuais excluídos da licença MIT do código.",
+      "permissionEvidence": "docs/transparent-tiles-2026-11-12.md",
+      "reviewBasis": "generated-from-project-code; existing-visual-rights-policy"
+    },
+    {
+      "path": "dist/platform-assets/tiles/gold-bl.png",
+      "sha256": "210ceb10734819dd6681aee5c3612e0cee7cf299cec62a4701bfc0a4c157c574",
+      "group": "azulejos-geometricos",
+      "status": "cleared",
+      "rightsHolder": "Luigi Scofano de Araujo (elementos autorais do projeto)",
+      "license": "Direitos reservados; recursos visuais excluídos da licença MIT do código.",
+      "permissionEvidence": "docs/transparent-tiles-2026-11-12.md",
+      "reviewBasis": "generated-from-project-code; existing-visual-rights-policy"
+    },
+    {
+      "path": "dist/platform-assets/tiles/gold-br.png",
+      "sha256": "fd4ac9b049d3ae4c2de2dada77b1c224746aa6b10afac89a496cad731a9fe704",
+      "group": "azulejos-geometricos",
+      "status": "cleared",
+      "rightsHolder": "Luigi Scofano de Araujo (elementos autorais do projeto)",
+      "license": "Direitos reservados; recursos visuais excluídos da licença MIT do código.",
+      "permissionEvidence": "docs/transparent-tiles-2026-11-12.md",
+      "reviewBasis": "generated-from-project-code; existing-visual-rights-policy"
+    },
+    {
+      "path": "dist/platform-assets/tiles/gold-tl.png",
+      "sha256": "346d21fe27379fb397475fd9f2f298c43649a0741db0bce576767aa67222c42a",
+      "group": "azulejos-geometricos",
+      "status": "cleared",
+      "rightsHolder": "Luigi Scofano de Araujo (elementos autorais do projeto)",
+      "license": "Direitos reservados; recursos visuais excluídos da licença MIT do código.",
+      "permissionEvidence": "docs/transparent-tiles-2026-11-12.md",
+      "reviewBasis": "generated-from-project-code; existing-visual-rights-policy"
+    },
+    {
+      "path": "dist/platform-assets/tiles/green-br.png",
+      "sha256": "c13945e61bf50af3ec57ff696458b286c65459d9dcf68b1548a9bb1f8c88fc40",
+      "group": "azulejos-geometricos",
+      "status": "cleared",
+      "rightsHolder": "Luigi Scofano de Araujo (elementos autorais do projeto)",
+      "license": "Direitos reservados; recursos visuais excluídos da licença MIT do código.",
+      "permissionEvidence": "docs/transparent-tiles-2026-11-12.md",
+      "reviewBasis": "generated-from-project-code; existing-visual-rights-policy"
+    },
+    {
+      "path": "dist/platform-assets/tiles/green-tl.png",
+      "sha256": "84fec7548770602720f8da0c88044a1bb5d625c2727bd71875a18a8708468144",
+      "group": "azulejos-geometricos",
+      "status": "cleared",
+      "rightsHolder": "Luigi Scofano de Araujo (elementos autorais do projeto)",
+      "license": "Direitos reservados; recursos visuais excluídos da licença MIT do código.",
+      "permissionEvidence": "docs/transparent-tiles-2026-11-12.md",
+      "reviewBasis": "generated-from-project-code; existing-visual-rights-policy"
     }
   ],
   "rightsReview": {
