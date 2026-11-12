@@ -1,3 +1,4 @@
+import { isRetiredGame } from "../retired-games.mjs";
 import { LOGIC_GAME_IDS, LOGIC_GAMES } from './metadata.mjs';
 
 // Uma rota atende os seis jogos; cada motor só é importado ao abrir seu cartão.
@@ -9,7 +10,7 @@ export function createLogicRoute({ hideOthers }) {
   let visible = false;
 
   async function open(game) {
-    if (!LOGIC_GAME_IDS.includes(game)) return;
+    if (!LOGIC_GAME_IDS.includes(game) || isRetiredGame(game)) return;
     const token = ++revision;
     visible = true;
     hideOthers();
