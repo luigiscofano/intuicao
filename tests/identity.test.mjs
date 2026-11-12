@@ -116,6 +116,8 @@ test('movimento e vitórias Versus aprovados preservam todos os arquivos fora do
     'dist/versus/games/quinhao/README.md',
     'dist/versus/games/quinhao/index.mjs',
     'dist/versus/games/quinhao/fruit-art.mjs',
+    // Legendas aprovadas nos depósitos: ajuste CSS estritamente visual.
+    'dist/versus/games/quinhao/view.css',
   ];
   assert.equal(git('diff', '--name-only', motionBaseline, '--', 'dist/versus',
     ...approvedVersus.map(path => `:(exclude)${path}`)), '');

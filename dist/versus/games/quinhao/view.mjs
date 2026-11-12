@@ -16,7 +16,10 @@ function deposits(inventories) {
       <div class="quinhao-counts">${inventory
         .map(
           (count, fruit) => `
-        <span aria-label="${count} ${escapeHTML(FRUITS[fruit])}">${fruitArt(fruit)}<b>${count}</b></span>
+        <span class="quinhao-count" role="group" aria-label="${count} ${escapeHTML(FRUITS[fruit])}">
+          <span class="quinhao-count-value" aria-hidden="true">${fruitArt(fruit)}<b>${count}</b></span>
+          <span class="quinhao-fruit-label" aria-hidden="true">${escapeHTML(FRUITS[fruit][0].toUpperCase() + FRUITS[fruit].slice(1))}</span>
+        </span>
       `,
         )
         .join("")}</div>

@@ -50,3 +50,5 @@ controles. Índices numéricos, saves, pontuação, ordem dos frutos e regras s�
 inalterados; o nome interno genérico do motor continua compatível.
 
 ![Arte aprovada do Quinhão](../../../docs/quinhao-frutos.svg)
+
+Os depósitos de Verde e Âmbar exibem os nomes Castanha-do-pará, Pitanga e Jabuticaba abaixo de cada ícone. As legendas acompanham as quantidades; a leitura assistiva identifica cada grupo uma única vez.
