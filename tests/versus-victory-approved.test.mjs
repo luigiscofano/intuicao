@@ -81,7 +81,7 @@ test('integrações consomem apenas resultado novo; história, modos, motores e 
   assert.match(read('dist/versus-victory.css'),/max-width:420px/);assert.match(read('dist/versus-victory.css'),/data-ui-reduced-motion/);
 });
 
-test('108 quadros preservam exatamente as composições geométricas aprovadas em vídeo',async()=>{
+test('108 quadros preservam as composições aprovadas, com os frutos revisados do Quinhão',async()=>{
   const {createHash}=await import('node:crypto');const refs=JSON.parse(read('tests/fixtures/versus-victory-approved-frames.json'));
   for(const {game,owner,t,sha256} of refs){const actual=versusVictoryMotif(game,t,owner).replaceAll('vva-','').replaceAll('var(--acorde-ivory)','#fffaf0').replace(/^<svg class="vv-art"[^>]*>/,'').replace(/<\/svg>$/,'');
     assert.equal(createHash('sha256').update(actual).digest('hex'),sha256,`${game}/${owner}/${t}`);}
