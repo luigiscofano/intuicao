@@ -1,5 +1,6 @@
 import { syncAchievementProgressMotion } from "../ui-motion.mjs";
 import { renderAchievementIcon } from "./icons.mjs";
+import { isNearAchievement, newestUnlocksFirst, recordedUnlockTime, recommendAchievements } from "./discovery.mjs";
 
 const views = new WeakMap();
 const DEFAULT_FILTERS = Object.freeze({
@@ -35,7 +36,7 @@ export function filterAchievements(data, filters = DEFAULT_FILTERS) {
   const entries =
     filters.kind === "general" ? data.achievements : data.missions;
 
-  return (entries ?? []).filter((entry) => {
+  const filtered = (entries ?? []).filter((entry) => {
     const matchesGame =
       filters.kind === "general" ||
       filters.gameId === "all" ||
@@ -46,10 +47,14 @@ export function filterAchievements(data, filters = DEFAULT_FILTERS) {
       !filters.status ||
       filters.status === "all" ||
       (filters.status === "unlocked" && entry.unlocked) ||
-      (filters.status === "locked" && !entry.unlocked);
+      (filters.status === "locked" && !entry.unlocked) ||
+      (filters.status === "near" && isNearAchievement(entry));
 
     return matchesGame && matchesStatus;
   });
+  if (filters.status === "unlocked") return newestUnlocksFirst(filtered);
+  if (filters.status === "near") return [...filtered].sort((a, b) => b.current / b.target - a.current / a.target);
+  return filtered;
 }
 
 function renderSummary(data) {
@@ -91,6 +96,7 @@ function renderFilters(data, filters) {
     .join("");
   const statusOptions = [
     ["all", "Todas"],
+    ["near", "Quase lá"],
     ["unlocked", "Conquistadas"],
     ["locked", "A descobrir"],
   ]
@@ -131,6 +137,36 @@ function renderFilters(data, filters) {
   `;
 }
 
+function recordedDateMarkup(achievement) {
+  if (!achievement.unlocked) return "";
+  const timestamp = recordedUnlockTime(achievement);
+  if (timestamp === null) return '<p class="achievement-date">Data não registrada no progresso antigo.</p>';
+  const date = new Date(timestamp);
+  const label = new Intl.DateTimeFormat("pt-BR", { day: "2-digit", month: "short", year: "numeric", timeZone: "UTC" }).format(date);
+  return `<p class="achievement-date">Descoberta em <time datetime="${date.toISOString()}">${escapeHtml(label)}</time></p>`;
+}
+
+function renderRecommendations(data, filters) {
+  const recommended = recommendAchievements(data, filters);
+  if (!recommended.length || filters.status !== "all") return "";
+  return `<section class="achievement-discoveries" aria-labelledby="achievement-discoveries-title">
+    <h3 id="achievement-discoveries-title">Próximas descobertas</h3>
+    <p>Contagens já registradas vêm primeiro. As demais sugestões são condições para explorar, não estimativas de progresso.</p>
+    <div class="achievement-discovery-grid">${recommended.map(entry => {
+      const partial = Number.isFinite(entry.current) && entry.target > 1 && entry.current > 0;
+      const links = (entry.games ?? (entry.gameId ? [{ id: entry.gameId, name: entry.gameName }] : []))
+        .map(game => `<a href="?game=${encodeURIComponent(game.id)}">Jogar ${escapeHtml(game.name)} →</a>`).join(" ");
+      return `<article class="achievement-discovery-card">
+        <span class="achievement-discovery-icon">${renderAchievementIcon(entry.icon ?? entry.id)}</span>
+        <div><p class="achievement-game">${escapeHtml(entry.gameName ?? "Conquista geral")}</p><h4>${escapeHtml(entry.name)}</h4></div>
+        <p class="achievement-discovery-condition">${escapeHtml(entry.description)}</p>
+        ${partial ? `<p class="achievement-discovery-count">${entry.current} de ${entry.target} registrados${isNearAchievement(entry) ? " · Quase lá" : ""}</p>` : '<p class="achievement-discovery-count">Condição ainda não cumprida</p>'}
+        <div class="achievement-discovery-links">${links}</div>
+      </article>`;
+    }).join("")}</div>
+  </section>`;
+}
+
 function renderCard(achievement, kind) {
   const isMission = kind === "missions";
   const id = escapeHtml(achievement.id);
@@ -155,6 +191,7 @@ function renderCard(achievement, kind) {
       ${gameLabel}
       <h3>${escapeHtml(achievement.name)}</h3>
       <p class="achievement-description">${escapeHtml(achievement.description)}</p>
+      ${recordedDateMarkup(achievement)}
       <div class="achievement-card-bottom">
         <label for="achievement-${id}">${progressText}</label>
         <progress id="achievement-${id}" value="${achievement.current}" max="${achievement.target}">
@@ -176,7 +213,11 @@ function renderCollection(data, filters) {
   const title = isMission
     ? (selectedGame?.name ?? "Pequenas missões, grandes descobertas")
     : "Seu caminho pelo laboratório";
-  const description = isMission
+  const description = filters.status === "near"
+    ? "Metas com pelo menos metade da contagem já registrada. Condições de uma única jogada não recebem progresso estimado."
+    : filters.status === "unlocked"
+    ? "Mais recentes primeiro quando há data registrada. Conquistas sem data continuam preservadas no final."
+    : isMission
     ? "Cada símbolo guarda uma ideia do jogo. Explore a condição, prepare a jogada e descubra uma nova forma de pensar."
     : "As conquistas gerais continuam acompanhando suas descobertas em todas as campanhas.";
   const cards = filtered
@@ -257,8 +298,12 @@ function renderMarkup(container, view, animateProgress = false) {
     </div>
     ${renderSummary(data)}
     ${warnings}
+    ${renderRecommendations(data, filters)}
     ${renderFilters(data, filters)}
-    ${renderCollection(data, filters)}
+    <details class="achievement-full-collection" ${view.collectionOpen || filters.status !== "all" || filters.gameId !== "all" ? "open" : ""}>
+      <summary>Explorar a coleção completa</summary>
+      ${renderCollection(data, filters)}
+    </details>
     ${renderCampaigns(data)}
     ${renderCriteria(data)}
   `;
@@ -267,6 +312,7 @@ function renderMarkup(container, view, animateProgress = false) {
 
 function updateFilter(container, view, field, value, focusSelector) {
   view.filters[field] = value;
+  view.collectionOpen = true;
   renderMarkup(container, view);
   container.querySelector?.(focusSelector)?.focus({ preventScroll: true });
 }
@@ -290,6 +336,9 @@ function bindFilters(container, view) {
       `[data-achievement-kind="${kind}"]`,
     );
   });
+  container.addEventListener("toggle", (event) => {
+    if (event.target?.classList?.contains("achievement-full-collection")) view.collectionOpen = event.target.open;
+  }, true);
   container.addEventListener("change", (event) => {
     const field = event.target.dataset?.achievementFilter;
     if (!["gameId", "status"].includes(field)) return;
@@ -299,7 +348,7 @@ function bindFilters(container, view) {
       field === "gameId"
         ? value === "all" ||
           missionGames(view.data).some((game) => game.id === value)
-        : ["all", "unlocked", "locked"].includes(value);
+        : ["all", "near", "unlocked", "locked"].includes(value);
     if (!valid) return;
 
     updateFilter(
