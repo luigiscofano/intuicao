@@ -3,13 +3,14 @@ import assert from 'node:assert/strict';
 import { execFileSync } from 'node:child_process';
 import { readFileSync } from 'node:fs';
 const root = new URL('../', import.meta.url);
+// A entrega original permanece protegida; PNGs têm seu próprio contrato de escopo.
 const base = '909b9244568ff4af411753dd737b74ee589c6e4c';
 const git = (...args) => execFileSync('git', args, { cwd: root, encoding: 'utf8' });
 const read = path => readFileSync(new URL(path, root), 'utf8');
 const allowed = ['selection-presentation.mjs', 'selection-presentation.css', 'logica/ui.mjs', 'orbita/ui.mjs', 'repasse/ui.mjs', 'sintonia/ui.mjs'].map(path => 'dist/' + path);
 
 test('contadores preservam toda a distribuição fora das seis apresentações autorizadas', () => {
-  assert.equal(git('diff', '--name-only', base, '--', 'dist', ...allowed.map(path => ':(exclude)' + path)), '');
+  assert.equal(git('diff', '--name-only', base, '3c0609db77b66aa27d4d61753e7db7f438b14ba9', '--', 'dist', ...allowed.map(path => ':(exclude)' + path)), '');
   assert.equal(git('ls-files', '--others', '--exclude-standard', '--', 'dist'), '');
 });
 

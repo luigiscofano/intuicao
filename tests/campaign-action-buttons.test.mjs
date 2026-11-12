@@ -88,7 +88,7 @@ test('folha de estilo carrega uma vez após as camadas visuais existentes', () =
   assert.ok(html.indexOf('campaign-action-buttons.css') > html.indexOf('identity.css'));
 });
 
-// O novo escopo não autoriza alterações em motores, saves, campanhas ou artes.
+// Contrato histórico até PR61; a conversão PNG tem escopo próprio e não muda motores.
 test('integração preserva a base responsiva fora dos arquivos aprovados', async () => {
   const { execFileSync } = await import('node:child_process');
   const root = new URL('../', import.meta.url);
@@ -110,7 +110,7 @@ test('integração preserva a base responsiva fora dos arquivos aprovados', asyn
     'versus/games/quinhao/view.mjs', 'versus/games/vazante/view.mjs',
   ].map(path => `dist/${path}`);
   const changed = execFileSync('git', [
-    'diff', '--name-only', '012870b0cb6fffe002771423a608285cd3f40949', '--', 'dist',
+    'diff', '--name-only', '012870b0cb6fffe002771423a608285cd3f40949', '3c0609db77b66aa27d4d61753e7db7f438b14ba9', '--', 'dist',
     ...approved.map(path => `:(exclude)${path}`),
   ], { cwd: root, encoding: 'utf8' });
   assert.equal(changed, '');

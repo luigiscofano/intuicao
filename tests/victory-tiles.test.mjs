@@ -64,7 +64,9 @@ test('campanhas mantêm sua arte separada dos emblemas Versus autorizados depois
 });
 test('arte decorativa finita, local e com redução de movimento',()=>{
   assert.match(victoryTilesMarkup(),/aria-hidden="true" focusable="false"/);
-  assert.doesNotMatch(victoryTilesMarkup(),/<text|<image|href=/);
+  // Os azulejos agora são PNGs locais; o contêiner e o movimento permanecem.
+  assert.doesNotMatch(victoryTilesMarkup(), /<text|https?:/);
+  assert.equal((victoryTilesMarkup().match(/href="platform-assets\/tiles\/[^"]+\.png"/g) || []).length, 4);
   const css=read('dist/victory-tiles.css');
   assert.match(css,/prefers-reduced-motion: reduce/);assert.match(css,/data-ui-reduced-motion='true'/);
   assert.doesNotMatch(css,/infinite|\.experiment|#scene|\.versus/);

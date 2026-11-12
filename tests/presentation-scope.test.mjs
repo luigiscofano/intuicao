@@ -26,6 +26,7 @@ test('Desvio somente oculta os dois controles solo, sem modificar regras ou mapa
  assert.equal(read('dist/collection-ui.mjs').replaceAll(' ${game === "desvio" ? "hidden" : ""}',''),prior('dist/collection-ui.mjs'));
 });
 test('todos os exemplos, motores, campanhas, artes, demais saves e interfaces Versus ficam intactos',()=>{
+ // A conversão PNG posterior é protegida por transparent-tiles.test.mjs.
  const protectedPaths=['dist/rules-examples.css','dist/rules-examples.mjs','dist/rules-preview.css','dist/rules-preview.mjs','dist/rules-logic-examples.mjs','dist/rules-versus-examples.mjs','dist/versus','dist/logica/games','dist/logica/campaigns','dist/logica/session.mjs','dist/progress-backup.mjs','dist/identity.css'];
- assert.equal(git('diff','--name-only',base,'--',...protectedPaths),'');
+ assert.equal(git('diff','--name-only',base,'3c0609db77b66aa27d4d61753e7db7f438b14ba9','--',...protectedPaths),'');
 });

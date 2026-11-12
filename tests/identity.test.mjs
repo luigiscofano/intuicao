@@ -8,6 +8,8 @@ const read = (path) => readFileSync(new URL(path, root), 'utf8');
 const css = read('dist/identity.css');
 const html = read('dist/index.html');
 const baseline = '070eba5';
+// Os contratos anteriores são históricos; o escopo atual está em transparent-tiles.test.mjs.
+const beforePng = '3c0609db77b66aa27d4d61753e7db7f438b14ba9';
 const motionBaseline = 'cdc5c756a340c7613c62cded00650ef98d267ec7';
 const git = (...args) => execFileSync('git', args, { cwd: root, encoding: 'utf8' });
 const clean = css.replace(/\/\*[\s\S]*?\*\//g, '');
@@ -38,7 +40,7 @@ test('a camada visual carrega uma vez, após os estilos existentes, sem sessão 
     .replace('    <script type="module" src="motion-preference.mjs"></script>\n', '');
   assert.equal(beforeMotion, git('show', `${motionBaseline}:dist/index.html`));
   assert.equal(beforeMotion.replace('    <link rel="stylesheet" href="identity.css" />\n', ''), git('show', `${baseline}:dist/index.html`));
-  assert.equal(withoutFooter(css), withoutFooter(git('show', `${motionBaseline}:dist/identity.css`)));
+  assert.equal(withoutFooter(git('show', `${beforePng}:dist/identity.css`)), withoutFooter(git('show', `${motionBaseline}:dist/identity.css`)));
   assert.ok(html.indexOf('identity.css') > html.indexOf('versus/ui.css'));
   assert.doesNotMatch(html, /identity-preview|preview-session/);
   assert.equal(existsSync(new URL('dist/preview-session.js', root)), false);
@@ -49,7 +51,7 @@ test('o acabamento se limita às seis superfícies aprovadas, sem tabuleiro ou r
     assert.match(selector, /^(?::root|#library-controls>|#main>\.games>|body #main \.(?:level-screen|level-tile|selection-rules-preview)|body\.approved-game-view #main \.(?:approved-action-panel|approved-real-actions \.action-hint)|#achievements \.(?:achievement-heading|achievement-summary|achievement-card|achievement-tabs)|#fauna-(?:dialog|title)|body>footer)/, selector);
     assert.doesNotMatch(selector, /canvas|svg|board|achievement-icon|achievement-symbol|ai-rosette|footer::before|footer-signature/);
   }
-  assert.doesNotMatch(css, /--preview-|url\(|@import|localStorage|sessionStorage|animation:|transition:/);
+  assert.doesNotMatch(css, /--preview-|@import|localStorage|sessionStorage|animation:|transition:/);
   for (const [, body] of rules) {
     const properties = body.split(';').filter((part) => part.trim()).map((part) => part.split(':')[0].trim());
     assert.equal(new Set(properties).size, properties.length, 'sem declarações mortas no mesmo bloco');
@@ -67,7 +69,7 @@ test('marcas, cores de apoio e frisos preservam a identidade aprovada', () => {
   assert.match(rule('body.approved-game-view #main .approved-real-actions .action-hint'), /background: var\(--identity-blue\)/);
   assert.doesNotMatch(rule('body.approved-game-view #main .approved-action-panel'), /padding|width|height|grid/);
   for (const selector of ['#achievements .achievement-heading::after', '#fauna-dialog .fauna-heading::before', 'body>footer::after']) {
-    assert.match(rule(selector), /radial-gradient/);
+    assert.match(rule(selector), /platform-assets\/tiles\/.*\.png/);
     assert.match(rule(selector), /pointer-events: none/);
   }
   assert.match(css, /@media \(max-width: 620px\)[\s\S]*padding-right: 0;[\s\S]*position: static;/);
@@ -102,11 +104,11 @@ test('movimento e vitórias Versus aprovados preservam todos os arquivos fora do
     'versus/games/estalo/view.mjs', 'versus/games/mosaico/view.mjs',
     'versus/games/quinhao/view.mjs', 'versus/games/vazante/view.mjs',
   ].map(path => `dist/${path}`);
-  assert.equal(git('diff', '--name-only', motionBaseline, '--', 'dist',
+  assert.equal(git('diff', '--name-only', motionBaseline, beforePng, '--', 'dist',
     ...approved.map(path => `:(exclude)${path}`)), '');
   const extras = git('ls-files', '--others', '--exclude-standard', '--', 'dist').trim().split('\n').filter(Boolean);
   assert.deepEqual(extras.filter(path => !approved.includes(path)), []);
-  assert.equal(withoutFooter(css), withoutFooter(git('show', `${motionBaseline}:dist/identity.css`)));
+  assert.equal(withoutFooter(git('show', `${beforePng}:dist/identity.css`)), withoutFooter(git('show', `${motionBaseline}:dist/identity.css`)));
   const approvedVersus = approved.filter(path => path.startsWith('dist/versus/'));
   assert.equal(git('diff', '--name-only', motionBaseline, '--', 'dist/versus',
     ...approvedVersus.map(path => `:(exclude)${path}`)), '');
@@ -123,10 +125,10 @@ test('o mosaico aprovado fecha a divisória sem corte, repetição ou captura de
   assert.match(ornament, /background-size: 16px 16px/);
   assert.match(ornament, /background-position: 12px 1px,32px 1px,52px 1px,72px 1px/);
   assert.match(ornament, /background-repeat: no-repeat/);
-  assert.match(ornament, /background-color: var\(--identity-cream\)/);
+  assert.match(ornament, /background-color: transparent/);
   assert.match(ornament, /opacity: 1/);
   assert.match(ornament, /pointer-events: none/);
   assert.match(ornament, /user-select: none/);
-  assert.equal((ornament.match(/radial-gradient/g) || []).length, 4);
+  assert.equal((ornament.match(/\.png/g) || []).length, 4);
   assert.doesNotMatch(ornament, /repeat-x|24px 12px|left: 20px|left: 40px/);
 });
