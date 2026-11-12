@@ -6,8 +6,9 @@ import {
   renderAchievements,
 } from "../dist/achievements.mjs";
 import { CONTENT_REVISION } from "../dist/sintonia/campaign.mjs";
-import { CAMPAIGN_VERSION } from "../dist/orbita/campaign.mjs";
-const LOGIC_IDS = ["divisa", "pulso", "foz", "refugio", "mirante", "renovo"];
+import { CAMPAIGN_VERSION, CAMPAIGN as ORBITA_CAMPAIGN } from "../dist/orbita/campaign.mjs";
+import { CAMPAIGN as DIVISA_CAMPAIGN } from "../dist/logica/games/divisa/campaign.mjs";
+const LOGIC_IDS = [ "pulso", "foz", "refugio", "mirante", "renovo"];
 const ORIGINAL_CAMPAIGNS = [
   "light",
   "cut",
@@ -16,7 +17,6 @@ const ORIGINAL_CAMPAIGNS = [
   "pacto",
   "sintonia",
   "repasse",
-  "orbita",
 ];
 const game = (id) => ACHIEVEMENT_GAMES.find((g) => g.id === id);
 function storage(data = {}) {
@@ -49,7 +49,7 @@ function completeAll() {
       version: 1,
       completedIds: game(id).levels.map((l) => l.id),
     };
-  for (const id of ["sintonia", "repasse", "orbita"])
+  for (const id of ["sintonia", "repasse"])
     data[`intuicao.${id}.v1`] = {
       version: 1,
       contentRevision: CONTENT_REVISION,
@@ -86,11 +86,11 @@ function completeAll() {
   };
   return data;
 }
-test("navegador vazio tem 14 campanhas e 1.120 níveis, sem progresso inventado", () => {
+test("navegador vazio tem 12 campanhas e 960 níveis, sem progresso inventado", () => {
   const result = readAchievements(storage());
-  assert.equal(result.available, 1120);
+  assert.equal(result.available, 960);
   assert.equal(result.total, 0);
-  assert.equal(result.games.length, 14);
+  assert.equal(result.games.length, 12);
   assert.deepEqual(
     result.games.map((item) => item.id).sort(),
     [...ORIGINAL_CAMPAIGNS, ...LOGIC_IDS].sort(),
@@ -102,26 +102,26 @@ test("all current saved campaign identities count once, including assisted compl
   const store = storage(completeAll()),
     before = [...store.map];
   const result = readAchievements(store);
-  assert.equal(result.total, 1120);
-  assert.equal(result.hard, 490);
-  assert.equal(result.explored, 14);
+  assert.equal(result.total, 960);
+  assert.equal(result.hard, 420);
+  assert.equal(result.explored, 12);
   assert(result.achievements.every((a) => a.unlocked));
   assert.deepEqual(readAchievements(store), result);
   assert.deepEqual([...store.map], before);
 });
 
-test("os saves anteriores continuam comprovando exatamente as oito campanhas originais", () => {
+test("os saves anteriores continuam comprovando exatamente as sete campanhas originais ativas", () => {
   const data = completeAll();
   delete data["intuicao.logica.v1"];
   const result = readAchievements(storage(data));
-  assert.equal(result.total, 640);
-  assert.equal(result.hard, 280);
-  assert.equal(result.finishedCampaigns, 8);
+  assert.equal(result.total, 560);
+  assert.equal(result.hard, 245);
+  assert.equal(result.finishedCampaigns, 7);
   for (const id of LOGIC_IDS)
     assert.equal(result.games.find((item) => item.id === id).completed, 0);
 });
 
-test("as seis campanhas lógicas contam apenas a identidade e a versão atuais dentro do jogo correto", () => {
+test("as cinco campanhas lógicas ativas contam apenas a identidade e a versão atuais dentro do jogo correto", () => {
   const savedGames = Object.fromEntries(
     LOGIC_IDS.map((id, index) => {
       const [first, second, third, fourth] = game(id).levels;
@@ -146,9 +146,9 @@ test("as seis campanhas lógicas contam apenas a identidade e a versão atuais d
   });
   const before = [...store.map],
     result = readAchievements(store);
-  assert.equal(result.total, 6);
+  assert.equal(result.total, 5);
   assert.equal(result.hard, 0);
-  assert.equal(result.explored, 6);
+  assert.equal(result.explored, 5);
   for (const id of LOGIC_IDS)
     assert.equal(result.games.find((item) => item.id === id).completed, 1);
   assert.deepEqual([...store.map], before);
@@ -224,7 +224,7 @@ test("unknown historical Sintonia and Orbita definitions do not inherit current 
       "intuicao.orbita.v1": {
         version: 1,
         catalogVersion: "old",
-        campaign: { completed: { [game("orbita").levels[0].id]: {} } },
+        campaign: { completed: { [ORBITA_CAMPAIGN[0].id]: {} } },
       },
     }),
   );
@@ -269,7 +269,7 @@ test("UI includes labelled progress, honest criteria, empty state and every camp
   const host = { innerHTML: "" };
   renderAchievements(host, storage());
   assert.match(host.innerHTML, /id="achievements-title" tabindex="-1"/);
-  assert.equal((host.innerHTML.match(/<progress /g) || []).length, 64);
+  assert.equal((host.innerHTML.match(/<progress /g) || []).length, 59);
   const campaignSection = host.innerHTML.match(
     /<details class="achievement-campaigns">([\s\S]*?)<\/details>/,
   )[1];
@@ -280,8 +280,8 @@ test("UI includes labelled progress, honest criteria, empty state and every camp
     campaignLinks.sort(),
     [...ORIGINAL_CAMPAIGNS, ...LOGIC_IDS].sort(),
   );
-  assert.match(host.innerHTML, /nível das 14 campanhas atuais/);
-  assert.match(host.innerHTML, /0<span> \/ 1120<\/span>/);
+  assert.match(host.innerHTML, /nível das 12 campanhas atuais/);
+  assert.match(host.innerHTML, /0<span> \/ 960<\/span>/);
   assert.match(host.innerHTML, /Conclusões assistidas também contam/);
   assert.match(host.innerHTML, /Modo Sem Parar/);
   assert.match(host.innerHTML, /A descobrir/);
@@ -291,12 +291,12 @@ test("UI includes labelled progress, honest criteria, empty state and every camp
 
 test("varied milestones use current completion evidence only", () => {
   const all = readAchievements(storage(completeAll()));
-  assert.equal(all.finishedCampaigns, 14);
+  assert.equal(all.finishedCampaigns, 12);
   assert.equal(all.exploredTiers, 6);
   assert.equal(all.achievements.length, 10);
   assert.equal(new Set(all.achievements.map((a) => a.icon)).size, 10);
-  assert.equal(all.missions.length, 64);
-  assert.equal(all.missions.filter((mission) => mission.unlocked).length, 28);
+  assert.equal(all.missions.length, 59);
+  assert.equal(all.missions.filter((mission) => mission.unlocked).length, 24);
   const one = readAchievements(
     storage({
       "intuicao.campaign.light.progress.v1": {
@@ -307,4 +307,26 @@ test("varied milestones use current completion evidence only", () => {
   );
   assert.equal(one.finishedCampaigns, 0);
   assert.equal(one.exploredTiers, 1);
+});
+
+
+// A aposentadoria altera a projeção da biblioteca, nunca o registro histórico.
+test("saves válidos de Divisa e Órbita permanecem intactos sem inflar campanhas ativas", () => {
+  const level = DIVISA_CAMPAIGN[0];
+  const store = storage({
+    "intuicao.orbita.v1": {
+      version: 1, catalogVersion: CAMPAIGN_VERSION,
+      campaign: { completed: { [ORBITA_CAMPAIGN[0].id]: { assisted: false } } },
+    },
+    "intuicao.logica.v1": { version: 1, games: { divisa: {
+      completed: { [level.id]: { version: level.version, assisted: false } }, sessions: {},
+    } } },
+  });
+  const before = [...store.map];
+  const result = readAchievements(store);
+  assert.equal(result.total, 0);
+  assert.equal(result.explored, 0);
+  assert(!result.games.some(game => ["divisa", "orbita"].includes(game.id)));
+  assert(!result.missions.some(mission => mission.gameIds.some(id => ["divisa", "orbita"].includes(id))));
+  assert.deepEqual([...store.map], before);
 });
