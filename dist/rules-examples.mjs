@@ -1,3 +1,5 @@
+import { LOGIC_RULE_EXAMPLES } from './rules-logic-examples.mjs';
+import { VERSUS_RULE_EXAMPLES } from './rules-versus-examples.mjs';
 // Pequenos exemplos visuais que demonstram uma ação de cada jogo.
 // Small illustrative states, not playable levels. Grounded in the shipped engines.
 // No campaign counts: these examples teach one action while the text states the goal.
@@ -290,3 +292,6 @@ RULE_EXAMPLES.cerco = {
       txt(120, 134, 'As seis peças permanecem no tabuleiro.', 9),
   ),
 };
+
+// Novos jogos usam o mesmo cartão, sem importar motores para a biblioteca.
+Object.assign(RULE_EXAMPLES, LOGIC_RULE_EXAMPLES, VERSUS_RULE_EXAMPLES);

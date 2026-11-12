@@ -95,6 +95,9 @@ test('integração preserva a base responsiva fora dos arquivos aprovados', asyn
   const approved = [
     // Mosaico do rodapé aprovado depois; limites exatos em identity.test.mjs.
     'identity.css',
+    // Como jogar: 25 cartões com loop, escopo protegido em rules-scope.test.mjs.
+    'rules-examples.css', 'rules-examples.mjs', 'rules-preview.css', 'rules-preview.mjs',
+    'rules-logic-examples.mjs', 'rules-versus-examples.mjs', 'logica/ui.mjs',
     'approved-game-shell.css', 'approved-game-shell.mjs', 'campaign-action-buttons.css',
     'index.html', 'versus/README.md', 'versus/ui.mjs', 'versus/repeat-choice.mjs',
     'versus/games/dobra/view.mjs', 'versus/games/enlace/view.mjs',
