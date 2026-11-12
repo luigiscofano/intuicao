@@ -17,6 +17,7 @@ import { escapeHTML as esc, playerMark, playerName } from "./shared/markup.mjs";
 import { versusIcon } from "./icons.mjs";
 import { evaluateVersusMissions } from "../achievements/versus-missions.mjs";
 import { recordMissionUnlocks } from "../achievements/mission-store.mjs";
+import { renderVersusVictory, stopVersusVictory } from "../versus-victory.mjs";
 
 const MODES = Object.freeze({
   local: "Dois jogadores locais",
@@ -87,6 +88,8 @@ export function initVersusGames() {
   let botFailed = false;
   let message = "";
   let invalidSave = false;
+  let freshResult = null;
+  let renderedResult = null;
 
   const state = () => currentState(session);
   const computerTurn = () =>
@@ -96,6 +99,8 @@ export function initVersusGames() {
     !state().result;
 
   function stopWork() {
+    freshResult = null;
+    stopVersusVictory(find("result"));
     revision += 1;
     clearTimeout(botTimer);
     botTimer = null;
@@ -269,15 +274,30 @@ export function initVersusGames() {
     const resultHost = find("result");
     const result = state().result;
     if (!result) {
+      stopVersusVictory(resultHost);
       resultHost.innerHTML = "";
+      renderedResult = null;
+      freshResult = null;
       return;
     }
+    // Redesenhos de placar, avisos ou foco não repetem nem substituem a entrada.
+    if (renderedResult === result && resultHost.firstElementChild) return;
+    renderedResult = result;
+    const animate = freshResult === result;
+    freshResult = null;
     const draw = result.winner === null;
-    resultHost.innerHTML = `
-      <section class="nv-result nv-result-${game.id}" data-winner="${draw ? "draw" : result.winner}" role="status">
-        <div class="nv-result-art">${game.view.renderResult?.(state()) ?? versusIcon(game.id, "nv-result-icon")}</div>
-        <div><p class="eyebrow">${draw ? "DUELO EM EQUILÍBRIO" : "PARTIDA CONCLUÍDA"}</p><h3>${draw ? "Empate" : `${playerMark(result.winner)} ${playerName(result.winner)} venceu`}</h3><p>${esc(result.reason)}</p></div>
-      </section>`;
+    renderVersusVictory(resultHost, {
+      game: game.id,
+      winnerName: draw ? "" : playerName(result.winner),
+      owner: result.winner,
+      draw,
+      lost: playConfig.mode === "bot" && result.winner === 1,
+      mode: playConfig.mode,
+      reason: result.reason,
+      mascot: draw ? null : playConfig.mascots[result.winner],
+      animate,
+      resultKey: result,
+    });
   }
 
   function renderPosition() {
@@ -356,6 +376,7 @@ export function initVersusGames() {
     const nextSession = applySessionMove(game.engine, session, move);
     message = game.view.describeMove(before, move, currentState(nextSession));
     session = nextSession;
+    freshResult = !before.result ? state().result : null;
     clearPreview();
     renderPosition();
     save();

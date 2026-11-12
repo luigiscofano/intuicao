@@ -57,8 +57,10 @@ test('DESVIO permanece exatamente igual, inclusive apresentação e ciclo',()=>{
   }
   const r=rig();r.motion.show('desvio',true);assert.ok(r.classes.has('result-success'));assert.equal([...r.timers.values()][0].ms,1100);
 });
-test('arquivos das vitórias Versus não recebem a opção A',()=>{
-  for(const path of ['dist/versus-victory.mjs','dist/versus/ui.mjs','dist/versus-victory.css'])assert.equal(read(path),git(path),path);
+test('campanhas mantêm sua arte separada dos emblemas Versus autorizados depois',()=>{
+  assert.doesNotMatch(read('dist/result-motion.mjs'),/versus-victory-art/);
+  assert.doesNotMatch(read('dist/versus-victory.mjs'),/victoryTilesMarkup|PARABÉNS/);
+  assert.match(read('dist/versus/ui.mjs'),/renderVersusVictory/);
 });
 test('arte decorativa finita, local e com redução de movimento',()=>{
   assert.match(victoryTilesMarkup(),/aria-hidden="true" focusable="false"/);

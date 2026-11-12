@@ -67,3 +67,7 @@ A CI mantém os cinco motores anteriores e acrescenta este recorte. Não executa
 ## Movimento aprovado
 
 A edição de 11/11/2026 acrescenta `ui-motion.test.mjs`, `victory-tiles.test.mjs` e `motion-preference.test.mjs` ao recorte de integração. O retrato de identidade passa a aceitar somente os dez arquivos de apresentação aprovados, preservando o restante de `dist/` byte a byte em relação ao PR 53. As expectativas históricas de confetes/zoom das campanhas são substituídas pela opção A; o resultado Versus continua intacto. Veja [escopo, 519 testes e limites visuais](../docs/movimento/VERIFICACAO-2026-11-11.md).
+
+## Vitórias específicas dos onze jogos Versus
+
+`node --test tests/versus-victory-approved.test.mjs` verifica os emblemas aprovados, resultados reais, ciclo sem repetição, computador/empate, movimento reduzido e preservação dos motores. [Detalhes](../docs/movimento/VITORIAS-VERSUS-2026-11-11.md).

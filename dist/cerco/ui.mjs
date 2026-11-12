@@ -465,6 +465,9 @@ export function initCerco() {
       emblem: piece(state.winner, config),
       lost,
       animate: celebrate,
+      mode: config.mode,
+      mascot: config.mascots[state.winner],
+      resultKey: state,
     });
     resultLayout.update(true);
   }
