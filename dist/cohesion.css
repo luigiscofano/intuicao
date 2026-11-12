@@ -8,6 +8,28 @@ body :is(button, a, input, select, summary):focus-visible { outline-color: var(-
 #main > .games > button.is-favorite::after { content:'★'; color:#a47a16; margin-left:8px; }
 #main > .games.library-filtered { display:flex; flex-wrap:wrap; }
 #main > .games.library-filtered > button { flex:1 1 280px; max-width:calc(33.333% - 10px); }
+/* Compacta apenas os cards da biblioteca; ícones, descrições e alvos de toque permanecem. */
+#main > .games > button:not(.game-info-nav) {
+  min-height: 116px;
+  padding-block: 18px;
+  font-size: 21px;
+}
+#main > .games > button:not(.game-info-nav) small {
+  margin-top: 8px;
+}
+#main > .games > button.has-game-nav-icon > .game-nav-icon {
+  top: 20px;
+}
+@media (max-width: 760px) {
+  #main > .games > button:not(.game-info-nav) {
+    min-height: 108px;
+    padding-block: 16px;
+    font-size: 20px;
+  }
+  #main > .games > button.has-game-nav-icon > .game-nav-icon {
+    top: 19px;
+  }
+}
 /* Mantém a ordem DOM e a ordem visual iguais na lista Recentes, aplicada pelo controlador. */
 #favorites-dialog, #preferences-dialog { color:#30412f; background:#fffaf0; border:1px solid #9eae95; border-radius:12px; width:min(760px,calc(100vw - 28px)); max-height:calc(100dvh - 32px); overflow:auto; padding:24px; }
 #favorites-dialog::backdrop, #preferences-dialog::backdrop { background:#20372b88; }
