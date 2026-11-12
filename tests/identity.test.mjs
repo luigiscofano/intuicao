@@ -8,7 +8,7 @@ const read = (path) => readFileSync(new URL(path, root), 'utf8');
 const css = read('dist/identity.css');
 const html = read('dist/index.html');
 const baseline = '070eba5';
-// Os contratos anteriores são históricos; o escopo atual está em transparent-tiles.test.mjs.
+// Os contratos anteriores são históricos; o escopo atual está em game-viewport-scope.test.mjs.
 const beforePng = '3c0609db77b66aa27d4d61753e7db7f438b14ba9';
 const motionBaseline = 'cdc5c756a340c7613c62cded00650ef98d267ec7';
 const git = (...args) => execFileSync('git', args, { cwd: root, encoding: 'utf8' });
@@ -26,7 +26,7 @@ test('a camada visual carrega uma vez, após os estilos existentes, sem sessão 
   assert.equal((html.match(/href="identity\.css"/g) || []).length, 1);
   // Aprovação de 11/11: duas folhas de movimento e controle local de preferência.
   // Remover somente esses acréscimos mantém a comparação histórica integral.
-  const beforeMotion = html
+  const beforeMotion = git('show', 'b34690d870b714280f742142413a64d9d7e0387e:dist/index.html')
     .replace('    <link rel="stylesheet" href="selection-presentation.css" />\n', '')
     .replace('    <script type="module" src="selection-presentation.mjs"></script>\n', '')
     .replace('          <button type="button" id="selection-daily">Desafio diário</button>\n', '')
@@ -106,7 +106,7 @@ test('movimento e vitórias Versus aprovados preservam todos os arquivos fora do
   ].map(path => `dist/${path}`);
   assert.equal(git('diff', '--name-only', motionBaseline, beforePng, '--', 'dist',
     ...approved.map(path => `:(exclude)${path}`)), '');
-  const extras = git('ls-files', '--others', '--exclude-standard', '--', 'dist').trim().split('\n').filter(Boolean);
+  const extras = git('diff', '--name-only', '--diff-filter=A', motionBaseline, beforePng, '--', 'dist').trim().split('\n').filter(Boolean);
   assert.deepEqual(extras.filter(path => !approved.includes(path)), []);
   assert.equal(withoutFooter(git('show', `${beforePng}:dist/identity.css`)), withoutFooter(git('show', `${motionBaseline}:dist/identity.css`)));
   const approvedVersus = approved.filter(path => path.startsWith('dist/versus/'));

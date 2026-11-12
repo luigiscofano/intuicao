@@ -51,6 +51,8 @@ export function installBoardFit(doc = globalThis.document, win = globalThis) {
     const liveParents = new Set();
     for (const board of root.querySelectorAll(FIT_BOARD_SELECTOR)) {
       if (board.closest('[hidden]') || !board.getClientRects().length) continue;
+      // O enquadramento novo mede também todos os controles do shell.
+      if (board.closest('.approved-game-section')) continue;
       const parent = board.parentElement;
       if (parent) {
         liveParents.add(parent);

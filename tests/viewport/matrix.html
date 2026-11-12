@@ -1,0 +1,32 @@
+<!doctype html><meta charset="utf-8"><title>Viewport QA</title><style>body{font:14px system-ui;margin:8px}iframe{border:1px solid;display:block;margin-top:10px}pre{white-space:pre-wrap;max-height:220px;overflow:auto}</style><button id="run">Run viewport matrix</button><select id="mode"><option>first</option><option>last</option><option>daily</option><option>endless</option></select><input id="games" placeholder="All games"><pre id="results">Ready</pre><iframe id="frame" credentialless></iframe><script type="module">
+const games='light cut elo prumo pacto sintonia repasse orbita divisa pulso foz refugio mirante renovo desvio broto cerco enlace vazante mosaico quinhao estalo dobra acorde lastro'.split(' ');
+const params=new URL(location.href).searchParams;const sizes=params.has('sizes')?params.get('sizes').split(',').map(s=>s.split('x').map(Number)):[[1440,900],[1180,757],[768,1024],[390,844],[320,568],[844,390]];document.getElementById('games').value=params.get('games')||'';
+const frame=document.getElementById('frame'),out=document.getElementById('results');
+const wait=ms=>new Promise(r=>setTimeout(r,ms));
+const visible=e=>e&&!e.closest('[hidden]')&&e.getClientRects().length&&!e.parentElement?.closest('details:not([open])');
+async function until(fn){for(let i=0;i<80;i++){const r=fn();if(r)return r;await wait(60);}throw Error('timeout');}
+function measure(game,size,mode){const d=frame.contentDocument,w=frame.contentWindow,s=[...d.querySelectorAll('.viewport-game')].find(visible);if(!s)throw Error('no viewport section');const parts=[...s.querySelectorAll('.approved-game-heading,.approved-play-surface,.approved-action-panel')].filter(visible),rects=parts.map(e=>e.getBoundingClientRect());const top=Math.min(...rects.map(r=>r.top)),bottom=Math.max(...rects.map(r=>r.bottom));const off=parts.flatMap(p=>[...p.querySelectorAll('button,summary,select')]).filter(visible).filter(e=>!e.closest('.viewport-board-scroll')).map(e=>({name:e.getAttribute('aria-label')||e.textContent.trim(),rect:e.getBoundingClientRect()})).filter(e=>e.rect.top< -1||e.rect.bottom>w.innerHeight+1||e.rect.left< -1||e.rect.right>w.innerWidth+1).map(e=>({name:e.name,top:Math.round(e.rect.top),bottom:Math.round(e.rect.bottom),left:Math.round(e.rect.left),right:Math.round(e.rect.right)}));return{game,size,mode,fit:s.dataset.viewportFit,top:Math.round(top),bottom:Math.round(bottom),height:Math.round(bottom-top),off,overflow:d.documentElement.scrollWidth>w.innerWidth+1};}
+document.getElementById('run').onclick=async()=>{
+ const modes=params.get('modes')?.split(',')||[document.getElementById('mode').value],selected=document.getElementById('games').value.trim().split(/\s+/).filter(Boolean),reports=[];
+ const settle=async(ms=250)=>{await new Promise(r=>frame.contentWindow.requestAnimationFrame(()=>frame.contentWindow.requestAnimationFrame(r)));await wait(ms);};
+ for(const mode of modes)for(const game of selected.length?selected:games){
+  try{
+   frame.width=sizes[0][0];frame.height=sizes[0][1];frame.src=`index.html?game=${game}`;await new Promise(r=>frame.onload=r);
+   const d=frame.contentDocument;
+   const options=await until(()=>{const levels=[...d.querySelectorAll('.level-tile,.logic-level,.duel-maps [data-map]')].filter(visible);const buttons=[...d.querySelectorAll('button')].filter(visible);const start=buttons.find(e=>/^Retomar partida interrompida/.test(e.textContent.trim()))||buttons.find(e=>/^(Iniciar partida|Começar partida|Jogar agora|Iniciar duelo)/.test(e.textContent.trim()));return levels.length?levels:start?[start]:null;});
+   let target=mode==='last'?options.at(-1):options[0];
+   if(['local','competitive','bot','training'].includes(mode)){
+    const chooser=d.querySelector('#nv-mode,#b-mode,#ce-mode,#c-duel-mode');
+    if(!chooser||![...chooser.options].some(o=>o.value===mode)){reports.push({game,mode,skip:true});continue;}
+    chooser.value=mode;chooser.dispatchEvent(new Event('change',{bubbles:true}));
+    target=d.querySelector('#nv-start,#b-start,#ce-start')||d.querySelector('.duel-maps [data-map]');
+   }
+   if(mode==='daily'||mode==='endless')target=[...d.querySelectorAll('button')].find(e=>visible(e)&&e.textContent.trim()===(mode==='daily'?'Jogar desafio diário':'Jogar sem parar'));
+   if(!target){reports.push({game,mode,skip:true});continue;}
+   target.click();await wait(100);d.querySelector('dialog[open] [data-dialog-confirm]')?.click();await until(()=>[...d.querySelectorAll('.viewport-game')].find(visible));await settle(600);
+   for(const size of sizes){frame.width=size[0];frame.height=size[1];await settle(350);reports.push(measure(game,size,mode));out.textContent=JSON.stringify({done:false,count:reports.length,reports},null,2);}
+  }catch(e){reports.push({game,mode,error:e.message});}
+ }
+ out.textContent=JSON.stringify({done:true,count:reports.length,reports},null,2);
+};
+</script>

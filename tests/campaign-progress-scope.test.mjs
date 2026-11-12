@@ -11,7 +11,8 @@ const allowed = ['selection-presentation.mjs', 'selection-presentation.css', 'lo
 
 test('contadores preservam toda a distribuição fora das seis apresentações autorizadas', () => {
   assert.equal(git('diff', '--name-only', base, '3c0609db77b66aa27d4d61753e7db7f438b14ba9', '--', 'dist', ...allowed.map(path => ':(exclude)' + path)), '');
-  assert.equal(git('ls-files', '--others', '--exclude-standard', '--', 'dist'), '');
+  // Arquivos novos da entrega atual são protegidos em game-viewport-scope.test.mjs.
+  assert.equal(git('diff', '--name-only', '--diff-filter=A', base, '3c0609db77b66aa27d4d61753e7db7f438b14ba9', '--', 'dist'), '');
 });
 
 test('remoções nas interfaces individuais não alteram ações, campanhas ou gravação', () => {
