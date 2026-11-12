@@ -9,9 +9,10 @@ function measure(game,size,mode){const d=frame.contentDocument,w=frame.contentWi
 document.getElementById('run').onclick=async()=>{
  const modes=params.get('modes')?.split(',')||[document.getElementById('mode').value],selected=document.getElementById('games').value.trim().split(/\s+/).filter(Boolean),reports=[];
  const settle=async(ms=250)=>{await new Promise(r=>frame.contentWindow.requestAnimationFrame(()=>frame.contentWindow.requestAnimationFrame(r)));await wait(ms);};
- for(const mode of modes)for(const game of selected.length?selected:games){
+ const requested=selected.length?games.filter(game=>selected.includes(game)):games;
+ for(const mode of modes)for(const game of requested){
   try{
-   frame.width=sizes[0][0];frame.height=sizes[0][1];frame.src=`index.html?game=${game}`;await new Promise(r=>frame.onload=r);
+   frame.width=sizes[0][0];frame.height=sizes[0][1];frame.src=`index.html?game=${encodeURIComponent(game)}`;await new Promise(r=>frame.onload=r);
    const d=frame.contentDocument;
    const options=await until(()=>{const levels=[...d.querySelectorAll('.level-tile,.logic-level,.duel-maps [data-map]')].filter(visible);const buttons=[...d.querySelectorAll('button')].filter(visible);const start=buttons.find(e=>/^Retomar partida interrompida/.test(e.textContent.trim()))||buttons.find(e=>/^(Iniciar partida|Começar partida|Jogar agora|Iniciar duelo)/.test(e.textContent.trim()));return levels.length?levels:start?[start]:null;});
    let target=mode==='last'?options.at(-1):options[0];

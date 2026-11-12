@@ -11,7 +11,7 @@ document.getElementById('run').onclick=async()=>{
  const settle=async()=>{await new Promise(r=>frame.contentWindow.requestAnimationFrame(()=>frame.contentWindow.requestAnimationFrame(r)));await wait(200);};
  const inspect=async(game,state)=>{for(const size of [[320,568],[390,844],[844,390]]){frame.width=size[0];frame.height=size[1];await settle();reports.push({...measure(game,size,'conditional'),state});out.textContent=JSON.stringify({done:false,count:reports.length,reports},null,2);}};
  for(const game of selected){try{
-  frame.width=390;frame.height=844;frame.src=`index.html?game=${game}`;await new Promise(r=>frame.onload=r);const d=frame.contentDocument;
+  frame.width=390;frame.height=844;frame.src=`index.html?game=${encodeURIComponent(game)}`;await new Promise(r=>frame.onload=r);const d=frame.contentDocument;
   const start=await until(()=>d.querySelector('#nv-start'));const mode=d.querySelector('#nv-mode');mode.value='local';mode.dispatchEvent(new Event('change',{bubbles:true}));start.click();await wait(100);d.querySelector('dialog[open] [data-dialog-confirm]')?.click();
   await until(()=>[...d.querySelectorAll('.viewport-game')].find(visible));await settle();
   const click=async(selector)=>{const e=await until(()=>[...d.querySelectorAll(selector)].find(e=>visible(e)&&!e.disabled));e.click();await settle();};
