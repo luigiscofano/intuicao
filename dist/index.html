@@ -46,6 +46,8 @@
     <link rel="stylesheet" href="approved-opening.css" />
     <link rel="stylesheet" href="versus/ui.css" />
     <link rel="stylesheet" href="identity.css" />
+    <link rel="stylesheet" href="ui-motion.css" />
+    <link rel="stylesheet" href="victory-tiles.css" />
   </head>
   <body>
     <a class="skip" href="#main">Pular para o laboratório</a>
@@ -777,6 +779,10 @@
           </p>
           <p class="about-motto">Porque a curiosidade é a primeira lição.</p>
         </div>
+        <div class="motion-preferences" role="group" aria-label="Animações">
+          <label for="motion-reduce"><input id="motion-reduce" type="checkbox" aria-describedby="motion-description" /> Reduzir animações</label>
+          <p id="motion-description">A preferência de movimento do aparelho é respeitada.</p>
+        </div>
         <div class="about-actions">
           <button type="button" class="about-celebrate">✦ Comemorar</button
           ><button type="button" data-about-close>Fechar</button>
@@ -795,5 +801,6 @@
     <script type="module" src="contextual-guidance.mjs"></script>
     <script type="module" src="approved-opening.mjs"></script>
     <script type="module" src="approved-game-shell.mjs"></script>
+    <script type="module" src="motion-preference.mjs"></script>
   </body>
 </html>

@@ -1,3 +1,4 @@
+import { syncAchievementProgressMotion } from "../ui-motion.mjs";
 import { renderAchievementIcon } from "./icons.mjs";
 
 const views = new WeakMap();
@@ -239,7 +240,7 @@ function renderCriteria(data) {
   `;
 }
 
-function renderMarkup(container, view) {
+function renderMarkup(container, view, animateProgress = false) {
   const { data, filters } = view;
   const warnings = (data.warnings ?? [])
     .map(
@@ -261,6 +262,7 @@ function renderMarkup(container, view) {
     ${renderCampaigns(data)}
     ${renderCriteria(data)}
   `;
+  syncAchievementProgressMotion(container, { animate: animateProgress });
 }
 
 function updateFilter(container, view, field, value, focusSelector) {
@@ -328,5 +330,5 @@ export function renderAchievementView(container, data) {
     view.filters.gameId = "all";
   }
 
-  renderMarkup(container, view);
+  renderMarkup(container, view, true);
 }

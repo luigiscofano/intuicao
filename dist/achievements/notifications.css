@@ -1,5 +1,6 @@
 .mission-notice {
   position: fixed;
+  box-sizing: border-box;
   z-index: 3000;
   right: 24px;
   bottom: 24px;
@@ -17,17 +18,49 @@
 .mission-notice[hidden] {
   display: none;
 }
+.mission-notice:not([hidden]) {
+  animation: mission-notice-enter 300ms ease-out both;
+}
 .mission-notice-icon {
   flex: 0 0 58px;
+  pointer-events: none;
 }
 .mission-notice-icon svg {
   display: block;
   width: 58px;
   height: 58px;
 }
+.mission-notice-emblem {
+  position: relative;
+  display: block;
+  animation: mission-emblem-enter 480ms cubic-bezier(0.2, 0.7, 0.3, 1) both;
+}
+.mission-notice-icon .mission-notice-light {
+  position: absolute;
+  inset: 0;
+  fill: none;
+  stroke: #d99a32;
+  stroke-width: 1.5;
+  stroke-linecap: round;
+  pointer-events: none;
+}
+.mission-notice-light circle {
+  transform: rotate(-90deg);
+  transform-origin: 32px 25.5px;
+  stroke-dasharray: 1;
+  stroke-dashoffset: 0;
+  opacity: 0;
+  animation: mission-light-draw 1100ms ease-out both;
+}
 .mission-notice-content {
   flex: 1;
   min-width: 0;
+  max-height: min(40vh, 280px);
+  overflow-y: auto;
+  overflow-wrap: anywhere;
+  /* Reserva espaço ao foco do link também em avisos com várias missões. */
+  padding: 4px;
+  margin: -4px;
 }
 .mission-notice-label {
   margin: 0 0 5px;
@@ -48,6 +81,7 @@
 }
 .mission-notice button {
   align-self: flex-start;
+  flex-shrink: 0;
   width: 32px;
   min-height: 32px;
   padding: 0;
@@ -68,5 +102,32 @@
     bottom: 16px;
     padding: 14px;
     gap: 10px;
+  }
+}
+
+/* O aside permanece no DOM: atualizar texto/arte não reinicia sua entrada. */
+@keyframes mission-notice-enter {
+  from { opacity: 0; transform: translateY(8px); }
+  to { opacity: 1; transform: none; }
+}
+@keyframes mission-emblem-enter {
+  from { transform: rotate(-9deg) scale(0.9); }
+  to { transform: none; }
+}
+@keyframes mission-light-draw {
+  0% { stroke-dashoffset: 1; opacity: 0.8; }
+  60% { stroke-dashoffset: 0; opacity: 0.8; }
+  100% { stroke-dashoffset: 0; opacity: 0; }
+}
+html[data-ui-reduced-motion="true"] .mission-notice,
+html[data-ui-reduced-motion="true"] .mission-notice-emblem,
+html[data-ui-reduced-motion="true"] .mission-notice-light circle {
+  animation: none;
+}
+@media (prefers-reduced-motion: reduce) {
+  .mission-notice:not([hidden]),
+  .mission-notice-emblem,
+  .mission-notice-light circle {
+    animation: none;
   }
 }

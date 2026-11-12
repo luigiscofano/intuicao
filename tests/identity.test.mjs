@@ -8,6 +8,7 @@ const read = (path) => readFileSync(new URL(path, root), 'utf8');
 const css = read('dist/identity.css');
 const html = read('dist/index.html');
 const baseline = '070eba5';
+const motionBaseline = 'cdc5c756a340c7613c62cded00650ef98d267ec7';
 const git = (...args) => execFileSync('git', args, { cwd: root, encoding: 'utf8' });
 const clean = css.replace(/\/\*[\s\S]*?\*\//g, '');
 const rules = [...clean.matchAll(/([^{}]+)\{([^{}]*)\}/g)]
@@ -16,7 +17,16 @@ const rule = (selector) => rules.find(([candidate]) => candidate === selector)?.
 
 test('a camada visual carrega uma vez, após os estilos existentes, sem sessão de demonstração', () => {
   assert.equal((html.match(/href="identity\.css"/g) || []).length, 1);
-  assert.equal(html.replace('    <link rel="stylesheet" href="identity.css" />\n', ''), git('show', `${baseline}:dist/index.html`));
+  // Aprovação de 11/11: duas folhas de movimento e controle local de preferência.
+  // Remover somente esses acréscimos mantém a comparação histórica integral.
+  const beforeMotion = html
+    .replace('    <link rel="stylesheet" href="ui-motion.css" />\n', '')
+    .replace('    <link rel="stylesheet" href="victory-tiles.css" />\n', '')
+    .replace(/        <div class="motion-preferences" role="group" aria-label="Animações">\n[^]*?        <\/div>\n/, '')
+    .replace('    <script type="module" src="motion-preference.mjs"></script>\n', '');
+  assert.equal(beforeMotion, git('show', `${motionBaseline}:dist/index.html`));
+  assert.equal(beforeMotion.replace('    <link rel="stylesheet" href="identity.css" />\n', ''), git('show', `${baseline}:dist/index.html`));
+  assert.equal(css, git('show', `${motionBaseline}:dist/identity.css`));
   assert.ok(html.indexOf('identity.css') > html.indexOf('versus/ui.css'));
   assert.doesNotMatch(html, /identity-preview|preview-session/);
   assert.equal(existsSync(new URL('dist/preview-session.js', root)), false);
@@ -52,10 +62,19 @@ test('marcas, cores de apoio e frisos preservam a identidade aprovada', () => {
   assert.match(css, /@media \(max-width: 760px\)[\s\S]*left: 20px;/);
 });
 
-test('retrato da entrega: código, saves, campanhas, artes e rosetas são idênticos ao PR 52', () => {
-  // Contrato desta entrega, como os retratos históricos do repositório.
-  // Uma alteração funcional futura deve revisar explicitamente este contrato.
-  assert.equal(git('diff', '--name-only', baseline, '--', 'dist', ':(exclude)dist/index.html', ':(exclude)dist/identity.css'), '');
+test('movimento aprovado preserva todos os arquivos fora do escopo, inclusive Versus', () => {
+  // A autorização amplia só a apresentação solo, conquistas e microinterações.
+  // Motores, saves, artes, campanhas e resultados Versus continuam protegidos.
+  const approved = [
+    'index.html', 'result-motion.mjs', 'achievements/notifications.mjs',
+    'achievements/notifications.css', 'achievements/view.mjs', 'ui-motion.mjs',
+    'ui-motion.css', 'motion-preference.mjs', 'victory-tiles.mjs',
+    'victory-tiles.css', 'identity.css',
+  ].map(path => `dist/${path}`);
+  assert.equal(git('diff', '--name-only', motionBaseline, '--', 'dist',
+    ...approved.map(path => `:(exclude)${path}`)), '');
   const extras = git('ls-files', '--others', '--exclude-standard', '--', 'dist').trim().split('\n').filter(Boolean);
-  assert.deepEqual(extras.filter((path) => path !== 'dist/identity.css'), []);
+  assert.deepEqual(extras.filter(path => !approved.includes(path)), []);
+  assert.equal(css, git('show', `${motionBaseline}:dist/identity.css`));
+  assert.equal(git('diff', '--name-only', motionBaseline, '--', 'dist/versus', 'dist/versus-victory.mjs', 'dist/versus-victory.css'), '');
 });
