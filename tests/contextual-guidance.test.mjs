@@ -152,7 +152,7 @@ test("library and unavailable DOM do not receive a guide", () => {
   );
 });
 
-test("visual refinement changes only two decorative tile colors in existing CSS", () => {
+test("visual refinement preserves layout when decorative tiles become transparent PNGs", () => {
   const path = new URL("../dist/terra-mata.css", import.meta.url);
   const current = readFileSync(path, "utf8");
   const baseline = readFileSync(
@@ -165,7 +165,7 @@ test("visual refinement changes only two decorative tile colors in existing CSS"
       .replace(/\s+/g, "")
       .replace(/;}/g, "}");
   assert.equal(
-    canonical(current),
+    canonical(current.replace("background-color:transparent;", "background-color:#e7ddc3;").replace(/background-image:url\("platform-assets\/tiles\/blue-br\.png"\)[^;]+;/, baseline.match(/background-image:radial-gradient[^;]+;/)[0].replaceAll("#bd4e2c", "#244B63"))),
     canonical(
       baseline.replaceAll(
         "radial-gradient(ellipse at 100% 100%,#bd4e2c 70%,transparent 71%)",

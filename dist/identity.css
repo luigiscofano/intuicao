@@ -23,18 +23,18 @@
   width: 14px;
   height: 14px;
   min-width: 14px;
-  border-radius: 0 0 100% 0;
-  background: var(--identity-green);
+  border-radius: 0;
+  background: url("platform-assets/tiles/green-tl.png") center / contain no-repeat;
   pointer-events: none;
 }
 #library-controls>.category-choices>button[data-category='logica']:not([data-category=''])::before {
-  background: var(--identity-blue);
-  border-radius: 100% 0 0 0;
+  background: url("platform-assets/tiles/blue-br.png") center / contain no-repeat;
+  border-radius: 0;
   pointer-events: none;
 }
 #library-controls>.category-choices>button[data-category='versus']:not([data-category=''])::before {
-  background: var(--identity-gold);
-  border-radius: 0 100% 0 0;
+  background: url("platform-assets/tiles/gold-bl.png") center / contain no-repeat;
+  border-radius: 0;
   pointer-events: none;
 }
 #main>.games>.game-section-title {
@@ -50,18 +50,18 @@
   width: 16px;
   height: 16px;
   transform: translateY(-50%);
-  background: var(--identity-green);
-  border-radius: 0 0 100% 0;
+  background: url("platform-assets/tiles/green-tl.png") center / contain no-repeat;
+  border-radius: 0;
   pointer-events: none;
 }
 #main>.games>#games-logica::before {
-  background: var(--identity-blue);
-  border-radius: 100% 0 0 0;
+  background: url("platform-assets/tiles/blue-br.png") center / contain no-repeat;
+  border-radius: 0;
   pointer-events: none;
 }
 #main>.games>#games-versus::before {
-  background: var(--identity-gold);
-  border-radius: 0 100% 0 0;
+  background: url("platform-assets/tiles/gold-bl.png") center / contain no-repeat;
+  border-radius: 0;
   pointer-events: none;
 }
 
@@ -84,8 +84,8 @@ body #main .level-screen .stage-heading::before {
   display: inline-block;
   width: 16px;
   height: 16px;
-  background: var(--identity-blue);
-  border-radius: 100% 0 0 0;
+  background: url("platform-assets/tiles/blue-br.png") center / contain no-repeat;
+  border-radius: 0;
   pointer-events: none;
 }
 body #main .level-tile {
@@ -131,7 +131,7 @@ body.approved-game-view #main .approved-action-panel::after {
   width: 54px;
   height: 27px;
   margin: 24px 0 0;
-  background: radial-gradient(ellipse at 100% 100%,#244b63 70%,transparent 71%) 0 0/25px 25px no-repeat,radial-gradient(ellipse at 0 0,#cca034 70%,transparent 71%) 29px 0/25px 25px no-repeat;
+  background: url("platform-assets/tiles/blue-br.png") 0 0/25px 25px no-repeat,url("platform-assets/tiles/gold-tl.png") 29px 0/25px 25px no-repeat;
   opacity: .65;
   pointer-events: none;
 }
@@ -155,7 +155,7 @@ body.approved-game-view #main .approved-real-actions .action-hint {
   top: 18px;
   width: 104px;
   height: 50px;
-  background: radial-gradient(ellipse at 100% 100%,#244b63 70%,transparent 71%) 0 0/23px 23px no-repeat,radial-gradient(ellipse at 0 0,#cca034 70%,transparent 71%) 27px 0/23px 23px no-repeat,radial-gradient(ellipse at 100% 100%,#cca034 70%,transparent 71%) 54px 0/23px 23px no-repeat,radial-gradient(ellipse at 0 0,#39654c 70%,transparent 71%) 81px 0/23px 23px no-repeat,radial-gradient(ellipse at 0 0,#39654c 70%,transparent 71%) 0 27px/23px 23px no-repeat,radial-gradient(ellipse at 100% 100%,#244b63 70%,transparent 71%) 27px 27px/23px 23px no-repeat,radial-gradient(ellipse at 0 0,#39654c 70%,transparent 71%) 54px 27px/23px 23px no-repeat,radial-gradient(ellipse at 100% 100%,#cca034 70%,transparent 71%) 81px 27px/23px 23px no-repeat;
+  background: url("platform-assets/tiles/blue-br.png") 0px 0px/23px 23px no-repeat,url("platform-assets/tiles/gold-tl.png") 27px 0px/23px 23px no-repeat,url("platform-assets/tiles/gold-br.png") 54px 0px/23px 23px no-repeat,url("platform-assets/tiles/green-tl.png") 81px 0px/23px 23px no-repeat,url("platform-assets/tiles/green-tl.png") 0px 27px/23px 23px no-repeat,url("platform-assets/tiles/blue-br.png") 27px 27px/23px 23px no-repeat,url("platform-assets/tiles/green-tl.png") 54px 27px/23px 23px no-repeat,url("platform-assets/tiles/gold-br.png") 81px 27px/23px 23px no-repeat;
   pointer-events: none;
 }
 #achievements .achievement-summary>div:nth-child(1) {
@@ -200,8 +200,7 @@ body.approved-game-view #main .approved-real-actions .action-hint {
   left: 0;
   right: 0;
   height: 10px;
-  background: radial-gradient(ellipse at 100% 100%,#244b63 70%,transparent 71%) 0 0/20px 10px repeat-x,radial-gradient(ellipse at 0 0,#cca034 70%,transparent 71%) 10px 0/20px 10px repeat-x;
-  background-color: #e7ddc3;
+  background: url("platform-assets/tiles/blue-br.png") 0 0/20px 10px repeat-x,url("platform-assets/tiles/gold-tl.png") 10px 0/20px 10px repeat-x;
   pointer-events: none;
 }
 #fauna-dialog .fauna-copy h3 {
@@ -234,9 +233,10 @@ body.approved-game-view #main .approved-real-actions .action-hint {
 }
 
 /* Rodapé: mosaico aprovado com peças inteiras e respiro na divisória.
-   O fundo opaco interrompe a linha; folhas e assinatura permanecem intactas. */
+   A divisória tem um intervalo real sob os PNGs transparentes. */
 body>footer {
   border-top: 1px solid var(--identity-line) !important;
+  border-image: linear-gradient(to right,var(--identity-line) calc(50% - 50px),transparent calc(50% - 50px),transparent calc(50% + 50px),var(--identity-line) calc(50% + 50px)) 1;
   margin-top: 40px !important;
   padding-top: 34px !important;
   padding-bottom: 40px !important;
@@ -252,12 +252,8 @@ body>footer::after {
   border: 0;
   border-radius: 0;
   box-shadow: none;
-  background-color: var(--identity-cream);
-  background-image:
-    radial-gradient(ellipse at 100% 100%,var(--identity-green) 70%,transparent 71%),
-    radial-gradient(ellipse at 0 0,var(--identity-gold) 70%,transparent 71%),
-    radial-gradient(ellipse at 100% 100%,var(--identity-blue) 70%,transparent 71%),
-    radial-gradient(ellipse at 0 0,var(--identity-green) 70%,transparent 71%);
+  background-color: transparent;
+  background-image: url("platform-assets/tiles/green-br.png"),url("platform-assets/tiles/gold-tl.png"),url("platform-assets/tiles/blue-br.png"),url("platform-assets/tiles/green-tl.png");
   background-size: 16px 16px;
   background-position: 12px 1px,32px 1px,52px 1px,72px 1px;
   background-repeat: no-repeat;

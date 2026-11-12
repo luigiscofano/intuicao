@@ -118,7 +118,7 @@ body.approved-game-view #approved-game-hero[hidden] {
   aspect-ratio: 1;
   display: block;
   overflow: hidden;
-  background: #e7ddc3;
+  background: transparent;
   border-radius: 2px;
 }
 
@@ -127,25 +127,23 @@ body.approved-game-view #approved-game-hero[hidden] {
   display: block;
   width: 100%;
   height: 100%;
-  background: var(--approved-green);
-  border-radius: 0 0 100% 0;
+  background: url("platform-assets/tiles/game-green-tl.png") center / contain no-repeat;
 }
 
 .approved-tiles > span:nth-child(1)::before,
 .approved-tiles > span:nth-child(6)::before {
-  background: var(--approved-blue);
-  border-radius: 100% 0 0 0;
+  background-image: url("platform-assets/tiles/blue-br.png");
 }
 
 .approved-tiles > span:nth-child(2)::before,
 .approved-tiles > span:nth-child(3)::before,
 .approved-tiles > span:nth-child(8)::before {
-  background: var(--approved-yellow);
+  background-image: url("platform-assets/tiles/game-gold-tl.png");
 }
 
 .approved-tiles > span:nth-child(3)::before,
 .approved-tiles > span:nth-child(8)::before {
-  border-radius: 100% 0 0 0;
+  background-image: url("platform-assets/tiles/game-gold-br.png");
 }
 
 .approved-game-band {

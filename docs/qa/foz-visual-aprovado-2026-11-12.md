@@ -24,3 +24,9 @@ O relatório final registra os resultados efetivamente executados e os limites d
 - Navegador local, desktop: AIIJ correta, setas preservadas após recarregamento, desfazer/refazer, confirmação de reinício e verificação de tentativa parcial. Modo Sem parar abriu com os canais novos e 60 conexões em desafio Modo Sábio. Ao mudar para PULSO, a AIIJ FOZ saiu e os oito azulejos originais reapareceram.
 - Responsividade: app real em iframe de 390 × 844 px (375 px úteis, após a barra de rolagem), com fases 1 e 80. Largura de rolagem igual à largura útil, sem transbordamento horizontal. AIIJ com 184 px de largura, canais, pistas, setas e foz legíveis. Não houve teste em aparelho físico. O arquivo de QA temporário foi removido.
 - O código da mecânica, fases, armazenamento e geradores é idêntico à respectiva base. Não se afirma que todas as 80 fases foram resolvidas manualmente.
+
+## Integração autorizada após #54–62
+
+Em 12/11/2026, o titular autorizou publicar a PR #63. A base passou à main `b34690d870b714280f742142413a64d9d7e0387e`, com os PNGs transparentes de #62 preservados integralmente. O diff de produção em relação à nova base segue limitado aos mesmos cinco arquivos FOZ. Os testes de escopo FOZ agora usam essa main; o escopo histórico de #62 é fixado nessa entrega. Nenhum gerador foi incluído no GitHub por esta integração e nenhuma publicação Site é feita nesta etapa.
+
+Validação local da integração: 668/668 testes dos três grupos do workflow (95 + 467 + 106), índice de conquistas válido, 88 documentos/752 links locais e 162 recursos verificados. Os 10 PNGs globais e o restante da distribuição da main ficam byte a byte preservados pelo teste de escopo FOZ.

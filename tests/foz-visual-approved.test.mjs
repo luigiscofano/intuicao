@@ -8,7 +8,8 @@ import { CAMPAIGN, initialState, solutionState, renderBoard } from '../dist/logi
 const root=new URL('../',import.meta.url);
 const read=path=>readFileSync(new URL(path,root),'utf8');
 const git=(...args)=>execFileSync('git',args,{cwd:root,encoding:'utf8'});
-const base='3c0609db77b66aa27d4d61753e7db7f438b14ba9';
+// Main após a integração de #54–62, com os PNGs transparentes preservados.
+const base='b34690d870b714280f742142413a64d9d7e0387e';
 const allowed=['dist/logica/games/foz/view.mjs','dist/approved-game-shell.mjs','dist/approved-game-shell.css','dist/platform-assets/foz-aiij-mosaico.png','dist/platform-assets/foz-aiij-mosaico.svg'];
 
 test('FOZ preserva toda a distribuição fora das cinco alterações visuais aprovadas',()=>{
