@@ -332,6 +332,7 @@ for (const game of Object.keys(GAME_PRESENTATION)) {
     cleanup();
     assert.equal(f.observer.disconnected, true);
     assert.equal(f.events.popstate, undefined);
+    assert.equal(f.events["pulso-skin-change"], undefined);
   });
 }
 
@@ -363,7 +364,7 @@ test("hidden game surfaces are not modified and absent main is harmless", () => 
   );
 });
 
-test("presentation module has no persistence, network or game-engine dependency", () => {
+test("presentation module only reads visual preference, without progress writes, network or game engines", () => {
   const source = readFileSync(
     new URL("../dist/approved-game-shell.mjs", import.meta.url),
     "utf8",
@@ -376,6 +377,7 @@ test("presentation module has no persistence, network or game-engine dependency"
     ...source.matchAll(/^import .* from ['"]([^'"]+)['"]/gm),
   ].map((match) => match[1]);
   assert.deepEqual(imports, [
+    "./logica/games/pulso/skin.mjs",
     "./versus/metadata.mjs",
     "./logica/metadata.mjs",
     "./contextual-guidance.mjs",
@@ -392,3 +394,4 @@ test('AIIJ FOZ aparece só na rota FOZ e some ao alternar jogos ou histórico', 
   assert.equal(tiles.children.length,8);
  }
 });
+

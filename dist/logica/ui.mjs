@@ -334,8 +334,8 @@ export function initLogicGames() {
 
   return {
     async activate(id) {
-      host.dataset.pulsoSkin = id === 'pulso' ? readPulsoSkin() : '';
       advancement.cancel();
+      host.dataset.pulsoSkin = id === 'pulso' ? readPulsoSkin() : '';
       renovoTrace.cancel();
       save();
       const token = ++revision;
