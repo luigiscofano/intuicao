@@ -20,6 +20,8 @@ test('a camada visual carrega uma vez, após os estilos existentes, sem sessão 
   // Aprovação de 11/11: duas folhas de movimento e controle local de preferência.
   // Remover somente esses acréscimos mantém a comparação histórica integral.
   const beforeMotion = html
+    .replace('    <link rel="stylesheet" href="board-fit.css" />\n', '')
+    .replace('    <script type="module" src="board-fit.mjs"></script>\n', '')
     .replace('    <link rel="stylesheet" href="ui-motion.css" />\n', '')
     .replace('    <link rel="stylesheet" href="victory-tiles.css" />\n', '')
     .replace(/        <div class="motion-preferences" role="group" aria-label="Animações">\n[^]*?        <\/div>\n/, '')
@@ -72,6 +74,8 @@ test('movimento e vitórias Versus aprovados preservam todos os arquivos fora do
     'victory-tiles.css', 'identity.css', 'versus-victory.mjs',
     'versus-victory-art.mjs', 'versus-victory.css', 'versus/ui.mjs',
     'broto/ui.mjs', 'cerco/ui.mjs', 'collection-ui.mjs',
+    // Correção responsiva solicitada em 11/11: apresentação e texto de ajuda.
+    'board-fit.css', 'board-fit.mjs', 'repasse/ui.mjs',
   ].map(path => `dist/${path}`);
   assert.equal(git('diff', '--name-only', motionBaseline, '--', 'dist',
     ...approved.map(path => `:(exclude)${path}`)), '');
