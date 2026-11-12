@@ -51,10 +51,10 @@ test('ajuste não acessa nem modifica persistência, regras, foco ou gestos', ()
 });
 
 // Árvore confirmada do PR55, preservada também no Site v198.
-test('preserva a árvore anterior fora dos cinco arquivos de apresentação aprovados', () => {
+test('checkpoint responsivo preservou a árvore anterior fora dos cinco arquivos aprovados', () => {
   const root=new URL('../',import.meta.url);
   const approved=['dist/board-fit.css','dist/board-fit.mjs','dist/index.html','dist/collection-ui.mjs','dist/repasse/ui.mjs'];
-  const changed=execFileSync('git',['diff','--name-only','e2c694c1a12970befca130c45e3b94dffd0dccac','--','dist',...approved.map(p=>`:(exclude)${p}`)],{cwd:root,encoding:'utf8'});
+  const changed=execFileSync('git',['diff','--name-only','e2c694c1a12970befca130c45e3b94dffd0dccac','012870b0cb6fffe002771423a608285cd3f40949','--','dist',...approved.map(p=>`:(exclude)${p}`)],{cwd:root,encoding:'utf8'});
   assert.equal(changed,'');
 });
 

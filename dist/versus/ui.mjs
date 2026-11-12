@@ -12,6 +12,7 @@ import {
 } from "./session.mjs";
 import { createVersusStorage } from "./storage.mjs";
 import { createSearchService } from "./search-service.mjs";
+import { canRepeatChoice, repeatsPendingChoice, repeatChoiceHelp } from "./repeat-choice.mjs";
 import { createDuelConfirmation } from "./confirmation.mjs";
 import { escapeHTML as esc, playerMark, playerName } from "./shared/markup.mjs";
 import { versusIcon } from "./icons.mjs";
@@ -81,6 +82,7 @@ export function initVersusGames() {
   let screen = "selection";
   let selection = null;
   let pendingMove = null;
+  let previewAction = null;
   let previewState = null;
   let revision = 0;
   let botTimer = null;
@@ -112,6 +114,7 @@ export function initVersusGames() {
   function clearPreview() {
     selection = null;
     pendingMove = null;
+    previewAction = null;
     previewState = null;
   }
 
@@ -133,7 +136,7 @@ export function initVersusGames() {
       <details class="nv-rules" open>
         <summary>Regras e como jogar</summary>
         <ol>${game.rules.map((rule) => `<li>${esc(rule)}</li>`).join("")}</ol>
-        <p class="nv-control-help">Use Tab para percorrer os controles e Enter ou espaço para selecionar. Confira a prévia e use Confirmar jogada. Escape cancela a seleção.</p>
+        <p class="nv-control-help">Use Tab para percorrer os controles e Enter ou espaço para selecionar. Confira a prévia e clique ou toque novamente na mesma escolha para confirmar. Em jogadas com etapas, complete todas primeiro. Enter ou espaço também seleciona e confirma; o botão Confirmar jogada fica junto ao tabuleiro. Escape cancela a seleção.</p>
         <details class="nv-help-more">
           <summary>Modos e análise do computador</summary>
           <p>No amistoso, desfazer e refazer dependem do acordo dos dois jogadores. No competitivo, a partida segue sem desfazer ou reiniciar. Contra o computador, você controla o Verde; desfazer retorna à sua decisão anterior.</p>
@@ -219,15 +222,18 @@ export function initVersusGames() {
           <div class="collection-surface nv-surface">
             <div class="stage-tools"><button type="button" data-shell-action="preparation">← Preparar partida</button></div>
             <div id="nv-teams" class="nv-teams"></div>
-            <p id="nv-turn" class="nv-turn" aria-live="polite" aria-atomic="true"></p>
+            <p id="nv-turn" tabindex="-1" class="nv-turn" aria-live="polite" aria-atomic="true"></p>
             <p class="nv-objective">${esc(game.objective)}</p>
             <div id="nv-board" class="nv-board" tabindex="-1" aria-label="Tabuleiro de ${esc(game.name)}"></div>
+            <div id="nv-move-controls" class="board-check-controls nv-move-controls" role="group" aria-label="Confirmar ou cancelar a jogada">
+              <button type="button" id="nv-confirm" class="primary" data-shell-action="confirm">Confirmar jogada</button>
+              <button type="button" id="nv-cancel" data-shell-action="cancel">Cancelar prévia</button>
+              <span id="nv-repeat-help" class="nv-repeat-help">Complete a jogada; repita a última escolha para confirmar.</span>
+            </div>
             <p id="nv-preview" class="nv-preview" aria-live="polite" hidden></p>
             <p id="nv-feedback" class="nv-feedback" role="status" aria-live="polite" aria-atomic="true"></p>
             <div id="nv-result" class="nv-result-host"></div>
             <div class="board-check-controls nv-controls">
-              <button type="button" id="nv-confirm" class="primary" data-shell-action="confirm">Confirmar jogada</button>
-              <button type="button" id="nv-cancel" data-shell-action="cancel">Cancelar prévia</button>
               <button type="button" id="nv-undo" data-shell-action="undo">Desfazer</button>
               <button type="button" id="nv-redo" data-shell-action="redo">Refazer</button>
               <button type="button" id="nv-restart" data-shell-action="restart">Reiniciar</button>
@@ -253,6 +259,12 @@ export function initVersusGames() {
     const focused = board.contains(document.activeElement)
       ? document.activeElement.dataset.action
       : null;
+    const moveControls = find("move-controls");
+    const focusedControl = moveControls?.contains(document.activeElement)
+      ? document.activeElement
+      : null;
+    // Preservar os mesmos botões e handlers antes de recriar somente o tabuleiro.
+    if (moveControls && board.contains(moveControls)) board.after(moveControls);
     board.innerHTML = game.view.renderBoard(state(), {
       selection,
       pendingMove,
@@ -261,13 +273,43 @@ export function initVersusGames() {
       config: playConfig,
       disabled: Boolean(thinking || computerTurn() || state().result),
     });
+    // Coleções, recibos e explicações podem ser longos: confirmar fica junto da
+    // área jogável, antes desses extras, usando o mesmo nó acessível.
+    const moveAnchor = {
+      enlace: ".enlace-board", vazante: ".vazante-river-frame",
+      mosaico: ".mosaico-board-wrap", quinhao: ".quinhao-choices",
+      estalo: ".estalo-aim", dobra: ".dobra-map",
+      acorde: ".acorde-pass", lastro: ".lastro-round-break",
+    }[game.id];
+    const anchor = board.querySelector(moveAnchor) ?? board.querySelector({
+      quinhao: ".quinhao-plot", estalo: ".estalo-coordinates",
+      acorde: ".acorde-board", lastro: ".lastro-instrument",
+    }[game.id] ?? moveAnchor);
+    if (moveControls && anchor) anchor.after(moveControls);
+    // Os nós do tabuleiro são recriados na prévia: comparar a ação, não o nó DOM,
+    // mantém o segundo clique/toque e o foco de teclado na mesma escolha.
+    if (pendingMove && canRepeatChoice(game.id, previewAction)) {
+      for (const button of board.querySelectorAll("[data-action]")) {
+        if (button.dataset.action !== JSON.stringify(previewAction)) continue;
+        button.classList.add("nv-repeat-confirm");
+        button.setAttribute("aria-description", "Prévia selecionada. Ative novamente para confirmar a jogada.");
+      }
+    }
     board.inert = Boolean(thinking || computerTurn() || state().result);
     board.setAttribute("aria-busy", String(thinking));
     board.classList.toggle("nv-preview-active", Boolean(pendingMove));
-    if (focused)
-      [...board.querySelectorAll("[data-action]")]
-        .find((button) => button.dataset.action === focused)
-        ?.focus({ preventScroll: true });
+    if (focusedControl?.isConnected) {
+      const focusTarget = board.inert ? find("turn") :
+        focusedControl.disabled ? board : focusedControl;
+      focusTarget.focus({ preventScroll: true });
+    }
+    if (focused) {
+      const previousTarget = [...board.querySelectorAll("[data-action]")]
+        .find((button) => button.dataset.action === focused);
+      const focusTarget = board.inert ? find("turn") :
+        previousTarget && !previousTarget.disabled ? previousTarget : board;
+      focusTarget.focus({ preventScroll: true });
+    }
   }
 
   function renderResult() {
@@ -324,6 +366,8 @@ export function initVersusGames() {
     find("preview").textContent = pendingMove
       ? `Prévia: ${game.view.describeMove(current, pendingMove, previewState)}`
       : "";
+    find("repeat-help").textContent = repeatChoiceHelp(game.id, previewAction);
+    find("repeat-help").hidden = Boolean(current.result || computerTurn() || thinking);
     const competitive = playConfig.mode === "competitive";
     find("confirm").disabled =
       !pendingMove ||
@@ -357,6 +401,9 @@ export function initVersusGames() {
       return;
     try {
       const choice = game.view.interact(state(), selection, action);
+      if (repeatsPendingChoice(game.id, previewAction, action, pendingMove, choice.move))
+        return commit(pendingMove);
+      previewAction = choice.move ? action : null;
       selection = choice.selection ?? null;
       pendingMove = choice.move ?? null;
       previewState = pendingMove
@@ -364,6 +411,7 @@ export function initVersusGames() {
         : null;
       message = "";
     } catch (error) {
+      previewAction = null;
       pendingMove = null;
       previewState = null;
       message = error.message || "Escolha uma jogada permitida.";
@@ -507,7 +555,8 @@ export function initVersusGames() {
       draftConfig = structuredClone(playConfig);
       return renderSelection();
     }
-    if (action === "confirm" && pendingMove && !thinking && !computerTurn())
+    if (action === "confirm" && active && screen === "play" && pendingMove &&
+        !thinking && !computerTurn() && !state().result && !confirmation.isOpen)
       return commit(pendingMove);
     if (action === "cancel") {
       clearPreview();
@@ -565,6 +614,11 @@ export function initVersusGames() {
 
   host.addEventListener("keydown", (event) => {
     if (screen !== "play" || confirmation.isOpen) return;
+    // Segurar Enter/espaço não pode transformar a primeira seleção em jogada.
+    if (event.repeat && ["Enter", " "].includes(event.key)) {
+      event.preventDefault();
+      return;
+    }
     if (event.key === "Escape") {
       event.preventDefault();
       shellAction("cancel");

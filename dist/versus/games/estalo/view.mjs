@@ -70,8 +70,8 @@ export function renderBoard(state, context = {}) {
     : null;
   return `<section class="estalo-area" aria-label="Canteiro de vagens">
     <div class="estalo-coordinates"><div class="estalo-column-labels" aria-hidden="true">${["A", "B", "C", "D"].map((letter) => `<span>${letter}</span>`).join("")}</div><div class="estalo-board-row"><div class="estalo-row-labels" aria-hidden="true">${[1, 2, 3, 4].map((row) => `<span>${row}</span>`).join("")}</div><div class="estalo-playfield"><svg class="estalo-pulse-path" viewBox="0 0 400 400" aria-hidden="true"><polyline points="${points}" fill="none" stroke="#73965E" stroke-width="6" stroke-linecap="round" stroke-linejoin="round"/></svg>${cells}</div></div></div>
-    ${preview ? `<p class="estalo-preview-note">Prévia da cadeia: <strong>● Verde +${gains[0]}</strong> <strong>◆ Âmbar +${gains[1]}</strong>. A ordem aparece nas casas.</p>` : '<p class="estalo-tip">A seta conduz o pulso. Uma casca aberta interrompe o caminho.</p>'}
     ${aimControls(state, context.selection, pending, disabled)}
+    ${preview ? `<p class="estalo-preview-note">Prévia da cadeia: <strong>● Verde +${gains[0]}</strong> <strong>◆ Âmbar +${gains[1]}</strong>. A ordem aparece nas casas.</p>` : '<p class="estalo-tip">A seta conduz o pulso. Uma casca aberta interrompe o caminho.</p>'}
   </section>`;
 }
 

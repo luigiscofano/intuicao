@@ -679,3 +679,35 @@ body.approved-game-view
   content: " Refazer";
   font-size: 14px;
 }
+
+/* Versus: a decisão permanece com o tabuleiro, nunca no painel de explicações. */
+body.approved-game-view #main .approved-versus-surface .board-check-controls:has(.confirm),
+body.approved-game-view #main .approved-versus-surface .nv-move-controls {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  width: 100%;
+  min-height: 0;
+  margin: 8px auto 0;
+  padding: 8px 0;
+  border: 0;
+  background: transparent;
+}
+body.approved-game-view #main .approved-versus-surface .board-check-controls > button {
+  min-height: 44px;
+  max-width: 100%;
+  touch-action: manipulation;
+}
+#versus-games .nv-repeat-help {
+  flex-basis: 100%;
+  text-align: center;
+  color: #5c6a53;
+  font-size: 12px;
+  line-height: 1.5;
+}
+#versus-games [data-action], #broto [data-b-cell], #cerco [data-ce-cell],
+body.approved-game-view .approved-versus-surface .grid-cell {
+  touch-action: manipulation;
+}

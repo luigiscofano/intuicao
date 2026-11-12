@@ -166,12 +166,12 @@ export function renderBoard(state, context = {}) {
     )
     .join("");
   return `<div class="vazante-layout">
-    <p class="vazante-instruction">${escapeHTML(instruction(state, selection, pendingMove, forcedPass))}</p>
     <div class="vazante-river-frame">
       <div class="vazante-bank" data-player="1"><strong>◆ Cais Âmbar</strong><span>Linha 1 · qualquer coluna</span>${ticks}</div>
       <div class="vazante-coordinate-area"><div class="vazante-column-labels" aria-hidden="true">${["A", "B", "C", "D", "E"].map((letter) => `<span>${letter}</span>`).join("")}</div><div class="vazante-row-labels" aria-hidden="true">${[1, 2, 3, 4, 5].map((row) => `<span>${row}</span>`).join("")}</div><div class="vazante-board"><div class="vazante-grid">${cells}</div>${trailMarkup(convoy, pendingMove ? state.player : state.lastMove?.player, Boolean(pendingMove))}</div></div>
       <div class="vazante-bank vazante-bank-south" data-player="0">${ticks}<strong>● Cais Verde</strong><span>Linha 5 · qualquer coluna</span></div>
     </div>
+    <p class="vazante-instruction">${escapeHTML(instruction(state, selection, pendingMove, forcedPass))}</p>
     <div class="vazante-tools">${forcedPass ? `<button type="button" ${actionAttributes({ type: "pass" })} ${disabled ? "disabled" : ""}>Preparar passe obrigatório</button>` : from !== null ? `<button type="button" ${actionAttributes({ type: "reset" })} ${disabled ? "disabled" : ""}>Escolher outro barco</button>` : "<span>A esteira inclui aliados e adversários.</span>"}<span>Turno ${Math.min(state.moveCount + 1, 80)} de 80</span></div>
     <div class="vazante-deliveries">${deliveryRows}</div>
     <p class="vazante-key">Uma casa vazia encerra o comboio. Todos os barcos têm o mesmo movimento.</p>

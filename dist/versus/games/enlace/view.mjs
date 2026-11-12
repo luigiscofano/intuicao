@@ -196,7 +196,6 @@ export function renderBoard(state, context = {}) {
     <ol class="enlace-steps" aria-label="Como preparar a presilha">
       ${["Escolha o pino", "Fio verde ●", "Fio âmbar ◆"].map((text, index) => `<li class="${phase === index ? "enlace-step-active" : phase > index ? "enlace-step-done" : ""}"><span>${index + 1}</span>${text}</li>`).join("")}
     </ol>
-    <p class="enlace-instruction">${escapeHTML(state.result ? "O tear está concluído." : stageText(selection, pendingMove))}</p>
     <div class="enlace-board${pendingMove ? " enlace-has-preview" : ""}" data-winner="${visible.result?.winner ?? "none"}">
       <svg class="enlace-graph" viewBox="0 0 700 700" aria-hidden="true" focusable="false">
         <rect x="43" y="43" width="614" height="614" rx="24" class="enlace-tear"/>
@@ -208,6 +207,7 @@ export function renderBoard(state, context = {}) {
         <text x="350" y="687" class="enlace-margin-label">Verde: esquerda → direita · Âmbar: cima → baixo</text>
       </svg>${buttons}
     </div>
+    <p class="enlace-instruction">${escapeHTML(state.result ? "O tear está concluído." : stageText(selection, pendingMove))}</p>
     <div class="enlace-tools"><span>${20 - state.moveCount} presilhas na reserva comum</span>${selection ? `<button type="button" ${actionAttributes({ type: "reset" })} ${disabled ? "disabled" : ""}>Escolher outro pino</button>` : ""}${pendingMove ? `<button type="button" ${actionAttributes({ type: "swap" })} ${disabled ? "disabled" : ""}>⇄ Trocar as cores</button>` : ""}</div>
     <p class="enlace-key"><span>● Verde</span><span>◆ Âmbar</span><span>Linha clara: rede ligada à entrada</span></p>
   </div>`;

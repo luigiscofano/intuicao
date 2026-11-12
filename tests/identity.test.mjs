@@ -20,6 +20,8 @@ test('a camada visual carrega uma vez, após os estilos existentes, sem sessão 
   // Aprovação de 11/11: duas folhas de movimento e controle local de preferência.
   // Remover somente esses acréscimos mantém a comparação histórica integral.
   const beforeMotion = html
+    // Prévia dos botões de campanha aprovada em 11/11.
+    .replace('    <link rel="stylesheet" href="campaign-action-buttons.css" />\n', '')
     .replace('    <link rel="stylesheet" href="board-fit.css" />\n', '')
     .replace('    <script type="module" src="board-fit.mjs"></script>\n', '')
     .replace('    <link rel="stylesheet" href="ui-motion.css" />\n', '')
@@ -76,11 +78,19 @@ test('movimento e vitórias Versus aprovados preservam todos os arquivos fora do
     'broto/ui.mjs', 'cerco/ui.mjs', 'collection-ui.mjs',
     // Correção responsiva solicitada em 11/11: apresentação e texto de ajuda.
     'board-fit.css', 'board-fit.mjs', 'repasse/ui.mjs',
+    // Botões de campanha e confirmação próxima/repetida em Versus, aprovados depois.
+    'campaign-action-buttons.css', 'approved-game-shell.css', 'approved-game-shell.mjs',
+    'versus/README.md', 'versus/repeat-choice.mjs',
+    'versus/games/dobra/view.mjs', 'versus/games/enlace/view.mjs',
+    'versus/games/estalo/view.mjs', 'versus/games/mosaico/view.mjs',
+    'versus/games/quinhao/view.mjs', 'versus/games/vazante/view.mjs',
   ].map(path => `dist/${path}`);
   assert.equal(git('diff', '--name-only', motionBaseline, '--', 'dist',
     ...approved.map(path => `:(exclude)${path}`)), '');
   const extras = git('ls-files', '--others', '--exclude-standard', '--', 'dist').trim().split('\n').filter(Boolean);
   assert.deepEqual(extras.filter(path => !approved.includes(path)), []);
   assert.equal(css, git('show', `${motionBaseline}:dist/identity.css`));
-  assert.equal(git('diff', '--name-only', motionBaseline, '--', 'dist/versus', ':(exclude)dist/versus/ui.mjs'), '');
+  const approvedVersus = approved.filter(path => path.startsWith('dist/versus/'));
+  assert.equal(git('diff', '--name-only', motionBaseline, '--', 'dist/versus',
+    ...approvedVersus.map(path => `:(exclude)${path}`)), '');
 });

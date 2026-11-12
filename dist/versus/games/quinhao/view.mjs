@@ -56,8 +56,10 @@ export function renderBoard(state, context = {}) {
   const disabled = Boolean(context.disabled || state.result);
   const offered =
     pending?.type === "offer" ? getOfferIds(state, pending.start) : state.offer;
-  const points = display.baskets.map((basket, index) => {
-    const angle = -Math.PI / 2 + (index / display.baskets.length) * Math.PI * 2;
+  // A prévia mostra os depósitos futuros, mas os cestos ficam no lugar até
+  // confirmar. Assim o segundo toque não cai sobre outro cesto ou um vazio.
+  const points = state.baskets.map((basket, index) => {
+    const angle = -Math.PI / 2 + (index / state.baskets.length) * Math.PI * 2;
     return {
       ...basket,
       x: 50 + Math.cos(angle) * 43,
@@ -102,9 +104,9 @@ export function renderBoard(state, context = {}) {
       ${baskets}
       <div class="quinhao-center"><span class="quinhao-stage">${stage}</span>${deposits(display.inventories)}<p>Trio <b>5</b> · Par diferente <b>2</b></p></div>
     </div>
-    ${receipt}
     ${state.phase === "choose" ? `<p class="quinhao-choice-label">${playerMark(state.player)} ${playerName(state.player)}, qual cesto fica com você?</p>` : ""}
     ${offerButtons(state, disabled, pending?.type === "choose" ? pending.basket : null)}
+    ${receipt}
     <p class="quinhao-tip">${state.phase === "offer" ? "Toque no primeiro cesto para oferecer ele e os dois seguintes, no sentido horário." : "Seu cesto vai para seu depósito. Os outros dois vão para quem fez a oferta."}</p>
   </section>`;
 }
