@@ -739,3 +739,7 @@ body.approved-game-view .approved-versus-surface .grid-cell {
 .approved-tiles.approved-tiles--mirante > span {
   display: none;
 }
+
+/* AIIJ B do Pulso: azulejos com três batidas, fundo vazado. */
+.approved-tiles.approved-tiles--pulso{background:url("./platform-assets/pulso-aiij-azulejo.svg") center/contain no-repeat;transform:none}
+.approved-tiles.approved-tiles--pulso > span{display:none}

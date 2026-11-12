@@ -1,3 +1,4 @@
+import { readPulsoSkin } from './logica/games/pulso/skin.mjs';
 import { VERSUS_GAMES } from "./versus/metadata.mjs";
 import { LOGIC_GAMES } from "./logica/metadata.mjs";
 import { GAME_GUIDANCE } from "./contextual-guidance.mjs";
@@ -195,6 +196,7 @@ export function initApprovedGameShell(doc = document, win = window) {
       tiles.classList.toggle("approved-tiles--foz", game === "foz");
       tiles.classList.toggle("approved-tiles--renovo", game === "renovo");
       tiles.classList.toggle("approved-tiles--mirante", game === "mirante");
+      tiles.classList.toggle("approved-tiles--pulso", game === "pulso" && readPulsoSkin() === "identity");
       setText(number, presentation.number);
       setText(category, `${presentation.category} · ${presentation.name}`);
 
@@ -329,9 +331,11 @@ export function initApprovedGameShell(doc = document, win = window) {
   }
   update();
   win.addEventListener("popstate", update);
+  win.addEventListener("pulso-skin-change", update);
   return () => {
     observer.disconnect();
     win.removeEventListener("popstate", update);
+    win.removeEventListener("pulso-skin-change", update);
   };
 }
 

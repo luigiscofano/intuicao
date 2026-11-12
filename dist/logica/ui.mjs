@@ -1,3 +1,4 @@
+import { readPulsoSkin, writePulsoSkin } from './games/pulso/skin.mjs';
 import { rulesPreviewMarkup } from '../rules-preview.mjs';
 import { createRestartConfirmation } from '../restart-confirmation.mjs';
 import { createResultMotion } from '../result-motion.mjs';
@@ -125,7 +126,9 @@ export function initLogicGames() {
 
   function renderBoard(focusIndex = null) {
     renovoTrace.cancel();
-    find('board').innerHTML = adapter.renderBoard(level, currentState(session), { selectedTool });
+    const skin = metadata.id === 'pulso' ? readPulsoSkin() : undefined;
+    host.dataset.pulsoSkin = skin ?? '';
+    find('board').innerHTML = adapter.renderBoard(level, currentState(session), { selectedTool, skin });
     if (focusIndex !== null) find('board').querySelector(`[data-cell="${focusIndex}"]`)?.focus({ preventScroll: true });
   }
 
@@ -262,6 +265,15 @@ export function initLogicGames() {
 
   host.addEventListener('click', event => {
     if (!active || !adapter || restart.isOpen) return;
+    const skinButton = event.target.closest('button[data-pulso-skin]');
+    if (metadata.id === 'pulso' && screen === 'play' && skinButton) {
+      if (writePulsoSkin(skinButton.dataset.pulsoSkin)) {
+        renderBoard();
+        find('board').querySelector(`[data-pulso-skin="${skinButton.dataset.pulsoSkin}"]`)?.focus({ preventScroll: true });
+        globalThis.dispatchEvent(new Event('pulso-skin-change'));
+      }
+      return; // Preferência visual não cria jogada, save ou nova vitória.
+    }
     const target = event.target.closest('[data-level-id],[data-logic-daily],[data-logic-endless],[data-logic-random],[data-logic-tool],[data-cell],[data-logic-check],[data-logic-undo],[data-logic-redo],[data-logic-restart],[data-logic-answer],[data-logic-prev],[data-logic-next],[data-logic-levels]');
     if (!target || target.disabled) return;
     if (target.dataset.levelId) start(adapter.CAMPAIGN.find(item => item.id === target.dataset.levelId));
@@ -322,6 +334,7 @@ export function initLogicGames() {
 
   return {
     async activate(id) {
+      host.dataset.pulsoSkin = id === 'pulso' ? readPulsoSkin() : '';
       advancement.cancel();
       renovoTrace.cancel();
       save();
@@ -347,6 +360,8 @@ export function initLogicGames() {
       motion?.clear();
       save();
       host.hidden = true;
+      delete host.dataset.pulsoSkin;
     },
   };
 }
+
