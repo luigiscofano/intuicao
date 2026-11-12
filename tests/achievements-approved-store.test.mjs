@@ -40,8 +40,13 @@ test('primeiras confirmações e conquistas anteriores sobrevivem ao backup',()=
 test('missões compartilhadas aparecem em cada jogo elegível e nunca criam rota inexistente',()=>{
  const data=readAchievements(storage());
  for(const gameId of ['elo','prumo','cut'])assert(filterAchievements(data,{kind:'missions',gameId,status:'all'}).some(m=>m.id==='precision-first-try'));
- for(const gameId of ['orbita','sintonia'])assert(filterAchievements(data,{kind:'missions',gameId,status:'all'}).some(m=>m.id==='efficiency-clean-plan'));
- assert.equal(data.missionGames.length,25);
- assert.equal(data.missions.length,64);assert.equal(data.achievements.length,10);
- assert.equal(new Set(data.missions.map(m=>m.name)).size,64);
+ for(const gameId of ['sintonia'])assert(filterAchievements(data,{kind:'missions',gameId,status:'all'}).some(m=>m.id==='efficiency-clean-plan'));
+ for (const retired of ['orbita','divisa']) {
+  assert.deepEqual(filterAchievements(data,{kind:'missions',gameId:retired,status:'all'}),[]);
+  assert(!data.missionGames.some(game=>game.id===retired));
+ }
+ assert.equal(data.missionGames.length,23);
+ assert.equal(data.missions.length,59);assert.equal(data.achievements.length,10);
+ assert.equal(new Set(data.missions.map(m=>m.name)).size,59);
 });
+

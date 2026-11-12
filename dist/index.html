@@ -73,6 +73,7 @@
       >
         Sobre o projeto
       </button>
+      <button type="button" id="preferences-open" class="doc-link" aria-haspopup="dialog" aria-controls="preferences-dialog">Configurações</button>
     </header>
     <main id="main">
       <section class="intro">
@@ -323,7 +324,7 @@
           aria-label="Navegação principal"
         >
           <button type="button" data-screen="games" aria-current="page">
-            Jogos <span>25</span></button
+            Jogos <span>23</span></button
           ><button
             type="button"
             data-screen="achievements"
@@ -348,6 +349,18 @@
           </button>
         </nav>
       </div>
+      <div id="library-filters" class="library-filters" aria-label="Atalhos da biblioteca">
+        <button type="button" data-library-filter="all" aria-pressed="true">Todos</button>
+        <button type="button" data-library-filter="favorites" aria-pressed="false">★ Favoritos</button>
+        <button type="button" data-library-filter="recent" aria-pressed="false">◷ Recentes</button>
+        <button type="button" id="favorites-edit" aria-haspopup="dialog">Editar favoritos</button>
+      </div>
+      <p id="library-empty" role="status" hidden></p>
+      <dialog id="favorites-dialog" aria-labelledby="favorites-title">
+        <h2 id="favorites-title">Seus jogos favoritos</h2>
+        <p>Escolha os jogos que deseja encontrar mais rápido. Isso não altera o progresso.</p>
+        <div data-favorites-list></div><button type="button" data-dialog-close>Concluir</button>
+      </dialog>
       <div class="category-heading">
         <button id="category-back" type="button" class="quiet" hidden>
           <span class="category-back-arrow" aria-hidden="true">←</span
@@ -389,14 +402,6 @@
         </button>
         <button data-repasse="repasse" aria-pressed="false">
           <span>08</span> REPASSE <small>a ordem transforma os caminhos</small
-          ><small class="game-card-progress"></small>
-        </button>
-        <button data-orbita="orbita" aria-pressed="false">
-          <span>09</span> ÓRBITA <small>giros que conectam caminhos</small
-          ><small class="game-card-progress"></small>
-        </button>
-        <button data-logic="divisa" aria-pressed="false">
-          <span>12</span> DIVISA <small>territórios & fronteiras</small
           ><small class="game-card-progress"></small>
         </button>
         <button data-logic="pulso" aria-pressed="false">
@@ -814,5 +819,7 @@
     <script type="module" src="board-fit.mjs"></script>
     <script type="module" src="selection-presentation.mjs"></script>
     <script type="module" src="game-viewport.mjs"></script>
+    <link rel="stylesheet" href="cohesion.css" />
+    <script type="module" src="preferences-dialog.mjs"></script>
   </body>
 </html>

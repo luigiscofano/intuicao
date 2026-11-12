@@ -744,3 +744,12 @@ body.approved-game-view .approved-versus-surface .grid-cell {
 /* AIIJ aprovada do Refúgio; o visual normal mantém o mosaico anterior. */
 .approved-tiles.approved-tiles--refugio { aspect-ratio: 300 / 210; background: url("./platform-assets/refugio-aiij-folhas.svg") center/contain no-repeat; transform: none; }
 .approved-tiles.approved-tiles--refugio > span { display: none; }
+
+/* Ações de campanha: reinício sempre depois do histórico, sem mudar ações de duelo. */
+.approved-restart-action { width: 100%; }
+body.approved-game-view #main .approved-restart-action > button {
+  width: 100%;
+  background: var(--approved-paper);
+  color: var(--approved-blue);
+  border-color: var(--approved-blue);
+}

@@ -7,11 +7,11 @@ const read = path => fs.readFileSync(new URL(`../${path}`, import.meta.url), 'ut
 const css = read('dist/campaign-action-buttons.css');
 const shell = read('dist/approved-game-shell.mjs');
 const campaigns = [
-  'light', 'cut', 'elo', 'prumo', 'pacto', 'sintonia', 'repasse', 'orbita',
-  'divisa', 'pulso', 'foz', 'refugio', 'mirante', 'renovo',
+  'light', 'cut', 'elo', 'prumo', 'pacto', 'sintonia', 'repasse',
+  'pulso', 'foz', 'refugio', 'mirante', 'renovo',
 ];
 
-test('escopo cobre exatamente 14 campanhas e exclui os 11 Versus', () => {
+test('escopo cobre exatamente 12 campanhas e exclui os 11 Versus', () => {
   const campaignIds = Object.entries(GAME_PRESENTATION)
     .filter(([, presentation]) => presentation.category !== 'Versus')
     .map(([id]) => id);

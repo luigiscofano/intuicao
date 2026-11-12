@@ -57,3 +57,20 @@ Os testes incluem uma sequência legal para cada missão de ação, uma fase ofi
 ## Ampliação de precisão e eficiência
 
 `approved-catalog.mjs` acrescenta quatorze missões; Colheita dupla reutiliza o ID anterior. Os avaliadores `approved-original.mjs`, `approved-collection.mjs`, `movement-missions.mjs` e `repasse-action-missions.mjs` observam rodadas humanas. `approved-store.mjs` conserva até três identidades de fase para Três certeiros, também incluídas no backup. Missões compartilhadas aparecem em todos os filtros elegíveis.
+
+## Descoberta progressiva
+
+A apresentação destaca até três condições ainda não cumpridas antes da coleção
+completa, que começa recolhida. O ranking usa apenas contagens já registradas e,
+na ausência delas, jogos com fases concluídas; não consulta soluções nem grava
+progresso. O filtro por jogo também restringe as recomendações.
+
+`Quase lá` significa: meta numérica maior que um, pelo menos metade já registrada
+e conquista ainda não desbloqueada. Uma condição binária (por exemplo, executar
+uma jogada especial) nunca recebe uma porcentagem estimada.
+
+No filtro `Conquistadas`, datas válidas do registro de missões aparecem da mais
+recente para a mais antiga. Conquistas sem data ficam no final e são identificadas
+como antigas sem data registrada. Abrir a tela não atribui datas retroativas.
+
+As medalhas, os critérios, os saves e os links dos jogos ativos são preservados.

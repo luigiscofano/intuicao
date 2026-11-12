@@ -154,6 +154,8 @@ export function initGameInfo(doc = document) {
     syncTitles();
   });
   observer.observe(nav, {
+    // Reordenação de Recentes também reposiciona os botões de informação.
+    childList: true,
     attributes: true,
     subtree: true,
     attributeFilter: ["aria-pressed"],
@@ -291,3 +293,4 @@ export function initGameInfo(doc = document) {
   });
 }
 if (typeof document !== "undefined") initGameInfo();
+

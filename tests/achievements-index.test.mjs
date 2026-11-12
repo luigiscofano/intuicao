@@ -112,13 +112,14 @@ function completedLogicStorage(versionOffset = 0) {
   };
 }
 
-test("ler conclusões reais dos seis catálogos resumidos desbloqueia suas doze missões", () => {
+test("ler saves dos seis catálogos conserva apenas as cinco campanhas ativas e suas dez missões", () => {
   const result = readAchievements(completedLogicStorage());
-  assert.equal(result.total, 480);
+  assert.equal(result.total, 400);
+  assert(!result.games.some(game=>game.id==="divisa"));
   const missions = result.missions.filter((mission) =>
     Object.hasOwn(LOGIC_MISSION_INDEX, mission.id),
   );
-  assert.equal(missions.length, 12);
+  assert.equal(missions.length, 10);
   assert.ok(missions.every((mission) => mission.unlocked));
   assert.deepEqual(result.warnings, []);
 });
@@ -137,3 +138,4 @@ test("o índice pode ser regenerado sem diferenças de conteúdo", async () => {
   );
   assert.equal(current, generated);
 });
+

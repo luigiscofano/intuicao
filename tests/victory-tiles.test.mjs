@@ -2,7 +2,7 @@ import test from 'node:test';
 import assert from 'node:assert/strict';
 import { readFileSync } from 'node:fs';
 import { execFileSync } from 'node:child_process';
-import { resultMarkup, createResultMotion } from '../dist/result-motion.mjs';
+import { resultMarkup, createResultMotion, CONTEXTUAL_VICTORY_GAMES } from '../dist/result-motion.mjs';
 import { victoryTilesMarkup } from '../dist/victory-tiles.mjs';
 import { LOGIC_GAMES } from '../dist/logica/metadata.mjs';
 const root = new URL('../', import.meta.url);
@@ -11,15 +11,20 @@ const git = path => execFileSync('git', ['show', `${baseline}:${path}`], {cwd:ro
 const read = path => readFileSync(new URL(path,root),'utf8');
 const oldCode = git('dist/result-motion.mjs').replace(/from '([^']+)'/g, (_, path) => `from '${new URL(path, new URL('dist/result-motion.mjs', root)).href}'`);
 const old = await import(`data:text/javascript;base64,${Buffer.from(oldCode).toString('base64')}`);
-const campaigns = [...LOGIC_GAMES.map(g=>g.id), 'light', 'cut', 'elo', 'prumo', 'pacto', 'sintonia', 'repasse', 'orbita'];
+const campaigns = [...LOGIC_GAMES.filter(g=>g.id !== 'divisa').map(g=>g.id), 'light', 'cut', 'elo', 'prumo', 'pacto', 'sintonia', 'repasse'];
+assert.deepEqual([...CONTEXTUAL_VICTORY_GAMES].sort(), [...campaigns].sort());
 
-for (const game of campaigns) test(`${game}: opção A na vitória, falha e retry preservados`, () => {
+for (const game of campaigns) test(`${game}: motivo próprio na vitória, falha e retry preservados`, () => {
   const html=resultMarkup(game,true);
   assert.match(html,/tile-victory/);
   assert.match(html,/Parabéns!/);
-  assert.equal((html.match(/class="victory-tile victory-tile-/g)||[]).length,4);
+  assert.match(html, new RegExp(`campaign-motion-${game}`));
+  assert.match(html, /campaign-motion-animate/);
+  assert.equal((html.match(/class="victory-tile victory-tile-/g)||[]).length,0);
+  assert.match(html, /aria-hidden="true" focusable="false"/);
   assert.doesNotMatch(html,/celebration-overlay|game-victory-art/);
-  assert.match(resultMarkup(game,true,{animate:false}),/victory-tiles-static/);
+  assert.doesNotMatch(resultMarkup(game,true,{animate:false}), /campaign-motion-animate/);
+  assert.match(resultMarkup(game,true,{animate:false}), new RegExp(`campaign-motion-${game}`));
   assert.equal(resultMarkup(game,false),old.resultMarkup(game,false));
   assert.match(resultMarkup(game,true,{retry:true}),/data-result-retry/);
 });
@@ -42,7 +47,8 @@ test('vitória da campanha não altera palco, não espera timer e não se repete
   assert.equal(r.timers.size,0);assert.equal(r.classes.size,0);
   r.motion.show('light',true);assert.equal(r.writes,1);
   r.motion.clear();r.motion.show('light',true);
-  assert.match(r.host.innerHTML,/victory-tiles-static/);
+  assert.match(r.host.innerHTML,/campaign-motion-light/);
+  assert.doesNotMatch(r.host.innerHTML,/campaign-motion-animate/);
   assert.equal(r.timers.size,0);
 });
 test('falha mantém feedback, permite retry imediato uma vez e limpa o ciclo',()=>{
@@ -71,4 +77,16 @@ test('arte decorativa finita, local e com redução de movimento',()=>{
   assert.match(css,/prefers-reduced-motion: reduce/);assert.match(css,/data-ui-reduced-motion='true'/);
   assert.doesNotMatch(css,/infinite|\.experiment|#scene|\.versus/);
   assert.doesNotMatch(read('dist/victory-tiles.mjs'),/localStorage|sessionStorage|fetch\(/);
+});
+
+
+test('doze motivos são próprios, sem imagens remotas, e o fallback preserva os azulejos', () => {
+ const motifs = campaigns.map(game => resultMarkup(game, true).match(/<svg class="campaign-motion[\s\S]*?<\/svg>/)[0]);
+ assert.equal(new Set(motifs.map(svg=>svg.replace(/campaign-motion-[a-z]+/g, 'campaign-motion'))).size, 12);
+ for (const markup of motifs) assert.doesNotMatch(markup, /https?:|<image|<text/);
+ for (const game of ['divisa', 'orbita']) assert.equal((resultMarkup(game, true).match(/class="victory-tile victory-tile-/g)||[]).length, 4);
+ const css = read('dist/victory-tiles.css');
+ assert.match(css, /@media\(prefers-reduced-motion:reduce\) \{ \.campaign-motion \* \{ animation: none !important;/);
+ assert.match(css, /html\[data-ui-reduced-motion='true'\] \.campaign-motion \* \{ animation: none !important;/);
+ assert.doesNotMatch(css, /infinite/);
 });

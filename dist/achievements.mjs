@@ -1,3 +1,4 @@
+import { isRetiredGame } from "./retired-games.mjs";
 import { LOGIC_CAMPAIGNS } from "./logica/catalog-summary.mjs";
 import { normalizeLogicData, LOGIC_STORAGE_KEY } from "./logica/storage.mjs";
 // Projeção somente de leitura: preserva saves e compara identidades, nunca posições.
@@ -39,7 +40,7 @@ const lightBands = [
   "sage",
 ];
 export const ACHIEVEMENT_GAMES = Object.freeze([
-  ...LOGIC_CAMPAIGNS.map((game) => ({
+  ...LOGIC_CAMPAIGNS.filter((game) => !isRetiredGame(game.id)).map((game) => ({
     ...game,
     tier: (level) => tiers[level.difficulty],
   })),
@@ -88,7 +89,7 @@ export const ACHIEVEMENT_GAMES = Object.freeze([
     levels: orbita,
     tier: (_, i) => campaignTier(i + 1)?.name,
   },
-]);
+].filter((game) => !isRetiredGame(game.id)));
 const campaignCount = ACHIEVEMENT_GAMES.length;
 const totalCampaignLevels = ACHIEVEMENT_GAMES.reduce(
   (total, game) => total + game.levels.length,
@@ -274,17 +275,21 @@ export function readAchievements(storage) {
   if (ledger.warning) warnings.push(ledger.warning);
   const attempts = readApprovedAttempts(storage);
   if (attempts.warning) warnings.push(attempts.warning);
-  const missions = MISSION_CATALOG.map((mission) => {
+  const missions = MISSION_CATALOG.filter((mission) =>
+    (mission.gameIds ?? [mission.gameId]).some((id) => !isRetiredGame(id)),
+  ).map((mission) => {
+    const activeGames = (mission.games ?? [{ id: mission.gameId, name: mission.gameName }])
+      .filter((game) => !isRetiredGame(game.id));
     const unlocked =
       completedMissionIds.has(mission.id) ||
       Object.hasOwn(ledger.unlocked, mission.id);
     return {
       id: mission.id,
       kind: "mission",
-      gameId: mission.gameId,
-      gameName: mission.gameName,
-      gameIds: mission.gameIds ?? [mission.gameId],
-      games: mission.games ?? [{id: mission.gameId, name: mission.gameName}],
+      gameId: activeGames[0].id,
+      gameName: activeGames.map((game) => game.name).join(" · "),
+      gameIds: activeGames.map((game) => game.id),
+      games: activeGames,
       name: mission.name,
       description: mission.description,
       icon: mission.icon,
