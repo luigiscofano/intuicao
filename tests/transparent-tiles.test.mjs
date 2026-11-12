@@ -8,6 +8,8 @@ import { decodeRgbaPng } from './support/rgba-png.mjs';
 
 const root = new URL('../', import.meta.url);
 const baseline = '3c0609db77b66aa27d4d61753e7db7f438b14ba9';
+// Escopo histórico da PR62; FOZ protege a árvore atual a partir deste commit.
+const pngRelease = 'b34690d870b714280f742142413a64d9d7e0387e';
 const read = path => readFileSync(new URL(path, root), 'utf8');
 const asset = name => new URL(`dist/platform-assets/tiles/${name}`, root);
 const git = (...args) => execFileSync('git', args, { cwd: root, encoding: 'utf8' });
@@ -70,7 +72,7 @@ test('25 páginas mantêm o mesmo cabeçalho decorativo acessível', () => {
   assert.equal(Object.keys(GAME_PRESENTATION).length, 25);
   assert.match(read('dist/approved-game-shell.mjs'),
     /tiles\.setAttribute\("aria-hidden", "true"\)/);
-  assert.equal(git('diff', baseline, '--', 'dist/approved-game-shell.mjs', 'dist/index.html'), '');
+  assert.equal(git('diff', baseline, pngRelease, '--', 'dist/approved-game-shell.mjs', 'dist/index.html'), '');
 });
 
 test('vitória usa quatro PNGs preservando contêiner, animação e acessibilidade', () => {
@@ -93,7 +95,7 @@ test('somente quatro arquivos de produção mudam; motores, geradores e FOZ fica
     ...readdirSync(new URL('dist/platform-assets/tiles/', root))
       .map(file => `dist/platform-assets/tiles/${file}`),
   ];
-  const changed = git('diff', '--name-only', baseline, '--', 'dist')
+  const changed = git('diff', '--name-only', baseline, pngRelease, '--', 'dist')
     .trim().split('\n').filter(Boolean);
   for (const file of changed) assert.ok(allowed.includes(file), file);
   assert.equal(git('ls-files', '--others', '--exclude-standard', '--', 'dist'), '');

@@ -191,6 +191,8 @@ export function initApprovedGameShell(doc = document, win = window) {
         description,
         `${presentation.name} · um experimento por vez, no seu ritmo.`,
       );
+      // AIIJ aprovada do FOZ: só a arte muda; outras rotas mantêm o mosaico.
+      tiles.classList.toggle("approved-tiles--foz", game === "foz");
       setText(number, presentation.number);
       setText(category, `${presentation.category} · ${presentation.name}`);
 

@@ -18,7 +18,7 @@ export function renderBoard(level, current, { selectedTool = 'cycle' } = {}) {
     for (let col = 0; col < level.width; col += 1) parts.push(rect(x0 + col * step, y0 + row * step, size, size, C.cell, C.edge));
   }
   for (let col = 0; col < level.width; col += 1) parts.push(text(x0 + col * step + size / 2, 28, String.fromCharCode(65 + col), 20));
-  for (const [a, b] of level.channels) { const [ax, ay] = pos(a); const [bx, by] = pos(b); parts.push(`<line x1="${ax}" y1="${ay}" x2="${bx}" y2="${by}" stroke="${C.frame}" stroke-width="3"/>`); }
+  for (const [a, b] of level.channels) { const [ax, ay] = pos(a); const [bx, by] = pos(b); parts.push(`<g class="foz-water-channel" aria-hidden="true"><path d="M${ax} ${ay}L${bx} ${by}" fill="none" stroke="#9cb5b3" stroke-width="17" stroke-linecap="round"/><path d="M${ax} ${ay}L${bx} ${by}" fill="none" stroke="#d5e3df" stroke-width="14" stroke-linecap="round"/></g>`); }
   state.arrows.forEach((target, source) => {
     if (target === -1) return;
     const [ax, ay] = pos(source); const [bx, by] = pos(target); const length = Math.hypot(bx - ax, by - ay);
