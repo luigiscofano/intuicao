@@ -291,73 +291,73 @@
     "game": "quinhao",
     "owner": 0,
     "t": 0,
-    "sha256": "351655c0ea92721ce4038ec982a17719fa2b3b6119c70006cca7f0090288243d"
+    "sha256": "8c93be6ac28dd8b87cc359d4c78aa63cb952983a00f8a16437b07b480a49c989"
   },
   {
     "game": "quinhao",
     "owner": 0,
     "t": 0.25,
-    "sha256": "0a2ff205d967ce1f94bc03f35571f68dc695781602b61cb9af471d181362792b"
+    "sha256": "883c4b938e82bc7894df1b41ba23c8b9b827ff67158d3da522fa58f1de678f12"
   },
   {
     "game": "quinhao",
     "owner": 0,
     "t": 0.5,
-    "sha256": "c435faa2b6fb57dfcab259d39a3942794d981fbde8252abbac6490295e5eaff9"
+    "sha256": "3d817993fb30212ae7a22ef5690a120f3a505e2b3b0631aa95b0ebccf125bac4"
   },
   {
     "game": "quinhao",
     "owner": 0,
     "t": 0.75,
-    "sha256": "7608beaa25a9ed8200be2508872d6e4047f0a93e103b4bd0cb9d148b9a1f7d43"
+    "sha256": "54e8709738cf83fec8e8621fed14f99fbb0c52ffcb0d3841d9635b49a9ae0ae5"
   },
   {
     "game": "quinhao",
     "owner": 0,
     "t": 1,
-    "sha256": "7d3d22d2f7ac89c96efbafda6874e63909d26197e7f11b8895df972f19be43e9"
+    "sha256": "efa2c72aa4bf40d4f814410ad4a0a6abc4ccca72b77927287b68662300ba21da"
   },
   {
     "game": "quinhao",
     "owner": 0,
     "t": 2,
-    "sha256": "a4fdd7de59565fe8f0a1719295cc103eeca20be1ecc846a7df7787f15dff96a9"
+    "sha256": "be96f19dbcc2aff6c20ef364ce363002a536141c348d7867ff4596399aa3d41f"
   },
   {
     "game": "quinhao",
     "owner": 1,
     "t": 0,
-    "sha256": "ac51ced1ab73de0e339177f14450dc756b86199b443dd85375777ef501e0a949"
+    "sha256": "f2af19b4aad6680526820b22ff0ac3bba4e8445c5ae2c453277d36d05935131c"
   },
   {
     "game": "quinhao",
     "owner": 1,
     "t": 0.25,
-    "sha256": "02e16334ac0191b8bd2c4cecca6f120214ba76e2d9ffc38b8cb54cb3e69e0bd9"
+    "sha256": "34f45359527d7b06502de22ccf46cebd0bc3fccac8caf2de2bb051c4dd95ee44"
   },
   {
     "game": "quinhao",
     "owner": 1,
     "t": 0.5,
-    "sha256": "688277030a25d67d26a3fa90dd29d4695b3d77e94adedd3f2ca2f4f2ae08984f"
+    "sha256": "770e8f3a7e8bd19093c3e1d60d9963a5a25633b74ceb2331276b809ffd8807a2"
   },
   {
     "game": "quinhao",
     "owner": 1,
     "t": 0.75,
-    "sha256": "e72d34d51b43abb80d39b74ba03b624ff129ca4cfbdbb00e3f573f3b1e746cf0"
+    "sha256": "a5b444ff290174cf5a051f5c7886372b845a601571388d459e8556ccad31a56f"
   },
   {
     "game": "quinhao",
     "owner": 1,
     "t": 1,
-    "sha256": "b7b4c430b4f826bcda357105c250484229631eaf8a76c6bc8c7673fb6e1a4f96"
+    "sha256": "26246e03cf0e4e53ac633b19efe5d975cacac5b968d2ee04c87b4577e83448bf"
   },
   {
     "game": "quinhao",
     "owner": 1,
     "t": 2,
-    "sha256": "85040302f052072c6c86e5e1b0b9741b928aa60ea7b107422732e1bcf26248d6"
+    "sha256": "209d409a5fe99067209646447a3f5358c0295ce527418206b350538446c3bc7e"
   },
   {
     "game": "estalo",
