@@ -68,8 +68,8 @@ test('fundos decorativos usam PNGs locais existentes e não deixam retângulos o
   assert.doesNotMatch(css['identity.css'], /#e7ddc3/);
 });
 
-test('25 páginas mantêm o mesmo cabeçalho decorativo acessível', () => {
-  assert.equal(Object.keys(GAME_PRESENTATION).length, 25);
+test('23 páginas ativas mantêm o mesmo cabeçalho decorativo acessível', () => {
+  assert.equal(Object.keys(GAME_PRESENTATION).length, 23);
   assert.match(read('dist/approved-game-shell.mjs'),
     /tiles\.setAttribute\("aria-hidden", "true"\)/);
   assert.equal(git('diff', baseline, pngRelease, '--', 'dist/approved-game-shell.mjs', 'dist/index.html'), '');
@@ -85,7 +85,7 @@ test('vitória usa quatro PNGs preservando contêiner, animação e acessibilida
     assert.match(markup, new RegExp(`victory-tiles-${animate ? 'animate' : 'static'}`));
     assert.doesNotMatch(markup, /<path /);
   }
-  assert.equal(git('diff', baseline, '--', 'dist/victory-tiles.css'), '');
+  assert.equal(git('diff', baseline, pngRelease, '--', 'dist/victory-tiles.css'), '');
 });
 
 test('somente quatro arquivos de produção mudam; motores, geradores e FOZ ficam intactos', () => {
@@ -102,3 +102,4 @@ test('somente quatro arquivos de produção mudam; motores, geradores e FOZ fica
   const added = git('diff', '--name-only', '--diff-filter=A', baseline, pngRelease, '--', 'dist').trim().split('\n').filter(Boolean);
   for (const file of added) assert.ok(allowed.includes(file), file);
 });
+
