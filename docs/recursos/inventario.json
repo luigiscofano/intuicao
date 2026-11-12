@@ -106,6 +106,12 @@
         "docs/transparent-tiles-2026-11-12.md"
       ],
       "source": "AIIJ A aprovada para o MIRANTE em 12/11/2026: composição SVG original com módulos Intuição existentes e exportação PNG transparente, sem geração raster por IA."
+    },
+    "refugio-aiij": {
+      "evidence": [
+        "dist/logica/games/refugio/README.md"
+      ],
+      "source": "Composição vetorial original de folhas, marcos e azulejos, aprovada por Luigi em 12/11/2026; sem imagens externas."
     }
   },
   "assets": [
@@ -1734,6 +1740,16 @@
       "rightsHolder": "Luigi Scofano de Araujo (elementos autorais do projeto)",
       "license": "Direitos reservados; recursos visuais excluídos da licença MIT do código.",
       "permissionEvidence": "docs/mirante-renovacao-2026-11-12.md",
+      "reviewBasis": "owner-approved-project-composition; existing-visual-rights-policy"
+    },
+    {
+      "path": "dist/platform-assets/refugio-aiij-folhas.svg",
+      "sha256": "8fdf1f571d2da7e4b12bebeeaea9b3bef9ce98a162b1833eac47123510e2f272",
+      "group": "refugio-aiij",
+      "status": "cleared",
+      "rightsHolder": "Luigi Scofano de Araujo (elementos autorais do projeto)",
+      "license": "Direitos reservados; recursos visuais excluídos da licença MIT do código.",
+      "permissionEvidence": "dist/logica/games/refugio/README.md",
       "reviewBasis": "owner-approved-project-composition; existing-visual-rights-policy"
     }
   ],
