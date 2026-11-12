@@ -27,5 +27,6 @@ test('Desvio somente oculta os dois controles solo, sem modificar regras ou mapa
 });
 test('todos os exemplos, motores, campanhas, artes, demais saves e interfaces Versus ficam intactos',()=>{
  const protectedPaths=['dist/rules-examples.css','dist/rules-examples.mjs','dist/rules-preview.css','dist/rules-preview.mjs','dist/rules-logic-examples.mjs','dist/rules-versus-examples.mjs','dist/versus','dist/logica/games','dist/logica/campaigns','dist/logica/session.mjs','dist/progress-backup.mjs','dist/identity.css'];
- assert.equal(git('diff','--name-only',base,'--',...protectedPaths),'');
+ // O contrato da PR60 continua exato; FOZ verifica os arquivos atuais.
+ assert.equal(git('diff','--name-only',base,presentationRelease,'--',...protectedPaths),'');
 });

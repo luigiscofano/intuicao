@@ -711,3 +711,13 @@ body.approved-game-view #main .approved-versus-surface .board-check-controls > b
 body.approved-game-view .approved-versus-surface .grid-cell {
   touch-action: manipulation;
 }
+
+/* FOZ · AIIJ 3 aprovada. O PNG é vazado; a largura responsiva existente é preservada. */
+.approved-tiles.approved-tiles--foz {
+  display: block;
+  aspect-ratio: 304 / 148.5;
+  background: url("platform-assets/foz-aiij-mosaico.png") center / contain no-repeat;
+}
+.approved-tiles.approved-tiles--foz > span {
+  display: none;
+}

@@ -268,6 +268,7 @@ for (const game of Object.keys(GAME_PRESENTATION)) {
     const originalHandler = f.controls.confirm.onclick;
     const cleanup = initApprovedGameShell(f.doc, f.win);
     assert.equal(f.main.querySelectorAll(".approved-tile").length, 8);
+    assert.equal(f.main.querySelector(".approved-tiles").classList.contains("approved-tiles--foz"), game === "foz");
     assert.equal(
       f.main.querySelector(".approved-hero-headline").textContent,
       GAME_PRESENTATION[game].headline,
@@ -379,4 +380,15 @@ test("presentation module has no persistence, network or game-engine dependency"
     "./logica/metadata.mjs",
     "./contextual-guidance.mjs",
   ]);
+});
+
+
+test('AIIJ FOZ aparece só na rota FOZ e some ao alternar jogos ou histórico', () => {
+ const f=fixture('foz'); initApprovedGameShell(f.doc,f.win);
+ const tiles=f.main.querySelector('.approved-tiles');
+ for(const game of ['pulso','foz','renovo','foz','light']) {
+  f.win.location.href=`https://example.test/?game=${game}`;f.events.popstate();
+  assert.equal(tiles.classList.contains('approved-tiles--foz'),game==='foz');
+  assert.equal(tiles.children.length,8);
+ }
 });

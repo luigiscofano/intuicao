@@ -110,7 +110,8 @@ test('integração preserva a base responsiva fora dos arquivos aprovados', asyn
     'versus/games/quinhao/view.mjs', 'versus/games/vazante/view.mjs',
   ].map(path => `dist/${path}`);
   const changed = execFileSync('git', [
-    'diff', '--name-only', '012870b0cb6fffe002771423a608285cd3f40949', '--', 'dist',
+    // Histórico até PR61; o escopo atual completo é protegido pelo teste FOZ.
+    'diff', '--name-only', '012870b0cb6fffe002771423a608285cd3f40949', '3c0609db77b66aa27d4d61753e7db7f438b14ba9', '--', 'dist',
     ...approved.map(path => `:(exclude)${path}`),
   ], { cwd: root, encoding: 'utf8' });
   assert.equal(changed, '');

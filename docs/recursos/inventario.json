@@ -79,6 +79,12 @@
         "dist/achievements/icons.mjs"
       ],
       "source": "Emblemas SVG originais desenhados por código para as missões do Intuição em 2026-11-11, sem imagens externas; prancha e captura real da galeria implementada."
+    },
+    "foz-aiij": {
+      "evidence": [
+        "docs/qa/foz-visual-aprovado-2026-11-12.md"
+      ],
+      "source": "AIIJ 3 Mosaico de correntes: composição vetorial original em código e exportação PNG transparente, aprovadas para o projeto em 12/11/2026."
     }
   },
   "assets": [
@@ -1548,6 +1554,26 @@
       "group": "conquistas-emblemas",
       "status": "pending",
       "reviewBasis": "original-vector-emblems"
+    },
+    {
+      "path": "dist/platform-assets/foz-aiij-mosaico.png",
+      "sha256": "2c91dd8942dbb459a36f4a2b9fa40d2894c661efc8045da8434d4e2875cff86a",
+      "group": "foz-aiij",
+      "status": "cleared",
+      "rightsHolder": "Luigi Scofano de Araujo",
+      "license": "MIT (arte vetorial original em código, nos termos do projeto)",
+      "permissionEvidence": "docs/qa/foz-visual-aprovado-2026-11-12.md",
+      "reviewBasis": "owner-approved-original-vector-composition"
+    },
+    {
+      "path": "dist/platform-assets/foz-aiij-mosaico.svg",
+      "sha256": "e4382eeaa2354356abc3b781b0471333faafad53d6b407f069f34a88cbd4c279",
+      "group": "foz-aiij",
+      "status": "cleared",
+      "rightsHolder": "Luigi Scofano de Araujo",
+      "license": "MIT (arte vetorial original em código, nos termos do projeto)",
+      "permissionEvidence": "docs/qa/foz-visual-aprovado-2026-11-12.md",
+      "reviewBasis": "owner-approved-original-vector-composition"
     }
   ],
   "rightsReview": {

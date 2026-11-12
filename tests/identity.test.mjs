@@ -102,7 +102,8 @@ test('movimento e vitórias Versus aprovados preservam todos os arquivos fora do
     'versus/games/estalo/view.mjs', 'versus/games/mosaico/view.mjs',
     'versus/games/quinhao/view.mjs', 'versus/games/vazante/view.mjs',
   ].map(path => `dist/${path}`);
-  assert.equal(git('diff', '--name-only', motionBaseline, '--', 'dist',
+  // Histórico até PR61; cinco mudanças visuais atuais conferidas em foz-visual-approved.test.mjs.
+  assert.equal(git('diff', '--name-only', motionBaseline, '3c0609db77b66aa27d4d61753e7db7f438b14ba9', '--', 'dist',
     ...approved.map(path => `:(exclude)${path}`)), '');
   const extras = git('ls-files', '--others', '--exclude-standard', '--', 'dist').trim().split('\n').filter(Boolean);
   assert.deepEqual(extras.filter(path => !approved.includes(path)), []);
