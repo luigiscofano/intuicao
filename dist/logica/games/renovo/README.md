@@ -1,6 +1,6 @@
 # RENOVO
 
-Jogo de ligações entre sementes (círculos), botões (losangos) e folhas. As peças fixas conservam a identidade CERCO: encaixes sálvia e âmbar, centros marfim, pinos e tabuleiro de células separadas. As formas informam o tipo sem depender da cor.
+Jogo de ligações entre sementes, botões e folhas. Visual C1 Vereda leve aprovado: todas as células em #f4f5ec; semente orgânica P1 verde com hilo creme; botão B3 dourado em espiral; folha azul com nervura central e quatro tracinhos creme. As formas informam o tipo sem depender da cor. A AIIJ C1 do hero preserva os arquivos aprovados, inclusive seus símbolos mais simples, sem redesenho.
 
 ## Regras preservadas
 
@@ -22,9 +22,16 @@ Células vazias podem ser atravessadas. Não existe diagonal nem exigência de c
 - `checkState` verifica graus, um extremo de cada tipo, perpendicularidade e interseções. **Não consulta `solution`.** `complete` indica que nenhuma peça ficou aquém do número de ligações exigido; uma posição completa pode continuar errada.
 - `solutionState` monta uma cópia do gabarito para o comando explícito do host/testes. Histórico, reinício, tentativas e desbloqueio do gabarito pertencem ao host.
 
+### Geometria visual
+
+`geometry.mjs` exporta `boardGeometry(level)` e `cellCenter(level,index)` (par `[x,y]`). Células 68, passo 76, origem `[62,54]`; viewBox 5×5 de 500×532. As dimensões variáveis são `width*76-8+128` e `height*76-8+160`. O grupo `renovo-gesture-preview` fica depois das ligações e antes das peças. Apenas as peças usam `touch-action:none`; vazios preservam a rolagem nativa.
+
 ### Interação e eventos exatos
 
-`toolsForLevel()` oferece `select` (padrão, “Ligar duas peças”) e `clear` (“Limpar peça”). A view coloca `data-cell` somente nas peças, com `role="button"`, `tabindex="0"`, `aria-pressed` e descrição em português do tipo, grau e seleção.
+Com mouse ou dedo, comece na semente ou folha e trace até o botão. Pode continuar em ângulo reto até o extremo oposto. Solte para confirmar; Escape cancela o gesto. Repetir um traçado adiciona os trechos que faltam, sem remover os existentes. O método de dois cliques continua alternando cada ligação. Tab, Enter e Espaço continuam disponíveis. Limpar peça remove as ligações incidentes.
+
+
+`toolsForLevel()` oferece `select` (padrão, “Ligar e traçar”) e `clear` (“Limpar peça”). A view coloca `data-cell` somente nas peças, com `role="button"`, `tabindex="0"`, `aria-pressed` e descrição em português do tipo, grau e seleção.
 
 | Evento | Resultado |
 | --- | --- |
@@ -35,10 +42,11 @@ Células vazias podem ser atravessadas. Não existe diagonal nem exigência de c
 | `{type:'cell',index,tool:'clear'}` | Remove todos os trechos incidentes e limpa a seleção. |
 | `{type:'link',from,to}` | Alterna diretamente um trecho permitido e limpa a seleção. |
 | `{type:'cancel-selection'}` | Limpa somente a seleção. |
+| `{type:'trace',path:[inicio,botao,fim]}` (ou um par) | Adiciona os trechos permitidos em uma única jogada de histórico, sem alternar trechos existentes. |
 
 `cycle` é aceito como sinônimo de `select`, para compatibilidade do host. As ações nunca mutam estado/nível; uma ação inválida preserva o estado. Não há `data-action` específico nem handlers inline. O host deve delegar clique/Enter/Espaço ao alvo `data-cell`.
 
-A responsividade mantém rolagem horizontal local nas grades largas. Acima de oito colunas, a view usa largura mínima de 720 px para preservar formas, textos e áreas de toque. A maior fase tem 11 colunas; não se comprimem suas peças até ficarem ilegíveis num celular.
+A view mantém as classes de largura do tabuleiro. O layout global `board-fit.css` preserva o ajuste e a centralização responsiva publicados na versão 209, inclusive nas fases de 11 colunas. Em janelas simultaneamente estreitas e baixas (até 600×500 CSS px), somente RENOVO mantém o painel de ações abaixo do tabuleiro; grades densas conservam a rolagem local acessível do enquadramento existente.
 
 ## Campanha e evidência de progressão
 

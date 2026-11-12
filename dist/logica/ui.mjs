@@ -6,6 +6,7 @@ import { restoreSession, currentState, applySessionAction, moveHistory, restartS
 import { createLogicStorage, gameProgress, saveSession, recordCompletion, saveEndless } from './storage.mjs';
 import { restoreEndless, endlessLevel, advanceEndless, createEndlessAdvance } from './endless.mjs';
 import { nextBoardCell } from './keyboard.mjs';
+import { createRenovoTraceInput } from './games/renovo/trace-input.mjs';
 
 /** O desafio diário usa o mesmo catálogo certificado e não cria progresso paralelo. */
 export function dailyLevelIndex(game, date = new Date(), count = 80) {
@@ -37,6 +38,12 @@ export function initLogicGames() {
   let mode = 'campaign';
   let endless = null;
   const advancement = createEndlessAdvance();
+  const renovoTrace = createRenovoTraceInput(host, {
+    getContext: () => active && screen === 'play' && metadata?.id === 'renovo' && session && selectedTool === 'select' && !restart.isOpen
+      ? { level, state: currentState(session) } : null,
+    commit: edit,
+    hint: text => { message = text; outcome = 'idle'; renderStatus(); },
+  });
 
   const progress = () => gameProgress(storage.data, metadata.id);
   const isCompleted = item => progress().completed[item.id]?.version === item.version;
@@ -59,6 +66,7 @@ export function initLogicGames() {
 
   function showSelection() {
     if (!adapter || !active) return;
+    renovoTrace.cancel();
     advancement.cancel();
     save();
     restart.dismiss();
@@ -82,6 +90,7 @@ export function initLogicGames() {
 
   function start(item, nextRun = null) {
     if (!item || !active) return;
+    renovoTrace.cancel();
     advancement.cancel();
     save();
     restart.dismiss();
@@ -115,6 +124,7 @@ export function initLogicGames() {
   }
 
   function renderBoard(focusIndex = null) {
+    renovoTrace.cancel();
     find('board').innerHTML = adapter.renderBoard(level, currentState(session), { selectedTool });
     if (focusIndex !== null) find('board').querySelector(`[data-cell="${focusIndex}"]`)?.focus({ preventScroll: true });
   }
@@ -170,6 +180,7 @@ export function initLogicGames() {
 
   function check() {
     if (!session || restart.isOpen) return;
+    renovoTrace.cancel();
     const checked = checkSession(adapter, level, session);
     session = checked.session;
     if (checked.result.valid) complete(checked.result);
@@ -184,6 +195,7 @@ export function initLogicGames() {
 
   function travel(delta) {
     if (!session || restart.isOpen) return;
+    renovoTrace.cancel();
     const next = moveHistory(session, delta);
     if (next === session) return;
     const focusedCell = document.activeElement?.closest('[data-cell]');
@@ -214,6 +226,7 @@ export function initLogicGames() {
   }
 
   function requestRestart(trigger) {
+    renovoTrace.cancel();
     advancement.cancel();
     const token = revision;
     restart.open({ trigger, isCurrent: () => token === revision && active && screen === 'play', onConfirm: restartNow, onCancel: () => {
@@ -275,6 +288,7 @@ export function initLogicGames() {
 
   host.addEventListener('keydown', event => {
     if (!active || screen !== 'play' || restart.isOpen || event.target.closest('input,textarea,select')) return;
+    if (event.key === 'Escape' && metadata.id === 'renovo') { event.preventDefault(); renovoTrace.cancel(); edit({ type: 'cancel-selection' }); return; }
     if ((event.ctrlKey || event.metaKey) && event.key.toLowerCase() === 'z') { event.preventDefault(); travel(event.shiftKey ? 1 : -1); return; }
     if ((event.ctrlKey || event.metaKey) && event.key.toLowerCase() === 'y') { event.preventDefault(); travel(1); return; }
     const cell = event.target.closest('[data-cell]');
@@ -288,7 +302,7 @@ export function initLogicGames() {
     event.preventDefault();
     cells.find(target => Number(target.dataset.cell) === next)?.focus({ preventScroll: true });
   });
-  globalThis.addEventListener('pagehide', () => { advancement.cancel(); save(); });
+  globalThis.addEventListener('pagehide', () => { renovoTrace.cancel(); advancement.cancel(); save(); });
   globalThis.addEventListener('pageshow', event => {
     if (!event.persisted || !active || screen !== 'play' || mode !== 'endless' || restart.isOpen || !session) return;
     const result = adapter.checkState(level, currentState(session));
@@ -298,6 +312,7 @@ export function initLogicGames() {
   return {
     async activate(id) {
       advancement.cancel();
+      renovoTrace.cancel();
       save();
       const token = ++revision;
       active = true;
@@ -314,6 +329,7 @@ export function initLogicGames() {
     },
     hide() {
       advancement.cancel();
+      renovoTrace.cancel();
       active = false;
       ++revision;
       restart.dismiss();

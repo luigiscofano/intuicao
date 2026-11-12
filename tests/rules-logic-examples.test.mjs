@@ -15,7 +15,12 @@ for(const id of ids){
   assert.match(example.svg,/viewBox="0 0 240 140"/);
   assert.match(example.svg,/rpx-logic-reveal/);
   assert.match(example.svg,/rpx-logic-cue/);
-  assert.doesNotMatch(example.svg,/script|onload|foreignObject|opacity="0"|transform=/);
+  assert.doesNotMatch(example.svg,/script|onload|foreignObject|opacity="0"|<animate|<set\b/);
+  // RENOVO reuses approved SVG art with static placement; no animation dependency.
+  if (id !== 'renovo') assert.doesNotMatch(example.svg,/transform=/);
+  else for (const [,value] of example.svg.matchAll(/transform="([^"]+)"/g)) {
+    assert.match(value,/^(?:translate\(-?[\d.]+ -?[\d.]+\) scale\([\d.]+\)|rotate\(-30\))$/);
+  }
   assert.equal(engine.isStateValid(level,before),true);
   assert.equal(engine.checkState(level,before).valid,false);
   const snapshot=JSON.stringify({level,before});

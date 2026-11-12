@@ -61,10 +61,33 @@ function toggleLink(state, from, to) {
   return { links, selected: null };
 }
 
+/** Um gesto representa um trecho ou um trio, nunca uma consulta ao gabarito. */
+export function isTraceAllowed(level, path) {
+  if (!Array.isArray(path) || ![2, 3].includes(path.length) || new Set(path).size !== path.length) return false;
+  if (!path.every(integer) || !path.slice(1).every((index, i) => isLinkAllowed(level, path[i], index))) return false;
+  if (path.length === 2) return true;
+  const [start, bud, end] = path;
+  if (level.pieces[bud] !== 'B' || !['S', 'F'].includes(level.pieces[start]) || !['S', 'F'].includes(level.pieces[end]) || level.pieces[start] === level.pieces[end]) return false;
+  return (Math.floor(start / level.width) === Math.floor(bud / level.width)) !== (Math.floor(end / level.width) === Math.floor(bud / level.width));
+}
+
+function addTrace(level, state, path) {
+  if (!isTraceAllowed(level, path)) return state;
+  const seen = new Set(state.links.map(keyOf));
+  const added = path.slice(1).map((index, i) => normalizedEdge(path[i], index)).filter(edge => !seen.has(keyOf(edge)));
+  if (!added.length && state.selected === null) return state;
+  const links = [...state.links.map(edge => [...edge]), ...added];
+  links.sort((a, b) => a[0] - b[0] || a[1] - b[1]);
+  return { links, selected: null };
+}
+
 export function applyAction(level, state, action) {
   if (!isStateValid(level, state) || !action || typeof action !== 'object') return state;
   if (action.type === 'cancel-selection') return state.selected === null ? state : { links: state.links.map((edge) => [...edge]), selected: null };
   if (action.type === 'link') return isLinkAllowed(level, action.from, action.to) ? toggleLink(state, action.from, action.to) : state;
+  // Arrastar acrescenta sem alternar: passar novamente por um trecho não o apaga.
+  // Cruzamentos e graus excessivos continuam sendo tentativas verificadas por checkState.
+  if (action.type === 'trace') return addTrace(level, state, action.path);
   if (action.type !== 'cell' || !integer(action.index) || !Object.hasOwn(level.pieces, action.index)) return state;
   const index = action.index;
   const tool = action.tool || 'select';
@@ -141,4 +164,4 @@ export function solutionState(level) {
   return { links, selected: null };
 }
 
-export function toolsForLevel() { return [{ id: 'select', label: 'Ligar duas peças' }, { id: 'clear', label: 'Limpar peça' }]; }
+export function toolsForLevel() { return [{ id: 'select', label: 'Ligar e traçar' }, { id: 'clear', label: 'Limpar peça' }]; }
