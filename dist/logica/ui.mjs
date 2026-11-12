@@ -254,10 +254,10 @@ export function initLogicGames() {
     if (index >= 0 && index < adapter.CAMPAIGN.length) start(adapter.CAMPAIGN[index]);
   }
 
-  function cellAction(target) {
+  function cellAction(target, tool = selectedTool) {
     const index = Number(target.dataset.cell);
     if (!Number.isInteger(index) || index < 0) return;
-    edit({ type: 'cell', index, tool: selectedTool }, index);
+    edit({ type: 'cell', index, tool }, index);
   }
 
   host.addEventListener('click', event => {
@@ -284,6 +284,17 @@ export function initLogicGames() {
     else if (target.hasAttribute('data-logic-prev')) navigate(-1);
     else if (target.hasAttribute('data-logic-next')) navigate(1);
     else if (target.hasAttribute('data-logic-levels')) showSelection();
+  });
+
+  // Apenas o botão secundário nas casas do MIRANTE confirma vazio.
+  // Mantém toque, teclado, ferramenta selecionada e demais jogos intactos.
+  host.addEventListener('contextmenu', event => {
+    if (!active || screen !== 'play' || metadata?.id !== 'mirante' || restart.isOpen || event.button !== 2) return;
+    if (event.pointerType && event.pointerType !== 'mouse') return;
+    const target = event.target.closest('.mirante-cell[data-cell]');
+    if (!target || !find('board')?.contains(target)) return;
+    event.preventDefault();
+    cellAction(target, 'empty');
   });
 
   host.addEventListener('keydown', event => {

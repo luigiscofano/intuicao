@@ -1,13 +1,14 @@
 import test from 'node:test';
 import assert from 'node:assert/strict';
 import { execFileSync } from 'node:child_process';
-import { readFileSync } from 'node:fs';
 
 const root = new URL('../', import.meta.url);
 // Árvore do PR65: inclui o traçado RENOVO e suas correções de cancelamento.
 const baseline = '39b113ebb37101e02dde1acd4b2d1ecb2c7ee311';
 const git = (...args) => execFileSync('git', args, { cwd: root, encoding: 'utf8' });
-const read = path => readFileSync(new URL(path, root), 'utf8');
+// Contrato histórico do PR66; o delta atual é protegido por mirante-scope.
+const release = 'd88a30698c9e1a41d98e6cbf1c1807ef3ad15d9d';
+const read = path => git('show', `${release}:${path}`);
 const prior = path => git('show', `${baseline}:${path}`);
 const allowed = [
   'dist/collection-ui.mjs',
@@ -20,8 +21,8 @@ const allowed = [
 ];
 
 test('setas preservam motores, saves, geradores, regras, Versus e RENOVO', () => {
-  const changed = git('diff', '--name-only', baseline, '--', 'dist');
-  const untracked = git('ls-files', '--others', '--exclude-standard', 'dist');
+  const changed = git('diff', '--name-only', baseline, release, '--', 'dist');
+  const untracked = git('diff', '--name-only', '--diff-filter=A', baseline, release, '--', 'dist');
   for (const file of `${changed}\n${untracked}`.split('\n').filter(Boolean)) {
     assert.ok(allowed.includes(file), file);
   }

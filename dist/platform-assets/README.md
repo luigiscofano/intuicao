@@ -52,6 +52,8 @@ Logo, fonte, folhas, molduras e imagens de fauna usados pela aplicação. Este i
 | [tree-canopy-softedge.svg](tree-canopy-softedge.svg) | SVG | 17,762 |
 | [tree-canopy-varied.svg](tree-canopy-varied.svg) | SVG | 11,851 |
 | [tree-canopy.svg](tree-canopy.svg) | SVG | 985 |
+| [mirante-aiij-a.png](mirante-aiij-a.png) | PNG | 43,675 |
+| [mirante-aiij-a.svg](mirante-aiij-a.svg) | SVG | 9,691 |
 
 ## Como os ativos são usados
 
@@ -67,6 +69,10 @@ Uma imagem maior pode conter vários recortes. Alterar dimensões, margens ou or
 4. Teste tamanhos compactos e desktop, inclusive perto de texto e botões.
 5. Registre origem do novo ativo, autorização de uso e modificações realizadas.
 6. Reexecute testes de preservação aplicáveis e explique qualquer hash atualizado.
+
+## MIRANTE: AIIJ A
+
+A [renovação aprovada em 12/11/2026](../../docs/mirante-renovacao-2026-11-12.md) usa composição SVG original com módulos Intuição existentes e exportação PNG transparente, sem geração raster por IA. Os hashes SHA-256 dos dois ativos estão no [inventário de recursos](../../docs/recursos/inventario.json). Aplica-se a política de direitos visuais já registrada para os elementos do projeto; a aprovação não altera sua licença.
 
 ## Registro de origem e permissões
 

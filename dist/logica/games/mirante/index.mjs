@@ -9,5 +9,5 @@ export const GAME = Object.freeze({
     'Cada observador precisa ver a forma indicada como a primeira peça na direção da seta. Vazios deixam a visão passar; a primeira peça a interrompe. Não há diagonais e uma direção toda vazia não satisfaz a pista.',
     'Toda peça precisa ser vista por pelo menos dois observadores. Olhos em lados opostos contam separadamente; uma borda sem observador não dá informação nem conta como visão.'
   ],
-  instructions: 'Escolha círculo, triângulo ou vazio e toque nas casas. As placas âmbar são observadores fixos. Checar verifica estoque, primeiras vistas e as duas testemunhas.'
+  instructions: 'Escolha uma ferramenta e use o botão esquerdo ou toque nas casas. O botão direito sempre marca × vazio, sem trocar a ferramenta. As placas âmbar são observadores fixos. Checar verifica estoque, primeiras vistas e as duas testemunhas.'
 });

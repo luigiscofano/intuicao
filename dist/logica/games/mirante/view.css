@@ -1,5 +1,6 @@
-.mirante-board-wrap { max-width: 100%; overflow-x: auto; padding: 2px; }
-.mirante-board { display: block; width: 100%; max-width: 580px; min-width: 330px; height: auto; margin-inline: auto; touch-action: manipulation; }
+.mirante-board-wrap { max-width: 100%; overflow-x: auto; padding: 2px; overscroll-behavior-x: contain; }
+.mirante-board { display: block; width: 100%; max-width: 580px; min-width: var(--mirante-min-width, 330px); height: auto; margin-inline: auto; touch-action: manipulation; }
+.mirante-control-help { margin: 0 0 6px; text-align: center; font-size: 12px; line-height: 1.5; color: #667366; }
 .mirante-cell { cursor: pointer; outline: none; }
-.mirante-cell:focus-visible > rect:first-of-type { stroke: #B99B46; stroke-width: 3; stroke-dasharray: 5 3; }
-.mirante-cell:hover > rect:first-of-type { fill: #F5E7B2; }
+.mirante-cell:focus-visible > rect:first-of-type { stroke: #244b63; stroke-width: 3; stroke-dasharray: 5 3; }
+.mirante-cell:hover > rect:first-of-type { fill: #f2e4ba; }
