@@ -32,6 +32,12 @@ A galeria permite filtrar por jogo e por conquistas obtidas ou ainda por descobr
 
 [Catálogo e critérios das missões](docs/conquistas/README.md) · [Prancha da edição inicial de 60 emblemas](docs/imagens/conquistas/emblemas.svg) · [Arquitetura e preservação do progresso](dist/achievements/README.md)
 
+## Apresentação unificada dos jogos
+
+Os 25 jogos seguem o mesmo padrão de Como jogar e preparação. As 14 campanhas exibem Desafio diário, Modo sem parar e Níveis com apresentação comum; os 11 jogos Versus não exibem diário nem modo sem parar. Reflexos e Corte certo recebem seleção diária determinística pela data de São Paulo. Os seis jogos lógicos usam sessões contínuas separadas das campanhas.
+
+[Escopo, preservação e verificações](docs/qa/apresentacao-unificada-2026-11-11.md) · [Funcionamento da sequência lógica](docs/qa/logica-sem-parar-2026-11-11.md)
+
 ## Oito novos duelos · edição de 11/11/2026
 
 **ENLACE, VAZANTE, MOSAICO, QUINHÃO, ESTALO, DOBRA, ACORDE e LASTRO** ampliam a categoria Versus. Cada jogo inclui tabuleiro interativo, prévia da jogada, confirmação explícita, regras completas e retomada da partida. Há modos local, competitivo, contra o computador e treino com análise.
@@ -44,7 +50,7 @@ Os motores são puros e separados das telas. Navegação, histórico, persistên
 
 **DIVISA, PULSO, FOZ, REFÚGIO, MIRANTE e RENOVO** entram em Raciocínio lógico, com a identidade visual de CERCO e **80 fases por jogo**. LAÇO e RODÍZIO ficam fora do catálogo. As 480 novas fases possuem soluções únicas certificadas; a dificuldade é editorial e ainda não foi calibrada com jogadores.
 
-A família compartilha seleção por faixa, retomada de tentativa, desfazer/refazer, checagem de regras, gabarito após três checagens sem sucesso, backup e conquistas. Desafio do dia e Surpreenda-me escolhem fases do catálogo existente. Os motores e campanhas são carregados sob demanda; a geração e a certificação ocorrem fora do navegador.
+A família compartilha seleção por faixa, retomada de tentativa, desfazer/refazer, checagem de regras, gabarito após três checagens sem sucesso, backup e conquistas. Desafio diário escolhe uma fase do catálogo existente. Modo sem parar percorre as 80 fases em uma sessão própria, retorna à primeira ao completar o ciclo e preserva o progresso da campanha. Os motores e campanhas são carregados sob demanda; a geração e a certificação ocorrem fora do navegador.
 
 [Regras e galeria dos seis jogos](docs/logica/README.md) · [Arquitetura e contratos](dist/logica/README.md) · [Testes e limites](tests/README.md#seis-jogos-lógicos-e-integração)
 

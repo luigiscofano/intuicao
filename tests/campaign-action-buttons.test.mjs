@@ -93,6 +93,9 @@ test('integração preserva a base responsiva fora dos arquivos aprovados', asyn
   const { execFileSync } = await import('node:child_process');
   const root = new URL('../', import.meta.url);
   const approved = [
+    // Seleção unificada, diário original e sessão contínua lógica aprovados depois.
+    'app.mjs', 'collection-ui.mjs', 'daily-challenge.mjs', 'logica/storage.mjs',
+    'logica/endless.mjs', 'selection-presentation.mjs', 'selection-presentation.css',
     // Mosaico do rodapé aprovado depois; limites exatos em identity.test.mjs.
     'identity.css',
     // Como jogar: 25 cartões com loop, escopo protegido em rules-scope.test.mjs.

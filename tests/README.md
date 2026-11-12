@@ -71,3 +71,7 @@ A edição de 11/11/2026 acrescenta `ui-motion.test.mjs`, `victory-tiles.test.mj
 ## Vitórias específicas dos onze jogos Versus
 
 `node --test tests/versus-victory-approved.test.mjs` verifica os emblemas aprovados, resultados reais, ciclo sem repetição, computador/empate, movimento reduzido e preservação dos motores. [Detalhes](../docs/movimento/VITORIAS-VERSUS-2026-11-11.md).
+
+## Apresentação unificada e modos solo
+
+A revisão de 11/11/2026 acrescenta `original-daily.test.mjs`, `selection-presentation.test.mjs`, `presentation-scope.test.mjs` e `logica/endless.test.mjs` ao recorte de CI. O baseline GitHub PR59 passou 611 testes antes da edição; a revisão passou 627 testes. Os contratos históricos de regras e ajuste responsivo continuam verificando seus commits de entrega, enquanto o guard da nova apresentação compara toda a distribuição contra PR59. Não houve exclusão de testes nem aprovação da suíte histórica completa. Veja [evidências e limites](../docs/qa/apresentacao-unificada-2026-11-11.md).

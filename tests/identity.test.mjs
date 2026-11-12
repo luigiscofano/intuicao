@@ -25,6 +25,9 @@ test('a camada visual carrega uma vez, após os estilos existentes, sem sessão 
   // Aprovação de 11/11: duas folhas de movimento e controle local de preferência.
   // Remover somente esses acréscimos mantém a comparação histórica integral.
   const beforeMotion = html
+    .replace('    <link rel="stylesheet" href="selection-presentation.css" />\n', '')
+    .replace('    <script type="module" src="selection-presentation.mjs"></script>\n', '')
+    .replace('          <button type="button" id="selection-daily">Desafio diário</button>\n', '')
     // Prévia dos botões de campanha aprovada em 11/11.
     .replace('    <link rel="stylesheet" href="campaign-action-buttons.css" />\n', '')
     .replace('    <link rel="stylesheet" href="board-fit.css" />\n', '')
@@ -76,6 +79,9 @@ test('movimento e vitórias Versus aprovados preservam todos os arquivos fora do
   // Aprovação posterior amplia os emblemas e quatro integrações Versus.
   // Motores, saves, artes de origem e campanhas continuam protegidos.
   const approved = [
+    // Seleção unificada, diário original e sessão contínua lógica aprovados depois.
+    'app.mjs', 'collection-ui.mjs', 'daily-challenge.mjs', 'logica/storage.mjs',
+    'logica/endless.mjs', 'selection-presentation.mjs', 'selection-presentation.css',
     'index.html', 'result-motion.mjs', 'achievements/notifications.mjs',
     'achievements/notifications.css', 'achievements/view.mjs', 'ui-motion.mjs',
     'ui-motion.css', 'motion-preference.mjs', 'victory-tiles.mjs',
