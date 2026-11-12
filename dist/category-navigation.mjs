@@ -1,3 +1,5 @@
+import { readLibraryPreferences, saveLibraryPreferences, recordRecentGame, filterLibraryGames, LIBRARY_PREFERENCES_KEY } from './library-preferences.mjs';
+import { retiredGameFromLocation } from "./retired-games.mjs";
 import { VERSUS_GAME_IDS } from "./versus/metadata.mjs";
 import { renderAchievements, readAchievements } from "./achievements.mjs";
 import { initMissionNotifications } from "./achievements/notifications.mjs";
@@ -12,8 +14,6 @@ export const CATEGORY_GAMES = Object.freeze({
     "pacto",
     "sintonia",
     "repasse",
-    "orbita",
-    "divisa",
     "pulso",
     "foz",
     "refugio",
@@ -53,8 +53,47 @@ export function initCategoryNavigation({ hideGames }) {
   if (!navigation || !categories || !back || !title || !achievements || !tabs)
     return;
 
+  const originalLibraryNodes = [...navigation.children];
   const cards = [...navigation.querySelectorAll(CARD_SELECTOR)];
+  const count = tabs.querySelector('[data-screen="games"] span');
+  if (count) count.textContent = String(cards.length);
+  const allowedGames = cards.map(cardGame);
+  let storage;
+  try { storage = window.localStorage; } catch { /* Navegação privada. */ }
+  let preferences = readLibraryPreferences(storage, allowedGames);
+  let libraryFilter = 'all';
+  const filters = document.getElementById('library-filters');
+  const empty = document.getElementById('library-empty');
+  const favoritesDialog = document.getElementById('favorites-dialog');
+  const favoriteList = favoritesDialog?.querySelector('[data-favorites-list]');
+  const cardName = card => [...card.childNodes].filter(node => node.nodeType === 3)
+    .map(node => node.textContent.trim()).filter(Boolean).join(' ') || cardGame(card);
+  const filterTitles = { all: 'Todos os jogos', favorites: 'Seus favoritos', recent: 'Jogos recentes' };
   let currentCategory = null;
+
+  function refreshFavorites() {
+    if (!favoriteList) return;
+    favoriteList.replaceChildren();
+    for (const card of cards) {
+      const game = cardGame(card), label = document.createElement('label');
+      const checkbox = document.createElement('input');
+      checkbox.type = 'checkbox'; checkbox.checked = preferences.favorites.includes(game);
+      checkbox.addEventListener('change', () => {
+        preferences = saveLibraryPreferences(storage, { ...preferences, favorites: checkbox.checked
+          ? [...preferences.favorites, game] : preferences.favorites.filter(id => id !== game) }, allowedGames);
+        showView(currentCategory, { focus: false });
+      });
+      label.append(checkbox, document.createTextNode(cardName(card))); favoriteList.append(label);
+    }
+  }
+  filters?.addEventListener('click', event => {
+    const button = event.target.closest('[data-library-filter]');
+    if (button) { libraryFilter = button.dataset.libraryFilter; returnToLibrary(currentCategory); }
+  });
+  document.getElementById('favorites-edit')?.addEventListener('click', () => {
+    refreshFavorites(); favoritesDialog?.showModal();
+  });
+  favoritesDialog?.querySelector('[data-dialog-close]')?.addEventListener('click', () => favoritesDialog.close());
   let restoring = false;
 
   function routeFromLocation() {
@@ -62,11 +101,12 @@ export function initCategoryNavigation({ hideGames }) {
     const game = parameters.get("game");
     if (parameters.get("screen") === "achievements")
       return { screen: "achievements" };
+    if (retiredGameFromLocation(location)) return { category: "logica", retired: true };
     const retiredRoute =
       ["trama", "vertice"].includes(game) ||
-      /\/(?:trama|vertice)\/?$/i.test(location.pathname) ||
+      /\/(?:trama|vertice|divisa|orbita)\/?$/i.test(location.pathname) ||
       (!game &&
-        /^#(?:game=)?(?:trama|vertice)(?:$|[/?&])/i.test(location.hash));
+        /^#(?:game=)?(?:trama|vertice|divisa|orbita)(?:$|[/?&])/i.test(location.hash));
     if (retiredRoute) return { category: "versus" };
     return {
       game: cards.some((card) => cardGame(card) === game) ? game : null,
@@ -78,8 +118,8 @@ export function initCategoryNavigation({ hideGames }) {
 
   function recordRoute(category, game = null, screen = null) {
     const url = new URL(location.href);
-    url.pathname = url.pathname.replace(/(?:trama|vertice)\/?$/i, "");
-    if (/^#(?:game=)?(?:trama|vertice)(?:$|[/?&])/i.test(url.hash))
+    url.pathname = url.pathname.replace(/(?:trama|vertice|divisa|orbita)\/?$/i, "");
+    if (/^#(?:game=)?(?:trama|vertice|divisa|orbita)(?:$|[/?&])/i.test(url.hash))
       url.hash = "";
     for (const key of ["game", "category", "screen"])
       url.searchParams.delete(key);
@@ -97,9 +137,11 @@ export function initCategoryNavigation({ hideGames }) {
       const campaign = progress.games.find(
         (game) => game.id === cardGame(card),
       );
+      const missions = progress.missions.filter(mission =>
+        mission.gameId === cardGame(card) || mission.gameIds?.includes(cardGame(card)));
       summary.textContent = campaign
         ? `Campanha · ${campaign.completed} / ${campaign.total} concluídos`
-        : `Missões · ${progress.missions.filter((mission) => mission.gameId === cardGame(card) && mission.unlocked).length} / 2 conquistadas`;
+        : `Missões · ${missions.filter(mission => mission.unlocked).length} / ${missions.length} conquistadas`;
     }
   }
 
@@ -116,23 +158,38 @@ export function initCategoryNavigation({ hideGames }) {
     title.hidden = showingAchievements || playing;
     achievements.hidden = !showingAchievements;
     const backupPanel = document.getElementById("progress-backup-panel");
-    if (backupPanel) backupPanel.hidden = playing;
-    title.textContent = CATEGORY_NAMES[category] || "Todos os jogos";
+    if (backupPanel && !backupPanel.closest('#preferences-dialog')) backupPanel.hidden = playing;
+    if (filters) filters.hidden = showingAchievements || playing;
+    title.textContent = [libraryFilter !== 'all' ? filterTitles[libraryFilter] : null, CATEGORY_NAMES[category]].filter(Boolean).join(' · ') || filterTitles.all;
     document
       .querySelector("#main > .intro")
       ?.classList?.toggle("library-intro-collapsed", playing);
 
-    for (const card of cards)
-      card.hidden =
-        Boolean(category) &&
-        !CATEGORY_GAMES[category]?.includes(cardGame(card));
-    navigation.querySelectorAll(".game-section-title").forEach((heading) => {
-      heading.hidden = Boolean(category);
+    const visibleIds = filterLibraryGames(allowedGames, libraryFilter, preferences)
+      .filter(id => !category || CATEGORY_GAMES[category]?.includes(id));
+    for (const card of cards) {
+      const gameId = cardGame(card);
+      card.hidden = !visibleIds.includes(gameId);
+      card.classList.toggle('is-favorite', preferences.favorites.includes(gameId));
+
+    }
+    // Move os mesmos elementos: teclado e leitura seguem a ordem visual, sem recriar handlers.
+    const orderedNodes = libraryFilter === 'recent'
+      ? [...visibleIds.map(id => cards.find(card => cardGame(card) === id)), ...originalLibraryNodes.filter(node => !cards.includes(node) || !visibleIds.includes(cardGame(node)))]
+      : originalLibraryNodes;
+    for (const node of orderedNodes) navigation.append(node);
+    navigation.classList.toggle('library-filtered', libraryFilter !== 'all');
+    if (empty) { empty.hidden = playing || showingAchievements || visibleIds.length > 0;
+      empty.textContent = libraryFilter === 'favorites' ? 'Nenhum favorito nesta categoria. Use Editar favoritos para escolher.'
+        : 'Ainda não há jogos recentes nesta categoria. Abra um jogo para encontrá-lo aqui.'; }
+    navigation.querySelectorAll('.game-section-title').forEach(heading => {
+      heading.hidden = Boolean(category) || libraryFilter !== 'all';
     });
-    navigation.querySelectorAll("[data-info-game]").forEach((button) => {
-      button.hidden =
-        Boolean(category) &&
-        !CATEGORY_GAMES[category]?.includes(button.dataset.infoGame);
+    navigation.querySelectorAll('[data-info-game]').forEach(button => {
+      button.hidden = !visibleIds.includes(button.dataset.infoGame);
+    });
+    filters?.querySelectorAll('[data-library-filter]').forEach(button => {
+      button.setAttribute('aria-pressed', String(button.dataset.libraryFilter === libraryFilter));
     });
     categories.querySelectorAll("[data-category]").forEach((button) => {
       button.setAttribute(
@@ -178,11 +235,20 @@ export function initCategoryNavigation({ hideGames }) {
     if (!card) return;
     const game = cardGame(card);
     if (!restoring) recordRoute(currentCategory, game);
+    preferences = saveLibraryPreferences(storage, recordRecentGame(preferences, game, allowedGames), allowedGames);
     showView(currentCategory, { focus: false, game });
   });
 
   function restoreRoute() {
     const route = routeFromLocation();
+    if (route.retired) {
+      const url = new URL(location.href);
+      url.searchParams.delete("game");
+      url.searchParams.set("category", "logica");
+      url.pathname = url.pathname.replace(/(?:divisa|orbita)\/?$/i, "");
+      url.hash = "";
+      history.replaceState(null, "", url);
+    }
     hideGames();
     showView(route.category || null, {
       focus: false,
@@ -199,7 +265,11 @@ export function initCategoryNavigation({ hideGames }) {
   }
 
   window.addEventListener("popstate", restoreRoute);
-  window.addEventListener("storage", () => {
+  window.addEventListener("storage", event => {
+    if (event.key === LIBRARY_PREFERENCES_KEY) {
+      preferences = readLibraryPreferences(storage, allowedGames);
+      if (!navigation.hidden) showView(currentCategory, { focus: false });
+    }
     if (!achievements.hidden) renderAchievements(achievements);
     else if (!navigation.hidden) refreshCardProgress();
   });
