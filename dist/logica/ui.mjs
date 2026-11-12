@@ -1,3 +1,4 @@
+import { readPulsoSkin, writePulsoSkin } from './games/pulso/skin.mjs';
 import { readRefugioSkin, writeRefugioSkin } from './games/refugio/skin.mjs';
 import { rulesPreviewMarkup } from '../rules-preview.mjs';
 import { createRestartConfirmation } from '../restart-confirmation.mjs';
@@ -126,7 +127,10 @@ export function initLogicGames() {
 
   function renderBoard(focusIndex = null) {
     renovoTrace.cancel();
-    find('board').innerHTML = adapter.renderBoard(level, currentState(session), { selectedTool, skin: metadata.id === 'refugio' ? readRefugioSkin() : undefined });
+    const skin = metadata.id === 'pulso' ? readPulsoSkin()
+      : metadata.id === 'refugio' ? readRefugioSkin() : undefined;
+    host.dataset.pulsoSkin = metadata.id === 'pulso' ? skin : '';
+    find('board').innerHTML = adapter.renderBoard(level, currentState(session), { selectedTool, skin });
     if (focusIndex !== null) find('board').querySelector(`[data-cell="${focusIndex}"]`)?.focus({ preventScroll: true });
   }
 
@@ -263,6 +267,15 @@ export function initLogicGames() {
 
   host.addEventListener('click', event => {
     if (!active || !adapter || restart.isOpen) return;
+    const skinButton = event.target.closest('button[data-pulso-skin]');
+    if (metadata.id === 'pulso' && screen === 'play' && skinButton) {
+      if (writePulsoSkin(skinButton.dataset.pulsoSkin)) {
+        renderBoard();
+        find('board').querySelector(`[data-pulso-skin="${skinButton.dataset.pulsoSkin}"]`)?.focus({ preventScroll: true });
+        globalThis.dispatchEvent(new Event('pulso-skin-change'));
+      }
+      return; // Preferência visual não cria jogada, save ou nova vitória.
+    }
     const refugioSkinButton = event.target.closest('button[data-refugio-skin]');
     if (metadata.id === 'refugio' && screen === 'play' && refugioSkinButton) {
       if (writeRefugioSkin(refugioSkinButton.dataset.refugioSkin)) {
@@ -333,6 +346,7 @@ export function initLogicGames() {
   return {
     async activate(id) {
       advancement.cancel();
+      host.dataset.pulsoSkin = id === 'pulso' ? readPulsoSkin() : '';
       renovoTrace.cancel();
       save();
       const token = ++revision;
@@ -357,7 +371,7 @@ export function initLogicGames() {
       motion?.clear();
       save();
       host.hidden = true;
+      delete host.dataset.pulsoSkin;
     },
   };
 }
-

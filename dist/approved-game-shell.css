@@ -753,3 +753,13 @@ body.approved-game-view #main .approved-restart-action > button {
   color: var(--approved-blue);
   border-color: var(--approved-blue);
 }
+
+
+/* AIIJ B do Pulso: proporção explícita mantém a arte visível. */
+.approved-tiles.approved-tiles--pulso {
+  display: block;
+  aspect-ratio: 320 / 200;
+  background: url("./platform-assets/pulso-aiij-azulejo.svg") center/contain no-repeat;
+  transform: none;
+}
+.approved-tiles.approved-tiles--pulso > span { display: none; }

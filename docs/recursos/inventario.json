@@ -118,6 +118,12 @@
         "dist/versus/games/quinhao/README.md"
       ],
       "source": "Arte vetorial original aprovada por Luigi em 12/11/2026: pitanga clara e castanha-do-pará; jabuticaba preservada. Sem reprodução de fotografias."
+    },
+    "pulso-aiij": {
+      "evidence": [
+        "docs/pulso-identidade.md"
+      ],
+      "source": "Composição vetorial geométrica original criada em código para Pulso: AIIJ B Azulejo de ritmo aprovada pelo titular em 2026-11-12."
     }
   },
   "assets": [
@@ -1766,6 +1772,16 @@
       "rightsHolder": "Luigi Scofano de Araujo (elementos autorais do projeto)",
       "license": "Direitos reservados; recursos visuais excluídos da licença MIT do código.",
       "permissionEvidence": "dist/versus/games/quinhao/README.md",
+      "reviewBasis": "owner-approved-project-composition; existing-visual-rights-policy"
+    },
+    {
+      "path": "dist/platform-assets/pulso-aiij-azulejo.svg",
+      "sha256": "b5af61c6053598c7d48a7855b32cbaa43973d4cf474226e83bf6a3b15b1ad388",
+      "group": "pulso-aiij",
+      "status": "cleared",
+      "rightsHolder": "Luigi Scofano de Araujo (elementos autorais do projeto)",
+      "license": "Direitos reservados; recursos visuais excluídos da licença MIT do código.",
+      "permissionEvidence": "docs/pulso-identidade.md",
       "reviewBasis": "owner-approved-project-composition; existing-visual-rights-policy"
     }
   ],

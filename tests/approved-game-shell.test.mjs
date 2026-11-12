@@ -331,6 +331,8 @@ for (const game of Object.keys(GAME_PRESENTATION)) {
     cleanup();
     assert.equal(f.observer.disconnected, true);
     assert.equal(f.events.popstate, undefined);
+    assert.equal(f.events["pulso-skin-change"], undefined);
+    assert.equal(f.events["refugio-skin-change"], undefined);
   });
 }
 
@@ -375,6 +377,7 @@ test("presentation module only reads visual preference, without progress writes,
     ...source.matchAll(/^import .* from ['"]([^'"]+)['"]/gm),
   ].map((match) => match[1]);
   assert.deepEqual(imports, [
+    "./logica/games/pulso/skin.mjs",
     "./logica/games/refugio/skin.mjs",
     "./versus/metadata.mjs",
     "./logica/metadata.mjs",

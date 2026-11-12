@@ -1,34 +1,129 @@
-const INK = '#30412F', GREEN = '#39674A';
-const esc = value => String(value).replaceAll('&', '&amp;').replaceAll('<', '&lt;').replaceAll('"', '&quot;');
-const text = (x, y, value, size = 19, weight = 500) => `<text x="${x}" y="${y}" text-anchor="middle" dominant-baseline="central" font-family="system-ui,sans-serif" font-size="${size}" font-weight="${weight}" fill="${INK}">${esc(value)}</text>`;
-const rect = (x, y, w, h, fill, stroke, radius = 9, strokeWidth = 1.4) => `<rect x="${x}" y="${y}" width="${w}" height="${h}" rx="${radius}" fill="${fill}" stroke="${stroke}" stroke-width="${strokeWidth}"/>`;
-function piece(x, y, size) {
-  return rect(x + 5, y + 5, size - 10, size - 10, '#E1EDCE', '#73965E', 9)
-    + rect(x + 9, y + 9, size - 18, size - 18, '#FFFAF0', '#73965E', 6)
-    + `<circle cx="${x + size / 2}" cy="${y + size / 2}" r="${size * .22}" fill="${GREEN}"/>`;
+import { renderBoard as renderNormal } from './view-normal.mjs';
+import { readPulsoSkin } from './skin.mjs';
+
+const COLORS = Object.freeze({
+  green: '#39654c', blue: '#244b63', gold: '#cca034', paper: '#fffaf0', muted: '#566553',
+});
+const GRID = Object.freeze({ step: 56, size: 52, left: 30, top: 80, summaryWidth: 116 });
+const escapeHTML = value => String(value).replace(/[&<>"']/g, character => ({
+  '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&#39;',
+})[character]);
+
+function svgText(x, y, value, size = 16, fill = COLORS.blue, weight = 500) {
+  return `<text x="${x}" y="${y}" text-anchor="middle" dominant-baseline="central"
+    font-family="system-ui,sans-serif" font-size="${size}" font-weight="${weight}"
+    fill="${fill}">${escapeHTML(value)}</text>`;
 }
 
-export function renderBoard(level, state, { selectedTool = 'cycle' } = {}) {
-  const size = 52, step = 56, ox = 44, oy = 100;
-  const width = ox + level.cols * step + 20, height = oy + level.rows * step + 74;
-  const content = [`<rect width="${width}" height="${height}" fill="#FFFAF0"/>`];
-  for (let col = 0; col < level.cols; col++) {
-    const x = ox + col * step, count = state.cells.filter((v, i) => i % level.cols === col && v === 1).length;
-    content.push(`<g role="img" aria-label="Coluna ${String.fromCharCode(65 + col)}: cota ${level.quotas[col]}, ${count} batidas colocadas">${text(x + size / 2, 24, String.fromCharCode(65 + col))}${rect(x + 3, 42, size - 6, 44, '#E1EDCE', '#73965E', 9)}${rect(x + 7, 46, size - 14, 36, '#FFFAF0', '#73965E', 6)}${text(x + size / 2, 64, level.quotas[col], 25, 650)}<circle cx="${x + size - 7}" cy="48" r="2.7" fill="${INK}"/></g>`);
+function circle(x, y, radius, fill, stroke = 'none') {
+  return `<circle cx="${x}" cy="${y}" r="${radius}" fill="${fill}"
+    stroke="${stroke}" stroke-width="1.5"/>`;
+}
+
+/** Deriva só das marcas visíveis; não consulta solução nem altera regras. */
+export function rowSummary(level, state, row) {
+  const positions = [];
+  for (let column = 0; column < level.cols; column++) {
+    if (state.cells[row * level.cols + column] === 1) positions.push(column);
   }
-  content.push(rect(ox - 7, oy - 7, level.cols * step + 10, level.rows * step + 10, '#FFFFFF', '#B6C3A8', 17));
-  for (let row = 0; row < level.rows; row++) content.push(text(21, oy + row * step + size / 2, row + 1));
-  for (let index = 0; index < state.cells.length; index++) {
-    const row = Math.floor(index / level.cols), col = index % level.cols, x = ox + col * step, y = oy + row * step;
-    const value = state.cells[index], fixed = Object.hasOwn(level.givens, index);
-    const label = `${String.fromCharCode(65 + col)}${row + 1}: ${value === null ? 'indecisa' : value ? 'batida' : 'vazia'}${fixed ? ', pista fixa' : ''}`;
-    const action = fixed ? 'role="img"' : `data-cell="${index}" data-tool="${esc(selectedTool)}" role="button" tabindex="0"`;
-    let symbol = value === 1 ? piece(x, y, size) : value === 0
-      ? `<path d="M${x + 17},${y + 17}l18,18m0,-18l-18,18" fill="none" stroke="#68775E" stroke-width="2.2" stroke-linecap="round"/>`
-      : `<circle cx="${x + size / 2}" cy="${y + size / 2}" r="1.8" fill="#B6C3A8"/>`;
-    if (fixed) symbol += `<circle cx="${x + size - 6}" cy="${y + 6}" r="3" fill="${INK}"/>`;
-    content.push(`<g class="pulso-cell" ${action} aria-label="${esc(label)}"><title>${esc(label)}</title>${rect(x, y, size, size, '#F8FAF3', '#D5DECB')}${symbol}</g>`);
+  const gaps = positions.length === 3
+    ? [positions[1] - positions[0], positions[2] - positions[1]] : null;
+  return { count: positions.length, gaps, equal: gaps ? gaps[0] === gaps[1] : null };
+}
+
+function skinSelector(skin) {
+  return `<div class="pulso-skin-picker" role="group" aria-label="Visual do Pulso">
+    <span>Visual</span>
+    <button type="button" data-pulso-skin="normal" aria-pressed="${skin === 'normal'}">Normal</button>
+    <button type="button" data-pulso-skin="identity" aria-pressed="${skin === 'identity'}">Compasso</button>
+  </div>`;
+}
+
+function renderQuota(level, state, column) {
+  const x = GRID.left + column * GRID.step;
+  const count = state.cells.filter((value, index) => index % level.cols === column && value === 1).length;
+  const letter = String.fromCharCode(65 + column);
+  return `<g role="img" aria-label="Coluna ${letter}: cota ${level.quotas[column]}, ${count} batidas colocadas">
+    ${svgText(x + 26, 12, letter, 12, COLORS.muted)}
+    <rect x="${x}" y="27" width="52" height="34" fill="${COLORS.blue}"/>
+    <g class="pulso-quota-value">${svgText(x + 26, 44, level.quotas[column], 22, COLORS.paper, 650)}</g>
+  </g>`;
+}
+
+function renderRowSummary(level, state, row, gridWidth) {
+  const y = GRID.top + row * GRID.step;
+  const x = GRID.left + gridWidth + 25;
+  const summary = rowSummary(level, state, row);
+  const spacing = summary.gaps
+    ? `${summary.gaps[0]} ${summary.equal ? '=' : '≠'} ${summary.gaps[1]} casas`
+    : summary.count > 3 ? `excesso: ${summary.count - 3}` : `faltam ${3 - summary.count}`;
+  const description = summary.gaps
+    ? `Intervalos de ${summary.gaps[0]} e ${summary.gaps[1]} casas, ${summary.equal ? 'iguais' : 'diferentes'}.` : '';
+  const slots = Array.from({ length: 3 }, (_, index) =>
+    circle(x + index * 19, y + 16, 5, summary.count > index ? COLORS.green : COLORS.paper, COLORS.green));
+  return `${svgText(12, y + 26, row + 1, 14)}
+    <g role="img" aria-label="Linha ${row + 1}: ${summary.count} de 3 batidas. ${description}">
+      ${slots.join('')}
+      ${svgText(x + 21, y + 37, `${summary.count}/3`, 21, COLORS.blue, 650)}
+      ${svgText(x + 34, y + 51, spacing, 12, COLORS.muted)}
+    </g>`;
+}
+
+function renderCell(level, value, index, selectedTool) {
+  const row = Math.floor(index / level.cols);
+  const column = index % level.cols;
+  const x = GRID.left + column * GRID.step;
+  const y = GRID.top + row * GRID.step;
+  const fixed = Object.hasOwn(level.givens, index);
+  const valueLabel = value === null ? 'indecisa' : value ? 'batida' : 'vazia';
+  const label = `${String.fromCharCode(65 + column)}${row + 1}: ${valueLabel}${fixed ? ', pista fixa' : ''}`;
+  const action = fixed ? 'role="img"'
+    : `data-cell="${index}" data-tool="${escapeHTML(selectedTool)}" role="button" tabindex="0"`;
+  let mark;
+  if (value === 1) {
+    mark = circle(x + 26, y + 26, 15, COLORS.green) + circle(x + 26, y + 26, 4.5, COLORS.gold);
+  } else if (value === 0) {
+    mark = `<path d="M${x + 18} ${y + 18}l16 16m0-16l-16 16" stroke="#69766a" stroke-width="2"/>`;
+  } else {
+    mark = circle(x + 26, y + 26, 1.5, '#b8c2b3');
   }
-  content.push(text(width / 2, height - 37, '● batida · × vazia · ponto = indecisa', 18), text(width / 2, height - 13, 'Pino = pista fixa', 17));
-  return `<div class="pulso-board-wrap"><svg class="pulso-board pulso-cols-${level.cols}" xmlns="http://www.w3.org/2000/svg" width="100%" viewBox="0 0 ${width} ${height}" role="group" aria-label="PULSO, ${level.rows} linhas por ${level.cols} colunas. Três batidas igualmente espaçadas em cada linha.">${content.join('')}</svg></div>`;
+  if (fixed) mark += `<rect x="${x + 43}" y="${y + 4}" width="5" height="5" fill="${COLORS.blue}"/>`;
+  return `<g class="pulso-cell" ${action} aria-label="${escapeHTML(label)}">
+    <title>${escapeHTML(label)}</title>
+    <rect x="${x}" y="${y}" width="52" height="52" fill="${COLORS.paper}" stroke="#bdc7b7"/>
+    ${mark}
+  </g>`;
+}
+
+function renderIdentity(level, state, selectedTool) {
+  const gridWidth = level.cols * GRID.step - 4;
+  const gridHeight = level.rows * GRID.step - 4;
+  const width = GRID.left + gridWidth + GRID.summaryWidth + 12;
+  const height = GRID.top + gridHeight + 34;
+  const quotas = Array.from({ length: level.cols }, (_, column) => renderQuota(level, state, column));
+  const summaries = Array.from({ length: level.rows }, (_, row) => renderRowSummary(level, state, row, gridWidth));
+  const cells = state.cells.map((value, index) => renderCell(level, value, index, selectedTool));
+  return `<div class="pulso-rule-ribbon">
+      <strong>Exatamente 3 batidas em cada linha</strong>
+      <span aria-label="Três batidas com intervalos iguais">● ─ ● ─ ● <b>intervalos iguais</b></span>
+      <small>Nas colunas, respeite a cota no topo.</small>
+    </div>
+    <div class="pulso-board-wrap pulso-board-wrap--identity">
+      <svg class="pulso-board pulso-board--identity" xmlns="http://www.w3.org/2000/svg"
+        viewBox="0 0 ${width} ${height}" width="100%" role="group"
+        aria-label="PULSO, ${level.rows} linhas por ${level.cols} colunas. Exatamente três batidas igualmente espaçadas em cada linha.">
+        ${quotas.join('')}
+        <rect x="${GRID.left - 5}" y="${GRID.top - 5}" width="${gridWidth + 10}" height="${gridHeight + 10}"
+          fill="none" stroke="${COLORS.blue}" stroke-width="1.5"/>
+        ${summaries.join('')}${cells.join('')}
+      </svg>
+    </div>
+    <p class="pulso-legend">● batida · × vazia · ponto = indecisa · ▪ pista fixa</p>`;
+}
+
+export function renderBoard(level, state, options = {}) {
+  const skin = options.skin ?? readPulsoSkin();
+  const board = skin === 'normal' ? renderNormal(level, state, options)
+    : renderIdentity(level, state, options.selectedTool ?? 'cycle');
+  return skinSelector(skin) + board;
 }
