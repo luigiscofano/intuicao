@@ -128,3 +128,27 @@ Parentesco visual discutido na concepção: Nurikabe,
 https://www.nikoli.co.jp/en/puzzles/nurikabe/. REFÚGIO não utiliza suas áreas
 numéricas, parede preta conectada ou proibição de 2 × 2. O núcleo é o separador
 localmente irredutível. Não se afirma ineditismo mundial.
+
+## Identidade visual aprovada — novembro de 2026
+
+A skin **Folhas** preserva a grade, paleta sálvia/âmbar, molduras, hachuras,
+legendas e áreas de toque do visual anterior. Acrescenta apenas:
+
+- duas pequenas assinaturas de azulejo na margem externa;
+- folhas no centro dos marcos, com o número menor no canto inferior direito;
+- uma AIIJ transparente que repete as folhas, as molduras e as barreiras.
+
+![AIIJ do Refúgio](../../../platform-assets/refugio-aiij-folhas.svg)
+
+O seletor **Normal / Folhas** troca somente a apresentação. A escolha utiliza
+`intuicao:refugio:skin:v1`, separada do progresso, e não reinicia fases nem cria
+jogadas, tentativas ou conquistas. O visual Normal conserva o SVG anterior.
+Os marcos continuam anunciados por número no nome acessível; as folhas e os
+azulejos são decorativos, sem significado adicional nas regras.
+
+A seleção e a AIIJ são específicas do Refúgio. Nenhum motor, catálogo,
+gerador ou formato de save foi alterado. Verificação da camada visual:
+
+```sh
+node --test tests/logica/refugio-visual-approved.test.mjs
+```
