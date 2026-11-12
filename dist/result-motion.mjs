@@ -27,6 +27,101 @@ const captions = {
     'Prepare os encontros e experimente outra sequência.',
   ],
 };
+// Resumos visuais das mecânicas. Nenhum desenho consulta solução ou modifica a partida.
+const CAMPAIGN_MOTIFS = Object.freeze({
+  light: `
+    <path class="cm-guide" d="M16 64H94V16"/>
+    <path class="cm-trace cm-gold" pathLength="100" d="M16 64H94V16"/>
+    <path d="M83 74L105 52"/>
+    <circle class="cm-accent cm-settle" cx="94" cy="16" r="7"/>
+  `,
+  cut: `
+    <path class="cm-paper" d="M20 16H100V68H20Z"/>
+    <path class="cm-fill cm-reveal" d="M20 16H60V68H20Z"/>
+    <path class="cm-trace" pathLength="100" d="M60 12V72"/>
+  `,
+  elo: `
+    <path class="cm-guide" d="M25 20H95V64H25Z"/>
+    <path class="cm-trace" pathLength="100" d="M25 20H95V64H25Z"/>
+    <circle class="cm-accent" cx="25" cy="20" r="5"/>
+    <circle class="cm-accent" cx="95" cy="64" r="5"/>
+  `,
+  prumo: `
+    <path class="cm-guide" d="M12 71H108"/>
+    <path class="cm-accent" d="M49 70L60 53L71 70Z"/>
+    <g class="cm-balance">
+    <path class="cm-fill" d="M24 24H50V14H70V24H96V42H24Z"/>
+    <path class="cm-guide" d="M60 31V53"/>
+    </g>
+  `,
+  pacto: `
+    <g class="cm-settle">
+    <circle class="cm-fill" cx="28" cy="25" r="10"/>
+    <circle class="cm-fill" cx="53" cy="25" r="10"/>
+    </g>
+    <g class="cm-settle cm-delay">
+    <path class="cm-accent" d="M70 46H88V64H70ZM93 46H111V64H93Z"/>
+    </g>
+    <path class="cm-guide" d="M16 42H110"/>
+  `,
+  sintonia: `
+    <path class="cm-guide" d="M15 20H105M15 42H105M15 64H105"/>
+    <g class="cm-together">
+    <circle class="cm-fill" cx="91" cy="20" r="6"/>
+    <circle class="cm-accent" cx="91" cy="42" r="6"/>
+    <circle class="cm-blue-fill" cx="91" cy="64" r="6"/>
+    </g>
+    <path d="M104 12V72"/>
+  `,
+  repasse: `
+    <path class="cm-guide" d="M21 42H99"/>
+    <path class="cm-trace" pathLength="100" d="M21 42H99"/>
+    <path class="cm-paper" d="M83 25H112V59H83Z"/>
+    <circle class="cm-fill cm-transfer" cx="98" cy="42" r="7"/>
+    <path class="cm-accent" d="M8 29H33V54H8Z"/>
+  `,
+  pulso: `
+    <path class="cm-guide" d="M20 42H100"/>
+    <circle class="cm-fill cm-beat" cx="25" cy="42" r="10"/>
+    <circle class="cm-fill cm-beat cm-delay" cx="60" cy="42" r="10"/>
+    <circle class="cm-fill cm-beat cm-delay-two" cx="95" cy="42" r="10"/>
+    <path class="cm-gold" d="M25 62H60M60 62H95"/>
+  `,
+  foz: `
+    <path class="cm-guide" d="M20 12V42H60V68H105M100 12V42H60"/>
+    <path class="cm-trace" pathLength="100" d="M20 12V42H60V68H105"/>
+    <path class="cm-trace cm-delay" pathLength="100" d="M100 12V42H60"/>
+    <path class="cm-accent" d="M103 59L114 68L103 77Z"/>
+  `,
+  refugio: `
+    <path class="cm-paper" d="M12 13H108V71H12Z"/>
+    <path class="cm-trace" pathLength="100" d="M60 13V71"/>
+    <path class="cm-fill cm-settle" d="M25 49Q20 25 42 26Q44 46 25 49Z"/>
+    <path class="cm-accent cm-settle cm-delay" d="M79 49Q74 25 96 26Q98 46 79 49Z"/>
+  `,
+  mirante: `
+    <path class="cm-guide" d="M22 14V68M22 42H105"/>
+    <path class="cm-trace" pathLength="100" d="M22 14V42H80"/>
+    <path class="cm-fill cm-reveal" d="M70 32H90V52H70Z"/>
+    <path class="cm-accent" d="M12 7L22 17L32 7Z"/>
+  `,
+  renovo: `
+    <path class="cm-guide" d="M20 59L59 42L95 23"/>
+    <path class="cm-trace" pathLength="100" d="M20 59L59 42L95 23"/>
+    <ellipse class="cm-fill" cx="20" cy="59" rx="10" ry="7"/>
+    <path class="cm-accent" d="M59 32L69 42L59 52L49 42Z"/>
+    <path class="cm-fill cm-settle cm-delay" d="M86 32Q78 10 108 11Q107 31 86 32Z"/>
+  `,
+});
+
+export const CONTEXTUAL_VICTORY_GAMES = Object.freeze(Object.keys(CAMPAIGN_MOTIFS));
+export function contextualVictoryMarkup(game, { animate = true } = {}) {
+  const motif = CAMPAIGN_MOTIFS[game];
+  if (!motif) return '';
+  return `<svg class="campaign-motion campaign-motion-${game}${animate ? ' campaign-motion-animate' : ''}"
+    viewBox="0 0 120 84" aria-hidden="true" focusable="false">${motif}</svg>`;
+}
+
 // A faixa permanece fora do tabuleiro e nunca altera o estado da partida.
 export function celebrationMarkup(options = {}) {
   return victoryTilesMarkup(options);
@@ -47,9 +142,14 @@ export function resultMarkup(game, success, options = {}) {
     repasse: 'Cada repasse chegou à medida certa.',
     orbita: 'Os giros alinharam todos os alvos.',
     desvio: 'Seu caminho decidiu a partida.',
+    pulso: 'Três batidas, intervalos iguais e cotas completas.',
+    foz: 'Todos os caminhos chegaram à foz.',
+    refugio: 'Cada região livre encontrou seu marco.',
+    mirante: 'Os olhares revelaram todas as formas.',
+    renovo: 'Cada semente encontrou seu botão e sua folha.',
   };
   const winner = Number.isInteger(options.winner) ? `✓ Jogador ${options.winner} venceu!` : 'Parabéns!';
-  return `<div class="result-badge result-${game} result-win tile-victory${options.animate === false ? ' game-victory-static' : ''}" data-outcome="win">${celebrationMarkup({ animate: options.animate !== false })}<div><strong>${winner}</strong><span>${copy[game] ?? captions[game]?.[0] ?? 'Cada escolha encontrou seu lugar.'}</span></div></div>${retry}`;
+  return `<div class="result-badge result-${game} result-win tile-victory${options.animate === false ? ' game-victory-static' : ''}" data-outcome="win">${contextualVictoryMarkup(game, { animate: options.animate !== false }) || celebrationMarkup({ animate: options.animate !== false })}<div><strong>${winner}</strong><span>${copy[game] ?? captions[game]?.[0] ?? 'Cada escolha encontrou seu lugar.'}</span></div></div>${retry}`;
 }
 function retryMarkup(game) {
   const label =
