@@ -37,3 +37,14 @@ test('Vitória usa a mesma arte de cestos sem copiar o SVG antigo', () => {
   assert.doesNotMatch(source,/#D88959|#B89462/);
   assert.match(renderFruitArt(0,true,true),/class="vva-quinhao-fruit"/);
 });
+
+test('Depósitos identificam cada fruto com legenda visível e grupo acessível', () => {
+  const state = engine.createState();
+  const before = structuredClone(state);
+  const board = view.renderBoard(state);
+  for (const name of ['Castanha-do-pará', 'Pitanga', 'Jabuticaba']) {
+    assert.equal(board.split('aria-hidden="true">' + name + '</span>').length - 1, 2);
+  }
+  assert.equal((board.match(/class="quinhao-count" role="group"/g) || []).length, 6);
+  assert.deepEqual(state, before);
+});
