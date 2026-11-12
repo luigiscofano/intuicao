@@ -93,6 +93,8 @@ test('integração preserva a base responsiva fora dos arquivos aprovados', asyn
   const { execFileSync } = await import('node:child_process');
   const root = new URL('../', import.meta.url);
   const approved = [
+    // Contadores de campanha: remoções pontuais protegidas em campaign-progress-scope.test.mjs.
+    'orbita/ui.mjs', 'sintonia/ui.mjs', 'repasse/ui.mjs',
     // Seleção unificada, diário original e sessão contínua lógica aprovados depois.
     'app.mjs', 'collection-ui.mjs', 'daily-challenge.mjs', 'logica/storage.mjs',
     'logica/endless.mjs', 'selection-presentation.mjs', 'selection-presentation.css',

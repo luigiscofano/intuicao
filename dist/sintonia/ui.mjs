@@ -548,14 +548,11 @@ export function initSintonia({ hideOtherGames }) {
     level = null;
     session = null;
     data.lastView = { active: true, screen, mode: 'campaign' };
-    const completed = Object.keys(data.campaign.completed).filter((id) =>
-      CAMPAIGN.some((l) => l.id === id),
-    ).length;
     const endlessSaved =
       !!data.endless?.current?.level &&
       validateActiveSintoniaLevel(data.endless.current.level).valid;
     const archivedCount = Object.keys(data.archivedAttempts).length;
-    host.innerHTML = `<div class="level-screen sintonia-selection"><p class="eyebrow">COLEÇÃO LÓGICA</p><h2 id="s-selection-title" tabindex="-1">SINTONIA ·</h2><p>Um comando, vários caminhos. Leve todos os animais aos seus destinos usando as mesmas setas.</p><div class="collection-toolbar selection-actions" role="group" aria-label="Ações do jogo"><button id="s-endless-entry" class="primary">Explorar modo livre</button><button id="s-daily" class="primary">Desafio de hoje</button></div><p class="collection-small">${completed} concluídos. Progresso salvo neste navegador.</p><p id="s-selection-status" role="status" aria-live="polite">${archivedCount ? 'Tentativas anteriores preservadas em arquivo inerte. As fases reformuladas começam sem herdar conclusões; escolha um desafio atual para jogar.' : ''}</p>${archivedCount ? '<button id="s-current-entry" type="button">Abrir uma fase atual</button>' : ''}${rulesPreviewMarkup('sintonia')}<div id="s-catalog">${CHAPTERS.map(
+    host.innerHTML = `<div class="level-screen sintonia-selection"><p class="eyebrow">COLEÇÃO LÓGICA</p><h2 id="s-selection-title" tabindex="-1">SINTONIA ·</h2><p>Um comando, vários caminhos. Leve todos os animais aos seus destinos usando as mesmas setas.</p><div class="collection-toolbar selection-actions" role="group" aria-label="Ações do jogo"><button id="s-endless-entry" class="primary">Explorar modo livre</button><button id="s-daily" class="primary">Desafio de hoje</button></div><p id="s-selection-status" role="status" aria-live="polite">${archivedCount ? 'Tentativas anteriores preservadas em arquivo inerte. As fases reformuladas começam sem herdar conclusões; escolha um desafio atual para jogar.' : ''}</p>${archivedCount ? '<button id="s-current-entry" type="button">Abrir uma fase atual</button>' : ''}${rulesPreviewMarkup('sintonia')}<div id="s-catalog">${CHAPTERS.map(
       (name, chapter) =>
         `<section class="s-chapter" aria-label="${esc(name)}"><h3 class="stage-heading">${shortNumber(chapter + 1)} · ${esc(name)} <small>Níveis ${chapter * 15 + 1}–${Math.min(chapter * 15 + 15, CAMPAIGN.length)}</small></h3><div class="level-group">${CAMPAIGN.slice(
           chapter * 15,

@@ -19,7 +19,7 @@ test('apresentação não escreve saves nem clona ou dispara controles',()=>{
 test('níveis compartilham grade, estados, foco e nomes acessíveis',()=>{
  assert.match(css,/:is\(\.level-tile,\.logic-level\)/);assert.match(css,/:is\(\.level-tile.done,\.logic-level.completed\)/);
  assert.match(css,/grid-template-columns:repeat\(4,minmax\(0,1fr\)\)/);assert.match(css,/focus-visible/);assert.match(source,/tile.title=name.textContent/);
- assert.match(source,/80 fases existentes/);
+ assert.match(source,/Continue explorando no seu ritmo/);assert.doesNotMatch(source,/80 fases existentes/);
 });
 test('Desvio preserva dados e mapas mas não oferece Sem parar',()=>{
  const ui=readFileSync(new URL('../dist/collection-ui.mjs',import.meta.url),'utf8');

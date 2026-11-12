@@ -4,12 +4,14 @@ import { execFileSync } from 'node:child_process';
 import { readFileSync } from 'node:fs';
 const root=new URL('../',import.meta.url);
 const git=(...args)=>execFileSync('git',args,{cwd:root,encoding:'utf8'});
+// Preserva o contrato histórico de PR60; o novo escopo está em campaign-progress-scope.test.mjs.
+const presentationRelease='909b9244568ff4af411753dd737b74ee589c6e4c';
 const base='669fbe8b917bff01db99cb05582862b0818a5bb2';
 const read=path=>readFileSync(new URL(path,root),'utf8');
 const prior=path=>git('show',`${base}:${path}`);
 const allowed=['index.html','app.mjs','collection-ui.mjs','logica/storage.mjs','logica/ui.mjs','daily-challenge.mjs','logica/endless.mjs','selection-presentation.mjs','selection-presentation.css'].map(p=>'dist/'+p);
 test('apresentação unificada preserva toda a distribuição fora dos nove arquivos autorizados',()=>{
- assert.equal(git('diff','--name-only',base,'--','dist',...allowed.map(p=>':(exclude)'+p)),'');
+ assert.equal(git('diff','--name-only',base,presentationRelease,'--','dist',...allowed.map(p=>':(exclude)'+p)),'');
  const extras=git('ls-files','--others','--exclude-standard','--','dist').trim().split('\n').filter(Boolean);
  assert.deepEqual(extras.filter(p=>!allowed.includes(p)),[]);
 });

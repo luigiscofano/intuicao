@@ -40,3 +40,20 @@ body #main .unified-selection .nv-setup-options>h3{display:none}
  body #main .unified-selection :is(.level-tile,.logic-level){min-height:58px;font-size:21px}
  body #main .unified-selection :is(.level-tile,.logic-level)>small{font-size:10px}
 }
+
+/* Contagem real da campanha, com o verde e a hierarquia da referência aprovada. */
+body #main .unified-selection .campaign-progress {
+  display: flex;
+  align-items: baseline;
+  flex-wrap: wrap;
+  gap: 0 8px;
+  margin: 22px 0;
+  color: #39674a;
+  font: 500 clamp(16px, 2vw, 20px)/1.4 system-ui, sans-serif;
+}
+body #main .unified-selection .campaign-progress-count {
+  font: 750 clamp(28px, 3.5vw, 36px)/1.2 system-ui, sans-serif;
+}
+body #main .unified-selection .campaign-progress-total {
+  white-space: nowrap;
+}
