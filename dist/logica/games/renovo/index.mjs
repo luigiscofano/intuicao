@@ -6,7 +6,7 @@ export const GAME = {
     'As duas ligações de cada botão devem formar um ângulo reto. Cada trecho é horizontal ou vertical e termina na primeira peça encontrada naquela direção.',
     'As linhas não podem cruzar, se sobrepor nem atravessar outra peça. Só os dois trechos do mesmo trio se encontram, em seu botão.'
   ],
-  instructions: 'Clique em duas peças alinhadas para desenhar uma ligação. Repita a mesma ligação para removê-la. Clique novamente na peça selecionada para cancelar; Limpar peça remove seus trechos. As formas fixas são semente (círculo), botão (losango) e folha.'
+  instructions: 'Arraste com o mouse ou dedo da semente ou folha até o botão; você pode virar e continuar até o outro extremo. Solte para confirmar. Repetir o traçado mantém os trechos existentes. Ou clique em duas peças alinhadas para ligar; repita os dois cliques para remover. Enter ou Espaço também selecionam peças. Escape cancela o gesto; clicar novamente na peça selecionada cancela a seleção. Limpar peça remove seus trechos.'
 };
 export { CAMPAIGN } from './campaign.mjs';
 export { initialState, applyAction, checkState, isStateValid, solutionState, toolsForLevel } from './engine.mjs';

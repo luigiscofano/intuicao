@@ -36,7 +36,8 @@ test('80 fases em dois estados mantêm canais, casas, foz fixa e estado sem tra�
  }
 });
 test('AIIJ usa o PNG aprovado sem alterar as larguras responsivas da identidade atual',()=>{
- const css=read('dist/approved-game-shell.css'),mjs=read('dist/approved-game-shell.mjs');
+ // AIIJ RENOVO posterior é protegida por renovo-scope.test.mjs.
+ const css=git('show',`${fozRelease}:dist/approved-game-shell.css`),mjs=git('show',`${fozRelease}:dist/approved-game-shell.mjs`);
  assert.match(mjs,/tiles\.classList\.toggle\("approved-tiles--foz", game === "foz"\)/);
  assert.equal(mjs.replace('      // AIIJ aprovada do FOZ: só a arte muda; outras rotas mantêm o mosaico.\n      tiles.classList.toggle("approved-tiles--foz", game === "foz");\n',''),git('show',`${base}:dist/approved-game-shell.mjs`));
  assert.equal(css.slice(0,css.indexOf('\n/* FOZ · AIIJ 3 aprovada.')),git('show',`${base}:dist/approved-game-shell.css`));

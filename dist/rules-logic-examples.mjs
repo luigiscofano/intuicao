@@ -1,3 +1,4 @@
+import { pieceSymbol as renovoSymbol } from './logica/games/renovo/art.mjs';
 // Teaching miniatures, not campaign levels. Fixtures are replayed against the shipped engines.
 const ink='#304c38', green='#486c4d', pale='#e6eedb', gold='#d6a53a', purple='#8b78b4';
 const text=(x,y,label,size=10)=>`<text x="${x}" y="${y}" text-anchor="middle" fill="${ink}" font-size="${size}" font-family="system-ui,sans-serif">${label}</text>`;
@@ -20,7 +21,7 @@ function beats(x,after){return [1,0,1,0,after?1:null].map((s,i)=>text(x+i*17+8,4
 function river(x,after){return line(x,41,x+45,41,'#a8b79c')+line(x+45,41,x+45,89,'#a8b79c')+line(x,89,x+45,89,'#a8b79c')+text(x+22,44,'→',17)+text(x+22,92,'→',17)+(after?reveal(text(x+45,70,'↓',17)):'')+[[0,0,'2'],[45,0,''],[0,48,''],[45,48,'0']].map(([a,b,s])=>dot(x+a,41+b,10,s==='0'?gold:pale)+text(x+a,45+b,s,11)).join('')+text(x+22,110,after?'2 trechos até 0':'Falta uma seta',9);}
 function shelter(x,after){return [0,1,2].map(i=>box(x+i*25,48,25,30,i===1&&after?'#d6ddce':pale)+(i===1?(after?reveal(line(x+28,74,x+43,52,green,2)+line(x+33,76,x+47,56,green,2)):text(x+37,67,'·',14)):text(x+i*25+12,67,i===0?'①':'②',15))).join('')+text(x+37,103,after?'2 regiões distintas':'Marcos livres',9);}
 function lookout(x,after){return [0,1,2].map(i=>box(x+i*21,51,21,25)+(i!==1?text(x+i*21+10,68,'×',11):after?reveal(dot(x+31,63,6)):text(x+31,68,'·',13))).join('')+text(x-7,67,'○',12)+text(x+70,67,'○',12)+line(x-7,43,x+23,43,gold,1)+line(x+70,43,x+40,43,gold,1)+text(x+9,46,'→',11)+text(x+52,46,'←',11)+text(x+31,98,after?'2 testemunhas':'Estoque: 1 ○, 0 △',9);}
-function trio(x,after){return line(x,43,x+44,43)+(after?reveal(line(x+44,43,x+44,89)):'')+dot(x,43,7)+`<path d="M${x+44} 34l9 9-9 9-9-9Z" fill="${purple}"/>`+`<path d="M${x+36} 97Q${x+31} 79 ${x+52} 81Q${x+57} 99 ${x+36} 97Z" fill="${green}"/>`+text(x,28,'semente',8)+text(x+44,28,'botão',8)+text(x+44,111,'folha',8)+(after?reveal(`<path d="M${x+35} 43v9h9" fill="none" stroke="${gold}" stroke-width="1.5"/>`):'');}
+function trio(x,after){return line(x,43,x+44,43,'#39654c')+(after?reveal(line(x+44,43,x+44,89,'#39654c')):'')+renovoSymbol('S',x,43,9)+renovoSymbol('B',x+44,43,9)+renovoSymbol('F',x+44,89,9)+text(x,28,'semente',8)+text(x+44,28,'botão',8)+text(x+44,111,'folha',8)+(after?reveal(`<path d="M${x+35} 43v9h9" fill="none" stroke="${gold}" stroke-width="1.5"/>`):'');}
 export const LOGIC_RULE_EXAMPLES={
  divisa:{steps:[
  'Escolha uma letra e toque em uma casa, ou use Alternar. Preencha todas as casas e preserve as letras fixas, indicadas por pinos.',
@@ -48,9 +49,9 @@ export const LOGIC_RULE_EXAMPLES={
  'Cada peça precisa ser vista por pelo menos dois observadores. Observadores em lados opostos contam separadamente; uma borda sem placa não dá informação e não conta como testemunha.',done],
  svg:panels(lookout(23,false),lookout(153,true),'O círculo é visto pelos dois lados.'),description:'Estoque de um círculo e nenhum triângulo. A peça central é a primeira vista por dois observadores opostos; os dois vazios deixam a visão passar.'},
  renovo:{steps:[
- 'Clique em duas peças alinhadas para ligá-las. Cada botão (losango) deve se ligar a uma semente (círculo) e a uma folha. Use todas as peças em um único trio cada.',
+ 'Arraste da semente ou folha até o botão; você pode virar e continuar até o outro extremo. Solte para confirmar. Ou clique em duas peças alinhadas. Cada botão deve se ligar a uma semente e a uma folha. Use todas as peças em um único trio cada.',
  'Os dois trechos de cada botão devem formar um ângulo reto: um horizontal e outro vertical. Cada trecho termina na primeira peça encontrada; pode atravessar casas vazias, mas nunca outra peça.',
  'As ligações não podem cruzar nem se sobrepor. Só os dois trechos do mesmo trio podem se encontrar, em seu botão. Não é preciso cobrir as casas vazias.',
- 'Repita uma ligação para removê-la; toque de novo na peça selecionada para cancelar, ou use Limpar peça para retirar seus trechos. '+done],
+ 'Repita os dois cliques de uma ligação para removê-la; repetir o traçado mantém os trechos existentes. Escape cancela o gesto. Toque de novo na peça selecionada para cancelar a seleção, ou use Limpar peça para retirar seus trechos. Enter ou Espaço também selecionam peças. '+done],
  svg:panels(trio(29,false),trio(160,true),'Semente → botão → folha: uma curva de 90°.'),description:'A ligação vertical do botão à folha completa o trio. Ela encontra a ligação horizontal da semente somente no botão e forma um ângulo reto.'}
 };

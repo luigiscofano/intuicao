@@ -719,3 +719,13 @@ body.approved-game-view .approved-versus-surface .grid-cell {
 .approved-tiles.approved-tiles--foz > span {
   display: none;
 }
+
+/* RENOVO · AIIJ C1 aprovada, preservada com fundo transparente. */
+.approved-tiles.approved-tiles--renovo {
+  display: block;
+  aspect-ratio: 304 / 148.5;
+  background: url("platform-assets/renovo-aiij-c1.png") center / contain no-repeat;
+}
+.approved-tiles.approved-tiles--renovo > span {
+  display: none;
+}
