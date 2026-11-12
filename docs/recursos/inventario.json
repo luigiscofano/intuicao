@@ -99,6 +99,13 @@
         "docs/transparent-tiles-2026-11-12.md"
       ],
       "source": "AIIJ C1 Vereda leve aprovada para o RENOVO em 12/11/2026: composição de formas SVG com os ornamentos PNG existentes green-br, gold-tl e blue-br, preservados byte a byte; exportação PNG transparente."
+    },
+    "mirante-aiij": {
+      "evidence": [
+        "docs/mirante-renovacao-2026-11-12.md",
+        "docs/transparent-tiles-2026-11-12.md"
+      ],
+      "source": "AIIJ A aprovada para o MIRANTE em 12/11/2026: composição SVG original com módulos Intuição existentes e exportação PNG transparente, sem geração raster por IA."
     }
   },
   "assets": [
@@ -1707,6 +1714,26 @@
       "rightsHolder": "Luigi Scofano de Araujo (elementos autorais do projeto)",
       "license": "Direitos reservados; recursos visuais excluídos da licença MIT do código.",
       "permissionEvidence": "docs/qa/renovo-tracado-aprovado-2026-11-12.md",
+      "reviewBasis": "owner-approved-project-composition; existing-visual-rights-policy"
+    },
+    {
+      "path": "dist/platform-assets/mirante-aiij-a.png",
+      "sha256": "4fccbebc14edaaac7ccd35186d2eac17e7f604c48400daa70ba3482a54b02ccb",
+      "group": "mirante-aiij",
+      "status": "cleared",
+      "rightsHolder": "Luigi Scofano de Araujo (elementos autorais do projeto)",
+      "license": "Direitos reservados; recursos visuais excluídos da licença MIT do código.",
+      "permissionEvidence": "docs/mirante-renovacao-2026-11-12.md",
+      "reviewBasis": "owner-approved-project-composition; existing-visual-rights-policy"
+    },
+    {
+      "path": "dist/platform-assets/mirante-aiij-a.svg",
+      "sha256": "9ea6372be15be43a5b191c6e0df475456a229c10b2b1c4b5e970a55092d39447",
+      "group": "mirante-aiij",
+      "status": "cleared",
+      "rightsHolder": "Luigi Scofano de Araujo (elementos autorais do projeto)",
+      "license": "Direitos reservados; recursos visuais excluídos da licença MIT do código.",
+      "permissionEvidence": "docs/mirante-renovacao-2026-11-12.md",
       "reviewBasis": "owner-approved-project-composition; existing-visual-rights-policy"
     }
   ],

@@ -194,6 +194,7 @@ export function initApprovedGameShell(doc = document, win = window) {
       // AIIJs aprovadas: só a arte destas rotas muda; as demais mantêm o mosaico.
       tiles.classList.toggle("approved-tiles--foz", game === "foz");
       tiles.classList.toggle("approved-tiles--renovo", game === "renovo");
+      tiles.classList.toggle("approved-tiles--mirante", game === "mirante");
       setText(number, presentation.number);
       setText(category, `${presentation.category} · ${presentation.name}`);
 

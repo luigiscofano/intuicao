@@ -729,3 +729,13 @@ body.approved-game-view .approved-versus-surface .grid-cell {
 .approved-tiles.approved-tiles--renovo > span {
   display: none;
 }
+
+/* MIRANTE · AIIJ A aprovada, preservada com fundo transparente. */
+.approved-tiles.approved-tiles--mirante {
+  display: block;
+  aspect-ratio: 304 / 148.5;
+  background: url("platform-assets/mirante-aiij-a.png") center / contain no-repeat;
+}
+.approved-tiles.approved-tiles--mirante > span {
+  display: none;
+}
