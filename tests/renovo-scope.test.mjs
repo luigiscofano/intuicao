@@ -1,12 +1,13 @@
 import test from 'node:test';
 import assert from 'node:assert/strict';
 import { execFileSync } from 'node:child_process';
-import { readFileSync } from 'node:fs';
 
 const root = new URL('../', import.meta.url);
 const baseline = '938709655ecbf248469e106fa740586c25b7ac97';
 const git = (...args) => execFileSync('git', args, { cwd: root, encoding: 'utf8' });
-const read = path => readFileSync(new URL(path, root), 'utf8');
+// Contrato histórico da entrega RENOVO; o delta atual é protegido por level-arrows-scope.
+const release = '39b113ebb37101e02dde1acd4b2d1ecb2c7ee311';
+const read = path => git('show', `${release}:${path}`);
 const prior = path => git('show', `${baseline}:${path}`);
 const allowed = [
   'dist/approved-game-shell.css',
@@ -27,8 +28,8 @@ const allowed = [
 ];
 
 test('RENOVO altera somente o delta aprovado e preserva FOZ, viewport, saves e geradores', () => {
-  const changed = git('diff', '--name-only', baseline, '--', 'dist').trim().split('\n').filter(Boolean);
-  const untracked = git('ls-files', '--others', '--exclude-standard', 'dist').trim().split('\n').filter(Boolean);
+  const changed = git('diff', '--name-only', baseline, release, '--', 'dist').trim().split('\n').filter(Boolean);
+  const untracked = git('diff', '--name-only', '--diff-filter=A', baseline, release, '--', 'dist').trim().split('\n').filter(Boolean);
   for (const file of [...changed, ...untracked]) assert.ok(allowed.includes(file), file);
 });
 

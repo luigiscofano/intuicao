@@ -1298,11 +1298,11 @@ export function initRepasse({ hideOthers = () => {} } = {}) {
       tutorialMarkup(unknown) +
       '<div class="board-navigation r-board-navigation" role="group" aria-label="Área do jogo e navegação de níveis">' +
       (mode === 'campaign'
-        ? '<button id="r-level-prev" class="level-arrow" aria-label="Nível anterior" title="Nível anterior">←</button>'
+        ? '<button type="button" id="r-level-prev" class="level-arrow" aria-controls="r-board" aria-label="Nível anterior" title="Nível anterior">←</button>'
         : '') +
       '<div id="r-board-surface" class="r-board-surface"><div id="r-board-scroll" class="r-board-scroll" tabindex="0" role="region" aria-label="Tabuleiro e caixas das bordas, ajustados à tela" aria-describedby="r-scroll-help"><div id="r-board" class="r-board" tabindex="-1" role="group" aria-label="Tabuleiro de REPASSE" aria-describedby="r-keyboard-help r-preview"></div></div><p id="r-scroll-help" class="r-scroll-help">O tabuleiro e as caixas se ajustam à tela. Nas peças, use as setas para mover o foco.</p><div id="r-motion" class="result-motion" aria-hidden="true"></div></div>' +
       (mode === 'campaign'
-        ? '<button id="r-level-next" class="level-arrow" aria-label="Próximo nível" title="Próximo nível">→</button>'
+        ? '<button type="button" id="r-level-next" class="level-arrow" aria-controls="r-board" aria-label="Próximo nível" title="Próximo nível">→</button>'
         : '') +
       '</div><p id="r-keyboard-help" class="sr-only">Toque para retirar. Setas movem o foco; Enter ou espaço retira. Ctrl+Z desfaz.</p><p id="r-preview" class="sr-only" role="status" aria-live="polite"></p><div class="r-box-legend" aria-label="Estados das metas"><span>○ incompleta</span><span>✓ exata</span><span>! ultrapassada</span><span>Caixas: acumulado / meta</span></div><p id="r-status" class="r-feedback" role="status" aria-live="polite" aria-atomic="true"></p><div class="level-actions"><button id="r-confirm" class="primary confirm" hidden>Confirmar resposta</button><div class="actions"><button id="r-answer" hidden>Ver gabarito</button><button id="r-hint" class="action-hint">✦ Dicas</button><button id="r-next" ' +
       (mode === 'custom' ? 'hidden' : '') +
