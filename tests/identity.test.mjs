@@ -109,7 +109,14 @@ test('movimento e vitórias Versus aprovados preservam todos os arquivos fora do
   const extras = git('diff', '--name-only', '--diff-filter=A', motionBaseline, beforePng, '--', 'dist').trim().split('\n').filter(Boolean);
   assert.deepEqual(extras.filter(path => !approved.includes(path)), []);
   assert.equal(withoutFooter(git('show', `${beforePng}:dist/identity.css`)), withoutFooter(git('show', `${motionBaseline}:dist/identity.css`)));
-  const approvedVersus = approved.filter(path => path.startsWith('dist/versus/'));
+  // Revisão visual posterior do Quinhão: só apresentação e identificação dos frutos.
+  // Motores, sessões e persistência continuam fora desta lista.
+  const approvedVersus = [
+    ...approved.filter(path => path.startsWith('dist/versus/')),
+    'dist/versus/games/quinhao/README.md',
+    'dist/versus/games/quinhao/index.mjs',
+    'dist/versus/games/quinhao/fruit-art.mjs',
+  ];
   assert.equal(git('diff', '--name-only', motionBaseline, '--', 'dist/versus',
     ...approvedVersus.map(path => `:(exclude)${path}`)), '');
 });
