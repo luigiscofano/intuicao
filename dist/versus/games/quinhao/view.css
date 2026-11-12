@@ -110,11 +110,24 @@
   gap: 3px;
   margin-top: 4px;
 }
-#versus-games .quinhao-counts > span {
+#versus-games .quinhao-count-value {
   display: flex;
   align-items: center;
   justify-content: center;
   min-width: 0;
+}
+/* Cada depósito mantém o nome junto do fruto, sem depender só de cor ou forma. */
+#versus-games .quinhao-count {
+  display: grid;
+  align-content: start;
+  min-width: 0;
+}
+#versus-games .quinhao-fruit-label {
+  color: #30412f;
+  font-size: 0.67rem;
+  line-height: 1.2;
+  text-align: center;
+  overflow-wrap: normal;
 }
 #versus-games .quinhao-counts .quinhao-fruit {
   width: 33px;
@@ -229,6 +242,9 @@
   #versus-games .quinhao-counts .quinhao-fruit {
     width: 23px;
     height: 25px;
+  }
+  #versus-games .quinhao-fruit-label {
+    font-size: 0.6rem;
   }
   #versus-games .quinhao-counts b {
     font-size: 0.82rem;
