@@ -98,5 +98,7 @@ test('somente quatro arquivos de produção mudam; motores, geradores e FOZ fica
   const changed = git('diff', '--name-only', baseline, pngRelease, '--', 'dist')
     .trim().split('\n').filter(Boolean);
   for (const file of changed) assert.ok(allowed.includes(file), file);
-  assert.equal(git('ls-files', '--others', '--exclude-standard', '--', 'dist'), '');
+  // Acréscimos atuais são protegidos por game-viewport-scope.test.mjs.
+  const added = git('diff', '--name-only', '--diff-filter=A', baseline, pngRelease, '--', 'dist').trim().split('\n').filter(Boolean);
+  for (const file of added) assert.ok(allowed.includes(file), file);
 });

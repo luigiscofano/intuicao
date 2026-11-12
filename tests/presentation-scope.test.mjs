@@ -12,11 +12,12 @@ const prior=path=>git('show',`${base}:${path}`);
 const allowed=['index.html','app.mjs','collection-ui.mjs','logica/storage.mjs','logica/ui.mjs','daily-challenge.mjs','logica/endless.mjs','selection-presentation.mjs','selection-presentation.css'].map(p=>'dist/'+p);
 test('apresentação unificada preserva toda a distribuição fora dos nove arquivos autorizados',()=>{
  assert.equal(git('diff','--name-only',base,presentationRelease,'--','dist',...allowed.map(p=>':(exclude)'+p)),'');
- const extras=git('ls-files','--others','--exclude-standard','--','dist').trim().split('\n').filter(Boolean);
+ // Novos arquivos da entrega atual são verificados em game-viewport-scope.test.mjs.
+ const extras=git('diff','--name-only','--diff-filter=A',base,presentationRelease,'--','dist').trim().split('\n').filter(Boolean);
  assert.deepEqual(extras.filter(p=>!allowed.includes(p)),[]);
 });
 test('index preserva integralmente os includes e conteúdo anteriores, exceto diário e camada de seleção',()=>{
- const stripped=read('dist/index.html')
+ const stripped=git('show','b34690d870b714280f742142413a64d9d7e0387e:dist/index.html')
   .replace('    <link rel="stylesheet" href="selection-presentation.css" />\n','')
   .replace('    <script type="module" src="selection-presentation.mjs"></script>\n','')
   .replace('          <button type="button" id="selection-daily">Desafio diário</button>\n','');

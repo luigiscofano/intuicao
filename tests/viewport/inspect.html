@@ -1,0 +1,3 @@
+<!doctype html><meta charset="utf-8"><style>body{margin:0}iframe{display:block;border:0}</style><iframe id="frame"></iframe><script type="module">
+const p=new URL(location.href).searchParams,f=document.querySelector('iframe');f.width=p.get('w')||390;f.height=p.get('h')||844;f.src=`index.html?game=${encodeURIComponent(p.get('game')||'light')}`;const sleep=ms=>new Promise(r=>setTimeout(r,ms));await new Promise(r=>f.onload=r);for(let i=0;i<100;i++){const d=f.contentDocument,buttons=[...d.querySelectorAll('.level-tile,.logic-level,#b-start,#ce-start,#nv-start,#c-duel-start')].filter(e=>!e.closest('[hidden]')&&e.getClientRects().length);if(buttons.length){(p.get('last')?buttons.at(-1):buttons[0]).click();break;}await sleep(50);}
+</script>

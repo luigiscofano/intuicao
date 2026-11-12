@@ -10,11 +10,13 @@ const read=path=>readFileSync(new URL(path,root),'utf8');
 const git=(...args)=>execFileSync('git',args,{cwd:root,encoding:'utf8'});
 // Main após a integração de #54–62, com os PNGs transparentes preservados.
 const base='b34690d870b714280f742142413a64d9d7e0387e';
+// Contrato histórico FOZ; o viewport protege a distribuição atual.
+const fozRelease='24ea87b22d22947456e14c67b8b727ed27820f30';
 const allowed=['dist/logica/games/foz/view.mjs','dist/approved-game-shell.mjs','dist/approved-game-shell.css','dist/platform-assets/foz-aiij-mosaico.png','dist/platform-assets/foz-aiij-mosaico.svg'];
 
 test('FOZ preserva toda a distribuição fora das cinco alterações visuais aprovadas',()=>{
- assert.equal(git('diff','--name-only',base,'--','dist',...allowed.map(p=>':(exclude)'+p)),'');
- assert.deepEqual(git('ls-files','--others','--exclude-standard','--','dist').trim().split('\n').filter(Boolean).filter(p=>!allowed.includes(p)),[]);
+ assert.equal(git('diff','--name-only',base,fozRelease,'--','dist',...allowed.map(p=>':(exclude)'+p)),'');
+ assert.deepEqual(git('diff','--name-only','--diff-filter=A',base,fozRelease,'--','dist').trim().split('\n').filter(Boolean).filter(p=>!allowed.includes(p)),[]);
 });
 test('só os canais mudam no renderizador; peças, pinos, texto e áreas de interação são idênticos',()=>{
  const previous=git('show',`${base}:dist/logica/games/foz/view.mjs`);

@@ -87,7 +87,7 @@ export function presentSelection(root,game){
  if(daily)modeCard(root,modes,'daily',daily,game);if(endless)modeCard(root,modes,'endless',endless,game);
  if(daily&&endless){const first=modes.querySelector('[data-selection-mode="daily"]');if(modes.firstElementChild!==first)modes.prepend(first);}
  const catalogue=[...root.querySelectorAll(CATALOG)];let levels=root.querySelector(':scope > [data-selection-section="levels"]');
- if(catalogue.length){levels=section(root,'levels','Níveis','Escolha uma faixa e jogue no seu ritmo. Seu progresso fica neste navegador.');const extras=root.querySelector('.logic-mode-actions');if(extras&&extras.children.length)move(extras,levels);for(const item of catalogue)move(item,levels);
+ if(catalogue.length){levels=section(root,'levels','Níveis');const extras=root.querySelector('.logic-mode-actions');if(extras&&extras.children.length)move(extras,levels);for(const item of catalogue)move(item,levels);
   const resumeId=extras?.querySelector('[data-level-id]')?.dataset.levelId;
   for(const tile of levels.querySelectorAll('.logic-level')){if(resumeId===tile.dataset.levelId)tile.setAttribute('aria-current','true');if(!tile.querySelector('.selection-level-state')){const name=tile.querySelector(':scope > span');if(name)tile.title=name.textContent;tile.append(node(root.ownerDocument,'small','selection-level-state',tile.classList.contains('completed')?'✓ concluído':'explorar'));}}
  }
