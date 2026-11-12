@@ -1,0 +1,7 @@
+<!doctype html>
+<html lang="pt-BR"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1"><title>QA do mosaico do rodapé</title>
+<style>body{margin:20px;background:#e8e8e3;font:14px system-ui}header{display:flex;gap:12px;align-items:center;margin-bottom:16px}button,select{font:inherit;padding:8px}iframe{display:block;width:390px;height:650px;border:1px solid #a6b198}pre{white-space:pre-wrap}</style></head>
+<body><header><label>Largura <select id="width"><option>320</option><option>375</option><option selected>390</option><option>768</option><option>1280</option></select></label>
+<label>Tela <select id="route"><option value="">Início</option><option value="?category=versus" selected>Versus</option><option value="?screen=achievements">Conquistas</option><option value="?game=light">Reflexos</option><option value="?game=lastro">Lastro</option></select></label>
+<button id="open">Abrir rodapé</button><button id="run">Testar 35 casos</button></header>
+<iframe id="site" title="Intuição em teste"></iframe><pre id="results">Pronto para executar.</pre><script type="module" src="footer-mosaic.mjs"></script></body></html>

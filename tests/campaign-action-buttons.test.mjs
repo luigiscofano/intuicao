@@ -93,6 +93,8 @@ test('integração preserva a base responsiva fora dos arquivos aprovados', asyn
   const { execFileSync } = await import('node:child_process');
   const root = new URL('../', import.meta.url);
   const approved = [
+    // Mosaico do rodapé aprovado depois; limites exatos em identity.test.mjs.
+    'identity.css',
     'approved-game-shell.css', 'approved-game-shell.mjs', 'campaign-action-buttons.css',
     'index.html', 'versus/README.md', 'versus/ui.mjs', 'versus/repeat-choice.mjs',
     'versus/games/dobra/view.mjs', 'versus/games/enlace/view.mjs',

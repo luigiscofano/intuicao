@@ -233,9 +233,10 @@ body.approved-game-view #main .approved-real-actions .action-hint {
   background: transparent;
 }
 
-/* Rodapé: friso discreto; folhas e assinatura permanecem na camada original. */
+/* Rodapé: mosaico aprovado com peças inteiras e respiro na divisória.
+   O fundo opaco interrompe a linha; folhas e assinatura permanecem intactas. */
 body>footer {
-  border-top: 1px solid #a6b198 !important;
+  border-top: 1px solid var(--identity-line) !important;
   margin-top: 40px !important;
   padding-top: 34px !important;
   padding-bottom: 40px !important;
@@ -244,15 +245,25 @@ body>footer::after {
   content: '' !important;
   display: block !important;
   position: absolute;
-  left: 40px;
-  top: -6px;
-  height: 12px;
-  width: 160px;
-  background: radial-gradient(ellipse at 100% 100%,#244b63 70%,transparent 71%) 0 0/24px 12px repeat-x,radial-gradient(ellipse at 0 0,#cca034 70%,transparent 71%) 12px 0/24px 12px repeat-x;
+  inset: -9px auto auto 50%;
+  width: 100px;
+  height: 18px;
+  transform: translateX(-50%);
   border: 0;
+  border-radius: 0;
   box-shadow: none;
   background-color: var(--identity-cream);
+  background-image:
+    radial-gradient(ellipse at 100% 100%,var(--identity-green) 70%,transparent 71%),
+    radial-gradient(ellipse at 0 0,var(--identity-gold) 70%,transparent 71%),
+    radial-gradient(ellipse at 100% 100%,var(--identity-blue) 70%,transparent 71%),
+    radial-gradient(ellipse at 0 0,var(--identity-green) 70%,transparent 71%);
+  background-size: 16px 16px;
+  background-position: 12px 1px,32px 1px,52px 1px,72px 1px;
+  background-repeat: no-repeat;
+  opacity: 1;
   pointer-events: none;
+  user-select: none;
 }
 
 /* Em telas estreitas, o fragmento não disputa espaço com o título. */
@@ -264,10 +275,5 @@ body>footer::after {
     position: static;
     display: block;
     margin-top: 16px;
-  }
-}
-@media (max-width: 760px) {
-  body>footer::after {
-    left: 20px;
   }
 }
