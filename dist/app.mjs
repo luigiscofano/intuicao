@@ -566,7 +566,7 @@ function applyAnswerKey() {
   saveCampaign();
   answerProgress.assist(answerKey());
   $("hint-text").textContent =
-    "Gabarito aplicado. Este desafio está marcado como assistido. Confira a configuração e clique em Confirmar resposta para testar.";
+    "";
   render();
 }
 answerButton.onclick = applyAnswerKey;
