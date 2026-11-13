@@ -38,3 +38,25 @@ Não trocar fontes de ícones por fontes de texto nem converter a marca em texto
 Antes de publicar, verificar títulos longos, controles, níveis, conquistas,
 regras e todos os jogos em telas estreitas e desktop. Não confundir testes
 estáticos com inspeção visual do navegador.
+## Auditoria recursiva e cobertura de navegação (2026-11-13)
+
+- V244: inspeção das fontes computadas no DOM das seleções dos 19 jogos e de
+  um primeiro tabuleiro/partida de cada um, incluindo os sete versus.
+- Modais Sobre, Configurações e fauna; tela Conquistas também inspecionados.
+- Exceções descobertas: seleção Sintonia (Courier/system), CSS aninhados de
+  Sintonia/Repasse/Lógica, lema Sobre, rótulos do ELO e declaração redundante
+  ui-sans-serif na vitória. Corrigidas sem mudar dimensões ou regras.
+- Novo teste recursivo percorre 66 folhas CSS, inclusive subpastas. Todas as
+  famílias de texto ativas devem ser tokens C; teste protege contra regressão.
+- Exceções intencionais: imagem/lettering da marca; editores e exemplos JSON em
+  monoespaçada para preservar formatação do código; diagramas de setas de mapas
+  Desvio em monoespaçada como arte; código arquivado Órbita não foi reestilizado.
+- Símbolos, sprites pixel e ilustrações mantêm seus desenhos. Textos SVG de
+  tutoriais recebem Source Sans por CSS mesmo com atributo legado no SVG.
+
+Limites: inspeção DOM de um estado inicial por jogo, não de toda sequência
+possível de jogadas. Estados de vitória/erro compartilham o sistema e têm CSS
+inspecionado, mas não houve vitória manual em cada jogo. QA visual anterior
+cobriu desktop 1331px e viewport 390px em amostras; não é auditoria visual de
+cada um dos 19 jogos em cada tamanho. Publicação das correções é coordenada
+com a revisão integrada do sistema visual, sem deployment concorrente.

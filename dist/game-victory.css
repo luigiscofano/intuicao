@@ -101,7 +101,7 @@
   stroke: #91af7d;
 }
 .game-victory text {
-  font: 600 14px ui-sans-serif,var(--font-ui);
+  font: 600 14px var(--font-ui);
   text-anchor: middle;
   fill: #46674d;
   stroke: none;

@@ -2540,7 +2540,7 @@ button.action-hint:hover {
   pointer-events: none;
   user-select: none;
   white-space: nowrap;
-  font: 700 12px/18px ui-monospace,SFMono-Regular,Consolas,monospace;
+  font: 700 12px/18px var(--font-ui);
   color: #4b6040;
   text-shadow: 0 1px 2px #fffefa;
 }
