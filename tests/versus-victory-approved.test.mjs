@@ -81,7 +81,13 @@ test('integrações consomem apenas resultado novo; história, modos, motores e 
   const beforeMaps = '2774d672aca1e03768ec4433a8cd98f1da825077';
   for (const p of paths) {
     const changedForMaps = ['dist/versus/session.mjs', 'dist/versus/games/estalo/engine.mjs'].includes(p);
-    const actual = changedForMaps
+    // Novos catálogos aprovados depois: conserva o contrato histórico da vitória.
+    // Regras atuais, clássicos e saves são exercitados pelos testes dos mapas.
+    const expandedMaps = ['dist/desvio.mjs', 'dist/versus/games/acorde/engine.mjs',
+      'dist/versus/games/mosaico/engine.mjs', 'dist/versus/games/quinhao/engine.mjs'].includes(p);
+    const actual = expandedMaps
+      ? execFileSync('git', ['show', `89e3b73dd4c7571660258551d80b624b37ad4341:${p}`], { cwd: root, encoding: 'utf8' })
+      : changedForMaps
       ? execFileSync('git', ['show', `${beforeMaps}:${p}`], { cwd: root, encoding: 'utf8' })
       : read(p);
     assert.equal(actual.replaceAll('STORED_VERSUS_GAME_IDS', 'VERSUS_GAME_IDS'), execFileSync('git', ['show', `${base}:${p}`], { cwd: root, encoding: 'utf8' }), p);

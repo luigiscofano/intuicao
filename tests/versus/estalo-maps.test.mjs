@@ -18,9 +18,9 @@ function neighbors(cell, rows, columns) {
     .map(([r, c]) => r * columns + c);
 }
 
-test("ESTALO mapas: 42 mapas fixos, seis tamanhos e metas iguais", () => {
-  assert.equal(engine.ESTALO_MAPS.length, 42);
-  assert.equal(new Set(engine.ESTALO_MAPS.map(({ id }) => id)).size, 42);
+test("ESTALO mapas: 48 mapas fixos, seis tamanhos e metas iguais", () => {
+  assert.equal(engine.ESTALO_MAPS.length, 48);
+  assert.equal(new Set(engine.ESTALO_MAPS.map(({ id }) => id)).size, 48);
   assert.deepEqual(new Set(engine.ESTALO_MAPS.map(({ rows, columns }) => `${rows}x${columns}`)), new Set(["4x4", "3x6", "4x6", "6x6", "6x8", "8x8"]));
   for (const map of engine.ESTALO_MAPS) {
     const state = engine.createState({ mapId: map.id });
@@ -30,7 +30,10 @@ test("ESTALO mapas: 42 mapas fixos, seis tamanhos e metas iguais", () => {
     assert.equal(state.board.filter(Boolean).length, state.targets[0] * 2);
     assert.deepEqual(state.blocked, map.blocked);
     for (const cell of map.blocked) assert.equal(state.board[cell], null);
-    assert.ok(state.targets[0] >= 8);
+    // Varandas 4×4 reserva duas casas vazadas: sete vagens por equipe.
+    const minimumTarget = map.id === "varandas-4x4" ? 7 : 8;
+    assert.ok(state.targets[0] >= minimumTarget);
+    assert.equal(state.targets[0], map.board.filter(pod => pod?.owner === 0).length);
   }
 });
 
@@ -155,14 +158,14 @@ test("ESTALO mapas: salvar/restaurar mantém mapa, histórico, desfazer e refaze
 });
 
 
-test("ESTALO catálogo: ao menos a variedade de Cerco, sete opções distintas em cada tamanho", async () => {
+test("ESTALO catálogo: ao menos a variedade de Cerco, oito opções distintas em cada tamanho", async () => {
   const { CERCO_MAPS, CERCO_GRID_SIZES } = await import("../../dist/cerco/maps.mjs");
   const sizes = new Set(engine.ESTALO_MAPS.map(map => `${map.rows}x${map.columns}`));
   assert.ok(sizes.size > CERCO_GRID_SIZES.length);
   assert.ok(engine.ESTALO_MAPS.length >= CERCO_MAPS.length);
   for (const size of sizes) {
     const maps = engine.ESTALO_MAPS.filter(map => `${map.rows}x${map.columns}` === size);
-    assert.equal(maps.length, 7);
+    assert.equal(maps.length, 8);
     assert.equal(new Set(maps.map(map => JSON.stringify(map.board))).size, maps.length);
   }
 });

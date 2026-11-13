@@ -36,7 +36,8 @@ function selectOptions(mode, difficulty) {
 }
 
 function startMap() {
-  host.querySelector('[data-map="0"]').click();
+  assert.ok(host.querySelector('[data-vs-map="D-00"]'));
+  $("c-start-duel").click();
 }
 
 function campaignSession(mode) {

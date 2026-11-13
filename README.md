@@ -22,6 +22,12 @@ Dobra foi retirado em 13/11/2026, assim como Divisa, Órbita, Lastro, Vazante e 
 
 O site está **aberto ao público desde 03/11/2026**: qualquer pessoa com o link pode jogar no navegador. Para executar uma cópia deste repositório, siga a instalação local abaixo.
 
+## Mapas dos sete jogos Versus
+
+A seleção unificada reúne **295 mapas e cenários**: Broto (39), Cerco (40), Estalo (48), Quinhão (42), Mosaico (42), Desvio (42) e Acorde (42). Os jogos em grade oferecem diversos formatos; Quinhão preserva seu anel de 24 cestos, variando a distribuição dos frutos. Os mapas clássicos e as partidas salvas continuam compatíveis.
+
+[Catálogos, regras preservadas, testes e limites](docs/mapas-versus-unificados-2026-11-13.md).
+
 ## Conquistas com missões próprias de cada jogo
 
 **61 conquistas ativas com emblemas SVG distintos:** dez gerais acompanham a campanha e 51 missões exploram decisões específicas dos 19 jogos ativos. Em MOSAICO, por exemplo, uma missão pede dois selos próprios no mesmo lance. Registros históricos de jogos retirados continuam preservados.

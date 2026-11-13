@@ -1,0 +1,888 @@
+[
+  {
+    "id": "classic",
+    "name": "Clássico",
+    "description": "O tabuleiro original, livre de paredes iniciais.",
+    "walls": [],
+    "outside": [],
+    "rows": 5,
+    "cols": 5,
+    "version": 1,
+    "starts": [
+      [
+        0,
+        2,
+        4
+      ],
+      [
+        20,
+        22,
+        24
+      ]
+    ],
+    "maxMoves": 19
+  },
+  {
+    "id": "lago",
+    "name": "Lago central",
+    "description": "Uma parede central cria dois caminhos ao redor.",
+    "walls": [
+      12
+    ],
+    "outside": [],
+    "rows": 5,
+    "cols": 5,
+    "version": 1,
+    "starts": [
+      [
+        0,
+        2,
+        4
+      ],
+      [
+        20,
+        22,
+        24
+      ]
+    ],
+    "maxMoves": 18
+  },
+  {
+    "id": "pilares",
+    "name": "Quatro pilares",
+    "description": "Quatro obstáculos deixam uma passagem em cruz.",
+    "walls": [
+      6,
+      8,
+      16,
+      18
+    ],
+    "outside": [],
+    "rows": 5,
+    "cols": 5,
+    "version": 1,
+    "starts": [
+      [
+        0,
+        2,
+        4
+      ],
+      [
+        20,
+        22,
+        24
+      ]
+    ],
+    "maxMoves": 15
+  },
+  {
+    "id": "portais",
+    "name": "Portais",
+    "description": "As laterais fechadas concentram a travessia no centro.",
+    "walls": [
+      10,
+      14
+    ],
+    "outside": [],
+    "rows": 5,
+    "cols": 5,
+    "version": 1,
+    "starts": [
+      [
+        0,
+        2,
+        4
+      ],
+      [
+        20,
+        22,
+        24
+      ]
+    ],
+    "maxMoves": 17
+  },
+  {
+    "id": "ampulheta",
+    "name": "Ampulheta",
+    "description": "As bordas recuam em duas fileiras, estreitando as passagens.",
+    "walls": [],
+    "outside": [
+      5,
+      9,
+      15,
+      19
+    ],
+    "rows": 5,
+    "cols": 5,
+    "version": 1,
+    "starts": [
+      [
+        0,
+        2,
+        4
+      ],
+      [
+        20,
+        22,
+        24
+      ]
+    ],
+    "maxMoves": 15
+  },
+  {
+    "id": "cantos",
+    "name": "Cantos recortados",
+    "description": "Um tabuleiro sem cantos, com as equipes lado a lado.",
+    "walls": [],
+    "outside": [
+      0,
+      4,
+      20,
+      24
+    ],
+    "starts": [
+      [
+        1,
+        2,
+        3
+      ],
+      [
+        21,
+        22,
+        23
+      ]
+    ],
+    "rows": 5,
+    "cols": 5,
+    "version": 1,
+    "maxMoves": 15
+  },
+  {
+    "id": "canais",
+    "name": "Canais",
+    "description": "Pilares e um núcleo central separam pequenos corredores.",
+    "walls": [
+      6,
+      8,
+      12,
+      16,
+      18
+    ],
+    "outside": [],
+    "rows": 5,
+    "cols": 5,
+    "version": 1,
+    "starts": [
+      [
+        0,
+        2,
+        4
+      ],
+      [
+        20,
+        22,
+        24
+      ]
+    ],
+    "maxMoves": 14
+  },
+  {
+    "id": "classic-6",
+    "family": "classic",
+    "name": "Clássico",
+    "description": "Mais espaço livre para construir caminhos e cercos.",
+    "rows": 6,
+    "cols": 6,
+    "version": 1,
+    "walls": [],
+    "outside": [],
+    "starts": [
+      [
+        0,
+        2,
+        5
+      ],
+      [
+        30,
+        33,
+        35
+      ]
+    ],
+    "maxMoves": 30
+  },
+  {
+    "id": "lago-6",
+    "family": "lago",
+    "name": "Lago central",
+    "description": "Um núcleo de paredes divide a passagem em rotas laterais.",
+    "rows": 6,
+    "cols": 6,
+    "version": 1,
+    "walls": [
+      14,
+      15,
+      20,
+      21
+    ],
+    "outside": [],
+    "starts": [
+      [
+        0,
+        2,
+        5
+      ],
+      [
+        30,
+        33,
+        35
+      ]
+    ],
+    "maxMoves": 26
+  },
+  {
+    "id": "pilares-6",
+    "family": "pilares",
+    "name": "Quatro pilares",
+    "description": "Quatro pilares redesenhados criam passagens entre o centro e as bordas.",
+    "rows": 6,
+    "cols": 6,
+    "version": 1,
+    "walls": [
+      7,
+      10,
+      25,
+      28
+    ],
+    "outside": [],
+    "starts": [
+      [
+        0,
+        2,
+        5
+      ],
+      [
+        30,
+        33,
+        35
+      ]
+    ],
+    "maxMoves": 26
+  },
+  {
+    "id": "portais-6",
+    "family": "portais",
+    "name": "Portais",
+    "description": "Paredes laterais formam portais largos em direção ao centro.",
+    "rows": 6,
+    "cols": 6,
+    "version": 1,
+    "walls": [
+      12,
+      17,
+      18,
+      23
+    ],
+    "outside": [],
+    "starts": [
+      [
+        0,
+        2,
+        5
+      ],
+      [
+        30,
+        33,
+        35
+      ]
+    ],
+    "maxMoves": 26
+  },
+  {
+    "id": "ampulheta-6",
+    "family": "ampulheta",
+    "name": "Ampulheta",
+    "description": "O contorno recua em degraus até uma passagem central estreita.",
+    "rows": 6,
+    "cols": 6,
+    "version": 1,
+    "walls": [],
+    "outside": [
+      6,
+      11,
+      12,
+      13,
+      16,
+      17,
+      18,
+      19,
+      22,
+      23,
+      24,
+      29
+    ],
+    "starts": [
+      [
+        0,
+        2,
+        5
+      ],
+      [
+        30,
+        33,
+        35
+      ]
+    ],
+    "maxMoves": 18
+  },
+  {
+    "id": "cantos-6",
+    "family": "cantos",
+    "name": "Cantos recortados",
+    "description": "Cantos recortados deslocam as equipes para a faixa central.",
+    "rows": 6,
+    "cols": 6,
+    "version": 1,
+    "walls": [],
+    "outside": [
+      0,
+      5,
+      6,
+      11,
+      24,
+      29,
+      30,
+      35
+    ],
+    "starts": [
+      [
+        1,
+        2,
+        4
+      ],
+      [
+        31,
+        33,
+        34
+      ]
+    ],
+    "maxMoves": 22
+  },
+  {
+    "id": "canais-6",
+    "family": "canais",
+    "name": "Canais",
+    "description": "Paredes desencontradas formam corredores e conexões transversais.",
+    "rows": 6,
+    "cols": 6,
+    "version": 1,
+    "walls": [
+      8,
+      14,
+      21,
+      27,
+      10,
+      25
+    ],
+    "outside": [],
+    "starts": [
+      [
+        0,
+        2,
+        5
+      ],
+      [
+        30,
+        33,
+        35
+      ]
+    ],
+    "maxMoves": 24
+  },
+  {
+    "id": "classic-7",
+    "family": "classic",
+    "name": "Clássico",
+    "description": "Mais espaço livre para construir caminhos e cercos.",
+    "rows": 7,
+    "cols": 7,
+    "version": 1,
+    "walls": [],
+    "outside": [],
+    "starts": [
+      [
+        0,
+        3,
+        6
+      ],
+      [
+        42,
+        45,
+        48
+      ]
+    ],
+    "maxMoves": 43
+  },
+  {
+    "id": "lago-7",
+    "family": "lago",
+    "name": "Lago central",
+    "description": "Um núcleo de paredes divide a passagem em rotas laterais.",
+    "rows": 7,
+    "cols": 7,
+    "version": 1,
+    "walls": [
+      17,
+      23,
+      24,
+      25,
+      31
+    ],
+    "outside": [],
+    "starts": [
+      [
+        0,
+        3,
+        6
+      ],
+      [
+        42,
+        45,
+        48
+      ]
+    ],
+    "maxMoves": 38
+  },
+  {
+    "id": "pilares-7",
+    "family": "pilares",
+    "name": "Quatro pilares",
+    "description": "Quatro pilares redesenhados criam passagens entre o centro e as bordas.",
+    "rows": 7,
+    "cols": 7,
+    "version": 1,
+    "walls": [
+      8,
+      15,
+      12,
+      19,
+      29,
+      36,
+      33,
+      40
+    ],
+    "outside": [],
+    "starts": [
+      [
+        0,
+        3,
+        6
+      ],
+      [
+        42,
+        45,
+        48
+      ]
+    ],
+    "maxMoves": 35
+  },
+  {
+    "id": "portais-7",
+    "family": "portais",
+    "name": "Portais",
+    "description": "Paredes laterais formam portais largos em direção ao centro.",
+    "rows": 7,
+    "cols": 7,
+    "version": 1,
+    "walls": [
+      14,
+      20,
+      21,
+      22,
+      26,
+      27,
+      28,
+      34
+    ],
+    "outside": [],
+    "starts": [
+      [
+        0,
+        3,
+        6
+      ],
+      [
+        42,
+        45,
+        48
+      ]
+    ],
+    "maxMoves": 35
+  },
+  {
+    "id": "ampulheta-7",
+    "family": "ampulheta",
+    "name": "Ampulheta",
+    "description": "O contorno recua em degraus até uma passagem central estreita.",
+    "rows": 7,
+    "cols": 7,
+    "version": 1,
+    "walls": [],
+    "outside": [
+      7,
+      13,
+      14,
+      15,
+      19,
+      20,
+      21,
+      22,
+      26,
+      27,
+      28,
+      29,
+      33,
+      34,
+      35,
+      41
+    ],
+    "starts": [
+      [
+        0,
+        3,
+        6
+      ],
+      [
+        42,
+        45,
+        48
+      ]
+    ],
+    "maxMoves": 27
+  },
+  {
+    "id": "cantos-7",
+    "family": "cantos",
+    "name": "Cantos recortados",
+    "description": "Cantos recortados deslocam as equipes para a faixa central.",
+    "rows": 7,
+    "cols": 7,
+    "version": 1,
+    "walls": [],
+    "outside": [
+      0,
+      1,
+      7,
+      5,
+      6,
+      13,
+      35,
+      42,
+      43,
+      41,
+      47,
+      48
+    ],
+    "starts": [
+      [
+        2,
+        3,
+        4
+      ],
+      [
+        44,
+        45,
+        46
+      ]
+    ],
+    "maxMoves": 31
+  },
+  {
+    "id": "canais-7",
+    "family": "canais",
+    "name": "Canais",
+    "description": "Paredes desencontradas formam corredores e conexões transversais.",
+    "rows": 7,
+    "cols": 7,
+    "version": 1,
+    "walls": [
+      9,
+      16,
+      23,
+      25,
+      32,
+      39,
+      12,
+      36
+    ],
+    "outside": [],
+    "starts": [
+      [
+        0,
+        3,
+        6
+      ],
+      [
+        42,
+        45,
+        48
+      ]
+    ],
+    "maxMoves": 35
+  },
+  {
+    "id": "classic-8",
+    "family": "classic",
+    "name": "Clássico",
+    "description": "Mais espaço livre para construir caminhos e cercos.",
+    "rows": 8,
+    "cols": 8,
+    "version": 1,
+    "walls": [],
+    "outside": [],
+    "starts": [
+      [
+        0,
+        3,
+        7
+      ],
+      [
+        56,
+        60,
+        63
+      ]
+    ],
+    "maxMoves": 58
+  },
+  {
+    "id": "lago-8",
+    "family": "lago",
+    "name": "Lago central",
+    "description": "Um núcleo de paredes divide a passagem em rotas laterais.",
+    "rows": 8,
+    "cols": 8,
+    "version": 1,
+    "walls": [
+      19,
+      20,
+      27,
+      28,
+      35,
+      36,
+      43,
+      44
+    ],
+    "outside": [],
+    "starts": [
+      [
+        0,
+        3,
+        7
+      ],
+      [
+        56,
+        60,
+        63
+      ]
+    ],
+    "maxMoves": 50
+  },
+  {
+    "id": "pilares-8",
+    "family": "pilares",
+    "name": "Quatro pilares",
+    "description": "Quatro pilares redesenhados criam passagens entre o centro e as bordas.",
+    "rows": 8,
+    "cols": 8,
+    "version": 1,
+    "walls": [
+      9,
+      10,
+      17,
+      18,
+      13,
+      14,
+      21,
+      22,
+      41,
+      42,
+      49,
+      50,
+      45,
+      46,
+      53,
+      54
+    ],
+    "outside": [],
+    "starts": [
+      [
+        0,
+        3,
+        7
+      ],
+      [
+        56,
+        60,
+        63
+      ]
+    ],
+    "maxMoves": 42
+  },
+  {
+    "id": "portais-8",
+    "family": "portais",
+    "name": "Portais",
+    "description": "Paredes laterais formam portais largos em direção ao centro.",
+    "rows": 8,
+    "cols": 8,
+    "version": 1,
+    "walls": [
+      16,
+      23,
+      24,
+      25,
+      30,
+      31,
+      32,
+      33,
+      38,
+      39,
+      40,
+      47
+    ],
+    "outside": [],
+    "starts": [
+      [
+        0,
+        3,
+        7
+      ],
+      [
+        56,
+        60,
+        63
+      ]
+    ],
+    "maxMoves": 46
+  },
+  {
+    "id": "ampulheta-8",
+    "family": "ampulheta",
+    "name": "Ampulheta",
+    "description": "O contorno recua em degraus até uma passagem central estreita.",
+    "rows": 8,
+    "cols": 8,
+    "version": 1,
+    "walls": [],
+    "outside": [
+      8,
+      15,
+      16,
+      17,
+      22,
+      23,
+      24,
+      25,
+      26,
+      29,
+      30,
+      31,
+      32,
+      33,
+      34,
+      37,
+      38,
+      39,
+      40,
+      41,
+      46,
+      47,
+      48,
+      55
+    ],
+    "starts": [
+      [
+        0,
+        3,
+        7
+      ],
+      [
+        56,
+        60,
+        63
+      ]
+    ],
+    "maxMoves": 34
+  },
+  {
+    "id": "cantos-8",
+    "family": "cantos",
+    "name": "Cantos recortados",
+    "description": "Cantos recortados deslocam as equipes para a faixa central.",
+    "rows": 8,
+    "cols": 8,
+    "version": 1,
+    "walls": [],
+    "outside": [
+      0,
+      1,
+      8,
+      6,
+      7,
+      15,
+      48,
+      56,
+      57,
+      55,
+      62,
+      63
+    ],
+    "starts": [
+      [
+        2,
+        3,
+        5
+      ],
+      [
+        58,
+        60,
+        61
+      ]
+    ],
+    "maxMoves": 46
+  },
+  {
+    "id": "canais-8",
+    "family": "canais",
+    "name": "Canais",
+    "description": "Paredes desencontradas formam corredores e conexões transversais.",
+    "rows": 8,
+    "cols": 8,
+    "version": 1,
+    "walls": [
+      10,
+      18,
+      26,
+      37,
+      45,
+      53,
+      13,
+      21,
+      42,
+      50
+    ],
+    "outside": [],
+    "starts": [
+      [
+        0,
+        3,
+        7
+      ],
+      [
+        56,
+        60,
+        63
+      ]
+    ],
+    "maxMoves": 48
+  }
+]

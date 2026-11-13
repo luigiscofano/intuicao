@@ -1,0 +1,6250 @@
+[
+  {
+    "id": "classico",
+    "name": "Canteiro clássico",
+    "description": "O arranjo original: 4 × 4, com oito vagens por equipe.",
+    "rows": 4,
+    "columns": 4,
+    "blocked": [],
+    "board": [
+      {
+        "owner": 0,
+        "direction": 1
+      },
+      {
+        "owner": 0,
+        "direction": 2
+      },
+      {
+        "owner": 1,
+        "direction": 3
+      },
+      {
+        "owner": 1,
+        "direction": 2
+      },
+      {
+        "owner": 0,
+        "direction": 0
+      },
+      {
+        "owner": 0,
+        "direction": 1
+      },
+      {
+        "owner": 1,
+        "direction": 2
+      },
+      {
+        "owner": 1,
+        "direction": 3
+      },
+      {
+        "owner": 0,
+        "direction": 1
+      },
+      {
+        "owner": 0,
+        "direction": 0
+      },
+      {
+        "owner": 1,
+        "direction": 3
+      },
+      {
+        "owner": 1,
+        "direction": 2
+      },
+      {
+        "owner": 0,
+        "direction": 0
+      },
+      {
+        "owner": 0,
+        "direction": 1
+      },
+      {
+        "owner": 1,
+        "direction": 0
+      },
+      {
+        "owner": 1,
+        "direction": 3
+      }
+    ],
+    "targets": [
+      8,
+      8
+    ]
+  },
+  {
+    "id": "entrelacado",
+    "name": "Canteiro entrelaçado",
+    "description": "4 × 4 com outras direções: novas cadeias no mesmo tamanho.",
+    "rows": 4,
+    "columns": 4,
+    "blocked": [],
+    "board": [
+      {
+        "owner": 0,
+        "direction": 2
+      },
+      {
+        "owner": 0,
+        "direction": 1
+      },
+      {
+        "owner": 1,
+        "direction": 3
+      },
+      {
+        "owner": 1,
+        "direction": 2
+      },
+      {
+        "owner": 0,
+        "direction": 0
+      },
+      {
+        "owner": 0,
+        "direction": 1
+      },
+      {
+        "owner": 1,
+        "direction": 0
+      },
+      {
+        "owner": 1,
+        "direction": 3
+      },
+      {
+        "owner": 0,
+        "direction": 1
+      },
+      {
+        "owner": 0,
+        "direction": 2
+      },
+      {
+        "owner": 1,
+        "direction": 3
+      },
+      {
+        "owner": 1,
+        "direction": 2
+      },
+      {
+        "owner": 0,
+        "direction": 0
+      },
+      {
+        "owner": 0,
+        "direction": 1
+      },
+      {
+        "owner": 1,
+        "direction": 3
+      },
+      {
+        "owner": 1,
+        "direction": 0
+      }
+    ],
+    "targets": [
+      8,
+      8
+    ]
+  },
+  {
+    "id": "clareira-4x4",
+    "name": "Clareira",
+    "description": "4 × 4 completo, com um arranjo próprio de setas.",
+    "rows": 4,
+    "columns": 4,
+    "blocked": [],
+    "board": [
+      {
+        "owner": 0,
+        "direction": 2
+      },
+      {
+        "owner": 0,
+        "direction": 3
+      },
+      {
+        "owner": 1,
+        "direction": 0
+      },
+      {
+        "owner": 1,
+        "direction": 2
+      },
+      {
+        "owner": 0,
+        "direction": 1
+      },
+      {
+        "owner": 0,
+        "direction": 2
+      },
+      {
+        "owner": 1,
+        "direction": 3
+      },
+      {
+        "owner": 1,
+        "direction": 1
+      },
+      {
+        "owner": 0,
+        "direction": 3
+      },
+      {
+        "owner": 0,
+        "direction": 1
+      },
+      {
+        "owner": 1,
+        "direction": 0
+      },
+      {
+        "owner": 1,
+        "direction": 3
+      },
+      {
+        "owner": 0,
+        "direction": 0
+      },
+      {
+        "owner": 0,
+        "direction": 2
+      },
+      {
+        "owner": 1,
+        "direction": 1
+      },
+      {
+        "owner": 1,
+        "direction": 0
+      }
+    ],
+    "targets": [
+      8,
+      8
+    ]
+  },
+  {
+    "id": "ilha-4x4",
+    "name": "Ilha",
+    "description": "4 × 4 completo, com um arranjo próprio de setas.",
+    "rows": 4,
+    "columns": 4,
+    "blocked": [],
+    "board": [
+      {
+        "owner": 0,
+        "direction": 3
+      },
+      {
+        "owner": 0,
+        "direction": 3
+      },
+      {
+        "owner": 1,
+        "direction": 3
+      },
+      {
+        "owner": 1,
+        "direction": 3
+      },
+      {
+        "owner": 0,
+        "direction": 3
+      },
+      {
+        "owner": 0,
+        "direction": 3
+      },
+      {
+        "owner": 1,
+        "direction": 3
+      },
+      {
+        "owner": 1,
+        "direction": 3
+      },
+      {
+        "owner": 0,
+        "direction": 1
+      },
+      {
+        "owner": 0,
+        "direction": 1
+      },
+      {
+        "owner": 1,
+        "direction": 1
+      },
+      {
+        "owner": 1,
+        "direction": 1
+      },
+      {
+        "owner": 0,
+        "direction": 1
+      },
+      {
+        "owner": 0,
+        "direction": 1
+      },
+      {
+        "owner": 1,
+        "direction": 1
+      },
+      {
+        "owner": 1,
+        "direction": 1
+      }
+    ],
+    "targets": [
+      8,
+      8
+    ]
+  },
+  {
+    "id": "margens-4x4",
+    "name": "Margens",
+    "description": "4 × 4 completo, com um arranjo próprio de setas.",
+    "rows": 4,
+    "columns": 4,
+    "blocked": [],
+    "board": [
+      {
+        "owner": 0,
+        "direction": 0
+      },
+      {
+        "owner": 0,
+        "direction": 1
+      },
+      {
+        "owner": 1,
+        "direction": 3
+      },
+      {
+        "owner": 1,
+        "direction": 0
+      },
+      {
+        "owner": 0,
+        "direction": 1
+      },
+      {
+        "owner": 0,
+        "direction": 2
+      },
+      {
+        "owner": 1,
+        "direction": 0
+      },
+      {
+        "owner": 1,
+        "direction": 1
+      },
+      {
+        "owner": 0,
+        "direction": 3
+      },
+      {
+        "owner": 0,
+        "direction": 2
+      },
+      {
+        "owner": 1,
+        "direction": 0
+      },
+      {
+        "owner": 1,
+        "direction": 3
+      },
+      {
+        "owner": 0,
+        "direction": 2
+      },
+      {
+        "owner": 0,
+        "direction": 1
+      },
+      {
+        "owner": 1,
+        "direction": 3
+      },
+      {
+        "owner": 1,
+        "direction": 2
+      }
+    ],
+    "targets": [
+      8,
+      8
+    ]
+  },
+  {
+    "id": "passagem-4x4",
+    "name": "Passagem",
+    "description": "4 × 4 completo, com um arranjo próprio de setas.",
+    "rows": 4,
+    "columns": 4,
+    "blocked": [],
+    "board": [
+      {
+        "owner": 0,
+        "direction": 1
+      },
+      {
+        "owner": 0,
+        "direction": 0
+      },
+      {
+        "owner": 1,
+        "direction": 3
+      },
+      {
+        "owner": 1,
+        "direction": 3
+      },
+      {
+        "owner": 0,
+        "direction": 3
+      },
+      {
+        "owner": 0,
+        "direction": 2
+      },
+      {
+        "owner": 1,
+        "direction": 1
+      },
+      {
+        "owner": 1,
+        "direction": 1
+      },
+      {
+        "owner": 0,
+        "direction": 3
+      },
+      {
+        "owner": 0,
+        "direction": 3
+      },
+      {
+        "owner": 1,
+        "direction": 0
+      },
+      {
+        "owner": 1,
+        "direction": 1
+      },
+      {
+        "owner": 0,
+        "direction": 1
+      },
+      {
+        "owner": 0,
+        "direction": 1
+      },
+      {
+        "owner": 1,
+        "direction": 2
+      },
+      {
+        "owner": 1,
+        "direction": 3
+      }
+    ],
+    "targets": [
+      8,
+      8
+    ]
+  },
+  {
+    "id": "trilha-4x4",
+    "name": "Trilha",
+    "description": "4 × 4 completo, com um arranjo próprio de setas.",
+    "rows": 4,
+    "columns": 4,
+    "blocked": [],
+    "board": [
+      {
+        "owner": 0,
+        "direction": 2
+      },
+      {
+        "owner": 0,
+        "direction": 0
+      },
+      {
+        "owner": 1,
+        "direction": 2
+      },
+      {
+        "owner": 1,
+        "direction": 0
+      },
+      {
+        "owner": 0,
+        "direction": 1
+      },
+      {
+        "owner": 0,
+        "direction": 3
+      },
+      {
+        "owner": 1,
+        "direction": 1
+      },
+      {
+        "owner": 1,
+        "direction": 3
+      },
+      {
+        "owner": 0,
+        "direction": 1
+      },
+      {
+        "owner": 0,
+        "direction": 3
+      },
+      {
+        "owner": 1,
+        "direction": 1
+      },
+      {
+        "owner": 1,
+        "direction": 3
+      },
+      {
+        "owner": 0,
+        "direction": 2
+      },
+      {
+        "owner": 0,
+        "direction": 0
+      },
+      {
+        "owner": 1,
+        "direction": 2
+      },
+      {
+        "owner": 1,
+        "direction": 0
+      }
+    ],
+    "targets": [
+      8,
+      8
+    ]
+  },
+  {
+    "id": "vereda",
+    "name": "Vereda",
+    "description": "3 × 6: um canteiro baixo e largo, com nove vagens por equipe.",
+    "rows": 3,
+    "columns": 6,
+    "blocked": [],
+    "board": [
+      {
+        "owner": 0,
+        "direction": 1
+      },
+      {
+        "owner": 0,
+        "direction": 2
+      },
+      {
+        "owner": 0,
+        "direction": 0
+      },
+      {
+        "owner": 1,
+        "direction": 1
+      },
+      {
+        "owner": 1,
+        "direction": 2
+      },
+      {
+        "owner": 1,
+        "direction": 3
+      },
+      {
+        "owner": 0,
+        "direction": 1
+      },
+      {
+        "owner": 0,
+        "direction": 0
+      },
+      {
+        "owner": 0,
+        "direction": 1
+      },
+      {
+        "owner": 1,
+        "direction": 3
+      },
+      {
+        "owner": 1,
+        "direction": 2
+      },
+      {
+        "owner": 1,
+        "direction": 3
+      },
+      {
+        "owner": 0,
+        "direction": 1
+      },
+      {
+        "owner": 0,
+        "direction": 0
+      },
+      {
+        "owner": 0,
+        "direction": 3
+      },
+      {
+        "owner": 1,
+        "direction": 2
+      },
+      {
+        "owner": 1,
+        "direction": 0
+      },
+      {
+        "owner": 1,
+        "direction": 3
+      }
+    ],
+    "targets": [
+      9,
+      9
+    ]
+  },
+  {
+    "id": "entrelacado-3x6",
+    "name": "Entrelaçado",
+    "description": "3 × 6 completo, com um arranjo próprio de setas.",
+    "rows": 3,
+    "columns": 6,
+    "blocked": [],
+    "board": [
+      {
+        "owner": 0,
+        "direction": 1
+      },
+      {
+        "owner": 0,
+        "direction": 0
+      },
+      {
+        "owner": 0,
+        "direction": 0
+      },
+      {
+        "owner": 1,
+        "direction": 3
+      },
+      {
+        "owner": 1,
+        "direction": 3
+      },
+      {
+        "owner": 1,
+        "direction": 2
+      },
+      {
+        "owner": 0,
+        "direction": 1
+      },
+      {
+        "owner": 0,
+        "direction": 0
+      },
+      {
+        "owner": 0,
+        "direction": 0
+      },
+      {
+        "owner": 1,
+        "direction": 2
+      },
+      {
+        "owner": 1,
+        "direction": 2
+      },
+      {
+        "owner": 1,
+        "direction": 3
+      },
+      {
+        "owner": 0,
+        "direction": 0
+      },
+      {
+        "owner": 0,
+        "direction": 1
+      },
+      {
+        "owner": 0,
+        "direction": 1
+      },
+      {
+        "owner": 1,
+        "direction": 2
+      },
+      {
+        "owner": 1,
+        "direction": 2
+      },
+      {
+        "owner": 1,
+        "direction": 3
+      }
+    ],
+    "targets": [
+      9,
+      9
+    ]
+  },
+  {
+    "id": "clareira-3x6",
+    "name": "Clareira",
+    "description": "3 × 6 completo, com um arranjo próprio de setas.",
+    "rows": 3,
+    "columns": 6,
+    "blocked": [],
+    "board": [
+      {
+        "owner": 0,
+        "direction": 2
+      },
+      {
+        "owner": 0,
+        "direction": 3
+      },
+      {
+        "owner": 0,
+        "direction": 0
+      },
+      {
+        "owner": 1,
+        "direction": 2
+      },
+      {
+        "owner": 1,
+        "direction": 3
+      },
+      {
+        "owner": 1,
+        "direction": 0
+      },
+      {
+        "owner": 0,
+        "direction": 3
+      },
+      {
+        "owner": 0,
+        "direction": 0
+      },
+      {
+        "owner": 0,
+        "direction": 1
+      },
+      {
+        "owner": 1,
+        "direction": 3
+      },
+      {
+        "owner": 1,
+        "direction": 2
+      },
+      {
+        "owner": 1,
+        "direction": 1
+      },
+      {
+        "owner": 0,
+        "direction": 2
+      },
+      {
+        "owner": 0,
+        "direction": 1
+      },
+      {
+        "owner": 0,
+        "direction": 0
+      },
+      {
+        "owner": 1,
+        "direction": 2
+      },
+      {
+        "owner": 1,
+        "direction": 1
+      },
+      {
+        "owner": 1,
+        "direction": 0
+      }
+    ],
+    "targets": [
+      9,
+      9
+    ]
+  },
+  {
+    "id": "ilha-3x6",
+    "name": "Ilha",
+    "description": "3 × 6 completo, com um arranjo próprio de setas.",
+    "rows": 3,
+    "columns": 6,
+    "blocked": [],
+    "board": [
+      {
+        "owner": 0,
+        "direction": 3
+      },
+      {
+        "owner": 0,
+        "direction": 3
+      },
+      {
+        "owner": 0,
+        "direction": 3
+      },
+      {
+        "owner": 1,
+        "direction": 3
+      },
+      {
+        "owner": 1,
+        "direction": 3
+      },
+      {
+        "owner": 1,
+        "direction": 3
+      },
+      {
+        "owner": 0,
+        "direction": 1
+      },
+      {
+        "owner": 0,
+        "direction": 1
+      },
+      {
+        "owner": 0,
+        "direction": 1
+      },
+      {
+        "owner": 1,
+        "direction": 3
+      },
+      {
+        "owner": 1,
+        "direction": 3
+      },
+      {
+        "owner": 1,
+        "direction": 3
+      },
+      {
+        "owner": 0,
+        "direction": 1
+      },
+      {
+        "owner": 0,
+        "direction": 1
+      },
+      {
+        "owner": 0,
+        "direction": 1
+      },
+      {
+        "owner": 1,
+        "direction": 1
+      },
+      {
+        "owner": 1,
+        "direction": 1
+      },
+      {
+        "owner": 1,
+        "direction": 1
+      }
+    ],
+    "targets": [
+      9,
+      9
+    ]
+  },
+  {
+    "id": "margens-3x6",
+    "name": "Margens",
+    "description": "3 × 6 completo, com um arranjo próprio de setas.",
+    "rows": 3,
+    "columns": 6,
+    "blocked": [],
+    "board": [
+      {
+        "owner": 0,
+        "direction": 0
+      },
+      {
+        "owner": 0,
+        "direction": 1
+      },
+      {
+        "owner": 0,
+        "direction": 3
+      },
+      {
+        "owner": 1,
+        "direction": 0
+      },
+      {
+        "owner": 1,
+        "direction": 2
+      },
+      {
+        "owner": 1,
+        "direction": 3
+      },
+      {
+        "owner": 0,
+        "direction": 3
+      },
+      {
+        "owner": 0,
+        "direction": 0
+      },
+      {
+        "owner": 0,
+        "direction": 2
+      },
+      {
+        "owner": 1,
+        "direction": 0
+      },
+      {
+        "owner": 1,
+        "direction": 2
+      },
+      {
+        "owner": 1,
+        "direction": 1
+      },
+      {
+        "owner": 0,
+        "direction": 1
+      },
+      {
+        "owner": 0,
+        "direction": 0
+      },
+      {
+        "owner": 0,
+        "direction": 2
+      },
+      {
+        "owner": 1,
+        "direction": 1
+      },
+      {
+        "owner": 1,
+        "direction": 3
+      },
+      {
+        "owner": 1,
+        "direction": 2
+      }
+    ],
+    "targets": [
+      9,
+      9
+    ]
+  },
+  {
+    "id": "passagem-3x6",
+    "name": "Passagem",
+    "description": "3 × 6 completo, com um arranjo próprio de setas.",
+    "rows": 3,
+    "columns": 6,
+    "blocked": [],
+    "board": [
+      {
+        "owner": 0,
+        "direction": 1
+      },
+      {
+        "owner": 0,
+        "direction": 0
+      },
+      {
+        "owner": 0,
+        "direction": 3
+      },
+      {
+        "owner": 1,
+        "direction": 3
+      },
+      {
+        "owner": 1,
+        "direction": 2
+      },
+      {
+        "owner": 1,
+        "direction": 1
+      },
+      {
+        "owner": 0,
+        "direction": 1
+      },
+      {
+        "owner": 0,
+        "direction": 0
+      },
+      {
+        "owner": 0,
+        "direction": 3
+      },
+      {
+        "owner": 1,
+        "direction": 1
+      },
+      {
+        "owner": 1,
+        "direction": 2
+      },
+      {
+        "owner": 1,
+        "direction": 3
+      },
+      {
+        "owner": 0,
+        "direction": 3
+      },
+      {
+        "owner": 0,
+        "direction": 0
+      },
+      {
+        "owner": 0,
+        "direction": 1
+      },
+      {
+        "owner": 1,
+        "direction": 1
+      },
+      {
+        "owner": 1,
+        "direction": 2
+      },
+      {
+        "owner": 1,
+        "direction": 3
+      }
+    ],
+    "targets": [
+      9,
+      9
+    ]
+  },
+  {
+    "id": "trilha-3x6",
+    "name": "Trilha",
+    "description": "3 × 6 completo, com um arranjo próprio de setas.",
+    "rows": 3,
+    "columns": 6,
+    "blocked": [],
+    "board": [
+      {
+        "owner": 0,
+        "direction": 2
+      },
+      {
+        "owner": 0,
+        "direction": 0
+      },
+      {
+        "owner": 0,
+        "direction": 2
+      },
+      {
+        "owner": 1,
+        "direction": 0
+      },
+      {
+        "owner": 1,
+        "direction": 2
+      },
+      {
+        "owner": 1,
+        "direction": 0
+      },
+      {
+        "owner": 0,
+        "direction": 3
+      },
+      {
+        "owner": 0,
+        "direction": 1
+      },
+      {
+        "owner": 0,
+        "direction": 3
+      },
+      {
+        "owner": 1,
+        "direction": 1
+      },
+      {
+        "owner": 1,
+        "direction": 3
+      },
+      {
+        "owner": 1,
+        "direction": 1
+      },
+      {
+        "owner": 0,
+        "direction": 2
+      },
+      {
+        "owner": 0,
+        "direction": 0
+      },
+      {
+        "owner": 0,
+        "direction": 2
+      },
+      {
+        "owner": 1,
+        "direction": 0
+      },
+      {
+        "owner": 1,
+        "direction": 2
+      },
+      {
+        "owner": 1,
+        "direction": 0
+      }
+    ],
+    "targets": [
+      9,
+      9
+    ]
+  },
+  {
+    "id": "horta",
+    "name": "Horta comprida",
+    "description": "4 × 6: mais espaço para preparar sequências, com doze vagens por equipe.",
+    "rows": 4,
+    "columns": 6,
+    "blocked": [],
+    "board": [
+      {
+        "owner": 0,
+        "direction": 1
+      },
+      {
+        "owner": 0,
+        "direction": 1
+      },
+      {
+        "owner": 0,
+        "direction": 2
+      },
+      {
+        "owner": 1,
+        "direction": 0
+      },
+      {
+        "owner": 1,
+        "direction": 3
+      },
+      {
+        "owner": 1,
+        "direction": 2
+      },
+      {
+        "owner": 0,
+        "direction": 1
+      },
+      {
+        "owner": 0,
+        "direction": 0
+      },
+      {
+        "owner": 0,
+        "direction": 1
+      },
+      {
+        "owner": 1,
+        "direction": 1
+      },
+      {
+        "owner": 1,
+        "direction": 2
+      },
+      {
+        "owner": 1,
+        "direction": 0
+      },
+      {
+        "owner": 0,
+        "direction": 2
+      },
+      {
+        "owner": 0,
+        "direction": 0
+      },
+      {
+        "owner": 0,
+        "direction": 3
+      },
+      {
+        "owner": 1,
+        "direction": 3
+      },
+      {
+        "owner": 1,
+        "direction": 2
+      },
+      {
+        "owner": 1,
+        "direction": 3
+      },
+      {
+        "owner": 0,
+        "direction": 0
+      },
+      {
+        "owner": 0,
+        "direction": 1
+      },
+      {
+        "owner": 0,
+        "direction": 2
+      },
+      {
+        "owner": 1,
+        "direction": 0
+      },
+      {
+        "owner": 1,
+        "direction": 3
+      },
+      {
+        "owner": 1,
+        "direction": 3
+      }
+    ],
+    "targets": [
+      12,
+      12
+    ]
+  },
+  {
+    "id": "entrelacado-4x6",
+    "name": "Entrelaçado",
+    "description": "4 × 6 completo, com um arranjo próprio de setas.",
+    "rows": 4,
+    "columns": 6,
+    "blocked": [],
+    "board": [
+      {
+        "owner": 0,
+        "direction": 1
+      },
+      {
+        "owner": 0,
+        "direction": 0
+      },
+      {
+        "owner": 0,
+        "direction": 0
+      },
+      {
+        "owner": 1,
+        "direction": 3
+      },
+      {
+        "owner": 1,
+        "direction": 3
+      },
+      {
+        "owner": 1,
+        "direction": 2
+      },
+      {
+        "owner": 0,
+        "direction": 1
+      },
+      {
+        "owner": 0,
+        "direction": 0
+      },
+      {
+        "owner": 0,
+        "direction": 0
+      },
+      {
+        "owner": 1,
+        "direction": 3
+      },
+      {
+        "owner": 1,
+        "direction": 3
+      },
+      {
+        "owner": 1,
+        "direction": 2
+      },
+      {
+        "owner": 0,
+        "direction": 0
+      },
+      {
+        "owner": 0,
+        "direction": 1
+      },
+      {
+        "owner": 0,
+        "direction": 1
+      },
+      {
+        "owner": 1,
+        "direction": 2
+      },
+      {
+        "owner": 1,
+        "direction": 2
+      },
+      {
+        "owner": 1,
+        "direction": 3
+      },
+      {
+        "owner": 0,
+        "direction": 0
+      },
+      {
+        "owner": 0,
+        "direction": 1
+      },
+      {
+        "owner": 0,
+        "direction": 1
+      },
+      {
+        "owner": 1,
+        "direction": 2
+      },
+      {
+        "owner": 1,
+        "direction": 2
+      },
+      {
+        "owner": 1,
+        "direction": 3
+      }
+    ],
+    "targets": [
+      12,
+      12
+    ]
+  },
+  {
+    "id": "clareira-4x6",
+    "name": "Clareira",
+    "description": "4 × 6 com 4 recortes simétricos; o pulso para nos espaços vazios.",
+    "rows": 4,
+    "columns": 6,
+    "blocked": [
+      0,
+      5,
+      18,
+      23
+    ],
+    "board": [
+      null,
+      {
+        "owner": 0,
+        "direction": 3
+      },
+      {
+        "owner": 0,
+        "direction": 0
+      },
+      {
+        "owner": 1,
+        "direction": 2
+      },
+      {
+        "owner": 1,
+        "direction": 3
+      },
+      null,
+      {
+        "owner": 0,
+        "direction": 3
+      },
+      {
+        "owner": 0,
+        "direction": 0
+      },
+      {
+        "owner": 0,
+        "direction": 1
+      },
+      {
+        "owner": 1,
+        "direction": 3
+      },
+      {
+        "owner": 1,
+        "direction": 0
+      },
+      {
+        "owner": 1,
+        "direction": 1
+      },
+      {
+        "owner": 0,
+        "direction": 3
+      },
+      {
+        "owner": 0,
+        "direction": 2
+      },
+      {
+        "owner": 0,
+        "direction": 1
+      },
+      {
+        "owner": 1,
+        "direction": 3
+      },
+      {
+        "owner": 1,
+        "direction": 2
+      },
+      {
+        "owner": 1,
+        "direction": 1
+      },
+      null,
+      {
+        "owner": 0,
+        "direction": 1
+      },
+      {
+        "owner": 0,
+        "direction": 0
+      },
+      {
+        "owner": 1,
+        "direction": 2
+      },
+      {
+        "owner": 1,
+        "direction": 1
+      },
+      null
+    ],
+    "targets": [
+      10,
+      10
+    ]
+  },
+  {
+    "id": "ilha-4x6",
+    "name": "Ilha",
+    "description": "4 × 6 com 4 recortes simétricos; o pulso para nos espaços vazios.",
+    "rows": 4,
+    "columns": 6,
+    "blocked": [
+      8,
+      9,
+      14,
+      15
+    ],
+    "board": [
+      {
+        "owner": 0,
+        "direction": 3
+      },
+      {
+        "owner": 0,
+        "direction": 3
+      },
+      {
+        "owner": 0,
+        "direction": 3
+      },
+      {
+        "owner": 1,
+        "direction": 3
+      },
+      {
+        "owner": 1,
+        "direction": 3
+      },
+      {
+        "owner": 1,
+        "direction": 3
+      },
+      {
+        "owner": 0,
+        "direction": 1
+      },
+      {
+        "owner": 0,
+        "direction": 1
+      },
+      null,
+      null,
+      {
+        "owner": 1,
+        "direction": 1
+      },
+      {
+        "owner": 1,
+        "direction": 1
+      },
+      {
+        "owner": 0,
+        "direction": 3
+      },
+      {
+        "owner": 0,
+        "direction": 3
+      },
+      null,
+      null,
+      {
+        "owner": 1,
+        "direction": 3
+      },
+      {
+        "owner": 1,
+        "direction": 3
+      },
+      {
+        "owner": 0,
+        "direction": 1
+      },
+      {
+        "owner": 0,
+        "direction": 1
+      },
+      {
+        "owner": 0,
+        "direction": 1
+      },
+      {
+        "owner": 1,
+        "direction": 1
+      },
+      {
+        "owner": 1,
+        "direction": 1
+      },
+      {
+        "owner": 1,
+        "direction": 1
+      }
+    ],
+    "targets": [
+      10,
+      10
+    ]
+  },
+  {
+    "id": "margens-4x6",
+    "name": "Margens",
+    "description": "4 × 6 com 2 recortes simétricos; o pulso para nos espaços vazios.",
+    "rows": 4,
+    "columns": 6,
+    "blocked": [
+      6,
+      17
+    ],
+    "board": [
+      {
+        "owner": 0,
+        "direction": 0
+      },
+      {
+        "owner": 0,
+        "direction": 1
+      },
+      {
+        "owner": 0,
+        "direction": 3
+      },
+      {
+        "owner": 1,
+        "direction": 0
+      },
+      {
+        "owner": 1,
+        "direction": 2
+      },
+      {
+        "owner": 1,
+        "direction": 3
+      },
+      null,
+      {
+        "owner": 0,
+        "direction": 0
+      },
+      {
+        "owner": 0,
+        "direction": 2
+      },
+      {
+        "owner": 1,
+        "direction": 3
+      },
+      {
+        "owner": 1,
+        "direction": 1
+      },
+      {
+        "owner": 1,
+        "direction": 2
+      },
+      {
+        "owner": 0,
+        "direction": 0
+      },
+      {
+        "owner": 0,
+        "direction": 3
+      },
+      {
+        "owner": 0,
+        "direction": 1
+      },
+      {
+        "owner": 1,
+        "direction": 0
+      },
+      {
+        "owner": 1,
+        "direction": 2
+      },
+      null,
+      {
+        "owner": 0,
+        "direction": 1
+      },
+      {
+        "owner": 0,
+        "direction": 0
+      },
+      {
+        "owner": 0,
+        "direction": 2
+      },
+      {
+        "owner": 1,
+        "direction": 1
+      },
+      {
+        "owner": 1,
+        "direction": 3
+      },
+      {
+        "owner": 1,
+        "direction": 2
+      }
+    ],
+    "targets": [
+      11,
+      11
+    ]
+  },
+  {
+    "id": "passagem-4x6",
+    "name": "Passagem",
+    "description": "4 × 6 com 4 recortes simétricos; o pulso para nos espaços vazios.",
+    "rows": 4,
+    "columns": 6,
+    "blocked": [
+      2,
+      3,
+      20,
+      21
+    ],
+    "board": [
+      {
+        "owner": 0,
+        "direction": 1
+      },
+      {
+        "owner": 0,
+        "direction": 0
+      },
+      null,
+      null,
+      {
+        "owner": 1,
+        "direction": 2
+      },
+      {
+        "owner": 1,
+        "direction": 1
+      },
+      {
+        "owner": 0,
+        "direction": 1
+      },
+      {
+        "owner": 0,
+        "direction": 0
+      },
+      {
+        "owner": 0,
+        "direction": 3
+      },
+      {
+        "owner": 1,
+        "direction": 3
+      },
+      {
+        "owner": 1,
+        "direction": 2
+      },
+      {
+        "owner": 1,
+        "direction": 1
+      },
+      {
+        "owner": 0,
+        "direction": 3
+      },
+      {
+        "owner": 0,
+        "direction": 0
+      },
+      {
+        "owner": 0,
+        "direction": 1
+      },
+      {
+        "owner": 1,
+        "direction": 1
+      },
+      {
+        "owner": 1,
+        "direction": 2
+      },
+      {
+        "owner": 1,
+        "direction": 3
+      },
+      {
+        "owner": 0,
+        "direction": 3
+      },
+      {
+        "owner": 0,
+        "direction": 0
+      },
+      null,
+      null,
+      {
+        "owner": 1,
+        "direction": 2
+      },
+      {
+        "owner": 1,
+        "direction": 3
+      }
+    ],
+    "targets": [
+      10,
+      10
+    ]
+  },
+  {
+    "id": "trilha-4x6",
+    "name": "Trilha",
+    "description": "4 × 6 com 2 recortes simétricos; o pulso para nos espaços vazios.",
+    "rows": 4,
+    "columns": 6,
+    "blocked": [
+      7,
+      16
+    ],
+    "board": [
+      {
+        "owner": 0,
+        "direction": 2
+      },
+      {
+        "owner": 0,
+        "direction": 0
+      },
+      {
+        "owner": 0,
+        "direction": 2
+      },
+      {
+        "owner": 1,
+        "direction": 0
+      },
+      {
+        "owner": 1,
+        "direction": 2
+      },
+      {
+        "owner": 1,
+        "direction": 0
+      },
+      {
+        "owner": 0,
+        "direction": 3
+      },
+      null,
+      {
+        "owner": 0,
+        "direction": 3
+      },
+      {
+        "owner": 1,
+        "direction": 1
+      },
+      {
+        "owner": 1,
+        "direction": 3
+      },
+      {
+        "owner": 1,
+        "direction": 1
+      },
+      {
+        "owner": 0,
+        "direction": 3
+      },
+      {
+        "owner": 0,
+        "direction": 1
+      },
+      {
+        "owner": 0,
+        "direction": 3
+      },
+      {
+        "owner": 1,
+        "direction": 1
+      },
+      null,
+      {
+        "owner": 1,
+        "direction": 1
+      },
+      {
+        "owner": 0,
+        "direction": 2
+      },
+      {
+        "owner": 0,
+        "direction": 0
+      },
+      {
+        "owner": 0,
+        "direction": 2
+      },
+      {
+        "owner": 1,
+        "direction": 0
+      },
+      {
+        "owner": 1,
+        "direction": 2
+      },
+      {
+        "owner": 1,
+        "direction": 0
+      }
+    ],
+    "targets": [
+      11,
+      11
+    ]
+  },
+  {
+    "id": "bosque",
+    "name": "Bosque",
+    "description": "6 × 6 completo, com dezoito vagens por equipe.",
+    "rows": 6,
+    "columns": 6,
+    "blocked": [],
+    "board": [
+      {
+        "owner": 0,
+        "direction": 2
+      },
+      {
+        "owner": 0,
+        "direction": 1
+      },
+      {
+        "owner": 0,
+        "direction": 3
+      },
+      {
+        "owner": 1,
+        "direction": 2
+      },
+      {
+        "owner": 1,
+        "direction": 0
+      },
+      {
+        "owner": 1,
+        "direction": 1
+      },
+      {
+        "owner": 0,
+        "direction": 0
+      },
+      {
+        "owner": 0,
+        "direction": 3
+      },
+      {
+        "owner": 0,
+        "direction": 2
+      },
+      {
+        "owner": 1,
+        "direction": 1
+      },
+      {
+        "owner": 1,
+        "direction": 3
+      },
+      {
+        "owner": 1,
+        "direction": 2
+      },
+      {
+        "owner": 0,
+        "direction": 0
+      },
+      {
+        "owner": 0,
+        "direction": 1
+      },
+      {
+        "owner": 0,
+        "direction": 0
+      },
+      {
+        "owner": 1,
+        "direction": 3
+      },
+      {
+        "owner": 1,
+        "direction": 2
+      },
+      {
+        "owner": 1,
+        "direction": 1
+      },
+      {
+        "owner": 0,
+        "direction": 3
+      },
+      {
+        "owner": 0,
+        "direction": 0
+      },
+      {
+        "owner": 0,
+        "direction": 1
+      },
+      {
+        "owner": 1,
+        "direction": 2
+      },
+      {
+        "owner": 1,
+        "direction": 3
+      },
+      {
+        "owner": 1,
+        "direction": 2
+      },
+      {
+        "owner": 0,
+        "direction": 0
+      },
+      {
+        "owner": 0,
+        "direction": 1
+      },
+      {
+        "owner": 0,
+        "direction": 3
+      },
+      {
+        "owner": 1,
+        "direction": 0
+      },
+      {
+        "owner": 1,
+        "direction": 1
+      },
+      {
+        "owner": 1,
+        "direction": 2
+      },
+      {
+        "owner": 0,
+        "direction": 3
+      },
+      {
+        "owner": 0,
+        "direction": 2
+      },
+      {
+        "owner": 0,
+        "direction": 0
+      },
+      {
+        "owner": 1,
+        "direction": 1
+      },
+      {
+        "owner": 1,
+        "direction": 3
+      },
+      {
+        "owner": 1,
+        "direction": 0
+      }
+    ],
+    "targets": [
+      18,
+      18
+    ]
+  },
+  {
+    "id": "entrelacado-6x6",
+    "name": "Entrelaçado",
+    "description": "6 × 6 completo, com um arranjo próprio de setas.",
+    "rows": 6,
+    "columns": 6,
+    "blocked": [],
+    "board": [
+      {
+        "owner": 0,
+        "direction": 1
+      },
+      {
+        "owner": 0,
+        "direction": 0
+      },
+      {
+        "owner": 0,
+        "direction": 0
+      },
+      {
+        "owner": 1,
+        "direction": 3
+      },
+      {
+        "owner": 1,
+        "direction": 3
+      },
+      {
+        "owner": 1,
+        "direction": 2
+      },
+      {
+        "owner": 0,
+        "direction": 1
+      },
+      {
+        "owner": 0,
+        "direction": 0
+      },
+      {
+        "owner": 0,
+        "direction": 0
+      },
+      {
+        "owner": 1,
+        "direction": 3
+      },
+      {
+        "owner": 1,
+        "direction": 3
+      },
+      {
+        "owner": 1,
+        "direction": 2
+      },
+      {
+        "owner": 0,
+        "direction": 1
+      },
+      {
+        "owner": 0,
+        "direction": 0
+      },
+      {
+        "owner": 0,
+        "direction": 0
+      },
+      {
+        "owner": 1,
+        "direction": 3
+      },
+      {
+        "owner": 1,
+        "direction": 3
+      },
+      {
+        "owner": 1,
+        "direction": 2
+      },
+      {
+        "owner": 0,
+        "direction": 0
+      },
+      {
+        "owner": 0,
+        "direction": 1
+      },
+      {
+        "owner": 0,
+        "direction": 1
+      },
+      {
+        "owner": 1,
+        "direction": 2
+      },
+      {
+        "owner": 1,
+        "direction": 2
+      },
+      {
+        "owner": 1,
+        "direction": 3
+      },
+      {
+        "owner": 0,
+        "direction": 0
+      },
+      {
+        "owner": 0,
+        "direction": 1
+      },
+      {
+        "owner": 0,
+        "direction": 1
+      },
+      {
+        "owner": 1,
+        "direction": 2
+      },
+      {
+        "owner": 1,
+        "direction": 2
+      },
+      {
+        "owner": 1,
+        "direction": 3
+      },
+      {
+        "owner": 0,
+        "direction": 0
+      },
+      {
+        "owner": 0,
+        "direction": 1
+      },
+      {
+        "owner": 0,
+        "direction": 1
+      },
+      {
+        "owner": 1,
+        "direction": 2
+      },
+      {
+        "owner": 1,
+        "direction": 2
+      },
+      {
+        "owner": 1,
+        "direction": 3
+      }
+    ],
+    "targets": [
+      18,
+      18
+    ]
+  },
+  {
+    "id": "clareira",
+    "name": "Clareira",
+    "description": "6 × 6 sem os quatro cantos: dezesseis vagens por equipe.",
+    "rows": 6,
+    "columns": 6,
+    "blocked": [
+      0,
+      5,
+      30,
+      35
+    ],
+    "board": [
+      null,
+      {
+        "owner": 0,
+        "direction": 2
+      },
+      {
+        "owner": 0,
+        "direction": 0
+      },
+      {
+        "owner": 1,
+        "direction": 1
+      },
+      {
+        "owner": 1,
+        "direction": 2
+      },
+      null,
+      {
+        "owner": 0,
+        "direction": 1
+      },
+      {
+        "owner": 0,
+        "direction": 0
+      },
+      {
+        "owner": 0,
+        "direction": 1
+      },
+      {
+        "owner": 1,
+        "direction": 2
+      },
+      {
+        "owner": 1,
+        "direction": 0
+      },
+      {
+        "owner": 1,
+        "direction": 1
+      },
+      {
+        "owner": 0,
+        "direction": 2
+      },
+      {
+        "owner": 0,
+        "direction": 3
+      },
+      {
+        "owner": 0,
+        "direction": 1
+      },
+      {
+        "owner": 1,
+        "direction": 0
+      },
+      {
+        "owner": 1,
+        "direction": 1
+      },
+      {
+        "owner": 1,
+        "direction": 2
+      },
+      {
+        "owner": 0,
+        "direction": 0
+      },
+      {
+        "owner": 0,
+        "direction": 3
+      },
+      {
+        "owner": 0,
+        "direction": 2
+      },
+      {
+        "owner": 1,
+        "direction": 3
+      },
+      {
+        "owner": 1,
+        "direction": 1
+      },
+      {
+        "owner": 1,
+        "direction": 0
+      },
+      {
+        "owner": 0,
+        "direction": 3
+      },
+      {
+        "owner": 0,
+        "direction": 2
+      },
+      {
+        "owner": 0,
+        "direction": 0
+      },
+      {
+        "owner": 1,
+        "direction": 3
+      },
+      {
+        "owner": 1,
+        "direction": 2
+      },
+      {
+        "owner": 1,
+        "direction": 3
+      },
+      null,
+      {
+        "owner": 0,
+        "direction": 0
+      },
+      {
+        "owner": 0,
+        "direction": 3
+      },
+      {
+        "owner": 1,
+        "direction": 2
+      },
+      {
+        "owner": 1,
+        "direction": 0
+      },
+      null
+    ],
+    "targets": [
+      16,
+      16
+    ]
+  },
+  {
+    "id": "ilha",
+    "name": "Ilha",
+    "description": "6 × 6 ao redor de um vazio central. O pulso não atravessa o vazio.",
+    "rows": 6,
+    "columns": 6,
+    "blocked": [
+      14,
+      15,
+      20,
+      21
+    ],
+    "board": [
+      {
+        "owner": 0,
+        "direction": 1
+      },
+      {
+        "owner": 0,
+        "direction": 1
+      },
+      {
+        "owner": 0,
+        "direction": 2
+      },
+      {
+        "owner": 1,
+        "direction": 0
+      },
+      {
+        "owner": 1,
+        "direction": 3
+      },
+      {
+        "owner": 1,
+        "direction": 2
+      },
+      {
+        "owner": 0,
+        "direction": 1
+      },
+      {
+        "owner": 0,
+        "direction": 0
+      },
+      {
+        "owner": 0,
+        "direction": 1
+      },
+      {
+        "owner": 1,
+        "direction": 1
+      },
+      {
+        "owner": 1,
+        "direction": 2
+      },
+      {
+        "owner": 1,
+        "direction": 0
+      },
+      {
+        "owner": 0,
+        "direction": 3
+      },
+      {
+        "owner": 0,
+        "direction": 2
+      },
+      null,
+      null,
+      {
+        "owner": 1,
+        "direction": 1
+      },
+      {
+        "owner": 1,
+        "direction": 1
+      },
+      {
+        "owner": 0,
+        "direction": 3
+      },
+      {
+        "owner": 0,
+        "direction": 3
+      },
+      null,
+      null,
+      {
+        "owner": 1,
+        "direction": 0
+      },
+      {
+        "owner": 1,
+        "direction": 1
+      },
+      {
+        "owner": 0,
+        "direction": 2
+      },
+      {
+        "owner": 0,
+        "direction": 0
+      },
+      {
+        "owner": 0,
+        "direction": 3
+      },
+      {
+        "owner": 1,
+        "direction": 3
+      },
+      {
+        "owner": 1,
+        "direction": 2
+      },
+      {
+        "owner": 1,
+        "direction": 3
+      },
+      {
+        "owner": 0,
+        "direction": 0
+      },
+      {
+        "owner": 0,
+        "direction": 1
+      },
+      {
+        "owner": 0,
+        "direction": 2
+      },
+      {
+        "owner": 1,
+        "direction": 0
+      },
+      {
+        "owner": 1,
+        "direction": 3
+      },
+      {
+        "owner": 1,
+        "direction": 3
+      }
+    ],
+    "targets": [
+      16,
+      16
+    ]
+  },
+  {
+    "id": "margens-6x6",
+    "name": "Margens",
+    "description": "6 × 6 com 2 recortes simétricos; o pulso para nos espaços vazios.",
+    "rows": 6,
+    "columns": 6,
+    "blocked": [
+      6,
+      29
+    ],
+    "board": [
+      {
+        "owner": 0,
+        "direction": 0
+      },
+      {
+        "owner": 0,
+        "direction": 1
+      },
+      {
+        "owner": 0,
+        "direction": 3
+      },
+      {
+        "owner": 1,
+        "direction": 0
+      },
+      {
+        "owner": 1,
+        "direction": 2
+      },
+      {
+        "owner": 1,
+        "direction": 3
+      },
+      null,
+      {
+        "owner": 0,
+        "direction": 0
+      },
+      {
+        "owner": 0,
+        "direction": 2
+      },
+      {
+        "owner": 1,
+        "direction": 3
+      },
+      {
+        "owner": 1,
+        "direction": 1
+      },
+      {
+        "owner": 1,
+        "direction": 2
+      },
+      {
+        "owner": 0,
+        "direction": 2
+      },
+      {
+        "owner": 0,
+        "direction": 3
+      },
+      {
+        "owner": 0,
+        "direction": 1
+      },
+      {
+        "owner": 1,
+        "direction": 2
+      },
+      {
+        "owner": 1,
+        "direction": 0
+      },
+      {
+        "owner": 1,
+        "direction": 1
+      },
+      {
+        "owner": 0,
+        "direction": 3
+      },
+      {
+        "owner": 0,
+        "direction": 2
+      },
+      {
+        "owner": 0,
+        "direction": 0
+      },
+      {
+        "owner": 1,
+        "direction": 3
+      },
+      {
+        "owner": 1,
+        "direction": 1
+      },
+      {
+        "owner": 1,
+        "direction": 0
+      },
+      {
+        "owner": 0,
+        "direction": 0
+      },
+      {
+        "owner": 0,
+        "direction": 3
+      },
+      {
+        "owner": 0,
+        "direction": 1
+      },
+      {
+        "owner": 1,
+        "direction": 0
+      },
+      {
+        "owner": 1,
+        "direction": 2
+      },
+      null,
+      {
+        "owner": 0,
+        "direction": 1
+      },
+      {
+        "owner": 0,
+        "direction": 0
+      },
+      {
+        "owner": 0,
+        "direction": 2
+      },
+      {
+        "owner": 1,
+        "direction": 1
+      },
+      {
+        "owner": 1,
+        "direction": 3
+      },
+      {
+        "owner": 1,
+        "direction": 2
+      }
+    ],
+    "targets": [
+      17,
+      17
+    ]
+  },
+  {
+    "id": "passagem-6x6",
+    "name": "Passagem",
+    "description": "6 × 6 com 4 recortes simétricos; o pulso para nos espaços vazios.",
+    "rows": 6,
+    "columns": 6,
+    "blocked": [
+      2,
+      3,
+      32,
+      33
+    ],
+    "board": [
+      {
+        "owner": 0,
+        "direction": 1
+      },
+      {
+        "owner": 0,
+        "direction": 0
+      },
+      null,
+      null,
+      {
+        "owner": 1,
+        "direction": 2
+      },
+      {
+        "owner": 1,
+        "direction": 1
+      },
+      {
+        "owner": 0,
+        "direction": 1
+      },
+      {
+        "owner": 0,
+        "direction": 0
+      },
+      {
+        "owner": 0,
+        "direction": 3
+      },
+      {
+        "owner": 1,
+        "direction": 3
+      },
+      {
+        "owner": 1,
+        "direction": 2
+      },
+      {
+        "owner": 1,
+        "direction": 1
+      },
+      {
+        "owner": 0,
+        "direction": 1
+      },
+      {
+        "owner": 0,
+        "direction": 0
+      },
+      {
+        "owner": 0,
+        "direction": 3
+      },
+      {
+        "owner": 1,
+        "direction": 3
+      },
+      {
+        "owner": 1,
+        "direction": 2
+      },
+      {
+        "owner": 1,
+        "direction": 1
+      },
+      {
+        "owner": 0,
+        "direction": 3
+      },
+      {
+        "owner": 0,
+        "direction": 0
+      },
+      {
+        "owner": 0,
+        "direction": 1
+      },
+      {
+        "owner": 1,
+        "direction": 1
+      },
+      {
+        "owner": 1,
+        "direction": 2
+      },
+      {
+        "owner": 1,
+        "direction": 3
+      },
+      {
+        "owner": 0,
+        "direction": 3
+      },
+      {
+        "owner": 0,
+        "direction": 0
+      },
+      {
+        "owner": 0,
+        "direction": 1
+      },
+      {
+        "owner": 1,
+        "direction": 1
+      },
+      {
+        "owner": 1,
+        "direction": 2
+      },
+      {
+        "owner": 1,
+        "direction": 3
+      },
+      {
+        "owner": 0,
+        "direction": 3
+      },
+      {
+        "owner": 0,
+        "direction": 0
+      },
+      null,
+      null,
+      {
+        "owner": 1,
+        "direction": 2
+      },
+      {
+        "owner": 1,
+        "direction": 3
+      }
+    ],
+    "targets": [
+      16,
+      16
+    ]
+  },
+  {
+    "id": "trilha-6x6",
+    "name": "Trilha",
+    "description": "6 × 6 com 2 recortes simétricos; o pulso para nos espaços vazios.",
+    "rows": 6,
+    "columns": 6,
+    "blocked": [
+      7,
+      28
+    ],
+    "board": [
+      {
+        "owner": 0,
+        "direction": 2
+      },
+      {
+        "owner": 0,
+        "direction": 0
+      },
+      {
+        "owner": 0,
+        "direction": 2
+      },
+      {
+        "owner": 1,
+        "direction": 0
+      },
+      {
+        "owner": 1,
+        "direction": 2
+      },
+      {
+        "owner": 1,
+        "direction": 0
+      },
+      {
+        "owner": 0,
+        "direction": 3
+      },
+      null,
+      {
+        "owner": 0,
+        "direction": 3
+      },
+      {
+        "owner": 1,
+        "direction": 1
+      },
+      {
+        "owner": 1,
+        "direction": 3
+      },
+      {
+        "owner": 1,
+        "direction": 1
+      },
+      {
+        "owner": 0,
+        "direction": 0
+      },
+      {
+        "owner": 0,
+        "direction": 2
+      },
+      {
+        "owner": 0,
+        "direction": 0
+      },
+      {
+        "owner": 1,
+        "direction": 2
+      },
+      {
+        "owner": 1,
+        "direction": 0
+      },
+      {
+        "owner": 1,
+        "direction": 2
+      },
+      {
+        "owner": 0,
+        "direction": 0
+      },
+      {
+        "owner": 0,
+        "direction": 2
+      },
+      {
+        "owner": 0,
+        "direction": 0
+      },
+      {
+        "owner": 1,
+        "direction": 2
+      },
+      {
+        "owner": 1,
+        "direction": 0
+      },
+      {
+        "owner": 1,
+        "direction": 2
+      },
+      {
+        "owner": 0,
+        "direction": 3
+      },
+      {
+        "owner": 0,
+        "direction": 1
+      },
+      {
+        "owner": 0,
+        "direction": 3
+      },
+      {
+        "owner": 1,
+        "direction": 1
+      },
+      null,
+      {
+        "owner": 1,
+        "direction": 1
+      },
+      {
+        "owner": 0,
+        "direction": 2
+      },
+      {
+        "owner": 0,
+        "direction": 0
+      },
+      {
+        "owner": 0,
+        "direction": 2
+      },
+      {
+        "owner": 1,
+        "direction": 0
+      },
+      {
+        "owner": 1,
+        "direction": 2
+      },
+      {
+        "owner": 1,
+        "direction": 0
+      }
+    ],
+    "targets": [
+      17,
+      17
+    ]
+  },
+  {
+    "id": "canteiro-6x8",
+    "name": "Canteiro",
+    "description": "6 × 8 completo, com um arranjo próprio de setas.",
+    "rows": 6,
+    "columns": 8,
+    "blocked": [],
+    "board": [
+      {
+        "owner": 0,
+        "direction": 0
+      },
+      {
+        "owner": 0,
+        "direction": 2
+      },
+      {
+        "owner": 0,
+        "direction": 0
+      },
+      {
+        "owner": 0,
+        "direction": 2
+      },
+      {
+        "owner": 1,
+        "direction": 0
+      },
+      {
+        "owner": 1,
+        "direction": 2
+      },
+      {
+        "owner": 1,
+        "direction": 0
+      },
+      {
+        "owner": 1,
+        "direction": 2
+      },
+      {
+        "owner": 0,
+        "direction": 1
+      },
+      {
+        "owner": 0,
+        "direction": 3
+      },
+      {
+        "owner": 0,
+        "direction": 1
+      },
+      {
+        "owner": 0,
+        "direction": 3
+      },
+      {
+        "owner": 1,
+        "direction": 1
+      },
+      {
+        "owner": 1,
+        "direction": 3
+      },
+      {
+        "owner": 1,
+        "direction": 1
+      },
+      {
+        "owner": 1,
+        "direction": 3
+      },
+      {
+        "owner": 0,
+        "direction": 2
+      },
+      {
+        "owner": 0,
+        "direction": 0
+      },
+      {
+        "owner": 0,
+        "direction": 2
+      },
+      {
+        "owner": 0,
+        "direction": 0
+      },
+      {
+        "owner": 1,
+        "direction": 2
+      },
+      {
+        "owner": 1,
+        "direction": 0
+      },
+      {
+        "owner": 1,
+        "direction": 2
+      },
+      {
+        "owner": 1,
+        "direction": 0
+      },
+      {
+        "owner": 0,
+        "direction": 2
+      },
+      {
+        "owner": 0,
+        "direction": 0
+      },
+      {
+        "owner": 0,
+        "direction": 2
+      },
+      {
+        "owner": 0,
+        "direction": 0
+      },
+      {
+        "owner": 1,
+        "direction": 2
+      },
+      {
+        "owner": 1,
+        "direction": 0
+      },
+      {
+        "owner": 1,
+        "direction": 2
+      },
+      {
+        "owner": 1,
+        "direction": 0
+      },
+      {
+        "owner": 0,
+        "direction": 1
+      },
+      {
+        "owner": 0,
+        "direction": 3
+      },
+      {
+        "owner": 0,
+        "direction": 1
+      },
+      {
+        "owner": 0,
+        "direction": 3
+      },
+      {
+        "owner": 1,
+        "direction": 1
+      },
+      {
+        "owner": 1,
+        "direction": 3
+      },
+      {
+        "owner": 1,
+        "direction": 1
+      },
+      {
+        "owner": 1,
+        "direction": 3
+      },
+      {
+        "owner": 0,
+        "direction": 0
+      },
+      {
+        "owner": 0,
+        "direction": 2
+      },
+      {
+        "owner": 0,
+        "direction": 0
+      },
+      {
+        "owner": 0,
+        "direction": 2
+      },
+      {
+        "owner": 1,
+        "direction": 0
+      },
+      {
+        "owner": 1,
+        "direction": 2
+      },
+      {
+        "owner": 1,
+        "direction": 0
+      },
+      {
+        "owner": 1,
+        "direction": 2
+      }
+    ],
+    "targets": [
+      24,
+      24
+    ]
+  },
+  {
+    "id": "entrelacado-6x8",
+    "name": "Entrelaçado",
+    "description": "6 × 8 completo, com um arranjo próprio de setas.",
+    "rows": 6,
+    "columns": 8,
+    "blocked": [],
+    "board": [
+      {
+        "owner": 0,
+        "direction": 1
+      },
+      {
+        "owner": 0,
+        "direction": 0
+      },
+      {
+        "owner": 0,
+        "direction": 0
+      },
+      {
+        "owner": 0,
+        "direction": 3
+      },
+      {
+        "owner": 1,
+        "direction": 3
+      },
+      {
+        "owner": 1,
+        "direction": 2
+      },
+      {
+        "owner": 1,
+        "direction": 2
+      },
+      {
+        "owner": 1,
+        "direction": 1
+      },
+      {
+        "owner": 0,
+        "direction": 3
+      },
+      {
+        "owner": 0,
+        "direction": 2
+      },
+      {
+        "owner": 0,
+        "direction": 2
+      },
+      {
+        "owner": 0,
+        "direction": 1
+      },
+      {
+        "owner": 1,
+        "direction": 1
+      },
+      {
+        "owner": 1,
+        "direction": 0
+      },
+      {
+        "owner": 1,
+        "direction": 0
+      },
+      {
+        "owner": 1,
+        "direction": 3
+      },
+      {
+        "owner": 0,
+        "direction": 1
+      },
+      {
+        "owner": 0,
+        "direction": 0
+      },
+      {
+        "owner": 0,
+        "direction": 0
+      },
+      {
+        "owner": 0,
+        "direction": 3
+      },
+      {
+        "owner": 1,
+        "direction": 3
+      },
+      {
+        "owner": 1,
+        "direction": 2
+      },
+      {
+        "owner": 1,
+        "direction": 2
+      },
+      {
+        "owner": 1,
+        "direction": 1
+      },
+      {
+        "owner": 0,
+        "direction": 3
+      },
+      {
+        "owner": 0,
+        "direction": 0
+      },
+      {
+        "owner": 0,
+        "direction": 0
+      },
+      {
+        "owner": 0,
+        "direction": 1
+      },
+      {
+        "owner": 1,
+        "direction": 1
+      },
+      {
+        "owner": 1,
+        "direction": 2
+      },
+      {
+        "owner": 1,
+        "direction": 2
+      },
+      {
+        "owner": 1,
+        "direction": 3
+      },
+      {
+        "owner": 0,
+        "direction": 1
+      },
+      {
+        "owner": 0,
+        "direction": 2
+      },
+      {
+        "owner": 0,
+        "direction": 2
+      },
+      {
+        "owner": 0,
+        "direction": 3
+      },
+      {
+        "owner": 1,
+        "direction": 3
+      },
+      {
+        "owner": 1,
+        "direction": 0
+      },
+      {
+        "owner": 1,
+        "direction": 0
+      },
+      {
+        "owner": 1,
+        "direction": 1
+      },
+      {
+        "owner": 0,
+        "direction": 3
+      },
+      {
+        "owner": 0,
+        "direction": 0
+      },
+      {
+        "owner": 0,
+        "direction": 0
+      },
+      {
+        "owner": 0,
+        "direction": 1
+      },
+      {
+        "owner": 1,
+        "direction": 1
+      },
+      {
+        "owner": 1,
+        "direction": 2
+      },
+      {
+        "owner": 1,
+        "direction": 2
+      },
+      {
+        "owner": 1,
+        "direction": 3
+      }
+    ],
+    "targets": [
+      24,
+      24
+    ]
+  },
+  {
+    "id": "clareira-6x8",
+    "name": "Clareira",
+    "description": "6 × 8 com 4 recortes simétricos; o pulso para nos espaços vazios.",
+    "rows": 6,
+    "columns": 8,
+    "blocked": [
+      0,
+      7,
+      40,
+      47
+    ],
+    "board": [
+      null,
+      {
+        "owner": 0,
+        "direction": 3
+      },
+      {
+        "owner": 0,
+        "direction": 0
+      },
+      {
+        "owner": 0,
+        "direction": 2
+      },
+      {
+        "owner": 1,
+        "direction": 3
+      },
+      {
+        "owner": 1,
+        "direction": 0
+      },
+      {
+        "owner": 1,
+        "direction": 2
+      },
+      null,
+      {
+        "owner": 0,
+        "direction": 1
+      },
+      {
+        "owner": 0,
+        "direction": 2
+      },
+      {
+        "owner": 0,
+        "direction": 3
+      },
+      {
+        "owner": 0,
+        "direction": 1
+      },
+      {
+        "owner": 1,
+        "direction": 2
+      },
+      {
+        "owner": 1,
+        "direction": 3
+      },
+      {
+        "owner": 1,
+        "direction": 1
+      },
+      {
+        "owner": 1,
+        "direction": 2
+      },
+      {
+        "owner": 0,
+        "direction": 0
+      },
+      {
+        "owner": 0,
+        "direction": 1
+      },
+      {
+        "owner": 0,
+        "direction": 2
+      },
+      {
+        "owner": 0,
+        "direction": 0
+      },
+      {
+        "owner": 1,
+        "direction": 1
+      },
+      {
+        "owner": 1,
+        "direction": 2
+      },
+      {
+        "owner": 1,
+        "direction": 0
+      },
+      {
+        "owner": 1,
+        "direction": 1
+      },
+      {
+        "owner": 0,
+        "direction": 3
+      },
+      {
+        "owner": 0,
+        "direction": 2
+      },
+      {
+        "owner": 0,
+        "direction": 0
+      },
+      {
+        "owner": 0,
+        "direction": 3
+      },
+      {
+        "owner": 1,
+        "direction": 2
+      },
+      {
+        "owner": 1,
+        "direction": 0
+      },
+      {
+        "owner": 1,
+        "direction": 3
+      },
+      {
+        "owner": 1,
+        "direction": 2
+      },
+      {
+        "owner": 0,
+        "direction": 0
+      },
+      {
+        "owner": 0,
+        "direction": 3
+      },
+      {
+        "owner": 0,
+        "direction": 1
+      },
+      {
+        "owner": 0,
+        "direction": 0
+      },
+      {
+        "owner": 1,
+        "direction": 3
+      },
+      {
+        "owner": 1,
+        "direction": 1
+      },
+      {
+        "owner": 1,
+        "direction": 0
+      },
+      {
+        "owner": 1,
+        "direction": 3
+      },
+      null,
+      {
+        "owner": 0,
+        "direction": 0
+      },
+      {
+        "owner": 0,
+        "direction": 2
+      },
+      {
+        "owner": 0,
+        "direction": 1
+      },
+      {
+        "owner": 1,
+        "direction": 0
+      },
+      {
+        "owner": 1,
+        "direction": 2
+      },
+      {
+        "owner": 1,
+        "direction": 1
+      },
+      null
+    ],
+    "targets": [
+      22,
+      22
+    ]
+  },
+  {
+    "id": "ilha-6x8",
+    "name": "Ilha",
+    "description": "6 × 8 com 4 recortes simétricos; o pulso para nos espaços vazios.",
+    "rows": 6,
+    "columns": 8,
+    "blocked": [
+      19,
+      20,
+      27,
+      28
+    ],
+    "board": [
+      {
+        "owner": 0,
+        "direction": 3
+      },
+      {
+        "owner": 0,
+        "direction": 3
+      },
+      {
+        "owner": 0,
+        "direction": 3
+      },
+      {
+        "owner": 0,
+        "direction": 3
+      },
+      {
+        "owner": 1,
+        "direction": 3
+      },
+      {
+        "owner": 1,
+        "direction": 3
+      },
+      {
+        "owner": 1,
+        "direction": 3
+      },
+      {
+        "owner": 1,
+        "direction": 3
+      },
+      {
+        "owner": 0,
+        "direction": 3
+      },
+      {
+        "owner": 0,
+        "direction": 3
+      },
+      {
+        "owner": 0,
+        "direction": 3
+      },
+      {
+        "owner": 0,
+        "direction": 3
+      },
+      {
+        "owner": 1,
+        "direction": 3
+      },
+      {
+        "owner": 1,
+        "direction": 3
+      },
+      {
+        "owner": 1,
+        "direction": 3
+      },
+      {
+        "owner": 1,
+        "direction": 3
+      },
+      {
+        "owner": 0,
+        "direction": 3
+      },
+      {
+        "owner": 0,
+        "direction": 3
+      },
+      {
+        "owner": 0,
+        "direction": 3
+      },
+      null,
+      null,
+      {
+        "owner": 1,
+        "direction": 3
+      },
+      {
+        "owner": 1,
+        "direction": 3
+      },
+      {
+        "owner": 1,
+        "direction": 3
+      },
+      {
+        "owner": 0,
+        "direction": 1
+      },
+      {
+        "owner": 0,
+        "direction": 1
+      },
+      {
+        "owner": 0,
+        "direction": 1
+      },
+      null,
+      null,
+      {
+        "owner": 1,
+        "direction": 1
+      },
+      {
+        "owner": 1,
+        "direction": 1
+      },
+      {
+        "owner": 1,
+        "direction": 1
+      },
+      {
+        "owner": 0,
+        "direction": 1
+      },
+      {
+        "owner": 0,
+        "direction": 1
+      },
+      {
+        "owner": 0,
+        "direction": 1
+      },
+      {
+        "owner": 0,
+        "direction": 1
+      },
+      {
+        "owner": 1,
+        "direction": 1
+      },
+      {
+        "owner": 1,
+        "direction": 1
+      },
+      {
+        "owner": 1,
+        "direction": 1
+      },
+      {
+        "owner": 1,
+        "direction": 1
+      },
+      {
+        "owner": 0,
+        "direction": 1
+      },
+      {
+        "owner": 0,
+        "direction": 1
+      },
+      {
+        "owner": 0,
+        "direction": 1
+      },
+      {
+        "owner": 0,
+        "direction": 1
+      },
+      {
+        "owner": 1,
+        "direction": 1
+      },
+      {
+        "owner": 1,
+        "direction": 1
+      },
+      {
+        "owner": 1,
+        "direction": 1
+      },
+      {
+        "owner": 1,
+        "direction": 1
+      }
+    ],
+    "targets": [
+      22,
+      22
+    ]
+  },
+  {
+    "id": "margens-6x8",
+    "name": "Margens",
+    "description": "6 × 8 com 2 recortes simétricos; o pulso para nos espaços vazios.",
+    "rows": 6,
+    "columns": 8,
+    "blocked": [
+      8,
+      39
+    ],
+    "board": [
+      {
+        "owner": 0,
+        "direction": 0
+      },
+      {
+        "owner": 0,
+        "direction": 1
+      },
+      {
+        "owner": 0,
+        "direction": 3
+      },
+      {
+        "owner": 0,
+        "direction": 0
+      },
+      {
+        "owner": 1,
+        "direction": 2
+      },
+      {
+        "owner": 1,
+        "direction": 3
+      },
+      {
+        "owner": 1,
+        "direction": 1
+      },
+      {
+        "owner": 1,
+        "direction": 2
+      },
+      null,
+      {
+        "owner": 0,
+        "direction": 2
+      },
+      {
+        "owner": 0,
+        "direction": 0
+      },
+      {
+        "owner": 0,
+        "direction": 1
+      },
+      {
+        "owner": 1,
+        "direction": 3
+      },
+      {
+        "owner": 1,
+        "direction": 0
+      },
+      {
+        "owner": 1,
+        "direction": 2
+      },
+      {
+        "owner": 1,
+        "direction": 3
+      },
+      {
+        "owner": 0,
+        "direction": 2
+      },
+      {
+        "owner": 0,
+        "direction": 3
+      },
+      {
+        "owner": 0,
+        "direction": 1
+      },
+      {
+        "owner": 0,
+        "direction": 2
+      },
+      {
+        "owner": 1,
+        "direction": 0
+      },
+      {
+        "owner": 1,
+        "direction": 1
+      },
+      {
+        "owner": 1,
+        "direction": 3
+      },
+      {
+        "owner": 1,
+        "direction": 0
+      },
+      {
+        "owner": 0,
+        "direction": 2
+      },
+      {
+        "owner": 0,
+        "direction": 1
+      },
+      {
+        "owner": 0,
+        "direction": 3
+      },
+      {
+        "owner": 0,
+        "direction": 2
+      },
+      {
+        "owner": 1,
+        "direction": 0
+      },
+      {
+        "owner": 1,
+        "direction": 3
+      },
+      {
+        "owner": 1,
+        "direction": 1
+      },
+      {
+        "owner": 1,
+        "direction": 0
+      },
+      {
+        "owner": 0,
+        "direction": 1
+      },
+      {
+        "owner": 0,
+        "direction": 0
+      },
+      {
+        "owner": 0,
+        "direction": 2
+      },
+      {
+        "owner": 0,
+        "direction": 1
+      },
+      {
+        "owner": 1,
+        "direction": 3
+      },
+      {
+        "owner": 1,
+        "direction": 2
+      },
+      {
+        "owner": 1,
+        "direction": 0
+      },
+      null,
+      {
+        "owner": 0,
+        "direction": 0
+      },
+      {
+        "owner": 0,
+        "direction": 3
+      },
+      {
+        "owner": 0,
+        "direction": 1
+      },
+      {
+        "owner": 0,
+        "direction": 0
+      },
+      {
+        "owner": 1,
+        "direction": 2
+      },
+      {
+        "owner": 1,
+        "direction": 1
+      },
+      {
+        "owner": 1,
+        "direction": 3
+      },
+      {
+        "owner": 1,
+        "direction": 2
+      }
+    ],
+    "targets": [
+      23,
+      23
+    ]
+  },
+  {
+    "id": "passagem-6x8",
+    "name": "Passagem",
+    "description": "6 × 8 com 4 recortes simétricos; o pulso para nos espaços vazios.",
+    "rows": 6,
+    "columns": 8,
+    "blocked": [
+      3,
+      4,
+      43,
+      44
+    ],
+    "board": [
+      {
+        "owner": 0,
+        "direction": 1
+      },
+      {
+        "owner": 0,
+        "direction": 0
+      },
+      {
+        "owner": 0,
+        "direction": 3
+      },
+      null,
+      null,
+      {
+        "owner": 1,
+        "direction": 1
+      },
+      {
+        "owner": 1,
+        "direction": 1
+      },
+      {
+        "owner": 1,
+        "direction": 0
+      },
+      {
+        "owner": 0,
+        "direction": 3
+      },
+      {
+        "owner": 0,
+        "direction": 2
+      },
+      {
+        "owner": 0,
+        "direction": 1
+      },
+      {
+        "owner": 0,
+        "direction": 1
+      },
+      {
+        "owner": 1,
+        "direction": 0
+      },
+      {
+        "owner": 1,
+        "direction": 3
+      },
+      {
+        "owner": 1,
+        "direction": 3
+      },
+      {
+        "owner": 1,
+        "direction": 2
+      },
+      {
+        "owner": 0,
+        "direction": 1
+      },
+      {
+        "owner": 0,
+        "direction": 0
+      },
+      {
+        "owner": 0,
+        "direction": 3
+      },
+      {
+        "owner": 0,
+        "direction": 3
+      },
+      {
+        "owner": 1,
+        "direction": 2
+      },
+      {
+        "owner": 1,
+        "direction": 1
+      },
+      {
+        "owner": 1,
+        "direction": 1
+      },
+      {
+        "owner": 1,
+        "direction": 0
+      },
+      {
+        "owner": 0,
+        "direction": 2
+      },
+      {
+        "owner": 0,
+        "direction": 3
+      },
+      {
+        "owner": 0,
+        "direction": 3
+      },
+      {
+        "owner": 0,
+        "direction": 0
+      },
+      {
+        "owner": 1,
+        "direction": 1
+      },
+      {
+        "owner": 1,
+        "direction": 1
+      },
+      {
+        "owner": 1,
+        "direction": 2
+      },
+      {
+        "owner": 1,
+        "direction": 3
+      },
+      {
+        "owner": 0,
+        "direction": 0
+      },
+      {
+        "owner": 0,
+        "direction": 1
+      },
+      {
+        "owner": 0,
+        "direction": 1
+      },
+      {
+        "owner": 0,
+        "direction": 2
+      },
+      {
+        "owner": 1,
+        "direction": 3
+      },
+      {
+        "owner": 1,
+        "direction": 3
+      },
+      {
+        "owner": 1,
+        "direction": 0
+      },
+      {
+        "owner": 1,
+        "direction": 1
+      },
+      {
+        "owner": 0,
+        "direction": 2
+      },
+      {
+        "owner": 0,
+        "direction": 3
+      },
+      {
+        "owner": 0,
+        "direction": 3
+      },
+      null,
+      null,
+      {
+        "owner": 1,
+        "direction": 1
+      },
+      {
+        "owner": 1,
+        "direction": 2
+      },
+      {
+        "owner": 1,
+        "direction": 3
+      }
+    ],
+    "targets": [
+      22,
+      22
+    ]
+  },
+  {
+    "id": "trilha-6x8",
+    "name": "Trilha",
+    "description": "6 × 8 com 2 recortes simétricos; o pulso para nos espaços vazios.",
+    "rows": 6,
+    "columns": 8,
+    "blocked": [
+      9,
+      38
+    ],
+    "board": [
+      {
+        "owner": 0,
+        "direction": 2
+      },
+      {
+        "owner": 0,
+        "direction": 0
+      },
+      {
+        "owner": 0,
+        "direction": 2
+      },
+      {
+        "owner": 0,
+        "direction": 0
+      },
+      {
+        "owner": 1,
+        "direction": 2
+      },
+      {
+        "owner": 1,
+        "direction": 0
+      },
+      {
+        "owner": 1,
+        "direction": 2
+      },
+      {
+        "owner": 1,
+        "direction": 0
+      },
+      {
+        "owner": 0,
+        "direction": 1
+      },
+      null,
+      {
+        "owner": 0,
+        "direction": 1
+      },
+      {
+        "owner": 0,
+        "direction": 3
+      },
+      {
+        "owner": 1,
+        "direction": 1
+      },
+      {
+        "owner": 1,
+        "direction": 3
+      },
+      {
+        "owner": 1,
+        "direction": 1
+      },
+      {
+        "owner": 1,
+        "direction": 3
+      },
+      {
+        "owner": 0,
+        "direction": 0
+      },
+      {
+        "owner": 0,
+        "direction": 2
+      },
+      {
+        "owner": 0,
+        "direction": 0
+      },
+      {
+        "owner": 0,
+        "direction": 2
+      },
+      {
+        "owner": 1,
+        "direction": 0
+      },
+      {
+        "owner": 1,
+        "direction": 2
+      },
+      {
+        "owner": 1,
+        "direction": 0
+      },
+      {
+        "owner": 1,
+        "direction": 2
+      },
+      {
+        "owner": 0,
+        "direction": 0
+      },
+      {
+        "owner": 0,
+        "direction": 2
+      },
+      {
+        "owner": 0,
+        "direction": 0
+      },
+      {
+        "owner": 0,
+        "direction": 2
+      },
+      {
+        "owner": 1,
+        "direction": 0
+      },
+      {
+        "owner": 1,
+        "direction": 2
+      },
+      {
+        "owner": 1,
+        "direction": 0
+      },
+      {
+        "owner": 1,
+        "direction": 2
+      },
+      {
+        "owner": 0,
+        "direction": 1
+      },
+      {
+        "owner": 0,
+        "direction": 3
+      },
+      {
+        "owner": 0,
+        "direction": 1
+      },
+      {
+        "owner": 0,
+        "direction": 3
+      },
+      {
+        "owner": 1,
+        "direction": 1
+      },
+      {
+        "owner": 1,
+        "direction": 3
+      },
+      null,
+      {
+        "owner": 1,
+        "direction": 3
+      },
+      {
+        "owner": 0,
+        "direction": 2
+      },
+      {
+        "owner": 0,
+        "direction": 0
+      },
+      {
+        "owner": 0,
+        "direction": 2
+      },
+      {
+        "owner": 0,
+        "direction": 0
+      },
+      {
+        "owner": 1,
+        "direction": 2
+      },
+      {
+        "owner": 1,
+        "direction": 0
+      },
+      {
+        "owner": 1,
+        "direction": 2
+      },
+      {
+        "owner": 1,
+        "direction": 0
+      }
+    ],
+    "targets": [
+      23,
+      23
+    ]
+  },
+  {
+    "id": "canteiro-8x8",
+    "name": "Canteiro",
+    "description": "8 × 8 completo, com um arranjo próprio de setas.",
+    "rows": 8,
+    "columns": 8,
+    "blocked": [],
+    "board": [
+      {
+        "owner": 0,
+        "direction": 0
+      },
+      {
+        "owner": 0,
+        "direction": 2
+      },
+      {
+        "owner": 0,
+        "direction": 0
+      },
+      {
+        "owner": 0,
+        "direction": 2
+      },
+      {
+        "owner": 1,
+        "direction": 0
+      },
+      {
+        "owner": 1,
+        "direction": 2
+      },
+      {
+        "owner": 1,
+        "direction": 0
+      },
+      {
+        "owner": 1,
+        "direction": 2
+      },
+      {
+        "owner": 0,
+        "direction": 1
+      },
+      {
+        "owner": 0,
+        "direction": 3
+      },
+      {
+        "owner": 0,
+        "direction": 1
+      },
+      {
+        "owner": 0,
+        "direction": 3
+      },
+      {
+        "owner": 1,
+        "direction": 1
+      },
+      {
+        "owner": 1,
+        "direction": 3
+      },
+      {
+        "owner": 1,
+        "direction": 1
+      },
+      {
+        "owner": 1,
+        "direction": 3
+      },
+      {
+        "owner": 0,
+        "direction": 2
+      },
+      {
+        "owner": 0,
+        "direction": 0
+      },
+      {
+        "owner": 0,
+        "direction": 2
+      },
+      {
+        "owner": 0,
+        "direction": 0
+      },
+      {
+        "owner": 1,
+        "direction": 2
+      },
+      {
+        "owner": 1,
+        "direction": 0
+      },
+      {
+        "owner": 1,
+        "direction": 2
+      },
+      {
+        "owner": 1,
+        "direction": 0
+      },
+      {
+        "owner": 0,
+        "direction": 3
+      },
+      {
+        "owner": 0,
+        "direction": 1
+      },
+      {
+        "owner": 0,
+        "direction": 3
+      },
+      {
+        "owner": 0,
+        "direction": 1
+      },
+      {
+        "owner": 1,
+        "direction": 3
+      },
+      {
+        "owner": 1,
+        "direction": 1
+      },
+      {
+        "owner": 1,
+        "direction": 3
+      },
+      {
+        "owner": 1,
+        "direction": 1
+      },
+      {
+        "owner": 0,
+        "direction": 3
+      },
+      {
+        "owner": 0,
+        "direction": 1
+      },
+      {
+        "owner": 0,
+        "direction": 3
+      },
+      {
+        "owner": 0,
+        "direction": 1
+      },
+      {
+        "owner": 1,
+        "direction": 3
+      },
+      {
+        "owner": 1,
+        "direction": 1
+      },
+      {
+        "owner": 1,
+        "direction": 3
+      },
+      {
+        "owner": 1,
+        "direction": 1
+      },
+      {
+        "owner": 0,
+        "direction": 2
+      },
+      {
+        "owner": 0,
+        "direction": 0
+      },
+      {
+        "owner": 0,
+        "direction": 2
+      },
+      {
+        "owner": 0,
+        "direction": 0
+      },
+      {
+        "owner": 1,
+        "direction": 2
+      },
+      {
+        "owner": 1,
+        "direction": 0
+      },
+      {
+        "owner": 1,
+        "direction": 2
+      },
+      {
+        "owner": 1,
+        "direction": 0
+      },
+      {
+        "owner": 0,
+        "direction": 1
+      },
+      {
+        "owner": 0,
+        "direction": 3
+      },
+      {
+        "owner": 0,
+        "direction": 1
+      },
+      {
+        "owner": 0,
+        "direction": 3
+      },
+      {
+        "owner": 1,
+        "direction": 1
+      },
+      {
+        "owner": 1,
+        "direction": 3
+      },
+      {
+        "owner": 1,
+        "direction": 1
+      },
+      {
+        "owner": 1,
+        "direction": 3
+      },
+      {
+        "owner": 0,
+        "direction": 0
+      },
+      {
+        "owner": 0,
+        "direction": 2
+      },
+      {
+        "owner": 0,
+        "direction": 0
+      },
+      {
+        "owner": 0,
+        "direction": 2
+      },
+      {
+        "owner": 1,
+        "direction": 0
+      },
+      {
+        "owner": 1,
+        "direction": 2
+      },
+      {
+        "owner": 1,
+        "direction": 0
+      },
+      {
+        "owner": 1,
+        "direction": 2
+      }
+    ],
+    "targets": [
+      32,
+      32
+    ]
+  },
+  {
+    "id": "entrelacado-8x8",
+    "name": "Entrelaçado",
+    "description": "8 × 8 completo, com um arranjo próprio de setas.",
+    "rows": 8,
+    "columns": 8,
+    "blocked": [],
+    "board": [
+      {
+        "owner": 0,
+        "direction": 1
+      },
+      {
+        "owner": 0,
+        "direction": 0
+      },
+      {
+        "owner": 0,
+        "direction": 0
+      },
+      {
+        "owner": 0,
+        "direction": 3
+      },
+      {
+        "owner": 1,
+        "direction": 3
+      },
+      {
+        "owner": 1,
+        "direction": 2
+      },
+      {
+        "owner": 1,
+        "direction": 2
+      },
+      {
+        "owner": 1,
+        "direction": 1
+      },
+      {
+        "owner": 0,
+        "direction": 3
+      },
+      {
+        "owner": 0,
+        "direction": 2
+      },
+      {
+        "owner": 0,
+        "direction": 2
+      },
+      {
+        "owner": 0,
+        "direction": 1
+      },
+      {
+        "owner": 1,
+        "direction": 1
+      },
+      {
+        "owner": 1,
+        "direction": 0
+      },
+      {
+        "owner": 1,
+        "direction": 0
+      },
+      {
+        "owner": 1,
+        "direction": 3
+      },
+      {
+        "owner": 0,
+        "direction": 1
+      },
+      {
+        "owner": 0,
+        "direction": 0
+      },
+      {
+        "owner": 0,
+        "direction": 0
+      },
+      {
+        "owner": 0,
+        "direction": 3
+      },
+      {
+        "owner": 1,
+        "direction": 3
+      },
+      {
+        "owner": 1,
+        "direction": 2
+      },
+      {
+        "owner": 1,
+        "direction": 2
+      },
+      {
+        "owner": 1,
+        "direction": 1
+      },
+      {
+        "owner": 0,
+        "direction": 3
+      },
+      {
+        "owner": 0,
+        "direction": 2
+      },
+      {
+        "owner": 0,
+        "direction": 2
+      },
+      {
+        "owner": 0,
+        "direction": 1
+      },
+      {
+        "owner": 1,
+        "direction": 1
+      },
+      {
+        "owner": 1,
+        "direction": 0
+      },
+      {
+        "owner": 1,
+        "direction": 0
+      },
+      {
+        "owner": 1,
+        "direction": 3
+      },
+      {
+        "owner": 0,
+        "direction": 1
+      },
+      {
+        "owner": 0,
+        "direction": 2
+      },
+      {
+        "owner": 0,
+        "direction": 2
+      },
+      {
+        "owner": 0,
+        "direction": 3
+      },
+      {
+        "owner": 1,
+        "direction": 3
+      },
+      {
+        "owner": 1,
+        "direction": 0
+      },
+      {
+        "owner": 1,
+        "direction": 0
+      },
+      {
+        "owner": 1,
+        "direction": 1
+      },
+      {
+        "owner": 0,
+        "direction": 3
+      },
+      {
+        "owner": 0,
+        "direction": 0
+      },
+      {
+        "owner": 0,
+        "direction": 0
+      },
+      {
+        "owner": 0,
+        "direction": 1
+      },
+      {
+        "owner": 1,
+        "direction": 1
+      },
+      {
+        "owner": 1,
+        "direction": 2
+      },
+      {
+        "owner": 1,
+        "direction": 2
+      },
+      {
+        "owner": 1,
+        "direction": 3
+      },
+      {
+        "owner": 0,
+        "direction": 1
+      },
+      {
+        "owner": 0,
+        "direction": 2
+      },
+      {
+        "owner": 0,
+        "direction": 2
+      },
+      {
+        "owner": 0,
+        "direction": 3
+      },
+      {
+        "owner": 1,
+        "direction": 3
+      },
+      {
+        "owner": 1,
+        "direction": 0
+      },
+      {
+        "owner": 1,
+        "direction": 0
+      },
+      {
+        "owner": 1,
+        "direction": 1
+      },
+      {
+        "owner": 0,
+        "direction": 3
+      },
+      {
+        "owner": 0,
+        "direction": 0
+      },
+      {
+        "owner": 0,
+        "direction": 0
+      },
+      {
+        "owner": 0,
+        "direction": 1
+      },
+      {
+        "owner": 1,
+        "direction": 1
+      },
+      {
+        "owner": 1,
+        "direction": 2
+      },
+      {
+        "owner": 1,
+        "direction": 2
+      },
+      {
+        "owner": 1,
+        "direction": 3
+      }
+    ],
+    "targets": [
+      32,
+      32
+    ]
+  },
+  {
+    "id": "clareira-8x8",
+    "name": "Clareira",
+    "description": "8 × 8 com 4 recortes simétricos; o pulso para nos espaços vazios.",
+    "rows": 8,
+    "columns": 8,
+    "blocked": [
+      0,
+      7,
+      56,
+      63
+    ],
+    "board": [
+      null,
+      {
+        "owner": 0,
+        "direction": 3
+      },
+      {
+        "owner": 0,
+        "direction": 0
+      },
+      {
+        "owner": 0,
+        "direction": 2
+      },
+      {
+        "owner": 1,
+        "direction": 3
+      },
+      {
+        "owner": 1,
+        "direction": 0
+      },
+      {
+        "owner": 1,
+        "direction": 2
+      },
+      null,
+      {
+        "owner": 0,
+        "direction": 1
+      },
+      {
+        "owner": 0,
+        "direction": 2
+      },
+      {
+        "owner": 0,
+        "direction": 3
+      },
+      {
+        "owner": 0,
+        "direction": 1
+      },
+      {
+        "owner": 1,
+        "direction": 2
+      },
+      {
+        "owner": 1,
+        "direction": 3
+      },
+      {
+        "owner": 1,
+        "direction": 1
+      },
+      {
+        "owner": 1,
+        "direction": 2
+      },
+      {
+        "owner": 0,
+        "direction": 0
+      },
+      {
+        "owner": 0,
+        "direction": 1
+      },
+      {
+        "owner": 0,
+        "direction": 2
+      },
+      {
+        "owner": 0,
+        "direction": 0
+      },
+      {
+        "owner": 1,
+        "direction": 1
+      },
+      {
+        "owner": 1,
+        "direction": 2
+      },
+      {
+        "owner": 1,
+        "direction": 0
+      },
+      {
+        "owner": 1,
+        "direction": 1
+      },
+      {
+        "owner": 0,
+        "direction": 3
+      },
+      {
+        "owner": 0,
+        "direction": 0
+      },
+      {
+        "owner": 0,
+        "direction": 1
+      },
+      {
+        "owner": 0,
+        "direction": 3
+      },
+      {
+        "owner": 1,
+        "direction": 0
+      },
+      {
+        "owner": 1,
+        "direction": 1
+      },
+      {
+        "owner": 1,
+        "direction": 3
+      },
+      {
+        "owner": 1,
+        "direction": 0
+      },
+      {
+        "owner": 0,
+        "direction": 2
+      },
+      {
+        "owner": 0,
+        "direction": 1
+      },
+      {
+        "owner": 0,
+        "direction": 3
+      },
+      {
+        "owner": 0,
+        "direction": 2
+      },
+      {
+        "owner": 1,
+        "direction": 1
+      },
+      {
+        "owner": 1,
+        "direction": 3
+      },
+      {
+        "owner": 1,
+        "direction": 2
+      },
+      {
+        "owner": 1,
+        "direction": 1
+      },
+      {
+        "owner": 0,
+        "direction": 3
+      },
+      {
+        "owner": 0,
+        "direction": 2
+      },
+      {
+        "owner": 0,
+        "direction": 0
+      },
+      {
+        "owner": 0,
+        "direction": 3
+      },
+      {
+        "owner": 1,
+        "direction": 2
+      },
+      {
+        "owner": 1,
+        "direction": 0
+      },
+      {
+        "owner": 1,
+        "direction": 3
+      },
+      {
+        "owner": 1,
+        "direction": 2
+      },
+      {
+        "owner": 0,
+        "direction": 0
+      },
+      {
+        "owner": 0,
+        "direction": 3
+      },
+      {
+        "owner": 0,
+        "direction": 1
+      },
+      {
+        "owner": 0,
+        "direction": 0
+      },
+      {
+        "owner": 1,
+        "direction": 3
+      },
+      {
+        "owner": 1,
+        "direction": 1
+      },
+      {
+        "owner": 1,
+        "direction": 0
+      },
+      {
+        "owner": 1,
+        "direction": 3
+      },
+      null,
+      {
+        "owner": 0,
+        "direction": 0
+      },
+      {
+        "owner": 0,
+        "direction": 2
+      },
+      {
+        "owner": 0,
+        "direction": 1
+      },
+      {
+        "owner": 1,
+        "direction": 0
+      },
+      {
+        "owner": 1,
+        "direction": 2
+      },
+      {
+        "owner": 1,
+        "direction": 1
+      },
+      null
+    ],
+    "targets": [
+      30,
+      30
+    ]
+  },
+  {
+    "id": "ilha-8x8",
+    "name": "Ilha",
+    "description": "8 × 8 com 4 recortes simétricos; o pulso para nos espaços vazios.",
+    "rows": 8,
+    "columns": 8,
+    "blocked": [
+      27,
+      28,
+      35,
+      36
+    ],
+    "board": [
+      {
+        "owner": 0,
+        "direction": 3
+      },
+      {
+        "owner": 0,
+        "direction": 3
+      },
+      {
+        "owner": 0,
+        "direction": 3
+      },
+      {
+        "owner": 0,
+        "direction": 3
+      },
+      {
+        "owner": 1,
+        "direction": 3
+      },
+      {
+        "owner": 1,
+        "direction": 3
+      },
+      {
+        "owner": 1,
+        "direction": 3
+      },
+      {
+        "owner": 1,
+        "direction": 3
+      },
+      {
+        "owner": 0,
+        "direction": 3
+      },
+      {
+        "owner": 0,
+        "direction": 3
+      },
+      {
+        "owner": 0,
+        "direction": 3
+      },
+      {
+        "owner": 0,
+        "direction": 3
+      },
+      {
+        "owner": 1,
+        "direction": 3
+      },
+      {
+        "owner": 1,
+        "direction": 3
+      },
+      {
+        "owner": 1,
+        "direction": 3
+      },
+      {
+        "owner": 1,
+        "direction": 3
+      },
+      {
+        "owner": 0,
+        "direction": 3
+      },
+      {
+        "owner": 0,
+        "direction": 3
+      },
+      {
+        "owner": 0,
+        "direction": 3
+      },
+      {
+        "owner": 0,
+        "direction": 3
+      },
+      {
+        "owner": 1,
+        "direction": 3
+      },
+      {
+        "owner": 1,
+        "direction": 3
+      },
+      {
+        "owner": 1,
+        "direction": 3
+      },
+      {
+        "owner": 1,
+        "direction": 3
+      },
+      {
+        "owner": 0,
+        "direction": 3
+      },
+      {
+        "owner": 0,
+        "direction": 3
+      },
+      {
+        "owner": 0,
+        "direction": 3
+      },
+      null,
+      null,
+      {
+        "owner": 1,
+        "direction": 3
+      },
+      {
+        "owner": 1,
+        "direction": 3
+      },
+      {
+        "owner": 1,
+        "direction": 3
+      },
+      {
+        "owner": 0,
+        "direction": 1
+      },
+      {
+        "owner": 0,
+        "direction": 1
+      },
+      {
+        "owner": 0,
+        "direction": 1
+      },
+      null,
+      null,
+      {
+        "owner": 1,
+        "direction": 1
+      },
+      {
+        "owner": 1,
+        "direction": 1
+      },
+      {
+        "owner": 1,
+        "direction": 1
+      },
+      {
+        "owner": 0,
+        "direction": 1
+      },
+      {
+        "owner": 0,
+        "direction": 1
+      },
+      {
+        "owner": 0,
+        "direction": 1
+      },
+      {
+        "owner": 0,
+        "direction": 1
+      },
+      {
+        "owner": 1,
+        "direction": 1
+      },
+      {
+        "owner": 1,
+        "direction": 1
+      },
+      {
+        "owner": 1,
+        "direction": 1
+      },
+      {
+        "owner": 1,
+        "direction": 1
+      },
+      {
+        "owner": 0,
+        "direction": 1
+      },
+      {
+        "owner": 0,
+        "direction": 1
+      },
+      {
+        "owner": 0,
+        "direction": 1
+      },
+      {
+        "owner": 0,
+        "direction": 1
+      },
+      {
+        "owner": 1,
+        "direction": 1
+      },
+      {
+        "owner": 1,
+        "direction": 1
+      },
+      {
+        "owner": 1,
+        "direction": 1
+      },
+      {
+        "owner": 1,
+        "direction": 1
+      },
+      {
+        "owner": 0,
+        "direction": 1
+      },
+      {
+        "owner": 0,
+        "direction": 1
+      },
+      {
+        "owner": 0,
+        "direction": 1
+      },
+      {
+        "owner": 0,
+        "direction": 1
+      },
+      {
+        "owner": 1,
+        "direction": 1
+      },
+      {
+        "owner": 1,
+        "direction": 1
+      },
+      {
+        "owner": 1,
+        "direction": 1
+      },
+      {
+        "owner": 1,
+        "direction": 1
+      }
+    ],
+    "targets": [
+      30,
+      30
+    ]
+  },
+  {
+    "id": "margens-8x8",
+    "name": "Margens",
+    "description": "8 × 8 com 2 recortes simétricos; o pulso para nos espaços vazios.",
+    "rows": 8,
+    "columns": 8,
+    "blocked": [
+      8,
+      55
+    ],
+    "board": [
+      {
+        "owner": 0,
+        "direction": 0
+      },
+      {
+        "owner": 0,
+        "direction": 1
+      },
+      {
+        "owner": 0,
+        "direction": 3
+      },
+      {
+        "owner": 0,
+        "direction": 0
+      },
+      {
+        "owner": 1,
+        "direction": 2
+      },
+      {
+        "owner": 1,
+        "direction": 3
+      },
+      {
+        "owner": 1,
+        "direction": 1
+      },
+      {
+        "owner": 1,
+        "direction": 2
+      },
+      null,
+      {
+        "owner": 0,
+        "direction": 2
+      },
+      {
+        "owner": 0,
+        "direction": 0
+      },
+      {
+        "owner": 0,
+        "direction": 1
+      },
+      {
+        "owner": 1,
+        "direction": 3
+      },
+      {
+        "owner": 1,
+        "direction": 0
+      },
+      {
+        "owner": 1,
+        "direction": 2
+      },
+      {
+        "owner": 1,
+        "direction": 3
+      },
+      {
+        "owner": 0,
+        "direction": 2
+      },
+      {
+        "owner": 0,
+        "direction": 3
+      },
+      {
+        "owner": 0,
+        "direction": 1
+      },
+      {
+        "owner": 0,
+        "direction": 2
+      },
+      {
+        "owner": 1,
+        "direction": 0
+      },
+      {
+        "owner": 1,
+        "direction": 1
+      },
+      {
+        "owner": 1,
+        "direction": 3
+      },
+      {
+        "owner": 1,
+        "direction": 0
+      },
+      {
+        "owner": 0,
+        "direction": 3
+      },
+      {
+        "owner": 0,
+        "direction": 0
+      },
+      {
+        "owner": 0,
+        "direction": 2
+      },
+      {
+        "owner": 0,
+        "direction": 3
+      },
+      {
+        "owner": 1,
+        "direction": 1
+      },
+      {
+        "owner": 1,
+        "direction": 2
+      },
+      {
+        "owner": 1,
+        "direction": 0
+      },
+      {
+        "owner": 1,
+        "direction": 1
+      },
+      {
+        "owner": 0,
+        "direction": 3
+      },
+      {
+        "owner": 0,
+        "direction": 2
+      },
+      {
+        "owner": 0,
+        "direction": 0
+      },
+      {
+        "owner": 0,
+        "direction": 3
+      },
+      {
+        "owner": 1,
+        "direction": 1
+      },
+      {
+        "owner": 1,
+        "direction": 0
+      },
+      {
+        "owner": 1,
+        "direction": 2
+      },
+      {
+        "owner": 1,
+        "direction": 1
+      },
+      {
+        "owner": 0,
+        "direction": 2
+      },
+      {
+        "owner": 0,
+        "direction": 1
+      },
+      {
+        "owner": 0,
+        "direction": 3
+      },
+      {
+        "owner": 0,
+        "direction": 2
+      },
+      {
+        "owner": 1,
+        "direction": 0
+      },
+      {
+        "owner": 1,
+        "direction": 3
+      },
+      {
+        "owner": 1,
+        "direction": 1
+      },
+      {
+        "owner": 1,
+        "direction": 0
+      },
+      {
+        "owner": 0,
+        "direction": 1
+      },
+      {
+        "owner": 0,
+        "direction": 0
+      },
+      {
+        "owner": 0,
+        "direction": 2
+      },
+      {
+        "owner": 0,
+        "direction": 1
+      },
+      {
+        "owner": 1,
+        "direction": 3
+      },
+      {
+        "owner": 1,
+        "direction": 2
+      },
+      {
+        "owner": 1,
+        "direction": 0
+      },
+      null,
+      {
+        "owner": 0,
+        "direction": 0
+      },
+      {
+        "owner": 0,
+        "direction": 3
+      },
+      {
+        "owner": 0,
+        "direction": 1
+      },
+      {
+        "owner": 0,
+        "direction": 0
+      },
+      {
+        "owner": 1,
+        "direction": 2
+      },
+      {
+        "owner": 1,
+        "direction": 1
+      },
+      {
+        "owner": 1,
+        "direction": 3
+      },
+      {
+        "owner": 1,
+        "direction": 2
+      }
+    ],
+    "targets": [
+      31,
+      31
+    ]
+  },
+  {
+    "id": "passagem-8x8",
+    "name": "Passagem",
+    "description": "8 × 8 com 4 recortes simétricos; o pulso para nos espaços vazios.",
+    "rows": 8,
+    "columns": 8,
+    "blocked": [
+      3,
+      4,
+      59,
+      60
+    ],
+    "board": [
+      {
+        "owner": 0,
+        "direction": 1
+      },
+      {
+        "owner": 0,
+        "direction": 0
+      },
+      {
+        "owner": 0,
+        "direction": 3
+      },
+      null,
+      null,
+      {
+        "owner": 1,
+        "direction": 1
+      },
+      {
+        "owner": 1,
+        "direction": 1
+      },
+      {
+        "owner": 1,
+        "direction": 0
+      },
+      {
+        "owner": 0,
+        "direction": 3
+      },
+      {
+        "owner": 0,
+        "direction": 2
+      },
+      {
+        "owner": 0,
+        "direction": 1
+      },
+      {
+        "owner": 0,
+        "direction": 1
+      },
+      {
+        "owner": 1,
+        "direction": 0
+      },
+      {
+        "owner": 1,
+        "direction": 3
+      },
+      {
+        "owner": 1,
+        "direction": 3
+      },
+      {
+        "owner": 1,
+        "direction": 2
+      },
+      {
+        "owner": 0,
+        "direction": 1
+      },
+      {
+        "owner": 0,
+        "direction": 0
+      },
+      {
+        "owner": 0,
+        "direction": 3
+      },
+      {
+        "owner": 0,
+        "direction": 3
+      },
+      {
+        "owner": 1,
+        "direction": 2
+      },
+      {
+        "owner": 1,
+        "direction": 1
+      },
+      {
+        "owner": 1,
+        "direction": 1
+      },
+      {
+        "owner": 1,
+        "direction": 0
+      },
+      {
+        "owner": 0,
+        "direction": 3
+      },
+      {
+        "owner": 0,
+        "direction": 2
+      },
+      {
+        "owner": 0,
+        "direction": 1
+      },
+      {
+        "owner": 0,
+        "direction": 1
+      },
+      {
+        "owner": 1,
+        "direction": 0
+      },
+      {
+        "owner": 1,
+        "direction": 3
+      },
+      {
+        "owner": 1,
+        "direction": 3
+      },
+      {
+        "owner": 1,
+        "direction": 2
+      },
+      {
+        "owner": 0,
+        "direction": 0
+      },
+      {
+        "owner": 0,
+        "direction": 1
+      },
+      {
+        "owner": 0,
+        "direction": 1
+      },
+      {
+        "owner": 0,
+        "direction": 2
+      },
+      {
+        "owner": 1,
+        "direction": 3
+      },
+      {
+        "owner": 1,
+        "direction": 3
+      },
+      {
+        "owner": 1,
+        "direction": 0
+      },
+      {
+        "owner": 1,
+        "direction": 1
+      },
+      {
+        "owner": 0,
+        "direction": 2
+      },
+      {
+        "owner": 0,
+        "direction": 3
+      },
+      {
+        "owner": 0,
+        "direction": 3
+      },
+      {
+        "owner": 0,
+        "direction": 0
+      },
+      {
+        "owner": 1,
+        "direction": 1
+      },
+      {
+        "owner": 1,
+        "direction": 1
+      },
+      {
+        "owner": 1,
+        "direction": 2
+      },
+      {
+        "owner": 1,
+        "direction": 3
+      },
+      {
+        "owner": 0,
+        "direction": 0
+      },
+      {
+        "owner": 0,
+        "direction": 1
+      },
+      {
+        "owner": 0,
+        "direction": 1
+      },
+      {
+        "owner": 0,
+        "direction": 2
+      },
+      {
+        "owner": 1,
+        "direction": 3
+      },
+      {
+        "owner": 1,
+        "direction": 3
+      },
+      {
+        "owner": 1,
+        "direction": 0
+      },
+      {
+        "owner": 1,
+        "direction": 1
+      },
+      {
+        "owner": 0,
+        "direction": 2
+      },
+      {
+        "owner": 0,
+        "direction": 3
+      },
+      {
+        "owner": 0,
+        "direction": 3
+      },
+      null,
+      null,
+      {
+        "owner": 1,
+        "direction": 1
+      },
+      {
+        "owner": 1,
+        "direction": 2
+      },
+      {
+        "owner": 1,
+        "direction": 3
+      }
+    ],
+    "targets": [
+      30,
+      30
+    ]
+  },
+  {
+    "id": "trilha-8x8",
+    "name": "Trilha",
+    "description": "8 × 8 com 2 recortes simétricos; o pulso para nos espaços vazios.",
+    "rows": 8,
+    "columns": 8,
+    "blocked": [
+      9,
+      54
+    ],
+    "board": [
+      {
+        "owner": 0,
+        "direction": 2
+      },
+      {
+        "owner": 0,
+        "direction": 0
+      },
+      {
+        "owner": 0,
+        "direction": 2
+      },
+      {
+        "owner": 0,
+        "direction": 0
+      },
+      {
+        "owner": 1,
+        "direction": 2
+      },
+      {
+        "owner": 1,
+        "direction": 0
+      },
+      {
+        "owner": 1,
+        "direction": 2
+      },
+      {
+        "owner": 1,
+        "direction": 0
+      },
+      {
+        "owner": 0,
+        "direction": 1
+      },
+      null,
+      {
+        "owner": 0,
+        "direction": 1
+      },
+      {
+        "owner": 0,
+        "direction": 3
+      },
+      {
+        "owner": 1,
+        "direction": 1
+      },
+      {
+        "owner": 1,
+        "direction": 3
+      },
+      {
+        "owner": 1,
+        "direction": 1
+      },
+      {
+        "owner": 1,
+        "direction": 3
+      },
+      {
+        "owner": 0,
+        "direction": 0
+      },
+      {
+        "owner": 0,
+        "direction": 2
+      },
+      {
+        "owner": 0,
+        "direction": 0
+      },
+      {
+        "owner": 0,
+        "direction": 2
+      },
+      {
+        "owner": 1,
+        "direction": 0
+      },
+      {
+        "owner": 1,
+        "direction": 2
+      },
+      {
+        "owner": 1,
+        "direction": 0
+      },
+      {
+        "owner": 1,
+        "direction": 2
+      },
+      {
+        "owner": 0,
+        "direction": 3
+      },
+      {
+        "owner": 0,
+        "direction": 1
+      },
+      {
+        "owner": 0,
+        "direction": 3
+      },
+      {
+        "owner": 0,
+        "direction": 1
+      },
+      {
+        "owner": 1,
+        "direction": 3
+      },
+      {
+        "owner": 1,
+        "direction": 1
+      },
+      {
+        "owner": 1,
+        "direction": 3
+      },
+      {
+        "owner": 1,
+        "direction": 1
+      },
+      {
+        "owner": 0,
+        "direction": 3
+      },
+      {
+        "owner": 0,
+        "direction": 1
+      },
+      {
+        "owner": 0,
+        "direction": 3
+      },
+      {
+        "owner": 0,
+        "direction": 1
+      },
+      {
+        "owner": 1,
+        "direction": 3
+      },
+      {
+        "owner": 1,
+        "direction": 1
+      },
+      {
+        "owner": 1,
+        "direction": 3
+      },
+      {
+        "owner": 1,
+        "direction": 1
+      },
+      {
+        "owner": 0,
+        "direction": 0
+      },
+      {
+        "owner": 0,
+        "direction": 2
+      },
+      {
+        "owner": 0,
+        "direction": 0
+      },
+      {
+        "owner": 0,
+        "direction": 2
+      },
+      {
+        "owner": 1,
+        "direction": 0
+      },
+      {
+        "owner": 1,
+        "direction": 2
+      },
+      {
+        "owner": 1,
+        "direction": 0
+      },
+      {
+        "owner": 1,
+        "direction": 2
+      },
+      {
+        "owner": 0,
+        "direction": 1
+      },
+      {
+        "owner": 0,
+        "direction": 3
+      },
+      {
+        "owner": 0,
+        "direction": 1
+      },
+      {
+        "owner": 0,
+        "direction": 3
+      },
+      {
+        "owner": 1,
+        "direction": 1
+      },
+      {
+        "owner": 1,
+        "direction": 3
+      },
+      null,
+      {
+        "owner": 1,
+        "direction": 3
+      },
+      {
+        "owner": 0,
+        "direction": 2
+      },
+      {
+        "owner": 0,
+        "direction": 0
+      },
+      {
+        "owner": 0,
+        "direction": 2
+      },
+      {
+        "owner": 0,
+        "direction": 0
+      },
+      {
+        "owner": 1,
+        "direction": 2
+      },
+      {
+        "owner": 1,
+        "direction": 0
+      },
+      {
+        "owner": 1,
+        "direction": 2
+      },
+      {
+        "owner": 1,
+        "direction": 0
+      }
+    ],
+    "targets": [
+      31,
+      31
+    ]
+  }
+]

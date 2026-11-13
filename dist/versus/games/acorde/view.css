@@ -25,7 +25,7 @@
 
 #versus-games .acorde-board {
   display: grid;
-  grid-template-columns: 1.7rem repeat(4, minmax(0, 1fr));
+  grid-template-columns: 1.7rem repeat(var(--acorde-columns, 4), minmax(0, 1fr));
   gap: 0.3rem;
   align-items: stretch;
   padding: 0.65rem;
@@ -330,7 +330,7 @@
   #versus-games .acorde-board-caption { display: none; }
   #versus-games .acorde-game { max-width: 320px; }
   #versus-games .acorde-instrument-heading { margin: 0 0 5px 24px; gap: 2px 8px; font-size: 12px; }
-  #versus-games .acorde-board { border-radius: 7px; padding: 5px; gap: 3px; grid-template-columns: 20px repeat(4, minmax(0, 1fr)); }
+  #versus-games .acorde-board { border-radius: 7px; padding: 5px; gap: 3px; grid-template-columns: 20px repeat(var(--acorde-columns, 4), minmax(0, 1fr)); }
   #versus-games .acorde-cell { padding: 4%; border-radius: 7px; }
   #versus-games .acorde-trolley--initial { width: 24px; }
   #versus-games .acorde-compact-collections { display: table; width: 100%; margin-top: 6px; border-collapse: collapse; font-size: 11px; text-align: center; }
@@ -345,4 +345,8 @@
   #versus-games :is(.acorde-column-label,.acorde-axis-corner) { min-height: 0; height: 16px; line-height: 16px; padding: 0; }
   /* Guarda a mesma altura quando for necessário passar a vez. */
   #versus-games .acorde-pass-slot { min-height: 48px; }
+}
+/* Cinco/seis colunas cabem sem alongar as células nem mudar o espaço a cada coleta. */
+@media(max-width:600px) {
+  #versus-games .acorde-game:is([data-columns="5"],[data-columns="6"]) .acorde-cell { min-height:0; }
 }

@@ -29,6 +29,9 @@ jobs:
       - name: Verificar oito duelos, histórico, busca e backup
         run: node --test tests/versus/*.test.mjs
 
+      - name: Verificar expansão dos mapas e seleção comum dos duelos
+        run: node --test tests/maps-expansion*.test.mjs
+
       - name: Verificar estados condicionais do viewport
         run: node tests/viewport-conditional-states.mjs
 

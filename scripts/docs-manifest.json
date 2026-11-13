@@ -89,6 +89,11 @@
     "docs/versus/README.md",
     "docs/versus/VERIFICACAO.md",
     "scripts/README.md",
-    "tests/README.md"
+    "tests/README.md",
+    "docs/mapas-versus-unificados-2026-11-13.md",
+    "docs/mapas-acorde-mosaico-2026-11-13.md",
+    "docs/qa/maps-expansion-broto-cerco-2026-11-13.md",
+    "docs/qa/maps-expansion-estalo-2026-11-13.md",
+    "docs/qa/maps-expansion-quinhao-desvio-2026-11-13.md"
   ]
 }
