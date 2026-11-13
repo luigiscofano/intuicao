@@ -310,3 +310,10 @@
 #versus-games .estalo-map-description p { margin:0; }
 #versus-games .estalo-map-description small { display:block; margin-top:5px; }
 @media(max-width:600px) { #versus-games .estalo-map-cards { grid-template-columns:repeat(2,minmax(0,1fr)); } }
+
+/* As setas revelam diferenças entre canteiros de contorno igual. */
+#versus-games .estalo-map-mini > span { display:grid; place-items:center; }
+#versus-games .estalo-map-mini i {
+  width:3px; height:3px; border-top:1px solid #263f35; border-right:1px solid #263f35;
+  transform:rotate(calc(-45deg + var(--direction) * 90deg));
+}
