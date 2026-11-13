@@ -237,23 +237,6 @@ body > footer .brand-dot {
 :where(body:not(:has(.lab:not([hidden]), #collection:not([hidden]) > .collection-lab))) #main > .games > button[aria-pressed=true] small {
   color: #e2e6ce;
 }
-#main > .games > button[aria-pressed=true]::after {
-  content: "";
-  position: absolute;
-  top: -13px;
-  right: 10px;
-  width: 32px;
-  height: 32px;
-  border-radius: 0;
-  background: url("platform-assets/flower-white-original.png") center/contain no-repeat;
-  mask-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 1254 1254'%3E%3Cpath fill='white' d='M0 0H1254V880H690L665 810L600 790V880H0Z'/%3E%3C/svg%3E");
-  mask-size: 100% 100%;
-  mask-repeat: no-repeat;
-  box-shadow: none;
-  filter: drop-shadow(.5px 0 0 #617b50) drop-shadow(-.5px 0 0 #617b50) drop-shadow(0 .5px 0 #617b50) drop-shadow(0 -.5px 0 #617b50);
-  pointer-events: none;
-  user-select: none;
-}
 :where(body:not(:has(.lab:not([hidden]), #collection:not([hidden]) > .collection-lab))) > footer > span {
   font-family: Georgia,"Times New Roman",serif;
   font-size: 26px;
