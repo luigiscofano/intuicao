@@ -64,6 +64,7 @@ export function initCategoryNavigation({ hideGames }) {
   let libraryFilter = 'all';
   const filters = document.getElementById('library-filters');
   const empty = document.getElementById('library-empty');
+  const visibleCount = document.getElementById('library-visible-count');
   const favoritesDialog = document.getElementById('favorites-dialog');
   const favoriteList = favoritesDialog?.querySelector('[data-favorites-list]');
   const cardName = card => [...card.childNodes].filter(node => node.nodeType === 3)
@@ -168,6 +169,10 @@ export function initCategoryNavigation({ hideGames }) {
 
     const visibleIds = filterLibraryGames(allowedGames, libraryFilter, preferences)
       .filter(id => !category || CATEGORY_GAMES[category]?.includes(id));
+    if (visibleCount) {
+      visibleCount.hidden = showingAchievements || playing;
+      visibleCount.textContent = `${visibleIds.length} ${visibleIds.length === 1 ? 'jogo' : 'jogos'}`;
+    }
     for (const card of cards) {
       const gameId = cardGame(card);
       card.hidden = !visibleIds.includes(gameId);
