@@ -1,9 +1,9 @@
+import { initAchievementsPanel } from "./achievements-panel.mjs";
 import { readLibraryPreferences, saveLibraryPreferences, recordRecentGame, filterLibraryGames, LIBRARY_PREFERENCES_KEY } from './library-preferences.mjs';
 import { retiredGameFromLocation, retiredGameCategory } from "./retired-games.mjs";
 import { VERSUS_GAME_IDS } from "./versus/metadata.mjs";
-import { renderAchievements, readAchievements } from "./achievements.mjs";
+import { readAchievements } from "./achievements.mjs";
 import { initMissionNotifications } from "./achievements/notifications.mjs";
-import { MISSION_UNLOCK_EVENT } from "./achievements/mission-store.mjs";
 
 // A navegação controla somente a tela. Cada jogo continua responsável pelo save.
 export const CATEGORY_GAMES = Object.freeze({
@@ -48,15 +48,13 @@ export function initCategoryNavigation({ hideGames }) {
   const back = document.getElementById("category-back");
   const title = document.getElementById("category-title");
   const achievements = document.getElementById("achievements");
-  const tabs = document.getElementById("library-navigation");
+  const achievementPanel = initAchievementsPanel(document, window);
   // Permite montar os jogos isoladamente, inclusive nos testes legados.
-  if (!navigation || !categories || !back || !title || !achievements || !tabs)
+  if (!navigation || !categories || !back || !title || !achievements)
     return;
 
   const originalLibraryNodes = [...navigation.children];
   const cards = [...navigation.querySelectorAll(CARD_SELECTOR)];
-  const count = tabs.querySelector('[data-screen="games"] span');
-  if (count) count.textContent = String(cards.length);
   const allowedGames = cards.map(cardGame);
   let storage;
   try { storage = window.localStorage; } catch { /* Navegação privada. */ }
@@ -100,8 +98,7 @@ export function initCategoryNavigation({ hideGames }) {
   function routeFromLocation() {
     const parameters = new URLSearchParams(location.search);
     const game = parameters.get("game");
-    if (parameters.get("screen") === "achievements")
-      return { screen: "achievements" };
+
     const retiredGame = retiredGameFromLocation(location);
     if (retiredGame) return { category: retiredGameCategory(retiredGame), retired: true };
     const retiredRoute =
@@ -111,6 +108,7 @@ export function initCategoryNavigation({ hideGames }) {
         /^#(?:game=)?(?:trama|vertice|divisa|orbita|lastro|vazante|enlace)(?:$|[/?&])/i.test(location.hash));
     if (retiredRoute) return { category: "versus" };
     return {
+      screen: parameters.get("screen") === "achievements" ? "achievements" : null,
       game: cards.some((card) => cardGame(card) === game) ? game : null,
       category: CATEGORY_GAMES[parameters.get("category")]
         ? parameters.get("category")
@@ -149,28 +147,26 @@ export function initCategoryNavigation({ hideGames }) {
 
   function showView(
     category,
-    { focus = true, screen = null, game = null } = {},
+    { focus = true, game = null } = {},
   ) {
     currentCategory = category;
-    const showingAchievements = screen === "achievements";
     const playing = Boolean(game);
-    categories.hidden = showingAchievements || playing;
-    navigation.hidden = showingAchievements || playing;
-    back.hidden = showingAchievements || (!category && !playing);
-    title.hidden = showingAchievements || playing;
-    achievements.hidden = !showingAchievements;
+    categories.hidden = playing;
+    navigation.hidden = playing;
+    back.hidden = (!category && !playing);
+    title.hidden = playing;
     const backupPanel = document.getElementById("progress-backup-panel");
     if (backupPanel && !backupPanel.closest('#preferences-dialog')) backupPanel.hidden = playing;
-    if (filters) filters.hidden = showingAchievements || playing;
+    if (filters) filters.hidden = playing;
     title.textContent = [libraryFilter !== 'all' ? filterTitles[libraryFilter] : null, CATEGORY_NAMES[category]].filter(Boolean).join(' · ') || filterTitles.all;
     document
       .querySelector("#main > .intro")
-      ?.classList?.toggle("library-intro-collapsed", playing || showingAchievements);
+      ?.classList?.toggle("library-intro-collapsed", playing);
 
     const visibleIds = filterLibraryGames(allowedGames, libraryFilter, preferences)
       .filter(id => !category || CATEGORY_GAMES[category]?.includes(id));
     if (visibleCount) {
-      visibleCount.hidden = showingAchievements || playing;
+      visibleCount.hidden = playing;
       visibleCount.textContent = `${visibleIds.length} ${visibleIds.length === 1 ? 'jogo' : 'jogos'}`;
     }
     for (const card of cards) {
@@ -185,7 +181,7 @@ export function initCategoryNavigation({ hideGames }) {
       : originalLibraryNodes;
     for (const node of orderedNodes) navigation.append(node);
     navigation.classList.toggle('library-filtered', libraryFilter !== 'all');
-    if (empty) { empty.hidden = playing || showingAchievements || visibleIds.length > 0;
+    if (empty) { empty.hidden = playing || visibleIds.length > 0;
       empty.textContent = libraryFilter === 'favorites' ? 'Nenhum favorito nesta categoria. Use Editar favoritos para escolher.'
         : 'Ainda não há jogos recentes nesta categoria. Abra um jogo para encontrá-lo aqui.'; }
     navigation.querySelectorAll('.game-section-title').forEach(heading => {
@@ -203,17 +199,8 @@ export function initCategoryNavigation({ hideGames }) {
         String((button.dataset.category || null) === category),
       );
     });
-    tabs.querySelectorAll("[data-screen]").forEach((button) => {
-      const selected =
-        (button.dataset.screen === "achievements") === showingAchievements;
-      button.setAttribute("aria-current", selected ? "page" : "false");
-    });
-    if (showingAchievements) renderAchievements(achievements);
-    else if (!playing) refreshCardProgress();
-    if (focus && !playing)
-      (showingAchievements ? achievements.querySelector("h2") : title)?.focus({
-        preventScroll: true,
-      });
+    if (!playing) refreshCardProgress();
+    if (focus && !playing) title?.focus({ preventScroll: true });
   }
 
   function returnToLibrary(category = null) {
@@ -227,15 +214,6 @@ export function initCategoryNavigation({ hideGames }) {
     if (button) returnToLibrary(button.dataset.category || null);
   });
   back.onclick = () => returnToLibrary();
-  tabs.addEventListener("click", (event) => {
-    const button = event.target.closest("[data-screen]");
-    if (!button) return;
-    hideGames();
-    const screen =
-      button.dataset.screen === "achievements" ? "achievements" : null;
-    recordRoute(null, null, screen);
-    showView(null, { screen });
-  });
   navigation.addEventListener("click", (event) => {
     const card = event.target.closest(CARD_SELECTOR);
     if (!card) return;
@@ -258,29 +236,28 @@ export function initCategoryNavigation({ hideGames }) {
     hideGames();
     showView(route.category || null, {
       focus: false,
-      screen: route.screen,
       game: route.game,
     });
-    if (!route.game) return;
+    if (!route.game) {
+      if (route.screen === "achievements") achievementPanel?.open();
+      return;
+    }
     restoring = true;
     try {
       cards.find((card) => cardGame(card) === route.game).click();
     } finally {
       restoring = false;
     }
+    if (route.screen === "achievements") achievementPanel?.open();
   }
 
-  window.addEventListener("popstate", restoreRoute);
+  window.addEventListener("popstate", () => { achievementPanel?.close(); restoreRoute(); });
   window.addEventListener("storage", event => {
     if (event.key === LIBRARY_PREFERENCES_KEY) {
       preferences = readLibraryPreferences(storage, allowedGames);
       if (!navigation.hidden) showView(currentCategory, { focus: false });
     }
-    if (!achievements.hidden) renderAchievements(achievements);
-    else if (!navigation.hidden) refreshCardProgress();
-  });
-  window.addEventListener(MISSION_UNLOCK_EVENT, () => {
-    if (!achievements.hidden) renderAchievements(achievements);
+    if (!navigation.hidden) refreshCardProgress();
   });
   restoreRoute();
 }

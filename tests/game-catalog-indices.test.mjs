@@ -23,7 +23,8 @@ test('cards e cabeçalhos usam índices consecutivos de 01 a 19', () => {
     assert.equal(cards[index][2], number);
     assert.equal(GAME_PRESENTATION[id].number, number);
   }
-  assert.match(html, /Jogos <span>19<\/span>/);
+  assert.equal(cards.length, ACTIVE_GAME_COUNT);
+  assert.match(html, /id="library-visible-count"/);
 });
 test('metadados atuais e carregamentos provisórios não mantêm índices retirados', () => {
   for (const game of [...VERSUS_GAMES, ...LOGIC_GAMES].filter(game => ACTIVE_GAME_IDS.includes(game.id))) {

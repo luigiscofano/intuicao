@@ -83,14 +83,15 @@ test("as três categorias permanecem contadas pelo catálogo vigente", () => {
 test("controles compartilham a linha e se montam antes da casca dos jogos", () => {
   assert.match(
     html,
-    /<div id="library-controls">\s*<nav\s+id="library-navigation"/,
+    /<div id="library-controls">\s*<nav\s+id="categories"/,
   );
   assert.match(html, /<\/nav>\s*<\/div>\s*<div class="category-heading">/);
   assert.ok(
     html.indexOf('src="approved-opening.mjs"') <
       html.indexOf('src="approved-game-shell.mjs"'),
   );
-  assert.match(html, />\s*Jogos\s*<span>\d+<\/span>/);
+  assert.match(html, /id="achievements-open"/);
+  assert.doesNotMatch(html, /id="library-navigation"/);
 });
 test('abertura removida sem perder o acesso aos mascotes em Sobre', () => {
   const h = harness();
