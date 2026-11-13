@@ -80,7 +80,10 @@
       >
         Sobre o projeto
       </button>
-      <button type="button" id="preferences-open" class="doc-link" aria-haspopup="dialog" aria-controls="preferences-dialog">Configurações</button>
+      <div class="header-utilities">
+        <button type="button" id="achievements-open" class="header-achievements" aria-haspopup="dialog" aria-controls="achievements-dialog" aria-expanded="false"><img src="platform-assets/conquistas-selo-botanico.svg" alt="" aria-hidden="true" width="24" height="24">Conquistas</button>
+        <button type="button" id="preferences-open" class="doc-link header-preferences" aria-label="Configurações" title="Configurações" aria-haspopup="dialog" aria-controls="preferences-dialog"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" aria-hidden="true"><path d="m10 3-.7 2.3-2 .9-2.2-.5-2 3.5 1.6 1.7v2.2L3 14.8l2 3.5 2.3-.5 2 .9L10 21h4l.7-2.3 2-.9 2.2.5 2-3.5-1.6-1.7v-2.2L21 9.2l-2-3.5-2.3.5-2-.9L14 3Z"/><circle cx="12" cy="12" r="3"/></svg></button>
+      </div>
     </header>
     <main id="main">
       <section class="intro">
@@ -325,22 +328,6 @@
         </div>
       </section>
       <div id="library-controls">
-        <nav
-          id="library-navigation"
-          class="library-navigation"
-          aria-label="Navegação principal"
-        >
-          <button type="button" data-screen="games" aria-current="page">
-            Jogos <span>19</span></button
-          ><button
-            type="button"
-            data-screen="achievements"
-            aria-current="false"
-          >
-            Conquistas
-            <img class="library-achievements-icon" src="./platform-assets/conquistas-selo-botanico.svg" alt="" aria-hidden="true" width="24" height="24">
-          </button>
-        </nav>
         <nav
           id="categories"
           class="category-choices"
@@ -819,6 +806,7 @@
     <link rel="stylesheet" href="action-sidebar.css" />
     <script type="module" src="preferences-dialog.mjs"></script>
     <link rel="stylesheet" href="presentation-system.css" />
+    <link rel="stylesheet" href="achievements-panel.css" />
   </body>
 </html>
 

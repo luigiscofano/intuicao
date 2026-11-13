@@ -1,0 +1,38 @@
+/* Navegação A: a biblioteca é o início; conquistas ficam junto das preferências. */
+body > header .header-utilities { display:flex; align-items:center; gap:8px; margin-left:0; }
+body > header .header-achievements,
+body > header .header-preferences {
+  display:inline-flex; align-items:center; justify-content:center; gap:7px;
+  min-height:44px; padding:7px 12px; border:1px solid #b9c1ae;
+  border-radius:7px; background:#fffdf6; color:#30412f;
+  font:600 14px var(--font-ui); white-space:nowrap; box-shadow:none;
+}
+body > header .header-achievements img { width:24px; height:24px; }
+body > header .header-preferences { width:44px; min-width:44px; padding:10px; }
+body > header .header-preferences svg { width:22px; height:22px; }
+body > header .header-achievements[aria-expanded="true"] { background:#e9e9da; border-color:#30412f; }
+body > header :is(.header-achievements,.header-preferences):focus-visible { outline:2px solid #285d7c; outline-offset:3px; }
+#achievements-dialog { width:min(920px,calc(100vw - 32px)); max-height:calc(100dvh - 32px); padding:24px; border:1px solid #bbc3af; border-radius:10px; background:#faf9f3; color:#30412f; overscroll-behavior:contain; }
+#achievements-dialog::backdrop { background:rgb(32 44 33 / .36); }
+#achievements-dialog .achievements-panel-heading { display:flex; align-items:center; justify-content:space-between; gap:16px; margin-bottom:18px; }
+#achievements-dialog .achievements-panel-heading h2 { margin:0; font-size:24px; }
+#achievements-dialog [data-achievements-close] { min-height:44px; padding:8px 12px; border:1px solid #b9c1ae; border-radius:7px; background:#fffdf6; color:inherit; font:600 14px var(--font-ui); }
+#achievements-dialog [data-achievements-close] span { font-size:20px; margin-left:8px; }
+#achievements-dialog #achievements { margin:0; padding:0; }
+@media(max-width:760px) {
+  /* Sobre permanece disponível, inclusive no celular, sem esconder controles. */
+  body > header { flex-wrap:wrap; gap:8px 12px; }
+  body > header .brand { margin-right:auto; }
+  body > header #about-open { order:3; margin:0 0 8px; min-height:44px; }
+  body > header .header-utilities { margin-left:auto; }
+  body > header .header-achievements { padding:7px 9px; font-size:13px; }
+}
+@media(max-width:370px) {
+  body > header .brand { width:124px; }
+  body > header .header-utilities { gap:5px; }
+  body > header .header-achievements { gap:4px; padding:6px; font-size:12px; }
+}
+@media(max-width:600px) {
+  #achievements-dialog { width:calc(100vw - 16px); max-height:calc(100dvh - 16px); padding:16px; }
+  #achievements-dialog .achievement-summary { grid-template-columns:repeat(2,minmax(0,1fr)); }
+}

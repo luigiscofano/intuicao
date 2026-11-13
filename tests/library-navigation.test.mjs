@@ -136,6 +136,13 @@ function harness(url = "https://example.test/") {
     VERSUS_GAME_IDS: VERSUS_IDS,
     MISSION_UNLOCK_EVENT: "intuicao:missions-unlocked",
     initMissionNotifications() {},
+    initAchievementsPanel() {
+      awards.hidden = true;
+      return {
+        open() { awards.hidden = false; renders++; },
+        close() { awards.hidden = true; },
+      };
+    },
     location: new URL(url),
     history: {
       replaceState(_, __, u) { context.location = new URL(u); },
@@ -246,21 +253,16 @@ test("filters and all-games return preserve cards and info visibility", () => {
   }
   assert.equal(h.hidden, 5);
 });
-test("achievements closes games, refreshes on every entry and storage, and supports history", () => {
-  const h = harness();
-  h.click(h.tabs, h.buttons[1]);
-  assert.ok(h.nav.hidden);
-  assert.ok(!h.awards.hidden);
+test("rota legada de conquistas abre painel sobre a biblioteca", () => {
+  const h = harness("https://example.test/?screen=achievements");
+  assert.equal(h.nav.hidden, false);
+  assert.equal(h.awards.hidden, false);
   assert.equal(h.renders, 1);
-  assert.equal(h.context.location.search, "?screen=achievements");
-  h.context.window.storage({ key: null });
-  assert.equal(h.renders, 2);
-  h.click(h.tabs, h.buttons[0]);
-  assert.ok(h.awards.hidden);
   assert.equal(h.cards.filter((x) => !x.hidden).length, 19);
-  h.context.location = new URL("https://example.test/?screen=achievements");
+  h.context.location = new URL("https://example.test/?category=logica");
   h.context.window.popstate();
-  assert.equal(h.renders, 3);
+  assert.equal(h.awards.hidden, true);
+  assert.equal(h.cards.filter((x) => !x.hidden).length, 10);
 });
 test("as rotas diretas dos 19 jogos acionam exatamente o handler correspondente", () => {
   for (const game of ALL_IDS) {
@@ -329,7 +331,7 @@ test("game navigation collapses library and return restores it", () => {
   assert.equal(h.context.location.search, "");
 });
 
-test("os quatro versus participam do filtro e conservam a rota ao voltar", () => {
+test("os quatro versus compartilhados participam do filtro e conservam a rota ao voltar", () => {
   for (const game of VERSUS_IDS) {
     const h = harness();
     const card = h.cards.find((item) => item.dataset.versus === game);
@@ -358,7 +360,7 @@ test("contador acompanha categoria e desaparece fora da biblioteca", () => {
   assert.equal(h.count.textContent, "19 jogos");
   h.click(h.categories, h.filters[2]);
   assert.equal(h.count.textContent, "10 jogos");
-  h.click(h.tabs, h.buttons[1]);
+  h.click(h.nav, h.cards.find(card => cardId(card) === "elo"));
   assert.equal(h.count.hidden, true);
 });
 
@@ -370,4 +372,3 @@ test("seletor compacto preserva controles sem ícones anunciados em duplicidade"
     assert.match(html, new RegExp(`data-library-filter="${filter}"`));
   }
 });
-
