@@ -32,6 +32,9 @@ jobs:
       - name: Verificar estados condicionais do viewport
         run: node tests/viewport-conditional-states.mjs
 
+      - name: Verificar diálogo Sobre sem comemoração demonstrativa
+        run: node --test tests/about-dialog-current.test.mjs
+
       - name: Conferir índice das missões específicas
         run: node scripts/build-achievement-index.mjs --check
 
