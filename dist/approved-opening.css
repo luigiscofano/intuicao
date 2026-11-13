@@ -46,7 +46,11 @@
 }
 .opening-category-count { font: 400 12px/1.4 var(--font-ui); letter-spacing: 0; text-transform: none; }
 #main > .games > button:not(.game-info-nav) > span:not(.game-nav-icon) { display: none; }
-#main > .games > button:not(.game-info-nav) { font-family:var(--font-ui); }
+#main > .games > button:not(.game-info-nav) {
+  font-family:var(--font-ui);
+  /* Reserva o ícone de informação e 16px de margem até a borda do cartão. */
+  padding-right: 60px;
+}
 @media(min-width: 761px) {
   #main > .games { grid-template-columns: repeat(6,minmax(0,1fr)); }
   #main > .games > button:not(.game-info-nav) { grid-column: span 2; }
@@ -79,7 +83,8 @@
   align-items: center;
   justify-content: space-between;
   gap: 12px 24px;
-  padding-block: 16px;
+  /* Afasta os filtros da divisória sem aumentar o espaço abaixo do título. */
+  padding-block: 28px 16px;
 }
 .library-heading-row > .category-heading { margin: 0; padding: 0; gap: 12px; }
 .library-heading-row > #library-controls { padding: 0; margin-inline-start: auto; }
