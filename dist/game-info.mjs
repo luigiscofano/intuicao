@@ -116,7 +116,8 @@ export function initGameInfo(doc = document) {
         card.dataset.versus;
       const b = nav.querySelector(`[data-info-game="${game}"]`);
       b.hidden = card.hidden;
-      b.style.left = `${card.offsetLeft + card.offsetWidth - 40}px`;
+      // Ícone de 32px com margem interna de 16px, inclusive após filtrar.
+      b.style.left = `${card.offsetLeft + card.offsetWidth - 48}px`;
       b.style.top = `${card.offsetTop + card.offsetHeight / 2 - 16}px`;
     }
   };
