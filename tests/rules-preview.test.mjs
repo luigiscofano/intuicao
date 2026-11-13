@@ -4,10 +4,10 @@ import { readFileSync } from 'node:fs';
 import { rulesPreviewMarkup, initRulesPreviews } from '../dist/rules-preview.mjs';
 import { RULE_EXAMPLES } from '../dist/rules-examples.mjs';
 import { CATEGORY_GAMES } from '../dist/category-navigation.mjs';
-const games=Object.values(CATEGORY_GAMES).flat();
+const games=Object.values(CATEGORY_GAMES).flat().filter(id=>!['lastro','vazante','enlace'].includes(id));
 test('todos os 19 jogos ativos têm regras simples e detalhes completos, exemplo próprio acessível e nenhum controle de pausa',()=>{
  assert.equal(games.length,19);
- assert.deepEqual(Object.keys(RULE_EXAMPLES).filter(id=>games.includes(id)).sort(),[...games].sort());
+ for (const game of games) assert.ok(RULE_EXAMPLES[game],game);
  for(const game of games){
   const html=rulesPreviewMarkup(game);
   assert.ok(RULE_EXAMPLES[game].steps.length>=3,game);

@@ -24,31 +24,37 @@
 :root[data-ui-reduced-motion="true"] .rules-preview .rp-reduced-note{display:block}
 @media(prefers-reduced-motion:reduce){.rules-preview .rp-example *{animation:none!important}.rules-preview .rp-reduced-note{display:block}}
 
-/* A legenda acompanha a ação: observar → agir → conferir; resultado fica legível. */
-.rules-preview .rp-goal{font-size:15px;line-height:1.5;margin:0 0 14px}
-.rules-preview .rp-details{margin-top:14px;border-top:1px solid #bacbb1;padding-top:10px}
-.rules-preview .rp-details summary{cursor:pointer;font-size:13px;font-weight:700;min-height:32px;padding:6px 0;color:#244b63}
+/* Texto resumido e detalhado ocupam a mesma coluna, nunca se acumulam. */
+.rules-preview .rp-goal{font-size:15px;line-height:1.5;margin:0 0 8px}
+.rules-preview .rp-copy:has(.rp-details[open]) .rp-quick{display:none}
+.rules-preview .rp-details{margin-top:8px}
+.rules-preview .rp-details summary{cursor:pointer;font-size:13px;font-weight:700;min-height:44px;padding:10px 0;color:#244b63;box-sizing:border-box}
 .rules-preview .rp-details summary:focus-visible{outline:2px solid #244b63;outline-offset:3px;border-radius:3px}
-.rules-preview .rp-details ul{font-size:13px;line-height:1.55;padding-left:20px;display:grid;gap:8px}
+.rules-preview .rp-details[open]{margin-top:0}
+.rules-preview .rp-details ul{font-size:13px;line-height:1.55;padding-left:20px;display:grid;gap:6px;margin:4px 0 0}
 .rules-preview .rp-example-title{justify-self:start;font-size:12px;font-weight:750;letter-spacing:.02em;color:#244b63}
-.rules-preview .rp-phases{display:grid;width:100%;max-width:340px;gap:5px}
-.rules-preview .rp-phase{display:flex;align-items:center;gap:8px;border-left:3px solid transparent;padding:5px 7px;font-size:12px;line-height:1.35;background:transparent}
-.rules-preview .rp-phase b{display:grid;place-items:center;flex:none;width:20px;height:20px;border:1px solid #7b9477;border-radius:50%;font-size:11px}
-.rules-preview .rp-phase-1{animation:rp-observe var(--rp-cycle) linear infinite}
-.rules-preview .rp-phase-2{animation:rp-do var(--rp-cycle) linear infinite}
-.rules-preview .rp-phase-3{animation:rp-check var(--rp-cycle) linear infinite}
 .rules-preview .rp-loop-note{font-size:10px;color:#52634b;line-height:1.4}
-@keyframes rp-observe{0%,18%,100%{border-color:#244b63;background:#e2e9e3}19%,99%{border-color:transparent;background:transparent}}
-@keyframes rp-do{0%,18%,48%,100%{border-color:transparent;background:transparent}19%,47%{border-color:#b48723;background:#f4e9c6}}
-@keyframes rp-check{0%,47%,100%{border-color:transparent;background:transparent}48%,99%{border-color:#39654c;background:#e2e9e3}}
-.rules-preview:not(.rp-playing) .rp-phase{animation-play-state:paused!important}
-:root[data-ui-reduced-motion="true"] .rules-preview .rp-phase{animation:none!important}
 :root[data-ui-reduced-motion="true"] .rules-preview .rp-loop-note{display:none}
-@media(prefers-reduced-motion:reduce){.rules-preview .rp-phase{animation:none!important}.rules-preview .rp-loop-note{display:none}}
-@media(max-width:680px){.rules-preview .rp-goal{font-size:14px}.rules-preview .rp-details summary{min-height:44px;display:list-item}.rules-preview .rp-example{max-width:340px}.rules-preview .rp-description{font-size:12px}}
+@media(prefers-reduced-motion:reduce){.rules-preview .rp-loop-note{display:none}}
 
-/* No Broto, a última legenda espera a colheita; o ponto vem depois da flor. */
-.rules-preview[data-rules-game="broto"] .rp-phase-2{animation-name:rp-broto-do}
-.rules-preview[data-rules-game="broto"] .rp-phase-3{animation-name:rp-broto-check}
-@keyframes rp-broto-do{0%,18%,68%,100%{border-color:transparent;background:transparent}19%,67%{border-color:#b48723;background:#f4e9c6}}
-@keyframes rp-broto-check{0%,67%,100%{border-color:transparent;background:transparent}68%,99%{border-color:#39654c;background:#e2e9e3}}
+/* A altura nasce do resumo, não dos passos redundantes do exemplo.
+   O SVG usa o espaço livre com proporção preservada; sua animação não muda. */
+body #main .rules-preview{align-items:stretch;gap:18px}
+body #main .rules-preview .rp-copy{min-height:210px}
+body #main .rules-preview .rp-copy h3{margin-bottom:8px}
+body #main .rules-preview .rp-quick ol{gap:6px}
+body #main .rules-preview .rp-quick li{margin-block:0}
+body #main .rules-preview .rp-illustration{contain:size;align-self:stretch;display:flex;flex-direction:column;align-items:stretch;gap:5px;min-height:0;max-height:210px}
+body #main .rules-preview .rp-example{flex:1;min-height:0;display:flex;align-items:center;justify-content:center;max-width:340px;align-self:center}
+body #main .rules-preview .rp-example svg{width:100%;height:100%;max-height:100%;object-fit:contain}
+body #main .rules-preview .rp-description{font-size:12px;line-height:1.4;max-width:none}
+body #main .rules-preview :is(.rp-loop-note,.rp-reduced-note){text-align:center}
+/* No celular, duas colunas tornariam as regras ilegíveis. O exemplo fica
+   abaixo, compacto e sem os três cartões repetidos. Nenhum texto é cortado. */
+@media(max-width:680px){
+ body #main .rules-preview{gap:12px}
+ body #main .rules-preview .rp-copy{min-height:0}
+ body #main .rules-preview .rp-illustration{contain:none;max-height:none;gap:5px}
+ body #main .rules-preview .rp-example{flex:none;height:140px;width:100%;max-width:320px}
+ body #main .rules-preview .rp-goal{font-size:14px}
+}

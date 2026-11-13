@@ -38,10 +38,9 @@ export function rulesPreviewMarkup(game) {
  const quick = QUICK_START[game];
  const name = escape(info.name);
  const steps = quick?.steps || example.steps;
- const cues = quick?.cue || ['Observe o exemplo', 'Veja a ação', 'Confira o resultado'];
- // O primeiro contato fica curto. Regras completas seguem a um toque, sem omissões.
+ // O disclosure troca somente o texto: o SVG continua montado e o loop não reinicia.
  const details = info.rules?.length ? `<details class="rp-details"><summary>Regras completas e detalhes</summary><ul>${info.rules.map(rule => `<li>${escape(rule)}</li>`).join('')}</ul></details>` : '';
- return `<section class="rules-preview" data-rules-game="${escape(game)}" aria-label="Como jogar ${name}"><div class="rp-copy"><h3>Como jogar</h3><p class="rp-goal"><strong>Objetivo:</strong> ${escape(quick?.goal || info.summary)}</p><ol>${steps.map(step => `<li>${escape(step)}</li>`).join('')}</ol>${details}</div><figure class="rp-illustration"><div class="rp-example-title">Veja um exemplo</div><div class="rp-example" aria-hidden="true">${explanatorySvg(game, example.svg)}</div><div class="rp-phases" aria-hidden="true">${cues.map((cue,index) => `<span class="rp-phase rp-phase-${index + 1}"><b>${index + 1}</b> ${escape(cue)}</span>`).join('')}</div><figcaption class="rp-description">${escape(quick?.example || example.description || descriptions[game])}</figcaption><span class="rp-loop-note">Repete automaticamente · não altera sua partida</span><span class="rp-reduced-note">Exemplo estático · movimento reduzido</span></figure></section>`;
+ return `<section class="rules-preview" data-rules-game="${escape(game)}" aria-label="Como jogar ${name}"><div class="rp-copy"><h3>Como jogar</h3><div class="rp-quick"><p class="rp-goal"><strong>Objetivo:</strong> ${escape(quick?.goal || info.summary)}</p><ol>${steps.map(step => `<li>${escape(step)}</li>`).join('')}</ol></div>${details}</div><figure class="rp-illustration"><div class="rp-example-title">Veja um exemplo</div><div class="rp-example" aria-hidden="true">${explanatorySvg(game, example.svg)}</div><figcaption class="rp-description">${escape(quick?.example || example.description || descriptions[game])}</figcaption><span class="rp-loop-note">Repete automaticamente · não altera sua partida</span><span class="rp-reduced-note">Exemplo estático · movimento reduzido</span></figure></section>`;
 }
 
 const instances = new WeakMap();
