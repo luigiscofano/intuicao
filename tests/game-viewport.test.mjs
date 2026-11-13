@@ -25,7 +25,7 @@ function fixture({dense=false, fonts=false}={}) {
   if(fonts)doc.fonts={ready:new Promise(resolve=>resolveFonts=resolve)};
   const win={innerHeight:500,scrollX:0,scrollY:0,location:{href:'https://example.test/?game=foo'},scrolls:[],scrollTo(v){this.scrolls.push(v);},requestAnimationFrame:fn=>{queue.set(++id,fn);return id;},cancelAnimationFrame:n=>queue.delete(n),addEventListener:(k,fn)=>events.set(k,fn),removeEventListener:k=>events.delete(k),MutationObserver:class{constructor(fn){mutate=fn;observers.push(this);}observe(){this.connected=true;}disconnect(){this.connected=false;}},ResizeObserver:class{observe(){}disconnect(){}}};
   const flush=()=>{const fns=[...queue.values()];queue.clear();fns.forEach(fn=>fn());};
-  return {doc,win,events,queue,board,host,section,heading,surface,flush,mutate:()=>mutate(),resolveFonts:()=>resolveFonts(),observers};
+  return {doc,win,events,queue,board,host,section,heading,surface,actions,flush,mutate:()=>mutate(),resolveFonts:()=>resolveFonts(),observers};
 }
 test('centering honors viewport margins and document boundaries',()=>{
   assert.equal(centeredScrollTop(300,400,800,50,2000),150);
@@ -72,3 +72,18 @@ test('fallback temporarily makes a negative tabindex keyboard reachable',()=>{co
 test('explicit endless options navigation moves focus without an extra scroll',()=>{const source=readFileSync(new URL('../dist/game-viewport.mjs',import.meta.url),'utf8');assert.equal((source.match(/\.focus\(/g)||[]).length,1);assert.match(source,/options\.addEventListener\('click',[\s\S]*?focus\(\{preventScroll:true\}\)/);});
 
 test('nearly full height content uses the remaining margin instead of clipping the bottom',()=>{assert.equal(centeredScrollTop(300,566,568,0,2000),299);});
+
+test('versus keeps board geometry across preview, score and result mutations',()=>{
+  const f=fixture();f.surface.classList.add('approved-versus-surface');
+  const initial=f.board.getBoundingClientRect();
+  const stop=installGameViewport(f.doc,f.win);f.flush();f.flush();
+  assert.equal(f.section.dataset.viewportFit,'stable');
+  for(let state=0;state<8;state++){
+    f.actions.getBoundingClientRect=()=>({top:250,bottom:450+state*70});
+    f.mutate();f.flush();f.flush();
+    assert.equal(f.board.getBoundingClientRect().width,initial.width);
+    assert.equal(f.board.getBoundingClientRect().height,initial.height);
+    assert(!f.host.classList.contains('viewport-board-scroll'));
+  }
+  assert.equal(f.win.scrolls.length,1);stop();
+});

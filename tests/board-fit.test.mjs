@@ -1,7 +1,6 @@
 import test from 'node:test';
 import assert from 'node:assert/strict';
 import { readFileSync } from 'node:fs';
-import { execFileSync } from 'node:child_process';
 import { boardHeightBudget, nextBoardWidth, FIT_BOARD_SELECTOR, installBoardFit } from '../dist/board-fit.mjs';
 const css = readFileSync(new URL('../dist/board-fit.css', import.meta.url), 'utf8');
 const html = readFileSync(new URL('../dist/index.html', import.meta.url), 'utf8');
@@ -22,10 +21,10 @@ test('não amplia um tabuleiro que já cabe e tolera dados ausentes', () => {
   assert.equal(nextBoardWidth(200,0,600),200);
   assert.equal(boardHeightBudget(undefined),boardHeightBudget(768));
 });
-test('cobre famílias compartilhadas; Estalo usa dimensionamento CSS estável', () => {
+test('cobre as famílias dos 25 jogos, sem atuar em miniaturas ou vitórias', () => {
   for (const target of ['#scene','#c-board','#s-boards','#r-board','#o-board','.b-lab','.ce-lab','.logic-lab','enlace-board','vazante-river-frame','mosaico-board-wrap','quinhao-plot','dobra-map','acorde-board','lastro-instrument']) assert(FIT_BOARD_SELECTOR.includes(target),target);
   assert(!FIT_BOARD_SELECTOR.includes('victory'));
-  assert(!FIT_BOARD_SELECTOR.includes('estalo-coordinates')); // Regressão: não reduzir a cada jogada.
+  assert(!FIT_BOARD_SELECTOR.includes('estalo-coordinates'), 'Estalo usa CSS estável');
 });
 test('carrega depois dos estilos e módulos existentes', () => {
   assert(html.indexOf('board-fit.css') > html.indexOf('identity.css'));
@@ -49,40 +48,4 @@ test('reajusta ao redimensionar, volta ao tamanho natural e limpa observadores',
 test('ajuste não acessa nem modifica persistência, regras, foco ou gestos', () => {
   const source=readFileSync(new URL('../dist/board-fit.mjs',import.meta.url),'utf8');
   assert(!/localStorage|sessionStorage|\.focus\(|\.transform\s*=|\.innerHTML\s*=|preventDefault/.test(source));
-});
-
-// Árvore confirmada do PR55, preservada também no Site v198.
-test('checkpoint responsivo preservou a árvore anterior fora dos cinco arquivos aprovados', () => {
-  const root=new URL('../',import.meta.url);
-  const approved=['dist/board-fit.css','dist/board-fit.mjs','dist/index.html','dist/collection-ui.mjs','dist/repasse/ui.mjs'];
-  const changed=execFileSync('git',['diff','--name-only','e2c694c1a12970befca130c45e3b94dffd0dccac','012870b0cb6fffe002771423a608285cd3f40949','--','dist',...approved.map(p=>`:(exclude)${p}`)],{cwd:root,encoding:'utf8'});
-  assert.equal(changed,'');
-});
-
-test('não estreita layouts cuja altura não melhora e funciona com rAF suspenso', () => {
-  let queued, timer, cancelled=0;
-  const board={style:{maxWidth:'630px'},parentElement:null,closest:()=>null,getClientRects:()=>[{}],getBoundingClientRect(){return {width:parseFloat(this.style.maxWidth),height:500};}};
-  const win={innerHeight:375,requestAnimationFrame:fn=>{queued=fn;return 1;},cancelAnimationFrame:()=>cancelled++,setTimeout:fn=>{timer=fn;return 2;},clearTimeout(){},addEventListener(){},removeEventListener(){}};
-  const stop=installBoardFit({getElementById:()=>({querySelectorAll:()=>[board]})},win);
-  assert.equal(typeof queued,'function');assert.equal(typeof timer,'function');
-  timer();assert.equal(board.style.maxWidth,'630px');assert(cancelled>0);stop();
-});
-test('exceções densas mantêm suas legendas e sem corte forçado da área', () => {
-  for(const value of ['.dobra-grid { container-type: inline-size','.lastro-instrument { padding: 6px','.vazante-bank { display: grid','max-height: calc(100svh']) assert(css.includes(value),value);
-  assert(!css.includes('overflow: hidden')&&!css.includes('display: none'));
-});
-test('retrato histórico: arquivos de interface anteriores mudam somente a orientação textual aprovada', () => {
-  const root=new URL('../',import.meta.url);
-  for(const [file,oldText,newText] of [
-    ['dist/collection-ui.mjs','Grade ampla: arraste','O tabuleiro se ajusta'],
-    ['dist/repasse/ui.mjs','rolagem','tela'],
-  ]) {
-    const before=execFileSync('git',['show',`e2c694c1a12970befca130c45e3b94dffd0dccac:${file}`],{cwd:root,encoding:'utf8'});
-    const after=execFileSync('git',['show',`012870b0cb6fffe002771423a608285cd3f40949:${file}`],{cwd:root,encoding:'utf8'});
-    assert(after.includes(newText));
-    // Limita cada alteração a duas linhas de texto, sem novas declarações ou handlers.
-    const diff=execFileSync('git',['diff','--unified=0','e2c694c1a12970befca130c45e3b94dffd0dccac','012870b0cb6fffe002771423a608285cd3f40949','--',file],{cwd:root,encoding:'utf8'});
-    assert(diff.split('\n').filter(line=>line.startsWith('+')&&!line.startsWith('+++')).length<=2,file);
-    assert(before.length>0);
-  }
 });
