@@ -2,8 +2,6 @@ import test from "node:test";
 import assert from "node:assert/strict";
 import { readFileSync } from "node:fs";
 import {
-  FEATURED_FAUNA,
-  faunaVisibility,
   initApprovedOpening,
 } from "../dist/approved-opening.mjs";
 import { FAUNA_ART } from "../dist/fauna-art.mjs";
@@ -19,6 +17,7 @@ const css = readFileSync(
 function harness() {
   const node = () => ({
     dataset: {},
+    remove() { this.removed = true; },
     attrs: {},
     children: [],
     events: {},
@@ -46,6 +45,7 @@ function harness() {
     },
   };
   const gallery = Object.assign(node(), {
+    remove() { this.removed = true; },
     querySelectorAll: () => animals,
     querySelector: () => hint,
   });
@@ -56,45 +56,20 @@ function harness() {
     Object.keys(CATEGORY_GAMES).map((id) => [`games-${id}`, node()]),
   );
   const doc = {
-    querySelector: (s) => (s === ".hero-fauna" ? gallery : intro),
+    querySelector: (s) => (s === ".hero-fauna" ? gallery : intro.removed ? null : intro),
     getElementById: (id) => (id === "fauna-dialog" ? {} : headings[id]),
     createElement: node,
   };
   return { doc, intro, gallery, animals, hint, headings, title, subtitle };
 }
-test("os três destaques coincidem com a composição aprovada e pertencem à coleção", () => {
-  assert.deepEqual(FEATURED_FAUNA, [
-    "capivara",
-    "bemtevi",
-    "onca",
-  ]);
-  assert.equal(FAUNA_ART.length, 15);
-  assert.equal(
-    faunaVisibility(FAUNA_ART.map((a) => a.id)).filter(Boolean).length,
-    3,
-  );
-});
-test("expandir revela todos os 15 animais e recolher restaura os mesmos três", () => {
+test("a abertura remove a galeria sem recriar botões nem afetar as fichas", () => {
   const h = harness();
   initApprovedOpening(h.doc);
-  const button = h.intro.children[0].children[1];
-  assert.equal(button.attrs["aria-expanded"], "false");
-  assert.equal(h.animals.filter((a) => !a.hidden).length, 3);
-  button.events.click();
-  assert.equal(button.attrs["aria-expanded"], "true");
-  assert.equal(h.animals.filter((a) => !a.hidden).length, 15);
-  button.events.click();
-  assert.equal(button.attrs["aria-expanded"], "false");
-  assert.equal(h.animals.filter((a) => !a.hidden).length, 3);
-});
-test("inicialização é idempotente e reutiliza os botões informativos existentes", () => {
-  const h = harness(),
-    original = [...h.animals];
   initApprovedOpening(h.doc);
-  initApprovedOpening(h.doc);
-  assert.equal(h.intro.children.length, 1);
-  assert.deepEqual(h.animals, original);
-  assert.equal(h.hint.removed, true);
+  assert.equal(h.intro.removed, true);
+  assert.equal(h.intro.children.length, 0);
+  for (const heading of Object.values(h.headings)) assert.equal(heading.children.length, 1);
+  assert.equal(FAUNA_ART.length, 15);
 });
 test("as três categorias permanecem contadas pelo catálogo vigente", () => {
   const h = harness();
@@ -117,31 +92,14 @@ test("controles compartilham a linha e se montam antes da casca dos jogos", () =
   );
   assert.match(html, />\s*Jogos\s*<span>\d+<\/span>/);
 });
-test("fundo da fauna é removido por composição CSS, sem alterar recursos originais", () => {
-  assert.match(css, /isolation: auto/);
-  assert.match(css, /mix-blend-mode: multiply/);
-  assert.match(css, /background-color: transparent/);
-  assert.match(css, /@media\(max-width:480px\)/);
-  assert.match(css, /\.hero-fauna-cell\[hidden\].*display: none !important/);
-});
-
-test('faixa utiliza texto aprovado e preserva a galeria existente no grupo', () => {
+test('abertura removida sem perder o acesso aos mascotes em Sobre', () => {
   const h = harness();
   initApprovedOpening(h.doc);
-  assert.equal(h.title.textContent, 'A curiosidade é a primeira lição.');
-  assert.equal(h.subtitle.removed, true);
-  assert.equal(h.intro.children[0].className, 'opening-fauna-group');
-  assert.equal(h.intro.children[0].children[0], h.gallery);
-});
-
-test('somente curiosidade recebe ênfase e sublinhado, mantendo a frase inteira', () => {
-  const h = harness();
-  initApprovedOpening(h.doc);
-  assert.equal(h.title.textContent, 'A curiosidade é a primeira lição.');
-  assert.deepEqual(h.title.children.filter(node => typeof node === 'string'), ['A ', ' é a primeira lição.']);
-  const emphasized = h.title.children.filter(node => typeof node !== 'string');
-  assert.equal(emphasized.length, 1);
-  assert.equal(emphasized[0].textContent, 'curiosidade');
-  assert.equal(emphasized[0].className, 'opening-curiosity');
-  assert.match(css, /h1 \.opening-curiosity\s*\{[^}]*font-style: italic;[^}]*text-decoration: underline;/);
+  assert.equal(h.intro.removed, true);
+  const module = readFileSync(new URL('../dist/approved-opening.mjs', import.meta.url), 'utf8');
+  assert.doesNotMatch(module, /Conheça os|opening-fauna-toggle|faunaGroup|primeira lição/);
+  assert.ok(module.indexOf('initFaunaInfo(doc)') < module.indexOf('intro.remove()'));
+  const mascots = readFileSync(new URL('../dist/mascots-dialog.mjs', import.meta.url), 'utf8');
+  assert.match(mascots, /Conhecer os mascotes/);
+  assert.match(css, /#main > \.intro \{ display: none !important; \}/);
 });
