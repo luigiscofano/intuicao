@@ -1,3 +1,19 @@
+/* Movimento com função: folhas que atravessavam o documento não ajudam a
+ * leitura nem a jogada. Retiramos apenas essas partículas ambientais, mantendo
+ * azulejos, AIIJs, animais e o acabamento estático do rodapé.
+ * Não use um seletor global de animação: exemplos, vitórias e conquistas têm
+ * movimento próprio e continuam respeitando suas preferências de acessibilidade. */
+body > .platform-leaf-foreground,
+body > .platform-leaf-layer > .platform-leaf {
+  display: none !important;
+  animation: none !important;
+}
+/* A interação das folhas no chão fica contida no próprio acabamento, sem
+ * lançar partículas sobre o texto do rodapé ou o conteúdo da página. */
+body > .platform-leaf-layer > .platform-pile-surface {
+  overflow: hidden;
+}
+
 /* Camada visual opcional. Tabuleiros, peças e geometria não são selecionados. */
 html[data-ui-motion] {
   --ui-card-time: 160ms;

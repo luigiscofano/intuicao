@@ -165,7 +165,7 @@ export function initCategoryNavigation({ hideGames }) {
     title.textContent = [libraryFilter !== 'all' ? filterTitles[libraryFilter] : null, CATEGORY_NAMES[category]].filter(Boolean).join(' · ') || filterTitles.all;
     document
       .querySelector("#main > .intro")
-      ?.classList?.toggle("library-intro-collapsed", playing);
+      ?.classList?.toggle("library-intro-collapsed", playing || showingAchievements);
 
     const visibleIds = filterLibraryGames(allowedGames, libraryFilter, preferences)
       .filter(id => !category || CATEGORY_GAMES[category]?.includes(id));
@@ -284,4 +284,3 @@ export function initCategoryNavigation({ hideGames }) {
   });
   restoreRoute();
 }
-

@@ -1,8 +1,8 @@
 /* Estrutura editorial aprovada: envolve os jogos sem alterar suas coordenadas,
    peças, sprites ou áreas de interação. As regras completas continuam acessíveis. */
 body.approved-game-view {
-  --approved-cream: #f4eddd;
-  --approved-paper: #fffaf0;
+  --approved-cream: var(--surface-surround, #f5f2e9);
+  --approved-paper: var(--surface-paper, #fffefa);
   --approved-ink: #30412f;
   --approved-green: #39674a;
   --approved-yellow: #cc9f3b;
@@ -212,7 +212,7 @@ body.approved-game-view #main .approved-play-surface::after {
 /* A especificidade vence a regra antiga que forçava todos os painéis numa coluna. */
 body.approved-game-view #main .approved-workspace {
   display: grid !important;
-  grid-template-columns: minmax(0, 1fr) 320px !important;
+  grid-template-columns: minmax(0, 1fr) 260px !important;
   align-items: stretch;
   gap: 20px;
   padding: 0;
@@ -230,8 +230,8 @@ body.approved-game-view #main .approved-workspace > .approved-play-surface {
   min-width: 0;
   align-self: stretch;
   background: var(--approved-paper) !important;
-  border: 1px solid #8c9b7e;
-  border-radius: 22px;
+  border: 1px solid var(--surface-line, #d9ddcf);
+  border-radius: 12px;
   box-shadow: none;
   overflow: visible;
   padding: 16px 12px !important;
@@ -274,8 +274,8 @@ body.approved-game-view #main .approved-workspace > .approved-action-panel {
   align-self: stretch;
   min-width: 0;
   padding: 30px 26px 24px;
-  border: 1px solid #8c9b7e;
-  border-radius: 22px;
+  border: 1px solid var(--surface-line, #d9ddcf);
+  border-radius: 12px;
   background: var(--approved-paper);
   color: var(--approved-ink);
 }
@@ -420,7 +420,7 @@ body.approved-game-view :is(button, summary, a):focus-visible {
     width: 230px;
   }
   body.approved-game-view #main .approved-workspace {
-    grid-template-columns: minmax(0, 1fr) 280px !important;
+    grid-template-columns: minmax(0, 1fr) 240px !important;
     gap: 16px;
   }
   body.approved-game-view #main .approved-workspace > .approved-action-panel {
@@ -726,6 +726,9 @@ body.approved-game-view .approved-versus-surface .grid-cell {
   display: none;
 }
 
+/* AIIJ B do Pulso: azulejos com três batidas, fundo vazado. */
+.approved-tiles.approved-tiles--pulso{display:block;aspect-ratio:320 / 200;background:url("./platform-assets/pulso-aiij-azulejo.svg") center/contain no-repeat;transform:none}
+.approved-tiles.approved-tiles--pulso > span{display:none}
 
 /* AIIJ aprovada do Refúgio; o visual normal mantém o mosaico anterior. */
 .approved-tiles.approved-tiles--refugio { aspect-ratio: 300 / 210; background: url("./platform-assets/refugio-aiij-folhas.svg") center/contain no-repeat; transform: none; }
@@ -739,13 +742,3 @@ body.approved-game-view #main .approved-restart-action > button {
   color: var(--approved-blue);
   border-color: var(--approved-blue);
 }
-
-
-/* AIIJ B do Pulso: proporção explícita mantém a arte visível. */
-.approved-tiles.approved-tiles--pulso {
-  display: block;
-  aspect-ratio: 320 / 200;
-  background: url("./platform-assets/pulso-aiij-azulejo.svg") center/contain no-repeat;
-  transform: none;
-}
-.approved-tiles.approved-tiles--pulso > span { display: none; }

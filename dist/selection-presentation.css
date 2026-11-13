@@ -1,9 +1,9 @@
 /* Shared Terra e Mata presentation, without changing boards or game controls. */
-body #main .unified-selection{padding:clamp(18px,3vw,30px);border-radius:18px;background:#fffaf0;color:#30412f}
+body #main .unified-selection{padding:clamp(18px,3vw,30px);border-radius:12px;background:var(--surface-paper, #fffefa);color:#30412f}
 body #main .unified-selection>h2,body #main .unified-selection .logic-selection-heading h2,body #main .unified-selection .nv-selection-heading h2{margin:8px 0 12px;font:700 clamp(27px,3.5vw,38px)/1.2 var(--font-title);letter-spacing:-.02em}
 body #main .unified-selection .selection-section{min-width:0;margin:24px 0 0}
 body #main .unified-selection .selection-rules{margin-top:22px}
-body #main .unified-selection .rules-preview{margin:0;padding:22px;border-radius:14px;background:#f1f5e9;border:1px solid #bacbb1}
+body #main .unified-selection .rules-preview{margin:0;padding:20px;border-radius:8px;background:var(--surface-muted, #f3f5ee);border:1px solid var(--surface-line, #d9ddcf)}
 body #main .unified-selection :is(.logic-rules,.nv-rules){margin:0;padding:0;border:0;background:none}
 body #main .unified-selection .nv-rules>summary{display:none}
 body #main .unified-selection :is(.nv-control-help,.logic-control-help){font:400 12px/1.6 var(--font-ui);color:#52634b;margin:12px 0 0}
