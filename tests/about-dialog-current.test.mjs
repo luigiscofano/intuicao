@@ -26,7 +26,8 @@ test('Sobre mantém conteúdo e fechamento, sem ação de comemoração', () => 
   const html = read('index.html');
   const start = html.indexOf('<dialog id="about-dialog"');
   const markup = html.slice(start, html.indexOf('</dialog>', start) + 9);
-  assert.match(markup, /Porque a curiosidade é a primeira lição/);
+  assert.match(markup, /Porque a <strong class="about-curiosity">curiosidade<\/strong> é a primeira lição/);
+  assert.match(read('about-dialog.css'), /#about-dialog \.about-motto \.about-curiosity\{font-weight:700;text-decoration:underline/);
   assert.match(markup, /data-about-close>Fechar/);
   assert.doesNotMatch(markup, /Comemorar|about-celebrate|about-sparkles|about-status/);
   assert.doesNotMatch(source + read('about-dialog.css'), /celebrate|confetti|sparkles|localStorage|sessionStorage/);

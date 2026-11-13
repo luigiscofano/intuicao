@@ -16,7 +16,7 @@ export function createSintoniaRoute({hideOtherGames}) {
     hideOtherGames();
     for (const button of document.querySelectorAll('[data-game],[data-collection]')) button.setAttribute('aria-pressed', 'false');
     setActive(true); host.hidden = false;
-    if (!ui) host.innerHTML = '<div class="level-screen"><p class="eyebrow">EXPERIMENTO 07</p><h2 id="s-selection-title" tabindex="-1">SINTONIA ·</h2><p role="status">Preparando os caminhos…</p></div>';
+    if (!ui) host.innerHTML = '<div class="level-screen"><p class="eyebrow">EXPERIMENTO 06</p><h2 id="s-selection-title" tabindex="-1">SINTONIA ·</h2><p role="status">Preparando os caminhos…</p></div>';
     try {
       const game = await load();
       if (revision !== token || !visible) return;

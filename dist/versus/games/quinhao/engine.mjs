@@ -1,8 +1,12 @@
+import { getQuinhaoMap } from "./maps.mjs";
+
 /** Motor determinístico da partilha. Os números dos cestos nunca se alteram. */
 export const FRUITS = ["castanha", "pitanga", "jabuticaba"];
 
-export function createState() {
+export function createState(config = {}) {
+  const map = getQuinhaoMap(config);
   return {
+    ...(map.id === "classic" ? {} : { mapId: map.id, mapVersion: map.version }),
     player: 0,
     proposer: 0,
     phase: "offer",
@@ -11,7 +15,7 @@ export function createState() {
     result: null,
     baskets: Array.from({ length: 24 }, (_, index) => ({
       id: index + 1,
-      fruit: Math.floor((index % 6) / 2),
+      fruit: map.fruits[index],
     })),
     inventories: [
       [0, 0, 0],

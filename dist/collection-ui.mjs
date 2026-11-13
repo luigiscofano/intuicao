@@ -1,4 +1,5 @@
 import { levelCompletionState } from "./level-completion-state.mjs";
+import { renderMapSelection, bindMapSelection } from "./versus/map-selection.mjs";
 import { campaignLevelName } from "./campaign-level-names.mjs";
 import { desvioSelectionText } from './desvio-presentation.mjs';
 // Interface compartilhada de ELO, PRUMO, PACTO e DESVIO: seleção, comandos e resultados.
@@ -208,6 +209,7 @@ export function initCollection({ hideOriginal }) {
     paint = false,
     paintUsed = new Set(),
     botTimer = null,
+    selectedDuelMap = DESVIO_MAPS[0].id,
     duelMode = "local",
     botDifficulty = "perfect",
     replayAt = null,
@@ -402,9 +404,13 @@ export function initCollection({ hideOriginal }) {
     host
       .querySelectorAll("[data-new-level]")
       .forEach((b) => (b.onclick = () => start(Number(b.dataset.newLevel))));
-    host
-      .querySelectorAll("[data-map]")
-      .forEach((b) => (b.onclick = () => startDuel(Number(b.dataset.map))));
+    if (game === "desvio") {
+      bindMapSelection(host, { maps: DESVIO_MAPS, selectedId: selectedDuelMap, onSelect(map) {
+        selectedDuelMap = map.id;
+        selection();
+      } });
+      $("c-start-duel").onclick = () => startDuel(DESVIO_MAPS.findIndex(map => map.id === selectedDuelMap));
+    }
     if (game !== "desvio") {
       $("c-daily").onclick = () => {
         daily = true;
@@ -677,7 +683,7 @@ export function initCollection({ hideOriginal }) {
     ).join("")}`;
   }
   function duelSelection() {
-    return `<div class="collection-toolbar"><label>Modo <select id="c-duel-mode"><option value="local" ${duelMode === "local" ? "selected" : ""}>Dois jogadores locais</option><option value="competitive" ${duelMode === "competitive" ? "selected" : ""}>Duelo local competitivo</option><option value="bot" ${duelMode === "bot" ? "selected" : ""}>Contra o bot</option><option value="training" ${duelMode === "training" ? "selected" : ""}>Treino com análise</option></select></label><label>Bot <select id="c-bot-difficulty"><option value="easy" ${botDifficulty === "easy" ? "selected" : ""}>Explorador</option><option value="medium" ${botDifficulty === "medium" ? "selected" : ""}>Intermediário</option><option value="perfect" ${botDifficulty === "perfect" ? "selected" : ""}>Exato · jogo perfeito</option></select></label></div><p class="collection-small">Partidas no mesmo dispositivo. Não há multiplayer online. Os mapas têm vantagem teórica para um dos lados; alternem o início nas revanches.</p><div class="duel-maps">${DESVIO_MAPS.map((m, i) => `<button data-map="${i}"><strong>Mapa ${i + 1}</strong><small>${esc(m.name ?? m.id)}</small><span class="map-preview">${m.arrows.map((a) => (a === "H" ? "↔︎" : "↕︎")).join(" ")}</span></button>`).join("")}</div>`;
+    return `<div class="collection-toolbar"><label>Modo <select id="c-duel-mode"><option value="local" ${duelMode === "local" ? "selected" : ""}>Dois jogadores locais</option><option value="competitive" ${duelMode === "competitive" ? "selected" : ""}>Duelo local competitivo</option><option value="bot" ${duelMode === "bot" ? "selected" : ""}>Contra o bot</option><option value="training" ${duelMode === "training" ? "selected" : ""}>Treino com análise</option></select></label><label>Bot <select id="c-bot-difficulty"><option value="easy" ${botDifficulty === "easy" ? "selected" : ""}>Explorador</option><option value="medium" ${botDifficulty === "medium" ? "selected" : ""}>Intermediário</option><option value="perfect" ${botDifficulty === "perfect" ? "selected" : ""}>Exato · jogo perfeito</option></select></label></div><p class="collection-small">Partidas no mesmo dispositivo. Não há multiplayer online. Os mapas têm vantagem teórica para um dos lados; alternem o início nas revanches.</p>${renderMapSelection({ id: 'desvio', maps: DESVIO_MAPS, selectedId: selectedDuelMap, preview: map => `<span class="vs-map-grid" style="--map-cols:${map.cols};--map-rows:${map.rows}">${map.arrows.map(arrow => `<span>${arrow === 'H' ? '↔' : '↕'}</span>`).join('')}</span>`, note: '↔ envia à mesma linha; ↕ à mesma coluna. Até 16 casas, mantendo a análise exata.' })}<button type="button" id="c-start-duel" class="primary">Iniciar partida</button>`;
   }
   function initial(l) {
     const state = isSymbol()

@@ -8,7 +8,7 @@ export const SELECTION_GAMES = Object.freeze({
 const DAILY='#selection-daily, #c-daily, #s-daily, #r-daily, #o-daily, [data-logic-daily]';
 const ENDLESS='#selection-free, #c-free, #s-endless-entry, #r-endless-entry, #o-endless-entry, [data-presentation-mode="endless"]';
 const CATALOG='#level-grid, #s-catalog, #r-catalog, #o-catalog, .elo-stage, .prumo-stage, .pacto-stage, .logic-tier';
-const SETUP='.duel-maps, .b-map-setup, .ce-map-setup, .ce-setup-teams, .ce-setup-controls, .nv-preparation';
+const SETUP=':scope > .vs-map-setup, .duel-maps, .b-map-setup, .ce-map-setup, .ce-setup-teams, .ce-setup-controls, .nv-preparation';
 function node(doc,tag,className,text=''){const n=doc.createElement(tag);n.className=className;n.textContent=text;return n;}
 function move(item,parent){if(item&&item.parentElement!==parent)parent.append(item);}
 function section(root,key,title,description=''){
@@ -94,7 +94,7 @@ export function presentSelection(root,game){
   for(const tile of levels.querySelectorAll('.logic-level')){if(resumeId===tile.dataset.levelId)tile.setAttribute('aria-current','true');if(!tile.querySelector('.selection-level-state')){const name=tile.querySelector(':scope > span');if(name)tile.title=name.textContent;tile.append(node(root.ownerDocument,'small','selection-level-state',tile.classList.contains('completed')?'✓ concluído':'explorar'));}}
  }
  let setup=root.querySelector(':scope > [data-selection-section="setup"]');
- if(!campaign){setup=section(root,'setup','Prepare a partida','Escolha as opções disponíveis para este jogo.');for(const toolbar of root.querySelectorAll(':scope > .collection-toolbar'))if(!toolbar.classList.contains('selection-actions'))move(toolbar,setup);for(const item of root.querySelectorAll(SETUP))move(item,setup);const tactical=root.querySelector('#c-tactical');if(tactical)move(tactical,setup);for(const item of [...root.children])if(item.matches('.b-resume-panel, .ce-resume-card'))move(item,setup);}
+ if(!campaign){setup=section(root,'setup','Prepare a partida','Escolha as opções disponíveis para este jogo.');const mapSetup=root.querySelector(':scope > .vs-map-setup');if(mapSetup)move(mapSetup,setup);for(const toolbar of root.querySelectorAll(':scope > .collection-toolbar'))if(!toolbar.classList.contains('selection-actions'))move(toolbar,setup);for(const item of root.querySelectorAll(SETUP))move(item,setup);const startDuel=root.querySelector('#c-start-duel');if(startDuel)move(startDuel,setup);const tactical=root.querySelector('#c-tactical');if(tactical)move(tactical,setup);for(const item of [...root.children])if(item.matches('.b-resume-panel, .ce-resume-card'))move(item,setup);}
  for(const toolbar of root.querySelectorAll('.selection-actions, .logic-mode-actions'))toolbar.hidden=![...toolbar.children].some(n=>!n.hidden);
  const imports=[...root.querySelectorAll(':scope > details')];
  // Mantém a ordem de leitura e de Tab no DOM, além da ordem visual.

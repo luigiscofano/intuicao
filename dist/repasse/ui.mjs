@@ -1258,7 +1258,7 @@ export function initRepasse({ hideOthers = () => {} } = {}) {
           (data.endless.solved === 1 ? ' CONCLUÍDO' : ' CONCLUÍDOS')
         : mode === 'custom'
           ? 'EDITOR · FASE PERSONALIZADA'
-          : 'EXPERIMENTO 08') +
+          : 'EXPERIMENTO 07') +
       '</p><h2 id="r-title" tabindex="-1">REPASSE ·</h2><p class="r-level-name">' +
       esc(mode === 'campaign' ? campaignLevelName('repasse', level) : (level.name ?? 'A ordem dos repasses')) +
       ' <span>' +

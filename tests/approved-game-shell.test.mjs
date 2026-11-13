@@ -1,3 +1,4 @@
+import { gameDisplayNumber } from '../dist/game-catalog.mjs';
 import test from "node:test";
 import assert from "node:assert/strict";
 import { readFileSync } from "node:fs";
@@ -255,7 +256,7 @@ test("as 19 apresentações cobrem o catálogo e têm numeração única", () =>
     19,
   );
   for (const [index, id] of LOGIC_IDS.entries()) {
-    assert.equal(GAME_PRESENTATION[id].number, String(index + 13));
+    assert.equal(GAME_PRESENTATION[id].number, gameDisplayNumber(id));
     assert.equal(GAME_PRESENTATION[id].prefix, "lg");
     assert.equal(GAME_PRESENTATION[id].category, "Raciocínio lógico");
   }
@@ -378,6 +379,7 @@ test("presentation module only reads visual preference, without progress writes,
     ...source.matchAll(/^import .* from ['"]([^'"]+)['"]/gm),
   ].map((match) => match[1]);
   assert.deepEqual(imports, [
+    "./game-catalog.mjs",
     "./action-sidebar.mjs",
     "./versus/metadata.mjs",
     "./logica/metadata.mjs",
