@@ -16,3 +16,19 @@ O enquadramento anterior media toda a superfície após cada mutação e encolhi
 ## Recuperação
 
 Site v238, commit `f774b5273047955c641e62a645afa806fae1cd1e`, preserva a versão anterior. Para retirar somente a mudança, reverter este PR (não toda a main) e republicar. O PR se apoia na retirada de Dobra (#89), sem incorporar os geradores Sem parar pendentes.
+
+### Medições finais (CSS px)
+
+| Jogo | Desktop1440 | Celular390 | Celular320 |
+|---|---:|---:|---:|
+| Desvio |550×550|345×345|275×275|
+| Broto |550×550|349×349|279×279|
+| Cerco |550×550|349×349|279×279|
+| Mosaico |550×550|323×323|253×253|
+| Quinhão |550×550|349×366|279×366|
+| Estalo |632×633|267×268|197×225|
+| Acorde |550×552|260×256|260×256|
+
+Mosaico:25 confirmações e histórico com dimensões idênticas, nas três larguras. Acorde e Quinhão:8 sequências de prévia/confirmação + undo/redo em390/320, mantendo dimensões. Cerco320 teve verificação manual adicional em2 jogadas + undo/redo; Desvio320 teve seleção/confirmação manual. Broto foi verificado na primeira seleção/confirmação, não em todas as rodadas. Uma leitura automatizada inicial de Cerco320 com geometria zero foi descartada: o diálogo de substituição de save ainda estava aberto. Fixtures passaram a rejeitar geometria zero e confirmar o diálogo de preparação.
+
+160 testes unitários específicos passaram. Os sete motores mantêm seus testes preexistentes; não foi executada uma campanha exaustiva de todos os mapas/níveis de IA. A matriz de abertura final não apresentou overflow horizontal ou comandos essenciais fora da janela nas três dimensões testadas. Resultados e regras longas podem exigir rolagem acessível, sem diminuir o tabuleiro.

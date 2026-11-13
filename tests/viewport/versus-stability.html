@@ -8,8 +8,8 @@ const reports=[];document.querySelector('button').onclick=async()=>{
  const fresh=document.createElement('iframe');fresh.setAttribute('credentialless','');frame.replaceWith(fresh);frame=fresh;frame.width=size[0];frame.height=size[1];frame.src=`index.html?game=${game}`;await new Promise(r=>frame.onload=r);const d=frame.contentDocument;
  for(let i=0;i<100&&!d.querySelector('#nv-start,#b-start,#ce-start,.duel-maps [data-map]');i++)await wait(50);
  const mode=d.querySelector('#nv-mode,#b-mode,#ce-mode,#c-duel-mode');if(mode){mode.value='local';mode.dispatchEvent(new Event('change',{bubbles:true}));}
- d.querySelector('#nv-start,#b-start,#ce-start,.duel-maps [data-map]')?.click();await wait(600);
- const measure=()=>{const b=d.querySelector(selectors[game]),r=b.getBoundingClientRect();return {width:+r.width.toFixed(2),height:+r.height.toFixed(2),overflow:d.documentElement.scrollWidth>size[0]+1};};
+ d.querySelector('#nv-start,#b-start,#ce-start,.duel-maps [data-map]')?.click();await wait(100);d.querySelector('dialog[open] [data-dialog-confirm]')?.click();await wait(600);
+ const measure=()=>{const b=d.querySelector(selectors[game]),r=b.getBoundingClientRect();if(r.width<1)throw Error('Tabuleiro ainda não visível');return {width:+r.width.toFixed(2),height:+r.height.toFixed(2),overflow:d.documentElement.scrollWidth>size[0]+1};};
  const initial=measure(),states=[{state:'initial',...initial}],click=async e=>{if(e&&!e.disabled){e.click();await wait(180);return true;}return false;};
  for(let turn=0;turn<(game==='mosaico'?25:8);turn++){
  let chosen;
@@ -23,7 +23,7 @@ const reports=[];document.querySelector('button').onclick=async()=>{
  if(!await click(chosen))break;
  if(game==='estalo')await click(d.querySelector('.estalo-aim-button:not(:disabled)'));
  states.push({state:`preview-${turn}`,...measure()});
- await click(d.querySelector('#nv-confirm,#b-confirm,#ce-confirm,#c-confirm'));await wait(500);
+ await click(d.querySelector('#nv-confirm,#b-confirm,#ce-confirm,#c-confirm'));await wait(1000);
  states.push({state:`confirmed-${turn}`,...measure()});
  }
  if(!['desvio','broto','cerco'].includes(game)){const beforeHistory=measure();await click(d.querySelector('#nv-undo,#b-undo,#ce-undo,#c-undo'));states.push({state:'undo',...measure()});await click(d.querySelector('#nv-redo,#b-redo,#ce-redo,#c-redo'));states.push({state:'redo',...measure()});}
