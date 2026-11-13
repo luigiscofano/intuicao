@@ -130,6 +130,12 @@
         "docs/jogos/desvio/visual-oficina.md"
       ],
       "source": "AIIJ A Azulejos de direção: composição vetorial original criada em código para Desvio, aprovada pelo titular em 2026-11-12; sem imagens externas."
+    },
+    "icone-app-futuro": {
+      "evidence": [
+        "docs/identidade/app-futuro/README.md"
+      ],
+      "source": "Opção B Esmalte acetinado, composição SVG de azulejos aprovada por Luigi em 13/11/2026 para futuro aplicativo; SVG original e exportação PNG, sem imagens externas."
     }
   },
   "assets": [
@@ -1798,6 +1804,26 @@
       "rightsHolder": "Luigi Scofano de Araujo (elementos autorais do projeto)",
       "license": "Direitos reservados; recursos visuais excluídos da licença MIT do código.",
       "permissionEvidence": "docs/jogos/desvio/visual-oficina.md",
+      "reviewBasis": "owner-approved-project-composition; existing-visual-rights-policy"
+    },
+    {
+      "path": "docs/identidade/app-futuro/intuicao-app-esmalte-acetinado-1024.png",
+      "sha256": "1cdbcf6ed9fb4fbdc511974c05f594dde3ff3ecaec9a4aad5d1da36d89180895",
+      "group": "icone-app-futuro",
+      "status": "cleared",
+      "rightsHolder": "Luigi Scofano de Araujo (elementos autorais do projeto)",
+      "license": "Direitos reservados; recursos visuais excluídos da licença MIT do código.",
+      "permissionEvidence": "docs/identidade/app-futuro/README.md",
+      "reviewBasis": "owner-approved-project-composition; existing-visual-rights-policy"
+    },
+    {
+      "path": "docs/identidade/app-futuro/intuicao-app-esmalte-acetinado.svg",
+      "sha256": "779c022959d7b42cf5e3e8db02a9ee3a9ce2da10e3b10a1d599374ad79b4193b",
+      "group": "icone-app-futuro",
+      "status": "cleared",
+      "rightsHolder": "Luigi Scofano de Araujo (elementos autorais do projeto)",
+      "license": "Direitos reservados; recursos visuais excluídos da licença MIT do código.",
+      "permissionEvidence": "docs/identidade/app-futuro/README.md",
       "reviewBasis": "owner-approved-project-composition; existing-visual-rights-policy"
     }
   ],
