@@ -10,7 +10,6 @@ const VERSUS_IDS = [
   "mosaico",
   "quinhao",
   "estalo",
-  "dobra",
   "acorde",
 ];
 const LOGIC_IDS = [ "pulso", "foz", "refugio", "mirante", "renovo"];
@@ -240,19 +239,19 @@ function fixture(game = "light") {
   };
 }
 
-test("as 20 apresentações cobrem o catálogo e têm numeração única", () => {
-  assert.equal(Object.keys(GAME_PRESENTATION).length, 20);
+test("as 19 apresentações cobrem o catálogo e têm numeração única", () => {
+  assert.equal(Object.keys(GAME_PRESENTATION).length, 19);
   assert.deepEqual(
     Object.keys(GAME_PRESENTATION).sort(),
     [...ORIGINAL_IDS, ...LOGIC_IDS, ...VERSUS_IDS].sort(),
   );
   assert.deepEqual(
     Object.keys(GAME_PRESENTATION).sort(),
-    Object.keys(GAME_GUIDANCE).filter(id => !["divisa", "orbita", "lastro", "vazante", "enlace"].includes(id)).sort(),
+    Object.keys(GAME_GUIDANCE).filter(id => !["divisa", "orbita", "lastro", "vazante", "enlace", "dobra"].includes(id)).sort(),
   );
   assert.equal(
     new Set(Object.values(GAME_PRESENTATION).map((value) => value.number)).size,
-    20,
+    19,
   );
   for (const [index, id] of LOGIC_IDS.entries()) {
     assert.equal(GAME_PRESENTATION[id].number, String(index + 13));
