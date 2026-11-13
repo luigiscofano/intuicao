@@ -85,7 +85,7 @@ test("controles compartilham a linha e se montam antes da casca dos jogos", () =
     html,
     /<div id="library-controls">\s*<nav\s+id="categories"/,
   );
-  assert.match(html, /<\/nav>\s*<\/div>\s*<div class="category-heading">/);
+  assert.match(html, /<div class="library-heading-row">\s*<div class="category-heading">/);
   assert.ok(
     html.indexOf('src="approved-opening.mjs"') <
       html.indexOf('src="approved-game-shell.mjs"'),

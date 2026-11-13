@@ -71,3 +71,22 @@
   color: #30412f;
 }
 #main > .games:not([hidden]) > button[aria-pressed='true'] small { color: #445440; }
+
+/* Título e filtros compartilham uma linha, mantendo a ordem de leitura no celular. */
+.library-heading-row {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px 24px;
+  padding-block: 16px;
+}
+.library-heading-row > .category-heading { margin: 0; padding: 0; gap: 12px; }
+.library-heading-row > #library-controls { padding: 0; margin-inline-start: auto; }
+.library-heading-row #categories { justify-content: flex-end; }
+body.approved-game-view .library-heading-row { padding-block: 8px 12px; }
+@media(max-width:760px) {
+  .library-heading-row { gap: 12px; }
+  .library-heading-row > .category-heading { flex: 1 0 100%; }
+  .library-heading-row > #library-controls { max-width: 100%; }
+}
