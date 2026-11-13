@@ -29,7 +29,8 @@ test('estilos ficam limitados à campanha e aos controles pretendidos', () => {
       id === action || new RegExp(`^(c|s|r|o|lg)-${action}$`).test(id)), id);
   }
   assert.doesNotMatch(css, /#(?:nv|b|ce)-|\[data-cell\]|\.versus-board/);
-  const noComments = css.replace(/\/\*[\s\S]*?\*\//g, '');
+  const noComments = css.replace(/\/\*[\s\S]*?\*\//g, '')
+    .replace(/@layer legacy-campaign-actions\s*\{/, '');
   const selectors = noComments.split('}').map(rule => rule.split('{')[0].trim())
     .filter(selector => selector && !selector.startsWith('@media'));
   for (const selector of selectors) {

@@ -286,7 +286,9 @@ export function initVersusGames() {
       quinhao: ".quinhao-plot", estalo: ".estalo-coordinates",
       acorde: ".acorde-board", lastro: ".lastro-instrument",
     }[game.id] ?? moveAnchor);
-    if (moveControls && anchor) anchor.after(moveControls);
+    // O shell comum mantém o grupo nativo ao lado do tabuleiro, fora da região inert.
+    if (moveControls && anchor && !moveControls.closest(".approved-action-panel"))
+      anchor.after(moveControls);
     // Os nós do tabuleiro são recriados na prévia: comparar a ação, não o nó DOM,
     // mantém o segundo clique/toque e o foco de teclado na mesma escolha.
     if (pendingMove && canRepeatChoice(game.id, previewAction)) {
