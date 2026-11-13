@@ -69,12 +69,25 @@ export function initMascotsDialog(doc = document) {
     doc.body.style.overflow = priorOverflow;
     trigger.focus({ preventScroll: true });
   });
-  // O diálogo nativo mantém os anteriores inertes e contém o foco no superior.
+  // O diálogo nativo mantém os anteriores inertes; o ciclo evita foco no navegador.
   dialog.addEventListener('keydown', event => {
     event.stopPropagation();
     if (event.key === 'Escape') {
       event.preventDefault();
       dialog.close();
+      return;
+    }
+    if (event.key !== 'Tab') return;
+    const stops = [...dialog.querySelectorAll('button:not([disabled])')];
+    const first = stops[0];
+    const last = stops.at(-1);
+    const current = doc.activeElement;
+    if (event.shiftKey && (current === first || current === dialog.querySelector('h2'))) {
+      event.preventDefault();
+      last.focus();
+    } else if (!event.shiftKey && current === last) {
+      event.preventDefault();
+      first.focus();
     }
   });
 }
