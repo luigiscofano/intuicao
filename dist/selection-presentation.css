@@ -18,10 +18,42 @@ body #main .unified-selection .selection-mode>.selection-section-description{gri
 body #main .unified-selection .selection-mode-button{grid-column:2;grid-row:1 / span 2;align-self:center;margin:0;min-height:44px;padding:9px 12px;border:1px solid #405e49;border-radius:9px;background:#405e49;color:#fffaf0;font:700 13px/1.4 var(--font-ui);text-align:center;white-space:normal;max-width:170px}
 body #main .unified-selection .selection-mode-button:hover{background:#304c38}
 body #main .unified-selection :is(.selection-levels,.selection-setup){border-top:1px solid #cbd1bf;padding-top:24px}
-body #main .unified-selection :is(.level-group,.logic-level-grid){display:grid;grid-template-columns:repeat(auto-fill,minmax(90px,1fr));gap:12px;margin:16px 0 28px}
-body #main .unified-selection :is(.level-tile,.logic-level){position:relative;display:flex;flex-direction:column;align-items:center;justify-content:center;aspect-ratio:1;min-width:0;min-height:76px;padding:8px 4px;gap:5px;border:1px solid #afb89e;border-radius:12px;box-shadow:none;background:#f4eddd;color:#30412f;font:600 23px/1.2 var(--font-ui);text-align:center}
+/* Tamanho único para as 12 campanhas. Trilhas fixas impedem que a última
+   faixa (com menos fases) estique os botões até preencher toda a linha. */
+body #main .unified-selection {
+  --campaign-level-size: 64px;
+}
+body #main .unified-selection :is(.level-group,.logic-level-grid) {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, var(--campaign-level-size));
+  justify-content: start;
+  gap: 8px;
+  margin: 12px 0 20px;
+}
+body #main .unified-selection :is(.level-tile,.logic-level) {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  box-sizing: border-box;
+  width: var(--campaign-level-size);
+  height: var(--campaign-level-size);
+  min-width: var(--campaign-level-size);
+  min-height: var(--campaign-level-size);
+  aspect-ratio: 1;
+  padding: 4px;
+  gap: 3px;
+  border: 1px solid #afb89e;
+  border-radius: 8px;
+  box-shadow: none;
+  background: #f4eddd;
+  color: #30412f;
+  font: 600 19px/1.2 var(--font-ui);
+  text-align: center;
+}
 body #main .unified-selection :is(.level-tile,.logic-level)>:is(span,strong){font:inherit}
-body #main .unified-selection :is(.level-tile,.logic-level)>small{font:400 11px/1.35 var(--font-ui);color:#52624a}
+body #main .unified-selection :is(.level-tile,.logic-level)>small{font:400 10px/1.15 var(--font-ui);color:#52624a;max-width:100%;overflow-wrap:normal}
 body #main .unified-selection .logic-level>span,body #main .unified-selection .logic-level>i{display:none}
 body #main .unified-selection :is(.level-tile.done,.logic-level.completed){background:#e1ead9;border-color:#879c77}
 body #main .unified-selection :is(.level-tile,.logic-level)[aria-current='true']{outline:2px solid #244b63;outline-offset:2px}
@@ -40,9 +72,6 @@ body #main .unified-selection .nv-setup-options>h3{display:none}
  body #main .unified-selection .selection-mode{padding:12px;column-gap:12px}
  body #main .unified-selection .selection-section-title{font-size:18px}
  body #main .unified-selection .selection-mode-button{width:auto;max-width:140px}
- body #main .unified-selection :is(.level-group,.logic-level-grid){grid-template-columns:repeat(4,minmax(0,1fr));gap:9px}
- body #main .unified-selection :is(.level-tile,.logic-level){min-height:58px;font-size:21px}
- body #main .unified-selection :is(.level-tile,.logic-level)>small{font-size:10px}
 }
 
 /* Contagem real da campanha, com o verde e a hierarquia da referência aprovada. */
