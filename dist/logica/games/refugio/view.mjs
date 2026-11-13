@@ -1,6 +1,23 @@
 import { readRefugioSkin } from './skin.mjs';
 
 const C = { ink: '#30412F', action: '#39674A', cream: '#FFFAF0', cell: '#F8FAF3', line: '#D5DECB', frame: '#B6C3A8', sage: '#E1EDCE', sageEdge: '#73965E', amber: '#F5E7B2', amberEdge: '#B99B46' };
+// Cada marco recebe uma identidade cromática própria, sem alternância ou módulo.
+const REGION_COLORS = Object.freeze([
+  { fill: C.sage, edge: C.sageEdge },
+  { fill: C.amber, edge: C.amberEdge },
+  { fill: '#DCEAF1', edge: '#396B8B' },
+  { fill: '#EAE1EF', edge: '#825C95' },
+]);
+
+function markerColor(level, marker) {
+  const labels = [...new Set(level.markers.map(item => item.label))].sort((a, b) => a - b);
+  const index = labels.indexOf(marker.label);
+  if (REGION_COLORS[index]) return REGION_COLORS[index];
+  // Reserva para futuros mapas maiores: não recicla as quatro cores aprovadas.
+  const hue = ((index - REGION_COLORS.length) * 137.508 + 18) % 360;
+  return { fill: `hsl(${hue} 38% 88%)`, edge: `hsl(${hue} 40% 38%)` };
+}
+
 const escape = value => String(value).replace(/[&<>"']/g, char => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&#39;' }[char]));
 const text = (x, y, value, size = 20, extra = '') => `<text x="${x}" y="${y}" text-anchor="middle" dominant-baseline="middle" font-family="system-ui, sans-serif" font-size="${size}" fill="${C.ink}" ${extra}>${escape(value)}</text>`;
 
@@ -24,8 +41,8 @@ function renderBoardSvg(level, state, { selectedTool = 'cycle', skin = 'normal' 
     pieces.push(`<rect x="${x}" y="${y}" width="${size}" height="${size}" rx="9" fill="${C.cell}" stroke="${C.line}" stroke-width="1.5"/>`);
     if (value === 1) pieces.push(`<rect x="${x + 6}" y="${y + 6}" width="${size - 12}" height="${size - 12}" rx="6" fill="url(#${id}-hatch)" stroke="${C.sageEdge}" stroke-width="1.6"/>`);
     else if (marker) {
-      const amber = marker.label % 2 === 0, edge = amber ? C.amberEdge : C.sageEdge;
-      pieces.push(`<rect x="${x + 7}" y="${y + 7}" width="${size - 14}" height="${size - 14}" rx="9" fill="${amber ? C.amber : C.sage}" stroke="${edge}" stroke-width="1.6"/><rect x="${x + 12}" y="${y + 12}" width="${size - 24}" height="${size - 24}" rx="6" fill="${C.cream}" stroke="${edge}" stroke-width="1"/>`);
+      const { fill, edge } = markerColor(level, marker);
+      pieces.push(`<rect x="${x + 7}" y="${y + 7}" width="${size - 14}" height="${size - 14}" rx="9" fill="${fill}" stroke="${edge}" stroke-width="1.6"/><rect x="${x + 12}" y="${y + 12}" width="${size - 24}" height="${size - 24}" rx="6" fill="${C.cream}" stroke="${edge}" stroke-width="1"/>`);
       if (skin === 'identity') {
         pieces.push(renderLeafMarker(x, y, size, marker.label, edge));
       } else {
