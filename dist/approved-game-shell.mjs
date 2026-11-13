@@ -1,4 +1,5 @@
 import { gameDisplayNumber } from './game-catalog.mjs';
+import { arrangeVersusPlayers } from './versus-player-layout.mjs';
 import { arrangeActionSidebar } from './action-sidebar.mjs';
 import { VERSUS_GAMES } from "./versus/metadata.mjs";
 import { LOGIC_GAMES } from "./logica/metadata.mjs";
@@ -325,6 +326,7 @@ export function initApprovedGameShell(doc = document, win = window) {
         move(guidance, secondary);
       }
       arrangeActionSidebar({ doc, section, panel, control, game, versus });
+      if (versus) arrangeVersusPlayers(surface, win.innerWidth);
       // O mesmo botão nativo fica acima da lateral em todas as campanhas.
       // Movê-lo (sem clonar) preserva o retorno, os handlers e o progresso.
       if (!versus) {
@@ -344,11 +346,13 @@ export function initApprovedGameShell(doc = document, win = window) {
     }
   }
   update();
+  win.addEventListener("resize", update);
   win.addEventListener("popstate", update);
   win.addEventListener("pulso-skin-change", update);
   win.addEventListener("refugio-skin-change", update);
   return () => {
     observer.disconnect();
+    win.removeEventListener("resize", update);
     win.removeEventListener("popstate", update);
     win.removeEventListener("pulso-skin-change", update);
     win.removeEventListener("refugio-skin-change", update);

@@ -27,7 +27,7 @@ jobs:
         run: node --test tests/level-arrows*.test.mjs tests/retired-games.test.mjs tests/game-catalog-indices.test.mjs tests/cohesion-contract.test.mjs
 
       - name: Verificar oito duelos, histórico, busca e backup
-        run: node --test tests/versus/*.test.mjs
+        run: node --test tests/versus/*.test.mjs tests/versus-player-layout.test.mjs
 
       - name: Verificar expansão dos mapas e seleção comum dos duelos
         run: node --test tests/maps-expansion*.test.mjs

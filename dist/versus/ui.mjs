@@ -346,7 +346,7 @@ export function initVersusGames() {
     find("teams").innerHTML = [0, 1]
       .map(
         (player) => `
-      <section class="nv-team ${PLAYER_ANIMALS[game.id] ? "nv-team--animal" : ""} nv-team-${player}${!current.result && current.player === player ? " nv-current" : ""}" aria-label="${playerName(player)}: ${scores[player]} ${metadata.scoreLabel}">
+      <section class="nv-team ${PLAYER_ANIMALS[game.id] ? "nv-team--animal" : ""} nv-team-${player}${playConfig.mode === "bot" && player === 1 ? " nv-team--computer" : ""}${!current.result && current.player === player ? " nv-current" : ""}" aria-label="${playerName(player)}: ${scores[player]} ${metadata.scoreLabel}">
         ${PLAYER_ANIMALS[game.id] ? playerAvatar(game.id, player) : `<span class="nv-team-symbol" aria-hidden="true">${playerMark(player)}</span>`}<div><strong class="nv-team-name">${PLAYER_ANIMALS[game.id] ? playerMark(player) + " " : ""}${playerName(player)}${playConfig.mode === "bot" && player === 1 ? " · computador" : ""}</strong><span>${esc(scores[player])} ${esc(metadata.scoreLabel)}</span></div>
       </section>`,
       )

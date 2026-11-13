@@ -380,6 +380,7 @@ test("presentation module only reads visual preference, without progress writes,
   ].map((match) => match[1]);
   assert.deepEqual(imports, [
     "./game-catalog.mjs",
+    "./versus-player-layout.mjs",
     "./action-sidebar.mjs",
     "./versus/metadata.mjs",
     "./logica/metadata.mjs",
