@@ -1,3 +1,4 @@
+import { campaignLevelName } from "../campaign-level-names.mjs";
 import {recordMissionUnlocks} from '../achievements/mission-store.mjs';
 import {createRepasseMissionAttempt, invalidateRepasseMissionAttempt, observeRepasseMissionCommand} from '../achievements/repasse-action-missions.mjs';
 import { writeProgress } from '../progress-write-guard.mjs';
@@ -629,8 +630,6 @@ export function initRepasse({ hideOthers = () => {} } = {}) {
                 '" aria-label="Nível ' +
                 number +
                 ', ' +
-                esc(item.name) +
-                ', ' +
                 esc(difficultyName(item.difficulty)) +
                 ', ' +
                 (done ? 'concluído' : 'disponível') +
@@ -1260,7 +1259,7 @@ export function initRepasse({ hideOthers = () => {} } = {}) {
           ? 'EDITOR · FASE PERSONALIZADA'
           : 'EXPERIMENTO 08') +
       '</p><h2 id="r-title" tabindex="-1">REPASSE ·</h2><p class="r-level-name">' +
-      esc(level.name ?? 'A ordem dos repasses') +
+      esc(mode === 'campaign' ? campaignLevelName('repasse', level) : (level.name ?? 'A ordem dos repasses')) +
       ' <span>' +
       esc(difficultyName(level.difficulty)) +
       ' · ' +
@@ -1278,7 +1277,7 @@ export function initRepasse({ hideOthers = () => {} } = {}) {
       (advanced ? '' : 'closed') +
       '"><div class="collection-surface experiment r-surface"><div class="stage-top">' +
       (mode === 'campaign'
-        ? '<div class="level-stepper"><span id="r-stage-label">' +
+        ? '<div class="level-stepper"><span id="r-stage-label" data-campaign-level-name="'+esc(campaignLevelName('repasse', level))+'">' +
           (daily ? 'DESAFIO DO DIA' : 'DESAFIO') +
           ' ' +
           shortNumber(index + 1) +

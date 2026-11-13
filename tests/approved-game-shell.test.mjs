@@ -594,3 +594,18 @@ test('histórico dos 19 jogos mantém nomes, dicas, estado e handlers sem rótul
   assert.match(css, /justify-content: center/);
   assert.match(css, /:focus-visible/);
 });
+
+for (const game of ['light', 'cut', 'elo', 'prumo', 'pacto', 'sintonia', 'repasse', 'pulso', 'foz', 'refugio', 'mirante', 'renovo']) {
+  test(`${game}: nome editorial acompanha a fase e não substitui sua posição`, () => {
+    const f = fixture(game);
+    f.controls['stage-label'].dataset = { campaignLevelName: 'Primeiro encontro' };
+    f.controls['stage-label'].textContent = 'DESAFIO 01 / 80';
+    const cleanup = initApprovedGameShell(f.doc, f.win);
+    assert.equal(f.section.querySelector('.approved-game-title').textContent, 'Primeiro encontro');
+    assert.equal(f.section.querySelector('.approved-game-position').textContent, 'DESAFIO 01 / 80');
+    f.controls['stage-label'].dataset.campaignLevelName = 'Um novo caminho';
+    f.update();
+    assert.equal(f.section.querySelector('.approved-game-title').textContent, 'Um novo caminho');
+    cleanup();
+  });
+}

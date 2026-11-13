@@ -19,7 +19,7 @@ test('apresentação não escreve saves nem clona ou dispara controles',()=>{
 });
 test('níveis compartilham grade, estados, foco e nomes acessíveis',()=>{
  assert.match(css,/:is\(\.level-tile,\.logic-level\)/);assert.match(css,/:is\(\.level-tile.done,\.logic-level.completed\)/);
- assert.match(css,/grid-template-columns:repeat\(4,minmax\(0,1fr\)\)/);assert.match(css,/focus-visible/);assert.match(source,/tile.title=name.textContent/);
+ assert.match(css,/grid-template-columns: repeat\(auto-fill, var\(--campaign-level-size\)\)/);assert.match(css,/focus-visible/);assert.match(source,/tile.title=name.textContent/);
  assert.match(source,/Continue explorando no seu ritmo/);assert.doesNotMatch(source,/80 fases existentes/);
 });
 test('Desvio preserva dados e mapas mas não oferece Sem parar',()=>{
@@ -33,4 +33,14 @@ test('camada vem depois do shell, com diário original único',()=>{
  assert.ok(html.indexOf('selection-presentation.css')>html.indexOf('campaign-action-buttons.css'));
  assert.ok(html.indexOf('selection-presentation.mjs')>html.indexOf('approved-game-shell.mjs'));
  assert.equal((html.match(/id="selection-daily"/g)||[]).length,1);
+});
+
+test('botões têm medida fixa de 64 pixels e não esticam nas faixas curtas',()=>{
+ assert.match(css,/--campaign-level-size: 64px/);
+ for(const property of ['width','height','min-width','min-height']) {
+   assert.ok(css.includes(`${property}: var(--campaign-level-size)`));
+ }
+ assert.doesNotMatch(css,/minmax\(90px,1fr\)/);
+ assert.doesNotMatch(css,/grid-template-columns:repeat\(4,minmax\(0,1fr\)\)/);
+ assert.match(css,/box-sizing: border-box/);
 });
