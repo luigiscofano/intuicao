@@ -112,7 +112,8 @@ test("controles compartilham a linha e se montam antes da casca dos jogos", () =
   );
   assert.match(html, /id="library-filters"/);
   assert.ok(html.indexOf('id="library-filters"') > html.indexOf('id="library-navigation"'));
-  assert.ok(html.indexOf('class="category-heading"') > html.indexOf('id="library-filters"'));
+  // Na opção A, o título e o contador antecedem o seletor compacto.
+  assert.ok(html.indexOf('class="category-heading"') < html.indexOf('id="library-filters"'));
   assert.ok(
     html.indexOf('src="approved-opening.mjs"') <
       html.indexOf('src="approved-game-shell.mjs"'),

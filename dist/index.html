@@ -350,11 +350,21 @@
           </button>
         </nav>
       </div>
+      <div class="category-heading">
+        <button id="category-back" type="button" class="quiet" hidden>
+          <span class="category-back-arrow" aria-hidden="true">←</span
+          ><span>Ver todos os jogos</span>
+        </button>
+        <h2 id="category-title" tabindex="-1">Todos os jogos</h2>
+        <span id="library-visible-count" class="library-visible-count" aria-live="polite">21 jogos</span>
+      </div>
       <div id="library-filters" class="library-filters" aria-label="Atalhos da biblioteca">
+        <div class="library-filter-options" role="group" aria-label="Mostrar jogos">
         <button type="button" data-library-filter="all" aria-pressed="true">Todos</button>
-        <button type="button" data-library-filter="favorites" aria-pressed="false">★ Favoritos</button>
-        <button type="button" data-library-filter="recent" aria-pressed="false">◷ Recentes</button>
-        <button type="button" id="favorites-edit" aria-haspopup="dialog">Editar favoritos</button>
+        <button type="button" data-library-filter="favorites" aria-pressed="false"><svg class="library-filter-icon" viewBox="0 0 16 16" aria-hidden="true" focusable="false"><path d="m8 1 2.1 4.4 4.9.7-3.5 3.4.8 4.8L8 12l-4.3 2.3.8-4.8L1 6.1l4.9-.7Z"/></svg>Favoritos</button>
+        <button type="button" data-library-filter="recent" aria-pressed="false"><svg class="library-filter-icon" viewBox="0 0 16 16" aria-hidden="true" focusable="false"><circle cx="8" cy="8" r="6.5"/><path d="M8 4v4l3 2"/></svg>Recentes</button>
+        </div>
+        <button type="button" id="favorites-edit" aria-haspopup="dialog"><svg class="library-filter-icon" viewBox="0 0 16 16" aria-hidden="true" focusable="false"><path d="m3 10 7-7 3 3-7 7-4 1Z M9 4l3 3"/></svg>Editar favoritos</button>
       </div>
       <p id="library-empty" role="status" hidden></p>
       <dialog id="favorites-dialog" aria-labelledby="favorites-title">
@@ -362,13 +372,6 @@
         <p>Escolha os jogos que deseja encontrar mais rápido. Isso não altera o progresso.</p>
         <div data-favorites-list></div><button type="button" data-dialog-close>Concluir</button>
       </dialog>
-      <div class="category-heading">
-        <button id="category-back" type="button" class="quiet" hidden>
-          <span class="category-back-arrow" aria-hidden="true">←</span
-          ><span>Ver todos os jogos</span>
-        </button>
-        <h2 id="category-title" tabindex="-1">Todos os jogos</h2>
-      </div>
       <section
         id="progress-backup-panel"
         aria-label="Backup do progresso"

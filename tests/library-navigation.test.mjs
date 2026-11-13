@@ -125,6 +125,7 @@ function harness(url = "https://example.test/") {
     categories,
     "category-back": back,
     "category-title": title,
+    "library-visible-count": el(),
     achievements: awards,
     "library-navigation": tabs,
   };
@@ -178,6 +179,7 @@ function harness(url = "https://example.test/") {
     host.events.click({ target: { closest: () => b } });
   return {
     context,
+    count: nodes["library-visible-count"],
     cards,
     heads,
     infos,
@@ -347,5 +349,24 @@ test("os seis versus participam do filtro e conservam a rota ao voltar", () => {
       1,
     );
     assert.equal(direct.cards.filter((item) => !item.hidden).length, 9);
+  }
+});
+
+// O total deve acompanhar a categoria, sem expor contagem no jogo ou nas conquistas.
+test("contador acompanha categoria e desaparece fora da biblioteca", () => {
+  const h = harness();
+  assert.equal(h.count.textContent, "21 jogos");
+  h.click(h.categories, h.filters[2]);
+  assert.equal(h.count.textContent, "10 jogos");
+  h.click(h.tabs, h.buttons[1]);
+  assert.equal(h.count.hidden, true);
+});
+
+test("seletor compacto preserva controles sem ícones anunciados em duplicidade", () => {
+  assert.ok(html.indexOf('id="category-title"') < html.indexOf('id="library-filters"'));
+  assert.match(html, /class="library-filter-options" role="group" aria-label="Mostrar jogos"/);
+  assert.match(html, /id="library-visible-count"[^>]*aria-live="polite"/);
+  for (const filter of ["all", "favorites", "recent"]) {
+    assert.match(html, new RegExp(`data-library-filter="${filter}"`));
   }
 });
