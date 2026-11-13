@@ -28,7 +28,6 @@ export function renderMapSelection({ id, maps, selectedId, preview, note = '', g
     <div class="vs-map-sizes" role="group" aria-labelledby="${esc(id)}-map-group-label">${groups.map(map => `<button type="button" data-vs-group="${esc(mapGroupKey(map))}" aria-pressed="${mapGroupKey(map) === mapGroupKey(selected)}">${esc(mapGroupLabel(map))}</button>`).join('')}</div>
     <div class="vs-map-cards" role="group" aria-labelledby="${esc(id)}-maps-title">${visible.map(map => `<button type="button" data-vs-map="${esc(map.id)}" aria-pressed="${map.id === selected.id}" aria-describedby="${esc(id)}-map-description"><span class="vs-map-art" aria-hidden="true">${preview(map)}</span><strong>${esc(map.name ?? map.id)}</strong><small>${map.id === selected.id ? '✓ Selecionado' : 'Escolher'}</small></button>`).join('')}</div>
     <div class="vs-map-description" id="${esc(id)}-map-description" aria-live="polite"><p><strong>${esc(selected.name ?? selected.id)}</strong> · ${esc(mapGroupLabel(selected))}</p><p>${esc(selected.description ?? '')}</p>${note ? `<small>${esc(note)}</small>` : ''}</div>
-    <p class="vs-map-hint">Escolher um mapa não inicia nem substitui a partida salva.</p>
   </section>`;
 }
 
