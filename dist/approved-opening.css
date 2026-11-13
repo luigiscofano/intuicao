@@ -8,7 +8,8 @@
   min-height: 108px;
   padding: 20px 0;
   margin: 0;
-  border-bottom: 1px solid #d9d5bf;
+  /* O espaço organiza a faixa; a assinatura em azulejos fica apenas no cabeçalho. */
+  border-bottom: 0;
 }
 #main > .intro[data-approved-opening]::before,
 #main > .intro[data-approved-opening]::after { display: none; }
@@ -73,7 +74,8 @@
   align-items: center;
   gap: 16px 24px;
   padding: 24px 0 16px;
-  border-bottom: 1px solid #a6b198;
+  /* Navegação e catálogo pertencem à mesma superfície, sem um segundo filete. */
+  border-bottom: 0;
 }
 #library-controls > .library-navigation {
   margin: 0;
