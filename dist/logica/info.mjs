@@ -75,7 +75,7 @@ export const LOGIC_GAME_INFO = Object.freeze({
       "As linhas não podem cruzar, passar por outra peça nem ficar uma sobre a outra. Só as duas linhas do mesmo trio se encontram, no botão.",
       "Trace uma ligação entre as peças ou toque nas duas pontas alinhadas. Você pode retirar um trecho tocando nas pontas novamente. Complete os trios e confirme.",
     ],
-    "purpose": "Praticar associação de parceiros e leitura de conflitos geométricos.",
+    "purpose": "Praticar associação de parceiros, planejamento e leitura de conflitos geométricos. As sementes, os botões e as folhas também ilustram temas reais de biologia vegetal: a germinação, que dá início ao desenvolvimento de uma nova planta; as folhas, que realizam fotossíntese; e os botões florais, que podem se abrir em flores ligadas à reprodução. Esses elementos aproximam o raciocínio lógico da observação das plantas e convidam a reconhecer suas diferentes funções. As ligações do tabuleiro são uma metáfora visual: não representam a ordem de crescimento nem o transporte de água ou nutrientes de uma planta real.",
     "why": "Uma ligação pode consumir o parceiro de outro botão ou bloquear seu trecho. As escolhas simples precisam coexistir sem cruzamento."
   }
 });
