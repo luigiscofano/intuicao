@@ -68,8 +68,8 @@ test('fundos decorativos usam PNGs locais existentes e não deixam retângulos o
   assert.doesNotMatch(css['identity.css'], /#e7ddc3/);
 });
 
-test('20 páginas ativas começam pela identificação acessível sem decoração acima', () => {
-  assert.equal(Object.keys(GAME_PRESENTATION).length, 20);
+test('19 páginas ativas começam pela identificação acessível sem decoração acima', () => {
+  assert.equal(Object.keys(GAME_PRESENTATION).length, 19);
   assert.match(read('dist/approved-game-shell.mjs'),
     /element\(doc, "h1", "approved-category"\)/);
   assert.doesNotMatch(read('dist/approved-game-shell.mjs'), /const tiles = element/);

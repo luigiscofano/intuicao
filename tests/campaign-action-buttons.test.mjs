@@ -11,12 +11,12 @@ const campaigns = [
   'pulso', 'foz', 'refugio', 'mirante', 'renovo',
 ];
 
-test('escopo cobre exatamente 12 campanhas e exclui os 8 Versus', () => {
+test('escopo cobre exatamente 12 campanhas e exclui os 7 Versus', () => {
   const campaignIds = Object.entries(GAME_PRESENTATION)
     .filter(([, presentation]) => presentation.category !== 'Versus')
     .map(([id]) => id);
   assert.deepEqual(campaignIds.sort(), campaigns.slice().sort());
-  assert.equal(Object.values(GAME_PRESENTATION).filter(item => item.category === 'Versus').length, 8);
+  assert.equal(Object.values(GAME_PRESENTATION).filter(item => item.category === 'Versus').length, 7);
   assert.match(shell, /classList\.toggle\(\s*["']approved-campaign-actions["'],\s*active\s*&&\s*presentation\.category\s*!==\s*["']Versus["']/);
 });
 
