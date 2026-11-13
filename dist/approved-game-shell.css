@@ -742,3 +742,30 @@ body.approved-game-view #main .approved-restart-action > button {
   color: var(--approved-blue);
   border-color: var(--approved-blue);
 }
+
+/* Retorno compacto da referência: único, antes dos controles laterais.
+ * O alinhamento à direita acompanha o painel sem ocupar uma linha do tabuleiro. */
+body.approved-campaign-actions #main .approved-heading-actions {
+  margin-left: auto;
+  justify-content: flex-end;
+}
+body.approved-campaign-actions #main button.campaign-levels-return {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: auto;
+  min-width: 57px;
+  min-height: 44px;
+  margin: 0;
+  padding: 9px 8px;
+  border: 1px solid #d9ddcf;
+  border-radius: 10px;
+  background: #fffefa;
+  color: #31453b;
+  font: 700 14px/1.4 var(--font-ui);
+  box-shadow: none;
+}
+body.approved-campaign-actions #main button.campaign-levels-return:focus-visible {
+  outline: 3px solid #244b63;
+  outline-offset: 3px;
+}
