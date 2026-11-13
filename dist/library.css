@@ -30,6 +30,18 @@
   border-radius: 20px;
   padding: 2px 8px;
 }
+/* Selo aprovado: decorativo, preto e sem alterar as medalhas das conquistas. */
+.library-navigation .library-achievements-icon {
+  width: 24px;
+  height: 24px;
+  flex: 0 0 24px;
+  object-fit: contain;
+}
+/* O fundo claro mantém o desenho preto legível no botão selecionado. */
+.library-navigation button[aria-current="page"] .library-achievements-icon {
+  background: #fffaf0;
+  border-radius: 4px;
+}
 .library-navigation button:hover {
   border-color: #30412f;
 }
