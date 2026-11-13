@@ -1,0 +1,166 @@
+/* Sistema de apresentação: superfícies e hierarquia, não peças ou regras.
+   As cores fortes identificam ações; o papel claro deixa o tabuleiro respirar. */
+:root {
+  --surface-surround: #f5f2e9;
+  --surface-paper: #fffefa;
+  --surface-muted: #f3f5ee;
+  --surface-line: #d9ddcf;
+  --action-green: #39654c;
+  --action-blue: #244b63;
+  --action-ochre: #89651b;
+  --identity-paper: var(--surface-paper);
+  --identity-cream: var(--surface-surround);
+}
+body { background-color: var(--surface-surround); }
+
+/* Navegação permanece leve e idêntica na biblioteca, conquistas e jogos. */
+body > header .doc-link,
+body.approved-game-view > header .doc-link {
+  min-height: 44px;
+  padding: 8px 12px;
+  border: 1px solid transparent;
+  border-radius: 8px;
+  background: transparent;
+  color: var(--action-blue);
+  box-shadow: none;
+  font-size: 14px;
+}
+body > header .doc-link:hover,
+body.approved-game-view > header .doc-link:hover { background: var(--surface-paper); border-color: var(--surface-line); }
+
+/* Uma superfície por etapa. As ilustrações e as células individuais conservam
+   suas cores: não há seleção genérica de SVG, canvas ou de botões do tabuleiro. */
+body #main .unified-selection,
+body #main .level-screen { background-color: var(--surface-paper); border-color: var(--surface-line); }
+body.approved-game-view #main .approved-workspace > .approved-play-surface {
+  border-color: var(--surface-line);
+  border-radius: 12px;
+  box-shadow: none;
+}
+body.approved-game-view #main .approved-play-surface > .board-navigation > .scene-wrap {
+  outline: none;
+  border-radius: 8px;
+}
+body.approved-game-view #main .approved-workspace > .action-sidebar.action-sidebar {
+  background: var(--surface-paper);
+  border-color: var(--surface-line);
+}
+/* A ferramenta secundária não deve disputar a cor da confirmação. */
+body.approved-game-view #main .action-sidebar .approved-secondary-actions :is(button, summary):not([data-sidebar-action]) {
+  background: var(--surface-muted);
+  color: var(--action-blue);
+  border-color: var(--surface-line);
+  box-shadow: none;
+  min-height: 44px;
+  padding: 8px 10px;
+  border-radius: 8px;
+}
+body.approved-game-view #main .action-sidebar .approved-secondary-actions :is(button, summary):disabled {
+  color: #747b70;
+  background: #efeee6;
+}
+/* A ajuda permanece distinguível da ação de reiniciar. */
+body.approved-game-view #main .action-sidebar.action-sidebar [data-sidebar-action='help'] {
+  background: var(--surface-paper);
+}
+
+/* Os cartões são portas para jogos, não miniaturas de tabuleiros. */
+#main > .games > button:not(.game-info-nav) {
+  background-color: var(--surface-paper);
+  border-color: var(--surface-line);
+  box-shadow: none;
+  border-radius: 10px;
+}
+#main > .games > button:not(.game-info-nav):hover { border-color: var(--action-green); }
+#main > .games > button[aria-pressed='true']:not(.game-info-nav) {
+  background-color: #e6eddf;
+  border-color: var(--action-green);
+  color: #30412f;
+}
+
+/* As medalhas são o foco desta página; resumo e filtros seguem o mesmo ritmo. */
+#achievements .achievement-card {
+  background: var(--surface-paper);
+  border-color: var(--surface-line);
+  box-shadow: none;
+  border-radius: 10px;
+}
+#achievements .achievement-toolbar { border-color: var(--surface-line); }
+#achievements .achievement-summary { gap: 16px; margin-block: 22px; }
+
+/* Diálogos recebem papel claro; o conteúdo, ícones e nomes acessíveis permanecem. */
+:is(#about-dialog, #game-info-dialog, #fauna-dialog, #preferences-dialog, #favorites-dialog) {
+  background-color: var(--surface-paper);
+  border-color: var(--surface-line);
+}
+
+/* O título legado também hospeda Informações sobre o jogo e metadados de modo.
+   Mantemos esses acessos visíveis, com peso secundário em vez de esconder nós. */
+body.approved-game-view #main .approved-game-section > .lab-heading {
+  padding-block: 6px 10px;
+}
+body.approved-game-view #main .approved-game-section > .lab-heading h2 {
+  font-size: 16px;
+  line-height: 1.4;
+  color: #59675c;
+}
+@media (forced-colors: active) {
+  body > header .doc-link,
+  #main > .games > button:not(.game-info-nav),
+  body.approved-game-view #main .approved-workspace > .approved-play-surface {
+    border-color: CanvasText;
+  }
+}
+
+/* Pulso estreito: a navegação ocupa a borda superior, não duas colunas da grade.
+   Os dois alvos continuam com 44 px, e a leitura de três batidas ganha largura. */
+@media (max-width: 560px) and (min-height: 501px) {
+  body.approved-game-view #main #logic-games[data-pulso-skin="identity"] .logic-board-navigation {
+    grid-template-columns: repeat(2, minmax(0, 1fr)) !important;
+    grid-template-rows: 44px auto;
+    gap: 4px;
+  }
+  body.approved-game-view #main #logic-games[data-pulso-skin="identity"] .logic-board-navigation > .level-arrow {
+    grid-row: 1 !important;
+    min-width: 44px;
+    width: 44px;
+    min-height: 44px;
+    height: 44px;
+  }
+  body.approved-game-view #main #logic-games[data-pulso-skin="identity"] .logic-board-navigation > .level-arrow:first-child { grid-column: 1 !important; justify-self: start; }
+  body.approved-game-view #main #logic-games[data-pulso-skin="identity"] .logic-board-navigation > .level-arrow:last-child { grid-column: 2 !important; justify-self: end; }
+  body.approved-game-view #main #logic-games[data-pulso-skin="identity"] .logic-board-navigation > .logic-board { grid-column: 1 / -1 !important; grid-row: 2 !important; }
+}
+
+/* Grupos secundários não podem somar larguras de 100% na mesma linha.
+   Mantém Dicas, próximo nível e opções acessíveis em qualquer largura. */
+body.approved-game-view #main .action-sidebar.action-sidebar .approved-secondary-actions {
+  display: flex;
+  flex-direction: column;
+  align-items: stretch;
+  width: 100%;
+  min-width: 0;
+  grid-column: 1 / -1;
+}
+body.approved-game-view #main .action-sidebar.action-sidebar .approved-secondary-actions :is(button, summary) {
+  box-sizing: border-box;
+  max-width: 100%;
+  min-width: 0;
+  white-space: normal;
+  overflow-wrap: anywhere;
+}
+body.approved-game-view #main .action-sidebar.action-sidebar .approved-secondary-actions > :is(.level-actions, .board-check-controls),
+body.approved-game-view #main .action-sidebar.action-sidebar .approved-secondary-actions .actions {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  gap: 6px;
+}
+body.approved-game-view #main .action-sidebar.action-sidebar .approved-secondary-actions,
+body.approved-game-view #main .action-sidebar.action-sidebar .approved-secondary-actions > :is(.level-actions, .board-check-controls),
+body.approved-game-view #main .action-sidebar.action-sidebar .approved-secondary-actions .actions {
+  flex-wrap: nowrap;
+}
+body.approved-game-view #main .action-sidebar.action-sidebar .approved-secondary-actions :is(button, summary) {
+  flex: 0 0 auto;
+}
