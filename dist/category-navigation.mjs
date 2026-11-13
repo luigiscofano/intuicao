@@ -1,5 +1,5 @@
 import { readLibraryPreferences, saveLibraryPreferences, recordRecentGame, filterLibraryGames, LIBRARY_PREFERENCES_KEY } from './library-preferences.mjs';
-import { retiredGameFromLocation } from "./retired-games.mjs";
+import { retiredGameFromLocation, retiredGameCategory } from "./retired-games.mjs";
 import { VERSUS_GAME_IDS } from "./versus/metadata.mjs";
 import { renderAchievements, readAchievements } from "./achievements.mjs";
 import { initMissionNotifications } from "./achievements/notifications.mjs";
@@ -101,12 +101,13 @@ export function initCategoryNavigation({ hideGames }) {
     const game = parameters.get("game");
     if (parameters.get("screen") === "achievements")
       return { screen: "achievements" };
-    if (retiredGameFromLocation(location)) return { category: "logica", retired: true };
+    const retiredGame = retiredGameFromLocation(location);
+    if (retiredGame) return { category: retiredGameCategory(retiredGame), retired: true };
     const retiredRoute =
       ["trama", "vertice"].includes(game) ||
-      /\/(?:trama|vertice|divisa|orbita)\/?$/i.test(location.pathname) ||
+      /\/(?:trama|vertice|divisa|orbita|lastro|vazante)\/?$/i.test(location.pathname) ||
       (!game &&
-        /^#(?:game=)?(?:trama|vertice|divisa|orbita)(?:$|[/?&])/i.test(location.hash));
+        /^#(?:game=)?(?:trama|vertice|divisa|orbita|lastro|vazante)(?:$|[/?&])/i.test(location.hash));
     if (retiredRoute) return { category: "versus" };
     return {
       game: cards.some((card) => cardGame(card) === game) ? game : null,
@@ -118,8 +119,8 @@ export function initCategoryNavigation({ hideGames }) {
 
   function recordRoute(category, game = null, screen = null) {
     const url = new URL(location.href);
-    url.pathname = url.pathname.replace(/(?:trama|vertice|divisa|orbita)\/?$/i, "");
-    if (/^#(?:game=)?(?:trama|vertice|divisa|orbita)(?:$|[/?&])/i.test(url.hash))
+    url.pathname = url.pathname.replace(/(?:trama|vertice|divisa|orbita|lastro|vazante)\/?$/i, "");
+    if (/^#(?:game=)?(?:trama|vertice|divisa|orbita|lastro|vazante)(?:$|[/?&])/i.test(url.hash))
       url.hash = "";
     for (const key of ["game", "category", "screen"])
       url.searchParams.delete(key);
@@ -244,8 +245,8 @@ export function initCategoryNavigation({ hideGames }) {
     if (route.retired) {
       const url = new URL(location.href);
       url.searchParams.delete("game");
-      url.searchParams.set("category", "logica");
-      url.pathname = url.pathname.replace(/(?:divisa|orbita)\/?$/i, "");
+      url.searchParams.set("category", route.category);
+      url.pathname = url.pathname.replace(/(?:divisa|orbita|lastro|vazante)\/?$/i, "");
       url.hash = "";
       history.replaceState(null, "", url);
     }

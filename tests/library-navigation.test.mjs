@@ -1,5 +1,5 @@
 import { LIBRARY_PREFERENCES_KEY, readLibraryPreferences, saveLibraryPreferences, recordRecentGame, filterLibraryGames } from "../dist/library-preferences.mjs";
-import { retiredGameFromLocation } from "../dist/retired-games.mjs";
+import { retiredGameFromLocation, retiredGameCategory } from "../dist/retired-games.mjs";
 import test from "node:test";
 import assert from "node:assert/strict";
 import { readFileSync } from "node:fs";
@@ -25,13 +25,11 @@ const ORIGINAL_IDS = [
 const LOGIC_IDS = ["pulso", "foz", "refugio", "mirante", "renovo"];
 const VERSUS_IDS = [
   "enlace",
-  "vazante",
   "mosaico",
   "quinhao",
   "estalo",
   "dobra",
   "acorde",
-  "lastro",
 ];
 const ALL_IDS = [...ORIGINAL_IDS, ...LOGIC_IDS, ...VERSUS_IDS];
 const cardId = (card) => Object.values(card.dataset)[0];
@@ -135,7 +133,7 @@ function harness(url = "https://example.test/") {
   const context = {
     URL,
     URLSearchParams,
-    LIBRARY_PREFERENCES_KEY, readLibraryPreferences, saveLibraryPreferences, recordRecentGame, filterLibraryGames, retiredGameFromLocation,
+    LIBRARY_PREFERENCES_KEY, readLibraryPreferences, saveLibraryPreferences, recordRecentGame, filterLibraryGames, retiredGameFromLocation, retiredGameCategory,
     VERSUS_GAME_IDS: VERSUS_IDS,
     MISSION_UNLOCK_EVENT: "intuicao:missions-unlocked",
     initMissionNotifications() {},
@@ -200,7 +198,7 @@ function harness(url = "https://example.test/") {
     },
   };
 }
-test("a biblioteca mostra 23 jogos e preserva integralmente os 10 cartões originais", () => {
+test("a biblioteca mostra 21 jogos e preserva integralmente os 10 cartões originais", () => {
   // A referência versionada não depende do histórico de publicação do site.
   const prior = readFileSync(
     new URL("tests/fixtures/library-github-baseline.html", root),
@@ -227,7 +225,7 @@ test("a biblioteca mostra 23 jogos e preserva integralmente os 10 cartões origi
   );
   assert.equal((originalNavigation(html).match(/<button\b/g) || []).length, 10);
   const h = harness();
-  assert.equal(h.cards.filter((x) => !x.hidden).length, 23);
+  assert.equal(h.cards.filter((x) => !x.hidden).length, 21);
   assert.equal(h.title.textContent, "Todos os jogos");
   assert.ok(h.awards.hidden);
   assert.equal(h.cards.filter((x) => x.clicked).length, 0);
@@ -237,8 +235,8 @@ test("filters and all-games return preserve cards and info visibility", () => {
   for (const [i, n] of [
     [1, 2],
     [2, 10],
-    [3, 11],
-    [0, 23],
+    [3, 9],
+    [0, 21],
   ]) {
     h.click(h.categories, h.filters[i]);
     assert.equal(h.cards.filter((x) => !x.hidden).length, n);
@@ -257,35 +255,35 @@ test("achievements closes games, refreshes on every entry and storage, and suppo
   assert.equal(h.renders, 2);
   h.click(h.tabs, h.buttons[0]);
   assert.ok(h.awards.hidden);
-  assert.equal(h.cards.filter((x) => !x.hidden).length, 23);
+  assert.equal(h.cards.filter((x) => !x.hidden).length, 21);
   h.context.location = new URL("https://example.test/?screen=achievements");
   h.context.window.popstate();
   assert.equal(h.renders, 3);
 });
-test("as rotas diretas dos 23 jogos acionam exatamente o handler correspondente", () => {
+test("as rotas diretas dos 21 jogos acionam exatamente o handler correspondente", () => {
   for (const game of ALL_IDS) {
     const h = harness(`https://example.test/?game=${game}`);
     assert.equal(h.cards.find((x) => cardId(x) === game).clicked, 1);
     assert.equal(h.cards.filter((x) => x.clicked).length, 1);
-    assert.equal(h.cards.filter((x) => !x.hidden).length, 23);
+    assert.equal(h.cards.filter((x) => !x.hidden).length, 21);
   }
 });
 test("filtered game links, old removed-game routes, invalid filters and reload remain safe", () => {
   const h = harness("https://example.test/?game=elo&category=logica");
   assert.equal(h.cards.filter((x) => !x.hidden).length, 10);
   h.back.onclick();
-  assert.equal(h.cards.filter((x) => !x.hidden).length, 23);
+  assert.equal(h.cards.filter((x) => !x.hidden).length, 21);
   assert.equal(h.context.location.search, "");
   assert.equal(
     harness("https://example.test/?game=trama").cards.filter((x) => !x.hidden)
       .length,
-    11,
+    9,
   );
   assert.equal(
     harness("https://example.test/?category=invalid").cards.filter(
       (x) => !x.hidden,
     ).length,
-    23,
+    21,
   );
 });
 
@@ -303,8 +301,8 @@ test("os cinco data-logic participam do filtro, progresso, clique e retorno à b
     assert.equal(h.context.location.searchParams.get("category"), "logica");
     assert.equal(h.nav.hidden, true);
     h.back.onclick();
-    assert.equal(h.cards.filter((item) => !item.hidden).length, 23);
-    assert.equal(h.infos.filter((item) => !item.hidden).length, 23);
+    assert.equal(h.cards.filter((item) => !item.hidden).length, 21);
+    assert.equal(h.infos.filter((item) => !item.hidden).length, 21);
     assert.equal(h.context.location.search, "");
     const direct = harness(
       `https://example.test/?game=${game}&category=logica`,
@@ -329,7 +327,7 @@ test("game navigation collapses library and return restores it", () => {
   assert.equal(h.context.location.search, "");
 });
 
-test("os oito versus participam do filtro e conservam a rota ao voltar", () => {
+test("os seis versus participam do filtro e conservam a rota ao voltar", () => {
   for (const game of VERSUS_IDS) {
     const h = harness();
     const card = h.cards.find((item) => item.dataset.versus === game);
@@ -340,7 +338,7 @@ test("os oito versus participam do filtro e conservam a rota ao voltar", () => {
     assert.equal(h.context.location.searchParams.get("category"), "versus");
     assert.equal(h.nav.hidden, true);
     h.back.onclick();
-    assert.equal(h.cards.filter((item) => !item.hidden).length, 23);
+    assert.equal(h.cards.filter((item) => !item.hidden).length, 21);
     const direct = harness(
       `https://example.test/?game=${game}&category=versus`,
     );
@@ -348,6 +346,6 @@ test("os oito versus participam do filtro e conservam a rota ao voltar", () => {
       direct.cards.find((item) => item.dataset.versus === game).clicked,
       1,
     );
-    assert.equal(direct.cards.filter((item) => !item.hidden).length, 11);
+    assert.equal(direct.cards.filter((item) => !item.hidden).length, 9);
   }
 });

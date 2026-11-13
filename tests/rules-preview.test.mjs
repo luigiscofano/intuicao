@@ -5,8 +5,8 @@ import { rulesPreviewMarkup, initRulesPreviews } from '../dist/rules-preview.mjs
 import { RULE_EXAMPLES } from '../dist/rules-examples.mjs';
 import { CATEGORY_GAMES } from '../dist/category-navigation.mjs';
 const games=Object.values(CATEGORY_GAMES).flat();
-test('todos os 23 jogos ativos têm regras detalhadas, exemplo próprio acessível e nenhum controle de pausa',()=>{
- assert.equal(games.length,23);
+test('todos os 21 jogos ativos têm regras detalhadas, exemplo próprio acessível e nenhum controle de pausa',()=>{
+ assert.equal(games.length,21);
  assert.deepEqual(Object.keys(RULE_EXAMPLES).filter(id=>games.includes(id)).sort(),[...games].sort());
  for(const game of games){
   const html=rulesPreviewMarkup(game);

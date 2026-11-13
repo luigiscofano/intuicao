@@ -1,5 +1,6 @@
+import { isRetiredGame } from "../retired-games.mjs";
 /** A biblioteca importa somente estes metadados; os motores carregam sob demanda. */
-export const VERSUS_GAMES = Object.freeze([
+const HISTORICAL_VERSUS_GAMES = Object.freeze([
   {
     id: "enlace",
     name: "ENLACE",
@@ -65,6 +66,10 @@ export const VERSUS_GAMES = Object.freeze([
     scoreLabel: "rodadas vencidas",
   },
 ]);
+
+// Os registros históricos continuam aceitos pelo armazenamento e pelo backup.
+export const STORED_VERSUS_GAME_IDS = Object.freeze(HISTORICAL_VERSUS_GAMES.map(({ id }) => id));
+export const VERSUS_GAMES = Object.freeze(HISTORICAL_VERSUS_GAMES.filter(({ id }) => !isRetiredGame(id)));
 
 export const VERSUS_GAME_IDS = Object.freeze(VERSUS_GAMES.map(({ id }) => id));
 

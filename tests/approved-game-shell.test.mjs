@@ -8,13 +8,11 @@ import {
 import { GAME_GUIDANCE } from "../dist/contextual-guidance.mjs";
 const VERSUS_IDS = [
   "enlace",
-  "vazante",
   "mosaico",
   "quinhao",
   "estalo",
   "dobra",
   "acorde",
-  "lastro",
 ];
 const LOGIC_IDS = [ "pulso", "foz", "refugio", "mirante", "renovo"];
 const ORIGINAL_IDS = [
@@ -243,19 +241,19 @@ function fixture(game = "light") {
   };
 }
 
-test("as 23 apresentações cobrem o catálogo e têm numeração única", () => {
-  assert.equal(Object.keys(GAME_PRESENTATION).length, 23);
+test("as 21 apresentações cobrem o catálogo e têm numeração única", () => {
+  assert.equal(Object.keys(GAME_PRESENTATION).length, 21);
   assert.deepEqual(
     Object.keys(GAME_PRESENTATION).sort(),
     [...ORIGINAL_IDS, ...LOGIC_IDS, ...VERSUS_IDS].sort(),
   );
   assert.deepEqual(
     Object.keys(GAME_PRESENTATION).sort(),
-    Object.keys(GAME_GUIDANCE).filter(id => !["divisa", "orbita"].includes(id)).sort(),
+    Object.keys(GAME_GUIDANCE).filter(id => !["divisa", "orbita", "lastro", "vazante"].includes(id)).sort(),
   );
   assert.equal(
     new Set(Object.values(GAME_PRESENTATION).map((value) => value.number)).size,
-    23,
+    21,
   );
   for (const [index, id] of LOGIC_IDS.entries()) {
     assert.equal(GAME_PRESENTATION[id].number, String(index + 13));
@@ -559,3 +557,4 @@ test('renderização versus não puxa os controles de volta para região inert',
   assert.match(source, /moveControls && anchor && !moveControls\.closest\("\.approved-action-panel"\)/);
   assert.match(source, /board\.inert = Boolean\(thinking \|\| computerTurn\(\) \|\| state\(\)\.result\)/);
 });
+
