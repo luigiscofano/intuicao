@@ -124,6 +124,12 @@
         "docs/pulso-identidade.md"
       ],
       "source": "Composição vetorial geométrica original criada em código para Pulso: AIIJ B Azulejo de ritmo aprovada pelo titular em 2026-11-12."
+    },
+    "desvio-aiij": {
+      "evidence": [
+        "docs/jogos/desvio/visual-oficina.md"
+      ],
+      "source": "AIIJ A Azulejos de direção: composição vetorial original criada em código para Desvio, aprovada pelo titular em 2026-11-12; sem imagens externas."
     }
   },
   "assets": [
@@ -1782,6 +1788,16 @@
       "rightsHolder": "Luigi Scofano de Araujo (elementos autorais do projeto)",
       "license": "Direitos reservados; recursos visuais excluídos da licença MIT do código.",
       "permissionEvidence": "docs/pulso-identidade.md",
+      "reviewBasis": "owner-approved-project-composition; existing-visual-rights-policy"
+    },
+    {
+      "path": "dist/assets/desvio-aiij.svg",
+      "sha256": "f7dafedbad13a9388d00924f73b24dd5ac887851f4cabe2ec305b23d63dc6a44",
+      "group": "desvio-aiij",
+      "status": "cleared",
+      "rightsHolder": "Luigi Scofano de Araujo (elementos autorais do projeto)",
+      "license": "Direitos reservados; recursos visuais excluídos da licença MIT do código.",
+      "permissionEvidence": "docs/jogos/desvio/visual-oficina.md",
       "reviewBasis": "owner-approved-project-composition; existing-visual-rights-policy"
     }
   ],
