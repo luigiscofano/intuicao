@@ -141,12 +141,6 @@ export function initVersusGames() {
       <details class="nv-rules" open>
         <summary>Regras e como jogar</summary>
         ${rulesPreviewMarkup(game.id)}
-        <p class="nv-control-help">Use Tab para percorrer os controles e Enter ou espaço para selecionar. Confira a prévia e clique ou toque novamente na mesma escolha para confirmar. Em jogadas com etapas, complete todas primeiro. Enter ou espaço também seleciona e confirma; o botão Confirmar jogada fica junto ao tabuleiro. Escape cancela a seleção.</p>
-        <details class="nv-help-more">
-          <summary>Modos e análise do computador</summary>
-          <p>No amistoso, desfazer e refazer dependem do acordo dos dois jogadores. No competitivo, a partida segue sem desfazer ou reiniciar. Contra o computador, você controla ${playerName(0)}${PLAYER_ANIMALS[game?.id] ? " (verde)" : ""}; desfazer retorna à sua decisão anterior.</p>
-          <p>O computador usa somente jogadas legais e informação pública. Os níveis aumentam a busca dentro de um orçamento limitado. Uma sugestão de treino explica uma possibilidade; não é garantia de vitória.</p>
-        </details>
       </details>`;
   }
 

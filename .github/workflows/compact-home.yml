@@ -1,0 +1,16 @@
+name: Abertura e avisos compactos
+on:
+  pull_request:
+  push:
+    branches: [main]
+permissions:
+  contents: read
+jobs:
+  compact-home:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1
+      - uses: actions/setup-node@949feb2413d6458794dcd2491c4babbbce0c15c1
+        with:
+          node-version: '24'
+      - run: node --test tests/approved-opening.test.mjs tests/compact-opening.test.mjs tests/library-dividers.test.mjs tests/mascots-dialog.test.mjs tests/versus-clean-rules.test.mjs

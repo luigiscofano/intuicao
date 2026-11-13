@@ -55,7 +55,8 @@ body #main .unified-selection :is(.level-tile,.logic-level) {
 body #main .unified-selection :is(.level-tile,.logic-level)>:is(span,strong){font:inherit}
 body #main .unified-selection :is(.level-tile,.logic-level)>small{font:400 10px/1.15 var(--font-ui);color:#52624a;max-width:100%;overflow-wrap:normal}
 body #main .unified-selection .logic-level>span,body #main .unified-selection .logic-level>i{display:none}
-body #main .unified-selection :is(.level-tile.done,.logic-level.completed){background:#e1ead9;border-color:#879c77}
+/* Conclusão sem assistência: fallback para catálogos legados. */
+body #main .unified-selection :is(.level-tile.done,.logic-level.completed){background:#28543B;border-color:#1d402c;color:#fffaf0}
 body #main .unified-selection :is(.level-tile,.logic-level)[aria-current='true']{outline:2px solid #244b63;outline-offset:2px}
 body #main .unified-selection :is(.level-tile,.logic-level):hover{background:#e9efdf;border-color:#405e49}
 body #main .unified-selection :is(button,select,summary):focus-visible{outline:3px solid #244b63;outline-offset:3px}
@@ -189,4 +190,22 @@ body #main .unified-selection :is(.stage-heading, .logic-tier-heading)[data-diff
   border-radius: 0;
   -webkit-mask: url("platform-assets/tiles/blue-br.png") center / contain no-repeat;
   mask: url("platform-assets/tiles/blue-br.png") center / contain no-repeat;
+}
+
+/* Estados de conclusão aprovados: a dificuldade permanece no azulejo do grupo.
+   Selecionado e foco usam contorno; hover nunca apaga a cor do progresso. */
+body #main .unified-selection :is(.level-tile, .logic-level)[data-completion-state="independent"],
+body #main .unified-selection :is(.level-tile, .logic-level)[data-completion-state="independent"]:hover {
+  background: #28543B;
+  border-color: #1d402c;
+  color: #fffaf0;
+}
+body #main .unified-selection :is(.level-tile, .logic-level)[data-completion-state="assisted"],
+body #main .unified-selection :is(.level-tile, .logic-level)[data-completion-state="assisted"]:hover {
+  background: #E8BE4A;
+  border-color: #b28c26;
+  color: #342d18;
+}
+body #main .unified-selection :is(.level-tile, .logic-level):is([data-completion-state="independent"], [data-completion-state="assisted"]) > small {
+  color: inherit;
 }

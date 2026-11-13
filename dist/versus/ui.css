@@ -251,18 +251,6 @@
   margin: 8px 0;
   font-size: 14px;
 }
-#versus-games .nv-control-help,
-#versus-games .nv-help-more {
-  font-size: 13px;
-  color: #526348;
-}
-#versus-games .nv-help-more {
-  margin-top: 12px;
-}
-#versus-games .nv-help-more summary {
-  cursor: pointer;
-  font-weight: 700;
-}
 #versus-games .nv-warning {
   padding: 12px;
   border: 1px solid #b99b46;

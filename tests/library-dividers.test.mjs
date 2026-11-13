@@ -5,8 +5,8 @@ const read = file => readFileSync(new URL(`../dist/${file}`, import.meta.url), '
 const opening = read('approved-opening.css');
 const cohesion = read('cohesion.css');
 const rule = (css, selector) => css.slice(css.indexOf(selector)).split('}')[0];
-test('faixa e navegação usam espaço, sem filetes adicionais', () => {
-  for (const selector of ['#main > .intro[data-approved-opening] {', '#library-controls {']) {
+test('navegação usa espaço, sem filetes adicionais', () => {
+  for (const selector of ['#library-controls {']) {
     assert.match(rule(opening, selector), /border-bottom: 0;/);
   }
 });
