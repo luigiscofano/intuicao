@@ -1,49 +1,71 @@
-/* Composição da prévia aprovada. A arte original permanece intacta. */
+/* Faixa editorial aprovada: frase e fauna funcional, sem duplicar os azulejos do topo. */
 #main > .intro[data-approved-opening] {
   isolation: auto;
-  min-height: 280px;
-  padding: 24px 0 70px;
-  margin-bottom: 0;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 24px;
+  min-height: 108px;
+  padding: 20px 0;
+  margin: 0;
   border-bottom: 1px solid #d9d5bf;
 }
-#main > .intro[data-approved-opening]::after {
-  inset: 26px 0 auto auto;
-  background-color: transparent;
+#main > .intro[data-approved-opening]::before,
+#main > .intro[data-approved-opening]::after { display: none; }
+#main > .intro[data-approved-opening] h1 {
+  font-family: var(--font-title, Georgia, serif);
+  font-size: 28px;
+  font-weight: 600;
+  line-height: 1.35;
+  letter-spacing: -.6px;
+  max-width: none;
+  margin: 0;
 }
-#main > .intro[data-approved-opening] h1,
-#main > .intro[data-approved-opening] > p { max-width: 64%; }
+.opening-fauna-group { display: flex; align-items: center; gap: 16px; flex: none; }
 #main > .intro[data-approved-opening] .hero-fauna {
-  position: absolute;
-  inset: 166px 0 auto auto !important;
-  width: 324px;
-  max-width: 36%;
-  grid-template-columns: repeat(6, minmax(0,1fr));
-  gap: 10px;
+  display: flex;
+  position: static;
+  inset: auto !important;
+  width: auto;
+  max-width: none;
+  gap: 8px;
   padding: 0;
   margin: 0;
   border: 0;
   mix-blend-mode: multiply;
 }
-#main > .intro[data-approved-opening] .hero-fauna-cell { width: 44px; height: 44px; }
-#main > .intro[data-approved-opening] .hero-fauna-crop { border-radius: 0; }
+#main > .intro[data-approved-opening] .hero-fauna-cell { width: 40px; height: 44px; }
+#main > .intro[data-approved-opening] .hero-fauna-crop { border-radius: 0; background-color: transparent; }
 #main > .intro[data-approved-opening] .hero-fauna-cell[hidden] { display: none !important; }
 #main > .intro[data-approved-opening] .opening-fauna-toggle {
-  position: absolute;
-  right: 0;
-  top: 212px;
-  padding: 8px 0 8px 12px;
+  position: static;
+  margin: 0;
+  padding: 8px 0;
   min-height: 44px;
   border: 0;
   border-radius: 5px;
   background: transparent;
   box-shadow: none;
   color: #244b63;
-  font: 650 14px/1.4 system-ui,sans-serif;
+  font: 650 14px/1.4 var(--font-ui, system-ui, sans-serif);
+  white-space: nowrap;
 }
 .opening-fauna-toggle:hover { text-decoration: underline; text-underline-offset: 4px; }
-.opening-fauna-toggle:focus-visible { outline: 3px solid #bd4e2c; outline-offset: 4px; }
-#main > .intro[data-approved-opening].opening-fauna-expanded { min-height: 420px; }
-#main > .intro[data-approved-opening].opening-fauna-expanded .opening-fauna-toggle { top: 334px; }
+.opening-fauna-toggle:focus-visible { outline: 3px solid #244b63; outline-offset: 4px; }
+/* Ao expandir, a galeria cresce no fluxo sem sobrepor a biblioteca. */
+#main > .intro.opening-fauna-expanded .opening-fauna-group { flex-wrap: wrap; max-width: 440px; }
+#main > .intro.opening-fauna-expanded .hero-fauna { flex-wrap: wrap; }
+@media(max-width:900px) {
+  #main > .intro[data-approved-opening] { align-items: flex-start; flex-direction: column; gap: 12px; min-height: 0; }
+  #main > .intro[data-approved-opening] h1 { font-size: 26px; text-wrap: balance; }
+  .opening-fauna-group { width: 100%; justify-content: space-between; gap: 12px; }
+  #main > .intro[data-approved-opening] .hero-fauna { order: initial; }
+  #main > .intro[data-approved-opening] .opening-fauna-toggle { align-self: center; }
+}
+@media(max-width:360px) {
+  .opening-fauna-group { flex-wrap: wrap; }
+  #main > .intro[data-approved-opening] .opening-fauna-toggle { margin-left: auto; }
+}
 #library-controls {
   display: flex;
   flex-wrap: wrap;
@@ -66,7 +88,7 @@
   margin: 0;
 }
 #library-controls > .category-choices > button {
-  font: 400 14px/1.4 system-ui,sans-serif;
+  font: 400 14px/1.4 var(--font-ui, system-ui, sans-serif);
   min-height: 44px;
   padding: 10px 17px;
   border: 1px solid #87977c;
@@ -86,51 +108,15 @@
   justify-content: space-between;
   gap: 12px;
 }
-.opening-category-count { font: 400 12px/1.4 system-ui,sans-serif; letter-spacing: 0; text-transform: none; }
+.opening-category-count { font: 400 12px/1.4 var(--font-ui, system-ui, sans-serif); letter-spacing: 0; text-transform: none; }
 #main > .games > button:not(.game-info-nav) > span:not(.game-nav-icon) { display: none; }
-#main > .games > button:not(.game-info-nav) { font-family: system-ui,sans-serif; }
+#main > .games > button:not(.game-info-nav) { font-family:var(--font-ui, system-ui, sans-serif); }
 @media(min-width: 761px) {
   #main > .games { grid-template-columns: repeat(6,minmax(0,1fr)); }
   #main > .games > button:not(.game-info-nav) { grid-column: span 2; }
   #main > .games > button[data-game] { grid-column: span 3; }
 }
-@media(max-width: 1000px) and (min-width: 761px) {
-  #main > .intro[data-approved-opening] h1 { font-size: 46px; }
-  #main > .intro[data-approved-opening] .hero-fauna { max-width: 34%; gap: 4px; }
-  #main > .intro[data-approved-opening] .hero-fauna-cell { width: 37px; height: 44px; }
-}
 @media(max-width:760px) {
-  #main > .intro[data-approved-opening] {
-    display: flex;
-    flex-direction: column;
-    align-items: flex-start;
-    min-height: 0;
-    padding: 28px 4px 20px;
-  }
-  #main > .intro[data-approved-opening] h1,
-  #main > .intro[data-approved-opening] > p { max-width: 100%; }
-  #main > .intro[data-approved-opening]::after {
-    position: relative;
-    order: 1;
-    inset: auto;
-    margin: 24px 0 20px auto;
-  }
-  #main > .intro[data-approved-opening] .hero-fauna {
-    position: relative;
-    order: 2;
-    inset: auto !important;
-    width: min(100%,324px);
-    max-width: none;
-    margin: 0 0 0 auto;
-    gap: 10px;
-  }
-  #main > .intro[data-approved-opening] .opening-fauna-toggle {
-    position: static;
-    order: 3;
-    align-self: flex-end;
-    margin-top: 4px;
-  }
-  #main > .intro[data-approved-opening].opening-fauna-expanded { min-height: 0; }
   #library-controls { gap: 16px; padding: 20px 0 16px; }
   #library-controls > .category-choices { gap: 7px; }
   #library-controls > .category-choices > button { padding: 10px 12px; font-size: 13px; }

@@ -2,7 +2,7 @@
 import { initFaunaInfo } from './fauna-info.mjs';
 import { CATEGORY_GAMES } from './category-navigation.mjs';
 
-export const FEATURED_FAUNA = Object.freeze(['capivara', 'bemtevi', 'onca', 'lobo', 'arara', 'tucano']);
+export const FEATURED_FAUNA = Object.freeze(['capivara', 'bemtevi', 'onca']);
 export function faunaVisibility(ids, expanded = false) {
   return ids.map(id => expanded || FEATURED_FAUNA.includes(id));
 }
@@ -32,7 +32,14 @@ export function initApprovedOpening(doc = document) {
     toggle.textContent = expanded ? 'Recolher os animais ↑' : `Conheça os ${animals.length} animais →`;
   };
   toggle.addEventListener('click', () => { expanded = !expanded; render(); });
-  intro.append(toggle);
+  // Mantém os botões originais e seus eventos ao agrupá-los na faixa editorial.
+  const title = intro.querySelector('h1');
+  if (title) title.textContent = 'A curiosidade é a primeira lição.';
+  intro.querySelector(':scope > p')?.remove();
+  const faunaGroup = doc.createElement('div');
+  faunaGroup.className = 'opening-fauna-group';
+  faunaGroup.append(gallery, toggle);
+  intro.append(faunaGroup);
   render();
   for (const [category, games] of Object.entries(CATEGORY_GAMES)) {
     const heading = doc.getElementById(`games-${category}`);
