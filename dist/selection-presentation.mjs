@@ -1,3 +1,4 @@
+import { presentCompletionStates } from "./level-completion-state.mjs";
 import { presentDifficultyPalette } from './difficulty-palette.mjs';
 // Apresentação comum: reutiliza controles e estados visuais, sem ler ou gravar saves.
 export const SELECTION_GAMES = Object.freeze({
@@ -99,7 +100,7 @@ export function presentSelection(root,game){
  // Mantém a ordem de leitura e de Tab no DOM, além da ordem visual.
  let anchor=null;for(const item of [rulesBlock,modes,levels,setup,...imports].filter(Boolean).reverse()){if(item.nextElementSibling!==anchor)root.insertBefore(item,anchor);anchor=item;}
  presentCampaignProgress(root,game);
- if(campaign)presentDifficultyPalette(root);
+ if(campaign){presentDifficultyPalette(root);presentCompletionStates(root);}
 }
 export function initSelectionPresentation(doc=globalThis.document,win=doc?.defaultView){
  const main=doc?.getElementById('main');if(!main||!win?.MutationObserver)return()=>{};let queued=false;

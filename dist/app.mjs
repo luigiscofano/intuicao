@@ -1,3 +1,4 @@
+import { levelCompletionState } from "./level-completion-state.mjs";
 import { originalMissionRound, confirmOriginalMissionRound, evaluateApprovedOriginal } from "./achievements/approved-original.mjs";
 import { recordApprovedAttemptWin } from "./achievements/approved-store.mjs";
 import { recordMissionUnlocks } from "./achievements/mission-store.mjs";
@@ -690,7 +691,7 @@ function lightCampaignSelection() {
       const done = progress.completedIds.has(l.id),
         assisted = answerProgress.get(`light:${l.id ?? i}`).assisted,
         current = progress.lastLevelId === l.id;
-      html += `<button class="level-tile ${done ? "done" : ""}" data-level="${i}" aria-current="${current}" aria-label="Nível ${number}${done ? ", concluído" : ""}${assisted ? ", assistido por gabarito" : ""}${current ? ", atual" : ""}"><span>${number}</span><small>${done ? (assisted ? "✓ com gabarito" : "✓ concluído") : assisted ? "com gabarito" : current ? "atual" : "explorar"}</small></button>`;
+      html += `<button class="level-tile ${done ? "done" : ""}" data-completion-state="${levelCompletionState(done, assisted)}" data-level="${i}" aria-current="${current}" aria-label="Nível ${number}${done ? ", concluído" : ""}${assisted ? ", assistido por gabarito" : ""}${current ? ", atual" : ""}"><span>${number}</span><small>${done ? (assisted ? "✓ com gabarito" : "✓ concluído") : assisted ? "com gabarito" : current ? "atual" : "explorar"}</small></button>`;
     }
     if (groupOpen) html += "</div>";
   }
@@ -708,7 +709,7 @@ function cutCampaignSelection() {
         current =
           (legacyCutSelectionIds[progress.lastLevelId] ??
             progress.lastLevelId) === l.id;
-      html += `<button class="level-tile ${done ? "done" : ""}" data-level="${i}" aria-current="${current}" aria-label="Nível ${i + 1}${done ? ", concluído" : ""}${assisted ? ", assistido por gabarito" : ""}${current ? ", atual" : ""}"><span>${i + 1}</span><small>${done ? (assisted ? "✓ com gabarito" : "✓ concluído") : assisted ? "com gabarito" : current ? "atual" : "explorar"}</small></button>`;
+      html += `<button class="level-tile ${done ? "done" : ""}" data-completion-state="${levelCompletionState(done, assisted)}" data-level="${i}" aria-current="${current}" aria-label="Nível ${i + 1}${done ? ", concluído" : ""}${assisted ? ", assistido por gabarito" : ""}${current ? ", atual" : ""}"><span>${i + 1}</span><small>${done ? (assisted ? "✓ com gabarito" : "✓ concluído") : assisted ? "com gabarito" : current ? "atual" : "explorar"}</small></button>`;
     }
     html += "</div>";
   }

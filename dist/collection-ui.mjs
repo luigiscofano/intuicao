@@ -1,3 +1,4 @@
+import { levelCompletionState } from "./level-completion-state.mjs";
 import { campaignLevelName } from "./campaign-level-names.mjs";
 import { desvioSelectionText } from './desvio-presentation.mjs';
 // Interface compartilhada de ELO, PRUMO, PACTO e DESVIO: seleção, comandos e resultados.
@@ -630,7 +631,7 @@ export function initCollection({ hideOriginal }) {
             .slice(stage * 50, stage * 50 + 50)
             .map(
               (l, j) =>
-                `<button class="level-tile ${data.completed.includes(l.id) ? "done" : ""}" data-new-level="${stage * 50 + j}" aria-label="Nível ${stage * 50 + j + 1}, ${esc(l.difficulty)}, ${data.completed.includes(l.id) ? "concluído" : "disponível"}"><span>${stage * 50 + j + 1}</span><small>${data.completed.includes(l.id) ? (progress().get(game + ":" + l.id).assisted ? "✓ assistido" : "✓ concluído") : "explorar"}</small></button>`,
+                `<button class="level-tile ${data.completed.includes(l.id) ? "done" : ""}" data-completion-state="${levelCompletionState(data.completed.includes(l.id), progress().get(game + ":" + l.id).assisted)}" data-new-level="${stage * 50 + j}" aria-label="Nível ${stage * 50 + j + 1}, ${esc(l.difficulty)}, ${data.completed.includes(l.id) ? "concluído" : "disponível"}"><span>${stage * 50 + j + 1}</span><small>${data.completed.includes(l.id) ? (progress().get(game + ":" + l.id).assisted ? "✓ assistido" : "✓ concluído") : "explorar"}</small></button>`,
             )
             .join("")}</div>`,
       )
@@ -644,7 +645,7 @@ export function initCollection({ hideOriginal }) {
           .map((l, j) => {
             const number = first + j,
               done = data.completed.includes(l.id);
-            return `<button class="level-tile elo-level-tile ${done ? "done" : ""}" data-new-level="${number - 1}" aria-label="Nível ${number}, ${esc(l.difficulty)}, ${esc(eloMechanicNames(l))}, ${done ? "concluído" : "disponível"}"><span>${number}</span><small>${done ? (answers.get("elo:" + l.id).assisted ? "✓ assistido" : "✓ concluído") : "explorar"}</small></button>`;
+            return `<button class="level-tile elo-level-tile ${done ? "done" : ""}" data-completion-state="${levelCompletionState(done, answers.get("elo:" + l.id).assisted)}" data-new-level="${number - 1}" aria-label="Nível ${number}, ${esc(l.difficulty)}, ${esc(eloMechanicNames(l))}, ${done ? "concluído" : "disponível"}"><span>${number}</span><small>${done ? (answers.get("elo:" + l.id).assisted ? "✓ assistido" : "✓ concluído") : "explorar"}</small></button>`;
           })
           .join("")}</div></section>`,
     ).join("")}`;
@@ -657,7 +658,7 @@ export function initCollection({ hideOriginal }) {
           .map((l, j) => {
             const number = first + j,
               done = data.completed.includes(l.id);
-            return `<button class="level-tile ${done ? "done" : ""}" data-new-level="${number - 1}" aria-label="Nível ${number}, ${esc(name)}, ${done ? "concluído" : "disponível"}"><span>${number}</span><small>${done ? (answers.get("prumo:" + l.id).assisted ? "✓ assistido" : "✓ concluído") : "explorar"}</small></button>`;
+            return `<button class="level-tile ${done ? "done" : ""}" data-completion-state="${levelCompletionState(done, answers.get("prumo:" + l.id).assisted)}" data-new-level="${number - 1}" aria-label="Nível ${number}, ${esc(name)}, ${done ? "concluído" : "disponível"}"><span>${number}</span><small>${done ? (answers.get("prumo:" + l.id).assisted ? "✓ assistido" : "✓ concluído") : "explorar"}</small></button>`;
           })
           .join("")}</div></section>`,
     ).join("")}`;
@@ -670,7 +671,7 @@ export function initCollection({ hideOriginal }) {
           .map((l, j) => {
             const number = first + j,
               done = data.completed.includes(l.id);
-            return `<button class="level-tile ${done ? "done" : ""}" data-new-level="${number - 1}" aria-label="Nível ${number}, ${esc(name)}, ${done ? "concluído" : "disponível"}"><span>${number}</span><small>${done ? (answers.get("pacto:" + l.id).assisted ? "✓ assistido" : "✓ concluído") : "explorar"}</small></button>`;
+            return `<button class="level-tile ${done ? "done" : ""}" data-completion-state="${levelCompletionState(done, answers.get("pacto:" + l.id).assisted)}" data-new-level="${number - 1}" aria-label="Nível ${number}, ${esc(name)}, ${done ? "concluído" : "disponível"}"><span>${number}</span><small>${done ? (answers.get("pacto:" + l.id).assisted ? "✓ assistido" : "✓ concluído") : "explorar"}</small></button>`;
           })
           .join("")}</div></section>`,
     ).join("")}`;
