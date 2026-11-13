@@ -29,7 +29,7 @@ export function createRepasseRoute({ hideOthers }) {
     host.hidden = false;
     if (!ui)
       host.innerHTML =
-        '<div class="level-screen"><p class="eyebrow">EXPERIMENTO 08</p><h2 id="r-selection-title" tabindex="-1">REPASSE ·</h2><p role="status">Preparando as peças…</p></div>';
+        '<div class="level-screen"><p class="eyebrow">EXPERIMENTO 07</p><h2 id="r-selection-title" tabindex="-1">REPASSE ·</h2><p role="status">Preparando as peças…</p></div>';
     try {
       const game = await load();
       if (token !== revision || !visible) return;

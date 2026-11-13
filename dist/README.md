@@ -1,3 +1,31 @@
+# Catálogo atual · 19 jogos
+
+Numeração pública contínua, seguindo a ordem das categorias. Os IDs internos, links e registros de progresso não mudaram.
+
+01. Reflexos
+02. Corte certo
+03. ELO
+04. PRUMO
+05. PACTO
+06. SINTONIA
+07. REPASSE
+08. PULSO
+09. FOZ
+10. REFÚGIO
+11. MIRANTE
+12. RENOVO
+13. DESVIO
+14. BROTO
+15. CERCO
+16. MOSAICO
+17. QUINHÃO
+18. ESTALO
+19. ACORDE
+
+As contagens de revisões anteriores abaixo são históricas, não o catálogo ativo.
+
+---
+
 # Aplicação estática do Intuição
 
 Esta pasta contém o código-fonte servido ao navegador. Embora se chame `dist`, ela é editável e versionada: não deve ser apagada como saída temporária de build.
