@@ -2346,7 +2346,7 @@ export function initCollection({ hideOriginal }) {
     missionRound.assisted = true;
     progress().assist(answerKey());
     message =
-      "Gabarito aplicado. Confirme a resposta para conferir. Esta resolução é assistida.";
+      "";
     log("answer-applied");
     persist();
     renderBoard();
