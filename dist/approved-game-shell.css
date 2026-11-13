@@ -75,12 +75,8 @@ body.approved-game-view > .platform-leaf-foreground {
 }
 
 body.approved-game-view #approved-game-hero {
-  display: grid;
-  grid-template-columns: minmax(0, 1fr) 304px;
-  align-items: center;
-  column-gap: 44px;
-  row-gap: 40px;
-  padding: 38px 0 28px;
+  display: block;
+  padding: 16px 0 20px;
 }
 
 body.approved-game-view #approved-game-hero[hidden] {
@@ -171,11 +167,14 @@ body.approved-game-view #approved-game-hero[hidden] {
   font-size: 14px;
 }
 
-.approved-game-band > strong {
+.approved-game-band > .approved-category {
   flex: 0 1 auto;
+  margin: 0;
+  font: inherit;
+  color: inherit;
 }
 
-.approved-game-band > :last-child:not(strong):not(.number) {
+.approved-game-band > .approved-band-line {
   flex: 1 1 80px;
   height: 2px;
   min-width: 24px;
@@ -424,8 +423,7 @@ body.approved-game-view :is(button, summary, a):focus-visible {
     padding-inline: 32px;
   }
   body.approved-game-view #approved-game-hero {
-    grid-template-columns: minmax(0, 1fr) 230px;
-    gap: 28px;
+    padding-block: 16px 20px;
   }
   .approved-tiles {
     width: 230px;
@@ -482,9 +480,7 @@ body.approved-game-view :is(button, summary, a):focus-visible {
     padding: 0 20px 24px;
   }
   body.approved-game-view #approved-game-hero {
-    grid-template-columns: minmax(0, 1fr);
-    padding-top: 24px;
-    row-gap: 24px;
+    padding-block: 12px 16px;
   }
   .approved-hero-copy h1 {
     font-size: clamp(32px, 8.4vw, 44px);

@@ -266,12 +266,13 @@ for (const game of Object.keys(GAME_PRESENTATION)) {
     const f = fixture(game);
     const originalHandler = f.controls.confirm.onclick;
     const cleanup = initApprovedGameShell(f.doc, f.win);
-    assert.equal(f.main.querySelectorAll(".approved-tile").length, 8);
-    assert.equal(f.main.querySelector(".approved-tiles").classList.contains("approved-tiles--foz"), game === "foz");
-    assert.equal(
-      f.main.querySelector(".approved-hero-headline").textContent,
-      GAME_PRESENTATION[game].headline,
-    );
+    assert.equal(f.main.querySelectorAll(".approved-tile").length, 0);
+    assert.equal(f.main.querySelector(".approved-hero-copy"), null);
+    const identification = f.main.querySelector(".approved-category");
+    assert.equal(identification.tag, "h1");
+    assert.equal(identification.textContent,
+      `${GAME_PRESENTATION[game].category} · ${GAME_PRESENTATION[game].name}`);
+    assert.equal(f.doc.getElementById("approved-game-hero").children.length, 1);
     assert.equal(
       f.controls.confirm.parentElement.className,
       GAME_PRESENTATION[game].category === "Versus" ? "board-check-controls" : "approved-primary-action",
@@ -377,8 +378,6 @@ test("presentation module only reads visual preference, without progress writes,
     ...source.matchAll(/^import .* from ['"]([^'"]+)['"]/gm),
   ].map((match) => match[1]);
   assert.deepEqual(imports, [
-    "./logica/games/pulso/skin.mjs",
-    "./logica/games/refugio/skin.mjs",
     "./versus/metadata.mjs",
     "./logica/metadata.mjs",
     "./contextual-guidance.mjs",
@@ -386,16 +385,19 @@ test("presentation module only reads visual preference, without progress writes,
 });
 
 
-test('AIIJ FOZ aparece só na rota FOZ e some ao alternar jogos ou histórico', () => {
- const f=fixture('foz'); initApprovedGameShell(f.doc,f.win);
- const tiles=f.main.querySelector('.approved-tiles');
- for(const game of ['pulso','foz','renovo','foz','light']) {
-  f.win.location.href=`https://example.test/?game=${game}`;f.events.popstate();
-  assert.equal(tiles.classList.contains('approved-tiles--foz'),game==='foz');
-  assert.equal(tiles.children.length,8);
- }
+test('identificação continua primeiro ao alternar jogos, sem chamada nem AIIJ acima', () => {
+  const f = fixture('foz'); initApprovedGameShell(f.doc, f.win);
+  for (const game of Object.keys(GAME_PRESENTATION)) {
+    f.win.location.href = `https://example.test/?game=${game}`; f.events.popstate();
+    const hero = f.doc.getElementById('approved-game-hero');
+    assert.equal(hero.children[0].className, 'approved-game-band');
+    assert.equal(hero.children.length, 1);
+    assert.equal(f.main.querySelector('.approved-tiles'), null);
+    assert.equal(f.main.querySelector('.approved-hero-headline'), null);
+    assert.equal(f.main.querySelector('.approved-category').textContent,
+      `${GAME_PRESENTATION[game].category} · ${GAME_PRESENTATION[game].name}`);
+  }
 });
-
 
 test('campanhas mantêm Reiniciar em um local estável depois do histórico', () => {
   for (const game of ['light', 'elo', 'sintonia', 'pulso', 'refugio']) {

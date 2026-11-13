@@ -1,5 +1,3 @@
-import { readPulsoSkin } from './logica/games/pulso/skin.mjs';
-import { readRefugioSkin } from './logica/games/refugio/skin.mjs';
 import { VERSUS_GAMES } from "./versus/metadata.mjs";
 import { LOGIC_GAMES } from "./logica/metadata.mjs";
 import { GAME_GUIDANCE } from "./contextual-guidance.mjs";
@@ -116,21 +114,14 @@ export function initApprovedGameShell(doc = document, win = window) {
   const hero = element(doc, "section", "approved-game-hero");
   hero.id = "approved-game-hero";
   hero.hidden = true;
-  const copy = element(doc, "div", "approved-hero-copy");
-  const headline = element(doc, "h1", "approved-hero-headline");
-  const description = element(doc, "p", "approved-hero-description");
-  copy.append(headline, description);
-  const tiles = element(doc, "div", "approved-tiles");
-  tiles.setAttribute("aria-hidden", "true");
-  for (let index = 0; index < 8; index++)
-    tiles.append(element(doc, "span", "approved-tile"));
   const band = element(doc, "div", "approved-game-band");
   const number = element(doc, "span", "number");
-  const category = element(doc, "strong", "approved-category");
+  const category = element(doc, "h1", "approved-category");
   const line = element(doc, "span", "approved-band-line");
   line.setAttribute("aria-hidden", "true");
   band.append(number, category, line);
-  hero.append(copy, tiles, band);
+  // O acesso ao jogo começa na identificação, sem chamada promocional acima.
+  hero.append(band);
   main.insertBefore(hero, doc.querySelector(".category-heading"));
 
   // Não recolher novamente uma ajuda que o jogador decidiu abrir.
@@ -183,17 +174,6 @@ export function initApprovedGameShell(doc = document, win = window) {
         navigationHome.insertBefore(navigation, navigationNext);
       }
       if (!active) return;
-      setText(headline, presentation.headline);
-      setText(
-        description,
-        `${presentation.name} · um experimento por vez, no seu ritmo.`,
-      );
-      // AIIJs aprovadas: só a arte destas rotas muda; as demais mantêm o mosaico.
-      tiles.classList.toggle("approved-tiles--foz", game === "foz");
-      tiles.classList.toggle("approved-tiles--renovo", game === "renovo");
-      tiles.classList.toggle("approved-tiles--mirante", game === "mirante");
-      tiles.classList.toggle("approved-tiles--pulso", game === "pulso" && readPulsoSkin() === "identity");
-      tiles.classList.toggle("approved-tiles--refugio", game === "refugio" && readRefugioSkin() === "identity");
       setText(number, presentation.number);
       setText(category, `${presentation.category} · ${presentation.name}`);
 
