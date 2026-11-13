@@ -24,8 +24,9 @@ test('index adiciona somente os dois includes de viewport', () => {
     .replace('    <script type="module" src="game-viewport.mjs"></script>\n', '');
   assert.equal(stripped, prior('dist/index.html'));
 });
+// Contrato histórico PR64; Estalo estável possui teste próprio em versus/estalo-stable-layout.test.mjs.
 test('board-fit somente delega shells aprovados para o enquadramento completo', () => {
-  assert.equal(read('dist/board-fit.mjs').replace('      // O enquadramento novo mede também todos os controles do shell.\n      if (board.closest(\'.approved-game-section\')) continue;\n', ''), prior('dist/board-fit.mjs'));
+  assert.equal(git('show', `${viewportRelease}:dist/board-fit.mjs`).replace('      // O enquadramento novo mede também todos os controles do shell.\n      if (board.closest(\'.approved-game-section\')) continue;\n', ''), prior('dist/board-fit.mjs'));
 });
 test('seleção somente remove o aviso redundante de níveis', () => {
   assert.equal(read('dist/selection-presentation.mjs'), prior('dist/selection-presentation.mjs')
