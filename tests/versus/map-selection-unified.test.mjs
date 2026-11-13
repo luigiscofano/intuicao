@@ -27,6 +27,7 @@ for (const catalog of catalogs) test(`${catalog.id}: seleção comum cobre cada 
   assert(html.includes(`data-vs-map="${selected.id}" aria-pressed="true"`));
   assert(html.includes('aria-live="polite"'));
   assert(!html.includes('undefined'),'metadados completos na apresentação');
+  assert.doesNotMatch(html,/vs-map-hint|Escolher um mapa não inicia nem substitui a partida salva/);
   for(const group of new Set(catalog.maps.map(mapGroupKey))) assert.equal(mapGroupKey(selectMapInGroup(catalog.maps,selected.id,group)),group);
  }
  assert.equal(JSON.stringify(catalog.maps),before);
