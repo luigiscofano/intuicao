@@ -372,3 +372,21 @@ test("seletor compacto preserva controles sem ícones anunciados em duplicidade"
     assert.match(html, new RegExp(`data-library-filter="${filter}"`));
   }
 });
+
+test("retorno global só aparece em jogo específico, nunca em categoria filtrada", () => {
+  const h = harness();
+  assert.equal(h.back.hidden, true);
+  for (const filter of h.filters) {
+    h.click(h.categories, filter);
+    assert.equal(h.back.hidden, true);
+  }
+  h.click(h.nav, h.cards[0]);
+  assert.equal(h.back.hidden, false);
+  h.back.onclick();
+  assert.equal(h.back.hidden, true);
+});
+
+test("título antecede filtros na linha compacta da biblioteca", () => {
+  assert.match(html, /class="library-heading-row"/);
+  assert.ok(html.indexOf('id="category-title"') < html.indexOf('id="library-controls"'));
+});

@@ -124,7 +124,7 @@ export function initApprovedGameShell(doc = document, win = window) {
   band.append(number, category, line);
   // O acesso ao jogo começa na identificação, sem chamada promocional acima.
   hero.append(band);
-  main.insertBefore(hero, doc.querySelector(".category-heading"));
+  main.insertBefore(hero, doc.querySelector(".library-heading-row") || doc.querySelector(".category-heading"));
 
   // Não recolher novamente uma ajuda que o jogador decidiu abrir.
   const incorporatedGuidance = new WeakSet();

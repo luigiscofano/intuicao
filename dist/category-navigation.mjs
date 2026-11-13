@@ -153,7 +153,8 @@ export function initCategoryNavigation({ hideGames }) {
     const playing = Boolean(game);
     categories.hidden = playing;
     navigation.hidden = playing;
-    back.hidden = (!category && !playing);
+    // O retorno global só é necessário dentro de um jogo; os filtros já oferecem “Todos”.
+    back.hidden = !playing;
     title.hidden = playing;
     const backupPanel = document.getElementById("progress-backup-panel");
     if (backupPanel && !backupPanel.closest('#preferences-dialog')) backupPanel.hidden = playing;
