@@ -1,0 +1,132 @@
+/* Opção A aprovada: faixa lateral, cantos suaves e ações identificáveis.
+ * Seletores limitados ao painel; tabuleiros, equipes e seleções não são alterados. */
+body.approved-game-view #main .approved-workspace > .action-sidebar.action-sidebar {
+  position: relative;
+  align-self: start;
+  border: 1px solid #c7ccbb;
+  border-radius: 14px !important;
+  background: #fffaf0;
+  padding: 18px 16px 14px 27px;
+  overflow: visible;
+}
+body.approved-game-view #main .action-sidebar.action-sidebar::before {
+  content: '';
+  position: absolute;
+  inset: 15px auto 15px 10px;
+  width: 4px;
+  border-radius: 3px;
+  background: linear-gradient(to bottom, #39654c 0 68%, transparent 68% 70%, #cca034 70% 86%, transparent 86% 88%, #244b63 88%);
+  pointer-events: none;
+  height:auto;
+  top:15px; right:auto; bottom:15px; left:10px;
+}
+body.approved-game-view #main .action-sidebar.action-sidebar > :is(.approved-action-kicker,h3,.instructions) { display:none; }
+body.approved-game-view #main .action-sidebar.action-sidebar .approved-real-actions {
+  display: flex;
+  flex-direction: column;
+  align-items: stretch;
+  gap: 10px;
+  margin: 0;
+}
+body.approved-game-view #main .action-sidebar.action-sidebar :is(.approved-primary-action,.approved-restart-action,.sidebar-help) { width:100%; flex:initial; }
+body.approved-game-view #main .action-sidebar.action-sidebar .approved-history-actions {
+  display: grid;
+  grid-template-columns: repeat(2,minmax(0,1fr));
+  gap: 8px;
+  flex: initial;
+}
+body.approved-game-view #main .action-sidebar.action-sidebar .approved-history-actions:empty,
+body.approved-game-view #main .action-sidebar.action-sidebar .approved-restart-action:empty { display:none; }
+body.approved-game-view #main .action-sidebar.action-sidebar [data-sidebar-action] {
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  gap: 10px;
+  width: 100% !important;
+  min-width: 0 !important;
+  min-height: 48px;
+  padding: 10px 12px;
+  margin: 0;
+  border: 1px solid #b6c4c8;
+  border-radius: 10px !important;
+  background: #eff4f3;
+  color: #244b63;
+  font-size: 0 !important;
+  box-shadow: none;
+  text-align: left;
+}
+/* A máscara é decorativa. O nome acessível permanece no próprio controle real. */
+body.approved-game-view #main .action-sidebar.action-sidebar [data-sidebar-action]::before {
+  content: '';
+  display: block !important;
+  position: static;
+  width: 21px;
+  height: 21px;
+  flex: 0 0 21px;
+  margin: 0 !important;
+  background: currentColor;
+  mask: var(--sidebar-icon) center / contain no-repeat;
+  -webkit-mask: var(--sidebar-icon) center / contain no-repeat;
+}
+body.approved-game-view #main .action-sidebar.action-sidebar [data-sidebar-action]::after {
+  content: attr(aria-label) !important;
+  display: block;
+  position: static;
+  font: 700 15px/1.35 system-ui,sans-serif;
+}
+body.approved-game-view #main .action-sidebar.action-sidebar [data-sidebar-action] > * { display:none; }
+body.approved-game-view #main .action-sidebar.action-sidebar [data-sidebar-action='confirm'] {
+  --sidebar-icon:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='black' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='m3 12 6 6L21 5'/%3E%3C/svg%3E");
+  color:#fffaf0; background:#39654c; border-color:#39654c;
+}
+body.approved-game-view #main .action-sidebar.action-sidebar [data-sidebar-action='undo'] {
+  --sidebar-icon:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='black' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='m9 4-6 6 6 6M3 10h10a7 7 0 0 1 7 7'/%3E%3C/svg%3E");
+}
+body.approved-game-view #main .action-sidebar.action-sidebar [data-sidebar-action='redo'] {
+  --sidebar-icon:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='black' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='m15 4 6 6-6 6M21 10H11a7 7 0 0 0-7 7'/%3E%3C/svg%3E");
+}
+body.approved-game-view #main .action-sidebar.action-sidebar [data-sidebar-action='restart'] {
+  --sidebar-icon:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='black' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='M4 10a8 8 0 1 1 0 7M4 4v6h6'/%3E%3C/svg%3E");
+  color:#624c17; background:#fcf4de; border-color:#bd902d;
+}
+body.approved-game-view #main .action-sidebar.action-sidebar [data-sidebar-action='help'] {
+  --sidebar-icon:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='black' stroke-width='1.8' stroke-linecap='round'%3E%3Ccircle cx='12' cy='12' r='9'/%3E%3Cpath d='M9 9a3 3 0 1 1 4 3c-1 0-1 1-1 2m0 3h0'/%3E%3C/svg%3E");
+  color:#244b63; background:#fffaf0; border-color:#c7ccbb; list-style:none;
+}
+body.approved-game-view #main .action-sidebar.action-sidebar [data-sidebar-action='cancel'] {
+  --sidebar-icon:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='black' stroke-width='2' stroke-linecap='round'%3E%3Cpath d='m6 6 12 12M6 18 18 6'/%3E%3C/svg%3E");
+  min-height:44px; background:transparent; color:#244b63; border-color:#c7ccbb;
+}
+body.approved-game-view #main .action-sidebar.action-sidebar .approved-history-actions [data-sidebar-action] { flex-direction:column; align-items:flex-start; gap:6px; }
+body.approved-game-view #main .action-sidebar.action-sidebar [data-sidebar-action]:disabled {
+  opacity:1; background:#efeee6; border-color:#cacdc2; color:#747b70; cursor:not-allowed;
+}
+body.approved-game-view #main .action-sidebar.action-sidebar :is(button,summary):focus-visible { outline:3px solid #244b63; outline-offset:3px; }
+body.approved-game-view #main .action-sidebar.action-sidebar [hidden] { display:none !important; }
+body.approved-game-view #main .action-sidebar.action-sidebar .sidebar-help > details { margin:0; padding:0; border:0; background:transparent; }
+body.approved-game-view #main .action-sidebar.action-sidebar .approved-secondary-actions {
+  display:flex; flex-direction:column; align-items:stretch; gap:6px; width:100%;
+}
+body.approved-game-view #main .action-sidebar.action-sidebar .approved-secondary-actions > :is(.level-actions,.board-check-controls) { margin:0; }
+body.approved-game-view #main .action-sidebar.action-sidebar .nv-move-controls { margin:0; padding:0; border:0; background:transparent; display:flex; flex-direction:column; gap:8px; }
+body.approved-game-view #main .action-sidebar.action-sidebar .nv-repeat-help { font-size:12px; line-height:1.4; }
+.sidebar-signature { display:flex; justify-content:flex-end; gap:3px; margin-top:12px; pointer-events:none; }
+.sidebar-signature span { width:15px; height:15px; background:#39654c; border-radius:0 0 100% 0; }
+.sidebar-signature span:nth-child(2) { background:#cca034; transform:rotate(180deg); }
+.sidebar-signature span:nth-child(3) { background:#244b63; }
+.sidebar-signature span:nth-child(4) { transform:rotate(180deg); }
+@media(max-width:650px) and (min-height:501px) {
+  body.approved-game-view #main .approved-workspace > .action-sidebar.action-sidebar { padding:12px 12px 12px 23px; }
+  body.approved-game-view #main .action-sidebar.action-sidebar .approved-real-actions { display:grid; grid-template-columns:repeat(2,minmax(0,1fr)); gap:8px; }
+  body.approved-game-view #main .action-sidebar.action-sidebar :is(.approved-primary-action,.approved-history-actions,.approved-secondary-actions,.viewport-endless-shortcuts) { grid-column:1 / -1; }
+  body.approved-game-view #main .action-sidebar.action-sidebar .approved-history-actions [data-sidebar-action] { flex-direction:row; align-items:center; }
+  body.approved-game-view #main .action-sidebar.action-sidebar [data-sidebar-action]::after { font-size:14px; }
+  .sidebar-signature { margin-top:8px; }
+}
+@media(forced-colors:active) {
+  body.approved-game-view #main .action-sidebar.action-sidebar [data-sidebar-action] { border-color:ButtonText; }
+  body.approved-game-view #main .action-sidebar.action-sidebar [data-sidebar-action]::before { background:ButtonText; }
+  body.approved-game-view #main .action-sidebar.action-sidebar [data-sidebar-action]:disabled { color:GrayText; border-color:GrayText; }
+}
+
+body.approved-game-view #main .action-sidebar.action-sidebar::after { display:none; }

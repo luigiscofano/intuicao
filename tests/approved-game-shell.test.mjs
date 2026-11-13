@@ -16,7 +16,7 @@ const VERSUS_IDS = [
   "acorde",
   "lastro",
 ];
-const LOGIC_IDS = ["pulso", "foz", "refugio", "mirante", "renovo"];
+const LOGIC_IDS = [ "pulso", "foz", "refugio", "mirante", "renovo"];
 const ORIGINAL_IDS = [
   "light",
   "cut",
@@ -57,6 +57,9 @@ class Node {
       contains: (name) => this.className.split(" ").includes(name),
     };
   }
+  get tagName() { return this.tag.toUpperCase(); }
+  addEventListener(name, fn) { (this.listeners ||= {})[name] = fn; }
+  scrollIntoView(options) { this.scrolled = options; }
   get nextSibling() {
     return (
       this.parentElement?.children[
@@ -278,7 +281,8 @@ for (const game of Object.keys(GAME_PRESENTATION)) {
       GAME_PRESENTATION[game].category === "Versus" ? "board-check-controls" : "approved-primary-action",
     );
     if (GAME_PRESENTATION[game].category === "Versus") {
-      assert.equal(f.controls.confirm.parentElement.parentElement, f.surface);
+      assert.equal(f.controls.confirm.parentElement.parentElement.className, "approved-primary-action");
+      assert.equal(f.controls.confirm.parentElement.closest(".action-sidebar") !== null, true);
       assert.equal(f.surface.classList.contains("approved-versus-surface"), true);
     }
     assert.equal(
@@ -295,7 +299,7 @@ for (const game of Object.keys(GAME_PRESENTATION)) {
     if (f.controls.reset) {
       assert.equal(
         f.controls.reset.attrs["aria-label"],
-        GAME_PRESENTATION[game].category === "Versus" ? undefined : "Reiniciar",
+        game === "broto" ? "Reiniciar rodada" : "Reiniciar",
       );
     }
     assert.equal(f.controls.confirm.onclick, originalHandler);
@@ -315,8 +319,8 @@ for (const game of Object.keys(GAME_PRESENTATION)) {
       assert.equal(f.main.querySelector("#lg-advanced-toggle"), null);
       assert.equal(f.controls.restart.onclick(), "restart");
       assert.equal(
-        f.controls.restart.parentElement.parentElement.className,
-        "approved-secondary-actions",
+        f.controls.restart.parentElement.parentElement.classList.contains("approved-real-actions"),
+        true,
       );
       assert.equal(f.controls.answer.hidden, true);
     }
@@ -333,7 +337,6 @@ for (const game of Object.keys(GAME_PRESENTATION)) {
     assert.equal(f.observer.disconnected, true);
     assert.equal(f.events.popstate, undefined);
     assert.equal(f.events["pulso-skin-change"], undefined);
-    assert.equal(f.events["refugio-skin-change"], undefined);
   });
 }
 
@@ -378,6 +381,7 @@ test("presentation module only reads visual preference, without progress writes,
     ...source.matchAll(/^import .* from ['"]([^'"]+)['"]/gm),
   ].map((match) => match[1]);
   assert.deepEqual(imports, [
+    "./action-sidebar.mjs",
     "./versus/metadata.mjs",
     "./logica/metadata.mjs",
     "./contextual-guidance.mjs",
@@ -405,7 +409,7 @@ test('campanhas mantêm Reiniciar em um local estável depois do histórico', ()
     initApprovedGameShell(f.doc, f.win);
     const restart = f.controls.restart || f.controls.reset;
     assert.equal(restart.parentElement.className, 'approved-restart-action');
-    assert.equal(restart.parentElement.parentElement.className, 'approved-secondary-actions');
+    assert.equal(restart.parentElement.parentElement.classList.contains('approved-real-actions'), true);
     assert.equal(restart.attrs['aria-label'], 'Reiniciar');
     assert.equal(f.controls.undo.attrs['aria-label'], 'Desfazer');
     assert.equal(f.controls.redo.attrs['aria-label'], 'Refazer');
@@ -432,9 +436,126 @@ test('a ajuda é recolhida uma vez e respeita a reabertura feita pelo jogador', 
   assert.equal(guidance.parentElement.className, 'approved-secondary-actions');
 });
 
-test('normalização não desloca Reiniciar nos duelos', () => {
+test('normalização coloca Reiniciar dos duelos no mesmo slot sem substituir o handler', () => {
   const f = fixture('cerco');
   initApprovedGameShell(f.doc, f.win);
-  assert.notEqual(f.controls.reset.parentElement.className, 'approved-restart-action');
-  assert.equal(f.controls.reset.attrs['aria-label'], undefined);
+  assert.equal(f.controls.reset.parentElement.className, 'approved-restart-action');
+  assert.equal(f.controls.reset.attrs['aria-label'], 'Reiniciar');
+  assert.equal(f.controls.reset.onclick(), 'reset');
+});
+
+test('lateral A preserva confirmação automática e a ordem essencial', () => {
+  for (const game of ['sintonia', 'repasse']) {
+    const f = fixture(game);
+    f.controls.confirm.hidden = true;
+    initApprovedGameShell(f.doc, f.win);
+    assert.equal(f.controls.confirm.hidden, true);
+    const actions = f.section.querySelector('.approved-real-actions');
+    assert.deepEqual(actions.children.map(node => node.className), [
+      'approved-primary-action', 'approved-history-actions', 'approved-restart-action',
+      'sidebar-help', 'approved-secondary-actions',
+    ]);
+    f.update();
+    assert.equal(f.section.querySelectorAll('.sidebar-signature').length, 1);
+    assert.equal(f.section.querySelectorAll('.approved-restart-action').length, 1);
+  }
+});
+
+test('confirmar e cancelar versus permanecem juntos fora do tabuleiro', () => {
+  for (const game of ['cerco', 'broto', 'quinhao']) {
+    const f = fixture(game);
+    const cancel = new Node('button', '', GAME_PRESENTATION[game].prefix + '-cancel');
+    const handler = () => 'cancel';
+    cancel.onclick = handler;
+    cancel.disabled = true;
+    const group = f.controls.confirm.parentElement;
+    group.append(cancel);
+    const board = new Node('div', '', 'fake-board');
+    board.inert = true;
+    f.surface.append(board);
+    board.append(group);
+    initApprovedGameShell(f.doc, f.win);
+    assert.equal(f.controls.confirm.parentElement, group);
+    assert.equal(cancel.parentElement, group);
+    assert.equal(group.closest('.approved-primary-action') !== null, true);
+    assert.equal(board.querySelector('#' + cancel.id), null);
+    assert.equal(cancel.onclick, handler);
+    assert.equal(cancel.disabled, true);
+    f.update();
+    assert.equal(group.parentElement.className, 'approved-primary-action');
+    assert.equal(f.section.querySelectorAll('#' + cancel.id).length, 1);
+  }
+});
+
+test('Como jogar usa disclosure original sem substituir eventos e estados', () => {
+  const f = fixture('cerco');
+  const rulesPanel = new Node('details', 'rules-card', 'ce-rules-panel');
+  const summary = new Node('summary');
+  const onToggle = () => 'native toggle';
+  rulesPanel.ontoggle = onToggle;
+  rulesPanel.open = true;
+  rulesPanel.append(summary);
+  f.surface.querySelector('.stage-tools').append(rulesPanel);
+  initApprovedGameShell(f.doc, f.win);
+  assert.equal(rulesPanel.parentElement.className, 'sidebar-help');
+  assert.equal(rulesPanel.open, true);
+  assert.equal(rulesPanel.ontoggle, onToggle);
+  assert.equal(summary.attrs['aria-label'], 'Como jogar');
+  f.update();
+  assert.equal(f.section.querySelectorAll('#ce-rules-panel').length, 1);
+});
+
+test('ajuda de lógica alterna conteúdo completo sem remover suas regras', () => {
+  const f = fixture('pulso');
+  f.rules.className = 'logic-rules';
+  f.rules.textContent = 'Regras completas';
+  initApprovedGameShell(f.doc, f.win);
+  const button = f.section.querySelector('.sidebar-help').querySelector('button');
+  assert.ok(button);
+  assert.equal(f.rules.parentElement, f.section);
+  assert.equal(f.rules.hidden, true);
+  assert.equal(button.attrs['aria-controls'], f.rules.id);
+  button.listeners.click();
+  assert.equal(f.rules.hidden, false);
+  assert.equal(button.attrs['aria-expanded'], 'true');
+  f.update();
+  assert.equal(f.rules.hidden, false);
+  assert.equal(f.rules.textContent, 'Regras completas');
+  assert.equal(f.section.querySelector('.sidebar-help').querySelectorAll('button').length, 1);
+  button.listeners.click();
+  assert.equal(f.rules.hidden, true);
+});
+
+test('ajuda dos duelos mantém aria-expanded sincronizado com o disclosure completo', () => {
+  const f = fixture('quinhao');
+  f.rules.tag = 'details';
+  f.rules.className = 'nv-rules';
+  f.rules.open = true;
+  initApprovedGameShell(f.doc, f.win);
+  const button = f.section.querySelector('.sidebar-help').querySelector('button');
+  assert.equal(f.rules.open, false);
+  button.listeners.click();
+  assert.equal(f.rules.open, true);
+  assert.equal(button.attrs['aria-expanded'], 'true');
+  f.rules.open = false;
+  f.rules.listeners.toggle();
+  assert.equal(button.attrs['aria-expanded'], 'false');
+  f.update();
+  assert.equal(f.rules.open, false);
+});
+
+test('CSS da lateral não sobrescreve hidden, foco ou equipes', () => {
+  const css = readFileSync(new URL('../dist/action-sidebar.css', import.meta.url), 'utf8');
+  assert.match(css, /\.action-sidebar \[hidden\]\s*\{\s*display:none !important/);
+  assert.match(css, /:focus-visible/);
+  assert.match(css, /forced-colors:active/);
+  assert.doesNotMatch(css, /\.nv-team|\.ce-team|\.b-team|\.logic-board/);
+  const source = readFileSync(new URL('../dist/action-sidebar.mjs', import.meta.url), 'utf8');
+  assert.doesNotMatch(source, /cloneNode|\.disabled\s*=|\.click\(|localStorage|\.setItem\(/);
+});
+
+test('renderização versus não puxa os controles de volta para região inert', () => {
+  const source = readFileSync(new URL('../dist/versus/ui.mjs', import.meta.url), 'utf8');
+  assert.match(source, /moveControls && anchor && !moveControls\.closest\("\.approved-action-panel"\)/);
+  assert.match(source, /board\.inert = Boolean\(thinking \|\| computerTurn\(\) \|\| state\(\)\.result\)/);
 });

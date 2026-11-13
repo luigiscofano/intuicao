@@ -1,3 +1,4 @@
+import { arrangeActionSidebar } from './action-sidebar.mjs';
 import { VERSUS_GAMES } from "./versus/metadata.mjs";
 import { LOGIC_GAMES } from "./logica/metadata.mjs";
 import { GAME_GUIDANCE } from "./contextual-guidance.mjs";
@@ -287,7 +288,7 @@ export function initApprovedGameShell(doc = document, win = window) {
         }
         const restart = control("restart") || control("reset");
         if (restart) {
-          let restartSlot = secondary.querySelector(".approved-restart-action");
+          let restartSlot = panel.querySelector(".approved-restart-action");
           if (!restartSlot) {
             restartSlot = element(doc, "div", "approved-restart-action");
             secondary.insertBefore(restartSlot, secondary.firstChild || null);
@@ -321,6 +322,7 @@ export function initApprovedGameShell(doc = document, win = window) {
         }
         move(guidance, secondary);
       }
+      arrangeActionSidebar({ doc, section, panel, control, game, versus });
     } finally {
       observe();
     }
