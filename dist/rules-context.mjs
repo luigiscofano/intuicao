@@ -16,7 +16,7 @@ const BASE = {
   pacto:
     'Complete a grade com círculo, quadrado, triângulo e losango. Cada linha e coluna deve ter exatamente dois de cada símbolo. Cada casa toca exatamente uma igual pelos lados: diagonais não contam e trios não são permitidos. As pistas iniciais permanecem fixas.',
   desvio:
-    'Escolha uma casa disponível e confirme. A seta horizontal manda o adversário para a mesma linha; a vertical, para a mesma coluna. A casa usada desaparece. Quem ficar sem jogada legal perde. Casas já usadas não bloqueiam o caminho até outra casa disponível.',
+    'Escolha uma casa disponível e confirme. A seta horizontal manda o adversário para a mesma linha; a vertical, para a mesma coluna. A casa usada fica marcada e não pode ser escolhida novamente. Quem ficar sem jogada legal perde. Casas já usadas não bloqueiam o caminho até outra casa disponível.',
 };
 const TEXT = {
   walls:
@@ -152,3 +152,4 @@ export function getRulesContext(game, level = {}, { catalogue, index, mode = 'ca
     .join(' ');
   return { autoOpen, title, text, mechanics, introduced };
 }
+

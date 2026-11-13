@@ -65,12 +65,13 @@ test('troca de skin apenas redesenha e mantém foco, sem mudar sessão', () => {
   assert.doesNotMatch(handler, /edit\(|start\(|save\(|complete\(/);
 });
 
-test('AIIJ é transparente e segue apenas a rota Refúgio', () => {
+test('AIIJ preservada continua transparente, sem ocupar o início do jogo', () => {
   const art = readFileSync(new URL('../../dist/platform-assets/refugio-aiij-folhas.svg', import.meta.url), 'utf8');
   assert.ok(art.includes('<svg'));
   assert.ok(!/<rect[^>]*width="900"[^>]*height="630"/.test(art));
   const shell = readFileSync(new URL('../../dist/approved-game-shell.mjs', import.meta.url), 'utf8');
   const css = readFileSync(new URL('../../dist/approved-game-shell.css', import.meta.url), 'utf8');
   assert.match(css, /approved-tiles--refugio[^}]*aspect-ratio: 300 \/ 210/);
-  assert.ok(shell.includes('game === "refugio" && readRefugioSkin() === "identity"'));
+  assert.doesNotMatch(shell, /const tiles = element/);
+  assert.match(shell, /hero\.append\(band\)/);
 });

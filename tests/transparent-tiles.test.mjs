@@ -68,10 +68,11 @@ test('fundos decorativos usam PNGs locais existentes e não deixam retângulos o
   assert.doesNotMatch(css['identity.css'], /#e7ddc3/);
 });
 
-test('23 páginas ativas mantêm o mesmo cabeçalho decorativo acessível', () => {
+test('23 páginas ativas começam pela identificação acessível sem decoração acima', () => {
   assert.equal(Object.keys(GAME_PRESENTATION).length, 23);
   assert.match(read('dist/approved-game-shell.mjs'),
-    /tiles\.setAttribute\("aria-hidden", "true"\)/);
+    /element\(doc, "h1", "approved-category"\)/);
+  assert.doesNotMatch(read('dist/approved-game-shell.mjs'), /const tiles = element/);
   assert.equal(git('diff', baseline, pngRelease, '--', 'dist/approved-game-shell.mjs', 'dist/index.html'), '');
 });
 
