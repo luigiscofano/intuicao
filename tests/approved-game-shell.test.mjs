@@ -84,6 +84,7 @@ class Node {
       node,
     );
   }
+  getAttribute(name) { return this.attrs[name] ?? null; }
   setAttribute(name, value) {
     this.attrs[name] = value;
   }
@@ -556,3 +557,40 @@ test('renderização versus não puxa os controles de volta para região inert',
   assert.match(source, /board\.inert = Boolean\(thinking \|\| computerTurn\(\) \|\| state\(\)\.result\)/);
 });
 
+
+// Todos os controles ativos atravessam o mesmo shell, inclusive os motores legados.
+test('histórico dos 19 jogos mantém nomes, dicas, estado e handlers sem rótulo visível', () => {
+  const html = readFileSync(new URL('../dist/index.html', import.meta.url), 'utf8');
+  const catalog = html.match(/<nav class="games"[\s\S]*?<\/nav>/)[0];
+  const ids = [...catalog.matchAll(/data-(?:game|collection|sintonia|repasse|broto|cerco|logic|versus)="([^"]+)"/g)].map(m => m[1]);
+  assert.equal(ids.length, 19);
+  for (const game of ids) {
+    const f = fixture(game);
+    f.controls.undo.setAttribute('title', 'Desfazer (Ctrl+Z)');
+    const handlers = [f.controls.undo.onclick, f.controls.redo.onclick];
+    f.controls.undo.disabled = false;
+    f.controls.redo.disabled = true;
+    initApprovedGameShell(f.doc, f.win);
+    for (const [action, label] of [['undo', 'Desfazer'], ['redo', 'Refazer']]) {
+      const button = f.controls[action];
+      assert.equal(button.attrs['aria-label'], label, game);
+      assert.equal(button.attrs['data-sidebar-action'], action, game);
+      assert.ok(button.attrs.title.includes(label), game);
+    }
+    assert.equal(f.controls.undo.attrs.title, 'Desfazer (Ctrl+Z)');
+    assert.equal(f.controls.undo.onclick, handlers[0]);
+    assert.equal(f.controls.redo.onclick, handlers[1]);
+    assert.equal(f.controls.undo.disabled, false);
+    assert.equal(f.controls.redo.disabled, true);
+    f.controls.undo.disabled = true;
+    f.controls.redo.disabled = false;
+    f.update();
+    assert.equal(f.controls.undo.disabled, true);
+    assert.equal(f.controls.redo.disabled, false);
+  }
+  const css = readFileSync(new URL('../dist/action-sidebar.css', import.meta.url), 'utf8');
+  assert.match(css, /:is\(\[data-sidebar-action='undo'\],\[data-sidebar-action='redo'\]\)::after\s*\{\s*content: none !important;\s*display: none;/);
+  assert.match(css, /min-width: 44px !important/);
+  assert.match(css, /justify-content: center/);
+  assert.match(css, /:focus-visible/);
+});
