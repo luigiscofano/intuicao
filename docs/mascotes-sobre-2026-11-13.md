@@ -17,3 +17,5 @@ Sem mudanças de regras, tabuleiros, saves, configurações ou geradores. A home
 ## Verificação
 
 `node --test tests/mascots-dialog.test.mjs` verifica os quinze IDs, nomes, recortes oficiais, integração única e estilos responsivos. A validação de navegador complementa estes testes estáticos.
+
+Auditoria adicional: 20 testes direcionados executados, 16 passaram. Quatro verificações históricas de hash/quantidade de curiosidades em fauna-culture e fauna-sintonia-sprites falham também no main sem esta alteração (baseline 43a6a86); não são regressões deste patch. Os oito testes de Sobre e nova galeria passaram. Não se afirma que toda a suíte do projeto está verde.
