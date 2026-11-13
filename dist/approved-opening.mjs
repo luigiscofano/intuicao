@@ -34,7 +34,14 @@ export function initApprovedOpening(doc = document) {
   toggle.addEventListener('click', () => { expanded = !expanded; render(); });
   // Mantém os botões originais e seus eventos ao agrupá-los na faixa editorial.
   const title = intro.querySelector('h1');
-  if (title) title.textContent = 'A curiosidade é a primeira lição.';
+  if (title) {
+    // Ênfase só na palavra pedida: a frase continua sendo um único título acessível.
+    const curiosity = doc.createElement('em');
+    curiosity.className = 'opening-curiosity';
+    curiosity.textContent = 'curiosidade';
+    title.textContent = '';
+    title.append('A ', curiosity, ' é a primeira lição.');
+  }
   intro.querySelector(':scope > p')?.remove();
   const faunaGroup = doc.createElement('div');
   faunaGroup.className = 'opening-fauna-group';

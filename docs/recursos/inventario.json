@@ -1878,6 +1878,16 @@
       "license": "Direitos reservados; recursos visuais excluídos da licença MIT do código.",
       "permissionEvidence": "docs/identidade/logo-site/README.md",
       "reviewBasis": "owner-approved-project-composition; existing-visual-rights-policy"
+    },
+    {
+      "path": "dist/platform-assets/conquistas-selo-botanico.svg",
+      "sha256": "a28e3ef5b1d803ddfe9675506f2b25a58e644aa276466c141d7735a90e93dbb5",
+      "group": "identidade",
+      "status": "cleared",
+      "rightsHolder": "Luigi Scofano de Araujo (elementos autorais do projeto)",
+      "license": "Direitos reservados; recursos visuais excluídos da licença MIT do código.",
+      "permissionEvidence": "docs/qa/selo-conquistas-2026-11-13.md",
+      "reviewBasis": "owner-approved-original-vector-design"
     }
   ],
   "rightsReview": {
