@@ -6,13 +6,15 @@
 
 **Jogos de lógica, geometria e estratégia para aprender experimentando.**
 
-O **Intuição**, projeto de **Luigi Scofano de Araujo**, reúne 25 jogos que funcionam no navegador. Você pode guiar raios de luz com espelhos, equilibrar formas, coordenar animais ou disputar um tabuleiro com outra pessoa ou com os bots de DESVIO, CERCO e dos oito novos duelos. Cada jogo tem regras próprias, explicações na interface e um manual neste repositório.
+O **Intuição**, projeto de **Luigi Scofano de Araujo**, reúne 19 jogos ativos que funcionam no navegador. Você pode guiar raios de luz com espelhos, equilibrar formas, coordenar animais ou disputar um tabuleiro com outra pessoa ou com os bots de DESVIO, CERCO e dos duelos ativos. Cada jogo tem regras próprias, explicações na interface e um manual neste repositório.
 
 A ideia é transformar conceitos abstratos em escolhas visíveis: observar, imaginar uma solução, testar e entender o que mudou. Folhas, molduras e animais brasileiros em pixel art dão identidade à experiência.
 
 > **A curiosidade é a primeira lição.**
 
-**25 jogos · 14 campanhas solo · 1.120 fases · 11 jogos Versus · 10 jogos com computador**
+**19 jogos ativos · 12 campanhas solo · 960 fases · 7 jogos Versus**
+
+Dobra foi retirado em 13/11/2026, assim como Divisa, Órbita, Lastro, Vazante e Enlace anteriormente. Código, artes e progresso continuam preservados. [Retirada e recuperação de Dobra](docs/retirada-dobra-2026-11-13.md). As seções datadas, manuais e fichas abaixo documentam também o catálogo histórico; não representam disponibilidade atual.
 
 **Inteligência artificial aplicada a jogos:** DESVIO usa busca exata de posições; CERCO combina antecipação de jogadas e avaliação estratégica. [Entenda como os bots decidem](#ia-nos-bots-dos-jogos-versus).
 
@@ -22,7 +24,7 @@ O site está **aberto ao público desde 03/11/2026**: qualquer pessoa com o link
 
 ## Conquistas com missões próprias de cada jogo
 
-**74 conquistas com emblemas SVG distintos:** as dez gerais continuam acompanhando a campanha, e sessenta e quatro missões exploram decisões específicas dos 25 jogos. Em MOSAICO, por exemplo, uma missão pede dois selos próprios no mesmo lance; em LASTRO, outra pede devolver um desvio não nulo a zero.
+**61 conquistas ativas com emblemas SVG distintos:** dez gerais acompanham a campanha e 51 missões exploram decisões específicas dos 19 jogos ativos. Em MOSAICO, por exemplo, uma missão pede dois selos próprios no mesmo lance. Registros históricos de jogos retirados continuam preservados.
 
 A [ampliação aprovada](docs/conquistas/MISSOES-APROVADAS-2026-11-11.md) acrescenta precisão, eficiência e sequências humanas, preservando as conquistas anteriores.
 
@@ -34,7 +36,7 @@ A galeria permite filtrar por jogo e por conquistas obtidas ou ainda por descobr
 
 ## Apresentação unificada dos jogos
 
-Os 25 jogos seguem o mesmo padrão de Como jogar e preparação. As 14 campanhas exibem Desafio diário, Modo sem parar e Níveis com apresentação comum; os 11 jogos Versus não exibem diário nem modo sem parar. Reflexos e Corte certo recebem seleção diária determinística pela data de São Paulo. Os seis jogos lógicos usam sessões contínuas separadas das campanhas.
+Os 19 jogos ativos seguem o mesmo padrão de Como jogar e preparação. As 12 campanhas exibem Desafio diário, Modo sem parar e Níveis com apresentação comum; os 7 jogos Versus não exibem diário nem modo sem parar. Reflexos e Corte certo recebem seleção diária determinística pela data de São Paulo. Os seis jogos lógicos usam sessões contínuas separadas das campanhas.
 
 [Escopo, preservação e verificações](docs/qa/apresentacao-unificada-2026-11-11.md) · [Funcionamento da sequência lógica](docs/qa/logica-sem-parar-2026-11-11.md)
 

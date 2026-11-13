@@ -96,14 +96,14 @@ test("inicialização é idempotente e reutiliza os botões informativos existen
   assert.deepEqual(h.animals, original);
   assert.equal(h.hint.removed, true);
 });
-test("as três categorias e todos os 20 jogos permanecem contados pelo catálogo", () => {
+test("as três categorias e todos os 19 jogos permanecem contados pelo catálogo", () => {
   const h = harness();
   initApprovedOpening(h.doc);
   assert.deepEqual(
     Object.values(h.headings).map((h) => h.children[0].textContent),
-    ["2 jogos", "10 jogos", "8 jogos"],
+    ["2 jogos", "10 jogos", "7 jogos"],
   );
-  assert.equal(Object.values(CATEGORY_GAMES).flat().length, 20);
+  assert.equal(Object.values(CATEGORY_GAMES).flat().length, 19);
 });
 test("controles compartilham a linha e se montam antes da casca dos jogos", () => {
   assert.match(

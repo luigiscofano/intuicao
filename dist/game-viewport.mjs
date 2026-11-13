@@ -106,6 +106,14 @@ export function installGameViewport(doc = globalThis.document, win = globalThis)
       restoreHosts();
       let note=surface.querySelector(':scope > .viewport-fit-note');
       if(note)note.hidden=true;
+      // Versus mantém sua área jogável estável. Pontuação, prévias e resultados
+      // não podem roubar largura do tabuleiro a cada renderização da partida.
+      // O CSS responsivo define as dimensões; conteúdo extra usa o fluxo da página.
+      if (surface.classList.contains('approved-versus-surface')) {
+        section.dataset.viewportFit = 'stable';
+        if (opening || (resized && wasVisible)) center(section);
+        return;
+      }
       const boards=[...surface.querySelectorAll(FIT_BOARD_SELECTOR)].filter(visible);
       const minima=new Map();
       for(const board of boards){
