@@ -243,7 +243,9 @@ export function initApprovedGameShell(doc = document, win = window) {
                 ".s-level-name, .r-level-name, .o-level-name, .logic-level-name",
               )
               ?.childNodes[0]?.textContent?.trim();
-      const title = levelName || presentation.name;
+      const stage = control("stage-label");
+      // As campanhas fornecem o nome por ID; modos livres mantêm seu contexto.
+      const title = stage?.dataset?.campaignLevelName || levelName || presentation.name;
       const contextTitle =
         control("rules-context-title") ||
         (prefix === ""
@@ -254,7 +256,6 @@ export function initApprovedGameShell(doc = document, win = window) {
         (prefix === ""
           ? doc.getElementById("original-rules-context-text")
           : null);
-      const stage = control("stage-label");
       setText(heading.querySelector(".approved-game-title"), title);
       setText(
         heading.querySelector(".approved-game-position"),
