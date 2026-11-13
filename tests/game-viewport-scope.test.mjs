@@ -29,6 +29,7 @@ test('board-fit somente delega shells aprovados para o enquadramento completo', 
   assert.equal(git('show', `${viewportRelease}:dist/board-fit.mjs`).replace('      // O enquadramento novo mede também todos os controles do shell.\n      if (board.closest(\'.approved-game-section\')) continue;\n', ''), prior('dist/board-fit.mjs'));
 });
 test('seleção somente remove o aviso redundante de níveis', () => {
-  assert.equal(read('dist/selection-presentation.mjs'), prior('dist/selection-presentation.mjs')
+  // Contrato histórico PR64; a paleta posterior tem teste próprio.
+  assert.equal(git('show', `${viewportRelease}:dist/selection-presentation.mjs`), prior('dist/selection-presentation.mjs')
     .replace("section(root,'levels','Níveis','Escolha uma faixa e jogue no seu ritmo. Seu progresso fica neste navegador.')", "section(root,'levels','Níveis')"));
 });
