@@ -2,7 +2,9 @@ import test from 'node:test';
 import assert from 'node:assert/strict';
 import fs from 'node:fs';
 
-const css = fs.readFileSync('dist/repasse/ui.css', 'utf8');
+// Normaliza apenas a formatação: o Site e o GitHub preservam seus formatos de origem.
+const css = fs.readFileSync('dist/repasse/ui.css', 'utf8')
+  .replace(/\s+/g, '').replace(/;}/g, '}');
 
 test('Repasse reserva 24px acima e abaixo dos coletores em todos os modos', () => {
   // A regra usa a superfície compartilhada, sem depender da fase ou do modo.
