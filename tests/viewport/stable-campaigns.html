@@ -1,0 +1,22 @@
+<!doctype html><meta charset="utf-8"><title>Tabuleiro estável QA</title><button id="run">Testar</button><pre id="results">Pronto</pre><iframe id="frame" credentialless></iframe><style>body{font:13px system-ui}pre{white-space:pre-wrap;max-height:260px;overflow:auto}iframe{display:block;border:1px solid}</style><script type="module">
+const params=new URL(location.href).searchParams;
+const games=(params.get('games')||'light cut elo prumo pacto sintonia repasse pulso foz refugio mirante renovo').split(' ');
+const sizes=(params.get('sizes')||'1280x900,390x844,320x568,844x390').split(',').map(s=>s.split('x').map(Number));
+const frame=document.querySelector('#frame'),out=document.querySelector('#results');
+const wait=ms=>new Promise(r=>setTimeout(r,ms));const visible=e=>e&&!e.closest('[hidden]')&&e.getClientRects().length;
+async function until(fn){for(let i=0;i<100;i++){const v=fn();if(v)return v;await wait(50);}throw Error('timeout');}
+const selector='#scene,#c-board,#s-boards,#r-board,.logic-lab .logic-board > svg,.logic-lab .logic-board > div > svg';
+const boardRects=d=>[...d.querySelectorAll(selector)].filter(visible).map(b=>{const r=b.getBoundingClientRect();return{width:r.width,height:r.height,left:r.left,right:r.right,scroll:b.scrollWidth>r.width+2};});
+document.querySelector('#run').onclick=async()=>{const reports=[];for(const game of games)for(const phase of [0,-1])for(const size of sizes){try{
+frame.width=size[0];frame.height=size[1];frame.src=`index.html?game=${game}`;await new Promise(r=>frame.onload=r);const d=frame.contentDocument;
+const options=await until(()=>{const a=[...d.querySelectorAll('.level-tile,.logic-level')].filter(visible);return a.length?a:null});options.at(phase).click();await until(()=>d.querySelector('.viewport-game'));await wait(450);
+const before=boardRects(d);const surface=[...d.querySelectorAll('.approved-play-surface')].find(visible);const actions=[...d.querySelectorAll('.approved-action-panel')].find(visible);
+const message=d.createElement('div');message.textContent='Mensagem de feedback detalhada para verificar estabilidade. '.repeat(15);actions.append(message);await wait(180);const afterFeedback=boardRects(d);message.remove();
+// Interação real na primeira casa/peça disponível, seguida de desfazer quando disponível.
+const move=[...surface.querySelectorAll('button,[role="gridcell"], [role="button"]')].find(e=>visible(e)&&!e.disabled&&!e.matches('.level-arrow'));
+if(move)move.dispatchEvent(new frame.contentWindow.MouseEvent('click',{bubbles:true,cancelable:true,view:frame.contentWindow}));await wait(180);const afterMove=boardRects(d);
+const undo=d.querySelector('#lg-undo,#c-undo,#r-undo,#s-undo');if(undo&&!undo.disabled)undo.click();await wait(100);
+const final=boardRects(d);const sets=[afterFeedback,afterMove,final];const stable=sets.every(rs=>rs.length===before.length&&rs.every((r,i)=>Math.abs(r.width-before[i].width)<1&&Math.abs(r.height-before[i].height)<1));
+reports.push({game,phase:phase===0?'first':'last',size,stable,before,afterMove,notice:!![...d.querySelectorAll('.viewport-fit-note')].find(visible),overflow:d.documentElement.scrollWidth>size[0]+1,boardsVisible:before.every(r=>r.left>=-1&&r.right<=size[0]+1),moved:!!move});
+}catch(e){reports.push({game,phase,size,error:e.message});}out.textContent=JSON.stringify({done:false,reports},null,2);}out.textContent=JSON.stringify({done:true,reports},null,2);};
+</script>

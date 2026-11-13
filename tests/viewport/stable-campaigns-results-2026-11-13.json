@@ -1,0 +1,2981 @@
+{
+  "done": true,
+  "reports": [
+    {
+      "game": "light",
+      "phase": "first",
+      "size": [
+        1280,
+        900
+      ],
+      "stable": true,
+      "before": [
+        {
+          "width": 821,
+          "height": 472.0625,
+          "left": 113,
+          "right": 934,
+          "scroll": false
+        }
+      ],
+      "afterMove": [
+        {
+          "width": 821,
+          "height": 472.0625,
+          "left": 113,
+          "right": 934,
+          "scroll": false
+        }
+      ],
+      "notice": false,
+      "overflow": false,
+      "boardsVisible": true,
+      "moved": true
+    },
+    {
+      "game": "light",
+      "phase": "first",
+      "size": [
+        390,
+        844
+      ],
+      "stable": true,
+      "before": [
+        {
+          "width": 345,
+          "height": 198.375,
+          "left": 15,
+          "right": 360,
+          "scroll": false
+        }
+      ],
+      "afterMove": [
+        {
+          "width": 345,
+          "height": 198.375,
+          "left": 15,
+          "right": 360,
+          "scroll": false
+        }
+      ],
+      "notice": false,
+      "overflow": false,
+      "boardsVisible": true,
+      "moved": true
+    },
+    {
+      "game": "light",
+      "phase": "first",
+      "size": [
+        320,
+        568
+      ],
+      "stable": true,
+      "before": [
+        {
+          "width": 275,
+          "height": 158.125,
+          "left": 15,
+          "right": 290,
+          "scroll": false
+        }
+      ],
+      "afterMove": [
+        {
+          "width": 275,
+          "height": 158.125,
+          "left": 15,
+          "right": 290,
+          "scroll": false
+        }
+      ],
+      "notice": false,
+      "overflow": false,
+      "boardsVisible": true,
+      "moved": true
+    },
+    {
+      "game": "light",
+      "phase": "first",
+      "size": [
+        844,
+        390
+      ],
+      "stable": true,
+      "before": [
+        {
+          "width": 467,
+          "height": 268.515625,
+          "left": 67,
+          "right": 534,
+          "scroll": false
+        }
+      ],
+      "afterMove": [
+        {
+          "width": 467,
+          "height": 268.515625,
+          "left": 67,
+          "right": 534,
+          "scroll": false
+        }
+      ],
+      "notice": false,
+      "overflow": false,
+      "boardsVisible": true,
+      "moved": true
+    },
+    {
+      "game": "light",
+      "phase": "last",
+      "size": [
+        1280,
+        900
+      ],
+      "stable": true,
+      "before": [
+        {
+          "width": 821,
+          "height": 472.0625,
+          "left": 113,
+          "right": 934,
+          "scroll": false
+        }
+      ],
+      "afterMove": [
+        {
+          "width": 821,
+          "height": 472.0625,
+          "left": 113,
+          "right": 934,
+          "scroll": false
+        }
+      ],
+      "notice": false,
+      "overflow": false,
+      "boardsVisible": true,
+      "moved": true
+    },
+    {
+      "game": "light",
+      "phase": "last",
+      "size": [
+        390,
+        844
+      ],
+      "stable": true,
+      "before": [
+        {
+          "width": 345,
+          "height": 198.375,
+          "left": 15,
+          "right": 360,
+          "scroll": false
+        }
+      ],
+      "afterMove": [
+        {
+          "width": 345,
+          "height": 198.375,
+          "left": 15,
+          "right": 360,
+          "scroll": false
+        }
+      ],
+      "notice": false,
+      "overflow": false,
+      "boardsVisible": true,
+      "moved": true
+    },
+    {
+      "game": "light",
+      "phase": "last",
+      "size": [
+        320,
+        568
+      ],
+      "stable": true,
+      "before": [
+        {
+          "width": 275,
+          "height": 158.125,
+          "left": 15,
+          "right": 290,
+          "scroll": false
+        }
+      ],
+      "afterMove": [
+        {
+          "width": 275,
+          "height": 158.125,
+          "left": 15,
+          "right": 290,
+          "scroll": false
+        }
+      ],
+      "notice": false,
+      "overflow": false,
+      "boardsVisible": true,
+      "moved": true
+    },
+    {
+      "game": "light",
+      "phase": "last",
+      "size": [
+        844,
+        390
+      ],
+      "stable": true,
+      "before": [
+        {
+          "width": 467,
+          "height": 268.515625,
+          "left": 67,
+          "right": 534,
+          "scroll": false
+        }
+      ],
+      "afterMove": [
+        {
+          "width": 467,
+          "height": 268.515625,
+          "left": 67,
+          "right": 534,
+          "scroll": false
+        }
+      ],
+      "notice": false,
+      "overflow": false,
+      "boardsVisible": true,
+      "moved": true
+    },
+    {
+      "game": "cut",
+      "phase": "first",
+      "size": [
+        1280,
+        900
+      ],
+      "stable": true,
+      "before": [
+        {
+          "width": 821,
+          "height": 472.0625,
+          "left": 113,
+          "right": 934,
+          "scroll": false
+        }
+      ],
+      "afterMove": [
+        {
+          "width": 821,
+          "height": 472.0625,
+          "left": 113,
+          "right": 934,
+          "scroll": false
+        }
+      ],
+      "notice": false,
+      "overflow": false,
+      "boardsVisible": true,
+      "moved": true
+    },
+    {
+      "game": "cut",
+      "phase": "first",
+      "size": [
+        390,
+        844
+      ],
+      "stable": true,
+      "before": [
+        {
+          "width": 345,
+          "height": 198.375,
+          "left": 15,
+          "right": 360,
+          "scroll": false
+        }
+      ],
+      "afterMove": [
+        {
+          "width": 345,
+          "height": 198.375,
+          "left": 15,
+          "right": 360,
+          "scroll": false
+        }
+      ],
+      "notice": false,
+      "overflow": false,
+      "boardsVisible": true,
+      "moved": true
+    },
+    {
+      "game": "cut",
+      "phase": "first",
+      "size": [
+        320,
+        568
+      ],
+      "stable": true,
+      "before": [
+        {
+          "width": 275,
+          "height": 158.125,
+          "left": 15,
+          "right": 290,
+          "scroll": false
+        }
+      ],
+      "afterMove": [
+        {
+          "width": 275,
+          "height": 158.125,
+          "left": 15,
+          "right": 290,
+          "scroll": false
+        }
+      ],
+      "notice": false,
+      "overflow": false,
+      "boardsVisible": true,
+      "moved": true
+    },
+    {
+      "game": "cut",
+      "phase": "first",
+      "size": [
+        844,
+        390
+      ],
+      "stable": true,
+      "before": [
+        {
+          "width": 467,
+          "height": 268.515625,
+          "left": 67,
+          "right": 534,
+          "scroll": false
+        }
+      ],
+      "afterMove": [
+        {
+          "width": 467,
+          "height": 268.515625,
+          "left": 67,
+          "right": 534,
+          "scroll": false
+        }
+      ],
+      "notice": false,
+      "overflow": false,
+      "boardsVisible": true,
+      "moved": true
+    },
+    {
+      "game": "cut",
+      "phase": "last",
+      "size": [
+        1280,
+        900
+      ],
+      "stable": true,
+      "before": [
+        {
+          "width": 821,
+          "height": 472.0625,
+          "left": 113,
+          "right": 934,
+          "scroll": false
+        }
+      ],
+      "afterMove": [
+        {
+          "width": 821,
+          "height": 472.0625,
+          "left": 113,
+          "right": 934,
+          "scroll": false
+        }
+      ],
+      "notice": false,
+      "overflow": false,
+      "boardsVisible": true,
+      "moved": true
+    },
+    {
+      "game": "cut",
+      "phase": "last",
+      "size": [
+        390,
+        844
+      ],
+      "stable": true,
+      "before": [
+        {
+          "width": 345,
+          "height": 198.375,
+          "left": 15,
+          "right": 360,
+          "scroll": false
+        }
+      ],
+      "afterMove": [
+        {
+          "width": 345,
+          "height": 198.375,
+          "left": 15,
+          "right": 360,
+          "scroll": false
+        }
+      ],
+      "notice": false,
+      "overflow": false,
+      "boardsVisible": true,
+      "moved": true
+    },
+    {
+      "game": "cut",
+      "phase": "last",
+      "size": [
+        320,
+        568
+      ],
+      "stable": true,
+      "before": [
+        {
+          "width": 275,
+          "height": 158.125,
+          "left": 15,
+          "right": 290,
+          "scroll": false
+        }
+      ],
+      "afterMove": [
+        {
+          "width": 275,
+          "height": 158.125,
+          "left": 15,
+          "right": 290,
+          "scroll": false
+        }
+      ],
+      "notice": false,
+      "overflow": false,
+      "boardsVisible": true,
+      "moved": true
+    },
+    {
+      "game": "cut",
+      "phase": "last",
+      "size": [
+        844,
+        390
+      ],
+      "stable": true,
+      "before": [
+        {
+          "width": 467,
+          "height": 268.515625,
+          "left": 67,
+          "right": 534,
+          "scroll": false
+        }
+      ],
+      "afterMove": [
+        {
+          "width": 467,
+          "height": 268.515625,
+          "left": 67,
+          "right": 534,
+          "scroll": false
+        }
+      ],
+      "notice": false,
+      "overflow": false,
+      "boardsVisible": true,
+      "moved": true
+    },
+    {
+      "game": "elo",
+      "phase": "first",
+      "size": [
+        1280,
+        900
+      ],
+      "stable": true,
+      "before": [
+        {
+          "width": 660,
+          "height": 660,
+          "left": 193.5,
+          "right": 853.5,
+          "scroll": false
+        }
+      ],
+      "afterMove": [
+        {
+          "width": 660,
+          "height": 660,
+          "left": 193.5,
+          "right": 853.5,
+          "scroll": false
+        }
+      ],
+      "notice": false,
+      "overflow": false,
+      "boardsVisible": true,
+      "moved": true
+    },
+    {
+      "game": "elo",
+      "phase": "first",
+      "size": [
+        390,
+        844
+      ],
+      "stable": true,
+      "before": [
+        {
+          "width": 325,
+          "height": 325,
+          "left": 25,
+          "right": 350,
+          "scroll": false
+        }
+      ],
+      "afterMove": [
+        {
+          "width": 325,
+          "height": 325,
+          "left": 25,
+          "right": 350,
+          "scroll": false
+        }
+      ],
+      "notice": false,
+      "overflow": false,
+      "boardsVisible": true,
+      "moved": true
+    },
+    {
+      "game": "elo",
+      "phase": "first",
+      "size": [
+        320,
+        568
+      ],
+      "stable": true,
+      "before": [
+        {
+          "width": 255,
+          "height": 255,
+          "left": 25,
+          "right": 280,
+          "scroll": false
+        }
+      ],
+      "afterMove": [
+        {
+          "width": 255,
+          "height": 255,
+          "left": 25,
+          "right": 280,
+          "scroll": false
+        }
+      ],
+      "notice": false,
+      "overflow": false,
+      "boardsVisible": true,
+      "moved": true
+    },
+    {
+      "game": "elo",
+      "phase": "first",
+      "size": [
+        844,
+        390
+      ],
+      "stable": true,
+      "before": [
+        {
+          "width": 290,
+          "height": 290,
+          "left": 155.5,
+          "right": 445.5,
+          "scroll": false
+        }
+      ],
+      "afterMove": [
+        {
+          "width": 290,
+          "height": 290,
+          "left": 155.5,
+          "right": 445.5,
+          "scroll": false
+        }
+      ],
+      "notice": false,
+      "overflow": false,
+      "boardsVisible": true,
+      "moved": true
+    },
+    {
+      "game": "elo",
+      "phase": "last",
+      "size": [
+        1280,
+        900
+      ],
+      "stable": true,
+      "before": [
+        {
+          "width": 660,
+          "height": 660,
+          "left": 193.5,
+          "right": 853.5,
+          "scroll": false
+        }
+      ],
+      "afterMove": [
+        {
+          "width": 660,
+          "height": 660,
+          "left": 193.5,
+          "right": 853.5,
+          "scroll": false
+        }
+      ],
+      "notice": false,
+      "overflow": false,
+      "boardsVisible": true,
+      "moved": true
+    },
+    {
+      "game": "elo",
+      "phase": "last",
+      "size": [
+        390,
+        844
+      ],
+      "stable": true,
+      "before": [
+        {
+          "width": 325,
+          "height": 325,
+          "left": 25,
+          "right": 350,
+          "scroll": false
+        }
+      ],
+      "afterMove": [
+        {
+          "width": 325,
+          "height": 325,
+          "left": 25,
+          "right": 350,
+          "scroll": false
+        }
+      ],
+      "notice": false,
+      "overflow": false,
+      "boardsVisible": true,
+      "moved": true
+    },
+    {
+      "game": "elo",
+      "phase": "last",
+      "size": [
+        320,
+        568
+      ],
+      "stable": true,
+      "before": [
+        {
+          "width": 255,
+          "height": 255,
+          "left": 25,
+          "right": 280,
+          "scroll": false
+        }
+      ],
+      "afterMove": [
+        {
+          "width": 255,
+          "height": 255,
+          "left": 25,
+          "right": 280,
+          "scroll": false
+        }
+      ],
+      "notice": false,
+      "overflow": false,
+      "boardsVisible": true,
+      "moved": true
+    },
+    {
+      "game": "elo",
+      "phase": "last",
+      "size": [
+        844,
+        390
+      ],
+      "stable": true,
+      "before": [
+        {
+          "width": 290,
+          "height": 290,
+          "left": 155.5,
+          "right": 445.5,
+          "scroll": false
+        }
+      ],
+      "afterMove": [
+        {
+          "width": 290,
+          "height": 290,
+          "left": 155.5,
+          "right": 445.5,
+          "scroll": false
+        }
+      ],
+      "notice": false,
+      "overflow": false,
+      "boardsVisible": true,
+      "moved": true
+    },
+    {
+      "game": "prumo",
+      "phase": "first",
+      "size": [
+        1280,
+        900
+      ],
+      "stable": true,
+      "before": [
+        {
+          "width": 664,
+          "height": 664,
+          "left": 191.5,
+          "right": 855.5,
+          "scroll": false
+        }
+      ],
+      "afterMove": [
+        {
+          "width": 664,
+          "height": 664,
+          "left": 191.5,
+          "right": 855.5,
+          "scroll": false
+        }
+      ],
+      "notice": false,
+      "overflow": false,
+      "boardsVisible": true,
+      "moved": true
+    },
+    {
+      "game": "prumo",
+      "phase": "first",
+      "size": [
+        390,
+        844
+      ],
+      "stable": true,
+      "before": [
+        {
+          "width": 341,
+          "height": 341,
+          "left": 17,
+          "right": 358,
+          "scroll": false
+        }
+      ],
+      "afterMove": [
+        {
+          "width": 341,
+          "height": 341,
+          "left": 17,
+          "right": 358,
+          "scroll": false
+        }
+      ],
+      "notice": false,
+      "overflow": false,
+      "boardsVisible": true,
+      "moved": true
+    },
+    {
+      "game": "prumo",
+      "phase": "first",
+      "size": [
+        320,
+        568
+      ],
+      "stable": true,
+      "before": [
+        {
+          "width": 271,
+          "height": 271,
+          "left": 17,
+          "right": 288,
+          "scroll": false
+        }
+      ],
+      "afterMove": [
+        {
+          "width": 271,
+          "height": 271,
+          "left": 17,
+          "right": 288,
+          "scroll": false
+        }
+      ],
+      "notice": false,
+      "overflow": false,
+      "boardsVisible": true,
+      "moved": true
+    },
+    {
+      "game": "prumo",
+      "phase": "first",
+      "size": [
+        844,
+        390
+      ],
+      "stable": true,
+      "before": [
+        {
+          "width": 290,
+          "height": 290,
+          "left": 155.5,
+          "right": 445.5,
+          "scroll": false
+        }
+      ],
+      "afterMove": [
+        {
+          "width": 290,
+          "height": 290,
+          "left": 155.5,
+          "right": 445.5,
+          "scroll": false
+        }
+      ],
+      "notice": false,
+      "overflow": false,
+      "boardsVisible": true,
+      "moved": true
+    },
+    {
+      "game": "prumo",
+      "phase": "last",
+      "size": [
+        1280,
+        900
+      ],
+      "stable": true,
+      "before": [
+        {
+          "width": 664,
+          "height": 664,
+          "left": 191.5,
+          "right": 855.5,
+          "scroll": false
+        }
+      ],
+      "afterMove": [
+        {
+          "width": 664,
+          "height": 664,
+          "left": 191.5,
+          "right": 855.5,
+          "scroll": false
+        }
+      ],
+      "notice": false,
+      "overflow": false,
+      "boardsVisible": true,
+      "moved": true
+    },
+    {
+      "game": "prumo",
+      "phase": "last",
+      "size": [
+        390,
+        844
+      ],
+      "stable": true,
+      "before": [
+        {
+          "width": 341,
+          "height": 341,
+          "left": 17,
+          "right": 358,
+          "scroll": false
+        }
+      ],
+      "afterMove": [
+        {
+          "width": 341,
+          "height": 341,
+          "left": 17,
+          "right": 358,
+          "scroll": false
+        }
+      ],
+      "notice": false,
+      "overflow": false,
+      "boardsVisible": true,
+      "moved": true
+    },
+    {
+      "game": "prumo",
+      "phase": "last",
+      "size": [
+        320,
+        568
+      ],
+      "stable": true,
+      "before": [
+        {
+          "width": 271,
+          "height": 271,
+          "left": 17,
+          "right": 288,
+          "scroll": false
+        }
+      ],
+      "afterMove": [
+        {
+          "width": 271,
+          "height": 271,
+          "left": 17,
+          "right": 288,
+          "scroll": false
+        }
+      ],
+      "notice": false,
+      "overflow": false,
+      "boardsVisible": true,
+      "moved": true
+    },
+    {
+      "game": "prumo",
+      "phase": "last",
+      "size": [
+        844,
+        390
+      ],
+      "stable": true,
+      "before": [
+        {
+          "width": 290,
+          "height": 290,
+          "left": 155.5,
+          "right": 445.5,
+          "scroll": false
+        }
+      ],
+      "afterMove": [
+        {
+          "width": 290,
+          "height": 290,
+          "left": 155.5,
+          "right": 445.5,
+          "scroll": false
+        }
+      ],
+      "notice": false,
+      "overflow": false,
+      "boardsVisible": true,
+      "moved": true
+    },
+    {
+      "game": "pacto",
+      "phase": "first",
+      "size": [
+        1280,
+        900
+      ],
+      "stable": true,
+      "before": [
+        {
+          "width": 664,
+          "height": 664,
+          "left": 191.5,
+          "right": 855.5,
+          "scroll": false
+        }
+      ],
+      "afterMove": [
+        {
+          "width": 664,
+          "height": 664,
+          "left": 191.5,
+          "right": 855.5,
+          "scroll": false
+        }
+      ],
+      "notice": false,
+      "overflow": false,
+      "boardsVisible": true,
+      "moved": true
+    },
+    {
+      "game": "pacto",
+      "phase": "first",
+      "size": [
+        390,
+        844
+      ],
+      "stable": true,
+      "before": [
+        {
+          "width": 341,
+          "height": 341,
+          "left": 17,
+          "right": 358,
+          "scroll": false
+        }
+      ],
+      "afterMove": [
+        {
+          "width": 341,
+          "height": 341,
+          "left": 17,
+          "right": 358,
+          "scroll": false
+        }
+      ],
+      "notice": false,
+      "overflow": false,
+      "boardsVisible": true,
+      "moved": true
+    },
+    {
+      "game": "pacto",
+      "phase": "first",
+      "size": [
+        320,
+        568
+      ],
+      "stable": true,
+      "before": [
+        {
+          "width": 271,
+          "height": 271,
+          "left": 17,
+          "right": 288,
+          "scroll": false
+        }
+      ],
+      "afterMove": [
+        {
+          "width": 271,
+          "height": 271,
+          "left": 17,
+          "right": 288,
+          "scroll": false
+        }
+      ],
+      "notice": false,
+      "overflow": false,
+      "boardsVisible": true,
+      "moved": true
+    },
+    {
+      "game": "pacto",
+      "phase": "first",
+      "size": [
+        844,
+        390
+      ],
+      "stable": true,
+      "before": [
+        {
+          "width": 290,
+          "height": 290,
+          "left": 155.5,
+          "right": 445.5,
+          "scroll": false
+        }
+      ],
+      "afterMove": [
+        {
+          "width": 290,
+          "height": 290,
+          "left": 155.5,
+          "right": 445.5,
+          "scroll": false
+        }
+      ],
+      "notice": false,
+      "overflow": false,
+      "boardsVisible": true,
+      "moved": true
+    },
+    {
+      "game": "pacto",
+      "phase": "last",
+      "size": [
+        1280,
+        900
+      ],
+      "stable": true,
+      "before": [
+        {
+          "width": 664,
+          "height": 664,
+          "left": 191.5,
+          "right": 855.5,
+          "scroll": false
+        }
+      ],
+      "afterMove": [
+        {
+          "width": 664,
+          "height": 664,
+          "left": 191.5,
+          "right": 855.5,
+          "scroll": false
+        }
+      ],
+      "notice": false,
+      "overflow": false,
+      "boardsVisible": true,
+      "moved": true
+    },
+    {
+      "game": "pacto",
+      "phase": "last",
+      "size": [
+        390,
+        844
+      ],
+      "stable": true,
+      "before": [
+        {
+          "width": 341,
+          "height": 341,
+          "left": 17,
+          "right": 358,
+          "scroll": false
+        }
+      ],
+      "afterMove": [
+        {
+          "width": 341,
+          "height": 341,
+          "left": 17,
+          "right": 358,
+          "scroll": false
+        }
+      ],
+      "notice": false,
+      "overflow": false,
+      "boardsVisible": true,
+      "moved": true
+    },
+    {
+      "game": "pacto",
+      "phase": "last",
+      "size": [
+        320,
+        568
+      ],
+      "stable": true,
+      "before": [
+        {
+          "width": 271,
+          "height": 271,
+          "left": 17,
+          "right": 288,
+          "scroll": false
+        }
+      ],
+      "afterMove": [
+        {
+          "width": 271,
+          "height": 271,
+          "left": 17,
+          "right": 288,
+          "scroll": false
+        }
+      ],
+      "notice": false,
+      "overflow": false,
+      "boardsVisible": true,
+      "moved": true
+    },
+    {
+      "game": "pacto",
+      "phase": "last",
+      "size": [
+        844,
+        390
+      ],
+      "stable": true,
+      "before": [
+        {
+          "width": 290,
+          "height": 290,
+          "left": 155.5,
+          "right": 445.5,
+          "scroll": false
+        }
+      ],
+      "afterMove": [
+        {
+          "width": 290,
+          "height": 290,
+          "left": 155.5,
+          "right": 445.5,
+          "scroll": false
+        }
+      ],
+      "notice": false,
+      "overflow": false,
+      "boardsVisible": true,
+      "moved": true
+    },
+    {
+      "game": "sintonia",
+      "phase": "first",
+      "size": [
+        1280,
+        900
+      ],
+      "stable": true,
+      "before": [
+        {
+          "width": 468,
+          "height": 260.1875,
+          "left": 132.5,
+          "right": 600.5,
+          "scroll": false
+        }
+      ],
+      "afterMove": [
+        {
+          "width": 468,
+          "height": 260.1875,
+          "left": 132.5,
+          "right": 600.5,
+          "scroll": false
+        }
+      ],
+      "notice": false,
+      "overflow": false,
+      "boardsVisible": true,
+      "moved": true
+    },
+    {
+      "game": "sintonia",
+      "phase": "first",
+      "size": [
+        390,
+        844
+      ],
+      "stable": true,
+      "before": [
+        {
+          "width": 337,
+          "height": 200.296875,
+          "left": 19,
+          "right": 356,
+          "scroll": false
+        }
+      ],
+      "afterMove": [
+        {
+          "width": 337,
+          "height": 200.296875,
+          "left": 19,
+          "right": 356,
+          "scroll": false
+        }
+      ],
+      "notice": false,
+      "overflow": false,
+      "boardsVisible": true,
+      "moved": true
+    },
+    {
+      "game": "sintonia",
+      "phase": "first",
+      "size": [
+        320,
+        568
+      ],
+      "stable": true,
+      "before": [
+        {
+          "width": 267,
+          "height": 165.890625,
+          "left": 19,
+          "right": 286,
+          "scroll": false
+        }
+      ],
+      "afterMove": [
+        {
+          "width": 267,
+          "height": 165.890625,
+          "left": 19,
+          "right": 286,
+          "scroll": false
+        }
+      ],
+      "notice": false,
+      "overflow": false,
+      "boardsVisible": true,
+      "moved": true
+    },
+    {
+      "game": "sintonia",
+      "phase": "first",
+      "size": [
+        844,
+        390
+      ],
+      "stable": true,
+      "before": [
+        {
+          "width": 459,
+          "height": 259.6875,
+          "left": 71,
+          "right": 530,
+          "scroll": false
+        }
+      ],
+      "afterMove": [
+        {
+          "width": 459,
+          "height": 259.6875,
+          "left": 71,
+          "right": 530,
+          "scroll": false
+        }
+      ],
+      "notice": false,
+      "overflow": false,
+      "boardsVisible": true,
+      "moved": true
+    },
+    {
+      "game": "sintonia",
+      "phase": "last",
+      "size": [
+        1280,
+        900
+      ],
+      "stable": true,
+      "before": [
+        {
+          "width": 356,
+          "height": 424.375,
+          "left": 188.5,
+          "right": 544.5,
+          "scroll": false
+        }
+      ],
+      "afterMove": [
+        {
+          "width": 356,
+          "height": 424.375,
+          "left": 188.5,
+          "right": 544.5,
+          "scroll": false
+        }
+      ],
+      "notice": false,
+      "overflow": false,
+      "boardsVisible": true,
+      "moved": true
+    },
+    {
+      "game": "sintonia",
+      "phase": "last",
+      "size": [
+        390,
+        844
+      ],
+      "stable": true,
+      "before": [
+        {
+          "width": 337,
+          "height": 416.59375,
+          "left": 19,
+          "right": 356,
+          "scroll": false
+        }
+      ],
+      "afterMove": [
+        {
+          "width": 337,
+          "height": 416.59375,
+          "left": 19,
+          "right": 356,
+          "scroll": false
+        }
+      ],
+      "notice": false,
+      "overflow": false,
+      "boardsVisible": true,
+      "moved": true
+    },
+    {
+      "game": "sintonia",
+      "phase": "last",
+      "size": [
+        320,
+        568
+      ],
+      "stable": true,
+      "before": [
+        {
+          "width": 267,
+          "height": 344.78125,
+          "left": 19,
+          "right": 286,
+          "scroll": false
+        }
+      ],
+      "afterMove": [
+        {
+          "width": 267,
+          "height": 344.78125,
+          "left": 19,
+          "right": 286,
+          "scroll": false
+        }
+      ],
+      "notice": false,
+      "overflow": false,
+      "boardsVisible": true,
+      "moved": true
+    },
+    {
+      "game": "sintonia",
+      "phase": "last",
+      "size": [
+        844,
+        390
+      ],
+      "stable": true,
+      "before": [
+        {
+          "width": 243,
+          "height": 311.375,
+          "left": 179,
+          "right": 422,
+          "scroll": false
+        }
+      ],
+      "afterMove": [
+        {
+          "width": 243,
+          "height": 311.375,
+          "left": 179,
+          "right": 422,
+          "scroll": false
+        }
+      ],
+      "notice": false,
+      "overflow": false,
+      "boardsVisible": true,
+      "moved": true
+    },
+    {
+      "game": "repasse",
+      "phase": "first",
+      "size": [
+        1280,
+        900
+      ],
+      "stable": true,
+      "before": [
+        {
+          "width": 176,
+          "height": 176,
+          "left": 435.5,
+          "right": 611.5,
+          "scroll": true
+        }
+      ],
+      "afterMove": [
+        {
+          "width": 176,
+          "height": 176,
+          "left": 435.5,
+          "right": 611.5,
+          "scroll": false
+        }
+      ],
+      "notice": false,
+      "overflow": false,
+      "boardsVisible": true,
+      "moved": true
+    },
+    {
+      "game": "repasse",
+      "phase": "first",
+      "size": [
+        390,
+        844
+      ],
+      "stable": true,
+      "before": [
+        {
+          "width": 124,
+          "height": 124,
+          "left": 125.5,
+          "right": 249.5,
+          "scroll": true
+        }
+      ],
+      "afterMove": [
+        {
+          "width": 124,
+          "height": 124,
+          "left": 125.5,
+          "right": 249.5,
+          "scroll": false
+        }
+      ],
+      "notice": false,
+      "overflow": false,
+      "boardsVisible": true,
+      "moved": true
+    },
+    {
+      "game": "repasse",
+      "phase": "first",
+      "size": [
+        320,
+        568
+      ],
+      "stable": true,
+      "before": [
+        {
+          "width": 124,
+          "height": 124,
+          "left": 90.5,
+          "right": 214.5,
+          "scroll": true
+        }
+      ],
+      "afterMove": [
+        {
+          "width": 124,
+          "height": 124,
+          "left": 90.5,
+          "right": 214.5,
+          "scroll": false
+        }
+      ],
+      "notice": false,
+      "overflow": false,
+      "boardsVisible": true,
+      "moved": true
+    },
+    {
+      "game": "repasse",
+      "phase": "first",
+      "size": [
+        844,
+        390
+      ],
+      "stable": true,
+      "before": [
+        {
+          "width": 176,
+          "height": 176,
+          "left": 212.5,
+          "right": 388.5,
+          "scroll": true
+        }
+      ],
+      "afterMove": [
+        {
+          "width": 176,
+          "height": 176,
+          "left": 212.5,
+          "right": 388.5,
+          "scroll": false
+        }
+      ],
+      "notice": false,
+      "overflow": false,
+      "boardsVisible": true,
+      "moved": true
+    },
+    {
+      "game": "repasse",
+      "phase": "last",
+      "size": [
+        1280,
+        900
+      ],
+      "stable": true,
+      "before": [
+        {
+          "width": 340,
+          "height": 428.375,
+          "left": 353.5,
+          "right": 693.5,
+          "scroll": true
+        }
+      ],
+      "afterMove": [
+        {
+          "width": 340,
+          "height": 428.375,
+          "left": 353.5,
+          "right": 693.5,
+          "scroll": false
+        }
+      ],
+      "notice": false,
+      "overflow": false,
+      "boardsVisible": true,
+      "moved": true
+    },
+    {
+      "game": "repasse",
+      "phase": "last",
+      "size": [
+        390,
+        844
+      ],
+      "stable": true,
+      "before": [
+        {
+          "width": 236,
+          "height": 297.6875,
+          "left": 69.5,
+          "right": 305.5,
+          "scroll": true
+        }
+      ],
+      "afterMove": [
+        {
+          "width": 236,
+          "height": 297.6875,
+          "left": 69.5,
+          "right": 305.5,
+          "scroll": false
+        }
+      ],
+      "notice": false,
+      "overflow": false,
+      "boardsVisible": true,
+      "moved": true
+    },
+    {
+      "game": "repasse",
+      "phase": "last",
+      "size": [
+        320,
+        568
+      ],
+      "stable": true,
+      "before": [
+        {
+          "width": 236,
+          "height": 297.6875,
+          "left": 34.5,
+          "right": 270.5,
+          "scroll": true
+        }
+      ],
+      "afterMove": [
+        {
+          "width": 236,
+          "height": 297.6875,
+          "left": 34.5,
+          "right": 270.5,
+          "scroll": false
+        }
+      ],
+      "notice": false,
+      "overflow": false,
+      "boardsVisible": true,
+      "moved": true
+    },
+    {
+      "game": "repasse",
+      "phase": "last",
+      "size": [
+        844,
+        390
+      ],
+      "stable": true,
+      "before": [
+        {
+          "width": 229,
+          "height": 281.8125,
+          "left": 186,
+          "right": 415,
+          "scroll": true
+        }
+      ],
+      "afterMove": [
+        {
+          "width": 229,
+          "height": 281.8125,
+          "left": 186,
+          "right": 415,
+          "scroll": false
+        }
+      ],
+      "notice": false,
+      "overflow": false,
+      "boardsVisible": true,
+      "moved": true
+    },
+    {
+      "game": "pulso",
+      "phase": "first",
+      "size": [
+        1280,
+        900
+      ],
+      "stable": true,
+      "before": [
+        {
+          "width": 700,
+          "height": 428.203125,
+          "left": 173.5,
+          "right": 873.5,
+          "scroll": false
+        }
+      ],
+      "afterMove": [
+        {
+          "width": 700,
+          "height": 428.203125,
+          "left": 173.5,
+          "right": 873.5,
+          "scroll": false
+        }
+      ],
+      "notice": false,
+      "overflow": false,
+      "boardsVisible": true,
+      "moved": true
+    },
+    {
+      "game": "pulso",
+      "phase": "first",
+      "size": [
+        390,
+        844
+      ],
+      "stable": true,
+      "before": [
+        {
+          "width": 345,
+          "height": 211.03125,
+          "left": 15,
+          "right": 360,
+          "scroll": false
+        }
+      ],
+      "afterMove": [
+        {
+          "width": 345,
+          "height": 211.03125,
+          "left": 15,
+          "right": 360,
+          "scroll": false
+        }
+      ],
+      "notice": false,
+      "overflow": false,
+      "boardsVisible": true,
+      "moved": true
+    },
+    {
+      "game": "pulso",
+      "phase": "first",
+      "size": [
+        320,
+        568
+      ],
+      "stable": true,
+      "before": [
+        {
+          "width": 275,
+          "height": 168.21875,
+          "left": 15,
+          "right": 290,
+          "scroll": false
+        }
+      ],
+      "afterMove": [
+        {
+          "width": 275,
+          "height": 168.21875,
+          "left": 15,
+          "right": 290,
+          "scroll": false
+        }
+      ],
+      "notice": false,
+      "overflow": false,
+      "boardsVisible": true,
+      "moved": true
+    },
+    {
+      "game": "pulso",
+      "phase": "first",
+      "size": [
+        844,
+        390
+      ],
+      "stable": true,
+      "before": [
+        {
+          "width": 467,
+          "height": 285.671875,
+          "left": 67,
+          "right": 534,
+          "scroll": false
+        }
+      ],
+      "afterMove": [
+        {
+          "width": 467,
+          "height": 285.671875,
+          "left": 67,
+          "right": 534,
+          "scroll": false
+        }
+      ],
+      "notice": false,
+      "overflow": false,
+      "boardsVisible": true,
+      "moved": true
+    },
+    {
+      "game": "pulso",
+      "phase": "last",
+      "size": [
+        1280,
+        900
+      ],
+      "stable": true,
+      "before": [
+        {
+          "width": 700,
+          "height": 474.453125,
+          "left": 173.5,
+          "right": 873.5,
+          "scroll": false
+        }
+      ],
+      "afterMove": [
+        {
+          "width": 700,
+          "height": 474.453125,
+          "left": 173.5,
+          "right": 873.5,
+          "scroll": false
+        }
+      ],
+      "notice": false,
+      "overflow": false,
+      "boardsVisible": true,
+      "moved": true
+    },
+    {
+      "game": "pulso",
+      "phase": "last",
+      "size": [
+        390,
+        844
+      ],
+      "stable": true,
+      "before": [
+        {
+          "width": 345,
+          "height": 233.84375,
+          "left": 15,
+          "right": 360,
+          "scroll": false
+        }
+      ],
+      "afterMove": [
+        {
+          "width": 345,
+          "height": 233.84375,
+          "left": 15,
+          "right": 360,
+          "scroll": false
+        }
+      ],
+      "notice": false,
+      "overflow": false,
+      "boardsVisible": true,
+      "moved": true
+    },
+    {
+      "game": "pulso",
+      "phase": "last",
+      "size": [
+        320,
+        568
+      ],
+      "stable": true,
+      "before": [
+        {
+          "width": 275,
+          "height": 186.390625,
+          "left": 15,
+          "right": 290,
+          "scroll": false
+        }
+      ],
+      "afterMove": [
+        {
+          "width": 275,
+          "height": 186.390625,
+          "left": 15,
+          "right": 290,
+          "scroll": false
+        }
+      ],
+      "notice": false,
+      "overflow": false,
+      "boardsVisible": true,
+      "moved": true
+    },
+    {
+      "game": "pulso",
+      "phase": "last",
+      "size": [
+        844,
+        390
+      ],
+      "stable": true,
+      "before": [
+        {
+          "width": 427,
+          "height": 289.421875,
+          "left": 87,
+          "right": 514,
+          "scroll": false
+        }
+      ],
+      "afterMove": [
+        {
+          "width": 427,
+          "height": 289.421875,
+          "left": 87,
+          "right": 514,
+          "scroll": false
+        }
+      ],
+      "notice": false,
+      "overflow": false,
+      "boardsVisible": true,
+      "moved": true
+    },
+    {
+      "game": "foz",
+      "phase": "first",
+      "size": [
+        1280,
+        900
+      ],
+      "stable": true,
+      "before": [
+        {
+          "width": 700,
+          "height": 684.21875,
+          "left": 173.5,
+          "right": 873.5,
+          "scroll": false
+        }
+      ],
+      "afterMove": [
+        {
+          "width": 700,
+          "height": 684.21875,
+          "left": 173.5,
+          "right": 873.5,
+          "scroll": false
+        }
+      ],
+      "notice": false,
+      "overflow": false,
+      "boardsVisible": true,
+      "moved": true
+    },
+    {
+      "game": "foz",
+      "phase": "first",
+      "size": [
+        390,
+        844
+      ],
+      "stable": true,
+      "before": [
+        {
+          "width": 345,
+          "height": 337.21875,
+          "left": 15,
+          "right": 360,
+          "scroll": false
+        }
+      ],
+      "afterMove": [
+        {
+          "width": 345,
+          "height": 337.21875,
+          "left": 15,
+          "right": 360,
+          "scroll": false
+        }
+      ],
+      "notice": false,
+      "overflow": false,
+      "boardsVisible": true,
+      "moved": true
+    },
+    {
+      "game": "foz",
+      "phase": "first",
+      "size": [
+        320,
+        568
+      ],
+      "stable": true,
+      "before": [
+        {
+          "width": 275,
+          "height": 268.796875,
+          "left": 15,
+          "right": 290,
+          "scroll": false
+        }
+      ],
+      "afterMove": [
+        {
+          "width": 275,
+          "height": 268.796875,
+          "left": 15,
+          "right": 290,
+          "scroll": false
+        }
+      ],
+      "notice": false,
+      "overflow": false,
+      "boardsVisible": true,
+      "moved": true
+    },
+    {
+      "game": "foz",
+      "phase": "first",
+      "size": [
+        844,
+        390
+      ],
+      "stable": true,
+      "before": [
+        {
+          "width": 296,
+          "height": 289.328125,
+          "left": 152.5,
+          "right": 448.5,
+          "scroll": false
+        }
+      ],
+      "afterMove": [
+        {
+          "width": 296,
+          "height": 289.328125,
+          "left": 152.5,
+          "right": 448.5,
+          "scroll": false
+        }
+      ],
+      "notice": false,
+      "overflow": false,
+      "boardsVisible": true,
+      "moved": true
+    },
+    {
+      "game": "foz",
+      "phase": "last",
+      "size": [
+        1280,
+        900
+      ],
+      "stable": true,
+      "before": [
+        {
+          "width": 700,
+          "height": 687.40625,
+          "left": 173.5,
+          "right": 873.5,
+          "scroll": false
+        }
+      ],
+      "afterMove": [
+        {
+          "width": 700,
+          "height": 687.40625,
+          "left": 173.5,
+          "right": 873.5,
+          "scroll": false
+        }
+      ],
+      "notice": false,
+      "overflow": false,
+      "boardsVisible": true,
+      "moved": true
+    },
+    {
+      "game": "foz",
+      "phase": "last",
+      "size": [
+        390,
+        844
+      ],
+      "stable": true,
+      "before": [
+        {
+          "width": 345,
+          "height": 338.78125,
+          "left": 15,
+          "right": 360,
+          "scroll": false
+        }
+      ],
+      "afterMove": [
+        {
+          "width": 345,
+          "height": 338.78125,
+          "left": 15,
+          "right": 360,
+          "scroll": false
+        }
+      ],
+      "notice": false,
+      "overflow": false,
+      "boardsVisible": true,
+      "moved": true
+    },
+    {
+      "game": "foz",
+      "phase": "last",
+      "size": [
+        320,
+        568
+      ],
+      "stable": true,
+      "before": [
+        {
+          "width": 275,
+          "height": 270.046875,
+          "left": 15,
+          "right": 290,
+          "scroll": false
+        }
+      ],
+      "afterMove": [
+        {
+          "width": 275,
+          "height": 270.046875,
+          "left": 15,
+          "right": 290,
+          "scroll": false
+        }
+      ],
+      "notice": false,
+      "overflow": false,
+      "boardsVisible": true,
+      "moved": true
+    },
+    {
+      "game": "foz",
+      "phase": "last",
+      "size": [
+        844,
+        390
+      ],
+      "stable": true,
+      "before": [
+        {
+          "width": 295,
+          "height": 289.6875,
+          "left": 153,
+          "right": 448,
+          "scroll": false
+        }
+      ],
+      "afterMove": [
+        {
+          "width": 295,
+          "height": 289.6875,
+          "left": 153,
+          "right": 448,
+          "scroll": false
+        }
+      ],
+      "notice": false,
+      "overflow": false,
+      "boardsVisible": true,
+      "moved": true
+    },
+    {
+      "game": "refugio",
+      "phase": "first",
+      "size": [
+        1280,
+        900
+      ],
+      "stable": true,
+      "before": [
+        {
+          "width": 560,
+          "height": 589,
+          "left": 243.5,
+          "right": 803.5,
+          "scroll": false
+        }
+      ],
+      "afterMove": [
+        {
+          "width": 560,
+          "height": 589,
+          "left": 243.5,
+          "right": 803.5,
+          "scroll": false
+        }
+      ],
+      "notice": false,
+      "overflow": false,
+      "boardsVisible": true,
+      "moved": true
+    },
+    {
+      "game": "refugio",
+      "phase": "first",
+      "size": [
+        390,
+        844
+      ],
+      "stable": true,
+      "before": [
+        {
+          "width": 345,
+          "height": 362.859375,
+          "left": 15,
+          "right": 360,
+          "scroll": false
+        }
+      ],
+      "afterMove": [
+        {
+          "width": 345,
+          "height": 362.859375,
+          "left": 15,
+          "right": 360,
+          "scroll": false
+        }
+      ],
+      "notice": false,
+      "overflow": false,
+      "boardsVisible": true,
+      "moved": true
+    },
+    {
+      "game": "refugio",
+      "phase": "first",
+      "size": [
+        320,
+        568
+      ],
+      "stable": true,
+      "before": [
+        {
+          "width": 275,
+          "height": 289.234375,
+          "left": 15,
+          "right": 290,
+          "scroll": false
+        }
+      ],
+      "afterMove": [
+        {
+          "width": 275,
+          "height": 289.234375,
+          "left": 15,
+          "right": 290,
+          "scroll": false
+        }
+      ],
+      "notice": false,
+      "overflow": false,
+      "boardsVisible": true,
+      "moved": true
+    },
+    {
+      "game": "refugio",
+      "phase": "first",
+      "size": [
+        844,
+        390
+      ],
+      "stable": true,
+      "before": [
+        {
+          "width": 275,
+          "height": 289.234375,
+          "left": 163,
+          "right": 438,
+          "scroll": false
+        }
+      ],
+      "afterMove": [
+        {
+          "width": 275,
+          "height": 289.234375,
+          "left": 163,
+          "right": 438,
+          "scroll": false
+        }
+      ],
+      "notice": false,
+      "overflow": false,
+      "boardsVisible": true,
+      "moved": true
+    },
+    {
+      "game": "refugio",
+      "phase": "last",
+      "size": [
+        1280,
+        900
+      ],
+      "stable": true,
+      "before": [
+        {
+          "width": 560,
+          "height": 641,
+          "left": 243.5,
+          "right": 803.5,
+          "scroll": false
+        }
+      ],
+      "afterMove": [
+        {
+          "width": 560,
+          "height": 641,
+          "left": 243.5,
+          "right": 803.5,
+          "scroll": false
+        }
+      ],
+      "notice": false,
+      "overflow": false,
+      "boardsVisible": true,
+      "moved": true
+    },
+    {
+      "game": "refugio",
+      "phase": "last",
+      "size": [
+        390,
+        844
+      ],
+      "stable": true,
+      "before": [
+        {
+          "width": 345,
+          "height": 394.890625,
+          "left": 15,
+          "right": 360,
+          "scroll": false
+        }
+      ],
+      "afterMove": [
+        {
+          "width": 345,
+          "height": 394.890625,
+          "left": 15,
+          "right": 360,
+          "scroll": false
+        }
+      ],
+      "notice": false,
+      "overflow": false,
+      "boardsVisible": true,
+      "moved": true
+    },
+    {
+      "game": "refugio",
+      "phase": "last",
+      "size": [
+        320,
+        568
+      ],
+      "stable": true,
+      "before": [
+        {
+          "width": 275,
+          "height": 314.765625,
+          "left": 15,
+          "right": 290,
+          "scroll": false
+        }
+      ],
+      "afterMove": [
+        {
+          "width": 275,
+          "height": 314.765625,
+          "left": 15,
+          "right": 290,
+          "scroll": false
+        }
+      ],
+      "notice": false,
+      "overflow": false,
+      "boardsVisible": true,
+      "moved": true
+    },
+    {
+      "game": "refugio",
+      "phase": "last",
+      "size": [
+        844,
+        390
+      ],
+      "stable": true,
+      "before": [
+        {
+          "width": 253,
+          "height": 289.59375,
+          "left": 174,
+          "right": 427,
+          "scroll": false
+        }
+      ],
+      "afterMove": [
+        {
+          "width": 253,
+          "height": 289.59375,
+          "left": 174,
+          "right": 427,
+          "scroll": false
+        }
+      ],
+      "notice": false,
+      "overflow": false,
+      "boardsVisible": true,
+      "moved": true
+    },
+    {
+      "game": "mirante",
+      "phase": "first",
+      "size": [
+        1280,
+        900
+      ],
+      "stable": true,
+      "before": [
+        {
+          "width": 580,
+          "height": 699.40625,
+          "left": 233.5,
+          "right": 813.5,
+          "scroll": false
+        }
+      ],
+      "afterMove": [
+        {
+          "width": 580,
+          "height": 699.40625,
+          "left": 233.5,
+          "right": 813.5,
+          "scroll": false
+        }
+      ],
+      "notice": false,
+      "overflow": false,
+      "boardsVisible": true,
+      "moved": true
+    },
+    {
+      "game": "mirante",
+      "phase": "first",
+      "size": [
+        390,
+        844
+      ],
+      "stable": true,
+      "before": [
+        {
+          "width": 341,
+          "height": 411.203125,
+          "left": 17,
+          "right": 358,
+          "scroll": false
+        }
+      ],
+      "afterMove": [
+        {
+          "width": 341,
+          "height": 411.203125,
+          "left": 17,
+          "right": 358,
+          "scroll": false
+        }
+      ],
+      "notice": false,
+      "overflow": false,
+      "boardsVisible": true,
+      "moved": true
+    },
+    {
+      "game": "mirante",
+      "phase": "first",
+      "size": [
+        320,
+        568
+      ],
+      "stable": true,
+      "before": [
+        {
+          "width": 271,
+          "height": 326.78125,
+          "left": 17,
+          "right": 288,
+          "scroll": false
+        }
+      ],
+      "afterMove": [
+        {
+          "width": 271,
+          "height": 326.78125,
+          "left": 17,
+          "right": 288,
+          "scroll": false
+        }
+      ],
+      "notice": false,
+      "overflow": false,
+      "boardsVisible": true,
+      "moved": true
+    },
+    {
+      "game": "mirante",
+      "phase": "first",
+      "size": [
+        844,
+        390
+      ],
+      "stable": true,
+      "before": [
+        {
+          "width": 240,
+          "height": 289.40625,
+          "left": 180.5,
+          "right": 420.5,
+          "scroll": false
+        }
+      ],
+      "afterMove": [
+        {
+          "width": 240,
+          "height": 289.40625,
+          "left": 180.5,
+          "right": 420.5,
+          "scroll": false
+        }
+      ],
+      "notice": false,
+      "overflow": false,
+      "boardsVisible": true,
+      "moved": true
+    },
+    {
+      "game": "mirante",
+      "phase": "last",
+      "size": [
+        1280,
+        900
+      ],
+      "stable": true,
+      "before": [
+        {
+          "width": 580,
+          "height": 604.5625,
+          "left": 233.5,
+          "right": 813.5,
+          "scroll": false
+        }
+      ],
+      "afterMove": [
+        {
+          "width": 580,
+          "height": 604.5625,
+          "left": 233.5,
+          "right": 813.5,
+          "scroll": false
+        }
+      ],
+      "notice": false,
+      "overflow": false,
+      "boardsVisible": true,
+      "moved": true
+    },
+    {
+      "game": "mirante",
+      "phase": "last",
+      "size": [
+        390,
+        844
+      ],
+      "stable": true,
+      "before": [
+        {
+          "width": 341,
+          "height": 355.4375,
+          "left": 17,
+          "right": 358,
+          "scroll": false
+        }
+      ],
+      "afterMove": [
+        {
+          "width": 341,
+          "height": 355.4375,
+          "left": 17,
+          "right": 358,
+          "scroll": false
+        }
+      ],
+      "notice": false,
+      "overflow": false,
+      "boardsVisible": true,
+      "moved": true
+    },
+    {
+      "game": "mirante",
+      "phase": "last",
+      "size": [
+        320,
+        568
+      ],
+      "stable": true,
+      "before": [
+        {
+          "width": 271,
+          "height": 282.46875,
+          "left": 17,
+          "right": 288,
+          "scroll": false
+        }
+      ],
+      "afterMove": [
+        {
+          "width": 271,
+          "height": 282.46875,
+          "left": 17,
+          "right": 288,
+          "scroll": false
+        }
+      ],
+      "notice": false,
+      "overflow": false,
+      "boardsVisible": true,
+      "moved": true
+    },
+    {
+      "game": "mirante",
+      "phase": "last",
+      "size": [
+        844,
+        390
+      ],
+      "stable": true,
+      "before": [
+        {
+          "width": 278,
+          "height": 289.765625,
+          "left": 161.5,
+          "right": 439.5,
+          "scroll": false
+        }
+      ],
+      "afterMove": [
+        {
+          "width": 278,
+          "height": 289.765625,
+          "left": 161.5,
+          "right": 439.5,
+          "scroll": false
+        }
+      ],
+      "notice": false,
+      "overflow": false,
+      "boardsVisible": true,
+      "moved": true
+    },
+    {
+      "game": "renovo",
+      "phase": "first",
+      "size": [
+        1280,
+        900
+      ],
+      "stable": true,
+      "before": [
+        {
+          "width": 700,
+          "height": 744.796875,
+          "left": 173.5,
+          "right": 873.5,
+          "scroll": false
+        }
+      ],
+      "afterMove": [
+        {
+          "width": 700,
+          "height": 744.796875,
+          "left": 173.5,
+          "right": 873.5,
+          "scroll": false
+        }
+      ],
+      "notice": false,
+      "overflow": false,
+      "boardsVisible": true,
+      "moved": true
+    },
+    {
+      "game": "renovo",
+      "phase": "first",
+      "size": [
+        390,
+        844
+      ],
+      "stable": true,
+      "before": [
+        {
+          "width": 345,
+          "height": 367.078125,
+          "left": 15,
+          "right": 360,
+          "scroll": false
+        }
+      ],
+      "afterMove": [
+        {
+          "width": 345,
+          "height": 367.078125,
+          "left": 15,
+          "right": 360,
+          "scroll": false
+        }
+      ],
+      "notice": false,
+      "overflow": false,
+      "boardsVisible": true,
+      "moved": true
+    },
+    {
+      "game": "renovo",
+      "phase": "first",
+      "size": [
+        320,
+        568
+      ],
+      "stable": true,
+      "before": [
+        {
+          "width": 275,
+          "height": 292.59375,
+          "left": 15,
+          "right": 290,
+          "scroll": false
+        }
+      ],
+      "afterMove": [
+        {
+          "width": 275,
+          "height": 292.59375,
+          "left": 15,
+          "right": 290,
+          "scroll": false
+        }
+      ],
+      "notice": false,
+      "overflow": false,
+      "boardsVisible": true,
+      "moved": true
+    },
+    {
+      "game": "renovo",
+      "phase": "first",
+      "size": [
+        844,
+        390
+      ],
+      "stable": true,
+      "before": [
+        {
+          "width": 272,
+          "height": 289.40625,
+          "left": 164.5,
+          "right": 436.5,
+          "scroll": false
+        }
+      ],
+      "afterMove": [
+        {
+          "width": 272,
+          "height": 289.40625,
+          "left": 164.5,
+          "right": 436.5,
+          "scroll": false
+        }
+      ],
+      "notice": false,
+      "overflow": false,
+      "boardsVisible": true,
+      "moved": true
+    },
+    {
+      "game": "renovo",
+      "phase": "last",
+      "size": [
+        1280,
+        900
+      ],
+      "stable": true,
+      "before": [
+        {
+          "width": 700,
+          "height": 661.6875,
+          "left": 173.5,
+          "right": 873.5,
+          "scroll": false
+        }
+      ],
+      "afterMove": [
+        {
+          "width": 700,
+          "height": 661.6875,
+          "left": 173.5,
+          "right": 873.5,
+          "scroll": false
+        }
+      ],
+      "notice": false,
+      "overflow": false,
+      "boardsVisible": true,
+      "moved": true
+    },
+    {
+      "game": "renovo",
+      "phase": "last",
+      "size": [
+        390,
+        844
+      ],
+      "stable": true,
+      "before": [
+        {
+          "width": 345,
+          "height": 326.109375,
+          "left": 15,
+          "right": 360,
+          "scroll": false
+        }
+      ],
+      "afterMove": [
+        {
+          "width": 345,
+          "height": 326.109375,
+          "left": 15,
+          "right": 360,
+          "scroll": false
+        }
+      ],
+      "notice": false,
+      "overflow": false,
+      "boardsVisible": true,
+      "moved": true
+    },
+    {
+      "game": "renovo",
+      "phase": "last",
+      "size": [
+        320,
+        568
+      ],
+      "stable": true,
+      "before": [
+        {
+          "width": 275,
+          "height": 259.9375,
+          "left": 15,
+          "right": 290,
+          "scroll": false
+        }
+      ],
+      "afterMove": [
+        {
+          "width": 275,
+          "height": 259.9375,
+          "left": 15,
+          "right": 290,
+          "scroll": false
+        }
+      ],
+      "notice": false,
+      "overflow": false,
+      "boardsVisible": true,
+      "moved": true
+    },
+    {
+      "game": "renovo",
+      "phase": "last",
+      "size": [
+        844,
+        390
+      ],
+      "stable": true,
+      "before": [
+        {
+          "width": 306,
+          "height": 289.25,
+          "left": 147.5,
+          "right": 453.5,
+          "scroll": false
+        }
+      ],
+      "afterMove": [
+        {
+          "width": 306,
+          "height": 289.25,
+          "left": 147.5,
+          "right": 453.5,
+          "scroll": false
+        }
+      ],
+      "notice": false,
+      "overflow": false,
+      "boardsVisible": true,
+      "moved": true
+    }
+  ]
+}
