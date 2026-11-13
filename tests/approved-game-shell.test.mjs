@@ -611,3 +611,30 @@ for (const game of ['light', 'cut', 'elo', 'prumo', 'pacto', 'sintonia', 'repass
     cleanup();
   });
 }
+
+for (const game of ['light', 'cut', 'elo', 'prumo', 'pacto', 'sintonia', 'repasse', 'pulso', 'foz', 'refugio', 'mirante', 'renovo']) {
+  test(`${game}: retorno Níveis único acima da lateral preserva o botão nativo`, () => {
+    const f = fixture(game);
+    const prefix = GAME_PRESENTATION[game].prefix;
+    const id = prefix === '' ? 'back-selection' : prefix === 'lg' ? 'lg-levels' : `${prefix}-back`;
+    const native = new Node('button', 'quiet', id);
+    let returned = 0;
+    native.onclick = () => ++returned;
+    f.section.append(native);
+    initApprovedGameShell(f.doc, f.win);
+    assert.equal(native.textContent, 'Níveis');
+    assert.equal(native.getAttribute('aria-label'), 'Voltar à seleção de níveis');
+    assert.equal(native.parentElement.className, 'approved-heading-actions');
+    assert.equal(f.section.querySelectorAll(`#${id}`).length, 1);
+    f.update(); f.update();
+    assert.equal(f.section.querySelectorAll(`#${id}`).length, 1);
+    native.onclick();
+    assert.equal(returned, 1);
+    assert.equal(f.controls.undo.disabled, true);
+  });
+}
+test('retorno de campanha mantém alvo de toque44px e estilo compacto de referência', () => {
+ const css = readFileSync(new URL('../dist/approved-game-shell.css', import.meta.url),'utf8');
+ assert.match(css, /button\.campaign-levels-return[\s\S]*min-height: 44px/);
+ assert.match(css, /button\.campaign-levels-return:focus-visible/);
+});

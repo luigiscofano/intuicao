@@ -325,6 +325,20 @@ export function initApprovedGameShell(doc = document, win = window) {
         move(guidance, secondary);
       }
       arrangeActionSidebar({ doc, section, panel, control, game, versus });
+      // O mesmo botão nativo fica acima da lateral em todas as campanhas.
+      // Movê-lo (sem clonar) preserva o retorno, os handlers e o progresso.
+      if (!versus) {
+        const levelsButton = prefix === ""
+          ? control("back-selection")
+          : control(prefix === "lg" ? "levels" : "back");
+        if (levelsButton) {
+          levelsButton.classList.add("campaign-levels-return");
+          levelsButton.setAttribute("type", "button");
+          levelsButton.setAttribute("aria-label", "Voltar à seleção de níveis");
+          setText(levelsButton, "Níveis");
+          move(levelsButton, heading.querySelector(".approved-heading-actions"));
+        }
+      }
     } finally {
       observe();
     }
