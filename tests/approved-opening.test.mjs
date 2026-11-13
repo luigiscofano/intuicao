@@ -31,6 +31,7 @@ function harness() {
     },
     append(...nodes) {
       this.children.push(...nodes);
+      this.textContent = (this.textContent || "") + nodes.map(node => typeof node === "string" ? node : node.textContent || "").join("");
     },
     addEventListener(k, fn) {
       this.events[k] = fn;
@@ -131,4 +132,16 @@ test('faixa utiliza texto aprovado e preserva a galeria existente no grupo', () 
   assert.equal(h.subtitle.removed, true);
   assert.equal(h.intro.children[0].className, 'opening-fauna-group');
   assert.equal(h.intro.children[0].children[0], h.gallery);
+});
+
+test('somente curiosidade recebe ênfase e sublinhado, mantendo a frase inteira', () => {
+  const h = harness();
+  initApprovedOpening(h.doc);
+  assert.equal(h.title.textContent, 'A curiosidade é a primeira lição.');
+  assert.deepEqual(h.title.children.filter(node => typeof node === 'string'), ['A ', ' é a primeira lição.']);
+  const emphasized = h.title.children.filter(node => typeof node !== 'string');
+  assert.equal(emphasized.length, 1);
+  assert.equal(emphasized[0].textContent, 'curiosidade');
+  assert.equal(emphasized[0].className, 'opening-curiosity');
+  assert.match(css, /h1 \.opening-curiosity\s*\{[^}]*font-style: italic;[^}]*text-decoration: underline;/);
 });
