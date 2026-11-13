@@ -360,6 +360,20 @@ const largerMaps = CERCO_GRID_SIZES.slice(1).flatMap((size) =>
     };
   }),
 );
+// Novas famílias conservam o giro de 180° e saídas iguais para ambas as equipes.
+const additionalMaps = CERCO_GRID_SIZES.flatMap(size => {
+ const last = size * size - 1;
+ const pair = cells => [...new Set(cells.flatMap(cell => [cell, last - cell]))].sort((a,b) => a-b);
+ const columns = [0, Math.floor((size-1)/2), size-1];
+ const starts = [columns, columns.map(c => last-c).sort((a,b) => a-b)];
+ const plans = [
+  {family:'veredas',name:'Veredas',description:'Duas pedras internas desviam as rotas sem fechar o centro.',walls:pair([size+1])},
+  {family:'enseadas',name:'Enseadas',description:'Pequenas reentrâncias opostas abrem duas margens de disputa.',outside:pair([size])},
+  {family:'travessias',name:'Travessias',description:'Pedras fora do eixo central criam duas travessias escalonadas.',walls:pair([size+size-2]),outside:pair([2*size])},
+ ];
+ return plans.map(plan => ({...plan,id:size===5?plan.family:`${plan.family}-${size}`,rows:size,cols:size,version:1,
+  walls:plan.walls||[],outside:plan.outside||[],starts,maxMoves:size*size-(plan.walls?.length||0)-(plan.outside?.length||0)-6}));
+});
 export const CERCO_MAPS = freeze([
   ...definitions.map((m) => ({
     ...m,
@@ -370,6 +384,7 @@ export const CERCO_MAPS = freeze([
     maxMoves: 25 - m.walls.length - m.outside.length - 6,
   })),
   ...largerMaps,
+  ...additionalMaps,
 ]);
 export function getCercoMapsForSize(size = 5) {
   return CERCO_MAPS.filter((m) => m.rows === size && m.cols === size);

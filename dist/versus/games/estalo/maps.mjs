@@ -40,13 +40,13 @@ const ORIGINAL_MAPS = [
   defineMap({ id: "ilha", name: "Ilha", description: "6 × 6 ao redor de um vazio central. O pulso não atravessa o vazio.", rows: 6, columns: 6, blocked: [14, 15, 20, 21], pattern: 2 }),
 ];
 
-/** Seis tamanhos e sete composições por tamanho; IDs antigos são permanentes. */
+/** Seis tamanhos e oito composições por tamanho; IDs antigos são permanentes. */
 export const ESTALO_GRID_SIZES = Object.freeze([
   [4, 4], [3, 6], [4, 6], [6, 6], [6, 8], [8, 8],
 ].map(size => Object.freeze(size)));
 
-const FAMILIES = ["canteiro", "entrelacado", "clareira", "ilha", "margens", "passagem", "trilha"];
-const NAMES = { canteiro: "Canteiro", entrelacado: "Entrelaçado", clareira: "Clareira", ilha: "Ilha", margens: "Margens", passagem: "Passagem", trilha: "Trilha" };
+const FAMILIES = ["canteiro", "entrelacado", "clareira", "ilha", "margens", "passagem", "trilha", "varandas"];
+const NAMES = { canteiro: "Canteiro", entrelacado: "Entrelaçado", clareira: "Clareira", ilha: "Ilha", margens: "Margens", passagem: "Passagem", trilha: "Trilha", varandas: "Varandas" };
 const LEGACY_FAMILIES = { classico: "canteiro", entrelacado: "entrelacado", vereda: "canteiro", horta: "canteiro", bosque: "canteiro", clareira: "clareira", ilha: "ilha" };
 
 function cutouts(family, rows, columns) {
@@ -56,7 +56,12 @@ function cutouts(family, rows, columns) {
     cells.add(cell);
     cells.add(rows * columns - 1 - cell);
   };
-  // Nos pequenos, as variantes mudam setas sem sacrificar espaço de decisão.
+  // Reentrâncias nas bordas introduzem uma interrupção real também nos tabuleiros pequenos.
+  if (family === "varandas") {
+    add(0, Math.floor(columns / 3));
+    return [...cells].sort((a, b) => a - b);
+  }
+  // Nos pequenos, as variantes anteriores conservam seu espaço de decisão.
   if (rows < 4 || columns < 6) return [];
   if (family === "clareira") { add(0, 0); add(0, columns - 1); }
   if (family === "ilha") {

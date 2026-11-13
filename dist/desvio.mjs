@@ -1,3 +1,5 @@
+import { DESVIO_ADDITIONAL_MAPS } from "./desvio-map-catalog.mjs";
+
 // Regras de DESVIO: movimentos legais, restrições, histórico e busca de jogadas.
 /** DESVIO: immutable local game engine. Cells, players and restriction indices are zero-based.
  * H sends the next player to the same row; V to the same column. Consumed cells
@@ -510,4 +512,15 @@ export const DESVIO_MAPS = Object.freeze([
       'meanChoices': 2.69,
     }),
   }),
+  ...DESVIO_ADDITIONAL_MAPS,
 ]);
+
+/** Formatos compatíveis com o motor e com a análise exata. */
+export const DESVIO_GRID_SIZES = Object.freeze([
+  { id: "4x4", rows: 4, cols: 4 },
+  { id: "3x3", rows: 3, cols: 3 },
+  { id: "3x4", rows: 3, cols: 4 },
+  { id: "4x3", rows: 4, cols: 3 },
+  { id: "2x6", rows: 2, cols: 6 },
+  { id: "2x8", rows: 2, cols: 8 },
+].map(Object.freeze));

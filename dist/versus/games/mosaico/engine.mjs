@@ -1,3 +1,4 @@
+import { getMosaicoMap } from "./maps.mjs";
 /** MOSAICO: os azulejos são comuns; apenas os selos de maioria têm proprietário. */
 export const BOARD_SIZE = 5;
 export const TILE_COUNT = BOARD_SIZE * BOARD_SIZE;
@@ -9,26 +10,31 @@ export const CORNER_COLORS = Object.freeze([
   Object.freeze([0, 1, 1, 0]),
 ]);
 
-export function createState() {
+export function createState(config = {}) {
+  const map = getMosaicoMap(config);
+  const tiles = Array(map.rows * map.cols).fill(null);
+  for (const tile of map.initialTiles) tiles[tile.cell] = tile.orientation;
   return {
+    ...(map.id === "classic" ? {} : { mapId: map.id, mapVersion: map.version }),
     player: 0,
-    moveCount: 0,
+    moveCount: map.initialTiles.length,
     result: null,
-    tiles: Array(TILE_COUNT).fill(null),
+    tiles,
     lastMove: null,
   };
 }
 
 export function getSeals(state) {
+  const { rows, cols } = getMosaicoMap(state);
   const seals = [];
-  for (let row = 0; row < BOARD_SIZE - 1; row += 1) {
-    for (let column = 0; column < BOARD_SIZE - 1; column += 1) {
-      const topLeft = row * BOARD_SIZE + column;
+  for (let row = 0; row < rows - 1; row += 1) {
+    for (let column = 0; column < cols - 1; column += 1) {
+      const topLeft = row * cols + column;
       const cells = [
         topLeft,
         topLeft + 1,
-        topLeft + BOARD_SIZE,
-        topLeft + BOARD_SIZE + 1,
+        topLeft + cols,
+        topLeft + cols + 1,
       ];
       const inwardCorners = [2, 3, 1, 0];
       const colors = cells.map((cell, index) =>
@@ -39,7 +45,7 @@ export function getSeals(state) {
       const complete = colors.every((color) => color !== null);
       const greenCount = colors.filter((color) => color === 0).length;
       seals.push({
-        index: row * (BOARD_SIZE - 1) + column,
+        index: row * (cols - 1) + column,
         row,
         column,
         cells,
@@ -88,7 +94,7 @@ export function applyMove(state, move) {
     move?.type !== "place" ||
     !Number.isInteger(move.cell) ||
     move.cell < 0 ||
-    move.cell >= TILE_COUNT ||
+    move.cell >= state.tiles.length ||
     !Number.isInteger(move.orientation) ||
     move.orientation < 0 ||
     move.orientation > 3 ||
@@ -120,7 +126,7 @@ export function applyMove(state, move) {
     completed,
   };
 
-  // Recalcular as 16 junções impede contagem dupla e trata ganhos simultâneos.
+  // Recalcular as junções impede contagem dupla e trata ganhos simultâneos.
   if (tiles.every((tile) => tile !== null)) {
     const [green, amber] = getScores(nextState);
     nextState.result = {

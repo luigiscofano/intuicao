@@ -1,0 +1,113 @@
+[
+  {
+    "id": "classic",
+    "version": 1,
+    "name": "Jardim clássico",
+    "description": "O jardim original: quatro linhas e quatro colunas, sem obstáculos.",
+    "rows": 4,
+    "cols": 4,
+    "walls": [],
+    "outside": [],
+    "playableCount": 16
+  },
+  {
+    "id": "clareira",
+    "version": 1,
+    "name": "Clareira",
+    "description": "Uma pedra central separa os estímulos que atravessariam o coração do jardim.",
+    "rows": 5,
+    "cols": 5,
+    "walls": [
+      12
+    ],
+    "outside": [],
+    "playableCount": 24
+  },
+  {
+    "id": "quatro-pedras",
+    "version": 1,
+    "name": "Quatro pedras",
+    "description": "Quatro pedras criam corredores nas bordas e caminhos entre os canteiros.",
+    "rows": 5,
+    "cols": 5,
+    "walls": [
+      6,
+      8,
+      16,
+      18
+    ],
+    "outside": [],
+    "playableCount": 21
+  },
+  {
+    "id": "passagens",
+    "version": 1,
+    "name": "Passagens",
+    "description": "Duas pedras interrompem a coluna central e valorizam as passagens laterais.",
+    "rows": 5,
+    "cols": 5,
+    "walls": [
+      7,
+      17
+    ],
+    "outside": [],
+    "playableCount": 23
+  },
+  {
+    "id": "ampulheta",
+    "version": 1,
+    "name": "Ampulheta",
+    "description": "Duas áreas largas se encontram em um corredor de três colunas.",
+    "rows": 5,
+    "cols": 5,
+    "walls": [],
+    "outside": [
+      5,
+      9,
+      10,
+      14,
+      15,
+      19
+    ],
+    "playableCount": 19
+  },
+  {
+    "id": "cruz",
+    "version": 1,
+    "name": "Jardim em cruz",
+    "description": "Dezessete canteiros: braços laterais largos e duas pontas estreitas.",
+    "rows": 5,
+    "cols": 5,
+    "walls": [],
+    "outside": [
+      0,
+      1,
+      3,
+      4,
+      20,
+      21,
+      23,
+      24
+    ],
+    "playableCount": 17
+  },
+  {
+    "id": "recantos",
+    "version": 1,
+    "name": "Recantos",
+    "description": "Cantos recortados e duas pedras diagonais criam caminhos assimétricos por linha.",
+    "rows": 5,
+    "cols": 5,
+    "walls": [
+      6,
+      18
+    ],
+    "outside": [
+      0,
+      4,
+      20,
+      24
+    ],
+    "playableCount": 19
+  }
+]
