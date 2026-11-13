@@ -113,6 +113,8 @@ test('movimento e vitórias Versus aprovados preservam todos os arquivos fora do
   // Motores, sessões e persistência continuam fora desta lista.
   const approvedVersus = [
     ...approved.filter(path => path.startsWith('dist/versus/')),
+    // Retirada autorizada: catálogo ativo separado dos IDs históricos de saves.
+    'dist/versus/metadata.mjs', 'dist/versus/storage.mjs',
     'dist/versus/games/quinhao/README.md',
     'dist/versus/games/quinhao/index.mjs',
     'dist/versus/games/quinhao/fruit-art.mjs',

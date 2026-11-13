@@ -9,9 +9,9 @@ const catalog = html.match(/<nav class="games"[\s\S]*?<\/nav>/)?.[0];
 const gameAttributes = /data-(?:game|collection|sintonia|repasse|orbita|broto|cerco|logic|versus)="([^"]+)"/g;
 const gameIds = [...catalog.matchAll(gameAttributes)].map(match => match[1]);
 
-test('catálogo mantém exatamente os 23 jogos ativos, sem Divisa e Órbita', () => {
-  assert.equal(gameIds.length, 23);
-  assert.equal(new Set(gameIds).size, 23);
+test('catálogo mantém exatamente os 21 jogos ativos, sem Divisa e Órbita', () => {
+  assert.equal(gameIds.length, 21);
+  assert.equal(new Set(gameIds).size, 21);
   assert(!gameIds.includes('divisa'));
   assert(!gameIds.includes('orbita'));
   for (const id of ['pulso', 'refugio', 'renovo', 'mirante', 'foz', 'cerco', 'broto']) assert(gameIds.includes(id));

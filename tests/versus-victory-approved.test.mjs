@@ -76,7 +76,7 @@ test('integrações consomem apenas resultado novo; história, modos, motores e 
   assert.match(read('dist/broto/ui.mjs'),/if \(state.duelOver\) \{[\s\S]*?renderVersusVictory/);
   const root=new URL('../',import.meta.url),base='cdc5c756a340c7613c62cded00650ef98d267ec7';
   const paths=['dist/broto/engine.mjs','dist/cerco/engine.mjs','dist/desvio.mjs','dist/versus/session.mjs','dist/versus/storage.mjs',...VERSUS_VICTORY_IDS.slice(3).map(id=>`dist/versus/games/${id}/engine.mjs`)];
-  for(const p of paths)assert.equal(read(p),execFileSync('git',['show',`${base}:${p}`],{cwd:root,encoding:'utf8'}),p);
+  for(const p of paths)assert.equal(read(p).replaceAll('STORED_VERSUS_GAME_IDS', 'VERSUS_GAME_IDS'),execFileSync('git',['show',`${base}:${p}`],{cwd:root,encoding:'utf8'}),p);
   assert.doesNotMatch(read('dist/versus-victory.mjs'),/localStorage|sessionStorage|setTimeout|setInterval|apply\w*Move/);
   assert.match(read('dist/versus-victory.css'),/max-width:420px/);assert.match(read('dist/versus-victory.css'),/data-ui-reduced-motion/);
 });

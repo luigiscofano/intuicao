@@ -7,9 +7,9 @@ import { CATEGORY_GAMES } from '../dist/category-navigation.mjs';
 const read = path => readFileSync(new URL('../' + path, import.meta.url), 'utf8');
 const presentation = read('dist/selection-presentation.mjs');
 
-test('all 23 active games use the shared selection without the removed level notice', () => {
+test('all 21 active games use the shared selection without the removed level notice', () => {
   const games = Object.values(CATEGORY_GAMES).flat();
-  assert.equal(games.length, 23);
+  assert.equal(games.length, 21);
   assert.deepEqual(Object.keys(SELECTION_GAMES).filter(id=>games.includes(id)).sort(), games.sort());
   assert.doesNotMatch(presentation, /Escolha uma faixa e jogue no seu ritmo|Seu progresso fica neste navegador/);
   assert.match(presentation, /levels=section\(root,'levels','Níveis'\)/);

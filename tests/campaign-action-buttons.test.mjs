@@ -11,12 +11,12 @@ const campaigns = [
   'pulso', 'foz', 'refugio', 'mirante', 'renovo',
 ];
 
-test('escopo cobre exatamente 12 campanhas e exclui os 11 Versus', () => {
+test('escopo cobre exatamente 12 campanhas e exclui os 9 Versus', () => {
   const campaignIds = Object.entries(GAME_PRESENTATION)
     .filter(([, presentation]) => presentation.category !== 'Versus')
     .map(([id]) => id);
   assert.deepEqual(campaignIds.sort(), campaigns.slice().sort());
-  assert.equal(Object.values(GAME_PRESENTATION).filter(item => item.category === 'Versus').length, 11);
+  assert.equal(Object.values(GAME_PRESENTATION).filter(item => item.category === 'Versus').length, 9);
   assert.match(shell, /classList\.toggle\(\s*["']approved-campaign-actions["'],\s*active\s*&&\s*presentation\.category\s*!==\s*["']Versus["']/);
 });
 
@@ -116,3 +116,4 @@ test('integração preserva a base responsiva fora dos arquivos aprovados', asyn
   ], { cwd: root, encoding: 'utf8' });
   assert.equal(changed, '');
 });
+

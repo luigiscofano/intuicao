@@ -68,8 +68,8 @@ test('fundos decorativos usam PNGs locais existentes e não deixam retângulos o
   assert.doesNotMatch(css['identity.css'], /#e7ddc3/);
 });
 
-test('23 páginas ativas começam pela identificação acessível sem decoração acima', () => {
-  assert.equal(Object.keys(GAME_PRESENTATION).length, 23);
+test('21 páginas ativas começam pela identificação acessível sem decoração acima', () => {
+  assert.equal(Object.keys(GAME_PRESENTATION).length, 21);
   assert.match(read('dist/approved-game-shell.mjs'),
     /element\(doc, "h1", "approved-category"\)/);
   assert.doesNotMatch(read('dist/approved-game-shell.mjs'), /const tiles = element/);
@@ -103,4 +103,5 @@ test('somente quatro arquivos de produção mudam; motores, geradores e FOZ fica
   const added = git('diff', '--name-only', '--diff-filter=A', baseline, pngRelease, '--', 'dist').trim().split('\n').filter(Boolean);
   for (const file of added) assert.ok(allowed.includes(file), file);
 });
+
 

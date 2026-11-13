@@ -1,5 +1,5 @@
 import { writeProgress } from "../progress-write-guard.mjs";
-import { VERSUS_GAME_IDS } from "./metadata.mjs";
+import { STORED_VERSUS_GAME_IDS } from "./metadata.mjs";
 
 export const VERSUS_STORAGE_ID = "intuicao.versus.v1";
 const MAX_STORAGE_CHARACTERS = 2_000_000;
@@ -37,7 +37,7 @@ export function createVersusStorage(storage) {
     },
 
     save(gameId, record) {
-      if (!VERSUS_GAME_IDS.includes(gameId)) return false;
+      if (!STORED_VERSUS_GAME_IDS.includes(gameId)) return false;
       try {
         // Ler de novo preserva partidas de outros jogos atualizadas em outra aba.
         const envelope = readEnvelope(storage);
