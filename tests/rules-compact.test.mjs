@@ -33,3 +33,8 @@ test('expandir substitui texto e não desmonta a animação', () => {
   const js = readFileSync(new URL('../dist/rules-preview.mjs', import.meta.url), 'utf8');
   assert.doesNotMatch(js, /addEventListener\(['"]toggle|innerHTML\s*=|setInterval/);
 });
+
+test('título e legenda acompanham o eixo central do desenho', () => {
+  const css = readFileSync(new URL('../dist/rules-preview.css', import.meta.url), 'utf8');
+  assert.match(css, /\.rp-illustration > :is\(\.rp-example-title,\.rp-description,\.rp-reduced-note\)\{width:100%;max-width:340px;align-self:center;text-align:center/);
+});

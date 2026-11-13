@@ -15,6 +15,7 @@ test('todos os 19 jogos ativos têm regras simples e detalhes completos, exemplo
   assert.match(html,/Como jogar/);assert.match(html,/<svg/);assert.match(html,/aria-hidden="true"/);
   assert.match(html,/<figcaption class="rp-description">[^<]{35}/);
   assert.doesNotMatch(html,/<button|rp-motion-toggle|aria-pressed|Pausar exemplo|Retomar exemplo/);
+  assert.doesNotMatch(html,/rp-loop-note|Repete automaticamente · não altera sua partida/);
   assert.doesNotMatch(html,/<script|onload=|onclick=|foreignObject|href="https?:|undefined/);
  }
  assert.equal(rulesPreviewMarkup('unknown'),'');

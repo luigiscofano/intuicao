@@ -4,7 +4,7 @@
 
 Os 19 jogos ativos compartilham o mesmo componente. O resumo preserva objetivo e os três passos originais. Expandir “Regras completas e detalhes” oculta esse resumo e mostra somente a lista completa original. Fechar restaura o resumo. A imagem permanece montada, sem reiniciar seu ciclo.
 
-Os três cartões numerados sob a animação foram removidos. A legenda explicativa e o aviso de repetição permanecem com texto idêntico. SVGs, animações, tempos, conteúdo das regras e mecânicas não foram alterados.
+Os três cartões numerados sob a animação foram removidos. A legenda explicativa permanece com texto idêntico. O aviso genérico de repetição foi removido a pedido do usuário. SVGs, animações, tempos, conteúdo das regras e mecânicas não foram alterados.
 
 ## Apresentação
 
@@ -19,3 +19,7 @@ No desktop, texto e animação ficam lado a lado; a figura não impõe altura ex
 - Não foram recriados SVGs nem alterados os arquivos que definem o movimento ou o conteúdo.
 
 O disclosure nativo mantém operação por teclado. Movimento reduzido e suspensão fora da tela seguem o comportamento anterior.
+
+## Refinamento de alinhamento
+
+Título do exemplo, desenho e legenda compartilham largura máxima e eixo central. Nenhuma coordenada SVG ou movimento mudou. Verificação de 76 casos (19 jogos × 1280/768/390/320 px): todos alinhados, sem overflow.
