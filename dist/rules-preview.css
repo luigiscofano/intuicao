@@ -9,7 +9,7 @@
 .rules-preview .rp-illustration{display:grid;grid-template-columns:minmax(0,1fr);justify-items:center;gap:10px;min-width:0;margin:0}
 .rules-preview .rp-example{width:100%;max-width:340px;justify-self:center}
 .rules-preview svg{display:block;width:100%;height:auto;overflow:visible}
-.rules-preview svg text{font-family:system-ui,sans-serif;fill:#304c38}
+.rules-preview svg text{font-family:var(--font-ui);fill:#304c38}
 .rules-preview .rp-description{font-size:13px;line-height:1.5;color:#304c38;margin:0;text-align:left;width:100%;max-width:340px}
 .rules-preview .rp-reduced-note{display:none;font-size:10px;color:#52634b}
 .rules-preview .rpd-result{animation:rp-result var(--rp-cycle) ease-in-out infinite}

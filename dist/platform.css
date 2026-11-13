@@ -136,7 +136,7 @@ body > footer .brand-dot {
   background: url("platform-assets/leaf-seal.svg") center/28px 28px no-repeat;
 }
 :where(body:not(:has(.lab:not([hidden]), #collection:not([hidden]) > .collection-lab))) > header .tag {
-  font-family: "Courier New",monospace;
+  font-family:var(--font-ui);
   font-size: 10px;
   letter-spacing: 1.6px;
   line-height: 1.5;
@@ -168,13 +168,13 @@ body > footer .brand-dot {
 }
 #main > .intro .eyebrow {
   max-width: 80%;
-  font-family: "Courier New",monospace;
+  font-family:var(--font-ui);
   font-size: 10px;
   letter-spacing: 1.7px;
   margin-bottom: 20px;
 }
 #main > .intro h1 {
-  font-family: Georgia,"Times New Roman",serif;
+  font-family:var(--font-title);
   font-size: 68px;
   font-weight: 400;
   line-height: 1.08;
@@ -204,7 +204,7 @@ body > footer .brand-dot {
   margin-bottom: 28px;
 }
 :where(body:not(:has(.lab:not([hidden]), #collection:not([hidden]) > .collection-lab))) #main > .games > button {
-  font-family: system-ui,-apple-system,"Segoe UI",sans-serif;
+  font-family:var(--font-ui);
   font-size: 16px;
   line-height: 1.5;
   letter-spacing: .2px;
@@ -215,7 +215,7 @@ body > footer .brand-dot {
   position: relative;
 }
 :where(body:not(:has(.lab:not([hidden]), #collection:not([hidden]) > .collection-lab))) #main > .games > button > span {
-  font-family: "Courier New",monospace;
+  font-family:var(--font-ui);
   font-size: 11px;
   font-weight: 400;
   opacity: 1;
@@ -227,7 +227,7 @@ body > footer .brand-dot {
   color: #d3ddb5;
 }
 :where(body:not(:has(.lab:not([hidden]), #collection:not([hidden]) > .collection-lab))) #main > .games > button small {
-  font-family: system-ui,sans-serif;
+  font-family:var(--font-ui);
   font-size: 11px;
   line-height: 1.6;
   opacity: 1;
@@ -238,7 +238,7 @@ body > footer .brand-dot {
   color: #e2e6ce;
 }
 :where(body:not(:has(.lab:not([hidden]), #collection:not([hidden]) > .collection-lab))) > footer > span {
-  font-family: Georgia,"Times New Roman",serif;
+  font-family:var(--font-title);
   font-size: 26px;
   font-style: italic;
   letter-spacing: -.5px;
@@ -256,12 +256,12 @@ body > footer .brand-dot {
 }
 :is(#selection, #collection > .level-screen, #repasse > .level-screen, #orbita > .level-screen, #broto > .level-screen, #cerco > .level-screen) .eyebrow {
   color: #405e49;
-  font-family: "Courier New",monospace;
+  font-family:var(--font-ui);
   font-size: 10px;
   letter-spacing: 1.6px;
 }
 :is(#selection, #collection > .level-screen, #repasse > .level-screen, #orbita > .level-screen, #broto > .level-screen, #cerco > .level-screen) h2 {
-  font-family: Georgia,"Times New Roman",serif;
+  font-family:var(--font-title);
   font-weight: 400;
   font-size: 35px;
   line-height: 1.3;
@@ -275,7 +275,7 @@ body > footer .brand-dot {
   color: #585644;
 }
 :is(#selection, #collection > .level-screen, #repasse > .level-screen, #orbita > .level-screen, #broto > .level-screen, #cerco > .level-screen) .stage-heading {
-  font-family: "Courier New",monospace;
+  font-family:var(--font-ui);
   font-size: 14px;
   line-height: 1.6;
   font-weight: 600;
@@ -292,7 +292,7 @@ body > footer .brand-dot {
   box-shadow: 0 2px #e3e9dd;
 }
 :is(#selection, #collection > .level-screen, #repasse > .level-screen, #orbita > .level-screen, #broto > .level-screen, #cerco > .level-screen) :is(button,select,.file-button):not(.level-tile) {
-  font-family: system-ui,-apple-system,"Segoe UI",sans-serif;
+  font-family:var(--font-ui);
   font-size: 12px;
   line-height: 1.6;
   font-weight: 600;
@@ -320,13 +320,13 @@ body > footer .brand-dot {
   box-shadow: 0 2px #dfe7d8;
 }
 :is(#selection, #collection > .level-screen, #repasse > .level-screen, #orbita > .level-screen, #broto > .level-screen, #cerco > .level-screen) .level-tile > span {
-  font-family: "Courier New",monospace;
+  font-family:var(--font-ui);
   font-size: 22px;
   line-height: 1.25;
   font-weight: 400;
 }
 :is(#selection, #collection > .level-screen, #repasse > .level-screen, #orbita > .level-screen, #broto > .level-screen, #cerco > .level-screen) .level-tile > small {
-  font-family: system-ui,sans-serif;
+  font-family:var(--font-ui);
   font-size: 10px;
   line-height: 1.5;
   color: #62604c;
@@ -348,7 +348,7 @@ body > footer .brand-dot {
   background: #f3f6ef;
 }
 :is(#selection, #collection > .level-screen, #repasse > .level-screen, #orbita > .level-screen, #broto > .level-screen, #cerco > .level-screen) .duel-maps > button small {
-  font-family: system-ui,sans-serif;
+  font-family:var(--font-ui);
   color: #585644;
 }
 /* Existing preview symbols preserved exactly, not recolored or pixelized. */
@@ -356,7 +356,7 @@ body > footer .brand-dot {
   color: #25372e;
 }
 :is(#selection, #collection > .level-screen, #repasse > .level-screen, #orbita > .level-screen, #broto > .level-screen, #cerco > .level-screen) .collection-small {
-  font-family: system-ui,sans-serif;
+  font-family:var(--font-ui);
 }
 :is(#selection, #collection > .level-screen, #repasse > .level-screen, #orbita > .level-screen, #broto > .level-screen, #cerco > .level-screen) :is(button,select,.file-button):hover:not(:disabled) {
   border-color: #405e49;

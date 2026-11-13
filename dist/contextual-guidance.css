@@ -7,7 +7,7 @@
   padding: 12px 16px;
   margin: 0 0 16px;
   color: #30412f;
-  font: 400 14px/1.6 system-ui, sans-serif;
+  font: 400 14px/1.6 var(--font-ui);
 }
 .contextual-guidance > summary {
   cursor: pointer;

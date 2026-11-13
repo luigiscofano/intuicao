@@ -1,17 +1,17 @@
 /* SINTONIA extends the existing Intuição components only inside its own host. */
 #sintonia{min-width:0}
 #sintonia>.level-screen{position:relative;--frame-flare:max(38px,calc((100vw - 1280px)/2 + 28px));background:#fff;border:1px solid #b3c1a8;border-bottom-color:transparent;border-radius:7px 7px 0 0;padding:30px;box-shadow:none;filter:drop-shadow(0 2px 4px #34452a12);color:#3b342e;margin-bottom:34px}
-#sintonia>.level-screen .eyebrow{color:#405e49;font-family:"Courier New",monospace;font-size:10px;letter-spacing:1.6px}
-#sintonia>.level-screen h2{font-family:Georgia,"Times New Roman",serif;font-weight:400;font-size:35px;line-height:1.3;letter-spacing:-.7px;color:#405e49}
+#sintonia>.level-screen .eyebrow{color:#405e49;font-family:var(--font-ui);font-size:10px;letter-spacing:1.6px}
+#sintonia>.level-screen h2{font-family:var(--font-title);font-weight:400;font-size:35px;line-height:1.3;letter-spacing:-.7px;color:#405e49}
 #sintonia>.level-screen>p:not(.eyebrow){font-size:14px;line-height:1.75;max-width:880px;color:#585644}
-#sintonia>.level-screen .stage-heading{font-family:"Courier New",monospace;font-size:14px;line-height:1.6;font-weight:600;letter-spacing:.4px;border-bottom:1px solid #cbd4c3;padding-bottom:10px;color:#405e49}
+#sintonia>.level-screen .stage-heading{font-family:var(--font-ui);font-size:14px;line-height:1.6;font-weight:600;letter-spacing:.4px;border-bottom:1px solid #cbd4c3;padding-bottom:10px;color:#405e49}
 #sintonia>.level-screen :is(button,select,.file-button):where(:not(.game-info-trigger)){border:1px solid #b3c1a8;border-radius:5px;background:#fff;color:#3b342e;box-shadow:0 2px #e3e9dd}
-#sintonia>.level-screen :is(button,select,.file-button):not(.level-tile,.game-info-trigger){font-family:system-ui,-apple-system,"Segoe UI",sans-serif;font-size:12px;line-height:1.6;font-weight:600;min-height:44px}
+#sintonia>.level-screen :is(button,select,.file-button):not(.level-tile,.game-info-trigger){font-family:var(--font-ui);font-size:12px;line-height:1.6;font-weight:600;min-height:44px}
 #sintonia>.level-screen .primary{background:#405e49;color:#fff;border-color:#405e49;box-shadow:0 2px #354b3a}
 #sintonia>.level-screen .level-group{grid-template-columns:repeat(auto-fill,minmax(68px,1fr));gap:8px;margin:14px 0 22px}
 #sintonia>.level-screen .level-tile{border-radius:24%;min-height:64px;padding:5px;background:#f3f6ef;border-color:#c0cbb7;color:#3b342e;gap:4px;box-shadow:0 2px #dfe7d8}
-#sintonia>.level-screen .level-tile>span{font-family:"Courier New",monospace;font-size:22px;line-height:1.25;font-weight:400}
-#sintonia>.level-screen .level-tile>small{font-family:system-ui,sans-serif;font-size:10px;line-height:1.5;color:#62604c}
+#sintonia>.level-screen .level-tile>span{font-family:var(--font-ui);font-size:22px;line-height:1.25;font-weight:400}
+#sintonia>.level-screen .level-tile>small{font-family:var(--font-ui);font-size:10px;line-height:1.5;color:#62604c}
 #sintonia>.level-screen .level-tile.done{background:#486c4d;color:#fff;border-color:#405e49;box-shadow:0 2px #354b3a}
 #sintonia>.level-screen .level-tile.done>small{color:#fff}
 #sintonia>.level-screen .level-tile[aria-current="true"]{outline:2px solid #997838;outline-offset:2px}

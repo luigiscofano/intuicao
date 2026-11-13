@@ -13,7 +13,7 @@
 #main > .intro[data-approved-opening]::before,
 #main > .intro[data-approved-opening]::after { display: none; }
 #main > .intro[data-approved-opening] h1 {
-  font-family: var(--font-title, Georgia, serif);
+  font-family: var(--font-title);
   font-size: 28px;
   font-weight: 600;
   line-height: 1.35;
@@ -47,7 +47,7 @@
   background: transparent;
   box-shadow: none;
   color: #244b63;
-  font: 650 14px/1.4 var(--font-ui, system-ui, sans-serif);
+  font: 650 14px/1.4 var(--font-ui);
   white-space: nowrap;
 }
 .opening-fauna-toggle:hover { text-decoration: underline; text-underline-offset: 4px; }
@@ -88,7 +88,7 @@
   margin: 0;
 }
 #library-controls > .category-choices > button {
-  font: 400 14px/1.4 var(--font-ui, system-ui, sans-serif);
+  font: 400 14px/1.4 var(--font-ui);
   min-height: 44px;
   padding: 10px 17px;
   border: 1px solid #87977c;
@@ -108,9 +108,9 @@
   justify-content: space-between;
   gap: 12px;
 }
-.opening-category-count { font: 400 12px/1.4 var(--font-ui, system-ui, sans-serif); letter-spacing: 0; text-transform: none; }
+.opening-category-count { font: 400 12px/1.4 var(--font-ui); letter-spacing: 0; text-transform: none; }
 #main > .games > button:not(.game-info-nav) > span:not(.game-nav-icon) { display: none; }
-#main > .games > button:not(.game-info-nav) { font-family:var(--font-ui, system-ui, sans-serif); }
+#main > .games > button:not(.game-info-nav) { font-family:var(--font-ui); }
 @media(min-width: 761px) {
   #main > .games { grid-template-columns: repeat(6,minmax(0,1fr)); }
   #main > .games > button:not(.game-info-nav) { grid-column: span 2; }
