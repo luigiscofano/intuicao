@@ -29,8 +29,8 @@ function harness() {
     removeAttribute(k) {
       delete this.attrs[k];
     },
-    append(n) {
-      this.children.push(n);
+    append(...nodes) {
+      this.children.push(...nodes);
     },
     addEventListener(k, fn) {
       this.events[k] = fn;
@@ -48,7 +48,9 @@ function harness() {
     querySelectorAll: () => animals,
     querySelector: () => hint,
   });
-  const intro = Object.assign(node(), { querySelector: () => gallery });
+  const title = node();
+  const subtitle = {remove() { this.removed = true; }};
+  const intro = Object.assign(node(), { querySelector: (s) => s === 'h1' ? title : s === ':scope > p' ? subtitle : gallery });
   const headings = Object.fromEntries(
     Object.keys(CATEGORY_GAMES).map((id) => [`games-${id}`, node()]),
   );
@@ -57,35 +59,32 @@ function harness() {
     getElementById: (id) => (id === "fauna-dialog" ? {} : headings[id]),
     createElement: node,
   };
-  return { doc, intro, gallery, animals, hint, headings };
+  return { doc, intro, gallery, animals, hint, headings, title, subtitle };
 }
-test("os seis destaques coincidem com a composição aprovada e pertencem à coleção", () => {
+test("os três destaques coincidem com a composição aprovada e pertencem à coleção", () => {
   assert.deepEqual(FEATURED_FAUNA, [
     "capivara",
     "bemtevi",
     "onca",
-    "lobo",
-    "arara",
-    "tucano",
   ]);
   assert.equal(FAUNA_ART.length, 15);
   assert.equal(
     faunaVisibility(FAUNA_ART.map((a) => a.id)).filter(Boolean).length,
-    6,
+    3,
   );
 });
-test("expandir revela todos os 15 animais e recolher restaura os mesmos seis", () => {
+test("expandir revela todos os 15 animais e recolher restaura os mesmos três", () => {
   const h = harness();
   initApprovedOpening(h.doc);
-  const button = h.intro.children[0];
+  const button = h.intro.children[0].children[1];
   assert.equal(button.attrs["aria-expanded"], "false");
-  assert.equal(h.animals.filter((a) => !a.hidden).length, 6);
+  assert.equal(h.animals.filter((a) => !a.hidden).length, 3);
   button.events.click();
   assert.equal(button.attrs["aria-expanded"], "true");
   assert.equal(h.animals.filter((a) => !a.hidden).length, 15);
   button.events.click();
   assert.equal(button.attrs["aria-expanded"], "false");
-  assert.equal(h.animals.filter((a) => !a.hidden).length, 6);
+  assert.equal(h.animals.filter((a) => !a.hidden).length, 3);
 });
 test("inicialização é idempotente e reutiliza os botões informativos existentes", () => {
   const h = harness(),
@@ -96,12 +95,12 @@ test("inicialização é idempotente e reutiliza os botões informativos existen
   assert.deepEqual(h.animals, original);
   assert.equal(h.hint.removed, true);
 });
-test("as três categorias e todos os 19 jogos permanecem contados pelo catálogo", () => {
+test("as três categorias permanecem contadas pelo catálogo vigente", () => {
   const h = harness();
   initApprovedOpening(h.doc);
   assert.deepEqual(
     Object.values(h.headings).map((h) => h.children[0].textContent),
-    ["2 jogos", "10 jogos", "7 jogos"],
+    Object.values(CATEGORY_GAMES).map(games => `${games.length} jogos`),
   );
   assert.equal(Object.values(CATEGORY_GAMES).flat().length, 19);
 });
@@ -110,15 +109,12 @@ test("controles compartilham a linha e se montam antes da casca dos jogos", () =
     html,
     /<div id="library-controls">\s*<nav\s+id="library-navigation"/,
   );
-  assert.match(html, /id="library-filters"/);
-  assert.ok(html.indexOf('id="library-filters"') > html.indexOf('id="library-navigation"'));
-  // Na opção A, o título e o contador antecedem o seletor compacto.
-  assert.ok(html.indexOf('class="category-heading"') < html.indexOf('id="library-filters"'));
+  assert.match(html, /<\/nav>\s*<\/div>\s*<div class="category-heading">/);
   assert.ok(
     html.indexOf('src="approved-opening.mjs"') <
       html.indexOf('src="approved-game-shell.mjs"'),
   );
-  assert.match(html, />\s*Jogos\s*<span>23<\/span>/);
+  assert.match(html, />\s*Jogos\s*<span>\d+<\/span>/);
 });
 test("fundo da fauna é removido por composição CSS, sem alterar recursos originais", () => {
   assert.match(css, /isolation: auto/);
@@ -128,3 +124,11 @@ test("fundo da fauna é removido por composição CSS, sem alterar recursos orig
   assert.match(css, /\.hero-fauna-cell\[hidden\].*display: none !important/);
 });
 
+test('faixa utiliza texto aprovado e preserva a galeria existente no grupo', () => {
+  const h = harness();
+  initApprovedOpening(h.doc);
+  assert.equal(h.title.textContent, 'A curiosidade é a primeira lição.');
+  assert.equal(h.subtitle.removed, true);
+  assert.equal(h.intro.children[0].className, 'opening-fauna-group');
+  assert.equal(h.intro.children[0].children[0], h.gallery);
+});

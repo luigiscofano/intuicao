@@ -1,51 +1,46 @@
-/* Abertura compacta: os jogos chegam antes, sem retirar a identidade ou a fauna. */
+/* Faixa editorial aprovada: frase e fauna funcional, sem duplicar os azulejos do topo. */
 #main > .intro[data-approved-opening] {
   isolation: auto;
-  min-height: 214px;
-  padding: 16px 0 20px;
-  margin-bottom: 0;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 24px;
+  min-height: 108px;
+  padding: 20px 0;
+  margin: 0;
   border-bottom: 1px solid #d9d5bf;
 }
-#main > .intro[data-approved-opening]::after {
-  inset: 16px 0 auto auto;
-  width: 154px;
-  height: 76px;
-  background-size: 36px 36px;
-  background-position: 0 0,39px 0,78px 0,117px 0,0 40px,39px 40px,78px 40px,117px 40px;
-  background-color: transparent;
-}
-#main > .intro[data-approved-opening] h1,
-#main > .intro[data-approved-opening] > p { max-width: 64%; }
-/* Reduz apenas o título da home; os cabeçalhos dos jogos não são afetados. */
+#main > .intro[data-approved-opening]::before,
+#main > .intro[data-approved-opening]::after { display: none; }
 #main > .intro[data-approved-opening] h1 {
-  font-size: clamp(32px, 3.6vw, 46px);
-  letter-spacing: -1px;
-  margin-bottom: 12px;
+  font-family: var(--font-title);
+  font-size: 28px;
+  font-weight: 600;
+  line-height: 1.35;
+  letter-spacing: -.6px;
+  max-width: none;
+  margin: 0;
 }
-#main > .intro[data-approved-opening] > p {
-  font-size: 16px;
-  line-height: 1.5;
-}
+.opening-fauna-group { display: flex; align-items: center; gap: 16px; flex: none; }
 #main > .intro[data-approved-opening] .hero-fauna {
-  position: absolute;
-  inset: 108px 0 auto auto !important;
-  width: 324px;
-  max-width: 36%;
-  grid-template-columns: repeat(6, minmax(0,1fr));
-  gap: 10px;
+  display: flex;
+  position: static;
+  inset: auto !important;
+  width: auto;
+  max-width: none;
+  gap: 8px;
   padding: 0;
   margin: 0;
   border: 0;
   mix-blend-mode: multiply;
 }
-#main > .intro[data-approved-opening] .hero-fauna-cell { width: 44px; height: 44px; }
-#main > .intro[data-approved-opening] .hero-fauna-crop { border-radius: 0; }
+#main > .intro[data-approved-opening] .hero-fauna-cell { width: 40px; height: 44px; }
+#main > .intro[data-approved-opening] .hero-fauna-crop { border-radius: 0; background-color: transparent; }
 #main > .intro[data-approved-opening] .hero-fauna-cell[hidden] { display: none !important; }
 #main > .intro[data-approved-opening] .opening-fauna-toggle {
-  position: absolute;
-  right: 0;
-  top: 154px;
-  padding: 8px 0 8px 12px;
+  position: static;
+  margin: 0;
+  padding: 8px 0;
   min-height: 44px;
   border: 0;
   border-radius: 5px;
@@ -53,11 +48,24 @@
   box-shadow: none;
   color: #244b63;
   font: 650 14px/1.4 var(--font-ui);
+  white-space: nowrap;
 }
 .opening-fauna-toggle:hover { text-decoration: underline; text-underline-offset: 4px; }
-.opening-fauna-toggle:focus-visible { outline: 3px solid #bd4e2c; outline-offset: 4px; }
-#main > .intro[data-approved-opening].opening-fauna-expanded { min-height: 326px; }
-#main > .intro[data-approved-opening].opening-fauna-expanded .opening-fauna-toggle { top: 262px; }
+.opening-fauna-toggle:focus-visible { outline: 3px solid #244b63; outline-offset: 4px; }
+/* Ao expandir, a galeria cresce no fluxo sem sobrepor a biblioteca. */
+#main > .intro.opening-fauna-expanded .opening-fauna-group { flex-wrap: wrap; max-width: 440px; }
+#main > .intro.opening-fauna-expanded .hero-fauna { flex-wrap: wrap; }
+@media(max-width:900px) {
+  #main > .intro[data-approved-opening] { align-items: flex-start; flex-direction: column; gap: 12px; min-height: 0; }
+  #main > .intro[data-approved-opening] h1 { font-size: 26px; text-wrap: balance; }
+  .opening-fauna-group { width: 100%; justify-content: space-between; gap: 12px; }
+  #main > .intro[data-approved-opening] .hero-fauna { order: initial; }
+  #main > .intro[data-approved-opening] .opening-fauna-toggle { align-self: center; }
+}
+@media(max-width:360px) {
+  .opening-fauna-group { flex-wrap: wrap; }
+  #main > .intro[data-approved-opening] .opening-fauna-toggle { margin-left: auto; }
+}
 #library-controls {
   display: flex;
   flex-wrap: wrap;
@@ -108,43 +116,7 @@
   #main > .games > button:not(.game-info-nav) { grid-column: span 2; }
   #main > .games > button[data-game] { grid-column: span 3; }
 }
-@media(max-width: 1000px) and (min-width: 761px) {
-  #main > .intro[data-approved-opening] h1 { font-size: 38px; }
-  #main > .intro[data-approved-opening] .hero-fauna { max-width: 34%; gap: 4px; }
-  #main > .intro[data-approved-opening] .hero-fauna-cell { width: 37px; height: 44px; }
-}
 @media(max-width:760px) {
-  #main > .intro[data-approved-opening] {
-    display: flex;
-    flex-direction: column;
-    align-items: flex-start;
-    min-height: 0;
-    padding: 16px 4px;
-  }
-  #main > .intro[data-approved-opening] h1,
-  #main > .intro[data-approved-opening] > p { max-width: 100%; }
-  #main > .intro[data-approved-opening]::after {
-    position: relative;
-    order: 1;
-    inset: auto;
-    margin: 14px 0 12px auto;
-  }
-  #main > .intro[data-approved-opening] .hero-fauna {
-    position: relative;
-    order: 2;
-    inset: auto !important;
-    width: min(100%,324px);
-    max-width: none;
-    margin: 0 0 0 auto;
-    gap: 10px;
-  }
-  #main > .intro[data-approved-opening] .opening-fauna-toggle {
-    position: static;
-    order: 3;
-    align-self: flex-end;
-    margin-top: 4px;
-  }
-  #main > .intro[data-approved-opening].opening-fauna-expanded { min-height: 0; }
   #library-controls { gap: 16px; padding: 20px 0 16px; }
   #library-controls > .category-choices { gap: 7px; }
   #library-controls > .category-choices > button { padding: 10px 12px; font-size: 13px; }
