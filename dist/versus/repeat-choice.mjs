@@ -2,7 +2,7 @@
 const CONFIRMABLE_ACTIONS = Object.freeze({
   enlace: ["pin"], vazante: ["cell", "pass"],
   mosaico: ["cell", "orientation"], quinhao: ["basket"],
-  estalo: ["aim"], dobra: ["edge"], acorde: ["cell", "pass"],
+  estalo: ["cell", "aim"], dobra: ["edge"], acorde: ["cell", "pass"],
   lastro: ["destination", "advance", "next-round"],
 });
 
@@ -18,6 +18,11 @@ export function canRepeatChoice(gameId, action) {
 }
 
 export function repeatsPendingChoice(gameId, previousAction, action, pendingMove, nextMove) {
+  // No Estalo, a vagem também confirma a direção que já foi preparada ao lado.
+  if (gameId === "estalo" && action?.type === "cell" &&
+      previousAction?.cell === action.cell && ["cell", "aim"].includes(previousAction.type)) {
+    return sameChoice(pendingMove, nextMove);
+  }
   return canRepeatChoice(gameId, action) && sameChoice(previousAction, action) &&
     sameChoice(pendingMove, nextMove);
 }
@@ -25,7 +30,7 @@ export function repeatsPendingChoice(gameId, previousAction, action, pendingMove
 /** O atalho indica a última etapa, sem sugerir que uma origem incompleta basta. */
 export function repeatChoiceHelp(gameId, action) {
   const names = {
-    pin: "no último pino", cell: gameId === "vazante" ? "no destino" : "na mesma casa",
+    pin: "no último pino", cell: gameId === "vazante" ? "no destino" : gameId === "estalo" ? "na mesma vagem" : "na mesma casa",
     orientation: "na mesma orientação", basket: "no mesmo cesto",
     aim: "na mesma direção", edge: "na mesma borda",
     destination: "no mesmo destino", advance: "no mesmo destino",

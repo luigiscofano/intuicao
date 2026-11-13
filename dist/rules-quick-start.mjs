@@ -96,8 +96,8 @@ export const QUICK_START = {
   estalo: guide('Abra todas as suas vagens antes do rival.', [
     'Escolha uma vagem fechada sua. Você pode girar a seta 90° ou deixá-la como está.',
     'Abra a vagem: o pulso segue as setas, abrindo as próximas em cadeia.',
-    'Cada vagem dá ponto ao próprio dono. A cadeia para na borda ou numa casa já aberta.'
-  ], 'O pulso segue seis vagens e para ao reencontrar uma casa aberta: quatro pontos verdes e dois âmbar.', ['Escolha a primeira vagem', 'O pulso segue as setas', 'Cada dono recebe seus pontos']),
+    'Cada vagem dá ponto ao próprio dono. A cadeia para na borda, num recorte vazio ou numa casa já aberta.'
+  ], 'No mapa Clássico, o pulso segue seis vagens e para ao reencontrar uma casa aberta: quatro pontos verdes e dois âmbar.', ['Escolha a primeira vagem', 'O pulso segue as setas', 'Cada dono recebe seus pontos']),
   dobra: guide('Controle a maior área no mapa final.', [
     'Coloque um selo seu em uma casa do mapa.',
     'Dobre uma borda inteira para dentro. As áreas e os selos das casas sobrepostas se somam.',

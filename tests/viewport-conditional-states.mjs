@@ -17,7 +17,9 @@ function preview(id, state, selection, action) {
  const {engine:e,view:v}=games.estalo, s=e.createState();
  const cell=s.board.findIndex(p=>p?.owner===s.player);
  const d=v.interact(s,null,{type:'cell',cell});
- assert.equal(d.move,null);
+ // A seleção agora prepara a prévia; somente confirmação aplica ao estado.
+ assert.deepEqual(d.move,{type:'burst',cell,turn:0});
+ assert.equal(s.moveCount,0);
  has(v.renderBoard(s,{selection:d.selection}),'estalo-aim-button');
  has(preview('estalo',s,d.selection,{type:'aim',cell,turn:0}),'estalo-preview-note');
 }
