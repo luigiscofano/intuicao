@@ -49,3 +49,9 @@ body {
 svg text {
   font-family: var(--font-ui) !important;
 }
+
+/* O cabeçalho compacto não pode herdar o tracking negativo do título hero. */
+.approved-category {
+  letter-spacing: 0.01em;
+  line-height: 1.4;
+}
