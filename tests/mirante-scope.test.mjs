@@ -80,7 +80,9 @@ test('interface atual preserva controles e arte do MIRANTE sem congelar a casca 
  assert.ok(start >= 0 && end > start);
  const handler = current.slice(start, end);
  for (const contract of [/metadata\?\.id !== 'mirante'/, /event\.button !== 2/, /event\.pointerType !== 'mouse'/, /cellAction\(target, 'empty'\)/]) assert.match(handler, contract);
- assert.match(read('dist/approved-game-shell.mjs'), /tiles\.classList\.toggle\("approved-tiles--mirante", game === "mirante"\)/);
+ // A chamada superior foi retirada por aprovação posterior; a arte segue preservada.
+ assert.match(read('dist/approved-game-shell.mjs'), /hero\.append\(band\)/);
+ assert.doesNotMatch(read('dist/approved-game-shell.mjs'), /const tiles = element/);
  assert.match(read('dist/approved-game-shell.css'), /\.approved-tiles\.approved-tiles--mirante[^}]*mirante-aiij-a\.png/s);
  // A coesão não recebe autorização para reescrever motor, catálogo, arte ou interação do jogo.
  for (const file of ['engine.mjs', 'campaign.mjs', 'index.mjs', 'view.mjs', 'view.css', 'art.mjs']) {
