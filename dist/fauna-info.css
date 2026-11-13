@@ -38,13 +38,13 @@
   background: #fff;
   color: #3b342e;
   box-shadow: 0 8px 26px #34452a20;
-  font: 13px/1.55 system-ui,sans-serif;
+  font: 13px/1.55 var(--font-ui);
   pointer-events: none;
   overflow-wrap: anywhere;
 }
 #fauna-tip strong {
   display: block;
-  font: 600 18px/1.3 Georgia,serif;
+  font: 600 18px/1.3 var(--font-title);
   color: #405e49;
 }
 #fauna-tip p {
@@ -90,14 +90,14 @@
   min-width: 0;
 }
 #fauna-title {
-  font: 400 32px/1.2 Georgia,serif;
+  font: 400 32px/1.2 var(--font-title);
   margin: 0;
   color: #405e49;
   overflow-wrap: anywhere;
 }
 #fauna-subtitle {
   margin: 6px 0 0;
-  font: 12px/1.4 system-ui,sans-serif;
+  font: 12px/1.4 var(--font-ui);
   color: #65725e;
 }
 #fauna-dialog button {
@@ -121,7 +121,7 @@
   overflow: auto;
   overscroll-behavior: contain;
   min-height: 0;
-  font: 14px/1.75 system-ui,sans-serif;
+  font: 14px/1.75 var(--font-ui);
 }
 .fauna-copy h3 {
   font-size: 17px;
@@ -347,7 +347,7 @@
   right: 0;
   margin: 0;
   color: #52634a;
-  font: 500 11px/1.4 system-ui,sans-serif;
+  font: 500 11px/1.4 var(--font-ui);
   text-align: center;
   pointer-events: none;
   user-select: text;

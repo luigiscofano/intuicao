@@ -57,7 +57,7 @@ body > header button.doc-link {
   overscroll-behavior: contain;
   padding: 8px 30px 12px;
   min-height: 0;
-  font: 15px/1.75 system-ui,sans-serif;
+  font: 15px/1.75 var(--font-ui);
 }
 #about-dialog .about-copy p {
   margin: 16px 0;
@@ -78,7 +78,7 @@ body > header button.doc-link {
   background: #fafbf7;
 }
 #about-dialog button {
-  font: 600 13px/1.4 system-ui,sans-serif;
+  font: 600 13px/1.4 var(--font-ui);
   min-height: 44px;
   border: 1px solid #b3c1a8;
   border-radius: 7px;

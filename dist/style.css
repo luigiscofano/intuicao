@@ -18,7 +18,7 @@ body {
   margin: 0;
   background: var(--paper);
   color: var(--ink);
-  font: 16px/1.5 system-ui,-apple-system,"Segoe UI",sans-serif;
+  font: 16px/1.5 var(--font-ui);
 }
 button,input,select {
   font: inherit;
@@ -1872,7 +1872,7 @@ svg .cut-grip:focus {
   cursor: default;
 }
 .light-source-check {
-  font: 700 12px system-ui,sans-serif;
+  font: 700 12px var(--font-ui);
 }
 @media(prefers-reduced-motion:reduce) {
   .light-source-ring {

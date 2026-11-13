@@ -183,7 +183,7 @@ body.approved-game-view #main .approved-real-actions .action-hint {
   color: #30412f;
 }
 #fauna-title {
-  font: 750 30px/1.2 system-ui,sans-serif;
+  font: 750 30px/1.2 var(--font-ui);
   color: #30412f;
 }
 #fauna-dialog .fauna-heading {
