@@ -96,14 +96,14 @@ test("inicialização é idempotente e reutiliza os botões informativos existen
   assert.deepEqual(h.animals, original);
   assert.equal(h.hint.removed, true);
 });
-test("as três categorias e todos os 21 jogos permanecem contados pelo catálogo", () => {
+test("as três categorias e todos os 20 jogos permanecem contados pelo catálogo", () => {
   const h = harness();
   initApprovedOpening(h.doc);
   assert.deepEqual(
     Object.values(h.headings).map((h) => h.children[0].textContent),
-    ["2 jogos", "10 jogos", "9 jogos"],
+    ["2 jogos", "10 jogos", "8 jogos"],
   );
-  assert.equal(Object.values(CATEGORY_GAMES).flat().length, 21);
+  assert.equal(Object.values(CATEGORY_GAMES).flat().length, 20);
 });
 test("controles compartilham a linha e se montam antes da casca dos jogos", () => {
   assert.match(
@@ -127,3 +127,4 @@ test("fundo da fauna é removido por composição CSS, sem alterar recursos orig
   assert.match(css, /@media\(max-width:480px\)/);
   assert.match(css, /\.hero-fauna-cell\[hidden\].*display: none !important/);
 });
+

@@ -24,7 +24,6 @@ const ORIGINAL_IDS = [
 ];
 const LOGIC_IDS = ["pulso", "foz", "refugio", "mirante", "renovo"];
 const VERSUS_IDS = [
-  "enlace",
   "mosaico",
   "quinhao",
   "estalo",
@@ -200,7 +199,7 @@ function harness(url = "https://example.test/") {
     },
   };
 }
-test("a biblioteca mostra 21 jogos e preserva integralmente os 10 cartões originais", () => {
+test("a biblioteca mostra 20 jogos e preserva integralmente os 10 cartões originais", () => {
   // A referência versionada não depende do histórico de publicação do site.
   const prior = readFileSync(
     new URL("tests/fixtures/library-github-baseline.html", root),
@@ -227,7 +226,7 @@ test("a biblioteca mostra 21 jogos e preserva integralmente os 10 cartões origi
   );
   assert.equal((originalNavigation(html).match(/<button\b/g) || []).length, 10);
   const h = harness();
-  assert.equal(h.cards.filter((x) => !x.hidden).length, 21);
+  assert.equal(h.cards.filter((x) => !x.hidden).length, 20);
   assert.equal(h.title.textContent, "Todos os jogos");
   assert.ok(h.awards.hidden);
   assert.equal(h.cards.filter((x) => x.clicked).length, 0);
@@ -237,8 +236,8 @@ test("filters and all-games return preserve cards and info visibility", () => {
   for (const [i, n] of [
     [1, 2],
     [2, 10],
-    [3, 9],
-    [0, 21],
+    [3, 8],
+    [0, 20],
   ]) {
     h.click(h.categories, h.filters[i]);
     assert.equal(h.cards.filter((x) => !x.hidden).length, n);
@@ -257,35 +256,35 @@ test("achievements closes games, refreshes on every entry and storage, and suppo
   assert.equal(h.renders, 2);
   h.click(h.tabs, h.buttons[0]);
   assert.ok(h.awards.hidden);
-  assert.equal(h.cards.filter((x) => !x.hidden).length, 21);
+  assert.equal(h.cards.filter((x) => !x.hidden).length, 20);
   h.context.location = new URL("https://example.test/?screen=achievements");
   h.context.window.popstate();
   assert.equal(h.renders, 3);
 });
-test("as rotas diretas dos 21 jogos acionam exatamente o handler correspondente", () => {
+test("as rotas diretas dos 20 jogos acionam exatamente o handler correspondente", () => {
   for (const game of ALL_IDS) {
     const h = harness(`https://example.test/?game=${game}`);
     assert.equal(h.cards.find((x) => cardId(x) === game).clicked, 1);
     assert.equal(h.cards.filter((x) => x.clicked).length, 1);
-    assert.equal(h.cards.filter((x) => !x.hidden).length, 21);
+    assert.equal(h.cards.filter((x) => !x.hidden).length, 20);
   }
 });
 test("filtered game links, old removed-game routes, invalid filters and reload remain safe", () => {
   const h = harness("https://example.test/?game=elo&category=logica");
   assert.equal(h.cards.filter((x) => !x.hidden).length, 10);
   h.back.onclick();
-  assert.equal(h.cards.filter((x) => !x.hidden).length, 21);
+  assert.equal(h.cards.filter((x) => !x.hidden).length, 20);
   assert.equal(h.context.location.search, "");
   assert.equal(
     harness("https://example.test/?game=trama").cards.filter((x) => !x.hidden)
       .length,
-    9,
+    8,
   );
   assert.equal(
     harness("https://example.test/?category=invalid").cards.filter(
       (x) => !x.hidden,
     ).length,
-    21,
+    20,
   );
 });
 
@@ -303,8 +302,8 @@ test("os cinco data-logic participam do filtro, progresso, clique e retorno à b
     assert.equal(h.context.location.searchParams.get("category"), "logica");
     assert.equal(h.nav.hidden, true);
     h.back.onclick();
-    assert.equal(h.cards.filter((item) => !item.hidden).length, 21);
-    assert.equal(h.infos.filter((item) => !item.hidden).length, 21);
+    assert.equal(h.cards.filter((item) => !item.hidden).length, 20);
+    assert.equal(h.infos.filter((item) => !item.hidden).length, 20);
     assert.equal(h.context.location.search, "");
     const direct = harness(
       `https://example.test/?game=${game}&category=logica`,
@@ -329,7 +328,7 @@ test("game navigation collapses library and return restores it", () => {
   assert.equal(h.context.location.search, "");
 });
 
-test("os seis versus participam do filtro e conservam a rota ao voltar", () => {
+test("os cinco versus participam do filtro e conservam a rota ao voltar", () => {
   for (const game of VERSUS_IDS) {
     const h = harness();
     const card = h.cards.find((item) => item.dataset.versus === game);
@@ -340,7 +339,7 @@ test("os seis versus participam do filtro e conservam a rota ao voltar", () => {
     assert.equal(h.context.location.searchParams.get("category"), "versus");
     assert.equal(h.nav.hidden, true);
     h.back.onclick();
-    assert.equal(h.cards.filter((item) => !item.hidden).length, 21);
+    assert.equal(h.cards.filter((item) => !item.hidden).length, 20);
     const direct = harness(
       `https://example.test/?game=${game}&category=versus`,
     );
@@ -348,14 +347,14 @@ test("os seis versus participam do filtro e conservam a rota ao voltar", () => {
       direct.cards.find((item) => item.dataset.versus === game).clicked,
       1,
     );
-    assert.equal(direct.cards.filter((item) => !item.hidden).length, 9);
+    assert.equal(direct.cards.filter((item) => !item.hidden).length, 8);
   }
 });
 
 // O total deve acompanhar a categoria, sem expor contagem no jogo ou nas conquistas.
 test("contador acompanha categoria e desaparece fora da biblioteca", () => {
   const h = harness();
-  assert.equal(h.count.textContent, "21 jogos");
+  assert.equal(h.count.textContent, "20 jogos");
   h.click(h.categories, h.filters[2]);
   assert.equal(h.count.textContent, "10 jogos");
   h.click(h.tabs, h.buttons[1]);
@@ -370,3 +369,4 @@ test("seletor compacto preserva controles sem ícones anunciados em duplicidade"
     assert.match(html, new RegExp(`data-library-filter="${filter}"`));
   }
 });
+

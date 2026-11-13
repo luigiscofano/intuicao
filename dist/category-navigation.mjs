@@ -106,9 +106,9 @@ export function initCategoryNavigation({ hideGames }) {
     if (retiredGame) return { category: retiredGameCategory(retiredGame), retired: true };
     const retiredRoute =
       ["trama", "vertice"].includes(game) ||
-      /\/(?:trama|vertice|divisa|orbita|lastro|vazante)\/?$/i.test(location.pathname) ||
+      /\/(?:trama|vertice|divisa|orbita|lastro|vazante|enlace)\/?$/i.test(location.pathname) ||
       (!game &&
-        /^#(?:game=)?(?:trama|vertice|divisa|orbita|lastro|vazante)(?:$|[/?&])/i.test(location.hash));
+        /^#(?:game=)?(?:trama|vertice|divisa|orbita|lastro|vazante|enlace)(?:$|[/?&])/i.test(location.hash));
     if (retiredRoute) return { category: "versus" };
     return {
       game: cards.some((card) => cardGame(card) === game) ? game : null,
@@ -120,8 +120,8 @@ export function initCategoryNavigation({ hideGames }) {
 
   function recordRoute(category, game = null, screen = null) {
     const url = new URL(location.href);
-    url.pathname = url.pathname.replace(/(?:trama|vertice|divisa|orbita|lastro|vazante)\/?$/i, "");
-    if (/^#(?:game=)?(?:trama|vertice|divisa|orbita|lastro|vazante)(?:$|[/?&])/i.test(url.hash))
+    url.pathname = url.pathname.replace(/(?:trama|vertice|divisa|orbita|lastro|vazante|enlace)\/?$/i, "");
+    if (/^#(?:game=)?(?:trama|vertice|divisa|orbita|lastro|vazante|enlace)(?:$|[/?&])/i.test(url.hash))
       url.hash = "";
     for (const key of ["game", "category", "screen"])
       url.searchParams.delete(key);
@@ -251,7 +251,7 @@ export function initCategoryNavigation({ hideGames }) {
       const url = new URL(location.href);
       url.searchParams.delete("game");
       url.searchParams.set("category", route.category);
-      url.pathname = url.pathname.replace(/(?:divisa|orbita|lastro|vazante)\/?$/i, "");
+      url.pathname = url.pathname.replace(/(?:divisa|orbita|lastro|vazante|enlace)\/?$/i, "");
       url.hash = "";
       history.replaceState(null, "", url);
     }
@@ -284,3 +284,4 @@ export function initCategoryNavigation({ hideGames }) {
   });
   restoreRoute();
 }
+
