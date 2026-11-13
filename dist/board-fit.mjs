@@ -1,3 +1,4 @@
+// ESTALO usa dimensão CSS estável: seleção e prévia não recalculam seu tamanho.
 // Ajuste somente de apresentação. Não lê nem grava partidas ou preferências.
 export const FIT_BOARD_SELECTOR = [
   '#scene', '#c-board', '#s-boards', '#r-board', '#o-board',
@@ -7,7 +8,6 @@ export const FIT_BOARD_SELECTOR = [
   '#versus-games .nv-lab .vazante-river-frame',
   '#versus-games .nv-lab .mosaico-board-wrap',
   '#versus-games .nv-lab .quinhao-plot',
-  '#versus-games .nv-lab .estalo-coordinates',
   '#versus-games .nv-lab .dobra-map',
   '#versus-games .nv-lab .acorde-board',
   '#versus-games .nv-lab .lastro-instrument',
