@@ -28,7 +28,9 @@ test('catálogo permanece com os 19 jogos atuais', () => {
   assert.equal(new Set(ids).size, 19);
   for (const retired of ['divisa','orbita','lastro','vazante','enlace','dobra']) assert(!ids.includes(retired));
 });
-test('cabeçalho preserva metadados e Informações sobre o jogo visíveis', () => {
+test('cabeçalho preserva Informações sobre o jogo sem legendas duplicadas', () => {
   assert.match(css, /\.lab-heading h2/);
-  assert.doesNotMatch(css, /clip-path|position: absolute|display: none/);
+  assert.doesNotMatch(css, /clip-path|position: absolute/);
+  assert.doesNotMatch(css, /\.lab-heading\s*\{[^}]*display: none/);
+  assert.match(css, /:is\(\.s-level-name, \.r-level-name, \.o-level-name, \.logic-level-name\)/);
 });

@@ -1,616 +1,145 @@
-/* Tabuleiro, controles e estados visuais de REPASSE. */
 /* REPASSE uses the shared Intuição shell; these rules describe its board only. */
-#repasse {
-  min-width: 0;
-}
-#repasse #r-back {
-  margin: 12px 24px 0;
-}
-#repasse .r-level-name {
-  font-size: 12px;
-  color: var(--muted);
-  margin: 6px 0 0;
-}
-#repasse .r-level-name span {
-  display: block;
-  font-size: 10px;
-  margin-top: 4px;
-}
-#repasse .r-chapter .stage-heading {
-  display: flex;
-  align-items: baseline;
-  gap: 10px;
-  flex-wrap: wrap;
-}
-#repasse .r-chapter .stage-heading small {
-  font-size: 11px;
-  font-weight: 400;
-  color: var(--muted);
-}
-#repasse #r-selection-status {
-  font-size: 13px;
-  line-height: 1.6;
-  color: var(--green);
-}
-#repasse #r-selection-status:empty {
-  display: none;
-}
-#repasse .r-workspace {
-  min-width: 0;
-}
-#repasse .r-workspace.rules-open>#r-advanced {
-  grid-column: 1/-1;
-  grid-row: 2;
-  border-left: 0;
-  border-top: 1px solid var(--line);
-}
-#repasse .r-surface>.stage-top {
-  width: 100%;
-  max-width: none;
-  padding: 10px 20px;
-  margin: 0;
-  flex-wrap: wrap;
-}
-#repasse .r-mission {
-  margin: 10px 24px 16px;
-  font-size: 13px;
-  line-height: 1.65;
-  color: var(--ink);
-}
-#repasse .r-tutorial {
-  margin: 12px 24px 18px;
-  padding: 12px 15px;
-  border: 1px solid #bbcbb0;
-  border-radius: 9px;
-  background: #f1f5eb;
-  font-size: 13px;
-  line-height: 1.6;
-}
-#repasse .r-tutorial summary {
-  font-weight: 650;
-  min-height: 28px;
-}
-#repasse .r-tutorial p {
-  margin: 6px 0 0;
-}
-#repasse .r-board-navigation {
-  max-width: 840px;
-  width: 100%;
-  margin: 10px auto 0;
-  --result-reserved-height:24px;
-}
-#repasse .r-board-navigation:has(#r-motion[data-outcome="win"]) {
-  --result-reserved-height:86px;
-}
+#repasse{min-width:0}
+#repasse #r-back{margin:12px 24px 0}
+#repasse .r-level-name{font-size:12px;color:var(--muted);margin:6px 0 0}
+#repasse .r-level-name span{display:block;font-size:10px;margin-top:4px}
+#repasse .r-chapter .stage-heading{display:flex;align-items:baseline;gap:10px;flex-wrap:wrap}
+#repasse .r-chapter .stage-heading small{font-size:11px;font-weight:400;color:var(--muted)}
+#repasse #r-selection-status{font-size:13px;line-height:1.6;color:var(--green)}
+#repasse #r-selection-status:empty{display:none}
+#repasse .r-workspace{min-width:0}
+#repasse .r-workspace.rules-open>#r-advanced{grid-column:1/-1;grid-row:2;border-left:0;border-top:1px solid var(--line)}
+#repasse .r-surface>.stage-top{width:100%;max-width:none;padding:10px 20px;margin:0;flex-wrap:wrap}
+#repasse .r-mission{margin:10px 24px 16px;font-size:13px;line-height:1.65;color:var(--ink)}
+#repasse .r-tutorial{margin:12px 24px 18px;padding:12px 15px;border:1px solid #bbcbb0;border-radius:9px;background:#f1f5eb;font-size:13px;line-height:1.6}
+#repasse .r-tutorial summary{font-weight:650;min-height:28px}
+#repasse .r-tutorial p{margin:6px 0 0}
+#repasse .r-board-navigation{max-width:840px;width:100%;margin:10px auto 0;--result-reserved-height:24px}
+#repasse .r-board-navigation:has(#r-motion[data-outcome="win"]){--result-reserved-height:86px}
 /* Keep ambient leaves behind the board, without removing the exterior identity. */
-#repasse .r-board-surface {
-  position: relative;
-  z-index: 4;
-  min-width: 0;
-  width: 100%;
-  background: #fff;
-}
-#repasse .r-board-scroll {
-  min-width: 0;
-  max-width: 100%;
-  overflow-x: auto;
-  overscroll-behavior-inline: contain;
-  padding: 9px 8px 12px;
-  scroll-padding-inline: 8px;
-  scrollbar-width: thin;
-  scrollbar-color: #a6b49b #f1f3ec;
-}
-#repasse .r-board-scroll:focus-visible {
-  outline: 2px solid var(--green);
-  outline-offset: -2px;
-  border-radius: 5px;
-}
-#repasse .r-scroll-help {
-  display: none;
-  margin: 2px 8px 10px;
-  font-size: 10px;
-  line-height: 1.6;
-  color: var(--muted);
-}
-#repasse .r-board {
-  position: relative;
-  display: grid;
-  grid-template-columns: repeat(var(--r-cols),minmax(0,1fr));
-  grid-template-rows: repeat(var(--r-rows),minmax(44px,1fr));
-  gap: 5px;
-  aspect-ratio: var(--r-cols)/var(--r-rows);
-  width: min(100%,var(--r-grid-width));
-  min-width: var(--r-min-width);
-  margin-inline: auto;
-  isolation: isolate;
-  touch-action: pan-x pan-y;
-}
-#repasse .r-board:focus-visible {
-  outline: 3px solid var(--green);
-  outline-offset: 5px;
-}
-#repasse .r-piece,#repasse .r-empty,#repasse .r-edge-box {
-  position: relative;
-  min-width: 0;
-  min-height: 44px;
-  box-sizing: border-box;
-}
+#repasse .r-board-surface{position:relative;z-index:4;min-width:0;width:100%;background:#fff}
+#repasse .r-board-scroll{min-width:0;max-width:100%;overflow-x:auto;overscroll-behavior-inline:contain;padding:9px 8px 12px;scroll-padding-inline:8px;scrollbar-width:thin;scrollbar-color:#a6b49b #f1f3ec}
+#repasse .r-board-scroll:focus-visible{outline:2px solid var(--green);outline-offset:-2px;border-radius:5px}
+#repasse .r-scroll-help{display:none;margin:2px 8px 10px;font-size:10px;line-height:1.6;color:var(--muted)}
+#repasse .r-board{position:relative;display:grid;grid-template-columns:repeat(var(--r-cols),minmax(0,1fr));grid-template-rows:repeat(var(--r-rows),minmax(44px,1fr));gap:5px;aspect-ratio:var(--r-cols)/var(--r-rows);width:min(100%,var(--r-grid-width));min-width:var(--r-min-width);margin-inline:auto;isolation:isolate;touch-action:pan-x pan-y}
+#repasse .r-board:focus-visible{outline:3px solid var(--green);outline-offset:5px}
+#repasse .r-piece,#repasse .r-empty,#repasse .r-edge-box{position:relative;min-width:0;min-height:44px;box-sizing:border-box}
 /* Flat cells and a single solid outline keep the numbers and directions primary. */
-#repasse .r-piece {
-  padding: 0;
-  margin: 0;
-  border: 1px solid #607366;
-  border-radius: 6px;
-  background: #fff;
-  box-shadow: none;
-  color: #243b2e;
-  display: grid;
-  place-items: center;
-  cursor: pointer;
-  touch-action: manipulation;
-  container-type: inline-size;
-}
-#repasse .r-piece:hover {
-  border-color: #243b2e;
-  background: #f3f6f1;
-}
-#repasse .r-piece:active {
-  background: #e9efe5;
-  box-shadow: none;
-}
-#repasse .r-piece:focus-visible {
-  outline: 2px solid #243b2e;
-  outline-offset: 2px;
-  z-index: 4;
-}
-#repasse .r-piece-value {
-  font: 600 18px/1 var(--font-ui);
-  font-size: clamp(17px,34cqi,22px);
-  letter-spacing: -.4px;
-  font-variant-numeric: tabular-nums;
-}
+#repasse .r-piece{padding:0;margin:0;border:1px solid #607366;border-radius:6px;background:#fff;box-shadow:none;color:#243b2e;display:grid;place-items:center;cursor:pointer;touch-action:manipulation;container-type:inline-size}
+#repasse .r-piece:hover{border-color:#243b2e;background:#f3f6f1}
+#repasse .r-piece:active{background:#e9efe5;box-shadow:none}
+#repasse .r-piece:focus-visible{outline:2px solid #243b2e;outline-offset:2px;z-index:4}
+#repasse .r-piece-value{font:600 18px/1 var(--font-ui);font-size:clamp(17px,34cqi,22px);letter-spacing:-.4px;font-variant-numeric:tabular-nums}
 /* Vector silhouettes avoid font-dependent arrow weights at small cell sizes. */
-#repasse .r-arrow {
-  position: absolute;
-  width: 10px;
-  height: 10px;
-  font-size: 0;
-  line-height: 0;
-  color: #536459;
-  pointer-events: none;
-}
-#repasse .r-arrow::before {
-  content: "";
-  display: block;
-  width: 100%;
-  height: 100%;
-  background: currentColor;
-  clip-path: polygon(0 40%,60% 40%,60% 10%,100% 50%,60% 90%,60% 60%,0 60%);
-}
-#repasse .r-arrow-up {
-  left: 50%;
-  top: 2px;
-  transform: translateX(-50%) rotate(-90deg);
-}
-#repasse .r-arrow-right {
-  right: 2px;
-  top: 50%;
-  transform: translateY(-50%);
-}
-#repasse .r-arrow-down {
-  left: 50%;
-  bottom: 2px;
-  transform: translateX(-50%) rotate(90deg);
-}
-#repasse .r-arrow-left {
-  left: 2px;
-  top: 50%;
-  transform: translateY(-50%) rotate(180deg);
-}
-#repasse .r-empty {
-  border: 1px solid #e1e6de;
-  border-radius: 6px;
-  background: #f8faf6;
-}
-#repasse .r-coordinate {
-  position: absolute;
-  left: 3px;
-  bottom: 2px;
-  font: 8px/1 var(--font-ui);
-  color: #586b4e;
-  pointer-events: none;
-}
+#repasse .r-arrow{position:absolute;width:10px;height:10px;font-size:0;line-height:0;color:#536459;pointer-events:none}
+#repasse .r-arrow::before{content:"";display:block;width:100%;height:100%;background:currentColor;clip-path:polygon(0 40%,60% 40%,60% 10%,100% 50%,60% 90%,60% 60%,0 60%)}
+#repasse .r-arrow-up{left:50%;top:2px;transform:translateX(-50%) rotate(-90deg)}
+#repasse .r-arrow-right{right:2px;top:50%;transform:translateY(-50%)}
+#repasse .r-arrow-down{left:50%;bottom:2px;transform:translateX(-50%) rotate(90deg)}
+#repasse .r-arrow-left{left:2px;top:50%;transform:translateY(-50%) rotate(180deg)}
+#repasse .r-empty{border:1px solid #e1e6de;border-radius:6px;background:#f8faf6}
+#repasse .r-coordinate{position:absolute;left:3px;bottom:2px;font:8px/1 var(--font-ui);color:#586b4e;pointer-events:none}
 /* Collectors are quieter than playable cells; current amount leads, goal follows. */
-#repasse .r-edge-box {
-  display: grid;
-  place-content: center;
-  border: 1px solid #c2ccc0;
-  border-radius: 6px;
-  background: #f5f7f2;
-  color: #354737;
-  text-align: center;
-  padding: 4px 2px;
-  overflow: visible;
+#repasse .r-edge-box{display:grid;place-content:center;border:1px solid #c2ccc0;border-radius:6px;background:#f5f7f2;color:#354737;text-align:center;padding:4px 2px;overflow:visible}
+#repasse .r-edge-box.exact{border-color:#9caf90;background:#eef4e9}
+#repasse .r-edge-box.over{border-color:#b5674d;background:#fff0e8;color:#85402a}
+#repasse .r-box-total{display:grid;justify-items:center;gap:2px;font:500 10px/1.2 var(--font-ui);white-space:nowrap;font-variant-numeric:tabular-nums}
+#repasse .r-box-current{font-size:16px;font-weight:600;line-height:1.1;letter-spacing:-.3px}
+#repasse .r-box-target{color:#576653}
+#repasse .over .r-box-target{color:#85402a}
+#repasse .r-box-divider{font-weight:400}
+#repasse .r-box-state{position:absolute;top:3px;left:3px;font:700 9px/1 var(--font-ui)}
+#repasse .r-gain{position:absolute;right:-4px;top:-6px;z-index:6;min-width:20px;border-radius:4px;background:#405e49;color:white;font:600 11px/1.5 var(--font-ui);padding:1px 4px;box-shadow:none;pointer-events:none}
+#repasse .r-gain:empty{display:none}
+#repasse .r-piece.r-preview-source{background:#edf3e8;border-color:#405e49}
+#repasse .r-preview-target{outline:2px solid #607d4e;outline-offset:0;z-index:3}
+#repasse .r-box-legend{display:flex;gap:6px 15px;flex-wrap:wrap;margin:4px 24px 16px;font-size:10px;color:var(--muted)}
+#repasse .r-readout{display:grid;grid-template-columns:auto auto minmax(0,1fr);gap:14px 22px;align-items:start}
+#repasse .r-readout strong{font-size:20px}
+#repasse .r-readout>p{max-width:none;text-align:left;line-height:1.65;margin:0}
+#repasse .r-readout .r-overrun{color:#85402a}
+#repasse #r-motion{min-height:var(--result-reserved-height);padding:0}
+#repasse .r-transfer-layer{position:absolute;inset:0;pointer-events:none;z-index:8}
+#repasse .r-transfer{position:absolute;background:#405e49;color:#fff;border:1px solid #304b37;border-radius:6px;font:700 13px/1.4 var(--font-ui);padding:2px 5px;white-space:nowrap;box-shadow:none;animation:r-transfer-travel .5s cubic-bezier(.22,.7,.3,1) both}
+#repasse .r-transfer-static{animation:none;transform:translate(-50%,-100%)}
+#repasse .r-receiving{box-shadow:inset 0 0 0 2px #88a36b}
+#repasse .r-checkbox{display:flex;align-items:center;gap:8px;min-height:44px}
+#repasse .r-checkbox input{width:18px;height:18px;accent-color:var(--green)}
+#repasse #r-advanced{min-width:0;overflow-wrap:anywhere}
+#repasse #r-advanced textarea{max-width:100%}
+#repasse .level-json-import pre{max-height:280px;overflow:auto}
+#repasse .level-json-import textarea{width:100%;box-sizing:border-box;max-width:100%;font:11px/1.5 ui-monospace,monospace}
+@keyframes r-transfer-travel{
+  0%{transform:translate(-50%,-50%);opacity:1}
+  80%{transform:translate(calc(-50% + var(--r-travel-x)),calc(-50% + var(--r-travel-y)));opacity:1}
+  100%{transform:translate(calc(-50% + var(--r-travel-x)),calc(-50% + var(--r-travel-y)));opacity:0}
 }
-#repasse .r-edge-box.exact {
-  border-color: #9caf90;
-  background: #eef4e9;
+@media(max-width:1050px){
+  #repasse .r-workspace.rules-open>#r-advanced{grid-column:1;grid-row:3}
 }
-#repasse .r-edge-box.over {
-  border-color: #b5674d;
-  background: #fff0e8;
-  color: #85402a;
+@media(max-width:600px){
+  #repasse #r-back{margin-left:14px;margin-right:14px}
+  #repasse .r-surface>.stage-top{padding:8px 14px}
+  #repasse .r-mission{margin:10px 14px 14px;font-size:12px}
+  #repasse .r-tutorial{margin:10px 14px 14px;padding:10px 12px;font-size:12px}
+  #repasse .r-board-navigation:has(>.level-arrow){grid-template-columns:44px minmax(0,1fr) 44px;gap:4px;padding:0 8px}
+  #repasse .r-board-navigation:has(>.level-arrow)>.r-board-surface{grid-column:1/-1;grid-row:2}
+  #repasse .r-board-navigation>.level-arrow{grid-row:1;margin-bottom:0}
+  #repasse #r-level-prev{grid-column:1}
+  #repasse #r-level-next{grid-column:3}
+  #repasse .r-board-scroll{padding:8px 5px 12px}
+  #repasse .r-scroll-help{display:block}
+  #repasse .r-box-legend{margin:4px 14px 14px}
+  #repasse .r-readout{grid-template-columns:1fr 1fr;gap:12px}
+  #repasse .r-readout>p{grid-column:1/-1}
 }
-#repasse .r-box-total {
-  display: grid;
-  justify-items: center;
-  gap: 2px;
-  font: 500 10px/1.2 var(--font-ui);
-  white-space: nowrap;
-  font-variant-numeric: tabular-nums;
+@media(prefers-reduced-motion:reduce){
+  #repasse .r-transfer{animation:none;transform:translate(calc(-50% + var(--r-travel-x)),calc(-50% + var(--r-travel-y)))}
+  #repasse .r-transfer-static{transform:translate(-50%,-100%)}
 }
-#repasse .r-box-current {
-  font-size: 16px;
-  font-weight: 600;
-  line-height: 1.1;
-  letter-spacing: -.3px;
-}
-#repasse .r-box-target {
-  color: #576653;
-}
-#repasse .over .r-box-target {
-  color: #85402a;
-}
-#repasse .r-box-divider {
-  font-weight: 400;
-}
-#repasse .r-box-state {
-  position: absolute;
-  top: 3px;
-  left: 3px;
-  font: 700 9px/1 var(--font-ui);
-}
-#repasse .r-gain {
-  position: absolute;
-  right: -4px;
-  top: -6px;
-  z-index: 6;
-  min-width: 20px;
-  border-radius: 4px;
-  background: #405e49;
-  color: white;
-  font: 600 11px/1.5 var(--font-ui);
-  padding: 1px 4px;
-  box-shadow: none;
-  pointer-events: none;
-}
-#repasse .r-gain:empty {
-  display: none;
-}
-#repasse .r-piece.r-preview-source {
-  background: #edf3e8;
-  border-color: #405e49;
-}
-#repasse .r-preview-target {
-  outline: 2px solid #607d4e;
-  outline-offset: 0;
-  z-index: 3;
-}
-#repasse .r-box-legend {
-  display: flex;
-  gap: 6px 15px;
-  flex-wrap: wrap;
-  margin: 4px 24px 16px;
-  font-size: 10px;
-  color: var(--muted);
-}
-#repasse .r-readout {
-  display: grid;
-  grid-template-columns: auto auto minmax(0,1fr);
-  gap: 14px 22px;
-  align-items: start;
-}
-#repasse .r-readout strong {
-  font-size: 20px;
-}
-#repasse .r-readout>p {
-  max-width: none;
-  text-align: left;
-  line-height: 1.65;
-  margin: 0;
-}
-#repasse .r-readout .r-overrun {
-  color: #85402a;
-}
-#repasse #r-motion {
-  min-height: var(--result-reserved-height);
-  padding: 0;
-}
-#repasse .r-transfer-layer {
-  position: absolute;
-  inset: 0;
-  pointer-events: none;
-  z-index: 8;
-}
-#repasse .r-transfer {
-  position: absolute;
-  background: #405e49;
-  color: #fff;
-  border: 1px solid #304b37;
-  border-radius: 6px;
-  font: 700 13px/1.4 var(--font-ui);
-  padding: 2px 5px;
-  white-space: nowrap;
-  box-shadow: none;
-  animation: r-transfer-travel .5s cubic-bezier(.22,.7,.3,1) both;
-}
-#repasse .r-transfer-static {
-  animation: none;
-  transform: translate(-50%,-100%);
-}
-#repasse .r-receiving {
-  box-shadow: inset 0 0 0 2px #88a36b;
-}
-#repasse .r-checkbox {
-  display: flex;
-  align-items: center;
-  gap: 8px;
-  min-height: 44px;
-}
-#repasse .r-checkbox input {
-  width: 18px;
-  height: 18px;
-  accent-color: var(--green);
-}
-#repasse #r-advanced {
-  min-width: 0;
-  overflow-wrap: anywhere;
-}
-#repasse #r-advanced textarea {
-  max-width: 100%;
-}
-#repasse .level-json-import pre {
-  max-height: 280px;
-  overflow: auto;
-}
-#repasse .level-json-import textarea {
-  width: 100%;
-  box-sizing: border-box;
-  max-width: 100%;
-  font: 11px/1.5 ui-monospace,monospace;
-}
-@keyframes r-transfer-travel {
-  0% {
-    transform: translate(-50%,-50%);
-    opacity: 1;
-  }
-  80% {
-    transform: translate(calc(-50% + var(--r-travel-x)),calc(-50% + var(--r-travel-y)));
-    opacity: 1;
-  }
-  100% {
-    transform: translate(calc(-50% + var(--r-travel-x)),calc(-50% + var(--r-travel-y)));
-    opacity: 0;
-  }
-}
-@media(max-width:1050px) {
-  #repasse .r-workspace.rules-open>#r-advanced {
-    grid-column: 1;
-    grid-row: 3;
-  }
-}
-@media(max-width:600px) {
-  #repasse #r-back {
-    margin-left: 14px;
-    margin-right: 14px;
-  }
-  #repasse .r-surface>.stage-top {
-    padding: 8px 14px;
-  }
-  #repasse .r-mission {
-    margin: 10px 14px 14px;
-    font-size: 12px;
-  }
-  #repasse .r-tutorial {
-    margin: 10px 14px 14px;
-    padding: 10px 12px;
-    font-size: 12px;
-  }
-  #repasse .r-board-navigation:has(>.level-arrow) {
-    grid-template-columns: 44px minmax(0,1fr) 44px;
-    gap: 4px;
-    padding: 0 8px;
-  }
-  #repasse .r-board-navigation:has(>.level-arrow)>.r-board-surface {
-    grid-column: 1/-1;
-    grid-row: 2;
-  }
-  #repasse .r-board-navigation>.level-arrow {
-    grid-row: 1;
-    margin-bottom: 0;
-  }
-  #repasse #r-level-prev {
-    grid-column: 1;
-  }
-  #repasse #r-level-next {
-    grid-column: 3;
-  }
-  #repasse .r-board-scroll {
-    padding: 8px 5px 12px;
-  }
-  #repasse .r-scroll-help {
-    display: block;
-  }
-  #repasse .r-box-legend {
-    margin: 4px 14px 14px;
-  }
-  #repasse .r-readout {
-    grid-template-columns: 1fr 1fr;
-    gap: 12px;
-  }
-  #repasse .r-readout>p {
-    grid-column: 1/-1;
-  }
-}
-@media(prefers-reduced-motion:reduce) {
-  #repasse .r-transfer {
-    animation: none;
-    transform: translate(calc(-50% + var(--r-travel-x)),calc(-50% + var(--r-travel-y)));
-  }
-  #repasse .r-transfer-static {
-    transform: translate(-50%,-100%);
-  }
-}
+
 /* One continuous surface; no empty statistics band. */
-#repasse .r-surface>.level-actions {
-  background: transparent;
-}
-#repasse .r-feedback {
-  margin: 0;
-  padding: 16px 24px;
-  border-top: 1px solid var(--line);
-  line-height: 1.65;
-}
-#repasse .r-feedback:empty {
-  display: none;
-}
-#repasse .r-feedback.r-overrun {
-  color: #85402a;
-}
-@media(max-width:600px) {
-  #repasse .r-feedback {
-    padding: 14px 16px;
-  }
-}
+#repasse .r-surface>.level-actions{background:transparent}
+#repasse .r-feedback{margin:0;padding:16px 24px;border-top:1px solid var(--line);line-height:1.65}
+#repasse .r-feedback:empty{display:none}
+#repasse .r-feedback.r-overrun{color:#85402a}
+@media(max-width:600px){#repasse .r-feedback{padding:14px 16px}}
+
 /* Compact board: full-size interactive pieces, quieter noninteractive collectors. */
-#repasse .r-surface .r-board {
-  grid-template-columns: 32px repeat(var(--r-inner-cols),minmax(var(--r-cell-min,44px),1fr)) 32px;
-  grid-template-rows: 32px repeat(var(--r-inner-rows),auto) 32px;
-  gap: 4px;
-  aspect-ratio: auto;
-}
-#repasse .r-surface .r-piece,#repasse .r-surface .r-empty {
-  aspect-ratio: 1;
-  min-height: 44px;
-}
-#repasse .r-surface .r-edge-box {
-  min-height: 32px;
-}
-#repasse .r-surface .r-board-scroll {
-  padding: 2px 0;
-  max-height: none;
-}
-#repasse .r-surface .r-scroll-help {
-  display: none;
-}
-#repasse .r-surface>.level-actions {
-  margin: 6px 0 0;
-  padding: 10px 16px;
-  border-top: 0;
-}
-#repasse .r-surface .r-box-legend {
-  margin-top: 6px;
-  margin-bottom: 8px;
-}
-@media(max-width:600px) {
-  #repasse .r-surface .r-board-navigation:has(>.level-arrow) {
-    padding: 0 2px;
-  }
-}
-#repasse .r-surface .r-edge-box {
-  padding: 1px 2px;
-}
-#repasse .r-surface .r-box-total {
-  gap: 1px;
-  font-size: 9px;
-}
-#repasse .r-surface .r-box-current {
-  font-size: 14px;
-  line-height: 1;
-}
-#repasse .r-surface .r-box-state {
-  top: -3px;
-  left: -3px;
-  background: #fff;
-  border-radius: 50%;
-  line-height: 10px;
-  min-width: 10px;
-}
+#repasse .r-surface .r-board{grid-template-columns:32px repeat(var(--r-inner-cols),minmax(var(--r-cell-min,44px),1fr)) 32px;grid-template-rows:32px repeat(var(--r-inner-rows),auto) 32px;gap:4px;aspect-ratio:auto}
+#repasse .r-surface .r-piece,#repasse .r-surface .r-empty{aspect-ratio:1;min-height:44px}
+#repasse .r-surface .r-edge-box{min-height:32px}
+#repasse .r-surface .r-board-scroll{padding:2px 0;max-height:none}
+#repasse .r-surface .r-scroll-help{display:none}
+#repasse .r-surface>.level-actions{margin:6px 0 0;padding:10px 16px;border-top:0}
+#repasse .r-surface .r-box-legend{margin-top:6px;margin-bottom:8px}
+@media(max-width:600px){#repasse .r-surface .r-board-navigation:has(>.level-arrow){padding:0 2px}}
+#repasse .r-surface .r-edge-box{padding:1px 2px}
+#repasse .r-surface .r-box-total{gap:1px;font-size:9px}
+#repasse .r-surface .r-box-current{font-size:14px;line-height:1}
+#repasse .r-surface .r-box-state{top:-3px;left:-3px;background:#fff;border-radius:50%;line-height:10px;min-width:10px}
 /* Give the board more presence where there is room; compact touch geometry stays intact. */
-@media(min-width:681px) {
-  #repasse .r-surface .r-board {
-    width: min(100%,calc(var(--r-inner-cols)*76px + 88px + (var(--r-inner-cols) + 1)*6px));
-    grid-template-columns: 44px repeat(var(--r-inner-cols),minmax(var(--r-cell-min,44px),1fr)) 44px;
-    grid-template-rows: 44px repeat(var(--r-inner-rows),auto) 44px;
-    gap: 6px;
-  }
-  #repasse .r-surface .r-edge-box {
-    min-height: 44px;
-    padding: 2px 4px;
-  }
-  #repasse .r-surface .r-piece-value {
-    font-size: clamp(20px,30cqi,26px);
-  }
-  #repasse .r-surface .r-arrow {
-    width: 14px;
-    height: 14px;
-  }
-  #repasse .r-surface .r-box-current {
-    font-size: 20px;
-  }
-  #repasse .r-surface .r-box-total {
-    font-size: 11px;
-    gap: 2px;
-  }
+@media(min-width:681px){
+ #repasse .r-surface .r-board{width:min(100%,calc(var(--r-inner-cols)*76px + 88px + (var(--r-inner-cols) + 1)*6px));grid-template-columns:44px repeat(var(--r-inner-cols),minmax(var(--r-cell-min,44px),1fr)) 44px;grid-template-rows:44px repeat(var(--r-inner-rows),auto) 44px;gap:6px}
+ #repasse .r-surface .r-edge-box{min-height:44px;padding:2px 4px}
+ #repasse .r-surface .r-piece-value{font-size:clamp(20px,30cqi,26px)}
+ #repasse .r-surface .r-arrow{width:14px;height:14px}
+ #repasse .r-surface .r-box-current{font-size:20px}
+ #repasse .r-surface .r-box-total{font-size:11px;gap:2px}
 }
 /* Keep useful rules in normal flow, instead of stretching an empty game column. */
-#repasse .r-workspace.rules-open {
-  grid-template-columns: minmax(0,1fr);
-  align-items: start;
-}
-#repasse .r-workspace>.r-surface {
-  grid-column: 1;
-  grid-row: 1;
-  align-self: start;
-  padding-bottom: 8px;
-}
-#repasse .r-workspace>#r-rules-sidebar {
-  grid-column: 1;
-  grid-row: 2;
-  border-left: 0;
-  border-top: 1px solid var(--line);
-  padding: 16px 24px;
-}
-#repasse .r-workspace>#r-advanced {
-  grid-column: 1;
-  grid-row: 3;
-}
-#repasse .repasse-selection {
-  padding-bottom: 16px;
-}
-#repasse #r-catalog>.r-chapter:last-child .level-group {
-  margin-bottom: 12px;
-}
-#repasse .repasse-selection>.json-import-disclosure {
-  margin-top: 12px;
-}
-@media(max-width:600px) {
-  #repasse .r-workspace>#r-rules-sidebar {
-    padding: 14px 16px;
-  }
-}
+#repasse .r-workspace.rules-open{grid-template-columns:minmax(0,1fr);align-items:start}
+#repasse .r-workspace>.r-surface{grid-column:1;grid-row:1;align-self:start;padding-bottom:8px}
+#repasse .r-workspace>#r-rules-sidebar{grid-column:1;grid-row:2;border-left:0;border-top:1px solid var(--line);padding:16px 24px}
+#repasse .r-workspace>#r-advanced{grid-column:1;grid-row:3}
+#repasse .repasse-selection{padding-bottom:16px}
+#repasse #r-catalog>.r-chapter:last-child .level-group{margin-bottom:12px}
+#repasse .repasse-selection>.json-import-disclosure{margin-top:12px}
+@media(max-width:600px){#repasse .r-workspace>#r-rules-sidebar{padding:14px 16px}}
 /* Non-clipping frame includes playable pieces and all edge goals. */
-#repasse .r-board-surface {
-  border-radius: 18px;
-  outline: 2px solid #b3c1a8;
-  outline-offset: -1px;
-}
-/* Reserve room above every collector, including its status and preview badges. */
-#repasse .r-surface .r-board-scroll {
-  padding-top: 24px;
-}
+#repasse .r-board-surface{border-radius:18px;outline:2px solid #b3c1a8;outline-offset:-1px}
+/* Mantém respiro acima e abaixo das peças, sem reduzir a largura do tabuleiro.
+   A reserva superior também acomoda os indicadores que ultrapassam os coletores. */
+#repasse .r-surface .r-board-scroll{padding-block:24px}
 /* Remove the legacy white bottom-gradient strip, keeping the goal legend intact. */
-#repasse>.repasse-lab .r-surface {
-  background-image: none;
-  background-color: #f8f9f3;
-}
+#repasse>.repasse-lab .r-surface{background-image:none;background-color:#f8f9f3}
