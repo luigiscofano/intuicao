@@ -123,3 +123,6 @@ body > header button.doc-link {
     flex-wrap: wrap;
   }
 }
+
+/* Destaque restrito ao lema de Sobre o projeto. */
+#about-dialog .about-motto .about-curiosity{font-weight:700;text-decoration:underline;text-underline-offset:.12em;text-decoration-thickness:.055em}
