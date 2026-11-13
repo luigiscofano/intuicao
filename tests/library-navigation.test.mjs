@@ -204,7 +204,9 @@ test("a biblioteca mostra 19 jogos e preserva integralmente os 10 cartões origi
     new URL("tests/fixtures/library-github-baseline.html", root),
     "utf8",
   );
-  assert.equal(originalNavigation(html), originalNavigation(prior));
+  // A renumeração editorial é autorizada; o restante do cartão deve ser idêntico.
+  const withoutNumbers = source => originalNavigation(source).replace(/<span>\d{2}<\/span>/g, '<span>índice</span>');
+  assert.equal(withoutNumbers(html), withoutNumbers(prior));
   const currentCards = [
     ...html.matchAll(
       /<button\b[^>]*\bdata-logic="([^"]+)"[^>]*>[\s\S]*?<\/button>/g,
