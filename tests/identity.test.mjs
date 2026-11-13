@@ -115,6 +115,7 @@ test('movimento e vitórias Versus aprovados preservam todos os arquivos fora do
     // Revisão pedagógica: somente resumos/regras; motores e saves seguem protegidos.
     'dist/versus/info.mjs',
     // Sete mapas Estalo e configuração de mapa autorizados; demais motores protegidos.
+    'dist/versus/games/estalo/map-selection.mjs', // Cartões de seleção por tamanho.
     'dist/versus/games/estalo/maps.mjs', 'dist/versus/games/estalo/engine.mjs',
     'dist/versus/games/estalo/index.mjs', 'dist/versus/games/estalo/README.md',
     'dist/versus/session.mjs',
