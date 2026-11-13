@@ -1,9 +1,9 @@
 /* Shared Terra e Mata presentation, without changing boards or game controls. */
-body #main .unified-selection{padding:clamp(18px,3vw,30px);border-radius:12px;background:var(--surface-paper, #fffefa);color:#30412f}
-body #main .unified-selection>h2,body #main .unified-selection .logic-selection-heading h2,body #main .unified-selection .nv-selection-heading h2{margin:8px 0 12px;font:700 clamp(27px,3.5vw,38px)/1.2 var(--font-title);letter-spacing:-.02em}
-body #main .unified-selection .selection-section{min-width:0;margin:24px 0 0}
-body #main .unified-selection .selection-rules{margin-top:22px}
-body #main .unified-selection .rules-preview{margin:0;padding:20px;border-radius:8px;background:var(--surface-muted, #f3f5ee);border:1px solid var(--surface-line, #d9ddcf)}
+body #main .unified-selection{padding:clamp(14px,2vw,20px);border-radius:12px;background:var(--surface-paper, #fffefa);color:#30412f}
+body #main .unified-selection>h2,body #main .unified-selection .logic-selection-heading h2,body #main .unified-selection .nv-selection-heading h2{margin:4px 0 6px;font:700 clamp(24px,2.5vw,28px)/1.2 var(--font-title);letter-spacing:-.02em}
+body #main .unified-selection .selection-section{min-width:0;margin:16px 0 0}
+body #main .unified-selection .selection-rules{margin-top:14px}
+body #main .unified-selection .rules-preview{margin:0;padding:16px;align-items:start;gap:18px;border-radius:8px;background:var(--surface-muted, #f3f5ee);border:1px solid var(--surface-line, #d9ddcf)}
 body #main .unified-selection :is(.logic-rules,.nv-rules){margin:0;padding:0;border:0;background:none}
 body #main .unified-selection .nv-rules>summary{display:none}
 body #main .unified-selection :is(.nv-control-help,.logic-control-help){font:400 12px/1.6 var(--font-ui);color:#52634b;margin:12px 0 0}
@@ -11,13 +11,13 @@ body #main .unified-selection .nv-help-more{margin:12px 0 0}
 body #main .unified-selection .selection-modes{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:12px}
 body #main .unified-selection .selection-mode{display:grid;grid-template-columns:minmax(0,1fr) auto;align-items:center;column-gap:14px;row-gap:4px;min-width:0;padding:14px 16px;border:1px solid #bac6ac;border-radius:10px;background:#f4eddd}
 body #main .unified-selection .selection-section-title{margin:0 0 9px;font:750 20px/1.3 var(--font-ui);letter-spacing:0;color:#30412f}
-body #main .unified-selection .selection-section-description{margin:0 0 18px;font:400 14px/1.6 var(--font-ui);color:#52634b}
+body #main .unified-selection .selection-section-description{margin:0 0 12px;font:400 14px/1.6 var(--font-ui);color:#52634b}
 /* Os modos ficam compactos, sem reduzir a área útil de toque nem ocultar a explicação. */
 body #main .unified-selection .selection-mode>.selection-section-title{grid-column:1;margin:0;font-size:16px;line-height:1.3}
 body #main .unified-selection .selection-mode>.selection-section-description{grid-column:1;margin:0;font-size:13px;line-height:1.45}
 body #main .unified-selection .selection-mode-button{grid-column:2;grid-row:1 / span 2;align-self:center;margin:0;min-height:44px;padding:9px 12px;border:1px solid #405e49;border-radius:9px;background:#405e49;color:#fffaf0;font:700 13px/1.4 var(--font-ui);text-align:center;white-space:normal;max-width:170px}
 body #main .unified-selection .selection-mode-button:hover{background:#304c38}
-body #main .unified-selection :is(.selection-levels,.selection-setup){border-top:1px solid #cbd1bf;padding-top:24px}
+body #main .unified-selection :is(.selection-levels,.selection-setup){border-top:1px solid #cbd1bf;padding-top:16px}
 /* Tamanho único para as 12 campanhas. Trilhas fixas impedem que a última
    faixa (com menos fases) estique os botões até preencher toda a linha. */
 body #main .unified-selection {
@@ -80,12 +80,12 @@ body #main .unified-selection .campaign-progress {
   align-items: baseline;
   flex-wrap: wrap;
   gap: 0 8px;
-  margin: 22px 0;
+  margin: 12px 0;
   color: #39674a;
-  font: 500 clamp(16px, 2vw, 20px)/1.4 var(--font-ui);
+  font: 500 16px/1.4 var(--font-ui);
 }
 body #main .unified-selection .campaign-progress-count {
-  font: 750 clamp(28px, 3.5vw, 36px)/1.2 var(--font-ui);
+  font: 750 26px/1.2 var(--font-ui);
 }
 body #main .unified-selection .campaign-progress-total {
   white-space: nowrap;
@@ -95,4 +95,98 @@ body #main .unified-selection .campaign-progress-total {
 @media(max-width:440px){
  body #main .unified-selection .selection-mode{grid-template-columns:minmax(0,1fr);row-gap:4px}
  body #main .unified-selection .selection-mode-button{grid-column:1;grid-row:auto;justify-self:start;margin-top:4px;max-width:100%}
+}
+
+/* Entrada dos jogos: número, retorno e apresentação usam o mesmo ritmo.
+   O escopo não alcança o tabuleiro, a barra de ações ou as regras de cada jogo. */
+body.approved-game-view #main #approved-game-hero {
+  padding: 10px 0 8px;
+}
+body.approved-game-view #main .approved-game-band {
+  gap: 12px;
+  margin-top: 0;
+  font-size: 15px;
+}
+body.approved-game-view #main .approved-game-band > .number {
+  flex-basis: 30px;
+  width: 30px;
+  height: 30px;
+  font-size: 12px;
+}
+body.approved-game-view #main > .category-heading {
+  gap: 12px;
+  padding-block: 8px 12px;
+  margin: 0;
+}
+body.approved-game-view #main #category-back {
+  width: auto;
+  min-height: 44px;
+  padding: 8px 12px;
+  gap: 8px;
+  font-size: 14px;
+}
+body.approved-game-view #main #category-back .category-back-arrow {
+  font-size: 22px;
+}
+
+/* Títulos têm escala editorial menor; ilustrações continuam reconhecíveis. */
+body #main .unified-selection :is(.logic-selection-heading, .nv-selection-heading) {
+  gap: 12px;
+  margin-bottom: 12px;
+}
+body #main .unified-selection :is(.logic-selection-heading, .nv-selection-heading) p,
+body #main .unified-selection > p:not(.campaign-progress) {
+  margin-block: 4px 8px;
+  font-size: 14px;
+  line-height: 1.5;
+}
+body #main .unified-selection .eyebrow {
+  margin-block: 0 4px;
+  font-size: 10px;
+}
+body #main .unified-selection .nv-game-icon {
+  width: 48px;
+  height: 48px;
+  flex-basis: 48px;
+}
+body #main .unified-selection .rules-preview .rp-goal {
+  margin-bottom: 8px;
+}
+@media (max-width: 680px) {
+  body #main .unified-selection .rules-preview {
+    padding: 12px;
+    gap: 12px;
+  }
+  body #main .unified-selection :is(.logic-selection-heading, .nv-selection-heading) {
+    gap: 10px;
+    margin-bottom: 8px;
+  }
+  body #main .unified-selection .nv-game-icon {
+    width: 40px;
+    height: 40px;
+    flex-basis: 40px;
+  }
+}
+
+/* O espaçamento já é definido pela lista; margens legadas não devem duplicá-lo. */
+body #main .unified-selection .rules-preview .rp-copy > ol {
+  gap: 6px;
+}
+body #main .unified-selection .rules-preview .rp-copy > ol > li {
+  margin-block: 0;
+}
+
+/* Graduações Cerâmica. A máscara reutiliza o PNG vazado do azulejo existente.
+   Mantemos nomes e estados de progresso: a cor não é a única identificação. */
+body #main .unified-selection [data-difficulty-tier="0"] { --difficulty-color: #7B817A; }
+body #main .unified-selection [data-difficulty-tier="1"] { --difficulty-color: #285D7C; }
+body #main .unified-selection [data-difficulty-tier="2"] { --difficulty-color: #725580; }
+body #main .unified-selection [data-difficulty-tier="3"] { --difficulty-color: #805D43; }
+body #main .unified-selection [data-difficulty-tier="4"] { --difficulty-color: #2C302D; }
+body #main .unified-selection [data-difficulty-tier="5"] { --difficulty-color: #A7443D; }
+body #main .unified-selection :is(.stage-heading, .logic-tier-heading)[data-difficulty-tier]::before {
+  background: var(--difficulty-color);
+  border-radius: 0;
+  -webkit-mask: url("platform-assets/tiles/blue-br.png") center / contain no-repeat;
+  mask: url("platform-assets/tiles/blue-br.png") center / contain no-repeat;
 }
