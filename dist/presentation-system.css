@@ -104,6 +104,13 @@ body.approved-game-view #main .approved-game-section > .lab-heading h2 {
   line-height: 1.4;
   color: #59675c;
 }
+/* O cabeçalho aprovado já apresenta o nome do nível. Ocultamos somente a
+   descrição legada duplicada e seus metadados, preservando o texto-fonte
+   utilizado pelos modos livres e todos os controles do cabeçalho. */
+body.approved-game-view #main .approved-game-section > .lab-heading
+  :is(.s-level-name, .r-level-name, .o-level-name, .logic-level-name) {
+  display: none;
+}
 @media (forced-colors: active) {
   body > header .doc-link,
   #main > .games > button:not(.game-info-nav),

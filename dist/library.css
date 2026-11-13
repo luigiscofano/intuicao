@@ -1,4 +1,20 @@
 /* Biblioteca Terra e Mata: preserva os botões originais e suas rotas. */
+/* Em filtros curtos, o rodapé continua no chão da janela sem esticar os cartões.
+   O modo de jogo mantém seu dimensionamento independente. */
+body:not(.approved-game-view) {
+  min-height: 100vh;
+  min-height: 100svh;
+  display: flex;
+  flex-direction: column;
+}
+body:not(.approved-game-view) > :is(header, main, footer) {
+  width: 100%;
+  flex-shrink: 0;
+}
+body:not(.approved-game-view) > main {
+  flex-grow: 1;
+}
+
 .library-navigation {
   display: flex;
   gap: 8px;
