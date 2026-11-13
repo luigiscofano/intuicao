@@ -5,9 +5,9 @@ import { QUICK_START } from '../dist/rules-quick-start.mjs';
 import { GAME_INFO } from '../dist/game-info-content.mjs';
 import { RULE_EXAMPLES } from '../dist/rules-examples.mjs';
 import { rulesPreviewMarkup, explanatorySvg } from '../dist/rules-preview.mjs';
-const active = ['light','cut','elo','prumo','pacto','sintonia','repasse','pulso','foz','refugio','mirante','renovo','desvio','broto','cerco','mosaico','quinhao','estalo','dobra','acorde'];
+const active = ['light','cut','elo','prumo','pacto','sintonia','repasse','pulso','foz','refugio','mirante','renovo','desvio','broto','cerco','mosaico','quinhao','estalo','acorde'];
 
-test('os 20 jogos têm objetivo, três ações curtas e exemplo legível', () => {
+test('os 19 jogos têm objetivo, três ações curtas e exemplo legível', () => {
  assert.ok(active.every(game => QUICK_START[game]));
  for (const game of active) {
   const guide = QUICK_START[game];
@@ -22,7 +22,7 @@ test('os 20 jogos têm objetivo, três ações curtas e exemplo legível', () =>
   assert.match(html, /<details class="rp-details"><summary>Regras completas e detalhes/);
   assert.match(html, /Veja um exemplo/);
   assert.match(html, /class="rp-tap"/);
-  assert.equal((html.match(/class="rp-phase rp-phase-/g)||[]).length,3);
+  assert.equal((html.match(/class="rp-phase rp-phase-/g)||[]).length,0);
   for (const rule of GAME_INFO[game].rules) {
    // O resumo não elimina as regras completas, inclusive condições especiais.
    const escaped = rule.replace(/[&<>"']/g, c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
@@ -49,10 +49,10 @@ test('loop mais rápido, sem cintilação rápida nem controle manual; redução
  const motion = readFileSync(new URL('../dist/rules-examples.css', import.meta.url),'utf8');
  assert.match(css,/--rp-cycle:4\.8s/);
  assert.match(css,/\.rp-description\{font-size:13px/);
- for(const token of ['rp-observe','rp-do','rp-check']) assert.ok(css.includes(`@keyframes ${token}`));
+ assert.doesNotMatch(css, /rp-phase|@keyframes rp-observe/);
  assert.match(motion,/\.rp-tap\{animation:rp-tap var\(--rp-cycle,4\.8s\) linear infinite/);
  assert.match(motion,/prefers-reduced-motion:reduce[\s\S]*\.rp-tap\{display:none/);
- assert.match(css,/data-ui-reduced-motion="true"[\s\S]*\.rp-phase\{animation:none!important/);
+ assert.match(css,/data-ui-reduced-motion="true"[\s\S]*animation:none!important/);
 });
 
 test('regras críticas permanecem explícitas no primeiro contato', () => {
