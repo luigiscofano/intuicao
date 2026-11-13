@@ -22,6 +22,16 @@
   max-width: none;
   margin: 0;
 }
+/* Ênfase editorial pontual, sem transformar o título em link nem mudar sua cor. */
+#main > .intro[data-approved-opening] h1 .opening-curiosity {
+  color: inherit;
+  font-style: italic;
+  font-weight: inherit;
+  text-decoration: underline;
+  text-decoration-thickness: .055em;
+  text-underline-offset: .12em;
+  text-decoration-skip-ink: auto;
+}
 .opening-fauna-group { display: flex; align-items: center; gap: 16px; flex: none; }
 #main > .intro[data-approved-opening] .hero-fauna {
   display: flex;
