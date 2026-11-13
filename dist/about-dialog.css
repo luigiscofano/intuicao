@@ -1,4 +1,4 @@
-/* Aparência do diálogo Sobre o projeto e de sua celebração. */
+/* Aparência do diálogo Sobre o projeto. */
 /* Isolated project dialog. No game, foliage or frame selectors. */
 body > header button.doc-link {
   font: inherit;
@@ -95,57 +95,9 @@ body > header button.doc-link {
   padding: 4px;
   flex-shrink: 0;
 }
-#about-dialog .about-celebrate {
-  background: #405e49;
-  color: #fff;
-  border-color: #405e49;
-}
 #about-dialog :focus-visible {
   outline: 3px solid #9eaf8e;
   outline-offset: 3px;
-}
-#about-dialog .about-sparkles {
-  position: absolute;
-  inset: 0;
-  overflow: hidden;
-  border-radius: inherit;
-  pointer-events: none;
-  user-select: none;
-  z-index: 2;
-}
-#about-dialog .about-spark {
-  position: absolute;
-  left: var(--sx);
-  top: var(--sy);
-  color: var(--color);
-  font-size: var(--size);
-  line-height: 1;
-  opacity: 0;
-  animation: about-sparkle 1350ms ease-out var(--delay) both;
-  pointer-events: none;
-}
-@keyframes about-sparkle {
-  0% {
-    opacity: 0;
-    transform: translateY(8px) scale(.3) rotate(-20deg);
-  }
-  20% {
-    opacity: .95;
-  }
-  100% {
-    opacity: 0;
-    transform: translateY(-72px) scale(1.1) rotate(65deg);
-  }
-}
-#about-dialog .about-status {
-  position: absolute;
-  width: 1px;
-  height: 1px;
-  padding: 0;
-  margin: -1px;
-  overflow: hidden;
-  clip-path: inset(50%);
-  white-space: nowrap;
 }
 @media(max-width:600px) {
   #about-dialog {
@@ -169,98 +121,5 @@ body > header button.doc-link {
   #about-dialog .about-actions {
     padding: 14px 18px;
     flex-wrap: wrap;
-  }
-}
-@media(prefers-reduced-motion:reduce) {
-  #about-dialog .about-spark {
-    animation: none;
-    opacity: .85;
-    transform: none;
-  }
-}
-/* Extra solid green stars, in their own top layer. Original stars stay intact. */
-#about-green-sparkles {
-  position: fixed;
-  inset: 0;
-  box-sizing: border-box;
-  width: 100vw;
-  height: 100dvh;
-  max-width: none;
-  max-height: none;
-  margin: 0;
-  padding: 0;
-  border: 0;
-  background: transparent;
-  overflow: hidden;
-  pointer-events: none;
-  user-select: none;
-}
-#about-green-sparkles::backdrop {
-  background: transparent;
-  pointer-events: none;
-}
-#about-green-sparkles .about-green-spark {
-  position: absolute;
-  left: var(--gx);
-  top: var(--gy);
-  display: grid;
-  place-items: center;
-  width: 24px;
-  height: 24px;
-  color: var(--gcolor);
-  font: 700 var(--gsize)/1 system-ui,sans-serif;
-  opacity: 0;
-  pointer-events: none;
-  animation: about-green-sparkle 1400ms ease-out var(--gdelay) both;
-}
-@keyframes about-green-sparkle {
-  0% {
-    opacity: 0;
-    transform: scale(.65);
-  }
-  18% {
-    opacity: .9;
-  }
-  70% {
-    opacity: .85;
-  }
-  100% {
-    opacity: 0;
-    transform: translate(var(--gdx),var(--gdy)) scale(.9) rotate(24deg);
-  }
-}
-@media(prefers-reduced-motion:reduce) {
-  #about-green-sparkles .about-green-spark {
-    animation: none;
-    opacity: .8;
-    transform: none;
-  }
-}
-/* Additive fauna confetti: exact supplied green icons, with their white paper removed
-   at render time. Existing pastel stars and solid green stars remain unchanged. */
-#about-green-sparkles .about-animal-confetti {
-  position: absolute;
-  left: var(--ax);
-  top: var(--ay);
-  width: var(--asize);
-  height: var(--asize);
-  pointer-events: none;
-  user-select: none;
-  opacity: 0;
-  transform-origin: 50% 45%;
-  will-change: transform,opacity;
-}
-#about-green-sparkles .about-animal-confetti svg {
-  display: block;
-  width: 100%;
-  height: 100%;
-  overflow: hidden;
-  pointer-events: none;
-}
-@media(prefers-reduced-motion:reduce) {
-  #about-green-sparkles .about-animal-confetti {
-    animation: none;
-    opacity: .85;
-    transform: rotate(var(--arot));
   }
 }
