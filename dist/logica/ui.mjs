@@ -247,7 +247,7 @@ export function initLogicGames() {
     if (!session || restart.isOpen || session.failures < 3) return;
     advancement.cancel();
     session = applySolution(adapter, level, session);
-    message = 'Gabarito aplicado. Esta tentativa está marcada como assistida. Confira as relações e use Checar.';
+    message = "";
     outcome = 'idle';
     motion.clear();
     renderBoard();
