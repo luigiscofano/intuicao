@@ -91,6 +91,11 @@ function harness(url = "https://example.test/") {
     }),
     heads = [el(), el(), el()],
     infos = ids.map((x) => el({ infoGame: x }));
+  const introClasses = new Set();
+  const intro = el();
+  intro.classList.toggle = (name, enabled) => {
+    if (enabled) introClasses.add(name); else introClasses.delete(name);
+  };
   const nav = el();
   nav.children = cards;
   nav.append = () => {};
@@ -150,7 +155,7 @@ function harness(url = "https://example.test/") {
         context.location = new URL(u);
       },
     },
-    document: { querySelector: () => nav, getElementById: (id) => nodes[id] },
+    document: { querySelector: (selector) => selector === "#main > .intro" ? intro : nav, getElementById: (id) => nodes[id] },
     window: {
       addEventListener(k, f) {
         this[k] = f;
@@ -184,6 +189,7 @@ function harness(url = "https://example.test/") {
     host.events.click({ target: { closest: () => b } });
   return {
     context,
+    introClasses,
     count: nodes["library-visible-count"],
     cards,
     heads,
@@ -389,4 +395,25 @@ test("retorno global só aparece em jogo específico, nunca em categoria filtrad
 test("título antecede filtros na linha compacta da biblioteca", () => {
   assert.match(html, /class="library-heading-row"/);
   assert.ok(html.indexOf('id="category-title"') < html.indexOf('id="library-controls"'));
+});
+
+// A opção A aprovada abre Conquistas como consulta, não como uma tela substituta.
+test("painel de conquistas não recolhe a introdução da biblioteca", () => {
+  const h = harness("https://example.test/?screen=achievements");
+  assert.equal(h.awards.hidden, false);
+  assert.equal(h.nav.hidden, false);
+  assert.equal(h.introClasses.has("library-intro-collapsed"), false);
+  h.context.location = new URL("https://example.test/?category=logica");
+  h.context.window.popstate();
+  assert.equal(h.awards.hidden, true);
+  assert.equal(h.introClasses.has("library-intro-collapsed"), false);
+});
+test("introdução recolhe ao jogar e retorna ao sair, independentemente de conquistas", () => {
+  const h = harness();
+  h.click(h.nav, h.cards[0]);
+  assert.equal(h.nav.hidden, true);
+  assert.equal(h.introClasses.has("library-intro-collapsed"), true);
+  h.back.onclick();
+  assert.equal(h.nav.hidden, false);
+  assert.equal(h.introClasses.has("library-intro-collapsed"), false);
 });

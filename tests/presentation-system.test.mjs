@@ -17,8 +17,9 @@ test('ações continuam confortáveis e identificáveis por cor e rótulo', () =
   assert.match(actions, /\[hidden\] \{ display:none !important/);
   assert.match(css, /approved-secondary-actions/);
 });
-test('Conquistas oculta apenas introdução repetida, não muda a home', () => {
-  assert.match(read('category-navigation.mjs'), /toggle\("library-intro-collapsed", playing \|\| showingAchievements\)/);
+test('Conquistas usa painel sobre a tela atual, sem acabamento que altere a home', () => {
+  assert.match(read('category-navigation.mjs'), /initAchievementsPanel\(document, window\)/);
+  assert.match(read('index.html'), /id="achievements-open"/);
   assert.doesNotMatch(css, /hero-fauna|\.intro\s*\{|\.hero-fauna-cell/);
 });
 test('catálogo permanece com os 19 jogos atuais', () => {
