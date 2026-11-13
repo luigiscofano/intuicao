@@ -1,3 +1,6 @@
+import { getEstaloMap } from "./maps.mjs";
+export { ESTALO_MAPS, DEFAULT_MAP_ID, getEstaloMap } from "./maps.mjs";
+
 /** N, L, S, O. A posse é permanente; somente a origem pode mudar de direção. */
 export const DIRECTIONS = [
   { row: -1, column: 0, arrow: "↑" },
@@ -6,20 +9,34 @@ export const DIRECTIONS = [
   { row: 0, column: -1, arrow: "←" },
 ];
 
-const INITIAL_DIRECTIONS = [1, 2, 3, 2, 0, 1, 2, 3, 1, 0, 3, 2, 0, 1, 0, 3];
-
-export function createState() {
+/** Saves antigos sem mapa continuam usando o canteiro clássico. */
+export function createState(options = {}) {
+  if (!options || typeof options !== "object" || Array.isArray(options)) {
+    throw new Error("Configuração de Estalo inválida.");
+  }
+  const map = getEstaloMap(options.mapId);
   return {
     player: 0,
     moveCount: 0,
     result: null,
     scores: [0, 0],
     lastChain: [],
-    board: INITIAL_DIRECTIONS.map((direction, cell) => ({
-      owner: cell % 4 < 2 ? 0 : 1,
-      direction,
-    })),
+    mapId: map.id,
+    rows: map.rows,
+    columns: map.columns,
+    targets: [...map.targets],
+    blocked: [...map.blocked],
+    board: map.board.map((pod) => pod ? { ...pod } : null),
   };
+}
+
+/** Dimensões e metas têm fallback para estados legados em memória. */
+export function getBoardSize(state) {
+  return { rows: state.rows ?? 4, columns: state.columns ?? 4 };
+}
+
+export function getTargets(state) {
+  return [...(state.targets ?? [8, 8])];
 }
 
 export function getLegalMoves(state) {
@@ -44,10 +61,11 @@ function validateMove(state, move) {
   }
 }
 
-function nextCell(cell, direction) {
-  const row = Math.floor(cell / 4) + DIRECTIONS[direction].row;
-  const column = (cell % 4) + DIRECTIONS[direction].column;
-  return row < 0 || row > 3 || column < 0 || column > 3 ? -1 : row * 4 + column;
+function nextCell(state, cell, direction) {
+  const { rows, columns } = getBoardSize(state);
+  const row = Math.floor(cell / columns) + DIRECTIONS[direction].row;
+  const column = (cell % columns) + DIRECTIONS[direction].column;
+  return row < 0 || row >= rows || column < 0 || column >= columns ? -1 : row * columns + column;
 }
 
 /** A visita conta como consumo; voltar à mesma casa encerra qualquer circuito. */
@@ -62,7 +80,7 @@ export function traceMove(state, move) {
       cell === move.cell ? (pod.direction + move.turn + 4) % 4 : pod.direction;
     path.push(cell);
     visited.add(cell);
-    cell = nextCell(cell, direction);
+    cell = nextCell(state, cell, direction);
   }
   return path;
 }
@@ -76,16 +94,17 @@ export function applyMove(state, move) {
     board[cell] = null;
   }
   let result = null;
+  const targets = getTargets(state);
   // A cadeia inteira precisa acabar antes de distinguir vitória de empate.
-  if (scores[0] === 8 && scores[1] === 8) {
+  if (scores[0] === targets[0] && scores[1] === targets[1]) {
     result = {
       winner: null,
       reason: "A mesma cadeia completou as duas semeaduras.",
     };
-  } else if (scores[0] === 8 || scores[1] === 8) {
+  } else if (scores[0] === targets[0] || scores[1] === targets[1]) {
     result = {
-      winner: scores[0] === 8 ? 0 : 1,
-      reason: "As oito vagens da equipe foram abertas.",
+      winner: scores[0] === targets[0] ? 0 : 1,
+      reason: targets[0] === 8 ? "As oito vagens da equipe foram abertas." : "Todas as vagens da equipe foram abertas.",
     };
   }
   return {
@@ -105,7 +124,7 @@ export function getScores(state) {
 
 function bestChainBalance(state, player) {
   const perspective = { ...state, player };
-  let best = -8;
+  let best = -getTargets(state)[1 - player];
   for (const move of getLegalMoves(perspective)) {
     const balance = traceMove(perspective, move).reduce(
       (sum, cell) => sum + (state.board[cell].owner === player ? 1 : -1),

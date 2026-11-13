@@ -1,6 +1,6 @@
 # ESTALO
 
-Uma disputa de semeadura em um canteiro 4×4. Cada equipe possui oito vagens. No turno, o jogador escolhe uma origem própria, mantém a seta ou a gira em 90° e abre uma cadeia. Cada vagem aberta pontua para seu dono, mesmo se a outra equipe disparou o pulso. Uma casa já aberta encerra o caminho.
+Uma disputa de semeadura em canteiros de vários formatos. No mapa Clássico 4×4, cada equipe possui oito vagens. No turno, o jogador escolhe uma origem própria, mantém a seta ou a gira em 90° e abre uma cadeia. Cada vagem aberta pontua para seu dono, mesmo se a outra equipe disparou o pulso. Uma casa já aberta encerra o caminho.
 
 ## Organização
 
@@ -33,3 +33,31 @@ Selecionar uma vagem apenas escolhe a origem. Um dos três botões de orientaç�
 `selectionForMove(state, move)` recupera a origem e o giro de uma dica do treino. Os botões continuam disponíveis para comparar outra orientação antes de confirmar.
 
 Execute `node --test tests/versus/estalo.test.mjs`. Os testes conferem estados congelados e a invariância `vagens fechadas + pontos = 8` para cada equipe. Não constituem demonstração de equilíbrio entre jogadores.
+
+## Mapas e tamanhos
+
+Na preparação, o seletor **Mapa e tamanho** oferece sete canteiros:
+
+| Mapa | Grade | Vagens por equipe |
+| --- | --- | --- |
+| Canteiro clássico | 4 × 4 | 8 |
+| Canteiro entrelaçado | 4 × 4 | 8 |
+| Vereda | 3 × 6 | 9 |
+| Horta comprida | 4 × 6 | 12 |
+| Bosque | 6 × 6 | 18 |
+| Clareira | 6 × 6, sem os quatro cantos | 16 |
+| Ilha | 6 × 6, com vazio central 2 × 2 | 16 |
+
+O mapa Clássico mantém exatamente o arranjo anterior e continua padrão. Saves antigos sem `mapId` são reproduzidos nele. Mudar o seletor apenas prepara o próximo duelo; uma partida já salva conserva seu mapa e histórico.
+
+Todos os mapas têm quantidades iguais para os dois jogadores e simetria de rotação de 180° com troca de posse e direção. Não há vitória ou empate na primeira jogada. Essas propriedades evitam vantagens estruturais óbvias, mas não são prova de equilíbrio perfeito ou de ausência de vantagem do primeiro jogador.
+
+Os recortes vazios interrompem a cadeia: o pulso não salta sobre eles. A vitória ocorre ao abrir todas as vagens da equipe, e não sempre oito. A cadeia é resolvida inteira antes de verificar vitória/empate. Os três níveis do computador e os modos locais funcionam com todos os mapas.
+
+`maps.mjs` centraliza layouts imutáveis; o estado guarda `mapId`, dimensões, recortes e metas. As regras de giro, posse e pontuação permanecem as mesmas. O renderer usa essas dimensões para coordenadas, setas e contadores. Não há mapa aleatório gerado durante uma partida.
+
+### Confirmação direta
+O primeiro clique ou toque na vagem prepara a direção atual. Repetir na mesma
+vagem confirma; as setas laterais continuam permitindo girar antes. Após escolher
+um giro, clicar na vagem confirma esse giro. O botão Confirmar permanece disponível,
+assim como Enter/espaço; segurar a tecla não dispara jogadas repetidas.

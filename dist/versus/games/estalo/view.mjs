@@ -32,15 +32,18 @@ function aimControls(state, selection, pending, disabled) {
     { turn: 0, label: "Manter direção", short: "Manter" },
     { turn: 1, label: "Girar 90° à direita", short: "90° ↷" },
   ];
-  return `<div class="estalo-aim"><p>Direção da abertura · <strong>${coordinate(cell, 4)}</strong></p><div class="estalo-aim-buttons">${options
+  return `<div class="estalo-aim"><p>Direção da abertura · <strong>${coordinate(cell, state.columns ?? 4)}</strong></p><div class="estalo-aim-buttons">${options
     .map(({ turn, label, short }) => {
       const direction = (pod.direction + turn + 4) % 4;
-      return `<button type="button" class="estalo-aim-button${selectedTurn === turn ? " is-selected" : ""}" ${actionAttributes({ type: "aim", cell, turn })} ${disabled ? "disabled" : ""} aria-label="${escapeHTML(label)} em ${coordinate(cell, 4)}: ${DIRECTIONS[direction].arrow}"><span class="estalo-direction" aria-hidden="true">${DIRECTIONS[direction].arrow}</span><span>${short}</span></button>`;
+      return `<button type="button" class="estalo-aim-button${selectedTurn === turn ? " is-selected" : ""}" ${actionAttributes({ type: "aim", cell, turn })} ${disabled ? "disabled" : ""} aria-label="${escapeHTML(label)} em ${coordinate(cell, state.columns ?? 4)}: ${DIRECTIONS[direction].arrow}"><span class="estalo-direction" aria-hidden="true">${DIRECTIONS[direction].arrow}</span><span>${short}</span></button>`;
     })
     .join("")}</div></div>`;
 }
 
 export function renderBoard(state, context = {}) {
+  const rows = state.rows ?? 4;
+  const columns = state.columns ?? 4;
+  const blocked = new Set(state.blocked ?? []);
   const preview = context.previewState;
   const pending = context.pendingMove;
   const display = preview ?? state;
@@ -49,17 +52,18 @@ export function renderBoard(state, context = {}) {
   const chain = preview?.lastChain ?? state.lastChain;
   const points = chain
     .map(
-      (cell) => `${(cell % 4) * 100 + 50},${Math.floor(cell / 4) * 100 + 50}`,
+      (cell) => `${(cell % columns) * 100 + 50},${Math.floor(cell / columns) * 100 + 50}`,
     )
     .join(" ");
   const cells = state.board
     .map((original, cell) => {
+      if (blocked.has(cell)) return '<div class="estalo-cell estalo-gap" aria-hidden="true"></div>';
       const visible = display.board[cell];
       const step = chain.indexOf(cell);
       const available = original?.owner === state.player && !disabled;
       const label = original
-        ? `${coordinate(cell, 4)}, vagem ${playerName(original.owner)}, seta ${DIRECTIONS[original.direction].arrow}${available ? ". Selecionar como origem." : "."}`
-        : `${coordinate(cell, 4)}, casca aberta. Interrompe o pulso.`;
+        ? `${coordinate(cell, state.columns ?? 4)}, vagem ${playerName(original.owner)}, seta ${DIRECTIONS[original.direction].arrow}${available ? ". Selecionar como origem." : "."}`
+        : `${coordinate(cell, state.columns ?? 4)}, casca aberta. Interrompe o pulso.`;
       return `<button type="button" class="estalo-cell${visible ? "" : " is-open"}${selectedCell === cell ? " is-selected" : ""}${step >= 0 ? " is-recent" : ""}" style="--estalo-step:${Math.max(step, 0)}" ${actionAttributes({ type: "cell", cell })} ${available ? "" : "disabled"} aria-label="${escapeHTML(label)}">
       ${podArt(visible)}${step >= 0 ? `<span class="estalo-chain-order" aria-hidden="true">${step + 1}</span>` : ""}${!visible ? '<span class="estalo-open-label" aria-hidden="true">aberta</span>' : ""}
     </button>`;
@@ -68,8 +72,8 @@ export function renderBoard(state, context = {}) {
   const gains = preview
     ? preview.scores.map((score, player) => score - state.scores[player])
     : null;
-  return `<section class="estalo-area" aria-label="Canteiro de vagens">
-    <div class="estalo-workspace"><div class="estalo-coordinates"><div class="estalo-column-labels" aria-hidden="true">${["A", "B", "C", "D"].map((letter) => `<span>${letter}</span>`).join("")}</div><div class="estalo-board-row"><div class="estalo-row-labels" aria-hidden="true">${[1, 2, 3, 4].map((row) => `<span>${row}</span>`).join("")}</div><div class="estalo-playfield"><svg class="estalo-pulse-path" viewBox="0 0 400 400" aria-hidden="true"><polyline points="${points}" fill="none" stroke="#73965E" stroke-width="6" stroke-linecap="round" stroke-linejoin="round"/></svg>${cells}</div></div></div>
+  return `<section class="estalo-area" aria-label="Canteiro de vagens" style="--estalo-columns:${columns};--estalo-rows:${rows}">
+    <div class="estalo-workspace"><div class="estalo-coordinates"><div class="estalo-column-labels" aria-hidden="true">${Array.from({ length: columns }, (_, index) => String.fromCharCode(65 + index)).map((letter) => `<span>${letter}</span>`).join("")}</div><div class="estalo-board-row"><div class="estalo-row-labels" aria-hidden="true">${Array.from({ length: rows }, (_, index) => index + 1).map((row) => `<span>${row}</span>`).join("")}</div><div class="estalo-playfield"><svg class="estalo-pulse-path" viewBox="0 0 ${columns * 100} ${rows * 100}" aria-hidden="true"><polyline points="${points}" fill="none" stroke="#73965E" stroke-width="6" stroke-linecap="round" stroke-linejoin="round"/></svg>${cells}</div></div></div>
     <aside class="estalo-tools" aria-label="Direção da abertura">${aimControls(state, context.selection, pending, disabled)}</aside></div>
     ${preview ? `<p class="estalo-preview-note">Prévia da cadeia: <strong>● Verde +${gains[0]}</strong> <strong>◆ Âmbar +${gains[1]}</strong>. A ordem aparece nas casas.</p>` : '<p class="estalo-tip">A seta conduz o pulso. Uma casca aberta interrompe o caminho.</p>'}
   </section>`;
@@ -80,8 +84,14 @@ export function interact(state, selection, action) {
     return { selection, move: null };
   const pod = state.board[action.cell];
   if (!pod || pod.owner !== state.player) return { selection, move: null };
-  if (action.type === "cell")
-    return { selection: { cell: action.cell, turn: 0 }, move: null };
+  if (action.type === "cell") {
+    // A mesma vagem conserva o giro escolhido; outra origem começa sem giro.
+    const turn = selection?.cell === action.cell ? (selection.turn ?? 0) : 0;
+    return {
+      selection: { cell: action.cell, turn },
+      move: { type: "burst", cell: action.cell, turn },
+    };
+  }
   if (action.type === "aim" && [-1, 0, 1].includes(action.turn)) {
     return {
       selection: { cell: action.cell, turn: action.turn },
@@ -111,17 +121,17 @@ export function describeMove(state, move, nextState) {
     (score, player) => score - state.scores[player],
   );
   const path = nextState.lastChain
-    .map((cell) => coordinate(cell, 4))
+    .map((cell) => coordinate(cell, state.columns ?? 4))
     .join(" → ");
-  return `${coordinate(move.cell, 4)} ${adjustment}. Caminho: ${path}. Verde abre mais ${gains[0]}; Âmbar abre mais ${gains[1]}. A cadeia para em uma casca ou na borda.`;
+  return `${coordinate(move.cell, state.columns ?? 4)} ${adjustment}. Caminho: ${path}. Verde abre mais ${gains[0]}; Âmbar abre mais ${gains[1]}. A cadeia para em uma casca ou na borda.`;
 }
 
 export function getStatus(state) {
   return state.result
     ? "A semeadura terminou. O resultado considera a cadeia inteira."
-    : `${playerName(state.player)}, escolha uma vagem sua e mantenha ou gire sua seta em 90°.`;
+    : `${playerName(state.player)} · meta: ${(state.targets ?? [8, 8])[state.player]} vagens. Escolha uma vagem sua e mantenha ou gire sua seta em 90°.`;
 }
 
 export function renderResult(state) {
-  return `<div class="estalo-result-scene">${state.scores.map((score, player) => `<div class="estalo-seed-row estalo-player-${player}"><strong>${playerMark(player)} ${playerName(player)} · ${score}/8</strong><div>${Array.from({ length: 8 }, (_, index) => `<span class="estalo-seed${index < score ? " is-sown" : ""}" aria-hidden="true">${index < score ? "♧" : "·"}</span>`).join("")}</div></div>`).join("")}<p>As vagens viraram sementes no canteiro.</p></div>`;
+  return `<div class="estalo-result-scene">${state.scores.map((score, player) => `<div class="estalo-seed-row estalo-player-${player}"><strong>${playerMark(player)} ${playerName(player)} · ${score}/${(state.targets ?? [8, 8])[player]}</strong><div>${Array.from({ length: (state.targets ?? [8, 8])[player] }, (_, index) => `<span class="estalo-seed${index < score ? " is-sown" : ""}" aria-hidden="true">${index < score ? "♧" : "·"}</span>`).join("")}</div></div>`).join("")}<p>As vagens viraram sementes no canteiro.</p></div>`;
 }

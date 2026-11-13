@@ -59,10 +59,10 @@ export const VERSUS_RULE_EXAMPLES={
  'Nas sobras, forme todos os pares possíveis de tipos diferentes: cada par vale 2. Nenhum fruto conta duas vezes; frutos isolados não pontuam. Vence o maior total; igualdade é empate.'
  ],svg:panels(fruit(27,57,'C',gold)+fruit(55,57,'C',gold)+fruit(83,57,'P',purple)+text(55,90,'Oferta: cestos 1, 2, 3',8),move(fruit(164,51,'C',gold)+fruit(190,51,'C',gold),0,-12)+text(179,73,'Verde recebe dois',8)+move(fruit(179,94,'P',purple),0,-12)+text(179,114,'Âmbar escolhe P',8),'C = castanha-do-pará · P = pitanga.'),description:'Abertura: Verde oferece cestos 1, 2 e 3. Âmbar escolhe a pitanga do cesto 3; Verde recebe duas castanhas-do-pará. Os cestos saem e Âmbar passa a propor.'},
  estalo:{steps:[
- 'No tabuleiro 4 × 4, Verde tem as oito vagens das colunas A e B; Âmbar, as de C e D. Verde começa. Escolha uma vagem fechada sua e mantenha sua seta ou gire-a exatamente 90° para um dos lados, nunca 180°.',
+ 'O exemplo usa o mapa Clássico 4 × 4. Verde tem as oito vagens das colunas A e B; Âmbar, as de C e D. Verde começa. Escolha uma vagem fechada sua e mantenha sua seta ou gire-a exatamente 90° para um dos lados, nunca 180°.',
  'A origem abre e pontua para seu dono. O pulso segue a seta para a casa vizinha: se a vagem estiver fechada, ela abre, pontua para o próprio dono e redireciona o pulso pela seta dela. Só a origem pode girar.',
  'A cadeia para na borda ou numa casa já aberta. Não salta vazios nem continua por cascas; até um circuito para ao reencontrar uma casa aberta. Não há captura, mudança de dono ou reposição.',
- 'Resolva a cadeia inteira antes de conferir o resultado: quem abrir suas oito vagens vence; completar as duas equipes na mesma cadeia empata. Se ninguém venceu, alterne a vez. Não há passe e cada vagem pontua uma única vez.'
+ 'Resolva a cadeia inteira antes de conferir o resultado: quem abrir todas as suas vagens vence (oito neste exemplo); completar as duas equipes na mesma cadeia empata. Se ninguém venceu, alterne a vez. Não há passe e cada vagem pontua uma única vez.'
  ],svg:panels(pods(17,false),pods(147,true),'A1 → B1 → B2 → C2 → C3 → B3.'),description:'Abertura oficial: abrir A1 sem girar percorre A1, B1, B2, C2, C3 e B3. São quatro pontos verdes e dois âmbar; a seta de B3 encontra B2 já aberta e encerra a cadeia.'},
  dobra:{steps:[
  'O mapa começa com 6 × 6 painéis, cada um com área 1 e sem selos. Cada equipe tem quatro selos; Verde começa. Em cada turno coloque um selo seu em qualquer pilha, mesmo com selos rivais, e depois dobre uma borda inteira para dentro.',

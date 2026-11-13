@@ -125,7 +125,7 @@ test("ESTALO: ações sempre reduzem o tabuleiro e terminam em até 16 turnos", 
 test("ESTALO: seleção e orientação produzem prévia numerada, sem aplicar por conta própria", () => {
   const state = freeze(engine.createState());
   const selected = view.interact(state, null, { type: "cell", cell: 0 });
-  assert.equal(selected.move, null);
+  assert.deepEqual(selected.move, { type: "burst", cell: 0, turn: 0 });
   const aimed = view.interact(state, selected.selection, {
     type: "aim",
     cell: 0,

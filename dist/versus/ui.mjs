@@ -155,13 +155,26 @@ export function initVersusGames() {
       .join("");
   }
 
+  /** A escolha prepara uma partida nova, sem modificar o histórico que pode ser retomado. */
+  function mapSelectionMarkup(initial) {
+    if (!game.maps) return "";
+    const selected = game.maps.find((map) => map.id === initial.mapId);
+    const options = game.maps.map((map) => `
+      <option value="${esc(map.id)}" ${initial.mapId === map.id ? "selected" : ""}>
+        ${esc(map.name)} · ${map.rows} × ${map.columns}
+      </option>`).join("");
+    return `<label>Mapa e tamanho<select id="nv-map">${options}</select></label>
+      <p class="nv-map-description">${esc(selected?.description ?? "")}</p>
+      <p class="nv-small">${initial.targets[0]} vagens por equipe. Trocar o mapa prepara uma nova partida; não altera o duelo salvo.</p>`;
+  }
+
   function renderSelection() {
     if (!game || !active) return;
     stopWork();
     confirmation.dismiss();
     clearPreview();
     screen = "selection";
-    const initial = game.engine.createState();
+    const initial = game.engine.createState(draftConfig);
     const preview = game.view.renderBoard(initial, {
       selection: null,
       pendingMove: null,
@@ -184,6 +197,7 @@ export function initVersusGames() {
             <h3>Prepare a partida</h3>
             <p>${esc(game.objective)}</p>
             <p class="nv-duration">${esc(game.duration)}</p>
+            ${mapSelectionMarkup(initial)}
             <label>Modo de jogo<select id="nv-mode">${Object.entries(MODES)
               .map(
                 ([value, label]) =>
@@ -449,7 +463,7 @@ export function initVersusGames() {
   }
 
   function startNew() {
-    session = createSession(game.engine);
+    session = createSession(game.engine, draftConfig);
     playConfig = structuredClone(draftConfig);
     invalidSave = false;
     showPlay();
@@ -603,7 +617,12 @@ export function initVersusGames() {
   });
 
   host.addEventListener("change", (event) => {
-    if (event.target.id === "nv-mode") {
+    if (event.target.id === "nv-map" && game.maps) {
+      if (!game.maps.some((map) => map.id === event.target.value)) return;
+      draftConfig.mapId = event.target.value;
+      renderSelection();
+      find("map")?.focus({ preventScroll: true });
+    } else if (event.target.id === "nv-mode") {
       draftConfig.mode = event.target.value;
       find("difficulty-label").hidden = draftConfig.mode !== "bot";
     } else if (event.target.id === "nv-difficulty")

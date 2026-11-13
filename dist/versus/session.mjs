@@ -1,7 +1,7 @@
 const MAX_ACTIONS = 180;
 
-export function createSession(engine) {
-  return { actions: [], states: [engine.createState()], cursor: 0 };
+export function createSession(engine, config = {}) {
+  return { actions: [], states: [engine.createState(config)], cursor: 0 };
 }
 
 export function currentState(session) {
@@ -20,7 +20,7 @@ export function restoreSession(engine, record) {
   ) {
     throw new Error("O histórico salvo não é compatível com esta partida.");
   }
-  const session = createSession(engine);
+  const session = createSession(engine, record.config);
   for (const action of record.actions) {
     if (!action || typeof action !== "object" || Array.isArray(action)) {
       throw new Error("Há uma jogada inválida no registro da partida.");

@@ -48,7 +48,7 @@ for(const id of VERSUS_GAME_IDS) test(`${id}: partida completa, repetição, IA,
   assert.deepEqual(restoreSession(engine,serializeSession(session,config)),session);
 });
 test('troca de cores, cancelamento, peça e origem nunca confirmam',()=>{
-  for(const [id,action] of [['enlace',{type:'swap'}],['enlace',{type:'reset'}],['estalo',{type:'cell',cell:1}],['dobra',{type:'cell',cell:1}],['lastro',{type:'piece',piece:'A'}]]) {
+  for(const [id,action] of [['enlace',{type:'swap'}],['enlace',{type:'reset'}],['dobra',{type:'cell',cell:1}],['lastro',{type:'piece',piece:'A'}]]) {
     assert.equal(canRepeatChoice(id,action),false);
     assert.equal(repeatsPendingChoice(id,action,action,{type:'test'},{type:'test'}),false);
   }

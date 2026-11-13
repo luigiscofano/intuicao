@@ -11,7 +11,7 @@ export const VERSUS_GUIDANCE = Object.freeze({
   quinhao:
     "Ofereça três cestos. O rival fica com um, e você recebe os outros dois.",
   estalo:
-    "Abra suas oito vagens antes do rival, planejando a sequência das setas.",
+    "Abra todas as suas vagens antes do rival, planejando a sequência das setas.",
   dobra:
     "Coloque seus selos e dobre o mapa para terminar com a maior área.",
   acorde:
@@ -49,8 +49,8 @@ const summaries = {
   estalo: [
     "Escolha uma vagem da sua cor. Mantenha a seta ou gire 90° para um dos lados. Veja a sequência prevista e confirme.",
     "A vagem abre e a sequência segue a seta para a casa ao lado. Cada nova vagem alcançada abre e manda a sequência na direção da própria seta.",
-    "A sequência pode abrir vagens dos dois times. Ela para na borda ou numa casa que já foi aberta, inclusive se voltar a uma casa da mesma sequência.",
-    "Cada vagem aberta dá um ponto ao seu dono. Só depois de toda a sequência terminar se verifica a vitória: quem completar oito vence. Se os dois completarem juntos, empata.",
+    "A sequência pode abrir vagens dos dois times. Ela para na borda, num recorte vazio ou numa casa que já foi aberta, inclusive se voltar a uma casa da mesma sequência.",
+    "Cada vagem aberta dá um ponto ao seu dono. Só depois de toda a sequência terminar se verifica a vitória: quem abrir todas as suas vagens vence. Se os dois completarem juntos, empata.",
   ],
   dobra: [
     "Escolha uma casa para colocar seu selo e uma borda para dobrar. Confira a prévia e confirme.",
