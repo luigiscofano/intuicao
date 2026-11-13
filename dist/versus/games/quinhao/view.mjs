@@ -8,6 +8,21 @@ import {
 import { getOfferIds, getScores, scoreInventory } from "./engine.mjs";
 import { FRUIT_LABELS as FRUITS, renderFruitArt as fruitArt } from "./fruit-art.mjs";
 
+/** Percurso horário de 24 casas: seis colunas por oito linhas.
+ * Só a apresentação muda; IDs, ordem e vizinhança continuam no motor.
+ */
+export function mobileBasketPosition(index, count) {
+  const slot = Math.floor(index * 24 / count);
+  if (slot < 6) return { column: slot + 1, row: 1 };
+  if (slot < 13) return { column: 6, row: slot - 4 };
+  if (slot < 18) return { column: 18 - slot, row: 8 };
+  return { column: 1, row: 25 - slot };
+}
+
+function fruitLegend() {
+  return `<div class="quinhao-mobile-legend" aria-label="Frutos da colheita">${FRUITS.map((fruit, index) => `<span>${fruitArt(index)}<span>${escapeHTML(fruit[0].toUpperCase() + fruit.slice(1))}</span></span>`).join("")}</div>`;
+}
+
 function deposits(inventories) {
   return inventories
     .map(
@@ -55,6 +70,7 @@ export function renderBoard(state, context = {}) {
     const angle = -Math.PI / 2 + (index / state.baskets.length) * Math.PI * 2;
     return {
       ...basket,
+      mobile: mobileBasketPosition(index, state.baskets.length),
       x: 50 + Math.cos(angle) * 43,
       y: 50 + Math.sin(angle) * 43,
     };
@@ -69,7 +85,7 @@ export function renderBoard(state, context = {}) {
     ? "Colheita completa"
     : `Oferta ${Math.min(state.round + 1, 8)} de 8`;
   const baskets = points
-    .map(({ id, fruit, x, y }) => {
+    .map(({ id, fruit, x, y, mobile }) => {
       const inOffer = offered.includes(id);
       const allowed = state.phase === "offer" || state.offer.includes(id);
       const lastOfferStart =
@@ -80,7 +96,7 @@ export function renderBoard(state, context = {}) {
         state.phase === "offer"
           ? `Oferecer cestos ${ids.join(", ")}. Primeiro cesto: ${id}, ${FRUITS[fruit]}.`
           : `Escolher cesto ${id}, ${FRUITS[fruit]}.`;
-      return `<button type="button" class="quinhao-basket${inOffer ? " is-offered" : ""}" style="left:${x.toFixed(3)}%;top:${y.toFixed(3)}%" ${actionAttributes({ type: "basket", basket: id })} ${disabled || !allowed ? "disabled" : ""} aria-label="${escapeHTML(label)}">
+      return `<button type="button" class="quinhao-basket${inOffer ? " is-offered" : ""}" style="left:${x.toFixed(3)}%;top:${y.toFixed(3)}%;--basket-column:${mobile.column};--basket-row:${mobile.row}" ${actionAttributes({ type: "basket", basket: id })} ${disabled || !allowed ? "disabled" : ""} aria-label="${escapeHTML(label)}">
       <span class="quinhao-basket-number" aria-hidden="true">${id}</span>${fruitArt(fruit, true)}
     </button>`;
     })
@@ -97,6 +113,7 @@ export function renderBoard(state, context = {}) {
       ${baskets}
       <div class="quinhao-center"><span class="quinhao-stage">${stage}</span>${deposits(display.inventories)}<p>Trio <b>5</b> · Par diferente <b>2</b></p></div>
     </div>
+    ${fruitLegend()}
     ${state.phase === "choose" ? `<p class="quinhao-choice-label">${playerMark(state.player)} ${playerName(state.player)}, qual cesto fica com você?</p>` : ""}
     ${offerButtons(state, disabled, pending?.type === "choose" ? pending.basket : null)}
     ${receipt}

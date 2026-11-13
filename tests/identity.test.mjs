@@ -112,6 +112,8 @@ test('movimento e vitórias Versus aprovados preservam todos os arquivos fora do
   // Revisão visual posterior do Quinhão: só apresentação e identificação dos frutos.
   // Motores, sessões e persistência continuam fora desta lista.
   const approvedVersus = [
+    // Composições móveis aprovadas de Acorde/Quinhão; apenas apresentação.
+    'dist/versus/games/acorde/view.css', 'dist/versus/ui.css',
     // Identificação visual dos jogadores; regras, motores e saves preservados.
     "dist/versus/player-identities.mjs", "dist/versus/games/acorde/view.mjs",
     "dist/versus/games/dobra/index.mjs",
