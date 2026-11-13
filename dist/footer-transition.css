@@ -81,7 +81,7 @@ body > footer .footer-copyright {
   padding-inline: 24px;
   max-width: 480px;
   color: #52604b;
-  font: 400 12px/1.6 system-ui,-apple-system,"Segoe UI",sans-serif;
+  font: 400 12px/1.6 var(--font-ui);
   letter-spacing: 0;
   text-align: right;
   overflow-wrap: anywhere;

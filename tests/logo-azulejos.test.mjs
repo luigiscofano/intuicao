@@ -1,0 +1,11 @@
+import assert from 'node:assert/strict';
+import {readFileSync} from 'node:fs';
+const read=p=>readFileSync(new URL('../'+p,import.meta.url));
+const html=read('dist/index.html').toString();
+assert.equal((html.match(/src="platform-assets\/intuicao-logo-azulejos.png"/g)||[]).length,2);
+assert.equal((html.match(/alt="Intuição"/g)||[]).length,2);
+assert.ok(html.includes('aria-label="Intuição, início"'));
+const png=read('dist/platform-assets/intuicao-logo-azulejos.png');
+assert.equal(png.readUInt32BE(16),1800);assert.equal(png.readUInt32BE(20),420);assert.equal(png[25],6);
+assert.ok(read('dist/platform-assets/intuicao-logo-original.png').length);
+console.log('PASS marca aprovada, duas ocorrências, transparência, resolução e acessibilidade.');

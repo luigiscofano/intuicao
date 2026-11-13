@@ -18,8 +18,7 @@
   padding: 14px 20px;
   min-height: 48px;
   font:
-    700 18px/1.4 system-ui,
-    sans-serif;
+    700 18px/1.4 var(--font-ui);
 }
 .library-navigation button[aria-current="page"] {
   background: #30412f;
@@ -42,8 +41,7 @@
 }
 #main > .category-choices > button {
   font:
-    600 14px/1.4 system-ui,
-    sans-serif;
+    600 14px/1.4 var(--font-ui);
   min-height: 44px;
   padding: 10px 16px;
   border-radius: 30px;
