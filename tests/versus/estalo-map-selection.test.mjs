@@ -22,3 +22,9 @@ test('Estalo: miniaturas mantêm espaços ausentes e duas cores', () => {
   assert.match(html, /estalo-mini-team-0/);
   assert.match(html, /estalo-mini-team-1/);
 });
+
+
+test('Estalo: miniaturas revelam setas para diferenciar contornos iguais', () => {
+  const html = renderMapSelection(ESTALO_MAPS, 'classico');
+  assert.equal((html.match(/--direction:/g) ?? []).length, 7 * 16);
+});
