@@ -436,7 +436,9 @@ export function initCollection({ hideOriginal }) {
     };
     $("c-import-example").onclick = () =>
       download(`${game}-exemplo.json`, COLLECTION_JSON_EXAMPLES[game]);
-    $("collection-title")?.focus();
+    // Recriar a seleção (por exemplo, ao mudar o grid) não deve mover a página.
+    // A navegação inicial já controla sua rolagem; o seletor restaura o foco no botão.
+    $("collection-title")?.focus({ preventScroll: true });
   }
 
   function cancelEndlessAdvance() {
