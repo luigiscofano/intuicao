@@ -398,3 +398,30 @@
     transition: none !important;
   }
 }
+
+/* Composições aprovadas de Acorde e Quinhão: controles reais em três linhas.
+ * Não alteramos os outros duelos nem a composição de desktop. */
+@media (max-width: 540px) {
+  body.approved-game-view #main .viewport-game:has(.acorde-game, .quinhao-area) .approved-workspace { gap: 5px; }
+  body.approved-game-view #main .viewport-game:has(.acorde-game, .quinhao-area) .approved-play-surface { padding: 4px !important; }
+  body.approved-game-view #main .viewport-game:has(.acorde-game, .quinhao-area) .action-sidebar.action-sidebar { padding: 5px 5px 5px 12px; border-radius: 7px !important; }
+  body.approved-game-view #main .viewport-game:has(.acorde-game, .quinhao-area) .action-sidebar::before { inset: 5px auto 5px 3px; }
+  body.approved-game-view #main .viewport-game:has(.acorde-game, .quinhao-area) .sidebar-actions { display: grid; grid-template-columns: repeat(2,minmax(0,1fr)); gap: 5px; }
+  body.approved-game-view #main .viewport-game:has(.acorde-game, .quinhao-area) :is(.approved-primary-action,.approved-history-actions,.nv-move-controls) { display: contents !important; }
+  body.approved-game-view #main .viewport-game:has(.acorde-game, .quinhao-area) .action-sidebar [data-sidebar-action] { min-height: 44px; padding: 5px 6px; gap: 5px; border-radius: 6px !important; }
+  body.approved-game-view #main .viewport-game:has(.acorde-game, .quinhao-area) .action-sidebar [data-sidebar-action]::after { font-size: 11px; font-weight: 600; }
+  body.approved-game-view #main .viewport-game:has(.acorde-game, .quinhao-area) .action-sidebar [data-sidebar-action]::before { width: 16px; height: 16px; flex-basis: 16px; }
+  body.approved-game-view #main .viewport-game:has(.acorde-game, .quinhao-area) :is(.nv-repeat-help,.sidebar-signature,#nv-turn) { display: none; }
+  body.approved-game-view #main .viewport-game:has(.acorde-game, .quinhao-area) .nv-teams { gap: 5px; }
+  body.approved-game-view #main .viewport-game:has(.acorde-game, .quinhao-area) .nv-team { min-height: 42px; padding: 4px 6px; border-radius: 6px; }
+  body.approved-game-view #main .viewport-game:has(.acorde-game, .quinhao-area) .nv-team strong { font-size: 12px; }
+  body.approved-game-view #main .viewport-game:has(.acorde-game, .quinhao-area) .approved-secondary-actions:has(.nv-controls:not(:has(button:not([hidden])))) { display: none; }
+  body.approved-game-view #main .viewport-game:has(.acorde-game, .quinhao-area) .nv-feedback { text-align: left; }
+
+  /* A prévia já contém o anúncio da jogada: evita duas mensagens equivalentes. */
+  body.approved-game-view #main .viewport-game:has(.acorde-game,.quinhao-area) #nv-preview:not([hidden]) ~ #nv-feedback { display: none; }
+  /* Reserva estável para a oferta e o recibo, sem deslocar os botões ao escolher. */
+  body.approved-game-view #main .viewport-game:has(.quinhao-area) :is(#nv-feedback,#nv-preview) { min-height: 74px; box-sizing: border-box; }
+
+  body.approved-game-view #main .viewport-game:has(.acorde-game) :is(#nv-feedback,#nv-preview) { min-height: 60px; box-sizing: border-box; }
+}

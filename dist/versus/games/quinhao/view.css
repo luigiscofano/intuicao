@@ -222,37 +222,80 @@
   margin: 6px 0;
   color: #63705d;
 }
-@media (max-width: 500px) {
+
+
+/* A legenda única só substitui as legendas repetidas na composição estreita. */
+#versus-games .quinhao-mobile-legend { display: none; }
+
+@media (max-width: 540px) {
   #versus-games .quinhao-plot {
-    aspect-ratio: 0.79;
+    display: grid;
+    grid-template-columns: repeat(6, minmax(44px, 1fr));
+    grid-template-rows: repeat(8, 44px);
+    gap: 2px;
+    width: 100%;
+    aspect-ratio: auto;
   }
+  #versus-games .quinhao-basket {
+    position: static;
+    grid-column: var(--basket-column);
+    grid-row: var(--basket-row);
+    width: 100%;
+    min-width: 44px;
+    height: 44px;
+    min-height: 44px;
+    aspect-ratio: auto;
+    transform: none;
+    grid-template-rows: 12px minmax(0, 1fr);
+    border: 1px solid #c5cdbb;
+    border-radius: 5px;
+    background: #f5f0dc;
+  }
+  #versus-games .quinhao-basket-number { font-size: 10px; line-height: 12px; }
+  #versus-games .quinhao-basket .quinhao-fruit { max-height: 30px; }
+  #versus-games .quinhao-rope { display: none; }
   #versus-games .quinhao-center {
-    width: 51%;
+    position: static;
+    grid-column: 2 / 6;
+    grid-row: 2 / 8;
+    align-self: center;
+    transform: none;
+    width: 100%;
+    min-width: 0;
     gap: 6px;
   }
-  #versus-games .quinhao-deposit {
-    padding: 7px 6px;
+  #versus-games .quinhao-stage { font-size: 12px; }
+  #versus-games .quinhao-deposit { padding: 5px; border-radius: 7px; }
+  #versus-games .quinhao-deposit-heading { font-size: 12px; }
+  #versus-games .quinhao-deposit-heading > span { font-size: 11px; }
+  #versus-games .quinhao-deposit-heading .player-animal,
+  #versus-games .quinhao-deposit-heading .player-full-name,
+  #versus-games .quinhao-fruit-label { display: none; }
+  #versus-games .quinhao-deposit-heading .player-short-name { display: inline; }
+  #versus-games .quinhao-counts .quinhao-fruit { width: 23px; height: 25px; }
+  #versus-games .quinhao-counts b { font-size: 12px; }
+  #versus-games .quinhao-center > p { font-size: 11px; }
+  #versus-games .quinhao-mobile-legend {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 4px;
+    margin: 8px 0 0;
+    font-size: 10px;
+    line-height: 1.2;
   }
-  #versus-games .quinhao-deposit-heading {
-    font-size: 0.74rem;
-  }
-  #versus-games .quinhao-deposit-heading > span {
-    font-size: 0.68rem;
-  }
-  #versus-games .quinhao-counts .quinhao-fruit {
-    width: 23px;
-    height: 25px;
-  }
-  #versus-games .quinhao-fruit-label {
-    font-size: 0.6rem;
-  }
-  #versus-games .quinhao-counts b {
-    font-size: 0.82rem;
-  }
-  #versus-games .quinhao-center > p {
-    font-size: 0.68rem;
-  }
-  #versus-games .quinhao-stage {
-    font-size: 0.76rem;
-  }
+  #versus-games .quinhao-mobile-legend > span { display: flex; align-items: center; gap: 3px; }
+  #versus-games .quinhao-mobile-legend .quinhao-fruit { width: 18px; height: 23px; flex: 0 0 18px; }
+  /* Os próprios cestos continuam sendo os três controles de escolha acessíveis.
+     Evita repetir a mesma ação abaixo do tabuleiro em telas estreitas. */
+  #versus-games .quinhao-choices { display: none; }
+  #versus-games .quinhao-choice-label { margin: 6px 0; font-size: 12px; }
+  #versus-games .quinhao-tip,
+  #versus-games .quinhao-preview-note { margin: 6px auto; font-size: 12px; line-height: 1.3; }
+  #versus-games .quinhao-preview-note { padding: 5px; border-radius: 5px; }
+  #versus-games .quinhao-plot.is-finished { min-height: 0; }
+  #versus-games .quinhao-plot.is-finished .quinhao-center { width: 100%; }
+
+  /* O shell já anuncia a mesma instrução/prévia ao lado dos controles. */
+  #versus-games :is(.quinhao-tip,.quinhao-preview-note,.quinhao-choice-label) { display: none; }
 }

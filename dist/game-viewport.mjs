@@ -18,6 +18,8 @@ function boardScrollHost(board) {
   return board.closest('.logic-board, .scene-wrap, .collection-board-wrap, .s-play-area, .r-board-scroll, .o-board-scroll') || board.parentElement;
 }
 function minimumBoardWidth(board, width) {
+  // O circuito móvel usa seis alvos de 44 px e cinco intervalos de 2 px.
+  if (board.matches?.(".quinhao-plot") && board.ownerDocument.defaultView.innerWidth <= 540) return 274;
   // Estes tabuleiros contêm rótulos e coleções além das casas clicáveis.
   // O alvo de toque sozinho não protege esses conteúdos de sobreposição.
   const readableWidths = [['.acorde-board', 260], ['.quinhao-plot', 280], ['.dobra-grid', 270]];

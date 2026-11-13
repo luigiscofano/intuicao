@@ -87,6 +87,20 @@ function collectionPanel(state, player, previewState) {
   </section>`;
 }
 
+// Em telas estreitas, os mesmos dados cabem em uma tabela sem duplicar controles.
+function compactCollections(state, preview) {
+  const scores = getScores(state);
+  return `<table class="acorde-compact-collections" aria-label="Coleções e pares dos jogadores">
+    <thead><tr><th scope="col">Pares</th>${SYMBOLS.map(symbol => `<th scope="col">${SYMBOL_NAMES[symbol]}</th>`).join("")}</tr></thead>
+    <tbody>${[0, 1].map(player => `<tr class="acorde-collection--${player}"><th scope="row" aria-label="${playerName(player)}: ${scores[player]} de 3 pares">J${player + 1} · ${scores[player]}/3</th>${SYMBOLS.map(symbol => {
+      const count = state.collections[player][symbol];
+      const projected = preview?.collections[player][symbol] ?? count;
+      return `<td>${count}${projected !== count ? `<span class="acorde-count-preview">→${projected}</span>` : ""}</td>`;
+    }).join("")}</tr>`).join("")}</tbody>
+    <caption>2 sinos iguais = 1 par · vença com 3 pares diferentes</caption>
+  </table>`;
+}
+
 function renderCell(state, cell, legalCells, pendingMove, disabled) {
   const symbol = state.board[cell];
   const active = getActiveAxis(state);
@@ -157,18 +171,20 @@ export function renderBoard(state, context = {}) {
     <div class="acorde-board" role="group" aria-label="Instrumento de quatro linhas e quatro colunas. ${escapeHTML(getStatus(state))}">
       ${columns}${rows}
     </div>
-    ${
+    <div class="acorde-pass-slot">${
       pass
         ? `<button type="button" class="acorde-pass" ${actionAttributes({ type: "pass" })} ${disabled ? "disabled" : ""}>
       Passar a vez · não há sino na ${axisLabel(state)}
     </button>`
         : ""
     }
+    </div>
     <p class="acorde-board-caption">${
       pendingMove && preview
         ? escapeHTML(describeMove(state, pendingMove, preview))
         : "O carrinho fica na casa recolhida. Jogador 1 (verde) percorre linhas; Jogador 2 (âmbar), colunas."
     }</p>
+    ${compactCollections(state, preview)}
     <div class="acorde-collections">
       ${collectionPanel(state, 0, preview)}${collectionPanel(state, 1, preview)}
     </div>

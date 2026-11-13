@@ -320,27 +320,29 @@
   width: 50%;
 }
 
+
+
+/* A composição compacta só substitui as coleções ilustradas no celular. */
+#versus-games .acorde-compact-collections { display: none; }
+
 @media (max-width: 540px) {
-  #versus-games .acorde-collections {
-    grid-template-columns: 1fr;
-  }
+  #versus-games .acorde-collections,
+  #versus-games .acorde-board-caption { display: none; }
+  #versus-games .acorde-game { max-width: 320px; }
+  #versus-games .acorde-instrument-heading { margin: 0 0 5px 24px; gap: 2px 8px; font-size: 12px; }
+  #versus-games .acorde-board { border-radius: 7px; padding: 5px; gap: 3px; grid-template-columns: 20px repeat(4, minmax(0, 1fr)); }
+  #versus-games .acorde-cell { padding: 4%; border-radius: 7px; }
+  #versus-games .acorde-trolley--initial { width: 24px; }
+  #versus-games .acorde-compact-collections { display: table; width: 100%; margin-top: 6px; border-collapse: collapse; font-size: 11px; text-align: center; }
+  #versus-games .acorde-compact-collections :is(th,td) { padding: 5px 2px; }
+  #versus-games .acorde-compact-collections thead th { font-weight: 400; text-transform: capitalize; }
+  #versus-games .acorde-compact-collections tbody tr:first-child { background: #e8efda; }
+  #versus-games .acorde-compact-collections tbody tr:last-child { background: #f6ebc3; }
+  #versus-games .acorde-compact-collections caption { caption-side: bottom; padding-top: 5px; font-size: 10px; }
+  #versus-games .acorde-pass { margin-top: 4px; padding: 4px 8px; font-size: 12px; }
 
-  #versus-games .acorde-board {
-    grid-template-columns: 1.3rem repeat(4, minmax(0, 1fr));
-    gap: 0.2rem;
-    padding: 0.4rem;
-  }
-
-  #versus-games .acorde-cell {
-    border-radius: 7px;
-    padding: 6%;
-  }
-
-  #versus-games .acorde-trolley--initial {
-    width: 24px;
-  }
-
-  #versus-games .acorde-pending-tag {
-    font-size: 0.55rem;
-  }
+  #versus-games .acorde-board { width: 260px; max-width: 100%; margin-inline: auto; }
+  #versus-games :is(.acorde-column-label,.acorde-axis-corner) { min-height: 0; height: 16px; line-height: 16px; padding: 0; }
+  /* Guarda a mesma altura quando for necessário passar a vez. */
+  #versus-games .acorde-pass-slot { min-height: 48px; }
 }
