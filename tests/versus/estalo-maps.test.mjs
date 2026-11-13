@@ -18,10 +18,10 @@ function neighbors(cell, rows, columns) {
     .map(([r, c]) => r * columns + c);
 }
 
-test("ESTALO mapas: sete mapas fixos, quatro tamanhos e metas iguais", () => {
-  assert.equal(engine.ESTALO_MAPS.length, 7);
-  assert.equal(new Set(engine.ESTALO_MAPS.map(({ id }) => id)).size, 7);
-  assert.deepEqual(new Set(engine.ESTALO_MAPS.map(({ rows, columns }) => `${rows}x${columns}`)), new Set(["4x4", "3x6", "4x6", "6x6"]));
+test("ESTALO mapas: 42 mapas fixos, seis tamanhos e metas iguais", () => {
+  assert.equal(engine.ESTALO_MAPS.length, 42);
+  assert.equal(new Set(engine.ESTALO_MAPS.map(({ id }) => id)).size, 42);
+  assert.deepEqual(new Set(engine.ESTALO_MAPS.map(({ rows, columns }) => `${rows}x${columns}`)), new Set(["4x4", "3x6", "4x6", "6x6", "6x8", "8x8"]));
   for (const map of engine.ESTALO_MAPS) {
     const state = engine.createState({ mapId: map.id });
     assert.equal(state.board.length, map.rows * map.columns);
@@ -152,4 +152,17 @@ test("ESTALO mapas: salvar/restaurar mantém mapa, histórico, desfazer e refaze
   assert.deepEqual(currentState(legacy).scores, [4, 2]);
   assert.throws(() => restoreSession(engine, { config: { mapId: "invalid" }, actions: [], cursor: 0 }));
   assert.throws(() => restoreSession(engine, { config: { mapId: "ilha" }, actions: [{ type: "burst", cell: 14, turn: 0 }], cursor: 1 }));
+});
+
+
+test("ESTALO catálogo: ao menos a variedade de Cerco, sete opções distintas em cada tamanho", async () => {
+  const { CERCO_MAPS, CERCO_GRID_SIZES } = await import("../../dist/cerco/maps.mjs");
+  const sizes = new Set(engine.ESTALO_MAPS.map(map => `${map.rows}x${map.columns}`));
+  assert.ok(sizes.size > CERCO_GRID_SIZES.length);
+  assert.ok(engine.ESTALO_MAPS.length >= CERCO_MAPS.length);
+  for (const size of sizes) {
+    const maps = engine.ESTALO_MAPS.filter(map => `${map.rows}x${map.columns}` === size);
+    assert.equal(maps.length, 7);
+    assert.equal(new Set(maps.map(map => JSON.stringify(map.board))).size, maps.length);
+  }
 });
