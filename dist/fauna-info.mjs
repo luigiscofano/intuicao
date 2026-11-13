@@ -112,7 +112,7 @@ export function initFaunaInfo(doc = document) {
   }, hideTip);
   const open = (button) => {
     dwell.cancel();
-    if (doc.querySelector('dialog[open]')) return;
+    if (dialog.open) return;
     const id = button.dataset.fauna,
       info = FAUNA_INFO[id],
       art = FAUNA_ART.find((a) => a.id === id);
@@ -138,6 +138,11 @@ export function initFaunaInfo(doc = document) {
     dialog.showModal();
     dialog.querySelector('#fauna-title').focus({ preventScroll: true });
   };
+  // A galeria em Sobre mantém seu modal aberto sob a ficha do animal.
+  doc.addEventListener('fauna:open', (event) => {
+    const button = event.detail?.button;
+    if (button?.dataset.fauna && FAUNA_INFO[button.dataset.fauna]) open(button);
+  });
   cells.forEach((cell, i) => {
     const art = FAUNA_ART[i],
       info = FAUNA_INFO[art.id];

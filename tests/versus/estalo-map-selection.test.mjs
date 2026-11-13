@@ -3,10 +3,10 @@ import assert from 'node:assert/strict';
 import { ESTALO_MAPS } from '../../dist/versus/games/estalo/maps.mjs';
 import { renderMapSelection } from '../../dist/versus/games/estalo/map-selection.mjs';
 
-test('Estalo: quatro tamanhos e cartões do tamanho selecionado, sem seletor suspenso', () => {
+test('Estalo: seis tamanhos e cartões do tamanho selecionado, sem seletor suspenso', () => {
   for (const selected of ESTALO_MAPS) {
     const html = renderMapSelection(ESTALO_MAPS, selected.id);
-    assert.equal((html.match(/data-estalo-size=/g) ?? []).length, 4);
+    assert.equal((html.match(/data-estalo-size=/g) ?? []).length, 6);
     assert.equal((html.match(/data-estalo-map=/g) ?? []).length,
       ESTALO_MAPS.filter(map => map.rows === selected.rows && map.columns === selected.columns).length);
     assert.match(html, new RegExp(`data-estalo-map="${selected.id}" aria-pressed="true"`));
@@ -17,8 +17,14 @@ test('Estalo: quatro tamanhos e cartões do tamanho selecionado, sem seletor sus
 });
 test('Estalo: miniaturas mantêm espaços ausentes e duas cores', () => {
   const html = renderMapSelection(ESTALO_MAPS, 'ilha');
-  assert.equal((html.match(/class="estalo-mini-gap"/g) ?? []).length, 8);
+  assert.equal((html.match(/class="estalo-mini-gap"/g) ?? []).length, ESTALO_MAPS.filter(map => map.rows === 6 && map.columns === 6).reduce((sum, map) => sum + map.blocked.length, 0));
   assert.match(html, /--map-cols:6;--map-rows:6/);
   assert.match(html, /estalo-mini-team-0/);
   assert.match(html, /estalo-mini-team-1/);
+});
+
+
+test('Estalo: miniaturas revelam setas para diferenciar contornos iguais', () => {
+  const html = renderMapSelection(ESTALO_MAPS, 'classico');
+  assert.equal((html.match(/--direction:/g) ?? []).length, 7 * 16);
 });

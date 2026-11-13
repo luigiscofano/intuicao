@@ -18,6 +18,10 @@ function identify(node, action, label) {
   if (!node) return;
   node.setAttribute('data-sidebar-action', action);
   node.setAttribute('aria-label', label);
+  // Mantém atalhos já documentados; garante dica nos controles apenas com seta.
+  if ((action === 'undo' || action === 'redo') && !node.getAttribute('title')) {
+    node.setAttribute('title', label);
+  }
 }
 
 export function arrangeActionSidebar({ doc, section, panel, control, game, versus }) {
