@@ -7,7 +7,7 @@ export function renderMapSelection(maps, selectedId) {
   const sizes = [...new Map(maps.map(map => [sizeKey(map), map])).values()];
   const cards = maps.filter(map => sizeKey(map) === sizeKey(selected)).map(map => {
     const chosen = map.id === selected.id;
-    const cells = map.board.map(pod => `<span class="${pod ? `estalo-mini-team-${pod.owner}` : "estalo-mini-gap"}"></span>`).join("");
+    const cells = map.board.map(pod => `<span class="${pod ? `estalo-mini-team-${pod.owner}` : "estalo-mini-gap"}">${pod ? `<i style="--direction:${pod.direction}" aria-hidden="true"></i>` : ""}</span>`).join("");
     return `<button type="button" data-estalo-map="${esc(map.id)}" aria-pressed="${chosen}">
       <span class="estalo-map-mini" style="--map-cols:${map.columns};--map-rows:${map.rows}" aria-hidden="true">${cells}</span>
       <strong>${esc(map.name)}</strong>
