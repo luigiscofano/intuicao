@@ -53,8 +53,7 @@ button.game-info-trigger,
   background: #fff;
   color: #405e49;
   font:
-    italic 700 18px/1 Georgia,
-    serif;
+    italic 700 18px/1 var(--font-title);
   letter-spacing: 0;
   box-shadow: none;
   cursor: pointer;
@@ -72,8 +71,7 @@ button.game-info-trigger,
   background: #fff;
   color: #405e49;
   font:
-    italic 700 18px/1 Georgia,
-    serif;
+    italic 700 18px/1 var(--font-title);
   box-shadow: none;
   text-align: center;
 }
@@ -120,16 +118,14 @@ button.game-info-trigger:focus-visible {
   color: #3b342e;
   box-shadow: 0 8px 26px #34452a20;
   font:
-    13px/1.55 system-ui,
-    sans-serif;
+    13px/1.55 var(--font-ui);
   pointer-events: none;
   overflow-wrap: anywhere;
 }
 #game-info-tip strong {
   display: block;
   font:
-    600 17px/1.3 Georgia,
-    serif;
+    600 17px/1.3 var(--font-title);
   color: #405e49;
 }
 #game-info-tip p {
@@ -172,8 +168,7 @@ button.game-info-trigger:focus-visible {
 }
 #game-info-title {
   font:
-    400 34px/1.2 Georgia,
-    serif;
+    400 34px/1.2 var(--font-title);
   color: #405e49;
   margin: 0;
   flex: 1;
@@ -184,13 +179,11 @@ button.game-info-trigger:focus-visible {
   min-height: 0;
   padding: 6px 28px 18px;
   font:
-    14px/1.75 system-ui,
-    sans-serif;
+    14px/1.75 var(--font-ui);
 }
 .game-info-copy h3 {
   font:
-    600 17px/1.4 Georgia,
-    serif;
+    600 17px/1.4 var(--font-title);
   color: #405e49;
   margin: 20px 0 10px;
 }
@@ -220,8 +213,7 @@ button.game-info-trigger:focus-visible {
   background: #fff;
   color: #405e49;
   font:
-    600 13px/1.4 system-ui,
-    sans-serif;
+    600 13px/1.4 var(--font-ui);
 }
 #game-info-dialog .game-info-x {
   width: 44px;

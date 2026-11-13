@@ -22,7 +22,7 @@
 }
 .endless-panel h3 {
   margin: 0 0 8px;
-  font-family: Georgia,serif;
+  font-family:var(--font-title);
   font-weight: 500;
   font-size: 21px;
 }
