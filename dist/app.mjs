@@ -1279,6 +1279,7 @@ function syncOriginalRules() {
 }
 const originalRuleMechanicsSeen = new Map();
 function configureOriginalRules() {
+  $("original-rules-preview").innerHTML = rulesPreviewMarkup(game);
   const context = getRulesContext(
     game,
     free

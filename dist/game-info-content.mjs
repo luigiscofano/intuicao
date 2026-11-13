@@ -10,12 +10,13 @@ export const GAME_INFO = {
     description:
       "Um puzzle de luz e espelhos em que você constrói percursos para raios coloridos.",
     summary:
-      "Gire espelhos para levar cada raio ao alvo da mesma cor e símbolo, sem encostar nas trajetórias de outras cores.",
+      "Leve cada raio ao alvo da mesma cor e símbolo.",
     rules: [
-      "Gire os espelhos para guiar a luz. As posições dos espelhos e das paredes são fixas; paredes e bordas interrompem os raios.",
-      "Cada raio precisa alcançar o alvo da mesma cor e símbolo. Trajetórias de cores diferentes não podem se cruzar nem se tocar, mesmo em disparos separados.",
-      "Quando houver portais, os que têm a mesma letra formam um par. A luz sai mantendo a direção; portais seletivos bloqueiam cores não permitidas. O salto entre portais não conta como trajetória de luz.",
-      "Clique em cada fonte para disparar ou use Confirmar todos. A tentativa só termina após todos os disparos; mudar um ajuste limpa os raios para uma nova tentativa.",
+      "Gire os espelhos. Eles mudam a direção da luz, mas não saem do lugar.",
+      "Clique em uma fonte para disparar ou use Confirmar todos. Todos os raios precisam chegar aos seus alvos.",
+      "Raios de cores diferentes não podem se cruzar nem se tocar, mesmo se forem disparados separadamente. Paredes e bordas interrompem a luz.",
+      "Quando houver portais, a mesma letra indica entrada e saída. A luz sai na mesma direção. Alguns portais só aceitam certas cores; o salto entre eles não conta como caminho.",
+      "A tentativa termina após todos os disparos. Ao mudar um ajuste, os raios são limpos para você tentar de novo.",
     ],
     purpose:
       "Praticar orientação espacial, leitura de ângulos e planejamento de trajetórias. Observar uma tentativa e ajustar os espelhos convida a formular e revisar hipóteses.",
@@ -26,12 +27,12 @@ export const GAME_INFO = {
     description:
       "Um puzzle de estimativa de áreas em que uma linha ou curva divide uma figura.",
     summary:
-      "Ajuste a linha ou curva até que o lado roxo tenha a porcentagem pedida da área útil da figura. Espaços vazios não contam.",
+      "Deixe no lado roxo a porcentagem pedida. Por exemplo: 50% é metade da figura.",
     rules: [
-      "Observe a meta e ajuste a linha ou curva para deixar essa porcentagem da área útil no lado roxo.",
-      "No Desafio básico, mova o corte apenas na direção indicada pela seta. A aba Controles da curva oferece outros ajustes, sem mudar a família de curva da fase.",
-      "Conte somente a parte preenchida da figura: buracos e recortes vazios não entram na área, mesmo quando o corte passa por eles.",
-      "Confirme sua resposta. É aceito um resultado até 3 pontos percentuais acima ou abaixo da meta, incluindo os limites.",
+      "Confira a meta. Mova a linha ou ajuste a curva para mudar o tamanho da parte roxa.",
+      "Conte só a parte preenchida da figura. Buracos e espaços vazios não entram na conta.",
+      "No Desafio básico, mova o corte na direção da seta. Use Controles da curva para os outros ajustes disponíveis, sem trocar o tipo de curva da fase.",
+      "Confirme sua resposta. A margem aceita é de 3 pontos percentuais para mais ou para menos: uma meta de 50% aceita de 47% a 53%.",
     ],
     purpose:
       "Praticar estimativa de áreas, proporções e porcentagens, comparando a impressão visual com a medida apresentada pelo jogo.",
@@ -42,13 +43,14 @@ export const GAME_INFO = {
     description:
       "Um puzzle de lógica em que pontos de regiões diferentes formam um circuito fechado.",
     summary:
-      "Coloque um ponto por região para formar um único circuito. As ligações são automáticas; observe também as pistas especiais de cada fase.",
+      "Coloque um ponto em cada região e forme um único caminho fechado.",
     rules: [
-      "Coloque exatamente um ponto em cada região, mantendo os pontos fixos. Cada ponto se liga automaticamente ao primeiro ponto encontrado em cada direção horizontal ou vertical; fronteiras e anotações X não bloqueiam essas ligações.",
-      "Todos os pontos devem formar um único circuito fechado, com exatamente duas ligações por ponto e sem cruzamentos fora dos pontos. Trechos retos são permitidos e não é preciso ocupar todas as casas.",
-      "Nas fases com pistas especiais, respeite curvas ou retas obrigatórias, contagens exatas de pontos por linha ou coluna e a soma indicada dos comprimentos das duas ligações de uma região.",
-      "Passagens marcadas ficam sem ponto e devem ser atravessadas pelo interior de uma ligação; trechos vedados não podem ser percorridos. Nos grupos de escolha, atravesse exatamente uma das passagens, deixando as demais sem travessia.",
-      "Outras pistas exigem ligação direta entre regiões, ordem dos marcos no circuito ou número exato de travessias de uma linha de referência. A ordem aceita os dois sentidos e pode ter outras regiões entre os marcos. Confira as pistas da fase e confirme a resposta.",
+      "Coloque exatamente um ponto em cada região. Os pontos fixos não podem ser movidos.",
+      "As ligações aparecem sozinhas: cada ponto se liga ao primeiro que encontra em cada direção horizontal ou vertical. Fronteiras e anotações X não bloqueiam as ligações.",
+      "Cada ponto precisa ter duas ligações. Juntas, elas devem formar um único circuito, sem cruzamentos fora dos pontos. Trechos retos valem; não é preciso usar todas as casas.",
+      "Algumas fases pedem curvas ou retas em pontos específicos, quantidades de pontos em linhas ou colunas, ou uma soma dos comprimentos das duas ligações de uma região.",
+      "Uma passagem marcada precisa ser atravessada por uma ligação, sem colocar ponto nela. Trechos vedados não podem ser usados. Nos grupos de escolha, atravesse apenas uma das passagens.",
+      "Outras pistas pedem ligação direta entre regiões, ordem dos marcos ou número de travessias de uma linha. A ordem pode ser lida nos dois sentidos e permite outras regiões entre os marcos. Confira as pistas da fase e confirme.",
     ],
     purpose:
       "Praticar dedução lógica, visão espacial e articulação entre condições locais e globais, acompanhando como mover um ponto altera o circuito inteiro.",
@@ -59,12 +61,12 @@ export const GAME_INFO = {
     description:
       "Um puzzle de equilíbrio em que você desenha peças ao redor de seus apoios.",
     summary:
-      "Divida a grade em peças conectadas e equilibradas. O centro de massa de cada peça deve coincidir com seu apoio.",
+      "Pinte uma peça para cada apoio. Todas precisam se equilibrar sobre ele.",
     rules: [
-      "Pinte todas as casas, sem sobreposição, formando uma peça para cada apoio. As casas de uma peça devem estar conectadas pelos lados.",
-      "Cada peça contém seu próprio apoio. As casas que tocam um apoio pertencem à sua peça; se o apoio fica entre duas casas, ambas precisam fazer parte dela.",
-      "Todas as casas têm a mesma massa. O centro de massa de cada peça deve coincidir exatamente com o apoio, tanto na horizontal quanto na vertical.",
-      "Considere a quantidade de casas e suas distâncias ao apoio: formas assimétricas também podem se equilibrar. Confirme quando toda a grade estiver preenchida.",
+      "Escolha um apoio e pinte sua peça. Preencha toda a grade, sem sobrepor peças. As casas da mesma peça se ligam pelos lados.",
+      "O apoio pertence à sua peça. Se ele fica entre casas, todas as casas que o tocam entram nessa peça.",
+      "Cada casa pesa o mesmo. O peso total precisa se equilibrar sobre o apoio, tanto da esquerda para a direita quanto de cima para baixo.",
+      "Conte também a distância: uma casa mais longe pesa mais para aquele lado. A peça não precisa ser simétrica. Confirme quando terminar de pintar.",
     ],
     purpose:
       "Praticar raciocínio espacial e explorar centro de massa, equilíbrio e compensação entre quantidade e distância.",
@@ -75,12 +77,12 @@ export const GAME_INFO = {
     description:
       "Um puzzle de dedução em que quatro símbolos precisam formar parcerias numa grade.",
     summary:
-      "Complete a grade com quatro símbolos: dois de cada por linha e coluna. Cada casa deve tocar exatamente uma casa igual pelos lados.",
+      "Forme duplas iguais e deixe dois de cada símbolo em toda linha e coluna.",
     rules: [
-      "Complete a grade 8 × 8 com círculo, triângulo, quadrado e losango, sem alterar as pistas fixas.",
-      "Cada linha e cada coluna deve conter exatamente dois de cada símbolo.",
-      "Cada casa deve ter exatamente um vizinho igual pelos lados. Diagonais não contam: os símbolos formam duplas, nunca trios ou grupos maiores.",
-      "Cruze as contagens com as possibilidades de parceria. Marcações a lápis são apenas anotações; a vitória é reconhecida automaticamente quando a grade está completa e correta.",
+      "Preencha a grade com círculo, triângulo, quadrado e losango. Não altere as pistas fixas.",
+      "Cada linha e cada coluna precisam ter exatamente dois de cada símbolo.",
+      "Cada casa deve tocar exatamente uma casa com o mesmo símbolo pelos lados. Diagonais não contam; duplas valem, trios não.",
+      "Use o lápis só para anotar possibilidades. Quando toda a grade estiver correta, o jogo reconhece a vitória automaticamente.",
     ],
     purpose:
       "Praticar contagem, exclusão de possibilidades e dedução, combinando uma regra de vizinhança com restrições de linhas e colunas.",
@@ -91,13 +93,13 @@ export const GAME_INFO = {
     description:
       "Um puzzle de coordenação em que um único comando move vários animais, cada um no seu tabuleiro.",
     summary:
-      "Leve todos aos seus destinos na mesma configuração. Use paredes e mecanismos para combinar os caminhos.",
+      "Leve todos os animais aos seus destinos ao mesmo tempo.",
     rules: [
-      "Use as setas, WASD ou o controle direcional. Todos recebem o mesmo comando; cada animal tenta andar uma casa. Quem encontra um bloqueio permanece parado.",
-      "Todos precisam ocupar seus destinos ao final de um comando. Chegar antes não prende ninguém: um animal pode sair do destino e voltar depois.",
-      "Observe os símbolos das placas, cancelas e objetos. Uma passagem aberta no início do comando pode ser atravessada enquanto outro animal sai da placa que a mantinha aberta.",
-      "As mecânicas aparecem aos poucos, com explicações na própria fase. Desfaça e reinicie livremente; não há cronômetro, vidas ou limite obrigatório de movimentos.",
-      "Explore 80 desafios em seis faixas ou escolha o Modo Sem Parar para continuar com novas combinações. Paredes, placas, interruptores, chaves e gelo criam apoios e revezamentos; as dicas consideram a configuração atual dos tabuleiros.",
+      "Use as setas, WASD ou o controle na tela. O mesmo comando faz todos tentarem andar uma casa.",
+      "Quem encontra uma parede ou bloqueio fica parado; os outros podem avançar. Use isso para ajustar os caminhos.",
+      "Todos precisam terminar o mesmo comando sobre seus destinos. Um animal que chegou pode sair e voltar depois.",
+      "Placas, cancelas, interruptores, chaves e gelo aparecem aos poucos e têm explicações na fase. Uma passagem aberta no início do comando ainda pode ser atravessada enquanto outro animal sai da placa.",
+      "Desfaça ou reinicie para experimentar. Não há cronômetro, vidas ou limite obrigatório de movimentos. As dicas consideram a posição atual dos animais.",
     ],
     purpose:
       "Praticar planejamento, antecipação de consequências e raciocínio espacial, articulando objetivos individuais com uma condição conjunta.",
@@ -108,14 +110,13 @@ export const GAME_INFO = {
     description:
       "Um puzzle de planejamento em que retirar uma peça transforma os valores e os caminhos das próximas.",
     summary:
-      "Retire todas as peças e complete exatamente as metas das bordas. Decida quem precisa receber, esperar ou sair para abrir passagem.",
+      "Retire todas as peças e faça cada caixa da borda receber o valor exato da meta.",
     rules: [
-      "Clique ou toque em uma peça para retirá-la. Seu valor atual inteiro é enviado uma vez em cada direção indicada pelas setas; ele não é dividido.",
-      "Cada repasse atravessa vazios e para na primeira peça presente. Quem recebe soma o valor e continua esperando sua vez, independentemente da orientação das próprias setas.",
-      "Se não houver receptor, o valor chega à caixa correspondente na borda. Todas as caixas mostram acumulado / meta, inclusive as de meta zero.",
-      "Você vence quando a grade estiver vazia e todas as metas forem exatas. Um excesso pode ser revisto com Desfazer; experimentar outra ordem faz parte do jogo.",
-      "As setas e posições são fixas. Ao longo da campanha aparecem peças de uma seta, duas setas perpendiculares e quatro setas, sempre com a mesma regra de repasse.",
-      "Use o mouse, toque ou navegue pelas peças com as setas do teclado e retire com Enter ou espaço. A prévia mostra os destinatários atuais. Explore 80 fases ou continue com desafios novos no Modo Sem Parar, sem cronômetro.",
+      "Toque em uma peça para retirá-la. O valor inteiro dela segue uma vez por cada seta, sem ser dividido.",
+      "O valor atravessa casas vazias e soma na primeira peça que encontra. Essa peça espera sua vez com o novo valor; as setas dela não mudam o recebimento.",
+      "Se não houver peça no caminho, o valor vai para a caixa da borda. Cada caixa mostra quanto já recebeu e quanto precisa receber, inclusive quando a meta é zero.",
+      "Esvazie a grade com todas as metas exatas. Se passar de uma meta, use Desfazer e tente outra ordem.",
+      "As posições e as setas são fixas. Você também pode selecionar peças com as setas do teclado e retirar com Enter ou espaço; a prévia mostra quem vai receber.",
     ],
     purpose:
       "Praticar planejamento de ordem, antecipação de consequências e leitura de relações entre valores, receptores e metas.",
@@ -144,12 +145,12 @@ export const GAME_INFO = {
     description:
       "Um duelo de estratégia por turnos em que cada escolha limita as opções do adversário.",
     summary:
-      "Escolha uma casa e envie o adversário para a linha ou coluna indicada. Quem ficar sem jogada disponível perde.",
+      "Deixe o adversário sem casa disponível para escolher.",
     rules: [
-      "Na partida comum, a primeira escolha é livre. Depois, escolha uma casa disponível no destino indicado e confirme a jogada.",
-      "Uma casa com ↔ envia o adversário para a mesma linha; uma casa com ↕ o envia para a mesma coluna.",
-      "A casa escolhida é consumida e não pode ser usada de novo. Casas consumidas não bloqueiam o caminho: qualquer casa disponível na linha ou coluna obrigatória pode ser escolhida.",
-      "Os jogadores alternam as escolhas. Quem não tiver jogada legal na sua vez perde. Há partidas locais, contra o bot e treino com análise.",
+      "Na partida comum, a primeira escolha é livre. Depois, escolha uma casa disponível na linha ou coluna destacada e confirme.",
+      "A seta ↔ manda o adversário para a mesma linha. A seta ↕ manda para a mesma coluna.",
+      "A casa escolhida sai das opções. Casas usadas não bloqueiam passagem: você pode escolher qualquer casa disponível na linha ou coluna indicada.",
+      "Os jogadores alternam as escolhas. Quem chega à sua vez sem opção perde.",
     ],
     purpose:
       "Praticar antecipação, planejamento por turnos e comparação de alternativas, considerando não só a própria jogada, mas também as respostas do adversário.",
@@ -162,14 +163,15 @@ GAME_INFO.broto = {
   name: "BROTO",
   description: "Plante sementes, complete estímulos e escolha quem floresce.",
   summary:
-    "Você planta. Mas quem floresce? Um duelo local para duas pessoas: cada plantio pode completar flores suas ou do adversário.",
+    "Faça suas sementes florescerem. Vence quem colher mais flores nas duas rodadas.",
   rules: [
-    "Plante uma semente em qualquer casa vazia do tabuleiro 4 × 4. Escolha a casa, observe a prévia e confirme a jogada.",
-    "A semente nova estimula somente o primeiro broto encontrado em cada direção horizontal e vertical, atravessando casas vazias. Não há estímulos diagonais nem devolução de estímulos.",
-    "Um broto floresce quando recebe os dois eixos: horizontal ↔ e vertical ↕. Repetir um eixo não substitui o outro. A flor vale um ponto para o dono da peça, mesmo quando o adversário a completa.",
-    "Todas as peças atingidas são determinadas antes da colheita. A peça colhida sai do tabuleiro; a passagem aberta só vale em jogadas futuras. Colher não devolve sementes.",
-    "Cada pessoa tem oito sementes por rodada. Depois dos dezesseis plantios, os brotos restantes não pontuam. O duelo tem duas rodadas, com iniciador alternado; vence quem somar mais flores. Totais iguais dão empate.",
-  ],
+      "Escolha uma casa vazia, veja a prévia e confirme o plantio. Cada pessoa tem oito sementes por rodada.",
+      "A semente nova estimula o primeiro broto que encontra para cima, baixo, esquerda e direita. O estímulo atravessa espaços vazios, mas não vai na diagonal nem volta para a semente nova.",
+      "Para florescer, um broto precisa receber estímulo dos dois eixos: horizontal ↔ e vertical ↕. Receber duas vezes o mesmo eixo não basta.",
+      "A flor vale um ponto para o dono do broto, mesmo quando foi o adversário que a completou. Depois, ela sai do tabuleiro, sem devolver uma semente à reserva.",
+      "Os brotos atingidos são definidos antes da colheita. Uma passagem aberta pela retirada de uma flor só ajuda a partir da próxima jogada.",
+      "Após os 16 plantios, brotos que não floresceram não pontuam. Na segunda rodada, o outro jogador começa. Some as flores das duas rodadas: mais flores vence; totais iguais empatam.",
+    ],
   purpose:
     "Praticar antecipação e planejamento por turnos, acompanhando os efeitos imediatos de um plantio e as possibilidades que ele deixa para a próxima pessoa.",
   why: "A proposta é explorar decisões com consequências compartilhadas: uma semente pode preparar um broto próprio, completar uma flor adversária ou abrir passagem para uma jogada futura.",
@@ -180,14 +182,14 @@ GAME_INFO.cerco = {
   name: "CERCO",
   description:
     "Mova suas peças, feche caminhos e deixe o adversário sem saída.",
-  summary: "Faça a última jogada: quem ficar sem movimentos na sua vez perde.",
+  summary: "Feche os caminhos do rival sem deixar suas próprias peças presas.",
   rules: [
-    "Cada time controla três peças. Na preparação, escolha uma grade de 5 × 5 a 8 × 8, com sete mapas por tamanho. Escolha uma peça sua e mova exatamente uma casa para cima, baixo, esquerda ou direita, para um destino vazio e sem barreira.",
-    "Selecione a peça, escolha um destino, observe a prévia e confirme. A casa de origem vira uma barreira neutra e permanente para os dois times; só a origem fica bloqueada.",
-    "Não há diagonais, saltos, empurrões ou capturas. As seis peças permanecem no tabuleiro. Não é permitido passar a vez.",
-    "Depois de cada jogada, confira o próximo time: se nenhuma de suas três peças puder se mover, ele perde. Uma peça presa não encerra o jogo enquanto outra do mesmo time tiver uma saída.",
-    "O Verde começa a primeira partida. A revanche alterna o iniciador e mantém as equipes e os mascotes. Todos os mascotes têm exatamente os mesmos movimentos: a escolha é apenas visual.",
-  ],
+      "Escolha uma das suas três peças e uma casa vizinha vazia, sem barreira. Mova uma casa para cima, baixo, esquerda ou direita e confirme.",
+      "A casa que você deixou vira uma barreira permanente para os dois times. O destino não vira barreira.",
+      "Não vale mover na diagonal, saltar, empurrar, capturar ou passar a vez. Todas as peças continuam no tabuleiro.",
+      "Quem não consegue mover nenhuma das três peças na sua vez perde. Uma peça presa não encerra a partida se outra ainda puder sair.",
+      "Na preparação, escolha a grade e o mapa. O Verde começa a primeira partida; a revanche alterna quem começa. Os mascotes mudam só o visual, não os movimentos.",
+    ],
   purpose:
     "Praticar planejamento por turnos e leitura de caminhos, observando como a casa abandonada altera as opções de ambos os times.",
   why: "A proposta é tornar visíveis as consequências de uma decisão: mover uma peça também fecha uma passagem, e cada equipe precisa conservar alguma saída para sua próxima vez.",

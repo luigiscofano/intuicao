@@ -1,5 +1,6 @@
 import { RULE_EXAMPLES } from './rules-examples.mjs';
 import { GAME_INFO } from './game-info-content.mjs';
+import { QUICK_START } from './rules-quick-start.mjs';
 
 const escape = value => String(value).replace(/[&<>"']/g, c => ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
 const descriptions = {
@@ -16,11 +17,31 @@ const descriptions = {
  cerco: 'Na abertura, a peça verde de linha 1, coluna 3 avança para linha 2, coluna 3. A origem vira barreira e as seis peças continuam no tabuleiro.',
 };
 
+// Um toque visual destaca onde acontece a ação, sem simular entrada no jogo.
+const ACTION_POINTS = {
+ light:[112,96], cut:[37,70], elo:[148,93], prumo:[207,63], pacto:[198,65],
+ sintonia:[120,72], repasse:[34,65], pulso:[88,63], foz:[75,65], refugio:[54,63],
+ mirante:[54,63], renovo:[73,89], desvio:[58,66], broto:[54,81], cerco:[54,51],
+ enlace:[26,62], mosaico:[70,79], quinhao:[83,57], estalo:[26.5,38.5], dobra:[25,35], acorde:[45.5,56.5]
+};
+export function explanatorySvg(game, svg) {
+ const point = ACTION_POINTS[game];
+ if (!point) return svg;
+ const [x,y] = point;
+ return svg.replace(/<\/svg>$/, `<g class="rp-tap" transform="translate(${x} ${y})"><circle class="rp-tap-ring" r="10" fill="none" stroke="#244b63" stroke-width="2"/><circle r="2.5" fill="#244b63"/></g></svg>`);
+}
+
 export function rulesPreviewMarkup(game) {
  const example = RULE_EXAMPLES[game];
- if (!example || !GAME_INFO[game]) return '';
- const name = escape(GAME_INFO[game].name);
- return `<section class="rules-preview" data-rules-game="${escape(game)}" aria-label="Como jogar ${name}"><div class="rp-copy"><h3>Como jogar</h3><ol>${example.steps.map(step => `<li>${escape(step)}</li>`).join('')}</ol><p class="rp-note">Exemplo ilustrativo. Não altera a partida. Confira também as pistas e os controles do jogo.</p></div><figure class="rp-illustration"><div class="rp-example" aria-hidden="true">${example.svg}</div><figcaption class="rp-description">${escape(example.description || descriptions[game])}</figcaption><span class="rp-reduced-note">Exemplo estático · movimento reduzido</span></figure></section>`;
+ const info = GAME_INFO[game];
+ if (!example || !info) return '';
+ const quick = QUICK_START[game];
+ const name = escape(info.name);
+ const steps = quick?.steps || example.steps;
+ const cues = quick?.cue || ['Observe o exemplo', 'Veja a ação', 'Confira o resultado'];
+ // O primeiro contato fica curto. Regras completas seguem a um toque, sem omissões.
+ const details = info.rules?.length ? `<details class="rp-details"><summary>Regras completas e detalhes</summary><ul>${info.rules.map(rule => `<li>${escape(rule)}</li>`).join('')}</ul></details>` : '';
+ return `<section class="rules-preview" data-rules-game="${escape(game)}" aria-label="Como jogar ${name}"><div class="rp-copy"><h3>Como jogar</h3><p class="rp-goal"><strong>Objetivo:</strong> ${escape(quick?.goal || info.summary)}</p><ol>${steps.map(step => `<li>${escape(step)}</li>`).join('')}</ol>${details}</div><figure class="rp-illustration"><div class="rp-example-title">Veja um exemplo</div><div class="rp-example" aria-hidden="true">${explanatorySvg(game, example.svg)}</div><div class="rp-phases" aria-hidden="true">${cues.map((cue,index) => `<span class="rp-phase rp-phase-${index + 1}"><b>${index + 1}</b> ${escape(cue)}</span>`).join('')}</div><figcaption class="rp-description">${escape(quick?.example || example.description || descriptions[game])}</figcaption><span class="rp-loop-note">Repete automaticamente · não altera sua partida</span><span class="rp-reduced-note">Exemplo estático · movimento reduzido</span></figure></section>`;
 }
 
 const instances = new WeakMap();

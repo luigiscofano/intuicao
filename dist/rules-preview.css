@@ -1,5 +1,5 @@
 /* Ilustrações isoladas: repetem sem interferir no tabuleiro nem nos saves. */
-.rules-preview{--rp-cycle:6s;display:grid;grid-template-columns:minmax(0,1fr) 240px;align-items:center;gap:24px;margin:20px 0 26px;padding:20px 22px;border:1px solid #bacbb1;border-radius:14px;background:#f1f5e9;color:#304c38}
+.rules-preview{--rp-cycle:4.8s;display:grid;grid-template-columns:minmax(0,1fr) minmax(260px,340px);align-items:center;gap:24px;margin:20px 0 26px;padding:20px 22px;border:1px solid #bacbb1;border-radius:14px;background:#f1f5e9;color:#304c38}
 .rules-preview .rp-copy{min-width:0}
 .rules-preview .rp-copy h3{margin:0 0 10px;font-size:18px;font-weight:750;letter-spacing:0}
 .rules-preview ol{margin:0;padding-left:21px;display:grid;gap:8px;font-size:14px;line-height:1.55}
@@ -7,10 +7,10 @@
 .rules-preview li::marker{font-weight:750;color:#405e49}
 .rules-preview .rp-note{font-size:11px;line-height:1.5;color:#52634b;margin:12px 0 0}
 .rules-preview .rp-illustration{display:grid;grid-template-columns:minmax(0,1fr);justify-items:center;gap:10px;min-width:0;margin:0}
-.rules-preview .rp-example{width:100%;max-width:240px;justify-self:center}
+.rules-preview .rp-example{width:100%;max-width:340px;justify-self:center}
 .rules-preview svg{display:block;width:100%;height:auto;overflow:visible}
 .rules-preview svg text{font-family:system-ui,sans-serif;fill:#304c38}
-.rules-preview .rp-description{position:absolute;width:1px;height:1px;padding:0;margin:-1px;overflow:hidden;clip-path:inset(50%);white-space:nowrap;border:0}
+.rules-preview .rp-description{font-size:13px;line-height:1.5;color:#304c38;margin:0;text-align:left;width:100%;max-width:340px}
 .rules-preview .rp-reduced-note{display:none;font-size:10px;color:#52634b}
 .rules-preview .rpd-result{animation:rp-result var(--rp-cycle) ease-in-out infinite}
 .rules-preview .rpd-action{animation:rp-action var(--rp-cycle) ease-in-out infinite}
@@ -23,3 +23,32 @@
 :root[data-ui-reduced-motion="true"] .rules-preview .rp-example *{animation:none!important}
 :root[data-ui-reduced-motion="true"] .rules-preview .rp-reduced-note{display:block}
 @media(prefers-reduced-motion:reduce){.rules-preview .rp-example *{animation:none!important}.rules-preview .rp-reduced-note{display:block}}
+
+/* A legenda acompanha a ação: observar → agir → conferir; resultado fica legível. */
+.rules-preview .rp-goal{font-size:15px;line-height:1.5;margin:0 0 14px}
+.rules-preview .rp-details{margin-top:14px;border-top:1px solid #bacbb1;padding-top:10px}
+.rules-preview .rp-details summary{cursor:pointer;font-size:13px;font-weight:700;min-height:32px;padding:6px 0;color:#244b63}
+.rules-preview .rp-details summary:focus-visible{outline:2px solid #244b63;outline-offset:3px;border-radius:3px}
+.rules-preview .rp-details ul{font-size:13px;line-height:1.55;padding-left:20px;display:grid;gap:8px}
+.rules-preview .rp-example-title{justify-self:start;font-size:12px;font-weight:750;letter-spacing:.02em;color:#244b63}
+.rules-preview .rp-phases{display:grid;width:100%;max-width:340px;gap:5px}
+.rules-preview .rp-phase{display:flex;align-items:center;gap:8px;border-left:3px solid transparent;padding:5px 7px;font-size:12px;line-height:1.35;background:transparent}
+.rules-preview .rp-phase b{display:grid;place-items:center;flex:none;width:20px;height:20px;border:1px solid #7b9477;border-radius:50%;font-size:11px}
+.rules-preview .rp-phase-1{animation:rp-observe var(--rp-cycle) linear infinite}
+.rules-preview .rp-phase-2{animation:rp-do var(--rp-cycle) linear infinite}
+.rules-preview .rp-phase-3{animation:rp-check var(--rp-cycle) linear infinite}
+.rules-preview .rp-loop-note{font-size:10px;color:#52634b;line-height:1.4}
+@keyframes rp-observe{0%,18%,100%{border-color:#244b63;background:#e2e9e3}19%,99%{border-color:transparent;background:transparent}}
+@keyframes rp-do{0%,18%,48%,100%{border-color:transparent;background:transparent}19%,47%{border-color:#b48723;background:#f4e9c6}}
+@keyframes rp-check{0%,47%,100%{border-color:transparent;background:transparent}48%,99%{border-color:#39654c;background:#e2e9e3}}
+.rules-preview:not(.rp-playing) .rp-phase{animation-play-state:paused!important}
+:root[data-ui-reduced-motion="true"] .rules-preview .rp-phase{animation:none!important}
+:root[data-ui-reduced-motion="true"] .rules-preview .rp-loop-note{display:none}
+@media(prefers-reduced-motion:reduce){.rules-preview .rp-phase{animation:none!important}.rules-preview .rp-loop-note{display:none}}
+@media(max-width:680px){.rules-preview .rp-goal{font-size:14px}.rules-preview .rp-details summary{min-height:44px;display:list-item}.rules-preview .rp-example{max-width:340px}.rules-preview .rp-description{font-size:12px}}
+
+/* No Broto, a última legenda espera a colheita; o ponto vem depois da flor. */
+.rules-preview[data-rules-game="broto"] .rp-phase-2{animation-name:rp-broto-do}
+.rules-preview[data-rules-game="broto"] .rp-phase-3{animation-name:rp-broto-check}
+@keyframes rp-broto-do{0%,18%,68%,100%{border-color:transparent;background:transparent}19%,67%{border-color:#b48723;background:#f4e9c6}}
+@keyframes rp-broto-check{0%,67%,100%{border-color:transparent;background:transparent}68%,99%{border-color:#39654c;background:#e2e9e3}}

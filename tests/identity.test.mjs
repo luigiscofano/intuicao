@@ -112,6 +112,8 @@ test('movimento e vitórias Versus aprovados preservam todos os arquivos fora do
   // Revisão visual posterior do Quinhão: só apresentação e identificação dos frutos.
   // Motores, sessões e persistência continuam fora desta lista.
   const approvedVersus = [
+    // Revisão pedagógica: somente resumos/regras; motores e saves seguem protegidos.
+    'dist/versus/info.mjs',
     ...approved.filter(path => path.startsWith('dist/versus/')),
     // Retirada autorizada: catálogo ativo separado dos IDs históricos de saves.
     'dist/versus/metadata.mjs', 'dist/versus/storage.mjs',

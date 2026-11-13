@@ -1311,7 +1311,12 @@ export function initSintonia({ hideOtherGames }) {
   }
 
   // Monta as orientações e exemplos de regras apresentados na partida.
+  // O guia comum vem primeiro; pistas e controles específicos continuam disponíveis.
   function rulesMarkup() {
+    return rulesPreviewMarkup('sintonia') + '<details class="rules-more"><summary>Pistas desta fase e controles</summary>' + contextualRulesMarkup() + '</details>';
+  }
+
+  function contextualRulesMarkup() {
     const mechanics = [...new Set(level.mechanics ?? ['walls'])].filter(
       (id) => id in MECHANIC_TEXT,
     );
