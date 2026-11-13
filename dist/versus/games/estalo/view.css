@@ -310,3 +310,33 @@
 #versus-games .estalo-map-description p { margin:0; }
 #versus-games .estalo-map-description small { display:block; margin-top:5px; }
 @media(max-width:600px) { #versus-games .estalo-map-cards { grid-template-columns:repeat(2,minmax(0,1fr)); } }
+
+/* As setas revelam diferenças entre canteiros de contorno igual. */
+#versus-games .estalo-map-mini > span { display:grid; place-items:center; }
+#versus-games .estalo-map-mini i {
+  width:3px; height:3px; border-top:1px solid #263f35; border-right:1px solid #263f35;
+  transform:rotate(calc(-45deg + var(--direction) * 90deg));
+}
+
+/* Em telas estreitas, oito colunas precisam da largura inteira. A direção fica
+   imediatamente abaixo, em uma faixa reservada, sem encolher ao selecionar. */
+@media (max-width: 700px) {
+  #versus-games .estalo-workspace { grid-template-columns: minmax(0, 1fr); gap: 6px; }
+  #versus-games .estalo-workspace .estalo-coordinates { width: 100%; }
+  #versus-games .estalo-tools { padding-top: 0; min-height: 78px; }
+  #versus-games .estalo-tools .estalo-aim-buttons { grid-template-columns: repeat(3, minmax(0, 1fr)); }
+  #versus-games .estalo-tools .estalo-aim-button {
+    min-height: 44px; display:flex; align-items:center; justify-content:center; gap:5px; padding:4px;
+  }
+  #versus-games .estalo-tools .estalo-direction { font-size: 22px; }
+  #versus-games .estalo-playfield {
+    box-sizing:border-box; grid-template-rows:repeat(var(--estalo-rows), minmax(0, 1fr));
+    aspect-ratio:var(--estalo-columns) / var(--estalo-rows); padding:2px; gap:2px;
+  }
+  #versus-games .estalo-cell {
+    box-sizing:border-box; width:100%; height:100%; min-width:0; min-height:0;
+    margin:0; padding:1px; border-radius:5px;
+  }
+  #versus-games .estalo-chain-order { top:0; left:0; min-width:12px; height:12px; padding:0; font-size:9px; }
+  #versus-games .estalo-open-label { display:none; }
+}
