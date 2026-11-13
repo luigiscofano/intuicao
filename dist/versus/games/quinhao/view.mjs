@@ -108,6 +108,7 @@ export function renderBoard(state, context = {}) {
         ? `<p class="quinhao-preview-note">Prévia da oferta: ${offered.join(" · ")}. ${playerName(1 - state.proposer)} escolherá primeiro.</p>`
         : "";
   return `<section class="quinhao-area" aria-label="Anel da colheita">
+    <div class="quinhao-side-deposits"></div>
     <div class="quinhao-plot${points.length === 0 ? " is-finished" : ""}">
       <svg class="quinhao-rope" viewBox="0 0 1000 1000" preserveAspectRatio="none" aria-hidden="true"><polyline points="${rope}" fill="none" stroke="#BEC9AD" stroke-width="5"/></svg>
       ${baskets}
