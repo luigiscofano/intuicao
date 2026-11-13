@@ -87,6 +87,7 @@ body.approved-game-view #main .approved-game-band > .number {
 body.approved-game-view #main > .category-heading {
   gap: 12px;
   padding-block: 8px 12px;
+  margin: 0;
 }
 body.approved-game-view #main #category-back {
   width: auto;
@@ -136,4 +137,12 @@ body #main .unified-selection .rules-preview .rp-goal {
     height: 40px;
     flex-basis: 40px;
   }
+}
+
+/* O espaçamento já é definido pela lista; margens legadas não devem duplicá-lo. */
+body #main .unified-selection .rules-preview .rp-copy > ol {
+  gap: 6px;
+}
+body #main .unified-selection .rules-preview .rp-copy > ol > li {
+  margin-block: 0;
 }

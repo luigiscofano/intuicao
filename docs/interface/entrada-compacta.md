@@ -13,3 +13,16 @@ O ajuste está centralizado em `dist/selection-presentation.css`.
 
 Cobertura estrutural: os 19 jogos do catálogo compartilham a apresentação.
 Teste: `node --test tests/compact-game-entry.test.mjs tests/selection-presentation.test.mjs tests/compact-mode-cards.test.mjs tests/presentation-system.test.mjs`.
+
+## Verificação visual
+
+Em Chromium, 57 entradas foram medidas em viewports de iframe: 19 jogos ×
+1440, 390 e 320 px. Todas apresentaram seleção, títulos entre 24 e 28 px,
+retorno de 44 px e nenhuma rolagem horizontal da página. O Acorde foi
+inspecionado visualmente em desktop e celular; margens duplicadas das
+instruções e do retorno foram eliminadas. A lista mantém seu espaçamento
+próprio e não altera o texto das regras.
+
+31 testes focados passam. A suíte histórica rules-quick-start continua com
+uma falha por ainda incluir Dobra, retirado; seus arquivos não foram alterados.
+Esta mudança não afirma testar todas as partidas ou dispositivos físicos.
