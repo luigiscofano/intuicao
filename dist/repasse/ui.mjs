@@ -1,3 +1,4 @@
+import { levelCompletionState } from "../level-completion-state.mjs";
 import { campaignLevelName } from "../campaign-level-names.mjs";
 import {recordMissionUnlocks} from '../achievements/mission-store.mjs';
 import {createRepasseMissionAttempt, invalidateRepasseMissionAttempt, observeRepasseMissionCommand} from '../achievements/repasse-action-missions.mjs';
@@ -625,7 +626,7 @@ export function initRepasse({ hideOthers = () => {} } = {}) {
               return (
                 '<button class="level-tile ' +
                 (done ? 'done' : '') +
-                '" data-r-level="' +
+                '" data-completion-state="' + levelCompletionState(done, done?.assisted) + '" data-r-level="' +
                 (number - 1) +
                 '" aria-label="Nível ' +
                 number +

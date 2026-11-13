@@ -1,3 +1,4 @@
+import { levelCompletionState } from "../level-completion-state.mjs";
 import { campaignLevelName } from "../campaign-level-names.mjs";
 import {createMovementAttempt,startMovementAttempt,serializeMovementAttempt,movementHistory,observeMovement,finishMovement,sintoniaBatonPass} from '../achievements/movement-missions.mjs';
 import {recordMissionUnlocks} from '../achievements/mission-store.mjs';
@@ -563,7 +564,7 @@ export function initSintonia({ hideOtherGames }) {
             const number = chapter * 15 + offset + 1,
               done = data.campaign.completed[item.id],
               current = item.id === data.campaign.lastId;
-            return `<button class="level-tile ${done ? 'done' : ''}" data-s-level="${number - 1}" aria-label="Nível ${number}, ${esc(difficultyName(item.difficulty))}, ${item.boards.length} animais, ${done ? 'concluído' : 'disponível'}" ${current ? 'aria-current="true"' : ''}><span>${number}</span><small>${done ? (done.assisted ? '✓ assistido' : '✓ concluído') : current ? 'atual' : 'explorar'}</small></button>`;
+            return `<button class="level-tile ${done ? 'done' : ''}" data-completion-state="${levelCompletionState(done, done?.assisted)}" data-s-level="${number - 1}" aria-label="Nível ${number}, ${esc(difficultyName(item.difficulty))}, ${item.boards.length} animais, ${done ? 'concluído' : 'disponível'}" ${current ? 'aria-current="true"' : ''}><span>${number}</span><small>${done ? (done.assisted ? '✓ assistido' : '✓ concluído') : current ? 'atual' : 'explorar'}</small></button>`;
           })
           .join('')}</div></section>`,
     ).join('')}</div>${importPanel()}</div>`;
