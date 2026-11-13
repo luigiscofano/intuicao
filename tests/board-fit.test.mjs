@@ -22,9 +22,10 @@ test('não amplia um tabuleiro que já cabe e tolera dados ausentes', () => {
   assert.equal(nextBoardWidth(200,0,600),200);
   assert.equal(boardHeightBudget(undefined),boardHeightBudget(768));
 });
-test('cobre as famílias dos 25 jogos, sem atuar em miniaturas ou vitórias', () => {
-  for (const target of ['#scene','#c-board','#s-boards','#r-board','#o-board','.b-lab','.ce-lab','.logic-lab','enlace-board','vazante-river-frame','mosaico-board-wrap','quinhao-plot','estalo-coordinates','dobra-map','acorde-board','lastro-instrument']) assert(FIT_BOARD_SELECTOR.includes(target),target);
+test('cobre famílias compartilhadas; Estalo usa dimensionamento CSS estável', () => {
+  for (const target of ['#scene','#c-board','#s-boards','#r-board','#o-board','.b-lab','.ce-lab','.logic-lab','enlace-board','vazante-river-frame','mosaico-board-wrap','quinhao-plot','dobra-map','acorde-board','lastro-instrument']) assert(FIT_BOARD_SELECTOR.includes(target),target);
   assert(!FIT_BOARD_SELECTOR.includes('victory'));
+  assert(!FIT_BOARD_SELECTOR.includes('estalo-coordinates')); // Regressão: não reduzir a cada jogada.
 });
 test('carrega depois dos estilos e módulos existentes', () => {
   assert(html.indexOf('board-fit.css') > html.indexOf('identity.css'));
