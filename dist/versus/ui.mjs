@@ -16,7 +16,8 @@ import { createVersusStorage } from "./storage.mjs";
 import { createSearchService } from "./search-service.mjs";
 import { canRepeatChoice, repeatsPendingChoice, repeatChoiceHelp } from "./repeat-choice.mjs";
 import { createDuelConfirmation } from "./confirmation.mjs";
-import { escapeHTML as esc, playerMark, playerName } from "./shared/markup.mjs";
+import { escapeHTML as esc, playerMark } from "./shared/markup.mjs";
+import { PLAYER_ANIMALS, gamePlayerName, playerAvatar } from "./player-identities.mjs";
 import { versusIcon } from "./icons.mjs";
 import { evaluateVersusMissions } from "../achievements/versus-missions.mjs";
 import { recordMissionUnlocks } from "../achievements/mission-store.mjs";
@@ -95,6 +96,7 @@ export function initVersusGames() {
   let freshResult = null;
   let renderedResult = null;
 
+  const playerName = (player) => gamePlayerName(game?.id, player);
   const state = () => currentState(session);
   const computerTurn = () =>
     playConfig.mode === "bot" &&
@@ -141,7 +143,7 @@ export function initVersusGames() {
         <p class="nv-control-help">Use Tab para percorrer os controles e Enter ou espaço para selecionar. Confira a prévia e clique ou toque novamente na mesma escolha para confirmar. Em jogadas com etapas, complete todas primeiro. Enter ou espaço também seleciona e confirma; o botão Confirmar jogada fica junto ao tabuleiro. Escape cancela a seleção.</p>
         <details class="nv-help-more">
           <summary>Modos e análise do computador</summary>
-          <p>No amistoso, desfazer e refazer dependem do acordo dos dois jogadores. No competitivo, a partida segue sem desfazer ou reiniciar. Contra o computador, você controla o Verde; desfazer retorna à sua decisão anterior.</p>
+          <p>No amistoso, desfazer e refazer dependem do acordo dos dois jogadores. No competitivo, a partida segue sem desfazer ou reiniciar. Contra o computador, você controla ${playerName(0)}${PLAYER_ANIMALS[game?.id] ? " (verde)" : ""}; desfazer retorna à sua decisão anterior.</p>
           <p>O computador usa somente jogadas legais e informação pública. Os níveis aumentam a busca dentro de um orçamento limitado. Uma sugestão de treino explica uma possibilidade; não é garantia de vitória.</p>
         </details>
       </details>`;
@@ -354,8 +356,8 @@ export function initVersusGames() {
     find("teams").innerHTML = [0, 1]
       .map(
         (player) => `
-      <section class="nv-team nv-team-${player}${!current.result && current.player === player ? " nv-current" : ""}" aria-label="${playerName(player)}: ${scores[player]} ${metadata.scoreLabel}">
-        <span class="nv-team-symbol" aria-hidden="true">${playerMark(player)}</span><div><strong>${playerName(player)}${playConfig.mode === "bot" && player === 1 ? " · computador" : ""}</strong><span>${esc(scores[player])} ${esc(metadata.scoreLabel)}</span></div>
+      <section class="nv-team ${PLAYER_ANIMALS[game.id] ? "nv-team--animal" : ""} nv-team-${player}${!current.result && current.player === player ? " nv-current" : ""}" aria-label="${playerName(player)}: ${scores[player]} ${metadata.scoreLabel}">
+        ${PLAYER_ANIMALS[game.id] ? playerAvatar(game.id, player) : `<span class="nv-team-symbol" aria-hidden="true">${playerMark(player)}</span>`}<div><strong class="nv-team-name">${PLAYER_ANIMALS[game.id] ? playerMark(player) + " " : ""}${playerName(player)}${playConfig.mode === "bot" && player === 1 ? " · computador" : ""}</strong><span>${esc(scores[player])} ${esc(metadata.scoreLabel)}</span></div>
       </section>`,
       )
       .join("");

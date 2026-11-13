@@ -21,11 +21,10 @@ import { rulesPreviewMarkup } from "../rules-preview.mjs";
 import { renderVersusVictory } from "../versus-victory.mjs";
 import { createDuelResultLayout } from "../duel-result-layout.mjs";
 import { bindMiddleConfirm } from "../middle-confirm.mjs";
-import { ANIMAL_SPRITES } from "../sintonia/animal-roster.mjs";
+import { playerAvatar } from "../versus/player-identities.mjs";
 export const BROTO_STORAGE_KEY = "intuicao.broto.v1";
 const names = ["Jogador 1", "Jogador 2"],
-  symbols = ["●", "◆"],
-  animals = ["capivara", "tuiuiu"];
+  symbols = ["●", "◆"];
 const coordinate = (cell, cols = 4) =>
   `Linha ${Math.floor(cell / cols) + 1}, coluna ${(cell % cols) + 1}`;
 const flower =
@@ -39,10 +38,7 @@ function pieceLabel(piece) {
   return `${names[piece.owner]}. ${piece.h ? "Horizontal recebido" : "Falta horizontal"}; ${piece.v ? "vertical recebido" : "falta vertical"}.`;
 }
 function avatar(player) {
-  const s = ANIMAL_SPRITES[animals[player]],
-    x = s.frame % s.columns,
-    y = Math.floor(s.frame / s.columns);
-  return `<span class="b-avatar" aria-hidden="true" style="background-image:url('${s.url}');background-size:${s.columns * 100}% ${s.rows * 100}%;background-position:${(x / (s.columns - 1)) * 100}% ${(y / (s.rows - 1)) * 100}%"></span>`;
+  return playerAvatar("broto", player);
 }
 export function initBroto() {
   const host = document.getElementById("broto"),

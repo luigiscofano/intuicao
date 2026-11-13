@@ -1,9 +1,10 @@
+import { gamePlayerName } from "../../player-identities.mjs";
+const playerName = (player) => gamePlayerName("estalo", player);
 import {
   actionAttributes,
   coordinate,
   escapeHTML,
   playerMark,
-  playerName,
 } from "../../shared/markup.mjs";
 import { DIRECTIONS } from "./engine.mjs";
 
@@ -75,7 +76,7 @@ export function renderBoard(state, context = {}) {
   return `<section class="estalo-area" aria-label="Canteiro de vagens" style="--estalo-columns:${columns};--estalo-rows:${rows}">
     <div class="estalo-workspace"><div class="estalo-coordinates"><div class="estalo-column-labels" aria-hidden="true">${Array.from({ length: columns }, (_, index) => String.fromCharCode(65 + index)).map((letter) => `<span>${letter}</span>`).join("")}</div><div class="estalo-board-row"><div class="estalo-row-labels" aria-hidden="true">${Array.from({ length: rows }, (_, index) => index + 1).map((row) => `<span>${row}</span>`).join("")}</div><div class="estalo-playfield"><svg class="estalo-pulse-path" viewBox="0 0 ${columns * 100} ${rows * 100}" aria-hidden="true"><polyline points="${points}" fill="none" stroke="#73965E" stroke-width="6" stroke-linecap="round" stroke-linejoin="round"/></svg>${cells}</div></div></div>
     <aside class="estalo-tools" aria-label="Direção da abertura">${aimControls(state, context.selection, pending, disabled)}</aside></div>
-    ${preview ? `<p class="estalo-preview-note">Prévia da cadeia: <strong>● Verde +${gains[0]}</strong> <strong>◆ Âmbar +${gains[1]}</strong>. A ordem aparece nas casas.</p>` : '<p class="estalo-tip">A seta conduz o pulso. Uma casca aberta interrompe o caminho.</p>'}
+    ${preview ? `<p class="estalo-preview-note">Prévia da cadeia: <strong>● Jogador 1 +${gains[0]}</strong> <strong>◆ Jogador 2 +${gains[1]}</strong>. A ordem aparece nas casas.</p>` : '<p class="estalo-tip">A seta conduz o pulso. Uma casca aberta interrompe o caminho.</p>'}
   </section>`;
 }
 
@@ -123,7 +124,7 @@ export function describeMove(state, move, nextState) {
   const path = nextState.lastChain
     .map((cell) => coordinate(cell, state.columns ?? 4))
     .join(" → ");
-  return `${coordinate(move.cell, state.columns ?? 4)} ${adjustment}. Caminho: ${path}. Verde abre mais ${gains[0]}; Âmbar abre mais ${gains[1]}. A cadeia para em uma casca ou na borda.`;
+  return `${coordinate(move.cell, state.columns ?? 4)} ${adjustment}. Caminho: ${path}. Jogador 1 abre mais ${gains[0]}; Jogador 2 abre mais ${gains[1]}. A cadeia para em uma casca ou na borda.`;
 }
 
 export function getStatus(state) {

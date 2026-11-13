@@ -112,6 +112,9 @@ test('movimento e vitórias Versus aprovados preservam todos os arquivos fora do
   // Revisão visual posterior do Quinhão: só apresentação e identificação dos frutos.
   // Motores, sessões e persistência continuam fora desta lista.
   const approvedVersus = [
+    // Identificação visual dos jogadores; regras, motores e saves preservados.
+    "dist/versus/player-identities.mjs", "dist/versus/games/acorde/view.mjs",
+    "dist/versus/games/dobra/index.mjs",
     // Revisão pedagógica: somente resumos/regras; motores e saves seguem protegidos.
     'dist/versus/info.mjs',
     // Sete mapas Estalo e configuração de mapa autorizados; demais motores protegidos.

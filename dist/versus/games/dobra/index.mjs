@@ -11,7 +11,7 @@ export const game = {
       "No atlas final 2 × 2, controle a maior área. A maioria de selos em cada distrito define quem recebe seus pontos.",
     duration: "6–12 minutos",
     rules: [
-      "Prepare um mapa retangular 6 × 6 de 36 painéis. Cada painel começa com área 1 e nenhum selo. Verde e Âmbar recebem quatro selos cada, visíveis na reserva. Verde começa.",
+      "Prepare um mapa retangular 6 × 6 de 36 painéis. Cada painel começa com área 1 e nenhum selo. Jogador 1 (verde) e Jogador 2 (âmbar) recebem quatro selos cada, visíveis na reserva. Jogador 1 começa.",
       "Em cada turno faça as duas etapas nesta ordem: coloque um selo da sua reserva em qualquer pilha existente, mesmo que ela já contenha selos seus ou rivais; depois escolha e dobre uma borda inteira do mapa para dentro.",
       "Dobrar o norte leva cada pilha da primeira linha sobre a pilha correspondente da segunda linha e elimina a primeira linha. Sul faz o equivalente com a última e a penúltima. Oeste leva a primeira coluna sobre a segunda; leste, a última sobre a penúltima.",
       "Uma dobra soma as áreas e todos os selos das duas pilhas. Nada é descartado nem ocultado. A interface exibe em cada pilha sua área total e a quantidade de cada selo, mesmo quando seria coberta fisicamente pelo papel. Orientação de frente e verso não é uma regra.",

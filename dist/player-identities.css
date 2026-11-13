@@ -1,0 +1,31 @@
+/* Retratos compactos: mesmas cores de equipe, nomes e símbolos legíveis. */
+.player-animal {
+  display: inline-block;
+  flex: 0 0 32px;
+  width: 32px;
+  height: 32px;
+  vertical-align: middle;
+  background-repeat: no-repeat;
+  image-rendering: pixelated;
+}
+.player-identity-heading { display: inline-flex; align-items: center; gap: 7px; min-width: 0; }
+#versus-games .nv-team--animal { align-items: flex-start; }
+#versus-games .nv-team--animal .nv-team-name { display: flex; flex-wrap: wrap; align-items: center; gap: 5px; }
+#versus-games .nv-team--animal .nv-team-name small { font-weight: 500; }
+#versus-games .quinhao-deposit-heading .player-animal { width: 22px; height: 22px; flex-basis: 22px; }
+#versus-games .quinhao-deposit-heading .player-identity-heading { gap: 3px; }
+.versus-victory .vv-animal-winner { display: flex; align-items: center; gap: 10px; }
+@media (max-width: 500px) {
+ .player-animal { width: 27px; height: 27px; flex-basis: 27px; }
+ #versus-games .nv-team--animal { gap: 7px; padding: 9px; }
+ #versus-games .nv-team--animal strong { font-size: 12px; }
+}
+
+/* No centro estreito do Quinhão, o placar acima já identifica o jogador. */
+.player-short-name { display: none; }
+@media (max-width: 500px) {
+ #versus-games .quinhao-deposit-heading .player-animal,
+ #versus-games .quinhao-deposit-heading .player-full-name { display: none; }
+ #versus-games .quinhao-deposit-heading .player-short-name { display: inline; }
+ #versus-games .quinhao-deposit-heading .player-identity-heading { white-space: nowrap; }
+}

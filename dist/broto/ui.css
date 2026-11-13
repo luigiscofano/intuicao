@@ -58,9 +58,9 @@
   --b-edge:#a9c192;
 }
 #broto .b-owner-1 {
-  --b-ink:#76529b;
-  --b-soft:#eee5f6;
-  --b-edge:#c6b0e4;
+  --b-ink:#705a1d;
+  --b-soft:#f5e7b2;
+  --b-edge:#b99b46;
 }
 #broto .b-player {
   border: 1px solid var(--b-edge);

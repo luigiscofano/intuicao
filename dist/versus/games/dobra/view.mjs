@@ -1,9 +1,10 @@
+import { gamePlayerName } from "../../player-identities.mjs";
+const playerName = (player) => gamePlayerName("dobra", player);
 import {
   actionAttributes,
   coordinate,
   escapeHTML,
   playerMark,
-  playerName,
 } from "../../shared/markup.mjs";
 import { getAvailableEdges, getOwner, getScores } from "./engine.mjs";
 
@@ -128,7 +129,7 @@ export function describeMove(state, move, nextState) {
   const edge = EDGES.find((item) => item.id === move.edge);
   const destination = foldedCell(state, move.cell, move.edge);
   const scores = getScores(nextState);
-  return `${playerName(state.player)} coloca um selo em ${coordinate(move.cell, state.columns)} e dobra ${edge.phrase}. O selo passa a ${coordinate(destination, nextState.columns)} no mapa ${nextState.rows} × ${nextState.columns}. Área controlada: Verde ${scores[0]}, Âmbar ${scores[1]}; a soma total continua 36.`;
+  return `${playerName(state.player)} coloca um selo em ${coordinate(move.cell, state.columns)} e dobra ${edge.phrase}. O selo passa a ${coordinate(destination, nextState.columns)} no mapa ${nextState.rows} × ${nextState.columns}. Área controlada: Jogador 1 ${scores[0]}, Jogador 2 ${scores[1]}; a soma total continua 36.`;
 }
 
 export function getStatus(state) {

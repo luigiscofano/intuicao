@@ -18,6 +18,11 @@ function boardScrollHost(board) {
   return board.closest('.logic-board, .scene-wrap, .collection-board-wrap, .s-play-area, .r-board-scroll, .o-board-scroll') || board.parentElement;
 }
 function minimumBoardWidth(board, width) {
+  // Estes tabuleiros contêm rótulos e coleções além das casas clicáveis.
+  // O alvo de toque sozinho não protege esses conteúdos de sobreposição.
+  const readableWidths = [['.acorde-board', 260], ['.quinhao-plot', 280], ['.dobra-grid', 270]];
+  const readable = readableWidths.find(([selector]) => board.matches?.(selector));
+  if (readable) return readable[1];
   // Conserva alvos de pelo menos 24 CSS px onde existe uma grade de botões.
   // Não altera os viewBoxes nem as coordenadas lógicas dos jogos.
   const targets = [...board.querySelectorAll('button, [role="button"], [role="gridcell"], .s-cell')].filter(visible).filter(target=>!target.matches?.('.support-marker'));

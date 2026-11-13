@@ -1,5 +1,6 @@
 /** Apresentação dos onze duelos. O motor e o chamador fornecem o resultado real. */
 import { VERSUS_VICTORY_IDS, versusVictoryMotif } from './versus-victory-art.mjs';
+import { playerAvatar } from './versus/player-identities.mjs';
 import { VERSUS_FRONT_CROPS } from './versus-mascot-art.mjs';
 import { prefersReducedUIMotion } from './ui-motion.mjs';
 
@@ -41,7 +42,7 @@ export function renderVersusVictory(host, {
   host.innerHTML = `<section class="versus-victory vv-game-${game} vv-owner-${player} ${draw ? 'vv-draw' : lost ? 'vv-loss' : 'vv-win'} ${moving ? 'vv-animate' : 'vv-static'}" role="status" aria-label="${esc(label)}">
     <div class="vv-emblem" aria-hidden="true">${moving ? art(0) : finalArt}</div>
     <div class="vv-copy"><span class="vv-kicker">${draw ? 'RESULTADO DO DUELO' : 'VENCEDOR DO DUELO'}</span>
-      <strong class="vv-winner">${draw ? '' : `<span class="vv-player-mark" aria-hidden="true">${player === 0 ? '●' : '◆'}</span> `}${esc(label)}</strong>
+      <strong class="vv-winner${!draw && playerAvatar(game, player) ? " vv-animal-winner" : ""}">${draw ? "" : playerAvatar(game, player)}${draw ? '' : `<span class="vv-player-mark" aria-hidden="true">${player === 0 ? '●' : '◆'}</span> `}${esc(label)}</strong>
       <span class="vv-caption">${esc(subtitle)}</span>${reason ? `<span class="vv-reason">${esc(reason)}</span>` : ''}
     </div></section>`;
   if (!moving) return;
