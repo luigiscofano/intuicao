@@ -1,3 +1,4 @@
+import { gameDisplayNumber } from '../game-catalog.mjs';
 import { isRetiredGame } from "../retired-games.mjs";
 /** A biblioteca importa somente estes metadados; os motores carregam sob demanda. */
 const HISTORICAL_VERSUS_GAMES = Object.freeze([
@@ -20,7 +21,7 @@ const HISTORICAL_VERSUS_GAMES = Object.freeze([
   {
     id: "mosaico",
     name: "MOSAICO",
-    number: "20",
+    number: gameDisplayNumber("mosaico"),
     description: "Oriente os azulejos. Conquiste os encontros.",
     headline: "Encontre os cantos.\nAssine o painel.",
     scoreLabel: "selos",
@@ -28,7 +29,7 @@ const HISTORICAL_VERSUS_GAMES = Object.freeze([
   {
     id: "quinhao",
     name: "QUINHÃO",
-    number: "21",
+    number: gameDisplayNumber("quinhao"),
     description: "Ofereça três cestos. O rival escolhe primeiro.",
     headline: "Prepare a partilha.\nEscolha seu quinhão.",
     scoreLabel: "pontos",
@@ -36,7 +37,7 @@ const HISTORICAL_VERSUS_GAMES = Object.freeze([
   {
     id: "estalo",
     name: "ESTALO",
-    number: "22",
+    number: gameDisplayNumber("estalo"),
     description: "Siga as setas e decida quem ganha com cada estalo.",
     headline: "Preveja a cadeia.\nPrepare o estalo.",
     scoreLabel: "vagens abertas",
@@ -52,7 +53,7 @@ const HISTORICAL_VERSUS_GAMES = Object.freeze([
   {
     id: "acorde",
     name: "ACORDE",
-    number: "24",
+    number: gameDisplayNumber("acorde"),
     description: "Reúna seus pares e escolha o próximo eixo do rival.",
     headline: "Escolha uma voz.\nComplete o acorde.",
     scoreLabel: "tipos de pares",

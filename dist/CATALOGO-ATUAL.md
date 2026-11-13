@@ -1,3 +1,31 @@
+# Catálogo atual · 19 jogos
+
+Numeração pública contínua, seguindo a ordem das categorias. Os IDs internos, links e registros de progresso não mudaram.
+
+01. Reflexos
+02. Corte certo
+03. ELO
+04. PRUMO
+05. PACTO
+06. SINTONIA
+07. REPASSE
+08. PULSO
+09. FOZ
+10. REFÚGIO
+11. MIRANTE
+12. RENOVO
+13. DESVIO
+14. BROTO
+15. CERCO
+16. MOSAICO
+17. QUINHÃO
+18. ESTALO
+19. ACORDE
+
+As contagens de revisões anteriores abaixo são históricas, não o catálogo ativo.
+
+---
+
 # Atualização CORTE80 · 30/10/2026
 
 Corte certo tem exatamente 80 fases em seis faixas (15/15/15/15/15/5), todas solucionáveis no eixo básico. A curadoria preserva identidades das definições inalteradas e dá nova identidade às geometrias recompostas; não transfere vitórias pela posição. Motor, visuais e tolerância inclusiva de ±3 pp permanecem iguais. Controles da curva continuam disponíveis na aba própria; o painel auxiliar avançado continua exclusivo de Reflexos, e Dicas continuam exclusivas de PACTO. [Validação e limites](CORTE80-VALIDACAO.md).

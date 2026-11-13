@@ -1,3 +1,4 @@
+import { gameDisplayNumber } from './game-catalog.mjs';
 import { arrangeActionSidebar } from './action-sidebar.mjs';
 import { VERSUS_GAMES } from "./versus/metadata.mjs";
 import { LOGIC_GAMES } from "./logica/metadata.mjs";
@@ -19,70 +20,70 @@ export const GAME_PRESENTATION = Object.freeze({
   ),
   light: {
     name: "Reflexos",
-    number: "01",
+    number: gameDisplayNumber("light"),
     category: "Intuição",
     headline: "Observe a luz.\nDescubra o caminho.",
     prefix: "",
   },
   cut: {
     name: "Corte certo",
-    number: "02",
+    number: gameDisplayNumber("cut"),
     category: "Intuição",
     headline: "Observe as formas.\nEncontre a proporção.",
     prefix: "",
   },
   elo: {
     name: "Elo",
-    number: "03",
+    number: gameDisplayNumber("elo"),
     category: "Raciocínio lógico",
     headline: "Encontre as ligações.\nComplete o circuito.",
     prefix: "c",
   },
   prumo: {
     name: "Prumo",
-    number: "04",
+    number: gameDisplayNumber("prumo"),
     category: "Raciocínio lógico",
     headline: "Observe o apoio.\nDescubra o equilíbrio.",
     prefix: "c",
   },
   pacto: {
     name: "Pacto",
-    number: "05",
+    number: gameDisplayNumber("pacto"),
     category: "Raciocínio lógico",
     headline: "Leia as pistas.\nDescubra as relações.",
     prefix: "c",
   },
   desvio: {
     name: "Desvio",
-    number: "06",
+    number: gameDisplayNumber("desvio"),
     category: "Versus",
     headline: "Imagine os caminhos.\nPrepare sua jogada.",
     prefix: "c",
   },
   sintonia: {
     name: "Sintonia",
-    number: "07",
+    number: gameDisplayNumber("sintonia"),
     category: "Raciocínio lógico",
     headline: "Um comando.\nMuitos caminhos.",
     prefix: "s",
   },
   repasse: {
     name: "Repasse",
-    number: "08",
+    number: gameDisplayNumber("repasse"),
     category: "Raciocínio lógico",
     headline: "Observe a ordem.\nTransforme o caminho.",
     prefix: "r",
   },
   broto: {
     name: "Broto",
-    number: "10",
+    number: gameDisplayNumber("broto"),
     category: "Versus",
     headline: "Prepare o terreno.\nEscolha quem floresce.",
     prefix: "b",
   },
   cerco: {
     name: "Cerco",
-    number: "11",
+    number: gameDisplayNumber("cerco"),
     category: "Versus",
     headline: "Observe as saídas.\nFaça o próximo movimento.",
     prefix: "ce",
@@ -175,7 +176,7 @@ export function initApprovedGameShell(doc = document, win = window) {
         navigationHome.insertBefore(navigation, navigationNext);
       }
       if (!active) return;
-      setText(number, presentation.number);
+      setText(number, gameDisplayNumber(game) ?? presentation.number);
       setText(category, `${presentation.category} · ${presentation.name}`);
 
       const surfaces = main.querySelectorAll(
