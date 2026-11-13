@@ -1,3 +1,4 @@
+import { getAcordeMap } from "./maps.mjs";
 /**
  * ACORDE: sinos públicos, coleta por eixos e três pares de símbolos distintos.
  * O tabuleiro guarda apenas os sinos restantes. O carrinho aponta uma casa
@@ -27,9 +28,11 @@ function emptyCollection() {
   return { folha: 0, gota: 0, onda: 0, sol: 0 };
 }
 
-export function createState() {
+export function createState(config = {}) {
+  const map = getAcordeMap(config);
   return {
-    board: [...INITIAL_BOARD],
+    ...(map.id === "classic" ? {} : { mapId: map.id, mapVersion: map.version }),
+    board: [...map.board],
     collections: [emptyCollection(), emptyCollection()],
     cursor: null,
     player: 0,
@@ -50,9 +53,9 @@ export function validateState(state) {
     throw new Error("Estado inválido de ACORDE.");
   }
   if (
-    state.board.length !== 16 ||
+    state.board.length !== getAcordeMap(state).board.length ||
     state.board.some(
-      (symbol, cell) => symbol !== null && symbol !== INITIAL_BOARD[cell],
+      (symbol, cell) => symbol !== null && symbol !== getAcordeMap(state).board[cell],
     ) ||
     !Array.isArray(state.collections) ||
     state.collections.length !== 2
@@ -76,16 +79,16 @@ export function validateState(state) {
       remaining +
         state.collections[0][symbol] +
         state.collections[1][symbol] !==
-      4
+      getAcordeMap(state).board.filter(item => item === symbol).length
     ) {
-      throw new Error("Cada símbolo precisa conservar seus quatro sinos.");
+      throw new Error("Cada símbolo precisa conservar os sinos do arranjo escolhido.");
     }
   }
   if (
     (state.cursor !== null &&
       (!Number.isInteger(state.cursor) ||
         state.cursor < 0 ||
-        state.cursor > 15 ||
+        state.cursor >= state.board.length ||
         state.board[state.cursor] !== null)) ||
     !Number.isInteger(state.moveCount) ||
     state.moveCount < 0 ||
@@ -164,12 +167,12 @@ export function getActiveAxis(state, player = state.player) {
   if (player === 0) {
     return {
       kind: "row",
-      index: state.cursor === null ? 1 : Math.floor(state.cursor / 4),
+      index: state.cursor === null ? 1 : Math.floor(state.cursor / getAcordeMap(state).cols),
     };
   }
   return {
     kind: "column",
-    index: state.cursor === null ? null : state.cursor % 4,
+    index: state.cursor === null ? null : state.cursor % getAcordeMap(state).cols,
   };
 }
 
@@ -177,7 +180,7 @@ function availableCells(state, player = state.player) {
   const axis = getActiveAxis(state, player);
   if (axis.index === null) return [];
   return state.board.flatMap((symbol, cell) => {
-    const coordinate = axis.kind === "row" ? Math.floor(cell / 4) : cell % 4;
+    const coordinate = axis.kind === "row" ? Math.floor(cell / getAcordeMap(state).cols) : cell % getAcordeMap(state).cols;
     return symbol !== null && coordinate === axis.index ? [cell] : [];
   });
 }

@@ -766,3 +766,15 @@
 #broto .b-flower {
   color: var(--b-plant);
 }
+/* Jardins maiores mantêm casas quadradas. Em celular denso, o teclado e os rótulos
+   completos continuam disponíveis; controles externos não perdem seus 44px. */
+#broto .b-expanded { aspect-ratio:1; grid-template-rows:repeat(var(--b-cols),minmax(0,1fr)); }
+#broto .b-expanded .b-cell { min-height:0; height:100%; box-sizing:border-box; }
+@media(max-width:600px) {
+  #broto .b-expanded { gap:2px; }
+  #broto .b-expanded .b-cell { padding:1px; border-radius:5px; }
+  #broto .b-expanded .b-sprout,#broto .b-expanded .b-flower { min-height:0; max-height:55%; width:50%; }
+  #broto .b-expanded .b-axes { margin-top:0; gap:1px; max-height:35%; }
+  #broto .b-expanded .b-axes>span { width:10px; height:10px; font-size:9px; border-radius:2px; }
+  #broto .b-expanded .b-owner-symbol { font-size:7px; }
+}

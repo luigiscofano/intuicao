@@ -1,4 +1,5 @@
-import { renderMapSelection } from "./games/estalo/map-selection.mjs";
+import { renderMapSelection, bindMapSelection } from "./map-selection.mjs";
+import { estaloMapPreview } from "./games/estalo/map-selection.mjs";
 import { rulesPreviewMarkup } from '../rules-preview.mjs';
 import { FAUNA_ART } from "../fauna-art.mjs";
 import { FAUNA_INFO } from "../fauna-info-content.mjs";
@@ -165,14 +166,6 @@ export function initVersusGames() {
     clearPreview();
     screen = "selection";
     const initial = game.engine.createState(draftConfig);
-    const preview = game.view.renderBoard(initial, {
-      selection: null,
-      pendingMove: null,
-      previewState: null,
-      legalMoves: game.engine.getLegalMoves(initial),
-      config: draftConfig,
-      disabled: true,
-    });
     const resume = session && !state().result && !invalidSave;
     host.innerHTML = `
       <section class="level-screen nv-selection">
@@ -182,12 +175,11 @@ export function initVersusGames() {
         </div>
         ${rulesMarkup()}
         <div class="nv-preparation">
-          <div class="nv-setup-board" inert aria-hidden="true">${preview}</div>
           <div class="nv-setup-options">
             <h3>Prepare a partida</h3>
             <p>${esc(game.objective)}</p>
             <p class="nv-duration">${esc(game.duration)}</p>
-            ${game.maps ? renderMapSelection(game.maps, initial.mapId) : ""}
+            ${game.maps ? renderMapSelection({ id: game.id, maps: game.maps, selectedId: draftConfig.mapId ?? initial.mapId, preview: game.mapPreview ?? estaloMapPreview, note: game.mapNote ?? '', groupLabel: game.mapGroupLabel ?? 'Tamanho do tabuleiro' }) : ""}
             <label>Modo de jogo<select id="nv-mode">${Object.entries(MODES)
               .map(
                 ([value, label]) =>
@@ -210,6 +202,10 @@ export function initVersusGames() {
           </div>
         </div>
       </section>`;
+    if (game.maps) bindMapSelection(host, { maps: game.maps, selectedId: draftConfig.mapId ?? initial.mapId, onSelect(map) {
+      draftConfig.mapId = map.id;
+      renderSelection();
+    } });
     renderStorageWarning();
     find("selection-title").focus({ preventScroll: true });
   }
@@ -595,19 +591,7 @@ export function initVersusGames() {
   host.addEventListener("click", (event) => {
     const button = event.target.closest("button");
     if (!button || button.disabled || !host.contains(button)) return;
-    if (screen === "selection" && game?.maps &&
-        (button.dataset.estaloMap || button.dataset.estaloSize)) {
-      const map = button.dataset.estaloMap
-        ? game.maps.find(item => item.id === button.dataset.estaloMap)
-        : game.maps.find(item => `${item.rows}x${item.columns}` === button.dataset.estaloSize);
-      if (!map) return;
-      draftConfig.mapId = map.id;
-      const focusSelector = button.dataset.estaloSize
-        ? `[data-estalo-size="${button.dataset.estaloSize}"]`
-        : `[data-estalo-map="${map.id}"]`;
-      renderSelection();
-      host.querySelector(focusSelector)?.focus({ preventScroll: true });
-    } else if (button.dataset.shellAction) shellAction(button.dataset.shellAction);
+    if (button.dataset.shellAction) shellAction(button.dataset.shellAction);
     else if (button.dataset.action) {
       try {
         choose(JSON.parse(button.dataset.action));

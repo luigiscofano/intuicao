@@ -1,3 +1,4 @@
+import { renderMapSelection, bindMapSelection, terrainMapPreview } from "../versus/map-selection.mjs";
 import { sproutMarkup } from "./piece-art.mjs";
 import { recordMissionUnlocks } from "../achievements/mission-store.mjs";
 import { legacyVersusMissionUnlocks } from "../achievements/legacy-versus-missions.mjs";
@@ -131,30 +132,16 @@ export function initBroto() {
       ? "Os eixos atingidos já estavam marcados. Não há colheita."
       : "Este plantio não encontra outros brotos nas quatro direções.";
   }
-  function mapPreviewMarkup(map) {
-    return `<div class="b-map-mini" style="--b-map-cols:${map.cols}" role="img" aria-label="${map.name}: ${map.rows} linhas, ${map.cols} colunas, ${map.playableCount} casas para plantar, ${map.walls.length} paredes naturais">${Array.from({ length: map.rows * map.cols }, (_, cell) => `<span class="${map.outside.includes(cell) ? "b-map-outside" : map.walls.includes(cell) ? "b-map-wall" : "b-map-ground"}"></span>`).join("")}</div>`;
-  }
   // Monta a preparação da partida e as opções de seleção.
   function renderSelection() {
     middle?.destroy();
     middle = null;
-    host.innerHTML = `<div class="level-screen b-selection"><h2 id="b-selection-title" tabindex="-1">BROTO ·</h2><p class="b-tagline">Você planta. Mas quem floresce?</p>${rulesPreviewMarkup("broto")}<section class="b-map-setup" aria-label="Escolher jardim"><h3 id="b-map-heading">Escolha o jardim</h3><div id="b-map-cards" class="b-map-cards" role="group" aria-labelledby="b-map-heading">${BROTO_MAPS.map((map) => `<button type="button" data-b-map="${map.id}" aria-pressed="${map.id === selectedMapId}">${mapPreviewMarkup(map)}<strong>${map.name}</strong><small class="b-map-choice" aria-hidden="true">${map.id === selectedMapId ? "✓ Selecionado" : "Escolher"}</small></button>`).join("")}</div><div id="b-map-preview" aria-live="polite"><p>${getBrotoMap(selectedMapId).description}</p></div><p class="collection-small">Paredes naturais e recortes interrompem os estímulos. Cada rodada mantém oito sementes por jogador.</p></section><div class="collection-toolbar"><label>Duelo local <select id="b-mode"><option value="local" ${mode === "local" ? "selected" : ""}>Amistoso · desfazer por acordo</option><option value="competitive" ${mode === "competitive" ? "selected" : ""}>Competitivo · sem desfazer ou reiniciar</option></select></label><button id="b-start" class="primary">Iniciar duelo · duas rodadas</button></div><p class="collection-small">Duas pessoas no mesmo dispositivo. O Jogador 1 começa a primeira rodada; o Jogador 2 começa a segunda.</p>${invalidSave ? '<p role="status">O registro de BROTO não pôde ser restaurado com segurança. Os dados dos outros jogos não foram alterados.</p>' : ""}${state && !state.duelOver && !invalidSave ? '<section class="b-resume-panel" aria-labelledby="b-resume-question"><p id="b-resume-question">Deseja retomar a partida interrompida?</p><button id="b-resume" type="button">Retomar partida interrompida</button></section>' : ""}</div>`;
-    $("b-map-cards").onclick = (e) => {
-      const button = e.target.closest("[data-b-map]");
-      if (!button) return;
-      selectedMapId = button.dataset.bMap;
-      $("b-map-cards")
-        .querySelectorAll("[data-b-map]")
-        .forEach((card) => {
-          const chosen = card.dataset.bMap === selectedMapId;
-          card.setAttribute("aria-pressed", String(chosen));
-          card.querySelector(".b-map-choice").textContent = chosen
-            ? "✓ Selecionado"
-            : "Escolher";
-        });
-      $("b-map-preview").innerHTML =
-        `<p>${getBrotoMap(selectedMapId).description}</p>`;
-    };
+    host.innerHTML = `<div class="level-screen b-selection"><h2 id="b-selection-title" tabindex="-1">BROTO ·</h2><p class="b-tagline">Você planta. Mas quem floresce?</p>${rulesPreviewMarkup("broto")}${renderMapSelection({ id: 'broto', maps: BROTO_MAPS, selectedId: selectedMapId, preview: terrainMapPreview, note: 'Pedras e recortes interrompem os estímulos. Oito sementes por jogador em cada rodada.' })}<div class="collection-toolbar"><label>Duelo local <select id="b-mode"><option value="local" ${mode === "local" ? "selected" : ""}>Amistoso · desfazer por acordo</option><option value="competitive" ${mode === "competitive" ? "selected" : ""}>Competitivo · sem desfazer ou reiniciar</option></select></label><button id="b-start" class="primary">Iniciar duelo · duas rodadas</button></div><p class="collection-small">Duas pessoas no mesmo dispositivo. O Jogador 1 começa a primeira rodada; o Jogador 2 começa a segunda.</p>${invalidSave ? '<p role="status">O registro de BROTO não pôde ser restaurado com segurança. Os dados dos outros jogos não foram alterados.</p>' : ""}${state && !state.duelOver && !invalidSave ? '<section class="b-resume-panel" aria-labelledby="b-resume-question"><p id="b-resume-question">Deseja retomar a partida interrompida?</p><button id="b-resume" type="button">Retomar partida interrompida</button></section>' : ""}</div>`;
+    bindMapSelection(host, { maps: BROTO_MAPS, selectedId: selectedMapId, onSelect(map) {
+      mode = $("b-mode").value;
+      selectedMapId = map.id;
+      renderSelection();
+    } });
     $("b-start").onclick = () => {
       if (
         state &&
@@ -281,6 +268,7 @@ export function initBroto() {
       map = getBrotoMap(state);
     target.style.setProperty("--b-cols", map.cols);
     target.classList.toggle("b-dense", map.cols > 4);
+    target.classList.toggle("b-expanded", map.cols > 5);
     let pieces = state.board,
       events = null,
       phase = 0,

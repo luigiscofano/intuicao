@@ -1,0 +1,32 @@
+/* Catálogo comum: mesmos ritmos, estados e alvos de toque nos sete duelos. */
+body #main .vs-map-setup { min-width:0; width:100%; margin:14px 0; color:var(--ink, #30412f); }
+body #main .vs-map-heading { display:flex; flex-wrap:wrap; align-items:baseline; gap:4px 12px; }
+body #main .vs-map-heading h3 { margin:0; font:700 17px/1.4 var(--font-ui); }
+body #main .vs-map-heading>span, body #main .vs-map-label { font:500 12px/1.5 var(--font-ui); color:#586558; }
+body #main .vs-map-label { margin:10px 0 5px; }
+body #main .vs-map-sizes { display:flex; flex-wrap:wrap; gap:6px; margin-bottom:12px; }
+body #main .vs-map-sizes>button { min-height:44px; min-width:44px; padding:6px 12px; border:1px solid #c2cbbd; border-radius:7px; background:#fffefa; color:#30412f; font:600 13px/1.3 var(--font-ui); }
+body #main .vs-map-cards { display:grid; grid-template-columns:repeat(auto-fill,minmax(120px,1fr)); gap:8px; min-width:0; }
+body #main .vs-map-cards>button { display:flex; flex-direction:column; align-items:center; justify-content:flex-start; gap:5px; min-width:0; min-height:44px; padding:10px 7px 8px; border:1px solid #c2cbbd; border-radius:8px; background:#fffefa; color:#30412f; box-shadow:none; text-align:center; }
+body #main .vs-map-cards>button:hover, body #main .vs-map-sizes>button:hover { background:#f1f4e9; border-color:#698165; }
+body #main .vs-map-setup button[aria-pressed="true"] { background:#edf2e5; border-color:#3d6546; box-shadow:inset 0 -3px #3d6546; }
+body #main .vs-map-setup button:focus-visible { outline:3px solid #244b63; outline-offset:3px; }
+body #main .vs-map-cards strong { font:700 12px/1.35 var(--font-ui); min-height:32px; overflow-wrap:anywhere; }
+body #main .vs-map-cards small { font:500 11px/1.3 var(--font-ui); color:#52634b; }
+body #main .vs-map-art { display:grid; place-items:center; width:88px; height:80px; pointer-events:none; }
+body #main .vs-map-grid { display:grid; width:76px; max-height:76px; grid-template-columns:repeat(var(--map-cols),1fr); grid-template-rows:repeat(var(--map-rows),1fr); aspect-ratio:var(--map-cols)/var(--map-rows); gap:2px; }
+body #main .vs-map-grid>span { display:grid; place-items:center; min-width:0; min-height:0; background:#e9e7d5; color:#365d43; border-radius:1px; font:600 9px/1 var(--font-ui); }
+body #main .vs-map-grid>.vs-mini-wall { background:#78847c; color:#fff; }
+body #main .vs-map-grid>.vs-mini-gap { visibility:hidden; }
+body #main .vs-map-grid>.vs-mini-team-0 { background:#668761; color:#fffefa; }
+body #main .vs-map-grid>.vs-mini-team-1 { background:#d7b65d; color:#394c31; }
+body #main .vs-map-description { min-height:62px; margin-top:10px; font:400 13px/1.5 var(--font-ui); }
+body #main .vs-map-description p { margin:0 0 3px; }
+body #main .vs-map-description small, body #main .vs-map-hint { font:400 12px/1.5 var(--font-ui); color:#586558; }
+body #main .vs-map-hint { margin:8px 0 0; }
+@media(max-width:600px) { body #main .vs-map-cards { grid-template-columns:repeat(2,minmax(0,1fr)); } }
+
+body #main .vs-map-art>svg { display:block; width:80px; height:80px; }
+/* A plataforma compartilhada usa a mesma largura útil dos duelos independentes. */
+body #main .nv-preparation:has(.vs-map-setup) { display:block; margin-top:0; }
+body #main .nv-preparation:has(.vs-map-setup) .nv-setup-options { padding:0; border:0; background:none; box-shadow:none; }

@@ -27,7 +27,7 @@ function map(id, name, description, { rows = 5, cols = 5, walls = [], outside = 
     playableCount: rows * cols - excluded.length,
   });
 }
-export const BROTO_MAPS = freeze([
+const originalMaps = freeze([
   map(
     'classic',
     'Jardim clássico',
@@ -68,6 +68,32 @@ export const BROTO_MAPS = freeze([
     { outside: [0, 4, 20, 24], walls: [6, 18] },
   ),
 ]);
+// Jardins maiores mantêm oito sementes por pessoa e as duas rodadas originais.
+// O obstáculo muda linhas de estímulo, não adiciona regras ou plantas especiais.
+export const BROTO_GRID_SIZES = freeze([4,5,6,7,8]);
+const expandedMaps = [5,6,7,8].flatMap(size => {
+ const last = size*size-1;
+ const pair = cells => [...new Set(cells.flatMap(cell => [cell,last-cell]))].sort((a,b) => a-b);
+ const plans = [
+  {family:'campo',name:'Campo aberto',description:'Linhas longas sem pedras: cada semente pode alcançar mais longe.'},
+  {family:'veredas',name:'Veredas',description:'Duas pedras desencontradas desviam os estímulos entre canteiros.',walls:pair([size+1])},
+  {family:'margens',name:'Margens',description:'Reentrâncias em margens opostas criam faixas de plantio distintas.',outside:pair([size])},
+  {family:'ilhas',name:'Ilhas',description:'Pedras separadas interrompem quatro linhas de estímulo.',walls:pair([size+1,size+2])},
+  {family:'varandas',name:'Varandas',description:'Duas entradas nas bordas recortam os canteiros extremos.',outside:pair([1,2])},
+  {family:'travessias',name:'Travessias',description:'Uma pedra e uma margem recortada reorganizam as travessias.',walls:pair([size+size-2]),outside:pair([2*size])},
+  {family:'diagonais',name:'Diagonais',description:'Pedras em duas diagonais interrompem encontros previsíveis.',walls:pair([2])},
+  {family:'recifes',name:'Recifes',description:'Obstáculos junto à borda deixam um miolo livre para as colheitas.',walls:pair([size, size+1])},
+ ];
+ return plans.map(plan => freeze({...map(`${plan.family}-${size}`,plan.name,plan.description,{rows:size,cols:size,walls:plan.walls||[],outside:plan.outside||[]}),family:plan.family}));
+});
+export const BROTO_MAPS = freeze([...originalMaps,...expandedMaps]);
+export function getBrotoMapsForSize(size=4) { return BROTO_MAPS.filter(m => m.rows===size && m.cols===size); }
+export function getBrotoMapVariant(idOrState='classic',size=4) {
+ const current=getBrotoMap(idOrState);
+ if(!BROTO_GRID_SIZES.includes(size)) return null;
+ const family=current.family||current.id;
+ return getBrotoMapsForSize(size).find(m => (m.family||m.id)===family)||getBrotoMapsForSize(size)[0]||null;
+}
 /** Ausência de identidade é somente o legado clássico; IDs desconhecidos nunca caem em fallback. */
 export function getBrotoMap(idOrState = 'classic') {
   const isState = idOrState && typeof idOrState === 'object';

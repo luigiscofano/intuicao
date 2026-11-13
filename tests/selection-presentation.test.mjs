@@ -26,7 +26,7 @@ test('Desvio preserva dados e mapas mas não oferece Sem parar',()=>{
  const ui=readFileSync(new URL('../dist/collection-ui.mjs',import.meta.url),'utf8');
  assert.match(ui,/<button id="c-free" class="primary" \$\{game === "desvio" \? "hidden" : ""\}/);
  assert.match(ui,/<button id="c-mode-endless" type="button" \$\{game === "desvio" \? "hidden" : ""\}/);
- assert.match(ui,/data-map=/);assert.match(ui,/c-tactical/);
+ assert.match(ui,/renderMapSelection/);assert.match(ui,/c-start-duel/);assert.match(ui,/c-tactical/);
 });
 test('camada vem depois do shell, com diário original único',()=>{
  const html=readFileSync(new URL('../dist/index.html',import.meta.url),'utf8');
