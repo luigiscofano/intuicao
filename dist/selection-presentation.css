@@ -67,3 +67,18 @@ body #main .unified-selection .campaign-progress-total {
  body #main .unified-selection .selection-mode{grid-template-columns:minmax(0,1fr);row-gap:4px}
  body #main .unified-selection .selection-mode-button{grid-column:1;grid-row:auto;justify-self:start;margin-top:4px;max-width:100%}
 }
+
+/* Graduações Cerâmica. A máscara reutiliza o PNG vazado do azulejo existente.
+   Mantemos nomes e estados de progresso: a cor não é a única identificação. */
+body #main .unified-selection [data-difficulty-tier="0"] { --difficulty-color: #7B817A; }
+body #main .unified-selection [data-difficulty-tier="1"] { --difficulty-color: #285D7C; }
+body #main .unified-selection [data-difficulty-tier="2"] { --difficulty-color: #725580; }
+body #main .unified-selection [data-difficulty-tier="3"] { --difficulty-color: #805D43; }
+body #main .unified-selection [data-difficulty-tier="4"] { --difficulty-color: #2C302D; }
+body #main .unified-selection [data-difficulty-tier="5"] { --difficulty-color: #A7443D; }
+body #main .unified-selection :is(.stage-heading, .logic-tier-heading)[data-difficulty-tier]::before {
+  background: var(--difficulty-color);
+  border-radius: 0;
+  -webkit-mask: url("platform-assets/tiles/blue-br.png") center / contain no-repeat;
+  mask: url("platform-assets/tiles/blue-br.png") center / contain no-repeat;
+}
