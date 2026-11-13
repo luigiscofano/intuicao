@@ -136,6 +136,14 @@
         "docs/identidade/app-futuro/README.md"
       ],
       "source": "Opção B Esmalte acetinado, composição SVG de azulejos aprovada por Luigi em 13/11/2026 para futuro aplicativo; SVG original e exportação PNG, sem imagens externas."
+    },
+    "tipografia_c": {
+      "evidence": [
+        "docs/tipografia.md",
+        "dist/assets/fonts/literata-OFL.txt",
+        "dist/assets/fonts/sourcesans3-OFL.txt"
+      ],
+      "source": "Fontes oficiais Google Fonts, subconjuntos latinos WOFF2 sob SIL OFL 1.1."
     }
   },
   "assets": [
@@ -1825,6 +1833,24 @@
       "license": "Direitos reservados; recursos visuais excluídos da licença MIT do código.",
       "permissionEvidence": "docs/identidade/app-futuro/README.md",
       "reviewBasis": "owner-approved-project-composition; existing-visual-rights-policy"
+    },
+    {
+      "path": "dist/assets/fonts/literata-latin-variable.woff2",
+      "sha256": "a8af49fe17d1a999af4633f6326ec02752a8bc7b5bb03749dc563a85882fad3b",
+      "group": "tipografia_c",
+      "status": "cleared",
+      "rightsHolder": "The Literata Project Authors",
+      "license": "SIL Open Font License 1.1",
+      "permissionEvidence": "docs/tipografia.md e licenças em dist/assets/fonts/"
+    },
+    {
+      "path": "dist/assets/fonts/source-sans-3-latin-variable.woff2",
+      "sha256": "2df462866ece7b67d05b1477ea807e3a85210863260a4ccdc392223552962a1a",
+      "group": "tipografia_c",
+      "status": "cleared",
+      "rightsHolder": "Adobe; subconjunto renomeado Intuicao Interface",
+      "license": "SIL Open Font License 1.1",
+      "permissionEvidence": "docs/tipografia.md e licenças em dist/assets/fonts/"
     }
   ],
   "rightsReview": {

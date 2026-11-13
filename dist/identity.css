@@ -72,7 +72,7 @@ body #main .level-screen {
   box-shadow: none;
 }
 body #main .level-screen .stage-heading {
-  font-family: system-ui,sans-serif;
+  font-family:var(--font-ui);
   letter-spacing: 0.02em;
   display: flex;
   align-items: center;
@@ -93,10 +93,10 @@ body #main .level-tile {
   border: 1px solid #afb89e;
   box-shadow: none;
   border-radius: 12px;
-  font-family: system-ui,sans-serif;
+  font-family:var(--font-ui);
 }
 body #main .level-tile small {
-  font-family: system-ui,sans-serif;
+  font-family:var(--font-ui);
   color: #52624a;
 }
 body #main .level-tile[aria-current='true'] {

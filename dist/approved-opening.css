@@ -88,7 +88,7 @@
 }
 .opening-category-count { font: 400 12px/1.4 system-ui,sans-serif; letter-spacing: 0; text-transform: none; }
 #main > .games > button:not(.game-info-nav) > span:not(.game-nav-icon) { display: none; }
-#main > .games > button:not(.game-info-nav) { font-family: system-ui,sans-serif; }
+#main > .games > button:not(.game-info-nav) { font-family:var(--font-ui); }
 @media(min-width: 761px) {
   #main > .games { grid-template-columns: repeat(6,minmax(0,1fr)); }
   #main > .games > button:not(.game-info-nav) { grid-column: span 2; }

@@ -1,0 +1,51 @@
+/* Sistema tipográfico C aprovado: títulos editoriais e interface legível.
+   Arquivos locais, sem dependência de Google Fonts ou requisições externas. */
+@font-face {
+  font-family: "Intuicao Literata";
+  src: url("assets/fonts/literata-latin-variable.woff2") format("woff2");
+  font-style: normal;
+  font-weight: 200 900;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Intuicao Source Sans";
+  src: url("assets/fonts/source-sans-3-latin-variable.woff2") format("woff2");
+  font-style: normal;
+  font-weight: 200 900;
+  font-display: swap;
+}
+
+:root {
+  --font-title: "Intuicao Literata", Georgia, "Times New Roman", serif;
+  --font-ui: "Intuicao Source Sans", "Segoe UI", Arial, sans-serif;
+}
+
+body {
+  font-family: var(--font-ui);
+  font-optical-sizing: auto;
+}
+
+/* A mesma hierarquia vale para telas, diálogos e títulos criados pelos jogos.
+   A marca permanece imagem: não redesenhamos seu lettering. */
+:is(h1, h2, h3, h4, h5, h6) {
+  font-family: var(--font-title) !important;
+  font-weight: 600 !important;
+}
+
+:is(button, input, select, textarea, summary, output, svg text) {
+  font-family: var(--font-ui);
+}
+
+/* Algarismos estáveis evitam saltos em placares, níveis e contadores.
+   O recurso não muda regras, conteúdo nem o tamanho do tabuleiro. */
+:is(button, output, svg text, .readout, .stage-top, .level-tile, .metric-label,
+    .duel-score, .player-score, .level-progress, .game-progress) {
+  font-variant-numeric: lining-nums tabular-nums;
+}
+
+/* A ilustração dos tutoriais também usa a fonte de interface, mesmo quando
+   o SVG gerado pelo jogo traz uma família como atributo de apresentação. */
+svg text {
+  font-family: var(--font-ui) !important;
+}

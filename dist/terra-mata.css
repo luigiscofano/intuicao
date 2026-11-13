@@ -347,7 +347,7 @@ body > footer :is(small,p) {
   }
 }
 .category-choices > button {
-  font-family:system-ui,sans-serif;
+  font-family:var(--font-ui);
 }
 body > footer .footer-signature::before {
   display:none!important;

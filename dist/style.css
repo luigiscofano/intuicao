@@ -112,7 +112,7 @@ h1 {
   margin: 0 0 20px;
 }
 h1 em {
-  font-family: Georgia,serif;
+  font-family:var(--font-title);
   font-weight: 400;
   color: var(--green);
 }
@@ -228,7 +228,7 @@ svg {
   user-select: none;
 }
 svg text {
-  font-family: system-ui,sans-serif;
+  font-family:var(--font-ui);
   fill: var(--ink);
 }
 svg .handle {
