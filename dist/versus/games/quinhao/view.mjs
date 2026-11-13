@@ -1,8 +1,9 @@
+import { gamePlayerName, playerAvatar } from "../../player-identities.mjs";
+const playerName = (player) => gamePlayerName("quinhao", player);
 import {
   actionAttributes,
   escapeHTML,
   playerMark,
-  playerName,
 } from "../../shared/markup.mjs";
 import { getOfferIds, getScores, scoreInventory } from "./engine.mjs";
 import { FRUIT_LABELS as FRUITS, renderFruitArt as fruitArt } from "./fruit-art.mjs";
@@ -12,7 +13,7 @@ function deposits(inventories) {
     .map(
       (inventory, player) => `
     <div class="quinhao-deposit quinhao-player-${player}">
-      <div class="quinhao-deposit-heading"><strong>${playerMark(player)} ${playerName(player)}</strong><span>${scoreInventory(inventory)} pts</span></div>
+      <div class="quinhao-deposit-heading"><strong class="player-identity-heading">${playerAvatar("quinhao", player)}${playerMark(player)} <span class="player-full-name">${playerName(player)}</span><span class="player-short-name" aria-label="${playerName(player)}">J${player + 1}</span></strong><span>${scoreInventory(inventory)} pts</span></div>
       <div class="quinhao-counts">${inventory
         .map(
           (count, fruit) => `
@@ -134,7 +135,7 @@ export function describeMove(state, move, nextState) {
   }
   const basket = state.baskets.find((item) => item.id === move.basket);
   const scores = getScores(nextState);
-  return `${playerName(state.player)} fica com a ${FRUITS[basket.fruit]} do cesto ${move.basket}; ${playerName(state.proposer)} recebe os outros dois frutos. Placar: Verde ${scores[0]}, Âmbar ${scores[1]}.`;
+  return `${playerName(state.player)} fica com a ${FRUITS[basket.fruit]} do cesto ${move.basket}; ${playerName(state.proposer)} recebe os outros dois frutos. Placar: Jogador 1 ${scores[0]}, Jogador 2 ${scores[1]}.`;
 }
 
 export function getStatus(state) {

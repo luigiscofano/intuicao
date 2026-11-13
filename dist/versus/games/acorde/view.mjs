@@ -1,10 +1,11 @@
+import { gamePlayerName, playerAvatar } from "../../player-identities.mjs";
+const playerName = (player) => gamePlayerName("acorde", player);
 import { SYMBOLS, getActiveAxis, getLegalMoves, getScores } from "./engine.mjs";
 import {
   actionAttributes,
   coordinate,
   escapeHTML,
   playerMark,
-  playerName,
 } from "../../shared/markup.mjs";
 
 const SYMBOL_NAMES = Object.freeze({
@@ -81,7 +82,7 @@ function collectionPanel(state, player, previewState) {
     </div>`;
   }).join("");
   return `<section class="acorde-collection acorde-collection--${player}" aria-label="Coleção de ${playerName(player)}">
-    <h4><span>${playerMark(player)} ${playerName(player)}</span><span>${pairs}/3 pares${afterPairs > pairs ? " · +1 na prévia" : ""}</span></h4>
+    <h4><span class="player-identity-heading">${playerAvatar("acorde", player)}${playerMark(player)} ${playerName(player)}</span><span>${pairs}/3 pares${afterPairs > pairs ? " · +1 na prévia" : ""}</span></h4>
     <div class="acorde-collected-grid">${symbols}</div>
   </section>`;
 }
@@ -166,7 +167,7 @@ export function renderBoard(state, context = {}) {
     <p class="acorde-board-caption">${
       pendingMove && preview
         ? escapeHTML(describeMove(state, pendingMove, preview))
-        : "O carrinho fica na casa recolhida. Verde percorre linhas; amarelo percorre colunas."
+        : "O carrinho fica na casa recolhida. Jogador 1 (verde) percorre linhas; Jogador 2 (âmbar), colunas."
     }</p>
     <div class="acorde-collections">
       ${collectionPanel(state, 0, preview)}${collectionPanel(state, 1, preview)}

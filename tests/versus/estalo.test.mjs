@@ -139,8 +139,8 @@ test("ESTALO: seleção e orientação produzem prévia numerada, sem aplicar po
     previewState: preview,
   });
   assert.equal((html.match(/class="estalo-chain-order"/g) ?? []).length, 6);
-  assert.match(html, /Verde \+4/);
-  assert.match(html, /Âmbar \+2/);
+  assert.match(html, /Jogador 1 \+4/);
+  assert.match(html, /Jogador 2 \+2/);
   assert.deepEqual(state.scores, [0, 0]);
   assert.equal(
     view.interact(state, null, { type: "cell", cell: 2 }).move,
