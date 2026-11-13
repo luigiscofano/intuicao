@@ -1,3 +1,4 @@
+import { getAcordeMap } from "./maps.mjs";
 import { gamePlayerName, playerAvatar } from "../../player-identities.mjs";
 const playerName = (player) => gamePlayerName("acorde", player);
 import { SYMBOLS, getActiveAxis, getLegalMoves, getScores } from "./engine.mjs";
@@ -106,8 +107,8 @@ function renderCell(state, cell, legalCells, pendingMove, disabled) {
   const active = getActiveAxis(state);
   const inAxis =
     active.kind === "row"
-      ? Math.floor(cell / 4) === active.index
-      : cell % 4 === active.index;
+      ? Math.floor(cell / getAcordeMap(state).cols) === active.index
+      : cell % getAcordeMap(state).cols === active.index;
   const selected = pendingMove?.type === "collect" && pendingMove.cell === cell;
   const classes = [
     "acorde-cell",
@@ -117,7 +118,7 @@ function renderCell(state, cell, legalCells, pendingMove, disabled) {
   ]
     .filter(Boolean)
     .join(" ");
-  const name = coordinate(cell, 4);
+  const name = coordinate(cell, getAcordeMap(state).cols);
   if (symbol === null) {
     const atCursor = state.cursor === cell;
     return `<div class="${classes}" aria-label="${name}: ${atCursor ? "carrinho; casa vazia" : "suporte vazio"}">
@@ -133,6 +134,7 @@ function renderCell(state, cell, legalCells, pendingMove, disabled) {
 }
 
 export function renderBoard(state, context = {}) {
+  const map = getAcordeMap(state);
   const legalMoves = context.legalMoves ?? getLegalMoves(state);
   const legalCells = new Set(
     legalMoves
@@ -144,31 +146,31 @@ export function renderBoard(state, context = {}) {
   const disabled = Boolean(context.disabled || state.result);
   const columns =
     '<span class="acorde-axis-corner" aria-hidden="true"></span>' +
-    ["A", "B", "C", "D"]
+    Array.from({ length: map.cols }, (_, column) => String.fromCharCode(65 + column))
       .map(
         (label) =>
           `<span class="acorde-column-label" aria-hidden="true">${label}</span>`,
       )
       .join("");
-  const rows = Array.from({ length: 4 }, (_, row) => {
+  const rows = Array.from({ length: map.rows }, (_, row) => {
     const initialTrolley = row === 1 && state.cursor === null;
     const label = `<span class="acorde-row-label" aria-label="Linha ${row + 1}${initialTrolley ? ", posição inicial do carrinho" : ""}">
       ${row + 1}${initialTrolley ? trolley(0, true) : ""}
     </span>`;
     return (
       label +
-      Array.from({ length: 4 }, (_, column) =>
-        renderCell(state, row * 4 + column, legalCells, pendingMove, disabled),
+      Array.from({ length: map.cols }, (_, column) =>
+        renderCell(state, row * map.cols + column, legalCells, pendingMove, disabled),
       ).join("")
     );
   }).join("");
   const pass = legalMoves.some((move) => move.type === "pass");
-  return `<div class="acorde-game" data-player="${state.player}">
+  return `<div class="acorde-game" data-columns="${map.cols}" style="--acorde-columns:${map.cols}" data-player="${state.player}">
     <div class="acorde-instrument-heading">
       <span>${playerMark(state.player)} ${state.result ? "Instrumento encerrado" : `${playerName(state.player)} · ${axisLabel(state)}`}</span>
       <span>${state.board.filter((symbol) => symbol !== null).length} sinos restantes</span>
     </div>
-    <div class="acorde-board" role="group" aria-label="Instrumento de quatro linhas e quatro colunas. ${escapeHTML(getStatus(state))}">
+    <div class="acorde-board" role="group" aria-label="Instrumento de ${map.rows} linhas e ${map.cols} colunas. ${escapeHTML(getStatus(state))}">
       ${columns}${rows}
     </div>
     <div class="acorde-pass-slot">${
@@ -219,7 +221,7 @@ export function describeMove(state, move, nextState) {
   const following = nextState.result
     ? ` ${nextState.result.winner === null ? "Empate." : `${playerName(nextState.result.winner)} vence.`}`
     : ` O rival recebe a ${axisLabel(nextState)}.`;
-  return `${playerName(state.player)} recolhe ${coordinate(move.cell, 4)}, sino de ${SYMBOL_NAMES[symbol]}.${pair}${following}`;
+  return `${playerName(state.player)} recolhe ${coordinate(move.cell, getAcordeMap(state).cols)}, sino de ${SYMBOL_NAMES[symbol]}.${pair}${following}`;
 }
 
 export function getStatus(state) {
@@ -242,4 +244,9 @@ export function renderResult(state) {
   return `<div class="acorde-result-scene" aria-hidden="true">${completed
     .map((symbol) => `<span>${symbolIcon(symbol)}${symbolIcon(symbol)}</span>`)
     .join("")}</div>`;
+}
+
+/** A miniatura reutiliza os quatro desenhos do instrumento, na distribuição real. */
+export function mapPreview(map) {
+  return `<svg viewBox="0 0 ${map.cols * 100} ${map.rows * 100}" aria-hidden="true" focusable="false">${map.board.map((symbol, cell) => `<g transform="translate(${cell % map.cols * 100} ${Math.floor(cell / map.cols) * 100})"><rect x="3" y="3" width="94" height="94" rx="5" fill="#f7f3e8" stroke="#c6c6b2"/><g style="color:${({ folha: '#356a4d', gota: '#315c7b', onda: '#506a94', sol: '#b38628' })[symbol]}">${symbolDrawing(symbol)}</g></g>`).join('')}</svg>`;
 }

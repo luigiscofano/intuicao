@@ -1,3 +1,4 @@
+import { renderMapSelection, bindMapSelection, terrainMapPreview } from "../versus/map-selection.mjs";
 import { createCercoMissionRound, invalidateCercoMissionRound, observeCercoMission } from "../achievements/approved-collection.mjs";
 import { recordMissionUnlocks } from "../achievements/mission-store.mjs";
 import { legacyVersusMissionUnlocks } from "../achievements/legacy-versus-missions.mjs";
@@ -170,67 +171,15 @@ export function initCerco() {
   function newId() {
     return `cerco-${Date.now()}-${Math.random().toString(36).slice(2)}`;
   }
-  function mapPreviewMarkup(map) {
-    return `<div class="ce-map-mini" style="--ce-map-cols:${map.cols}" role="img" aria-label="${esc(map.name)}: ${map.rows} linhas, ${map.cols} colunas; ${map.walls.length} paredes naturais e ${map.outside.length} casas fora do mapa">${Array.from({ length: map.rows * map.cols }, (_, cell) => `<span class="${map.outside.includes(cell) ? "ce-map-outside" : map.walls.includes(cell) ? "ce-map-wall" : map.starts[0].includes(cell) ? "ce-map-green" : map.starts[1].includes(cell) ? "ce-map-yellow" : ""}">${map.starts[0].includes(cell) ? "●" : map.starts[1].includes(cell) ? "◆" : ""}</span>`).join("")}</div>`;
-  }
-  function renderMapPreview() {
-    const map = getCercoMap(selectedMap);
-    $("ce-map-preview").innerHTML =
-      `<p><strong>${map.rows} × ${map.cols} · ${esc(map.name)}</strong> — ${esc(map.description)}</p><small>● Verde · ◆ Amarelo · blocos cinza são paredes fixas.</small>`;
-  }
-  function renderMapCards() {
-    const size = getCercoMap(selectedMap).rows;
-    $("ce-map-cards").innerHTML = getCercoMapsForSize(size)
-      .map(
-        (map) =>
-          `<button type="button" data-ce-map="${map.id}" aria-pressed="${map.id === selectedMap}">${mapPreviewMarkup(map)}<strong>${esc(map.name)}</strong><small class="ce-map-choice" aria-hidden="true">${map.id === selectedMap ? "✓ Selecionado" : "Escolher"}</small></button>`,
-      )
-      .join("");
-    $("ce-sizes")
-      .querySelectorAll("[data-ce-size]")
-      .forEach((b) =>
-        b.setAttribute("aria-pressed", String(+b.dataset.ceSize === size)),
-      );
-    renderMapPreview();
-  }
   // Monta a preparação da partida e as opções de seleção.
   function renderSelection() {
     middle?.destroy();
     middle = null;
-    host.innerHTML = `<div class="level-screen ce-selection"><h2 id="ce-selection-title" tabindex="-1">CERCO ·</h2><p>Faça a última jogada: quem ficar sem movimentos na sua vez perde.</p>${rulesPreviewMarkup("cerco")}<section class="ce-map-setup" aria-label="Mapa da partida"><h3 id="ce-map-heading">Escolha o mapa</h3><div class="ce-size-control"><span id="ce-size-label">Tamanho do tabuleiro</span><div id="ce-sizes" class="ce-sizes" role="group" aria-labelledby="ce-size-label">${CERCO_GRID_SIZES.map((size) => `<button type="button" data-ce-size="${size}" aria-pressed="${getCercoMap(selectedMap).rows === size}">${size} × ${size}</button>`).join("")}</div></div><div id="ce-map-cards" class="ce-map-cards" role="group" aria-labelledby="ce-map-heading">${getCercoMapsForSize(
-      getCercoMap(selectedMap).rows,
-    )
-      .map(
-        (map) =>
-          `<button type="button" data-ce-map="${map.id}" aria-pressed="${map.id === selectedMap}">${mapPreviewMarkup(map)}<strong>${esc(map.name)}</strong><small class="ce-map-choice" aria-hidden="true">${map.id === selectedMap ? "✓ Selecionado" : "Escolher"}</small></button>`,
-      )
-      .join(
-        "",
-      )}</div><div id="ce-map-preview" class="ce-map-preview" aria-live="polite"></div></section><div class="ce-setup-teams">${teamNames.map((name, p) => `<section class="ce-setup-team ce-team-${p}"><strong>${marks[p]} ${name}</strong><div id="ce-mascot-preview-${p}" class="ce-setup-piece">${piece(p, config)}</div><label>Mascote<select id="ce-mascot-${p}" aria-label="Mascote do ${name}">${FAUNA_ART.map((a) => `<option value="${a.id}" ${config.mascots[p] === a.id ? "selected" : ""}>${esc(FAUNA_INFO[a.id]?.name || a.id)}</option>`).join("")}</select></label></section>`).join("")}</div><div class="collection-toolbar ce-setup-controls"><label>Modo <select id="ce-mode"><option value="local" ${config.mode === "local" ? "selected" : ""}>Dois jogadores locais</option><option value="competitive" ${config.mode === "competitive" ? "selected" : ""}>Duelo local competitivo</option><option value="bot" ${config.mode === "bot" ? "selected" : ""}>Contra o bot</option><option value="training" ${config.mode === "training" ? "selected" : ""}>Treino com análise</option></select></label><label id="ce-difficulty-label" ${config.mode === "bot" ? "" : "hidden"}>Bot <select id="ce-difficulty"><option value="beginner" ${config.difficulty === "beginner" ? "selected" : ""}>Explorador</option><option value="intermediate" ${config.difficulty === "intermediate" ? "selected" : ""}>Intermediário</option><option value="strong" ${config.difficulty === "strong" ? "selected" : ""}>Avançado · busca limitada</option></select></label><button id="ce-start" class="primary">Iniciar partida</button></div><p class="collection-small">Mascotes são apenas visuais e podem ser iguais. Começa o Time Verde. Contra o bot, você controla o Verde.</p>${invalidSave ? '<p role="status">O registro de CERCO é inválido ou incompatível. Ele foi preservado; iniciar uma nova partida o substituirá. Outros jogos não foram alterados.</p>' : ""}${state && !state.over && !invalidSave ? '<section class="ce-resume-card" aria-labelledby="ce-resume-question"><p id="ce-resume-question">Deseja retomar a partida interrompida?</p><button id="ce-resume" type="button">Retomar partida interrompida</button></section>' : ""}</div>`;
-    renderMapPreview();
-    $("ce-sizes").onclick = (e) => {
-      const b = e.target.closest("[data-ce-size]");
-      if (!b) return;
-      const map = getCercoMapVariant(selectedMap, +b.dataset.ceSize);
-      if (!map) return;
+    host.innerHTML = `<div class="level-screen ce-selection"><h2 id="ce-selection-title" tabindex="-1">CERCO ·</h2><p>Faça a última jogada: quem ficar sem movimentos na sua vez perde.</p>${rulesPreviewMarkup("cerco")}${renderMapSelection({ id: 'cerco', maps: CERCO_MAPS, selectedId: selectedMap, preview: terrainMapPreview, note: '● Jogador 1 · ◆ Jogador 2. Pedras são paredes fixas; recortes ficam fora do tabuleiro.' })}<div class="ce-setup-teams">${teamNames.map((name, p) => `<section class="ce-setup-team ce-team-${p}"><strong>${marks[p]} ${name}</strong><div id="ce-mascot-preview-${p}" class="ce-setup-piece">${piece(p, config)}</div><label>Mascote<select id="ce-mascot-${p}" aria-label="Mascote do ${name}">${FAUNA_ART.map((a) => `<option value="${a.id}" ${config.mascots[p] === a.id ? "selected" : ""}>${esc(FAUNA_INFO[a.id]?.name || a.id)}</option>`).join("")}</select></label></section>`).join("")}</div><div class="collection-toolbar ce-setup-controls"><label>Modo <select id="ce-mode"><option value="local" ${config.mode === "local" ? "selected" : ""}>Dois jogadores locais</option><option value="competitive" ${config.mode === "competitive" ? "selected" : ""}>Duelo local competitivo</option><option value="bot" ${config.mode === "bot" ? "selected" : ""}>Contra o bot</option><option value="training" ${config.mode === "training" ? "selected" : ""}>Treino com análise</option></select></label><label id="ce-difficulty-label" ${config.mode === "bot" ? "" : "hidden"}>Bot <select id="ce-difficulty"><option value="beginner" ${config.difficulty === "beginner" ? "selected" : ""}>Explorador</option><option value="intermediate" ${config.difficulty === "intermediate" ? "selected" : ""}>Intermediário</option><option value="strong" ${config.difficulty === "strong" ? "selected" : ""}>Avançado · busca limitada</option></select></label><button id="ce-start" class="primary">Iniciar partida</button></div><p class="collection-small">Mascotes são apenas visuais e podem ser iguais. Começa o Time Verde. Contra o bot, você controla o Verde.</p>${invalidSave ? '<p role="status">O registro de CERCO é inválido ou incompatível. Ele foi preservado; iniciar uma nova partida o substituirá. Outros jogos não foram alterados.</p>' : ""}${state && !state.over && !invalidSave ? '<section class="ce-resume-card" aria-labelledby="ce-resume-question"><p id="ce-resume-question">Deseja retomar a partida interrompida?</p><button id="ce-resume" type="button">Retomar partida interrompida</button></section>' : ""}</div>`;
+    bindMapSelection(host, { maps: CERCO_MAPS, selectedId: selectedMap, onSelect(map) {
       selectedMap = map.id;
-      renderMapCards();
-    };
-    $("ce-map-cards").onclick = (e) => {
-      const button = e.target.closest("[data-ce-map]");
-      if (!button) return;
-      selectedMap = button.dataset.ceMap;
-      $("ce-map-cards")
-        .querySelectorAll("[data-ce-map]")
-        .forEach((card) => {
-          const chosen = card.dataset.ceMap === selectedMap;
-          card.setAttribute("aria-pressed", String(chosen));
-          card.querySelector(".ce-map-choice").textContent = chosen
-            ? "✓ Selecionado"
-            : "Escolher";
-        });
-      renderMapPreview();
-    };
+      renderSelection();
+    } });
     for (let p = 0; p < 2; p++)
       $("ce-mascot-" + p).onchange = (e) => {
         config = {

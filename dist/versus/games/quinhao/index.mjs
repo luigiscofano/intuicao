@@ -1,3 +1,5 @@
+import { QUINHAO_MAPS } from "./maps.mjs";
+import { renderQuinhaoMapPreview } from "./map-preview.mjs";
 import * as engine from "./engine.mjs";
 import * as view from "./view.mjs";
 
@@ -11,7 +13,7 @@ export const game = {
       "Some mais pontos com trios de frutos diferentes (5 pontos) e, depois, pares diferentes nas sobras (2 pontos).",
     duration: "6–10 minutos",
     rules: [
-      "Use 24 cestos em um anel, numerados de 1 a 24 no sentido horário. Cada cesto contém exatamente um fruto. A sequência inicial é castanha-do-pará, castanha-do-pará, pitanga, pitanga, jabuticaba, jabuticaba, repetida quatro vezes. Há oito frutos de cada tipo. Os dois depósitos começam vazios.",
+      "Use 24 cestos em um anel, numerados de 1 a 24 no sentido horário. Cada cesto contém exatamente um fruto. A distribuição inicial depende do mapa escolhido; há sempre oito frutos de cada tipo. No mapa clássico, a sequência é castanha-do-pará, castanha-do-pará, pitanga, pitanga, jabuticaba, jabuticaba, repetida quatro vezes. Os dois depósitos começam vazios.",
       "O jogador verde começa como proponente. Em seu turno, escolhe exatamente três cestos consecutivos entre os que ainda existem no anel. O anel é circular: o último e o primeiro também são vizinhos. Casas já esvaziadas não interrompem a vizinhança.",
       "O adversário escolhe um dos três cestos e transfere seu fruto ao próprio depósito. O proponente recebe os outros dois frutos. Essa escolha é a resposta obrigatória do turno, não um novo turno.",
       "Remova os três cestos e ligue os vizinhos que sobraram. Os frutos já recebidos não voltam ao pomar. Alterne quem propõe. Não há passe, troca de frutos ou seleção fora dos três cestos apresentados.",
@@ -20,6 +22,10 @@ export const game = {
       "Maior pontuação vence. Empate permanece empate. Sempre há uma oferta legal até o fim, pois o anel perde três cestos por turno; quando restam três, a única oferta é o trio inteiro. Não há repetição nem prolongamento: são exatamente oito ofertas e oito respostas.",
     ],
   },
+  maps: QUINHAO_MAPS,
+  mapGroupLabel: "Distribuição dos frutos",
+  mapNote: "Todos os mapas têm 24 cestos e oito frutos de cada tipo. A ordem muda; regras e pontuação permanecem.",
+  mapPreview: renderQuinhaoMapPreview,
   engine,
   view,
 };

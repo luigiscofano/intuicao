@@ -2,7 +2,7 @@
 
 Jogo de partilha para duas pessoas: o proponente oferece três cestos consecutivos do anel, o adversário escolhe um, e o proponente recebe os outros dois. Os cestos retirados deixam de fazer parte da vizinhança. Depois de oito partilhas, cada equipe recebeu 12 frutos.
 
-A preparação e a pontuação reproduzem a proposta aprovada: 24 cestos, oito frutos de cada tipo, trios distintos valendo 5 e pares distintos nas sobras valendo 2. A sequência inicial é castanha, castanha, pitanga, pitanga, jabuticaba, jabuticaba, repetida quatro vezes.
+A preparação e a pontuação reproduzem a proposta aprovada: 24 cestos, oito frutos de cada tipo, trios distintos valendo 5 e pares distintos nas sobras valendo 2. O mapa clássico mantém a sequência castanha, castanha, pitanga, pitanga, jabuticaba, jabuticaba, repetida quatro vezes. Os outros mapas mudam somente a distribuição no anel, preservando oito frutos de cada tipo.
 
 ## Organização
 
@@ -52,3 +52,22 @@ inalterados; o nome interno genérico do motor continua compatível.
 ![Arte aprovada do Quinhão](../../../docs/quinhao-frutos.svg)
 
 Os depósitos de Verde e Âmbar exibem os nomes Castanha-do-pará, Pitanga e Jabuticaba abaixo de cada ícone. As legendas acompanham as quantidades; a leitura assistiva identifica cada grupo uma única vez.
+
+## Mapas de partilha
+
+`maps.mjs` contém 42 distribuições imutáveis e versionadas, em seis grupos de sete:
+Intercalados, Entrelaçados, Pomar misto, Duplas, Bosques e Ilhas. Os grupos descrevem
+a quantidade de vizinhanças de frutos iguais, não uma progressão de dificuldade.
+Todas as distribuições são diferentes mesmo após girar/refletir o anel e trocar
+os nomes dos três frutos. A miniatura mostra a ordem real dos 24 cestos.
+
+`createState({ mapId, mapVersion })` escolhe o mapa. Sem identidade explícita, o
+estado clássico permanece idêntico ao legado. IDs ou versões desconhecidos são
+rejeitados. O controlador salva a configuração para reproduzir o mesmo mapa;
+nenhum save antigo precisa ser migrado.
+
+Não existem novos tamanhos de grade: QUINHÃO não é um jogo em grade. Os 24 cestos
+e as oito partilhas são invariantes. O desenho circular desktop e o perímetro
+retangular mobile continuam representando exatamente a mesma ordem.
+
+Verificação adicional: `node --test tests/maps-expansion-quinhao-desvio.test.mjs`.

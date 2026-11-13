@@ -4,7 +4,7 @@ import * as engine from '../../dist/versus/games/estalo/engine.mjs';
 import { chooseMove } from '../../dist/versus/search.mjs';
 
 // Orçamento curto exercita também a resposta segura quando uma busca é interrompida.
-test('Estalo: partidas completas de IA nos 42 mapas e três dificuldades', () => {
+test('Estalo: partidas completas de IA nos 48 mapas e três dificuldades', () => {
   for (const map of engine.ESTALO_MAPS) {
     for (const difficulty of ['beginner', 'intermediate', 'strong']) {
       let state = engine.createState({ mapId: map.id });

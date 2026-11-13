@@ -4,7 +4,7 @@ import { recordMissionUnlocks } from "./achievements/mission-store.mjs";
 import { createVersusRoute } from "./versus/route.mjs";
 import { createLogicRoute } from "./logica/route.mjs";
 import { dailyChallenge } from "./daily-challenge.mjs";
-import { displayCampaignName } from "./campaign-display-names.mjs";
+import { campaignLevelName } from "./campaign-level-names.mjs";
 import { writeProgress } from "./progress-write-guard.mjs";
 // Integração de Reflexos e Corte certo: seleção, edição, histórico e apresentação.
 import { legacyCutSelectionIds } from "./cut-campaign.mjs";
@@ -690,7 +690,7 @@ function lightCampaignSelection() {
       const done = progress.completedIds.has(l.id),
         assisted = answerProgress.get(`light:${l.id ?? i}`).assisted,
         current = progress.lastLevelId === l.id;
-      html += `<button class="level-tile ${done ? "done" : ""}" data-level="${i}" aria-current="${current}" aria-label="Nível ${number}: ${displayCampaignName(l)}${done ? ", concluído" : ""}${assisted ? ", assistido por gabarito" : ""}${current ? ", atual" : ""}"><span>${number}</span><small>${done ? (assisted ? "✓ com gabarito" : "✓ concluído") : assisted ? "com gabarito" : current ? "atual" : "explorar"}</small></button>`;
+      html += `<button class="level-tile ${done ? "done" : ""}" data-level="${i}" aria-current="${current}" aria-label="Nível ${number}${done ? ", concluído" : ""}${assisted ? ", assistido por gabarito" : ""}${current ? ", atual" : ""}"><span>${number}</span><small>${done ? (assisted ? "✓ com gabarito" : "✓ concluído") : assisted ? "com gabarito" : current ? "atual" : "explorar"}</small></button>`;
     }
     if (groupOpen) html += "</div>";
   }
@@ -708,7 +708,7 @@ function cutCampaignSelection() {
         current =
           (legacyCutSelectionIds[progress.lastLevelId] ??
             progress.lastLevelId) === l.id;
-      html += `<button class="level-tile ${done ? "done" : ""}" data-level="${i}" aria-current="${current}" aria-label="Nível ${i + 1}: ${displayCampaignName(l)}${done ? ", concluído" : ""}${assisted ? ", assistido por gabarito" : ""}${current ? ", atual" : ""}"><span>${i + 1}</span><small>${done ? (assisted ? "✓ com gabarito" : "✓ concluído") : assisted ? "com gabarito" : current ? "atual" : "explorar"}</small></button>`;
+      html += `<button class="level-tile ${done ? "done" : ""}" data-level="${i}" aria-current="${current}" aria-label="Nível ${i + 1}${done ? ", concluído" : ""}${assisted ? ", assistido por gabarito" : ""}${current ? ", atual" : ""}"><span>${i + 1}</span><small>${done ? (assisted ? "✓ com gabarito" : "✓ concluído") : assisted ? "com gabarito" : current ? "atual" : "explorar"}</small></button>`;
     }
     html += "</div>";
   }
@@ -1344,7 +1344,7 @@ function render() {
   $("level").innerHTML = catalogue[game]
     .map(
       (l, i) =>
-        `<option value="${i}">${game === "light" ? lightCampaignNumber(l, i) : i + 1}. ${displayCampaignName(l)}</option>`,
+        `<option value="${i}">${game === "light" ? lightCampaignNumber(l, i) : i + 1}. ${campaignLevelName(game, l)}</option>`,
     )
     .join("");
   $("level").value = level;
@@ -1362,6 +1362,10 @@ function render() {
     : free
       ? `Modo Sem Parar · DESAFIO ${endlessRun.count + 1}`
       : `DESAFIO ${String(game === "light" ? lightCampaignNumber(currentLevel(), level) : level + 1).padStart(2, "0")} / ${String(catalogue[game].length).padStart(2, "0")}`;
+  // O título editorial pertence à fase aberta, nunca ao catálogo de seleção.
+  $("stage-label").dataset.campaignLevelName = free || customLevel
+    ? ""
+    : campaignLevelName(game, currentLevel());
   if (dailyEntry && !free && !customLevel)
     $("stage-label").textContent = `Desafio diário · ${dailyEntry.day.split("-").reverse().join("/")} · ${$("stage-label").textContent}`;
   $("mission").textContent =

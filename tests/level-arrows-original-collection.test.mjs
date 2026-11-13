@@ -164,7 +164,7 @@ for (const game of ["elo", "prumo", "pacto"]) {
   );
 }
 root.querySelector('[data-collection="desvio"]').click();
-$("collection").querySelector('[data-map="0"]').click();
+$("c-start-duel").click();
 assert.equal($("c-level-next"), undefined);
 assert.equal($("c-level-prev"), undefined);
 console.log(
