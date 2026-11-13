@@ -13,4 +13,4 @@ A biblioteca de jogos permanece a tela principal. As antigas abas Jogos e Conqui
 
 ## Verificação
 
-70 testes focados passaram: painel, biblioteca, ícone, abertura e casca de jogos. A revisão de navegador deve confirmar layout em 320, 390 e 1280 px, funcionamento com teclado e estado de uma partida aberta ao consultar/fechar o painel. Não publicar antes dessa revisão.
+70 testes focados passaram: painel, biblioteca, ícone, abertura e casca de jogos. Revisão no navegador aprovada em 320, 390 e 1280 px: sem transbordamento horizontal, Sobre acessível e preservação da URL, tabuleiro e rolagem (150 px antes e depois). Em uso direto, Fechar e Escape devolveram o foco ao botão de Conquistas. As alturas do cabeçalho verificadas foram 193, 141 e 126 px, respectivamente.

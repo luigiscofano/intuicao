@@ -21,14 +21,14 @@ body > header :is(.header-achievements,.header-preferences):focus-visible { outl
 #achievements-dialog #achievements { margin:0; padding:0; }
 @media(max-width:760px) {
   /* Sobre permanece disponível, inclusive no celular, sem esconder controles. */
-  body > header { flex-wrap:wrap; gap:8px 12px; }
-  body > header .brand { margin-right:auto; }
+  body > header, body.approved-game-view > header { flex-wrap:wrap; gap:8px 12px; }
+  body > header .brand, body.approved-game-view > header .brand { width:137px; height:45px; margin-right:auto; }
   body > header #about-open { order:3; margin:0 0 8px; min-height:44px; }
   body > header .header-utilities { margin-left:auto; }
   body > header .header-achievements { padding:7px 9px; font-size:13px; }
 }
 @media(max-width:370px) {
-  body > header .brand { width:124px; }
+  body > header .brand, body.approved-game-view > header .brand { width:105px; }
   body > header .header-utilities { gap:5px; }
   body > header .header-achievements { gap:4px; padding:6px; font-size:12px; }
 }
