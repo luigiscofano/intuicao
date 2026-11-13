@@ -22,8 +22,7 @@ body #main .vs-map-grid>.vs-mini-team-0 { background:#668761; color:#fffefa; }
 body #main .vs-map-grid>.vs-mini-team-1 { background:#d7b65d; color:#394c31; }
 body #main .vs-map-description { min-height:62px; margin-top:10px; font:400 13px/1.5 var(--font-ui); }
 body #main .vs-map-description p { margin:0 0 3px; }
-body #main .vs-map-description small, body #main .vs-map-hint { font:400 12px/1.5 var(--font-ui); color:#586558; }
-body #main .vs-map-hint { margin:8px 0 0; }
+body #main .vs-map-description small { font:400 12px/1.5 var(--font-ui); color:#586558; }
 @media(max-width:600px) { body #main .vs-map-cards { grid-template-columns:repeat(2,minmax(0,1fr)); } }
 
 body #main .vs-map-art>svg { display:block; width:80px; height:80px; }
