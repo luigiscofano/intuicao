@@ -144,6 +144,13 @@
         "dist/assets/fonts/sourcesans3-OFL.txt"
       ],
       "source": "Fontes oficiais Google Fonts, subconjuntos latinos WOFF2 sob SIL OFL 1.1."
+    },
+    "logo-site-azulejos": {
+      "evidence": [
+        "docs/identidade/logo-site/README.md",
+        "docs/recursos/declaracao-autoria.md"
+      ],
+      "source": "Composição dos azulejos B aprovados e lettering original do projeto, solicitada para o site em 13/11/2026; PNG transparente e fonte SVG. Sem imagens externas."
     }
   },
   "assets": [
@@ -1851,6 +1858,26 @@
       "rightsHolder": "Adobe; subconjunto renomeado Intuicao Interface",
       "license": "SIL Open Font License 1.1",
       "permissionEvidence": "docs/tipografia.md e licenças em dist/assets/fonts/"
+    },
+    {
+      "path": "dist/platform-assets/intuicao-logo-azulejos.png",
+      "sha256": "cc0276810a73b1339bb53e9b881aab8f0dfc4e576c02b6b1aac08530f89c4161",
+      "group": "logo-site-azulejos",
+      "status": "cleared",
+      "rightsHolder": "Luigi Scofano de Araujo (elementos autorais do projeto)",
+      "license": "Direitos reservados; recursos visuais excluídos da licença MIT do código.",
+      "permissionEvidence": "docs/identidade/logo-site/README.md",
+      "reviewBasis": "owner-approved-project-composition; existing-visual-rights-policy"
+    },
+    {
+      "path": "docs/identidade/logo-site/intuicao-logo-azulejos.svg",
+      "sha256": "48e7ef7412c00536a31bb57ad002d649b9fc83381e6aea183d63d2acdfcdc52f",
+      "group": "logo-site-azulejos",
+      "status": "cleared",
+      "rightsHolder": "Luigi Scofano de Araujo (elementos autorais do projeto)",
+      "license": "Direitos reservados; recursos visuais excluídos da licença MIT do código.",
+      "permissionEvidence": "docs/identidade/logo-site/README.md",
+      "reviewBasis": "owner-approved-project-composition; existing-visual-rights-policy"
     }
   ],
   "rightsReview": {

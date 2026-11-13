@@ -1,0 +1,41 @@
+/* Acabamento C aprovado: o separador organiza o cabeçalho sem criar
+   uma faixa pesada. As três peças usam os mesmos azulejos do site.
+   Fundos decorativos não capturam cliques nem alteram a navegação. */
+body > header,
+body.approved-game-view > header {
+  --header-edge: 40px;
+  --header-tile: 22px;
+  --header-tile-step: 27px;
+  --header-separator-gap: 90px;
+  border-top: 0;
+  background-color: transparent;
+  background-image:
+    url("platform-assets/tiles/green-tl.png"),
+    url("platform-assets/tiles/gold-br.png"),
+    url("platform-assets/tiles/blue-br.png"),
+    linear-gradient(#30412f3b, #30412f3b);
+  background-repeat: no-repeat;
+  background-size:
+    var(--header-tile) var(--header-tile),
+    var(--header-tile) var(--header-tile),
+    var(--header-tile) var(--header-tile),
+    calc(100% - 2 * var(--header-edge) - var(--header-separator-gap)) 1px;
+  background-position:
+    right calc(var(--header-edge) + 2 * var(--header-tile-step)) bottom,
+    right calc(var(--header-edge) + var(--header-tile-step)) bottom,
+    right var(--header-edge) bottom,
+    left var(--header-edge) bottom calc(var(--header-tile) / 2);
+}
+
+/* Acompanha o recuo já usado pelas páginas dos jogos. */
+body.approved-game-view > header { --header-edge: 58px; }
+
+@media (max-width: 760px) {
+  body > header,
+  body.approved-game-view > header {
+    --header-edge: 20px;
+    --header-tile: 16px;
+    --header-tile-step: 20px;
+    --header-separator-gap: 68px;
+  }
+}
