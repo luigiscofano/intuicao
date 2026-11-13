@@ -72,7 +72,7 @@ body.approved-game-view #main .action-sidebar.action-sidebar [data-sidebar-actio
   content: attr(aria-label) !important;
   display: block;
   position: static;
-  font: 700 15px/1.35 system-ui,sans-serif;
+  font: 700 15px/1.35 var(--font-ui);
 }
 body.approved-game-view #main .action-sidebar.action-sidebar [data-sidebar-action] > * { display:none; }
 body.approved-game-view #main .action-sidebar.action-sidebar [data-sidebar-action='confirm'] {

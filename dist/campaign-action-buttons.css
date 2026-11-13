@@ -14,7 +14,7 @@ body.approved-campaign-actions #main :is(#confirm, #c-confirm, #s-confirm, #r-co
   padding: 10px 13px;
   border: 1.5px solid;
   border-radius: 10px;
-  font: 700 15px/1.4 system-ui, sans-serif;
+  font: 700 15px/1.4 var(--font-ui);
   white-space: normal;
   text-align: left;
   box-shadow: none;
@@ -74,7 +74,7 @@ body.approved-campaign-actions #main :is(#reset, #c-reset, #s-reset, #r-reset, #
  * visual: texto e nomes acessíveis reais ficam intactos. */
 body.approved-campaign-actions #main :is(#undo, #c-undo, #s-undo, #r-undo, #o-undo, #redo, #c-redo, #s-redo, #r-redo, #o-redo, #reset, #c-reset, #s-reset, #r-reset, #o-reset) { font-size: 0; gap: 0; }
 body.approved-campaign-actions #main :is(#undo, #c-undo, #s-undo, #r-undo, #o-undo, #redo, #c-redo, #s-redo, #r-redo, #o-redo, #reset, #c-reset, #s-reset, #r-reset, #o-reset)::before { margin-right: 9px; }
-body.approved-campaign-actions #main :is(#undo, #c-undo, #s-undo, #r-undo, #o-undo, #redo, #c-redo, #s-redo, #r-redo, #o-redo, #reset, #c-reset, #s-reset, #r-reset, #o-reset)::after { font: 700 15px/1.4 system-ui, sans-serif; }
+body.approved-campaign-actions #main :is(#undo, #c-undo, #s-undo, #r-undo, #o-undo, #redo, #c-redo, #s-redo, #r-redo, #o-redo, #reset, #c-reset, #s-reset, #r-reset, #o-reset)::after { font: 700 15px/1.4 var(--font-ui); }
 body.approved-campaign-actions #main :is(#undo, #c-undo, #s-undo, #r-undo, #o-undo)::after { content: 'Desfazer'; }
 body.approved-campaign-actions #main :is(#redo, #c-redo, #s-redo, #r-redo, #o-redo)::after { content: 'Refazer'; }
 body.approved-campaign-actions #main :is(#reset, #c-reset, #s-reset, #r-reset, #o-reset)::after { content: 'Reiniciar'; }

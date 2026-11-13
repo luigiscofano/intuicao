@@ -161,6 +161,8 @@ test("visual refinement preserves layout when decorative tiles become transparen
   );
   const canonical = (css) =>
     css
+      // A tipografia C aprovada não faz parte da geometria desta comparação.
+      .replace(/var\(--font-ui\)/g, "system-ui,sans-serif")
       .replace(/\/\*[\s\S]*?\*\//g, "")
       .replace(/\s+/g, "")
       .replace(/;}/g, "}");

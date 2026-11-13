@@ -18,7 +18,7 @@ body {
   margin: 0;
   background: var(--paper);
   color: var(--ink);
-  font: 16px/1.5 system-ui,-apple-system,"Segoe UI",sans-serif;
+  font: 16px/1.5 var(--font-ui);
 }
 button,input,select {
   font: inherit;
@@ -112,7 +112,7 @@ h1 {
   margin: 0 0 20px;
 }
 h1 em {
-  font-family: Georgia,serif;
+  font-family:var(--font-title);
   font-weight: 400;
   color: var(--green);
 }
@@ -228,7 +228,7 @@ svg {
   user-select: none;
 }
 svg text {
-  font-family: system-ui,sans-serif;
+  font-family:var(--font-ui);
   fill: var(--ink);
 }
 svg .handle {
@@ -1872,7 +1872,7 @@ svg .cut-grip:focus {
   cursor: default;
 }
 .light-source-check {
-  font: 700 12px system-ui,sans-serif;
+  font: 700 12px var(--font-ui);
 }
 @media(prefers-reduced-motion:reduce) {
   .light-source-ring {
@@ -2540,7 +2540,7 @@ button.action-hint:hover {
   pointer-events: none;
   user-select: none;
   white-space: nowrap;
-  font: 700 12px/18px ui-monospace,SFMono-Regular,Consolas,monospace;
+  font: 700 12px/18px var(--font-ui);
   color: #4b6040;
   text-shadow: 0 1px 2px #fffefa;
 }

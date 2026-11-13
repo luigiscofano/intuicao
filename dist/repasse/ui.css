@@ -164,7 +164,7 @@
   z-index: 4;
 }
 #repasse .r-piece-value {
-  font: 600 18px/1 system-ui,sans-serif;
+  font: 600 18px/1 var(--font-ui);
   font-size: clamp(17px,34cqi,22px);
   letter-spacing: -.4px;
   font-variant-numeric: tabular-nums;
@@ -216,7 +216,7 @@
   position: absolute;
   left: 3px;
   bottom: 2px;
-  font: 8px/1 system-ui,sans-serif;
+  font: 8px/1 var(--font-ui);
   color: #586b4e;
   pointer-events: none;
 }
@@ -245,7 +245,7 @@
   display: grid;
   justify-items: center;
   gap: 2px;
-  font: 500 10px/1.2 system-ui,sans-serif;
+  font: 500 10px/1.2 var(--font-ui);
   white-space: nowrap;
   font-variant-numeric: tabular-nums;
 }
@@ -268,7 +268,7 @@
   position: absolute;
   top: 3px;
   left: 3px;
-  font: 700 9px/1 system-ui,sans-serif;
+  font: 700 9px/1 var(--font-ui);
 }
 #repasse .r-gain {
   position: absolute;
@@ -279,7 +279,7 @@
   border-radius: 4px;
   background: #405e49;
   color: white;
-  font: 600 11px/1.5 system-ui,sans-serif;
+  font: 600 11px/1.5 var(--font-ui);
   padding: 1px 4px;
   box-shadow: none;
   pointer-events: none;
@@ -338,7 +338,7 @@
   color: #fff;
   border: 1px solid #304b37;
   border-radius: 6px;
-  font: 700 13px/1.4 system-ui,sans-serif;
+  font: 700 13px/1.4 var(--font-ui);
   padding: 2px 5px;
   white-space: nowrap;
   box-shadow: none;

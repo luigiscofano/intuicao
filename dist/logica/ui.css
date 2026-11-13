@@ -9,7 +9,7 @@
 .logic-selection, .logic-lab { color: #30412f; }
 .logic-selection { background: #fffaf0; border: 1px solid #b6c3a8; border-radius: 18px; padding: clamp(16px, 3vw, 32px); }
 .logic-selection-heading, .logic-tier-heading { display: flex; align-items: center; justify-content: space-between; gap: 20px; }
-.logic-selection-heading h2 { margin: 8px 0; font: 750 clamp(28px, 4vw, 42px)/1.15 system-ui, sans-serif; }
+.logic-selection-heading h2 { margin: 8px 0; font: 750 clamp(28px, 4vw, 42px)/1.15 var(--font-ui); }
 .logic-selection-heading p { max-width: 62ch; }
 .logic-progress { flex-shrink: 0; color: #39674a; font-size: 30px; font-weight: 750; }
 .logic-progress span { display: block; font-size: 13px; font-weight: 500; }
@@ -32,7 +32,7 @@
 .logic-tool { min-height: 42px; padding: 8px 13px; border: 1px solid #b6c3a8; border-radius: 9px; background: #fffaf0; color: #30412f; }
 .logic-tool[aria-pressed="true"] { background: #e1edce; outline: 2px solid #73965e; outline-offset: 1px; font-weight: 700; }
 .logic-board { width: 100%; min-width: 0; max-width: 700px; margin: 0 auto; overflow-x: auto; }
-.logic-board > svg, .logic-board svg { display: block; width: 100%; height: auto; max-height: 70vh; margin: 0 auto; font-family: system-ui, sans-serif; }
+.logic-board > svg, .logic-board svg { display: block; width: 100%; height: auto; max-height: 70vh; margin: 0 auto; font-family: var(--font-ui); }
 .logic-board [data-cell] { cursor: pointer; -webkit-tap-highlight-color: transparent; }
 .logic-board [data-cell]:focus-visible { outline: 3px solid #244b60; outline-offset: -3px; }
 .logic-board [data-cell][aria-disabled="true"] { cursor: default; }
