@@ -8,12 +8,12 @@ import { normalizeLogicData } from '../dist/logica/storage.mjs';
 import { readAchievements } from '../dist/achievements.mjs';
 import { PROGRESS_KEYS } from '../dist/progress-backup.mjs';
 
-test('catálogo oferece 21 jogos e nenhum retirado', () => {
+test('catálogo oferece 20 jogos e nenhum retirado', () => {
   const ids=Object.values(CATEGORY_GAMES).flat();
-  assert.equal(ids.length,21);
+  assert.equal(ids.length,20);
   for (const id of RETIRED_GAME_IDS) assert.ok(!ids.includes(id));
   const html=readFileSync(new URL('../dist/index.html',import.meta.url),'utf8');
-  assert.doesNotMatch(html,/data-(?:logic|orbita|versus)="(?:divisa|orbita|lastro|vazante)"/);
+  assert.doesNotMatch(html,/data-(?:logic|orbita|versus)="(?:divisa|orbita|lastro|vazante|enlace)"/);
 });
 test('links antigos são reconhecidos sem afetar jogos ativos', () => {
   for (const id of RETIRED_GAME_IDS) {
@@ -52,7 +52,7 @@ import { createVersusStorage, VERSUS_STORAGE_ID } from '../dist/versus/storage.m
 import { createVersusRoute } from '../dist/versus/route.mjs';
 
 test('duelos retirados continuam recuperáveis no armazenamento compartilhado', () => {
- const record={version:1,games:{lastro:{turn:2},vazante:{turn:3}}};
+ const record={version:1,games:{lastro:{turn:2},vazante:{turn:3},enlace:{turn:4}}};
  let raw=JSON.stringify(record);
  const storage={getItem:()=>raw,setItem:(key,value)=>{assert.equal(key,VERSUS_STORAGE_ID);raw=value;}};
  const api=createVersusStorage(storage);
@@ -60,7 +60,8 @@ test('duelos retirados continuam recuperáveis no armazenamento compartilhado', 
  assert.ok(api.save('quinhao',{turn:1}));
  assert.deepEqual(JSON.parse(raw).games.lastro,record.games.lastro);
  assert.deepEqual(JSON.parse(raw).games.vazante,record.games.vazante);
- for(const id of ['lastro','vazante']){
+ assert.deepEqual(JSON.parse(raw).games.enlace,record.games.enlace);
+ for(const id of ['lastro','vazante','enlace']){
    assert.ok(!VERSUS_GAME_IDS.includes(id));
    assert.ok(STORED_VERSUS_GAME_IDS.includes(id));
    assert.equal(retiredGameCategory(id),'versus');
@@ -72,7 +73,7 @@ test('rotas diretas dos duelos retirados não carregam jogos nem gravam partidas
  globalThis.document={getElementById:()=>({}),querySelectorAll:()=>[]};
  try {
    const route=createVersusRoute({hideOthers(){throw Error('não deve abrir');}});
-   await route.open('lastro');await route.open('vazante');
+   await route.open('lastro');await route.open('vazante');await route.open('enlace');
    assert.equal(route.isOpen(),false);
  } finally {globalThis.document=old;}
 });
