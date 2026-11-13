@@ -1401,7 +1401,12 @@ export function initRepasse({ hideOthers = () => {} } = {}) {
     };
   }
   // Monta as orientações e exemplos de regras apresentados na partida.
+  // O guia comum vem primeiro; pistas e controles específicos continuam disponíveis.
   function rulesMarkup() {
+    return rulesPreviewMarkup('repasse') + '<details class="rules-more"><summary>Pistas desta fase e controles</summary>' + contextualRulesMarkup() + '</details>';
+  }
+
+  function contextualRulesMarkup() {
     return (
       '<h3>Quem precisa esperar?</h3><p class="rules-context">Retire todas as peças e faça cada caixa terminar exatamente na meta. A ordem muda os valores e os destinatários.</p><div class="rules-body"><p>Ao retirar uma peça, ela desaparece. <strong>Cada seta envia seu valor atual inteiro.</strong> O repasse atravessa vazios e para no primeiro número presente; sem receptor, chega à caixa da borda correspondente.</p><p>Quem recebe soma o valor e continua no mesmo lugar. Receber não dispara outra retirada. As setas controlam apenas a saída: todas as peças podem receber de qualquer lado.</p><p>As caixas mostram <strong>acumulado / meta</strong>. Metas zero também devem ser respeitadas. Ultrapassar uma meta não pode ser corrigido por outra retirada; desfaça para explorar outra ordem.</p><p>A vitória exige tabuleiro vazio e todas as metas exatas. Não há cronômetro, vidas, limite de tentativas ou pontuação por rapidez.</p><div class="collection-notes"><p><strong>Foco desta fase:</strong> ' +
       esc(levelLesson(level)) +

@@ -15,11 +15,12 @@ export const LOGIC_GAME_INFO = Object.freeze({
   "pulso": {
     "name": "PULSO",
     "description": "Marque três batidas igualmente espaçadas em cada linha e faça as colunas atingirem suas cotas.",
-    "summary": "Marque batidas e casas vazias. Compare o espaçamento de cada linha com as cotas das colunas.",
+    "summary": "Coloque três marcas por linha, com o mesmo espaço entre elas, e acerte as quantidades das colunas.",
     "rules": [
-      "Em cada linha, coloque exatamente três marcas, com a mesma distância entre a primeira e a segunda e entre a segunda e a terceira.",
-      "O número acima de cada coluna diz quantas marcas ela deve conter.",
-      "Preserve as casas dadas; marque as outras casas como preenchidas ou vazias."
+      "Em cada linha, coloque exatamente três marcas. Deixe o mesmo número de casas entre a primeira e a segunda e entre a segunda e a terceira.",
+      "Exemplo: marcar as posições 1, 3 e 5 funciona, pois os dois intervalos são iguais. Cada linha pode usar um intervalo diferente.",
+      "O número acima de cada coluna diz quantas marcas precisam ficar nela.",
+      "Use os controles para marcar cada casa como preenchida ou vazia. Preserve as pistas que já vieram prontas e confirme a resposta.",
     ],
     "purpose": "Praticar identificação de intervalos, contagem e comparação de capacidades compartilhadas.",
     "why": "Cada linha tem um ritmo próprio, mas todas compartilham as mesmas colunas. A solução aparece ao cruzar essas duas leituras."
@@ -27,11 +28,12 @@ export const LOGIC_GAME_INFO = Object.freeze({
   "foz": {
     "name": "FOZ",
     "description": "Oriente os canais para que toda gota alcance a foz, respeitando o número de passos indicado nas pistas.",
-    "summary": "Toque em um ponto para escolher sua seta ou use uma direção na barra. A foz não recebe seta.",
+    "summary": "Faça todos os caminhos de água chegarem à foz, o ponto marcado com 0.",
     "rules": [
-      "Em cada ponto, exceto na foz 0, desenhe uma única seta para um vizinho ligado por canal.",
-      "Seguindo as setas, todos os pontos devem chegar à foz; não pode haver ciclo. Caminhos podem se juntar.",
-      "Um número indica quantos trechos a gota percorre daquele ponto até a foz. Conte os trechos, não os pontos."
+      "Toque em um ponto para escolher a seta, ou escolha uma direção na barra. A seta precisa apontar para um vizinho ligado por um canal.",
+      "Cada ponto tem uma seta, menos a foz 0. Seguindo as setas de qualquer ponto, você precisa chegar à foz.",
+      "Os caminhos podem se juntar, mas não podem dar voltas sem saída.",
+      "Os números mostram quantos trechos faltam até a foz. Conte os canais percorridos, não os pontos. Confira as pistas e confirme.",
     ],
     "purpose": "Praticar raciocínio sobre percursos, distâncias e prevenção de ciclos.",
     "why": "Uma orientação local determina a distância de quem passa por ela. Os caminhos podem se juntar, mas todos precisam terminar na mesma foz."
@@ -39,11 +41,12 @@ export const LOGIC_GAME_INFO = Object.freeze({
   "refugio": {
     "name": "REFÚGIO",
     "description": "Separe os marcos em espaços livres, usando apenas barreiras que realmente separam dois refúgios.",
-    "summary": "Marque casas livres ou barreiras. Acompanhe quais regiões cada barreira separa.",
+    "summary": "Separe o espaço em refúgios. Cada um precisa ter um único marco.",
     "rules": [
-      "Marque cada casa como livre ou barreira, sem alterar as pistas; os marcos são sempre livres.",
-      "Cada região de casas livres ligadas por lados deve conter exatamente um marco.",
-      "Toda casa de barreira deve tocar, por lados, exatamente duas regiões livres diferentes."
+      "Marque as casas como livres ou barreiras. Preserve as pistas fixas; os marcos são sempre casas livres.",
+      "Casas livres que se tocam pelos lados formam um refúgio. Cada refúgio precisa conter exatamente um marco.",
+      "Cada casa de barreira deve tocar exatamente dois refúgios diferentes pelos lados. Tocar o mesmo refúgio duas vezes ainda conta como um só.",
+      "Diagonais não ligam casas nem contam como contato. Complete a marcação e confirme.",
     ],
     "purpose": "Praticar dedução sobre componentes conectados e separação de espaços.",
     "why": "Uma barreira tem função precisa: separar duas regiões diferentes. Reconhecer a identidade dos espaços é tão importante quanto contar vizinhos."
@@ -51,11 +54,13 @@ export const LOGIC_GAME_INFO = Object.freeze({
   "mirante": {
     "name": "MIRANTE",
     "description": "Distribua poucas peças para que todos os observadores vejam a forma certa, aproveitando a mesma peça em várias direções sem esconder quem ainda precisa ser visto.",
-    "summary": "Escolha uma forma ou uma casa vazia. Cruze os olhares das bordas e acompanhe o estoque.",
+    "summary": "Coloque as formas para que cada seta da borda veja primeiro a forma pedida.",
     "rules": [
-      "Coloque exatamente as peças indicadas no estoque, no máximo uma por célula. As demais células ficam vazias.",
-      "Cada observador deve encontrar a forma indicada como a primeira peça na direção de sua seta. A visão atravessa células vazias e para na primeira peça; não usa diagonais. Uma direção inteiramente vazia não satisfaz uma pista.",
-      "Toda peça colocada precisa ser vista por pelo menos dois observadores. Observadores em lados opostos contam separadamente. Uma borda sem observador não fornece informação nem conta como visão."
+      "Use exatamente as peças do estoque, no máximo uma por casa. Deixe as outras casas vazias.",
+      "Cada seta da borda olha em linha reta. Ela atravessa casas vazias e para na primeira peça: essa peça deve ser a forma pedida. Não há visão na diagonal.",
+      "Toda peça precisa ser vista por pelo menos duas setas. Setas de lados opostos contam separadamente; uma borda sem seta não conta.",
+      "Escolha uma forma ou marcação de vazio nos controles e toque na casa. No computador, o botão direito marca X; o esquerdo mantém a ação escolhida.",
+      "Uma linha de visão totalmente vazia não atende à pista. Confira o estoque e confirme a resposta.",
     ],
     "purpose": "Praticar visibilidade, exclusão de posições e uso de um estoque global.",
     "why": "Uma forma pode atender a vários olhares. O estoque e as oclusões permitem transformar pistas das bordas em decisões no interior."
@@ -63,11 +68,12 @@ export const LOGIC_GAME_INFO = Object.freeze({
   "renovo": {
     "name": "RENOVO",
     "description": "Una cada semente a uma folha por um botão, formando trios que dobram uma vez e não se cruzam.",
-    "summary": "Toque em duas peças alinhadas para ligar ou retirar um trecho. Cada botão precisa de uma semente e uma folha em direções perpendiculares.",
+    "summary": "Ligue semente, botão e folha em trios, sem cruzar as linhas.",
     "rules": [
-      "Ligue cada botão a uma semente e a uma folha. Use todas as peças uma única vez.",
-      "As duas ligações de cada botão devem formar um ângulo reto. Cada trecho é horizontal ou vertical e termina na primeira peça encontrada naquela direção.",
-      "As linhas não podem cruzar, se sobrepor nem atravessar outra peça. Só os dois trechos do mesmo trio se encontram, em seu botão."
+      "Cada botão deve se ligar a uma semente e a uma folha. Use todas as peças, uma única vez.",
+      "As duas ligações do botão formam um L: uma horizontal e outra vertical. Cada trecho termina na primeira peça que encontra naquela direção.",
+      "As linhas não podem cruzar, passar por outra peça nem ficar uma sobre a outra. Só as duas linhas do mesmo trio se encontram, no botão.",
+      "Trace uma ligação entre as peças ou toque nas duas pontas alinhadas. Você pode retirar um trecho tocando nas pontas novamente. Complete os trios e confirme.",
     ],
     "purpose": "Praticar associação de parceiros e leitura de conflitos geométricos.",
     "why": "Uma ligação pode consumir o parceiro de outro botão ou bloquear seu trecho. As escolhas simples precisam coexistir sem cruzamento."
@@ -76,9 +82,9 @@ export const LOGIC_GAME_INFO = Object.freeze({
 
 export const LOGIC_GUIDANCE = Object.freeze({
   "divisa": "Escolha uma letra e toque nas casas. Compare os contatos com as cotas e preserve a conexão de cada território.",
-  "pulso": "Marque batidas e casas vazias. Compare o espaçamento de cada linha com as cotas das colunas.",
-  "foz": "Toque em um ponto para escolher sua seta ou use uma direção na barra. A foz não recebe seta.",
-  "refugio": "Marque casas livres ou barreiras. Acompanhe quais regiões cada barreira separa.",
-  "mirante": "Escolha uma forma ou uma casa vazia. Cruze os olhares das bordas e acompanhe o estoque.",
-  "renovo": "Toque em duas peças alinhadas para ligar ou retirar um trecho. Cada botão precisa de uma semente e uma folha em direções perpendiculares."
+  "pulso": "Coloque três marcas por linha, com o mesmo espaço entre elas, e acerte as quantidades das colunas.",
+  "foz": "Faça todos os caminhos de água chegarem à foz, o ponto marcado com 0.",
+  "refugio": "Separe o espaço em refúgios. Cada um precisa ter um único marco.",
+  "mirante": "Coloque as formas para que cada seta da borda veja primeiro a forma pedida.",
+  "renovo": "Ligue semente, botão e folha em trios, sem cruzar as linhas."
 });

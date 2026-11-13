@@ -5,7 +5,7 @@ import { rulesPreviewMarkup, initRulesPreviews } from '../dist/rules-preview.mjs
 import { RULE_EXAMPLES } from '../dist/rules-examples.mjs';
 import { CATEGORY_GAMES } from '../dist/category-navigation.mjs';
 const games=Object.values(CATEGORY_GAMES).flat();
-test('todos os 20 jogos ativos têm regras detalhadas, exemplo próprio acessível e nenhum controle de pausa',()=>{
+test('todos os 20 jogos ativos têm regras simples e detalhes completos, exemplo próprio acessível e nenhum controle de pausa',()=>{
  assert.equal(games.length,20);
  assert.deepEqual(Object.keys(RULE_EXAMPLES).filter(id=>games.includes(id)).sort(),[...games].sort());
  for(const game of games){
@@ -13,7 +13,7 @@ test('todos os 20 jogos ativos têm regras detalhadas, exemplo próprio acessív
   assert.ok(RULE_EXAMPLES[game].steps.length>=3,game);
   assert.ok(RULE_EXAMPLES[game].steps.every(s=>s.length>40),game);
   assert.match(html,/Como jogar/);assert.match(html,/<svg/);assert.match(html,/aria-hidden="true"/);
-  assert.match(html,/<figcaption class="rp-description">[^<]{50}/);
+  assert.match(html,/<figcaption class="rp-description">[^<]{35}/);
   assert.doesNotMatch(html,/<button|rp-motion-toggle|aria-pressed|Pausar exemplo|Retomar exemplo/);
   assert.doesNotMatch(html,/<script|onload=|onclick=|foreignObject|href="https?:|undefined/);
  }
@@ -22,7 +22,7 @@ test('todos os 20 jogos ativos têm regras detalhadas, exemplo próprio acessív
 test('loop é o novo contrato explícito, preservando redução de movimento e suspensão fora da tela',()=>{
  const css=readFileSync(new URL('../dist/rules-preview.css',import.meta.url),'utf8');
  const examples=readFileSync(new URL('../dist/rules-examples.css',import.meta.url),'utf8');
- assert.match(css,/--rp-cycle:6s/);assert.match(css,/infinite/);
+ assert.match(css,/--rp-cycle:4\.8s/);assert.match(css,/infinite/);
  assert.match(css,/prefers-reduced-motion/);assert.match(css,/data-ui-reduced-motion/);
  assert.match(css,/rules-preview:not\(\.rp-playing\)[\s\S]*animation-play-state:paused!important/);
  assert.doesNotMatch(css,/rp-paused|rp-motion-toggle/);

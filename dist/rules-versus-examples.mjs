@@ -15,7 +15,19 @@ const mosaic=(x,after)=>tile(x,32,2)+tile(x+32,32,2)+tile(x,64,0)+(after?move(ti
 const fruit=(x,y,label,color)=>dot(x,y,9,color)+text(x,y+3,label,8);
 const estaloArrows=['→','↓','←','↓','↑','→','↓','←','→','↑','←','↓','↑','→','↑','←'];
 const chain=[0,1,5,6,10,9];
-const pods=(x,after)=>Array.from({length:16},(_,i)=>box(x+i%4*19,29+Math.floor(i/4)*19,19,19,after&&chain.includes(i)?pale:'#fafbf7')+(after&&chain.includes(i)?text(x+i%4*19+9.5,42+Math.floor(i/4)*19,'·',12):dot(x+i%4*19+9.5,38.5+Math.floor(i/4)*19,8,i%4<2?green:gold)+`<text x="${x+i%4*19+9.5}" y="${42+Math.floor(i/4)*19}" text-anchor="middle" font-size="11" style="fill:${i%4<2?'#fff':ink}">${estaloArrows[i]}</text>`)).join('')+(after?move(text(x+38,117,'Verde +4 · Âmbar +2',8),0,0):text(x+38,117,'Abra A1 sem girar',8));
+// Cada casa aberta aparece na ordem real do pulso. O número mostra o percurso.
+const pods = (x, after) => Array.from({ length: 16 }, (_, i) => {
+ const cx = x + i % 4 * 19, cy = 29 + Math.floor(i / 4) * 19;
+ const order = chain.indexOf(i);
+ const closed = dot(cx + 9.5, cy + 9.5, 8, i % 4 < 2 ? green : gold)
+  + `<text x="${cx + 9.5}" y="${cy + 13}" text-anchor="middle" font-size="11" style="fill:${i % 4 < 2 ? '#fff' : ink}">${estaloArrows[i]}</text>`;
+ const opened = after && order >= 0
+  ? `<g class="rp-chain-step rp-chain-step-${order}">${box(cx, cy, 19, 19, pale)}${text(cx + 9.5, cy + 13, String(order + 1), 10)}</g>` : '';
+ return box(cx, cy, 19, 19) + closed + opened;
+}).join('') + (after
+ ? `<g class="rp-chain-score">${text(x + 38, 117, 'Verde +4 · Âmbar +2', 8)}</g>`
+ : text(x + 38, 117, 'Abra A1 sem girar', 8));
+
 const atlas=(x,after)=>Array.from({length:after?30:36},(_,i)=>box(x+i%6*12,29+Math.floor(i/6)*12,12,12,after&&i<6?pale:'#fafbf7')+(after&&i<6?text(x+i*12+6,37,'2',7):'')).join('')+(after?move(dot(x+6,35,3),0,-12):dot(x+6,35,3))+text(x+36,113,after?'5 × 6 · área 36':'Selo A1; dobre norte',8);
 const bells=['F','G','O','S','G','O','S','F','O','S','F','G','S','F','G','O'];
 const bellGrid=(x,after)=>bells.map((s,i)=>box(x+i%4*19,28+Math.floor(i/4)*19,19,19,(after?i%4===1:Math.floor(i/4)===1)?pale:'#fafbf7')+text(x+i%4*19+9.5,41+Math.floor(i/4)*19,after&&i===5?'×':s,9)).join('')+text(x+38,116,after?'Âmbar: coluna B':'Verde: linha 2',8);
