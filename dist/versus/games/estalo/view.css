@@ -240,3 +240,47 @@
     font-size: 0.8rem;
   }
 }
+
+/* O espaço das ferramentas existe antes da seleção e não compete com a grade.
+   O tamanho depende somente da janela, nunca da mensagem ou da jogada. */
+#versus-games .estalo-workspace {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) 116px;
+  align-items: start;
+  gap: 12px;
+  max-width: 760px;
+  margin: 0 auto;
+}
+#versus-games .estalo-workspace .estalo-coordinates {
+  width: min(100%, max(220px, calc(100svh - 240px)));
+  min-width: 0;
+}
+#versus-games .estalo-tools {
+  min-width: 0;
+  padding-top: 25px;
+}
+#versus-games .estalo-tools .estalo-aim { margin: 0; }
+#versus-games .estalo-tools .estalo-aim p,
+#versus-games .estalo-tools .estalo-instruction {
+  font-size: 12px;
+  margin: 0 0 8px;
+  line-height: 1.35;
+}
+#versus-games .estalo-tools .estalo-aim-buttons {
+  grid-template-columns: 1fr;
+  gap: 6px;
+}
+#versus-games .estalo-tools .estalo-aim-button {
+  min-height: 58px;
+  padding: 6px;
+}
+@media (max-width: 480px) {
+  #versus-games .estalo-workspace {
+    grid-template-columns: minmax(0, 1fr) 76px;
+    gap: 6px;
+  }
+  #versus-games .estalo-tools .estalo-aim-button { font-size: 11px; }
+  #versus-games .estalo-tools .estalo-direction { font-size: 24px; }
+}
+/* Recriar as células não deve fazer a ancoragem de rolagem saltar entre turnos. */
+#versus-games:has(.estalo-workspace) { overflow-anchor: none; }

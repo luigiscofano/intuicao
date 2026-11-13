@@ -32,7 +32,7 @@ function aimControls(state, selection, pending, disabled) {
     { turn: 0, label: "Manter direção", short: "Manter" },
     { turn: 1, label: "Girar 90° à direita", short: "90° ↷" },
   ];
-  return `<div class="estalo-aim"><p>Origem <strong>${coordinate(cell, 4)}</strong>: escolha a direção da abertura.</p><div class="estalo-aim-buttons">${options
+  return `<div class="estalo-aim"><p>Direção da abertura · <strong>${coordinate(cell, 4)}</strong></p><div class="estalo-aim-buttons">${options
     .map(({ turn, label, short }) => {
       const direction = (pod.direction + turn + 4) % 4;
       return `<button type="button" class="estalo-aim-button${selectedTurn === turn ? " is-selected" : ""}" ${actionAttributes({ type: "aim", cell, turn })} ${disabled ? "disabled" : ""} aria-label="${escapeHTML(label)} em ${coordinate(cell, 4)}: ${DIRECTIONS[direction].arrow}"><span class="estalo-direction" aria-hidden="true">${DIRECTIONS[direction].arrow}</span><span>${short}</span></button>`;
@@ -69,8 +69,8 @@ export function renderBoard(state, context = {}) {
     ? preview.scores.map((score, player) => score - state.scores[player])
     : null;
   return `<section class="estalo-area" aria-label="Canteiro de vagens">
-    <div class="estalo-coordinates"><div class="estalo-column-labels" aria-hidden="true">${["A", "B", "C", "D"].map((letter) => `<span>${letter}</span>`).join("")}</div><div class="estalo-board-row"><div class="estalo-row-labels" aria-hidden="true">${[1, 2, 3, 4].map((row) => `<span>${row}</span>`).join("")}</div><div class="estalo-playfield"><svg class="estalo-pulse-path" viewBox="0 0 400 400" aria-hidden="true"><polyline points="${points}" fill="none" stroke="#73965E" stroke-width="6" stroke-linecap="round" stroke-linejoin="round"/></svg>${cells}</div></div></div>
-    ${aimControls(state, context.selection, pending, disabled)}
+    <div class="estalo-workspace"><div class="estalo-coordinates"><div class="estalo-column-labels" aria-hidden="true">${["A", "B", "C", "D"].map((letter) => `<span>${letter}</span>`).join("")}</div><div class="estalo-board-row"><div class="estalo-row-labels" aria-hidden="true">${[1, 2, 3, 4].map((row) => `<span>${row}</span>`).join("")}</div><div class="estalo-playfield"><svg class="estalo-pulse-path" viewBox="0 0 400 400" aria-hidden="true"><polyline points="${points}" fill="none" stroke="#73965E" stroke-width="6" stroke-linecap="round" stroke-linejoin="round"/></svg>${cells}</div></div></div>
+    <aside class="estalo-tools" aria-label="Direção da abertura">${aimControls(state, context.selection, pending, disabled)}</aside></div>
     ${preview ? `<p class="estalo-preview-note">Prévia da cadeia: <strong>● Verde +${gains[0]}</strong> <strong>◆ Âmbar +${gains[1]}</strong>. A ordem aparece nas casas.</p>` : '<p class="estalo-tip">A seta conduz o pulso. Uma casca aberta interrompe o caminho.</p>'}
   </section>`;
 }

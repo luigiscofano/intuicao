@@ -114,6 +114,8 @@ test('movimento e vitórias Versus aprovados preservam todos os arquivos fora do
   const approvedVersus = [
     // Revisão pedagógica: somente resumos/regras; motores e saves seguem protegidos.
     'dist/versus/info.mjs',
+    // Controles Estalo laterais e tabuleiro estável; motor e sessão preservados.
+    'dist/versus/games/estalo/view.css',
     ...approved.filter(path => path.startsWith('dist/versus/')),
     // Retirada autorizada: catálogo ativo separado dos IDs históricos de saves.
     'dist/versus/metadata.mjs', 'dist/versus/storage.mjs',
