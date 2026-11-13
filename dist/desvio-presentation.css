@@ -1,0 +1,47 @@
+/* DESVIO B aprovado: peças de oficina. Escopo local, sem alterar as laterais. */
+.desvio-lab .lab-heading { position: relative; }
+.desvio-aiij { width: 94px; height: 82px; object-fit: contain; flex: 0 0 auto; margin-left: auto; }
+.desvio-lab .board-desvio {
+  gap: clamp(6px, 1.6vw, 12px);
+  padding: 8px;
+  border: 0;
+  border-radius: 0;
+  background: transparent;
+  overflow: visible;
+}
+.desvio-lab .board-desvio .grid-cell {
+  border: 2px solid #78906a;
+  border-radius: 7px;
+  box-shadow: 0 4px 0 #8e9c71;
+  background-image: none;
+  opacity: 1;
+  transition: background-color 150ms ease, box-shadow 150ms ease;
+}
+.desvio-lab .board-desvio .grid-cell.available::after {
+  content: '';
+  position: absolute;
+  left: 18%; right: 18%; bottom: 13%;
+  border-bottom: 2px solid #bc9c38;
+  pointer-events: none;
+}
+.desvio-lab .board-desvio .grid-cell.legal {
+  background: #39764b !important;
+  color: #fff8df;
+  border-color: #214f63;
+}
+.desvio-lab .board-desvio .grid-cell.legal::after { border-color: #f3c63c; }
+.desvio-lab .board-desvio .grid-cell.unavailable.available { background: #d4dfbe !important; color: #43674d; }
+.desvio-lab .board-desvio .grid-cell.consumed { background: #e9e4d5 !important; color: #63705e; border-color: #c9c4b5; box-shadow: none; }
+.desvio-lab .board-desvio .duel-arrow { width: 68%; height: 68%; display: grid; place-items: center; margin-bottom: 6%; }
+.desvio-lab .board-desvio .duel-arrow svg { width: 100%; height: 100%; }
+.desvio-lab .board-desvio .grid-cell.preview { outline: 4px solid #e8b926; outline-offset: 3px; box-shadow: 0 4px 0 #8e9c71; }
+/* O destino do próximo turno permanece secundário à seleção atual. */
+.desvio-lab .board-desvio .grid-cell.next-region:not(.preview) { box-shadow: 0 4px 0 #8e9c71, inset 0 0 0 2px #244b63; background-image: none; }
+.desvio-lab .board-desvio .grid-cell:focus-visible { outline: 3px dashed #244b63; outline-offset: 7px; z-index: 5; }
+.desvio-selection-mark { position: absolute; top: 4%; right: 4%; background: #e8b926; color: #263e34; border-radius: 50%; width: 22%; aspect-ratio: 1; display: grid; place-items: center; font-size: clamp(10px, 2vw, 18px); font-weight: 700; }
+.desvio-used { display: grid; gap: 4px; font-size: 22px; }
+.desvio-used small { font-size: clamp(9px, 1.5vw, 12px); }
+.desvio-lab #c-turn { color: #244b63; font-weight: 650; }
+.desvio-lab #c-details.desvio-selection-text { color: #244b63; font-size: 13px; line-height: 1.5; }
+@media (max-width: 600px) { .desvio-aiij { width: 64px; height: 56px; } }
+@media (prefers-reduced-motion: reduce) { .desvio-lab .board-desvio .grid-cell { transition: none; } }
