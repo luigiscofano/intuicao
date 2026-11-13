@@ -1,0 +1,295 @@
+/* A área jogável é a referência do Versus. Suas dimensões dependem da janela,
+   nunca da pontuação, da seleção ou do texto de uma jogada. */
+body.approved-game-view #main .approved-versus-surface {
+  --versus-board-edge: clamp(320px, calc(100svh - 240px), 550px);
+  overflow-anchor: none;
+}
+body.approved-game-view #main .approved-versus-surface :is(.nv-teams, .b-score, .ce-teams) {
+  margin: 3px auto 6px;
+  max-width: 620px;
+  gap: 8px;
+}
+body.approved-game-view #main .approved-versus-surface :is(.nv-team, .b-player, .ce-team-card) {
+  padding: 6px 9px;
+}
+body.approved-game-view #main .approved-versus-surface :is(.nv-turn, .b-turn, .ce-turn) {
+  margin: 5px 0 8px;
+  line-height: 1.3;
+}
+body.approved-game-view #main .approved-versus-surface :is(.nv-preview, .nv-feedback, .b-status, .ce-status) {
+  margin: 6px auto 0;
+  padding: 5px 8px;
+  font-size: 12px;
+  line-height: 1.4;
+  overflow-wrap: anywhere;
+}
+/* Não há redução de fontes, alvos de toque ou controles de acessibilidade. */
+body.approved-game-view #main .approved-versus-surface .nv-board {
+  max-width: 780px;
+}
+body.approved-game-view #main #collection .approved-versus-surface .board-desvio,
+body.approved-game-view #main #broto .approved-versus-surface .b-board-wrap,
+body.approved-game-view #main #cerco .approved-versus-surface .ce-board-wrap {
+  width: min(100%, var(--versus-board-edge));
+  max-width: var(--versus-board-edge);
+  margin-inline: auto;
+  box-sizing: border-box;
+}
+/* A vitória ocupa uma linha própria: não estreita a última posição do Cerco. */
+body.approved-game-view #main #cerco .approved-versus-surface .ce-duel-layout {
+  max-width: none;
+  grid-template-columns: minmax(0, 1fr);
+  grid-template-rows: auto auto;
+  gap: 0;
+}
+body.approved-game-view #main #cerco .approved-versus-surface .ce-play-column {
+  display: block;
+  grid-area: 1 / 1;
+}
+body.approved-game-view #main #cerco .approved-versus-surface #ce-result {
+  grid-area: 2 / 1;
+  width: 100%;
+  max-width: 620px;
+  margin: 10px auto 0;
+}
+/* Mosaico: o azulejo principal continua no tabuleiro, não na escolha de giro. */
+body.approved-game-view #main .approved-versus-surface .mosaico-board-wrap {
+  width: min(calc(100% - 26px), var(--versus-board-edge));
+  max-width: var(--versus-board-edge);
+  box-sizing: border-box;
+  margin: 26px auto 10px;
+}
+body.approved-game-view #main .approved-versus-surface .mosaico-orientation-controls {
+  gap: 6px;
+  margin-bottom: 4px;
+}
+body.approved-game-view #main .approved-versus-surface .mosaico-orientation {
+  min-height: 52px;
+  padding: 5px;
+  gap: 3px;
+}
+body.approved-game-view #main .approved-versus-surface .mosaico-orientation .mosaico-tile {
+  width: 30px;
+}
+body.approved-game-view #main .approved-versus-surface .mosaico-instruction {
+  margin: 6px auto;
+  font-size: 13px;
+  line-height: 1.4;
+}
+body.approved-game-view #main .approved-versus-surface .mosaico-tools {
+  min-height: 48px;
+  margin: 5px auto;
+}
+body.approved-game-view #main .approved-versus-surface .mosaico-key {
+  margin: 6px auto;
+  font-size: 12px;
+}
+/* Mantém as composições móveis aprovadas de Acorde e Quinhão intactas. */
+@media (min-width: 541px) {
+  body.approved-game-view #main .approved-versus-surface .acorde-game {
+    width: min(100%, var(--versus-board-edge));
+  }
+  body.approved-game-view #main .approved-versus-surface .acorde-board {
+    width: 100%;
+    box-sizing: border-box;
+  }
+  body.approved-game-view #main .approved-versus-surface .quinhao-plot {
+    width: min(100%, max(480px, var(--versus-board-edge)));
+    max-width: 620px;
+  }
+}
+@media (min-width: 1050px) {
+  body.approved-game-view #main .approved-versus-surface .mosaico-layout {
+    display: grid;
+    grid-template-columns: minmax(0, 1fr) 140px;
+    grid-template-rows: auto auto auto 1fr;
+    align-items: start;
+    gap: 8px 16px;
+  }
+  body.approved-game-view #main .approved-versus-surface .mosaico-board-wrap {
+    grid-column: 1;
+    grid-row: 1 / 5;
+    margin: 26px 0 10px 26px;
+  }
+  body.approved-game-view #main .approved-versus-surface .mosaico-orientation-controls {
+    grid-column: 2;
+    grid-row: 1;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    margin: 24px 0 0;
+  }
+  body.approved-game-view #main .approved-versus-surface .mosaico-instruction {
+    grid-column: 2;
+    grid-row: 2;
+    text-align: left;
+  }
+  body.approved-game-view #main .approved-versus-surface .mosaico-tools {
+    grid-column: 2;
+    grid-row: 3;
+    display: flex;
+    flex-direction: column;
+    align-items: stretch;
+    gap: 8px;
+    text-align: left;
+  }
+  body.approved-game-view #main .approved-versus-surface .mosaico-tools button {
+    min-height: 44px;
+    width: 100%;
+  }
+  body.approved-game-view #main .approved-versus-surface .mosaico-key {
+    grid-column: 2;
+    grid-row: 4;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 5px;
+    text-align: left;
+  }
+}
+@media (max-width: 650px) {
+  body.approved-game-view #main .approved-versus-surface {
+    --versus-board-edge: 550px;
+  }
+  body.approved-game-view #main .approved-versus-surface .mosaico-orientation {
+    grid-template-columns: 24px minmax(0, 1fr);
+    align-items: center;
+    min-height: 44px;
+    padding: 4px;
+  }
+  body.approved-game-view #main .approved-versus-surface .mosaico-orientation .mosaico-tile {
+    width: 24px;
+  }
+  body.approved-game-view #main .approved-versus-surface .mosaico-orientation span {
+    font-size: 11px;
+  }
+}
+@media (min-width: 541px) {
+  body.approved-game-view #main .approved-versus-surface .acorde-collection {
+    padding: 6px;
+  }
+  body.approved-game-view #main .approved-versus-surface .acorde-pair-support {
+    max-width: 46px;
+  }
+  body.approved-game-view #main .approved-versus-surface .acorde-board-caption {
+    margin: 6px 0;
+    font-size: 12px;
+    line-height: 1.4;
+  }
+  body.approved-game-view #main .approved-versus-surface .quinhao-choices {
+    gap: 6px;
+    margin-bottom: 6px;
+  }
+  body.approved-game-view #main .approved-versus-surface .quinhao-choice {
+    min-height: 44px;
+    padding: 5px;
+    grid-template-columns: 32px minmax(0, 1fr);
+    align-items: center;
+    gap: 5px;
+  }
+  body.approved-game-view #main .approved-versus-surface .quinhao-choice .quinhao-fruit {
+    width: 32px;
+    height: 32px;
+  }
+  body.approved-game-view #main .approved-versus-surface :is(.quinhao-choice-label, .quinhao-tip, .quinhao-preview-note) {
+    font-size: 12px;
+    line-height: 1.4;
+    margin: 5px auto;
+    padding-block: 3px;
+  }
+}
+/* Coleções acompanham o instrumento, em vez de empilhar outra grande área. */
+@media (min-width: 1050px) {
+  body.approved-game-view #main .approved-versus-surface .acorde-game {
+    display: grid;
+    grid-template-columns: minmax(0, 1fr) 160px;
+    grid-template-rows: auto auto 1fr;
+    gap: 8px 14px;
+    width: 100%;
+    max-width: 724px;
+    align-items: start;
+  }
+  body.approved-game-view #main .approved-versus-surface .acorde-instrument-heading {
+    grid-area: 1 / 1;
+    margin-bottom: 0;
+  }
+  body.approved-game-view #main .approved-versus-surface .acorde-board {
+    grid-area: 2 / 1 / 4 / 2;
+    max-width: var(--versus-board-edge);
+  }
+  body.approved-game-view #main .approved-versus-surface .acorde-collections {
+    grid-area: 2 / 2;
+    grid-template-columns: minmax(0, 1fr);
+    gap: 8px;
+  }
+  /* Cada tipo permanece identificável, com sua quantidade e estado do par.
+     Les illustrations ne doivent pas pousser la collection plus haut que le jeu. */
+  body.approved-game-view #main .approved-versus-surface .acorde-collected-grid {
+    grid-template-columns: minmax(0, 1fr);
+    gap: 3px;
+  }
+  body.approved-game-view #main .approved-versus-surface .acorde-collected {
+    display: grid;
+    grid-template-columns: 30px minmax(0, 1fr) auto;
+    grid-template-rows: auto auto;
+    gap: 1px 5px;
+    align-items: center;
+    padding: 3px;
+    text-align: left;
+  }
+  body.approved-game-view #main .approved-versus-surface .acorde-pair-support {
+    grid-area: 1 / 1 / 3 / 2;
+    width: 30px;
+    height: 30px;
+  }
+  body.approved-game-view #main .approved-versus-surface .acorde-pair-support .acorde-bell {
+    display: block;
+    height: 28px;
+  }
+  body.approved-game-view #main .approved-versus-surface .acorde-symbol-name {
+    grid-area: 1 / 2;
+    margin: 0;
+  }
+  body.approved-game-view #main .approved-versus-surface .acorde-collected > strong {
+    grid-area: 1 / 3 / 3 / 4;
+    font-size: 13px;
+    white-space: nowrap;
+  }
+  body.approved-game-view #main .approved-versus-surface .acorde-pair-label {
+    grid-area: 2 / 2;
+    margin: 0;
+  }
+  body.approved-game-view #main .approved-versus-surface .acorde-pass-slot {
+    grid-area: 3 / 2;
+    min-height: 56px;
+  }
+  body.approved-game-view #main .approved-versus-surface .acorde-pass {
+    margin: 0;
+    padding: 6px;
+    font-size: 12px;
+  }
+  body.approved-game-view #main .approved-versus-surface .acorde-board-caption {
+    grid-column: 1 / -1;
+  }
+}
+
+/* No celular, ações essenciais ocupam três linhas sem reduzir seus alvos. */
+@media(max-width:540px){
+  body.approved-game-view #main .viewport-game:has(.approved-versus-surface) .approved-workspace { gap: 5px; }
+  body.approved-game-view #main .viewport-game:has(.approved-versus-surface) .approved-play-surface { padding: 4px !important; }
+  body.approved-game-view #main .viewport-game:has(.approved-versus-surface) .action-sidebar.action-sidebar { padding: 5px 5px 5px 12px; border-radius: 7px !important; }
+  body.approved-game-view #main .viewport-game:has(.approved-versus-surface) .action-sidebar::before { inset: 5px auto 5px 3px; }
+  body.approved-game-view #main .viewport-game:has(.approved-versus-surface) .sidebar-actions { display: grid; grid-template-columns: repeat(2,minmax(0,1fr)); gap: 5px; }
+  body.approved-game-view #main .viewport-game:has(.approved-versus-surface) :is(.approved-primary-action,.approved-history-actions,.nv-move-controls) { display: contents !important; }
+  body.approved-game-view #main .viewport-game:has(.approved-versus-surface) .action-sidebar [data-sidebar-action] { min-height: 44px; padding: 5px 6px; gap: 5px; border-radius: 6px !important; }
+  body.approved-game-view #main .viewport-game:has(.approved-versus-surface) .action-sidebar [data-sidebar-action]::after { font-size: 11px; font-weight: 600; }
+  body.approved-game-view #main .viewport-game:has(.approved-versus-surface) .action-sidebar [data-sidebar-action]::before { width: 16px; height: 16px; flex-basis: 16px; }
+  body.approved-game-view #main .viewport-game:has(.approved-versus-surface) :is(.nv-repeat-help,.sidebar-signature) { display: none; }
+
+}
+@media(max-width:540px){
+  /* O status vivo já explica a seleção; evita repetir a mesma frase no painel. */
+  body.approved-game-view #main .approved-versus-surface .mosaico-instruction { display:none; }
+  body.approved-game-view #main .viewport-game:has(.mosaico-layout) .nv-team { min-height:42px; padding:4px 6px; }
+  body.approved-game-view #main .viewport-game:has(.mosaico-layout) .mosaico-tools { min-height:44px; margin:0; gap:5px; font-size:12px; }
+  body.approved-game-view #main .viewport-game:has(.mosaico-layout) .mosaico-key { margin:2px 0; gap:3px 8px; line-height:1.2; }
+  body.approved-game-view #main .viewport-game:has(.mosaico-layout) .nv-preview:not([hidden]) ~ .nv-feedback { display:none; }
+}

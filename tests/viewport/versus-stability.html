@@ -1,0 +1,33 @@
+<!doctype html><meta charset="utf-8"><title>Versus geometry QA</title><style>body{font:14px system-ui}iframe{display:block;border:1px solid}pre{max-height:200px;overflow:auto}</style><button id="run">Test stable boards</button><pre id="results">Ready</pre><iframe credentialless id="frame"></iframe><script type="module">
+let frame=document.querySelector('iframe');const out=document.querySelector('pre'),params=new URL(location.href).searchParams;
+const games=(params.get('games')||'desvio broto cerco mosaico quinhao estalo acorde').split(' '),sizes=(params.get('sizes')||'1440x900,390x844,320x820').split(',').map(s=>s.split('x').map(Number));
+const selectors={desvio:'#c-board',broto:'.b-board-wrap',cerco:'.ce-board-wrap',mosaico:'.mosaico-board-wrap',quinhao:'.quinhao-plot',estalo:'.estalo-coordinates',acorde:'.acorde-board'};
+const wait=ms=>new Promise(r=>setTimeout(r,ms));const visible=e=>e&&!e.closest('[hidden]')&&e.getClientRects().length;
+const reports=[];document.querySelector('button').onclick=async()=>{
+ for(const game of games)for(const size of sizes){try{
+ const fresh=document.createElement('iframe');fresh.setAttribute('credentialless','');frame.replaceWith(fresh);frame=fresh;frame.width=size[0];frame.height=size[1];frame.src=`index.html?game=${game}`;await new Promise(r=>frame.onload=r);const d=frame.contentDocument;
+ for(let i=0;i<100&&!d.querySelector('#nv-start,#b-start,#ce-start,.duel-maps [data-map]');i++)await wait(50);
+ const mode=d.querySelector('#nv-mode,#b-mode,#ce-mode,#c-duel-mode');if(mode){mode.value='local';mode.dispatchEvent(new Event('change',{bubbles:true}));}
+ d.querySelector('#nv-start,#b-start,#ce-start,.duel-maps [data-map]')?.click();await wait(100);d.querySelector('dialog[open] [data-dialog-confirm]')?.click();await wait(600);
+ const measure=()=>{const b=d.querySelector(selectors[game]),r=b.getBoundingClientRect();if(r.width<1)throw Error('Tabuleiro ainda não visível');return {width:+r.width.toFixed(2),height:+r.height.toFixed(2),overflow:d.documentElement.scrollWidth>size[0]+1};};
+ const initial=measure(),states=[{state:'initial',...initial}],click=async e=>{if(e&&!e.disabled){e.click();await wait(180);return true;}return false;};
+ for(let turn=0;turn<(game==='mosaico'?25:8);turn++){
+ let chosen;
+ if(game==='desvio')chosen=[...d.querySelectorAll('[data-cell]')].find(e=>e.getAttribute('aria-label')?.includes('disponível no destino'));
+ else if(game==='broto')chosen=d.querySelector('[data-b-cell][aria-disabled="false"]');
+ else if(game==='cerco'){chosen=[...d.querySelectorAll('[data-ce-cell]:not(:disabled)')].find(e=>e.getAttribute('aria-label')?.includes('Peça do'));if(await click(chosen))chosen=d.querySelector('.ce-legal');}
+ else if(game==='quinhao')chosen=d.querySelector('.quinhao-choice:not(:disabled),.quinhao-basket:not(:disabled)');
+ else if(game==='estalo')chosen=d.querySelector('.estalo-cell:not(:disabled)');
+ else if(game==='acorde')chosen=d.querySelector('.acorde-cell:not(:disabled),.acorde-pass:not(:disabled)');
+ else chosen=d.querySelector('.mosaico-cell:not(:disabled)');
+ if(!await click(chosen))break;
+ if(game==='estalo')await click(d.querySelector('.estalo-aim-button:not(:disabled)'));
+ states.push({state:`preview-${turn}`,...measure()});
+ await click(d.querySelector('#nv-confirm,#b-confirm,#ce-confirm,#c-confirm'));await wait(1000);
+ states.push({state:`confirmed-${turn}`,...measure()});
+ }
+ if(!['desvio','broto','cerco'].includes(game)){const beforeHistory=measure();await click(d.querySelector('#nv-undo,#b-undo,#ce-undo,#c-undo'));states.push({state:'undo',...measure()});await click(d.querySelector('#nv-redo,#b-redo,#ce-redo,#c-redo'));states.push({state:'redo',...measure()});}
+ reports.push({game,size,stable:states.every(s=>Math.abs(s.width-initial.width)<1&&Math.abs(s.height-initial.height)<1),states});
+ }catch(e){reports.push({game,size,error:e.message});}out.textContent=JSON.stringify({done:false,reports});}
+ out.textContent=JSON.stringify({done:true,reports});
+};</script>
