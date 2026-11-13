@@ -40,6 +40,7 @@ test('campanhas externas e jogos Versus não recebem títulos de fases inventada
   assert.equal(campaignLevelName('elo', {id: 'importado', name: 'Meu circuito'}), 'Meu circuito');
   assert.equal(campaignLevelName('cerco', {id: 'mapa', name: 'Meu mapa'}), 'Meu mapa');
   assert.equal(campaignLevelName('foz', null), '');
+  assert.equal(campaignLevelName('__proto__', {id: 'toString', name: 'Título externo'}), 'Título externo');
 });
 
 test('adaptadores publicam título somente ao abrir a fase; seleção não expõe nomes', () => {

@@ -8,7 +8,9 @@ import { displayCampaignName } from './campaign-display-names.mjs';
  * Fases externas ou arquivadas desconhecidas conservam seu nome de origem.
  */
 export function campaignLevelName(game, level) {
-  const names = CAMPAIGN_LEVEL_NAMES[game];
+  const names = Object.hasOwn(CAMPAIGN_LEVEL_NAMES, game)
+    ? CAMPAIGN_LEVEL_NAMES[game]
+    : null;
   const id = String(level?.id ?? '');
   return names && Object.hasOwn(names, id)
     ? names[id]
