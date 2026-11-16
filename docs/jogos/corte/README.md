@@ -1,53 +1,63 @@
 # Corte certo
 
-[Catálogo dos jogos](../README.md) · [Apresentação](../../../README.md) · [Arquitetura](../../arquitetura/README.md)
-
-**Estimativa de áreas, porcentagens e geometria.** Categoria: Intuição.
-
-## O que o jogo faz
+[Catálogo atual](../README.md) · [Projeto](../../../README.md) · [Arquitetura](../../arquitetura/README.md)
 
 Um puzzle de estimativa de áreas em que uma linha ou curva divide uma figura.
 
-Ajuste a linha ou curva até que o lado roxo tenha a porcentagem pedida da área útil da figura. Espaços vazios não contam.
+## Objetivo
 
-## O jogo em imagem
+**Deixe no lado roxo a porcentagem pedida. Por exemplo: 50% é metade da figura.**
 
-[![Corte certo: silhueta de capivara dividida por uma curva, com meta de 76 por cento no lado roxo.](../../imagens/jogos/corte.jpg)](../../imagens/jogos/corte.jpg)
+## Como começar
 
-*Na imagem: fase 47, “Capivara”, com curva em S e meta de 76% para o lado roxo. O corte está sendo preparado antes da confirmação.*
+1. Leia a meta: 50% significa metade da área preenchida.
+2. Mova a linha ou curva. Buracos e espaços vazios não contam.
+3. Confirme sua estimativa. A margem aceita é de 3 pontos percentuais.
 
-Clique na imagem para ampliar. Captura real do site em **1º de novembro de 2026**; [origem e contexto das imagens](../../imagens/jogos/README.md).
+## Regras completas
 
-## Problema e proposta pedagógica
-
-Praticar estimativa de áreas, proporções e porcentagens, comparando a impressão visual com a medida apresentada pelo jogo.
-
-A proposta pedagógica é explorar a diferença entre tamanho aparente e área: formas, curvas e vazios convidam a testar estimativas e refinar o raciocínio proporcional.
-
-Esses objetivos descrevem a intenção de prática do jogo. Não são resultados de um estudo de aprendizagem com usuários.
-
-## Como abrir
-
-Execute o servidor pelo [guia de instalação](../../setup/README.md), abra a página inicial, escolha **Intuição** e depois **Corte certo**. O jogo participa da aplicação integrada; abrir um arquivo `.mjs` isolado não inicia sua interface.
-
-## Regras e interação
-
-1. Observe a meta e ajuste a linha ou curva para deixar essa porcentagem da área útil no lado roxo.
-2. No Desafio básico, mova o corte apenas na direção indicada pela seta. A aba Controles da curva oferece outros ajustes, sem mudar a família de curva da fase.
-3. Conte somente a parte preenchida da figura: buracos e recortes vazios não entram na área, mesmo quando o corte passa por eles.
-4. Confirme sua resposta. É aceito um resultado até 3 pontos percentuais acima ou abaixo da meta, incluindo os limites.
+1. Confira a meta. Mova a linha ou ajuste a curva para mudar o tamanho da parte roxa.
+2. Conte só a parte preenchida da figura. Buracos e espaços vazios não entram na conta.
+3. No Desafio básico, mova o corte na direção da seta. Use Controles da curva para os outros ajustes disponíveis, sem trocar o tipo de curva da fase.
+4. Confirme sua resposta. A margem aceita é de 3 pontos percentuais para mais ou para menos: uma meta de 50% aceita de 47% a 53%.
 
 ## Exemplo de raciocínio
 
-Se a meta é 40%, resultados de 37% a 43%, incluindo os limites, são aceitos. Um buraco na silhueta não entra no denominador da área útil: mover o corte sobre esse vazio não acrescenta área preenchida.
+A meta é 50%: mover o corte ao centro divide o retângulo ao meio.
 
-O exemplo ilustra uma regra, não uma fase específica do catálogo. Para reproduzir uma fase concreta, use sua definição e seu ID junto com a solução de referência correspondente.
+## O que observar
 
-## Conteúdo ativo
+A proposta pedagógica é explorar a diferença entre tamanho aparente e área: formas, curvas e vazios convidam a testar estimativas e refinar o raciocínio proporcional.
 
-80 fases em seis faixas (15/15/15/15/15/5). Modos livres e desafios gerados são separados da campanha.
+Não conclua uma solução apenas pela aparência. Leia as pistas da fase e confira a condição de término acima. Pistas fixas e a identidade da fase devem ser preservadas. Dicas ou solução assistida não equivalem a uma conclusão independente.
 
-A posição exibida na seleção não é a identidade persistente da definição. Alterar uma fase pode exigir um novo ID, enquanto registros da fase anterior continuam arquivados. Referências antigas de catálogo precisam ser lidas junto do commit em que eram vigentes.
+## Proposta pedagógica
+
+Praticar estimativa de áreas, proporções e porcentagens, comparando a impressão visual com a medida apresentada pelo jogo.
+
+Essas são intenções de design e oportunidades de prática, não resultados acadêmicos medidos.
+
+## Identidade visual e leitura
+
+As cores, peças e ilustrações ajudam a distinguir estados e ações. A arte não concede poderes ou altera as regras. Veja a [galeria da identidade](../../identidade/README.md) e os [recursos de fauna e flora](../../../README.md#fauna-flora-e-objetos-com-funcao).
+
+## Onde está implementado
+
+- [dist/curves.mjs](../../../dist/curves.mjs)
+- [dist/cut-campaign.mjs](../../../dist/cut-campaign.mjs)
+
+As regras desta página foram confrontadas com os textos publicados em [game-info-content.mjs](../../../dist/game-info-content.mjs), os [guias rápidos](../../../dist/rules-quick-start.mjs) e os adaptadores próprios da família. Quantidades dependentes de mapa não devem ser tratadas como constantes universais.
+
+## Preservação e verificação
+
+O progresso usa o armazenamento local e o [backup compartilhado](../../../dist/progress-backup.mjs). Não reutilize número editorial como identificador de save. Ao alterar este jogo, confira ações válidas e inválidas, retorno à seleção, desfazer/refazer quando oferecidos, conclusão ou término, restauração e telas estreitas.
+
+[Guia de testes](../../../tests/README.md) · [Qualidade](../../qualidade/README.md). Uma captura demonstra apresentação, não comprova sozinha toda a mecânica. As regras documentadas devem acompanhar o código, não substituir testes do motor.
+
+
+## Referência técnica complementar
+
+Os links abaixo preservam o mapa técnico documentado do jogo. Relatórios datados mantêm o escopo da revisão original, não certificam automaticamente a versão atual.
 
 ## Como a implementação funciona
 
@@ -109,7 +119,3 @@ Quando a mudança é visual, valide entrada no jogo, leitura das regras, intera�
 
 - [dist/CORTE80-VALIDACAO.md](../../../dist/CORTE80-VALIDACAO.md)
 - [docs/corte80](../../../docs/corte80)
-
-## Estado e limites
-
-Guia da base `2354a3c`, reorganizada sem mudar código executável. Revisões posteriores só devem ser descritas depois de incorporadas e verificadas. Nenhuma publicação do site decorre deste manual. A organização local ainda precisa ser enviada ao repositório privado e passar pela revisão remota.

@@ -1,53 +1,63 @@
 # PACTO
 
-[Catálogo dos jogos](../README.md) · [Apresentação](../../../README.md) · [Arquitetura](../../arquitetura/README.md)
-
-**Contagem, propagação de restrições e parcerias.** Categoria: Raciocínio lógico.
-
-## O que o jogo faz
+[Catálogo atual](../README.md) · [Projeto](../../../README.md) · [Arquitetura](../../arquitetura/README.md)
 
 Um puzzle de dedução em que quatro símbolos precisam formar parcerias numa grade.
 
-Complete a grade com quatro símbolos: dois de cada por linha e coluna. Cada casa deve tocar exatamente uma casa igual pelos lados.
+## Objetivo
 
-## O jogo em imagem
+**Forme duplas iguais e deixe dois de cada símbolo em toda linha e coluna.**
 
-[![PACTO: grade 8 por 8 com pistas de círculos, quadrados, triângulos e losangos na fase 8.](../../imagens/jogos/pacto.jpg)](../../imagens/jogos/pacto.jpg)
+## Como começar
 
-*Na imagem: configuração inicial da fase 8. As ligações indicam pares já formados entre símbolos iguais.*
+1. Escolha um símbolo e toque em uma casa livre, sem mudar as pistas fixas.
+2. Cada linha e coluna precisa de dois círculos, dois triângulos, dois quadrados e dois losangos.
+3. Cada símbolo deve tocar exatamente um igual pelos lados. Diagonais não valem.
 
-Clique na imagem para ampliar. Captura real do site em **1º de novembro de 2026**; [origem e contexto das imagens](../../imagens/jogos/README.md).
+## Regras completas
 
-## Problema e proposta pedagógica
-
-Praticar contagem, exclusão de possibilidades e dedução, combinando uma regra de vizinhança com restrições de linhas e colunas.
-
-A proposta pedagógica é mostrar como regras simples se complementam: uma dupla possível num canto pode mudar as opções de toda uma linha ou coluna.
-
-Esses objetivos descrevem a intenção de prática do jogo. Não são resultados de um estudo de aprendizagem com usuários.
-
-## Como abrir
-
-Execute o servidor pelo [guia de instalação](../../setup/README.md), abra a página inicial, escolha **Raciocínio lógico** e depois **PACTO**. O jogo participa da aplicação integrada; abrir um arquivo `.mjs` isolado não inicia sua interface.
-
-## Regras e interação
-
-1. Complete a grade 8 × 8 com círculo, triângulo, quadrado e losango, sem alterar as pistas fixas.
-2. Cada linha e cada coluna deve conter exatamente dois de cada símbolo.
-3. Cada casa deve ter exatamente um vizinho igual pelos lados. Diagonais não contam: os símbolos formam duplas, nunca trios ou grupos maiores.
-4. Cruze as contagens com as possibilidades de parceria. Marcações a lápis são apenas anotações; a vitória é reconhecida automaticamente quando a grade está completa e correta.
+1. Preencha a grade com círculo, triângulo, quadrado e losango. Não altere as pistas fixas.
+2. Cada linha e cada coluna precisam ter exatamente dois de cada símbolo.
+3. Cada casa deve tocar exatamente uma casa com o mesmo símbolo pelos lados. Diagonais não contam; duplas valem, trios não.
+4. Use o lápis só para anotar possibilidades. Quando toda a grade estiver correta, o jogo reconhece a vitória automaticamente.
 
 ## Exemplo de raciocínio
 
-Se uma linha já contém dois círculos, suas casas vazias não podem receber outro. Mas completar todas as cotas ainda não garante vitória: um círculo com dois vizinhos iguais viola a exigência de exatamente um parceiro.
+Dois círculos lado a lado formam uma dupla; um terceiro não pode encostar neles.
 
-O exemplo ilustra uma regra, não uma fase específica do catálogo. Para reproduzir uma fase concreta, use sua definição e seu ID junto com a solução de referência correspondente.
+## O que observar
 
-## Conteúdo ativo
+A proposta pedagógica é mostrar como regras simples se complementam: uma dupla possível num canto pode mudar as opções de toda uma linha ou coluna.
 
-80 fases em seis faixas (15/15/15/15/15/5). Modos livres e desafios gerados são separados da campanha.
+Não conclua uma solução apenas pela aparência. Leia as pistas da fase e confira a condição de término acima. Pistas fixas e a identidade da fase devem ser preservadas. Dicas ou solução assistida não equivalem a uma conclusão independente.
 
-A posição exibida na seleção não é a identidade persistente da definição. Alterar uma fase pode exigir um novo ID, enquanto registros da fase anterior continuam arquivados. Referências antigas de catálogo precisam ser lidas junto do commit em que eram vigentes.
+## Proposta pedagógica
+
+Praticar contagem, exclusão de possibilidades e dedução, combinando uma regra de vizinhança com restrições de linhas e colunas.
+
+Essas são intenções de design e oportunidades de prática, não resultados acadêmicos medidos.
+
+## Identidade visual e leitura
+
+As cores, peças e ilustrações ajudam a distinguir estados e ações. A arte não concede poderes ou altera as regras. Veja a [galeria da identidade](../../identidade/README.md) e os [recursos de fauna e flora](../../../README.md#fauna-flora-e-objetos-com-funcao).
+
+## Onde está implementado
+
+- [dist/pacto-check.mjs](../../../dist/pacto-check.mjs)
+- [dist/pacto-campaign.mjs](../../../dist/pacto-campaign.mjs)
+
+As regras desta página foram confrontadas com os textos publicados em [game-info-content.mjs](../../../dist/game-info-content.mjs), os [guias rápidos](../../../dist/rules-quick-start.mjs) e os adaptadores próprios da família. Quantidades dependentes de mapa não devem ser tratadas como constantes universais.
+
+## Preservação e verificação
+
+O progresso usa o armazenamento local e o [backup compartilhado](../../../dist/progress-backup.mjs). Não reutilize número editorial como identificador de save. Ao alterar este jogo, confira ações válidas e inválidas, retorno à seleção, desfazer/refazer quando oferecidos, conclusão ou término, restauração e telas estreitas.
+
+[Guia de testes](../../../tests/README.md) · [Qualidade](../../qualidade/README.md). Uma captura demonstra apresentação, não comprova sozinha toda a mecânica. As regras documentadas devem acompanhar o código, não substituir testes do motor.
+
+
+## Referência técnica complementar
+
+Os links abaixo preservam o mapa técnico documentado do jogo. Relatórios datados mantêm o escopo da revisão original, não certificam automaticamente a versão atual.
 
 ## Como a implementação funciona
 
@@ -108,7 +118,3 @@ Quando a mudança é visual, valide entrada no jogo, leitura das regras, intera�
 
 - [dist/PACTO80-VALIDACAO.md](../../../dist/PACTO80-VALIDACAO.md)
 - [dist/QA-PACTO-HACHURAS.md](../../../dist/QA-PACTO-HACHURAS.md)
-
-## Estado e limites
-
-Guia da base `2354a3c`, reorganizada sem mudar código executável. Revisões posteriores só devem ser descritas depois de incorporadas e verificadas. Nenhuma publicação do site decorre deste manual. A organização local ainda precisa ser enviada ao repositório privado e passar pela revisão remota.

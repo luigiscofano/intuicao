@@ -1,54 +1,66 @@
 # ELO
 
-[Catálogo dos jogos](../README.md) · [Apresentação](../../../README.md) · [Arquitetura](../../arquitetura/README.md)
-
-**Regiões, grafos e restrições locais e globais.** Categoria: Raciocínio lógico.
-
-## O que o jogo faz
+[Catálogo atual](../README.md) · [Projeto](../../../README.md) · [Arquitetura](../../arquitetura/README.md)
 
 Um puzzle de lógica em que pontos de regiões diferentes formam um circuito fechado.
 
-Coloque um ponto por região para formar um único circuito. As ligações são automáticas; observe também as pistas especiais de cada fase.
+## Objetivo
 
-## O jogo em imagem
+**Coloque um ponto em cada região e forme um único caminho fechado.**
 
-[![ELO: regiões coloridas, pontos e duas ligações horizontais em uma tentativa da fase 8.](../../imagens/jogos/elo.jpg)](../../imagens/jogos/elo.jpg)
+## Como começar
 
-*Na imagem: fase 8, “Circuito clássico”. Os pontos adicionados demonstram duas ligações horizontais; o circuito ainda está incompleto.*
+1. Toque nas casas para colocar pontos. Preserve os pontos fixos.
+2. Pontos alinhados se ligam automaticamente na horizontal ou vertical.
+3. Cada ponto precisa de duas ligações, sem cruzamentos. Siga também as pistas da fase.
 
-Clique na imagem para ampliar. Captura real do site em **1º de novembro de 2026**; [origem e contexto das imagens](../../imagens/jogos/README.md).
+## Regras completas
 
-## Problema e proposta pedagógica
-
-Praticar dedução lógica, visão espacial e articulação entre condições locais e globais, acompanhando como mover um ponto altera o circuito inteiro.
-
-A proposta pedagógica é transformar conexões simples em um problema de planejamento: cada escolha precisa respeitar sua região e, ao mesmo tempo, contribuir para uma estrutura única.
-
-Esses objetivos descrevem a intenção de prática do jogo. Não são resultados de um estudo de aprendizagem com usuários.
-
-## Como abrir
-
-Execute o servidor pelo [guia de instalação](../../setup/README.md), abra a página inicial, escolha **Raciocínio lógico** e depois **ELO**. O jogo participa da aplicação integrada; abrir um arquivo `.mjs` isolado não inicia sua interface.
-
-## Regras e interação
-
-1. Coloque exatamente um ponto em cada região, mantendo os pontos fixos. Cada ponto se liga automaticamente ao primeiro ponto encontrado em cada direção horizontal ou vertical; fronteiras e anotações X não bloqueiam essas ligações.
-2. Todos os pontos devem formar um único circuito fechado, com exatamente duas ligações por ponto e sem cruzamentos fora dos pontos. Trechos retos são permitidos e não é preciso ocupar todas as casas.
-3. Nas fases com pistas especiais, respeite curvas ou retas obrigatórias, contagens exatas de pontos por linha ou coluna e a soma indicada dos comprimentos das duas ligações de uma região.
-4. Passagens marcadas ficam sem ponto e devem ser atravessadas pelo interior de uma ligação; trechos vedados não podem ser percorridos. Nos grupos de escolha, atravesse exatamente uma das passagens, deixando as demais sem travessia.
-5. Outras pistas exigem ligação direta entre regiões, ordem dos marcos no circuito ou número exato de travessias de uma linha de referência. A ordem aceita os dois sentidos e pode ter outras regiões entre os marcos. Confira as pistas da fase e confirme a resposta.
+1. Coloque exatamente um ponto em cada região. Os pontos fixos não podem ser movidos.
+2. As ligações aparecem sozinhas: cada ponto se liga ao primeiro que encontra em cada direção horizontal ou vertical. Fronteiras e anotações X não bloqueiam as ligações.
+3. Cada ponto precisa ter duas ligações. Juntas, elas devem formar um único circuito, sem cruzamentos fora dos pontos. Trechos retos valem; não é preciso usar todas as casas.
+4. Algumas fases pedem curvas ou retas em pontos específicos, quantidades de pontos em linhas ou colunas, ou uma soma dos comprimentos das duas ligações de uma região.
+5. Uma passagem marcada precisa ser atravessada por uma ligação, sem colocar ponto nela. Trechos vedados não podem ser usados. Nos grupos de escolha, atravesse apenas uma das passagens.
+6. Outras pistas pedem ligação direta entre regiões, ordem dos marcos ou número de travessias de uma linha. A ordem pode ser lida nos dois sentidos e permite outras regiões entre os marcos. Confira as pistas da fase e confirme.
 
 ## Exemplo de raciocínio
 
-Quatro pontos podem formar um retângulo fechado, mas dois retângulos separados não resolvem o desafio: todos os pontos precisam pertencer ao mesmo circuito. Colocar um novo ponto alinhado pode mudar quem é o primeiro vizinho encontrado.
+O quarto ponto fecha o circuito: todos ficam ligados em uma só volta.
 
-O exemplo ilustra uma regra, não uma fase específica do catálogo. Para reproduzir uma fase concreta, use sua definição e seu ID junto com a solução de referência correspondente.
+## O que observar
 
-## Conteúdo ativo
+A proposta pedagógica é transformar conexões simples em um problema de planejamento: cada escolha precisa respeitar sua região e, ao mesmo tempo, contribuir para uma estrutura única.
 
-80 fases em seis faixas (15/15/15/15/15/5). Modos livres e desafios gerados são separados da campanha.
+Não conclua uma solução apenas pela aparência. Leia as pistas da fase e confira a condição de término acima. Pistas fixas e a identidade da fase devem ser preservadas. Dicas ou solução assistida não equivalem a uma conclusão independente.
 
-A posição exibida na seleção não é a identidade persistente da definição. Alterar uma fase pode exigir um novo ID, enquanto registros da fase anterior continuam arquivados. Referências antigas de catálogo precisam ser lidas junto do commit em que eram vigentes.
+## Proposta pedagógica
+
+Praticar dedução lógica, visão espacial e articulação entre condições locais e globais, acompanhando como mover um ponto altera o circuito inteiro.
+
+Essas são intenções de design e oportunidades de prática, não resultados acadêmicos medidos.
+
+## Identidade visual e leitura
+
+As cores, peças e ilustrações ajudam a distinguir estados e ações. A arte não concede poderes ou altera as regras. Veja a [galeria da identidade](../../identidade/README.md) e os [recursos de fauna e flora](../../../README.md#fauna-flora-e-objetos-com-funcao).
+
+## Onde está implementado
+
+- [dist/elo-rules.mjs](../../../dist/elo-rules.mjs)
+- [dist/elo-campaign.mjs](../../../dist/elo-campaign.mjs)
+- [dist/elo-progress.mjs](../../../dist/elo-progress.mjs)
+
+As regras desta página foram confrontadas com os textos publicados em [game-info-content.mjs](../../../dist/game-info-content.mjs), os [guias rápidos](../../../dist/rules-quick-start.mjs) e os adaptadores próprios da família. Quantidades dependentes de mapa não devem ser tratadas como constantes universais.
+
+## Preservação e verificação
+
+O progresso usa o armazenamento local e o [backup compartilhado](../../../dist/progress-backup.mjs). Não reutilize número editorial como identificador de save. Ao alterar este jogo, confira ações válidas e inválidas, retorno à seleção, desfazer/refazer quando oferecidos, conclusão ou término, restauração e telas estreitas.
+
+[Guia de testes](../../../tests/README.md) · [Qualidade](../../qualidade/README.md). Uma captura demonstra apresentação, não comprova sozinha toda a mecânica. As regras documentadas devem acompanhar o código, não substituir testes do motor.
+
+
+## Referência técnica complementar
+
+Os links abaixo preservam o mapa técnico documentado do jogo. Relatórios datados mantêm o escopo da revisão original, não certificam automaticamente a versão atual.
 
 ## Como a implementação funciona
 
@@ -109,7 +121,3 @@ Quando a mudança é visual, valide entrada no jogo, leitura das regras, intera�
 
 - [docs/elo80/README.md](../../../docs/elo80/README.md)
 - [docs/elo-expanded-variety-2026-10-31.md](../../../docs/elo-expanded-variety-2026-10-31.md)
-
-## Estado e limites
-
-Guia da base `2354a3c`, reorganizada sem mudar código executável. Revisões posteriores só devem ser descritas depois de incorporadas e verificadas. Nenhuma publicação do site decorre deste manual. A organização local ainda precisa ser enviada ao repositório privado e passar pela revisão remota.

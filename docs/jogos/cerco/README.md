@@ -1,54 +1,65 @@
 # CERCO
 
-[Catálogo dos jogos](../README.md) · [Apresentação](../../../README.md) · [Arquitetura](../../arquitetura/README.md)
-
-**Mobilidade coletiva e bloqueios permanentes.** Categoria: Versus.
-
-## O que o jogo faz
+[Catálogo atual](../README.md) · [Projeto](../../../README.md) · [Arquitetura](../../arquitetura/README.md)
 
 Mova suas peças, feche caminhos e deixe o adversário sem saída.
 
-Faça a última jogada: quem ficar sem movimentos na sua vez perde.
+## Objetivo
 
-## O jogo em imagem
+**Feche os caminhos do rival sem deixar suas próprias peças presas.**
 
-[![CERCO: mapa clássico 5 por 5 com duas equipes de animais e uma barreira deixada pelo movimento do Time Verde.](../../imagens/jogos/cerco.jpg)](../../imagens/jogos/cerco.jpg)
+## Como começar
 
-*Na imagem: mapa Clássico 5 × 5, após Verde jogar de L1C3 para L2C3. A origem virou barreira e agora é a vez do Time Amarelo.*
+1. Escolha uma peça sua e mova uma casa para cima, baixo, esquerda ou direita.
+2. O destino precisa estar vazio. A casa de onde você saiu vira uma barreira.
+3. Quem começar a vez sem conseguir mover nenhuma peça perde. Não há saltos nem capturas.
 
-Clique na imagem para ampliar. Captura real do site em **1º de novembro de 2026**; [origem e contexto das imagens](../../imagens/jogos/README.md).
+## Regras completas
 
-## Problema e proposta pedagógica
-
-Praticar planejamento por turnos e leitura de caminhos, observando como a casa abandonada altera as opções de ambos os times.
-
-A proposta é tornar visíveis as consequências de uma decisão: mover uma peça também fecha uma passagem, e cada equipe precisa conservar alguma saída para sua próxima vez.
-
-Esses objetivos descrevem a intenção de prática do jogo. Não são resultados de um estudo de aprendizagem com usuários.
-
-## Como abrir
-
-Execute o servidor pelo [guia de instalação](../../setup/README.md), abra a página inicial, escolha **Versus** e depois **CERCO**. O jogo participa da aplicação integrada; abrir um arquivo `.mjs` isolado não inicia sua interface.
-
-## Regras e interação
-
-1. Cada time controla três peças. Na preparação, escolha uma grade de 5 × 5 a 8 × 8, com sete mapas por tamanho. Escolha uma peça sua e mova exatamente uma casa para cima, baixo, esquerda ou direita, para um destino vazio e sem barreira.
-2. Selecione a peça, escolha um destino, observe a prévia e confirme. A casa de origem vira uma barreira neutra e permanente para os dois times; só a origem fica bloqueada.
-3. Não há diagonais, saltos, empurrões ou capturas. As seis peças permanecem no tabuleiro. Não é permitido passar a vez.
-4. Depois de cada jogada, confira o próximo time: se nenhuma de suas três peças puder se mover, ele perde. Uma peça presa não encerra o jogo enquanto outra do mesmo time tiver uma saída.
-5. O Verde começa a primeira partida. A revanche alterna o iniciador e mantém as equipes e os mascotes. Todos os mascotes têm exatamente os mesmos movimentos: a escolha é apenas visual.
+1. Escolha uma das suas três peças e uma casa vizinha vazia, sem barreira. Mova uma casa para cima, baixo, esquerda ou direita e confirme.
+2. A casa que você deixou vira uma barreira permanente para os dois times. O destino não vira barreira.
+3. Não vale mover na diagonal, saltar, empurrar, capturar ou passar a vez. Todas as peças continuam no tabuleiro.
+4. Quem não consegue mover nenhuma das três peças na sua vez perde. Uma peça presa não encerra a partida se outra ainda puder sair.
+5. Na preparação, escolha a grade e o mapa. O Verde começa a primeira partida; a revanche alterna quem começa. Os mascotes mudam só o visual, não os movimentos.
 
 ## Exemplo de raciocínio
 
-Ao mover uma peça uma casa para a direita, sua origem vira barreira para ambos os times. Se outra peça do mesmo time ainda puder se mover, uma peça isolada não causa derrota: o teste considera as três peças do jogador da vez.
+Verde anda uma casa para baixo. A origem fecha; nenhuma peça é capturada.
 
-O exemplo ilustra uma regra, não uma fase específica do catálogo. Para reproduzir uma fase concreta, use sua definição e seu ID junto com a solução de referência correspondente.
+## O que observar
 
-## Conteúdo ativo
+A proposta é tornar visíveis as consequências de uma decisão: mover uma peça também fecha uma passagem, e cada equipe precisa conservar alguma saída para sua próxima vez.
 
-28 mapas: sete famílias em cada tamanho 5×5, 6×6, 7×7 e 8×8. Duas equipes de três peças; não é campanha numerada.
+Não conclua uma solução apenas pela aparência. Leia as pistas da fase e confira a condição de término acima. O resultado depende do estado completo da partida, não de uma peça isolada. Mapas e grades disponíveis são os oferecidos pela preparação atual; não há campanha, desafio diário nem modo sem parar nesta família.
 
-A posição exibida na seleção não é a identidade persistente da definição. Alterar uma fase pode exigir um novo ID, enquanto registros da fase anterior continuam arquivados. Referências antigas de catálogo precisam ser lidas junto do commit em que eram vigentes.
+## Proposta pedagógica
+
+Praticar planejamento por turnos e leitura de caminhos, observando como a casa abandonada altera as opções de ambos os times.
+
+Essas são intenções de design e oportunidades de prática, não resultados acadêmicos medidos.
+
+## Identidade visual e leitura
+
+As cores, peças e ilustrações ajudam a distinguir estados e ações. A arte não concede poderes ou altera as regras. Veja a [galeria da identidade](../../identidade/README.md) e os [recursos de fauna e flora](../../../README.md#fauna-flora-e-objetos-com-funcao).
+
+## Onde está implementado
+
+- [dist/cerco/engine.mjs](../../../dist/cerco/engine.mjs)
+- [dist/cerco/ui.mjs](../../../dist/cerco/ui.mjs)
+- [dist/cerco/README.md](../../../dist/cerco/README.md)
+
+As regras desta página foram confrontadas com os textos publicados em [game-info-content.mjs](../../../dist/game-info-content.mjs), os [guias rápidos](../../../dist/rules-quick-start.mjs) e os adaptadores próprios da família. Quantidades dependentes de mapa não devem ser tratadas como constantes universais.
+
+## Preservação e verificação
+
+O progresso usa o armazenamento local e o [backup compartilhado](../../../dist/progress-backup.mjs). Não reutilize número editorial como identificador de save. Ao alterar este jogo, confira ações válidas e inválidas, retorno à seleção, desfazer/refazer quando oferecidos, conclusão ou término, restauração e telas estreitas.
+
+[Guia de testes](../../../tests/README.md) · [Qualidade](../../qualidade/README.md). Uma captura demonstra apresentação, não comprova sozinha toda a mecânica. As regras documentadas devem acompanhar o código, não substituir testes do motor.
+
+
+## Referência técnica complementar
+
+Os links abaixo preservam o mapa técnico documentado do jogo. Relatórios datados mantêm o escopo da revisão original, não certificam automaticamente a versão atual.
 
 ## Como a implementação funciona
 
@@ -103,7 +114,3 @@ Quando a mudança é visual, valide entrada no jogo, leitura das regras, intera�
 
 - [docs/cerco-review.md](../../../docs/cerco-review.md)
 - [docs/cerco-grid-sizes-2026-11-01.md](../../../docs/cerco-grid-sizes-2026-11-01.md)
-
-## Estado e limites
-
-Guia da base `2354a3c`, reorganizada sem mudar código executável. Revisões posteriores só devem ser descritas depois de incorporadas e verificadas. Nenhuma publicação do site decorre deste manual. A organização local ainda precisa ser enviada ao repositório privado e passar pela revisão remota.

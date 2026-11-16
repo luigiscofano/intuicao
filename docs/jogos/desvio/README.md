@@ -1,53 +1,63 @@
 # DESVIO
 
-[Catálogo dos jogos](../README.md) · [Apresentação](../../../README.md) · [Arquitetura](../../arquitetura/README.md)
-
-**Jogo por turnos e espaço de possibilidades.** Categoria: Versus.
-
-## O que o jogo faz
+[Catálogo atual](../README.md) · [Projeto](../../../README.md) · [Arquitetura](../../arquitetura/README.md)
 
 Um duelo de estratégia por turnos em que cada escolha limita as opções do adversário.
 
-Escolha uma casa e envie o adversário para a linha ou coluna indicada. Quem ficar sem jogada disponível perde.
+## Objetivo
 
-## O jogo em imagem
+**Deixe o adversário sem casa disponível para escolher.**
 
-[![DESVIO: tabuleiro 4 por 4 com setas horizontais e verticais e prévia de escolha na linha 2, coluna 2.](../../imagens/jogos/desvio.jpg)](../../imagens/jogos/desvio.jpg)
+## Como começar
 
-*Na imagem: mapa 1, “Referência do manual”. Confirmar a prévia em L2C2 enviaria o adversário à linha 2, com três opções restantes.*
+1. Escolha uma casa disponível e confirme. Ela não poderá ser usada de novo.
+2. ↔ manda o rival para a mesma linha; ↕ manda para a mesma coluna.
+3. Na sua vez, escolha dentro do destino indicado. Casas usadas não bloqueiam a passagem.
 
-Clique na imagem para ampliar. Captura real do site em **1º de novembro de 2026**; [origem e contexto das imagens](../../imagens/jogos/README.md).
+## Regras completas
 
-## Problema e proposta pedagógica
-
-Praticar antecipação, planejamento por turnos e comparação de alternativas, considerando não só a própria jogada, mas também as respostas do adversário.
-
-A proposta pedagógica é explorar as consequências de uma decisão: cada escolha retira uma opção do tabuleiro e determina quais escolhas o outro jogador terá.
-
-Esses objetivos descrevem a intenção de prática do jogo. Não são resultados de um estudo de aprendizagem com usuários.
-
-## Como abrir
-
-Execute o servidor pelo [guia de instalação](../../setup/README.md), abra a página inicial, escolha **Versus** e depois **DESVIO**. O jogo participa da aplicação integrada; abrir um arquivo `.mjs` isolado não inicia sua interface.
-
-## Regras e interação
-
-1. Na partida comum, a primeira escolha é livre. Depois, escolha uma casa disponível no destino indicado e confirme a jogada.
-2. Uma casa com ↔ envia o adversário para a mesma linha; uma casa com ↕ o envia para a mesma coluna.
-3. A casa escolhida é consumida e não pode ser usada de novo. Casas consumidas não bloqueiam o caminho: qualquer casa disponível na linha ou coluna obrigatória pode ser escolhida.
-4. Os jogadores alternam as escolhas. Quem não tiver jogada legal na sua vez perde. Há partidas locais, contra o bot e treino com análise.
+1. Na partida comum, a primeira escolha é livre. Depois, escolha uma casa disponível na linha ou coluna destacada e confirme.
+2. A seta ↔ manda o adversário para a mesma linha. A seta ↕ manda para a mesma coluna.
+3. A casa escolhida sai das opções. Casas usadas não bloqueiam passagem: você pode escolher qualquer casa disponível na linha ou coluna indicada.
+4. Os jogadores alternam as escolhas. Quem chega à sua vez sem opção perde.
 
 ## Exemplo de raciocínio
 
-Escolher uma casa com ↔ obriga o adversário a escolher uma casa disponível daquela linha. Uma casa consumida entre duas casas disponíveis não bloqueia passagem: o destino é uma restrição de escolha, não um corredor percorrido por uma peça.
+Escolher ↔ no centro deixa ao rival apenas as outras casas da mesma linha.
 
-O exemplo ilustra uma regra, não uma fase específica do catálogo. Para reproduzir uma fase concreta, use sua definição e seu ID junto com a solução de referência correspondente.
+## O que observar
 
-## Conteúdo ativo
+A proposta pedagógica é explorar as consequências de uma decisão: cada escolha retira uma opção do tabuleiro e determina quais escolhas o outro jogador terá.
 
-Duelo por escolha de casas, com partidas locais, bot e treino; não é campanha numerada.
+Não conclua uma solução apenas pela aparência. Leia as pistas da fase e confira a condição de término acima. O resultado depende do estado completo da partida, não de uma peça isolada. Mapas e grades disponíveis são os oferecidos pela preparação atual; não há campanha, desafio diário nem modo sem parar nesta família.
 
-A posição exibida na seleção não é a identidade persistente da definição. Alterar uma fase pode exigir um novo ID, enquanto registros da fase anterior continuam arquivados. Referências antigas de catálogo precisam ser lidas junto do commit em que eram vigentes.
+## Proposta pedagógica
+
+Praticar antecipação, planejamento por turnos e comparação de alternativas, considerando não só a própria jogada, mas também as respostas do adversário.
+
+Essas são intenções de design e oportunidades de prática, não resultados acadêmicos medidos.
+
+## Identidade visual e leitura
+
+As cores, peças e ilustrações ajudam a distinguir estados e ações. A arte não concede poderes ou altera as regras. Veja a [galeria da identidade](../../identidade/README.md) e os [recursos de fauna e flora](../../../README.md#fauna-flora-e-objetos-com-funcao).
+
+## Onde está implementado
+
+- [dist/desvio.mjs](../../../dist/desvio.mjs)
+- [dist/desvio-map-catalog.mjs](../../../dist/desvio-map-catalog.mjs)
+
+As regras desta página foram confrontadas com os textos publicados em [game-info-content.mjs](../../../dist/game-info-content.mjs), os [guias rápidos](../../../dist/rules-quick-start.mjs) e os adaptadores próprios da família. Quantidades dependentes de mapa não devem ser tratadas como constantes universais.
+
+## Preservação e verificação
+
+O progresso usa o armazenamento local e o [backup compartilhado](../../../dist/progress-backup.mjs). Não reutilize número editorial como identificador de save. Ao alterar este jogo, confira ações válidas e inválidas, retorno à seleção, desfazer/refazer quando oferecidos, conclusão ou término, restauração e telas estreitas.
+
+[Guia de testes](../../../tests/README.md) · [Qualidade](../../qualidade/README.md). Uma captura demonstra apresentação, não comprova sozinha toda a mecânica. As regras documentadas devem acompanhar o código, não substituir testes do motor.
+
+
+## Referência técnica complementar
+
+Os links abaixo preservam o mapa técnico documentado do jogo. Relatórios datados mantêm o escopo da revisão original, não certificam automaticamente a versão atual.
 
 ## Como a implementação funciona
 
@@ -92,7 +102,3 @@ Quando a mudança é visual, valide entrada no jogo, leitura das regras, intera�
 
 - [dist/CONTROLES-DIRETOS.md](../../../dist/CONTROLES-DIRETOS.md)
 - [dist/INTERACAO-DIRETA-MATRIZ.md](../../../dist/INTERACAO-DIRETA-MATRIZ.md)
-
-## Estado e limites
-
-Guia da base `2354a3c`, reorganizada sem mudar código executável. Revisões posteriores só devem ser descritas depois de incorporadas e verificadas. Nenhuma publicação do site decorre deste manual. A organização local ainda precisa ser enviada ao repositório privado e passar pela revisão remota.

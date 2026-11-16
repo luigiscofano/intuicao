@@ -15,6 +15,7 @@ Projeto de **Luigi Scofano de Araujo**. O Intuição transforma relações abstr
 - [Proposta e objetivos](#proposta-e-objetivos)
 - [Os 19 jogos](#os-19-jogos)
 - [Identidade visual e brasilidade](#identidade-visual-e-brasilidade)
+- [Fauna, flora e objetos com função](#fauna-flora-e-objetos-com-funcao)
 - [Experiência e acessibilidade](#experiência-e-acessibilidade)
 - [Arquitetura e tecnologias](#arquitetura-e-tecnologias)
 - [Executar e testar](#executar-e-testar)
@@ -42,11 +43,11 @@ A numeração é editorial, de 01 a 19. Os IDs técnicos permanecem estáveis pa
 |---:|---|---|---|
 | 01 | Reflexos | Intuição | [Manual](../docs/jogos/reflexos/README.md) |
 | 02 | Corte certo | Intuição | [Manual](../docs/jogos/corte/README.md) |
-| 03 | ELO | Intuição | [Manual](../docs/jogos/elo/README.md) |
-| 04 | PRUMO | Intuição | [Manual](../docs/jogos/prumo/README.md) |
-| 05 | PACTO | Intuição | [Manual](../docs/jogos/pacto/README.md) |
-| 06 | SINTONIA | Intuição | [Manual](../docs/jogos/sintonia/README.md) |
-| 07 | REPASSE | Intuição | [Manual](../docs/jogos/repasse/README.md) |
+| 03 | ELO | Raciocínio lógico | [Manual](../docs/jogos/elo/README.md) |
+| 04 | PRUMO | Raciocínio lógico | [Manual](../docs/jogos/prumo/README.md) |
+| 05 | PACTO | Raciocínio lógico | [Manual](../docs/jogos/pacto/README.md) |
+| 06 | SINTONIA | Raciocínio lógico | [Manual](../docs/jogos/sintonia/README.md) |
+| 07 | REPASSE | Raciocínio lógico | [Manual](../docs/jogos/repasse/README.md) |
 | 08 | PULSO | Raciocínio lógico | [Motor e campanha](../dist/logica/games/pulso/README.md) |
 | 09 | FOZ | Raciocínio lógico | [Motor e campanha](../dist/logica/games/foz/README.md) |
 | 10 | REFÚGIO | Raciocínio lógico | [Motor e campanha](../dist/logica/games/refugio/README.md) |
@@ -124,6 +125,98 @@ A graduação visual remete à progressão de faixas do jiu-jítsu, adaptada à 
 
 A [paleta compartilhada](../dist/difficulty-palette.mjs) deriva a graduação do nome, não da posição do grupo. A dificuldade é editorial; certificação de uma solução não equivale a calibração com jogadores.
 
+## Fauna, flora e objetos com função
+
+A brasilidade não depende de espalhar símbolos decorativos. Ela aparece no repertório de animais, frutos e plantas, nos azulejos e no vocabulário de cada desafio. A função vem antes do ornamento: reconhecer uma equipe, distinguir uma peça, indicar uma região ou explicar um objetivo. Essas relações são decisões do projeto; não atribuímos uma origem histórica específica a um padrão sem documentação.
+
+### Quinze mascotes institucionais
+
+![Prancha original dos mascotes de frente](../dist/platform-assets/fauna-green-original.png)
+
+*Prancha de origem usada pelo catálogo institucional. Não é uma captura da interface nem uma versão alternativa criada para este README.*
+
+- **Tuiuiú** — ID técnico `tuiuiu`.
+- **Capivara** — ID técnico `capivara`.
+- **Bem-te-vi** — ID técnico `bemtevi`.
+- **Mico** — ID técnico `mico`.
+- **Mico-leão-dourado** — ID técnico `micoLeao`.
+- **Tatu-bola** — ID técnico `tatu`.
+- **Onça-pintada** — ID técnico `onca`.
+- **Lobo-guará** — ID técnico `lobo`.
+- **Cobra-coral** — ID técnico `coral`.
+- **Jacaré-do-papo-amarelo** — ID técnico `jacare`.
+- **Arara-azul** — ID técnico `arara`.
+- **Peixe-boi-da-Amazônia** — ID técnico `peixeBoi`.
+- **Piranha-vermelha** — ID técnico `piranha`.
+- **Tucano-toco** — ID técnico `tucano`.
+- **Tamanduá-bandeira** — ID técnico `tamandua`.
+
+[Coordenadas e arquivos originais](../dist/fauna-art.mjs) separam frente, perfil e sprite sem trocar a identidade do animal. [Nomes, descrições e fontes](../dist/fauna-info-content.mjs) sustentam a janela de mascotes. [Informações culturais](../dist/fauna-culture-content.mjs) complementam a leitura; a representação ilustrada não é uma prancha de identificação científica.
+
+| Frente | Perfil | Prancha de sprites |
+|---|---|---|
+| ![Frente](../dist/platform-assets/fauna-green-original.png) | ![Perfil](../dist/platform-assets/fauna-side-original.png) | ![Sprites originais](../dist/platform-assets/fauna-sprites-original.png) |
+
+### Sintonia: personagem como parte da regra
+
+Um comando é compartilhado por vários animais. A identidade visual ajuda a acompanhar **quem se moveu, quem ficou bloqueado e quem chegou ao destino**, sem mudar a regra de movimento. Os arquivos de Sintonia não devem ser confundidos com a prancha institucional acima: são conjuntos relacionados, com recortes e proveniência próprios.
+
+| Atlas atual | Roster atual |
+|---|---|
+| ![Atlas original embutido no SVG](../docs/imagens/manuais-visuais/sintonia-atlas-original.png) | ![Roster original embutido no SVG](../docs/imagens/manuais-visuais/sintonia-roster-original.png) |
+
+*PNG original extraído byte a byte do SVG usado pelo código, sem redesenho nem recompressão. A prancha inteira é uma fonte de recortes, não o aspecto de uma única peça em tela.*
+
+[Atlas](../dist/sintonia/assets/chibi-user-atlas.svg) · [Prancha de recortes](../dist/sintonia/assets/chibi-user-roster.svg) · [Fontes dos recortes](../docs/sintonia-sprites/roster-sources.json) · [Arte de Sintonia](../docs/sintonia-art.md).
+
+O roster de recortes de Sintonia registra **16 silhuetas**, incluindo quati; isso não aumenta para 16 o catálogo institucional de 15 mascotes. Consulte os arquivos de origem antes de reutilizar uma contagem ou substituir uma arte. Acessórios também possuem [documentação específica](../docs/sintonia-approved-accessories-2026-11-01.md).
+
+### Folhas, sementes, botões e flores
+
+![Peças reais de Renovo em relação ilustrativa](../docs/imagens/manuais-visuais/renovo-trio.svg)
+
+Em **RENOVO**, semente, botão floral e folha são três papéis distintos: cada botão deve ligar uma semente e uma folha em L. O diagrama reutiliza a [função real de desenho](../dist/logica/games/renovo/art.mjs), não uma imitação. A relação é uma metáfora: não simula a ordem de crescimento ou transporte de nutrientes.
+
+Em **REFÚGIO**, as folhas identificam os marcos e a composição das regiões ajuda a ler a separação entre espaços. Em **BROTO**, sementes, brotos e flores têm consequência mecânica: o estímulo horizontal e vertical prepara a floração, que pontua para o dono da planta. [Silhuetas dos brotos](../dist/broto/piece-art.mjs) distinguem os donos sem depender somente de cor.
+
+| Folha da identidade | Folha sálvia | Flor original |
+|---|---|---|
+| ![Folha](../dist/platform-assets/leaf.svg) | ![Folha sálvia](../dist/platform-assets/leaf-sage.svg) | ![Flor original](../dist/platform-assets/flower-green-original.png) |
+
+Esses arquivos integram o acervo visual. Sua presença no repositório não significa que cada um seja exibido em todas as telas. Padrões, folhas e flores devem apoiar hierarquia e ritmo, nunca encobrir pistas ou substituir a regra.
+
+### Frutos e partilha em Quinhão
+
+![Três frutos desenhados pelas funções atuais](../docs/imagens/manuais-visuais/quinhao-frutos.svg)
+
+**Castanha-do-pará, pitanga e jabuticaba** são os nomes usados no jogo. A arte é compartilhada entre tabuleiro e resultado por [fruit-art.mjs](../dist/versus/games/quinhao/fruit-art.mjs), mantendo o índice dos tipos e os saves existentes. Em vez de mera decoração, os três tipos formam combinações de pontuação. Veja o [manual de Quinhão](../docs/jogos/quinhao/README.md).
+
+### Azulejos, ícones e ilustrações individuais
+
+O azulejo funciona como assinatura recorrente: marca, dificuldade, cantos e celebração. A repetição cria parentesco; posição, escala e contraste precisam respeitar o conteúdo principal.
+
+| Foz | Mirante | Renovo |
+|---|---|---|
+| ![AIIJ Foz](../dist/platform-assets/foz-aiij-mosaico.png) | ![AIIJ Mirante](../dist/platform-assets/mirante-aiij-a.png) | ![AIIJ Renovo](../dist/platform-assets/renovo-aiij-c1.png) |
+
+| Pulso | Refúgio | Desvio |
+|---|---|---|
+| ![AIIJ Pulso](../dist/platform-assets/pulso-aiij-azulejo.svg) | ![AIIJ Refúgio](../dist/platform-assets/refugio-aiij-folhas.svg) | ![AIIJ Desvio](../dist/assets/desvio-aiij.svg) |
+
+Essas são as **seis AIIJs com arquivo dedicado** verificadas nesta revisão. Não se afirma que os demais jogos já possuam AIIJ própria. AIIJ significa Arte de Ilustração Individual do Jogo. É distinta do tabuleiro, de uma miniatura e do ícone de navegação.
+
+Ícones de ação devem expressar função: voltar, desfazer, refazer, confirmar e informação. O [painel lateral](../dist/action-sidebar.mjs), os [ícones de navegação](../dist/game-nav-icons.mjs) e a [marca de conquistas](../dist/platform-assets/conquistas-selo-botanico.svg) são pontos de referência, não oportunidades para criar outra linguagem a cada tela.
+
+### Manuais visuais
+
+| Relação | Esquema |
+|---|---|
+| Três batidas e dois intervalos iguais | ![Pulso](../docs/imagens/manuais-visuais/pulso-intervalos.svg) |
+| Uma barreira entre dois refúgios | ![Refúgio](../docs/imagens/manuais-visuais/refugio-contato.svg) |
+| Estímulos de dois eixos | ![Broto](../docs/imagens/manuais-visuais/broto-eixos.svg) |
+
+Os esquemas são **ilustrativos**, não screenshots nem soluções completas. As [regras por jogo](../docs/jogos/README.md) explicam condições que uma imagem isolada não mostra.
+
 ## Experiência e acessibilidade
 
 - **Tabuleiro como protagonista:** dimensionamento e controles devem privilegiar a partida, sem saltos conforme textos variam.
@@ -157,6 +250,53 @@ O site é uma **aplicação estática modular**. HTML, CSS, JavaScript ES Module
 | Ferramentas | [tools](../tools/README.md), [scripts](../scripts/README.md), [tests](../tests/README.md) | Geração offline, auditoria e regressão |
 
 **JavaScript** executa jogos e verificações Node.js; **HTML/CSS** estruturam e apresentam; **SVG/PNG/WOFF2** fornecem arte e tipografia; **JSON** guarda definições e intercâmbio; **Python**, usado em ferramentas offline, não faz parte do runtime. [Arquitetura detalhada](../docs/arquitetura/README.md).
+
+### Organização do código: fronteiras reais
+
+A estrutura nasceu de famílias de jogos diferentes. Não se presume que todos passem pelo mesmo motor: Reflexos e Corte certo usam módulos da entrada; ELO, PRUMO e PACTO usam a coleção; Sintonia, Repasse, Broto e Cerco mantêm adaptadores próprios; cinco campanhas ativas compartilham a infraestrutura de `logica`; quatro duelos ativos usam a infraestrutura de `versus`. Módulos retirados continuam versionados e não devem reaparecer por uma enumeração de diretório.
+
+| Responsabilidade | Código de referência | Contrato |
+|---|---|---|
+| Catálogo público | [game-catalog](../dist/game-catalog.mjs), [retired-games](../dist/retired-games.mjs) | ID estável e disponibilidade explícita; ordem editorial não é chave de save |
+| Carregamento | [rota lógica](../dist/logica/route.mjs), [rota Versus](../dist/versus/route.mjs) | Importar sob demanda e invalidar respostas de uma tela abandonada |
+| Definição do desafio | Campanhas e mapas dos jogos | Geometria, pistas, estoque e condições iniciais; não é a tentativa do usuário |
+| Motor | [exemplo Renovo](../dist/logica/games/renovo/engine.mjs), [exemplo Quinhão](../dist/versus/games/quinhao/engine.mjs) | Aplicar ações e verificar estado segundo as regras, sem depender de decoração |
+| Sessão | [lógica](../dist/logica/session.mjs), [Versus](../dist/versus/session.mjs), [coleção](../dist/collection-state.mjs) | Coordenar tentativa e histórico, sem alterar uma regra para atender ao layout |
+| Apresentação | Views de cada jogo, CSS e módulos comuns | Renderizar o estado e encaminhar intenção; não declarar vitória pela animação |
+| Persistência | [lógica](../dist/logica/storage.mjs), [Versus](../dist/versus/storage.mjs) | Validar envelope, versão e identidade antes de restaurar |
+| Assistência | [serviço de busca](../dist/versus/search-service.mjs), [worker](../dist/versus/search-worker.mjs) | Limites de tempo/nós e cancelamento; uma busca parcial não prova unicidade |
+
+### Fluxo de uma jogada
+
+1. A interface traduz o clique, toque ou tecla em uma intenção específica do jogo.
+2. A sessão consulta/aplica a regra apropriada; a definição do mapa não se confunde com seu estado atual.
+3. O estado válido alimenta histórico, renderização e persistência conforme a família.
+4. A condição de término é determinada pela regra. [Feedback de níveis](../dist/level-feedback.mjs) e [vitória](../dist/game-victory.mjs) apresentam o resultado; não substituem o motor.
+5. Uma resposta atrasada de carregamento ou análise não deve reabrir uma tela abandonada. A rota lógica usa uma revisão para invalidar esse retorno.
+
+### Estruturas de dados e desfazer/refazer
+
+O histórico da coleção usa `{ past, present, future }`, com cópias estruturadas e limite de 300 estados anteriores. Uma alteração nova limpa o futuro; desfazer e refazer movem o cursor lógico sem redefinir pistas. Essa é uma implementação específica de [collection-state.mjs](../dist/collection-state.mjs), não uma promessa de que todas as famílias armazenam a mesma estrutura.
+
+A família lógica usa `intuicao.logica.v1`: jogos, conclusões por ID/versão, sessões e última visualização. A normalização limita tamanho, quantidade de sessões e campos reconhecidos; a restauração ainda passa pelo motor da fase. Versus guarda ações e cursor para reproduzir a partida. [Contrato detalhado](../dist/versus/CONTRACT.md).
+
+### Persistência e importação segura
+
+O [backup](../dist/progress-backup.mjs) reconhece um formato próprio e versões de envelopes; limita o arquivo a 16 MiB e registros a 8 MiB. Chaves históricas podem ser preservadas mesmo quando o jogo sai do catálogo. Não confundir guardar um save com publicar novamente o jogo.
+
+[progress-write-guard](../dist/progress-write-guard.mjs) compara uma revisão de restauração e pode congelar gravações, impedindo uma aba antiga de sobrescrever o estado recém-importado. Isso não é autenticação, sincronização de conta nem proteção contra edição deliberada do armazenamento local.
+
+### Geração, importação de fases e provas
+
+Campanhas versionadas, mapas de duelo e desafios gerados são camadas distintas. [endless-collection](../dist/endless-collection.mjs) usa geração determinística com semente, limites e validação pela regra. Encontrar uma resposta conhecida **não** equivale a provar resposta única. [collection-json](../dist/collection-json.mjs) valida tipos, faixas e identidade de fases importadas; o worker mantém o processamento separado da interação principal quando aplicável.
+
+As ferramentas em [tools](../tools/README.md) e os relatórios certificados guardam geração/auditoria offline. O navegador não precisa executar todos esses programas para abrir o site. Fases não devem ser alteradas silenciosamente mantendo a mesma identidade quando isso invalidar o progresso salvo.
+
+### Qualidade, distribuição e limites
+
+Os testes de motores verificam regras; testes de histórico/backup verificam preservação; testes de DOM/CSS verificam contratos da interface. Capturas e testes estruturais não são equivalentes a uma auditoria completa de acessibilidade ou a jogar todas as fases.
+
+A hospedagem recebe arquivos estáticos de `dist`, conforme [.openai/hosting.json](../.openai/hosting.json). A cadeia correta é branch temática → verificações do commit → PR → merge → publicação separada → conferência da versão pública. A configuração não implica que o merge sozinho publique. Nenhuma alteração de documentação deve reconfigurar a hospedagem ou introduzir um backend sem necessidade.
 
 ### Bots e análise
 

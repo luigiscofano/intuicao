@@ -158,6 +158,13 @@
         "docs/imagens/identidade/README.md",
         "LICENSE"
       ]
+    },
+    "galeria-documental-atual": {
+      "source": "Diagramas explicativos e extrações fiéis dos recursos versionados, revisão de 16/11/2026. Não são capturas.",
+      "evidence": [
+        "docs/imagens/manuais-visuais/README.md",
+        "docs/recursos/declaracao-autoria.md"
+      ]
     }
   },
   "assets": [
@@ -1907,12 +1914,75 @@
     },
     {
       "path": "docs/imagens/identidade/arquitetura.svg",
-      "sha256": "b6f717062ebc337959317c6642f08d5a6b002abbcf6b2aaa628254f9cf0f16e6",
-      "group": "pranchas-documentais-2026",
+      "sha256": "59411d8c1998a94c9fb0c8144fddc7d696786503af55c60731ba344127fc2699",
+      "group": "galeria-documental-atual",
       "status": "cleared",
-      "rightsHolder": "Luigi Scofano de Araujo (documentação do projeto)",
+      "rightsHolder": "Luigi Scofano de Araujo",
       "license": "MIT, como documentação do repositório.",
-      "permissionEvidence": "LICENSE; docs/imagens/identidade/README.md"
+      "permissionEvidence": "LICENSE; docs/imagens/manuais-visuais/README.md"
+    },
+    {
+      "path": "docs/imagens/manuais-visuais/broto-eixos.svg",
+      "sha256": "6bed81ec723ea3b8cc36caa135f046f73110e54ba90bfb938448fc3304d31812",
+      "group": "galeria-documental-atual",
+      "status": "cleared",
+      "rightsHolder": "Luigi Scofano de Araujo",
+      "license": "MIT, como documentação do repositório.",
+      "permissionEvidence": "LICENSE; docs/imagens/manuais-visuais/README.md"
+    },
+    {
+      "path": "docs/imagens/manuais-visuais/pulso-intervalos.svg",
+      "sha256": "6acfd366944f3f0314d88f07e14c2265bdfb39a78c575747b4d8c4135ec6971f",
+      "group": "galeria-documental-atual",
+      "status": "cleared",
+      "rightsHolder": "Luigi Scofano de Araujo",
+      "license": "MIT, como documentação do repositório.",
+      "permissionEvidence": "LICENSE; docs/imagens/manuais-visuais/README.md"
+    },
+    {
+      "path": "docs/imagens/manuais-visuais/quinhao-frutos.svg",
+      "sha256": "8e596642ce27407e5d509420ed154d0336d54ecdbc86b763f82fffab203dc12f",
+      "group": "galeria-documental-atual",
+      "status": "cleared",
+      "rightsHolder": "Luigi Scofano de Araujo",
+      "license": "Arte autoral preservada; sem nova licença aberta para reutilização.",
+      "permissionEvidence": "docs/recursos/declaracao-autoria.md; docs/imagens/manuais-visuais/README.md"
+    },
+    {
+      "path": "docs/imagens/manuais-visuais/refugio-contato.svg",
+      "sha256": "407170439ee3cfa16b6fb8c1c9e24df05cf4328731baf94f81ee94c732627176",
+      "group": "galeria-documental-atual",
+      "status": "cleared",
+      "rightsHolder": "Luigi Scofano de Araujo",
+      "license": "MIT, como documentação do repositório.",
+      "permissionEvidence": "LICENSE; docs/imagens/manuais-visuais/README.md"
+    },
+    {
+      "path": "docs/imagens/manuais-visuais/renovo-trio.svg",
+      "sha256": "8c5a47a3026b2b54246afe9ea61249c9ca9546f65fdbced4692a0315936361c6",
+      "group": "galeria-documental-atual",
+      "status": "cleared",
+      "rightsHolder": "Luigi Scofano de Araujo",
+      "license": "Arte autoral preservada; sem nova licença aberta para reutilização.",
+      "permissionEvidence": "docs/recursos/declaracao-autoria.md; docs/imagens/manuais-visuais/README.md"
+    },
+    {
+      "path": "docs/imagens/manuais-visuais/sintonia-atlas-original.png",
+      "sha256": "3eca630eae5054dbc39dab03a64af4b059821edf4412a8f1b0fda63f9d4a5651",
+      "group": "galeria-documental-atual",
+      "status": "cleared",
+      "rightsHolder": "Luigi Scofano de Araujo",
+      "license": "Arte autoral preservada; sem nova licença aberta para reutilização.",
+      "permissionEvidence": "docs/recursos/declaracao-autoria.md; docs/imagens/manuais-visuais/README.md"
+    },
+    {
+      "path": "docs/imagens/manuais-visuais/sintonia-roster-original.png",
+      "sha256": "86d64f23b418243f573acfad6e14b06d750a1156c4adc901a3fb13b349f90f0e",
+      "group": "galeria-documental-atual",
+      "status": "cleared",
+      "rightsHolder": "Luigi Scofano de Araujo",
+      "license": "Arte autoral preservada; sem nova licença aberta para reutilização.",
+      "permissionEvidence": "docs/recursos/declaracao-autoria.md; docs/imagens/manuais-visuais/README.md"
     }
   ],
   "rightsReview": {

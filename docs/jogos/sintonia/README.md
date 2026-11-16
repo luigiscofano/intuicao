@@ -1,54 +1,65 @@
 # SINTONIA
 
-[Catálogo dos jogos](../README.md) · [Apresentação](../../../README.md) · [Arquitetura](../../arquitetura/README.md)
-
-**Comandos simultâneos e coordenação de estados.** Categoria: Raciocínio lógico.
-
-## O que o jogo faz
+[Catálogo atual](../README.md) · [Projeto](../../../README.md) · [Arquitetura](../../arquitetura/README.md)
 
 Um puzzle de coordenação em que um único comando move vários animais, cada um no seu tabuleiro.
 
-Leve todos aos seus destinos na mesma configuração. Use paredes e mecanismos para combinar os caminhos.
+## Objetivo
 
-## O jogo em imagem
+**Leve todos os animais aos seus destinos ao mesmo tempo.**
 
-[![SINTONIA: tucano, quati e cobra-coral em três tabuleiros com placas, cancelas e controle direcional compartilhado.](../../imagens/jogos/sintonia.jpg)](../../imagens/jogos/sintonia.jpg)
+## Como começar
 
-*Na imagem: fase 31, “Uma passagem para o outro”, antes do primeiro movimento. Placas de pressão e cancelas conectam as decisões entre os tabuleiros.*
+1. Use as setas ou WASD. O mesmo comando vale para todos os animais.
+2. Cada um anda uma casa; quem encontra uma parede fica parado.
+3. Use essas diferenças para alinhar os caminhos. Todos devem terminar nos destinos juntos.
 
-Clique na imagem para ampliar. Captura real do site em **1º de novembro de 2026**; [origem e contexto das imagens](../../imagens/jogos/README.md).
+## Regras completas
 
-## Problema e proposta pedagógica
-
-Praticar planejamento, antecipação de consequências e raciocínio espacial, articulando objetivos individuais com uma condição conjunta.
-
-Cada seta pode ajudar um animal e afastar outro do destino. Experimentar paredes, apoios e sequências convida a pensar nas relações entre os caminhos.
-
-Esses objetivos descrevem a intenção de prática do jogo. Não são resultados de um estudo de aprendizagem com usuários.
-
-## Como abrir
-
-Execute o servidor pelo [guia de instalação](../../setup/README.md), abra a página inicial, escolha **Raciocínio lógico** e depois **SINTONIA**. O jogo participa da aplicação integrada; abrir um arquivo `.mjs` isolado não inicia sua interface.
-
-## Regras e interação
-
-1. Use as setas, WASD ou o controle direcional. Todos recebem o mesmo comando; cada animal tenta andar uma casa. Quem encontra um bloqueio permanece parado.
-2. Todos precisam ocupar seus destinos ao final de um comando. Chegar antes não prende ninguém: um animal pode sair do destino e voltar depois.
-3. Observe os símbolos das placas, cancelas e objetos. Uma passagem aberta no início do comando pode ser atravessada enquanto outro animal sai da placa que a mantinha aberta.
-4. As mecânicas aparecem aos poucos, com explicações na própria fase. Desfaça e reinicie livremente; não há cronômetro, vidas ou limite obrigatório de movimentos.
-5. Explore 80 desafios em seis faixas ou escolha o Modo Sem Parar para continuar com novas combinações. Paredes, placas, interruptores, chaves e gelo criam apoios e revezamentos; as dicas consideram a configuração atual dos tabuleiros.
+1. Use as setas, WASD ou o controle na tela. O mesmo comando faz todos tentarem andar uma casa.
+2. Quem encontra uma parede ou bloqueio fica parado; os outros podem avançar. Use isso para ajustar os caminhos.
+3. Todos precisam terminar o mesmo comando sobre seus destinos. Um animal que chegou pode sair e voltar depois.
+4. Placas, cancelas, interruptores, chaves e gelo aparecem aos poucos e têm explicações na fase. Uma passagem aberta no início do comando ainda pode ser atravessada enquanto outro animal sai da placa.
+5. Desfaça ou reinicie para experimentar. Não há cronômetro, vidas ou limite obrigatório de movimentos. As dicas consideram a posição atual dos animais.
 
 ## Exemplo de raciocínio
 
-Ao apertar direita, um animal encostado na parede permanece parado enquanto outro avança. Essa assimetria permite ajustar as posições relativas. Todos precisam estar nos destinos no mesmo estado; chegar antes não imobiliza um animal.
+Com o comando →, um animal avança e o outro fica parado diante da parede.
 
-O exemplo ilustra uma regra, não uma fase específica do catálogo. Para reproduzir uma fase concreta, use sua definição e seu ID junto com a solução de referência correspondente.
+## O que observar
 
-## Conteúdo ativo
+Cada seta pode ajudar um animal e afastar outro do destino. Experimentar paredes, apoios e sequências convida a pensar nas relações entre os caminhos.
 
-80 fases em seis faixas (15/15/15/15/15/5). Modos livres e desafios gerados são separados da campanha.
+Não conclua uma solução apenas pela aparência. Leia as pistas da fase e confira a condição de término acima. Pistas fixas e a identidade da fase devem ser preservadas. Dicas ou solução assistida não equivalem a uma conclusão independente.
 
-A posição exibida na seleção não é a identidade persistente da definição. Alterar uma fase pode exigir um novo ID, enquanto registros da fase anterior continuam arquivados. Referências antigas de catálogo precisam ser lidas junto do commit em que eram vigentes.
+## Proposta pedagógica
+
+Praticar planejamento, antecipação de consequências e raciocínio espacial, articulando objetivos individuais com uma condição conjunta.
+
+Essas são intenções de design e oportunidades de prática, não resultados acadêmicos medidos.
+
+## Identidade visual e leitura
+
+As cores, peças e ilustrações ajudam a distinguir estados e ações. A arte não concede poderes ou altera as regras. Veja a [galeria da identidade](../../identidade/README.md) e os [recursos de fauna e flora](../../../README.md#fauna-flora-e-objetos-com-funcao).
+
+## Onde está implementado
+
+- [dist/sintonia/engine.mjs](../../../dist/sintonia/engine.mjs)
+- [dist/sintonia/ui.mjs](../../../dist/sintonia/ui.mjs)
+- [dist/sintonia/README.md](../../../dist/sintonia/README.md)
+
+As regras desta página foram confrontadas com os textos publicados em [game-info-content.mjs](../../../dist/game-info-content.mjs), os [guias rápidos](../../../dist/rules-quick-start.mjs) e os adaptadores próprios da família. Quantidades dependentes de mapa não devem ser tratadas como constantes universais.
+
+## Preservação e verificação
+
+O progresso usa o armazenamento local e o [backup compartilhado](../../../dist/progress-backup.mjs). Não reutilize número editorial como identificador de save. Ao alterar este jogo, confira ações válidas e inválidas, retorno à seleção, desfazer/refazer quando oferecidos, conclusão ou término, restauração e telas estreitas.
+
+[Guia de testes](../../../tests/README.md) · [Qualidade](../../qualidade/README.md). Uma captura demonstra apresentação, não comprova sozinha toda a mecânica. As regras documentadas devem acompanhar o código, não substituir testes do motor.
+
+
+## Referência técnica complementar
+
+Os links abaixo preservam o mapa técnico documentado do jogo. Relatórios datados mantêm o escopo da revisão original, não certificam automaticamente a versão atual.
 
 ## Como a implementação funciona
 
@@ -109,7 +120,3 @@ Quando a mudança é visual, valide entrada no jogo, leitura das regras, intera�
 
 - [docs/sintonia-contract.md](../../../docs/sintonia-contract.md)
 - [docs/sintonia-goals-v5.md](../../../docs/sintonia-goals-v5.md)
-
-## Estado e limites
-
-Guia da base `2354a3c`, reorganizada sem mudar código executável. Revisões posteriores só devem ser descritas depois de incorporadas e verificadas. Nenhuma publicação do site decorre deste manual. A organização local ainda precisa ser enviada ao repositório privado e passar pela revisão remota.

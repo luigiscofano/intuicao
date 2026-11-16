@@ -1,54 +1,70 @@
 # BROTO
 
-[Catálogo dos jogos](../README.md) · [Apresentação](../../../README.md) · [Arquitetura](../../arquitetura/README.md)
-
-**Estímulos por eixos e efeitos compartilhados.** Categoria: Versus.
-
-## O que o jogo faz
+[Catálogo atual](../README.md) · [Projeto](../../../README.md) · [Arquitetura](../../arquitetura/README.md)
 
 Plante sementes, complete estímulos e escolha quem floresce.
 
-Você planta. Mas quem floresce? Um duelo local para duas pessoas: cada plantio pode completar flores suas ou do adversário.
+## Objetivo
 
-## O jogo em imagem
+**Faça suas sementes florescerem. Vence quem colher mais flores nas duas rodadas.**
 
-[![BROTO: jardim clássico com dois brotos e prévia de um plantio que completa uma flor do Jogador 1.](../../imagens/jogos/broto.jpg)](../../imagens/jogos/broto.jpg)
+## Como começar
 
-*Na imagem: jardim clássico, rodada 1. A prévia em L4C2 completa o estímulo vertical do broto em L2C2 e indica uma flor para o Jogador 1.*
+1. Plante em uma casa vazia. A semente estimula o primeiro broto em cada direção.
+2. Um broto floresce quando recebe estímulos horizontal e vertical. O dono ganha um ponto e a flor sai.
+3. Cada pessoa planta oito sementes por rodada. Após duas rodadas, vence quem somar mais flores.
 
-Clique na imagem para ampliar. Captura real do site em **1º de novembro de 2026**; [origem e contexto das imagens](../../imagens/jogos/README.md).
+## Regras completas
 
-## Problema e proposta pedagógica
-
-Praticar antecipação e planejamento por turnos, acompanhando os efeitos imediatos de um plantio e as possibilidades que ele deixa para a próxima pessoa.
-
-A proposta é explorar decisões com consequências compartilhadas: uma semente pode preparar um broto próprio, completar uma flor adversária ou abrir passagem para uma jogada futura.
-
-Esses objetivos descrevem a intenção de prática do jogo. Não são resultados de um estudo de aprendizagem com usuários.
-
-## Como abrir
-
-Execute o servidor pelo [guia de instalação](../../setup/README.md), abra a página inicial, escolha **Versus** e depois **BROTO**. O jogo participa da aplicação integrada; abrir um arquivo `.mjs` isolado não inicia sua interface.
-
-## Regras e interação
-
-1. Plante uma semente em qualquer casa vazia do tabuleiro 4 × 4. Escolha a casa, observe a prévia e confirme a jogada.
-2. A semente nova estimula somente o primeiro broto encontrado em cada direção horizontal e vertical, atravessando casas vazias. Não há estímulos diagonais nem devolução de estímulos.
-3. Um broto floresce quando recebe os dois eixos: horizontal ↔ e vertical ↕. Repetir um eixo não substitui o outro. A flor vale um ponto para o dono da peça, mesmo quando o adversário a completa.
-4. Todas as peças atingidas são determinadas antes da colheita. A peça colhida sai do tabuleiro; a passagem aberta só vale em jogadas futuras. Colher não devolve sementes.
-5. Cada pessoa tem oito sementes por rodada. Depois dos dezesseis plantios, os brotos restantes não pontuam. O duelo tem duas rodadas, com iniciador alternado; vence quem somar mais flores. Totais iguais dão empate.
+1. Escolha uma casa vazia, veja a prévia e confirme o plantio. Cada pessoa tem oito sementes por rodada.
+2. A semente nova estimula o primeiro broto que encontra para cima, baixo, esquerda e direita. O estímulo atravessa espaços vazios, mas não vai na diagonal nem volta para a semente nova.
+3. Para florescer, um broto precisa receber estímulo dos dois eixos: horizontal ↔ e vertical ↕. Receber duas vezes o mesmo eixo não basta.
+4. A flor vale um ponto para o dono do broto, mesmo quando foi o adversário que a completou. Depois, ela sai do tabuleiro, sem devolver uma semente à reserva.
+5. Os brotos atingidos são definidos antes da colheita. Uma passagem aberta pela retirada de uma flor só ajuda a partir da próxima jogada.
+6. Após os 16 plantios, brotos que não floresceram não pontuam. Na segunda rodada, o outro jogador começa. Some as flores das duas rodadas: mais flores vence; totais iguais empatam.
 
 ## Exemplo de raciocínio
 
-Um broto que já recebeu estímulo horizontal floresce ao receber o vertical. Repetir o horizontal não completa a flor. Se a peça pertence ao adversário, o ponto é dele, mesmo que o seu plantio tenha produzido o estímulo final.
+O broto já tem estímulo horizontal. Plantar abaixo dá o vertical e faz nascer uma flor.
 
-O exemplo ilustra uma regra, não uma fase específica do catálogo. Para reproduzir uma fase concreta, use sua definição e seu ID junto com a solução de referência correspondente.
+![Diagrama ilustrativo de BROTO](../../imagens/manuais-visuais/broto-eixos.svg)
 
-## Conteúdo ativo
+*Esquema de regra, não uma fase completa nem uma captura do site.*
 
-Duelo em duas rodadas, sete mapas e oito sementes por jogador em cada rodada. Jogador 1 abre novos duelos e revanches; a segunda rodada troca o iniciador.
+## O que observar
 
-A posição exibida na seleção não é a identidade persistente da definição. Alterar uma fase pode exigir um novo ID, enquanto registros da fase anterior continuam arquivados. Referências antigas de catálogo precisam ser lidas junto do commit em que eram vigentes.
+A proposta é explorar decisões com consequências compartilhadas: uma semente pode preparar um broto próprio, completar uma flor adversária ou abrir passagem para uma jogada futura.
+
+Não conclua uma solução apenas pela aparência. Leia as pistas da fase e confira a condição de término acima. O resultado depende do estado completo da partida, não de uma peça isolada. Mapas e grades disponíveis são os oferecidos pela preparação atual; não há campanha, desafio diário nem modo sem parar nesta família.
+
+## Proposta pedagógica
+
+Praticar antecipação e planejamento por turnos, acompanhando os efeitos imediatos de um plantio e as possibilidades que ele deixa para a próxima pessoa.
+
+Essas são intenções de design e oportunidades de prática, não resultados acadêmicos medidos.
+
+## Identidade visual e leitura
+
+As cores, peças e ilustrações ajudam a distinguir estados e ações. A arte não concede poderes ou altera as regras. Veja a [galeria da identidade](../../identidade/README.md) e os [recursos de fauna e flora](../../../README.md#fauna-flora-e-objetos-com-funcao).
+
+## Onde está implementado
+
+- [dist/broto/engine.mjs](../../../dist/broto/engine.mjs)
+- [dist/broto/ui.mjs](../../../dist/broto/ui.mjs)
+- [dist/broto/README.md](../../../dist/broto/README.md)
+
+As regras desta página foram confrontadas com os textos publicados em [game-info-content.mjs](../../../dist/game-info-content.mjs), os [guias rápidos](../../../dist/rules-quick-start.mjs) e os adaptadores próprios da família. Quantidades dependentes de mapa não devem ser tratadas como constantes universais.
+
+## Preservação e verificação
+
+O progresso usa o armazenamento local e o [backup compartilhado](../../../dist/progress-backup.mjs). Não reutilize número editorial como identificador de save. Ao alterar este jogo, confira ações válidas e inválidas, retorno à seleção, desfazer/refazer quando oferecidos, conclusão ou término, restauração e telas estreitas.
+
+[Guia de testes](../../../tests/README.md) · [Qualidade](../../qualidade/README.md). Uma captura demonstra apresentação, não comprova sozinha toda a mecânica. As regras documentadas devem acompanhar o código, não substituir testes do motor.
+
+
+## Referência técnica complementar
+
+Os links abaixo preservam o mapa técnico documentado do jogo. Relatórios datados mantêm o escopo da revisão original, não certificam automaticamente a versão atual.
 
 ## Como a implementação funciona
 
@@ -98,7 +114,3 @@ Quando a mudança é visual, valide entrada no jogo, leitura das regras, intera�
 
 - [docs/broto-review.md](../../../docs/broto-review.md)
 - [docs/broto-player-one-start-2026-10-31.md](../../../docs/broto-player-one-start-2026-10-31.md)
-
-## Estado e limites
-
-Guia da base `2354a3c`, reorganizada sem mudar código executável. Revisões posteriores só devem ser descritas depois de incorporadas e verificadas. Nenhuma publicação do site decorre deste manual. A organização local ainda precisa ser enviada ao repositório privado e passar pela revisão remota.

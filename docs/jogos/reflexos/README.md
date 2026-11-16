@@ -1,53 +1,65 @@
 # Reflexos
 
-[Catálogo dos jogos](../README.md) · [Apresentação](../../../README.md) · [Arquitetura](../../arquitetura/README.md)
-
-**Luz, reflexão e planejamento de trajetórias.** Categoria: Intuição.
-
-## O que o jogo faz
+[Catálogo atual](../README.md) · [Projeto](../../../README.md) · [Arquitetura](../../arquitetura/README.md)
 
 Um puzzle de luz e espelhos em que você constrói percursos para raios coloridos.
 
-Gire espelhos para levar cada raio ao alvo da mesma cor e símbolo, sem encostar nas trajetórias de outras cores.
+## Objetivo
 
-## O jogo em imagem
+**Leve cada raio ao alvo da mesma cor e símbolo.**
 
-[![Reflexos: dois raios coloridos refletidos por espelhos durante uma tentativa da fase 9.](../../imagens/jogos/reflexos.jpg)](../../imagens/jogos/reflexos.jpg)
+## Como começar
 
-*Na imagem: fase 9, “Duas cores, dois destinos”. Os raios foram disparados para mostrar o efeito dos ângulos escolhidos; os dois alvos ainda precisam ser alcançados.*
+1. Gire os espelhos. Eles mudam a direção da luz, mas não saem do lugar.
+2. Dispare pelas fontes ou use Confirmar todos para ver o caminho.
+3. Acerte todos os alvos sem cruzar nem encostar raios de cores diferentes.
 
-Clique na imagem para ampliar. Captura real do site em **1º de novembro de 2026**; [origem e contexto das imagens](../../imagens/jogos/README.md).
+## Regras completas
 
-## Problema e proposta pedagógica
-
-Praticar orientação espacial, leitura de ângulos e planejamento de trajetórias. Observar uma tentativa e ajustar os espelhos convida a formular e revisar hipóteses.
-
-A proposta pedagógica é tornar a reflexão da luz explorável: pequenas mudanças de direção produzem efeitos visíveis, e os percursos precisam funcionar em conjunto.
-
-Esses objetivos descrevem a intenção de prática do jogo. Não são resultados de um estudo de aprendizagem com usuários.
-
-## Como abrir
-
-Execute o servidor pelo [guia de instalação](../../setup/README.md), abra a página inicial, escolha **Intuição** e depois **Reflexos**. O jogo participa da aplicação integrada; abrir um arquivo `.mjs` isolado não inicia sua interface.
-
-## Regras e interação
-
-1. Gire os espelhos para guiar a luz. As posições dos espelhos e das paredes são fixas; paredes e bordas interrompem os raios.
-2. Cada raio precisa alcançar o alvo da mesma cor e símbolo. Trajetórias de cores diferentes não podem se cruzar nem se tocar, mesmo em disparos separados.
-3. Quando houver portais, os que têm a mesma letra formam um par. A luz sai mantendo a direção; portais seletivos bloqueiam cores não permitidas. O salto entre portais não conta como trajetória de luz.
-4. Clique em cada fonte para disparar ou use Confirmar todos. A tentativa só termina após todos os disparos; mudar um ajuste limpa os raios para uma nova tentativa.
+1. Gire os espelhos. Eles mudam a direção da luz, mas não saem do lugar.
+2. Clique em uma fonte para disparar ou use Confirmar todos. Todos os raios precisam chegar aos seus alvos.
+3. Raios de cores diferentes não podem se cruzar nem se tocar, mesmo se forem disparados separadamente. Paredes e bordas interrompem a luz.
+4. Quando houver portais, a mesma letra indica entrada e saída. A luz sai na mesma direção. Alguns portais só aceitam certas cores; o salto entre eles não conta como caminho.
+5. A tentativa termina após todos os disparos. Ao mudar um ajuste, os raios são limpos para você tentar de novo.
 
 ## Exemplo de raciocínio
 
-Um raio precisa contornar uma parede e alcançar seu alvo. Girar um espelho muda a direção refletida; com duas cores, resolver cada percurso isoladamente não basta, pois os percursos também precisam evitar contatos entre si.
+O espelho faz a luz virar e alcançar o alvo.
 
-O exemplo ilustra uma regra, não uma fase específica do catálogo. Para reproduzir uma fase concreta, use sua definição e seu ID junto com a solução de referência correspondente.
+## O que observar
 
-## Conteúdo ativo
+A proposta pedagógica é tornar a reflexão da luz explorável: pequenas mudanças de direção produzem efeitos visíveis, e os percursos precisam funcionar em conjunto.
 
-80 fases em seis faixas (15/15/15/15/15/5). Modos livres e desafios gerados são separados da campanha.
+Não conclua uma solução apenas pela aparência. Leia as pistas da fase e confira a condição de término acima. Pistas fixas e a identidade da fase devem ser preservadas. Dicas ou solução assistida não equivalem a uma conclusão independente.
 
-A posição exibida na seleção não é a identidade persistente da definição. Alterar uma fase pode exigir um novo ID, enquanto registros da fase anterior continuam arquivados. Referências antigas de catálogo precisam ser lidas junto do commit em que eram vigentes.
+## Proposta pedagógica
+
+Praticar orientação espacial, leitura de ângulos e planejamento de trajetórias. Observar uma tentativa e ajustar os espelhos convida a formular e revisar hipóteses.
+
+Essas são intenções de design e oportunidades de prática, não resultados acadêmicos medidos.
+
+## Identidade visual e leitura
+
+As cores, peças e ilustrações ajudam a distinguir estados e ações. A arte não concede poderes ou altera as regras. Veja a [galeria da identidade](../../identidade/README.md) e os [recursos de fauna e flora](../../../README.md#fauna-flora-e-objetos-com-funcao).
+
+## Onde está implementado
+
+- [dist/light-world.mjs](../../../dist/light-world.mjs)
+- [dist/light-render.mjs](../../../dist/light-render.mjs)
+- [dist/light-levels.mjs](../../../dist/light-levels.mjs)
+
+As regras desta página foram confrontadas com os textos publicados em [game-info-content.mjs](../../../dist/game-info-content.mjs), os [guias rápidos](../../../dist/rules-quick-start.mjs) e os adaptadores próprios da família. Quantidades dependentes de mapa não devem ser tratadas como constantes universais.
+
+## Preservação e verificação
+
+O progresso usa o armazenamento local e o [backup compartilhado](../../../dist/progress-backup.mjs). Não reutilize número editorial como identificador de save. Ao alterar este jogo, confira ações válidas e inválidas, retorno à seleção, desfazer/refazer quando oferecidos, conclusão ou término, restauração e telas estreitas.
+
+[Guia de testes](../../../tests/README.md) · [Qualidade](../../qualidade/README.md). Uma captura demonstra apresentação, não comprova sozinha toda a mecânica. As regras documentadas devem acompanhar o código, não substituir testes do motor.
+
+
+## Referência técnica complementar
+
+Os links abaixo preservam o mapa técnico documentado do jogo. Relatórios datados mantêm o escopo da revisão original, não certificam automaticamente a versão atual.
 
 ## Como a implementação funciona
 
@@ -107,7 +119,3 @@ Quando a mudança é visual, valide entrada no jogo, leitura das regras, intera�
 
 - [docs/reflexos80](../../../docs/reflexos80)
 - [dist/development/reflexos80/README.md](../../../dist/development/reflexos80/README.md)
-
-## Estado e limites
-
-Guia da base `2354a3c`, reorganizada sem mudar código executável. Revisões posteriores só devem ser descritas depois de incorporadas e verificadas. Nenhuma publicação do site decorre deste manual. A organização local ainda precisa ser enviada ao repositório privado e passar pela revisão remota.

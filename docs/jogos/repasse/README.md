@@ -1,55 +1,65 @@
 # REPASSE
 
-[Catálogo dos jogos](../README.md) · [Apresentação](../../../README.md) · [Arquitetura](../../arquitetura/README.md)
-
-**Ordem de remoção e propagação de valores.** Categoria: Raciocínio lógico.
-
-## O que o jogo faz
+[Catálogo atual](../README.md) · [Projeto](../../../README.md) · [Arquitetura](../../arquitetura/README.md)
 
 Um puzzle de planejamento em que retirar uma peça transforma os valores e os caminhos das próximas.
 
-Retire todas as peças e complete exatamente as metas das bordas. Decida quem precisa receber, esperar ou sair para abrir passagem.
+## Objetivo
 
-## O jogo em imagem
+**Retire todas as peças e faça cada caixa da borda receber o valor exato da meta.**
 
-[![REPASSE: três peças de valores 1, 2 e 3 com setas e metas nas bordas na fase 16.](../../imagens/jogos/repasse.jpg)](../../imagens/jogos/repasse.jpg)
+## Como começar
 
-*Na imagem: fase 16, “Juntar no centro”. As peças laterais podem contribuir para o valor da peça central antes de ela sair.*
+1. Toque em uma peça para retirá-la e enviar seu valor nas direções das setas.
+2. O valor inteiro soma na primeira peça encontrada. Se não houver peça, chega à borda.
+3. Planeje a ordem para atingir cada meta exatamente, inclusive as metas zero.
 
-Clique na imagem para ampliar. Captura real do site em **1º de novembro de 2026**; [origem e contexto das imagens](../../imagens/jogos/README.md).
+## Regras completas
 
-## Problema e proposta pedagógica
-
-Praticar planejamento de ordem, antecipação de consequências e leitura de relações entre valores, receptores e metas.
-
-Uma peça pode precisar receber primeiro e desaparecer depois para liberar um caminho. Comparar as metas com essas funções convida a formular, testar e revisar hipóteses.
-
-Esses objetivos descrevem a intenção de prática do jogo. Não são resultados de um estudo de aprendizagem com usuários.
-
-## Como abrir
-
-Execute o servidor pelo [guia de instalação](../../setup/README.md), abra a página inicial, escolha **Raciocínio lógico** e depois **REPASSE**. O jogo participa da aplicação integrada; abrir um arquivo `.mjs` isolado não inicia sua interface.
-
-## Regras e interação
-
-1. Clique ou toque em uma peça para retirá-la. Seu valor atual inteiro é enviado uma vez em cada direção indicada pelas setas; ele não é dividido.
-2. Cada repasse atravessa vazios e para na primeira peça presente. Quem recebe soma o valor e continua esperando sua vez, independentemente da orientação das próprias setas.
-3. Se não houver receptor, o valor chega à caixa correspondente na borda. Todas as caixas mostram acumulado / meta, inclusive as de meta zero.
-4. Você vence quando a grade estiver vazia e todas as metas forem exatas. Um excesso pode ser revisto com Desfazer; experimentar outra ordem faz parte do jogo.
-5. As setas e posições são fixas. Ao longo da campanha aparecem peças de uma seta, duas setas perpendiculares e quatro setas, sempre com a mesma regra de repasse.
-6. Use o mouse, toque ou navegue pelas peças com as setas do teclado e retire com Enter ou espaço. A prévia mostra os destinatários atuais. Explore 80 fases ou continue com desafios novos no Modo Sem Parar, sem cronômetro.
+1. Toque em uma peça para retirá-la. O valor inteiro dela segue uma vez por cada seta, sem ser dividido.
+2. O valor atravessa casas vazias e soma na primeira peça que encontra. Essa peça espera sua vez com o novo valor; as setas dela não mudam o recebimento.
+3. Se não houver peça no caminho, o valor vai para a caixa da borda. Cada caixa mostra quanto já recebeu e quanto precisa receber, inclusive quando a meta é zero.
+4. Esvazie a grade com todas as metas exatas. Se passar de uma meta, use Desfazer e tente outra ordem.
+5. As posições e as setas são fixas. Você também pode selecionar peças com as setas do teclado e retirar com Enter ou espaço; a prévia mostra quem vai receber.
 
 ## Exemplo de raciocínio
 
-Uma peça de valor 3 com setas para cima e para a direita envia 3 em cada direção, e não 1,5. Se o receptor à direita tiver valor 2, passa a ter 5. Remover esse receptor antes muda o destino do próximo envio.
+Retirar o 2 envia seu valor ao 3: a peça que fica passa a valer 5.
 
-O exemplo ilustra uma regra, não uma fase específica do catálogo. Para reproduzir uma fase concreta, use sua definição e seu ID junto com a solução de referência correspondente.
+## O que observar
 
-## Conteúdo ativo
+Uma peça pode precisar receber primeiro e desaparecer depois para liberar um caminho. Comparar as metas com essas funções convida a formular, testar e revisar hipóteses.
 
-80 fases em seis faixas (15/15/15/15/15/5). Modos livres e desafios gerados são separados da campanha.
+Não conclua uma solução apenas pela aparência. Leia as pistas da fase e confira a condição de término acima. Pistas fixas e a identidade da fase devem ser preservadas. Dicas ou solução assistida não equivalem a uma conclusão independente.
 
-A posição exibida na seleção não é a identidade persistente da definição. Alterar uma fase pode exigir um novo ID, enquanto registros da fase anterior continuam arquivados. Referências antigas de catálogo precisam ser lidas junto do commit em que eram vigentes.
+## Proposta pedagógica
+
+Praticar planejamento de ordem, antecipação de consequências e leitura de relações entre valores, receptores e metas.
+
+Essas são intenções de design e oportunidades de prática, não resultados acadêmicos medidos.
+
+## Identidade visual e leitura
+
+As cores, peças e ilustrações ajudam a distinguir estados e ações. A arte não concede poderes ou altera as regras. Veja a [galeria da identidade](../../identidade/README.md) e os [recursos de fauna e flora](../../../README.md#fauna-flora-e-objetos-com-funcao).
+
+## Onde está implementado
+
+- [dist/repasse/engine.mjs](../../../dist/repasse/engine.mjs)
+- [dist/repasse/ui.mjs](../../../dist/repasse/ui.mjs)
+- [dist/repasse/README.md](../../../dist/repasse/README.md)
+
+As regras desta página foram confrontadas com os textos publicados em [game-info-content.mjs](../../../dist/game-info-content.mjs), os [guias rápidos](../../../dist/rules-quick-start.mjs) e os adaptadores próprios da família. Quantidades dependentes de mapa não devem ser tratadas como constantes universais.
+
+## Preservação e verificação
+
+O progresso usa o armazenamento local e o [backup compartilhado](../../../dist/progress-backup.mjs). Não reutilize número editorial como identificador de save. Ao alterar este jogo, confira ações válidas e inválidas, retorno à seleção, desfazer/refazer quando oferecidos, conclusão ou término, restauração e telas estreitas.
+
+[Guia de testes](../../../tests/README.md) · [Qualidade](../../qualidade/README.md). Uma captura demonstra apresentação, não comprova sozinha toda a mecânica. As regras documentadas devem acompanhar o código, não substituir testes do motor.
+
+
+## Referência técnica complementar
+
+Os links abaixo preservam o mapa técnico documentado do jogo. Relatórios datados mantêm o escopo da revisão original, não certificam automaticamente a versão atual.
 
 ## Como a implementação funciona
 
@@ -109,7 +119,3 @@ Quando a mudança é visual, valide entrada no jogo, leitura das regras, intera�
 
 - [docs/repasse-contract.md](../../../docs/repasse-contract.md)
 - [docs/repasse80/README.md](../../../docs/repasse80/README.md)
-
-## Estado e limites
-
-Guia da base `2354a3c`, reorganizada sem mudar código executável. Revisões posteriores só devem ser descritas depois de incorporadas e verificadas. Nenhuma publicação do site decorre deste manual. A organização local ainda precisa ser enviada ao repositório privado e passar pela revisão remota.

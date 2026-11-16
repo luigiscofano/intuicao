@@ -1,53 +1,63 @@
 # PRUMO
 
-[Catálogo dos jogos](../README.md) · [Apresentação](../../../README.md) · [Arquitetura](../../arquitetura/README.md)
-
-**Partição conectada e centro de massa.** Categoria: Raciocínio lógico.
-
-## O que o jogo faz
+[Catálogo atual](../README.md) · [Projeto](../../../README.md) · [Arquitetura](../../arquitetura/README.md)
 
 Um puzzle de equilíbrio em que você desenha peças ao redor de seus apoios.
 
-Divida a grade em peças conectadas e equilibradas. O centro de massa de cada peça deve coincidir com seu apoio.
+## Objetivo
 
-## O jogo em imagem
+**Pinte uma peça para cada apoio. Todas precisam se equilibrar sobre ele.**
 
-[![PRUMO: grade 4 por 4 com sete apoios de A a G e pistas coloridas da fase 9.](../../imagens/jogos/prumo.jpg)](../../imagens/jogos/prumo.jpg)
+## Como começar
 
-*Na imagem: fase 9, com grade 4 × 4 e sete apoios. As cores identificam as peças que precisam ser completadas.*
+1. Escolha um apoio e pinte as casas da peça dele.
+2. Preencha a grade. Cada peça deve ser unida pelos lados e conter seu apoio.
+3. Equilibre na horizontal e na vertical. Casas mais distantes puxam mais para aquele lado. Confira a resposta.
 
-Clique na imagem para ampliar. Captura real do site em **1º de novembro de 2026**; [origem e contexto das imagens](../../imagens/jogos/README.md).
+## Regras completas
 
-## Problema e proposta pedagógica
-
-Praticar raciocínio espacial e explorar centro de massa, equilíbrio e compensação entre quantidade e distância.
-
-A proposta pedagógica é permitir que o equilíbrio seja investigado com formas: uma peça não precisa ser simétrica para compensar seus dois lados.
-
-Esses objetivos descrevem a intenção de prática do jogo. Não são resultados de um estudo de aprendizagem com usuários.
-
-## Como abrir
-
-Execute o servidor pelo [guia de instalação](../../setup/README.md), abra a página inicial, escolha **Raciocínio lógico** e depois **PRUMO**. O jogo participa da aplicação integrada; abrir um arquivo `.mjs` isolado não inicia sua interface.
-
-## Regras e interação
-
-1. Pinte todas as casas, sem sobreposição, formando uma peça para cada apoio. As casas de uma peça devem estar conectadas pelos lados.
-2. Cada peça contém seu próprio apoio. As casas que tocam um apoio pertencem à sua peça; se o apoio fica entre duas casas, ambas precisam fazer parte dela.
-3. Todas as casas têm a mesma massa. O centro de massa de cada peça deve coincidir exatamente com o apoio, tanto na horizontal quanto na vertical.
-4. Considere a quantidade de casas e suas distâncias ao apoio: formas assimétricas também podem se equilibrar. Confirme quando toda a grade estiver preenchida.
+1. Escolha um apoio e pinte sua peça. Preencha toda a grade, sem sobrepor peças. As casas da mesma peça se ligam pelos lados.
+2. O apoio pertence à sua peça. Se ele fica entre casas, todas as casas que o tocam entram nessa peça.
+3. Cada casa pesa o mesmo. O peso total precisa se equilibrar sobre o apoio, tanto da esquerda para a direita quanto de cima para baixo.
+4. Conte também a distância: uma casa mais longe pesa mais para aquele lado. A peça não precisa ser simétrica. Confirme quando terminar de pintar.
 
 ## Exemplo de raciocínio
 
-Três casas de mesma massa em x=0, x=1 e x=2 têm centro horizontal em x=1. O teste real também exige a coordenada vertical correta, conexão pelos lados e pertencimento ao apoio. Acertar apenas a média horizontal não basta.
+Uma casa à direita compensa a casa à esquerda, à mesma distância do apoio.
 
-O exemplo ilustra uma regra, não uma fase específica do catálogo. Para reproduzir uma fase concreta, use sua definição e seu ID junto com a solução de referência correspondente.
+## O que observar
 
-## Conteúdo ativo
+A proposta pedagógica é permitir que o equilíbrio seja investigado com formas: uma peça não precisa ser simétrica para compensar seus dois lados.
 
-80 fases em seis faixas (15/15/15/15/15/5). Modos livres e desafios gerados são separados da campanha.
+Não conclua uma solução apenas pela aparência. Leia as pistas da fase e confira a condição de término acima. Pistas fixas e a identidade da fase devem ser preservadas. Dicas ou solução assistida não equivalem a uma conclusão independente.
 
-A posição exibida na seleção não é a identidade persistente da definição. Alterar uma fase pode exigir um novo ID, enquanto registros da fase anterior continuam arquivados. Referências antigas de catálogo precisam ser lidas junto do commit em que eram vigentes.
+## Proposta pedagógica
+
+Praticar raciocínio espacial e explorar centro de massa, equilíbrio e compensação entre quantidade e distância.
+
+Essas são intenções de design e oportunidades de prática, não resultados acadêmicos medidos.
+
+## Identidade visual e leitura
+
+As cores, peças e ilustrações ajudam a distinguir estados e ações. A arte não concede poderes ou altera as regras. Veja a [galeria da identidade](../../identidade/README.md) e os [recursos de fauna e flora](../../../README.md#fauna-flora-e-objetos-com-funcao).
+
+## Onde está implementado
+
+- [dist/prumo-balance.mjs](../../../dist/prumo-balance.mjs)
+- [dist/prumo-campaign.mjs](../../../dist/prumo-campaign.mjs)
+
+As regras desta página foram confrontadas com os textos publicados em [game-info-content.mjs](../../../dist/game-info-content.mjs), os [guias rápidos](../../../dist/rules-quick-start.mjs) e os adaptadores próprios da família. Quantidades dependentes de mapa não devem ser tratadas como constantes universais.
+
+## Preservação e verificação
+
+O progresso usa o armazenamento local e o [backup compartilhado](../../../dist/progress-backup.mjs). Não reutilize número editorial como identificador de save. Ao alterar este jogo, confira ações válidas e inválidas, retorno à seleção, desfazer/refazer quando oferecidos, conclusão ou término, restauração e telas estreitas.
+
+[Guia de testes](../../../tests/README.md) · [Qualidade](../../qualidade/README.md). Uma captura demonstra apresentação, não comprova sozinha toda a mecânica. As regras documentadas devem acompanhar o código, não substituir testes do motor.
+
+
+## Referência técnica complementar
+
+Os links abaixo preservam o mapa técnico documentado do jogo. Relatórios datados mantêm o escopo da revisão original, não certificam automaticamente a versão atual.
 
 ## Como a implementação funciona
 
@@ -108,7 +118,3 @@ Quando a mudança é visual, valide entrada no jogo, leitura das regras, intera�
 
 - [dist/PRUMO80-VALIDACAO.md](../../../dist/PRUMO80-VALIDACAO.md)
 - [docs/prumo80-validation.md](../../../docs/prumo80-validation.md)
-
-## Estado e limites
-
-Guia da base `2354a3c`, reorganizada sem mudar código executável. Revisões posteriores só devem ser descritas depois de incorporadas e verificadas. Nenhuma publicação do site decorre deste manual. A organização local ainda precisa ser enviada ao repositório privado e passar pela revisão remota.
