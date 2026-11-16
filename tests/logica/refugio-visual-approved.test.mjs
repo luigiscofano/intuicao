@@ -7,10 +7,10 @@ import { initialState, applyAction, checkState, solutionState } from '../../dist
 import { renderBoard } from '../../dist/logica/games/refugio/view.mjs';
 import { readRefugioSkin, writeRefugioSkin, REFUGIO_SKIN_KEY } from '../../dist/logica/games/refugio/skin.mjs';
 
-test('normal preserva exatamente o SVG anterior do primeiro desafio', () => {
+test('normal preserva o SVG anterior exceto pelas assinaturas aprovadas', () => {
   const level = CAMPAIGN[0];
   const markup = renderBoard(level, initialState(level), { skin: 'normal' });
-  const svg = markup.slice(markup.indexOf('<svg'));
+  const svg = markup.slice(markup.indexOf('<svg')).replace(/<g aria-hidden="true" pointer-events="none" class="logic-tile-signature"[\s\S]*?<\/g>/g, '');
   assert.equal(createHash('sha256').update(svg).digest('hex'), '361041bfcbdc9db9004f764cdfae69be821a6fe0b2c62de0a9f308e9852535b7');
 });
 
@@ -22,7 +22,7 @@ test('80 fases: ambas as skins preservam células, pistas, nomes e estados', () 
       const markup = renderBoard(level, state, { skin });
       assert.equal((markup.match(/data-cell=/g) ?? []).length, level.rows * level.cols);
       assert.equal((markup.match(/class="refugio-leaf-marker"/g) ?? []).length, skin === 'identity' ? level.markers.length : 0);
-      assert.equal((markup.match(/class="refugio-tile-signature"/g) ?? []).length, skin === 'identity' ? 2 : 0);
+      assert.equal((markup.match(/class="logic-tile-signature"/g) ?? []).length, 2);
       assert.equal((markup.match(/aria-disabled="true"/g) ?? []).length, level.givens.filter(value => value !== null).length);
       for (const marker of level.markers) assert.ok(markup.includes(`marco ${marker.label}, livre, pista fixa`));
       assert.equal(JSON.stringify({ level, state }), snapshot);

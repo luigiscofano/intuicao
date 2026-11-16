@@ -1,3 +1,4 @@
+import { renderTileSignature } from '../../board-signature.mjs';
 import { readRefugioSkin } from './skin.mjs';
 
 const C = { ink: '#30412F', action: '#39674A', cream: '#FFFAF0', cell: '#F8FAF3', line: '#D5DECB', frame: '#B6C3A8', sage: '#E1EDCE', sageEdge: '#73965E', amber: '#F5E7B2', amberEdge: '#B99B46' };
@@ -62,11 +63,9 @@ function renderBoardSvg(level, state, { selectedTool = 'cycle', skin = 'normal' 
   pieces.push(text(412, legendY, '1 marco', 18));
   pieces.push(text(width / 2, legendY + 31, '• fixa   · indecidida   tracejado = última ação', 18));
   pieces.push(text(width / 2, legendY + 59, 'O número identifica o marco; não indica área.', 18));
-  if (skin === 'identity') {
-    // Assinaturas ficam fora da grade: não cobrem casas, pistas ou áreas de toque.
-    pieces.push(renderTileSignature(x0 + gridWidth + 20, y0 - 4));
-    pieces.push(renderTileSignature(x0 - 41, y0 + gridHeight - 12));
-  }
+  // A assinatura também acompanha a skin normal, sem alterar a geometria.
+  pieces.push(renderTileSignature(x0 + gridWidth + 20, y0 - 4));
+  pieces.push(renderTileSignature(x0 - 41, y0 + gridHeight - 12));
   pieces.push('</svg>');return pieces.join('');
 }
 
@@ -87,14 +86,6 @@ function renderLeafMarker(x, y, size, label, color) {
   </g>`;
 }
 
-function renderTileSignature(x, y) {
-  return `<g aria-hidden="true" class="refugio-tile-signature" transform="translate(${x} ${y})">
-    <path d="M0 0H9Q9 9 0 9Z" fill="#39674A"/>
-    <path d="M11 0H20V9Q11 9 11 0Z" fill="#B99B46"/>
-    <path d="M0 11Q9 11 9 20H0Z" fill="#244b63"/>
-    <path d="M11 11H20Q20 20 11 20Z" fill="#73965E"/>
-  </g>`;
-}
 
 export function renderBoard(level, state, options = {}) {
   const skin = options.skin ?? readRefugioSkin();
