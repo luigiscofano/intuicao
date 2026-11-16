@@ -769,3 +769,8 @@ body.approved-campaign-actions #main button.campaign-levels-return:focus-visible
   outline: 3px solid #244b63;
   outline-offset: 3px;
 }
+
+/* AIIJs aprovadas: área reservada, sem movimento, interação ou expansão do tabuleiro. */
+.approved-game-band > .approved-individual-art { width:120px; height:76px; object-fit:contain; flex:0 0 120px; margin-left:auto; pointer-events:none; }
+.approved-game-band > .approved-individual-art[hidden] { display:none; }
+@media (max-width:600px) { .approved-game-band > .approved-individual-art { width:72px; height:46px; flex-basis:72px; } }

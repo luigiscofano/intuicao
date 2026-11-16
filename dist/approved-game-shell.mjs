@@ -1,3 +1,4 @@
+import { updateGameArt } from './game-aiij.mjs';
 import { gameDisplayNumber } from './game-catalog.mjs';
 import { arrangeVersusPlayers } from './versus-player-layout.mjs';
 import { arrangeActionSidebar } from './action-sidebar.mjs';
@@ -122,7 +123,13 @@ export function initApprovedGameShell(doc = document, win = window) {
   const category = element(doc, "h1", "approved-category");
   const line = element(doc, "span", "approved-band-line");
   line.setAttribute("aria-hidden", "true");
-  band.append(number, category, line);
+  const artwork = element(doc, 'img', 'approved-individual-art');
+  artwork.setAttribute('alt', '');
+  artwork.setAttribute('aria-hidden', 'true');
+  artwork.setAttribute('width', '120');
+  artwork.setAttribute('height', '76');
+  artwork.hidden = true;
+  band.append(number, category, line, artwork);
   // O acesso ao jogo começa na identificação, sem chamada promocional acima.
   hero.append(band);
   main.insertBefore(hero, doc.querySelector(".library-heading-row") || doc.querySelector(".category-heading"));
@@ -177,6 +184,7 @@ export function initApprovedGameShell(doc = document, win = window) {
         navigationHome.insertBefore(navigation, navigationNext);
       }
       if (!active) return;
+      updateGameArt(artwork, game);
       setText(number, gameDisplayNumber(game) ?? presentation.number);
       setText(category, `${presentation.category} · ${presentation.name}`);
 
