@@ -2,11 +2,11 @@
 
 ## Requisitos
 
-Para jogar, use Python 3 e um navegador com módulos ES, SVG, workers e armazenamento local. Para os testes, esta preparação foi verificada com Node.js 24.22.1. Não existe `package.json` nesta base e não é necessário `npm install`.
+Para servir uma cópia local, use um servidor HTTP estático (Python 3 é uma opção) e um navegador com módulos ES, SVG, workers e armazenamento local. Para os testes, esta preparação foi verificada com Node.js 24.22.1. Não existe `package.json` nesta base e não é necessário `npm install`.
 
 ## Obter a cópia
 
-Com sua conta autorizada no GitHub, clone o repositório privado:
+Clone o repositório; autentique-se apenas se o acesso configurado no GitHub exigir:
 
 ```bash
 git clone https://github.com/luigiscofano/intuicao.git

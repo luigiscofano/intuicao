@@ -151,6 +151,13 @@
         "docs/recursos/declaracao-autoria.md"
       ],
       "source": "Composição dos azulejos B aprovados e lettering original do projeto, solicitada para o site em 13/11/2026; PNG transparente e fonte SVG. Sem imagens externas."
+    },
+    "pranchas-documentais-2026": {
+      "source": "Diagramas SVG documentais de texto, retângulos e linhas; valores extraídos do código vigente. Não são screenshots nem artes de terceiros.",
+      "evidence": [
+        "docs/imagens/identidade/README.md",
+        "LICENSE"
+      ]
     }
   },
   "assets": [
@@ -1888,6 +1895,24 @@
       "license": "Direitos reservados; recursos visuais excluídos da licença MIT do código.",
       "permissionEvidence": "docs/qa/selo-conquistas-2026-11-13.md",
       "reviewBasis": "owner-approved-original-vector-design"
+    },
+    {
+      "path": "docs/imagens/identidade/paleta.svg",
+      "sha256": "532e13b4b16f10160a62d3fc8324e00270d45a0faa02312f3ff198e7907ee53b",
+      "group": "pranchas-documentais-2026",
+      "status": "cleared",
+      "rightsHolder": "Luigi Scofano de Araujo (documentação do projeto)",
+      "license": "MIT, como documentação do repositório.",
+      "permissionEvidence": "LICENSE; docs/imagens/identidade/README.md"
+    },
+    {
+      "path": "docs/imagens/identidade/arquitetura.svg",
+      "sha256": "b6f717062ebc337959317c6642f08d5a6b002abbcf6b2aaa628254f9cf0f16e6",
+      "group": "pranchas-documentais-2026",
+      "status": "cleared",
+      "rightsHolder": "Luigi Scofano de Araujo (documentação do projeto)",
+      "license": "MIT, como documentação do repositório.",
+      "permissionEvidence": "LICENSE; docs/imagens/identidade/README.md"
     }
   ],
   "rightsReview": {

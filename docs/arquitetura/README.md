@@ -1,5 +1,7 @@
 # Arquitetura e leitura do código
 
+> Catálogo atual: 19 jogos (12 campanhas e sete Versus). Cinco campanhas lógicas estão ativas. Seções que enumeram seis motores lógicos e oito duelos compartilhados descrevem também módulos históricos preservados, não a disponibilidade pública.
+
 [Índice](../README.md) · [Jogos](../jogos/README.md)
 
 ## Visão geral
@@ -79,5 +81,3 @@ git diff 2354a3c -- dist
 ```
 
 Use a [manutenção](../manutencao/README.md) para planejar alterações de conteúdo e a [qualidade](../qualidade/README.md) para documentar evidências.
-
-

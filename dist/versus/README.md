@@ -1,5 +1,7 @@
 # Oito jogos Versus
 
+> Estado atual: quatro duelos ativos nesta pasta: Mosaico, Quinhão, Estalo e Acorde. Com Desvio, Broto e Cerco (módulos próprios), são sete Versus públicos. As oito implementações descritas abaixo incluem jogos retirados.
+
 ENLACE, VAZANTE, MOSAICO, QUINHÃO, ESTALO, DOBRA, ACORDE e LASTRO compartilham
 infraestrutura, preservando as regras próprias de cada duelo. Os jogos são locais,
 para duas pessoas no mesmo aparelho ou uma pessoa contra o computador.
