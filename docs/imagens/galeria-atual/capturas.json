@@ -1,0 +1,154 @@
+{
+  "capturadoEm": "2026-11-16T04:51:11.245Z",
+  "sourceCommit": "66aed842a1ea56ccd568c8b43f549f392f078352",
+  "runtimeBase": "5a5081",
+  "metodo": "Chrome headless com Playwright, servidor local do dist atual, novo contexto isolado por jogo",
+  "viewport": {
+    "width": 1440,
+    "height": 1100,
+    "deviceScaleFactor": 1
+  },
+  "estado": "Primeiro nível ou duelo inicial, sem progresso pessoal importado",
+  "validacao": "19 áreas de jogo e home conferidas visualmente; tabuleiros completos, sem ponteiro; sem edição do runtime",
+  "imagens": [
+    {
+      "id": "light",
+      "nome": "Reflexos",
+      "arquivo": "light.png",
+      "validada": true,
+      "sha256": "947745d826dd2db9d3c1426abf9ceaaafde5595ddd6b2a8f76686dd4a802fa5f"
+    },
+    {
+      "id": "cut",
+      "nome": "Corte certo",
+      "arquivo": "cut.png",
+      "validada": true,
+      "sha256": "06d5c919deb279a3de3c60d02409412c47d6627079e53e291dee0cd0bfe0a223"
+    },
+    {
+      "id": "elo",
+      "nome": "ELO",
+      "arquivo": "elo.png",
+      "validada": true,
+      "sha256": "8cf35cae2bcf37e419cbf461523861d50efca5f9c19220427b2189bdd864e51f"
+    },
+    {
+      "id": "prumo",
+      "nome": "PRUMO",
+      "arquivo": "prumo.png",
+      "validada": true,
+      "sha256": "2a98d3896103048deed06372488447a0668c64407c3996c19fa7acce4a97226f"
+    },
+    {
+      "id": "pacto",
+      "nome": "PACTO",
+      "arquivo": "pacto.png",
+      "validada": true,
+      "sha256": "f659b923780f063c7b9486cbac390e8282b3a233b2b6f65934c369fb2f57fdfe"
+    },
+    {
+      "id": "sintonia",
+      "nome": "SINTONIA",
+      "arquivo": "sintonia.png",
+      "validada": true,
+      "sha256": "6a2891c15c6c14d9f3059b4921ae852d675cf9c159170e1fb8842108b4d162b3"
+    },
+    {
+      "id": "repasse",
+      "nome": "REPASSE",
+      "arquivo": "repasse.png",
+      "validada": true,
+      "sha256": "97b6f6da4a41b9f073d1adea4d0d071422c473d142f7ea8ed167b55712426414"
+    },
+    {
+      "id": "pulso",
+      "nome": "PULSO",
+      "arquivo": "pulso.png",
+      "validada": true,
+      "sha256": "99b588b25fb5201158d99314fec7e2d7fad3dfe46a458566d17615ec5bac5fc9"
+    },
+    {
+      "id": "foz",
+      "nome": "FOZ",
+      "arquivo": "foz.png",
+      "validada": true,
+      "sha256": "fdafff6850af8e5014621580bd56904a4abcc112fc811dce542985414a7bed70"
+    },
+    {
+      "id": "refugio",
+      "nome": "REFÚGIO",
+      "arquivo": "refugio.png",
+      "validada": true,
+      "sha256": "fee61b9d314a0403f93a9b1513e09be2fa221447948c0c6b9f55f580508366b0"
+    },
+    {
+      "id": "mirante",
+      "nome": "MIRANTE",
+      "arquivo": "mirante.png",
+      "validada": true,
+      "sha256": "c3f703aceb7b486f4c1ffc5c665e8c34345fd94e4dee316c56cc59d0781db901"
+    },
+    {
+      "id": "renovo",
+      "nome": "RENOVO",
+      "arquivo": "renovo.png",
+      "validada": true,
+      "sha256": "61e758b78b8bc25873d5222e8da4dc22335df3b3c6fbecd32d956de95583172b"
+    },
+    {
+      "id": "desvio",
+      "nome": "DESVIO",
+      "arquivo": "desvio.png",
+      "validada": true,
+      "sha256": "e0809c1a19e253cf01f4de22193d6c8c23e573707b1ab83ace3ec7a6ec9eaeb6"
+    },
+    {
+      "id": "broto",
+      "nome": "BROTO",
+      "arquivo": "broto.png",
+      "validada": true,
+      "sha256": "56a5c79a26ae10b717b7354a8cdf25e14c13a42470aee8e7018236876cc416e6"
+    },
+    {
+      "id": "cerco",
+      "nome": "CERCO",
+      "arquivo": "cerco.png",
+      "validada": true,
+      "sha256": "d55986a82bb3dda3ec3784ddad34c8e6921f6af51463e28a5b32037cb32d0e01"
+    },
+    {
+      "id": "mosaico",
+      "nome": "MOSAICO",
+      "arquivo": "mosaico.png",
+      "validada": true,
+      "sha256": "7ac77fedf5a03d87ae0ac4fbf669d511c74eb2bcc4d9f10b1f26b90f9ae853d6"
+    },
+    {
+      "id": "quinhao",
+      "nome": "QUINHÃO",
+      "arquivo": "quinhao.png",
+      "validada": true,
+      "sha256": "36f0cb07d5e475ced240b992bddc685d25a5ed11cecb360fd9954eef0ed9c339"
+    },
+    {
+      "id": "estalo",
+      "nome": "ESTALO",
+      "arquivo": "estalo.png",
+      "validada": true,
+      "sha256": "bf4fbf58f7691d333d9076f9b4a7207a106e9bf784362e8d6ff6a6250e74eeff"
+    },
+    {
+      "id": "acorde",
+      "nome": "ACORDE",
+      "arquivo": "acorde.png",
+      "validada": true,
+      "sha256": "dfdb4287ed1b62e29c9567df6aaf19ae98017dbc813ab9826b1ae946de735582"
+    },
+    {
+      "id": "home",
+      "arquivo": "home.png",
+      "validada": true,
+      "sha256": "d27748aa9a700c4bbe2e2c4d7c2827d8a16ec56efba2a1c1172f8d3fa3f08b09"
+    }
+  ]
+}
