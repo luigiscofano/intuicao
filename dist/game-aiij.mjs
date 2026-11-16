@@ -12,7 +12,13 @@ export const APPROVED_GAME_ART = Object.freeze({
   "pacto": "platform-assets/pacto-aiij-aprovada.svg",
   "quinhao": "platform-assets/quinhao-aiij-aprovada.svg",
   "sintonia": "platform-assets/sintonia-aiij-aprovada.svg",
-  "estalo": "platform-assets/estalo-aiij-aprovada.svg"
+  "estalo": "platform-assets/estalo-aiij-aprovada.svg",
+  // Reutiliza as cinco artes aprovadas anteriores, sem redesenhá-las.
+  "foz": "platform-assets/foz-aiij-mosaico.svg",
+  "mirante": "platform-assets/mirante-aiij-a.svg",
+  "renovo": "platform-assets/renovo-aiij-c1.svg",
+  "pulso": "platform-assets/pulso-aiij-azulejo.svg",
+  "refugio": "platform-assets/refugio-aiij-folhas.svg"
 });
 export function updateGameArt(image, gameId) {
   const source = APPROVED_GAME_ART[gameId];
