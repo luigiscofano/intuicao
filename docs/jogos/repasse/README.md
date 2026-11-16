@@ -125,3 +125,11 @@ Quando a mudança é visual, valide entrada no jogo, leitura das regras, intera�
 
 - [docs/repasse-contract.md](../../../docs/repasse-contract.md)
 - [docs/repasse80/README.md](../../../docs/repasse80/README.md)
+
+## AIIJ aprovada
+
+[![Arte de Ilustração Individual de REPASSE](../../../dist/platform-assets/repasse-aiij-aprovada.svg)](../../../dist/platform-assets/repasse-aiij-aprovada.svg)
+
+Arquivo real aprovado, preservado em sua proporção original e com transparência. Esta ilustração pertence à identidade do jogo; não altera regras, controles, peças nem progresso. Não usar como miniatura do tabuleiro.
+
+[Ver as 19 AIIJs e orientações de uso](../../identidade/aiij/README.md).

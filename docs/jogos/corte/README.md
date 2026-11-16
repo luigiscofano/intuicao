@@ -125,3 +125,11 @@ Quando a mudança é visual, valide entrada no jogo, leitura das regras, intera�
 
 - [dist/CORTE80-VALIDACAO.md](../../../dist/CORTE80-VALIDACAO.md)
 - [docs/corte80](../../../docs/corte80)
+
+## AIIJ aprovada
+
+[![Arte de Ilustração Individual de Corte certo](../../../dist/platform-assets/cut-aiij-aprovada.svg)](../../../dist/platform-assets/cut-aiij-aprovada.svg)
+
+Arquivo real aprovado, preservado em sua proporção original e com transparência. Esta ilustração pertence à identidade do jogo; não altera regras, controles, peças nem progresso. Não usar como miniatura do tabuleiro.
+
+[Ver as 19 AIIJs e orientações de uso](../../identidade/aiij/README.md).

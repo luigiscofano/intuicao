@@ -126,3 +126,11 @@ Quando a mudança é visual, valide entrada no jogo, leitura das regras, intera�
 
 - [docs/sintonia-contract.md](../../../docs/sintonia-contract.md)
 - [docs/sintonia-goals-v5.md](../../../docs/sintonia-goals-v5.md)
+
+## AIIJ aprovada
+
+[![Arte de Ilustração Individual de SINTONIA](../../../dist/platform-assets/sintonia-aiij-aprovada.svg)](../../../dist/platform-assets/sintonia-aiij-aprovada.svg)
+
+Arquivo real aprovado, preservado em sua proporção original e com transparência. Esta ilustração pertence à identidade do jogo; não altera regras, controles, peças nem progresso. Não usar como miniatura do tabuleiro.
+
+[Ver as 19 AIIJs e orientações de uso](../../identidade/aiij/README.md).

@@ -124,3 +124,11 @@ Quando a mudança é visual, valide entrada no jogo, leitura das regras, intera�
 
 - [dist/PRUMO80-VALIDACAO.md](../../../dist/PRUMO80-VALIDACAO.md)
 - [docs/prumo80-validation.md](../../../docs/prumo80-validation.md)
+
+## AIIJ aprovada
+
+[![Arte de Ilustração Individual de PRUMO](../../../dist/platform-assets/prumo-aiij-aprovada.svg)](../../../dist/platform-assets/prumo-aiij-aprovada.svg)
+
+Arquivo real aprovado, preservado em sua proporção original e com transparência. Esta ilustração pertence à identidade do jogo; não altera regras, controles, peças nem progresso. Não usar como miniatura do tabuleiro.
+
+[Ver as 19 AIIJs e orientações de uso](../../identidade/aiij/README.md).
