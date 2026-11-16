@@ -13,7 +13,7 @@
 
 - [Resumo, escopo e limites](../sintonia-v2-validacao.md)
 - [Revisão independente](independent-review.md)
-- [Verificação congelada](frozen-verification.json)
+- Verificação congelada original: arquivo não presente nesta cópia. A [verificação independente](independent-frozen-verification.json) é outra evidência, não uma substituição do registro ausente.
 - [Relatório de propósito e ablações](../sintonia-purpose-evidence.md)
 - [Level design e reprodução](../sintonia-level-design.md)
 - [Catálogo de 500 fases](../sintonia-catalogo.md)
