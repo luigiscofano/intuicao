@@ -142,7 +142,7 @@ def check_backup(browser, source, target):
           const id = lightLevels[0].id;
           if (!id) throw Error('Fase sem identidade');
           localStorage.setItem('intuicao.campaign.light.progress.v1',JSON.stringify({version:1,completedIds:[id],lastLevelId:id}));
-          localStorage.setItem('intuicao.missions.v1',JSON.stringify({version:1,unlocked:{[[...ACTION_MISSION_IDS][0]]:'2026-11-16T12:00:00Z'}}));
+          localStorage.setItem('intuicao.missions.v1',JSON.stringify({version:1,unlocked:{[[...ACTION_MISSION_IDS][0]]:{unlockedAt:'2026-11-16T12:00:00Z'}}}));
           localStorage.setItem('intuicao.advanced-hidden','true');
         }""")
         backup_panel(old)
