@@ -1,83 +1,75 @@
 # Arquitetura e leitura do código
 
-> Catálogo atual: 19 jogos (12 campanhas e sete Versus). Cinco campanhas lógicas estão ativas. Seções que enumeram seis motores lógicos e oito duelos compartilhados descrevem também módulos históricos preservados, não a disponibilidade pública.
+![Fluxo conceitual da aplicação](../../docs/imagens/identidade/arquitetura.svg)
 
-[Índice](../README.md) · [Jogos](../jogos/README.md)
+O site é uma **aplicação estática modular**. HTML, CSS, JavaScript ES Modules, SVG, PNG, JSON e fontes locais são servidos diretamente. Não há framework obrigatório, instalação npm ou backend de partidas nesta base.
 
-## Visão geral
+> **Atenção:** `dist/` é código-fonte editável e versionado. Não apague como saída descartável de build.
 
-O Intuição é uma aplicação estática modular. O navegador carrega HTML, CSS, JavaScript e dados diretamente de `dist`. Não há etapa de empacotamento obrigatória nem backend de partidas nesta base. Python pode servir arquivos locais e executar os geradores offline dos novos puzzles; não faz parte do runtime do site.
+| Camada | Entradas | Responsabilidade |
+|---|---|---|
+| Inicialização | [index.html](../../dist/index.html), [app.mjs](../../dist/app.mjs) | Composição e abertura |
+| Catálogo | [game-catalog.mjs](../../dist/game-catalog.mjs) | Ordem e índices públicos |
+| Interface comum | [collection-ui.mjs](../../dist/collection-ui.mjs), [action-sidebar.mjs](../../dist/action-sidebar.mjs) | Controles sem redefinir regras |
+| Motores | [Lógica](../../dist/logica/README.md), [Versus](../../dist/versus/README.md), pastas próprias | Ações válidas, transições e resultado |
+| Conteúdo | Campanhas e catálogos de mapas | Definições, IDs e versões |
+| Busca | Workers e serviços dos jogos | Análise com orçamento e cancelamento |
+| Estado | [Backup](../../dist/progress-backup.mjs), [proteção de gravação](../../dist/progress-write-guard.mjs) | Persistência e restauração |
+| Apresentação | CSS, SVG e assets | Desenho, layout e movimento |
+| Ferramentas | [tools](../../tools/README.md), [scripts](../../scripts/README.md), [tests](../../tests/README.md) | Geração offline, auditoria e regressão |
 
-## Mapa de responsabilidades
+**JavaScript** executa jogos e verificações Node.js; **HTML/CSS** estruturam e apresentam; **SVG/PNG/WOFF2** fornecem arte e tipografia; **JSON** guarda definições e intercâmbio; **Python**, usado em ferramentas offline, não faz parte do runtime. [Arquitetura detalhada](../../docs/arquitetura/README.md).
 
-| Camada | Exemplos | O que deve permanecer separado |
-| --- | --- | --- |
-| Entrada e navegação | [index.html](../../dist/index.html), [app.mjs](../../dist/app.mjs), [category-navigation.mjs](../../dist/category-navigation.mjs) | Categorias e ativação de tela não redefinem as regras |
-| Coleção compartilhada | [collection-ui.mjs](../../dist/collection-ui.mjs), [collection-state.mjs](../../dist/collection-state.mjs) | Interface comum respeita o contrato específico de cada jogo |
-| Regras | [geometry-games.mjs](../../dist/geometry-games.mjs), [symbol-games.mjs](../../dist/symbol-games.mjs), motores das subpastas | Validação não depende de animação ou placar visual |
-| Conteúdo | Módulos de campanha e mapas | Definição de fase não é o estado da tentativa |
-| Busca e serviços | Módulos `analysis`, `service` e `worker` | Orçamento esgotado não é prova de impossibilidade |
-| Persistência | Módulos `*-progress.mjs` e restauração das rotas | Número exibido não substitui ID e versão |
-| Apresentação | CSS, SVG e módulos de renderização | Personagem e cor não alteram regra de movimento |
+### Organização do código: fronteiras reais
 
-## Famílias de implementação
+A estrutura nasceu de famílias de jogos diferentes. Não se presume que todos passem pelo mesmo motor: Reflexos e Corte certo usam módulos da entrada; ELO, PRUMO e PACTO usam a coleção; Sintonia, Repasse, Broto e Cerco mantêm adaptadores próprios; cinco campanhas ativas compartilham a infraestrutura de `logica`; quatro duelos ativos usam a infraestrutura de `versus`. Módulos retirados continuam versionados e não devem reaparecer por uma enumeração de diretório.
 
-Reflexos e Corte certo usam a estrutura inicial da aplicação e módulos no nível superior de `dist`. ELO e PRUMO compartilham parte da infraestrutura geométrica. PACTO usa o motor de símbolos. DESVIO participa da coleção compartilhada, mas tem motor próprio. SINTONIA, REPASSE, ÓRBITA, BROTO e CERCO têm subpastas e rotas dedicadas.
+| Responsabilidade | Código de referência | Contrato |
+|---|---|---|
+| Catálogo público | [game-catalog](../../dist/game-catalog.mjs), [retired-games](../../dist/retired-games.mjs) | ID estável e disponibilidade explícita; ordem editorial não é chave de save |
+| Carregamento | [rota lógica](../../dist/logica/route.mjs), [rota Versus](../../dist/versus/route.mjs) | Importar sob demanda e invalidar respostas de uma tela abandonada |
+| Definição do desafio | Campanhas e mapas dos jogos | Geometria, pistas, estoque e condições iniciais; não é a tentativa do usuário |
+| Motor | [exemplo Renovo](../../dist/logica/games/renovo/engine.mjs), [exemplo Quinhão](../../dist/versus/games/quinhao/engine.mjs) | Aplicar ações e verificar estado segundo as regras, sem depender de decoração |
+| Sessão | [lógica](../../dist/logica/session.mjs), [Versus](../../dist/versus/session.mjs), [coleção](../../dist/collection-state.mjs) | Coordenar tentativa e histórico, sem alterar uma regra para atender ao layout |
+| Apresentação | Views de cada jogo, CSS e módulos comuns | Renderizar o estado e encaminhar intenção; não declarar vitória pela animação |
+| Persistência | [lógica](../../dist/logica/storage.mjs), [Versus](../../dist/versus/storage.mjs) | Validar envelope, versão e identidade antes de restaurar |
+| Assistência | [serviço de busca](../../dist/versus/search-service.mjs), [worker](../../dist/versus/search-worker.mjs) | Limites de tempo/nós e cancelamento; uma busca parcial não prova unicidade |
 
-Essa organização reflete a evolução do projeto. A documentação cria pontos de entrada sem fazer uma refatoração física ampla, que exigiria revisar imports, estilos, catálogos e testes de preservação.
+### Fluxo de uma jogada
 
-## Família lógica de seis campanhas
+1. A interface traduz o clique, toque ou tecla em uma intenção específica do jogo.
+2. A sessão consulta/aplica a regra apropriada; a definição do mapa não se confunde com seu estado atual.
+3. O estado válido alimenta histórico, renderização e persistência conforme a família.
+4. A condição de término é determinada pela regra. [Feedback de níveis](../../dist/level-feedback.mjs) e [vitória](../../dist/game-victory.mjs) apresentam o resultado; não substituem o motor.
+5. Uma resposta atrasada de carregamento ou análise não deve reabrir uma tela abandonada. A rota lógica usa uma revisão para invalidar esse retorno.
 
-[`dist/logica/`](../../dist/logica/README.md) concentra DIVISA, PULSO, FOZ, REFÚGIO, MIRANTE e RENOVO. Cada pasta de jogo contém um motor puro, uma campanha certificada offline, uma view SVG e um adaptador público. Uma única interface compartilha seleção, eventos, histórico, ajuda e apresentação do resultado.
+### Estruturas de dados e desfazer/refazer
 
-Os metadados de navegação não importam motores. A rota carrega a interface e o jogo sob demanda, invalidando respostas assíncronas antigas. As conquistas usam um resumo de IDs/versões em vez de carregar os seis catálogos completos. Os geradores e auditores ficam em `tools/logica/` e `tests/logica/`, fora do runtime.
+O histórico da coleção usa `{ past, present, future }`, com cópias estruturadas e limite de 300 estados anteriores. Uma alteração nova limpa o futuro; desfazer e refazer movem o cursor lógico sem redefinir pistas. Essa é uma implementação específica de [collection-state.mjs](../../dist/collection-state.mjs), não uma promessa de que todas as famílias armazenam a mesma estrutura.
 
-O progresso tem chave própria (`intuicao.logica.v1`), integra o backup e preserva ID/versão, tentativa e marca assistida. O histórico possui limite de memória; tentativas antigas mantêm seu estado atual. Comentários nos módulos explicam as invariantes de armazenamento, as regras menos evidentes e os limites dos algoritmos.
+A família lógica usa `intuicao.logica.v1`: jogos, conclusões por ID/versão, sessões e última visualização. A normalização limita tamanho, quantidade de sessões e campos reconhecidos; a restauração ainda passa pelo motor da fase. Versus guarda ações e cursor para reproduzir a partida. [Contrato detalhado](../../dist/versus/CONTRACT.md).
 
-## Família Versus de oito duelos
+### Persistência e importação segura
 
-[`dist/versus/`](../../dist/versus/README.md) separa cada jogo em motor puro, view, CSS e metadados. A interface comum controla preparação, prévia, confirmação, histórico, salvamento e busca. Nenhum motor conhece o DOM, os mascotes ou o armazenamento do navegador.
+O [backup](../../dist/progress-backup.mjs) reconhece um formato próprio e versões de envelopes; limita o arquivo a 16 MiB e registros a 8 MiB. Chaves históricas podem ser preservadas mesmo quando o jogo sai do catálogo. Não confundir guardar um save com publicar novamente o jogo.
 
-Os registros guardam ações e cursor de histórico na chave `intuicao.versus.v1`. Retomar significa reproduzir essas ações pelo motor, incluindo o futuro disponível para Refazer. O armazenamento relê o envelope antes de escrever e usa a proteção global contra gravações de abas anteriores a uma restauração.
+[progress-write-guard](../../dist/progress-write-guard.mjs) compara uma revisão de restauração e pode congelar gravações, impedindo uma aba antiga de sobrescrever o estado recém-importado. Isso não é autenticação, sincronização de conta nem proteção contra edição deliberada do armazenamento local.
 
-A análise minimax executa em Worker, tem orçamento por nível e é cancelada ao sair, reiniciar ou mudar de posição. QUINHÃO mantém explicitamente o decisor atual; LASTRO mantém a pausa entre rodadas sem antecipar o resultado final. O [contrato](../../dist/versus/CONTRACT.md) descreve os pontos de extensão.
+### Geração, importação de fases e provas
 
-## Estado e transição
+Campanhas versionadas, mapas de duelo e desafios gerados são camadas distintas. [endless-collection](../../dist/endless-collection.mjs) usa geração determinística com semente, limites e validação pela regra. Encontrar uma resposta conhecida **não** equivale a provar resposta única. [collection-json](../../dist/collection-json.mjs) valida tipos, faixas e identidade de fases importadas; o worker mantém o processamento separado da interação principal quando aplicável.
 
-Uma definição de nível descreve a configuração do desafio: geometria, pistas, alvos ou peças. Um estado descreve o andamento da tentativa: ocupação, jogadas, contadores ou turno. A transição valida uma ação e produz o próximo estado segundo as regras. A interface apresenta o resultado e, quando aplicável, o persiste.
+As ferramentas em [tools](../../tools/README.md) e os relatórios certificados guardam geração/auditoria offline. O navegador não precisa executar todos esses programas para abrir o site. Fases não devem ser alteradas silenciosamente mantendo a mesma identidade quando isso invalidar o progresso salvo.
 
-Nos motores puros, manter entradas imutáveis facilita replay, previsão de jogada, undo/redo e comparação de resultados. Não substituir essa garantia por uma cópia superficial se o estado contém estruturas internas mutáveis.
+### Qualidade, distribuição e limites
 
-## Vitória não é um único evento global
+Os testes de motores verificam regras; testes de histórico/backup verificam preservação; testes de DOM/CSS verificam contratos da interface. Capturas e testes estruturais não são equivalentes a uma auditoria completa de acessibilidade ou a jogar todas as fases.
 
-Alguns puzzles reconhecem vitória assim que a configuração fica correta; outros aguardam confirmação. Duelos encerram por regras de turno, reservas ou mobilidade. Uma refatoração de botões precisa preservar essas diferenças e impedir chamadas atrasadas de contar a mesma vitória duas vezes.
+A hospedagem recebe arquivos estáticos de `dist`, conforme [.openai/hosting.json](../../.openai/hosting.json). A cadeia correta é branch temática → verificações do commit → PR → merge → publicação separada → conferência da versão pública. A configuração não implica que o merge sozinho publique. Nenhuma alteração de documentação deve reconfigurar a hospedagem ou introduzir um backend sem necessidade.
 
-## Trabalho assíncrono
+### Bots e análise
 
-Geração e análise podem utilizar workers e caminhos de contingência. Ao sair de uma tela, reiniciar ou abrir outra fase, a resposta antiga não deve atualizar o tabuleiro novo. Verifique identificadores de requisição, cancelamento, timeout e correspondência entre a definição analisada e a atualmente exibida.
+Os oponentes computacionais são algoritmos locais de busca e avaliação. O Versus compartilhado documenta minimax, poda alfa-beta, aprofundamento e orçamento. DESVIO e CERCO têm implementações próprias. Isso não implica um serviço remoto, pagamento por jogada ou infalibilidade: orçamento esgotado deve ser distinguido de uma solução demonstrada. [Contrato dos duelos](../../dist/versus/CONTRACT.md).
 
-## Identidade e compatibilidade
 
-Catálogos versionados contêm referências antigas porque a posição 40 de hoje pode ser outro desafio em relação à posição 40 anterior. Uma migração deve preservar progresso de definições iguais, arquivar o que deixou de ser ativo e impedir herança indevida de vitória.
-
-O caso de idempotência de SINTONIA descrito em documentação externa continua pendente nesta preparação. Recuperar a revisão `f0e7fcf` é pré-requisito para incorporar aquela correção e seus testes sem reconstruir um histórico fictício.
-
-## Exemplos de perguntas para revisão
-
-- A regra pode ser avaliada sem DOM e sem consultar um gabarito?
-- O catálogo importado é o ativo ou apenas um registro histórico?
-- O resultado da busca distingue falha, impossibilidade comprovada e orçamento esgotado?
-- O save mantém sua identidade depois de duas normalizações?
-- O callback verifica se ainda pertence à tela e ao turno ativos?
-- A animação pode ser interrompida sem deixar o estado lógico pela metade?
-
-## Como localizar uma mudança
-
-```bash
-git log --oneline -- dist/sintonia
-git log --follow -- dist/geometry-games.mjs
-git show 2354a3c:dist/README.md
-git diff 2354a3c -- dist
-```
-
-Use a [manutenção](../manutencao/README.md) para planejar alterações de conteúdo e a [qualidade](../qualidade/README.md) para documentar evidências.
+[Apresentação](../../README.md) · [Testes](../../tests/README.md)
