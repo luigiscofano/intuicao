@@ -31,7 +31,13 @@ export function normalizeLogicData(value) {
     }
     data.games[game] = { completed, sessions, lastLevelId: safeId(source.lastLevelId) ? source.lastLevelId : null };
     if (isObject(source.endless) && Number.isSafeInteger(source.endless.step) && source.endless.step >= 0) {
-      data.games[game].endless = { step: source.endless.step, session: isObject(source.endless.session) ? structuredClone(source.endless.session) : null };
+      const run = source.endless;
+      data.games[game].endless = { step: run.step, session: isObject(run.session) ? structuredClone(run.session) : null, ...(run.version === 1 ? { version: 1, ...(Number.isInteger(run.baseSeed) ? { baseSeed: Number(run.baseSeed) >>> 0 } : {}), autoAdvance: run.autoAdvance !== false, currentCompleted: run.currentCompleted === true, solved: Number.isSafeInteger(run.solved) && run.solved >= 0 ? run.solved : run.step } : {}) };
+      // A malformed newer save must never silently become a campaign-sequence save.
+      if (run.version != null) data.games[game].endless.version = run.version;
+      if (run.version === 2 && isObject(run.level) && JSON.stringify(run.level).length <= 100000) {
+        Object.assign(data.games[game].endless, { version: 2, level: structuredClone(run.level), baseSeed: Number(run.baseSeed) >>> 0, seed: Number(run.seed) >>> 0, generatorVersion: Number.isInteger(run.generatorVersion) ? run.generatorVersion : 1, difficulty: Number.isInteger(run.difficulty) ? Math.max(0, Math.min(5, run.difficulty)) : 0, solved: Number.isSafeInteger(run.solved) && run.solved >= 0 ? run.solved : 0, currentCompleted: run.currentCompleted === true, autoAdvance: run.autoAdvance !== false, recentSignatures: Array.isArray(run.recentSignatures) ? run.recentSignatures.filter(x => typeof x === 'string' && /^[0-9a-f]{16}$/.test(x)).slice(-64) : [] });
+      }
     }
   }
   const view = value.lastView;

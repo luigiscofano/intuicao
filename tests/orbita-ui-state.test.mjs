@@ -94,8 +94,8 @@ test('animação percorre o círculo e termina exatamente na casa lógica',()=>{
 });
 
 test('progressão Endless é limitada, retoma conceitos e conserva janela recente',()=>{
-  assert.equal(endlessOptions(0,0).difficulty,0);assert.equal(endlessOptions(0,10).difficulty,1);
-  assert.equal(endlessOptions(4,5).difficulty,3);assert.equal(endlessOptions(4,90).difficulty,4);
+  assert.equal(endlessOptions(0,0).difficulty,0);assert.equal(endlessOptions(0,10).difficulty,0);
+  assert.equal(endlessOptions(4,5).difficulty,4);assert.equal(endlessOptions(4,90).difficulty,4);
   const values=Array.from({length:45},(_,i)=>String(i));const options=endlessOptions(4,90,values,values);
   assert.equal(options.recentSignatures.length,30);assert.equal(options.recentFamilies.length,30);
 });

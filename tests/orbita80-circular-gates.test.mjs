@@ -20,8 +20,8 @@ test('metadata omission and forged legacy versions never bypass geometry',()=>{
  ];
  for(const version of [undefined,1,2,3,4])for(const mutate of mutations){const l=structuredClone(source);if(version===undefined)delete l.catalogVersion;else l.catalogVersion=version;mutate(l);assert.equal(isCircularGeneration(l),false,`circular guard ${version}`);assert.equal(validateOrbitaPresentation(l).valid,false,`presentation guard ${version}`);}
 });
-test('every internal Endless difficulty retains circular certified reservoir outside campaign80',()=>{
- for(let difficulty=0;difficulty<=4;difficulty++)for(let seed=0;seed<20;seed++){const result=selectCertifiedV2(seed,{difficulty});assert.equal(isCircularGeneration(result.level),true);assert.equal(validateCircleGeometryV3(result.level).valid,true);assert.equal(validateOrbitaPresentation(result.level).valid,true);assert.equal(result.level.generation.source,'certified-reservoir');}
+test('every internal Endless difficulty constructs fresh circular certified puzzles outside campaign80',()=>{
+ for(let difficulty=0;difficulty<=4;difficulty++)for(let seed=0;seed<20;seed++){const result=selectCertifiedV2(seed,{difficulty});assert.equal(isCircularGeneration(result.level),true);assert.equal(validateCircleGeometryV3(result.level).valid,true);assert.equal(validateOrbitaPresentation(result.level).valid,true);assert.equal(result.level.generation.source,'procedural');}
 });
 test('legacy exact-coordinate repair changes drawing only and rejects corrupt shared topology',()=>{
  const source=CATALOG[10],repaired=normalizeLegacyCircleCoordinates(source);

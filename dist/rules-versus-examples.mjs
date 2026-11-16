@@ -47,10 +47,10 @@ export const VERSUS_RULE_EXAMPLES={
  'Só passa quem não tem remada legal. Há empate com dois passes seguidos, a terceira ocorrência da mesma posição com o mesmo jogador da vez e entregas, ou 80 turnos sem vencedor. Uma segunda entrega no turno 80 ainda vence.'
  ],svg:panels(convoy(13,false),convoy(143,true),'Recorte da linha 3: B3 → C3 puxa A3 → B3.'),description:'Exemplo local: Âmbar em A3 e Verde em B3. Verde rema para C3 vazia; ambos se deslocam para a direita, sem entrega.'},
  mosaico:{steps:[
- 'O painel 5 × 5 começa vazio. Verde começa; a cada turno escolha uma das quatro orientações de um azulejo comum e coloque-o em qualquer casa vazia. Cada peça tem dois cantos verdes adjacentes e dois âmbar adjacentes.',
+ 'O exemplo usa o painel clássico 5 × 5, vazio. Nos outros mapas, o formato e eventuais azulejos iniciais aparecem na seleção; nenhuma abertura começa com selos. Verde começa; a cada turno escolha uma das quatro orientações de um azulejo comum e coloque-o em qualquer casa vazia. Cada peça tem dois cantos verdes adjacentes e dois âmbar adjacentes.',
  'Não é preciso encostar nem combinar bordas. Depois de colocado, o azulejo não sai, não se move e não gira. Os azulejos são compartilhados; apenas os selos têm dono.',
  'Cada uma das 16 junções reúne os quatro cantos voltados para o centro de um bloco 2 × 2. Com o bloco completo, 3 ou 4 cantos da mesma cor dão 1 ponto a essa cor; 2–2 não pontua. Quatro cantos não dão bônus.',
- 'Uma colocação pode concluir vários selos e pontuar para ambas as equipes, independentemente de quem jogou. Cada selo conta uma vez. Não há passe: após os 25 azulejos, vence quem tem mais selos; igualdade empata.'
+ 'Uma colocação pode concluir vários selos e pontuar para ambas as equipes, independentemente de quem jogou. Cada selo conta uma vez. Não há passe: quando o painel fica cheio (25 casas no clássico), vence quem tem mais selos; igualdade empata.'
  ],svg:panels(mosaic(24,false),mosaic(154,true),'Complete a junção; conte só os cantos internos.'),description:'Bloco A1–B2: orientações 2, 2, 0 e, por último, 1. Os cantos internos são verde, verde, verde e âmbar. O selo vale um ponto para Verde.'},
  quinhao:{steps:[
  'Há 24 cestos em anel: duas castanhas-do-pará, duas pitangas e duas jabuticabas, repetidas quatro vezes. Verde propõe primeiro. Escolha três cestos consecutivos entre os que ainda existem; o último e o primeiro são vizinhos, mesmo com lacunas.',
@@ -71,10 +71,10 @@ export const VERSUS_RULE_EXAMPLES={
  'No atlas final, a maioria de selos em cada distrito dá toda a área dele à equipe. Selos empatados, inclusive 0–0, deixam a área neutra. Some as áreas controladas: o maior total vence e igualdade empata.'
  ],svg:panels(atlas(19,false),atlas(149,true),'A primeira linha soma suas áreas à segunda.'),description:'Abertura: coloque um selo verde em A1 e dobre o norte. O mapa vira 5 × 6; a nova primeira linha tem área 2 por pilha, e A1 conserva o selo. A área total permanece 36.'},
  acorde:{steps:[
- 'Na grade 4 × 4 há quatro sinos de cada símbolo: folha, gota, onda e sol. Verde começa recolhendo qualquer sino da linha 2. Verde sempre recolhe na horizontal; Âmbar, na vertical. Os sinos são públicos e não há reposição.',
+ 'O exemplo usa a grade clássica 4 × 4, com quatro sinos de cada símbolo: folha, gota, onda e sol. Verde começa recolhendo qualquer sino da linha 2. Verde sempre recolhe na horizontal; Âmbar, na vertical. Os sinos são públicos e não há reposição.',
  'Recolha um sino presente no seu eixo e deixe o carrinho nessa casa vazia. Pode atravessar vazios e outros sinos sem recolhê-los. Sua escolha determina o eixo do rival: a coluna para Âmbar ou a linha para Verde.',
  'Cada símbolo com pelo menos dois sinos na sua coleção vale um par; três ou quatro cópias continuam valendo só um par. Quem completar pares de três símbolos diferentes vence imediatamente.',
- 'Sem sino no seu eixo, passe obrigatoriamente e deixe o carrinho parado. Dois passes seguidos ou o esgotamento dos 16 sinos encerram a partida: vence quem tiver mais pares diferentes; igualdade empata. Na revanche, troquem as pessoas que controlam as cores e os eixos.'
+ 'Sem sino no seu eixo, passe obrigatoriamente e deixe o carrinho parado. Dois passes seguidos ou o esgotamento dos sinos (16 no clássico) encerram a partida: vence quem tiver mais pares diferentes; igualdade empata. Na revanche, troquem as pessoas que controlam as cores e os eixos.'
  ],svg:panels(bellGrid(17,false),bellGrid(147,true),'Recolha O em B2: o rival joga na coluna B.'),description:'Abertura: Verde recolhe a onda de B2, ganha um sino e deixa o carrinho em B2. Âmbar pode escolher B1, B3 ou B4. F = folha, G = gota, O = onda, S = sol.'},
  lastro:{steps:[
  'Os seis pesos são compartilhados, um por trilho: E1, E2 e E7 à esquerda; D2, D3 e D5 à direita. Todos começam na distância 1, com carga 10 de cada lado. Cada trilho tem marcas de 1 a 4, contadas do centro para fora.',

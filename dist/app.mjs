@@ -1,4 +1,5 @@
 import { levelCompletionState } from "./level-completion-state.mjs";
+import {generateFreshChallenge} from './endless-variety.mjs';
 import { originalMissionRound, confirmOriginalMissionRound, evaluateApprovedOriginal } from "./achievements/approved-original.mjs";
 import { recordApprovedAttemptWin } from "./achievements/approved-store.mjs";
 import { recordMissionUnlocks } from "./achievements/mission-store.mjs";
@@ -147,6 +148,8 @@ function enterEndless() {
       ? Math.max(0, Math.min(1000, saved.failures))
       : 0,
     assisted: saved?.assisted === true,
+    recentSignatures: Array.isArray(saved?.recentSignatures) ? saved.recentSignatures.filter(x=>typeof x==="string").slice(-24) : [],
+    generatedSeed: saved?.generatedSeed,
   };
   if (endlessRun.solved) {
     endlessRun.seed = (endlessRun.seed + 0x9e3779b9) >>> 0;
@@ -565,8 +568,7 @@ function applyAnswerKey() {
   missionRound.assisted = true;
   saveCampaign();
   answerProgress.assist(answerKey());
-  $("hint-text").textContent =
-    "";
+  $("hint-text").textContent = "";
   render();
 }
 answerButton.onclick = applyAnswerKey;
@@ -1173,11 +1175,16 @@ function start(resumeCustom = false, fresh = false) {
     );
   if (free) {
     try {
-      endlessGenerated = generateOriginalEndless(
-        game,
-        endlessRun.seed,
-        endlessRun.options,
+      const fresh = generateFreshChallenge(
+        (seed,options)=>generateOriginalEndless(game,seed,options), endlessRun.seed,
+        endlessRun.options, endlessRun.generatedSeed===endlessRun.seed?[]:endlessRun.recentSignatures,
       );
+      endlessGenerated=fresh.result;
+      if(endlessRun.generatedSeed!==fresh.seed){
+        endlessRun.recentSignatures=[...(endlessRun.recentSignatures??[]),fresh.signature].slice(-24);
+        endlessRun.generatedSeed=fresh.seed;
+      }
+      endlessRun.seed=fresh.seed;
     } catch (error) {
       free = false;
       showSelection();

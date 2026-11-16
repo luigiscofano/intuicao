@@ -142,13 +142,17 @@ test('recent family preference is deterministic, gentle, and grounded in actual 
   assert.ok(familyRecencyPenalty('x',['other','x'])>familyRecencyPenalty('x',['x','other']),'more recent occurrence counts more');
 });
 
-test('separate safety bank is complete, certified, eligible and prioritizes unused levels',()=>{
+test('archived safety bank remains certified; runtime recovery generates fresh eligible puzzles',()=>{
   assert.equal(FALLBACK_LEVELS.length,36);
   assert.equal(new Set(FALLBACK_LEVELS.map(l=>l.id)).size,36);
   for(let difficulty=0;difficulty<6;difficulty++)assert.equal(FALLBACK_LEVELS.filter(l=>l.difficulty===difficulty).length,6);
   const campaign=new Set(CAMPAIGN.map(l=>l.signature));for(const level of FALLBACK_LEVELS){assert.equal(replay(level,level.solution).won,true,level.id);assert.equal(campaign.has(level.signature),false,level.id);}
   const first=selectCertifiedFallback('fallback-choice',{difficulty:3}),second=selectCertifiedFallback('fallback-choice',{difficulty:3,usedFallbackIds:[first.level.id],recentSignatures:[first.signature]});
-  assert.notEqual(first.level.id,second.level.id);assert.equal(first.validation.origin,'fallback');assert.equal(first.validation.replayed,true);
+  assert.notEqual(first.signature,second.signature);assert.notDeepEqual(first.level.boards,second.level.boards);
+  assert.equal(first.level.id,second.level.id,'the same requested seed remains the identifier; the full definition and signature identify the generated challenge');
+  assert.equal(first.validation.origin,'fallback');assert.equal(first.validation.source,'procedural');assert.equal(first.validation.replayed,true);
+  assert.equal(FALLBACK_LEVELS.some(level=>level.signature===first.signature||level.signature===second.signature),false);
+  assert.equal(replay(first.level,first.solution).won,true);assert.equal(replay(second.level,second.solution).won,true);
   const learning=selectCertifiedFallback('new-player',{difficulty:5,learnedMechanics:[]});assert.ok(learning.level.mechanics.filter(m=>m!=='walls').length<=1);
   assert.deepEqual(selectCertifiedFallback('repeat',{difficulty:4}),selectCertifiedFallback('repeat',{difficulty:4}));
 });

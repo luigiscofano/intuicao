@@ -14,6 +14,9 @@ export function configurationOf(piece) {
 
 export function certifyGenerated(result, options = {}) {
   const level = result?.level;
+  if ((options.recentSignatures ?? []).includes(result?.signature)) {
+    throw new Error("O desafio repete uma configuração recente.");
+  }
   const validation = validateLevel(level);
   if (!validation.valid)
     throw new Error('Definição de desafio inválida: ' + validation.errors.join('; '));

@@ -1,15 +1,17 @@
 import { levelCompletionState } from "../level-completion-state.mjs";
 import { campaignLevelName } from "../campaign-level-names.mjs";
-import { readPulsoSkin, writePulsoSkin } from './games/pulso/skin.mjs';
-import { readRefugioSkin, writeRefugioSkin } from './games/refugio/skin.mjs';
 import { rulesPreviewMarkup } from '../rules-preview.mjs';
 import { createRestartConfirmation } from '../restart-confirmation.mjs';
 import { createResultMotion } from '../result-motion.mjs';
 import { DIFFICULTIES, LOGIC_GAMES, loadLogicGame, escapeHTML as esc } from './metadata.mjs';
 import { restoreSession, currentState, applySessionAction, moveHistory, restartSession, applySolution, checkSession } from './session.mjs';
 import { createLogicStorage, gameProgress, saveSession, recordCompletion, saveEndless } from './storage.mjs';
-import { restoreEndless, endlessLevel, advanceEndless, createEndlessAdvance } from './endless.mjs';
+import { restoreEndless, endlessLevel, acceptGeneratedChallenge, markEndlessCompleted, freshSeed, createEndlessAdvance } from './endless.mjs';
+import { createLogicGenerator } from './endless-service.mjs';
+import { normalizeDifficulty } from './endless-generator.mjs';
 import { nextBoardCell } from './keyboard.mjs';
+import { readRefugioSkin, writeRefugioSkin } from './games/refugio/skin.mjs';
+import { readPulsoSkin, writePulsoSkin } from './games/pulso/skin.mjs';
 import { createRenovoTraceInput } from './games/renovo/trace-input.mjs';
 
 /** O desafio diário usa o mesmo catálogo certificado e não cria progresso paralelo. */
@@ -42,6 +44,9 @@ export function initLogicGames() {
   let mode = 'campaign';
   let endless = null;
   const advancement = createEndlessAdvance();
+  const generator = createLogicGenerator();
+  let generationRevision = 0;
+  let generationBusy = false;
   const renovoTrace = createRenovoTraceInput(host, {
     getContext: () => active && screen === 'play' && metadata?.id === 'renovo' && session && selectedTool === 'select' && !restart.isOpen
       ? { level, state: currentState(session) } : null,
@@ -72,6 +77,7 @@ export function initLogicGames() {
     if (!adapter || !active) return;
     renovoTrace.cancel();
     advancement.cancel();
+    cancelGeneration();
     save();
     restart.dismiss();
     motion?.clear();
@@ -96,6 +102,7 @@ export function initLogicGames() {
     if (!item || !active) return;
     renovoTrace.cancel();
     advancement.cancel();
+    cancelGeneration();
     save();
     restart.dismiss();
     motion?.clear();
@@ -108,7 +115,7 @@ export function initLogicGames() {
     message = '';
     outcome = 'idle';
     const position = adapter.CAMPAIGN.indexOf(level);
-    host.innerHTML = `<section class="collection-lab logic-lab" aria-label="${metadata.name}"><div class="lab-heading" hidden><div><h2 id="lg-title" class="logic-level-name" tabindex="-1">${esc(mode === 'endless' ? level.name : campaignLevelName(metadata.id, level))}</h2><p id="lg-stage-label" data-campaign-level-name="${mode === 'endless' ? '' : esc(campaignLevelName(metadata.id, level))}">${mode === 'endless' ? `Sem parar · ciclo ${Math.floor(endless.step / adapter.CAMPAIGN.length) + 1} · ` : ''}Fase ${level.number} de 80 · ${DIFFICULTIES[level.difficulty]}</p></div></div><div class="collection-workspace"><div class="collection-surface logic-surface"><div class="stage-tools"><button type="button" id="lg-levels" data-logic-levels>Níveis</button></div><div id="lg-tools" class="logic-tools" role="group" aria-label="Escolher marcação"></div><div class="board-navigation logic-board-navigation" role="group" aria-label="Área do jogo e navegação de níveis"><button type="button" id="lg-prev" class="level-arrow logic-level-arrow" data-logic-prev aria-label="Nível anterior" title="Nível anterior" aria-controls="lg-board" ${mode === 'endless' ? 'hidden disabled' : position === 0 ? 'disabled' : ''}>←</button><div id="lg-board" class="logic-board" tabindex="-1" aria-label="Tabuleiro de ${metadata.name}"></div><button type="button" id="lg-next" class="level-arrow logic-level-arrow" data-logic-next aria-label="Próximo nível" title="Próximo nível" aria-controls="lg-board" ${mode === 'endless' ? 'hidden disabled' : position === adapter.CAMPAIGN.length - 1 ? 'disabled' : ''}>→</button></div><div id="lg-result-motion" class="result-motion" aria-hidden="true"></div><p id="lg-feedback" class="logic-feedback" role="status" aria-live="polite" aria-atomic="true"></p><p id="lg-storage-warning" class="logic-storage-warning" role="status" hidden></p><div class="board-check-controls"><button type="button" id="lg-confirm" class="primary" data-logic-check>Checar</button><button type="button" id="lg-undo" data-logic-undo>Desfazer</button><button type="button" id="lg-redo" data-logic-redo>Refazer</button><button type="button" id="lg-restart" data-logic-restart>Reiniciar</button><button type="button" id="lg-answer" data-logic-answer hidden>Ver gabarito</button></div><div class="logic-context-source" hidden><h3 id="lg-rules-context-title">Uma descoberta por vez.</h3><p id="lg-rules-context-text">${esc(adapter.GAME.instructions)}</p></div></div></div>${rulesMarkup()}</section>`;
+    host.innerHTML = `<section class="collection-lab logic-lab" aria-label="${metadata.name}"><div class="lab-heading" hidden><div><h2 id="lg-title" class="logic-level-name" tabindex="-1">${esc(mode === 'endless' ? level.name : campaignLevelName(metadata.id, level))}</h2><p id="lg-stage-label" data-campaign-level-name="${mode === 'endless' ? '' : esc(campaignLevelName(metadata.id, level))}">${mode === 'endless' ? `Sem parar · desafio ${endless.step + 1}` : `Fase ${level.number} de 80`} · ${DIFFICULTIES[level.difficulty]}</p></div></div><div class="collection-workspace"><div class="collection-surface logic-surface"><div class="stage-tools"><button type="button" id="lg-levels" data-logic-levels>Níveis</button></div>${mode === 'endless' ? endlessControls() : ''}<div id="lg-tools" class="logic-tools" role="group" aria-label="Escolher marcação"></div><div class="board-navigation logic-board-navigation" role="group" aria-label="Área do jogo e navegação de níveis"><button type="button" id="lg-prev" class="level-arrow logic-level-arrow" data-logic-prev aria-label="Nível anterior" title="Nível anterior" aria-controls="lg-board" ${mode === 'endless' ? 'hidden disabled' : position === 0 ? 'disabled' : ''}>←</button><div id="lg-board" class="logic-board" tabindex="-1" aria-label="Tabuleiro de ${metadata.name}"></div><button type="button" id="lg-next" class="level-arrow logic-level-arrow" data-logic-next aria-label="Próximo nível" title="Próximo nível" aria-controls="lg-board" ${mode === 'endless' ? 'hidden disabled' : position === adapter.CAMPAIGN.length - 1 ? 'disabled' : ''}>→</button></div><div id="lg-result-motion" class="result-motion" aria-hidden="true"></div><p id="lg-feedback" class="logic-feedback" role="status" aria-live="polite" aria-atomic="true"></p><p id="lg-storage-warning" class="logic-storage-warning" role="status" hidden></p><div class="board-check-controls"><button type="button" id="lg-confirm" class="primary" data-logic-check>Checar</button><button type="button" id="lg-undo" data-logic-undo>Desfazer</button><button type="button" id="lg-redo" data-logic-redo>Refazer</button><button type="button" id="lg-restart" data-logic-restart>Reiniciar</button><button type="button" id="lg-answer" data-logic-answer hidden>Ver gabarito</button></div><div class="logic-context-source" hidden><h3 id="lg-rules-context-title">Uma descoberta por vez.</h3><p id="lg-rules-context-text">${esc(adapter.GAME.instructions)}</p></div></div></div>${rulesMarkup()}</section>`;
     motion = createResultMotion(find('result-motion'), host.querySelector('.logic-surface'), globalThis, { onRetry: restartNow });
     renderTools();
     renderBoard();
@@ -118,6 +125,44 @@ export function initLogicGames() {
     if (mode === 'endless') {
       const result = adapter.checkState(level, currentState(session));
       if (result.valid) complete(result);
+    }
+  }
+
+  function endlessControls() {
+    return `<details class="rules-card endless-settings endless-panel" open><summary>Modo Sem Parar · personalizar</summary><div class="rules-body"><div class="collection-toolbar endless-options"><label>Dificuldade<select id="lg-endless-difficulty">${DIFFICULTIES.map((name, i) => `<option value="${i}" ${i === endless.difficulty ? 'selected' : ''}>${name}</option>`).join('')}</select></label><label><input id="lg-endless-auto" type="checkbox" ${endless.autoAdvance !== false ? 'checked' : ''}> Avançar automaticamente após concluir</label></div><div class="collection-toolbar"><button type="button" data-logic-endless-apply>Aplicar dificuldade e gerar</button><button type="button" data-logic-endless-new>Novo desafio</button></div><p>A dificuldade escolhida vale para os próximos desafios. Reiniciar mantém esta fase; gerar outra não conta como vitória.</p><p id="lg-endless-status" role="status" aria-live="polite"></p></div></details>`;
+  }
+
+  function renderGenerationStatus(text = '') {
+    host.querySelectorAll('[data-logic-endless],[data-logic-endless-new],[data-logic-endless-apply]').forEach(button => { button.disabled = generationBusy; });
+    const status = find('endless-status');
+    if (status) status.textContent = text || `Desafio ${(endless?.step ?? 0) + 1} · ${endless?.solved ?? 0} ${endless?.solved === 1 ? 'concluído' : 'concluídos'}${endless?.legacy ? ' · tentativa anterior preservada' : ''}`;
+  }
+
+  function cancelGeneration() {
+    ++generationRevision; generator.cancel(); generationBusy = false;
+    renderGenerationStatus();
+  }
+
+  async function requestEndless({ newChallenge = false, applyDifficulty = false } = {}) {
+    if (generationBusy || !active || !adapter || restart.isOpen) return;
+    const previous = mode === 'endless' ? { ...endless, session } : restoreEndless(adapter, progress().endless);
+    if (!newChallenge && !applyDifficulty && previous) { start(endlessLevel(adapter, previous), previous); return; }
+    advancement.cancel();
+    const difficulty = normalizeDifficulty(applyDifficulty ? find('endless-difficulty')?.value : previous?.difficulty ?? 0);
+    const baseSeed = previous?.baseSeed ?? freshSeed();
+    const step = previous ? Math.min(Number.MAX_SAFE_INTEGER - 1, previous.step + 1) : 0;
+    const token = ++generationRevision, game = metadata.id;
+    generationBusy = true; renderGenerationStatus('Gerando e verificando um novo desafio…');
+    if (screen === 'selection') { const warning = find('storage-warning'); warning.hidden = false; warning.textContent = 'Gerando e verificando um novo desafio…'; }
+    try {
+      const result = await generator.generate({ game, baseSeed, step, difficulty, recentSignatures: previous?.recentSignatures ?? [] });
+      if (token !== generationRevision || !active || metadata.id !== game || restart.isOpen) return;
+      const next = acceptGeneratedChallenge(adapter, result, previous, { baseSeed, difficulty });
+      generationBusy = false; start(endlessLevel(adapter, next), next);
+    } catch (error) {
+      if (error.name === 'AbortError' || token !== generationRevision) return;
+      generationBusy = false; renderGenerationStatus(error.message);
+      if (screen === 'selection') { const warning = find('storage-warning'); warning.hidden = false; warning.textContent = error.message; }
     }
   }
 
@@ -144,6 +189,7 @@ export function initLogicGames() {
     find('answer').textContent = session.assisted ? 'Reaplicar gabarito' : 'Ver gabarito';
     find('feedback').textContent = message;
     find('feedback').dataset.outcome = outcome;
+    if (mode === 'endless') renderGenerationStatus();
     const warning = find('storage-warning');
     warning.hidden = !storage.warning;
     warning.textContent = storage.warning;
@@ -152,19 +198,18 @@ export function initLogicGames() {
   function complete(result, { animate = true } = {}) {
     const wasWon = outcome === 'win';
     outcome = 'win';
+    if (mode === 'endless') endless = markEndlessCompleted(adapter, { ...endless, session });
     if (mode !== 'endless') recordCompletion(storage.data, metadata.id, level, session, result);
     message = `Fase concluída${session.assisted ? ' com ajuda' : ''}! ${result.message || 'Todas as regras foram atendidas.'}`;
     save();
     renderStatus();
     if (!wasWon && animate) motion.show(metadata.id, true);
-    if (mode === 'endless') {
+    if (mode === 'endless' && endless.autoAdvance !== false) {
       message += ' A próxima fase começa em instantes.';
       renderStatus();
       advancement.schedule(() => {
-        if (!active || screen !== 'play' || mode !== 'endless' || restart.isOpen) return;
-        const current = { ...endless, session };
-        const next = advanceEndless(adapter, current);
-        if (next !== current) start(endlessLevel(adapter, next), next);
+        if (!active || screen !== 'play' || mode !== 'endless' || restart.isOpen || !adapter.checkState(level, currentState(session)).valid) return;
+        requestEndless({ newChallenge: true });
       });
     }
   }
@@ -174,6 +219,7 @@ export function initLogicGames() {
     const next = applySessionAction(adapter, level, session, action);
     if (next === session) return;
     advancement.cancel();
+    cancelGeneration();
     session = next;
     message = '';
     outcome = 'idle';
@@ -188,6 +234,8 @@ export function initLogicGames() {
   function check() {
     if (!session || restart.isOpen) return;
     renovoTrace.cancel();
+    advancement.cancel();
+    cancelGeneration();
     const checked = checkSession(adapter, level, session);
     session = checked.session;
     if (checked.result.valid) complete(checked.result);
@@ -208,6 +256,7 @@ export function initLogicGames() {
     const focusedCell = document.activeElement?.closest('[data-cell]');
     const focusIndex = focusedCell && find('board').contains(focusedCell) ? Number(focusedCell.dataset.cell) : null;
     advancement.cancel();
+    cancelGeneration();
     session = next;
     outcome = 'idle';
     message = delta < 0 ? 'Última marcação desfeita.' : 'Marcação refeita.';
@@ -222,6 +271,7 @@ export function initLogicGames() {
   function restartNow() {
     if (!session || !active || screen !== 'play') return;
     advancement.cancel();
+    cancelGeneration();
     session = restartSession(adapter, level, session);
     message = 'Tentativa reiniciada.';
     outcome = 'idle';
@@ -235,6 +285,7 @@ export function initLogicGames() {
   function requestRestart(trigger) {
     renovoTrace.cancel();
     advancement.cancel();
+    cancelGeneration();
     const token = revision;
     restart.open({ trigger, isCurrent: () => token === revision && active && screen === 'play', onConfirm: restartNow, onCancel: () => {
       if (mode !== 'endless' || outcome !== 'win') return;
@@ -246,8 +297,9 @@ export function initLogicGames() {
   function showAnswer() {
     if (!session || restart.isOpen || session.failures < 3) return;
     advancement.cancel();
+    cancelGeneration();
     session = applySolution(adapter, level, session);
-    message = "";
+    message = '';
     outcome = 'idle';
     motion.clear();
     renderBoard();
@@ -269,15 +321,6 @@ export function initLogicGames() {
 
   host.addEventListener('click', event => {
     if (!active || !adapter || restart.isOpen) return;
-    const skinButton = event.target.closest('button[data-pulso-skin]');
-    if (metadata.id === 'pulso' && screen === 'play' && skinButton) {
-      if (writePulsoSkin(skinButton.dataset.pulsoSkin)) {
-        renderBoard();
-        find('board').querySelector(`[data-pulso-skin="${skinButton.dataset.pulsoSkin}"]`)?.focus({ preventScroll: true });
-        globalThis.dispatchEvent(new Event('pulso-skin-change'));
-      }
-      return; // Preferência visual não cria jogada, save ou nova vitória.
-    }
     const refugioSkinButton = event.target.closest('button[data-refugio-skin]');
     if (metadata.id === 'refugio' && screen === 'play' && refugioSkinButton) {
       if (writeRefugioSkin(refugioSkinButton.dataset.refugioSkin)) {
@@ -287,10 +330,21 @@ export function initLogicGames() {
       }
       return; // A preferência não cria jogadas, saves de campanha nem vitórias.
     }
-    const target = event.target.closest('[data-level-id],[data-logic-daily],[data-logic-endless],[data-logic-random],[data-logic-tool],[data-cell],[data-logic-check],[data-logic-undo],[data-logic-redo],[data-logic-restart],[data-logic-answer],[data-logic-prev],[data-logic-next],[data-logic-levels]');
+    const skinButton = event.target.closest('button[data-pulso-skin]');
+    if (metadata.id === 'pulso' && screen === 'play' && skinButton) {
+      if (writePulsoSkin(skinButton.dataset.pulsoSkin)) {
+        renderBoard();
+        find('board').querySelector(`[data-pulso-skin="${skinButton.dataset.pulsoSkin}"]`)?.focus({ preventScroll: true });
+        globalThis.dispatchEvent(new Event('pulso-skin-change'));
+      }
+      return; // Preferência visual não cria jogada, save ou nova vitória.
+    }
+    const target = event.target.closest('[data-level-id],[data-logic-daily],[data-logic-endless],[data-logic-endless-new],[data-logic-endless-apply],[data-logic-random],[data-logic-tool],[data-cell],[data-logic-check],[data-logic-undo],[data-logic-redo],[data-logic-restart],[data-logic-answer],[data-logic-prev],[data-logic-next],[data-logic-levels]');
     if (!target || target.disabled) return;
     if (target.dataset.levelId) start(adapter.CAMPAIGN.find(item => item.id === target.dataset.levelId));
-    else if (target.hasAttribute('data-logic-endless')) { const run = restoreEndless(adapter, progress().endless); start(endlessLevel(adapter, run), run); }
+    else if (target.hasAttribute('data-logic-endless')) requestEndless();
+    else if (target.hasAttribute('data-logic-endless-new')) requestEndless({ newChallenge: true });
+    else if (target.hasAttribute('data-logic-endless-apply')) requestEndless({ applyDifficulty: true });
     else if (target.hasAttribute('data-logic-daily')) start(adapter.CAMPAIGN[dailyLevelIndex(metadata.id, new Date(), adapter.CAMPAIGN.length)]);
     else if (target.hasAttribute('data-logic-random')) { const remaining = adapter.CAMPAIGN.filter(item => !isCompleted(item)); const pool = remaining.length ? remaining : adapter.CAMPAIGN; start(pool[Math.floor(Math.random() * pool.length)]); }
     else if (target.dataset.logicTool) {
@@ -322,6 +376,12 @@ export function initLogicGames() {
     cellAction(target, 'empty');
   });
 
+  host.addEventListener('change', event => {
+    if (!active || mode !== 'endless' || event.target.id !== 'lg-endless-auto') return;
+    advancement.cancel(); cancelGeneration(); endless.autoAdvance = event.target.checked; save();
+    if (endless.autoAdvance && outcome === 'win') complete(adapter.checkState(level, currentState(session)), { animate: false });
+  });
+
   host.addEventListener('keydown', event => {
     if (!active || screen !== 'play' || restart.isOpen || event.target.closest('input,textarea,select')) return;
     if (event.key === 'Escape' && metadata.id === 'renovo') { event.preventDefault(); renovoTrace.cancel(); edit({ type: 'cancel-selection' }); return; }
@@ -338,7 +398,7 @@ export function initLogicGames() {
     event.preventDefault();
     cells.find(target => Number(target.dataset.cell) === next)?.focus({ preventScroll: true });
   });
-  globalThis.addEventListener('pagehide', () => { renovoTrace.cancel(); advancement.cancel(); save(); });
+  globalThis.addEventListener('pagehide', () => { renovoTrace.cancel(); advancement.cancel(); cancelGeneration(); save(); });
   globalThis.addEventListener('pageshow', event => {
     if (!event.persisted || !active || screen !== 'play' || mode !== 'endless' || restart.isOpen || !session) return;
     const result = adapter.checkState(level, currentState(session));
@@ -350,6 +410,7 @@ export function initLogicGames() {
       advancement.cancel();
       host.dataset.pulsoSkin = id === 'pulso' ? readPulsoSkin() : '';
       renovoTrace.cancel();
+      cancelGeneration();
       save();
       const token = ++revision;
       active = true;
@@ -367,6 +428,7 @@ export function initLogicGames() {
     hide() {
       advancement.cancel();
       renovoTrace.cancel();
+      cancelGeneration();
       active = false;
       ++revision;
       restart.dismiss();

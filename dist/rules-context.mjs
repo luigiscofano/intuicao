@@ -139,7 +139,7 @@ export function getRulesContext(game, level = {}, { catalogue, index, mode = 'ca
   const configuration = !tutorial && (!campaign || at < 0);
   const autoOpen = tutorial || configuration || introduced.length > 0;
   const explained = tutorial || configuration || !introduced.length ? mechanics : introduced;
-  const title = tutorial
+  const title = game === 'desvio' ? 'Regras deste mapa' : tutorial
     ? 'Regras do tutorial'
     : configuration
       ? 'Regras desta configuração'
