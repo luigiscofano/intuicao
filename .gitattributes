@@ -1,0 +1,2 @@
+# Preserva os bytes do registro abaixo do limite de publicação, inclusive no Windows.
+dist/development/reflexos-v5/records.json text eol=lf
