@@ -20,6 +20,54 @@
       "sha256": "0a625c47740cc20d7a55c0368cca9fdd633261da08382e9a834aac63c3a07992"
     },
     {
+      "arquivo": "assets/README.md",
+      "sha256": "d0c7817036172ce014686372ba41385a717263fdd2ef309bfc7fb17afa58d581"
+    },
+    {
+      "arquivo": "assets/aiij-aprovadas/acorde-aiij-aprovada.svg",
+      "sha256": "9a5b431bfef43ccaa642f1171fb5afed911cd511cffab8a9f9f18b097215adfe"
+    },
+    {
+      "arquivo": "assets/aiij-aprovadas/broto-aiij-aprovada.svg",
+      "sha256": "6900455ae8ad07978f50b552b6192d9fa3957b2c7f07f6c640dbce498c90176e"
+    },
+    {
+      "arquivo": "assets/aiij-aprovadas/cerco-aiij-aprovada.svg",
+      "sha256": "a33fc6216d4581f9c44f2b26a2cefa1cfb3c82ea4dc47fe261c29522654bb98e"
+    },
+    {
+      "arquivo": "assets/aiij-aprovadas/cut-aiij-aprovada.svg",
+      "sha256": "2a61e2d84d6dfdfbe3a482dd548cbcb1c035e4930295191613e223da8c1f142e"
+    },
+    {
+      "arquivo": "assets/aiij-aprovadas/elo-aiij-aprovada.svg",
+      "sha256": "278cf754883b0b360e48e41e8f1a7aabee08afd19d4768cab100a43a92d94e08"
+    },
+    {
+      "arquivo": "assets/aiij-aprovadas/light-aiij-aprovada.svg",
+      "sha256": "adeab7576be3181f6130ad21b1c8001dda7575ff5bd38f8ca4c1e23001c1387c"
+    },
+    {
+      "arquivo": "assets/aiij-aprovadas/mosaico-aiij-aprovada.svg",
+      "sha256": "9f109cdd0f5db8018f579c1cfcfba321c02e47175fc66cb4cfde6787ce104c03"
+    },
+    {
+      "arquivo": "assets/aiij-aprovadas/pacto-aiij-aprovada.svg",
+      "sha256": "ba123a34a5dc232091c2925e77baa7805bdbc72962074a209051617147469ba3"
+    },
+    {
+      "arquivo": "assets/aiij-aprovadas/prumo-aiij-aprovada.svg",
+      "sha256": "0b12840f5168978473f9491fdb603252b26c07a6a06035df615ade8280f9a9a4"
+    },
+    {
+      "arquivo": "assets/aiij-aprovadas/quinhao-aiij-aprovada.svg",
+      "sha256": "9edec2df6c17c4a97ab77cfe72538065552cd83313426fb675974751e37965a7"
+    },
+    {
+      "arquivo": "assets/aiij-aprovadas/repasse-aiij-aprovada.svg",
+      "sha256": "61916e878eb31d87d8b1cd65f95a5b984fe381173003e1f06855d1016c4f8c23"
+    },
+    {
       "arquivo": "assets/arara-front-Branco_sobre_Verde.png",
       "sha256": "ce3f470874ea52268a9b97c069dda003692ffce34cc7e9557ed76ee058c2fffd"
     },
@@ -86,6 +134,10 @@
     {
       "arquivo": "assets/coral-side-Verde_sobre_Branco.png",
       "sha256": "0ef5d23a967f73b43dd267eab55cd4d5b92562ad96ac2f1f21f7cb667001f78c"
+    },
+    {
+      "arquivo": "assets/exported/README.md",
+      "sha256": "a002de61f849d1308a7ec6dd09c85e9f54fc0a2d22f2e4ae0c17514fa205848d"
     },
     {
       "arquivo": "assets/exported/broto-0.svg",
@@ -654,6 +706,10 @@
     {
       "arquivo": "assets/piranha-side-Verde_sobre_Branco.png",
       "sha256": "718120d75dcc4296286e0abd61ed9c2aec5743b5c820e7431a30119a7f41910e"
+    },
+    {
+      "arquivo": "assets/screens/README.md",
+      "sha256": "265e4aeaa63ab7493d59eeed419153b39edf5b4e333b51c31fa1c4a50146c872"
     },
     {
       "arquivo": "assets/screens/home.png",

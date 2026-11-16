@@ -66,9 +66,15 @@ A numeração é editorial, de 01 a 19. Os IDs técnicos permanecem estáveis pa
 
 DIVISA, ÓRBITA, LASTRO, VAZANTE, ENLACE e DOBRA estão retirados do catálogo atual. Seus arquivos e registros continuam preservados. Veja a [retirada no código](dist/retired-games.mjs) e o [registro histórico](docs/README-historico-2026-11-16.md).
 
+## A marca na biblioteca
+
+![Biblioteca real com os 19 jogos em suas categorias](docs/imagens/galeria-atual/home.png)
+
+Captura real da biblioteca, 16/11/2026, sem cursor e sem dados pessoais. Os 19 jogos aparecem em suas categorias. A imagem mostra a interface existente naquela revisão, não um mockup. É a captura original utilizada na página do manual indicada pelo autor.
+
 ## Manual da marca
 
-[Manual ilustrado em PDF, 41 páginas](docs/identidade/manual/Intuicao_Manual_da_Marca_2026.pdf) · [Fontes, inventário e reprodução](docs/identidade/manual/README.md).
+[Manual ilustrado em PDF, 44 páginas](docs/identidade/manual/Intuicao_Manual_da_Marca_2026.pdf) · [Fontes, inventário e reprodução](docs/identidade/manual/README.md).
 
 ![Capa do manual da marca](docs/identidade/manual/capa.png)
 
@@ -316,9 +322,9 @@ A brasilidade não depende de espalhar símbolos decorativos. Ela aparece no rep
 
 [Coordenadas e arquivos originais](dist/fauna-art.mjs) separam frente, perfil e sprite sem trocar a identidade do animal. [Nomes, descrições e fontes](dist/fauna-info-content.mjs) sustentam a janela de mascotes. [Informações culturais](dist/fauna-culture-content.mjs) complementam a leitura; a representação ilustrada não é uma prancha de identificação científica.
 
-| Frente | Perfil | Prancha de sprites |
-|---|---|---|
-| ![Frente](dist/platform-assets/fauna-green-original.png) | ![Perfil](dist/platform-assets/fauna-side-original.png) | ![Sprites originais](dist/platform-assets/fauna-sprites-original.png) |
+| Frente | Perfil |
+|---|---|
+| ![Frente](dist/platform-assets/fauna-green-original.png) | ![Perfil](dist/platform-assets/fauna-side-original.png) |
 
 ### Sintonia: personagem como parte da regra
 
