@@ -4744,6 +4744,26 @@
       "rightsHolder": "Luigi Scofano de Araujo; direitos das fontes preservados",
       "license": "Documentação do acervo; sem nova licença aberta para as artes.",
       "permissionEvidence": "docs/manuais-visuais-impressao/README.md; docs/recursos/declaracao-autoria.md"
+    },
+    {
+      "path": "dist/platform-assets/intuicao-app-icon.svg",
+      "sha256": "779c022959d7b42cf5e3e8db02a9ee3a9ce2da10e3b10a1d599374ad79b4193b",
+      "group": "icone-app-futuro",
+      "status": "cleared",
+      "rightsHolder": "Luigi Scofano de Araujo (elementos autorais do projeto)",
+      "license": "Direitos reservados; recursos visuais excluídos da licença MIT do código.",
+      "permissionEvidence": "docs/identidade/app-futuro/README.md",
+      "reviewBasis": "owner-approved-project-composition; existing-visual-rights-policy"
+    },
+    {
+      "path": "dist/platform-assets/intuicao-app-icon-32.png",
+      "sha256": "7580cbbc6faa5e7bee78d20824d5aab74260e45b6bb2084056e05e634b184a37",
+      "group": "icone-app-futuro",
+      "status": "cleared",
+      "rightsHolder": "Luigi Scofano de Araujo (elementos autorais do projeto)",
+      "license": "Direitos reservados; recursos visuais excluídos da licença MIT do código.",
+      "permissionEvidence": "docs/identidade/app-futuro/README.md",
+      "reviewBasis": "owner-approved-project-composition; existing-visual-rights-policy"
     }
   ],
   "rightsReview": {
