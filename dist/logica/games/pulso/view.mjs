@@ -1,3 +1,4 @@
+import { renderTileSignature } from '../../board-signature.mjs';
 import { renderBoard as renderNormal } from './view-normal.mjs';
 import { readPulsoSkin } from './skin.mjs';
 
@@ -116,6 +117,8 @@ function renderIdentity(level, state, selectedTool) {
         <rect x="${GRID.left - 5}" y="${GRID.top - 5}" width="${gridWidth + 10}" height="${gridHeight + 10}"
           fill="none" stroke="${COLORS.blue}" stroke-width="1.5"/>
         ${summaries.join('')}${cells.join('')}
+        ${renderTileSignature(GRID.left + gridWidth + 12, GRID.top - 26)}
+        ${renderTileSignature(4, GRID.top + gridHeight + 8)}
       </svg>
     </div>
     <p class="pulso-legend">● batida · × vazia · ponto = indecisa · ▪ pista fixa</p>`;

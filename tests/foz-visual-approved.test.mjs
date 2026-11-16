@@ -22,7 +22,11 @@ test('só os canais mudam no renderizador; peças, pinos, texto e áreas de inte
  const previous=git('show',`${base}:dist/logica/games/foz/view.mjs`);
  const line='parts.push(`<line x1="${ax}" y1="${ay}" x2="${bx}" y2="${by}" stroke="${C.frame}" stroke-width="3"/>`);';
  const water='parts.push(`<g class="foz-water-channel" aria-hidden="true"><path d="M${ax} ${ay}L${bx} ${by}" fill="none" stroke="#9cb5b3" stroke-width="17" stroke-linecap="round"/><path d="M${ax} ${ay}L${bx} ${by}" fill="none" stroke="#d5e3df" stroke-width="14" stroke-linecap="round"/></g>`);';
- assert.equal(read('dist/logica/games/foz/view.mjs'),previous.replace(line,water));
+ const current = read('dist/logica/games/foz/view.mjs').replace(/\r\n/g, '\n')
+  .replace("import { renderTileSignature } from '../../board-signature.mjs';\n", '')
+  .replace('  parts.push(renderTileSignature(x0 + bw + 17, y0 - 4), renderTileSignature(7, y0 + bh - 12));\n', '');
+ // A assinatura aprovada é a única adição posterior ao contrato histórico dos canais.
+ assert.equal(current,previous.replace(line,water));
 });
 test('80 fases em dois estados mantêm canais, casas, foz fixa e estado sem traços brancos',()=>{
  for(const level of CAMPAIGN)for(const state of [initialState(level),solutionState(level)]){

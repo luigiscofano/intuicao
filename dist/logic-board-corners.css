@@ -1,0 +1,10 @@
+/* Assinaturas passivas na moldura: não reduzem a grade nem capturam cliques. */
+:is(#c-board-surface, #s-board-surface, #r-board-surface) { position: relative; }
+.logic-board-corner { position: absolute; width: 20px; height: 20px; pointer-events: none; z-index: 1; }
+.logic-board-corner--top-right { top: 6px; right: 6px; }
+.logic-board-corner--bottom-left { bottom: 6px; left: 6px; }
+@media (max-width: 600px) {
+  .logic-board-corner { width: 14px; height: 14px; }
+  .logic-board-corner--top-right { top: 4px; right: 4px; }
+  .logic-board-corner--bottom-left { bottom: 4px; left: 4px; }
+}

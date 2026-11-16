@@ -1,3 +1,4 @@
+import { renderTileSignature } from '../../board-signature.mjs';
 import { initialState, isStateValid } from './engine.mjs';
 import { COLORS as C, pieceSymbol as symbol } from './art.mjs';
 import { boardGeometry, cellCenter } from './geometry.mjs';
@@ -32,5 +33,6 @@ export function renderBoard(level, current, { selectedTool = 'select' } = {}) {
   const legendY = bh + 98;
   parts.push(symbol('S', width * .17, legendY, 13), text(width * .17 + 43, legendY + 5, 'semente', 13), symbol('B', width * .462, legendY, 13), text(width * .462 + 36, legendY + 5, 'botão', 13), symbol('F', width * .714, legendY, 13), text(width * .714 + 40, legendY + 5, 'folha', 13));
   parts.push(text(width / 2, height - 21, state.selected === null ? 'Arraste para ligar · ou clique em duas peças' : `Selecionada: ${label(state.selected, level.width)} · escolha a outra peça`, 13));
+  parts.push(renderTileSignature(x0 + bw + 23, y0 - 4), renderTileSignature(8, y0 + bh - 12));
   return `<div class="renovo-board${level.width > 8 ? ' renovo-board--very-wide' : level.width > 6 ? ' renovo-board--wide' : ''}"><svg xmlns="http://www.w3.org/2000/svg" class="renovo-svg" data-renovo-svg width="100%" viewBox="0 0 ${width} ${height}" role="group" aria-label="Tabuleiro RENOVO de ${level.width} colunas e ${level.height} linhas">${parts.join('')}</svg></div>`;
 }
