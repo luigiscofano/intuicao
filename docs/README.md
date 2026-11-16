@@ -12,11 +12,15 @@ Este índice separa guias de entrada de registros de implementação. Os documen
 | Rever alterações | [Contribuição](../CONTRIBUTING.md) → [Branches e PRs](github/README.md) → [Qualidade](qualidade/README.md) |
 | Trabalhar com arte | [Recursos visuais](../dist/platform-assets/README.md) → módulos consumidores |
 
-## Edição dos seis jogos lógicos
+## Catálogo atual e registros históricos
+
+O catálogo público atual possui **19 jogos: 12 de níveis e 7 Versus**. Consulte o [README principal](../README.md) e os [manuais por jogo](jogos/README.md) para a apresentação atual. As duas seções seguintes registram expansões anteriores: seus nomes e números descrevem aquelas entregas, não o catálogo disponível hoje. Jogos removidos continuam recuperáveis pelo versionamento.
+
+## Histórico: edição dos seis jogos lógicos
 
 [DIVISA, PULSO, FOZ, REFÚGIO, MIRANTE e RENOVO](logica/README.md) acrescentam 480 fases ao catálogo. O guia reúne regras, galeria gerada pelas views reais, controles, persistência e limites da certificação. O [contrato técnico](../dist/logica/README.md) descreve a separação entre motores, campanhas, interface e armazenamento.
 
-## Edição dos oito duelos
+## Histórico: edição dos oito duelos
 
 [ENLACE, VAZANTE, MOSAICO, QUINHÃO, ESTALO, DOBRA, ACORDE e LASTRO](versus/README.md) ampliam o catálogo para 25 jogos e a categoria Versus para 11. O guia traz descrições ilustradas, controles e regras. A [arquitetura compartilhada](../dist/versus/README.md) explica motores, prévias, replay e busca; as [verificações](versus/VERIFICACAO.md) registram os testes realmente executados.
 
