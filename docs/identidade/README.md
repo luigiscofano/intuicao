@@ -49,3 +49,7 @@ AIIJ significa Arte de Ilustração Individual do Jogo. Não confundir essa comp
 3. Confira desktop, tela estreita, teclado e movimento reduzido.
 4. Não troque estética por regra: largura, cor e desenho não alteram vitória, turno ou progresso.
 5. Use capturas sem dados pessoais nem ponteiro sobre o conteúdo. Identifique edição e não publique mockup como tela existente.
+
+## Coleção completa de AIIJs
+
+[19 artes aprovadas e arquivos originais](aiij/README.md).

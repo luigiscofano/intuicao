@@ -120,3 +120,11 @@ Quando a mudança é visual, valide entrada no jogo, leitura das regras, intera�
 
 - [docs/cerco-review.md](../../../docs/cerco-review.md)
 - [docs/cerco-grid-sizes-2026-11-01.md](../../../docs/cerco-grid-sizes-2026-11-01.md)
+
+## AIIJ aprovada
+
+[![Arte de Ilustração Individual de CERCO](../../../dist/platform-assets/cerco-aiij-aprovada.svg)](../../../dist/platform-assets/cerco-aiij-aprovada.svg)
+
+Arquivo real aprovado, preservado em sua proporção original e com transparência. Esta ilustração pertence à identidade do jogo; não altera regras, controles, peças nem progresso. Não usar como miniatura do tabuleiro.
+
+[Ver as 19 AIIJs e orientações de uso](../../identidade/aiij/README.md).

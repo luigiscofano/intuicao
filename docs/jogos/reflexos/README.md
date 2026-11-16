@@ -125,3 +125,11 @@ Quando a mudança é visual, valide entrada no jogo, leitura das regras, intera�
 
 - [docs/reflexos80](../../../docs/reflexos80)
 - [dist/development/reflexos80/README.md](../../../dist/development/reflexos80/README.md)
+
+## AIIJ aprovada
+
+[![Arte de Ilustração Individual de Reflexos](../../../dist/platform-assets/light-aiij-aprovada.svg)](../../../dist/platform-assets/light-aiij-aprovada.svg)
+
+Arquivo real aprovado, preservado em sua proporção original e com transparência. Esta ilustração pertence à identidade do jogo; não altera regras, controles, peças nem progresso. Não usar como miniatura do tabuleiro.
+
+[Ver as 19 AIIJs e orientações de uso](../../identidade/aiij/README.md).

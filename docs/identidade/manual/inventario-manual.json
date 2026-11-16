@@ -24,6 +24,10 @@
       "sha256": "d0c7817036172ce014686372ba41385a717263fdd2ef309bfc7fb17afa58d581"
     },
     {
+      "arquivo": "assets/aiij-aprovadas/README.md",
+      "sha256": "fb7fb05482cc953a12c99267eb19ed78b3ab20c4a4f75d18d1707a927d0b2324"
+    },
+    {
       "arquivo": "assets/aiij-aprovadas/acorde-aiij-aprovada.svg",
       "sha256": "9a5b431bfef43ccaa642f1171fb5afed911cd511cffab8a9f9f18b097215adfe"
     },
@@ -42,6 +46,10 @@
     {
       "arquivo": "assets/aiij-aprovadas/elo-aiij-aprovada.svg",
       "sha256": "278cf754883b0b360e48e41e8f1a7aabee08afd19d4768cab100a43a92d94e08"
+    },
+    {
+      "arquivo": "assets/aiij-aprovadas/estalo-aiij-aprovada.svg",
+      "sha256": "689617695f01fd542baa96de708f85d9d4c4fc8896b21d78013d968a3819a995"
     },
     {
       "arquivo": "assets/aiij-aprovadas/light-aiij-aprovada.svg",
@@ -66,6 +74,10 @@
     {
       "arquivo": "assets/aiij-aprovadas/repasse-aiij-aprovada.svg",
       "sha256": "61916e878eb31d87d8b1cd65f95a5b984fe381173003e1f06855d1016c4f8c23"
+    },
+    {
+      "arquivo": "assets/aiij-aprovadas/sintonia-aiij-aprovada.svg",
+      "sha256": "ed751f300e8a9d1ae7fbe5d20fb30960cca35e4ae2540582ac730dc8d70d7001"
     },
     {
       "arquivo": "assets/arara-front-Branco_sobre_Verde.png",

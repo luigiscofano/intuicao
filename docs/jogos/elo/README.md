@@ -127,3 +127,11 @@ Quando a mudança é visual, valide entrada no jogo, leitura das regras, intera�
 
 - [docs/elo80/README.md](../../../docs/elo80/README.md)
 - [docs/elo-expanded-variety-2026-10-31.md](../../../docs/elo-expanded-variety-2026-10-31.md)
+
+## AIIJ aprovada
+
+[![Arte de Ilustração Individual de ELO](../../../dist/platform-assets/elo-aiij-aprovada.svg)](../../../dist/platform-assets/elo-aiij-aprovada.svg)
+
+Arquivo real aprovado, preservado em sua proporção original e com transparência. Esta ilustração pertence à identidade do jogo; não altera regras, controles, peças nem progresso. Não usar como miniatura do tabuleiro.
+
+[Ver as 19 AIIJs e orientações de uso](../../identidade/aiij/README.md).

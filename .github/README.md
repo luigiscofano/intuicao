@@ -74,7 +74,7 @@ Captura real da biblioteca, 16/11/2026, sem cursor e sem dados pessoais. Os 19 j
 
 ## Manual da marca
 
-[Manual ilustrado em PDF, 44 páginas](../docs/identidade/manual/Intuicao_Manual_da_Marca_2026.pdf) · [Fontes, inventário e reprodução](../docs/identidade/manual/README.md).
+[Manual ilustrado em PDF, 45 páginas](../docs/identidade/manual/Intuicao_Manual_da_Marca_2026.pdf) · [Fontes, inventário e reprodução](../docs/identidade/manual/README.md).
 
 ![Capa do manual da marca](../docs/identidade/manual/capa.png)
 
@@ -364,15 +364,37 @@ Esses arquivos integram o acervo visual. Sua presença no repositório não sign
 
 O azulejo funciona como assinatura recorrente: marca, dificuldade, cantos e celebração. A repetição cria parentesco; posição, escala e contraste precisam respeitar o conteúdo principal.
 
-| Foz | Mirante | Renovo |
-|---|---|---|
-| ![AIIJ Foz](../dist/platform-assets/foz-aiij-mosaico.png) | ![AIIJ Mirante](../dist/platform-assets/mirante-aiij-a.png) | ![AIIJ Renovo](../dist/platform-assets/renovo-aiij-c1.png) |
+AIIJ significa **Arte de Ilustração Individual do Jogo**. Esta coleção reúne as **19 artes aprovadas** dos 19 jogos atuais, com links para os arquivos reais versionados. A ilustração introduz a identidade do jogo, não representa um botão, solução ou tabuleiro. As seis artes preexistentes foram preservadas e as treze novas composições foram aprovadas individualmente.
 
-| Pulso | Refúgio | Desvio |
+| Reflexos | Corte certo | ELO |
 |---|---|---|
-| ![AIIJ Pulso](../dist/platform-assets/pulso-aiij-azulejo.svg) | ![AIIJ Refúgio](../dist/platform-assets/refugio-aiij-folhas.svg) | ![AIIJ Desvio](../dist/assets/desvio-aiij.svg) |
+| [![AIIJ de Reflexos](../dist/platform-assets/light-aiij-aprovada.svg)](../dist/platform-assets/light-aiij-aprovada.svg) | [![AIIJ de Corte certo](../dist/platform-assets/cut-aiij-aprovada.svg)](../dist/platform-assets/cut-aiij-aprovada.svg) | [![AIIJ de ELO](../dist/platform-assets/elo-aiij-aprovada.svg)](../dist/platform-assets/elo-aiij-aprovada.svg) |
 
-Esta seleção mostra as **seis AIIJs preexistentes** verificadas antes da expansão em aprovação. Novas propostas não são apresentadas aqui como coleção completa antes da aprovação final. AIIJ significa Arte de Ilustração Individual do Jogo. É distinta do tabuleiro, de uma miniatura e do ícone de navegação.
+| PRUMO | PACTO | SINTONIA |
+|---|---|---|
+| [![AIIJ de PRUMO](../dist/platform-assets/prumo-aiij-aprovada.svg)](../dist/platform-assets/prumo-aiij-aprovada.svg) | [![AIIJ de PACTO](../dist/platform-assets/pacto-aiij-aprovada.svg)](../dist/platform-assets/pacto-aiij-aprovada.svg) | [![AIIJ de SINTONIA](../dist/platform-assets/sintonia-aiij-aprovada.svg)](../dist/platform-assets/sintonia-aiij-aprovada.svg) |
+
+| REPASSE | PULSO | FOZ |
+|---|---|---|
+| [![AIIJ de REPASSE](../dist/platform-assets/repasse-aiij-aprovada.svg)](../dist/platform-assets/repasse-aiij-aprovada.svg) | [![AIIJ de PULSO](../dist/platform-assets/pulso-aiij-azulejo.svg)](../dist/platform-assets/pulso-aiij-azulejo.svg) | [![AIIJ de FOZ](../dist/platform-assets/foz-aiij-mosaico.svg)](../dist/platform-assets/foz-aiij-mosaico.svg) |
+
+| REFÚGIO | MIRANTE | RENOVO |
+|---|---|---|
+| [![AIIJ de REFÚGIO](../dist/platform-assets/refugio-aiij-folhas.svg)](../dist/platform-assets/refugio-aiij-folhas.svg) | [![AIIJ de MIRANTE](../dist/platform-assets/mirante-aiij-a.svg)](../dist/platform-assets/mirante-aiij-a.svg) | [![AIIJ de RENOVO](../dist/platform-assets/renovo-aiij-c1.svg)](../dist/platform-assets/renovo-aiij-c1.svg) |
+
+| DESVIO | BROTO | CERCO |
+|---|---|---|
+| [![AIIJ de DESVIO](../dist/assets/desvio-aiij.svg)](../dist/assets/desvio-aiij.svg) | [![AIIJ de BROTO](../dist/platform-assets/broto-aiij-aprovada.svg)](../dist/platform-assets/broto-aiij-aprovada.svg) | [![AIIJ de CERCO](../dist/platform-assets/cerco-aiij-aprovada.svg)](../dist/platform-assets/cerco-aiij-aprovada.svg) |
+
+| MOSAICO | QUINHÃO | ESTALO |
+|---|---|---|
+| [![AIIJ de MOSAICO](../dist/platform-assets/mosaico-aiij-aprovada.svg)](../dist/platform-assets/mosaico-aiij-aprovada.svg) | [![AIIJ de QUINHÃO](../dist/platform-assets/quinhao-aiij-aprovada.svg)](../dist/platform-assets/quinhao-aiij-aprovada.svg) | [![AIIJ de ESTALO](../dist/platform-assets/estalo-aiij-aprovada.svg)](../dist/platform-assets/estalo-aiij-aprovada.svg) |
+
+| ACORDE |
+|---|
+| [![AIIJ de ACORDE](../dist/platform-assets/acorde-aiij-aprovada.svg)](../dist/platform-assets/acorde-aiij-aprovada.svg) |
+
+[Inventário completo, arquivos e critérios de uso](../docs/identidade/aiij/README.md). Cada manual individual também apresenta sua própria AIIJ.
 
 Ícones de ação devem expressar função: voltar, desfazer, refazer, confirmar e informação. O [painel lateral](../dist/action-sidebar.mjs), os [ícones de navegação](../dist/game-nav-icons.mjs) e a [marca de conquistas](../dist/platform-assets/conquistas-selo-botanico.svg) são pontos de referência, não oportunidades para criar outra linguagem a cada tela.
 

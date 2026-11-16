@@ -4071,6 +4071,24 @@
       "license": "Direitos reservados; recursos visuais excluídos da licença MIT do código.",
       "permissionEvidence": "docs/identidade/aiij-estalo-rosacea.md",
       "reviewBasis": "owner-approved-original-vector-composition"
+    },
+    {
+      "path": "docs/identidade/manual/assets/aiij-aprovadas/estalo-aiij-aprovada.svg",
+      "sha256": "689617695f01fd542baa96de708f85d9d4c4fc8896b21d78013d968a3819a995",
+      "group": "manual-e-capturas",
+      "status": "cleared",
+      "rightsHolder": "Luigi Scofano de Araujo; direitos das fontes preservados",
+      "license": "Documentação do acervo; sem nova licença aberta para as artes.",
+      "permissionEvidence": "docs/identidade/manual/README.md; docs/recursos/declaracao-autoria.md"
+    },
+    {
+      "path": "docs/identidade/manual/assets/aiij-aprovadas/sintonia-aiij-aprovada.svg",
+      "sha256": "ed751f300e8a9d1ae7fbe5d20fb30960cca35e4ae2540582ac730dc8d70d7001",
+      "group": "manual-e-capturas",
+      "status": "cleared",
+      "rightsHolder": "Luigi Scofano de Araujo; direitos das fontes preservados",
+      "license": "Documentação do acervo; sem nova licença aberta para as artes.",
+      "permissionEvidence": "docs/identidade/manual/README.md; docs/recursos/declaracao-autoria.md"
     }
   ],
   "rightsReview": {
