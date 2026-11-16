@@ -1,4 +1,15 @@
-import { victoryTilesMarkup } from './victory-tiles.mjs';
+// O mosaico desta camada segue a prévia aprovada sem alterar a arte dos resultados existentes.
+function approvedVictoryTilesMarkup() {
+  const pieces = [
+    ['green-tl', 14, 14, 0], ['blue-br', 41, 14, 90],
+    ['gold-br', 14, 41, 90], ['green-tl', 41, 41, 180],
+  ].map(([asset, x, y, rotation], index) =>
+    `<g class="victory-tile victory-tile-${index}"><image href="platform-assets/tiles/${asset}.png" width="25" height="25" transform="translate(${x} ${y}) rotate(${rotation} 12.5 12.5)"/></g>`,
+  ).join('');
+  const fragments = [[8,20], [40,5], [72,20], [73,60], [40,75], [7,60]]
+    .map(([cx,cy],index) => `<circle class="victory-dot victory-dot-${index}" cx="${cx}" cy="${cy}" r="2"/>`).join('');
+  return `<svg class="victory-tiles victory-tiles-animate" viewBox="0 0 80 80" aria-hidden="true" focusable="false">${pieces}${fragments}</svg>`;
+}
 
 /** Apenas campanhas ativas; duelos e jogos arquivados não recebem este efeito. */
 export const LEVEL_FEEDBACK_GAMES = Object.freeze([
@@ -17,7 +28,7 @@ export function levelFeedbackBoard(surface, game) {
 
 export function levelFeedbackMarkup(success) {
   return success
-    ? `<div class="level-feedback-card">${victoryTilesMarkup()}<strong>Vitória!</strong><span>Nível concluído</span></div>`
+    ? `<div class="level-feedback-card">${approvedVictoryTilesMarkup()}<strong>Vitória!</strong><span>Nível concluído</span></div>`
     : '<span class="level-feedback-announcement">Resposta incorreta. Tente novamente.</span>';
 }
 
