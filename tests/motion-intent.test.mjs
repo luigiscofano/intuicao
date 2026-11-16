@@ -5,9 +5,9 @@ import { animateUIMotion, prefersReducedUIMotion } from '../dist/ui-motion.mjs';
 
 const css = readFileSync(new URL('../dist/ui-motion.css', import.meta.url), 'utf8');
 
-test('apenas as folhas ambientais móveis são retiradas; o chão fica contido', () => {
+test('apenas as folhas ambientais móveis são retiradas; as pontas do chão não são cortadas', () => {
   assert.match(css, /body > \.platform-leaf-foreground,\s*body > \.platform-leaf-layer > \.platform-leaf\s*\{\s*display: none !important;\s*animation: none !important;/);
-  assert.match(css, /body > \.platform-leaf-layer > \.platform-pile-surface\s*\{\s*overflow: hidden;/);
+  assert.match(css, /body > \.platform-leaf-layer > \.platform-pile-surface\s*\{\s*overflow: visible;/);
   // Nenhuma regra nova toca arte estática, peças, exemplos ou celebrações.
   const intent = css.slice(0, css.indexOf('/* Camada visual opcional.'));
   assert.doesNotMatch(intent, /(?:\.rules-|\.rpx-|\.victory|\.achievement|\.b-piece|\.approved-tiles|\.game-illustration)\S*\s*\{/);
