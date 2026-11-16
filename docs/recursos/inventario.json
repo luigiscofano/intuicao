@@ -191,6 +191,12 @@
         "docs/identidade/aiij-sintonia-conceitual.md"
       ],
       "source": "Composição vetorial conceitual A de Sintonia aprovada por Luigi em 16/11/2026; não altera sprites existentes."
+    },
+    "aiij-estalo-aprovada-20261116": {
+      "evidence": [
+        "docs/identidade/aiij-estalo-rosacea.md"
+      ],
+      "source": "Rosácea de impulso, opção A aprovada por Luigi em 16/11/2026."
     }
   },
   "assets": [
@@ -4054,6 +4060,16 @@
       "rightsHolder": "Luigi Scofano de Araujo",
       "license": "Direitos reservados; recursos visuais excluídos da licença MIT do código.",
       "permissionEvidence": "docs/identidade/aiij-sintonia-conceitual.md",
+      "reviewBasis": "owner-approved-original-vector-composition"
+    },
+    {
+      "path": "dist/platform-assets/estalo-aiij-aprovada.svg",
+      "sha256": "5796d5ae6cdf5bf1f3d51a77c384340eec1509578d2abb70f51814c8b021ac52",
+      "group": "aiij-estalo-aprovada-20261116",
+      "status": "cleared",
+      "rightsHolder": "Luigi Scofano de Araujo",
+      "license": "Direitos reservados; recursos visuais excluídos da licença MIT do código.",
+      "permissionEvidence": "docs/identidade/aiij-estalo-rosacea.md",
       "reviewBasis": "owner-approved-original-vector-composition"
     }
   ],
