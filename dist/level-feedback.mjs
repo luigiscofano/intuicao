@@ -41,7 +41,7 @@ export function createLevelFeedback(surface, clock = globalThis) {
     if (!LEVEL_FEEDBACK_GAMES.includes(game) || (success && !animate)) return;
     const doc = surface.ownerDocument;
     const win = doc?.defaultView;
-    if (!doc?.body || !win) return;
+    if (!doc?.body?.append || !doc.documentElement?.getAttribute || !win?.requestAnimationFrame) return;
     const board = levelFeedbackBoard(surface, game);
     const layer = doc.createElement('div');
     layer.className = `level-feedback-layer level-feedback-${success ? 'victory' : 'error'}`;
