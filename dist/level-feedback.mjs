@@ -36,7 +36,8 @@ export function levelFeedbackMarkup(success) {
 /** Camada independente do layout: não troca elementos, medidas ou dados do tabuleiro. */
 export function createLevelFeedback(surface, clock = globalThis) {
   let dispose = () => {};
-  function clear() { dispose(); dispose = () => {}; }
+  let clearNext = () => {};
+  function clear() { dispose(); dispose = () => {}; clearNext(); clearNext = () => {}; }
   function show(game, success, { animate = true } = {}) {
     clear();
     if (!LEVEL_FEEDBACK_GAMES.includes(game) || (success && !animate)) return;
@@ -85,6 +86,7 @@ export function createLevelFeedback(surface, clock = globalThis) {
     media?.addEventListener?.('change', syncMotion);
     followBoard();
     if (closed) return;
+    if (success) clearNext = showNextLevelAction(surface, game);
     if (!success && !reduced() && typeof board.animate === 'function') {
       // translate é independente de transform: preserva escala e ajuste à tela existentes.
       animation = board.animate([
@@ -93,8 +95,9 @@ export function createLevelFeedback(surface, clock = globalThis) {
       ], { duration: LEVEL_FEEDBACK_DURATION.shake, iterations: 1, easing: 'ease-out' });
     }
     timer = clock.setTimeout(() => {
-      clear();
-      if (success) dispose = showNextLevelAction(surface, game);
+      // O fim da animação remove só a camada, mantendo a ação já disponível.
+      dispose();
+      dispose = () => {};
     }, success ? LEVEL_FEEDBACK_DURATION.victory : LEVEL_FEEDBACK_DURATION.error);
   }
   return { show, clear };

@@ -36,6 +36,8 @@ node --test tests/level-feedback.test.mjs tests/contextual-result-motion.test.mj
 A validação específica também roda no workflow `level-feedback.yml`. Para reverter a feature, reverta o PR correspondente; nenhum formato de progresso foi alterado.
 ## Botão após a vitória
 
-Depois dos 3,4 segundos da comemoração, aparece um botão azul **Próximo nível** abaixo do painel lateral. Ele chama a seta nativa do jogo, preservando salvamento, modo e foco da próxima fase. Não aparece na última fase, no Versus, nem em modos sem uma próxima fase nativa (livre/customizado/Sem parar). O desafio diário mantém a transição já oferecida pela seta existente, sem criar outro diário.
+Imediatamente junto com o início da comemoração, aparece um botão azul **Próximo nível** abaixo do painel lateral. Ele chama a seta nativa do jogo, preservando salvamento, modo e foco da próxima fase. Não aparece na última fase, no Versus, nem em modos sem uma próxima fase nativa (livre/customizado/Sem parar). O desafio diário mantém a transição já oferecida pela seta existente, sem criar outro diário.
 
 A ação é removida ao reiniciar, navegar ou confirmar outro resultado. Ela não rouba foco e é acessível por Tab/Enter. A redução de movimento mantém a apresentação estática; o botão permanece disponível sem animação. Testes de contrato cobrem os 12 identificadores, estados indisponíveis e clique repetido. QA Chrome local confirmou Pulso fase1 → fase2 e botão azul abaixo dos azulejos da aba. Outras fases e telas móveis não foram auditadas manualmente nesta alteração.
+
+A ação não aguarda a animação: surge no mesmo ciclo da vitória e permanece após os 3,4 segundos da camada. O clique pode avançar mesmo durante a comemoração.

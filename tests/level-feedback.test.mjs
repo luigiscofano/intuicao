@@ -63,3 +63,19 @@ test('CSS não altera tamanho/layout; integração é única e mantém motivos e
   assert.match(main,/levelFeedback.show\(game, success, options\)/);assert.match(main,/levelFeedback.clear\(\)/);
   assert.deepEqual(LEVEL_FEEDBACK_DURATION,{victory:3400,error:1700,shake:320});
 });
+
+test('próximo nível surge junto à vitória, permanece após animação e limpa ao navegar', () => {
+ const f=fixture(),buttons=[];
+ const panel={append(b){buttons.push(b);},classList:{add(){},remove(){}}};
+ const next={isConnected:true,hidden:false,disabled:false,closest(){return null;},click(){}};
+ f.surface.closest=()=>({querySelector:()=>panel});
+ f.surface.ownerDocument.getElementById=()=>next;
+ const feedback=createLevelFeedback(f.surface,f.clock);
+ feedback.show('pulso',true);
+ assert.equal(buttons.length,1,'botão não espera timeout');
+ assert.equal(buttons[0].removed,undefined);
+ [...f.timers.values()][0].cb();
+ assert.ok(f.nodes[0].removed,'camada encerra normalmente');
+ assert.equal(buttons[0].removed,undefined,'ação continua disponível');
+ feedback.clear();assert.equal(buttons[0].removed,true);
+});
