@@ -4,6 +4,12 @@
 
 Una cada semente a uma folha por um botão, formando trios que dobram uma vez e não se cruzam.
 
+## Área de jogo atual
+
+[![RENOVO: captura real da área de jogo](../../imagens/galeria-atual/renovo.png)](../../imagens/galeria-atual/renovo.png)
+
+*Captura local do código atual, com estado de demonstração, sem cursor ou dados pessoais. [Proveniência e limites](../../imagens/galeria-atual/README.md). Não representa uma solução nem comprova todos os estados da partida.*
+
 ## Objetivo
 
 **Ligue semente, botão e folha em trios, sem cruzar as linhas.**

@@ -4,6 +4,12 @@
 
 Um puzzle de estimativa de áreas em que uma linha ou curva divide uma figura.
 
+## Área de jogo atual
+
+[![Corte certo: captura real da área de jogo](../../imagens/galeria-atual/cut.png)](../../imagens/galeria-atual/cut.png)
+
+*Captura local do código atual, com estado de demonstração, sem cursor ou dados pessoais. [Proveniência e limites](../../imagens/galeria-atual/README.md). Não representa uma solução nem comprova todos os estados da partida.*
+
 ## Objetivo
 
 **Deixe no lado roxo a porcentagem pedida. Por exemplo: 50% é metade da figura.**

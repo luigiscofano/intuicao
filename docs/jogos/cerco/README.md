@@ -4,6 +4,12 @@
 
 Mova suas peças, feche caminhos e deixe o adversário sem saída.
 
+## Área de jogo atual
+
+[![CERCO: captura real da área de jogo](../../imagens/galeria-atual/cerco.png)](../../imagens/galeria-atual/cerco.png)
+
+*Captura local do código atual, com estado de demonstração, sem cursor ou dados pessoais. [Proveniência e limites](../../imagens/galeria-atual/README.md). Não representa uma solução nem comprova todos os estados da partida.*
+
 ## Objetivo
 
 **Feche os caminhos do rival sem deixar suas próprias peças presas.**

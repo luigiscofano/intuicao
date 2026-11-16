@@ -4,6 +4,12 @@
 
 Um duelo de estratégia por turnos em que cada escolha limita as opções do adversário.
 
+## Área de jogo atual
+
+[![DESVIO: captura real da área de jogo](../../imagens/galeria-atual/desvio.png)](../../imagens/galeria-atual/desvio.png)
+
+*Captura local do código atual, com estado de demonstração, sem cursor ou dados pessoais. [Proveniência e limites](../../imagens/galeria-atual/README.md). Não representa uma solução nem comprova todos os estados da partida.*
+
 ## Objetivo
 
 **Deixe o adversário sem casa disponível para escolher.**

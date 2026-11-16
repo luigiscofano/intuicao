@@ -4,6 +4,12 @@
 
 Um puzzle de equilíbrio em que você desenha peças ao redor de seus apoios.
 
+## Área de jogo atual
+
+[![PRUMO: captura real da área de jogo](../../imagens/galeria-atual/prumo.png)](../../imagens/galeria-atual/prumo.png)
+
+*Captura local do código atual, com estado de demonstração, sem cursor ou dados pessoais. [Proveniência e limites](../../imagens/galeria-atual/README.md). Não representa uma solução nem comprova todos os estados da partida.*
+
 ## Objetivo
 
 **Pinte uma peça para cada apoio. Todas precisam se equilibrar sobre ele.**

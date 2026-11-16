@@ -4,6 +4,12 @@
 
 Um puzzle de luz e espelhos em que você constrói percursos para raios coloridos.
 
+## Área de jogo atual
+
+[![Reflexos: captura real da área de jogo](../../imagens/galeria-atual/light.png)](../../imagens/galeria-atual/light.png)
+
+*Captura local do código atual, com estado de demonstração, sem cursor ou dados pessoais. [Proveniência e limites](../../imagens/galeria-atual/README.md). Não representa uma solução nem comprova todos os estados da partida.*
+
 ## Objetivo
 
 **Leve cada raio ao alvo da mesma cor e símbolo.**

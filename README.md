@@ -14,6 +14,7 @@ Projeto de **Luigi Scofano de Araujo**. O Intuição transforma relações abstr
 
 - [Proposta e objetivos](#proposta-e-objetivos)
 - [Os 19 jogos](#os-19-jogos)
+- [Galeria atual dos 19 jogos](#galeria-atual-dos-19-jogos)
 - [Identidade visual e brasilidade](#identidade-visual-e-brasilidade)
 - [Fauna, flora e objetos com função](#fauna-flora-e-objetos-com-funcao)
 - [Experiência e acessibilidade](#experiência-e-acessibilidade)
@@ -48,22 +49,184 @@ A numeração é editorial, de 01 a 19. Os IDs técnicos permanecem estáveis pa
 | 05 | PACTO | Raciocínio lógico | [Manual](docs/jogos/pacto/README.md) |
 | 06 | SINTONIA | Raciocínio lógico | [Manual](docs/jogos/sintonia/README.md) |
 | 07 | REPASSE | Raciocínio lógico | [Manual](docs/jogos/repasse/README.md) |
-| 08 | PULSO | Raciocínio lógico | [Motor e campanha](dist/logica/games/pulso/README.md) |
-| 09 | FOZ | Raciocínio lógico | [Motor e campanha](dist/logica/games/foz/README.md) |
-| 10 | REFÚGIO | Raciocínio lógico | [Motor e campanha](dist/logica/games/refugio/README.md) |
-| 11 | MIRANTE | Raciocínio lógico | [Motor e campanha](dist/logica/games/mirante/README.md) |
-| 12 | RENOVO | Raciocínio lógico | [Motor e campanha](dist/logica/games/renovo/README.md) |
+| 08 | PULSO | Raciocínio lógico | [Motor e campanha](docs/jogos/pulso/README.md) |
+| 09 | FOZ | Raciocínio lógico | [Motor e campanha](docs/jogos/foz/README.md) |
+| 10 | REFÚGIO | Raciocínio lógico | [Motor e campanha](docs/jogos/refugio/README.md) |
+| 11 | MIRANTE | Raciocínio lógico | [Motor e campanha](docs/jogos/mirante/README.md) |
+| 12 | RENOVO | Raciocínio lógico | [Motor e campanha](docs/jogos/renovo/README.md) |
 | 13 | DESVIO | Versus | [Manual](docs/jogos/desvio/README.md) |
 | 14 | BROTO | Versus | [Manual](docs/jogos/broto/README.md) |
 | 15 | CERCO | Versus | [Manual](docs/jogos/cerco/README.md) |
-| 16 | MOSAICO | Versus | [Implementação](dist/versus/games/mosaico/README.md) |
-| 17 | QUINHÃO | Versus | [Implementação](dist/versus/games/quinhao/README.md) |
-| 18 | ESTALO | Versus | [Implementação](dist/versus/games/estalo/README.md) |
-| 19 | ACORDE | Versus | [Implementação](dist/versus/games/acorde/README.md) |
+| 16 | MOSAICO | Versus | [Implementação](docs/jogos/mosaico/README.md) |
+| 17 | QUINHÃO | Versus | [Implementação](docs/jogos/quinhao/README.md) |
+| 18 | ESTALO | Versus | [Implementação](docs/jogos/estalo/README.md) |
+| 19 | ACORDE | Versus | [Implementação](docs/jogos/acorde/README.md) |
 
 **Campanha e duelo não são a mesma experiência.** As campanhas oferecem níveis; os Versus trabalham com mapas, preparação de partida, turnos e vencedor. Não recebem Desafio diário nem Modo sem parar. Os detalhes de cada modo e seus limites estão nos respectivos manuais; modos contínuos não devem ser confundidos automaticamente com geração ilimitada de fases inéditas.
 
 DIVISA, ÓRBITA, LASTRO, VAZANTE, ENLACE e DOBRA estão retirados do catálogo atual. Seus arquivos e registros continuam preservados. Veja a [retirada no código](dist/retired-games.mjs) e o [registro histórico](docs/README-historico-2026-11-16.md).
+
+## Manual da marca
+
+[Manual ilustrado em PDF, 41 páginas](docs/identidade/manual/Intuicao_Manual_da_Marca_2026.pdf) · [Fontes, inventário e reprodução](docs/identidade/manual/README.md).
+
+![Capa do manual da marca](docs/identidade/manual/capa.png)
+
+## Galeria atual dos 19 jogos
+
+Capturas reais do código versionado, abertas em navegador isolado com estado de demonstração. Não são mockups. Não usam dados pessoais, não alteram saves do usuário e não incluem o cursor. [Data, revisão, dimensões e limites da captura](docs/imagens/galeria-atual/README.md). Clique na imagem para ampliar; cada título leva ao manual específico.
+
+### 01 · Reflexos
+
+Leve cada raio ao alvo da mesma cor e símbolo.
+
+[![Área de jogo atual de Reflexos](docs/imagens/galeria-atual/light.png)](docs/imagens/galeria-atual/light.png)
+
+[Objetivo, regras, controles e implementação](docs/jogos/reflexos/README.md).
+
+### 02 · Corte certo
+
+Deixe no lado roxo a porcentagem pedida. Por exemplo: 50% é metade da figura.
+
+[![Área de jogo atual de Corte certo](docs/imagens/galeria-atual/cut.png)](docs/imagens/galeria-atual/cut.png)
+
+[Objetivo, regras, controles e implementação](docs/jogos/corte/README.md).
+
+### 03 · ELO
+
+Coloque um ponto em cada região e forme um único caminho fechado.
+
+[![Área de jogo atual de ELO](docs/imagens/galeria-atual/elo.png)](docs/imagens/galeria-atual/elo.png)
+
+[Objetivo, regras, controles e implementação](docs/jogos/elo/README.md).
+
+### 04 · PRUMO
+
+Pinte uma peça para cada apoio. Todas precisam se equilibrar sobre ele.
+
+[![Área de jogo atual de PRUMO](docs/imagens/galeria-atual/prumo.png)](docs/imagens/galeria-atual/prumo.png)
+
+[Objetivo, regras, controles e implementação](docs/jogos/prumo/README.md).
+
+### 05 · PACTO
+
+Forme duplas iguais e deixe dois de cada símbolo em toda linha e coluna.
+
+[![Área de jogo atual de PACTO](docs/imagens/galeria-atual/pacto.png)](docs/imagens/galeria-atual/pacto.png)
+
+[Objetivo, regras, controles e implementação](docs/jogos/pacto/README.md).
+
+### 06 · SINTONIA
+
+Leve todos os animais aos seus destinos ao mesmo tempo.
+
+[![Área de jogo atual de SINTONIA](docs/imagens/galeria-atual/sintonia.png)](docs/imagens/galeria-atual/sintonia.png)
+
+[Objetivo, regras, controles e implementação](docs/jogos/sintonia/README.md).
+
+### 07 · REPASSE
+
+Retire todas as peças e faça cada caixa da borda receber o valor exato da meta.
+
+[![Área de jogo atual de REPASSE](docs/imagens/galeria-atual/repasse.png)](docs/imagens/galeria-atual/repasse.png)
+
+[Objetivo, regras, controles e implementação](docs/jogos/repasse/README.md).
+
+### 08 · PULSO
+
+Coloque três marcas por linha, com o mesmo espaço entre elas, e acerte as quantidades das colunas.
+
+[![Área de jogo atual de PULSO](docs/imagens/galeria-atual/pulso.png)](docs/imagens/galeria-atual/pulso.png)
+
+[Objetivo, regras, controles e implementação](docs/jogos/pulso/README.md).
+
+### 09 · FOZ
+
+Faça todos os caminhos de água chegarem à foz, o ponto marcado com 0.
+
+[![Área de jogo atual de FOZ](docs/imagens/galeria-atual/foz.png)](docs/imagens/galeria-atual/foz.png)
+
+[Objetivo, regras, controles e implementação](docs/jogos/foz/README.md).
+
+### 10 · REFÚGIO
+
+Separe o espaço em refúgios. Cada um precisa ter um único marco.
+
+[![Área de jogo atual de REFÚGIO](docs/imagens/galeria-atual/refugio.png)](docs/imagens/galeria-atual/refugio.png)
+
+[Objetivo, regras, controles e implementação](docs/jogos/refugio/README.md).
+
+### 11 · MIRANTE
+
+Coloque as formas para que cada seta da borda veja primeiro a forma pedida.
+
+[![Área de jogo atual de MIRANTE](docs/imagens/galeria-atual/mirante.png)](docs/imagens/galeria-atual/mirante.png)
+
+[Objetivo, regras, controles e implementação](docs/jogos/mirante/README.md).
+
+### 12 · RENOVO
+
+Ligue semente, botão e folha em trios, sem cruzar as linhas.
+
+[![Área de jogo atual de RENOVO](docs/imagens/galeria-atual/renovo.png)](docs/imagens/galeria-atual/renovo.png)
+
+[Objetivo, regras, controles e implementação](docs/jogos/renovo/README.md).
+
+### 13 · DESVIO
+
+Deixe o adversário sem casa disponível para escolher.
+
+[![Área de jogo atual de DESVIO](docs/imagens/galeria-atual/desvio.png)](docs/imagens/galeria-atual/desvio.png)
+
+[Objetivo, regras, controles e implementação](docs/jogos/desvio/README.md).
+
+### 14 · BROTO
+
+Faça suas sementes florescerem. Vence quem colher mais flores nas duas rodadas.
+
+[![Área de jogo atual de BROTO](docs/imagens/galeria-atual/broto.png)](docs/imagens/galeria-atual/broto.png)
+
+[Objetivo, regras, controles e implementação](docs/jogos/broto/README.md).
+
+### 15 · CERCO
+
+Feche os caminhos do rival sem deixar suas próprias peças presas.
+
+[![Área de jogo atual de CERCO](docs/imagens/galeria-atual/cerco.png)](docs/imagens/galeria-atual/cerco.png)
+
+[Objetivo, regras, controles e implementação](docs/jogos/cerco/README.md).
+
+### 16 · MOSAICO
+
+Gire e coloque azulejos para formar encontros com mais cantos da sua cor.
+
+[![Área de jogo atual de MOSAICO](docs/imagens/galeria-atual/mosaico.png)](docs/imagens/galeria-atual/mosaico.png)
+
+[Objetivo, regras, controles e implementação](docs/jogos/mosaico/README.md).
+
+### 17 · QUINHÃO
+
+Ofereça três cestos. O rival fica com um, e você recebe os outros dois.
+
+[![Área de jogo atual de QUINHÃO](docs/imagens/galeria-atual/quinhao.png)](docs/imagens/galeria-atual/quinhao.png)
+
+[Objetivo, regras, controles e implementação](docs/jogos/quinhao/README.md).
+
+### 18 · ESTALO
+
+Abra todas as suas vagens antes do rival, planejando a sequência das setas.
+
+[![Área de jogo atual de ESTALO](docs/imagens/galeria-atual/estalo.png)](docs/imagens/galeria-atual/estalo.png)
+
+[Objetivo, regras, controles e implementação](docs/jogos/estalo/README.md).
+
+### 19 · ACORDE
+
+Recolha sinos até formar um par de cada um de três símbolos diferentes.
+
+[![Área de jogo atual de ACORDE](docs/imagens/galeria-atual/acorde.png)](docs/imagens/galeria-atual/acorde.png)
+
+[Objetivo, regras, controles e implementação](docs/jogos/acorde/README.md).
 
 ## Identidade visual e brasilidade
 
@@ -203,7 +366,7 @@ O azulejo funciona como assinatura recorrente: marca, dificuldade, cantos e cele
 |---|---|---|
 | ![AIIJ Pulso](dist/platform-assets/pulso-aiij-azulejo.svg) | ![AIIJ Refúgio](dist/platform-assets/refugio-aiij-folhas.svg) | ![AIIJ Desvio](dist/assets/desvio-aiij.svg) |
 
-Essas são as **seis AIIJs com arquivo dedicado** verificadas nesta revisão. Não se afirma que os demais jogos já possuam AIIJ própria. AIIJ significa Arte de Ilustração Individual do Jogo. É distinta do tabuleiro, de uma miniatura e do ícone de navegação.
+Esta seleção mostra as **seis AIIJs preexistentes** verificadas antes da expansão em aprovação. Novas propostas não são apresentadas aqui como coleção completa antes da aprovação final. AIIJ significa Arte de Ilustração Individual do Jogo. É distinta do tabuleiro, de uma miniatura e do ícone de navegação.
 
 Ícones de ação devem expressar função: voltar, desfazer, refazer, confirmar e informação. O [painel lateral](dist/action-sidebar.mjs), os [ícones de navegação](dist/game-nav-icons.mjs) e a [marca de conquistas](dist/platform-assets/conquistas-selo-botanico.svg) são pontos de referência, não oportunidades para criar outra linguagem a cada tela.
 

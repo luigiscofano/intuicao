@@ -4,6 +4,12 @@
 
 Siga as setas e decida quem ganha com cada estalo.
 
+## Área de jogo atual
+
+[![ESTALO: captura real da área de jogo](../../imagens/galeria-atual/estalo.png)](../../imagens/galeria-atual/estalo.png)
+
+*Captura local do código atual, com estado de demonstração, sem cursor ou dados pessoais. [Proveniência e limites](../../imagens/galeria-atual/README.md). Não representa uma solução nem comprova todos os estados da partida.*
+
 ## Objetivo
 
 **Abra todas as suas vagens antes do rival, planejando a sequência das setas.**

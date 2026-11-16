@@ -4,6 +4,12 @@
 
 Ofereça três cestos. O rival escolhe primeiro.
 
+## Área de jogo atual
+
+[![QUINHÃO: captura real da área de jogo](../../imagens/galeria-atual/quinhao.png)](../../imagens/galeria-atual/quinhao.png)
+
+*Captura local do código atual, com estado de demonstração, sem cursor ou dados pessoais. [Proveniência e limites](../../imagens/galeria-atual/README.md). Não representa uma solução nem comprova todos os estados da partida.*
+
 ## Objetivo
 
 **Ofereça três cestos. O rival fica com um, e você recebe os outros dois.**

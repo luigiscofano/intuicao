@@ -4,6 +4,12 @@
 
 Reúna seus pares e escolha o próximo eixo do rival.
 
+## Área de jogo atual
+
+[![ACORDE: captura real da área de jogo](../../imagens/galeria-atual/acorde.png)](../../imagens/galeria-atual/acorde.png)
+
+*Captura local do código atual, com estado de demonstração, sem cursor ou dados pessoais. [Proveniência e limites](../../imagens/galeria-atual/README.md). Não representa uma solução nem comprova todos os estados da partida.*
+
 ## Objetivo
 
 **Recolha sinos até formar um par de cada um de três símbolos diferentes.**

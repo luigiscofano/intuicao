@@ -4,6 +4,12 @@
 
 Um puzzle de planejamento em que retirar uma peça transforma os valores e os caminhos das próximas.
 
+## Área de jogo atual
+
+[![REPASSE: captura real da área de jogo](../../imagens/galeria-atual/repasse.png)](../../imagens/galeria-atual/repasse.png)
+
+*Captura local do código atual, com estado de demonstração, sem cursor ou dados pessoais. [Proveniência e limites](../../imagens/galeria-atual/README.md). Não representa uma solução nem comprova todos os estados da partida.*
+
 ## Objetivo
 
 **Retire todas as peças e faça cada caixa da borda receber o valor exato da meta.**

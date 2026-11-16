@@ -4,6 +4,12 @@
 
 Oriente os canais para que toda gota alcance a foz, respeitando o número de passos indicado nas pistas.
 
+## Área de jogo atual
+
+[![FOZ: captura real da área de jogo](../../imagens/galeria-atual/foz.png)](../../imagens/galeria-atual/foz.png)
+
+*Captura local do código atual, com estado de demonstração, sem cursor ou dados pessoais. [Proveniência e limites](../../imagens/galeria-atual/README.md). Não representa uma solução nem comprova todos os estados da partida.*
+
 ## Objetivo
 
 **Faça todos os caminhos de água chegarem à foz, o ponto marcado com 0.**

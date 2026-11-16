@@ -4,6 +4,12 @@
 
 Marque três batidas igualmente espaçadas em cada linha e faça as colunas atingirem suas cotas.
 
+## Área de jogo atual
+
+[![PULSO: captura real da área de jogo](../../imagens/galeria-atual/pulso.png)](../../imagens/galeria-atual/pulso.png)
+
+*Captura local do código atual, com estado de demonstração, sem cursor ou dados pessoais. [Proveniência e limites](../../imagens/galeria-atual/README.md). Não representa uma solução nem comprova todos os estados da partida.*
+
 ## Objetivo
 
 **Coloque três marcas por linha, com o mesmo espaço entre elas, e acerte as quantidades das colunas.**

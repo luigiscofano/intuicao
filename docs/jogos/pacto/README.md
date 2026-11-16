@@ -4,6 +4,12 @@
 
 Um puzzle de dedução em que quatro símbolos precisam formar parcerias numa grade.
 
+## Área de jogo atual
+
+[![PACTO: captura real da área de jogo](../../imagens/galeria-atual/pacto.png)](../../imagens/galeria-atual/pacto.png)
+
+*Captura local do código atual, com estado de demonstração, sem cursor ou dados pessoais. [Proveniência e limites](../../imagens/galeria-atual/README.md). Não representa uma solução nem comprova todos os estados da partida.*
+
 ## Objetivo
 
 **Forme duplas iguais e deixe dois de cada símbolo em toda linha e coluna.**

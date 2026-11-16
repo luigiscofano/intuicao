@@ -4,6 +4,12 @@
 
 Separe os marcos em espaços livres, usando apenas barreiras que realmente separam dois refúgios.
 
+## Área de jogo atual
+
+[![REFÚGIO: captura real da área de jogo](../../imagens/galeria-atual/refugio.png)](../../imagens/galeria-atual/refugio.png)
+
+*Captura local do código atual, com estado de demonstração, sem cursor ou dados pessoais. [Proveniência e limites](../../imagens/galeria-atual/README.md). Não representa uma solução nem comprova todos os estados da partida.*
+
 ## Objetivo
 
 **Separe o espaço em refúgios. Cada um precisa ter um único marco.**

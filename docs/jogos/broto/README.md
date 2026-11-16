@@ -4,6 +4,12 @@
 
 Plante sementes, complete estímulos e escolha quem floresce.
 
+## Área de jogo atual
+
+[![BROTO: captura real da área de jogo](../../imagens/galeria-atual/broto.png)](../../imagens/galeria-atual/broto.png)
+
+*Captura local do código atual, com estado de demonstração, sem cursor ou dados pessoais. [Proveniência e limites](../../imagens/galeria-atual/README.md). Não representa uma solução nem comprova todos os estados da partida.*
+
 ## Objetivo
 
 **Faça suas sementes florescerem. Vence quem colher mais flores nas duas rodadas.**

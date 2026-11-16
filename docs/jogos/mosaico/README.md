@@ -4,6 +4,12 @@
 
 Oriente os azulejos. Conquiste os encontros.
 
+## Área de jogo atual
+
+[![MOSAICO: captura real da área de jogo](../../imagens/galeria-atual/mosaico.png)](../../imagens/galeria-atual/mosaico.png)
+
+*Captura local do código atual, com estado de demonstração, sem cursor ou dados pessoais. [Proveniência e limites](../../imagens/galeria-atual/README.md). Não representa uma solução nem comprova todos os estados da partida.*
+
 ## Objetivo
 
 **Gire e coloque azulejos para formar encontros com mais cantos da sua cor.**

@@ -4,6 +4,12 @@
 
 Um puzzle de coordenação em que um único comando move vários animais, cada um no seu tabuleiro.
 
+## Área de jogo atual
+
+[![SINTONIA: captura real da área de jogo](../../imagens/galeria-atual/sintonia.png)](../../imagens/galeria-atual/sintonia.png)
+
+*Captura local do código atual, com estado de demonstração, sem cursor ou dados pessoais. [Proveniência e limites](../../imagens/galeria-atual/README.md). Não representa uma solução nem comprova todos os estados da partida.*
+
 ## Objetivo
 
 **Leve todos os animais aos seus destinos ao mesmo tempo.**

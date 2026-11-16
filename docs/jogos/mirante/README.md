@@ -4,6 +4,12 @@
 
 Distribua poucas peças para que todos os observadores vejam a forma certa, aproveitando a mesma peça em várias direções sem esconder quem ainda precisa ser visto.
 
+## Área de jogo atual
+
+[![MIRANTE: captura real da área de jogo](../../imagens/galeria-atual/mirante.png)](../../imagens/galeria-atual/mirante.png)
+
+*Captura local do código atual, com estado de demonstração, sem cursor ou dados pessoais. [Proveniência e limites](../../imagens/galeria-atual/README.md). Não representa uma solução nem comprova todos os estados da partida.*
+
 ## Objetivo
 
 **Coloque as formas para que cada seta da borda veja primeiro a forma pedida.**

@@ -165,6 +165,14 @@
         "docs/imagens/manuais-visuais/README.md",
         "docs/recursos/declaracao-autoria.md"
       ]
+    },
+    "manual-e-capturas": {
+      "source": "Capturas reais isoladas e manual do acervo existente, 16/11/2026. Preserva direitos das fontes.",
+      "evidence": [
+        "docs/imagens/galeria-atual/README.md",
+        "docs/identidade/manual/README.md",
+        "docs/recursos/declaracao-autoria.md"
+      ]
     }
   },
   "assets": [
@@ -1983,6 +1991,1833 @@
       "rightsHolder": "Luigi Scofano de Araujo",
       "license": "Arte autoral preservada; sem nova licença aberta para reutilização.",
       "permissionEvidence": "docs/recursos/declaracao-autoria.md; docs/imagens/manuais-visuais/README.md"
+    },
+    {
+      "path": "docs/imagens/galeria-atual/acorde.png",
+      "sha256": "dfdb4287ed1b62e29c9567df6aaf19ae98017dbc813ab9826b1ae946de735582",
+      "group": "manual-e-capturas",
+      "status": "cleared",
+      "rightsHolder": "Luigi Scofano de Araujo; direitos das fontes preservados",
+      "license": "Documentação do acervo; sem nova licença aberta para as artes.",
+      "permissionEvidence": "docs/identidade/manual/README.md; docs/recursos/declaracao-autoria.md"
+    },
+    {
+      "path": "docs/imagens/galeria-atual/broto.png",
+      "sha256": "56a5c79a26ae10b717b7354a8cdf25e14c13a42470aee8e7018236876cc416e6",
+      "group": "manual-e-capturas",
+      "status": "cleared",
+      "rightsHolder": "Luigi Scofano de Araujo; direitos das fontes preservados",
+      "license": "Documentação do acervo; sem nova licença aberta para as artes.",
+      "permissionEvidence": "docs/identidade/manual/README.md; docs/recursos/declaracao-autoria.md"
+    },
+    {
+      "path": "docs/imagens/galeria-atual/cerco.png",
+      "sha256": "d55986a82bb3dda3ec3784ddad34c8e6921f6af51463e28a5b32037cb32d0e01",
+      "group": "manual-e-capturas",
+      "status": "cleared",
+      "rightsHolder": "Luigi Scofano de Araujo; direitos das fontes preservados",
+      "license": "Documentação do acervo; sem nova licença aberta para as artes.",
+      "permissionEvidence": "docs/identidade/manual/README.md; docs/recursos/declaracao-autoria.md"
+    },
+    {
+      "path": "docs/imagens/galeria-atual/cut.png",
+      "sha256": "06d5c919deb279a3de3c60d02409412c47d6627079e53e291dee0cd0bfe0a223",
+      "group": "manual-e-capturas",
+      "status": "cleared",
+      "rightsHolder": "Luigi Scofano de Araujo; direitos das fontes preservados",
+      "license": "Documentação do acervo; sem nova licença aberta para as artes.",
+      "permissionEvidence": "docs/identidade/manual/README.md; docs/recursos/declaracao-autoria.md"
+    },
+    {
+      "path": "docs/imagens/galeria-atual/desvio.png",
+      "sha256": "e0809c1a19e253cf01f4de22193d6c8c23e573707b1ab83ace3ec7a6ec9eaeb6",
+      "group": "manual-e-capturas",
+      "status": "cleared",
+      "rightsHolder": "Luigi Scofano de Araujo; direitos das fontes preservados",
+      "license": "Documentação do acervo; sem nova licença aberta para as artes.",
+      "permissionEvidence": "docs/identidade/manual/README.md; docs/recursos/declaracao-autoria.md"
+    },
+    {
+      "path": "docs/imagens/galeria-atual/elo.png",
+      "sha256": "8cf35cae2bcf37e419cbf461523861d50efca5f9c19220427b2189bdd864e51f",
+      "group": "manual-e-capturas",
+      "status": "cleared",
+      "rightsHolder": "Luigi Scofano de Araujo; direitos das fontes preservados",
+      "license": "Documentação do acervo; sem nova licença aberta para as artes.",
+      "permissionEvidence": "docs/identidade/manual/README.md; docs/recursos/declaracao-autoria.md"
+    },
+    {
+      "path": "docs/imagens/galeria-atual/estalo.png",
+      "sha256": "bf4fbf58f7691d333d9076f9b4a7207a106e9bf784362e8d6ff6a6250e74eeff",
+      "group": "manual-e-capturas",
+      "status": "cleared",
+      "rightsHolder": "Luigi Scofano de Araujo; direitos das fontes preservados",
+      "license": "Documentação do acervo; sem nova licença aberta para as artes.",
+      "permissionEvidence": "docs/identidade/manual/README.md; docs/recursos/declaracao-autoria.md"
+    },
+    {
+      "path": "docs/imagens/galeria-atual/foz.png",
+      "sha256": "fdafff6850af8e5014621580bd56904a4abcc112fc811dce542985414a7bed70",
+      "group": "manual-e-capturas",
+      "status": "cleared",
+      "rightsHolder": "Luigi Scofano de Araujo; direitos das fontes preservados",
+      "license": "Documentação do acervo; sem nova licença aberta para as artes.",
+      "permissionEvidence": "docs/identidade/manual/README.md; docs/recursos/declaracao-autoria.md"
+    },
+    {
+      "path": "docs/imagens/galeria-atual/home.png",
+      "sha256": "d27748aa9a700c4bbe2e2c4d7c2827d8a16ec56efba2a1c1172f8d3fa3f08b09",
+      "group": "manual-e-capturas",
+      "status": "cleared",
+      "rightsHolder": "Luigi Scofano de Araujo; direitos das fontes preservados",
+      "license": "Documentação do acervo; sem nova licença aberta para as artes.",
+      "permissionEvidence": "docs/identidade/manual/README.md; docs/recursos/declaracao-autoria.md"
+    },
+    {
+      "path": "docs/imagens/galeria-atual/light.png",
+      "sha256": "947745d826dd2db9d3c1426abf9ceaaafde5595ddd6b2a8f76686dd4a802fa5f",
+      "group": "manual-e-capturas",
+      "status": "cleared",
+      "rightsHolder": "Luigi Scofano de Araujo; direitos das fontes preservados",
+      "license": "Documentação do acervo; sem nova licença aberta para as artes.",
+      "permissionEvidence": "docs/identidade/manual/README.md; docs/recursos/declaracao-autoria.md"
+    },
+    {
+      "path": "docs/imagens/galeria-atual/mirante.png",
+      "sha256": "c3f703aceb7b486f4c1ffc5c665e8c34345fd94e4dee316c56cc59d0781db901",
+      "group": "manual-e-capturas",
+      "status": "cleared",
+      "rightsHolder": "Luigi Scofano de Araujo; direitos das fontes preservados",
+      "license": "Documentação do acervo; sem nova licença aberta para as artes.",
+      "permissionEvidence": "docs/identidade/manual/README.md; docs/recursos/declaracao-autoria.md"
+    },
+    {
+      "path": "docs/imagens/galeria-atual/mosaico.png",
+      "sha256": "7ac77fedf5a03d87ae0ac4fbf669d511c74eb2bcc4d9f10b1f26b90f9ae853d6",
+      "group": "manual-e-capturas",
+      "status": "cleared",
+      "rightsHolder": "Luigi Scofano de Araujo; direitos das fontes preservados",
+      "license": "Documentação do acervo; sem nova licença aberta para as artes.",
+      "permissionEvidence": "docs/identidade/manual/README.md; docs/recursos/declaracao-autoria.md"
+    },
+    {
+      "path": "docs/imagens/galeria-atual/pacto.png",
+      "sha256": "f659b923780f063c7b9486cbac390e8282b3a233b2b6f65934c369fb2f57fdfe",
+      "group": "manual-e-capturas",
+      "status": "cleared",
+      "rightsHolder": "Luigi Scofano de Araujo; direitos das fontes preservados",
+      "license": "Documentação do acervo; sem nova licença aberta para as artes.",
+      "permissionEvidence": "docs/identidade/manual/README.md; docs/recursos/declaracao-autoria.md"
+    },
+    {
+      "path": "docs/imagens/galeria-atual/prumo.png",
+      "sha256": "2a98d3896103048deed06372488447a0668c64407c3996c19fa7acce4a97226f",
+      "group": "manual-e-capturas",
+      "status": "cleared",
+      "rightsHolder": "Luigi Scofano de Araujo; direitos das fontes preservados",
+      "license": "Documentação do acervo; sem nova licença aberta para as artes.",
+      "permissionEvidence": "docs/identidade/manual/README.md; docs/recursos/declaracao-autoria.md"
+    },
+    {
+      "path": "docs/imagens/galeria-atual/pulso.png",
+      "sha256": "99b588b25fb5201158d99314fec7e2d7fad3dfe46a458566d17615ec5bac5fc9",
+      "group": "manual-e-capturas",
+      "status": "cleared",
+      "rightsHolder": "Luigi Scofano de Araujo; direitos das fontes preservados",
+      "license": "Documentação do acervo; sem nova licença aberta para as artes.",
+      "permissionEvidence": "docs/identidade/manual/README.md; docs/recursos/declaracao-autoria.md"
+    },
+    {
+      "path": "docs/imagens/galeria-atual/quinhao.png",
+      "sha256": "36f0cb07d5e475ced240b992bddc685d25a5ed11cecb360fd9954eef0ed9c339",
+      "group": "manual-e-capturas",
+      "status": "cleared",
+      "rightsHolder": "Luigi Scofano de Araujo; direitos das fontes preservados",
+      "license": "Documentação do acervo; sem nova licença aberta para as artes.",
+      "permissionEvidence": "docs/identidade/manual/README.md; docs/recursos/declaracao-autoria.md"
+    },
+    {
+      "path": "docs/imagens/galeria-atual/refugio.png",
+      "sha256": "fee61b9d314a0403f93a9b1513e09be2fa221447948c0c6b9f55f580508366b0",
+      "group": "manual-e-capturas",
+      "status": "cleared",
+      "rightsHolder": "Luigi Scofano de Araujo; direitos das fontes preservados",
+      "license": "Documentação do acervo; sem nova licença aberta para as artes.",
+      "permissionEvidence": "docs/identidade/manual/README.md; docs/recursos/declaracao-autoria.md"
+    },
+    {
+      "path": "docs/imagens/galeria-atual/renovo.png",
+      "sha256": "61e758b78b8bc25873d5222e8da4dc22335df3b3c6fbecd32d956de95583172b",
+      "group": "manual-e-capturas",
+      "status": "cleared",
+      "rightsHolder": "Luigi Scofano de Araujo; direitos das fontes preservados",
+      "license": "Documentação do acervo; sem nova licença aberta para as artes.",
+      "permissionEvidence": "docs/identidade/manual/README.md; docs/recursos/declaracao-autoria.md"
+    },
+    {
+      "path": "docs/imagens/galeria-atual/repasse.png",
+      "sha256": "97b6f6da4a41b9f073d1adea4d0d071422c473d142f7ea8ed167b55712426414",
+      "group": "manual-e-capturas",
+      "status": "cleared",
+      "rightsHolder": "Luigi Scofano de Araujo; direitos das fontes preservados",
+      "license": "Documentação do acervo; sem nova licença aberta para as artes.",
+      "permissionEvidence": "docs/identidade/manual/README.md; docs/recursos/declaracao-autoria.md"
+    },
+    {
+      "path": "docs/imagens/galeria-atual/sintonia.png",
+      "sha256": "6a2891c15c6c14d9f3059b4921ae852d675cf9c159170e1fb8842108b4d162b3",
+      "group": "manual-e-capturas",
+      "status": "cleared",
+      "rightsHolder": "Luigi Scofano de Araujo; direitos das fontes preservados",
+      "license": "Documentação do acervo; sem nova licença aberta para as artes.",
+      "permissionEvidence": "docs/identidade/manual/README.md; docs/recursos/declaracao-autoria.md"
+    },
+    {
+      "path": "docs/identidade/manual/assets/arara-front-Branco_sobre_Verde.png",
+      "sha256": "ce3f470874ea52268a9b97c069dda003692ffce34cc7e9557ed76ee058c2fffd",
+      "group": "manual-e-capturas",
+      "status": "cleared",
+      "rightsHolder": "Luigi Scofano de Araujo; direitos das fontes preservados",
+      "license": "Documentação do acervo; sem nova licença aberta para as artes.",
+      "permissionEvidence": "docs/identidade/manual/README.md; docs/recursos/declaracao-autoria.md"
+    },
+    {
+      "path": "docs/identidade/manual/assets/arara-front-Verde_sobre_Branco.png",
+      "sha256": "961a4eb330290bb62132589cd0c4185f50c0e5b29ecc1071e1a9fe6bd81b2b46",
+      "group": "manual-e-capturas",
+      "status": "cleared",
+      "rightsHolder": "Luigi Scofano de Araujo; direitos das fontes preservados",
+      "license": "Documentação do acervo; sem nova licença aberta para as artes.",
+      "permissionEvidence": "docs/identidade/manual/README.md; docs/recursos/declaracao-autoria.md"
+    },
+    {
+      "path": "docs/identidade/manual/assets/arara-side-Branco_sobre_Verde.png",
+      "sha256": "1be797ad20ad827ec0c4d2ff88c26d42b227de70baae55fbcc538caf198c8f1d",
+      "group": "manual-e-capturas",
+      "status": "cleared",
+      "rightsHolder": "Luigi Scofano de Araujo; direitos das fontes preservados",
+      "license": "Documentação do acervo; sem nova licença aberta para as artes.",
+      "permissionEvidence": "docs/identidade/manual/README.md; docs/recursos/declaracao-autoria.md"
+    },
+    {
+      "path": "docs/identidade/manual/assets/arara-side-Verde_sobre_Branco.png",
+      "sha256": "69ea8d0fb83668e364e486ba6d629dcd2123d836c55838b1dbd4075133fc737d",
+      "group": "manual-e-capturas",
+      "status": "cleared",
+      "rightsHolder": "Luigi Scofano de Araujo; direitos das fontes preservados",
+      "license": "Documentação do acervo; sem nova licença aberta para as artes.",
+      "permissionEvidence": "docs/identidade/manual/README.md; docs/recursos/declaracao-autoria.md"
+    },
+    {
+      "path": "docs/identidade/manual/assets/bemtevi-front-Branco_sobre_Verde.png",
+      "sha256": "5522f41862b8114be32ddf781fcec04a99b5038161b089e8ffdc48561bf0ed8c",
+      "group": "manual-e-capturas",
+      "status": "cleared",
+      "rightsHolder": "Luigi Scofano de Araujo; direitos das fontes preservados",
+      "license": "Documentação do acervo; sem nova licença aberta para as artes.",
+      "permissionEvidence": "docs/identidade/manual/README.md; docs/recursos/declaracao-autoria.md"
+    },
+    {
+      "path": "docs/identidade/manual/assets/bemtevi-front-Verde_sobre_Branco.png",
+      "sha256": "5f9ef182c95f5e515404ba5ceb997d4b447e3dac768c45555f87ff4b6dcb4f79",
+      "group": "manual-e-capturas",
+      "status": "cleared",
+      "rightsHolder": "Luigi Scofano de Araujo; direitos das fontes preservados",
+      "license": "Documentação do acervo; sem nova licença aberta para as artes.",
+      "permissionEvidence": "docs/identidade/manual/README.md; docs/recursos/declaracao-autoria.md"
+    },
+    {
+      "path": "docs/identidade/manual/assets/bemtevi-side-Branco_sobre_Verde.png",
+      "sha256": "91c1d1ab102bbff29d738630daf7d17c50cb529b41fd6d8de7e8a2c4bf09605a",
+      "group": "manual-e-capturas",
+      "status": "cleared",
+      "rightsHolder": "Luigi Scofano de Araujo; direitos das fontes preservados",
+      "license": "Documentação do acervo; sem nova licença aberta para as artes.",
+      "permissionEvidence": "docs/identidade/manual/README.md; docs/recursos/declaracao-autoria.md"
+    },
+    {
+      "path": "docs/identidade/manual/assets/bemtevi-side-Verde_sobre_Branco.png",
+      "sha256": "2242d95dc84b01b53d9a4abba822de75dbf519d201975862f93aacc837d1ee07",
+      "group": "manual-e-capturas",
+      "status": "cleared",
+      "rightsHolder": "Luigi Scofano de Araujo; direitos das fontes preservados",
+      "license": "Documentação do acervo; sem nova licença aberta para as artes.",
+      "permissionEvidence": "docs/identidade/manual/README.md; docs/recursos/declaracao-autoria.md"
+    },
+    {
+      "path": "docs/identidade/manual/assets/capivara-front-Branco_sobre_Verde.png",
+      "sha256": "d5709484d54d5359ac435ac18e6353bed76f457e6320e6fe1719bf0f4c2225e9",
+      "group": "manual-e-capturas",
+      "status": "cleared",
+      "rightsHolder": "Luigi Scofano de Araujo; direitos das fontes preservados",
+      "license": "Documentação do acervo; sem nova licença aberta para as artes.",
+      "permissionEvidence": "docs/identidade/manual/README.md; docs/recursos/declaracao-autoria.md"
+    },
+    {
+      "path": "docs/identidade/manual/assets/capivara-front-Verde_sobre_Branco.png",
+      "sha256": "315cb08fdc211d25ae6d404f502c597a4a5cdb618e8baabe795384ef27411842",
+      "group": "manual-e-capturas",
+      "status": "cleared",
+      "rightsHolder": "Luigi Scofano de Araujo; direitos das fontes preservados",
+      "license": "Documentação do acervo; sem nova licença aberta para as artes.",
+      "permissionEvidence": "docs/identidade/manual/README.md; docs/recursos/declaracao-autoria.md"
+    },
+    {
+      "path": "docs/identidade/manual/assets/capivara-side-Branco_sobre_Verde.png",
+      "sha256": "544ca28959286311926686bb868891491c58aa6a87dd099c94938be287c87332",
+      "group": "manual-e-capturas",
+      "status": "cleared",
+      "rightsHolder": "Luigi Scofano de Araujo; direitos das fontes preservados",
+      "license": "Documentação do acervo; sem nova licença aberta para as artes.",
+      "permissionEvidence": "docs/identidade/manual/README.md; docs/recursos/declaracao-autoria.md"
+    },
+    {
+      "path": "docs/identidade/manual/assets/capivara-side-Verde_sobre_Branco.png",
+      "sha256": "8ed3677d2f870f24853c44d8c5bdbcee93538d93212987e7603d0ee0582341b8",
+      "group": "manual-e-capturas",
+      "status": "cleared",
+      "rightsHolder": "Luigi Scofano de Araujo; direitos das fontes preservados",
+      "license": "Documentação do acervo; sem nova licença aberta para as artes.",
+      "permissionEvidence": "docs/identidade/manual/README.md; docs/recursos/declaracao-autoria.md"
+    },
+    {
+      "path": "docs/identidade/manual/assets/coral-front-Branco_sobre_Verde.png",
+      "sha256": "703609fcfae1a80792b92ca11a9427d7659187842e0f1cff94433bd7d4480cb5",
+      "group": "manual-e-capturas",
+      "status": "cleared",
+      "rightsHolder": "Luigi Scofano de Araujo; direitos das fontes preservados",
+      "license": "Documentação do acervo; sem nova licença aberta para as artes.",
+      "permissionEvidence": "docs/identidade/manual/README.md; docs/recursos/declaracao-autoria.md"
+    },
+    {
+      "path": "docs/identidade/manual/assets/coral-front-Verde_sobre_Branco.png",
+      "sha256": "6348aac8712683a9abc77f54ed8ed31c8aed478e5df70cf84f311cb5d4ab815a",
+      "group": "manual-e-capturas",
+      "status": "cleared",
+      "rightsHolder": "Luigi Scofano de Araujo; direitos das fontes preservados",
+      "license": "Documentação do acervo; sem nova licença aberta para as artes.",
+      "permissionEvidence": "docs/identidade/manual/README.md; docs/recursos/declaracao-autoria.md"
+    },
+    {
+      "path": "docs/identidade/manual/assets/coral-side-Branco_sobre_Verde.png",
+      "sha256": "fe8fc595a036d30da43566094c587421fc86e391d36fb5489f3a2fcd4ff38ff3",
+      "group": "manual-e-capturas",
+      "status": "cleared",
+      "rightsHolder": "Luigi Scofano de Araujo; direitos das fontes preservados",
+      "license": "Documentação do acervo; sem nova licença aberta para as artes.",
+      "permissionEvidence": "docs/identidade/manual/README.md; docs/recursos/declaracao-autoria.md"
+    },
+    {
+      "path": "docs/identidade/manual/assets/coral-side-Verde_sobre_Branco.png",
+      "sha256": "0ef5d23a967f73b43dd267eab55cd4d5b92562ad96ac2f1f21f7cb667001f78c",
+      "group": "manual-e-capturas",
+      "status": "cleared",
+      "rightsHolder": "Luigi Scofano de Araujo; direitos das fontes preservados",
+      "license": "Documentação do acervo; sem nova licença aberta para as artes.",
+      "permissionEvidence": "docs/identidade/manual/README.md; docs/recursos/declaracao-autoria.md"
+    },
+    {
+      "path": "docs/identidade/manual/assets/exported/broto-0.svg",
+      "sha256": "3101d48d910222749cac60430cf87824881d78c9a08ed1aa2b2ded38d30e6624",
+      "group": "manual-e-capturas",
+      "status": "cleared",
+      "rightsHolder": "Luigi Scofano de Araujo; direitos das fontes preservados",
+      "license": "Documentação do acervo; sem nova licença aberta para as artes.",
+      "permissionEvidence": "docs/identidade/manual/README.md; docs/recursos/declaracao-autoria.md"
+    },
+    {
+      "path": "docs/identidade/manual/assets/exported/broto-1.svg",
+      "sha256": "f61898d0f082b625b8cb126098779c1e08b7d2a7ed004baac2edb537222c7e4e",
+      "group": "manual-e-capturas",
+      "status": "cleared",
+      "rightsHolder": "Luigi Scofano de Araujo; direitos das fontes preservados",
+      "license": "Documentação do acervo; sem nova licença aberta para as artes.",
+      "permissionEvidence": "docs/identidade/manual/README.md; docs/recursos/declaracao-autoria.md"
+    },
+    {
+      "path": "docs/identidade/manual/assets/exported/conquista-acorde-par-e-silencio.svg",
+      "sha256": "6659cf734d4abdb19c5e833186df0bc36de14d3de525ec922a94c051402fc837",
+      "group": "manual-e-capturas",
+      "status": "cleared",
+      "rightsHolder": "Luigi Scofano de Araujo; direitos das fontes preservados",
+      "license": "Documentação do acervo; sem nova licença aberta para as artes.",
+      "permissionEvidence": "docs/identidade/manual/README.md; docs/recursos/declaracao-autoria.md"
+    },
+    {
+      "path": "docs/identidade/manual/assets/exported/conquista-acorde-tres-vozes.svg",
+      "sha256": "39127f6c5d54be66ae5b2f3eabe54e91b32b6422f4a65ed63db8b65d011efaba",
+      "group": "manual-e-capturas",
+      "status": "cleared",
+      "rightsHolder": "Luigi Scofano de Araujo; direitos das fontes preservados",
+      "license": "Documentação do acervo; sem nova licença aberta para as artes.",
+      "permissionEvidence": "docs/identidade/manual/README.md; docs/recursos/declaracao-autoria.md"
+    },
+    {
+      "path": "docs/identidade/manual/assets/exported/conquista-all-games.svg",
+      "sha256": "54e51551b4b0c2e90abfccb35a25eeb6ec4c5a4def829b7b25f54f2909922dac",
+      "group": "manual-e-capturas",
+      "status": "cleared",
+      "rightsHolder": "Luigi Scofano de Araujo; direitos das fontes preservados",
+      "license": "Documentação do acervo; sem nova licença aberta para as artes.",
+      "permissionEvidence": "docs/identidade/manual/README.md; docs/recursos/declaracao-autoria.md"
+    },
+    {
+      "path": "docs/identidade/manual/assets/exported/conquista-broto-double-harvest.svg",
+      "sha256": "f7b5dec794197699525e29489621c57e255dab4d04d6798e76dccabf67b12ac9",
+      "group": "manual-e-capturas",
+      "status": "cleared",
+      "rightsHolder": "Luigi Scofano de Araujo; direitos das fontes preservados",
+      "license": "Documentação do acervo; sem nova licença aberta para as artes.",
+      "permissionEvidence": "docs/identidade/manual/README.md; docs/recursos/declaracao-autoria.md"
+    },
+    {
+      "path": "docs/identidade/manual/assets/exported/conquista-broto-four-winds.svg",
+      "sha256": "0bb749a7ea494875c52b16dcb12b8f64d9c0914ced923993aca7c38f6c06bfd4",
+      "group": "manual-e-capturas",
+      "status": "cleared",
+      "rightsHolder": "Luigi Scofano de Araujo; direitos das fontes preservados",
+      "license": "Documentação do acervo; sem nova licença aberta para as artes.",
+      "permissionEvidence": "docs/identidade/manual/README.md; docs/recursos/declaracao-autoria.md"
+    },
+    {
+      "path": "docs/identidade/manual/assets/exported/conquista-campaign.svg",
+      "sha256": "bb9f83982da25b495cb1d5c6cd0d7df06b243002b9e54e4f929f182ab46a923b",
+      "group": "manual-e-capturas",
+      "status": "cleared",
+      "rightsHolder": "Luigi Scofano de Araujo; direitos das fontes preservados",
+      "license": "Documentação do acervo; sem nova licença aberta para as artes.",
+      "permissionEvidence": "docs/identidade/manual/README.md; docs/recursos/declaracao-autoria.md"
+    },
+    {
+      "path": "docs/identidade/manual/assets/exported/conquista-cerco-isolate.svg",
+      "sha256": "909a20a7e9c1663bd08510a105766b0d113c4d737605f5ec4d7e4332d5596fca",
+      "group": "manual-e-capturas",
+      "status": "cleared",
+      "rightsHolder": "Luigi Scofano de Araujo; direitos das fontes preservados",
+      "license": "Documentação do acervo; sem nova licença aberta para as artes.",
+      "permissionEvidence": "docs/identidade/manual/README.md; docs/recursos/declaracao-autoria.md"
+    },
+    {
+      "path": "docs/identidade/manual/assets/exported/conquista-cerco-last-exit.svg",
+      "sha256": "30977abc55c6c57a14bd4518ea54bac776fd162de5b4e43a331b2e11daa85416",
+      "group": "manual-e-capturas",
+      "status": "cleared",
+      "rightsHolder": "Luigi Scofano de Araujo; direitos das fontes preservados",
+      "license": "Documentação do acervo; sem nova licença aberta para as artes.",
+      "permissionEvidence": "docs/identidade/manual/README.md; docs/recursos/declaracao-autoria.md"
+    },
+    {
+      "path": "docs/identidade/manual/assets/exported/conquista-cerco-last-opening.svg",
+      "sha256": "6f0da64cd5c0e1c641f1a5b7f4a013b6018ae397a41df1fd5a47f4f8cb2533b2",
+      "group": "manual-e-capturas",
+      "status": "cleared",
+      "rightsHolder": "Luigi Scofano de Araujo; direitos das fontes preservados",
+      "license": "Documentação do acervo; sem nova licença aberta para as artes.",
+      "permissionEvidence": "docs/identidade/manual/README.md; docs/recursos/declaracao-autoria.md"
+    },
+    {
+      "path": "docs/identidade/manual/assets/exported/conquista-collection.svg",
+      "sha256": "e6e3eb2edd0bdbffa9acaf01eda53cb729cd3583a0c403233546557b80a58425",
+      "group": "manual-e-capturas",
+      "status": "cleared",
+      "rightsHolder": "Luigi Scofano de Araujo; direitos das fontes preservados",
+      "license": "Documentação do acervo; sem nova licença aberta para as artes.",
+      "permissionEvidence": "docs/identidade/manual/README.md; docs/recursos/declaracao-autoria.md"
+    },
+    {
+      "path": "docs/identidade/manual/assets/exported/conquista-cut-hollow-shape.svg",
+      "sha256": "409aeaf41fa899bfcc4fe29533875d70b348a9a0fadcb9f4cdc1eb80c3a8fe07",
+      "group": "manual-e-capturas",
+      "status": "cleared",
+      "rightsHolder": "Luigi Scofano de Araujo; direitos das fontes preservados",
+      "license": "Documentação do acervo; sem nova licença aberta para as artes.",
+      "permissionEvidence": "docs/identidade/manual/README.md; docs/recursos/declaracao-autoria.md"
+    },
+    {
+      "path": "docs/identidade/manual/assets/exported/conquista-cut-millimetric-eye.svg",
+      "sha256": "b2181860a96d8efc3ac10b7d28382c2d51b828dc175ca6a4edd72929916e109e",
+      "group": "manual-e-capturas",
+      "status": "cleared",
+      "rightsHolder": "Luigi Scofano de Araujo; direitos das fontes preservados",
+      "license": "Documentação do acervo; sem nova licença aberta para as artes.",
+      "permissionEvidence": "docs/identidade/manual/README.md; docs/recursos/declaracao-autoria.md"
+    },
+    {
+      "path": "docs/identidade/manual/assets/exported/conquista-cut-wave.svg",
+      "sha256": "38b79fe510418ba44b92fc3dde730d624ed78ce468c282e9c5500574027133fb",
+      "group": "manual-e-capturas",
+      "status": "cleared",
+      "rightsHolder": "Luigi Scofano de Araujo; direitos das fontes preservados",
+      "license": "Documentação do acervo; sem nova licença aberta para as artes.",
+      "permissionEvidence": "docs/identidade/manual/README.md; docs/recursos/declaracao-autoria.md"
+    },
+    {
+      "path": "docs/identidade/manual/assets/exported/conquista-desvio-early-trap.svg",
+      "sha256": "afa52ceff44cc91053fa87100c49da66efe305baf67db79584a7231451c85595",
+      "group": "manual-e-capturas",
+      "status": "cleared",
+      "rightsHolder": "Luigi Scofano de Araujo; direitos das fontes preservados",
+      "license": "Documentação do acervo; sem nova licença aberta para as artes.",
+      "permissionEvidence": "docs/identidade/manual/README.md; docs/recursos/declaracao-autoria.md"
+    },
+    {
+      "path": "docs/identidade/manual/assets/exported/conquista-desvio-narrow-path.svg",
+      "sha256": "f2095c47cd9fd5c7f0d342132902b61e8e1e8b099e61f45b0ba2607db5ac9e61",
+      "group": "manual-e-capturas",
+      "status": "cleared",
+      "rightsHolder": "Luigi Scofano de Araujo; direitos das fontes preservados",
+      "license": "Documentação do acervo; sem nova licença aberta para as artes.",
+      "permissionEvidence": "docs/identidade/manual/README.md; docs/recursos/declaracao-autoria.md"
+    },
+    {
+      "path": "docs/identidade/manual/assets/exported/conquista-divisa-four-territories.svg",
+      "sha256": "097a052f5a2f96ae61bd8fb5671385cd837d3479adda8d121c6c21a0b05bd952",
+      "group": "manual-e-capturas",
+      "status": "cleared",
+      "rightsHolder": "Luigi Scofano de Araujo; direitos das fontes preservados",
+      "license": "Documentação do acervo; sem nova licença aberta para as artes.",
+      "permissionEvidence": "docs/identidade/manual/README.md; docs/recursos/declaracao-autoria.md"
+    },
+    {
+      "path": "docs/identidade/manual/assets/exported/conquista-divisa-no-contact.svg",
+      "sha256": "b0a3cb22ddc2cb1eece656f7616bf3923381fa74ac287e32901a2f62a79450e3",
+      "group": "manual-e-capturas",
+      "status": "cleared",
+      "rightsHolder": "Luigi Scofano de Araujo; direitos das fontes preservados",
+      "license": "Documentação do acervo; sem nova licença aberta para as artes.",
+      "permissionEvidence": "docs/identidade/manual/README.md; docs/recursos/declaracao-autoria.md"
+    },
+    {
+      "path": "docs/identidade/manual/assets/exported/conquista-dobra-distrito-reunido.svg",
+      "sha256": "f76918753e2a514ef0c8b9443cff6c6a514686637660edac3dc44299a8bd6edc",
+      "group": "manual-e-capturas",
+      "status": "cleared",
+      "rightsHolder": "Luigi Scofano de Araujo; direitos das fontes preservados",
+      "license": "Documentação do acervo; sem nova licença aberta para as artes.",
+      "permissionEvidence": "docs/identidade/manual/README.md; docs/recursos/declaracao-autoria.md"
+    },
+    {
+      "path": "docs/identidade/manual/assets/exported/conquista-dobra-virada-final.svg",
+      "sha256": "19e586209458986f4325dc7a57c3b9f499c75205f067f1b2b9b8f20441e5c77d",
+      "group": "manual-e-capturas",
+      "status": "cleared",
+      "rightsHolder": "Luigi Scofano de Araujo; direitos das fontes preservados",
+      "license": "Documentação do acervo; sem nova licença aberta para as artes.",
+      "permissionEvidence": "docs/identidade/manual/README.md; docs/recursos/declaracao-autoria.md"
+    },
+    {
+      "path": "docs/identidade/manual/assets/exported/conquista-efficiency-clean-plan.svg",
+      "sha256": "81096ce83229831aa0340f2614a56d9719801790dcbec852736fee566f9be955",
+      "group": "manual-e-capturas",
+      "status": "cleared",
+      "rightsHolder": "Luigi Scofano de Araujo; direitos das fontes preservados",
+      "license": "Documentação do acervo; sem nova licença aberta para as artes.",
+      "permissionEvidence": "docs/identidade/manual/README.md; docs/recursos/declaracao-autoria.md"
+    },
+    {
+      "path": "docs/identidade/manual/assets/exported/conquista-efficiency-proven-minimum.svg",
+      "sha256": "09ecf23df837b2cee85268419e209dc349c279f49921b8cd90f78e41871bff0b",
+      "group": "manual-e-capturas",
+      "status": "cleared",
+      "rightsHolder": "Luigi Scofano de Araujo; direitos das fontes preservados",
+      "license": "Documentação do acervo; sem nova licença aberta para as artes.",
+      "permissionEvidence": "docs/identidade/manual/README.md; docs/recursos/declaracao-autoria.md"
+    },
+    {
+      "path": "docs/identidade/manual/assets/exported/conquista-elo-distance.svg",
+      "sha256": "91b1f6627f12b4dc5ea6b989504836fdc8724100dcdc1b4bc92d1477323a17e7",
+      "group": "manual-e-capturas",
+      "status": "cleared",
+      "rightsHolder": "Luigi Scofano de Araujo; direitos das fontes preservados",
+      "license": "Documentação do acervo; sem nova licença aberta para as artes.",
+      "permissionEvidence": "docs/identidade/manual/README.md; docs/recursos/declaracao-autoria.md"
+    },
+    {
+      "path": "docs/identidade/manual/assets/exported/conquista-elo-exclusive.svg",
+      "sha256": "12da957dbed261e87bc73e6dd209adf2acebca1e1cde5c31b9cbe6890e17023e",
+      "group": "manual-e-capturas",
+      "status": "cleared",
+      "rightsHolder": "Luigi Scofano de Araujo; direitos das fontes preservados",
+      "license": "Documentação do acervo; sem nova licença aberta para as artes.",
+      "permissionEvidence": "docs/identidade/manual/README.md; docs/recursos/declaracao-autoria.md"
+    },
+    {
+      "path": "docs/identidade/manual/assets/exported/conquista-enlace-corrente-acesa.svg",
+      "sha256": "0d54e7370112d5636310e76c1a083c77a0c7ff3556601e4bb0758927407578a7",
+      "group": "manual-e-capturas",
+      "status": "cleared",
+      "rightsHolder": "Luigi Scofano de Araujo; direitos das fontes preservados",
+      "license": "Documentação do acervo; sem nova licença aberta para as artes.",
+      "permissionEvidence": "docs/identidade/manual/README.md; docs/recursos/declaracao-autoria.md"
+    },
+    {
+      "path": "docs/identidade/manual/assets/exported/conquista-enlace-travessia.svg",
+      "sha256": "a5d688d3deb9efbf5564e31c3c34ed47a7ce36a003f28ccf4b8169b5b3ee2fc8",
+      "group": "manual-e-capturas",
+      "status": "cleared",
+      "rightsHolder": "Luigi Scofano de Araujo; direitos das fontes preservados",
+      "license": "Documentação do acervo; sem nova licença aberta para as artes.",
+      "permissionEvidence": "docs/identidade/manual/README.md; docs/recursos/declaracao-autoria.md"
+    },
+    {
+      "path": "docs/identidade/manual/assets/exported/conquista-estalo-cadeia-limpa.svg",
+      "sha256": "7e1d17e9d640ae88bfdfe92bd37a09de7c933c93e26c8d22f17d3911744d8ad4",
+      "group": "manual-e-capturas",
+      "status": "cleared",
+      "rightsHolder": "Luigi Scofano de Araujo; direitos das fontes preservados",
+      "license": "Documentação do acervo; sem nova licença aberta para as artes.",
+      "permissionEvidence": "docs/identidade/manual/README.md; docs/recursos/declaracao-autoria.md"
+    },
+    {
+      "path": "docs/identidade/manual/assets/exported/conquista-estalo-cadeia-longa.svg",
+      "sha256": "9dc606656bf554b8d076e2881f930445ffab0cc643402c79fad9d71a6fabe477",
+      "group": "manual-e-capturas",
+      "status": "cleared",
+      "rightsHolder": "Luigi Scofano de Araujo; direitos das fontes preservados",
+      "license": "Documentação do acervo; sem nova licença aberta para as artes.",
+      "permissionEvidence": "docs/identidade/manual/README.md; docs/recursos/declaracao-autoria.md"
+    },
+    {
+      "path": "docs/identidade/manual/assets/exported/conquista-fifty.svg",
+      "sha256": "45d52cf41b52016f6a7cf64ac99d424a0f27227ec5c1a1bf049f19923bc99a02",
+      "group": "manual-e-capturas",
+      "status": "cleared",
+      "rightsHolder": "Luigi Scofano de Araujo; direitos das fontes preservados",
+      "license": "Documentação do acervo; sem nova licença aberta para as artes.",
+      "permissionEvidence": "docs/identidade/manual/README.md; docs/recursos/declaracao-autoria.md"
+    },
+    {
+      "path": "docs/identidade/manual/assets/exported/conquista-first.svg",
+      "sha256": "0945cbd84670b78fcc9ce08c478a6d65cd0dedc07d5fb7f256b59e2718b28266",
+      "group": "manual-e-capturas",
+      "status": "cleared",
+      "rightsHolder": "Luigi Scofano de Araujo; direitos das fontes preservados",
+      "license": "Documentação do acervo; sem nova licença aberta para as artes.",
+      "permissionEvidence": "docs/identidade/manual/README.md; docs/recursos/declaracao-autoria.md"
+    },
+    {
+      "path": "docs/identidade/manual/assets/exported/conquista-foz-confluence.svg",
+      "sha256": "18a3a27b2dc239e2ccc2ddece23d67982e59c0bf0f5b873fbf3d69f04485148c",
+      "group": "manual-e-capturas",
+      "status": "cleared",
+      "rightsHolder": "Luigi Scofano de Araujo; direitos das fontes preservados",
+      "license": "Documentação do acervo; sem nova licença aberta para as artes.",
+      "permissionEvidence": "docs/identidade/manual/README.md; docs/recursos/declaracao-autoria.md"
+    },
+    {
+      "path": "docs/identidade/manual/assets/exported/conquista-foz-long-course.svg",
+      "sha256": "1062d7e817f8bc0cd362a6c877dea300fc7b6fc543a190f0f55122873b90b542",
+      "group": "manual-e-capturas",
+      "status": "cleared",
+      "rightsHolder": "Luigi Scofano de Araujo; direitos das fontes preservados",
+      "license": "Documentação do acervo; sem nova licença aberta para as artes.",
+      "permissionEvidence": "docs/identidade/manual/README.md; docs/recursos/declaracao-autoria.md"
+    },
+    {
+      "path": "docs/identidade/manual/assets/exported/conquista-half.svg",
+      "sha256": "ad57f609d8ef02dd55d77741dbc2ec3b97cafcec6de97e3dd508f39785cae608",
+      "group": "manual-e-capturas",
+      "status": "cleared",
+      "rightsHolder": "Luigi Scofano de Araujo; direitos das fontes preservados",
+      "license": "Documentação do acervo; sem nova licença aberta para as artes.",
+      "permissionEvidence": "docs/identidade/manual/README.md; docs/recursos/declaracao-autoria.md"
+    },
+    {
+      "path": "docs/identidade/manual/assets/exported/conquista-hard.svg",
+      "sha256": "11a9f9886e0b131837468c3f0f60fee7746b7b4c43943510aa80df4be10d69b4",
+      "group": "manual-e-capturas",
+      "status": "cleared",
+      "rightsHolder": "Luigi Scofano de Araujo; direitos das fontes preservados",
+      "license": "Documentação do acervo; sem nova licença aberta para as artes.",
+      "permissionEvidence": "docs/identidade/manual/README.md; docs/recursos/declaracao-autoria.md"
+    },
+    {
+      "path": "docs/identidade/manual/assets/exported/conquista-hundred.svg",
+      "sha256": "743cf223202c594d4b88ec239f15d343fdd3741456db4f86fdc61b9f3ab5935a",
+      "group": "manual-e-capturas",
+      "status": "cleared",
+      "rightsHolder": "Luigi Scofano de Araujo; direitos das fontes preservados",
+      "license": "Documentação do acervo; sem nova licença aberta para as artes.",
+      "permissionEvidence": "docs/identidade/manual/README.md; docs/recursos/declaracao-autoria.md"
+    },
+    {
+      "path": "docs/identidade/manual/assets/exported/conquista-lastro-ultimo-ajuste.svg",
+      "sha256": "56f3e48c280190f9be3b0fe361bfb0cf65c0e8560be99732495f5f212c6eb6d2",
+      "group": "manual-e-capturas",
+      "status": "cleared",
+      "rightsHolder": "Luigi Scofano de Araujo; direitos das fontes preservados",
+      "license": "Documentação do acervo; sem nova licença aberta para as artes.",
+      "permissionEvidence": "docs/identidade/manual/README.md; docs/recursos/declaracao-autoria.md"
+    },
+    {
+      "path": "docs/identidade/manual/assets/exported/conquista-lastro-volta-ao-centro.svg",
+      "sha256": "e6d0d6505051be329fa338f0e037ce5695b8631bfc18900d7456319043c9c8f6",
+      "group": "manual-e-capturas",
+      "status": "cleared",
+      "rightsHolder": "Luigi Scofano de Araujo; direitos das fontes preservados",
+      "license": "Documentação do acervo; sem nova licença aberta para as artes.",
+      "permissionEvidence": "docs/identidade/manual/README.md; docs/recursos/declaracao-autoria.md"
+    },
+    {
+      "path": "docs/identidade/manual/assets/exported/conquista-light-color-gates.svg",
+      "sha256": "52031297eccc7f619f8bb774a4dc7a2b4cdbda14212d6bfc3206ade0fc349898",
+      "group": "manual-e-capturas",
+      "status": "cleared",
+      "rightsHolder": "Luigi Scofano de Araujo; direitos das fontes preservados",
+      "license": "Documentação do acervo; sem nova licença aberta para as artes.",
+      "permissionEvidence": "docs/identidade/manual/README.md; docs/recursos/declaracao-autoria.md"
+    },
+    {
+      "path": "docs/identidade/manual/assets/exported/conquista-light-light-jump.svg",
+      "sha256": "0bb57260c4ff33bf259d18d2117f30a2dbb56a94e883a34ebad4b6975da05490",
+      "group": "manual-e-capturas",
+      "status": "cleared",
+      "rightsHolder": "Luigi Scofano de Araujo; direitos das fontes preservados",
+      "license": "Documentação do acervo; sem nova licença aberta para as artes.",
+      "permissionEvidence": "docs/identidade/manual/README.md; docs/recursos/declaracao-autoria.md"
+    },
+    {
+      "path": "docs/identidade/manual/assets/exported/conquista-light-three-colors.svg",
+      "sha256": "00a138cb366a46867c37dcd29036675e93f8ee6198c9c4b836eb7053611271f4",
+      "group": "manual-e-capturas",
+      "status": "cleared",
+      "rightsHolder": "Luigi Scofano de Araujo; direitos das fontes preservados",
+      "license": "Documentação do acervo; sem nova licença aberta para as artes.",
+      "permissionEvidence": "docs/identidade/manual/README.md; docs/recursos/declaracao-autoria.md"
+    },
+    {
+      "path": "docs/identidade/manual/assets/exported/conquista-mirante-four-witnesses.svg",
+      "sha256": "f1d946c84fb859fc2eb6027016caf5fd2cf18e6219f205ea15cd00af094e801a",
+      "group": "manual-e-capturas",
+      "status": "cleared",
+      "rightsHolder": "Luigi Scofano de Araujo; direitos das fontes preservados",
+      "license": "Documentação do acervo; sem nova licença aberta para as artes.",
+      "permissionEvidence": "docs/identidade/manual/README.md; docs/recursos/declaracao-autoria.md"
+    },
+    {
+      "path": "docs/identidade/manual/assets/exported/conquista-mirante-witness-rule.svg",
+      "sha256": "f09f0a1708746825b58be86462078cef6e32309c4262ba775b229c8f6f841dd7",
+      "group": "manual-e-capturas",
+      "status": "cleared",
+      "rightsHolder": "Luigi Scofano de Araujo; direitos das fontes preservados",
+      "license": "Documentação do acervo; sem nova licença aberta para as artes.",
+      "permissionEvidence": "docs/identidade/manual/README.md; docs/recursos/declaracao-autoria.md"
+    },
+    {
+      "path": "docs/identidade/manual/assets/exported/conquista-mosaico-dupla-assinatura.svg",
+      "sha256": "1b48b162a065a2cf8876cebcc4ac87280e8b2a0770d02aca11486f7c1fdd8753",
+      "group": "manual-e-capturas",
+      "status": "cleared",
+      "rightsHolder": "Luigi Scofano de Araujo; direitos das fontes preservados",
+      "license": "Documentação do acervo; sem nova licença aberta para as artes.",
+      "permissionEvidence": "docs/identidade/manual/README.md; docs/recursos/declaracao-autoria.md"
+    },
+    {
+      "path": "docs/identidade/manual/assets/exported/conquista-mosaico-unanimidade.svg",
+      "sha256": "ec08ce9159ef1be290beec7771dd60fa338d0d097bbd9a8427068467ff04ee16",
+      "group": "manual-e-capturas",
+      "status": "cleared",
+      "rightsHolder": "Luigi Scofano de Araujo; direitos das fontes preservados",
+      "license": "Documentação do acervo; sem nova licença aberta para as artes.",
+      "permissionEvidence": "docs/identidade/manual/README.md; docs/recursos/declaracao-autoria.md"
+    },
+    {
+      "path": "docs/identidade/manual/assets/exported/conquista-orbita-gears.svg",
+      "sha256": "f12fccb86ad9efb733ba4ede2e8f72c370f44ac642651568057703d21fc37a9f",
+      "group": "manual-e-capturas",
+      "status": "cleared",
+      "rightsHolder": "Luigi Scofano de Araujo; direitos das fontes preservados",
+      "license": "Documentação do acervo; sem nova licença aberta para as artes.",
+      "permissionEvidence": "docs/identidade/manual/README.md; docs/recursos/declaracao-autoria.md"
+    },
+    {
+      "path": "docs/identidade/manual/assets/exported/conquista-orbita-personal-best.svg",
+      "sha256": "620df194283c13a7ffb221434f6cd89cc4fe003151bc079fe13866f429506325",
+      "group": "manual-e-capturas",
+      "status": "cleared",
+      "rightsHolder": "Luigi Scofano de Araujo; direitos das fontes preservados",
+      "license": "Documentação do acervo; sem nova licença aberta para as artes.",
+      "permissionEvidence": "docs/identidade/manual/README.md; docs/recursos/declaracao-autoria.md"
+    },
+    {
+      "path": "docs/identidade/manual/assets/exported/conquista-orbita-sensor.svg",
+      "sha256": "05be81243e9ed82570dafa347e28e465ad3378b67b31a7dd03b41a0b88b29557",
+      "group": "manual-e-capturas",
+      "status": "cleared",
+      "rightsHolder": "Luigi Scofano de Araujo; direitos das fontes preservados",
+      "license": "Documentação do acervo; sem nova licença aberta para as artes.",
+      "permissionEvidence": "docs/identidade/manual/README.md; docs/recursos/declaracao-autoria.md"
+    },
+    {
+      "path": "docs/identidade/manual/assets/exported/conquista-pacto-blank-row.svg",
+      "sha256": "1afe88c079efd26104227b4f54357e6a99bfc4ebad5d762c957495a3f8771272",
+      "group": "manual-e-capturas",
+      "status": "cleared",
+      "rightsHolder": "Luigi Scofano de Araujo; direitos das fontes preservados",
+      "license": "Documentação do acervo; sem nova licença aberta para as artes.",
+      "permissionEvidence": "docs/identidade/manual/README.md; docs/recursos/declaracao-autoria.md"
+    },
+    {
+      "path": "docs/identidade/manual/assets/exported/conquista-pacto-quartet.svg",
+      "sha256": "310c27fdc658cec78a56ac7af83349edbabfb66740dea20d005d25f63b732d13",
+      "group": "manual-e-capturas",
+      "status": "cleared",
+      "rightsHolder": "Luigi Scofano de Araujo; direitos das fontes preservados",
+      "license": "Documentação do acervo; sem nova licença aberta para as artes.",
+      "permissionEvidence": "docs/identidade/manual/README.md; docs/recursos/declaracao-autoria.md"
+    },
+    {
+      "path": "docs/identidade/manual/assets/exported/conquista-pacto-unpaired.svg",
+      "sha256": "1270da5609593fdb391ee2e505e86bfb3c1a024f82a0d88114a4618ccb4f8e37",
+      "group": "manual-e-capturas",
+      "status": "cleared",
+      "rightsHolder": "Luigi Scofano de Araujo; direitos das fontes preservados",
+      "license": "Documentação do acervo; sem nova licença aberta para as artes.",
+      "permissionEvidence": "docs/identidade/manual/README.md; docs/recursos/declaracao-autoria.md"
+    },
+    {
+      "path": "docs/identidade/manual/assets/exported/conquista-precision-first-try.svg",
+      "sha256": "9e5508f7f2bee8729fbdb231f50cf2f76e6ac917dbb0007e7745f425c9e1da88",
+      "group": "manual-e-capturas",
+      "status": "cleared",
+      "rightsHolder": "Luigi Scofano de Araujo; direitos das fontes preservados",
+      "license": "Documentação do acervo; sem nova licença aberta para as artes.",
+      "permissionEvidence": "docs/identidade/manual/README.md; docs/recursos/declaracao-autoria.md"
+    },
+    {
+      "path": "docs/identidade/manual/assets/exported/conquista-precision-three-first-tries.svg",
+      "sha256": "e2d79d20d22c7f85a4417b60a79dd108d7b01bd3ca0dd6b6bb648c13138836f6",
+      "group": "manual-e-capturas",
+      "status": "cleared",
+      "rightsHolder": "Luigi Scofano de Araujo; direitos das fontes preservados",
+      "license": "Documentação do acervo; sem nova licença aberta para as artes.",
+      "permissionEvidence": "docs/identidade/manual/README.md; docs/recursos/declaracao-autoria.md"
+    },
+    {
+      "path": "docs/identidade/manual/assets/exported/conquista-prumo-asymmetric.svg",
+      "sha256": "1c31b04be51cecaf539e5093554784f69ff98d48d7df129faa91e6db736c0275",
+      "group": "manual-e-capturas",
+      "status": "cleared",
+      "rightsHolder": "Luigi Scofano de Araujo; direitos das fontes preservados",
+      "license": "Documentação do acervo; sem nova licença aberta para as artes.",
+      "permissionEvidence": "docs/identidade/manual/README.md; docs/recursos/declaracao-autoria.md"
+    },
+    {
+      "path": "docs/identidade/manual/assets/exported/conquista-prumo-corridor.svg",
+      "sha256": "394da05223c5738752eaa3080875ac048c650ce564990086faebc21890c7f1fc",
+      "group": "manual-e-capturas",
+      "status": "cleared",
+      "rightsHolder": "Luigi Scofano de Araujo; direitos das fontes preservados",
+      "license": "Documentação do acervo; sem nova licença aberta para as artes.",
+      "permissionEvidence": "docs/identidade/manual/README.md; docs/recursos/declaracao-autoria.md"
+    },
+    {
+      "path": "docs/identidade/manual/assets/exported/conquista-prumo-unlikely-balance.svg",
+      "sha256": "39fda2b94752694905141eae70b2be8bde6a462655078065979736fd6f2733e8",
+      "group": "manual-e-capturas",
+      "status": "cleared",
+      "rightsHolder": "Luigi Scofano de Araujo; direitos das fontes preservados",
+      "license": "Documentação do acervo; sem nova licença aberta para as artes.",
+      "permissionEvidence": "docs/identidade/manual/README.md; docs/recursos/declaracao-autoria.md"
+    },
+    {
+      "path": "docs/identidade/manual/assets/exported/conquista-pulso-three-intervals.svg",
+      "sha256": "4d84e79769520bd42bbb389197136a85e52119247b83592974c792b03c03daef",
+      "group": "manual-e-capturas",
+      "status": "cleared",
+      "rightsHolder": "Luigi Scofano de Araujo; direitos das fontes preservados",
+      "license": "Documentação do acervo; sem nova licença aberta para as artes.",
+      "permissionEvidence": "docs/identidade/manual/README.md; docs/recursos/declaracao-autoria.md"
+    },
+    {
+      "path": "docs/identidade/manual/assets/exported/conquista-pulso-wide-beat.svg",
+      "sha256": "18a3f8e013285fe589efa52a42d722d5348dd8b16d68885f9ace84e19f9d5d14",
+      "group": "manual-e-capturas",
+      "status": "cleared",
+      "rightsHolder": "Luigi Scofano de Araujo; direitos das fontes preservados",
+      "license": "Documentação do acervo; sem nova licença aberta para as artes.",
+      "permissionEvidence": "docs/identidade/manual/README.md; docs/recursos/declaracao-autoria.md"
+    },
+    {
+      "path": "docs/identidade/manual/assets/exported/conquista-quinhao-fruto-que-faltava.svg",
+      "sha256": "7dc268427f20b46ec9c1e01960142d05c57ea8f4befe8fbbe8ecf2569985fe01",
+      "group": "manual-e-capturas",
+      "status": "cleared",
+      "rightsHolder": "Luigi Scofano de Araujo; direitos das fontes preservados",
+      "license": "Documentação do acervo; sem nova licença aberta para as artes.",
+      "permissionEvidence": "docs/identidade/manual/README.md; docs/recursos/declaracao-autoria.md"
+    },
+    {
+      "path": "docs/identidade/manual/assets/exported/conquista-quinhao-oferta-diversa.svg",
+      "sha256": "a79d1b486b50823910ba8c32d537a68fd8edc7c4c481de0b06de531f744c3290",
+      "group": "manual-e-capturas",
+      "status": "cleared",
+      "rightsHolder": "Luigi Scofano de Araujo; direitos das fontes preservados",
+      "license": "Documentação do acervo; sem nova licença aberta para as artes.",
+      "permissionEvidence": "docs/identidade/manual/README.md; docs/recursos/declaracao-autoria.md"
+    },
+    {
+      "path": "docs/identidade/manual/assets/exported/conquista-refugio-four-markers.svg",
+      "sha256": "6bc85ed8b96ca91fe11ae30e7543638665ddd96ce03633094960c5e11e2f8272",
+      "group": "manual-e-capturas",
+      "status": "cleared",
+      "rightsHolder": "Luigi Scofano de Araujo; direitos das fontes preservados",
+      "license": "Documentação do acervo; sem nova licença aberta para as artes.",
+      "permissionEvidence": "docs/identidade/manual/README.md; docs/recursos/declaracao-autoria.md"
+    },
+    {
+      "path": "docs/identidade/manual/assets/exported/conquista-refugio-interior.svg",
+      "sha256": "d5d5cd7afb958fdfc652ee02e680c2361da502288af4ae48b321c141070d514a",
+      "group": "manual-e-capturas",
+      "status": "cleared",
+      "rightsHolder": "Luigi Scofano de Araujo; direitos das fontes preservados",
+      "license": "Documentação do acervo; sem nova licença aberta para as artes.",
+      "permissionEvidence": "docs/identidade/manual/README.md; docs/recursos/declaracao-autoria.md"
+    },
+    {
+      "path": "docs/identidade/manual/assets/exported/conquista-renovo-four-turns.svg",
+      "sha256": "febdc085fdb033fee9b27a95a4bb7d983bf238006cde6839d19fe405fa583fa1",
+      "group": "manual-e-capturas",
+      "status": "cleared",
+      "rightsHolder": "Luigi Scofano de Araujo; direitos das fontes preservados",
+      "license": "Documentação do acervo; sem nova licença aberta para as artes.",
+      "permissionEvidence": "docs/identidade/manual/README.md; docs/recursos/declaracao-autoria.md"
+    },
+    {
+      "path": "docs/identidade/manual/assets/exported/conquista-renovo-unequal-arms.svg",
+      "sha256": "fbc668ba4ecb5320a6ea8e83236161a595fbd7a8127cc9875dd579ae7100cb1a",
+      "group": "manual-e-capturas",
+      "status": "cleared",
+      "rightsHolder": "Luigi Scofano de Araujo; direitos das fontes preservados",
+      "license": "Documentação do acervo; sem nova licença aberta para as artes.",
+      "permissionEvidence": "docs/identidade/manual/README.md; docs/recursos/declaracao-autoria.md"
+    },
+    {
+      "path": "docs/identidade/manual/assets/exported/conquista-repasse-arrival-account.svg",
+      "sha256": "648c55c8cc678e99cee3d89a467565ea0a50854a6965181eb635937abcb1ebd7",
+      "group": "manual-e-capturas",
+      "status": "cleared",
+      "rightsHolder": "Luigi Scofano de Araujo; direitos das fontes preservados",
+      "license": "Documentação do acervo; sem nova licença aberta para as artes.",
+      "permissionEvidence": "docs/identidade/manual/README.md; docs/recursos/declaracao-autoria.md"
+    },
+    {
+      "path": "docs/identidade/manual/assets/exported/conquista-repasse-chain-inheritance.svg",
+      "sha256": "80a6b772ac1dc5b336df0962fb1693679a3ac93e25399752bd5b839b30c6a933",
+      "group": "manual-e-capturas",
+      "status": "cleared",
+      "rightsHolder": "Luigi Scofano de Araujo; direitos das fontes preservados",
+      "license": "Documentação do acervo; sem nova licença aberta para as artes.",
+      "permissionEvidence": "docs/identidade/manual/README.md; docs/recursos/declaracao-autoria.md"
+    },
+    {
+      "path": "docs/identidade/manual/assets/exported/conquista-repasse-four-directions.svg",
+      "sha256": "090a7615b0962c537f67a750a587dedf449a50520e84bba5f0c29b40c3cddceb",
+      "group": "manual-e-capturas",
+      "status": "cleared",
+      "rightsHolder": "Luigi Scofano de Araujo; direitos das fontes preservados",
+      "license": "Documentação do acervo; sem nova licença aberta para as artes.",
+      "permissionEvidence": "docs/identidade/manual/README.md; docs/recursos/declaracao-autoria.md"
+    },
+    {
+      "path": "docs/identidade/manual/assets/exported/conquista-repasse-handoff.svg",
+      "sha256": "b5106409aeb15d65a940870cc0e7416211d3ff610d30ca2976490719e21c0457",
+      "group": "manual-e-capturas",
+      "status": "cleared",
+      "rightsHolder": "Luigi Scofano de Araujo; direitos das fontes preservados",
+      "license": "Documentação do acervo; sem nova licença aberta para as artes.",
+      "permissionEvidence": "docs/identidade/manual/README.md; docs/recursos/declaracao-autoria.md"
+    },
+    {
+      "path": "docs/identidade/manual/assets/exported/conquista-sintonia-baton-pass.svg",
+      "sha256": "77feb8fcef20654f3ecca7c2db07c5d78c1ba9d4020baea204b63ea1e4502881",
+      "group": "manual-e-capturas",
+      "status": "cleared",
+      "rightsHolder": "Luigi Scofano de Araujo; direitos das fontes preservados",
+      "license": "Documentação do acervo; sem nova licença aberta para as artes.",
+      "permissionEvidence": "docs/identidade/manual/README.md; docs/recursos/declaracao-autoria.md"
+    },
+    {
+      "path": "docs/identidade/manual/assets/exported/conquista-sintonia-four-command-plan.svg",
+      "sha256": "1ea88ec0ecdda8d740a484f4452674ce81dea81d1442298d92666b29c1333583",
+      "group": "manual-e-capturas",
+      "status": "cleared",
+      "rightsHolder": "Luigi Scofano de Araujo; direitos das fontes preservados",
+      "license": "Documentação do acervo; sem nova licença aberta para as artes.",
+      "permissionEvidence": "docs/identidade/manual/README.md; docs/recursos/declaracao-autoria.md"
+    },
+    {
+      "path": "docs/identidade/manual/assets/exported/conquista-sintonia-ice.svg",
+      "sha256": "259847b58cab81d9f403926766d357cf965196da43962f73c9f32857f22fd99f",
+      "group": "manual-e-capturas",
+      "status": "cleared",
+      "rightsHolder": "Luigi Scofano de Araujo; direitos das fontes preservados",
+      "license": "Documentação do acervo; sem nova licença aberta para as artes.",
+      "permissionEvidence": "docs/identidade/manual/README.md; docs/recursos/declaracao-autoria.md"
+    },
+    {
+      "path": "docs/identidade/manual/assets/exported/conquista-sintonia-remote-switch.svg",
+      "sha256": "4804817a90fdfd8dff15f392a93e029339077a1fbf1748dad15ceb54efa72529",
+      "group": "manual-e-capturas",
+      "status": "cleared",
+      "rightsHolder": "Luigi Scofano de Araujo; direitos das fontes preservados",
+      "license": "Documentação do acervo; sem nova licença aberta para as artes.",
+      "permissionEvidence": "docs/identidade/manual/README.md; docs/recursos/declaracao-autoria.md"
+    },
+    {
+      "path": "docs/identidade/manual/assets/exported/conquista-ten.svg",
+      "sha256": "4c0c52b6604b8848bc00e98bb24889afb5eee833ef17ed29329c1584cde070d5",
+      "group": "manual-e-capturas",
+      "status": "cleared",
+      "rightsHolder": "Luigi Scofano de Araujo; direitos das fontes preservados",
+      "license": "Documentação do acervo; sem nova licença aberta para as artes.",
+      "permissionEvidence": "docs/identidade/manual/README.md; docs/recursos/declaracao-autoria.md"
+    },
+    {
+      "path": "docs/identidade/manual/assets/exported/conquista-tiers.svg",
+      "sha256": "18c9a6a2c20df6d3fc22bcb3dcfd7e0248f3715adc89092cc69179afae2b6ab0",
+      "group": "manual-e-capturas",
+      "status": "cleared",
+      "rightsHolder": "Luigi Scofano de Araujo; direitos das fontes preservados",
+      "license": "Documentação do acervo; sem nova licença aberta para as artes.",
+      "permissionEvidence": "docs/identidade/manual/README.md; docs/recursos/declaracao-autoria.md"
+    },
+    {
+      "path": "docs/identidade/manual/assets/exported/conquista-vazante-comboio-misto.svg",
+      "sha256": "d4d1d525f4fba727a1a069e932c44e26fdc32b0454df2c3a0f7ff58d3aa6f961",
+      "group": "manual-e-capturas",
+      "status": "cleared",
+      "rightsHolder": "Luigi Scofano de Araujo; direitos das fontes preservados",
+      "license": "Documentação do acervo; sem nova licença aberta para as artes.",
+      "permissionEvidence": "docs/identidade/manual/README.md; docs/recursos/declaracao-autoria.md"
+    },
+    {
+      "path": "docs/identidade/manual/assets/exported/conquista-vazante-tres-barcos.svg",
+      "sha256": "5f095f9c0e3eb4e19d4a9e1ecb10fe723ff26d748518a2d8399433d4907e2d87",
+      "group": "manual-e-capturas",
+      "status": "cleared",
+      "rightsHolder": "Luigi Scofano de Araujo; direitos das fontes preservados",
+      "license": "Documentação do acervo; sem nova licença aberta para as artes.",
+      "permissionEvidence": "docs/identidade/manual/README.md; docs/recursos/declaracao-autoria.md"
+    },
+    {
+      "path": "docs/identidade/manual/assets/exported/controle-1.svg",
+      "sha256": "8c8508fb090e083bd4efc034dd9ec60552b116e5ec25516144c853d7a73ed17c",
+      "group": "manual-e-capturas",
+      "status": "cleared",
+      "rightsHolder": "Luigi Scofano de Araujo; direitos das fontes preservados",
+      "license": "Documentação do acervo; sem nova licença aberta para as artes.",
+      "permissionEvidence": "docs/identidade/manual/README.md; docs/recursos/declaracao-autoria.md"
+    },
+    {
+      "path": "docs/identidade/manual/assets/exported/controle-2.svg",
+      "sha256": "5a3bde42ed01461f60646bd8378c293da4ccbcc6cd64a0cd4329c37a6f2c22a8",
+      "group": "manual-e-capturas",
+      "status": "cleared",
+      "rightsHolder": "Luigi Scofano de Araujo; direitos das fontes preservados",
+      "license": "Documentação do acervo; sem nova licença aberta para as artes.",
+      "permissionEvidence": "docs/identidade/manual/README.md; docs/recursos/declaracao-autoria.md"
+    },
+    {
+      "path": "docs/identidade/manual/assets/exported/controle-3.svg",
+      "sha256": "7075fd3c802c2290d237a9c3d91f961d7301c061d82e25cb27131c1d2719364d",
+      "group": "manual-e-capturas",
+      "status": "cleared",
+      "rightsHolder": "Luigi Scofano de Araujo; direitos das fontes preservados",
+      "license": "Documentação do acervo; sem nova licença aberta para as artes.",
+      "permissionEvidence": "docs/identidade/manual/README.md; docs/recursos/declaracao-autoria.md"
+    },
+    {
+      "path": "docs/identidade/manual/assets/exported/controle-4.svg",
+      "sha256": "85d972f1cd0762d0efecac010dba20347d8112247883748c930fc6111e6b23be",
+      "group": "manual-e-capturas",
+      "status": "cleared",
+      "rightsHolder": "Luigi Scofano de Araujo; direitos das fontes preservados",
+      "license": "Documentação do acervo; sem nova licença aberta para as artes.",
+      "permissionEvidence": "docs/identidade/manual/README.md; docs/recursos/declaracao-autoria.md"
+    },
+    {
+      "path": "docs/identidade/manual/assets/exported/mirante-1.svg",
+      "sha256": "084b56df3f0475ea23e359ad0110e34ee655919dfea9a48bd3e6d7e0629c6756",
+      "group": "manual-e-capturas",
+      "status": "cleared",
+      "rightsHolder": "Luigi Scofano de Araujo; direitos das fontes preservados",
+      "license": "Documentação do acervo; sem nova licença aberta para as artes.",
+      "permissionEvidence": "docs/identidade/manual/README.md; docs/recursos/declaracao-autoria.md"
+    },
+    {
+      "path": "docs/identidade/manual/assets/exported/mirante-2.svg",
+      "sha256": "22741e86eeb1318d268350dc2c68aca923b424bb0ae808ba68db0d65ee86337c",
+      "group": "manual-e-capturas",
+      "status": "cleared",
+      "rightsHolder": "Luigi Scofano de Araujo; direitos das fontes preservados",
+      "license": "Documentação do acervo; sem nova licença aberta para as artes.",
+      "permissionEvidence": "docs/identidade/manual/README.md; docs/recursos/declaracao-autoria.md"
+    },
+    {
+      "path": "docs/identidade/manual/assets/exported/mirante-3.svg",
+      "sha256": "22741e86eeb1318d268350dc2c68aca923b424bb0ae808ba68db0d65ee86337c",
+      "group": "manual-e-capturas",
+      "status": "cleared",
+      "rightsHolder": "Luigi Scofano de Araujo; direitos das fontes preservados",
+      "license": "Documentação do acervo; sem nova licença aberta para as artes.",
+      "permissionEvidence": "docs/identidade/manual/README.md; docs/recursos/declaracao-autoria.md"
+    },
+    {
+      "path": "docs/identidade/manual/assets/exported/nav-acorde.svg",
+      "sha256": "4b95f4440a21c031c4492b5cc9b50f24839b3ded5184ca2fd44a533a98da79b0",
+      "group": "manual-e-capturas",
+      "status": "cleared",
+      "rightsHolder": "Luigi Scofano de Araujo; direitos das fontes preservados",
+      "license": "Documentação do acervo; sem nova licença aberta para as artes.",
+      "permissionEvidence": "docs/identidade/manual/README.md; docs/recursos/declaracao-autoria.md"
+    },
+    {
+      "path": "docs/identidade/manual/assets/exported/nav-broto.svg",
+      "sha256": "16050204f3c76c8133c08434d1aec29151a55c63ee2ed06f617b44e1d8e50a4c",
+      "group": "manual-e-capturas",
+      "status": "cleared",
+      "rightsHolder": "Luigi Scofano de Araujo; direitos das fontes preservados",
+      "license": "Documentação do acervo; sem nova licença aberta para as artes.",
+      "permissionEvidence": "docs/identidade/manual/README.md; docs/recursos/declaracao-autoria.md"
+    },
+    {
+      "path": "docs/identidade/manual/assets/exported/nav-cerco.svg",
+      "sha256": "a6f407a44e08e156498255856c7859ab97371c770f92abe68c7cd70e5a630cee",
+      "group": "manual-e-capturas",
+      "status": "cleared",
+      "rightsHolder": "Luigi Scofano de Araujo; direitos das fontes preservados",
+      "license": "Documentação do acervo; sem nova licença aberta para as artes.",
+      "permissionEvidence": "docs/identidade/manual/README.md; docs/recursos/declaracao-autoria.md"
+    },
+    {
+      "path": "docs/identidade/manual/assets/exported/nav-cut.svg",
+      "sha256": "c25bad37f430443e86c0059b48b02fc52f418ea187417b94880d5c50a24e24ee",
+      "group": "manual-e-capturas",
+      "status": "cleared",
+      "rightsHolder": "Luigi Scofano de Araujo; direitos das fontes preservados",
+      "license": "Documentação do acervo; sem nova licença aberta para as artes.",
+      "permissionEvidence": "docs/identidade/manual/README.md; docs/recursos/declaracao-autoria.md"
+    },
+    {
+      "path": "docs/identidade/manual/assets/exported/nav-desvio.svg",
+      "sha256": "2984cb738c56c71c26c8cd1f95aa6654ef6d60763c0604f22a67cbf55aecc422",
+      "group": "manual-e-capturas",
+      "status": "cleared",
+      "rightsHolder": "Luigi Scofano de Araujo; direitos das fontes preservados",
+      "license": "Documentação do acervo; sem nova licença aberta para as artes.",
+      "permissionEvidence": "docs/identidade/manual/README.md; docs/recursos/declaracao-autoria.md"
+    },
+    {
+      "path": "docs/identidade/manual/assets/exported/nav-divisa.svg",
+      "sha256": "0a3d55cd9fec10305984399203e02b3ee0d2cfc2f257c09fe654a25dee1b7f9f",
+      "group": "manual-e-capturas",
+      "status": "cleared",
+      "rightsHolder": "Luigi Scofano de Araujo; direitos das fontes preservados",
+      "license": "Documentação do acervo; sem nova licença aberta para as artes.",
+      "permissionEvidence": "docs/identidade/manual/README.md; docs/recursos/declaracao-autoria.md"
+    },
+    {
+      "path": "docs/identidade/manual/assets/exported/nav-dobra.svg",
+      "sha256": "cb448c745596ed8ac6bf47adbc1c8bb947455889e9c8e089f7b18a111cc70c33",
+      "group": "manual-e-capturas",
+      "status": "cleared",
+      "rightsHolder": "Luigi Scofano de Araujo; direitos das fontes preservados",
+      "license": "Documentação do acervo; sem nova licença aberta para as artes.",
+      "permissionEvidence": "docs/identidade/manual/README.md; docs/recursos/declaracao-autoria.md"
+    },
+    {
+      "path": "docs/identidade/manual/assets/exported/nav-elo.svg",
+      "sha256": "3d42f33985f71ee6d463ae954f41b7c65f7d617c73e2a089febd0c33eb8854c6",
+      "group": "manual-e-capturas",
+      "status": "cleared",
+      "rightsHolder": "Luigi Scofano de Araujo; direitos das fontes preservados",
+      "license": "Documentação do acervo; sem nova licença aberta para as artes.",
+      "permissionEvidence": "docs/identidade/manual/README.md; docs/recursos/declaracao-autoria.md"
+    },
+    {
+      "path": "docs/identidade/manual/assets/exported/nav-enlace.svg",
+      "sha256": "d8fc199c0927c52ac38dc4da5aab6b2e2fecfbf6650df66013322e0d30eb584d",
+      "group": "manual-e-capturas",
+      "status": "cleared",
+      "rightsHolder": "Luigi Scofano de Araujo; direitos das fontes preservados",
+      "license": "Documentação do acervo; sem nova licença aberta para as artes.",
+      "permissionEvidence": "docs/identidade/manual/README.md; docs/recursos/declaracao-autoria.md"
+    },
+    {
+      "path": "docs/identidade/manual/assets/exported/nav-estalo.svg",
+      "sha256": "7fc28146d74d34e498dcfbc1091ac85f53a221c1e76998be573bd17fc87117eb",
+      "group": "manual-e-capturas",
+      "status": "cleared",
+      "rightsHolder": "Luigi Scofano de Araujo; direitos das fontes preservados",
+      "license": "Documentação do acervo; sem nova licença aberta para as artes.",
+      "permissionEvidence": "docs/identidade/manual/README.md; docs/recursos/declaracao-autoria.md"
+    },
+    {
+      "path": "docs/identidade/manual/assets/exported/nav-foz.svg",
+      "sha256": "1edf695068c738002d06638b186b3862a5a5ff36e21758373aa83b1050b90e0f",
+      "group": "manual-e-capturas",
+      "status": "cleared",
+      "rightsHolder": "Luigi Scofano de Araujo; direitos das fontes preservados",
+      "license": "Documentação do acervo; sem nova licença aberta para as artes.",
+      "permissionEvidence": "docs/identidade/manual/README.md; docs/recursos/declaracao-autoria.md"
+    },
+    {
+      "path": "docs/identidade/manual/assets/exported/nav-lastro.svg",
+      "sha256": "cbbede63fe7b802621e0b84dd430d07d0fa314de0e40393c7b1aca139d71a02b",
+      "group": "manual-e-capturas",
+      "status": "cleared",
+      "rightsHolder": "Luigi Scofano de Araujo; direitos das fontes preservados",
+      "license": "Documentação do acervo; sem nova licença aberta para as artes.",
+      "permissionEvidence": "docs/identidade/manual/README.md; docs/recursos/declaracao-autoria.md"
+    },
+    {
+      "path": "docs/identidade/manual/assets/exported/nav-light.svg",
+      "sha256": "1784c7a7cbcbc715ab6ccd8694426b50f1ea6881017bd21c91189782cd76301d",
+      "group": "manual-e-capturas",
+      "status": "cleared",
+      "rightsHolder": "Luigi Scofano de Araujo; direitos das fontes preservados",
+      "license": "Documentação do acervo; sem nova licença aberta para as artes.",
+      "permissionEvidence": "docs/identidade/manual/README.md; docs/recursos/declaracao-autoria.md"
+    },
+    {
+      "path": "docs/identidade/manual/assets/exported/nav-mirante.svg",
+      "sha256": "9338567365ef86790858f5f0eab1c5a90fb0aaee14b5000ef9fea2a062b0ef11",
+      "group": "manual-e-capturas",
+      "status": "cleared",
+      "rightsHolder": "Luigi Scofano de Araujo; direitos das fontes preservados",
+      "license": "Documentação do acervo; sem nova licença aberta para as artes.",
+      "permissionEvidence": "docs/identidade/manual/README.md; docs/recursos/declaracao-autoria.md"
+    },
+    {
+      "path": "docs/identidade/manual/assets/exported/nav-mosaico.svg",
+      "sha256": "68319ae0c3469b830bac9309f0ba3d76a919e1955bf388d6aaafdabf320e391a",
+      "group": "manual-e-capturas",
+      "status": "cleared",
+      "rightsHolder": "Luigi Scofano de Araujo; direitos das fontes preservados",
+      "license": "Documentação do acervo; sem nova licença aberta para as artes.",
+      "permissionEvidence": "docs/identidade/manual/README.md; docs/recursos/declaracao-autoria.md"
+    },
+    {
+      "path": "docs/identidade/manual/assets/exported/nav-orbita.svg",
+      "sha256": "f76bfabca2b18d8576c83d2fab5ebd84f0f0a40d8fecc33a4eadb38faadf484d",
+      "group": "manual-e-capturas",
+      "status": "cleared",
+      "rightsHolder": "Luigi Scofano de Araujo; direitos das fontes preservados",
+      "license": "Documentação do acervo; sem nova licença aberta para as artes.",
+      "permissionEvidence": "docs/identidade/manual/README.md; docs/recursos/declaracao-autoria.md"
+    },
+    {
+      "path": "docs/identidade/manual/assets/exported/nav-pacto.svg",
+      "sha256": "0a181aa77918ce1a92777ffbeebb0df462b8fbc54cdc1e5b9688bd3097e55fec",
+      "group": "manual-e-capturas",
+      "status": "cleared",
+      "rightsHolder": "Luigi Scofano de Araujo; direitos das fontes preservados",
+      "license": "Documentação do acervo; sem nova licença aberta para as artes.",
+      "permissionEvidence": "docs/identidade/manual/README.md; docs/recursos/declaracao-autoria.md"
+    },
+    {
+      "path": "docs/identidade/manual/assets/exported/nav-prumo.svg",
+      "sha256": "072e3ef971aa609e95ba812ec658c2a80360548a5ed4e76ce603a17d9f74dadd",
+      "group": "manual-e-capturas",
+      "status": "cleared",
+      "rightsHolder": "Luigi Scofano de Araujo; direitos das fontes preservados",
+      "license": "Documentação do acervo; sem nova licença aberta para as artes.",
+      "permissionEvidence": "docs/identidade/manual/README.md; docs/recursos/declaracao-autoria.md"
+    },
+    {
+      "path": "docs/identidade/manual/assets/exported/nav-pulso.svg",
+      "sha256": "f9dc463ad77838ff9bcc52baae72390098cd778b7c504f52fad00f77f6d6302c",
+      "group": "manual-e-capturas",
+      "status": "cleared",
+      "rightsHolder": "Luigi Scofano de Araujo; direitos das fontes preservados",
+      "license": "Documentação do acervo; sem nova licença aberta para as artes.",
+      "permissionEvidence": "docs/identidade/manual/README.md; docs/recursos/declaracao-autoria.md"
+    },
+    {
+      "path": "docs/identidade/manual/assets/exported/nav-quinhao.svg",
+      "sha256": "ac67f93b01b7959884007ef07c62904d5974db1901c52acaf6550420f0d298e3",
+      "group": "manual-e-capturas",
+      "status": "cleared",
+      "rightsHolder": "Luigi Scofano de Araujo; direitos das fontes preservados",
+      "license": "Documentação do acervo; sem nova licença aberta para as artes.",
+      "permissionEvidence": "docs/identidade/manual/README.md; docs/recursos/declaracao-autoria.md"
+    },
+    {
+      "path": "docs/identidade/manual/assets/exported/nav-refugio.svg",
+      "sha256": "54b697aa6a37b37118d018c2fbded1fcd6afd347a95117bc05898006fc18f091",
+      "group": "manual-e-capturas",
+      "status": "cleared",
+      "rightsHolder": "Luigi Scofano de Araujo; direitos das fontes preservados",
+      "license": "Documentação do acervo; sem nova licença aberta para as artes.",
+      "permissionEvidence": "docs/identidade/manual/README.md; docs/recursos/declaracao-autoria.md"
+    },
+    {
+      "path": "docs/identidade/manual/assets/exported/nav-renovo.svg",
+      "sha256": "4af042b5e8bf6651224a3f2bc4ee19d771a29059392889ecde727585b3a8df0f",
+      "group": "manual-e-capturas",
+      "status": "cleared",
+      "rightsHolder": "Luigi Scofano de Araujo; direitos das fontes preservados",
+      "license": "Documentação do acervo; sem nova licença aberta para as artes.",
+      "permissionEvidence": "docs/identidade/manual/README.md; docs/recursos/declaracao-autoria.md"
+    },
+    {
+      "path": "docs/identidade/manual/assets/exported/nav-repasse.svg",
+      "sha256": "0feb056fc54fc9769f1b11523502e7f769afc4cfc94a52b8d5fe0d0b3cc1d1b3",
+      "group": "manual-e-capturas",
+      "status": "cleared",
+      "rightsHolder": "Luigi Scofano de Araujo; direitos das fontes preservados",
+      "license": "Documentação do acervo; sem nova licença aberta para as artes.",
+      "permissionEvidence": "docs/identidade/manual/README.md; docs/recursos/declaracao-autoria.md"
+    },
+    {
+      "path": "docs/identidade/manual/assets/exported/nav-sintonia.svg",
+      "sha256": "bc02e9bce686a8e5a711f86420096e8346460406ddad1cba19ecf79a2eea2d60",
+      "group": "manual-e-capturas",
+      "status": "cleared",
+      "rightsHolder": "Luigi Scofano de Araujo; direitos das fontes preservados",
+      "license": "Documentação do acervo; sem nova licença aberta para as artes.",
+      "permissionEvidence": "docs/identidade/manual/README.md; docs/recursos/declaracao-autoria.md"
+    },
+    {
+      "path": "docs/identidade/manual/assets/exported/nav-vazante.svg",
+      "sha256": "8098d2f06e7b5d004ea6e9789ea8c2ee49186dd1a82cf6e134718c989344b659",
+      "group": "manual-e-capturas",
+      "status": "cleared",
+      "rightsHolder": "Luigi Scofano de Araujo; direitos das fontes preservados",
+      "license": "Documentação do acervo; sem nova licença aberta para as artes.",
+      "permissionEvidence": "docs/identidade/manual/README.md; docs/recursos/declaracao-autoria.md"
+    },
+    {
+      "path": "docs/identidade/manual/assets/exported/quinhao-castanha-do-pará.svg",
+      "sha256": "d6a93a0ac7f34677462d9a5c94ce81b4a4f27c5f170f4ef9bb81406f748d94db",
+      "group": "manual-e-capturas",
+      "status": "cleared",
+      "rightsHolder": "Luigi Scofano de Araujo; direitos das fontes preservados",
+      "license": "Documentação do acervo; sem nova licença aberta para as artes.",
+      "permissionEvidence": "docs/identidade/manual/README.md; docs/recursos/declaracao-autoria.md"
+    },
+    {
+      "path": "docs/identidade/manual/assets/exported/quinhao-jabuticaba.svg",
+      "sha256": "20844c9c7dd94ffdd0548710e316b594b487a3fe58966893a1e1b58e493eec62",
+      "group": "manual-e-capturas",
+      "status": "cleared",
+      "rightsHolder": "Luigi Scofano de Araujo; direitos das fontes preservados",
+      "license": "Documentação do acervo; sem nova licença aberta para as artes.",
+      "permissionEvidence": "docs/identidade/manual/README.md; docs/recursos/declaracao-autoria.md"
+    },
+    {
+      "path": "docs/identidade/manual/assets/exported/quinhao-pitanga.svg",
+      "sha256": "26ec7d2bf5986965477cd1d6e5125f72d3820c8851557022480acabbc7578bdc",
+      "group": "manual-e-capturas",
+      "status": "cleared",
+      "rightsHolder": "Luigi Scofano de Araujo; direitos das fontes preservados",
+      "license": "Documentação do acervo; sem nova licença aberta para as artes.",
+      "permissionEvidence": "docs/identidade/manual/README.md; docs/recursos/declaracao-autoria.md"
+    },
+    {
+      "path": "docs/identidade/manual/assets/exported/renovo-B.svg",
+      "sha256": "d933db3faf581aff7cd3091d837913aafa7328e3ef89fa33898e69ca142bc288",
+      "group": "manual-e-capturas",
+      "status": "cleared",
+      "rightsHolder": "Luigi Scofano de Araujo; direitos das fontes preservados",
+      "license": "Documentação do acervo; sem nova licença aberta para as artes.",
+      "permissionEvidence": "docs/identidade/manual/README.md; docs/recursos/declaracao-autoria.md"
+    },
+    {
+      "path": "docs/identidade/manual/assets/exported/renovo-F.svg",
+      "sha256": "ddaf04c2bc2d63066a06d69f7b9a8a1fc0443edbe30802a72e65098f11437217",
+      "group": "manual-e-capturas",
+      "status": "cleared",
+      "rightsHolder": "Luigi Scofano de Araujo; direitos das fontes preservados",
+      "license": "Documentação do acervo; sem nova licença aberta para as artes.",
+      "permissionEvidence": "docs/identidade/manual/README.md; docs/recursos/declaracao-autoria.md"
+    },
+    {
+      "path": "docs/identidade/manual/assets/exported/renovo-S.svg",
+      "sha256": "07f3e1c9b273cb850d96e65d071bbba1c6ed6130e0698e9aa57d314a3a37a251",
+      "group": "manual-e-capturas",
+      "status": "cleared",
+      "rightsHolder": "Luigi Scofano de Araujo; direitos das fontes preservados",
+      "license": "Documentação do acervo; sem nova licença aberta para as artes.",
+      "permissionEvidence": "docs/identidade/manual/README.md; docs/recursos/declaracao-autoria.md"
+    },
+    {
+      "path": "docs/identidade/manual/assets/Intuicao_Icones_Fauna_Frente_Branco_sobre_Verde.png",
+      "sha256": "a9328afa201520fbf18d209d9fa613cffe5dbe65c9da955610f53223b4b54fc3",
+      "group": "manual-e-capturas",
+      "status": "cleared",
+      "rightsHolder": "Luigi Scofano de Araujo; direitos das fontes preservados",
+      "license": "Documentação do acervo; sem nova licença aberta para as artes.",
+      "permissionEvidence": "docs/identidade/manual/README.md; docs/recursos/declaracao-autoria.md"
+    },
+    {
+      "path": "docs/identidade/manual/assets/Intuicao_Icones_Fauna_Frente_Verde_sobre_Branco.png",
+      "sha256": "d9457b3ef68488719e42d4e8d50c28d58306e7c57295815ada9b0965fa8131bb",
+      "group": "manual-e-capturas",
+      "status": "cleared",
+      "rightsHolder": "Luigi Scofano de Araujo; direitos das fontes preservados",
+      "license": "Documentação do acervo; sem nova licença aberta para as artes.",
+      "permissionEvidence": "docs/identidade/manual/README.md; docs/recursos/declaracao-autoria.md"
+    },
+    {
+      "path": "docs/identidade/manual/assets/Intuicao_Icones_Fauna_Lado_Branco_sobre_Verde.png",
+      "sha256": "8efafacc5109b9c8f5914fe4ec60dd674a0feca5fc148656f5067a68b2c182ae",
+      "group": "manual-e-capturas",
+      "status": "cleared",
+      "rightsHolder": "Luigi Scofano de Araujo; direitos das fontes preservados",
+      "license": "Documentação do acervo; sem nova licença aberta para as artes.",
+      "permissionEvidence": "docs/identidade/manual/README.md; docs/recursos/declaracao-autoria.md"
+    },
+    {
+      "path": "docs/identidade/manual/assets/Intuicao_Icones_Fauna_Lado_Verde_sobre_Branco.png",
+      "sha256": "0a625c47740cc20d7a55c0368cca9fdd633261da08382e9a834aac63c3a07992",
+      "group": "manual-e-capturas",
+      "status": "cleared",
+      "rightsHolder": "Luigi Scofano de Araujo; direitos das fontes preservados",
+      "license": "Documentação do acervo; sem nova licença aberta para as artes.",
+      "permissionEvidence": "docs/identidade/manual/README.md; docs/recursos/declaracao-autoria.md"
+    },
+    {
+      "path": "docs/identidade/manual/assets/jacare-front-Branco_sobre_Verde.png",
+      "sha256": "bc3d82f2ae00f5af43934a3aded7049862fab5d408b5b5a20422bc1d07829be3",
+      "group": "manual-e-capturas",
+      "status": "cleared",
+      "rightsHolder": "Luigi Scofano de Araujo; direitos das fontes preservados",
+      "license": "Documentação do acervo; sem nova licença aberta para as artes.",
+      "permissionEvidence": "docs/identidade/manual/README.md; docs/recursos/declaracao-autoria.md"
+    },
+    {
+      "path": "docs/identidade/manual/assets/jacare-front-Verde_sobre_Branco.png",
+      "sha256": "3851fc288a206f0bbff080f862f3373e5f99580484cf5c51087b5e3e902909be",
+      "group": "manual-e-capturas",
+      "status": "cleared",
+      "rightsHolder": "Luigi Scofano de Araujo; direitos das fontes preservados",
+      "license": "Documentação do acervo; sem nova licença aberta para as artes.",
+      "permissionEvidence": "docs/identidade/manual/README.md; docs/recursos/declaracao-autoria.md"
+    },
+    {
+      "path": "docs/identidade/manual/assets/jacare-side-Branco_sobre_Verde.png",
+      "sha256": "0a2dfe92a822659aca39f7e5e62b3f8064af8ac4aa0ddb24490833533f9c5128",
+      "group": "manual-e-capturas",
+      "status": "cleared",
+      "rightsHolder": "Luigi Scofano de Araujo; direitos das fontes preservados",
+      "license": "Documentação do acervo; sem nova licença aberta para as artes.",
+      "permissionEvidence": "docs/identidade/manual/README.md; docs/recursos/declaracao-autoria.md"
+    },
+    {
+      "path": "docs/identidade/manual/assets/jacare-side-Verde_sobre_Branco.png",
+      "sha256": "907c899a8ba08fc9be81531b98ad0f27b9a60d7f16dce475d9e52907222dd0ec",
+      "group": "manual-e-capturas",
+      "status": "cleared",
+      "rightsHolder": "Luigi Scofano de Araujo; direitos das fontes preservados",
+      "license": "Documentação do acervo; sem nova licença aberta para as artes.",
+      "permissionEvidence": "docs/identidade/manual/README.md; docs/recursos/declaracao-autoria.md"
+    },
+    {
+      "path": "docs/identidade/manual/assets/lobo-front-Branco_sobre_Verde.png",
+      "sha256": "ff265fa6d729edbe571c8bb4a94c51ca68ed3997c46fdd2379d9c6493c5488ed",
+      "group": "manual-e-capturas",
+      "status": "cleared",
+      "rightsHolder": "Luigi Scofano de Araujo; direitos das fontes preservados",
+      "license": "Documentação do acervo; sem nova licença aberta para as artes.",
+      "permissionEvidence": "docs/identidade/manual/README.md; docs/recursos/declaracao-autoria.md"
+    },
+    {
+      "path": "docs/identidade/manual/assets/lobo-front-Verde_sobre_Branco.png",
+      "sha256": "eb71696ecbcc157351fd6fea13f7c7827d749e312230f6c93295c0d7e6faceac",
+      "group": "manual-e-capturas",
+      "status": "cleared",
+      "rightsHolder": "Luigi Scofano de Araujo; direitos das fontes preservados",
+      "license": "Documentação do acervo; sem nova licença aberta para as artes.",
+      "permissionEvidence": "docs/identidade/manual/README.md; docs/recursos/declaracao-autoria.md"
+    },
+    {
+      "path": "docs/identidade/manual/assets/lobo-side-Branco_sobre_Verde.png",
+      "sha256": "beba8658a014504ea913b19f278da38c9ad6174bd8482ef2f1ad6340fd81e4bb",
+      "group": "manual-e-capturas",
+      "status": "cleared",
+      "rightsHolder": "Luigi Scofano de Araujo; direitos das fontes preservados",
+      "license": "Documentação do acervo; sem nova licença aberta para as artes.",
+      "permissionEvidence": "docs/identidade/manual/README.md; docs/recursos/declaracao-autoria.md"
+    },
+    {
+      "path": "docs/identidade/manual/assets/lobo-side-Verde_sobre_Branco.png",
+      "sha256": "2436a427b2129c4b85d0b3b00582e3cc0a464e437a9f6b9654a00e0ff16252d3",
+      "group": "manual-e-capturas",
+      "status": "cleared",
+      "rightsHolder": "Luigi Scofano de Araujo; direitos das fontes preservados",
+      "license": "Documentação do acervo; sem nova licença aberta para as artes.",
+      "permissionEvidence": "docs/identidade/manual/README.md; docs/recursos/declaracao-autoria.md"
+    },
+    {
+      "path": "docs/identidade/manual/assets/mico-front-Branco_sobre_Verde.png",
+      "sha256": "ae01cf5671ae0f52d8910d29b8a5e6e2185170bc29ac55b4488443546a7ea9b9",
+      "group": "manual-e-capturas",
+      "status": "cleared",
+      "rightsHolder": "Luigi Scofano de Araujo; direitos das fontes preservados",
+      "license": "Documentação do acervo; sem nova licença aberta para as artes.",
+      "permissionEvidence": "docs/identidade/manual/README.md; docs/recursos/declaracao-autoria.md"
+    },
+    {
+      "path": "docs/identidade/manual/assets/mico-front-Verde_sobre_Branco.png",
+      "sha256": "2ea4f240f60d4becd67faa1492d432ca97f47a593319932bd75af7fbf5a3c9eb",
+      "group": "manual-e-capturas",
+      "status": "cleared",
+      "rightsHolder": "Luigi Scofano de Araujo; direitos das fontes preservados",
+      "license": "Documentação do acervo; sem nova licença aberta para as artes.",
+      "permissionEvidence": "docs/identidade/manual/README.md; docs/recursos/declaracao-autoria.md"
+    },
+    {
+      "path": "docs/identidade/manual/assets/mico-side-Branco_sobre_Verde.png",
+      "sha256": "8cf698c657b095a3413793ed48293c1a50d1407981323decaae5d9775e19553b",
+      "group": "manual-e-capturas",
+      "status": "cleared",
+      "rightsHolder": "Luigi Scofano de Araujo; direitos das fontes preservados",
+      "license": "Documentação do acervo; sem nova licença aberta para as artes.",
+      "permissionEvidence": "docs/identidade/manual/README.md; docs/recursos/declaracao-autoria.md"
+    },
+    {
+      "path": "docs/identidade/manual/assets/mico-side-Verde_sobre_Branco.png",
+      "sha256": "beb9864eca113dea60d82ffcae50c5762e9da69babb912734c08cd6906ef968b",
+      "group": "manual-e-capturas",
+      "status": "cleared",
+      "rightsHolder": "Luigi Scofano de Araujo; direitos das fontes preservados",
+      "license": "Documentação do acervo; sem nova licença aberta para as artes.",
+      "permissionEvidence": "docs/identidade/manual/README.md; docs/recursos/declaracao-autoria.md"
+    },
+    {
+      "path": "docs/identidade/manual/assets/micoLeao-front-Branco_sobre_Verde.png",
+      "sha256": "b56ecdad202ca62028c3c47e7ca46f52bf02d7e99a843ba88b731151b62a1525",
+      "group": "manual-e-capturas",
+      "status": "cleared",
+      "rightsHolder": "Luigi Scofano de Araujo; direitos das fontes preservados",
+      "license": "Documentação do acervo; sem nova licença aberta para as artes.",
+      "permissionEvidence": "docs/identidade/manual/README.md; docs/recursos/declaracao-autoria.md"
+    },
+    {
+      "path": "docs/identidade/manual/assets/micoLeao-front-Verde_sobre_Branco.png",
+      "sha256": "0b11b655cabe9263bb71b133bd89eaea5ab45605d545d910b75a3236ceab1684",
+      "group": "manual-e-capturas",
+      "status": "cleared",
+      "rightsHolder": "Luigi Scofano de Araujo; direitos das fontes preservados",
+      "license": "Documentação do acervo; sem nova licença aberta para as artes.",
+      "permissionEvidence": "docs/identidade/manual/README.md; docs/recursos/declaracao-autoria.md"
+    },
+    {
+      "path": "docs/identidade/manual/assets/micoLeao-side-Branco_sobre_Verde.png",
+      "sha256": "929eabde4c61aad48354ac2e2404e77016d71f42b125fa3ce72c18753ad83a34",
+      "group": "manual-e-capturas",
+      "status": "cleared",
+      "rightsHolder": "Luigi Scofano de Araujo; direitos das fontes preservados",
+      "license": "Documentação do acervo; sem nova licença aberta para as artes.",
+      "permissionEvidence": "docs/identidade/manual/README.md; docs/recursos/declaracao-autoria.md"
+    },
+    {
+      "path": "docs/identidade/manual/assets/micoLeao-side-Verde_sobre_Branco.png",
+      "sha256": "e6670809c319415d0aec7ef9fa2045d0ff588711ab32f1e2dd6fc93895b049e5",
+      "group": "manual-e-capturas",
+      "status": "cleared",
+      "rightsHolder": "Luigi Scofano de Araujo; direitos das fontes preservados",
+      "license": "Documentação do acervo; sem nova licença aberta para as artes.",
+      "permissionEvidence": "docs/identidade/manual/README.md; docs/recursos/declaracao-autoria.md"
+    },
+    {
+      "path": "docs/identidade/manual/assets/onca-front-Branco_sobre_Verde.png",
+      "sha256": "e2c6ba38daba43726b246aa06414484964b51d5c31d18e595ff52715d380263f",
+      "group": "manual-e-capturas",
+      "status": "cleared",
+      "rightsHolder": "Luigi Scofano de Araujo; direitos das fontes preservados",
+      "license": "Documentação do acervo; sem nova licença aberta para as artes.",
+      "permissionEvidence": "docs/identidade/manual/README.md; docs/recursos/declaracao-autoria.md"
+    },
+    {
+      "path": "docs/identidade/manual/assets/onca-front-Verde_sobre_Branco.png",
+      "sha256": "13e9ff7595de9832841291df4cc9aabb1e2566cf9e0d0e7c172c5c3d04218919",
+      "group": "manual-e-capturas",
+      "status": "cleared",
+      "rightsHolder": "Luigi Scofano de Araujo; direitos das fontes preservados",
+      "license": "Documentação do acervo; sem nova licença aberta para as artes.",
+      "permissionEvidence": "docs/identidade/manual/README.md; docs/recursos/declaracao-autoria.md"
+    },
+    {
+      "path": "docs/identidade/manual/assets/onca-side-Branco_sobre_Verde.png",
+      "sha256": "486bdbdd40f3f803e65ccef74b5596345e2eeb432380c4917d77c1c5e21ade1c",
+      "group": "manual-e-capturas",
+      "status": "cleared",
+      "rightsHolder": "Luigi Scofano de Araujo; direitos das fontes preservados",
+      "license": "Documentação do acervo; sem nova licença aberta para as artes.",
+      "permissionEvidence": "docs/identidade/manual/README.md; docs/recursos/declaracao-autoria.md"
+    },
+    {
+      "path": "docs/identidade/manual/assets/onca-side-Verde_sobre_Branco.png",
+      "sha256": "6f4dd3d88a9c67cce2978791939996bc5687817c929021b712175fc116d50127",
+      "group": "manual-e-capturas",
+      "status": "cleared",
+      "rightsHolder": "Luigi Scofano de Araujo; direitos das fontes preservados",
+      "license": "Documentação do acervo; sem nova licença aberta para as artes.",
+      "permissionEvidence": "docs/identidade/manual/README.md; docs/recursos/declaracao-autoria.md"
+    },
+    {
+      "path": "docs/identidade/manual/assets/peixeBoi-front-Branco_sobre_Verde.png",
+      "sha256": "e1ec12a81c640040413cc24f8cacbcfaf1999396a7ba3430f0f1ceab0154838f",
+      "group": "manual-e-capturas",
+      "status": "cleared",
+      "rightsHolder": "Luigi Scofano de Araujo; direitos das fontes preservados",
+      "license": "Documentação do acervo; sem nova licença aberta para as artes.",
+      "permissionEvidence": "docs/identidade/manual/README.md; docs/recursos/declaracao-autoria.md"
+    },
+    {
+      "path": "docs/identidade/manual/assets/peixeBoi-front-Verde_sobre_Branco.png",
+      "sha256": "1bd9ec18001a707ce22bf34c0545d148cd754eea604ebf528566384a1d1c2f0e",
+      "group": "manual-e-capturas",
+      "status": "cleared",
+      "rightsHolder": "Luigi Scofano de Araujo; direitos das fontes preservados",
+      "license": "Documentação do acervo; sem nova licença aberta para as artes.",
+      "permissionEvidence": "docs/identidade/manual/README.md; docs/recursos/declaracao-autoria.md"
+    },
+    {
+      "path": "docs/identidade/manual/assets/peixeBoi-side-Branco_sobre_Verde.png",
+      "sha256": "e254cee7805de04f9afb078f2970683a4dd6000d066b85013da65bad1681d4d3",
+      "group": "manual-e-capturas",
+      "status": "cleared",
+      "rightsHolder": "Luigi Scofano de Araujo; direitos das fontes preservados",
+      "license": "Documentação do acervo; sem nova licença aberta para as artes.",
+      "permissionEvidence": "docs/identidade/manual/README.md; docs/recursos/declaracao-autoria.md"
+    },
+    {
+      "path": "docs/identidade/manual/assets/peixeBoi-side-Verde_sobre_Branco.png",
+      "sha256": "8bcae18694a12bebaf4c38ab51ff856ebccfe903b519e1db7a74e1cb963a1306",
+      "group": "manual-e-capturas",
+      "status": "cleared",
+      "rightsHolder": "Luigi Scofano de Araujo; direitos das fontes preservados",
+      "license": "Documentação do acervo; sem nova licença aberta para as artes.",
+      "permissionEvidence": "docs/identidade/manual/README.md; docs/recursos/declaracao-autoria.md"
+    },
+    {
+      "path": "docs/identidade/manual/assets/piranha-front-Branco_sobre_Verde.png",
+      "sha256": "aeb6581daae46903f38b62f15e37f9d3ad3025a766b1c6adee16f2f365002ba7",
+      "group": "manual-e-capturas",
+      "status": "cleared",
+      "rightsHolder": "Luigi Scofano de Araujo; direitos das fontes preservados",
+      "license": "Documentação do acervo; sem nova licença aberta para as artes.",
+      "permissionEvidence": "docs/identidade/manual/README.md; docs/recursos/declaracao-autoria.md"
+    },
+    {
+      "path": "docs/identidade/manual/assets/piranha-front-Verde_sobre_Branco.png",
+      "sha256": "08183d0683dbe0f779f4b1d00b8248a97451743e8eb336833f83140695473105",
+      "group": "manual-e-capturas",
+      "status": "cleared",
+      "rightsHolder": "Luigi Scofano de Araujo; direitos das fontes preservados",
+      "license": "Documentação do acervo; sem nova licença aberta para as artes.",
+      "permissionEvidence": "docs/identidade/manual/README.md; docs/recursos/declaracao-autoria.md"
+    },
+    {
+      "path": "docs/identidade/manual/assets/piranha-side-Branco_sobre_Verde.png",
+      "sha256": "278151c6d9cb698585d6311b17612b0d79ebef31c1e20e53ba5408e14484ca74",
+      "group": "manual-e-capturas",
+      "status": "cleared",
+      "rightsHolder": "Luigi Scofano de Araujo; direitos das fontes preservados",
+      "license": "Documentação do acervo; sem nova licença aberta para as artes.",
+      "permissionEvidence": "docs/identidade/manual/README.md; docs/recursos/declaracao-autoria.md"
+    },
+    {
+      "path": "docs/identidade/manual/assets/piranha-side-Verde_sobre_Branco.png",
+      "sha256": "718120d75dcc4296286e0abd61ed9c2aec5743b5c820e7431a30119a7f41910e",
+      "group": "manual-e-capturas",
+      "status": "cleared",
+      "rightsHolder": "Luigi Scofano de Araujo; direitos das fontes preservados",
+      "license": "Documentação do acervo; sem nova licença aberta para as artes.",
+      "permissionEvidence": "docs/identidade/manual/README.md; docs/recursos/declaracao-autoria.md"
+    },
+    {
+      "path": "docs/identidade/manual/assets/screens/home.png",
+      "sha256": "d27748aa9a700c4bbe2e2c4d7c2827d8a16ec56efba2a1c1172f8d3fa3f08b09",
+      "group": "manual-e-capturas",
+      "status": "cleared",
+      "rightsHolder": "Luigi Scofano de Araujo; direitos das fontes preservados",
+      "license": "Documentação do acervo; sem nova licença aberta para as artes.",
+      "permissionEvidence": "docs/identidade/manual/README.md; docs/recursos/declaracao-autoria.md"
+    },
+    {
+      "path": "docs/identidade/manual/assets/screens/refugio.png",
+      "sha256": "fee61b9d314a0403f93a9b1513e09be2fa221447948c0c6b9f55f580508366b0",
+      "group": "manual-e-capturas",
+      "status": "cleared",
+      "rightsHolder": "Luigi Scofano de Araujo; direitos das fontes preservados",
+      "license": "Documentação do acervo; sem nova licença aberta para as artes.",
+      "permissionEvidence": "docs/identidade/manual/README.md; docs/recursos/declaracao-autoria.md"
+    },
+    {
+      "path": "docs/identidade/manual/assets/screens/renovo.png",
+      "sha256": "61e758b78b8bc25873d5222e8da4dc22335df3b3c6fbecd32d956de95583172b",
+      "group": "manual-e-capturas",
+      "status": "cleared",
+      "rightsHolder": "Luigi Scofano de Araujo; direitos das fontes preservados",
+      "license": "Documentação do acervo; sem nova licença aberta para as artes.",
+      "permissionEvidence": "docs/identidade/manual/README.md; docs/recursos/declaracao-autoria.md"
+    },
+    {
+      "path": "docs/identidade/manual/assets/screens/sintonia.png",
+      "sha256": "6a2891c15c6c14d9f3059b4921ae852d675cf9c159170e1fb8842108b4d162b3",
+      "group": "manual-e-capturas",
+      "status": "cleared",
+      "rightsHolder": "Luigi Scofano de Araujo; direitos das fontes preservados",
+      "license": "Documentação do acervo; sem nova licença aberta para as artes.",
+      "permissionEvidence": "docs/identidade/manual/README.md; docs/recursos/declaracao-autoria.md"
+    },
+    {
+      "path": "docs/identidade/manual/assets/tamandua-front-Branco_sobre_Verde.png",
+      "sha256": "f63a98ed909473b88b6d6e25536b9bbd8d0b8fe8bf9d1c1efdc0a0d0158d096b",
+      "group": "manual-e-capturas",
+      "status": "cleared",
+      "rightsHolder": "Luigi Scofano de Araujo; direitos das fontes preservados",
+      "license": "Documentação do acervo; sem nova licença aberta para as artes.",
+      "permissionEvidence": "docs/identidade/manual/README.md; docs/recursos/declaracao-autoria.md"
+    },
+    {
+      "path": "docs/identidade/manual/assets/tamandua-front-Verde_sobre_Branco.png",
+      "sha256": "04c734708d0b6c53c0ddabc7a963ac41b2f17878473fba35faf4d4bab1905673",
+      "group": "manual-e-capturas",
+      "status": "cleared",
+      "rightsHolder": "Luigi Scofano de Araujo; direitos das fontes preservados",
+      "license": "Documentação do acervo; sem nova licença aberta para as artes.",
+      "permissionEvidence": "docs/identidade/manual/README.md; docs/recursos/declaracao-autoria.md"
+    },
+    {
+      "path": "docs/identidade/manual/assets/tamandua-side-Branco_sobre_Verde.png",
+      "sha256": "16125b755a6bbe30ac131d5543ad0ff40260ff1590635d7c8cdbde2849d4ab55",
+      "group": "manual-e-capturas",
+      "status": "cleared",
+      "rightsHolder": "Luigi Scofano de Araujo; direitos das fontes preservados",
+      "license": "Documentação do acervo; sem nova licença aberta para as artes.",
+      "permissionEvidence": "docs/identidade/manual/README.md; docs/recursos/declaracao-autoria.md"
+    },
+    {
+      "path": "docs/identidade/manual/assets/tamandua-side-Verde_sobre_Branco.png",
+      "sha256": "00c155977ebcbd9ffea6d1de2a3be9992301b4ae3c8e82ee470b12c9ffadde84",
+      "group": "manual-e-capturas",
+      "status": "cleared",
+      "rightsHolder": "Luigi Scofano de Araujo; direitos das fontes preservados",
+      "license": "Documentação do acervo; sem nova licença aberta para as artes.",
+      "permissionEvidence": "docs/identidade/manual/README.md; docs/recursos/declaracao-autoria.md"
+    },
+    {
+      "path": "docs/identidade/manual/assets/tatu-front-Branco_sobre_Verde.png",
+      "sha256": "f11e6dba9e33ac51be958de5435e91134f6c6f813bab8ff40f937cf16fba2fca",
+      "group": "manual-e-capturas",
+      "status": "cleared",
+      "rightsHolder": "Luigi Scofano de Araujo; direitos das fontes preservados",
+      "license": "Documentação do acervo; sem nova licença aberta para as artes.",
+      "permissionEvidence": "docs/identidade/manual/README.md; docs/recursos/declaracao-autoria.md"
+    },
+    {
+      "path": "docs/identidade/manual/assets/tatu-front-Verde_sobre_Branco.png",
+      "sha256": "f914f0c70753558bf4a43beddd1b83192a1e4426e3ffba8ccd1314a9f0b06ce8",
+      "group": "manual-e-capturas",
+      "status": "cleared",
+      "rightsHolder": "Luigi Scofano de Araujo; direitos das fontes preservados",
+      "license": "Documentação do acervo; sem nova licença aberta para as artes.",
+      "permissionEvidence": "docs/identidade/manual/README.md; docs/recursos/declaracao-autoria.md"
+    },
+    {
+      "path": "docs/identidade/manual/assets/tatu-side-Branco_sobre_Verde.png",
+      "sha256": "97ead7fd5e67b8b78ae604144e9e7223c8d476606f00d665f460ab1e11cc40dd",
+      "group": "manual-e-capturas",
+      "status": "cleared",
+      "rightsHolder": "Luigi Scofano de Araujo; direitos das fontes preservados",
+      "license": "Documentação do acervo; sem nova licença aberta para as artes.",
+      "permissionEvidence": "docs/identidade/manual/README.md; docs/recursos/declaracao-autoria.md"
+    },
+    {
+      "path": "docs/identidade/manual/assets/tatu-side-Verde_sobre_Branco.png",
+      "sha256": "f6b974f5e87e995e3d99b07bc397bb0ae29bd32fa782ea153e51122a2cc88e2d",
+      "group": "manual-e-capturas",
+      "status": "cleared",
+      "rightsHolder": "Luigi Scofano de Araujo; direitos das fontes preservados",
+      "license": "Documentação do acervo; sem nova licença aberta para as artes.",
+      "permissionEvidence": "docs/identidade/manual/README.md; docs/recursos/declaracao-autoria.md"
+    },
+    {
+      "path": "docs/identidade/manual/assets/tucano-front-Branco_sobre_Verde.png",
+      "sha256": "8a523f510fe26b967954202e9d4898576c0e95a3803c52c0fde804da3139ed25",
+      "group": "manual-e-capturas",
+      "status": "cleared",
+      "rightsHolder": "Luigi Scofano de Araujo; direitos das fontes preservados",
+      "license": "Documentação do acervo; sem nova licença aberta para as artes.",
+      "permissionEvidence": "docs/identidade/manual/README.md; docs/recursos/declaracao-autoria.md"
+    },
+    {
+      "path": "docs/identidade/manual/assets/tucano-front-Verde_sobre_Branco.png",
+      "sha256": "6215d2e143be67cc7543c9dfef23f80ae0659990560c50f80fc4d2715b895b53",
+      "group": "manual-e-capturas",
+      "status": "cleared",
+      "rightsHolder": "Luigi Scofano de Araujo; direitos das fontes preservados",
+      "license": "Documentação do acervo; sem nova licença aberta para as artes.",
+      "permissionEvidence": "docs/identidade/manual/README.md; docs/recursos/declaracao-autoria.md"
+    },
+    {
+      "path": "docs/identidade/manual/assets/tucano-side-Branco_sobre_Verde.png",
+      "sha256": "1ba2b71eb109718e17260789f5b7b8490a3e74a685b3d0c480ccf7b0579949cf",
+      "group": "manual-e-capturas",
+      "status": "cleared",
+      "rightsHolder": "Luigi Scofano de Araujo; direitos das fontes preservados",
+      "license": "Documentação do acervo; sem nova licença aberta para as artes.",
+      "permissionEvidence": "docs/identidade/manual/README.md; docs/recursos/declaracao-autoria.md"
+    },
+    {
+      "path": "docs/identidade/manual/assets/tucano-side-Verde_sobre_Branco.png",
+      "sha256": "1a6c54664b7eb189643f5d10ddfd19d67047c07c7f8fe66871ae3ab1b0f88003",
+      "group": "manual-e-capturas",
+      "status": "cleared",
+      "rightsHolder": "Luigi Scofano de Araujo; direitos das fontes preservados",
+      "license": "Documentação do acervo; sem nova licença aberta para as artes.",
+      "permissionEvidence": "docs/identidade/manual/README.md; docs/recursos/declaracao-autoria.md"
+    },
+    {
+      "path": "docs/identidade/manual/assets/tuiuiu-front-Branco_sobre_Verde.png",
+      "sha256": "75e08959f76f9b9edad5836f15069f43c72875b067416ce39c19ba33a98fd21c",
+      "group": "manual-e-capturas",
+      "status": "cleared",
+      "rightsHolder": "Luigi Scofano de Araujo; direitos das fontes preservados",
+      "license": "Documentação do acervo; sem nova licença aberta para as artes.",
+      "permissionEvidence": "docs/identidade/manual/README.md; docs/recursos/declaracao-autoria.md"
+    },
+    {
+      "path": "docs/identidade/manual/assets/tuiuiu-front-Verde_sobre_Branco.png",
+      "sha256": "637da6e75557509ad45b0bb44602ac8e91a98b1378274a02a7d358a7d0cf1b8a",
+      "group": "manual-e-capturas",
+      "status": "cleared",
+      "rightsHolder": "Luigi Scofano de Araujo; direitos das fontes preservados",
+      "license": "Documentação do acervo; sem nova licença aberta para as artes.",
+      "permissionEvidence": "docs/identidade/manual/README.md; docs/recursos/declaracao-autoria.md"
+    },
+    {
+      "path": "docs/identidade/manual/assets/tuiuiu-side-Branco_sobre_Verde.png",
+      "sha256": "35bb4a4f3b9bd1d3f694f3a984020a2530b1ada21f83613d2d896bd9f1c6c881",
+      "group": "manual-e-capturas",
+      "status": "cleared",
+      "rightsHolder": "Luigi Scofano de Araujo; direitos das fontes preservados",
+      "license": "Documentação do acervo; sem nova licença aberta para as artes.",
+      "permissionEvidence": "docs/identidade/manual/README.md; docs/recursos/declaracao-autoria.md"
+    },
+    {
+      "path": "docs/identidade/manual/assets/tuiuiu-side-Verde_sobre_Branco.png",
+      "sha256": "9e111416a18297457c67f9d38ed467e4e821fc96e48358173f2ef607f06bdd1f",
+      "group": "manual-e-capturas",
+      "status": "cleared",
+      "rightsHolder": "Luigi Scofano de Araujo; direitos das fontes preservados",
+      "license": "Documentação do acervo; sem nova licença aberta para as artes.",
+      "permissionEvidence": "docs/identidade/manual/README.md; docs/recursos/declaracao-autoria.md"
+    },
+    {
+      "path": "docs/identidade/manual/capa.png",
+      "sha256": "9254d2b35fe5352c2e0184984ad4fd407f8f251d31d1c9e0f9dacdd2cab4614b",
+      "group": "manual-e-capturas",
+      "status": "cleared",
+      "rightsHolder": "Luigi Scofano de Araujo; direitos das fontes preservados",
+      "license": "Documentação do acervo; sem nova licença aberta para as artes.",
+      "permissionEvidence": "docs/identidade/manual/README.md; docs/recursos/declaracao-autoria.md"
     }
   ],
   "rightsReview": {

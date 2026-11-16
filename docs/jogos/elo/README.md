@@ -4,6 +4,12 @@
 
 Um puzzle de lógica em que pontos de regiões diferentes formam um circuito fechado.
 
+## Área de jogo atual
+
+[![ELO: captura real da área de jogo](../../imagens/galeria-atual/elo.png)](../../imagens/galeria-atual/elo.png)
+
+*Captura local do código atual, com estado de demonstração, sem cursor ou dados pessoais. [Proveniência e limites](../../imagens/galeria-atual/README.md). Não representa uma solução nem comprova todos os estados da partida.*
+
 ## Objetivo
 
 **Coloque um ponto em cada região e forme um único caminho fechado.**
