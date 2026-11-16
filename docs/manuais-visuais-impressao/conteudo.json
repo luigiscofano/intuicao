@@ -1,0 +1,458 @@
+[
+  {
+    "id": "light",
+    "nome": "Reflexos",
+    "numero": 1,
+    "categoria": "Intuição",
+    "objetivo": "Leve cada raio ao alvo da mesma cor e símbolo.",
+    "passos": [
+      {
+        "titulo": "Oriente os espelhos",
+        "texto": "Gire os espelhos. Eles mudam a direção da luz, mas não saem do lugar."
+      },
+      {
+        "titulo": "Dispare e observe",
+        "texto": "Dispare pelas fontes ou use Confirmar todos para ver o caminho."
+      },
+      {
+        "titulo": "Combine os percursos",
+        "texto": "Acerte todos os alvos sem cruzar nem encostar raios de cores diferentes."
+      }
+    ],
+    "exemplo": "O espelho faz a luz virar e alcançar o alvo.",
+    "atencao_titulo": "A luz precisa chegar limpa",
+    "atencao": "Paredes e bordas interrompem a luz. Quando houver portais, a mesma letra liga entrada e saída; a direção é mantida. Confira também as cores aceitas pelo portal."
+  },
+  {
+    "id": "cut",
+    "nome": "Corte certo",
+    "numero": 2,
+    "categoria": "Intuição",
+    "objetivo": "Deixe a porcentagem pedida da figura no lado roxo.",
+    "passos": [
+      {
+        "titulo": "Leia a porcentagem",
+        "texto": "Leia a meta: 50% significa metade da área preenchida."
+      },
+      {
+        "titulo": "Ajuste o corte",
+        "texto": "Mova a linha ou curva. Buracos e espaços vazios não contam."
+      },
+      {
+        "titulo": "Confira sua estimativa",
+        "texto": "Confirme sua estimativa. A margem aceita é de 3 pontos percentuais."
+      }
+    ],
+    "exemplo": "A meta é 50%: mover o corte ao centro divide o retângulo ao meio.",
+    "atencao_titulo": "Pense em área, não em largura",
+    "atencao": "A margem é de 3 pontos percentuais: uma meta de 50% aceita de 47% a 53%. No Desafio básico, mova o corte na direção indicada; não troque o tipo de curva da fase."
+  },
+  {
+    "id": "elo",
+    "nome": "Elo",
+    "numero": 3,
+    "categoria": "Raciocínio lógico",
+    "objetivo": "Forme um único circuito fechado, com um ponto em cada região.",
+    "passos": [
+      {
+        "titulo": "Um ponto em cada região",
+        "texto": "Toque nas casas para colocar pontos. Preserve os pontos fixos."
+      },
+      {
+        "titulo": "Observe as ligações",
+        "texto": "Pontos alinhados se ligam automaticamente na horizontal ou vertical."
+      },
+      {
+        "titulo": "Feche uma única volta",
+        "texto": "Cada ponto precisa de duas ligações, sem cruzamentos. Siga também as pistas da fase."
+      }
+    ],
+    "exemplo": "O quarto ponto fecha o circuito: todos ficam ligados em uma só volta.",
+    "atencao_titulo": "O circuito também obedece às pistas",
+    "atencao": "Respeite pontos fixos, passagens, trechos vedados e outras condições da fase. Cada ponto se liga ao primeiro ponto alinhado; as fronteiras coloridas não bloqueiam essa ligação."
+  },
+  {
+    "id": "prumo",
+    "nome": "Prumo",
+    "numero": 4,
+    "categoria": "Raciocínio lógico",
+    "objetivo": "Divida a grade em peças equilibradas sobre seus apoios.",
+    "passos": [
+      {
+        "titulo": "Escolha um apoio",
+        "texto": "Escolha um apoio e pinte as casas da peça dele."
+      },
+      {
+        "titulo": "Desenhe as peças",
+        "texto": "Preencha a grade. Cada peça deve ser unida pelos lados e conter seu apoio."
+      },
+      {
+        "titulo": "Equilibre os dois eixos",
+        "texto": "Equilibre na horizontal e na vertical. Casas mais distantes puxam mais para aquele lado. Confira a resposta."
+      }
+    ],
+    "exemplo": "Uma casa à direita compensa a casa à esquerda, à mesma distância do apoio.",
+    "atencao_titulo": "Equilíbrio não exige simetria",
+    "atencao": "Todas as casas têm a mesma massa, mas a distância ao apoio importa. Se o apoio fica entre casas, todas as que o tocam pertencem à peça. Não deixe buracos na grade."
+  },
+  {
+    "id": "pacto",
+    "nome": "Pacto",
+    "numero": 5,
+    "categoria": "Raciocínio lógico",
+    "objetivo": "Complete a grade com duplas de símbolos.",
+    "passos": [
+      {
+        "titulo": "Escolha os símbolos",
+        "texto": "Escolha um símbolo e toque em uma casa livre, sem mudar as pistas fixas."
+      },
+      {
+        "titulo": "Conte linhas e colunas",
+        "texto": "Cada linha e coluna precisa de dois círculos, dois triângulos, dois quadrados e dois losangos."
+      },
+      {
+        "titulo": "Forme duplas pelos lados",
+        "texto": "Cada símbolo deve tocar exatamente um igual pelos lados. Diagonais não valem."
+      }
+    ],
+    "exemplo": "Dois círculos lado a lado formam uma dupla; um terceiro não pode encostar neles.",
+    "atencao_titulo": "Uma dupla, não um trio",
+    "atencao": "A grade é 8 × 8. Cada símbolo deve ter exatamente um vizinho igual pelos lados. Um terceiro símbolo igual encostado quebra a regra, mesmo com as contagens corretas."
+  },
+  {
+    "id": "sintonia",
+    "nome": "Sintonia",
+    "numero": 6,
+    "categoria": "Raciocínio lógico",
+    "objetivo": "Leve todos os animais aos seus destinos ao mesmo tempo.",
+    "passos": [
+      {
+        "titulo": "Um comando para todos",
+        "texto": "Use as setas ou WASD. O mesmo comando vale para todos os animais."
+      },
+      {
+        "titulo": "Use as paredes",
+        "texto": "Cada um anda uma casa; quem encontra uma parede fica parado."
+      },
+      {
+        "titulo": "Encontre os destinos juntos",
+        "texto": "Use essas diferenças para alinhar os caminhos. Todos devem terminar nos destinos juntos."
+      }
+    ],
+    "exemplo": "Com o comando →, um animal avança e o outro fica parado diante da parede.",
+    "atencao_titulo": "Chegar antes não prende o animal",
+    "atencao": "Um animal pode sair do destino e voltar. A solução só acontece quando todos ocupam seus destinos ao fim do mesmo comando. O exemplo mostra apenas o efeito de uma parede."
+  },
+  {
+    "id": "repasse",
+    "nome": "Repasse",
+    "numero": 7,
+    "categoria": "Raciocínio lógico",
+    "objetivo": "Retire todas as peças e acerte as metas das bordas.",
+    "passos": [
+      {
+        "titulo": "Escolha a próxima peça",
+        "texto": "Toque em uma peça para retirá-la e enviar seu valor nas direções das setas."
+      },
+      {
+        "titulo": "Acompanhe a soma",
+        "texto": "O valor inteiro soma na primeira peça encontrada. Se não houver peça, chega à borda."
+      },
+      {
+        "titulo": "Atinja cada meta",
+        "texto": "Planeje a ordem para atingir cada meta exatamente, inclusive as metas zero."
+      }
+    ],
+    "exemplo": "Retirar o 2 envia seu valor ao 3: a peça que fica passa a valer 5.",
+    "atencao_titulo": "O valor não é dividido",
+    "atencao": "Se uma peça aponta para várias direções, envia o valor inteiro em cada uma. Vazios não bloqueiam o repasse. As caixas das bordas mostram acumulado / meta; a ordem muda o resultado."
+  },
+  {
+    "id": "pulso",
+    "nome": "Pulso",
+    "numero": 8,
+    "categoria": "Raciocínio lógico",
+    "objetivo": "Coloque três batidas igualmente espaçadas em cada linha.",
+    "passos": [
+      {
+        "titulo": "Conte até três",
+        "texto": "Escolha Batida ou Vazia e marque as casas. Preserve as pistas fixas."
+      },
+      {
+        "titulo": "Compare os intervalos",
+        "texto": "Em cada linha, deixe a mesma distância entre as três batidas."
+      },
+      {
+        "titulo": "Feche a solução",
+        "texto": "Confira os totais das colunas e marque todos os vazios com ×."
+      }
+    ],
+    "exemplo": "Nas casas 1, 3 e 5, as distâncias são iguais: duas casas de uma batida à outra.",
+    "atencao_titulo": "Não basta completar 3/3",
+    "atencao": "Três batidas com intervalos diferentes não resolvem a linha. O pino indica uma pista fixa: ela não pode ser alterada."
+  },
+  {
+    "id": "foz",
+    "nome": "Foz",
+    "numero": 9,
+    "categoria": "Raciocínio lógico",
+    "objetivo": "Faça todas as setas levarem à foz, marcada com 0.",
+    "passos": [
+      {
+        "titulo": "Escolha um vizinho",
+        "texto": "Em cada ponto, escolha uma seta para um vizinho ligado por um canal."
+      },
+      {
+        "titulo": "Siga o percurso",
+        "texto": "Siga as setas: o caminho precisa chegar ao 0, sem ficar dando voltas."
+      },
+      {
+        "titulo": "Conte os trechos",
+        "texto": "Um número conta os trechos até a foz. Caminhos podem se juntar."
+      }
+    ],
+    "exemplo": "Da pista 2 até a foz são dois trechos: um para a direita e outro para baixo.",
+    "atencao_titulo": "Conte canais, não pontos",
+    "atencao": "Cada trecho entre vizinhos vale 1. Não é preciso usar todos os canais. Cada ponto, exceto a foz, tem uma seta; nenhum caminho pode ficar preso em um ciclo."
+  },
+  {
+    "id": "refugio",
+    "nome": "Refúgio",
+    "numero": 10,
+    "categoria": "Raciocínio lógico",
+    "objetivo": "Separe as áreas livres: cada uma precisa de um marco.",
+    "passos": [
+      {
+        "titulo": "Decida cada casa",
+        "texto": "Marque cada casa como Livre ou Barreira, sem alterar as pistas fixas."
+      },
+      {
+        "titulo": "Separe as regiões",
+        "texto": "Casas livres ligadas pelos lados formam uma região. Cada região deve ter um marco."
+      },
+      {
+        "titulo": "Confira as barreiras",
+        "texto": "Cada barreira deve tocar exatamente duas regiões livres diferentes pelos lados."
+      }
+    ],
+    "exemplo": "A barreira do meio separa os marcos. Ela toca uma região livre de cada lado.",
+    "atencao_titulo": "Os números não indicam tamanho",
+    "atencao": "Cada região livre tem exatamente um marco. Uma barreira toca duas regiões distintas: duas casas da mesma região contam uma só vez. Diagonais e o exterior não contam."
+  },
+  {
+    "id": "mirante",
+    "nome": "Mirante",
+    "numero": 11,
+    "categoria": "Raciocínio lógico",
+    "objetivo": "Coloque as formas para que todos os observadores vejam a peça certa.",
+    "passos": [
+      {
+        "titulo": "Use o estoque",
+        "texto": "Use o estoque de círculos e triângulos. Marque casas vazias com ×."
+      },
+      {
+        "titulo": "Leia cada observador",
+        "texto": "Siga cada seta da borda: a primeira peça encontrada deve ser a forma indicada."
+      },
+      {
+        "titulo": "Busque duas testemunhas",
+        "texto": "Cada peça precisa ser vista por pelo menos dois observadores. Vazios deixam a visão passar."
+      }
+    ],
+    "exemplo": "O círculo no meio é visto pelos observadores dos dois lados.",
+    "atencao_titulo": "A primeira peça interrompe a visão",
+    "atencao": "Uma linha toda vazia não satisfaz um observador. Uma borda sem placa não conta como testemunha. Use exatamente o estoque: cada peça deve ser vista por dois ou mais observadores."
+  },
+  {
+    "id": "renovo",
+    "nome": "Renovo",
+    "numero": 12,
+    "categoria": "Raciocínio lógico",
+    "objetivo": "Ligue cada semente a um botão e a uma folha.",
+    "passos": [
+      {
+        "titulo": "Comece por uma ponta",
+        "texto": "Arraste pelas peças para criar o caminho, ou clique nas duas pontas de uma ligação."
+      },
+      {
+        "titulo": "Faça uma curva de 90°",
+        "texto": "No botão, faça uma curva de 90°: uma ligação horizontal e outra vertical."
+      },
+      {
+        "titulo": "Use todas as peças",
+        "texto": "Use cada peça uma vez. As linhas não podem cruzar, se sobrepor nem atravessar outras peças."
+      }
+    ],
+    "exemplo": "A semente chega pela esquerda do botão; a folha se liga por baixo.",
+    "atencao_titulo": "Sem cruzamentos",
+    "atencao": "As linhas não cruzam nem se sobrepõem. Só os dois trechos do mesmo trio se encontram no botão. Você também pode ligar duas peças alinhadas com dois cliques."
+  },
+  {
+    "id": "desvio",
+    "nome": "Desvio",
+    "numero": 13,
+    "categoria": "Versus",
+    "objetivo": "Deixe o rival sem uma casa disponível para jogar.",
+    "passos": [
+      {
+        "titulo": "Escolha uma casa disponível",
+        "texto": "Na primeira jogada, escolha uma casa livre. Nas seguintes, respeite a linha ou coluna indicada e confirme a escolha."
+      },
+      {
+        "titulo": "Mande o rival para outro destino",
+        "texto": "Uma seta horizontal manda o adversário para a mesma linha. Uma seta vertical manda para a mesma coluna."
+      },
+      {
+        "titulo": "Feche as opções",
+        "texto": "A casa escolhida sai do jogo. Quem começar a vez sem uma casa disponível no destino indicado perde."
+      }
+    ],
+    "exemplo": "Escolher ↔ no centro deixa ao rival apenas as outras casas da mesma linha.",
+    "atencao_titulo": "Casa usada não é parede",
+    "atencao": "Você pode escolher qualquer casa ainda disponível na linha ou coluna indicada, mesmo com casas usadas no caminho. Não há passe."
+  },
+  {
+    "id": "broto",
+    "nome": "Broto",
+    "numero": 14,
+    "categoria": "Versus",
+    "objetivo": "Faça seus brotos florescerem e some mais flores.",
+    "passos": [
+      {
+        "titulo": "Plante em uma casa vazia",
+        "texto": "A nova semente envia estímulos para cima, baixo, esquerda e direita. Em cada direção, só o primeiro broto recebe o estímulo."
+      },
+      {
+        "titulo": "Complete os dois eixos",
+        "texto": "Um broto floresce ao receber estímulos horizontal e vertical. Seu dono ganha um ponto, mesmo se o estímulo veio do rival; a flor sai da grade."
+      },
+      {
+        "titulo": "Compare a colheita",
+        "texto": "Cada jogador planta oito sementes por rodada. Depois de duas rodadas, vence quem somar mais flores; placar igual é empate."
+      }
+    ],
+    "exemplo": "O broto já tem estímulo horizontal. Plantar abaixo dá o vertical e faz nascer uma flor.",
+    "atencao_titulo": "Não é uma reação em cadeia",
+    "atencao": "Repetir o mesmo eixo não faz florescer. Pedras e recortes interrompem o estímulo. As flores que saem não prolongam o estímulo daquela jogada."
+  },
+  {
+    "id": "cerco",
+    "nome": "Cerco",
+    "numero": 15,
+    "categoria": "Versus",
+    "objetivo": "Mova uma peça. Feche uma casa. Preserve uma saída.",
+    "passos": [
+      {
+        "titulo": "Escolha uma peça sua",
+        "texto": "Cada jogador tem três peças. Mova uma delas exatamente uma casa para cima, baixo, esquerda ou direita."
+      },
+      {
+        "titulo": "Confira e confirme",
+        "texto": "O destino precisa estar livre. Após a confirmação, a origem fica bloqueada para os dois jogadores até o fim da partida."
+      },
+      {
+        "titulo": "Deixe o rival sem movimentos",
+        "texto": "Na vez do adversário, se nenhuma das três peças dele puder se mover, você venceu. Uma peça presa sozinha não encerra a partida."
+      }
+    ],
+    "exemplo": "Verde anda uma casa para baixo. A origem fecha; nenhuma peça é capturada.",
+    "atencao_titulo": "Sem diagonal, salto ou captura",
+    "atencao": "Não é permitido passar a vez. Os números 1 e 2 identificam as equipes neste diagrama; no site, elas aparecem com os mascotes. O movimento é o mesmo."
+  },
+  {
+    "id": "mosaico",
+    "nome": "Mosaico",
+    "numero": 16,
+    "categoria": "Versus",
+    "objetivo": "Oriente os azulejos. Conquiste as junções.",
+    "passos": [
+      {
+        "titulo": "Escolha a orientação",
+        "texto": "Cada azulejo tem dois cantos verdes vizinhos e dois âmbar. Gire a peça e coloque-a em qualquer casa vazia."
+      },
+      {
+        "titulo": "Leia os quatro cantos",
+        "texto": "Uma junção só fica completa quando as quatro peças ao redor estão colocadas. Conte apenas os cantos voltados para esse encontro."
+      },
+      {
+        "titulo": "Conquiste os selos",
+        "texto": "Três ou quatro cantos da mesma cor dão um selo a ela. Com dois de cada cor, ninguém pontua. Ao preencher tudo, vence quem tem mais selos."
+      }
+    ],
+    "exemplo": "A última peça completa a junção: três cantos verdes e um âmbar dão um selo ao Verde.",
+    "atencao_titulo": "A peça é comum; o selo tem dono",
+    "atencao": "Você pode pontuar para o rival. Uma colocação pode concluir várias junções. Não mova ou gire um azulejo já colocado; quatro cantos iguais não dão bônus."
+  },
+  {
+    "id": "quinhao",
+    "nome": "Quinhão",
+    "numero": 17,
+    "categoria": "Versus",
+    "objetivo": "Ofereça três cestos. O rival escolhe primeiro.",
+    "passos": [
+      {
+        "titulo": "Ofereça três vizinhos",
+        "texto": "Escolha três cestos consecutivos entre os que ainda estão no anel. O último e o primeiro também são vizinhos; lacunas não interrompem o anel."
+      },
+      {
+        "titulo": "Divida a oferta",
+        "texto": "O adversário escolhe um cesto e fica com seu fruto. Você recebe os outros dois. Retirem os três cestos e troquem quem propõe."
+      },
+      {
+        "titulo": "Monte combinações",
+        "texto": "No fim, cada trio com os três frutos vale 5 pontos. Nas sobras, cada par de tipos diferentes vale 2. Frutos isolados não pontuam; maior soma vence."
+      }
+    ],
+    "exemplo": "Verde oferece duas castanhas e uma pitanga. Âmbar escolhe a pitanga; Verde fica com as castanhas.",
+    "atencao_titulo": "Variedade vale mais",
+    "atencao": "Forme primeiro os trios e depois os pares. Nenhum fruto conta duas vezes. Castanha-do-pará, pitanga e jabuticaba são os três tipos; empate permanece empate."
+  },
+  {
+    "id": "estalo",
+    "nome": "Estalo",
+    "numero": 18,
+    "categoria": "Versus",
+    "objetivo": "Abra suas vagens. Antecipe toda a cadeia.",
+    "passos": [
+      {
+        "titulo": "Escolha uma vagem sua",
+        "texto": "Selecione uma vagem fechada da sua equipe. Mantenha a seta ou gire-a exatamente 90° para um dos lados."
+      },
+      {
+        "titulo": "Siga a sequência",
+        "texto": "Ao abrir, a vagem envia o pulso à casa vizinha indicada. Cada vagem fechada atingida abre e redireciona o pulso pela própria seta."
+      },
+      {
+        "titulo": "Complete sua equipe",
+        "texto": "Cada vagem aberta dá um ponto ao próprio dono. Depois de resolver toda a cadeia, vence quem abriu todas as suas; completar as duas equipes juntas empata."
+      }
+    ],
+    "exemplo": "No mapa Clássico, o pulso segue seis vagens e para ao reencontrar uma casa aberta: quatro pontos verdes e dois âmbar.",
+    "atencao_titulo": "A cadeia também ajuda o rival",
+    "atencao": "Ela para na borda, num recorte vazio ou numa casa já aberta. Não salta vazios. Só a seta de origem pode girar, nunca 180°."
+  },
+  {
+    "id": "acorde",
+    "nome": "Acorde",
+    "numero": 19,
+    "categoria": "Versus",
+    "objetivo": "Reúna pares de três símbolos diferentes.",
+    "passos": [
+      {
+        "titulo": "Siga o seu eixo",
+        "texto": "Verde recolhe na linha indicada; âmbar recolhe na coluna indicada. No clássico, verde começa escolhendo um sino da linha 2."
+      },
+      {
+        "titulo": "Escolha o próximo caminho",
+        "texto": "Recolha um sino. A casa escolhida pelo verde define a coluna do âmbar; a escolhida pelo âmbar define a linha do verde."
+      },
+      {
+        "titulo": "Complete três tipos de par",
+        "texto": "Dois sinos do mesmo símbolo formam um par. Seja o primeiro a formar pares de três símbolos diferentes; cópias extras do mesmo símbolo não criam outro tipo de par."
+      }
+    ],
+    "exemplo": "Verde recolhe o sino de B2. Agora Âmbar escolhe um sino da coluna B.",
+    "atencao_titulo": "E se não houver sino no seu eixo?",
+    "atencao": "O passe é obrigatório. Dois passes seguidos ou o fim dos sinos encerram a partida: vence quem tem mais tipos de par, com empate se as quantidades forem iguais."
+  }
+]

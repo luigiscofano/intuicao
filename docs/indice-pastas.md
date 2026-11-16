@@ -131,3 +131,9 @@ Pastas mantidas e históricas estão identificadas nos próprios READMEs. Depend
 - [tests/viewport](../tests/viewport/README.md)
 - [tools](../tools/README.md)
 - [tools/logica](../tools/logica/README.md)
+
+- [docs/manuais-visuais-impressao/diagramas](../docs/manuais-visuais-impressao/diagramas/README.md)
+- [docs/manuais-visuais-impressao/fontes](../docs/manuais-visuais-impressao/fontes/README.md)
+- [docs/manuais-visuais-impressao/pdf](../docs/manuais-visuais-impressao/pdf/README.md)
+- [docs/manuais-visuais-impressao/png](../docs/manuais-visuais-impressao/png/README.md)
+- [docs/manuais-visuais-impressao](../docs/manuais-visuais-impressao/README.md)

@@ -10,6 +10,16 @@ Projeto de **Luigi Scofano de Araujo**. O Intuição transforma relações abstr
 
 > **Catálogo conferido em 16/11/2026: 19 jogos ativos, sendo 12 campanhas e 7 Versus.** Documentos datados, PDFs e módulos retirados são preservados como histórico, não como anúncio de funcionalidades atuais. A referência é [game-catalog.mjs](../dist/game-catalog.mjs).
 
+## Manuais visuais para impressão
+
+Uma folha A4 para cada um dos **19 jogos**, com objetivo, exemplo ilustrado e controles essenciais. Os diagramas são didáticos, não capturas da interface; Pulso usa o modo **Normal**. A coleção não altera os jogos.
+
+- [Baixar o PDF completo de 19 páginas](../docs/manuais-visuais-impressao/pdf/Intuicao_Manuais_Visuais_19_Jogos.pdf).
+- [Abrir o índice, PDFs individuais e instruções de impressão](../docs/manuais-visuais-impressao/README.md).
+
+<a href="../docs/manuais-visuais-impressao/pdf/08-pulso.pdf"><img src="../docs/manuais-visuais-impressao/png/08-pulso.png" width="360" alt="Amostra do manual A4 do Pulso Normal: objetivo, batidas e intervalos." /></a>
+
+
 ## Navegação
 
 - [Proposta e objetivos](#proposta-e-objetivos)
