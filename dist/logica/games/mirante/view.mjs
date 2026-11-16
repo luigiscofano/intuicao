@@ -1,3 +1,4 @@
+import { renderTileSignature } from '../../board-signature.mjs';
 import { MIRANTE_COLORS as C, miranteShape, mirantePiece, miranteObserver } from './art.mjs';
 const esc = value => String(value).replaceAll('&', '&amp;').replaceAll('<', '&lt;').replaceAll('"', '&quot;');
 const text = (x, y, value, size = 17, weight = 500, color = C.ink) => `<text x="${x}" y="${y}" text-anchor="middle" font-family="system-ui,sans-serif" font-size="${size}" font-weight="${weight}" fill="${color}">${esc(value)}</text>`;
@@ -46,5 +47,6 @@ export function renderBoard(level, state, { selectedTool = 'cycle' } = {}) {
   content.push(miranteShape(1, center - 26, stockY, 12, 'none', C.blue, 2.3), text(center + 13, stockY + 6, `× ${level.inventory.circle}`, 17, 650));
   content.push(miranteShape(2, center + 76, stockY, 12, 'none', C.green, 2.3), text(center + 115, stockY + 6, `× ${level.inventory.triangle}`, 17, 650));
   content.push(text(center, stockY + 41, '× vazia · ponto = indecisa', 14, 400), text(center, stockY + 59, 'Pino = observador fixo', 13, 400, '#667366'));
+  content.push(renderTileSignature(ox + boardWidth + 18, oy - 30), renderTileSignature(ox - 40, oy + boardHeight + 12));
   return `<div class="mirante-board-wrap"><p class="mirante-control-help">Botão direito: × vazio · esquerdo: ferramenta selecionada.</p><svg class="mirante-board" style="--mirante-min-width:${minimumWidth}px" xmlns="http://www.w3.org/2000/svg" width="100%" viewBox="0 0 ${width} ${height}" role="group" aria-label="MIRANTE, ${level.rows} linhas por ${level.cols} colunas. Cada peça precisa de duas testemunhas.">${content.join('')}</svg></div>`;
 }

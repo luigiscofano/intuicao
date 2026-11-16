@@ -1,3 +1,4 @@
+import { renderTileSignature } from '../../board-signature.mjs';
 import { initialState, isStateValid } from './engine.mjs';
 const C = { ink: '#30412F', green: '#39674A', cream: '#FFFAF0', white: '#FFFFFF', cell: '#F8FAF3', edge: '#D5DECB', frame: '#B6C3A8', sage: '#E1EDCE', sageEdge: '#73965E', amber: '#F5E7B2', amberEdge: '#B99B46' };
 const safe = (value) => String(value).replace(/[&<>"']/g, (ch) => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&#39;' }[ch]));
@@ -38,5 +39,6 @@ export function renderBoard(level, current, { selectedTool = 'cycle' } = {}) {
     parts.push(rect(x - size / 2 + 2, y - size / 2 + 2, size - 4, size - 4, 'none', 'none', 9, 'class="foz-focus" pointer-events="all"'), '</g>');
   });
   parts.push(text(width / 2, height - 14, 'Pino = pista fixa · 0 = foz', 18));
+  parts.push(renderTileSignature(x0 + bw + 17, y0 - 4), renderTileSignature(7, y0 + bh - 12));
   return `<div class="foz-board${level.width > 3 ? ' foz-board--wide' : ''}"><svg xmlns="http://www.w3.org/2000/svg" class="foz-svg" width="100%" viewBox="0 0 ${width} ${height}" role="group" aria-label="Tabuleiro FOZ de ${level.width} colunas e ${level.height} linhas">${parts.join('')}</svg></div>`;
 }

@@ -1,3 +1,4 @@
+import { boardCornerMarkup } from '../logica/board-signature.mjs';
 import { levelCompletionState } from "../level-completion-state.mjs";
 import { campaignLevelName } from "../campaign-level-names.mjs";
 import {recordMissionUnlocks} from '../achievements/mission-store.mjs';
@@ -1300,7 +1301,7 @@ export function initRepasse({ hideOthers = () => {} } = {}) {
       (mode === 'campaign'
         ? '<button type="button" id="r-level-prev" class="level-arrow" aria-controls="r-board" aria-label="Nível anterior" title="Nível anterior">←</button>'
         : '') +
-      '<div id="r-board-surface" class="r-board-surface"><div id="r-board-scroll" class="r-board-scroll" tabindex="0" role="region" aria-label="Tabuleiro e caixas das bordas, ajustados à tela" aria-describedby="r-scroll-help"><div id="r-board" class="r-board" tabindex="-1" role="group" aria-label="Tabuleiro de REPASSE" aria-describedby="r-keyboard-help r-preview"></div></div><p id="r-scroll-help" class="r-scroll-help">O tabuleiro e as caixas se ajustam à tela. Nas peças, use as setas para mover o foco.</p><div id="r-motion" class="result-motion" aria-hidden="true"></div></div>' +
+      '<div id="r-board-surface" class="r-board-surface">' + boardCornerMarkup() + '<div id="r-board-scroll" class="r-board-scroll" tabindex="0" role="region" aria-label="Tabuleiro e caixas das bordas, ajustados à tela" aria-describedby="r-scroll-help"><div id="r-board" class="r-board" tabindex="-1" role="group" aria-label="Tabuleiro de REPASSE" aria-describedby="r-keyboard-help r-preview"></div></div><p id="r-scroll-help" class="r-scroll-help">O tabuleiro e as caixas se ajustam à tela. Nas peças, use as setas para mover o foco.</p><div id="r-motion" class="result-motion" aria-hidden="true"></div></div>' +
       (mode === 'campaign'
         ? '<button type="button" id="r-level-next" class="level-arrow" aria-controls="r-board" aria-label="Próximo nível" title="Próximo nível">→</button>'
         : '') +
