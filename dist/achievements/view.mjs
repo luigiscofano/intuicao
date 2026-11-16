@@ -292,9 +292,7 @@ function renderMarkup(container, view, animateProgress = false) {
 
   container.innerHTML = `
     <div class="achievement-heading">
-      <p class="eyebrow">CADA DESCOBERTA TEM SUA MARCA</p>
       <h2 id="achievements-title" tabindex="-1">Suas conquistas</h2>
-      <p>Novos jeitos de jogar. Símbolos para guardar cada descoberta.</p>
     </div>
     ${renderSummary(data)}
     ${warnings}

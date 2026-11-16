@@ -250,3 +250,14 @@ test("valores desconhecidos e conteúdo textual não viram controles ou HTML", (
   container.changeKind("unknown-kind");
   assert.equal(container.innerHTML, previousMarkup);
 });
+
+
+test("cabeçalho de conquistas mantém título sem frases decorativas", () => {
+  const container = host();
+  const data = sampleData();
+  const original = structuredClone(data);
+  renderAchievementView(container, data);
+  assert.match(container.innerHTML, /id="achievements-title"[^>]*>Suas conquistas<\/h2>/);
+  assert.doesNotMatch(container.innerHTML, /CADA DESCOBERTA TEM SUA MARCA|Novos jeitos de jogar/);
+  assert.deepEqual(data, original);
+});
