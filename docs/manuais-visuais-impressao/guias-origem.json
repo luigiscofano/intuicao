@@ -1,0 +1,429 @@
+{
+  "light": {
+    "quick": {
+      "goal": "Leve cada raio ao alvo da mesma cor e símbolo.",
+      "steps": [
+        "Gire os espelhos. Eles mudam a direção da luz, mas não saem do lugar.",
+        "Dispare pelas fontes ou use Confirmar todos para ver o caminho.",
+        "Acerte todos os alvos sem cruzar nem encostar raios de cores diferentes."
+      ],
+      "example": "O espelho faz a luz virar e alcançar o alvo.",
+      "cue": [
+        "Veja a fonte e o alvo",
+        "Gire e dispare",
+        "O raio chega ao alvo"
+      ]
+    },
+    "full": [
+      "Gire os espelhos para mudar a direção da luz. Suas posições são fixas; paredes interrompem o raio.",
+      "Leve cada raio ao alvo da mesma cor e símbolo. Clique nas fontes para disparar ou use Confirmar todos.",
+      "Todos os raios devem acertar seus alvos. Cores diferentes não podem se cruzar nem se tocar, mesmo em disparos separados."
+    ],
+    "description": "O espelho faz a luz virar e alcançar o alvo."
+  },
+  "cut": {
+    "quick": {
+      "goal": "Deixe a porcentagem pedida da figura no lado roxo.",
+      "steps": [
+        "Leia a meta: 50% significa metade da área preenchida.",
+        "Mova a linha ou curva. Buracos e espaços vazios não contam.",
+        "Confirme sua estimativa. A margem aceita é de 3 pontos percentuais."
+      ],
+      "example": "A meta é 50%: mover o corte ao centro divide o retângulo ao meio.",
+      "cue": [
+        "A área roxa é 25%",
+        "Mova o corte",
+        "Agora são 50%"
+      ]
+    },
+    "full": [
+      "A meta indica quanto da área preenchida deve ficar no lado roxo: 50% significa metade.",
+      "Ajuste a linha ou curva. No Desafio básico, mova na direção da seta; buracos e recortes vazios não entram na conta.",
+      "Confirme quando chegar à meta. A margem é de 3 pontos percentuais para mais ou para menos: 50% aceita de 47% a 53%."
+    ],
+    "description": "A meta é 50%: mover o corte ao centro divide o retângulo ao meio."
+  },
+  "elo": {
+    "quick": {
+      "goal": "Forme um único circuito fechado, com um ponto em cada região.",
+      "steps": [
+        "Toque nas casas para colocar pontos. Preserve os pontos fixos.",
+        "Pontos alinhados se ligam automaticamente na horizontal ou vertical.",
+        "Cada ponto precisa de duas ligações, sem cruzamentos. Siga também as pistas da fase."
+      ],
+      "example": "O quarto ponto fecha o circuito: todos ficam ligados em uma só volta.",
+      "cue": [
+        "Falta um ponto",
+        "Complete a região",
+        "O circuito fecha"
+      ]
+    },
+    "full": [
+      "Coloque exatamente um ponto em cada região colorida, sem mover os pontos fixos.",
+      "Cada ponto se liga automaticamente ao primeiro ponto que encontra na horizontal ou vertical. As fronteiras das regiões não bloqueiam a ligação.",
+      "Forme um circuito único: duas ligações por ponto, sem cruzamentos fora dos pontos. Respeite também as pistas da fase."
+    ],
+    "description": "O quarto ponto fecha o circuito: todos ficam ligados em uma só volta."
+  },
+  "prumo": {
+    "quick": {
+      "goal": "Divida a grade em peças equilibradas sobre seus apoios.",
+      "steps": [
+        "Escolha um apoio e pinte as casas da peça dele.",
+        "Preencha a grade. Cada peça deve ser unida pelos lados e conter seu apoio.",
+        "Equilibre na horizontal e na vertical. Casas mais distantes puxam mais para aquele lado. Confira a resposta."
+      ],
+      "example": "Uma casa à direita compensa a casa à esquerda, à mesma distância do apoio.",
+      "cue": [
+        "A peça pesa à esquerda",
+        "Acrescente uma casa",
+        "Os lados se equilibram"
+      ]
+    },
+    "full": [
+      "Escolha um apoio e pinte sua peça. Preencha toda a grade, sem sobreposição; as casas de cada peça se conectam pelos lados.",
+      "Cada peça deve conter seu apoio. Se ele fica entre duas casas, ambas pertencem à peça. Todas as casas têm a mesma massa.",
+      "Equilibre o centro de massa sobre o apoio nos dois eixos. Conte as casas de cada lado e suas distâncias ao apoio; depois, confirme."
+    ],
+    "description": "Uma casa à direita compensa a casa à esquerda, à mesma distância do apoio."
+  },
+  "pacto": {
+    "quick": {
+      "goal": "Complete a grade com duplas de símbolos.",
+      "steps": [
+        "Escolha um símbolo e toque em uma casa livre, sem mudar as pistas fixas.",
+        "Cada linha e coluna precisa de dois círculos, dois triângulos, dois quadrados e dois losangos.",
+        "Cada símbolo deve tocar exatamente um igual pelos lados. Diagonais não valem."
+      ],
+      "example": "Dois círculos lado a lado formam uma dupla; um terceiro não pode encostar neles.",
+      "cue": [
+        "Há um círculo",
+        "Coloque outro ao lado",
+        "Cada um tem um par"
+      ]
+    },
+    "full": [
+      "Complete a grade 8 × 8 com círculo, triângulo, quadrado e losango. Toda linha e coluna deve ter exatamente dois de cada símbolo.",
+      "Cada casa precisa tocar exatamente uma casa igual pelos lados. Isso forma duplas: diagonais não contam e trios não são permitidos.",
+      "Preserve as pistas fixas. Cruze as contagens com as duplas possíveis; o lápis serve só para anotar. A grade correta e completa vence automaticamente."
+    ],
+    "description": "Dois círculos lado a lado formam uma dupla; um terceiro não pode encostar neles."
+  },
+  "sintonia": {
+    "quick": {
+      "goal": "Leve todos os animais aos seus destinos ao mesmo tempo.",
+      "steps": [
+        "Use as setas ou WASD. O mesmo comando vale para todos os animais.",
+        "Cada um anda uma casa; quem encontra uma parede fica parado.",
+        "Use essas diferenças para alinhar os caminhos. Todos devem terminar nos destinos juntos."
+      ],
+      "example": "Com o comando →, um animal avança e o outro fica parado diante da parede.",
+      "cue": [
+        "Dois animais, um comando",
+        "Pressione →",
+        "Só o caminho livre avança"
+      ]
+    },
+    "full": [
+      "Use as setas ou WASD: todos os animais recebem o mesmo comando e tentam andar uma casa, cada um no seu tabuleiro.",
+      "Quem encontra uma parede fica parado; os outros podem avançar. Use os bloqueios para combinar os caminhos.",
+      "Todos precisam ocupar seus destinos ao final do mesmo comando. Chegar antes não prende ninguém: o animal pode sair e voltar."
+    ],
+    "description": "Com o comando →, um animal avança e o outro fica parado diante da parede."
+  },
+  "repasse": {
+    "quick": {
+      "goal": "Retire todas as peças e acerte as metas das bordas.",
+      "steps": [
+        "Toque em uma peça para retirá-la e enviar seu valor nas direções das setas.",
+        "O valor inteiro soma na primeira peça encontrada. Se não houver peça, chega à borda.",
+        "Planeje a ordem para atingir cada meta exatamente, inclusive as metas zero."
+      ],
+      "example": "Retirar o 2 envia seu valor ao 3: a peça que fica passa a valer 5.",
+      "cue": [
+        "O receptor vale 3",
+        "Retire a peça 2",
+        "O receptor vira 5"
+      ]
+    },
+    "full": [
+      "Toque em uma peça para retirá-la. Seu valor atual inteiro vai em cada direção das setas, sem dividir.",
+      "O repasse atravessa vazios e soma na primeira peça presente, que espera sua vez com o novo valor. Sem receptor, chega à borda.",
+      "Esvazie a grade com todas as metas exatas, inclusive as de valor zero. As caixas mostram acumulado / meta; desfaça se ultrapassar."
+    ],
+    "description": "Retirar o 2 envia seu valor ao 3: a peça que fica passa a valer 5."
+  },
+  "pulso": {
+    "quick": {
+      "goal": "Coloque três batidas igualmente espaçadas em cada linha.",
+      "steps": [
+        "Escolha Batida ou Vazia e marque as casas. Preserve as pistas fixas.",
+        "Em cada linha, deixe a mesma distância entre as três batidas.",
+        "Confira os totais das colunas e marque todos os vazios com ×."
+      ],
+      "example": "Nas casas 1, 3 e 5, as distâncias são iguais: duas casas de uma batida à outra.",
+      "cue": [
+        "Duas batidas marcadas",
+        "Marque a casa 5",
+        "Três batidas: 2 + 2"
+      ]
+    },
+    "full": [
+      "Coloque exatamente três batidas em cada linha. Os intervalos entre a primeira e a segunda e entre a segunda e a terceira precisam ser iguais; distância 1 também vale.",
+      "O número acima de cada coluna indica sua quantidade exata de batidas. Os intervalos podem ser diferentes de uma linha para outra.",
+      "Preserve as pistas com pino. Escolha Batida ou Vazia e toque nas casas, ou use Alternar. Marque todos os vazios com ×: uma casa indecisa não é um vazio confirmado.",
+      "A solução completa e correta conclui a fase automaticamente. Use Checar para conferir sua tentativa."
+    ],
+    "description": "Miniatura de uma linha: marcar a quinta casa completa três batidas com distâncias 2 e 2. Os vazios estão confirmados e todas as cotas conferem."
+  },
+  "foz": {
+    "quick": {
+      "goal": "Faça todas as setas levarem à foz, marcada com 0.",
+      "steps": [
+        "Em cada ponto, escolha uma seta para um vizinho ligado por um canal.",
+        "Siga as setas: o caminho precisa chegar ao 0, sem ficar dando voltas.",
+        "Um número conta os trechos até a foz. Caminhos podem se juntar."
+      ],
+      "example": "Da pista 2 até a foz são dois trechos: um para a direita e outro para baixo.",
+      "cue": [
+        "A pista pede 2 trechos",
+        "Complete a seta",
+        "O caminho chega ao 0"
+      ]
+    },
+    "full": [
+      "Em cada ponto, exceto na foz 0, coloque uma única seta para um vizinho ligado por um canal desenhado. Clique para alternar a seta ou escolha uma direção; a foz fica fixa.",
+      "Seguindo as setas, todos os pontos precisam chegar à foz, sem ciclos. Caminhos podem se juntar; não é necessário usar todos os canais.",
+      "Cada número indica a distância exata daquele ponto até a foz. Conte os trechos percorridos, não os pontos; um trecho entre vizinhos vale 1.",
+      "A solução completa e correta conclui a fase automaticamente. Use Checar para conferir sua tentativa."
+    ],
+    "description": "A nova seta para baixo completa a rota de dois trechos da pista 2 até a foz 0. O ponto inferior esquerdo também chega à mesma foz."
+  },
+  "refugio": {
+    "quick": {
+      "goal": "Separe as áreas livres: cada uma precisa de um marco.",
+      "steps": [
+        "Marque cada casa como Livre ou Barreira, sem alterar as pistas fixas.",
+        "Casas livres ligadas pelos lados formam uma região. Cada região deve ter um marco.",
+        "Cada barreira deve tocar exatamente duas regiões livres diferentes pelos lados."
+      ],
+      "example": "A barreira do meio separa os marcos. Ela toca uma região livre de cada lado.",
+      "cue": [
+        "Dois marcos, falta uma casa",
+        "Crie a barreira",
+        "Um marco por região"
+      ]
+    },
+    "full": [
+      "Escolha Livre ou Barreira e toque nas casas, ou use Alternar. Decida todas as casas sem alterar as pistas com pino; os marcos são sempre livres.",
+      "Cada região de casas livres conectadas pelos lados deve conter exatamente um marco. Os números identificam os marcos, não o tamanho das regiões; diagonais não conectam.",
+      "Cada casa de barreira deve tocar pelos lados exatamente duas regiões livres diferentes. Várias casas da mesma região contam uma vez; o exterior não conta. As barreiras não precisam estar conectadas.",
+      "A solução completa e correta conclui a fase automaticamente. Use Checar para conferir sua tentativa."
+    ],
+    "description": "A casa central vira barreira. Ela toca exatamente duas regiões livres distintas, cada uma com seu marco. O exterior não é contado."
+  },
+  "mirante": {
+    "quick": {
+      "goal": "Coloque as formas para que todos os observadores vejam a peça certa.",
+      "steps": [
+        "Use o estoque de círculos e triângulos. Marque casas vazias com ×.",
+        "Siga cada seta da borda: a primeira peça encontrada deve ser a forma indicada.",
+        "Cada peça precisa ser vista por pelo menos dois observadores. Vazios deixam a visão passar."
+      ],
+      "example": "O círculo no meio é visto pelos observadores dos dois lados.",
+      "cue": [
+        "Observe as duas placas",
+        "Coloque o círculo",
+        "Duas placas veem a peça"
+      ]
+    },
+    "full": [
+      "Escolha círculo, triângulo ou vazio e toque nas casas. Use exatamente o estoque indicado, com no máximo uma peça por casa, e confirme todos os vazios com ×.",
+      "Cada placa âmbar é um observador fixo: a primeira peça na direção da seta deve ter a forma indicada. Vazios deixam a visão passar; a primeira peça a bloqueia. Não há visão diagonal, e uma direção toda vazia não satisfaz a placa.",
+      "Cada peça precisa ser vista por pelo menos dois observadores. Observadores em lados opostos contam separadamente; uma borda sem placa não dá informação e não conta como testemunha.",
+      "A solução completa e correta conclui a fase automaticamente. Use Checar para conferir sua tentativa."
+    ],
+    "description": "Estoque de um círculo e nenhum triângulo. A peça central é a primeira vista por dois observadores opostos; os dois vazios deixam a visão passar."
+  },
+  "renovo": {
+    "quick": {
+      "goal": "Ligue cada semente a um botão e a uma folha.",
+      "steps": [
+        "Arraste pelas peças para criar o caminho, ou clique nas duas pontas de uma ligação.",
+        "No botão, faça uma curva de 90°: uma ligação horizontal e outra vertical.",
+        "Use cada peça uma vez. As linhas não podem cruzar, se sobrepor nem atravessar outras peças."
+      ],
+      "example": "A semente chega pela esquerda do botão; a folha se liga por baixo.",
+      "cue": [
+        "Semente ligada ao botão",
+        "Ligue o botão à folha",
+        "Um trio com uma curva"
+      ]
+    },
+    "full": [
+      "Arraste da semente ou folha até o botão; você pode virar e continuar até o outro extremo. Solte para confirmar. Ou clique em duas peças alinhadas. Cada botão deve se ligar a uma semente e a uma folha. Use todas as peças em um único trio cada.",
+      "Os dois trechos de cada botão devem formar um ângulo reto: um horizontal e outro vertical. Cada trecho termina na primeira peça encontrada; pode atravessar casas vazias, mas nunca outra peça.",
+      "As ligações não podem cruzar nem se sobrepor. Só os dois trechos do mesmo trio podem se encontrar, em seu botão. Não é preciso cobrir as casas vazias.",
+      "Repita os dois cliques de uma ligação para removê-la; repetir o traçado mantém os trechos existentes. Escape cancela o gesto. Toque de novo na peça selecionada para cancelar a seleção, ou use Limpar peça para retirar seus trechos. Enter ou Espaço também selecionam peças. A solução completa e correta conclui a fase automaticamente. Use Checar para conferir sua tentativa."
+    ],
+    "description": "A ligação vertical do botão à folha completa o trio. Ela encontra a ligação horizontal da semente somente no botão e forma um ângulo reto."
+  },
+  "desvio": {
+    "quick": {
+      "goal": "Deixe o adversário sem uma casa disponível para jogar.",
+      "steps": [
+        "Escolha uma casa disponível e confirme. Ela não poderá ser usada de novo.",
+        "↔ manda o rival para a mesma linha; ↕ manda para a mesma coluna.",
+        "Na sua vez, escolha dentro do destino indicado. Casas usadas não bloqueiam a passagem."
+      ],
+      "example": "Escolher ↔ no centro deixa ao rival apenas as outras casas da mesma linha.",
+      "cue": [
+        "Escolha uma seta ↔",
+        "A casa é consumida",
+        "O rival joga nessa linha"
+      ]
+    },
+    "full": [
+      "Na partida comum, a primeira escolha é livre. Escolha uma casa disponível e confirme; os jogadores se alternam.",
+      "↔ manda o rival para a mesma linha; ↕, para a mesma coluna. A casa escolhida é consumida e não pode ser usada de novo.",
+      "Escolha qualquer casa disponível no destino indicado, mesmo distante: casas consumidas não bloqueiam o caminho. Quem ficar sem jogada legal perde."
+    ],
+    "description": "Escolher ↔ no centro deixa ao rival apenas as outras casas da mesma linha."
+  },
+  "broto": {
+    "quick": {
+      "goal": "Faça seus brotos florescerem para ganhar pontos.",
+      "steps": [
+        "Plante em uma casa vazia. A semente estimula o primeiro broto em cada direção.",
+        "Um broto floresce quando recebe estímulos horizontal e vertical. O dono ganha um ponto e a flor sai.",
+        "Cada pessoa planta oito sementes por rodada. Após duas rodadas, vence quem somar mais flores."
+      ],
+      "example": "O broto já tem estímulo horizontal. Plantar abaixo dá o vertical e faz nascer uma flor.",
+      "cue": [
+        "O broto já tem ↔",
+        "Plante abaixo: ↕",
+        "Floresce: +1 ao dono"
+      ]
+    },
+    "full": [
+      "Escolha uma casa vazia, observe a prévia e confirme. A semente nova estimula o primeiro broto em cada direção, mesmo distante e de qualquer jogador.",
+      "Horizontal ↔ e vertical ↕ juntos fazem o broto florescer: um ponto para seu dono, e a peça sai. Repetir um eixo não basta; a colheita não continua o estímulo nem devolve sementes.",
+      "Cada pessoa planta oito sementes por rodada. Joguem duas rodadas, alternando quem começa. Vence quem somar mais flores; brotos restantes não pontuam e totais iguais dão empate."
+    ],
+    "description": "O broto já tem estímulo horizontal. Plantar abaixo dá o vertical e faz nascer uma flor."
+  },
+  "cerco": {
+    "quick": {
+      "goal": "Deixe todas as peças do rival sem saída.",
+      "steps": [
+        "Escolha uma peça sua e mova uma casa para cima, baixo, esquerda ou direita.",
+        "O destino precisa estar vazio. A casa de onde você saiu vira uma barreira.",
+        "Quem começar a vez sem conseguir mover nenhuma peça perde. Não há saltos nem capturas."
+      ],
+      "example": "Verde anda uma casa para baixo. A origem fecha; nenhuma peça é capturada.",
+      "cue": [
+        "Escolha a peça verde",
+        "Mova uma casa",
+        "A origem vira barreira"
+      ]
+    },
+    "full": [
+      "Mova uma peça sua uma casa para cima, baixo, esquerda ou direita. Escolha um destino vazio e sem barreira, observe a prévia e confirme.",
+      "A casa que a peça deixou vira uma barreira para os dois times. Não há saltos, diagonais ou capturas: as seis peças continuam no tabuleiro.",
+      "Quem começar a própria vez sem nenhum movimento perde. Uma peça presa não basta: outra peça do mesmo time ainda pode ter saída."
+    ],
+    "description": "Verde anda uma casa para baixo. A origem fecha; nenhuma peça é capturada."
+  },
+  "mosaico": {
+    "quick": {
+      "goal": "Complete junções de azulejos para ganhar selos.",
+      "steps": [
+        "Escolha a orientação de um azulejo e coloque-o em uma casa vazia.",
+        "Quando quatro peças se encontram, conte os cantos voltados para o centro.",
+        "Três ou quatro cantos da mesma cor dão um selo a ela. Ao preencher tudo, vence quem tem mais selos."
+      ],
+      "example": "A última peça completa a junção: três cantos verdes e um âmbar dão um selo ao Verde.",
+      "cue": [
+        "Falta o quarto azulejo",
+        "Complete a junção",
+        "Três cantos verdes: +1"
+      ]
+    },
+    "full": [
+      "O painel 5 × 5 começa vazio. Verde começa; a cada turno escolha uma das quatro orientações de um azulejo comum e coloque-o em qualquer casa vazia. Cada peça tem dois cantos verdes adjacentes e dois âmbar adjacentes.",
+      "Não é preciso encostar nem combinar bordas. Depois de colocado, o azulejo não sai, não se move e não gira. Os azulejos são compartilhados; apenas os selos têm dono.",
+      "Cada uma das 16 junções reúne os quatro cantos voltados para o centro de um bloco 2 × 2. Com o bloco completo, 3 ou 4 cantos da mesma cor dão 1 ponto a essa cor; 2–2 não pontua. Quatro cantos não dão bônus.",
+      "Uma colocação pode concluir vários selos e pontuar para ambas as equipes, independentemente de quem jogou. Cada selo conta uma vez. Não há passe: após os 25 azulejos, vence quem tem mais selos; igualdade empata."
+    ],
+    "description": "Bloco A1–B2: orientações 2, 2, 0 e, por último, 1. Os cantos internos são verde, verde, verde e âmbar. O selo vale um ponto para Verde."
+  },
+  "quinhao": {
+    "quick": {
+      "goal": "Reúna combinações de frutos para fazer mais pontos.",
+      "steps": [
+        "Ofereça três cestos vizinhos no anel. Considere só os cestos que ainda estão ali.",
+        "O rival escolhe um; você recebe os outros dois. Depois, troquem os papéis.",
+        "No fim, três tipos diferentes valem 5 pontos. Nas sobras, cada par de tipos diferentes vale 2; isolados não pontuam."
+      ],
+      "example": "Verde oferece duas castanhas e uma pitanga. Âmbar escolhe a pitanga; Verde fica com as castanhas.",
+      "cue": [
+        "Verde oferece três cestos",
+        "Âmbar escolhe a pitanga",
+        "Verde recebe os outros dois"
+      ]
+    },
+    "full": [
+      "Há 24 cestos em anel: duas castanhas-do-pará, duas pitangas e duas jabuticabas, repetidas quatro vezes. Verde propõe primeiro. Escolha três cestos consecutivos entre os que ainda existem; o último e o primeiro são vizinhos, mesmo com lacunas.",
+      "O adversário escolhe um dos três e recebe esse fruto; você recebe os outros dois. Essa resposta completa o turno. Retire os três cestos e una os vizinhos restantes; quem escolheu será o próximo proponente. Não há passe nem troca.",
+      "Após oito ofertas e oito respostas, cada pessoa terá 12 frutos. Forme primeiro todos os trios de uma castanha-do-pará, uma pitanga e uma jabuticaba: cada trio vale 5 pontos.",
+      "Nas sobras, forme todos os pares possíveis de tipos diferentes: cada par vale 2. Nenhum fruto conta duas vezes; frutos isolados não pontuam. Vence o maior total; igualdade é empate."
+    ],
+    "description": "Abertura: Verde oferece cestos 1, 2 e 3. Âmbar escolhe a pitanga do cesto 3; Verde recebe duas castanhas-do-pará. Os cestos saem e Âmbar passa a propor."
+  },
+  "estalo": {
+    "quick": {
+      "goal": "Abra todas as suas vagens antes do rival.",
+      "steps": [
+        "Escolha uma vagem fechada sua. Você pode girar a seta 90° ou deixá-la como está.",
+        "Abra a vagem: o pulso segue as setas, abrindo as próximas em cadeia.",
+        "Cada vagem dá ponto ao próprio dono. A cadeia para na borda, num recorte vazio ou numa casa já aberta."
+      ],
+      "example": "No mapa Clássico, o pulso segue seis vagens e para ao reencontrar uma casa aberta: quatro pontos verdes e dois âmbar.",
+      "cue": [
+        "Escolha a primeira vagem",
+        "O pulso segue as setas",
+        "Cada dono recebe seus pontos"
+      ]
+    },
+    "full": [
+      "O exemplo usa o mapa Clássico 4 × 4. Verde tem as oito vagens das colunas A e B; Âmbar, as de C e D. Verde começa. Escolha uma vagem fechada sua e mantenha sua seta ou gire-a exatamente 90° para um dos lados, nunca 180°.",
+      "A origem abre e pontua para seu dono. O pulso segue a seta para a casa vizinha: se a vagem estiver fechada, ela abre, pontua para o próprio dono e redireciona o pulso pela seta dela. Só a origem pode girar.",
+      "A cadeia para na borda ou numa casa já aberta. Não salta vazios nem continua por cascas; até um circuito para ao reencontrar uma casa aberta. Não há captura, mudança de dono ou reposição.",
+      "Resolva a cadeia inteira antes de conferir o resultado: quem abrir todas as suas vagens vence (oito neste exemplo); completar as duas equipes na mesma cadeia empata. Se ninguém venceu, alterne a vez. Não há passe e cada vagem pontua uma única vez."
+    ],
+    "description": "Abertura oficial: abrir A1 sem girar percorre A1, B1, B2, C2, C3 e B3. São quatro pontos verdes e dois âmbar; a seta de B3 encontra B2 já aberta e encerra a cadeia."
+  },
+  "acorde": {
+    "quick": {
+      "goal": "Reúna pares de três símbolos diferentes.",
+      "steps": [
+        "Verde recolhe na linha indicada; Âmbar recolhe na coluna indicada.",
+        "Escolha um sino. A casa dele define a coluna ou linha da próxima pessoa.",
+        "Dois sinos iguais formam um par. Complete pares de três tipos diferentes para vencer."
+      ],
+      "example": "Verde recolhe o sino de B2. Agora Âmbar escolhe um sino da coluna B.",
+      "cue": [
+        "Verde joga na linha 2",
+        "Recolha o sino de B2",
+        "Âmbar joga na coluna B"
+      ]
+    },
+    "full": [
+      "Na grade 4 × 4 há quatro sinos de cada símbolo: folha, gota, onda e sol. Verde começa recolhendo qualquer sino da linha 2. Verde sempre recolhe na horizontal; Âmbar, na vertical. Os sinos são públicos e não há reposição.",
+      "Recolha um sino presente no seu eixo e deixe o carrinho nessa casa vazia. Pode atravessar vazios e outros sinos sem recolhê-los. Sua escolha determina o eixo do rival: a coluna para Âmbar ou a linha para Verde.",
+      "Cada símbolo com pelo menos dois sinos na sua coleção vale um par; três ou quatro cópias continuam valendo só um par. Quem completar pares de três símbolos diferentes vence imediatamente.",
+      "Sem sino no seu eixo, passe obrigatoriamente e deixe o carrinho parado. Dois passes seguidos ou o esgotamento dos 16 sinos encerram a partida: vence quem tiver mais pares diferentes; igualdade empata. Na revanche, troquem as pessoas que controlam as cores e os eixos."
+    ],
+    "description": "Abertura: Verde recolhe a onda de B2, ganha um sino e deixa o carrinho em B2. Âmbar pode escolher B1, B3 ou B4. F = folha, G = gota, O = onda, S = sol."
+  }
+}

@@ -1,0 +1,40 @@
+✔ divisa: exemplo completo, estático final e uma ação real do motor (3.08468ms)
+✔ pulso: exemplo completo, estático final e uma ação real do motor (0.686763ms)
+✔ foz: exemplo completo, estático final e uma ação real do motor (2.168412ms)
+✔ refugio: exemplo completo, estático final e uma ação real do motor (0.531019ms)
+✔ mirante: exemplo completo, estático final e uma ação real do motor (0.646883ms)
+✔ renovo: exemplo completo, estático final e uma ação real do motor (1.448348ms)
+✔ DIVISA: dois lados compartilhados, não quatro nem diagonais (0.375605ms)
+✔ PULSO: intervalos iguais e todas as cotas, com vazios explícitos (0.247112ms)
+✔ FOZ: a distância é em trechos e os três pontos chegam à mesma foz (0.572731ms)
+✔ REFÚGIO: a barreira toca duas regiões, cada qual com um marco (0.491029ms)
+✔ MIRANTE: observadores opostos são duas testemunhas da mesma peça (0.395795ms)
+✔ RENOVO: somente o botão compartilha os dois trechos perpendiculares (0.657689ms)
+✔ O catálogo contém exatamente os seis jogos lógicos solicitados (0.160071ms)
+✔ divisa: a campanha existente continua válida no motor sem dependências offline (10.428435ms)
+✔ pulso: a campanha existente continua válida no motor sem dependências offline (4.910466ms)
+✔ foz: a campanha existente continua válida no motor sem dependências offline (13.441948ms)
+✔ refugio: a campanha existente continua válida no motor sem dependências offline (4.346296ms)
+✔ mirante: a campanha existente continua válida no motor sem dependências offline (6.8545ms)
+✔ renovo: a campanha existente continua válida no motor sem dependências offline (9.838126ms)
+✔ os 19 jogos têm objetivo, três ações curtas e exemplo legível (3.09157ms)
+✔ gesto ilustrativo é puro e não altera SVGs originais (0.740544ms)
+✔ loop mais rápido, sem cintilação rápida nem controle manual; redução mostra resultado (1.048226ms)
+✔ regras críticas permanecem explícitas no primeiro contato (0.261843ms)
+✔ eight complete instructional cards, bounded SVGs and shared animation hooks (2.412058ms)
+✔ ENLACE: A2 elbow adds one lit green node and leaves colors independent (0.588946ms)
+✔ VAZANTE: mixed local convoy advances together without delivery (0.646292ms)
+✔ MOSAICO: illustrated corner orientations complete a 3–1 green seal (1.1435ms)
+✔ QUINHÃO: first offer assigns two chestnuts to green and pitanga to amber (0.66502ms)
+✔ ESTALO: unrotated A1 opens the exact pictured six-cell chain (0.508185ms)
+✔ DOBRA: first north fold merges the full edge and keeps the A1 seal (0.578741ms)
+✔ ACORDE: B2 wave collection redirects amber to column B (0.988577ms)
+✔ LASTRO: D2 advancing one mark changes the exact delta from zero to +2 (1.037721ms)
+ℹ tests 32
+ℹ suites 0
+ℹ pass 32
+ℹ fail 0
+ℹ cancelled 0
+ℹ skipped 0
+ℹ todo 0
+ℹ duration_ms 208.24809

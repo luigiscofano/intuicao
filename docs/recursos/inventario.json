@@ -197,6 +197,13 @@
         "docs/identidade/aiij-estalo-rosacea.md"
       ],
       "source": "Rosácea de impulso, opção A aprovada por Luigi em 16/11/2026."
+    },
+    "manuais-impressao": {
+      "evidence": [
+        "docs/manuais-visuais-impressao/README.md",
+        "docs/recursos/declaracao-autoria.md"
+      ],
+      "source": "Manuais didáticos aprovados, baseados nas regras reais e na identidade existente. Fontes OFL acompanham o pacote; não concede nova licença às artes."
     }
   },
   "assets": [
@@ -4089,6 +4096,654 @@
       "rightsHolder": "Luigi Scofano de Araujo; direitos das fontes preservados",
       "license": "Documentação do acervo; sem nova licença aberta para as artes.",
       "permissionEvidence": "docs/identidade/manual/README.md; docs/recursos/declaracao-autoria.md"
+    },
+    {
+      "path": "docs/manuais-visuais-impressao/diagramas/acorde.png",
+      "sha256": "b1f55a8b57bb792cdc76cea8700b265eef49bc4c945277ff032a0a7af5e3fe55",
+      "group": "manuais-impressao",
+      "status": "cleared",
+      "rightsHolder": "Luigi Scofano de Araujo; direitos das fontes preservados",
+      "license": "Documentação do acervo; sem nova licença aberta para as artes.",
+      "permissionEvidence": "docs/manuais-visuais-impressao/README.md; docs/recursos/declaracao-autoria.md"
+    },
+    {
+      "path": "docs/manuais-visuais-impressao/diagramas/acorde.svg",
+      "sha256": "b8f80f96cefe91117a7b820fea78bdd562722eb54462a605ce6cc61f66d480d4",
+      "group": "manuais-impressao",
+      "status": "cleared",
+      "rightsHolder": "Luigi Scofano de Araujo; direitos das fontes preservados",
+      "license": "Documentação do acervo; sem nova licença aberta para as artes.",
+      "permissionEvidence": "docs/manuais-visuais-impressao/README.md; docs/recursos/declaracao-autoria.md"
+    },
+    {
+      "path": "docs/manuais-visuais-impressao/diagramas/broto.png",
+      "sha256": "e4d0d7c94b3db1c2791eb9bf68607d9c16f19b3c0c5a3b68178ec6763bf9f659",
+      "group": "manuais-impressao",
+      "status": "cleared",
+      "rightsHolder": "Luigi Scofano de Araujo; direitos das fontes preservados",
+      "license": "Documentação do acervo; sem nova licença aberta para as artes.",
+      "permissionEvidence": "docs/manuais-visuais-impressao/README.md; docs/recursos/declaracao-autoria.md"
+    },
+    {
+      "path": "docs/manuais-visuais-impressao/diagramas/broto.svg",
+      "sha256": "238005a719589b03bb8134ce9bfc50b6fc567af93d9ba0ebc52b979fd87ad079",
+      "group": "manuais-impressao",
+      "status": "cleared",
+      "rightsHolder": "Luigi Scofano de Araujo; direitos das fontes preservados",
+      "license": "Documentação do acervo; sem nova licença aberta para as artes.",
+      "permissionEvidence": "docs/manuais-visuais-impressao/README.md; docs/recursos/declaracao-autoria.md"
+    },
+    {
+      "path": "docs/manuais-visuais-impressao/diagramas/cerco-after.png",
+      "sha256": "fa2356ff178755b8aa5594f44601fe107fbe37f6b61299e6774f8664ac09a572",
+      "group": "manuais-impressao",
+      "status": "cleared",
+      "rightsHolder": "Luigi Scofano de Araujo; direitos das fontes preservados",
+      "license": "Documentação do acervo; sem nova licença aberta para as artes.",
+      "permissionEvidence": "docs/manuais-visuais-impressao/README.md; docs/recursos/declaracao-autoria.md"
+    },
+    {
+      "path": "docs/manuais-visuais-impressao/diagramas/cerco-after.svg",
+      "sha256": "d134e6ea7593c0384aa66ddf4fd6f1d24b3c348b64ecd18494a6fc4e9ace4f0d",
+      "group": "manuais-impressao",
+      "status": "cleared",
+      "rightsHolder": "Luigi Scofano de Araujo; direitos das fontes preservados",
+      "license": "Documentação do acervo; sem nova licença aberta para as artes.",
+      "permissionEvidence": "docs/manuais-visuais-impressao/README.md; docs/recursos/declaracao-autoria.md"
+    },
+    {
+      "path": "docs/manuais-visuais-impressao/diagramas/cerco-before.png",
+      "sha256": "7621297860cbca126425f2ddb80bf371b08273b1fb6c5b6e1894204535e3eee8",
+      "group": "manuais-impressao",
+      "status": "cleared",
+      "rightsHolder": "Luigi Scofano de Araujo; direitos das fontes preservados",
+      "license": "Documentação do acervo; sem nova licença aberta para as artes.",
+      "permissionEvidence": "docs/manuais-visuais-impressao/README.md; docs/recursos/declaracao-autoria.md"
+    },
+    {
+      "path": "docs/manuais-visuais-impressao/diagramas/cerco-before.svg",
+      "sha256": "3e2166c57d5ec623ddd1976ed9cfecc0a4ddd9f149a0ee94cb2f9179f0b22241",
+      "group": "manuais-impressao",
+      "status": "cleared",
+      "rightsHolder": "Luigi Scofano de Araujo; direitos das fontes preservados",
+      "license": "Documentação do acervo; sem nova licença aberta para as artes.",
+      "permissionEvidence": "docs/manuais-visuais-impressao/README.md; docs/recursos/declaracao-autoria.md"
+    },
+    {
+      "path": "docs/manuais-visuais-impressao/diagramas/cerco.png",
+      "sha256": "f703048086188fca6b9e71ac8d57f64d344be5289c04ea782c239fede5c1e383",
+      "group": "manuais-impressao",
+      "status": "cleared",
+      "rightsHolder": "Luigi Scofano de Araujo; direitos das fontes preservados",
+      "license": "Documentação do acervo; sem nova licença aberta para as artes.",
+      "permissionEvidence": "docs/manuais-visuais-impressao/README.md; docs/recursos/declaracao-autoria.md"
+    },
+    {
+      "path": "docs/manuais-visuais-impressao/diagramas/cerco.svg",
+      "sha256": "bc1b8c8f2bec25a8627c3659ac82c3d3e314185fab137cc5facdc236b5343f39",
+      "group": "manuais-impressao",
+      "status": "cleared",
+      "rightsHolder": "Luigi Scofano de Araujo; direitos das fontes preservados",
+      "license": "Documentação do acervo; sem nova licença aberta para as artes.",
+      "permissionEvidence": "docs/manuais-visuais-impressao/README.md; docs/recursos/declaracao-autoria.md"
+    },
+    {
+      "path": "docs/manuais-visuais-impressao/diagramas/cut.png",
+      "sha256": "ccfbe1de9014d80fc5c6052814d23d874fc30c365520ac1d81247dfbf9a02aff",
+      "group": "manuais-impressao",
+      "status": "cleared",
+      "rightsHolder": "Luigi Scofano de Araujo; direitos das fontes preservados",
+      "license": "Documentação do acervo; sem nova licença aberta para as artes.",
+      "permissionEvidence": "docs/manuais-visuais-impressao/README.md; docs/recursos/declaracao-autoria.md"
+    },
+    {
+      "path": "docs/manuais-visuais-impressao/diagramas/cut.svg",
+      "sha256": "25562d7e9ee5bbdc87f1a074da31f09056dac3aa80926fff6567fe4936ee74f3",
+      "group": "manuais-impressao",
+      "status": "cleared",
+      "rightsHolder": "Luigi Scofano de Araujo; direitos das fontes preservados",
+      "license": "Documentação do acervo; sem nova licença aberta para as artes.",
+      "permissionEvidence": "docs/manuais-visuais-impressao/README.md; docs/recursos/declaracao-autoria.md"
+    },
+    {
+      "path": "docs/manuais-visuais-impressao/diagramas/desvio.png",
+      "sha256": "7d6f6bdd085a3a508906cceaab77196d4f357cc21b4d2fbc10520f7fabfaa3be",
+      "group": "manuais-impressao",
+      "status": "cleared",
+      "rightsHolder": "Luigi Scofano de Araujo; direitos das fontes preservados",
+      "license": "Documentação do acervo; sem nova licença aberta para as artes.",
+      "permissionEvidence": "docs/manuais-visuais-impressao/README.md; docs/recursos/declaracao-autoria.md"
+    },
+    {
+      "path": "docs/manuais-visuais-impressao/diagramas/desvio.svg",
+      "sha256": "3ec6822fd14d161a3f8d6979af069e49cd239785ae99deed5130c23755a71d0f",
+      "group": "manuais-impressao",
+      "status": "cleared",
+      "rightsHolder": "Luigi Scofano de Araujo; direitos das fontes preservados",
+      "license": "Documentação do acervo; sem nova licença aberta para as artes.",
+      "permissionEvidence": "docs/manuais-visuais-impressao/README.md; docs/recursos/declaracao-autoria.md"
+    },
+    {
+      "path": "docs/manuais-visuais-impressao/diagramas/elo.png",
+      "sha256": "931efa6c3da64e3fb1c15165f1e19cd60d05f637af0c49de56fa728269e91247",
+      "group": "manuais-impressao",
+      "status": "cleared",
+      "rightsHolder": "Luigi Scofano de Araujo; direitos das fontes preservados",
+      "license": "Documentação do acervo; sem nova licença aberta para as artes.",
+      "permissionEvidence": "docs/manuais-visuais-impressao/README.md; docs/recursos/declaracao-autoria.md"
+    },
+    {
+      "path": "docs/manuais-visuais-impressao/diagramas/elo.svg",
+      "sha256": "896c94f100cacea4f995c4d7e31255079dad2b081c4ffcbf0556bb0f7e02114f",
+      "group": "manuais-impressao",
+      "status": "cleared",
+      "rightsHolder": "Luigi Scofano de Araujo; direitos das fontes preservados",
+      "license": "Documentação do acervo; sem nova licença aberta para as artes.",
+      "permissionEvidence": "docs/manuais-visuais-impressao/README.md; docs/recursos/declaracao-autoria.md"
+    },
+    {
+      "path": "docs/manuais-visuais-impressao/diagramas/estalo.png",
+      "sha256": "00b5f25859818d372640a012904f788191da8d6ff4427eb1134250c1fd7dd34f",
+      "group": "manuais-impressao",
+      "status": "cleared",
+      "rightsHolder": "Luigi Scofano de Araujo; direitos das fontes preservados",
+      "license": "Documentação do acervo; sem nova licença aberta para as artes.",
+      "permissionEvidence": "docs/manuais-visuais-impressao/README.md; docs/recursos/declaracao-autoria.md"
+    },
+    {
+      "path": "docs/manuais-visuais-impressao/diagramas/estalo.svg",
+      "sha256": "7a80684e8c4f39082f5e92511311a9d072778907a4a0c6a3f71f2641564f296c",
+      "group": "manuais-impressao",
+      "status": "cleared",
+      "rightsHolder": "Luigi Scofano de Araujo; direitos das fontes preservados",
+      "license": "Documentação do acervo; sem nova licença aberta para as artes.",
+      "permissionEvidence": "docs/manuais-visuais-impressao/README.md; docs/recursos/declaracao-autoria.md"
+    },
+    {
+      "path": "docs/manuais-visuais-impressao/diagramas/foz.png",
+      "sha256": "1bfccf282626bdf2eaefc6556d7eb5e3c5769379c05b86759bccf2dcac347334",
+      "group": "manuais-impressao",
+      "status": "cleared",
+      "rightsHolder": "Luigi Scofano de Araujo; direitos das fontes preservados",
+      "license": "Documentação do acervo; sem nova licença aberta para as artes.",
+      "permissionEvidence": "docs/manuais-visuais-impressao/README.md; docs/recursos/declaracao-autoria.md"
+    },
+    {
+      "path": "docs/manuais-visuais-impressao/diagramas/foz.svg",
+      "sha256": "7f0a2ebca81acb30ad849ff320d3f4317c800d5508fe11488f9d83b7cac49cea",
+      "group": "manuais-impressao",
+      "status": "cleared",
+      "rightsHolder": "Luigi Scofano de Araujo; direitos das fontes preservados",
+      "license": "Documentação do acervo; sem nova licença aberta para as artes.",
+      "permissionEvidence": "docs/manuais-visuais-impressao/README.md; docs/recursos/declaracao-autoria.md"
+    },
+    {
+      "path": "docs/manuais-visuais-impressao/diagramas/light.png",
+      "sha256": "13ee8143c4cb6eb6e339c619b8ef91aaa1e5c56c6b404c2302938626c62a3883",
+      "group": "manuais-impressao",
+      "status": "cleared",
+      "rightsHolder": "Luigi Scofano de Araujo; direitos das fontes preservados",
+      "license": "Documentação do acervo; sem nova licença aberta para as artes.",
+      "permissionEvidence": "docs/manuais-visuais-impressao/README.md; docs/recursos/declaracao-autoria.md"
+    },
+    {
+      "path": "docs/manuais-visuais-impressao/diagramas/light.svg",
+      "sha256": "297db90064b445079930873fae3a6be97cb0cda4f78b5efb2c6a289aa1bb0bbf",
+      "group": "manuais-impressao",
+      "status": "cleared",
+      "rightsHolder": "Luigi Scofano de Araujo; direitos das fontes preservados",
+      "license": "Documentação do acervo; sem nova licença aberta para as artes.",
+      "permissionEvidence": "docs/manuais-visuais-impressao/README.md; docs/recursos/declaracao-autoria.md"
+    },
+    {
+      "path": "docs/manuais-visuais-impressao/diagramas/mirante.png",
+      "sha256": "1be1115efc4da3341e619902d0407d4886f9c373f9690d6ac90bd773faaa1f83",
+      "group": "manuais-impressao",
+      "status": "cleared",
+      "rightsHolder": "Luigi Scofano de Araujo; direitos das fontes preservados",
+      "license": "Documentação do acervo; sem nova licença aberta para as artes.",
+      "permissionEvidence": "docs/manuais-visuais-impressao/README.md; docs/recursos/declaracao-autoria.md"
+    },
+    {
+      "path": "docs/manuais-visuais-impressao/diagramas/mirante.svg",
+      "sha256": "a16ff9256ed44c2c8fb1e86ed3754ff58bfe3b7bdfaa8149b6be6df3e2c5619e",
+      "group": "manuais-impressao",
+      "status": "cleared",
+      "rightsHolder": "Luigi Scofano de Araujo; direitos das fontes preservados",
+      "license": "Documentação do acervo; sem nova licença aberta para as artes.",
+      "permissionEvidence": "docs/manuais-visuais-impressao/README.md; docs/recursos/declaracao-autoria.md"
+    },
+    {
+      "path": "docs/manuais-visuais-impressao/diagramas/mosaico.png",
+      "sha256": "d4ccfd763073619c2d9fac02257dbdea0b10922ed943c84b262b4278ad2790b1",
+      "group": "manuais-impressao",
+      "status": "cleared",
+      "rightsHolder": "Luigi Scofano de Araujo; direitos das fontes preservados",
+      "license": "Documentação do acervo; sem nova licença aberta para as artes.",
+      "permissionEvidence": "docs/manuais-visuais-impressao/README.md; docs/recursos/declaracao-autoria.md"
+    },
+    {
+      "path": "docs/manuais-visuais-impressao/diagramas/mosaico.svg",
+      "sha256": "7a25e35e36cdcda9dbabd01eb74eb8e3b84d424b73dc1d3df42fc579102b999f",
+      "group": "manuais-impressao",
+      "status": "cleared",
+      "rightsHolder": "Luigi Scofano de Araujo; direitos das fontes preservados",
+      "license": "Documentação do acervo; sem nova licença aberta para as artes.",
+      "permissionEvidence": "docs/manuais-visuais-impressao/README.md; docs/recursos/declaracao-autoria.md"
+    },
+    {
+      "path": "docs/manuais-visuais-impressao/diagramas/pacto.png",
+      "sha256": "3c660600a7804b9447e7fe2fa27864c436e9c4c45b29db95437c2db1d0f97daf",
+      "group": "manuais-impressao",
+      "status": "cleared",
+      "rightsHolder": "Luigi Scofano de Araujo; direitos das fontes preservados",
+      "license": "Documentação do acervo; sem nova licença aberta para as artes.",
+      "permissionEvidence": "docs/manuais-visuais-impressao/README.md; docs/recursos/declaracao-autoria.md"
+    },
+    {
+      "path": "docs/manuais-visuais-impressao/diagramas/pacto.svg",
+      "sha256": "2ca446e84413ef8600eb0da2f52ab03c3bf33fc643a8251c3cd5dc89c9890222",
+      "group": "manuais-impressao",
+      "status": "cleared",
+      "rightsHolder": "Luigi Scofano de Araujo; direitos das fontes preservados",
+      "license": "Documentação do acervo; sem nova licença aberta para as artes.",
+      "permissionEvidence": "docs/manuais-visuais-impressao/README.md; docs/recursos/declaracao-autoria.md"
+    },
+    {
+      "path": "docs/manuais-visuais-impressao/diagramas/prumo.png",
+      "sha256": "c38c83f90886c5bda18f3035961f526f531436ecf29c4d39ccfa1684c0df156b",
+      "group": "manuais-impressao",
+      "status": "cleared",
+      "rightsHolder": "Luigi Scofano de Araujo; direitos das fontes preservados",
+      "license": "Documentação do acervo; sem nova licença aberta para as artes.",
+      "permissionEvidence": "docs/manuais-visuais-impressao/README.md; docs/recursos/declaracao-autoria.md"
+    },
+    {
+      "path": "docs/manuais-visuais-impressao/diagramas/prumo.svg",
+      "sha256": "3725f8e5be9315707a98fcd01764f06a32e949084fcd44b72b5de50a8b25f4b9",
+      "group": "manuais-impressao",
+      "status": "cleared",
+      "rightsHolder": "Luigi Scofano de Araujo; direitos das fontes preservados",
+      "license": "Documentação do acervo; sem nova licença aberta para as artes.",
+      "permissionEvidence": "docs/manuais-visuais-impressao/README.md; docs/recursos/declaracao-autoria.md"
+    },
+    {
+      "path": "docs/manuais-visuais-impressao/diagramas/pulso-normal.png",
+      "sha256": "7067d29ee963bd5aca2ebe5e4ea08fc339e3a42ea0440d98ca84b04cdefc706c",
+      "group": "manuais-impressao",
+      "status": "cleared",
+      "rightsHolder": "Luigi Scofano de Araujo; direitos das fontes preservados",
+      "license": "Documentação do acervo; sem nova licença aberta para as artes.",
+      "permissionEvidence": "docs/manuais-visuais-impressao/README.md; docs/recursos/declaracao-autoria.md"
+    },
+    {
+      "path": "docs/manuais-visuais-impressao/diagramas/pulso.png",
+      "sha256": "2f748daaef4025181fb8fbf49009e45f1d60c099093121f9541f3507014e0d5f",
+      "group": "manuais-impressao",
+      "status": "cleared",
+      "rightsHolder": "Luigi Scofano de Araujo; direitos das fontes preservados",
+      "license": "Documentação do acervo; sem nova licença aberta para as artes.",
+      "permissionEvidence": "docs/manuais-visuais-impressao/README.md; docs/recursos/declaracao-autoria.md"
+    },
+    {
+      "path": "docs/manuais-visuais-impressao/diagramas/pulso.svg",
+      "sha256": "0bb74f6c0b3e68af02524e37a6789c6fbc4aafa7e110418716972bc062f33099",
+      "group": "manuais-impressao",
+      "status": "cleared",
+      "rightsHolder": "Luigi Scofano de Araujo; direitos das fontes preservados",
+      "license": "Documentação do acervo; sem nova licença aberta para as artes.",
+      "permissionEvidence": "docs/manuais-visuais-impressao/README.md; docs/recursos/declaracao-autoria.md"
+    },
+    {
+      "path": "docs/manuais-visuais-impressao/diagramas/quinhao.png",
+      "sha256": "bc6a6229473401e5af20e661971db87a09835b88856b96c7463a47621be53dcf",
+      "group": "manuais-impressao",
+      "status": "cleared",
+      "rightsHolder": "Luigi Scofano de Araujo; direitos das fontes preservados",
+      "license": "Documentação do acervo; sem nova licença aberta para as artes.",
+      "permissionEvidence": "docs/manuais-visuais-impressao/README.md; docs/recursos/declaracao-autoria.md"
+    },
+    {
+      "path": "docs/manuais-visuais-impressao/diagramas/quinhao.svg",
+      "sha256": "112a123a591ff803e1c2564532af283690364d66e141222acff0d1d8912d2050",
+      "group": "manuais-impressao",
+      "status": "cleared",
+      "rightsHolder": "Luigi Scofano de Araujo; direitos das fontes preservados",
+      "license": "Documentação do acervo; sem nova licença aberta para as artes.",
+      "permissionEvidence": "docs/manuais-visuais-impressao/README.md; docs/recursos/declaracao-autoria.md"
+    },
+    {
+      "path": "docs/manuais-visuais-impressao/diagramas/refugio.png",
+      "sha256": "ad47f0f0092fa72dfa9ad51c666dcfbe59534bbfe9e490e9018ddae84c547f54",
+      "group": "manuais-impressao",
+      "status": "cleared",
+      "rightsHolder": "Luigi Scofano de Araujo; direitos das fontes preservados",
+      "license": "Documentação do acervo; sem nova licença aberta para as artes.",
+      "permissionEvidence": "docs/manuais-visuais-impressao/README.md; docs/recursos/declaracao-autoria.md"
+    },
+    {
+      "path": "docs/manuais-visuais-impressao/diagramas/refugio.svg",
+      "sha256": "7eaf643faf29921ce9980df3d9c965b6b64e221976aab75e340dcbcd21b6bd37",
+      "group": "manuais-impressao",
+      "status": "cleared",
+      "rightsHolder": "Luigi Scofano de Araujo; direitos das fontes preservados",
+      "license": "Documentação do acervo; sem nova licença aberta para as artes.",
+      "permissionEvidence": "docs/manuais-visuais-impressao/README.md; docs/recursos/declaracao-autoria.md"
+    },
+    {
+      "path": "docs/manuais-visuais-impressao/diagramas/renovo-after.png",
+      "sha256": "a61272a1c43c41ff9f763135078f7a445e7226f9bf2c19ebf5060641277a48ec",
+      "group": "manuais-impressao",
+      "status": "cleared",
+      "rightsHolder": "Luigi Scofano de Araujo; direitos das fontes preservados",
+      "license": "Documentação do acervo; sem nova licença aberta para as artes.",
+      "permissionEvidence": "docs/manuais-visuais-impressao/README.md; docs/recursos/declaracao-autoria.md"
+    },
+    {
+      "path": "docs/manuais-visuais-impressao/diagramas/renovo-after.svg",
+      "sha256": "6601e6c4eb1979f6d317c5bd1ab70e5961885cc40f41cc95f931b362bc2c2369",
+      "group": "manuais-impressao",
+      "status": "cleared",
+      "rightsHolder": "Luigi Scofano de Araujo; direitos das fontes preservados",
+      "license": "Documentação do acervo; sem nova licença aberta para as artes.",
+      "permissionEvidence": "docs/manuais-visuais-impressao/README.md; docs/recursos/declaracao-autoria.md"
+    },
+    {
+      "path": "docs/manuais-visuais-impressao/diagramas/renovo-before.png",
+      "sha256": "d50026f1ed55aad88af942ef0443d4e3d4c8d6d130699ced596e8566c2379543",
+      "group": "manuais-impressao",
+      "status": "cleared",
+      "rightsHolder": "Luigi Scofano de Araujo; direitos das fontes preservados",
+      "license": "Documentação do acervo; sem nova licença aberta para as artes.",
+      "permissionEvidence": "docs/manuais-visuais-impressao/README.md; docs/recursos/declaracao-autoria.md"
+    },
+    {
+      "path": "docs/manuais-visuais-impressao/diagramas/renovo-before.svg",
+      "sha256": "357d9f7ecac03d2cf75f7aa6af301053b9fbcf0d15d4958c8347f0a40dd69a19",
+      "group": "manuais-impressao",
+      "status": "cleared",
+      "rightsHolder": "Luigi Scofano de Araujo; direitos das fontes preservados",
+      "license": "Documentação do acervo; sem nova licença aberta para as artes.",
+      "permissionEvidence": "docs/manuais-visuais-impressao/README.md; docs/recursos/declaracao-autoria.md"
+    },
+    {
+      "path": "docs/manuais-visuais-impressao/diagramas/renovo.png",
+      "sha256": "acf92dca12e6e9a3fac975add83f6fea0011493c326227347309b84c772088b4",
+      "group": "manuais-impressao",
+      "status": "cleared",
+      "rightsHolder": "Luigi Scofano de Araujo; direitos das fontes preservados",
+      "license": "Documentação do acervo; sem nova licença aberta para as artes.",
+      "permissionEvidence": "docs/manuais-visuais-impressao/README.md; docs/recursos/declaracao-autoria.md"
+    },
+    {
+      "path": "docs/manuais-visuais-impressao/diagramas/renovo.svg",
+      "sha256": "b357a2ebd6b6f441bc240f3792086e509f69c46d1c2f34b4f053e507d2e40223",
+      "group": "manuais-impressao",
+      "status": "cleared",
+      "rightsHolder": "Luigi Scofano de Araujo; direitos das fontes preservados",
+      "license": "Documentação do acervo; sem nova licença aberta para as artes.",
+      "permissionEvidence": "docs/manuais-visuais-impressao/README.md; docs/recursos/declaracao-autoria.md"
+    },
+    {
+      "path": "docs/manuais-visuais-impressao/diagramas/repasse.png",
+      "sha256": "c5db348e6079158cb869e3bcc593f2cacf17fa3c48ebfedaa38d8f28c7e0afb6",
+      "group": "manuais-impressao",
+      "status": "cleared",
+      "rightsHolder": "Luigi Scofano de Araujo; direitos das fontes preservados",
+      "license": "Documentação do acervo; sem nova licença aberta para as artes.",
+      "permissionEvidence": "docs/manuais-visuais-impressao/README.md; docs/recursos/declaracao-autoria.md"
+    },
+    {
+      "path": "docs/manuais-visuais-impressao/diagramas/repasse.svg",
+      "sha256": "ea9866ee20bd8a6cc96ec8095b13d1e189facb2e3e6624a48e47948f4bc98365",
+      "group": "manuais-impressao",
+      "status": "cleared",
+      "rightsHolder": "Luigi Scofano de Araujo; direitos das fontes preservados",
+      "license": "Documentação do acervo; sem nova licença aberta para as artes.",
+      "permissionEvidence": "docs/manuais-visuais-impressao/README.md; docs/recursos/declaracao-autoria.md"
+    },
+    {
+      "path": "docs/manuais-visuais-impressao/diagramas/sintonia.png",
+      "sha256": "c208567737702f8ceb264b02d014946bee0e023a3900e92942d7f376554cce69",
+      "group": "manuais-impressao",
+      "status": "cleared",
+      "rightsHolder": "Luigi Scofano de Araujo; direitos das fontes preservados",
+      "license": "Documentação do acervo; sem nova licença aberta para as artes.",
+      "permissionEvidence": "docs/manuais-visuais-impressao/README.md; docs/recursos/declaracao-autoria.md"
+    },
+    {
+      "path": "docs/manuais-visuais-impressao/diagramas/sintonia.svg",
+      "sha256": "5cbec2a2ab18bbf7f65c3de4756b38188fafa0e4f3bd3242783e07c182a5c4da",
+      "group": "manuais-impressao",
+      "status": "cleared",
+      "rightsHolder": "Luigi Scofano de Araujo; direitos das fontes preservados",
+      "license": "Documentação do acervo; sem nova licença aberta para as artes.",
+      "permissionEvidence": "docs/manuais-visuais-impressao/README.md; docs/recursos/declaracao-autoria.md"
+    },
+    {
+      "path": "docs/manuais-visuais-impressao/diagramas/tile.png",
+      "sha256": "d0d93f4de5945510cd5284b869974dc431e68f5360413adc6cf3ba9087d6096e",
+      "group": "manuais-impressao",
+      "status": "cleared",
+      "rightsHolder": "Luigi Scofano de Araujo; direitos das fontes preservados",
+      "license": "Documentação do acervo; sem nova licença aberta para as artes.",
+      "permissionEvidence": "docs/manuais-visuais-impressao/README.md; docs/recursos/declaracao-autoria.md"
+    },
+    {
+      "path": "docs/manuais-visuais-impressao/diagramas/tile.svg",
+      "sha256": "197fabc901fe9c85870dc95ef9bd59c2afb2e9edf9c0bc0577b0f527e8ecfe87",
+      "group": "manuais-impressao",
+      "status": "cleared",
+      "rightsHolder": "Luigi Scofano de Araujo; direitos das fontes preservados",
+      "license": "Documentação do acervo; sem nova licença aberta para as artes.",
+      "permissionEvidence": "docs/manuais-visuais-impressao/README.md; docs/recursos/declaracao-autoria.md"
+    },
+    {
+      "path": "docs/manuais-visuais-impressao/fontes/logo.png",
+      "sha256": "cc0276810a73b1339bb53e9b881aab8f0dfc4e576c02b6b1aac08530f89c4161",
+      "group": "manuais-impressao",
+      "status": "cleared",
+      "rightsHolder": "Luigi Scofano de Araujo; direitos das fontes preservados",
+      "license": "Documentação do acervo; sem nova licença aberta para as artes.",
+      "permissionEvidence": "docs/manuais-visuais-impressao/README.md; docs/recursos/declaracao-autoria.md"
+    },
+    {
+      "path": "docs/manuais-visuais-impressao/fontes/Sans400.ttf",
+      "sha256": "c72f7dcc252496491734bbbb9a63f8d982d6fd5ad0ca5f3693aa81789629d00c",
+      "group": "manuais-impressao",
+      "status": "cleared",
+      "rightsHolder": "Luigi Scofano de Araujo; direitos das fontes preservados",
+      "license": "SIL Open Font License 1.1; ver licenças em fontes/.",
+      "permissionEvidence": "docs/manuais-visuais-impressao/README.md; docs/recursos/declaracao-autoria.md"
+    },
+    {
+      "path": "docs/manuais-visuais-impressao/fontes/Sans600.ttf",
+      "sha256": "6a647f9cd76555d665dd1978fbe7517ee24b7c95330a3a48b042315cb5a98931",
+      "group": "manuais-impressao",
+      "status": "cleared",
+      "rightsHolder": "Luigi Scofano de Araujo; direitos das fontes preservados",
+      "license": "SIL Open Font License 1.1; ver licenças em fontes/.",
+      "permissionEvidence": "docs/manuais-visuais-impressao/README.md; docs/recursos/declaracao-autoria.md"
+    },
+    {
+      "path": "docs/manuais-visuais-impressao/fontes/Serif600.ttf",
+      "sha256": "5491aa55d180deae36e678bcb367789619607fcf6dd016853d9635be7e5ae3cd",
+      "group": "manuais-impressao",
+      "status": "cleared",
+      "rightsHolder": "Luigi Scofano de Araujo; direitos das fontes preservados",
+      "license": "SIL Open Font License 1.1; ver licenças em fontes/.",
+      "permissionEvidence": "docs/manuais-visuais-impressao/README.md; docs/recursos/declaracao-autoria.md"
+    },
+    {
+      "path": "docs/manuais-visuais-impressao/png/01-light.png",
+      "sha256": "28020a37aeb993bab974b3b6e16ba7383a70aea2ff31dfe3288f857a2eeca2d1",
+      "group": "manuais-impressao",
+      "status": "cleared",
+      "rightsHolder": "Luigi Scofano de Araujo; direitos das fontes preservados",
+      "license": "Documentação do acervo; sem nova licença aberta para as artes.",
+      "permissionEvidence": "docs/manuais-visuais-impressao/README.md; docs/recursos/declaracao-autoria.md"
+    },
+    {
+      "path": "docs/manuais-visuais-impressao/png/02-cut.png",
+      "sha256": "4c37bb2935a34574b33cba5c53ef882317002f10d556988fdc5476b311068b2f",
+      "group": "manuais-impressao",
+      "status": "cleared",
+      "rightsHolder": "Luigi Scofano de Araujo; direitos das fontes preservados",
+      "license": "Documentação do acervo; sem nova licença aberta para as artes.",
+      "permissionEvidence": "docs/manuais-visuais-impressao/README.md; docs/recursos/declaracao-autoria.md"
+    },
+    {
+      "path": "docs/manuais-visuais-impressao/png/03-elo.png",
+      "sha256": "c2d5d158736d20a3de346247a0c5c9fa8f521773b34d8ed74a28d706003f1043",
+      "group": "manuais-impressao",
+      "status": "cleared",
+      "rightsHolder": "Luigi Scofano de Araujo; direitos das fontes preservados",
+      "license": "Documentação do acervo; sem nova licença aberta para as artes.",
+      "permissionEvidence": "docs/manuais-visuais-impressao/README.md; docs/recursos/declaracao-autoria.md"
+    },
+    {
+      "path": "docs/manuais-visuais-impressao/png/04-prumo.png",
+      "sha256": "e2d71167f91487ad2738acd279901a39ef7670db9c221c25554479b0b9241dad",
+      "group": "manuais-impressao",
+      "status": "cleared",
+      "rightsHolder": "Luigi Scofano de Araujo; direitos das fontes preservados",
+      "license": "Documentação do acervo; sem nova licença aberta para as artes.",
+      "permissionEvidence": "docs/manuais-visuais-impressao/README.md; docs/recursos/declaracao-autoria.md"
+    },
+    {
+      "path": "docs/manuais-visuais-impressao/png/05-pacto.png",
+      "sha256": "91fcfc7eea28a5b777792f5847d78610e313e3932003bc980db99f6207023406",
+      "group": "manuais-impressao",
+      "status": "cleared",
+      "rightsHolder": "Luigi Scofano de Araujo; direitos das fontes preservados",
+      "license": "Documentação do acervo; sem nova licença aberta para as artes.",
+      "permissionEvidence": "docs/manuais-visuais-impressao/README.md; docs/recursos/declaracao-autoria.md"
+    },
+    {
+      "path": "docs/manuais-visuais-impressao/png/06-sintonia.png",
+      "sha256": "68bac493b552d398e6285ba06403320ddb87305dc3bf2b81815f24a1c2b37ec7",
+      "group": "manuais-impressao",
+      "status": "cleared",
+      "rightsHolder": "Luigi Scofano de Araujo; direitos das fontes preservados",
+      "license": "Documentação do acervo; sem nova licença aberta para as artes.",
+      "permissionEvidence": "docs/manuais-visuais-impressao/README.md; docs/recursos/declaracao-autoria.md"
+    },
+    {
+      "path": "docs/manuais-visuais-impressao/png/07-repasse.png",
+      "sha256": "52af56985b9c3f2e05b2292f2855d9839671ef330b5cde7e028411a11920b4ea",
+      "group": "manuais-impressao",
+      "status": "cleared",
+      "rightsHolder": "Luigi Scofano de Araujo; direitos das fontes preservados",
+      "license": "Documentação do acervo; sem nova licença aberta para as artes.",
+      "permissionEvidence": "docs/manuais-visuais-impressao/README.md; docs/recursos/declaracao-autoria.md"
+    },
+    {
+      "path": "docs/manuais-visuais-impressao/png/08-pulso.png",
+      "sha256": "d6ba33f309aec33ebbf28f2a7490a5322e97d1ec25a054acae3868e4f6e797e5",
+      "group": "manuais-impressao",
+      "status": "cleared",
+      "rightsHolder": "Luigi Scofano de Araujo; direitos das fontes preservados",
+      "license": "Documentação do acervo; sem nova licença aberta para as artes.",
+      "permissionEvidence": "docs/manuais-visuais-impressao/README.md; docs/recursos/declaracao-autoria.md"
+    },
+    {
+      "path": "docs/manuais-visuais-impressao/png/09-foz.png",
+      "sha256": "5ffe76683eb38b2aefbfb4dfb5cb7195c50d9bf92826306652affd3ce84e6c4b",
+      "group": "manuais-impressao",
+      "status": "cleared",
+      "rightsHolder": "Luigi Scofano de Araujo; direitos das fontes preservados",
+      "license": "Documentação do acervo; sem nova licença aberta para as artes.",
+      "permissionEvidence": "docs/manuais-visuais-impressao/README.md; docs/recursos/declaracao-autoria.md"
+    },
+    {
+      "path": "docs/manuais-visuais-impressao/png/10-refugio.png",
+      "sha256": "2ada4a2e70c1a21bfa7e5d8e82091304da3267fd885b1d61a600e1c0ff3eb450",
+      "group": "manuais-impressao",
+      "status": "cleared",
+      "rightsHolder": "Luigi Scofano de Araujo; direitos das fontes preservados",
+      "license": "Documentação do acervo; sem nova licença aberta para as artes.",
+      "permissionEvidence": "docs/manuais-visuais-impressao/README.md; docs/recursos/declaracao-autoria.md"
+    },
+    {
+      "path": "docs/manuais-visuais-impressao/png/11-mirante.png",
+      "sha256": "0fd87a61db22748d30e4c649e0e3afd99a4248ea0c5baf47ba1f9351dc428ae1",
+      "group": "manuais-impressao",
+      "status": "cleared",
+      "rightsHolder": "Luigi Scofano de Araujo; direitos das fontes preservados",
+      "license": "Documentação do acervo; sem nova licença aberta para as artes.",
+      "permissionEvidence": "docs/manuais-visuais-impressao/README.md; docs/recursos/declaracao-autoria.md"
+    },
+    {
+      "path": "docs/manuais-visuais-impressao/png/12-renovo.png",
+      "sha256": "cc53c09cf475d9281c1689e0c1970bf29fb4edbd75c2c164b67059e8eeb5c425",
+      "group": "manuais-impressao",
+      "status": "cleared",
+      "rightsHolder": "Luigi Scofano de Araujo; direitos das fontes preservados",
+      "license": "Documentação do acervo; sem nova licença aberta para as artes.",
+      "permissionEvidence": "docs/manuais-visuais-impressao/README.md; docs/recursos/declaracao-autoria.md"
+    },
+    {
+      "path": "docs/manuais-visuais-impressao/png/13-desvio.png",
+      "sha256": "56ea2ac095fd85b7a2ea62a24b616a3b4e57d8380370e57819e78bf123278221",
+      "group": "manuais-impressao",
+      "status": "cleared",
+      "rightsHolder": "Luigi Scofano de Araujo; direitos das fontes preservados",
+      "license": "Documentação do acervo; sem nova licença aberta para as artes.",
+      "permissionEvidence": "docs/manuais-visuais-impressao/README.md; docs/recursos/declaracao-autoria.md"
+    },
+    {
+      "path": "docs/manuais-visuais-impressao/png/14-broto.png",
+      "sha256": "70fdf1d06db7d0abaea82da7f0a68e6f8c024e8b9659413708d69d7c77844283",
+      "group": "manuais-impressao",
+      "status": "cleared",
+      "rightsHolder": "Luigi Scofano de Araujo; direitos das fontes preservados",
+      "license": "Documentação do acervo; sem nova licença aberta para as artes.",
+      "permissionEvidence": "docs/manuais-visuais-impressao/README.md; docs/recursos/declaracao-autoria.md"
+    },
+    {
+      "path": "docs/manuais-visuais-impressao/png/15-cerco.png",
+      "sha256": "2440859e54fa3b86991b64af0b06e209c0985eac90d66ff9530f6ae0556d7561",
+      "group": "manuais-impressao",
+      "status": "cleared",
+      "rightsHolder": "Luigi Scofano de Araujo; direitos das fontes preservados",
+      "license": "Documentação do acervo; sem nova licença aberta para as artes.",
+      "permissionEvidence": "docs/manuais-visuais-impressao/README.md; docs/recursos/declaracao-autoria.md"
+    },
+    {
+      "path": "docs/manuais-visuais-impressao/png/16-mosaico.png",
+      "sha256": "779f22798f884af79b20b76cda92755f30b33a1fb30a1213454ae27410456869",
+      "group": "manuais-impressao",
+      "status": "cleared",
+      "rightsHolder": "Luigi Scofano de Araujo; direitos das fontes preservados",
+      "license": "Documentação do acervo; sem nova licença aberta para as artes.",
+      "permissionEvidence": "docs/manuais-visuais-impressao/README.md; docs/recursos/declaracao-autoria.md"
+    },
+    {
+      "path": "docs/manuais-visuais-impressao/png/17-quinhao.png",
+      "sha256": "b508fb3f416916cb8f34f7bbac7e07467baf9505613bf7e32fea86f0499060af",
+      "group": "manuais-impressao",
+      "status": "cleared",
+      "rightsHolder": "Luigi Scofano de Araujo; direitos das fontes preservados",
+      "license": "Documentação do acervo; sem nova licença aberta para as artes.",
+      "permissionEvidence": "docs/manuais-visuais-impressao/README.md; docs/recursos/declaracao-autoria.md"
+    },
+    {
+      "path": "docs/manuais-visuais-impressao/png/18-estalo.png",
+      "sha256": "2c9971af9e1d7b75ff79db4502d41018aee56045ac35ef87b5c432ea1a8a8673",
+      "group": "manuais-impressao",
+      "status": "cleared",
+      "rightsHolder": "Luigi Scofano de Araujo; direitos das fontes preservados",
+      "license": "Documentação do acervo; sem nova licença aberta para as artes.",
+      "permissionEvidence": "docs/manuais-visuais-impressao/README.md; docs/recursos/declaracao-autoria.md"
+    },
+    {
+      "path": "docs/manuais-visuais-impressao/png/19-acorde.png",
+      "sha256": "1a6a1f171c0fd9533edd11e53e510477363064652b8a110d17f358d1ea5054f8",
+      "group": "manuais-impressao",
+      "status": "cleared",
+      "rightsHolder": "Luigi Scofano de Araujo; direitos das fontes preservados",
+      "license": "Documentação do acervo; sem nova licença aberta para as artes.",
+      "permissionEvidence": "docs/manuais-visuais-impressao/README.md; docs/recursos/declaracao-autoria.md"
     }
   ],
   "rightsReview": {
