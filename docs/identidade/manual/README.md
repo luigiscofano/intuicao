@@ -6,16 +6,16 @@
 
 ## Escopo e edição
 
-Edição de **16/11/2026, 44 páginas**. Documenta o acervo real da marca: logo atual, ícone aprovado do futuro aplicativo, paleta, tipografia, azulejos, 15 mascotes nas quatro apresentações (frente/lado, verde sobre branco/branco sobre verde), 16 sprites do roster atual de Sintonia, versões de animações legadas (explicitamente rotuladas), 33 acessórios, folhas, flores, frutos, seis AIIJs da base consultada e onze novas aprovadas, pictogramas de navegação/controle e 74 desenhos de conquistas.
+Edição de **16/11/2026, 45 páginas**. Documenta o acervo real da marca: logo atual, ícone aprovado do futuro aplicativo, paleta, tipografia, azulejos, 15 mascotes nas quatro apresentações (frente/lado, verde sobre branco/branco sobre verde), 16 sprites do roster atual de Sintonia, versões de animações legadas (explicitamente rotuladas), 33 acessórios, folhas, flores, frutos, seis AIIJs da base consultada e treze novas aprovadas, pictogramas de navegação/controle e 74 desenhos de conquistas.
 
-Inclui quatro capturas reais: biblioteca, Refúgio, Renovo e Sintonia, sem ponteiro e sem dados pessoais de jogador. A edição diferencia recursos atuais, acervo histórico e propostas futuras. Não é prova de integração da nova coleção completa de AIIJs. As onze novas AIIJs aprovadas têm seção própria: oito integradas no PR #136 e três integradas no PR #138 (1f774de9). Sintonia e Estalo continuam em revisão. Não se declara a coleção definitiva completa nem publicação no site sem verificação.
+Inclui quatro capturas reais: biblioteca, Refúgio, Renovo e Sintonia, sem ponteiro e sem dados pessoais de jogador. A edição diferencia recursos atuais, acervo histórico e propostas futuras. A coleção das 19 AIIJs está aprovada e integrada no GitHub: seis preservadas, oito novas no PR #136, três no PR #138, Sintonia A conceitual no PR #141 e Estalo A abstrata no PR #142. A implantação pública das últimas artes não é certificada por este documento.
 
 ## Revisão solicitada pelo titular
 
 - Removida somente a página visual “A prancha de sprites original”, indicada no comentário. O asset de origem do site não foi removido.
 - “Quadros e variações” identifica claramente as animações legadas.
 - Mantido o roster ativo de Sintonia: `animal-roster.mjs` → `assets/chibi-user-roster.svg`, 4 × 4, 16 animais incluindo Quati.
-- Acrescentadas onze novas AIIJs aprovadas; as duas pendentes não são apresentadas como finais.
+- Acrescentadas treze novas AIIJs aprovadas; coleção completa com os 19 jogos, sem usar prévias descartadas.
 
 ## Origem e fidelidade
 
@@ -47,7 +47,7 @@ O HTML utiliza fontes locais do repositório, Literata e Source Sans 3. Não pre
 
 ## Validação
 
-PDF A4 com 44 páginas. Páginas renderizadas e inspecionadas; verificação de limites de texto, numeração, imagens e contraste. As capturas não contêm cursor nem dados pessoais de jogador. Recursos gráficos e código do site não foram alterados por este documento.
+PDF A4 com 45 páginas. Páginas renderizadas e inspecionadas; verificação de limites de texto, numeração, imagens e contraste. As capturas não contêm cursor nem dados pessoais de jogador. Recursos gráficos e código do site não foram alterados por este documento.
 
 ## Direitos
 

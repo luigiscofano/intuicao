@@ -108,3 +108,11 @@ Quando a mudança é visual, valide entrada no jogo, leitura das regras, intera�
 
 - [dist/CONTROLES-DIRETOS.md](../../../dist/CONTROLES-DIRETOS.md)
 - [dist/INTERACAO-DIRETA-MATRIZ.md](../../../dist/INTERACAO-DIRETA-MATRIZ.md)
+
+## AIIJ aprovada
+
+[![Arte de Ilustração Individual de DESVIO](../../../dist/assets/desvio-aiij.svg)](../../../dist/assets/desvio-aiij.svg)
+
+Arquivo real aprovado, preservado em sua proporção original e com transparência. Esta ilustração pertence à identidade do jogo; não altera regras, controles, peças nem progresso. Não usar como miniatura do tabuleiro.
+
+[Ver as 19 AIIJs e orientações de uso](../../identidade/aiij/README.md).

@@ -124,3 +124,11 @@ Quando a mudança é visual, valide entrada no jogo, leitura das regras, intera�
 
 - [dist/PACTO80-VALIDACAO.md](../../../dist/PACTO80-VALIDACAO.md)
 - [dist/QA-PACTO-HACHURAS.md](../../../dist/QA-PACTO-HACHURAS.md)
+
+## AIIJ aprovada
+
+[![Arte de Ilustração Individual de PACTO](../../../dist/platform-assets/pacto-aiij-aprovada.svg)](../../../dist/platform-assets/pacto-aiij-aprovada.svg)
+
+Arquivo real aprovado, preservado em sua proporção original e com transparência. Esta ilustração pertence à identidade do jogo; não altera regras, controles, peças nem progresso. Não usar como miniatura do tabuleiro.
+
+[Ver as 19 AIIJs e orientações de uso](../../identidade/aiij/README.md).
