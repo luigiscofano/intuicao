@@ -1,0 +1,15 @@
+/* Feedback aprovado: sobreposição sem reflow, sem bloquear controles ou o tabuleiro. */
+.level-feedback-layer { position: fixed; z-index: 40; display: grid; place-items: center; box-sizing: border-box; pointer-events: none; border-radius: 10px; overflow: hidden; contain: layout paint; }
+.level-feedback-victory { background: #f8f9f2a6; }
+.level-feedback-card { box-sizing: border-box; width: min(78%, 380px); max-height: 95%; display: grid; justify-items: center; gap: 8px; padding: clamp(10px, 2vw, 24px); border: 1px solid #aab99c; border-radius: 10px; color: #244b63; background: #fffef6fa; box-shadow: 0 8px 28px #244b6312; }
+.level-feedback-card .victory-tiles { width: clamp(54px, 11vw, 112px); height: clamp(54px, 11vw, 112px); }
+.level-feedback-card strong { font-family: var(--font-title, Georgia, serif); font-size: clamp(24px, 4vw, 42px); line-height: 1.1; font-weight: 600; }
+.level-feedback-card > span { font-family: var(--font-ui, sans-serif); color: #39654c; font-size: clamp(14px, 1.8vw, 20px); line-height: 1.2; }
+.level-feedback-error { border: 3px solid #a7453d; box-shadow: inset 0 0 0 1px #fffaf2; }
+.level-feedback-announcement { position: absolute; width: 1px; height: 1px; padding: 0; margin: -1px; overflow: hidden; clip-path: inset(50%); white-space: nowrap; }
+@media (prefers-reduced-motion: no-preference) {
+  html:not([data-ui-reduced-motion='true']) .level-feedback-victory:not(.level-feedback-static) .level-feedback-card { animation: level-feedback-arrive 280ms ease-out both; }
+}
+@keyframes level-feedback-arrive { from { opacity: .92; translate: 0 10px; } to { opacity: 1; translate: 0 0; } }
+@media (prefers-reduced-motion: reduce) { .level-feedback-layer *, .level-feedback-layer { animation: none !important; transition: none !important; } }
+html[data-ui-reduced-motion='true'] .level-feedback-layer *, .level-feedback-static * { animation: none !important; transition: none !important; }

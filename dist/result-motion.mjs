@@ -1,3 +1,4 @@
+import { createLevelFeedback, LEVEL_FEEDBACK_GAMES } from './level-feedback.mjs';
 import { LOGIC_GAMES } from './logica/metadata.mjs';
 // Ciclo das animações de resultado e limpeza dos efeitos ao trocar de partida.
 import { gameVictoryMarkup } from './game-victory.mjs';
@@ -162,11 +163,13 @@ export function createResultMotion(
   clock = globalThis,
   { onRetry, getVictoryState } = {},
 ) {
+  const levelFeedback = createLevelFeedback(surface, clock);
   let serial = 0,
     timer = null;
   const stop = () => {
     if (timer !== null) clock.clearTimeout(timer);
     timer = null;
+    levelFeedback.clear();
     surface.classList.remove('result-failure');
     surface.classList.remove('result-success');
   };
@@ -194,6 +197,7 @@ export function createResultMotion(
       }
       stop();
       const token = ++serial;
+      levelFeedback.show(game, success, options);
       host.dataset.state = 'result';
       host.dataset.outcome = success ? 'win' : 'loss';
       host.dataset.attempt = String(serial);
@@ -218,7 +222,7 @@ export function createResultMotion(
           surface.classList.remove('result-success');
           timer = null;
         }, 1100);
-      } else if (!success) {
+      } else if (!success && !LEVEL_FEEDBACK_GAMES.includes(game)) {
         // Força um novo ciclo CSS inclusive em confirmações muito próximas.
         void surface.offsetWidth;
         surface.classList.add('result-failure');
