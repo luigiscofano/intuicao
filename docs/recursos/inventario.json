@@ -179,6 +179,12 @@
         "docs/identidade/aiij-oito-aprovadas.md"
       ],
       "source": "Oito composições vetoriais originais em código aprovadas por Luigi em 16/11/2026."
+    },
+    "aiij-tres-aprovadas-20261116": {
+      "evidence": [
+        "docs/identidade/aiij-prumo-pacto-quinhao.md"
+      ],
+      "source": "Composições vetoriais das opções A aprovadas por Luigi; Quinhão reutiliza a arte de frutos atual autorizada."
     }
   },
   "assets": [
@@ -3903,6 +3909,36 @@
       "rightsHolder": "Luigi Scofano de Araujo",
       "license": "Direitos reservados; recursos visuais excluídos da licença MIT do código.",
       "permissionEvidence": "docs/identidade/aiij-oito-aprovadas.md",
+      "reviewBasis": "owner-approved-original-vector-composition"
+    },
+    {
+      "path": "dist/platform-assets/prumo-aiij-aprovada.svg",
+      "sha256": "58ac7896f9d5e4fb12b98d186e2a858370b21251ed0e4f5fdc8aac4a89dd3a19",
+      "group": "aiij-tres-aprovadas-20261116",
+      "status": "cleared",
+      "rightsHolder": "Luigi Scofano de Araujo",
+      "license": "Direitos reservados; recursos visuais excluídos da licença MIT do código.",
+      "permissionEvidence": "docs/identidade/aiij-prumo-pacto-quinhao.md",
+      "reviewBasis": "owner-approved-original-vector-composition"
+    },
+    {
+      "path": "dist/platform-assets/pacto-aiij-aprovada.svg",
+      "sha256": "68a78e95ac66cea2ef03fd36b70ed0311660fc8f8ef6b6d438d3b8c4c2fe9b2d",
+      "group": "aiij-tres-aprovadas-20261116",
+      "status": "cleared",
+      "rightsHolder": "Luigi Scofano de Araujo",
+      "license": "Direitos reservados; recursos visuais excluídos da licença MIT do código.",
+      "permissionEvidence": "docs/identidade/aiij-prumo-pacto-quinhao.md",
+      "reviewBasis": "owner-approved-original-vector-composition"
+    },
+    {
+      "path": "dist/platform-assets/quinhao-aiij-aprovada.svg",
+      "sha256": "77808d50e733bfbdc62395c794a1b1765bf585180e2dbbe0135ed384af25612a",
+      "group": "aiij-tres-aprovadas-20261116",
+      "status": "cleared",
+      "rightsHolder": "Luigi Scofano de Araujo",
+      "license": "Direitos reservados; recursos visuais excluídos da licença MIT do código.",
+      "permissionEvidence": "docs/identidade/aiij-prumo-pacto-quinhao.md",
       "reviewBasis": "owner-approved-original-vector-composition"
     }
   ],
