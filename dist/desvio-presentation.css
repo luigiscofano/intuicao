@@ -1,6 +1,5 @@
 /* DESVIO B aprovado: peças de oficina. Escopo local, sem alterar as laterais. */
 .desvio-lab .lab-heading { position: relative; }
-.desvio-aiij { width: 94px; height: 82px; object-fit: contain; flex: 0 0 auto; margin-left: auto; }
 .desvio-lab .board-desvio {
   gap: clamp(6px, 1.6vw, 12px);
   padding: 8px;
@@ -43,5 +42,4 @@
 .desvio-used small { font-size: clamp(9px, 1.5vw, 12px); }
 .desvio-lab #c-turn { color: #244b63; font-weight: 650; }
 .desvio-lab #c-details.desvio-selection-text { color: #244b63; font-size: 13px; line-height: 1.5; }
-@media (max-width: 600px) { .desvio-aiij { width: 64px; height: 56px; } }
 @media (prefers-reduced-motion: reduce) { .desvio-lab .board-desvio .grid-cell { transition: none; } }

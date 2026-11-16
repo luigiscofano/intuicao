@@ -18,7 +18,8 @@ export const APPROVED_GAME_ART = Object.freeze({
   "mirante": "platform-assets/mirante-aiij-a.svg",
   "renovo": "platform-assets/renovo-aiij-c1.svg",
   "pulso": "platform-assets/pulso-aiij-azulejo.svg",
-  "refugio": "platform-assets/refugio-aiij-folhas.svg"
+  "refugio": "platform-assets/refugio-aiij-folhas.svg",
+  "desvio": "assets/desvio-aiij.svg"
 });
 export function updateGameArt(image, gameId) {
   const source = APPROVED_GAME_ART[gameId];
