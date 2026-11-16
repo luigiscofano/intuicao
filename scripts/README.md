@@ -6,7 +6,7 @@
 node scripts/check-docs.mjs
 ```
 
-O verificador usa [docs-manifest.json](docs-manifest.json) e funciona a partir de qualquer diretório. Ele confirma a existência de documentos e destinos de links Markdown locais da documentação nova. Ignora blocos de código e não testa URLs externas, fragmentos de seção, contratos do jogo ou qualidade da escrita.
+O verificador usa [docs-manifest.json](docs-manifest.json) e funciona a partir de qualquer diretório. Ele confirma a existência de documentos e destinos de links Markdown e atributos HTML `src`/`href` locais. Também inclui todos os READMEs e verifica a capitalização exata dos caminhos, mesmo no Windows. Ignora blocos de código e não testa URLs externas, fragmentos de seção, contratos do jogo ou qualidade da escrita.
 
 Ao criar um novo documento mantido por esta organização, inclua seu caminho no manifesto. Relatórios antigos ficam fora deste recorte porque podem depender de caminhos e commits históricos; isso não os declara válidos nem inválidos.
 
@@ -19,3 +19,7 @@ O workflow documental executa este comando em pull requests e em pushes para mai
 `node scripts/check-assets.mjs` verifica cobertura, hashes e campos do inventário. `node scripts/check-assets.mjs --release` também exige declarações/licenças documentadas; deve falhar enquanto houver pendências. O registro de autoria não concede licença aberta às artes. Isso não constitui validação jurídica.
 
 Não existe aqui o runner `scripts/test.mjs` da revisão externa f0e7fcf. Ele só deve ser incorporado junto da revisão real e de seu manifesto.
+
+## Regressão de imagens no GitHub
+
+Execute `node --test tests/doc-links.test.mjs`. O GitHub pode apresentar `.github/README.md` como página inicial: nessa pasta, os arquivos de `dist/` precisam do prefixo `../`. Imagens HTML passam pela mesma validação de caminhos que as imagens Markdown.

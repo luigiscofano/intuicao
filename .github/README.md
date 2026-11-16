@@ -1,4 +1,4 @@
-<p align="center"><img src="dist/platform-assets/intuicao-logo-azulejos.png" alt="Intuição: marca atual com azulejos" width="560"></p>
+<p align="center"><img src="../dist/platform-assets/intuicao-logo-azulejos.png" alt="Intuição: marca atual com azulejos" width="560"></p>
 
 # Intuição
 
@@ -271,7 +271,7 @@ Os valores são referências presentes no código, não uma declaração de que 
 
 Os azulejos combinam peças geométricas e recortes transparentes. Em vez de fundos brancos colados sobre a interface, deixam a superfície aparecer. A geometria se repete na marca e em detalhes para construir continuidade.
 
-<p><img src="dist/platform-assets/tiles/green-tl.png" width="76" alt="Azulejo verde transparente"> <img src="dist/platform-assets/tiles/gold-tl.png" width="76" alt="Azulejo amarelo transparente"> <img src="dist/platform-assets/tiles/blue-br.png" width="76" alt="Azulejo azul transparente"></p>
+<p><img src="../dist/platform-assets/tiles/green-tl.png" width="76" alt="Azulejo verde transparente"> <img src="../dist/platform-assets/tiles/gold-tl.png" width="76" alt="Azulejo amarelo transparente"> <img src="../dist/platform-assets/tiles/blue-br.png" width="76" alt="Azulejo azul transparente"></p>
 
 **AIIJ** significa **Arte de Ilustração Individual do Jogo**. Cada composição introduz o tema sem substituir a leitura das peças. Água e canais em FOZ, folhas em REFÚGIO e crescimento em RENOVO vinculam o desenho ao raciocínio exigido.
 
