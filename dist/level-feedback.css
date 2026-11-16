@@ -13,3 +13,13 @@
 @keyframes level-feedback-arrive { from { opacity: .92; translate: 0 10px; } to { opacity: 1; translate: 0 0; } }
 @media (prefers-reduced-motion: reduce) { .level-feedback-layer *, .level-feedback-layer { animation: none !important; transition: none !important; } }
 html[data-ui-reduced-motion='true'] .level-feedback-layer *, .level-feedback-static * { animation: none !important; transition: none !important; }
+/* A ação surge abaixo da aba, sem reduzir ou deslocar o tabuleiro. */
+.action-sidebar.has-victory-next { margin-bottom: 60px; }
+.action-sidebar > .level-victory-next {
+  position: absolute; top: calc(100% + 12px); left: 0; width: 100%;
+  min-height: 44px; box-sizing: border-box; padding: 10px 14px;
+  border: 1px solid #244b63; border-radius: 7px; background: #244b63;
+  color: #fff; font: 600 15px/1.25 var(--font-ui, sans-serif); cursor: pointer;
+}
+.action-sidebar > .level-victory-next:hover { background: #193b52; }
+.action-sidebar > .level-victory-next:focus-visible { outline: 3px solid #cca034; outline-offset: 3px; }
