@@ -1,3 +1,4 @@
+import { renderTileSignature } from '../../board-signature.mjs';
 const INK = '#30412F', GREEN = '#39674A';
 const esc = value => String(value).replaceAll('&', '&amp;').replaceAll('<', '&lt;').replaceAll('"', '&quot;');
 const text = (x, y, value, size = 19, weight = 500) => `<text x="${x}" y="${y}" text-anchor="middle" dominant-baseline="central" font-family="system-ui,sans-serif" font-size="${size}" font-weight="${weight}" fill="${INK}">${esc(value)}</text>`;
@@ -30,5 +31,6 @@ export function renderBoard(level, state, { selectedTool = 'cycle' } = {}) {
     content.push(`<g class="pulso-cell" ${action} aria-label="${esc(label)}"><title>${esc(label)}</title>${rect(x, y, size, size, '#F8FAF3', '#D5DECB')}${symbol}</g>`);
   }
   content.push(text(width / 2, height - 37, '● batida · × vazia · ponto = indecisa', 18), text(width / 2, height - 13, 'Pino = pista fixa', 17));
+  content.push(renderTileSignature(width - 18, oy - 20, 14), renderTileSignature(5, oy + level.rows * step - 12));
   return `<div class="pulso-board-wrap"><svg class="pulso-board pulso-cols-${level.cols}" xmlns="http://www.w3.org/2000/svg" width="100%" viewBox="0 0 ${width} ${height}" role="group" aria-label="PULSO, ${level.rows} linhas por ${level.cols} colunas. Três batidas igualmente espaçadas em cada linha.">${content.join('')}</svg></div>`;
 }

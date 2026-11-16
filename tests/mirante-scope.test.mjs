@@ -87,6 +87,10 @@ test('interface atual preserva controles e arte do MIRANTE sem congelar a casca 
  // A coesão não recebe autorização para reescrever motor, catálogo, arte ou interação do jogo.
  for (const file of ['engine.mjs', 'campaign.mjs', 'index.mjs', 'view.mjs', 'view.css', 'art.mjs']) {
    const path = `dist/logica/games/mirante/${file}`;
-   assert.equal(read(path).trimEnd(), git('show', `${miranteRelease}:${path}`).trimEnd(), path);
+   // Desconta apenas a assinatura decorativa aprovada posteriormente.
+   const source = read(path)
+     .replace("import { renderTileSignature } from '../../board-signature.mjs';\n", '')
+     .replace('  content.push(renderTileSignature(ox + boardWidth + 18, oy - 30), renderTileSignature(ox - 40, oy + boardHeight + 12));\n', '');
+   assert.equal(source.trimEnd(), git('show', `${miranteRelease}:${path}`).trimEnd(), path);
  }
 });
