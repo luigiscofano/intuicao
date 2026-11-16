@@ -101,6 +101,8 @@ Os azulejos combinam peças geométricas e recortes transparentes. Em vez de fun
 
 São **artes reais versionadas**, não capturas de uma página nem promessas de novos recursos. Os 15 mascotes têm referências e sprites próprios; consulte o [catálogo de fauna](docs/sintonia-sprites/README.md) e a [proveniência dos recursos](docs/recursos/README.md). Preservar silhueta e proporção é mais importante que redesenhar um animal a cada tela.
 
+Os cinco tabuleiros de Raciocínio lógico compartilham a assinatura de azulejos nos cantos superior direito e inferior esquerdo, integrada em 16/11/2026. [Escopo e verificações](docs/qualidade/assinaturas-tabuleiros.md).
+
 ### Tipografia
 
 O sistema aprovado combina **Literata** nos títulos e **Source Sans 3** na interface. Ambas são carregadas de arquivos locais WOFF2. A marca permanece imagem, sem reconstrução improvisada do lettering. Números tabulares ajudam placares e contadores a manter estabilidade visual.
