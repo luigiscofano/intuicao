@@ -85,6 +85,7 @@ class Node {
       node,
     );
   }
+  removeAttribute(name) { delete this.attrs[name]; }
   getAttribute(name) { return this.attrs[name] ?? null; }
   setAttribute(name, value) {
     this.attrs[name] = value;
@@ -379,6 +380,7 @@ test("presentation module only reads visual preference, without progress writes,
     ...source.matchAll(/^import .* from ['"]([^'"]+)['"]/gm),
   ].map((match) => match[1]);
   assert.deepEqual(imports, [
+    "./game-aiij.mjs",
     "./game-catalog.mjs",
     "./versus-player-layout.mjs",
     "./action-sidebar.mjs",
