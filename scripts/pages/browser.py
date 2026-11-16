@@ -23,8 +23,32 @@ for games, start, board in [
     SCREENS.update({game: (start, board) for game in games.split()})
 
 def capture(page, path):
+    page.mouse.move(0, 0)
     page.evaluate("document.fonts.ready")
     page.evaluate("Promise.all([...document.images].filter(i=>i.currentSrc).map(i=>i.decode().catch(()=>{})))")
+    # Aguarde o enquadramento por rAF usado pelo próprio jogo. Registre a posição
+    # natural e use a mesma âncora de rolagem nas duas origens para comparar pixels.
+    geometry = page.evaluate("""async (board) => {
+      const anchor = board ? document.querySelector('.approved-game-section:not([hidden]) .approved-game-heading') : null;
+      function rect() {
+        const r = anchor?.getBoundingClientRect();
+        return [scrollY, r ? r.top + scrollY : 0, document.documentElement.scrollHeight];
+      }
+      const frame = () => new Promise(resolve => requestAnimationFrame(resolve));
+      let last = '', steady = 0;
+      for (let i = 0; i < 120 && steady < 12; i++) {
+        await frame();
+        const signature = JSON.stringify(rect());
+        steady = signature === last ? steady + 1 : 0;
+        last = signature;
+      }
+      const natural = rect();
+      if (anchor) scrollTo({top: Math.max(0, natural[1]-24), behavior:'instant'});
+      else scrollTo({top:0, behavior:'instant'});
+      await frame(); await frame();
+      return {natural, comparison:rect()};
+    }""", path.stem.endswith("-jogo"))
+    path.with_suffix(".json").write_text(json.dumps(geometry))
     page.screenshot(path=path, animations="disabled")
 
 def new_context(browser, width, height):
@@ -82,6 +106,21 @@ def check_site(browser, base, out, label):
             page.goto(urljoin(base, "?screen=achievements"))
             page.locator("#achievements").wait_for()
             capture(page, path / "conquistas.png")
+            if label == "pages" and width == 1280:
+                for alias, category in [("trama","versus"), ("vertice","versus"),
+                                        ("orbita","logica"), ("divisa","logica"),
+                                        ("enlace","versus"), ("lastro","versus"),
+                                        ("dobra","versus"), ("vazante","versus")]:
+                    page.goto(urljoin(base, alias + "/"))
+                    page.locator(f'[data-category="{category}"][aria-pressed="true"]').wait_for()
+                page.goto(base)
+                page.locator('[data-game="light"]').click()
+                page.locator(".level-tile:visible").first.wait_for()
+                page.go_back()
+                page.locator("#favorites-edit").wait_for()
+                page.go_forward()
+                page.reload()
+                page.locator(".level-tile:visible").first.wait_for()
     if errors:
         raise AssertionError("\n".join(sorted(set(errors))))
 
