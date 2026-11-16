@@ -28,6 +28,15 @@ export function initMascotsDialog(doc = document) {
   trigger.setAttribute('aria-controls', 'mascots-dialog');
   about.querySelector('.about-actions').prepend(trigger);
 
+  const catalog = doc.getElementById('library-filters');
+  const catalogTrigger = doc.createElement('button');
+  catalogTrigger.type = 'button';
+  catalogTrigger.id = 'catalog-mascots-open';
+  catalogTrigger.textContent = 'Conheça os mascotes';
+  catalogTrigger.setAttribute('aria-haspopup', 'dialog');
+  catalogTrigger.setAttribute('aria-controls', 'mascots-dialog');
+  catalog?.append(catalogTrigger);
+
   const dialog = doc.createElement('dialog');
   dialog.id = 'mascots-dialog';
   dialog.setAttribute('aria-labelledby', 'mascots-title');
@@ -50,13 +59,22 @@ export function initMascotsDialog(doc = document) {
   doc.body.append(dialog);
 
   let priorOverflow = '';
-  trigger.addEventListener('click', () => {
+  let returnTrigger = trigger;
+  function openFrom(button) {
+    if (dialog.open) return;
+    returnTrigger = button;
+    const fromCatalog = button === catalogTrigger;
+    dialog.querySelector('header [data-mascots-close]').setAttribute('aria-label', 'Fechar mascotes');
+    dialog.querySelector('footer [data-mascots-close]').textContent = fromCatalog ? 'Voltar aos jogos' : 'Voltar ao projeto';
     priorOverflow = doc.body.style.overflow;
     doc.body.style.overflow = 'hidden';
     dialog.showModal();
     dialog.scrollTop = 0;
     dialog.querySelector('h2').focus({ preventScroll: true });
-  });
+  }
+  // Cada entrada retorna ao próprio gatilho, inclusive quando Sobre permanece aberto.
+  trigger.addEventListener('click', () => openFrom(trigger));
+  catalogTrigger.addEventListener('click', () => openFrom(catalogTrigger));
   dialog.querySelectorAll('[data-mascots-close]').forEach(button => {
     button.addEventListener('click', () => dialog.close());
   });
@@ -67,7 +85,7 @@ export function initMascotsDialog(doc = document) {
   });
   dialog.addEventListener('close', () => {
     doc.body.style.overflow = priorOverflow;
-    trigger.focus({ preventScroll: true });
+    returnTrigger.focus({ preventScroll: true });
   });
   // O diálogo nativo mantém os anteriores inertes; o ciclo evita foco no navegador.
   dialog.addEventListener('keydown', event => {
