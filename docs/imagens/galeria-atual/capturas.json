@@ -65,7 +65,10 @@
       "nome": "PULSO",
       "arquivo": "pulso.png",
       "validada": true,
-      "sha256": "99b588b25fb5201158d99314fec7e2d7fad3dfe46a458566d17615ec5bac5fc9"
+      "sha256": "5a124ef3bd5adb02e1fb5098b5e30f9bc2de3e01d2412dc567ac5606b0b17086",
+      "sourceCommit": "b1e5b5903ab7f16cc8252131261fc2827c1d3777",
+      "capturadoEm": "2026-11-16T05:22:57.975Z",
+      "estado": "Fase 1, visual Normal selecionado pelo controle real, perfil isolado"
     },
     {
       "id": "foz",
