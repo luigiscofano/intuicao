@@ -1,5 +1,7 @@
 # Família de seis jogos lógicos
 
+> Estado atual: cinco jogos ativos nesta família: Pulso, Foz, Refúgio, Mirante e Renovo. Divisa continua no código por preservação histórica. As referências a seis implementações abaixo incluem esse arquivo histórico.
+
 Esta pasta contém DIVISA, PULSO, FOZ, REFÚGIO, MIRANTE e RENOVO: seis campanhas de 80 fases, sob uma interface comum. Não inclui LAÇO nem RODÍZIO. [Regras, galeria e funcionamento para o jogador](../../docs/logica/README.md).
 
 ## Arquitetura

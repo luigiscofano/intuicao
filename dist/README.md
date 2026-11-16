@@ -52,6 +52,6 @@ Reflexos e Corte certo usam módulos no nível superior. ELO e PRUMO compartilha
 
 ## Catálogo e histórico
 
-O catálogo ativo tem 11 jogos: oito campanhas de 80 fases e três jogos Versus. Módulos e documentos com nomes de versões antigas continuam necessários para rastreabilidade e, em alguns casos, compatibilidade de saves. Não selecionar o catálogo somente por seu nome ou maior número de versão; acompanhe os imports da rota.
+O catálogo ativo tem 19 jogos: 12 campanhas e sete Versus. Módulos e documentos com nomes de versões antigas continuam necessários para rastreabilidade e, em alguns casos, compatibilidade de saves. Não selecionar o catálogo somente por seu nome ou maior número de versão; acompanhe os imports da rota.
 
 Este README substitui a antiga mistura de notas de entrega. O conteúdo anterior permanece no histórico Git: `git show 2354a3c:dist/README.md`. O [README principal](../README.md) apresenta o estado consolidado, sem tratar contagens históricas como atuais.

@@ -1,3 +1,4 @@
+import { showNextLevelAction } from './level-next-action.mjs';
 // O mosaico desta camada segue a prévia aprovada sem alterar a arte dos resultados existentes.
 function approvedVictoryTilesMarkup() {
   const pieces = [
@@ -91,7 +92,10 @@ export function createLevelFeedback(surface, clock = globalThis) {
         { translate: '-3px 0' }, { translate: '2px 0' }, { translate: '0 0' },
       ], { duration: LEVEL_FEEDBACK_DURATION.shake, iterations: 1, easing: 'ease-out' });
     }
-    timer = clock.setTimeout(clear, success ? LEVEL_FEEDBACK_DURATION.victory : LEVEL_FEEDBACK_DURATION.error);
+    timer = clock.setTimeout(() => {
+      clear();
+      if (success) dispose = showNextLevelAction(surface, game);
+    }, success ? LEVEL_FEEDBACK_DURATION.victory : LEVEL_FEEDBACK_DURATION.error);
   }
   return { show, clear };
 }
