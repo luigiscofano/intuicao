@@ -120,11 +120,16 @@ def check_backup(browser, source, target):
         with new.expect_download() as recovery:
             new.locator("[data-backup-recovery]").click()
         recovery.value.save_as(Path(tmp) / "recuperacao.json")
+        # Leia os bytes restaurados antes de o jogo atualizar o indicador da tela ativa.
+        new.add_init_script("window.registrosAoCarregar = {...localStorage}")
         new.locator("[data-backup-confirm]").check()
         with new.expect_navigation():
             new.locator("[data-backup-apply]").click()
         for key, raw in records.items():
-            assert new.evaluate("key => localStorage.getItem(key)", key) == raw, key
+            assert new.evaluate("key => window.registrosAoCarregar[key]", key) == raw, key
+        restored = new.evaluate("JSON.parse(localStorage.getItem('intuicao.broto.v1'))")
+        original = json.loads(records["intuicao.broto.v1"])
+        assert restored["state"] == original["state"] and restored["mode"] == original["mode"]
         assert "1 / 80" in new.locator('[data-game="light"]').inner_text()
         new.goto(urljoin(target, "?game=broto"))
         new.locator("#b-resume").click()
@@ -147,7 +152,8 @@ def compare(out):
             metrics[str(name)] = {"total": a.width*a.height, "acima_de_8": sum(histogram[9:]),
                                   "caixa": diff.getbbox()}
     (out / "diferencas.json").write_text(json.dumps(metrics, indent=2))
-    print("Comparação visual disponível em diferencas.json; diferenças exigem inspeção.")
+    for name, result in sorted(metrics.items(), key=lambda item: -item[1]["acima_de_8"]):
+        print(f'Imagem {name}: {result["acima_de_8"]}/{result["total"]} pixels com diferença de luminância > 8; caixa {result["caixa"]}')
 
 if __name__ == "__main__":
     parser = argparse.ArgumentParser(description=__doc__)
@@ -160,7 +166,7 @@ if __name__ == "__main__":
         if args.reference:
             check_site(browser, args.reference, args.evidencias, "referencia")
         check_site(browser, args.site, args.evidencias, "pages")
-        check_backup(browser, args.reference or args.site, args.site)
         if args.reference:
             compare(args.evidencias)
+        check_backup(browser, args.reference or args.site, args.site)
         browser.close()

@@ -95,6 +95,8 @@ jobs:
       - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
         with:
           persist-credentials: false
+      - name: Conferir por SHA-256 os arquivos no endereço público
+        run: python3 scripts/pages/verify_http.py https://luigiscofano.github.io/intuicao/
       - name: Abrir a publicação real sem autenticação
         run: |
           python3 -m venv "$RUNNER_TEMP/qa"
