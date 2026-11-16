@@ -4747,7 +4747,7 @@
     },
     {
       "path": "dist/platform-assets/intuicao-app-icon.svg",
-      "sha256": "779c022959d7b42cf5e3e8db02a9ee3a9ce2da10e3b10a1d599374ad79b4193b",
+      "sha256": "3482dd083c29471eb723610a8a747f0e5cad2f05db707cf237c3137a5dbdff61",
       "group": "icone-app-futuro",
       "status": "cleared",
       "rightsHolder": "Luigi Scofano de Araujo (elementos autorais do projeto)",
@@ -4757,7 +4757,7 @@
     },
     {
       "path": "dist/platform-assets/intuicao-app-icon-32.png",
-      "sha256": "7580cbbc6faa5e7bee78d20824d5aab74260e45b6bb2084056e05e634b184a37",
+      "sha256": "6c5cad9cbe2b04a774fd5d0a998d49484995e4ae754c7f85d86c30b6bc0a492b",
       "group": "icone-app-futuro",
       "status": "cleared",
       "rightsHolder": "Luigi Scofano de Araujo (elementos autorais do projeto)",
