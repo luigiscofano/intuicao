@@ -3940,6 +3940,105 @@
       "license": "Direitos reservados; recursos visuais excluídos da licença MIT do código.",
       "permissionEvidence": "docs/identidade/aiij-prumo-pacto-quinhao.md",
       "reviewBasis": "owner-approved-original-vector-composition"
+    },
+    {
+      "path": "docs/identidade/manual/assets/aiij-aprovadas/acorde-aiij-aprovada.svg",
+      "sha256": "9a5b431bfef43ccaa642f1171fb5afed911cd511cffab8a9f9f18b097215adfe",
+      "group": "manual-e-capturas",
+      "status": "cleared",
+      "rightsHolder": "Luigi Scofano de Araujo; direitos das fontes preservados",
+      "license": "Documentação do acervo; sem nova licença aberta para as artes.",
+      "permissionEvidence": "docs/identidade/manual/README.md; docs/recursos/declaracao-autoria.md"
+    },
+    {
+      "path": "docs/identidade/manual/assets/aiij-aprovadas/broto-aiij-aprovada.svg",
+      "sha256": "6900455ae8ad07978f50b552b6192d9fa3957b2c7f07f6c640dbce498c90176e",
+      "group": "manual-e-capturas",
+      "status": "cleared",
+      "rightsHolder": "Luigi Scofano de Araujo; direitos das fontes preservados",
+      "license": "Documentação do acervo; sem nova licença aberta para as artes.",
+      "permissionEvidence": "docs/identidade/manual/README.md; docs/recursos/declaracao-autoria.md"
+    },
+    {
+      "path": "docs/identidade/manual/assets/aiij-aprovadas/cerco-aiij-aprovada.svg",
+      "sha256": "a33fc6216d4581f9c44f2b26a2cefa1cfb3c82ea4dc47fe261c29522654bb98e",
+      "group": "manual-e-capturas",
+      "status": "cleared",
+      "rightsHolder": "Luigi Scofano de Araujo; direitos das fontes preservados",
+      "license": "Documentação do acervo; sem nova licença aberta para as artes.",
+      "permissionEvidence": "docs/identidade/manual/README.md; docs/recursos/declaracao-autoria.md"
+    },
+    {
+      "path": "docs/identidade/manual/assets/aiij-aprovadas/cut-aiij-aprovada.svg",
+      "sha256": "2a61e2d84d6dfdfbe3a482dd548cbcb1c035e4930295191613e223da8c1f142e",
+      "group": "manual-e-capturas",
+      "status": "cleared",
+      "rightsHolder": "Luigi Scofano de Araujo; direitos das fontes preservados",
+      "license": "Documentação do acervo; sem nova licença aberta para as artes.",
+      "permissionEvidence": "docs/identidade/manual/README.md; docs/recursos/declaracao-autoria.md"
+    },
+    {
+      "path": "docs/identidade/manual/assets/aiij-aprovadas/elo-aiij-aprovada.svg",
+      "sha256": "278cf754883b0b360e48e41e8f1a7aabee08afd19d4768cab100a43a92d94e08",
+      "group": "manual-e-capturas",
+      "status": "cleared",
+      "rightsHolder": "Luigi Scofano de Araujo; direitos das fontes preservados",
+      "license": "Documentação do acervo; sem nova licença aberta para as artes.",
+      "permissionEvidence": "docs/identidade/manual/README.md; docs/recursos/declaracao-autoria.md"
+    },
+    {
+      "path": "docs/identidade/manual/assets/aiij-aprovadas/light-aiij-aprovada.svg",
+      "sha256": "adeab7576be3181f6130ad21b1c8001dda7575ff5bd38f8ca4c1e23001c1387c",
+      "group": "manual-e-capturas",
+      "status": "cleared",
+      "rightsHolder": "Luigi Scofano de Araujo; direitos das fontes preservados",
+      "license": "Documentação do acervo; sem nova licença aberta para as artes.",
+      "permissionEvidence": "docs/identidade/manual/README.md; docs/recursos/declaracao-autoria.md"
+    },
+    {
+      "path": "docs/identidade/manual/assets/aiij-aprovadas/mosaico-aiij-aprovada.svg",
+      "sha256": "9f109cdd0f5db8018f579c1cfcfba321c02e47175fc66cb4cfde6787ce104c03",
+      "group": "manual-e-capturas",
+      "status": "cleared",
+      "rightsHolder": "Luigi Scofano de Araujo; direitos das fontes preservados",
+      "license": "Documentação do acervo; sem nova licença aberta para as artes.",
+      "permissionEvidence": "docs/identidade/manual/README.md; docs/recursos/declaracao-autoria.md"
+    },
+    {
+      "path": "docs/identidade/manual/assets/aiij-aprovadas/pacto-aiij-aprovada.svg",
+      "sha256": "ba123a34a5dc232091c2925e77baa7805bdbc72962074a209051617147469ba3",
+      "group": "manual-e-capturas",
+      "status": "cleared",
+      "rightsHolder": "Luigi Scofano de Araujo; direitos das fontes preservados",
+      "license": "Documentação do acervo; sem nova licença aberta para as artes.",
+      "permissionEvidence": "docs/identidade/manual/README.md; docs/recursos/declaracao-autoria.md"
+    },
+    {
+      "path": "docs/identidade/manual/assets/aiij-aprovadas/prumo-aiij-aprovada.svg",
+      "sha256": "0b12840f5168978473f9491fdb603252b26c07a6a06035df615ade8280f9a9a4",
+      "group": "manual-e-capturas",
+      "status": "cleared",
+      "rightsHolder": "Luigi Scofano de Araujo; direitos das fontes preservados",
+      "license": "Documentação do acervo; sem nova licença aberta para as artes.",
+      "permissionEvidence": "docs/identidade/manual/README.md; docs/recursos/declaracao-autoria.md"
+    },
+    {
+      "path": "docs/identidade/manual/assets/aiij-aprovadas/quinhao-aiij-aprovada.svg",
+      "sha256": "9edec2df6c17c4a97ab77cfe72538065552cd83313426fb675974751e37965a7",
+      "group": "manual-e-capturas",
+      "status": "cleared",
+      "rightsHolder": "Luigi Scofano de Araujo; direitos das fontes preservados",
+      "license": "Documentação do acervo; sem nova licença aberta para as artes.",
+      "permissionEvidence": "docs/identidade/manual/README.md; docs/recursos/declaracao-autoria.md"
+    },
+    {
+      "path": "docs/identidade/manual/assets/aiij-aprovadas/repasse-aiij-aprovada.svg",
+      "sha256": "61916e878eb31d87d8b1cd65f95a5b984fe381173003e1f06855d1016c4f8c23",
+      "group": "manual-e-capturas",
+      "status": "cleared",
+      "rightsHolder": "Luigi Scofano de Araujo; direitos das fontes preservados",
+      "license": "Documentação do acervo; sem nova licença aberta para as artes.",
+      "permissionEvidence": "docs/identidade/manual/README.md; docs/recursos/declaracao-autoria.md"
     }
   ],
   "rightsReview": {
