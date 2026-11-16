@@ -25,7 +25,26 @@ for games, start, board in [
 def capture(page, path):
     page.mouse.move(0, 0)
     page.evaluate("document.fonts.ready")
-    page.evaluate("Promise.all([...document.images].filter(i=>i.currentSrc).map(i=>i.decode().catch(()=>{})))")
+    # Os atlas de Sintonia são fundos CSS grandes. document.images não os inclui.
+    page.evaluate(r"""async () => {
+      const images = [...document.images].filter(i => i.currentSrc && i.getClientRects().length);
+      const urls = new Set();
+      for (const el of document.querySelectorAll('main *,header *,footer *')) {
+        if (!el.getClientRects().length) continue;
+        for (const pseudo of [null, '::before', '::after']) {
+          const style = getComputedStyle(el, pseudo);
+          for (const property of [style.backgroundImage, style.maskImage]) {
+            for (const match of property.matchAll(/url\(["']?([^"')]+)["']?\)/g)) {
+              if (/^https?:/.test(match[1])) urls.add(match[1]);
+            }
+          }
+        }
+      }
+      for (const url of urls) { const img = new Image(); img.src = url; images.push(img); }
+      await Promise.all(images.map(async img => {
+        try { await img.decode(); } catch { throw Error("Falha ao decodificar " + img.src); }
+      }));
+    }""")
     # Aguarde o enquadramento por rAF usado pelo próprio jogo. Registre a posição
     # natural e use a mesma âncora de rolagem nas duas origens para comparar pixels.
     geometry = page.evaluate("""async (board) => {
