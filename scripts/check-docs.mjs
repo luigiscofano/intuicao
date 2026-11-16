@@ -1,37 +1,40 @@
-// Confere a existência dos documentos e os destinos de seus links locais.
+// Confere Markdown e HTML de todos os READMEs e do manifesto documental.
 import fs from 'node:fs';
 import path from 'node:path';
 import { fileURLToPath } from 'node:url';
-
-// Verifica somente os documentos declarados; relatórios históricos mantêm seu contexto.
+import { extractLocalLinks, exactPathExists } from './doc-links.mjs';
 const root = path.resolve(path.dirname(fileURLToPath(import.meta.url)), '..');
 const manifest = JSON.parse(fs.readFileSync(path.join(root, 'scripts/docs-manifest.json'), 'utf8'));
 const failures = [];
 let links = 0;
-for (const name of manifest.files) {
+function findReadmes(directory, prefix = '') {
+  return fs.readdirSync(directory, { withFileTypes: true }).flatMap(entry => {
+    if (['.git', 'node_modules'].includes(entry.name)) return [];
+    const name = prefix ? `${prefix}/${entry.name}` : entry.name;
+    if (entry.isDirectory()) return findReadmes(path.join(directory, entry.name), name);
+    return /^readme\.md$/i.test(entry.name) ? [name] : [];
+  });
+}
+const documents = [...new Set([...manifest.files, ...findReadmes(root)])];
+for (const name of documents) {
   const absolute = path.resolve(root, name);
-  if (!fs.existsSync(absolute)) {
-    failures.push(`${name}: arquivo ausente`);
-    continue;
-  }
-  const source = fs.readFileSync(absolute, 'utf8');
-  // Blocos de código podem conter exemplos de Markdown que não são links da página.
-  const prose = source.replace(/^```[^\n]*\n[\s\S]*?^```\s*$/gm, '');
-  for (const match of prose.matchAll(/\[[^\]]*\]\(([^)\s]+)\)/g)) {
-    const target = match[1];
-    if (/^[a-z][a-z0-9+.-]*:/i.test(target) || target.startsWith('#')) continue;
-    const relative = decodeURIComponent(target.split('#')[0]);
+  if (!fs.existsSync(absolute)) { failures.push(`${name}: arquivo ausente`); continue; }
+  for (const target of extractLocalLinks(fs.readFileSync(absolute, 'utf8'))) {
+    let relative;
+    try { relative = decodeURIComponent(target.split(/[?#]/)[0]); }
+    catch { failures.push(`${name}: URL inválida: ${target}`); continue; }
     const resolved = path.resolve(path.dirname(absolute), relative);
     links++;
     if (!resolved.startsWith(root + path.sep) && resolved !== root)
       failures.push(`${name}: link fora do repositório: ${target}`);
-    else if (!fs.existsSync(resolved)) failures.push(`${name}: link quebrado: ${target}`);
+    else if (!exactPathExists(root, resolved))
+      failures.push(`${name}: link quebrado ou capitalização incorreta: ${target}`);
   }
 }
 if (failures.length) {
   console.error(failures.join('\n'));
   process.exitCode = 1;
 } else {
-  console.log(`${manifest.files.length} documentos e ${links} links locais verificados.`);
+  console.log(`${documents.length} documentos e ${links} links locais verificados.`);
   console.log('Links externos, fragmentos e correção semântica exigem revisão separada.');
 }
