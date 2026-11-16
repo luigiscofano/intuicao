@@ -53,7 +53,8 @@ test('vitória da campanha não altera palco, não espera timer e não se repete
 });
 test('falha mantém feedback, permite retry imediato uma vez e limpa o ciclo',()=>{
   const r=rig();r.motion.show('light',false);
-  assert.ok(r.classes.has('result-failure'));assert.equal([...r.timers.values()][0].ms,300);
+  // O novo efeito é testado com DOM em level-feedback.test.mjs; não move o palco inteiro.
+  assert.equal(r.classes.has('result-failure'), false);assert.equal(r.timers.size,0);
   r.button.onclick();r.button.onclick();assert.equal(r.retries,1);
   r.motion.clear();assert.equal(r.timers.size,0);assert.equal(r.classes.size,0);assert.equal(r.host.innerHTML,'');
 });
