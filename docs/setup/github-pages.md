@@ -17,7 +17,7 @@ O navegador separa o armazenamento dos dois endereços. O backup existente leva 
 2. Aguarde os checks do PR. O workflow **Publicar Intuição no GitHub Pages** testa motores, inventário, progresso e os 19 jogos no Chromium. Executa os testes de navegador com os arquivos que serão publicados, na rota `/intuicao/`. As capturas e o manifesto SHA-256 ficam nos artefatos de verificação, separados dos arquivos servidos.
 3. Confira os diffs e a revisão testada antes do merge. Em `Settings → Pages → Build and deployment`, a origem é **GitHub Actions**. O push em `main` testa o commit integrado e publica aquele artefato. O job de publicação compara o SHA com a ponta de `main` e serializa as publicações.
 4. Em **Actions → Publicar Intuição no GitHub Pages**, confirme os jobs `validar`, `publicar` e `conferir`. O último abre o endereço externo sem login. Confira o SHA da execução ao investigar qualquer regressão.
-5. Enquanto o Sites existir, marque a opção de comparação manual ou inclua `[comparar-sites]` na descrição inicial do PR para gerar capturas da origem antiga nas mesmas condições e registrar as diferenças de pixels. A publicação habitual funciona independentemente da hospedagem anterior.
+5. Enquanto o Sites existir, marque a opção de comparação manual ou inclua `[comparar-sites]` na descrição inicial do PR para gerar capturas da origem antiga nas mesmas condições e registrar as diferenças de pixels. Na mensagem do commit integrado, o mesmo marcador compara a URL pública com o Sites e testa a transferência entre os dois endereços. A publicação habitual funciona independentemente da hospedagem anterior.
 
 ## Republicar e recuperar
 

@@ -52,7 +52,7 @@ jobs:
         if: always()
         uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02 # v4
         with:
-          name: verificacao-${{ github.sha }}
+          name: verificacao-${{ github.sha }}-${{ github.run_attempt }}
           path: |
             ${{ runner.temp }}/arquivos.sha256
             ${{ runner.temp }}/capturas/
@@ -98,14 +98,20 @@ jobs:
       - name: Conferir por SHA-256 os arquivos no endereço público
         run: python3 scripts/pages/verify_http.py https://luigiscofano.github.io/intuicao/
       - name: Abrir a publicação real sem autenticação
+        env:
+          COMPARAR: ${{ inputs.comparar_sites || contains(github.event.head_commit.message, '[comparar-sites]') }}
         run: |
           python3 -m venv "$RUNNER_TEMP/qa"
-          "$RUNNER_TEMP/qa/bin/pip" -q install playwright==1.62.0
-          "$RUNNER_TEMP/qa/bin/python" scripts/pages/browser.py https://luigiscofano.github.io/intuicao/ "$RUNNER_TEMP/publicado"
+          "$RUNNER_TEMP/qa/bin/pip" -q install playwright==1.62.0 Pillow==13.0.0
+          referencia=()
+          if [[ "$COMPARAR" == true ]]; then
+            referencia=(--reference https://intuicao-luigi-minigames.luigiscofano.chatgpt.site/)
+          fi
+          "$RUNNER_TEMP/qa/bin/python" scripts/pages/browser.py https://luigiscofano.github.io/intuicao/ "$RUNNER_TEMP/publicado" "${referencia[@]}"
       - name: Guardar capturas da publicação
         if: always()
         uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02 # v4
         with:
-          name: publicado-${{ github.sha }}
+          name: publicado-${{ github.sha }}-${{ github.run_attempt }}
           path: ${{ runner.temp }}/publicado/
           retention-days: 14

@@ -96,8 +96,13 @@ def check_site(browser, base, out, label):
             page.on("response", response)
             page.on("requestfailed", lambda req: errors.append(f"{req.failure} {req.url}")
                     if req.failure != "net::ERR_ABORTED" else None)
-            if label == "pages" and "chatgpt.site" not in origin:
-                context.route("**/*.chatgpt.site/**", lambda route: route.abort())
+            if label == "pages":
+                # Na cópia de teste, desligue a origem antiga. No site real, observe
+                # as requisições sem interceptar: interceptação desativa o cache HTTP.
+                if urlsplit(base).hostname == "127.0.0.1":
+                    context.route("**/*.chatgpt.site/**", lambda route: route.abort())
+                page.on("request", lambda req: errors.append(f"Dependência do Sites: {req.url}")
+                        if (urlsplit(req.url).hostname or "").endswith(".chatgpt.site") else None)
             page.goto(base)
             page.locator("#preferences-open").wait_for()
             ids = page.evaluate("""async () => (await import(new URL('game-catalog.mjs', document.baseURI))).ACTIVE_GAME_IDS""")
