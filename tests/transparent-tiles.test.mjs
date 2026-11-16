@@ -27,7 +27,8 @@ test('dez PNGs RGBA de 256 px preservam transparência, bordas e cores', () => {
     blue: '#244b63', green: '#39654c', gold: '#cca034',
     'game-green': '#39674a', 'game-gold': '#cc9f3b',
   };
-  const files = readdirSync(new URL('dist/platform-assets/tiles/', root));
+  // O índice documental não é uma textura; outros arquivos inesperados continuam falhando.
+  const files = readdirSync(new URL('dist/platform-assets/tiles/', root)).filter(file => file !== 'README.md');
   assert.equal(files.length, 10);
 
   for (const file of files) {
