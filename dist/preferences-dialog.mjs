@@ -52,7 +52,7 @@ export function initPreferencesDialog(doc = globalThis.document, win = doc?.defa
       .filter(button => !button.closest('[hidden]'));
     dialog.querySelector('[data-skin-description]').textContent = current.length
       ? 'A escolha usa o controle do jogo aberto e preserva a jogada atual.'
-      : 'Abra Refúgio para escolher entre o visual normal e a identidade própria. Os demais jogos mantêm seu visual atual.';
+      : 'Abra Pulso ou Refúgio para escolher entre o visual normal e a identidade própria. Os demais jogos mantêm seu visual atual.';
     for (const original of current) {
       const button = doc.createElement('button');
       button.type = 'button'; button.textContent = original.textContent;

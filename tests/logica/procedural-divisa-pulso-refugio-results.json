@@ -1,0 +1,149 @@
+{
+  "divisa": {
+    "generated": 960,
+    "worstMs": 39.62,
+    "totalMs": 1836,
+    "bands": [
+      {
+        "difficulty": 0,
+        "distinct": 136,
+        "solutionShapes": 144,
+        "meanUnknown": 3,
+        "campaignOverlaps": 0
+      },
+      {
+        "difficulty": 1,
+        "distinct": 160,
+        "solutionShapes": 156,
+        "meanUnknown": 5,
+        "campaignOverlaps": 0
+      },
+      {
+        "difficulty": 2,
+        "distinct": 160,
+        "solutionShapes": 160,
+        "meanUnknown": 7,
+        "campaignOverlaps": 0
+      },
+      {
+        "difficulty": 3,
+        "distinct": 160,
+        "solutionShapes": 160,
+        "meanUnknown": 9,
+        "campaignOverlaps": 0
+      },
+      {
+        "difficulty": 4,
+        "distinct": 160,
+        "solutionShapes": 160,
+        "meanUnknown": 10.99375,
+        "campaignOverlaps": 0
+      },
+      {
+        "difficulty": 5,
+        "distinct": 160,
+        "solutionShapes": 160,
+        "meanUnknown": 12.925,
+        "campaignOverlaps": 0
+      }
+    ]
+  },
+  "pulso": {
+    "generated": 960,
+    "worstMs": 3.23,
+    "totalMs": 369,
+    "bands": [
+      {
+        "difficulty": 0,
+        "distinct": 160,
+        "solutionShapes": 59,
+        "meanUnknown": 8,
+        "campaignOverlaps": 0
+      },
+      {
+        "difficulty": 1,
+        "distinct": 160,
+        "solutionShapes": 114,
+        "meanUnknown": 11,
+        "campaignOverlaps": 0
+      },
+      {
+        "difficulty": 2,
+        "distinct": 160,
+        "solutionShapes": 158,
+        "meanUnknown": 19,
+        "campaignOverlaps": 0
+      },
+      {
+        "difficulty": 3,
+        "distinct": 160,
+        "solutionShapes": 160,
+        "meanUnknown": 24,
+        "campaignOverlaps": 0
+      },
+      {
+        "difficulty": 4,
+        "distinct": 160,
+        "solutionShapes": 160,
+        "meanUnknown": 36.9125,
+        "campaignOverlaps": 0
+      },
+      {
+        "difficulty": 5,
+        "distinct": 160,
+        "solutionShapes": 160,
+        "meanUnknown": 44.06875,
+        "campaignOverlaps": 0
+      }
+    ]
+  },
+  "refugio": {
+    "generated": 960,
+    "worstMs": 9.26,
+    "totalMs": 1536,
+    "bands": [
+      {
+        "difficulty": 0,
+        "distinct": 159,
+        "solutionShapes": 48,
+        "meanUnknown": 3,
+        "campaignOverlaps": 0
+      },
+      {
+        "difficulty": 1,
+        "distinct": 156,
+        "solutionShapes": 50,
+        "meanUnknown": 4.9625,
+        "campaignOverlaps": 0
+      },
+      {
+        "difficulty": 2,
+        "distinct": 160,
+        "solutionShapes": 88,
+        "meanUnknown": 6.98125,
+        "campaignOverlaps": 0
+      },
+      {
+        "difficulty": 3,
+        "distinct": 160,
+        "solutionShapes": 121,
+        "meanUnknown": 8.99375,
+        "campaignOverlaps": 0
+      },
+      {
+        "difficulty": 4,
+        "distinct": 160,
+        "solutionShapes": 131,
+        "meanUnknown": 11,
+        "campaignOverlaps": 0
+      },
+      {
+        "difficulty": 5,
+        "distinct": 160,
+        "solutionShapes": 127,
+        "meanUnknown": 13,
+        "campaignOverlaps": 0
+      }
+    ]
+  }
+}

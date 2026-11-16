@@ -883,7 +883,8 @@ export function generateRepasse(seed, options = {}) {
     if (!candidate) continue;
     const { level, trace } = candidate,
       signature = level.validation.signature;
-    const repeat = input.recentSignatures.includes(signature),
+    if (input.recentSignatures.includes(signature)) continue;
+    const repeat = false,
       score =
         (repeat ? -1000 : 0) -
         counts[family] * 14 +

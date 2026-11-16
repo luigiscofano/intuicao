@@ -66,10 +66,10 @@ test('normalização preserva resultados próprios e não inventa contas ou prog
   assert.deepEqual(data.learnedMechanics,['walls']);assert.equal(data.events.length,500);assert.equal(data.campaign.completed['s-1'].moves,5);assert.equal(data.lastView.mode,'endless');
 });
 
-test('Endless cresce com interlúdios e mantém teto finito',()=>{
-  assert.equal(endlessOptions(0,0).difficulty,0);assert.equal(endlessOptions(0,8).difficulty,1);
-  assert.equal(endlessOptions(2,4).difficulty,1);assert.equal(endlessOptions(2,5).difficulty,2);
-  assert.equal(endlessOptions(5,1000).difficulty,5);assert.equal(endlessOptions(4,3).animals,2);
+test('Endless mantém a dificuldade escolhida e teto finito',()=>{
+  assert.equal(endlessOptions(0,0).difficulty,0);assert.equal(endlessOptions(0,8).difficulty,0);
+  assert.equal(endlessOptions(2,4).difficulty,2);assert.equal(endlessOptions(2,5).difficulty,2);
+  assert.equal(endlessOptions(5,1000).difficulty,5);assert.equal(endlessOptions(4,3).animals,undefined);
   assert.equal(endlessOptions(1,7,['walls','plate'],Array.from({length:100},(_,i)=>String(i))).recentSignatures.length,24);
 });
 

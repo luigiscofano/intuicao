@@ -28,13 +28,14 @@ test('legacy Endless retains full original definition, seed, version and legal s
  assert.deepEqual(migrated.endless.current,current);assert.equal(restoreOrbitaSession(migrated.endless.current.level,migrated.endless.current.session).restored,true);assert.deepEqual(migrated.endless.recentTopologies,[topologyRecency(level)]);
  assert.doesNotThrow(()=>normalizeOrbitaData({endless:{current:{level:{}}}}));
 });
-test('all Endless bands replay, persist topology history and deterministically avoid consecutive structures',()=>{
+test('all Endless bands replay, persist topology history and deterministically avoid repeated puzzles within the chosen band',()=>{
  for(let difficulty=0;difficulty<=4;difficulty++){
   const signatures=[],families=[],topologies=[];
   for(let i=0;i<18;i++){
    const options=endlessOptions(difficulty,0,signatures,families,topologies),seed=123987+i*1051+difficulty;
    const choice=generateEndless(seed,options);assert.deepEqual(choice,generateEndless(seed,options));assert.equal(choice.generatorVersion,ENDLESS_VERSION);assert.ok(replay(choice.level,choice.level.solution).solved);
-   if(difficulty>=2){assert.ok(choice.topology.intersections>=2);if(i){assert.notEqual(choice.topology.rings,topologies.at(-1).rings);assert.notEqual(choice.topology.intersections,topologies.at(-1).intersections);assert.notEqual(choice.topology.family,topologies.at(-1).family);}}
+   if(difficulty>=2)assert.ok(choice.topology.intersections>=2);
+   assert.equal(choice.level.difficulty,difficulty);assert.ok(!signatures.includes(choice.signature));assert.equal(choice.level.generation.source,'procedural');
    assert.ok(Array.isArray(choice.topology.matrix));signatures.push(choice.signature);families.push(choice.topology.family);topologies.push(choice.topology);
   }
   const reserve=selectFallback(123,{difficulty});assert.equal(reserve.source,'fallback');assert.ok(replay(reserve.level,reserve.level.solution).solved);

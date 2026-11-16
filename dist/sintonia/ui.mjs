@@ -260,26 +260,9 @@ export function normalizeSintoniaData(value) {
   return data;
 }
 
-export function endlessOptions(
-  startDifficulty,
-  solved,
-  learnedMechanics = [],
-  recentSignatures = [],
-  recentFamilies = [],
-) {
-  const base = bounded(startDifficulty, 0, 5),
-    wins = bounded(solved, 0, Number.MAX_SAFE_INTEGER);
-  const rising = Math.min(5, base + Math.floor(wins / 8));
-  const difficulty = Math.max(0, rising - (wins > 0 && wins % 5 === 4 ? 1 : 0));
-  return {
-    difficulty,
-    ...(wins % 4 === 3 ? { animals: 2 } : {}),
-    learnedMechanics: [...new Set(learnedMechanics)],
-    recentSignatures: recentSignatures.slice(-24),
-    recentFamilies: recentFamilies.filter((value) => typeof value === 'string').slice(-24),
-    maxStates: 120000,
-    maxMs: 1600,
-  };
+export function endlessOptions(startDifficulty, solved, learnedMechanics=[], recentSignatures=[], recentFamilies=[]) {
+  const difficulty=bounded(startDifficulty,0,5);
+  return {difficulty,learnedMechanics:[...new Set(learnedMechanics)],recentSignatures:recentSignatures.slice(-24),recentFamilies:recentFamilies.filter(value=>typeof value==='string').slice(-24),maxStates:120000,maxMs:1600};
 }
 
 function relationModel(level) {
@@ -1299,7 +1282,7 @@ export function initSintonia({ hideOtherGames }) {
 
   function endlessControls() {
     const run = data.endless;
-    return `<details class="rules-card endless-settings endless-panel" open><summary>Modo Sem Parar · personalizar modo livre</summary><div class="rules-body"><p>Desafios novos, no seu ritmo. A dificuldade cresce com as conclusões e intercala retomadas mais acessíveis.</p><div class="collection-toolbar endless-options"><label>Dificuldade inicial<select id="s-endless-difficulty">${DIFFICULTIES.map((name, i) => `<option value="${i}" ${i === run.startDifficulty ? 'selected' : ''}>${esc(name)}</option>`).join('')}</select></label><label><input id="s-auto-advance" type="checkbox" ${data.prefs.autoAdvance ? 'checked' : ''}> Avançar automaticamente após concluir</label></div><div class="collection-toolbar"><button id="s-endless-apply">Aplicar opções e gerar</button><button id="s-endless-new">Novo desafio</button></div><p>Novo desafio não conta como vitória. Reiniciar mantém exatamente este desafio.</p><p id="s-generation-status" role="status" aria-live="polite"></p></div></details>`;
+    return `<details class="rules-card endless-settings endless-panel" open><summary>Modo Sem Parar · personalizar modo livre</summary><div class="rules-body"><p>Desafios novos, no seu ritmo. A dificuldade escolhida é mantida; novas mecânicas podem começar com uma apresentação curta.</p><div class="collection-toolbar endless-options"><label>Dificuldade<select id="s-endless-difficulty">${DIFFICULTIES.map((name, i) => `<option value="${i}" ${i === run.startDifficulty ? 'selected' : ''}>${esc(name)}</option>`).join('')}</select></label><label><input id="s-auto-advance" type="checkbox" ${data.prefs.autoAdvance ? 'checked' : ''}> Avançar automaticamente após concluir</label></div><div class="collection-toolbar"><button id="s-endless-apply">Aplicar opções e gerar</button><button id="s-endless-new">Novo desafio</button></div><p>Novo desafio não conta como vitória. Reiniciar mantém exatamente este desafio.</p><p id="s-generation-status" role="status" aria-live="polite"></p></div></details>`;
   }
 
   function bindEndless() {

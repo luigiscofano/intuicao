@@ -1,0 +1,37 @@
+[
+  {
+    "game": "pulso",
+    "ok": true,
+    "seed": 1055977497,
+    "newSeed": 4039646149,
+    "viewport": 390
+  },
+  {
+    "game": "foz",
+    "ok": true,
+    "seed": 1662601620,
+    "newSeed": 642540858,
+    "viewport": 390
+  },
+  {
+    "game": "refugio",
+    "ok": true,
+    "seed": 1664314433,
+    "newSeed": 2832894124,
+    "viewport": 390
+  },
+  {
+    "game": "mirante",
+    "ok": true,
+    "seed": 1967664648,
+    "newSeed": 560631998,
+    "viewport": 390
+  },
+  {
+    "game": "renovo",
+    "ok": true,
+    "seed": 2681142077,
+    "newSeed": 665113753,
+    "viewport": 390
+  }
+]

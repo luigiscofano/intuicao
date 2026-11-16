@@ -19,7 +19,7 @@ test('catalog-version mismatch resets only the current campaign attempt',()=>{
  const fresh=serializeOrbitaSession(newDefinition,restoreOrbitaSession(newDefinition,null));assert.equal(fresh.catalogVersion,3);assert.equal(restoreOrbitaSession(newDefinition,fresh).restored,true);
 });
 test('current campaign and new Endless use only circles, pair maximum two, generator3',()=>{
- assert.equal(CAMPAIGN_VERSION,'orbita-campaign-3');assert.equal(ENDLESS_VERSION,'orbita-generator-3');assert.equal(CAMPAIGN.length,1000);
+ assert.equal(CAMPAIGN_VERSION,'orbita-campaign-3');assert.equal(ENDLESS_VERSION,'orbita-generator-3-procedural-v2');assert.equal(CAMPAIGN.length,1000);
  for(const level of CAMPAIGN.slice(200))assert.ok(isCircularGeneration(level),'campaign '+level.id);
  for(let difficulty=0;difficulty<=4;difficulty++)for(let i=0;i<8;i++){
   const result=generateEndless(9285+difficulty*200+i,{difficulty});assert.equal(result.generatorVersion,ENDLESS_VERSION);assert.equal(result.level.generation.version,3);assert.ok(isCircularGeneration(result.level));assert.ok(replay(result.level,result.level.solution).solved);
@@ -39,7 +39,7 @@ test('persisted active organic run recovers to a new circular seed without losin
  assert.throws(()=>recoverOrbitaEndless(data,{...result,seed:oldSeed},options));assert.deepEqual(data,before);
  const recovered=recoverOrbitaEndless(data,result,options);assert.equal(recovered.originalSeed,oldSeed);assert.equal(recovered.replacementSeed,newSeed);assert.equal(recovered.notice,CIRCULAR_RECOVERY_NOTICE);
  assert.equal(data.endless.solved,6);assert.equal(data.endless.number,7);assert.equal(data.endless.baseSeed,891);assert.deepEqual(data.campaign,before.campaign);assert.deepEqual(data.prefs,before.prefs);
- assert.deepEqual(data.legacyEndlessArchive[0].current,fixture.current);assert.equal(data.legacyEndlessArchive[0].runHistory.baseSeed,before.endless.baseSeed);assert.deepEqual(data.legacyEndlessArchive[0].runHistory.recentSignatures,before.endless.recentSignatures);assert.equal(data.endless.current.session,null);assert.equal(data.endless.current.completed,false);assert.ok(isCircularGeneration(data.endless.current.level));assert.equal(data.endless.current.generatorVersion,'orbita-generator-3');assert.ok(data.endless.recentSignatures.includes('historic-signature'));
+ assert.deepEqual(data.legacyEndlessArchive[0].current,fixture.current);assert.equal(data.legacyEndlessArchive[0].runHistory.baseSeed,before.endless.baseSeed);assert.deepEqual(data.legacyEndlessArchive[0].runHistory.recentSignatures,before.endless.recentSignatures);assert.equal(data.endless.current.session,null);assert.equal(data.endless.current.completed,false);assert.ok(isCircularGeneration(data.endless.current.level));assert.equal(data.endless.current.generatorVersion,ENDLESS_VERSION);assert.ok(data.endless.recentSignatures.includes('historic-signature'));
  const roundtrip=normalizeOrbitaData(JSON.parse(JSON.stringify(data)));assert.deepEqual(roundtrip.legacyEndlessArchive,data.legacyEndlessArchive);assert.deepEqual(roundtrip.endless.current,data.endless.current);assert.equal(roundtrip.endless.current.recovery.notice,CIRCULAR_RECOVERY_NOTICE);
  assert.throws(()=>recoverOrbitaEndless(roundtrip,result,options));assert.equal(roundtrip.legacyEndlessArchive.length,1);
 });

@@ -1,3 +1,4 @@
+import {ENDLESS_VERSION} from '../dist/orbita/endless-v2.mjs';
 import test from 'node:test';
 import assert from 'node:assert/strict';
 import {generateEndless,levelSignature} from '../dist/orbita/generator.mjs';
@@ -11,11 +12,12 @@ test('seeded endless produces complete reproducible nontrivial certified boards 
   const first=generateEndless(seed,options),again=generateEndless(seed,options);
   assert.deepEqual(again,first,'seed '+seed);assert.equal(first.seed,seed);assert.equal(first.level.seed,seed);
   assert.equal(first.level.difficulty,difficulty);assert.equal(validateLevel(first.level).valid,true);assert.equal(isWon(first.level,initialState(first.level)),false);assert.equal(replay(first.level,first.level.solution).solved,true);
-  assert.equal(first.level.validation.signature,first.signature);assert.equal(first.generatorVersion,'orbita-generator-3');
+  assert.equal(first.level.validation.signature,first.signature);assert.equal(first.generatorVersion,ENDLESS_VERSION);
   for(const rule of first.level.specialRules){if(rule.kind==='sensor')assert.ok(difficulty>=3);if(['gear','step'].includes(rule.kind))assert.ok(difficulty>=3);}
   signatures.add(first.signature);families.add(first.level.family);
  }
- assert.ok(signatures.size>=56);assert.ok(families.size>=7);
+ assert.ok(signatures.size>=56);assert.ok(families.size>=3); // analytic circle networks: lens, chain, triangle/circuit/satellites
+ assert.ok([...families].every(f=>['lens','chain','triangle','circuit','satellites','mesh'].includes(f)));
 });
 
 test('recent-signature rejection changes the actual puzzle, not merely its title or seed',()=>{

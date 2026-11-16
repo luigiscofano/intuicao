@@ -426,23 +426,16 @@ export function recordOrbitaCompletion(data, level, session, mode, now = new Dat
     );
   return true;
 }
-export function endlessOptions(
-  startDifficulty,
-  solved,
-  recentSignatures = [],
-  recentFamilies = [],
-  recentTopologies = [],
-) {
-  const wins = bounded(solved, 0, Number.MAX_SAFE_INTEGER),
-    base = bounded(startDifficulty, 0, 4),
-    rising = Math.min(4, base + Math.floor(wins / 10));
+export function endlessOptions(startDifficulty, solved, recentSignatures = [], recentFamilies = [], recentTopologies = []) {
+  const difficulty = bounded(startDifficulty, 0, 4);
   return {
-    difficulty: Math.max(0, rising - (wins > 0 && wins % 6 === 5 ? 1 : 0)),
-    recentSignatures: recentSignatures.filter((x) => typeof x === 'string').slice(-30),
-    recentFamilies: recentFamilies.filter((x) => typeof x === 'string').slice(-30),
-    recentTopologies: recentTopologies.filter(record).slice(-30),
+    difficulty,
+    recentSignatures: recentSignatures.filter(x => typeof x === 'string').slice(-30),
+    recentFamilies: recentFamilies.filter(x => typeof x === 'string').slice(-30),
+    recentTopologies: recentTopologies.filter(record).slice(-30)
   };
 }
+//# sourceMappingURL=data:application/json;charset=utf-8;base64,eyJ2ZXJzaW9uIjozLCJuYW1lcyI6WyJlbmRsZXNzT3B0aW9ucyIsInN0YXJ0RGlmZmljdWx0eSIsInNvbHZlZCIsInJlY2VudFNpZ25hdHVyZXMiLCJyZWNlbnRGYW1pbGllcyIsInJlY2VudFRvcG9sb2dpZXMiLCJkaWZmaWN1bHR5IiwiYm91bmRlZCIsImZpbHRlciIsIngiLCJzbGljZSIsInJlY29yZCJdLCJzb3VyY2VzIjpbImZ1bmN0aW9uLm1qcyJdLCJzb3VyY2VzQ29udGVudCI6WyJmdW5jdGlvbiBlbmRsZXNzT3B0aW9ucyhzdGFydERpZmZpY3VsdHksc29sdmVkLHJlY2VudFNpZ25hdHVyZXM9W10scmVjZW50RmFtaWxpZXM9W10scmVjZW50VG9wb2xvZ2llcz1bXSl7XHJcbiAgY29uc3QgZGlmZmljdWx0eT1ib3VuZGVkKHN0YXJ0RGlmZmljdWx0eSwwLDQpO1xyXG4gIHJldHVybiB7ZGlmZmljdWx0eSxyZWNlbnRTaWduYXR1cmVzOnJlY2VudFNpZ25hdHVyZXMuZmlsdGVyKHg9PnR5cGVvZiB4PT09J3N0cmluZycpLnNsaWNlKC0zMCkscmVjZW50RmFtaWxpZXM6cmVjZW50RmFtaWxpZXMuZmlsdGVyKHg9PnR5cGVvZiB4PT09J3N0cmluZycpLnNsaWNlKC0zMCkscmVjZW50VG9wb2xvZ2llczpyZWNlbnRUb3BvbG9naWVzLmZpbHRlcihyZWNvcmQpLnNsaWNlKC0zMCl9O1xyXG59Il0sIm1hcHBpbmdzIjoiQUFBQSxTQUFTQSxjQUFjQSxDQUFDQyxlQUFlLEVBQUNDLE1BQU0sRUFBQ0MsZ0JBQWdCLEdBQUMsRUFBRSxFQUFDQyxjQUFjLEdBQUMsRUFBRSxFQUFDQyxnQkFBZ0IsR0FBQyxFQUFFLEVBQUM7RUFDdkcsTUFBTUMsVUFBVSxHQUFDQyxPQUFPLENBQUNOLGVBQWUsRUFBQyxDQUFDLEVBQUMsQ0FBQyxDQUFDO0VBQzdDLE9BQU87SUFBQ0ssVUFBVTtJQUFDSCxnQkFBZ0IsRUFBQ0EsZ0JBQWdCLENBQUNLLE1BQU0sQ0FBQ0MsQ0FBQyxJQUFFLE9BQU9BLENBQUMsS0FBRyxRQUFRLENBQUMsQ0FBQ0MsS0FBSyxDQUFDLENBQUMsRUFBRSxDQUFDO0lBQUNOLGNBQWMsRUFBQ0EsY0FBYyxDQUFDSSxNQUFNLENBQUNDLENBQUMsSUFBRSxPQUFPQSxDQUFDLEtBQUcsUUFBUSxDQUFDLENBQUNDLEtBQUssQ0FBQyxDQUFDLEVBQUUsQ0FBQztJQUFDTCxnQkFBZ0IsRUFBQ0EsZ0JBQWdCLENBQUNHLE1BQU0sQ0FBQ0csTUFBTSxDQUFDLENBQUNELEtBQUssQ0FBQyxDQUFDLEVBQUU7RUFBQyxDQUFDO0FBQ3JPIiwiaWdub3JlTGlzdCI6W119
 
 /** Fixed targets and collision-aware sensor labels share one layout for rendering and QA. */
 export function computeOrbitaBadgeLayout(level) {
@@ -1776,21 +1769,19 @@ export function initOrbita({ hideOthers = () => {} } = {}) {
     $('o-advanced-toggle').textContent = (advanced ? 'Ocultar' : 'Mostrar') + ' opções avançadas';
   }
   function endlessControls() {
-    return (
-      '<details class="rules-card endless-settings endless-panel" open><summary>Modo Sem Parar · modo livre</summary><div class="rules-body"><p>Novos caminhos, no seu ritmo. Os desafios avançam com suas conclusões e retomam ideias já conhecidas.</p><div class="collection-toolbar"><label class="o-checkbox"><input id="o-auto-advance" type="checkbox" ' +
-      (data.prefs.autoAdvance ? 'checked' : '') +
-      '> Avançar automaticamente após concluir</label><button id="o-endless-new">Novo desafio</button></div><p>Reiniciar conserva os mesmos anéis, peças e alvos. Novo desafio troca a fase sem contar como vitória.</p><p id="o-generation-status" role="status" aria-live="polite"></p></div></details>'
-    );
-  }
+  return '<details class="rules-card endless-settings endless-panel" open><summary>Modo Sem Parar · modo livre</summary><div class="rules-body"><p>Novos caminhos gerados na dificuldade escolhida. Ela só muda quando você aplica outra opção.</p><div class="collection-toolbar"><label>Dificuldade<select id="o-endless-difficulty">' + DIFFICULTIES.map((name, i) => '<option value="' + i + '" ' + (i === data.endless.startDifficulty ? 'selected' : '') + '>' + esc(name) + '</option>').join('') + '</select></label><button id="o-endless-apply">Aplicar opções e gerar</button><label class="o-checkbox"><input id="o-auto-advance" type="checkbox" ' + (data.prefs.autoAdvance ? 'checked' : '') + '> Avançar automaticamente após concluir</label><button id="o-endless-new">Novo desafio</button></div><p>Reiniciar conserva os mesmos anéis, peças e alvos. Novo desafio troca a fase sem contar como vitória.</p><p id="o-generation-status" role="status" aria-live="polite"></p></div></details>';
+}
+//# sourceMappingURL=data:application/json;charset=utf-8;base64,eyJ2ZXJzaW9uIjozLCJuYW1lcyI6WyJlbmRsZXNzQ29udHJvbHMiLCJESUZGSUNVTFRJRVMiLCJtYXAiLCJuYW1lIiwiaSIsImRhdGEiLCJlbmRsZXNzIiwic3RhcnREaWZmaWN1bHR5IiwiZXNjIiwiam9pbiIsInByZWZzIiwiYXV0b0FkdmFuY2UiXSwic291cmNlcyI6WyJmdW5jdGlvbi5tanMiXSwic291cmNlc0NvbnRlbnQiOlsiZnVuY3Rpb24gZW5kbGVzc0NvbnRyb2xzKCl7cmV0dXJuICc8ZGV0YWlscyBjbGFzcz1cInJ1bGVzLWNhcmQgZW5kbGVzcy1zZXR0aW5ncyBlbmRsZXNzLXBhbmVsXCIgb3Blbj48c3VtbWFyeT5Nb2RvIFNlbSBQYXJhciDCtyBtb2RvIGxpdnJlPC9zdW1tYXJ5PjxkaXYgY2xhc3M9XCJydWxlcy1ib2R5XCI+PHA+Tm92b3MgY2FtaW5ob3MgZ2VyYWRvcyBuYSBkaWZpY3VsZGFkZSBlc2NvbGhpZGEuIEVsYSBzw7MgbXVkYSBxdWFuZG8gdm9jw6ogYXBsaWNhIG91dHJhIG9ww6fDo28uPC9wPjxkaXYgY2xhc3M9XCJjb2xsZWN0aW9uLXRvb2xiYXJcIj48bGFiZWw+RGlmaWN1bGRhZGU8c2VsZWN0IGlkPVwiby1lbmRsZXNzLWRpZmZpY3VsdHlcIj4nK0RJRkZJQ1VMVElFUy5tYXAoKG5hbWUsaSk9Pic8b3B0aW9uIHZhbHVlPVwiJytpKydcIiAnKyhpPT09ZGF0YS5lbmRsZXNzLnN0YXJ0RGlmZmljdWx0eT8nc2VsZWN0ZWQnOicnKSsnPicrZXNjKG5hbWUpKyc8L29wdGlvbj4nKS5qb2luKCcnKSsnPC9zZWxlY3Q+PC9sYWJlbD48YnV0dG9uIGlkPVwiby1lbmRsZXNzLWFwcGx5XCI+QXBsaWNhciBvcMOnw7VlcyBlIGdlcmFyPC9idXR0b24+PGxhYmVsIGNsYXNzPVwiby1jaGVja2JveFwiPjxpbnB1dCBpZD1cIm8tYXV0by1hZHZhbmNlXCIgdHlwZT1cImNoZWNrYm94XCIgJysoZGF0YS5wcmVmcy5hdXRvQWR2YW5jZT8nY2hlY2tlZCc6JycpKyc+IEF2YW7Dp2FyIGF1dG9tYXRpY2FtZW50ZSBhcMOzcyBjb25jbHVpcjwvbGFiZWw+PGJ1dHRvbiBpZD1cIm8tZW5kbGVzcy1uZXdcIj5Ob3ZvIGRlc2FmaW88L2J1dHRvbj48L2Rpdj48cD5SZWluaWNpYXIgY29uc2VydmEgb3MgbWVzbW9zIGFuw6lpcywgcGXDp2FzIGUgYWx2b3MuIE5vdm8gZGVzYWZpbyB0cm9jYSBhIGZhc2Ugc2VtIGNvbnRhciBjb21vIHZpdMOzcmlhLjwvcD48cCBpZD1cIm8tZ2VuZXJhdGlvbi1zdGF0dXNcIiByb2xlPVwic3RhdHVzXCIgYXJpYS1saXZlPVwicG9saXRlXCI+PC9wPjwvZGl2PjwvZGV0YWlscz4nO30iXSwibWFwcGluZ3MiOiJBQUFBLFNBQVNBLGVBQWVBLENBQUEsRUFBRTtFQUFDLE9BQU8sK1RBQStULEdBQUNDLFlBQVksQ0FBQ0MsR0FBRyxDQUFDLENBQUNDLElBQUksRUFBQ0MsQ0FBQyxLQUFHLGlCQUFpQixHQUFDQSxDQUFDLEdBQUMsSUFBSSxJQUFFQSxDQUFDLEtBQUdDLElBQUksQ0FBQ0MsT0FBTyxDQUFDQyxlQUFlLEdBQUMsVUFBVSxHQUFDLEVBQUUsQ0FBQyxHQUFDLEdBQUcsR0FBQ0MsR0FBRyxDQUFDTCxJQUFJLENBQUMsR0FBQyxXQUFXLENBQUMsQ0FBQ00sSUFBSSxDQUFDLEVBQUUsQ0FBQyxHQUFDLG9KQUFvSixJQUFFSixJQUFJLENBQUNLLEtBQUssQ0FBQ0MsV0FBVyxHQUFDLFNBQVMsR0FBQyxFQUFFLENBQUMsR0FBQyxvU0FBb1M7QUFBQyIsImlnbm9yZUxpc3QiOltdfQ==
   function bindEndless() {
-    $('o-endless-new').onclick = nextEndless;
-    $('o-auto-advance').onchange = (event) => {
-      data.prefs.autoAdvance = event.target.checked;
-      save();
-      if (data.prefs.autoAdvance) scheduleAuto();
-      else cancelAuto();
-    };
-  }
+  $('o-endless-apply').onclick = () => newEndless(Number($('o-endless-difficulty').value));
+  $('o-endless-new').onclick = nextEndless;
+  $('o-auto-advance').onchange = event => {
+    data.prefs.autoAdvance = event.target.checked;
+    save();
+    if (data.prefs.autoAdvance) scheduleAuto();else cancelAuto();
+  };
+}
+//# sourceMappingURL=data:application/json;charset=utf-8;base64,eyJ2ZXJzaW9uIjozLCJuYW1lcyI6WyJiaW5kRW5kbGVzcyIsIiQiLCJvbmNsaWNrIiwibmV3RW5kbGVzcyIsIk51bWJlciIsInZhbHVlIiwibmV4dEVuZGxlc3MiLCJvbmNoYW5nZSIsImV2ZW50IiwiZGF0YSIsInByZWZzIiwiYXV0b0FkdmFuY2UiLCJ0YXJnZXQiLCJjaGVja2VkIiwic2F2ZSIsInNjaGVkdWxlQXV0byIsImNhbmNlbEF1dG8iXSwic291cmNlcyI6WyJmdW5jdGlvbi5tanMiXSwic291cmNlc0NvbnRlbnQiOlsiZnVuY3Rpb24gYmluZEVuZGxlc3MoKXskKCdvLWVuZGxlc3MtYXBwbHknKS5vbmNsaWNrPSgpPT5uZXdFbmRsZXNzKE51bWJlcigkKCdvLWVuZGxlc3MtZGlmZmljdWx0eScpLnZhbHVlKSk7JCgnby1lbmRsZXNzLW5ldycpLm9uY2xpY2s9bmV4dEVuZGxlc3M7JCgnby1hdXRvLWFkdmFuY2UnKS5vbmNoYW5nZT1ldmVudD0+e2RhdGEucHJlZnMuYXV0b0FkdmFuY2U9ZXZlbnQudGFyZ2V0LmNoZWNrZWQ7c2F2ZSgpO2lmKGRhdGEucHJlZnMuYXV0b0FkdmFuY2Upc2NoZWR1bGVBdXRvKCk7ZWxzZSBjYW5jZWxBdXRvKCk7fTt9Il0sIm1hcHBpbmdzIjoiQUFBQSxTQUFTQSxXQUFXQSxDQUFBLEVBQUU7RUFBQ0MsQ0FBQyxDQUFDLGlCQUFpQixDQUFDLENBQUNDLE9BQU8sR0FBQyxNQUFJQyxVQUFVLENBQUNDLE1BQU0sQ0FBQ0gsQ0FBQyxDQUFDLHNCQUFzQixDQUFDLENBQUNJLEtBQUssQ0FBQyxDQUFDO0VBQUNKLENBQUMsQ0FBQyxlQUFlLENBQUMsQ0FBQ0MsT0FBTyxHQUFDSSxXQUFXO0VBQUNMLENBQUMsQ0FBQyxnQkFBZ0IsQ0FBQyxDQUFDTSxRQUFRLEdBQUNDLEtBQUssSUFBRTtJQUFDQyxJQUFJLENBQUNDLEtBQUssQ0FBQ0MsV0FBVyxHQUFDSCxLQUFLLENBQUNJLE1BQU0sQ0FBQ0MsT0FBTztJQUFDQyxJQUFJLENBQUMsQ0FBQztJQUFDLElBQUdMLElBQUksQ0FBQ0MsS0FBSyxDQUFDQyxXQUFXLEVBQUNJLFlBQVksQ0FBQyxDQUFDLENBQUMsS0FBS0MsVUFBVSxDQUFDLENBQUM7RUFBQyxDQUFDO0FBQUMiLCJpZ25vcmVMaXN0IjpbXX0=
   // Monta as orientações e exemplos de regras apresentados na partida.
   function rulesMarkup() {
     return (

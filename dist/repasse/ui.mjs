@@ -335,36 +335,11 @@ export function recordRepasseCompletion(
   return true;
 }
 
-export function endlessOptions(
-  startDifficulty,
-  solved,
-  learnedConfigurations = ['original'],
-  recentSignatures = [],
-  recentFamilies = [],
-) {
-  const wins = bounded(solved, 0, Number.MAX_SAFE_INTEGER),
-    base = bounded(startDifficulty, 0, 7);
-  const rising = Math.min(7, base + Math.floor(wins / 8));
-  const difficulty = Math.max(0, rising - (wins > 0 && wins % 5 === 4 ? 1 : 0));
-  const learned = new Set(learnedConfigurations),
-    threshold = { single: 2, corner: 4, four: 6 };
-  const introduction = ['single', 'corner', 'four'].find(
-    (key) => difficulty >= threshold[key] && !learned.has(key),
-  );
-  return {
-    difficulty: introduction ? threshold[introduction] : difficulty,
-    allowedConfigurations: introduction
-      ? ['original', introduction]
-      : [
-          'original',
-          ...['single', 'corner', 'four'].filter(
-            (key) => difficulty >= threshold[key] && learned.has(key),
-          ),
-        ],
-    ...(introduction ? { introduction } : {}),
-    recentSignatures: recentSignatures.filter((x) => typeof x === 'string').slice(-24),
-    recentFamilies: recentFamilies.filter((x) => typeof x === 'string').slice(-24),
-  };
+export function endlessOptions(startDifficulty,solved,learnedConfigurations=['original'],recentSignatures=[],recentFamilies=[]) {
+  const difficulty=bounded(startDifficulty,0,7);
+  const learned=new Set(learnedConfigurations),threshold={single:2,corner:4,four:6};
+  const introduction=['single','corner','four'].find(key=>difficulty>=threshold[key]&&!learned.has(key));
+  return {difficulty:introduction?threshold[introduction]:difficulty,allowedConfigurations:introduction?['original',introduction]:['original',...['single','corner','four'].filter(key=>difficulty>=threshold[key]&&learned.has(key))],...(introduction?{introduction}:{}),recentSignatures:recentSignatures.filter(x=>typeof x==='string').slice(-24),recentFamilies:recentFamilies.filter(x=>typeof x==='string').slice(-24)};
 }
 
 function boxName(side, index) {
@@ -1375,7 +1350,7 @@ export function initRepasse({ hideOthers = () => {} } = {}) {
   }
   function endlessControls() {
     return (
-      '<details class="rules-card endless-settings endless-panel" open><summary>Modo Sem Parar · personalizar desafios</summary><div class="rules-body"><p>Desafios novos, no seu ritmo. A dificuldade cresce com as conclusões e alterna retomadas. Cada configuração nova recebe uma apresentação curta.</p><div class="collection-toolbar endless-options"><label>Dificuldade inicial<select id="r-endless-difficulty">' +
+      '<details class="rules-card endless-settings endless-panel" open><summary>Modo Sem Parar · personalizar desafios</summary><div class="rules-body"><p>Desafios novos, no seu ritmo. A dificuldade escolhida é mantida; apenas a apresentação de uma configuração nova usa uma fase curta.</p><div class="collection-toolbar endless-options"><label>Dificuldade<select id="r-endless-difficulty">' +
       ENDLESS_DIFFICULTIES.map(
         (name, i) =>
           '<option value="' +

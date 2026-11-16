@@ -143,9 +143,9 @@ test('uma nova resolução sem assistência pode atualizar o marcador sem duplic
   assert.deepEqual(data.campaign.completed['2'],{firstCompletedAt:'date-a',assisted:false});
 });
 
-test('Endless progride com retomadas e apresenta uma configuração nova por vez',()=>{
-  assert.equal(endlessOptions(0,0).difficulty,0);assert.equal(endlessOptions(0,8).difficulty,1);
-  assert.equal(endlessOptions(1,4).difficulty,0);
+test('Endless mantém a escolha e apresenta uma configuração nova por vez',()=>{
+  assert.equal(endlessOptions(0,0).difficulty,0);assert.equal(endlessOptions(0,8).difficulty,0);
+  assert.equal(endlessOptions(1,4).difficulty,1);
   const first=endlessOptions(7,0);assert.equal(first.introduction,'single');assert.equal(first.difficulty,2);assert.deepEqual(first.allowedConfigurations,['original','single']);
   const second=endlessOptions(7,1,['original','single']);assert.equal(second.introduction,'corner');assert.deepEqual(second.allowedConfigurations,['original','corner']);
   const third=endlessOptions(7,2,['original','single','corner']);assert.equal(third.introduction,'four');assert.deepEqual(third.allowedConfigurations,['original','four']);
