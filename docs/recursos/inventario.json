@@ -185,6 +185,12 @@
         "docs/identidade/aiij-prumo-pacto-quinhao.md"
       ],
       "source": "Composições vetoriais das opções A aprovadas por Luigi; Quinhão reutiliza a arte de frutos atual autorizada."
+    },
+    "aiij-sintonia-aprovada-20261116": {
+      "evidence": [
+        "docs/identidade/aiij-sintonia-conceitual.md"
+      ],
+      "source": "Composição vetorial conceitual A de Sintonia aprovada por Luigi em 16/11/2026; não altera sprites existentes."
     }
   },
   "assets": [
@@ -4039,6 +4045,16 @@
       "rightsHolder": "Luigi Scofano de Araujo; direitos das fontes preservados",
       "license": "Documentação do acervo; sem nova licença aberta para as artes.",
       "permissionEvidence": "docs/identidade/manual/README.md; docs/recursos/declaracao-autoria.md"
+    },
+    {
+      "path": "dist/platform-assets/sintonia-aiij-aprovada.svg",
+      "sha256": "20e85ebe574c8660a3b251f936599d9f75ddfe2d75b7ef5befe4a505cb959c25",
+      "group": "aiij-sintonia-aprovada-20261116",
+      "status": "cleared",
+      "rightsHolder": "Luigi Scofano de Araujo",
+      "license": "Direitos reservados; recursos visuais excluídos da licença MIT do código.",
+      "permissionEvidence": "docs/identidade/aiij-sintonia-conceitual.md",
+      "reviewBasis": "owner-approved-original-vector-composition"
     }
   ],
   "rightsReview": {

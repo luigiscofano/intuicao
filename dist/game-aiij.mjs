@@ -10,7 +10,8 @@ export const APPROVED_GAME_ART = Object.freeze({
   "acorde": "platform-assets/acorde-aiij-aprovada.svg",
   "prumo": "platform-assets/prumo-aiij-aprovada.svg",
   "pacto": "platform-assets/pacto-aiij-aprovada.svg",
-  "quinhao": "platform-assets/quinhao-aiij-aprovada.svg"
+  "quinhao": "platform-assets/quinhao-aiij-aprovada.svg",
+  "sintonia": "platform-assets/sintonia-aiij-aprovada.svg"
 });
 export function updateGameArt(image, gameId) {
   const source = APPROVED_GAME_ART[gameId];
