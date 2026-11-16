@@ -6,7 +6,7 @@
 
 Projeto de **Luigi Scofano de Araujo**. O Intuição transforma relações abstratas em ações visíveis: orientar luz, equilibrar formas, conectar caminhos, organizar espaços e antecipar jogadas. A experiência combina regras próprias, explicações ilustradas e uma linguagem visual de azulejos, fauna e vegetação.
 
-[Jogar no site público](https://intuicao-luigi-minigames.luigiscofano.chatgpt.site) · [Código](https://github.com/luigiscofano/intuicao) · [Documentação](docs/README.md) · [Instalação](docs/setup/README.md) · [Contribuir](CONTRIBUTING.md)
+[Jogar no site público](https://luigiscofano.github.io/intuicao/) · [Código](https://github.com/luigiscofano/intuicao) · [Documentação](docs/README.md) · [Instalação](docs/setup/README.md) · [Contribuir](CONTRIBUTING.md)
 
 > **Catálogo conferido em 16/11/2026: 19 jogos ativos, sendo 12 campanhas e 7 Versus.** Documentos datados, PDFs e módulos retirados são preservados como histórico, não como anúncio de funcionalidades atuais. A referência é [game-catalog.mjs](dist/game-catalog.mjs).
 
@@ -497,7 +497,7 @@ As ferramentas em [tools](tools/README.md) e os relatórios certificados guardam
 
 Os testes de motores verificam regras; testes de histórico/backup verificam preservação; testes de DOM/CSS verificam contratos da interface. Capturas e testes estruturais não são equivalentes a uma auditoria completa de acessibilidade ou a jogar todas as fases.
 
-A hospedagem recebe arquivos estáticos de `dist`, conforme [.openai/hosting.json](.openai/hosting.json). A cadeia correta é branch temática → verificações do commit → PR → merge → publicação separada → conferência da versão pública. A configuração não implica que o merge sozinho publique. Nenhuma alteração de documentação deve reconfigurar a hospedagem ou introduzir um backend sem necessidade.
+O GitHub Pages serve os arquivos públicos de `dist/` em `/intuicao/`. Depois do merge em `main`, o [workflow de publicação](.github/workflows/pages.yml) testa o commit integrado, publica o artefato validado e confere a URL pública.
 
 ### Bots e análise
 
@@ -531,7 +531,7 @@ O progresso é local ao navegador/origem. Limpar armazenamento, mudar aparelho, 
 
 O [backup](dist/progress-backup.mjs) e as validações de importação preservam versões, tentativas e conclusões assistidas. Não renumere IDs de armazenamento ao modificar só o número editorial. Use dados fictícios, nunca saves pessoais como fixtures públicas.
 
-**GitHub guarda o código; a hospedagem serve o site.** Merge não prova implantação. Os workflows não devem ser apresentados como deploy automático. Publicar exige conferir commit, pacote, ambiente e resultado da implantação. A configuração existente não autoriza criar outro projeto de hospedagem.
+Para transferir o progresso do Sites, publicar uma atualização ou recuperar a última versão validada, consulte o [guia do GitHub Pages](docs/setup/github-pages.md).
 
 [Segurança](SECURITY.md) · [Manutenção](docs/manutencao/README.md) · [Limites e privacidade](docs/seguranca/README.md)
 

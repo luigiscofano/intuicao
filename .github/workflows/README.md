@@ -1,6 +1,6 @@
 # .github/workflows
 
-Integração contínua: verificação documental, motores, interface, regras, recursos e segurança. Leia os comandos YAML antes de executá-los; esses workflows não equivalem à publicação do site.
+Os workflows verificam documentação, motores, interface, regras, recursos e segurança. O workflow de Pages publica a revisão integrada após os testes e verifica o endereço público.
 
 [Visão geral](../../README.md) · [Mapa da documentação](../../docs/indice-pastas.md)
 
@@ -9,6 +9,7 @@ Integração contínua: verificação documental, motores, interface, regras, re
 - [compact-home.yml](compact-home.yml)
 - [documentation.yml](documentation.yml)
 - [engine-smoke.yml](engine-smoke.yml)
+- [pages.yml](pages.yml) · [Publicação e recuperação](../../docs/setup/github-pages.md)
 - [rules-compact.yml](rules-compact.yml)
 - [security.yml](security.yml)
 
