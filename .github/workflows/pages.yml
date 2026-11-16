@@ -1,0 +1,111 @@
+name: Publicar Intuição no GitHub Pages
+on:
+  pull_request:
+    branches: [main]
+  push:
+    branches: [main]
+  workflow_dispatch:
+    inputs:
+      comparar_sites:
+        description: Comparar também com o endereço original do Sites
+        type: boolean
+        default: false
+
+permissions:
+  contents: read
+
+jobs:
+  validar:
+    runs-on: ubuntu-latest
+    timeout-minutes: 30
+    steps:
+      - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
+        with:
+          persist-credentials: false
+      - uses: actions/setup-node@949feb2413d6458794dcd2491c4babbbce0c15c1 # v7.1.0
+        with:
+          node-version: '24'
+      - name: Verificar recursos, motores, conquistas e backup
+        run: |
+          node scripts/check-assets.mjs
+          node scripts/build-achievement-index.mjs --check
+          node --test tests/{broto-engine,cerco-engine,cerco-bot,sintonia-engine,repasse-engine,progress-backup,endless-existing-procedural,game-aiij,retired-games,game-catalog-indices,achievements,library-navigation}.test.mjs tests/versus/*.test.mjs tests/logica/*.test.mjs
+      - name: Preparar somente os arquivos públicos
+        run: |
+          python3 scripts/pages/package.py "$RUNNER_TEMP/web/intuicao"
+          (cd "$RUNNER_TEMP/web/intuicao" && find . -type f -print0 | sort -z | xargs -0 sha256sum) > "$RUNNER_TEMP/arquivos.sha256"
+      - name: Testar o artefato sob /intuicao/ em dois tamanhos de tela
+        env:
+          COMPARAR: ${{ inputs.comparar_sites || (github.event_name == 'pull_request' && contains(github.event.pull_request.body, '[comparar-sites]')) }}
+        run: |
+          python3 -m venv "$RUNNER_TEMP/qa"
+          "$RUNNER_TEMP/qa/bin/pip" -q install playwright==1.62.0 Pillow==13.0.0
+          python3 -m http.server 8765 --bind 127.0.0.1 --directory "$RUNNER_TEMP/web" > "$RUNNER_TEMP/http.log" 2>&1 &
+          servidor=$!
+          trap 'kill "$servidor"' EXIT
+          referencia=()
+          if [[ "$COMPARAR" == true ]]; then
+            referencia=(--reference https://intuicao-luigi-minigames.luigiscofano.chatgpt.site/)
+          fi
+          "$RUNNER_TEMP/qa/bin/python" scripts/pages/browser.py http://127.0.0.1:8765/intuicao/ "$RUNNER_TEMP/capturas" "${referencia[@]}"
+      - name: Guardar evidências fora do site
+        if: always()
+        uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02 # v4
+        with:
+          name: verificacao-${{ github.sha }}
+          path: |
+            ${{ runner.temp }}/arquivos.sha256
+            ${{ runner.temp }}/capturas/
+          retention-days: 14
+      - name: Enviar o mesmo diretório validado
+        if: github.ref == 'refs/heads/main' && github.event_name != 'pull_request'
+        uses: actions/upload-pages-artifact@7b1f4a764d45c48632c6b24a0339c27f5614fb0b # v4
+        with:
+          path: ${{ runner.temp }}/web/intuicao
+
+  publicar:
+    if: github.ref == 'refs/heads/main' && github.event_name != 'pull_request'
+    needs: validar
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    permissions:
+      pages: write
+      id-token: write
+      contents: read
+    concurrency:
+      group: github-pages
+      cancel-in-progress: false
+    environment:
+      name: github-pages
+      url: ${{ steps.publicacao.outputs.page_url }}
+    steps:
+      - name: Conferir se a revisão continua na ponta de main
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: test "$(gh api "repos/$GITHUB_REPOSITORY/git/ref/heads/main" --jq .object.sha)" = "$GITHUB_SHA"
+      - name: Publicar o artefato da execução
+        id: publicacao
+        uses: actions/deploy-pages@d6db90164ac5ed86f2b6aed7e0febac5b3c0c03e # v4
+
+  conferir:
+    needs: publicar
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    steps:
+      - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
+        with:
+          persist-credentials: false
+      - name: Conferir por SHA-256 os arquivos no endereço público
+        run: python3 scripts/pages/verify_http.py https://luigiscofano.github.io/intuicao/
+      - name: Abrir a publicação real sem autenticação
+        run: |
+          python3 -m venv "$RUNNER_TEMP/qa"
+          "$RUNNER_TEMP/qa/bin/pip" -q install playwright==1.62.0
+          "$RUNNER_TEMP/qa/bin/python" scripts/pages/browser.py https://luigiscofano.github.io/intuicao/ "$RUNNER_TEMP/publicado"
+      - name: Guardar capturas da publicação
+        if: always()
+        uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02 # v4
+        with:
+          name: publicado-${{ github.sha }}
+          path: ${{ runner.temp }}/publicado/
+          retention-days: 14
