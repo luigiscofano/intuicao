@@ -27,7 +27,7 @@ test('entrada pelo Sobre, controles semânticos e reaproveitamento da ficha',()=
  assert.match(code,/aria-haspopup="dialog"/);
  assert.match(code,/fauna:open/);
  assert.match(code,/event.key === 'Escape'/);
- assert.match(code,/trigger.focus\(/);
+ assert.match(code,/returnTrigger.focus\(/);
  assert.match(read('fauna-info.mjs'),/addEventListener\('fauna:open'/);
 });
 test('integração única, estilos responsivos limitados à galeria',()=>{
@@ -47,4 +47,14 @@ test('HTML gerado oferece uma ação com nome para cada um dos quinze animais',(
   assert.ok(markup.includes(`data-fauna="${art.id}"`));
   assert.ok(markup.includes(FAUNA_INFO[art.id].name));
  }
+});
+
+test('atalho do catálogo reutiliza diálogo e restaura foco à origem',()=>{
+ const code=read('mascots-dialog.mjs');
+ assert.match(code,/getElementById\('library-filters'\)/);
+ assert.match(code,/Conheça os mascotes/);
+ assert.match(code,/catalog\?\.append\(catalogTrigger\)/);
+ assert.match(code,/returnTrigger = button/);
+ assert.match(code,/Voltar aos jogos/);
+ assert.match(read('mascots-dialog.css'),/margin-inline-start:auto/);
 });

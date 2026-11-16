@@ -111,3 +111,24 @@
   }
   
 }
+
+/* Atalho do catálogo, separado dos filtros e sem alterar o cabeçalho global. */
+#library-filters #catalog-mascots-open {
+  margin-inline-start:auto;
+  max-width:100%;
+  white-space:normal;
+  border:1px solid #96b6a6;
+  border-radius:8px;
+  background:transparent;
+  color:#174d3d;
+  font-size:14px;
+  padding:9px 13px;
+}
+#library-filters #catalog-mascots-open:hover { background:#eef3e9; }
+#library-filters #catalog-mascots-open:focus-visible {
+  outline:3px solid #255b85;
+  outline-offset:3px;
+}
+@media(max-width:760px) {
+  #library-filters #catalog-mascots-open { align-self:flex-end; }
+}
