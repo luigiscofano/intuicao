@@ -12,6 +12,9 @@ Projeto de **Luigi Scofano de Araujo**. O Intuição transforma relações abstr
 
 ## Manuais visuais para impressão
 
+<details>
+<summary>Expandir Manuais visuais para impressão</summary>
+
 Uma folha A4 para cada um dos **19 jogos**, com objetivo, exemplo ilustrado e controles essenciais. Os diagramas são didáticos, não capturas da interface; Pulso usa o modo **Normal**. A coleção não altera os jogos.
 
 - [Baixar o PDF completo de 19 páginas](docs/manuais-visuais-impressao/pdf/Intuicao_Manuais_Visuais_19_Jogos.pdf).
@@ -19,6 +22,9 @@ Uma folha A4 para cada um dos **19 jogos**, com objetivo, exemplo ilustrado e co
 
 <a href="docs/manuais-visuais-impressao/pdf/08-pulso.pdf"><img src="docs/manuais-visuais-impressao/png/08-pulso.png" width="360" alt="Amostra do manual A4 do Pulso Normal: objetivo, batidas e intervalos." /></a>
 
+
+
+</details>
 
 ## Navegação
 
@@ -36,6 +42,9 @@ Uma folha A4 para cada um dos **19 jogos**, com objetivo, exemplo ilustrado e co
 
 ## Proposta e objetivos
 
+<details>
+<summary>Expandir Proposta e objetivos</summary>
+
 O projeto aproxima aprendizado e jogo sem exigir que o jogador comece por uma explicação abstrata. Uma tentativa revela uma consequência; a próxima pode incorporar uma hipótese melhor. Os objetivos pedagógicos são explorar percepção espacial, relações lógicas, planejamento, reconhecimento de padrões e tomada de decisão. São **intenções de design**, não resultados de aprendizagem comprovados por pesquisa acadêmica.
 
 A coleção procura manter três compromissos:
@@ -46,7 +55,13 @@ A coleção procura manter três compromissos:
 
 A curiosidade é o fio condutor. As referências brasileiras aparecem na fauna, nas plantas, nos frutos, nos nomes e nas composições geométricas. Não são uma justificativa para acrescentar enfeites onde o jogador precisa de precisão.
 
+
+</details>
+
 ## Os 19 jogos
+
+<details>
+<summary>Expandir Os 19 jogos</summary>
 
 A numeração é editorial, de 01 a 19. Os IDs técnicos permanecem estáveis para não quebrar links e saves. A presença de uma pasta antiga não significa que aquele jogo continua disponível.
 
@@ -76,19 +91,37 @@ A numeração é editorial, de 01 a 19. Os IDs técnicos permanecem estáveis pa
 
 DIVISA, ÓRBITA, LASTRO, VAZANTE, ENLACE e DOBRA estão retirados do catálogo atual. Seus arquivos e registros continuam preservados. Veja a [retirada no código](dist/retired-games.mjs) e o [registro histórico](docs/README-historico-2026-11-16.md).
 
+
+</details>
+
 ## A marca na biblioteca
+
+<details>
+<summary>Expandir A marca na biblioteca</summary>
 
 ![Biblioteca real com os 19 jogos em suas categorias](docs/imagens/galeria-atual/home.png)
 
 Captura real da biblioteca, 16/11/2026, sem cursor e sem dados pessoais. Os 19 jogos aparecem em suas categorias. A imagem mostra a interface existente naquela revisão, não um mockup. É a captura original utilizada na página do manual indicada pelo autor.
 
+
+</details>
+
 ## Manual da marca
+
+<details>
+<summary>Expandir Manual da marca</summary>
 
 [Manual ilustrado em PDF, 45 páginas](docs/identidade/manual/Intuicao_Manual_da_Marca_2026.pdf) · [Fontes, inventário e reprodução](docs/identidade/manual/README.md).
 
 ![Capa do manual da marca](docs/identidade/manual/capa.png)
 
+
+</details>
+
 ## Galeria atual dos 19 jogos
+
+<details>
+<summary>Expandir Galeria atual dos 19 jogos</summary>
 
 Capturas reais do código versionado, abertas em navegador isolado com estado de demonstração. Não são mockups. Não usam dados pessoais, não alteram saves do usuário e não incluem o cursor. [Data, revisão, dimensões e limites da captura](docs/imagens/galeria-atual/README.md). Clique na imagem para ampliar; cada título leva ao manual específico.
 
@@ -244,7 +277,13 @@ Recolha sinos até formar um par de cada um de três símbolos diferentes.
 
 [Objetivo, regras, controles e implementação](docs/jogos/acorde/README.md).
 
+
+</details>
+
 ## Identidade visual e brasilidade
+
+<details>
+<summary>Expandir Identidade visual e brasilidade</summary>
 
 ### Marca atual
 
@@ -304,7 +343,13 @@ A graduação visual remete à progressão de faixas do jiu-jítsu, adaptada à 
 
 A [paleta compartilhada](dist/difficulty-palette.mjs) deriva a graduação do nome, não da posição do grupo. A dificuldade é editorial; certificação de uma solução não equivale a calibração com jogadores.
 
+
+</details>
+
 ## Fauna, flora e objetos com função
+
+<details>
+<summary>Expandir Fauna, flora e objetos com função</summary>
 
 A brasilidade não depende de espalhar símbolos decorativos. Ela aparece no repertório de animais, frutos e plantas, nos azulejos e no vocabulário de cada desafio. A função vem antes do ornamento: reconhecer uma equipe, distinguir uma peça, indicar uma região ou explicar um objetivo. Essas relações são decisões do projeto; não atribuímos uma origem histórica específica a um padrão sem documentação.
 
@@ -418,7 +463,13 @@ AIIJ significa **Arte de Ilustração Individual do Jogo**. Esta coleção reún
 
 Os esquemas são **ilustrativos**, não screenshots nem soluções completas. As [regras por jogo](docs/jogos/README.md) explicam condições que uma imagem isolada não mostra.
 
+
+</details>
+
 ## Experiência e acessibilidade
+
+<details>
+<summary>Expandir Experiência e acessibilidade</summary>
 
 - **Tabuleiro como protagonista:** dimensionamento e controles devem privilegiar a partida, sem saltos conforme textos variam.
 - **Instruções em duas profundidades:** resumo e explicação expandida, acompanhados de exemplos animados.
@@ -430,7 +481,13 @@ Os esquemas são **ilustrativos**, não screenshots nem soluções completas. As
 
 A acessibilidade é um processo de verificação, não uma garantia absoluta de conformidade. A cobertura e suas limitações estão em [qualidade](docs/qualidade/README.md) e [testes](tests/README.md).
 
+
+</details>
+
 ## Arquitetura e tecnologias
+
+<details>
+<summary>Expandir Arquitetura e tecnologias</summary>
 
 ![Fluxo conceitual da aplicação](docs/imagens/identidade/arquitetura.svg)
 
@@ -503,7 +560,13 @@ O GitHub Pages serve os arquivos públicos de `dist/` em `/intuicao/`. Depois do
 
 Os oponentes computacionais são algoritmos locais de busca e avaliação. O Versus compartilhado documenta minimax, poda alfa-beta, aprofundamento e orçamento. DESVIO e CERCO têm implementações próprias. Isso não implica um serviço remoto, pagamento por jogada ou infalibilidade: orçamento esgotado deve ser distinguido de uma solução demonstrada. [Contrato dos duelos](dist/versus/CONTRACT.md).
 
+
+</details>
+
 ## Executar e testar
+
+<details>
+<summary>Expandir Executar e testar</summary>
 
 Clone e sirva `dist` por HTTP; não abra os módulos diretamente por `file://`.
 
@@ -525,7 +588,13 @@ node --test tests/game-catalog-indices.test.mjs tests/progress-backup.test.mjs
 
 Não substituem toda a suíte. Os [workflows reais](.github/workflows/README.md) definem grupos adicionais para motores, interface, regras e segurança. Confira os resultados do commit exato no PR. O verificador documental confirma destinos locais; não certifica links externos, âncoras ou conteúdo semântico.
 
+
+</details>
+
 ## Dados, segurança e publicação
+
+<details>
+<summary>Expandir Dados, segurança e publicação</summary>
 
 O progresso é local ao navegador/origem. Limpar armazenamento, mudar aparelho, perfil ou domínio pode tornar os dados indisponíveis. Exporte um backup antes de testes ou mudanças de origem. Esta base não garante sincronização de conta.
 
@@ -535,7 +604,13 @@ Para transferir o progresso do Sites, publicar uma atualização ou recuperar a 
 
 [Segurança](SECURITY.md) · [Manutenção](docs/manutencao/README.md) · [Limites e privacidade](docs/seguranca/README.md)
 
+
+</details>
+
 ## Dificuldades de engenharia
+
+<details>
+<summary>Expandir Dificuldades de engenharia</summary>
 
 | Desafio | Decisão e consequência |
 |---|---|
@@ -550,7 +625,13 @@ Para transferir o progresso do Sites, publicar uma atualização ou recuperar a 
 
 São problemas observáveis na estrutura e evolução do projeto, não uma alegação de que toda limitação foi eliminada. Os [relatórios de qualidade](docs/qualidade/README.md) registram evidências por revisão.
 
+
+</details>
+
 ## Mapa da documentação
+
+<details>
+<summary>Expandir Mapa da documentação</summary>
 
 | Quero entender… | Começar por… |
 |---|---|
@@ -566,8 +647,17 @@ São problemas observáveis na estrutura e evolução do projeto, não uma alega
 
 Perfil, Ateliê e coleção de medalhas 3D não são apresentados como funcionalidades publicadas: propostas e provas de conceito devem permanecer distintas do produto disponível.
 
+
+</details>
+
 ## Licença e créditos
+
+<details>
+<summary>Expandir Licença e créditos</summary>
 
 Código e documentação seguem a [licença MIT](LICENSE). Consulte separadamente [inventário e proveniência](docs/recursos/README.md) para artes, fontes e materiais associados; não presuma permissão irrestrita sobre todo arquivo visual. Conserve os avisos e créditos aplicáveis.
 
 **Autor: Luigi Scofano de Araujo.**
+
+
+</details>
