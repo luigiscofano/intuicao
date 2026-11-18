@@ -6,13 +6,25 @@ Fontes locais: Literata para títulos e Source Sans 3 para interface, conforme t
 
 ## Conteúdo
 
+<details>
+<summary>Expandir Conteúdo</summary>
+
 - [literata-latin-variable.woff2](literata-latin-variable.woff2)
 - [literata-OFL.txt](literata-OFL.txt)
 - [source-sans-3-latin-variable.woff2](source-sans-3-latin-variable.woff2)
 - [sourcesans3-OFL.txt](sourcesans3-OFL.txt)
 
+
+</details>
+
 ## Manutenção
+
+<details>
+<summary>Expandir Manutenção</summary>
 
 Atualize este índice ao alterar o conteúdo da pasta. Verifique os links com `node scripts/check-docs.mjs` a partir da raiz. Testes de código e publicação devem seguir o fluxo específico do projeto. Registros históricos conservam sua data e não representam automaticamente o estado publicado.
 
 ![Identidade do projeto](../../platform-assets/intuicao-logo-azulejos.png)
+
+</details>
+

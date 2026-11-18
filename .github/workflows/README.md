@@ -6,6 +6,9 @@ Os workflows verificam documentação, motores, interface, regras, recursos e se
 
 ## Conteúdo
 
+<details>
+<summary>Expandir Conteúdo</summary>
+
 - [compact-home.yml](compact-home.yml)
 - [documentation.yml](documentation.yml)
 - [engine-smoke.yml](engine-smoke.yml)
@@ -13,8 +16,17 @@ Os workflows verificam documentação, motores, interface, regras, recursos e se
 - [rules-compact.yml](rules-compact.yml)
 - [security.yml](security.yml)
 
+
+</details>
+
 ## Manutenção
+
+<details>
+<summary>Expandir Manutenção</summary>
 
 Atualize este índice ao alterar o conteúdo da pasta. Verifique os links com `node scripts/check-docs.mjs` a partir da raiz. Testes de código e publicação devem seguir o fluxo específico do projeto. Registros históricos conservam sua data e não representam automaticamente o estado publicado.
 
 ![Identidade do projeto](../../dist/platform-assets/intuicao-logo-azulejos.png)
+
+</details>
+

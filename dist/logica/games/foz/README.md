@@ -4,13 +4,22 @@ Jogo de orientação de canais para uma única foz. A interface usa o vocabulár
 
 ## Regras preservadas
 
+<details>
+<summary>Expandir Regras preservadas</summary>
+
 1. Cada ponto, exceto a foz, recebe exatamente uma seta para um vizinho unido por um canal desenhado.
 2. Seguir qualquer seta deve levar à foz. Ciclos são proibidos; ramos podem se juntar.
 3. Uma pista numérica conta os **trechos** do ponto até a foz. A foz tem distância zero.
 
 Canais são ortogonais entre células vizinhas. Uma fase pode oferecer apenas parte dos canais da grade. Todos os pontos participam; não há diagonal, salto ou cruzamento geométrico de canais. Uma pista indica distância, e não uma seta fixa.
 
+
+</details>
+
 ## Dados e contrato
+
+<details>
+<summary>Expandir Dados e contrato</summary>
 
 `index.mjs` exporta o contrato comum do host. Os motores não acessam DOM, armazenamento, relógio ou rede. A campanha é importada pronta; nenhum solver roda na interface.
 
@@ -33,7 +42,13 @@ Canais são ortogonais entre células vizinhas. Uma fase pode oferecer apenas pa
 
 A foz não pode ser alterada. Ações inválidas devolvem o mesmo estado; ações válidas não mutam o argumento. A view fornece `data-cell`, `role="button"`, `tabindex` e descrição em português, inclusive destino atual e distância fixa. O host traduz clique e teclado em ações. Grades maiores mantêm alvos legíveis com rolagem horizontal local.
 
+
+</details>
+
 ## Campanha e progressão
+
+<details>
+<summary>Expandir Campanha e progressão</summary>
 
 São **80 definições distintas**, com distribuição 15/15/15/15/15/5. IDs derivam do SHA-256 da definição real. A curadoria rejeita equivalências por rotação e reflexão, preservando foz, canais e pistas. As duas amostras aprovadas estão em `tests/logica/foz-fixtures.json`; ocupam as fases 1 e 31.
 
@@ -50,7 +65,13 @@ A trilha de resolução registra compatibilidade de distâncias, limite inferior
 
 Os rótulos são editoriais e **ainda não passaram por playtest**. As métricas descrevem uma estratégia suficiente, não provam que seja a estratégia humana mais curta. O primeiro par de faixas tem alguma sobreposição de técnica; isso está explícito nos certificados. Tamanho da grade e tempo de execução do solver não servem de prova de dificuldade.
 
+
+</details>
+
 ## Reconstrução e validação
+
+<details>
+<summary>Expandir Reconstrução e validação</summary>
 
 Todos os comandos abaixo partem da raiz do checkout e usam Python 3 da biblioteca padrão ou Node sem dependências adicionais.
 
@@ -72,3 +93,6 @@ python3 tools/logica/foz-build-campaign.py --reselect
 A semente é `10112026`. Caminhadas com apagamento de laços geram árvores variadas; canais adicionais e retirada de pistas são aceitos só após recertificação. O arquivo `tools/logica/foz-pool.json` é uma saída intermediária descartável e não deve ser publicado. Mudanças intencionais no gerador/modelo humano podem alterar uma nova seleção; a curadoria versionada mantém a campanha reproduzível.
 
 O solver enumera orientações com podas seguras. Encontrar uma segunda solução permite rejeitar o candidato; declarar uma solução única exige esgotar as demais possibilidades. Testes cobrem os 80 gabaritos, os exemplos aprovados, ciclos, distâncias erradas, estados malformados, imutabilidade, reinício e marcação acessível. O bug de array esparso descoberto na revisão independente tem regressão explícita.
+
+</details>
+

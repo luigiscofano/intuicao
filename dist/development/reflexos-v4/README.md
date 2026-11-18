@@ -6,6 +6,9 @@ Registro de desenvolvimento da revisão de 25/10/2026. Este documento separa req
 
 ## 1. Escopo e estrutura
 
+<details>
+<summary>Expandir 1. Escopo e estrutura</summary>
+
 A intervenção autorizada é exclusivamente no conteúdo e na organização de Reflexos, nas referências necessárias da campanha e nas dicas específicas das fases. Não autoriza reescrever ou refatorar o motor, alterar regras, tolerâncias, controles, design, sprites, animações, sons ou outros jogos.
 
 | Faixa | Números de exibição | Quantidade exigida | Papel editorial |
@@ -31,7 +34,13 @@ Com Corte certo (100), ELO (200), PRUMO (200) e PACTO (200), a coleção fica co
 
 Na autoria nova foram mantidos tabuleiros 800×460, espelhos de comprimento 124,8 e alvos de raio 22, sem criar peças. As margens angulares e os limites geométricos passaram pela verificação automatizada; três sobreposições visuais legadas foram aceitas explicitamente em revisão estática, conforme a seção 2.1. A precisão de entrada e a legibilidade em navegador real ainda não foram verificadas nesta etapa. Esses parâmetros não são novos requisitos impostos ao jogador.
 
+
+</details>
+
 ## 2. Identidade estável e preservação
+
+<details>
+<summary>Expandir 2. Identidade estável e preservação</summary>
 
 O identificador interno não é o número exibido na seleção.
 
@@ -69,7 +78,13 @@ As três sobreposições foram aceitas em revisão visual estática por não ocu
 
 O armazenamento continua local ao navegador. A revisão não promete sincronização entre aparelhos nem recuperação após o usuário limpar os dados do site.
 
+
+</details>
+
 ## 3. Critérios de composição e distribuição
+
+<details>
+<summary>Expandir 3. Critérios de composição e distribuição</summary>
 
 A dificuldade depende da quantidade e profundidade de decisões relacionadas, da necessidade de comparar alternativas e da distância entre escolha e consequência. Tamanho do mapa, número de peças, percurso longo, cliques, precisão angular ou tempo do solver não são provas de dificuldade.
 
@@ -136,7 +151,13 @@ Para a ideia 7, a evidência deve incluir uma configuração plausível em que c
 
 Os IDs, posições, casos e justificativas completos estão em [records.json](records.json); as decisões de seleção estão em [selection.json](selection.json).
 
+
+</details>
+
 ## 4. Exemplos geométricos documentados
+
+<details>
+<summary>Expandir 4. Exemplos geométricos documentados</summary>
 
 As **22 composições de duas janelas e as duas variantes de filtro** foram selecionadas na faixa Mestre e passaram pela reprodução integrada de suas soluções e casos. As fichas estão em [records.json](records.json), com evidências completas em [evidence-records.json.gz](evidence-records.json.gz) e trajetos recalculados em [replay-results.json.gz](replay-results.json.gz). A validação dos casos finitos não certifica unicidade contínua.
 
@@ -169,7 +190,13 @@ O segundo par, nas fases **457 → 470**, `light-v4-master-002` → `light-v4-de
 
 Esses pares justificam o conceito 16 nas **variantes**. Não demonstram que todo caminho não nomeado foi eliminado, nem autorizam uma regra que exija a nova solução de referência.
 
+
+</details>
+
 ## 5. Evidências por fase e limites das buscas
+
+<details>
+<summary>Expandir 5. Evidências por fase e limites das buscas</summary>
 
 Uma ficha completa precisa guardar ID estável, posição, faixa, subdivisão apenas no Básico, recursos utilizados, conceito principal e complementares, layout, solução, dedução central, resultado de validação e relação com uma fase anterior. Contraprovas devem identificar o vetor completo, as fontes disparadas e os estados observados no motor real.
 
@@ -186,7 +213,13 @@ Uma tabela 3×2×2 cobre integralmente suas 12 combinações nomeadas, não todo
 
 Soluções adicionais são permitidas. Quando descobertas, devem ampliar a análise: uma hipótese específica pode deixar de ser válida sem tornar a fase automaticamente trivial. A classificação só se mantém se houver outras dependências relevantes demonstradas. Não se ajusta o motor para impedir uma solução legítima.
 
+
+</details>
+
 ## 6. Resultados da integração e limites remanescentes
+
+<details>
+<summary>Expandir 6. Resultados da integração e limites remanescentes</summary>
 
 Execuções registradas em 25/10/2026, em Node.js e DOM determinístico. A base de comparação é `50d2d4338a37b52187cb2aed39449a3842ff2e8e`; o catálogo v4 é a revisão local compilada, não um commit ou uma publicação presumida.
 
@@ -234,7 +267,13 @@ A classificação não foi calibrada por sessões com jogadores. Testes de motor
 - [replay-results.json.gz](replay-results.json.gz): trajetos recalculados da validação integrada.
 - [validation-report.json](validation-report.json) e [progress-validation.json](progress-validation.json): resultados das duas suítes finais de conteúdo e preservação.
 
+
+</details>
+
 ## 7. Registros históricos
+
+<details>
+<summary>Expandir 7. Registros históricos</summary>
 
 - [Campanha Reflexos v3, de 200 níveis](../../REFLEXOS-V3.md).
 - [Validação histórica de Reflexos v3](../../QA-REFLEXOS-V3.md).
@@ -242,3 +281,6 @@ A classificação não foi calibrada por sessões com jogadores. Testes de motor
 - [README da coleção](../../README.md).
 
 Relatórios de 800 ou 900 níveis da coleção descrevem suas respectivas revisões. Eles não devem ser reescritos para aparentar uma aprovação anterior de 1200 níveis ou uma execução anterior de 500 Reflexos.
+
+</details>
+

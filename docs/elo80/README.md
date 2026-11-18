@@ -6,6 +6,9 @@ Mechanic debuts: turn 10, straight 13, passage 16, forbidden interval 24, point 
 
 ## Evidence
 
+<details>
+<summary>Expandir Evidence</summary>
+
 - `tests/elo80-validation-metadata.json`: per-level provenance, principal/secondary families, central deduction, explained sequence, complete-search result and controlled clue ablations. Passage/group ablations retain the ban on placing points, testing the crossing obligation separately.
 - `tests/elo80-reasoning-certificates.json`: complete bounded-deduction certificates (not a stored-answer claim of uniqueness).
 - `tests/elo80-independent-validation.json`: two exhaustive solver implementations for each puzzle, including partial-state soundness checks.
@@ -18,3 +21,6 @@ No mathematical engine, geometry, physics, color, sprite, fixed-point rule, shar
 Unchanged puzzles retain their stable IDs. Recomposed puzzles use new versioned IDs. The browser migration records retired puzzle progress under `eloLegacy.campaign 80.records`, leaves original sessions/completions/answer records intact, and never copies progress by ordinal. A retired last-session pointer is archived rather than redirected to a different puzzle.
 
 Difficulty and instructional progression are editorial estimates, not human-playtest calibration. All uniqueness declarations require completed searches. Large boards remain within the existing 12× 12 limit; compact challenges and classic interludes continue in later groups.
+
+</details>
+

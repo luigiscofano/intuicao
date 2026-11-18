@@ -1,5 +1,8 @@
 # Colaboração e automação no GitHub
 
+<details>
+<summary>Expandir conteúdo desta pasta</summary>
+
 O repositório usa modelos de contribuição e workflows de validação. Os PRs temáticos e suas integrações estão registrados no guia do GitHub.
 
 - [Modelo de PR](../PULL_REQUEST_TEMPLATE.md): problema, mudança, verificação e impacto.
@@ -10,3 +13,5 @@ O repositório usa modelos de contribuição e workflows de validação. Os PRs 
 Os workflows validam documentação, cinco motores, segredos e inventário visual em PRs. Nenhum publica o site ou altera a visibilidade. As actions são fixadas por SHA e acompanhadas pelo [Dependabot](../dependabot.yml). Veja o [estado das proteções e próximos passos](../../docs/seguranca/README.md).
 
 [Contribuição](../../CONTRIBUTING.md) · [Plano dos PRs](../../docs/github/README.md)
+
+</details>

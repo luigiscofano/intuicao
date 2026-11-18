@@ -6,21 +6,42 @@ Um puzzle de lógica em que pontos de regiões diferentes formam um circuito fec
 
 ## Área de jogo atual
 
+<details>
+<summary>Expandir Área de jogo atual</summary>
+
 [![ELO: captura real da área de jogo](../../imagens/galeria-atual/elo.png)](../../imagens/galeria-atual/elo.png)
 
 *Captura local do código atual, com estado de demonstração, sem cursor ou dados pessoais. [Proveniência e limites](../../imagens/galeria-atual/README.md). Não representa uma solução nem comprova todos os estados da partida.*
 
+
+</details>
+
 ## Objetivo
+
+<details>
+<summary>Expandir Objetivo</summary>
 
 **Coloque um ponto em cada região e forme um único caminho fechado.**
 
+
+</details>
+
 ## Como começar
+
+<details>
+<summary>Expandir Como começar</summary>
 
 1. Toque nas casas para colocar pontos. Preserve os pontos fixos.
 2. Pontos alinhados se ligam automaticamente na horizontal ou vertical.
 3. Cada ponto precisa de duas ligações, sem cruzamentos. Siga também as pistas da fase.
 
+
+</details>
+
 ## Regras completas
+
+<details>
+<summary>Expandir Regras completas</summary>
 
 1. Coloque exatamente um ponto em cada região. Os pontos fixos não podem ser movidos.
 2. As ligações aparecem sozinhas: cada ponto se liga ao primeiro que encontra em cada direção horizontal ou vertical. Fronteiras e anotações X não bloqueiam as ligações.
@@ -29,27 +50,57 @@ Um puzzle de lógica em que pontos de regiões diferentes formam um circuito fec
 5. Uma passagem marcada precisa ser atravessada por uma ligação, sem colocar ponto nela. Trechos vedados não podem ser usados. Nos grupos de escolha, atravesse apenas uma das passagens.
 6. Outras pistas pedem ligação direta entre regiões, ordem dos marcos ou número de travessias de uma linha. A ordem pode ser lida nos dois sentidos e permite outras regiões entre os marcos. Confira as pistas da fase e confirme.
 
+
+</details>
+
 ## Exemplo de raciocínio
+
+<details>
+<summary>Expandir Exemplo de raciocínio</summary>
 
 O quarto ponto fecha o circuito: todos ficam ligados em uma só volta.
 
+
+</details>
+
 ## O que observar
+
+<details>
+<summary>Expandir O que observar</summary>
 
 A proposta pedagógica é transformar conexões simples em um problema de planejamento: cada escolha precisa respeitar sua região e, ao mesmo tempo, contribuir para uma estrutura única.
 
 Não conclua uma solução apenas pela aparência. Leia as pistas da fase e confira a condição de término acima. Pistas fixas e a identidade da fase devem ser preservadas. Dicas ou solução assistida não equivalem a uma conclusão independente.
 
+
+</details>
+
 ## Proposta pedagógica
+
+<details>
+<summary>Expandir Proposta pedagógica</summary>
 
 Praticar dedução lógica, visão espacial e articulação entre condições locais e globais, acompanhando como mover um ponto altera o circuito inteiro.
 
 Essas são intenções de design e oportunidades de prática, não resultados acadêmicos medidos.
 
+
+</details>
+
 ## Identidade visual e leitura
+
+<details>
+<summary>Expandir Identidade visual e leitura</summary>
 
 As cores, peças e ilustrações ajudam a distinguir estados e ações. A arte não concede poderes ou altera as regras. Veja a [galeria da identidade](../../identidade/README.md) e os [recursos de fauna e flora](../../../README.md#fauna-flora-e-objetos-com-funcao).
 
+
+</details>
+
 ## Onde está implementado
+
+<details>
+<summary>Expandir Onde está implementado</summary>
 
 - [dist/elo-rules.mjs](../../../dist/elo-rules.mjs)
 - [dist/elo-campaign.mjs](../../../dist/elo-campaign.mjs)
@@ -57,18 +108,36 @@ As cores, peças e ilustrações ajudam a distinguir estados e ações. A arte n
 
 As regras desta página foram confrontadas com os textos publicados em [game-info-content.mjs](../../../dist/game-info-content.mjs), os [guias rápidos](../../../dist/rules-quick-start.mjs) e os adaptadores próprios da família. Quantidades dependentes de mapa não devem ser tratadas como constantes universais.
 
+
+</details>
+
 ## Preservação e verificação
+
+<details>
+<summary>Expandir Preservação e verificação</summary>
 
 O progresso usa o armazenamento local e o [backup compartilhado](../../../dist/progress-backup.mjs). Não reutilize número editorial como identificador de save. Ao alterar este jogo, confira ações válidas e inválidas, retorno à seleção, desfazer/refazer quando oferecidos, conclusão ou término, restauração e telas estreitas.
 
 [Guia de testes](../../../tests/README.md) · [Qualidade](../../qualidade/README.md). Uma captura demonstra apresentação, não comprova sozinha toda a mecânica. As regras documentadas devem acompanhar o código, não substituir testes do motor.
 
 
+
+</details>
+
 ## Referência técnica complementar
+
+<details>
+<summary>Expandir Referência técnica complementar</summary>
 
 Os links abaixo preservam o mapa técnico documentado do jogo. Relatórios datados mantêm o escopo da revisão original, não certificam automaticamente a versão atual.
 
+
+</details>
+
 ## Como a implementação funciona
+
+<details>
+<summary>Expandir Como a implementação funciona</summary>
 
 O circuito pode ser visto como um grafo: pontos são vértices e alinhamentos válidos são arestas. Grau dois em cada vértice é necessário, mas ainda é preciso verificar conectividade global e ausência de cruzamentos.
 
@@ -89,7 +158,13 @@ O circuito pode ser visto como um grafo: pontos são vértices e alinhamentos v�
 
 Os nomes acima são extraídos dos exports presentes nesta base. Antes de chamar uma função, confira parâmetros, retornos e casos de erro no módulo e em seus testes; não assuma que todos os jogos compartilham a mesma assinatura.
 
+
+</details>
+
 ## Roteiro para estudar ou alterar
+
+<details>
+<summary>Expandir Roteiro para estudar ou alterar</summary>
 
 1. Leia as regras e identifique a condição de vitória ou encerramento.
 2. Acompanhe a representação de fase/mapa e de estado no módulo principal.
@@ -98,7 +173,13 @@ Os nomes acima são extraídos dos exports presentes nesta base. Antes de chamar
 5. Encontre um teste da regra alterada e reproduza um caso mínimo antes de editar.
 6. Quando houver catálogo novo, confira IDs, soluções, contagem e impacto no save.
 
+
+</details>
+
 ## Verificação e riscos específicos
+
+<details>
+<summary>Expandir Verificação e riscos específicos</summary>
 
 Cobrir ponto fixo, exatamente um ponto por região, cruzamentos, múltiplos ciclos, pistas especiais e anotações X. Uma anotação não se transforma em parede nem bloqueia a ligação automática.
 
@@ -123,15 +204,30 @@ Use o [guia de testes](../../../tests/README.md) para diferenciar testes de regr
 
 Quando a mudança é visual, valide entrada no jogo, leitura das regras, interação principal, retorno e tamanhos de tela. Quando toca regras ou saves, acrescente casos de entradas inválidas, repetição da ação e restauração. Não conclua que uma busca encontrou solução única se ela esgotou seu orçamento.
 
+
+</details>
+
 ## Documentação de referência
+
+<details>
+<summary>Expandir Documentação de referência</summary>
 
 - [docs/elo80/README.md](../../../docs/elo80/README.md)
 - [docs/elo-expanded-variety-2026-10-31.md](../../../docs/elo-expanded-variety-2026-10-31.md)
 
+
+</details>
+
 ## AIIJ aprovada
+
+<details>
+<summary>Expandir AIIJ aprovada</summary>
 
 [![Arte de Ilustração Individual de ELO](../../../dist/platform-assets/elo-aiij-aprovada.svg)](../../../dist/platform-assets/elo-aiij-aprovada.svg)
 
 Arquivo real aprovado, preservado em sua proporção original e com transparência. Esta ilustração pertence à identidade do jogo; não altera regras, controles, peças nem progresso. Não usar como miniatura do tabuleiro.
 
 [Ver as 19 AIIJs e orientações de uso](../../identidade/aiij/README.md).
+
+</details>
+

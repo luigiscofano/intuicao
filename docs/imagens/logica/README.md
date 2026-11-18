@@ -6,6 +6,9 @@ Ilustrações da família lógica. Divisa, quando presente, é conteúdo histór
 
 ## Conteúdo
 
+<details>
+<summary>Expandir Conteúdo</summary>
+
 - [divisa.svg](divisa.svg)
 - [foz.svg](foz.svg)
 - [mirante.svg](mirante.svg)
@@ -13,8 +16,17 @@ Ilustrações da família lógica. Divisa, quando presente, é conteúdo histór
 - [refugio.svg](refugio.svg)
 - [renovo.svg](renovo.svg)
 
+
+</details>
+
 ## Manutenção
+
+<details>
+<summary>Expandir Manutenção</summary>
 
 Atualize este índice ao alterar o conteúdo da pasta. Verifique os links com `node scripts/check-docs.mjs` a partir da raiz. Testes de código e publicação devem seguir o fluxo específico do projeto. Registros históricos conservam sua data e não representam automaticamente o estado publicado.
 
 ![Identidade do projeto](../../../dist/platform-assets/intuicao-logo-azulejos.png)
+
+</details>
+

@@ -2,16 +2,31 @@
 
 ## Atualização da preparação de publicação — 01/11/2026
 
+<details>
+<summary>Expandir Atualização da preparação de publicação — 01/11/2026</summary>
+
 Na base `ae8cad7`, o recorte dos cinco motores foi reexecutado com Node.js 24.22.1: **95 aprovados, zero falhas**. A preparação adiciona execução em PRs/pushes, auditoria de segredos e inventário visual. A [revisão de publicação](../seguranca/README.md) detalha o escopo e as pendências. Isso não incorpora a revisão ausente `f0e7fcf`, não revalida o site hospedado e não resolve as falhas da suíte ampla descritas abaixo.
 
 Os registros seguintes documentam a organização anterior e mantêm seu contexto histórico.
 
 
+
+</details>
+
 ## Base e alcance
+
+<details>
+<summary>Expandir Base e alcance</summary>
 
 Base: `2354a3cd4d0a06ed66b665ca853a635b64e3a0a7`. Organização documental realizada em 1 de novembro de 2026. A alteração não substitui o site publicado e não incorpora a revisão ausente `f0e7fcf`.
 
+
+</details>
+
 ## Evidências
+
+<details>
+<summary>Expandir Evidências</summary>
 
 | Verificação | Estado |
 | --- | --- |
@@ -23,11 +38,23 @@ Base: `2354a3cd4d0a06ed66b665ca853a635b64e3a0a7`. Organização documental reali
 | CI do GitHub | [Documentação aprovada](https://github.com/luigiscofano/intuicao/actions/runs/41322568127) e [motores aprovados](https://github.com/luigiscofano/intuicao/actions/runs/41322454090) |
 | Navegador, visual e acessibilidade | Não reexecutados durante esta alteração documental |
 
+
+</details>
+
 ## O que o recorte de motores não prova
+
+<details>
+<summary>Expandir O que o recorte de motores não prova</summary>
 
 Não prova que todos os testes históricos passam, que todos os catálogos são únicos, que a curva de dificuldade foi calibrada com pessoas ou que a aplicação está livre de defeitos. Testes de regras sem navegador não verificam foco, toque, rolagem e legibilidade.
 
+
+</details>
+
 ## Critérios para uma mudança futura
+
+<details>
+<summary>Expandir Critérios para uma mudança futura</summary>
 
 1. Identificar o contrato e o commit antes de alterar uma expectativa.
 2. Acrescentar ou adaptar um caso que falhe pelo motivo correto.
@@ -38,10 +65,19 @@ Não prova que todos os testes históricos passam, que todos os catálogos são 
 
 Consulte o [fechamento da organização](fechamento.md) para as verificações e os totais da entrega.
 
+
+</details>
+
 ## Pendências reais
+
+<details>
+<summary>Expandir Pendências reais</summary>
 
 - Recuperar a cópia revisada `f0e7fcf` com seu histórico e seus testes.
 - Resolver a incorporação da correção de idempotência da migração SINTONIA.
 - Reconciliar os manuais novos com a revisão recuperada.
 
 O [plano de integração](../github/README.md) mantém as dependências de revisão explícitas.
+
+</details>
+

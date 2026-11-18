@@ -11,6 +11,9 @@
 
 ## Evidências
 
+<details>
+<summary>Expandir Evidências</summary>
+
 - [Resumo, escopo e limites](../sintonia-v2-validacao.md)
 - [Revisão independente](independent-review.md)
 - Verificação congelada original: arquivo não presente nesta cópia. A [verificação independente](independent-frozen-verification.json) é outra evidência, não uma substituição do registro ausente.
@@ -18,7 +21,13 @@
 - [Level design e reprodução](../sintonia-level-design.md)
 - [Catálogo de 500 fases](../sintonia-catalogo.md)
 
+
+</details>
+
 ## Hashes finais SHA-256
+
+<details>
+<summary>Expandir Hashes finais SHA-256</summary>
 
 | Arquivo | SHA-256 |
 |---|---|
@@ -26,3 +35,6 @@
 | `campaign.mjs` | `d9dec2f9759eaf977fa8060a1689f0d68822c235f0eb687d5fc934cf56e8ef28` |
 | `fallback.mjs` | `f111a55290a3d876c58b4cbac0a55b480b03f37b9f1067f02b3d2006d578051b` |
 | `generator.mjs` | `18db4d5144271e2cd15cf75d5648a482ab1e40815b53645c06354a684c9b14ad` |
+
+</details>
+

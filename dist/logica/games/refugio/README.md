@@ -6,6 +6,9 @@ administra navegação, histórico, reinício, tentativas e gabarito explícito.
 
 ## Regras e invariantes
 
+<details>
+<summary>Expandir Regras e invariantes</summary>
+
 1. Cada casa é livre ou barreira; pistas são imutáveis e marcos são livres.
 2. Cada região livre conectada por lados contém exatamente um marco.
 3. Cada barreira toca por lados exatamente **duas regiões livres diferentes**.
@@ -16,7 +19,13 @@ não indicam área ou ordem. O exterior não conta como região e diagonais nunc
 conectam. As barreiras não precisam estar conectadas; não há proibição separada
 de bloco 2 × 2 nem objetivo de minimizar a quantidade global de barreiras.
 
+
+</details>
+
 ## Dados, estado e interface do motor
+
+<details>
+<summary>Expandir Dados, estado e interface do motor</summary>
 
 Um nível contém `rows`, `cols`, `markers: { index, label }[]` e `givens`.
 As casas são indexadas por linhas: `row * cols + col`. Valores de `givens` e
@@ -41,7 +50,13 @@ de indecisões (`complete`) de satisfação das três regras (`valid`). O motor
 encontra componentes livres e conta componentes distintos ao redor de cada
 barreira; não confunde essa contagem com número de casas adjacentes.
 
+
+</details>
+
 ## Geração e certificado de unicidade
+
+<details>
+<summary>Expandir Geração e certificado de unicidade</summary>
 
 São 80 níveis, distribuídos 15/15/15/15/15/5 nas seis faixas do Intuição. Os dois
 exemplos aprovados estão preservados como fixtures e nos níveis 1 e 31. Somente o
@@ -61,7 +76,13 @@ marcos diferentes tocando a mesma barreira. O restante é percorrido por busca
 binária. Para rejeitar um candidato basta achar a segunda solução; o certificado
 de unicidade só é emitido quando toda a busca compatível foi esgotada e restou uma.
 
+
+</details>
+
 ## Progressão e roteiro auditável
+
+<details>
+<summary>Expandir Progressão e roteiro auditável</summary>
 
 O roteiro lógico é separado da enumeração. Cada decisão recebe uma justificativa
 pelas condições acima. Quando necessário, analisa uma hipótese com suas
@@ -87,7 +108,13 @@ O relatório contém a sequência completa de casas, valores concluídos, condi�
 que eliminaram a alternativa e profundidade. A verificação pode reproduzir cada
 roteiro sem consultar o gabarito.
 
+
+</details>
+
 ## Renderização e integração
+
+<details>
+<summary>Expandir Renderização e integração</summary>
 
 O SVG mantém a placa branca de cantos 17, células claras com cantos 9 e intervalo
 4, peças sálvia/âmbar de centro creme e dupla moldura. Marcos usam números;
@@ -99,7 +126,13 @@ Todas as casas têm `data-cell`, `role="button"`, `tabindex="0"` e nome acessív
 em português. Pistas recebem `aria-disabled="true"`. O host deve tratar
 Enter/Espaço e importar `view.css` para o foco visível. Não há handlers inline.
 
+
+</details>
+
 ## Reproduzir e conferir
+
+<details>
+<summary>Expandir Reproduzir e conferir</summary>
 
 Na raiz do checkout:
 
@@ -129,7 +162,13 @@ https://www.nikoli.co.jp/en/puzzles/nurikabe/. REFÚGIO não utiliza suas áreas
 numéricas, parede preta conectada ou proibição de 2 × 2. O núcleo é o separador
 localmente irredutível. Não se afirma ineditismo mundial.
 
+
+</details>
+
 ## Identidade visual aprovada — novembro de 2026
+
+<details>
+<summary>Expandir Identidade visual aprovada — novembro de 2026</summary>
 
 A skin **Folhas** preserva a grade, paleta sálvia/âmbar, molduras, hachuras,
 legendas e áreas de toque do visual anterior. Acrescenta apenas:
@@ -152,3 +191,6 @@ gerador ou formato de save foi alterado. Verificação da camada visual:
 ```sh
 node --test tests/logica/refugio-visual-approved.test.mjs
 ```
+
+</details>
+

@@ -6,6 +6,9 @@ Regressões de regras, campanhas, interface e preservação da família lógica.
 
 ## Conteúdo
 
+<details>
+<summary>Expandir Conteúdo</summary>
+
 - [divisa-certificates.json](divisa-certificates.json)
 - [divisa-fixtures.json](divisa-fixtures.json)
 - [divisa-independent-results.json](divisa-independent-results.json)
@@ -43,8 +46,17 @@ Regressões de regras, campanhas, interface e preservação da família lógica.
 - [renovo-visual.test.mjs](renovo-visual.test.mjs)
 - [shared.test.mjs](shared.test.mjs)
 
+
+</details>
+
 ## Manutenção
+
+<details>
+<summary>Expandir Manutenção</summary>
 
 Atualize este índice ao alterar o conteúdo da pasta. Verifique os links com `node scripts/check-docs.mjs` a partir da raiz. Testes de código e publicação devem seguir o fluxo específico do projeto. Registros históricos conservam sua data e não representam automaticamente o estado publicado.
 
 ![Identidade do projeto](../../dist/platform-assets/intuicao-logo-azulejos.png)
+
+</details>
+

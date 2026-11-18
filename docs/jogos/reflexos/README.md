@@ -6,21 +6,42 @@ Um puzzle de luz e espelhos em que você constrói percursos para raios colorido
 
 ## Área de jogo atual
 
+<details>
+<summary>Expandir Área de jogo atual</summary>
+
 [![Reflexos: captura real da área de jogo](../../imagens/galeria-atual/light.png)](../../imagens/galeria-atual/light.png)
 
 *Captura local do código atual, com estado de demonstração, sem cursor ou dados pessoais. [Proveniência e limites](../../imagens/galeria-atual/README.md). Não representa uma solução nem comprova todos os estados da partida.*
 
+
+</details>
+
 ## Objetivo
+
+<details>
+<summary>Expandir Objetivo</summary>
 
 **Leve cada raio ao alvo da mesma cor e símbolo.**
 
+
+</details>
+
 ## Como começar
+
+<details>
+<summary>Expandir Como começar</summary>
 
 1. Gire os espelhos. Eles mudam a direção da luz, mas não saem do lugar.
 2. Dispare pelas fontes ou use Confirmar todos para ver o caminho.
 3. Acerte todos os alvos sem cruzar nem encostar raios de cores diferentes.
 
+
+</details>
+
 ## Regras completas
+
+<details>
+<summary>Expandir Regras completas</summary>
 
 1. Gire os espelhos. Eles mudam a direção da luz, mas não saem do lugar.
 2. Clique em uma fonte para disparar ou use Confirmar todos. Todos os raios precisam chegar aos seus alvos.
@@ -28,27 +49,57 @@ Um puzzle de luz e espelhos em que você constrói percursos para raios colorido
 4. Quando houver portais, a mesma letra indica entrada e saída. A luz sai na mesma direção. Alguns portais só aceitam certas cores; o salto entre eles não conta como caminho.
 5. A tentativa termina após todos os disparos. Ao mudar um ajuste, os raios são limpos para você tentar de novo.
 
+
+</details>
+
 ## Exemplo de raciocínio
+
+<details>
+<summary>Expandir Exemplo de raciocínio</summary>
 
 O espelho faz a luz virar e alcançar o alvo.
 
+
+</details>
+
 ## O que observar
+
+<details>
+<summary>Expandir O que observar</summary>
 
 A proposta pedagógica é tornar a reflexão da luz explorável: pequenas mudanças de direção produzem efeitos visíveis, e os percursos precisam funcionar em conjunto.
 
 Não conclua uma solução apenas pela aparência. Leia as pistas da fase e confira a condição de término acima. Pistas fixas e a identidade da fase devem ser preservadas. Dicas ou solução assistida não equivalem a uma conclusão independente.
 
+
+</details>
+
 ## Proposta pedagógica
+
+<details>
+<summary>Expandir Proposta pedagógica</summary>
 
 Praticar orientação espacial, leitura de ângulos e planejamento de trajetórias. Observar uma tentativa e ajustar os espelhos convida a formular e revisar hipóteses.
 
 Essas são intenções de design e oportunidades de prática, não resultados acadêmicos medidos.
 
+
+</details>
+
 ## Identidade visual e leitura
+
+<details>
+<summary>Expandir Identidade visual e leitura</summary>
 
 As cores, peças e ilustrações ajudam a distinguir estados e ações. A arte não concede poderes ou altera as regras. Veja a [galeria da identidade](../../identidade/README.md) e os [recursos de fauna e flora](../../../README.md#fauna-flora-e-objetos-com-funcao).
 
+
+</details>
+
 ## Onde está implementado
+
+<details>
+<summary>Expandir Onde está implementado</summary>
 
 - [dist/light-world.mjs](../../../dist/light-world.mjs)
 - [dist/light-render.mjs](../../../dist/light-render.mjs)
@@ -56,18 +107,36 @@ As cores, peças e ilustrações ajudam a distinguir estados e ações. A arte n
 
 As regras desta página foram confrontadas com os textos publicados em [game-info-content.mjs](../../../dist/game-info-content.mjs), os [guias rápidos](../../../dist/rules-quick-start.mjs) e os adaptadores próprios da família. Quantidades dependentes de mapa não devem ser tratadas como constantes universais.
 
+
+</details>
+
 ## Preservação e verificação
+
+<details>
+<summary>Expandir Preservação e verificação</summary>
 
 O progresso usa o armazenamento local e o [backup compartilhado](../../../dist/progress-backup.mjs). Não reutilize número editorial como identificador de save. Ao alterar este jogo, confira ações válidas e inválidas, retorno à seleção, desfazer/refazer quando oferecidos, conclusão ou término, restauração e telas estreitas.
 
 [Guia de testes](../../../tests/README.md) · [Qualidade](../../qualidade/README.md). Uma captura demonstra apresentação, não comprova sozinha toda a mecânica. As regras documentadas devem acompanhar o código, não substituir testes do motor.
 
 
+
+</details>
+
 ## Referência técnica complementar
+
+<details>
+<summary>Expandir Referência técnica complementar</summary>
 
 Os links abaixo preservam o mapa técnico documentado do jogo. Relatórios datados mantêm o escopo da revisão original, não certificam automaticamente a versão atual.
 
+
+</details>
+
 ## Como a implementação funciona
+
+<details>
+<summary>Expandir Como a implementação funciona</summary>
 
 Separar geometria da renderização permite reproduzir percursos sem depender do desenho SVG. A direção após uma reflexão depende da orientação do espelho; um portal preserva a direção de saída, mas seu salto não forma um segmento físico entre os portais.
 
@@ -87,7 +156,13 @@ Separar geometria da renderização permite reproduzir percursos sem depender do
 
 Os nomes acima são extraídos dos exports presentes nesta base. Antes de chamar uma função, confira parâmetros, retornos e casos de erro no módulo e em seus testes; não assuma que todos os jogos compartilham a mesma assinatura.
 
+
+</details>
+
 ## Roteiro para estudar ou alterar
+
+<details>
+<summary>Expandir Roteiro para estudar ou alterar</summary>
 
 1. Leia as regras e identifique a condição de vitória ou encerramento.
 2. Acompanhe a representação de fase/mapa e de estado no módulo principal.
@@ -96,7 +171,13 @@ Os nomes acima são extraídos dos exports presentes nesta base. Antes de chamar
 5. Encontre um teste da regra alterada e reproduza um caso mínimo antes de editar.
 6. Quando houver catálogo novo, confira IDs, soluções, contagem e impacto no save.
 
+
+</details>
+
 ## Verificação e riscos específicos
+
+<details>
+<summary>Expandir Verificação e riscos específicos</summary>
 
 Verificar contato entre raios, pares de portais, interrupção em paredes e reinício dos disparos após editar um ângulo. Um gabarito válido não prova que a solução é única.
 
@@ -121,15 +202,30 @@ Use o [guia de testes](../../../tests/README.md) para diferenciar testes de regr
 
 Quando a mudança é visual, valide entrada no jogo, leitura das regras, interação principal, retorno e tamanhos de tela. Quando toca regras ou saves, acrescente casos de entradas inválidas, repetição da ação e restauração. Não conclua que uma busca encontrou solução única se ela esgotou seu orçamento.
 
+
+</details>
+
 ## Documentação de referência
+
+<details>
+<summary>Expandir Documentação de referência</summary>
 
 - [docs/reflexos80](../../../docs/reflexos80)
 - [dist/development/reflexos80/README.md](../../../dist/development/reflexos80/README.md)
 
+
+</details>
+
 ## AIIJ aprovada
+
+<details>
+<summary>Expandir AIIJ aprovada</summary>
 
 [![Arte de Ilustração Individual de Reflexos](../../../dist/platform-assets/light-aiij-aprovada.svg)](../../../dist/platform-assets/light-aiij-aprovada.svg)
 
 Arquivo real aprovado, preservado em sua proporção original e com transparência. Esta ilustração pertence à identidade do jogo; não altera regras, controles, peças nem progresso. Não usar como miniatura do tabuleiro.
 
 [Ver as 19 AIIJs e orientações de uso](../../identidade/aiij/README.md).
+
+</details>
+

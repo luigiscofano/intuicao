@@ -12,9 +12,18 @@ As tabelas abaixo documentam as cinquenta missões da edição inicial. A imagem
 
 ## Como usar
 
+<details>
+<summary>Expandir Como usar</summary>
+
 Abra **Conquistas** na navegação do site. A tela começa em **Missões dos jogos**; escolha um jogo e, se desejar, filtre por **Conquistadas** ou **A descobrir**. Cada cartão apresenta o requisito completo e um link para o jogo. A seção **Gerais** conserva os dez marcos de progresso das campanhas.
 
+
+</details>
+
 ## O que comprova uma conquista
+
+<details>
+<summary>Expandir O que comprova uma conquista</summary>
 
 As **28 missões de campanha** usam a conclusão salva de uma fase oficial atual que possui a característica indicada. Conclusões assistidas também contam. Não são inferidas velocidade, número de tentativas ou decisões que o registro antigo não contém. As seis campanhas lógicas usam um índice leve com identidade e versão da fase; o índice é gerado e comparado com os catálogos completos na verificação automatizada.
 
@@ -24,7 +33,13 @@ Uma missão de ação é registrada uma única vez. Desfazer depois não remove 
 
 O progresso pertence ao navegador e integra o backup existente. Abrir a galeria não modifica os saves. Registros incompatíveis ou ilegíveis são preservados, e o jogo continua funcionando quando o navegador impede o armazenamento.
 
+
+</details>
+
 ## Missões das campanhas
+
+<details>
+<summary>Expandir Missões das campanhas</summary>
 
 | Jogo | Missão | Condição |
 | --- | --- | --- |
@@ -57,7 +72,13 @@ O progresso pertence ao navegador e integra o backup existente. Abrir a galeria 
 | RENOVO | **Raízes de longo alcance** | Conclua uma fase cuja solução tem um trio com dois braços de pelo menos duas casas e comprimentos diferentes. |
 | RENOVO | **Quatro direções de vida** | Conclua uma fase cuja solução contém trios nas quatro orientações de ângulo reto. |
 
+
+</details>
+
 ## Missões dos duelos
+
+<details>
+<summary>Expandir Missões dos duelos</summary>
 
 | Jogo | Missão | Condição |
 | --- | --- | --- |
@@ -84,7 +105,13 @@ O progresso pertence ao navegador e integra o backup existente. Abrir a galeria 
 | LASTRO | **Volta ao centro** | Faça um ajuste que transforme um desvio diferente de zero em equilíbrio exato: Δ = 0. |
 | LASTRO | **Até a última marca** | Vença uma rodada ao avançar um contrapeso até a marca 4. |
 
+
+</details>
+
 ## Dez conquistas gerais preservadas
+
+<details>
+<summary>Expandir Dez conquistas gerais preservadas</summary>
 
 | Conquista | Condição |
 | --- | --- |
@@ -101,10 +128,19 @@ O progresso pertence ao navegador e integra o backup existente. Abrir a galeria 
 
 Os identificadores das conquistas gerais continuam os mesmos. Cada nível conta uma vez e a versão atual da campanha determina a evidência de conclusão.
 
+
+</details>
+
 ## Verificação desta edição
+
+<details>
+<summary>Expandir Verificação desta edição</summary>
 
 A implementação foi conferida por testes de motores, campanhas, missões, armazenamento, backup, filtros e avisos acessíveis. Todos os 50 objetivos possuem evidência de alcançabilidade: fases oficiais para as campanhas e sequências de movimentos legais desde o início para os duelos.
 
 Na conferência real do navegador, ESTALO abriu seis vagens na sequência de A1, com ganho 4–2. A prévia não exibiu conquista; confirmar desbloqueou **Efeito em cadeia**, e recarregar preservou o registro. Em BROTO, cinco plantios legais desbloquearam **Colheita em dobro** somente após a confirmação final.
 
 A inspeção visual foi realizada no viewport desktop disponível. O layout contém regras responsivas, mas não houve emulação móvel nessa conferência. Dificuldade e frequência de desbloqueio ainda podem ser ajustadas a partir de partidas de pessoas reais; a implementação não atribui raridades fictícias aos emblemas.
+
+</details>
+

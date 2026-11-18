@@ -4,6 +4,9 @@ Revisão de 30/10/2026. Seis faixas: Básico 1–15; Aprendiz 16–30; Intermedi
 
 ## O que foi verificado
 
+<details>
+<summary>Expandir O que foi verificado</summary>
+
 - 80 soluções conjuntas e 80 inícios não resolvidos.
 - 64 fases com configuração completa que vence por cor isolada e conflita em conjunto: 5/13/13/14/14/5 por faixa; 51 sem paredes.
 - Seis fases com espelho simultaneamente compartilhado por cores distintas: 18, 29, 40, 52, 64 e 78.
@@ -12,7 +15,13 @@ Revisão de 30/10/2026. Seis faixas: Básico 1–15; Aprendiz 16–30; Intermedi
 - 16 conceitos e dez padrões A–J, sem três núcleos de decisão iguais consecutivos.
 - 80 vitórias pelo gabarito no teste DOM da aplicação; 240 erros completos verificam a liberação após três erros. Navegação, histórico por ID, desfazer/refazer, reinício e isolamento de importação/Modo Sem Parar preservados.
 
+
+</details>
+
 ## Arquivos
+
+<details>
+<summary>Expandir Arquivos</summary>
 
 - `80-registros-completos.json`: definições, descoberta, alternativa que falha, dependências, justificativa de faixa, origem, soluções, contraprovas, contatos compartilhados, margens e todas as perturbações.
 - `80-registros-tabela.csv`: tabela dos 80 registros, separador ponto e vírgula, UTF-8.
@@ -20,7 +29,13 @@ Revisão de 30/10/2026. Seis faixas: Básico 1–15; Aprendiz 16–30; Intermedi
 - `indice-80.md`: índice breve por número, ID e faixa.
 - `revisao-editorial-independente.md`, `physics-review.md`, `physics-summary.json` e `ui-verification.md`: escopo e limites das revisões independentes.
 
+
+</details>
+
 ## Preservação
+
+<details>
+<summary>Expandir Preservação</summary>
 
 A física, reflexão, colisões, tolerâncias, comprimentos, raios, renderização, controles e botões não mudaram. 236 arquivos anteriores de `dist` são idênticos; fora dos novos arquivos documentais, mudaram apenas a lista de fases e três linhas da seleção de campanha. As seis outras campanhas anteriores permanecem intactas.
 
@@ -28,8 +43,17 @@ A física, reflexão, colisões, tolerâncias, comprimentos, raios, renderizaç�
 
 A interface atual prevalece sobre instruções históricas: dicas visíveis apenas em PACTO; painel avançado apenas em REFLEXOS; regras à direita e confirmação conjunta preservadas.
 
+
+</details>
+
 ## Limites
+
+<details>
+<summary>Expandir Limites</summary>
 
 Testes finitos não provam unicidade, uso necessário de cada recurso, mínimo global de peças, ausência de qualquer atalho contínuo ou conforto de toda configuração angular. Há alternativas conhecidas válidas entre 20° e 30°; o motor não as proíbe. A campanha não foi calibrada com jogadores.
 
 A verificação visual nativa não foi concluída: o provedor de entrada AT-SPI do Chromium estava indisponível. Não houve nova tentativa de DevTools/CDP bloqueado nem teste móvel. A cobertura DOM determinística não é apresentada como teste visual ou humano.
+
+</details>
+

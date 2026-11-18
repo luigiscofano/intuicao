@@ -6,21 +6,42 @@ Una cada semente a uma folha por um botão, formando trios que dobram uma vez e 
 
 ## Área de jogo atual
 
+<details>
+<summary>Expandir Área de jogo atual</summary>
+
 [![RENOVO: captura real da área de jogo](../../imagens/galeria-atual/renovo.png)](../../imagens/galeria-atual/renovo.png)
 
 *Captura local do código atual, com estado de demonstração, sem cursor ou dados pessoais. [Proveniência e limites](../../imagens/galeria-atual/README.md). Não representa uma solução nem comprova todos os estados da partida.*
 
+
+</details>
+
 ## Objetivo
+
+<details>
+<summary>Expandir Objetivo</summary>
 
 **Ligue semente, botão e folha em trios, sem cruzar as linhas.**
 
+
+</details>
+
 ## Como começar
+
+<details>
+<summary>Expandir Como começar</summary>
 
 1. Arraste pelas peças para criar o caminho, ou clique nas duas pontas de uma ligação.
 2. No botão, faça uma curva de 90°: uma ligação horizontal e outra vertical.
 3. Use cada peça uma vez. As linhas não podem cruzar, se sobrepor nem atravessar outras peças.
 
+
+</details>
+
 ## Regras completas
+
+<details>
+<summary>Expandir Regras completas</summary>
 
 1. Cada botão deve se ligar a uma semente e a uma folha. Use todas as peças, uma única vez.
 2. As duas ligações do botão formam um L: uma horizontal e outra vertical. Cada trecho termina na primeira peça que encontra naquela direção.
@@ -31,7 +52,13 @@ Una cada semente a uma folha por um botão, formando trios que dobram uma vez e 
 
 Arraste com o mouse ou dedo da semente ou folha até o botão; você pode virar e continuar até o outro extremo. Solte para confirmar. Repetir o traçado mantém os trechos existentes. Ou clique em duas peças alinhadas para ligar; repita os dois cliques para remover. Enter ou Espaço também selecionam peças. Escape cancela o gesto; clicar novamente na peça selecionada cancela a seleção. Limpar peça remove seus trechos.
 
+
+</details>
+
 ## Exemplo de raciocínio
+
+<details>
+<summary>Expandir Exemplo de raciocínio</summary>
 
 A semente chega pela esquerda do botão; a folha se liga por baixo.
 
@@ -39,23 +66,47 @@ A semente chega pela esquerda do botão; a folha se liga por baixo.
 
 *Esquema de regra, não uma fase completa nem uma captura do site.*
 
+
+</details>
+
 ## O que observar
+
+<details>
+<summary>Expandir O que observar</summary>
 
 Uma ligação pode consumir o parceiro de outro botão ou bloquear seu trecho. As escolhas simples precisam coexistir sem cruzamento.
 
 Não conclua uma solução apenas pela aparência. Leia as pistas da fase e confira a condição de término acima. Pistas fixas e a identidade da fase devem ser preservadas. Dicas ou solução assistida não equivalem a uma conclusão independente.
 
+
+</details>
+
 ## Proposta pedagógica
+
+<details>
+<summary>Expandir Proposta pedagógica</summary>
 
 Praticar associação de parceiros, planejamento e leitura de conflitos geométricos. As sementes, os botões e as folhas também ilustram temas reais de biologia vegetal: a germinação, que dá início ao desenvolvimento de uma nova planta; as folhas, que realizam fotossíntese; e os botões florais, que podem se abrir em flores ligadas à reprodução. Esses elementos aproximam o raciocínio lógico da observação das plantas e convidam a reconhecer suas diferentes funções. As ligações do tabuleiro são uma metáfora visual: não representam a ordem de crescimento nem o transporte de água ou nutrientes de uma planta real.
 
 Essas são intenções de design e oportunidades de prática, não resultados acadêmicos medidos.
 
+
+</details>
+
 ## Identidade visual e leitura
+
+<details>
+<summary>Expandir Identidade visual e leitura</summary>
 
 As cores, peças e ilustrações ajudam a distinguir estados e ações. A arte não concede poderes ou altera as regras. Veja a [galeria da identidade](../../identidade/README.md) e os [recursos de fauna e flora](../../../README.md#fauna-flora-e-objetos-com-funcao).
 
+
+</details>
+
 ## Onde está implementado
+
+<details>
+<summary>Expandir Onde está implementado</summary>
 
 - [dist/logica/games/renovo/engine.mjs](../../../dist/logica/games/renovo/engine.mjs)
 - [dist/logica/games/renovo/view.mjs](../../../dist/logica/games/renovo/view.mjs)
@@ -64,16 +115,31 @@ As cores, peças e ilustrações ajudam a distinguir estados e ações. A arte n
 
 As regras desta página foram confrontadas com os textos publicados em [game-info-content.mjs](../../../dist/game-info-content.mjs), os [guias rápidos](../../../dist/rules-quick-start.mjs) e os adaptadores próprios da família. Quantidades dependentes de mapa não devem ser tratadas como constantes universais.
 
+
+</details>
+
 ## Preservação e verificação
+
+<details>
+<summary>Expandir Preservação e verificação</summary>
 
 O progresso usa o armazenamento local e o [backup compartilhado](../../../dist/progress-backup.mjs). Não reutilize número editorial como identificador de save. Ao alterar este jogo, confira ações válidas e inválidas, retorno à seleção, desfazer/refazer quando oferecidos, conclusão ou término, restauração e telas estreitas.
 
 [Guia de testes](../../../tests/README.md) · [Qualidade](../../qualidade/README.md). Uma captura demonstra apresentação, não comprova sozinha toda a mecânica. As regras documentadas devem acompanhar o código, não substituir testes do motor.
 
+
+</details>
+
 ## AIIJ aprovada
+
+<details>
+<summary>Expandir AIIJ aprovada</summary>
 
 [![Arte de Ilustração Individual de RENOVO](../../../dist/platform-assets/renovo-aiij-c1.svg)](../../../dist/platform-assets/renovo-aiij-c1.svg)
 
 Arquivo real aprovado, preservado em sua proporção original e com transparência. Esta ilustração pertence à identidade do jogo; não altera regras, controles, peças nem progresso. Não usar como miniatura do tabuleiro.
 
 [Ver as 19 AIIJs e orientações de uso](../../identidade/aiij/README.md).
+
+</details>
+

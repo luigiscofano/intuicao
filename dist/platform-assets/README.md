@@ -4,6 +4,9 @@ Logo, fonte, folhas, molduras e imagens de fauna usados pela aplicação. Este i
 
 ## Inventário
 
+<details>
+<summary>Expandir Inventário</summary>
+
 | Arquivo | Formato | Bytes |
 | --- | --- | ---: |
 | [active-flower.svg](active-flower.svg) | SVG | 686 |
@@ -55,13 +58,25 @@ Logo, fonte, folhas, molduras e imagens de fauna usados pela aplicação. Este i
 | [mirante-aiij-a.png](mirante-aiij-a.png) | PNG | 43,675 |
 | [mirante-aiij-a.svg](mirante-aiij-a.svg) | SVG | 9,691 |
 
+
+</details>
+
 ## Como os ativos são usados
+
+<details>
+<summary>Expandir Como os ativos são usados</summary>
 
 O HTML e o CSS referenciam logos e elementos de cenário. Módulos como [fauna-art.mjs](../fauna-art.mjs), [hero-fauna.mjs](../hero-fauna.mjs) e [versus-mascot-art.mjs](../versus-mascot-art.mjs) controlam recortes e apresentação. SINTONIA também tem seu catálogo de animais e módulos de arte.
 
 Uma imagem maior pode conter vários recortes. Alterar dimensões, margens ou ordem dos animais muda coordenadas esperadas pelo código; substituir o PNG sem conferir seus consumidores pode mostrar o personagem errado.
 
+
+</details>
+
 ## Procedimento de alteração
+
+<details>
+<summary>Expandir Procedimento de alteração</summary>
 
 1. Identifique quais módulos e estilos usam o arquivo.
 2. Preserve uma referência visual e as dimensões antes da troca.
@@ -70,18 +85,39 @@ Uma imagem maior pode conter vários recortes. Alterar dimensões, margens ou or
 5. Registre origem do novo ativo, autorização de uso e modificações realizadas.
 6. Reexecute testes de preservação aplicáveis e explique qualquer hash atualizado.
 
+
+</details>
+
 ## MIRANTE: AIIJ A
+
+<details>
+<summary>Expandir MIRANTE: AIIJ A</summary>
 
 A [renovação aprovada em 12/11/2026](../../docs/mirante-renovacao-2026-11-12.md) usa composição SVG original com módulos Intuição existentes e exportação PNG transparente, sem geração raster por IA. Os hashes SHA-256 dos dois ativos estão no [inventário de recursos](../../docs/recursos/inventario.json). Aplica-se a política de direitos visuais já registrada para os elementos do projeto; a aprovação não altera sua licença.
 
+
+</details>
+
 ## Registro de origem e permissões
+
+<details>
+<summary>Expandir Registro de origem e permissões</summary>
 
 O [inventário completo](../../docs/recursos/README.md) inclui os arquivos desta pasta, atlas de SINTONIA, acessórios, capturas e diagramas. Origem conhecida não significa autorização de redistribuição.
 
+
+</details>
+
 ## Direitos
+
+<details>
+<summary>Expandir Direitos</summary>
 
 O código e a documentação autorais do projeto usam a [licença MIT](../../LICENSE), com Copyright (c) 2026 Luigi Scofano de Araujo. Essa licença não inclui automaticamente imagens, sprites, fontes, logos e demais recursos visuais deste inventário.
 
 A presença de um recurso visual no repositório não estabelece, por si só, permissão de redistribuição. Antes de reutilizá-lo ou publicá-lo, confira sua origem, titularidade e autorização específica, mantendo as licenças e os créditos de terceiros. Nenhuma afirmação de proveniência deve ser inventada para completar uma tabela.
 
 [Arquitetura](../../docs/arquitetura/README.md) · [Manutenção](../../docs/manutencao/README.md)
+
+</details>
+

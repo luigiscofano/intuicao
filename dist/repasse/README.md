@@ -4,9 +4,18 @@ Este diretório implementa ordem de remoção e propagação de valores. Comece 
 
 ## Ler na ordem
 
+<details>
+<summary>Expandir Ler na ordem</summary>
+
 Leia `engine.mjs` para regras e estado, o catálogo ou mapa importado pela rota, `route.mjs` para integração e `ui.mjs` para interação. Arquivos de serviço, worker e análise, quando presentes, tratam trabalhos de busca e geração fora do fluxo imediato da interface.
 
+
+</details>
+
 ## Inventário de arquivos
+
+<details>
+<summary>Expandir Inventário de arquivos</summary>
 
 - [analysis.mjs](analysis.mjs)
 - [campaign.mjs](campaign.mjs)
@@ -20,12 +29,27 @@ Leia `engine.mjs` para regras e estado, o catálogo ou mapa importado pela rota,
 - [ui.mjs](ui.mjs)
 - [worker.mjs](worker.mjs)
 
+
+</details>
+
 ## Executar e verificar
+
+<details>
+<summary>Expandir Executar e verificar</summary>
 
 Sirva a pasta `dist` a partir da raiz do repositório. Este módulo não é uma aplicação independente e não tem instalação npm própria. Consulte [execução](../../docs/setup/README.md) e [testes](../../tests/README.md).
 
+
+</details>
+
 ## Cuidados de manutenção
+
+<details>
+<summary>Expandir Cuidados de manutenção</summary>
 
 Cobrir metas zero, excesso, retirada repetida, receptor ausente e inteiros seguros. Grade vazia só é vitória quando todas as metas de borda são exatas.
 
 Preserve a separação entre regra, animação e armazenamento. Não mova um módulo sem atualizar imports e testes que o referenciam. Catálogos anteriores podem ser necessários para interpretar saves antigos.
+
+</details>
+

@@ -2,11 +2,20 @@
 
 ## Estado real
 
+<details>
+<summary>Expandir Estado real</summary>
+
 O repositório privado [luigiscofano/intuicao](https://github.com/luigiscofano/intuicao) recebeu o código completo e o histórico em 01/11/2026. Os PRs abaixo foram abertos e integrados com merge commits. O site publicado permanece separado.
 
 O histórico de 183 commits do baseline é ancestral das novas branches. Não foi feito squash, rebase destrutivo ou reconstrução do passado. `main` é a branch principal e reúne as integrações; `export/github-organizado` preserva a versão consolidada do pacote original. `import/bootstrap` conserva o transporte e o registro da importação, sem integrar esses arquivos ao código do projeto.
 
+
+</details>
+
 ## Unidades de revisão
+
+<details>
+<summary>Expandir Unidades de revisão</summary>
 
 | Ordem | Branch | Descrição e rastreabilidade | Estado |
 | --- | --- | --- | --- |
@@ -34,7 +43,13 @@ O [PR #20](https://github.com/luigiscofano/intuicao/pull/20) conclui a apresenta
 
 O [PR #21](https://github.com/luigiscofano/intuicao/pull/21) registra as execuções aprovadas de documentação e motores e atualiza o guia de clone para o repositório privado publicado.
 
+
+</details>
+
 ## Processo realizado
+
+<details>
+<summary>Expandir Processo realizado</summary>
 
 1. Criação do repositório privado, sem licença aberta.
 2. Transporte de um bundle completo, com SHA-256 verificado antes da importação.
@@ -49,14 +64,29 @@ O workflow temporário foi removido após a importação bem-sucedida; seu códi
 
 Use merge commits nas próximas integrações. A branch `export/github-organizado` permanece como referência do pacote; não é necessário abrir um PR duplicando as alterações já integradas.
 
+
+</details>
+
 ## Recuperar a revisão técnica pendente
+
+<details>
+<summary>Expandir Recuperar a revisão técnica pendente</summary>
 
 Antes de declarar a entrega revisada completa, obter a cópia real de `f0e7fcf150606fc785b0b932c282c8fb5b8f0419`. Compare sua ancestralidade com `2354a3c`, preserve seus commits e resolva conflitos documentais de forma explícita. Não reconstruir esse commit apenas a partir dos resultados descritos em PDFs.
 
 Depois, atualizar documentação, plano e evidências para o estado resultante. A correção de migração e o manifesto da revisão técnica precisam ser verificados como código presente, não como promessas copiadas.
 
+
+</details>
+
 ## Critérios de revisão
+
+<details>
+<summary>Expandir Critérios de revisão</summary>
 
 Cada PR tem uma alteração concreta e um conjunto delimitado de arquivos. O número de PRs não é critério de qualidade: o objetivo desta divisão é permitir revisão independente de cada jogo e de cada área transversal. Branches e títulos permanecem preservados para rastreabilidade.
 
 Nenhum workflow deste pacote faz deploy, altera acesso do site, torna o repositório público ou adiciona licença aberta.
+
+</details>
+

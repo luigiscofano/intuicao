@@ -6,13 +6,22 @@ A preparação e a pontuação reproduzem a proposta aprovada: 24 cestos, oito f
 
 ## Organização
 
+<details>
+<summary>Expandir Organização</summary>
+
 - `engine.mjs`: regras determinísticas, validação das ações, pontuação e avaliação para o bot.
 - `view.mjs`: anel de cestos, depósitos públicos, escolha do visitante e descrição das prévias.
 - `view.css`: apresentação responsiva, símbolos redundantes de equipe e estados de interação.
 - `index.mjs`: metadados e regras completas disponíveis na interface.
 - `tests/versus/quinhao.test.mjs`: exemplos, conservação dos recursos, etapas, imutabilidade e encerramento.
 
+
+</details>
+
 ## Estado e ações
+
+<details>
+<summary>Expandir Estado e ações</summary>
 
 `baskets` conserva os identificadores originais de 1 a 24. A ordem do vetor representa a ordem circular dos cestos restantes. `inventories[player][fruit]` usa a ordem castanha, pitanga, jabuticaba. `round` conta partilhas completas; `moveCount` conta decisões confirmadas, portanto chega a 16.
 
@@ -24,20 +33,38 @@ A visualização prepara a ação ao tocar no cesto. Ela não altera o motor; co
 
 `selectionForMove(state, move)` recupera o cesto indicado por uma dica do treino, tanto na oferta quanto na escolha. A pessoa pode comparar outro cesto antes de confirmar a decisão.
 
+
+</details>
+
 ## Exemplo verificado
+
+<details>
+<summary>Expandir Exemplo verificado</summary>
 
 1. Verde oferece 2–3–4; Âmbar escolhe 3.
 2. Âmbar oferece 5–6–7; Verde escolhe 5. Ambos passam a ter um fruto de cada tipo, valendo 5 pontos.
 3. Verde oferece 24–1–8, agora vizinhos; Âmbar escolhe 24. Verde fica com `[3, 1, 1]` e Âmbar com `[1, 1, 2]`.
 4. Âmbar oferece 9–10–11; Verde escolhe 9. Os depósitos ficam `[3, 2, 1]` e `[1, 2, 3]`, ambos com 7 pontos.
 
+
+</details>
+
 ## Verificação
+
+<details>
+<summary>Expandir Verificação</summary>
 
 Execute `node --test tests/versus/quinhao.test.mjs` a partir da raiz do projeto. Os testes usam estados congelados e partilhas completas para conferir que nenhum fruto desaparece, que os totais por tipo permanecem em oito e que finais de vitória e empate seguem a pontuação.
 
 Equilíbrio e frequência de empates exigem partidas com pessoas. As regras aprovadas foram mantidas; a implementação não introduz novos pesos ou desempates.
 
+
+</details>
+
 ## Identidade dos frutos (revisão aprovada)
+
+<details>
+<summary>Expandir Identidade dos frutos (revisão aprovada)</summary>
 
 A castanha é agora identificada como **castanha-do-pará (*Bertholletia excelsa*)**,
 representada sem casca dura, com polpa marfim e película marrom irregular.
@@ -53,7 +80,13 @@ inalterados; o nome interno genérico do motor continua compatível.
 
 Os depósitos de Verde e Âmbar exibem os nomes Castanha-do-pará, Pitanga e Jabuticaba abaixo de cada ícone. As legendas acompanham as quantidades; a leitura assistiva identifica cada grupo uma única vez.
 
+
+</details>
+
 ## Mapas de partilha
+
+<details>
+<summary>Expandir Mapas de partilha</summary>
 
 `maps.mjs` contém 42 distribuições imutáveis e versionadas, em seis grupos de sete:
 Intercalados, Entrelaçados, Pomar misto, Duplas, Bosques e Ilhas. Os grupos descrevem
@@ -71,3 +104,6 @@ e as oito partilhas são invariantes. O desenho circular desktop e o perímetro
 retangular mobile continuam representando exatamente a mesma ordem.
 
 Verificação adicional: `node --test tests/maps-expansion-quinhao-desvio.test.mjs`.
+
+</details>
+

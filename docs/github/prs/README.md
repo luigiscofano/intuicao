@@ -6,6 +6,9 @@ Planos históricos de organização em PRs. Não confundir um arquivo de planeja
 
 ## Conteúdo
 
+<details>
+<summary>Expandir Conteúdo</summary>
+
 - [01-docs-entrada.md](01-docs-entrada.md)
 - [02-docs-jogo-reflexos.md](02-docs-jogo-reflexos.md)
 - [03-docs-jogo-corte.md](03-docs-jogo-corte.md)
@@ -26,8 +29,17 @@ Planos históricos de organização em PRs. Não confundir um arquivo de planeja
 - [18-ci-documentacao.md](18-ci-documentacao.md)
 - [19-docs-plano-prs.md](19-docs-plano-prs.md)
 
+
+</details>
+
 ## Manutenção
+
+<details>
+<summary>Expandir Manutenção</summary>
 
 Atualize este índice ao alterar o conteúdo da pasta. Verifique os links com `node scripts/check-docs.mjs` a partir da raiz. Testes de código e publicação devem seguir o fluxo específico do projeto. Registros históricos conservam sua data e não representam automaticamente o estado publicado.
 
 ![Identidade do projeto](../../../dist/platform-assets/intuicao-logo-azulejos.png)
+
+</details>
+

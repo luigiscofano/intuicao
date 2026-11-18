@@ -34,6 +34,9 @@ AIIJ significa **Arte de Ilustração Individual do Jogo**. Esta coleção reún
 
 ## Inventário por jogo
 
+<details>
+<summary>Expandir Inventário por jogo</summary>
+
 | Jogo | Arquivo original | Manual |
 |---|---|---|
 | Reflexos | [dist/platform-assets/light-aiij-aprovada.svg](../../../dist/platform-assets/light-aiij-aprovada.svg) | [Abrir](../../jogos/reflexos/README.md) |
@@ -56,10 +59,19 @@ AIIJ significa **Arte de Ilustração Individual do Jogo**. Esta coleção reún
 | ESTALO | [dist/platform-assets/estalo-aiij-aprovada.svg](../../../dist/platform-assets/estalo-aiij-aprovada.svg) | [Abrir](../../jogos/estalo/README.md) |
 | ACORDE | [dist/platform-assets/acorde-aiij-aprovada.svg](../../../dist/platform-assets/acorde-aiij-aprovada.svg) | [Abrir](../../jogos/acorde/README.md) |
 
+
+</details>
+
 ## Uso e manutenção
+
+<details>
+<summary>Expandir Uso e manutenção</summary>
 
 Preserve proporções, transparência, cores e contornos. A arte fica separada do espaço de interação. Alterações exigem revisão visual e aprovação; não recolorir ou gerar variantes para substituir a referência silenciosamente.
 
 O catálogo documenta arquivos aprovados. A exibição deve ser conferida no integrador [game-aiij.mjs](../../../dist/game-aiij.mjs) e no componente específico de Desvio. Publicação do site e merge no GitHub são etapas distintas.
 
 [Direitos e proveniência](../../recursos/README.md): esta apresentação não concede nova licença de reutilização das artes.
+
+</details>
+

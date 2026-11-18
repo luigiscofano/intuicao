@@ -6,6 +6,9 @@ As regras continuam as das concepções aprovadas. A apresentação segue CERCO:
 
 ## Os jogos e seus tabuleiros reais
 
+<details>
+<summary>Expandir Os jogos e seus tabuleiros reais</summary>
+
 As imagens abaixo mostram **a fase 1 no estado inicial**, gerada pela mesma função de renderização usada na aplicação. Os títulos das fases, pistas e coordenadas vêm do catálogo ativo; não são mockups nem respostas ilustrativas inventadas.
 
 ### DIVISA
@@ -56,7 +59,13 @@ Ligue cada botão a uma semente e a uma folha, usando todas as peças uma única
 
 [Regras, dados, geração e limites de RENOVO](../../dist/logica/games/renovo/README.md).
 
+
+</details>
+
 ## Campanhas, progressão e certificação
+
+<details>
+<summary>Expandir Campanhas, progressão e certificação</summary>
 
 As definições são geradas e certificadas offline. O navegador carrega as fases prontas; abrir um jogo não resolve nem gera sua campanha. Cada nível tem identidade estável ligada à definição, versão, número de apresentação e faixa editorial. Reordenar uma fase não deve transferir uma conclusão para outro problema.
 
@@ -73,7 +82,13 @@ Os verificadores avaliam as próprias regras, sem comparar a tentativa com o cam
 
 As faixas são editoriais e não foram calibradas com jogadores. Quantidade de candidatos, passagens do propagador ou profundidade de busca não equivale a tempo humano. O roteiro de deduções e o enumerador de unicidade têm funções diferentes; quando uma fase usa busca para certificação, isso não é chamado de explicação humana. Os READMEs dos jogos e os relatórios específicos em `tests/logica/` registram os métodos e seus limites.
 
+
+</details>
+
 ## Controles e conclusão
+
+<details>
+<summary>Expandir Controles e conclusão</summary>
 
 Todas as fases estão disponíveis desde a seleção. Escolha uma ferramenta e toque/clique na casa ou peça. FOZ oferece setas diretas e alternância; RENOVO liga duas peças com dois cliques, e repetir a ligação a remove. Pinos indicam pistas fixas. Casas indecisas precisam ser resolvidas quando o jogo exige preencher a grade.
 
@@ -83,13 +98,25 @@ Uma edição só dispara vitória automática quando o motor reconhece uma confi
 
 Depois de três checagens sem sucesso, **Ver gabarito** fica disponível. Sua aplicação é explícita, valida a solução antes de usá-la e marca a tentativa como **assistida**. A interface pede Checar para confirmar esse resultado. Reiniciar preserva a contagem de ajuda/checagens da tentativa, sem apagar conclusões já registradas.
 
+
+</details>
+
 ## Desafio do dia e Surpreenda-me
+
+<details>
+<summary>Expandir Desafio do dia e Surpreenda-me</summary>
 
 **Desafio do dia** escolhe deterministicamente uma fase do próprio catálogo para cada jogo e data no fuso `America/Sao_Paulo`. Não cria uma fase nova nem progresso paralelo. Pode apontar para uma fase que você já concluiu.
 
 **Surpreenda-me** sorteia uma fase ainda não concluída do catálogo ativo. Se todas estiverem concluídas, sorteia entre as 80 para permitir revisitar a campanha. Essas opções não são geradores infinitos e usam os mesmos IDs, regras e registros da seleção normal.
 
+
+</details>
+
 ## Progresso local, backup e conquistas
+
+<details>
+<summary>Expandir Progresso local, backup e conquistas</summary>
 
 Tentativas e conclusões ficam no navegador, em `intuicao.logica.v1`. O registro guarda ID e versão da fase, posição atual e marca assistida. Todas as 80 tentativas de cada jogo podem ser preservadas; as oito mais recentes mantêm o histórico de desfazer/refazer, e as anteriores mantêm o estado atual, a ajuda e o contador de checagens. Os dados não são sincronizados entre dispositivos. Limpar o armazenamento do navegador pode removê-los; exporte o backup quando quiser preservá-los fora dele.
 
@@ -97,7 +124,13 @@ O store dos seis jogos participa da exportação/restauração de progresso. A r
 
 As conquistas leem conclusões das definições ativas. Uma fase conta uma única vez; repetir, abrir ou tentar não cria conclusão. Conclusões assistidas continuam identificadas no registro e seguem o critério geral de contagem da coleção. Desafio do dia e Surpreenda-me não duplicam esse progresso.
 
+
+</details>
+
 ## Galeria: autoria e proveniência programática
+
+<details>
+<summary>Expandir Galeria: autoria e proveniência programática</summary>
 
 Os seis SVGs desta página são produzidos por [`tools/logica/render-gallery.mjs`](../../tools/logica/render-gallery.mjs), que importa `initialState`, `renderBoard` e os dados de cada jogo. Não há captura de navegador, fotografia, imagem gerada por IA ou sprite externo nesses diagramas. As formas geométricas, letras, números, linhas e hachuras são construídas pelo código das views.
 
@@ -116,3 +149,6 @@ Durante a implementação, `--available` gera somente campanhas já presentes e 
 [Verificação da edição: testes, navegador e limites](VERIFICACAO.md).
 
 [Arquitetura técnica da família](../../dist/logica/README.md).
+
+</details>
+
