@@ -4,9 +4,18 @@ Este diretório implementa permutações em anéis e objetivos simultâneos. Com
 
 ## Ler na ordem
 
+<details>
+<summary>Expandir Ler na ordem</summary>
+
 Leia `engine.mjs` para regras e estado, o catálogo ou mapa importado pela rota, `route.mjs` para integração e `ui.mjs` para interação. Arquivos de serviço, worker e análise, quando presentes, tratam trabalhos de busca e geração fora do fluxo imediato da interface.
 
+
+</details>
+
 ## Inventário de arquivos
+
+<details>
+<summary>Expandir Inventário de arquivos</summary>
 
 - [analysis.mjs](analysis.mjs)
 - [authored-patterns.mjs](authored-patterns.mjs)
@@ -35,12 +44,27 @@ Leia `engine.mjs` para regras e estado, o catálogo ou mapa importado pela rota,
 - [ui.mjs](ui.mjs)
 - [worker.mjs](worker.mjs)
 
+
+</details>
+
 ## Executar e verificar
+
+<details>
+<summary>Expandir Executar e verificar</summary>
 
 Sirva a pasta `dist` a partir da raiz do repositório. Este módulo não é uma aplicação independente e não tem instalação npm própria. Consulte [execução](../../docs/setup/README.md) e [testes](../../tests/README.md).
 
+
+</details>
+
 ## Cuidados de manutenção
+
+<details>
+<summary>Expandir Cuidados de manutenção</summary>
 
 Preservar IDs das 72 fases não substituídas pelo catálogo compacto e não herdar conclusão nas oito novas definições. Algumas descrições históricas falam em 500/1.000 fases; a campanha ativa tem 80.
 
 Preserve a separação entre regra, animação e armazenamento. Não mova um módulo sem atualizar imports e testes que o referenciam. Catálogos anteriores podem ser necessários para interpretar saves antigos.
+
+</details>
+

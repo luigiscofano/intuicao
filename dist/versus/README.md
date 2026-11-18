@@ -8,6 +8,9 @@ para duas pessoas no mesmo aparelho ou uma pessoa contra o computador.
 
 ## Organização e responsabilidades
 
+<details>
+<summary>Expandir Organização e responsabilidades</summary>
+
 | Arquivo                                   | Responsabilidade                                                    |
 | ----------------------------------------- | ------------------------------------------------------------------- |
 | `games/<id>/engine.mjs`                   | Estado inicial, ações legais, transição imutável, placar e término. |
@@ -27,7 +30,13 @@ O [contrato de extensão](CONTRACT.md) define as interfaces de motor e view. Os
 comentários em português explicam invariantes e decisões que não são evidentes
 nos nomes. O código usa módulos ES nativos, sem dependências adicionais de runtime.
 
+
+</details>
+
 ## Seleção, prévia e confirmação
+
+<details>
+<summary>Expandir Seleção, prévia e confirmação</summary>
 
 Selecionar uma peça ou destino modifica somente a seleção da interface. Quando
 há uma ação completa, o motor calcula um estado previsto usando a mesma função
@@ -50,7 +59,13 @@ Os controles usam botões nativos, nomes acessíveis, foco de teclado e indicaç
 que combinam cor com símbolos. As animações respeitam a preferência por movimento
 reduzido. VAZANTE usa os mascotes oficiais; eles não influenciam as regras.
 
+
+</details>
+
 ## Modos
+
+<details>
+<summary>Expandir Modos</summary>
 
 - **Local:** dois jogadores, com desfazer e refazer mediante acordo.
 - **Competitivo:** duelo local com desfazer e refazer indisponíveis.
@@ -61,7 +76,13 @@ A revanche mantém a configuração; em duelos locais, os jogadores podem trocar
 as cores entre si. LASTRO possui sua própria alternância obrigatória de início
 nas duas rodadas de um duelo.
 
+
+</details>
+
 ## Histórico e armazenamento
+
+<details>
+<summary>Expandir Histórico e armazenamento</summary>
 
 A chave `intuicao.versus.v1` contém `{ version: 1, games: { ... } }`. Cada registro
 guarda configuração, ações serializáveis e cursor. A restauração valida os dados
@@ -78,7 +99,13 @@ a estes jogos. Dados globais corrompidos ou de versão futura são preservados; 
 aviso na tela informa quando o navegador não consegue salvar. A partida pode
 continuar na memória enquanto a página permanecer aberta.
 
+
+</details>
+
 ## Computador e limites
+
+<details>
+<summary>Expandir Computador e limites</summary>
 
 | Nível         | Profundidade máxima |   Nós | Tempo de busca | Alternativas por expansão |
 | ------------- | ------------------: | ----: | -------------: | ------------------------: |
@@ -96,7 +123,13 @@ O serviço cancela o Worker ao navegar ou alterar a partida. Se Workers estivere
 indisponíveis, uma busca menor permite continuar. Uma primeira ação legal fica
 disponível como contingência, sem modificar as regras do motor.
 
+
+</details>
+
 ## Verificação
+
+<details>
+<summary>Expandir Verificação</summary>
 
 Na raiz do repositório:
 
@@ -109,7 +142,13 @@ imutabilidade, conservação de recursos, histórico, replay, decisões do bot e
 backup de sessões reais dos oito jogos. Os testes de catálogo e apresentação
 verificam os 25 jogos junto aos motores e campanhas anteriores.
 
+
+</details>
+
 ## Manuais dos motores
+
+<details>
+<summary>Expandir Manuais dos motores</summary>
 
 - [ENLACE](games/enlace/README.md)
 - [VAZANTE](games/vazante/README.md)
@@ -124,3 +163,6 @@ LASTRO mantém a configuração aprovada, cuja análise exaustiva encontrou vant
 forçada de quem inicia a rodada sob jogo perfeito. Os testes verificam regras;
 equilíbrio estratégico, duração estimada e diversão ainda dependem de avaliação
 com jogadores.
+
+</details>
+

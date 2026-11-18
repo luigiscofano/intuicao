@@ -13,6 +13,12 @@ Composição documental sob a licença do repositório. [Início](../../../READM
 
 ## Recursos extraídos
 
+<details>
+<summary>Expandir Recursos extraídos</summary>
+
 Os PNGs `sintonia-atlas-original.png` e `sintonia-roster-original.png` são os bytes originais embutidos nos SVGs atuais de Sintonia, sem recompressão. Preservam os direitos das fontes originais. As artes de Renovo e Quinhão reutilizam funções atuais do jogo; não recebem nova licença aberta por estarem em uma prancha. A composição simples dos diagramas segue a licença da documentação.
 
 [Frutos](quinhao-frutos.svg) · [Atlas](sintonia-atlas-original.png) · [Roster](sintonia-roster-original.png).
+
+</details>
+

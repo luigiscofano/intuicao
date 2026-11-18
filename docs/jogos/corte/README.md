@@ -6,66 +6,135 @@ Um puzzle de estimativa de áreas em que uma linha ou curva divide uma figura.
 
 ## Área de jogo atual
 
+<details>
+<summary>Expandir Área de jogo atual</summary>
+
 [![Corte certo: captura real da área de jogo](../../imagens/galeria-atual/cut.png)](../../imagens/galeria-atual/cut.png)
 
 *Captura local do código atual, com estado de demonstração, sem cursor ou dados pessoais. [Proveniência e limites](../../imagens/galeria-atual/README.md). Não representa uma solução nem comprova todos os estados da partida.*
 
+
+</details>
+
 ## Objetivo
+
+<details>
+<summary>Expandir Objetivo</summary>
 
 **Deixe no lado roxo a porcentagem pedida. Por exemplo: 50% é metade da figura.**
 
+
+</details>
+
 ## Como começar
+
+<details>
+<summary>Expandir Como começar</summary>
 
 1. Leia a meta: 50% significa metade da área preenchida.
 2. Mova a linha ou curva. Buracos e espaços vazios não contam.
 3. Confirme sua estimativa. A margem aceita é de 3 pontos percentuais.
 
+
+</details>
+
 ## Regras completas
+
+<details>
+<summary>Expandir Regras completas</summary>
 
 1. Confira a meta. Mova a linha ou ajuste a curva para mudar o tamanho da parte roxa.
 2. Conte só a parte preenchida da figura. Buracos e espaços vazios não entram na conta.
 3. No Desafio básico, mova o corte na direção da seta. Use Controles da curva para os outros ajustes disponíveis, sem trocar o tipo de curva da fase.
 4. Confirme sua resposta. A margem aceita é de 3 pontos percentuais para mais ou para menos: uma meta de 50% aceita de 47% a 53%.
 
+
+</details>
+
 ## Exemplo de raciocínio
+
+<details>
+<summary>Expandir Exemplo de raciocínio</summary>
 
 A meta é 50%: mover o corte ao centro divide o retângulo ao meio.
 
+
+</details>
+
 ## O que observar
+
+<details>
+<summary>Expandir O que observar</summary>
 
 A proposta pedagógica é explorar a diferença entre tamanho aparente e área: formas, curvas e vazios convidam a testar estimativas e refinar o raciocínio proporcional.
 
 Não conclua uma solução apenas pela aparência. Leia as pistas da fase e confira a condição de término acima. Pistas fixas e a identidade da fase devem ser preservadas. Dicas ou solução assistida não equivalem a uma conclusão independente.
 
+
+</details>
+
 ## Proposta pedagógica
+
+<details>
+<summary>Expandir Proposta pedagógica</summary>
 
 Praticar estimativa de áreas, proporções e porcentagens, comparando a impressão visual com a medida apresentada pelo jogo.
 
 Essas são intenções de design e oportunidades de prática, não resultados acadêmicos medidos.
 
+
+</details>
+
 ## Identidade visual e leitura
+
+<details>
+<summary>Expandir Identidade visual e leitura</summary>
 
 As cores, peças e ilustrações ajudam a distinguir estados e ações. A arte não concede poderes ou altera as regras. Veja a [galeria da identidade](../../identidade/README.md) e os [recursos de fauna e flora](../../../README.md#fauna-flora-e-objetos-com-funcao).
 
+
+</details>
+
 ## Onde está implementado
+
+<details>
+<summary>Expandir Onde está implementado</summary>
 
 - [dist/curves.mjs](../../../dist/curves.mjs)
 - [dist/cut-campaign.mjs](../../../dist/cut-campaign.mjs)
 
 As regras desta página foram confrontadas com os textos publicados em [game-info-content.mjs](../../../dist/game-info-content.mjs), os [guias rápidos](../../../dist/rules-quick-start.mjs) e os adaptadores próprios da família. Quantidades dependentes de mapa não devem ser tratadas como constantes universais.
 
+
+</details>
+
 ## Preservação e verificação
+
+<details>
+<summary>Expandir Preservação e verificação</summary>
 
 O progresso usa o armazenamento local e o [backup compartilhado](../../../dist/progress-backup.mjs). Não reutilize número editorial como identificador de save. Ao alterar este jogo, confira ações válidas e inválidas, retorno à seleção, desfazer/refazer quando oferecidos, conclusão ou término, restauração e telas estreitas.
 
 [Guia de testes](../../../tests/README.md) · [Qualidade](../../qualidade/README.md). Uma captura demonstra apresentação, não comprova sozinha toda a mecânica. As regras documentadas devem acompanhar o código, não substituir testes do motor.
 
 
+
+</details>
+
 ## Referência técnica complementar
+
+<details>
+<summary>Expandir Referência técnica complementar</summary>
 
 Os links abaixo preservam o mapa técnico documentado do jogo. Relatórios datados mantêm o escopo da revisão original, não certificam automaticamente a versão atual.
 
+
+</details>
+
 ## Como a implementação funciona
+
+<details>
+<summary>Expandir Como a implementação funciona</summary>
 
 A medida deve trabalhar com a região útil e com as interseções da curva. A posição visual do corte não é uma aproximação suficiente da porcentagem quando há recortes ou figuras assimétricas.
 
@@ -87,7 +156,13 @@ A medida deve trabalhar com a região útil e com as interseções da curva. A p
 
 Os nomes acima são extraídos dos exports presentes nesta base. Antes de chamar uma função, confira parâmetros, retornos e casos de erro no módulo e em seus testes; não assuma que todos os jogos compartilham a mesma assinatura.
 
+
+</details>
+
 ## Roteiro para estudar ou alterar
+
+<details>
+<summary>Expandir Roteiro para estudar ou alterar</summary>
 
 1. Leia as regras e identifique a condição de vitória ou encerramento.
 2. Acompanhe a representação de fase/mapa e de estado no módulo principal.
@@ -96,7 +171,13 @@ Os nomes acima são extraídos dos exports presentes nesta base. Antes de chamar
 5. Encontre um teste da regra alterada e reproduza um caso mínimo antes de editar.
 6. Quando houver catálogo novo, confira IDs, soluções, contagem e impacto no save.
 
+
+</details>
+
 ## Verificação e riscos específicos
+
+<details>
+<summary>Expandir Verificação e riscos específicos</summary>
 
 Testar limites inclusivos da tolerância, vazios sobrepostos, família de curva e solução usando somente o deslocamento permitido no modo básico. Não alterar a silhueta para acomodar um cálculo errado.
 
@@ -121,15 +202,30 @@ Use o [guia de testes](../../../tests/README.md) para diferenciar testes de regr
 
 Quando a mudança é visual, valide entrada no jogo, leitura das regras, interação principal, retorno e tamanhos de tela. Quando toca regras ou saves, acrescente casos de entradas inválidas, repetição da ação e restauração. Não conclua que uma busca encontrou solução única se ela esgotou seu orçamento.
 
+
+</details>
+
 ## Documentação de referência
+
+<details>
+<summary>Expandir Documentação de referência</summary>
 
 - [dist/CORTE80-VALIDACAO.md](../../../dist/CORTE80-VALIDACAO.md)
 - [docs/corte80](../../../docs/corte80)
 
+
+</details>
+
 ## AIIJ aprovada
+
+<details>
+<summary>Expandir AIIJ aprovada</summary>
 
 [![Arte de Ilustração Individual de Corte certo](../../../dist/platform-assets/cut-aiij-aprovada.svg)](../../../dist/platform-assets/cut-aiij-aprovada.svg)
 
 Arquivo real aprovado, preservado em sua proporção original e com transparência. Esta ilustração pertence à identidade do jogo; não altera regras, controles, peças nem progresso. Não usar como miniatura do tabuleiro.
 
 [Ver as 19 AIIJs e orientações de uso](../../identidade/aiij/README.md).
+
+</details>
+

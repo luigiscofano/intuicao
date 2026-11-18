@@ -6,10 +6,22 @@ Documentos disponibilizados junto ao pacote estático. Confira a edição de cad
 
 ## Conteúdo
 
+<details>
+<summary>Expandir Conteúdo</summary>
+
 - [quinhao-frutos.svg](quinhao-frutos.svg)
 
+
+</details>
+
 ## Manutenção
+
+<details>
+<summary>Expandir Manutenção</summary>
 
 Atualize este índice ao alterar o conteúdo da pasta. Verifique os links com `node scripts/check-docs.mjs` a partir da raiz. Testes de código e publicação devem seguir o fluxo específico do projeto. Registros históricos conservam sua data e não representam automaticamente o estado publicado.
 
 ![Identidade do projeto](../platform-assets/intuicao-logo-azulejos.png)
+
+</details>
+

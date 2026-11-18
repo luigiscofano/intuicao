@@ -11,13 +11,22 @@ Revisão de **1º de novembro de 2026**, partindo de `ae8cad7aed23b974d742a4b088
 
 ## Atualização após declaração do titular — 01/11/2026
 
+<details>
+<summary>Expandir Atualização após declaração do titular — 01/11/2026</summary>
+
 Luigi Scofano de Araujo declarou a autoria dos elementos do Intuição e autorizou a manutenção do e-mail pessoal nos commits existentes. A [declaração](../recursos/declaracao-autoria.md) foi registrada e vinculada às 133 entradas do inventário e aos caminhos históricos. Os créditos e termos de materiais externos, como Natural Earth, permanecem preservados.
 
 As pendências documentais de autoria e a decisão de privacidade foram resolvidas com base nessa declaração, sem certificação independente. Naquela etapa, o histórico e os e-mails antigos foram mantidos sem mudança de visibilidade. A abertura foi autorizada e realizada posteriormente, conforme o registro no início deste documento.
 
 Os resultados abaixo descrevem a auditoria anterior, com seus limites e revisão de referência.
 
+
+</details>
+
 ## Escopo e resultados da auditoria
+
+<details>
+<summary>Expandir Escopo e resultados da auditoria</summary>
 
 - **28 branches e 24 referências de PRs** consultadas, sem tags retornadas. **262 commits alcançáveis** no conjunto; `main` contém 255. Foram preservados os identificadores, autores e datas.
 - Cópia local reconstruída a partir dos objetos Git originais e da API, com hashes de objetos conferidos e `git fsck --full --no-reflogs` sem erros. A branch antiga `import/bootstrap` também foi incluída; os três fragmentos do bundle correspondem ao histórico já examinado.
@@ -30,13 +39,25 @@ Os resultados abaixo descrevem a auditoria anterior, com seus limites e revisão
 
 Não houve revogação de credenciais, porque nenhuma foi confirmada como exposta. Se uma credencial real for descoberta posteriormente, revogá-la/rotacioná-la antes de tratar o histórico.
 
+
+</details>
+
 ## Recursos e licenças
+
+<details>
+<summary>Expandir Recursos e licenças</summary>
 
 Consulte [origem e direitos dos recursos](../recursos/README.md). Na auditoria inicial, as 133 entradas ficaram `pending`; após a confirmação do titular, passaram a `cleared` com base na declaração de autoria. Esse estado se refere à documentação dos elementos autorais para publicação pelo titular, sem conceder licença aberta de reutilização das artes. Não foi atribuída licença MIT a imagens, fontes ou marcas por inferência. O contorno cartográfico atribuído ao Natural Earth tem termos de domínio público identificados separadamente.
 
 As imagens originais, os recortes, os jogos e a galeria de 11 capturas foram preservados. Os metadados da fonte indicam criação para Intuição, mas não identificam sozinhos o titular nem uma autorização de redistribuição. As capturas do site também dependem dos direitos dos elementos retratados.
 
+
+</details>
+
 ## Verificações automáticas
+
+<details>
+<summary>Expandir Verificações automáticas</summary>
 
 | Check | O que verifica | O que não comprova |
 | --- | --- | --- |
@@ -55,7 +76,13 @@ Também foram habilitados **Secret Protection / secret scanning**, **Push protec
 
 Não adicionar uma aprovação obrigatória do próprio autor como solução: o autor não pode aprovar o próprio PR. Para manutenção individual, usar PR obrigatório, checks obrigatórios, resolução de conversas e bloqueio de force push/exclusão. Acrescentar aprovação independente quando houver outro revisor.
 
+
+</details>
+
 ## Registro da abertura e manutenção
+
+<details>
+<summary>Expandir Registro da abertura e manutenção</summary>
 
 1. **Autoria registrada:** a declaração do titular cobre os elementos autorais atuais e históricos. O inventário aponta a evidência e mantém os materiais externos sob seus termos. Executar `node scripts/check-assets.mjs --release` ao preparar a publicação; o verificador é documental e não certifica a autoria.
 2. **Preservar o histórico:** o titular autorizou manter o e-mail pessoal nos commits antigos. Essa exposição foi aceita para eventual abertura. Manter commits, branches e PRs; não realizar force push, reescrita ou criar cópia com histórico novo.
@@ -64,8 +91,17 @@ Não adicionar uma aprovação obrigatória do próprio autor como solução: o 
 5. **Proteções conferidas:** `main` está protegida pelo ruleset descrito acima. Secret scanning, push protection e private vulnerability reporting estão habilitados; acompanhar as análises e alertas de CodeQL, Gitleaks e Dependabot. Mudanças nessas configurações exigem nova conferência.
 6. **Testar a apresentação externa:** abrir o GitHub sem autenticação e verificar README, imagens, licença e instruções. Só depois substituir o destaque do LinkedIn por um link acessível. Tornar o GitHub público não muda automaticamente o acesso do site nem garante a geração de prévia pelo LinkedIn.
 
+
+</details>
+
 ## Limites e repetição
+
+<details>
+<summary>Expandir Limites e repetição</summary>
 
 O exame não foi um pentest nem incluiu OCR de todos os pixels de imagens históricas, conteúdo de contas externas, segredos configurados no GitHub, objetos inacessíveis por referências retornadas ou serviços de hospedagem. Foram examinados os dados alcançáveis na data e revisão acima. Mudanças posteriores, novos anexos, logs e colaboradores exigem nova conferência.
 
 Referências: [uso seguro de Actions](https://docs.github.com/en/actions/reference/security/secure-use), [Gitleaks](https://github.com/gitleaks/gitleaks), [remoção de dados sensíveis](https://docs.github.com/en/authentication/keeping-your-account-and-data-secure/removing-sensitive-data-from-a-repository) e [visibilidade de repositórios](https://docs.github.com/en/repositories/managing-your-repositorys-settings-and-features/managing-repository-settings/setting-repository-visibility).
+
+</details>
+

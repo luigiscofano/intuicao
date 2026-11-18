@@ -4,6 +4,9 @@ Esta pasta reúne as **11 capturas de tela** usadas na galeria do [README inicia
 
 ## Origem e contexto
 
+<details>
+<summary>Expandir Origem e contexto</summary>
+
 - **Origem:** [site hospedado do Intuição](https://intuicao-luigi-minigames.luigiscofano.chatgpt.site/).
 - **Data da captura:** 1º de novembro de 2026.
 - **Formato:** JPEG, com 1.200 pixels de largura; o recorte inclui o painel do jogo e o tabuleiro.
@@ -12,7 +15,13 @@ Esta pasta reúne as **11 capturas de tela** usadas na galeria do [README inicia
 
 Algumas imagens mostram uma tentativa ou uma prévia de jogada. Elas não representam necessariamente soluções corretas ou partidas concluídas.
 
+
+</details>
+
 ## Catálogo das capturas
+
+<details>
+<summary>Expandir Catálogo das capturas</summary>
 
 | Jogo e arquivo | O que foi capturado |
 | --- | --- |
@@ -30,7 +39,13 @@ Algumas imagens mostram uma tentativa ou uma prévia de jogada. Elas não repres
 
 As capturas históricas que já existiam em `docs/` foram preservadas em seus caminhos originais. A galeria inicial passou a usar os arquivos desta pasta.
 
+
+</details>
+
 ## Como atualizar
+
+<details>
+<summary>Expandir Como atualizar</summary>
 
 1. Abra o jogo pelo fluxo normal do site e escolha uma fase ou partida que mostre sua mecânica.
 2. Capture o tabuleiro completo, incluindo o nome ou contexto do jogo e os controles necessários para entendê-lo.
@@ -39,6 +54,15 @@ As capturas históricas que já existiam em `docs/` foram preservadas em seus ca
 5. Confirme que os 11 jogos continuam com imagem e texto alternativo no README inicial.
 6. Execute `node scripts/check-docs.mjs` na raiz do projeto para conferir os caminhos locais.
 
+
+</details>
+
 ## Direitos
 
+<details>
+<summary>Expandir Direitos</summary>
+
 As capturas documentam a interface e os recursos visuais do Intuição. Os direitos de imagens, sprites, fontes e outros elementos continuam conforme o [guia dos recursos visuais](../../../dist/platform-assets/README.md) e a seção de [autoria e licença](../../../README.md#autoria-e-licença). Sua inclusão nesta pasta não amplia a licença dos recursos retratados.
+
+</details>
+

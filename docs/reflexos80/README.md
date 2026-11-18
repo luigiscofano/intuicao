@@ -6,6 +6,9 @@ Resultados e catálogos históricos da campanha de Reflexos. Leia junto dos impo
 
 ## Conteúdo
 
+<details>
+<summary>Expandir Conteúdo</summary>
+
 - [80-definicoes-jogaveis.json](80-definicoes-jogaveis.json)
 - [80-registros-completos.json](80-registros-completos.json)
 - [80-registros-tabela.csv](80-registros-tabela.csv)
@@ -18,8 +21,17 @@ Resultados e catálogos históricos da campanha de Reflexos. Leia junto dos impo
 - [revisao-editorial-independente.md](revisao-editorial-independente.md)
 - [ui-verification.md](ui-verification.md)
 
+
+</details>
+
 ## Manutenção
+
+<details>
+<summary>Expandir Manutenção</summary>
 
 Atualize este índice ao alterar o conteúdo da pasta. Verifique os links com `node scripts/check-docs.mjs` a partir da raiz. Testes de código e publicação devem seguir o fluxo específico do projeto. Registros históricos conservam sua data e não representam automaticamente o estado publicado.
 
 ![Identidade do projeto](../../dist/platform-assets/intuicao-logo-azulejos.png)
+
+</details>
+

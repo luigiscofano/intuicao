@@ -114,6 +114,9 @@ test('movimento e vitórias Versus aprovados preservam todos os arquivos fora do
   const approvedVersus = [
     // Documentação por pasta solicitada; não autoriza alterações de motores ou saves.
     'dist/versus/games/README.md', 'dist/versus/shared/README.md',
+    // Reorganização documental em acordeões; nenhum código dos jogos é liberado aqui.
+    ...['acorde', 'dobra', 'enlace', 'lastro', 'mosaico', 'vazante']
+      .map(game => `dist/versus/games/${game}/README.md`),
     // Expansão autorizada dos mapas: defaults e regras cobertos por goldens/simulações.
     'dist/versus/map-selection.mjs', 'dist/versus/map-selection.css',
     'dist/versus/games/acorde/engine.mjs', 'dist/versus/games/acorde/index.mjs',
@@ -166,4 +169,25 @@ test('o mosaico aprovado fecha a divisória sem corte, repetição ou captura de
   assert.match(ornament, /user-select: none/);
   assert.equal((ornament.match(/\.png/g) || []).length, 4);
   assert.doesNotMatch(ornament, /repeat-x|24px 12px|left: 20px|left: 40px/);
+});
+
+const before = '75a0e19e4e5cbfeab47d222e31c04738910d97fa';
+const after = '211ec22671383ce4e7387b35398e4c1dc7079e96';
+
+// A revisão é fixa: o teste protege esta migração sem impedir futuras edições legítimas.
+test('acordeões preservam integralmente os 132 READMEs reorganizados', () => {
+  const paths = git('diff', '--name-only', before, after).trim().split('\n');
+  assert.equal(paths.length, 132);
+  for (const path of paths) {
+    assert.match(path, /(^|\/)README\.md$/);
+    const original = git('show', `${before}:${path}`);
+    const reorganized = git('show', `${after}:${path}`);
+    // Retira apenas as marcações inseridas, sem normalizar texto, espaços ou imagens.
+    const restored = reorganized
+      .replace(/\n<details>\n<summary>Expandir [^\n]*<\/summary>\n/g, '')
+      .replace(/\n<\/details>\n\n?/g, '');
+    assert.equal(restored, original, path);
+    assert.equal((reorganized.match(/<details>/g) || []).length,
+      (reorganized.match(/<\/details>/g) || []).length, path);
+  }
 });

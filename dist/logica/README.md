@@ -6,6 +6,9 @@ Esta pasta contém DIVISA, PULSO, FOZ, REFÚGIO, MIRANTE e RENOVO: seis campanha
 
 ## Arquitetura
 
+<details>
+<summary>Expandir Arquitetura</summary>
+
 | Módulo | Responsabilidade |
 | --- | --- |
 | `metadata.mjs` | IDs, nomes, números 12–17, faixas e carregadores; permite listar jogos sem importar campanhas/motores |
@@ -24,7 +27,13 @@ Esta pasta contém DIVISA, PULSO, FOZ, REFÚGIO, MIRANTE e RENOVO: seis campanha
 
 Não há empacotamento obrigatório. A geração e a certificação ficam em `tools/logica/` e `tests/logica/`; o runtime não importa esses módulos. O carregamento de uma rota usa revisão/token para que uma resposta atrasada não reabra o jogo depois de o usuário sair.
 
+
+</details>
+
 ## Contrato dos jogos
+
+<details>
+<summary>Expandir Contrato dos jogos</summary>
 
 Todos os `index.mjs` exportam:
 
@@ -48,7 +57,13 @@ renderBoard(level, state, { selectedTool });
 
 As views devolvem SVG ou um invólucro HTML com SVG, sem manipular DOM. Alvos editáveis têm `data-cell`, `role="button"`, `tabindex="0"` e nome acessível em português. Pistas preservam pinos e indicação fixa; letras, formas, números e hachuras permitem leitura sem cor. Os seis `view.css` precisam ser carregados junto da interface.
 
+
+</details>
+
 ## Catálogos e identidade
+
+<details>
+<summary>Expandir Catálogos e identidade</summary>
 
 Cada nível tem `id`, `version:1`, `game`, `name`, `difficulty:0..5` e `number:1..80`, além dos dados próprios da regra. Os tamanhos dos tabuleiros, formas das pistas e quantidades variam conforme o jogo.
 
@@ -65,7 +80,13 @@ Identidade persistente e número visível são distintos. Uma conclusão só per
 
 As fases têm solução única certificada offline, e os exemplos aprovados são fixtures de regressão. As evidências de dedução editorial são registradas separadamente da contagem de soluções. Não se usa uma enumeração como alegação de roteiro humano, nem tempo de CPU como dificuldade. As faixas ainda precisam de calibração com jogadores; os detalhes e limites estão nos READMEs individuais.
 
+
+</details>
+
 ## Histórico, conclusão e ajuda
+
+<details>
+<summary>Expandir Histórico, conclusão e ajuda</summary>
 
 `createSession` cria `{levelId, levelVersion, states, cursor, failures, assisted}`. O histórico mantém até 64 estados. Nova edição após desfazer abandona apenas o futuro daquela tentativa. Restaurar exige identidade/versão iguais, cursor válido e aprovação de todos os estados pelo motor.
 
@@ -75,7 +96,13 @@ Com três checagens sem sucesso, o gabarito fica disponível. `applySolution` s�
 
 Desfazer/refazer e reiniciar são responsabilidades do host; os motores não gravam progresso, não emitem animações e não contam conquistas. Os atalhos comuns são Tab, Enter/espaço, Ctrl/⌘ Z, Ctrl/⌘ Shift Z e Ctrl/⌘ Y.
 
+
+</details>
+
 ## Persistência, backup e conquistas
+
+<details>
+<summary>Expandir Persistência, backup e conquistas</summary>
 
 O store é `intuicao.logica.v1`, versão 1, com `games` e `lastView`. Por jogo, mantém `completed`, as tentativas das 80 fases e `lastLevelId`. As oito tentativas mais recentes preservam o histórico completo, até 64 estados; as anteriores são compactadas para o estado atual, mantendo a posição, a marca assistida e o contador de checagens sem sucesso. Isso reduz o espaço usado sem apagar a partida. O teto de 500 sessões na normalização é uma defesa contra entradas excessivas, não um limite normal da campanha.
 
@@ -89,13 +116,25 @@ Conclusões contêm versão, marca assistida e data de registro. A normalizaçã
 node tools/logica/catalog-summary.mjs
 ```
 
+
+</details>
+
 ## Seleção diária e aleatória
+
+<details>
+<summary>Expandir Seleção diária e aleatória</summary>
 
 `dailyLevelIndex(game, date, count)` usa a data civil no fuso `America/Sao_Paulo` e um hash determinístico de jogo/data. O desafio diário é uma fase do catálogo ativo, com a mesma identidade e o mesmo progresso. Não é uma geração online nem uma campanha paralela.
 
 Surpreenda-me sorteia entre as fases cuja identidade/versão ainda não está concluída. Quando não resta nenhuma, usa o catálogo completo. Não há promessa de fase inédita depois de concluir as 80.
 
+
+</details>
+
 ## Verificação e galeria
+
+<details>
+<summary>Expandir Verificação e galeria</summary>
 
 Os testes exclusivos ficam em `tests/logica/`; executar somente os arquivos de teste, não todos os scripts de geração por curinga:
 
@@ -105,3 +144,6 @@ node tools/logica/render-gallery.mjs
 ```
 
 Cada README de jogo contém seus comandos de geração/auditoria e o caminho dos certificados. A galeria usa as views reais com `initialState`, mantendo título, pista e coordenada do catálogo. Ela escreve seis SVGs em `docs/imagens/logica/`, cada um com proveniência programática incorporada, sem capturas de navegador ou raster gerado por IA. A [documentação da galeria](../../docs/logica/README.md#galeria-autoria-e-proveniência-programática) registra autoria técnica e preservação dos direitos visuais.
+
+</details>
+

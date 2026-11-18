@@ -7,6 +7,9 @@ reinício, tentativas e exibição explícita do gabarito.
 
 ## Regras e invariantes
 
+<details>
+<summary>Expandir Regras e invariantes</summary>
+
 1. Cada casa recebe uma das letras presentes, preservando as letras fixas.
 2. Todas as casas da mesma letra formam uma região conectada por lados.
 3. Para cada par de letras, a quantidade de lados unitários compartilhados é a
@@ -18,7 +21,13 @@ A campanha começa com três letras; as cinco fases do Modo Sábio usam quatro,
 como previsto na concepção aprovada. Todos os pares aparecem no painel, inclusive
 os de quota zero.
 
+
+</details>
+
 ## Dados e estado
+
+<details>
+<summary>Expandir Dados e estado</summary>
 
 Um nível contém `rows`, `cols`, `letters`, `givens` e `contacts`. A grade é linear,
 por linhas; `index = row * cols + col`. `givens` tem uma letra ou `null` em cada
@@ -41,7 +50,13 @@ vetores esparsos, tamanhos incorretos e pistas alteradas. `checkState` retorna
 efetivamente respeita as três regras. As mensagens e os erros vêm das regras,
 nunca da comparação com `solution`.
 
+
+</details>
+
 ## Campanha, unicidade e variedade
+
+<details>
+<summary>Expandir Campanha, unicidade e variedade</summary>
 
 São 80 níveis: 15 Básico, 15 Aprendiz, 15 Intermediário, 15 Avançado, 15 Mestre
 e 5 Modo Sábio. Os exemplos aprovados são preservados exatamente como fixtures e
@@ -60,7 +75,13 @@ suposições sobre o gabarito. Ramos podados não poderiam satisfazer as regras.
 A enumeração para na segunda solução para rejeitar um candidato; para emitir
 `solutionCount: 1`, precisa terminar a busca inteira sem encontrar outra.
 
+
+</details>
+
 ## Roteiro lógico e progressão
+
+<details>
+<summary>Expandir Roteiro lógico e progressão</summary>
 
 O roteiro é calculado separadamente da enumeração. Elimina uma letra quando sua
 colocação já excederia uma quota, tornaria uma quota inalcançável ou destruiria a
@@ -84,7 +105,13 @@ não tempo humano nem profundidade mínima. As faixas são classificação edito
 não houve medição com jogadores. Os certificados guardam cada exclusão com casa,
 letra removida, condição e profundidade.
 
+
+</details>
+
 ## Renderização e integração
+
+<details>
+<summary>Expandir Renderização e integração</summary>
 
 `renderBoard` devolve SVG responsivo com `data-cell`, `role="button"`,
 `tabindex="0"` e nome acessível em português em todas as casas. Pistas têm pino e
@@ -97,7 +124,13 @@ o segmento verde distingue duas letras já decididas. Cada letra permanece
 visível mesmo sem cor. As pequenas peças de dupla moldura identificam as letras,
 sem se confundir com o limite de um território.
 
+
+</details>
+
 ## Reproduzir e conferir
+
+<details>
+<summary>Expandir Reproduzir e conferir</summary>
 
 Na raiz do checkout:
 
@@ -126,3 +159,6 @@ https://www.nikoli.co.jp/en/puzzles/shikaku/ e
 https://www.nikoli.co.jp/en/puzzles/nurikabe/. DIVISA não usa áreas retangulares
 nem tamanhos de ilhas; a informação central é a fronteira entre cada par.
 Não se afirma ineditismo mundial.
+
+</details>
+

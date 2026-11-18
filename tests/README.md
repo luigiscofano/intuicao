@@ -4,9 +4,18 @@ Os arquivos desta pasta surgiram em várias revisões. Há testes atuais, verifi
 
 ## Requisito usado nesta preparação
 
+<details>
+<summary>Expandir Requisito usado nesta preparação</summary>
+
 Node.js 24.22.1, sem instalar pacotes npm. Execute os comandos na raiz do repositório. Alguns testes usam `git show`, portanto exigem o histórico completo e não funcionam da mesma forma em um ZIP sem `.git`.
 
+
+</details>
+
 ## Recorte de motores executado
+
+<details>
+<summary>Expandir Recorte de motores executado</summary>
 
 ```bash
 node --test tests/broto-engine.test.mjs tests/cerco-engine.test.mjs tests/sintonia-engine.test.mjs tests/repasse-engine.test.mjs tests/orbita-engine.test.mjs
@@ -14,7 +23,13 @@ node --test tests/broto-engine.test.mjs tests/cerco-engine.test.mjs tests/sinton
 
 Reexecução na preparação de publicação de 01/11/2026, base `ae8cad7`, Node.js 24.22.1: **95 testes aprovados, zero falhas**, em cerca de 18,8 segundos. O mesmo recorte agora roda automaticamente em PRs e pushes para main. São cinco arquivos; isso não equivale a aprovar todos os jogos, todas as fases ou todas as migrações.
 
+
+</details>
+
 ## Diagnóstico amplo
+
+<details>
+<summary>Expandir Diagnóstico amplo</summary>
 
 ```bash
 node --test tests/*.test.mjs
@@ -22,7 +37,13 @@ node --test tests/*.test.mjs
 
 Esse comando inclui contratos antigos e não é um gate verde de release nesta base. O registro externo do baseline `2354a3c` informa 701 testes, 521 aprovados e 180 falhas. Esse diagnóstico não foi reexecutado durante a organização documental; não o confundir com os 95 testes acima.
 
+
+</details>
+
 ## Classificar uma falha
+
+<details>
+<summary>Expandir Classificar uma falha</summary>
 
 | Tipo | Ação |
 | --- | --- |
@@ -33,20 +54,38 @@ Esse comando inclui contratos antigos e não é um gate verde de release nesta b
 | Dependência de ambiente | Documentar requisito e testar no ambiente correspondente |
 | Resultado inconclusivo | Manter pendente, sem classificar como aprovação |
 
+
+</details>
+
 ## Cuidados
+
+<details>
+<summary>Expandir Cuidados</summary>
 
 Leia scripts `build`, `record`, `generate` e `audit` antes de executá-los: nomes de arquivo não garantem somente leitura. Antes e depois de testes, confira `git status --short`. Use fixtures sintéticas para storage. Não limpe saves pessoais para tornar um teste verde.
 
 Não adicionar `continue-on-error` para esconder falhas de um gate obrigatório. Um diagnóstico histórico pode ser manual e falhar de forma explícita. Uma suíte ativa futura precisa de um manifesto revisado, com justificativa por arquivo ou caso.
 
+
+</details>
+
 ## Revisão ainda não incorporada
+
+<details>
+<summary>Expandir Revisão ainda não incorporada</summary>
 
 A documentação externa relata 536 testes atuais aprovados na revisão `f0e7fcf`, com triagem própria. Seu código e manifesto não estão nesta cópia. O comando `node scripts/test.mjs` daquela revisão não existe aqui e não deve ser apresentado como comando disponível.
 
 Veja [qualidade](../docs/qualidade/README.md) para a matriz da preparação e os limites de evidência.
 
 
+
+</details>
+
 ## Seis jogos lógicos e integração
+
+<details>
+<summary>Expandir Seis jogos lógicos e integração</summary>
 
 A edição de 10/11/2026 acrescenta testes dos seis motores e das 480 fases, histórico/ajuda, preservação das tentativas, chaves do backup, conquistas, navegação e shell compartilhado:
 
@@ -60,18 +99,45 @@ O catálogo resumido de conquistas é conferido contra os seis catálogos comple
 
 A CI mantém os cinco motores anteriores e acrescenta este recorte. Não executa scripts de geração por curinga e não afirma que toda a suíte histórica está verde.
 
+
+</details>
+
 ## Identidade transversal
+
+<details>
+<summary>Expandir Identidade transversal</summary>
 
 `node --test tests/identity.test.mjs` verifica o acabamento CSS, seu carregamento e o retrato de integridade da entrega sobre o PR 52. O teste faz parte do recorte de integração da CI; não substitui revisão visual. Veja [escopo, resultados e limites](../docs/identidade/VERIFICACAO-2026-11-11.md).
 
+
+</details>
+
 ## Movimento aprovado
+
+<details>
+<summary>Expandir Movimento aprovado</summary>
 
 A edição de 11/11/2026 acrescenta `ui-motion.test.mjs`, `victory-tiles.test.mjs` e `motion-preference.test.mjs` ao recorte de integração. O retrato de identidade passa a aceitar somente os dez arquivos de apresentação aprovados, preservando o restante de `dist/` byte a byte em relação ao PR 53. As expectativas históricas de confetes/zoom das campanhas são substituídas pela opção A; o resultado Versus continua intacto. Veja [escopo, 519 testes e limites visuais](../docs/movimento/VERIFICACAO-2026-11-11.md).
 
+
+</details>
+
 ## Vitórias específicas dos onze jogos Versus
+
+<details>
+<summary>Expandir Vitórias específicas dos onze jogos Versus</summary>
 
 `node --test tests/versus-victory-approved.test.mjs` verifica os emblemas aprovados, resultados reais, ciclo sem repetição, computador/empate, movimento reduzido e preservação dos motores. [Detalhes](../docs/movimento/VITORIAS-VERSUS-2026-11-11.md).
 
+
+</details>
+
 ## Apresentação unificada e modos solo
 
+<details>
+<summary>Expandir Apresentação unificada e modos solo</summary>
+
 A revisão de 11/11/2026 acrescenta `original-daily.test.mjs`, `selection-presentation.test.mjs`, `presentation-scope.test.mjs` e `logica/endless.test.mjs` ao recorte de CI. O baseline GitHub PR59 passou 611 testes antes da edição; a revisão passou 627 testes. Os contratos históricos de regras e ajuste responsivo continuam verificando seus commits de entrega, enquanto o guard da nova apresentação compara toda a distribuição contra PR59. Não houve exclusão de testes nem aprovação da suíte histórica completa. Veja [evidências e limites](../docs/qa/apresentacao-unificada-2026-11-11.md).
+
+</details>
+

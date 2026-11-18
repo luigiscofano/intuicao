@@ -26,10 +26,22 @@ Cada manual traz objetivo, regras, controles publicados, exemplo, intenção ped
 
 ## Histórico
 
+<details>
+<summary>Expandir Histórico</summary>
+
 ÓRBITA, DIVISA, LASTRO, VAZANTE, ENLACE e DOBRA não fazem parte da seleção ativa. Seus arquivos e histórico Git continuam disponíveis para consulta; não anunciam jogos publicados.
 
 [Apresentação](../../README.md) · [Arquitetura](../arquitetura/README.md).
 
+
+</details>
+
 ## Coleção completa de AIIJs
 
+<details>
+<summary>Expandir Coleção completa de AIIJs</summary>
+
 [19 artes aprovadas e arquivos originais](../identidade/aiij/README.md).
+
+</details>
+

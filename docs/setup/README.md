@@ -2,9 +2,18 @@
 
 ## Requisitos
 
+<details>
+<summary>Expandir Requisitos</summary>
+
 Para servir uma cópia local, use um servidor HTTP estático (Python 3 é uma opção) e um navegador com módulos ES, SVG, workers e armazenamento local. Para os testes, esta preparação foi verificada com Node.js 24.22.1. Não existe `package.json` nesta base e não é necessário `npm install`.
 
+
+</details>
+
 ## Obter a cópia
+
+<details>
+<summary>Expandir Obter a cópia</summary>
 
 Clone o repositório; autentique-se apenas se o acesso configurado no GitHub exigir:
 
@@ -25,7 +34,13 @@ git branch -a
 
 O bundle é um repositório transportável, não um ZIP do site. O clone normalmente deixa as outras branches em `origin/*`; consulte o [plano de integração](../github/README.md) antes de enviá-las a um remoto. O bundle não configura GitHub, permissões ou deploy.
 
+
+</details>
+
 ## Iniciar e encerrar
+
+<details>
+<summary>Expandir Iniciar e encerrar</summary>
 
 Na raiz do projeto:
 
@@ -41,7 +56,13 @@ py -m http.server 8766 --bind 127.0.0.1 --directory dist
 
 Visite http://127.0.0.1:8766/. Pressione `Ctrl+C` no terminal para encerrar. A página pode continuar visível em memória, mas novos carregamentos dependem do servidor.
 
+
+</details>
+
 ## Primeira verificação manual
+
+<details>
+<summary>Expandir Primeira verificação manual</summary>
 
 1. Abra a categoria Intuição e entre em Reflexos.
 2. Escolha uma fase e faça uma ação permitida.
@@ -51,7 +72,13 @@ Visite http://127.0.0.1:8766/. Pressione `Ctrl+C` no terminal para encerrar. A p
 
 Não use o progresso pessoal como massa de teste de migração. Prefira um perfil de navegador separado para QA.
 
+
+</details>
+
 ## Problemas comuns
+
+<details>
+<summary>Expandir Problemas comuns</summary>
 
 | Sintoma | Verificação |
 | --- | --- |
@@ -63,6 +90,15 @@ Não use o progresso pessoal como massa de teste de migração. Prefira um perfi
 | Teste exige commit antigo | Confira `git rev-parse --is-shallow-repository`; preserve o histórico completo |
 | Muitos testes antigos falham | Leia [testes](../../tests/README.md) e identifique o contrato antes de alterar código |
 
+
+</details>
+
 ## Atualizações
 
+<details>
+<summary>Expandir Atualizações</summary>
+
 A cópia local não se atualiza automaticamente quando o site muda. Compare commits e faça uma atualização explícita. Um envio ao GitHub também não implanta o site. O arquivo `.openai/hosting.json` é configuração do projeto existente; não o use para criar outro site por engano.
+
+</details>
+

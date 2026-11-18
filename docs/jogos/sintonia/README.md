@@ -6,21 +6,42 @@ Um puzzle de coordenação em que um único comando move vários animais, cada u
 
 ## Área de jogo atual
 
+<details>
+<summary>Expandir Área de jogo atual</summary>
+
 [![SINTONIA: captura real da área de jogo](../../imagens/galeria-atual/sintonia.png)](../../imagens/galeria-atual/sintonia.png)
 
 *Captura local do código atual, com estado de demonstração, sem cursor ou dados pessoais. [Proveniência e limites](../../imagens/galeria-atual/README.md). Não representa uma solução nem comprova todos os estados da partida.*
 
+
+</details>
+
 ## Objetivo
+
+<details>
+<summary>Expandir Objetivo</summary>
 
 **Leve todos os animais aos seus destinos ao mesmo tempo.**
 
+
+</details>
+
 ## Como começar
+
+<details>
+<summary>Expandir Como começar</summary>
 
 1. Use as setas ou WASD. O mesmo comando vale para todos os animais.
 2. Cada um anda uma casa; quem encontra uma parede fica parado.
 3. Use essas diferenças para alinhar os caminhos. Todos devem terminar nos destinos juntos.
 
+
+</details>
+
 ## Regras completas
+
+<details>
+<summary>Expandir Regras completas</summary>
 
 1. Use as setas, WASD ou o controle na tela. O mesmo comando faz todos tentarem andar uma casa.
 2. Quem encontra uma parede ou bloqueio fica parado; os outros podem avançar. Use isso para ajustar os caminhos.
@@ -28,27 +49,57 @@ Um puzzle de coordenação em que um único comando move vários animais, cada u
 4. Placas, cancelas, interruptores, chaves e gelo aparecem aos poucos e têm explicações na fase. Uma passagem aberta no início do comando ainda pode ser atravessada enquanto outro animal sai da placa.
 5. Desfaça ou reinicie para experimentar. Não há cronômetro, vidas ou limite obrigatório de movimentos. As dicas consideram a posição atual dos animais.
 
+
+</details>
+
 ## Exemplo de raciocínio
+
+<details>
+<summary>Expandir Exemplo de raciocínio</summary>
 
 Com o comando →, um animal avança e o outro fica parado diante da parede.
 
+
+</details>
+
 ## O que observar
+
+<details>
+<summary>Expandir O que observar</summary>
 
 Cada seta pode ajudar um animal e afastar outro do destino. Experimentar paredes, apoios e sequências convida a pensar nas relações entre os caminhos.
 
 Não conclua uma solução apenas pela aparência. Leia as pistas da fase e confira a condição de término acima. Pistas fixas e a identidade da fase devem ser preservadas. Dicas ou solução assistida não equivalem a uma conclusão independente.
 
+
+</details>
+
 ## Proposta pedagógica
+
+<details>
+<summary>Expandir Proposta pedagógica</summary>
 
 Praticar planejamento, antecipação de consequências e raciocínio espacial, articulando objetivos individuais com uma condição conjunta.
 
 Essas são intenções de design e oportunidades de prática, não resultados acadêmicos medidos.
 
+
+</details>
+
 ## Identidade visual e leitura
+
+<details>
+<summary>Expandir Identidade visual e leitura</summary>
 
 As cores, peças e ilustrações ajudam a distinguir estados e ações. A arte não concede poderes ou altera as regras. Veja a [galeria da identidade](../../identidade/README.md) e os [recursos de fauna e flora](../../../README.md#fauna-flora-e-objetos-com-funcao).
 
+
+</details>
+
 ## Onde está implementado
+
+<details>
+<summary>Expandir Onde está implementado</summary>
 
 - [dist/sintonia/engine.mjs](../../../dist/sintonia/engine.mjs)
 - [dist/sintonia/ui.mjs](../../../dist/sintonia/ui.mjs)
@@ -56,18 +107,36 @@ As cores, peças e ilustrações ajudam a distinguir estados e ações. A arte n
 
 As regras desta página foram confrontadas com os textos publicados em [game-info-content.mjs](../../../dist/game-info-content.mjs), os [guias rápidos](../../../dist/rules-quick-start.mjs) e os adaptadores próprios da família. Quantidades dependentes de mapa não devem ser tratadas como constantes universais.
 
+
+</details>
+
 ## Preservação e verificação
+
+<details>
+<summary>Expandir Preservação e verificação</summary>
 
 O progresso usa o armazenamento local e o [backup compartilhado](../../../dist/progress-backup.mjs). Não reutilize número editorial como identificador de save. Ao alterar este jogo, confira ações válidas e inválidas, retorno à seleção, desfazer/refazer quando oferecidos, conclusão ou término, restauração e telas estreitas.
 
 [Guia de testes](../../../tests/README.md) · [Qualidade](../../qualidade/README.md). Uma captura demonstra apresentação, não comprova sozinha toda a mecânica. As regras documentadas devem acompanhar o código, não substituir testes do motor.
 
 
+
+</details>
+
 ## Referência técnica complementar
+
+<details>
+<summary>Expandir Referência técnica complementar</summary>
 
 Os links abaixo preservam o mapa técnico documentado do jogo. Relatórios datados mantêm o escopo da revisão original, não certificam automaticamente a versão atual.
 
+
+</details>
+
 ## Como a implementação funciona
+
+<details>
+<summary>Expandir Como a implementação funciona</summary>
 
 A transição recebe um comando comum e resolve os tabuleiros segundo o estado inicial do passo. Mecanismos de placa e cancela exigem uma ordem de avaliação consistente; animar um animal antes do outro não deve mudar as regras.
 
@@ -88,7 +157,13 @@ A transição recebe um comando comum e resolve os tabuleiros segundo o estado i
 
 Os nomes acima são extraídos dos exports presentes nesta base. Antes de chamar uma função, confira parâmetros, retornos e casos de erro no módulo e em seus testes; não assuma que todos os jogos compartilham a mesma assinatura.
 
+
+</details>
+
 ## Roteiro para estudar ou alterar
+
+<details>
+<summary>Expandir Roteiro para estudar ou alterar</summary>
 
 1. Leia as regras e identifique a condição de vitória ou encerramento.
 2. Acompanhe a representação de fase/mapa e de estado no módulo principal.
@@ -97,7 +172,13 @@ Os nomes acima são extraídos dos exports presentes nesta base. Antes de chamar
 5. Encontre um teste da regra alterada e reproduza um caso mínimo antes de editar.
 6. Quando houver catálogo novo, confira IDs, soluções, contagem e impacto no save.
 
+
+</details>
+
 ## Verificação e riscos específicos
+
+<details>
+<summary>Expandir Verificação e riscos específicos</summary>
 
 Cobrir bloqueios, portas, placas, chaves, gelo e separação entre destino e mecanismo. Há uma correção de idempotência de migração documentada na revisão f0e7fcf, ainda ausente desta base: não declarar essa correção incorporada.
 
@@ -122,15 +203,30 @@ Use o [guia de testes](../../../tests/README.md) para diferenciar testes de regr
 
 Quando a mudança é visual, valide entrada no jogo, leitura das regras, interação principal, retorno e tamanhos de tela. Quando toca regras ou saves, acrescente casos de entradas inválidas, repetição da ação e restauração. Não conclua que uma busca encontrou solução única se ela esgotou seu orçamento.
 
+
+</details>
+
 ## Documentação de referência
+
+<details>
+<summary>Expandir Documentação de referência</summary>
 
 - [docs/sintonia-contract.md](../../../docs/sintonia-contract.md)
 - [docs/sintonia-goals-v5.md](../../../docs/sintonia-goals-v5.md)
 
+
+</details>
+
 ## AIIJ aprovada
+
+<details>
+<summary>Expandir AIIJ aprovada</summary>
 
 [![Arte de Ilustração Individual de SINTONIA](../../../dist/platform-assets/sintonia-aiij-aprovada.svg)](../../../dist/platform-assets/sintonia-aiij-aprovada.svg)
 
 Arquivo real aprovado, preservado em sua proporção original e com transparência. Esta ilustração pertence à identidade do jogo; não altera regras, controles, peças nem progresso. Não usar como miniatura do tabuleiro.
 
 [Ver as 19 AIIJs e orientações de uso](../../identidade/aiij/README.md).
+
+</details>
+

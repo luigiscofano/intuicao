@@ -8,6 +8,9 @@ Todas as partidas têm dois participantes, informação aberta e consequências 
 
 ## Visão da coleção
 
+<details>
+<summary>Expandir Visão da coleção</summary>
+
 | Jogo | Decisão principal | Interação | Como vencer |
 | --- | --- | --- | --- |
 | [ENLACE](#enlace) | Colocar dois fios acoplados | Cada lance constrói as duas redes | Atravessar o tear; sem encaixes, iluminar mais pinos |
@@ -19,7 +22,13 @@ Todas as partidas têm dois participantes, informação aberta e consequências 
 | [ACORDE](#acorde) | Recolher um sino no eixo ativo | A casa escolhida define o eixo disponível ao rival | Formar pares de três símbolos diferentes |
 | [LASTRO](#lastro) | Avançar um contrapeso uma ou duas marcas | O desvio resultante limita os próximos ajustes | Fazer o último ajuste de cada rodada e vencer as duas |
 
+
+</details>
+
 ## ENLACE
+
+<details>
+<summary>Expandir ENLACE</summary>
 
 Dois ateliês montam uma iluminação sobre um tear de 25 pinos. A presilha vem com dois braços inseparáveis: um verde e um âmbar. Colocá-la exige decidir ao mesmo tempo como desenvolver a própria rede e qual ligação oferecer ao adversário.
 
@@ -31,7 +40,13 @@ O raciocínio combina construção de rotas, bloqueio de trechos e antecipação
 
 [Regras, estado, arquitetura e testes de ENLACE](../../dist/versus/games/enlace/README.md)
 
+
+</details>
+
 ## VAZANTE
+
+<details>
+<summary>Expandir VAZANTE</summary>
 
 Duas equipes transportam seus mascotes em barcos de folha. O casco, o assento e o emblema fazem parte da peça; o animal permanece acomodado dentro dela. Os três barcos de uma equipe têm o mesmo movimento.
 
@@ -43,7 +58,13 @@ Verde atraca em qualquer casa da linha 5; âmbar, em qualquer casa da linha 1. V
 
 [Regras, estado, arquitetura e testes de VAZANTE](../../dist/versus/games/vazante/README.md)
 
+
+</details>
+
 ## MOSAICO
+
+<details>
+<summary>Expandir MOSAICO</summary>
 
 Duas oficinas constroem um painel de cerâmica usando a mesma reserva de azulejos. Cada peça tem dois cantos verdes adjacentes e dois cantos âmbar adjacentes. A escolha da orientação determina quais cantos participam das junções ao redor.
 
@@ -55,7 +76,13 @@ Depois dos 25 azulejos, vence quem tiver mais selos; igualdade empata. A decisã
 
 [Regras, estado, arquitetura e testes de MOSAICO](../../dist/versus/games/mosaico/README.md)
 
+
+</details>
+
 ## QUINHÃO
+
+<details>
+<summary>Expandir QUINHÃO</summary>
 
 A colheita comunitária fica em 24 cestos distribuídos em um anel. Há castanhas, pitangas e jabuticabas, oito frutos de cada tipo. O objetivo é compor uma colheita variada.
 
@@ -67,7 +94,13 @@ Ao final de oito ofertas, cada equipe recebeu 12 frutos. Primeiro são formados 
 
 [Regras, estado, arquitetura e testes de QUINHÃO](../../dist/versus/games/quinhao/README.md)
 
+
+</details>
+
 ## ESTALO
+
+<details>
+<summary>Expandir ESTALO</summary>
 
 Um canteiro 4×4 contém oito vagens de cada equipe. Cada vagem possui uma seta que indica para onde o pulso seguirá quando ela se abrir.
 
@@ -79,7 +112,13 @@ Vence a equipe cujas oito vagens estiverem abertas ao final da cadeia. Se ambas 
 
 [Regras, estado, arquitetura e testes de ESTALO](../../dist/versus/games/estalo/README.md)
 
+
+</details>
+
 ## DOBRA
+
+<details>
+<summary>Expandir DOBRA</summary>
 
 O tabuleiro é um atlas de papel que começa com 36 painéis. Cada painel registra sua área e os selos depositados pelas duas equipes. A cada turno, o mapa muda de forma.
 
@@ -91,7 +130,13 @@ Quando o atlas chega a 2×2, a maioria de selos de cada distrito define quem con
 
 [Regras, estado, arquitetura e testes de DOBRA](../../dist/versus/games/dobra/README.md)
 
+
+</details>
+
 ## ACORDE
+
+<details>
+<summary>Expandir ACORDE</summary>
 
 Um pequeno carrinho percorre um painel 4×4 de sinos. Há quatro símbolos — folha, onda, sol e gota — e quatro sinos de cada tipo. As coleções são abertas e as peças retiradas não voltam.
 
@@ -103,7 +148,13 @@ Vence quem primeiro reúne pares de três símbolos diferentes. Ter mais de dois
 
 [Regras, estado, arquitetura e testes de ACORDE](../../dist/versus/games/acorde/README.md)
 
+
+</details>
+
 ## LASTRO
+
+<details>
+<summary>Expandir LASTRO</summary>
 
 Um aparelho possui seis contrapesos compartilhados em trilhos independentes. Seus valores e suas distâncias do centro determinam um desvio numérico exato. O visual de equilíbrio acompanha as contas, sem depender de reflexos ou de simulação física.
 
@@ -115,10 +166,19 @@ Quem não tiver ajuste legal perde a rodada. O duelo contém duas rodadas com o 
 
 [Regras, estado, arquitetura e testes de LASTRO](../../dist/versus/games/lastro/README.md)
 
+
+</details>
+
 ## Estrutura de implementação
+
+<details>
+<summary>Expandir Estrutura de implementação</summary>
 
 Cada jogo possui um motor puro e uma camada de apresentação separados. O motor cria o estado, enumera jogadas legais, aplica ações sem modificar o estado recebido, calcula o resultado e fornece uma avaliação determinística. A apresentação transforma seleção em prévia e explica suas consequências; a confirmação, o histórico e a persistência pertencem ao controlador compartilhado.
 
 Os testes dos jogos ficam em `tests/versus/` e incluem sequências das pranchas, situações de vitória ou empate e invariantes específicos, como a conservação de área em DOBRA ou a resolução simultânea de um comboio em VAZANTE. Esses testes verificam a implementação das regras. Equilíbrio estratégico e experiência com participantes são avaliações distintas.
 
 **Intuição — Luigi Scofano de Araujo.**
+
+</details>
+

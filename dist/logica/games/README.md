@@ -6,6 +6,9 @@ Motores, views e campanhas da família lógica. Ativos: Pulso, Foz, Refúgio, Mi
 
 ## Conteúdo
 
+<details>
+<summary>Expandir Conteúdo</summary>
+
 - [divisa/](divisa/README.md)
 - [foz/](foz/README.md)
 - [mirante/](mirante/README.md)
@@ -13,8 +16,17 @@ Motores, views e campanhas da família lógica. Ativos: Pulso, Foz, Refúgio, Mi
 - [refugio/](refugio/README.md)
 - [renovo/](renovo/README.md)
 
+
+</details>
+
 ## Manutenção
+
+<details>
+<summary>Expandir Manutenção</summary>
 
 Atualize este índice ao alterar o conteúdo da pasta. Verifique os links com `node scripts/check-docs.mjs` a partir da raiz. Testes de código e publicação devem seguir o fluxo específico do projeto. Registros históricos conservam sua data e não representam automaticamente o estado publicado.
 
 ![Identidade do projeto](../../platform-assets/intuicao-logo-azulejos.png)
+
+</details>
+

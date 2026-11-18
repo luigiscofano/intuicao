@@ -6,6 +6,9 @@ Testes e verificações de navegador. Dependem do servidor e ambiente descritos 
 
 ## Conteúdo
 
+<details>
+<summary>Expandir Conteúdo</summary>
+
 - [board-fit.html](board-fit.html)
 - [board-fit.mjs](board-fit.mjs)
 - [campaign-action-buttons.html](campaign-action-buttons.html)
@@ -13,8 +16,17 @@ Testes e verificações de navegador. Dependem do servidor e ambiente descritos 
 - [footer-mosaic.html](footer-mosaic.html)
 - [footer-mosaic.mjs](footer-mosaic.mjs)
 
+
+</details>
+
 ## Manutenção
+
+<details>
+<summary>Expandir Manutenção</summary>
 
 Atualize este índice ao alterar o conteúdo da pasta. Verifique os links com `node scripts/check-docs.mjs` a partir da raiz. Testes de código e publicação devem seguir o fluxo específico do projeto. Registros históricos conservam sua data e não representam automaticamente o estado publicado.
 
 ![Identidade do projeto](../../dist/platform-assets/intuicao-logo-azulejos.png)
+
+</details>
+

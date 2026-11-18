@@ -2,6 +2,9 @@
 
 ## Scope and provenance
 
+<details>
+<summary>Expandir Scope and provenance</summary>
+
 The user asked to replace Sintonia's animal sprites with their uploaded sheet,
 `sprites_chibi_ituicao.png` (Library `referencia-privada-omitida`,
 version 0). The existing four animal identities use the sheet's top row:
@@ -18,7 +21,13 @@ The sole added deployed file is `dist/sintonia/assets/chibi-user-atlas.svg`.
 No animals, campaigns, maps, rules, progress schemas, UI layout, or other games
 were added or changed. The four prior PNG atlases remain byte-identical.
 
+
+</details>
+
 ## Exact source, native clipping
+
+<details>
+<summary>Expandir Exact source, native clipping</summary>
 
 The self-contained SVG embeds the original 1254 × 1254 PNG **once, byte for
 byte**, and exposes a 1254 × 313.5 (4 × 1) atlas. It does not load any external
@@ -43,7 +52,13 @@ The existing `spriteMarkup` function already supports columns/rows/frame;
 using that interface preserves the renderer and CSS exactly, including
 `inset:-10%` and the existing positioning/accessibility behavior.
 
+
+</details>
+
 ## Verification
+
+<details>
+<summary>Expandir Verification</summary>
 
 - `node --test tests/sintonia-sprites.test.mjs tests/sintonia-integration.test.mjs`
   — 11/11 pass.
@@ -63,3 +78,6 @@ using that interface preserves the renderer and CSS exactly, including
   details have alpha 255. This verifies native SVG rendering, not browser QA.
 - Browser verification is owned by the publishing task; local preview
   infrastructure was unavailable at this stage.
+
+</details>
+

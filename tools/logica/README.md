@@ -6,6 +6,9 @@ Geradores e certificadores das campanhas lógicas. Registre semente, parâmetros
 
 ## Conteúdo
 
+<details>
+<summary>Expandir Conteúdo</summary>
+
 - [catalog-summary.mjs](catalog-summary.mjs)
 - [divisa-generate.py](divisa-generate.py)
 - [foz-audit.py](foz-audit.py)
@@ -26,8 +29,17 @@ Geradores e certificadores das campanhas lógicas. Registre semente, parâmetros
 - [renovo-generate.py](renovo-generate.py)
 - [renovo-search-hard.py](renovo-search-hard.py)
 
+
+</details>
+
 ## Manutenção
+
+<details>
+<summary>Expandir Manutenção</summary>
 
 Atualize este índice ao alterar o conteúdo da pasta. Verifique os links com `node scripts/check-docs.mjs` a partir da raiz. Testes de código e publicação devem seguir o fluxo específico do projeto. Registros históricos conservam sua data e não representam automaticamente o estado publicado.
 
 ![Identidade do projeto](../../dist/platform-assets/intuicao-logo-azulejos.png)
+
+</details>
+

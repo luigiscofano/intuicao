@@ -4,6 +4,9 @@ Esta versão aplica a correção mais recente do usuário: os anéis são **semp
 
 ## Campanha e variedade
 
+<details>
+<summary>Expandir Campanha e variedade</summary>
+
 - 1.000 fases; definições 1–200 preservadas.
 - Novas fases 201–1000 com 2–5 círculos e 2–14 casas compartilhadas.
 - Nenhum par possui mais de dois encontros; nenhuma casa pertence a três círculos.
@@ -15,7 +18,13 @@ Dois círculos distintos têm no máximo dois pontos em comum. Assim, a exigênc
 
 As antigas famílias orgânicas, elípticas e com três ou mais encontros no mesmo par foram substituídas pela orientação mais recente. Não se afirma cumprir as 24 famílias geométricas da especificação revogada. A auditoria registra famílias circulares efetivamente realizadas e conceitos acompanhados de evidências de comportamento.
 
+
+</details>
+
 ## Verificação
+
+<details>
+<summary>Expandir Verificação</summary>
 
 ```sh
 node tests/orbita-build-v3.mjs
@@ -27,10 +36,19 @@ node tests/orbita-render-v3.mjs
 
 As assinaturas estruturais continuam independentes de desenhos, nomes, símbolos e embaralhamentos. A reprodução da solução comprova solvabilidade, não minimalidade. Evidências observadas numa rota não são apresentadas como prova de que toda solução necessita daquele procedimento; a dificuldade é editorial, não calibrada com jogadores.
 
+
+</details>
+
 ## Progresso e Endless
+
+<details>
+<summary>Expandir Progresso e Endless</summary>
 
 Campanha e gerador têm versão 3. Conclusões, preferências e progresso permanente não são apagados. Uma tentativa salva de uma definição substituída reinicia apenas essa tentativa. Uma tentativa Endless antiga com percursos não circulares é arquivada integralmente e recuperada explicitamente em um desafio circular certificado, com nova seed e aviso visível. Os contadores e o histórico são preservados; a seed antiga nunca é reinterpretada silenciosamente. Partidas personalizadas antigas não circulares também são preservadas, mas não são exibidas. Novos desafios e respostas de workers precisam ser da versão circular atual.
 
 Os módulos e testes v2 conservados servem à compatibilidade e ao histórico; não são usados para criar novos tabuleiros da campanha circular. Documentação e folhas de contato em `docs/orbita-v2` descrevem a versão anterior.
 
 As folhas de contato v3 são verificações estáticas com os caminhos, símbolos, alvos, sensores e posições de rótulos da interface real. Testes de navegador, toque, foco e rolagem a 320/390 px devem ser registrados separadamente; cálculo de escala não substitui essa verificação.
+
+</details>
+

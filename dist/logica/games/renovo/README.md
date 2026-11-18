@@ -4,13 +4,22 @@ Jogo de ligações entre sementes, botões e folhas. Visual C1 Vereda leve aprov
 
 ## Regras preservadas
 
+<details>
+<summary>Expandir Regras preservadas</summary>
+
 1. Cada botão deve ligar-se a uma semente e uma folha. Todas as peças entram exatamente uma vez.
 2. Os dois trechos do botão formam um ângulo reto. Cada trecho é horizontal ou vertical e termina na **primeira peça** encontrada naquela direção.
 3. Trechos não cruzam, não se sobrepõem e não atravessam peças. Somente os dois trechos de um mesmo trio podem se encontrar, em seu botão.
 
 Células vazias podem ser atravessadas. Não existe diagonal nem exigência de cobrir todas as células vazias. Formar um trio reto de 180 graus não atende à segunda regra. A impossibilidade de cruzar vale também para trios distintos com ângulos localmente válidos.
 
+
+</details>
+
 ## Dados e contrato
+
+<details>
+<summary>Expandir Dados e contrato</summary>
 
 `index.mjs` exporta o contrato comum. O motor não acessa DOM, armazenamento, relógio ou rede; a campanha é carregada pronta e os solvers são exclusivamente offline.
 
@@ -48,7 +57,13 @@ Com mouse ou dedo, comece na semente ou folha e trace até o botão. Pode contin
 
 A view mantém as classes de largura do tabuleiro. O layout global `board-fit.css` preserva o ajuste e a centralização responsiva publicados na versão 209, inclusive nas fases de 11 colunas. Em janelas simultaneamente estreitas e baixas (até 600×500 CSS px), somente RENOVO mantém o painel de ações abaixo do tabuleiro; grades densas conservam a rolagem local acessível do enquadramento existente.
 
+
+</details>
+
 ## Campanha e evidência de progressão
+
+<details>
+<summary>Expandir Campanha e evidência de progressão</summary>
 
 São **80 fases únicas**, em faixas 15/15/15/15/15/5. As duas amostras aprovadas ficam em `tests/logica/renovo-fixtures.json` e nas posições 1 e 16. IDs usam SHA-256 da definição real. A curadoria rejeita equivalentes por translação, rotação, reflexão, troca global de semente/folha e mero espaçamento de linhas/colunas vazias. Tabuleiros gerados são compactados sem mudar visibilidade, perpendicularidade ou interseções; as fixtures conservam sua grade original.
 
@@ -67,7 +82,13 @@ Esses dados motivaram a seleção, em vez de usar apenas quantidade de peças. A
 
 A dificuldade permanece **editorial, sem playtest**. Profundidade e trocas de regra medem o roteiro documentado, não a menor estratégia humana possível. O modelo também dispõe de reservas de subconjuntos e contradições curtas, mas as fases selecionadas usam no máximo a regra de segmento obrigatório; não são rotuladas como exigindo técnicas que seus certificados não mostram.
 
+
+</details>
+
 ## Reconstrução e auditoria
+
+<details>
+<summary>Expandir Reconstrução e auditoria</summary>
 
 Na raiz do checkout:
 
@@ -92,3 +113,6 @@ python3 tools/logica/renovo-build-campaign.py --reselect
 Sementes, nessa ordem: `11102026`, `90261110`, `11032026`, `11042026`. A busca por mutação mantém seu escore preliminar sem segmento obrigatório; a curadoria recertifica os resultados com o modelo completo. Cada script usa apenas Python 3 padrão. Os arquivos `tools/logica/renovo-*-pool.json` e `renovo-pool.json` são saídas intermediárias dispensáveis, não assets do site. Mudanças no algoritmo podem mudar uma nova seleção; a curadoria versionada é o caminho estável para reproduzir exatamente a campanha publicada.
 
 O enumerador escolhe um trio por botão, excluindo conflitos, até esgotar alternativas ou encontrar uma segunda solução e rejeitar o candidato. O teste independente de unicidade usa ocupação de **pontos inteiros da malha**, sem importar auxiliares geométricos do motor ou ler o gabarito: 80/80 fases têm uma única cobertura. Testes também cobrem as fixtures, primeira peça visível, ângulo, extremos repetidos, cruzamento, estados malformados, ações imutáveis, seleção e renderer acessível.
+
+</details>
+

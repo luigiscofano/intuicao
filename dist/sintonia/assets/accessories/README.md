@@ -6,6 +6,9 @@ Acessórios visuais de Sintonia, separados dos personagens e das regras. Variant
 
 ## Conteúdo
 
+<details>
+<summary>Expandir Conteúdo</summary>
+
 - [box-0.png](box-0.png)
 - [box-1.png](box-1.png)
 - [bridge-0.png](bridge-0.png)
@@ -29,8 +32,17 @@ Acessórios visuais de Sintonia, separados dos personagens e das regras. Variant
 - [switch-0.png](switch-0.png)
 - [switch-1.png](switch-1.png)
 
+
+</details>
+
 ## Manutenção
+
+<details>
+<summary>Expandir Manutenção</summary>
 
 Atualize este índice ao alterar o conteúdo da pasta. Verifique os links com `node scripts/check-docs.mjs` a partir da raiz. Testes de código e publicação devem seguir o fluxo específico do projeto. Registros históricos conservam sua data e não representam automaticamente o estado publicado.
 
 ![Identidade do projeto](../../../platform-assets/intuicao-logo-azulejos.png)
+
+</details>
+

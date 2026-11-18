@@ -2,13 +2,22 @@
 
 ## Regras e representação
 
+<details>
+<summary>Expandir Regras e representação</summary>
+
 Cada linha recebe exatamente três batidas em progressão aritmética: se as colunas são `a < b < c`, então `b-a = c-b`. Distância 1 é permitida. A soma de cada coluna deve igualar sua cota e nenhuma pista interna pode mudar. Diagonais não participam da regra.
 
 O nível contém `rows`, `cols`, `quotas`, `givens` (índice linear → 0/1), `solution` e metadados. O estado é `{cells}` com `null` para indecisa, `0` para vazia confirmada e `1` para batida. Uma resposta só está completa quando não há `null`. `checkState` calcula as regras sem consultar `solution`.
 
 `applyAction` aceita `{type:'cell',index,tool}`; ferramentas: `cycle`, `mark`, `empty`, `clear`. O ciclo é indecisa → batida → vazia → indecisa. Ações inválidas e cliques em pistas retornam o mesmo estado. Ações válidas criam outro array, sem alterar argumentos. A integridade de restauração aceita estados parciais, mas rejeita valores inválidos, arrays esparsos, tamanho errado e pistas alteradas.
 
+
+</details>
+
 ## Campanha certificada
+
+<details>
+<summary>Expandir Campanha certificada</summary>
 
 80 fases, distribuídas em 15 Básico, 15 Aprendiz, 15 Intermediário, 15 Avançado, 15 Mestre e 5 Modo Sábio. A primeira é o exemplo guiado aprovado; a fase 46 preserva o desafio comparativo aprovado. Grades de 3–6 linhas e 6–9 colunas variam trios, intervalos e cotas.
 
@@ -29,7 +38,13 @@ O propagador calcula para cada linha o mínimo/máximo de ocupação de uma colu
 
 As faixas são editoriais. Métricas de candidatos, rodadas e eliminações não substituem playtest nem garantem dificuldade igual para todas as pessoas. As primeiras três faixas compartilham a técnica básica e variam a extensão da cadeia. Essa limitação está registrada, sem acrescentar símbolos ou regras.
 
+
+</details>
+
 ## Reprodução e testes
+
+<details>
+<summary>Expandir Reprodução e testes</summary>
 
 Na raiz do repositório, com Node 24, sem dependências:
 
@@ -41,6 +56,15 @@ node --test tests/logica/pulso-engine.test.mjs
 
 O gerador usa a semente `0x50554c53`; escreve apenas esta campanha e seu relatório específico. `pulso-solver.mjs` só é usado offline. `pulso-audit.mjs` enumera independentemente todos os trios compatíveis com as pistas, usando apenas excesso/falta de capacidade para podar. Relatórios: `tests/logica/pulso-generation.json` e `pulso-independent.json`. Nenhum catálogo é resolvido ao abrir o navegador.
 
+
+</details>
+
 ## Apresentação
 
+<details>
+<summary>Expandir Apresentação</summary>
+
 `view.mjs` gera markup puro; importar também `view.css`. As células editáveis têm `data-cell`, `role="button"`, `tabindex="0"` e rótulo em português. O host fornece clique, Enter/espaço, histórico, reinício e foco. Pistas são fixas e têm pino; vazios usam ×, indecisas usam ponto discreto. Peças e cotas seguem a moldura dupla CERCO. Grades de 8–9 colunas preservam uma largura mínima e permitem rolagem horizontal em telas estreitas.
+
+</details>
+

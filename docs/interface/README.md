@@ -6,6 +6,9 @@ Decisões e registros de interface. Cada revisão precisa informar escopo, prese
 
 ## Conteúdo
 
+<details>
+<summary>Expandir Conteúdo</summary>
+
 - [cabecalho-direto.md](cabecalho-direto.md)
 - [cards-compactos.md](cards-compactos.md)
 - [entrada-compacta.md](entrada-compacta.md)
@@ -14,8 +17,17 @@ Decisões e registros de interface. Cada revisão precisa informar escopo, prese
 - [retirada-lastro-vazante.md](retirada-lastro-vazante.md)
 - [sobre-sem-comemorar.md](sobre-sem-comemorar.md)
 
+
+</details>
+
 ## Manutenção
+
+<details>
+<summary>Expandir Manutenção</summary>
 
 Atualize este índice ao alterar o conteúdo da pasta. Verifique os links com `node scripts/check-docs.mjs` a partir da raiz. Testes de código e publicação devem seguir o fluxo específico do projeto. Registros históricos conservam sua data e não representam automaticamente o estado publicado.
 
 ![Identidade do projeto](../../dist/platform-assets/intuicao-logo-azulejos.png)
+
+</details>
+

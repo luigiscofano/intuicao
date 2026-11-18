@@ -16,9 +16,18 @@ O [inventário](inventario.json) identifica **133 arquivos visuais/fontes** indi
 
 ## Materiais externos identificados
 
+<details>
+<summary>Expandir Materiais externos identificados</summary>
+
 O contorno do Brasil em [fauna-range-map.mjs](../../dist/fauna-range-map.mjs) é atribuído ao Natural Earth. Os [termos oficiais](https://www.naturalearthdata.com/about/terms-of-use/) colocam seus dados vetoriais e raster em domínio público. Essa atribuição permanece; a declaração de autoria do Intuição não atribui a Luigi a criação dessa base cartográfica.
 
+
+</details>
+
 ## Licenças e atualização
+
+<details>
+<summary>Expandir Licenças e atualização</summary>
 
 O código e os textos autorais permanecem sob a [MIT](../../LICENSE). Imagens, sprites, fontes e marca continuam excluídos dessa licença aberta. A presente revisão registra autoria e mantém esse regime; uma licença de reutilização das artes exige decisão separada.
 
@@ -31,8 +40,17 @@ node scripts/check-assets.mjs --release
 
 O primeiro comando valida cobertura e integridade do inventário. O segundo também exige a documentação de direitos registrada. Nenhum comando certifica juridicamente a autoria, muda a licença das artes ou altera a visibilidade do GitHub.
 
+
+</details>
+
 ## Histórico
+
+<details>
+<summary>Expandir Histórico</summary>
 
 A declaração inclui os elementos autorais nas versões anteriores e os **16 caminhos visuais antigos** listados em [arquivos históricos](arquivos-historicos.json). O histórico, os arquivos e seus hashes foram preservados. O titular também autorizou manter o e-mail nos commits antigos; não foi criada uma cópia com histórico novo.
 
 As 11 imagens ilustrativas dos jogos permanecem no README. O repositório foi tornado público em 01/11/2026, com autorização do titular e histórico preservado.
+
+</details>
+

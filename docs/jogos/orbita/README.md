@@ -6,11 +6,20 @@
 
 ## O que o jogo faz
 
+<details>
+<summary>Expandir O que o jogo faz</summary>
+
 Um puzzle de planejamento em que peças circulam por anéis conectados e precisam encontrar seus alvos ao mesmo tempo.
 
 Gire um anel para mover todas as suas peças juntas. Use as casas compartilhadas para preparar transferências e restaurar o que já estava certo.
 
+
+</details>
+
 ## O jogo em imagem
+
+<details>
+<summary>Expandir O jogo em imagem</summary>
 
 [![ÓRBITA: dois anéis conectados, peças móveis coloridas e seis alvos fixos na fase 24.](../../imagens/jogos/orbita.jpg)](../../imagens/jogos/orbita.jpg)
 
@@ -18,7 +27,13 @@ Gire um anel para mover todas as suas peças juntas. Use as casas compartilhadas
 
 Clique na imagem para ampliar. Captura real do site em **1º de novembro de 2026**; [origem e contexto das imagens](../../imagens/jogos/README.md).
 
+
+</details>
+
 ## Problema e proposta pedagógica
+
+<details>
+<summary>Expandir Problema e proposta pedagógica</summary>
 
 Praticar planejamento de sequências, orientação espacial e antecipação de efeitos sobre objetivos simultâneos, usando posições temporárias e movimentos reversíveis.
 
@@ -26,11 +41,23 @@ Um giro pode entregar uma peça e tirar outra do lugar. Preparar a chegada, esco
 
 Esses objetivos descrevem a intenção de prática do jogo. Não são resultados de um estudo de aprendizagem com usuários.
 
+
+</details>
+
 ## Como abrir
+
+<details>
+<summary>Expandir Como abrir</summary>
 
 Execute o servidor pelo [guia de instalação](../../setup/README.md), abra a página inicial, escolha **Raciocínio lógico** e depois **ÓRBITA**. O jogo participa da aplicação integrada; abrir um arquivo `.mjs` isolado não inicia sua interface.
 
+
+</details>
+
 ## Regras e interação
+
+<details>
+<summary>Expandir Regras e interação</summary>
 
 1. Escolha um anel e use as setas curvas para girar no sentido horário ou anti-horário. Cada giro avança uma casa, salvo quando o controle indicar um passo diferente.
 2. As casas e os alvos ficam no lugar. Todas as peças do anel escolhido se movem juntas; uma casa compartilhada pertence aos dois anéis, mas contém uma única peça.
@@ -39,19 +66,37 @@ Execute o servidor pelo [guia de instalação](../../setup/README.md), abra a p�
 5. Mais adiante, alguns anéis avançam duas casas, engrenagens movem anéis juntos e sensores liberam comandos quando o símbolo indicado ocupa a casa marcada. Cada novidade é explicada na própria fase.
 6. Desfaça, refaça e reinicie livremente. Checar avalia sua configuração; movimentos de exploração não contam como erros. São 80 fases e desafios novos no Modo Sem Parar, sem cronômetro.
 
+
+</details>
+
 ## Exemplo de raciocínio
+
+<details>
+<summary>Expandir Exemplo de raciocínio</summary>
 
 Leve uma peça até a casa compartilhada entre dois anéis; ao girar o segundo, ela segue o novo percurso. A casa compartilhada contém uma única peça. A operação também move as outras peças do anel e pode desfazer um acerto anterior.
 
 O exemplo ilustra uma regra, não uma fase específica do catálogo. Para reproduzir uma fase concreta, use sua definição e seu ID junto com a solução de referência correspondente.
 
+
+</details>
+
 ## Conteúdo ativo
+
+<details>
+<summary>Expandir Conteúdo ativo</summary>
 
 80 fases em seis faixas (15/15/15/15/15/5). Modos livres e desafios gerados são separados da campanha.
 
 A posição exibida na seleção não é a identidade persistente da definição. Alterar uma fase pode exigir um novo ID, enquanto registros da fase anterior continuam arquivados. Referências antigas de catálogo precisam ser lidas junto do commit em que eram vigentes.
 
+
+</details>
+
 ## Como a implementação funciona
+
+<details>
+<summary>Expandir Como a implementação funciona</summary>
 
 Cada giro permuta a ocupação de um conjunto ordenado de casas. Casas e alvos permanecem fixos. Engrenagens e sensores acrescentam condições ao comando, e peças de mesmo símbolo são equivalentes para o objetivo.
 
@@ -72,7 +117,13 @@ Cada giro permuta a ocupação de um conjunto ordenado de casas. Casas e alvos p
 
 Os nomes acima são extraídos dos exports presentes nesta base. Antes de chamar uma função, confira parâmetros, retornos e casos de erro no módulo e em seus testes; não assuma que todos os jogos compartilham a mesma assinatura.
 
+
+</details>
+
 ## Roteiro para estudar ou alterar
+
+<details>
+<summary>Expandir Roteiro para estudar ou alterar</summary>
 
 1. Leia as regras e identifique a condição de vitória ou encerramento.
 2. Acompanhe a representação de fase/mapa e de estado no módulo principal.
@@ -81,7 +132,13 @@ Os nomes acima são extraídos dos exports presentes nesta base. Antes de chamar
 5. Encontre um teste da regra alterada e reproduza um caso mínimo antes de editar.
 6. Quando houver catálogo novo, confira IDs, soluções, contagem e impacto no save.
 
+
+</details>
+
 ## Verificação e riscos específicos
+
+<details>
+<summary>Expandir Verificação e riscos específicos</summary>
 
 Preservar IDs das 72 fases não substituídas pelo catálogo compacto e não herdar conclusão nas oito novas definições. Algumas descrições históricas falam em 500/1.000 fases; a campanha ativa tem 80.
 
@@ -106,12 +163,27 @@ Use o [guia de testes](../../../tests/README.md) para diferenciar testes de regr
 
 Quando a mudança é visual, valide entrada no jogo, leitura das regras, interação principal, retorno e tamanhos de tela. Quando toca regras ou saves, acrescente casos de entradas inválidas, repetição da ação e restauração. Não conclua que uma busca encontrou solução única se ela esgotou seu orçamento.
 
+
+</details>
+
 ## Documentação de referência
+
+<details>
+<summary>Expandir Documentação de referência</summary>
 
 - [docs/orbita-engine.md](../../../docs/orbita-engine.md)
 - [docs/orbita-compact-catalog-2026-10-31.md](../../../docs/orbita-compact-catalog-2026-10-31.md)
 - [docs/orbita80](../../../docs/orbita80)
 
+
+</details>
+
 ## Estado e limites
 
+<details>
+<summary>Expandir Estado e limites</summary>
+
 Guia da base `2354a3c`, reorganizada sem mudar código executável. Revisões posteriores só devem ser descritas depois de incorporadas e verificadas. Nenhuma publicação do site decorre deste manual. A organização local ainda precisa ser enviada ao repositório privado e passar pela revisão remota.
+
+</details>
+

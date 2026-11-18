@@ -9,6 +9,9 @@ segunda, com o mesmo aparelho inicial. Duas vitórias vencem o duelo; 1–1 é e
 
 ## Organização
 
+<details>
+<summary>Expandir Organização</summary>
+
 - `engine.mjs`: regras com inteiros, ações, término das rodadas e estado serializável.
 - `view.mjs`: os seis trilhos, prévia das cargas e interação por peso/destino.
 - `view.css`: apresentação de bancada e reorganização vertical em telas estreitas.
@@ -17,7 +20,13 @@ segunda, com o mesmo aparelho inicial. Duas vitórias vencem o duelo; 1–1 é e
 Confirmação, bot, histórico e persistência pertencem ao controlador compartilhado.
 Não há simulação física, precisão de mouse, sorte ou propriedade individual dos pesos.
 
+
+</details>
+
 ## Aritmética e invariantes
+
+<details>
+<summary>Expandir Aritmética e invariantes</summary>
 
 Os trilhos fixos são E1, E2 e E7 à esquerda; D2, D3 e D5 à direita. Os números nos
 códigos são os valores dos pesos. `positions` guarda seis distâncias inteiras de 1 a 4.
@@ -33,7 +42,13 @@ Todos começam em 1, portanto as cargas são 10 e o desvio é 0. Um ajuste cresc
 soma das distâncias em 1 ou 2; essa soma vai de 6 até 24. Uma rodada tem no máximo
 18 ajustes. Um peso bloqueado não encerra a rodada se outro puder avançar.
 
+
+</details>
+
 ## Ações e fases
+
+<details>
+<summary>Expandir Ações e fases</summary>
 
 - `{ type: 'advance', piece: 'E2', to: 3 }`: avança exatamente esse peso ao destino.
 - `{ type: 'next-round' }`: prepara a segunda rodada após a primeira vitória.
@@ -52,14 +67,26 @@ Somente ao encerrar a segunda rodada existe `result`, com vencedor 0/1 ou empate
 modifica o estado. As duas cargas, o desvio atual e o previsto ficam visíveis;
 o cálculo com as seis multiplicações pode ser expandido.
 
+
+</details>
+
 ## Exemplo aprovado
+
+<details>
+<summary>Expandir Exemplo aprovado</summary>
 
 Antes: E1=4, E2=2, E7=2; D2=4, D3=4, D5=1. As cargas são 22 e 25; Δ=+3.
 Mover E2 de 2 para 3 deixa cargas 24 e 25; Δ=+1. A única resposta é E2 de 3 para 4.
 A sequência D5:1→2, E7:2→3, D5:2→3 encerra a rodada. Avançar E2 diretamente de
 2 para 4 era legal, mas entregaria essa sequência final ao adversário.
 
+
+</details>
+
 ## Verificação e limite estratégico conhecido
+
+<details>
+<summary>Expandir Verificação e limite estratégico conhecido</summary>
 
 Na raiz do repositório:
 
@@ -75,3 +102,6 @@ A análise do modelo aprovado encontrou 1.214 posições de aparelho alcançáve
 três terminais e vantagem forçada de quem começa sob jogo perfeito. Alternar o
 início em duas rodadas não demonstra equilíbrio divertido nem elimina estratégias
 memorizadas. Ainda é necessária avaliação com jogadores; o motor não altera essa regra.
+
+</details>
+

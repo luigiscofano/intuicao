@@ -4,13 +4,22 @@ Uma disputa de semeadura em canteiros de vários formatos. No mapa Clássico 4×
 
 ## Organização
 
+<details>
+<summary>Expandir Organização</summary>
+
 - `engine.mjs`: percurso determinístico, consumo das vagens, pontuação e verificação do resultado.
 - `view.mjs`: seleção da origem, três orientações permitidas, prévia numerada da cadeia e cascas abertas.
 - `view.css`: grade responsiva, peças vetoriais com símbolos de posse e controles acessíveis.
 - `index.mjs`: regras completas e metadados usados pelo controlador.
 - `tests/versus/estalo.test.mjs`: histórico aprovado, circuitos, giros, vitória rival, empate simultâneo e término.
 
+
+</details>
+
 ## Estado e ações
+
+<details>
+<summary>Expandir Estado e ações</summary>
 
 `board` contém `rows × columns` entradas (16 no Clássico), da esquerda para a direita e de cima para baixo. Uma entrada é `{ owner, direction }` ou `null` quando a vagem já abriu. As direções são 0 = norte, 1 = leste, 2 = sul e 3 = oeste. `scores` conta as aberturas por dono. `lastChain` preserva apenas a ordem da última cadeia para a apresentação.
 
@@ -20,13 +29,25 @@ O percurso marca a casa como visitada antes de avançar. Assim, um circuito volt
 
 **A vitória é verificada somente após a cadeia inteira.** Uma cadeia pode completar a equipe rival ou completar as duas equipes simultaneamente, caso em que há empate.
 
+
+</details>
+
 ## Exemplo verificado
+
+<details>
+<summary>Expandir Exemplo verificado</summary>
 
 A abertura em A1, sem giro, percorre A1 → B1 → B2 → C2 → C3 → B3. O pulso tenta voltar a B2, já aberta. O resultado é Verde 4, Âmbar 2. Âmbar responde por D3 → D4 → C4 e passa a liderar por 5 a 4.
 
 O histórico completo testado usa origens A1, D3, A4, D1, A2 e C1, sempre sem giro, terminando com vitória âmbar por 8 a 7.
 
+
+</details>
+
 ## Interação e verificação
+
+<details>
+<summary>Expandir Interação e verificação</summary>
 
 Selecionar uma vagem apenas escolhe a origem. Um dos três botões de orientação prepara a jogada completa; o controlador apresenta a prévia e cuida da confirmação. A prévia credita as duas equipes e numera as casas na ordem do percurso.
 
@@ -34,7 +55,13 @@ Selecionar uma vagem apenas escolhe a origem. Um dos três botões de orientaç�
 
 Execute `node --test tests/versus/estalo.test.mjs`. Os testes conferem estados congelados e a invariância `vagens fechadas + pontos = 8` para cada equipe. Não constituem demonstração de equilíbrio entre jogadores.
 
+
+</details>
+
 ## Mapas e tamanhos
+
+<details>
+<summary>Expandir Mapas e tamanhos</summary>
 
 Na preparação, o seletor **Mapa e tamanho** oferece **42 canteiros: sete opções em cada um dos seis tamanhos**: 4 × 4, 3 × 6, 4 × 6, 6 × 6, 6 × 8 e 8 × 8.
 
@@ -74,3 +101,6 @@ Os IDs históricos são preservados, independentemente do nome da família.
 O catálogo é fixo e não modifica geradores de outros modos ou jogos.
 O Estalo não possui editor de mapa personalizado; configurações de partida
 continuam guardando o ID do mapa e rejeitando IDs desconhecidos.
+
+</details>
+

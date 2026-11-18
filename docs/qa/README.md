@@ -6,6 +6,9 @@ Relatórios de testes e revisão por entrega. Diferencie executado, aprovado, fa
 
 ## Conteúdo
 
+<details>
+<summary>Expandir Conteúdo</summary>
+
 - [apresentacao-unificada-2026-11-11.md](apresentacao-unificada-2026-11-11.md)
 - [contadores-campanha-2026-11-11.md](contadores-campanha-2026-11-11.md)
 - [footer-mosaic-2026-11-11.md](footer-mosaic-2026-11-11.md)
@@ -21,8 +24,17 @@ Relatórios de testes e revisão por entrega. Diferencie executado, aprovado, fa
 - [selo-conquistas-2026-11-13.md](selo-conquistas-2026-11-13.md)
 - [versus-confirmation-2026-11-11.md](versus-confirmation-2026-11-11.md)
 
+
+</details>
+
 ## Manutenção
+
+<details>
+<summary>Expandir Manutenção</summary>
 
 Atualize este índice ao alterar o conteúdo da pasta. Verifique os links com `node scripts/check-docs.mjs` a partir da raiz. Testes de código e publicação devem seguir o fluxo específico do projeto. Registros históricos conservam sua data e não representam automaticamente o estado publicado.
 
 ![Identidade do projeto](../../dist/platform-assets/intuicao-logo-azulejos.png)
+
+</details>
+

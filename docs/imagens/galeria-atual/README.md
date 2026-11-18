@@ -4,6 +4,9 @@ Capturas reais realizadas em 16/11/2026 a partir de código local versionado, co
 
 ## Método
 
+<details>
+<summary>Expandir Método</summary>
+
 - Viewport de referência: 1440 × 1100 pixels; os PNGs recortam a área pertinente de cada jogo e podem ter dimensões diferentes.
 - Abertura normal dos jogos e níveis/mapas de demonstração. Sem alterar regras ou fabricar um estado visual de vitória.
 - Cursor ausente nas capturas; nenhum nome, e-mail, cookie ou save pessoal incluído.
@@ -11,7 +14,13 @@ Capturas reais realizadas em 16/11/2026 a partir de código local versionado, co
 - Captura de uma tela não constitui teste de todas as fases, interações, acessibilidade ou dispositivos.
 - O runtime fotografado é explícito: publicações futuras podem alterar a aparência. O histórico preserva a referência da revisão.
 
+
+</details>
+
 ## Arquivos
+
+<details>
+<summary>Expandir Arquivos</summary>
 
 - [Reflexos](light.png) · [Manual](../../jogos/reflexos/README.md)
 - [Corte certo](cut.png) · [Manual](../../jogos/corte/README.md)
@@ -33,8 +42,17 @@ Capturas reais realizadas em 16/11/2026 a partir de código local versionado, co
 - [ESTALO](estalo.png) · [Manual](../../jogos/estalo/README.md)
 - [ACORDE](acorde.png) · [Manual](../../jogos/acorde/README.md)
 
+
+</details>
+
 ## Direitos
+
+<details>
+<summary>Expandir Direitos</summary>
 
 A captura não concede licença nova às artes nela representadas. Aplicam-se a [declaração de autoria](../../recursos/declaracao-autoria.md), o [inventário](../../recursos/inventario.json) e os direitos dos recursos originais.
 
 [Início](../../../README.md).
+
+</details>
+

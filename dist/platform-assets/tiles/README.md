@@ -6,6 +6,9 @@ Azulejos PNG com transparência: recortes e cores da identidade Terra e Mata. Pr
 
 ## Conteúdo
 
+<details>
+<summary>Expandir Conteúdo</summary>
+
 - [blue-br.png](blue-br.png)
 - [blue-tl.png](blue-tl.png)
 - [game-gold-br.png](game-gold-br.png)
@@ -17,8 +20,17 @@ Azulejos PNG com transparência: recortes e cores da identidade Terra e Mata. Pr
 - [green-br.png](green-br.png)
 - [green-tl.png](green-tl.png)
 
+
+</details>
+
 ## Manutenção
+
+<details>
+<summary>Expandir Manutenção</summary>
 
 Atualize este índice ao alterar o conteúdo da pasta. Verifique os links com `node scripts/check-docs.mjs` a partir da raiz. Testes de código e publicação devem seguir o fluxo específico do projeto. Registros históricos conservam sua data e não representam automaticamente o estado publicado.
 
 ![Identidade do projeto](../intuicao-logo-azulejos.png)
+
+</details>
+

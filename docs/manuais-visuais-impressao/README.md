@@ -8,11 +8,20 @@ Coleção dos **19 jogos ativos do Intuição**, com uma folha A4 por jogo. A co
 
 ## Formato e proposta
 
+<details>
+<summary>Expandir Formato e proposta</summary>
+
 Cada folha apresenta o objetivo, um exemplo visual, três ações principais e uma observação importante. Os diagramas são **exemplos didáticos** e não capturas da interface. Alguns mostram apenas uma situação local, e não uma fase completa. Pulso usa a versão **Normal**, não Compasso. Não há ponteiro de mouse nas imagens.
 
 A identidade mantém logo de azulejos, verde mata, azul profundo, amarelo e fundo claro, com títulos Literata e texto Source Sans 3. Os exemplos não dependem apenas da cor: há símbolos, rótulos e relações antes/depois. Sintonia usa o atlas ativo de sprites, não desenhos legados.
 
+
+</details>
+
 ## Índice completo
+
+<details>
+<summary>Expandir Índice completo</summary>
 
 | Nº | Jogo | Categoria | Imagem | Impressão | Referência |
 |---|---|---|---|---|---|
@@ -36,21 +45,45 @@ A identidade mantém logo de azulejos, verde mata, azul profundo, amarelo e fund
 | 18 | Estalo | Versus | [PNG 300 dpi](png/18-estalo.png) | [PDF A4](pdf/18-estalo.pdf) | [Regras e código](../jogos/estalo/README.md) |
 | 19 | Acorde | Versus | [PNG 300 dpi](png/19-acorde.png) | [PDF A4](pdf/19-acorde.pdf) | [Regras e código](../jogos/acorde/README.md) |
 
+
+</details>
+
 ## Como imprimir
+
+<details>
+<summary>Expandir Como imprimir</summary>
 
 Use o PDF em papel A4, orientação retrato, escala 100% ou “tamanho real”, sem cabeçalhos extras do navegador. As margens fazem parte do layout. Os PNGs têm 2481 × 3508 pixels (aproximadamente 300 dpi em A4) e podem ser usados individualmente em materiais de apoio. Em impressoras com área útil reduzida, use “ajustar à área imprimível” sem cortar a folha. As páginas são guias de consulta; não são tabuleiros para jogar no papel.
 
+
+</details>
+
 ## Leitura e acessibilidade
+
+<details>
+<summary>Expandir Leitura e acessibilidade</summary>
 
 O PDF contém texto selecionável; os arquivos `conteudo.json` e os guias individuais dos jogos oferecem versões textuais. Os exemplos visuais têm explicações adjacentes. O PDF não é uma versão certificada PDF/UA; para leitores de tela, prefira os READMEs de cada jogo. As ilustrações estáticas não têm movimento nem efeitos luminosos.
 
+
+</details>
+
 ## Origem e validação
+
+<details>
+<summary>Expandir Origem e validação</summary>
 
 A coleção foi conferida com o catálogo e os exemplos da revisão `ad124fe604162b76d404749292700d5dad845bc5` do repositório. Fontes principais: `dist/game-catalog.mjs`, `dist/rules-examples.mjs`, `dist/rules-logic-examples.mjs`, `dist/rules-versus-examples.mjs`, `dist/rules-quick-start.mjs` e motores correspondentes.
 
 Foram executados os testes dos exemplos lógicos, exemplos versus e introduções rápidas: **32 testes aprovados, nenhum reprovado**. O registro está em [testes-exemplos.log](testes-exemplos.log). Houve também revisão dos estados especiais ilustrados de Pulso Normal, Renovo e Cerco, e inspeção visual das 19 páginas renderizadas. Os testes das fontes incluem exemplos históricos além dos jogos ativos; o catálogo desta coleção tem apenas os 19 ativos. Uma alteração posterior de regras exige nova revisão dos manuais.
 
+
+</details>
+
 ## Arquivos e manutenção
+
+<details>
+<summary>Expandir Arquivos e manutenção</summary>
 
 - `png/`: uma imagem final por jogo, 300 dpi.
 - `pdf/`: coleção completa e uma folha individual por jogo.
@@ -61,3 +94,6 @@ Foram executados os testes dos exemplos lógicos, exemplos versus e introduçõe
 - `gerar_pdf.py`: geração do PDF com ReportLab. Requer Python e ReportLab; use `python gerar_pdf.py` nesta pasta. Os diagramas e fontes já estão incluídos; a execução não acessa serviços externos.
 
 Para regenerar PNGs, use Poppler: `pdftoppm -r 300 -png pdf/Intuicao_Manuais_Visuais_19_Jogos.pdf manual`. Renomeie as páginas conforme o índice. Se o conteúdo mudar, reveja todos os limites e quebras do PDF antes de substituir os arquivos. As fontes TTF são instâncias estáticas derivadas das fontes variáveis existentes no projeto; suas licenças acompanham o material. Os direitos da identidade visual e dos assets do projeto seguem os termos do repositório.
+
+</details>
+

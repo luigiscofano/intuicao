@@ -4,13 +4,22 @@ Esta revisão conserva as definições 1–200 e substitui 201–500, acrescenta
 
 ## Regras e compatibilidade
 
+<details>
+<summary>Expandir Regras e compatibilidade</summary>
+
 O algoritmo de permutação de `engine.mjs` não mudou. Somente o limite estrutural de encontros por par foi ampliado: a especificação pede três, quatro, cinco e ordens diferentes, sem fixar um máximo por par. Um conjunto pequeno de fases Mestre usa seis encontros transversais para tornar a ordem dos encontros não equivalente por rotação/reflexão; o limite total da campanha continua 14. Nenhuma casa pertence a três anéis.
 
 As cotas exatas de anéis e encontros são verificadas. As faixas de complexidade são **predominantes**, conforme o texto do pedido, e não limites duros: os capítulos e as cotas contêm exceções incompatíveis com limites estritos (por exemplo, dois anéis no capítulo 19 da faixa Especialista).
 
 A chave de armazenamento existente permanece. Conclusões, preferências e progresso não são apagados. Uma tentativa antiga em definição substituída é reiniciada na mesma fase; 1–200 continuam compatíveis. Endless preserva a definição completa antiga; a versão 2 seleciona reservas novas verificadas no motor e registra família, matriz e contagens para evitar repetição consecutiva.
 
+
+</details>
+
 ## Geometria e variedade
+
+<details>
+<summary>Expandir Geometria e variedade</summary>
 
 Os pontos de curva não são automaticamente casas. `ring.path` contém o percurso fechado; seus marcadores `cell` identificam precisamente as casas físicas de `ring.cells`. A animação percorre o caminho real entre as casas. O validador confere todos os segmentos: encontros não marcados, sobreposições, autocruzamentos, triplicidade, ordem e posição dos marcadores, limites, distância entre casas e folgas fora dos arcos incidentes.
 
@@ -18,7 +27,13 @@ Loops arredondados, redes deslocadas, braids transversais, órbitas realmente an
 
 A assinatura estrutural independe de pixels, nomes, símbolos e embaralhamento. Normaliza origem cíclica, direção dos percursos e renomeação de anéis/casas, preservando a identidade e a ordem dos encontros repetidos. A assinatura autoral acrescenta posição e equivalência dos alvos/sensores. Classes de símbolos que aparecem apenas nos sensores são canonizadas independentemente da ordem dos comandos (até oito classes no utilitário de autoria).
 
+
+</details>
+
 ## O que as provas dizem — e o que não dizem
+
+<details>
+<summary>Expandir O que as provas dizem — e o que não dizem</summary>
 
 - A solução inversa é reproduzida no motor real: prova alcance, **não** optimalidade.
 - Busca de atalhos e exclusão de órbita de comando único são distintas do comprimento do embaralhamento.
@@ -29,7 +44,13 @@ A assinatura estrutural independe de pixels, nomes, símbolos e embaralhamento. 
 - Rotas da rede são possibilidades estruturais; sensores, passo e ocupação podem restringir transporte real.
 - Dificuldade e clareza são avaliações editoriais/geométricas, não resultados de testes com jogadores.
 
+
+</details>
+
 ## Validação e inspeção visual
+
+<details>
+<summary>Expandir Validação e inspeção visual</summary>
 
 ```sh
 node tests/orbita-build-v2.mjs
@@ -40,3 +61,6 @@ node tests/orbita-render-v2.mjs
 As folhas de contato usam os caminhos reais, posições, símbolos aprovados, alvos e sensores. São inspeções estáticas; não substituem teste de toque, foco, rolagem e layout num navegador real. O tabuleiro conserva fichas de pelo menos 30 px de diâmetro, com rolagem contida na sua própria área em telas estreitas. Nenhum novo seletor ou menu editorial foi adicionado.
 
 A verificação em navegador a 320/390 px precisa ser registrada separadamente. Não se declara esse teste realizado apenas com cálculos de escala ou rasterização SVG.
+
+</details>
+
