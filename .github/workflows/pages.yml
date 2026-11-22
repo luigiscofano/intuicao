@@ -50,7 +50,7 @@ jobs:
           "$RUNNER_TEMP/qa/bin/python" scripts/pages/browser.py http://127.0.0.1:8765/intuicao/ "$RUNNER_TEMP/capturas" "${referencia[@]}"
       - name: Guardar evidências fora do site
         if: always()
-        uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02 # v4
+        uses: actions/upload-artifact@cf430e030ddbb5b0abf93d22962f4752f3646cd9 # v7.0.2
         with:
           name: verificacao-${{ github.sha }}-${{ github.run_attempt }}
           path: |
@@ -110,7 +110,7 @@ jobs:
           "$RUNNER_TEMP/qa/bin/python" scripts/pages/browser.py https://luigiscofano.github.io/intuicao/ "$RUNNER_TEMP/publicado" "${referencia[@]}"
       - name: Guardar capturas da publicação
         if: always()
-        uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02 # v4
+        uses: actions/upload-artifact@cf430e030ddbb5b0abf93d22962f4752f3646cd9 # v7.0.2
         with:
           name: publicado-${{ github.sha }}-${{ github.run_attempt }}
           path: ${{ runner.temp }}/publicado/
